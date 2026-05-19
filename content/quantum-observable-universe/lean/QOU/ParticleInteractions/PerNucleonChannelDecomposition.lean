@@ -22,7 +22,7 @@ class PernucleonchanneldecompositionContext where
   /-- Neutron number `N`. -/
   N : ℕ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -35,7 +35,7 @@ of $H_3(q)$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
-theorem PerNucleonChannelDecomposition [ctx : PernucleonchanneldecompositionContext] : ctx.holds := by
+theorem PerNucleonChannelDecomposition [ctx : PernucleonchanneldecompositionContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

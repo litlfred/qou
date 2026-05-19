@@ -22,7 +22,7 @@ class OfweightdecompositionContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -50,11 +50,11 @@ $(\xi, \varTheta_A)$ on $A$ satisfying:
 \end{equation}
 ```
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
+    placeholder; the `ctx.claim : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts
-theorem ofWeightDecomposition [ctx : OfweightdecompositionContext] : ctx.holds := by
+theorem ofWeightDecomposition [ctx : OfweightdecompositionContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

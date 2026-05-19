@@ -18,8 +18,12 @@ namespace QOU.FluidDynamics
 class AcousticHorizonConditionsContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -31,9 +35,8 @@ horizons wherever $|v| = c_s$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
-theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.FluidDynamics

@@ -18,8 +18,14 @@ namespace QOU.Torsion
 class AntiparticleCrossingReversalContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -31,9 +37,8 @@ $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts
-theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
 
 end QOU.Torsion

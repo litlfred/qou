@@ -21,7 +21,7 @@ class FrobeniusPositivityFilterContext where
   /-- The LP shadow-price / dual variable. -/
   shadow_price : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -53,7 +53,7 @@ In the discrete (branching) setting, it acts as a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts
-theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] : ctx.holds := by
+theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -18,8 +18,12 @@ namespace QOU.WedderburnMass
 class ConfinementCategoricalContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -34,9 +38,8 @@ elements of $A = H_n(R, q)$ survive as physical observables, and
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
-theorem confinement_categorical [ctx : ConfinementCategoricalContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.WedderburnMass

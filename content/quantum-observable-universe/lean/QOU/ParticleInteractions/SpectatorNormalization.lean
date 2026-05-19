@@ -22,7 +22,7 @@ class SpectatornormalizationContext where
   /-- Neutron number `N`. -/
   N : ℕ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,7 +36,7 @@ $N - 1$ neutrons are spectators.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
-theorem SpectatorNormalization [ctx : SpectatornormalizationContext] : ctx.holds := by
+theorem SpectatorNormalization [ctx : SpectatornormalizationContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

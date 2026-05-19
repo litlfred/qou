@@ -23,7 +23,7 @@ class ChiralityResidueMassTermContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -39,7 +39,7 @@ stratum into a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
-theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] : ctx.holds := by
+theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

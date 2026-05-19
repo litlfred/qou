@@ -20,7 +20,7 @@ class TmEigenspaceDecompContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -35,7 +35,7 @@ direct sums gives
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts
-theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] : ctx.holds := by
+theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

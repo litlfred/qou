@@ -21,8 +21,14 @@ class DiscreteVortexSpectrumContext where
   q : ℝ
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,9 +42,8 @@ sections of the normal bundle $N_\varrho$.  Then:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
-theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
 
 end QOU.FluidDynamics

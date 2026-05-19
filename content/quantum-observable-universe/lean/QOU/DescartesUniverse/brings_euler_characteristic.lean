@@ -20,7 +20,7 @@ class BringsEulerCharacteristicContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -41,7 +41,7 @@ the Descartes substrate parameter $q_0$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-euler-characteristic.ts
-theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] : ctx.holds := by
+theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

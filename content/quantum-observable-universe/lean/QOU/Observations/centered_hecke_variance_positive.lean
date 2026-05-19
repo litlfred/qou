@@ -22,7 +22,7 @@ class CenteredHeckeVariancePositiveContext where
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -43,7 +43,7 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
-theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] : ctx.holds := by
+theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

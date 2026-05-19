@@ -22,7 +22,7 @@ class NuclearoperatorregimesContext where
   /-- Neutron number `N`. -/
   N : ℕ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -35,7 +35,7 @@ nucleus $\mathcal{N}_{\leq k}$) belongs to one of three regimes:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts
-theorem nuclearOperatorRegimes [ctx : NuclearoperatorregimesContext] : ctx.holds := by
+theorem nuclearOperatorRegimes [ctx : NuclearoperatorregimesContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

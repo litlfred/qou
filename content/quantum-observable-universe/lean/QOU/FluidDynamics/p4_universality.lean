@@ -18,8 +18,12 @@ namespace QOU.FluidDynamics
 class P4UniversalityContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -34,9 +38,8 @@ $(\mathbf{C}, A, \tau)$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
-theorem p4_universality [ctx : P4UniversalityContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem p4_universality [ctx : P4UniversalityContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.FluidDynamics

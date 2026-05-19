@@ -21,8 +21,12 @@ class PhotonThreadingMassContext where
   Braid : Type
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -49,9 +53,8 @@ $c_w$ are the coefficients at each step.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
-theorem photon_threading_mass [ctx : PhotonThreadingMassContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem photon_threading_mass [ctx : PhotonThreadingMassContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.Information

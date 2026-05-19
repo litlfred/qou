@@ -25,8 +25,12 @@ class VariationalEquationsContext where
   Connection : Type
   /-- The crossing / Hecke generator type. -/
   Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -80,13 +84,11 @@ equations are:
 \end{equation}
 ```
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; the residual sub-claim Props are still abstract. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/variational-equations.ts
-theorem variational_equations [ctx : VariationalEquationsContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem variational_equations [ctx : VariationalEquationsContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU

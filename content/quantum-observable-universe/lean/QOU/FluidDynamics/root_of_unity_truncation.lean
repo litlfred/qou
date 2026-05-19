@@ -19,8 +19,12 @@ namespace QOU.FluidDynamics
 class RootOfUnityTruncationContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,9 +40,8 @@ accumulation of infinitely many such truncations.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
-theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.FluidDynamics

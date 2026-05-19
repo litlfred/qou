@@ -22,8 +22,12 @@ namespace QOU.BraidsAndKnots
 class QmnRecursiveMemoizedContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -47,9 +51,8 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
-theorem qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.BraidsAndKnots

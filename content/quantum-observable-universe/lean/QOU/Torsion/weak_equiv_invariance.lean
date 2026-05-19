@@ -20,7 +20,7 @@ class WeakEquivInvarianceContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,7 +37,7 @@ brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
-theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] : ctx.holds := by
+theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

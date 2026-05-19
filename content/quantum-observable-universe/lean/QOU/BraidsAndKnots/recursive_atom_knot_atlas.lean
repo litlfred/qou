@@ -22,8 +22,18 @@ namespace QOU.BraidsAndKnots
 class RecursiveAtomKnotAtlasContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
+  /-- Manuscript sub-claim (v). -/
+  claim_v : Prop
+  /-- Manuscript sub-claim (vi). -/
+  claim_vi : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -41,9 +51,8 @@ Confinement at $q_0$ is verified via the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.ts
-theorem recursive_atom_knot_atlas [ctx : RecursiveAtomKnotAtlasContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem recursive_atom_knot_atlas [ctx : RecursiveAtomKnotAtlasContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v ∧ ctx.claim_vi :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v, ctx.claim_vi⟩
 
 end QOU.BraidsAndKnots

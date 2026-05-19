@@ -19,7 +19,7 @@ class FourTermPairNucleonContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -32,7 +32,7 @@ three independent $\gamma\gamma$ pair productions using the full
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts
-theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] : ctx.holds := by
+theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

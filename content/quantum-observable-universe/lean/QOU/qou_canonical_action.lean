@@ -28,7 +28,7 @@ class QouCanonicalActionContext where
   /-- Gauge connection / curvature. -/
   Connection : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -96,11 +96,11 @@ determined up to unique isomorphism by
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
+    placeholder; the `ctx.claim : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
-theorem qou_canonical_action [ctx : QouCanonicalActionContext] : ctx.holds := by
+theorem qou_canonical_action [ctx : QouCanonicalActionContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

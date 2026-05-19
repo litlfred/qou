@@ -21,7 +21,7 @@ class MassCategoricalDescentContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -38,7 +38,7 @@ for the recovered coefficients.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/mass-categorical-descent.ts
-theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] : ctx.holds := by
+theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

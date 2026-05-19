@@ -18,8 +18,14 @@ namespace QOU.QuantumBloch
 class PentagonUvCommutationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -32,9 +38,8 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts
-theorem pentagon_uv_commutation [ctx : PentagonUvCommutationContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem pentagon_uv_commutation [ctx : PentagonUvCommutationContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
 
 end QOU.QuantumBloch

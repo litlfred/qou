@@ -21,7 +21,7 @@ class VorticityLowerBoundContext where
   /-- The substrate parameter `q`. -/
   q : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,7 +37,7 @@ filament cores.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
-theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] : ctx.holds := by
+theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

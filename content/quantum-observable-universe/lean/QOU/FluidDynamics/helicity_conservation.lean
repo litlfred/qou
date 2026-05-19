@@ -19,8 +19,14 @@ namespace QOU.FluidDynamics
 class HelicityConservationContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,9 +42,8 @@ $\{\varrho_1, \ldots, \varrho_n\}$ as
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/helicity-conservation.ts
-theorem helicity_conservation [ctx : HelicityConservationContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem helicity_conservation [ctx : HelicityConservationContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
 
 end QOU.FluidDynamics

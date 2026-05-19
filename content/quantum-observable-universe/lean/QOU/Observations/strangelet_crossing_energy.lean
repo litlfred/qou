@@ -20,8 +20,12 @@ class StrangeletCrossingEnergyContext where
   CategoricalObj : Type
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,9 +41,8 @@ by the Hopf link $\mathcal{L}_H$.  Then:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
-theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.Observations

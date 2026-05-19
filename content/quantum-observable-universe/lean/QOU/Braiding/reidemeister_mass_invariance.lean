@@ -19,7 +19,7 @@ class ReidemeisterMassInvarianceContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -35,7 +35,7 @@ class ReidemeisterMassInvarianceContext where
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts
-theorem reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] : ctx.holds := by
+theorem reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

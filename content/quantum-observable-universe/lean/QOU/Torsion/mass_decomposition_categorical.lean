@@ -22,7 +22,7 @@ class MassDecompositionCategoricalContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -40,7 +40,7 @@ base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass.ts
-theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] : ctx.holds := by
+theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

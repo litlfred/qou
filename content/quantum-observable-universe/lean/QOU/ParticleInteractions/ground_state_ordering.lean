@@ -22,7 +22,7 @@ class GroundStateOrderingContext where
   /-- Neutron number `N`. -/
   N : ℕ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -34,7 +34,7 @@ and $N$ neutrons ($A = Z + N$) is determined by:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
-theorem ground_state_ordering [ctx : GroundStateOrderingContext] : ctx.holds := by
+theorem ground_state_ordering [ctx : GroundStateOrderingContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

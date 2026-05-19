@@ -19,7 +19,7 @@ class LerayProfileContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,7 +36,7 @@ class LerayProfileContext where
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
-theorem leray_profile [ctx : LerayProfileContext] : ctx.holds := by
+theorem leray_profile [ctx : LerayProfileContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

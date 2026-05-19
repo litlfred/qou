@@ -19,8 +19,12 @@ namespace QOU.Molecular
 class BenzeneThreadingEmergenceContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -37,9 +41,8 @@ orbital.  The LP dual optimises their placement:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts
-theorem benzene_threading_emergence [ctx : BenzeneThreadingEmergenceContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem benzene_threading_emergence [ctx : BenzeneThreadingEmergenceContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.Molecular

@@ -21,7 +21,7 @@ class SubstrateConsistencyWindowContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,7 +37,7 @@ overlap.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
-theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] : ctx.holds := by
+theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

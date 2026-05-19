@@ -21,7 +21,7 @@ class TerminalResolutionContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -32,7 +32,7 @@ Using the derived $q_0$, the hadronic mass collapses into a linear combination o
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/terminal-resolution.ts
-theorem terminal_resolution [ctx : TerminalResolutionContext] : ctx.holds := by
+theorem terminal_resolution [ctx : TerminalResolutionContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -19,7 +19,7 @@ class BraneTowerQLaplacianDecayContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -39,7 +39,7 @@ contribution.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts
-theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] : ctx.holds := by
+theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

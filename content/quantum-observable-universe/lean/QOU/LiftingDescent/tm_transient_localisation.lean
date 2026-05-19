@@ -19,7 +19,7 @@ class TmTransientLocalisationContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -32,7 +32,7 @@ decomposes as a sum over the exceptional divisors $E_i$:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
-theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] : ctx.holds := by
+theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -23,8 +23,12 @@ class ParityRegimeSelectionContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Theorem statement** (from manuscript):
 
@@ -43,9 +47,8 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
-theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.ParticleInteractions

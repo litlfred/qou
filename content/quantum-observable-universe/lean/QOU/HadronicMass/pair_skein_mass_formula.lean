@@ -24,7 +24,7 @@ class PairSkeinMassFormulaContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -47,7 +47,7 @@ total nucleon mass is the sum over the three crossing pairs:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.ts
-theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] : ctx.holds := by
+theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

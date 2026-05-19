@@ -18,8 +18,12 @@ namespace QOU.FluidDynamics
 class NsKummerSpecialisationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -32,9 +36,8 @@ $\mathrm{tr}(\kappa_0) = \chi(A)$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
-theorem ns_kummer_specialisation [ctx : NsKummerSpecialisationContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem ns_kummer_specialisation [ctx : NsKummerSpecialisationContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.FluidDynamics

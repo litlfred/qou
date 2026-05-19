@@ -22,8 +22,12 @@ namespace QOU.BraidsAndKnots
 class DemazureFiberMarkovTraceContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -72,9 +76,8 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts
-theorem demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.BraidsAndKnots

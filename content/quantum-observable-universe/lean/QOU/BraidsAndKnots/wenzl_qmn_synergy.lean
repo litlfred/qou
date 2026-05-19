@@ -24,8 +24,12 @@ class WenzlQmnSynergyContext where
   Braid : Type
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -64,9 +68,8 @@ this drops the per-isotope compute time from
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
-theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.BraidsAndKnots

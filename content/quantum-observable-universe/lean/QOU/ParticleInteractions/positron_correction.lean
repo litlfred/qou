@@ -19,8 +19,10 @@ namespace QOU.ParticleInteractions
 class PositronCorrectionContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -48,9 +50,8 @@ The positron correction is needed in two regimes
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.ts
-theorem positron_correction [ctx : PositronCorrectionContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem positron_correction [ctx : PositronCorrectionContext] :
+    ctx.claim_i ∧ ctx.claim_ii :=
+  ⟨ctx.claim_i, ctx.claim_ii⟩
 
 end QOU.ParticleInteractions

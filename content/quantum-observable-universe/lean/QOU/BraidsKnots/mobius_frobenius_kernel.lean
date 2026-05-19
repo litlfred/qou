@@ -27,7 +27,7 @@ class MobiusFrobeniusKernelContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -46,11 +46,11 @@ $$
   \frac{1}{\lvert \gamma(s) - \gamma(t) \rvert^2}.
 $$
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
+    placeholder; the `ctx.claim : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy-frobenius-kernel.ts
-theorem mobius_frobenius_kernel [ctx : MobiusFrobeniusKernelContext] : ctx.holds := by
+theorem mobius_frobenius_kernel [ctx : MobiusFrobeniusKernelContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

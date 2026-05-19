@@ -23,7 +23,7 @@ class OperatorSelectionLpContext where
   /-- The LP shadow-price / dual variable. -/
   shadow_price : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -71,7 +71,7 @@ carries unbounded demand.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/operator-selection-lp.ts
-theorem operator_selection_lp [ctx : OperatorSelectionLpContext] : ctx.holds := by
+theorem operator_selection_lp [ctx : OperatorSelectionLpContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

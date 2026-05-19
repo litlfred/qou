@@ -20,7 +20,7 @@ class NeutronQvalueSymbolicContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,7 +36,7 @@ $\beta$-decay datum being predicted, not used as input
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts
-theorem neutron_qvalue_symbolic [ctx : NeutronQvalueSymbolicContext] : ctx.holds := by
+theorem neutron_qvalue_symbolic [ctx : NeutronQvalueSymbolicContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

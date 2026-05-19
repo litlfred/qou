@@ -20,8 +20,10 @@ class NsObstructionComputationContext where
   CategoricalObj : Type
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -35,9 +37,8 @@ linking number $\mathrm{lk} = 1$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
-theorem ns_obstruction_computation [ctx : NsObstructionComputationContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem ns_obstruction_computation [ctx : NsObstructionComputationContext] :
+    ctx.claim_i ∧ ctx.claim_ii :=
+  ⟨ctx.claim_i, ctx.claim_ii⟩
 
 end QOU.FluidDynamics

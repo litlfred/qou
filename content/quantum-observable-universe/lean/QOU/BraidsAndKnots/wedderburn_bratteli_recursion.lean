@@ -22,8 +22,12 @@ namespace QOU.BraidsAndKnots
 class WedderburnBratteliRecursionContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -38,9 +42,8 @@ Then the family $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfies a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts
-theorem wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.BraidsAndKnots

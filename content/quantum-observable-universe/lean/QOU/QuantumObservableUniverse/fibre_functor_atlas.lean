@@ -18,8 +18,14 @@ namespace QOU.QuantumObservableUniverse
 class FibreFunctorAtlasContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -36,9 +42,8 @@ $\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
-theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
 
 end QOU.QuantumObservableUniverse

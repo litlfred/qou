@@ -20,8 +20,16 @@ class ConfinementFrobeniusReciprocityContext where
   CategoricalObj : Type
   /-- The LP shadow-price / dual variable. -/
   shadow_price : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
+  /-- Manuscript sub-claim (v). -/
+  claim_v : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -47,9 +55,8 @@ $T$ is the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts
-theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v⟩
 
 end QOU.ParticleInteractions

@@ -22,7 +22,7 @@ class U1equivariantreductionContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -70,11 +70,11 @@ interpretation of this $S^1$ as the single $\mathrm{U}(1)$ phase
 tube is recorded in
 [rem:u1-phase-tube](#rem:u1-phase-tube).
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
+    placeholder; the `ctx.claim : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
-theorem u1EquivariantReduction [ctx : U1equivariantreductionContext] : ctx.holds := by
+theorem u1EquivariantReduction [ctx : U1equivariantreductionContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

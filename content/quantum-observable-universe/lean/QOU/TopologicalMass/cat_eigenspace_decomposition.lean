@@ -20,7 +20,7 @@ class CatEigenspaceDecompositionContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -35,7 +35,7 @@ components, giving
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
-theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] : ctx.holds := by
+theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

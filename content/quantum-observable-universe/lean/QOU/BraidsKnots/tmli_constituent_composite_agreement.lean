@@ -20,7 +20,7 @@ class TmliConstituentCompositeAgreementContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -36,7 +36,7 @@ of $H_N(q)$, so
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/tmli-constituent-composite-agreement.ts
-theorem tmli_constituent_composite_agreement [ctx : TmliConstituentCompositeAgreementContext] : ctx.holds := by
+theorem tmli_constituent_composite_agreement [ctx : TmliConstituentCompositeAgreementContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

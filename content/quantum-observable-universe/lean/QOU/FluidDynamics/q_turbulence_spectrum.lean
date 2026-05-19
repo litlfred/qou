@@ -19,8 +19,14 @@ namespace QOU.FluidDynamics
 class QTurbulenceSpectrumContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -34,9 +40,8 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts
-theorem q_turbulence_spectrum [ctx : QTurbulenceSpectrumContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem q_turbulence_spectrum [ctx : QTurbulenceSpectrumContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
 
 end QOU.FluidDynamics

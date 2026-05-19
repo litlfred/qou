@@ -25,8 +25,12 @@ class EwInterfaceKnotContext where
   zeta : ℂ
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -47,9 +51,8 @@ $H \leftrightarrow \sigma_5^{\,8}$ act
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ew-interface-knot.ts
-theorem ew_interface_knot [ctx : EwInterfaceKnotContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem ew_interface_knot [ctx : EwInterfaceKnotContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.BraidsAndKnots

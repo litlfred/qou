@@ -19,7 +19,7 @@ class KelvinDispersionDerivationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -33,7 +33,7 @@ subsection derives this from first principles.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
-theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] : ctx.holds := by
+theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

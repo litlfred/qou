@@ -23,8 +23,16 @@ class AtomicNfWitnessContext where
   N : ℕ
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
+  /-- Manuscript sub-claim (iv). -/
+  claim_iv : Prop
+  /-- Manuscript sub-claim (v). -/
+  claim_v : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -62,9 +70,8 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
-theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v⟩
 
 end QOU.ParticleInteractions

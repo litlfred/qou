@@ -21,7 +21,7 @@ class MiSwCartanReductionContext where
   /-- Gauge connection / curvature. -/
   Connection : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -40,7 +40,7 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.ts
-theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.holds := by
+theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

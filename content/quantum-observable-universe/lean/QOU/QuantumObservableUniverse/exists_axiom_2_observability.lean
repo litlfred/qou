@@ -19,7 +19,7 @@ class ExistsAxiom2ObservabilityContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -33,7 +33,7 @@ modulo the unit, verifying axiom~(2) of
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
-theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] : ctx.holds := by
+theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

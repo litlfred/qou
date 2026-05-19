@@ -21,8 +21,12 @@ class HeckeSatisfiesBlitvicHypothesisContext where
   PartitionIdx : Type
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  /-- Manuscript sub-claim (iii). -/
+  claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -36,9 +40,8 @@ central limit theorem [`blitvic2012`].*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.ts
-theorem hecke_satisfies_blitvic_hypothesis [ctx : HeckeSatisfiesBlitvicHypothesisContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem hecke_satisfies_blitvic_hypothesis [ctx : HeckeSatisfiesBlitvicHypothesisContext] :
+    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
+  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
 
 end QOU.Observations

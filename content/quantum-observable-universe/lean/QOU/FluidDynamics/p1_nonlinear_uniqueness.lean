@@ -20,7 +20,7 @@ class P1NonlinearUniquenessContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,7 +37,7 @@ $C_q = (\sum_k [k]_q^{-2})^{1/2}$ be the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts
-theorem p1_nonlinear_uniqueness [ctx : P1NonlinearUniquenessContext] : ctx.holds := by
+theorem p1_nonlinear_uniqueness [ctx : P1NonlinearUniquenessContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -25,7 +25,7 @@ class NucleonBorromeanTopologyContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -42,7 +42,7 @@ volume.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
-theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] : ctx.holds := by
+theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

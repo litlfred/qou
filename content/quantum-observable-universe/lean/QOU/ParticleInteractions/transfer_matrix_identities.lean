@@ -21,7 +21,7 @@ class TransferMatrixIdentitiesContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  claim : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -37,11 +37,11 @@ identities in $\mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])$.
 **(ii)** $T_{pn}^2 = \dfrac{[2]_q^2}{4} \cdot I$, where
 $[2]_q = q + q^{-1}$.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
+    placeholder; the `ctx.claim : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/transfer-matrix-identities.ts
-theorem transfer_matrix_identities [ctx : TransferMatrixIdentitiesContext] : ctx.holds := by
+theorem transfer_matrix_identities [ctx : TransferMatrixIdentitiesContext] : ctx.claim := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry
