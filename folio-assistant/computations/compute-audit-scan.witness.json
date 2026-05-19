@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T19:59:59.062421+00:00",
-  "commitSha": "364b58e440915615a4a78e7712e08b07045f91c0",
+  "computedAt": "2026-05-19T20:04:56.936031+00:00",
+  "commitSha": "41a2be0148d082318ad32818c50d172168e04b59",
   "assertions": [],
   "allPassed": true,
   "durationMs": 9,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 632,
+    "files_scanned": 634,
     "patterns": [
       "P15",
       "P16",
@@ -25,7 +25,7 @@
   "data": {
     "by_pattern_count": {
       "P15": 174,
-      "P16": 159,
+      "P16": 163,
       "P21": 32,
       "P30": 94,
       "P31": 25
@@ -3465,6 +3465,34 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_cyclotomic_factorization_probe.py",
+        "line": 66,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_cyclotomic_factorization_probe.py",
+        "line": 70,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_cyclotomic_factorization_probe.py",
+        "line": 111,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_cyclotomic_factorization_probe.py",
+        "line": 126,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",

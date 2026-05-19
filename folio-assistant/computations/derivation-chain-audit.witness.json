@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T19:59:59.536814+00:00",
-  "commitSha": "364b58e440915615a4a78e7712e08b07045f91c0",
+  "computedAt": "2026-05-19T20:04:57.458095+00:00",
+  "commitSha": "41a2be0148d082318ad32818c50d172168e04b59",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2273,6 +2273,7 @@
         "crystal-pole-order.witness.json",
         "crystal-shift-nf-atomic.witness.json",
         "crystal-transport-h3-verification.witness.json",
+        "cyclotomic-cl3-orbit-sum-general-probe.witness.json",
         "cyclotomic-depth3-dimension-pslq.witness.json",
         "cyclotomic-orbit-sum-all-depths-probe.witness.json",
         "cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
@@ -2700,6 +2701,7 @@
         "workplan-0b-route-c-bring.witness.json",
         "y-lambda-at-q0.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
+        "y-lambda-cyclotomic-factorization-probe.witness.json",
         "y-lambda-macdonald-telescope.witness.json",
         "y_lambda_equivalence_proof.witness.json",
         "z-n-brane-tower-falsifiability.witness.json"
