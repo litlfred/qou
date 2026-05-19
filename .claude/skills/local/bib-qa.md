@@ -340,3 +340,106 @@ The `bib-qa.json` schema:
   ]
 }
 ```
+
+## Always cross-check arxiv for mirror preprints (added 2026-05-19)
+
+When verifying a published-journal paper, always check arxiv.org for
+a freely-accessible mirror. Most math/physics authors deposit the
+preprint version to arxiv either before or after journal publication.
+The mirror URL is the right intake target for `uploads/` because:
+
+- arxiv mirrors are stable + freely-accessible (no doi.org paywall).
+- Content is usually the same as the published version (modulo
+  copy-editing differences in section numbering).
+- `gen-bib-papers-list.py` already handles `arxiv.org/abs/<id>` →
+  `arxiv.org/pdf/<id>` conversion automatically.
+
+Workflow when adding/auditing an entry whose primary URL is a
+publisher landing page (doi.org, journal site, etc.):
+
+1. Search the paper title on https://arxiv.org for an `arXiv:<id>`
+   preprint by the same authors.
+2. If found, add `URL: https://arxiv.org/abs/<id>` to the
+   `references.ts` entry (alongside, not instead of, the DOI).
+3. The auto-extracted batch intake will then pick up the arxiv URL
+   automatically on next regen.
+
+Verified arxiv-mirror finds during the 2026-05-19 22-paper batch:
+`faddeev_kashaev1994` (hep-th/9310070), `baez2004` (math/0307200),
+`hu-mathas2012graded` (1008.1462), `freed2010` (0905.0731),
+`berarducci2018` (1503.00315), `yekutieli2008` (0801.3233),
+`leitnerpawloski2004` (math/0409565), `bilsonthompson2005` (hep-ph/0503213),
+`bufetov2020` (2003.02730), `blitvic2012` (1205.4003),
+`finster2021/2022/2024` + `dappiaggi2024` (all arxiv-natives).
+
+## Paper-mismatch class: PDF resolves to wrong content (added 2026-05-19)
+
+A failure mode surfaced during the 2026-05-19 batch: the
+`gen-bib-papers-list.py` URL converter can yield a syntactically-valid
+PDF that contains the WRONG content. Two cases observed:
+
+- **numdam volume prelims**: `numdam.org/item/AST_YYYY__VOL__R1_0/`
+  resolves to the volume's PRELIMINARY PAGES (front matter, pp. I-XII),
+  NOT a specific Astérisque chapter. The per-chapter URL pattern is
+  `/item/AST_YYYY__VOL__<startpage>_0/` — different starting page per
+  chapter. (Discovered for `zink2002` — got volume 278 prelims instead
+  of Zink's "Display of a Formal p-Divisible Group" chapter.)
+
+- **archive.org filename guess**: `archive.org/download/<id>/<id>.pdf`
+  works only when the PDF filename inside the item matches the item
+  id. For re-digitised scans where the upload was named differently
+  (`<id>_bw.pdf`, `<id>_text.pdf`, an arbitrary stem), the guess
+  fails with 401/503/404. The reliable fix is to consult
+  `archive.org/metadata/<id>` JSON to discover the actual PDF filename
+  — deferred to a future `gen-bib-papers-list.py` improvement.
+
+Detection workflow:
+
+1. `pdftotext -layout -f 1 -l 1 uploads/<id>.pdf` and inspect the
+   title page.
+2. Compare the title page to the `references.ts` entry's `title` field.
+3. If they disagree, mark the entry as `paper-mismatch` in
+   `content/bib-qa-verifications.json` with a note explaining the
+   downloaded content vs the expected content.
+4. The `references.ts` URL itself usually needs the fix (not the
+   entry's bib metadata); update the URL and re-run
+   `upload-bib-papers.sh` to fetch the correct file.
+
+## Cross-citation-content verification workflow (added 2026-05-19)
+
+When verifying a paper against its QOU citation sites, the canonical
+procedure (per the 2026-05-19 batch experience):
+
+1. **Extract the PDF** from the upload branch:
+   `git show origin/claude/upload-bib-papers-<date>:uploads/<file> > /tmp/<id>.pdf`.
+2. **Read the title page** (`pdftotext -layout -f 1 -l 1`) — confirm
+   the local PDF matches the `references.ts` entry's `title`.
+3. **Read the section list** (`pdftotext -layout` + grep for
+   `^[0-9]+\.\s+[A-Z]` or `^Section`) — identify the chapters /
+   subsections cited in QOU.
+4. **For each citation site** (`-- Ref: [<id>]` line in `.lean` or
+   `\cite{<id>}` in `.md`): read the surrounding code/prose to find
+   the specific claim being attributed, then verify the paper covers
+   that claim. Common types:
+     - **Title/scope match**: paper title or §N heading verbatim
+       matches the citation text → verified-clean.
+     - **§N misattribution**: paper has §N but it covers a different
+       topic than the citation says (the boyd §5.5.3 case) → fix the
+       § number in the citation.
+     - **Wrong work**: paper covers a different topic entirely (the
+       leitnerpawloski2004 inner-product case) → flag as partial /
+       paper-mismatch; defer to author judgement.
+5. **Update both**: `content/bib-qa-verifications.json` status +
+   `docs/coordination/<date>-bib-verification-ledger.md` log row.
+6. **Commit** per-paper (granular history); the
+   `local/bib-qa` skill picks up the new status on next `bib-qa.ts`
+   run.
+
+Skill outputs:
+- `bib-qa.json` (gitignored, regenerated via
+  `cd content && bun run pipeline/bib-qa.ts`) carries the
+  `verification` field on each entry, including `status`,
+  `verified_at`, `verified_by`, `fixes_applied`, `fix_commit`, `note`.
+- The `verification_status` QA tag passes for verified-clean /
+  partial / fixed; warns for pending / uncited / unfetchable; fails
+  for paper-mismatch.
