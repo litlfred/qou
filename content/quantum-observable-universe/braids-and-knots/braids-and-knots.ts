@@ -608,9 +608,23 @@ export default chapter({
     }),
 
     // ── Nuclear binding and beta stability ──────────────────────────────
+    // ── Nuclear binding and beta stability (P2 split 2026-05-19,
+    //    phase 1): the paper's largest section (sec:nuclear-binding-
+    //    beta-stability, 134 blocks, 7.4× over the 3-18 band) split
+    //    into 7 topical sub-sections following the substrate-binding
+    //    pedagogy: setup → LP-dual → phi_q/Markov/Schur-Weyl tower →
+    //    GS axiomatic backing → Frobenius nuclear structure →
+    //    Plancherel/alpha/ribbon → alpha_k/Wenzl bridge. The
+    //    existing nuclear-binding-beta-stability-intro stays at the
+    //    top of A as the umbrella narrative for the whole 7-section
+    //    arc. Densities 12/9/18/6/27/18/46. Sections E (27) and G
+    //    (46) remain over the upper bound; phase 2 follow-up will
+    //    apply internal splits to each.
+
+    // §A — Substrate binding setup
     section({
-      title: "Nuclear Binding and Beta Stability",
-      label: "sec:nuclear-binding-beta-stability",
+      title: "Substrate binding setup",
+      label: "sec:substrate-binding-setup",
       blocks: [
         "nuclear-binding-beta-stability-intro",
         "confined-knot-binding",
@@ -624,6 +638,14 @@ export default chapter({
         "wigner-coefficient-derivation",
         "mass-coefficient-shadow-price",
         "frobenius-self-duality-forces-lp-dual-extraction",
+      ],
+    }),
+
+    // §B — LP-dual and Jucys-Murphy central elements
+    section({
+      title: "LP-dual and Jucys-Murphy central elements",
+      label: "sec:lp-dual-jucys-murphy",
+      blocks: [
         "jucys-murphy-central-elements-qou",
         "mass-formula-iterative-lp-dual",
         "alpha-5-jm-central-empirical-findings",
@@ -633,6 +655,14 @@ export default chapter({
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
+      ],
+    }),
+
+    // §C — phi_q resummation, Markov trace, Schur-Weyl tower
+    section({
+      title: "$\\varphi_q$ resummation, Markov trace, and Schur-Weyl tower",
+      label: "sec:phi-q-markov-schur-weyl-tower",
+      blocks: [
         "phi-q-resums-trace-series",
         "markov-axiom-recursive-ascent",
         "per-braid-mass-tower",
@@ -651,6 +681,14 @@ export default chapter({
         "term6-binding-density",
         "full-pole-structure-mass-trace",
         "habiro-residue-sum-equivalence",
+      ],
+    }),
+
+    // §D — Gröbner-Shirshov axiomatic backing
+    section({
+      title: "Gröbner-Shirshov axiomatic backing",
+      label: "sec:gs-axiomatic-backing",
+      blocks: [
         // GAP 13a — explicit conjectures backing GS noncomputable opaque axioms
         "gs-graded-markov-trace-existence",
         "gs-residue-at-root-existence",
@@ -658,6 +696,15 @@ export default chapter({
         "gs-spectral-sum-finite",
         "gs-archimedean-agreement-trace",
         "gs-archimedean-agreement-residue",
+      ],
+    }),
+
+    // §E — Frobenius nuclear structure (PHASE-1: still 27 blocks,
+    //   over band; phase-2 follow-up will split into ~2 sub-sections)
+    section({
+      title: "Frobenius nuclear structure",
+      label: "sec:frobenius-nuclear-structure",
+      blocks: [
         "mn-classical-parity-blind",
         "q-character-closes-parity-gap",
         "frobenius-codim-universal",
@@ -685,6 +732,14 @@ export default chapter({
         "bound-state-frobenius-self-dual-channel",
         "confinement-categorical",
         "exterior-square-borromean",
+      ],
+    }),
+
+    // §F — Plancherel, alpha, ribbon, knot-factor
+    section({
+      title: "Plancherel, $\\alpha$, ribbon, and knot-factor",
+      label: "sec:plancherel-alpha-ribbon",
+      blocks: [
         "alpha-em-categorical-trace",
         "plancherel-term-7-formulation",
         "plancherel-weight-boundedness",
@@ -703,6 +758,17 @@ export default chapter({
         "mass-formula-wedderburn-enumeration",
         "mass-tower-coefficient-stratification",
         "flavor-dressing-functor",
+      ],
+    }),
+
+    // §G — alpha_k derivation, Wenzl bridge, beta stability (PHASE-1:
+    //   still 46 blocks, over band; phase-2 follow-up will split into
+    //   ~3 sub-sections by topic: alpha_k procedure / Wenzl bridge /
+    //   crystal & isospin / beta-stability closure)
+    section({
+      title: "$\\alpha_k$ derivation, Wenzl bridge, and beta stability",
+      label: "sec:alpha-k-wenzl-bridge",
+      blocks: [
         "flavor-dressed-mass-from-substrate-split",
         "flavor-mass-splitting-bound",
         "alpha-k-derivation-procedure",
