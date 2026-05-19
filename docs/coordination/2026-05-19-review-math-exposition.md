@@ -54,6 +54,13 @@ Lean files added under `lean/QOU/CategoricalReeb/`:
 - file overlap with my branch: **0** (verified via `comm -12` against `git diff --name-only`)
 - §8c verdict: > 10 commits but zero overlap → continue, no rebase required, will refresh delta at next triage round
 
+### 2026-05-19 update — PR #816 merged
+
+- PR #816 (averaging-resonance level-selection rule, c_5 outlier) landed as `e949aee4`.
+- File overlap: `braids-and-knots/braids-and-knots.ts` (chapter manifest).
+- Verdict: **additive** — #816 edits at lines 443+ and 880+ (`sec:markov-axioms-braid-link` and `sec:alpha-k-procedure`); my edits at line 188+ (`sec:exceptional-divisor-reeb`). Three-way merge will resolve cleanly.
+- No action required. The earlier intent comment on #816 was dropped at user scope-confirmation time; ask is now moot since #816 merged.
+
 ## Asks open (waiting on author / siblings)
 
 | # | from | ask | dest | answer |
