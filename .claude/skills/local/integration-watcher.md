@@ -475,6 +475,58 @@ The §4 pipeline below handles violation detection; this §3b rule
 governs the disposition of items already in the queue when the
 canonical form arrives.
 
+### 3c. On-new-commit skill-availability detection (MANDATORY)
+
+In addition to the domain trigger filter (Slot B) and the §3a
+derivation-completion check, every watcher must check whether the
+incoming commit (or batch of commits in the unreviewed range
+since the last main-refresh) **added a new skill file** under
+`.claude/skills/`:
+
+```bash
+SHA_RANGE="<LAST_REVIEWED>..<NEW_SHA>"
+git diff --name-only --diff-filter=A "$SHA_RANGE" \
+  -- '.claude/skills/local/*.md' '.claude/skills/*/*.md'
+```
+
+For each new skill file:
+
+1. **Read the frontmatter** — extract `name`, `roles`, `description`,
+   `inherits`.
+2. **Decide relevance** to this watcher's domain (Slot A goal). A
+   new skill is relevant when:
+   - Its `description` mentions a file kind / pattern this watcher
+     audits (e.g. for `proof-integration-watcher`: keywords like
+     "sorry" / "proof" / "axiom"; for `compute-integration-watcher`:
+     "wiring" / "witness" / "probe"; for `one-voice-integration-
+     watcher`: "voice" / "scholarly" / "fit"), OR
+   - It is a sibling integration-watcher child (`inherits:
+     local/integration-watcher`) that could be added to the
+     dispatcher's routing, OR
+   - It provides a new specialist this watcher could dispatch via
+     Slot C (e.g. a new audit script the QA pipeline could invoke).
+3. **Surface to the user via `AskUserQuestion`** with 3 chips per
+   `local/watch.md §3.Q3a`:
+   - `Adopt now` — invoke the skill on this branch's relevant subset
+   - `Defer to follow-up branch` — record + skip
+   - `Not relevant` — record so re-prompt is suppressed
+4. **Record the decision in the watcher's ledger**
+   (`todos/${NAME}-ledger.md`) under a `### New skills` subsection
+   so future sessions don't re-prompt for the same skill.
+
+This rule applies to skill files only (`.claude/skills/local/*.md`
+and `.claude/skills/<pkg>/*.md`). Skills landing on sibling PRs
+that haven't merged yet do NOT trigger this check — only `main`
+commits count, mirroring §2 "watch origin/main" scope.
+
+**Why this matters**: when a new audit watcher or QA pipeline lands
+on main (like `one-voice-integration-watcher` or the per-block
+`<block>.qa.json` sidecar pattern), every in-flight integration-
+watcher PR should know it's available so the user can opt in
+proactively rather than waiting for someone to manually announce
+the addition. Sibling-PR review churn is the most expensive
+consequence of a missed skill adoption.
+
 ## 4. Per-event QA pipeline
 
 When the trigger filter passes, fan out to the domain specialists

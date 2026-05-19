@@ -202,6 +202,58 @@ Apply the four reuse questions from `prepare-merge.md §2a`:
      (WIRED / PROBE-ONLY / NOT-WIRED) plus a concrete fix
      recommendation. Capture the verdict here and feed it into Q4.
 
+### Q3a — Did upstream land a new skill file?
+
+For each main-refresh, check whether `.claude/skills/local/*.md` (or
+`.claude/skills/<pkg>/*.md`) gained a new file between this branch's
+prior baseline and the new `origin/main`:
+
+```bash
+git diff --name-only --diff-filter=A "$LAST_BASE..origin/main" \
+  -- '.claude/skills/local/*.md' '.claude/skills/*/*.md'
+```
+
+For each new skill file:
+
+1. **Read its frontmatter** — extract `name`, `roles`, `description`,
+   and any `inherits` field.
+2. **Match against branch scope** — does the skill's description
+   overlap with what this branch is doing? Heuristics:
+   - skill description mentions a file kind / domain / pattern
+     that appears in this branch's `git diff origin/main..HEAD
+     --name-only`, OR
+   - skill is a new integration-watcher child (`inherits:
+     local/integration-watcher`) and your branch is itself an
+     integration-watcher PR, OR
+   - skill is a content-block QA skill (e.g. `one-voice-*`,
+     `proof-*`, `compute-*`) and your branch touches `.md` /
+     `.ts` / `.lean` content blocks.
+3. **Surface to the user via `AskUserQuestion`** with the standard
+   3-chip pattern:
+
+   > New skill `<name>` landed on main:
+   > > `<one-line description from frontmatter>`
+   >
+   > This branch's scope overlaps because `<one-line match
+   > rationale + file paths>`.
+   >
+   > 1) **Adopt now** — invoke the skill on the relevant subset of
+   >    this branch's diff before continuing.
+   > 2) **Defer to follow-up branch** — record the decision and
+   >    note for the next branch; don't change this branch.
+   > 3) **Not relevant** — record so the watcher doesn't re-prompt
+   >    on future main-refreshes.
+
+4. **Record the decision** in the watcher's ledger
+   (`todos/<watcher-name>-ledger.md` for integration-watcher
+   children, or chat-only for the bare `/watch` flow) so subsequent
+   main-refreshes don't re-prompt for the same skill.
+
+This rule applies to **skill files only** (`.claude/skills/local/*.md`
+and `.claude/skills/<pkg>/*.md`). Skills landing on sibling PRs that
+haven't merged yet do NOT trigger this check — only `main` commits
+count, mirroring the §2 "watch origin/main" scope.
+
 ### Q4 — Report or act?
 
 - **Acted** (made the change):  one-line summary + the new commit SHA.
