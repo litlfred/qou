@@ -18,8 +18,17 @@ namespace QOU.WedderburnMass
 /-- Abstract context for the `exterior_square_borromean` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class ExteriorSquareBorromeanContext extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_exterior_square_borromean : Prop
+  /-- Dimension of `Λ² V_nat`. -/
+  dim_ext_sq : ℕ
+  /-- Dimension of the standard irrep `V_{(9,1)}`. -/
+  dim_V_9_1 : ℕ
+  /-- Dimension of the hook irrep `V_{(8,1,1)}`. -/
+  dim_V_8_1_1 : ℕ
+  /-- Manuscript identity: `dim Λ² V_nat = 45 = dim V_{(9,1)} +
+      dim V_{(8,1,1)}` with `9 + 36 = 45`. -/
+  claim_exterior_square_borromean :
+    dim_ext_sq = 45 ∧ dim_V_9_1 = 9 ∧ dim_V_8_1_1 = 36 ∧
+    dim_ext_sq = dim_V_9_1 + dim_V_8_1_1
 /-- **Proposition statement** (from manuscript):
 
 Let $V_{\mathrm{nat}} = \mathbb{C}^{10}$ be the natural permutation
@@ -31,6 +40,9 @@ acting via the standard projection).  Then the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
-theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] : ctx.claim_exterior_square_borromean := ctx.claim_exterior_square_borromean
+theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] :
+    ctx.dim_ext_sq = 45 ∧ ctx.dim_V_9_1 = 9 ∧ ctx.dim_V_8_1_1 = 36 ∧
+    ctx.dim_ext_sq = ctx.dim_V_9_1 + ctx.dim_V_8_1_1 :=
+  ctx.claim_exterior_square_borromean
 
 end QOU.WedderburnMass

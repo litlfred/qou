@@ -18,8 +18,14 @@ namespace QOU.WedderburnMass
 /-- Abstract context for the `curvature_rank_gb_stratification` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class CurvatureRankGbStratificationContext extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_curvature_rank_gb_stratification : Prop
+  /-- Curvature-rank `r(T_w) ∈ ℕ` of a basis element. -/
+  rank_T_w : A → ℕ
+  /-- GB-filtration quotient `J^r / J^{r+1}` at rank `r`. -/
+  quotient_set : ℕ → Set A
+  /-- Manuscript boxed identity: the quotient at rank `r` is exactly
+      `{T_w : rank(T_w) = r}`. -/
+  claim_curvature_rank_gb_stratification :
+    ∀ r : ℕ, quotient_set r = {T_w : A | rank_T_w T_w = r}
 /-- **Proposition statement** (from manuscript):
 
 The curvature-rank stratifies the GB filtration:*
@@ -49,6 +55,8 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
-theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] : ctx.claim_curvature_rank_gb_stratification := ctx.claim_curvature_rank_gb_stratification
+theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] :
+    ∀ r : ℕ, ctx.quotient_set r = {T_w : ctx.A | ctx.rank_T_w T_w = r} :=
+  ctx.claim_curvature_rank_gb_stratification
 
 end QOU.WedderburnMass

@@ -19,8 +19,15 @@ namespace QOU.Brings
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class CoralEllipticContext extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_coral_elliptic : Prop
+  /-- Real specialisation of `z = x_0/x_1`. -/
+  z : ℝ
+  /-- Coral variable `X` (one of the three roots `x_2, x_3, x_4`). -/
+  X : ℝ
+  /-- Manuscript identity (coral-elliptic cubic):
+      `X³ + (z + 1)X² + (z² + z + 1)X + (z³ + z² + z + 1) = 0`. -/
+  claim_coral_elliptic :
+    X ^ 3 + (z + 1) * X ^ 2 + (z ^ 2 + z + 1) * X +
+      (z ^ 3 + z ^ 2 + z + 1) = 0
 /-- **Content statement** (from manuscript):
 
 Let $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$ be the projective spacetime ratio
@@ -38,6 +45,10 @@ each fixed $z$ to the cubic
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/coral-elliptic.ts
-theorem coral_elliptic [ctx : CoralEllipticContext] : ctx.claim_coral_elliptic := ctx.claim_coral_elliptic
+theorem coral_elliptic [ctx : CoralEllipticContext] :
+    ctx.X ^ 3 + (ctx.z + 1) * ctx.X ^ 2 +
+      (ctx.z ^ 2 + ctx.z + 1) * ctx.X +
+      (ctx.z ^ 3 + ctx.z ^ 2 + ctx.z + 1) = 0 :=
+  ctx.claim_coral_elliptic
 
 end QOU.Brings
