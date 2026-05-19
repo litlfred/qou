@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:centered-hecke-variance-positive",
   title:
     "Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime",
+  lean: { ref: "qou:QOU.Observations.centered_hecke_variance_positive", validation: "not_checked" },
   uses: [
     "thm:jones-markov-trace",
     "rem:non-commutative-probability-dictionary",

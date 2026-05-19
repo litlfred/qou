@@ -4,6 +4,7 @@ export default proposition({
   label: "prop:brane-tower-q-laplacian-decay",
   title:
     "Brane-tower convergence: q-Laplacian exponential decay drives the $\\hbar_q^{2n}$ tail bound",
+  lean: { ref: "qou:QOU.Observations.brane_tower_q_laplacian_decay", validation: "not_checked" },
   uses: [
     "rem:non-commutative-probability-dictionary",
     "thm:jones-markov-trace",
