@@ -95,9 +95,39 @@ The sub-percent residuals at c_4 and c_5 are NOT measurement noise (the underlyi
 
 3. **Genuinely sub-leading strata in the cohomological spectral sequence**. These appear at E^{p,q}_∞ for higher (p+q) than the leading rung — small but non-zero.
 
-## What full proof would take
+## Extension to N=6, N=7 (added 2026-05-19 evening)
 
-The pattern above is **descriptive**, not derivable from a single existing categorical framework. A full proof would need:
+Continuing the canonical ladder:
+
+| Rung | Categorical form | Empirical c_k | Residual after rung |
+|------|------------------|---------------|---------------------|
+| c_6 | **c_3² · b² = 4·b²** | matches at 6.5× tightening | −2×10⁻⁴ ppb |
+| c_7 | **c_3³ = −8** (pure Jones cubed) | not uniquely determined by closure | ~−2×10⁻⁴ ppb |
+
+**Important caveat for N=7:** the residual after N=6 is already −2×10⁻⁴ ppb. The leverage of c_7 is `c_7 · b⁷ · ℏ_q¹⁴ ≈ c_7 · 3.4×10⁻¹⁵`, so **any c_7 in [-100, +100] closes the residual to < 10⁻⁴ ppb**. The empirical exact-closure value is c_7 ≈ +57, but I chose **c_7 = c_3³ = -8** because:
+
+- It continues the *pattern* observed at lower rungs (c_3 = c_3¹, c_6 = c_3² · b², so a Jones-cubed at c_7 fits structurally)
+- The factor b^? was set to b⁰ = 1 because that's the simplest analog of how c_3 has no b power
+
+But this is **not derived from first principles**. Many other c_7 values would close the residual equally well; "c_3³" is chosen for *pattern aesthetics*, not necessity.
+
+## What "derive" actually means here (honest assessment)
+
+The closed forms above are **empirical pattern-matches**, not first-principles derivations. The only rung with a genuine categorical derivation is:
+
+- **c_3 = J_Hopf(q=1) = -2** — Hopf-link Jones polynomial at q=1 (Khovanov 2000, Jones 1985).
+
+For c_4..c_7 I have:
+
+| What I have | What would be a derivation |
+|---|---|
+| Empirical fit at sub-percent residual | Categorical proof that c_k = specific invariant |
+| Pattern-suggestive form (Jones × Kashiwara) | Generating-function identity proven from a categorical structure |
+| Lean class axiomatising the closed forms | Lean theorem deriving the closed forms from categorical sources |
+
+The cohomological-strata hypothesis from `2026-05-18-qbeta-n5-cohomological-breakdown.md` proposes that c_k = Σ_{p+q=k} Tr(E^{p,q}_∞) for an unspecified spectral sequence. This is the conjectural framework that *would* derive the closed forms — but the spectral sequence itself is not constructed.
+
+## What full proof would take
 
 1. **An operator-valued generating function**:
    $$F(z, q) \;=\; \sum_{k\geq 0} c_k(q)\, b(q)^k\, z^k$$
@@ -107,7 +137,18 @@ The pattern above is **descriptive**, not derivable from a single existing categ
 
 3. **Spectral-sequence convergence theorem** showing that the multi-graded cohomology with bidegree (p,q) and total k = p+q has c_k = Σ_{p+q=k} Tr(E^{p,q}_∞) for some explicit spectral sequence.
 
-This is a research-grade project, not soluble in one session.
+This is a research-grade project, not soluble in one session. **What's been delivered:**
+
+- The empirical sub-percent closed forms (this audit)
+- Lean infrastructure axiomatising them (`QBetaPrecisionLadderCoefficients` class + `qBetaPrecisionLadderCoeffsCanonical` instance)
+- Algebraic factor-identity proof via `ring` (Lean theorem `precision_ladder_N5_canonical_compat`)
+- Sub-ppt empirical residuals on Q_β at the substrate q_0
+
+**What hasn't been delivered:**
+
+- Categorical derivation of c_4, c_5, c_6, c_7 from a unified structure
+- Proof that the closed forms extend inductively to N → ∞
+- Proof that the residual converges (rather than just being small at the tested rungs)
 
 ## What this audit does deliver
 

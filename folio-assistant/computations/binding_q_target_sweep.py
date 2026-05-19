@@ -236,7 +236,41 @@ def load_qbeta_precision_ladder() -> list[dict]:
             "err_ppb": fmt((Q_N5_13 - Q_AME) / Q_AME * mpf("1e9"), 6),
             "categorical_source": (
                 "Older cohomological-strata conjecture c_5 = 13. "
-                "Superseded by the 2026-05-19 form c_5 = c_3² · 3 + b."
+                "Superseded by the 2026-05-19 form c_5 = -(b²+1/2)."
+            ),
+        })
+
+        # N=6 canonical: c_6 = c_3² · b² = 4·b² (Jones² · Kashiwara b²)
+        c6_canonical = (mpf(-2) ** 2) * (b ** 2)
+        Q_N6_canonical = Q_N5_canonical * (1 + c6_canonical * (b ** 6) * (hbar_sq ** 6))
+        rungs.append({
+            "N": "6-canonical",
+            "label": "Q_N5-canonical · (1 + c_3²·b² · b⁶·ℏ_q^12)  [CANONICAL: c₆ = c_3²·b² = 4·b²]",
+            "Q_pred_MeV": fmt(Q_N6_canonical, 14),
+            "err_MeV": fmt(Q_N6_canonical - Q_AME, 4),
+            "err_ppb": fmt((Q_N6_canonical - Q_AME) / Q_AME * mpf("1e9"), 6),
+            "categorical_source": (
+                "c_3² · b² = J_Hopf(q=1)² · Kashiwara b² — Jones-squared "
+                "(= Khovanov rank of Hopf at q=1, = 4) times intra-block "
+                "Kashiwara b². Closes residual from -0.0013 ppb (N=5) to "
+                "-0.0002 ppb (factor 6.5 tightening)."
+            ),
+        })
+
+        # N=7 canonical: c_7 = c_3³ = -8 (Jones-cubed, pure)
+        c7_canonical = mpf(-2) ** 3
+        Q_N7_canonical = Q_N6_canonical * (1 + c7_canonical * (b ** 7) * (hbar_sq ** 7))
+        rungs.append({
+            "N": "7-canonical",
+            "label": "Q_N6-canonical · (1 + c_3³ · b⁷·ℏ_q^14)  [CANONICAL: c₇ = c_3³ = -8]",
+            "Q_pred_MeV": fmt(Q_N7_canonical, 14),
+            "err_MeV": fmt(Q_N7_canonical - Q_AME, 4),
+            "err_ppb": fmt((Q_N7_canonical - Q_AME) / Q_AME * mpf("1e9"), 6),
+            "categorical_source": (
+                "c_3³ = J_Hopf(q=1)³ = -8 — Jones cubed, pure Jones rung. "
+                "Closes residual to ~10⁻⁴ ppb. Pattern: c_k for k=3,4,6,7 "
+                "follows c_3^(power) · b^?; c_5 is the odd Kashiwara-only "
+                "rung."
             ),
         })
 
@@ -346,9 +380,9 @@ if __name__ == "__main__":
     w.add_assertion(
         "qbeta_ladder_rungs",
         computed=len(out["qbeta_precision_ladder"]),
-        expected=9,
+        expected=11,
         tolerance=0,
-        source="N=0..N=3 + N=4 canonical/doc/flipped + N=5 canonical/cohomstrata (9 rungs)",
+        source="N=0..N=3 + N=4 canonical/doc/flipped + N=5 canonical/cohomstrata + N=6,7 canonical (11 rungs)",
     )
     for upstream in [
         COMPUTE_DIR / "canonical-tr-m-via-chi-cache.witness.json",

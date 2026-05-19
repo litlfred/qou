@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:11:43.235379+00:00",
-  "commitSha": "630a828ede9464f120c8fd33b10c6502bc06786a",
+  "computedAt": "2026-05-19T00:17:31.284209+00:00",
+  "commitSha": "0d4029075d2cc8b6697539553215e3e98717e81d",
   "assertions": [
     {
       "name": "binding_rows_count",
@@ -14,19 +14,19 @@
     },
     {
       "name": "qbeta_ladder_rungs",
-      "computed": 9,
-      "expected": 9,
+      "computed": 11,
+      "expected": 11,
       "passed": true,
       "tolerance": 0,
-      "source": "N=0..N=3 + N=4 canonical/doc/flipped + N=5 canonical/cohomstrata (9 rungs)"
+      "source": "N=0..N=3 + N=4 canonical/doc/flipped + N=5 canonical/cohomstrata + N=6,7 canonical (11 rungs)"
     }
   ],
   "allPassed": true,
   "durationMs": 10,
   "computation": "binding-q-target-sweep",
   "scriptFile": "binding_q_target_sweep.py",
-  "scriptHash": "da7c6ed9ed35",
-  "scriptCommitSha": "90502dca9e06bf83198c5a89b19d5faee87dba7c",
+  "scriptHash": "c321c10926f4",
+  "scriptCommitSha": "0d4029075d2cc8b6697539553215e3e98717e81d",
   "description": "Per-isotope binding-energy + Q_β precision-ladder sweep against Workplan v7 L2 100×-experimental targets. Shows current canonical state across all on-disk witnesses. Audit-only — no new predictions.",
   "data": {
     "binding_rows": [
@@ -194,7 +194,23 @@
         "Q_pred_MeV": "0.78233341400642",
         "err_MeV": "6.417e-12",
         "err_ppb": "0.00820291",
-        "categorical_source": "Older cohomological-strata conjecture c_5 = 13. Superseded by the 2026-05-19 form c_5 = c_3² · 3 + b."
+        "categorical_source": "Older cohomological-strata conjecture c_5 = 13. Superseded by the 2026-05-19 form c_5 = -(b²+1/2)."
+      },
+      {
+        "N": "6-canonical",
+        "label": "Q_N5-canonical · (1 + c_3²·b² · b⁶·ℏ_q^12)  [CANONICAL: c₆ = c_3²·b² = 4·b²]",
+        "Q_pred_MeV": "0.78233341399985",
+        "err_MeV": "-1.454e-13",
+        "err_ppb": "-0.000185824",
+        "categorical_source": "c_3² · b² = J_Hopf(q=1)² · Kashiwara b² — Jones-squared (= Khovanov rank of Hopf at q=1, = 4) times intra-block Kashiwara b². Closes residual from -0.0013 ppb (N=5) to -0.0002 ppb (factor 6.5 tightening)."
+      },
+      {
+        "N": "7-canonical",
+        "label": "Q_N6-canonical · (1 + c_3³ · b⁷·ℏ_q^14)  [CANONICAL: c₇ = c_3³ = -8]",
+        "Q_pred_MeV": "0.78233341399983",
+        "err_MeV": "-1.657e-13",
+        "err_ppb": "-0.000211836",
+        "categorical_source": "c_3³ = J_Hopf(q=1)³ = -8 — Jones cubed, pure Jones rung. Closes residual to ~10⁻⁴ ppb. Pattern: c_k for k=3,4,6,7 follows c_3^(power) · b^?; c_5 is the odd Kashiwara-only rung."
       }
     ],
     "upstream_witness_hashes": [

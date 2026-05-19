@@ -223,6 +223,13 @@ class QBetaPrecisionLadderCoefficients where
   c_4_eq : ∀ q, c_k_at_q 4 q = jonesHopfClassicalLimit * (hoefsmitB q)^4
   /-- N=5: c_5 = −(b² + 1/2) (Kashiwara b² + Hopf-half offset; sub-ppt residual). -/
   c_5_eq : ∀ q, c_k_at_q 5 q = -(hoefsmitB q)^2 - 1/2
+  /-- N=6: c_6 = c_3² · b² = 4·b² (Jones-squared × Kashiwara b²; closes
+      6.5× tighter than N=5). EMPIRICAL FIT — not derived. -/
+  c_6_eq : ∀ q, c_k_at_q 6 q = jonesHopfClassicalLimit^2 * (hoefsmitB q)^2
+  /-- N=7: c_7 = c_3³ = −8 (Jones cubed). Residual leverage is so small
+      at N=7 (10⁻¹⁵ scale) that many c_7 values give acceptable closure;
+      this form is chosen for pattern aesthetics, not derivation. -/
+  c_7_eq : ∀ q, c_k_at_q 7 q = jonesHopfClassicalLimit^3
 
 /-- **Canonical instance of `QBetaPrecisionLadderCoefficients`** with
     the closed forms from the 2026-05-19 audit. -/
@@ -234,11 +241,15 @@ noncomputable instance qBetaPrecisionLadderCoeffsCanonical :
     | 3 => jonesHopfClassicalLimit
     | 4 => jonesHopfClassicalLimit * (hoefsmitB q)^4
     | 5 => -(hoefsmitB q)^2 - 1/2
+    | 6 => jonesHopfClassicalLimit^2 * (hoefsmitB q)^2
+    | 7 => jonesHopfClassicalLimit^3
     | _ => 0  -- higher rungs not yet pinned
   c_2_eq := fun _ => rfl
   c_3_eq := fun _ => rfl
   c_4_eq := fun _ => rfl
   c_5_eq := fun _ => rfl
+  c_6_eq := fun _ => rfl
+  c_7_eq := fun _ => rfl
 
 /-- N=k factor under the categorical-coefficient class, for k ≥ 2. -/
 noncomputable def Nk_factor [QBetaPrecisionLadderCoefficients] (k : ℕ) (q : ℝ) : ℝ :=
