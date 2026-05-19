@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:54:26.796577+00:00",
-  "commitSha": "da35531582023051bf1c4e0dbc2a5ccaa2a6bf51",
+  "computedAt": "2026-05-19T17:58:15.084473+00:00",
+  "commitSha": "c4b9049cf0e3a4a15df32c6f58347683e7fff6b2",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 513,
-      "wired": 60,
+      "i1_no_probe": 512,
+      "wired": 61,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -1285,9 +1285,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "hoefsmit-seminormal-form-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts",

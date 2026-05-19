@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:54:26.167287+00:00",
-  "commitSha": "da35531582023051bf1c4e0dbc2a5ccaa2a6bf51",
+  "computedAt": "2026-05-19T17:58:14.580037+00:00",
+  "commitSha": "c4b9049cf0e3a4a15df32c6f58347683e7fff6b2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2357,6 +2357,7 @@
         "hecke-markov-transition-probe.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
+        "hoefsmit-seminormal-form-probe.witness.json",
         "hopf-jones-c3-categorical.witness.json",
         "hopf-markov-trace-genuine.witness.json",
         "hydrogen-qshuffle-compound.witness.json",
