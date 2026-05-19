@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:14:14.093521+00:00",
-  "commitSha": "fe179a807a3198e318421e52778a4e30a8f4897a",
+  "computedAt": "2026-05-19T03:28:28.957565+00:00",
+  "commitSha": "2d252e4eef35a653eaa42a3b757a6793947e1978",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -35,12 +35,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 519,
-      "prov_ok": 375,
+      "total_scanned": 541,
+      "prov_ok": 397,
       "prov_audit_exempt": 30,
       "prov_missing": 114,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.7803468208092486
+      "completeness_ratio": 0.789279112754159
     },
     "by_verdict": {
       "PROV_OK": [
@@ -238,6 +238,94 @@
         },
         {
           "witness": "canonical-chi-rust-vs-sympy.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z00.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z01.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z02.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z03.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z04.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z05.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z06.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z07.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z08.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z09.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z10.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z11.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z12.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z13.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z14.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z15.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z16.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z17.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z18.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z19.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-Z20.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-isotope-witness-index.witness.json",
           "missing_fields": []
         },
         {
