@@ -85,6 +85,15 @@ def _fmt(v, fmt: str = "{:.4f}") -> str:
         return "—"
 
 
+_STATUS_BADGES = {
+    "canonical-substrate": "🟢 substrate",
+    "canonical-with-empirical-assignment": "🟡 +empirical-(K,ρ)",
+    "canonical-recursive": "🟢 recursive",
+    "heuristic": "🟠 heuristic",
+    "pending": "⚪ pending",
+}
+
+
 def render_row(r: dict) -> str:
     """One markdown table row for an isotope."""
     A = r["A"]
@@ -96,6 +105,8 @@ def render_row(r: dict) -> str:
     else:
         label = f"${{}}^{{{A}}}${element}"
     layer = r.get("layer", "—")
+    status_raw = r.get("canonical_status", "pending")
+    status = _STATUS_BADGES.get(status_raw, status_raw)
     ptype = r.get("prediction_type", "—")
     pred = _fmt(r.get("prediction_MeV_50dps"))
     ref = _fmt(r.get("reference_MeV_50dps"))
@@ -112,7 +123,7 @@ def render_row(r: dict) -> str:
         f"{cm_pred} MeV ({cm_ppm} ppm)" if cm_pred != "—" else "—"
     )
     return (
-        f"| {label} | {r['A']} | {r['N']} | {layer} | {ptype} "
+        f"| {label} | {r['A']} | {r['N']} | {layer} | {status} | {ptype} "
         f"| {pred} | {ref} | {err_cell} | {cm_cell} |"
     )
 
@@ -137,8 +148,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\\text{composite}}$ |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\\text{composite}}$ |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
