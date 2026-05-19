@@ -39,8 +39,15 @@ condition $[\hat X,\hat P]_q = J\hbar_q$
 **Two-strand localisation.**  When a braid generator acts on only
 a pair of adjacent strands, the flow restricts to the two
 participating sectors: the third sector remains a spectator with
-$\dot\psi = 0$.  This localisation is the geometric content of the
-Hecke generator $\sigma_i$ acting nontrivially only on strands $i$
-and $i+1$, and is the bridge between the algebraic braid action
-and the explicit ODE on coral-sector coordinates exploited in
+$\dot\psi = 0$.  Concretely, the Lean class
+`QOU.CategoricalReeb.QReebFlowOnCoralCoords` carries one field
+`flow_active` saying that active sectors advance at rate $q$ and
+one field `flow_spectator` saying that spectator sectors are
+stationary; the active/spectator status is a `Bool` argument
+encoding the sector's participation in the current braid
+generator's two-strand subsystem.  This is the geometric content
+of the Hecke generator $\sigma_i$ acting nontrivially only on
+strands $i$ and $i+1$, and is the bridge between the algebraic
+braid action and the explicit ODE on coral-sector coordinates
+exploited in
 [six canonical knot operators](#prop:six-canonical-knot-operators).

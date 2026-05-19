@@ -8,7 +8,6 @@ volume → generating-function PDE solutions in the Habiro ring.
 **Started:** 2026-05-19. **Branch:** `claude/review-math-exposition-03e6H`.
 **PR:** [#832](https://github.com/litlfred/qou/pull/832) (opened from the
 Claude Code UI after the first coordination round).
-**Plan file:** `/root/.claude/plans/see-the-discussion-below-review-tranquil-feigenbaum.md`.
 
 ---
 
