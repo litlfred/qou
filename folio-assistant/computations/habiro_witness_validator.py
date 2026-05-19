@@ -205,7 +205,7 @@ def main() -> int:
         "scriptFile": "habiro_witness_validator.py",
         "commitSha": _git_head_sha(),
     }
-    builder.save(extra=extra)
+    out_path = builder.save(extra=extra)
 
     # Console summary
     status = "PASS" if overall_pass else "FAIL"
@@ -217,7 +217,7 @@ def main() -> int:
         recon = "exact" if r.get("exact_reconstruction") else "INCOMPLETE"
         print(f"  {atom:>24}  {n_passed}/{n_checks} divisibility   reconstruction: {recon}")
 
-    print(f"Wrote {OUTPUT_WITNESS}")
+    print(f"Wrote {out_path}")
     return 0 if overall_pass else 2
 
 

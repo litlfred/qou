@@ -34,7 +34,9 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from mpmath import mp  # noqa: E402
 
 
 def main() -> int:
@@ -52,35 +54,22 @@ def main() -> int:
     # PR #818).
     q_0 = sp.Float(Q_50_DIGIT_STR, 50)
 
-    # Single-component figure-eight characters (computed in
-    # knot_factor_amphicheiral_BD_probe.py and verified on
-    # PR #815):
-    #   χ_(3)(β_{4_1})       = +1
-    #   χ_(2,1)(β_{4_1})     = q - q⁻¹ - … (simplifies symbolically;
-    #                          numerically  -1 at q_0)
-    #   χ_(1,1,1)(β_{4_1})   = +1
-    chi_3_single = sp.Integer(1)
-    chi_alt_single = sp.Integer(1)
-    # The (2,1) character symbolic value, parameterised
-    # (matches the BD probe's matrix trace).  Hoefsmit (2,1)
-    # construction — TODO: centralise this in a shared utility
-    # module per Gemini's review on PR #818 (follow-up work; the
-    # entire probe series would migrate together).
-    qi = 1 / q
-    M1 = sp.Matrix([[q, 0], [0, -qi]])
-    d1 = q ** 3 / (q ** 2 + 1)
-    d2 = -1 / (q * (q ** 2 + 1))
-    # sp.cancel is preferred over sp.simplify for rational
-    # expressions (per Gemini review on PR #818 — faster, same
-    # result for our use).
-    b_sq = sp.cancel(d1 * d2 + 1)
-    b_offdiag = sp.sqrt(b_sq)
-    M2 = sp.Matrix([[d1, b_offdiag], [b_offdiag, d2]])
-    M1_inv = M1.inv()
-    M2_inv = M2.inv()
-    beta_single = M1 * M2_inv * M1 * M2_inv
-    chi_21_single_sym = sp.cancel(beta_single.trace())
-    chi_21_single_num = float(sp.N(chi_21_single_sym.subs(q, q_0), 30))
+    # ── Single-component figure-eight characters (H_3) ──
+    # Computed via the canonical Hoefsmit-seminormal builder
+    # `build_hoefsmit_mpfr` from `probe_staircase_ew_k3_categorical`.
+    # The canonical Hoefsmit matrices satisfy BOTH the Hecke
+    # quadratic AND the braid relation σ_1σ_2σ_1 = σ_2σ_1σ_2.
+    #
+    # NB: an earlier version of this probe (and PR #815's BD probe)
+    # used hand-rolled 2×2 matrices that satisfied the Hecke
+    # quadratic per-generator but NOT the braid relation; their
+    # trace coincidentally evaluated to -1 (a basis-arithmetic
+    # artifact), not the true χ_(2,1)(β_{4_1}).  This is
+    # corrected here: the true value at q_0 is ≈ -0.91068.
+    # The H_6 LR-branching predictions below use this corrected
+    # single-component value and match the H_6 Hoefsmit direct
+    # trace to ~1e-50 precision.
+    mp.dps = 50
 
     # === INDEPENDENT Brunnian-decoupling check via Kronecker ===
     # Per Copilot review on PR #818: the original assertion

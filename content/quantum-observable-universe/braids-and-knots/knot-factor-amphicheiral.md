@@ -61,7 +61,7 @@ ansatz.
 > is empirically inconsistent with the canonical Hoefsmit characters
 > of the figure-eight $\beta = \sigma_1 \sigma_2^{-1} \sigma_1
 > \sigma_2^{-1}$ at $q_0$: the BD probe
-> [`knot-factor-amphicheiral-BD-probe.witness.json`](../../folio-assistant/computations/knot-factor-amphicheiral-BD-probe.witness.json)
+> [`knot-factor-amphicheiral-BD-probe.witness.json`](../../../folio-assistant/computations/knot-factor-amphicheiral-BD-probe.witness.json)
 > reports
 > $\chi_{(1^3)}(\beta) = \chi_{(1^3)}(\beta^*) = +1$
 > (writhe-0, no sign flip), not the predicted $\chi_{(1^3)}(\beta^*)
@@ -74,7 +74,7 @@ ansatz.
 > a Gram-pairing form $a_\mathcal{K} = \mathrm{tr}_M(\beta \cdot
 > \beta^*) / \mathrm{tr}_M(\mathbf{1})$ — is the natural next step
 > and is filed in
-> [`docs/coordination/2026-05-19-i1-hecke-cluster-handover.md`](../../docs/coordination/2026-05-19-i1-hecke-cluster-handover.md)
+> [`docs/coordination/2026-05-19-i1-hecke-cluster-handover.md`](../../../docs/coordination/2026-05-19-i1-hecke-cluster-handover.md)
 > as a deferred follow-up.  This banner stages the issue for the
 > revision and does **not** assert the displayed $a = 1 - h^2$
 > formula is correct or incorrect — empirical agreement with
