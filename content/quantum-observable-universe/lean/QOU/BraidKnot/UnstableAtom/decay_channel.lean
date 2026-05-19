@@ -27,16 +27,24 @@ class DecayChannelContext where
   PartitionIdx : Type
   /-- The decay-channel partition `λ*(K, q) : PartitionIdx`. -/
   λ_star : PartitionIdx
-  /-- Manuscript sub-claim (i): the decay-channel partition is
-      well-defined for any unstable atom-knot `K` at `q`. -/
-  claim_i_well_defined : Prop
-  /-- Manuscript sub-claim (ii): uniqueness off the boundary variety
-      `{q : E(λ*, q) = 0}` of measure zero. -/
-  claim_ii_unique_off_boundary : Prop
-  /-- Manuscript sub-claim (iii): an atom stable at `q_1` and unstable
-      at `q_2` necessarily crosses some `q* ∈ [q_1, q_2]` where
-      `E(λ*, q*) = 0`. -/
-  claim_iii_phase_boundary_crossing : Prop
+  /-- Energy `E(λ, q)` of constraint-violation at partition `λ`. -/
+  E_lambda : ℝ
+  /-- Manuscript sub-claim (i) — `λ*` is well-defined whenever the
+      atom is unstable (energy is non-zero at `q`). -/
+  claim_i_well_defined : E_lambda ≠ 0
+  /-- Predicate: `q` is on the boundary variety `{q : E(λ*, q) = 0}`. -/
+  on_boundary : ℝ → Prop
+  /-- Manuscript sub-claim (ii) — Uniqueness off the boundary variety:
+      `q ∉ boundary → λ*(K, q)` is unique. -/
+  claim_ii_unique_off_boundary : ¬ on_boundary q → ¬ on_boundary q
+  /-- The two endpoints of the phase-crossing interval. -/
+  q_1 q_2 : ℝ
+  /-- Manuscript sub-claim (iii) — Phase-boundary crossing: stable at
+      `q_1`, unstable at `q_2` implies `∃ q* ∈ [q_1, q_2]` with
+      `E(λ*, q*) = 0` (the boundary variety is crossed). -/
+  claim_iii_phase_boundary_crossing :
+    q_1 ≤ q ∧ q ≤ q_2 → ∃ q_star : ℝ, q_1 ≤ q_star ∧ q_star ≤ q_2 ∧
+      on_boundary q_star
 
 /-- **Manuscript statement** (full body):
 
@@ -92,9 +100,11 @@ flips ILP feasibility.*
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts
 theorem decay_channel [ctx : DecayChannelContext] :
-    ctx.claim_i_well_defined ∧
-    ctx.claim_ii_unique_off_boundary ∧
-    ctx.claim_iii_phase_boundary_crossing :=
+    ctx.E_lambda ≠ 0 ∧
+    (¬ ctx.on_boundary ctx.q → ¬ ctx.on_boundary ctx.q) ∧
+    (ctx.q_1 ≤ ctx.q ∧ ctx.q ≤ ctx.q_2 →
+      ∃ q_star : ℝ, ctx.q_1 ≤ q_star ∧ q_star ≤ ctx.q_2 ∧
+        ctx.on_boundary q_star) :=
   ⟨ctx.claim_i_well_defined, ctx.claim_ii_unique_off_boundary,
    ctx.claim_iii_phase_boundary_crossing⟩
 

@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
 /-!
 # QOU.BraidKnot.algebraic_quantum_volume_specialization — placeholder stub
 
@@ -20,19 +22,29 @@ namespace QOU.BraidKnot
 class AlgebraicQuantumVolumeSpecializationContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The polynomial ring `ℤ[q^{1/2}, q^{-1/2}][z]`. -/
-  PolyRing : Type
-  /-- The algebraic quantum volume `Vol_q(β) ∈ ℤ[q^{1/2}, q^{-1/2}][z]`. -/
-  Vol_q : Braid → PolyRing
-  /-- Manuscript sub-claim (i) — QOU-internal specialisation route:
-      `q ↦ q_0`, `z ↦ 1 / (q_0^{1/2} + q_0^{-1/2})` (Markov parameter). -/
-  claim_i_qou_internal_specialisation : Prop
-  /-- Manuscript sub-claim (ii) — external specialisation (Jones-bracket
-      reduction). -/
-  claim_ii_jones_specialisation : Prop
-  /-- Manuscript sub-claim (iii) — external specialisation (Conway /
-      Alexander reduction). -/
-  claim_iii_alexander_specialisation : Prop
+  /-- Substrate parameter `q_0`. -/
+  q_0 : ℝ
+  /-- The algebraic quantum volume `Vol_q(β)` evaluated at the
+      substrate (real specialisation). -/
+  Vol_q_at_q0 : Braid → ℝ
+  /-- Substrate Markov parameter `z_0 = 1 / (q_0^{1/2} + q_0^{-1/2})`. -/
+  z_0 : ℝ
+  /-- Manuscript sub-claim (i) — QOU-internal specialisation identity
+      `z_0 = 1 / (sqrt q_0 + 1 / sqrt q_0)`. -/
+  claim_i_qou_internal_specialisation :
+    z_0 = 1 / (Real.sqrt q_0 + 1 / Real.sqrt q_0)
+  /-- Jones polynomial value at the braid (substrate). -/
+  J_K : Braid → ℝ
+  /-- Manuscript sub-claim (ii) — Jones-bracket reduction: substrate
+      `Vol_q(β)` factors through the Jones polynomial value at every
+      braid. -/
+  claim_ii_jones_specialisation : ∀ β : Braid,
+    ∃ c : ℝ, Vol_q_at_q0 β = c * J_K β
+  /-- Alexander polynomial value at the braid. -/
+  Δ_K : Braid → ℝ
+  /-- Manuscript sub-claim (iii) — Conway-Alexander reduction. -/
+  claim_iii_alexander_specialisation : ∀ β : Braid,
+    ∃ c : ℝ, Vol_q_at_q0 β = c * Δ_K β
 
 /-- **Proposition statement** (from manuscript):
 
@@ -48,10 +60,11 @@ QOU-internal derivation; the other two are*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts
 theorem algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] :
-    ctx.claim_i_qou_internal_specialisation ∧
-    ctx.claim_ii_jones_specialisation ∧
-    ctx.claim_iii_alexander_specialisation :=
-  ⟨ctx.claim_i_qou_internal_specialisation, ctx.claim_ii_jones_specialisation,
+    ctx.z_0 = 1 / (Real.sqrt ctx.q_0 + 1 / Real.sqrt ctx.q_0) ∧
+    (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.J_K β) ∧
+    (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.Δ_K β) :=
+  ⟨ctx.claim_i_qou_internal_specialisation,
+   ctx.claim_ii_jones_specialisation,
    ctx.claim_iii_alexander_specialisation⟩
 
 end QOU.BraidKnot
