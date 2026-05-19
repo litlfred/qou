@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3019f680d36a",
+          "ts": "2de7d10a7660",
+          "lean": "7bcb0fe78f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-observations-N-Z",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:03:58.086Z",
+        "reviewed_sha": "9a3ba3d1b887cd2edd8f04f060b84b7a7bf59a5d",
+        "notes": "default-pass (chapter=observations)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
