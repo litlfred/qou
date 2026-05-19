@@ -38,8 +38,20 @@ export interface CheckerResult {
 }
 
 function readLines(path: string): string[] {
-  if (!existsSync(path)) return [];
-  return readFileSync(path, "utf-8").split("\n");
+  return readSource(path).lines;
+}
+
+/**
+ * Read a file once and return both the whole-file string and the
+ * line array. Centralised so every checker uses the same access
+ * pattern (avoids duplicate `readFileSync` calls + ambiguous
+ * "line vs source" handling). Returns empty when the file is
+ * absent so callers can treat missing input as a pass.
+ */
+function readSource(path: string): { src: string; lines: string[] } {
+  if (!existsSync(path)) return { src: "", lines: [] };
+  const src = readFileSync(path, "utf-8");
+  return { src, lines: src.split("\n") };
 }
 
 function scan(
@@ -328,13 +340,12 @@ const AI_SLOP_FIRST_SECOND_THIRD_RE =
   /\bFirst,\s.*?\bSecond,\s.*?\b(?:Third|Finally),\s/is;
 
 export function checkAiSlop(mdPath: string): CheckerResult {
-  if (!existsSync(mdPath)) return { result: "pass", hits: [] };
-  const src = readFileSync(mdPath, "utf-8");
+  const { src, lines } = readSource(mdPath);
+  if (!src) return { result: "pass", hits: [] };
 
   const hits: CheckerHit[] = [];
 
   // Pass 1 — direct LLM tells (line-by-line so we can cite line).
-  const lines = src.split("\n");
   let inFence = false;
   lines.forEach((l, i) => {
     if (/^```/.test(l.trim())) {
@@ -407,12 +418,15 @@ export function checkScholarlyDefault(
   mdPath: string,
   leanPath: string | undefined,
 ): CheckerResult {
-  if (!existsSync(mdPath)) return { result: "pass", hits: [] };
+  const { lines } = readSource(mdPath);
+  if (lines.length === 0) return { result: "pass", hits: [] };
 
   const hits: CheckerHit[] = [];
 
-  // Scan .md
-  const lines = readLines(mdPath);
+  // Scan .md. Fenced code blocks (```) are skipped via `inFence`;
+  // HTML-style `<!-- ... -->` and inline comments are intentionally
+  // NOT stripped because they render as visible text in the
+  // markdown pipeline (and so are part of paper voice).
   let inFence = false;
   lines.forEach((l, i) => {
     if (/^```/.test(l.trim())) {
