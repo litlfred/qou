@@ -172,6 +172,22 @@ def main() -> int:
     )
     builder.add_parameter("Q_beta_CAL3_MeV", str(E_0_CALIBRATION_MEV))
     builder.add_parameter("m_e_CAL1_MeV", str(M_E_MEV))
+    # MeV-scale provenance (Copilot review #5 on PR #822): the
+    # per-atom B_MeV_first_order / B_MeV_with_t3 fields below use
+    # E_0 = Q_β as the dimensionful conversion (binding-energy
+    # scale, per PR #801 convention). pentagon-reduction-li2q's
+    # witness uses m_e (CAL-1) for B_MeV^(1+T3) on the same
+    # dimensionless number, so the two MeV columns differ by
+    # ~ m_e / E_0 ≈ 0.654× by design. Compare the dimensionless
+    # B_dim_* fields directly across the two witnesses for an
+    # apples-to-apples check.
+    builder.add_parameter("MeV_scale_factor", "E_0=Q_beta_CAL3")
+    builder.add_parameter(
+        "MeV_scale_note",
+        "B_MeV_* fields use Q_beta as the dimensionful scale; "
+        "pentagon-reduction-li2q.witness.json uses m_e. Same B_dim_* "
+        "values, different MeV multipliers by ~m_e/E_0 ≈ 0.654×.",
+    )
 
     q, q_inv, z = load_q_50dps()
     builder.add_parameter("q0_50dps", str(q))

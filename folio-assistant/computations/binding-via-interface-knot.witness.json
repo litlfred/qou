@@ -20,12 +20,14 @@
   "scriptFile": "binding_via_interface_knot.py",
   "scriptHash": "b7fe087f70e9",
   "scriptCommitSha": "fbf55e67a36b12e7c5cbbd23547053951df9e12a",
-  "description": "Categorical binding energy via interface-knot Δ_I^K + Hecke-product constituent vacuum (both in same H_{3A}(q)). First-order (T1+T2) computation with Li_2^q tower; T3 convergence diagnosed but deferred (pair products exceed q_0 ≈ 1.1097 for some H_{3A>3} pairs).",
+  "description": "Categorical binding energy via interface-knot \u0394_I^K + Hecke-product constituent vacuum (both in same H_{3A}(q)). First-order (T1+T2) computation with Li_2^q tower; T3 convergence diagnosed but deferred (pair products exceed q_0 \u2248 1.1097 for some H_{3A>3} pairs).",
   "parameters": {
     "Q_beta_CAL3_MeV": "0.7823334100000222",
     "m_e_CAL1_MeV": "0.51099894999999995182093925905064679682254791259766",
     "q0_50dps": "1.1099785955541805752815940796095093779932822799587",
-    "z_markov_50dps": "0.49932033403359825002066908467672150636931636263446"
+    "z_markov_50dps": "0.49932033403359825002066908467672150636931636263446",
+    "MeV_scale_factor": "E_0=Q_beta_CAL3",
+    "MeV_scale_note": "B_MeV_* fields use Q_beta as the dimensionful scale; pentagon-reduction-li2q.witness.json uses m_e. Same B_dim_* values, different MeV multipliers by ~m_e/E_0 \u2248 0.654\u00d7."
   },
   "data": {
     "per_atom": {
@@ -229,13 +231,13 @@
       "tensor_product_max_over_min": 3.96,
       "tensor_product_sign_correct": false,
       "tensor_product_failure_modes": [
-        "T/³He predicted UNBOUND (wrong sign)",
+        "T/\u00b3He predicted UNBOUND (wrong sign)",
         "Wrong Hecke algebra (independent H_3 instead of common H_{3A})",
-        "No interface knot in baseline (tensor → no inter-block crossing)"
+        "No interface knot in baseline (tensor \u2192 no inter-block crossing)"
       ],
       "this_first_order_max_over_min": 2.6450003486930043,
       "this_first_order_sign_correct": true
     },
-    "verdict": "IMPROVES — max/min^(1) = 2.645, signs correct. Sign-fix versus tensor-product. T3 closure pending."
+    "verdict": "IMPROVES \u2014 max/min^(1) = 2.645, signs correct. T3 now computed via pentagon-reduction (pentagon_reduction_li2q.li_2_q_pentagon); higher-order tower terms beyond T3 still pending."
   }
 }
