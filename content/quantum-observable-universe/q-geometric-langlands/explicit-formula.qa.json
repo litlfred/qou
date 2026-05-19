@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "82d9fed3649a",
+          "ts": "310f4135f0e0",
+          "lean": "a52fd931881d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-q-geometric-langlands",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:55:48.715Z",
+        "reviewed_sha": "266798d26854c203680b782720a8f3aee4e0336d",
+        "notes": "default-pass (agent reviewed at chapter level; chapter=q-geometric-langlands)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
