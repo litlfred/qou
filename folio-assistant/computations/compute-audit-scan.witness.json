@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:14:25.272504+00:00",
-  "commitSha": "196fd730c9c92b94d34221fefe59e35847dc7beb",
+  "computedAt": "2026-05-19T07:16:26.923649+00:00",
+  "commitSha": "93212b6dc9e346221c92f34a214228a13365580b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 605,
+    "files_scanned": 609,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 133,
       "P21": 32,
       "P30": 95,
-      "P31": 25
+      "P31": 26
     },
     "top_files": [
       {
@@ -2934,6 +2934,13 @@
         "line": 187,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P31",
+        "file": "rho_k_co_casimir_extended.py",
+        "line": 174,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",

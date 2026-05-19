@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:14:26.389781+00:00",
-  "commitSha": "196fd730c9c92b94d34221fefe59e35847dc7beb",
+  "computedAt": "2026-05-19T07:16:27.361222+00:00",
+  "commitSha": "93212b6dc9e346221c92f34a214228a13365580b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
+  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2079,6 +2079,7 @@
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
         "binding-q-target-sweep.witness.json",
+        "binding-via-interface-knot.witness.json",
         "borromean-axial-coupling.witness.json",
         "braid-encoding-audit.witness.json",
         "branch-phase-fit-to-mass-tower.witness.json",
@@ -2470,6 +2471,7 @@
         "path-b-habiro-mass-probe.witness.json",
         "path-b-open-questions.witness.json",
         "path4-rho-K-at-h3A.witness.json",
+        "pentagon-reduction-li2q.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",
         "per-irrep-pole-atom-crystal.witness.json",
@@ -2593,6 +2595,7 @@
         "residue-algebraic-verification.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
+        "rho-k-co-casimir-extended.witness.json",
         "rho-k-full-via-wenzl-lr.witness.json",
         "rho-k-h3a-co-casimir.witness.json",
         "rho-k-h3a-crystal.witness.json",
@@ -2666,6 +2669,7 @@
         "wall-violations.witness.json",
         "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
+        "weight-factor-audit.witness.json",
         "witness-provenance-audit.witness.json",
         "witness-reproducibility-check.witness.json",
         "workplan-0b-mn-routes-b-c.witness.json",
