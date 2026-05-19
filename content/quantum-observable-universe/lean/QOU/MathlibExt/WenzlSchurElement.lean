@@ -67,7 +67,7 @@ suffices for the macdonald hook telescope identity. -/
     Encodes `Q^{n(λ)} · ∏_x (1 − X·Q^{c(x)})/(1 − Q^{h(x)})`.
     Abstracted here pending the symmetric-functions / Schur-element
     infrastructure in Mathlib (this is a known gap). -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 -- Ref: [macdonald1995] §I.3 ex. 1
 noncomputable def schurElement (Q X : ℝ) (λ : Partition) : ℝ :=
   Q ^ (contentSum λ) *

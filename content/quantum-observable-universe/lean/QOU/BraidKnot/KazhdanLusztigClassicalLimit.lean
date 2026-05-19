@@ -37,7 +37,7 @@ universe u
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
--- Ref: [khovanovlauda2009] https://doi.org/10.4171/RT/162
+-- Ref: [khovanovlauda2009] Khovanov & Lauda, "A diagrammatic approach to categorification of quantum groups," Repr. Theory 13 (2009), arXiv:0803.4121
 -- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
 -- Ref: [lecouvey2007] https://doi.org/10.2969/msjmemoirs/01701C040
 class KazhdanLusztigClassicalLimit (R : Type u) [CommRing R] (q : R)

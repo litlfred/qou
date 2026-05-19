@@ -57,7 +57,7 @@ inductive VerticalDegree
     projection).  The class shape, however, is final: downstream
     `[PLCorrectnessHypotheses]` instance hypotheses freeze the
     archimedean split documented in the `.md` sibling. -/
--- Ref: [witten2011] https://doi.org/10.1090/conm/560
+-- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 -- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md
 class PLCorrectnessHypotheses where
@@ -97,7 +97,7 @@ instance plCorrectnessHypotheses_placeholder : PLCorrectnessHypotheses where
     `𝓔_q`, and the non-abelian Stokes theorem — none yet available
     in Mathlib.  Records the conditional structure so downstream
     formalisations can take this as a hypothesis. -/
--- Ref: [witten2011] https://doi.org/10.1090/conm/560
+-- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 -- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md
 theorem swPeriodThimbleEquivalence

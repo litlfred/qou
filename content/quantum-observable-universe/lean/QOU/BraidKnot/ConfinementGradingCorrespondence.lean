@@ -30,7 +30,7 @@ universe u
     shadow-price confinement filtration and the KLR ℤ-grading top-
     degree filtration. -/
 -- Ref: [brundankleshchev2009] https://doi.org/10.1007/s00222-009-0204-8
--- Ref: [khovanovlauda2009] https://doi.org/10.4171/RT/162
+-- Ref: [khovanovlauda2009] Khovanov & Lauda, "A diagrammatic approach to categorification of quantum groups," Repr. Theory 13 (2009), arXiv:0803.4121
 class ConfinementGradingCorrespondence (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] where
   /-- Confinement level `ℓ(K, q)` of a normal form (LP shadow-price

@@ -43,7 +43,7 @@ structure PawLeiInnerProduct where
 
 /-- Positive-definiteness: the PL inner product ⟨φ, φ⟩ > 0
     for any nonzero intertwiner φ (follows from normSq_pos). -/
--- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
 theorem pawLei_pos_def (ip : PawLeiInnerProduct)
     (i : Fin ip.num_basis) : ip.normSq i > 0 :=
   ip.normSq_pos i

@@ -25,10 +25,11 @@
       "id": "leitnerpawloski2004",
       "status": "partial",
       "local_pdf": "uploads/leitnerpawloski2004.pdf",
-      "verified_at": "2026-05-19T06:18:00Z",
+      "verified_at": "2026-05-19T15:38:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
-      "note": "arXiv math/0409565 = LP2004 'Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: \u00a72 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 \u2014 exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean \u2014 both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope."
+      "fixes_applied": 6,
+      "note": "arXiv math/0409565 = LP2004 'Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: \u00a72 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 \u2014 exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean \u2014 both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope. | ADDITIONAL 6 bare-URL Refs upgraded with arxiv preprint info. Confirms the prior partial verification (commit 4abfedfda): the cited 'On the morphisms of non-commutative formal groups' is the SAME math/0409565 \u2014 so QOU is consistently citing this work for the Gr\u00f6bner-bases foundation, with the 2 mismatched 'PL inner product' / 'PL basis' lean files being the only outliers.",
+      "fix_commit": "(this commit)"
     },
     {
       "id": "yekutieli2008",
@@ -320,6 +321,86 @@
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "Mathas, \"Iwahori\u2013Hecke Algebras and Schur Algebras\", AMS Univ. Lect. Series 15, 1999. 3 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial."
+    },
+    {
+      "id": "bolza1887",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 11,
+      "fix_commit": "(this commit)",
+      "note": "Bolza, On binary sextics with linear transformations into themselves, Amer. J. Math. 10 (1887). 11 bare-URL Refs \u2192 title+publisher."
+    },
+    {
+      "id": "kashaev1997",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 10,
+      "fix_commit": "(this commit)",
+      "note": "Kashaev, The hyperbolic volume of knots from the quantum dilogarithm, Lett. Math. Phys. 39 (1997). 10 bare-URL Refs \u2192 title+publisher."
+    },
+    {
+      "id": "frenkel2007",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 9,
+      "fix_commit": "(this commit)",
+      "note": "Frenkel, Lectures on the Langlands Program and Conformal Field Theory, arXiv:hep-th/0512172. 9 bare-URL Refs \u2192 title+arxiv form. (URL also added to references.ts in this batch's earlier commit f80075745.)"
+    },
+    {
+      "id": "witten2011",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 7,
+      "fix_commit": "(this commit)",
+      "note": "Witten, Analytic Continuation of Chern-Simons Theory, arXiv:1001.2933. 7 bare-URL Refs \u2192 title+arxiv form."
+    },
+    {
+      "id": "schrijver1986theory",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 8,
+      "fix_commit": "(this commit)",
+      "note": "Schrijver, Theory of Linear and Integer Programming, Wiley 1986. 8 bare-URL Refs \u2192 title+publisher."
+    },
+    {
+      "id": "khovanovlauda2009",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 7,
+      "fix_commit": "(this commit)",
+      "note": "Khovanov & Lauda, A diagrammatic approach to categorification of quantum groups, Repr. Theory 13 (2009), arXiv:0803.4121. 7 bare-URL Refs \u2192 title+arxiv."
+    },
+    {
+      "id": "witten1988",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 5,
+      "fix_commit": "(this commit)",
+      "note": "Witten, Topological quantum field theory, Comm. Math. Phys. 117 (1988). 5 bare-URL Refs \u2192 title+publisher."
+    },
+    {
+      "id": "weil1948",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 6,
+      "fix_commit": "(this commit)",
+      "note": "Weil, Sur les courbes alg\u00e9briques et les vari\u00e9t\u00e9s qui s'en d\u00e9duisent, Hermann, Paris (1948). 6 bare-URL Refs \u2192 title+publisher. local PDF in uploads/ is INCOMPLETE (archive.org filename guess returned 503; needs metadata API lookup)."
     }
   ]
 }

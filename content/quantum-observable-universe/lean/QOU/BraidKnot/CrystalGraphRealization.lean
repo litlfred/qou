@@ -41,7 +41,7 @@ universe u
 -- Ref: [brundankleshchev2009] https://doi.org/10.1007/s00222-009-0204-8
 -- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
 -- Ref: [lecouvey2007] https://doi.org/10.2969/msjmemoirs/01701C040
--- Ref: [khovanovlauda2009] https://doi.org/10.4171/RT/162
+-- Ref: [khovanovlauda2009] Khovanov & Lauda, "A diagrammatic approach to categorification of quantum groups," Repr. Theory 13 (2009), arXiv:0803.4121
 class CrystalGraphRealization (R : Type u) [CommRing R] (q : R) where
   /-- Abstract type of Hecke normal forms. -/
   NormalForm : Type u

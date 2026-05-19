@@ -13,7 +13,7 @@ block.  The canonical `lean.ref` URI is `qou:QOU.BraidKnot.HasFiniteLPDuality`
 
 For the actual implementation, see the file above.
 
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 -/
 
 import QOU.BraidKnot.LpDualityHypothesisClass

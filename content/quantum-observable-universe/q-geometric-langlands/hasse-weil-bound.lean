@@ -36,7 +36,7 @@ namespace QOU.AlgebraicSubstrate
     (functional equation for the zeta function of a curve). -/
 /-- **External axiom (Weil 1948 §IV; Rosen 2002 Ch 5 Thm 5.9):
     functional-equation pairing of zeta eigenvalues.** -/
--- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
 axiom eigenvalue_functional_equation_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8),
@@ -56,7 +56,7 @@ theorem eigenvalue_functional_equation
     for function fields). -/
 /-- **External axiom (Weil 1948 §V; Milne 2013 §27; Rosen 2002 Ch 5
     Thm 5.10): Castelnuovo–Severi inequality on B × B.** -/
--- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
 axiom castelnuovo_severi_bound_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8),

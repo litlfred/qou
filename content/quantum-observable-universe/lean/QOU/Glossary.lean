@@ -96,7 +96,7 @@ structure QuantumGaugeGroup where
 
     LaTeX: `\label{def:cr-manifold}`
     Mathlib: `Mathlib.Geometry.Manifold.IsManifold.Basic` -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+-- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
 structure CRManifold where
   /-- The underlying topological space. -/
   carrier : Type*
@@ -124,7 +124,7 @@ structure BringsSurface where
     chiral curvature to contact geometry on Bring's surface.
 
     LaTeX: `\label{def:substrate-parameter}` -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+-- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
 noncomputable def substrateParameter (p : ℝ) : ℝ := 1 + |p|
 
 /-! ## Jet Prolongation -/

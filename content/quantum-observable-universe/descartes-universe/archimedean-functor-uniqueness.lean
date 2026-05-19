@@ -25,7 +25,7 @@ each class's docstring.
    Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000] Bloch, Higher Regulators, Algebraic K-Theory,
    and Zeta Functions of Elliptic Curves, AMS CRM 11 (2000).
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -/
 

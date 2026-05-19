@@ -93,13 +93,13 @@ theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
     This is the non-commutative analog of the classical explicit formula
     of prime number theory (Riemann–von Mangoldt). -/
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
--- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
 /-- **External axiom (Rosen 2002 Ch 5 Thm 5.12; Weil 1948;
     Reshetikhin-Turaev 1991): explicit formula as spectral-geometric
     trace identity.** -/
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
--- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
 axiom explicit_formula_axiom :
     ∀ (q : ℝ) (hq : 1 < q) (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)

@@ -148,7 +148,7 @@ theorem one_dim_factors_per_generator
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom one_dim_factors_per_generator_axiom :
     ∀ {R : Type u} {n : ℕ} {q : R} {A : Type u}
       [CommRing R] [Inv R] [Ring A] [Algebra R A]

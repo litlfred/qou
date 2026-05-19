@@ -72,13 +72,13 @@ theorem macroscopic_iff_rh (ψ : R_q → R_q) (ζ : ℂ → ℂ) :
 
 /-- **External axiom (Weil 1948 explicit formula):** RH ↔ spectral
     persistence under the classical limit. -/
--- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 axiom rh_iff_persistence_axiom :
     ∀ (ζ : ℂ → ℂ) (spectral_limit : ℕ → Fin 8 → R_q),
       RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit
 
 /-- The equivalence (2) ↔ (3). -/
--- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 theorem rh_iff_persistence (ζ : ℂ → ℂ)
     (spectral_limit : ℕ → Fin 8 → R_q) :
     RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit :=

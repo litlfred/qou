@@ -12,7 +12,7 @@ that consumes `ArchimedeanLimit` and a `Kashaev`-style instance and
 exposes the bijective + volumetric content.
 
 -- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -- Ref: [murakami-murakami2001] https://doi.org/10.1007/s002080100118
 -/
 

@@ -26,7 +26,7 @@ isolates that gap.
 
 -- Ref: [manuscript] conj:dilogarithm-archimedean-limit
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

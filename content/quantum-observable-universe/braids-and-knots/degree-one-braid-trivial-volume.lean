@@ -87,7 +87,7 @@ noncomputable def degreeOne (V : VolumeInterface) : V.carrier :=
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 theorem geom_degree_one_zero (V : VolumeInterface) :
     V.vol (degreeOne V) = 0 := by
   classical

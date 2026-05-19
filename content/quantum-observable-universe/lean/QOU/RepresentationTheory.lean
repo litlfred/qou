@@ -189,7 +189,7 @@ noncomputable def pawLeiDim (twice_j : ℕ) (n : ℕ) : ℕ :=
 
 /-- When `n = 2j` (the minimal tensor power), the intertwiner space
     is one-dimensional — there is a unique embedding up to scalar. -/
--- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
 -- Auxiliary: n / 2 + (n + 1) / 2 = n for all n : ℕ.
 private lemma half_sum (n : ℕ) : n / 2 + (n + 1) / 2 = n := by omega
 
@@ -248,7 +248,7 @@ structure PawLeiInnerProduct where
 /-- The **orthogonal inner product** induced by the PL basis.
     The adjoint trace defines a bilinear form on intertwiner spaces that
     is diagonal in the PL basis: `⟨T_λ, T_μ⟩_PL = δ_{λμ} ‖T_λ‖²`. -/
--- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
 structure PawLeiOrthogonalIP extends PawLeiInnerProduct where
   /-- The inner product function. -/
   innerProduct : Fin toPawLeiInnerProduct.basis.num_basis →
@@ -259,7 +259,7 @@ structure PawLeiOrthogonalIP extends PawLeiInnerProduct where
   orthogonal : ∀ i j, i ≠ j → innerProduct i j = 0
 
 /-- Orthogonality: the PL inner product of distinct basis vectors vanishes. -/
--- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
 theorem pawLei_orthogonal
     (oip : PawLeiOrthogonalIP)
     (i j : Fin oip.toPawLeiInnerProduct.basis.num_basis) (h : i ≠ j) :
