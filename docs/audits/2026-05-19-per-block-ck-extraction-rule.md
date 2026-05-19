@@ -81,3 +81,36 @@ This matches the framework's c_3 derivation: **the 2-strand sub-braid argument**
 - [`content/quantum-observable-universe/braids-and-knots/per-block-hopf-jones-absorption-pattern.md`](../../content/quantum-observable-universe/braids-and-knots/per-block-hopf-jones-absorption-pattern.md) — per-block χ_λ LO ε^1 = (-2, -1, -2) pattern
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md) — Fact 3, c_3 derivation
 - [`docs/audits/2026-05-19-qbeta-ladder-closure-path.md`](2026-05-19-qbeta-ladder-closure-path.md) — closure-path roadmap for higher c_k
+
+## 2026-05-19 (late evening) — additional y_λ correction
+
+Further discovery during the Path 2 link-Markov-closure exploration:
+**y_λ(q=1) is NOT the Plancherel measure (1/6, 2/3, 1/6).** Computed
+symbolically from `markov_weights_symbolic.solve_y_lambda(3)`, the
+actual values at q=1 are:
+
+| irrep | y_λ(q=1) |
+|-------|---------:|
+| V_(3) | **1/2** |
+| V_(2,1) | **1/4** |
+| V_(1,1,1) | **0** |
+| **Σ** | **3/4** |
+
+The Wenzl-bridge weights y_λ DON'T sum to 1 even at q=1 — they sum to
+3/4. The sign rep V_(1,1,1) **contributes nothing** at q=1.
+
+This further INVALIDATES the earlier "uniform rule trivially works at
+q=1 because Σ y_λ(1) = 1" framing. Both Σ y_λ(q_0) ≈ 0.719 AND Σ
+y_λ(1) = 0.75 fail the rule (off by 28% and 25% respectively).
+
+**Empirical numerology status confirmed.** Without a first-principles
+extraction rule, c_4..c_7 ARE empirical pattern-matches. The framework
+proves only c_3 = -2 via Fact 3.
+
+The remaining research-grade paths for c_4..c_7 first-principles:
+1. Khovanov-Rozansky polynomial of typed-braid Markov-closure at
+   finite q (~1 week+ of focused compute)
+2. KLR canonical-basis trace formula (research project scale)
+
+Both beyond single-session scope. **This session establishes the
+negative result that per-block decomposition is NOT the route.**
