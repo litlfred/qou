@@ -51,13 +51,14 @@ function verificationAnnotation(id: string): string | null {
   if (!v) return null;
   // Short symbol per status (works in BibTeX `annotation` field and HTML)
   const SYM: Record<string, string> = {
-    "verified-clean": "[Verified]",
-    "fixed":          "[Verified+Fixed]",
-    "partial":        "[Partial]",
-    "pending":        "[Pending]",
-    "uncited":        "[Uncited]",
-    "paper-mismatch": "[Paper-Mismatch]",
-    "unfetchable":    "[Unfetchable]",
+    "verified-clean":    "[Verified]",
+    "fixed":             "[Verified+Fixed]",
+    "partial":           "[Partial]",
+    "pending":           "[Pending]",
+    "pending-placement": "[Pending-Placement]",
+    "uncited":           "[Uncited]",
+    "paper-mismatch":    "[Paper-Mismatch]",
+    "unfetchable":       "[Unfetchable]",
   };
   const sym = SYM[v.status] ?? `[${v.status}]`;
   const parts = [sym];

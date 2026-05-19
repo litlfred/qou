@@ -73,9 +73,19 @@ citation sites' descriptions match the cited paper's content**:
 Status values: `pending` (not yet examined), `verified-clean`
 (every citation site checked, no fix needed), `partial` (some
 sites verified + fixed, others remain), `fixed` (misattributions
-resolved), `uncited` (bib entry has zero consumers; author
-decision pending), `paper-mismatch` (local PDF ≠ references.ts
-metadata; escalate), `unfetchable` (not in `uploads/`).
+resolved), `pending-placement` (added 2026-05-19 — author wants to
+keep the reference but hasn't decided where to cite it yet; tag
+passes the verification_status QA check), `uncited` (bib entry
+has zero consumers AND author hasn't claimed it; decision
+pending), `paper-mismatch` (local PDF ≠ references.ts metadata;
+escalate), `unfetchable` (not in `uploads/`).
+
+The distinction `pending-placement` vs `uncited` matters: both
+have 0 citation sites, but `pending-placement` says "keep this
+entry, I'll find a citation site later" while `uncited` says
+"unclaimed orphan — may be removable". Author triage moves
+entries from `uncited` → `pending-placement` (or
+`verified-clean` if a citation gets added in the same triage).
 
 The `verification_status` tag passes for `verified-clean` /
 `partial` / `fixed`, warns for `pending` / `uncited` /

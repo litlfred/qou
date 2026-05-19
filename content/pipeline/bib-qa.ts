@@ -518,6 +518,19 @@ async function buildReport(): Promise<BibQAReport> {
             (verif.verified_by ? ` (by ${verif.verified_by})` : "") +
             (verif.fixes_applied ? `, ${verif.fixes_applied} fix(es)` : ""),
         });
+      } else if (verif.status === "pending-placement") {
+        // New status (2026-05-19): "I need this reference but haven't
+        // figured out where to cite it yet". Distinct from `uncited`
+        // (which suggests the entry may be removable) — this status
+        // explicitly says the entry is INTENDED to stay; the
+        // citation site is just deferred.
+        tags.push({
+          key: "verification_status",
+          label: "Verification Status",
+          status: "pass",
+          detail: `pending-placement — author wants to keep; citation site TBD` +
+            (verif.note ? ` — ${verif.note.slice(0, 80)}` : ""),
+        });
       } else if (verif.status === "uncited") {
         tags.push({
           key: "verification_status",
