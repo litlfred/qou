@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T06:48:34.318952+00:00",
-  "commitSha": "2b859a46865c8339a0eeae6200a4ebc823b051fd",
+  "computedAt": "2026-05-19T07:30:14.045462+00:00",
+  "commitSha": "0519a113a1114b0f89cf11069636821d53026fcd",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 524,
-      "wired": 49,
+      "i1_no_probe": 523,
+      "wired": 50,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -1099,9 +1099,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "habiro-expansion-atomic-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.ts",
