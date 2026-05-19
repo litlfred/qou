@@ -315,6 +315,11 @@ def main() -> None:
 
     # ── Witness emit ─────────────────────────────────────────────
     w = WitnessBuilder("qbeta-decay-sdp-extended-ck", engine="python")
+    # Track upstream witness dependencies so witness_dependency_drift.py
+    # can detect when an upstream changes substantively and this
+    # extraction needs to be re-run. Per Copilot follow-up on PR #816.
+    w.add_upstream(HERE / "q-beta-operator-valued-N3.witness.json")
+    w.add_upstream(HERE / "q-pinning-50-digit.witness.json")
     w.set_description(
         "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. "
         "Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the "

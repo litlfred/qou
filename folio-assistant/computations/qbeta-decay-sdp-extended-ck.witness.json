@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T16:38:44.669902+00:00",
-  "commitSha": "8742eaa037e72cbe7a8757b1905466d5b26344ce",
+  "computedAt": "2026-05-19T19:00:24.065502+00:00",
+  "commitSha": "44d241d451f68b0aa04fd01f79443c518bb25640",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
@@ -33,8 +33,8 @@
   "durationMs": 4,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
-  "scriptHash": "7780d4d1e1eb",
-  "scriptCommitSha": "041240ae4cd3c40e3019d2979bf847ac02297b63",
+  "scriptHash": "dcd4677257d4",
+  "scriptCommitSha": "5c057c3efbde90893358f97737ea04d6b4f235e5",
   "description": "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the PR #814 prediction that averaging-resonance rungs carry 1/2 fingerprints. Pell-Lucas-clean test at silver ratio classifies each rung as pure-σ or averaging-resonance.",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
@@ -119,7 +119,25 @@
       "claim": "PR #814: rungs whose order coincides with an averaging-resonance position pick up 1/2 fingerprints (involution origin from typed-B_3 averaged crossings).",
       "result": "Rungs in [8, 9, 10] failing Pell-Lucas-clean: NONE",
       "interpretation": "NOT SUPPORTED — under natural pattern continuation all three new rungs are Pell-Lucas-clean. Either the prediction fails in this range OR the natural-continuation closed forms are not categorical (cf. c_5 outlier at k=5)."
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "4732372316e8f59d81ccceff8d7909fa9b459be6e4790e94d4bacc06294173d6",
+        "size_bytes": 4731,
+        "commitSha": "31201ed80a4fdeb3fb994ffe14cee3a0abd5add5",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-16T01:04:25.932637+00:00"
+      },
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "a2fa7b03063cb6580591b17ce9371714dcaab0907aad489efa54745a059bc41c",
+        "size_bytes": 3939,
+        "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      }
+    ]
   },
   "caveats": [
     "Leverage limit: at k=7 any c_k ∈ [-100, 100] closes the residual to ~10⁻⁴ ppb. At k=8, 9, 10 the leverage is even tighter — the 50dps extracted c_k values are numerically near the (R−1) noise floor relative to the canonical-form ambiguity at the chosen q_0. Pell-Lucas classification therefore reads as STRUCTURAL signal at the silver ratio, not as a precision claim at q_0.",
