@@ -13,13 +13,12 @@ export default proposition({
   ],
   defines: [],
   tags: [
-    "picard-lefschetz",
-    "thimble",
-    "steepest-descent",
-    "integration-limit",
     "mobius-transformation",
+    "integration-limit",
     "color-tube",
-    "archimedean",
+    "galois-data",
+    "binomial-coefficients",
+    "laurent-polynomial",
   ],
   lean: {
     ref: "qou:QOU.Descartes.mobiusLimitFromThimble",

@@ -1,8 +1,8 @@
 # $d^2 A = 0$ and the PL integration-limit confusion — resolution draft
 
 **Branch**: `claude/explore-d2a-categorical-8Eq2n`
-**Date**: 2026-05-18
-**Status**: research draft — no commit, no CI.
+**Date**: 2026-05-18 (initial); 2026-05-19 (committed in PR #779)
+**Status**: committed in [PR #779](https://github.com/litlfred/qou/pull/779); CI pending.
 **Trigger**: owner asked "where does $d^2A = 0$ come from, why is it
 categorical?", clarified to "the condition $d^2A/dz$ or $/d\lambda$
 for finding limits on thimble integration" → "it is used but not

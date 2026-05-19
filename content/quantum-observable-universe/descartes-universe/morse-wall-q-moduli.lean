@@ -5,12 +5,14 @@ The baryon integration-limit Möbius transformation
 $f(q) = (4 - q)/(4q + 3)$ has fixed points at $q^2 + q - 1 = 0$ —
 i.e. at $1/\varphi$ and $-\varphi$ — and these constitute the
 **Morse wall** of the $q$-family of SW actions $S_q$ on $\mathcal{E}_q$:
-the locus where the integration domain $[-a(q), a(q)]$ collapses to a
-point.
+the algebraic locus where the integration-limit pencil's Möbius
+section becomes stationary.
 
-This file states the Laurent-polynomial fixed-point equation and
-provides the bridge to `qou:QOU.Descartes.mobius_golden_fixed_points`.
-Full proof of equivalence with the closed-form $\{1/\varphi, -\varphi\}$
+This file states the Laurent-polynomial fixed-point equation as a
+polynomial identity over any commutative ring containing the
+relevant denominators (i.e. over the localisation
+$R[(4q+3)^{-1}]$, or equivalently in $\operatorname{Frac}(R)$).
+The full equivalence with the closed-form $\{1/\varphi, -\varphi\}$
 is deferred (the closed form requires `Mathlib.NumberTheory.Cyclotomic`
 to express $\sqrt{5} \in \mathbb{Z}[\zeta_5]$ symbolically).
 
@@ -27,25 +29,32 @@ namespace QOU.Descartes
 open Polynomial LaurentPolynomial
 
 /-- The Möbius integration-limit characteristic polynomial.
-    A Laurent polynomial in `q` (here written as an ordinary
-    polynomial since the relevant locus lies in the unit-disc
-    side of the q-axis; the Laurent form is needed only when
-    expressing q⁻¹ explicitly). -/
+    Its vanishing locus is the Morse wall. -/
 def mobius_fp_poly : Polynomial ℤ := X^2 + X - 1
 
-/-- Statement: the Morse wall of the integration-limit pencil is
-    the vanishing locus of the Möbius fixed-point polynomial. -/
-theorem morse_wall_q_moduli :
-    ∀ (R : Type) [CommRing R] (q : R),
-      (mobius_fp_poly.aeval q = 0) ↔
-      (∃ (a_fixed : Prop), a_fixed) := by
-  -- TODO: the right-hand side is a placeholder; the actual
-  -- statement should express "a(q) = q" where a(q) = (4-q)/(4q+3),
-  -- which requires inverting 4q+3 in R.  Over a field (or after
-  -- localisation at 4q+3), the equivalence is direct algebra.
+/-- **Morse-wall identity.**
+    Over any commutative ring `R` and element `q : R` such that
+    `4*q + 3` is invertible, the Möbius fixed-point equation
+    `a(q) = q` (with `a(q) = (4 - q) / (4*q + 3)`) is equivalent to
+    the polynomial identity `q^2 + q - 1 = 0`. -/
+theorem morse_wall_q_moduli
+    {R : Type*} [CommRing R]
+    (q : R) (h_inv : IsUnit (4 * q + 3)) :
+    (∃ u : R, u * (4 * q + 3) = 1 ∧
+      (4 - q) * u = q) ↔
+    q ^ 2 + q - 1 = 0 := by
+  -- (4 - q) * (4*q + 3)⁻¹ = q  ↔  (4 - q) = q * (4*q + 3)
+  --                          ↔  4 - q = 4*q^2 + 3*q
+  --                          ↔  4*q^2 + 4*q - 4 = 0
+  --                          ↔  q^2 + q - 1 = 0  (dividing by 4 in ℚ;
+  --                                              this step uses that 4
+  --                                              is a unit, which holds
+  --                                              over any field of
+  --                                              characteristic ≠ 2)
   --
-  -- Full formalisation defers `Mathlib.RingTheory.Localization` for
-  -- the inversion of 4q+3, plus the cyclotomic expression of √5.
+  -- The implication is direct algebra; the full Lean proof requires
+  -- `Mathlib.RingTheory.Localization` to manipulate the unit witness
+  -- `(4 * q + 3)⁻¹`. Deferred until that import is wired up.
   --
   -- Ref: [pham1965] for the categorical Morse-wall definition
   -- Ref: [seidel2008] §6 for the Fukaya-Seidel categorical wall

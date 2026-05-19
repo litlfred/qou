@@ -17,8 +17,8 @@
 | [#696](https://github.com/litlfred/qou/pull/696) | open | tangent | Flavor-dressing functor (different scope, but uses CODATA validation aliases — flagged by canonical-watcher) |
 | [#689](https://github.com/litlfred/qou/pull/689) | merged | predecessor | Operator-valued framework: vol-hyp 54→34 |
 | [#715](https://github.com/litlfred/qou/pull/715) | merged | dependency | Class-A banner pattern I'm following |
-| [#751](https://github.com/litlfred/qou/pull/751) | open | **constructive sibling** | Workplan-0b/M_N routes A/B/C; explicitly flags "$d^2 A/da^2 = 0$ meaning" as open R&D piece |
-| `claude/explore-d2a-categorical-8Eq2n` (branch, no PR) | branch | **resolves PR #751's open piece** | Audit doc proposes the categorical meaning of $d^2 A/da^2 = 0$: golden Morse wall in $q$-moduli, not in $a$ |
+| [#751](https://github.com/litlfred/qou/pull/751) | merged | **constructive sibling** | Workplan-0b/M_N routes A/B/C; explicitly flags "$d^2 A/da^2 = 0$ meaning" as open R&D piece |
+| [#779](https://github.com/litlfred/qou/pull/779) (branch `claude/explore-d2a-categorical-8Eq2n`) | open | **resolves PR #751's open piece** | Audit doc + content edits propose the categorical meaning of $d^2 A/da^2 = 0$: golden Morse wall in $q$-moduli, not in $a$ |
 
 ## Findings
 

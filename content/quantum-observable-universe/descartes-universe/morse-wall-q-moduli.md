@@ -2,40 +2,48 @@
 
 *Let $a: q \mapsto (4-q)/(4q+3)$ be the categorical integration-limit
 Möbius transformation
-([Möbius limit from thimble](#prop:mobius-limit-from-thimble)) over
-$R = \mathbb{Z}[q^{\pm 1}]$ (Laurent polynomials).  The locus where
-$a$ acts trivially — its fixed-point set — is the **golden node**:*
+([Möbius limit from thimble](#prop:mobius-limit-from-thimble)), viewed
+as an element of $\operatorname{Frac}(R)$ for $R = \mathbb{Z}[q^{\pm 1}]$
+(equivalently, defined over the localisation $R[(4q+3)^{-1}]$).
+The locus where $a$ acts trivially — its fixed-point set in
+$\operatorname{Frac}(R)$ — is given by the **square-root golden
+fixed points**:*
 
 $$
-  \mathrm{Fix}(a) \;=\; \{\,q \in R \;\colon\; a(q) = q\,\}
-  \;=\; \{\,q \in R \;\colon\; q^2 + q - 1 = 0\,\}
+  \mathrm{Fix}(a) \;=\; \{\,q \in \operatorname{Frac}(R) \;\colon\; a(q) = q\,\}
+  \;=\; \{\,q \;\colon\; q^2 + q - 1 = 0\,\}
   \;=\; \{1/\varphi,\,-\varphi\},
 $$
 
-*where $\varphi = (1+\sqrt{5})/2 \in \mathbb{Z}[\zeta_5]$.  As
-$q \to 1/\varphi$ along the substrate-positive ray, the integration
-domain $[-a(q),\,a(q)]$ collapses to the fixed point: the mass-period
-integral becomes a single-point evaluation and the
-([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence))
-degenerates.  This is the **Morse wall** of the $q$-family of SW
-actions $S_q$ on $\mathcal{E}_q$ in the sense of Picard–Lefschetz /
-Fukaya–Seidel theory (\[pham1965], \[seidel2008]): the locus
-where the action's Hessian structure on the integration domain
-becomes degenerate as a function of the moduli parameter $q$.*
+*where $\varphi = (1+\sqrt{5})/2 \in \mathbb{Z}[\zeta_5]$. These fixed
+points are the **Morse wall** of the $q$-family of SW actions $S_q$
+on $\mathcal{E}_q$: the locus where the Möbius integration-limit
+section becomes stationary, marking the boundary of the substrate-
+positive region in $q$-moduli (\[pham1965], \[seidel2008]).*
+
+*Terminology note.* We reserve **golden node** for the elliptic-curve
+degeneration loci $\{1/\varphi^2,\,\varphi^2\}$ where $\mathcal{E}_q$
+acquires a singular fibre; **square-root golden fixed points** for the
+Möbius fixed points $\{1/\varphi,\,-\varphi\}$ derived here. The two
+loci are related by the squaring map ($\S$ below) but are
+geometrically distinct.
 
 ## Categorical / Laurent-ring formulation
 
-*The statement is **fully algebraic over $R = \mathbb{Z}[q^{\pm 1}]$**:
-no archimedean structure ($|\cdot|$, $\arg$, ordering) is required to
-state the fixed-point equation $q^2 + q - 1 = 0$ or the limit
-$a(q) - q \to 0$ along the substrate-positive direction (interpreted
-as an algebraic limit in the $(q - 1/\varphi)$-adic completion of $R$).*
+*The statement is **purely algebraic over the localisation**
+$R[(4q+3)^{-1}]$ (equivalently $\operatorname{Frac}(R)$): no
+archimedean structure ($|\cdot|$, $\arg$, ordering) is required to
+state the fixed-point equation $q^2 + q - 1 = 0$. The Möbius map
+$a(q)$ is not an element of $R = \mathbb{Z}[q^{\pm 1}]$ alone because
+the denominator $4q+3$ must be inverted; this is a routine
+localisation, not an archimedean step.*
 
-*Extending to $R[\zeta_5] = \mathbb{Z}[q^{\pm 1}, \zeta_5]$ — needed to
-write the fixed points in closed form, since $\sqrt{5} \in
+*Extending to $R[\zeta_5] = \mathbb{Z}[q^{\pm 1}, \zeta_5]$ — needed
+to write the fixed points in closed form, since $\sqrt{5} \in
 \mathbb{Z}[\zeta_5]$ via the Gauss sum $\sqrt{5} = -(\zeta_5 +
 \zeta_5^4) + (\zeta_5^2 + \zeta_5^3)$ — exhibits both fixed points as
-elements of $R[\zeta_5]$ rather than $R$:*
+elements of the cyclotomic localisation rather than the bare Laurent
+ring:*
 
 $$
   1/\varphi \;=\; (-1 + \sqrt{5})/2,
@@ -83,12 +91,13 @@ wall in $q$-moduli, transported by $\tau_{q_0}$.*
 ## Categorical archimedean status
 
 *The proposition is **predominantly $R$-side** (Laurent-polynomial
-algebra over $\mathbb{Z}[q^{\pm 1}, \zeta_5]$); the only archimedean
-input is the **direction** "$q \to 1/\varphi$ along the substrate-
-positive ray", which uses the $\mathbb{R}$-ordering on $q$ to choose
-between the two fixed points.  An ordering-free reformulation in
-terms of $(q-1/\varphi)$-adic limits is straightforward and is the
-default formulation in the Lean file
+algebra over $\mathbb{Z}[q^{\pm 1}, \zeta_5]$ after the routine
+localisation at $4q+3$); the only archimedean input is the
+**direction** "$q \to 1/\varphi$ along the substrate-positive ray",
+which uses the $\mathbb{R}$-ordering on $q$ to choose between the
+two fixed points.  An ordering-free reformulation in terms of
+$(q-1/\varphi)$-adic limits is straightforward and is the default
+formulation in the Lean file
 ([qou:QOU.Descartes.morse_wall_q_moduli](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/morse-wall-q-moduli.lean)).*
 
 ## Open follow-ups
