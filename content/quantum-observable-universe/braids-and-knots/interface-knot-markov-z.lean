@@ -1,32 +1,45 @@
 /-
-Interface-knot contribution to canonical-atom Markov trace equals
-the Markov parameter z exactly.
+Interface-knot contribution to canonical-atom Markov trace via the
+Markov axiom + Hecke skein.
 
-This is a DIRECT consequence of the Markov axiom on the canonical
-Markov trace τ_M: H_n(q) → R: for any α ∈ H_{n-1}(q) (embedded in
-H_n(q) via the standard inclusion that ignores strand n) and σ the
-generator at strand boundary n - 1,
+For the canonical Markov trace τ_M: H_n(q) → R, the Markov axiom on
+a positive interface generator σ (separating two adjacent strand-
+blocks) gives, for any α ∈ H_{n-1}(q) below the boundary,
 
-    τ_M(α · σ) = z · τ_M(α)
+    τ_M(α · σ) = z · τ_M(α)        (positive interface)
 
-where z = 1/(q^{1/2} + q^{-1/2}) is the Markov parameter.
+with z = 1/(q^{1/2} + q^{-1/2}) the Markov parameter. For a
+negative interface generator σ⁻¹ (corresponding to an n-n boundary
+in the canonical atomic braid), the Hecke skein relation
+σ⁻¹ = σ - h·1 with h = q - q⁻¹, combined with linearity of τ_M,
+gives the companion identity
 
-For a canonical atomic braid β_K = β_K^constit · Δ_I^K with
-A = Z+N nucleons and (A-1) interface generators at strand
-boundaries g ∈ {3, 6, ..., 3(A-1)}, iterating the Markov axiom
-yields
+    τ_M(α · σ⁻¹) = (z - h) · τ_M(α) (negative interface)
 
-    τ_M(β_K) = z^(A-1) · τ_M(β_K^constit).
+Iterating these two identities over the (A-1) interface generators
+of the canonical atomic braid yields
 
-This file proves the **single-step version** of the theorem (the
-Markov axiom packaged for the interface generator). The iterated
-form follows by induction on the list of interfaces (left as a
-straight-line application of `List.foldr` on `markov_axiom`).
+    τ_M(β_K) = z^(p_+) · (z - h)^(p_-) · τ_M(β_K^constit)
 
-The proof is at the abstract Markov-trace algebra level, working
+where p_+(K), p_-(K) count the positive / negative interfaces in
+the interface knot Δ_I^K of atom K = (Z, N). Per-atom census:
+
+    D   = p · σ_3 · n              → 1 pos, 0 neg
+    T   = p · σ_3 · n · σ_6⁻¹ · n  → 1 pos, 1 neg
+    ³He = p · σ_3 · p · σ_6 · n    → 2 pos, 0 neg
+    ⁴He = p · σ_3 · p · σ_6 · n · σ_9⁻¹ · n → 2 pos, 1 neg
+
+This file proves the two **single-step versions** of the theorem
+(the Markov axiom for σ, and the Hecke-skein-derived identity for
+σ⁻¹). The iterated `z^(p_+)·(z-h)^(p_-)` form follows by induction
+on the list of interfaces (left as a straight-line application of
+`List.foldr` on the two single-step identities).
+
+The proofs are at the abstract Markov-trace algebra level, working
 with a generic commutative ring R carrying the Markov-trace
-structure. No archimedean realisation is needed; this is a pure-
-pre-τ identity in the q-shuffle Hopf algebra H_n(R, q).
+structure (and, for the σ⁻¹ identity, the Hecke skein parameter).
+No archimedean realisation is needed; this is a pure-pre-τ identity
+in the q-shuffle Hopf algebra H_n(R, q).
 
 Ref: [jones1987] Hecke algebra representations of braid groups
 Ref: [markov1936] Markov's theorem on braid equivalence

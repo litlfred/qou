@@ -127,7 +127,29 @@ def alexander_from_braid(word: list[int], n: int, t):
     Δ_K(t) · (1 - t)/(1 - t^n) = det(I - B(β; t))
     => Δ_K(t) = det(I - B(β; t)) · (1 - t^n) / (1 - t)
 
-    Returns simplified sympy expression.
+    Returns a simplified sympy rational expression.
+
+    **Performance note** (Gemini review, PR #819): at large `n` and
+    long braid words, the symbolic det + cancel can become a
+    bottleneck.  Two optimisation paths are available if this script
+    grows beyond exploratory scope:
+
+    1. **Numeric-only evaluation**: substitute `t = q_0` (or other
+       concrete value) into the Burau matrix BEFORE taking `det`.
+       Loses the symbolic polynomial but recovers a single numeric
+       value at the cost of one matmul per generator — orders of
+       magnitude faster.
+
+    2. **Polynomial det via Newton's method or trace recursion**:
+       compute the characteristic polynomial of B directly from its
+       traces (Newton's identities), avoiding the symbolic det's
+       cofactor expansion.
+
+    For the current 4-atom exploratory probe (D, T, ³He, ⁴He at
+    H_6 / H_9 / H_12 with word lengths ≤ 50), the symbolic-cancel
+    path is sufficient and the symbolic form is useful for pattern
+    inspection.  If the probe scales to ⁶Li, ⁷Li, ⁹Be, etc., switch
+    to option 1 (numeric).
     """
     B = burau_matrix_from_word(word, n, t)
     det = sp.det(sp.eye(n - 1) - B)

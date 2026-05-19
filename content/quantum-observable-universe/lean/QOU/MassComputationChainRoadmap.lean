@@ -97,7 +97,7 @@ class MRatioInversionMonotone (M_ratio_codata : ℝ) where
     on the substrate's M_ratio function being strictly monotone on
     the window (1, 2) and hitting the CODATA target there. -/
 theorem q_0_inversion_unique
-    (M_ratio_codata : ℝ) (h_codata : M_ratio_codata = 206.7682830)
+    (M_ratio_codata : ℝ)
     [inst : MRatioInversionMonotone M_ratio_codata] :
     ∃! q : ℝ, 1 < q ∧ q < 2 ∧ inst.M_ratio_QOU q = M_ratio_codata := by
   -- Ref: [manuscript] q-pinning-50-digit.witness.json

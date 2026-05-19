@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Per-Z step factor in the Δ_λ closure equals [3]_q² · cosh(h) at q_0",
   lean: {
-    ref: "qou:QOU.BraidKnot.alpha_cosh_h_z_step_correction",
+    ref: "qou:QOU.BraidKnot.AlphaCoshHZStepCorrection",
     validation: "not_checked",
   },
   uses: [
