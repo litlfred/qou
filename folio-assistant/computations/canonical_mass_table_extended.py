@@ -79,7 +79,26 @@ B_AME_MEV: dict[tuple[int, int], float] = {
     (4, 4): 56.49951,    # ⁸Be
 }
 
-# Default atom list: full coverage through A=7 via canonical
+# Default atom list: full coverage through A=7 via canonical.
+#
+# ORDERING INVARIANT (per Gemini #781 review): the row order in the
+# emitted witness `data.rows` is *deterministic* when --atoms is
+# omitted; downstream consumers (notably content/values/registry.ts's
+# `B_2H_AME_MeV` lookup at path `data.rows.2.B_AME_MeV`) depend on:
+#
+#     index 0: proton          (Z=1, N=0, A=1)
+#     index 1: neutron         (Z=0, N=1, A=1)
+#     index 2: deuteron        (Z=1, N=1, A=2)
+#     index 3: triton          (Z=1, N=2, A=3)
+#     index 4: 3He             (Z=2, N=1, A=3)
+#     index 5: 4He             (Z=2, N=2, A=4)
+#     index 6: 5Li             (Z=3, N=2, A=5)
+#     index 7: 6Li             (Z=3, N=3, A=6)
+#
+# Do NOT reorder this list without also updating
+# content/values/registry.ts and any other consumer that indexes
+# into `data.rows`. A (Z, N)-keyed lookup would be more robust;
+# tracked as a follow-up.
 DEFAULT_ATOMS = [
     (1, 0, "p"),
     (0, 1, "n"),

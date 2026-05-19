@@ -26,7 +26,7 @@ export default proposition({
     validation: "not_checked",
   },
   computation: {
-    engine: "markov_peel+mpmath",
+    engine: "python+mpmath",
     script: "folio-assistant/computations/canonical_mass_table_extended.py",
     witness: [
       "folio-assistant/computations/canonical-mass-table-extended.witness.json",

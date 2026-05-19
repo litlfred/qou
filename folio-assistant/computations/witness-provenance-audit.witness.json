@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T02:16:12.700875+00:00",
-  "commitSha": "b82b92391d0b6d0b39f665d3282c70db1b9228a7",
+  "computedAt": "2026-05-19T03:04:37.038133+00:00",
+  "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -17,9 +17,9 @@
   "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
-  "scriptHash": "4d0a257bd258",
-  "scriptCommitSha": "unknown",
-  "description": "I13 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
+  "scriptHash": "77d54f1cc990",
+  "scriptCommitSha": "0f9a88df1128107eb3b8e0b40d47af4c2fc33662",
+  "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
     "required_fields": [
       "engine",

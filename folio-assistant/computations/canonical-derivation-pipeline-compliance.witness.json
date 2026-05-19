@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T02:16:12.793594+00:00",
-  "commitSha": "b82b92391d0b6d0b39f665d3282c70db1b9228a7",
+  "computedAt": "2026-05-19T03:04:37.135899+00:00",
+  "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
-  "scriptHash": "559b386660e4",
-  "scriptCommitSha": "9d90d8c1be442721be328306ed7cf4c67a64ca26",
+  "scriptHash": "b856bad69b60",
+  "scriptCommitSha": "0f9a88df1128107eb3b8e0b40d47af4c2fc33662",
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
@@ -206,7 +206,7 @@
         "remediation": "For drift: investigate non-determinism (PYTHONHASHSEED, timestamps, hand-edits to committed JSON not reproduced by the script). For error/timeout: install missing deps or bump PER_BUILDER_TIMEOUT_S. Reference: witness_reproducibility_check.py + docs/audits/2026-05-12-canonical-derivation-compute-review.md §4 P3.2."
       },
       {
-        "name": "Witness provenance completeness (I13)",
+        "name": "Witness provenance completeness (I14)",
         "source": "witness-provenance-audit.witness.json",
         "metric": "113 of 518 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.782)",
         "status": "fail",

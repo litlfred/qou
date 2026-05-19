@@ -288,6 +288,12 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "MeV",
     }),
 
+    // NOTE: `data.rows.2` indexes the deuteron row. The row order
+    // in `canonical-mass-table-extended.witness.json` is fixed by
+    // DEFAULT_ATOMS in canonical_mass_table_extended.py and must
+    // not be reordered (proton=0, neutron=1, D=2, T=3, ³He=4,
+    // ⁴He=5, ⁵Li=6, ⁶Li=7). A (Z, N)-keyed lookup is the long-term
+    // fix; tracked as a follow-up. See Gemini #781 review.
     B_2H_AME_MeV: Object.freeze({
       name: "B_2H_AME_MeV",
       description: "AME experimental binding energy of deuterium (2H).",

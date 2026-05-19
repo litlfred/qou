@@ -191,7 +191,7 @@ def _summarize_repro(w: dict[str, Any] | None) -> dict[str, Any]:
 
 
 def _summarize_provenance(w: dict[str, Any] | None) -> dict[str, Any]:
-    """I13 witness-provenance completeness."""
+    """I14 witness-provenance completeness."""
     if w is None:
         return {
             "status": "missing",
@@ -443,11 +443,11 @@ RECOMMENDED_NEXT = [
 
 
 def _contract_witness_provenance(prov: dict[str, Any]) -> dict[str, Any]:
-    """I13 witness-provenance completeness — every witness must
+    """I14 witness-provenance completeness — every witness must
     declare engine, scriptFile, commitSha."""
     if prov.get("status") != "loaded":
         return {
-            "name": "Witness provenance completeness (I13)",
+            "name": "Witness provenance completeness (I14)",
             "source": "witness-provenance-audit.witness.json",
             "metric": "audit witness missing — run witness_provenance_audit.py",
             "status": "warn",
@@ -460,7 +460,7 @@ def _contract_witness_provenance(prov: dict[str, Any]) -> dict[str, Any]:
     total = prov.get("total_scanned") or 0
     ratio = prov.get("completeness_ratio") or 0.0
     return {
-        "name": "Witness provenance completeness (I13)",
+        "name": "Witness provenance completeness (I14)",
         "source": "witness-provenance-audit.witness.json",
         "metric": (
             f"{missing} of {total} witnesses missing "

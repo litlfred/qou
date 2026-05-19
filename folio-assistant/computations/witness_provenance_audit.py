@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""I13 audit — witness provenance completeness.
+"""I14 audit — witness provenance completeness.
 
 Every `folio-assistant/computations/*.witness.json` MUST declare:
 
@@ -134,7 +134,7 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     print("=" * 70)
-    print("I13 audit — witness provenance completeness")
+    print("I14 audit — witness provenance completeness")
     print("=" * 70)
     print(f"  total scanned        : {n_total}")
     print(f"  PROV_OK              : {n_ok}")
@@ -155,7 +155,7 @@ def main(argv: list[str] | None = None) -> int:
     builder = (
         WitnessBuilder("witness-provenance-audit", engine="python")
         .set_description(
-            "I13 audit per repo-owner directive 2026-05-19: every "
+            "I14 audit per repo-owner directive 2026-05-19: every "
             "witness JSON must declare engine, scriptFile, commitSha "
             "(WitnessBuilder convention) so it can be reproduced and "
             "traced. Witnesses ending in -audit/-scan/-compliance "

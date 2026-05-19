@@ -255,7 +255,7 @@ jobs:
           python3 folio-assistant/computations/compute_audit_scan.py
           python3 -c "import json; d=json.load(open('folio-assistant/computations/compute-audit-scan.witness.json')); print('compute-audit-scan:', d['data']['by_pattern_count'])"
 
-      - name: I13 witness-provenance audit (warn-only)
+      - name: I14 witness-provenance audit (warn-only)
         # Every *.witness.json under folio-assistant/computations/
         # must declare engine, scriptFile, commitSha (the
         # WitnessBuilder convention). Witnesses without these three
