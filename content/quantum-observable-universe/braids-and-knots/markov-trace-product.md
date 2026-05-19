@@ -60,11 +60,16 @@ Yang–Baxter relation $\sigma_0 \sigma_1 \sigma_0 =
 \sigma_1 \sigma_0 \sigma_1$ creates dependencies that
 invalidate the factorization.
 
-For the Borromean braid $\mathcal{B}_3 = (\sigma_0
-\sigma_1^{-1})^3$ with adjacent generators $\sigma_0$
-and $\sigma_1$: the vertex volume product gives
-$hz^2 + z$, but the correct Markov trace is $z^3$
-([corrected Markov trace](#prop:corrected-markov-trace)).
+For the trefoil-like element $\sigma_0\sigma_1\sigma_0$
+with adjacent generators $\sigma_0$ and $\sigma_1$: the naïve
+vertex volume product gives $z^3$, but the **correct Markov
+trace** (Ocneanu--Wenzl recursion) is $hz^2 + z$
+([corrected Markov trace](#prop:corrected-markov-trace);
+[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)).
+Numerically at $q_0$: vertex-product $z^3 \approx 0.1245$
+vs canonical $hz^2 + z \approx 0.5514$ (4.4× off).
+(Earlier versions of this block had these two values swapped;
+fixed 2026-05-19.)
 
 The product formula remains valid for the **nuclear
 Garside element** (where generators are distant) and for

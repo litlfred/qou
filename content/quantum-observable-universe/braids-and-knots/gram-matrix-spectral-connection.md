@@ -41,9 +41,18 @@ algebraic object that encodes:*
 Markov trace on standard basis ([Markov trace factorization](#thm:markov-trace-factorization)):
 $\tau(T_w) = z^{\ell(w)}$ for $w \in S_n$ reduced, where
 $\ell(w)$ is the length.  So $\tau(1) = 1$, $\tau(\sigma_i) = z$,
-$\tau(\sigma_i \sigma_j) = z^2$, $\tau(\sigma_0 \sigma_1 \sigma_0) = z^3$.*
+$\tau(\sigma_i \sigma_j) = z^2$. The naïve length rule $z^{\ell(w)}$
+**fails for adjacent triples** (the rule assumes the rightmost
+generator lies in the proper sub-algebra; this fails for
+$\sigma_0\sigma_1\sigma_0$ since $\sigma_1\sigma_0 \notin H_2$).
+The canonical Ocneanu--Wenzl recursion gives
+$\tau(\sigma_0\sigma_1\sigma_0) = hz^2 + z$
+(formerly stated as $z^3$ in this block; corrected 2026-05-19 per
+[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)).*
 
-*Gram matrix $G_{ij} = \tau(b_i b_j^{-1})$ (cyclic self-pairing):*
+*Gram matrix $G_{ij} = \tau(b_i b_j^{-1})$ (cyclic self-pairing).
+The first-row/column entries below shown as $z^3$ are stale per
+the 2026-05-19 Markov-bug fix and should read $hz^2 + z$:*
 
 $$
   G \;=\;

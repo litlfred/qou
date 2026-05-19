@@ -91,8 +91,8 @@ All inputs are derived from $q_0$ and quark content:
 | Quantity | Value |
 |:---|:---|
 | $q_0$ | $1.10998$ |
-| $H_A = q_0 - q_0^{-1}$ | $0.20906$ |
-| $z = 1/(\sqrt{q_0} + 1/\sqrt{q_0})$ | $0.49932$ |
+| $H_A = q_0 - q_0^{-1}$ | $:val[gram_h]{precision=5}$ |
+| $z = 1/(\sqrt{q_0} + 1/\sqrt{q_0})$ | $:val[gram_z]{precision=5}$ |
 | $\mathrm{tr}_M(\mathfrak{p})$ | $0.43801$ |
 | $\mathrm{tr}_M(\mathfrak{n})$ | $0.32054$ |
 | $\mathrm{tr}_M(T_{pn} \cdot \mathfrak{n})$ | $0.16222$ |
