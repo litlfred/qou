@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:22:49.878372+00:00",
-  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
+  "computedAt": "2026-05-19T00:40:47.522837+00:00",
+  "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
   "assertions": [
     {
       "name": "no_stale_probes",
@@ -24,12 +24,12 @@
   "contentBlock": "I7 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "stale_threshold_days": 7,
-    "total_fields_audited": 203,
+    "total_fields_audited": 199,
     "registered_labels_count": 1930
   },
   "data": {
     "by_result": {
-      "ok": 196,
+      "ok": 192,
       "md_missing": 7
     },
     "rows": [
@@ -130,24 +130,6 @@
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
         "md_minus_witness_days": -0.1,
-        "result": "ok"
-      },
-      {
-        "witness": "folio-assistant/computations/atomic-braid-mass-table-modes-sweep.witness.json",
-        "label": "prop:atomic-mass-gb-nf",
-        "witness_mtime_unix": 1779127979,
-        "md": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md",
-        "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": -0.17,
-        "result": "ok"
-      },
-      {
-        "witness": "folio-assistant/computations/atomic-braid-mass-table.witness.json",
-        "label": "prop:atomic-mass-gb-nf",
-        "witness_mtime_unix": 1779135309,
-        "md": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md",
-        "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": -0.26,
         "result": "ok"
       },
       {
@@ -1114,24 +1096,6 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/neutron-mass-codata-50dps.witness.json",
-        "label": "prop:full-pole-structure-mass-trace",
-        "witness_mtime_unix": 1779121988,
-        "md": "content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.md",
-        "md_mtime_unix": 1779111480,
-        "md_minus_witness_days": -0.12,
-        "result": "ok"
-      },
-      {
-        "witness": "folio-assistant/computations/neutron-mass-full-tower-50dps.witness.json",
-        "label": "prop:mass-endomorphism-tower",
-        "witness_mtime_unix": 1779111480,
-        "md": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md",
-        "md_mtime_unix": 1779111480,
-        "md_minus_witness_days": 0.0,
-        "result": "ok"
-      },
-      {
         "witness": "folio-assistant/computations/nf-transition-lifting.witness.json",
         "label": "conj:jet-filtered-knot-factor",
         "witness_mtime_unix": 1779111480,
@@ -1455,10 +1419,10 @@
       {
         "witness": "folio-assistant/computations/proton-mass-codata-50dps.witness.json",
         "label": "prop:full-pole-structure-mass-trace",
-        "witness_mtime_unix": 1779128571,
+        "witness_mtime_unix": 1779150280,
         "md": "content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.md",
         "md_mtime_unix": 1779111480,
-        "md_minus_witness_days": -0.2,
+        "md_minus_witness_days": -0.45,
         "result": "ok"
       },
       {

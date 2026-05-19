@@ -53,58 +53,34 @@
     ],
     "admissible_replacement": "Joint SDP on the full mass tower with GB filtration + jet-order tracking → canonical T_w per atom → Markov closure → hp_volume_of_link_closure(braid_word, digits ≥ 50) → B_pred = ρ · m_e · Vol_hyp → a-posteriori AME comparison."
   },
-  "deprecated_compute_witnesses": {
-    "_description": "Witness JSON files superseded by the canonical-derivation pipeline (Rust hecke-canonical-chi + mpmath y_λ + canonical_braid_crossings). MUST NOT be cited as primary numerical evidence. Each entry lists the structural reason for deprecation, the canonical replacement, and any tracking audit.",
-    "_added_at": "2026-05-19",
-    "_added_per": "repo-owner directive: 'they should been marked stale/updated from legacy compute'",
-    "canonical_pipeline_reference": {
-      "primary_witness": "canonical-mass-table-extended.witness.json",
-      "primary_script": "canonical_mass_table_extended.py",
-      "pipeline_layers": "Layer-1..5 per docs/audits/2026-05-18-all-atoms-isotopes-plan.md",
-      "consumers": ["recursive-atom-knot-atlas.md (auto-render via atlas_render_canonical_table.py)"]
+  "removed_legacy_compute_artifacts": {
+    "_description": "Witness JSONs and producer scripts that were misleading legacy compute paths (off-main commitSha, f64-fallback orphans, acknowledged-broken neutron chains). Removed from the repository on 2026-05-19 per repo-owner directive: 'get rid of/fix what led you astray. it should be removed.' Recorded here as historical record so future agents do not re-introduce equivalent legacy paths.",
+    "_removed_at": "2026-05-19",
+    "canonical_pipeline_replacement": {
+      "binding_energies (D, T, ³He, ⁴He, ⁵Li, ⁶Li)": "canonical-mass-table-extended.witness.json (canonical_mass_table_extended.py, markov_peel+mpmath, Layer-1 pipeline)",
+      "nucleon_masses (m_p, m_n, m_μ at 0.25 ppm)": "m-p-borromean-verification-50dps.witness.json (m_p_borromean_verification_50dps.py, mpmath 50dps, conditional on conj:borromean-baryon-mass-formula)",
+      "atom_knot_atlas": "recursive-atom-knot-atlas.md (auto-render via atlas_render_canonical_table.py)"
     },
-    "witnesses": [
-      {
-        "path": "canonical-mass-table.witness.json",
-        "reason_codes": ["MISSING_PROVENANCE", "F64_FALLBACK", "ORPHAN_PRODUCER"],
-        "reason_long": "No engine, scriptFile, or commitSha fields. precision=f64_numeric_fallback (not the canonical 50-dps mpmath path). Producer script canonical_mass_table.py is absent on disk (only canonical_mass_table_extended.py exists). 4-row binding-energy table is orphaned from any reproducible producer.",
-        "superseded_by": "canonical-mass-table-extended.witness.json",
-        "do_not_cite": true
-      },
-      {
-        "path": "atomic-braid-mass-table.witness.json",
-        "reason_codes": ["OFF_MAIN_COMMIT", "LEGACY_FORMULA", "INFERIOR_ACCURACY"],
-        "reason_long": "commitSha b2c597d650aa5a9a75f94d49262c21be7fc3625d lives only on feature branch claude/resolve-pr-751-comments-tyD4y, not on main. Six-term atomic-braid formula produces 24-54% errors on D/T/³He/⁴He vs canonical Layer-1 0.16-5.87%. Multiple post-witness commits on main touch the producer (atomic_braid_mass_table.py: bb68fc2a7 _precision rollout, 935861a89 CLASS-A banner, c30da51be syntax fix).",
-        "superseded_by": "canonical-mass-table-extended.witness.json",
-        "do_not_cite": true
-      },
-      {
-        "path": "atomic-braid-mass-table-modes-sweep.witness.json",
-        "reason_codes": ["LEGACY_FORMULA", "DIAGNOSTIC_ONLY"],
-        "reason_long": "T1-modes sweep over the legacy six-term atomic-braid formula. Best mode (A_disjoint) still 22.3% mean err vs canonical Layer-1 at <6%. Retained as diagnostic record of which T1 construction is closest to GS-NF; not a primary mass prediction.",
-        "superseded_by": "canonical-mass-table-extended.witness.json",
-        "diagnostic_only": true,
-        "do_not_cite": true
-      },
-      {
-        "path": "neutron-mass-codata-50dps.witness.json",
-        "reason_codes": ["ACKNOWLEDGED_BROKEN", "AWAITING_RHO_K_REBASE"],
-        "reason_long": "Built on legacy mass_endomorphism.py f64 chain. m_n_pred = 0.561 MeV is wrong by ~1700× (9 orders of magnitude gap to 1 ppb target). Producer docstring explicitly: 'will lift to ~0 ppb once the chain rebases onto the ρ_K canonical path'. Tracked via workplan-0b/M_N substrate-derivation.",
-        "superseded_by": "(pending: m_n canonical chain via ρ_K path)",
-        "tracking_audit": "docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md",
-        "do_not_cite": true
-      },
-      {
-        "path": "neutron-mass-full-tower-50dps.witness.json",
-        "reason_codes": ["FRAMEWORK_GAP_ACKNOWLEDGED", "CLASS_A_ANCHOR"],
-        "reason_long": "Full-tower (T1+T2+T3+T4) prediction. Producer docstring: m_n_pred = 348.6 MeV vs CODATA 939.57 MeV; residual −62.9%. Acknowledged structural framework gap (likely missing W±/Z mediation in the σ⁻¹ branch, or sign convention on σ⁻¹ contribution to brane tower). The proton's analogous sum closes to 1.63%; the neutron is far outside threshold and correctly classified `derivation_pending` by low_isotope_mass_table.py.",
-        "superseded_by": "(pending: T5/T6 closure or ρ_K canonical path)",
-        "tracking_audit": "docs/audits/2026-05-16-t1-t4-tower-closure-plan.md",
-        "do_not_cite": true
-      }
+    "removed_witnesses": [
+      "canonical-mass-table.witness.json (orphan f64-fallback, no producer/engine/commitSha; 4-row D/T/³He/⁴He binding-energy table)",
+      "atomic-braid-mass-table.witness.json (off-main commitSha; six-term formula 24–54 % errors)",
+      "atomic-braid-mass-table-modes-sweep.witness.json (T1-modes sweep over the legacy six-term formula; best mode still 22 % mean err)",
+      "neutron-mass-codata-50dps.witness.json (legacy mass_endomorphism.py f64 chain; m_n_pred = 0.561 MeV, off by ~1700×)",
+      "neutron-mass-full-tower-50dps.witness.json (acknowledged −62.9 % residual structural framework gap)",
+      "neutron-mass-50dps.derivation.json (companion to neutron-mass-codata-50dps)"
     ],
-    "review_cadence": "Re-validated whenever canonical-mass-table-extended.witness.json or any superseded-by target is regenerated. Entries can be removed when the original witness is deleted from the repository OR upgraded to canonical pipeline.",
-    "enforcement": "stale_probe_audit.py handles time-based staleness (witness vs .md mtime, 7-day threshold). Provenance-based legacy classification is recorded HERE — content blocks and downstream computations are expected to cite the canonical replacement, not the deprecated witness."
+    "removed_producers": [
+      "atomic_braid_mass_table.py",
+      "atomic_braid_mass_table_modes_sweep.py",
+      "atomic_braid_mass_terms.py (helper used only by the two scripts above)",
+      "build_neutron_mass_50dps_chain.py",
+      "derive_m_n_hecke_full_tower_50dps.py"
+    ],
+    "tracking_audits": {
+      "m_n_substrate_derivation": "docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md",
+      "tower_closure_plan": "docs/audits/2026-05-16-t1-t4-tower-closure-plan.md"
+    },
+    "invariant_to_uphold": "Mass-table witnesses MUST declare engine, scriptFile, and commitSha and MUST be reachable from main HEAD. Layer-1 canonical pipeline (markov_peel+mpmath or rust+mpmath 50dps) is the only allowed compute path for binding-energy predictions. Nucleon masses go through the Borromean tower verification or a substrate-derived path; the legacy mass_endomorphism.py f64 chain is removed."
   },
   "method_classifications": {
     "principled-gb-nf": "Knot is the closure of the GB-NF canonical braid in H_{n_0}(q_0); closure derived a priori.",

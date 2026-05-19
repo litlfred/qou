@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:40:07.077442+00:00",
-  "commitSha": "52be148400c9dac47b3d0bc971bc9a89f6f26aa6",
+  "computedAt": "2026-05-19T03:53:01.500273+00:00",
+  "commitSha": "39de6596d013a2e1bb2fb1f65ea825ac980f4f73",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -227,19 +227,6 @@
       "expected": 0.9232332971695838,
       "passed": true,
       "tolerance": 9.232332971695838e-10
-    },
-    {
-      "name": "chain_valid[neutron-mass-50dps.derivation]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "leaf_value[neutron-mass-50dps.derivation]",
-      "computed": 0.5611679331916536,
-      "expected": 0.5611679331916536,
-      "passed": true,
-      "tolerance": 0.005611679331916536
     },
     {
       "name": "chain_valid[p-tr-M-q0.derivation]",
@@ -572,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -1285,21 +1272,6 @@
           "mathlib-cited": 1,
           "script-cited": 4,
           "derived": 1,
-          "computational": 1
-        },
-        "has_script_frontier": true
-      },
-      {
-        "chain": "neutron-mass-50dps.derivation.json",
-        "target": "m_n (MeV)",
-        "target_value": 0.5611679331916536,
-        "computed_value": 0.5611679331916536,
-        "structural_ok": true,
-        "leaf_matches": true,
-        "issues": [],
-        "trust_summary": {
-          "derived": 2,
-          "script-cited": 3,
           "computational": 1
         },
         "has_script_frontier": true
@@ -2049,10 +2021,8 @@
       "derivation-fully-trusted": [],
       "derivation-backed": [
         "atomic-braid-gb-filtration-extension.witness.json",
-        "electron-m_e-derivation.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
-        "neutron-m_n-derivation.witness.json",
         "term7-alpha5-crystal-derivation.witness.json"
       ],
       "computational-only": [
@@ -2086,8 +2056,6 @@
         "atom-mass-derived.witness.json",
         "atom-nf-symbolic-D.witness.json",
         "atomic-braid-alpha-shift-l6.witness.json",
-        "atomic-braid-mass-table-modes-sweep.witness.json",
-        "atomic-braid-mass-table.witness.json",
         "atomic-mass-via-rho-k.witness.json",
         "atomic-tr-m-helium4.witness.json",
         "atomic-tr-m-mpfr-50dps.witness.json",
@@ -2133,7 +2101,6 @@
         "canonical-chi-rust-vs-sympy.witness.json",
         "canonical-derivation-pipeline-compliance.witness.json",
         "canonical-mass-table-extended.witness.json",
-        "canonical-mass-table.witness.json",
         "canonical-script-input-audit.witness.json",
         "canonical-tr-m-helium4.witness.json",
         "canonical-tr-m-three-path-comparison.witness.json",
@@ -2211,6 +2178,7 @@
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
         "e0-calibration-audit.witness.json",
+        "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
@@ -2350,8 +2318,7 @@
         "neutron-gap-probes-round6.witness.json",
         "neutron-gap-probes-round7.witness.json",
         "neutron-gap-probes.witness.json",
-        "neutron-mass-codata-50dps.witness.json",
-        "neutron-mass-full-tower-50dps.witness.json",
+        "neutron-m_n-derivation.witness.json",
         "nf-qvalues.witness.json",
         "nf-transition-lifting.witness.json",
         "nh-basis-shift.witness.json",

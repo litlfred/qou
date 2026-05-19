@@ -293,8 +293,8 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "AME experimental binding energy of deuterium (2H).",
       symbol: "B_{\\mathrm{AME}}(\\mathrm{D})",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "results.0.B_AME_MeV",
+        "folio-assistant/computations/canonical-mass-table-extended.witness.json",
+      witnessPath: "data.rows.2.B_AME_MeV",
       defaultPrecision: 5,
       units: "MeV",
     }),
