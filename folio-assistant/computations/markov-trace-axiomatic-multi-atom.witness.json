@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T19:09:53.699537+00:00",
-  "commitSha": "b2c597d650aa5a9a75f94d49262c21be7fc3625d",
+  "computedAt": "2026-05-19T04:07:15.910386+00:00",
+  "commitSha": "2aed85b669a63fd5555cc7c62d97acf9e9e0db28",
   "assertions": [
     {
       "name": "disjoint_product_ok",
@@ -25,8 +25,8 @@
   "durationMs": 0,
   "computation": "markov-trace-axiomatic-multi-atom",
   "scriptFile": "markov_trace_axiomatic_multi_atom.py",
-  "scriptHash": "f9ee92823ec5",
-  "scriptCommitSha": "9c54b13fbabbb54c99dbfa6be284ce858460c1db",
+  "scriptHash": "d0e3b23c2c3e",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
   "description": "Multi-atom Markov-trace anchor using the axiomatic recursive reducer (markov_trace_recursive). Computes tr_M(β_K) for K ∈ {proton, neutron} via Hecke quadratic + Markov axioms + cyclicity, no representation theory. The disjoint-product check on the deuteron has been removed (see convention_status above).",
   "convention_status": "DEPRECATED_NON_CANONICAL — the proton word σ₁⁷σ₂⁴ and neutron word σ₁⁶σ₂⁴σ₁⁻¹ used here do NOT match the canonical convention from mass_at_3A_proper.atom_braid_word_3A (which has 2 averaged crossings per nucleon). Computed values 1.6332 (proton) and 1.2482 (neutron) disagree with canonical 1.0653 / 0.9232 in atomic-tr-m-mpfr-50dps.witness.json. DO NOT use for mass predictions. Use atomic_tr_m_mpfr_50dps.py for canonical |tr_M| values. Deuteron entry removed entirely (disjoint convention empirically wrong; recursive reducer does not support averaged crossings).",
   "reference_blocks": [

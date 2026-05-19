@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:56:50.063013+00:00",
-  "commitSha": "ff51f1cd1b3819c57d138f15577023e61c91ea70",
+  "computedAt": "2026-05-19T04:04:43.687311+00:00",
+  "commitSha": "2c099779ab3b3961772ed4159138ed8ce5077684",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,9 +27,9 @@
   },
   "data": {
     "by_result": {
-      "i1_pre_lean": 150,
-      "i1_no_probe": 387,
-      "wired": 34,
+      "i1_pre_lean": 141,
+      "i1_no_probe": 393,
+      "wired": 37,
       "i1_lean_with_sorry": 3,
       "conditional_class": 1
     },
@@ -1013,12 +1013,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts",
         "label": "prop:gb-spectral-sequence",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/geom-universality.ts",
@@ -1059,12 +1059,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts",
         "label": "prop:graded-markov-trace-from-gs-filtration",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts",
@@ -1202,12 +1202,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/hecke-log-decomposition.ts",
         "label": "prop:hecke-log-decomposition",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hecke-markov-transition.ts",
@@ -1622,14 +1622,14 @@
         "path": "content/quantum-observable-universe/braids-and-knots/markov-pair-z2.ts",
         "label": "prop:markov-pair-z2",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 1,
         "probe_witnesses": [
           "markov-peel-atomic-tr-m.witness.json"
         ],
-        "result": "i1_pre_lean"
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/markov-trace-antipode-polynomial-symmetry.ts",
@@ -1887,12 +1887,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts",
         "label": "prop:phi-q-tower-algebraic-stratification",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/pieri-photon-shift.ts",
@@ -2080,12 +2080,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/residue-at-root.ts",
         "label": "prop:residue-at-root",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.ts",
@@ -2312,12 +2312,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/staircase-corner-hook.ts",
         "label": "lem:staircase-corner-hook",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/sw-3root-rational-integrand.ts",
@@ -2359,14 +2359,14 @@
         "path": "content/quantum-observable-universe/braids-and-knots/term6-binding-density.ts",
         "label": "prop:term6-binding-density",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 1,
         "probe_witnesses": [
           "term6-habiro-residue-mpfr-50dps.witness.json"
         ],
-        "result": "i1_pre_lean"
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts",
@@ -2383,7 +2383,7 @@
         "path": "content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.ts",
         "label": "prop:three-calibration-inputs",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 3,
@@ -2392,7 +2392,7 @@
           "codata-2022-validation-masses.witness.json",
           "codata-masses.witness.json"
         ],
-        "result": "i1_pre_lean"
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.ts",
