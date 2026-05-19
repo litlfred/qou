@@ -3,6 +3,20 @@
 Compiled while upgrading ~250 placeholder canonicals on PR #806.
 Each question has 2-4 concrete options to pick from.
 
+## Status — After Q1 / Q2 / Q4 author selections
+
+| Decision | Author choice | Status |
+|----------|---------------|--------|
+| Q1: next-pass strategy | **(B) shared typeclass infrastructure** | 4 typeclass roots committed in `QOU/Shared/`; 30 Hecke-themed blocks refactored to `extends QOU.Shared.MarkovTraceContext` |
+| Q2: conjecture pattern | **be consistent with existing patterns** (= option A leave distinct) | Conjecture classes keep `class + def trivialModel` per `lean-generation.md`; provable kinds get the new shared-typeclass pattern |
+| Q4: first chapter | **(A) Hecke-themed (~40 blocks)** | 30/40 refactored; 10 hand-crafted typed blocks were correctly skipped (they already have substantive typed fields) |
+
+**Remaining work** (not started):
+- LP-dual blocks (~10) → `QOU.Shared.OperatorSelectionLPContext`
+- Wedderburn blocks (~15) → `QOU.Shared.WedderburnBlockDecompositionContext` (Wedderburn script ran with 0 hits — all such blocks already hand-crafted)
+- Sobolev blocks (~5) → `QOU.Shared.SobolevHkRegularityContext`
+- ~108 hand-crafted blocks remain with bespoke typed fields (not refactored — already have substantive content)
+
 ## Status — Final pass complete
 
 After the structural meat-adding pass (PR #806):
