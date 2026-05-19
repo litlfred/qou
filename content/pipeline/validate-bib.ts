@@ -170,7 +170,13 @@ async function modeCrossCheck(): Promise<CheckResult[]> {
       const titleWords = entryTitle
         .split(/[\s\-:,]+/)
         .filter((w) => w.length >= 4 && !stopwords.has(w));
-      if (isProseDescription && authorFamilies.length > 0) {
+      // Heuristic v5 addition (2026-05-19): also accept the description
+      // if it contains a chapter/section marker (§N, Ch. <NUMERAL>, Thm,
+      // Definition, etc.). These markers indicate the citation pinpoints
+      // a specific part of the cited work — more useful than naming the
+      // author, and a stronger anchor than just title words.
+      const hasChapterSection = /(?:§|\bCh\.?\s|\bChapter\s|\bSection\s|\bThm\.?\s|\bTheorem\s|\bDefinition\s|\bLemma\s|\bProposition\s|\bCorollary\s|\bAppendix\s|\bExample\s|\bFig\.?\s|\bEq\.?\s|\bPage\s|\bp\.?\s\d)/i.test(desc);
+      if (isProseDescription && authorFamilies.length > 0 && !hasChapterSection) {
         const anyAuthorMentioned = authorFamilies.some(
           (fam) => descStripped.includes(fam)
         );
@@ -184,8 +190,14 @@ async function modeCrossCheck(): Promise<CheckResult[]> {
           });
         }
       }
-      if (yearMatch && entryYear) {
-        const descYear = parseInt(yearMatch[0]);
+      // v5 year-mismatch refinement (2026-05-19): only flag when EXACTLY
+      // ONE year appears in the description. Multiple years almost
+      // always means the description references other citations
+      // (e.g. "CODATA 2018" alongside [jones1987]) — the year doesn't
+      // refer to the current entry, so a mismatch is a false positive.
+      const allYears = desc.match(/\b(?:19|20)\d{2}\b/g) ?? [];
+      if (allYears.length === 1 && entryYear) {
+        const descYear = parseInt(allYears[0]);
         if (Math.abs(descYear - entryYear) > 1) {
           out.push({
             entry: key,

@@ -33,7 +33,12 @@ to algebraic independence of hyperbolic volumes:
 
 - [zagier1986] https://doi.org/10.1007/BFb0084581
 - [reid1991] https://doi.org/10.1112/blms/23.4.383
-- [yekutieli2010] Nonabelian multiplicative integration on surfaces
+- [yekutieli2015] Nonabelian multiplicative integration on surfaces
+  (was previously cited as `[yekutieli2010]` which is the wrong key —
+  yekutieli2010 is "Central Extensions of Gerbes"; the "Nonabelian
+  multiplicative integration" book is yekutieli2015 per
+  content/schema/references.ts. Fixed during validate-bib --cross-check
+  audit on 2026-05-19.)
 -/
 
 open QOU.KnotTheory QOU.KnotRegistry
