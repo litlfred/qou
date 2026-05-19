@@ -281,3 +281,33 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 2. 5e.2 — If chirality-at-endpoints holds under the full formula, propose K_1* = K_3* = 6_1 as a refinement to the depth-stratified-frobenius-reciprocity proposition in PR #801.
 3. 5e.3 — Derive cosh(h) operator-level (Phase 5c.2 still queued) — would close the per-Z step factor exactly.
 4. 5e.4 — Build SnapPy bridge for Kashaev.lean's `pieceVolume` (closes the last 2 non-§3b-cond Lean sorries).
+
+## 2026-05-19 — Stage-1 (Faddeev → Li_2^q) migration is structurally blocked (branch `claude/fr-pullback-k3-numerical`, [PR #826](https://github.com/litlfred/qou/pull/826))
+
+| Date | Phase | Status | Notes |
+|---|---|---|---|
+| 2026-05-19 | Faddeev `Phi_q` → symmetric `Li_2^q` substitution sweep | **BLOCKED** | Function-substitution alone catastrophically regresses m_p/m_e |
+
+**Empirical evidence** (`m-p-m-e-li2q.witness.json` + ad-hoc rerun on `claude/fr-pullback-k3-numerical`):
+
+| Substitution | m_p/m_e | error vs CODATA 1836.152 |
+|---|---:|---:|
+| `Phi_q(z)` (legacy Faddeev, on `main`) | 1869.85 | 1.84% |
+| `Li_2^q(z)` (naive name swap, `m_p_m_e_li2q.py`) | 3.31 | **99.82%** |
+| `−Li_2^q(−z)` (sign-flipped per `_li_2_q_util.py:21` docstring) | 2.49 | **99.86%** |
+
+Neither candidate substitution recovers ~1836. Confirms `mass-endomorphism-tower.md` SUPERSEDED banner — the Faddeev → Li_2^q transition is a **structural revision** (operator-valued $A^\lambda_{\mu,\nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)$, graded $\rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \dots$ expansion), not a function swap.
+
+**Impact on owner's "remove the deprecated stuff completely" directive (2026-05-19):**
+- Stage 1 (Faddeev migration): deferred until operator-valued $\rho_K$ is formalised
+- Stages 2–4 (revival + orphan deletion + paper banners): can proceed independently, but were also paused pending the Stage-1 result (single-session scope limit). Re-queued.
+- `_phi_q_util.py` (42 active callers in `folio-assistant/computations/`) stays in the codebase — it is the legacy convention that actually produces 1.84% m_p/m_e, the best result currently available.
+
+**Where to look next** for the structural derivation:
+1. [`mass-endomorphism-tower.md`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) SUPERSEDED banner — text of the structural revision
+2. [`li2q-phiq-bar-symmetrization.md`](../../content/quantum-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md) — bar-symmetrization claim (Li_2^q = bar(Phi_q) under q ↔ q⁻¹); verifies why naive Li_2^q(z) does not reproduce Phi_q(z) numerically
+3. Per-isotope Borromean-tower extension (per `docs/precision-goals.md` Subgoal-1 closure path) — may be the right formal target for the operator-valued $A^\lambda_{\mu,\nu}(I)$
+
+**Surfacing on siblings:**
+- [#819 comment](https://github.com/litlfred/qou/pull/819#issuecomment-4492904065) — coordination intent posted before empirical check; will follow up with the result reversal here
+- [#826](https://github.com/litlfred/qou/pull/826) — the FR-pullback PR that triggered the deprecation request stays focused on its original FR-test scope; deprecation work spun out to this ledger entry instead of stacking on #826
