@@ -41,6 +41,29 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
+def classify_crossing(c: float, d: float, h_val: float) -> str:
+    """Classify a `(c, d)` Hecke-algebra crossing pair into a ctype
+    `{sigma, sigma_inv, averaged}` against the substrate `h = q - q⁻¹`.
+
+    Shared utility for downstream consumers (canonical braid crossings,
+    Wenzl LR convention adapter, Rust binary wrappers). Centralises
+    the tolerance constants so any future refinement is reflected
+    everywhere.
+    """
+    if abs(c - 1.0) > 1e-12:
+        raise ValueError(f"Unexpected coefficient c={c} (expected 1)")
+    if abs(d) < 1e-12:
+        return "sigma"
+    if abs(d - (-h_val)) < 1e-9:
+        return "sigma_inv"
+    if abs(d - (-h_val / 2.0)) < 1e-9:
+        return "averaged"
+    raise ValueError(
+        f"Unrecognised crossing (c, d)=({c}, {d}); "
+        f"expected d ∈ {{0, -h, -h/2}} with h≈{h_val:.6f}"
+    )
+
+
 def atom_canonical_crossings(
     Z: int, N: int,
     *,
@@ -69,27 +92,8 @@ def atom_canonical_crossings(
     )
     out: list[tuple[int, str]] = []
     for (c, d, g) in triples:
-        # c is always 1 in this convention; classify by d.
-        if abs(c - 1.0) > 1e-12:
-            raise ValueError(
-                f"Unexpected coefficient c={c} in canonical word "
-                f"(expected c=1)"
-            )
-        if abs(d) < 1e-12:
-            ctype = "sigma"
-        elif abs(d - (-h_val)) < 1e-9:
-            ctype = "sigma_inv"
-        elif abs(d - (-h_val / 2)) < 1e-9:
-            ctype = "averaged"
-        else:
-            raise ValueError(
-                f"Unrecognised crossing (c, d) = ({c}, {d}) at gen "
-                f"{g} in atom_braid_word_3A({Z}, {N}) — expected "
-                f"d ∈ {{0, -h, -h/2}} where h = q_0 - q_0^{{-1}} "
-                f"≈ {h_val:.6f}"
-            )
-        out.append((int(g), ctype))
+        out.append((int(g), classify_crossing(float(c), float(d), h_val)))
     return out
 
 
-__all__ = ["atom_canonical_crossings"]
+__all__ = ["atom_canonical_crossings", "classify_crossing"]

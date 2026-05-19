@@ -1,22 +1,12 @@
-**Proposition (LR comultiplication bridge for Hecke characters on
-tensor-product braids).**
-*Let $H_n(R, q)$ denote the type-$A$ Iwahori--Hecke algebra over a
-commutative ring $R$ in the symmetric (Hoefsmit) convention
-$\sigma_i^2 = (q - q^{-1})\sigma_i + 1$, and let $\chi^\lambda_{H_n}$
-denote the seminormal character indexed by $\lambda \vdash n$. The
-parabolic embedding*
-
-$$
-  H_{n_1}(R, q) \otimes_R H_{n_2}(R, q) \otimes_R \cdots \otimes_R
-    H_{n_k}(R, q)
-  \;\hookrightarrow\;
-  H_{n_1 + n_2 + \cdots + n_k}(R, q),
-  \qquad n := \textstyle\sum_i n_i,
-$$
-
-*sends a tensor-product element
-$\beta = \beta_1 \otimes \beta_2 \otimes \cdots \otimes \beta_k$
-to a braid in $H_n(R, q)$. For every partition $\nu \vdash n$,*
+**Proposition (LR comultiplication bridge for tensor-product
+braids; trivial-interface specialisation of the branching
+decomposition).**
+*Specialise
+([Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition))
+to the trivial interface $I = \mathbf{1}$ and iterate $k-1$ times.
+For every $\nu \vdash n_1 + \cdots + n_k$ and every
+$(\beta_1, \ldots, \beta_k) \in H_{n_1}(R, q) \times \cdots \times
+H_{n_k}(R, q)$, the tensor-product Hecke character factors as*
 
 $$
   \boxed{\;
@@ -27,8 +17,8 @@ $$
   \;}
 $$
 
-*where the sum runs over $\lambda_i \vdash n_i$ and
-$c^\nu_{\lambda_1, \ldots, \lambda_k}$ is the iterated
+*where $n := \sum_i n_i$, the sum runs over $\lambda_i \vdash n_i$,
+and $c^\nu_{\lambda_1, \ldots, \lambda_k}$ is the iterated
 Littlewood--Richardson coefficient*
 
 $$
@@ -39,17 +29,43 @@ $$
       \cdots c^{\mu_{k-1}}_{\lambda_{k-1}, \lambda_k},
 $$
 
-*the structure constant of the Schur basis of the ring of symmetric
-functions $\mathrm{Sym}$ under the iterated coproduct.*
+*the structure constant of the Schur basis of $\mathrm{Sym}$ under
+the iterated coproduct.*
+
+## Relationship to the branching decomposition
+
+The branching identity
+([Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition))
+states the general two-factor character
+
+$$
+  \chi^\lambda(\beta_1 \cdot I \cdot \beta_2)
+  \;=\;
+  \sum_{(\mu, \nu)} \,
+  \operatorname{Tr}_{V_\mu \otimes V_\nu}\!\Bigl(
+     A^\lambda_{\mu, \nu}(I) \cdot
+     \bigl(\rho_\mu(\beta_1) \otimes \rho_\nu(\beta_2)\bigr)
+  \Bigr)
+$$
+
+for an arbitrary interface $I \in H_n(R, q)$ supported on the
+boundary strands. When $I = \mathbf{1}$ the operator
+$A^\lambda_{\mu, \nu}(\mathbf{1})$ collapses to the identity on
+$V_\mu \otimes V_\nu$, the trace splits across the tensor factors,
+and the scalar prefactor reduces to the LR coefficient
+$c^\lambda_{\mu, \nu}$. Iterating $k-1$ times across the parabolic
+chain $H_{n_1} \otimes \cdots \otimes H_{n_k} \hookrightarrow H_n$
+yields the boxed identity above. The present corollary is therefore
+the *trivial-interface, $k$-factor* specialisation of the operator-
+valued branching theorem.
 
 ## Algebraic context
 
 The ring $\mathrm{Sym}$ of symmetric functions is a self-dual graded
 Hopf algebra under the Hall inner product, with the Schur basis
 $\{s_\lambda\}$ orthonormal and simultaneously diagonalising the
-product and the coproduct ([macdonald1995] §I.5; PSH-algebra in
-the sense of Zelevinsky). The Littlewood--Richardson coefficients
-$c^\nu_{\lambda\mu}$ realise both structures:
+product and the coproduct ([macdonald1995] §I.5; PSH-algebra in the
+sense of Zelevinsky):
 
 $$
   s_\lambda \cdot s_\mu
@@ -60,41 +76,15 @@ $$
         c^\nu_{\lambda\mu}\, s_\lambda \otimes s_\mu.
 $$
 
-Under the Frobenius characteristic map, $\mathrm{Sym} \cong
-\bigoplus_{n\geq 0} R(S_n) \otimes_\mathbb{Z} \mathbb{Q}$, the basis
-element $s_\lambda$ corresponds to the irreducible character
-$\chi^\lambda$ of $S_n$, and the Schur product / coproduct realise the
-induction / restriction along the parabolic embedding $S_{n_1} \times
-\cdots \times S_{n_k} \hookrightarrow S_{n_1 + \cdots + n_k}$.
-
-## Proof
-
-By [geck-pfeiffer2000] Theorem 9.1.5 and the quantum
-Frobenius--Schur duality (compare [ram1991], Theorem 5.1), the
-classical induction--restriction formulas lift to the type-$A$
-Iwahori--Hecke algebra: for every $\nu \vdash n_1 + n_2$ and every
-$\beta_i \in H_{n_i}(R, q)$,
-
-$$
-  \chi^\nu_{H_{n_1+n_2}}(\beta_1 \otimes \beta_2)
-  \;=\;
-  \sum_{\substack{\lambda \vdash n_1\\\mu \vdash n_2}}
-    c^\nu_{\lambda\mu}\,
-    \chi^\lambda_{H_{n_1}}(\beta_1) \cdot \chi^\mu_{H_{n_2}}(\beta_2).
-$$
-
-The two-factor identity is the Hecke-algebra image of the Schur
-coproduct $\Delta$. Iterating gives the $k$-factor identity, with the
-iterated LR coefficient
-$c^\nu_{\lambda_1, \ldots, \lambda_k}$ exactly equal to the
-$k$-fold composition
-$(\Delta \otimes \mathrm{id}^{\otimes (k-2)}) \cdots
- (\Delta \otimes \mathrm{id}) \, \Delta\, s_\nu$ expressed in the
-Schur basis, by induction on $k$. $\square$
+Under the Frobenius characteristic, the Schur product / coproduct
+realise the induction / restriction along the parabolic embedding
+$S_{n_1} \times \cdots \times S_{n_k} \hookrightarrow S_{n_1 + \cdots + n_k}$,
+and the quantum lift to $H_n(R, q)$ ([geck-pfeiffer2000] §9.1.5,
+[ram1991] Theorem 5.1) preserves the coefficients.
 
 ## Applicability in QOU
 
-Two structural features of the QOU substrate make this proposition
+Two structural features of the QOU substrate make this corollary
 the engine of every tractable atomic mass prediction.
 
 **Tensor-product factorisation of the canonical atomic braid.**
@@ -115,10 +105,13 @@ short word in the inter-nucleon Hecke generators $\sigma_{3k+2}$
 ($0 \leq k < A-1$), one factor per adjacent nucleon pair. The
 per-pair factor is $\sigma$ on a proton--proton arc, $\sigma^{-1}$
 on a neutron--neutron arc, and the averaged half-sum
-$\tfrac{1}{2}(\sigma + \sigma^{-1})$ on a mixed proton--neutron arc. The
-proposition applies directly to $\beta_{\mathrm{disjoint}}$; the
-interface factor multiplies the seminormal representation matrix at
-$H_{3A}$ after the LR sum has been evaluated.
+$\tfrac{1}{2}(\sigma + \sigma^{-1})$ on a mixed proton--neutron arc.
+The present corollary applies directly to $\beta_{\mathrm{disjoint}}$;
+the interface factor is handled by the
+([branching trace decomposition](#prop:hecke-branching-trace-decomposition))
+with $I = \beta_{\mathrm{interface}}$, multiplying the seminormal
+representation matrix at $H_{3A}$ after the LR sum has been
+evaluated.
 
 **Cost asymmetry: small per-nucleon $H_3$ vs. large $H_{3A}$.**
 At each nucleon, $\lambda_i \vdash 3$ with $\dim \lambda_i \leq 2$, so
@@ -135,9 +128,9 @@ $$
 with the first term --- the LR sum --- dominated by $3^A$ choices of
 per-nucleon partition, and the second term --- the interface
 multiply --- carrying a single power of $\dim_{\max}^2(3A)$
-(roughly $6700^2$ at $A = 10$) but only $A - 1$ averaged crossings
-rather than the $\sim 3A$ crossings of the full atomic braid.
-The direct Hoefsmit path costs
+(roughly $6700^2$ at $A = 10$) but only $A - 1$ inter-nucleon
+crossings rather than the $\sim 3A$ crossings of the full atomic
+braid. The direct Hoefsmit path costs
 
 $$
   T_{\mathrm{direct}}(Z, N)
@@ -147,8 +140,8 @@ $$
 For $A = 4$ (helium-4, $H_{12}$, $p(12) = 77$), the ratio
 $T_{\mathrm{direct}} / T_{\mathrm{LR}} \approx 5 \cdot 10^2$. For
 $A = 10$ (boron-10, $H_{30}$, $p(30) = 5604$), the ratio reaches
-$\approx 10^6$, converting an
-otherwise-intractable evaluation into one of minutes.
+$\approx 10^6$, converting an otherwise-intractable evaluation into
+one of minutes.
 
 ## Convolutional structure
 
@@ -157,7 +150,7 @@ $c^\nu_{\lambda_1, \ldots, \lambda_k}$ is the matrix element of the
 $(k-1)$-fold coproduct
 $\Delta^{(k-1)} \colon \mathrm{Sym}_n \to
  \mathrm{Sym}_{n_1} \otimes \cdots \otimes \mathrm{Sym}_{n_k}$
-on the Schur basis. The bridge therefore expresses the $H_n$
+on the Schur basis. The corollary therefore expresses the $H_n$
 character as a *convolution* of $H_{n_i}$ characters against the
 coalgebra of $\mathrm{Sym}$. Because $\mathrm{Sym}$ is self-dual, the
 same coefficient table $c$ that prescribes the product of Schur
@@ -179,26 +172,20 @@ for cache locality at large $A$.
 verifies the bridge against the direct Hoefsmit path on $H_6$ (D, T)
 and the self-conjugate sub-stratum of $H_9$ ($^3\mathrm{He}$):
 per-partition $\chi^\nu$ agreement is at the machine-precision limit
-($\sim 10^{-14}$ relative).
-
-Witnesses
-[`markov-trace-via-wenzl-lr.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov-trace-via-wenzl-lr.witness.json)
-and
-[`cross-check-trM-wenzl-lr-1ppb.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cross-check-trM-wenzl-lr-1ppb.witness.json)
-record the LR-bridged character tables on
-$\beta_{\mathrm{disjoint}}$ for the $(Z, N) = (1, 0), (0, 1), (1, 1),
-(2, 1), (1, 2), (2, 2)$ atoms.
+($\sim 10^{-14}$ relative). The convention adapter
+[`folio-assistant/computations/wenzl_lr_convention_adapter.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wenzl_lr_convention_adapter.py)
+splits a $(Z, N)$ specification into the LR-compatible per-nucleon
+factor list and the interface residue and records the partition of
+the canonical word that this corollary strictly governs.
 
 ## Scope of applicability
 
 The identity holds for tensor-product (parabolic) braids only. The
 non-tensor inter-nucleon factor $\beta_{\mathrm{interface}}$ does not
-factor through the parabolic embedding, and its contribution to the
-canonical character must be applied as a separate seminormal-basis
-multiplication; the LR bridge is the correct primitive for the
-disjoint factor, not for the entire canonical braid. The convention
-adapter
-[`folio-assistant/computations/wenzl_lr_convention_adapter.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wenzl_lr_convention_adapter.py)
-splits a $(Z, N)$ specification into the LR-compatible per-nucleon
-factor list and the interface residue, recording the partition
-of the canonical word that this proposition strictly governs.
+factor through the parabolic embedding; its contribution is the
+$I \neq \mathbf{1}$ regime governed by
+([prop:hecke-branching-trace-decomposition](#prop:hecke-branching-trace-decomposition)).
+The LR bridge is the correct primitive for the disjoint factor, not
+for the entire canonical braid; the convention adapter keeps the
+partition explicit so downstream consumers do not silently apply LR
+to a non-tensor braid.

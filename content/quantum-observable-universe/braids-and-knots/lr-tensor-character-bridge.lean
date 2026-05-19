@@ -2,12 +2,11 @@
   LR comultiplication bridge for Hecke characters on tensor-product
   braids (prop:lr-tensor-character-bridge).
 
-  Statement.  For the type-A Iwahori–Hecke algebra H_n(R, q) and any
-  composition n = n_1 + … + n_k, the parabolic embedding
-
-    H_{n_1}(R, q) ⊗ … ⊗ H_{n_k}(R, q)  ↪  H_n(R, q)
-
-  satisfies, for every ν ⊢ n and every (β_1, …, β_k),
+  Status.  Corollary: trivial-interface, k-factor specialisation of
+  prop:hecke-branching-trace-decomposition.  Setting the interface
+  I = 𝟙 in the branching identity collapses the operator-valued
+  A^λ_{μ,ν}(I) to the identity on V_μ ⊗ V_ν; iterating across the
+  parabolic chain H_{n_1} ⊗ … ⊗ H_{n_k} ↪ H_n yields:
 
     χ^ν_{H_n}(β_1 ⊗ … ⊗ β_k)
       = Σ_{λ_1 ⊢ n_1, …, λ_k ⊢ n_k}
@@ -18,6 +17,9 @@
   Schur-basis coproduct on Sym_n.
 
   Refs:
+    - prop:hecke-branching-trace-decomposition (general two-factor
+      operator-valued statement; this corollary is the I = 𝟙 case
+      iterated k − 1 times).
     - [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors",
       Invent. Math. 92, 1988. DOI 10.1007/BF01404457
     - [macdonald1995] Macdonald, "Symmetric Functions and Hall
@@ -29,11 +31,10 @@
     - [ram1991] Ram, "A Frobenius formula for the characters of the
       Hecke algebras of type A", Invent. Math. 106, 1991.
 
-  Status.  Structural-stub level.  The full proof requires Mathlib's
-  symmetric-functions Hopf-algebra machinery (Schur basis as
-  coalgebra basis, Frobenius characteristic, Hecke parabolic
-  induction).  The statement is recorded here as the public API so
-  downstream computational results can cite it directly.
+  The full proof requires Mathlib's symmetric-functions Hopf-algebra
+  machinery (Schur basis as coalgebra basis, Frobenius characteristic,
+  Hecke parabolic induction); the structural stub below records the
+  public API so downstream computational results can cite it directly.
 -/
 
 import Mathlib.Data.Real.Basic
@@ -80,9 +81,11 @@ structure TensorBraid where
 def TensorBraid.totalStrands (β : TensorBraid) : ℕ :=
   β.factors.foldr (fun ⟨n, _⟩ acc => n + acc) 0
 
-/-- The LR comultiplication bridge for Hecke characters.
+/-- The LR comultiplication bridge for Hecke characters
+    (trivial-interface specialisation of the operator-valued
+    branching theorem).
 
-    Public proposition: for every `ν ⊢ Σ n_i` and every tensor-
+    Public corollary: for every `ν ⊢ Σ n_i` and every tensor-
     product braid `β = ⊗_i β_i`, the H_n-character of `β` equals
     the iterated LR sum of per-factor characters.
 
@@ -94,7 +97,9 @@ theorem lr_tensor_character_bridge
     (chi_factor : ∀ i : Fin β.factors.length,
                     HeckeChar (β.factors.get i).1) :
     True := by
-  -- Stub: see [wenzl1988], [geck-pfeiffer2000] §9.1.5, [ram1991].
+  -- Stub: see prop:hecke-branching-trace-decomposition (I = 𝟙 case
+  -- iterated k − 1 times); also [wenzl1988],
+  -- [geck-pfeiffer2000] §9.1.5, [ram1991].
   -- Upgrade target: state the bridge identity in Mathlib's
   -- symmetric-functions / Hecke-algebra API and prove via
   -- Schur-coproduct diagonalisation.

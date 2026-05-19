@@ -1,16 +1,16 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T22:54:06.843531+00:00",
-  "commitSha": "1093ba59657017e054610f0889ed8b72d510ea20",
+  "computedAt": "2026-05-19T23:14:38.796098+00:00",
+  "commitSha": "3440b314839e09dc211c94d31b7a4d86489adc82",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "wenzl-lr-convention-adapter",
   "scriptFile": "wenzl_lr_convention_adapter.py",
-  "scriptHash": "70a3f0071005",
-  "scriptCommitSha": "unknown",
-  "description": "Convention adapter splitting canonical (Z, N) atomic braids into LR-compatible tensor-product factors and the inter-nucleon interface residue, per prop:lr-tensor-character-bridge. Six smoke-test atoms (p, n, D, T, ³He, ⁴He) verified for self-consistent splitting (intra + interface = full canonical word; interface is purely averaged and has length A-1).",
+  "scriptHash": "1ac4494181a8",
+  "scriptCommitSha": "3440b314839e09dc211c94d31b7a4d86489adc82",
+  "description": "Convention adapter splitting canonical (Z, N) atomic braids into LR-compatible tensor-product factors and the inter-nucleon interface residue, per prop:lr-tensor-character-bridge. Six smoke-test atoms (p, n, D, T, ³He, ⁴He) verified for self-consistent splitting: intra + interface = full canonical word; interface has length A-1, each entry at gen 3k+2 with ctype ∈ {sigma (pp), sigma_inv (nn), averaged (mixed pn / np)}.",
   "auditOnly": "docs/coordination/2026-05-19-refreshed-workplan.md",
   "binary_built": null,
   "cases": {
@@ -21,7 +21,7 @@
         "p"
       ],
       "n_strands_3strand": 3,
-      "n_strands_1strand": 0,
+      "n_strands_v12_atomic": 1,
       "n_intra_crossings": [
         11
       ],
@@ -79,12 +79,12 @@
         }
       ],
       "interface_word": [],
-      "factor_spec_1strand": {
-        "label": "atom-1strand",
-        "n_strands": 1,
-        "word": []
-      },
-      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding.",
+      "v12_atomic_cli_args": [
+        "1",
+        "0",
+        "p"
+      ],
+      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding. The v12_atomic_cli_args drive the separate `hecke-atomic` Rust binary, which computes a different observable (f_pauli) and uses a different crossing kernel — see v12_atomic_cli_args() for the kernel-mismatch note.",
       "proposition": "prop:lr-tensor-character-bridge"
     },
     "Z0_N1": {
@@ -94,7 +94,7 @@
         "n"
       ],
       "n_strands_3strand": 3,
-      "n_strands_1strand": 0,
+      "n_strands_v12_atomic": 1,
       "n_intra_crossings": [
         11
       ],
@@ -152,12 +152,12 @@
         }
       ],
       "interface_word": [],
-      "factor_spec_1strand": {
-        "label": "atom-1strand",
-        "n_strands": 1,
-        "word": []
-      },
-      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding.",
+      "v12_atomic_cli_args": [
+        "0",
+        "1",
+        "n"
+      ],
+      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding. The v12_atomic_cli_args drive the separate `hecke-atomic` Rust binary, which computes a different observable (f_pauli) and uses a different crossing kernel — see v12_atomic_cli_args() for the kernel-mismatch note.",
       "proposition": "prop:lr-tensor-character-bridge"
     },
     "Z1_N1": {
@@ -168,7 +168,7 @@
         "n"
       ],
       "n_strands_3strand": 6,
-      "n_strands_1strand": 2,
+      "n_strands_v12_atomic": 2,
       "n_intra_crossings": [
         11,
         11
@@ -283,21 +283,12 @@
           "run_index": 11
         }
       ],
-      "factor_spec_1strand": {
-        "label": "atom-1strand",
-        "n_strands": 2,
-        "word": [
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ]
-        ]
-      },
-      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding.",
+      "v12_atomic_cli_args": [
+        "1",
+        "1",
+        "pn"
+      ],
+      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding. The v12_atomic_cli_args drive the separate `hecke-atomic` Rust binary, which computes a different observable (f_pauli) and uses a different crossing kernel — see v12_atomic_cli_args() for the kernel-mismatch note.",
       "proposition": "prop:lr-tensor-character-bridge"
     },
     "Z2_N1": {
@@ -309,7 +300,7 @@
         "n"
       ],
       "n_strands_3strand": 9,
-      "n_strands_1strand": 3,
+      "n_strands_v12_atomic": 3,
       "n_intra_crossings": [
         11,
         11,
@@ -480,33 +471,12 @@
           "run_index": 23
         }
       ],
-      "factor_spec_1strand": {
-        "label": "atom-1strand",
-        "n_strands": 3,
-        "word": [
-          [
-            1,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            2
-          ]
-        ]
-      },
-      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding.",
+      "v12_atomic_cli_args": [
+        "2",
+        "1",
+        "ppn"
+      ],
+      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding. The v12_atomic_cli_args drive the separate `hecke-atomic` Rust binary, which computes a different observable (f_pauli) and uses a different crossing kernel — see v12_atomic_cli_args() for the kernel-mismatch note.",
       "proposition": "prop:lr-tensor-character-bridge"
     },
     "Z1_N2": {
@@ -518,7 +488,7 @@
         "n"
       ],
       "n_strands_3strand": 9,
-      "n_strands_1strand": 3,
+      "n_strands_v12_atomic": 3,
       "n_intra_crossings": [
         11,
         11,
@@ -689,33 +659,12 @@
           "run_index": 23
         }
       ],
-      "factor_spec_1strand": {
-        "label": "atom-1strand",
-        "n_strands": 3,
-        "word": [
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            -1,
-            2
-          ]
-        ]
-      },
-      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding.",
+      "v12_atomic_cli_args": [
+        "1",
+        "2",
+        "pnn"
+      ],
+      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding. The v12_atomic_cli_args drive the separate `hecke-atomic` Rust binary, which computes a different observable (f_pauli) and uses a different crossing kernel — see v12_atomic_cli_args() for the kernel-mismatch note.",
       "proposition": "prop:lr-tensor-character-bridge"
     },
     "Z2_N2": {
@@ -728,7 +677,7 @@
         "n"
       ],
       "n_strands_3strand": 12,
-      "n_strands_1strand": 4,
+      "n_strands_v12_atomic": 4,
       "n_intra_crossings": [
         11,
         11,
@@ -955,53 +904,12 @@
           "run_index": 35
         }
       ],
-      "factor_spec_1strand": {
-        "label": "atom-1strand",
-        "n_strands": 4,
-        "word": [
-          [
-            1,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            -1,
-            3
-          ]
-        ]
-      },
-      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding.",
+      "v12_atomic_cli_args": [
+        "2",
+        "2",
+        "ppnn"
+      ],
+      "convention_note": "LR bridge applies to factor_specs_3strand (tensor product). The interface_word must be applied as a separate H_{3A} seminormal-basis multiplication; it does not factor through the parabolic embedding. The v12_atomic_cli_args drive the separate `hecke-atomic` Rust binary, which computes a different observable (f_pauli) and uses a different crossing kernel — see v12_atomic_cli_args() for the kernel-mismatch note.",
       "proposition": "prop:lr-tensor-character-bridge"
     }
   },

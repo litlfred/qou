@@ -36,7 +36,7 @@ Public API:
     nucleon_factor_spec_3strand(nucleon, label) -> dict
     atom_split_3strand(Z, N, ordering=None) -> (factor_specs,
                                                 interface_word)
-    atom_factor_spec_1strand(Z, N, ordering=None) -> dict
+    v12_atomic_cli_args(Z, N, ordering=None) -> list[str]
     canonical_word_summary(Z, N, ordering=None) -> dict
 
 References:
@@ -55,6 +55,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+from canonical_braid_crossings import classify_crossing  # noqa: E402
 from hecke_core import h as H_VAL  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
@@ -63,25 +64,6 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 SIGN_SIGMA = 1
 SIGN_SIGMA_INV = -1
 SIGN_AVERAGED = 0
-
-
-def _ctype_from_d(c: float, d: float) -> str:
-    """Classify a (c, d) crossing pair into ctype {sigma, sigma_inv,
-    averaged}. Mirrors `canonical_braid_crossings._ctype_from_d`
-    but lives here so the adapter is self-contained for downstream
-    Rust-binary consumers."""
-    if abs(c - 1.0) > 1e-12:
-        raise ValueError(f"Unexpected coefficient c={c} (expected 1)")
-    if abs(d) < 1e-12:
-        return "sigma"
-    if abs(d - (-H_VAL)) < 1e-9:
-        return "sigma_inv"
-    if abs(d - (-H_VAL / 2)) < 1e-9:
-        return "averaged"
-    raise ValueError(
-        f"Unrecognised crossing (c, d)=({c}, {d}); "
-        f"expected d ∈ {{0, -h, -h/2}} with h≈{H_VAL:.6f}"
-    )
 
 
 def _ctype_to_sign(ctype: str) -> int:
@@ -108,7 +90,7 @@ def nucleon_factor_spec_3strand(nucleon: str, label: str | None = None) -> dict:
     triples = atom_braid_word_3A(Z, N, include_inter=False)
     word: list[list[int]] = []
     for c, d, gen in triples:
-        ctype = _ctype_from_d(float(c), float(d))
+        ctype = classify_crossing(float(c), float(d), H_VAL)
         # 0-based gen → 1-based wire format.
         word.append([_ctype_to_sign(ctype), int(gen) + 1])
     return {
@@ -128,27 +110,36 @@ def atom_split_3strand(
     """Split the canonical $(Z, N)$ braid into LR-compatible
     per-nucleon factors and the inter-nucleon interface residue.
 
+    Custom orderings are currently rejected — `atom_braid_word_3A`
+    hardcodes `['p']*Z + ['n']*N`, so a non-default ordering would
+    desynchronise the per-nucleon factors from the interface word.
+    Lift this restriction only after `atom_braid_word_3A` is extended
+    to accept ordering.
+
     Returns:
         factor_specs   list of dicts in the `hecke-tr-m-wenzl-lr`
                         wire format, one per nucleon, each at H_3.
                         Tensoring them yields β_disjoint at H_{3A}.
         interface_word list of `(gen_0based_in_H3A, ctype, run_index)`
-                        triples. Each entry is one of the averaged
-                        inter-nucleon crossings σ_{3k+2} − ½ h · 1 in
-                        the H_{3A} frame; `run_index` is the position
-                        in the canonical word (0-based) for
-                        round-tripping. Applied as a residual
+                        triples, one per adjacent nucleon pair. Each
+                        entry's ctype is `sigma` on a pp arc,
+                        `sigma_inv` on an nn arc, and `averaged` on a
+                        mixed pn / np arc. Applied as a residual
                         multiply in the seminormal basis at H_{3A};
                         does *not* factor through the parabolic
                         embedding and is therefore *not* part of the
-                        LR sum.
+                        LR sum (see prop:lr-tensor-character-bridge
+                        for the scope statement).
     """
-    ordering = ordering or _default_ordering(Z, N)
-    A = len(ordering)
-    if A != Z + N:
-        raise ValueError(
-            f"ordering length {A} does not match Z+N = {Z}+{N} = {Z+N}"
+    default = _default_ordering(Z, N)
+    if ordering is not None and ordering != default:
+        raise NotImplementedError(
+            f"custom ordering {ordering!r} is not yet supported; "
+            f"`atom_braid_word_3A` hardcodes ordering = {default!r}. "
+            f"Extend the source generator to accept ordering before "
+            f"lifting this restriction."
         )
+    ordering = default
 
     factor_specs: list[dict] = [
         nucleon_factor_spec_3strand(nuc, label=f"{nuc}{k}")
@@ -159,65 +150,44 @@ def atom_split_3strand(
     interface_word: list[tuple[int, str, int]] = []
     for run_idx, (c, d, gen) in enumerate(full):
         if int(gen) % 3 == 2:
-            ctype = _ctype_from_d(float(c), float(d))
+            ctype = classify_crossing(float(c), float(d), H_VAL)
             interface_word.append((int(gen), ctype, run_idx))
     return factor_specs, interface_word
 
 
-# v12_atomic crossing table (mirrors tools/hecke-engine/src/bin/
-# v12_atomic.rs `crossing()`): (c, d, doubled?) for each unordered
-# particle pair, indexed by sorted-pair key.
-_V12_CROSSING_TABLE: dict[frozenset, tuple[float, float, bool]] = {
-    frozenset({"p"}): (1.0, 0.0, False),                  # pp → σ
-    frozenset({"n"}): (1.0, -H_VAL, False),               # nn → σ⁻¹
-    frozenset({"p", "n"}): (1.0, -H_VAL / 2.0, True),     # pn → ½(σ+σ⁻¹)
-    frozenset({"e"}): (1.0, 0.0, False),                  # ee → σ
-    frozenset({"p", "e"}): (1.0, -H_VAL, False),          # pe → σ⁻¹
-    frozenset({"n", "e"}): (0.0, 1.0, False),             # ne → identity
-}
-
-
-def _v12_pair_crossing(a: str, b: str) -> tuple[float, float, bool]:
-    key = frozenset({a, b})
-    if key not in _V12_CROSSING_TABLE:
-        raise ValueError(f"Unknown particle pair {a!r}+{b!r}")
-    return _V12_CROSSING_TABLE[key]
-
-
-def atom_factor_spec_1strand(
+def v12_atomic_cli_args(
     Z: int, N: int, ordering: list[str] | None = None,
-) -> dict:
-    """1-strand-per-particle factor spec at H_{|ordering|}.
+) -> list[str]:
+    """Build the command-line arguments for the `hecke-atomic`
+    (v12_atomic) Rust binary.
 
-    Mirrors `tools/hecke-engine/src/bin/v12_atomic.rs`: each particle
-    contributes a single strand, and crossings appear between every
-    pair `(i, k)` with `i < k` at generator `i` (0-based). The
-    averaged pn / np crossings appear twice (the v12 `doubled` flag).
+    `hecke-atomic` consumes `Z N [ordering]` directly — there is no
+    JSON wire format to share with `hecke-tr-m-wenzl-lr`. The two
+    binaries compute *different* observables:
 
-    Returns the single-factor wire spec consumed by
-    `hecke-tr-m-wenzl-lr` when invoked in 1-strand mode (informational
-    only; the LR bridge over a single factor is the identity, so this
-    is primarily a cross-validation handle for `hecke-atomic`).
+      - `hecke-atomic` emits `f_pauli` at H_{|ordering|} using v12's
+        crossing kernel (`pn → 2σ - h·1` per v12_atomic.rs line 7),
+        normalising by `2^pn_count` at the end.
+      - `hecke-tr-m-wenzl-lr` emits per-partition χ^λ of a
+        tensor-product braid in the LR wire format, using the
+        averaged kernel `pn → σ - (h/2)·1 = ½(σ+σ⁻¹)`, normalising
+        via its own `averaging_denominator = 2^(avg-count)`.
+
+    The two kernels differ by a factor of 2 per pn crossing; each
+    binary handles its own normalisation. This adapter therefore
+    exposes the v12 binary only at the CLI-argument level — never as
+    an LR factor spec — to avoid silent kernel-mismatch bugs.
     """
-    ordering = ordering or _default_ordering(Z, N)
-    A = len(ordering)
-    word: list[list[int]] = []
-    for k in range(1, A):
-        for i in range(k):
-            c, d, doubled = _v12_pair_crossing(ordering[i], ordering[k])
-            if c == 0.0 and d == 1.0:
-                # Identity (n+e): no crossing emitted; skips.
-                continue
-            ctype = _ctype_from_d(c, d)
-            sign = _ctype_to_sign(ctype)
-            word.append([sign, i + 1])  # 1-based wire format
-            if doubled:
-                word.append([sign, i + 1])
-    return {
-        "label": "atom-1strand",
-        "n_strands": A,
-        "word": word,
-    }
+    default = _default_ordering(Z, N)
+    if ordering is not None and ordering != default:
+        raise NotImplementedError(
+            f"custom ordering {ordering!r} is not yet supported; "
+            f"`atom_braid_word_3A` hardcodes ordering = {default!r}. "
+            f"Extend the source generator to accept ordering before "
+            f"lifting this restriction."
+        )
+    ordering_str = "".join(default)
+    return [str(Z), str(N), ordering_str]
 
 
 def canonical_word_summary(
@@ -228,24 +198,24 @@ def canonical_word_summary(
     Returned dict is JSON-serialisable and suitable for inclusion in
     a downstream witness file. Records:
 
-      - n_strands_3strand:    3·A         (canonical convention)
-      - n_strands_1strand:    A or A+E    (v12_atomic convention)
+      - n_strands_3strand:    3·A             (canonical convention)
+      - n_strands_v12_atomic: A = Z + N       (v12_atomic convention)
       - n_intra_crossings:    per-nucleon intra word length
-      - n_interface_crossings: number of averaged inter-nucleon
-                              crossings in β_interface
+      - n_interface_crossings: number of inter-nucleon crossings in
+                              β_interface (one per adjacent pair)
       - factor_specs_3strand: per-nucleon H_3 LR specs
       - interface_word:       inter-nucleon residue, H_{3A} frame
-      - factor_spec_1strand:  v12_atomic-style single H_A spec
+      - v12_atomic_cli_args:  argv for the `hecke-atomic` Rust binary
     """
     factor_specs, interface_word = atom_split_3strand(Z, N, ordering)
-    factor_1s = atom_factor_spec_1strand(Z, N, ordering)
+    cli_args = v12_atomic_cli_args(Z, N, ordering)
     intra_lengths = [len(f["word"]) for f in factor_specs]
     return {
         "Z": Z,
         "N": N,
         "ordering": ordering or _default_ordering(Z, N),
         "n_strands_3strand": 3 * (Z + N),
-        "n_strands_1strand": len(factor_1s["word"]) and factor_1s["n_strands"],
+        "n_strands_v12_atomic": Z + N,
         "n_intra_crossings": intra_lengths,
         "n_interface_crossings": len(interface_word),
         "factor_specs_3strand": factor_specs,
@@ -253,12 +223,16 @@ def canonical_word_summary(
             {"gen_0based_h3a": g, "ctype": ct, "run_index": ri}
             for (g, ct, ri) in interface_word
         ],
-        "factor_spec_1strand": factor_1s,
+        "v12_atomic_cli_args": cli_args,
         "convention_note": (
             "LR bridge applies to factor_specs_3strand (tensor "
             "product). The interface_word must be applied as a "
             "separate H_{3A} seminormal-basis multiplication; it "
-            "does not factor through the parabolic embedding."
+            "does not factor through the parabolic embedding. The "
+            "v12_atomic_cli_args drive the separate `hecke-atomic` "
+            "Rust binary, which computes a different observable "
+            "(f_pauli) and uses a different crossing kernel — see "
+            "v12_atomic_cli_args() for the kernel-mismatch note."
         ),
         "proposition": "prop:lr-tensor-character-bridge",
     }
@@ -267,7 +241,7 @@ def canonical_word_summary(
 __all__ = [
     "nucleon_factor_spec_3strand",
     "atom_split_3strand",
-    "atom_factor_spec_1strand",
+    "v12_atomic_cli_args",
     "canonical_word_summary",
     "SIGN_SIGMA",
     "SIGN_SIGMA_INV",
@@ -328,8 +302,10 @@ def _smoke_test() -> int:
                 "the inter-nucleon interface residue, per "
                 "prop:lr-tensor-character-bridge. Six smoke-test atoms "
                 "(p, n, D, T, ³He, ⁴He) verified for self-consistent "
-                "splitting (intra + interface = full canonical word; "
-                "interface is purely averaged and has length A-1)."
+                "splitting: intra + interface = full canonical word; "
+                "interface has length A-1, each entry at gen 3k+2 "
+                "with ctype ∈ {sigma (pp), sigma_inv (nn), averaged "
+                "(mixed pn / np)}."
             ),
             "binary_built": None,
             "cases": summaries,
