@@ -143,3 +143,15 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 - T3 (pair) closure pending: for some pairs in H_{3A>3}, |V̂_i V̂_j| > q_0 ≈ 1.1097 exceeds Li_2^q convergence radius. Three structural options identified in PR body.
 
 **Canonical_status taxonomy alignment:** all 4 witnesses on this branch (3 phase scripts + interface-knot) now carry `canonical_status: canonical-with-empirical-assignment` per the new taxonomy from `claude/canonical-discipline-l1-l3-l4-2026-05-19` commit `98ed2add`.
+
+### 2026-05-19 — Block-multiplicativity scaling on PR #801 (followups)
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Block-multiplicativity scaling (16 atoms D → ⁵⁶Fe) | landed `f43da415`; **variance 5.47× T1+T2, 1.65× medium A=6..14, 10.99× all 16 (T3 over-counts A²)** | `binding_block_multiplicative.py` + `conj:block-multiplicativity-v-free` content triple |
+| 2026-05-19 | T3 closure via interface-pair structural cancellation | landed `65a3985e` + `f00ae129`; finite even though T3_free / T3_atom individually diverge | structural cancellation rule (non-interface pairs cancel) |
+| 2026-05-19 | Coord on PR #814 (silver-ratio Q_β null / Pell-Lucas c_k) | comment posted | ask on involution/Leibniz origin of c_5 generalising to α_{k≥4} damping |
+
+**Structural finding (verified empirically at A=2,3 exact to 4 digits):** per-generator V̂ values at H_{3A} are A-INDEPENDENT for the disjoint Hecke product. Block factors v_p = 0.7084, v_n = 0.6005, |V^pp/nn_inter| = 0.1045, |V^pn_inter| = 0. Scales B(K) prediction to ALL atoms in microseconds — no H_{3A} character sum beyond H_6 / H_9 calibration. Conjecture content block + Lean class committed (`conj:block-multiplicativity-v-free`).
+
+**Open structural target (heavy-atom variance):** T3 pair-blowup grows as A² (number of interface-involving pairs ≈ 5A(A-1)/2). AME binding grows linearly in A. The mismatch may be resolved by switching from the mass-endomorphism blow-up tower (T1+T2+T3) to the **depth-stratified α_k · Φ_k formulation** for k ≥ 4 — where α_{k≥4} = m_e · 8G provides built-in damping at high curvature rank ([`prop:plancherel-term-7-formulation`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md)). Cross-reference to PR #814's involution/Leibniz analysis of c_5's 1/2 fingerprint — same averaged-crossing mechanism plausibly drives the α_{k≥4} damping universal at depth k ≥ 4.
