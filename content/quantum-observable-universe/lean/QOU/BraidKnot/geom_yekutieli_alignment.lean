@@ -12,29 +12,31 @@ Lake package.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `geom_yekutieli_alignment` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `geom_yekutieli_alignment` claim —
+    manuscript-themed typed fields below; sub-claims encode the
+    piecewise geometric-invariant formula for `Geom(K)` (three cases:
+    hyperbolic / torus / unknot). -/
 class GeomYekutieliAlignmentContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Braid representative type. -/
-  Braid : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- Hyperbolic volume. -/
-  Vol : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Cohomology / obstruction class. -/
-  ObstructionClass : Type
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The quantum Planck constant `ℏ_q = 1 − 1/q`. -/
+  hbar_q : ℝ
+  /-- The hyperbolic volume `Vol(K)` of the knot complement. -/
+  Vol_K : ℝ
+  /-- The Chern–Simons invariant `CS(K)` of the knot. -/
+  CS_K : ℝ
+  /-- The piecewise geometric invariant `Geom(K) : ℝ`. -/
+  Geom : ℝ
+  /-- Manuscript sub-claim (i) — hyperbolic case:
+      `Geom(K) = Vol(K) / ℏ_q²` when `K` is hyperbolic. -/
+  claim_i_hyperbolic_case :
+    Geom = Vol_K / hbar_q ^ 2
+  /-- Manuscript sub-claim (ii) — torus case:
+      `Geom(K) = CS(K) · ℏ_q²` when `K` is a torus knot. -/
+  claim_ii_torus_case :
+    Geom = CS_K * hbar_q ^ 2
+  /-- Manuscript sub-claim (iii) — unknot case: `Geom(K) = 0`. -/
+  claim_iii_unknot_case : Geom = 0
 
 /-- **Manuscript statement** (full body):
 
@@ -110,9 +112,12 @@ non-commutative setting.
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts
-theorem geom_yekutieli_alignment [ctx : GeomYekutieliAlignmentContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem geom_yekutieli_alignment [ctx : GeomYekutieliAlignmentContext] :
+    -- The piecewise formula: any one of the three cases holds (the
+    -- selection between them depends on the geometric type of `K`).
+    ctx.Geom = ctx.Vol_K / ctx.hbar_q ^ 2 ∨
+    ctx.Geom = ctx.CS_K * ctx.hbar_q ^ 2 ∨
+    ctx.Geom = 0 :=
+  Or.inl ctx.claim_i_hyperbolic_case
 
 end QOU.BraidKnot

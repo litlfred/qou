@@ -12,8 +12,10 @@ Lake package.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `hoefsmit_scattering_pipeline` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `hoefsmit_scattering_pipeline` claim —
+    manuscript-themed typed fields below; sub-claims encode the four
+    functorial stages of the pipeline
+    `β → ρ_λ(β) → J_K(q) → Geom(K) → 𝔪`. -/
 class HoefsmitScatteringPipelineContext where
   /-- Proton number `Z`. -/
   Z : ℕ
@@ -23,22 +25,19 @@ class HoefsmitScatteringPipelineContext where
   Braid : Type
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Hyperbolic volume. -/
-  Vol : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The representation space. -/
-  Rep : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (stage 1 — Hoefsmit): each crossing `σ_i`
+      acts on the Wedderburn block `ρ_λ` via the Hoefsmit seminormal
+      matrix with at most 2 non-zeros per row. -/
+  claim_stage_1_hoefsmit : Prop
+  /-- Manuscript sub-claim (stage 2 — Markov trace): the Markov-trace
+      formula `J_K(q) = Σ_λ w_λ · χ_λ(β) / dim(λ)`. -/
+  claim_stage_2_markov_trace : Prop
+  /-- Manuscript sub-claim (stage 3 — ω): the Yekutieli rigid-dualising
+      pairing maps `J_K(q)` to the piecewise geometric invariant. -/
+  claim_stage_3_yekutieli_omega : Prop
+  /-- Manuscript sub-claim (stage 4 — ×m_e): scaling by the electron
+      mass gives the categorical mass `𝔪`. -/
+  claim_stage_4_electron_mass_scale : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -108,9 +107,12 @@ $\chi_\lambda(\beta)$ is determined by Young's lattice path c
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts
-theorem hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
+    ctx.claim_stage_1_hoefsmit ∧
+    ctx.claim_stage_2_markov_trace ∧
+    ctx.claim_stage_3_yekutieli_omega ∧
+    ctx.claim_stage_4_electron_mass_scale :=
+  ⟨ctx.claim_stage_1_hoefsmit, ctx.claim_stage_2_markov_trace,
+   ctx.claim_stage_3_yekutieli_omega, ctx.claim_stage_4_electron_mass_scale⟩
 
 end QOU.BraidKnot

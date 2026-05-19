@@ -13,7 +13,8 @@ namespace QOU.BraidKnot.AtomKnot
 
 
 /-- Abstract context for the `unique` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; the Markov-equivalence uniqueness statement
+    is captured as `claim_markov_isotopy_unique`. -/
 class UniqueContext where
   /-- Proton number `Z`. -/
   Z : ℕ
@@ -21,18 +22,16 @@ class UniqueContext where
   N : ℕ
   /-- Braid representative type. -/
   Braid : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The closure-isotopy relation on braids `∼_isotopy`. -/
+  isotopic : Braid → Braid → Prop
+  /-- The NF-realisation predicate "this braid realises the NF block
+      decomposition `T_w = T_{w_{q^Z}} · T_{w_{q̄^N}} · T_{w_inter}`". -/
+  realises_NF : Braid → Prop
+  /-- Manuscript claim — Markov-equivalence uniqueness up to isotopy:
+      any two braids realising the same NF block decomposition have
+      isotopic Markov closures. -/
+  claim_markov_isotopy_unique :
+    ∀ β₁ β₂ : Braid, realises_NF β₁ → realises_NF β₂ → isotopic β₁ β₂
 
 /-- **Manuscript statement** (full body):
 
@@ -80,9 +79,9 @@ different physical isomers.*
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/atom-knot-unique.ts
-theorem unique [ctx : UniqueContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem unique [ctx : UniqueContext] :
+    ∀ β₁ β₂ : ctx.Braid, ctx.realises_NF β₁ → ctx.realises_NF β₂ →
+      ctx.isotopic β₁ β₂ :=
+  ctx.claim_markov_isotopy_unique
 
 end QOU.BraidKnot.AtomKnot

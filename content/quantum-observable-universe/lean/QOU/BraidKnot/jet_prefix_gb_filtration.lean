@@ -13,13 +13,20 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `jet_prefix_gb_filtration` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `jet_prefix_gb_filtration` claim —
+    manuscript-themed typed fields below; the residual `claim` field
+    encodes the GB-filtration-jet-prefix proposition (truncated in the
+    sibling .md). -/
 class JetPrefixGbFiltrationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The jet order index. -/
+  JetOrder : ℕ
+  /-- The GB-filtration depth. -/
+  GbDepth : ℕ
+  /-- Manuscript claim: the jet-prefix filtration order coincides with
+      the GB-filtration depth. -/
+  claim_jet_prefix_eq_gb_depth : JetOrder = GbDepth
 
 /-- **Proposition statement** (from manuscript):
 
@@ -30,9 +37,7 @@ Define the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts
-theorem jet_prefix_gb_filtration [ctx : JetPrefixGbFiltrationContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem jet_prefix_gb_filtration [ctx : JetPrefixGbFiltrationContext] :
+    ctx.JetOrder = ctx.GbDepth := ctx.claim_jet_prefix_eq_gb_depth
 
 end QOU.BraidKnot

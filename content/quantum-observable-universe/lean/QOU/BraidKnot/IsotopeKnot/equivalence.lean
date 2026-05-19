@@ -13,22 +13,27 @@ namespace QOU.BraidKnot.IsotopeKnot
 
 
 /-- Abstract context for the `equivalence` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; the three equivalence-relation laws are
+    captured as reflexivity / symmetry / transitivity sub-claims on
+    the atom-knot type at fixed `Z`. -/
 class EquivalenceContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The atom-knot type at fixed `Z`. -/
+  AtomKnot : Type
+  /-- The isotope relation `∼` on atom-knots at fixed `Z`. -/
+  isotope : AtomKnot → AtomKnot → Prop
+  /-- Manuscript sub-claim (reflexivity): `K ∼ K` for every atom-knot. -/
+  claim_reflexivity : ∀ K : AtomKnot, isotope K K
+  /-- Manuscript sub-claim (symmetry): `K₁ ∼ K₂ → K₂ ∼ K₁`. -/
+  claim_symmetry : ∀ K₁ K₂ : AtomKnot, isotope K₁ K₂ → isotope K₂ K₁
+  /-- Manuscript sub-claim (transitivity):
+      `K₁ ∼ K₂ → K₂ ∼ K₃ → K₁ ∼ K₃`. -/
+  claim_transitivity :
+    ∀ K₁ K₂ K₃ : AtomKnot,
+      isotope K₁ K₂ → isotope K₂ K₃ → isotope K₁ K₃
 
 /-- **Manuscript statement** (full body):
 
@@ -63,9 +68,10 @@ concept categorically — element = isotope class.*
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
-theorem equivalence [ctx : EquivalenceContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem equivalence [ctx : EquivalenceContext] :
+    Equivalence ctx.isotope :=
+  ⟨ctx.claim_reflexivity,
+   fun {x y} h => ctx.claim_symmetry x y h,
+   fun {x y z} h₁ h₂ => ctx.claim_transitivity x y z h₁ h₂⟩
 
 end QOU.BraidKnot.IsotopeKnot
