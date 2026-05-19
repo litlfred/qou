@@ -31,9 +31,7 @@ A green run of this script is direct empirical evidence for the
 
 from __future__ import annotations
 
-import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
@@ -41,6 +39,7 @@ from sympy import Integer, Symbol
 
 sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 HERE = Path(__file__).parent
@@ -136,6 +135,18 @@ def main() -> int:
         print(f"ERROR: input witness not found at {INPUT_WITNESS}", file=sys.stderr)
         return 1
 
+    # WitnessBuilder instantiated before the SymPy work so its
+    # internal start-time captures the full computation duration,
+    # and so the canonical provenance fields (scriptFile, commitSha,
+    # scriptHash, scriptCommitSha, engineVersion) are recorded — per
+    # Gemini review on PR #818 (replaces the prior hand-rolled JSON
+    # writer that omitted these fields, causing witness-pipeline
+    # drift on every CI run).
+    builder = WitnessBuilder(
+        "habiro-tail-in-ideal-validation",
+        engine="sympy.div over ZZ[u]",
+    )
+
     witness = HabiroAtomicWitness.from_json(INPUT_WITNESS)
 
     u = sp.symbols("u")
@@ -147,37 +158,39 @@ def main() -> int:
         per_atom_results.append(atom_result)
         overall_pass = overall_pass and atom_result["all_pass"]
 
-    output = {
-        "computation": "habiro-tail-in-ideal-validation",
-        "description": (
+    (
+        builder
+        .set_description(
             "Certifies the Lean axiom HabiroCompletion.tail_in_ideal "
             "on the witnesses produced by habiro_coefficients_atomic.py: "
             "for every atom and every truncation order N, the residual "
             "p(u) − Σ_{m<N} a_m(u) · (u;u)_m is exactly divisible by "
             "(u;u)_N in ℤ[u]."
-        ),
+        )
+        .add_assertion(
+            name="all_atoms_divisible",
+            computed=1.0 if overall_pass else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            unit="(u;u)_N | residual_N for every atom and every N",
+            source="prop:full-pole-structure-mass-trace + def:habiro-ring",
+        )
+    )
+
+    # Custom-shape fields preserved for back-compat with downstream
+    # audits and the existing schema: reference_blocks, lean_axiom,
+    # input_witness, overall_pass, results.
+    extra = {
         "reference_blocks": [
             "prop:full-pole-structure-mass-trace",
             "def:habiro-ring",
         ],
         "lean_axiom": "qou:QOU.BraidKnot.HabiroCompletion.tail_in_ideal",
         "input_witness": INPUT_WITNESS.name,
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "engine": "sympy.div over ZZ[u]",
         "overall_pass": overall_pass,
         "results": per_atom_results,
     }
-    # polynomial_q_not_applicable: validator emits boolean divisibility /
-    # exact-reconstruction checks over ZZ[u], not a polynomial-in-q form.
-    # The symbolic Habiro polynomials live in
-    # habiro-coefficients-atomic.witness.json (validated input).
-    # The NA marker therefore belongs in the source comment, not in
-    # the witness JSON itself (which is bit-checked by CI drift
-    # detection in .github/workflows/witness-pipeline.yml).
-
-    with OUTPUT_WITNESS.open("w") as f:
-        json.dump(output, f, indent=2)
-        f.write("\n")
+    builder.save(extra=extra)
 
     # Console summary
     status = "PASS" if overall_pass else "FAIL"
