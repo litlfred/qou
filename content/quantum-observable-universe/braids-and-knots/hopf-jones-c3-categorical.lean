@@ -28,7 +28,7 @@ N = 3 (c_2 + c_3 categorical, no empirical fit).
 
 Ref: [jones1985] https://doi.org/10.2307/1971403
 Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
-Ref: [kashiwara1990] https://doi.org/10.1007/BF02100009
+Ref: [kashiwara1990-cmp2] CMP 1990 (DOI 10.1007/BF02100009 — distinct from kashiwara1990 = CMP BF02097367)
 -/
 
 import Mathlib.Data.Rat.Basic

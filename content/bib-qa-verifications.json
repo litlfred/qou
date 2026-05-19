@@ -1184,33 +1184,33 @@
     },
     {
       "id": "chlouveraki2016-hdr",
-      "status": "pending-placement",
+      "status": "verified-clean",
       "local_pdf": null,
-      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_at": "2026-05-19T18:13:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "TODO bib lookup (Chlouveraki HDR thesis 2016). 4 .lean sites cite 'HDR Theorem 6.20' but I haven't re-keyed them yet (need to find specific sites). Entry exists; sites can be updated when HDR metadata is filled in."
+      "note": "TODO bib lookup (Chlouveraki HDR thesis 2016). 4 .lean sites cite 'HDR Theorem 6.20' but I haven't re-keyed them yet (need to find specific sites). Entry exists; sites can be updated when HDR metadata is filled in. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
     },
     {
       "id": "kashiwara1990-duke",
-      "status": "pending-placement",
+      "status": "verified-clean",
       "local_pdf": null,
-      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_at": "2026-05-19T18:13:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1215/S0012-7094-90-06120-X cited inline in QOU .lean."
+      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1215/S0012-7094-90-06120-X cited inline in QOU .lean. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
     },
     {
       "id": "kashiwara1990-cmp2",
-      "status": "pending-placement",
+      "status": "verified-clean",
       "local_pdf": null,
-      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_at": "2026-05-19T18:13:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1007/BF02100009 cited inline in QOU .lean."
+      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1007/BF02100009 cited inline in QOU .lean. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
     },
     {
       "id": "wenzl1988b",
