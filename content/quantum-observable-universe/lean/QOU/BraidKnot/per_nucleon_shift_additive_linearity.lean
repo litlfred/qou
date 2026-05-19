@@ -44,4 +44,17 @@ theorem per_nucleon_shift_additive_linearity
   -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
   sorry
 
+/-- **Closed form** for the shift exponent in canonical pppnnn ordering
+    ([`prop:per-nucleon-shift-additive-linearity`]). Manuscript boxed
+    identity: `shift(Z, N) = 18Z + 21N + 1` for `Z, N ≥ 1`. -/
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
+theorem per_nucleon_shift_closed_form
+    [ctx : PerNucleonShiftContext] (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N) :
+    ctx.shift Z N = 18 * (Z : ℤ) + 21 * (N : ℤ) + 1 := by
+  -- Manuscript proof: induct on Z then on N using the additive-
+  -- linearity recurrences and the base case `shift(1, 1) = 40`.
+  -- 18·1 + 21·1 + 1 = 40 matches `shift_base`.
+  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
+  sorry
+
 end QOU.BraidKnot

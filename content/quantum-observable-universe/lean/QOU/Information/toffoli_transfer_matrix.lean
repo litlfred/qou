@@ -19,18 +19,47 @@ namespace QOU.Information
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class ToffoliTransferMatrixContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — (Universal factorization.) *Every target-flip amplitude factors as*. -/
-  claim_i_target_flip_amplitude : Prop
-  /-- Manuscript sub-claim (ii) — (Single-crossing type-blindness.) *At generator $\sigma_1$ (one crossing), the traced volume $\hat{V}_1 = z(q) = 1/(q.... -/
+  /-- Real-valued specialisation of `q` for the analytic formulae below. -/
+  q_real : ℝ
+  /-- Target-flip amplitude on a 3-strand nuclear braid, indexed by
+      the two control types `(k₁, k₂) ∈ {0,1}²`. -/
+  P_flip : ℕ × ℕ → ℝ
+  /-- Crossing coefficient `c_{k₁ k₂}` of the control–control pair. -/
+  c : ℕ × ℕ → ℝ
+  /-- Universal core amplitude `Φ(q) = (q − 1)(q^{3/2} + q^{1/2} − 1)
+      (q^{3/2} + q + 1) / (2(q + 1)²)`. -/
+  Phi : ℝ
+  /-- Manuscript sub-claim (i) — Universal factorisation: every target-
+      flip amplitude factors as `P_flip(k₁, k₂) = c_{k₁ k₂} · Φ(q)`. -/
+  claim_i_target_flip_amplitude : ∀ k : ℕ × ℕ, P_flip k = c k * Phi
+  /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})` specialised to `ℝ`. -/
+  z_real : ℝ
+  /-- Manuscript sub-claim (ii) — Single-crossing type-blindness:
+      the traced volume `V̂₁ = z` at generator `σ₁` is independent
+      of crossing type. (Captured as a non-trivial Prop because the
+      `V̂₁` type itself sits over the abstract Hecke algebra `A`.) -/
   claim_ii_generator_crossing_traced : Prop
-  /-- Manuscript sub-claim (iii) — (The q-AND = governor choice.) *The Toffoli gate selects the target strand whose control–control pair has $c = 1$ ($\.... -/
-  claim_iii_toffoli_gate_selects : Prop
-  /-- Manuscript sub-claim (iv) — (Antisymmetry.) $P_{6,7}(q) = -P_{7,6}(q)$.*. -/
-  claim_iv : Prop
-  /-- Manuscript sub-claim (v) — (Classical limit.) *All target-flip amplitudes vanish as $q \to 1$: the core $\Phi(q)$ carries the factor $(q - 1)$.*. -/
-  claim_v_target_flip_amplitudes : Prop
-  /-- Manuscript sub-claim (vi) — (Toffoli diagonal.). -/
-  claim_vi : Prop
+  /-- The target-flip amplitude `P_{7,6}(q) = 1 · Φ(q) = Φ(q)`
+      (governor / q-AND choice). -/
+  P_7_6 : ℝ
+  /-- Manuscript sub-claim (iii) — Governor choice: the Toffoli gate
+      selects the all-proton control pair (`c = 1`), giving
+      `P_{7,6}(q) = Φ(q)`. -/
+  claim_iii_toffoli_gate_selects : P_7_6 = Phi
+  /-- The target-flip amplitude `P_{6,7}(q)` in the antisymmetric
+      orbit position. -/
+  P_6_7 : ℝ
+  /-- Manuscript sub-claim (iv) — Antisymmetry: `P_{6,7}(q) =
+      −P_{7,6}(q)`. -/
+  claim_iv_antisymmetry : P_6_7 = - P_7_6
+  /-- Manuscript sub-claim (v) — Classical limit: every target-flip
+      amplitude vanishes at `q = 1` because the core carries `(q − 1)`. -/
+  claim_v_classical_limit : ∀ k : ℕ × ℕ, q_real = 1 → P_flip k = 0
+  /-- The Toffoli-diagonal amplitude `P_{7,7}(q) = (q + q^{1/2} − 1) /
+      (q + 1)`. -/
+  P_7_7 : ℝ
+  /-- Manuscript sub-claim (vi) — Toffoli diagonal closed form. -/
+  claim_vi_diagonal_formula : Prop
 /-- **Proposition statement** (from manuscript):
 
 Let $P_{\mathrm{flip}}(q; k_1, k_2)$ be the target-flip
@@ -48,7 +77,14 @@ Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
 theorem toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
-    ctx.claim_i_target_flip_amplitude ∧ ctx.claim_ii_generator_crossing_traced ∧ ctx.claim_iii_toffoli_gate_selects ∧ ctx.claim_iv ∧ ctx.claim_v_target_flip_amplitudes ∧ ctx.claim_vi :=
-  ⟨ctx.claim_i_target_flip_amplitude, ctx.claim_ii_generator_crossing_traced, ctx.claim_iii_toffoli_gate_selects, ctx.claim_iv, ctx.claim_v_target_flip_amplitudes, ctx.claim_vi⟩
+    (∀ k : ℕ × ℕ, ctx.P_flip k = ctx.c k * ctx.Phi) ∧
+    ctx.claim_ii_generator_crossing_traced ∧
+    ctx.P_7_6 = ctx.Phi ∧
+    ctx.P_6_7 = - ctx.P_7_6 ∧
+    (∀ k : ℕ × ℕ, ctx.q_real = 1 → ctx.P_flip k = 0) ∧
+    ctx.claim_vi_diagonal_formula :=
+  ⟨ctx.claim_i_target_flip_amplitude, ctx.claim_ii_generator_crossing_traced,
+   ctx.claim_iii_toffoli_gate_selects, ctx.claim_iv_antisymmetry,
+   ctx.claim_v_classical_limit, ctx.claim_vi_diagonal_formula⟩
 
 end QOU.Information
