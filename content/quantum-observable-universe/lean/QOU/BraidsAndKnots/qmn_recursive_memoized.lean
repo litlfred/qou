@@ -34,9 +34,14 @@ class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where
       recursion stays abstract because it requires enumeration of
       border strips of size `ρ_1`. -/
   claim_ii_miss_computes_via : Prop
-  /-- Manuscript sub-claim (iii) — Cache invariant: storage operation
-      preserves the character value (no mutation effect). -/
-  claim_iii_stores_result_cache : Prop
+  /-- Cache lookup operation `cache_get λ ρ` returns `some v` on hit,
+      `none` on miss. -/
+  cache_get : ℕ → ℕ → Option ℝ
+  /-- Manuscript sub-claim (iii) — Cache invariant: when the cache
+      returns a value, it equals the canonical character value (the
+      stored result is faithful — no mutation effect). -/
+  claim_iii_stores_result_cache : ∀ (λ ρ : ℕ) (v : ℝ),
+    cache_get λ ρ = some v → v = chi λ ρ
 /-- **Proposition statement** (from manuscript):
 
 The classical Murnaghan-Nakayama rule expresses $\chi_\rho^\lambda$
@@ -62,7 +67,7 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
 theorem qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
     (∀ λ ρ : ℕ, ctx.chi λ ρ = ctx.chi_recursion λ ρ) ∧
     ctx.claim_ii_miss_computes_via ∧
-    ctx.claim_iii_stores_result_cache :=
+    (∀ (λ ρ : ℕ) (v : ℝ), ctx.cache_get λ ρ = some v → v = ctx.chi λ ρ) :=
   ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_miss_computes_via,
    ctx.claim_iii_stores_result_cache⟩
 

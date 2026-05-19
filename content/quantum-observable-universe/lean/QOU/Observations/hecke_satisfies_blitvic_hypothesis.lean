@@ -36,10 +36,18 @@ class HeckeSatisfiesBlitvicHypothesisContext where
       `tr_M(x · σ_n) = z · tr_M(x)` (captured abstractly because the
       Markov-parameter map lives on the inductive limit `H_∞`). -/
   claim_ii_markov_property : Prop
-  /-- Manuscript sub-claim (iii) — Wenzl's product factorisation:
-      the centred-generator moment vanishes on odd-length words and
-      decomposes over pair-partitions on even-length words. -/
-  claim_iii_wenzl_product_factorisation : Prop
+  /-- Centred-generator moment of length `n` (the expectation of an
+      `n`-fold product of centred Hecke generators under `tr_M`). -/
+  moment : ℕ → ℝ
+  /-- Manuscript sub-claim (iii) — Odd-length vanishing: the centred-
+      generator moment is zero on odd-length words (`n % 2 = 1`). -/
+  claim_iii_wenzl_product_factorisation : ∀ n : ℕ,
+    n % 2 = 1 → moment n = 0
+  /-- Manuscript sub-claim (iv) — Pair-partition decomposition: on
+      even-length words, the centred-generator moment decomposes over
+      pair-partitions (combinatorial decomposition stays Prop because
+      it requires Blitvić's pair-partition enumeration infrastructure). -/
+  claim_iv_pair_partition_decomposition : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -58,8 +66,10 @@ theorem hecke_satisfies_blitvic_hypothesis
     (∀ i : ℕ, haveI := ctx.ringA;
       ctx.σ i * ctx.σ i = ctx.h_A * ctx.σ i + 1) ∧
     ctx.claim_ii_markov_property ∧
-    ctx.claim_iii_wenzl_product_factorisation :=
+    (∀ n : ℕ, n % 2 = 1 → ctx.moment n = 0) ∧
+    ctx.claim_iv_pair_partition_decomposition :=
   ⟨ctx.claim_i_hecke_quadratic_relation, ctx.claim_ii_markov_property,
-   ctx.claim_iii_wenzl_product_factorisation⟩
+   ctx.claim_iii_wenzl_product_factorisation,
+   ctx.claim_iv_pair_partition_decomposition⟩
 
 end QOU.Observations
