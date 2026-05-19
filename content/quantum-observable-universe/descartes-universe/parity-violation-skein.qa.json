@@ -150,6 +150,24 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/descartes-universe/parity-violation-skein.md:133: crossings) composed with charge conjugation $\\mathcal{C}$  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/descartes-universe/parity-violation-skein.md:138: - $\\mathcal{C}$ alone: violated (electron $\\neq$ positron in  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/descartes-universe/parity-violation-skein.md:144: $\\mathcal{C}$ violated, $\\mathcal{CP}$ conserved (to leading  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "248b91cd6696",
+          "ts": "59e85697526d",
+          "lean": "4d7d1a9860c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-descartes-H-Q",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:08:37.153Z",
+        "reviewed_sha": "f00bb4dc98a11f79eea010947f72ff7d970b49ac",
+        "notes": "default-pass (chapter=descartes-universe)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
