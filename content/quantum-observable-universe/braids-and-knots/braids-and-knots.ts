@@ -430,13 +430,17 @@ export default chapter({
       ],
     }),
 
-    // §C — q-beta precision ladder (PHASE-1: 37 blocks, over band;
-    //   phase-2 follow-up will internal-split, likely into 3 sub-
-    //   sections: markov axioms + braid-link enumeration / chi-character
-    //   closed-forms / Kashiwara-Jones interpretations + quantum-dilog)
+    // §C — q-beta precision ladder (PHASE-2 split 2026-05-19): the
+    //   37-block sec:q-beta-precision-ladder from the phase-1
+    //   calibration-algebraic-mass split is split into 3 topical
+    //   sub-sections (Markov + braid-link foundations / chi-character
+    //   closed-forms / Kashiwara-Jones interpretations and quantum-
+    //   dilogarithm). The 12/13/12 densities all land in the 3-18 band.
+
+    // §C1 — Markov axioms and braid-link enumeration
     section({
-      title: "$q$-$\\beta$ precision ladder",
-      label: "sec:q-beta-precision-ladder",
+      title: "Markov axioms and braid-link enumeration",
+      label: "sec:markov-axioms-braid-link",
       blocks: [
         "q-beta-categorical-precision-ladder",
         "markov-axioms-primitive",
@@ -450,6 +454,14 @@ export default chapter({
         "typed-b3-sub-braid-extraction",
         "ck-extraction-from-algebraic-rules",
         "h3-hecke-idempotents",
+      ],
+    }),
+
+    // §C2 — Hecke u-coordinate, chi-character closed-forms
+    section({
+      title: "Hecke $u$-coordinate, $\\chi$-character closed-forms",
+      label: "sec:hecke-chi-closed-forms",
+      blocks: [
         "u-coordinate-discharges",
         "multi-link-jones-q1-extension",
         "per-wedderburn-block-c5-c6",
@@ -463,6 +475,14 @@ export default chapter({
         "phi-d-syt-count-conjecture",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",
+      ],
+    }),
+
+    // §C3 — Kashiwara-Jones interpretations and quantum-dilogarithm
+    section({
+      title: "Kashiwara-Jones interpretations and quantum-dilogarithm",
+      label: "sec:kashiwara-jones-quantum-dilog",
+      blocks: [
         "kashiwara-jones-alternation-interpretation",
         "hopf-jones-c3-categorical",
         "kashiwara-jones-c4-categorical",
@@ -763,11 +783,16 @@ export default chapter({
       ],
     }),
 
-    // §E — Frobenius nuclear structure (PHASE-1: still 27 blocks,
-    //   over band; phase-2 follow-up will split into ~2 sub-sections)
+    // §E — Frobenius nuclear structure (PHASE-2 split 2026-05-19):
+    //   the 27-block sec:frobenius-nuclear-structure from the phase-1
+    //   nuclear-binding split is split into 2 sub-sections: parity-
+    //   classification-and-discrepancy (~12) and spectral-sequence-
+    //   chirality-and-confinement (~15). Both within the 3-18 band.
+
+    // §E1 — Parity classification, atomic atlas, and discrepancy resolution
     section({
-      title: "Frobenius nuclear structure",
-      label: "sec:frobenius-nuclear-structure",
+      title: "Parity classification, atomic atlas, and discrepancy resolution",
+      label: "sec:parity-classification-discrepancy",
       blocks: [
         "mn-classical-parity-blind",
         "q-character-closes-parity-gap",
@@ -781,6 +806,14 @@ export default chapter({
         "partition-sum-proton-residual",
         "np-discrepancy-resolution",
         "mass-formula-regime-switching",
+      ],
+    }),
+
+    // §E2 — Spectral sequence, chirality, and confinement-NF structure
+    section({
+      title: "Spectral sequence, chirality, and confinement-NF structure",
+      label: "sec:spectral-sequence-chirality-confinement",
+      blocks: [
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
         "gb-spectral-sequence",
@@ -825,13 +858,17 @@ export default chapter({
       ],
     }),
 
-    // §G — alpha_k derivation, Wenzl bridge, beta stability (PHASE-1:
-    //   still 46 blocks, over band; phase-2 follow-up will split into
-    //   ~3 sub-sections by topic: alpha_k procedure / Wenzl bridge /
-    //   crystal & isospin / beta-stability closure)
+    // §G — alpha_k derivation, Wenzl bridge, beta stability (PHASE-2
+    //   split 2026-05-19): the 43-block sec:alpha-k-wenzl-bridge from
+    //   the phase-1 nuclear-binding split is split into 4 sub-sections:
+    //   alpha_k procedure (~9) / Wenzl bridge & cyclotomic (~13) /
+    //   crystal & isospin & chirality (~9) / beta-stability closure
+    //   (~12). All within the 3-18 band.
+
+    // §G1 — alpha_k derivation procedure
     section({
-      title: "$\\alpha_k$ derivation, Wenzl bridge, and beta stability",
-      label: "sec:alpha-k-wenzl-bridge",
+      title: "$\\alpha_k$ derivation procedure",
+      label: "sec:alpha-k-procedure",
       blocks: [
         "flavor-dressed-mass-from-substrate-split",
         "flavor-mass-splitting-bound",
@@ -842,6 +879,14 @@ export default chapter({
         "atom-knot-mass-derivation-proof",
         "joint-tower-sdp-confinement",
         "y-lambda-closed-form-wenzl-bridge",
+      ],
+    }),
+
+    // §G2 — Wenzl bridge, cyclotomic factorisation, and explicit alpha_k
+    section({
+      title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\alpha_k$",
+      label: "sec:wenzl-bridge-cyclotomic",
+      blocks: [
         "y-lambda-cyclotomic-factorization",
         "y-lambda-recipe-from-partition",
         "graded-hecke-energy-truncation-bound",
@@ -855,6 +900,14 @@ export default chapter({
         "wedderburn-bratteli-recursion",
         "y-lambda-sign-pattern",
         "terms-2-6-higher-operations",
+      ],
+    }),
+
+    // §G3 — Six-term, crystal, isospin, and chirality
+    section({
+      title: "Six-term mass formula, crystal, isospin, and chirality",
+      label: "sec:six-term-crystal-isospin-chirality",
+      blocks: [
         "six-term-mass-formula-complete",
         "six-term-per-derivation-weights",
         "shell-correction-term-seven",
@@ -864,6 +917,14 @@ export default chapter({
         "crystal-bases-path-a",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
+      ],
+    }),
+
+    // §G4 — Beta stability closure
+    section({
+      title: "Beta stability closure",
+      label: "sec:beta-stability-closure",
+      blocks: [
         "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",
