@@ -315,5 +315,8 @@
   },
   "codata_cot_theta_W": 1.8230678710486174,
   "verdict": "near-miss-precision-5pct",
-  "auditOnly": "docs/audits/2026-05-06-close-321-weinberg-gap.md"
+  "auditOnly": "docs/audits/2026-05-06-close-321-weinberg-gap.md",
+  "engine": "python",
+  "scriptFile": "beta_ew_delta_I_321_and_wedderburn.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

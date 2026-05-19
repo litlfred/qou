@@ -1,6 +1,6 @@
 {
   "computation": "deuteron-tr_M-symbolic",
-  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via the canonical Wenzl-Ocneanu y_\u03bb\u00b7\u03c7^\u03bb formula (matches CLAUDE.md \u00a77a `thm:jones-markov-trace`). Migrated from the historical Plancherel-trace formula on 2026-05-17 per audit doc 2026-05-17-dual-tr-m-discrepancy.md \u2014 no fallback.",
+  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via the canonical Wenzl-Ocneanu y_λ·χ^λ formula (matches CLAUDE.md §7a `thm:jones-markov-trace`). Migrated from the historical Plancherel-trace formula on 2026-05-17 per audit doc 2026-05-17-dual-tr-m-discrepancy.md — no fallback.",
   "atom": {
     "Z": 1,
     "N": 1,
@@ -102,5 +102,8 @@
     }
   },
   "total_compute_seconds": 0.03,
-  "generated_at": "2026-05-17T07:04:38.755370+00:00"
+  "generated_at": "2026-05-17T07:04:38.755370+00:00",
+  "engine": "python",
+  "scriptFile": "deuteron_tr_M_symbolic.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

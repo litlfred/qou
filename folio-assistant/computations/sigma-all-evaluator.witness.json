@@ -107,7 +107,7 @@
       "a_exp": 13,
       "d_exp": 18,
       "sigma_all_at_q0": "-0.0000977335738756986850143034549770",
-      "sigma_all_at_q0_f64": -0.00009773357387569868,
+      "sigma_all_at_q0_f64": -9.773357387569868e-05,
       "ratio_to_A1": "-0.000184575797990002775877040820128",
       "ratio_to_A1_f64": -0.00018457579799000277,
       "log10_abs": -4.009956219861485,
@@ -118,9 +118,9 @@
       "a_exp": 14,
       "d_exp": 19,
       "sigma_all_at_q0": "0.0000102161062118376193139895097282",
-      "sigma_all_at_q0_f64": 0.000010216106211837619,
+      "sigma_all_at_q0_f64": 1.0216106211837619e-05,
       "ratio_to_A1": "0.0000192937378796644632812442485940",
-      "ratio_to_A1_f64": 0.000019293737879664464,
+      "ratio_to_A1_f64": 1.9293737879664464e-05,
       "log10_abs": -4.990714600574789,
       "precision_digits_required_for_raw_sum": 6
     },
@@ -129,9 +129,9 @@
       "a_exp": 16,
       "d_exp": 22,
       "sigma_all_at_q0": "-0.00000647735759291355578500129758648",
-      "sigma_all_at_q0_f64": -0.000006477357592913556,
+      "sigma_all_at_q0_f64": -6.477357592913556e-06,
       "ratio_to_A1": "-0.0000122328837385931127744033016933",
-      "ratio_to_A1_f64": -0.000012232883738593112,
+      "ratio_to_A1_f64": -1.2232883738593112e-05,
       "log10_abs": -5.188602126360923,
       "precision_digits_required_for_raw_sum": 6
     }
@@ -204,5 +204,8 @@
   },
   "evaluator_module": "folio-assistant/computations/sigma_all_evaluator.py",
   "audit_doc_reference": "docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769 (closed form + precision schedule)",
-  "memo_doc_reference": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md (this wiring task)"
+  "memo_doc_reference": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md (this wiring task)",
+  "engine": "python",
+  "scriptFile": "sigma_all_evaluator.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

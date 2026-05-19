@@ -1,6 +1,6 @@
 {
   "computation": "pn-alpha-lp-dual",
-  "description": "LP-dual stability scan for the pn-mixing \u03b1 in the inter-nucleon crossing (1, \u2212\u03b1\u00b7HA).  Three probes: (a) D tower binding B_pred(\u03b1) on a fine \u03b1 grid; (b) single-block H_3 LP dual (\u03b3, \u03c3\u2080, \u03c3\u2081, L\u208a, L\u208b, e\u207b) shadow prices; (c) TOWER-LEVEL tests: \u2202B/\u2202\u03b1 numerical derivative + adjacent-pair SDP PSD sweep.  Tests whether \u03b1 = \u00bd is picked out by stability (active-set change, degenerate y\u2080, \u2202B/\u2202\u03b1 zero-crossing, tight pair PSD transition, or minimum |B_pred \u2212 B_AME|).",
+  "description": "LP-dual stability scan for the pn-mixing α in the inter-nucleon crossing (1, −α·HA).  Three probes: (a) D tower binding B_pred(α) on a fine α grid; (b) single-block H_3 LP dual (γ, σ₀, σ₁, L₊, L₋, e⁻) shadow prices; (c) TOWER-LEVEL tests: ∂B/∂α numerical derivative + adjacent-pair SDP PSD sweep.  Tests whether α = ½ is picked out by stability (active-set change, degenerate y₀, ∂B/∂α zero-crossing, tight pair PSD transition, or minimum |B_pred − B_AME|).",
   "timestamp": "2026-05-19T03:30:42.362812+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
@@ -354,10 +354,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -415,10 +415,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -476,10 +476,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -537,10 +537,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -598,10 +598,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -659,10 +659,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -720,10 +720,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -781,10 +781,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -842,10 +842,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -903,10 +903,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -964,10 +964,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1025,10 +1025,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1086,10 +1086,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1147,10 +1147,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1208,10 +1208,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1269,10 +1269,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1330,10 +1330,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1391,10 +1391,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1452,10 +1452,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1513,10 +1513,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1574,10 +1574,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1635,10 +1635,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1696,10 +1696,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1757,10 +1757,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1818,10 +1818,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1879,10 +1879,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -1940,10 +1940,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2001,10 +2001,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2062,10 +2062,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2123,10 +2123,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2184,10 +2184,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2245,10 +2245,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2306,10 +2306,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2367,10 +2367,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2428,10 +2428,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2489,10 +2489,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2550,10 +2550,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2611,10 +2611,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2672,10 +2672,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2733,10 +2733,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -2794,10 +2794,10 @@
         10.0
       ],
       "tight_constraints": [
-        "\u03b3",
-        "\u03c3\u2080",
-        "\u03c3\u2081",
-        "L\u208a"
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊"
       ],
       "lp_dual": {
         "x_star": [
@@ -3430,5 +3430,8 @@
     "B_pred": -0.006389375250182261,
     "V_pn_gen": 0.15961495459608993,
     "B_err": 2.2309093752501825
-  }
+  },
+  "engine": "python",
+  "scriptFile": "pn_alpha_lp_dual.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

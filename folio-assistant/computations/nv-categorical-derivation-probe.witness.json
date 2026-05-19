@@ -119,7 +119,7 @@
       "delta_name": "(q − 1)/2 — q-asymmetric",
       "delta_value": "0.05498929778",
       "value": "1445397.9408367",
-      "rel_err": -0.00008405857741952233
+      "rel_err": -8.405857741952233e-05
     },
     {
       "delta_name": "ln(q_0)/2 — q-asymmetric",
@@ -162,7 +162,7 @@
     "delta_name": "(q − 1)/2 — q-asymmetric",
     "delta_value": "0.05498929778",
     "value": "1445397.9408367",
-    "rel_err": -0.00008405857741952233
+    "rel_err": -8.405857741952233e-05
   },
   "verdict": "suggestive numerology; not yet derivation",
   "open_questions": [
@@ -170,5 +170,8 @@
     "Categorical justification for L = 90 (Hecke-tower depth)",
     "Categorical justification for δ = h² correction",
     "Multi-q test impossible (N_v is q-independent)"
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "nv_categorical_derivation_probe.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

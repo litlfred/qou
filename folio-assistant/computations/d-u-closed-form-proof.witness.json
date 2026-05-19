@@ -203,5 +203,8 @@
     }
   ],
   "all_predictions_match": true,
-  "open_question_u_shift": "u^shift varies between isospin partners at the same A (T: 61, ³He: 58 at A=3; |ΔZ−ΔN|·1.5?).  Closed form for u^shift requires deeper Hecke-NF reduction analysis."
+  "open_question_u_shift": "u^shift varies between isospin partners at the same A (T: 61, ³He: 58 at A=3; |ΔZ−ΔN|·1.5?).  Closed form for u^shift requires deeper Hecke-NF reduction analysis.",
+  "engine": "python",
+  "scriptFile": "d_u_closed_form_proof.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

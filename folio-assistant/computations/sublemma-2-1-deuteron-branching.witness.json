@@ -902,5 +902,8 @@
       "ratio_abs": 1.0054484345592407
     }
   },
-  "conclusion": "Wenzl 1988 Hecke branching verified numerically: the (μ,ν)-block-diagonal action of β_1, β_2 in the LR decomposition V_λ = ⊕ c^λ_{μν} V_μ ⊗ V_ν holds exactly for the disjoint-strand action. The deuteron-vs-disjoint ratios isolate the α_shift(I; λ, μ, ν) contributions of the inter-nucleon interface I — explicit values per λ ⊢ 6 in `deuteron_interface_ratios` provide benchmarks for the open Hoefsmit-pole-order computation."
+  "conclusion": "Wenzl 1988 Hecke branching verified numerically: the (μ,ν)-block-diagonal action of β_1, β_2 in the LR decomposition V_λ = ⊕ c^λ_{μν} V_μ ⊗ V_ν holds exactly for the disjoint-strand action. The deuteron-vs-disjoint ratios isolate the α_shift(I; λ, μ, ν) contributions of the inter-nucleon interface I — explicit values per λ ⊢ 6 in `deuteron_interface_ratios` provide benchmarks for the open Hoefsmit-pole-order computation.",
+  "engine": "python",
+  "scriptFile": "sublemma_2_1_deuteron_branching.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

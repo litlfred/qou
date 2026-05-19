@@ -154,5 +154,8 @@
       "text": "**Falsification path**: identical to the classical Kashaev",
       "triage": "appendix-surreals"
     }
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "wall_violations_sweep.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }
