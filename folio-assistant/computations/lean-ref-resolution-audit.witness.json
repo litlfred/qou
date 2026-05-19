@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T02:29:29.739951+00:00",
-  "commitSha": "48e0e80b09bf78eddd6b86969b66d75a7c557620",
+  "computedAt": "2026-05-19T02:44:59.348059+00:00",
+  "commitSha": "c92c9c82cba04187e5a95410c6644dc067e0ff50",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -16,7 +16,7 @@
     {
       "name": "ok_count_matches_total_minus_failures",
       "computed": 661.0,
-      "expected": 944.0,
+      "expected": 926.0,
       "passed": false,
       "tolerance": 0.0,
       "unit": "count (gates only at full closure)",
@@ -24,20 +24,20 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
-  "scriptCommitSha": "48e0e80b09bf78eddd6b86969b66d75a7c557620",
+  "scriptCommitSha": "c92c9c82cba04187e5a95410c6644dc067e0ff50",
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 944
+    "total_blocks_with_lean_ref": 926
   },
   "data": {
     "by_result": {
       "ok": 661,
-      "sibling_no_decl": 160,
+      "sibling_no_decl": 142,
       "grep_no_match": 120,
       "lake_root_missing_grep_hit": 1,
       "sibling_missing": 2
@@ -986,21 +986,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.ts",
-        "ref": "qou:QOU.BraidKnot.braid_group_n_strand",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.braid_group_n_strand",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/braids-and-knots/braid-group.ts",
         "ref": "qou:QOU.BraidGroup",
         "kind": "definition",
@@ -1249,66 +1234,6 @@
         "result": "sibling_no_decl"
       },
       {
-        "path": "content/quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.ts",
-        "ref": "qou:QOU.BraidKnot.chi_per_irrep_cyclotomic_closed_forms",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.chi_per_irrep_cyclotomic_closed_forms",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/chi-v111-via-sign-substitution.ts",
-        "ref": "qou:QOU.BraidKnot.chi_v111_via_sign_substitution",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.chi_v111_via_sign_substitution",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.ts",
-        "ref": "qou:QOU.BraidKnot.chi_v21_hoefsmit_matrix_derivation",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.chi_v21_hoefsmit_matrix_derivation",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.ts",
-        "ref": "qou:QOU.BraidKnot.chi_v3_closed_form_proof",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.chi_v3_closed_form_proof",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.ts",
         "ref": "qou:QOU.BraidKnot.chirality_dual_space_derivation",
         "kind": "proposition",
@@ -1375,21 +1300,6 @@
         "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "lake_parent"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/ck-extraction-from-algebraic-rules.ts",
-        "ref": "qou:QOU.BraidKnot.ck_extraction_from_algebraic_rules",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.ck_extraction_from_algebraic_rules",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.ts",
@@ -2976,21 +2886,6 @@
         "resolved_via": "grep_under_lake_root"
       },
       {
-        "path": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.ts",
-        "ref": "qou:QOU.BraidKnot.h3_hecke_idempotents",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.h3_hecke_idempotents",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/braids-and-knots/habiro-expansion-atomic.ts",
         "ref": "qou:QOU.BraidKnot.habiro_expansion_atomic",
         "kind": "corollary",
@@ -3201,21 +3096,6 @@
         "grep_hit_under_lake_root": false,
         "result": "ok",
         "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/hecke-algebra-type-scaffold.ts",
-        "ref": "qou:QOU.BraidKnot.hecke_algebra_type_scaffold",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.hecke_algebra_type_scaffold",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hecke-anyonic-substrate.ts",
@@ -4354,36 +4234,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts",
-        "ref": "qou:QOU.BraidKnot.markov_trace_inductive_limit",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.markov_trace_inductive_limit",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/markov-trace-operator-construction.ts",
-        "ref": "qou:QOU.BraidKnot.markov_trace_operator_construction",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.markov_trace_operator_construction",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/braids-and-knots/markov-trace-product.ts",
         "ref": "qou:QOU.Hecke.markov_trace_product",
         "kind": "theorem",
@@ -4620,21 +4470,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/braids-and-knots/multi-link-jones-q1-extension.ts",
-        "ref": "qou:QOU.BraidKnot.multi_link_jones_q1_extension",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.multi_link_jones_q1_extension",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/braids-and-knots/non-self-intersection-proof.ts",
         "ref": "qou:QOU.NonSelfIntersection",
         "kind": "proof",
@@ -4830,36 +4665,6 @@
         "resolved_via": "lake_parent"
       },
       {
-        "path": "content/quantum-observable-universe/braids-and-knots/per-wedderburn-block-c5-c6.ts",
-        "ref": "qou:QOU.BraidKnot.per_wedderburn_block_c5_c6",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.per_wedderburn_block_c5_c6",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/phi-d-syt-count-conjecture.ts",
-        "ref": "qou:QOU.BraidKnot.phi_d_syt_count_conjecture",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.phi_d_syt_count_conjecture",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts",
         "ref": "qou:QOU.WedderburnMass.phi_q_categorical_truncation",
         "kind": "proposition",
@@ -4993,21 +4798,6 @@
         "grep_hit_under_lake_root": false,
         "result": "ok",
         "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.ts",
-        "ref": "qou:QOU.BraidKnot.post_pr665_open_rd_inventory",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.post_pr665_open_rd_inventory",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/prop-rigid-monoidal-structural-gap-invariance.ts",
@@ -6396,21 +6186,6 @@
         "grep_hit_under_lake_root": false,
         "result": "ok",
         "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/u-coordinate-discharges.ts",
-        "ref": "qou:QOU.BraidKnot.u_coordinate_discharges",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.u_coordinate_discharges",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts",
@@ -9383,21 +9158,6 @@
         "result": "grep_no_match"
       },
       {
-        "path": "content/quantum-observable-universe/fluid-dynamics/hyperbolic-overlap-saturation.ts",
-        "ref": "qou:QOU.FluidDynamics.HyperbolicOverlapSaturation",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.FluidDynamics.HyperbolicOverlapSaturation",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts",
         "ref": "qou:QOU.FluidDynamics.kelvin_dispersion_derivation",
         "kind": "proposition",
@@ -9720,21 +9480,6 @@
         "grep_hit_under_lake_root": false,
         "result": "ok",
         "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts",
-        "ref": "qou:QOU.FluidDynamics.TownsendBiotSavart",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.FluidDynamics.TownsendBiotSavart",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts",
@@ -12566,21 +12311,6 @@
         "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/observations/skein-mass-relation.ts",
-        "ref": "qou:QOU.Experimental.skein_mass_relation",
-        "kind": "remark",
-        "pkg": "qou",
-        "decl_path": "QOU.Experimental.skein_mass_relation",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts",

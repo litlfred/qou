@@ -2,10 +2,6 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:markov-trace-inductive-limit",
-  lean: {
-    ref: "qou:QOU.BraidKnot.markov_trace_inductive_limit",
-    validation: "not_checked",
-  },
   interprets: "rem:markov-axioms-primitive",
   title:
     "Markov trace on the inductive limit $\\mathbf{B}_\\infty = \\bigcup_n \\mathbf{B}_n$ — single global trace operator $\\tau_M : \\mathbf{B}_\\infty \\to \\mathbb{R}$ deriving every per-$n$ $\\mathtt{MarkovTraceN}\\ n\\ q$ via Jones-Wenzl axioms M1-M4 on the inductive structure",
