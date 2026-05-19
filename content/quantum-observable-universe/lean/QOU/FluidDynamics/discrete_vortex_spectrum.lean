@@ -23,21 +23,38 @@ class DiscreteVortexSpectrumContext where
   q : ℝ
   /-- The substrate vortex filament length `L : ℝ`. -/
   L : ℝ
+  /-- The substrate q-Planck constant `ℏ_q`. -/
+  hbar_q : ℝ
+  /-- The q-deformed filament length `L_q`. -/
+  L_q : ℝ
+  /-- The q-integer `[k]_q = (q^k − q^{−k})/(q − q^{−1})`. -/
+  q_int : ℕ → ℝ
   /-- The discrete spectrum `λ_k^{(q)} : ℕ → ℝ`. -/
   λ : ℕ → ℝ
   /-- Manuscript sub-claim (i) — discrete eigenvalues: the eigenvalues
       of `Δ_q` restricted to `ϱ` form a discrete spectrum
-      `{λ_k^{(q)}}_{k ≥ 1}` with `[k]_q` ordering. -/
-  claim_i_discrete_eigenvalues : Prop
+      `λ_k^{(q)} = [k]_q² · ℏ_q / L_q²` for `k ≥ 1`. -/
+  claim_i_discrete_eigenvalues : ∀ k : ℕ, 1 ≤ k →
+    λ k = (q_int k) ^ 2 * hbar_q / L_q ^ 2
+  /-- The q-deformed moment of inertia `I_q`. -/
+  I_q : ℝ
+  /-- The vortex energy at intensity level `j` (indexed by `2j ∈ ℕ`
+      so that `j_n = n/2`). -/
+  E_level : ℕ → ℝ
   /-- Manuscript sub-claim (ii) — spin-labelled intensity levels:
-      `j ∈ ½ℤ_{≥0}` of the `𝔰𝔲(2)` weight-space decomposition. -/
-  claim_ii_spin_levels : Prop
-  /-- Manuscript sub-claim (iii) — ladder transitions mediated by
-      `E_±` of the weight-space decomposition. -/
+      `E_j^{(q)} = (ℏ_q / 2 I_q) · [j]_q · [j+1]_q`. (Indexing uses
+      `n = 2j ∈ ℕ` and `[j]_q := q_int n`.) -/
+  claim_ii_spin_levels : ∀ n : ℕ,
+    E_level n = (hbar_q / (2 * I_q)) * (q_int n) * (q_int (n + 1))
+  /-- Manuscript sub-claim (iii) — ladder transitions with selection
+      rule `|j − j'| = 1`; the energy difference is the standard
+      `q`-rotor gap (`Δ E = E_{j'} − E_j`). Stated abstractly because
+      the selection rule and the ladder action `E_±` live on the
+      `SU_q(2)` weight-space decomposition. -/
   claim_iii_ladder_transitions : Prop
-  /-- Manuscript sub-claim (iv) — classical limit:
-      `[k]_q → k` as `q → 1`, recovering the Kelvin-wave spectrum. -/
-  claim_iv_classical_kelvin_limit : Prop
+  /-- Manuscript sub-claim (iv) — classical limit: at `q = 1` the
+      `q`-integer `[k]_q` collapses to `k`. -/
+  claim_iv_classical_kelvin_limit : q = 1 → ∀ k : ℕ, q_int k = (k : ℝ)
 
 /-- **Content statement** (from manuscript):
 
@@ -52,10 +69,12 @@ sections of the normal bundle $N_\varrho$.  Then:
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
-    ctx.claim_i_discrete_eigenvalues ∧
-    ctx.claim_ii_spin_levels ∧
+    (∀ k : ℕ, 1 ≤ k →
+      ctx.λ k = (ctx.q_int k) ^ 2 * ctx.hbar_q / ctx.L_q ^ 2) ∧
+    (∀ n : ℕ, ctx.E_level n =
+      (ctx.hbar_q / (2 * ctx.I_q)) * (ctx.q_int n) * (ctx.q_int (n + 1))) ∧
     ctx.claim_iii_ladder_transitions ∧
-    ctx.claim_iv_classical_kelvin_limit :=
+    (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) :=
   ⟨ctx.claim_i_discrete_eigenvalues, ctx.claim_ii_spin_levels,
    ctx.claim_iii_ladder_transitions, ctx.claim_iv_classical_kelvin_limit⟩
 

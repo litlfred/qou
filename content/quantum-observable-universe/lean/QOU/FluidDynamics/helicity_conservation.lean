@@ -23,18 +23,29 @@ class HelicityConservationContext where
   q : ℝ
   /-- The categorical helicity `ℋ_q` as a function of time. -/
   H_q : ℝ → ℝ
-  /-- Manuscript sub-claim (i) — Conservation: `dℋ_q/dt = 0`. -/
-  claim_i_conservation : Prop
+  /-- Manuscript sub-claim (i) — Conservation: `ℋ_q` is constant in
+      time (i.e. `ℋ_q(t) = ℋ_q(0)` for every `t`). -/
+  claim_i_conservation : ∀ t : ℝ, H_q t = H_q 0
+  /-- The writhe contribution `Σ_i Wr_q(ϱ_i) · Γ_i²` to `ℋ_q`. -/
+  writhe_q : ℝ
+  /-- The twist contribution `Σ_i Tw_q(ϱ_i) · Γ_i²` to `ℋ_q`. -/
+  twist_q : ℝ
+  /-- The linking contribution `2 Σ_{i<j} lk_q(ϱ_i, ϱ_j) Γ_i Γ_j`
+      to `ℋ_q`. -/
+  linking_q : ℝ
   /-- Manuscript sub-claim (ii) — Călugăreanu–White–Fuller
-      decomposition `ℋ_q = Wr_q + Tw_q + 2·lk_q` for each filament. -/
-  claim_ii_CWF_decomposition : Prop
+      decomposition `ℋ_q(0) = Wr_q + Tw_q + linking_q`. -/
+  claim_ii_CWF_decomposition : H_q 0 = writhe_q + twist_q + linking_q
   /-- Manuscript sub-claim (iii) — Jones-polynomial refinement: the
-      Jones polynomial separates classes where `ℋ_q` alone does not. -/
+      Jones polynomial separates classes where `ℋ_q` alone does not
+      (formalised as an abstract Prop because it ranges over the
+      space of vortex configurations). -/
   claim_iii_jones_refinement : Prop
+  /-- The classical Moffatt helicity `H = ∫ v · ω dV`. -/
+  H_classical : ℝ
   /-- Manuscript sub-claim (iv) — Classical limit: as `q → 1`,
-      `ℋ_q` reduces to the classical Moffatt helicity
-      `H = ∫ v · ω dV`. -/
-  claim_iv_classical_limit : Prop
+      `ℋ_q` reduces to the classical Moffatt helicity. -/
+  claim_iv_classical_limit : q = 1 → H_q 0 = H_classical
 
 /-- **Content statement** (from manuscript):
 
@@ -51,10 +62,10 @@ $\{\varrho_1, \ldots, \varrho_n\}$ as
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/helicity-conservation.ts
 theorem helicity_conservation [ctx : HelicityConservationContext] :
-    ctx.claim_i_conservation ∧
-    ctx.claim_ii_CWF_decomposition ∧
+    (∀ t : ℝ, ctx.H_q t = ctx.H_q 0) ∧
+    ctx.H_q 0 = ctx.writhe_q + ctx.twist_q + ctx.linking_q ∧
     ctx.claim_iii_jones_refinement ∧
-    ctx.claim_iv_classical_limit :=
+    (ctx.q = 1 → ctx.H_q 0 = ctx.H_classical) :=
   ⟨ctx.claim_i_conservation, ctx.claim_ii_CWF_decomposition,
    ctx.claim_iii_jones_refinement, ctx.claim_iv_classical_limit⟩
 
