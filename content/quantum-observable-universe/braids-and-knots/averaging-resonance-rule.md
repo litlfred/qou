@@ -13,21 +13,33 @@ $$
 
 *Then $c_k$ lies in the **bar-invariant fixed-point sector** (i.e.,
 picks up a $1/2$ fingerprint at the silver ratio $q = 1+\sqrt 2$)
-**iff** the **averaging-resonance condition** is satisfied at order $k$:*
+**iff** the **silver-ratio Pell-Lucas test fails on $c_k$**: the
+reduced numerator of $c_k(1+\sqrt 2)$ (in absolute value) is **not**
+of the form $a_n^{\,j} \cdot 2^{\,t}$ for any Pell-Lucas number $a_n$
+($a_n \in \{1, 3, 7, 17, 41, \ldots\}$), exponent $j \ge 0$, and
+$t \ge 0$.*
+
+This is the **authoritative** criterion. The combinatorial *predictive*
+heuristic below (an "argmax-binomial" rule on cyclic substructure
+counts) is a **conjectural attempt** to derive the same classification
+from the typed-braid recipe alone, but is currently **falsified** at
+several rungs (25% accuracy — see §Naive argmax-binomial criterion).
+
+**Predictive heuristic (FALSIFIED, retained for refinement R&D):**
 
 $$
-\boxed{\;\;
 m_k \;:=\; \max \bigl\{\, m \,\in\, \{0, 1, \ldots, n_{\mathrm{avg}}\} \;:\;
 \binom{n_{\mathrm{avg}}}{m} \binom{n_\sigma + n_{\sigma^{-1}}}{k-m}
 \ge \binom{n_\sigma + n_{\sigma^{-1}}}{k}
-\,\bigr\} \;\ge\; 1
-\;\;}
+\,\bigr\}.
 $$
 
-*The integer $m_k$ counts the **dominant** number of averaged
-positions in a $k$-fold cyclic substructure of $\beta$. The rung is
-**pure-$\sigma$** iff $m_k = 0$ (no averaged-position dominance),
-otherwise it is **averaging-resonant**.*
+*The integer $m_k$ would count the **dominant** number of averaged
+positions in a $k$-fold cyclic substructure of $\beta$ if the
+heuristic held; "averaging-resonant" would correspond to $m_k \ge 1$.
+The heuristic fails at $k \in \{4, 6, 7, 8, 9, 10\}$ in the proton
+ladder; see §Why $k = 5$ specifically for a stronger candidate
+(half-fill cyclic) rule.*
 
 ## Definitions
 
@@ -136,7 +148,7 @@ This is the **silver-ratio Pell-Lucas test** for sector classification.
 
 After re-running the silver-ratio Pell-Lucas test via the
 authoritative classifier
-([`ck_sector_classifier.py`](../../folio-assistant/computations/ck_sector_classifier.py)):
+([`ck_sector_classifier.py`](../../../folio-assistant/computations/ck_sector_classifier.py)):
 
 | $k$ | Conjectured closed form | Silver-ratio value | Pell-Lucas clean? | Sector |
 |:---:|:-----------------------:|:------------------:|:----------------:|:------:|

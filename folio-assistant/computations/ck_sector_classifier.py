@@ -7,19 +7,23 @@ Two classification methods:
 
 1. **Empirical (silver-ratio Pell-Lucas test)**: given a c_k closed
    form as a function of q, evaluate at q = 1+√2, reduce to rational,
-   test if numerator is in Pell-Lucas. If yes → pure-σ; if no → averaging-resonant.
+   test if the reduced numerator (in absolute value) is a power of 2,
+   or a Pell-Lucas number raised to a small power times a power of 2.
+   If yes → pure-σ; if no → averaging-resonant.
 
 2. **Predictive (combinatorial argmax-binomial — currently FALSIFIED)**:
    given typed-B_3 crossing distribution (n_σ, n_σ⁻¹, n_avg) and rung k,
    compute m_k = argmax binomial product. If m_k ≥ 1 → predicted averaging.
-   NOTE: this naive rule fails for k ∈ {4, 6, 7, 9}; retained for future refinement.
+   NOTE: this naive rule fails for k ∈ {4, 6, 7, 8, 9, 10}; retained for
+   future refinement (see `correctSectorCriterion` in the Lean sibling).
 
 The empirical method is currently the authoritative classifier. The
 predictive method is for testing refinements of the combinatorial rule.
 
-Used by:
-- `qbeta_decay_sdp_extended_ck.py` (to classify newly-extracted c_k)
-- `qbeta_silver_ratio_pell_lucas_ck.py` (to validate existing c_k closed forms)
+Intended for use by future SDP-T_β extraction probes that compute
+c_k closed forms and need to label each by sector. The on-demand
+Pell-Lucas generator (`_pell_lucas_up_to`) keeps the test valid as
+new c_k with larger numerators come online.
 """
 from __future__ import annotations
 
@@ -29,9 +33,26 @@ from math import comb
 from typing import Literal
 
 
-# Pell-Lucas sequence a_n (companion to Pell P_n), satisfying a_{n+1} = 2 a_n + a_{n-1}
-# with a_0 = a_1 = 1: 1, 1, 3, 7, 17, 41, 99, 239, 577, 1393, ...
-PELL_LUCAS = [1, 1, 3, 7, 17, 41, 99, 239, 577, 1393, 3363]
+def _pell_lucas_up_to(bound: int) -> list[int]:
+    """Generate Pell-Lucas numbers a_n with a_{n+1} = 2·a_n + a_{n-1},
+    a_0 = a_1 = 1, up to (and including) the first value ≥ bound.
+
+    The bound is on Pell-Lucas magnitude, not on rung k — callers
+    pass the numerator they want to factor against.
+    """
+    if bound <= 0:
+        return []
+    a, b = 1, 1
+    out = [a]
+    while a < bound:
+        a, b = b, 2 * b + a
+        out.append(a)
+    return out
+
+
+# Convenience snapshot for self-test display and downstream introspection.
+# Not used by `is_pell_lucas_clean` — that calls `_pell_lucas_up_to(num)`.
+PELL_LUCAS = _pell_lucas_up_to(10_000)
 PELL = [0, 1, 2, 5, 12, 29, 70, 169, 408, 985, 2378]
 
 Sector = Literal["pure_sigma", "averaging_resonant"]
@@ -64,32 +85,41 @@ NEUTRON_DIST = TypedB3Distribution(n_sigma=5, n_sigma_inv=4, n_avg=2)
 def is_pell_lucas_clean(value: Fraction) -> bool:
     """Test if a rational value is Pell-Lucas-clean at silver ratio.
 
-    The value is considered clean if its reduced numerator (in absolute
-    value) is a Pell-Lucas number, a power of 2, a Pell-Lucas number
-    times a power of 2, or a Pell-Lucas number squared.
+    The reduced numerator (in absolute value) is considered clean iff
+    it has the form  pl^j · 2^t  for some Pell-Lucas number pl > 1 and
+    j ∈ {0, 1, ..., 4}, t ∈ {0, 1, 2, ...} (the j = 0 case collapses to
+    a bare power of 2). Empirically the c_k closed forms observed so
+    far all sit in this shape; j > 4 has not yet been needed but the
+    bound is easy to lift if a future c_k pushes past it.
 
     Examples:
-      -2          → True (power of 2)
-      -49/32      → True (49 = 7² = a_3²)
+      -2          → True (power of 2, j = 0)
+      -49/32      → True (49 = a_3², t = 0)
       -11/8       → False (11 is not in Pell-Lucas)
       7/2         → True (7 = a_3)
       -8          → True (-8 = -2³)
       49/16       → True (49 = a_3²)
       -7          → True (a_3)
-      343/128     → True (343 = 7³ = a_3³; clean Pell-Lucas-power)
+      343/128     → True (343 = a_3³)
+      98 = 49·2   → True (a_3² · 2¹)
     """
     num = abs(value.numerator)
     if num == 0:
         return True
-    # Power of 2 (covers num = 1 = 2^0 as well)
+    # Power of 2 (covers num = 1 = 2^0 as well; j = 0 case)
     if (num & (num - 1)) == 0:
         return True
-    # (Pell-Lucas number)^j times (power of 2), for j in 1..4.
-    # Use a set to deduplicate the leading 1 in PELL_LUCAS.
-    for pl in {p for p in PELL_LUCAS if p > 1}:
+    # (Pell-Lucas number)^j times (power of 2), for j ∈ 1..4.
+    # Generate Pell-Lucas on demand up to `num` so the test stays valid
+    # for c_k whose numerators exceed any pre-stored prefix.
+    for pl in _pell_lucas_up_to(num):
+        if pl <= 1:
+            continue
         p_pow = 1
         for _j in range(1, 5):
             p_pow *= pl
+            if p_pow > num:
+                break
             if num % p_pow == 0:
                 quotient = num // p_pow
                 if quotient != 0 and (quotient & (quotient - 1)) == 0:

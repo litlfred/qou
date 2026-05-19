@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "**Averaging-resonance rule for $c_k$ sectors**: precision-ladder rung $k$ lies in the bar-invariant fixed-point sector (= picks up $1/2$ fingerprint at silver ratio) iff the silver-ratio Pell-Lucas test on $c_k$ fails; empirically $k = 5$ is the **only** such outlier in the proton typed-$\\mathbf{B}_3$ ladder at $k \\in \\{3, \\ldots, 10\\}$",
+    "Averaging-resonance rule for $c_k$ sectors: precision-ladder rung $k$ lies in the bar-invariant fixed-point sector (= picks up the $1/2$ fingerprint at silver ratio) iff the silver-ratio Pell-Lucas test on $c_k$ fails; empirically $k = 5$ is the only such outlier in the proton typed-$\\mathbf{B}_3$ ladder at $k \\in \\{3, \\ldots, 10\\}$",
   uses: [
     "prop:neutron-qvalue-symbolic",
   ],
@@ -15,7 +15,7 @@ export default proposition({
     "wenzl1988",
     "hoefsmit1974",
     "jones1985",
-    "geck-pfeiffer-2000",
+    "geckpfeiffer2000",
   ],
   tags: [
     "lean-infrastructure",

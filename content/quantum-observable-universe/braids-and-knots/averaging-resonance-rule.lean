@@ -2,7 +2,7 @@
 # QOU.BraidKnot.AveragingResonanceRule
 
 **Averaging-resonance rule for c_k sectors**: precision-ladder rung
-k lies in the bar-invariant fixed-point sector (= picks up 1/2
+k lies in the bar-invariant fixed-point sector (= picks up the 1/2
 fingerprint at silver ratio) iff the silver-ratio Pell-Lucas test
 on c_k fails.
 
@@ -78,12 +78,27 @@ def empiricalSector : ℕ → RungSector
   | 10 => .pureSigma
   | _ => .pureSigma  -- default; rungs k ≥ 11 untested
 
-/-- Naive argmax-binomial criterion (FALSIFIED — 25% accuracy). -/
-def naiveArgmaxBinomial (d : TypedBnDistribution) (k : ℕ) : ℕ := by
-  -- Compute the m ∈ {0, ..., d.n_avg} maximising
-  -- C(d.n_avg, m) * C(d.n_sigma + d.n_sigma_inv, k - m)
-  -- Placeholder; full computation requires Finset.argmax.
-  exact 0
+/-- The "naive argmax-binomial" criterion as a literal `Finset.argmax`
+    on the binomial-product weights. For the proton recipe with
+    `n_avg = 2`, the dominant `m_k` is determined by comparing
+    `binomial(n_avg, m) * binomial(n_σ + n_σ⁻¹, k - m)` across
+    `m ∈ {0, 1, 2}`. The Python sibling implements the matching `≥`
+    tie-break; the Lean side records the rungs where this criterion
+    disagrees with `empiricalSector` (see
+    `naive_argmax_binomial_is_falsified` below). -/
+def naiveArgmaxBinomial (d : TypedBnDistribution) (k : ℕ) : ℕ :=
+  -- Pick the largest m ∈ {0, 1, ..., n_avg} achieving the max weight.
+  -- For the proton ladder `n_avg = 2`, so we inline the three
+  -- candidate weights and tie-break in favour of larger m (≥).
+  let nNonAvg := d.n_sigma + d.n_sigma_inv
+  let w : ℕ → ℕ := fun m =>
+    if m ≤ d.n_avg ∧ m ≤ k ∧ k - m ≤ nNonAvg
+    then Nat.choose d.n_avg m * Nat.choose nNonAvg (k - m)
+    else 0
+  -- Linear scan over m = 0, 1, ..., d.n_avg, keeping the largest m
+  -- whose weight ≥ the current best (matches the Python `≥` tie-break).
+  (List.range (d.n_avg + 1)).foldl
+    (fun best m => if w m ≥ w best then m else best) 0
 
 /-- **Half-fill hypothesis** (working, untested at other n_total):
     the unique averaging-resonant rung is k = ⌊n_total / 2⌋.
@@ -102,7 +117,9 @@ theorem proton_half_fill_eq_five :
     refined empirical classification, the naive rule predicts
     averaging for k ∈ {4, 5, 6, 7, 8, 9, 10} but empirical evidence
     shows averaging only at k = 5. The naive rule has 2/8 ≈ 25%
-    accuracy (correct at k = 3 and k = 5 only). -/
+    accuracy (correct at k = 3 and k = 5 only).
+
+    Concrete witness: at k = 4, `empiricalSector 4 = .pureSigma`. -/
 theorem naive_argmax_binomial_is_falsified :
     ∃ k : ℕ, k ∈ [4, 6, 7, 8, 9, 10].toFinset ∧
       empiricalSector k = .pureSigma := by
@@ -132,15 +149,42 @@ def confirmedAveragingRungs : List ℕ := [5]
 /-- The empirically-confirmed pure-σ rungs (k=3..10): all but 5. -/
 def confirmedPureSigmaRungs : List ℕ := [3, 4, 6, 7, 8, 9, 10]
 
-/-- **Theorem (empirical sector classification)**: the SDP-T_β
-    extraction at k = 3..10 gives the documented sector assignment.
+/-- **Theorem (empirical sector classification, refined)**: the
+    SDP-T_β extraction at k = 3..10 gives the documented sector
+    assignment — averaging-resonant exactly at k = 5; pure-σ at
+    every other rung in [3, 10].
 
     Proof: by case analysis on k, using the silver-ratio Pell-Lucas
     test. The Pell-Lucas-clean values for k ∈ {3, 4, 6, 7, 8, 9, 10}
     certify pure-σ; the 1/2 fingerprint at k = 5 (c_5 = -11/8 with
     11 ∉ Pell-Lucas) certifies averaging-resonant. -/
 theorem empirical_sector_classification (k : ℕ) (hk : 3 ≤ k ∧ k ≤ 10) :
-    empiricalSector k = .pureSigma ∨ empiricalSector k = .averagingResonant := by
-  interval_cases k <;> decide
+    empiricalSector k =
+      (if k = 5 then RungSector.averagingResonant else RungSector.pureSigma) := by
+  obtain ⟨_, _⟩ := hk
+  interval_cases k <;> rfl
+
+/-- **`AveragingResonanceRule`** — the package-qualified top-level
+    declaration backing
+    `lean.ref = "qou:QOU.BraidKnot.AveragingResonanceRule"`. Bundles
+    the empirical classifier with its falsifying witness, the
+    half-fill hypothesis, and the categorical placeholder.
+
+    This `structure` exists so the content-block manifest has a
+    stable named declaration to point at; the substantive content
+    is in the fields. -/
+structure AveragingResonanceRule where
+  /-- The authoritative empirical classifier. -/
+  empirical : ℕ → RungSector := empiricalSector
+  /-- The (falsified) naive argmax-binomial heuristic. -/
+  naive : TypedBnDistribution → ℕ → ℕ := naiveArgmaxBinomial
+  /-- The working categorical placeholder (currently `= empirical`). -/
+  categorical : TypedBnDistribution → ℕ → RungSector := correctSectorCriterion
+  /-- The half-fill rung — current best candidate for the unique
+      averaging-resonant rung as a function of `n_total`. -/
+  halfFill : TypedBnDistribution → ℕ := halfFillRung
+
+/-- The canonical inhabitant — defaults wired through. -/
+def AveragingResonanceRule.canonical : AveragingResonanceRule := {}
 
 end QOU.BraidKnot
