@@ -34,9 +34,11 @@ the universal Frobenius co-Casimir tail.*
 
 **Why universal at $k \geq 4$.** *At low strata $k \leq 3$ the
 restricted Frobenius integral $\int_{A_\lambda} \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$
-factors through specific hyperbolic-knot ideals (e.g. $6_1$ at
-$k = 3$, the chirality channel; see
-[chirality residue](#prop:chirality-from-frobenius-self-pairing)).
+factors through specific hyperbolic-knot ideals (specifically $4_1$
+at $k = 3$ — the chirality channel via Fricke-trace derivation, empirically
+resolved by [PR #826](https://github.com/litlfred/qou/pull/826); see
+[chirality residue](#prop:chirality-from-frobenius-self-pairing) for
+the derivation).
 At $k \geq 4$ no specific knot ideal remains in the centre — what
 survives is the dualizing-complex residue, which depends only on
 $(\mathcal{K}, \mathcal{T})$ and the Wedderburn-stratification

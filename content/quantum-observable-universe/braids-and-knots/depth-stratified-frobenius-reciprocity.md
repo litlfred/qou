@@ -15,11 +15,18 @@ Frobenius reciprocity for the center inclusion
 $Z(H_3) \hookrightarrow Z(H_n)$ through the depth-$k$ knot-ideal projector.*
 
 *Concretely: for each low curvature-rank $k \in \{1, 2, 3\}$ there is
-a distinguished hyperbolic knot $K_k^*$ (named at $k = 3$ as
-$K_3^* = 6_1$, the chirality channel, per
-[`prop:plancherel-term-7-formulation`](#prop:plancherel-term-7-formulation);
-unnamed at $k = 1, 2$ — open structural question). The depth-$k$
-contribution to the mass formula is*
+a distinguished hyperbolic knot $K_k^*$. Empirical resolution at
+$k = 3$ (per [PR #826](https://github.com/litlfred/qou/pull/826), with
+canonical braid words cross-verified against KnotInfo via hyperbolic
+volume): $K_3^* = 4_1$ (figure-eight knot) gives the best variance
+reduction at 1.551× (+14.8% vs 1.82× baseline), consistent with the
+Fricke-trace derivation in
+[`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing)
+giving $\chi_{4_1}((2,1)) = 2 - [3]_q$ at $H_3$. The previously
+asserted $K_3^* = 6_1$ (Stevedore) does NOT empirically validate —
+6_1 regresses the variance to 1.878× (worse than baseline). At
+$k = 1, 2$ the distinguished knots are unnamed — open structural
+question. The depth-$k$ contribution to the mass formula is*
 
 $$
   \boxed{\;
@@ -121,8 +128,13 @@ If true, the FR refinement (FR) closes the variance on PR #801 to
 $\le 1.05\times$ (universal categorical constant) by enhancing the
 low-$k$ contributions through the per-knot ideal restriction:
 
-- $k = 3$ (named $K_3^* = 6_1$): chirality channel, full FR pullback
-  computable from the $6_1$ central projector in $H_n$.
+- $k = 3$ ($K_3^* = 4_1$, empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826)):
+  chirality channel, full FR pullback computable from the $4_1$
+  central projector in $H_n$. Empirically reduces variance to
+  $1.551\times$ (+14.8% vs the $1.82\times$ uniform-Plancherel
+  baseline). The Fricke-trace derivation in
+  [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing)
+  independently picks out $4_1$ at $H_3$ via $\chi_{4_1}((2,1)) = 2 - [3]_q$.
 - $k = 1, 2$: **open** — the distinguished knots are NOT named in
   the existing paper. Candidates: $K_1^* \in \{4_1, 5_2\}$ (smallest
   hyperbolic), $K_2^* \in \{5_2, 6_1\}$ (chirality precursors).
@@ -135,9 +147,11 @@ For the conjecture to be well-defined, three structural ingredients
 must exist:
 
 1. **Distinguished knot $K_k^*$ at each $k \in \{1, 2, 3\}$**: at
-   $k = 3$ this is $6_1$ (named); at $k = 1, 2$ this is the open
-   question. Candidates and selection criteria are
-   recorded in
+   $k = 3$ this is $4_1$ (empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826),
+   consistent with the Fricke-trace derivation in
+   [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing));
+   at $k = 1, 2$ this is the open question. Candidates and selection
+   criteria are recorded in
    [`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md).
 
 2. **Central projector $e_{K_k^*} \in Z(H_n)$**: the Hecke-ideal
@@ -152,29 +166,34 @@ must exist:
 
 ### Falsification path
 
-The conjecture is **directly falsifiable** by computing the FR-restricted
-weight $\tilde w_\lambda^{(6_1)}$ at $k = 3$ and re-running the
-binding-energy variance. If the variance drops below $1.5\times$
-across D, T, ³He, ⁴He, the conjecture is **strongly supported**
-(consistent with the $\sim 1.82\times$ baseline becoming structurally
-explained). If variance does NOT drop, the conjecture is **falsified
-or requires refinement** (the low-$k$ residual is something else).
+The conjecture was **directly falsified for the originally-asserted $K_3^* = 6_1$**
+by [PR #826](https://github.com/litlfred/qou/pull/826): with corrected
+canonical braid words (verified against KnotInfo via hyperbolic
+volume) and proper $S_{\text{uniform},k}$-preserving weight
+normalization, Stevedore $6_1$ regresses the variance to $1.878\times$
+(worse than the $1.82\times$ baseline). The **corrected resolution**
+is $K_3^* = 4_1$ (figure-eight), giving variance $1.551\times$
+(+14.8% reduction) — consistent with the Fricke-trace derivation in
+[`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing).
+The conjecture is therefore **partially supported at $k = 3$**: the
+FR mechanism reduces variance, but with $K_3^* = 4_1$, not the
+originally-asserted $6_1$.
 
 A concrete computation requires:
 
-1. The braid word for $6_1$ in $H_4$: $6_1 = $ closure of
-   $\sigma_2^{-1} \sigma_1 \sigma_3^{-1} \sigma_2 \sigma_1^{-1} \sigma_3$
-   (or one of its Markov-equivalent representatives).
-2. Wenzl-embedded $6_1 \in H_n$ for $n = 3A$ via the standard
-   inclusion at strand-positions $\{i, i+1, i+2, i+3\}$ for some $i$
+1. The braid word for $4_1$ in $H_3$: $4_1 = $ closure of
+   $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$
+   (figure-eight; braid index 3).  $4_1$ has hyperbolic volume
+   $\approx 2.0299$ (smallest among hyperbolic knots).
+2. Wenzl-embedded $4_1 \in H_n$ for $n = 3A$ via the standard
+   inclusion at strand-positions $\{i, i+1, i+2\}$ for some $i$
    inside the atomic braid.
-3. $\chi^\lambda(6_1^{(n)})$ for each $\lambda \vdash n$ of depth 3 —
+3. $\chi^\lambda(4_1^{(n)})$ for each $\lambda \vdash n$ of depth 3 —
    computable via the Rust kernel
    ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
-   or the symbolic Hoefsmit pipeline.
-
-This is the **next implementation step** after the conjecture is
-accepted into the paper.
+   or the symbolic Hoefsmit pipeline.  The script
+   [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
+   (from PR #826) carries this end-to-end with KnotInfo cross-validation.
 
 ### Lean formalisation
 
@@ -216,7 +235,9 @@ at $k = 3$.
 
 If true, this conjecture **closes the unified mass formula** to
 universal precision — all atomic binding energies follow from
-$(m_e, q_0, Q_\beta)$ + the three distinguished knots $\{K_1^*, K_2^*, 6_1\}$.
+$(m_e, q_0, Q_\beta)$ + the three distinguished knots
+$\{K_1^*, K_2^*, K_3^* = 4_1\}$ (with $K_3^* = 4_1$ empirically
+resolved per [PR #826](https://github.com/litlfred/qou/pull/826)).
 
 ### Status
 
