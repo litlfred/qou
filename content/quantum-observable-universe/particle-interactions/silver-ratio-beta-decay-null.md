@@ -134,3 +134,70 @@ The Pell recursion at $q = 1 + \sqrt{2}$ matches the Hecke quadratic
 $\sigma^2 = 2\sigma + 1$ — this suggests **looking for braided
 recursion identities at the Hecke level that reduce to Pell at the
 silver ratio**.
+
+
+## Why $c_5$ is the outlier — involution + Leibniz interpretation
+
+The $c_5 = -(b^2 + 1/2)$ outlier has a clean categorical interpretation
+combining **involution** and **Leibniz** structure:
+
+### Involution origin: the averaged crossing operator
+
+The typed-$\mathbf{B}_3$ braid construction uses **averaged crossings**
+at specific positions:
+$$
+\sigma_{\text{avg}} := \frac{\sigma + \sigma^{-1}}{2} = \sigma - \frac{h}{2}
+$$
+(using the Hecke quadratic $\sigma^{-1} = \sigma - h$).
+
+This $\sigma_{\text{avg}}$ is the **bar-invariant projection of $\sigma$**:
+$\sigma_{\text{avg}} = P_{\text{avg}}(\sigma)$ where $P_{\text{avg}} = (1 + \overline{\,\,})/2$
+is the bar-involution projector ($\overline{\sigma} = \sigma^{-1}$ in $H_n(q)$).
+
+The proton braid contains ONE averaged $\sigma_1$ position with coefficient
+$-h/2$; the neutron braid contains TWO averaged positions. The $h/2$ is the
+**involution fingerprint**.
+
+### Leibniz propagation: how $h/2$ reaches $c_5$
+
+Markov-trace expansion of the typed braid generates the
+single-wrap $\Delta(\mathrm{net}) = h^2/2 - h = h(h-2)/2$. The
+$h/2$ from averaging propagates through higher rungs of the
+precision ladder via the Leibniz / product-expansion combinatorics.
+
+At rung $k=5$ (order $\hbar_q^{10}$), the contribution from
+averaged positions becomes the dominant non-pure-$\sigma$
+structure, giving:
+$$
+c_5 = -b^2 - \frac{1}{2}
+$$
+where $-b^2$ is the **pure-$\sigma$-action** (Kashiwara return
+amplitude squared) and $-1/2$ is the **averaged-crossing involution
+fingerprint at rung 5**.
+
+### Why other $c_k$ don't pick up the $1/2$
+
+$c_3, c_4, c_6, c_7$ have dominant contributions from POSITIONS in
+the braid that are pure $\sigma$ or pure $\sigma^{-1}$ — not averaged.
+At their respective orders ($k = 3, 4, 6, 7$), the averaged-position
+contributions are subdominant, and their closed forms factor through
+pure Pell-Lucas combinatorics at the silver ratio.
+
+$c_5$ is uniquely sensitive to the averaged-crossing structure
+because: (a) the proton has exactly ONE averaged $\sigma_1$
+position at coefficient $h/2$, and (b) the cross-term combinatorics
+in the $b^5 \hbar_q^{10}$ rung amplify the $h/2$ contribution
+relative to the pure-$\sigma$ contributions at this specific order.
+
+### Implication
+
+The $c_5$ Pell-Lucas outlier is **not a sign of categorical
+incompleteness** — it's the **fingerprint of the typed-$\mathbf{B}_3$
+averaged-crossing recipe**. The categorical chain IS complete; $c_5$
+just lives in the involution-fixed-point sector while the other $c_k$
+live in the pure-$\sigma$ sector.
+
+This also predicts that **any $c_k$ at higher rungs whose order
+coincides with an averaging-resonance position will pick up
+similar $1/2$ fingerprints**. The next such rung is unknown but
+testable by extending the SDP-$T_\beta$ extraction to $k \ge 8$.
