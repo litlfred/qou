@@ -38,10 +38,11 @@ class SkeinFinitenessBoundContext where
       volume is positive. -/
   claim_ii_per_generator_positivity :
     is_stable ↔ ∀ i : Fin (Z + N - 1), 0 < V i
-  /-- Total count of stable configurations at fixed `q`. -/
-  stable_count : ℕ
-  /-- Manuscript sub-claim (iii): finite stable-configuration count. -/
-  claim_iii_stable_configurations_finite : stable_count < 1000
+  /-- Type of stable nuclear configurations at fixed `q`. -/
+  StableConfig : Type
+  /-- Manuscript sub-claim (iii): the type of stable configurations
+      is finite. -/
+  claim_iii_stable_configurations_finite : Finite StableConfig
 
 /-- **Manuscript statement** (full body):
 
@@ -129,7 +130,7 @@ theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] :
     ctx.P
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
     (ctx.is_stable ↔ ∀ i : Fin (ctx.Z + ctx.N - 1), 0 < ctx.V i) ∧
-    ctx.stable_count < 1000 :=
+    Finite ctx.StableConfig :=
   ⟨ctx.claim_i_skein_factorisation,
    ctx.claim_ii_per_generator_positivity,
    ctx.claim_iii_stable_configurations_finite⟩

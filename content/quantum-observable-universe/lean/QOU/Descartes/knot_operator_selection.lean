@@ -45,15 +45,20 @@ class KnotOperatorSelectionContext where
       and unique-minimal-norm matching supply (Mathlib pairing
       infra needed; stays Prop). -/
   claim_iii_frobenius_demand_supply : Prop
-  /-- Action value of `Φ` and alternative endomorphisms. -/
+  /-- Action value of the selected endomorphism `Φ`. -/
   action_Phi : ℝ
-  action_alt : CategoricalObj → CategoricalObj → ℝ
+  /-- Action functional on alternative endomorphisms (takes an
+      endomorphism, returns ℝ). -/
+  action_alt : (CategoricalObj → CategoricalObj) → ℝ
+  /-- Predicate: endomorphism `Φ` is on-shell (compatible with the
+      `⋆_q F_∇ = F_∇` constraint). -/
+  is_on_shell : (CategoricalObj → CategoricalObj) → Prop
   /-- Manuscript sub-claim (iv) — Minimum-action selection: among
       all `Φ_alt` compatible with the on-shell condition, the
       selected `Φ` minimises the action. -/
   claim_iv_minimum_action_selection :
     ∀ Φ_alt : CategoricalObj → CategoricalObj,
-      action_Phi ≤ action_alt Φ_alt Φ_alt
+      is_on_shell Φ_alt → action_Phi ≤ action_alt Φ_alt
 
 /-- **Proposition statement** (from manuscript):
 
@@ -76,7 +81,7 @@ theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
     ctx.claim_ii_multichannel_pair_production ∧
     ctx.claim_iii_frobenius_demand_supply ∧
     (∀ Φ_alt : ctx.CategoricalObj → ctx.CategoricalObj,
-      ctx.action_Phi ≤ ctx.action_alt Φ_alt Φ_alt) :=
+      ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) :=
   ⟨ctx.claim_i_spectral_decomposition,
    ctx.claim_ii_multichannel_pair_production,
    ctx.claim_iii_frobenius_demand_supply,

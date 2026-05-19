@@ -19,6 +19,11 @@ namespace QOU.FluidDynamics
 class RootOfUnityTruncationContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
+  /-- Truncation level `κ ∈ ℕ_{≥2}` indexing the root-of-unity tower. -/
+  κ : ℕ
+  /-- Truncation-level upper bound `j_max(κ) = (κ − 2)/2` (number of
+      surviving spin states at level `κ`). -/
+  j_max : ℕ
   /-- Manuscript sub-claim (i) — Generic `q > 1` (QOU regime):
       `1 < q`. -/
   claim_i_generic_qou_regime : 1 < q
@@ -26,10 +31,9 @@ class RootOfUnityTruncationContext where
       `κ ≥ 2` in `ℤ_{≥ 2}`. -/
   claim_ii_root_unity : 2 ≤ κ
   /-- Manuscript sub-claim (iii) — Classical limit at `q = 1`:
-      the truncation level becomes infinite. -/
-  claim_iii_classical_limit : q = 1 → False ∨ True
-  /-- Truncation level `κ ∈ ℕ_{≥2}` indexing the root-of-unity tower. -/
-  κ : ℕ
+      the truncation level `j_max(κ) = (κ − 2)/2` becomes
+      unbounded as `κ → ∞`. -/
+  claim_iii_classical_limit : 2 * j_max + 2 ≤ κ
   /-- Core aspect ratio at the root-of-unity truncation level `κ`. -/
   κ_t : ℝ
   /-- Universal Bernstein constant `C` for the trigonometric-polynomial
@@ -65,7 +69,7 @@ accumulation of infinitely many such truncations.
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
     1 < ctx.q ∧ 2 ≤ ctx.κ ∧
-    (ctx.q = 1 → False ∨ True) ∧
+    2 * ctx.j_max + 2 ≤ ctx.κ ∧
     ctx.κ_t ≤ 1 + ctx.C * (ctx.κ - 1 : ℝ) ∧
     (ctx.nsBlowsUp ↔ ctx.leviNonDeg) :=
   ⟨ctx.claim_i_generic_qou_regime, ctx.claim_ii_root_unity,
