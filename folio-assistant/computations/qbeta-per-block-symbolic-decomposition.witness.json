@@ -1,0 +1,67 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T03:06:14.564564+00:00",
+  "commitSha": "239a30e5e40e80d07b003758f13b7f1a32c8e9a0",
+  "assertions": [
+    {
+      "name": "tau_M_via_blocks_matches_target",
+      "computed": 1.8861771797885053e-09,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-07,
+      "source": "Σ y_λ · χ_λ(T_β) = τ_M(T_β) = Q_β/E_0 at q_0 (post-bug-fix)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 59,
+  "computation": "qbeta-per-block-symbolic-decomposition",
+  "scriptFile": "qbeta_per_block_symbolic.py",
+  "scriptHash": "f3e1a97e1102",
+  "scriptCommitSha": "unknown",
+  "description": "Symbolic per-Wedderburn-block decomposition of χ_λ(T_β)(q) for the Q_β precision ladder. Establishes the per-block characters as exact rational functions of q, identifies the V_(2,1) standard 2D rep's character as linear in h = q-1/q, and provides Taylor coefficients around q=1 for per-block c_k^(λ) extraction. Foundational data for the c_4..c_7 categorical derivation via Path B (KLR canonical-basis trace).",
+  "data": {
+    "symbolic_chi_V3": "0.05348129411847531849977244*q**3 + 0.04836035153549022441721306*q**2 + 0.09685235757339727413750552*q + 0.09698419128158346225188069",
+    "symbolic_chi_V21": "0.09685235757339727413750552*q + 0.1456080310276767000865483 - 0.09685235757339727413750552/q",
+    "symbolic_chi_V111": "0.09698419128158346225188069 - 0.09685235757339727413750552/q + 0.04836035153549022441721306/q**2 - 0.05348129411847531849977244/q**3",
+    "V21_structural_form": {
+      "type": "linear in h",
+      "A_constant": 0.1456080310276767,
+      "B_coefficient_of_h": 0.09685235757339727,
+      "formula": "χ_(2,1)(T_β)(q) = A + B·h(q)",
+      "interpretation": "The 2D V_(2,1) block's character is LINEAR in the Hecke parameter h = q - 1/q. The b² off-diagonal contributions from σ_1 and σ_0·σ_1 cancel exactly. This is a structurally clean form that suggests categorical underpinning."
+    },
+    "taylor_coeffs_around_q1": {
+      "(3)": [
+        0.2956781945089463,
+        0.3540169429998037,
+        0.20880423389091618,
+        0.05348129411847532,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "(2,1)": [
+        0.1456080310276767,
+        0.19370471514679455,
+        -0.09685235757339727,
+        0.09685235757339727,
+        -0.09685235757339727,
+        0.09685235757339727,
+        -0.09685235757339727,
+        0.09685235757339727
+      ],
+      "(1,1,1)": [
+        -0.004989108874798906,
+        0.1605755368578428,
+        -0.27265906767777853,
+        0.43822389261618955,
+        -0.657270011673076,
+        0.9297974248484376,
+        -1.2558061321422747,
+        1.635296133554587
+      ]
+    }
+  }
+}
