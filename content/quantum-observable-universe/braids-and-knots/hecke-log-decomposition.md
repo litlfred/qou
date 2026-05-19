@@ -43,7 +43,7 @@ $$
 
 ## Numerical verification at $q_0$
 
-At the substrate parameter $q_0 \approx 1.10998$:
+At the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 | Quantity | Value (50 dps) |
 |---|---|

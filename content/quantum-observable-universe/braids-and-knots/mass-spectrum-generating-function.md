@@ -49,7 +49,8 @@ components*; their sum (after evaluation) is the macroscopic mass.
 ## Functorial equivalence via substrate evaluation
 
 The macroscopic, measurable mass is the **evaluation** of $P_K(q)$ at
-the substrate value $q_0 \approx 1.1097$:
+the substrate value $q_0 = 1.109978595554181\ldots$ (50 dps; symbolic
+in $q$ above this paragraph):
 
 $$
   \boxed{\;\;
