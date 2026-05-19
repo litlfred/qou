@@ -40,9 +40,11 @@ class SkeinPolynomialTransferMatrixContext where
   /-- Manuscript sub-claim (ii): the degree (in `q^{1/2}`) is bounded:
       `deg(P) ≤ A² − 1` where `A = Z + N`. -/
   claim_ii_degree_bound : degree ≤ (Z + N) ^ 2 - 1
+  /-- Number of transfer-matrix multiplications performed. -/
+  n_mults : ℕ
   /-- Manuscript sub-claim (iii): the algorithm performs exactly
       `(A choose 2) = A(A-1)/2` transfer-matrix multiplications. -/
-  claim_iii_binomial_cost : Prop
+  claim_iii_binomial_cost : n_mults = Nat.choose (Z + N) 2
 
 /-- **Manuscript statement** (full body):
 
@@ -110,7 +112,7 @@ theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixCon
     ctx.P
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
     ctx.degree ≤ (ctx.Z + ctx.N) ^ 2 - 1 ∧
-    ctx.claim_iii_binomial_cost :=
+    ctx.n_mults = Nat.choose (ctx.Z + ctx.N) 2 :=
   ⟨ctx.claim_i_factorisation, ctx.claim_ii_degree_bound,
    ctx.claim_iii_binomial_cost⟩
 

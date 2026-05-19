@@ -34,11 +34,11 @@ class EmCouplingProjectionContext where
       summing to `id_{A⊗A}`. -/
   claim_i_two_strand_completeness :
     endRank = 2 ∧ centralIdempotentCount = 2
+  /-- Number of singlet (scalar) channels in `End_C(A ⊗ A)`. -/
+  singlet_channel_count : ℕ
   /-- Manuscript sub-claim (ii) — uniqueness of gauge coupling:
-      the singlet idempotent `e_−` is the unique scalar exchange
-      channel; any `R`-linear braid-invariant scalar coupling
-      `A ⊗ A → 𝟙` is a multiple of `tr_τ(e_−) · e_−`. -/
-  claim_ii_gauge_coupling_uniqueness : Prop
+      there is exactly one singlet (scalar) channel `e_−`. -/
+  claim_ii_gauge_coupling_uniqueness : singlet_channel_count = 1
   /-- Manuscript sub-claim (iii) — Bring force-carrier uniqueness:
       the genus-4 torus knots `T_{m, s}` with `(m−1)(s−1) = 8` are
       exactly `T_{2, 9}` and `T_{3, 5}` (Diophantine fact). -/
@@ -98,7 +98,7 @@ contour integrals, no factors of $2 \pi i$, and no renormalisation-group
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/em-coupling-projection.ts
 theorem em_coupling_projection [ctx : EmCouplingProjectionContext] :
     (ctx.endRank = 2 ∧ ctx.centralIdempotentCount = 2) ∧
-    ctx.claim_ii_gauge_coupling_uniqueness ∧
+    ctx.singlet_channel_count = 1 ∧
     ctx.bringTorusKnotCount = 2 :=
   ⟨ctx.claim_i_two_strand_completeness,
    ctx.claim_ii_gauge_coupling_uniqueness,
