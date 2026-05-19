@@ -189,7 +189,7 @@ investigation:
   spectral-gap argument.
 
 **Tried and failed (transport detected; argument withdrawn):**
-- Rounds 1–3: parity-based mechanisms (σ alone, σ·ε combined) —
+- Rounds 1–3: parity-based mechanisms (σ alone, σ$\cdot$ε combined) —
   ruled out by the Skein identity making
   $\sigma_i - \sigma_i^{-1} = h\,\mathbf{1}$ commute with all
   inner automorphisms.
@@ -462,7 +462,7 @@ candidate mechanism (rounds 1–3, 9, 10, 13).
 
 **Mechanisms ruled out:**
 - Coupling-parity (rounds 1–3, by Skein).
-- Operator-parity / σ·ε (rounds 1–3).
+- Operator-parity / σ$\cdot$ε (rounds 1–3).
 - Hopf-link rank-2 → $\alpha^2$ (round 9, refuted in 10).
 - Leading h-power matching (round 13).
 

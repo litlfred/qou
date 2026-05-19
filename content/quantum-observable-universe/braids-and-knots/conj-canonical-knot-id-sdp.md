@@ -200,7 +200,7 @@ SDP solver mode lands and discharges (b) per-particle.
 
 | Nucleus | $A$ | $n_0 = 3A$ | binding $K$ | constituents | $\rho$ |
 |---------|-----|-----------|-------------|--------------|--------|
-| ²H | 2 | 6 | $L_H$ (Hopf) | $\{p, n\}$ | 1 |
+| $^2$H | 2 | 6 | $L_H$ (Hopf) | $\{p, n\}$ | 1 |
 | ³H | 3 | 9 | 8₁₁-class link | $\{p, n, n\}$ | 2 |
 | ³He | 3 | 9 | $L_{6a4}$ | $\{p, p, n\}$ | 2 |
 

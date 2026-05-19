@@ -46,7 +46,7 @@ substrate constraint
 ## Significance for the Borromean baryon programme
 
 The figure-8 (muon) sector verifies the
-[Vol(K)/ℏ_q²](#lem:topological-mass-cat-descended) ansatz at the
+[Vol(K)/ℏ_q$^2$](#lem:topological-mass-cat-descended) ansatz at the
 single-knot level with topologically trivial Skein contribution
 ($S(4_1) = 0$ in the canonical orientation): the mass formula
 reduces to $m_\mu = m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$.

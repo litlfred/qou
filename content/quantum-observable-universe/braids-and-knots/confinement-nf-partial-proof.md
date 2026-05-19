@@ -121,7 +121,7 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 - **Lean formalisation of $T_1$ and $T_3$**: see [`confinement-nf-partial-proof.lean`](#) — currently `sorry`-stubs against an LP-duality library; routine integration with Mathlib's LP infrastructure once it lands.
 - The atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n) = 21$ are derived in commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9) on `claude/improve-charge-precision-AXKIA`. The coefficients emerge as **per-NEW-nucleon additive contributions**:
 
-| Per new nucleon | Δσ | Δσ⁻¹ | Δavg | Δtotal generators | Δpole order | Δcancellation | **Δshift** |
+| Per new nucleon | Δσ | Δσ$^{-}$¹ | Δavg | Δtotal generators | Δpole order | Δcancellation | **Δshift** |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | +proton | +7 | +3 | +2 | +12 | +9.0 | +3.0 | **+18** |
 | +neutron | +5 | +5 | +2 | +12 | +10.5 | +1.5 | **+21** |

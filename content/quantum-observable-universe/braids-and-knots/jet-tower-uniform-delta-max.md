@@ -78,7 +78,7 @@ witness JSON is the canonical record.)
 The empirical observation
 ([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)
 §"Open subconjecture 1") that `|hbar_q^(2n) Delta^(n)| ≤
-|hbar_q^(2(n-1)) Delta^(n-1)| · hbar_q^2` to three significant
+|hbar_q^(2(n-1)) Delta^(n-1)| $\cdot$ hbar_q^2` to three significant
 figures at $n = 1, 2, 3$ is consistent with a uniform-bound
 $\Delta_{\max}$ that holds exactly, with the geometric decay
 coming entirely from the $\hbar_q^{2n}$ prefactor.

@@ -369,7 +369,7 @@ $\alpha^* < 1$ quantifies the gap.
 
 Steps 5–8 currently substitute $\mathrm{Vol}_{\mathrm{hyp}}(K)$ from
 SnapPy for $\mathrm{tr}_M(T_w)|_{q=q_0}$ on entries flagged
-\texttt{manual-historical-volume-match} (²H, ³H, ³He) — i.e.\ the
+\texttt{manual-historical-volume-match} ($^2$H, ³H, ³He) — i.e.\ the
 post-Archimedean naming convention is used in place of the
 pre-Archimedean Markov-trace evaluation.  This is acceptable for
 existing established knot identifications because the volume
@@ -392,7 +392,7 @@ Markov-trace computation) and the production-scale Rust port
 
 1. **Joint mass-tower confinement SDP — solver mode (R5-full).**
    The current Rust binary verifies that *given* candidate $T_w$
-   inputs (electron $\sigma_1^3$, proton/neutron Borromean, ²H/³H/³He
+   inputs (electron $\sigma_1^3$, proton/neutron Borromean, $^2$H/³H/³He
    historical IDs) the certificate format is well-formed and quantifies
    the PSD-cone gap $\alpha^*$.  The remaining work is to invert this:
    for ⁶Li ($H_{18}$), ⁷Li ($H_{21}$), and α-cluster atoms ($H_{24}$
@@ -427,7 +427,7 @@ Markov-trace computation) and the production-scale Rust port
    historical canonical $T_w$ for ³He ($L_{6a4}$) is found to be
    **fully PSD-feasible** at $q_0$ ($\alpha^* = 0$) and ranks in the
    top 17 % of the 138 canonical-basis classes by single-term cost;
-   ²H ($6_2$) is **not** PSD-feasible on its own ($\alpha^* = 0.89$
+   $^2$H ($6_2$) is **not** PSD-feasible on its own ($\alpha^* = 0.89$
    on the standard $(2,1)$ block) and ranks in the top 45 %.  The
    single-term shorthand $B = m_e \cdot \nu_{\mathrm{SDP}} \cdot |\mathrm{tr}_M(T_w)|$
    (retired — see Statement above) has the known structural offset documented in

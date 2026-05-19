@@ -127,7 +127,11 @@ export function checkTimeStampedNotes(mdPath: string): CheckerResult {
 const UNICODE_CRASH_RE = /[↦⁻√─✅❌⚠·²]/;
 
 export function checkUnicodeCrash(mdPath: string): CheckerResult {
-  // Allow inside fenced code blocks (```...```) since those don't go through pdflatex.
+  // Skip inside fenced code blocks (```...```) AND inside backtick
+  // inline code spans — neither goes through pdflatex as prose.
+  // The mdast pipeline emits them as \texttt{} or verbatim macros
+  // that escape the offending characters; only crash-hazard chars
+  // appearing in raw prose (or math) genuinely break the build.
   const lines = readLines(mdPath);
   let inFence = false;
   const hits: CheckerHit[] = [];
@@ -137,7 +141,8 @@ export function checkUnicodeCrash(mdPath: string): CheckerResult {
       return;
     }
     if (inFence) return;
-    if (UNICODE_CRASH_RE.test(l)) {
+    const cleanedLine = stripInlineCode(l);
+    if (UNICODE_CRASH_RE.test(cleanedLine)) {
       hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
     }
   });

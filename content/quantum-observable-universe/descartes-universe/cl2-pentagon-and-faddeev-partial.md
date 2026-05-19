@@ -71,9 +71,9 @@ the following status:
 
 | Gap | Carrier | Boundary case | Full statement |
 |---|---|---|---|
-| (1) `BlochGroup F` quotient | ✅ concrete construction | n/a | ⏳ pentagon generators wiring |
-| (2) $\mathrm{Cl}_2$ pentagon | ✅ class hook | ✅ all-zero unconditional | ⏳ Mathlib Fourier infra |
-| (3) Faddeev-Kashaev | ✅ class hook | ✅ `x = 0` unconditional | ⏳ Mathlib uniform Tauberian |
+| (1) `BlochGroup F` quotient |  concrete construction | n/a | ⏳ pentagon generators wiring |
+| (2) $\mathrm{Cl}_2$ pentagon |  class hook |  all-zero unconditional | ⏳ Mathlib Fourier infra |
+| (3) Faddeev-Kashaev |  class hook |  `x = 0` unconditional | ⏳ Mathlib uniform Tauberian |
 
 This represents the maximum advance achievable without upstream
 Mathlib contributions or ~hundreds of lines of additional Lean

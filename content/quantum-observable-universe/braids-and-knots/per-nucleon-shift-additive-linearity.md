@@ -128,10 +128,10 @@ per-irrep $\chi^\lambda_q$. See
 for the reading correction and the optimisation strategy that
 makes multi-nucleon Path A tractable.
 
-The cancellation count enumerates the σ²-relation reductions
+The cancellation count enumerates the σ$^2$-relation reductions
 ($\sigma^2 = h\sigma + 1$ in the Hecke quadratic) in the new
 nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming
-interface contribution. Detailed σ²-adjacency analysis is given in
+interface contribution. Detailed σ$^2$-adjacency analysis is given in
 the audit doc
 ([`docs/audits/2026-05-04-per-nucleon-shift-derivation.md`](../../docs/audits/2026-05-04-per-nucleon-shift-derivation.md)).
 
@@ -155,7 +155,7 @@ research direction for $A \geq 2$ atoms.
 ### Open — full categorical derivation of cancellation count
 
 The per-new-nucleon cancellation values $(3, 1.5)$ are derived from
-σ²-adjacency counting plus Ocneanu averaging across SYT paths in
+σ$^2$-adjacency counting plus Ocneanu averaging across SYT paths in
 the $n = 3A$ seminormal representation, but the closed-form
 expression remains open (the half-integer for neutron requires
 explicit Ocneanu weight tracking that is computationally prohibitive
