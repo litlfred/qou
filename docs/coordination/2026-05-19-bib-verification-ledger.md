@@ -11,12 +11,14 @@ of QOU bibliography entries against the locally-uploaded PDFs.
 `scripts/bib-papers-list.txt`).
 
 **Authoritative status data** (machine-queryable): see
-[`content/schema/bib-verification.ts`](../../content/schema/bib-verification.ts).
-The typed `BibVerification[]` array is the source of truth for
-per-paper `status`, `verified_at`, `verified_by`, `fixes_applied`,
-`fix_commit`. The tables below are a human-readable mirror;
-when they disagree, **the typed data wins**. Update the typed data
-first, then refresh this markdown.
+[`content/bib-qa-verifications.json`](../../content/bib-qa-verifications.json).
+Loaded by `content/pipeline/bib-qa.ts` and surfaced as QA tag #7
+(`verification_status`) in the standard `bib-qa.json` report
+consumed by `folio-assistant/ui/bib-qa.html`. The JSON file is
+the source of truth for per-paper `status`, `verified_at`,
+`verified_by`, `fixes_applied`, `fix_commit`. The tables below
+are a human-readable mirror; when they disagree, **the JSON data
+wins**. Update the JSON first, then refresh this markdown.
 
 **Verifier**: Claude (Anthropic AI assistant) — model
 `claude-opus-4-7`, working in the Claude Code on the web web

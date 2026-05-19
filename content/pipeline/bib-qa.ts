@@ -58,7 +58,17 @@ export interface BibQAEntry {
   tags: BibQATag[];
   citedIn: string[];      // file paths where this ref is cited
   images: string[];        // relative paths to screenshots in bib-qa-images/
-  score: number;           // 0-5, count of passing tags
+  score: number;           // 0-7, count of passing tags (5 original + 2 added 2026-05-19)
+  /** Verification status from bib-qa-verifications.json (if any). */
+  verification?: {
+    status: string;
+    local_pdf?: string;
+    verified_at?: string;
+    verified_by?: string;
+    fixes_applied?: number;
+    fix_commit?: string;
+    note?: string;
+  };
 }
 
 export interface BibQAReport {
@@ -297,6 +307,45 @@ async function checkUrl(
   }
 }
 
+// ── Verification status (added 2026-05-19) ──────────────────────
+
+interface VerificationEntry {
+  id: string;
+  status: string;
+  local_pdf?: string;
+  verified_at?: string;
+  verified_by?: string;
+  fixes_applied?: number;
+  fix_commit?: string;
+  note?: string;
+}
+
+function loadVerifications(): Map<string, VerificationEntry> {
+  const path = join(CONTENT_DIR, "bib-qa-verifications.json");
+  if (!existsSync(path)) return new Map();
+  const raw = JSON.parse(readFileSync(path, "utf-8"));
+  const arr: VerificationEntry[] = raw.entries ?? [];
+  return new Map(arr.map((e) => [e.id, e]));
+}
+
+function localPdfPath(verif?: VerificationEntry, refId?: string): string | null {
+  // Prefer the explicit path in verifications JSON.
+  if (verif?.local_pdf) {
+    const abs = join(REPO_ROOT, verif.local_pdf);
+    if (existsSync(abs)) return verif.local_pdf;
+  }
+  // Fallback: glob uploads/ for any file matching the ref id.
+  if (refId) {
+    const uploads = join(REPO_ROOT, "uploads");
+    if (existsSync(uploads)) {
+      for (const f of readdirSync(uploads)) {
+        if (f.startsWith(refId)) return `uploads/${f}`;
+      }
+    }
+  }
+  return null;
+}
+
 // ── Build QA entries ────────────────────────────────────────────
 
 async function buildReport(): Promise<BibQAReport> {
@@ -304,6 +353,7 @@ async function buildReport(): Promise<BibQAReport> {
 
   const citationMap = collectCitations();
   const imageMap = collectImages();
+  const verifMap = loadVerifications();
 
   const entries: BibQAEntry[] = [];
   const summary = { pass: 0, warn: 0, fail: 0, unchecked: 0 };
@@ -394,6 +444,68 @@ async function buildReport(): Promise<BibQAReport> {
       });
     }
 
+    // ── Tag 6: has_local_pdf (added 2026-05-19) ─────────────
+    const verif = verifMap.get(entry.id);
+    const pdfPath = localPdfPath(verif, entry.id);
+    if (pdfPath) {
+      tags.push({
+        key: "has_local_pdf",
+        label: "Local PDF",
+        status: "pass",
+        detail: pdfPath,
+      });
+    } else {
+      tags.push({
+        key: "has_local_pdf",
+        label: "Local PDF",
+        status: "unchecked",
+        detail: "No local copy in uploads/",
+      });
+    }
+
+    // ── Tag 7: verification_status (added 2026-05-19) ───────
+    if (verif) {
+      const cleanStates = new Set(["verified-clean", "partial", "fixed"]);
+      if (cleanStates.has(verif.status)) {
+        tags.push({
+          key: "verification_status",
+          label: "Verification Status",
+          status: "pass",
+          detail: `${verif.status}` +
+            (verif.verified_by ? ` (by ${verif.verified_by})` : "") +
+            (verif.fixes_applied ? `, ${verif.fixes_applied} fix(es)` : ""),
+        });
+      } else if (verif.status === "uncited") {
+        tags.push({
+          key: "verification_status",
+          label: "Verification Status",
+          status: "warn",
+          detail: `uncited (bib orphan) — ${verif.note ?? "decision pending"}`,
+        });
+      } else if (verif.status === "paper-mismatch") {
+        tags.push({
+          key: "verification_status",
+          label: "Verification Status",
+          status: "fail",
+          detail: `paper-mismatch — ${verif.note ?? "local PDF != metadata"}`,
+        });
+      } else {
+        tags.push({
+          key: "verification_status",
+          label: "Verification Status",
+          status: "warn",
+          detail: `${verif.status} — ${verif.note ?? "needs review"}`,
+        });
+      }
+    } else {
+      tags.push({
+        key: "verification_status",
+        label: "Verification Status",
+        status: "unchecked",
+        detail: "Not yet examined (no entry in bib-qa-verifications.json)",
+      });
+    }
+
     // Count summary
     for (const t of tags) summary[t.status]++;
 
@@ -410,6 +522,15 @@ async function buildReport(): Promise<BibQAReport> {
       citedIn: cited,
       images: imgs,
       score: tags.filter((t) => t.status === "pass").length,
+      verification: verif ? {
+        status: verif.status,
+        local_pdf: verif.local_pdf,
+        verified_at: verif.verified_at,
+        verified_by: verif.verified_by,
+        fixes_applied: verif.fixes_applied,
+        fix_commit: verif.fix_commit,
+        note: verif.note,
+      } : undefined,
     });
   }
 
@@ -435,9 +556,9 @@ console.log(`  ${report.summary.pass} pass, ${report.summary.warn} warn, ${repor
 
 const lowScore = report.entries.filter((e) => e.score <= 2);
 if (lowScore.length > 0) {
-  console.log(`\n  ⚠ ${lowScore.length} references with score ≤ 2/5:`);
+  console.log(`\n  ⚠ ${lowScore.length} references with score ≤ 2/7:`);
   for (const e of lowScore.slice(0, 10)) {
-    console.log(`    [${e.score}/5] ${e.id}: ${e.tags.filter((t) => t.status !== "pass").map((t) => t.label).join(", ")}`);
+    console.log(`    [${e.score}/7] ${e.id}: ${e.tags.filter((t) => t.status !== "pass").map((t) => t.label).join(", ")}`);
   }
 }
 

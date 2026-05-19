@@ -1,0 +1,151 @@
+{
+  "_schema": "Per-paper verification status for QOU bibliography. Consumed by content/pipeline/bib-qa.ts (tags has_local_pdf, verification_status). Hand-edited; one entry per reference id in references.ts that has been examined. Absence = pending. Status values: verified-clean, partial, fixed, uncited, paper-mismatch, unfetchable.",
+  "_authoritative_for": "verification_status QA tag in bib-qa.json; markdown mirror at docs/coordination/2026-05-19-bib-verification-ledger.md",
+  "entries": [
+    {
+      "id": "boyd-vandenberghe-2004",
+      "status": "partial",
+      "local_pdf": "uploads/boyd-vandenberghe-2004-convex-optimization.pdf",
+      "verified_at": "2026-05-19T05:50:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 4,
+      "fix_commit": "66b3caf7f",
+      "note": "§5.5.3→§5.5.2, §5.5.4→§5.5.2+alizadeh, Thm 5.5→§5.2.3+§5.3, §A.5.3→§A.5.5. 9 generic Refs still need §-specific updates."
+    },
+    {
+      "id": "codata2022",
+      "status": "pending",
+      "local_pdf": "uploads/codata-2022-constants.txt",
+      "fixes_applied": 0
+    },
+    {
+      "id": "leitnerpawloski2004",
+      "status": "pending",
+      "local_pdf": "uploads/leitnerpawloski2004.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "yekutieli2008",
+      "status": "pending",
+      "local_pdf": "uploads/yekutieli2008.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "zink2002",
+      "status": "pending",
+      "local_pdf": "uploads/zink2002.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "freed2010",
+      "status": "pending",
+      "local_pdf": "uploads/freed2010.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "berarducci2018",
+      "status": "pending",
+      "local_pdf": "uploads/berarducci-mantova-2018-surreal-derivations.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "faddeev_kashaev1994",
+      "status": "pending",
+      "local_pdf": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "baez2004",
+      "status": "pending",
+      "local_pdf": "uploads/baez2004.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "hu-mathas2012graded",
+      "status": "pending",
+      "local_pdf": "uploads/hu-mathas2012graded.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "klein1888",
+      "status": "pending",
+      "local_pdf": "uploads/klein1888.pdf",
+      "fixes_applied": 0,
+      "note": "17 MB book scan; verify only the cited pages (Klein's icosahedron / Bring's surface)."
+    },
+    {
+      "id": "pham1965",
+      "status": "pending",
+      "local_pdf": "uploads/pham1965.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "oeis-A006752",
+      "status": "pending",
+      "local_pdf": "uploads/oeis-A006752.txt",
+      "fixes_applied": 0,
+      "note": "Numeric data — verify Catalan's constant value match."
+    },
+    {
+      "id": "mostow1968",
+      "status": "pending",
+      "local_pdf": "uploads/mostow1968.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "bufetov2020",
+      "status": "pending",
+      "local_pdf": "uploads/bufetov2020.pdf",
+      "fixes_applied": 0
+    },
+    {
+      "id": "gromov1982",
+      "status": "uncited",
+      "local_pdf": "uploads/gromov1982.pdf",
+      "fixes_applied": 0,
+      "note": "Bib orphan; decision pending (keep / remove / find use)."
+    },
+    {
+      "id": "bilsonthompson2005",
+      "status": "uncited",
+      "local_pdf": "uploads/bilsonthompson2005.pdf",
+      "fixes_applied": 0,
+      "note": "Bib orphan (topological preon model); decision pending."
+    },
+    {
+      "id": "finster2021",
+      "status": "uncited",
+      "local_pdf": "uploads/finster2021.pdf",
+      "fixes_applied": 0,
+      "note": "Bib orphan (causal fermion systems — wave functions); decision pending."
+    },
+    {
+      "id": "finster2022",
+      "status": "uncited",
+      "local_pdf": "uploads/finster2022.pdf",
+      "fixes_applied": 0,
+      "note": "Bib orphan (causal fermion systems — baryogenesis); decision pending."
+    },
+    {
+      "id": "finster2024",
+      "status": "uncited",
+      "local_pdf": "uploads/finster2024.pdf",
+      "fixes_applied": 0,
+      "note": "Bib orphan (causal fermion systems — collapse theory); decision pending."
+    },
+    {
+      "id": "dappiaggi2024",
+      "status": "uncited",
+      "local_pdf": "uploads/dappiaggi2024.pdf",
+      "fixes_applied": 0,
+      "note": "Bib orphan (holographic mixing in causal fermion systems); decision pending."
+    },
+    {
+      "id": "blitvic2012",
+      "status": "uncited",
+      "local_pdf": "uploads/blitvic2012.pdf",
+      "fixes_applied": 0,
+      "note": "Bib orphan ((q,t)-Gaussian process); decision pending."
+    }
+  ]
+}
