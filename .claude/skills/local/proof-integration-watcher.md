@@ -99,13 +99,17 @@ content block label.
 | `narrative-stub` | major | `.lean` exists but `.md` is < 5 body lines + no math |
 | `drift-class-D` | minor | Notation drift (paper uses `$\varrho$`, Lean uses `gamma`, etc.) |
 | `cite-position-hygiene` | minor | `-- Ref:` is in the enclosing decl body but not in the 6-line window above the sorry |
+| `holds-prop-placeholder` | minor | Lean class has a `holds : Prop` (or `claim : Prop`) field with no type-level structure capturing the manuscript claim; .md sibling has numbered sub-claims OR an explicit boxed identity that could be typed |
+| `claim-i-generic-docstring` | minor | Sub-claim fields `claim_i, claim_ii, ...` carry generic `/-- Manuscript sub-claim (i). -/` docstrings rather than manuscript-fragment summaries — symptomatic of an incomplete `lean-substantive-pass` |
+| `mechanical-rename-without-md-check` | minor | Lean class has `claim : Prop` (singular) but .md has 2+ numbered sub-claims — bulk-rename was applied without checking .md structure; should be split into `claim_i, claim_ii, ...` |
 
 ## Slot E — §4d discharge bands (examples)
 
 | Band | Examples |
 |------|----------|
 | **Auto-discharge** | `uncited-sorry` with goal matching positivity / ring / linarith / aesop / norm_num — try `lean_multi_attempt` with the canonical tactic set; `cite-position-hygiene` — move/add the `-- Ref:` line |
-| **Auto-discharge (special)** | **Naked conjecture with fully-defined `uses[]` cone** — attempt discharge via `local/formalizer` + `local/lean-generation` before defaulting to author-assist. This is the *"if a conjecture is a placeholder for something to be proved, try"* clause of this watcher's mission. |
+| **Auto-discharge (script)** | `holds-prop-placeholder` + .md has numbered sub-claims — run `.work/bulk-split-holds.py` on the file. `claim-i-generic-docstring` — run `.work/enrich-subclaim-docstrings.py`. `mechanical-rename-without-md-check` — run the bulk-split script (it handles the split case correctly) |
+| **Auto-discharge (special)** | **Naked conjecture with fully-defined `uses[]` cone** — attempt discharge via `local/formalizer` + `local/lean-generation` before defaulting to author-assist. This is the *"if a conjecture is a placeholder for something to be proved, try"* clause of this watcher's mission. **`holds-prop-placeholder` with explicit boxed identity in .md** — invoke `local/lean-substantive-pass` to hand-craft typed sub-claims per the recognised manuscript patterns (boxed identity / piecewise / equivalence relation / table of moves / existence + uniqueness). |
 | **Author-assist** | Class A stub-weakening, hidden axiom, naked conjecture without conditional-class scaffolding, broken inter-proof chain, conjectural-propagation violation |
 | **Defer** | Minor stylistic gap, sorry already carrying `-- Ref:`, conjecture correctly class-axiomatised per §3b-cond |
 
