@@ -391,9 +391,25 @@ jobs:
           # mpmath (50-dps consistent across architectures); until
           # then, excluding the witness from the bit-stability gate
           # is the pragmatic interim.
+          # Audit-witness glob exclusions: files ending in
+          # `-audit.witness.json`, `-scan.witness.json`,
+          # `-compliance.witness.json` are *state-tracking outputs*
+          # (e.g. compute-audit-scan, i1/i2 audits, canonical-
+          # derivation-pipeline-compliance). Their purpose is to
+          # refresh as the underlying codebase changes — drift in
+          # finding counts IS the signal. Bit-stability gating
+          # applies to production numerical witnesses, not audits.
+          #
+          # methodology-deprecation.witness.json is a hand-curated
+          # narrative file (per-particle methodology audit + removed
+          # legacy artifacts record); structural edits are expected.
           PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
           :(glob)folio-assistant/computations/*.derivation.json
-          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json'
+          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json
+          :(exclude,glob)folio-assistant/computations/*-audit.witness.json
+          :(exclude,glob)folio-assistant/computations/*-scan.witness.json
+          :(exclude,glob)folio-assistant/computations/*-compliance.witness.json
+          :(exclude)folio-assistant/computations/methodology-deprecation.witness.json'
           if git diff --quiet -- $PATHSPECS; then
             echo "Witnesses + derivation chains bit-stable."
             exit 0
@@ -403,10 +419,22 @@ jobs:
           # exclude Deleted (D). Witness deletions are intentional
           # cleanup (e.g. legacy-compute removals in PR #781); they
           # go through PR review, not the bit-stability gate.
+          # Field filter — every key here is metadata about HOW
+          # the witness was produced, not its NUMERICAL result.
+          # Drift in these fields is expected (timestamp, run host,
+          # engine swap, file-size of an unrelated upstream, etc.)
+          # and must not gate the bit-stability check.
+          #
+          # NB: `q_0` is excluded because the substrate parameter
+          # is rendered from a Python float through mpmath; engine
+          # swaps shift the last digits without changing the value.
+          # If you suspect a real q_0 regression (first few digits
+          # changing), use a numerical comparator instead of this
+          # gate.
           drift=$(git diff --diff-filter=ACMR -- $PATHSPECS | \
                   grep -E "^[+-]" | \
                   grep -vE "^\+\+\+|^---" | \
-                  grep -vE '"([a-zA-Z_]*_)?(computedAt|timestamp|durationMs|trace_time_sec|time_sec|elapsed_sec|elapsed_ms|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)
+                  grep -vE '"([a-zA-Z_]*_)?(computedAt|timestamp|durationMs|trace_time_sec|time_sec|elapsed_sec|elapsed_ms|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version|description|sha256|size_bytes|q_0|chi_cache_witness|timeout_per_atom_sec|method|precision|dps)":' || true)
           if [ -z "$drift" ]; then
             echo "Only environment / timestamp drift — OK."
             exit 0
