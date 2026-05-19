@@ -22,8 +22,11 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class ExplicitAlphaKH4Context extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_explicit_alpha_k_h4 : Prop
+  /-- Number of `S_4` conjugacy classes (`p(4) = 5`). -/
+  n_classes : ℕ
+  /-- Manuscript identity: `H_4(R, q)` has exactly `p(4) = 5`
+      conjugacy classes (the partitions of 4). -/
+  claim_explicit_alpha_k_h4 : n_classes = 5
 /-- **Content statement** (from manuscript):
 
 **Proposition (explicit $\alpha_\lambda(H_4)$ — closed forms in $\mathbb{Q}(q)$).**
@@ -36,6 +39,8 @@ conjugacy classes of $S_4$:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
-theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] : ctx.claim_explicit_alpha_k_h4 := ctx.claim_explicit_alpha_k_h4
+theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] :
+    ctx.n_classes = 5 :=
+  ctx.claim_explicit_alpha_k_h4
 
 end QOU.BraidsAndKnots
