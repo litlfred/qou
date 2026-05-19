@@ -56,6 +56,7 @@ Ref: prop:atomic-mass-gb-nf
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -197,13 +198,37 @@ def main() -> int:
           f"{'B_MeV^(1)':>10} {'B_AME':>8} {'ratio':>8} "
           f"{'max|VV|_a':>10} {'div_a':>6}")
 
+    # 4He H_12 character sum requires > 12 GB RAM and ~5 min CPU; skip
+    # by default. Override with INCLUDE_4HE=1 on a larger host.
+    include_4he = os.environ.get("INCLUDE_4HE") == "1"
+    atom_list = ("D", "T", "3He", "4He") if include_4he else ("D", "T", "3He")
+
     results = {}
-    for atom in ("D", "T", "3He", "4He"):
+    for atom in atom_list:
         Z, N = ZN[atom]
-        vols_atom = per_generator_V_hat_3A(
-            Z, N, include_inter=True, weight_scheme="normalized_plancherel")
-        vols_free = per_generator_V_hat_3A(
-            Z, N, include_inter=False, weight_scheme="normalized_plancherel")
+        try:
+            vols_atom = per_generator_V_hat_3A(
+                Z, N, include_inter=True,
+                weight_scheme="normalized_plancherel")
+            vols_free = per_generator_V_hat_3A(
+                Z, N, include_inter=False,
+                weight_scheme="normalized_plancherel")
+        except (MemoryError, RuntimeError) as exc:
+            results[atom] = {
+                "Z": Z, "N": N, "A": Z + N, "n_strands": 3 * (Z + N),
+                "compute_failed": True,
+                "failure_reason": f"{type(exc).__name__}: {exc}",
+                "canonical_status": "canonical-with-empirical-assignment",
+                "T3_deferred": True,
+                "T3_deferral_reason": (
+                    "Compute failed before T3; H_12 character on this "
+                    "host insufficient RAM. Retry on larger host or "
+                    "use Rust geck_pfeiffer kernel (cherry-pick from PR #761)."
+                ),
+            }
+            print(f"  {atom:<6} {Z+N:>2}  COMPUTE FAILED: "
+                  f"{type(exc).__name__}: {exc}")
+            continue
 
         ra = mass_tower_first_order(vols_atom, q, q_inv, z)
         rf = mass_tower_first_order(vols_free, q, q_inv, z)
@@ -259,12 +284,23 @@ def main() -> int:
 
     builder.add_data("per_atom", results)
 
-    # Cross-atom variance
-    ratios = [r["ratio_pred_over_AME"] for r in results.values()]
+    # Cross-atom variance (only successfully-computed atoms)
+    computed = {k: r for k, r in results.items() if not r.get("compute_failed")}
+    ratios = [r["ratio_pred_over_AME"] for r in computed.values()]
     abs_ratios = [abs(x) for x in ratios]
-    rmin, rmax = min(abs_ratios), max(abs_ratios)
+    rmin, rmax = (min(abs_ratios), max(abs_ratios)) if abs_ratios else (0, 0)
     mom = rmax / rmin if rmin > 0 else float("inf")
-    signs_correct = all(r["B_pred_sign"] == "+" for r in results.values())
+    signs_correct = all(r["B_pred_sign"] == "+" for r in computed.values())
+    builder.add_data("atoms_computed", list(computed.keys()))
+    builder.add_data("atoms_failed",
+                      [k for k, r in results.items() if r.get("compute_failed")])
+    if not include_4he:
+        builder.add_data("atoms_deferred", ["4He"])
+        builder.add_data("deferral_note", (
+            "4He H_12 character sum requires > 12 GB RAM. Run with "
+            "INCLUDE_4HE=1 on a larger host, or cherry-pick the "
+            "geck_pfeiffer Rust kernel from PR #761 for a faster path."
+        ))
 
     builder.add_data("max_over_min_abs_first_order", float(mom))
     builder.add_data("all_signs_correct_first_order", signs_correct)
