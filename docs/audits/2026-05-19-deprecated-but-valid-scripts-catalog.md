@@ -20,24 +20,24 @@ Re-verified all claims in the table after PR #787 merged. **The systemic finding
 
 | Proposition | `.ts` exists? | `computation` field? | Wired script (if any) | Catalog's deprecated script(s) still orphaned? |
 |---|---|---|---|---|
-| `prop:unified-curvature-rank-mass-formula` | ✅ | ❌ | — | yes (2 scripts) |
-| `prop:confinement-categorical` | ✅ | ❌ | — | yes (1 script) |
-| `prop:e-infinity-page-identifications` | ✅ | ❌ | — | yes (1 script) |
-| `prop:schur-weyl-mass-decomposition` | ✅ | ❌ | — | yes (1 script, same as above) |
-| `prop:mass-endomorphism-tower` | ✅ | ✅ | `habiro_exact_mass_endomorphism.py` (337 LoC) | yes (4 scripts; alternate covers different scope) |
-| `prop:binding-scale-catalan` | ✅ | ❌ | — | yes (3 scripts) |
-| `prop:atomic-mass-gb-nf` | ✅ | ✅ | `canonical_mass_table_extended.py` (507 LoC) | yes (1 script) |
-| `prop:atomic-braid-mass` | ❌ | n/a | — | n/a — label does not exist (`def:atomic-braid` exists in `particle-interactions/` but is a definition, not a mass prop). `atomic_braid_mass_paper_formula.py` is orphaned with no consumer block. |
-| `prop:b-over-a-spectral-decomposition` | ❌ | n/a | — | n/a — label does not exist. `b_over_a_evaluator.py` references two real labels: `prop:confined-knot-binding` (✅ wired to `jet_knot_invariants.py`) and `prop:wigner-np-pairing` (❌). |
-| `prop:full-pole-structure-mass-trace` | ✅ | ✅ | `markov_substrate_realizer.py` (242 LoC) | yes (8 `build_*_chain.py` scripts; alternate is a single-script replacement, may cover only a subset) |
-| `prop:categorical-mass-markov` | ✅ | ❌ | — | yes (3 scripts) |
+| `prop:unified-curvature-rank-mass-formula` | yes | no | — | yes (2 scripts) |
+| `prop:confinement-categorical` | yes | no | — | yes (1 script) |
+| `prop:e-infinity-page-identifications` | yes | no | — | yes (1 script) |
+| `prop:schur-weyl-mass-decomposition` | yes | no | — | yes (1 script, same as above) |
+| `prop:mass-endomorphism-tower` | yes | yes | `habiro_exact_mass_endomorphism.py` (337 LoC) | yes (4 scripts; alternate covers different scope) |
+| `prop:binding-scale-catalan` | yes | no | — | yes (3 scripts) |
+| `prop:atomic-mass-gb-nf` | yes | yes | `canonical_mass_table_extended.py` (507 LoC) | yes (1 script) |
+| `prop:atomic-braid-mass` | no | n/a | — | n/a — label does not exist (`def:atomic-braid` exists in `particle-interactions/` but is a definition, not a mass prop). `atomic_braid_mass_paper_formula.py` is orphaned with no consumer block. |
+| `prop:b-over-a-spectral-decomposition` | no | n/a | — | n/a — label does not exist. `b_over_a_evaluator.py` references two real labels: `prop:confined-knot-binding` (yes wired to `jet_knot_invariants.py`) and `prop:wigner-np-pairing` (no). |
+| `prop:full-pole-structure-mass-trace` | yes | yes | `markov_substrate_realizer.py` (242 LoC) | yes (8 `build_*_chain.py` scripts; alternate is a single-script replacement, may cover only a subset) |
+| `prop:categorical-mass-markov` | yes | no | — | yes (3 scripts) |
 
 ### Active revival list (post-update)
 
 **6 propositions remain** (1 revived on this branch); each has no `computation` field and an orphaned deprecated script:
 
 1. `prop:unified-curvature-rank-mass-formula` *(highest priority — Δ_λ thread)*
-2. ~~`prop:confinement-categorical`~~ — ✅ **revived on this branch** (PR #819, commit reviving `atomic_chirality_residue.py` and wiring it to the proposition; witness has 2 assertions, both passed)
+2. ~~`prop:confinement-categorical`~~ — yes **revived on this branch** (PR #819, commit reviving `atomic_chirality_residue.py` and wiring it to the proposition; witness has 2 assertions, both passed)
 3. `prop:e-infinity-page-identifications`
 4. `prop:schur-weyl-mass-decomposition`
 5. `prop:binding-scale-catalan`
@@ -203,7 +203,7 @@ If you are picking up this catalog to **actually revive** the deprecated-but-val
 
 8. **Validate**: `bun run validate quantum-observable-universe` and ensure 0 new warnings.
 
-9. **Commit + push + open PR**. Reference [this catalog](./2026-05-19-deprecated-but-valid-scripts-catalog.md) (relative path; the previous version of this step linked a feature branch URL that would rot post-merge) in the PR body and mark the proposition's row as ✅ revived.
+9. **Commit + push + open PR**. Reference [this catalog](./2026-05-19-deprecated-but-valid-scripts-catalog.md) (relative path; the previous version of this step linked a feature branch URL that would rot post-merge) in the PR body and mark the proposition's row as yes revived.
 
 ### Priority order (recommended — re-prioritised 2026-05-19 evening update)
 
@@ -232,10 +232,10 @@ Tackle in this order (highest yield first). **Note**: `prop:mass-endomorphism-to
 
 ### Anti-patterns
 
-- ❌ **Do NOT batch multiple propositions into one PR.** Each revival is independent and may produce per-witness drift / CI cost. One-at-a-time keeps PRs reviewable.
-- ❌ **Do NOT add `computation.witness` without `computation.script`** — the orphan-cleanup looks for both.
-- ❌ **Do NOT skip the assertion step.** A witness with no assertions is *exactly* the orphan-cleanup criterion; re-deprecating yourself.
-- ❌ **Do NOT re-implement the math.** The deprecated scripts have working math; the gap is purely wiring.
+- no **Do NOT batch multiple propositions into one PR.** Each revival is independent and may produce per-witness drift / CI cost. One-at-a-time keeps PRs reviewable.
+- no **Do NOT add `computation.witness` without `computation.script`** — the orphan-cleanup looks for both.
+- no **Do NOT skip the assertion step.** A witness with no assertions is *exactly* the orphan-cleanup criterion; re-deprecating yourself.
+- no **Do NOT re-implement the math.** The deprecated scripts have working math; the gap is purely wiring.
 
 ### Coordination
 

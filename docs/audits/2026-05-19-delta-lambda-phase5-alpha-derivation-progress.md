@@ -108,7 +108,7 @@ i.e. $\cosh(h)$ is the **Hecke-deformed identity correction** at the σ-σ⁻¹ 
 
 ### Updated Phase 5b backlog
 
-- ~~Build pyhecke_native~~ ✅ done; Rust kernel works.
+- ~~Build pyhecke_native~~ yes done; Rust kernel works.
 - **NEW**: Derive the cosh(h) factor from first principles. The Hecke relation $\sigma^2 = h\sigma + 1$ gives $\sigma + \sigma^{-1} = h + 2\sigma^{-1}\sigma$ (trivial) and more usefully, the *symmetric* combination $(\sigma + \sigma^{-1})/2 = (\sigma - h/2) + (\sigma^{-1} + h/2)$... — work out the categorical operator identity that produces $\cosh(h)$ as a Wedderburn-block factor.
 - **NEW**: Test the joint Z·N correction (³He vs ⁴He discrepancy in the cosh(h)-refined formula).
 - Extend to ⁵He, ⁶Li, ⁷Li now that the Rust kernel makes $H_n$ for $n \le 21$ tractable.
