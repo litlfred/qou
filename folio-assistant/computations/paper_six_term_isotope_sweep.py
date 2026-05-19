@@ -937,6 +937,34 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
             # can distinguish T1-witness gaps (A ≥ 5 atoms not yet
             # computed) from genuine compute regressions.
             err_msg = f"{type(exc).__name__}: {exc}"
+            # Detect tower-mode upstream-witness gaps: `tower_mode=
+            # 'habiro'` needs path-b-habiro-mass-probe.witness.json
+            # to cover the atom; `tower_mode='per-partition-k'` needs
+            # probe-phiq-per-partition-klambda.witness.json.  Both
+            # currently cover only a subset of {p, n, D, T, 3He}.
+            # These are atom/mode coverage gaps, not producer bugs —
+            # emit `deferred: true, deferred_mode: <mode>` so the I13
+            # audit doesn't conflate them with T1-coverage gaps.
+            # Cf. PR #798's deferred-intractable pattern for atoms.
+            if (isinstance(exc, KeyError)
+                    and "missing from" in str(exc)
+                    and (f"tower_mode={tower_mode!r}" in str(exc)
+                         or f"tower_mode='{tower_mode}'" in str(exc))):
+                rows.append({
+                    "isotope": iso, "Z": Z, "N": N, "A": Z + N,
+                    "M_codata": M_codata,
+                    "deferred": True,
+                    "deferred_mode": tower_mode,
+                    "deferral_reason": (
+                        f"tower_mode={tower_mode!r} requires upstream"
+                        f" probe-witness coverage for {iso!r}; awaits"
+                        " extension of the relevant probe witness."
+                    ),
+                })
+                if verbose:
+                    print(f"  {iso:<6} [deferred-mode={tower_mode}]",
+                          flush=True)
+                continue
             error_kind = "unknown"
             if isinstance(exc, KeyError) and "no canonical T1" in str(exc):
                 error_kind = "T1_witness_missing"
