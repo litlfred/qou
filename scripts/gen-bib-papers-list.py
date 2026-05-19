@@ -31,9 +31,76 @@ not covered by the URL field alone (Boyd & Vandenberghe textbook,
 CODATA constants, AME mass table, OEIS by-DOI, free arXiv preprints
 of paywalled QOU-bib entries).
 """
+import json
 import re
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
+
+# Memoise to avoid repeating the same metadata query if multiple refs
+# happen to share the same archive.org item id (rare but possible).
+_ARCHIVE_ORG_CACHE: dict[str, str | None] = {}
+
+
+def _archive_org_resolve_pdf(item_id: str) -> str | None:
+    """Query archive.org/metadata/<item_id> to find the actual PDF
+    filename for an item.
+
+    Returns the full download URL on success, or None if:
+      - The metadata endpoint is unreachable (e.g. sandboxed network).
+      - The item has no PDF file.
+      - The JSON shape is unexpected.
+
+    Caller is expected to fall back to the legacy `<id>.pdf` guess
+    when this returns None.
+    """
+    if item_id in _ARCHIVE_ORG_CACHE:
+        return _ARCHIVE_ORG_CACHE[item_id]
+
+    meta_url = f"https://archive.org/metadata/{item_id}"
+    try:
+        req = urllib.request.Request(
+            meta_url,
+            headers={"User-Agent": "qou-gen-bib-papers-list/1.0"},
+        )
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, OSError):
+        _ARCHIVE_ORG_CACHE[item_id] = None
+        return None
+
+    # archive.org metadata schema: data["files"] is a list of dicts
+    # with "name", "format", etc. Prefer ".pdf" extension AND a
+    # "Text" / "Image" format (avoid e.g. ".pdf.djvu" or
+    # "_djvu_xml.txt"). Order matters: prefer canonical "<id>.pdf"
+    # if present, else any name ending in ".pdf".
+    files = data.get("files", [])
+    if not isinstance(files, list):
+        _ARCHIVE_ORG_CACHE[item_id] = None
+        return None
+
+    pdf_names = [
+        f["name"] for f in files
+        if isinstance(f, dict) and isinstance(f.get("name"), str)
+        and f["name"].endswith(".pdf")
+    ]
+    if not pdf_names:
+        _ARCHIVE_ORG_CACHE[item_id] = None
+        return None
+
+    # Preference: <id>.pdf > <id>_bw.pdf > anything else
+    pdf_names.sort(key=lambda n: (
+        0 if n == f"{item_id}.pdf" else
+        1 if n == f"{item_id}_bw.pdf" else
+        2 if n == f"{item_id}_text.pdf" else
+        3
+    ))
+    chosen = pdf_names[0]
+    full_url = f"https://archive.org/download/{item_id}/{chosen}"
+    _ARCHIVE_ORG_CACHE[item_id] = full_url
+    return full_url
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REFS_TS = REPO_ROOT / "content" / "schema" / "references.ts"
@@ -94,17 +161,27 @@ def url_to_pdf(url: str) -> str | None:
     m = re.match(r"https?://(?:www\.)?numdam\.org/item/(.+?)/?$", url)
     if m:
         return f"https://www.numdam.org/item/{m.group(1)}.pdf"
-    # archive.org/details/<id> → archive.org/download/<id>/<id>.pdf
-    # WARN: archive.org's per-item PDF filename doesn't always match
-    # <id> (sometimes <id>_bw.pdf, sometimes <id>_text.pdf, sometimes
-    # a different stem entirely). The /download/<id>/<id>.pdf guess
-    # works for some items (e.g. klein1888) but fails on others
-    # (heisenberg1958: 401; weil1948: 503). For reliable resolution,
-    # the archive.org metadata API would need to be consulted — defer
-    # that to a future improvement.
+    # archive.org/details/<id> → archive.org/download/<id>/<filename>.pdf
+    #
+    # Older approach: guess filename = <id>.pdf. Worked for some items
+    # (klein1888) but failed for others (heisenberg1958: 401,
+    # weil1948: 503) because archive.org filenames can differ
+    # arbitrarily (`<id>_bw.pdf`, `<id>_text.pdf`, etc.).
+    #
+    # New approach (2026-05-19): query archive.org/metadata/<id>
+    # to discover the actual PDF filename. Falls back to the
+    # <id>.pdf guess if metadata lookup fails (no network, etc.).
     m = re.match(r"https?://archive\.org/details/([^/]+)/?$", url)
     if m:
-        return f"https://archive.org/download/{m.group(1)}/{m.group(1)}.pdf"
+        item_id = m.group(1)
+        resolved = _archive_org_resolve_pdf(item_id)
+        return resolved or f"https://archive.org/download/{item_id}/{item_id}.pdf"
+
+    # (Documentation note retained below for historical context:)
+    # Legacy archive.org fallback was the bare guess. For reliable
+    # resolution, the archive.org metadata API IS now consulted (see
+    # _archive_org_resolve_pdf above). Legacy duplicate match block
+    # removed.
     # oeis.org/A<id>
     m = re.match(r"https?://oeis\.org/(A\d+)$", url)
     if m:
