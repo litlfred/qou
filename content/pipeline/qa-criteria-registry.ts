@@ -146,7 +146,10 @@ const FRAMEWORK: QaCriterionDefinition[] = [
       "exceptional divisor or state bundle; bare $H_q$ (now $\\mathcal{H}_q$, " +
       "$\\hat{H}_q$, or $H_n(q)$ depending on meaning).",
     default_severity: "major",
-    depends_on: ["md", "ts"],
+    // The automated checker only scans the .md body for deprecated
+    // notation. The .ts manifest carries metadata, not prose; including
+    // it here would over-stale on label-only edits.
+    depends_on: ["md"],
     automated: true,
   },
 ];
@@ -166,7 +169,10 @@ const WALL: QaCriterionDefinition[] = [
       "Each block belongs in either the algebraic substrate or the " +
       "archimedean specialisation, never both.",
     default_severity: "critical",
-    depends_on: ["md", "lean", "ts"],
+    // The automated checker scans .lean imports and the .md narrative
+    // for an archimedean acknowledgement banner. The .ts manifest is
+    // not read — kept out of depends_on to avoid spurious staleness.
+    depends_on: ["md", "lean"],
     automated: true,
   },
 ];

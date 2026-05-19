@@ -91,7 +91,10 @@ export function checkTimeStampedNotes(mdPath: string): CheckerResult {
 
 // ── voice-unicode-crash ─────────────────────────────────────────
 
-const UNICODE_CRASH_RE = /[↦⁻─✅❌⚠]/;
+// Source of truth: `.claude/skills/local/one-voice-audit.md` §1
+// item 5 + §Workflow grep. Each of these characters crashes pdflatex
+// unless explicitly mapped in the preamble.
+const UNICODE_CRASH_RE = /[↦⁻√─✅❌⚠·²]/;
 
 export function checkUnicodeCrash(mdPath: string): CheckerResult {
   // Allow inside fenced code blocks (```...```) since those don't go through pdflatex.

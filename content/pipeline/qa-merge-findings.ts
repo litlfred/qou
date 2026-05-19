@@ -32,6 +32,7 @@
 
 import { readFileSync, existsSync } from "fs";
 import { resolve, relative } from "path";
+import { execSync } from "child_process";
 import {
   hashBlockFiles,
   gitHeadSha,
@@ -72,6 +73,59 @@ function parseArgs(argv: string[]): { file?: string } {
   return {};
 }
 
+/**
+ * Repo root (one ancestor of `content/`). Resolved once via
+ * `git rev-parse --show-toplevel`; falls back to the parent of
+ * the current working directory if not in a git repo.
+ */
+function repoRoot(): string {
+  try {
+    return execSync("git rev-parse --show-toplevel", {
+      stdio: ["ignore", "pipe", "ignore"],
+    })
+      .toString()
+      .trim();
+  } catch {
+    return process.cwd();
+  }
+}
+
+/**
+ * Resolve a block path tolerantly. The script may be invoked from
+ * repo root OR from `content/` (the conventional CWD for the other
+ * pipeline CLIs). Findings JSON may use either prefix shape:
+ *
+ *   - `content/quantum-observable-universe/.../carbon-valence.md`
+ *     (repo-root-relative, the natural form when the JSON is hand-
+ *     authored)
+ *   - `quantum-observable-universe/.../carbon-valence.md`
+ *     (content-relative, the natural form when invoking other CLIs
+ *     from `content/`)
+ *
+ * Resolution order:
+ *   1. The path as given, resolved from the current CWD.
+ *   2. The path as given, resolved from the repo root.
+ *   3. With a leading `content/` prefix stripped, resolved from CWD.
+ *   4. With a leading `content/` prefix prepended, resolved from CWD.
+ *
+ * Returns the first variant whose `<root>.ts` exists. If none
+ * exist, returns the CWD-resolved form of the given path (so the
+ * caller surfaces the original error).
+ */
+function resolveBlockRoot(input: string): string {
+  const root = repoRoot();
+  const candidates = [
+    resolve(input),
+    resolve(root, input),
+    resolve(input.replace(/^content\//, "")),
+    resolve("content", input),
+  ];
+  for (const c of candidates) {
+    if (existsSync(c + ".ts")) return c;
+  }
+  return candidates[0];
+}
+
 function blockRootFromInput(f: FindingInput): string | undefined {
   if (f.block_root) return f.block_root;
   if (f.block_md) return f.block_md.replace(/\.md$/, "");
@@ -82,7 +136,14 @@ function blockRootFromInput(f: FindingInput): string | undefined {
 function run(): void {
   const args = parseArgs(process.argv.slice(2));
   const raw = args.file ? readFileSync(args.file, "utf-8") : readStdin();
-  const batch: BatchInput = JSON.parse(raw);
+  let batch: BatchInput;
+  try {
+    batch = JSON.parse(raw);
+  } catch (e) {
+    const where = args.file ? `--file ${args.file}` : "stdin";
+    console.error(`failed to parse JSON from ${where}: ${(e as Error).message}`);
+    process.exit(2);
+  }
   if (!batch.reviewer || !Array.isArray(batch.findings)) {
     console.error("input must have { reviewer, findings: [] }");
     process.exit(2);
@@ -104,7 +165,7 @@ function run(): void {
       skipped++;
       continue;
     }
-    const rootAbs = resolve(root);
+    const rootAbs = resolveBlockRoot(root);
     const tsPath = rootAbs + ".ts";
     const mdPath = rootAbs + ".md";
     const leanPath = rootAbs + ".lean";
