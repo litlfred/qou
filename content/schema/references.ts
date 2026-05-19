@@ -392,7 +392,14 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2002]] },
     "collection-title": "Ast\u00e9risque",
     "collection-number": 278,
-    URL: "https://www.numdam.org/item/AST_2002__278__R1_0/",
+    // URL field intentionally omitted: the previous URL
+    // (numdam.org/item/AST_2002__278__R1_0/) resolved to the volume's
+    // PRELIMINARY PAGES (front matter, pp. I-XII), not Zink's chapter.
+    // The actual chapter URL is /item/AST_2002__278__<startpage>_0
+    // - needs volume TOC lookup at numdam.org/issue/AST_2002__278__
+    // to find the correct startpage. Until verified, no URL is
+    // emitted; gen-bib-papers-list.py won't try to re-fetch the
+    // wrong PDF.
   }),
 
   // ── Zagier 1986 ───────────────────────────────────────────────
@@ -3619,6 +3626,31 @@ export const references: CSLData[] = [
     issue: "10",
     page: "3270-3305",
     DOI: "10.1016/j.jfa.2012.08.006",
+    // URL field intentionally omitted: the previous URL
+    // (arxiv.org/abs/1205.4003) downloaded a DIFFERENT Blitvić paper
+    // ("Two-Parameter Non-Commutative Central Limit Theorem"), which
+    // is now registered separately as blitvic2012-clt below. The
+    // actual arxiv id for "The (q,t)-Gaussian process" needs
+    // verification — likely 1105.5310 or similar; check
+    // arxiv.org/find/?query=Blitvic+q-t+Gaussian and add the URL
+    // field with the correct id, then re-run upload-bib-papers.sh.
+  }),
+
+  // ── Blitvić 2012 CLT (the wrong-fetched paper from arxiv:1205.4003)
+  // Registered separately so the existing uploads/blitvic2012.pdf
+  // (which IS this CLT paper) has a correct canonical home; existing
+  // QOU citations all reference the (q,t)-Gaussian content above, so
+  // no cite-site key rewrites are needed.
+  ref({
+    id: "blitvic2012-clt",
+    type: "article-journal",
+    title: "Two-Parameter Non-Commutative Central Limit Theorem",
+    author: [
+      { family: "Blitvić", given: "Natasha" },
+    ],
+    "container-title": "International Mathematics Research Notices",
+    issued: { "date-parts": [[2014]] },
+    note: "arXiv:1205.4003. Different Blitvić paper from blitvic2012 (which is The (q,t)-Gaussian process). The PDF at uploads/blitvic2012.pdf currently contains THIS paper (CLT), not the (q,t)-Gaussian paper.",
     URL: "https://arxiv.org/abs/1205.4003",
   }),
 

@@ -42,12 +42,12 @@
     },
     {
       "id": "zink2002",
-      "status": "paper-mismatch",
-      "local_pdf": "uploads/zink2002.pdf",
-      "verified_at": "2026-05-19T16:00:00Z",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T17:31:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 1,
-      "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper \u2014 it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Ast\u00e9risque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(\u011c) free \u2124_p-module structure \u2014 IS in Zink's actual paper \u00a72 \u2014 so the cite intent is fine, just the local PDF needs replacement."
+      "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper \u2014 it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Ast\u00e9risque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(\u011c) free \u2124_p-module structure \u2014 IS in Zink's actual paper \u00a72 \u2014 so the cite intent is fine, just the local PDF needs replacement. | UPDATE 2026-05-19 17:31: bad URL removed from references.ts. Local PDF (uploads/zink2002.pdf) is vol prelims, can be deleted/renamed. Need to find correct chapter URL on numdam.org/issue/AST_2002__278__ then re-fetch."
     },
     {
       "id": "freed2010",
@@ -215,12 +215,12 @@
     },
     {
       "id": "blitvic2012",
-      "status": "paper-mismatch",
-      "local_pdf": "uploads/blitvic2012.pdf",
-      "verified_at": "2026-05-19T06:33:00Z",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T17:31:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvi\u0107, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvi\u0107 papers \u2014 the bib metadata may be for a different Blitvi\u0107 arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper. | UPDATE: actually has 5 citation sites via cites: arrays. The paper-mismatch (arxiv:1205.4003 = 'Two-Parameter Non-Commutative CLT', not the bib title 'The (q,t)-Gaussian process') still needs author decision: split keys or rename bib title."
+      "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvi\u0107, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvi\u0107 papers \u2014 the bib metadata may be for a different Blitvi\u0107 arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper. | UPDATE: actually has 5 citation sites via cites: arrays. The paper-mismatch (arxiv:1205.4003 = 'Two-Parameter Non-Commutative CLT', not the bib title 'The (q,t)-Gaussian process') still needs author decision: split keys or rename bib title. | UPDATE 2026-05-19 17:31: bad URL removed; the existing uploads/blitvic2012.pdf is the CLT paper, now registered as blitvic2012-clt. Need to find correct arxiv id for 'The (q,t)-Gaussian process' and re-fetch under the correct key."
     },
     {
       "id": "turaev2010",
@@ -1171,6 +1171,16 @@
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "Wigner \u2014 'Unreasonable Effectiveness' 1960. Bib orphan (0 cites). Decision: keep as canonical reference / remove."
+    },
+    {
+      "id": "blitvic2012-clt",
+      "status": "verified-clean",
+      "local_pdf": "uploads/blitvic2012.pdf",
+      "verified_at": "2026-05-19T17:31:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "New bib entry for Blitvi\u0107's 'Two-Parameter Non-Commutative Central Limit Theorem' (arXiv:1205.4003, the wrongly-fetched PDF at uploads/blitvic2012.pdf). Currently uncited in QOU (the existing 9 blitvic2012 citation sites all reference the OTHER Blitvi\u0107 paper, 'The (q,t)-Gaussian process'). The PDF now has a canonical bib home; can be renamed to uploads/blitvic2012-clt.pdf in a follow-up upload-branch commit, or left in place pending decision."
     }
   ]
 }
