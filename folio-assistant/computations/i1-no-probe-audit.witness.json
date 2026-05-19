@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:23:52.005253+00:00",
-  "commitSha": "e43d064e4c7f17b63ac1216094cefc2b0e594649",
+  "computedAt": "2026-05-19T17:36:31.182583+00:00",
+  "commitSha": "b572fda6997d5ff9058bed6063044c7035c8bfd8",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 516,
-      "wired": 57,
+      "i1_no_probe": 515,
+      "wired": 58,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -2021,9 +2021,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "q-hecke-seminormal-character-closure-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts",
