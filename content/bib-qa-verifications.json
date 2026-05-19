@@ -38,39 +38,57 @@
     },
     {
       "id": "zink2002",
-      "status": "pending",
+      "status": "paper-mismatch",
       "local_pdf": "uploads/zink2002.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper — it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Astérisque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(Ĝ) free ℤ_p-module structure — IS in Zink's actual paper §2 — so the cite intent is fine, just the local PDF needs replacement."
     },
     {
       "id": "freed2010",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/freed2010.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Topological Quantum Field Theories from Compact Lie Groups' by Freed, Hopkins, Lurie, Teleman (arXiv:0905.0731). Title-only citation in Glossary.lean:337 matches paper scope exactly. (Bib entry uses 'freed2010' shorthand for the 4-author group — acceptable.)"
     },
     {
       "id": "berarducci2018",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/berarducci-mantova-2018-surreal-derivations.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Surreal numbers, derivations and transseries' by Berarducci & Mantova (arXiv:1503.00315). PolynomialEval.lean:202 cites §2 — §2 (subsections 2.1 Order and simplicity, 2.2 Field operations, ...) is where the surreal field structure + polynomial extensions are developed. Cited scope matches."
     },
     {
       "id": "faddeev_kashaev1994",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 — published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation — this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match."
     },
     {
       "id": "baez2004",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/baez2004.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Higher-Dimensional Algebra V: 2-Groups' by John C. Baez (arXiv:math/0307200). emergence-to-quantum-flat.lean:34 cites it for INN(G_q) being 'the unique strict 2-group' under simplicity constraint — this paper IS the canonical 2-groups reference; INN construction is in the body."
     },
     {
       "id": "hu-mathas2012graded",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/hu-mathas2012graded.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Graded Induction for Specht Modules' by Hu & Mathas (arXiv:1008.1462). StructuralRank.lean:84 cites it for 'graded induction for Specht modules' — title is the citation text, exact match. (Bib key has '2012' but arXiv is 2010-08; the paper was published 2012 — version mismatch is acceptable.)"
     },
     {
       "id": "klein1888",
@@ -81,9 +99,12 @@
     },
     {
       "id": "pham1965",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/pham1965.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Formules de Picard-Lefschetz généralisées et ramification des intégrales' by F. Pham (Bull. SMF 93, 1965, pp.333-367). morse-wall-q-moduli.lean:23 cites it for 'generalised Picard-Lefschetz formula' — paper title is verbatim the citation text. Scope match."
     },
     {
       "id": "oeis-A006752",
