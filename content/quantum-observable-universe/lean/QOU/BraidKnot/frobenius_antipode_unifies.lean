@@ -1,45 +1,41 @@
 /-!
-# QOU.BraidKnot.frobenius_antipode_unifies — placeholder stub
+# QOU.BraidKnot.frobenius_antipode_unifies — `S(σᵢ) = σᵢ⁻¹` unifies Term-5 + neutron tower
 
-**Placeholder canonical** for content block
-[`thm:frobenius-antipode-unifies-chirality-and-tower`](../../../quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md): *QOU.BraidKnot.frobenius_antipode_unifies*.
+**Synthesis** ([`prop:frobenius-antipode-unifies-chirality-and-tower`](../../../quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidKnot.frobenius_antipode_unifies` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*The Term-5 chirality factor and the neutron-tower closure both use
+the **Frobenius antipode** `S : σ ↦ σ⁻¹` on `H_n(R, q)`.  `S` is an
+anti-homomorphism: `S(ab) = S(b) S(a)`.*
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md
 -/
 
 namespace QOU.BraidKnot
 
+/-- Abstract context for the Frobenius-antipode synthesis. -/
+class FrobeniusAntipodeContext where
+  /-- The Hecke algebra `H_n(R, q)`. -/
+  A : Type
+  /-- Multiplication on `A`. -/
+  mul : A → A → A
+  /-- The Hecke generator(s) `σᵢ ∈ A`. -/
+  sigma : ℕ → A
+  /-- The inverse generators `σᵢ⁻¹ ∈ A`. -/
+  sigma_inv : ℕ → A
+  /-- The Frobenius antipode `S : A → A`. -/
+  S : A → A
 
-/-- Abstract context for the `frobenius_antipode_unifies` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
-class FrobeniusAntipodeUnifiesContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `frobenius_antipode_unifies` below for the manuscript statement). -/
-  holds : Prop
-
-/-- **Content statement** (from manuscript):
-
-**Synthesis.**
-*Two seemingly distinct derivations — Term 5 chirality factor
-([chirality dual-space](#prop:chirality-dual-space-derivation))
-and the upstream **neutron tower closure** via
-`alpha_blend_tower.py` — use the **same algebraic operation**:
-the **Frobenius antipode**
-$S \colon \sigma \mapsto \sigma^{-1}$ on the Hecke algebra
-$H_n(R, q)$.  This unifies what appeared to be unrelated structural
-findings under a single categorical primitive.*
-
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.ts
-theorem frobenius_antipode_unifies [ctx : FrobeniusAntipodeUnifiesContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
+/-- **Frobenius antipode is the σ↦σ⁻¹ anti-homomorphism**
+    ([`prop:frobenius-antipode-unifies-chirality-and-tower`]). -/
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md
+theorem frobenius_antipode_unifies
+    [ctx : FrobeniusAntipodeContext] :
+    (∀ i, ctx.S (ctx.sigma i) = ctx.sigma_inv i) ∧
+    (∀ a b, ctx.S (ctx.mul a b) = ctx.mul (ctx.S b) (ctx.S a)) := by
+  -- Manuscript proof: `S` is the canonical antipode of the
+  -- Frobenius-Hopf substrate, characterised by `S(σᵢ) = σᵢ⁻¹` on
+  -- generators and extended as an anti-homomorphism.
+  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md
   sorry
 
 end QOU.BraidKnot

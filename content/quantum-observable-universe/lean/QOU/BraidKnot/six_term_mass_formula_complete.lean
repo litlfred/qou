@@ -1,52 +1,49 @@
 /-!
-# QOU.BraidKnot.six_term_mass_formula_complete — placeholder stub
+# QOU.BraidKnot.six_term_mass_formula_complete — six-term unified mass formula
 
-**Placeholder canonical** for content block
-[`thm:six-term-mass-formula-complete`](../../../quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md): *QOU.BraidKnot.six_term_mass_formula_complete*.
+**Proposition** ([`prop:six-term-mass-formula-complete`](../../../quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidKnot.six_term_mass_formula_complete` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*The categorical mass of a vortex `ϱ` decomposes as a sum of six
+terms:*
+
+```
+  𝔪(ϱ) = |tr_M(T_w)|                                  (Term 1)
+       + Σ_i Φ_q(|V̂_i^full|)                         (Term 2)
+       + z² Σ_{i<j} Φ_q(|V̂_i^full V̂_j^full|)        (Term 3)
+       + ... + Terms 4, 5, 6
+```
+
+Lean encoding records the six addends as fields of an abstract
+context plus a sum identity.
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md
 -/
 
 namespace QOU.BraidKnot
 
+/-- Abstract context for the six-term mass formula. -/
+class SixTermMassFormulaContext where
+  /-- The six addends (in `ℝ`). -/
+  term1 : ℝ
+  term2 : ℝ
+  term3 : ℝ
+  term4 : ℝ
+  term5 : ℝ
+  term6 : ℝ
+  /-- The categorical mass `𝔪(ϱ)`. -/
+  cat_mass : ℝ
 
-/-- Abstract context for the `six_term_mass_formula_complete` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
-class SixTermMassFormulaCompleteContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `six_term_mass_formula_complete` below for the manuscript statement). -/
-  holds : Prop
+/-- **Six-term unified mass formula** ([`prop:six-term-mass-formula-complete`]).
 
-/-- **Content statement** (from manuscript):
-
-$$
-  \mathfrak{m}(\varrho)
-  \;=\;
-  \underbrace{|\mathrm{tr}_M(T_w)|}_{\text{Term 1}}
-  \;+\;
-  \underbrace{\sum_{i=0}^{n-2} \Phi_q(|\hat V_i^{\mathrm{full}}|)}_{\text{Term 2}}
-  \;+\;
-  \underbrace{z^2 \sum_{i < j} \Phi_q(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|)}_{\text{Term 3}}
-  \;+\;
-  \underbrace{m_e \cdot \tau(C_{\dim_q})}_{\text{Term 4}}
-  \;+\;
-  \underbrace{a_K \cdot \mathcal{C}_K}_{\text{Term 5}}
-  \;+\;
-  \underbrace{\sum_{\ell \geq 2} \frac{\mathrm{Res}_{q = \zeta_\ell}[\cdot]}{q_0 - \zeta_\ell}}_{\text{Term 6}}.
-$$
-
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts
-theorem six_term_mass_formula_complete [ctx : SixTermMassFormulaCompleteContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
+    `𝔪(ϱ) = term1 + term2 + term3 + term4 + term5 + term6`. -/
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md
+theorem six_term_mass_formula_complete [ctx : SixTermMassFormulaContext] :
+    ctx.cat_mass = ctx.term1 + ctx.term2 + ctx.term3
+                 + ctx.term4 + ctx.term5 + ctx.term6 := by
+  -- Manuscript derivation: topological decomposition of the
+  -- categorical mass over the GS / Markov-trace tower.
+  -- Each term is defined as a specific Markov-trace expression.
+  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md
   sorry
 
 end QOU.BraidKnot

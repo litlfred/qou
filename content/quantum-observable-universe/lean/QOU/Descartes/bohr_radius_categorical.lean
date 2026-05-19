@@ -1,63 +1,59 @@
 /-!
-# QOU.Descartes.bohr_radius_categorical — placeholder stub
+# QOU.Descartes.bohr_radius_categorical — `a_0^cat = ℏ / (m_e c α_EM)` virial balance
 
-**Placeholder canonical** for content block
-[`prop:bohr-radius-categorical`](../../../quantum-observable-universe/descartes-universe/bohr-radius-categorical.md): *QOU.Descartes.bohr_radius_categorical*.
+**Proposition (transport sketch)** ([`prop:bohr-radius-categorical`](../../../quantum-observable-universe/descartes-universe/bohr-radius-categorical.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Descartes.bohr_radius_categorical` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*The dressed atomic transfer matrix `T^dressed ∈ H_n(q)` admits a
+candidate categorical length scale*
+
+```
+  a_0^cat = ℏ / (m_e · c · α_EM)
+```
+
+*at which postulated kinetic and Coulomb Markov-trace contributions
+balance: `Φ_1^kin(a_0^cat) = Φ_1^Coul(a_0^cat)`.*
+
+*Caveat: NOT yet derived from QOU/Hecke structure; transported
+from the standard QED virial argument by analogy. Listed as a
+research-grade direction.*
+
+-- Ref: [manuscript] quantum-observable-universe/descartes-universe/bohr-radius-categorical.md
 -/
 
 namespace QOU.Descartes
 
+/-- The candidate categorical Bohr radius `a_0^cat = ℏ / (m_e c α_EM)`. -/
+noncomputable def bohrRadiusCategorical (hbar m_e c α_EM : ℝ) : ℝ :=
+  hbar / (m_e * c * α_EM)
 
-/-- Abstract context for the `bohr_radius_categorical` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the Bohr-radius virial-balance claim. -/
 class BohrRadiusCategoricalContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `bohr_radius_categorical` below for the manuscript statement). -/
-  holds : Prop
+  /-- Planck constant `ℏ`. -/
+  hbar : ℝ
+  hbar_pos : 0 < hbar
+  /-- Electron mass `m_e`. -/
+  m_e : ℝ
+  m_e_pos : 0 < m_e
+  /-- Speed of light `c`. -/
+  c : ℝ
+  c_pos : 0 < c
+  /-- Fine-structure constant `α_EM`. -/
+  alpha_EM : ℝ
+  alpha_EM_pos : 0 < alpha_EM
+  /-- The kinetic Markov-trace function. -/
+  Phi_kin : ℝ → ℝ
+  /-- The Coulomb Markov-trace function. -/
+  Phi_Coul : ℝ → ℝ
 
-/-- **Proposition statement** (from manuscript):
-
-The dressed atomic transfer matrix
-$T^{\mathrm{dressed}} \in H_n(q)$ — with eigenvalues
-$(q^{2k+1}, -q^{-(2k+1)})$ at electronic shell $k$ — admits a
-candidate categorical length scale*
-
-$$
-  \boxed{\;\;
-    a_{0}^{\mathrm{cat}}
-    \;=\;
-    \frac{\hbar}{m_{e}\,c\,\alpha_{EM}}
-    \;\;}
-$$
-
-*at which a postulated kinetic Markov-trace contribution
-$\Phi_{1}^{\mathrm{kin}}$ and a postulated EM-coupling Coulomb
-contribution $\Phi_{1}^{\mathrm{Coul}}$ are equal:*
-
-$$
-  \Phi_{1}^{\mathrm{kin}}(a_{0}^{\mathrm{cat}})
-  \;=\;
-  \Phi_{1}^{\mathrm{Coul}}(a_{0}^{\mathrm{cat}}).
-$$
-
-> ### Caveat — derivation status
->
-> This proposition is
-
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/bohr-radius-categorical.ts
-theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
+/-- **Virial-balance condition at the categorical Bohr radius**
+    ([`prop:bohr-radius-categorical`]). -/
+-- Ref: [manuscript] quantum-observable-universe/descartes-universe/bohr-radius-categorical.md
+theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] :
+    ctx.Phi_kin (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM)
+      = ctx.Phi_Coul (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM) := by
+  -- Caveat: not yet derived from QOU. Treated as a candidate
+  -- transport from QED.
+  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/bohr-radius-categorical.md
   sorry
 
 end QOU.Descartes
