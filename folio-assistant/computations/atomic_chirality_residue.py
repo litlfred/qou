@@ -44,6 +44,7 @@ from hecke_characters import (
 )
 from hecke_core import _step_chain_generic
 from q_mpmath import set_q, qfac
+from witness_base import WitnessBuilder
 
 set_q(Q0_FLOAT)
 
@@ -222,23 +223,64 @@ def main():
             'alpha_Phi_chir_high_MeV': Chir_high_MeV,
         })
 
-    witness = {
-        'computation': 'atomic-chirality-residue',
-        'description': (
-            'Plancherel-weighted log-character contribution from the '
-            'chirality cells (D_q² = 0 ⇔ signed_content(λ) = 0) in the '
-            'atomic braid character decomposition.  Provides the '
-            'gauge-invariant background ("gluon condensate") '
-            'contribution per curvature-rank stratum.'
+    # ── Emit witness via WitnessBuilder (provenance + assertions) ──
+    builder = WitnessBuilder("atomic-chirality-residue")
+    builder.set_description(
+        'Plancherel-weighted log-character contribution from the '
+        'chirality cells (D_q² = 0 ⇔ signed_content(λ) = 0) in the '
+        'atomic braid character decomposition. Provides the '
+        'gauge-invariant background ("gluon condensate") '
+        'contribution per curvature-rank stratum. '
+        'Wired to prop:confinement-categorical — the spectral-sequence-collapse '
+        'reading of confinement predicts that only Wedderburn-central '
+        '(D_q² = 0) observables survive, i.e. the chirality channel.'
+    )
+    builder.set_content_block("prop:confinement-categorical")
+    builder.add_parameter("q0", str(Q0_FLOAT))
+    builder.add_parameter("kernel", "rust" if _RUST_AVAILABLE else "python")
+    builder.add_data("isotopes", rows)
+
+    # ── Assertions ──
+    # 1. Every isotope has at least one chirality cell at the binding-energy
+    #    stratum (depth = A-1 or thereabouts). If 0/N then the chirality-
+    #    channel claim is empty.
+    n_iso_with_chir = sum(1 for r in rows if r['n_chir_cells'] > 0)
+    builder.add_assertion(
+        "all_isotopes_have_chirality_cells",
+        computed=float(n_iso_with_chir),
+        expected=float(len(rows)),
+        tolerance=0.0,
+        unit="count",
+        source=(
+            "prop:confinement-categorical claims confinement = collapse "
+            "onto chirality cells. Every isotope must have ≥ 1 chirality "
+            "cell in its Wedderburn decomposition."
         ),
-        'kernel': 'rust' if _RUST_AVAILABLE else 'python',
-        'timestamp': datetime.now(timezone.utc).isoformat(),
-        'q_0': Q0_FLOAT,
-        'isotopes': rows,
-    }
-    out = Path(__file__).parent / "atomic-chirality-residue.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
-    print(f"\n  Witness: {out}")
+    )
+    # 2. Chirality fraction of binding energy is in [-2, 2]: this is a
+    #    well-formedness check — the chirality channel can contribute
+    #    positively (binding-deepening) or negatively (binding-reducing,
+    #    interpreted as a sign-coherence cancellation in the gauge background).
+    #    A value outside [-2, 2] would indicate the chirality residue
+    #    dominates by >2× the actual binding, which is implausible.
+    chir_fractions = [abs(r['alpha_Phi_chir_total_MeV'] / r['B_nucl'])
+                      for r in rows if r['B_nucl']]
+    max_chir_frac = max(chir_fractions) if chir_fractions else 0.0
+    builder.add_assertion(
+        "chirality_fraction_bounded",
+        computed=float(max_chir_frac),
+        expected=0.0,
+        tolerance=2.0,
+        unit="|fraction|",
+        source=(
+            "|α · Φ_chir(K) / B_nucl(K)| ≤ 2 across all isotopes — "
+            "well-formedness check on the chirality-channel contribution. "
+            f"Per-isotope: {[(r['iso'], round(r['alpha_Phi_chir_total_MeV']/r['B_nucl'], 3)) for r in rows if r['B_nucl']]}"
+        ),
+    )
+
+    builder.save()
+    print(f"\n  Witness emitted: atomic-chirality-residue.witness.json")
 
 
 if __name__ == "__main__":

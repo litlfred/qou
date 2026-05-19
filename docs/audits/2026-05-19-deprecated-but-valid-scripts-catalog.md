@@ -34,10 +34,10 @@ Re-verified all claims in the table after PR #787 merged. **The systemic finding
 
 ### Active revival list (post-update)
 
-**7 propositions** still have no `computation` field and an orphaned deprecated script:
+**6 propositions remain** (1 revived on this branch); each has no `computation` field and an orphaned deprecated script:
 
 1. `prop:unified-curvature-rank-mass-formula` *(highest priority — Δ_λ thread)*
-2. `prop:confinement-categorical`
+2. ~~`prop:confinement-categorical`~~ — ✅ **revived on this branch** (PR #819, commit reviving `atomic_chirality_residue.py` and wiring it to the proposition; witness has 2 assertions, both passed)
 3. `prop:e-infinity-page-identifications`
 4. `prop:schur-weyl-mass-decomposition`
 5. `prop:binding-scale-catalan`
