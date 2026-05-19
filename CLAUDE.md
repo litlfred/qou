@@ -56,6 +56,36 @@ mentioned file.
    or poll. (Exception: if the only remaining todos depend on the
    in-flight task, idle and wait for the notification.)
 
+   **5-minute idle trigger (2026-05-19).** If you have produced no
+   substantive output for > 5 minutes (just TICK heartbeats or
+   empty acks), start processing backlog automatically — do not
+   wait for the user to prompt. Walk this priority order:
+
+   1. **Current session todos** (TodoWrite list for this session).
+      Top of the queue first.
+   2. **Current PR todos** — the open PR's body checklist + any
+      unresolved review-comment threads on the branch's PR.
+      `mcp__github__pull_request_read get_review_comments` is the
+      authoritative source; `mcp__github__pull_request_read get`
+      gives the body's test-plan items.
+   3. **Integration-watcher requirements** — the active watchers'
+      queue items (`todos/proof-integration-watcher-queue.json`,
+      `todos/canonical-watcher-queue.json`,
+      `todos/compute-integration-watcher-queue.json`,
+      `todos/detangler-integration-watcher-queue.json`). Prefer
+      items whose `block_or_script` overlaps the current PR's
+      scope (e.g. the same chapter or the same Python/Lean file).
+   4. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades,
+      `validate-bib` deferred items, glossary backfills, doc
+      currency. Lowest priority because they're not gated on any
+      in-flight work.
+
+   "Substantive output" means: a new commit, a meaningful chat
+   response (not a TICK ack), or a tool call that advances a
+   queue item. If the only thing in the window is monitor TICKs
+   and "pause-mode TICK" acks, you are idle and the trigger
+   fires.
+
 5. **Update the plan when upstream lands.** The session-start hook
    arms `local/watch` on `origin/main` (and `local/coordinate`
    triages sibling PRs). Whenever a `<github-webhook-activity>` or

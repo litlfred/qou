@@ -119,6 +119,47 @@ These rules supersede any "default to parallel" / "one PR per
 item" framing earlier in this document. When in doubt: cluster
 more, dispatch fewer agents, ask before parallelising.
 
+## 0b. Idle-time backlog policy (5-minute trigger)
+
+Per CLAUDE.md §"Agent work-plan policy" item 4 (5-minute idle
+trigger, added 2026-05-19): when this watcher has been idle for
+> 5 minutes (no substantive output beyond TICK heartbeats or
+empty acks), automatically start processing backlog without
+waiting for the user to prompt. Walk the priority order:
+
+1. **Session todos** (TodoWrite list).
+2. **Current-PR todos** — open-PR body checklist + unresolved
+   review-comment threads on the branch's PR (via
+   `mcp__github__pull_request_read get_review_comments` and
+   `get` for the body).
+3. **Integration-watcher queue items** — this watcher's own
+   `todos/<name>-queue.json` first, then sibling watchers'.
+   Prefer items whose `block_or_script` overlaps the current
+   PR's scope (same chapter / same Python or Lean file).
+4. **Cross-cutting cleanups** (bare-URL `-- Ref:` upgrades,
+   `validate-bib` deferred items, glossary backfills).
+
+For this skill's children specifically:
+
+- The watcher's queue file is the integration-watcher's
+  primary backlog source (item 3). When triggered, read the
+  queue, pull the highest-priority `needs-author` or unresolved
+  `triage` item, and apply the §4 → §5 → §6 child-specific
+  procedure on it.
+- If the queue is empty/all-terminal, fall through to item 4
+  (cross-cutting cleanups). Don't sit idle if there's
+  uncommitted bibliographic improvement work or other
+  branch-scope reachable cleanups.
+- The "pause" command from the user IS a terminal state — do
+  not pursue backlog after the user says "pause" or
+  "stop until I'm back". Only the explicit "resume" /
+  "continue" / similar restart command lifts the pause.
+
+This rule exists because integration-watcher sessions often
+spend long stretches in idle monitor-TICK mode after the
+in-flight tranche lands. Productive idle is "work the next
+queue item", not "TICK heartbeats forever".
+
 ## 1. Baseline + setup (run once per session)
 
 ```bash
