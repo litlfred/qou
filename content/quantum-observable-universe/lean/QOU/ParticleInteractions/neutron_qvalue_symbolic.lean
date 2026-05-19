@@ -53,7 +53,7 @@ fixed by $m_\mu/m_e$) — $Q_\beta(n)$ ($H^2$) is the
 $\beta$-decay datum being predicted, not used as input
 ([three-calibration discipline](#prop:three-calibration-discipline)).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

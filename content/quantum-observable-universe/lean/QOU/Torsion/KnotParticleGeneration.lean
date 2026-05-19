@@ -15,7 +15,7 @@ namespace QOU.Torsion
 
 /-- Abstract context for the `KnotParticleGeneration` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class KnotparticlegenerationContext where
+class KnotParticleGenerationContext where
   /-- The topological-link / knot type. -/
   Link : Type
   /-- The `Prop`-valued claim of the lemma. -/
@@ -29,11 +29,11 @@ standard torus $\mathbb{T}^2 \subset S^3$, together with two
 *linking operations* that act on the exceptional divisor and the
 color-tube fibration.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
-theorem KnotParticleGeneration [ctx : KnotparticlegenerationContext] : ctx.claim_KnotParticleGeneration := by
+theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] : ctx.claim_KnotParticleGeneration := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

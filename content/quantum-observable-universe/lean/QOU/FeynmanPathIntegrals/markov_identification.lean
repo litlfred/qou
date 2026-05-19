@@ -42,7 +42,7 @@ $\mathrm{tr}_M\bigl(\rho(\beta)\bigr)$ on $H_n(R, q)$, where the
 Markov weights are
 $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts

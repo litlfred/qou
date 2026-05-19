@@ -16,7 +16,7 @@ namespace QOU.Interactions
 /-- Abstract context for the `UniversalILP` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class UniversalilpContext where
+class UniversalILPContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -32,11 +32,11 @@ level of the QOU construction.  The same Gram matrix $G$, the
 same Frobenius check $Gx \geq 0$, and the same ILP are applied
 to quarks, nucleons, atoms, and molecules.*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/universal-ilp-algorithm.ts
-theorem UniversalILP [ctx : UniversalilpContext] : ctx.claim_UniversalILP := by
+theorem UniversalILP [ctx : UniversalILPContext] : ctx.claim_UniversalILP := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

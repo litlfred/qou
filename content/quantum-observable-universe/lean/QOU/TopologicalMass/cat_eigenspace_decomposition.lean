@@ -31,7 +31,7 @@ $*$-involution, the descent involution $\hat{\tau}_n$ produces an
 orthogonal decomposition of $\alpha$ into descended and transient
 components, giving
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts

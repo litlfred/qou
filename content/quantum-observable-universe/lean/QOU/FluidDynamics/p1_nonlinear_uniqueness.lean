@@ -32,7 +32,7 @@ $E_0 = \lVert v_0 \rVert_A^2$ and let
 $C_q = (\sum_k [k]_q^{-2})^{1/2}$ be the
 [Sobolev constant](#prop:q-spectral-sobolev).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

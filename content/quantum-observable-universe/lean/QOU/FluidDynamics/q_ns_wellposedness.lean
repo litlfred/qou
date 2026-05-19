@@ -46,7 +46,7 @@ $\Delta_q = d_q\delta_q + \delta_q d_q$ be the
 and let $\nu_q = \frac{1}{2}(1 - q^{-1}) > 0$ be the kinematic
 viscosity.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

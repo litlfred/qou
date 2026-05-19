@@ -28,7 +28,7 @@ contained in disjoint discs $D_i$ centred at the blow-up points
 $p_1, \ldots, p_N$, and the norm of the multiplicative integral
 decomposes as a sum over the exceptional divisors $E_i$:
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts

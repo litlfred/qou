@@ -7,7 +7,7 @@
   ],
   "lean_axiom": "qou:QOU.BraidKnot.HabiroCompletion.tail_in_ideal",
   "input_witness": "habiro-coefficients-atomic.witness.json",
-  "computedAt": "2026-05-19T06:06:59.956559+00:00",
+  "computedAt": "2026-05-19T16:57:57.530754+00:00",
   "engine": "sympy.div over ZZ[u]",
   "overall_pass": true,
   "results": [
@@ -286,5 +286,7 @@
         }
       ]
     }
-  ]
+  ],
+  "scriptFile": "habiro_witness_validator.py",
+  "commitSha": "6bf5ae949523bb865715af1103b47cd0ecabcc32"
 }

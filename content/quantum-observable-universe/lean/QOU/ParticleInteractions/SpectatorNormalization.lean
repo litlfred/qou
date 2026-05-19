@@ -16,7 +16,7 @@ namespace QOU.ParticleInteractions
 /-- Abstract context for the `SpectatorNormalization` claim —
     manuscript-themed typed fields below; the spectator-count
     identity for `β⁻`-decay is captured. -/
-class SpectatornormalizationContext where
+class SpectatorNormalizationContext where
   /-- Proton number `Z` of parent. -/
   Z : ℕ
   /-- Neutron number `N` of parent. -/
@@ -40,11 +40,11 @@ decay ${}^A_Z X \to {}^A_{Z+1} Y + e^- + \bar\nu$, only one
 neutron converts to a proton; the remaining $Z$ protons and
 $N - 1$ neutrons are spectators.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
-theorem SpectatorNormalization [ctx : SpectatornormalizationContext] :
+theorem SpectatorNormalization [ctx : SpectatorNormalizationContext] :
     ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 :=
   ctx.claim_spectator_counts
 

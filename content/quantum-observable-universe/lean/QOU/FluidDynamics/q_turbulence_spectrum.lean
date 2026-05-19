@@ -50,7 +50,7 @@ $q > 1$ and [Planck--Reynolds number](#rem:planck-reynolds)
 $\mathrm{Re}_q = 2/(q-1)$, the energy spectrum of a turbulent
 vortex tangle satisfies a $q$-deformed Kolmogorov law.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

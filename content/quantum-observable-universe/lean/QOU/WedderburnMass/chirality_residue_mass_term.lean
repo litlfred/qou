@@ -34,7 +34,7 @@ $\mathcal{T} \in A = H_n(R, q)$ decomposes as a sum over GB-filtration
 strata.  This proposition refines that decomposition by splitting each
 stratum into a
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

@@ -14,7 +14,7 @@ namespace QOU.FrobeniusHopfData
 
 /-- Abstract context for the `frobeniusForm` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class FrobeniusformContext where
+class FrobeniusFormContext where
   /-- Categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- LP shadow-price / dual variable. -/
@@ -62,7 +62,7 @@ and its mirror are both equal to $\mathrm{id}_A$.
     placeholder; the `ctx.claim_frobeniusForm : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
-theorem frobeniusForm [ctx : FrobeniusformContext] : ctx.claim_frobeniusForm := by
+theorem frobeniusForm [ctx : FrobeniusFormContext] : ctx.claim_frobeniusForm := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -34,7 +34,7 @@ which do not occur as leading monomials of members of $G$. Then:
    $A/I \cong \tilde{O}(G)$ of free $R$-modules.
 2. $A = I \oplus \tilde{O}(G)$.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/main-theorem.ts

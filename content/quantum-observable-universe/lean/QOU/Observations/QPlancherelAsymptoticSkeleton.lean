@@ -16,7 +16,7 @@ namespace QOU.Observations
 /-- Abstract context for the `QPlancherelAsymptoticSkeleton` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class QplancherelasymptoticskeletonContext where
+class QPlancherelAsymptoticSkeletonContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- The partition / Young-diagram indexing type. -/
@@ -59,11 +59,11 @@ satisfy:*
    of a continuous map $\Omega_q \to L(\mathcal{H})$ compatible with
    $\iota_n$.*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
-theorem QPlancherelAsymptoticSkeleton [ctx : QplancherelasymptoticskeletonContext] : ctx.claim_QPlancherelAsymptoticSkeleton := by
+theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] : ctx.claim_QPlancherelAsymptoticSkeleton := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

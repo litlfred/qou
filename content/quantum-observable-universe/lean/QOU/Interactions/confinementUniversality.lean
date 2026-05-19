@@ -16,7 +16,7 @@ namespace QOU.Interactions
 /-- Abstract context for the `confinementUniversality` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class ConfinementuniversalityContext where
+class ConfinementUniversalityContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -53,11 +53,11 @@ The derivation chain has two stages:
 
 1.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
-theorem confinementUniversality [ctx : ConfinementuniversalityContext] : ctx.claim_confinementUniversality := by
+theorem confinementUniversality [ctx : ConfinementUniversalityContext] : ctx.claim_confinementUniversality := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

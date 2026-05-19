@@ -28,7 +28,7 @@ Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
 be the categorical mass integrand of a closed cycle $\varrho$ at level
 $n+1$, and let $\varrho_0$ be its base-level descent.  Then
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts

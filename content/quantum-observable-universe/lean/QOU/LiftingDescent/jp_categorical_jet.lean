@@ -32,7 +32,7 @@ Kähler differentials, is an object of the ambient rigid monoidal
 category, and inherits a Frobenius--Hopf structure
 $(\Delta', \varepsilon', S')$ from $A$.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts

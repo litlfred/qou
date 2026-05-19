@@ -47,7 +47,7 @@ $c_k \sigma_{i_k} + d_k \cdot 1 \in H_3(R, q)$ at generators
 $\sigma_{i_k}$ with parameters $(c_k, d_k)$ (the $k$-th letter of
 $T_w$ in its GB normal form).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

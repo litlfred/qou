@@ -46,7 +46,7 @@ $W \leftrightarrow \sigma_1^{\,4}$, $Z \leftrightarrow \sigma_3^{\,6}$,
 $H \leftrightarrow \sigma_5^{\,8}$ act
 ([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

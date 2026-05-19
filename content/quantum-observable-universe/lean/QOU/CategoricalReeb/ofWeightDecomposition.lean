@@ -14,7 +14,7 @@ namespace QOU.CategoricalReeb
 
 /-- Abstract context for the `ofWeightDecomposition` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class OfweightdecompositionContext where
+class OfWeightDecompositionContext where
   /-- Categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- LP shadow-price / dual variable. -/
@@ -54,7 +54,7 @@ $(\xi, \varTheta_A)$ on $A$ satisfying:
     placeholder; the `ctx.claim_ofWeightDecomposition : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts
-theorem ofWeightDecomposition [ctx : OfweightdecompositionContext] : ctx.claim_ofWeightDecomposition := by
+theorem ofWeightDecomposition [ctx : OfWeightDecompositionContext] : ctx.claim_ofWeightDecomposition := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

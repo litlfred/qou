@@ -25,7 +25,7 @@ class NsSingularityDescartesContext extends QOU.Shared.SobolevHkRegularityContex
 Let $(\mathbf{C}, A, \tau)$ be the Descartes quantum universe
 with $\chi(A) = -6$ (Bring's surface of genus 4).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

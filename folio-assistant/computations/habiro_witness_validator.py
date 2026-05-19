@@ -166,6 +166,8 @@ def main() -> int:
         "engine": "sympy.div over ZZ[u]",
         "overall_pass": overall_pass,
         "results": per_atom_results,
+        "scriptFile": "habiro_witness_validator.py",
+        "commitSha": "6bf5ae949523bb865715af1103b47cd0ecabcc32",
     }
     # polynomial_q_not_applicable: validator emits boolean divisibility /
     # exact-reconstruction checks over ZZ[u], not a polynomial-in-q form.

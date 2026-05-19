@@ -44,7 +44,7 @@ class LerayProfileContext where
 > of $\mathrm{SU}_q(2)$ representations, with coefficients fixed
 > by the singular gerbe data $(\Sigma, n^*, \kappa_{n^*})$.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

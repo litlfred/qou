@@ -83,8 +83,7 @@ theorem integer_stability (ctx : IntegerStabilityContext) :
   have h_A_pos : (0 : ℝ) < ctx.A := by exact_mod_cast ctx.A_pos
   have h_A_third : (0 : ℝ) < (ctx.A : ℝ) ^ ((1 : ℝ) / 3) := by
     -- `a^x > 0` when `a > 0` (Real.rpow_pos_of_pos)
-    -- Ref: Mathlib `Real.rpow_pos_of_pos`
-    sorry
+    exact Real.rpow_pos_of_pos h_A_pos _
   have h_first : 0 < coulombCoeff ctx / (ctx.A : ℝ) ^ ((1 : ℝ) / 3) :=
     div_pos (coulombCoeff_pos ctx) h_A_third
   have h_second : 0 < ctx.a_A / (ctx.A : ℝ) :=

@@ -47,10 +47,9 @@ noncomputable def lagrangeResolventTransform (n : ℕ) (x : Fin n → ℂ) :
     (Finset.univ.sum fun j : Fin n => rootOfUnity n ^ (k.val * j.val) * x j)
 
 /-- The cyclic-shift action `σ : (x_j) ↦ (x_{j+1})` on `Fin n → ℂ`. -/
-noncomputable def cyclicShift (n : ℕ) (x : Fin n → ℂ) : Fin n → ℂ :=
-  fun j => x ⟨(j.val + 1) % n, Nat.mod_lt _ (by
-    -- Need `n > 0`; the caller is expected to supply `n ≥ 1`
-    sorry)⟩
+noncomputable def cyclicShift (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) :
+    Fin n → ℂ :=
+  fun j => x ⟨(j.val + 1) % n, Nat.mod_lt _ h_n_pos⟩
 
 /-- **(i) Diagonal action of the cyclic shift on Fourier modes**
     ([`prop:lagrange-resolvent-transform`] item (i)).
@@ -61,7 +60,7 @@ noncomputable def cyclicShift (n : ℕ) (x : Fin n → ℂ) : Fin n → ℂ :=
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 theorem lagrange_resolvent_transform_equivariance
     (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) (k : Fin n) :
-    lagrangeResolventTransform n (cyclicShift n x) k
+    lagrangeResolventTransform n (cyclicShift n h_n_pos x) k
       = rootOfUnity n ^ ((n - k.val) % n) * lagrangeResolventTransform n x k := by
   -- Manuscript derivation: substitute `x_{j+1}` for `x_j` in the
   -- sum, re-index `j' = j + 1`, factor out `ζ^{-k}`. The exponent
@@ -77,7 +76,7 @@ theorem lagrange_resolvent_transform_equivariance
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 theorem lagrange_resolvent_transform
     (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) (k : Fin n) :
-    lagrangeResolventTransform n (cyclicShift n x) k
+    lagrangeResolventTransform n (cyclicShift n h_n_pos x) k
       = rootOfUnity n ^ ((n - k.val) % n) * lagrangeResolventTransform n x k :=
   lagrange_resolvent_transform_equivariance n h_n_pos x k
 

@@ -52,7 +52,7 @@ shapes. Recognise these and apply the matching Lean encoding:
 | `\begin{cases} ... \end{cases}` piecewise | conditional sub-claims `cond_i → result_i = ...` |
 | "is an equivalence relation" with refl/sym/trans | three sub-claims; theorem proves `Equivalence ctx.rel` |
 | Table of moves (R1/R2/R3/Markov-I/II) | one `claim_<move_name>` Prop per row |
-| "exists and is unique" | `claim_existence : Prop` + `claim_uniqueness : <type-level =>` |
+| "exists and is unique" | `claim_existence : ∃ x, P x` + `claim_uniqueness : ∀ x y, P x → P y → x = y` |
 | Numerical formula `Q = ... × m_e × ...` | typed `claim_formula : Q = ... * m_e * ...` |
 | Polynomial recurrence `a_{n+2} = X · a_{n+1} + a_n` | `noncomputable def + theorem ... : rfl` |
 | Matrix identity `T_pp · T_nn = I` | entry-level equalities `entry_00 = 1 ∧ entry_11 = 1` |

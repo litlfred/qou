@@ -21,7 +21,7 @@
   "scriptHash": "81c84e9e855a",
   "scriptCommitSha": "8b28161cd41c626666f23f758b86291e3ee3a1c2",
   "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, SW period integrals (single-root and simultaneous 3-root prescriptions).",
-  "contentBlock": "def:picard-lefschetz-thimble",
+  "contentBlock": "rem:picard-lefschetz-thimble",
   "parameters": {
     "q0": "1.1099785955541805",
     "z0": "0.10438806980915827",

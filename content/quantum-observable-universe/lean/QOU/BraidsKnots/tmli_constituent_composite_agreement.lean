@@ -30,7 +30,7 @@ $\prod \hat{V}_i^{\mathrm{const}}$ and the composite trace
 $\mathrm{tr}_M(\rho(\beta_{\mathfrak{H}}))$ evaluate the same element
 of $H_N(q)$, so
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

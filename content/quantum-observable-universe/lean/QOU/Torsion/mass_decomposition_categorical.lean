@@ -36,7 +36,7 @@ $\{A_n\}_{n \geq 0}$
 ([recursive brane tower](#def\:recursive-brane-tower)), applied to a
 base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass.ts

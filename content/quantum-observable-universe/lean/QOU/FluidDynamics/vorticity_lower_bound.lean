@@ -42,7 +42,7 @@ $v^*$ be the weak limit as $q \to 1$
 \times v^*$ and let $d(t)$ be the separation between the two
 filament cores.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

@@ -14,7 +14,7 @@ namespace QOU.Descartes.PauliWitness
 
 /-- Abstract context for the `witness_12C` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class Witness12cContext where
+class Witness12CContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -56,7 +56,7 @@ braid configuration.
     placeholder; the `ctx.claim_witness_12C : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts
-theorem witness_12C [ctx : Witness12cContext] : ctx.claim_witness_12C := by
+theorem witness_12C [ctx : Witness12CContext] : ctx.claim_witness_12C := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

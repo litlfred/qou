@@ -16,7 +16,7 @@ namespace QOU.Interactions
 /-- Abstract context for the `inductiveGBReduction` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class InductivegbreductionContext where
+class InductiveGBReductionContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -62,11 +62,11 @@ producing a normal form of bounded size.
 
 The key identity enabling this is the
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
-theorem inductiveGBReduction [ctx : InductivegbreductionContext] : ctx.claim_inductiveGBReduction := by
+theorem inductiveGBReduction [ctx : InductiveGBReductionContext] : ctx.claim_inductiveGBReduction := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

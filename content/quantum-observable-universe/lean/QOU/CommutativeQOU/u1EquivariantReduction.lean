@@ -14,7 +14,7 @@ namespace QOU.CommutativeQOU
 
 /-- Abstract context for the `u1EquivariantReduction` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class U1equivariantreductionContext where
+class U1EquivariantReductionContext where
   /-- LP shadow-price / dual variable. -/
   shadow_price : ℝ
   /-- The fibre functor `τ`. -/
@@ -74,7 +74,7 @@ tube is recorded in
     placeholder; the `ctx.claim_u1EquivariantReduction : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
-theorem u1EquivariantReduction [ctx : U1equivariantreductionContext] : ctx.claim_u1EquivariantReduction := by
+theorem u1EquivariantReduction [ctx : U1EquivariantReductionContext] : ctx.claim_u1EquivariantReduction := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

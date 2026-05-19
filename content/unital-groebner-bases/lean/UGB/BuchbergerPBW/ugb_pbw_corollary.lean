@@ -42,7 +42,7 @@ The argument that $G$ is a Gröbner--Shirshov basis follows from
 are monic and the basis is multiplicative, $G$ is a unital Gröbner--Shirshov basis. The
 corollary follows from [Theorem 2](#thm:ugb-main). $\square$
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts

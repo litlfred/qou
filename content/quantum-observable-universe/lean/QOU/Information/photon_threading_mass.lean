@@ -48,7 +48,7 @@ photon strand from above $\beta_{\mathfrak{H}}$ to below $\beta_{\mathfrak{H}}$ 
 augmented braid $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$, and
 $c_w$ are the coefficients at each step.*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

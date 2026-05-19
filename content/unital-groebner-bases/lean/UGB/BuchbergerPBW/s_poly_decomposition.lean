@@ -44,7 +44,7 @@ $$f = c_1 a_1 S_{1,2} + (c_1 a_1 + c_2 a_2) S_{2,3} + \cdots + (c_1 a_1 + \cdots
 
 which gives the desired result. $\square$
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.ts

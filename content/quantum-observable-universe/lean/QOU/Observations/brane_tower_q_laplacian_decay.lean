@@ -33,7 +33,7 @@ Reeb bundle. The tower sum converges absolutely for all $q$ in the
 Wenzl positivity regime, and is dominated by the lowest-level local
 contribution.*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

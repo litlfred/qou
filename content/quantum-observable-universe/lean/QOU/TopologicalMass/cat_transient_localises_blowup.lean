@@ -29,7 +29,7 @@ union of the kernels of $\mathfrak{d}_{n+1}$ at the blow-up centres
 $p_1, \ldots, p_N$, and the transient trace decomposes as a sum of
 disjoint local contributions:
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-transient.ts

@@ -75,7 +75,7 @@ $B_3 \cdot \Phi_{\mathrm{quarks}}$). Then:*
 4. *Strong duality holds: $\mathrm{tr}_M(x^*) = y_0^* \cdot
    n_{\mathrm{target}}$.*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

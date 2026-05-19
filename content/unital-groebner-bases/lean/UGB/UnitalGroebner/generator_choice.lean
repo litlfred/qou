@@ -33,7 +33,7 @@ Then in the [division algorithm](#def:division-algorithm), we may
 choose $h_i \in I$ so that $h_i = g_{\gamma_i}$ for some
 $\gamma_i \in \Gamma$.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/generator-choice-lemma.ts

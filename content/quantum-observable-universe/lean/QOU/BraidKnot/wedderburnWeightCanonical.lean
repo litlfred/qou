@@ -17,7 +17,7 @@ namespace QOU.BraidKnot
     canonical Wedderburn-block weight `w̃_λ = dim_q(λ)² / [n]_q!`,
     (ii) the BW-form identity `β_λ = -½ · w̃_λ`, and (iii) the LP
     shadow-price identity `C_λ = ½(q - q⁻¹) · w̃_λ`. -/
-class WedderburnweightcanonicalContext where
+class WedderburnWeightCanonicalContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- Partition / Young-diagram indexing. -/
@@ -90,7 +90,7 @@ hook–content closed form:*
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts
-theorem wedderburnWeightCanonical [ctx : WedderburnweightcanonicalContext] :
+theorem wedderburnWeightCanonical [ctx : WedderburnWeightCanonicalContext] :
     (∀ λ : ctx.PartitionIdx, ctx.β λ = -(1/2) * ctx.w_tilde λ) ∧
     (∀ λ : ctx.PartitionIdx,
       ctx.C λ = (1/2) * (ctx.q - ctx.q⁻¹) * ctx.w_tilde λ) :=

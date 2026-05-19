@@ -42,7 +42,7 @@ $$
 *where $\mu_a$ is the dressed quark Skein mass of species $a$.  The
 total nucleon mass is the sum over the three crossing pairs:
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

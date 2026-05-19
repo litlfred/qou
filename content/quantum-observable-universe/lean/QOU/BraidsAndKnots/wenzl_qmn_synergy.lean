@@ -60,7 +60,7 @@ Three orthogonal speedups combine:
 For atom-knot identification at $n = 18$ ($p(n) = 385$, $\max\dim_\lambda \approx 1000$) or $n = 21$ ($p(n) = 792$, $\max\dim_\lambda \approx 5000$),
 this drops the per-isotope compute time from
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

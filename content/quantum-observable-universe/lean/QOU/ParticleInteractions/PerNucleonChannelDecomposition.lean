@@ -20,7 +20,7 @@ namespace QOU.ParticleInteractions
     manuscript-themed typed fields below; the Garside-product
     factorisation `M = ∏_m M_m` with each `M_m` four-channel-typed is
     captured as `claim_factorisation`. -/
-class PernucleonchanneldecompositionContext where
+class PerNucleonChannelDecompositionContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -45,11 +45,11 @@ factors as a product of **per-nucleon contributions**, each
 decomposed into four channels by the $T_{2,3}$ eigenstructure
 of $H_3(q)$.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
-theorem PerNucleonChannelDecomposition [ctx : PernucleonchanneldecompositionContext] :
+theorem PerNucleonChannelDecomposition [ctx : PerNucleonChannelDecompositionContext] :
     ctx.M = (Finset.univ.prod fun m : Fin ctx.A => ctx.M_m m) :=
   ctx.claim_factorisation
 

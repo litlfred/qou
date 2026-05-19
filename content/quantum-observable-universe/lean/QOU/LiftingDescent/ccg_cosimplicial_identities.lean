@@ -16,7 +16,7 @@ degeneracy maps) satisfy the cosimplicial identities*
 commutation or to the retraction `𝔡_{n+1} ∘ ℓ_n = id`.*
 
 The Lean encoding records the four identities as a `Prop`-valued
-conjunction against an abstract `CosimplicialContext`.
+conjunction against an abstract `CcgCosimplicialIdentitiesContext`.
 
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
 -/
@@ -24,7 +24,7 @@ conjunction against an abstract `CosimplicialContext`.
 namespace QOU.LiftingDescent
 
 /-- Abstract context for the cosimplicial identities. -/
-class CosimplicialContext where
+class CcgCosimplicialIdentitiesContext where
   /-- The cosimplicial object at level `n` (abstract). -/
   Obj : ℕ → Type
   /-- Coface map `δⁱ : Obj n → Obj (n+1)`. -/
@@ -37,7 +37,7 @@ class CosimplicialContext where
     Two main identities (face-face, degeneracy-degeneracy). -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
 theorem ccg_cosimplicial_identities
-    [ctx : CosimplicialContext] (n i j : ℕ) (x : ctx.Obj n) (y : ctx.Obj (n + 2)) :
+    [ctx : CcgCosimplicialIdentitiesContext] (n i j : ℕ) (x : ctx.Obj n) (y : ctx.Obj (n + 2)) :
     -- Face-face: `δʲ ∘ δⁱ = δⁱ ∘ δ^{j−1}` for `i < j`.
     (i < j →
        ctx.delta (n + 1) j (ctx.delta n i x)

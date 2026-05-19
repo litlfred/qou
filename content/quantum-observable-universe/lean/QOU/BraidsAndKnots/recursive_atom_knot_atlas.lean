@@ -45,7 +45,7 @@ expressed in $\sigma_*$ braid generators of the braid group $B_{n_0}$.
 Confinement at $q_0$ is verified via the
 [confinement SDP](#prop:confinement-sdp).*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

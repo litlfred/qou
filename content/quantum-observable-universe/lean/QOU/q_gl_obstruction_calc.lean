@@ -34,7 +34,7 @@ $\chi(A) \neq 0$ and obstruction class
 $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
 ([quantum characteristic classes](#def:quantum-characteristic-classes)).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

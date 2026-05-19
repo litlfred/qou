@@ -14,7 +14,7 @@ namespace QOU.Descartes.PauliWitness
 
 /-- Abstract context for the `witness_4He` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class Witness4heContext where
+class Witness4HeContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -49,7 +49,7 @@ transfer matrix cannot resolve.
     placeholder; the `ctx.claim_witness_4He : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-4he.ts
-theorem witness_4He [ctx : Witness4heContext] : ctx.claim_witness_4He := by
+theorem witness_4He [ctx : Witness4HeContext] : ctx.claim_witness_4He := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -14,7 +14,7 @@ namespace QOU.Descartes.PauliWitness
 
 /-- Abstract context for the `witness_8Be` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class Witness8beContext where
+class Witness8BeContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -53,7 +53,7 @@ relative amplitude than in neighbouring stable nuclei.
     placeholder; the `ctx.claim_witness_8Be : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts
-theorem witness_8Be [ctx : Witness8beContext] : ctx.claim_witness_8Be := by
+theorem witness_8Be [ctx : Witness8BeContext] : ctx.claim_witness_8Be := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

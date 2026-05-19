@@ -31,7 +31,7 @@ class AntiparticleCrossingReversalContext extends QOU.Shared.MarkovTraceContext 
 Let $T_{2,3}$ be the left trefoil (the electron generator) and
 $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

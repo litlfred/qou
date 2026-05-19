@@ -31,7 +31,7 @@ class ExplicitAlphaKH4Context extends QOU.Shared.MarkovTraceContext where
 $\{T_{w_C}\}_C$ canonical Hecke representatives of the $p(4) = 5$
 conjugacy classes of $S_4$:*
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

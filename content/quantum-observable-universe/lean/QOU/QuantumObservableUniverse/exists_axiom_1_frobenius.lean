@@ -28,7 +28,7 @@ equivalently, the pairing $(a, b) \mapsto h(ab)$ is non-degenerate
 and induces an isomorphism $A \xrightarrow{\sim} A^{\vee}$, verifying
 axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts

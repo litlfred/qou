@@ -34,7 +34,7 @@ class BringsIsQouContext where
 Bring's surface $\Sigma_4$ ([Bring's surface](#def\:brings-surface)) gives rise
 to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/

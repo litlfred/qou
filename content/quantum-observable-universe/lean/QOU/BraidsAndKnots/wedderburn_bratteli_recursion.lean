@@ -36,7 +36,7 @@ $\{y_\lambda^{(n)}\}_{\lambda \,\vdash\, n}$ be the Jones–Markov
 weights of [α_k derivation procedure](#prop:alpha-k-derivation-procedure).
 Then the family $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfies a
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
