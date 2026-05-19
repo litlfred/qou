@@ -87,10 +87,12 @@
     },
     {
       "id": "oeis-A006752",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/oeis-A006752.txt",
+      "verified_at": "2026-05-19T06:20:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Numeric data — verify Catalan's constant value match."
+      "note": "QOU literal `catalan_G := 0.91596559417721901505` matches OEIS A006752 b-file digits 0-19 exactly (reconstruct: 0.9159655941772190150547... → first 20 digits 0.91596559417721901505). 1 .lean Ref site cited correctly."
     },
     {
       "id": "mostow1968",
