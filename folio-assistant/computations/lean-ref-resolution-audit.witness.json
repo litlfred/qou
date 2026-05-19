@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T02:44:59.348059+00:00",
-  "commitSha": "c92c9c82cba04187e5a95410c6644dc067e0ff50",
+  "computedAt": "2026-05-19T02:42:51.400368+00:00",
+  "commitSha": "cd74b9ddf8c1167b0ec657b99765e516b1e02f64",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,8 +15,8 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 661.0,
-      "expected": 926.0,
+      "computed": 666.0,
+      "expected": 925.0,
       "passed": false,
       "tolerance": 0.0,
       "unit": "count (gates only at full closure)",
@@ -28,16 +28,16 @@
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
-  "scriptCommitSha": "c92c9c82cba04187e5a95410c6644dc067e0ff50",
+  "scriptCommitSha": "6b08457b3cf71c372fb57dc3ca17d99bd1b11116",
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 926
+    "total_blocks_with_lean_ref": 925
   },
   "data": {
     "by_result": {
-      "ok": 661,
-      "sibling_no_decl": 142,
+      "ok": 666,
+      "sibling_no_decl": 136,
       "grep_no_match": 120,
       "lake_root_missing_grep_hit": 1,
       "sibling_missing": 2
@@ -938,13 +938,17 @@
         "pkg": "qou",
         "decl_path": "QOU.Borromean.MassFormula",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/borromean-baryon.ts",
@@ -1112,18 +1116,22 @@
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/categorical-linking-operation.ts",
-        "ref": "qou:QOU.BraidsAndKnots.categorical_linking_operation",
+        "ref": "qou:QOU.BraidsAndKnots.CategoricalLinkingOperation",
         "kind": "conjecture",
         "pkg": "qou",
-        "decl_path": "QOU.BraidsAndKnots.categorical_linking_operation",
+        "decl_path": "QOU.BraidsAndKnots.CategoricalLinkingOperation",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/categorical-linking-operation.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.ts",
@@ -2107,18 +2115,22 @@
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/dilogarithm-archimedean-limit.ts",
-        "ref": "qou:QOU.QPochhammer.partialProduct_archimedean_limit",
+        "ref": "qou:QOU.QPochhammer.ArchimedeanLimit",
         "kind": "conjecture",
         "pkg": "qou",
-        "decl_path": "QOU.QPochhammer.partialProduct_archimedean_limit",
+        "decl_path": "QOU.QPochhammer.ArchimedeanLimit",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/dilogarithm-archimedean-limit.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/dressed-particle.ts",
@@ -3281,18 +3293,22 @@
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hoefsmit-ew-cell-content.ts",
-        "ref": "qou:QOU.BraidsAndKnots.hoefsmit_ew_cell_content",
+        "ref": "qou:QOU.BraidsAndKnots.HoefsmitEWCellContent",
         "kind": "conjecture",
         "pkg": "qou",
-        "decl_path": "QOU.BraidsAndKnots.hoefsmit_ew_cell_content",
+        "decl_path": "QOU.BraidsAndKnots.HoefsmitEWCellContent",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/hoefsmit-ew-cell-content.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts",
@@ -3982,21 +3998,6 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.BringsSurface.lagrange_resolvent_transform",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.ts",
-        "ref": "qou:QOU.BraidKnot.LambdaScaleSubstrateForm",
-        "kind": "conjecture",
-        "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.LambdaScaleSubstrateForm",
         "sibling_exists": true,
         "sibling_declares": false,
         "lake_root_exists": false,
@@ -6530,18 +6531,22 @@
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/weinberg-angle-categorical.ts",
-        "ref": "qou:QOU.BraidsAndKnots.weinberg_angle_categorical",
+        "ref": "qou:QOU.BraidsAndKnots.WeinbergAngleCategorical",
         "kind": "conjecture",
         "pkg": "qou",
-        "decl_path": "QOU.BraidsAndKnots.weinberg_angle_categorical",
+        "decl_path": "QOU.BraidsAndKnots.WeinbergAngleCategorical",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/weinberg-angle-categorical.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/wenzl-bridge-applicability-qou.ts",
