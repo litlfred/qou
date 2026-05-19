@@ -264,6 +264,186 @@ categorical action. The involution interpretation **supplies the
 magnitude** of the fingerprint ($1/2 = h/2$ at silver ratio); the
 half-fill hypothesis **supplies the rung**.
 
+## Deep dive on $c_5$: where, what, why, and what supplies the $1/2$
+
+### Where $c_5$ appears
+
+$c_5$ enters the framework at **exactly one structural site** — the
+fifth factor in the precision-ladder expansion of $\tau_M(\beta)$
+about $q = 1$:
+
+$$
+\tau_M(\beta) \;=\; \tau_M(\beta)(1) \,\cdot\, \prod_{k \ge 2} \bigl(1 + c_k \, b^k \hbar_q^{2k} \bigr)
+\;\Longrightarrow\;
+1 + c_5 \, b^5 \hbar_q^{10}
+\;\;\;\text{(the rung-5 factor)}.
+$$
+
+From there it propagates to every downstream observable:
+
+| Site | Role of $c_5$ |
+|---|---|
+| [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) | Rung-5 factor $(1 + c_5 b^5 \hbar_q^{10})$ in $\tau_M(\beta_n)/\tau_M(\beta_p)$. |
+| [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic) | Form A's relative-order-$\hbar_q^{10}$ correction to $Q_\beta$. |
+| [`conj-qbeta-c-k-closed-forms`](#conj-qbeta-c-k-closed-forms) | Conjectured closed form $c_5 = -(b^2 + 1/2)$ — the only $c_k$ that does **not** factor through $c_3$ and $b^2$. |
+| `qbeta_decay_sdp_extended_ck.py` (compute infra) | Per-rung extraction; $c_5$ is the unique entry tagged averaging-resonant at silver ratio. |
+
+At the silver ratio $q = 1+\sqrt{2}$ (where $b^2 = 7/8$ exactly):
+
+$$
+c_5(1+\sqrt 2) \;=\; -(7/8 + 1/2) \;=\; -11/8.
+$$
+
+The numerator $11$ is **not** a Pell-Lucas number, not a power of $2$, and
+not $a_n^{\,j} \cdot 2^{\,t}$ for any Pell-Lucas $a_n$ — hence the
+classification as averaging-resonant.
+
+### Math meaning of $c_5$
+
+The $c_k$ are the coefficients in the **log-precision factorization**
+of the Markov trace about $q = 1$:
+
+$$
+\log \frac{\tau_M(\beta)}{\tau_M(\beta)(1)}
+\;=\; \sum_{k \ge 2} \log\bigl(1 + c_k \, b^k \hbar_q^{2k}\bigr)
+\;=\; \sum_{k \ge 2} c_k \, b^k \hbar_q^{2k} \;+\; O(\hbar_q^{4k}).
+$$
+
+So $c_k$ is the **rung-$k$ logarithmic-derivative coefficient** of
+$\tau_M$ as $q$ leaves $1$. Cyclically:
+
+- $c_3$: cubic — first non-trivial rung. Picks up the
+  "$J_{\text{Hopf}}$ at $q=1$" contribution; value $-2$ is a
+  topological invariant of the typed braid's Hopf-link content.
+- $c_4$: quartic. Factors as $c_3 \cdot b^4$ — pure-$\sigma$
+  self-coupling.
+- $c_5$: quintic. Should factor as $(c_3)^a \cdot b^{2c}$ if
+  pure-$\sigma$, but the empirical form $-(b^2 + 1/2)$ has an
+  explicit **additive $-1/2$ term** that does not come from any
+  product of $c_3$ and $b^2$.
+- $c_6, c_7, c_8, c_9, c_{10}$: all factor as $(c_3)^a \cdot b^{2c}$
+  cleanly. They are monomials in $c_3$ and $b^2$ with integer
+  exponents.
+
+So the math distinction: $c_5$ is the only $c_k$ (in $k = 3..10$)
+that is **not** a monomial in $c_3$ and $b^2$. The extra $-1/2$ is
+the algebraic fingerprint of the averaging-resonance.
+
+### Physics meaning of $c_5$
+
+Inserting the precision ladder into Form A's $Q_\beta$ prediction:
+
+$$
+Q_\beta \;=\; Q_A \cdot \cos\bigl(\alpha - b\hbar_q^2/2\bigr) \cdot \prod_{k \ge 2}\bigl(1 + c_k b^k \hbar_q^{2k}\bigr).
+$$
+
+The rung-$5$ factor $1 + c_5 b^5 \hbar_q^{10}$ shifts $Q_\beta$ at
+relative order $\hbar_q^{10} \approx (q_0-1)^{10}/q_0^{10}$.
+Numerically at $q_0 \approx 1.110$:
+
+$$
+b^5 \hbar_q^{10} \;\approx\; 0.868^5 \cdot 0.00982^5 \;\approx\; 4.4 \cdot 10^{-12}.
+$$
+
+So $c_5$ contributes a sub-parts-per-trillion correction to the
+neutron $Q_\beta$ — well below experimental sensitivity. Its
+**structural significance** is much larger than its **numerical**
+contribution:
+
+1. **Bar-invariance signal**: the $-1/2$ is the *only* place in the
+   $k = 3..10$ ladder where the Markov trace picks up a
+   categorically-bar-invariant piece (the projection
+   $P_{\mathrm{avg}} = (1 + \overline{\,\cdot\,})/2$). All other
+   rungs are pure-$\sigma$ eigenvalue monomials.
+2. **Half-fill cyclicity**: the $1/2$ surfaces specifically at the
+   rung where a $k$-fold cyclic substructure covers exactly half
+   the typed braid (§Why $k = 5$ specifically). Half-fill is the
+   unique configuration that captures both averaged crossings
+   without overlap-washing.
+3. **Falsifiability anchor**: $c_5$ is the *one* observable in the
+   precision ladder that **cannot** be predicted from $c_3$ alone.
+   A categorical derivation of the level-selection rule must
+   reproduce $-1/2$ exactly — that is the discriminating data
+   point.
+
+### Why $c_5$ specifically — what supplies the $1/2$
+
+Three layers of explanation, in order of specificity:
+
+1. **Involution (supplies the *magnitude*, $1/2$)**. The typed
+   braid recipe uses averaged crossings
+   $\sigma_{\mathrm{avg}} = P_{\mathrm{avg}}(\sigma) = (\sigma + \sigma^{-1})/2 = \sigma - h/2$.
+   The single-crossing $h/2$ propagates through the Markov-trace
+   expansion as a $1/2$ coefficient in the rung that picks it up.
+   But involution does **not** pick the rung — naive propagation
+   makes *every* rung with averaged-crossing coverage inherit
+   $1/2$, which is the falsified argmax-binomial heuristic.
+
+2. **Half-fill cyclicity (supplies the *rung*, $k = 5$)**. For
+   $n_{\text{total}} = 11$, the rung
+   $k = \lfloor n_{\text{total}}/2 \rfloor = 5$ is the unique $k$
+   where a $k$-fold cyclic substructure captures both averaged
+   crossings exactly once (no double-cover, no leftover-tail
+   dilution). At $k < 5$ at most one averaged crossing is inside
+   any $k$-fold substructure (low-$m$ substructures dominate
+   combinatorially); at $k > 5$ both averaged crossings are forced
+   inside but accompanied by enough pure-$\sigma$ tail that the
+   $1/2$ is overwhelmed.
+
+3. **Markov-trace cyclicity (supplies the *uniqueness*)**. The
+   closure constraint $\tau_M(xy) = \tau_M(yx)$ collapses naive
+   substructure counts into a cyclic-orbit count. Half-fill rungs
+   sit at the cyclic-orbit minimum where each orbit covers each
+   averaged crossing exactly once. Lower or higher $k$ produces
+   orbits that either miss an averaged crossing or double-cover
+   one — both wash the $1/2$.
+
+The proposed formula is a **layered prediction**:
+
+$$
+\boxed{\;\;
+\text{averaging-resonant at }k \;\iff\; k = \lfloor n_{\text{total}}/2 \rfloor
+\;\;\text{and}\;\; n_{\mathrm{avg}} \ge 2.
+\;\;}
+$$
+
+(With $n_{\mathrm{avg}} \in \{0, 1\}$ no averaging fingerprint surfaces
+at any rung.)
+
+### What "involution + $X$" produces $c_5 = -(b^2 + 1/2)$?
+
+The shortest decomposition consistent with the three layers:
+
+$$
+c_5 \;=\; \underbrace{\bigl(c_3 / 2\bigr) \cdot b^2}_{\text{pure-}\sigma,\;\text{half-fill}}
+\;+\; \underbrace{\bigl(c_3 / 4\bigr) \cdot P_{\mathrm{avg}}^{(2)}}_{\text{involution}^2,\;\text{half-fill}}
+\;=\; \underbrace{(-1) \cdot b^2}_{-b^2}
+\;+\; \underbrace{(-1/2) \cdot 1}_{-1/2}.
+$$
+
+Reading the terms:
+
+- $(c_3/2)\cdot b^2 = -b^2$: at half-fill, the pure-$\sigma$
+  contribution carries a cyclic-orbit factor of $1/2$ on $c_3$;
+  multiplied by the rung's $b^2$ companion gives $-b^2$.
+- $(c_3/4)\cdot P_{\mathrm{avg}}^{(2)} = -1/2$: the
+  $P_{\mathrm{avg}}^{(2)} = 1$ is the trivial bar-invariant
+  scalar; the $c_3/4 = -1/2$ packages a half-fill $1/2$ with the
+  involution $1/2$ ($P_{\mathrm{avg}}^2 = P_{\mathrm{avg}}/2$ in
+  the symmetric-projector calculus).
+
+Both terms carry an explicit $1/2$ from half-fill cyclicity, but
+only the second carries the **additional** $1/2$ from $P_{\mathrm{avg}}$.
+That double-$1/2$ structure is what makes the $-1/2$ irreducible
+— it does not factor through any product of $c_3$ and $b^2$ with
+integer exponents.
+
+This decomposition is a **working recipe**, not a categorical
+derivation. The categorical proof requires showing that half-fill
+cyclicity uniquely produces a bar-invariant fixed-point
+contribution at $k = \lfloor n_{\text{total}}/2 \rfloor$. That is
+the open R&D item.
+
 ## Honest assessment
 
 The averaging-resonance phenomenon is **real** and observed at the
