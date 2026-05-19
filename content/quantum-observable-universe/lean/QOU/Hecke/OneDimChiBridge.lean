@@ -135,7 +135,7 @@ theorem one_dim_factors_per_generator
   -- (Finset.prod_fiberwise name + argument order has shifted across
   -- Mathlib versions).  Full inline proof: `docs/audits/2026-05-09-
   -- kite-tail-reconciliation.md` § "Proof".
-  -- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
   one_dim_factors_per_generator_axiom φ s f i_idx cd h_form
 
 /-- **External axiom (Ocneanu 1985; Jones 1987; Wenzl 1988): 1-dim
@@ -144,7 +144,7 @@ theorem one_dim_factors_per_generator
     proof is mechanical (multiplicativity + per-term linear-form
     evaluation + regrouping by `i_idx`) but the regrouping step's
     exact form depends on the Mathlib API at the call site. -/
--- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
 axiom one_dim_factors_per_generator_axiom :
     ∀ {R : Type u} {n : ℕ} {q : R} {A : Type u}

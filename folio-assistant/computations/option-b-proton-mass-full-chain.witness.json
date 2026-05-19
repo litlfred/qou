@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T23:19:12.614032+00:00",
-  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
+  "computedAt": "2026-05-19T03:44:51.991275+00:00",
+  "commitSha": "a3ca4764f809a423fd0e7e970400ab5e71320091",
   "assertions": [
     {
       "name": "tr_M_proton_is_rational_in_sqrt_q",
@@ -31,11 +31,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 152,
+  "durationMs": 181,
   "computation": "option-b-proton-mass-full-chain",
   "scriptFile": "option_b_proton_mass_full_chain.py",
-  "scriptHash": "fa213b6c2265",
-  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "scriptHash": "a53dc02e2188",
+  "scriptCommitSha": "a3ca4764f809a423fd0e7e970400ab5e71320091",
   "description": "Phase 1.6 of the 1ppb plan — Option B from the m_e-anomaly audit.  Full derivation of tr_M(σ_1^7 σ_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters χ^λ(β), (D) Markov-axiom y_λ(q), (E) γγ pair-production reduction at every σ-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / §LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
   "parameters": {
@@ -272,24 +272,21 @@
               "site": "electron-aggregate-1-γγ",
               "feasible": true,
               "x_star": [
-                0.5000000140546319,
-                0.5000000140545963
+                0.5000000140546316,
+                0.5000000140545966
               ],
               "y0_star": 0.9999999627956595,
               "y_star": [
-                0.5000000140546319,
-                0.5000000140545963
+                0.0,
+                0.0
               ],
-              "active_set": [
-                0,
-                1
-              ],
+              "active_set": [],
               "primal_obj": 1.0000000281092283,
               "dual_obj": 0.9999999627956595,
               "duality_gap": 6.531356877559347e-08,
               "eigenvalues": [
-                0.5000000140545963,
-                0.5000000140546319
+                0.5000000140545966,
+                0.5000000140546316
               ],
               "strong_duality_holds": true
             },
@@ -297,28 +294,24 @@
               "site": "proton-aggregate-5-γγ",
               "feasible": true,
               "x_star": [
-                1.6666666873305025,
-                1.6666666873304778,
-                1.6666666873304778
+                1.6666666873305023,
+                1.666666687330478,
+                1.666666687330478
               ],
-              "y0_star": 0.9999998060098465,
+              "y0_star": 0.9999998060098461,
               "y_star": [
-                1.6666666873305025,
-                1.6666666873304778,
-                1.6666666873304778
+                0.0,
+                0.0,
+                0.0
               ],
-              "active_set": [
-                0,
-                1,
-                2
-              ],
+              "active_set": [],
               "primal_obj": 5.000000061991458,
-              "dual_obj": 4.999999030049232,
-              "duality_gap": 1.03194222589309e-06,
+              "dual_obj": 4.9999990300492305,
+              "duality_gap": 1.0319422276694468e-06,
               "eigenvalues": [
-                1.6666666873304778,
-                1.6666666873304778,
-                1.6666666873305025
+                1.666666687330478,
+                1.666666687330478,
+                1.6666666873305023
               ],
               "strong_duality_holds": false
             }

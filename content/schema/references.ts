@@ -3694,20 +3694,6 @@ export const references: CSLData[] = [
   //   as-is so the validator resolves without per-file .lean rewrites).
 
   ref({
-    id: "BoydVandenberghe2004",
-    type: "book",
-    title: "Convex Optimization",
-    author: [
-      { family: "Boyd", given: "Stephen" },
-      { family: "Vandenberghe", given: "Lieven" },
-    ],
-    issued: { "date-parts": [[2004]] },
-    publisher: "Cambridge University Press",
-    "publisher-place": "Cambridge",
-    ISBN: "9780521833783",
-  }),
-
-  ref({
     id: "horn-johnson-2013",
     type: "book",
     title: "Matrix Analysis",
@@ -3739,31 +3725,6 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "kassel1995quantum",
-    type: "book",
-    title: "Quantum Groups",
-    author: [{ family: "Kassel", given: "Christian" }],
-    issued: { "date-parts": [[1995]] },
-    publisher: "Springer",
-    "publisher-place": "New York",
-    "collection-title": "Graduate Texts in Mathematics",
-    "collection-number": "155",
-    ISBN: "9780387943701",
-  }),
-
-  ref({
-    id: "jones1987hecke",
-    type: "article-journal",
-    title: "Hecke algebra representations of braid groups and link polynomials",
-    author: [{ family: "Jones", given: "V. F. R." }],
-    "container-title": "Annals of Mathematics",
-    issued: { "date-parts": [[1987]] },
-    volume: "126",
-    issue: "2",
-    page: "335-388",
-  }),
-
-  ref({
     id: "murphy1981",
     type: "article-journal",
     title: "A new construction of Young's seminormal representation of the symmetric groups",
@@ -3774,19 +3735,6 @@ export const references: CSLData[] = [
     issue: "2",
     page: "287-297",
     DOI: "10.1016/0021-8693(81)90205-2",
-  }),
-
-  ref({
-    id: "Wenzl1988",
-    type: "article-journal",
-    title: "Hecke algebras of type An and subfactors",
-    author: [{ family: "Wenzl", given: "Hans" }],
-    "container-title": "Inventiones mathematicae",
-    issued: { "date-parts": [[1988]] },
-    volume: "92",
-    issue: "2",
-    page: "349-384",
-    DOI: "10.1007/BF01404457",
   }),
 
   ref({
@@ -3814,6 +3762,7 @@ export const references: CSLData[] = [
     publisher: "The University of Chicago Press",
     "publisher-place": "Chicago",
     ISBN: "9780226870335",
+    DOI: "10.7208/chicago/9780226870373.001.0001",
   }),
 
   ref({
@@ -3830,6 +3779,7 @@ export const references: CSLData[] = [
     publisher: "Wiley-Interscience",
     "collection-title": "Wiley Classics Library",
     ISBN: "9780471157335",
+    DOI: "10.1002/9780470316559",
   }),
 
   ref({
@@ -3841,6 +3791,7 @@ export const references: CSLData[] = [
     publisher: "Addison-Wesley",
     "publisher-place": "Reading, Massachusetts",
     ISBN: "9780201100969",
+    DOI: "10.1007/978-1-4684-0148-7",
   }),
 
   ref({
@@ -3980,6 +3931,7 @@ export const references: CSLData[] = [
     volume: "9",
     issue: "5",
     page: "427-434",
+    DOI: "10.1142/S0217732394002446",
   }),
 
   ref({
