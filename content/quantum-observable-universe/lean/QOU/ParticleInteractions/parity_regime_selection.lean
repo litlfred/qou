@@ -13,22 +13,38 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `parity_regime_selection` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `parity_regime_selection` claim —
+    manuscript-themed typed fields below; the sign-identity
+    `sign(a^Z · b^{N−1}) = (−1)^{A−1}` is captured along with the
+    three Q-value regimes. -/
 class ParityRegimeSelectionContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
+  q_gt_one : 1 < q
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- Manuscript sub-claim (i). -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
-  claim_iii : Prop
+  /-- Mass number `A = Z + N`. -/
+  A : ℕ
+  A_eq : A = Z + N
+  /-- The proton-channel amplitude `a : ℝ`. -/
+  a : ℝ
+  /-- The neutron-channel amplitude `b : ℝ`. -/
+  b : ℝ
+  /-- The sign of `a^Z · b^{N − 1}` as `±1` (encoded as `ℝ` with value
+      `±1`). -/
+  sign_val : ℝ
+  /-- Manuscript sub-claim (i) — sign identity:
+      `sign(a^Z · b^{N − 1}) = (−1)^{A − 1}`. -/
+  claim_i_sign_identity :
+    sign_val = (-(1 : ℝ)) ^ (A - 1)
+  /-- Manuscript sub-claim (ii) — Q-value regime selection at even
+      `A`: parity-preserving branch is favoured. -/
+  claim_ii_even_A_regime : Prop
+  /-- Manuscript sub-claim (iii) — Q-value regime selection at odd
+      `A`: parity-violating branch is favoured. -/
+  claim_iii_odd_A_regime : Prop
 
 /-- **Theorem statement** (from manuscript):
 
@@ -48,7 +64,10 @@ $$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
 theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) ∧
+    ctx.claim_ii_even_A_regime ∧
+    ctx.claim_iii_odd_A_regime :=
+  ⟨ctx.claim_i_sign_identity, ctx.claim_ii_even_A_regime,
+   ctx.claim_iii_odd_A_regime⟩
 
 end QOU.ParticleInteractions

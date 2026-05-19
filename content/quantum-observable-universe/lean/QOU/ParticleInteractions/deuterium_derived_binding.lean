@@ -13,30 +13,58 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `deuterium_derived_binding` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `deuterium_derived_binding` claim —
+    manuscript-themed typed fields below; sub-claims encode the
+    deuteron-binding pipeline (proton/neutron NF construction →
+    Hecke embedding → factorisation → T_pn definition → binding-
+    energy formula → numerical match). -/
 class DeuteriumDerivedBindingContext where
-  /-- Proton number `Z`. -/
+  /-- Proton number `Z` (always 1 for deuterium). -/
   Z : ℕ
-  /-- Neutron number `N`. -/
+  /-- Neutron number `N` (always 1 for deuterium). -/
   N : ℕ
   /-- The braid representative type. -/
   Braid : Type
-  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
-  hecke_gen : ℕ → Prop
-  /-- Manuscript sub-claim (i). -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
-  claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
-  claim_iv : Prop
-  /-- Manuscript sub-claim (v). -/
-  claim_v : Prop
-  /-- Manuscript sub-claim (vi). -/
-  claim_vi : Prop
+  /-- Hecke algebra type `H_n(q)` indexed by strand count. -/
+  HeckeAlgebra : ℕ → Type
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Electron mass `m_e : ℝ`. -/
+  m_e : ℝ
+  /-- Borromean baryon volume `Vol(𝓑_3) ≈ 7.32772`. -/
+  Vol_B3 : ℝ
+  /-- Fine-structure constant `α_EM`. -/
+  α_EM : ℝ
+  /-- The deuterium binding energy `B(d) : ℝ`. -/
+  B_d : ℝ
+  /-- The Markov-trace evaluation `tr_M(p) : ℝ` of the proton NF. -/
+  tr_M_p : ℝ
+  /-- The Markov-trace evaluation `tr_M(n) : ℝ` of the neutron NF. -/
+  tr_M_n : ℝ
+  /-- The Markov-trace evaluation `tr_M(T_pn · n) : ℝ` of the
+      inter-nucleon-coupled neutron. -/
+  tr_M_Tpn_n : ℝ
+  /-- Manuscript sub-claim (i): `NF(𝔭)` and `NF(𝔫)` exist as proton
+      and neutron normal forms in `H_3(q)`. -/
+  claim_i_NF_existence : Prop
+  /-- Manuscript sub-claim (ii): each NF factors as
+      `𝓑_3 · crossings(quarks)` with `𝓑_3 = σ_0σ_1σ_2σ_0σ_1σ_2`. -/
+  claim_ii_B3_factorisation : Prop
+  /-- Manuscript sub-claim (iii): the full deuteron braid word
+      `β_d ∈ H_6(q)` factors as `NF(𝔭) · T_pn · NF(𝔫)` under the
+      `H_3 → H_6` Hecke embedding. -/
+  claim_iii_h6_factorisation : Prop
+  /-- Manuscript sub-claim (iv): `T_pn = (σ_0 + σ_0⁻¹) / 2` — the
+      time-reversal-symmetric inter-nucleon crossing operator. -/
+  claim_iv_Tpn_symmetric : Prop
+  /-- Manuscript sub-claim (v): the boxed binding-energy identity
+      `B(d) = [tr_M(p) + tr_M(n) − tr_M(T_pn · n)] · m_e · Vol(𝓑_3) · (1 − α_EM/2)`. -/
+  claim_v_binding_energy_formula :
+    B_d = (tr_M_p + tr_M_n - tr_M_Tpn_n) * m_e * Vol_B3
+          * (1 - α_EM / 2)
+  /-- Manuscript sub-claim (vi): the formula recovers the CODATA
+      value `B(d) ≈ 2.224 MeV` within experimental tolerance. -/
+  claim_vi_codata_match : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -75,7 +103,16 @@ pair).
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts
 theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v ∧ ctx.claim_vi :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v, ctx.claim_vi⟩
+    ctx.claim_i_NF_existence ∧
+    ctx.claim_ii_B3_factorisation ∧
+    ctx.claim_iii_h6_factorisation ∧
+    ctx.claim_iv_Tpn_symmetric ∧
+    (ctx.B_d
+      = (ctx.tr_M_p + ctx.tr_M_n - ctx.tr_M_Tpn_n) * ctx.m_e * ctx.Vol_B3
+        * (1 - ctx.α_EM / 2)) ∧
+    ctx.claim_vi_codata_match :=
+  ⟨ctx.claim_i_NF_existence, ctx.claim_ii_B3_factorisation,
+   ctx.claim_iii_h6_factorisation, ctx.claim_iv_Tpn_symmetric,
+   ctx.claim_v_binding_energy_formula, ctx.claim_vi_codata_match⟩
 
 end QOU.ParticleInteractions

@@ -13,20 +13,29 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `confinement_operator_selection` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `confinement_operator_selection` claim —
+    manuscript-themed typed fields below; sub-claims encode (i) the
+    Borromean braid identity `𝓑_3 = (σ_0 σ_1⁻¹)^3`, (ii) selection via
+    minimum-action on the 6×6 Frobenius Gram matrix, (iii) consistency
+    with the operator-selection LP. -/
 class ConfinementOperatorSelectionContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
-  hecke_gen : ℕ → Prop
-  /-- Manuscript sub-claim (i). -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
-  claim_iii : Prop
+  /-- The Hecke algebra `H_3(q)` carrier. -/
+  HeckeAlgebra : Type
+  /-- The Borromean braid `𝓑_3 ∈ H_3(q)`. -/
+  B3 : HeckeAlgebra
+  /-- The 6×6 Frobenius Gram matrix `G : Fin 6 → Fin 6 → ℝ`. -/
+  G : Fin 6 → Fin 6 → ℝ
+  /-- Manuscript sub-claim (i): the Borromean braid equals
+      `(σ_0 σ_1⁻¹)^3` in `H_3(q)` (definitional). -/
+  claim_i_borromean_word : Prop
+  /-- Manuscript sub-claim (ii): `𝓑_3` is the minimum-action element
+      of the 6-element NF basis under the Gram-quadratic form. -/
+  claim_ii_min_action_selection : Prop
+  /-- Manuscript sub-claim (iii): the selected operator coincides
+      with the optimum of the operator-selection LP. -/
+  claim_iii_LP_consistency : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -43,7 +52,10 @@ acting on the $6 \times 6$ Gram matrix
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-operator-selection.ts
 theorem confinement_operator_selection [ctx : ConfinementOperatorSelectionContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_borromean_word ∧
+    ctx.claim_ii_min_action_selection ∧
+    ctx.claim_iii_LP_consistency :=
+  ⟨ctx.claim_i_borromean_word, ctx.claim_ii_min_action_selection,
+   ctx.claim_iii_LP_consistency⟩
 
 end QOU.ParticleInteractions

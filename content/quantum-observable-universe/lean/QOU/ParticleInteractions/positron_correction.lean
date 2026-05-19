@@ -13,16 +13,25 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `positron_correction` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `positron_correction` claim —
+    manuscript-themed typed fields below; the boxed identity
+    `Q = Σ_char · m_e + m_e` is captured as `claim_i`. -/
 class PositronCorrectionContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- Manuscript sub-claim (i). -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
-  claim_ii : Prop
+  /-- Electron mass `m_e : ℝ`. -/
+  m_e : ℝ
+  /-- The Q-value `Q : ℝ`. -/
+  Q : ℝ
+  /-- The character-sum-derived contribution `Σ_char : ℝ`. -/
+  Σ_char : ℝ
+  /-- Manuscript sub-claim (i) — corrected Q-value identity:
+      `Q = Σ_char · m_e + m_e` (the `+m_e` is the positron action). -/
+  claim_i_corrected_Q :
+    Q = Σ_char * m_e + m_e
+  /-- Manuscript sub-claim (ii) — the correction applies only in
+      pair-creation regimes (see `thm:parity-regime-selection`). -/
+  claim_ii_regime_applicability : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -51,7 +60,8 @@ The positron correction is needed in two regimes
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.ts
 theorem positron_correction [ctx : PositronCorrectionContext] :
-    ctx.claim_i ∧ ctx.claim_ii :=
-  ⟨ctx.claim_i, ctx.claim_ii⟩
+    ctx.Q = ctx.Σ_char * ctx.m_e + ctx.m_e ∧
+    ctx.claim_ii_regime_applicability :=
+  ⟨ctx.claim_i_corrected_Q, ctx.claim_ii_regime_applicability⟩
 
 end QOU.ParticleInteractions

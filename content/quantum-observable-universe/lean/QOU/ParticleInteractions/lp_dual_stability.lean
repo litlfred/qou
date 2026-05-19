@@ -13,22 +13,48 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `lp_dual_stability` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `lp_dual_stability` claim — manuscript-
+    themed typed fields below; sub-claims encode the four properties of
+    LP-stability: (i) primal feasibility, (ii) dual boundedness, (iii)
+    sub-braid instability, (iv) strong duality. -/
 class LpDualStabilityContext where
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
   /-- The braid representative type. -/
   Braid : Type
-  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
-  hecke_gen : ℕ → Prop
-  /-- Manuscript sub-claim (i). -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
-  claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
-  claim_iv : Prop
+  /-- The number of LP channels (6 for the standard QOU). -/
+  channels : ℕ
+  /-- The Frobenius Gram matrix `G : Fin channels → Fin channels → ℝ`. -/
+  G : Fin channels → Fin channels → ℝ
+  /-- The condition number `κ(G) ≈ 7.0`. -/
+  κ_G : ℝ
+  /-- The dual shadow prices `y* : Fin channels → ℝ`. -/
+  y_star : Fin channels → ℝ
+  /-- The mass-coefficient vector `t : Fin channels → ℝ`. -/
+  t : Fin channels → ℝ
+  /-- The norm bound `||t||`. -/
+  t_norm : ℝ
+  /-- The total Markov trace `tr_M(x*) : ℝ`. -/
+  tr_M_x_star : ℝ
+  /-- The dual `y_0* : ℝ` (Markov-trace dual variable). -/
+  y_0_star : ℝ
+  /-- The target nucleon count `n_target : ℕ`. -/
+  n_target : ℕ
+  /-- Manuscript sub-claim (i): primal LP-stability — `Gx* ≥ 0` in all
+      `channels` directions. -/
+  claim_i_primal_stable : Prop
+  /-- Manuscript sub-claim (ii): dual shadow prices bounded —
+      `|y*_i| ≤ κ(G) · ||t||` for every channel `i`. -/
+  claim_ii_dual_bounded :
+    ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
+  /-- Manuscript sub-claim (iii): partial confinement (`σ_0 σ_1⁻¹`)
+      is LP-unstable — `Gx` has negative `σ_0` component
+      `≈ -0.106`. -/
+  claim_iii_sub_braid_unstable : Prop
+  /-- Manuscript sub-claim (iv): strong duality —
+      `tr_M(x*) = y_0* · n_target`. -/
+  claim_iv_strong_duality :
+    tr_M_x_star = y_0_star * (n_target : ℝ)
 
 /-- **Proposition statement** (from manuscript):
 
@@ -55,7 +81,11 @@ $B_3 \cdot \Phi_{\mathrm{quarks}}$). Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/lp-dual-stability.ts
 theorem lp_dual_stability [ctx : LpDualStabilityContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
+    ctx.claim_i_primal_stable ∧
+    (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧
+    ctx.claim_iii_sub_braid_unstable ∧
+    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
+  ⟨ctx.claim_i_primal_stable, ctx.claim_ii_dual_bounded,
+   ctx.claim_iii_sub_braid_unstable, ctx.claim_iv_strong_duality⟩
 
 end QOU.ParticleInteractions

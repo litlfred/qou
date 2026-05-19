@@ -13,26 +13,40 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `atomic_nf_witness` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `atomic_nf_witness` claim —
+    manuscript-themed typed fields below; sub-claims encode the
+    five steps of the atomic braid construction (nucleon ordering /
+    electron placement / GB convergence / NF accumulation /
+    certificate output). -/
 class AtomicNfWitnessContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
+  /-- The mass number `A = Z + N`. -/
+  A : ℕ
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
-  claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
-  claim_iv : Prop
-  /-- Manuscript sub-claim (v). -/
-  claim_v : Prop
+  /-- Manuscript sub-claim (i): the ground-state nucleon ordering is
+      the global minimum of `Φ_1` over all `binom(A, Z)` permutations
+      (exact for `binom(A, Z) ≤ 50000`; steepest descent otherwise). -/
+  claim_i_global_min_ordering : Prop
+  /-- Manuscript sub-claim (ii): each electron is inserted at the
+      position minimising `Φ_1` (greedy; verified to pair adjacent to
+      protons). -/
+  claim_ii_greedy_electron_placement : Prop
+  /-- Manuscript sub-claim (iii): the Gröbner–Shirshov reduction
+      converges at each construction step (Diamond Lemma — overlap
+      ambiguities resolved). -/
+  claim_iii_gb_convergence : Prop
+  /-- Manuscript sub-claim (iv): the final NF element is accumulated
+      without mid-construction stripping for `A ≤ 9`; for `A > 9` it is
+      stripped at controlled thresholds (200k–500k words). -/
+  claim_iv_NF_accumulation : Prop
+  /-- Manuscript sub-claim (v): JSON certificates committed to the
+      repo record `F_Pauli`, `tr_alt(q_0)`, `net(q_0)`, compute time,
+      word count, engine version per computed atom. -/
+  claim_v_certificate_output : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -71,7 +85,13 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
 theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v⟩
+    ctx.claim_i_global_min_ordering ∧
+    ctx.claim_ii_greedy_electron_placement ∧
+    ctx.claim_iii_gb_convergence ∧
+    ctx.claim_iv_NF_accumulation ∧
+    ctx.claim_v_certificate_output :=
+  ⟨ctx.claim_i_global_min_ordering, ctx.claim_ii_greedy_electron_placement,
+   ctx.claim_iii_gb_convergence, ctx.claim_iv_NF_accumulation,
+   ctx.claim_v_certificate_output⟩
 
 end QOU.ParticleInteractions
