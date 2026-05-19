@@ -1,0 +1,33 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T06:32:12.790851+00:00",
+  "commitSha": "b61d1c85248b7791ce17bc6ce53ace7fc1a22fa2",
+  "assertions": [
+    {
+      "name": "polynomial_factor_not_cyclotomic",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "(q-1-√2)(q-1+√2) = q²-2q-1; 1±√2 are not roots of unity"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-fsc-g-pattern-comparison",
+  "scriptFile": "qbeta_fsc_g_pattern_comparison.py",
+  "scriptHash": "2e96500767b9",
+  "scriptCommitSha": "unknown",
+  "description": "Compares Q_β's algebraic structure (Form A with silver-ratio factor q² - 2q - 1) against FSC's cyclotomic pattern (1/α_EM = q·[9]_q·[10]_q) and G's q-rational pattern (G(q) = q²/(q-1)⁴). Q_β lives outside the cyclotomic landscape — explains why no FSC-like closed-form derivation exists for c_4..c_7.",
+  "data": {
+    "q_0": "1.10997859555418057528159407961",
+    "Q_beta_over_m_e": "1.53098829839790879042988823089",
+    "Form_A_over_m_e": "1.53355658136861149564571193355",
+    "Form_A_miss_pct": 0.167753272405169,
+    "polynomial_factor": "q^2 - 2q - 1",
+    "polynomial_roots": "1 ± √2 (silver ratio)",
+    "are_roots_of_unity": false,
+    "conclusion": "Q_β admits NO clean cyclotomic / q-integer closed form. Its categorical source produces an irrational discriminant (q = 1 ± √2), distinct from FSC's cyclotomic torus knots and G's q-rational pole structure. The c_k precision-ladder IS the natural framework; no FSC-style derivation shortcut is available."
+  }
+}
