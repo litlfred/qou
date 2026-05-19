@@ -99,3 +99,39 @@ by every in-flight branch's next `/watch` or `/coordinate` cycle
 without manual announcement. The cost-saving target is sibling-PR
 review churn caused by branches that didn't know a relevant new
 infrastructure had landed.
+
+## Round 3 — PostToolUse coordination hook execution (2026-05-19 T18:57Z)
+
+Executed coordination workflow for PR #823 after `git push` completed:
+
+**Review comment triage on #823:**
+
+| Issue | Verdict | Resolution |
+|-------|---------|------------|
+| Inconsistent `readFileSync` vs `readLines` (outdated) | accept | Fixed in `ce446f9d` via `readSource()` helper |
+| Comment/code mismatch on hedge-token threshold (current) | reject-with-reason | No discrepancy — JSDoc §L317 says ≥3 distinct tokens; code §L371 checks `>= 3`; both aligned |
+
+Posted consolidated status comment on #823:
+[#issuecomment-4491051719](https://github.com/litlfred/qou/pull/823#issuecomment-4491051719)
+
+**Sibling PR classification + coordination comments confirmation:**
+
+| PR | Status | Comment link |
+|----|--------|------------|
+| #820 (bib verification) | overlap-content | [#issuecomment-4490122558](https://github.com/litlfred/qou/pull/820#issuecomment-4490122558) + [#issuecomment-4490469971](https://github.com/litlfred/qou/pull/820#issuecomment-4490469971) |
+| #806 (188 Lean canonicals) | overlap-content | [#issuecomment-4490123664](https://github.com/litlfred/qou/pull/806#issuecomment-4490123664) + [#issuecomment-4490471321](https://github.com/litlfred/qou/pull/806#issuecomment-4490471321) |
+| #738 (story coherence) | dependency-possible | [#issuecomment-4490124827](https://github.com/litlfred/qou/pull/738#issuecomment-4490124827) + [#issuecomment-4490472275](https://github.com/litlfred/qou/pull/738#issuecomment-4490472275) |
+| #807 (P33/P34 patterns) | infra-mirror | [#issuecomment-4490125949](https://github.com/litlfred/qou/pull/807#issuecomment-4490125949) + [#issuecomment-4490473244](https://github.com/litlfred/qou/pull/807#issuecomment-4490473244) |
+
+**Upstream status:**
+
+- `origin/main` is 0 commits ahead; no drift to manage.
+- No new sibling PRs opened mid-session requiring scope review.
+- Review comments on #823 resolved (both threads addressed in consolidated comment).
+
+**Next pending work (on #823 branch or follow-up):**
+
+1. Await Gemini / Copilot review on #823 (heuristic-checker correctness).
+2. Triage sibling responses to coordination comments (currently: answers pending from #738, #807; #820, #806 active with crosslinks).
+3. Once critical findings on #823 are near-zero, flip `qa-sweep.yml` job from warn-only → strict.
+4. Start watcher in idle-sweep mode (`/integration-watch one-voice`).
