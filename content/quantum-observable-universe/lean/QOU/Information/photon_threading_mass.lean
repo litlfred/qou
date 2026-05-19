@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.Information.photon_threading_mass — placeholder stub
 
@@ -17,16 +19,19 @@ namespace QOU.Information
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class PhotonThreadingMassContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
-  hecke_gen : ℕ → Prop
-  /-- Manuscript sub-claim (i) — Start. -/
-  claim_i_start : Prop
-  /-- Manuscript sub-claim (ii) — Thread. -/
-  claim_ii_thread : Prop
-  /-- Manuscript sub-claim (iii) — End. -/
-  claim_iii_end : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Categorical mass `m_𝔋` of the hadron. -/
+  m_H : ℝ
+  /-- The Hecke-reduction step coefficients `|c_w|` indexed by step. -/
+  c_w_abs : ℕ → ℝ
+  /-- Number of Hecke reduction steps required for photon threading. -/
+  n_steps : ℕ
+  /-- Manuscript sub-claim — Mass identity:
+      `m_𝔋 = (q − 1)² · |q − q⁻¹| · Σ_w |c_w|`. -/
+  claim_photon_threading_mass :
+    m_H = (q - 1) ^ 2 * |q - q⁻¹| *
+      (Finset.range n_steps).sum (fun i => c_w_abs i)
 
 /-- **Proposition statement** (from manuscript):
 
@@ -54,7 +59,8 @@ $c_w$ are the coefficients at each step.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
 theorem photon_threading_mass [ctx : PhotonThreadingMassContext] :
-    ctx.claim_i_start ∧ ctx.claim_ii_thread ∧ ctx.claim_iii_end :=
-  ⟨ctx.claim_i_start, ctx.claim_ii_thread, ctx.claim_iii_end⟩
+    ctx.m_H = (ctx.q - 1) ^ 2 * |ctx.q - ctx.q⁻¹| *
+      (Finset.range ctx.n_steps).sum (fun i => ctx.c_w_abs i) :=
+  ctx.claim_photon_threading_mass
 
 end QOU.Information
