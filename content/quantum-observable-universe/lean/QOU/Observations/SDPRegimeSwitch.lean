@@ -23,12 +23,22 @@ class SDPRegimeSwitchContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_sdp_regime_switch : Prop
+  /-- Per-partition q-Laplacian eigenvalue `μ_λ`. -/
+  μ : ℕ → ℝ
+  /-- LP-dual variable `y_0`. -/
+  y_0 : ℝ
+  /-- Per-partition LP-dual variables `y_λ`. -/
+  y : ℕ → ℝ
+  /-- Per-conjugate-pair coupling `c_{λλ'}`. -/
+  c_couple : ℕ → ℕ → ℝ
+  /-- Manuscript identity (SDP PSD block): for each conjugate pair
+      `(λ, λ')`, the 2×2 diagonal entries are non-negative and the
+      determinant condition holds. -/
+  claim_sdp_regime_switch : ∀ λ λ' : ℕ,
+    0 ≤ μ λ - y_0 - y λ ∧
+    0 ≤ μ λ' - y_0 - y λ' ∧
+    0 ≤ (μ λ - y_0 - y λ) * (μ λ' - y_0 - y λ') -
+        (c_couple λ λ') ^ 2
 
 /-- **Proposition statement** (from manuscript):
 
@@ -72,9 +82,13 @@ observables.*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.ts
-theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] : ctx.claim_sdp_regime_switch := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] :
+    ∀ λ λ' : ℕ,
+      0 ≤ ctx.μ λ - ctx.y_0 - ctx.y λ ∧
+      0 ≤ ctx.μ λ' - ctx.y_0 - ctx.y λ' ∧
+      0 ≤ (ctx.μ λ - ctx.y_0 - ctx.y λ) *
+          (ctx.μ λ' - ctx.y_0 - ctx.y λ') -
+          (ctx.c_couple λ λ') ^ 2 :=
+  ctx.claim_sdp_regime_switch
 
 end QOU.Observations

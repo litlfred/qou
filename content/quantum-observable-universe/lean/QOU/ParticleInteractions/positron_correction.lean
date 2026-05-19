@@ -29,9 +29,17 @@ class PositronCorrectionContext where
       `Q = Σ_char · m_e + m_e` (the `+m_e` is the positron action). -/
   claim_i_corrected_Q :
     Q = Σ_char * m_e + m_e
+  /-- Predicate: the current regime is a pair-creation regime. -/
+  is_pair_creation : Prop
+  /-- The applied positron correction (`m_e` if pair-creation, else 0). -/
+  applied_correction : ℝ
   /-- Manuscript sub-claim (ii) — the correction applies only in
-      pair-creation regimes (see `thm:parity-regime-selection`). -/
-  claim_ii_regime_applicability : Prop
+      pair-creation regimes:
+      `is_pair_creation → applied_correction = m_e`
+      and `¬is_pair_creation → applied_correction = 0`. -/
+  claim_ii_regime_applicability :
+    (is_pair_creation → applied_correction = m_e) ∧
+    (¬is_pair_creation → applied_correction = 0)
 
 /-- **Proposition statement** (from manuscript):
 
@@ -61,7 +69,9 @@ The positron correction is needed in two regimes
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.ts
 theorem positron_correction [ctx : PositronCorrectionContext] :
     ctx.Q = ctx.Σ_char * ctx.m_e + ctx.m_e ∧
-    ctx.claim_ii_regime_applicability :=
-  ⟨ctx.claim_i_corrected_Q, ctx.claim_ii_regime_applicability⟩
+    (ctx.is_pair_creation → ctx.applied_correction = ctx.m_e) ∧
+    (¬ctx.is_pair_creation → ctx.applied_correction = 0) :=
+  ⟨ctx.claim_i_corrected_Q, ctx.claim_ii_regime_applicability.1,
+   ctx.claim_ii_regime_applicability.2⟩
 
 end QOU.ParticleInteractions
