@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T19:36:42.074738+00:00",
-  "commitSha": "5544d4b2e2c8f9d8e6cbb82a30238edffa7d4a61",
+  "computedAt": "2026-05-19T19:39:22.198665+00:00",
+  "commitSha": "33f98ddee85c9fcf28df52d670baecaa9ca0b131",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2378,6 +2378,7 @@
         "joint-tower-sdp-h6-h9.witness.json",
         "joint-tower-sdp-rust.witness.json",
         "jonquiere-cyclotomic-general.witness.json",
+        "jonquiere-cyclotomic-tate-rationality-probe.witness.json",
         "kappa-categorical-h7a-closed.witness.json",
         "kappa-categorical-via-canonical-brane.witness.json",
         "kappa-d2-catalan-derivation.witness.json",
