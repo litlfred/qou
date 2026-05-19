@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:46:54.584370+00:00",
-  "commitSha": "a5ae3263edf07e5bca88976e281faca52cdc5949",
+  "computedAt": "2026-05-18T22:16:08.046962+00:00",
+  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
   "assertions": [
     {
       "name": "no_error_kind_entries",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "incomplete-coverage-audit",
   "scriptFile": "incomplete_coverage_audit.py",
   "scriptHash": "385c3447f507",
@@ -24,124 +24,124 @@
   "contentBlock": "I13 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "total_witnesses_with_errors": 2,
-    "total_error_entries": 90
+    "total_error_entries": 75
   },
   "data": {
     "error_kind_totals": {
-      "T1_witness_missing": 84,
+      "T1_witness_missing": 69,
       "unknown": 6
     },
     "rows": [
       {
         "witness": "folio-assistant/computations/incomplete-coverage-audit.witness.json",
-        "total_error_entries": 30,
+        "total_error_entries": 15,
         "by_kind": {
-          "T1_witness_missing": 30
+          "T1_witness_missing": 15
         },
         "sample_entries": [
           {
             "json_path": "data.rows.0.sample_entries.0",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.0"
+              "json_path": "rows.6"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.1",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.1"
+              "json_path": "rows.7"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.2",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.2"
+              "json_path": "rows.8"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.3",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.3"
+              "json_path": "rows.9"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.4",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.4"
+              "json_path": "rows.10"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.5",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.5"
+              "json_path": "rows.11"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.6",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.6"
+              "json_path": "all_modes.brane-legacy.rows.6"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.7",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.7"
+              "json_path": "all_modes.brane-legacy.rows.7"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.8",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.8"
+              "json_path": "all_modes.brane-legacy.rows.8"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.9",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.9"
+              "json_path": "all_modes.brane-legacy.rows.9"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.10",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.10"
+              "json_path": "all_modes.brane-legacy.rows.10"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.11",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.11"
+              "json_path": "all_modes.brane-legacy.rows.11"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.12",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.12"
+              "json_path": "all_modes.drop.rows.6"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.13",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.13"
+              "json_path": "all_modes.drop.rows.7"
             }
           },
           {
             "json_path": "data.rows.0.sample_entries.14",
             "error_kind": "T1_witness_missing",
             "siblings": {
-              "json_path": "data.rows.0.sample_entries.14"
+              "json_path": "all_modes.drop.rows.8"
             }
           }
         ]

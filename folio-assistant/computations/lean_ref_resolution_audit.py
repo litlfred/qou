@@ -105,7 +105,8 @@ def _decl_rx(decl_path: str) -> re.Pattern:
     `theorem QExponential.unique` (inside `namespace QOU`), or
     `theorem QOU.QExponential.unique` (no enclosing namespace).
     Allows `noncomputable` / `private` / `protected` / `partial` /
-    `unsafe` prefixes plus leading attribute modifiers."""
+    `unsafe` prefixes plus zero-or-more leading `@[…]` attribute
+    modifiers on the same line (e.g. `@[simp] theorem foo …`)."""
     parts = decl_path.split(".")
     # All non-empty suffixes of the dotted path — longest first so the
     # regex engine prefers the more-qualified match when both apply.
@@ -114,7 +115,8 @@ def _decl_rx(decl_path: str) -> re.Pattern:
     alt = "|".join(re.escape(s) for s in suffixes)
     kws = "|".join(DECL_KEYWORDS)
     return re.compile(
-        rf'^\s*(?:(?:noncomputable|private|protected|partial|unsafe)\s+)*'
+        rf'^\s*(?:@\[[^\]]*\]\s*)*'
+        rf'(?:(?:noncomputable|private|protected|partial|unsafe)\s+)*'
         rf'(?:{kws})\s+(?:{alt})\b',
         re.MULTILINE,
     )
@@ -151,10 +153,9 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
 
     pkg_meta = LEAN_PACKAGES[pkg]
 
-    # The Lean declaration's leaf name is the last component of decl_path
-    # (used by the full-repo grep fallback below); the sibling-decl regex
-    # accepts any suffix of the dotted path.
-    leaf = decl_path.split(".")[-1]
+    # The sibling-decl and grep-fallback regexes both accept any
+    # suffix of the dotted decl_path (handles `namespace QOU` +
+    # `theorem QExponential.unique` style declarations).
     decl_rx = _decl_rx(decl_path)
 
     # (1) Sibling lookup — same directory, same basename, .lean
@@ -212,10 +213,15 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
     grep_suffixes.sort(key=len, reverse=True)
     grep_alt = "|".join(re.escape(s) for s in grep_suffixes)
     try:
+        # Mirror _decl_rx: accept zero-or-more leading `@[…]`
+        # attribute brackets, then any combo of
+        # noncomputable/private/protected/partial/unsafe, then the
+        # decl keyword + a dotted suffix of the URI's decl_path.
         rg = subprocess.run(
             ["grep", "-rln", "-E",
-             rf"^[[:space:]]*(noncomputable[[:space:]]+|private[[:space:]]+|"
-             rf"protected[[:space:]]+)?({'|'.join(DECL_KEYWORDS)})[[:space:]]+({grep_alt})\b",
+             rf"^[[:space:]]*(@\[[^]]*\][[:space:]]*)*"
+             rf"((noncomputable|private|protected|partial|unsafe)[[:space:]]+)*"
+             rf"({'|'.join(DECL_KEYWORDS)})[[:space:]]+({grep_alt})\b",
              "--include=*.lean", str(REPO_ROOT)],
             capture_output=True, text=True, timeout=30,
         )

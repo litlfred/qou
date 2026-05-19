@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:45:27.949042+00:00",
-  "commitSha": "a5ae3263edf07e5bca88976e281faca52cdc5949",
+  "computedAt": "2026-05-19T01:09:03.209166+00:00",
+  "commitSha": "83116b0ab8cafe3f933d05b884f365cc98b18420",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 663.0,
+      "computed": 661.0,
       "expected": 944.0,
       "passed": false,
       "tolerance": 0.0,
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
-  "scriptHash": "c6419454a1f5",
-  "scriptCommitSha": "6961f951207aadb0554f06046dbbf9e9334984c9",
+  "scriptHash": "a60b67be1c5a",
+  "scriptCommitSha": "e0c833d5e9545f3192510aa4d9ffaeec72f9b752",
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
@@ -36,8 +36,8 @@
   },
   "data": {
     "by_result": {
-      "ok": 663,
-      "sibling_no_decl": 158,
+      "ok": 661,
+      "sibling_no_decl": 160,
       "grep_no_match": 122,
       "lake_root_missing_grep_hit": 1
     },
@@ -838,22 +838,21 @@
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/atom-knot-unique.ts",
-        "ref": "qou:QOU.BraidKnot.AtomKnot.unique_up_to_markov",
+        "ref": "qou:QOU.BraidKnot.AtomKnot.unique",
         "kind": "unknown",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.AtomKnot.unique_up_to_markov",
+        "decl_path": "QOU.BraidKnot.AtomKnot.unique",
         "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/atom-knot-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "ok",
-        "resolved_via": "sibling"
+        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/atom-knot.ts",
@@ -3991,22 +3990,21 @@
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts",
-        "ref": "qou:QOU.BraidKnot.KnotOperatorEnergy.shadowPrice_unique",
+        "ref": "qou:QOU.BraidKnot.KnotOperatorEnergy.unique",
         "kind": "unknown",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.KnotOperatorEnergy.shadowPrice_unique",
+        "decl_path": "QOU.BraidKnot.KnotOperatorEnergy.unique",
         "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "ok",
-        "resolved_via": "sibling"
+        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/knot-operator-energy.ts",
