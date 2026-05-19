@@ -12,7 +12,7 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- **Statement statement** (from manuscript):
+/-- **Manuscript statement** (from manuscript):
 
 **Proposition.**
 

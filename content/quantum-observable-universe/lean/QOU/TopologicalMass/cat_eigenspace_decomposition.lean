@@ -17,7 +17,7 @@ namespace QOU.TopologicalMass
 Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
 be the categorical mass integrand of a closed cycle $\varrho$.  When
 the [Frobenius pairing](#def\:frobenius-pairing) is compatible with the
-$*$-involution, the :refterm[descent]{#descent} involution $\hat{\tau}_n$ produces an
+$*$-involution, the descent involution $\hat{\tau}_n$ produces an
 orthogonal decomposition of $\alpha$ into descended and transient
 components, giving
 

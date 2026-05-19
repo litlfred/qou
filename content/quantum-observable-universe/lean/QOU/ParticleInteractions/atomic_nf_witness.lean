@@ -20,7 +20,7 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
 
 1. *The ground-state nucleon ordering is the global minimum of
    $\Phi_1$ over all $\binom{A}{Z}$ permutations (exact for
-   $\binom{A}{Z} \leq 50000$, steepest :refterm[descent]{#descent} otherwise).*
+   $\binom{A}{Z} \leq 50000$, steepest descent otherwise).*
 
 2. *Each electron is inserted at the position minimizing $\Phi_1$
    (greedy, verified to produce ep pairs adjacent to protons).*

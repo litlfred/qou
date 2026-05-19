@@ -21,7 +21,7 @@ appears **once only**, at jet level $0$, and that levels
 $n \ge 1$ carry only singleton and quadratic transient
 contributions.  This proposition provides the derivation: the
 descended projector stabilises under composition, so iterated
-:refterm[descent]{#descent} collapses to the base-level holonomy regardless of the
+descent collapses to the base-level holonomy regardless of the
 jet level at which it is read off.
 
     The Lean encoding below is a `theorem foo : True := by sorry` placeholder;

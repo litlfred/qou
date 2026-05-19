@@ -12,7 +12,7 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Descartes
 
-/-- **Statement statement** (from manuscript):
+/-- **Manuscript statement** (from manuscript):
 
 Let $T_{3,5} = (\sigma_0 \sigma_1)^5$ be the weak vertex in
 $H_3(q)$, and let $f(x)$ denote the phase-space factor for

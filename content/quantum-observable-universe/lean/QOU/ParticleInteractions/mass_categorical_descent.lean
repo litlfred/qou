@@ -14,7 +14,7 @@ namespace QOU.ParticleInteractions
 
 /-- **Content statement** (from manuscript):
 
-The QOU mass formula is the :refterm[descent]{#descent}
+The QOU mass formula is the descent
 decomposition of the mass endomorphism
 $\mathfrak{m} \colon A \to A$ under the brane tower blow-up.
 The empirical Bethe–Weizsäcker liquid-drop ansatz is recovered
