@@ -236,6 +236,44 @@ mv /tmp/_detangler_watcher_graph_current.json \
 | `remark-ratio` | info | H7 remark/example ratio drifted outside the 2:1 band |
 | `preview-source-fwd-ref` | info | H1 forward ref sourced from a preview chapter (`intro` / `notation`) — info-only, never escalated (see §Preview-chapter exclusion) |
 
+### Excluded forward-reference patterns (STRICT)
+
+Two classes of pattern are **never** flagged as H1 forward references,
+even if the target block's source position is strictly later than
+the source block's. Both classes encode authoring conventions that
+are correct by design, so flagging them produces only false positives.
+
+1. **Statement → own proof.** A `prf:foo` block is the proof of its
+   statement `prop:foo` / `lem:foo` / `thm:foo` / `cor:foo`. The
+   proof block belongs **after** the statement; this is the correct
+   reading order, not a forward reference. Patterns matched (any of):
+
+   ```
+   prop:foo  → prf:foo                  (exact suffix match)
+   prop:foo  → prf:foo-proof            (with -proof suffix stripped)
+   prop:foo  → prf:foo-<qualifier>      (qualified-variant proofs
+                                         like prf:foo-categorical)
+   lem:foo   → prf:foo                  (same shape for each of the
+   thm:foo   → prf:foo                   four provable-kind prefixes)
+   cor:foo   → prf:foo
+   ```
+
+   The qualified-variant rule accepts any `prf:` block whose name
+   starts with `<statement-suffix>-`. The pre-2026-05-19 heuristic
+   flagged 145 such pairs as H1 false positives on QOU paper main;
+   the filter (added 2026-05-19 to `content-graph-analysis.py`'s
+   `_is_statement_to_own_proof`) eliminates that class.
+
+2. **Preview-chapter source.** Forward refs whose **source** block
+   lives in a preview chapter (`introduction`, `notation`) are
+   info-only — see §Preview-chapter exclusion above. Tagged
+   `preview-source-fwd-ref` if surfaced for awareness, never
+   escalated to a finding.
+
+When adding a new exclusion class, document the pattern here, the
+empirical false-positive count it eliminates, and the corresponding
+filter location in the graph-analysis script.
+
 ## Slot E — §4d discharge bands (examples)
 
 | Band | Examples |

@@ -186,9 +186,18 @@ export default chapter({
       ],
     }),
 
+    // ── Fundamental particles (P3 split 2026-05-19): the 71-block
+    //    sec:fundamental-particles is split into 7 topical sub-sections
+    //    matching the ascending pedagogy: fermions → operations →
+    //    mesons/nucleons → stability → EM coupling → archimedean
+    //    Hartree/crystal → integer Diophantine endgame. The existing
+    //    fundamental-particles-intro stays at the top of A as the
+    //    umbrella narrative.
+
+    // §A — Fundamental fermions
     section({
-      title: "Fundamental particles",
-      label: "sec:fundamental-particles",
+      title: "Fundamental fermions",
+      label: "sec:fundamental-fermions",
       blocks: [
         "fundamental-particles-intro",
         // Fundamental fermions (Descartes-specific assignments)
@@ -203,6 +212,14 @@ export default chapter({
         "antineutrino-knot",
         // Building block reference table
         "linking-relations-table",
+      ],
+    }),
+
+    // §B — Pair production and knot-operator selection
+    section({
+      title: "Pair production and knot-operator selection",
+      label: "sec:pair-production-knot-operators",
+      blocks: [
         // q-deformed kinematics (definitions in braids-and-knots; applied here)
         "q-value-transition",
         // Pair production and quark-antiquark creation
@@ -211,7 +228,15 @@ export default chapter({
         // Knot operator selection and Frobenius Gram matrix
         "knot-operator-selection",
         "frobenius-gram-matrix",
-        // Meson, proton, neutron, stable nucleus
+      ],
+    }),
+
+    // §C — Mesons and nucleons
+    section({
+      title: "Mesons and nucleons",
+      label: "sec:mesons-nucleons",
+      blocks: [
+        // Meson, proton, neutron
         "categorical-meson",
         "meson-formation-chain",
         "categorical-proton",
@@ -227,6 +252,14 @@ export default chapter({
         "categorical-neutron-unique-proof",
         "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
+      ],
+    }),
+
+    // §D — Stable nucleus and torus knots
+    section({
+      title: "Stable nucleus and torus knots",
+      label: "sec:stable-nucleus-torus-knots",
+      blocks: [
         "stable-nucleus",
         "torus-hopf-stability",
         "unmapped-torus-knots",
@@ -234,6 +267,14 @@ export default chapter({
         "force-knot-identification",
         "torus-knot-genus-four-unique",
         "force-carrier-bring-uniqueness",
+      ],
+    }),
+
+    // §E — EM completeness and gauge coupling
+    section({
+      title: "EM completeness and gauge coupling",
+      label: "sec:em-completeness-gauge-coupling",
+      blocks: [
         "force-carrier-spectral-interpretation",
         "em-spectral-completeness",
         "gauge-coupling-uniqueness",
@@ -248,6 +289,14 @@ export default chapter({
         "alpha-em-derivation-exploration-options",
         "e-hartree-categorical-derivation",
         "bohr-radius-categorical",
+      ],
+    }),
+
+    // §F — Archimedean Hartree, crystal basis, and Mathlib bridge
+    section({
+      title: "Archimedean Hartree, crystal basis, and Mathlib bridge",
+      label: "sec:archimedean-hartree-crystal",
+      blocks: [
         "archimedean-hartree-derivation",
         "archimedean-functor-uniqueness",
         "bring-hyperbolic-knot-bloch-decomposition",
@@ -265,7 +314,14 @@ export default chapter({
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
         "schrodinger-color-falsifiability",
-        // Integer stability and Diophantine valley
+      ],
+    }),
+
+    // §G — Integer stability and Diophantine valley
+    section({
+      title: "Integer stability and the Diophantine valley",
+      label: "sec:integer-stability-diophantine",
+      blocks: [
         "integer-stability",
         "diophantine-valley",
         "valley-stability",

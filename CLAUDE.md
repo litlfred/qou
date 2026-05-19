@@ -9,6 +9,14 @@ Adapt ALL responses accordingly:
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
+- **Give rich context for every `AskUserQuestion`.** A label and one-line description is not enough. Each question must include, *before or inside the options*:
+  - **Evidence** — exact file paths, line numbers, counts, current state vs proposed state. Quote the failing line, name the offending witness, link the blob URL.
+  - **Per-option trade-offs** — cost (time, lines changed), risk (reversibility, blast radius), scope (this branch vs follow-up branch). State what the choice actually buys and gives up, not just what it does.
+  - **Concrete consequences** — "if you pick this, X happens; you'll then need Y" — so the user can pick without scrolling back through context.
+  - **`preview` content** for options that benefit from side-by-side comparison (diff snippets, file-tree mockups, code samples, before/after numbers).
+
+  This rule exists because terse questions force the user to type follow-ups asking for the context that should have been provided up front, which is the most painful kind of friction. When in doubt, err toward more context in the question, less in the post-answer explanation.
+- **Combine related work into one branch / one PR. Minimize their creation.** Default to stacking commits on an existing in-flight branch when the new work shares a theme (detangler structural cleanup, watcher infrastructure, doc currency, etc.) with what's already there. Before creating a new branch, check whether the active branches host related scope — if yes, switch to that branch and add a commit there. Only spin a new branch when the work is genuinely unrelated (different domain) or when the existing branch is already large enough that adding more would hurt reviewer comprehension. Reviewers prefer one coherent 6-commit PR to six 1-commit PRs covering the same theme. Mirrors `.claude/skills/local/integration-watcher.md` §0a item 1 and item 3 ("cluster aggressively", "group a lot").
 
 This repository is a formal mathematics paper with:
 - **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source
@@ -302,18 +310,29 @@ historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
 the dual at the time this rule was added). Do not repeat this
 pattern.
 
-**Current baseline (2026-05-08, post-LP_SDP_HINTS tightening,
-PR #565 F4):** the validator's hint list was deliberately narrowed
-to `lp-dual` / `operator-selection-lp` / `shadow-price` /
-`primal-dual` / `lp-duality` and now flags only **3** witnesses,
-**all 3** of which include the LP dual. **0 of 37 wired
-LP/SDP-flagged witnesses are missing duals.** The historical 58/58
-figure refers to the pre-tightening hint list (which incorrectly
-matched symbolic feasibility certificates and knot-particle probes
-that do not compute LP duals). Going forward, treat the 3-of-3
-set as authoritative; the 14 LP-solving scripts not on the hint
-list are presumed `feasibility-only` (opt-out) until reviewed
-per-file.
+**Current baseline (2026-05-18, re-measured against
+[`lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)):**
+the validator's narrowed hint list (`lp-dual` /
+`operator-selection-lp` / `shadow-price` / `primal-dual` /
+`lp-duality`) now flags **14** witnesses; **11** include the full
+LP dual; **3 are missing one or more dual fields**:
+
+| Witness | Script | Missing field(s) |
+|---------|--------|------------------|
+| `option-b-proton-mass-full-chain` | `option_b_proton_mass_full_chain.py` | `y_star` |
+| `probe-braid-word-basis-gram` | `probe_braid_word_basis_gram.py` | all 6 (does not call `lp_dual_solver`) |
+| `probe-sdp-active-set-dominant-partition` | `probe_sdp_active_set_dominant_partition.py` | `active_set` / `active_constraints` / `active_channels` |
+
+The historical 58/58 figure refers to the pre-tightening hint list
+(which incorrectly matched symbolic feasibility certificates and
+knot-particle probes that do not compute LP duals). The earlier
+"0 of 37 missing" baseline (2026-05-08) is **stale** — three new
+LP/SDP witnesses landed since then without routing through
+[`lp_dual_solver.py`](folio-assistant/computations/lp_dual_solver.py).
+Fix per offender: route the LP/SDP solve through
+`solve_operator_selection_lp()` or
+`solve_psd_operator_selection_sdp()`; the result's `.to_dict()`
+carries every required field.
 
 ## Writing `.lean` proofs — rules for agents
 

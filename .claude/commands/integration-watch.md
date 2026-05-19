@@ -1,5 +1,5 @@
 ---
-description: Dispatcher for the 3 integration watchers (proof / canonical / compute). With no arg, asks which to run; with args, dispatches the named watchers in parallel.
+description: Dispatcher for the 4 integration watchers (proof / canonical / compute / detangler). With no arg, asks which to run; with args, dispatches the named watchers in parallel.
 ---
 
 Run the **`local/integration-watch`** dispatcher skill against the
@@ -10,15 +10,18 @@ this command is the user-invocable wrapper.
 ## Argument grammar
 
 ```
-/integration-watch                      → ask which (no auto-pick)
-/integration-watch proof                → proof-integration-watcher
-/integration-watch canonical            → canonical-watcher
-/integration-watch compute              → compute-integration-watcher
-/integration-watch compute-integration  → same as `compute`
-/integration-watch all                  → all three in parallel
-/integration-watch proof,canonical      → those two in parallel
-/integration-watch proof canonical      → same (space-separated)
-/integration-watch <unknown>            → reject, re-prompt
+/integration-watch                              → ask which (no auto-pick)
+/integration-watch proof                        → proof-integration-watcher
+/integration-watch canonical                    → canonical-watcher
+/integration-watch compute                      → compute-integration-watcher
+/integration-watch compute-integration          → same as `compute`
+/integration-watch detangler                    → detangler-integration-watcher
+/integration-watch detanglement                 → same as `detangler`
+/integration-watch all                          → all four in parallel
+/integration-watch proof,canonical              → those two in parallel
+/integration-watch proof canonical              → same (space-separated)
+/integration-watch proof detanglement canonical → three in parallel
+/integration-watch <unknown>                    → reject, re-prompt
 ```
 
 ## Watchers
@@ -29,12 +32,24 @@ this command is the user-invocable wrapper.
   no numerology, no fits (per `prop:three-calibration-discipline`).
 - **compute** — `local/compute-integration-watcher`: every `prop:`
   has a probe + production consumer (13-pattern I1-I13 audit).
+- **detangler** — `local/detangler-integration-watcher`: no new
+  forward references (H1-H7), sections in 3-18 block band (R1-R3),
+  no new cross-chapter forward edges, archimedean wall preserved.
 
 ## Role gating
 
-- `reader`: `proof`, `canonical`, `both two` (compute hidden).
-- `collaborator` / `owner`: all four chips including `compute` and
-  `all three`.
+The no-arg `/integration-watch` `AskUserQuestion` is capped at 4
+chips. With 4 watchers (proof / canonical / compute / detangler) +
+an "all" option totalling 5 logical choices, the chip set is
+trimmed to fit:
+
+- **`reader`**: 4 chips (compute hidden) — `proof`, `canonical`,
+  `detangler`, `all readable three`.
+- **`collaborator` / `owner`**: 4 chips — `proof`, `canonical`,
+  `detangler`, `all four`. The individual `compute` chip is
+  dropped; compute is still reachable via the `all four` chip
+  (which includes it) or by typing `/integration-watch compute`
+  directly with the argument grammar above.
 
 ## No-argument behaviour
 

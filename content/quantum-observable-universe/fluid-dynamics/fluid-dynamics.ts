@@ -80,9 +80,17 @@ export default chapter({
     }),
 
     // ── §3. The NS obstruction ───────────────────────────────────────
+    // ── §3. The NS obstruction (2026-05-19 split): 19-block section
+    //   split into 2 sub-sections following the statement → tower
+    //   pedagogy. The existing ns-obstruction-intro stays at the top
+    //   of the statement sub-section as the umbrella narrative.
+    //   Densities 11/8, both within the 3-18 band; chapter's 41%
+    //   cross-section ratio finding drops mechanically.
+
+    // §3a — NS obstruction: statement and observability
     section({
-      title: "The NS obstruction",
-      label: "sec:ns-obstruction",
+      title: "NS obstruction: statement and observability",
+      label: "sec:ns-obstruction-statement",
       blocks: [
         "ns-obstruction-intro",
         "observability-in-fluid-context",
@@ -95,6 +103,14 @@ export default chapter({
         "ns-regular-qou",
         "ns-obstruction",
         "ns-classical-formulation",
+      ],
+    }),
+
+    // §3b — NS obstruction tower, specialisations, and observable MTC
+    section({
+      title: "NS obstruction tower, specialisations, and observable MTC",
+      label: "sec:ns-obstruction-tower-mtc",
+      blocks: [
         "ns-obstruction-tower",
         "ns-obstruction-computation",
         "ns-kummer-specialisation",

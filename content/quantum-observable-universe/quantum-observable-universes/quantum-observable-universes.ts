@@ -337,9 +337,14 @@ export default chapter({
     }),
 
     // ── q-Harmonic analysis: heat equation, Laplace, Fourier ─────────
+    // ── q-Harmonic analysis (P4 split 2026-05-19): the 38-block
+    //    sec:q-harmonic-analysis is split into three topical sub-
+    //    sections matching the three transform families. The existing
+    //    sec:q-harmonic-analysis-intro stays at the top of A and
+    //    previews all three sub-sections as an umbrella narrative.
     section({
-      title: "$q$-Harmonic analysis: heat equation, Laplace, Fourier",
-      label: "sec:q-harmonic-analysis",
+      title: "Linear $q$-transforms: heat, Laplace, Fourier",
+      label: "sec:q-linear-transforms",
       blocks: [
         "q-harmonic-analysis-intro",
         "q-heat-equation",
@@ -357,12 +362,28 @@ export default chapter({
         "categorical-fourier-transform-exists-proof",
         "categorical-fourier-transform-unique",
         "categorical-fourier-transform-unique-proof",
+      ],
+    }),
+
+    // ── q-Resolvent and categorical Wick rotation ────────────────────
+    section({
+      title: "$q$-Resolvent and categorical Wick rotation",
+      label: "sec:q-resolvent-wick",
+      blocks: [
         "q-resolvent",
         "q-resolvent-exists",
         "q-resolvent-exists-proof",
         "q-resolvent-unique",
         "q-resolvent-unique-proof",
         "laplace-fourier-wick-rotation",
+      ],
+    }),
+
+    // ── q-Exponential, logarithm, and dilogarithm ────────────────────
+    section({
+      title: "$q$-Exponential, logarithm, and dilogarithm",
+      label: "sec:q-special-functions",
+      blocks: [
         "q-exponential",
         "q-exponential-exists",
         "q-exponential-exists-proof",
