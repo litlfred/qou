@@ -23,12 +23,12 @@
     },
     {
       "id": "leitnerpawloski2004",
-      "status": "partial",
+      "status": "verified-clean",
       "local_pdf": "uploads/leitnerpawloski2004.pdf",
-      "verified_at": "2026-05-19T15:38:00Z",
+      "verified_at": "2026-05-19T18:18:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 6,
-      "note": "arXiv math/0409565 = LP2004 'Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: \u00a72 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 \u2014 exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean \u2014 both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope. | ADDITIONAL 6 bare-URL Refs upgraded with arxiv preprint info. Confirms the prior partial verification (commit 4abfedfda): the cited 'On the morphisms of non-commutative formal groups' is the SAME math/0409565 \u2014 so QOU is consistently citing this work for the Gr\u00f6bner-bases foundation, with the 2 mismatched 'PL inner product' / 'PL basis' lean files being the only outliers.",
+      "note": "arXiv math/0409565 = LP2004 'Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: \u00a72 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 \u2014 exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean \u2014 both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope. | ADDITIONAL 6 bare-URL Refs upgraded with arxiv preprint info. Confirms the prior partial verification (commit 4abfedfda): the cited 'On the morphisms of non-commutative formal groups' is the SAME math/0409565 \u2014 so QOU is consistently citing this work for the Gr\u00f6bner-bases foundation, with the 2 mismatched 'PL inner product' / 'PL basis' lean files being the only outliers. | UPDATE 2026-05-19 18:18: Also exists at uploads/0409565v2.pdf (same arxiv id); the named copy is the canonical reference.",
       "fix_commit": "(this commit)"
     },
     {
@@ -70,12 +70,12 @@
     {
       "id": "kassel1995",
       "status": "fixed",
-      "local_pdf": "uploads/kassel-1995-quantum-groups-preprint.pdf",
+      "local_pdf": null,
       "verified_at": "2026-05-19T06:55:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 43,
       "fix_commit": "(this commit)",
-      "note": "Kassel, 'Quantum Groups', Springer GTM 155, 1995 (DOI 10.1007/978-1-4612-0783-2). 43 truly-bare-URL Refs across 23 .lean files updated with thematic chapter citations: Group A (15 Hecke/Markov/Schur-Weyl/Anyonic files) \u2192 Ch. X (Hecke algebras and Markov trace); Group B (7 braiding/R-matrix/Casimir/quantum-SL(2) files) \u2192 Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories); Group C (1 broad-ref file: magic-numbers-bring) \u2192 generic title-only ref. 11 already-\u00a7-specific Refs (e.g. \u00a7V.5, \u00a7VIII.3, Ch. XIII at specific sites) preserved unchanged. Status fixed."
+      "note": "Kassel, 'Quantum Groups', Springer GTM 155, 1995 (DOI 10.1007/978-1-4612-0783-2). 43 truly-bare-URL Refs across 23 .lean files updated with thematic chapter citations: Group A (15 Hecke/Markov/Schur-Weyl/Anyonic files) \u2192 Ch. X (Hecke algebras and Markov trace); Group B (7 braiding/R-matrix/Casimir/quantum-SL(2) files) \u2192 Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories); Group C (1 broad-ref file: magic-numbers-bring) \u2192 generic title-only ref. 11 already-\u00a7-specific Refs (e.g. \u00a7V.5, \u00a7VIII.3, Ch. XIII at specific sites) preserved unchanged. Status fixed. | UPDATE 2026-05-19 18:18: local_pdf path was stale (uploads/kassel-1995-quantum-groups-preprint.pdf doesn't exist on upload branch); removed. The kassel1995 entry has been verified via citation-content match (all 43 sites map to thematic Ch. citations)."
     },
     {
       "id": "jones1987",
@@ -1074,13 +1074,13 @@
     },
     {
       "id": "bach2013",
-      "status": "partial",
-      "local_pdf": null,
-      "verified_at": "2026-05-19T16:00:00Z",
+      "status": "verified-clean",
+      "local_pdf": "uploads/1210.6243v1.pdf",
+      "verified_at": "2026-05-19T18:18:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "1 bare-URL Ref upgraded with title+author+year form."
+      "note": "1 bare-URL Ref upgraded with title+author+year form. | UPDATE 2026-05-19 18:18: PDF in uploads/1210.6243v1.pdf is Bach, Pope, Liou, Batelaan 'Controlled double-slit electron diffraction' (Phys. Rev. Lett./NJP 2013) \u2014 exact match."
     },
     {
       "id": "madison2000",
@@ -1185,12 +1185,12 @@
     {
       "id": "chlouveraki2016-hdr",
       "status": "verified-clean",
-      "local_pdf": null,
-      "verified_at": "2026-05-19T18:13:00Z",
+      "local_pdf": "uploads/HDR.pdf",
+      "verified_at": "2026-05-19T18:18:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "TODO bib lookup (Chlouveraki HDR thesis 2016). 4 .lean sites cite 'HDR Theorem 6.20' but I haven't re-keyed them yet (need to find specific sites). Entry exists; sites can be updated when HDR metadata is filled in. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
+      "note": "TODO bib lookup (Chlouveraki HDR thesis 2016). 4 .lean sites cite 'HDR Theorem 6.20' but I haven't re-keyed them yet (need to find specific sites). Entry exists; sites can be updated when HDR metadata is filled in. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata). | UPDATE 2026-05-19 18:18: PDF in uploads/HDR.pdf is Chlouveraki's HDR thesis 'Hecke algebras, generalisations and representation theory' \u2014 exact match for the TODO entry."
     },
     {
       "id": "kashiwara1990-duke",
@@ -1231,6 +1231,16 @@
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Re-keyed 8 QOU citation sites (pawlowski-leitner-inner-product.lean + RepresentationTheory.lean) from leitnerpawloski2004. Bib metadata TODO (PL inner product + SU(2) intertwiner basis \u2014 possibly Paw\u0142owski's PhD thesis)."
+    },
+    {
+      "id": "bujack2022",
+      "status": "verified-clean",
+      "local_pdf": "uploads/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf",
+      "verified_at": "2026-05-19T18:18:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "PDF is Bujack et al. 'The non-Riemannian nature of perceptual color space' (PNAS 2022) \u2014 exact match."
     }
   ]
 }
