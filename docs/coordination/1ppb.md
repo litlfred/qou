@@ -209,3 +209,68 @@ Commits added since v7 docs landing (`8a212bc6c..72c620f9a`):
 3. Spectral-sequence stratification (Path C) — most ambitious
 
 User asked to "ask where you need insight (give context)" for each path — that's the queued follow-up work.
+
+## 2026-05-19 (evening) — PR #777 closing summary: c_4..c_7 first-principles derivation OPEN
+
+PR #777 session concluded with **clear negative results** and a roadmap for follow-up sessions.
+
+### What's proved
+
+| Item | Status | Reference |
+|------|--------|-----------|
+| c_3 = J_Hopf(q=1) = -2 | **proved** | `q-beta-c3-hopf-three-fold-markov.md` Fact 3 (2-strand sub-braid → Hopf-link Jones at q=1) |
+| Per-block χ_λ closed forms | proved (paper, Lean for V_(3)) | `chi-per-irrep-cyclotomic-closed-forms.{md,lean}` |
+| LO ε^1 = (-2, -1, -2) pattern | proved | `per-block-hopf-jones-absorption-pattern.{ts,md,lean}` (new this PR) |
+| SDP-T_β derives c_k from R(q_0) | proved | `qbeta_decay_sdp_full_ck.py` + witness (all 4 assertions pass) |
+| Algebraic factor identity through N=5 | proved (Lean) | `precision_ladder_N5_canonical_compat` (ring identity) |
+
+### What was falsified
+
+| Hypothesis | Result | Reference |
+|------------|--------|-----------|
+| Per-block c_k = Σ_λ dim_q²·c_k^(λ) (framework scaffolding) | **falsified** at c_3 = -2 (gives -8) | `2026-05-19-per-block-ck-extraction-rule.md` |
+| y_λ-weighted uniform c_k^(λ) ≡ c_k | **falsified** at all c_k (q_0 off 28%, q=1 off 25%) | `qbeta_per_block_uniform_rule_verify.py` |
+| Closed forms c_3·b⁴, -(b²+1/2), 4·b², -8 as symbolic identities | **falsified** — leading-order approximations only (c_7 86% off) | `2026-05-19-qbeta-closed-forms-not-symbolic-identities.md` |
+| Hoefsmit operator on V_(2,1) at H_3 generates c_k | **negative** — bare search exhausted | `qbeta_operator_identification_probe.py` |
+| y_λ(q=1) = Plancherel (1/6, 2/3, 1/6) | **incorrect** — actual is (1/2, 1/4, 0) sum=3/4 | `qbeta_per_block_uniform_rule_verify.py` + late audit |
+
+### What's open (queued for follow-up PR scope)
+
+**The c_4..c_7 first-principles derivation remains OPEN**. Currently empirical numerology with leading-order categorical interpretations. Two viable research-grade paths:
+
+1. **Khovanov-Rozansky polynomial of typed-braid Markov closure at finite q** (~1 week+):
+   - Identify the specific link L = closure of typed-B_3 braid for β_n / β_p
+   - Compute Kh(L)(q, t) at finite q (not just q=1 specialisation)
+   - Expand around q=q_0; extract c_k as Taylor coefficients
+   - Requires either tabulated Khovanov polynomials or custom KR implementation
+
+2. **KLR canonical-basis Markov trace formula** (~research project):
+   - Identify per-Wedderburn-block canonical-basis trace formula
+   - Per agent `a7e7c6fc5e9dcdd3f` report: framework has the Hecke-KLR bridge scaffolding (`kazhdan-lusztig-classical-limit.md`, `crystal-basis-resolves-mass-tower-open-problems.lean`) but the explicit per-block trace formula is the gap
+
+3. **Spectral-sequence stratification** (~weeks): abandoned per user direction this PR, but recorded for completeness.
+
+### Downstream validation TODOs (separate PR scope, this PR's TR_M[5] fix triggered)
+
+- [x] Fix pyhecke.gram TR_M[5] = z³ → h·z² + z (this PR commit `239a30e5e`)
+- [x] Fix latent shadowing in pn_alpha_lp_dual.py + molecular-frobenius-lp.py (this PR `de39188a6`)
+- [x] Regenerate 5 affected downstream witnesses (this PR `de39188a6`)
+- [ ] **Update content blocks** that quote pre-fix Gram values (gram_det = -0.36 → -0.19, Markov trace e_- = 0.124 → 0.551). Anti-staleness `:val[...]` syntax is in place — extending coverage to all ~12 candidate sites identified by Path-3 background agent is a follow-up.
+- [ ] **Verify against existing test suites** any content blocks that reference the regenerated witnesses' numerical claims.
+
+### Cross-PR dependencies noted
+
+- PR #781 (canonical mass tables): merged-ready; my SDP-T_β uses #781's canonical τ_M(β_p), τ_M(β_n) values. Merge order: #781 first, then #777.
+- PR #792 (refs + LP-dual repairs): merged into main 2026-05-19. Did NOT include TR_M[5] fix. Their 3 LP-dual repair witnesses (option_b_proton_mass_full_chain, probe_braid_word_basis_gram, probe_sdp_active_set_dominant_partition) may carry pre-fix Gram-derived values — needs verification post-rebase of #777.
+
+### Files added/changed in #777 (counts)
+
+- Audit docs: 8 new (`docs/audits/2026-05-18-*.md`, `docs/audits/2026-05-19-*.md`)
+- Lean blocks: 1 new (`per-block-hopf-jones-absorption-pattern.lean`)
+- Content blocks: 2 new (`per-block-hopf-jones-absorption-pattern.{ts,md}`) + 1 updated (`per-wedderburn-block-c5-c6.md`)
+- Compute scripts: 6 new (qbeta_*.py)
+- Witnesses: 7 regenerated + 6 new
+- Bug fixes: pyhecke.gram TR_M[5], 2 latent shadowing bugs
+- Content updates with `:val[...]` anti-staleness: 4 files + 8 registry entries
+
+Total: 33 commits, +5500 lines, -200 lines.
