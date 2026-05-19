@@ -1,0 +1,376 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T06:48:08.677225+00:00",
+  "commitSha": "5d28c334ab455d2f9effde4e5a468c1d67a0c910",
+  "assertions": [
+    {
+      "name": "block_multiplicativity_calibration_loaded",
+      "computed": 0.7083862086444809,
+      "expected": 0.7084,
+      "passed": true,
+      "tolerance": 0.001,
+      "unit": "block factor v_p",
+      "source": "H_6 deuteron free-config V product (this branch)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 344,
+  "computation": "binding-block-multiplicative",
+  "scriptFile": "binding_block_multiplicative.py",
+  "scriptHash": "1468d3b09baa",
+  "scriptCommitSha": "unknown",
+  "description": "Closed-form B(K) via block-multiplicativity (T1_free = v_p^Z · v_n^N) + structural interface arrangement, derived from empirical A-independence of V̂(free) at H_6 / H_9 (D, T, ³He). Scales to all atoms in microseconds; no H_{3A} character sum required beyond H_6 (calibration only).",
+  "parameters": {
+    "Q_beta_CAL3_MeV": "0.7823334100000222",
+    "m_e_CAL1_MeV": "0.51099894999999995182093925905064679682254791259766",
+    "q0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "z_markov_50dps": "0.49932033403359825002066908467672150636931636263446"
+  },
+  "data": {
+    "block_factors": {
+      "v_p": "0.7083862086444808263073352234481600000000",
+      "v_n": "0.6004046245013840773315744808702400000000",
+      "V_pp_inter": "0.1045301609949397400000000000000000000000",
+      "V_nn_inter": "0.1045301609949396800000000000000000000000",
+      "V_pn_inter": "0.0",
+      "v_p_factors": [
+        "0.6713859088665624000000000000000000000000",
+        "1.055110331166143400000000000000000000000"
+      ],
+      "v_n_factors": [
+        "0.5516561227194702000000000000000000000000",
+        "1.088367553217031200000000000000000000000"
+      ],
+      "source": "binding-via-interface-knot.witness.json (H_6 D + H_9 T, 3He)",
+      "verification": "Block-multiplicativity verified EXACT to 4 digits across {D, T, ³He} via independent H_{3A} computation."
+    },
+    "per_atom": {
+      "D": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "T1_free": "0.4253183556031486258098901429055803266936",
+        "T1_atom": "0.0",
+        "T2_diff": "1.576374531416287345448114481820451401152",
+        "n_interfaces": {
+          "p-p": 0,
+          "p-n": 1,
+          "n-n": 0
+        },
+        "B_dim_first_order": "2.001692887019435971258004624726031727846",
+        "B_MeV_first_order": "1.565991222074704517253028579336248645116",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "2.224566069999999839978954696562141180038",
+        "ratio_pred_over_AME": 0.7039535679309828
+      },
+      "T": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "T1_free": "0.2553631075894545951917709517417395080681",
+        "T1_atom": "0.0",
+        "T2_diff": "3.045369204336562893427853528778744747967",
+        "n_interfaces": {
+          "p-p": 0,
+          "p-n": 1,
+          "n-n": 1
+        },
+        "B_dim_first_order": "3.300732311926017488619624480520484256035",
+        "B_MeV_first_order": "2.582273165086338205848751770353316378539",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "8.481797999999999504439074371475726366043",
+        "ratio_pred_over_AME": 0.3044487931787975
+      },
+      "3He": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "T1_free": "0.3012896573926195331606732736480827245974",
+        "T1_atom": "0.0",
+        "T2_diff": "3.045369204336562830075373058044790605624",
+        "n_interfaces": {
+          "p-p": 1,
+          "p-n": 1,
+          "n-n": 0
+        },
+        "B_dim_first_order": "3.346658861729182363236046331692873330222",
+        "B_MeV_first_order": "2.618203039403384030569045149439740505359",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "7.718042800000000092097707238281145691872",
+        "ratio_pred_over_AME": 0.33923147451364016
+      },
+      "4He": {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "T1_free": "0.1808957036129663880637343014389915675844",
+        "T1_atom": "0.0",
+        "T2_diff": "4.514363877256838378055112105003083952439",
+        "n_interfaces": {
+          "p-p": 1,
+          "p-n": 1,
+          "n-n": 1
+        },
+        "B_dim_first_order": "4.695259580869804766118846406442075520024",
+        "B_MeV_first_order": "3.673258438737149363474704884083882747448",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "28.29567400000000176873982127290219068527",
+        "ratio_pred_over_AME": 0.12981696208180618
+      },
+      "6Li": {
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "T1_free": "0.07693826319634141589063296462707463410759",
+        "T1_atom": "0.0",
+        "T2_diff": "7.452353223097389410662109728185716503727",
+        "n_interfaces": {
+          "p-p": 2,
+          "p-n": 1,
+          "n-n": 2
+        },
+        "B_dim_first_order": "7.529291486293730826552742692812791137834",
+        "B_MeV_first_order": "5.890416283356309849430121456545162853368",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "31.99405000000000143245415529236197471619",
+        "ratio_pred_over_AME": 0.18410974175999317
+      },
+      "7Li": {
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "T1_free": "0.04619408902418802608763458551050698486701",
+        "T1_atom": "0.0",
+        "T2_diff": "8.921347896017664958641848775144009850542",
+        "n_interfaces": {
+          "p-p": 2,
+          "p-n": 1,
+          "n-n": 3
+        },
+        "B_dim_first_order": "8.967541985041852984729483360654516835409",
+        "B_MeV_first_order": "7.015607700476160917694162574215368982279",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "39.24530000000000029558577807620167732239",
+        "ratio_pred_over_AME": 0.17876300348006413
+      },
+      "9Be": {
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "T1_free": "0.01964719398235310778176856478784933588540",
+        "T1_atom": "0.0",
+        "T2_diff": "11.85933724185821599124884639832664240183",
+        "n_interfaces": {
+          "p-p": 3,
+          "p-n": 1,
+          "n-n": 4
+        },
+        "B_dim_first_order": "11.87898443584056909903061496311449173772",
+        "B_MeV_first_order": "9.293326401028342353039724359124383021236",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "58.16499999999999914734871708787977695465",
+        "ratio_pred_over_AME": 0.15977523254583242
+      },
+      "10B": {
+        "Z": 5,
+        "N": 5,
+        "A": 10,
+        "T1_free": "0.01391780125566177675090976022322398479847",
+        "T1_atom": "0.0",
+        "T2_diff": "13.32833191477849147587610497455098160630",
+        "n_interfaces": {
+          "p-p": 4,
+          "p-n": 1,
+          "n-n": 4
+        },
+        "B_dim_first_order": "13.34224971603415325262701473477420559110",
+        "B_MeV_first_order": "10.43808771741682698853397985377835815985",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "64.75079999999999813553586136549711227417",
+        "ratio_pred_over_AME": 0.16120399620416778
+      },
+      "12C": {
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "T1_free": "0.005919496343669504025721748131833629073473",
+        "T1_atom": "0.0",
+        "T2_diff": "16.26632126061904250848310259773361415759",
+        "n_interfaces": {
+          "p-p": 5,
+          "p-n": 1,
+          "n-n": 5
+        },
+        "B_dim_first_order": "16.27224075696271201250882434586544778666",
+        "B_MeV_first_order": "12.73031759973598097533879577779861286402",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "92.16174999999999783995008328929543495178",
+        "ratio_pred_over_AME": 0.1381301635411218
+      },
+      "14N": {
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "T1_free": "0.002517670450888364201056782150405394118745",
+        "T1_atom": "0.0",
+        "T2_diff": "19.20431060645959354109010022091624670888",
+        "n_interfaces": {
+          "p-p": 6,
+          "p-n": 1,
+          "n-n": 6
+        },
+        "B_dim_first_order": "19.20682827691048190529115700306665210300",
+        "B_MeV_first_order": "15.02614346116022796529747531375281186071",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "104.6599999999999965893948683515191078186",
+        "ratio_pred_over_AME": 0.14357102485343234
+      },
+      "16O": {
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "T1_free": "0.001070811456122476823329843223429540649017",
+        "T1_atom": "0.0",
+        "T2_diff": "22.14229995230014457369709784409887926016",
+        "n_interfaces": {
+          "p-p": 7,
+          "p-n": 1,
+          "n-n": 7
+        },
+        "B_dim_first_order": "22.14337076375626705052042768732230880081",
+        "B_MeV_first_order": "17.32349875850423639333524385640979716671",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "127.6192999999999955207385937683284282684",
+        "ratio_pred_over_AME": 0.13574356510734847
+      },
+      "20Ne": {
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "T1_free": "0.0001937051917921005296141213149211163903770",
+        "T1_atom": "0.0",
+        "T2_diff": "28.01827864398124663891109309046414436274",
+        "n_interfaces": {
+          "p-p": 9,
+          "p-n": 1,
+          "n-n": 9
+        },
+        "B_dim_first_order": "28.01847234917303873944070721177906547913",
+        "B_MeV_first_order": "21.91978701591987608717490160726272404660",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "160.6448000000000035925040720030665397644",
+        "ratio_pred_over_AME": 0.13644878026503116
+      },
+      "24Mg": {
+        "Z": 12,
+        "N": 12,
+        "A": 24,
+        "T1_free": "0.00003504043696271662691321556764437012555380",
+        "T1_atom": "0.0",
+        "T2_diff": "33.89425733566234870412508833682940946531",
+        "n_interfaces": {
+          "p-p": 11,
+          "p-n": 1,
+          "n-n": 11
+        },
+        "B_dim_first_order": "33.89429237609931142075200155239705383544",
+        "B_MeV_first_order": "26.51663733413152925573960754352562149547",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "198.2570000000000050022208597511053085327",
+        "ratio_pred_over_AME": 0.13374880752826648
+      },
+      "28Si": {
+        "Z": 14,
+        "N": 14,
+        "A": 28,
+        "T1_free": "0.000006338664499276419096466229338045487447089",
+        "T1_atom": "0.0",
+        "T2_diff": "39.77023602734345076933908358319467456789",
+        "n_interfaces": {
+          "p-p": 13,
+          "p-n": 1,
+          "n-n": 13
+        },
+        "B_dim_first_order": "39.77024236600795004575818004942401261338",
+        "B_MeV_first_order": "31.11358932672635054578817840995087215530",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "236.5371000000000094587448984384536743164",
+        "ratio_pred_over_AME": 0.1315378827538105
+      },
+      "40Ca": {
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "T1_free": "0.00000003752170132721445038763230022290347887793",
+        "T1_atom": "0.0",
+        "T2_diff": "57.39817210238675696498106932229046987561",
+        "n_interfaces": {
+          "p-p": 19,
+          "p-n": 1,
+          "n-n": 19
+        },
+        "B_dim_first_order": "57.39817213990845829219551970992277009852",
+        "B_MeV_first_order": "44.90450773798285550299760328916017830836",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "342.0520000000000209183781407773494720459",
+        "ratio_pred_over_AME": 0.1312797695613031
+      },
+      "56Fe": {
+        "Z": 26,
+        "N": 30,
+        "A": 56,
+        "T1_free": "0.00000000002886312787082350546063705116413122555461",
+        "T1_atom": "0.0",
+        "T2_diff": "80.90208686911116535254201124921943857060",
+        "n_interfaces": {
+          "p-p": 25,
+          "p-n": 1,
+          "n-n": 29
+        },
+        "B_dim_first_order": "80.90208686914002848041283475468007562176",
+        "B_MeV_first_order": "63.29240549645233827490698613002764218516",
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-recursive",
+        "B_AME_MeV": "492.2540000000000190993887372314929962158",
+        "ratio_pred_over_AME": 0.1285767215633643
+      }
+    },
+    "atoms_evaluated": [
+      "D",
+      "T",
+      "3He",
+      "4He",
+      "6Li",
+      "7Li",
+      "9Be",
+      "10B",
+      "12C",
+      "14N",
+      "16O",
+      "20Ne",
+      "24Mg",
+      "28Si",
+      "40Ca",
+      "56Fe"
+    ],
+    "max_over_min_abs_first_order": 5.474969025276207,
+    "all_signs_correct_first_order": true,
+    "verdict": "PARTIAL — max/min^(1) = 5.475, signs correct. T3 pair-term closure pending for finer agreement."
+  }
+}
