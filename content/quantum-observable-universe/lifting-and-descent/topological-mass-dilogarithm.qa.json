@@ -148,6 +148,40 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564",
+          "lean": "c625d57afdaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-lifting",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:46:51.387Z",
+        "reviewed_sha": "704cd6c2e7993474ae028c2e55f42501f7876dbb",
+        "notes": "Topological mass dilogarithm contribution."
+      },
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564",
+          "lean": "c625d57afdaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-lifting-and-descent",
+          "version": "claude-opus-4-7-2026-05-19-default-pass"
+        },
+        "reviewed_at": "2026-05-19T18:48:58.604Z",
+        "reviewed_sha": "704cd6c2e7993474ae028c2e55f42501f7876dbb",
+        "notes": "default-pass (agent reviewed at chapter level; no off-topic evidence quoted)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
