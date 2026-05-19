@@ -1,4 +1,21 @@
-## Statement
+> **Errata banner (2026-05-19) — this proposition's claimed
+> closed form $c_4 = b^2 + 1/2$ is superseded.** The 2026-05-19
+> SDP-$T_\beta$ derivation (PR #777) showed the empirical $c_4$ is
+> $\approx -1.144$, while $b^2 + 1/2 \approx 1.253$ — sign-flipped
+> and 9.5% off in magnitude. The current canonical form
+> ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
+> is $c_4 = c_3 \cdot b^4 = -2 b^4$, which matches the empirical
+> value to 0.9%. The old $b^2 + 1/2$ form is now attributed to
+> $c_5$ (misattributed by one rung in the original draft).
+> Audit: [`docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md).
+> The "proof sketch" below is retained as the **historical
+> derivation** of the (now stale) $b^2 + 1/2$ form, useful for
+> tracing where the rung-misattribution entered. Treat this entire
+> block as superseded — the operative form is in the precision-
+> ladder block, and the new $c_5$ rung's derivation lives in the
+> 2026-05-19 audit.
+
+## Statement (superseded — see banner above)
 
 **Proposition (categorical, Story B closure at $c_4$).** Let $c_4$
 denote the fourth coefficient in the Q_β precision-ladder expansion
@@ -6,7 +23,7 @@ of [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precisi
 $$
   Q_\beta = Q_A \cdot \cos\bigl(\alpha - b\hbar_q^2/2\bigr) \cdot \bigl(1 - b^2 \hbar_q^4\bigr) \cdot \bigl(1 + c_3 \hbar_q^6\bigr) \cdot \bigl(1 + c_4 \hbar_q^8\bigr) \cdot \cdots
 $$
-Then
+Then (STALE — superseded by $c_4 = c_3 \cdot b^4 = -2 b^4$)
 $$
   c_4 = b^2 + \tfrac{1}{2},
 $$
