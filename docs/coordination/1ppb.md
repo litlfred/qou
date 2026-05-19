@@ -166,3 +166,46 @@ Open siblings classified against #683 (canonical χ^λ via fast Rust f64 Hoefsmi
 | # | Question | Resolution |
 |---|----------|------------|
 | 5 | Python vs Rust for ⁴He chi cache compute? | **Both, complementary.** PR #682 ships Python sympy chi-cache reader (covers atoms with built caches); PR #683 ships Rust direct f64 Hoefsmit (covers atoms where caches are partial, faster compute, f64 precision). Same downstream witness consumers can read either via `canonical-tr-m-via-{chi-cache,rust}.witness.json`. |
+
+## 2026-05-19 — /coordinate sweep (PR #777 — SDP-T_β derivation of c_2..c_7)
+
+Open siblings classified against #777 (Q_β precision-ladder + SDP-identified β-decay knot operator):
+
+| Sibling | Title | Overlap | Classification | Cherry-pick |
+|---------|-------|---------|----------------|-------------|
+| [#781](https://github.com/litlfred/qou/pull/781) | mass tables: remove legacy compute, align canonical + Borromean p,n | **complementary** — establishes canonical τ_M(β_p), τ_M(β_n) values that #777's SDP-T_β uses | **dependency** — #781 lands first; #777 consumes canonical τ_M | none (no file conflicts; layered) |
+| [#772](https://github.com/litlfred/qou/pull/772) | 210× scale-gap audit — ρ_K·m_e ≠ E_0^(N=0) | **consistent** — #777 uses E_0 = m_e/(q_0(q_0-1)) framing per #772's clarification | already coordinated in #777 body | none |
+| [#761](https://github.com/litlfred/qou/pull/761) | combined 10-PR bundle (Hoefsmit/GP + chirality + workplan v6) | adjacent layer — Rust Hoefsmit compute under #777's b values | **adjacent** | none (#777's v7 supersedes v6 from #739 in #761) |
+| [#783](https://github.com/litlfred/qou/pull/783) | I13 audit self-recursion fix | unrelated audit infra | **adjacent** | none |
+| [#774](https://github.com/litlfred/qou/pull/774) | I3 audit heuristic tighten | unrelated audit infra | **adjacent** | none |
+| [#738](https://github.com/litlfred/qou/pull/738) | detangler story coherence | editorial infra | **adjacent** | none |
+| [#736](https://github.com/litlfred/qou/pull/736) | wire orphan conjectures + bib entries | content cleanup | **adjacent** | none |
+| [#650](https://github.com/litlfred/qou/pull/650) | q-CLT scope conflict | scope discussion | **adjacent** | none |
+| [#646](https://github.com/litlfred/qou/pull/646) | Lean v4.24.0 lake fix | build infra | **adjacent** | none |
+
+### Intent comment
+
+Posted [#781 comment](https://github.com/litlfred/qou/pull/781#issuecomment-4483890136) — #781 (canonical τ_M) lands first, then #777 (SDP consumer).
+
+### #777 SDP work summary (new since previous /coordinate)
+
+Commits added since v7 docs landing (`8a212bc6c..72c620f9a`):
+
+| Commit | Content |
+|---|---|
+| `0aaabdb64` | Path 1 operator-identification probe (negative result on V_(2,1) alone) |
+| `0c24a8509` | fuller context audit on where c_k enter the framework |
+| `bb7c861c5` | general statement audit — c_k as Taylor coeffs of τ_M(T_β) |
+| `f7403a5ab` | SDP-T_β identification + c_2, c_3 derivation |
+| `5de71f85b` | FULL c_2..c_7 derivation via R(q_0) factorization |
+| `72c620f9a` | honest audit — closed forms are leading-order approximations, c_7 = -8 is wrong |
+
+**Key result:** the SDP-T_β framework with R(q_0) = Q_β/(Q_A·cos) factorization derives c_2..c_7 EXACTLY at q_0. The "empirical c_k" from `binding_q_target_sweep` are tautologically determined by R(q_0). The "closed forms" (c_3·b⁴, -(b²+1/2), 4·b², -8) are leading-order categorical interpretations with accuracy degrading from 0.9% (c_4) to 86%-off (c_7).
+
+### Next concrete tasks queued (per user direction)
+
+1. Multi-loop Kashiwara decomposition exploration (Path A) — categorical proof of c_4 = c_3·b⁴
+2. KLR canonical-basis trace exploration (Path B) — alternative derivation
+3. Spectral-sequence stratification (Path C) — most ambitious
+
+User asked to "ask where you need insight (give context)" for each path — that's the queued follow-up work.
