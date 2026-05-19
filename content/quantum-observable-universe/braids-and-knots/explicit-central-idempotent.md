@@ -26,17 +26,35 @@ $$
   \boxed{\;
     e_\lambda \;=\; \sum_{T \in \mathrm{SYT}(\lambda)}
     \prod_{k=1}^{n}
-    \prod_{\substack{\square \in \lambda \\ \square \neq T(k)}}
-    \frac{J_k - c(\square; q)}{c(T(k); q) - c(\square; q)}.
+    \prod_{\substack{c \in \mathcal{C}(n) \\ c \neq c(T(k); q)}}
+    \frac{J_k - c}{c(T(k); q) - c},
   \;}
 $$
 
-*The product over $\square$ ranges over boxes of $\lambda$ other
-than the position $T(k)$ assigned by tableau $T$. Each factor is
+*where $\mathcal{C}(n) := \{c(\square; q) : \square \in \mu,\; \mu \vdash n\}$
+is the set of distinct $q$-contents arising across **every** partition
+$\mu \vdash n$ (not just the cells of $\lambda$).  The product over $c$
+ranges over $\mathcal{C}(n)$ excluding the eigenvalue $c(T(k); q)$
+assigned by tableau $T$. Each factor is
 a Lagrange-interpolation projector onto the eigenspace where $J_k$
 has eigenvalue $c(T(k); q)$. Together with
 [`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)
 this gives a complete explicit construction of $Z(H_n(q))$.*
+
+> **Scope correction note (2026-05-19).** Earlier versions of this
+> proposition ranged the inner Lagrange product over cells of $\lambda$
+> only (i.e., $\square \in \lambda$).  With that scope, the off-block
+> projection does NOT vanish: the JM eigenvalue $q^{2c(T'(k))}$ for
+> $T' \in \mathrm{SYT}(\mu \neq \lambda)$ may not lie in
+> $\{c(\square; q) : \square \in \lambda\}$, so the Lagrange factor
+> fails to kill that direction.  The corrected scope above ranges
+> over $\mathcal{C}(n)$ (the union of contents across every $\mu$),
+> which is exactly the candidate set of joint JM eigenvalues across
+> all Wedderburn blocks.  Numerically verified to $\sim 10^{-50}$ in
+> [`explicit-central-idempotent-probe.witness.json`](../../folio-assistant/computations/explicit-central-idempotent-probe.witness.json):
+> own-block residue $0$, off-block residue $0$, completeness
+> residue $0$ under the corrected scope; literal-scope off-block
+> residue $\approx 32$ at $q_0$ for $n = 3$.
 
 ### Cross-checks
 
