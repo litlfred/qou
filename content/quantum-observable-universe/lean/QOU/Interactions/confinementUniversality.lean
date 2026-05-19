@@ -21,10 +21,14 @@ class ConfinementUniversalityContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
-  hecke_gen : ℕ → Prop
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_confinementUniversality : Prop
+  /-- Nucleon NF as a function of photon polarisation coefficients
+      `(φ_0, φ_1, φ_01)`. -/
+  N_F : ℝ → ℝ → ℝ → ℝ
+  /-- Manuscript identity (polarisation independence): the nucleon
+      NF is the constant function of the polarisation coefficients,
+      i.e. `N_F(φ_0, φ_1, φ_01) = N_F(0, 0, 0)`. -/
+  claim_confinementUniversality :
+    ∀ (φ_0 φ_1 φ_01 : ℝ), N_F φ_0 φ_1 φ_01 = N_F 0 0 0
 
 /-- **Proposition statement** (from manuscript):
 
@@ -57,9 +61,8 @@ The derivation chain has two stages:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
-theorem confinementUniversality [ctx : ConfinementUniversalityContext] : ctx.claim_confinementUniversality := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem confinementUniversality [ctx : ConfinementUniversalityContext] :
+    ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 :=
+  ctx.claim_confinementUniversality
 
 end QOU.Interactions

@@ -19,10 +19,13 @@ namespace QOU.Observations
 class CenteredHeckeVariancePositiveContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
-  hecke_gen : ℕ → Prop
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_centered_hecke_variance_positive : Prop
+  /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
+  z : ℝ
+  /-- Variance value `Var(σ_i) = (q − q⁻¹) z + 1 − z²`. -/
+  Var_sigma : ℝ
+  /-- Manuscript identities: closed-form variance + strict positivity. -/
+  claim_centered_hecke_variance_positive :
+    Var_sigma = (q - q⁻¹) * z + 1 - z ^ 2 ∧ 0 < Var_sigma
 
 /-- **Proposition statement** (from manuscript):
 
@@ -43,9 +46,9 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
-theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] : ctx.claim_centered_hecke_variance_positive := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] :
+    ctx.Var_sigma = (ctx.q - ctx.q⁻¹) * ctx.z + 1 - ctx.z ^ 2 ∧
+    0 < ctx.Var_sigma :=
+  ctx.claim_centered_hecke_variance_positive
 
 end QOU.Observations

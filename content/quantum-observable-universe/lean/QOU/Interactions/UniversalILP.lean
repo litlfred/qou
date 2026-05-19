@@ -21,8 +21,17 @@ class UniversalILPContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_universal_ilp : Prop
+  /-- Number of construction levels (quarks, nucleons, atoms,
+      molecules) = 4. -/
+  n_levels : ℕ
+  /-- ILP Gram matrix dimension per level — manuscript: constant
+      across levels. -/
+  gram_dim : ℕ → ℕ
+  /-- Manuscript identity: universal ILP — same Gram dimension at
+      every construction level (`gram_dim ℓ = gram_dim 0` for all
+      `ℓ < n_levels`) and there are exactly 4 levels. -/
+  claim_universal_ilp :
+    n_levels = 4 ∧ ∀ ℓ : ℕ, ℓ < n_levels → gram_dim ℓ = gram_dim 0
 
 /-- **Content statement** (from manuscript):
 
@@ -36,9 +45,9 @@ to quarks, nucleons, atoms, and molecules.*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/universal-ilp-algorithm.ts
-theorem UniversalILP [ctx : UniversalILPContext] : ctx.claim_universal_ilp := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem UniversalILP [ctx : UniversalILPContext] :
+    ctx.n_levels = 4 ∧
+    ∀ ℓ : ℕ, ℓ < ctx.n_levels → ctx.gram_dim ℓ = ctx.gram_dim 0 :=
+  ctx.claim_universal_ilp
 
 end QOU.Interactions

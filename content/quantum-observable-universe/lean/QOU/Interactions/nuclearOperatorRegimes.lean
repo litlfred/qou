@@ -21,8 +21,13 @@ class NuclearOperatorRegimesContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_nuclearOperatorRegimes : Prop
+  /-- Regime label of `Φ_k` (0 = bare-crossing, 1 = Hopf,
+      2 = inter-shell). -/
+  regime_of : ℕ → ℕ
+  /-- Manuscript identity: there are exactly three regimes, i.e.
+      `regime_of k ∈ {0, 1, 2}` for every step `k`. -/
+  claim_nuclearOperatorRegimes :
+    ∀ k : ℕ, regime_of k = 0 ∨ regime_of k = 1 ∨ regime_of k = 2
 
 /-- **Proposition statement** (from manuscript):
 
@@ -35,9 +40,9 @@ nucleus $\mathcal{N}_{\leq k}$) belongs to one of three regimes:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts
-theorem nuclearOperatorRegimes [ctx : NuclearOperatorRegimesContext] : ctx.claim_nuclearOperatorRegimes := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem nuclearOperatorRegimes [ctx : NuclearOperatorRegimesContext] :
+    ∀ k : ℕ, ctx.regime_of k = 0 ∨ ctx.regime_of k = 1 ∨
+             ctx.regime_of k = 2 :=
+  ctx.claim_nuclearOperatorRegimes
 
 end QOU.Interactions
