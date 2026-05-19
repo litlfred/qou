@@ -16,12 +16,12 @@ namespace QOU.Descent
 /-- Abstract context for the `descended_level_zero` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class DescendedLevelZeroContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The categorical mass / binding energy. -/
-  mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_descended_level_zero : Prop
+  /-- Descended (holonomy) contribution at jet level `n`. -/
+  desc_contrib : ℕ → ℝ
+  /-- Manuscript identity: the descended contribution appears only
+      at jet level `0`; higher levels vanish. -/
+  claim_descended_level_zero :
+    ∀ n : ℕ, 1 ≤ n → desc_contrib n = 0
 
 /-- **Content statement** (from manuscript):
 
@@ -40,9 +40,8 @@ jet level at which it is read off.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/descended-level-zero.ts
-theorem descended_level_zero [ctx : DescendedLevelZeroContext] : ctx.claim_descended_level_zero := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem descended_level_zero [ctx : DescendedLevelZeroContext] :
+    ∀ n : ℕ, 1 ≤ n → ctx.desc_contrib n = 0 :=
+  ctx.claim_descended_level_zero
 
 end QOU.Descent

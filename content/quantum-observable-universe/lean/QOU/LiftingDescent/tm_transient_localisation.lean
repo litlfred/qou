@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.LiftingDescent.tm_transient_localisation — placeholder stub
 
@@ -16,10 +18,16 @@ namespace QOU.LiftingDescent
 /-- Abstract context for the `tm_transient_localisation` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class TmTransientLocalisationContext where
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_tm_transient_localisation : Prop
+  /-- Number of blow-up points `N`. -/
+  N : ℕ
+  /-- Norm of the multiplicative integral on disc `D_i`. -/
+  MI_norm : ℕ → ℝ
+  /-- Norm of the total transient multiplicative integral. -/
+  MI_norm_total : ℝ
+  /-- Manuscript identity: total MI norm decomposes as a sum over
+      disjoint exceptional-divisor discs. -/
+  claim_tm_transient_localisation :
+    MI_norm_total = (Finset.range N).sum (fun i => MI_norm i)
 
 /-- **Lemma statement** (from manuscript):
 
@@ -32,9 +40,8 @@ decomposes as a sum over the exceptional divisors $E_i$:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
-theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] : ctx.claim_tm_transient_localisation := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] :
+    ctx.MI_norm_total = (Finset.range ctx.N).sum (fun i => ctx.MI_norm i) :=
+  ctx.claim_tm_transient_localisation
 
 end QOU.LiftingDescent

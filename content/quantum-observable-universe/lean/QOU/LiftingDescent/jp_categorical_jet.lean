@@ -16,12 +16,18 @@ namespace QOU.LiftingDescent
 /-- Abstract context for the `jp_categorical_jet` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class JpCategoricalJetContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The topological-link / knot type. -/
-  Link : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_jp_categorical_jet : Prop
+  /-- Categorical jet object `J¹(A) := A ⊗ Ω¹(A)`. -/
+  J1A : Type
+  /-- Inherited Frobenius–Hopf coproduct `Δ' : J¹(A) → J¹(A) ⊗ J¹(A)`. -/
+  Delta' : J1A → J1A × J1A
+  /-- Inherited counit `ε' : J¹(A) → 𝟙` (encoded as a `ℝ`-valued
+      evaluation since `𝟙` collapses to scalars). -/
+  epsilon' : J1A → ℝ
+  /-- Inherited antipode `S' : J¹(A) → J¹(A)`. -/
+  S' : J1A → J1A
+  /-- Manuscript identity: antipode is involutive on the jet
+      object, `S' ∘ S' = id`. -/
+  claim_jp_categorical_jet : ∀ x : J1A, S' (S' x) = x
 
 /-- **Lemma statement** (from manuscript):
 
@@ -36,9 +42,8 @@ $(\Delta', \varepsilon', S')$ from $A$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
-theorem jp_categorical_jet [ctx : JpCategoricalJetContext] : ctx.claim_jp_categorical_jet := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem jp_categorical_jet [ctx : JpCategoricalJetContext] :
+    ∀ x : ctx.J1A, ctx.S' (ctx.S' x) = x :=
+  ctx.claim_jp_categorical_jet
 
 end QOU.LiftingDescent

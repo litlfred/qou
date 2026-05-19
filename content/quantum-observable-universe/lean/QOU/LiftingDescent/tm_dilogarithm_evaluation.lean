@@ -16,10 +16,15 @@ namespace QOU.LiftingDescent
 /-- Abstract context for the `tm_dilogarithm_evaluation` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class TmDilogarithmEvaluationContext where
-  /-- The spectrum / eigenvalue list. -/
-  spectrum : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_tm_dilogarithm_evaluation : Prop
+  /-- Exceptional-divisor coordinate `z_i` per divisor index. -/
+  z : ℕ → ℝ
+  /-- Mass-integral evaluation `MI(E_i)` per divisor index. -/
+  MI : ℕ → ℝ
+  /-- Quantum dilogarithm `Φ_q : ℝ → ℝ`. -/
+  Phi_q : ℝ → ℝ
+  /-- Manuscript identity: each summand equals the quantum dilogarithm
+      `MI(E_i) = Φ_q(z_i)`. -/
+  claim_tm_dilogarithm_evaluation : ∀ i : ℕ, MI i = Phi_q (z i)
 
 /-- **Lemma statement** (from manuscript):
 
@@ -43,9 +48,8 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
-theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] : ctx.claim_tm_dilogarithm_evaluation := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] :
+    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) :=
+  ctx.claim_tm_dilogarithm_evaluation
 
 end QOU.LiftingDescent

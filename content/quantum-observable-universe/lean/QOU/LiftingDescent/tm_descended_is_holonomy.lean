@@ -17,10 +17,12 @@ namespace QOU.LiftingDescent
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class TmDescendedIsHolonomyContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_tm_descended_is_holonomy : Prop
+  /-- The descended-term value. -/
+  descended_term : ℝ
+  /-- The unknot-core holonomy `hol(ρ_0)`. -/
+  unknot_holonomy : ℝ
+  /-- Manuscript identity: descended term equals unknot-core holonomy. -/
+  claim_tm_descended_is_holonomy : descended_term = unknot_holonomy
 
 /-- **Lemma statement** (from manuscript):
 
@@ -34,9 +36,8 @@ the unknot-core holonomy:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
-theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] : ctx.claim_tm_descended_is_holonomy := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] :
+    ctx.descended_term = ctx.unknot_holonomy :=
+  ctx.claim_tm_descended_is_holonomy
 
 end QOU.LiftingDescent

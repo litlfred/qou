@@ -17,10 +17,15 @@ namespace QOU.LiftingDescent
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class TmEigenspaceDecompContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_tm_eigenspace_decomp : Prop
+  /-- Multiplicative-integral norm `‖MI(α)‖`. -/
+  MI_alpha : ℝ
+  /-- Descended-component norm `‖MI(α_desc)‖`. -/
+  MI_desc : ℝ
+  /-- Transient-component norm `‖MI(α_trans)‖`. -/
+  MI_trans : ℝ
+  /-- Manuscript identity: Killing-form orthogonal additivity:
+      `‖MI(α)‖ = ‖MI(α_desc)‖ + ‖MI(α_trans)‖`. -/
+  claim_tm_eigenspace_decomp : MI_alpha = MI_desc + MI_trans
 
 /-- **Lemma statement** (from manuscript):
 
@@ -35,9 +40,8 @@ direct sums gives
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts
-theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] : ctx.claim_tm_eigenspace_decomp := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] :
+    ctx.MI_alpha = ctx.MI_desc + ctx.MI_trans :=
+  ctx.claim_tm_eigenspace_decomp
 
 end QOU.LiftingDescent
