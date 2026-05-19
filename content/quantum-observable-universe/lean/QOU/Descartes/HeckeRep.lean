@@ -119,12 +119,12 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     multiplying by `σ⁻²`.  Recorded as an axiom pending the Lean
     refactor where `H := HA·1` is introduced as a local symbol so
     `linear_combination` can close the goal against `hecke_rel`. -/
--- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 axiom HeckeRep.genInv_hecke_axiom :
     ∀ {n d : ℕ} (ρ : HeckeRep n d) (i : Fin (n - 1)),
       ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1
 
--- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 :=
   HeckeRep.genInv_hecke_axiom ρ i

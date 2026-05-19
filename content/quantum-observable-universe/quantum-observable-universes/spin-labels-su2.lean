@@ -25,7 +25,7 @@ namespace QOU.Examples
 /-- **SU(2) spin labels**: concrete dimensions of low-spin representations.
 
     LaTeX: `\label{ex:spin-labels-su2}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure SU2SpinLabels where
   /-- Dimension of V_j, given twice_j (so j = twice_j/2). -/
   dim : ℕ → ℕ
@@ -39,7 +39,7 @@ structure SU2SpinLabels where
   completely_reducible : tensorSquareDim = dim 0 + dim 2
 
 /-- The SU(2) spin label data. -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 def su2SpinLabels : SU2SpinLabels where
   dim := fun twice_j => twice_j + 1
   dim_formula := fun _ => rfl

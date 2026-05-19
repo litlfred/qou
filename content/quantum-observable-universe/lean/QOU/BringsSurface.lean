@@ -38,7 +38,7 @@ set_option linter.dupNamespace false in
     the first three power sums: `Σ xⱼᵏ = 0` for `k = 1, 2, 3`.
 
     LaTeX: `\label{def:brings-surface}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure BringsSurface where
   /-- Homogeneous coordinates `x₀, …, x₄` as a function on the surface. -/
   coords : Fin 5 → ℂ
@@ -70,7 +70,7 @@ def automorphism_order : ℕ := 120
     `wₖ = (1/√5) Σⱼ ζ^{kj} xⱼ`, for `k ∈ {0, 1, 2, 3, 4}`.
 
     LaTeX: `\label{rem:lagrange-resolvents}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure LagrangeResolvents where
   /-- The resolvent coordinates `w₀, …, w₄`. -/
   w : Fin 5 → ℂ
@@ -119,7 +119,7 @@ def observedValue (ct : ColorTubeCoordinates) : ℂ := ct.z
     curve (genus 1).
 
     LaTeX: `\label{prop:chiral-elliptic}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure ChiralEllipticCurve where
   /-- The chiral fibre carrier. -/
   carrier : Type*
@@ -145,7 +145,7 @@ structure BriggsKleinChart where
     acts naturally.
 
     LaTeX: `\label{def:quaternionic-spectral-resolvents}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure QuaternionicResolvents where
   /-- The three quaternionic resolvent components. -/
   omega : Fin 3 → ℂ
@@ -213,7 +213,7 @@ theorem mi_sw_abelianisation
     5. **Geometric descent**: `M_S → Σ₄ → P(V) → {6 points}`.
 
     LaTeX: `\label{prop:brings-is-qou}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure BringsQOU where
   /-- The underlying Bring's surface. -/
   surface : BringsSurface

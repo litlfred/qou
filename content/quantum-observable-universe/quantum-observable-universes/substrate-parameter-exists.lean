@@ -115,7 +115,7 @@ theorem InterpolatedDifferential.classical_limit :
     interpolation between d and π_V ∘ d.
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 noncomputable def SubstrateParameter.ofReebDecomposition
     {C : Type*} [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C] [Preadditive C]

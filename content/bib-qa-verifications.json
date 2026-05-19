@@ -10,7 +10,7 @@
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 18,
       "fix_commit": "(this commit)",
-      "note": "All 17 -- Ref: [boyd-vandenberghe-2004] sites now carry a §-specific citation. (1) 4 misattribution fixes in commit 66b3caf7f: §5.5.3→§5.5.2 (PosSemidefTraceZero), §5.5.4→§5.5.2+alizadeh (SDPRealUniqueness 3 occurrences), Thm 5.5→§5.2.3+§5.3 (SDP 2 occurrences), §A.5.3→§A.5.5 (PosSemidefDiagZero 2 occurrences). (2) 14 generic DOI-only Refs in this commit specified by section: §5.6 perturbation/sensitivity for shell-closure/phase-stratification monotone+openness claims (10 sites across 5 files); §5.2.3+§5.3+§5.5 Slater+strong-duality+KKT for noble-gas SDP (ElectronShell, 2 sites); §5.2.3+§5.3 Slater+strong-duality for ConfinementSDP (3 sites). Verified against uploads/boyd-vandenberghe-2004-convex-optimization.pdf TOC. 0 generic boyd Refs remain in content/."
+      "note": "All 17 -- Ref: [boyd-vandenberghe-2004] sites now carry a \u00a7-specific citation. (1) 4 misattribution fixes in commit 66b3caf7f: \u00a75.5.3\u2192\u00a75.5.2 (PosSemidefTraceZero), \u00a75.5.4\u2192\u00a75.5.2+alizadeh (SDPRealUniqueness 3 occurrences), Thm 5.5\u2192\u00a75.2.3+\u00a75.3 (SDP 2 occurrences), \u00a7A.5.3\u2192\u00a7A.5.5 (PosSemidefDiagZero 2 occurrences). (2) 14 generic DOI-only Refs in this commit specified by section: \u00a75.6 perturbation/sensitivity for shell-closure/phase-stratification monotone+openness claims (10 sites across 5 files); \u00a75.2.3+\u00a75.3+\u00a75.5 Slater+strong-duality+KKT for noble-gas SDP (ElectronShell, 2 sites); \u00a75.2.3+\u00a75.3 Slater+strong-duality for ConfinementSDP (3 sites). Verified against uploads/boyd-vandenberghe-2004-convex-optimization.pdf TOC. 0 generic boyd Refs remain in content/."
     },
     {
       "id": "codata2022",
@@ -19,7 +19,7 @@
       "verified_at": "2026-05-19T06:14:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "All 5 .lean Ref sites verified against the NIST table: muon-electron mass ratio 206.768 2827(46) ✓; proton mass energy equiv. 938.272 089 43(29) MeV ✓; derived hydrogen mass 938.7831 MeV (= m_p + m_e − 13.6 eV/c²) ✓. No fixes needed."
+      "note": "All 5 .lean Ref sites verified against the NIST table: muon-electron mass ratio 206.768 2827(46) \u2713; proton mass energy equiv. 938.272 089 43(29) MeV \u2713; derived hydrogen mass 938.7831 MeV (= m_p + m_e \u2212 13.6 eV/c\u00b2) \u2713. No fixes needed."
     },
     {
       "id": "leitnerpawloski2004",
@@ -28,7 +28,7 @@
       "verified_at": "2026-05-19T06:18:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "arXiv math/0409565 = LP2004 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: §2 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 — exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean — both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope."
+      "note": "arXiv math/0409565 = LP2004 'Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: \u00a72 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 \u2014 exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean \u2014 both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope."
     },
     {
       "id": "yekutieli2008",
@@ -37,7 +37,7 @@
       "verified_at": "2026-05-19T06:26:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Twisted Deformation Quantization of Algebraic Varieties' by Amnon Yekutieli (Contemporary Mathematics survey, arXiv:0801.3233v4 2011). §2 'Poisson Deformations of Algebraic Varieties' — matches QOU's citation in global-gluing.lean:28 + Torsion/GlobalGluing.lean:30 for 'O_{q(p)}(G) of functions on the quantum group deformed by the local substrate parameter'. Scope match."
+      "note": "Confirmed paper is 'Twisted Deformation Quantization of Algebraic Varieties' by Amnon Yekutieli (Contemporary Mathematics survey, arXiv:0801.3233v4 2011). \u00a72 'Poisson Deformations of Algebraic Varieties' \u2014 matches QOU's citation in global-gluing.lean:28 + Torsion/GlobalGluing.lean:30 for 'O_{q(p)}(G) of functions on the quantum group deformed by the local substrate parameter'. Scope match."
     },
     {
       "id": "zink2002",
@@ -46,7 +46,7 @@
       "verified_at": "2026-05-19T06:23:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper — it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Astérisque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(Ĝ) free ℤ_p-module structure — IS in Zink's actual paper §2 — so the cite intent is fine, just the local PDF needs replacement."
+      "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper \u2014 it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Ast\u00e9risque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(\u011c) free \u2124_p-module structure \u2014 IS in Zink's actual paper \u00a72 \u2014 so the cite intent is fine, just the local PDF needs replacement."
     },
     {
       "id": "freed2010",
@@ -55,7 +55,7 @@
       "verified_at": "2026-05-19T06:23:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Topological Quantum Field Theories from Compact Lie Groups' by Freed, Hopkins, Lurie, Teleman (arXiv:0905.0731). Title-only citation in Glossary.lean:337 matches paper scope exactly. (Bib entry uses 'freed2010' shorthand for the 4-author group — acceptable.)"
+      "note": "Confirmed paper is 'Topological Quantum Field Theories from Compact Lie Groups' by Freed, Hopkins, Lurie, Teleman (arXiv:0905.0731). Title-only citation in Glossary.lean:337 matches paper scope exactly. (Bib entry uses 'freed2010' shorthand for the 4-author group \u2014 acceptable.)"
     },
     {
       "id": "berarducci2018",
@@ -64,7 +64,7 @@
       "verified_at": "2026-05-19T06:23:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Surreal numbers, derivations and transseries' by Berarducci & Mantova (arXiv:1503.00315). PolynomialEval.lean:202 cites §2 — §2 (subsections 2.1 Order and simplicity, 2.2 Field operations, ...) is where the surreal field structure + polynomial extensions are developed. Cited scope matches."
+      "note": "Confirmed paper is 'Surreal numbers, derivations and transseries' by Berarducci & Mantova (arXiv:1503.00315). PolynomialEval.lean:202 cites \u00a72 \u2014 \u00a72 (subsections 2.1 Order and simplicity, 2.2 Field operations, ...) is where the surreal field structure + polynomial extensions are developed. Cited scope matches."
     },
     {
       "id": "kassel1995",
@@ -74,7 +74,7 @@
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 43,
       "fix_commit": "(this commit)",
-      "note": "Kassel, 'Quantum Groups', Springer GTM 155, 1995 (DOI 10.1007/978-1-4612-0783-2). 43 truly-bare-URL Refs across 23 .lean files updated with thematic chapter citations: Group A (15 Hecke/Markov/Schur-Weyl/Anyonic files) → Ch. X (Hecke algebras and Markov trace); Group B (7 braiding/R-matrix/Casimir/quantum-SL(2) files) → Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories); Group C (1 broad-ref file: magic-numbers-bring) → generic title-only ref. 11 already-§-specific Refs (e.g. §V.5, §VIII.3, Ch. XIII at specific sites) preserved unchanged. Status fixed."
+      "note": "Kassel, 'Quantum Groups', Springer GTM 155, 1995 (DOI 10.1007/978-1-4612-0783-2). 43 truly-bare-URL Refs across 23 .lean files updated with thematic chapter citations: Group A (15 Hecke/Markov/Schur-Weyl/Anyonic files) \u2192 Ch. X (Hecke algebras and Markov trace); Group B (7 braiding/R-matrix/Casimir/quantum-SL(2) files) \u2192 Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories); Group C (1 broad-ref file: magic-numbers-bring) \u2192 generic title-only ref. 11 already-\u00a7-specific Refs (e.g. \u00a7V.5, \u00a7VIII.3, Ch. XIII at specific sites) preserved unchanged. Status fixed."
     },
     {
       "id": "jones1987",
@@ -84,7 +84,7 @@
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 142,
       "fix_commit": "(this commit)",
-      "note": "Jones, 'Hecke algebra representations of braid groups and link polynomials', Ann. Math. 126 (1987). 142 bare-URL `-- Ref: [jones1987] https://doi.org/10.2307/1971403` lines across 58 .lean files bulk-updated to §-specific citation: §3 (The Markov trace) + §4 (Link polynomials), the two sections that cover all sampled Lean citations (Markov trace conjugation invariance, Hecke trace evaluation, skein/braid polynomial calculations, trefoil/Borromean link polynomials, q-Schur-Weyl in Hecke algebra). 20-context sample (random + targeted) confirmed uniform §3+§4 scope before bulk-replace. No local PDF in uploads/ (Annals of Mathematics paywalled; not on arxiv). Status fixed: 142 lines now §-specific."
+      "note": "Jones, 'Hecke algebra representations of braid groups and link polynomials', Ann. Math. 126 (1987). 142 bare-URL `-- Ref: [jones1987] https://doi.org/10.2307/1971403` lines across 58 .lean files bulk-updated to \u00a7-specific citation: \u00a73 (The Markov trace) + \u00a74 (Link polynomials), the two sections that cover all sampled Lean citations (Markov trace conjugation invariance, Hecke trace evaluation, skein/braid polynomial calculations, trefoil/Borromean link polynomials, q-Schur-Weyl in Hecke algebra). 20-context sample (random + targeted) confirmed uniform \u00a73+\u00a74 scope before bulk-replace. No local PDF in uploads/ (Annals of Mathematics paywalled; not on arxiv). Status fixed: 142 lines now \u00a7-specific."
     },
     {
       "id": "faddeev_kashaev1994",
@@ -93,7 +93,7 @@
       "verified_at": "2026-05-19T06:23:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 — published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation — this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match."
+      "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 \u2014 published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation \u2014 this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match."
     },
     {
       "id": "baez2004",
@@ -102,7 +102,7 @@
       "verified_at": "2026-05-19T06:23:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Higher-Dimensional Algebra V: 2-Groups' by John C. Baez (arXiv:math/0307200). emergence-to-quantum-flat.lean:34 cites it for INN(G_q) being 'the unique strict 2-group' under simplicity constraint — this paper IS the canonical 2-groups reference; INN construction is in the body."
+      "note": "Confirmed paper is 'Higher-Dimensional Algebra V: 2-Groups' by John C. Baez (arXiv:math/0307200). emergence-to-quantum-flat.lean:34 cites it for INN(G_q) being 'the unique strict 2-group' under simplicity constraint \u2014 this paper IS the canonical 2-groups reference; INN construction is in the body."
     },
     {
       "id": "hu-mathas2012graded",
@@ -111,7 +111,7 @@
       "verified_at": "2026-05-19T06:23:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Graded Induction for Specht Modules' by Hu & Mathas (arXiv:1008.1462). StructuralRank.lean:84 cites it for 'graded induction for Specht modules' — title is the citation text, exact match. (Bib key has '2012' but arXiv is 2010-08; the paper was published 2012 — version mismatch is acceptable.)"
+      "note": "Confirmed paper is 'Graded Induction for Specht Modules' by Hu & Mathas (arXiv:1008.1462). StructuralRank.lean:84 cites it for 'graded induction for Specht modules' \u2014 title is the citation text, exact match. (Bib key has '2012' but arXiv is 2010-08; the paper was published 2012 \u2014 version mismatch is acceptable.)"
     },
     {
       "id": "klein1888",
@@ -120,7 +120,7 @@
       "verified_at": "2026-05-19T06:30:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed book is 'Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade' by Felix Klein, 1888 (282 pages, archive.org/details/vorlesungenber00kleiuoft). Index entries include §142 'Die Bring'sche Form', §192 'Classification der Curven und Flächen', §207 'Die Bring'sche Transformation', §189 'Die Hauptresolvente der Ikosaedergleichung'. The QOU citations in magic-numbers-bring.{md,lean} for (1) S_5-stable sub-lattice classification and (2) Bring's curve as unique genus-4 with maximal S_5 — both covered by Klein's icosahedron-and-quintic book."
+      "note": "Confirmed book is 'Vorlesungen \u00fcber das Ikosaeder und die Aufl\u00f6sung der Gleichungen vom f\u00fcnften Grade' by Felix Klein, 1888 (282 pages, archive.org/details/vorlesungenber00kleiuoft). Index entries include \u00a7142 'Die Bring'sche Form', \u00a7192 'Classification der Curven und Fl\u00e4chen', \u00a7207 'Die Bring'sche Transformation', \u00a7189 'Die Hauptresolvente der Ikosaedergleichung'. The QOU citations in magic-numbers-bring.{md,lean} for (1) S_5-stable sub-lattice classification and (2) Bring's curve as unique genus-4 with maximal S_5 \u2014 both covered by Klein's icosahedron-and-quintic book."
     },
     {
       "id": "pham1965",
@@ -129,7 +129,7 @@
       "verified_at": "2026-05-19T06:23:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Formules de Picard-Lefschetz généralisées et ramification des intégrales' by F. Pham (Bull. SMF 93, 1965, pp.333-367). morse-wall-q-moduli.lean:23 cites it for 'generalised Picard-Lefschetz formula' — paper title is verbatim the citation text. Scope match."
+      "note": "Confirmed paper is 'Formules de Picard-Lefschetz g\u00e9n\u00e9ralis\u00e9es et ramification des int\u00e9grales' by F. Pham (Bull. SMF 93, 1965, pp.333-367). morse-wall-q-moduli.lean:23 cites it for 'generalised Picard-Lefschetz formula' \u2014 paper title is verbatim the citation text. Scope match."
     },
     {
       "id": "oeis-A006752",
@@ -138,7 +138,7 @@
       "verified_at": "2026-05-19T06:20:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "QOU literal `catalan_G := 0.91596559417721901505` matches OEIS A006752 b-file digits 0-19 exactly (reconstruct: 0.9159655941772190150547... → first 20 digits 0.91596559417721901505). 1 .lean Ref site cited correctly."
+      "note": "QOU literal `catalan_G := 0.91596559417721901505` matches OEIS A006752 b-file digits 0-19 exactly (reconstruct: 0.9159655941772190150547... \u2192 first 20 digits 0.91596559417721901505). 1 .lean Ref site cited correctly."
     },
     {
       "id": "mostow1968",
@@ -147,7 +147,7 @@
       "verified_at": "2026-05-19T06:30:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms' by G. D. Mostow (Publications IHES vol 34, 1968) — the canonical 'Mostow rigidity' paper. QOU .md citations in atom-knot-mass-derivation-proof.md and encounter-literature-bridge.md cite it for Mostow rigidity; title matches exactly."
+      "note": "Confirmed paper is 'Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms' by G. D. Mostow (Publications IHES vol 34, 1968) \u2014 the canonical 'Mostow rigidity' paper. QOU .md citations in atom-knot-mass-derivation-proof.md and encounter-literature-bridge.md cite it for Mostow rigidity; title matches exactly."
     },
     {
       "id": "bufetov2020",
@@ -156,7 +156,7 @@
       "verified_at": "2026-05-19T06:30:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Confirmed paper is 'Interacting Particle Systems and Random Walks on Hecke Algebras' by Alexey Bufetov (arXiv:2003.02730). QOU .md citation in hecke-markov-interpretation.md cites it for 'Bufetov showed that the ASEP generator is a sum of Hecke algebra elements' — paper title and abstract confirm this is the central content. Scope match."
+      "note": "Confirmed paper is 'Interacting Particle Systems and Random Walks on Hecke Algebras' by Alexey Bufetov (arXiv:2003.02730). QOU .md citation in hecke-markov-interpretation.md cites it for 'Bufetov showed that the ASEP generator is a sum of Hecke algebra elements' \u2014 paper title and abstract confirm this is the central content. Scope match."
     },
     {
       "id": "gromov1982",
@@ -165,7 +165,7 @@
       "verified_at": "2026-05-19T06:33:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'Volume and bounded cohomology' by Michael Gromov, Publications IHES vol 56 (1982). Title matches references.ts. Bib orphan — no .lean or .md citation sites in QOU. Decision pending (keep as forward-ref / remove / find use). Likely candidate for citation alongside thurston1978 in hyperbolic-volume contexts."
+      "note": "PDF verified: 'Volume and bounded cohomology' by Michael Gromov, Publications IHES vol 56 (1982). Title matches references.ts. Bib orphan \u2014 no .lean or .md citation sites in QOU. Decision pending (keep as forward-ref / remove / find use). Likely candidate for citation alongside thurston1978 in hyperbolic-volume contexts."
     },
     {
       "id": "bilsonthompson2005",
@@ -174,7 +174,7 @@
       "verified_at": "2026-05-19T06:33:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan — no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending."
+      "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan \u2014 no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending."
     },
     {
       "id": "finster2021",
@@ -183,7 +183,7 @@
       "verified_at": "2026-05-19T06:33:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'The linear dynamics of wave functions in causal fermion systems' by Finster, Kamran, Oppio (arXiv:2101.08673). Title matches. Bib orphan — no QOU citation. Causal fermion systems are tangential to QOU's brane substrate but conceptually related. Decision pending."
+      "note": "PDF verified: 'The linear dynamics of wave functions in causal fermion systems' by Finster, Kamran, Oppio (arXiv:2101.08673). Title matches. Bib orphan \u2014 no QOU citation. Causal fermion systems are tangential to QOU's brane substrate but conceptually related. Decision pending."
     },
     {
       "id": "finster2022",
@@ -219,7 +219,67 @@
       "verified_at": "2026-05-19T06:33:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvić, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvić papers — the bib metadata may be for a different Blitvić arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper."
+      "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvi\u0107, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvi\u0107 papers \u2014 the bib metadata may be for a different Blitvi\u0107 arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper."
+    },
+    {
+      "id": "turaev2010",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T07:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 23,
+      "fix_commit": "(this commit)",
+      "note": "Turaev, 'Quantum Invariants of Knots and 3-Manifolds', de Gruyter 2010 (DOI 10.1515/9783110221831). 23 bare-URL Refs upgraded to title+publisher form; no local PDF in uploads/ (de Gruyter paywalled, no arxiv version). Status: partial \u2014 citations improved but \u00a7-specific verification deferred until PDF available."
+    },
+    {
+      "id": "kock2004",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T07:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 23,
+      "fix_commit": "(this commit)",
+      "note": "Kock, 'Frobenius Algebras and 2D Topological Quantum Field Theories', CUP LMS Student Texts 59, 2004 (DOI 10.1017/CBO9780511615443). 23 bare-URL Refs \u2192 title+publisher. No local PDF (CUP textbook paywalled, no free version). Partial."
+    },
+    {
+      "id": "lusztig1993",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T07:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 17,
+      "fix_commit": "(this commit)",
+      "note": "Lusztig, 'Introduction to Quantum Groups', Birkh\u00e4user 1993 (DOI 10.1007/978-0-8176-4717-9). 17 bare-URL Refs \u2192 title+publisher. No local PDF (Birkh\u00e4user paywalled). Partial."
+    },
+    {
+      "id": "bergman1978",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T07:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 18,
+      "fix_commit": "(this commit)",
+      "note": "Bergman, 'The diamond lemma for ring theory', Adv. Math. 29 (1978). 18 bare-URL Refs \u2192 title+journal form. No local PDF (Elsevier paywalled). Partial."
+    },
+    {
+      "id": "atiyah1988",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T07:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 12,
+      "fix_commit": "(this commit)",
+      "note": "Atiyah, 'Topological quantum field theories', Publ. IHES 68 (1988). 12 bare-URL Refs \u2192 title+journal form. No local PDF (IHES paywalled in this case; an open numdam mirror likely exists \u2014 could be intake candidate). Partial."
+    },
+    {
+      "id": "iwahori1964",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T07:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 11,
+      "fix_commit": "(this commit)",
+      "note": "Iwahori, 'On the structure of a Hecke ring of a Chevalley group over a finite field', J. Fac. Sci. Univ. Tokyo 10 (1964). 11 bare-URL Refs \u2192 title+journal form. No local PDF (journal not on standard databases; 1964 archive). Partial."
     }
   ]
 }

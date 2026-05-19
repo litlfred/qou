@@ -37,7 +37,7 @@ namespace QOU.Glossary
     LaTeX: `\label{def:frobenius-hopf}`
     Mathlib: No direct equivalent — builds on `Mathlib.CategoryTheory.Monoidal.Category`
     Universes: objects in `u`, morphisms in `v` -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure FrobeniusHopfObject where
   /-- The carrier type of the underlying object. -/
   carrier : Type*
@@ -59,7 +59,7 @@ structure FrobeniusHopfObject where
     cocommutative case.
 
     LaTeX: `\label{def:quantum-parameter}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 noncomputable def quantumParameter : ℝ := 1.1097
 
 /-- **Fibre Functor**: An exact faithful k-linear monoidal functor
@@ -80,7 +80,7 @@ structure FibreFunctor where
     via Tannaka-Krein duality from the fibre functor.
 
     LaTeX: `\label{def:quantum-gauge-group}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure QuantumGaugeGroup where
   /-- The carrier type of the quantum group. -/
   carrier : Type*
@@ -111,7 +111,7 @@ structure CRManifold where
     in CP⁴.
 
     LaTeX: `\label{def:brings-surface}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure BringsSurface where
   /-- The carrier type. -/
   carrier : Type*
@@ -161,7 +161,7 @@ structure KahlerDifferentials where
     `⟨σ₁, σ₂ | σ₁σ₂σ₁ = σ₂σ₁σ₂⟩`.
 
     LaTeX: `\label{def:braid-group}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure BraidGroup (n : ℕ) where
   /-- Carrier type for braid group elements. -/
   carrier : Type*
@@ -174,7 +174,7 @@ structure BraidGroup (n : ℕ) where
     via the double cover `SU(2) → SO(3)`.
 
     LaTeX: `\label{def:binary-dihedral}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure BinaryDihedralGroup where
   /-- Carrier type for group elements. -/
   carrier : Type*
@@ -229,7 +229,7 @@ structure ReebVectorField where
 
     LaTeX: `\label{def:substrate-parameter}` (referenced within).
     Ref: [lusztig1993] -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure LusztigIntegralForm where
   /-- Carrier type of the integral form. -/
   carrier : Type*

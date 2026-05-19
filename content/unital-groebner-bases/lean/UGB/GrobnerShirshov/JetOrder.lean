@@ -87,7 +87,7 @@ def monomialTransient (jc : JetConfig) (w : List ℕ) : Prop :=
 def degLexNat (a b : List ℕ) : Prop :=
   a.length < b.length ∨ (a.length = b.length ∧ a < b)
 
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 -- Pending: Mathlib renames of `wellFoundedRelation` accessors.
 theorem degLexNat_wf : WellFounded degLexNat := by
   sorry
@@ -152,13 +152,13 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
     this lemma records the formal consequence for reuse at call sites.
 
     Reference: [manuscript] §3/ordering-jet-compatibility. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem ordering_extends (a b : List ℕ) (hab : degLexNat a b) :
     degLexNat a b := hab
 
 /-- **Well-foundedness at each level**: within the alphabet
     `{0, …, n-1}`, deg-lex has no infinite descending chains. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem wellfounded_at_level (n : ℕ) :
     WellFounded (fun (a b : List ℕ) =>
       degLexNat a b ∧ ∀ g ∈ a, g < n) :=
@@ -170,7 +170,7 @@ theorem wellfounded_at_level (n : ℕ) :
     The ordering `≺_∞ = ⋃ₙ ≺ₙ` is well-founded on elements of
     bounded generator index because `degLexNat` is well-founded
     and the bounded-alphabet restriction is a subrelation. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 -- Ref: [manuscript] §3/ordering-jet-compatibility
 theorem direct_limit_terminates (n : ℕ) (w : List ℕ)
     (hw : ∀ g ∈ w, g < n) :
@@ -246,7 +246,7 @@ def classifySPoly (c₁ c₂ : RuleClass) : SPolyClass :=
     reduction (since transient leading monomials involve new generators
     that cannot appear in descended monomials). -/
 -- Ref: [fred2005] §3, Proposition 3.8
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 axiom descended_gs_inherited
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
@@ -273,7 +273,7 @@ axiom descended_gs_inherited
 
     Reference: [fred2005, §3], extended to jet towers. -/
 -- Ref: [fred2005] §3, Proposition 3.8
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 axiom jet_stratified_gs_criterion
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
@@ -327,7 +327,7 @@ noncomputable def bucketize {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     `SingleStepReduction` with a rule of LM degree `> d` cannot
     match any monomial of degree `d` (the LM is too long to be
     a subword). -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 axiom degree_filtered_reduction_correct
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
@@ -377,7 +377,7 @@ def spolySavings (m k : ℕ) : ℕ := m * (m - 1) / 2
 
     Reference: [fred2005, §3] + [bergman1978, §5]. -/
 -- Ref: [fred2005] §3, Proposition 3.8
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem jet_stratified_correct
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (cfg : JetReductionConfig G k)

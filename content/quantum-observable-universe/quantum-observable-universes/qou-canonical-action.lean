@@ -35,7 +35,7 @@ universe u v
                        + ∫_A(ψ* · 𝒟_∇ ψ)      (matter)
 
     The action is unique up to rescaling of the Frobenius form ∫_A. -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C) where
@@ -57,7 +57,7 @@ structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
     The squared Dirac operator decomposes via the Frobenius–Hopf
     structure into the Frobenius–Ricci scalar (gravity) and the
     q-Yang–Mills density (gauge). -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem qou_canonical_action_dirac_sq
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
@@ -74,7 +74,7 @@ theorem qou_canonical_action_dirac_sq
     form: replacing ∫_A by λ·∫_A sends S_q ↦ λ·S_q.  The residual
     ambiguity is a single scalar λ ∈ R×. -/
 -- Ref: [manuscript] §2, Proposition: Canonical action
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem qou_canonical_action_unique_up_to_scalar
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]

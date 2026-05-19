@@ -41,7 +41,7 @@ def InIdeal {k : Type*} [Ring k] (_remainder : k) (_generators : List k) : Prop 
     Existence of normal forms is axiomatized (Bergman 1978, Theorem 1.2);
     the reduction function and correctness theorems are proved in
     `content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90116-0
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem division_algorithm_exists
     {k : Type*} [Ring k] (f : k)
     (generators : List k) (_h_nonempty : generators ≠ []) :

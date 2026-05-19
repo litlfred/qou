@@ -171,7 +171,7 @@ class QuantumSu2Relations (qs : QuantumSu2) (d : QCasimirData qs) : Prop where
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 def QCasimir (qs : QuantumSu2) (d : QCasimirData qs) : qs.Algebra :=
   let kPart      := d.ι qs.q * qs.K + d.ι d.qInv * qs.K_inv
   let normaliser := d.ι (qs.q + d.qInv)
@@ -684,7 +684,7 @@ noncomputable def qNumberSym {K : Type*} [Field K] (q : K) (n : ℤ) : K :=
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 noncomputable def QCasimirEigenvalue {K : Type*} [Field K] (q : K) (j : ℤ) : K :=
   qNumberSym q j * qNumberSym q (j + 1)
 

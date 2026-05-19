@@ -38,7 +38,7 @@ structure FrobeniusPairing (C : Type u) [Category.{v} C]
   pairing_eq : pairing = fh.mul ≫ fh.frobeniusForm
 
 /-- Construct the canonical Frobenius pairing from a Frobenius–Hopf datum. -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def FrobeniusHopfData.canonicalPairing {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (fh : FrobeniusHopfData C) :
     FrobeniusPairing C fh where
@@ -81,7 +81,7 @@ structure FrobeniusPairing.NonDegenerate {C : Type u} [Category.{v} C]
 
 /-- A Frobenius–Hopf datum with snake identities already has a
     non-degenerate canonical pairing. -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def FrobeniusHopfData.hasNonDegeneratePairing {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (fh : FrobeniusHopfData C) :
     FrobeniusPairing.NonDegenerate (fh.canonicalPairing) where

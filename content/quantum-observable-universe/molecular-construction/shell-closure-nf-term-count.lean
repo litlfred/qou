@@ -83,7 +83,7 @@ This has 2 nonzero terms. -/
 noncomputable def hydrogen_nf : H2_NF := h2_nuc_e_Z1
 
 /-- HA = q − q⁻¹ is nonzero in ℤ[q, q⁻¹]. -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem HA_ne_zero : HA ≠ 0 := by
   unfold HA q q_inv
   intro h
@@ -187,14 +187,14 @@ noncomputable def helium_step3 : H3_NF :=
 noncomputable def helium_nf : H3_NF := helium_step3
 
 /-- Helium NF has zero 𝟏-coefficient (slot 0). -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot0_zero : helium_nf 0 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
   ring
 
 /-- Helium NF has zero σ₀-coefficient (slot 1). -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot1_zero : helium_nf 1 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
@@ -202,7 +202,7 @@ theorem helium_slot1_zero : helium_nf 1 = 0 := by
 
 /-- Helium NF has nonzero σ₁-coefficient (slot 2).
     This is 4·(q⁴ − q² + 1)/q² = 4·T(2) − 4 + 4·T(−2). -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
@@ -217,7 +217,7 @@ theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
 
 /-- Helium NF has nonzero σ₀σ₁-coefficient (slot 3).
     This is −4·(q² − 1)/q = −4·(T(1) − T(−1)) = −4·HA. -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
@@ -229,14 +229,14 @@ theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
   linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
 
 /-- Helium NF has zero σ₁σ₀-coefficient (slot 4). -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot4_zero : helium_nf 4 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
   ring
 
 /-- Helium NF has zero σ₀σ₁σ₀-coefficient (slot 5). -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot5_zero : helium_nf 5 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
@@ -251,7 +251,7 @@ n(He) = n(H) = 2.
 
 The second electron is absorbed into the existing NF basis without
 creating new reduced words. This is the 1s² shell closure. -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_shell_closure :
     (helium_nf 0 = 0) ∧
     (helium_nf 1 = 0) ∧
@@ -268,7 +268,7 @@ theorem helium_shell_closure :
 
 /-- Helium NF histogram: exactly 2 nonzero terms at word-lengths 1 and 2.
     This gives the palindromic histogram {1:1, 2:1}. -/
--- Ref: [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_palindromic_histogram :
     -- Length 0 (𝟏): zero
     (helium_nf 0 = 0) ∧

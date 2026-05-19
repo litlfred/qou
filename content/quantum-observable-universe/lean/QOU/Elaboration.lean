@@ -44,8 +44,8 @@ universe u v
     a pair-of-pants cobordism, the Frobenius form `λ` to a cap.
 
     LaTeX: `\label{rem:tqft-context}` -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure TQFTDatum where
   /-- The Frobenius algebra carrier. -/
   carrier : Type*
@@ -109,7 +109,7 @@ structure GeneralisedLeviConditions (M : Type*) where
     holonomy `SU(2)`, yielding a natural QOU structure.
 
     LaTeX: `\label{ex:calabi-yau}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure CalabiYauHypersurface where
   /-- The ambient Calabi–Yau carrier type. -/
   ambient : Type*
@@ -139,7 +139,7 @@ structure ALELink where
     strictly pseudoconvex CR manifold.
 
     LaTeX: `\label{ex:brings-surface}` (in elaboration chapter) -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure BringsSurfaceCircleBundle where
   /-- The base Riemann surface (genus 4). -/
   base : Type*
@@ -243,7 +243,7 @@ theorem dq_squared_nonvanishing :
     `Jac_q(U,V,W) = −q⁻¹(1−q⁻¹) Σ_cyc dθ(V,W) L_ξ U`.
 
     LaTeX: `\label{prop:q-jacobiator}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 noncomputable def q_jacobiator {M : Type*} (sp : SubstrateParameter M)
     (dtheta_VW dtheta_WU dtheta_UV : M → ℝ)
     (LxiU LxiV LxiW : M → ℝ)

@@ -27,7 +27,7 @@ theorem covalent_bond_is_ilp_optimal :
 /-- H₂ binding energy from vertex volume model. -/
 -- Ref: [manuscript] Ch 12 §3
 -- sorry requires computation at q₀ ≈ 1.110
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 axiom h2_binding_energy (q : ℝ) (hq : q > 1) :
     ∃ E : ℝ, E > 0 ∧ E < 5.0  -- 4.48 eV predicted
 

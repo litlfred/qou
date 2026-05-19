@@ -19,7 +19,7 @@ def seifertGenus (m n : ℕ) : ℕ := (m - 1) * (n - 1) / 2
     its Seifert genus ≤ g. For Bring's surface (g = 4),
     the constraint (m-1)(n-1) ≤ 8 selects a finite set. -/
 -- Ref: [manuscript] Ch. 5, §torus-knot-generators
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem torus_knot_generators_finite
     (g : ℕ) (hg : g = 4)
     : ∃ (S : Finset (ℕ × ℕ)),

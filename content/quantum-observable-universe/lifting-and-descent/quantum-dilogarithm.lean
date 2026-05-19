@@ -38,7 +38,7 @@ def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The q-integer `[n]_q = (qⁿ - 1)/(q - 1)` for `q ≠ 1`. -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 noncomputable def qInteger (q : R_q) (n : ℕ) : R_q :=
   if q = 1 then (n : R_q)
   else (q ^ n - 1) / (q - 1)

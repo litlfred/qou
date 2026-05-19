@@ -78,7 +78,7 @@ noncomputable def bareQValue (q : ℝ) (skeinRatio : ℝ) (m_e : ℝ) : ℝ :=
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221848
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 -- Ref: [manuscript] §5/spectral-decomposition-qvalue
 theorem spectral_decomposition_qvalue
     (q : ℝ) (hq : 1 < q)
