@@ -148,6 +148,29 @@ with $\alpha = x(1-y)/(1-xy)$, $\beta = y(1-x)/(1-xy)$. **Citations**: Abel (182
 
 **Numerical verification at q_0 of approximate q-pentagon correction** (this audit, `weight_factor_audit.py` companion run): the classical log² correction matches LHS−RHS of the bare q-pentagon at q_0 within 1-2% across multiple $(x, y)$ pairs.
 
+### Residual scaling analysis (#3 follow-up, 2026-05-19)
+
+Following PR #808 merge, I probed the residual `LHS − RHS_bare − q-log²` to find the leading missing term. Scaling across diagonal inputs $(x, y) = (t, t)$:
+
+| $t$ | bare $|$LHS−RHS$|$ | residual after q-log² | residual / $t^4$ |
+|---:|---:|---:|---:|
+| 0.1 | 9.1e−3 | −4.28e−7 | −4.28e−3 |
+| 0.3 | 6.9e−2 | −4.02e−5 | −4.97e−3 |
+| 0.5 | 1.6e−1 | −3.94e−4 | −6.31e−3 |
+| 0.7 | 2.8e−1 | −2.27e−3 | −9.46e−3 |
+
+Residual scales approximately as $t^4$ (slow growth in residual/$t^4$ suggests a small log-modulation on top). At $t = 0$ the residual is exactly 0 (verified analytically), so the leading missing term is at least order 4 in the inputs.
+
+**Structural interpretation**: a higher polylog or quadratic-Li_2^q contribution would scale as $t^4$ (since $\mathrm{Li}_2^q(xy) \sim xy + (xy)^2 + ...$ leading-order). The classical Rogers identity at $q = 1$ is EXACT — so this missing term must be proportional to $(q - q^{-1})^k$ for some $k > 0$. At $q_0 \approx 1.110$, $q - q^{-1} \approx 0.21$, which suppresses the residual by ~5% per power.
+
+**Open**: derive the exact $O((q-q^{-1})^k)$ q-correction. Candidates from the literature:
+
+- A $\mathrm{Li}_3^q(xy)$ term scaled by $(q - q^{-1})$ (would give $\sim x^3$ leading, NOT matching $x^4$ observed)
+- A $\mathrm{Li}_2^q(xy)^2$ or $\mathrm{Li}_2^q$-shuffle-product term (gives $x^4$ leading — matches!)
+- A Bloch-Wigner $D_q(z)$ replacement of $\log_q^2$ (the BW dilog has cleaner functional properties)
+
+The shuffle-product hypothesis is the most natural given the framework's existing infrastructure. Paper-track derivation; not in this commit.
+
 ### Numerical evidence for the q-corrected Rogers identity (this audit)
 
 Using the q-logarithm $\log_q(x) = \sum_{n \ge 1} (-1)^{n+1} (x-1)^n / [n]_q$ (the level-1 primitive of $\mathcal{H}_q$, q-deformed analog of classical $\log$), the proposed q-Rogers correction term
