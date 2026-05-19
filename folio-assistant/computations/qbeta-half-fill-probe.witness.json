@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T16:39:35.364204+00:00",
-  "commitSha": "8742eaa037e72cbe7a8757b1905466d5b26344ce",
+  "computedAt": "2026-05-19T16:48:50.527894+00:00",
+  "commitSha": "581203c43fff35ad685c18efe71d3726b0cd670f",
   "assertions": [
     {
       "name": "half_fill_matches_empirical_proton_outlier",
@@ -17,7 +17,7 @@
   "computation": "qbeta-half-fill-probe",
   "scriptFile": "qbeta_half_fill_probe.py",
   "scriptHash": "1de396492169",
-  "scriptCommitSha": "5fb4a37c9d205881da8db60a0008b38c50435253",
+  "scriptCommitSha": "581203c43fff35ad685c18efe71d3726b0cd670f",
   "parameters": {
     "computation": "prop:averaging-resonance-rule",
     "hypothesis": "k_outlier = floor(n_total / 2)",
