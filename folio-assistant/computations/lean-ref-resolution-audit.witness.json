@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T02:42:51.400368+00:00",
-  "commitSha": "cd74b9ddf8c1167b0ec657b99765e516b1e02f64",
+  "computedAt": "2026-05-19T03:22:18.690355+00:00",
+  "commitSha": "b8edca941e3800c6538e0d8db545f7afb5107a20",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 666.0,
+      "computed": 671.0,
       "expected": 925.0,
       "passed": false,
       "tolerance": 0.0,
@@ -28,7 +28,7 @@
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
-  "scriptCommitSha": "6b08457b3cf71c372fb57dc3ca17d99bd1b11116",
+  "scriptCommitSha": "c92c9c82cba04187e5a95410c6644dc067e0ff50",
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
@@ -36,9 +36,9 @@
   },
   "data": {
     "by_result": {
-      "ok": 666,
+      "ok": 671,
       "sibling_no_decl": 136,
-      "grep_no_match": 120,
+      "grep_no_match": 115,
       "lake_root_missing_grep_hit": 1,
       "sibling_missing": 2
     },
@@ -10423,14 +10423,18 @@
         "kind": "lemma",
         "pkg": "qou",
         "decl_path": "QOU.LiftingDescent.ccg_cosimplicial_identities",
-        "sibling_exists": false,
-        "sibling_declares": false,
+        "sibling_exists": true,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.ts",
@@ -10438,14 +10442,18 @@
         "kind": "lemma",
         "pkg": "qou",
         "decl_path": "QOU.LiftingDescent.ccg_crossed_module_structure",
-        "sibling_exists": false,
-        "sibling_declares": false,
+        "sibling_exists": true,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts",
@@ -10473,14 +10481,18 @@
         "kind": "lemma",
         "pkg": "qou",
         "decl_path": "QOU.LiftingDescent.descent_cocycle_deviation",
-        "sibling_exists": false,
-        "sibling_declares": false,
+        "sibling_exists": true,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/descent-condition.ts",
@@ -10664,14 +10676,18 @@
         "kind": "lemma",
         "pkg": "qou",
         "decl_path": "QOU.LiftingDescent.jp_categorical_jet",
-        "sibling_exists": false,
-        "sibling_declares": false,
+        "sibling_exists": true,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation.ts",
@@ -11023,14 +11039,18 @@
         "kind": "lemma",
         "pkg": "qou",
         "decl_path": "QOU.LiftingDescent.tm_eigenspace_decomp",
-        "sibling_exists": false,
-        "sibling_declares": false,
+        "sibling_exists": true,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts",
