@@ -901,6 +901,8 @@ export default chapter({
         "macdonald-hook-telescope",
         "demazure-fiber-markov-trace",
         "wenzl-bridge-applicability-qou",
+        "lr-tensor-character-bridge",
+        "wenzl-qmn-synergy",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
         "wedderburn-bratteli-recursion",
