@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T02:20:04.722909+00:00",
-  "commitSha": "b74d4a22dbaf5fad46c997b82b801765bc96f716",
+  "computedAt": "2026-05-19T02:29:29.739951+00:00",
+  "commitSha": "48e0e80b09bf78eddd6b86969b66d75a7c557620",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 7,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
-  "scriptHash": "d8013a32f859",
-  "scriptCommitSha": "65aa8ae904fc9cb05e2a3e2f486ac671c6099278",
+  "scriptHash": "a0c94bc39a15",
+  "scriptCommitSha": "48e0e80b09bf78eddd6b86969b66d75a7c557620",
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
