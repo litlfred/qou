@@ -97,16 +97,27 @@ DECL_KEYWORDS = (
 )
 
 
-def _decl_rx(name: str) -> re.Pattern:
-    """Regex that matches a top-level declaration of `name` in a
-    .lean file body.  Allows `noncomputable` / `private` / `protected`
-    prefixes."""
-    # Allow leading attribute modifiers (`@[simp]` etc) but require
-    # the keyword on the same line as `name`.
+def _decl_rx(decl_path: str) -> re.Pattern:
+    """Regex that matches a top-level declaration of `decl_path` in a
+    .lean file body.  Accepts any **suffix** of the dotted path —
+    i.e. for URI `QOU.QExponential.unique` the file may declare
+    `theorem unique` (inside `namespace QOU.QExponential`),
+    `theorem QExponential.unique` (inside `namespace QOU`), or
+    `theorem QOU.QExponential.unique` (no enclosing namespace).
+    Allows `noncomputable` / `private` / `protected` / `partial` /
+    `unsafe` prefixes plus zero-or-more leading `@[…]` attribute
+    modifiers on the same line (e.g. `@[simp] theorem foo …`)."""
+    parts = decl_path.split(".")
+    # All non-empty suffixes of the dotted path — longest first so the
+    # regex engine prefers the more-qualified match when both apply.
+    suffixes = ['.'.join(parts[i:]) for i in range(len(parts))]
+    suffixes.sort(key=len, reverse=True)
+    alt = "|".join(re.escape(s) for s in suffixes)
     kws = "|".join(DECL_KEYWORDS)
     return re.compile(
-        rf'^\s*(?:(?:noncomputable|private|protected|partial|unsafe)\s+)*'
-        rf'(?:{kws})\s+{re.escape(name)}\b',
+        rf'^\s*(?:@\[[^\]]*\]\s*)*'
+        rf'(?:(?:noncomputable|private|protected|partial|unsafe)\s+)*'
+        rf'(?:{kws})\s+(?:{alt})\b',
         re.MULTILINE,
     )
 
@@ -142,9 +153,10 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
 
     pkg_meta = LEAN_PACKAGES[pkg]
 
-    # The Lean declaration's leaf name is the last component of decl_path.
-    leaf = decl_path.split(".")[-1]
-    decl_rx = _decl_rx(leaf)
+    # The sibling-decl and grep-fallback regexes both accept any
+    # suffix of the dotted decl_path (handles `namespace QOU` +
+    # `theorem QExponential.unique` style declarations).
+    decl_rx = _decl_rx(decl_path)
 
     # (1) Sibling lookup — same directory, same basename, .lean
     # extension.  The sibling root name is the .ts basename (e.g.
@@ -191,15 +203,25 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
     row["lake_parent_declares"] = lake_parent_declares
 
     # (3) Grep fallback — repo-wide ripgrep / grep for the decl
-    # keyword + leaf name.  Cheaper than a Lean run, more permissive
-    # than (1)/(2).
+    # keyword + any suffix of the dotted path.  Cheaper than a Lean
+    # run, more permissive than (1)/(2).  Suffix alternation lets us
+    # catch `theorem Foo.bar` declared inside `namespace QOU`.
     grep_hit = False
     grep_hit_under_lake_root = False
+    grep_suffixes = ['.'.join(decl_path.split(".")[i:])
+                     for i in range(len(decl_path.split(".")))]
+    grep_suffixes.sort(key=len, reverse=True)
+    grep_alt = "|".join(re.escape(s) for s in grep_suffixes)
     try:
+        # Mirror _decl_rx: accept zero-or-more leading `@[…]`
+        # attribute brackets, then any combo of
+        # noncomputable/private/protected/partial/unsafe, then the
+        # decl keyword + a dotted suffix of the URI's decl_path.
         rg = subprocess.run(
             ["grep", "-rln", "-E",
-             rf"^[[:space:]]*(noncomputable[[:space:]]+|private[[:space:]]+|"
-             rf"protected[[:space:]]+)?({'|'.join(DECL_KEYWORDS)})[[:space:]]+{leaf}\b",
+             rf"^[[:space:]]*(@\[[^]]*\][[:space:]]*)*"
+             rf"((noncomputable|private|protected|partial|unsafe)[[:space:]]+)*"
+             rf"({'|'.join(DECL_KEYWORDS)})[[:space:]]+({grep_alt})\b",
              "--include=*.lean", str(REPO_ROOT)],
             capture_output=True, text=True, timeout=30,
         )

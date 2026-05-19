@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T23:23:33.444574+00:00",
-  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
+  "computedAt": "2026-05-19T01:09:03.209166+00:00",
+  "commitSha": "83116b0ab8cafe3f933d05b884f365cc98b18420",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 606.0,
+      "computed": 661.0,
       "expected": 944.0,
       "passed": false,
       "tolerance": 0.0,
@@ -27,8 +27,8 @@
   "durationMs": 12,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
-  "scriptHash": "5a460527b690",
-  "scriptCommitSha": "6961f951207aadb0554f06046dbbf9e9334984c9",
+  "scriptHash": "a60b67be1c5a",
+  "scriptCommitSha": "e0c833d5e9545f3192510aa4d9ffaeec72f9b752",
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
@@ -36,8 +36,8 @@
   },
   "data": {
     "by_result": {
-      "ok": 606,
-      "sibling_no_decl": 215,
+      "ok": 661,
+      "sibling_no_decl": 160,
       "grep_no_match": 122,
       "lake_root_missing_grep_hit": 1
     },
@@ -805,13 +805,17 @@
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.AtomKnot.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/atom-knot-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.ts",
@@ -1649,13 +1653,18 @@
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.ConfinementLevel.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hit": false,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "lake_parent_declares": true,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/confinement-level-exists.lean",
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/confinement-level-unique.ts",
@@ -1664,16 +1673,18 @@
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.ConfinementLevel.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/confinement-level-unique.lean",
           "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/confinement-level.ts",
@@ -3042,13 +3053,17 @@
         "pkg": "qou",
         "decl_path": "QOU.Hadron.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/hadron-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hadron-fibre-embedding.ts",
@@ -3095,13 +3110,17 @@
         "pkg": "qou",
         "decl_path": "QOU.Hadron.unique_up_to_isotopy",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/hadron-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hadron.ts",
@@ -3957,13 +3976,17 @@
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.KnotOperatorEnergy.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/knot-operator-energy-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts",
@@ -5068,13 +5091,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QCasimir.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts",
@@ -5083,13 +5110,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QCasimir.unique_up_to_scalar",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts",
@@ -5833,13 +5864,17 @@
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.StableAtom.decidable",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/stable-atom-decidable.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/stable-atom.ts",
@@ -7402,13 +7437,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalNeutron.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/descartes-universe/categorical-neutron-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/categorical-neutron-unique.ts",
@@ -7417,13 +7456,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalNeutron.unique_up_to_isotopy",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/descartes-universe/categorical-neutron-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/categorical-neutron.ts",
@@ -7453,13 +7496,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalProton.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/descartes-universe/categorical-proton-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/categorical-proton-unique.ts",
@@ -7468,13 +7515,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalProton.unique_up_to_isotopy",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/descartes-universe/categorical-proton-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/categorical-proton.ts",
@@ -8579,6 +8630,25 @@
         "resolved_via": "sibling"
       },
       {
+        "path": "content/quantum-observable-universe/descartes-universe/morse-wall-q-moduli.ts",
+        "ref": "qou:QOU.Descartes.morse_wall_q_moduli",
+        "kind": "unknown",
+        "pkg": "qou",
+        "decl_path": "QOU.Descartes.morse_wall_q_moduli",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/descartes-universe/morse-wall-q-moduli.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": false,
+        "result": "ok",
+        "resolved_via": "sibling"
+      },
+      {
         "path": "content/quantum-observable-universe/descartes-universe/neutrino-knot.ts",
         "ref": "qou:QOU.Descartes.Neutrino",
         "kind": "unknown",
@@ -8689,25 +8759,6 @@
         "lake_parent_declares": false,
         "grep_hits": [
           "/home/user/qou/content/quantum-observable-universe/descartes-universe/picard-lefschetz-thimble.lean"
-        ],
-        "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "ok",
-        "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/descartes-universe/pl-jsj-mass-integration-equivalence.ts",
-        "ref": "qou:QOU.PicardLefschetz.pl_jsj_mass_integration",
-        "kind": "unknown",
-        "pkg": "qou",
-        "decl_path": "QOU.PicardLefschetz.pl_jsj_mass_integration",
-        "sibling_exists": true,
-        "sibling_declares": true,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/descartes-universe/pl-jsj-mass-integration-equivalence.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
@@ -9148,13 +9199,17 @@
         "pkg": "qou",
         "decl_path": "QOU.Descartes.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/descartes-universe/type-b-folded-crystal-combinatorics.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/unit-particle-state.ts",
@@ -10933,13 +10988,17 @@
         "pkg": "qou",
         "decl_path": "QOU.MassIdentity.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/mass-identity-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/mass-identity-unique.ts",
@@ -10948,16 +11007,18 @@
         "pkg": "qou",
         "decl_path": "QOU.MassIdentity.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/mass-identity-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/mass-identity.ts",
@@ -11085,13 +11146,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QuantumCharClasses.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-unique.ts",
@@ -11100,16 +11165,18 @@
         "pkg": "qou",
         "decl_path": "QOU.QuantumCharClasses.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes.ts",
@@ -14228,13 +14295,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalAction.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-action-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.ts",
@@ -14243,16 +14314,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalAction.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-action.ts",
@@ -14303,13 +14376,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalDirac.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-unique.ts",
@@ -14318,16 +14395,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalDirac.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator.ts",
@@ -14393,13 +14472,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalFourier.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-unique.ts",
@@ -14408,16 +14491,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalFourier.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform.ts",
@@ -14447,13 +14532,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalInstanton.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-instanton-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-instanton-unique.ts",
@@ -14462,13 +14551,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalInstanton.unique_up_to_gauge",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-instanton-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-instanton.ts",
@@ -14541,13 +14634,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalLagrangian.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-unique.ts",
@@ -14556,16 +14653,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalLagrangian.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian.ts",
@@ -14595,13 +14694,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalLaplace.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts",
@@ -14610,16 +14713,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalLaplace.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform.ts",
@@ -14668,13 +14773,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalQConnection.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-unique.ts",
@@ -14683,16 +14792,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalQConnection.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.ts",
@@ -14722,13 +14833,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalQExtDeriv.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-unique.ts",
@@ -14737,16 +14852,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalQExtDeriv.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-unique.lean",
           "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv.ts",
@@ -14830,16 +14947,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalReeb.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb.ts",
@@ -15328,13 +15447,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QDilogarithm.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.ts",
@@ -15343,16 +15466,18 @@
         "pkg": "qou",
         "decl_path": "QOU.QDilogarithm.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm.ts",
@@ -15382,13 +15507,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QExponential.exists_in_shuffle_hopf",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-exponential-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-exponential-unique.ts",
@@ -15397,16 +15526,19 @@
         "pkg": "qou",
         "decl_path": "QOU.QExponential.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-exponential-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-exponential.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-exponential.ts",
@@ -15476,13 +15608,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QHeatEquation.exists_solution",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-heat-equation-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-heat-equation-unique.ts",
@@ -15491,13 +15627,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QHeatEquation.unique_solution",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-heat-equation-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-heat-equation.ts",
@@ -15586,13 +15726,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QLogarithm.exists_in_shuffle_hopf",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-unique.ts",
@@ -15601,16 +15745,18 @@
         "pkg": "qou",
         "decl_path": "QOU.QLogarithm.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-logarithm-unique.lean",
           "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm.ts",
@@ -15680,13 +15826,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QResolvent.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-unique.ts",
@@ -15695,16 +15845,18 @@
         "pkg": "qou",
         "decl_path": "QOU.QResolvent.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/q-resolvent-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent.ts",
@@ -15869,13 +16021,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QuantumObservableUniverse.exists_instance",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.ts",
@@ -16088,13 +16244,17 @@
         "pkg": "qou",
         "decl_path": "QOU.SubstrateParameter.ofReebDecomposition",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.ts",
@@ -16246,13 +16406,17 @@
         "pkg": "qou",
         "decl_path": "QOU.WeightDecomposition.ofMaximalTorus",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/weight-decomposition.ts",
@@ -16281,13 +16445,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalConnection.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-universes/categorical-connection-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-universes/categorical-connection-unique.ts",
@@ -16296,13 +16464,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalConnection.unique_up_to_gauge",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-universes/categorical-connection-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-universes/categorical-connection.ts",
@@ -16333,13 +16505,17 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalHodgeStar.exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-universes/categorical-hodge-star-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-universes/categorical-hodge-star-unique.ts",
@@ -16348,16 +16524,18 @@
         "pkg": "qou",
         "decl_path": "QOU.CategoricalHodgeStar.unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean"
+          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean",
+          "/home/user/qou/content/quantum-observable-universe/quantum-universes/categorical-hodge-star-unique.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-universes/categorical-hodge-star.ts",
@@ -16406,13 +16584,17 @@
         "pkg": "qou",
         "decl_path": "QOU.FrobeniusHopfData.frobeniusForm_exists",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.ts",
@@ -16421,13 +16603,17 @@
         "pkg": "qou",
         "decl_path": "QOU.FrobeniusHopfData.frobeniusForm_unique",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts",
@@ -16578,13 +16764,17 @@
         "pkg": "qou",
         "decl_path": "QOU.QuantumUniverse.exists_instance",
         "sibling_exists": true,
-        "sibling_declares": false,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/quantum-universes/quantum-universe-exists.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-universes/quantum-universe-su2.ts",
