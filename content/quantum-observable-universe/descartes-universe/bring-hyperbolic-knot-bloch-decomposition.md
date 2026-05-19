@@ -86,7 +86,7 @@ figure-8.
 
 **Observation 2.** The natural compositum is widened by the
 Borromean rings (proton/neutron in the QOU spectrum, see
-[`recursive-atom-knot-atlas`](../braids-and-knots/recursive-atom-knot-atlas.md)):
+[`recursive-atom-knot-atlas`](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md)):
 $\mathrm{Vol}(\mathcal{B}_3) = 8G = 8\,\mathrm{Cl}_2(\pi/4)$ via two
 ideal regular octahedra of shape parameter $i$
 ([`binding-scale-catalan`](../braids-and-knots/binding-scale-catalan.md)),
@@ -102,7 +102,7 @@ remaining 6 dimensions are available for the decomposition.
 **Observation 3.** The QOU framework supplies an explicit
 finite enumeration of hyperbolic knots in its mass-bearing
 spectrum, via the
-[recursive atom-knot atlas](../braids-and-knots/recursive-atom-knot-atlas.md):
+[recursive atom-knot atlas](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md):
 
 | Particle / atom | Hyperbolic knot / link | Volume | Trace field (standard) |
 |---|---|---|---|
