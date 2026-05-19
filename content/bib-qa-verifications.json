@@ -67,6 +67,16 @@
       "note": "Confirmed paper is 'Surreal numbers, derivations and transseries' by Berarducci & Mantova (arXiv:1503.00315). PolynomialEval.lean:202 cites §2 — §2 (subsections 2.1 Order and simplicity, 2.2 Field operations, ...) is where the surreal field structure + polynomial extensions are developed. Cited scope matches."
     },
     {
+      "id": "kassel1995",
+      "status": "fixed",
+      "local_pdf": "uploads/kassel-1995-quantum-groups-preprint.pdf",
+      "verified_at": "2026-05-19T06:55:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 43,
+      "fix_commit": "(this commit)",
+      "note": "Kassel, 'Quantum Groups', Springer GTM 155, 1995 (DOI 10.1007/978-1-4612-0783-2). 43 truly-bare-URL Refs across 23 .lean files updated with thematic chapter citations: Group A (15 Hecke/Markov/Schur-Weyl/Anyonic files) → Ch. X (Hecke algebras and Markov trace); Group B (7 braiding/R-matrix/Casimir/quantum-SL(2) files) → Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories); Group C (1 broad-ref file: magic-numbers-bring) → generic title-only ref. 11 already-§-specific Refs (e.g. §V.5, §VIII.3, Ch. XIII at specific sites) preserved unchanged. Status fixed."
+    },
+    {
       "id": "jones1987",
       "status": "fixed",
       "local_pdf": null,

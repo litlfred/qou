@@ -80,7 +80,9 @@ noncomputable section
     the zpow `qs.q ^ (-1 : ℤ)` nor the field-style inverse `⁻¹` is
     available on an abstract `qs.q`.  We carry both inverses
     explicitly with two-sided witnesses. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 structure QCasimirData (qs : QuantumSu2) where
   /-- Explicit inverse of `q` in the ground ring. -/
   qInv : R_q
@@ -144,7 +146,9 @@ end QCasimirData
     `K · K⁻¹ = 1`).  Carry these as a typeclass so that `QCasimir`
     properties can be derived from the same Hopf presentation Kassel
     uses in §VI.4. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 class QuantumSu2Relations (qs : QuantumSu2) (d : QCasimirData qs) : Prop where
   /-- `K · E = q² · E · K` (equivalently `K E K⁻¹ = q² E`). -/
   K_mul_E : qs.K * qs.E = d.ι (qs.q * qs.q) * (qs.E * qs.K)
@@ -164,7 +168,9 @@ class QuantumSu2Relations (qs : QuantumSu2) (d : QCasimirData qs) : Prop where
     `q → 1` recovers `j(j+1)`.  All scalar coefficients enter via the
     embedding `d.ι`, and `(q - q⁻¹)⁻²` is realised as
     `d.invQm * d.invQm`. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 def QCasimir (qs : QuantumSu2) (d : QCasimirData qs) : qs.Algebra :=
   let kPart      := d.ι qs.q * qs.K + d.ι d.qInv * qs.K_inv
@@ -662,7 +668,9 @@ theorem QCasimir_central (qs : QuantumSu2) (d : QCasimirData qs)
     Requires `q ≠ 0` implicitly (via `zpow`) and `q² ≠ 1` for the
     denominator to be nonzero.  Distinguish from the asymmetric
     `QuantumSu2.qInt` (`(qⁿ - 1)/(q - 1)`). -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 noncomputable def qNumberSym {K : Type*} [Field K] (q : K) (n : ℤ) : K :=
   (q ^ n - q ^ (-n)) / (q - q⁻¹)
 
@@ -673,7 +681,9 @@ noncomputable def qNumberSym {K : Type*} [Field K] (q : K) (n : ℤ) : K :=
     scalar `[j]_q · [j+1]_q`.  For half-integer spins, reparametrise
     using `q^{1/2}` (Kassel §VI.4); the integer case below handles
     the representation-theoretic content after this reparametrisation. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 noncomputable def QCasimirEigenvalue {K : Type*} [Field K] (q : K) (j : ℤ) : K :=
   qNumberSym q j * qNumberSym q (j + 1)

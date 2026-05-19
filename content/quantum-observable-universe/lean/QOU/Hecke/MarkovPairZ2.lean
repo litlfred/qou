@@ -64,7 +64,9 @@ theorem markov_pair_value
     For an adjacent pair of "trivial" generator chains (each chain
     is `σ_i · 1 + 0`, i.e. the bare braid generator at index `i`),
     each `vertexVolume` equals `z`, so the pair's trace is `z²`. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem markov_pair_z2
     {z : R_q} [inst : MarkovTraceAxioms z]
     (i j : ℕ)

@@ -123,7 +123,9 @@ below is proved by Lean's `field_simp`, `ring`, and `linarith`. -/
     This structure encodes the spectral data of the braiding as
     categorical invariants.  The fields are the *output* of the
     spectral decomposition axiom above. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 structure BraidingEigenvalueData where
   /-- Eigenvalue on the symmetric summand S²V. -/
   λ_sym : R_q
@@ -147,7 +149,9 @@ noncomputable def BraidingEigenvalueData.q (bed : BraidingEigenvalueData) : R_q 
 
 /-- The antisymmetric eigenvalue is forced to be -q⁻¹ by the
     determinant constraint. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem BraidingEigenvalueData.anti_eq_neg_inv
     (bed : BraidingEigenvalueData) :
     bed.λ_anti = -(bed.λ_sym)⁻¹ := by
@@ -158,7 +162,9 @@ theorem BraidingEigenvalueData.anti_eq_neg_inv
 
 /-- Both eigenvalues of c_{V,V} are roots of the Hecke polynomial
     (X - q)(X + q⁻¹) = 0. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem hecke_polynomial_roots (bed : BraidingEigenvalueData) :
     (bed.λ_sym - bed.q) * (bed.λ_sym + bed.q⁻¹) = 0
     ∧ (bed.λ_anti - bed.q) * (bed.λ_anti + bed.q⁻¹) = 0 := by
@@ -182,7 +188,9 @@ theorem quantum_regime (bed : BraidingEigenvalueData)
 
 /-- The full extraction: from eigenvalues + det constraint, derive
     q, the forced antisymmetric eigenvalue, and the Hecke relation. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem braiding_eigenvalue_extraction
     (λ_sym λ_anti : R_q)
     (hλs : λ_sym ≠ 0)

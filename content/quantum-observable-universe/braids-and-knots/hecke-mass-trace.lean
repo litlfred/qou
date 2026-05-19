@@ -139,7 +139,9 @@ theorem mass_markov_upper_bound (d : MarkovMassData) :
     (as guaranteed in the archimedean realisation, where trace values
     are norms of holonomies and quantum dilogarithms). -/
 -- Ref: [manuscript] §4/hecke-mass-trace
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem mass_markov_exact (d : MarkovMassData)
     (h_desc : 0 ≤ d.descendedTrace)
     (h_trans : 0 ≤ d.transientTrace) :

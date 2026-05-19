@@ -32,7 +32,9 @@ Markov-trace boundedness, level-0 free mass, JW-module dimension
 bound).
 
 LaTeX label: `prop:delta-max-uniform-bound`
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -- Ref: [leitner2026] manuscript
 -/
 
@@ -85,7 +87,9 @@ theorem OperatorNormBound.deltaMax_nonneg {ρ : Type*}
     per-level residual is uniformly bounded by `deltaMax`. -/
 -- Ref: [manuscript] `prop:delta-max-uniform-bound`,
 --      §"Derivation" Steps 1–4
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem delta_max_uniform_bound
     {ρ : Type*} (b : OperatorNormBound ρ)
     (n : ℕ) (hn : 1 ≤ n) :

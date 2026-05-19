@@ -41,7 +41,9 @@ algebraic structure (corollary).
 -- Ref: [manuscript] conj:pentagon-uv-commutation
 -- Ref: [manuscript] def:recursive-brane-tower
 -- Ref: [manuscript] prop:jet-prolongation
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -/
 
 import Mathlib.Algebra.Ring.Defs

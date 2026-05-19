@@ -14,7 +14,8 @@ as hypotheses.
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 -- Ref: [manuscript] conj:homological-shell-condensation
 -- Ref: [klein1888] (no DOI)
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Kassel, "Quantum Groups," Springer GTM 155, 1995
+--      (broad reference; DOI: 10.1007/978-1-4612-0783-2)
 -/
 
 import Mathlib.Algebra.Module.Basic

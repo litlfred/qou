@@ -12,7 +12,9 @@ become conditional theorems parameterised on
 `[SaturatedShellConjecture n]`.
 
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001
 -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
 -/

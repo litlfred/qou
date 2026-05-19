@@ -62,7 +62,9 @@ structure OPE (q : R_q) where
 
     This is the Skein relation L₊ - L₋ = (q - q⁻¹)L₀ applied
     to the strand collision on 𝒮_p. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 axiom ope_is_skein
     -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (Y₁ Y₂ : VertexOperator q)

@@ -47,7 +47,9 @@ universe u
       particle spectrum is exhausted by `H_n(R, q)`-modules. -/
 -- Ref: [kitaev2006] https://doi.org/10.1016/j.aop.2005.10.005
 -- Ref: [nayak2008] https://doi.org/10.1103/RevModPhys.80.1083
--- Ref: [kassel1995] https://link.springer.com/book/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -- Ref: [khovanovlauda2009] https://doi.org/10.4171/RT/162
 class HeckeAnyonicSubstrate (R : Type u) [CommRing R] (q : R) where
   /-- Abstract type of Hecke normal forms `T_w ∈ H_n(R, q)`. -/

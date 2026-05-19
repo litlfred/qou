@@ -140,7 +140,9 @@ structure MarkovTraceProduct where
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem markov_trace_product
     -- (n : ℕ) (hn : n ≥ 2) (q : R_q) (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (z : R_q) (hz : z ≠ 0)
@@ -265,7 +267,9 @@ theorem markov_trace_pair {z : R_q} [inst : MarkovTraceAxioms z]
 /-- The degree of the product polynomial is bounded by n² − 1.
     This follows from the conformal weight bound: each vertex volume
     has weight ≤ 2k_i + 1, and the total is ≤ (n-1)(n+1) = n²-1. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem degree_bound (mtp : MarkovTraceProduct) :
     -- The polynomial degree of the trace product is ≤ n² - 1
     -- Conclusion is the literal `True` placeholder pending a real

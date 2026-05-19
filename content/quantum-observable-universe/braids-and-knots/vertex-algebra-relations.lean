@@ -43,22 +43,30 @@ open QOU.GrobnerShirshov.Hecke
 /-- QU-1a: The Hecke relation σᵢ² = (q - q⁻¹)σᵢ + 1 is formalized
     as `heckeRelation` in HeckeGS.lean — a constructive `ReductionRule`
     in the Gröbner–Shirshov rewriting system. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 #check @heckeRelation  -- ReductionRule (HeckeGen n) R_q
 
 /-- QU-1b: Yang–Baxter σᵢσᵢ₊₁σᵢ = σᵢ₊₁σᵢσᵢ₊₁ is formalized
     as `yangBaxterRelation` in HeckeGS.lean. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 #check @yangBaxterRelation  -- ReductionRule (HeckeGen n) R_q
 
 /-- QU-1c: Far-commutativity σᵢσⱼ = σⱼσᵢ for |i-j| ≥ 2 is
     formalized as `farCommRelation` in HeckeGS.lean. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 #check @farCommRelation  -- ReductionRule (HeckeGen n) R_q
 
 /-- The three families form a Gröbner–Shirshov basis (Bokut & Shiao
     2001, Theorem 3.5). -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 #check @hecke_is_gs_basis  -- IsGrobnerShirshovBasis
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -68,7 +76,9 @@ open QOU.GrobnerShirshov.Hecke
 /-- QU-2d: The inverse σᵢ⁻¹ = (q⁻¹ - q)σᵢ + q⁻¹ is formalized as
     `embedNegativeGen` in HeckeGS.lean — constructive from the Hecke
     relation. This IS the antipode S(σᵢ). -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 #check @embedNegativeGen  -- AlgElement (HeckeGen n) R_q
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -102,12 +112,16 @@ axiom AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) R_q) :
 
 /-- **AlgElement.mul** — convolution on monomials.  Axiomatised
     pending concrete formal-algebra ring structure. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 axiom AlgElement.mul {n : ℕ}
     (_ _ : AlgElement (HeckeGen n) R_q) : AlgElement (HeckeGen n) R_q
 
 /-- **AlgElement.zero** — additive identity of the formal algebra. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) R_q
 
 /-- QU-3a: Markov conjugation invariance —

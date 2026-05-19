@@ -45,7 +45,9 @@ open QOU.GrobnerShirshov.Hecke
 /-- The Hecke algebra at brane level n is H_{k}(q) where k is the
     strand count. The substrate parameter q is the same at every level
     (Euler characteristic stability). -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
     RewritingSystem (HeckeGen strands) R_q :=
   heckeRewritingSystem strands hp
@@ -56,7 +58,9 @@ def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
 
 /-- J-1: The Hecke relation at level n has the same form as at level 0.
     The substrate parameter q does not depend on the brane level. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
     (n m : ℕ) :
     levelHecke hp strands n = levelHecke hp strands m := by
