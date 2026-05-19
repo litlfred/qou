@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:04:37.038133+00:00",
-  "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
+  "computedAt": "2026-05-19T03:14:14.093521+00:00",
+  "commitSha": "fe179a807a3198e318421e52778a4e30a8f4897a",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 113,
+      "computed": 114,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -18,7 +18,7 @@
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "77d54f1cc990",
-  "scriptCommitSha": "0f9a88df1128107eb3b8e0b40d47af4c2fc33662",
+  "scriptCommitSha": "fe179a807a3198e318421e52778a4e30a8f4897a",
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
     "required_fields": [
@@ -35,12 +35,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 518,
+      "total_scanned": 519,
       "prov_ok": 375,
       "prov_audit_exempt": 30,
-      "prov_missing": 113,
+      "prov_missing": 114,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.7818532818532818
+      "completeness_ratio": 0.7803468208092486
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1556,6 +1556,14 @@
         },
         {
           "witness": "adjacent-vs-full-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "alpha-cluster-recursion.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

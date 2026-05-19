@@ -38,13 +38,17 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder  # noqa: E402
+from knot_volumes import VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
 
-CATALAN_G = 0.915965594177219015054603514932
-VOL_BORROMEAN = 8.0 * CATALAN_G                # = 8G = Vol(L6a4)
+# Knot volumes now imported from `knot_volumes` (canonical mpmath
+# 50dps source). Catalan G + Vol(L6a4) = 8G + Vol(7²_1) literature
+# values. Pre-refactor these were f64-hardcoded literals; post-
+# refactor they live in the centralised module so a `--precision
+# mpfr` lift only needs to update one place. See I14 audit and the
+# coordination ledger entry "knot-vol _precision propagation".
 
 # Atomic-pair α-α coupling knot: 7²_1 (Whitehead-like linked pair).
-# DERIVED: c_αα = m_e · Vol(7²_1).  No AME fit.
-VOL_7_SQ_1 = 4.7494999818744385084980865556375718851941577840553  # SnapPy HP
+# DERIVED: c_αα = m_e · Vol(7²_1). No AME fit.
 C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1         # ≈ 2.4270 MeV
 
 # Hyperbolic volumes from SnapPy (50-digit HP, independent of AME).

@@ -31,9 +31,11 @@ from witness_base import WitnessBuilder
 from codata_constants import M_E_MEV as _M_E_MEV_MP
 
 # ── Constants ──────────────────────────────────────────────────
-CATALAN_G = 0.915965594177219015054603514932
+# Knot volumes from canonical knot_volumes module (mpmath 50dps).
+# See PR #781 knot-vol propagation.
+from knot_volumes import CATALAN_G, VOL_BORROMEAN  # noqa: E402
 M_E_MEV = float(_M_E_MEV_MP)
-ALPHA_MEV = M_E_MEV * 8.0 * CATALAN_G  # 3.74445965488548 MeV
+ALPHA_MEV = M_E_MEV * VOL_BORROMEAN  # 3.74445965488548 MeV
 
 # Coulomb energy of 3He ground state (well-known empirical value)
 E_COULOMB_3HE_MEV = 0.76
