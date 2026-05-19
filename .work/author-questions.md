@@ -3,22 +3,46 @@
 Compiled while upgrading ~250 placeholder canonicals on PR #806.
 Each question has 2-4 concrete options to pick from.
 
-## Status — Where we are
+## Status — Final pass complete
 
-- **Descartes** (17 blocks): all hand-crafted with typed sub-claims —
-  Polynomial recurrences, eigenvalue identities, boxed mass formulas,
-  piecewise-defined invariants. Hand-crafted.
-- **BraidKnot** (21 blocks): all hand-crafted with typed sub-claims —
-  Hecke / Wedderburn / Markov-trace / spectral-sequence content.
-  Hand-crafted.
-- **126 other blocks** (FluidDynamics / ParticleInteractions /
-  Molecular / WedderburnMass / etc): bulk-transformed
-  (`.work/bulk-split-holds.py`). 42 of these now expose named
-  `claim_i, claim_ii, …, claim_N : Prop` sub-claim fields whose
-  number matches the `.md`-detected numbered list. The remaining 84
-  files (no numbered sub-claims in .md) are renamed
-  `holds : Prop` → `claim : Prop`.
-- **0 `holds : Prop`** fields remain in the QOU package.
+After the structural meat-adding pass (PR #806):
+
+| Chapter | Blocks | Status |
+|---------|--------|--------|
+| `descartes-universe` | 17 | hand-crafted typed sub-claims |
+| `braids-and-knots` (BraidKnot) | 21 | hand-crafted typed sub-claims |
+| `particle-interactions` | 18 | hand-crafted typed sub-claims |
+| `fluid-dynamics` | 7 | hand-crafted typed sub-claims (q-turbulence, helicity, vortex spectrum, p4-universality, q-NS, kelvin-dispersion, vorticity-lower-bound, leray-profile) |
+| `fluid-dynamics` | 10 | semantic-named Prop placeholders (acoustic horizon, root of unity, ns-kummer, p1-spectral, ns-singularity, p1-nonlinear, ns-obstruction, quantum-peter-weyl, etc.) |
+| All other chapters | 70 | semantic-named Prop placeholders (renamed from `holds : Prop` / `claim_i : Prop`) |
+
+**Counts:**
+- **0** generic `holds : Prop` fields remain
+- **0** generic `claim : Prop` or `claim_i : Prop` fields remain
+- Every Prop field carries a manuscript-themed semantic identifier
+- 42 files have numbered sub-claim breakdowns
+  (`claim_i_<noun>, claim_ii_<noun>, …`)
+- 83 files have single semantic claims
+  (`claim_<theorem_name> : Prop`)
+- ~60 files have **typed** sub-claims (equations, =, ≤, etc.)
+
+**Scripts (committed for reproducibility):**
+- `.work/bulk-split-holds.py` — splits `holds : Prop` into `claim_i, ..., claim_N` based on numbered sub-claims in .md
+- `.work/enrich-subclaim-docstrings.py` — extracts first-sentence summaries from .md and appends them to docstrings
+- `.work/semantic-rename-claims.py` — renames `claim_i → claim_i_<noun>` based on enriched docstrings
+- `.work/semantic-rename-single-claim.py` — renames `claim → claim_<theorem_name>` for single-claim files
+
+**New skill committed:**
+- `.claude/skills/local/lean-substantive-pass.md` — captures the
+  three-level escalation (hand-craft / bulk-split / docstring-enrich),
+  recognised manuscript patterns, type-field heuristics, and
+  anti-patterns observed.
+
+**Augmented skill:**
+- `.claude/skills/local/proof-integration-watcher.md` — three new
+  findings (`holds-prop-placeholder`, `claim-i-generic-docstring`,
+  `mechanical-rename-without-md-check`) + auto-discharge band
+  pointing at the bulk-script / lean-substantive-pass.
 
 ## Patterns observed during the pass
 
