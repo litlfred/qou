@@ -169,6 +169,22 @@
         "reviewed_at": "2026-05-19T18:54:34.039Z",
         "reviewed_sha": "eb34683c75ba65428ce5d8a12f99478d1338fcc5",
         "notes": "default-pass (agent reviewed at chapter level; chapter=appendix-knot-periodic-table)"
+      },
+      {
+        "field_hash": {
+          "md": "d4fc17f94c02",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ]
   },

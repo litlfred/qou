@@ -167,6 +167,22 @@
         "reviewed_at": "2026-05-19T19:09:23.596Z",
         "reviewed_sha": "fe4effd2092e90b619161d721df95845e802f21e",
         "notes": "default-pass (chapter=descartes-universe)"
+      },
+      {
+        "field_hash": {
+          "md": "c1331b6dffdb",
+          "ts": "c28123687dad",
+          "lean": "b963df8300e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ]
   },

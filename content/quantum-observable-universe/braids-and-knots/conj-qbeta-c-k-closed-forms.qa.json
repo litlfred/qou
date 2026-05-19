@@ -167,6 +167,22 @@
         "reviewed_at": "2026-05-19T17:59:48.610Z",
         "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
         "notes": "Q_β c_k closed forms (Hopf Jones × Kashiwara b) — core ladder content."
+      },
+      {
+        "field_hash": {
+          "md": "8e2329070d45",
+          "ts": "a3ed44c1257b",
+          "lean": "97d464bfbfd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ]
   },

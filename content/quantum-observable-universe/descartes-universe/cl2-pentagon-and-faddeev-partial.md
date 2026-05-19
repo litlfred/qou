@@ -8,7 +8,7 @@ theorems:*
 
 - *(2-boundary) `Cl_2(0) - Cl_2(0) + Cl_2(0) - Cl_2(0) + Cl_2(0) = 0`,
   the all-zero-input pentagon.*
-- *(3-boundary) For every `(q, n)`, `(1 - q) · log Φ_n(0; q) -
+- *(3-boundary) For every `(q, n)`, `(1 - q) * log Φ_n(0; q) -
   Li_2(0) = 0`, the boundary case of the Faddeev-Kashaev limit
   at `x = 0`.*
 

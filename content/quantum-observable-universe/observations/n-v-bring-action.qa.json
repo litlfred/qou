@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/observations/n-v-bring-action.lean"
   },
   "source_hashes": {
-    "md": "1433fec68482",
+    "md": "14ebe64e4e2b",
     "ts": "cf23accf1f7c",
     "lean": "fbbaee3a6b26"
   },
@@ -167,6 +167,38 @@
         "reviewed_at": "2026-05-19T19:03:58.086Z",
         "reviewed_sha": "9a3ba3d1b887cd2edd8f04f060b84b7a7bf59a5d",
         "notes": "default-pass (chapter=observations)"
+      },
+      {
+        "field_hash": {
+          "md": "14ebe64e4e2b",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      },
+      {
+        "field_hash": {
+          "md": "14ebe64e4e2b",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-3-final",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:34.732Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash refresh: replaced 5²·h · → 5^2 * h * inside backtick code span. Semantic content unchanged."
       }
     ]
   },
