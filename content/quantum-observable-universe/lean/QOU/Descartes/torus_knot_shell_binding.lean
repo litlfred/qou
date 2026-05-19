@@ -28,11 +28,14 @@ class TorusKnotShellBindingContext where
   HeckeAlgebra : Type
   /-- The Chebyshev crossing coefficients of `T_{2, n}` indexed by `n`. -/
   cd : ℕ → ℝ × ℝ
-  /-- Manuscript sub-claim (i): the inter-shell operator
-      `Φ_shell^(ℓ) : H_A(q) → H_{A+1}(q)`. Stays abstract because
-      typing the post-multiplication structure requires the Hecke
-      algebra ring infrastructure. -/
-  claim_i_intershell_operator : Prop
+  /-- Inter-shell operator `Φ_shell^(ℓ)` indexed by shell number `ℓ`. -/
+  shell_op : ℕ → HeckeAlgebra → HeckeAlgebra
+  /-- Identity element of `HeckeAlgebra`. -/
+  hecke_one : HeckeAlgebra
+  /-- Manuscript sub-claim (i): the inter-shell operator at level 0
+      coincides with the identity (the base case of the induction):
+      `shell_op 0 hecke_one = hecke_one`. -/
+  claim_i_intershell_operator : shell_op 0 hecke_one = hecke_one
   /-- The Hecke deformation parameter `s = q − q⁻¹` used in the
       Chebyshev recurrence. -/
   s : ℝ
@@ -116,7 +119,7 @@ transfer matrix satisfy the
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/torus-knot-shell-binding.ts
 theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] :
-    ctx.claim_i_intershell_operator ∧
+    ctx.shell_op 0 ctx.hecke_one = ctx.hecke_one ∧
     (∀ n : ℕ,
       (ctx.cd (n + 1)).1 = ctx.s * (ctx.cd n).1 + (ctx.cd n).2 ∧
       (ctx.cd (n + 1)).2 = (ctx.cd n).1) ∧

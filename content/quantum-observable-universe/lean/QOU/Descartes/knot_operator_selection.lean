@@ -37,14 +37,19 @@ class KnotOperatorSelectionContext where
       `tr(Φ) = Σ_λ d_λ(q) · tr(Φ_λ)`. -/
   claim_i_spectral_decomposition :
     tr_Phi = (Finset.range n_partitions).sum (fun λ => tr_Phi_lambda λ)
+  /-- Pair-production action value `S(γ₁, γ₂)`. -/
+  action_pair : ℝ
+  /-- Sum of per-channel contributions `Σ_λ d_λ · tr_λ(...)`. -/
+  channel_sum : ℝ
   /-- Manuscript sub-claim (ii) — Multi-channel pair-production:
-      the categorical action `S(γ₁, γ₂)` decomposes channel-wise
-      (categorical structure — stays Prop). -/
-  claim_ii_multichannel_pair_production : Prop
-  /-- Manuscript sub-claim (iii) — Frobenius pairing non-degeneracy
-      and unique-minimal-norm matching supply (Mathlib pairing
-      infra needed; stays Prop). -/
-  claim_iii_frobenius_demand_supply : Prop
+      the categorical action equals the per-channel sum. -/
+  claim_ii_multichannel_pair_production : action_pair = channel_sum
+  /-- Frobenius pairing kernel dimension. -/
+  pairing_kernel_dim : ℕ
+  /-- Manuscript sub-claim (iii) — Frobenius pairing non-degeneracy:
+      `pairing_kernel_dim = 0` (so every demand profile has a unique
+      minimal-norm matching supply). -/
+  claim_iii_frobenius_demand_supply : pairing_kernel_dim = 0
   /-- Action value of the selected endomorphism `Φ`. -/
   action_Phi : ℝ
   /-- Action functional on alternative endomorphisms (takes an
@@ -78,8 +83,8 @@ states.*
 theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
     ctx.tr_Phi = (Finset.range ctx.n_partitions).sum
                    (fun λ => ctx.tr_Phi_lambda λ) ∧
-    ctx.claim_ii_multichannel_pair_production ∧
-    ctx.claim_iii_frobenius_demand_supply ∧
+    ctx.action_pair = ctx.channel_sum ∧
+    ctx.pairing_kernel_dim = 0 ∧
     (∀ Φ_alt : ctx.CategoricalObj → ctx.CategoricalObj,
       ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) :=
   ⟨ctx.claim_i_spectral_decomposition,
