@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:34:21.172913+00:00",
-  "commitSha": "92c3e34628da0f6c16d18bc4de554cc49ea9a45a",
+  "computedAt": "2026-05-19T19:58:18.820580+00:00",
+  "commitSha": "a6553642d4005b8193d2a4a1ee74739b462a8ff0",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2274,6 +2274,7 @@
         "crystal-shift-nf-atomic.witness.json",
         "crystal-transport-h3-verification.witness.json",
         "cyclotomic-depth3-dimension-pslq.witness.json",
+        "cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
         "cyclotomic-trilog-imaginary.witness.json",
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",
