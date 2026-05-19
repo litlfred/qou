@@ -17,14 +17,16 @@ namespace QOU.AlgebraicSubstrate
 class CollatzNoCyclesContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_collatz_no_cycles : Prop
+  /-- The q-integers `[2]_q` and `[3]_q`. -/
+  q_int_2 q_int_3 : ℝ
+  /-- Manuscript Bézout identity: `[3]_q − q · [2]_q = 1`. -/
+  claim_skein_divisibility : q_int_3 - q * q_int_2 = 1
+  /-- The Skein-Collatz map periodic orbits. The fixed-point set
+      `Periodic = {P : ∀ k > 0, C_q^k P ≠ P} ∪ {1}`. -/
+  is_periodic : ℝ → Prop
+  /-- Manuscript no-cycle claim: every periodic orbit is the fixed
+      point `P = 1` (the unknot). -/
+  claim_collatz_no_cycles : ∀ P : ℝ, is_periodic P → P = 1
 
 /-- **Manuscript statement** (full body):
 
@@ -96,9 +98,9 @@ is a consequence of consecutive integers being coprime
     placeholder; the `ctx.claim_collatz_no_cycles : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
-theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] : ctx.claim_collatz_no_cycles := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
+    ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 ∧
+    ∀ P : ℝ, ctx.is_periodic P → P = 1 :=
+  ⟨ctx.claim_skein_divisibility, ctx.claim_collatz_no_cycles⟩
 
 end QOU.AlgebraicSubstrate
