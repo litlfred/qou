@@ -937,28 +937,53 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
             # can distinguish T1-witness gaps (A ≥ 5 atoms not yet
             # computed) from genuine compute regressions.
             err_msg = f"{type(exc).__name__}: {exc}"
-            # Detect tower-mode upstream-witness gaps: `tower_mode=
-            # 'habiro'` needs path-b-habiro-mass-probe.witness.json
-            # to cover the atom; `tower_mode='per-partition-k'` needs
-            # probe-phiq-per-partition-klambda.witness.json.  Both
-            # currently cover only a subset of {p, n, D, T, 3He}.
+            # Detect tower-mode upstream-witness gaps:
+            #   `tower_mode='habiro'` reads
+            #       `path-b-habiro-mass-probe.witness.json`
+            #       (current coverage: {p, n, D};
+            #        missing for the A=1..4 set: T, 3He, 4He).
+            #   `tower_mode='per-partition-k'` reads
+            #       `probe-phiq-per-partition-klambda.witness.json`
+            #       (current coverage: {D, T, 3He};
+            #        missing for the A=1..4 set: p, n, 4He).
             # These are atom/mode coverage gaps, not producer bugs —
-            # emit `deferred: true, deferred_mode: <mode>` so the I13
-            # audit doesn't conflate them with T1-coverage gaps.
-            # Cf. PR #798's deferred-intractable pattern for atoms.
+            # emit `deferred: true, deferred_mode: <mode>` plus the
+            # specific upstream witness filename so the I13 audit
+            # surfaces *actionable* deferrals rather than opaque
+            # `error_kind`.  Cf. PR #798's deferred-intractable
+            # pattern for atom-level gaps.
+            _TOWER_MODE_UPSTREAM = {
+                "habiro": "path-b-habiro-mass-probe.witness.json",
+                "per-partition-k":
+                    "probe-phiq-per-partition-klambda.witness.json",
+            }
             if (isinstance(exc, KeyError)
                     and "missing from" in str(exc)
                     and (f"tower_mode={tower_mode!r}" in str(exc)
                          or f"tower_mode='{tower_mode}'" in str(exc))):
+                upstream_witness = _TOWER_MODE_UPSTREAM.get(
+                    tower_mode, "<unknown upstream witness>"
+                )
+                # Try to extract the "current coverage = [...]" hint
+                # from the KeyError message so the deferral row keeps
+                # the actionable list even though we're not raising.
+                exc_str = str(exc)
+                upstream_coverage_hint = None
+                if "current coverage = " in exc_str:
+                    after = exc_str.split("current coverage = ", 1)[1]
+                    upstream_coverage_hint = after.split(".", 1)[0].strip()
                 rows.append({
                     "isotope": iso, "Z": Z, "N": N, "A": Z + N,
                     "M_codata": M_codata,
                     "deferred": True,
                     "deferred_mode": tower_mode,
+                    "upstream_witness": upstream_witness,
+                    "upstream_coverage_hint": upstream_coverage_hint,
                     "deferral_reason": (
-                        f"tower_mode={tower_mode!r} requires upstream"
-                        f" probe-witness coverage for {iso!r}; awaits"
-                        " extension of the relevant probe witness."
+                        f"tower_mode={tower_mode!r} requires {iso!r} in"
+                        f" {upstream_witness}; current coverage = "
+                        f"{upstream_coverage_hint or '<unknown>'}."
+                        " Extend the upstream witness to clear this row."
                     ),
                 })
                 if verbose:
