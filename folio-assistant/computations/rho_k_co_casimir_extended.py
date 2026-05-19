@@ -307,6 +307,10 @@ DEFAULT_ATOMS = [
 
 
 def main(argv: list[str] | None = None) -> int:
+    # Capture start_time at the very top so WitnessBuilder.durationMs
+    # reflects actual compute time, not just serialization.
+    # (Copilot review #4 on PR #808.)
+    start_time = time.monotonic()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--atoms", default=None,
@@ -333,7 +337,11 @@ def main(argv: list[str] | None = None) -> int:
     # doesn't lose completed work.
     def _save_incremental(results_so_far: list[dict]) -> Path:
         b = (
-            WitnessBuilder("rho-k-co-casimir-extended", engine="python+mpmath")
+            WitnessBuilder(
+                "rho-k-co-casimir-extended",
+                engine="python+mpmath",
+                start_time=start_time,
+            )
             .set_description(
                 "Substrate-derived ρ_K^pred via the Frobenius co-Casimir "
                 "Option B for every L1 atom — incremental save."
@@ -380,7 +388,11 @@ def main(argv: list[str] | None = None) -> int:
 
     # Emit witness
     builder = (
-        WitnessBuilder("rho-k-co-casimir-extended", engine="python+mpmath")
+        WitnessBuilder(
+            "rho-k-co-casimir-extended",
+            engine="python+mpmath",
+            start_time=start_time,
+        )
         .set_description(
             "Substrate-derived ρ_K^pred via the Frobenius co-Casimir "
             "Option B (Δ_λ := 1/dim_q(λ), forced by "

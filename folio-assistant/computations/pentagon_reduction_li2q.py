@@ -69,6 +69,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -233,6 +234,10 @@ def load_binding_witness() -> dict:
 
 
 def main() -> int:
+    # Capture start_time at the very top so WitnessBuilder.durationMs
+    # reflects actual compute time, not just serialization.
+    # (Copilot review #4 on PR #808.)
+    start_time = time.monotonic()
     q, q_inv, z_markov = load_q_50dps()
     print(f"q_0 = {mp.nstr(q, 20)}")
     print(f"convergence radius of Li_2^q series at q_0: |z| < {mp.nstr(q, 8)}")
@@ -326,7 +331,11 @@ def main() -> int:
 
     # Emit witness
     builder = (
-        WitnessBuilder("pentagon-reduction-li2q", engine="python+mpmath")
+        WitnessBuilder(
+            "pentagon-reduction-li2q",
+            engine="python+mpmath",
+            start_time=start_time,
+        )
         .set_description(
             "Pentagon-identity reduction of Li_2^q at pair-product "
             "arguments |V_i V_j| > q_0 (which exceed the series "
