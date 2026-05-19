@@ -33,11 +33,14 @@ class QNsWellposednessContext where
   dv_norm_sq : ℝ → ℝ
   /-- Cumulative dissipation `∫_0^t ||d_q v(s)||² ds`. -/
   dissipation : ℝ → ℝ
-  /-- Manuscript sub-claim (i) — categorical smoothness:
-      `t ↦ v(t) ∈ Ω¹(A)` is smooth (infinitely differentiable in the
-      internal hom of `C`; captured as an abstract Prop because the
-      categorical smoothness predicate sits on `C`). -/
-  claim_i_smoothness : Prop
+  /-- Time-Lipschitz modulus `L_v` of the velocity field `t ↦ v(t)`. -/
+  L_v : ℝ
+  /-- Manuscript sub-claim (i) — Categorical smoothness implies
+      time-Lipschitz: `|v_norm(t) − v_norm(s)| ≤ L_v · |t − s|`.
+      (Concrete real-valued surrogate for the categorical smoothness
+      predicate, which sits on the internal hom of `C`.) -/
+  claim_i_smoothness : ∀ t s : ℝ,
+    |v_norm_sq t - v_norm_sq s| ≤ L_v * |t - s|
   /-- Manuscript sub-claim (ii) — energy inequality:
       `||v(t)||²_{L²} + 2 ν_q ∫_0^t ||d_q v(s)||²_{L²} ds ≤ ||v(0)||²_{L²}`. -/
   claim_ii_energy_inequality : ∀ t : ℝ, 0 ≤ t →
@@ -69,7 +72,7 @@ viscosity.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts
 theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
-    ctx.claim_i_smoothness ∧
+    (∀ t s : ℝ, |ctx.v_norm_sq t - ctx.v_norm_sq s| ≤ ctx.L_v * |t - s|) ∧
     (∀ t : ℝ, 0 ≤ t →
       ctx.v_norm_sq t + 2 * ctx.ν_q * ctx.dissipation t ≤ ctx.v_norm_sq 0) ∧
     (∀ (k : ℕ) (t : ℝ), 0 ≤ t →

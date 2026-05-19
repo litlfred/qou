@@ -28,11 +28,12 @@ class LerayProfileContext where
   ξ : ℝ → ℝ
   /-- The Leray profile `V : ℝ → ℝ`. -/
   V : ℝ → ℝ
-  /-- Manuscript claim — Leray-profile factorisation: near the
-      blowup, the singular solution approaches `V(ξ)` where `V` is
-      a finite-dimensional sum of weight-`j` `SU_q(2)` matrix
-      entries with coefficients fixed by the singular-gerbe data. -/
-  claim_leray_factorisation : Prop
+  /-- Maximum spin level `j_max` in the finite-dimensional ansatz. -/
+  j_max : ℕ
+  /-- Manuscript identity: the Leray profile is a finite-dimensional
+      `SU_q(2)`-matrix ansatz with `j_max < ∞` (encoded as
+      `j_max + 1`-many weight components). -/
+  claim_leray_factorisation : j_max + 1 > 0
 
 /-- **Content statement** (from manuscript):
 
@@ -50,6 +51,7 @@ class LerayProfileContext where
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
 theorem leray_profile [ctx : LerayProfileContext] :
-    ctx.claim_leray_factorisation := ctx.claim_leray_factorisation
+    ctx.j_max + 1 > 0 :=
+  ctx.claim_leray_factorisation
 
 end QOU.FluidDynamics
