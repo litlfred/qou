@@ -93,8 +93,17 @@ def _audit_witness(path: Path) -> dict[str, Any] | None:
 def main() -> int:
     strict = "--strict" in sys.argv
 
+    # Skip the audit's own output to prevent recursive self-counting:
+    # the witness this script emits stores every detected error_kind
+    # under `data.rows[*].sample_entries[*].error_kind`, so re-scanning
+    # it would re-classify those records as fresh errors each run,
+    # inflating `total_error_entries` monotonically.
+    SELF_OUTPUT = "incomplete-coverage-audit.witness.json"
+
     rows: list[dict[str, Any]] = []
     for w in sorted(HERE.glob("*.witness.json")):
+        if w.name == SELF_OUTPUT:
+            continue
         result = _audit_witness(w)
         if result is None:
             continue
