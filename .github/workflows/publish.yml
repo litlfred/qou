@@ -238,7 +238,7 @@ jobs:
           # the packages imported by the content-linked scripts that
           # run in CI (numpy, sympy, scipy, mpmath).
           pip3 install --break-system-packages --no-cache-dir \
-              numpy sympy scipy mpmath
+              numpy sympy scipy mpmath pypdf
 
       # ── 0d½. Regenerate stale computation witnesses (appendix tables, etc.) ─
       - name: Regenerate stale witnesses
@@ -495,6 +495,17 @@ jobs:
             fi
           done
 
+      # ── 2d. Split main PDF into chapter/front-matter parts ─────────────────
+      - name: Split main PDF into section PDFs
+        continue-on-error: true
+        run: |
+          mkdir -p split-pdfs
+          python3 .github/scripts/split-pdf-by-outline.py \
+            --input main.pdf \
+            --output-dir split-pdfs \
+            || echo "::warning::Could not split main.pdf by outline"
+          ls -1 split-pdfs/*.pdf 2>/dev/null || echo "No split PDFs generated"
+
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
         env:
@@ -537,6 +548,15 @@ jobs:
             fi
           done
 
+          # Copy split chapter/front-matter PDFs
+          if [ -d split-pdfs ]; then
+            for spdf in split-pdfs/*.pdf; do
+              [ -f "$spdf" ] || continue
+              cp "$spdf" "${PAPER_OUTDIR}/$(basename "$spdf")"
+              echo "  ✓ Split: $(basename "$spdf")"
+            done
+          fi
+
           # Copy the interactive visualizer (prefer quantum_brings_surface.html)
           if [ -f quantum_brings_surface.html ]; then
             cp quantum_brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
@@ -577,6 +597,19 @@ jobs:
             fi
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
+
+          # ── Build PDF artifact README for this paper ───────────────────────
+          {
+            echo "# Generated PDF files"
+            echo
+            echo "| File | Link |"
+            echo "|------|------|"
+            find "${PAPER_OUTDIR}" -maxdepth 1 -type f -name "*.pdf" -printf "%f\n" \
+              | sort \
+              | while read -r pdf; do
+                  echo "| ${pdf} | [${pdf}](./${pdf}) |"
+                done
+          } > "${PAPER_OUTDIR}/README.md"
 
           # ── Copy figure assets for all papers to gh-pages ────────────────
           # LaTeX \includegraphics uses paths like:
