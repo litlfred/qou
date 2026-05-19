@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:19:31.256299+00:00",
-  "commitSha": "71d15701e0a0e3c67fbc906dd551d3cc35ae25c6",
+  "computedAt": "2026-05-19T17:23:52.005253+00:00",
+  "commitSha": "e43d064e4c7f17b63ac1216094cefc2b0e594649",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 517,
-      "wired": 56,
+      "i1_no_probe": 516,
+      "wired": 57,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -2355,9 +2355,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "symbolic-character-table-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.ts",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:19:30.785636+00:00",
-  "commitSha": "71d15701e0a0e3c67fbc906dd551d3cc35ae25c6",
+  "computedAt": "2026-05-19T17:23:51.515518+00:00",
+  "commitSha": "e43d064e4c7f17b63ac1216094cefc2b0e594649",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2643,6 +2643,7 @@
         "sublemma-2-1-h9-tritium-branching-verify.witness.json",
         "sublemma-2-1-h9-tritium-verify.witness.json",
         "sw-period-thimble-equivalence.witness.json",
+        "symbolic-character-table-probe.witness.json",
         "t2-t3-proton-neutron-a1.witness.json",
         "t35-weak-vertex.witness.json",
         "tau-M-four-anchors.witness.json",
