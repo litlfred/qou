@@ -84,7 +84,7 @@ Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publis
 
 | Block kind | Total | With Lean sibling | Fully formalized |
 |------------|------:|------------------:|-----------------:|
-| Provable claims (theorem/lemma/proposition/corollary) | 570 | 567 | **562 sorry-free (98.6%)** |
+| Provable claims (theorem/lemma/proposition/corollary) | 572 | 569 | **564 sorry-free (98.6%)** |
 | Conjectures (open) | 132 | 130 | **121 class-axiomatised (91.7%)** |
 | Definitions | 215 | 215 | — |
 
@@ -199,6 +199,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.FlavorDressing.*` | `3 files` |
 | `QOU.FluidDynamics.*` | `19 files` |
 | `QOU.FrobeniusHopfData.*` | `1 files` |
+| `QOU.Habiro.*` | `1 files` |
 | `QOU.HadronicMass.*` | `3 files` |
 | `QOU.Hecke.*` | `9 files` |
 | `QOU.HeckeAlgebra.*` | `8 files` |
