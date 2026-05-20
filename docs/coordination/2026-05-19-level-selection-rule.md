@@ -65,4 +65,6 @@ No silent rewrite, no cherry-pick.
 - Coordination posts (this session):
   - PR #814: supersession proposal (cherry-picked silver-ratio + c5-involution narrative into #816). https://github.com/litlfred/qou/pull/814#issuecomment-4490831098
   - PR #801: parallel-work intent post, no ask. https://github.com/litlfred/qou/pull/801#issuecomment-4490986987
+  - PR #840: thematic note on FR-pullback K_k* findings vs three-layer synthesis. https://github.com/litlfred/qou/pull/840#issuecomment-4494403665
+  - PR #842: thematic note on (2q-1) varying-q falsification vs gain-layer functor. https://github.com/litlfred/qou/pull/842#issuecomment-4494404468
 - PR #809 (witness-provenance backfill 115 → 0) merged to main today (`f893cc929`). Explains why the I14 audit was previously clean on `main` but surfaced PROV_MISSING regressions on my branch — producers like `cross_check_trM_1ppb.py` and (formerly) `habiro_witness_validator.py` strip the manually-backfilled fields on every re-run. My #816 fix (`habiro_witness_validator.py` → `WitnessBuilder`) is the structural cure for habiro; `cross_check_trM_1ppb.py` migration is the remaining piece.
