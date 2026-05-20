@@ -554,9 +554,15 @@ type FfiHeckeElement = Vec<(Vec<i32>, Vec<(i32, String, String)>)>;
 ///   `FfiHeckeElement`). Each element typically has a small number of
 ///   terms (one or two) — it's the σ-word representation of a single
 ///   crossing.
-/// - `max_iterations_per_step`: per-multiplication reduce cap (matches
-///   the Python `max_iterations_per_step` kwarg). Use the Python
-///   default of 5000 unless you have evidence a step needs more.
+/// - `max_iterations_per_step`: per-multiplication reduce cap. The
+///   Python signature default in
+///   `incremental_reduced_element_fast` is **5000** (per-step), but
+///   the call-site in `tr_M_atomic_fast` overrides to **10000** for
+///   atomic-braid sweeps. We match the latter (the actual production
+///   value) here; callers that want the lower bound can pass it
+///   explicitly. The standalone `reduce_laurent::DEFAULT_MAX_ITERATIONS`
+///   constant uses 10000 too (matches the Python
+///   `reduce_laurent_rules` signature default).
 ///
 /// Returns the reduced element in the same FFI form.
 ///
@@ -564,7 +570,7 @@ type FfiHeckeElement = Vec<(Vec<i32>, Vec<(i32, String, String)>)>;
 /// reduction. Output is the fully-reduced Hecke element ready for
 /// `tr_M_element` evaluation on the Python side.
 #[pyfunction]
-#[pyo3(signature = (factors, max_iterations_per_step = 5000))]
+#[pyo3(signature = (factors, max_iterations_per_step = 10000))]
 fn incremental_reduce_rust(
     factors: Vec<FfiHeckeElement>,
     max_iterations_per_step: usize,

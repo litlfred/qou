@@ -372,7 +372,7 @@ def _ffi_to_laurent_hecke_element(ffi):
 
 
 def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
-                          max_iterations_per_step=5000):
+                          max_iterations_per_step=10000):
     """Canonical Markov trace `tr_M(β_atomic(Z, N), q₀)` via the
     Tier 1.A Rust LaurentQ-reduce path.
 
@@ -389,6 +389,9 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
     Bit-identical to `hecke_laurent_fast.tr_M_atomic_fast` (which uses
     the pure-Python reduce) modulo the rational-coefficient algebra.
     The Markov trace step is shared.
+
+    The default `max_iterations_per_step=10000` matches
+    `tr_M_atomic_fast`'s production setting.
     """
     import mpmath
     import pyhecke_native  # type: ignore[import-not-found]
@@ -396,10 +399,9 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_symbolic import SymbolicHeckeElement, crossing_from_cd
     from laurent_q import LaurentQ
-    from hecke_laurent_fast import LaurentHeckeElement
     from markov_trace_canonical import tr_M_element
     from hecke_core import h as _h_num
-    from q_parameter import Q_50_DIGIT_STR  # noqa: F401 — used by caller for q₀
+    from q_parameter import Q_50_DIGIT_STR
 
     h_num_float = float(_h_num)
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)

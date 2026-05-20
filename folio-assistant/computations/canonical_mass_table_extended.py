@@ -167,7 +167,9 @@ def compute_tr_m_canonical(
         except ImportError as e:
             return None, 0.0, (
                 f"laurent_q_rust: pyhecke_native missing "
-                f"incremental_reduce_rust (rebuild wheel): {e}"
+                f"incremental_reduce_rust — rebuild the wheel "
+                f"(see docs/audits/2026-05-21-rust-laurent-q-reduce-results.md "
+                f"§How to finish): {e}"
             ), "laurent_q_rust"
         except Exception as e:  # noqa: BLE001
             return None, 0.0, f"laurent_q_rust: {type(e).__name__}: {e}", "laurent_q_rust"
