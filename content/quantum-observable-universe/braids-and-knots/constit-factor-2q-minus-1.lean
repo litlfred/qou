@@ -62,25 +62,25 @@ noncomputable def constit_factor_2q_minus_1 (q : ℝ) : ℝ :=
 class ConstitFactor2qMinus1 (q : ℝ) where
   /-- The empirically-measured per-Z constit factor. -/
   rho_constit_empirical : ℝ
-  /-- The closed-form identity: ρ^constit = (2q − 1) + O(h^4) at the
-      substrate point.  The class records the leading-order
-      identity; the `O(h^4)` residual is the conjectural content
-      (Phase 5k will distinguish noise from a real correction). -/
-  rho_constit_eq_2q_minus_1_at_leading_order :
+  /-- The closed-form identity: ρ^constit = (2q − 1) at the
+      substrate point.  Empirically holds to 0.033% rel. err.
+      (Phase 5g); the residual is conjecturally `O(h^5)` with
+      unit coefficient (Phase 5k.1 at q_0).  The class axiomatises
+      the leading-order identity; the higher-order structure is
+      research target. -/
+  rho_constit_eq_2q_minus_1 :
     rho_constit_empirical = constit_factor_2q_minus_1 q
-      + (rho_constit_empirical - constit_factor_2q_minus_1 q)
 
 /-- **Theorem (conditional on ConstitFactor2qMinus1).**
 
     For any substrate q satisfying the class hypothesis, the per-Z
-    constit factor in the canonical-atom Markov trace decomposes
-    as the leading-order term `2q − 1` plus a residual. -/
+    constit factor in the canonical-atom Markov trace equals the
+    leading-order Hecke deformation `(2q − 1)`. -/
 -- Ref: [manuscript] conj:constit-factor-2q-minus-1
-theorem rho_constit_decomposition
+theorem rho_constit_eq_closed_form
     (q : ℝ) [inst : ConstitFactor2qMinus1 q] :
-    inst.rho_constit_empirical = constit_factor_2q_minus_1 q
-      + (inst.rho_constit_empirical - constit_factor_2q_minus_1 q) :=
-  inst.rho_constit_eq_2q_minus_1_at_leading_order
+    inst.rho_constit_empirical = constit_factor_2q_minus_1 q :=
+  inst.rho_constit_eq_2q_minus_1
 
 /-- **Companion identity (combined per-Z τ_M factor).**
 
@@ -120,16 +120,19 @@ theorem constit_factor_not_bar_symmetric
   intro h
   -- 2*q⁻¹ - 1 = 2*q - 1  ⇒  q⁻¹ = q
   have h2 : q⁻¹ = q := by linarith
-  -- Multiply by q: 1 = q²  (since q > 0 ⇒ q ≠ 0)
+  -- Multiply both sides of h2 by q to get q² = 1 (since q ≠ 0)
   have hq_ne : q ≠ 0 := ne_of_gt hq
   have h3 : q * q = 1 := by
     have hmul : q⁻¹ * q = q * q := by rw [h2]
     rw [inv_mul_cancel₀ hq_ne] at hmul
     linarith
-  -- q² = 1 ∧ q > 0 ⇒ q = 1
-  have h4 : (q - 1) * (q + 1) = 0 := by nlinarith
+  -- Factor q² - 1 = (q - 1)(q + 1) = 0 → q = 1 or q = -1
+  have hexpand : (q - 1) * (q + 1) = q * q - 1 := by ring
+  have h4 : (q - 1) * (q + 1) = 0 := by rw [hexpand]; linarith
   rcases mul_eq_zero.mp h4 with h5 | h5
-  · exact hq1 (by linarith)
-  · linarith
+  · -- q = 1, contradicts hq1
+    exact hq1 (by linarith)
+  · -- q = -1, contradicts q > 0
+    linarith
 
 end QOU.BraidKnot

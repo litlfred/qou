@@ -10,6 +10,7 @@ export default conjecture({
   },
   uses: [
     "prop:interface-knot-markov-z",
+    "prop:lr-tensor-character-bridge",
     "thm:jones-markov-trace",
   ],
   cites: ["jones1987", "wenzl1988"],
