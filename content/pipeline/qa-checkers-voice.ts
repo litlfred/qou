@@ -266,7 +266,16 @@ export function checkWallSide(
   // Strip Lean block comments (/- ... -/) AND line comments (-- ...)
   // to reduce false positives when archimedean markers appear inside
   // narrative comments of an otherwise-algebraic file.
-  const stripped = leanSrc.replace(/\/-[\s\S]*?-\/|--.*$/gm, "");
+  // Strip Lean block comments (/- ... -/), line comments (-- ...),
+  // AND `import ...` lines so that an archimedean/algebraic marker
+  // appearing only inside a Mathlib import path (e.g.
+  // `Mathlib.Topology.Algebra.Order.Field`) does not falsely flag
+  // the file as a mixed substrate-archimedean placement.  Imports
+  // declare a dependency; they say nothing about how the body of
+  // the file uses ℝ vs a generic ring.
+  const stripped = leanSrc
+    .replace(/\/-[\s\S]*?-\/|--.*$/gm, "")
+    .replace(/^\s*import\s+[^\n]*$/gm, "");
   const isArchimedean = ARCHIMEDEAN_LEAN_RE.test(stripped);
   const isAlgebraic = ALGEBRAIC_LEAN_RE.test(stripped);
   const hits: CheckerHit[] = [];
