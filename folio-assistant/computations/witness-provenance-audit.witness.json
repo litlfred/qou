@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:18:45.701569+00:00",
-  "commitSha": "9e2eed0c0de37bac11ea9ab352c2e2eefe72bb1b",
+  "computedAt": "2026-05-20T00:26:17.901809+00:00",
+  "commitSha": "94f35e7c0bef41627c8c28c7a3abcff3833aedd6",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 1,
+      "computed": 0,
       "expected": 0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "source": "every witness must declare engine/scriptFile/commitSha"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 7,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
@@ -35,12 +35,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 665,
-      "prov_ok": 633,
+      "total_scanned": 690,
+      "prov_ok": 659,
       "prov_audit_exempt": 31,
-      "prov_missing": 1,
+      "prov_missing": 0,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.9984962406015038
+      "completeness_ratio": 1.0
     },
     "by_verdict": {
       "PROV_OK": [
@@ -153,6 +153,22 @@
           "missing_fields": []
         },
         {
+          "witness": "atom-chi-rust-3he.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-chi-rust-4he.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-chi-rust-d.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-chi-rust-t.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "atom-mass-additive-baseline.witness.json",
           "missing_fields": []
         },
@@ -170,6 +186,10 @@
         },
         {
           "witness": "atomic-braid-gb-filtration-extension.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atomic-chirality-residue.witness.json",
           "missing_fields": []
         },
         {
@@ -241,7 +261,31 @@
           "missing_fields": []
         },
         {
+          "witness": "binding-block-multiplicative.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "binding-canonical.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-depth-stratified-knot-weighted.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-depth-stratified-lr.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-depth-stratified-rust.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-depth-stratified-selfconj.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-depth-stratified.witness.json",
           "missing_fields": []
         },
         {
@@ -973,6 +1017,10 @@
           "missing_fields": []
         },
         {
+          "witness": "cross-check-trM-1ppb.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "cross-check-trM-wenzl-lr-1ppb.witness.json",
           "missing_fields": []
         },
@@ -1073,6 +1121,14 @@
           "missing_fields": []
         },
         {
+          "witness": "delta-lambda-fr-identity-phase5c.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-lambda-full-variance-phase5e-1.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "delta-lambda-jsj-phase3.witness.json",
           "missing_fields": []
         },
@@ -1090,6 +1146,10 @@
         },
         {
           "witness": "delta-lambda-via-per-partition-shift-nf.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-lambda-z4N-phase4.witness.json",
           "missing_fields": []
         },
         {
@@ -1377,6 +1437,14 @@
           "missing_fields": []
         },
         {
+          "witness": "k-star-search-phase5d-5.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "k-star-variance-phase5d-5b.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "kappa-categorical-h7a-closed.witness.json",
           "missing_fields": []
         },
@@ -1505,6 +1573,18 @@
           "missing_fields": []
         },
         {
+          "witness": "log-delta-categorical-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "log-delta-full-mass-subtract.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "log-delta-per-depth-binding.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "low-isotope-binding-sweep.witness.json",
           "missing_fields": []
         },
@@ -1534,6 +1614,10 @@
         },
         {
           "witness": "m-p-borromean-verification-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "m-p-m-e-li2q.witness.json",
           "missing_fields": []
         },
         {
@@ -2217,11 +2301,23 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-decay-sdp-extended-ck.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-decay-sdp-full-ck-derivation.witness.json",
           "missing_fields": []
         },
         {
           "witness": "qbeta-decay-sdp-knot-operator.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-fsc-g-pattern-comparison.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-half-fill-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -2238,6 +2334,10 @@
         },
         {
           "witness": "qbeta-per-block-uniform-rule-verify.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-silver-ratio-pell-lucas-ck.witness.json",
           "missing_fields": []
         },
         {
@@ -2525,6 +2625,10 @@
           "missing_fields": []
         },
         {
+          "witness": "v-hat-z-transfer-phase5d-4.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "wall-violations-sweep.witness.json",
           "missing_fields": []
         },
@@ -2577,16 +2681,7 @@
           "missing_fields": []
         }
       ],
-      "PROV_MISSING": [
-        {
-          "witness": "cross-check-trM-1ppb.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        }
-      ],
+      "PROV_MISSING": [],
       "PROV_AUDIT_EXEMPT": [
         {
           "witness": "braid-encoding-audit.witness.json",
