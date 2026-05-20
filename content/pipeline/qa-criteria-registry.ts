@@ -668,3 +668,76 @@ export const WATCHER_CRITERIA_BY_AXIS: Record<string, string[]> = {
   detangler: DETANGLER_WATCHER_CRITERIA,
   bibliography: BIBLIOGRAPHY_WATCHER_CRITERIA,
 };
+
+// ── Source-file + extra-input declaration (script staleness) ────
+
+/**
+ * Path (repo-relative) to the source file containing each automated
+ * checker function. Used by qa-sweep to compute the entry's
+ * `script_hash` and write per-criterion script sidecars.
+ *
+ * `qa-checkers-voice.ts` hosts the original voice / framework /
+ * wall checkers (10 criteria); `qa-checkers-extended.ts` hosts
+ * everything else (proof, canonical, compute, detangler,
+ * bibliography, voice-title-scholarly).
+ */
+export const VOICE_CHECKER_FILE =
+  "content/pipeline/qa-checkers-voice.ts";
+export const EXTENDED_CHECKER_FILE =
+  "content/pipeline/qa-checkers-extended.ts";
+
+const VOICE_FILE_IDS = new Set<string>([
+  "voice-status-leak",
+  "voice-emoji-content",
+  "voice-first-person-work",
+  "voice-time-stamped-notes",
+  "voice-unicode-crash",
+  "voice-editorializing",
+  "voice-ai-slop",
+  "voice-scholarly-default",
+  "framework-canonical",
+  "wall-side-correct",
+]);
+
+/**
+ * Resolve a criterion's source file. Honours the explicit
+ * `source_file` field on the registry entry; otherwise applies
+ * the dispatch-table heuristic above.
+ */
+export function getCriterionSourceFile(criterionId: string): string {
+  const def = QA_CRITERIA_BY_ID[criterionId];
+  if (def?.source_file) return def.source_file;
+  if (VOICE_FILE_IDS.has(criterionId)) return VOICE_CHECKER_FILE;
+  return EXTENDED_CHECKER_FILE;
+}
+
+/**
+ * Extra-input files some criteria consult beyond the block under
+ * audit. Paths are repo-relative. Listed inputs are concatenated
+ * + hashed into the entry's `deps_hash`.
+ *
+ * Criteria absent from this map have no extra inputs and write no
+ * `deps_hash`.
+ */
+export const CRITERION_EXTRA_INPUTS: Record<string, string[]> = {
+  "proof-no-conj-propagation-violation": [
+    "docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json",
+  ],
+  "proof-no-trivial-skeleton": [
+    "docs/audits/2026-05-08-trivial-skeleton-audit.json",
+  ],
+  "proof-conditional-class-banner": [
+    "docs/audits/2026-05-09-conditional-class-banner.witness.json",
+  ],
+  "bib-cite-resolves": ["content/schema/references.ts"],
+  "bib-cited-ref-has-url": ["content/schema/references.ts"],
+  "bib-cited-ref-metadata-ok": ["content/schema/references.ts"],
+  "bib-cited-ref-has-screenshot": ["content/schema/references.ts"],
+};
+
+/** Resolve a criterion's extra-input list (`[]` if none). */
+export function getCriterionExtraInputs(criterionId: string): string[] {
+  const def = QA_CRITERIA_BY_ID[criterionId];
+  if (def?.extra_inputs) return def.extra_inputs;
+  return CRITERION_EXTRA_INPUTS[criterionId] ?? [];
+}
