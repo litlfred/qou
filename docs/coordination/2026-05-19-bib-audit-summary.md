@@ -163,3 +163,57 @@ python3 scripts/find-arxiv-mirrors.py --min-cites 3
    mostly author-judgement items already deferred.
 5. **PR**: open one for `claude/detangler-bib-followup-batch-2026-05-19`
    when ready (43 commits, all rebase-clean and validator-clean).
+
+## 2026-05-20 follow-up sweep (post-merge cleanup)
+
+After resolving the merge from `origin/main` (commit `60c9f9f42`),
+a follow-up tranche of bib + infrastructure cleanup landed on the
+same branch. Capstone status:
+
+| Metric (2026-05-20) | Value |
+|---|--:|
+| Total refs in `references.ts` | 252 (was 246) |
+| Verification entries tracked | 134 (was 117 → 48% → 53% of refs) |
+| `validate-bib --cross-check` | **0 / 0 / 0** (was 12 warn) |
+| `validate.ts` issues | **0** (was 5 stale) |
+| `validate-refs` errors / warnings | **0 / 0** (was 3 / 10 post-merge) |
+| `validate-refs` info items | 14 (was 36; rest deferred) |
+| Conjectural-propagation violators | **0** (1728 blocks, 9/9 banner) |
+| Dangling remarks | **0** |
+| Glossary | regenerated, 29 entries |
+
+### Commits added post-merge (10)
+
+1. `36627d399` — fix kazhdan-lusztig prefix
+2. `d4f274bae` — clear 5 validate.ts cross-ref + val-block warnings
+3. `672dc65d1` — clear 3 broken cite keys (khovanov × 3) + 10 missing
+   container-title warnings (arxiv preprints → `type: "article"`)
+4. `37c6d09b1` — extend `validate-references.ts` to scan `.ts` cites
+   arrays + `.lean` docstring bracket citations (closes the gap that
+   misclassified 16 wired entries as orphans)
+5. `20737a05a` — sync 88 missing cite keys across 58 manifests
+   (mechanical .md `\cite{}` → `.ts cites[]` sync)
+6. `a1d28f502` — multi-witness for deuterium-derived-binding (clears
+   the last val-block-computation warning)
+7. `6671bb083` — surface cardona2023 + blitvic2012-clt into existing
+   prose (4 → 2 uncited orphans; remaining 2 are genuinely
+   pending-placement)
+8. `5c9cd28cf` — regenerate stale glossary.json
+9. `695fb6406` — refresh conjectural-propagation + conditional-class
+   banner audit witnesses
+
+### Truly remaining backlog (defer-to-author)
+
+- **2 uncited orphans**: `franecki-kapranov-1999`, `lu-1999-canonical-bundles`
+  — no QOU citation site after full-tree grep. Sit in references.ts as
+  future-work candidates; remove or surface when intent clarifies.
+- **12 entries lacking DOI**: `suslin1991`, `bring1786`, `collatz1937`,
+  `iwahori1964`, `young1901`, `mostow1968`, `gromov1982`, `kerov1996`,
+  `pham1965`, `borel1986`, `frobenius1903`, `nakayama1939` — Crossref
+  API blocked in sandbox; DOIs deferred until author or external
+  network access available.
+- **67 `partial` entries**: paywalled, no PDF for §-specific verification.
+- **1077 / 1893 blocks lacking QA sidecar** (one-voice / fit /
+  framework / wall criteria, new in PR #821). Bulk-generate via
+  `qa-sweep.ts` in a separate dedicated session — too large for
+  this tranche.
