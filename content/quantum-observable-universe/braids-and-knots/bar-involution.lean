@@ -168,4 +168,90 @@ theorem IsBarAntiSymmetric.pow_two_mul_add_one {x : R}
 
 end BarGrading
 
+/-! ## Projection identities (require `Field` for division by 2)
+
+`P_avg` acts as the identity on bar-symmetric, kills bar-anti-symmetric.
+`P_skew` is the complementary projection. -/
+
+section Projections
+variable {R : Type*} [Field R] [BarInvolution R]
+
+/-- `P_avg(x) = x` when `x` is bar-symmetric. -/
+theorem barSymmetricProjection_of_sym {x : R} (hx : IsBarSymmetric x) :
+    barSymmetricProjection x = x := by
+  unfold barSymmetricProjection
+  unfold IsBarSymmetric at hx
+  rw [hx]; ring
+
+/-- `P_avg(x) = 0` when `x` is bar-anti-symmetric. -/
+theorem barSymmetricProjection_of_antisym {x : R} (hx : IsBarAntiSymmetric x) :
+    barSymmetricProjection x = 0 := by
+  unfold barSymmetricProjection
+  unfold IsBarAntiSymmetric at hx
+  rw [hx]; ring
+
+/-- `P_skew(x) = x` when `x` is bar-anti-symmetric. -/
+theorem barSkewProjection_of_antisym {x : R} (hx : IsBarAntiSymmetric x) :
+    barSkewProjection x = x := by
+  unfold barSkewProjection
+  unfold IsBarAntiSymmetric at hx
+  rw [hx]; ring
+
+/-- `P_skew(x) = 0` when `x` is bar-symmetric. -/
+theorem barSkewProjection_of_sym {x : R} (hx : IsBarSymmetric x) :
+    barSkewProjection x = 0 := by
+  unfold barSkewProjection
+  unfold IsBarSymmetric at hx
+  rw [hx]; ring
+
+/-- **Even powers of bar-anti-symmetric: $P_{\mathrm{avg}}(h^{2n}) = h^{2n}$**.
+    The bar-symmetric projection acts as identity on even powers of a
+    bar-anti-symmetric kernel — the categorical content of "$h^2,
+    h^4, h^6, \ldots$ are kept by $P_{\mathrm{avg}}$". -/
+theorem barSymmetricProjection_pow_even_of_antisym
+    {x : R} (hx : IsBarAntiSymmetric x) (n : ℕ) :
+    barSymmetricProjection (x ^ (2 * n)) = x ^ (2 * n) :=
+  barSymmetricProjection_of_sym (hx.pow_two_mul n)
+
+/-- **Odd powers of bar-anti-symmetric: $P_{\mathrm{avg}}(h^{2n+1}) = 0$**.
+    The bar-symmetric projection kills odd powers — the categorical
+    content of "$h, h^3, h^5, \ldots$ are projected away by
+    $P_{\mathrm{avg}}$". -/
+theorem barSymmetricProjection_pow_odd_of_antisym
+    {x : R} (hx : IsBarAntiSymmetric x) (n : ℕ) :
+    barSymmetricProjection (x ^ (2 * n + 1)) = 0 :=
+  barSymmetricProjection_of_antisym (hx.pow_two_mul_add_one n)
+
+/-- $P_{\mathrm{skew}}(h^{2n}) = 0$ on even powers of bar-anti-sym. -/
+theorem barSkewProjection_pow_even_of_antisym
+    {x : R} (hx : IsBarAntiSymmetric x) (n : ℕ) :
+    barSkewProjection (x ^ (2 * n)) = 0 :=
+  barSkewProjection_of_sym (hx.pow_two_mul n)
+
+/-- $P_{\mathrm{skew}}(h^{2n+1}) = h^{2n+1}$ on odd powers of bar-anti-sym. -/
+theorem barSkewProjection_pow_odd_of_antisym
+    {x : R} (hx : IsBarAntiSymmetric x) (n : ℕ) :
+    barSkewProjection (x ^ (2 * n + 1)) = x ^ (2 * n + 1) :=
+  barSkewProjection_of_antisym (hx.pow_two_mul_add_one n)
+
+/-- `P_avg` is idempotent: applying twice = applying once.
+
+    Proof: `P_avg(x)` is bar-symmetric by construction, so a second
+    application acts as identity. Formal proof requires showing
+    `P_avg(x)` itself is bar-symmetric, which needs an explicit
+    `bar(1/2) = 1/2` lemma over the field — provable but verbose.
+    For now this records the structural claim. -/
+theorem barSymmetricProjection_idempotent (x : R) :
+    barSymmetricProjection (barSymmetricProjection x) = barSymmetricProjection x := by
+  -- The proof goes via showing `P_avg(x)` is bar-symmetric, then
+  -- applying `barSymmetricProjection_of_sym`. The bar-symmetry of
+  -- `P_avg(x) = (x + bar x)/2` requires `bar(1/2) = 1/2` (true since
+  -- 1/2 ∈ ℚ and bar fixes rational scalars by ring-homomorphism +
+  -- involutivity). This is provable but requires a `bar_rat_cast`
+  -- lemma not currently in the `BarInvolution` axioms.
+  -- Ref: [manuscript] def:bar-involution (extended axioms)
+  sorry
+
+end Projections
+
 end QOU.BraidKnot.BarInvolutionDef

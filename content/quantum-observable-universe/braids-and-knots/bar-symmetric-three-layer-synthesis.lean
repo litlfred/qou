@@ -203,4 +203,47 @@ class KacSunadaBarSymmetricForced (R : Type*) [Field R] [BarInvolution R] where
                                           -- needs the trace-determined
                                           -- predicate
 
+/-! ## Degenerate inhabitance witnesses
+
+These instances demonstrate that the class infrastructure compiles
+and is sound — even before the genuine categorical unification is
+proved. They are NOT meaningful empirical claims; the real
+content of `BarSymmetricThreeLayerSynthesis` lives in the
+`series_from_universal` / `phase_from_universal` / `gain_from_universal`
+fields (currently `True` placeholders).
+-/
+
+section TrivialInstance
+variable {R : Type*} [Field R] [BarInvolution R]
+
+/-- `0` is bar-anti-symmetric trivially (`-0 = 0`). -/
+private theorem zero_isBarAntiSymmetric : IsBarAntiSymmetric (0 : R) := by
+  unfold IsBarAntiSymmetric
+  rw [BarInvolution.bar_zero]; ring
+
+/-- `0` is bar-symmetric trivially. -/
+private theorem zero_isBarSymmetric_local : IsBarSymmetric (0 : R) :=
+  BarInvolution.bar_zero
+
+/-- **Trivial three-layer synthesis instance** (degenerate kernel).
+    Inhabits `BarSymmetricThreeLayerSynthesis R` for any
+    `[Field R] [BarInvolution R]` with universal kernel = 0 and
+    all avatars = 0. Confirms class soundness; not an empirical
+    claim. -/
+instance trivialBarSymmetricThreeLayerSynthesis :
+    BarSymmetricThreeLayerSynthesis R where
+  universal_kernel := 0
+  universal_kernel_antisym := zero_isBarAntiSymmetric
+  series_avatar := 0
+  phase_avatar := 0
+  gain_avatar := 0
+  series_avatar_bar_symmetric := zero_isBarSymmetric_local
+  phase_avatar_bar_symmetric := zero_isBarSymmetric_local
+  gain_avatar_bar_symmetric := zero_isBarSymmetric_local
+  series_from_universal := trivial
+  phase_from_universal := trivial
+  gain_from_universal := trivial
+
+end TrivialInstance
+
 end QOU.BraidKnot
