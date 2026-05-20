@@ -126,7 +126,7 @@ sub-percent empirical match. The remaining open questions:
    correction at fifth order.
 
 3. **Inductive closure for $k \geq 6$.** No closed forms proposed.
-   The pattern of growing Jones·Kashiwara mixing complexity suggests
+   The pattern of growing Jones-Kashiwara mixing complexity suggests
    a generating-function description rather than a per-rung
    tabulation.
 

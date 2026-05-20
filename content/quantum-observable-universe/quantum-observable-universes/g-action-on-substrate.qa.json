@@ -3,12 +3,12 @@
   "label": "conj:g-action-on-substrate",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.lean"
+    "ts": "quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts",
+    "md": "quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md",
+    "lean": "quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.lean"
   },
   "source_hashes": {
-    "md": "1480f33d2dc7",
+    "md": "79867a76b9a5",
     "ts": "cff2f59b55ca",
     "lean": "ab5dd2abb1c8"
   },
@@ -117,6 +117,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md:195: | §3·A v4 calibration | 🟡 wrong direction | 🟢 calibrated via Higgs trace |"
+      },
+      {
+        "field_hash": {
+          "md": "79867a76b9a5",
+          "ts": "cff2f59b55ca",
+          "lean": "ab5dd2abb1c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -154,5 +169,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

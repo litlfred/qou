@@ -16,10 +16,10 @@ Hecke-quadratic roots $\{q, -q^{-1}\}$.
 The Lean module exports **concrete scalar identities**, not abstract markers:
 
 - `dimQ_V3 q : ℝ = 1`
-- `dimQ_V21 q : ℝ = q + q⁻¹` (= $[2]_q$ at H_3)
+- `dimQ_V21 q : ℝ = q + q^{-1}` (= $[2]_q$ at H_3)
 - `dimQ_V111 q : ℝ = 1`
 - `sigma_eigval_V3 q i : ℝ = q` (for every $i$)
-- `sigma_eigval_V111 q i : ℝ = -q⁻¹` (for every $i$)
+- `sigma_eigval_V111 q i : ℝ = -q^{-1}` (for every $i$)
 
 The **sum-of-$q$-dimensions identity**
 

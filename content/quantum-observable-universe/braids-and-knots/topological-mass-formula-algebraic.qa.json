@@ -3,13 +3,13 @@
   "label": "prop:topological-mass-formula-algebraic",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.ts",
+    "md": "quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md",
+    "lean": "quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.lean"
   },
   "source_hashes": {
-    "md": "a29418b1e7d3",
-    "ts": "520089304e94",
+    "md": "8b572ffbcd56",
+    "ts": "d9adfc12cacf",
     "lean": "d718d663f347"
   },
   "criteria": {
@@ -115,6 +115,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md:10: under the archimedean fibre functor. Audit §4·B flagged that | content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md:153: This block closes the **audit §4·B** wall risk for callers that"
+      },
+      {
+        "field_hash": {
+          "md": "8b572ffbcd56",
+          "ts": "d9adfc12cacf",
+          "lean": "d718d663f347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -152,5 +167,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

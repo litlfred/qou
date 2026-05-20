@@ -3,12 +3,12 @@
   "label": "conj:n-sym-symmetric-channel-normalization",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.ts",
+    "md": "quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md",
+    "lean": "quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.lean"
   },
   "source_hashes": {
-    "md": "9303abaed820",
+    "md": "89f4079ded92",
     "ts": "f4e6aa46fb79",
     "lean": "9b2bb218707d"
   },
@@ -115,6 +115,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:129: 2. **§3·A v4 wiring** closes: $\\mathcal{N}_{\\rm sym}$ is also the"
+      },
+      {
+        "field_hash": {
+          "md": "89f4079ded92",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -154,5 +169,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

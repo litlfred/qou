@@ -3,12 +3,12 @@
   "label": "prop:joint-tower-sdp-confinement",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts",
+    "md": "quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md",
+    "lean": "quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.lean"
   },
   "source_hashes": {
-    "md": "67f6ebc1d71e",
+    "md": "73076bc90751",
     "ts": "7c3aec38fe8d",
     "lean": "ab3a2421941d"
   },
@@ -115,6 +115,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:25: induced by the recursive structure of $\\mathcal{R}$ (e.g.\\ ²H = ⁴He | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:114: | ¹²C | 3 ⊗ ⁴He | $H_{36} \\hookleftarrow H_{12}^{\\otimes 3}$ | | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:117: | ²H | nucleon ⊗ nucleon (Hopf-link binding) | $H_6 \\hookleftarrow H_3^{\\otimes 2}$ | | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:160: | 3 | Extend to $H_6, H_9, H_{12}$ (²H, ³H, ³He, ⁴He) | medium; verify against `mass-table-ppb` |"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -152,5 +167,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

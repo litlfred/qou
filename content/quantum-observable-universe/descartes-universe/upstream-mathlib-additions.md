@@ -9,9 +9,9 @@ provides three real Mathlib-targeted additions, each sorry-free:
 
 | Addition | Content | Status |
 |---|---|---|
-| `complexLiTwo : ℂ → ℂ` | `Σ_{k≥1} z^(k+1)/(k+1)²` via `tsum` | unconditional definition; convergence on closed unit disk implicit |
+| `complexLiTwo : ℂ → ℂ` | $\sum_{k \geq 1} z^{k+1}/(k+1)^2$ via `tsum` | unconditional definition; convergence on closed unit disk implicit |
 | `complexLiTwo_zero` | `Li_2(0) = 0` | proved by `simp` |
-| `blochWigner : ℂ → ℝ` | `Im(Li_2(z)) + log\|z\|·arg(1-z)` | unconditional definition using Mathlib's `Complex.log`, `Complex.arg`, `Complex.abs` |
+| `blochWigner : ℂ → ℝ` | $\mathrm{Im}(\mathrm{Li}_2(z)) + \log|z| \cdot \arg(1-z)$ | unconditional definition using Mathlib's `Complex.log`, `Complex.arg`, `Complex.abs` |
 | `blochWigner_zero` | `D(0) = 0` (boundary) | proved using `Real.log_zero = 0` Mathlib convention |
 | `Cl_2_neg` | `Cl_2(-θ) = -Cl_2(θ)` (oddness) | proved by `tsum`-rearrangement + `Real.sin_neg` |
 | `Cl_2_zero_via_oddness` | re-derivation of `Cl_2(0) = 0` from oddness | sorry-free linarith |
@@ -22,7 +22,7 @@ provides three real Mathlib-targeted additions, each sorry-free:
 The `complexLiTwo` definition is a concrete `tsum`-based dilogarithm
 that could be upstreamed to Mathlib as a starting point. With
 absolute-convergence proofs added (Mathlib has `Summable` for
-geometric-style series; the `1/k²` factor makes the series summable
+geometric-style series; the $1/k^2$ factor makes the series summable
 on the closed unit disk), this becomes a candidate Mathlib PR.
 
 **(B) Towards full `BlochWigner` Mathlib contribution.** The
@@ -44,7 +44,7 @@ analogous `tsum` rearrangements.
 
 | Open content | Substantive work needed |
 |---|---|
-| Absolute convergence of `complexLiTwo` on `\|z\| ≤ 1` | `Summable` proof using comparison with `1/k²` series (Mathlib has `Real.tsum_geometric_lt_top` analogues; needs adaptation) |
+| Absolute convergence of `complexLiTwo` on $|z| \leq 1$ | `Summable` proof using comparison with $1/k^2$ series (Mathlib has `Real.tsum_geometric_lt_top` analogues; needs adaptation) |
 | 5-term pentagon for `blochWigner` | Spence-style identities, ~50-100 lines of Lean |
 | `Cl_2(2π - θ) = -Cl_2(θ)` half-period reflection | analogous to `Cl_2_neg` but using `Real.sin_two_pi_sub` |
 | Faddeev-Kashaev uniform Tauberian for `complexLiTwo` | substantial — Riemann-sum argument with uniform error bound on q → 1 |

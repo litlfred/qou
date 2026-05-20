@@ -3,12 +3,12 @@
   "label": "conj:lambda-scale-substrate-form",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.ts",
+    "md": "quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+    "lean": "quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean"
   },
   "source_hashes": {
-    "md": "35c498f222ae",
+    "md": "d3c78284cc3a",
     "ts": "3af7a4319070",
     "lean": "e1663256e295"
   },
@@ -117,6 +117,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:17: The h² coefficient is $+3/4$, NOT $-G$ — different sign and value | content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:50: (closest: 9·Vol(4_1) at +1.35%)."
+      },
+      {
+        "field_hash": {
+          "md": "d3c78284cc3a",
+          "ts": "3af7a4319070",
+          "lean": "e1663256e295"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -154,5 +169,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

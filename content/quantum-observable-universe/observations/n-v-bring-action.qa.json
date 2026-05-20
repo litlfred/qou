@@ -3,12 +3,12 @@
   "label": "conj:n-v-bring-action",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/n-v-bring-action.ts",
-    "md": "content/quantum-observable-universe/observations/n-v-bring-action.md",
-    "lean": "content/quantum-observable-universe/observations/n-v-bring-action.lean"
+    "ts": "quantum-observable-universe/observations/n-v-bring-action.ts",
+    "md": "quantum-observable-universe/observations/n-v-bring-action.md",
+    "lean": "quantum-observable-universe/observations/n-v-bring-action.lean"
   },
   "source_hashes": {
-    "md": "1433fec68482",
+    "md": "bb18d4c8fc34",
     "ts": "cf23accf1f7c",
     "lean": "fbbaee3a6b26"
   },
@@ -115,6 +115,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.md:91: $\\sim 1000$ pairs gives a closer match; the next-best (`5²·h ·"
+      },
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -152,5 +167,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

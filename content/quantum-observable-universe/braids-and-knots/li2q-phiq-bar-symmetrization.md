@@ -212,7 +212,7 @@ computation pipeline downstream of `prop:atomic-mass-gb-nf` /
 
 | Script | Φ_q refs | Li_2^q refs |
 |---|---:|---:|
-| `binding_K_direct.py` | 0 | 0 (uses depth-stratified χ·dim_q) |
+| `binding_K_direct.py` | 0 | 0 (uses depth-stratified $\chi \cdot \dim_q$) |
 | `binding_block_multiplicative.py` | 0 | 6 |
 | `binding_canonical.py` | 0 | 0 |
 | `binding_depth_stratified.py` | 0 | 0 |

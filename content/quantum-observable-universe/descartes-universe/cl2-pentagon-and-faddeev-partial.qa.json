@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.lean"
   },
   "source_hashes": {
-    "md": "947d6f03422f",
+    "md": "09a2f176cef5",
     "ts": "f34912e5dac3",
     "lean": "fa5d2b6cfce7"
   },
@@ -209,6 +209,21 @@
         "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
         "severity": "critical",
         "evidence": "quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:11: - *(3-boundary) For every `(q, n)`, `(1 - q) · log Φ_n(0; q) -"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -276,5 +291,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:53:48.207Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }
