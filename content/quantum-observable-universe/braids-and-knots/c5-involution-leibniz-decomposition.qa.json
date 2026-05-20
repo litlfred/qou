@@ -3,9 +3,9 @@
   "label": "prop:c5-involution-leibniz-decomposition",
   "kind": "proposition",
   "paths": {
-    "ts": "quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.ts",
-    "md": "quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.md",
-    "lean": "quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.lean"
+    "ts": "content/quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.lean"
   },
   "source_hashes": {
     "md": "56015ad9f91c",
@@ -286,23 +286,6 @@
       }
     ],
     "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "fa32135b9be6",
-          "ts": "4cb0656ad986",
-          "lean": "4c154d51dbc2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "framework-canonical": [
       {
         "field_hash": {
           "md": "fa32135b9be6",

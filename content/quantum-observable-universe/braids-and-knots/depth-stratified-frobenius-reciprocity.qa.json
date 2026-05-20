@@ -3,8 +3,8 @@
   "label": "conj:depth-stratified-frobenius-reciprocity",
   "kind": "conjecture",
   "paths": {
-    "ts": "quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.ts",
-    "md": "quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md"
+    "ts": "content/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md"
   },
   "source_hashes": {
     "md": "1b2c4318fd3f",
@@ -268,6 +268,22 @@
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:29:54.988Z",
+        "reviewed_sha": "03e91e10c47de93efe0a3ca5662d9f3e241dae89",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:120: - \"you can hear *more than* the Jones polynomial when you know which"
       }
     ],
     "voice-ai-slop": [
@@ -287,5 +303,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:13:01.541Z"
+  "updated_at": "2026-05-20T04:29:54.988Z"
 }

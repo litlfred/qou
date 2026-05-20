@@ -3,8 +3,8 @@
   "label": "rem:strangelet-witten-stability",
   "kind": "remark",
   "paths": {
-    "ts": "quantum-observable-universe/observations/strangelet-witten-stability.ts",
-    "md": "quantum-observable-universe/observations/strangelet-witten-stability.md"
+    "ts": "content/quantum-observable-universe/observations/strangelet-witten-stability.ts",
+    "md": "content/quantum-observable-universe/observations/strangelet-witten-stability.md"
   },
   "source_hashes": {
     "md": "dae835bb5e2c",
@@ -155,6 +155,20 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "dae835bb5e2c",
+          "ts": "929b4dde4480"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:29:54.988Z",
+        "reviewed_sha": "03e91e10c47de93efe0a3ca5662d9f3e241dae89"
       }
     ],
     "voice-ai-slop": [
@@ -174,5 +188,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:13:01.541Z"
+  "updated_at": "2026-05-20T04:29:54.988Z"
 }

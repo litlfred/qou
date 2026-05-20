@@ -3,8 +3,8 @@
   "label": "rem:generating-functions-solve-reeb-flow",
   "kind": "remark",
   "paths": {
-    "ts": "quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.ts",
-    "md": "quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.md"
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.md"
   },
   "source_hashes": {
     "md": "d134b5b6ac1d",
@@ -155,6 +155,20 @@
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d134b5b6ac1d",
+          "ts": "c98b719ffac1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:29:54.988Z",
+        "reviewed_sha": "03e91e10c47de93efe0a3ca5662d9f3e241dae89"
       }
     ],
     "voice-ai-slop": [
@@ -174,5 +188,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:13:01.541Z"
+  "updated_at": "2026-05-20T04:29:54.988Z"
 }

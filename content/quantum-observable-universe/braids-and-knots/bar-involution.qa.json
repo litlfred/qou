@@ -3,9 +3,9 @@
   "label": "def:bar-involution",
   "kind": "definition",
   "paths": {
-    "ts": "quantum-observable-universe/braids-and-knots/bar-involution.ts",
-    "md": "quantum-observable-universe/braids-and-knots/bar-involution.md",
-    "lean": "quantum-observable-universe/braids-and-knots/bar-involution.lean"
+    "ts": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/bar-involution.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean"
   },
   "source_hashes": {
     "md": "2182c06b7812",
@@ -284,23 +284,6 @@
       }
     ],
     "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "e9e656aedbdd",
-          "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "framework-canonical": [
       {
         "field_hash": {
           "md": "e9e656aedbdd",

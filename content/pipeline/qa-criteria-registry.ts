@@ -102,7 +102,12 @@ const VOICE: QaCriterionDefinition[] = [
       "paper-past-tense narration. Borderline cases are confirmed / overruled " +
       "by an agent reviewer entry on the same sidecar.",
     default_severity: "major",
-    depends_on: ["md", "lean"],
+    // Applies to narrative prose independently of proofs; relaxed
+    // to `["md"]` so prose-only blocks (no `.lean` sibling) still
+    // run through the scholarly check.  Lean-docstring scanning is
+    // dispatched per-block when the `.lean` is present (see the
+    // dispatcher in `qa-checkers-voice.ts`).
+    depends_on: ["md"],
     automated: true,
   },
   {

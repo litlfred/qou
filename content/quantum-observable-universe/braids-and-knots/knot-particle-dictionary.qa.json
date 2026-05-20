@@ -3,8 +3,8 @@
   "label": "rem:knot-particle-dictionary",
   "kind": "remark",
   "paths": {
-    "ts": "quantum-observable-universe/braids-and-knots/knot-particle-dictionary.ts",
-    "md": "quantum-observable-universe/braids-and-knots/knot-particle-dictionary.md"
+    "ts": "content/quantum-observable-universe/braids-and-knots/knot-particle-dictionary.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/knot-particle-dictionary.md"
   },
   "source_hashes": {
     "md": "4f2556bcad3f",
@@ -170,6 +170,20 @@
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "4f2556bcad3f",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:29:54.988Z",
+        "reviewed_sha": "03e91e10c47de93efe0a3ca5662d9f3e241dae89"
       }
     ],
     "voice-ai-slop": [
@@ -189,5 +203,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:13:01.541Z"
+  "updated_at": "2026-05-20T04:29:54.988Z"
 }

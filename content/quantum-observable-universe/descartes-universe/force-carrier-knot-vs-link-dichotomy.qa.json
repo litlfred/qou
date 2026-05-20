@@ -3,9 +3,9 @@
   "label": "conj:force-carrier-knot-vs-link-dichotomy",
   "kind": "conjecture",
   "paths": {
-    "ts": "quantum-observable-universe/descartes-universe/force-carrier-knot-vs-link-dichotomy.ts",
-    "md": "quantum-observable-universe/descartes-universe/force-carrier-knot-vs-link-dichotomy.md",
-    "lean": "quantum-observable-universe/descartes-universe/force-carrier-knot-vs-link-dichotomy.lean"
+    "ts": "content/quantum-observable-universe/descartes-universe/force-carrier-knot-vs-link-dichotomy.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/force-carrier-knot-vs-link-dichotomy.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/force-carrier-knot-vs-link-dichotomy.lean"
   },
   "source_hashes": {
     "md": "2d1117df6514",
@@ -28,145 +28,6 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
-      }
-    ],
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/descartes-universe/force-carrier-knot-vs-link-dichotomy.md:212: ✓ refined 2026-05-05."
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-descartes-A-G",
-          "version": "claude-sonnet-4-6-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T19:09:23.596Z",
-        "reviewed_sha": "fe4effd2092e90b619161d721df95845e802f21e",
-        "notes": "default-pass (chapter=descartes-universe)"
       }
     ],
     "voice-status-leak": [
@@ -273,6 +134,41 @@
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "2d1117df6514",
+          "ts": "c263456917e7",
+          "lean": "00af921d1ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2d1117df6514",
+          "ts": "c263456917e7",
+          "lean": "00af921d1ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-descartes-A-G",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:09:23.596Z",
+        "reviewed_sha": "fe4effd2092e90b619161d721df95845e802f21e",
+        "notes": "default-pass (chapter=descartes-universe)"
+      }
+    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -306,24 +202,7 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "2d1117df6514",
-          "ts": "c263456917e7",
-          "lean": "00af921d1ca0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:25:42.968Z"
 }

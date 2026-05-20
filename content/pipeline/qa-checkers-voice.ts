@@ -458,11 +458,11 @@ const PAPER_PAST_TENSE_RE =
   /\b(we (?:constructed|defined|showed|proved|established|derived|computed|verified)) (?:above|earlier|before|in the (?:previous|preceding))/i;
 
 export function checkScholarlyDefault(
-  mdPath: string,
+  mdPath: string | undefined,
   leanPath: string | undefined,
 ): CheckerResult {
-  const { lines } = readSource(mdPath);
-  if (lines.length === 0) return { result: "pass", hits: [] };
+  const { lines } = mdPath ? readSource(mdPath) : { src: "", lines: [] };
+  if (lines.length === 0 && !leanPath) return { result: "pass", hits: [] };
 
   const hits: CheckerHit[] = [];
 
@@ -471,24 +471,26 @@ export function checkScholarlyDefault(
   // / identifiers in code don't trigger false positives. HTML-style
   // `<!-- ... -->` comments are intentionally NOT stripped — they
   // render as visible text in the markdown pipeline.
-  let inFence = false;
-  lines.forEach((l, i) => {
-    if (/^```/.test(l.trim())) {
-      inFence = !inFence;
-      return;
-    }
-    if (inFence) return;
-    const cleanedLine = stripInlineCode(l);
-    if (SECOND_PERSON_RE.test(cleanedLine)) {
-      hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
-    }
-    if (LECTURER_OPENER_RE.test(cleanedLine)) {
-      hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
-    }
-    if (PAPER_PAST_TENSE_RE.test(cleanedLine)) {
-      hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
-    }
-  });
+  if (mdPath) {
+    let inFence = false;
+    lines.forEach((l, i) => {
+      if (/^```/.test(l.trim())) {
+        inFence = !inFence;
+        return;
+      }
+      if (inFence) return;
+      const cleanedLine = stripInlineCode(l);
+      if (SECOND_PERSON_RE.test(cleanedLine)) {
+        hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
+      }
+      if (LECTURER_OPENER_RE.test(cleanedLine)) {
+        hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
+      }
+      if (PAPER_PAST_TENSE_RE.test(cleanedLine)) {
+        hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
+      }
+    });
+  }
 
   // Also scan Lean docstrings — proof bodies share the scholarly
   // standard. Extract /-! ... -/ module docs and /-- ... -/ decl
@@ -597,6 +599,16 @@ function extractLeanDocstrings(
       } else if (src[j] === "-" && src[j + 1] === "/") {
         depth--;
         j += 2;
+      } else if (src[j] === '"') {
+        // Skip past Lean string literal so a `"-/"` inside the
+        // string does not terminate the docstring prematurely.
+        // Handles standard backslash escapes.
+        j++;
+        while (j < n && src[j] !== '"') {
+          if (src[j] === "\\" && j + 1 < n) j += 2;
+          else j++;
+        }
+        if (j < n) j++; // skip closing quote
       } else {
         j++;
       }
@@ -631,7 +643,9 @@ export const AUTOMATED_CHECKERS: Record<
   "voice-ai-slop": (p) =>
     p.md ? checkAiSlop(p.md) : { result: "pass", hits: [] },
   "voice-scholarly-default": (p) =>
-    p.md ? checkScholarlyDefault(p.md, p.lean) : { result: "pass", hits: [] },
+    p.md || p.lean
+      ? checkScholarlyDefault(p.md, p.lean)
+      : { result: "pass", hits: [] },
   "framework-canonical": (p) =>
     p.md ? checkFrameworkCanonical(p.md) : { result: "pass", hits: [] },
   "wall-side-correct": (p) => checkWallSide(p.md, p.lean),
