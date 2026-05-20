@@ -149,4 +149,74 @@ theorem barPoly_c5_denominator :
     rw [h4, barPoly_natCast]
   · exact barPoly_X_pow_two
 
+/-- **`bar` distributes over subtraction**: `bar (p - q) = bar p - bar q`.
+    Follows from `bar` being a ring homomorphism (`add` + `bar` of `-1`). -/
+theorem barPoly_sub (p q : R[X]) :
+    barPoly (p - q) = barPoly p - barPoly q := by
+  have hsub : p - q = p + (-1) * q := by ring
+  have hsub_rhs : barPoly p - barPoly q = barPoly p + (-1) * barPoly q := by ring
+  rw [hsub, barPoly_add, barPoly_mul]
+  -- bar (-1) = -1
+  have h_neg_one : barPoly ((-1 : R[X])) = -1 := by
+    have : (-1 : R[X]) = -((1 : R[X])) := by ring
+    rw [this]
+    -- bar (-1) = bar (- C 1) = ?
+    -- Use barPoly p in terms of comp: bar (-1) = (-1).comp(-X) = -1
+    unfold barPoly
+    rw [neg_comp, one_comp]
+  rw [h_neg_one, hsub_rhs]
+
+/-- **`bar` distributes over negation**: `bar (-p) = -(bar p)`. -/
+theorem barPoly_neg (p : R[X]) : barPoly (-p) = -(barPoly p) := by
+  have : -p = 0 - p := by ring
+  rw [this, barPoly_sub, barPoly_zero]
+  ring
+
 end QOU.BraidKnot.PolynomialBarInvolution
+
+/-! ## c_5 Taylor truncations in `ℝ[X]`
+
+The proved closed form $c_5(h) = -3/2 + 1/(h^2 + 4)$ from
+`c5_as_function_of_skein` admits a Taylor-series expansion in
+$h^2/4$ valid for $|h| < 2$ (i.e., golden ratio but NOT silver
+ratio, where $h = 2$ sits on the radius of convergence).
+
+Geometric series gives:
+$$\frac{1}{h^2 + 4} = \frac{1}{4}\cdot\frac{1}{1 + h^2/4}
+  = \frac{1}{4} - \frac{h^2}{16} + \frac{h^4}{64} - \frac{h^6}{256} + \cdots$$
+
+so
+$$c_5(h) = -\frac{5}{4} - \frac{h^2}{16} + \frac{h^4}{64} - \frac{h^6}{256} + \cdots$$
+
+The degree-6 truncation `c5_taylor_6` is a polynomial in `ℝ[X]`
+whose bar-symmetry is **PROVED** below.
+-/
+
+namespace QOU.BraidKnot.PolynomialBarInvolution.C5Taylor
+
+open Polynomial QOU.BraidKnot.PolynomialBarInvolution
+
+/-- Degree-6 Taylor truncation of c_5 in `ℝ[X]`:
+    $-5/4 - X^2/16 + X^4/64 - X^6/256$. -/
+noncomputable def c5_taylor_6 : ℝ[X] :=
+  C (-5/4) - C (1/16) * X^2 + C (1/64) * X^4 - C (1/256) * X^6
+
+/-- **`c5_taylor_6` is bar-symmetric**: every term is in $\mathbb{R}[X^2]$
+    (constant + even-power monomials with bar-symmetric coefficients). -/
+theorem barPoly_c5_taylor_6 :
+    barPoly c5_taylor_6 = c5_taylor_6 := by
+  unfold c5_taylor_6
+  rw [barPoly_sub, barPoly_add, barPoly_sub,
+      barPoly_mul, barPoly_mul, barPoly_mul,
+      barPoly_C, barPoly_C, barPoly_C, barPoly_C,
+      barPoly_X_pow_two]
+  -- Need bar X^4 = X^4 and bar X^6 = X^6
+  have hX4 : barPoly ((X : ℝ[X]) ^ 4) = X ^ 4 := by
+    have : (4 : ℕ) = 2 * 2 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 2
+  have hX6 : barPoly ((X : ℝ[X]) ^ 6) = X ^ 6 := by
+    have : (6 : ℕ) = 2 * 3 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 3
+  rw [hX4, hX6]
+
+end QOU.BraidKnot.PolynomialBarInvolution.C5Taylor
