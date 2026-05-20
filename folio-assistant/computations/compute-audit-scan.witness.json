@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T14:41:12.525127+00:00",
-  "commitSha": "b1353aaacd89fcfda58faf14974223c72521a0fa",
+  "computedAt": "2026-05-20T16:09:55.631917+00:00",
+  "commitSha": "dd2cec6bf2713f98f0e60704a15a43258cc253d0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 660,
+    "files_scanned": 662,
     "patterns": [
       "P15",
       "P16",
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 175,
+      "P15": 174,
       "P16": 164,
       "P21": 32,
       "P30": 93,
@@ -3374,13 +3374,6 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P15",
-        "file": "tau_M_proton_closed_form_phase5l1.py",
-        "line": 182,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P30",
