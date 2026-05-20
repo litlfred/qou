@@ -1,0 +1,424 @@
+{
+  "paper": "quantum-observable-universe",
+  "generated_at": "2026-05-20T04:37:58.508Z",
+  "total": 51,
+  "by_severity": {
+    "major": 31,
+    "minor": 20
+  },
+  "by_kind": {
+    "abrupt-chapter-ending": 12,
+    "section-lead-too-short": 8,
+    "missing-section-story": 31
+  },
+  "findings": [
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "quantum-universes",
+      "section": "sec:qu-structures",
+      "detail": "Last block is remark (poisson-hkr-connection), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-universes/quantum-universes.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "quantum-observable-universes",
+      "section": "sec:physical-elaborations",
+      "detail": "Last block is remark (schrodinger-jet-coaction), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universes.ts"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "quantum-observable-universes",
+      "section": "sec:substrate-parameter",
+      "detail": "Section has 14 non-prose blocks (band requires 3-para lead); lead has 1 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-observable-universes/quantum-universe-explication.md"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "quantum-observable-universes",
+      "section": "sec:q-resolvent-wick",
+      "detail": "Section \"$q$-Resolvent and categorical Wick rotation\" opens with definition (q-resolvent), not a prose lead; 6 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-observable-universes/q-resolvent.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "quantum-observable-universes",
+      "section": "sec:q-special-functions",
+      "detail": "Section \"$q$-Exponential, logarithm, and dilogarithm\" opens with definition (q-exponential), not a prose lead; 18 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-observable-universes/q-exponential.ts"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "quantum-observable-universes",
+      "section": "sec:elaboration-intro",
+      "detail": "Section has 10 non-prose blocks (band requires 2-para lead); lead has 1 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-observable-universes/intro.md"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "lifting-and-descent",
+      "section": "sec:archimedean-lifting",
+      "detail": "Last block is example (topological-mass-su2), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lifting-and-descent/lifting-and-descent.ts"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "lifting-and-descent",
+      "section": "ssec:descent",
+      "detail": "Section has 11 non-prose blocks (band requires 2-para lead); lead has 1 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lifting-and-descent/descent-intro.md"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "lifting-and-descent",
+      "section": "ssec:cosimplicial-crossed-groupoid",
+      "detail": "Section has 14 non-prose blocks (band requires 3-para lead); lead has 1 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lifting-and-descent/cosimplicial-intro.md"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:classical-limit",
+      "detail": "Last block is remark (adelic-tate-squeeze), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/braids-and-knots.ts"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:categorical-braiding",
+      "detail": "Section has 18 non-prose blocks (band requires 3-para lead); lead has 1 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/categorical-braiding-intro.md"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:enveloping-algebras",
+      "detail": "Section has 9 non-prose blocks (band requires 2-para lead); lead has 0 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/enveloping-algebras-intro.md"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:hoefsmit-convergence-atomic",
+      "detail": "Section \"Hoefsmit, convergence, and atomic-shell evidence\" opens with proposition (universal-braid-branching), not a prose lead; 19 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/universal-braid-branching.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:markov-axioms-braid-link",
+      "detail": "Section \"Markov axioms and braid-link enumeration\" opens with proposition (q-beta-categorical-precision-ladder), not a prose lead; 16 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:hecke-chi-closed-forms",
+      "detail": "Section \"Hecke $u$-coordinate, $\\\\chi$-character closed-forms\" opens with remark (u-coordinate-discharges), not a prose lead; 15 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/u-coordinate-discharges.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:kashiwara-jones-quantum-dilog",
+      "detail": "Section \"Kashiwara-Jones interpretations and quantum-dilogarithm\" opens with remark (kashiwara-jones-alternation-interpretation), not a prose lead; 13 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/kashiwara-jones-alternation-interpretation.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:archimedean-realization-kashaev",
+      "detail": "Section \"Archimedean realization and Kashaev volume\" opens with definition (archimedean-realization-functor), not a prose lead; 12 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/archimedean-realization-functor.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:cyclotomic-depth-3-trilog",
+      "detail": "Section \"Cyclotomic depth-3 trilog identities\" opens with conjecture (bring-trilog-depth-3-witness), not a prose lead; 10 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:hecke-baer-star-chirality",
+      "detail": "Section \"Hecke-Baer-star foundation and chirality pairing\" opens with proposition (hecke-baer-star-generic), not a prose lead; 4 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:confinement-level",
+      "detail": "Section \"Confinement level and the cemetery group\" opens with definition (confinement-level), not a prose lead; 9 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/confinement-level.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:pair-production-anyon",
+      "detail": "Section \"Pair production and anyon collapse\" opens with conjecture (symmetric-crystal-pair-production), not a prose lead; 6 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/symmetric-crystal-pair-production.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:confined-particles-shells",
+      "detail": "Section \"Confined particles and shells\" opens with definition (confined-particle), not a prose lead; 10 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/confined-particle.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:atom-isotope-knots",
+      "detail": "Section \"Atom and isotope knots\" opens with definition (atom-knot), not a prose lead; 9 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/atom-knot.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:magic-shells",
+      "detail": "Section \"Magic shells and the $\\\\kappa$ coupling\" opens with remark (ilp-solution-count-unwrap), not a prose lead; 5 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/ilp-solution-count-unwrap.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:lp-dual-jucys-murphy",
+      "detail": "Section \"LP-dual and Jucys-Murphy central elements\" opens with proposition (jucys-murphy-central-elements-qou), not a prose lead; 10 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:phi-q-markov-schur-weyl-tower",
+      "detail": "Section \"$\\\\varphi_q$ resummation, Markov trace, and Schur-Weyl tower\" opens with remark (phi-q-resums-trace-series), not a prose lead; 18 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/phi-q-resums-trace-series.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:gs-axiomatic-backing",
+      "detail": "Section \"Gröbner-Shirshov axiomatic backing\" opens with conjecture (gs-graded-markov-trace-existence), not a prose lead; 6 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/gs-graded-markov-trace-existence.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:parity-classification-discrepancy",
+      "detail": "Section \"Parity classification, atomic atlas, and discrepancy resolution\" opens with remark (mn-classical-parity-blind), not a prose lead; 11 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/mn-classical-parity-blind.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:spectral-sequence-chirality-confinement",
+      "detail": "Section \"Spectral sequence, chirality, and confinement-NF structure\" opens with proposition (jet-prefix-gb-filtration), not a prose lead; 15 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:plancherel-alpha-ribbon",
+      "detail": "Section \"Plancherel, $\\\\alpha$, ribbon, and knot-factor\" opens with remark (alpha-em-categorical-trace), not a prose lead; 18 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:alpha-k-procedure",
+      "detail": "Section \"$\\\\alpha_k$ derivation procedure\" opens with proposition (flavor-dressed-mass-from-substrate-split), not a prose lead; 10 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/flavor-dressed-mass-from-substrate-split.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:wenzl-bridge-cyclotomic",
+      "detail": "Section \"Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$\" opens with proposition (y-lambda-cyclotomic-factorization), not a prose lead; 15 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/y-lambda-cyclotomic-factorization.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:six-term-crystal-isospin-chirality",
+      "detail": "Section \"Six-term mass formula, crystal, isospin, and chirality\" opens with theorem (six-term-mass-formula-complete), not a prose lead; 9 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:beta-stability-closure",
+      "detail": "Section \"Beta stability closure\" opens with remark (deuteron-first-principles), not a prose lead; 12 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/deuteron-first-principles.ts"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:varying-euler-mirror",
+      "detail": "Section has 11 non-prose blocks (band requires 2-para lead); lead has 1 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/varying-euler-intro.md"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "models-of-qous",
+      "section": "sec:archimedean-encounter",
+      "detail": "Last block is remark (encounter-literature-bridge), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/models-of-qous/models-of-qous.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "descartes-universe",
+      "section": "sec:orbital-symmetry-embedding",
+      "detail": "Last block is remark (trivial-knot-photon-interpretation), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/descartes-universe.ts"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "descartes-universe",
+      "section": "sec:cohomological-defect",
+      "detail": "Section has 6 non-prose blocks (band requires 2-para lead); lead has 1 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/cohomological-defect-intro.md"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "descartes-universe",
+      "section": "sec:pair-production-knot-operators",
+      "detail": "Section \"Pair production and knot-operator selection\" opens with definition (q-value-transition), not a prose lead; 5 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/q-value-transition.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "descartes-universe",
+      "section": "sec:mesons-nucleons",
+      "detail": "Section \"Mesons and nucleons\" opens with definition (categorical-meson), not a prose lead; 15 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/categorical-meson.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "descartes-universe",
+      "section": "sec:stable-nucleus-torus-knots",
+      "detail": "Section \"Stable nucleus and torus knots\" opens with definition (stable-nucleus), not a prose lead; 7 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/stable-nucleus.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "descartes-universe",
+      "section": "sec:em-completeness-gauge-coupling",
+      "detail": "Section \"EM completeness and gauge coupling\" opens with remark (force-carrier-spectral-interpretation), not a prose lead; 14 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/force-carrier-spectral-interpretation.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "descartes-universe",
+      "section": "sec:archimedean-hartree-crystal",
+      "detail": "Section \"Archimedean Hartree, crystal basis, and Mathlib bridge\" opens with proposition (archimedean-hartree-derivation), not a prose lead; 17 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "descartes-universe",
+      "section": "sec:integer-stability-diophantine",
+      "detail": "Section \"Integer stability and the Diophantine valley\" opens with proposition (integer-stability), not a prose lead; 3 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/integer-stability.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "particle-interactions",
+      "section": "sec:branching-qvalue",
+      "detail": "Last block is remark (b3-local-minimum), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/particle-interactions.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "observations",
+      "section": "sec:simulations",
+      "detail": "Last block is simulator (beta-decay-simulator), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/observations/observations.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "molecular-construction",
+      "section": "sec:benzene-computation",
+      "detail": "Last block is remark (benzene-bond-equalization), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/molecular-construction/molecular-construction.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "organic-chemistry",
+      "section": "sec:carbon-chains-benzene",
+      "detail": "Last block is remark (organic-chain-taxonomy), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/organic-chemistry/organic-chemistry.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "fluid-dynamics",
+      "section": "sec:ns-approaches",
+      "detail": "Last block is remark (q-ns-research-programme), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/fluid-dynamics/fluid-dynamics.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "fluid-dynamics",
+      "section": "sec:ns-obstruction-tower-mtc",
+      "detail": "Section \"NS obstruction tower, specialisations, and observable MTC\" opens with proposition (ns-obstruction-tower), not a prose lead; 8 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts"
+    },
+    {
+      "kind": "abrupt-chapter-ending",
+      "severity": "minor",
+      "chapter": "q-geometric-langlands",
+      "section": "sec:q-gl-weil-bound-stability",
+      "detail": "Last block is remark (geometric-rh-exposition), not a closing prose / remark",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/q-geometric-langlands/q-geometric-langlands.ts"
+    }
+  ]
+}
