@@ -54,9 +54,15 @@ class DeuteriumDerivedBindingContext where
       `β_d ∈ H_6(q)` factors as `NF(𝔭) · T_pn · NF(𝔫)` under the
       `H_3 → H_6` Hecke embedding. -/
   claim_iii_h6_factorisation : Prop
+  /-- Inter-nucleon Hecke generator value `σ_0`. -/
+  sigma_0 : ℝ
+  /-- Inverse Hecke generator `σ_0⁻¹`. -/
+  sigma_0_inv : ℝ
+  /-- The time-reversal-symmetric inter-nucleon operator `T_pn`. -/
+  T_pn : ℝ
   /-- Manuscript sub-claim (iv): `T_pn = (σ_0 + σ_0⁻¹) / 2` — the
       time-reversal-symmetric inter-nucleon crossing operator. -/
-  claim_iv_Tpn_symmetric : Prop
+  claim_iv_Tpn_symmetric : T_pn = (sigma_0 + sigma_0_inv) / 2
   /-- Manuscript sub-claim (v): the boxed binding-energy identity
       `B(d) = [tr_M(p) + tr_M(n) − tr_M(T_pn · n)] · m_e · Vol(𝓑_3) · (1 − α_EM/2)`. -/
   claim_v_binding_energy_formula :
@@ -109,7 +115,7 @@ theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
     ctx.claim_i_NF_existence ∧
     ctx.claim_ii_B3_factorisation ∧
     ctx.claim_iii_h6_factorisation ∧
-    ctx.claim_iv_Tpn_symmetric ∧
+    ctx.T_pn = (ctx.sigma_0 + ctx.sigma_0_inv) / 2 ∧
     (ctx.B_d
       = (ctx.tr_M_p + ctx.tr_M_n - ctx.tr_M_Tpn_n) * ctx.m_e * ctx.Vol_B3
         * (1 - ctx.α_EM / 2)) ∧
