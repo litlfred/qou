@@ -33,7 +33,17 @@ inductive CanonicalBraid where
   | garside           -- σ₁σ₂σ₁ (rb), the non-adjacent transposition
   | threeCyclePos     -- σ₁σ₂ (rgb)
   | threeCycleNeg     -- σ₂σ₁ (rbg)
-deriving DecidableEq, Repr, Fintype
+deriving DecidableEq, Repr
+
+/-- The list of all six canonical braid constructors. -/
+def CanonicalBraid.all : List CanonicalBraid :=
+  [.identity, .sigma1, .sigma2, .garside, .threeCyclePos, .threeCycleNeg]
+
+theorem CanonicalBraid.all_length :
+    CanonicalBraid.all.length = 6 := rfl
+
+theorem CanonicalBraid.all_nodup :
+    CanonicalBraid.all.Nodup := by decide
 
 /-- Permutations of the three colour sectors realised on the
     boundary ramified disc.  We encode them as functions
@@ -107,9 +117,9 @@ theorem boundaryPerm_injective :
     `boundaryPerm_bijective`, this shows the canonical braids
     realise all six elements of the symmetric group on three
     coral sectors. -/
-theorem canonical_braid_card_six :
-    (Finset.univ : Finset CanonicalBraid).card = 6 := by
-  decide
+theorem canonical_braid_count_six :
+    CanonicalBraid.all.length = 6 ∧ CanonicalBraid.all.Nodup :=
+  ⟨CanonicalBraid.all_length, CanonicalBraid.all_nodup⟩
 
 /-- **Six canonical knot operators realise $S_3$.**  Conditional
     on a `QReebFlowOnCoralCoords q` instance, the six canonical
@@ -120,7 +130,7 @@ theorem boundary_perm_realises_S3
     {q : ℝ} [_inst : QReebFlowOnCoralCoords q] :
     Function.Injective CanonicalBraid.boundaryPerm ∧
     (∀ β : CanonicalBraid, Function.Bijective β.boundaryPerm) ∧
-    (Finset.univ : Finset CanonicalBraid).card = 6 := by
-  refine ⟨boundaryPerm_injective, boundaryPerm_bijective, canonical_braid_card_six⟩
+    (CanonicalBraid.all.length = 6 ∧ CanonicalBraid.all.Nodup) :=
+  ⟨boundaryPerm_injective, boundaryPerm_bijective, canonical_braid_count_six⟩
 
 end QOU.CategoricalReeb

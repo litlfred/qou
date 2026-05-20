@@ -93,7 +93,8 @@ boundary-permutation identification is a finite case check, fully
 verified in Lean by the conditional theorem
 `QOU.CategoricalReeb.boundary_perm_realises_S3`
 (which combines `boundaryPerm_injective`, `boundaryPerm_bijective`,
-and the count `canonical_braid_card_six = 6`).
+and the count `canonical_braid_count_six`: the six constructors
+form a nodup list of length six).
 
 **Volume corollaries.**  The two 3-cycle trajectories lie on a
 Heegaard torus, so their knot complement contains a Seifert-fibered
