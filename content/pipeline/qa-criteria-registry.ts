@@ -111,6 +111,24 @@ const VOICE: QaCriterionDefinition[] = [
     automated: true,
   },
   {
+    id: "voice-statement-needs-exposition",
+    domain: "voice",
+    description:
+      "Provable block (theorem/proposition/lemma/corollary) is not " +
+      "dropped naked — the `.md` carries either (a) an introductory " +
+      "paragraph before the `**Statement.**` envelope OR (b) a " +
+      "motivation / preview / setup that bridges to the surrounding " +
+      "text. A bare statement block with no exposition makes the " +
+      "paper read as a list of formulas rather than a narrative. " +
+      "Script flags candidates (≤ 3 lines of prose before the " +
+      "envelope); routes to `proof-exposition-review` for agent " +
+      "adjudication on borderline cases.",
+    default_severity: "minor",
+    depends_on: ["md"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
     id: "voice-ai-slop",
     domain: "voice",
     description:
@@ -305,6 +323,50 @@ const PROOF: QaCriterionDefinition[] = [
       "consumer (CLAUDE.md §3b-cond). Routes to `lean-substantive-pass`.",
     default_severity: "major",
     depends_on: ["lean"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-no-conj-propagation-violation",
+    domain: "proof",
+    description:
+      "Provable block (theorem/proposition/lemma/corollary) whose " +
+      "transitive `uses[]` cone touches a `conj:` label is either " +
+      "demoted to `conjecture` OR satisfies the §3b-cond exception " +
+      "(class-axiomatised conjecture + [Instance] hypothesis + " +
+      "narrative banner). Reads cached witness " +
+      "`docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json`.",
+    default_severity: "critical",
+    depends_on: ["ts"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-no-trivial-skeleton",
+    domain: "proof",
+    description:
+      "Block's `.lean` does not contain a trivial-skeleton pattern " +
+      "(`def f := 0`, `:= PUnit`, `:= True`, `:= id`, `:= trivial`, " +
+      "`:= rfl`, etc.) that encodes none of the conjectural content. " +
+      "Reads cached witness " +
+      "`docs/audits/2026-05-08-trivial-skeleton-audit.json` (keyed " +
+      "by `.lean` path).",
+    default_severity: "major",
+    depends_on: ["lean"],
+    automated: true,
+  },
+  {
+    id: "proof-conditional-class-banner",
+    domain: "proof",
+    description:
+      "Block classified as conditional-on-class by the conjectural- " +
+      "propagation audit has both (a) a Lean class-hypothesis `[Inst : " +
+      "C ...]` in its `.lean`, AND (b) a narrative banner `**Theorem " +
+      "(conditional on …).**` in its `.md` (CLAUDE.md §3b-cond rules " +
+      "2-4). Reads cached witness " +
+      "`docs/audits/2026-05-09-conditional-class-banner.witness.json`.",
+    default_severity: "major",
+    depends_on: ["md", "lean"],
     automated: true,
     applies_to: ["theorem", "lemma", "proposition", "corollary"],
   },

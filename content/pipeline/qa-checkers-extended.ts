@@ -23,7 +23,7 @@
  */
 
 import { existsSync, readFileSync } from "fs";
-import { resolve, dirname, join } from "path";
+import { resolve, dirname, join, relative } from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -579,6 +579,242 @@ export function checkProofBuildGreen(
   return { result: "n/a", hits: [] };
 }
 
+// ─── Cached-witness-driven proof criteria ──────────────────────
+//
+// These three checkers read the JSON artefacts produced by the
+// standalone audit scripts (`conjectural-propagation-audit.ts`,
+// `trivial-skeleton-audit.ts`, `conditional-class-banner-audit.ts`).
+// The artefacts are committed under `docs/audits/`; CI regenerates
+// them when their inputs change. Reading the cache is sub-millisecond
+// per block, vs. re-running the full graph audit which takes ~5s.
+
+const CONJ_PROP_WITNESS = join(
+  REPO_ROOT,
+  "docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json",
+);
+const TRIVIAL_SKELETON_WITNESS = join(
+  REPO_ROOT,
+  "docs/audits/2026-05-08-trivial-skeleton-audit.json",
+);
+const COND_CLASS_BANNER_WITNESS = join(
+  REPO_ROOT,
+  "docs/audits/2026-05-09-conditional-class-banner.witness.json",
+);
+
+let conjPropCache: Record<string, unknown> | null = null;
+function loadConjPropAudit(): Record<string, unknown> | null {
+  if (conjPropCache !== null) return conjPropCache;
+  if (!existsSync(CONJ_PROP_WITNESS)) {
+    conjPropCache = {};
+    return conjPropCache;
+  }
+  try {
+    conjPropCache = JSON.parse(readFileSync(CONJ_PROP_WITNESS, "utf-8"));
+  } catch {
+    conjPropCache = {};
+  }
+  return conjPropCache;
+}
+
+let trivialSkeletonCache: {
+  flagged: Record<string, Array<{ line: number; pattern: string; snippet: string }>>;
+} | null = null;
+function loadTrivialSkeletonAudit() {
+  if (trivialSkeletonCache !== null) return trivialSkeletonCache;
+  if (!existsSync(TRIVIAL_SKELETON_WITNESS)) {
+    trivialSkeletonCache = { flagged: {} };
+    return trivialSkeletonCache;
+  }
+  try {
+    const d = JSON.parse(readFileSync(TRIVIAL_SKELETON_WITNESS, "utf-8"));
+    trivialSkeletonCache = { flagged: d.flagged ?? {} };
+  } catch {
+    trivialSkeletonCache = { flagged: {} };
+  }
+  return trivialSkeletonCache;
+}
+
+let condClassCache: Record<string, unknown> | null = null;
+function loadCondClassAudit(): Record<string, unknown> | null {
+  if (condClassCache !== null) return condClassCache;
+  if (!existsSync(COND_CLASS_BANNER_WITNESS)) {
+    condClassCache = {};
+    return condClassCache;
+  }
+  try {
+    condClassCache = JSON.parse(readFileSync(COND_CLASS_BANNER_WITNESS, "utf-8"));
+  } catch {
+    condClassCache = {};
+  }
+  return condClassCache;
+}
+
+export function checkProofNoConjPropagationViolation(
+  tsPath: string | undefined,
+): CheckerResult {
+  if (!tsPath) return { result: "n/a", hits: [] };
+  const audit = loadConjPropAudit();
+  const violators = (audit?.violators ?? []) as Array<{
+    file?: string;
+    label?: string;
+  }>;
+  if (violators.length === 0) return { result: "pass", hits: [] };
+  // tsPath is absolute; cached `file` values are relative — normalize.
+  const tsRel = relative(REPO_ROOT, tsPath);
+  const hit = violators.find(
+    (v) => v.file === tsRel || tsPath.endsWith(v.file ?? "//"),
+  );
+  if (!hit) return { result: "pass", hits: [] };
+  return {
+    result: "fail",
+    hits: [
+      {
+        file: tsRel,
+        line: 1,
+        text:
+          `block '${hit.label ?? "?"}' is a provable kind whose uses[] cone ` +
+          `touches a conj: label — demote to 'conjecture' or apply §3b-cond ` +
+          `(class-axiomatise the conjecture + [Instance] hypothesis + ` +
+          `narrative banner)`,
+      },
+    ],
+  };
+}
+
+export function checkProofNoTrivialSkeleton(
+  leanPath: string | undefined,
+): CheckerResult {
+  if (!leanPath) return { result: "n/a", hits: [] };
+  const audit = loadTrivialSkeletonAudit();
+  // The audit script keys flagged files relative to the paper-content
+  // root (e.g. `braids-and-knots/braid-link-types.lean` or
+  // `lean/QOU/BraidKnot/PerNucleusMassDerivation.lean`). We may
+  // encounter the absolute path, the repo-root-relative path, or
+  // the content-root-relative path — try them all.
+  const leanAbs = leanPath;
+  const leanRel = relative(REPO_ROOT, leanPath);
+  const leanShort = leanRel.replace(/^content\//, "");
+  const leanChapter = leanShort.replace(/^[^/]+\//, ""); // drop paper dir
+  const flagged =
+    audit.flagged[leanRel] ??
+    audit.flagged[leanShort] ??
+    audit.flagged[leanChapter] ??
+    audit.flagged[leanAbs];
+  if (!flagged || flagged.length === 0) return { result: "pass", hits: [] };
+  return {
+    result: "fail",
+    hits: flagged.slice(0, 3).map((f) => ({
+      file: leanRel,
+      line: f.line,
+      text:
+        `trivial-skeleton pattern '${f.pattern}' at line ${f.line}: ` +
+        `${f.snippet.slice(0, 80)}`,
+    })),
+  };
+}
+
+export function checkProofConditionalClassBanner(
+  mdPath: string | undefined,
+  leanPath: string | undefined,
+): CheckerResult {
+  if (!mdPath && !leanPath) return { result: "n/a", hits: [] };
+  const audit = loadCondClassAudit();
+  const findings = (audit?.findings ?? []) as Array<{
+    file?: string;
+    label?: string;
+    missing_lean_class_hypothesis?: boolean;
+    missing_md_conditional_banner?: boolean;
+  }>;
+  if (findings.length === 0) return { result: "pass", hits: [] };
+  // Match by either md or lean path.
+  const mdRel = mdPath ? relative(REPO_ROOT, mdPath) : "";
+  const leanRel = leanPath ? relative(REPO_ROOT, leanPath) : "";
+  const hit = findings.find(
+    (f) =>
+      f.file === mdRel ||
+      f.file === leanRel ||
+      (f.file && (mdRel.endsWith(f.file) || leanRel.endsWith(f.file))),
+  );
+  if (!hit) return { result: "pass", hits: [] };
+  if (
+    !hit.missing_lean_class_hypothesis &&
+    !hit.missing_md_conditional_banner
+  ) {
+    return { result: "pass", hits: [] };
+  }
+  const missing: string[] = [];
+  if (hit.missing_lean_class_hypothesis) missing.push("Lean [Inst : C] hypothesis");
+  if (hit.missing_md_conditional_banner)
+    missing.push("narrative `**Theorem (conditional on …).**` banner");
+  return {
+    result: "fail",
+    hits: [
+      {
+        file: mdRel || leanRel,
+        line: 1,
+        text:
+          `block '${hit.label ?? "?"}' is conditional-on-class but missing: ` +
+          missing.join(" + "),
+      },
+    ],
+  };
+}
+
+// ─── Voice: exposition around statement ─────────────────────────
+
+// Heuristic: a block that opens with `**Theorem.**` / `**Proposition.**`
+// / `**Lemma.**` / `**Corollary.**` on the very first non-empty,
+// non-frontmatter line — with no preceding prose introducing the
+// claim — fails. Borderline cases (≤ 3 lines of prose) queue for
+// `proof-exposition-review` agent adjudication via the `n/a` route.
+
+const STATEMENT_ENVELOPE_RE =
+  /^\s*\*\*(Theorem|Proposition|Lemma|Corollary|Conjecture)\s*[\(\.]/;
+
+export function checkVoiceStatementNeedsExposition(
+  mdPath: string | undefined,
+): CheckerResult {
+  if (!mdPath) return { result: "n/a", hits: [] };
+  const text = readMaybe(mdPath);
+  if (!text) return { result: "n/a", hits: [] };
+  const lines = text.split("\n");
+  let envelopeIdx = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (STATEMENT_ENVELOPE_RE.test(lines[i])) {
+      envelopeIdx = i;
+      break;
+    }
+  }
+  // No envelope = doesn't apply (e.g. the block opens with a math
+  // block or a `## Section` heading).
+  if (envelopeIdx < 0) return { result: "n/a", hits: [] };
+  // Count non-empty prose lines before the envelope.
+  let preLines = 0;
+  for (let i = 0; i < envelopeIdx; i++) {
+    const l = lines[i].trim();
+    if (l === "") continue;
+    if (l.startsWith("#")) continue; // section heading
+    if (l.startsWith("```")) continue; // fence delim
+    preLines++;
+  }
+  // 0 lines = bare statement (fail). 1-3 = borderline (queue agent).
+  if (preLines === 0) {
+    return {
+      result: "fail",
+      hits: [
+        {
+          file: mdPath,
+          line: envelopeIdx + 1,
+          text:
+            `statement envelope on line ${envelopeIdx + 1} has zero prose ` +
+            `lines preceding it — the block reads as a bare claim`,
+        },
+      ],
+    };
+  }
+  return { result: "pass", hits: [] };
+}
+
 // ─── Dispatch map ───────────────────────────────────────────────
 
 export const EXTENDED_AUTOMATED_CHECKERS: Record<
@@ -612,4 +848,14 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "proof-substantive": (p) => checkProofSubstantive(p.lean),
   "proof-no-axiom-growth": (p) => checkProofNoAxiomGrowth(p.lean),
   "proof-build-green": (p) => checkProofBuildGreen(p.lean),
+  // proof — cached-witness-driven (read the docs/audits/*.json
+  // artefacts emitted by the standalone audit scripts)
+  "proof-no-conj-propagation-violation": (p) =>
+    checkProofNoConjPropagationViolation(p.ts),
+  "proof-no-trivial-skeleton": (p) => checkProofNoTrivialSkeleton(p.lean),
+  "proof-conditional-class-banner": (p) =>
+    checkProofConditionalClassBanner(p.md, p.lean),
+  // voice
+  "voice-statement-needs-exposition": (p) =>
+    checkVoiceStatementNeedsExposition(p.md),
 };
