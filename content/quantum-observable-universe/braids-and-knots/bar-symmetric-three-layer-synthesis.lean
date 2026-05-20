@@ -562,4 +562,58 @@ instance trivialBarSymmetricThreeLayerSynthesisFunctorial :
 
 end StrengthenedSynthesis
 
+/-! ## Concrete instances over ℝ (trivial bar)
+
+The minimal bar-involution on ℝ is the identity (`bar = id`),
+under which everything is trivially bar-symmetric. This gives a
+concrete domain for instantiating `BarHeckeFunctor` examples
+referring to actual analytic functions on ℝ. The bar-symmetry
+proofs become trivial; the categorical content is in the TYPE-
+LEVEL connection between functor instances and the c_5 rational
+map (etc.).
+-/
+
+section TrivialRealBar
+
+/-- **Trivial bar-involution on ℝ** (`bar = id`). All ℝ elements
+    are bar-symmetric trivially. Degenerate but provides a
+    concrete `[BarInvolution ℝ]` instance for the synthesis class. -/
+noncomputable instance BarInvolution.idReal : BarInvolution ℝ where
+  bar x := x
+  bar_involutive _ := rfl
+  bar_add _ _ := rfl
+  bar_mul _ _ := rfl
+  bar_one := rfl
+  bar_zero := rfl
+
+/-- **`c5BarHeckeFunctor`** — the c_5 rational map cast as a
+    `BarHeckeFunctor ℝ` over the trivial bar. Concretely realizes
+    the categorical Markov-trace-functor shape for c_5; the bar-
+    symmetry is trivial (under id bar) but the type-level
+    instantiation is meaningful: any future non-trivial bar
+    instance on ℝ-like rings can plug this functor in.
+
+    The functor `apply` matches `c5RationalMap`'s definition:
+    `F(h) = -3/2 + 1/(h² + 4)`. -/
+noncomputable def c5BarHeckeFunctor : BarHeckeFunctor ℝ where
+  apply h := -3/2 + 1 / (h^2 + 4)
+  apply_bar_symmetric _ _ := rfl
+
+/-- The c_5 functor evaluated at 0 gives -5/4 (commutative-QOU limit). -/
+theorem c5BarHeckeFunctor_zero : c5BarHeckeFunctor.apply 0 = -5/4 := by
+  show (-3/2 : ℝ) + 1 / ((0:ℝ)^2 + 4) = -5/4
+  norm_num
+
+/-- The c_5 functor evaluated at 2 gives -11/8 (silver-ratio value). -/
+theorem c5BarHeckeFunctor_two : c5BarHeckeFunctor.apply 2 = -11/8 := by
+  show (-3/2 : ℝ) + 1 / ((2:ℝ)^2 + 4) = -11/8
+  norm_num
+
+/-- The c_5 functor evaluated at 1 gives -13/10 (golden-ratio value). -/
+theorem c5BarHeckeFunctor_one : c5BarHeckeFunctor.apply 1 = -13/10 := by
+  show (-3/2 : ℝ) + 1 / ((1:ℝ)^2 + 4) = -13/10
+  norm_num
+
+end TrivialRealBar
+
 end QOU.BraidKnot
