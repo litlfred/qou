@@ -3,12 +3,12 @@
   "label": "prop:spin-involution-lp-dual-invariance",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.ts",
+    "md": "quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md",
+    "lean": "quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.lean"
   },
   "source_hashes": {
-    "md": "89813baa394d",
+    "md": "09879eb0a012",
     "ts": "c78d26f4e849",
     "lean": "e7dc364583e7"
   },
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "09879eb0a012",
+          "ts": "c78d26f4e849",
+          "lean": "e7dc364583e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
@@ -43,8 +58,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "09879eb0a012",
+          "ts": "c78d26f4e849",
+          "lean": "e7dc364583e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-emoji-content": [
@@ -60,12 +90,12 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       },
       {
         "field_hash": {
-          "md": "89813baa394d",
+          "md": "09879eb0a012",
           "ts": "c78d26f4e849",
           "lean": "e7dc364583e7"
         },
@@ -75,8 +105,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:30:54.386Z",
-        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
+        "reviewed_at": "2026-05-20T06:32:02.376Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-first-person-work": [
@@ -92,8 +122,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "09879eb0a012",
+          "ts": "c78d26f4e849",
+          "lean": "e7dc364583e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-time-stamped-notes": [
@@ -109,8 +154,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "09879eb0a012",
+          "ts": "c78d26f4e849",
+          "lean": "e7dc364583e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-unicode-crash": [
@@ -126,8 +186,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "09879eb0a012",
+          "ts": "c78d26f4e849",
+          "lean": "e7dc364583e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-editorializing": [
@@ -143,8 +218,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "09879eb0a012",
+          "ts": "c78d26f4e849",
+          "lean": "e7dc364583e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "framework-canonical": [
@@ -163,47 +253,11 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:92: $\\mathcal{C} := \\{x \\in A : \\tau(\\pi_\\lambda \\cdot x) \\geq 0\\  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:93: \\forall \\lambda \\in \\Sigma\\}$ satisfies $\\sigma(\\mathcal{C}) =  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:94: \\mathcal{C}$ (apply Step 1 to each constraint).  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "fd82f2b91908",
-          "ts": "c78d26f4e849",
-          "lean": "e7dc364583e7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-braids-R-Z",
-          "version": "claude-sonnet-4-6-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T19:18:52.573Z",
-        "reviewed_sha": "80f81c2c5ce6556edb14c1d926c3084e22a2289d",
-        "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-R-Z)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:92: $\\mathcal{C} := \\{x \\in A : \\tau(\\pi_\\lambda \\cdot x) \\geq 0\\  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:93: \\forall \\lambda \\in \\Sigma\\}$ satisfies $\\sigma(\\mathcal{C}) =  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:94: \\mathcal{C}$ (apply Step 1 to each constraint).  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       },
       {
         "field_hash": {
-          "md": "e5c3b3b51f81",
-          "ts": "c78d26f4e849",
-          "lean": "e7dc364583e7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-refresh-post-prepare-merge-rebase",
-          "version": "claude-opus-4-7-2026-05-20"
-        },
-        "reviewed_at": "2026-05-20T04:01:14.142Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
-        "notes": "Hash-refresh post-rebase onto main 6bff6d33; previous verdict (pass) carried forward (semantic content unchanged)."
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "e5c3b3b51f81",
+          "md": "09879eb0a012",
           "ts": "c78d26f4e849",
           "lean": "e7dc364583e7"
         },
@@ -213,27 +267,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "e5c3b3b51f81",
-          "ts": "c78d26f4e849",
-          "lean": "e7dc364583e7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T06:22:25.857Z",
+        "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

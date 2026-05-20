@@ -95,10 +95,10 @@ $$
   \prod_{i = 1}^{3} \dim_q(\mathrm{Goldstone}_i)
   \;=\;
   [\text{$T_3 - Y$ rotation}]_q \cdot [W^+]_q \cdot [W^-]_q
-  \cdot \mathcal{C}(q),
+  \cdot \mathcal{V}_0(q),
 $$
 
-where $\mathcal{C}(q)$ is the substrate's vacuum-volume constant.
+where $\mathcal{V}_0(q)$ is the substrate's vacuum-volume constant.
 This route ties $\mathcal{N}_{\rm sym}$ directly to the Higgs
 mechanism categorical structure (U2/U4).
 

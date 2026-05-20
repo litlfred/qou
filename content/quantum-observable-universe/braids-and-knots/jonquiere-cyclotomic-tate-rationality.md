@@ -92,7 +92,7 @@ $$
   \;=\; \pi^2 \left(\tfrac{1}{K^2} - \tfrac{1}{K} + \tfrac{1}{6}\right).
 $$
 
-At $K = 2$: $\pi^2(1/4 - 1/2 + 1/6) = -\pi^2/12$ (= $\mathrm{Re}\,\mathrm{Li}_2(-1)$).
+At $K = 2$: $\pi^2(1/4 - 1/2 + 1/6) = -\pi^2/12$ (= $\mathrm{Re}\,\mathrm{Li}_2(-1)$). (yes)
 
 **$n = 3$ (odd, Im part):** $B_3(x) = x^3 - 3x^2/2 + x/2$.
 

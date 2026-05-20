@@ -66,8 +66,8 @@ spanned by $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.**
 
 So:
 
-- Inclusion: ✓ (theorem-level — Bloch–Suslin).
-- Sharpness at depth 2 over $\mathbb{Q}(\zeta_6)$: ✓ (Borel + Suslin
+- Inclusion: (yes) (theorem-level — Bloch–Suslin).
+- Sharpness at depth 2 over $\mathbb{Q}(\zeta_6)$: (yes) (Borel + Suslin
   injectivity give a 1-dim image; this matches Bloch–Wigner being
   injective on $K_3^{\mathrm{ind}}$).
 

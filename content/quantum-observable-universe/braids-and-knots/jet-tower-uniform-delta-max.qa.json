@@ -43,8 +43,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:53:48.207Z",
-        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
@@ -344,5 +344,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T05:54:36.387Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

@@ -168,12 +168,12 @@ sibling
 [`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical)
 yielded the following:
 
-- **4a ✓ — partial.** $V_i$ for the H_2 optimal ordering
+- **4a (yes) — partial.** $V_i$ for the H_2 optimal ordering
   decomposes additively into bare ($h_b$) and dressed ($h_d$)
   components: $V_H = z + h_b - h_d$, $V[1] = 1 + 2zh_b - zh_d$,
   $V[2] = z - h_b$. Cross-terms $h_b \cdot h_d$ cancel in the
   optimal-ordering chain.
-- **4b ✓ — relative spacing recovered.** Categorical shell
+- **4b (yes) — relative spacing recovered.** Categorical shell
   ratios $(2k+1)^{-2}$ match Bohr $1/n^2$ exactly with
   $n = 2k+1$. Pure Hecke, no transport.
 - **4d partial.** Covalent rank-2 → $\alpha^2$ works for
