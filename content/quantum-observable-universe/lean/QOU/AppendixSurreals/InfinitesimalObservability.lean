@@ -23,8 +23,19 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:infinitesimal-observability`](../../../quantum-observable-universe/appendix-surreals/infinitesimal-observability.md). -/
 class InfinitesimalObservability where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      The QOU observability axiom requires
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+([quantum observable universe](#def:quantum-observable-universe)
+condition (ii)): the trivial representation does not appear in
+the adjoint of $A$. This is a *rigidity* condition that
+guarantees $A$ has no infinitesimal symmetries beyond the
+identity.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

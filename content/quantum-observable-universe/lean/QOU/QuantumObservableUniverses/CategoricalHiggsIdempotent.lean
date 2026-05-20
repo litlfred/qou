@@ -23,8 +23,18 @@ namespace QOU.QuantumObservableUniverses
 
     Conjectural class — see [`conj:categorical-higgs-idempotent`](../../../quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md). -/
 class CategoricalHiggsIdempotent where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      Let $A$ be a Frobenius–Hopf substrate
+([substrate axioms](#def:frobenius-hopf-substrate)) carrying a
+$G$-action with $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$, and
+let $\Phi \in V_{1/2, 1/2}$ be a Higgs doublet (spin-$1/2$ of
+$\mathrm{SU}(2)_L$ with hypercharge $Y = 1/2$). The vacuum value
+$\langle\Phi\rangle = (0, v/\sqrt{2})^\top$ defines a
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

@@ -23,8 +23,15 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:bigbang-heatdeath`](../../../quantum-observable-universe/appendix-surreals/bigbang-heatdeath.md). -/
 class BigbangHeatdeath where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      **Caveat: this conjecture is more speculative than the others.**
+It sketches a use of surreals as endpoints of cosmological time
+that the rest of the paper does not depend on.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

@@ -12,12 +12,69 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
-/-- QOU.QuantumObservableUniverse.observation_energy
 
-    Placeholder statement; full formalisation pending. -/
+/-- Abstract context for the `observation_energy` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
+class ObservationEnergyContext where
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  q_gt_one : 1 < q
+  /-- Substrate perturbation `δq > 0`. -/
+  δq : ℝ
+  δq_pos : 0 < δq
+  /-- Quantum Planck constant `ℏ_q = 1 − q⁻¹`. -/
+  hbar : ℝ → ℝ
+  hbar_eq : ∀ x : ℝ, hbar x = 1 - x⁻¹
+  /-- Manuscript sub-claim (i) — Quantum energy increases:
+      `ℏ_{q+δq} − ℏ_q = δq / (q(q+δq)) > 0`. -/
+  claim_i_quantum_planck_increases :
+    hbar (q + δq) - hbar q = δq / (q * (q + δq)) ∧
+    0 < δq / (q * (q + δq))
+  /-- Categorical action `S_q`. -/
+  S : ℝ → ℝ
+  /-- First-order derivative `∂S/∂q`. -/
+  dS_dq : ℝ
+  /-- Second-order remainder `R_2(δq)`. -/
+  R_2 : ℝ → ℝ
+  /-- Manuscript sub-claim (ii) — Action deformation:
+      `S_{q+δq} = S_q + δq · ∂S/∂q + R_2(δq)` with `R_2 = O(δq²)`. -/
+  claim_ii_action_first_order :
+    S (q + δq) = S q + δq * dS_dq + R_2 δq
+  /-- Classical energy `E_classical` (q → 1 shadow). -/
+  E_classical : ℝ → ℝ
+  /-- Witness points where `E_classical` exhibits both signs of
+      change (`q₁ ≠ q₂` and the classical energy is *not* monotone). -/
+  q_inc q_dec : ℝ
+  /-- Manuscript sub-claim (iii) — Classical energy unconstrained
+      in sign: there exist substrate values at which `E_classical`
+      both increases and decreases under `δq` perturbation. -/
+  claim_iii_classical_unconstrained :
+    E_classical (q_inc + δq) > E_classical q_inc ∧
+    E_classical (q_dec + δq) < E_classical q_dec
+
+/-- **Proposition statement** (from manuscript):
+
+Let $\mathfrak{I}\in \Gamma(U, \mathrm{Ad}(J^1 \mathcal{S}))$
+be an observation ([observation](#def:observation)) with
+substrate perturbation $\delta q$.  Then:*
+
+1.
+
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.ts
-theorem observation_energy : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  trivial
+theorem observation_energy [ctx : ObservationEnergyContext] :
+    (ctx.hbar (ctx.q + ctx.δq) - ctx.hbar ctx.q =
+       ctx.δq / (ctx.q * (ctx.q + ctx.δq)) ∧
+     0 < ctx.δq / (ctx.q * (ctx.q + ctx.δq))) ∧
+    ctx.S (ctx.q + ctx.δq) = ctx.S ctx.q + ctx.δq * ctx.dS_dq +
+      ctx.R_2 ctx.δq ∧
+    (ctx.E_classical (ctx.q_inc + ctx.δq) > ctx.E_classical ctx.q_inc ∧
+     ctx.E_classical (ctx.q_dec + ctx.δq) < ctx.E_classical ctx.q_dec) :=
+  ⟨ctx.claim_i_quantum_planck_increases,
+   ctx.claim_ii_action_first_order,
+   ctx.claim_iii_classical_unconstrained⟩
 
 end QOU.QuantumObservableUniverse

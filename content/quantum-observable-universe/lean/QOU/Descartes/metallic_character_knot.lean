@@ -1,23 +1,48 @@
 /-!
-# QOU.Descartes.metallic_character_knot — placeholder stub
+# QOU.Descartes.metallic_character_knot — metallic atom iff 3 incompleteness conditions
 
-**Placeholder canonical** for content block
-[`prop:metallic-character-knot`](../../../quantum-observable-universe/descartes-universe/metallic-character-knot.md): *QOU.Descartes.metallic_character_knot*.
+**Proposition** ([`prop:metallic-character-knot`](../../../quantum-observable-universe/descartes-universe/metallic-character-knot.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Descartes.metallic_character_knot` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*An atom `𝓐(p, n)` with electron cloud `𝓔 = p · T_{2,3}` partitioned
+as `S₁ ⊔ … ⊔ S_k ⊔ R` (with `R` the residual sub-link) exhibits
+metallic character iff:*
+
+*(1) **Incompleteness**: `|R| < 2 · n_{k+1}²`.*
+
+*(2) **Low crossing energy**: `𝐄_cross(R) ≪ 𝐄_cross(S_k)`.*
+
+*(3) **Site availability**: `R` has at least one open linking site.*
+
+-- Ref: [manuscript] quantum-observable-universe/descartes-universe/metallic-character-knot.md
 -/
 
 namespace QOU.Descartes
 
-/-- QOU.Descartes.metallic_character_knot
+/-- Abstract context for the metallic-atom characterisation. -/
+class MetallicCharacterContext where
+  /-- The atomic structure type. -/
+  Atom : Type
+  /-- The "is a metal" predicate. -/
+  IsMetallic : Atom → Prop
+  /-- The "outer-shell incompleteness" predicate (cond 1). -/
+  OuterShellIncomplete : Atom → Prop
+  /-- The "low crossing energy at outer shell" predicate (cond 2). -/
+  LowOuterCrossingEnergy : Atom → Prop
+  /-- The "has an open linking site" predicate (cond 3). -/
+  HasOpenSite : Atom → Prop
 
-    Placeholder statement; full formalisation pending. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/metallic-character-knot.ts
-theorem metallic_character_knot : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  trivial
+/-- **Metallic character iff 3 conditions** ([`prop:metallic-character-knot`]). -/
+-- Ref: [manuscript] quantum-observable-universe/descartes-universe/metallic-character-knot.md
+theorem metallic_character_knot
+    [ctx : MetallicCharacterContext] (a : ctx.Atom) :
+    ctx.IsMetallic a ↔
+      (ctx.OuterShellIncomplete a ∧
+       ctx.LowOuterCrossingEnergy a ∧
+       ctx.HasOpenSite a) := by
+  -- Manuscript proof: metallic = atoms whose outermost shell can
+  -- share electrons (low E_cross + open site + unfilled shell).
+  -- Concretisation requires Lean knot-shell + linking infra.
+  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/metallic-character-knot.md
+  sorry
 
 end QOU.Descartes

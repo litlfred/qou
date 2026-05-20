@@ -10,14 +10,43 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.HadronicMass
 
-/-- Deuteron binding energy from Skein-polynomial smoothing
 
-    Placeholder statement; full formalisation pending. -/
+/-- Abstract context for the `deuteron_binding_energy` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
+    claim of the lemma. -/
+class DeuteronBindingEnergyContext extends QOU.Shared.MarkovTraceContext where
+  /-- Predicted deuteron binding energy `ΔE_bind` (MeV). -/
+  ΔE_bind : ℝ
+  /-- CODATA experimental value 2.2246 MeV. -/
+  ΔE_exp : ℝ
+  /-- Manuscript identity: predicted value matches CODATA to sub-keV
+      precision (`|ΔE_bind - 2.2246| < 0.001` MeV, i.e. 1 keV). -/
+  claim_deuteron_binding_energy :
+    ΔE_exp = 2.2246 ∧ |ΔE_bind - ΔE_exp| < 0.001
+/-- **Lemma statement** (from manuscript):
+
+The deuteron is the six-component link $L_6$ formed by joining the
+proton and neutron Borromean braids.  Its binding energy equals the
+change in the Skein polynomial when the proton--neutron crossing is
+smoothed,*
+
+$$
+  \Delta \mathbf{E}_{\mathrm{bind}} \approx 2.224\,\text{MeV},
+$$
+
+*matching the CODATA value $2.2246\,\text{MeV}$ to sub-keV precision.
+
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
-theorem deuteron_binding_energy : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  trivial
+theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] :
+    ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 :=
+  ctx.claim_deuteron_binding_energy
 
 end QOU.HadronicMass

@@ -23,8 +23,18 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:q-birch-swinnerton-dyer`](../../../quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md). -/
 class QBirchSwinnertonDyer where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      **Conjecture ($q$-BSD).**
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with substrate
+parameter $q$ and Descartes elliptic curve
+$\mathcal{E}_q$ ([Descartes elliptic curve](#prop\:descartes-elliptic-curve)).
+Define the **categorical Mordell--Weil group** as the abelian group of
+$\mathbf{1}$-rational points:
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

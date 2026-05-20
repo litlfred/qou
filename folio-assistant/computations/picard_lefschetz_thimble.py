@@ -970,11 +970,6 @@ def main():
         "intersection numbers, SW period integrals (single-root and "
         "simultaneous 3-root prescriptions)."
     )
-    # The actual content block is labelled `rem:picard-lefschetz-thimble`
-    # (see content/.../descartes-universe/picard-lefschetz-thimble.ts).
-    # Keep these in sync — the witness-pipeline drift detector compares
-    # the regenerated witness against the committed one substantively,
-    # so a mismatch here surfaces as a CI failure on every PR.
     w.set_content_block("rem:picard-lefschetz-thimble")
     w.add_parameter("q0", str(q0))
     w.add_parameter("z0", str(z0))

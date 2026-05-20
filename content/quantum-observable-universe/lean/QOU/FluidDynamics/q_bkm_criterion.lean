@@ -1,23 +1,57 @@
 /-!
-# QOU.FluidDynamics.q_bkm_criterion — placeholder stub
+# QOU.FluidDynamics.q_bkm_criterion — `q`-Beale–Kato–Majda criterion
 
-**Placeholder canonical** for content block
-[`thm:q-bkm-criterion`](../../../quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md): *$q$-deformed Beale--Kato--Majda criterion*.
+**Theorem** ([`thm:q-bkm-criterion`](../../../quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.FluidDynamics.q_bkm_criterion` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*Let `v` be the solution of the `q`-NS system with `q > 1` on
+`[0, T)` and let `ω_q = d_q v` be the `q`-vorticity.  Then `v`
+extends smoothly beyond `T` if and only if*
+
+```
+  ∫₀^T ‖ω_q(t)‖_{L^∞} dt < ∞.
+```
+
+*Equivalently: if the solution loses regularity at time `T*`, then
+the integral diverges to `+∞`.  Since the `q`-NS wellposedness
+theorem shows solutions are global for `q > 1`, the integral is
+always finite when `q > 1`; the criterion becomes non-trivial only
+in the classical limit `q → 1`.*
+
+The Lean encoding records the iff as a `Prop`-valued statement
+against an abstract `QBKMContext` carrying the time-evolution
+data `(v, ω_q, T)` and the `L^∞`-norm integral predicate.
+
+-- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
 -/
 
 namespace QOU.FluidDynamics
 
-/-- $q$-deformed Beale--Kato--Majda criterion
+/-- Abstract context for the `q`-Beale–Kato–Majda criterion. -/
+class QBKMContext where
+  /-- The terminal time `T > 0`. -/
+  T : ℝ
+  T_pos : 0 < T
+  /-- The substrate parameter `q > 1`. -/
+  q : ℝ
+  q_gt_one : 1 < q
+  /-- Predicate "`v` extends smoothly beyond `T`". -/
+  extendsSmoothly : Prop
+  /-- Predicate "`∫₀^T ‖ω_q(t)‖_{L^∞} dt < ∞`". -/
+  vorticityIntegralFinite : Prop
 
-    Placeholder statement; full formalisation pending. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.ts
-theorem q_bkm_criterion : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  trivial
+/-- **`q`-Beale–Kato–Majda criterion** ([`thm:q-bkm-criterion`]).
+
+    The `q`-NS solution extends smoothly past `T` if and only if
+    the time-integrated `L^∞` norm of the `q`-vorticity is finite.
+-/
+-- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
+theorem q_bkm_criterion [ctx : QBKMContext] :
+    ctx.extendsSmoothly ↔ ctx.vorticityIntegralFinite := by
+  -- Manuscript proof: classical BKM argument adapted to the
+  -- `q`-deformed Sobolev tower of `def:q-navier-stokes`.
+  -- Concretisation requires the actual q-NS evolution equation
+  -- and Sobolev / L^∞ infrastructure.
+  -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
+  sorry
 
 end QOU.FluidDynamics
