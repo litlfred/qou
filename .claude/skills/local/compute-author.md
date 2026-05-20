@@ -29,17 +29,60 @@ one gates exit.
 
 ## When to use this skill
 
-- "I'm going to optimize / rewrite / port `<script>`"
-- "Should I use BigInt / BigRational / f64 / mpfr here?"
-- "How do I integrate Python and Rust without paying the round-trip cost?"
-- "What's the precision target for this compute?"
-- "I want to claim this trace is exactly zero — what verification do I owe?"
-- "I'm about to skip / amortize / cache something — what's the algebraic
-  proof I need first?"
+Use this skill whenever a request mentions any of:
+
+**Authoring intent:**
+- "write new compute" / "optimize" / "optimise" / "port" / "rewrite"
+- "make this faster" / "speed up" / "speedup"
+
+**Precision / numerics vocabulary:**
+- "precision" / "1 ppb" / "1ppb" / "tolerance"
+- "float" / "float64" / "f64" / "double" — almost always means
+  "STOP and use mpmath / BigRational instead"
+- "symbolic" / "exact" / "Rational" / "BigInt" / "BigRational"
+- "mpf" / "mpmath" / "mpfr" / "rug" / "dps" / "50 digits"
+- "witness" (any new witness emission)
+
+**Cross-language / build vocabulary:**
+- "python" / "py" / "rust" — the very mention of crossing the
+  language boundary triggers the boundary-cost decision rule (§2.1)
+- "pyo3" / "maturin" / "cargo" / "wheel" / "extension module"
+- "round-trip" / "boundary" / "FFI"
+
+**Performance / resource vocabulary:**
+- "memory" / "storage" / "OOM" / "leak" / "cache"
+- "speed" / "fast" / "wall" / "elapsed" / "ETA"
+- "bottleneck" / "hotspot" / "profile"
+
+**Correctness / verification vocabulary:**
+- "cross-check" / "agree to" / "matches" / "identity"
+- "error" / "diff" / "residual" / "drift"
+- "orbit-sum" / "preflight" / "verify the identity"
+
+**Specific algorithmic touchpoints:**
+- "BigInt vs BigRational" / "sympy.Rational vs LaurentQ"
+- "LP/SDP" / "primal/dual" / "shadow price"
+- "Markov trace" / "Hoefsmit" / "Wenzl" / "LR bridge" / "chi^λ"
+- "atomic braid" / "Hecke" / "H_n(q)" / "q-deformation"
+- Anything in `hecke_*.py`, `markov_*.py`, `laurent_*`,
+  `tools/hecke-engine/`, `tools/pyhecke-native/`
+
+**Pre-work questions:**
+- "Should I use X here?" — the type / precision / boundary choices
+- "How do I integrate Python and Rust?" — granularity rule (§2.1)
+- "What's the precision target?" — L1 / L2 (§0)
+- "I want to claim this trace is exactly zero" — algebraic preflight (§3)
+- "I'm about to skip / amortize / cache something" — preflight (§3)
 
 If your task touches LP/SDP duals, mass-table compute, Markov trace,
-Hoefsmit / Wenzl / LR-bridge characters, or anything in the
-`hecke_*.py` / `markov_*.py` family — this skill applies.
+Hoefsmit / Wenzl / LR-bridge characters, atomic-braid construction,
+or anything in the `hecke_*.py` / `markov_*.py` / `laurent_*.py`
+family — this skill applies.
+
+**Anything performance-related is in-scope for this skill, even if
+the request looks small.** A one-line "use float64 here" change can
+break the precision floor; the skill exists to catch that before the
+code lands.
 
 ## §0. Canonical cheat-sheet pointers (read these first)
 
