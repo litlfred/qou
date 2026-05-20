@@ -274,8 +274,8 @@ def witnessPairKnotMarkovTraceMaxAbsErrPct : ℝ := 996.6
     tooling; carries no logical content beyond what the witness
     asserts). -/
 structure LPDualActiveSet where
-  has_sigma_pp : Bool
-  has_sigma_nn : Bool
+  hasSigmaPP : Bool
+  hasSigmaNN : Bool
 deriving DecidableEq
 
 /-- Active-set pattern at each canonical (Z, N) atom, per the LP-dual

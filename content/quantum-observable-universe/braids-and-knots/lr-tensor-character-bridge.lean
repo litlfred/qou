@@ -51,7 +51,7 @@ namespace QOU.BraidsAndKnots
     the dependent type through the stubs below. -/
 structure Partition where
   parts : List ℕ
-  deriving Repr
+  deriving Repr, DecidableEq
 
 /-- The size `|λ| = Σ λ_i`. -/
 def Partition.size (λ : Partition) : ℕ := λ.parts.foldr (· + ·) 0
@@ -68,7 +68,7 @@ def Partition.size (λ : Partition) : ℕ := λ.parts.foldr (· + ·) 0
     cleanest invariants that any concrete realisation must respect. -/
 def lrCoefficient (ν λ μ : Partition) : ℕ :=
   if ν.size = λ.size + μ.size then
-    if μ.parts = [] then (if ν.parts = λ.parts then 1 else 0) else 0
+    if μ.parts = [] then (if ν = λ then 1 else 0) else 0
   else 0
 
 /-- Iterated LR coefficient
@@ -76,7 +76,7 @@ def lrCoefficient (ν λ μ : Partition) : ℕ :=
     two-factor coefficients. -/
 def iteratedLR : Partition → List Partition → ℕ
   | _ν, []        => 0
-  | ν, [λ]        => if ν.parts = λ.parts then 1 else 0
+  | ν, [λ]        => if ν = λ then 1 else 0
   | ν, (λ :: μs)  => iteratedLR ν μs  -- structural stub
 
 /-- A Hecke character index — partition-indexed scalar function on
