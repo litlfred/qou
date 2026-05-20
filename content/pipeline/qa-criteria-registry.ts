@@ -189,6 +189,252 @@ const WALL: QaCriterionDefinition[] = [
   },
 ];
 
+// ── Domain: proof ───────────────────────────────────────────────
+//
+// Owned by `proof-integration-watcher`. Each criterion maps to one
+// existing Lean / proof skill — the orchestration table lives in
+// `.claude/skills/local/proof-integration-watcher.md §Dispatch`.
+
+const PROOF: QaCriterionDefinition[] = [
+  {
+    id: "proof-no-bare-sorries",
+    domain: "proof",
+    description:
+      "Every `sorry` in the block's `.lean` carries a `-- Ref: [key] <url>` " +
+      "citation per CLAUDE.md §1 (proof-status-tracking). Bare `sorry` " +
+      "without a reference is always a review failure.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: true,
+    applies_to: [
+      "theorem",
+      "lemma",
+      "proposition",
+      "corollary",
+      "definition",
+      "conjecture",
+    ],
+  },
+  {
+    id: "proof-no-axiom-growth",
+    domain: "proof",
+    description:
+      "Block's `#print axioms` set is a subset of the same block's axiom " +
+      "set on `origin/main`. Verified against the doc-gen4 axiom-report. " +
+      "Routes to `lean-witness-audit` on failure.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-build-green",
+    domain: "proof",
+    description:
+      "Block's Lake package builds clean. On failure routes to " +
+      "`lean-build-fix`. Result is read from the `proof-objects.json` " +
+      "manifest emitted by `lean_ci.yml`.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: true,
+    applies_to: [
+      "theorem",
+      "lemma",
+      "proposition",
+      "corollary",
+      "definition",
+    ],
+  },
+  {
+    id: "proof-narrative-lean-equiv",
+    domain: "proof",
+    description:
+      "The .md statement and the .lean signature express the same claim. " +
+      "Routes to `proof-narrative-lean-equivalence` (agent) — non- " +
+      "deterministic; the checker only flags blocks that have BOTH a " +
+      "Lean sibling AND a narrative `**Proposition.**` / `**Theorem.**` " +
+      "envelope, and queues them for the agent.",
+    default_severity: "major",
+    depends_on: ["md", "lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-substantive",
+    domain: "proof",
+    description:
+      "Block's Lean does NOT use the abstract `holds : Prop` placeholder " +
+      "without a matching `[Instance]` hypothesis on the downstream " +
+      "consumer (CLAUDE.md §3b-cond). Routes to `lean-substantive-pass`.",
+    default_severity: "major",
+    depends_on: ["lean"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+];
+
+// ── Domain: canonical ───────────────────────────────────────────
+//
+// Owned by `canonical-watcher`. Enforces the three-calibration
+// discipline (`prop:three-calibration-discipline`) and bans
+// numerology / fits.
+
+const CANONICAL: QaCriterionDefinition[] = [
+  {
+    id: "canonical-calibration-count",
+    domain: "canonical",
+    description:
+      "Block declares at most 3 calibration anchors (CODATA m_e + α + " +
+      "G_Planck normalisation, per the three-calibration discipline). " +
+      "Counted by scanning the .md / .ts for `calibration:` / " +
+      "`anchor:` markers. Routes to a manual `canonical-watcher` review " +
+      "on fail (cannot auto-resolve a 4th calibration).",
+    default_severity: "critical",
+    depends_on: ["md", "ts"],
+    automated: true,
+  },
+  {
+    id: "canonical-no-numerology",
+    domain: "canonical",
+    description:
+      "Block does not claim numerical coincidence without a categorical " +
+      "derivation chain (`derivation:` / `derived_from:` / `uses:`). " +
+      "Numerology = a number is asserted to match an observable without " +
+      "naming the structural reason. Agent reviewer — script only " +
+      "flags candidate phrasings (`miraculous`, `surprising agreement`, " +
+      "`numerical coincidence`).",
+    default_severity: "critical",
+    depends_on: ["md"],
+    automated: false,
+  },
+  {
+    id: "canonical-witness-pinned",
+    domain: "canonical",
+    description:
+      "Every `:val[…]` directive in the .md references an existing " +
+      "witness JSON under `folio-assistant/computations/*.witness.json`, " +
+      "and the block's `computation:` field matches (or is absent and " +
+      "the implicit dep is declared). Routes to `witnessed-values` skill.",
+    default_severity: "major",
+    depends_on: ["md", "ts"],
+    automated: true,
+  },
+];
+
+// ── Domain: compute ─────────────────────────────────────────────
+//
+// Owned by `compute-integration-watcher`. Implements the 13-pattern
+// I1-I13 audit + LP-dual-witness validator (CLAUDE.md "LP / SDP
+// duals — first-class infra").
+
+const COMPUTE: QaCriterionDefinition[] = [
+  {
+    id: "compute-prop-has-probe",
+    domain: "compute",
+    description:
+      "Every `prop:`/`theorem:` block has a corresponding probe witness " +
+      "under `folio-assistant/computations/`. The probe is the I1 of the " +
+      "13-pattern audit: a numerical check that the proposition's claim " +
+      "holds at a representative parameter point.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "compute-prop-has-consumer",
+    domain: "compute",
+    description:
+      "Every `prop:` is consumed by at least one production script (I2- " +
+      "I13 of the 13-pattern audit). A prop with a probe but no consumer " +
+      "is a NOT-WIRED prop. Routes to `compute-integration-watcher §B`.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "compute-witness-exists",
+    domain: "compute",
+    description:
+      "If the block's `.ts` declares `computation: { witness: '…' }`, " +
+      "the referenced witness JSON exists on disk and is non-empty. " +
+      "Routes to the `compute-audit` skill on fail.",
+    default_severity: "critical",
+    depends_on: ["ts"],
+    automated: true,
+  },
+  {
+    id: "compute-lp-dual-present",
+    domain: "compute",
+    description:
+      "For LP/SDP/operator-selection witnesses (matched per CLAUDE.md " +
+      "`lp_dual_witness_validator.py` hint list), the witness JSON " +
+      "includes `y0_star`, `y_star`, `active_set` (or alias), " +
+      "`primal_obj`, `dual_obj`, `duality_gap`. Mirrors the standalone " +
+      "validator.",
+    default_severity: "critical",
+    depends_on: ["ts"],
+    automated: true,
+  },
+];
+
+// ── Domain: detangler ───────────────────────────────────────────
+//
+// Owned by `detangler-integration-watcher`. Enforces the structural
+// rules H1-H7 (no forward refs), R1-R3 (section band 3-18 blocks),
+// and the cross-chapter forward-edge ban.
+
+const DETANGLER: QaCriterionDefinition[] = [
+  {
+    id: "detangler-no-forward-ref",
+    domain: "detangler",
+    description:
+      "Block's `uses:` / `interprets:` targets do not appear later in " +
+      "the chapter's `<chapter>.ts` ordering (H1-H7). Forward refs " +
+      "force the reader to skip ahead. Routes to " +
+      "`detangler-integration-watcher §H`.",
+    default_severity: "major",
+    depends_on: ["ts"],
+  },
+  {
+    id: "detangler-section-band",
+    domain: "detangler",
+    description:
+      "Each `## Section` in the chapter contains between 3 and 18 " +
+      "content blocks (R1-R3). Out-of-band sections invite either " +
+      "skim-and-skip (>18) or trivial-aside dilution (<3).",
+    default_severity: "minor",
+    depends_on: ["ts"],
+    automated: true,
+  },
+  {
+    id: "detangler-no-xchapter-fwd",
+    domain: "detangler",
+    description:
+      "Block's cross-chapter `uses:` references do not point at a chapter " +
+      "later in `paper.ts` ordering. Cross-chapter forward edges break the " +
+      "linear reading promise of a folio.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+  },
+  {
+    id: "detangler-archimedean-wall",
+    domain: "detangler",
+    description:
+      "Chapter-level archimedean wall placement: blocks whose .lean is " +
+      "purely archimedean live in `descartes-universe/` / `observations/` / " +
+      "`fluid-dynamics/`. Generic-R blocks live in `braids-and-knots/` / " +
+      "`quantum-observable-universes/` / `quantum-universes/`. " +
+      "Companion to `wall-side-correct` (per-block) — this one is " +
+      "per-chapter placement.",
+    default_severity: "major",
+    depends_on: ["ts", "lean"],
+    automated: true,
+  },
+];
+
 // ── Exported registry ───────────────────────────────────────────
 
 export const QA_CRITERIA_REGISTRY: QaCriterionDefinition[] = [
@@ -196,6 +442,10 @@ export const QA_CRITERIA_REGISTRY: QaCriterionDefinition[] = [
   ...FIT,
   ...FRAMEWORK,
   ...WALL,
+  ...PROOF,
+  ...CANONICAL,
+  ...COMPUTE,
+  ...DETANGLER,
 ];
 
 export const QA_CRITERIA_BY_ID: Record<string, QaCriterionDefinition> =
@@ -210,9 +460,13 @@ export const QA_CRITERIA_BY_DOMAIN: Record<string, QaCriterionDefinition[]> =
     {} as Record<string, QaCriterionDefinition[]>,
   );
 
+// Per-watcher criterion subsets. Each integration watcher reads
+// its own subset to compute backlog + dispatch agent reviews.
+
 /**
  * The set of criteria the `one-voice-integration-watcher` is
- * responsible for. Other watchers register their own subsets.
+ * responsible for. Mirrors the historical voice + fit + framework +
+ * wall buckets.
  */
 export const ONE_VOICE_WATCHER_CRITERIA: string[] = [
   ...VOICE.map((c) => c.id),
@@ -220,3 +474,22 @@ export const ONE_VOICE_WATCHER_CRITERIA: string[] = [
   ...FRAMEWORK.map((c) => c.id),
   ...WALL.map((c) => c.id),
 ];
+
+export const PROOF_WATCHER_CRITERIA: string[] = PROOF.map((c) => c.id);
+export const CANONICAL_WATCHER_CRITERIA: string[] = CANONICAL.map((c) => c.id);
+export const COMPUTE_WATCHER_CRITERIA: string[] = COMPUTE.map((c) => c.id);
+export const DETANGLER_WATCHER_CRITERIA: string[] = DETANGLER.map(
+  (c) => c.id,
+);
+
+/**
+ * All 5 watcher buckets, keyed by watcher short name (matches the
+ * `/integration-watch` / `/integration-backlog` axis arguments).
+ */
+export const WATCHER_CRITERIA_BY_AXIS: Record<string, string[]> = {
+  "one-voice": ONE_VOICE_WATCHER_CRITERIA,
+  proof: PROOF_WATCHER_CRITERIA,
+  canonical: CANONICAL_WATCHER_CRITERIA,
+  compute: COMPUTE_WATCHER_CRITERIA,
+  detangler: DETANGLER_WATCHER_CRITERIA,
+};
