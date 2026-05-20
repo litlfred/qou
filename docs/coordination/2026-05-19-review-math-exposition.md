@@ -72,10 +72,10 @@ Lean files added under `lean/QOU/CategoricalReeb/`:
 
 ## Anti-pattern checks (skill §10)
 
-- No silent rebase against `main`. ✅
-- No newly-opened PRs added to scope without prompting. ✅ (user confirmed scope = {#817, #818, #806, #826})
-- No "split the difference" on inconsistent findings. ✅ (none found yet)
-- No per-thread review-comment storm. ✅ (no reviews on my branch yet)
+- No silent rebase against `main`: yes (held).
+- No newly-opened PRs added to scope without prompting: yes (user confirmed scope = {#817, #818, #806, #826}).
+- No "split the difference" on inconsistent findings: yes (none found).
+- No per-thread review-comment storm: yes (one consolidated status comment per review pass on PR #832).
 
 ## Next concrete task
 
