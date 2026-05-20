@@ -314,6 +314,35 @@
 \newcommand{\uses}[1]{}            % \uses{label1, label2, ...}
 \newcommand{\proves}[1]{}          % \proves{thm:label} (in proof environments)
 %
+% ── Issue-tracker links ─────────────────────────────────────────────────────
+% Each labelled block in the rendered PDF carries a clickable navy `#'
+% superscript that opens the GitHub issues view filtered by the block
+% label.  Readers can use this to file follow-up feedback, see existing
+% issues against a definition / theorem / etc., or jump to the
+% open-discussion thread for the block.
+%
+% Usage (emitted by content/pipeline/render-latex.ts):
+%   \begin{theorem}\label{thm:foo}
+%     \tracker{thm:foo}
+%     ...
+%   \end{theorem}
+%
+% Base URL for the GitHub issues search.  Override at compile time with
+% `\renewcommand{\trackerbase}{...}` if the repo or query format changes.
+\newcommand{\trackerbase}{https://github.com/litlfred/qou/issues?q=}
+%
+% \tracker{label} — small navy `#` superscript linking to the issues
+% search for that label.  Idempotent: emitting it twice for the same
+% block produces a single visible icon (the user-visible rendering is
+% one `#'); the macro is safe to call from any block kind.
+\newcommand{\tracker}[1]{%
+  \texorpdfstring{%
+    \href{\trackerbase #1}{%
+      \textsuperscript{\textcolor{NavyBlue}{\#}}%
+    }%
+  }{[issues: #1]}%
+}
+%
 % ── Glossary terms: \defterm{} / \refterm{} ─────────────────────────────────
 % PDF rendering is intentionally clean — the HTML viewer carries the
 % interactive affordance (dotted underline on hover, click-to-jump).

@@ -586,7 +586,10 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       // simulator and its default view.
       const titleArg = block.title ? `[{${escapeLatex(block.title)}}]` : "[{Interactive Simulation}]";
       lines.push(`\\begin{remark}${titleArg}`);
-      if (block.label) lines.push(`  \\label{${block.label}}`);
+      if (block.label) {
+        lines.push(`  \\label{${block.label}}`);
+        lines.push(`  \\tracker{${block.label}}`);
+      }
       if (block.uses?.length) {
         lines.push(`  \\uses{${block.uses.join(", ")}}`);
       }
@@ -639,6 +642,12 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       // Label
       if ("label" in block && block.label) {
         lines.push(`  \\label{${block.label}}`);
+        // Issue-tracker link — a small navy `#` superscript that opens
+        // the GitHub issues view filtered by this block's label.  The
+        // macro is defined in latex/preamble.tex (`\tracker`); the
+        // ENV_NAMES filter above guarantees we only emit it for
+        // theorem-like environments where it'll render in the body.
+        lines.push(`  \\tracker{${block.label}}`);
       }
 
       // Lean reference — emit the bare Lean declaration (without the
