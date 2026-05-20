@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.lean"
   },
   "source_hashes": {
-    "md": "e6dfc5082858",
+    "md": "4a2f06be15e4",
     "ts": "9448602a4fa3",
     "lean": "9e7d22847263"
   },
@@ -145,6 +145,21 @@
         },
         "reviewed_at": "2026-05-20T05:30:40.400Z",
         "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "4a2f06be15e4",
+          "ts": "9448602a4fa3",
+          "lean": "9e7d22847263"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [
@@ -182,5 +197,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T05:30:40.400Z"
+  "updated_at": "2026-05-20T05:54:36.387Z"
 }

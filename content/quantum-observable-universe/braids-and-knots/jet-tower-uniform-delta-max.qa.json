@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean"
   },
   "source_hashes": {
-    "md": "41f4070048ac",
+    "md": "2239794e7a79",
     "ts": "af5a0098e271",
     "lean": "d21e2fb14825"
   },
@@ -151,6 +151,21 @@
         },
         "reviewed_at": "2026-05-20T05:30:40.400Z",
         "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "2239794e7a79",
+          "ts": "af5a0098e271",
+          "lean": "d21e2fb14825"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [
@@ -188,5 +203,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T05:30:40.400Z"
+  "updated_at": "2026-05-20T05:54:36.387Z"
 }

@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.lean"
   },
   "source_hashes": {
-    "md": "4af63b23df14",
+    "md": "9e89bc26f0f9",
     "ts": "09a7cac8e6f1",
     "lean": "7d3092df1d41"
   },
@@ -130,6 +130,21 @@
         },
         "reviewed_at": "2026-05-20T05:30:40.400Z",
         "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "9e89bc26f0f9",
+          "ts": "09a7cac8e6f1",
+          "lean": "7d3092df1d41"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [
@@ -167,5 +182,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T05:30:40.400Z"
+  "updated_at": "2026-05-20T05:54:36.387Z"
 }
