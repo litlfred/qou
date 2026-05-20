@@ -1,6 +1,6 @@
 Every proof in this paper has a corresponding Lean 4 formalisation,
 except where external references are cited for large prior results.
-**559 of 567 (98.6%) provable claims** (theorems, lemmas,
+**562 of 570 (98.6%) provable claims** (theorems, lemmas,
 propositions, corollaries) carry **full Lean proofs** (sorry-free);
 the remainder are marked by `sorry` against an explicit bibliographic
 reference.  The paper contains

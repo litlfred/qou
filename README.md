@@ -84,9 +84,9 @@ Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publis
 
 | Block kind | Total | With Lean sibling | Fully formalized |
 |------------|------:|------------------:|-----------------:|
-| Provable claims (theorem/lemma/proposition/corollary) | 567 | 564 | **559 sorry-free (98.6%)** |
+| Provable claims (theorem/lemma/proposition/corollary) | 570 | 567 | **562 sorry-free (98.6%)** |
 | Conjectures (open) | 132 | 130 | **121 class-axiomatised (91.7%)** |
-| Definitions | 214 | 214 | — |
+| Definitions | 215 | 215 | — |
 
 Class-axiomatised conjectures follow the conditional-class convention
 (CLAUDE.md §3b): the conjecture is encoded as a Lean `class` with
@@ -184,10 +184,10 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.Braiding.*` | `10 files` |
 | `QOU.BraidKnot.*` | `121 files` |
 | `QOU.BraidsAndKnots.*` | `8 files` |
-| `QOU.BraidsKnots.*` | `4 files` |
+| `QOU.BraidsKnots.*` | `6 files` |
 | `QOU.Brings.*` | `2 files` |
 | `QOU.BringsSurface.*` | `1 files` |
-| `QOU.CategoricalReeb.*` | `1 files` |
+| `QOU.CategoricalReeb.*` | `3 files` |
 | `QOU.Common.*` | `1 files` |
 | `QOU.CommutativeQOU.*` | `1 files` |
 | `QOU.Descartes.*` | `64 files` |

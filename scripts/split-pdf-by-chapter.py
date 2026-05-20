@@ -75,27 +75,86 @@ def parse_appendix_dirs(manifest_path: Path) -> set[str]:
     return {dir for dir in parse_chapter_list(manifest_path) if dir.startswith("appendix-")}
 
 
-def collect_top_level_bookmarks(reader: PdfReader) -> list[tuple[str, int]]:
-    """Return [(title, start_page_0idx), ...] for top-level outline entries."""
-    out = []
+def parse_chapter_title(repo_root: Path, paper: str, chapter_dir: str) -> str:
+    """Read the chapter's title from content/<paper>/<dir>/<dir>.ts."""
+    ts_path = repo_root / "content" / paper / chapter_dir / f"{chapter_dir}.ts"
+    if not ts_path.exists():
+        return chapter_dir  # fallback to dir name
+    src = ts_path.read_text()
+    m = re.search(r'title:\s*["\']([^"\']+)["\']', src)
+    return m.group(1) if m else chapter_dir
+
+
+def collect_all_bookmarks(reader: PdfReader) -> list[tuple[str, int, int]]:
+    """Return [(title, start_page_0idx, depth), ...] for every outline entry,
+    flat across depths. Title-based matching against the manifest is more
+    robust than position-based matching because the LaTeX render can promote
+    section-level entries to outline depth 0 (e.g. notation register
+    subsections) or demote chapters below depth 0 (e.g. molecular-construction
+    missing entirely from depth-0 listing).
+    """
+    out: list[tuple[str, int, int]] = []
 
     def walk(items, depth=0):
-        # pypdf outline: list where nested lists are children of the prior entry.
         for item in items:
             if isinstance(item, list):
-                # children of previous entry — skip; we only want top-level chapters
+                # nested list = children of the previous sibling
+                walk(item, depth=depth + 1)
                 continue
-            # item has .title and is a Destination
             title = getattr(item, "title", None) or "(untitled)"
             try:
                 page = reader.get_destination_page_number(item)
             except Exception:
                 page = None
-            if page is not None and depth == 0:
-                out.append((title, page))
+            if page is not None:
+                out.append((title, page, depth))
 
     walk(reader.outline, depth=0)
     return out
+
+
+def normalize_title(s: str) -> str:
+    """Lowercase and collapse non-alphanumerics for tolerant matching."""
+    return re.sub(r"[^a-z0-9]+", "", s.lower())
+
+
+def find_bookmark_for_chapter(
+    chapter_title: str,
+    bookmarks: list[tuple[str, int, int]],
+) -> int | None:
+    """Find the bookmark index whose title matches the chapter title.
+    Strategy: exact match (normalized) at the shallowest depth available,
+    then prefix match, then substring match. Returns the bookmark index or
+    None if no match found.
+    """
+    target = normalize_title(chapter_title)
+    if not target:
+        return None
+
+    # 1. Exact match at shallowest depth
+    best_idx = None
+    best_depth = 999
+    for i, (title, _page, depth) in enumerate(bookmarks):
+        if normalize_title(title) == target and depth < best_depth:
+            best_idx = i
+            best_depth = depth
+    if best_idx is not None:
+        return best_idx
+
+    # 2. Prefix match
+    for i, (title, _page, _depth) in enumerate(bookmarks):
+        nt = normalize_title(title)
+        if nt.startswith(target) or target.startswith(nt):
+            if len(nt) >= 4 and len(target) >= 4:  # avoid trivial matches
+                return i
+
+    # 3. Substring match (avoid runaway false positives — require ≥6 chars)
+    if len(target) >= 6:
+        for i, (title, _page, _depth) in enumerate(bookmarks):
+            if target in normalize_title(title):
+                return i
+
+    return None
 
 
 def slice_pdf(reader: PdfReader, start_page: int, end_page: int, dest: Path) -> None:
@@ -151,94 +210,145 @@ def main() -> int:
     total_pages = len(reader.pages)
     print(f"  {total_pages} pages total")
 
-    bookmarks = collect_top_level_bookmarks(reader)
-    print(f"  {len(bookmarks)} top-level bookmarks")
+    bookmarks = collect_all_bookmarks(reader)
+    print(f"  {len(bookmarks)} outline entries (all depths)")
 
-    # Hard fail: no bookmarks means the PDF has no outline (hyperref missing
-    # or compile produced unbookmarked output). Silently emitting zero
-    # outputs would let CI publish a broken paper without chapter PDFs.
+    # Hard fail: no bookmarks at all means the PDF has no outline.
     if not bookmarks:
-        print("ERROR: main.pdf has no top-level bookmarks — cannot split. "
+        print("ERROR: main.pdf has no outline entries — cannot split. "
               "Ensure hyperref is loaded and \\chapter{...} commands produce "
               "outline entries.", file=sys.stderr)
         return 1
 
-    # Hard fail: count mismatch of more than 2 indicates structural drift
-    # (manifest changed, chapters added/removed, or main.pdf was built from
-    # a different source). Publishing a misaligned split is worse than
-    # publishing nothing.
-    drift = abs(len(bookmarks) - len(main_chapters_in_order))
-    if drift > 2:
-        print(f"ERROR: bookmark count ({len(bookmarks)}) differs from manifest "
-              f"main-chapter count ({len(main_chapters_in_order)}) by {drift} "
-              "— split would be misaligned. Refusing to publish.", file=sys.stderr)
+    # Build chapter-dir → (title, matched_bookmark_idx, start_page) map by
+    # matching each manifest chapter's title against the flat outline.
+    # Position-based matching is unreliable: front-matter (notation register)
+    # subsections frequently get promoted to outline depth 0, and some content
+    # chapters (e.g. molecular-construction) are not bookmarked at depth 0 in
+    # the rendered PDF. Title-based matching is robust against both cases.
+    matched: list[tuple[str, str, int]] = []  # (chapter_dir, title, start_page)
+    unmatched: list[str] = []
+    for chapter_dir in main_chapters_in_order:
+        chapter_title = parse_chapter_title(repo_root, args.paper, chapter_dir)
+        bm_idx = find_bookmark_for_chapter(chapter_title, bookmarks)
+        if bm_idx is None:
+            unmatched.append(f"{chapter_dir} (title: {chapter_title!r})")
+            print(f"  ⚠ no bookmark match for chapter: {chapter_dir} "
+                  f"(title: {chapter_title!r})", file=sys.stderr)
+            continue
+        matched.append((chapter_dir, bookmarks[bm_idx][0], bookmarks[bm_idx][1]))
+
+    # Sort matched chapters by page (preserves the order they appear in the
+    # rendered PDF, which should match the manifest order but we don't rely
+    # on it).
+    matched.sort(key=lambda x: x[2])
+
+    if not matched:
+        print(f"ERROR: matched zero of {len(main_chapters_in_order)} manifest "
+              "chapters to bookmarks — cannot split. Available bookmark titles "
+              "(first 10):", file=sys.stderr)
+        for bt, bp, bd in bookmarks[:10]:
+            print(f"    [d={bd} p={bp + 1}] {bt}", file=sys.stderr)
         return 1
 
-    # Pair bookmarks with chapter slugs by position.
-    # If counts mismatch, we use the shorter of the two and warn.
-    pairs = list(zip(main_chapters_in_order, bookmarks))
-    if len(pairs) < len(bookmarks):
-        # extra bookmarks — fall back to slugifying the bookmark title for trailing ones
-        for title, page in bookmarks[len(pairs):]:
-            slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-") or "untitled"
-            pairs.append((slug, (title, page)))
+    # A heavy mismatch (less than half matched) likely indicates a stale
+    # manifest or a rendering bug; refuse to publish rather than ship a
+    # mostly-empty split.
+    match_ratio = len(matched) / len(main_chapters_in_order)
+    if match_ratio < 0.6:
+        print(f"ERROR: only {len(matched)} of {len(main_chapters_in_order)} "
+              f"manifest chapters matched bookmarks ({match_ratio:.0%}). "
+              "Refusing to publish a misaligned split. Unmatched: "
+              f"{', '.join(unmatched[:5])}{' ...' if len(unmatched) > 5 else ''}",
+              file=sys.stderr)
+        return 1
 
-    # Determine page ranges: chapter i spans [start_i, start_{i+1}); last spans to end.
-    ranges = []
-    for i, (slug, (title, page)) in enumerate(pairs):
-        next_page = pairs[i + 1][1][1] if i + 1 < len(pairs) else total_pages
+    if unmatched:
+        print(f"  ⚠ {len(unmatched)} chapter(s) unmatched; their pages will be "
+              f"absorbed into the prior matched chapter's PDF: {unmatched}",
+              file=sys.stderr)
+
+    # Determine page ranges for each matched chapter: chapter i spans
+    # [start_i, start_{i+1}); the last matched chapter extends to the next
+    # *outline* entry after it (whether matched or not) — this prevents
+    # trailing appendix bookmarks (Q-Value, Surreal, Appendix B refs) that
+    # somehow ended up in main.pdf from being absorbed into the final
+    # content chapter PDF.
+    last_match_page = matched[-1][2]
+    next_outline_page_after_last = total_pages
+    for bt, bp, bd in bookmarks:
+        if bp > last_match_page:
+            next_outline_page_after_last = bp
+            break
+
+    ranges: list[tuple[str, str, int, int]] = []
+    for i, (slug, title, page) in enumerate(matched):
+        if i + 1 < len(matched):
+            next_page = matched[i + 1][2]
+        else:
+            next_page = next_outline_page_after_last
         ranges.append((slug, title, page, next_page))
 
-    # Split: write per-chapter PDFs; collect front-matter chapters for bundling.
+    # Identify the content-chapter region.  Front-matter chapters
+    # (introduction / notation / glossary / index-of-definitions) are
+    # NOT emitted as standalone PDFs; instead the *page range* containing
+    # them is bundled into front-matter.pdf along with the document's
+    # unbookmarked head (title page, TOC, abstract) and tail.  This is
+    # robust to front-matter chapters either matching their own bookmark
+    # or being absorbed into the unbookmarked head.
+    content_ranges = [r for r in ranges if r[0] not in FRONT_MATTER_GROUP]
+    if not content_ranges:
+        print("ERROR: no content chapters matched bookmarks "
+              "(only front-matter chapters matched).", file=sys.stderr)
+        return 1
+
+    first_content_start = content_ranges[0][2]
+    last_content_end = content_ranges[-1][3]
+
+    # Write per-chapter PDFs for content chapters.
     outputs = []
-    front_matter_ranges: list[tuple[str, int, int]] = []
-    for slug, title, start, end in ranges:
-        if slug in FRONT_MATTER_GROUP:
-            front_matter_ranges.append((slug, start, end))
-            print(f"  [front-matter] {slug}: pages {start + 1}–{end} ({title})")
-        else:
-            dest = out_dir / f"{slug}.pdf"
-            slice_pdf(reader, start, end, dest)
-            outputs.append({"slug": slug, "title": title,
-                            "pages": [start + 1, end],
-                            "path": str(dest.name)})
-            print(f"  [chapter]     {slug}: pages {start + 1}–{end} → {dest.name}")
+    for slug, title, start, end in content_ranges:
+        dest = out_dir / f"{slug}.pdf"
+        slice_pdf(reader, start, end, dest)
+        outputs.append({"slug": slug, "title": title,
+                        "pages": [start + 1, end],
+                        "path": str(dest.name)})
+        print(f"  [chapter] {slug}: pages {start + 1}–{end} → {dest.name}")
 
-    # Build front-matter bundle.
-    # If the front-matter chapters are contiguous (typical: intro+notation at start,
-    # glossary+index at end), we may emit two segments. To keep "one PDF" we merge.
-    if front_matter_ranges:
-        fm_writer = PdfWriter()
-        for slug, start, end in front_matter_ranges:
-            for i in range(start, end):
-                fm_writer.add_page(reader.pages[i])
-        # Also include the "front matter" pages before the first bookmark
-        # (title page, TOC, abstract, etc.) — pages [0, bookmarks[0].start).
-        if ranges:
-            first_start = ranges[0][2]
-            if first_start > 0:
-                # Prepend by building a fresh writer; pypdf does not support insert-at
-                # ergonomically, so we rebuild.
-                head_writer = PdfWriter()
-                for i in range(0, first_start):
-                    head_writer.add_page(reader.pages[i])
-                for slug, start, end in front_matter_ranges:
-                    for i in range(start, end):
-                        head_writer.add_page(reader.pages[i])
-                fm_writer = head_writer
+    # Build front-matter bundle = pages [0, first_content_start).
+    # We deliberately do NOT include the tail [last_content_end, total_pages):
+    # in QOU's render the tail contains stray appendix bookmarks (Q-Value,
+    # Surreal, Appendix B references) that already have their own standalone
+    # PDFs from step 2c. Glossary and index-of-definitions live in the head
+    # region (they're rendered before the first content chapter) so they're
+    # captured automatically.
+    fm_writer = PdfWriter()
+    fm_segments: list[tuple[int, int]] = []
+    if first_content_start > 0:
+        fm_segments.append((0, first_content_start))
+        for i in range(0, first_content_start):
+            fm_writer.add_page(reader.pages[i])
 
+    if fm_segments:
         fm_dest = out_dir / f"{args.front_matter_name}.pdf"
         if reader.metadata:
             fm_writer.add_metadata({k: v for k, v in reader.metadata.items() if v is not None})
         with open(fm_dest, "wb") as f:
             fm_writer.write(f)
-        outputs.append({"slug": args.front_matter_name,
-                        "title": "Front matter (introduction, notation, glossary, index)",
-                        "pages": None,
-                        "path": fm_dest.name,
-                        "bundled": [s for s, _, _ in front_matter_ranges]})
-        print(f"  [front-matter bundle] → {fm_dest.name} "
-              f"(bundles: {', '.join(s for s, _, _ in front_matter_ranges)})")
+        bundled = [r[0] for r in ranges if r[0] in FRONT_MATTER_GROUP]
+        outputs.append({
+            "slug": args.front_matter_name,
+            "title": "Front matter (introduction, notation, glossary, index)",
+            "pages": None,
+            "path": fm_dest.name,
+            "page_segments": [[s + 1, e] for s, e in fm_segments],
+            "bundled_chapters": bundled,
+        })
+        print(f"  [front-matter] {fm_dest.name} ← pages "
+              f"{', '.join(f'{s+1}–{e}' for s, e in fm_segments)}")
+    else:
+        print("  ⚠ no front-matter pages to bundle (first content chapter "
+              "starts at page 1 and last content chapter ends at total_pages)")
 
     # Emit machine-readable manifest.
     manifest_out = out_dir / "pdf-split-manifest.json"

@@ -527,22 +527,38 @@ jobs:
           done
 
       # ── 2d. Split main.pdf into per-chapter PDFs ──────────────────────
-      # Post-process main.pdf using its top-level outline (bookmarks) into
-      # one PDF per main chapter, plus a bundled front-matter PDF holding
-      # the front matter + notation + glossary + index.  Appendix PDFs
-      # are produced upstream by the standalone-appendix step (2c).
+      # Post-process main.pdf using its outline entries (matched against
+      # the paper manifest's chapter titles) into one PDF per main
+      # chapter, plus a bundled front-matter PDF holding the head
+      # (title page, TOC, abstract, introduction, notation).  Appendix
+      # PDFs are produced upstream by the standalone-appendix step (2c).
+      #
+      # Failure handling: on `main` publications, a split failure (zero
+      # bookmarks / heavy mismatch / etc.) means the chapter PDFs would
+      # be missing or misaligned on gh-pages — hard-fail. On feature
+      # branches we tolerate failures and just emit `::warning::` so
+      # preview builds still ship the full main.pdf.
       - name: Split main.pdf into per-chapter PDFs
         if: success()
-        continue-on-error: true
+        continue-on-error: ${{ env.HEAD_REF != 'main' }}
         run: |
           mkdir -p chapter-pdfs
-          python3 scripts/split-pdf-by-chapter.py \
-            --pdf main.pdf \
-            --paper quantum-observable-universe \
-            --out-dir chapter-pdfs
-          echo ""
-          echo "Chapter PDF outputs:"
-          ls -la chapter-pdfs/ || true
+          if python3 scripts/split-pdf-by-chapter.py \
+               --pdf main.pdf \
+               --paper quantum-observable-universe \
+               --out-dir chapter-pdfs; then
+            echo ""
+            echo "Chapter PDF outputs:"
+            ls -la chapter-pdfs/ || true
+          else
+            if [ "${HEAD_REF}" = "main" ]; then
+              echo "::error::split-pdf-by-chapter.py failed on main publication"
+              exit 1
+            else
+              echo "::warning::split-pdf-by-chapter.py failed (feature branch — non-fatal; preview builds still ship the full main.pdf)"
+              exit 1
+            fi
+          fi
 
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
