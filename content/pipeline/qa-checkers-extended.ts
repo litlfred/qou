@@ -491,8 +491,40 @@ export function checkDetanglerArchimedeanWall(
 
 // ─── Proof axis ─────────────────────────────────────────────────
 
-const BARE_SORRY_REF_GAP_LINES = 3; // a `-- Ref:` must appear within
-// the previous N lines of a `sorry`
+// Lookback rule: a `-- Ref:` covers a `sorry` if it appears
+//   (a) on the same line as the sorry, OR
+//   (b) anywhere between the sorry and the start of the enclosing
+//       top-level declaration (instance, def, theorem, …), OR
+//   (c) within the 5 lines immediately preceding that decl-opening
+//       (where authors typically place per-declaration citations).
+// This matches actual authoring practice — one `-- Ref:` above an
+// `instance ... where` covers every sorry-bodied field within it,
+// rather than requiring each field to repeat the citation.
+const BARE_SORRY_REF_PREDECL_LINES = 5;
+const DECL_BOUNDARY_RE =
+  /^(?:noncomputable\s+|@\[[^\]]*\]\s+)*(?:def|instance|theorem|lemma|proposition|example|abbrev|structure|class|inductive|opaque)\b/;
+const REF_LINE_RE = /--\s*Ref:\s*\[/;
+
+function bareSorryHasRefInScope(
+  origLines: string[],
+  sorryLineIdx: number,
+): boolean {
+  if (REF_LINE_RE.test(origLines[sorryLineIdx] ?? "")) return true;
+  let declStart = -1;
+  for (let j = sorryLineIdx - 1; j >= 0; j--) {
+    if (REF_LINE_RE.test(origLines[j])) return true;
+    if (DECL_BOUNDARY_RE.test(origLines[j])) {
+      declStart = j;
+      break;
+    }
+  }
+  if (declStart < 0) return false;
+  const stop = Math.max(0, declStart - BARE_SORRY_REF_PREDECL_LINES);
+  for (let j = declStart - 1; j >= stop; j--) {
+    if (REF_LINE_RE.test(origLines[j])) return true;
+  }
+  return false;
+}
 
 export function checkProofNoBareSorries(
   leanPath: string | undefined,
@@ -516,26 +548,15 @@ export function checkProofNoBareSorries(
   const hits: CheckerHit[] = [];
   for (let i = 0; i < lines.length; i++) {
     if (!/\bsorry\b/.test(lines[i])) continue;
-    let hasRef = false;
-    for (
-      let j = Math.max(0, i - BARE_SORRY_REF_GAP_LINES);
-      j < i;
-      j++
-    ) {
-      if (/--\s*Ref:\s*\[/.test(origLines[j])) {
-        hasRef = true;
-        break;
-      }
-    }
-    if (!hasRef) {
-      hits.push({
-        file: leanPath ?? "(unknown)",
-        line: i + 1,
-        text:
-          `bare \`sorry\` at line ${i + 1} — no \`-- Ref: [key]\` citation in ` +
-          `the previous ${BARE_SORRY_REF_GAP_LINES} lines`,
-      });
-    }
+    if (bareSorryHasRefInScope(origLines, i)) continue;
+    hits.push({
+      file: leanPath ?? "(unknown)",
+      line: i + 1,
+      text:
+        `bare \`sorry\` at line ${i + 1} — no \`-- Ref: [key]\` citation ` +
+        `on the same line, within the enclosing declaration, or in the ` +
+        `${BARE_SORRY_REF_PREDECL_LINES} lines preceding its opening`,
+    });
   }
   return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
