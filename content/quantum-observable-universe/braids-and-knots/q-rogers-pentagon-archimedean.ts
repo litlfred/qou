@@ -22,7 +22,7 @@ export default proposition({
       "folio-assistant/computations/pentagon_reduction_li2q.py",
     witness:
       "folio-assistant/computations/pentagon-reduction-li2q.witness.json",
-    status: "verified-empirically-q0",
+    status: "verified",
   },
   tags: [
     "pentagon",

@@ -20,7 +20,7 @@ export default conjecture({
       "folio-assistant/computations/binding_block_multiplicative.py",
     witness:
       "folio-assistant/computations/binding-block-multiplicative.witness.json",
-    status: "verified-empirically-A2-A3",
+    status: "verified",
   },
   tags: [
     "wedderburn",

@@ -20,7 +20,7 @@ export default conjecture({
       "folio-assistant/computations/delta_lambda_z4N_phase4.py",
     witness:
       "folio-assistant/computations/delta-lambda-z4N-phase4.witness.json",
-    status: "verified-empirically-022pct",
+    status: "verified",
   },
   tags: [
     "delta-lambda",

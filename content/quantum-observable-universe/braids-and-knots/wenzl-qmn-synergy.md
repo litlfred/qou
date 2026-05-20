@@ -4,7 +4,10 @@
 *The Wenzl-bridge ([y-lambda-closed-form](#prop:y-lambda-closed-form-wenzl-bridge))
 gives $y_\lambda(q)$ as a closed q-rational expression in $\sqrt q$
 in $O(p(n) \cdot \max\text{hooks})$ time, while q-Murnaghan-Nakayama
-([Halverson-Ram 1995, Wenzl q-MN as in `q_mn_canonical.py`]) gives
+([Halverson-Ram 1995, Wenzl q-MN, originally in
+`folio-assistant/computations/_deprecated/q_mn_canonical.py`,
+now consolidated into the unified Hoefsmit path
+`hecke_characters.chi_lambda_braid`]) gives
 $\chi_\lambda(T_w; q)$ for canonical permutation braids $T_w$ in
 $O(n^2)$ time.*
 
@@ -71,9 +74,15 @@ $n$ and every reduced word $w$.
 
 ## Code
 
-[`folio-assistant/computations/q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_mn_canonical.py)
-implements `chi_q_canonical_T_w(λ, µ, q)` returning the q-character
-on canonical T_w via q-Murnaghan-Nakayama.
+The original q-Murnaghan-Nakayama implementation
+[`folio-assistant/computations/_deprecated/q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/_deprecated/q_mn_canonical.py)
+exposed `chi_q_canonical_T_w(λ, µ, q)` for canonical permutation
+braids $T_w$.  Active code now uses the unified Hoefsmit path
+[`hecke_characters.chi_lambda_braid`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hecke_characters.py),
+which handles both canonical $T_w$ and arbitrary braid words
+(positive and inverse generators) through the same API.  The
+q-MN speedup quoted above applies in the canonical-$T_w$ regime
+where the q-character is a class function of cycle type.
 
 [`folio-assistant/computations/y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)
 implements the Wenzl-bridge giving $y_\lambda(q)$ symbolic for
