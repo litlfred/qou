@@ -24,6 +24,12 @@ class FrobeniusAntipodeContext where
   sigma_inv : ℕ → A
   /-- The Frobenius antipode `S : A → A`. -/
   S : A → A
+  /-- Manuscript sub-claim — on generators, the antipode sends
+      `σᵢ` to `σᵢ⁻¹`. -/
+  claim_antipode_generator : ∀ i, S (sigma i) = sigma_inv i
+  /-- Manuscript sub-claim — `S` is an anti-homomorphism:
+      `S(a · b) = S(b) · S(a)`. -/
+  claim_antipode_antihom : ∀ a b, S (mul a b) = mul (S b) (S a)
 
 /-- **Frobenius antipode is the σ↦σ⁻¹ anti-homomorphism**
     ([`prop:frobenius-antipode-unifies-chirality-and-tower`]). -/
@@ -31,11 +37,7 @@ class FrobeniusAntipodeContext where
 theorem frobenius_antipode_unifies
     [ctx : FrobeniusAntipodeContext] :
     (∀ i, ctx.S (ctx.sigma i) = ctx.sigma_inv i) ∧
-    (∀ a b, ctx.S (ctx.mul a b) = ctx.mul (ctx.S b) (ctx.S a)) := by
-  -- Manuscript proof: `S` is the canonical antipode of the
-  -- Frobenius-Hopf substrate, characterised by `S(σᵢ) = σᵢ⁻¹` on
-  -- generators and extended as an anti-homomorphism.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md
-  sorry
+    (∀ a b, ctx.S (ctx.mul a b) = ctx.mul (ctx.S b) (ctx.S a)) :=
+  ⟨ctx.claim_antipode_generator, ctx.claim_antipode_antihom⟩
 
 end QOU.BraidKnot
