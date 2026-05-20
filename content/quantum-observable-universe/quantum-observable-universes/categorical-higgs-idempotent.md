@@ -120,7 +120,7 @@ satisfying $e_H^2 = e_H$ (idempotent) with $\mathrm{tr}(e_H) = 1$
 
 ### Status
 
-🟡 **Open**. The construction sketch above is a categorical
+**Open**. The construction sketch above is a categorical
 *translation* of standard QFT Higgs mechanics; converting it to
 a derivation rigorous enough to *compute*
 $\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ at $q_0$ requires:
@@ -152,7 +152,7 @@ but is *not* a substitute for derivation.
 | HIGGS-SLOT (PR #513) | 🔴 retraction recommended | 🟢 scalar slot identified |
 | U2 (force-carrier dichotomy) | 🟡 structural premise | 🟢 derived |
 | U4 (EW mass eigenstate count) | 🟡 structural premise | 🟢 derived |
-| §3·A v4 calibration scale | 🟡 wrong direction | 🟢 calibrated to N_sym |
+| §3.A v4 calibration scale | 🟡 wrong direction | 🟢 calibrated to N_sym |
 | SHELL-7 reweighting | 🔴 falsified | 🟡 reformulation possible with κ=0 stratum + Higgs-eaten weights |
 
 **Six audit flags affected by a single derivation.** This is the

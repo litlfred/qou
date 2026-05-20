@@ -20,12 +20,12 @@ $$
 
 $$
   \Delta_q \;=\; q^{-2} \Delta
-  + q^{-1}(1 - q^{-1})\,\mathcal{C}
+  + q^{-1}(1 - q^{-1})\,\mathfrak{C}
   + (1 - q^{-1})^2\,\Delta_\xi,
 $$
 
-where $\mathcal{C}$ is the Coriolis cross-coupling and $\Delta_\xi$ is
-the pure Reeb-spin Laplacian.  Each of $\mathcal{C}$ and $\Delta_\xi$
+where $\mathfrak{C}$ is the Coriolis cross-coupling and $\Delta_\xi$ is
+the pure Reeb-spin Laplacian.  Each of $\mathfrak{C}$ and $\Delta_\xi$
 contains at least one factor of $\mathcal{L}_\xi$ or $\iota_\xi$.
 
 The Gaussian $G_q$ depends only on the base coordinates $x \in M$,

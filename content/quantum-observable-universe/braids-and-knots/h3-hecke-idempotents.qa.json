@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.lean"
   },
   "source_hashes": {
-    "md": "512c05c3632f",
+    "md": "7a885124411e",
     "ts": "3ce456148ac2",
     "lean": "9f9a17326ec8"
   },
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-status-leak": [
@@ -43,8 +58,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-emoji-content": [
@@ -60,8 +90,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-first-person-work": [
@@ -77,8 +122,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-time-stamped-notes": [
@@ -94,8 +154,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-unicode-crash": [
@@ -105,7 +180,7 @@
           "ts": "3ce456148ac2",
           "lean": "9f9a17326ec8"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -115,6 +190,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md:19: - `dimQ_V21 q : ℝ = q + q⁻¹` (= $[2]_q$ at H_3) | content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md:22: - `sigma_eigval_V111 q i : ℝ = -q⁻¹` (for every $i$)"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -130,8 +220,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "framework-canonical": [
@@ -147,10 +252,107 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "512c05c3632f",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "H_3(q) Hecke idempotents, Wedderburn blocks, q-dimensions — central Hecke content."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "512c05c3632f",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "512c05c3632f",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

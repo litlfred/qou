@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.lean"
   },
   "source_hashes": {
-    "md": "ef975baeddff",
+    "md": "09a2f176cef5",
     "ts": "f34912e5dac3",
     "lean": "fa5d2b6cfce7"
   },
@@ -28,12 +28,42 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "947d6f03422f",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "ef975baeddff",
+          "md": "be4a6c36748b",
           "ts": "f34912e5dac3",
           "lean": "fa5d2b6cfce7"
         },
@@ -45,65 +75,42 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "947d6f03422f",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "ef975baeddff",
-          "ts": "f34912e5dac3",
-          "lean": "fa5d2b6cfce7"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:74: | (1) `BlochGroup F` quotient | ✅ concrete construction | n/a | ⏳ pentagon generators wiring | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:75: | (2) $\\mathrm{Cl}_2$ pentagon | ✅ class hook | ✅ all-zero unconditional | ⏳ Mathlib Fourier infra | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:76: | (3) Faddeev-Kashaev | ✅ class hook | ✅ `x = 0` unconditional | ⏳ Mathlib uniform Tauberian |"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "ef975baeddff",
-          "ts": "f34912e5dac3",
-          "lean": "fa5d2b6cfce7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "ef975baeddff",
-          "ts": "f34912e5dac3",
-          "lean": "fa5d2b6cfce7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "ef975baeddff",
+          "md": "be4a6c36748b",
           "ts": "f34912e5dac3",
           "lean": "fa5d2b6cfce7"
         },
@@ -117,6 +124,164 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:11: - *(3-boundary) For every `(q, n)`, `(1 - q) · log Φ_n(0; q) - | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:74: | (1) `BlochGroup F` quotient | ✅ concrete construction | n/a | ⏳ pentagon generators wiring | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:75: | (2) $\\mathrm{Cl}_2$ pentagon | ✅ class hook | ✅ all-zero unconditional | ⏳ Mathlib Fourier infra | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:76: | (3) Faddeev-Kashaev | ✅ class hook | ✅ `x = 0` unconditional | ⏳ Mathlib uniform Tauberian |"
+      },
+      {
+        "field_hash": {
+          "md": "947d6f03422f",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:11: - *(3-boundary) For every `(q, n)`, `(1 - q) · log Φ_n(0; q) -"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "be4a6c36748b",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "947d6f03422f",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "be4a6c36748b",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "947d6f03422f",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "be4a6c36748b",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [
@@ -134,6 +299,36 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "947d6f03422f",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "framework-canonical": [
@@ -151,8 +346,168 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "947d6f03422f",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd77e73fa485",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-descartes-A-G",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:09:23.596Z",
+        "reviewed_sha": "fe4effd2092e90b619161d721df95845e802f21e",
+        "notes": "default-pass (chapter=descartes-universe)"
+      },
+      {
+        "field_hash": {
+          "md": "73d841327419",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      },
+      {
+        "field_hash": {
+          "md": "73d841327419",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-3-final",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:34.732Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash refresh: replaced (1 - q) · log → (1 - q) * log inside backtick code span. Semantic content unchanged."
+      },
+      {
+        "field_hash": {
+          "md": "be4a6c36748b",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-post-prepare-merge-rebase",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T04:01:14.142Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
+        "notes": "Hash-refresh post-rebase onto main 6bff6d33; previous verdict (pass) carried forward (semantic content unchanged)."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "be4a6c36748b",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "be4a6c36748b",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "09a2f176cef5",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

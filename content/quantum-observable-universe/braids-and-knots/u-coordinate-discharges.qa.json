@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/u-coordinate-discharges.lean"
   },
   "source_hashes": {
-    "md": "bdebe7582513",
+    "md": "ab85c9ce45ab",
     "ts": "58973cb79503",
     "lean": "a23da0006ab9"
   },
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-status-leak": [
@@ -43,8 +58,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-emoji-content": [
@@ -60,8 +90,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-first-person-work": [
@@ -77,8 +122,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-time-stamped-notes": [
@@ -94,8 +154,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-unicode-crash": [
@@ -105,7 +180,7 @@
           "ts": "58973cb79503",
           "lean": "a23da0006ab9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -115,6 +190,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/u-coordinate-discharges.md:16: | Identity | Form in `u = q²` |"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -130,8 +220,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "framework-canonical": [
@@ -147,10 +252,123 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6e2c6b6be6f0",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "Macdonald u = q² substitution for H_3/V_(2,1) Hecke invariants — Hecke."
+      },
+      {
+        "field_hash": {
+          "md": "bdebe7582513",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-post-prepare-merge-rebase",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T04:01:14.142Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
+        "notes": "Hash-refresh post-rebase onto main 6bff6d33; previous verdict (pass) carried forward (semantic content unchanged)."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "bdebe7582513",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "bdebe7582513",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

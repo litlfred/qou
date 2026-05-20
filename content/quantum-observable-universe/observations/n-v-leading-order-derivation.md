@@ -74,7 +74,7 @@ the upstream conjectures.*
 
 *Numerical sanity check at $q_0 = 1.109978595554181\ldots$ (50 dps):
 $v / m_e \approx 481\,839$, $q_0^{90} \approx 12\,012$, ratio
-$\approx 40.11$, so $\varepsilon \approx 0.003 < 0.006$. ✓*
+$\approx 40.11$, so $\varepsilon \approx 0.003 < 0.006$. (yes)*
 
 ## Sub-leading correction (open)
 

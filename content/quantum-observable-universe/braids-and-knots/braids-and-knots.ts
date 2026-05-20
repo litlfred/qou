@@ -70,7 +70,7 @@ export default chapter({
         "su2-so3-intro",
         "su2-basis",
         "first-order-taylor",
-        "su2-generators",
+        // su2-generators relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
         "so3-generators",
         "quaternion-so3-motivation",
       ],
@@ -164,7 +164,7 @@ export default chapter({
       blocks: [
         "lagrange-q-kinematics-intro",
         // DFT decomposition of cyclic representations
-        "lagrange-resolvent-transform",
+        // lagrange-resolvent-transform relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
         "lagrange-resolvents",
         // q-deformed physical quantities (general QOU)
         "q-momentum",
@@ -182,7 +182,7 @@ export default chapter({
       label: "sec:exceptional-divisor-reeb",
       blocks: [
         "exceptional-divisor-reeb-intro",
-        "exceptional-divisor",
+        // exceptional-divisor relocated to quantum-observable-universes/ (PR #823 fit-section-chapter audit)
         "reeb-bundle",
         "reeb-exceptional-divisor",
         "vertex-operator",
@@ -1011,14 +1011,14 @@ export default chapter({
         "genus-2-intro",
         // ── Commutative-limit / genus-2 Track A ─────────────────────
         "commutative-qou",
-        "hyperelliptic-quintic",
+        // hyperelliptic-quintic relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
         "hyperelliptic-z5-classification",
-        "x5-z5-automorphism",
+        // x5-z5-automorphism relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
         "bring-z5-descent",
-        "x5-bring-weight-identification",
+        // x5-bring-weight-identification relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
         "x5-bring-prym-jacobian",
         "weight-identification-consequences",
-        "u1-equivariant-reduction",
+        // u1-equivariant-reduction relocated to quantum-observable-universes/ (PR #823 fit-section-chapter audit)
         "u1-phase-tube",
         // ── Mirror bundle ───────────────────────────────────────────
         "descent-mirror-intro",

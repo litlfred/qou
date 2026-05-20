@@ -1,0 +1,120 @@
+# QA sweep CI — runs the `one-voice-integration-watcher`'s automated
+# checkers against the changed-block set on every PR + push to main.
+#
+# Triggers
+# ────────
+#   pull_request — PRs that touch any of:
+#     - content/**/*.{md,ts,lean}
+#     - content/pipeline/qa-*.ts
+#     - content/pipeline/qa-criteria-registry.ts
+#     - folio-assistant/schemas/block-qa.ts
+#     - .claude/skills/local/one-voice-*.md
+#     - this workflow file
+#   push (main) — same path filters
+#   workflow_dispatch — manual run
+#
+# Behaviour
+# ─────────
+#   - Runs `bun run qa-sweep:ci` on the QOU paper. Currently uses
+#     `continue-on-error: true` so the workflow does NOT fail on the
+#     baseline 213 critical findings (mostly `wall-side-correct`
+#     §7c drift that pre-dates this watcher). Once the baseline is
+#     cleaned up, flip to strict mode by removing `continue-on-error`.
+#   - Runs `bun run qa-staleness:ci` to surface blocks with stale or
+#     missing sidecars under the watcher's criterion set.
+#
+# Schema / skill references
+# ─────────────────────────
+#   - Skill: `.claude/skills/local/one-voice-integration-watcher.md`
+#   - Schema: `folio-assistant/schemas/block-qa.ts`
+#   - Registry: `content/pipeline/qa-criteria-registry.ts`
+
+name: QA sweep (one-voice integration watcher)
+
+on:
+  pull_request:
+    paths:
+      - "content/**/*.md"
+      - "content/**/*.ts"
+      - "content/**/*.lean"
+      - "content/pipeline/qa-*.ts"
+      - "content/pipeline/qa-criteria-registry.ts"
+      - "folio-assistant/schemas/block-qa.ts"
+      - ".claude/skills/local/one-voice-*.md"
+      - ".github/workflows/qa-sweep.yml"
+  push:
+    branches: [main]
+    paths:
+      - "content/**/*.md"
+      - "content/**/*.ts"
+      - "content/**/*.lean"
+      - "content/pipeline/qa-*.ts"
+      - "content/pipeline/qa-criteria-registry.ts"
+      - "folio-assistant/schemas/block-qa.ts"
+      - ".claude/skills/local/one-voice-*.md"
+      - ".github/workflows/qa-sweep.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa-sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.1.30"
+
+      - name: Install content deps
+        run: |
+          cd content
+          bun install --frozen-lockfile 2>/dev/null || bun install
+
+      # Warn-only while the baseline still has 213 critical findings
+      # (mostly §7c wall-side drift). Once the backlog is cleaned up,
+      # remove `continue-on-error` so the workflow gates merges.
+      - name: QA sweep (warn-only on baseline criticals)
+        continue-on-error: true
+        run: |
+          cd content
+          bun run qa-sweep:ci 2>&1 | tee /tmp/qa-sweep.log
+          echo ""
+          echo "Sweep exit code: ${PIPESTATUS[0]}"
+
+      - name: QA staleness map
+        continue-on-error: true
+        run: |
+          cd content
+          bun run qa-staleness:ci 2>&1 | tee /tmp/qa-staleness.log
+
+      # Schema sanity — every committed .qa.json must declare the v1
+      # schema marker. Strict (fails the workflow on shape drift).
+      - name: Schema sanity (.qa.json files)
+        run: |
+          bad=0
+          while IFS= read -r f; do
+            if ! grep -q '"\$schema": "block-qa/v1"' "$f"; then
+              echo "::error file=$f::missing or wrong \$schema marker"
+              bad=$((bad+1))
+            fi
+          done < <(find content -name '*.qa.json' -type f)
+          if [ "$bad" -gt 0 ]; then
+            echo "::error::$bad sidecar(s) failed schema sanity"
+            exit 1
+          fi
+          echo "schema sanity: all .qa.json files pass"
+
+      - name: Upload sweep + staleness logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-sweep-logs
+          path: |
+            /tmp/qa-sweep.log
+            /tmp/qa-staleness.log
+          retention-days: 14

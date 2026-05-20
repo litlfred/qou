@@ -67,9 +67,9 @@ Witness output (paste-ready for the conjecture cone):
 
 ```
 Atom    n_levels  max|Δ^(n)|  geometric-ratio  uniform-bound-pass
-D       3         <empirical> <empirical>      ✓
-T       3         <empirical> <empirical>      ✓
-³He     3         <empirical> <empirical>      ✓
+D       3         <empirical> <empirical>      (yes)
+T       3         <empirical> <empirical>      (yes)
+³He     3         <empirical> <empirical>      (yes)
 ```
 
 (Concrete numerical entries are produced on each run; the
@@ -77,9 +77,11 @@ witness JSON is the canonical record.)
 
 The empirical observation
 ([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)
-§"Open subconjecture 1") that `|hbar_q^(2n) Delta^(n)| ≤
-|hbar_q^(2(n-1)) Delta^(n-1)| · hbar_q^2` to three significant
-figures at $n = 1, 2, 3$ is consistent with a uniform-bound
+§"Open subconjecture 1") that
+$|\hbar_q^{2n}\,\Delta^{(n)}|
+  \le |\hbar_q^{2(n-1)}\,\Delta^{(n-1)}| \cdot \hbar_q^2$
+to three significant figures at $n = 1, 2, 3$ is consistent
+with a uniform-bound
 $\Delta_{\max}$ that holds exactly, with the geometric decay
 coming entirely from the $\hbar_q^{2n}$ prefactor.
 

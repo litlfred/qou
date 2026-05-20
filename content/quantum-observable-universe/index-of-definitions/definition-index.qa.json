@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "unknown",
+  "kind": "unknown",
+  "paths": {
+    "ts": "content/quantum-observable-universe/index-of-definitions/definition-index.ts",
+    "md": "content/quantum-observable-universe/index-of-definitions/definition-index.md"
+  },
+  "source_hashes": {
+    "md": "62d32380d98e",
+    "ts": "28799677c020"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "62d32380d98e",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-small-appendices",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:54:34.039Z",
+        "reviewed_sha": "eb34683c75ba65428ce5d8a12f99478d1338fcc5",
+        "notes": "default-pass (agent reviewed at chapter level; chapter=index-of-definitions)"
+      }
+    ]
+  },
+  "updated_at": "2026-05-19T18:54:34.039Z"
+}

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.lean"
   },
   "source_hashes": {
-    "md": "67f6ebc1d71e",
+    "md": "73076bc90751",
     "ts": "7c3aec38fe8d",
     "lean": "ab3a2421941d"
   },
@@ -28,12 +28,42 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "26c2bdcef925",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -43,14 +73,29 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -60,14 +105,29 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -77,14 +137,29 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -94,18 +169,33 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -115,12 +205,27 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:25: induced by the recursive structure of $\\mathcal{R}$ (e.g.\\ ²H = ⁴He | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:114: | ¹²C | 3 ⊗ ⁴He | $H_{36} \\hookleftarrow H_{12}^{\\otimes 3}$ | | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:117: | ²H | nucleon ⊗ nucleon (Hopf-link binding) | $H_6 \\hookleftarrow H_3^{\\otimes 2}$ | | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:160: | 3 | Extend to $H_6, H_9, H_{12}$ (²H, ³H, ³He, ⁴He) | medium; verify against `mass-table-ppb` |"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -130,11 +235,58 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "26c2bdcef925",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "fit-section-chapter": [
       {
         "field_hash": {
           "md": "67f6ebc1d71e",
@@ -143,14 +295,95 @@
         },
         "result": "pass",
         "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "Joint mass-tower confinement SDP design spec — Hecke T_w(H) coefficients per Wedderburn block."
+      },
+      {
+        "field_hash": {
+          "md": "26c2bdcef925",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "26c2bdcef925",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "26c2bdcef925",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "73076bc90751",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

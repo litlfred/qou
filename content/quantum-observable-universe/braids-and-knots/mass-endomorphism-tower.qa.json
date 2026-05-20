@@ -8,30 +8,11 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean"
   },
   "source_hashes": {
-    "md": "333358f81167",
+    "md": "e45749982840",
     "ts": "2dc33456752b",
     "lean": "7d5293e1f96f"
   },
   "criteria": {
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "333358f81167",
-          "ts": "2dc33456752b",
-          "lean": "7d5293e1f96f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:05:32.956Z",
-        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
-      }
-    ],
     "voice-status-leak": [
       {
         "field_hash": {
@@ -47,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-emoji-content": [
@@ -64,6 +60,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -81,6 +92,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-time-stamped-notes": [
@@ -98,6 +124,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-unicode-crash": [
@@ -115,6 +156,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [
@@ -132,6 +188,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "framework-canonical": [
@@ -149,8 +220,123 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "333358f81167",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "333358f81167",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "333358f81167",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:39:43.529Z",
+        "reviewed_sha": "05d6f0d51ac596e83cf8f65850886cb9828d5599",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "e45749982840",
+          "ts": "2dc33456752b",
+          "lean": "7d5293e1f96f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

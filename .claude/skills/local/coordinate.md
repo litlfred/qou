@@ -316,6 +316,45 @@ Do not silently rebase or force-push to incorporate `main` — those
 are author-authorised actions, see [`.github/copilot-instructions.md`
 § Git Operations].
 
+##### 8a-bis.  Watch for new skills landing on main
+
+In the same `git fetch origin main` pass, additionally run:
+
+```bash
+git diff --name-only --diff-filter=A \
+  <last-fetched-main-sha>..origin/main \
+  -- '.claude/skills/local/*.md' '.claude/skills/*/*.md'
+```
+
+For each new skill file:
+
+1. **Read its frontmatter** (`name`, `roles`, `description`,
+   `inherits`).
+2. **Decide relevance**: does the skill's description overlap your
+   branch's scope?
+   - Mention a file kind / domain / pattern you're editing (touched
+     in `git diff origin/main..HEAD --name-only`), OR
+   - Provide a new integration-watcher child (`inherits:
+     local/integration-watcher`) and your branch is itself an
+     integration-watcher PR, OR
+   - Provide a new QA / sweep / audit skill (one-voice-*, proof-*,
+     compute-*, etc.) and your branch touches the corresponding
+     content blocks.
+3. **Surface to the user via `AskUserQuestion`** with the standard
+   3-chip pattern from `local/watch.md §3.Q3a`:
+   - `Adopt now` — invoke the skill on the relevant subset
+   - `Defer to follow-up branch` — record decision, don't change
+     this branch
+   - `Not relevant` — record so the watcher doesn't re-prompt
+4. **Record the decision in the coordination ledger** under a
+   new `## New skills detected on main` subsection so future
+   sessions don't re-prompt.
+
+This mirrors `local/watch.md §3.Q3a` and lets every coordinator
+session pick up new infrastructure (audit watchers, scoring
+heuristics, formalisation helpers) as it lands, without the user
+having to manually announce skill additions to every in-flight PR.
+
 #### 8c.  Pre-push stale-state check (MANDATORY)
 
 **Trigger:** before every `git push` (whether new commits or force-

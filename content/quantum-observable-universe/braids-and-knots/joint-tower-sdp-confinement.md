@@ -22,7 +22,7 @@ where $\mathcal{R}$ is the registry of confined particles
 the Wedderburn block $\lambda$-projection, and
 $\pi_{\mathfrak{H} \to \mathfrak{H}'}$ is the canonical embedding
 $H_{n_0(\mathfrak{H}')} \hookrightarrow H_{n_0(\mathfrak{H})}$
-induced by the recursive structure of $\mathcal{R}$ (e.g.\ ²H = ⁴He
+induced by the recursive structure of $\mathcal{R}$ (e.g.\ ${}^2$H = ${}^4$He
 embeds via the strand-augmentation $H_{12} \hookrightarrow H_{18}$).
 
 A solution $(c_{\mathfrak{H}, w}(q_0))$ is a **structured certificate**
@@ -111,10 +111,10 @@ $\ell \leq 2$ the explicit edges are:
 | from | to | embedding |
 |---|---|---|
 | ⁸Be | 2 ⊗ ⁴He | $H_{24} \hookleftarrow H_{12}^{\otimes 2}$ |
-| ¹²C | 3 ⊗ ⁴He | $H_{36} \hookleftarrow H_{12}^{\otimes 3}$ |
+| ${}^{12}$C | 3 ⊗ ${}^4$He | $H_{36} \hookleftarrow H_{12}^{\otimes 3}$ |
 | ⁴He | 4 ⊗ nucleon | $H_{12} \hookleftarrow H_3^{\otimes 4}$ |
 | nucleon | 3 ⊗ quark | $H_3 \hookleftarrow H_1^{\otimes 3}$ |
-| ²H | nucleon ⊗ nucleon (Hopf-link binding) | $H_6 \hookleftarrow H_3^{\otimes 2}$ |
+| ${}^2$H | nucleon ⊗ nucleon (Hopf-link binding) | $H_6 \hookleftarrow H_3^{\otimes 2}$ |
 | ³H, ³He | 3 ⊗ nucleon | $H_9 \hookleftarrow H_3^{\otimes 3}$ |
 
 For ⁶Li, ⁷Li the embedding is open: $\mathfrak{H} \to \{\alpha, p, n\}$
@@ -157,7 +157,7 @@ for the atom-knot mass derivation
 |---|---|---|
 | 1 | Validate solver design on $H_3$ ground truth | known answer; unit test |
 | 2 | Run on tower $\{H_1, H_2, H_3\}$ jointly (electron, quark, nucleon) | small; known answers |
-| 3 | Extend to $H_6, H_9, H_{12}$ (²H, ³H, ³He, ⁴He) | medium; verify against `mass-table-ppb` |
+| 3 | Extend to $H_6, H_9, H_{12}$ (${}^2$H, ${}^3$H, ${}^3$He, ${}^4$He) | medium; verify against `mass-table-ppb` |
 | 4 | Extend to $H_{18}, H_{21}$ (⁶Li, ⁷Li) — replaces deprecated volume-match | research-grade |
 | 5 | Scale to $\ell = 2$ α-cluster atoms ⁸Be→⁴⁰Ca | large; needs SDP-decomposition tricks |
 

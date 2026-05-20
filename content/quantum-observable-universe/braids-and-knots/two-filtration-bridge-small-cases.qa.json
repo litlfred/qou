@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.lean"
   },
   "source_hashes": {
-    "md": "d7afd9fb0042",
+    "md": "741f3d7b7bb6",
     "ts": "09be3efc459b",
     "lean": "4e9dbb9d849f"
   },
@@ -28,12 +28,27 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "d7afd9fb0042",
+          "md": "e4bfe34b190f",
           "ts": "09be3efc459b",
           "lean": "4e9dbb9d849f"
         },
@@ -45,16 +60,31 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "d7afd9fb0042",
+          "md": "e4bfe34b190f",
           "ts": "09be3efc459b",
           "lean": "4e9dbb9d849f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -64,12 +94,27 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.md:76: Conclusion: structural verification ✓ (no specific hyperbolic"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:02.376Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "d7afd9fb0042",
+          "md": "e4bfe34b190f",
           "ts": "09be3efc459b",
           "lean": "4e9dbb9d849f"
         },
@@ -81,12 +126,27 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "d7afd9fb0042",
+          "md": "e4bfe34b190f",
           "ts": "09be3efc459b",
           "lean": "4e9dbb9d849f"
         },
@@ -98,12 +158,27 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "d7afd9fb0042",
+          "md": "e4bfe34b190f",
           "ts": "09be3efc459b",
           "lean": "4e9dbb9d849f"
         },
@@ -115,12 +190,27 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "d7afd9fb0042",
+          "md": "e4bfe34b190f",
           "ts": "09be3efc459b",
           "lean": "4e9dbb9d849f"
         },
@@ -132,9 +222,56 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "e4bfe34b190f",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "fit-section-chapter": [
       {
         "field_hash": {
           "md": "d7afd9fb0042",
@@ -143,14 +280,80 @@
         },
         "result": "pass",
         "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-braids-R-Z",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:18:52.573Z",
+        "reviewed_sha": "80f81c2c5ce6556edb14c1d926c3084e22a2289d",
+        "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-R-Z)"
+      },
+      {
+        "field_hash": {
+          "md": "e4bfe34b190f",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-voice-fix-batch",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T00:55:34.699Z",
+        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
+        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e4bfe34b190f",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

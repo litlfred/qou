@@ -475,11 +475,11 @@ $$
   \;+\;
   \underbrace{m_e \cdot \tau(C_{\dim_q})}_{\text{Term 4}}
   \;+\;
-  \underbrace{a_K(\varrho) \cdot \mathcal{C}}_{\text{Term 5 (ribbon)}}
+  \underbrace{a_K(\varrho) \cdot \mathcal{R}_{\mathrm{rib}}}_{\text{Term 5 (ribbon)}}
   \;}
 $$
 
-*where $\mathcal{C}$ denotes the chirality-couplable piece (e.g.,
+*where $\mathcal{R}_{\mathrm{rib}}$ denotes the chirality-couplable piece (e.g.,
 $B_{\mathrm{bulk}}$ in the BW+$\chi$ form).  Four structurally
 distinct pieces, not six.*
 

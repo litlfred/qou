@@ -97,10 +97,18 @@ const VOICE: QaCriterionDefinition[] = [
     description:
       "Block uses scholarly third-person voice by default. Applies to " +
       "both narrative .md AND proof bodies (Lean docstrings, expository " +
-      "comments inside .lean). Exceptions require explicit author markers.",
+      "comments inside .lean). Exceptions require explicit author markers. " +
+      "Heuristic-automated: second-person address, lecturer-cadence openers, " +
+      "paper-past-tense narration. Borderline cases are confirmed / overruled " +
+      "by an agent reviewer entry on the same sidecar.",
     default_severity: "major",
-    depends_on: ["md", "lean"],
-    automated: false,
+    // Applies to narrative prose independently of proofs; relaxed
+    // to `["md"]` so prose-only blocks (no `.lean` sibling) still
+    // run through the scholarly check.  Lean-docstring scanning is
+    // dispatched per-block when the `.lean` is present (see the
+    // dispatcher in `qa-checkers-voice.ts`).
+    depends_on: ["md"],
+    automated: true,
   },
   {
     id: "voice-ai-slop",
@@ -109,10 +117,14 @@ const VOICE: QaCriterionDefinition[] = [
       "No AI / status-update tells: 'Let me think about this', 'Here's " +
       "what I did', 'I'll go ahead and', 'Note that we should', 'Great " +
       "question', repeated First/Second/Third bullet cadence, over-use of " +
-      "'essentially' / 'comprehensive' / 'leverage' / 'streamline' / 'robust'.",
+      "'essentially' / 'comprehensive' / 'leverage' / 'streamline' / 'robust'. " +
+      "Heuristic-automated: direct LLM tells (zero false-positives in practice), " +
+      "≥ 3 distinct hedge tokens in one .md (concentration signal), and " +
+      "First/Second/Third comma-anchored sentence cadence. Borderline cases " +
+      "are confirmed / overruled by an agent reviewer entry.",
     default_severity: "critical",
     depends_on: ["md"],
-    automated: false,
+    automated: true,
   },
 ];
 

@@ -209,7 +209,7 @@ refinement.
 
 - [`conj:electroweak-higgs-torus-link-triplet`](#conj:electroweak-higgs-torus-link-triplet):
   U2 is now purely categorical (link vs knot, not host distinct).
-  ✓ refined 2026-05-05.
+  (refined 2026-05-05).
 - [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness):
   the H_2(q)-only formulation is dimensionally inconsistent;
   needs lift to $\mathrm{End}_R(A)$ with $n \geq 3$ Hoefsmit

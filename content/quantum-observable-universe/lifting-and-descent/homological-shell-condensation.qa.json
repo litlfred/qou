@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.lean"
   },
   "source_hashes": {
-    "md": "5649b3d6279c",
+    "md": "b27594e2027b",
     "ts": "02fb46a80d61",
-    "lean": "490b416dc2d2"
+    "lean": "77e420b0f061"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,12 +28,42 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "5649b3d6279c",
+          "ts": "02fb46a80d61",
+          "lean": "77e420b0f061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
+      },
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "77e420b0f061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "5649b3d6279c",
+          "md": "b27594e2027b",
           "ts": "02fb46a80d61",
           "lean": "490b416dc2d2"
         },
@@ -43,33 +73,31 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "5649b3d6279c",
+          "md": "b27594e2027b",
           "ts": "02fb46a80d61",
           "lean": "490b416dc2d2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md:124: 🟡 **Conjectural** under CLAUDE.md §3b. The supporting evidence is:"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "5649b3d6279c",
+          "md": "b27594e2027b",
           "ts": "02fb46a80d61",
           "lean": "490b416dc2d2"
         },
@@ -79,14 +107,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "5649b3d6279c",
+          "md": "b27594e2027b",
           "ts": "02fb46a80d61",
           "lean": "490b416dc2d2"
         },
@@ -96,14 +124,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "5649b3d6279c",
+          "md": "b27594e2027b",
           "ts": "02fb46a80d61",
           "lean": "490b416dc2d2"
         },
@@ -113,14 +141,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "5649b3d6279c",
+          "md": "b27594e2027b",
           "ts": "02fb46a80d61",
           "lean": "490b416dc2d2"
         },
@@ -130,11 +158,28 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "490b416dc2d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "fit-section-chapter": [
       {
         "field_hash": {
           "md": "5649b3d6279c",
@@ -143,14 +188,96 @@
         },
         "result": "pass",
         "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-lifting",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:46:51.387Z",
+        "reviewed_sha": "704cd6c2e7993474ae028c2e55f42501f7876dbb",
+        "notes": "Brane-tower BB stratification under descent involution — chapter-theme."
+      },
+      {
+        "field_hash": {
+          "md": "5649b3d6279c",
+          "ts": "02fb46a80d61",
+          "lean": "490b416dc2d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-lifting-and-descent",
+          "version": "claude-opus-4-7-2026-05-19-default-pass"
+        },
+        "reviewed_at": "2026-05-19T18:48:58.604Z",
+        "reviewed_sha": "704cd6c2e7993474ae028c2e55f42501f7876dbb",
+        "notes": "default-pass (agent reviewed at chapter level; no off-topic evidence quoted)"
+      },
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "490b416dc2d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-voice-fix-batch",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T00:55:34.699Z",
+        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
+        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "490b416dc2d2"
+        },
+        "result": "pass",
+        "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "77e420b0f061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "490b416dc2d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

@@ -244,7 +244,7 @@ $$
 
 For the proton/neutron typed-$\mathbf{B}_3$ recipe with
 $n_{\text{total}} = n_\sigma + n_{\sigma^{-1}} + n_{\mathrm{avg}} = 11$,
-this gives $k_{\text{outlier}} = 5$. ✓
+this gives $k_{\text{outlier}} = 5$. (yes)
 
 **Geometric motivation**: at $k = \lfloor n_{\text{total}}/2 \rfloor$,
 a $k$-fold cyclic substructure covers exactly half the braid word.

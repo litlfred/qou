@@ -67,11 +67,11 @@ Bloch–Suslin regulator image. Step 4 confirms this is precisely
 $\mathrm{Vol}(4_1)$, the geometric invariant the Volume
 Conjecture predicts. So B1 at this row is fully discharged:
 
-- Depth match (✓ by construction): $\mathrm{Li}_2^q$ at depth 2,
+- Depth match (yes, by construction): $\mathrm{Li}_2^q$ at depth 2,
   $\mathrm{Vol}(4_1)$ at Goncharov depth 2.
-- Numerical match (✓ Step 3 + Step 4 + 50-digit witness).
-- Inclusion (✓ Step 1).
-- Strong sharpness at this row (✓ Step 2 — Borel-rank is 1, exactly
+- Numerical match (yes, Step 3 + Step 4 + 50-digit witness).
+- Inclusion (yes, Step 1).
+- Strong sharpness at this row (yes, Step 2 — Borel-rank is 1, exactly
   matching the line spanned by $\mathrm{Vol}(4_1)$).
 
 $\square$
