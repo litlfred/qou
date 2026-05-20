@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-20T06:34:35.737439+00:00",
+  "commitSha": "e118c2a5ced9c0ac9fcc196a0c639f2afc6e7a5f",
+  "assertions": [
+    {
+      "name": "Tier 1 PSLQ at CODATA target — NO relation expected (negative result is substantive)",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "boolean",
+      "source": "mpmath.pslq at max_coef=10^8, tol=1e-15 (matched to ~20-dps basis precision). Negative result extends Tier 0; positive would require paper-level update."
+    },
+    {
+      "name": "Tier 1 PSLQ at C2 target — NO relation expected (negative result is substantive)",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "boolean",
+      "source": "Same as above for the C2-inflection target."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42,
+  "computation": "bring-bloch-tier1-search-m-p",
+  "scriptFile": "bring_bloch_tier1_search_m_p.py",
+  "scriptHash": "b4f87cdee2e6",
+  "scriptCommitSha": "3576c7c29ae9ac983d9cbb02175e40b83019b3e0",
+  "description": "Tier 1 Bring-Bloch K-search for the proton effective volume Vol(K_p^eff) = λ_p · 8G. Extends Tier 0 (PR #843, negative) to the Birman-Hilden 3-braid hyperbolic-knot basis through 8 crossings. Searches for ℤ-linear relations at both the CODATA-implied λ_p (2.4599527843613) and the C2-inflection λ_p (2.4616) targets. Sibling script targeting 2/(3π) universe-level correction: tier_1_hyperbolic_3braid_pslq.py.",
+  "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
+  "parameters": {
+    "compute_dps": "100",
+    "max_coef_exponent": "8"
+  },
+  "data": {
+    "tier1_basis": {
+      "4_1": "2.029883212819307250042405108549040571883",
+      "B_3": "7.327724753417752120436828119459072886193",
+      "L_6a4": "7.327724753417752120436828119459072886193",
+      "6_2": "4.40083251354700440552",
+      "8_11": "8.28632710022081827521",
+      "5_2": "2.82812208833078860937",
+      "6_1": "3.16396322088215021179",
+      "6_3": "5.69339487269667027548",
+      "7_2": "3.33174492684711233986",
+      "7_3": "4.59197423724513557739",
+      "7_4": "5.09909885771427739237"
+    },
+    "targets": {
+      "CODATA": {
+        "lambda_p": "2.4599527843613182892482457339493",
+        "vol_K_p_eff": "18.025856910203353815677404136566"
+      },
+      "C2_inflection": {
+        "lambda_p": "2.4615",
+        "vol_K_p_eff": "18.037194480537796844455252416049"
+      }
+    },
+    "search_codata_target": {
+      "result": "no_pslq_relation_found"
+    },
+    "search_c2_target": {
+      "result": "no_pslq_relation_found"
+    },
+    "relation_found_codata": false,
+    "relation_found_c2": false
+  }
+}

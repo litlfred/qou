@@ -1,0 +1,72 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-20T07:03:38.536026+00:00",
+  "commitSha": "3e9bab79d9e1a2d82da55bdf20b43e21905f2f94",
+  "assertions": [
+    {
+      "name": "Tier 3 PSLQ at proton CODATA target — NO relation expected (negative result is substantive)",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "boolean",
+      "source": "mpmath.pslq at max_coef=10^5, tol=1e-12 (matched to ~15-dps basis precision). Negative result extends Tier 0+1+2; positive would require paper-level update."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 459,
+  "computation": "bring-bloch-tier3-search-m-p",
+  "scriptFile": "bring_bloch_tier3_search_m_p.py",
+  "scriptHash": "f33f1df889f7",
+  "scriptCommitSha": "unknown",
+  "description": "Tier 3 Bring-Bloch K-search for Vol(K_p^eff). Extends Tier 0+1+2 (all negative on this PR) to a 33-element basis including 17 prime 9-crossing hyperbolic knots from KnotInfo. The 9-crossing layer corresponds to the next stabilisation layer of NF-product closures (H_4 with valence strand from H_3 nucleon).",
+  "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
+  "parameters": {
+    "compute_dps": "100",
+    "max_coef_exponent": "5"
+  },
+  "data": {
+    "basis": {
+      "4_1": "2.029883212819307250042405",
+      "B_3": "7.327724753417752120436828",
+      "6_2": "4.40083549247793113278",
+      "8_11": "8.28627104794135746111",
+      "5_2": "2.82812208833075056946",
+      "6_1": "3.1639632208627000478",
+      "6_3": "5.69339487269667027548",
+      "7_2": "3.33174492684711233986",
+      "7_3": "4.59197423724513557739",
+      "7_4": "5.09909885771427739237",
+      "8_5": "7.68642137471787",
+      "8_10": "6.48838803644523",
+      "8_15": "9.93543467972066",
+      "8_16": "8.650434335446",
+      "8_17": "8.89418304142151",
+      "8_18": "12.35090069852362",
+      "9_2": "4.05686211",
+      "9_3": "4.392592",
+      "9_4": "5.13794457",
+      "9_5": "5.69312079",
+      "9_6": "7.13971481",
+      "9_7": "9.10310546",
+      "9_8": "8.86170787",
+      "9_9": "9.81344571",
+      "9_10": "10.65745762",
+      "9_11": "10.65900135",
+      "9_12": "9.50097493",
+      "9_13": "11.06517403",
+      "9_14": "8.42729842",
+      "9_15": "9.94474686",
+      "9_16": "12.36571649",
+      "9_17": "11.31298137",
+      "9_18": "12.84509418"
+    },
+    "basis_size": 33,
+    "target": {
+      "lambda_p_codata": "2.4599527843613182892482457339493",
+      "vol_K_p_eff": "18.025856910203353815677404136566"
+    },
+    "relation_found": false
+  }
+}

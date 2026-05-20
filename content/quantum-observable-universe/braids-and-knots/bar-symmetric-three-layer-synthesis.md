@@ -87,11 +87,23 @@ $\sigma \mapsto \sigma^{-1}$:
 | $b^2 = (q^4+q^2+1)/(q^2+1)^2$ | invariant | **sym** |
 | $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ | invariant | **sym** |
 | $\Phi_q(z)$ alone | NOT invariant | **anti-sym** |
-| $\mathrm{Li}_2^q(z) = \frac{1}{2}(\log \Phi_q + \log \Phi_{q^{-1}})$ | invariant | **sym** |
+| $\mathrm{Li}_2^q(z) = \tfrac{h}{2}\bigl(\log\Phi_{q^{-1}} - \log\Phi_q\bigr) = -h\cdot\log\Phi_q$ † | invariant (after $h$-twist) | **sym** |
 | $\cos(\alpha - b\hbar_q^2/2)$ | invariant | **sym** |
 | $\sin(\alpha)$ alone | NOT invariant | **anti-sym** |
 | $\cosh(h)$ | invariant ($\cosh$ even) | **sym** |
 | $\sinh(h)$ | NOT invariant ($\sinh$ odd) | **anti-sym** |
+
+† $\mathrm{Li}_2^q$ row corrected per
+([`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
+errata 2026-05-20 + witness
+[`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/li2q-phiq-bar-symmetry.witness.json)).
+The earlier "sum" form $\tfrac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}})$
+is identically zero (since $\log\Phi_{q^{-1}} = -\log\Phi_q$ for
+Faddeev's $\Phi_q$); the **bar-anti-symmetric image rescaled by
+$h/2$** is the correct relation. Bar-classification stands —
+$\mathrm{Li}_2^q$ is invariant once the $h$-twist is taken into
+account (its archimedean realisation is the regulator image of a
+bar-symmetric R-side object).
 
 > **Antiskew note.** The framework projects onto the bar-EVEN /
 > bar-SYMMETRIC component — $\cos, \cosh, \mathrm{Li}_2^q$ — and
@@ -106,14 +118,18 @@ $\sigma \mapsto \sigma^{-1}$:
 ### Series layer (additive $\tau_M$ correction)
 
 $$
-\mathrm{Li}_2^q(z) \;=\; \tfrac{1}{2}\bigl(\log \Phi_q(z) + \log \Phi_{q^{-1}}(z)\bigr) + O\bigl((q-1)^3 \cdot z\bigr).
+\mathrm{Li}_2^q(z) \;=\; \tfrac{h}{2}\bigl(\log \Phi_{q^{-1}}(z) - \log \Phi_q(z)\bigr) \;=\; -h\cdot \log \Phi_q(z),
+\qquad h = q - q^{-1}.
 $$
 
 Proved as a formal-power-series identity in
-[`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization).
-The bar-anti-symmetric kernel here is
-$\log \Phi_q - \log \Phi_{q^{-1}}$; the bar-symmetric projection
-$P_{\mathrm{avg}}$ kills it and produces Li_2^q on the residual.
+[`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
+(corrected form; the earlier "sum" version was numerically
+falsified — see the historical note in that block). The
+**bar-anti-symmetric kernel** $\log \Phi_{q^{-1}} - \log \Phi_q$
+*is* the structural object, rescaled by $h/2$; the bar-symmetric
+average $\tfrac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}})$ vanishes
+identically and contributes nothing.
 
 ### Phase layer (oscillatory $N=1$ rung)
 

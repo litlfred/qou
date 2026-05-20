@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:04:06.897651+00:00",
-  "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
+  "computedAt": "2026-05-20T07:38:07.240140+00:00",
+  "commitSha": "2d570b32c2661ca014c16667202d76a138c4114d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1388424,
+  "durationMs": 1174803,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "9c80f63797ce",
-  "scriptCommitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
+  "scriptHash": "e107e67d27e3",
+  "scriptCommitSha": "123d8860d2ac92c38a1559007a8c91be78cf35a9",
   "description": "Extended canonical mass table via markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.10997859555418057528159407960950937799328227995870",
@@ -22,7 +22,7 @@
     "paper_hard_floor_ppb": 780.0,
     "active_set_pruning_safe": true,
     "atoms_requested": "p,n,D,T,3He,4He,5Li,6Li",
-    "timeout_per_atom_sec": 1800
+    "timeout_per_atom_sec": 1500
   },
   "data": {
     "rows": [
@@ -114,12 +114,12 @@
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
-        "prediction_MeV_50dps": "938.2718526368309",
+        "prediction_MeV_50dps": "938.2720878613554",
         "B_AME_MeV": 938.27208816,
-        "err_MeV": -0.00023552316906716442,
-        "err_pct": -2.5101798512309743e-05,
-        "err_ppb": -251.01798512309742,
-        "err_ppm": -0.2510179851230974,
+        "err_MeV": -2.9864452244510176e-07,
+        "err_pct": -3.182920244710243e-08,
+        "err_ppb": -0.3182920244710243,
+        "err_ppm": -0.0003182920244710243,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -212,12 +212,12 @@
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
-        "prediction_MeV_50dps": "939.5651846677046",
+        "prediction_MeV_50dps": "939.5654202164673",
         "B_AME_MeV": 939.56542052,
-        "err_MeV": -0.00023585229541822628,
-        "err_pct": -2.5102274973859134e-05,
-        "err_ppb": -251.02274973859133,
-        "err_ppm": -0.25102274973859134,
+        "err_MeV": -3.035327154066181e-07,
+        "err_pct": -3.23056499076593e-08,
+        "err_ppb": -0.323056499076593,
+        "err_ppm": -0.000323056499076593,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -2090,19 +2090,19 @@
     "upstream_witness_hashes": [
       {
         "path": "mass-table-ppb.witness.json",
-        "sha256": "fb37c94b297a83ad28dcd045dc8c0afa5591b02cf861f84f232145f7df3f9470",
+        "sha256": "25f995f39bc9e4168e998679cffb122ffc674d05dd20160ffd9408aacfb21183",
         "size_bytes": 6961,
-        "commitSha": "b82b92391d0b6d0b39f665d3282c70db1b9228a7",
-        "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
-        "computedAt": "2026-05-19T01:28:43.459839+00:00"
+        "commitSha": "1442cca11bed94486d08b1798623ce360c8103bc",
+        "scriptCommitSha": "4f442633b5ba118b90e57483ef4bc92191fbc54b",
+        "computedAt": "2026-05-19T04:33:27.554825+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "b261735cf47e1504b996894e6ccfc4944ab1ed43d4157dd12a9e28f5a60dde0a",
-        "size_bytes": 4501,
-        "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
-        "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
-        "computedAt": "2026-05-19T00:34:55.990181+00:00"
+        "sha256": "d592f4e2f7976f9fc9e1ca8d5d4d463bc133309c037297fae16e9d740663251a",
+        "size_bytes": 4631,
+        "commitSha": "2b8d065db24f65a30c93808827059b0a09d75413",
+        "scriptCommitSha": "ea3d0cce1415b2bcdd76e0b52489d0b6a4ebcd09",
+        "computedAt": "2026-05-20T05:37:01.983953+00:00"
       }
     ]
   }
