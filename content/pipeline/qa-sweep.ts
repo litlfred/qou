@@ -66,16 +66,22 @@ import {
   loadQaReport,
   saveQaReport,
   entryIsFresh,
+  computeCriterionScriptHashes,
+  saveQaScriptSidecar,
+  type CriterionScriptHashes,
 } from "./qa-utils";
 import {
   QA_CRITERIA_REGISTRY,
   QA_CRITERIA_BY_ID,
   WATCHER_CRITERIA_BY_AXIS,
+  getCriterionSourceFile,
+  getCriterionExtraInputs,
 } from "./qa-criteria-registry";
 import { AUTOMATED_CHECKERS } from "./qa-checkers-voice";
 import type {
   BlockQaReport,
   QaCriterionEntry,
+  QaScriptSidecar,
 } from "../../folio-assistant/schemas/block-qa";
 
 // ── CLI parsing ─────────────────────────────────────────────────
@@ -165,6 +171,23 @@ function run(): void {
         ? args.axis.flatMap((a) => WATCHER_CRITERIA_BY_AXIS[a] ?? [])
         : QA_CRITERIA_REGISTRY.map((c) => c.id);
 
+  // Precompute one (script_hash, script_commit_sha, deps_hash) bundle
+  // per criterion under sweep. The bundle is reused for every block
+  // visited, then written out at the end of the run as a per-criterion
+  // script sidecar under `content/pipeline/script-sidecars/`.
+  const scriptHashesByCriterion: Record<string, CriterionScriptHashes> = {};
+  for (const id of criteriaToRun) {
+    const def = QA_CRITERIA_BY_ID[id];
+    if (!def?.automated) continue;
+    scriptHashesByCriterion[id] = computeCriterionScriptHashes(
+      id,
+      getCriterionSourceFile(id),
+      getCriterionExtraInputs(id),
+      REPO_ROOT,
+    );
+  }
+  const engineVersion = `bun-${Bun.version}`;
+
   const results: BlockSweepResult[] = [];
 
   let totalBlocks = 0;
@@ -244,8 +267,9 @@ function run(): void {
       // relaxed in the registry) must NOT short-circuit the sweep;
       // it has to be re-evaluated against the actual checker.
       const existing = report.criteria[criterionId] ?? [];
+      const scriptHashes = scriptHashesByCriterion[criterionId];
       const freshExisting = existing.find((e) =>
-        entryIsFresh(e, currentHashes, def.depends_on),
+        entryIsFresh(e, currentHashes, def.depends_on, scriptHashes),
       );
       const dependsOnSatisfied = def.depends_on.every(
         (k) => currentHashes[k] !== undefined,
@@ -276,15 +300,25 @@ function run(): void {
       // If the criterion depends on a file the block doesn't have,
       // write an explicit n/a entry so the staleness scanner knows
       // the criterion was considered and judged not-applicable.
+      // Reviewer-identity block shared by every script-kind entry
+      // written below. `id` points at the source file containing
+      // the checker function (NOT the dispatcher) so the recorded
+      // `script_hash` aligns with the file qa-sweep just hashed.
+      const scriptReviewer = {
+        kind: "script" as const,
+        id: scriptHashes?.source_file ?? "content/pipeline/qa-sweep.ts",
+        version: "v1",
+        script_hash: scriptHashes?.script_hash || undefined,
+        script_commit_sha:
+          scriptHashes?.script_commit_sha || undefined,
+        deps_hash: scriptHashes?.deps_hash,
+      };
+
       if (def.depends_on.includes("md") && !block.md) {
         const naEntry: QaCriterionEntry = {
           field_hash: currentHashes,
           result: "n/a",
-          reviewer: {
-            kind: "script",
-            id: "content/pipeline/qa-sweep.ts",
-            version: "v1",
-          },
+          reviewer: { ...scriptReviewer },
           reviewed_at: nowIso,
           reviewed_sha: headSha,
           notes: "block has no .md sibling",
@@ -300,11 +334,7 @@ function run(): void {
         const naEntry: QaCriterionEntry = {
           field_hash: currentHashes,
           result: "n/a",
-          reviewer: {
-            kind: "script",
-            id: "content/pipeline/qa-sweep.ts",
-            version: "v1",
-          },
+          reviewer: { ...scriptReviewer },
           reviewed_at: nowIso,
           reviewed_sha: headSha,
           notes: "block has no .lean sibling",
@@ -323,11 +353,7 @@ function run(): void {
       const entry: QaCriterionEntry = {
         field_hash: currentHashes,
         result: checkRes.result,
-        reviewer: {
-          kind: "script",
-          id: "content/pipeline/qa-sweep.ts",
-          version: "v1",
-        },
+        reviewer: { ...scriptReviewer },
         reviewed_at: nowIso,
         reviewed_sha: headSha,
       };
@@ -381,6 +407,29 @@ function run(): void {
       saveQaReport(qaPath, report);
     }
     results.push(sweepResult);
+  }
+
+  // Write one script sidecar per automated criterion under sweep
+  // to `content/pipeline/script-sidecars/<criterion-id>.script.json`.
+  // Skipped under --dry-run.
+  if (!args.dryRun) {
+    for (const [id, hashes] of Object.entries(scriptHashesByCriterion)) {
+      if (!hashes.script_hash) continue; // source file absent — skip
+      const sidecar: QaScriptSidecar = {
+        $schema: "qa-script/v1",
+        criterion_id: id,
+        source_file: hashes.source_file,
+        script_hash: hashes.script_hash,
+        script_commit_sha: hashes.script_commit_sha,
+        extra_inputs:
+          hashes.extra_inputs.length > 0 ? hashes.extra_inputs : undefined,
+        deps_hash: hashes.deps_hash,
+        last_run_at: nowIso,
+        last_run_sha: headSha,
+        engine_version: engineVersion,
+      };
+      saveQaScriptSidecar(sidecar, REPO_ROOT);
+    }
   }
 
   // ── Output ────────────────────────────────────────────────────

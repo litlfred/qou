@@ -41,6 +41,30 @@ export interface QaReviewer {
   id: string;
   /** Optional version pin (script revision, model id). */
   version?: string;
+  /**
+   * 12-char SHA-256 prefix of the script's source-file content at
+   * the time this entry was written. Populated for `kind: "script"`.
+   * On freshness check, current file hash is compared against this;
+   * mismatch ⇒ entry is stale (the checker logic has changed).
+   *
+   * Mirrors the `scriptHash` convention used by
+   * `folio-assistant/computations/witness_base.py`.
+   */
+  script_hash?: string;
+  /**
+   * Full git SHA at which the script was most recently committed at
+   * audit time (`git log -n 1 --format=%H -- <source_file>`). Used
+   * for audit trail and provenance — NOT used to drive staleness
+   * (use `script_hash` for that; an uncommitted edit can change the
+   * hash without changing the commit SHA).
+   */
+  script_commit_sha?: string;
+  /**
+   * 12-char SHA-256 prefix of the concatenated content of every
+   * extra input the checker consults beyond the block under audit
+   * (see `QaCriterionDefinition.extra_inputs`). Mismatch ⇒ stale.
+   */
+  deps_hash?: string;
 }
 
 /**
@@ -151,4 +175,63 @@ export interface QaCriterionDefinition {
    * Empty / undefined means "all kinds".
    */
   applies_to?: string[];
+  /**
+   * Path (repo-relative) to the source file containing this
+   * criterion's checker function. Required for `automated: true`
+   * criteria; ignored otherwise. Used to compute the entry's
+   * `script_hash` so a checker-logic change auto-invalidates
+   * downstream sidecar entries.
+   *
+   * If omitted, the registry's `getCriterionSourceFile()` helper
+   * resolves a default based on the criterion id prefix.
+   */
+  source_file?: string;
+  /**
+   * Repo-relative paths to extra inputs the checker consults beyond
+   * the block under audit — for example, cached audit witnesses
+   * (`docs/audits/*.json`), the bibliography database
+   * (`content/schema/references.ts`), or cross-block manifests.
+   * Concatenated content of these files is hashed into `deps_hash`
+   * on the entry. Changes invalidate the entry.
+   */
+  extra_inputs?: string[];
+}
+
+/**
+ * Per-script audit sidecar — mirrors the Python-pipeline
+ * `*.witness.json` convention from
+ * `folio-assistant/computations/witness_base.py`.
+ *
+ * One sidecar per automated criterion, recording the canonical
+ * `(script_hash, script_commit_sha, deps_hash)` triple captured at
+ * the most recent qa-sweep run. Block-level `QaCriterionEntry`
+ * records snapshot the same triple inline so per-entry freshness
+ * is checkable without a sidecar lookup; this script-level sidecar
+ * is the single-source-of-truth view "is checker X currently
+ * stale globally?".
+ *
+ * Filename: `<criterion-id>.script.json` under
+ * `content/pipeline/script-sidecars/`.
+ */
+export interface QaScriptSidecar {
+  /** Schema marker — value: `qa-script/v1`. */
+  $schema: "qa-script/v1";
+  /** Criterion id this sidecar tracks (e.g. `proof-no-bare-sorries`). */
+  criterion_id: string;
+  /** Path (repo-relative) to the checker's source file. */
+  source_file: string;
+  /** 12-char SHA-256 prefix of the source file's content. */
+  script_hash: string;
+  /** Full git SHA of the most recent commit touching `source_file`. */
+  script_commit_sha: string;
+  /** Optional repo-relative paths to extra-input files. */
+  extra_inputs?: string[];
+  /** 12-char SHA-256 of concatenated extra_inputs (omitted if none). */
+  deps_hash?: string;
+  /** ISO-8601 UTC timestamp of the most recent qa-sweep run. */
+  last_run_at: string;
+  /** Repo HEAD at the most recent sweep (full git SHA). */
+  last_run_sha: string;
+  /** Engine fingerprint — e.g. `bun-1.3.11+node-22`. */
+  engine_version?: string;
 }

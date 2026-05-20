@@ -12,12 +12,14 @@ import {
   readdirSync,
   statSync,
 } from "fs";
-import { execSync } from "child_process";
-import { join } from "path";
+import { execFileSync } from "child_process";
+import { mkdirSync } from "fs";
+import { dirname, join } from "path";
 import type {
   BlockQaReport,
   QaFieldHash,
   QaCriterionEntry,
+  QaScriptSidecar,
 } from "../../folio-assistant/schemas/block-qa";
 import { QA_CRITERIA_BY_ID } from "./qa-criteria-registry";
 
@@ -57,15 +59,146 @@ export function hashBlockFiles(paths: {
 
 // ── Repo info ───────────────────────────────────────────────────
 
-/** Current HEAD SHA (full). Returns empty string outside a git repo. */
+/**
+ * Sentinel used when git is unavailable or the path is untracked.
+ * Matches the convention in `witness_base._git_file_sha()` (Python
+ * compute pipeline) so JSON consumers see an explicit token rather
+ * than an empty string.
+ */
+export const GIT_SHA_UNKNOWN = "unknown";
+
+/**
+ * Current HEAD SHA (full). Returns the `unknown` sentinel outside
+ * a git repo.
+ */
 export function gitHeadSha(): string {
   try {
-    return execSync("git rev-parse HEAD", { stdio: ["ignore", "pipe", "ignore"] })
+    return execFileSync("git", ["rev-parse", "HEAD"], {
+      stdio: ["ignore", "pipe", "ignore"],
+    })
       .toString()
       .trim();
   } catch {
-    return "";
+    return GIT_SHA_UNKNOWN;
   }
+}
+
+/**
+ * Full git SHA of the most recent commit touching `relPath`, where
+ * `relPath` is repo-relative (e.g. `content/pipeline/foo.ts`).
+ * Returns the `unknown` sentinel if `path` is not tracked / outside
+ * a git repo.
+ *
+ * Runs `git -C <repoRoot> log ... -- <relPath>` via `execFileSync`
+ * (no shell interpolation) — git pathspecs are interpreted relative
+ * to the repo root, so passing an absolute path is brittle and
+ * tooling-cwd-dependent. Pinning cwd via `-C` makes the call
+ * robust regardless of where the qa-sweep process is invoked from.
+ */
+export function gitFileCommitSha(relPath: string, repoRoot: string): string {
+  try {
+    const out = execFileSync(
+      "git",
+      ["-C", repoRoot, "log", "-n", "1", "--format=%H", "--", relPath],
+      { stdio: ["ignore", "pipe", "ignore"] },
+    )
+      .toString()
+      .trim();
+    return out || GIT_SHA_UNKNOWN;
+  } catch {
+    return GIT_SHA_UNKNOWN;
+  }
+}
+
+// ── Script-hash helpers ─────────────────────────────────────────
+
+/**
+ * 12-char SHA-256 prefix of the concatenated content of `paths`,
+ * in the order given. Used for `deps_hash` on reviewer entries
+ * (multiple extra inputs roll up into one fingerprint).
+ *
+ * Each entry of `paths` is `{ label, abs }`: `abs` is the
+ * filesystem path to read bytes from; `label` is the path string
+ * mixed into the hash to disambiguate "two files with the same
+ * content but different declared paths" from each other AND to
+ * mark presence/absence. Callers should pass **repo-relative**
+ * labels (not absolute) so the hash is portable across machines /
+ * checkout locations — otherwise the same byte-identical inputs
+ * produce different `deps_hash` values per environment.
+ */
+export function hashFiles(
+  paths: Array<{ label: string; abs: string }>,
+): string | undefined {
+  if (paths.length === 0) return undefined;
+  const h = createHash("sha256");
+  for (const { label, abs } of paths) {
+    if (!existsSync(abs)) {
+      h.update(`__absent__:${label}\n`);
+      continue;
+    }
+    h.update(`__file__:${label}\n`);
+    h.update(readFileSync(abs));
+    h.update("\n");
+  }
+  return h.digest("hex").slice(0, 12);
+}
+
+/**
+ * Cache key for the script-hash bundle attached to one criterion.
+ * Computed once per qa-sweep run and reused for every block under
+ * sweep.
+ */
+export interface CriterionScriptHashes {
+  /** Criterion id. */
+  criterion_id: string;
+  /** Path to checker source file (may not exist on disk). */
+  source_file: string;
+  /** 12-char SHA-256 of the source file. Empty if absent. */
+  script_hash: string;
+  /** Full git SHA of the file's most recent commit. */
+  script_commit_sha: string;
+  /** Resolved extra-input paths, in declared order. */
+  extra_inputs: string[];
+  /** 12-char SHA-256 over concat(extra_inputs). Undefined if no extras. */
+  deps_hash?: string;
+}
+
+/**
+ * Build the script-hash bundle for one criterion: hash its source
+ * file + its extra-input files (if any). Pure read of disk; no
+ * caching here — callers should memoize across the sweep run.
+ *
+ * `sourceFile` and `extraInputs` are repo-relative paths. `repoRoot`
+ * is the absolute directory they should be resolved against — this
+ * decouples the helper from `process.cwd()`, since qa-sweep runs
+ * with cwd inside `content/`.
+ */
+export function computeCriterionScriptHashes(
+  criterionId: string,
+  sourceFile: string,
+  extraInputs: string[] = [],
+  repoRoot: string = process.cwd(),
+): CriterionScriptHashes {
+  const absSource = join(repoRoot, sourceFile);
+  // Hash extra inputs with their repo-relative labels (NOT
+  // absolute paths) so the resulting `deps_hash` is portable across
+  // machines / checkout locations. Bytes are still read from the
+  // absolute path; only the label salt comes from the relative
+  // form.
+  const labelled = extraInputs.map((p) => ({
+    label: p,
+    abs: join(repoRoot, p),
+  }));
+  return {
+    criterion_id: criterionId,
+    source_file: sourceFile,
+    script_hash: hashFile(absSource) ?? "",
+    // Pass the repo-relative `sourceFile` (not `absSource`) so git
+    // interprets the pathspec correctly against `repoRoot`.
+    script_commit_sha: gitFileCommitSha(sourceFile, repoRoot),
+    extra_inputs: extraInputs,
+    deps_hash: extraInputs.length > 0 ? hashFiles(labelled) : undefined,
+  };
 }
 
 // ── Block discovery ─────────────────────────────────────────────
@@ -176,6 +309,7 @@ export function entryIsFresh(
   entry: QaCriterionEntry,
   current: QaFieldHash,
   depends_on: Array<"md" | "ts" | "lean">,
+  current_script_hashes?: CriterionScriptHashes,
 ): boolean {
   // Uniform rule for every result kind: a file the criterion
   // depends on is "stable" iff (a) it was absent at audit AND is
@@ -188,6 +322,32 @@ export function entryIsFresh(
     if (!expected && actual) return false; // file appeared since audit
     if (expected && !actual) return false; // file removed since audit
     if (expected !== actual) return false; // file changed since audit
+  }
+  // Script-side staleness — only applies to `kind: "script"` entries
+  // that were written by a sweep aware of the script-hash convention.
+  // Legacy entries lacking these fields are treated as fresh: missing
+  // metadata is not an invalidation signal.
+  if (entry.reviewer.kind === "script" && current_script_hashes) {
+    if (
+      entry.reviewer.script_hash &&
+      current_script_hashes.script_hash &&
+      entry.reviewer.script_hash !== current_script_hashes.script_hash
+    ) {
+      return false; // checker source file changed
+    }
+    const recordedDepsHash = entry.reviewer.deps_hash;
+    const currentDepsHash = current_script_hashes.deps_hash;
+    if (
+      recordedDepsHash &&
+      currentDepsHash &&
+      recordedDepsHash !== currentDepsHash
+    ) {
+      return false; // one of the extra inputs changed
+    }
+    // Asymmetry case: entry never recorded deps_hash but the
+    // current criterion now declares extra_inputs. Treat as stale —
+    // the new dep declaration must propagate.
+    if (!recordedDepsHash && currentDepsHash) return false;
   }
   return true;
 }
@@ -212,15 +372,17 @@ export interface CriterionFreshness {
 export function summariseFreshness(
   report: BlockQaReport,
   current: QaFieldHash,
+  scriptHashesByCriterion?: Record<string, CriterionScriptHashes>,
 ): CriterionFreshness[] {
   const out: CriterionFreshness[] = [];
   for (const [criterion, entries] of Object.entries(report.criteria)) {
     const def = QA_CRITERIA_BY_ID[criterion];
     const dependsOn = def?.depends_on ?? ["md"];
+    const sh = scriptHashesByCriterion?.[criterion];
     const fresh: QaCriterionEntry[] = [];
     const stale: QaCriterionEntry[] = [];
     for (const e of entries) {
-      if (entryIsFresh(e, current, dependsOn)) fresh.push(e);
+      if (entryIsFresh(e, current, dependsOn, sh)) fresh.push(e);
       else stale.push(e);
     }
     const sorted = [...entries].sort((a, b) =>
@@ -235,4 +397,56 @@ export function summariseFreshness(
     });
   }
   return out;
+}
+
+// ── Script sidecar IO ──────────────────────────────────────────
+
+/**
+ * Repo-relative directory where per-criterion script sidecars live.
+ * One file per automated criterion: `<criterion-id>.script.json`.
+ */
+export const SCRIPT_SIDECAR_DIR = "content/pipeline/script-sidecars";
+
+/**
+ * Resolve a criterion's script-sidecar path. `repoRoot` should be
+ * the absolute path to the repo root; the sidecar lives under
+ * `<repoRoot>/content/pipeline/script-sidecars/<id>.script.json`.
+ */
+export function scriptSidecarPath(
+  criterionId: string,
+  repoRoot: string = process.cwd(),
+): string {
+  return join(repoRoot, SCRIPT_SIDECAR_DIR, `${criterionId}.script.json`);
+}
+
+/** Load a script sidecar by criterion id; returns undefined if absent. */
+export function loadQaScriptSidecar(
+  criterionId: string,
+  repoRoot: string = process.cwd(),
+): QaScriptSidecar | undefined {
+  const p = scriptSidecarPath(criterionId, repoRoot);
+  if (!existsSync(p)) return undefined;
+  try {
+    return JSON.parse(readFileSync(p, "utf-8")) as QaScriptSidecar;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Write a script sidecar; deterministic JSON formatting. */
+export function saveQaScriptSidecar(
+  sidecar: QaScriptSidecar,
+  repoRoot: string = process.cwd(),
+): void {
+  const p = scriptSidecarPath(sidecar.criterion_id, repoRoot);
+  // Use `dirname(p)` (not `join(p, "..")`) — the latter happens to
+  // normalise to the parent on POSIX but reads as "go up from this
+  // FILE", which is semantically wrong. `dirname` is the standard
+  // idiom and tools that statically interpret paths don't see a
+  // bogus directory entry.
+  // Native `mkdirSync({ recursive: true })` rather than shelling out
+  // to `mkdir -p` — avoids shell escaping issues if a criterion id
+  // ever contains unusual characters, and is faster.
+  mkdirSync(dirname(p), { recursive: true });
+  writeFileSync(p, JSON.stringify(sidecar, null, 2) + "\n");
 }
