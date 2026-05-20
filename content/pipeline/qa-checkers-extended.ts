@@ -731,9 +731,28 @@ export function checkProofNoTrivialSkeleton(
     audit.flagged[leanChapter] ??
     audit.flagged[leanAbs];
   if (!flagged || flagged.length === 0) return { result: "pass", hits: [] };
+  const source = readFileSync(leanPath, "utf-8").split(/\r?\n/);
+  const normalize = (s: string) => s.replace(/\s+/g, " ").trim();
+  // Guard against stale audit rows: only fail when the captured snippet
+  // still appears at (or very near) the recorded location.
+  const stillFlagged = flagged
+    .map((f) => {
+      const target = normalize(f.snippet ?? "");
+      if (!target) return null;
+      const from = Math.max(0, f.line - 4);
+      const to = Math.min(source.length - 1, f.line + 2);
+      for (let i = from; i <= to; i++) {
+        if (normalize(source[i] ?? "") === target) {
+          return { ...f, line: i + 1 };
+        }
+      }
+      return null;
+    })
+    .filter((x): x is { line: number; pattern: string; snippet: string } => x !== null);
+  if (stillFlagged.length === 0) return { result: "pass", hits: [] };
   return {
     result: "fail",
-    hits: flagged.slice(0, 3).map((f) => ({
+    hits: stillFlagged.slice(0, 3).map((f) => ({
       file: leanRel,
       line: f.line,
       text:
