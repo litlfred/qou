@@ -65,7 +65,7 @@ abbrev Braid2 := ℤ
 /-- Specific 2-strand braids. -/
 def Braid2.σ : Braid2 :=
   -- The generator σ of B_2, encoded as 1 in the additive ℤ model.
-  (1 : ℤ)
+  (1 : Braid2)
 def Braid2.σ_inv : Braid2 := -1
 def Braid2.σ_sq : Braid2 := 2  -- σ²
 
