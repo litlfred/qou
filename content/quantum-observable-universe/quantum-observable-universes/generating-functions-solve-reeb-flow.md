@@ -95,3 +95,22 @@ Coupled with
 (which restricts all interactions to the Reeb bundle), this
 explains why the algebraic substrate of the paper consists of
 exactly these three transforms.
+
+**Lean synthesis class.**  The joint claim — that the three
+solutions exist in a common Habiro completion and that their
+archimedean shadows under $\tau_\infty$ are mutually compatible —
+is captured by the Lean class `QOU.Habiro.HabiroFlowSolution`
+(file `lean/QOU/Habiro/FlowSolution.lean`).  The per-function
+fixed-point properties are already supplied by the existing
+Lean developments
+`QOU.QExponential`, `QOU.QDilogarithm`, and
+`QOU.CategoricalFourier`
+(structures, not typeclasses — the synthesis class does not
+extend them, it bundles their proven content into a single
+joint-existence claim).  This is a placeholder for the full
+formalisation: the individual existence/uniqueness theorems are
+already in scope, so any instance of
+`HabiroFlowSolution` is conditional on the realisation functor
+$\tau_\infty$ commuting with the three Habiro-ring constructions
+(open conjecture; see
+[archimedean realisation functor](#def:archimedean-realization-functor)).
