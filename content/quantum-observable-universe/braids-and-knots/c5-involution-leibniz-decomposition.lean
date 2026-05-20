@@ -165,6 +165,47 @@ theorem c5RationalMap_two : c5RationalMap 2 = -11/8 := by
 theorem c5RationalMap_one : c5RationalMap 1 = -13/10 := by
   unfold c5RationalMap; norm_num
 
+/-- **`c5RationalMap` is an even function**: `c5(-h) = c5(h)`.
+    Direct categorical content of bar-symmetry: under the bar
+    involution that sends $h \to -h$, the rational map is invariant. -/
+theorem c5RationalMap_even (h : ℝ) : c5RationalMap (-h) = c5RationalMap h := by
+  unfold c5RationalMap
+  have : (-h)^2 = h^2 := by ring
+  rw [this]
+
+/-- **c_5 upper bound** over ℝ: `c5(h) ≤ -5/4` for all real $h$,
+    with equality at $h = 0$ (the commutative-QOU limit).
+    The supremum value `-5/4` is exactly $c_5(q=1)$. -/
+theorem c5RationalMap_le_neg_five_quarters (h : ℝ) :
+    c5RationalMap h ≤ -5/4 := by
+  unfold c5RationalMap
+  -- -3/2 + 1/(h²+4) ≤ -5/4   ⟺   1/(h²+4) ≤ 1/4   ⟺   h²+4 ≥ 4   ⟺   h² ≥ 0
+  have hpos : h^2 + 4 > 0 := h_sq_plus_four_pos h
+  have hge4 : h^2 + 4 ≥ 4 := by
+    have hsq : h^2 ≥ 0 := sq_nonneg h
+    linarith
+  have hinv : 1 / (h^2 + 4) ≤ 1 / 4 := by
+    rw [div_le_div_iff hpos (by norm_num : (4:ℝ) > 0)]
+    linarith
+  linarith
+
+/-- **c_5 lower bound** over ℝ: `c5(h) > -3/2` for all real $h$.
+    The infimum is approached as $|h| \to \infty$ but never reached
+    (the bar-symmetric quantum correction $1/(h^2+4) > 0$ always). -/
+theorem c5RationalMap_gt_neg_three_halves (h : ℝ) :
+    c5RationalMap h > -3/2 := by
+  unfold c5RationalMap
+  have hpos : (1 : ℝ) / (h^2 + 4) > 0 :=
+    one_div_pos.mpr (h_sq_plus_four_pos h)
+  linarith
+
+/-- **c_5 achieves its supremum at the commutative-QOU limit**:
+    $c_5(h=0) = -5/4$ is the maximum of `c5RationalMap` over ℝ. -/
+theorem c5RationalMap_max_at_zero (h : ℝ) :
+    c5RationalMap h ≤ c5RationalMap 0 := by
+  rw [c5RationalMap_zero]
+  exact c5RationalMap_le_neg_five_quarters h
+
 /-- **Commutative-QOU value of `c_5`.** At `q = 1`, `[2]_q = 2`,
     so `c_5(1) = -3/2 + 1/4 = -5/4`. The "-1/2" in the empirical
     decomposition is q-independent and SURVIVES the commutative
