@@ -141,6 +141,39 @@ $c_5 = -b^2 - 1/2$ decomposition as the **bar-symmetric
 Wedderburn-block contribution from the non-sign sector** in the
 commutative limit — categorical content, not a quantum artifact.
 
+### $c_5$ as a rational function of the bar-anti-symmetric Hecke skein
+
+The closed form $c_5(q) = -3/2 + 1/[2]_q^2$ rewrites cleanly as a
+function of the bar-anti-symmetric Hecke skein $h = q - q^{-1}$
+alone, using the algebraic identity (PROVED in Lean as
+`quantum_two_squared_eq_skein_squared_plus_four`):
+
+$$
+[2]_q^2 \;=\; (q + q^{-1})^2 \;=\; h^2 + 4
+\quad\text{(from } q^2 + 2 + q^{-2} = (q^2 - 2 + q^{-2}) + 4\text{)}.
+$$
+
+Substituting:
+
+$$
+\boxed{\;\; c_5(q) \;=\; -\frac{3}{2} \,+\, \frac{1}{h^2 + 4}, \quad h = q - q^{-1}. \;\;}
+$$
+
+Both terms are **even functions of $h$** (the constant $-3/2$
+trivially; $1/(h^2 + 4)$ because $h^2$ is bar-symmetric by
+`IsBarAntiSymmetric.pow_two_mul`).
+
+**Categorical reading**: this expresses $c_5$ purely as a function
+of the universal bar-anti-symmetric kernel $h$ — the
+`BarHeckeFunctor` $K \mapsto -3/2 + 1/(K^2 + 4)$ applied to
+$K = h$. The Markov-trace-functor shape is now **explicit** for
+$c_5$: it is the image of the bar-anti-symmetric skein under a
+specific even rational function, which is exactly the
+$P_{\mathrm{avg}}$-projection of the kernel through the
+series-layer functor.
+
+Proved in Lean as `c5_as_function_of_skein` (no `sorry`).
+
 ### Bar-grading algebraic structure (all PROVED in Lean, no `sorry`)
 
 The bar-involution induces a $\mathbb{Z}/2\mathbb{Z}$-grading on

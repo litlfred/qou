@@ -87,6 +87,40 @@ theorem c5_decomposition_via_quantum_two
   rw [hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared q hq]
   ring
 
+/-- **Quantum-2 squared in terms of the Hecke skein**: a key
+    algebraic identity linking the bar-symmetric Markov-parameter-
+    family to the bar-anti-symmetric Hecke skein.
+
+      $[2]_q^2 = (q + q^{-1})^2 = h^2 + 4$ where $h = q - q^{-1}$.
+
+    Proof: $(q+q^{-1})^2 = q^2 + 2 + q^{-2}$ and
+    $(q-q^{-1})^2 + 4 = q^2 - 2 + q^{-2} + 4 = q^2 + 2 + q^{-2}$. -/
+theorem quantum_two_squared_eq_skein_squared_plus_four
+    (q : ℝ) (hq : q ≠ 0) :
+    (quantumTwo q)^2 = (heckeSkein q)^2 + 4 := by
+  unfold quantumTwo heckeSkein
+  field_simp
+  ring
+
+/-- **c_5 as a rational function of the bar-anti-symmetric Hecke
+    skein h alone**: the categorical content of
+    "c_5 lives in the bar-symmetric subspace".
+
+      $c_5(q) = -3/2 + 1/(h^2 + 4)$ where $h = q - q^{-1}$.
+
+    Both terms are EVEN functions of $h$ (constant `-3/2` is
+    trivially bar-symmetric; `1/(h^2+4)` is bar-symmetric because
+    $h^2$ is — `IsBarAntiSymmetric.pow_two_mul`). This expresses
+    $c_5$ purely as a function of the bar-anti-symmetric kernel,
+    making the categorical Markov-trace-functor reading concrete:
+    $c_5$ is the (P_avg-projected) image of the universal kernel
+    $h$ under the rational-functor $K \mapsto -3/2 + 1/(K^2+4)$. -/
+theorem c5_as_function_of_skein
+    (q : ℝ) (hq : q ≠ 0) :
+    c5Decomposition q = -3/2 + 1 / ((heckeSkein q)^2 + 4) := by
+  rw [c5_decomposition_via_quantum_two q hq,
+      quantum_two_squared_eq_skein_squared_plus_four q hq]
+
 /-- **Commutative-QOU value of `c_5`.** At `q = 1`, `[2]_q = 2`,
     so `c_5(1) = -3/2 + 1/4 = -5/4`. The "-1/2" in the empirical
     decomposition is q-independent and SURVIVES the commutative
