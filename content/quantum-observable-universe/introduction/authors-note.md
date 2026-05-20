@@ -4,7 +4,7 @@ except where external references are cited for large prior results.
 propositions, corollaries) carry **full Lean proofs** (sorry-free);
 the remainder are marked by `sorry` against an explicit bibliographic
 reference.  The paper contains
-**132 open conjectures**, of which **121 (91.7%) are class-axiomatised in Lean**
+**133 open conjectures**, of which **122 (91.7%) are class-axiomatised in Lean**
 following the conditional-class convention (CLAUDE.md §3b) so that
 downstream results can be stated as fully verified conditional
 theorems.  Computations — braid-word reductions, Gröbner–Shirshov

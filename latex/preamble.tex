@@ -178,7 +178,12 @@
 % Unicode maths symbols that appear in plain text (outside $ … $)
 % are handled by \newunicodechar in the block above.
 
-\geometry{margin=1in}
+\geometry{
+  left=1in, right=1.7in, top=1in, bottom=1in,
+  marginparwidth=1.3in, marginparsep=0.15in,
+}
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\scriptsize}
 
 % ── Suppress hyperref math-in-bookmark warnings ─────────────────────────────
 % Math in theorem titles generates "Token not allowed in PDF string" warnings.
@@ -313,6 +318,94 @@
 }
 \newcommand{\uses}[1]{}            % \uses{label1, label2, ...}
 \newcommand{\proves}[1]{}          % \proves{thm:label} (in proof environments)
+%
+% ── Margin annotations: source links + issue tracker + structured comments ──
+%
+% Every labelled content block, section, and chapter carries a compact
+% strip of clickable icons in the right margin:
+%
+%   ∀  → Lean docs page for this block's declaration (if any)
+%   ∇  → .md source on GitHub (the narrative form, authoritative per CLAUDE.md)
+%   #  → GitHub issues filtered by the block label (existing discussion)
+%   +  → "Add comment / open new issue" pre-filled with the block label
+%
+% The macros below are pure LaTeX, no font dependencies. They are
+% emitted by content/pipeline/render-latex.ts after each \label{}.
+% Empty arguments hide the corresponding icon, so a block without a
+% Lean ref still gets ∇ # +, etc.
+
+% Base URLs.  Override at compile time via \renewcommand{...}.
+\newcommand{\trackerbase}{https://github.com/litlfred/qou/issues?q=}
+\newcommand{\sourcebase}{https://github.com/litlfred/qou/blob/main/content/}
+\newcommand{\commentbase}{https://github.com/litlfred/qou/issues/new?title=Comment+on+}
+
+% \blockannot{label}{leanDecl}{mdRelPath}
+% \blockannotok{label}{leanDecl}{mdRelPath}   — same but adds green ✓
+%                                                indicating the Lean proof
+%                                                is sorry-free.
+% Compact horizontal strip of icons in the right margin. Any of the three
+% positional args may be empty — that icon is simply omitted. The leading
+% \mbox{} anchors the marginnote to a non-floating reference point in the
+% body line so adjacent margin notes don't collide.
+\newcommand{\blockannot}[3]{\blockannot@i{}{#1}{#2}{#3}}
+\newcommand{\blockannotok}[3]{\blockannot@i{ok}{#1}{#2}{#3}}
+\newcommand{\blockannot@i}[4]{%
+  \mbox{}\marginnote{%
+    \raggedright\scriptsize
+    \ifx\relax#3\relax\else
+      \href{\leandocsbase #3}{\textcolor{BurntOrange}{$\forall$}}%
+      \def\@tmp{#1}\ifx\@tmp\@empty\else
+        \textcolor{ForestGreen}{\checkmark}%
+      \fi
+      \,%
+    \fi
+    \ifx\relax#4\relax\else
+      \href{\sourcebase #4}{\textcolor{NavyBlue}{$\nabla$}}\,%
+    \fi
+    \ifx\relax#2\relax\else
+      \href{\trackerbase #2}{\textcolor{NavyBlue}{\#}}\,%
+      \href{\commentbase #2}{\textcolor{NavyBlue}{$+$}}%
+    \fi
+  }%
+}
+
+% \chapterannot{chapterDir}{trackerLabel}
+% Chapter-level annotation: link to the chapter directory + tracker.
+\newcommand{\chapterannot}[2]{%
+  \mbox{}\marginnote{%
+    \raggedright\scriptsize
+    \href{\sourcebase #1/}{\textcolor{NavyBlue}{$\nabla$ src}}\\[-0.3ex]%
+    \href{\trackerbase #2}{\textcolor{NavyBlue}{\# issues}}\\[-0.3ex]%
+    \href{\commentbase #2}{\textcolor{NavyBlue}{$+$ note}}%
+  }%
+}
+
+% \sectionannot{label} — section-level annotation: tracker only.
+\newcommand{\sectionannot}[1]{%
+  \marginnote{%
+    \raggedright\scriptsize
+    \href{\trackerbase #1}{\textcolor{NavyBlue}{\#}}\,%
+    \href{\commentbase #1}{\textcolor{NavyBlue}{$+$}}%
+  }%
+}
+
+% Back-compat: \tracker{label} still works (subsumed by \blockannot but kept
+% so old hand-written .md content references don't break).
+\newcommand{\tracker}[1]{\blockannot{#1}{}{}}
+
+% \bcomment[author]{text} — structured human/agent comment in the margin.
+% `text` empty → renders an "(add note)" stub. Optional [author] tag appears
+% as a small "— Author" suffix.  Renders in BrickRed to distinguish from
+% the auto-generated annotation icons.
+\newcommand{\bcomment}[2][]{%
+  \marginnote{%
+    \raggedright\scriptsize\textcolor{BrickRed}{%
+      \textbf{note:}~%
+      \ifx\relax#2\relax\textit{(add note)}\else#2\fi%
+      \ifx\relax#1\relax\else~\textemdash~\textit{#1}\fi%
+    }%
+  }%
+}
 %
 % ── Glossary terms: \defterm{} / \refterm{} ─────────────────────────────────
 % PDF rendering is intentionally clean — the HTML viewer carries the

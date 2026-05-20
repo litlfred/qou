@@ -528,8 +528,20 @@ const ENV_NAMES: Record<string, string> = {
  * @param sourceDir - Directory containing the block source files (relative to repo root)
  * @returns LaTeX string
  */
-export function renderBlock(block: Block, mdContent: string, sourceDir?: string): string {
+export function renderBlock(
+  block: Block,
+  mdContent: string,
+  sourceDir?: string,
+  rootName?: string,
+): string {
   const lines: string[] = [];
+
+  // Build the `\sourcebase`-relative path for the .md GitHub link.  The
+  // `\sourcebase` macro points at `content/`, so we strip a leading
+  // `content/` from `sourceDir` if present and append `<rootName>.md`.
+  const mdRelPath = (sourceDir && rootName)
+    ? `${sourceDir.replace(/^content\//, "")}/${rootName}.md`
+    : "";
 
   switch (block.kind) {
     case "prose": {
@@ -586,7 +598,10 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       // simulator and its default view.
       const titleArg = block.title ? `[{${escapeLatex(block.title)}}]` : "[{Interactive Simulation}]";
       lines.push(`\\begin{remark}${titleArg}`);
-      if (block.label) lines.push(`  \\label{${block.label}}`);
+      if (block.label) {
+        lines.push(`  \\label{${block.label}}`);
+        lines.push(`  \\blockannot{${block.label}}{}{${mdRelPath}}`);
+      }
       if (block.uses?.length) {
         lines.push(`  \\uses{${block.uses.join(", ")}}`);
       }
@@ -636,27 +651,31 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       const titleArg = "title" in block && block.title ? `[{${escapeLatex(block.title)}}]` : "";
       lines.push(`\\begin{${envName}}${titleArg}`);
 
-      // Label
+      // Label + margin annotation (4-icon strip in the right margin:
+      //   ∀ → Lean docs page (if any)
+      //   ∇ → .md source on GitHub
+      //   # → GitHub issues filtered by label
+      //   + → "add comment" pre-filled with block label
+      // The annotation strip is emitted as a single \blockannot /
+      // \blockannotok macro call so adjacent block annotations don't
+      // collide in the margin.  See latex/preamble.tex for the macro
+      // definitions.
       if ("label" in block && block.label) {
         lines.push(`  \\label{${block.label}}`);
-      }
 
-      // Lean reference — emit the bare Lean declaration (without the
-      // `<package>:` URI prefix) for the LaTeX blueprint macro.  We
-      // parse via the centralized helper so the URI grammar stays
-      // single-sourced; on malformed refs we fall back to the raw
-      // string rather than silently dropping the `\lean{}` macro.
-      if ("lean" in block && block.lean?.ref) {
-        let decl: string;
-        try {
-          decl = parseLeanRef(block.lean.ref).decl;
-        } catch {
-          decl = block.lean.ref;
+        // Resolve the Lean declaration (without the `<package>:` URI prefix).
+        let leanDecl = "";
+        if ("lean" in block && block.lean?.ref) {
+          try {
+            leanDecl = parseLeanRef(block.lean.ref).decl;
+          } catch {
+            leanDecl = block.lean.ref;
+          }
         }
-        lines.push(`  \\lean{${decl}}`);
-        if (block.lean.sorryFree) {
-          lines.push(`  \\leanok`);
-        }
+
+        const sorryFree = "lean" in block && block.lean?.sorryFree === true;
+        const macro = sorryFree ? "blockannotok" : "blockannot";
+        lines.push(`  \\${macro}{${block.label}}{${leanDecl}}{${mdRelPath}}`);
       }
 
       // Uses
@@ -789,8 +808,15 @@ export function renderSection(
   chapterReferencedLabels?: Set<string>,
 ): string {
   const lines: string[] = [];
-  const label = section.label ? `\\label{${section.label}}\n` : "";
-  lines.push(`\\section{${escapeLatex(section.title)}}\n${label}`);
+  const sectionLabel = section.label ? `\\label{${section.label}}` : "";
+  // Section heading + margin annotation (tracker + comment-stub for the
+  // whole section).  Only emit \sectionannot when the section carries a
+  // label — anonymous sections have nothing to filter the tracker by.
+  lines.push(`\\section{${escapeLatex(section.title)}}`);
+  if (section.label) {
+    lines.push(sectionLabel);
+    lines.push(`\\sectionannot{${section.label}}`);
+  }
 
   // Collect referenced example/remark labels for compact-mode filtering
   // Merge section-local refs with chapter-wide refs when available
@@ -817,7 +843,7 @@ export function renderSection(
       }
       continue;
     }
-    lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir));
+    lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir, rootName));
     lines.push(""); // blank line between blocks
   }
 
@@ -835,14 +861,24 @@ export function renderChapter(
   chapter: Chapter,
   blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
+  chapterDir?: string,
+  paperSlug?: string,
 ): string {
   const lines: string[] = [];
   // Each chapter starts on a new page
   lines.push("\\clearpage");
-  const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
+  const labelLine = chapter.label ? `\\label{${chapter.label}}\n` : "";
   // Chapters with tabLabel are unnumbered (\chapter*); all others are auto-numbered by LaTeX.
   const star = chapter.tabLabel != null ? "*" : "";
-  lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${label}`);
+  lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${labelLine}`);
+  // Chapter-level margin annotation: link to the chapter directory + tracker.
+  // We use the chapter's own label as the tracker filter; if the chapter
+  // has no label, fall back to filtering by the chapter dir name so
+  // GitHub issues referencing the dir still surface.
+  if (chapterDir && paperSlug) {
+    const trackerLabel = chapter.label ?? chapterDir;
+    lines.push(`\\chapterannot{${paperSlug}/${chapterDir}}{${trackerLabel}}`);
+  }
 
   // Collect all citation keys used in this chapter
   const chapterCites = new Set<string>();
