@@ -7,7 +7,7 @@
 
 use hecke_engine::{
     geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
-    wenzl_lr,
+    tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
 };
 use pyo3::prelude::*;
 
@@ -522,6 +522,8 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_via_gp_hoefsmit, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_f64, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_word_lq, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_word_lq_clear_cache, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
@@ -617,4 +619,48 @@ fn chi_lambda_all_partitions_mpfr(
         &q_str,
         dps,
     )
+}
+
+/// **Markov-axiom recursive ascent** in Rust — the canonical
+/// Jones-Markov trace `tr_M(w, q)` for a single Hecke word `w` in
+/// H_n(q), returned as a serialised ZHLaurent polynomial in (z, h)
+/// with BigInt-in-q^{1/2} coefficients.
+///
+/// Mirrors `folio-assistant/computations/laurent_q_trace.py
+/// tr_M_word_lq` exactly, but with BigInt arithmetic in Rust
+/// (no f64). Per CLAUDE.md §Precision goals L1 — every coefficient
+/// is exact; the Python caller evaluates at q₀ to mpmath.mpf at
+/// production dps.
+///
+/// `word`: 0-based generator indices (consistent with
+/// `markov_trace_canonical.tr_M_word` and the Python `tr_M_word_lq`).
+/// `n_strands`: H_n strand count.
+///
+/// Returns `Vec<((z_exp, h_exp), Vec<(q_half_exp, big_int_str)>)>`.
+/// The outer Vec has one entry per non-zero (z, h) monomial; each
+/// coefficient is a list of `(q_exp_doubled, BigInt_decimal_string)`
+/// pairs (where `q_exp_doubled = 2 * q_exp` to support half-integer
+/// q-exponents — see `hecke_engine::laurent_poly_q::LaurentPolyQ`
+/// for the encoding).
+///
+/// Raises `RuntimeError` on Case C (multiple top-1 in segment) —
+/// caller routes to the sympy ocneanu_fallback path same as the
+/// Python implementation.
+#[pyfunction]
+fn tr_m_word_lq(
+    word: Vec<u32>,
+    n_strands: usize,
+) -> PyResult<Vec<((i32, i32), Vec<(i32, String)>)>> {
+    match rust_tr_m_word_lq::tr_m_word_lq(&word, n_strands, 200) {
+        Ok(zh) => Ok(zh.to_ffi()),
+        Err(msg) => Err(pyo3::exceptions::PyRuntimeError::new_err(msg)),
+    }
+}
+
+/// Clear the global recursion cache. Call between independent
+/// atoms to prevent unbounded memory growth in long-running
+/// sessions (matches the Python `_tr_M_word_lq_cached.cache_clear()`).
+#[pyfunction]
+fn tr_m_word_lq_clear_cache() {
+    rust_tr_m_word_lq::clear_cache();
 }
