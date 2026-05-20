@@ -11,169 +11,6 @@
     "ts": "8d9c6aca0911"
   },
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:120: - \"you can hear *more than* the Jones polynomial when you know which"
-      }
-    ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "6ecbdc286145",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "proof-no-bare-sorries": [
       {
         "field_hash": {
@@ -297,6 +134,20 @@
         },
         "reviewed_at": "2026-05-20T16:28:23.168Z",
         "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f"
+      },
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:45:12.683Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -341,6 +192,20 @@
         },
         "reviewed_at": "2026-05-20T16:28:23.168Z",
         "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f"
+      },
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:45:12.683Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
       }
     ],
     "detangler-archimedean-wall": [
@@ -444,7 +309,174 @@
         "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:22: reduction at 1.551× (+14.8% vs 1.82× baseline), consistent with the | quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:27: 6_1 regresses the variance to 1.878× (worse than baseline). At | quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:81: *both falsified* on D, T, ³He, ⁴He: | quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:109: For atomic braids of D, T, ³He, ⁴He (at crossings $22^+$), the | quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:125: ### Significance: closing the 1.82× variance"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:115: \"hears\" not just the Jones spectrum but the **knot-ideal-restricted"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md:120: - \"you can hear *more than* the Jones polynomial when you know which"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "6ecbdc286145",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-05-20T16:30:47.477Z"
+  "updated_at": "2026-05-20T16:45:12.683Z"
 }

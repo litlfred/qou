@@ -760,59 +760,47 @@ export function checkProofConditionalClassBanner(
   };
 }
 
-// ─── Voice: exposition around statement ─────────────────────────
+// ─── Voice: statement should not contain interpretation ────────
+//
+// A theorem/proposition/lemma/corollary STATEMENT is the bare claim.
+// Interpretation, motivation, "physical meaning", or "why this
+// matters" belongs in a separate `remark` block linked via
+// `interprets:`. This checker is a candidate-flagger only — the
+// actual judgement (is this prose interpretation, or a legitimate
+// proof sketch?) is non-mechanical and the criterion is registered
+// as `automated: false`. Script returns `n/a` to queue the block
+// for agent review when the candidate heading pattern fires.
 
-// Heuristic: a block that opens with `**Theorem.**` / `**Proposition.**`
-// / `**Lemma.**` / `**Corollary.**` on the very first non-empty,
-// non-frontmatter line — with no preceding prose introducing the
-// claim — fails. Borderline cases (≤ 3 lines of prose) queue for
-// `proof-exposition-review` agent adjudication via the `n/a` route.
+const INTERPRETATION_HEADING_RE =
+  /^##+\s*(Interpretation|Discussion|Motivation|Why\s+(?:this\s+matters|we\s+care)|Significance|Physical(?:\s+meaning|\s+interpretation)?|Meaning|Commentary|Aside|Reading|Intuition)/im;
 
-const STATEMENT_ENVELOPE_RE =
-  /^\s*\*\*(Theorem|Proposition|Lemma|Corollary|Conjecture)\s*[\(\.]/;
-
-export function checkVoiceStatementNeedsExposition(
+export function checkVoiceStatementNoInterpretation(
   mdPath: string | undefined,
 ): CheckerResult {
   if (!mdPath) return { result: "n/a", hits: [] };
   const text = readMaybe(mdPath);
   if (!text) return { result: "n/a", hits: [] };
-  const lines = text.split("\n");
-  let envelopeIdx = -1;
-  for (let i = 0; i < lines.length; i++) {
-    if (STATEMENT_ENVELOPE_RE.test(lines[i])) {
-      envelopeIdx = i;
-      break;
-    }
-  }
-  // No envelope = doesn't apply (e.g. the block opens with a math
-  // block or a `## Section` heading).
-  if (envelopeIdx < 0) return { result: "n/a", hits: [] };
-  // Count non-empty prose lines before the envelope.
-  let preLines = 0;
-  for (let i = 0; i < envelopeIdx; i++) {
-    const l = lines[i].trim();
-    if (l === "") continue;
-    if (l.startsWith("#")) continue; // section heading
-    if (l.startsWith("```")) continue; // fence delim
-    preLines++;
-  }
-  // 0 lines = bare statement (fail). 1-3 = borderline (queue agent).
-  if (preLines === 0) {
-    return {
-      result: "fail",
-      hits: [
-        {
-          file: mdPath,
-          line: envelopeIdx + 1,
-          text:
-            `statement envelope on line ${envelopeIdx + 1} has zero prose ` +
-            `lines preceding it — the block reads as a bare claim`,
-        },
-      ],
-    };
-  }
-  return { result: "pass", hits: [] };
+  // Agent-only criterion. Script returns `n/a` ALWAYS so the sidecar
+  // is marked needs-agent on every applicable block; an agent /
+  // human reviewer entry supersedes. BUT — when the candidate
+  // heading pattern fires, append a hint to the agent's queue via
+  // the `hits[]` payload so the agent knows where to look.
+  const m = text.match(INTERPRETATION_HEADING_RE);
+  if (!m) return { result: "n/a", hits: [] };
+  const idx = text.slice(0, m.index).split("\n").length;
+  return {
+    result: "n/a",
+    hits: [
+      {
+        file: mdPath,
+        line: idx,
+        text:
+          `candidate '${m[0].trim()}' heading at line ${idx} — agent should ` +
+          `review whether the section's content is interpretation that ` +
+          `belongs in a separate remark block`,
+      },
+    ],
+  };
 }
 
 // ─── Dispatch map ───────────────────────────────────────────────
@@ -856,6 +844,6 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "proof-conditional-class-banner": (p) =>
     checkProofConditionalClassBanner(p.md, p.lean),
   // voice
-  "voice-statement-needs-exposition": (p) =>
-    checkVoiceStatementNeedsExposition(p.md),
+  "voice-statement-no-interpretation": (p) =>
+    checkVoiceStatementNoInterpretation(p.md),
 };

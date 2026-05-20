@@ -111,21 +111,22 @@ const VOICE: QaCriterionDefinition[] = [
     automated: true,
   },
   {
-    id: "voice-statement-needs-exposition",
+    id: "voice-statement-no-interpretation",
     domain: "voice",
     description:
-      "Provable block (theorem/proposition/lemma/corollary) is not " +
-      "dropped naked — the `.md` carries either (a) an introductory " +
-      "paragraph before the `**Statement.**` envelope OR (b) a " +
-      "motivation / preview / setup that bridges to the surrounding " +
-      "text. A bare statement block with no exposition makes the " +
-      "paper read as a list of formulas rather than a narrative. " +
-      "Script flags candidates (≤ 3 lines of prose before the " +
-      "envelope); routes to `proof-exposition-review` for agent " +
-      "adjudication on borderline cases.",
+      "Provable block (theorem/proposition/lemma/corollary) STATEMENT " +
+      "is the bare claim — interpretation / motivation / physical " +
+      "meaning belongs in a SEPARATE `remark` block linked via " +
+      "`interprets:`. A statement block whose `.md` carries an " +
+      "`## Interpretation` / `## Discussion` / `## Motivation` / " +
+      "`## Why this matters` / `## Significance` heading after the " +
+      "statement is a candidate for splitting. Agent-only (the actual " +
+      "judgement — what counts as interpretation vs. legitimate proof " +
+      "sketch — is non-mechanical); the script merely flags candidates " +
+      "with the heading patterns above and queues them for the agent.",
     default_severity: "minor",
     depends_on: ["md"],
-    automated: true,
+    automated: false,
     applies_to: ["theorem", "lemma", "proposition", "corollary"],
   },
   {
