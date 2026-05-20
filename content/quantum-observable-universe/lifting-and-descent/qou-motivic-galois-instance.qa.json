@@ -526,25 +526,6 @@
         "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
       }
     ],
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {
-          "md": "70ac0c487380",
-          "ts": "13cc33a70ecc",
-          "lean": "a7b0421a3c08"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T17:52:35.574Z",
-        "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/lifting-and-descent/qou-motivic-galois-instance.lean:26: bare `sorry` at line 26 — no `-- Ref: [key]` citation in the previous 3 lines | quantum-observable-universe/lifting-and-descent/qou-motivic-galois-instance.lean:78: bare `sorry` at line 78 — no `-- Ref: [key]` citation in the previous 3 lines"
-      }
-    ],
     "proof-build-green": [
       {
         "field_hash": {
@@ -578,7 +559,24 @@
         "reviewed_at": "2026-05-20T17:52:35.574Z",
         "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc"
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "70ac0c487380",
+          "ts": "13cc33a70ecc",
+          "lean": "a7b0421a3c08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T18:28:17.139Z",
+        "reviewed_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+      }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-20T18:28:17.139Z"
 }

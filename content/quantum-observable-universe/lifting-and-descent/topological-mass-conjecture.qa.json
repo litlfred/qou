@@ -526,25 +526,6 @@
         "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
       }
     ],
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {
-          "md": "bfd2b7191a67",
-          "ts": "ec3ceff996e3",
-          "lean": "e923958a46a4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T17:52:35.574Z",
-        "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/lifting-and-descent/topological-mass-conjecture.lean:65: bare `sorry` at line 65 — no `-- Ref: [key]` citation in the previous 3 lines"
-      }
-    ],
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
@@ -561,7 +542,24 @@
         "reviewed_at": "2026-05-20T17:52:35.574Z",
         "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc"
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "bfd2b7191a67",
+          "ts": "ec3ceff996e3",
+          "lean": "e923958a46a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T18:28:17.139Z",
+        "reviewed_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+      }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-20T18:28:17.139Z"
 }
