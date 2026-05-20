@@ -285,14 +285,14 @@
 | Hadron | `$\mathfrak{H}$` | ✓ Used when needed | ✓ |
 | Localized hadron | `$\mathfrak{H}_p$` | ✓ Present | ✓ |
 
-### Energy notations (mixed fonts)
+### Energy notations (post-Phase 5n: fraktur for all energies)
 
 | Concept | Correct Notation | Expected Usage | Found | Status |
 |---------|------------------|-----------------|-------|--------|
-| $q$-energy | `$\mathfrak{E}_q$` (bold) | Should appear | ✓ Found 8 instances | ✓ |
+| $q$-energy | `$\mathfrak{E}_q$` (fraktur, Phase 5n) | Should appear | ✓ Found 8 instances | ✓ |
 | Crossing energy (hadron subscript) | `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$` (plain italic) | Should appear | ✓ Correct formula | ✓ |
-| Binding energy | `$\mathfrak{E}_{\mathrm{bind}}$` (bold) | Should appear | ⚠️ Rarely used; see below | ⚠️ |
-| **Fraktur energy (WRONG)** | `$\mathfrak{E}$` | Should NOT appear | ✓ Not found | ✓ |
+| Binding energy | `$\mathfrak{E}_{\mathrm{bind}}$` (fraktur, Phase 5n) | Should appear | ⚠️ Rarely used; see below | ⚠️ |
+| **Legacy bold energy (DEPRECATED, Phase 5n)** | `$\mathbf{E}$` | Should NOT appear (relocated to fraktur in Phase 5n) | ✓ Not found post-Phase 5n | ✓ |
 
 ### Mass notations (fraktur)
 

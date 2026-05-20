@@ -156,7 +156,7 @@ degree $\lfloor 2g/(g-1) \rfloor$.*
 | $\tau(3,4) = t = \tau(3,2^2)$ | $3$ | $4$ | $2$ | $6$ | $0.5850$ | $0.2770$ |
 
 Degree-$1$ knots are already encoded in $\mathcal{Q}_{\mathrm{bare}}$
-through distinct vertex weights ($\mathfrak{p} {}^i\!\bowtie_j \mathfrak{p}$, $\mathfrak{n} {}_j\!\oplus^i \mathfrak{n}$, $\mathfrak{p} {}^i\!\bowtie_j \mathfrak{n}$), so $F = 1$ for shells $1$–$4$.
+through distinct vertex weights ($\mathfrak{p} {}^i\!\oplus_j \mathfrak{p}$, $\mathfrak{n} {}^i\!\oplus_j \mathfrak{n}$, $\mathfrak{p} {}^i\!\oplus_j \mathfrak{n}$ — inter-particle Hopf links with crossing indices $i, j$), so $F = 1$ for shells $1$–$4$.
 The active correction comes from degree-$2$ knots only.
 
 ### Jet bundle structure
