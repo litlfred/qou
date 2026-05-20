@@ -115,10 +115,10 @@ $$
 
 with $F \in \{\Phi_q, \mathrm{Li}_2^q\}$ on the proton / electron canonical braids:
 
-| F | $m_p/m_e$ | err vs CODATA 1836.152 |
-|---|---:|---:|
-| **Faddeev $\Phi_q$** | 1869.85 | **1.84% ✓** |
-| **Symmetric $\mathrm{Li}_2^q$** | 3.31 | **99.82% ✗** |
+| F | $m_p/m_e$ | err vs CODATA 1836.152 | match |
+|---|---:|---:|:---|
+| **Faddeev $\Phi_q$** | 1869.85 | 1.84% | close |
+| **Symmetric $\mathrm{Li}_2^q$** | 3.31 | 99.82% | falsified |
 
 The 99.82% gap is NOT a "wrong formula" — it is the **bar-symmetric
 projection** killing the singular-braid mass scale. The asymmetric
