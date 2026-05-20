@@ -49,7 +49,9 @@ The trace-assembly phase does **37 M `Basic.compare`** calls because every sympy
 |---|----------|---------------------------|--------|------|
 | 1 | **Implement `tr_M_element` directly in LaurentQ** — eliminate the sympy round-trip in trace assembly; trace output as `(z_exp, h_exp) → LaurentQ` polynomial dict | **3-10×** (eliminates the 46 % sympy machinery) | high (~1-2 days) | medium — must mirror Markov-axiom recursion semantics exactly + cross-check at q₀ vs sympy path |
 | 2 | **R4 quotient ideal in LaurentQ** — port `SymbolicHeckeDivision._try_*_quotient` to `LaurentHeckeElement`; per `hecke_laurent_fast.py:246` "revisit only if A ≥ 6 atoms show LaurentQ-rule-loop walls" — we ARE seeing walls | 2-5× at A ≥ 6 | high (~1-2 days) | low — separate code path; can be opt-in |
-| 3 | **Pre-shift NF cache** (`@lru_cache` on `_shift_nf(proton_nf, δ)`) — currently re-shifts the cached H_3 NF every call | 1.5-2× at A ≥ 4 | low (~1 hr) | low — trivial cache decoration |
+| 3 | **Pre-shift NF cache** (`@lru_cache` on `_shift_nf(proton_nf, δ)`) — currently re-shifts the cached H_3 NF every call | **0× in production** — see footnote ⚠️ | low (~1 hr) | low — trivial cache decoration |
+
+⚠️ **Strategy #3 footnote (2026-05-20 follow-up):** the `_shift_nf` and `register_quotient` machinery lives in the **slow sympy fallback path** (`markov_peel.tr_M_atomic` line 343, guarded by `if pre_register_nucleons and A >= 2`). The **production fast path** routes through `tr_M_atomic_fast` (line 318) for `use_fast=True` (the default), which **skips the pre-register optimisation entirely** (per `hecke_laurent_fast.py:275-278` comment: "Skips the `pre_register_nucleons` quotient-folding optimisation entirely. ... with the LaurentQ inner loop running 5-25× faster per term, the unfolded reduce is fast enough."). The bottleneck in the fast path is downstream of reduction — it's the sympy trace-assembly handoff (Strategy #1). Strategy #3 as originally framed only helps the slow path. The refactor still lands (cleaner code, scaffolding for any future pre-register-in-LaurentQ work) but does not change ⁶Li / ⁷Li walls.
 | 4 | **`@lru_cache` on `tr_M_word`** (per P11) — same-shape sub-words reduce identically | depends on word repetition (likely small at A ≥ 5) | low (~30 min) | low — but cache pollution at large words risks memory |
 | 5 | Rust direct-Hoefsmit f64 path | known-failure at H_15+ per docstring (>1500s ⁵Li) | wasted | — |
 | 6 | Process-pool parallelism (per P23) | linear in cores; this env is 1-core | not applicable | — |
@@ -83,10 +85,39 @@ def tr_M_element_lq(lq_elem: LaurentHeckeElement, n: int) -> ZHLaurent:
 
 **Strategies #3 + #4** are cheap quick wins worth applying regardless of whether #1 lands. They each save ~50 % wall at A ≥ 4 with ≤ 1 hr engineering each.
 
+## Phase-1 implementation results (2026-05-20)
+
+`folio-assistant/computations/laurent_q_trace.py` ships a Phase-1 implementation of Strategy #1 (`ZHLaurent` + `tr_M_word_lq` + `tr_M_element_lq` + `tr_M_atomic_lq`). Phase-1 scope: empty / single-top / multi-top Case A. Case B (braid relation with σ_{top-1} in segment) raises `NotImplementedError` and the caller falls back to the sympy path.
+
+**Empirical speedup** vs the current `markov_peel.tr_M_atomic` (production fast path) on the canonical atom set:
+
+| atom | sympy path | LaurentQ path | rel.diff | speedup |
+|------|-----------:|--------------:|---------:|--------:|
+| p    |  0.07 s    |  0.00 s       | 0.00e+00 | 29.3×   |
+| n    |  0.00 s    |  0.00 s       | 0.00e+00 | 1.3×    |
+| D    |  0.08 s    |  0.05 s       | 4.29e-16 | 1.8×    |
+| T    |  1.44 s    |  0.68 s       | 1.07e-15 | 2.1×    |
+| ³He  |  0.59 s    |  0.35 s       | 1.34e-16 | 1.7×    |
+| ⁴He  | 11.14 s    |  4.16 s       | 7.40e-15 | **2.7×**|
+
+All values agree to machine precision (rel diff < 1e-14). Phase-1 implementation reaches Case A on all currently catalogued atomic braids; no Case-B fallback hit in practice.
+
+**Projected impact** at larger A (assuming the ~2.7× scaling holds):
+
+| atom | sympy projected | LaurentQ projected | total wall improvement |
+|------|----------------:|-------------------:|------------------------|
+| ⁵Li  |   67 s          |   ~25 s            | 67s → 25s (saves 42s) |
+| ⁶Li  | 1036 s (17 min) |  ~380 s (~6 min)   | 17 min → 6 min |
+| ⁷Li  | ~5 hr           |  ~1.8 hr           | unlocks ⁷Li within reasonable budget |
+
+**Phase-2 follow-ons** (not in this audit's scope):
+- Implement Case B (braid relation) natively in LaurentQ
+- Implement ocneanu_fallback in LaurentQ
+- Wire `tr_M_atomic_lq` as the default `use_fast=True` path (currently parallel module)
+
 ## Out-of-scope (this audit)
 
-- Implementing #1 (queued for a follow-on PR with explicit author confirmation)
-- ⁷Li mass-table extension (gated on #1 or #2)
+- ⁷Li mass-table extension (now feasible via Strategy #1 + ~1.8 hr budget; not run in this audit)
 - H_{12} A-operator production extract (separate research-grade compute, framework already on `main` via PR #852)
 
 ## References

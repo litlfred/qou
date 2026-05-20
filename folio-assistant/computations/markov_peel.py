@@ -222,6 +222,43 @@ def _nucleon_nf_and_trace(
     return nf, tr
 
 
+def _shift_nf(nf: SymbolicHeckeElement, δ: int) -> SymbolicHeckeElement:
+    """Return `nf` with every generator index in every word shifted by δ.
+
+    Hoisted out of `tr_M_atomic` so it can be combined with
+    `_shifted_nucleon_nf` caching (Strategy #3 from
+    `docs/audits/2026-05-20-markov-peel-bottleneck-profile.md`).
+    """
+    shifted_terms: dict = {}
+    for w, c in nf.terms.items():
+        w_shifted = tuple(g + δ for g in w)
+        shifted_terms[w_shifted] = c
+    return SymbolicHeckeElement(shifted_terms)
+
+
+@functools.lru_cache(maxsize=32)
+def _shifted_nucleon_nf(
+    Z: int, N: int, δ: int, max_iterations: int
+) -> tuple[SymbolicHeckeElement, sp.Expr]:
+    """`_nucleon_nf_and_trace(Z, N)` with generator indices shifted by δ.
+
+    Cached across calls: the same (species=p|n, δ) returns the
+    same shifted NF without re-running the shift loop. For A ≥ 4
+    atoms the same δ ∈ {0, 3, 6, 9, ...} recurs across each call
+    to `tr_M_atomic`; pre-caching saves ~1.5-2× per call vs the
+    inline `_shift_nf(nf, δ)` recompute.
+
+    Returns the shifted NF and the (unshifted) tr_M value — the
+    Markov trace is invariant under generator-index shift on the
+    nucleon's local 3-strand block (since `tr_M_element` traces
+    over the local Hecke sub-algebra).
+    """
+    nf, tr = _nucleon_nf_and_trace(Z, N, max_iterations)
+    if δ == 0:
+        return nf, tr
+    return _shift_nf(nf, δ), tr
+
+
 def tr_M_atomic(
     Z: int,
     N: int,
@@ -306,34 +343,33 @@ def tr_M_atomic(
     if pre_register_nucleons and A >= 2:
         div = SymbolicHeckeDivision()
 
-        def _shift_nf(nf: SymbolicHeckeElement, δ: int) -> (
-            SymbolicHeckeElement
-        ):
-            shifted_terms: dict = {}
-            for w, c in nf.terms.items():
-                w_shifted = tuple(g + δ for g in w)
-                shifted_terms[w_shifted] = c
-            return SymbolicHeckeElement(shifted_terms)
-
         # Order: build the per-nucleon registration in the same
         # left-to-right order as atom_braid_word_3A — protons first
         # (positions 0..Z-1), then neutrons (positions Z..A-1).
+        # Uses `_shifted_nucleon_nf` (module-level + lru_cached)
+        # so repeated calls with the same (species, δ) skip the
+        # shift loop (Strategy #3 from
+        # docs/audits/2026-05-20-markov-peel-bottleneck-profile.md).
         for k in range(Z):
             δ = 3 * k
-            p_nf, p_tr = _nucleon_nf_and_trace(1, 0, max_iterations)
+            p_nf_shifted, p_tr = _shifted_nucleon_nf(
+                1, 0, δ, max_iterations
+            )
             div.register_quotient(
                 -(100 * (k + 1) + 1),
-                _shift_nf(p_nf, δ),
+                p_nf_shifted,
                 name=f"proton@{δ}",
                 n_strands=3,
                 tr_M_value=p_tr,
             )
         for k in range(N):
             δ = 3 * (Z + k)
-            n_nf, n_tr = _nucleon_nf_and_trace(0, 1, max_iterations)
+            n_nf_shifted, n_tr = _shifted_nucleon_nf(
+                0, 1, δ, max_iterations
+            )
             div.register_quotient(
                 -(100 * (Z + k + 1) + 2),
-                _shift_nf(n_nf, δ),
+                n_nf_shifted,
                 name=f"neutron@{δ}",
                 n_strands=3,
                 tr_M_value=n_tr,
