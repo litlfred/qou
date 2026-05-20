@@ -22,8 +22,9 @@ Ref: prop:interface-knot-markov-z.md (companion: interface z-factor)
 -/
 
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.GroupPower.Basic
+import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
 
 namespace QOU.BraidKnot
 
@@ -61,7 +62,12 @@ theorem constit_factor_eq_tau_M_proton
     (Z N : ℕ) (hZ : inst.tau_M_proton ≠ 0) (hN : inst.tau_M_neutron ≠ 0) :
     inst.tau_M_constit (Z + 1) N / inst.tau_M_constit Z N
       = inst.tau_M_proton := by
+  -- Rewrite both constit traces via the disjoint-multiplicativity axiom.
   rw [inst.tau_M_constit_disjoint, inst.tau_M_constit_disjoint]
+  -- Unfold a^(Z+1) = a * a^Z so the cancellation is mechanical.
+  rw [pow_succ]
+  -- Now the goal is (tau_M_proton^Z * tau_M_proton * tau_M_neutron^N)
+  --              / (tau_M_proton^Z * tau_M_neutron^N) = tau_M_proton
   have hp : inst.tau_M_proton ^ Z ≠ 0 := pow_ne_zero Z hZ
   have hn : inst.tau_M_neutron ^ N ≠ 0 := pow_ne_zero N hN
   field_simp

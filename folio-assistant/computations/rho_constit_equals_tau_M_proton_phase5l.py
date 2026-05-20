@@ -66,10 +66,12 @@ def compute_tau_M_proton_H3(q_val: mp.mpf, dps: int = 50) -> mp.mpf:
     g0 chain + g1 chain, no atomic embedding."""
     h_val = float(Q0 - 1 / Q0)
     word = marshal_intra(_PROTON_G0, _PROTON_G1, h_val)
+    q_str = mp.nstr(q_val, dps, strip_zeros=False)
     total = mp.mpf(0)
     for lam in partitions_of(3):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word, q_value=float(q_val))
+        chi = chi_lambda_braid(lam, word, q_value=q_str,
+                                precision="mpfr_50dps")
         total += y * mp.mpf(str(chi))
     return total
 
@@ -91,16 +93,27 @@ def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
         else:
             word_m.append((1, gen + 1))
     n = 3 * (Z + N)
+    q_str = mp.nstr(q_val, dps, strip_zeros=False)
     total = mp.mpf(0)
     for lam in partitions_of(n):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word_m, q_value=float(q_val))
+        chi = chi_lambda_braid(lam, word_m, q_value=q_str,
+                                precision="mpfr_50dps")
         total += y * mp.mpf(str(chi))
     return total
 
 
 def main() -> int:
     set_compute_dps(50)
+
+    # Construct WitnessBuilder BEFORE expensive compute so durationMs
+    # reflects the full sweep, not just the save step (per Copilot review).
+    builder = WitnessBuilder(
+        "rho-constit-equals-tau-M-proton-phase5l", engine="python"
+    )
+    # Attach to the new proposition block (this is the primary consumer);
+    # the conjecture is a predecessor referenced in the description.
+    builder.set_content_block("prop:constit-factor-tau-M-proton-identity")
 
     print(f"=== Phase 5l: ρ_Z^constit(q) =? τ_M^3(β_p, q) ===\n")
 
@@ -160,11 +173,8 @@ def main() -> int:
         print(f"\n  ✗ Identity NOT confirmed (rel.err {max_rel_err:.2e} "
               f"exceeds 1e-6).  Hypothesis incorrect.")
 
-    # Witness
-    builder = WitnessBuilder(
-        "rho-constit-equals-tau-M-proton-phase5l", engine="python"
-    )
-    builder.set_content_block("conj:constit-factor-2q-minus-1")
+    # Witness — builder constructed at start of main() for accurate
+    # durationMs; populate now that the sweep has finished.
     builder.add_parameter("q_values", Q_VALUES)
     builder.set_description(
         "Phase 5l: structural identity for the constit-side per-Z step "

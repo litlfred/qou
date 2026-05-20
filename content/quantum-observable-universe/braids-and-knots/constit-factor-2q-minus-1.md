@@ -11,7 +11,7 @@
 > coincidence at $q_0$: $\tau_M^3(\beta_p, q_0) \approx 1.2204$
 > happens to be close to $2 q_0 - 1 = 1.2200$, but the two
 > functions diverge away from $q_0$ (rel. err. 28% at $q = 1.05$
-> and 33% at $q = 1.17$ — see Phase 5k.2 / PR #842 for the
+> and 33% at $q = 1.17$ — see Phase 5k.2 (this PR) for the
 > varying-$q$ falsification table).  The conjecture statement
 > below is preserved as a record of Phase 5g's categorical-search
 > result, but the **structural-form claim is superseded** by the

@@ -80,16 +80,18 @@ $\chi_\lambda(\beta, q)$ (Hecke characters) at each $q$:
 
 | $q$ | $\tau_M^3(\beta_p, q)$ | $\rho_Z^{\mathrm{constit}}(q)$ | rel. err. |
 |---|---:|---:|---:|
-| $1.050$ | $0.79284191942392$ | $0.79284191942392$ | $5.97 \times 10^{-16}$ |
-| $1.080$ | $0.99328958564705$ | $0.99328958564705$ | $1.04 \times 10^{-15}$ |
-| $1.10998$ ($q_0$) | $1.22037426648745$ | $1.22037426648745$ | $1.45 \times 10^{-15}$ |
-| $1.130$ | $1.39054700525733$ | $1.39054700525733$ | $6.34 \times 10^{-16}$ |
-| $1.170$ | $1.78584582119413$ | $1.78584582119413$ | $1.01 \times 10^{-15}$ |
+| $1.050$ | $0.79284191942392$ | $0.79284191942392$ | $1.69 \times 10^{-51}$ |
+| $1.080$ | $0.99328958564705$ | $0.99328958564705$ | $1.08 \times 10^{-50}$ |
+| $1.10998$ ($q_0$) | $1.22037426648745$ | $1.22037426648745$ | $3.29 \times 10^{-50}$ |
+| $1.130$ | $1.39054700525733$ | $1.39054700525733$ | $1.35 \times 10^{-50}$ |
+| $1.170$ | $1.78584582119414$ | $1.78584582119414$ | $0$ (exact) |
 
-The identity holds at **machine precision** ($\sim 10^{-15}$ in
-f64) at every $q$ — confirming both the proposition statement and
-the soundness of the $y_\lambda \cdot \chi_\lambda$ measurement
-pipeline shared with PR #819 Phase 5c.1.
+The identity holds at **mpfr-50-dps precision** ($\sim 10^{-50}$
+rel. err., bounded by the 50-decimal-place compute pin used for
+both $y_\lambda(q)$ and $\chi_\lambda(\beta, q)$) at every $q$ —
+confirming both the proposition statement and the soundness of the
+$y_\lambda \cdot \chi_\lambda$ measurement pipeline shared with PR
+#819 Phase 5c.1.
 
 ### Relation to other constit-factor results
 
@@ -97,7 +99,7 @@ pipeline shared with PR #819 Phase 5c.1.
 |---|---|
 | [`conj:constit-factor-2q-minus-1`](#conj:constit-factor-2q-minus-1) (Phase 5g, PR #831) | RESOLVED — $(2q - 1)$ was a numerical coincidence at $q_0$ ($\tau_M^3(\beta_p, q_0) \approx 1.220 \approx 2 q_0 - 1$), not a global structural identity.  Phase 5l ($\dagger$) is the correct closed form. |
 | Phase 5k.1 unit-coefficient $h^5$ (PR #831) | RESOLVED — same coincidence: $\tau_M^3(\beta_p, q_0) - (2 q_0 - 1) \approx h^5(q_0)$ at $q_0$ only, not globally. |
-| Phase 5k.2 varying-q falsification (PR #842) | CONSISTENT — the falsification of $(2q - 1)$ was the bridge to identifying $(\dagger)$ as the actual structural form. |
+| Phase 5k.2 varying-q falsification (this PR §5k.2) | CONSISTENT — the falsification of $(2q - 1)$ was the bridge to identifying $(\dagger)$ as the actual structural form. |
 
 ### Combined per-Z step at the full $\tau_M$ level
 
@@ -138,5 +140,5 @@ $|\Delta_\lambda^*|$-level conjecture
 
 - Script: [`folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py)
 - Witness: `folio-assistant/computations/rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. $< 10^{-12}$, passes at $\sim 10^{-15}$)
-- Falsification audit (precursor): [PR #842](https://github.com/litlfred/qou/pull/842) Phase 5k.2 (varying-q sweep)
+- Falsification audit (precursor): Phase 5k.2 in this PR — script [`constit_factor_varying_q_phase5k2.py`](../../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py) + witness `constit-factor-varying-q-phase5k2.witness.json`
 - Companion proposition: [`prop:interface-knot-markov-z`](#prop:interface-knot-markov-z) (interface factor $z$, exact)
