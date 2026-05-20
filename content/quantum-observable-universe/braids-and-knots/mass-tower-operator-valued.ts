@@ -37,7 +37,6 @@ export default proposition({
     "Operator-valued mass-endomorphism tower via iterated $A^\\lambda_{\\vec\\mu}(I)$",
   uses: [
     "prop:hecke-branching-trace-decomposition",
-    "prop:lr-tensor-character-bridge",
     "prop:rho-k-graded-expansion",
     "prop:li2q-phiq-bar-symmetrization",
     "def:canonical-braid-interface-composition",

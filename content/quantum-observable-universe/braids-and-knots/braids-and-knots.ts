@@ -753,6 +753,7 @@ export default chapter({
         "lp-dual-scaling-conjecture",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
+        "mass-tower-operator-valued",
         "mass-endomorphism-jet-tower",
       ],
     }),
