@@ -31,8 +31,59 @@ This module exposes:
   - `closed_form_tau_M(Z, N, q, tau_p, tau_n)` — full tr_M from
     the two H_3 building blocks
 
+## Open: Bring color-tube weighted averaging (Phase 5q audit)
+
+The "averaged" interface factor here is the BAR-INVARIANT PROJECTION
+  σ_avg = (σ + σ^{-1})/2 = σ - (h/2)·I
+i.e. a UNIFORM 50/50 average of σ and σ^{-1}.  This is the convention
+documented in
+  - `mass_at_3A_proper.atom_braid_word_3A` (the canonical builder)
+  - `averaging-resonance-rule.md` (the categorical definition)
+  - `bar-involution.md` (the bar-symmetric structure)
+
+Per the **owner's intuition** (recorded in
+`probe_pn_flavor_asymmetry.py` and `probe_per_sheet_flavor_nonin.py`
+docstrings — "we are missing some asymmetry in proton, neutron... color
+tubes are different for each so averaging / integration along Bring's
+surface not the same"), the truly canonical averaging at the p-n
+interface should reflect the **3-color-tube structure** of each nucleon
+on Bring's surface:
+
+  - proton (uud) carries color tubes (μ_u, μ_u, μ_d) on sheets c_1,c_2,c_3
+  - neutron (udd) carries (μ_u, μ_d, μ_d)
+  - the p-n boundary averages over the 3·3 = 9 color-pair assignments,
+    weighted by quark content — NOT a uniform σ-vs-σ^{-1} 50/50.
+
+The empirical probe (`probe_pn_flavor_asymmetry.py` Scheme 4) confirms
+the sum-weighted per-quark average reproduces Δm_{n-p} to ~0.14% of
+CODATA via the Bring-surface integration.  This is at the MASS level
+(downstream of tr_M).
+
+**At the substrate H_{3A} level (where this module operates)**: quark
+mass μ_u, μ_d info is NOT present, so the Bring color-tube weighting
+cannot be applied algebraically here without an upstream input.
+The current `pn_convention` choices are:
+
+  - "chi_lambda_braid" (DEFAULT): matches production marshalling
+    which drops the averaging entirely, treating p-n as positive σ.
+  - "strict_averaged": uses σ - (h/2)·I, the uniform bar-invariant
+    projection.
+
+A future `pn_convention="bring_color_weighted"` would require the
+extension of the closed form to take quark-mass inputs and apply the
+sum-weighted average derived in `probe_per_sheet_flavor_nonin.py`.
+**This is a queued research task; not implemented in Phase 5q.**
+
+For the production-tr_M-migration (Action 4), the chi_lambda_braid
+default is correct because production scripts use the simplified σ
+marshalling.  Any future migration to a quark-mass-aware tr_M would
+need to extend BOTH this module and the production pipelines.
+
 Ref: prop:interface-knot-markov-z.md (Phase 5c.1 interface identity)
 Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l constit identity)
+Ref: prop:averaging-resonance-rule.md (categorical σ_avg = σ - h/2 definition)
+Ref: probe_pn_flavor_asymmetry.py (Bring-surface flavor-weighted averaging)
+Ref: probe_per_sheet_flavor_nonin.py (per-sheet Picard-Lefschetz integration)
 Ref: docs/canonical-derivation-cheat-sheet.md §5 action #4
 """
 from __future__ import annotations
@@ -47,6 +98,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 
 InterfaceKind = Literal["positive", "negative", "averaged"]
+PnConvention = Literal["chi_lambda_braid", "strict_averaged", "bring_color_weighted"]
 
 
 def markov_z(q: mp.mpf) -> mp.mpf:
@@ -82,8 +134,7 @@ def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
 
 def canonical_interface_kinds(
     Z: int, N: int,
-    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
-        = "chi_lambda_braid",
+    pn_convention: PnConvention = "chi_lambda_braid",
 ) -> list[InterfaceKind]:
     """Interface kinds for the canonical atomic braid 𝓑_K.
 
@@ -111,6 +162,19 @@ def canonical_interface_kinds(
 
     The ordering is protons-first then neutrons: K = p^Z n^N.
     """
+    if pn_convention == "bring_color_weighted":
+        raise NotImplementedError(
+            "Bring color-tube weighted averaging at the p-n interface "
+            "requires quark-mass inputs (μ_u, μ_d) per nucleon and a "
+            "per-sheet color assignment.  See `probe_per_sheet_flavor_nonin.py` "
+            "and `probe_pn_flavor_asymmetry.py` for the empirical "
+            "derivation at the mass level (sum-weighted scheme matches "
+            "CODATA Δm to ~0.14%).  Implementing this at the substrate "
+            "H_{3A} level — where this module operates — requires extending "
+            "the closed form to accept quark-mass inputs and apply the "
+            "9-way color-pair-weighted average at p-n boundaries.  "
+            "Tracked as a Phase 5q open R&D item per the cheat sheet."
+        )
     A = Z + N
     if A < 2:
         return []
@@ -132,8 +196,7 @@ def canonical_interface_kinds(
 
 def closed_form_ratio(
     Z: int, N: int, q: mp.mpf,
-    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
-        = "chi_lambda_braid",
+    pn_convention: PnConvention = "chi_lambda_braid",
 ) -> mp.mpf:
     """tr_M(𝓑_K) / tr_M(𝓑_K^vac) as a closed-form product.
 
@@ -150,8 +213,7 @@ def closed_form_ratio(
 def closed_form_tau_M(
     Z: int, N: int, q: mp.mpf,
     tau_M_proton_H3: mp.mpf, tau_M_neutron_H3: mp.mpf,
-    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
-        = "chi_lambda_braid",
+    pn_convention: PnConvention = "chi_lambda_braid",
 ) -> mp.mpf:
     """Full closed-form tr_M(𝓑_K) at q.
 
@@ -172,8 +234,7 @@ def closed_form_tau_M(
 
 def interface_census(
     Z: int, N: int,
-    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
-        = "chi_lambda_braid",
+    pn_convention: PnConvention = "chi_lambda_braid",
 ) -> dict[str, int]:
     """Counts of each interface kind in 𝓑_K."""
     kinds = canonical_interface_kinds(Z, N, pn_convention=pn_convention)

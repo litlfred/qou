@@ -32,8 +32,31 @@ Two consumer formats are needed:
 
 This module exports both marshalling helpers.
 
+## Audit (Phase 5q, 2026-05-20): averaging convention
+
+The "averaged" form (c=1, d=-h/2) represents the UNIFORM bar-invariant
+projection σ_avg = (σ + σ^{-1})/2 = σ - h/2·I.  This is the convention
+the canonical builder `mass_at_3A_proper.atom_braid_word_3A` produces
+for p-n boundaries.  Per `prop:averaging-resonance-rule`, this is the
+categorically-defined "averaged" Hecke generator.
+
+The owner's intuition (recorded in `probe_pn_flavor_asymmetry.py` and
+`probe_per_sheet_flavor_nonin.py`) is that the canonical p-n averaging
+should be **Bring color-tube weighted** — i.e. account for the 3 quark
+color sheets per nucleon (uud vs udd) rather than treating p-n as
+flavor-symmetric.  Empirically the sum-weighted scheme reproduces
+Δm_{n-p} to ~0.14% of CODATA (`probe_pn_flavor_asymmetry.py` Scheme 4).
+
+**At the marshalling level here** (H_n algebraic, no quark-mass info),
+the current convention is preserved.  See `closed_form_tau_M.py` for
+the open `pn_convention="bring_color_weighted"` placeholder and the
+queued research item.
+
   Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l)
   Ref: prop:interface-knot-markov-z.md (Phase 5c.1 — z, z-h convention)
+  Ref: prop:averaging-resonance-rule.md (categorical σ_avg = σ - h/2)
+  Ref: probe_pn_flavor_asymmetry.py (Bring color-tube weighted averaging probe)
+  Ref: docs/canonical-derivation-cheat-sheet.md (audit finding)
 """
 from __future__ import annotations
 
