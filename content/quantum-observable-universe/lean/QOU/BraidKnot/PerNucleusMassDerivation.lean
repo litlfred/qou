@@ -64,14 +64,16 @@ axiom m_e_cat : ℝ
 axiom m_e_cat_pos : 0 < m_e_cat
 
 /-- **Placeholder T_w element** for nucleus `n` — currently the
-    zero element.  Real values come from
+    zero element of `HeckeElement n.n₀`. Real values come from
     `braidWordEval n.n₀ <bindingKWord n>` once the algebra
     evaluation map is concretely defined.
 
     The placeholder makes the mass formula type-check and gives
     a (vacuous, zero-valued) prediction; downstream theorems
     will substitute real T_w values. -/
-def placeholder_T_w (n : LightNucleus) : HeckeElement n.n₀ := 0
+def placeholder_T_w (n : LightNucleus) : HeckeElement n.n₀ :=
+  -- Zero element; downstream theorems substitute real values.
+  (0 : HeckeElement n.n₀)
 
 /-- **Categorical mass prediction** for nucleus `n`, using the
     R5-full witness's `rho_star` and the placeholder T_w. -/
