@@ -158,6 +158,117 @@ def tr_M_atomic_rust(Z: int, N: int, *,
         return total
 
 
+def tr_M_atomic_rust_recursive(Z: int, N: int, *,
+                                  dps: int = 50,
+                                  include_inter: bool = True):
+    """Canonical Markov trace via the **deeper Rust port** —
+    `pyhecke_native.tr_m_word_lq` (Markov-axiom recursive ascent in
+    pure Rust, no sympy, no f64).
+
+    Distinct from `tr_M_atomic_rust` (which uses the
+    Hoefsmit-via-MPFR per-partition path). This wrapper calls the
+    Rust port of `laurent_q_trace.tr_M_word_lq` directly, getting
+    back a ZHLaurent polynomial in (z, h) with BigInt coefficients,
+    then evaluates at q₀ to mpmath.mpf at `dps`.
+
+    Expected speedup over the Python LaurentQ path: 5-20× per the
+    Rust port scoping doc. The boundary cost is ONE PyO3 call per
+    atomic word; rust-side cache (OnceLock-bounded HashMap) folds
+    in the recursion-tree's repeated subword evaluations.
+
+    Phase-1+2 scope: empty / single-top / multi-top Case A+B.
+    Case C raises `pyo3.exceptions.PyRuntimeError` — caller falls
+    back to the sympy ocneanu path (same Python `tr_M_atomic_lq`
+    fallback contract).
+    """
+    try:
+        import pyhecke_native
+    except ImportError as e:
+        raise ImportError(
+            "pyhecke_native not installed — see "
+            "docs/audits/2026-05-20-rust-port-scoping-markov-peel.md"
+        ) from e
+
+    import mpmath as mp
+    from q_parameter import Q_50_DIGIT_STR
+    from mass_at_3A_proper import atom_braid_word_3A
+
+    n_strands = 3 * (Z + N)
+
+    # Build the atomic braid word (0-based generator indices) — same
+    # convention as the Python `tr_M_word_lq` and the Rust port.
+    # The (c, d) → sign translation isn't needed here: the recursion
+    # path operates on the canonical (sign-only) form via the
+    # signed-gens helper.
+    signed_word = _atomic_word_to_signed_gens(
+        Z, N, include_inter=include_inter
+    )
+    # Integration architecture:
+    #   1. Python `incremental_reduced_element_fast` reduces the
+    #      atomic word (with σ, σ⁻¹, averaged factors) to a
+    #      LaurentHeckeElement = Σ_i c_i · w_i where each w_i is a
+    #      PURE-σ word in H_n. The reduction step is already O(fast)
+    #      via LaurentQ inner-loop arithmetic.
+    #   2. For each (word, c_i), call the Rust `tr_m_word_lq` to
+    #      compute the ZHLaurent value of tr_M(w_i). Boundary cost
+    #      is O(num distinct words) PyO3 calls, amortised.
+    #   3. Combine: total = Σ_i c_i · ZHLaurent_i, then evaluate at
+    #      q₀ to mpmath.mpf at `dps`.
+    from hecke_laurent_fast import incremental_reduced_element_fast
+    from mass_at_3A_proper import atom_braid_word_3A
+    word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+    reduced = incremental_reduced_element_fast(word, max_iterations_per_step=10000)
+
+    # Accumulate: total = Σ_i c_i · ZHLaurent(w_i)
+    # Each ZHLaurent is a dict {(z_exp, h_exp) → LaurentQ_in_q^{1/2}}
+    # We accumulate in mpmath.mpf at `dps`.
+    with mp.workdps(dps):
+        q = mp.mpf(Q_50_DIGIT_STR)
+        z_mp = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+        h_mp = q - 1 / q
+        total = mp.mpf(0)
+        for w_tuple, lq_coef in reduced.terms.items():
+            if any(g < 0 for g in w_tuple):
+                continue  # skip formal-token entries (per Python tr_M_element)
+            # Evaluate the LaurentQ coefficient at q
+            c_mp = mp.mpf(0)
+            for exp, sym_coef in lq_coef.coefs.items():
+                # sympy.Rational → exact mpmath
+                if hasattr(sym_coef, "p") and hasattr(sym_coef, "q"):
+                    c_mp_term = mp.mpf(int(sym_coef.p)) / mp.mpf(int(sym_coef.q))
+                else:
+                    import sympy as sp
+                    c_mp_term = mp.mpf(str(sp.N(sym_coef, dps + 5)))
+                c_mp += c_mp_term * (q ** exp)
+            if c_mp == 0:
+                continue
+            # Call Rust tr_m_word_lq on the pure-σ word
+            try:
+                zh_serialised = pyhecke_native.tr_m_word_lq(
+                    list(w_tuple), n_strands
+                )
+            except RuntimeError as e:
+                # Case C — fall back to sympy (caller's responsibility)
+                raise NotImplementedError(
+                    f"Rust recursion hit Case C on word {w_tuple}; "
+                    f"use markov_peel.tr_M_atomic (sympy ocneanu) "
+                    f"as fallback. Underlying: {e}"
+                ) from e
+            # Evaluate ZHLaurent at (q, z, h) and accumulate
+            zh_val = mp.mpf(0)
+            for (z_exp, h_exp), coef_list in zh_serialised:
+                c_zh = mp.mpf(0)
+                for q_half_exp, big_int_str in coef_list:
+                    # q_half_exp = 2 * (q-exponent) per LaurentPolyQ
+                    # encoding; q^{q_half_exp/2}
+                    c_zh += mp.mpf(big_int_str) * (
+                        q ** (mp.mpf(q_half_exp) / 2)
+                    )
+                zh_val += c_zh * (z_mp ** z_exp) * (h_mp ** h_exp)
+            total += c_mp * zh_val
+        return total
+
+
 if __name__ == "__main__":
     # Smoke test: cross-check Rust vs sympy + Phase-1 LaurentQ paths
     # on the canonical atom set.
