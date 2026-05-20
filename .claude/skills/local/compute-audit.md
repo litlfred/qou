@@ -250,6 +250,23 @@ numerical equivalence at q₀ before/after.
    exact algebraic outputs.
 5. **Run `bun run validate`** for any content-block touch.
 
+## Sibling skill: `compute-author` (pre-work)
+
+For agents about to **write or modify** compute (not audit an
+existing script), invoke [`local/compute-author`](compute-author.md)
+**first**. It is the pre-work counterpart to this skill — covers
+precision discipline, Rust↔Python boundary cost, exact-arithmetic
+choices (BigInt vs BigRational vs sympy.Rational), algebraic
+preflight requirements, and the canonical references for every
+load-bearing convention. Points to `docs/precision-goals.md` as
+the canonical cheat sheet.
+
+This skill (compute-audit) catches issues post-hoc; compute-author
+prevents them at authoring time. Both share vocabulary; if a P*
+pattern below was introduced by an author who hadn't read
+compute-author, the audit should also suggest invoking that skill
+for the next change.
+
 ## Sibling skill: `compute-integration-watcher`
 
 This skill scans patterns INSIDE one script (correctness +

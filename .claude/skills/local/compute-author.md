@@ -1,0 +1,364 @@
+---
+name: compute-author
+roles: [collaborator, owner]
+description: >
+  Pre-work briefing + durable patterns for anyone writing or modifying
+  compute scripts under `folio-assistant/computations/` or the Rust
+  crates under `tools/`. Read this BEFORE you write or change compute
+  code — it covers precision discipline, Rust↔Python boundary cost,
+  exact-arithmetic choices (BigInt vs BigRational vs sympy.Rational),
+  algebraic-preflight requirements before optimization shortcuts, and
+  the canonical references for every load-bearing convention. Sibling
+  to `compute-audit` (which is post-hoc); this skill is pre-work.
+allowed-tools: Read Bash Grep Glob Edit Write Skill
+---
+
+# Compute-author skill — read before writing compute code
+
+## Role
+
+When a user (or you) is about to **author new compute** under
+`folio-assistant/computations/` (Python) or `tools/hecke-engine/`,
+`tools/pyhecke-native/` (Rust), or modify existing compute scripts in
+a way that touches precision, performance, or canonical-derivation
+discipline — run this skill **before** any code change.
+
+This is the pre-work counterpart to `local/compute-audit` (post-hoc
+script review). Both share a vocabulary; this one gates entry, that
+one gates exit.
+
+## When to use this skill
+
+- "I'm going to optimize / rewrite / port `<script>`"
+- "Should I use BigInt / BigRational / f64 / mpfr here?"
+- "How do I integrate Python and Rust without paying the round-trip cost?"
+- "What's the precision target for this compute?"
+- "I want to claim this trace is exactly zero — what verification do I owe?"
+- "I'm about to skip / amortize / cache something — what's the algebraic
+  proof I need first?"
+
+If your task touches LP/SDP duals, mass-table compute, Markov trace,
+Hoefsmit / Wenzl / LR-bridge characters, or anything in the
+`hecke_*.py` / `markov_*.py` family — this skill applies.
+
+## §0. Canonical cheat-sheet pointers (read these first)
+
+| Source | What it gives you | Read time |
+|--------|-------------------|----------:|
+| [`docs/precision-goals.md`](../../docs/precision-goals.md) | **L1 (compute precision) vs L2 (per-observable accuracy)** — what "1 ppb" means in QOU; substrate q_0 conventions; subgoals; CAL-2 floor | 15 min |
+| [`CLAUDE.md` §Precision goals (STRICT)](../../CLAUDE.md) | three-calibration discipline (CAL-1 m_e, CAL-2 m_μ/m_e, CAL-3 Q_β); no fitting; Δ_λ gate (no 7th ansatz) | 10 min |
+| [`CLAUDE.md` §LP/SDP duals — first-class infra](../../CLAUDE.md) | every LP/SDP must emit `y0_star`, `y_star`, `active_set`, `primal_obj`, `dual_obj`, `duality_gap`; `lp_dual_solver.py` is the canonical entry | 5 min |
+| [`docs/audits/2026-05-20-compute-optimization-roadmap.md`](../../docs/audits/2026-05-20-compute-optimization-roadmap.md) | current optimization roadmap — Tier 1.A through 1.F | 10 min |
+| [`docs/audits/2026-05-20-next-agent-handover.md`](../../docs/audits/2026-05-20-next-agent-handover.md) | step-by-step Tier 1.A starter (Rust LaurentQ port) | 30 min if working that tier |
+| [`docs/audits/2026-05-20-markov-peel-bottleneck-profile.md`](../../docs/audits/2026-05-20-markov-peel-bottleneck-profile.md) | cProfile data + 4-strategy ranking that motivated #859 | 5 min |
+| [`docs/audits/2026-05-20-rust-port-scoping-markov-peel.md`](../../docs/audits/2026-05-20-rust-port-scoping-markov-peel.md) | Rust port scoping; Phase-1+2 already done | 10 min |
+
+For the algorithmic side:
+
+| Source | What it gives you |
+|--------|-------------------|
+| `folio-assistant/computations/_precision.py` | `COMPUTE_DPS_DEFAULT = 50`, `OUTPUT_DPS_DEFAULT = 40`, `PRECISION_GUARD = 10` — the production precision floor |
+| `folio-assistant/computations/q_parameter.py` | `Q_50_DIGIT_STR` — the canonical 50-dps substrate value (always pass as STRING; never round to float) |
+| `folio-assistant/computations/codata_constants.py` | CAL-1 / CAL-2 / CAL-3 anchors; **never inline a CODATA literal** (P31) |
+| `folio-assistant/computations/lp_dual_solver.py` | canonical LP/SDP entry point — always route LP/SDP through this |
+| `folio-assistant/computations/markov_trace_canonical.py` | reference `tr_M_word` implementation (the sympy baseline) |
+| `folio-assistant/computations/laurent_q_trace.py` | reference Python LaurentQ implementation (PR #859) — match bit-for-bit when porting |
+| `tools/hecke-engine/src/laurent_poly_q.rs` | existing Rust LaurentPoly (BigInt) — template for new types |
+| `tools/hecke-engine/src/tr_m_word_lq.rs` | Phase-2 Rust port style + PyO3 pattern (PR #859) |
+| `tools/pyhecke-native/src/lib.rs` | 20+ PyO3 bindings as reference patterns |
+
+## §1. Precision discipline (STRICT, no f64 in production)
+
+**L1 floor: 50-dps compute / 40-dps output**, configurable via
+`QOU_COMPUTE_DPS`. Every production path obeys this.
+
+### §1.1 Numeric-type decision table
+
+When choosing the coefficient / scalar type for a new compute:
+
+| You need to represent… | Use | Rationale |
+|------------------------|-----|-----------|
+| Exact integer (q^k exponent, hook-length count) | Python `int`, Rust `i32`/`i64`/`BigInt` | exact, no precision issue |
+| Exact rational (sympy.Rational, half-integer, q^{1/2} coefficient with denominator) | Python `sympy.Rational` or Rust `num_rational::BigRational` | exact, required for Markov-trace identities at q_0 |
+| Real at 50-dps (substrate value, trace evaluation at q_0) | Python `mpmath.mpf` (always pass `q_str` as string), Rust `rug::Float` (MPFR) via decimal-string FFI | matches L1 floor |
+| Floating-point f64 | **only for cross-checking** — clearly marked LOSSY in docstring | NEVER on the production critical path |
+
+**Cross-check tolerance at 50-dps: `1e-25` minimum.** Not `1e-15`.
+At 50-dps you have 50 significant digits; allowing a 1e-15 tolerance
+defeats the precision floor. PR #859 uses 1e-30 as the bar.
+
+**No `float(some_sympy_expr)` in production paths.** Convert via
+`mpmath.mpf(str(sympy.N(expr, dps + 5)))` (decimal-string round-trip;
+exact at the requested precision) or via `Rational.p / Rational.q`
+when the value is rational.
+
+### §1.2 Three-calibration discipline (STRICT)
+
+Only three calibration anchors:
+
+| # | Anchor | Source |
+|---|--------|--------|
+| CAL-1 | electron mass `m_e` | `codata_constants.M_E_MEV` |
+| CAL-2 | mass ratio `m_μ / m_e` | derived |
+| CAL-3 | beta-decay Q-value `Q_β(n)` | derived |
+
+A **fourth calibration is forbidden.** Any compute that introduces a new
+free parameter calibrated against an experimental observable will be
+caught by the canonical-watcher (`.claude/skills/local/canonical-watcher.md`)
+and rejected. The Δ_λ gate (per `CLAUDE.md`) specifically forbids a
+seventh ansatz for per-partition Δ_λ values — six have already failed.
+
+### §1.3 No fitting / numerology
+
+If your compute pattern-matches a numerical agreement (e.g. "this
+trace equals 2q − 1 at q_0"), that's NOT a derivation. Either:
+
+- (a) derive the structural identity from the categorical machinery
+- (b) document the match as a **falsifiability probe** with explicit
+  `_fit` / `_probe` suffix in the script name + audit-only witness
+- (c) demote to a `remark` block (interpretation, not claim)
+
+See `compute-audit.md §Anti-patterns this skill explicitly rejects`
+for the "numerology" / "three-route convergence" / "universal-from-one-atom"
+patterns to avoid.
+
+## §2. Rust ↔ Python boundary cost (when to cross)
+
+PyO3 boundary cost is **~50 ns per call**. This makes per-fine-grained
+calls a loss: ⁵Li tr_M_atomic has ~37 M sympy compares; crossing the
+boundary 37 M times costs 1.85 s of pure overhead, dwarfing any
+algorithmic savings.
+
+### §2.1 Granularity decision rule
+
+| Call frequency per atom | PyO3 boundary cost | Net effect |
+|------------------------:|-------------------:|-----------|
+| 1 (whole-atom compute returns a structured result) | ~50 ns | trivial — go for it |
+| 10s–100s (per-reduced-word trace) | ~5 μs | acceptable — boundary amortized |
+| 1000s–10K (per-sub-step in a recursion) | ~500 μs–5 ms | borderline — must measure |
+| 1M+ (per-coefficient arithmetic op) | seconds | **FORBIDDEN — boundary dominates** |
+
+**The right Rust port granularity:** port the WHOLE COMPUTE (atomic word,
+reduce, trace) as a single PyO3 call. Python builds the input + reads
+the output; Rust does everything in between.
+
+PR #859's Phase-2 follows this: `pyhecke_native.tr_m_word_lq(word, n_strands)`
+is called per reduced σ-word (hundreds per atom, not millions of times),
+not per-coefficient-multiplication.
+
+### §2.2 What NOT to do
+
+```python
+# BAD — per-call boundary cost dominates
+for word, coef in reduced_element.terms.items():
+    for q_exp, sym_coef in coef.coefs.items():
+        # millions of crossings — STOP
+        result = pyhecke_native.bigrational_mul(c_num, c_den, ...)
+```
+
+```python
+# GOOD — one boundary crossing per atom
+reduced_bytes = pyhecke_native.incremental_reduce_rust(word, max_iter)
+trace_bytes   = pyhecke_native.tr_m_atomic_rust(Z, N, dps)
+# decode/evaluate in Python
+```
+
+### §2.3 FFI marshalling format
+
+For complex objects (LaurentQ polynomials, ZHLaurent traces) across
+the boundary: serialize as **flat structured Python lists** (no
+custom Python objects on the Rust side; no bincode/msgpack unless
+you've measured the alternative). PyO3 ferries `Vec<(i32, String)>`
+easily; the decimal-string representation of BigInt/BigRational
+preserves arbitrary precision.
+
+See `tools/pyhecke-native/src/lib.rs` `chi_lambda_all_partitions_mpfr`
+for the established pattern.
+
+## §3. Algebraic-preflight discipline
+
+Before optimizing via symmetry / orbit-sum / shortcut identities,
+**prove (or numerically falsify) the identity on the smallest
+non-trivial case first.** Do NOT ship the shortcut until the identity
+is established.
+
+### §3.1 Preflight protocol
+
+```
+Decide which symmetry / shortcut you want to exploit
+    │
+    ├── Step 1: write down the identity in narrative
+    │           (e.g. "tr_M(β_{Z,N}) = |S_Z × S_N| · tr_M(orbit_rep)")
+    │
+    ├── Step 2: pick the smallest atom where it's non-trivial
+    │           (orbit size ≥ 4; usually ⁴He)
+    │
+    ├── Step 3: compute BOTH sides at 50-dps via the existing
+    │           (slow but correct) path
+    │
+    ├── Step 4: check rel.diff < 1e-25
+    │           │
+    │           ├── PASSES → repeat on next smallest atom (⁵Li, ⁶Li)
+    │           │           If all pass → implement
+    │           │
+    │           └── FAILS → STOP. Document the failure in
+    │                       docs/audits/<date>-<identity-name>-falsified.md
+    │                       with the numerical witness. Investigate
+    │                       sign convention / orbit structure. Do NOT
+    │                       ship the shortcut.
+```
+
+### §3.2 Common false identities (don't ship without proof)
+
+| Claim | Trap |
+|-------|------|
+| "Markov trace is invariant under nucleon permutation" | TRUE only if the permutation is a CONJUGATION in H_{3A}; mixed-species permutations involve I_pp / I_pn / I_nn interface swaps that are NOT pure conjugations |
+| "tr_M(reversed word) = tr_M(word)" | FALSE — Markov trace is cyclic, not reversal-symmetric |
+| "tr_M(σ ⊗ σ') = tr_M(σ) · tr_M(σ')" | FALSE for inter-strand-coupled braids; only true for disjoint tensor factors per Wenzl 1988 §1.7 |
+| "λ_p_scale derivable from N-tier Bring-Bloch search at coeff bound K" | NEGATIVE through K = 10⁸ across 6 tiers (PR #843 + #852) — don't keep retrying the same shape |
+| "Trace cyclic rotation does not affect cache identity" | TRUE — but the rotation must affect ONLY the cache key, NOT the recursion behavior |
+
+## §4. Rust-port patterns (when porting Python to Rust)
+
+### §4.1 Type-mapping cheat-sheet
+
+| Python (LaurentQ) | Rust target | Notes |
+|-------------------|-------------|-------|
+| `sympy.Rational` | `num_rational::BigRational` | exact rational; pure-Rust no system deps |
+| `sympy.Integer` | `num_bigint::BigInt` | exact integer |
+| `dict[int, sympy.Rational]` (LaurentQ.coefs) | `BTreeMap<i32, BigRational>` | deterministic iteration order; lookup O(log n) |
+| `tuple[int, ...]` (Hecke word) | `Vec<u32>` | 0-based generator indices throughout |
+| `mpmath.mpf` | `rug::Float` (MPFR) | for boundary numerical evaluations only |
+| `LaurentHeckeElement.terms: dict[tuple, LaurentQ]` | `BTreeMap<Vec<u32>, LaurentRationalQ>` | the "sparse Hecke element" |
+
+### §4.2 Cargo features — what to enable
+
+Default `cargo build` in `tools/hecke-engine/` does NOT enable:
+
+- `clarabel-sdp` — pulls in OpenBLAS / netlib / gfortran (system deps)
+- `clarabel-bigrational` — pulls in clarabel + rationals
+- `clarabel-mpfr` — pulls in clarabel + rug MPFR
+
+**Don't enable these features unless you specifically need them.**
+The default build covers LaurentPolyQ, Wenzl, seminormal, and the
+new Markov-axiom recursion — all without Clarabel.
+
+### §4.3 Maturin build workflow
+
+```bash
+# Build (no virtualenv required if you use `build` not `develop`)
+cd tools/pyhecke-native
+maturin build --release
+# Install the wheel
+pip install --break-system-packages --force-reinstall \
+    target/wheels/pyhecke_native-*-cp311-*-x86_64.whl
+# Smoke test
+python3 -c "import pyhecke_native; print(pyhecke_native.__version__)"
+```
+
+**`maturin develop` requires a virtualenv** — if you're in a venvless
+session, use `maturin build` + `pip install` instead.
+
+### §4.4 Long-compute logging discipline (from compute-audit.md)
+
+Any compute > 5 min wall: launch with `python3 -u` + tee to `/tmp/<name>.log`.
+Emit progress lines every ~10 s with wall + ETA. If a BG script ends
+silently with 0-byte output and no completion notification, assume
+crashed — re-launch with stricter logging.
+
+See `compute-audit.md §Long-compute logging discipline` for the full
+rules.
+
+## §5. Witness-emission discipline
+
+Every compute script ships with a `*.witness.json` (per
+`witness_base.py`). The witness must include:
+
+| Field | Source | Notes |
+|-------|--------|-------|
+| `name`, `description`, `computation` | author | match the docstring |
+| `engine` | author | `"python"`, `"mpmath"`, `"numpy"`, `"sympy"`, `"rust"` |
+| `scriptFile`, `scriptHash`, `scriptCommitSha` | `WitnessBuilder` | auto-populated |
+| `computedAt`, `durationMs` | `WitnessBuilder` | auto-populated |
+| `parameters` | author | `compute_dps`, `target_dps`, etc. |
+| `data` | author | the actual results |
+| `assertions` | author (via `add_assertion`) | every claim is a structured assertion with computed/expected/tolerance/source |
+| `auditOnly` or full pipeline | author | `set_audit_only(doc_path)` if this is research-grade |
+
+For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
+`active_set`, `primal_obj`, `dual_obj`, `duality_gap` per CLAUDE.md
+§LP/SDP duals.
+
+## §6. CI / merge etiquette
+
+- **CI is billing.** Don't churn commits. Squash where possible.
+- **Combine related PRs** per CLAUDE.md "minimize PR creation".
+- **Branch naming:** `claude/<theme>-<utc-ymd>`. Pattern is load-bearing
+  for `coordinate.md` + upload-branch idempotency.
+- **/prepare-merge** at the end. Address Gemini + Copilot review
+  comments mechanically; don't argue cosmetic findings.
+- **Cross-check tolerance 1e-25 at 50-dps.** Never claim "passes at 1e-15".
+
+## §7. Quick gotchas table
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| Result drifts by ~1e-7 between two methods | one path uses f64 internally | switch to mpmath / BigRational |
+| Cross-check passes at 1e-15 but fails at 1e-25 | tolerance set too loose | tighten — the 50-dps precision floor demands 1e-25 minimum |
+| `maturin develop` fails: "no virtualenv" | maturin requires venv for develop | use `maturin build --release` + `pip install` |
+| Cargo build pulls in OpenBLAS | accidentally enabled `clarabel-sdp` feature | remove the feature flag |
+| Per-call PyO3 boundary cost dominates | granularity too fine | port the WHOLE compute, one PyO3 call per atom |
+| Symbol drift after rebase: q^{1/2} vs q | LaurentPolyQ vs LaurentRationalQ key convention | check the encoding (`q_half_exp = 2 * q_exp` in `laurent_poly_q.rs`) |
+| Witness fails drift detector | self-emitting audit witnesses bumped `files_scanned` | regenerate the 4 audit witnesses; commit as "post-rebase drift refresh" |
+| `tr_m_word_lq` raises `RuntimeError: Case C` | atomic braid hit multi-top-1 segment | caller falls back to sympy ocneanu — don't implement Case C in Rust |
+| Compute crashes silently with 0-byte BG output | sympy stack overflow or OOM | re-launch with `python -u` + tee + progress lines |
+| Sympy round-trip dominates ⁵Li+ profile | reduce path still in Python | port `incremental_reduce_rust` to Rust (Tier 1.A roadmap) |
+| Orbit-sum identity gives wrong tr_M | claimed symmetry isn't a conjugation | do §3 preflight before shipping orbit shortcuts |
+
+## §8. Pre-work checklist (use before every compute change)
+
+- [ ] I have read `docs/precision-goals.md`
+- [ ] I have read `CLAUDE.md §Precision goals` and `§LP/SDP duals`
+- [ ] I have identified which **calibration anchor** my new compute touches (CAL-1 / 2 / 3, or none)
+- [ ] My coefficient types are **exact** (BigInt / BigRational / sympy.Rational) — no `float`/`f64` in production paths
+- [ ] Cross-check at 1e-25 vs the existing reference path is planned
+- [ ] If exploiting a symmetry / orbit / shortcut: §3 algebraic preflight is run on the smallest non-trivial atom
+- [ ] If porting to Rust: granularity is **whole-compute per PyO3 call** (§2.1)
+- [ ] Witness emission plan: includes `parameters`, `assertions`, LP/SDP duals if applicable
+- [ ] Long-compute scripts launch with `python -u` + tee
+- [ ] Branch name follows `claude/<theme>-<utc-ymd>`
+- [ ] Combined with related work on one PR (per CLAUDE.md "minimize PR creation")
+
+If any box is unchecked, **stop and resolve before writing code**.
+
+## §9. Sibling skills
+
+- [`local/compute-audit`](compute-audit.md) — post-hoc review of compute
+  scripts (30 P-patterns P1–P30). This skill (compute-author) is
+  pre-work; compute-audit is post-hoc.
+- [`local/canonical-watcher`](canonical-watcher.md) — catches four-cal /
+  numerology / fits violations on incoming compute.
+- [`local/compute-integration-watcher`](compute-integration-watcher.md) —
+  cross-layer wiring check (is a paper claim actually consumed by
+  production compute?).
+- [`local/prepare-merge`](prepare-merge.md) — merge workflow when your
+  compute work is ready to ship.
+
+## Anti-patterns this skill explicitly rejects
+
+- **Writing compute without reading the cheat sheet** (§0 references).
+  Every gotcha in §7 has a precedent — almost certainly already
+  documented.
+- **Optimizing without a profile** — per P29 of compute-audit, profile
+  first to identify the actual bottleneck. Don't guess.
+- **Per-call PyO3 crossings** — the boundary cost dominates (§2.1).
+  Always port whole computes.
+- **f64 in production** — the L1 floor is 50-dps; f64 truncates at 1e-15.
+- **Shortcut identities without algebraic preflight** — orbit-sums,
+  cyclic invariance, tensor-factorization claims must be verified
+  numerically at 50-dps on the smallest non-trivial case before
+  shipping.
+- **Inline CODATA literals** — always route through `codata_constants.py`
+  (P31).
+- **A fourth calibration anchor** — only CAL-1 / 2 / 3 exist; any new
+  free parameter calibrated against experimental data is rejected.
