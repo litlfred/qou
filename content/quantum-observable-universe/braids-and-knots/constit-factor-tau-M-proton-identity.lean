@@ -1,11 +1,11 @@
 /-
-Constit-side per-Z step factor equals τ_M^3(β_p) — the proton's
+Constit-side per-Z step factor equals tr_M^3(𝓑_p) — the proton's
 H_3 Markov trace.  Structural identity, derivable from Wenzl's
 disjoint-product Markov trace multiplicativity.
 
 Empirical verification (Phase 5l, 50 dps via y_λ · χ_λ pipeline):
 
-  q        τ_M^3(β_p, q)    ρ_Z^constit(q)    rel. err.
+  q        tr_M^3(𝓑_p, q)    ρ_Z^constit(q)    rel. err.
   1.050    0.79284191942    0.79284191942     1.69e-51
   1.080    0.99328958565    0.99328958565     1.08e-50
   q_0      1.22037426649    1.22037426649     3.29e-50
@@ -28,12 +28,12 @@ import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 
-/-- The Jones–Markov trace τ_M, abstracted as a multiplicative
+/-- The Jones–Markov trace tr_M, abstracted as a multiplicative
     function on disjoint Hecke products.  This class records the
     structural content needed for the constit-factor identity: a
-    trace value `τ_M(β)` for each braid-block input, with the
+    trace value `tr_M(β)` for each braid-block input, with the
     disjoint-multiplicativity axiom that
-      `τ_M(α ⊗ β) = τ_M(α) · τ_M(β)`
+      `tr_M(α ⊗ β) = tr_M(α) · tr_M(β)`
     for α, β on disjoint strand sets (Wenzl 1988 §1.7). -/
 class MarkovTraceDisjoint (R : Type*) [Field R] where
   /-- The Markov-trace value for the canonical proton block in H_3. -/
@@ -43,7 +43,7 @@ class MarkovTraceDisjoint (R : Type*) [Field R] where
   /-- The Markov-trace value of the constit (= disjoint product)
       braid for atom (Z, N).  The class axiom encodes Wenzl's
       disjoint multiplicativity:
-        τ_M(β_constit_{Z,N}) = τ_M(β_p)^Z · τ_M(β_n)^N. -/
+        tr_M(β_constit_{Z,N}) = tr_M(𝓑_p)^Z · tr_M(𝓑_n)^N. -/
   tau_M_constit : ℕ → ℕ → R
   /-- Wenzl's disjoint multiplicativity, specialised to the
       per-nucleon factorisation. -/
@@ -54,7 +54,7 @@ class MarkovTraceDisjoint (R : Type*) [Field R] where
 /-- **Theorem (conditional on Wenzl's disjoint multiplicativity).**
 
     The constit-side per-Z step factor in the canonical-atom Markov
-    trace equals τ_M(β_p), the proton's H_3 Markov trace.  Stated
+    trace equals tr_M(𝓑_p), the proton's H_3 Markov trace.  Stated
     over a generic field `R` per CLAUDE.md §7c (the statement is
     purely algebraic; no archimedean structure needed). -/
 -- Ref: [manuscript] prop:constit-factor-tau-M-proton-identity
@@ -75,13 +75,13 @@ theorem constit_factor_eq_tau_M_proton
   field_simp
   ring
 
-/-- **Combined per-Z τ_M factor (at p-* interface).**
+/-- **Combined per-Z tr_M factor (at p-* interface).**
 
     Combining the constit-side identity with the positive interface
     factor `z` from `prop:interface-knot-markov-z` gives the exact
-    full τ_M per-Z step at a p-* boundary:
+    full tr_M per-Z step at a p-* boundary:
 
-      τ_M(β_K^{Z+1, N}) / τ_M(β_K^{Z, N}) = z · τ_M(β_p)
+      tr_M(𝓑_K^{Z+1, N}) / tr_M(𝓑_K^{Z, N}) = z · tr_M(𝓑_p)
 
     — no residuals.  Generic over any commutative ring. -/
 def full_tau_M_Z_step_exact {R : Type*} [CommRing R]

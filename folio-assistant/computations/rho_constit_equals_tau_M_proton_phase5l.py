@@ -38,6 +38,7 @@ from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
+from canonical_braid_marshalling import marshal_to_chi_lambda_braid  # noqa: E402
 from hecke_core import _PROTON_G0, _PROTON_G1  # noqa: E402
 
 # Same q sweep as Phase 5k.2 for direct comparison.
@@ -48,20 +49,19 @@ Q_VALUES = ["1.05", "1.08", Q_50_DIGIT_STR, "1.13", "1.17"]
 
 
 def marshal_intra(chain_g0, chain_g1, h_val: float):
-    """Marshal a nucleon's intra braid word (H_3) for chi_lambda_braid."""
-    w = []
-    for chain, gen in [(chain_g0, 1), (chain_g1, 2)]:
-        for c, d in chain:
-            df = float(d)
-            if abs(df) < 1e-10:
-                w.append((1, gen))           # σ
-            elif abs(df + h_val) < 1e-10:
-                w.append((-1, gen))          # σ⁻¹
-            elif abs(df + h_val / 2) < 1e-10:
-                w.append((1, gen))           # averaged → σ
-            else:
-                w.append((1, gen))
-    return w
+    """Marshal a nucleon's intra braid word (H_3) for chi_lambda_braid.
+
+    Per Gemini PR #854 review: delegates to the shared
+    `canonical_braid_marshalling.marshal_to_chi_lambda_braid` utility.
+    The intra-chain format `(c, d)` (no gen_idx) is adapted by
+    enumerating with gen=0,1 (0-indexed) so the utility's 1-indexing
+    produces gen_1based=1,2 (= σ_1 and σ_2 for H_3).
+    """
+    chain_with_gens = (
+        [(c, d, 0) for c, d in chain_g0]
+        + [(c, d, 1) for c, d in chain_g1]
+    )
+    return marshal_to_chi_lambda_braid(chain_with_gens, h_val)
 
 
 def compute_tau_M_proton_H3(q_val: mp.mpf, dps: int = 50) -> mp.mpf:
@@ -81,20 +81,12 @@ def compute_tau_M_proton_H3(q_val: mp.mpf, dps: int = 50) -> mp.mpf:
 
 def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
                           dps: int = 50) -> mp.mpf:
-    """τ_M(β_constit_K, q) for atom K = (Z, N), no interface generators."""
+    """τ_M(β_constit_K, q) for atom K = (Z, N), no interface generators.
+
+    Per Gemini PR #854 review: braid marshalling centralized."""
     h_val = float(Q0 - 1 / Q0)
     word = atom_braid_word_3A(Z, N, include_inter=False)
-    word_m = []
-    for c, d, gen in word:
-        cf, df = float(c), float(d)
-        if abs(cf - 1.0) < 1e-10 and abs(df) < 1e-10:
-            word_m.append((1, gen + 1))
-        elif abs(cf - 1.0) < 1e-10 and abs(df + h_val) < 1e-10:
-            word_m.append((-1, gen + 1))
-        elif abs(cf - 1.0) < 1e-10 and abs(df + h_val / 2) < 1e-10:
-            word_m.append((1, gen + 1))
-        else:
-            word_m.append((1, gen + 1))
+    word_m = marshal_to_chi_lambda_braid(word, h_val)
     n = 3 * (Z + N)
     q_str = mp.nstr(q_val, dps, strip_zeros=False)
     total = mp.mpf(0)

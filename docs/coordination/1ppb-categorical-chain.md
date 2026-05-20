@@ -101,7 +101,7 @@ This **constrains** PR #781's Kashaev mass-table formula (ρ_F · Vol_hyp) — s
 
 **Status**: Δ_λ thread **paused** at PR #787 pending owner answers on the per-JSJ-piece-quantum-invariant infrastructure (ask #2). If no such infrastructure, the branch lands as a diagnostic package (3 phases of productive negatives + Z-clustering structural finding) and the thread pivots to another closed-form option.
 
-## 2026-05-19 — log-Δ categorical derivation → Δ_I^K interface knot (branch `claude/log-delta-categorical-derivation`, [PR #801](https://github.com/litlfred/qou/pull/801))
+## 2026-05-19 — log-Δ categorical derivation → ⋈_K interface knot (branch `claude/log-delta-categorical-derivation`, [PR #801](https://github.com/litlfred/qou/pull/801))
 
 | Date | Phase | Status | Cherry-pick |
 |---|---|---|---|
@@ -125,11 +125,11 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 **Alignment note:** Will add `canonical_status` taxonomy field per branch `claude/canonical-discipline-l1-l3-l4-2026-05-19` (commit `98ed2add`) to all new witnesses. Categorical-substrate path; not L3 heuristic.
 
-### 2026-05-19 — interface-knot Δ_I^K result on PR #801
+### 2026-05-19 — interface-knot ⋈_K result on PR #801
 
 | Date | Phase | Status | Cherry-pick |
 |---|---|---|---|
-| 2026-05-19 | Δ_I^K + same $H_{3(Z+N)}$ baseline (T1+T2 first-order) | landed `5b620576`; **variance 3.96× → 2.31×, T/³He sign-fixed** | `binding_via_interface_knot.py` (consumes existing `atom_braid_word_3A(include_inter=True/False)` toggle) |
+| 2026-05-19 | ⋈_K + same $H_{3(Z+N)}$ baseline (T1+T2 first-order) | landed `5b620576`; **variance 3.96× → 2.31×, T/³He sign-fixed** | `binding_via_interface_knot.py` (consumes existing `atom_braid_word_3A(include_inter=True/False)` toggle) |
 
 **Hard improvement vs tensor-product baseline:**
 - D: B_pred = 1.566 MeV (AME 2.225, ratio 0.704)
@@ -223,7 +223,7 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 2. **Phase 5b α-residual finding**: $\alpha / [3]_q^2 = 1.022157$ matches $\cosh(h) = 1.021933$ to **5 significant digits** at $q_0$ (50 dps) — well above empirical-tabulation noise. The Hecke skein parameter $h = q - q^{-1}$ gives a clean categorical reading: $\cosh(h)$ is the **symmetric-channel Hecke-deformation correction** from $\sigma^2 = h\sigma + 1$.
 
-3. **Bar-symmetric unification with PR #801**: three q-deformation corrections used in QOU mass formulas — symmetric Li_2^q (T2/T3 tower in #801), cos(α−b·ℏ_q²/2) (N=1 rung in master Q_β), and cosh(h) (per-Z step in Phase 5b) — are **all bar-symmetric projections** of bar-anti-symmetric Hecke operators. The bar-anti-symmetric counterparts (Faddeev $\Phi_q$, sin/odd-phase, sinh(h)) are exactly the channels that break mirror-nucleus symmetry. The bar-symmetric projection is the **isospectral lift** (Kac-Sunada reframing: τ_M at q alone doesn't determine braid; τ_M at both q and q⁻¹ tightens it dramatically).
+3. **Bar-symmetric unification with PR #801**: three q-deformation corrections used in QOU mass formulas — symmetric Li_2^q (T2/T3 tower in #801), cos(α−b·ℏ_q²/2) (N=1 rung in master Q_β), and cosh(h) (per-Z step in Phase 5b) — are **all bar-symmetric projections** of bar-anti-symmetric Hecke operators. The bar-anti-symmetric counterparts (Faddeev $\Phi_q$, sin/odd-phase, sinh(h)) are exactly the channels that break mirror-nucleus symmetry. The bar-symmetric projection is the **isospectral lift** (Kac-Sunada reframing: tr_M at q alone doesn't determine braid; tr_M at both q and q⁻¹ tightens it dramatically).
 
 4. **Missing Frobenius reciprocity identified**: Phase 5b's cosh(h) (Ind side) and PR #801's Li_2^q tower (Res side) should be FR-dual under Brundan-Kleshchev. Predicted identity for each (Z=1 → Z=2) transition: $\sum_\lambda y_\lambda \chi_\lambda(\mathcal{B}_K^{Z=2}) \stackrel{?}{=} [3]_q^2 \cosh(h) \cdot \sum_\mu y_\mu \chi_\mu(\mathcal{B}_K^{Z=1}) + (\mathrm{Li}_2^q \text{ interface correction})$. Verifying this is Phase 5c's primary numerical test, now feasible with the Rust kernel.
 
@@ -233,23 +233,23 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 | Date | Phase | Status | Cherry-pick |
 |---|---|---|---|
-| 2026-05-19 | Phase 5c.1 — numerical FR-identity test (full τ_M ratio) | landed `d7840466` on PR #819 | `delta_lambda_fr_identity_phase5c.py` + witness; **3 structural findings (one positive, one structural, one refining); follow-up comment on PR #801 ([`4490915368`](https://github.com/litlfred/qou/pull/801#issuecomment-4490915368))** |
+| 2026-05-19 | Phase 5c.1 — numerical FR-identity test (full tr_M ratio) | landed `d7840466` on PR #819 | `delta_lambda_fr_identity_phase5c.py` + witness; **3 structural findings (one positive, one structural, one refining); follow-up comment on PR #801 ([`4490915368`](https://github.com/litlfred/qou/pull/801#issuecomment-4490915368))** |
 
 **Findings (numerical, via pyhecke_native Rust kernel + cached y_λ at q_0):**
 
-1. **τ_M(β_{Z=2,N}) / τ_M(β_{Z=1,N}) is N-INDEPENDENT** — matches to 6 digits across both (D, ³He) and (T, ⁴He):
+1. **tr_M(β_{Z=2,N}) / tr_M(β_{Z=1,N}) is N-INDEPENDENT** — matches to 6 digits across both (D, ³He) and (T, ⁴He):
    - FULL ratio (with interface) = **0.609346** for both
    - CONSTIT ratio (no interface) = **1.220358** for both
 
 2. **Interface-knot contribution at every Z-step = z (Markov parameter) EXACTLY** (rel.err 0.0001%):
    $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{\text{FULL}})}{\mathrm{tr}_M(\mathcal{B}_K^{\text{CONSTIT}})}\bigg|_{Z\text{-step}} \;=\; \frac{0.609346}{1.220358} \;=\; 0.499320\;=\;z(q_0)$$
-   This **is** the Markov axiom $\mathrm{tr}_M(\alpha \cdot \sigma_g) = z \cdot \mathrm{tr}_M(\alpha)$ for the interface generator. **The interface knot Δ_I^K from PR #801 has derivation-grade categorical reading: each interface = one z factor**, no longer empirical-fit.
+   This **is** the Markov axiom $\mathrm{tr}_M(\alpha \cdot \sigma_g) = z \cdot \mathrm{tr}_M(\alpha)$ for the interface generator. **The interface knot ⋈_K from PR #801 has derivation-grade categorical reading: each interface = one z factor**, no longer empirical-fit.
 
-3. **The FR identity proposed in the previous ledger row** ($\mathrm{tr}_M(\beta^{Z=2}) / \mathrm{tr}_M(\beta^{Z=1}) \stackrel{?}{=} [3]_q^2 \cosh(h)$) **DOES NOT hold for the full Markov trace**. Empirical τ_M ratio is 0.609 (94% off from the predicted 9.47). The Phase 5b α ≈ [3]_q²·cosh(h) match (0.022%) applies ONLY to the single-block dominant $|\Delta_\lambda^*|$ extraction (Phase 4 quantity), NOT to the full Markov trace. The bar-symmetric synthesis is correct, but the FR identity I wrote conflated best-block vs total sum. Phase 5d will reformulate.
+3. **The FR identity proposed in the previous ledger row** ($\mathrm{tr}_M(\beta^{Z=2}) / \mathrm{tr}_M(\beta^{Z=1}) \stackrel{?}{=} [3]_q^2 \cosh(h)$) **DOES NOT hold for the full Markov trace**. Empirical tr_M ratio is 0.609 (94% off from the predicted 9.47). The Phase 5b α ≈ [3]_q²·cosh(h) match (0.022%) applies ONLY to the single-block dominant $|\Delta_\lambda^*|$ extraction (Phase 4 quantity), NOT to the full Markov trace. The bar-symmetric synthesis is correct, but the FR identity I wrote conflated best-block vs total sum. Phase 5d will reformulate.
 
 4. **Open**: the constit factor 1.220358. Closest clean categorical candidate I tested: $q + h/2 = 1.214509$ (0.48% off). Exact form still unknown — possibly an $\exp(h)$ Taylor truncation. N-independent Hecke-algebraic structural quantity.
 
-**Impact on PR #801**: their Δ_I^K interface-knot factor is now categorically derived (= z exactly). Asked the repo owner whether their `binding_via_interface_knot.py` already accounts for this exact factor — would either validate or surface a missing 50% per-interface correction. If T2 / T3 tower currently treats Δ_I^K as a free parameter, the answer locks it to z at q_0 = 0.499320.
+**Impact on PR #801**: their ⋈_K interface-knot factor is now categorically derived (= z exactly). Asked the repo owner whether their `binding_via_interface_knot.py` already accounts for this exact factor — would either validate or surface a missing 50% per-interface correction. If T2 / T3 tower currently treats ⋈_K as a free parameter, the answer locks it to z at q_0 = 0.499320.
 
 **Phase 5d (reformulating FR + closing constit factor):**
 
@@ -261,7 +261,7 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 | Phase | Status | Result |
 |---|---|---|
-| 5d.4 — V̂-level z-transfer | landed `21ddb64c` | **z-exactness is τ_M-level only, NOT V̂-level.** V̂ at interface generators is FLAVOR-SELECTIVE: {0 for p-n, +h/2 for p-p, -h/2 for n-n} — 5/5 interfaces match across D/T/³He. |
+| 5d.4 — V̂-level z-transfer | landed `21ddb64c` | **z-exactness is tr_M-level only, NOT V̂-level.** V̂ at interface generators is FLAVOR-SELECTIVE: {0 for p-n, +h/2 for p-p, -h/2 for n-n} — 5/5 interfaces match across D/T/³He. |
 | 5d.5 — K_k* search | landed `21ddb64c` | Torus knots (3_1, 5_1, 7_1) dominate |Z_norm| ranking. Per knot-particle dictionary: 3_1=e, 5_1=μ, 7_1=τ (lepton generations 1/2/3). |
 | Lean — close 226 sorries | landed `8aafaf24` | 217 True-placeholder stubs + 9 in MassComputationChainRoadmap. **48 remain (46 §3b-cond intentional + 2 Kashaev infrastructure)**. |
 | Lean — q_0_inversion_unique proof | landed `3038eb87` | §3b-cond class `MRatioInversionMonotone` + constructive uniqueness proof. MassComputationChainRoadmap now 0 sorries. |
@@ -426,7 +426,7 @@ Four probes tested on top of PR #826's K_3* = 4_1 baseline (variance 1.551×). T
 
 $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4)$$
 
-at the **full τ_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at the |Δ_λ*| level (the two live in different spectral channels of the same Hecke algebra).
+at the **full tr_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at the |Δ_λ*| level (the two live in different spectral channels of the same Hecke algebra).
 
 **Structural conclusion (5h + 5i)**: the residual 1.54× variance in the depth-stratified formula is NOT closed by FR pullback at additional depths, cosh(h) injection, or Vol_hyp normalisation. It lives in the |Δ_λ*| (single-block dominant) layer, NOT in the Φ_k (depth-stratified sum) layer.
 
@@ -451,7 +451,7 @@ at the **full τ_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 
 
 CI green on #831 (`validate` ✓). One Copilot review comment on the ledger accepted in `02b3bcf75`.
 
-Next concrete task on the queue: **5j** — promote τ_M Z-step factor = z·(2q − 1) to a content block (extension of `prop:interface-knot-markov-z` with a constit-side companion identity section).
+Next concrete task on the queue: **5j** — promote tr_M Z-step factor = z·(2q − 1) to a content block (extension of `prop:interface-knot-markov-z` with a constit-side companion identity section).
 
 ## 2026-05-20 (late) — Phase 5j: constit-factor conjecture promoted to a content block ([PR #831](https://github.com/litlfred/qou/pull/831))
 

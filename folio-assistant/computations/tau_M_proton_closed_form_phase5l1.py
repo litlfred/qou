@@ -8,14 +8,14 @@ atom Markov trace.  Phase 5l.1 extracts tr_M^3(B_p, q) [structural form, normali
 Laurent rational expression in q, completing the closed-form
 description.
 
-The proton braid β_p in H_3(q) — built from the canonical
+The proton braid B_p in H_3(q) — built from the canonical
 intra-nucleon chains _PROTON_G0 / _PROTON_G1 in hecke_core.py — is
 a specific 11-generator Hecke word.  Its Markov trace
   tr_M^3(B_p, q) [structural form, normalization-pending] = Σ_{λ ⊢ 3} y_λ(q) · χ_λ(B_p, q)
 sums over the three partitions (3), (2,1), (1,1,1).  Each term
 admits a symbolic form:
 
-- (3): trivial rep, χ_(3)(σ_i) = q, so χ_(3)(β_p) = q^writhe(β_p)
+- (3): trivial rep, χ_(3)(σ_i) = q, so χ_(3)(B_p) = q^writhe(B_p)
 - (1,1,1): sign rep, χ_(1,1,1)(σ_i) = -q^{-1}
 - (2,1): 2-dimensional Hoefsmit seminormal rep — symbolic matrix
   product through hecke_character_symbolic.q_character_on_braid_word
@@ -122,7 +122,7 @@ def main() -> int:
         "tau-M-proton-closed-form-phase5l1", engine="sympy"
     )
     # Per user direction "don't do full infra yet" — this script is
-    # probe-style with no content-block wiring (the symbolic τ_M
+    # probe-style with no content-block wiring (the symbolic tr_M
     # awaits Phase 5l.2 normalization reconciliation before promotion).
     # Mark audit-only so the manifest-wiring audit doesn't flag this
     # witness as an orphan claim.
@@ -136,7 +136,7 @@ def main() -> int:
     print(f"Proton braid word (H_3): {len(braid_word)} crossings")
 
     # χ^λ for each partition.  Lighter normalization (sp.together)
-    # used inline; final cancel only on the assembled τ_M below.
+    # used inline; final cancel only on the assembled tr_M below.
     chi_results = {}
     for lam_tuple, fn in [
         ((3,), chi_lambda_trivial_symbolic),
@@ -145,7 +145,7 @@ def main() -> int:
         t0 = time.time()
         chi = fn(braid_word, q)
         chi_results[lam_tuple] = chi
-        print(f"  χ^{lam_tuple}(β_p, q) = {chi}   "
+        print(f"  χ^{lam_tuple}(B_p, q) = {chi}   "
               f"[{time.time()-t0:.2f}s]")
 
     # (2,1) via Hoefsmit (symbolic 2x2 matrix product).
@@ -156,8 +156,8 @@ def main() -> int:
         [2, 1], braid_word, q,
     )
     chi_results[(2, 1)] = chi_21
-    print(f"  χ^(2,1)(β_p, q) ... [{time.time()-t0:.2f}s]")
-    print(f"  χ^(2,1)(β_p, q) = {chi_21}")
+    print(f"  χ^(2,1)(B_p, q) ... [{time.time()-t0:.2f}s]")
+    print(f"  χ^(2,1)(B_p, q) = {chi_21}")
 
     # Symbolic y_λ via the canonical Wenzl-bridge implementation —
     # the repo's authoritative symbolic source for Wenzl-Markov
@@ -173,7 +173,7 @@ def main() -> int:
         if y_sym.free_symbols and list(y_sym.free_symbols)[0].name != "q":
             y_sym = y_sym.subs(list(y_sym.free_symbols)[0], q)
         # Skip per-term cancel (expensive on degree-80+ expressions);
-        # final cancel on the assembled τ_M sum below is sufficient.
+        # final cancel on the assembled tr_M sum below is sufficient.
         y_results[lam] = y_sym
         print(f"  y^{lam}(q) computed [{time.time()-t0:.2f}s]")
     print()
@@ -190,7 +190,7 @@ def main() -> int:
     # at full precision, not f64-quantized + zero-padded.
     q0_sympy = sp.Float(Q_50_DIGIT_STR, 50)
     tau_M_at_q0 = sp.N(tau_M_sym.subs(q, q0_sympy), 30)
-    print(f"\nτ_M^3(β_p, q_0) symbolic → numeric = {tau_M_at_q0}")
+    print(f"\ntr_M^3(B_p, q_0) symbolic → numeric = {tau_M_at_q0}")
     print(f"Phase 5l empirical = 1.22037426648745...")
 
     # The structural symbolic form above may differ from the empirical
