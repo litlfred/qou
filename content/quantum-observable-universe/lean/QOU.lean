@@ -95,3 +95,5 @@ import QOU.dq_squared
 import QOU.emergence_to_quantum_flat
 import QOU.su2_emergence_dagger_unitarity
 import QOU.su2_emergence_volume_determinant
+import QOU.frobenius_dagger_positive_definite
+import QOU.volume_from_rigidity
