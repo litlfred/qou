@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T00:34:55.990181+00:00",
-  "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
+  "computedAt": "2026-05-20T03:15:55.773785+00:00",
+  "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
   "assertions": [
     {
       "name": "muon_borromean_baseline_ppm_lt_2",
@@ -15,7 +15,7 @@
     },
     {
       "name": "proton_borromean_tower_ppm_lt_1",
-      "computed": 0.2510179852145082,
+      "computed": 0.0010320042428826033,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -24,7 +24,7 @@
     },
     {
       "name": "neutron_borromean_tower_ppm_lt_1",
-      "computed": 0.25102274971788757,
+      "computed": 0.001027239738302346,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -33,17 +33,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "m-p-borromean-verification-50dps",
   "scriptFile": "m_p_borromean_verification_50dps.py",
-  "scriptHash": "e0b1a76a9c3d",
+  "scriptHash": "3c4f14de7582",
   "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
-  "description": "Numerical verification at MPFR 50 dps of `conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. With λ_scale fixed at the documented closure targets (λ_p = 2.4599527869, λ_n = 2.4633436333) the Borromean tower formula reproduces m_p to 0.25 ppm and m_n to similar precision. This explains the 1700× scale gap in the prior single-level Markov-trace m_p chain (`build_proton_mass_50dps_chain.py`): Vol(B_3)/ℏ_q² ≈ 746.42 is the baryon-scale multiplier missing from that chain. The remaining R&D is to DERIVE λ_scale from substrate (currently closed numerically against CODATA).",
+  "description": "Numerical verification at MPFR 50 dps of `conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. With λ_scale fixed at the documented closure targets (λ_p = 2.4599527869, λ_n = 2.4633436333) the Borromean tower formula reproduces m_p to ~1 ppb and m_n to similar precision (2026-05-20: Vol(𝓑₃) corrected to 8·G exact via Lobachevsky/Catalan; prior 250 ppb residual was a stale-Vol propagation bug). This explains the 1700× scale gap in the prior single-level Markov-trace m_p chain (`build_proton_mass_50dps_chain.py`): Vol(B_3)/ℏ_q² ≈ 746.42 is the baryon-scale multiplier missing from that chain. The remaining R&D is to DERIVE λ_scale from substrate (currently closed numerically against CODATA).",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
     "q_0_50dps": "1.1099785955541805753",
     "hbar_q_50dps": "0.09908172643569888582",
-    "Vol_B3": "7.3277229064648071809",
+    "Vol_B3": "7.3277247534177521204",
     "Vol_4_1": "2.02988321281930725",
     "m_e_codata_MeV": "0.51099895069",
     "lambda_scale_proton_doc": "2.4599527869",
@@ -59,34 +59,34 @@
     },
     "proton": {
       "formula": "m_p = m_e · [Vol(B_3)/ℏ_q² · λ_p_scale + S(p)]  (with S(p) ≈ 0)",
-      "vol_B3_over_hbar_q_squared": "746.41766289850589589",
-      "tower_factor": "1836.1522100385643104",
-      "m_p_pred_MeV": "938.27185263683084707",
+      "vol_B3_over_hbar_q_squared": "746.41785103311718544",
+      "tower_factor": "1836.1526728408256645",
+      "m_p_pred_MeV": "938.27208912830077596",
       "m_p_codata_MeV": "938.27208816",
-      "rel_diff": "-2.51017985215e-7",
-      "rel_diff_ppm": "-0.25101799"
+      "rel_diff": "1.03200424288e-9",
+      "rel_diff_ppm": "0.0010320042"
     },
     "neutron": {
       "formula": "m_n = m_e · [Vol(B_3)/ℏ_q² · λ_n_scale + S(n)]  (with S(n) ≈ 0)",
-      "tower_factor": "1838.6831976837001227",
-      "m_n_pred_MeV": "939.56518466770460123",
+      "tower_factor": "1838.6836611238970462",
+      "m_n_pred_MeV": "939.56542148515893669",
       "m_n_codata_MeV": "939.56542052",
-      "rel_diff": "-2.51022749718e-7",
-      "rel_diff_ppm": "-0.25102275"
+      "rel_diff": "1.0272397383e-9",
+      "rel_diff_ppm": "0.0010272397"
     },
     "proton_neutron_split": {
-      "delta_m_pn_pred_MeV": "1.29333203087",
+      "delta_m_pn_pred_MeV": "1.29333235686",
       "delta_m_pn_codata_MeV": "1.29333236",
-      "rel_diff": "-2.54479e-7",
+      "rel_diff": "-2.42926e-9",
       "note": "The pn split is determined by Δλ_scale = λ_n - λ_p ≈ 0.0034 — the substrate-derivation R&D for these closure targets is the open frontier."
     },
     "scale_gap_resolution": {
       "single_level_m_p_estimate_MeV": "0.54421388",
       "codata_m_p_MeV": "938.27209",
       "scale_gap_factor": 1724.0870149726838,
-      "borromean_tower_multiplier": 1836.1522100385644,
-      "match_to_gap_pct": 6.499973266584578,
-      "conclusion": "Vol(B_3)/ℏ_q² · λ_scale ≈ 1836 IS the 1700× scale factor missing from the single-level Markov-trace m_p chain. The Borromean tower formula CLOSES the gap to 0.25 ppm for m_p and similar for m_n."
+      "borromean_tower_multiplier": 1836.1526728408257,
+      "match_to_gap_pct": 6.5000001099084574,
+      "conclusion": "Vol(B_3)/ℏ_q² · λ_scale ≈ 1836 IS the 1700× scale factor missing from the single-level Markov-trace m_p chain. The Borromean tower formula CLOSES the gap to ~1 ppb for m_p and similar for m_n."
     }
   },
   "caveats": [

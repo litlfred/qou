@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-20T03:11:41.348336+00:00",
+  "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
+  "assertions": [
+    {
+      "name": "m_p residual via exact 8·G Vol(𝓑₃) drops below 1 ppb",
+      "computed": 1.0320042428826033,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": 1.0,
+      "unit": "ppb",
+      "source": "Replace stale Vol with 8·G; hardcoded λ unchanged"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 50,
+  "computation": "borromean-volume-propagation-to-m-p",
+  "scriptFile": "borromean_volume_propagation_to_m_p.py",
+  "scriptHash": "4d0d87d8d84e",
+  "scriptCommitSha": "unknown",
+  "description": "Tests whether replacing the stale Vol(𝓑₃) = 7.32772290 (SnapPy default-precision literature value, used in m_p_borromean_verification_50dps.py:68) with the exact 8·G = 7.32772475 closes the 250 ppb m_p residual. Hypothesis: the hardcoded λ_p_scale = 2.4599527869 was calibrated against CODATA m_p using the CORRECT 8·G value, so the stale Vol in the production formula introduces a compensating ~0.25 ppm error.",
+  "parameters": {
+    "compute_dps": "80"
+  },
+  "data": {
+    "substrate": {
+      "Q_50dps": "1.1099785955541805752815940796095093779932822799587",
+      "ℏ_q": "0.0990817264356988858200143426884",
+      "ℏ_q²": "0.00981718851347867143648141194145",
+      "m_e_codata_MeV": "0.51099895069",
+      "m_p_codata_MeV": "938.27208816"
+    },
+    "vol_B3_candidates": {
+      "stale_literature_used_by_borromean_verif_script": "7.327722906465",
+      "8G_exact_via_catalan_at_100dps": "7.32772475341775212043682811946",
+      "delta": "1.8469527521204368281e-6",
+      "rel_diff_ppm": "0.25204996"
+    },
+    "m_p_prediction_with_hardcoded_lambda": {
+      "hardcoded_λ_p_scale": "2.4599527869",
+      "via_stale_Vol(𝓑₃)": {
+        "m_p_pred_MeV": "938.271852637",
+        "delta_vs_CODATA_MeV": "-0.0002355231445",
+        "delta_ppm": "-0.251018"
+      },
+      "via_exact_8G_Vol(𝓑₃)": {
+        "m_p_pred_MeV": "938.272089128",
+        "delta_vs_CODATA_MeV": "9.68300776e-7",
+        "delta_ppm": "0.001032"
+      },
+      "improvement": "243.233"
+    },
+    "lambda_p_implied_from_CODATA": {
+      "definition": "λ implied = m_p_CODATA / (m_e · Vol/ℏ_q²)",
+      "via_stale_Vol(𝓑₃)": "2.4599534043924825618",
+      "via_exact_8G_Vol(𝓑₃)": "2.4599527843613182892",
+      "hardcoded_lambda_in_script": "2.4599527869",
+      "diff_implied_stale_vs_hardcoded": "6.17492482562e-7",
+      "diff_implied_8G_vs_hardcoded": "-2.53868171075e-9",
+      "interpretation": "If the hardcoded value matches the implied-via-8G λ to high precision, the hardcoded λ was originally fitted using the CORRECT Vol(𝓑₃) = 8·G, not the stale literature value. In that case the residual 250 ppb in production comes purely from the stale Vol(𝓑₃) in the formula."
+    }
+  }
+}
