@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "4acb3523c862",
     "ts": "8134ca0753dc",
-    "lean": "0f3f6b7d2eae"
+    "lean": "b23baa7d2c79"
   },
   "criteria": {
     "wall-side-correct": [
@@ -18,7 +18,7 @@
         "field_hash": {
           "md": "4acb3523c862",
           "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
+          "lean": "b23baa7d2c79"
         },
         "result": "fail",
         "reviewer": {
@@ -26,131 +26,12 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:05:32.956Z",
-        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
+        "reviewed_at": "2026-05-20T14:47:11.625Z",
+        "reviewed_sha": "f5eddfa5b10730722eca4a71451c1b489294113e",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
-    ],
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "4acb3523c862",
-          "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "4acb3523c862",
-          "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "4acb3523c862",
-          "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "4acb3523c862",
-          "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "4acb3523c862",
-          "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "4acb3523c862",
-          "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "4acb3523c862",
-          "ts": "8134ca0753dc",
-          "lean": "0f3f6b7d2eae"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:47:11.625Z"
 }

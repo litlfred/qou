@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a03edcb805d9",
     "ts": "af5a0098e271",
-    "lean": "a0726873ff87"
+    "lean": "9ab1a3c1b7ee"
   },
   "criteria": {
     "wall-side-correct": [
@@ -18,26 +18,7 @@
         "field_hash": {
           "md": "a03edcb805d9",
           "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:05:32.956Z",
-        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
-      }
-    ],
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "a03edcb805d9",
-          "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
+          "lean": "9ab1a3c1b7ee"
         },
         "result": "pass",
         "reviewer": {
@@ -45,116 +26,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "a03edcb805d9",
-          "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md:70: D       3         <empirical> <empirical>      ✓ | content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md:71: T       3         <empirical> <empirical>      ✓ | content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md:72: ³He     3         <empirical> <empirical>      ✓"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "a03edcb805d9",
-          "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "a03edcb805d9",
-          "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "a03edcb805d9",
-          "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md:81: |hbar_q^(2(n-1)) Delta^(n-1)| · hbar_q^2` to three significant"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "a03edcb805d9",
-          "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "a03edcb805d9",
-          "ts": "af5a0098e271",
-          "lean": "a0726873ff87"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T14:47:11.625Z",
+        "reviewed_sha": "f5eddfa5b10730722eca4a71451c1b489294113e"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T14:47:11.625Z"
 }
