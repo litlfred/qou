@@ -100,6 +100,7 @@ export default chapter({
         "hodge-su2",
         "poisson-object",
         "poisson-hkr-connection",
+        "outro-quantum-universes",
       ],
     }),
   ],

@@ -113,6 +113,7 @@ export default chapter({
         "mostow-confinement",
         "algebraic-geometric-rigidity-pairing",
         "encounter-literature-bridge",
+        "outro-models-of-qous",
       ],
     }),
 

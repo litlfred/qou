@@ -137,6 +137,7 @@ export default chapter({
         // swap makes it a backward ref, no new cascade.
         "unitary-stability",
         "geometric-rh-exposition",
+        "outro-q-geometric-langlands",
       ],
     }),
   ],
