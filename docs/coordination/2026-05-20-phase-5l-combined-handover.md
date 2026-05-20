@@ -53,7 +53,7 @@ Plus:
   1. λ-scale categorical derivation → m_p production
   2. Migrate 20 importers of SUPERSEDED `mass_endomorphism.py`
   3. Wire Rust LR adapter into atomic_tr_m_* (500× speedup at ⁴He)
-  4. Closed-form interface factor in 4 production τ_M scripts
+  4. Closed-form interface factor in 4 production tr_M scripts
   5. Reeb/Garside compute verification
 
 **CLAUDE.md cross-link** added at top so any agent picking up final-stage work has the chain visible.
@@ -96,7 +96,7 @@ Each is a discrete mechanical migration:
 1. m_p categorical λ-scale (highest impact — discipline violation)
 2. mass_endomorphism → mass_tower_operator_valued (20 importers)
 3. Rust LR adapter (500× speedup waiting)
-4. Closed-form τ_M optimization (4 scripts)
+4. Closed-form tr_M optimization (4 scripts)
 5. Reeb/Garside compute verification
 
 ### Phase 5m — Wenzl §1.7 Lean formalization
