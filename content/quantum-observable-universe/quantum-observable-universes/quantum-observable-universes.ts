@@ -477,6 +477,7 @@ export default chapter({
         "q-harmonic-physical",
         "linearisation-convention",
         "schrodinger-jet-coaction",
+        "outro-quantum-observable-universes",
       ],
     }),
 
