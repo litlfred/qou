@@ -287,7 +287,7 @@ export function checkWallSide(
     // Archimedean is fine if the .md acknowledges the specialisation.
     // Without acknowledgement we flag for review.
     const acknowledged =
-      /archimedean|over\s+\\?mathbb\{R\}|over\s+ℝ|specialise|specialize|numerical evaluation|CODATA|experimental/.test(
+      /archimedean|over\s+\\?mathbb\{R\}|over\s+ℝ|specialise|specialize|numerical evaluation|codata|experimental/.test(
         md.toLowerCase(),
       );
     if (!acknowledged) {
