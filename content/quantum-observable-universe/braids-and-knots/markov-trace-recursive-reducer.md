@@ -135,8 +135,10 @@ precision, confirming the disjoint-product property.
 The proton value matches the prior Hecke-power expansion in
 [`markov_trace_atomic_proton_full.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov_trace_atomic_proton_full.py)
 ([`prop:markov-trace-axiomatic-closed-form`](#prop:markov-trace-axiomatic-closed-form))
-at float64 precision, providing an independent cross-check via two
-different reduction strategies.
+at 50-dps (mpmath) precision, providing an independent cross-check
+via two different reduction strategies. (Earlier float64 evaluations
+of the same identity are recorded in the witness as probes; the
+matching claim is at 50 dps.)
 
 ## Optimisation: memoisation on basis elements
 

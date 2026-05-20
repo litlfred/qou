@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T00:07:50.647626+00:00",
-  "commitSha": "398fa59d1a8e1cf408dbb1368a57cdcaee1a32e0",
+  "computedAt": "2026-05-20T00:55:10.675538+00:00",
+  "commitSha": "adb0b5e4980b4ab4c31bcd0348f40a03aed8c074",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "8b28161cd41c626666f23f758b86291e3ee3a1c2",
+  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2329,6 +2329,7 @@
         "family-a-variants-investigation.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
+        "fr-pullback-k3-test.witness.json",
         "free-neutron-decay.witness.json",
         "fresh-derivation-pn-steps-E-G.witness.json",
         "full-twist-delta-n2-verification.witness.json",
@@ -2456,6 +2457,7 @@
         "mass-formula-6term.witness.json",
         "mass-from-q-symbolic.witness.json",
         "mass-table-ppb.witness.json",
+        "mass-tower-operator-valued.witness.json",
         "methodology-deprecation.witness.json",
         "mobius-limit-from-thimble.witness.json",
         "molecular-frobenius-lp.witness.json",

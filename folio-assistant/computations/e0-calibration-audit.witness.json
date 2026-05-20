@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-20T00:07:57.512027+00:00",
+  "computedAt": "2026-05-20T00:55:12.393512+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -26,7 +26,7 @@
     "literal_0_782": [
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 52,
+        "line": 62,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "(vs CODATA 0.782; 0.75% err)",
@@ -34,7 +34,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 463,
+        "line": 473,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
@@ -738,7 +738,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 124,
+        "line": 134,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)",
@@ -746,7 +746,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 503,
+        "line": 513,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"CAL-3_Q_beta_MeV\": str(Q_BETA_MEV) + \" (cross-check only; predicted by framework below)\",",

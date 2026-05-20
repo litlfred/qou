@@ -149,7 +149,7 @@ the paper: `folio-assistant/computations/borromean-axial-coupling.witness.json`
 (the axial-coupling $g_A$ from $H_3(q_0)$ matches PDG 2024
 $g_A = 1.2754$), `proton-braid-sweep-gg.witness.json` (proton
 braid coefficients in the NF basis at $q_0$), and
-`borromean-qvalue.py` (derivation of $q_0 \approx 1.10998$ from
+`borromean-qvalue.py` (derivation of $q_0 = 1.109978595554181\ldots$ (50 dps) from
 Borromean topology). These are numerical witnesses, not formal
 proofs — see also
 [Borromean-quark conjecture](#conj:borromean-quark) and the

@@ -37,7 +37,7 @@ channel is therefore the unique colour-singlet projection at $n =
 **Specialisation.**
 The categorical statement holds over $R$; numerical evaluation
 chooses a ring map $\iota \colon R \to \mathbb{R}$ with $q^{1/2}
-\mapsto q_0^{1/2}$ at $q_0 \approx 1.1097$.  The completeness
+\mapsto q_0^{1/2}$ at $q_0 = 1.109978595554181\ldots$ (50 dps).  The completeness
 theorem itself is independent of $\iota$ and survives any
 specialisation to $\mathbb{Q}_p$ or $\mathbb{F}_\ell$ admitting
 the required units.

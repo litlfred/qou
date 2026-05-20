@@ -32,7 +32,7 @@ already counted by the $A$ free constituents (whose trace is
 $\Sigma_3$ each, by [proton residual partition sum](#prop:partition-sum-proton-residual)
 and [Frobenius co-Casimir universal](#thm:frobenius-codim-universal)).*
 
-*At $q = q_0 \approx 1.10998$:*
+*At $q = q_0 = 1.109978595554181\ldots$ (50 dps):*
 
 $$
   \Sigma_3 \approx 2.4973, \qquad \Sigma_6 \approx 3.2021,

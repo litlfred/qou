@@ -3,6 +3,16 @@
 # upstream beta-decay-energy-scale witness, exposes predicted MeV
 # observables.
 """
+**CONTEXT (per prop:li2q-phiq-bar-symmetrization).** This module
+predicts both **MASS** observables (m_p, m_n, m_e via β-decay scale)
+and **BINDING-derived** quantities (Q_β, isotope binding via mass
+differences). Φ_q usage in this script is in the MASS leg (anchor
+chain); the binding-energy derivations cancel mass scales at the
+output level and inherit Li_2^q via downstream callers. Migration to
+Li_2^q would require structural revision per the SUPERSEDED banner
+in `mass-endomorphism-tower.md` — tracked under Stage-1 in
+`docs/coordination/1ppb-categorical-chain.md`.
+
 CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
 This script imports M_*_MEV_VALIDATION constants from
 `codata_constants.py` as production inputs (not just as

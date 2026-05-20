@@ -77,8 +77,23 @@ $\mathrm{tower}(T_w) = \sum_i \mathrm{Li}_2^q(-|\hat{V}_i|) + z^2 \sum_{i<j} \ma
 is the brane tower built from per-generator additive-Wedderburn
 volumes $\hat{V}_i$ (symmetric $q$-dilogarithm
 $\mathrm{Li}_2^q$ per the 2026-05-03 paper canon,
-[mass endomorphism tower](#prop:mass-endomorphism-tower)),
-and $\mathrm{tr}_M(C_{\dim_q}) = \sum_{\lambda \vdash n_0} 1/\dim_q(\lambda)$
+[mass endomorphism tower](#prop:mass-endomorphism-tower)).
+Per [`prop:li2q-phiq-bar-symmetrization`](li2q-phiq-bar-symmetrization.md),
+$\mathrm{Li}_2^q$ is the **pre-Archimedean (categorical, $R$-side)**
+form, bar-invariant under $q \mapsto q^{-1}$ and living in the Habiro
+ring $\widehat{\mathbb{Z}[q]}[\![z]\!]$. The post-Archimedean
+realization under $\tau_{\mathrm{arch}}$ is the bar-pair
+$\tfrac{1}{2}(\log \Phi_q(z) + \log \Phi_{q^{-1}}(z))$, **not**
+naive numerical substitution of $\mathrm{Li}_2^q$ at $q = q_0$; the
+naive substitution kills the dimensional mass scale by the
+bar-symmetric projection (empirical: $m_{\mathfrak{p}}/m_e \approx
+3.31$ vs CODATA $1836$; see
+[`m-p-m-e-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-m-e-li2q.witness.json)).
+The $\sim 173\times$ shortfall flagged below is consistent with this
+bar-projection structure; the $\rho_K$ closure path of
+[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) and the Faddeev
+$\Phi_q$ archimedean tower are the two reconciliation candidates.
+The third summand $\mathrm{tr}_M(C_{\dim_q}) = \sum_{\lambda \vdash n_0} 1/\dim_q(\lambda)$
 is the Frobenius co-Casimir trace
 ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)).
 The scalar $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ is the
@@ -335,7 +350,7 @@ implementations:
 | 7 (methodology tag) | [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) | ✓ |
 | 8 (post-Archimedean naming via volume conjecture) | borrowed; not in QOU derivation | ✓ as theorem |
 
-### PSD-cone $\alpha^*$ ranking (Rust R5-minimal, $q_0 = 1.1097$)
+### PSD-cone $\alpha^*$ ranking (Rust R5-minimal, $q_0 = 1.109978595554181\ldots$, 50 dps)
 
 For each historical entry the verifier emits
 $\alpha^*(\mathfrak{H}) := \max\{\alpha \in [0,1] :

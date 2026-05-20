@@ -74,7 +74,7 @@ time.  P = NP over finite fields is trivial (finite lookup),
 not because the obstruction vanishes, but because the field
 itself is finite.
 
-Over $\mathbb{R}$ at non-torsion $q_0 \approx 1.1097$, no
+Over $\mathbb{R}$ at non-torsion $q_0 = 1.109978595554181\ldots$ (50 dps), no
 Kummer level applies.  The Iwahori--Hecke algebra $H_n(q_0)$ is
 semisimple ($\mathrm{Rad} = 0$), the full $3^c$ tree
 survives, and the obstruction is non-vanishing.

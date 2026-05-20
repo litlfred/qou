@@ -132,7 +132,7 @@ Hoefsmit structural data all live over generic $R$. The narrative
 side mirrors this in symbol use: $q \in R$ for the substrate
 parameter when only the algebraic structure matters, $q \in \mathbb{R}$
 only when an archimedean evaluation (numerical
-$q_0 \approx 1.1097$, the substrate's archimedean realisation) is
+$q_0 = 1.109978595554181\ldots$ (50 dps), the substrate's archimedean realisation) is
 under discussion. See
 [`CLAUDE.md` §7c](https://github.com/litlfred/qou/blob/main/CLAUDE.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict)
 for the typeclass cheat-sheet and the archimedean-wall membership

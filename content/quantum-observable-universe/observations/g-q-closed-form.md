@@ -96,7 +96,7 @@ $(\hbar_q / c_q)^2 = (q-1)^4/q^2$, and the SI value of $G$ becomes
 the human-scale rescaling that maps $\ell_P, m_P, t_P$ onto metres,
 kilograms, and seconds.  The empirical $G_{\mathrm{Newton}}$
 therefore enters as a unit-system datum, not as a fit parameter on
-$q$.  The substrate value $q_0 \approx 1.1097$ is fixed by the
+$q$.  The substrate value $q_0 = 1.109978595554181\ldots$ (50 dps) is fixed by the
 lepton-mass cross-check
 ([substrate consistency window](#prop:substrate-consistency-window)),
 not by gravity.

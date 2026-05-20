@@ -49,7 +49,7 @@ $$
   = \ln\lvert q^5 \cdot (-(q-q^{-1})) + q^{-5} \cdot 1 \rvert
 $$
 
-*At $q_0 \approx 1.1097$, $(q-q^{-1}) \approx 0.2083$:*
+*At $q_0 = 1.109978595554181\ldots$ (50 dps), $(q-q^{-1}) \approx 0.2083$:*
 
 - *$V^{H} = -q^5(q - q^{-1}) + q^{-5} \approx -1.680 \times 0.2083 + 0.595 \approx -0.255 + 0.595 = 0.245$*
 - *$\Phi_1^{H} = \ln(0.245) \approx -1.406$*

@@ -94,7 +94,7 @@ $$
 
 ## Numerical evaluation
 
-At $q_0 \approx 1.10998$ (from $m_\mu/m_e$) and
+At $q_0 = 1.109978595554181\ldots$ (50 dps) (from $m_\mu/m_e$) and
 $m_e = 0.51099895 \pm 0.00000000015$ MeV (CODATA 2022):
 
 $$

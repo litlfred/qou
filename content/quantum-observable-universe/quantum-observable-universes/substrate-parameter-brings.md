@@ -56,7 +56,7 @@ $$
 (The other root $q = -3 - 2\sqrt{2} \approx -5.83$ is its
 reciprocal.) This *categorical* parameter lives in the Laurent
 polynomial ring $\mathbb{Z}[q, q^{-1}]$; the *physical* substrate
-parameter $q_0 \approx 1.1097$ arises from the archimedean
+parameter $q_0 = 1.109978595554181\ldots$ (50 dps) arises from the archimedean
 realisation via the muon/electron mass ratio
 ([skein mass relation](#rem:skein-mass-relation)). The two are
 related by the specialisation map

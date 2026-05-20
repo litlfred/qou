@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 """
+**CONTEXT (per prop:li2q-phiq-bar-symmetrization).** This script is a
+**BINDING-context DIAGNOSTIC**: it documents the Faddeev Φ_q failure
+mode (the −737 MeV mirror-nucleus pathology in the T2/T3 brane tower)
+that motivates the Li_2^q migration recommended by the bar-symmetrization
+identity. Φ_q is retained here intentionally — the script's purpose is
+to *exhibit* Φ_q's divergence near |z|=1 as evidence for the
+substrate-archimedean wall structure. For a binding-energy
+*computation* (not diagnostic), use `_li_2_q_util.compute_t2_t3_from_vols`
+which is bar-symmetric and bounded.
+
 6-term mass formula brane-tower (T2/T3) isospin-violation diagnosis.
 
 After replacing Term 1 with canonical bridge values

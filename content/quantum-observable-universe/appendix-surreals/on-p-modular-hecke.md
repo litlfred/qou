@@ -174,7 +174,7 @@ A first goal would be to verify the conjecture for $H_3(\zeta_2)$
 ## Note on QOU's main paper
 
 This conjecture is **not** load-bearing for QOU's main results;
-the substrate value $q_0 \approx 1.1097$ is generic (not a root
+the substrate value $q_0 = 1.109978595554181\ldots$ (50 dps) is generic (not a root
 of unity), so the binary Hoefsmit / char-0 surreal picture applies
 throughout the main paper. The char-$p$ extension is included
 here as a conceptual companion: a record of where the same

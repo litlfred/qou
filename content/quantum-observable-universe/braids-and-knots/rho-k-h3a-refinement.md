@@ -159,7 +159,7 @@ $$
   Plancherel-dominant cone (per
   [`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline) §142 –
   bound MAE$(k) \le C_0 \cdot [2]_q^{-2(k-3)}$).  At the substrate
-  $q_0 \approx 1.10998$, $[2]_{q_0}^2 \approx 4.04$, so each level
+  $q_0 = 1.109978595554181\ldots$ (50 dps), $[2]_{q_0}^2 \approx 4.04$, so each level
   reduces residual by $\sim 4\times$; nine levels suffice to drop
   $0.3 \%$ to $0.3 \% / 4^9 \approx 1$ ppb.*
 

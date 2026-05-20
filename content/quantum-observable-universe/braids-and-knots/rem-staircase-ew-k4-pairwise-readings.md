@@ -41,7 +41,7 @@ $6.95\%$ at 50 dps), the literal content of
 | --- | --- | --- | --- | --- |
 | $2$ | $2$ | untestable | n/a (length-0 word at $n=3$) | — |
 | $3$ | $16$ | 50 dps (mpmath) | $6.95\,\%$ | falsified |
-| $4$ | $768$ | float64 + coincidence test | $0.14\,\%$ (3.7× worse than random) | falsified |
+| $4$ | $768$ | float64 (probe-only; NOT 1-ppb cross-method verified) + coincidence test | $0.14\,\%$ (3.7× worse than random) | falsified |
 
 The empirical content that *survives* is the **leading-order match**
 via the CODATA-residual reading (only directly testable at $k=3$,
@@ -50,7 +50,8 @@ to $0.15\%$). Future work should look for the next-order correction
 series.
 
 **Bar-pair structure verified.** All 768 eigenvalues form 384 perfect
-$e_+ \cdot e_- = -1$ bar-pairs at float64 — confirms the
+$e_+ \cdot e_- = -1$ bar-pairs at float64 precision (probe; bar-pair
+property is algebraic and independent of dps) — confirms the
 conjugate-pairing analysis from
 [`prop:beta-ew-bar-pair-recursion`](#prop:beta-ew-bar-pair-recursion)
 independently of the $q^{1/(2k-1)}$ claim.

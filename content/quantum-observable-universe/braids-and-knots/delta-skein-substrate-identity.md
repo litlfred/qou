@@ -51,7 +51,7 @@ $$
   \frac{m_n - m_p}{m_e \cdot \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2}.
 $$
 
-*At the substrate parameter* $q_0 = 1.1097\ldots$ *and CAL-1
+*At the substrate parameter* $q_0 = 1.109978595554181\ldots$ *(50 dps) and CAL-1
 $m_e = 0.51099895\ldots\;\mathrm{MeV}$, evaluating to 50 dps via the
 witness*
 [`m-baryon-volume-form.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/m-baryon-volume-form.witness.json)

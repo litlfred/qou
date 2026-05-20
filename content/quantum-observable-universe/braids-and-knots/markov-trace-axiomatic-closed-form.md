@@ -128,7 +128,7 @@ construction, no character tables. $\square$
 
 ## Numerical witness
 
-Substituting $q_0 \approx 1.1097$ and evaluating with `mpmath`:
+Substituting $q_0 = 1.109978595554181\ldots$ (50 dps) and evaluating with `mpmath`:
 
 $$
   \operatorname{tr}_M(\sigma_1^7\sigma_2^4)(q_0) \;\approx\; 1.63315\,357\ldots
