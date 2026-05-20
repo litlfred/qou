@@ -169,6 +169,20 @@
         },
         "reviewed_at": "2026-05-20T04:29:54.988Z",
         "reviewed_sha": "03e91e10c47de93efe0a3ca5662d9f3e241dae89"
+      },
+      {
+        "field_hash": {
+          "md": "53923fbdbcf3",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-ai-slop": [
@@ -188,5 +202,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:29:54.988Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

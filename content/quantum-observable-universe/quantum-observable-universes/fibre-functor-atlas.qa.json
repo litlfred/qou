@@ -3,9 +3,9 @@
   "label": "prop:fibre-functor-atlas",
   "kind": "proposition",
   "paths": {
-    "ts": "quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts",
-    "md": "quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.md",
-    "lean": "quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.lean"
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.lean"
   },
   "source_hashes": {
     "md": "c53006358e14",
@@ -270,7 +270,41 @@
         "reviewed_at": "2026-05-20T06:22:25.857Z",
         "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
       }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c53006358e14",
+          "ts": "1377fea2ab89",
+          "lean": "0cb28fbda60a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c53006358e14",
+          "ts": "1377fea2ab89",
+          "lean": "0cb28fbda60a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
     ]
   },
-  "updated_at": "2026-05-20T06:32:23.033Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

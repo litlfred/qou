@@ -3,8 +3,8 @@
   "label": "rem:jones-faithfulness-crossing-8",
   "kind": "remark",
   "paths": {
-    "ts": "quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.ts",
-    "md": "quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.md"
+    "ts": "content/quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.md"
   },
   "source_hashes": {
     "md": "e628442af4b3",
@@ -254,7 +254,39 @@
         "reviewed_at": "2026-05-20T06:32:23.033Z",
         "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e628442af4b3",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "e628442af4b3",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
     ]
   },
-  "updated_at": "2026-05-20T06:32:23.033Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

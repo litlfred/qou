@@ -3,9 +3,9 @@
   "label": "prop:two-filtration-bridge-small-cases",
   "kind": "proposition",
   "paths": {
-    "ts": "quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.ts",
-    "md": "quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.md",
-    "lean": "quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.lean"
+    "ts": "content/quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/two-filtration-bridge-small-cases.lean"
   },
   "source_hashes": {
     "md": "741f3d7b7bb6",
@@ -254,6 +254,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "fit-section-chapter": [
@@ -321,7 +336,24 @@
         "reviewed_at": "2026-05-20T06:32:23.033Z",
         "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "741f3d7b7bb6",
+          "ts": "09be3efc459b",
+          "lean": "4e9dbb9d849f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
     ]
   },
-  "updated_at": "2026-05-20T06:32:23.033Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

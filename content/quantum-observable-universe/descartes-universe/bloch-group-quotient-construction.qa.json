@@ -3,9 +3,9 @@
   "label": "prop:bloch-group-quotient-construction",
   "kind": "proposition",
   "paths": {
-    "ts": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.ts",
-    "md": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md",
-    "lean": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean"
+    "ts": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean"
   },
   "source_hashes": {
     "md": "c1f0e7fb82c6",
@@ -16,7 +16,7 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "903de29c0f78",
+          "md": "fbb08e0facff",
           "ts": "48cdeed22b72",
           "lean": "a5be8ee3f9e6"
         },
@@ -26,10 +26,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:05:32.956Z",
-        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
+        "reviewed_at": "2026-05-20T06:39:43.529Z",
+        "reviewed_sha": "05d6f0d51ac596e83cf8f65850886cb9828d5599",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "evidence": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md:109: 1. ✅ `BlochGroup F` quotient construction (this proposition)."
       },
       {
         "field_hash": {
@@ -37,16 +37,14 @@
           "ts": "48cdeed22b72",
           "lean": "a5be8ee3f9e6"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
         "reviewed_at": "2026-05-20T04:53:48.207Z",
-        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -194,12 +192,27 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "fbb08e0facff",
+          "md": "903de29c0f78",
           "ts": "48cdeed22b72",
           "lean": "a5be8ee3f9e6"
         },
@@ -209,14 +222,29 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "fbb08e0facff",
+          "md": "903de29c0f78",
           "ts": "48cdeed22b72",
           "lean": "a5be8ee3f9e6"
         },
@@ -226,8 +254,23 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-scholarly-default": [
@@ -245,6 +288,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-ai-slop": [
@@ -262,25 +320,6 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "fbb08e0facff",
-          "ts": "48cdeed22b72",
-          "lean": "a5be8ee3f9e6"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T06:39:43.529Z",
-        "reviewed_sha": "05d6f0d51ac596e83cf8f65850886cb9828d5599",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md:109: 1. ✅ `BlochGroup F` quotient construction (this proposition)."
       },
       {
         "field_hash": {
@@ -294,74 +333,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:53:48.207Z",
-        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "903de29c0f78",
-          "ts": "48cdeed22b72",
-          "lean": "a5be8ee3f9e6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      },
-      {
-        "field_hash": {
-          "md": "c1f0e7fb82c6",
-          "ts": "48cdeed22b72",
-          "lean": "a5be8ee3f9e6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:53:48.207Z",
-        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "903de29c0f78",
-          "ts": "48cdeed22b72",
-          "lean": "a5be8ee3f9e6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
-      },
-      {
-        "field_hash": {
-          "md": "c1f0e7fb82c6",
-          "ts": "48cdeed22b72",
-          "lean": "a5be8ee3f9e6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:53:48.207Z",
-        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ]
   },
-  "updated_at": "2026-05-20T04:53:48.207Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

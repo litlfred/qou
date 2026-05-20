@@ -171,6 +171,22 @@
         "reviewed_sha": "03e91e10c47de93efe0a3ca5662d9f3e241dae89",
         "severity": "major",
         "evidence": "quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:24: **When you see $\\varepsilon$ in the substrate-level definitions | quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:32: **When you see a surreal-bound statement** — e.g. | quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:37: the only piece you need; the bound says \"the inequality holds up"
+      },
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:24: **When you see $\\varepsilon$ in the substrate-level definitions | quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:32: **When you see a surreal-bound statement** — e.g. | quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:37: the only piece you need; the bound says \"the inequality holds up"
       }
     ],
     "voice-ai-slop": [
@@ -190,5 +206,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:29:54.988Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

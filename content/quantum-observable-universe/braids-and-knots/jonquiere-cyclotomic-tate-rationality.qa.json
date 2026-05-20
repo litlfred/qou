@@ -3,9 +3,9 @@
   "label": "prop:jonquiere-cyclotomic-tate-rationality",
   "kind": "proposition",
   "paths": {
-    "ts": "quantum-observable-universe/braids-and-knots/jonquiere-cyclotomic-tate-rationality.ts",
-    "md": "quantum-observable-universe/braids-and-knots/jonquiere-cyclotomic-tate-rationality.md",
-    "lean": "quantum-observable-universe/braids-and-knots/jonquiere-cyclotomic-tate-rationality.lean"
+    "ts": "content/quantum-observable-universe/braids-and-knots/jonquiere-cyclotomic-tate-rationality.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/jonquiere-cyclotomic-tate-rationality.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/jonquiere-cyclotomic-tate-rationality.lean"
   },
   "source_hashes": {
     "md": "504da83e2348",
@@ -254,6 +254,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "504da83e2348",
+          "ts": "ea8a7214d892",
+          "lean": "72cd21002b5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "fit-section-chapter": [
@@ -321,7 +336,24 @@
         "reviewed_at": "2026-05-20T06:32:23.033Z",
         "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "504da83e2348",
+          "ts": "ea8a7214d892",
+          "lean": "72cd21002b5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
     ]
   },
-  "updated_at": "2026-05-20T06:32:23.033Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }

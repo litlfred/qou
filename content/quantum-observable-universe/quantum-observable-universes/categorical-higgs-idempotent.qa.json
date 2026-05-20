@@ -3,12 +3,12 @@
   "label": "conj:categorical-higgs-idempotent",
   "kind": "conjecture",
   "paths": {
-    "ts": "quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.ts",
-    "md": "quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md",
-    "lean": "quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.lean"
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.lean"
   },
   "source_hashes": {
-    "md": "de0c91a739d9",
+    "md": "8cf38288473d",
     "ts": "b92dc2dca638",
     "lean": "637c7df512b4"
   },
@@ -43,6 +43,21 @@
         },
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-status-leak": [
@@ -60,6 +75,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-emoji-content": [
@@ -77,6 +107,23 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:151: | NV-1 | 🔴 inconclusive | 🟢 closed via Higgs trace | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:152: | HIGGS-SLOT (PR #513) | 🔴 retraction recommended | 🟢 scalar slot identified | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:153: | U2 (force-carrier dichotomy) | 🟡 structural premise | 🟢 derived | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:154: | U4 (EW mass eigenstate count) | 🟡 structural premise | 🟢 derived | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:155: | §3.A v4 calibration scale | 🟡 wrong direction | 🟢 calibrated to N_sym |"
       }
     ],
     "voice-first-person-work": [
@@ -94,6 +141,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-time-stamped-notes": [
@@ -111,6 +173,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-unicode-crash": [
@@ -145,6 +222,21 @@
         },
         "reviewed_at": "2026-05-20T05:30:40.400Z",
         "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [
@@ -162,6 +254,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "framework-canonical": [
@@ -179,6 +286,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "fit-section-chapter": [
@@ -246,6 +368,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-ai-slop": [
@@ -263,8 +400,23 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ]
   },
-  "updated_at": "2026-05-20T05:30:40.400Z"
+  "updated_at": "2026-05-20T14:37:46.065Z"
 }
