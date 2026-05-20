@@ -16,7 +16,7 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "2a83f1c1c632",
+          "md": "bb78d2a9becf",
           "ts": "b6a5f9510f6c",
           "lean": "55419151e0a5"
         },
@@ -26,28 +26,11 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "2a83f1c1c632",
-          "ts": "b6a5f9510f6c",
-          "lean": "55419151e0a5"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md:69: - Inclusion: ✓ (theorem-level — Bloch–Suslin). | content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md:70: - Sharpness at depth 2 over $\\mathbb{Q}(\\zeta_6)$: ✓ (Borel + Suslin"
-      },
       {
         "field_hash": {
           "md": "bb78d2a9becf",
@@ -60,14 +43,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T06:32:02.376Z",
-        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "2a83f1c1c632",
+          "md": "bb78d2a9becf",
           "ts": "b6a5f9510f6c",
           "lean": "55419151e0a5"
         },
@@ -77,14 +60,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "2a83f1c1c632",
+          "md": "bb78d2a9becf",
           "ts": "b6a5f9510f6c",
           "lean": "55419151e0a5"
         },
@@ -94,14 +77,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "2a83f1c1c632",
+          "md": "bb78d2a9becf",
           "ts": "b6a5f9510f6c",
           "lean": "55419151e0a5"
         },
@@ -111,14 +94,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "2a83f1c1c632",
+          "md": "bb78d2a9becf",
           "ts": "b6a5f9510f6c",
           "lean": "55419151e0a5"
         },
@@ -128,14 +111,48 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "bb78d2a9becf",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "bb78d2a9becf",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "2a83f1c1c632",
+          "md": "bb78d2a9becf",
           "ts": "b6a5f9510f6c",
           "lean": "55419151e0a5"
         },
@@ -145,14 +162,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "2a83f1c1c632",
+          "md": "bb78d2a9becf",
           "ts": "b6a5f9510f6c",
           "lean": "55419151e0a5"
         },
@@ -162,10 +179,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ]
   },
-  "updated_at": "2026-05-20T15:01:34.161Z"
+  "updated_at": "2026-05-20T15:10:05.080Z"
 }

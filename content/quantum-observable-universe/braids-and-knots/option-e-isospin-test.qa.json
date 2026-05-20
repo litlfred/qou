@@ -7,89 +7,11 @@
     "md": "content/quantum-observable-universe/braids-and-knots/option-e-isospin-test.md"
   },
   "source_hashes": {
-    "md": "266c62cd6d67",
+    "md": "9a0d458f01a4",
     "ts": "1a3c32ec7cd8"
   },
   "criteria": {
     "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "266c62cd6d67",
-          "ts": "1a3c32ec7cd8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "266c62cd6d67",
-          "ts": "1a3c32ec7cd8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "266c62cd6d67",
-          "ts": "1a3c32ec7cd8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "266c62cd6d67",
-          "ts": "1a3c32ec7cd8"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/option-e-isospin-test.md:136: with mirror-isobar invariance.  Option E as currently written in"
-      },
-      {
-        "field_hash": {
-          "md": "4a81dd636266",
-          "ts": "1a3c32ec7cd8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T05:47:44.535Z",
-        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
-      },
       {
         "field_hash": {
           "md": "9a0d458f01a4",
@@ -101,14 +23,62 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "9a0d458f01a4",
+          "ts": "1a3c32ec7cd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "9a0d458f01a4",
+          "ts": "1a3c32ec7cd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "9a0d458f01a4",
+          "ts": "1a3c32ec7cd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "266c62cd6d67",
+          "md": "9a0d458f01a4",
           "ts": "1a3c32ec7cd8"
         },
         "result": "pass",
@@ -117,14 +87,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "266c62cd6d67",
+          "md": "9a0d458f01a4",
           "ts": "1a3c32ec7cd8"
         },
         "result": "pass",
@@ -133,14 +103,46 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9a0d458f01a4",
+          "ts": "1a3c32ec7cd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9a0d458f01a4",
+          "ts": "1a3c32ec7cd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "266c62cd6d67",
+          "md": "9a0d458f01a4",
           "ts": "1a3c32ec7cd8"
         },
         "result": "pass",
@@ -149,14 +151,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "266c62cd6d67",
+          "md": "9a0d458f01a4",
           "ts": "1a3c32ec7cd8"
         },
         "result": "n/a",
@@ -165,11 +167,11 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1",
         "notes": "block has no .lean sibling"
       }
     ]
   },
-  "updated_at": "2026-05-20T15:01:34.161Z"
+  "updated_at": "2026-05-20T15:10:05.080Z"
 }

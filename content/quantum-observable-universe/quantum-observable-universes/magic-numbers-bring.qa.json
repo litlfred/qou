@@ -26,8 +26,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-emoji-content": [
@@ -43,10 +43,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/magic-numbers-bring.md:133: 🟡 **Conjectural** under CLAUDE.md §3b. The conjecture's role is"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-first-person-work": [
@@ -62,8 +60,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-time-stamped-notes": [
@@ -79,8 +77,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-unicode-crash": [
@@ -96,8 +94,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-editorializing": [
@@ -113,59 +111,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "d2837a8e5f97",
-          "ts": "d952e8cd69b2",
-          "lean": "50f081599edd"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "10901a23e4d5",
-          "ts": "d952e8cd69b2",
-          "lean": "6e7247274cb5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-qou-univs-L-R",
-          "version": "claude-sonnet-4-6-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T19:13:12.122Z",
-        "reviewed_sha": "6f8825bd1db6bfe695ea6f757547529ccb5ea9aa",
-        "notes": "default-pass (chapter=quantum-observable-universes)"
-      },
-      {
-        "field_hash": {
-          "md": "d2837a8e5f97",
-          "ts": "d952e8cd69b2",
-          "lean": "50f081599edd"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-refresh-after-voice-fix-batch",
-          "version": "claude-opus-4-7-2026-05-20"
-        },
-        "reviewed_at": "2026-05-20T00:55:34.699Z",
-        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
-        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-scholarly-default": [
@@ -173,7 +120,7 @@
         "field_hash": {
           "md": "d2837a8e5f97",
           "ts": "d952e8cd69b2",
-          "lean": "50f081599edd"
+          "lean": "6e7247274cb5"
         },
         "result": "pass",
         "reviewer": {
@@ -181,14 +128,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
-    "wall-side-correct": [
+    "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "10901a23e4d5",
+          "md": "d2837a8e5f97",
           "ts": "d952e8cd69b2",
           "lean": "6e7247274cb5"
         },
@@ -198,10 +145,44 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "d2837a8e5f97",
+          "ts": "d952e8cd69b2",
+          "lean": "6e7247274cb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "d2837a8e5f97",
+          "ts": "d952e8cd69b2",
+          "lean": "6e7247274cb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ]
   },
-  "updated_at": "2026-05-20T15:01:34.161Z"
+  "updated_at": "2026-05-20T15:10:05.080Z"
 }

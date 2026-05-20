@@ -26,8 +26,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-emoji-content": [
@@ -43,10 +43,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md:124: 🟡 **Conjectural** under CLAUDE.md §3b. The supporting evidence is:"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-first-person-work": [
@@ -62,8 +60,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-time-stamped-notes": [
@@ -79,8 +77,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-unicode-crash": [
@@ -96,8 +94,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-editorializing": [
@@ -113,75 +111,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "b27594e2027b",
-          "ts": "02fb46a80d61",
-          "lean": "490b416dc2d2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "5649b3d6279c",
-          "ts": "02fb46a80d61",
-          "lean": "77e420b0f061"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-lifting",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T18:46:51.387Z",
-        "reviewed_sha": "704cd6c2e7993474ae028c2e55f42501f7876dbb",
-        "notes": "Brane-tower BB stratification under descent involution — chapter-theme."
-      },
-      {
-        "field_hash": {
-          "md": "5649b3d6279c",
-          "ts": "02fb46a80d61",
-          "lean": "490b416dc2d2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-lifting-and-descent",
-          "version": "claude-opus-4-7-2026-05-19-default-pass"
-        },
-        "reviewed_at": "2026-05-19T18:48:58.604Z",
-        "reviewed_sha": "704cd6c2e7993474ae028c2e55f42501f7876dbb",
-        "notes": "default-pass (agent reviewed at chapter level; no off-topic evidence quoted)"
-      },
-      {
-        "field_hash": {
-          "md": "b27594e2027b",
-          "ts": "02fb46a80d61",
-          "lean": "490b416dc2d2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-refresh-after-voice-fix-batch",
-          "version": "claude-opus-4-7-2026-05-20"
-        },
-        "reviewed_at": "2026-05-20T00:55:34.699Z",
-        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
-        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-scholarly-default": [
@@ -189,7 +120,7 @@
         "field_hash": {
           "md": "b27594e2027b",
           "ts": "02fb46a80d61",
-          "lean": "490b416dc2d2"
+          "lean": "77e420b0f061"
         },
         "result": "pass",
         "reviewer": {
@@ -197,14 +128,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
-    "wall-side-correct": [
+    "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "5649b3d6279c",
+          "md": "b27594e2027b",
           "ts": "02fb46a80d61",
           "lean": "77e420b0f061"
         },
@@ -214,10 +145,44 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "77e420b0f061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "77e420b0f061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ]
   },
-  "updated_at": "2026-05-20T15:01:34.161Z"
+  "updated_at": "2026-05-20T15:10:05.080Z"
 }

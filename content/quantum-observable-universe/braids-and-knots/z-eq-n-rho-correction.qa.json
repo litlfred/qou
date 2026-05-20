@@ -16,7 +16,7 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "cf540e1ef436",
+          "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
         },
@@ -26,14 +26,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "cf540e1ef436",
+          "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
         },
@@ -43,14 +43,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "cf540e1ef436",
+          "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
         },
@@ -60,14 +60,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "cf540e1ef436",
+          "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
         },
@@ -77,30 +77,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "cf540e1ef436",
-          "ts": "31fcc85a6ee3",
-          "lean": "03d8c5b6b6b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/z-eq-n-rho-correction.md:30: | ²H   | $+1.090\\,\\%$  | $+0.011\\,\\%$    | $\\times 99$ | | content/quantum-observable-universe/braids-and-knots/z-eq-n-rho-correction.md:32: | ¹²C  | $+5.410\\,\\%$  | $+0.063\\,\\%$    | $\\times 86$ | | content/quantum-observable-universe/braids-and-knots/z-eq-n-rho-correction.md:35: ¹²C and ¹⁶O close *via propagation* through the existing α-cluster | content/quantum-observable-universe/braids-and-knots/z-eq-n-rho-correction.md:74: falsification target is **²⁰Ne** ($n_\\alpha = 5$) once its native"
-      },
-      {
-        "field_hash": {
           "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
@@ -111,14 +94,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T05:30:40.400Z",
-        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "cf540e1ef436",
+          "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
         },
@@ -128,26 +111,11 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "cf540e1ef436",
-          "ts": "31fcc85a6ee3",
-          "lean": "03d8c5b6b6b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
+    "voice-scholarly-default": [
       {
         "field_hash": {
           "md": "93faff3891af",
@@ -160,48 +128,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
-    "fit-section-chapter": [
+    "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "a57fad33d8d6",
-          "ts": "31fcc85a6ee3",
-          "lean": "03d8c5b6b6b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-bk-critical",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T17:59:48.610Z",
-        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
-        "notes": "Z=N=k substrate-q correction to Kashaev binding-energy formula B = ρ_struct m_e Vol_hyp(K_A) — knot framing."
-      },
-      {
-        "field_hash": {
-          "md": "cf540e1ef436",
-          "ts": "31fcc85a6ee3",
-          "lean": "03d8c5b6b6b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-refresh-after-unicode-mechanical",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T23:24:10.426Z",
-        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
-        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "cf540e1ef436",
+          "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
         },
@@ -211,14 +145,31 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "93faff3891af",
+          "ts": "31fcc85a6ee3",
+          "lean": "03d8c5b6b6b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "a57fad33d8d6",
+          "md": "93faff3891af",
           "ts": "31fcc85a6ee3",
           "lean": "03d8c5b6b6b4"
         },
@@ -228,10 +179,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T15:01:34.161Z",
-        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ]
   },
-  "updated_at": "2026-05-20T15:01:34.161Z"
+  "updated_at": "2026-05-20T15:10:05.080Z"
 }
