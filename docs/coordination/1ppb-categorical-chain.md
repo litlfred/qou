@@ -332,3 +332,158 @@ Neither candidate substitution recovers ~1836. Confirms `mass-endomorphism-tower
 **Surfacing on siblings:**
 - [#819 comment](https://github.com/litlfred/qou/pull/819#issuecomment-4492904065) — coordination intent posted before empirical check; will follow up with the result reversal here
 - [#826](https://github.com/litlfred/qou/pull/826) — the FR-pullback PR that triggered the deprecation request stays focused on its original FR-test scope; deprecation work spun out to this ledger entry instead of stacking on #826
+## 2026-05-19 (post-merge sweep) — PR #801 + PR #819 both merged; #826 supersedes K_3* finding
+
+**State of the thread** (after [PR #819](https://github.com/litlfred/qou/pull/819) merged 2026-05-19T23:00Z and [PR #801](https://github.com/litlfred/qou/pull/801) merged ~22:50Z):
+
+- **`prop:interface-knot-markov-z`** (proved sorry-free in #819): $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z^{p_+(K)} \cdot (z - h)^{p_-(K)}$, verified to $10^{-15}$ on D / T / ³He / ⁴He. Markov axiom + Hecke skein. Independent of K_k* and stands as a clean categorical theorem.
+- **`conj:alpha-cosh-h-z-step-correction`** (#819, §3b-cond): $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at $q_0$ to 0.022%. Open: operator-level proof of the $\cosh(h)$ correction.
+- **PR #801**'s `def:ew-interface-knot`, `conj:depth-stratified-frobenius-reciprocity`, `conj:block-multiplicativity-v-free`, `li2q-phiq-bar-symmetrization`, `q-rogers-pentagon-archimedean` now all on main.
+
+### K_3* correction — PR #826 supersedes Phase 5d.5b (mine)
+
+[PR #826](https://github.com/litlfred/qou/pull/826) empirically tested `conj:depth-stratified-frobenius-reciprocity` at k=3 with corrected braid words (verified against KnotInfo via `hyperbolic_volume_cross_check`) and proper $S_{\text{uniform},k}$-preserving weight normalization. Result REVERSES the Phase 5d.5b finding:
+
+| K_3* candidate | variance max/min | vs baseline |
+|---|---:|---:|
+| (uniform) | 1.82× | — |
+| **4_1** (figure-8) | **1.551×** | **+14.8% — best** |
+| 5_2 | 1.591× | +12.6% |
+| 6_1 (Stevedore) | 1.878× | -3.2% (regresses) |
+
+**Two bugs in Phase 5d.5b probe identified by #826:**
+
+1. **6_1 braid word was wrong.** Stevedore knot has braid index 4, but `(1, 1, -2, 1, -2, -2)` is a 3-strand word. My probe was testing "whatever 3-strand knot the table calls 6_1", not Stevedore.
+2. **Weight normalization missing $S_{\text{uniform},k}$ preservation.** FR-pulled-back depth-3 weights summed to 1 instead of preserving the uniform Plancherel depth-3 total.
+
+**Authoritative finding (post-#826):** the K_3* candidate empirically minimising variance is **4_1**, not 6_1. This matches the derivation in `prop:chirality-from-frobenius-self-pairing` (Fricke trace relation gives $\chi_{4_1}((2,1)) = 2 - [3]_q$ at H_3 — derived from the Hecke skein, no asserted naming). The "K_3* = 6_1" naming in the catalog was an unsupported aside.
+
+### Phase 5d.5b ledger row above — superseded
+
+The "K_1* = K_3* = 6_1 chirality WINS" claim is **superseded** by PR #826's corrected probe. Lessons:
+
+- My probe used a 3-strand "6_1" braid (mislabelled) AND had a weight-normalization bug. #826 corrected the normalization and cross-validated the table against KnotInfo via `hyperbolic_volume_cross_check`, but it still used the same repo-labeled 3-strand 6_1 candidate. A real Stevedore (braid index 4) test at H_n with n ≥ 4 strand-blocks remains out-of-scope (see 5e.5 below).
+- The Phase 5e.1 full-formula finding (depth-2 = electron at 1.368×) is unaffected — it tests a DIFFERENT question (which K minimises variance at depth-2, not which K_3* the catalog should reference).
+- The Markov-axiom interface identity from Phase 5c.1 is independent of K_k* and stands.
+
+### Refreshed Phase 5e backlog (post-#826)
+
+1. ~~5e.2 — propose K_1* = K_3* = 6_1~~ **FALSIFIED by #826**. Updated: K_3* = 4_1 per #826, consistent with `prop:chirality-from-frobenius-self-pairing` derivation.
+2. 5e.1 — full-formula variance scan: still valuable but the candidate set should now centre on 4_1 (per #826); the depth-2 = electron finding is unchanged.
+3. **K_1*, K_2* identification — STILL OPEN.** #826 only tested k=3. Phase 5f candidate: extend #826's probe to k ∈ {1, 2} using the corrected braid-word infrastructure.
+4. 5e.3 — derive `cosh(h)` operator-level (Phase 5c.2 still queued).
+5. 5e.4 — SnapPy bridge for Kashaev.lean's `pieceVolume`.
+6. **NEW 5e.5 — Real Stevedore 6_1 test at H_n with n ≥ 4 strand-blocks.** Requires the canonical-braid construction to lift to 4-strand sub-braids. #826 flags this as out-of-scope follow-up.
+7. **NEW 5e.6 — Update `prop:depth-stratified-frobenius-reciprocity` text** to remove the "K_3* = 6_1" aside. Per #826's resolution, the paper should reflect 4_1 as the derived K_3*.
+
+### Cross-PR sibling scope map (post-#819 merge)
+
+| PR | Title | Classification | Action |
+|---|---|---|---|
+| **#826** | FR pullback at k=3 — 4_1 best | **MERGED** (2026-05-19); K_3* = 4_1 incorporated | — |
+| **#827** | (sub-#826) braid-word + normalization fixes | merged with #826 | — |
+| **#829** | T2.3 Wenzl LR convention adapter + `prop:lr-tensor-character-bridge` | **MERGED** (2026-05-20) | — |
+| **#806** | Lean enrichment 188 placeholders | **CLOSED unmerged** (2026-05-19) | — |
+| **#837** | Lean typed claims round-8 | **MERGED** (2026-05-20) | — |
+| #816, #814 | qbeta-ladder c_k thread | adjacent (bar-symmetric corrections at different rungs); #814 cherry-picked into main as #833 | — |
+| #818, #820, #817, #807, #761, #774, #738, #823 | assorted infrastructure / domain work | non-overlapping | — |
+
+## 2026-05-20 (very late) — Phase 5f: FR pullback at k=1, k=2 — marginal only ([PR #831](https://github.com/litlfred/qou/pull/831) commit `5f-pending`)
+
+Extends [PR #826](https://github.com/litlfred/qou/pull/826)'s k=3 FR-pullback test to curvature ranks k=1 and k=2. $K_3^* = 4_1$ fixed per #826. Sweep: $6 \times 6$ grid over $(K_1^*, K_2^*)$ candidates $\in \{$ unknot, 3_1, 4_1, 5_1, 5_2, 6_1 $\}$.
+
+**Result**: best variance **1.5432×** at $(K_1^*, K_2^*) = (\text{unknot}, 5_2)$, only **+0.5% vs #826's K_3*=4_1-only baseline (1.551×)**. The top 4 configurations are within 0.04% of each other; K_1* ranking is essentially flat across all candidates.
+
+**Cross-validation**: this script's K_3*=4_1 baseline reproduces #826's reported 1.551× to within 0.0003 (passes the `baseline_matches_PR_826` assertion).
+
+**Interpretation**: the FR-pullback mechanism's variance reduction is **concentrated at k = 3**; depths 1 and 2 are partially redundant under the current formula. Three structural readings (audit doc [`docs/audits/2026-05-19-phase5f-fr-pullback-k1-k2.md`](../audits/2026-05-19-phase5f-fr-pullback-k1-k2.md)):
+
+1. Depth-3 chirality stratum carries the bulk of the FR content.
+2. The remaining 1.54× variance is in something the depth-stratified FR does not see at any k. Candidates: Markov-trace constituent factor 1.220358, Vol_hyp-by-Z effect, Phase 5b cosh(h)-like Hecke correction.
+3. **$K_1^*, K_2^*$ may be trivial (unknot)** — the current FR pullback formula at k=1, 2 collapses to uniform Plancherel restriction. The 0.5% improvement is plausibly numerical noise.
+
+**Recommendation for `prop:depth-stratified-frobenius-reciprocity`** (queued for follow-up):
+
+- $K_3^* = 4_1$ structurally identified (per #826 + this cross-validation).
+- $K_1^*, K_2^*$ may simplify to "unknot" or be dropped from the conjecture's existence requirements; the current formulation as "open structural question" is consistent with the empirical finding.
+- Closing the remaining 1.54× residual requires a **different mechanism**, not deeper FR pullback. Phase 5g-5i candidates:
+  - Phase 5g — Markov-trace constituent factor 1.220358 categorical identification (from #819 Phase 5d.3).
+  - Phase 5h — Phase 5b cosh(h)-like correction integrated into the depth-stratified formula.
+  - Phase 5i — Vol_hyp normalisation by Z to extract the bare hyperbolic content (from PR #787 Phase 3).
+
+## 2026-05-20 — Phase 5g + 5h + 5i: closing-the-1.54× campaign ([PR #831](https://github.com/litlfred/qou/pull/831) commits `8e296e85e`, `5ccd58e45`)
+
+Four probes tested on top of PR #826's K_3* = 4_1 baseline (variance 1.551×). Three of four are neutral; one (Phase 5g) produces a clean structural identification but does not directly close variance.
+
+| Phase | Probe | Result | Δ vs 1.551× baseline |
+|---|---|---|---:|
+| 5f | FR pullback at k=1, 2 (6×6 grid) | best (unknot, 5_2) | +0.5% |
+| 5h | cosh(h) at depth-stratified α_k | best (α_2·α_3·cosh(h)) | +0.85% |
+| **5g** | **constit factor 1.220358 categorical** | **= 2q − 1 (0.033% rel.err)** | n/a (identification) |
+| 5i | Vol_hyp normalisation sweep | per_A best | +3.04% |
+
+**Major finding (5g)**: the Phase 5c.1 constit factor 1.220358 has a clean categorical form $2q - 1$ at q_0, matching to **0.033%** — a 15× improvement over the previous $q + h/2$ candidate. Combined with PR #819's interface factor:
+
+$$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4)$$
+
+at the **full τ_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at the |Δ_λ*| level (the two live in different spectral channels of the same Hecke algebra).
+
+**Structural conclusion (5h + 5i)**: the residual 1.54× variance in the depth-stratified formula is NOT closed by FR pullback at additional depths, cosh(h) injection, or Vol_hyp normalisation. It lives in the |Δ_λ*| (single-block dominant) layer, NOT in the Φ_k (depth-stratified sum) layer.
+
+**Recommendation for `prop:depth-stratified-frobenius-reciprocity`**: the conjecture's claim of distinguished K_1*, K_2* knots is empirically falsified by Phase 5f (K_1* essentially flat across {unknot, 3_1, 4_1, 5_1, 5_2, 6_1}). The conjecture should be narrowed to K_3* = 4_1 only, with the residual variance attributed to a single-block-level correction (cosh(h) per Phase 5b) rather than a depth-stratified one.
+
+**Next concrete tasks (Phase 5j-onward)**:
+- 5j — Promote $\tau_M$ Z-step factor = $z \cdot (2q − 1)$ to a content block, OR extend `prop:interface-knot-markov-z` with a "constit-side companion identity" section.
+- 5k — Higher-precision measurement of the constit factor to characterise the 0.033% residual ($O(h^4)$ noise vs real second-order term).
+- 5e.3 — Lean operator-level cosh(h) proof from Hecke symmetric channel (substantive math).
+- 5e.4 — SnapPy bridge for Kashaev.lean's `pieceVolume` (large infrastructure).
+
+### Coordination sweep — post-5g/5h/5i (2026-05-20)
+
+| PR | State | Action |
+|---|---|---|
+| #826 (`fr-pullback-k3-numerical`) | open, dirty | [coord ack posted](https://github.com/litlfred/qou/pull/826#issuecomment-4493323401) — its K_3* = 4_1 finding now incorporated into #831's 5f/5g/5h/5i probes; no file overlap. |
+| #829 (`show-mass-sweep-table-2xEBG`) | open, clean | [coord ack posted](https://github.com/litlfred/qou/pull/829#issuecomment-4493324255) — `prop:lr-tensor-character-bridge` validates #819's interface-knot framing; complementary, no file overlap. |
+| #806 (`lean-substantive-pass-2026-05-19`) | **closed unmerged** | dropped from scope. |
+| main | advanced by #816 + #833 (FSC/G + averaging-resonance) | no conflict — disjoint compute areas. |
+
+§3b-cond placeholder added in this branch: `HeckeSymmetricChannelCoshH` class (5e.3 stub) in [`alpha-cosh-h-z-step-correction.lean`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.lean) — provable theorem `cosh_h_eigenvalue_equals_alpha_factor` derives from the class with no sorry. The class instance itself is the conjectural input awaiting Brundan–Kleshchev FR on the symmetric channel.
+
+CI green on #831 (`validate` ✓). One Copilot review comment on the ledger accepted in `02b3bcf75`.
+
+Next concrete task on the queue: **5j** — promote τ_M Z-step factor = z·(2q − 1) to a content block (extension of `prop:interface-knot-markov-z` with a constit-side companion identity section).
+
+## 2026-05-20 (late) — Phase 5j: constit-factor conjecture promoted to a content block ([PR #831](https://github.com/litlfred/qou/pull/831))
+
+New block: [`conj:constit-factor-2q-minus-1`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md).
+
+States the categorical identity $\rho_Z^{\mathrm{constit}}(q_0) = (2q - 1) + O(h^4)$ for the disjoint-Hecke-product per-Z step factor at the substrate point, matching empirically to **0.033 % rel. err.** (Phase 5g, 50 dps).  Combined with [`prop:interface-knot-markov-z`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor $z$), this gives the full $\tau_M$-level per-Z step:
+
+$$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4) \quad\text{at }q_0.$$
+
+§3b-cond class: `ConstitFactor2qMinus1` (one class field axiomatising the leading-order identity at the substrate point).  Companion to `AlphaCoshHZStepCorrection` (single-block level, bar-symmetric, $\cosh(h)$) and `HeckeSymmetricChannelCoshH` (5e.3 operator-level placeholder).
+
+`prop:interface-knot-markov-z.md` extended with a "Constit-side companion identity" section pointing to the new conjecture.
+
+Next on queue: **5k** — higher-precision measurement of the constit factor to resolve $O(h^4)$ vs second-order-correction question.
+
+## 2026-05-20 (late, +5k.1) — Phase 5k.1: residual matches h^5 with unit coefficient ([PR #831](https://github.com/litlfred/qou/pull/831))
+
+Power-of-$h$ decomposition of the $0.033\%$ residual at $q_0$ identifies the structural order:
+
+| $k$ | $h^k(q_0)$ | residual$/h^k$ at $q_0$ |
+|:-:|---:|---:|
+| 4 | $1.91 \times 10^{-3}$ | $0.21$ |
+| **5** | $\mathbf{3.99 \times 10^{-4}}$ | $\mathbf{1.016}$ ← unit coefficient |
+| 6 | $8.35 \times 10^{-5}$ | $4.86$ |
+
+Refined candidate: $\rho_Z^{\mathrm{constit}}(q) = (2q - 1) + h^5 + O(h^7)$ at $q_0$.  Evaluates to $1.2203565$ vs measured $1.2203629$ — **64× improvement** over $(2q - 1)$ alone (residual drops from $4.06 \times 10^{-4}$ to $6.3 \times 10^{-6}$).
+
+Updates `conj:constit-factor-2q-minus-1.md` with the refined boxed identity.
+
+Script: [`constit_factor_residual_phase5k.py`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/folio-assistant/computations/constit_factor_residual_phase5k.py).
+Witness: `constit-factor-residual-phase5k.witness.json` (1 assertion: residual/h^5 ≈ 1.016 ± 0.05, passes).
+
+**Open question (5k.2 queued):** is $c \equiv 1$ for $h^5$ across the substrate window, or does $c$ vary with $q$?  A single point $c(q_0) = 1.016$ is suggestive but not conclusive.  Phase 5k.2 needs varying-$q$ measurement of $\rho_Z^{\mathrm{constit}}(q)$ via `pyhecke_native` with q-dependent Wenzl $y_\lambda$ weights at multiple $q$ in the substrate window.  Defer as substantive compute work.
+
+Next on queue: **5k.2** — varying-q sweep to confirm unit-coefficient $h^5$ across the substrate window.
