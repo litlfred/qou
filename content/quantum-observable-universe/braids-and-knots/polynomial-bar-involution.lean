@@ -315,3 +315,103 @@ theorem barPoly_three_layer_product :
       barPoly_cos_truncated_6, barPoly_cosh_truncated_6]
 
 end QOU.BraidKnot.PolynomialBarInvolution.C5Taylor
+
+/-! ## Arbitrary-degree even-polynomial bar-symmetry
+
+The bar-symmetry of `c5_taylor_6`, `cos_truncated_6`,
+`cosh_truncated_6` are special cases of a generic theorem:
+**any finite sum of bar-symmetric coefficients times even powers
+of X is bar-symmetric**. This handles arbitrary truncation degree.
+-/
+
+namespace QOU.BraidKnot.PolynomialBarInvolution.Arbitrary
+
+open Polynomial QOU.BraidKnot.PolynomialBarInvolution
+
+variable {R : Type*} [CommRing R]
+
+/-- **Arbitrary even-power truncation is bar-symmetric**:
+
+    For any natural-number coefficient sequence `c : ℕ → R` and
+    any truncation degree `n`, the polynomial
+
+    $$P_n(X) \;=\; \sum_{k=0}^{n-1} c_k \, X^{2k}$$
+
+    is bar-symmetric.
+
+    Proof: induction on `n`. Base case: empty sum = 0 is bar-sym.
+    Inductive step: a new term `c_k · X^(2k)` is bar-sym (constant
+    bar-fixed × even-power X bar-fixed), so adding to a bar-sym
+    sum preserves bar-symmetry.
+
+    This generalises all three concrete avatar polynomials
+    (`c5_taylor_6`, `cos_truncated_6`, `cosh_truncated_6`) to
+    truncations of arbitrary degree. -/
+theorem barPoly_even_truncated_arbitrary
+    (n : ℕ) (c : ℕ → R) :
+    barPoly (∑ k ∈ Finset.range n, C (c k) * X ^ (2 * k))
+      = ∑ k ∈ Finset.range n, C (c k) * X ^ (2 * k) := by
+  induction n with
+  | zero => simp [barPoly_zero]
+  | succ m ih =>
+    rw [Finset.sum_range_succ, barPoly_add, barPoly_mul,
+        barPoly_C, barPoly_X_pow_even, ih]
+
+/-- **Generic bar-symmetric finite even-power polynomial**:
+    `bar (∑ c_k · X^(2k)) = ∑ c_k · X^(2k)` over any Finset index. -/
+theorem barPoly_even_finset_sum
+    {ι : Type*} (s : Finset ι) (c : ι → R) (k : ι → ℕ) :
+    barPoly (∑ i ∈ s, C (c i) * X ^ (2 * k i))
+      = ∑ i ∈ s, C (c i) * X ^ (2 * k i) := by
+  induction s using Finset.induction with
+  | empty => simp [barPoly_zero]
+  | insert hi ih =>
+    rw [Finset.sum_insert hi, barPoly_add, barPoly_mul,
+        barPoly_C, barPoly_X_pow_even, ih]
+
+/-- **Constant-plus-even-truncation is bar-symmetric**: a more
+    convenient form for c_5-like polynomials where the constant
+    term has its own coefficient. -/
+theorem barPoly_constant_plus_even
+    (c0 : R) (n : ℕ) (c : ℕ → R) :
+    barPoly (C c0 + ∑ k ∈ Finset.range n, C (c k) * X ^ (2 * (k + 1)))
+      = C c0 + ∑ k ∈ Finset.range n, C (c k) * X ^ (2 * (k + 1)) := by
+  rw [barPoly_add, barPoly_C]
+  congr 1
+  induction n with
+  | zero => simp [barPoly_zero]
+  | succ m ih =>
+    rw [Finset.sum_range_succ, barPoly_add, barPoly_mul,
+        barPoly_C, barPoly_X_pow_even, ih]
+
+end QOU.BraidKnot.PolynomialBarInvolution.Arbitrary
+
+/-! ## Odd-power version (for completeness)
+
+The bar-anti-symmetric analog: **any finite sum of bar-symmetric
+coefficients times ODD powers of X is bar-anti-symmetric**.
+-/
+
+namespace QOU.BraidKnot.PolynomialBarInvolution.ArbitraryOdd
+
+open Polynomial QOU.BraidKnot.PolynomialBarInvolution
+
+variable {R : Type*} [CommRing R]
+
+/-- **Arbitrary odd-power truncation is bar-anti-symmetric**:
+
+    For any `c : ℕ → R` and truncation degree `n`,
+    $\sum_{k=0}^{n-1} c_k \, X^{2k+1}$
+    is bar-anti-symmetric (bar maps it to its negation). -/
+theorem barPoly_odd_truncated_arbitrary
+    (n : ℕ) (c : ℕ → R) :
+    barPoly (∑ k ∈ Finset.range n, C (c k) * X ^ (2 * k + 1))
+      = -(∑ k ∈ Finset.range n, C (c k) * X ^ (2 * k + 1)) := by
+  induction n with
+  | zero => simp [barPoly_zero]
+  | succ m ih =>
+    rw [Finset.sum_range_succ, barPoly_add, barPoly_mul,
+        barPoly_C, barPoly_X_pow_odd, ih]
+    ring
+
+end QOU.BraidKnot.PolynomialBarInvolution.ArbitraryOdd
