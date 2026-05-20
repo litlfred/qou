@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-09T03:32:21.598Z",
+  "generated": "2026-05-20T01:39:16.765Z",
   "paper": "quantum-observable-universe",
   "entries": [
     {
@@ -33,7 +33,7 @@
       "slug": "cemetery-group",
       "chapter": "braids-and-knots",
       "chapterTitle": "Braids and Knots",
-      "section": "Atom, Isotope, and Confinement Levels",
+      "section": "Confinement level and the cemetery group",
       "block": "def:cemetery-group",
       "kind": "definition",
       "lean": "qou:QOU.BraidKnot.CemeteryGroup"
@@ -51,7 +51,7 @@
       "slug": "delta-q-decoration",
       "chapter": "braids-and-knots",
       "chapterTitle": "Braids and Knots",
-      "section": "Nuclear Binding and Beta Stability",
+      "section": "Spectral sequence, chirality, and confinement-NF structure",
       "block": "def:delta-q-decoration",
       "kind": "definition",
       "lean": "qou:QOU.BraidKnot.delta_q"
@@ -96,7 +96,7 @@
       "slug": "markov-axiom-recursive-ascent",
       "chapter": "braids-and-knots",
       "chapterTitle": "Braids and Knots",
-      "section": "Nuclear Binding and Beta Stability",
+      "section": "$\\varphi_q$ resummation, Markov trace, and Schur-Weyl tower",
       "block": "def:markov-axiom-recursive-ascent",
       "kind": "definition",
       "lean": "qou:QOU.Interactions.markov_peel"
@@ -168,7 +168,7 @@
       "slug": "q-dimension-layer",
       "chapter": "braids-and-knots",
       "chapterTitle": "Braids and Knots",
-      "section": "Nuclear Binding and Beta Stability",
+      "section": "Spectral sequence, chirality, and confinement-NF structure",
       "block": "def:delta-q-decoration",
       "kind": "definition",
       "lean": "qou:QOU.BraidKnot.delta_q"
@@ -235,6 +235,24 @@
       "block": "rem:glossary-symmetric-monoidal-category",
       "kind": "remark",
       "lean": null
+    },
+    {
+      "slug": "two-row-projection",
+      "chapter": "braids-and-knots",
+      "chapterTitle": "Braids and Knots",
+      "section": "Hoefsmit, convergence, and atomic-shell evidence",
+      "block": "def:two-row-stratum",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.TwoRowStratum.TwoRowStratum"
+    },
+    {
+      "slug": "two-row-stratum",
+      "chapter": "braids-and-knots",
+      "chapterTitle": "Braids and Knots",
+      "section": "Hoefsmit, convergence, and atomic-shell evidence",
+      "block": "def:two-row-stratum",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.TwoRowStratum.TwoRowStratum"
     },
     {
       "slug": "weierstrass-projection",
