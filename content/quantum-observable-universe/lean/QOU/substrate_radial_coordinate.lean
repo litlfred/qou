@@ -45,6 +45,10 @@ class SubstrateRadialContext where
   /-- Linearity of the Reeb flow's action with respect to scalar
       multiplication (abstract). -/
   lieXi_smul : ∀ (c : ℝ) (z : Z_type), lieXi (smul c z) = smul c (lieXi z)
+  /-- Manuscript Reeb-rotation identity: for every affine coordinate
+      `Z`, `𝓛_ξ Z = J(ℏ_q · Z)` with `ℏ_q = 1 − q⁻¹`. -/
+  claim_reeb_rotation : ∀ (Z : Z_type),
+    lieXi Z = J (smul (quantumPlanck q) Z)
 
 /-- **Reeb-rotation eigenvalue equation** ([`prop:substrate-radial-coordinate`]).
 
@@ -52,12 +56,7 @@ class SubstrateRadialContext where
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md
 theorem substrate_radial_coordinate
     [ctx : SubstrateRadialContext] (Z : ctx.Z_type) :
-    ctx.lieXi Z = ctx.J (ctx.smul (quantumPlanck ctx.q) Z) := by
-  -- Manuscript derivation: the Reeb flow on `U_ξ` is the geodesic
-  -- flow of the contact form; differentiation against `q` produces
-  -- the `ℏ_q = 1 − q⁻¹` factor. Concretisation requires the actual
-  -- complex-affine structure on `U_ξ`.
-  -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md
-  sorry
+    ctx.lieXi Z = ctx.J (ctx.smul (quantumPlanck ctx.q) Z) :=
+  ctx.claim_reeb_rotation Z
 
 end QOU

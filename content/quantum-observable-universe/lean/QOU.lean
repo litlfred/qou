@@ -97,3 +97,4 @@ import QOU.su2_emergence_dagger_unitarity
 import QOU.su2_emergence_volume_determinant
 import QOU.frobenius_dagger_positive_definite
 import QOU.volume_from_rigidity
+import QOU.substrate_radial_coordinate
