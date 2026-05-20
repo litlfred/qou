@@ -1,11 +1,11 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-20T02:21:36.512Z",
-  "total_flagged": 4,
-  "files_flagged": 4,
+  "generated": "2026-05-20T04:43:21.314Z",
+  "total_flagged": 6,
+  "files_flagged": 5,
   "patterns": {
+    "one_def": 3,
     "const_zero": 2,
-    "one_def": 1,
     "prop_true": 1
   },
   "flagged": {
@@ -21,6 +21,18 @@
         "line": 276,
         "pattern": "prop_true",
         "snippet": "def lpDualActiveSetIncludesPairKnotAtMagicShells : Prop := True"
+      }
+    ],
+    "braids-and-knots/lambda-scale-bring-bloch-identity.lean": [
+      {
+        "line": 67,
+        "pattern": "one_def",
+        "snippet": "def AtomKnot.volClosure (_K : AtomKnot) : ℝ := 1"
+      },
+      {
+        "line": 78,
+        "pattern": "one_def",
+        "snippet": "def AtomKnot.bringBlochRegulator (_K : AtomKnot) : ℝ := 1"
       }
     ],
     "braids-and-knots/lr-tensor-character-bridge.lean": [

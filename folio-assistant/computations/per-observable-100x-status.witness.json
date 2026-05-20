@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T22:02:07.360056+00:00",
-  "commitSha": "adb9bfb002268731d1c0a75224873789da85a179",
+  "computedAt": "2026-05-20T04:47:25.574683+00:00",
+  "commitSha": "60882ea0ab37ece3eac2f57e2c423351e6828890",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,24 +14,24 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "492e5fc8aecd",
-  "scriptCommitSha": "adb9bfb002268731d1c0a75224873789da85a179",
+  "scriptCommitSha": "5249e851f79d2ea9f84d250c04a1488d8a57121a",
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
     "rows": [
       {
         "obs": "m_p",
         "role": "validation",
-        "pred_MeV": "938.271852637",
+        "pred_MeV": "938.272089128",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
-        "err_ppb": "251.0",
+        "err_ppb": "1.032",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
-        "miss_factor": "8.121e+4",
+        "miss_factor": "333.9",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
@@ -40,13 +40,13 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565184668",
+        "pred_MeV": "939.565421485",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "251.0",
+        "err_ppb": "1.027",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "4.368e+4",
+        "miss_factor": "178.7",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
@@ -70,15 +70,15 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333203087",
+        "pred_MeV": "1.29333235686",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "254.5",
+        "err_ppb": "2.428",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "53.70",
+        "miss_factor": "0.5123",
         "beats_1x_experimental": true,
-        "beats_100x_experimental": false,
+        "beats_100x_experimental": true,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature"
       },
@@ -117,16 +117,16 @@
     "summary": {
       "total": 6,
       "beats_1x_count": 4,
-      "beats_100x_count": 1
+      "beats_100x_count": 2
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "04f216b2ab8daf3f4435b0aa97e28999801f31f905f4c5370ea47a80eb1294d5",
-        "size_bytes": 4468,
-        "commitSha": "86a114e3f13da58d7dcce2f5d7db72f1fcee9a41",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-05-18T03:09:25.085797+00:00"
+        "sha256": "cd305db00f5a7393f74ec4fdbe1762c28bdf80028494dff59765d688711ec85e",
+        "size_bytes": 4632,
+        "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
+        "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+        "computedAt": "2026-05-20T03:15:55.773785+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
@@ -138,17 +138,17 @@
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
-        "sha256": "422e0ab5f91bd785681c688a063de1a70719efe76bde91995e1e54befc71f6f1",
-        "size_bytes": 4048,
-        "commitSha": null,
+        "sha256": "a438ca021ab639a473b02899ea8d8c6d85cdaf96562725c11f7ec2fd00296af0",
+        "size_bytes": 4155,
+        "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
         "scriptCommitSha": null,
         "computedAt": "2026-05-10T07:21:00+00:00"
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "32d572e73bc535b47523386dc71899024b8c0f415c1b6d97247c82e441402ed8",
-        "size_bytes": 2130,
-        "commitSha": null,
+        "sha256": "f7f7195ac01ecabc541228938db401d449b51e411ffb91020640c8b492d5910c",
+        "size_bytes": 2189,
+        "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
         "scriptCommitSha": null,
         "computedAt": "2026-05-10T07:21:00+00:00"
       }
