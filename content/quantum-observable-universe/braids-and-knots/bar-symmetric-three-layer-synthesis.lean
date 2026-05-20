@@ -420,6 +420,56 @@ def BarHeckeFunctor.mul (F G : BarHeckeFunctor R) : BarHeckeFunctor R where
     rw [BarInvolution.bar_mul,
         F.apply_bar_symmetric h hh, G.apply_bar_symmetric h hh]
 
+/-- **Degree-2 polynomial in h² with bar-symmetric coefficients**:
+    `F(h) = c₀ + c₁·h² + c₂·h⁴`. Models truncated cosh/cos/Li_2^q
+    expansions. -/
+def BarHeckeFunctor.evenPoly3 (c0 c1 c2 : R)
+    (hc0 : IsBarSymmetric c0) (hc1 : IsBarSymmetric c1)
+    (hc2 : IsBarSymmetric c2) :
+    BarHeckeFunctor R where
+  apply h := c0 + c1 * h ^ 2 + c2 * h ^ 4
+  apply_bar_symmetric h hh := by
+    show BarInvolution.bar (c0 + c1 * h ^ 2 + c2 * h ^ 4)
+      = c0 + c1 * h ^ 2 + c2 * h ^ 4
+    have hh2 : BarInvolution.bar (h ^ 2) = h ^ 2 := by
+      rw [sq, BarInvolution.bar_mul, (hh : BarInvolution.bar h = -h)]; ring
+    have hh4 : BarInvolution.bar (h ^ 4) = h ^ 4 := by
+      have hrew : h ^ 4 = (h ^ 2) ^ 2 := by ring
+      rw [hrew, sq, BarInvolution.bar_mul, hh2]
+    rw [BarInvolution.bar_add, BarInvolution.bar_add,
+        BarInvolution.bar_mul, BarInvolution.bar_mul,
+        (hc0 : BarInvolution.bar c0 = c0),
+        (hc1 : BarInvolution.bar c1 = c1),
+        (hc2 : BarInvolution.bar c2 = c2), hh2, hh4]
+
+/-- **Degree-3 polynomial in h² with bar-symmetric coefficients**:
+    `F(h) = c₀ + c₁·h² + c₂·h⁴ + c₃·h⁶`. Higher-order truncation. -/
+def BarHeckeFunctor.evenPoly4 (c0 c1 c2 c3 : R)
+    (hc0 : IsBarSymmetric c0) (hc1 : IsBarSymmetric c1)
+    (hc2 : IsBarSymmetric c2) (hc3 : IsBarSymmetric c3) :
+    BarHeckeFunctor R where
+  apply h := c0 + c1 * h ^ 2 + c2 * h ^ 4 + c3 * h ^ 6
+  apply_bar_symmetric h hh := by
+    show BarInvolution.bar (c0 + c1 * h ^ 2 + c2 * h ^ 4 + c3 * h ^ 6)
+      = c0 + c1 * h ^ 2 + c2 * h ^ 4 + c3 * h ^ 6
+    have hh2 : BarInvolution.bar (h ^ 2) = h ^ 2 := by
+      rw [sq, BarInvolution.bar_mul, (hh : BarInvolution.bar h = -h)]; ring
+    have hh4 : BarInvolution.bar (h ^ 4) = h ^ 4 := by
+      have hrew : h ^ 4 = (h ^ 2) ^ 2 := by ring
+      rw [hrew, sq, BarInvolution.bar_mul, hh2]
+    have hh6 : BarInvolution.bar (h ^ 6) = h ^ 6 := by
+      have hrew : h ^ 6 = (h ^ 2) ^ 3 := by ring
+      rw [hrew]
+      have : (h ^ 2) ^ 3 = h ^ 2 * ((h ^ 2) ^ 2) := by ring
+      rw [this, BarInvolution.bar_mul, hh2, sq, BarInvolution.bar_mul, hh2]
+    rw [BarInvolution.bar_add, BarInvolution.bar_add, BarInvolution.bar_add,
+        BarInvolution.bar_mul, BarInvolution.bar_mul, BarInvolution.bar_mul,
+        (hc0 : BarInvolution.bar c0 = c0),
+        (hc1 : BarInvolution.bar c1 = c1),
+        (hc2 : BarInvolution.bar c2 = c2),
+        (hc3 : BarInvolution.bar c3 = c3),
+        hh2, hh4, hh6]
+
 end BarHeckeFunctorInfra
 
 /-! ## Strengthened synthesis: kernel + functorial avatars
