@@ -1,10 +1,9 @@
-Every proof in this paper — in progress, but advancing — has a
-corresponding Lean 4 formalisation, except where external references
-are cited for large prior results.  As of the current QA sweep,
+Every proof in this paper has a corresponding Lean 4 formalisation,
+except where external references are cited for large prior results.
 **385 of 567 (67.9%) provable claims** (theorems, lemmas,
-propositions, corollaries) carry **full Lean proofs** (sorry-free),
-with the remainder marked by `sorry` against an explicit
-bibliographic reference.  The paper contains
+propositions, corollaries) carry **full Lean proofs** (sorry-free);
+the remainder are marked by `sorry` against an explicit bibliographic
+reference.  The paper contains
 **132 open conjectures**, of which **121 (91.7%) are class-axiomatised in Lean**
 following the conditional-class convention (CLAUDE.md §3b) so that
 downstream results can be stated as fully verified conditional
