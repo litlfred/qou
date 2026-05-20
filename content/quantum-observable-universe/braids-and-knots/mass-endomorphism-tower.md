@@ -34,6 +34,10 @@ correct dimensional factor is the **operator-valued**
 $A^\lambda_{\mu, \nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)$
 from [hecke branching trace decomp](#prop\:hecke-branching-trace-decomposition),
 which depends on the specific braid through its LR-block decomposition.
+The iterated $(Z+N)$-factor extension to atomic braids — explicitly
+replacing the scalar Wedderburn-volume tower with the operator-trace
+form — is stated in [`prop:mass-tower-operator-valued`](mass-tower-operator-valued.md)
+(authored 2026-05-20 as the Stage-1 unblock).
 The graded expansion
 $\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\beta_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
 ([prop:rho-k-graded-expansion](#prop\:rho-k-graded-expansion))
