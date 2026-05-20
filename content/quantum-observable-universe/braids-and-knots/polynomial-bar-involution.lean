@@ -105,4 +105,48 @@ theorem barPoly_X_pow (n : ℕ) :
     rw [hstep, barPoly_mul, barPoly_X, ih]
     ring
 
+/-- **`bar X^(2n) = X^(2n)`** — even powers of the indeterminate
+    are bar-symmetric. Concrete polynomial realisation of the
+    bar-grading "anti × anti × ... = sym" identity. -/
+theorem barPoly_X_pow_even (n : ℕ) :
+    barPoly ((X : R[X]) ^ (2 * n)) = X ^ (2 * n) := by
+  rw [barPoly_X_pow]
+  have h_neg_one_sq : ((-1 : R[X])) ^ (2 * n) = 1 := by
+    rw [pow_mul, neg_one_sq, one_pow]
+  rw [h_neg_one_sq, one_mul]
+
+/-- **`bar X^(2n+1) = -X^(2n+1)`** — odd powers are bar-anti-symmetric. -/
+theorem barPoly_X_pow_odd (n : ℕ) :
+    barPoly ((X : R[X]) ^ (2 * n + 1)) = -(X ^ (2 * n + 1)) := by
+  rw [barPoly_X_pow]
+  have h_neg_one_odd : ((-1 : R[X])) ^ (2 * n + 1) = -1 := by
+    rw [pow_succ, pow_mul, neg_one_sq, one_pow, one_mul]
+  rw [h_neg_one_odd]
+  ring
+
+/-- **`bar` fixes every natural-number scalar in `R[X]`**. -/
+theorem barPoly_natCast (n : ℕ) :
+    barPoly ((n : R[X])) = (n : R[X]) := by
+  induction n with
+  | zero =>
+    show barPoly (0 : R[X]) = 0
+    exact barPoly_zero
+  | succ k ih =>
+    have hstep : ((k + 1 : ℕ) : R[X]) = (k : R[X]) + 1 := by push_cast; ring
+    rw [hstep, barPoly_add, barPoly_one, ih]
+
+/-- **`bar (4 + X²) = 4 + X²`** — the polynomial $h^2 + 4$ (the
+    `c5` denominator in `c5_as_function_of_skein`) is bar-symmetric.
+    Concrete polynomial realisation of "the c_5 denominator lives
+    in the bar-symmetric subring $R[X^2]$". -/
+theorem barPoly_c5_denominator :
+    barPoly ((4 : R[X]) + X ^ 2) = 4 + X ^ 2 := by
+  rw [barPoly_add]
+  congr 1
+  · -- bar 4 = 4
+    show barPoly ((4 : R[X])) = 4
+    have h4 : (4 : R[X]) = ((4 : ℕ) : R[X]) := by push_cast; ring
+    rw [h4, barPoly_natCast]
+  · exact barPoly_X_pow_two
+
 end QOU.BraidKnot.PolynomialBarInvolution
