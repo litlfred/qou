@@ -192,6 +192,10 @@ theorem bar_natCast (n : ℕ) : BarInvolution.bar ((n : R)) = (n : R) := by
     have hstep : ((k + 1 : ℕ) : R) = (k : R) + 1 := by push_cast; ring
     rw [hstep, BarInvolution.bar_add, BarInvolution.bar_one, ih]
 
+/-- Every natural-number scalar is bar-symmetric. -/
+theorem isBarSymmetric_natCast (n : ℕ) : IsBarSymmetric ((n : R)) :=
+  bar_natCast n
+
 end BarOnScalars
 
 /-! ## Projection identities (require `Field` for division by 2)
@@ -222,6 +226,16 @@ theorem bar_inv (x : R) :
 /-- `bar(1/2) = 1/2`. Foundation for `barSymmetricProjection` idempotency. -/
 theorem bar_half : BarInvolution.bar ((1 : R) / 2) = 1 / 2 := by
   rw [one_div, bar_inv, bar_two, one_div]
+
+/-- Every integer scalar is bar-symmetric (over a CommRing — restated
+    here in the Field section for convenient downstream consumption). -/
+theorem isBarSymmetric_intCast (n : ℤ) : IsBarSymmetric ((n : R)) := by
+  unfold IsBarSymmetric
+  induction n with
+  | ofNat k => exact_mod_cast bar_natCast (R := R) k
+  | negSucc k =>
+    have hstep : (Int.negSucc k : R) = -((k + 1 : ℕ) : R) := by push_cast; ring
+    rw [hstep, bar_neg, bar_natCast]
 
 /-- `P_avg(x) = x` when `x` is bar-symmetric. -/
 theorem barSymmetricProjection_of_sym {x : R} (hx : IsBarSymmetric x) :
