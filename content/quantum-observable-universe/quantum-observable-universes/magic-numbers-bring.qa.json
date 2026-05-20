@@ -167,6 +167,22 @@
         "reviewed_at": "2026-05-19T19:13:12.122Z",
         "reviewed_sha": "6f8825bd1db6bfe695ea6f757547529ccb5ea9aa",
         "notes": "default-pass (chapter=quantum-observable-universes)"
+      },
+      {
+        "field_hash": {
+          "md": "d2837a8e5f97",
+          "ts": "d952e8cd69b2",
+          "lean": "50f081599edd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-voice-fix-batch",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T00:55:34.699Z",
+        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
+        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ]
   },

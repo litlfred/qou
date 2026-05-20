@@ -165,6 +165,22 @@
         "reviewed_at": "2026-05-19T19:19:05.721Z",
         "reviewed_sha": "80f81c2c5ce6556edb14c1d926c3084e22a2289d",
         "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-K-Q)"
+      },
+      {
+        "field_hash": {
+          "md": "2fbd5111f604",
+          "ts": "86c2d0834486",
+          "lean": "fbf290fb1f2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-voice-fix-batch",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T00:55:34.699Z",
+        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
+        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ]
   },

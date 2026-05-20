@@ -183,6 +183,22 @@
         "reviewed_at": "2026-05-19T18:48:58.604Z",
         "reviewed_sha": "704cd6c2e7993474ae028c2e55f42501f7876dbb",
         "notes": "default-pass (agent reviewed at chapter level; no off-topic evidence quoted)"
+      },
+      {
+        "field_hash": {
+          "md": "b27594e2027b",
+          "ts": "02fb46a80d61",
+          "lean": "490b416dc2d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-voice-fix-batch",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T00:55:34.699Z",
+        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
+        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ]
   },

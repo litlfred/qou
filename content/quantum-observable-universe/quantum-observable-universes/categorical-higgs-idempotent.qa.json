@@ -185,6 +185,22 @@
         "reviewed_at": "2026-05-19T23:24:10.426Z",
         "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
         "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      },
+      {
+        "field_hash": {
+          "md": "b75b7a42eeb4",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-voice-fix-batch",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T00:55:34.699Z",
+        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
+        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ]
   },
