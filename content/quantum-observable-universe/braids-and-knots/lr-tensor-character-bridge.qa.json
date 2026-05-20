@@ -213,6 +213,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "proof-no-axiom-growth": [
@@ -230,6 +245,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "proof-build-green": [
@@ -247,6 +277,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "proof-substantive": [
@@ -264,6 +309,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "canonical-calibration-count": [
@@ -387,6 +447,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -404,6 +479,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "detangler-archimedean-wall": [
@@ -421,6 +511,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "bib-cite-resolves": [
@@ -440,6 +545,23 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/lr-tensor-character-bridge.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/lr-tensor-character-bridge.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -457,6 +579,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -474,6 +611,21 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -491,8 +643,23 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "75595219c243",
+          "lean": "5a68c13342b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:15:32.063Z",
+        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ]
   },
-  "updated_at": "2026-05-20T15:57:35.485Z"
+  "updated_at": "2026-05-20T16:15:32.063Z"
 }

@@ -173,19 +173,56 @@ const WALL: QaCriterionDefinition[] = [
     id: "wall-side-correct",
     domain: "wall",
     description:
-      "Block is on the correct side of the substrate-to-archimedean " +
-      "wall (CLAUDE.md §7c). Algebraic claims must NOT mention `ℝ`, " +
-      "`Real.sqrt`, `Real.rpow`, `Real.log`, `Real.exp`, `linarith`, " +
-      "`0 < q`, or other archimedean-specific constructs. Archimedean " +
-      "blocks must declare `ℝ` (or LinearOrderedField) explicitly. " +
-      "Each block belongs in either the algebraic substrate or the " +
-      "archimedean specialisation, never both.",
+      "Block (`.lean` body) is on the correct side of the substrate-to-" +
+      "archimedean wall (CLAUDE.md §7c). Algebraic Lean code must NOT " +
+      "mention `ℝ`, `Real.sqrt`, `Real.rpow`, `Real.log`, `Real.exp`, " +
+      "`linarith`, `0 < q`, or other archimedean-specific constructs. " +
+      "Archimedean Lean code must declare `ℝ` (or LinearOrderedField) " +
+      "explicitly. Each block belongs in either the algebraic substrate " +
+      "or the archimedean specialisation, never both.",
     default_severity: "critical",
     // The automated checker scans .lean imports and the .md narrative
     // for an archimedean acknowledgement banner. The .ts manifest is
     // not read — kept out of depends_on to avoid spurious staleness.
     depends_on: ["md", "lean"],
     automated: true,
+  },
+  {
+    id: "wall-side-statement",
+    domain: "wall",
+    description:
+      "The narrative **Statement** of the block (in the `.md`) is on the " +
+      "correct side of the substrate-to-archimedean wall. A theorem stated " +
+      "as `∀ q : ℝ, …` is archimedean; one stated as `∀ R, [CommRing R], " +
+      "∀ q : R, …` is algebraic. Mismatched statements are usually a sign " +
+      "that the block needs a `wall:` placement field and a §7c-style " +
+      "banner in the narrative.",
+    default_severity: "major",
+    depends_on: ["md"],
+    automated: false,
+    applies_to: [
+      "theorem",
+      "lemma",
+      "proposition",
+      "corollary",
+      "definition",
+    ],
+  },
+  {
+    id: "wall-side-proof",
+    domain: "wall",
+    description:
+      "The narrative `**Proof.**` body (in the `.md`) is on the correct " +
+      "side of the substrate-to-archimedean wall. An algebraic statement " +
+      "cannot be proved by `linarith` / IVT / continuity arguments; an " +
+      "archimedean statement should explicitly cite the specialisation " +
+      "or use Real.* lemmas. Mostly an agent-reviewer criterion — the " +
+      "script flags candidate phrasings (`linarith`, `IVT`, `continuity`, " +
+      "`Real.`) and queues agent adjudication.",
+    default_severity: "major",
+    depends_on: ["md"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
   },
 ];
 

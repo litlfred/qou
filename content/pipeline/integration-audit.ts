@@ -30,8 +30,10 @@
  * @module content/pipeline/integration-audit
  */
 
-import { existsSync, readFileSync, writeFileSync } from "fs";
-import { resolve, relative } from "path";
+import { existsSync } from "fs";
+import { resolve, relative, dirname } from "path";
+import { fileURLToPath } from "url";
+import { spawnSync } from "child_process";
 import { walkBlocks, loadQaReport, saveQaReport } from "./qa-utils";
 import {
   QA_CRITERIA_BY_ID,
@@ -60,6 +62,22 @@ function parseArgs(argv: string[]): Args {
     json: false,
     noSweep: false,
   };
+  // Read the next argv token as a value for a flag, refusing tokens
+  // that start with `--` (those are clearly the next flag, not a
+  // value). Surfaces an error rather than silently consuming the
+  // following flag.
+  const valueFor = (flag: string, idx: number): string => {
+    const next = argv[idx + 1];
+    if (next === undefined || next.startsWith("--")) {
+      console.error(
+        `integration-audit: ${flag} requires a value (got ${
+          next === undefined ? "end of args" : `'${next}' which looks like a flag`
+        })`,
+      );
+      process.exit(2);
+    }
+    return next;
+  };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--all") out.all = true;
@@ -68,9 +86,9 @@ function parseArgs(argv: string[]): Args {
     else if (a === "--json") out.json = true;
     else if (a === "--no-sweep") out.noSweep = true;
     else if (a === "--criteria") {
-      out.criteria = (argv[++i] ?? "").split(",").filter(Boolean);
+      out.criteria = valueFor(a, i++).split(",").filter(Boolean);
     } else if (a === "--axis") {
-      out.axis = (argv[++i] ?? "").split(",").filter(Boolean);
+      out.axis = valueFor(a, i++).split(",").filter(Boolean);
     } else if (!a.startsWith("--")) {
       if (!out.root) out.root = a;
     }
@@ -238,14 +256,42 @@ function run(): void {
         `  ${crit}: ${info.removed} entries / ${info.blocks} blocks`,
       );
     }
-    if (!args.dryRun && !args.noSweep) {
-      console.log(
-        `\nNext: run \`bun run pipeline/qa-sweep.ts <root> ` +
-          `--only ${toInvalidate.join(",")}\` to repopulate sidecars.`,
-      );
-    }
     if (args.dryRun) {
       console.log("\n(dry run — no files changed)");
+    }
+  }
+
+  // Default behaviour: re-run `qa-sweep` to repopulate sidecars
+  // for the invalidated criteria. Skipped under --dry-run or
+  // --no-sweep.
+  if (!args.dryRun && !args.noSweep) {
+    if (!args.json) {
+      console.log(
+        `\n[integration-audit] re-running qa-sweep ` +
+          `--only ${toInvalidate.join(",")}…`,
+      );
+    }
+    const sweepScript = resolve(
+      dirname(fileURLToPath(import.meta.url)),
+      "qa-sweep.ts",
+    );
+    const child = spawnSync(
+      "bun",
+      [
+        "run",
+        sweepScript,
+        rootAbs,
+        "--only",
+        toInvalidate.join(","),
+      ],
+      { stdio: args.json ? "ignore" : "inherit" },
+    );
+    if (child.status !== 0) {
+      console.error(
+        `\n[integration-audit] qa-sweep exited non-zero (${child.status}) ` +
+          `— sidecars may be partially repopulated`,
+      );
+      process.exit(child.status ?? 1);
     }
   }
 }

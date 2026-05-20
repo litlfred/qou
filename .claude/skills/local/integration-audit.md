@@ -74,23 +74,27 @@ For each resolved criterion:
 
 | Criterion kind | Strategy |
 |----------------|----------|
-| Pure script (`automated: true`) | Delete the freshest script-reviewer entry; sweep re-runs the checker. |
-| Agent-only (`automated: false`) | Append a sentinel and surface a follow-up `/integration-backlog <axis>` recommendation so the user dispatches the agent. |
-| Mixed (script + agent) | Invalidate the script entry only; preserve agent entries unless `--include-agent` flag passed. |
+| Pure script (`automated: true`) | Delete every `kind: "script"` reviewer entry; sweep re-runs the checker on the next pass. |
+| Agent-only (`automated: false`) | Default: leave entries untouched (the script run won't reproduce them). Pass `--include-agent` to also delete `kind: "agent"` entries — the user must then dispatch the agent manually (typically via `/integration-backlog <axis>`). |
+| Human (`kind: "human"`) | **Always preserved.** Human adjudications are the final authority and never auto-invalidated. |
 
 ## Implementation
 
 Backed by a CLI script `content/pipeline/integration-audit.ts`
 that:
 
-- Walks every `.qa.json` under `content/<paper>/`
+- Walks every `.qa.json` under `content/<paper>/` via `walkBlocks`.
 - For each criterion in the invalidation set:
-  - If `result: "n/a"` or `result: "fail"` from `kind: "script"`,
-    delete the entry.
-  - Otherwise append a `{ result: "n/a", reviewer: { kind: "script",
-    id: "integration-audit", version: "v1" }, ... }` sentinel.
-- Optionally invokes `qa-sweep --only` for the same criterion
-  list to immediately repopulate.
+  - Deletes every `kind: "script"` reviewer entry (regardless of
+    `result`).
+  - Also deletes `kind: "agent"` entries when `--include-agent`
+    is passed.
+  - Preserves all `kind: "human"` entries.
+  - Removes the criterion key from `report.criteria` entirely if
+    no entries remain.
+- **Automatically re-runs `qa-sweep --only <criterion-list>`** as
+  a child process (via `spawnSync`) to repopulate the sidecars,
+  unless `--no-sweep` or `--dry-run` is passed.
 
 ## Persistence
 
