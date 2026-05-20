@@ -15,6 +15,10 @@
     "mcp-scholar": {
       "command": "uvx",
       "args": ["mcp-scholar"]
+    },
+    "lean-lsp": {
+      "command": "uvx",
+      "args": ["lean-lsp-mcp"]
     }
   }
 }

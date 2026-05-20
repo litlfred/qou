@@ -97,9 +97,10 @@ This repository now includes the same literature MCP setup for Claude Code in:
 Configured servers:
 
 1. `paper-assistant`
-2. `paper-search-mcp`
-3. `openalex-paper-search`
-4. `mcp-scholar`
+2. `lean-lsp`
+3. `paper-search-mcp`
+4. `openalex-paper-search`
+5. `mcp-scholar`
 
 ### Prerequisites for Claude Code
 
@@ -119,7 +120,7 @@ export PAPER_SEARCH_MCP_UNPAYWALL_EMAIL="you@example.com"
 export OPENALEX_EMAIL="you@example.com"
 ```
 
-This gives Claude Code parity with Copilot for literature retrieval MCP access.
+This gives Claude Code parity with Copilot for literature retrieval and Lean tooling MCP access.
 
 ---
 
