@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T00:55:10.675538+00:00",
-  "commitSha": "adb0b5e4980b4ab4c31bcd0348f40a03aed8c074",
+  "computedAt": "2026-05-20T02:14:16.900575+00:00",
+  "commitSha": "9398aedb50b2b1579d210f237539f25efac2c159",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 1,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "scriptCommitSha": "60d34fc28faafa9395c037ac62d69ebe8c3575d1",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2274,6 +2274,8 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
+        "constit-factor-and-volhyp.witness.json",
+        "constit-factor-residual-phase5k.witness.json",
         "content-block-label-audit.witness.json",
         "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
@@ -2329,6 +2331,8 @@
         "family-a-variants-investigation.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
+        "fr-pullback-cosh-h.witness.json",
+        "fr-pullback-k1-k2.witness.json",
         "fr-pullback-k3-test.witness.json",
         "free-neutron-decay.witness.json",
         "fresh-derivation-pn-steps-E-G.witness.json",
@@ -2703,6 +2707,7 @@
         "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
         "weight-factor-audit.witness.json",
+        "wenzl-lr-convention-adapter.witness.json",
         "witness-provenance-audit.witness.json",
         "witness-reproducibility-check.witness.json",
         "workplan-0b-mn-routes-b-c.witness.json",
