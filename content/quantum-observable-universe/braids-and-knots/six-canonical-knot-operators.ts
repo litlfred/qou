@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:six-canonical-knot-operators",
   lean: {
-    ref: "qou:QOU.CategoricalReeb.SixCanonicalKnotOperators",
+    ref: "qou:QOU.CategoricalReeb.boundary_perm_realises_S3",
     validation: "not_checked",
   },
   title:

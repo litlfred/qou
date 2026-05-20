@@ -82,7 +82,8 @@ theorem boundaryPerm_bijective (β : CanonicalBraid) :
         | (exact ⟨CoralSector.blue,  by decide⟩))
 
 /-- The boundary permutation is an involution exactly for the
-    three transpositions (identity, σ₁, σ₂, garside). -/
+    identity element and the three transpositions
+    ($\sigma_1$, $\sigma_2$, garside). -/
 theorem boundaryPerm_involution_iff_transposition (β : CanonicalBraid) :
     (∀ s, β.boundaryPerm (β.boundaryPerm s) = s) ↔
       (β = .identity ∨ β = .sigma1 ∨ β = .sigma2 ∨ β = .garside) := by

@@ -7,7 +7,7 @@
   corresponding boundary permutation on the ramified output disc.
 
   Authoritative declaration:
-  `QOU.CategoricalReeb.SixCanonicalKnotOperators` in
+  `QOU.CategoricalReeb.boundary_perm_realises_S3` in
   `lean/QOU/CategoricalReeb/SixCanonicalKnotOperators.lean`.
   This file is the co-located documentation stub per
   `QOU.GroundRingAnnotations`.

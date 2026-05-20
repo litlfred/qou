@@ -9,16 +9,21 @@ coordinates over the exceptional divisor.
 The class encodes three pieces of structure:
 
 1. **Additive composition** in the flow parameter.
-2. **Active sector rate**: when a sector participates in the
-   current two-strand subsystem (e.g. red and green under
-   $\sigma_1$), its angular coordinate advances at rate $q$.
-3. **Spectator rule**: when a sector is not participating
-   (e.g. blue under $\sigma_1$), its angular coordinate is
-   stationary.
+2. **Per-sector signed rate**: each sector advances at angular
+   rate $k\,q$, where $k \in \mathbb{Z}$ is a signed multiplier
+   determined by the braid generator and the sector's role in
+   the current two-strand subsystem.  Concretely: $k = 0$ for
+   spectator sectors; $k = +1$ for the "leading" active sector
+   under a positively-oriented generator (e.g. red under
+   $\sigma_1$); $k = -1$ for the "partner" active sector whose
+   angular coordinate counter-rotates so the two-strand
+   centre-of-mass is preserved (e.g. green under $\sigma_1$);
+   $k = +1$ uniformly under the positive 3-cycle
+   $\sigma_1\sigma_2$; $k = -1$ uniformly under the negative
+   3-cycle $\sigma_2\sigma_1$.
 
-The active / spectator status is encoded by a `Bool` argument
-to `flow`, leaving the dictionary between braid generators and
-active sectors to be supplied by the consumer (see
+The signed-rate dictionary between braid generators and per-sector
+multipliers is supplied by the consumer (see
 `SixCanonicalKnotOperators`).
 
 LaTeX label: `def:q-reeb-flow-on-coral-coords`
@@ -37,33 +42,52 @@ deriving DecidableEq, Repr
 
 /-- The $q$-Reeb flow on coral-sector coordinates.
 
-    `flow q t active ψ` is the angular position $\psi'$ of a
-    sector after applying the flow $\phi^q_t$ to the starting
-    position $\psi$, given the sector's active/spectator status
-    `active : Bool` under the current braid generator.
+    `flow q t k ψ` is the angular position $\psi'$ of a sector
+    after applying the flow $\phi^q_t$ to the starting position
+    $\psi$, given the sector's signed rate multiplier `k : ℤ`
+    under the current braid generator.
 
-    Active sectors rotate at rate $q$; spectator sectors are
-    stationary.  Composition is additive in $t$. -/
+    Sectors with rate `k` advance at angular rate `k * q`; in
+    particular `k = 0` gives the spectator rule and `k = ±1` the
+    centre-of-mass-preserving two-strand action.  Composition is
+    additive in $t$. -/
 class QReebFlowOnCoralCoords (q : ℝ) where
-  /-- The flow on the angular coordinate.  `active = true` means
-      the sector participates in the current braid generator's
-      two-strand subsystem; `active = false` means it is a
-      spectator. -/
-  flow : ℝ → Bool → ℝ → ℝ
-  /-- Identity at $t = 0$. -/
-  flow_zero : ∀ (active : Bool) (ψ : ℝ), flow 0 active ψ = ψ
-  /-- Additive composition in the flow parameter (active state
-      preserved across the composition step). -/
-  flow_add : ∀ (t₁ t₂ : ℝ) (active : Bool) (ψ : ℝ),
-    flow (t₁ + t₂) active ψ = flow t₂ active (flow t₁ active ψ)
-  /-- Active sectors advance at angular rate $q$. -/
-  flow_active : ∀ (t ψ : ℝ), flow t true ψ = ψ + q * t
-  /-- Spectator sectors are stationary. -/
-  flow_spectator : ∀ (t ψ : ℝ), flow t false ψ = ψ
+  /-- The flow on the angular coordinate.  `k` is the signed
+      rate multiplier under the current braid generator. -/
+  flow : ℝ → ℤ → ℝ → ℝ
+  /-- Identity at $t = 0$ regardless of rate. -/
+  flow_zero : ∀ (k : ℤ) (ψ : ℝ), flow 0 k ψ = ψ
+  /-- Additive composition in the flow parameter (rate preserved
+      across the composition step). -/
+  flow_add : ∀ (t₁ t₂ : ℝ) (k : ℤ) (ψ : ℝ),
+    flow (t₁ + t₂) k ψ = flow t₂ k (flow t₁ k ψ)
+  /-- A sector with rate `k` advances at angular rate $k\,q$. -/
+  flow_rate : ∀ (t ψ : ℝ) (k : ℤ),
+    flow t k ψ = ψ + (k : ℝ) * q * t
+
+namespace QReebFlowOnCoralCoords
+
+variable {q : ℝ} [QReebFlowOnCoralCoords q]
+
+/-- Corollary: spectator sectors ($k = 0$) are stationary. -/
+theorem flow_spectator (t ψ : ℝ) : flow (q := q) t 0 ψ = ψ := by
+  simp [flow_rate]
+
+/-- Corollary: leading active sectors ($k = +1$) advance at rate $+q$. -/
+theorem flow_active_pos (t ψ : ℝ) :
+    flow (q := q) t 1 ψ = ψ + q * t := by
+  simp [flow_rate]
+
+/-- Corollary: partner active sectors ($k = -1$) advance at rate $-q$. -/
+theorem flow_active_neg (t ψ : ℝ) :
+    flow (q := q) t (-1) ψ = ψ - q * t := by
+  simp [flow_rate]; ring
+
+end QReebFlowOnCoralCoords
 
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/q-reeb-flow-on-coral-coords.md
 
-/-- The coral-twist accumulated by an active sector over the full
+/-- The coral-twist accumulated by a $k = +1$ sector over the full
     divisor traversal of latitude length `T`.  At `T = π` this is
     the substrate-parameter advance of `q π`. -/
 def coralTwist (q T : ℝ) : ℝ := q * T
