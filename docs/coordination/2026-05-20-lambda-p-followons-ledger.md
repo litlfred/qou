@@ -128,11 +128,13 @@ Sibling PRs scanned (cycles 2026-05-20):
 | PR  | Branch                                | Overlap | Action |
 |-----|---------------------------------------|---------|--------|
 | #840 | claude/stage-2-prop-revival          | merged 2026-05-20 — independent Vol(𝓑₃) verification | none |
-| #836 | claude/c5-followups                  | golden-node falsifiability (related to PR #690 C2 inflection) | hold |
+| #836 | claude/c5-followups                  | merged 2026-05-20 — golden-node falsifiability | none |
 | #841 | claude/fr-pullback-k1-k2-identification | FR pullback, distinct scope | hold |
 | #831 | claude/post-819-ledger-update        | Δ_λ Phase 5f-5k.1 | hold |
-| #845 | claude/phase-5l-disjoint-markov-trace | Phase 5l constit-factor (precursor to Move 4) | independent |
-| #849 | claude/phase-5l1-tau-M-proton-closed-form | Phase 5l.1 τ_M closed forms | independent |
+| #845 | claude/phase-5l-disjoint-markov-trace | SUPERSEDED by #854 | none |
+| #849 | claude/phase-5l1-tau-M-proton-closed-form | SUPERSEDED by #854 | none |
+| #853 | claude/phase-5n-notation-rename | merged 2026-05-20 — notation refactor (226 files); merge_state still clean | none |
+| #854 | claude/phase-5l-combined-with-5l1 | NEW 2026-05-20 14:43 — ρ_Z^constit = tr_M^3(B_p) identity; 13 files, no overlap with this PR's scope; thematic neighbor | hold |
 
 ## Files touched (PR #852)
 
