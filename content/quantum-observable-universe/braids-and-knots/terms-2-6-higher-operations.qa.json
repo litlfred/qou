@@ -3,12 +3,12 @@
   "label": "prop:terms-2-6-higher-operations",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts",
+    "md": "quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md",
+    "lean": "quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.lean"
   },
   "source_hashes": {
-    "md": "46d9d0f6be7c",
+    "md": "2590bb8273d2",
     "ts": "ec8301fb8dfb",
     "lean": "7ff592a5f7ed"
   },
@@ -149,8 +149,23 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md:478: \\underbrace{a_K(\\varrho) \\cdot \\mathcal{C}}_{\\text{Term 5 (ribbon)}}  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md:482: *where $\\mathcal{C}$ denotes the chirality-couplable piece (e.g.,  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+      },
+      {
+        "field_hash": {
+          "md": "2590bb8273d2",
+          "ts": "ec8301fb8dfb",
+          "lean": "7ff592a5f7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:22:25.857Z",
+        "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:22:25.857Z"
 }

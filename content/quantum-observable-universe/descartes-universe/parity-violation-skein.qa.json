@@ -3,12 +3,12 @@
   "label": "prop:parity-violation-skein",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/parity-violation-skein.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/parity-violation-skein.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/parity-violation-skein.lean"
+    "ts": "quantum-observable-universe/descartes-universe/parity-violation-skein.ts",
+    "md": "quantum-observable-universe/descartes-universe/parity-violation-skein.md",
+    "lean": "quantum-observable-universe/descartes-universe/parity-violation-skein.lean"
   },
   "source_hashes": {
-    "md": "0fc0fe220c54",
+    "md": "9da3e2a02cb6",
     "ts": "59e85697526d",
     "lean": "4d7d1a9860c9"
   },
@@ -149,8 +149,23 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/descartes-universe/parity-violation-skein.md:133: crossings) composed with charge conjugation $\\mathcal{C}$  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/descartes-universe/parity-violation-skein.md:138: - $\\mathcal{C}$ alone: violated (electron $\\neq$ positron in  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/descartes-universe/parity-violation-skein.md:144: $\\mathcal{C}$ violated, $\\mathcal{CP}$ conserved (to leading  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+      },
+      {
+        "field_hash": {
+          "md": "9da3e2a02cb6",
+          "ts": "59e85697526d",
+          "lean": "4d7d1a9860c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:22:25.857Z",
+        "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:22:25.857Z"
 }

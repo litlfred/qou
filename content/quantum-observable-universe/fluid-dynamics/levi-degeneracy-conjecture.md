@@ -4,7 +4,7 @@ $\kappa$, let $v_\kappa$ be the q-NS solution for anti-parallel
 vortex pair initial data, and let
 
 $$
-  \mathcal{C}(\kappa)
+  \mathcal{C}_L(\kappa)
   = 
   \sup_{0 \leq t < T^*_\kappa}
   \mathrm{cond}\bigl(
@@ -16,7 +16,7 @@ be the maximum [Levi form condition
 number](#prop:core-levi-form) over the evolution.
 
 By the [root-of-unity truncation](#prop:root-of-unity-truncation),
-$\mathcal{C}(\kappa) \leq 1 + C(\kappa - 1)$ for a universal
+$\mathcal{C}_L(\kappa) \leq 1 + C(\kappa - 1)$ for a universal
 constant $C > 0$ (Bernstein inequality on trigonometric
 polynomials of degree $\leq (\kappa-1)/2$).
 
@@ -26,7 +26,7 @@ Exactly one of the following holds:
 **(A) Sub-linear growth (NS blows up).**
 
 $$
-  \mathcal{C}(\kappa) = O(1)
+  \mathcal{C}_L(\kappa) = O(1)
   \quad\text{as } \kappa \to \infty.
 $$
 
@@ -44,7 +44,7 @@ Classical 3d Navier--Stokes admits finite-time blowup.
 **(B) Linear growth (NS is regular).**
 
 $$
-  \mathcal{C}(\kappa) \sim \kappa
+  \mathcal{C}_L(\kappa) \sim \kappa
   \quad\text{as } \kappa \to \infty.
 $$
 

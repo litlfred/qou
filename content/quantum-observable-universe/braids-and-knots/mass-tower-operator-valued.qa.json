@@ -177,8 +177,23 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "4bb7fd81ed96",
+          "ts": "d50d6ec3d927",
+          "lean": "adfcd13ffd1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:22:25.857Z",
+        "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
       }
     ]
   },
-  "updated_at": "2026-05-20T05:47:44.711Z"
+  "updated_at": "2026-05-20T06:22:25.857Z"
 }

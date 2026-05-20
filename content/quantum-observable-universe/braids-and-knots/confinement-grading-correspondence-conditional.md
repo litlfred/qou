@@ -2,13 +2,13 @@
 [`conj:crystal-graph-realization`](#conj:crystal-graph-realization)
 and the Brundan–Kleshchev isomorphism
 \cite{brundankleshchev2009}).**
-*Let $\mathcal{C}$ denote the upstream conjectural class
+*Let $\mathsf{C}$ denote the upstream conjectural class
 $[\mathrm{CrystalGraphRealization}]$ — an instance of which
 provides the Kashiwara crystal $\mathrm{Cryst}(H_n(R, q))$ together
 with the Brundan–Kleshchev isomorphism $H_n(R, q) \cong R_\alpha^{\Lambda}$
 intertwining centres
 \cite{khovanovlauda2009, brundankleshchev2009}. Then,
-[**conditional on $\mathcal{C}$**], the
+[**conditional on $\mathsf{C}$**], the
 [confinement filtration](#def:confinement-level) $J^\bullet(q)$ on
 $H_n(R, q)$ coincides with the filtration induced by the natural
 $\mathbb{Z}$-grading on the KLR algebra: a closed braid $K$ with
