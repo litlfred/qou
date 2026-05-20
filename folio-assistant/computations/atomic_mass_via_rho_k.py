@@ -210,7 +210,7 @@ else:
 
 # ── CODATA reference data (kept identical to legacy table) ─────
 ATOMS_CODATA = {
-    "p":   {"Z": 1, "N": 0, "M_MeV": "938.27208816"},
+    "p":   {"Z": 1, "N": 0, "M_MeV": "938.27208816"},  # noqa: P31 — comparison anchor in static CODATA table
     "n":   {"Z": 0, "N": 1, "M_MeV": "939.56542052"},
     "D":   {"Z": 1, "N": 1, "M_MeV": "1875.61294257"},
     "T":   {"Z": 1, "N": 2, "M_MeV": "2808.92113298"},

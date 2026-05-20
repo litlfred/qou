@@ -163,7 +163,7 @@ def main() -> int:
     print("    So testing whether ρ_K _structurally_ factors as a_0 · a_1 · ...")
     print()
     print("  PROTON:")
-    rk_p = mpf("938.27208816") / (mpf("0.51099895069") * MARKOV_TR_CODATA["proton"])
+    rk_p = mpf("938.27208816") / (mpf("0.51099895069") * MARKOV_TR_CODATA["proton"])  # noqa: P31 — probe-only CODATA comparison ratio
     print(f"    ρ_K = m_p_CODATA / (m_e · |tr_M|) = {mp.nstr(rk_p, 10)}")
     print(f"    paper's reported ρ_K = {RHO_K_CODATA['proton']}")
     print(f"    ratio = {mp.nstr(rk_p / RHO_K_CODATA['proton'], 10)} (should be 1)")

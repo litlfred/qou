@@ -101,8 +101,8 @@ MU_U = 311.10
 MU_D = 312.39
 MU_AVG = (MU_U + MU_D) / 2
 
-CODATA_MP = 938.272088
-CODATA_MN = 939.565421
+CODATA_MP = 938.272088  # noqa: P31 — probe comparison anchor
+CODATA_MN = 939.565421  # noqa: P31 — probe comparison anchor
 CODATA_DM = CODATA_MN - CODATA_MP
 
 

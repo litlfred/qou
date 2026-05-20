@@ -87,7 +87,7 @@ M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
 ATOMS_CODATA = {
     # Anchors (LO exact by construction; ΔM = 0; included for sector-mass
     # data only — Δ_λ ansätze trivially solve to 0):
-    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816"},
+    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816"},  # noqa: P31 — static comparison anchor
     "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": "939.56542052"},
     # Compound atoms (binding-energy correction non-trivial):
     "D":   {"Z": 1, "N": 1, "n": 6,  "M_MeV": "1875.61294257"},

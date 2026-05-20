@@ -77,7 +77,7 @@ ALPHA_BORROMEAN = mp.mpf("3.7445")   # MeV (m_e · 8G, where G ≈ 7.327 ≈ Bor
 
 # CODATA atomic masses (MeV)
 M_CODATA = {
-    "p":   mp.mpf("938.27208816"),
+    "p":   mp.mpf("938.27208816"),  # noqa: P31 — comparison anchor in CODATA table
     "n":   mp.mpf("939.56542052"),
     "D":   mp.mpf("1875.61294257"),    # m_p + m_n − B(D)_AME
     "T":   mp.mpf("2808.92113298"),

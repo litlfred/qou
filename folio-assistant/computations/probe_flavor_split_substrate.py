@@ -85,8 +85,8 @@ MU_D = mpf("312.39")
 MU_AVG = (MU_U + MU_D) / 2
 DELTA_MU = MU_D - MU_U  # 1.29 MeV by construction
 
-M_P_CODATA = mpf("938.272088")
-M_N_CODATA = mpf("939.565421")
+M_P_CODATA = mpf("938.272088")  # noqa: P31 — probe comparison anchor
+M_N_CODATA = mpf("939.565421")  # noqa: P31 — probe comparison anchor
 DELTA_M = M_N_CODATA - M_P_CODATA  # 1.293333 MeV
 M_N_AVG = (M_P_CODATA + M_N_CODATA) / 2
 

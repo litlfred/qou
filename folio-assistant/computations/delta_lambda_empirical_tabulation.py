@@ -110,7 +110,7 @@ M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
 
 ATOMS_CODATA = {
     # Anchors (LO is exact by construction; ΔM = 0):
-    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816",
+    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816",  # noqa: P31 — static comparison anchor
             "chi_witness": "chi-proton-h3.witness.json"},
     "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": "939.56542052",
             "chi_witness": "chi-neutron-h3.witness.json"},

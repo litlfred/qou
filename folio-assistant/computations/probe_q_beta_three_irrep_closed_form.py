@@ -85,7 +85,7 @@ def _q_0_50dps() -> mp.mpf:
 def main() -> int:
     q0_mp = _q_0_50dps()
     m_e = mp.mpf(str(M_E_MEV))
-    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e
+    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e  # noqa: P31 — probe comparison anchor
 
     h0 = q0_mp - 1 / q0_mp
     z0 = 1 / (mp.sqrt(q0_mp) + 1 / mp.sqrt(q0_mp))

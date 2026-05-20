@@ -538,7 +538,7 @@ ATOMS = [
 
 # CODATA reference masses (MeV/c²) at 1 ppb precision available.
 CODATA_MASS = {
-    "p (proton)":   mp.mpf("938.27208816"),
+    "p (proton)":   mp.mpf("938.27208816"),  # noqa: P31 — comparison-only CODATA reference table
     "n (neutron)":  mp.mpf("939.56542052"),
     "D (deuteron)": mp.mpf("1875.61294500"),  # binding-derived
     "T (triton)":   mp.mpf("2808.92113298"),

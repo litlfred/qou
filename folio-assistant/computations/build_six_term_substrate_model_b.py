@@ -109,7 +109,7 @@ def _load_model_b_t1() -> dict[str, mp.mpf]:
 
 # CODATA masses (MeV) for the comparison column.
 _CODATA = {
-    (1, 0):   mp.mpf("938.27208816"),    # proton
+    (1, 0):   mp.mpf("938.27208816"),    # proton  # noqa: P31 — comparison column anchor
     (0, 1):   mp.mpf("939.56542052"),    # neutron
     (1, 1):   mp.mpf("1875.61294257"),   # deuteron
     (1, 2):   mp.mpf("2808.92113298"),   # tritium

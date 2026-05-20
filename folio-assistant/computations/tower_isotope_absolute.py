@@ -68,7 +68,7 @@ Z_SQ = Z_MP * Z_MP
 # CODATA masses (MeV) — atomic masses, neutral atom
 M_E_CODATA = mp.mpf(str(M_E_MEV))
 CODATA_ATOMIC = {
-    "p":     mp.mpf("938.27208816"),       # bare proton (not neutral H)
+    "p":     mp.mpf("938.27208816"),       # bare proton (not neutral H)  # noqa: P31 — comparison-only CODATA table
     "n":     mp.mpf("939.56542052"),
     "D":     mp.mpf("1876.12392"),         # ²H atomic mass (with e)
     "T":     mp.mpf("2809.43215"),         # ³H atomic mass
@@ -212,7 +212,7 @@ def main() -> int:
     print()
 
     ISOTOPES = [
-        ("p",     1, 0, M_E_CODATA * 0 + mp.mpf("938.27208816")),
+        ("p",     1, 0, CODATA_ATOMIC["p"]),
         ("n",     0, 1, mp.mpf("939.56542052")),
         ("D",     1, 1, CODATA_ATOMIC["D"]),
         ("T",     1, 2, CODATA_ATOMIC["T"]),

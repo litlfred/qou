@@ -73,7 +73,7 @@ def _load_registry() -> dict[str, mp.mpf]:
 
 # Match a numerical literal in Python code.  Cover:
 #   - 0.511, 938.272, 1.293
-#   - 0.51099895e0 / 1.5e-3 (scientific notation)
+#   - 0.51099895e0 / 1.5e-3 (scientific notation)  # noqa: P31 — regex-pattern documentation, not a compute constant
 #   - 938 (bare int, exclude small integers via threshold)
 # The match must be a complete "word" — no `.` or `_` adjacent.
 NUMERICAL_LITERAL_RX = re.compile(
@@ -178,7 +178,7 @@ def _classify_script(path: Path,
                 # and produced ~70 false positives from coincidental
                 # matches like `1e-3` ~ `Q_BETA_MEV_ERR`.  Tightened
                 # to 1e-6 — still permissive enough to catch loose
-                # rounding (`0.511` matching M_E_MEV = 0.51099895
+                # rounding (`0.511` matching M_E_MEV = 0.51099895  # noqa: P31 — explanatory comment about literal matching
                 # at rel_err 0.002 is INTENTIONAL: the literal IS
                 # the registry value, just rounded).  Past the
                 # 6th-digit boundary the constant has truly diverged.
@@ -269,8 +269,8 @@ def main() -> int:
             "importing the corresponding symbol.  Bypassing the registry "
             "decouples the script from the canonical source of truth — "
             "if CODATA updates, the literal silently drifts.  Tolerance is "
-            "permissive (1e-3) to catch loose rounding like `0.511` matching "
-            "M_E_MEV = 0.51099895."
+            "permissive (1e-3) to catch loose rounding like `0.511` matching "  # noqa: P31 — witness description text
+            "M_E_MEV = 0.51099895."  # noqa: P31 — witness description text
         )
         .set_content_block(
             "I9 antipattern (compute-integration-watcher.md §antipatterns)"
