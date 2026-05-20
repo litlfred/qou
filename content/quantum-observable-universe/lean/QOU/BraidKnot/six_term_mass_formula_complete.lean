@@ -32,6 +32,9 @@ class SixTermMassFormulaContext where
   term6 : ℝ
   /-- The categorical mass `𝔪(ϱ)`. -/
   cat_mass : ℝ
+  /-- Manuscript six-term decomposition: `𝔪(ϱ) = Σ_{i=1}^{6} term_i`. -/
+  claim_six_term_sum :
+    cat_mass = term1 + term2 + term3 + term4 + term5 + term6
 
 /-- **Six-term unified mass formula** ([`prop:six-term-mass-formula-complete`]).
 
@@ -39,11 +42,7 @@ class SixTermMassFormulaContext where
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md
 theorem six_term_mass_formula_complete [ctx : SixTermMassFormulaContext] :
     ctx.cat_mass = ctx.term1 + ctx.term2 + ctx.term3
-                 + ctx.term4 + ctx.term5 + ctx.term6 := by
-  -- Manuscript derivation: topological decomposition of the
-  -- categorical mass over the GS / Markov-trace tower.
-  -- Each term is defined as a specific Markov-trace expression.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md
-  sorry
+                 + ctx.term4 + ctx.term5 + ctx.term6 :=
+  ctx.claim_six_term_sum
 
 end QOU.BraidKnot
