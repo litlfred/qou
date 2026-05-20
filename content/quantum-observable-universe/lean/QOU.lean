@@ -93,3 +93,5 @@ import QOU.CategoricalDqSquared
 import QOU.frobenius_relation
 import QOU.dq_squared
 import QOU.emergence_to_quantum_flat
+import QOU.su2_emergence_dagger_unitarity
+import QOU.su2_emergence_volume_determinant
