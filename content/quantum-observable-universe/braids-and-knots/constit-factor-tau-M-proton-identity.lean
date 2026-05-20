@@ -43,7 +43,7 @@ class MarkovTraceDisjoint (R : Type*) [Field R] where
   /-- The Markov-trace value of the constit (= disjoint product)
       braid for atom (Z, N).  The class axiom encodes Wenzl's
       disjoint multiplicativity:
-        tr_M(β_constit_{Z,N}) = tr_M(𝓑_p)^Z · tr_M(𝓑_n)^N. -/
+        tr_M(𝓑_constit_{Z,N}) = tr_M(𝓑_p)^Z · tr_M(𝓑_n)^N. -/
   tau_M_constit : ℕ → ℕ → R
   /-- Wenzl's disjoint multiplicativity, specialised to the
       per-nucleon factorisation. -/

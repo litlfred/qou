@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T16:21:56.240994+00:00",
-  "commitSha": "1e8c51c8b4d7c445459b63bd7a73ecda85d109db",
+  "computedAt": "2026-05-20T17:02:57.987608+00:00",
+  "commitSha": "a872071f893dfd1f0c5e5d4deb26751ba223c063",
   "assertions": [
     {
       "name": "rho_Z_constit_equals_tau_M_proton_H3",
@@ -11,16 +11,16 @@
       "passed": true,
       "tolerance": 1e-12,
       "unit": "dimensionless",
-      "source": "Phase 5l: max relative error between ρ_Z^constit(q) and τ_M^3(β_p, q) across 5 q-points in the substrate window.  Identity holds at mpfr-50-dps precision if max rel.err. < 1e-12."
+      "source": "Phase 5l: max relative error between ρ_Z^constit(q) and tr_M^3(𝓑_p, q) across 5 q-points in the substrate window.  Identity holds at mpfr-50-dps precision if max rel.err. < 1e-12."
     }
   ],
   "allPassed": true,
-  "durationMs": 5564,
+  "durationMs": 5504,
   "computation": "rho-constit-equals-tau-M-proton-phase5l",
   "scriptFile": "rho_constit_equals_tau_M_proton_phase5l.py",
-  "scriptHash": "786cc8ae44a2",
-  "scriptCommitSha": "9d7a92917eb04054a5b7b3b5b04e21c58749da91",
-  "description": "Phase 5l: structural identity for the constit-side per-Z step factor.  Empirically verifies that ρ_Z^constit(q) := τ_M(³He_constit, q) / τ_M(D_constit, q) equals τ_M^3(β_p, q) exactly across the substrate window, as predicted by the disjoint-product Markov trace formula τ_M(α ⊗ β) = τ_M(α) · τ_M(β) for braids on disjoint strand sets.  Replaces the falsified (2q - 1) form (Phase 5k.2) with a rigorous closed form derivable from Wenzl's Markov trace.",
+  "scriptHash": "127d35ab2688",
+  "scriptCommitSha": "a872071f893dfd1f0c5e5d4deb26751ba223c063",
+  "description": "Phase 5l: structural identity for the constit-side per-Z step factor.  Empirically verifies that ρ_Z^constit(q) := tr_M(³He_constit, q) / tr_M(D_constit, q) equals tr_M^3(𝓑_p, q) exactly across the substrate window, as predicted by the disjoint-product Markov trace formula tr_M(α ⊗ β) = tr_M(α) · tr_M(β) for braids on disjoint strand sets.  Replaces the falsified (2q - 1) form (Phase 5k.2) with a rigorous closed form derivable from Wenzl's Markov trace.",
   "contentBlock": "prop:constit-factor-tau-M-proton-identity",
   "parameters": {
     "q_values": [
@@ -41,7 +41,7 @@
         "rho_Z_constit_str": "0.792841919423918992969176770448",
         "diff": -1.3363823550460978e-51,
         "rel_err": 1.68555965862289e-51,
-        "wall_s": 1.1168749332427979
+        "wall_s": 1.097731351852417
       },
       {
         "q": 1.08,
@@ -51,7 +51,7 @@
         "rho_Z_constit_str": "0.993289585647053308069684211553",
         "diff": 1.0691058840368783e-50,
         "rel_err": 1.0763284942129302e-50,
-        "wall_s": 1.1112124919891357
+        "wall_s": 1.0973477363586426
       },
       {
         "q": 1.1099785955541805,
@@ -61,7 +61,7 @@
         "rho_Z_constit_str": "1.22036288908669305595736107223",
         "diff": 4.810976478165952e-50,
         "rel_err": 3.9422507200021767e-50,
-        "wall_s": 1.1045589447021484
+        "wall_s": 1.0941638946533203
       },
       {
         "q": 1.13,
@@ -71,7 +71,7 @@
         "rho_Z_constit_str": "1.39054700525733001058588309562",
         "diff": 1.870935297064537e-50,
         "rel_err": 1.3454671363074907e-50,
-        "wall_s": 1.1062779426574707
+        "wall_s": 1.0938599109649658
       },
       {
         "q": 1.17,
@@ -81,7 +81,7 @@
         "rho_Z_constit_str": "1.78584582119413599318238428856",
         "diff": 0.0,
         "rel_err": 0.0,
-        "wall_s": 1.101055383682251
+        "wall_s": 1.096560001373291
       }
     ],
     "verdict": "structural-identity-confirmed",

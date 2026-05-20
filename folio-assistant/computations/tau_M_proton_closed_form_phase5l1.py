@@ -169,11 +169,21 @@ def main() -> int:
         t0 = time.time()
         y_sym = y_lambda_wenzl_bridge_symbolic(list(lam))
         # The symbolic implementation uses its own q symbol — substitute
-        # to ours if names differ.
-        if y_sym.free_symbols and list(y_sym.free_symbols)[0].name != "q":
-            y_sym = y_sym.subs(list(y_sym.free_symbols)[0], q)
-        # Skip per-term cancel (expensive on degree-80+ expressions);
-        # final cancel on the assembled tr_M sum below is sufficient.
+        # any free symbol named other than "q" with ours.  Iterate over
+        # sorted free symbols for determinism (set iteration order in
+        # CPython is insertion-order but sympy may reorder; sort by name
+        # so the substitution result does not depend on hash randomization
+        # — Gemini PR #854 review).
+        for sym in sorted(y_sym.free_symbols, key=lambda s: s.name):
+            if sym.name != "q":
+                y_sym = y_sym.subs(sym, q)
+        # Skip per-term simplification (expensive on degree-80+
+        # expressions); the assembled tr_M sum below is normalised
+        # via sp.together — a §6 escalation outcome on PR #854: an
+        # earlier Copilot review flagged sp.cancel as a P15 hotspot
+        # on full y_λ·χ_λ sums.  sp.together brings to a common
+        # denominator without invoking full GCD reduction, which
+        # keeps the probe runnable in CI.
         y_results[lam] = y_sym
         print(f"  y^{lam}(q) computed [{time.time()-t0:.2f}s]")
     print()
