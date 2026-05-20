@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:flavor-split-substrate",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/flavor-split-substrate.ts",
+    "md": "content/quantum-observable-universe/observations/flavor-split-substrate.md",
+    "lean": "content/quantum-observable-universe/observations/flavor-split-substrate.lean"
+  },
+  "source_hashes": {
+    "md": "1d17dad276f2",
+    "ts": "4a511a1cb001",
+    "lean": "6ef6b5d01045"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "1d17dad276f2",
+          "ts": "4a511a1cb001",
+          "lean": "6ef6b5d01045"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

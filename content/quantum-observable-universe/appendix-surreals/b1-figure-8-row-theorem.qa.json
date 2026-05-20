@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:b1-figure-8-row-theorem",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.ts",
+    "md": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md",
+    "lean": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean"
+  },
+  "source_hashes": {
+    "md": "ed38d29b423b",
+    "ts": "9e57553f55fb",
+    "lean": "f217c618f728"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

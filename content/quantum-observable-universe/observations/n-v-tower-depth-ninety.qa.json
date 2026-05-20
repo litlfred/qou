@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:n-v-tower-depth-ninety",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts",
+    "md": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md",
+    "lean": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean"
+  },
+  "source_hashes": {
+    "md": "3019f680d36a",
+    "ts": "2de7d10a7660",
+    "lean": "7bcb0fe78f87"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "3019f680d36a",
+          "ts": "2de7d10a7660",
+          "lean": "7bcb0fe78f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

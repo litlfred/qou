@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "cor:jet-prolongation-C",
+  "kind": "corollary",
+  "paths": {
+    "ts": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-C.ts",
+    "md": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-C.md",
+    "lean": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-C.lean"
+  },
+  "source_hashes": {
+    "md": "a412ff1c5462",
+    "ts": "acf01e4d72c0",
+    "lean": "231088683cfa"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a412ff1c5462",
+          "ts": "acf01e4d72c0",
+          "lean": "231088683cfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

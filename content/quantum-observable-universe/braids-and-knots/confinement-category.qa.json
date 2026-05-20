@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:confinement-category",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/confinement-category.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/confinement-category.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/confinement-category.lean"
+  },
+  "source_hashes": {
+    "md": "2a1927800384",
+    "ts": "7b5db92f2a09",
+    "lean": "c6dcb3e8ed21"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "7b5db92f2a09",
+          "lean": "c6dcb3e8ed21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

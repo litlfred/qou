@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:single-volume-irrationality",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/single-volume-irrationality.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/single-volume-irrationality.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/single-volume-irrationality.lean"
+  },
+  "source_hashes": {
+    "md": "18794f5ab8b5",
+    "ts": "e9c09df0e101",
+    "lean": "3ccd253f63fe"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "18794f5ab8b5",
+          "ts": "e9c09df0e101",
+          "lean": "3ccd253f63fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

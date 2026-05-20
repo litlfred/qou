@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:cyclotomic-l-value-decomposition",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/cyclotomic-l-value-decomposition.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/cyclotomic-l-value-decomposition.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/cyclotomic-l-value-decomposition.lean"
+  },
+  "source_hashes": {
+    "md": "f097042b883e",
+    "ts": "7a6e38ca2cb2",
+    "lean": "3cccaba21002"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "f097042b883e",
+          "ts": "7a6e38ca2cb2",
+          "lean": "3cccaba21002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

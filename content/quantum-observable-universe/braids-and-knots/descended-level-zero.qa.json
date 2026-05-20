@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:descended-level-zero",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/descended-level-zero.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/descended-level-zero.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/descended-level-zero.lean"
+  },
+  "source_hashes": {
+    "md": "ed54193963a0",
+    "ts": "e8f69c4633c9",
+    "lean": "8056c17d6656"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ed54193963a0",
+          "ts": "e8f69c4633c9",
+          "lean": "8056c17d6656"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

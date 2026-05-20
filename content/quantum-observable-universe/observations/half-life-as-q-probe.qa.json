@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:half-life-as-q-probe",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/half-life-as-q-probe.ts",
+    "md": "content/quantum-observable-universe/observations/half-life-as-q-probe.md"
+  },
+  "source_hashes": {
+    "md": "ffd81dbbc575",
+    "ts": "ba1e1aa9215f"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ffd81dbbc575",
+          "ts": "ba1e1aa9215f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

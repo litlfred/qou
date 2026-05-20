@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:weak-symmetric-normalization",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.lean"
+  },
+  "source_hashes": {
+    "md": "479244d1a650",
+    "ts": "92603dde686e",
+    "lean": "70e3a42aa47b"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "479244d1a650",
+          "ts": "92603dde686e",
+          "lean": "70e3a42aa47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

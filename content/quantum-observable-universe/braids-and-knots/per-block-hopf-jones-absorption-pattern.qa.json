@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:per-block-hopf-jones-absorption-pattern",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/per-block-hopf-jones-absorption-pattern.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/per-block-hopf-jones-absorption-pattern.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/per-block-hopf-jones-absorption-pattern.lean"
+  },
+  "source_hashes": {
+    "md": "277529b16f7b",
+    "ts": "bf2d1d8f1ba3",
+    "lean": "842b0edd4ff6"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "277529b16f7b",
+          "ts": "bf2d1d8f1ba3",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

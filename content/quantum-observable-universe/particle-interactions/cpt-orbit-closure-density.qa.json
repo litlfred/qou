@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:cpt-orbit-closure-density",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts",
+    "md": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md",
+    "lean": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean"
+  },
+  "source_hashes": {
+    "md": "ff182321748e",
+    "ts": "07da404fd072",
+    "lean": "168f2f973c63"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ff182321748e",
+          "ts": "07da404fd072",
+          "lean": "168f2f973c63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

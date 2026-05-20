@@ -3,9 +3,9 @@
   "label": "prop:chain-ring-comparison",
   "kind": "proposition",
   "paths": {
-    "ts": "quantum-observable-universe/organic-chemistry/chain-ring-comparison.ts",
-    "md": "quantum-observable-universe/organic-chemistry/chain-ring-comparison.md",
-    "lean": "quantum-observable-universe/organic-chemistry/chain-ring-comparison.lean"
+    "ts": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.ts",
+    "md": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.md",
+    "lean": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.lean"
   },
   "source_hashes": {
     "md": "def38a67799e",
@@ -13,125 +13,6 @@
     "lean": "9bc78107d62d"
   },
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -145,64 +26,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-audit",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T16:16:24.574Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
-        "notes": "declarative scholarly voice throughout; quantitative comparison style appropriate to a proposition"
-      }
-    ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-audit",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T16:16:24.574Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
-        "notes": "no LLM tells; numbered derivation chain steps are substantive mathematics not cadence"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "def38a67799e",
-          "ts": "2f4acb505909",
-          "lean": "9bc78107d62d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-audit",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T16:16:24.574Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
-        "notes": "proposition comparing predicted vs observed C6 ring-closure barrier; capstone of the chains-vs-rings section"
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
       }
     ]
   },
-  "updated_at": "2026-05-19T16:16:24.574Z"
+  "updated_at": "2026-05-20T00:52:21.578Z"
 }

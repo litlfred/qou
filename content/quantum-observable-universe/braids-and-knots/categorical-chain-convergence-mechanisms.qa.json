@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:categorical-chain-convergence-mechanisms",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/categorical-chain-convergence-mechanisms.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/categorical-chain-convergence-mechanisms.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/categorical-chain-convergence-mechanisms.lean"
+  },
+  "source_hashes": {
+    "md": "312f6d6abf99",
+    "ts": "6b9614c81a55",
+    "lean": "900c4e6f1d8b"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "312f6d6abf99",
+          "ts": "6b9614c81a55",
+          "lean": "900c4e6f1d8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

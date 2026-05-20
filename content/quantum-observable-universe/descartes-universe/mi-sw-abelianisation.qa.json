@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:mi-sw-abelianisation",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/mi-sw-abelianisation.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/mi-sw-abelianisation.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/mi-sw-abelianisation.lean"
+  },
+  "source_hashes": {
+    "md": "000f295e1759",
+    "ts": "5ff5a6da4937",
+    "lean": "c30c47c0c85c"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "c30c47c0c85c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:mass-from-generators",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/mass-from-generators.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/mass-from-generators.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/mass-from-generators.lean"
+  },
+  "source_hashes": {
+    "md": "a74423f10840",
+    "ts": "432b0012ce2a",
+    "lean": "f4b3d2568753"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a74423f10840",
+          "ts": "432b0012ce2a",
+          "lean": "f4b3d2568753"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

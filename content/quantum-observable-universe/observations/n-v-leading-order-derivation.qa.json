@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:n-v-leading-order-derivation",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts",
+    "md": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.md",
+    "lean": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean"
+  },
+  "source_hashes": {
+    "md": "2a16e231b8a6",
+    "ts": "9770bf45270b",
+    "lean": "9006458d3fcc"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "2a16e231b8a6",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

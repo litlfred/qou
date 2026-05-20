@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:hecke-anyonic-substrate",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/hecke-anyonic-substrate.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/hecke-anyonic-substrate.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/hecke-anyonic-substrate.lean"
+  },
+  "source_hashes": {
+    "md": "83d7a1956182",
+    "ts": "26ba1820aa1e",
+    "lean": "b7549d4f0203"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "83d7a1956182",
+          "ts": "26ba1820aa1e",
+          "lean": "b7549d4f0203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

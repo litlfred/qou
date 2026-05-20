@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:local-q-zeta-function",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/q-geometric-langlands/local-q-zeta-function.ts",
+    "md": "content/quantum-observable-universe/q-geometric-langlands/local-q-zeta-function.md",
+    "lean": "content/quantum-observable-universe/q-geometric-langlands/local-q-zeta-function.lean"
+  },
+  "source_hashes": {
+    "md": "b65e5ef34b2a",
+    "ts": "fdcfb757be15",
+    "lean": "71b1476cbff4"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "b65e5ef34b2a",
+          "ts": "fdcfb757be15",
+          "lean": "71b1476cbff4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

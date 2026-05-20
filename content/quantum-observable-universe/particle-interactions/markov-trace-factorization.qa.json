@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:markov-trace-factorization",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/particle-interactions/markov-trace-factorization.ts",
+    "md": "content/quantum-observable-universe/particle-interactions/markov-trace-factorization.md",
+    "lean": "content/quantum-observable-universe/particle-interactions/markov-trace-factorization.lean"
+  },
+  "source_hashes": {
+    "md": "9c4bfd80210f",
+    "ts": "7117ae69fca0",
+    "lean": "924e31582bc3"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "9c4bfd80210f",
+          "ts": "7117ae69fca0",
+          "lean": "924e31582bc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:cmb-boundary-datum",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.ts",
+    "md": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.md",
+    "lean": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean"
+  },
+  "source_hashes": {
+    "md": "167502985566",
+    "ts": "8bab424dc206",
+    "lean": "b1e8f63c9bb2"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "167502985566",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

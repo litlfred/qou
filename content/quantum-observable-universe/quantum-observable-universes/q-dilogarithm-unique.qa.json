@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:q-dilogarithm-unique",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.lean"
+  },
+  "source_hashes": {
+    "md": "cc16be183ae9",
+    "ts": "d201c6c66c52",
+    "lean": "e542c20aab4b"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "cc16be183ae9",
+          "ts": "d201c6c66c52",
+          "lean": "e542c20aab4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

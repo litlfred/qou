@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "sec:nuclear-binding-beta-stability-intro",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/nuclear-binding-beta-stability-intro.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/nuclear-binding-beta-stability-intro.md"
+  },
+  "source_hashes": {
+    "md": "d41474b622f0",
+    "ts": "8cc29cbd2ba6"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "d41474b622f0",
+          "ts": "8cc29cbd2ba6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

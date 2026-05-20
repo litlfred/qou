@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:aeon-boundary-generates-chart",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts",
+    "md": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.md",
+    "lean": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean"
+  },
+  "source_hashes": {
+    "md": "a8b3cf137d00",
+    "ts": "6e81614213c8",
+    "lean": "0d69c2305d24"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "6e81614213c8",
+          "lean": "0d69c2305d24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

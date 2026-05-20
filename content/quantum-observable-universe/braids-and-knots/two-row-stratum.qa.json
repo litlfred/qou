@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:two-row-stratum",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/two-row-stratum.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/two-row-stratum.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/two-row-stratum.lean"
+  },
+  "source_hashes": {
+    "md": "c68489859203",
+    "ts": "e71be028c046",
+    "lean": "b1bcae848e7f"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "c68489859203",
+          "ts": "e71be028c046",
+          "lean": "b1bcae848e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

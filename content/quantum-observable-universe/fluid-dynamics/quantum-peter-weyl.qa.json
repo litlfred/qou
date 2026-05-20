@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:quantum-peter-weyl",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts",
+    "md": "content/quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.md",
+    "lean": "content/quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.lean"
+  },
+  "source_hashes": {
+    "md": "deabad5ae7d5",
+    "ts": "842e9c9cc6b2",
+    "lean": "ad0707bf8c10"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "deabad5ae7d5",
+          "ts": "842e9c9cc6b2",
+          "lean": "ad0707bf8c10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

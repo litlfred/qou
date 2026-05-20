@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:q-hecke-operator",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/q-geometric-langlands/q-hecke-operator.ts",
+    "md": "content/quantum-observable-universe/q-geometric-langlands/q-hecke-operator.md",
+    "lean": "content/quantum-observable-universe/q-geometric-langlands/q-hecke-operator.lean"
+  },
+  "source_hashes": {
+    "md": "1995d8e9916b",
+    "ts": "18e5068c0e31",
+    "lean": "e22918302c54"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "1995d8e9916b",
+          "ts": "18e5068c0e31",
+          "lean": "e22918302c54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

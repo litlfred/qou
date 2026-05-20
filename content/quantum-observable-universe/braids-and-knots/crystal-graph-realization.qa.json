@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:crystal-graph-realization",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/crystal-graph-realization.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/crystal-graph-realization.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/crystal-graph-realization.lean"
+  },
+  "source_hashes": {
+    "md": "58d85e17a689",
+    "ts": "6f5722acaabd",
+    "lean": "30b952e3b686"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "58d85e17a689",
+          "ts": "6f5722acaabd",
+          "lean": "30b952e3b686"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

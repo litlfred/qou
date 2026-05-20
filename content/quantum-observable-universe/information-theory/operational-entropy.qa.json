@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:operational-entropy",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/information-theory/operational-entropy.ts",
+    "md": "content/quantum-observable-universe/information-theory/operational-entropy.md",
+    "lean": "content/quantum-observable-universe/information-theory/operational-entropy.lean"
+  },
+  "source_hashes": {
+    "md": "10b7c4fefd8d",
+    "ts": "2fd5d03865fc",
+    "lean": "652e6fffbc1a"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "10b7c4fefd8d",
+          "ts": "2fd5d03865fc",
+          "lean": "652e6fffbc1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

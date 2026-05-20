@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:volume-from-rigidity",
+  "kind": "proof",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity-proof.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity-proof.md"
+  },
+  "source_hashes": {
+    "md": "a0e60decfc0f",
+    "ts": "d18205ec780c"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a0e60decfc0f",
+          "ts": "d18205ec780c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

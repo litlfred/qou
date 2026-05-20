@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:knot-particle-correspondence",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/knot-particle-correspondence.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/knot-particle-correspondence.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/knot-particle-correspondence.lean"
+  },
+  "source_hashes": {
+    "md": "934eb4316266",
+    "ts": "9f47cd75af28",
+    "lean": "94f1222be99a"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "934eb4316266",
+          "ts": "9f47cd75af28",
+          "lean": "94f1222be99a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

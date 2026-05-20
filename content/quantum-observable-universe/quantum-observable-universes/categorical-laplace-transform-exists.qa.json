@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:categorical-laplace-exists",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean"
+  },
+  "source_hashes": {
+    "md": "242c9ea713d2",
+    "ts": "081ee9db7897",
+    "lean": "32b36ba5b5dc"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "242c9ea713d2",
+          "ts": "081ee9db7897",
+          "lean": "32b36ba5b5dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

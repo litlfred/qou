@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:brings-smoothness-resolution",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/brings-smoothness-resolution.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/brings-smoothness-resolution.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/brings-smoothness-resolution.lean"
+  },
+  "source_hashes": {
+    "md": "4f2af8ddf70b",
+    "ts": "a85416f15d99",
+    "lean": "6f7eb0a205d2"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "4f2af8ddf70b",
+          "ts": "a85416f15d99",
+          "lean": "6f7eb0a205d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

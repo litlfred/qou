@@ -1,0 +1,37 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:quantum-gap-collapse",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/quantum-gap-collapse.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/quantum-gap-collapse.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/quantum-gap-collapse.lean"
+  },
+  "source_hashes": {
+    "md": "00d75d768d95",
+    "ts": "645c253fbdcb",
+    "lean": "f6cfd199f3bf"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "00d75d768d95",
+          "ts": "645c253fbdcb",
+          "lean": "f6cfd199f3bf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-gap-collapse.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}
