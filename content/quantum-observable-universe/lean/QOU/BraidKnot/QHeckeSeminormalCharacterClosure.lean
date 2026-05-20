@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # Partition-sum form of tr_M agrees with canonical Markov-axiom reducer
 
