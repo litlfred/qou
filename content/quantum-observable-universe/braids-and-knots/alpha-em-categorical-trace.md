@@ -67,7 +67,7 @@ until each factor is structurally derived.*
 
 **Numerical witness.**
 [`folio-assistant/computations/alpha_em_q9_q10_derivation.py`](#)
-evaluates the formula at $q_0 \approx 1.10998$ and reports
+evaluates the formula at $q_0 = 1.109978595554181\ldots$ (50 dps) and reports
 $1/\alpha_{EM}^{\mathrm{predicted}} = 137.035998166$ vs CODATA
 $137.035999084 \pm 2.1\times 10^{-8}$, residue $6.7 \times 10^{-9}$.
 PSLQ uniqueness over $\{q^k, [k]_q, \hbar_q^k\}_{k \leq 10}$ at 1000-dps

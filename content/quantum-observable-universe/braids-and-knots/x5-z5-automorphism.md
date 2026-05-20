@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition.**
 Let $\mathcal{X}_5 \colon y^2 = x^5 - 1$ be the hyperelliptic quintic
 of Definition [def:hyperelliptic-quintic](#def:hyperelliptic-quintic).

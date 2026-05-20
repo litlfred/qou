@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:unstable-atom-decay-channel",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.lean"
+  },
+  "source_hashes": {
+    "md": "cd0ae66f8d1c",
+    "ts": "6e21abfe8217",
+    "lean": "2cb43910c631"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "cd0ae66f8d1c",
+          "ts": "6e21abfe8217",
+          "lean": "2cb43910c631"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

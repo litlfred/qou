@@ -23,8 +23,14 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:qou-infra-discharges-goncharov-zeta5`](../../../quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.md). -/
 class QouInfraDischargesGoncharovZeta5 where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      **Conjecture (QOU's Hecke-NF + Bring-$S_5$ infrastructure
+discharges Goncharov's depth-3 conjecture at $F = \mathbb{Q}(\zeta_5)$).**
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

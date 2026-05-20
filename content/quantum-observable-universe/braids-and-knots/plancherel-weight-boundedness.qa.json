@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:plancherel-weight-boundedness",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.lean"
+  },
+  "source_hashes": {
+    "md": "a7c4ec80352c",
+    "ts": "c2ed67fb7da8",
+    "lean": "091b732d85d3"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a7c4ec80352c",
+          "ts": "c2ed67fb7da8",
+          "lean": "091b732d85d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

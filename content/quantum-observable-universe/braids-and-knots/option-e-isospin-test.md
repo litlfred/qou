@@ -19,7 +19,7 @@ $$
 $$
 
 (Macdonald hook-content closed form), evaluated at the substrate
-$q_0 \approx 1.10998$.  This is the structural Kashiwara weight on
+$q_0 = 1.109978595554181\ldots$ (50 dps).  This is the structural Kashiwara weight on
 the symmetric crystal $B(\lambda, n)$, equal at $q \to 1$ to the
 Weyl dimension $\dim V_\lambda = |B(\lambda, n)|$.
 

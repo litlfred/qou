@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T15:20:20.946883+00:00",
-  "commitSha": "85de84926db280c0a76346593b2f43816a104571",
+  "computedAt": "2026-05-20T00:55:10.328755+00:00",
+  "commitSha": "adb0b5e4980b4ab4c31bcd0348f40a03aed8c074",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 615,
+    "files_scanned": 644,
     "patterns": [
       "P15",
       "P16",
@@ -24,10 +24,10 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 173,
+      "P15": 174,
       "P16": 164,
       "P21": 32,
-      "P30": 95,
+      "P30": 93,
       "P31": 25
     },
     "top_files": [
@@ -507,13 +507,6 @@
       },
       {
         "pattern": "P30",
-        "file": "cross_check_trM_1ppb.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
         "file": "crt_markov.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -539,6 +532,13 @@
         "line": 90,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P15",
+        "file": "delta_lambda_alexander_phase4.py",
+        "line": 160,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P31",
@@ -991,13 +991,6 @@
       {
         "pattern": "P30",
         "file": "habiro_residue_symbolic.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
-        "file": "habiro_witness_validator.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."

@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:dark-vision-strand-bandwidth",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/dark-vision-strand-bandwidth.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/dark-vision-strand-bandwidth.md"
+  },
+  "source_hashes": {
+    "md": "a0df76a04782",
+    "ts": "ee87901aaf1b"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "ee87901aaf1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

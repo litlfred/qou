@@ -23,8 +23,17 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:joint-galois-braid-action`](../../../quantum-observable-universe/braids-and-knots/joint-galois-braid-action.md). -/
 class JointGaloisBraidAction where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration
+([`def:hq-bi-filtration`](#def:hq-bi-filtration)). Two groups act
+on it by symmetry:*
+
+- *the
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

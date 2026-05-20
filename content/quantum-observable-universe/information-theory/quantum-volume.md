@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 and $\mathcal{S} \to M$ the state bundle with Reeb bundle
 $S^3 \to \mathcal{S}_p$ at each brane point $p$

@@ -72,7 +72,7 @@ this is $1.4371 \times 10^6$ vs the CODATA-derived
 $N_v = 1.4455 \times 10^6$ (residual $-0.58\%$).  $\square$ modulo
 the upstream conjectures.*
 
-*Numerical sanity check at $q_0 \approx 1.10998$:
+*Numerical sanity check at $q_0 = 1.109978595554181\ldots$ (50 dps):
 $v / m_e \approx 481\,839$, $q_0^{90} \approx 12\,012$, ratio
 $\approx 40.11$, so $\varepsilon \approx 0.003 < 0.006$. ✓*
 

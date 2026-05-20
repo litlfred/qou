@@ -187,6 +187,16 @@ export default chapter({
         "reeb-exceptional-divisor",
         "vertex-operator",
         "vertex-operator-dictionary",
+        // ── Reeb-flow dynamics + six S₃ operators (Commit 1) ───────
+        "q-reeb-flow-on-coral-coords",
+        "six-canonical-knot-operators",
+        "garside-as-compound-flow",
+        "garside-flow-explicit-closed-form",
+        // ── Boundary disc fusion + complement=volume (Commit 2) ─────
+        "ramified-disc-fusion",
+        "reeb-bundle-complement-equals-volume",
+        "torus-knot-zero-volume-via-reeb",
+        "hyperbolic-knot-positive-volume-via-reeb",
       ],
     }),
 
@@ -198,6 +208,10 @@ export default chapter({
         "vertex-factorisation-intro",
         "vertex-is-exceptional-divisor",
         "vertex-is-exceptional-divisor-proof",
+        // Bridge from the six-canonical-knot-operators table
+        // (sec:exceptional-divisor-reeb) into the vertex-
+        // factorisation specialisation.
+        "six-operators-via-vertex-factorisation",
         // Photon polarisation states as Hecke generators on the exceptional divisor
         "breit-wheeler-vertex",
         // Literature alignment: Bilson--Thompson preons, Hecke parity, photonic hopfions
@@ -443,6 +457,10 @@ export default chapter({
       label: "sec:markov-axioms-braid-link",
       blocks: [
         "q-beta-categorical-precision-ladder",
+        "bar-involution",
+        "li2q-phiq-bar-symmetrization",
+        "c5-involution-leibniz-decomposition",
+        "bar-symmetric-three-layer-synthesis",
         "markov-axioms-primitive",
         "markov-trace-inductive-limit",
         "braid-link-types",
@@ -740,6 +758,7 @@ export default chapter({
         "lp-dual-scaling-conjecture",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
+        "mass-tower-operator-valued",
         "mass-endomorphism-jet-tower",
       ],
     }),
@@ -876,6 +895,7 @@ export default chapter({
         "alpha-k-derivation-procedure",
         "alpha-k-categorical-closure",
         "chi-lambda-w0-sign-weighting",
+        "averaging-resonance-rule",
         "atom-knot-mass-derivation",
         "atom-knot-mass-derivation-proof",
         "joint-tower-sdp-confinement",
@@ -896,6 +916,8 @@ export default chapter({
         "macdonald-hook-telescope",
         "demazure-fiber-markov-trace",
         "wenzl-bridge-applicability-qou",
+        "lr-tensor-character-bridge",
+        "wenzl-qmn-synergy",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
         "wedderburn-bratteli-recursion",

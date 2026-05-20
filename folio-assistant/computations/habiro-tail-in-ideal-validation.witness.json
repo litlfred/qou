@@ -1,5 +1,15 @@
 {
+  "engine": "sympy.div over ZZ[u]",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-20T00:22:44.579917+00:00",
+  "commitSha": "94f35e7c0bef41627c8c28c7a3abcff3833aedd6",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "habiro-tail-in-ideal-validation",
+  "scriptFile": "habiro_witness_validator.py",
+  "scriptHash": "1806168ee926",
+  "scriptCommitSha": "398fa59d1a8e1cf408dbb1368a57cdcaee1a32e0",
   "description": "Certifies the Lean axiom HabiroCompletion.tail_in_ideal on the witnesses produced by habiro_coefficients_atomic.py: for every atom and every truncation order N, the residual p(u) − Σ_{m<N} a_m(u) · (u;u)_m is exactly divisible by (u;u)_N in ℤ[u].",
   "reference_blocks": [
     "prop:full-pole-structure-mass-trace",
@@ -7,8 +17,6 @@
   ],
   "lean_axiom": "qou:QOU.BraidKnot.HabiroCompletion.tail_in_ideal",
   "input_witness": "habiro-coefficients-atomic.witness.json",
-  "computedAt": "2026-05-19T01:20:23.568229+00:00",
-  "engine": "sympy.div over ZZ[u]",
   "overall_pass": true,
   "results": [
     {
@@ -286,7 +294,5 @@
         }
       ]
     }
-  ],
-  "scriptFile": "habiro_witness_validator.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  ]
 }

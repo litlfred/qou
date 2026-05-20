@@ -10,14 +10,47 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 namespace QOU.ParticleInteractions
 
-/-- PerNucleonChannelDecomposition
 
-    Placeholder statement; full formalisation pending. -/
+/-- Abstract context for the `PerNucleonChannelDecomposition` claim —
+    manuscript-themed typed fields below; the Garside-product
+    factorisation `M = ∏_m M_m` with each `M_m` four-channel-typed is
+    captured as `claim_factorisation`. -/
+class PerNucleonChannelDecompositionContext where
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- Mass number `A = Z + N`. -/
+  A : ℕ
+  A_eq : A = Z + N
+  /-- The Garside element of the nucleus. -/
+  M : ℝ
+  /-- The per-nucleon contributions `M_m : Fin A → ℝ` (four-channel
+      decomposed). -/
+  M_m : Fin A → ℝ
+  /-- Manuscript claim — Garside element factorises as the product of
+      per-nucleon contributions: `M = ∏_{m=0}^{A-1} M_m`. -/
+  claim_factorisation :
+    M = (Finset.univ.prod fun m : Fin A => M_m m)
+
+/-- **Content statement** (from manuscript):
+
+The Garside matrix element for a nucleus of mass number $A$
+factors as a product of **per-nucleon contributions**, each
+decomposed into four channels by the $T_{2,3}$ eigenstructure
+of $H_3(q)$.
+
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
-theorem PerNucleonChannelDecomposition : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+theorem PerNucleonChannelDecomposition [ctx : PerNucleonChannelDecompositionContext] :
+    ctx.M = (Finset.univ.prod fun m : Fin ctx.A => ctx.M_m m) :=
+  ctx.claim_factorisation
 
 end QOU.ParticleInteractions

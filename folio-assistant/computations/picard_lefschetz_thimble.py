@@ -970,7 +970,7 @@ def main():
         "intersection numbers, SW period integrals (single-root and "
         "simultaneous 3-root prescriptions)."
     )
-    w.set_content_block("def:picard-lefschetz-thimble")
+    w.set_content_block("rem:picard-lefschetz-thimble")
     w.add_parameter("q0", str(q0))
     w.add_parameter("z0", str(z0))
     w.add_parameter("hbar_q_sq", str(HBAR_Q_SQ))

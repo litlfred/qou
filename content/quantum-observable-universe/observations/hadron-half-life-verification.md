@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 We verify the half-life framework
 ([hadron half-life](#prop:hadron-half-life)) against measured
 beta-decay lifetimes for representative nuclei spanning the periodic

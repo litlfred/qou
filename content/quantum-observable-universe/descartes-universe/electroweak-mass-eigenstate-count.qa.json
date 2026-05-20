@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:electroweak-mass-eigenstate-count",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/electroweak-mass-eigenstate-count.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/electroweak-mass-eigenstate-count.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/electroweak-mass-eigenstate-count.lean"
+  },
+  "source_hashes": {
+    "md": "c0df3ac4c4f7",
+    "ts": "94a2d779c5fa",
+    "lean": "6613e554c489"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "c0df3ac4c4f7",
+          "ts": "94a2d779c5fa",
+          "lean": "6613e554c489"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Beta decay is mediated by the $T_{3,5}$ torus knot with $10$
 crossings ([beta decay](#def:beta-decay-skein)).  The $T_{3,5}$
 insertion at the converting quark produces a **universal** 2×2

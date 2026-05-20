@@ -43,6 +43,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord  # noqa: E402
 
 
+def _git_head_sha() -> str:
+    """Return the current `git rev-parse HEAD`, or 'unknown' if unavailable."""
+    import subprocess
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=Path(__file__).parent,
+            stderr=subprocess.DEVNULL,
+        ).decode().strip()
+    except Exception:
+        return "unknown"
+
+
 HERE = Path(__file__).parent
 INPUT_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
 OUTPUT_WITNESS = HERE / "habiro-tail-in-ideal-validation.witness.json"
@@ -162,10 +175,10 @@ def main() -> int:
         ],
         "lean_axiom": "qou:QOU.BraidKnot.HabiroCompletion.tail_in_ideal",
         "input_witness": INPUT_WITNESS.name,
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "engine": "sympy.div over ZZ[u]",
         "overall_pass": overall_pass,
         "results": per_atom_results,
+        "scriptFile": "habiro_witness_validator.py",
+        "commitSha": _git_head_sha(),
     }
     # polynomial_q_not_applicable: validator emits boolean divisibility /
     # exact-reconstruction checks over ZZ[u], not a polynomial-in-q form.
@@ -175,9 +188,19 @@ def main() -> int:
     # the witness JSON itself (which is bit-checked by CI drift
     # detection in .github/workflows/witness-pipeline.yml).
 
-    with OUTPUT_WITNESS.open("w") as f:
-        json.dump(output, f, indent=2)
-        f.write("\n")
+    # Migrated to WitnessBuilder.wrap_legacy per repo-wide provenance
+    # convention (Copilot review on PR #819): preserves the legacy
+    # payload keys verbatim while emitting `scriptFile`, `scriptHash`,
+    # `scriptCommitSha`, `commitSha`, `computedAt`, `durationMs`,
+    # `engineVersion` for run_pipeline.py's staleness detection (P30).
+    from witness_base import WitnessBuilder
+    builder = WitnessBuilder.wrap_legacy(
+        name="habiro-tail-in-ideal-validation",
+        payload=output,
+        script_path=__file__,
+        engine="sympy.div over ZZ[u]",
+    )
+    builder.save()
 
     # Console summary
     status = "PASS" if overall_pass else "FAIL"

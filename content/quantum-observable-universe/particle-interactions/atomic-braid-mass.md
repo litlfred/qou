@@ -199,7 +199,7 @@ $\beta_3 = (q - q^{-1})^2$ (derived; the
 Both weights are determined by substrate constants — neither is
 fitted.  This effective formula achieves $0.074\%$ mean error,
 compared to $0.146\%$ for the exact additive formula.  Evaluating
-$(q - q^{-1})^2$ at $q_0 \approx 1.10998$ gives
+$(q - q^{-1})^2$ at $q_0 = 1.109978595554181\ldots$ (50 dps) gives
 $\beta_3 \approx 0.0437$; the closed-form expression corresponds
 to $\mathcal{B}_3$ dressing of hydrogen and ordering effects in
 heavy nuclei.*

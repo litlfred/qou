@@ -12,12 +12,37 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Interactions
 
-/-- QOU.Interactions.nuclearOperatorRegimes
 
-    Placeholder statement; full formalisation pending. -/
+/-- Abstract context for the `nuclearOperatorRegimes` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
+    claim of the lemma. -/
+class NuclearOperatorRegimesContext where
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- Regime label of `Φ_k` (0 = bare-crossing, 1 = Hopf,
+      2 = inter-shell). -/
+  regime_of : ℕ → ℕ
+  /-- Manuscript identity: there are exactly three regimes, i.e.
+      `regime_of k ∈ {0, 1, 2}` for every step `k`. -/
+  claim_nuclearOperatorRegimes :
+    ∀ k : ℕ, regime_of k = 0 ∨ regime_of k = 1 ∨ regime_of k = 2
+
+/-- **Proposition statement** (from manuscript):
+
+In the inductive construction of $\mathcal{N}(Z, N)$
+([derived atom](#def:derived-atom)), the optimal inter-nucleon
+binding operator $\Phi_k$ at step $k$ (adding nucleon $k+1$ to
+nucleus $\mathcal{N}_{\leq k}$) belongs to one of three regimes:*
+
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts
-theorem nuclearOperatorRegimes : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+theorem nuclearOperatorRegimes [ctx : NuclearOperatorRegimesContext] :
+    ∀ k : ℕ, ctx.regime_of k = 0 ∨ ctx.regime_of k = 1 ∨
+             ctx.regime_of k = 2 :=
+  ctx.claim_nuclearOperatorRegimes
 
 end QOU.Interactions

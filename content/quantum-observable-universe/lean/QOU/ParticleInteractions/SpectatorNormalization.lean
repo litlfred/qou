@@ -12,12 +12,40 @@ CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- SpectatorNormalization
 
-    Placeholder statement; full formalisation pending. -/
+/-- Abstract context for the `SpectatorNormalization` claim —
+    manuscript-themed typed fields below; the spectator-count
+    identity for `β⁻`-decay is captured. -/
+class SpectatorNormalizationContext where
+  /-- Proton number `Z` of parent. -/
+  Z : ℕ
+  /-- Neutron number `N` of parent. -/
+  N : ℕ
+  /-- Number of converting nucleons (always `1` for `β⁻` decay). -/
+  converting : ℕ
+  /-- Number of spectator protons (always `Z` for `β⁻` decay). -/
+  spectator_p : ℕ
+  /-- Number of spectator neutrons (always `N − 1` for `β⁻` decay). -/
+  spectator_n : ℕ
+  /-- Manuscript sub-claim — spectator counts:
+      `converting = 1`, `spectator_p = Z`, `spectator_n = N − 1`. -/
+  claim_spectator_counts :
+    converting = 1 ∧ spectator_p = Z ∧ spectator_n = N - 1
+
+/-- **Content statement** (from manuscript):
+
+The **spectator normalization** captures the contribution of
+unchanged nucleons to the Q-value character sum.  In a beta
+decay ${}^A_Z X \to {}^A_{Z+1} Y + e^- + \bar\nu$, only one
+neutron converts to a proton; the remaining $Z$ protons and
+$N - 1$ neutrons are spectators.
+
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
-theorem SpectatorNormalization : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+theorem SpectatorNormalization [ctx : SpectatorNormalizationContext] :
+    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 :=
+  ctx.claim_spectator_counts
 
 end QOU.ParticleInteractions

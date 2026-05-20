@@ -23,8 +23,18 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:archimedean-stpart`](../../../quantum-observable-universe/appendix-surreals/archimedean-stpart.md). -/
 class ArchimedeanStpart where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      A QOU is an archimedean tuple
+$(\mathbf{C}, \varTheta, G, \mathcal{S})$
+([quantum observable universe](#def:quantum-observable-universe))
+in the main paper: the categorical algebra $\mathbf{C}$ is
+$K$-linear with $K = \mathbb{R}$ implicit, the gauge group $G$ is
+a real Lie group, and $\mathcal{S}$ is a real vector bundle.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

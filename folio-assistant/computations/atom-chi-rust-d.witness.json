@@ -1,0 +1,255 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T15:38:55.185478+00:00",
+  "commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+  "assertions": [
+    {
+      "name": "rust_kernel_loaded",
+      "computed": 11.0,
+      "expected": 11,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "partition count",
+      "source": "pyhecke_native.partitions_of(3A)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "atom-chi-rust-d",
+  "scriptFile": "compute_atom_chi_rust.py",
+  "scriptHash": "e51dee18cd20",
+  "scriptCommitSha": "unknown",
+  "description": "Full H_6 chi^λ(β_K) via Rust geck_pfeiffer + Hoefsmit seminormal kernel (cherry-picked from PR #761). Both atom (include_inter=True) and free (include_inter=False) configs for D (Z=1, N=1). f64 precision; for MPFR upgrade extend pyhecke_native.chi_q_atomic to chi_q_atomic_mpfr.",
+  "data": {
+    "atom": {
+      "n_strands": 6,
+      "n_partitions": 11,
+      "by_partition": [
+        {
+          "partition": [
+            6
+          ],
+          "dim": -1,
+          "chi_lambda": 1.5597587394180765
+        },
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 3.215891433938714
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 1.6737481247387076
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.4701914800047208
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "dim": -1,
+          "chi_lambda": 4.249070292623654
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -1.9728210551001402
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.48998813829170557
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": -3.497564665288437
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.8197159558910508
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 2.1554159875264443
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.6769250645272101
+        }
+      ],
+      "compute_time_sec": 0.0001747608184814453,
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "include_inter": true,
+      "q_0_f64": 1.1099785955541805,
+      "engine": "pyhecke_native.chi_q_atomic (Rust, f64)"
+    },
+    "free": {
+      "n_strands": 6,
+      "n_partitions": 11,
+      "by_partition": [
+        {
+          "partition": [
+            6
+          ],
+          "dim": -1,
+          "chi_lambda": 1.5513065472142573
+        },
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 5.931212307492659
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 9.00591472891678
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 5.365996631228813
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "dim": -1,
+          "chi_lambda": 4.626008968638377
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 7.625585650335613
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -1.9176340818406135
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 3.7479592899615444
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 0.844234337170524
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -2.2304680842535958
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 0.6732568685374246
+        }
+      ],
+      "compute_time_sec": 0.00010895729064941406,
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "include_inter": false,
+      "q_0_f64": 1.1099785955541805,
+      "engine": "pyhecke_native.chi_q_atomic (Rust, f64)"
+    },
+    "canonical_status": "canonical-with-empirical-assignment"
+  }
+}

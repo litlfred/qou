@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:q-gl-fiber-functor",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts",
+    "md": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.md",
+    "lean": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.lean"
+  },
+  "source_hashes": {
+    "md": "a969a053d40d",
+    "ts": "64cc48f765c5",
+    "lean": "9d21e5e34978"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a969a053d40d",
+          "ts": "64cc48f765c5",
+          "lean": "9d21e5e34978"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

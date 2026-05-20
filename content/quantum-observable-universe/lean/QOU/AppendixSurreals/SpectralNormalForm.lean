@@ -23,8 +23,18 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:spectral-normal-form`](../../../quantum-observable-universe/appendix-surreals/spectral-normal-form.md). -/
 class SpectralNormalForm where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      Under the surreal lift $q = 1 + \varepsilon$
+([Hahn substrate](#conj:hahn-substrate)), every spectral operator
+$O_q$ of the main paper (Hecke generators, transfer matrices, $q$-
+Hamiltonians, Feynman integrals, vortex operators) has eigenvalues
+$\lambda_i(q)$ that are rational in $\varepsilon$, hence elements
+of the valuation ring $\mathcal{O}$.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

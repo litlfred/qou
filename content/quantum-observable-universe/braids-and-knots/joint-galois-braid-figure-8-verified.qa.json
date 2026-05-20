@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:joint-galois-braid-figure-8-verified",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/joint-galois-braid-figure-8-verified.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/joint-galois-braid-figure-8-verified.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/joint-galois-braid-figure-8-verified.lean"
+  },
+  "source_hashes": {
+    "md": "ed1c591c95a0",
+    "ts": "313f322d7043",
+    "lean": "27415da62d09"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ed1c591c95a0",
+          "ts": "313f322d7043",
+          "lean": "27415da62d09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

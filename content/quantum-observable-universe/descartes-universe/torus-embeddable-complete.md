@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The generator set $\mathcal{G}$
 ([finiteness of generators](#prop:torus-knot-generators)) is not merely
 a convenient choice — it is the *complete* list of torus knots

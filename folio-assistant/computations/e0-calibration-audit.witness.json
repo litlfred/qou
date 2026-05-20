@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-19T07:16:29.360524+00:00",
+  "computedAt": "2026-05-20T00:55:12.393512+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -26,7 +26,7 @@
     "literal_0_782": [
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 52,
+        "line": 62,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "(vs CODATA 0.782; 0.75% err)",
@@ -34,7 +34,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 463,
+        "line": 473,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
@@ -351,6 +351,62 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "line": 83,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "from mass_at_3A_proper import E_0_CALIBRATION_MEV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "line": 280,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "B_MeV = mp.mpf(str(E_0_CALIBRATION_MEV)) * B_dim",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "line": 306,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "builder.add_parameter(\"Q_beta_CAL3_MeV\", str(E_0_CALIBRATION_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "line": 345,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "B_first_order *= mp.mpf(str(E_0_CALIBRATION_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_depth_stratified.py",
+        "line": 73,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_CALIBRATION_MEV)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_depth_stratified_lr.py",
+        "line": 47,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "from mass_at_3A_proper import dim_q, qfac, E_0_CALIBRATION_MEV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_depth_stratified_rust.py",
+        "line": 44,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "from mass_at_3A_proper import dim_q, qfac, E_0_CALIBRATION_MEV",
+        "kind": "active"
+      },
+      {
         "file": "folio-assistant/computations/binding_via_interface_knot.py",
         "line": 70,
         "pattern": "E_0_CALIBRATION_MEV",
@@ -360,7 +416,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_via_interface_knot.py",
-        "line": 141,
+        "line": 173,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "builder.add_parameter(\"Q_beta_CAL3_MeV\", str(E_0_CALIBRATION_MEV))",
@@ -368,10 +424,18 @@
       },
       {
         "file": "folio-assistant/computations/binding_via_interface_knot.py",
-        "line": 189,
+        "line": 238,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "B_MeV1 = mp.mpf(str(E_0_CALIBRATION_MEV)) * B_dim1",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_via_interface_knot.py",
+        "line": 241,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "B_MeV_full = mp.mpf(str(E_0_CALIBRATION_MEV)) * B_dim_full",
         "kind": "active"
       },
       {
@@ -674,7 +738,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 124,
+        "line": 134,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)",
@@ -682,7 +746,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 503,
+        "line": 513,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"CAL-3_Q_beta_MeV\": str(Q_BETA_MEV) + \" (cross-check only; predicted by framework below)\",",
@@ -902,6 +966,22 @@
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "w.add_parameter(\"Q_beta_codata\", str(float(Q_BETA_MEV)))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_fsc_g_pattern_comparison.py",
+        "line": 43,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_fsc_g_pattern_comparison.py",
+        "line": 83,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_beta = mpf(str(Q_BETA_MEV))",
         "kind": "active"
       }
     ],

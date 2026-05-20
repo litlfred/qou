@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:graded-markov-trace-from-gs-filtration",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.lean"
+  },
+  "source_hashes": {
+    "md": "c9f260ff2814",
+    "ts": "3b3765f156be",
+    "lean": "2ed147cf76ca"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "c9f260ff2814",
+          "ts": "3b3765f156be",
+          "lean": "2ed147cf76ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

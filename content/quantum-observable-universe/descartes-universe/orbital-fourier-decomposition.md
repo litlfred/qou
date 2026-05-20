@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition.**
 Let $\varrho: S^1 \hookrightarrow \Sigma_4$ be the trefoil
 $T_{2,3}$ embedded in the Bring's surface, and let

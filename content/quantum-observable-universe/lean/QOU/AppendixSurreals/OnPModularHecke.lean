@@ -23,8 +23,17 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:on-p-modular-hecke`](../../../quantum-observable-universe/appendix-surreals/on-p-modular-hecke.md). -/
 class OnPModularHecke where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      [Hoefsmit-is-surreal-construction](#prop:hoefsmit-is-surreal-construction)
+identifies the binary $\{L \mid R\}$ split at each Hecke
+eigenchannel step with Conway's recursive surreal
+construction. This works because the Hecke generator $\sigma$ has
+exactly **two** eigenvalues at generic $q$.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

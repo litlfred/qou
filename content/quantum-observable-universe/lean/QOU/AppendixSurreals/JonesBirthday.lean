@@ -23,8 +23,18 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:jones-birthday`](../../../quantum-observable-universe/appendix-surreals/jones-birthday.md). -/
 class JonesBirthday where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      The Jones polynomial $J_K(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is the
+Markov trace $\mathrm{tr}_M(\rho_n(\beta))$ of the Hecke
+representation of any braid word $\beta$ whose closure is the
+oriented link $K$. The Markov trace is computed by summing
+contributions from every standard tableau $t$ of every two-rowed
+shape $\lambda \vdash n$.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

@@ -1,4 +1,4 @@
-**Numerical check at $q_0 \approx 1.1097$.**
+**Numerical check at $q_0 = 1.109978595554181\ldots$ (50 dps).**
 The Hoefsmit pipeline
 ([Hoefsmit](#prop:hoefsmit-scattering-pipeline)) computes
 $\chi_\lambda(\beta_s), \chi_\lambda(\beta_w)$ in seminormal form.

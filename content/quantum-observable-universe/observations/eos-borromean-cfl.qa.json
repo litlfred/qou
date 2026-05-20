@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:eos-borromean-cfl",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/eos-borromean-cfl.ts",
+    "md": "content/quantum-observable-universe/observations/eos-borromean-cfl.md",
+    "lean": "content/quantum-observable-universe/observations/eos-borromean-cfl.lean"
+  },
+  "source_hashes": {
+    "md": "ac31180ef67d",
+    "ts": "684aac147a4e",
+    "lean": "53af69498dae"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ac31180ef67d",
+          "ts": "684aac147a4e",
+          "lean": "53af69498dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

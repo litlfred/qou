@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:q-clt-non-commutative",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/q-clt-non-commutative.ts",
+    "md": "content/quantum-observable-universe/observations/q-clt-non-commutative.md",
+    "lean": "content/quantum-observable-universe/observations/q-clt-non-commutative.lean"
+  },
+  "source_hashes": {
+    "md": "6a3629ce8deb",
+    "ts": "f58e9b20baf0",
+    "lean": "967f231c9c00"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "6a3629ce8deb",
+          "ts": "f58e9b20baf0",
+          "lean": "967f231c9c00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

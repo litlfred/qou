@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:F3-eps6-leading-eq-neg-2b-cubed",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/F3-eps6-leading-eq-neg-2b-cubed.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/F3-eps6-leading-eq-neg-2b-cubed.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/F3-eps6-leading-eq-neg-2b-cubed.lean"
+  },
+  "source_hashes": {
+    "md": "303e6d3ea9f2",
+    "ts": "e6ebe40140f8",
+    "lean": "1a667b32dd5f"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "303e6d3ea9f2",
+          "ts": "e6ebe40140f8",
+          "lean": "1a667b32dd5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

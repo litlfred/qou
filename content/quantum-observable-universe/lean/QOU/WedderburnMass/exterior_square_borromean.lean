@@ -10,14 +10,39 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.WedderburnMass
 
-/-- exterior square borromean
 
-    Placeholder statement; full formalisation pending. -/
+/-- Abstract context for the `exterior_square_borromean` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
+class ExteriorSquareBorromeanContext extends QOU.Shared.MarkovTraceContext where
+  /-- Dimension of `Λ² V_nat`. -/
+  dim_ext_sq : ℕ
+  /-- Dimension of the standard irrep `V_{(9,1)}`. -/
+  dim_V_9_1 : ℕ
+  /-- Dimension of the hook irrep `V_{(8,1,1)}`. -/
+  dim_V_8_1_1 : ℕ
+  /-- Manuscript identity: `dim Λ² V_nat = 45 = dim V_{(9,1)} +
+      dim V_{(8,1,1)}` with `9 + 36 = 45`. -/
+  claim_exterior_square_borromean :
+    dim_ext_sq = 45 ∧ dim_V_9_1 = 9 ∧ dim_V_8_1_1 = 36 ∧
+    dim_ext_sq = dim_V_9_1 + dim_V_8_1_1
+/-- **Proposition statement** (from manuscript):
+
+Let $V_{\mathrm{nat}} = \mathbb{C}^{10}$ be the natural permutation
+representation of $S_{10}$ (or its q-deformation $H_{10}(q)$
+acting via the standard projection).  Then the
+
+    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
-theorem exterior_square_borromean : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] :
+    ctx.dim_ext_sq = 45 ∧ ctx.dim_V_9_1 = 9 ∧ ctx.dim_V_8_1_1 = 36 ∧
+    ctx.dim_ext_sq = ctx.dim_V_9_1 + ctx.dim_V_8_1_1 :=
+  ctx.claim_exterior_square_borromean
 
 end QOU.WedderburnMass

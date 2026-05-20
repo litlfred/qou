@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:ch4-lp-dual-binding",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts",
+    "md": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md",
+    "lean": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.lean"
+  },
+  "source_hashes": {
+    "md": "d4f706b70635",
+    "ts": "4d32bd777f35",
+    "lean": "3f1d1d7df241"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "d4f706b70635",
+          "ts": "4d32bd777f35",
+          "lean": "3f1d1d7df241"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

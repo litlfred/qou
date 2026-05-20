@@ -75,7 +75,7 @@ entirely from crossing energy $\mathbf{E}_{\times}(q) =
 linking.  The figure-eight knot ($4_1$) is the unique amphichiral
 knot driving the mass mechanism, with
 $\mathrm{Vol}(4_1) = 2.0299$.  Jones polynomial values at
-$q = q_0 \approx 1.1097$ are listed for the building-block knots
+$q = q_0 = 1.109978595554181\ldots$ (50 dps) are listed for the building-block knots
 ([building-block knots](#rem\:building-block-knots)).
 
 In a bundle initial condition $\mathcal{S}_0$, each entry $(p_i, K_i)$

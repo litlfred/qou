@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:kazhdan-lusztig-classical-limit",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/kazhdan-lusztig-classical-limit.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/kazhdan-lusztig-classical-limit.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/kazhdan-lusztig-classical-limit.lean"
+  },
+  "source_hashes": {
+    "md": "b1e53e3f32d5",
+    "ts": "a59fa287cbe3",
+    "lean": "f005d6606211"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "b1e53e3f32d5",
+          "ts": "a59fa287cbe3",
+          "lean": "f005d6606211"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

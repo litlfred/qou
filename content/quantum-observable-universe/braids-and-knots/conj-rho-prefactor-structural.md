@@ -67,7 +67,7 @@ shapes has not been derived from first principles.
 ## The rounding question
 
 The exact quantum dimension $[2]_{q_0} = q_0 + q_0^{-1} \approx 2.01$
-(with $q_0 \approx 1.1097$), so $\dim_q((2,1)) \approx 2.01$.  The
+(with $q_0 = 1.109978595554181\ldots$ (50 dps)), so $\dim_q((2,1)) \approx 2.01$.  The
 nearest-integer round gives $\rho = 2$, but the proton/neutron uses
 $\rho = 1$.  This suggests the rule may be:
 

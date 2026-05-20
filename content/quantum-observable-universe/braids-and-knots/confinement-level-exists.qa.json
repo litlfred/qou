@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:confinement-level-exists",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/confinement-level-exists.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/confinement-level-exists.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/confinement-level-exists.lean"
+  },
+  "source_hashes": {
+    "md": "50769fe81a58",
+    "ts": "f762eb6b34a2",
+    "lean": "589d54f01934"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "f762eb6b34a2",
+          "lean": "589d54f01934"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -7,7 +7,7 @@ $H_n(R, q)$ at the substrate parameter $q_0$.  The categorical structure
 is fundamental; the physics naming is a derived mapping that depends on
 which value of $q_0$ instantiates the substrate.*
 
-*This table records the current mapping at $q_0 \approx 1.10998$.  At
+*This table records the current mapping at $q_0 = 1.109978595554181\ldots$ (50 dps).  At
 a different substrate value the categorical structures persist but
 their physics interpretations may differ — the recurring sub-blocks
 identified by the discovery cache
@@ -53,7 +53,7 @@ indicate that:*
 
 *The "alpha particle" identification, for instance, requires
 $w_{(3,3,3,3)}(q_0)$ to dominate the depth-3 chirality cells of $H_{12}$
-— at $q_0 \approx 1.10998$ this weight is $\sim 0.024$, the largest
+— at $q_0 = 1.109978595554181\ldots$ (50 dps) this weight is $\sim 0.024$, the largest
 contribution at depth 3.  At $q_0 = 1$ (classical limit), the weight
 becomes the symmetric-group Specht-module dimension squared over
 $12!$, with different ranking — the "alpha particle" identification

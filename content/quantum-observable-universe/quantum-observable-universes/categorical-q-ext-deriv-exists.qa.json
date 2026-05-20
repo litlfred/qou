@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:categorical-q-ext-deriv-exists",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean"
+  },
+  "source_hashes": {
+    "md": "76e11e77f85b",
+    "ts": "6c32f121a0b9",
+    "lean": "c313b014cc03"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "76e11e77f85b",
+          "ts": "6c32f121a0b9",
+          "lean": "c313b014cc03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Hecke mass element
 $\Phi_{\mathrm{mass}}(\beta) \in H_3(R, q)$
 ([Hecke mass element](#def\:hecke-mass-element)) has a
@@ -87,4 +89,4 @@ including the descended part) is only $12\%$ of the total
 mass element norm.
 
 **Witness**: computed from $\mathrm{Li}_2(q^{-2})$ grouping
-at $q_0 = 1.10998$.
+at $q_0 = 1.109978595554181\ldots$ (50 dps).

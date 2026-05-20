@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The particle spectrum is generated from a finite set of torus knot
 *generators* $T_{m,n}$ (with $\gcd(m,n) = 1$) embedded in the
 standard torus $\mathbb{T}^2 \subset S^3$, together with two

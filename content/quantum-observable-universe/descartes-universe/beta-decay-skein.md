@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Beta decay is a $T_{3,5}$-mediated crossing operation involving
 $10$ crossings of the weak vertex
 ([force identification](#rem:force-knot-identification)).**

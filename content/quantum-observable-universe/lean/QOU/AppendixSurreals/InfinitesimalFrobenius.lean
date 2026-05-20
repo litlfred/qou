@@ -23,8 +23,17 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:infinitesimal-frobenius`](../../../quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.md). -/
 class InfinitesimalFrobenius where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      The Frobenius axiom in
+[quantum observable universe](#def:quantum-observable-universe)
+requires the pairing $\int_A \circ \mu : A \otimes A \to \mathbf{1}$
+to induce an isomorphism $A \xrightarrow{\sim} A^{\vee}$ — a
+strict equality. In a surreal QOU, this can be relaxed.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

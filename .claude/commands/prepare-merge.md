@@ -242,6 +242,11 @@ cycle.
   so CI failures and review comments are delivered to this session.
 - Report the PR URL and confirm both review requests posted.
 
+## 7. Merging
+
+- After all review comments are disposed of, resolve conflicts so that a merge can be performed
+- Ask the user if they are ready to proceed with the merge (provide PR # and URL).  If confirmed, perform merge.
+
 ## Failure handling
 
 If any step 1–5 fails and cannot be resolved automatically, **stop**

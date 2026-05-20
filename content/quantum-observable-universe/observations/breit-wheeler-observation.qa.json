@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:breit-wheeler-observation",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/breit-wheeler-observation.ts",
+    "md": "content/quantum-observable-universe/observations/breit-wheeler-observation.md"
+  },
+  "source_hashes": {
+    "md": "b100d83c0b67",
+    "ts": "b71d014279e1"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "b100d83c0b67",
+          "ts": "b71d014279e1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

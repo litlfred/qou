@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:ns-obstruction-tower",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts",
+    "md": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md",
+    "lean": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean"
+  },
+  "source_hashes": {
+    "md": "a40aaed6b019",
+    "ts": "965ea23de38c",
+    "lean": "9f2ceb24a8b8"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a40aaed6b019",
+          "ts": "965ea23de38c",
+          "lean": "9f2ceb24a8b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

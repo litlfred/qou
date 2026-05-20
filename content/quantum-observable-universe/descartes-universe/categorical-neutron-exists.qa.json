@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:categorical-neutron-exists",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/categorical-neutron-exists.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/categorical-neutron-exists.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/categorical-neutron-exists.lean"
+  },
+  "source_hashes": {
+    "md": "ae64a85f3131",
+    "ts": "6f42b5090f09",
+    "lean": "c31d8afe0a20"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ae64a85f3131",
+          "ts": "6f42b5090f09",
+          "lean": "c31d8afe0a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

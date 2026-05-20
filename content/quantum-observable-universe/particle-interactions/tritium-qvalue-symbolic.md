@@ -37,7 +37,7 @@ which simplifies to the stated closed form.
 
 ## Numerical evaluation
 
-At $q_0 \approx 1.10998$:
+At $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 $$
   Q({}^3\mathrm{H} \to {}^3\mathrm{He})

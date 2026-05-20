@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:transfer-matrix-operator",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/particle-interactions/transfer-matrix-operator.ts",
+    "md": "content/quantum-observable-universe/particle-interactions/transfer-matrix-operator.md",
+    "lean": "content/quantum-observable-universe/particle-interactions/transfer-matrix-operator.lean"
+  },
+  "source_hashes": {
+    "md": "0125c6a7d3d4",
+    "ts": "6109a221e12c",
+    "lean": "4a11e845feda"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "0125c6a7d3d4",
+          "ts": "6109a221e12c",
+          "lean": "4a11e845feda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

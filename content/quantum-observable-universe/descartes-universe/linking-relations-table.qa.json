@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:linking-relations-table",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/linking-relations-table.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/linking-relations-table.md"
+  },
+  "source_hashes": {
+    "md": "79a46489f690",
+    "ts": "321ffbc04528"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "79a46489f690",
+          "ts": "321ffbc04528"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

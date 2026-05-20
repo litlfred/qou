@@ -16,14 +16,21 @@ const root = join(import.meta.dir, "..");
 interface PaperInfo { title: string; dir: string; abstract?: string }
 
 async function getPapers(): Promise<PaperInfo[]> {
+  // Authoritative paper order comes from content/folio.ts (paperRef calls
+  // in source order). Falling back to readdir was non-deterministic — the
+  // OS returns directory entries in arbitrary order, so README.md churned
+  // on every regenerate. The folio manifest is the canonical source.
   const contentDir = join(root, "content");
-  const skip = new Set(["schema", "pipeline", "node_modules"]);
-  const entries = await readdir(contentDir, { withFileTypes: true });
-  const papers: PaperInfo[] = [];
+  const folioPath = join(contentDir, "folio.ts");
+  const folioSrc = await readFile(folioPath, "utf-8");
+  // Match `paperRef({ dir: "..." })` in source order.
+  const orderedDirs = [
+    ...folioSrc.matchAll(/paperRef\(\s*\{[^}]*?dir:\s*["']([^"']+)["']/gs),
+  ].map(m => m[1]);
 
-  for (const e of entries) {
-    if (!e.isDirectory() || skip.has(e.name)) continue;
-    const manifest = join(contentDir, e.name, `${e.name}.ts`);
+  const papers: PaperInfo[] = [];
+  for (const dir of orderedDirs) {
+    const manifest = join(contentDir, dir, `${dir}.ts`);
     try {
       await stat(manifest);
     } catch { continue; }
@@ -31,8 +38,8 @@ async function getPapers(): Promise<PaperInfo[]> {
     const titleMatch = src.match(/title:\s*["']([^"']+)["']/);
     const abstractMatch = src.match(/abstract:\s*\n?\s*["']([^"']+)["']/);
     papers.push({
-      title: titleMatch?.[1] ?? e.name,
-      dir: e.name,
+      title: titleMatch?.[1] ?? dir,
+      dir,
       abstract: abstractMatch?.[1],
     });
   }
@@ -153,14 +160,52 @@ async function getWorkflows(): Promise<WorkflowInfo[]> {
   return workflows;
 }
 
+// ── Lean coverage stats ─────────────────────────────────────────────────────
+
+import { computeStats } from "./lean-coverage";
+
+interface LeanCoverage {
+  provable_total: number;
+  provable_with_lean: number;
+  provable_sorry_free: number;
+  provable_percent: number;
+  conjectures_total: number;
+  conjectures_with_lean: number;
+  conjectures_class_axiomatized: number;
+  conjectures_percent: number;
+  definitions_total: number;
+  definitions_with_lean: number;
+}
+
+async function getLeanCoverage(): Promise<LeanCoverage | null> {
+  try {
+    const s = computeStats("quantum-observable-universe");
+    return {
+      provable_total: s.provable.total,
+      provable_with_lean: s.provable.with_lean_file,
+      provable_sorry_free: s.provable.sorry_free,
+      provable_percent: s.provable.percent_sorry_free,
+      conjectures_total: s.conjectures.total,
+      conjectures_with_lean: s.conjectures.with_lean_file,
+      conjectures_class_axiomatized: s.conjectures.class_axiomatized,
+      conjectures_percent: s.conjectures.percent_class_axiomatized,
+      definitions_total: s.definitions.total,
+      definitions_with_lean: s.definitions.with_lean_file,
+    };
+  } catch {
+    return null;
+  }
+}
+
 // ── Main ────────────────────────────────────────────────────────────────────
 
-const [papers, chapters, leanModules, simulators, workflows] = await Promise.all([
+const [papers, chapters, leanModules, simulators, workflows, leanCoverage] = await Promise.all([
   getPapers(),
   getChapters(),
   getLeanModules(),
   getSimulators(),
   getWorkflows(),
+  getLeanCoverage(),
 ]);
 
-console.log(JSON.stringify({ papers, chapters, leanModules, simulators, workflows }, null, 2));
+console.log(JSON.stringify({ papers, chapters, leanModules, simulators, workflows, leanCoverage }, null, 2));

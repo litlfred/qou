@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:substrate-self-duality",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.lean"
+  },
+  "source_hashes": {
+    "md": "5f9eac9dd4de",
+    "ts": "2ed7600b1fff",
+    "lean": "d076a9d3e322"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "2ed7600b1fff",
+          "lean": "d076a9d3e322"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

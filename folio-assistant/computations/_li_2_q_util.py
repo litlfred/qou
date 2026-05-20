@@ -1,6 +1,19 @@
 """
 Shared utility: symmetric q-dilogarithm Li_2^q at MPFR precision.
 
+**Context (per prop:li2q-phiq-bar-symmetrization).** Li_2^q is the
+**pre-τ / R-side / categorical** form of the q-dilogarithm —
+bar-invariant under q ↔ q^{-1}, lives in the Habiro ring
+$\\widehat{\\mathbb{Z}[q]}[\\![z]\\!]$, purely algebraic. It is
+**canonical for BINDING context** (B(K) = m_atom − Z·m_p − N·m_n,
+Δm_pn, isospin differences) because the bar-symmetric form
+kills the dimensional mass scale — exactly what is wanted when
+masses cancel in a difference.
+
+For MASS context (m_p, m_n, m_e, m_atom absolutes; m_p/m_e ratio)
+use `_phi_q_util.py` instead — Φ_q (Faddeev) is the bar-asymmetric
+archimedean / post-τ form that carries the dimensional mass scale.
+
 Per `prop:mass-endomorphism-tower` ([mass-endomorphism-tower.md]),
 the canonical mass-formula brane-tower contribution uses the
 **symmetric q-dilogarithm**

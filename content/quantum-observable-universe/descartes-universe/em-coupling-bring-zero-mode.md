@@ -37,7 +37,7 @@ identifications in Bring's-surface terms*:
 
 ## Numerical match
 
-At $q_0 \approx 1.10998$ in 60 dps mpmath:
+At $q_0 = 1.109978595554181\ldots$ (50 dps) in 60 dps mpmath:
 
 | Quantity | Value |
 |----------|------:|

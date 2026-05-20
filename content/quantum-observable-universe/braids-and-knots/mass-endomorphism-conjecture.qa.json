@@ -1,0 +1,37 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:mass-endomorphism",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.lean"
+  },
+  "source_hashes": {
+    "md": "df4721b5a67b",
+    "ts": "2884293c319f",
+    "lean": "2132e9192a3b"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "2884293c319f",
+          "lean": "2132e9192a3b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition (Magic-shell coupling slope — categorical closed form).**
 *The per-unit-excess magic-shell coupling slope $\kappa$, which
 controls the $(n_{pp} - n_{nn})$ excess contribution to atomic
@@ -16,7 +18,7 @@ is the q-bracket.*
 
 ## Numerical verification at $q_0$
 
-Evaluating at the substrate parameter $q_0 \approx 1.10998$:
+Evaluating at the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 | Symbol | Value at $q_0$ |
 |---|---|

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:categorical-lagrangian-exists",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists.lean"
+  },
+  "source_hashes": {
+    "md": "c3f82e7cc590",
+    "ts": "a83573cb9f4e",
+    "lean": "b978d141e435"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "c3f82e7cc590",
+          "ts": "a83573cb9f4e",
+          "lean": "b978d141e435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

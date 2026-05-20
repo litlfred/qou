@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:descent-condition",
+  "kind": "proof",
+  "paths": {
+    "ts": "content/quantum-observable-universe/lifting-and-descent/descent-condition-proof.ts",
+    "md": "content/quantum-observable-universe/lifting-and-descent/descent-condition-proof.md"
+  },
+  "source_hashes": {
+    "md": "c5a70f414c15",
+    "ts": "983c94b2ce6d"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "c5a70f414c15",
+          "ts": "983c94b2ce6d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Skein resolution obstruction is a fourth evaluation of
 the universal obstruction class $\chi(A) \in HH^2 \cong k$
 ([QOU obstruction reduction](#thm:qou-obstruction-reduction)).
@@ -74,7 +76,7 @@ time.  P = NP over finite fields is trivial (finite lookup),
 not because the obstruction vanishes, but because the field
 itself is finite.
 
-Over $\mathbb{R}$ at non-torsion $q_0 \approx 1.1097$, no
+Over $\mathbb{R}$ at non-torsion $q_0 = 1.109978595554181\ldots$ (50 dps), no
 Kummer level applies.  The Iwahori--Hecke algebra $H_n(q_0)$ is
 semisimple ($\mathrm{Rad} = 0$), the full $3^c$ tree
 survives, and the obstruction is non-vanishing.

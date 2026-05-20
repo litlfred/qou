@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition (closed form for $y_\lambda$ via Wenzl bridge).**
 *Let $\sigma_i$ be the symmetric Hecke generators of $H_n(R, q)$
 satisfying $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ (eigenvalues

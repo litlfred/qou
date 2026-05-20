@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with $N$ non-interacting particle knots in a region
 $U \subset M$.  Let $P_q$, $V_q$, $T_q$ be the quantum

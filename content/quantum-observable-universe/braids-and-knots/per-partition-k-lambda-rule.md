@@ -289,7 +289,7 @@ braid-word basis** $\{\sigma_w : w \text{ reduced}\}$ of $H_n(q)$
 
 The Gram $G_{wv} = \mathrm{tr}_M(\sigma_w \cdot \sigma_v)$ in the
 six-element reduced-word basis $\{e, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\sigma_0\}$
-at $q_0 = 1.10998$:
+at $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 |   | $e$ | $\sigma_0$ | $\sigma_1$ | $\sigma_0\sigma_1$ | $\sigma_1\sigma_0$ | $\sigma_0\sigma_1\sigma_0$ |
 |---|---:|---:|---:|---:|---:|---:|

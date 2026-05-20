@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Every braid move acts on the three sectors of the categorical
 action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} + \mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
 ([canonical action](#prop:qou-canonical-action)).  This table

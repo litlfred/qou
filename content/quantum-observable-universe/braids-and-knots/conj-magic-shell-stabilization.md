@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The six-way refutation of the level-selection rule $n_\star$ in
 [`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)
 ([closure audit](../../../docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md))
@@ -178,8 +180,9 @@ closures couple beyond simple addition.
   family 5).
 - Markov-trace Z↔N symmetry:
   $\mathrm{tr}_M(\sigma_{pp}) = \mathrm{tr}_M(\sigma_{nn}) =
-  0.0622$ exactly (Hoefsmit, float64; provable algebraically via
-  the spin-involution corollary).
+  0.0622\ldots$ exactly (provable algebraically via the
+  spin-involution corollary; 50-dps Hoefsmit evaluation in
+  [`prop:spin-involution-lp-dual-invariance`](spin-involution-lp-dual-invariance.md)).
 - Brane-tower formula's universal overshoot at small $n_\star$:
   the per-generator $\sum_i \Phi_q(|\hat V_i|)$ tower at
   $n_\star \leq 3$ exceeds AME by $200$–$1000\%$ on

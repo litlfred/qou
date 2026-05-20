@@ -1,0 +1,33 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:interface-knot-markov-z",
+  title:
+    "Interface-knot contribution to canonical-atom Markov trace equals the Markov parameter z exactly",
+  lean: {
+    ref: "qou:QOU.BraidKnot.interface_knot_markov_z",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:ew-interface-knot",
+    "thm:jones-markov-trace",
+    "prop:mass-endomorphism-tower",
+  ],
+  cites: ["jones1987", "markov1936"],
+  computation: {
+    engine: "python",
+    script:
+      "folio-assistant/computations/delta_lambda_fr_identity_phase5c.py",
+    witness:
+      "folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json",
+    status: "verified",
+  },
+  tags: [
+    "markov-trace",
+    "markov-axiom",
+    "interface-knot",
+    "atomic-braid",
+    "canonical-derivation",
+    "z-parameter",
+  ],
+});

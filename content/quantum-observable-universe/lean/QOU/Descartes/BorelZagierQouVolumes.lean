@@ -23,8 +23,14 @@ namespace QOU.Descartes
 
     Conjectural class — see [`conj:borel-zagier-qou-volumes`](../../../quantum-observable-universe/descartes-universe/borel-zagier-qou-volumes.md). -/
 class BorelZagierQouVolumes where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      **Conjecture (Borel--Zagier for QOU volumes).**
+The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent:
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

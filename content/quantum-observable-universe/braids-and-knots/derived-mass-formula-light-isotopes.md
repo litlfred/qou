@@ -27,7 +27,7 @@ $$
 *reproduces the atomic masses of all isotopes from $\mathfrak{p}$
 through $^7$Li to sub-percent accuracy.*
 
-**Empirical scorecard at $q_0 = 1.10998$:**
+**Empirical scorecard at $q_0 = 1.109978595554181\ldots$ (50 dps):**
 
 | Isotope | $M_{\text{pred}}$ (MeV) | CODATA (MeV) | Atomic mass error |
 |---|---|---|---|
@@ -83,7 +83,7 @@ using the same partition and the same $\min/A$ structure, replacing
 $\min(Z,N)$ (number of $T=0$ pn pairs) by $n_{pp} + n_{nn}$ (number
 of $T=1$ same-flavor pairs).
 
-Numerical evaluation at $q_0 = 1.10998$ uses
+Numerical evaluation at $q_0 = 1.109978595554181\ldots$ (50 dps) uses
 [`folio-assistant/computations/derived_only_formula.py`](#)
 (witness `derived-only-formula.witness.json`).
 $\square$

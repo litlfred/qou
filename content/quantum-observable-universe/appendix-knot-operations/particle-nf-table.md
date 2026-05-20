@@ -1,7 +1,7 @@
 Every fundamental particle in the knot--particle dictionary
 ([Knot--particle dictionary](#rem:knot-particle-dictionary))
 has a unique Gröbner normal form in the Iwahori--Hecke algebra
-$H_3(q)$ with $q = q_0 \approx 1.1097$.
+$H_3(q)$ with $q = q_0 = 1.109978595554181\ldots$ (50 dps).
 
 The **basis** of $H_3(q)$ in normal form is
 $\{\ \mathbf{1},\ \sigma_0,\ \sigma_1,\ \sigma_0\sigma_1,\

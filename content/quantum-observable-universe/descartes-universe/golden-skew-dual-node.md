@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition.**
 The Hecke bar involution $\sigma \leftrightarrow \sigma^{-1}$, which
 on the substrate parameter acts as $q \leftrightarrow q^{-1}$ (equivalently
@@ -37,7 +39,7 @@ $\square$
 
 **Stability band on both sides.**
 
-Our universe sits at $q_0 \approx 1.1097$, in the open interval
+Our universe sits at $q_0 = 1.109978595554181\ldots$ (50 dps), in the open interval
 $(1, \varphi^2)$.  The two golden nodes bracket the physical regime,
 giving a **two-sided stability margin**:
 

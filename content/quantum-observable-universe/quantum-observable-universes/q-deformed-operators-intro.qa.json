@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "sec:q-deformed-operators-intro",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/q-deformed-operators-intro.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/q-deformed-operators-intro.md"
+  },
+  "source_hashes": {
+    "md": "533070ecb7c5",
+    "ts": "47e6091bb959"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "533070ecb7c5",
+          "ts": "47e6091bb959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

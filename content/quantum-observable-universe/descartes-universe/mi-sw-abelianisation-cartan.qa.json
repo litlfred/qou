@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "lem:mi-sw-abelianisation-cartan",
+  "kind": "lemma",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.lean"
+  },
+  "source_hashes": {
+    "md": "a0e59529a0e4",
+    "ts": "2e901e96ecad",
+    "lean": "e073cee23cf9"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "a0e59529a0e4",
+          "ts": "2e901e96ecad",
+          "lean": "e073cee23cf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

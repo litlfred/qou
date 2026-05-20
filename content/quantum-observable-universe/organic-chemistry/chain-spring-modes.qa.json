@@ -3,126 +3,14 @@
   "label": "rem:chain-spring-modes",
   "kind": "remark",
   "paths": {
-    "ts": "quantum-observable-universe/organic-chemistry/chain-spring-modes.ts",
-    "md": "quantum-observable-universe/organic-chemistry/chain-spring-modes.md"
+    "ts": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts",
+    "md": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.md"
   },
   "source_hashes": {
     "md": "ed191bb83293",
     "ts": "ec597ba46f4d"
   },
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-19T16:04:11.209Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
-      }
-    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -135,62 +23,11 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-19T16:05:16.014Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
         "notes": "block has no .lean sibling"
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-audit",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T16:16:24.574Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
-        "notes": "scholarly declarative voice; physics-style exposition is appropriate"
-      }
-    ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-audit",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T16:16:24.574Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
-        "notes": "no LLM tells; bullet-headers (Longitudinal modes, Bending modes, etc.) are conventional"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "ed191bb83293",
-          "ts": "ec597ba46f4d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-audit",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T16:16:24.574Z",
-        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
-        "notes": "remark interpreting def:molecular-hopf-chain; describes vibrational modes of open chains; correct kind and placement"
       }
     ]
   },
-  "updated_at": "2026-05-19T16:16:24.574Z"
+  "updated_at": "2026-05-20T00:52:21.578Z"
 }

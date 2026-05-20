@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:surreal-blowup-calculus",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.ts",
+    "md": "content/quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.md",
+    "lean": "content/quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.lean"
+  },
+  "source_hashes": {
+    "md": "b71056fda9d0",
+    "ts": "c47d56f59ae3",
+    "lean": "6405c35d90e5"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "b71056fda9d0",
+          "ts": "c47d56f59ae3",
+          "lean": "6405c35d90e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

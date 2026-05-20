@@ -23,8 +23,19 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:diophantine-birthday`](../../../quantum-observable-universe/appendix-surreals/diophantine-birthday.md). -/
 class DiophantineBirthday where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      Liouville's theorem and Roth's theorem bound the approximability
+of an algebraic irrational by rationals: if $\alpha$ is algebraic of
+degree $d$, then $|\alpha - p/q| > c/q^d$ for sufficiently large
+$q$ (Liouville), and Roth improves the exponent to $2 + \delta$ for
+any $\delta > 0$.  We use $\delta$ rather than $\varepsilon$ here
+to avoid collision with the surreal infinitesimal $\varepsilon =
+1/\omega$ used elsewhere in this appendix.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

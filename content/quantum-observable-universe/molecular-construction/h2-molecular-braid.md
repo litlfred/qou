@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Definition.**
 *The **hydrogen molecule** $H_2$ is the molecular braid of two
 hydrogen atoms sharing one electron pair.  The construction
@@ -62,7 +64,7 @@ $$
   \end{pmatrix}
 $$
 
-*with $d = -(q - q^{-1})$.  At $q_0 \approx 1.1097$:*
+*with $d = -(q - q^{-1})$.  At $q_0 = 1.109978595554181\ldots$ (50 dps):*
 
 - *$T_{\mathfrak{p}e}^{\mathrm{dressed}}$: eigenvalues $q^5 \approx 1.680$ and $-q^{-5} \approx -0.595$*
 - *$T_{e_1\mathfrak{p}_2}$ (covalent): eigenvalues $q \approx 1.110$ and $-q^{-1} \approx -0.901$*

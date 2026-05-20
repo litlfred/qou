@@ -23,8 +23,25 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:n-sym-symmetric-channel-normalization`](../../../quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md). -/
 class NSymSymmetricChannelNormalization where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      The closed-form expression for $N_v$ in
+[`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)
+takes the form*
+
+$$
+  N_v
+  \;=\;
+  \biggl(\prod_{k = 2,3,4} \frac{[2k]_q^{\,2}}{[2]_q}\biggr)
+  \cdot
+  \mathcal{N}_{\rm sym}(q),
+$$
+
+*where $\mathcal{N}_{\rm sym}(q)$ is the
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

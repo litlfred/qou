@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Definition.**
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with braiding-induced ordering $\prec_c$

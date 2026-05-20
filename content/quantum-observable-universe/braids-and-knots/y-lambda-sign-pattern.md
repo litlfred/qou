@@ -23,7 +23,7 @@ central idempotents of the Wedderburn block decomposition.
 
 **Empirical observation.**
 At the canonical Markov parameter $z = 1/(\sqrt q + 1/\sqrt q)$ and
-substrate $q_0 \approx 1.1097$, the Jones–Markov block weights
+substrate $q_0 = 1.109978595554181\ldots$ (50 dps), the Jones–Markov block weights
 $y_\lambda$ from
 ([procedure](#prop:alpha-k-derivation-procedure)) are non-negative
 for $n \leq 3$ but acquire negative components at $n \geq 4$.  The

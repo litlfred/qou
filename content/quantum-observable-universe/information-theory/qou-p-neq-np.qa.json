@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:qou-p-neq-np",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/information-theory/qou-p-neq-np.ts",
+    "md": "content/quantum-observable-universe/information-theory/qou-p-neq-np.md",
+    "lean": "content/quantum-observable-universe/information-theory/qou-p-neq-np.lean"
+  },
+  "source_hashes": {
+    "md": "912d5c6d0cb3",
+    "ts": "86260300b308",
+    "lean": "3a4facbfe1cc"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "912d5c6d0cb3",
+          "ts": "86260300b308",
+          "lean": "3a4facbfe1cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

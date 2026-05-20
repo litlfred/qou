@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:residue-at-root",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/residue-at-root.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/residue-at-root.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/residue-at-root.lean"
+  },
+  "source_hashes": {
+    "md": "598690629e73",
+    "ts": "be07d2991859",
+    "lean": "b20a94af3018"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "598690629e73",
+          "ts": "be07d2991859",
+          "lean": "b20a94af3018"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

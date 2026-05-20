@@ -247,16 +247,29 @@ pub fn chi_lambda_canonical_h_n_f64(
 /// **MPFR variant of [`chi_lambda_canonical_h_n_f64`]** at arbitrary
 /// precision (≥ 50 dps recommended).
 ///
-/// Uses [`seminormal_mpfr::chi_lambda_braid_mpfr`] for each averaged-
-/// expansion sub-word.  Returns the UNNORMALISED sum as a decimal
-/// string (the MPFR `rug::Float` is not `Send`/`Copy`-friendly for
-/// rayon `reduce`, so we serialise via decimal strings).  The
+/// Returns the **averaged** χ^λ value as a decimal string. Each averaged
+/// crossing in the input is substituted directly as `σ - h/2 · I`
+/// (equivalent to `(σ + σ⁻¹)/2` via the Hecke relation), so the
+/// returned value is **already** the half-sum-averaged χ^λ — the
+/// caller does NOT need to divide by `2^k` (the historical
+/// `averaging_denominator`). The Rust binary `hecke-canonical-chi`
+/// reflects this by reporting `averaging_denominator = "1"` to its
+/// downstream Python consumer.
+///
+/// Pre-2026-05-18 docstring described the predecessor (deleted)
+/// implementation which returned the UNNORMALISED 2^k sub-word sum and
+/// required caller-side division by `averaging_denominator`; the
+/// direct-averaging implementation (PR #682) replaced that path
+/// because at ⁴He / H_12 the 2^k expansion took >10 min wall, vs ~tens
+/// of ms with direct substitution.
+///
+/// The MPFR `rug::Float` is not `Send`/`Copy`-friendly for rayon
+/// `reduce`, so we serialise the result via a decimal string. The
 /// substrate parameter `q` is passed as a decimal string to preserve
 /// arbitrary precision through the FFI; the caller substitutes the
 /// canonical 50-dps `q_0` value from `q_parameter.Q_50_DIGIT_STR`.
 ///
-/// Cost: each sub-word evaluation is O(dim² · word_len) at MPFR
-/// precision `dps`; total ≈ 2^k · O(dim² · |word|).
+/// Cost: O(dim² · word_len) at MPFR precision `dps` per partition.
 pub fn chi_lambda_canonical_h_n_mpfr(
     lambda: &[usize],
     n_strands: usize,
@@ -282,89 +295,6 @@ pub fn chi_lambda_canonical_h_n_mpfr(
         })
         .collect();
     chi_lambda_braid_mpfr(lambda, &word_signed, q_str, dps)
-}
-
-/// All χ^λ values at H_n for λ ⊢ n, computed in parallel via
-/// [`chi_lambda_canonical_h_n_mpfr`].  Returns decimal-string values
-/// at `dps` precision.
-pub fn chi_lambda_canonical_all_partitions_mpfr(
-    n_strands: usize,
-    word_with_averaged: &[CrossingPair],
-    q_str: &str,
-    dps: u32,
-) -> Vec<(Vec<usize>, String)> {
-    let parts = partitions_of(n_strands);
-    parts
-        .par_iter()
-        .map(|lambda| {
-            let chi = chi_lambda_canonical_h_n_mpfr(
-                lambda, n_strands, word_with_averaged, q_str, dps,
-            );
-            (lambda.clone(), chi)
-        })
-        .collect()
-}
-
-/// **MPFR variant of [`chi_lambda_canonical_h_n_f64`]** at arbitrary
-/// precision (≥ 50 dps recommended).
-///
-/// Uses [`seminormal_mpfr::chi_lambda_braid_mpfr`] for each averaged-
-/// expansion sub-word.  Returns the UNNORMALISED sum as a decimal
-/// string (the MPFR `rug::Float` is not `Send`/`Copy`-friendly for
-/// rayon `reduce`, so we serialise via decimal strings).  The
-/// substrate parameter `q` is passed as a decimal string to preserve
-/// arbitrary precision through the FFI; the caller substitutes the
-/// canonical 50-dps `q_0` value from `q_parameter.Q_50_DIGIT_STR`.
-///
-/// Cost: each sub-word evaluation is O(dim² · word_len) at MPFR
-/// precision `dps`; total ≈ 2^k · O(dim² · |word|).
-pub fn chi_lambda_canonical_h_n_mpfr(
-    lambda: &[usize],
-    n_strands: usize,
-    word_with_averaged: &[CrossingPair],
-    q_str: &str,
-    dps: u32,
-) -> String {
-    use rug::Float;
-    let prec = (dps as f64 * 3.322 + 16.0) as u32;
-    let avg_positions: Vec<usize> = word_with_averaged
-        .iter()
-        .enumerate()
-        .filter(|(_, (c, _))| *c == Crossing::Averaged)
-        .map(|(i, _)| i)
-        .collect();
-    let k = avg_positions.len();
-    let _ = n_strands; // chi_lambda_braid_mpfr does not need n explicitly
-    if k == 0 {
-        let plain = to_plain_word(word_with_averaged);
-        return chi_lambda_braid_mpfr(lambda, &plain, q_str, dps);
-    }
-    if k > 20 {
-        panic!("chi_lambda_canonical_h_n_mpfr: {} averaged crossings exceeds 20-cap", k);
-    }
-    let total = 1usize << k;
-    let strs: Vec<String> = (0..total)
-        .into_par_iter()
-        .map(|mask| {
-            let mut sub_word = word_with_averaged.to_vec();
-            for (bit, &pos) in avg_positions.iter().enumerate() {
-                let take_positive = (mask >> bit) & 1 == 0;
-                sub_word[pos].0 = if take_positive {
-                    Crossing::Sigma
-                } else {
-                    Crossing::SigmaInv
-                };
-            }
-            let plain = to_plain_word(&sub_word);
-            chi_lambda_braid_mpfr(lambda, &plain, q_str, dps)
-        })
-        .collect();
-    let mut acc = Float::with_val(prec, 0);
-    for s in &strs {
-        let v = Float::parse(s).expect("parse mpfr sub-word chi");
-        acc += Float::with_val(prec, v);
-    }
-    acc.to_string_radix(10, Some(dps as usize))
 }
 
 /// All χ^λ values at H_n for λ ⊢ n, computed in parallel via

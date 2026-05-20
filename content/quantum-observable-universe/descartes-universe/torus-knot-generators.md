@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Euler characteristic $\chi(A) = -6$ of the Bring's surface is
 the reason torus knots serve as the generators of the particle
 spectrum.  Because the Bring's surface has genus $g = 4$

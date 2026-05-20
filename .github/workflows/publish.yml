@@ -194,6 +194,12 @@ jobs:
           latexdiff --version 2>&1 | head -1
           latexpand --version 2>&1 | head -1
 
+      # ── 0a2. Install Python deps for PDF post-processing ─────────────
+      # pypdf drives scripts/split-pdf-by-chapter.py (per-chapter PDF
+      # outputs).  Pinned to a stable major to keep CI deterministic.
+      - name: Install pypdf
+        run: pip3 install --quiet 'pypdf>=4,<6'
+
       # ── 0b2. Install bun (content pipeline) ─────────────────────────────
       - name: Install bun
         uses: oven-sh/setup-bun@v2
@@ -250,6 +256,31 @@ jobs:
           python3 hecke_startup_cache.py 2>/dev/null || true
           # Run only content-linked witnesses that are stale
           python3 run_pipeline.py --content-only --timeout 120 2>&1 | tail -20 || echo "::warning::Some witness computations failed"
+
+      # ── 0d2. Refresh authors-note Lean coverage stats ──────────────────
+      # Substitutes "385 of 567 (67.9%) provable claims" etc. with the
+      # current scan from scripts/lean-coverage.ts. Idempotent — exits 0
+      # without changes when the .md already matches. Runs before the
+      # content pipeline so the rendered PDF embeds the latest numbers.
+      #
+      # Failure handling: on `main` publications, a refresh failure means
+      # the README and PDF would carry stale stats — surface as an error.
+      # On feature branches it is non-fatal (preview builds tolerate
+      # transient drift) but the warning is still logged so the author
+      # can see it in the run summary.
+      - name: Refresh authors-note Lean coverage stats
+        id: refresh-authors-note
+        continue-on-error: ${{ env.HEAD_REF != 'main' }}
+        run: |
+          if ! bun run scripts/refresh-authors-note.ts; then
+            if [ "${HEAD_REF}" = "main" ]; then
+              echo "::error::refresh-authors-note.ts failed on main publication"
+              exit 1
+            else
+              echo "::warning::refresh-authors-note.ts failed (feature branch — non-fatal)"
+              exit 1
+            fi
+          fi
 
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
       - name: Validate and build content objects for all papers
@@ -495,6 +526,40 @@ jobs:
             fi
           done
 
+      # ── 2d. Split main.pdf into per-chapter PDFs ──────────────────────
+      # Post-process main.pdf using its outline entries (matched against
+      # the paper manifest's chapter titles) into one PDF per main
+      # chapter, plus a bundled front-matter PDF holding the head
+      # (title page, TOC, abstract, introduction, notation).  Appendix
+      # PDFs are produced upstream by the standalone-appendix step (2c).
+      #
+      # Failure handling: on `main` publications, a split failure (zero
+      # bookmarks / heavy mismatch / etc.) means the chapter PDFs would
+      # be missing or misaligned on gh-pages — hard-fail. On feature
+      # branches we tolerate failures and just emit `::warning::` so
+      # preview builds still ship the full main.pdf.
+      - name: Split main.pdf into per-chapter PDFs
+        if: success()
+        continue-on-error: ${{ env.HEAD_REF != 'main' }}
+        run: |
+          mkdir -p chapter-pdfs
+          if python3 scripts/split-pdf-by-chapter.py \
+               --pdf main.pdf \
+               --paper quantum-observable-universe \
+               --out-dir chapter-pdfs; then
+            echo ""
+            echo "Chapter PDF outputs:"
+            ls -la chapter-pdfs/ || true
+          else
+            if [ "${HEAD_REF}" = "main" ]; then
+              echo "::error::split-pdf-by-chapter.py failed on main publication"
+              exit 1
+            else
+              echo "::warning::split-pdf-by-chapter.py failed (feature branch — non-fatal; preview builds still ship the full main.pdf)"
+              exit 1
+            fi
+          fi
+
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
         env:
@@ -536,6 +601,24 @@ jobs:
               echo "  ✓ Appendix: ${apdf}"
             fi
           done
+
+          # ── Per-chapter and front-matter PDFs (split from main.pdf) ────
+          # Outputs from scripts/split-pdf-by-chapter.py (step 2d).  Each
+          # main chapter gets its own PDF; the front-matter bundle holds
+          # the front matter + notation + glossary + index.  Published
+          # alongside the full main.pdf so readers can grab the relevant
+          # chapter without downloading the whole paper.
+          if [ -d chapter-pdfs ] && ls chapter-pdfs/*.pdf >/dev/null 2>&1; then
+            mkdir -p "${PAPER_OUTDIR}/chapters"
+            cp chapter-pdfs/*.pdf "${PAPER_OUTDIR}/chapters/"
+            if [ -f chapter-pdfs/pdf-split-manifest.json ]; then
+              cp chapter-pdfs/pdf-split-manifest.json "${PAPER_OUTDIR}/chapters/manifest.json"
+            fi
+            echo "Per-chapter PDFs:"
+            ls -la "${PAPER_OUTDIR}/chapters/" || true
+          else
+            echo "::warning::no chapter PDFs found (split step may have failed)"
+          fi
 
           # Copy the interactive visualizer (prefer quantum_brings_surface.html)
           if [ -f quantum_brings_surface.html ]; then
@@ -811,6 +894,47 @@ jobs:
           )"
             echo "Commented on PR #${pr}."
           done
+
+      # ── 6. Regenerate README.md + authors-note (main publications only) ─
+      # Per CLAUDE.md project policy: each main publication refreshes the
+      # README so the per-chapter PDF links + Lean coverage table on
+      # github.com mirror the just-built artefacts.  authors-note is
+      # refreshed in step 0d2 above; this step commits any drift the
+      # earlier refresh produced.
+      - name: Regenerate README.md (main only)
+        if: env.HEAD_REF == 'main'
+        run: |
+          bash scripts/generate-readme.sh
+
+      - name: Commit refreshed README + authors-note to main
+        if: env.HEAD_REF == 'main'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # Stage only the files this workflow is permitted to refresh.
+          git add README.md \
+                  content/quantum-observable-universe/introduction/authors-note.md \
+                  2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No README / authors-note drift to commit."
+            exit 0
+          fi
+          git commit -m "docs: refresh README + authors-note (publish ${HEAD_SHA:0:7}) [skip ci]"
+          # Push to main; allow non-fast-forward retry if main moved
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:main; then
+              echo "Pushed README/authors-note refresh to main."
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; rebasing on origin/main and retrying..."
+            git fetch origin main --quiet || true
+            git pull --rebase origin main --quiet || true
+            sleep $((attempt * 2))
+          done
+          echo "::warning::Failed to push README refresh to main after 4 attempts"
 
   # ── Deploy job — serialized across all workflows via shared concurrency group
   deploy:

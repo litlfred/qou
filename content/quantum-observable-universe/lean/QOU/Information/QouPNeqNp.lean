@@ -23,8 +23,24 @@ namespace QOU.Information
 
     Conjectural class — see [`conj:qou-p-neq-np`](../../../quantum-observable-universe/information-theory/qou-p-neq-np.md). -/
 class QouPNeqNp where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      At the physical substrate parameter
+$q_0 \in \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$
+([substrate $\mathbb{G}_m$-torsion](#rem:substrate-gm-torsion)),
+$\mathrm{P} \neq \mathrm{NP}$.*
+
+*Equivalently: the resolution-tree evaluation of the universal
+obstruction class $\chi(A)$ is non-vanishing:*
+
+$$
+  \mathrm{res}_{\mathcal{R}}\!\bigl(\chi(A)\bigr)  \neq  0
+  \qquad\text{at } q = q_0.
+$$
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

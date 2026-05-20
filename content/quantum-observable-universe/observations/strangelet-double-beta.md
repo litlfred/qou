@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition.**
 Let $\mathcal{S}$ be a strangelet and let $\mathfrak{p}$ be an
 ordinary hadron interacting with it.  The interaction occurs in

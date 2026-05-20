@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "ex:higher-forms-su2",
+  "kind": "example",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-universes/higher-forms-su2.ts",
+    "md": "content/quantum-observable-universe/quantum-universes/higher-forms-su2.md",
+    "lean": "content/quantum-observable-universe/quantum-universes/higher-forms-su2.lean"
+  },
+  "source_hashes": {
+    "md": "e4b0428c537f",
+    "ts": "163571a582c8",
+    "lean": "b9c61a5a59fd"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "e4b0428c537f",
+          "ts": "163571a582c8",
+          "lean": "b9c61a5a59fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

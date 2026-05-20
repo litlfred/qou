@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Formal proof of the $V_{(3)}$ per-irrep character difference closed form.**
 
 Following the user direction "first prove formally V" + "V_3 ε^k

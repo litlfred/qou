@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:quantum-computational-universality",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts",
+    "md": "content/quantum-observable-universe/information-theory/quantum-computational-universality.md",
+    "lean": "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean"
+  },
+  "source_hashes": {
+    "md": "456cacb3dce6",
+    "ts": "1bdf1796b15a",
+    "lean": "2a23dcb272c3"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "456cacb3dce6",
+          "ts": "1bdf1796b15a",
+          "lean": "2a23dcb272c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}
