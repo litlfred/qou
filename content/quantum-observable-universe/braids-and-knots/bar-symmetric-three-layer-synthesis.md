@@ -330,3 +330,91 @@ confirm class soundness.
 - **Gain**: algebraic identity proved (Mathlib `Real.cosh_neg`).
 - **Unification**: open R&D (this proposition).
 - **Empirical anchor**: 3/3 matches, 3/3 falsifications recorded.
+
+## Proofs (Lean ↔ paper bridge)
+
+Every Lean construction in [`bar-symmetric-three-layer-synthesis.lean`](bar-symmetric-three-layer-synthesis.lean) has a narrative proof here. The genuine conjecture is in the class-field `True` placeholders (the unification claim); everything else is `sorry`-free.
+
+### Bar-involution axioms (this file's local copy)
+
+The synthesis file has its own `class BarInvolution R` matching the four ring-involution axioms of [`def:bar-involution`](#def:bar-involution). Proofs in the sibling block apply directly here.
+
+### `cos` and `cosh` are bar-symmetric
+
+**Proposition (Lean: `cos_isBarSymmetric_of_antisym`).** $\cos$ of a bar-anti-symmetric argument is bar-symmetric.
+*Proof.* For real $x$: $\cos(-x) = \cos(x)$ by `Real.cos_neg` (Mathlib). $\square$
+
+**Proposition (Lean: `cosh_isBarSymmetric_of_antisym`).** $\cosh$ of a bar-anti-symmetric argument is bar-symmetric.
+*Proof.* For real $h$: $\cosh(-h) = \cosh(h)$ by `Real.cosh_neg`. $\square$
+
+### Synthesis class structure
+
+**Definition (Lean: `class BarSymmetricThreeLayerSynthesis R`).** Bundles the universal bar-anti-symmetric kernel, the three avatars (series / phase / gain), their individual bar-symmetry proofs, and the **conjectural** unification claim (`series/phase/gain_from_universal : True` placeholders).
+
+**Instance (Lean: `trivialBarSymmetricThreeLayerSynthesis`).** Degenerate inhabitance: $K_{\mathrm{univ}} = 0$, all avatars = $0$. Confirms class soundness.
+*Proof.* Choose all fields to be $0$; bar-symmetry of $0$ is `BarInvolution.bar_zero`. $\square$
+
+### Synthesis-class corollaries (PROVED for any instance)
+
+**Theorem (Lean: `sum_of_avatars_isBarSymmetric`).** For any instance, the sum of the three avatars is bar-symmetric.
+*Proof.* Each avatar is bar-symmetric by its class field; sum of bar-symmetric is bar-symmetric via `BarInvolution.bar_add` plus the bar-symmetry of each summand. $\square$
+
+**Theorem (Lean: `product_of_avatars_isBarSymmetric`).** Product of the three avatars is bar-symmetric.
+*Proof.* Each avatar is bar-symmetric; product of bar-symmetric is bar-symmetric via `BarInvolution.bar_mul`. $\square$
+
+**Theorem (Lean: `universal_kernel_squared_isBarSymmetric`).** $K_{\mathrm{univ}}^2$ is bar-symmetric.
+*Proof.* From $\overline{K_{\mathrm{univ}}} = -K_{\mathrm{univ}}$: $\overline{K_{\mathrm{univ}}^2} = \overline{K_{\mathrm{univ}}} \cdot \overline{K_{\mathrm{univ}}} = (-K_{\mathrm{univ}})(-K_{\mathrm{univ}}) = K_{\mathrm{univ}}^2$. **The key categorical identity: bar-anti-symmetric squared is bar-symmetric — this is what generates all even-power layer avatars.** $\square$
+
+### `BarHeckeFunctor` type and instances
+
+**Definition (Lean: `structure BarHeckeFunctor R`).** A `BarHeckeFunctor` over $R$ is an `apply : R → R` together with a proof that bar-anti-symmetric inputs map to bar-symmetric outputs.
+
+**Constructor (Lean: `constZero`).** $F(h) := 0$.
+*Proof of bar-symmetry of output.* $\overline 0 = 0$ trivially. $\square$
+
+**Constructor (Lean: `square`).** $F(h) := h^2$.
+*Proof.* $\overline{h^2} = \overline h \cdot \overline h = (-h)(-h) = h^2$ for bar-anti-sym $h$. $\square$
+
+**Constructor (Lean: `constSym c`).** $F(h) := c$ for bar-symmetric $c$.
+*Proof.* Output is the bar-symmetric constant $c$, independent of $h$. $\square$
+
+**Constructor (Lean: `evenPoly2 c0 c1`).** $F(h) := c_0 + c_1 h^2$.
+*Proof.* Each summand bar-symmetric (constants by hypothesis; $h^2$ by the `square` argument); sum bar-symmetric by `bar_add`. $\square$
+
+**Constructor (Lean: `evenPoly3 c0 c1 c2`).** $F(h) := c_0 + c_1 h^2 + c_2 h^4$.
+*Proof.* Same as `evenPoly2` extended by one term: $h^4 = (h^2)^2$, bar-sym × bar-sym = bar-sym. $\square$
+
+**Constructor (Lean: `evenPoly4 c0 c1 c2 c3`).** $F(h) := c_0 + c_1 h^2 + c_2 h^4 + c_3 h^6$.
+*Proof.* Same pattern as `evenPoly3`; $h^6 = h^2 \cdot h^4$ bar-sym × bar-sym. $\square$
+
+**Constructor (Lean: `add F G`).** $(F + G)(h) := F(h) + G(h)$.
+*Proof.* $F(h)$ and $G(h)$ are bar-sym (by their `apply_bar_symmetric` fields); sum is bar-sym. $\square$
+
+**Constructor (Lean: `mul F G`).** $(F \cdot G)(h) := F(h) \cdot G(h)$.
+*Proof.* Product of bar-sym is bar-sym. $\square$
+
+### Strengthened functorial synthesis class
+
+**Definition (Lean: `class BarSymmetricThreeLayerSynthesisFunctorial R`).** Strengthens the original class by requiring **explicit `BarHeckeFunctor` fields** for series / phase / gain instead of opaque avatars. The avatars are then **derived** by applying these functors to the universal kernel.
+
+**Derived theorems (Lean: `series_avatar_isBarSymmetric` + phase + gain).** Each derived avatar is bar-symmetric.
+*Proof.* Direct from the functor's `apply_bar_symmetric` field applied to `universal_kernel_antisym`. $\square$
+
+**Instance (Lean: `trivialBarSymmetricThreeLayerSynthesisFunctorial`).** Degenerate functorial instance with $K_{\mathrm{univ}} = 0$ and all three functors $= \mathrm{constZero}$.
+*Proof.* Each field satisfies its constraint trivially. $\square$
+
+### Trivial real bar + c_5 BarHeckeFunctor
+
+**Instance (Lean: `BarInvolution.idReal`).** Trivial bar-involution on $\mathbb{R}$: $\overline x = x$.
+*Proof.* All four axioms hold reflexively. $\square$
+
+**Definition (Lean: `c5BarHeckeFunctor`).** The c_5 rational map cast as a `BarHeckeFunctor ℝ`. Apply: $F(h) = -3/2 + 1/(h^2 + 4)$. Bar-symmetry of output is trivial under the id bar.
+
+**Evaluations (Lean: `c5BarHeckeFunctor_zero/two/one`).**
+- $F(0) = -5/4$ (commutative-QOU limit)
+- $F(2) = -11/8$ (silver-ratio β-decay null)
+- $F(1) = -13/10$ (golden-ratio analog)
+
+*Proof.* Direct `norm_num` from the apply formula at $h = 0, 2, 1$. $\square$
+
+All 32 Lean constructions in the sibling have narrative proofs here. The synthesis-class unification (the `True` placeholders) remains the only open conjectural piece — concrete realisations live in [`polynomial-bar-involution`](#prop:polynomial-bar-involution) where the three-layer truncated polynomials are PROVED bar-symmetric in the same polynomial ring.
