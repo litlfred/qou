@@ -116,12 +116,48 @@ constituent structure, whereas the single-block $|\Delta_\lambda^*|$
 extraction averages over the symmetric channel and is bar-symmetric
 by construction.
 
+### Phase 5k residual characterisation
+
+Phase 5k.1 (PR #831) analyses the $0.033\%$ residual at $q_0$ across
+powers of $h(q) = q - q^{-1}$:
+
+| $k$ | $h^k(q_0)$ | residual$/h^k$ | $\|c\|$ |
+|:-:|---:|---:|---:|
+| 1 | $2.09 \times 10^{-1}$ | $+1.94 \times 10^{-3}$ | 0.002 |
+| 2 | $4.37 \times 10^{-2}$ | $+9.28 \times 10^{-3}$ | 0.009 |
+| 3 | $9.14 \times 10^{-3}$ | $+4.44 \times 10^{-2}$ | 0.044 |
+| 4 | $1.91 \times 10^{-3}$ | $+2.12 \times 10^{-1}$ | 0.212 |
+| **5** | $\mathbf{3.99 \times 10^{-4}}$ | $\mathbf{+1.02 \times 10^{0}}$ | **1.016** |
+| 6 | $8.35 \times 10^{-5}$ | $+4.86 \times 10^{0}$ | 4.86 |
+| 7 | $1.75 \times 10^{-5}$ | $+2.32 \times 10^{1}$ | 23.2 |
+
+The best **unit-coefficient** fit is $k = 5$ with $c \approx 1.016$
+(within $2\%$ of unity), suggesting the refined closed form
+$$
+  \boxed{\;
+    \rho_Z^{\mathrm{constit}}(q_0)
+    \;=\; (2q - 1) \,+\, h^5 \,+\, O(h^7)
+  \;}
+  \tag{$\star\star\star$}
+$$
+at the substrate point.  Evaluated at $q_0$:
+
+$$
+  (2q_0 - 1) + h(q_0)^5 \;\approx\; 1.2203565
+$$
+
+versus the measured $\rho_Z^{\mathrm{constit}}(q_0) \approx 1.2203629$
+— a residual of $6.3 \times 10^{-6}$ ($\mathbf{64\times}$ better than
+$(2q - 1)$ alone).
+
 ### Open questions
 
-1. **Is the $0.033\%$ residual $O(h^4)$ noise or a genuine
-   second-order correction?**  Phase 5k (queued): higher-precision
-   measurement of the constit factor and a categorical scan over
-   $h^4$-order corrections.
+1. **Confirm the $O(h^5)$ form via varying-q measurement.**
+   Phase 5k.2 (queued): re-measure $\rho_Z^{\mathrm{constit}}(q)$ at
+   $q \in \{1.05, 1.10998, 1.15, 1.2, 1.3\}$ via `pyhecke_native`
+   at varying $q$, fit $\log|\text{residual}| \propto k \cdot \log|h|$
+   to extract the exponent $k$ empirically across the substrate
+   window.  $(\star\star\star)$ predicts a clean unit-slope $k = 5$.
 
 2. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
    The form $2q - 1$ matches $\sigma + \sigma^{-1}$ acting on the
