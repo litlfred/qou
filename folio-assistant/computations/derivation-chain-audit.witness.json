@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T06:15:58.987411+00:00",
-  "commitSha": "ced887a88aeb025e49a6685c6b66ffb7d9c87912",
+  "computedAt": "2026-05-20T14:41:14.808927+00:00",
+  "commitSha": "b1353aaacd89fcfda58faf14974223c72521a0fa",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
+  "scriptCommitSha": "60d34fc28faafa9395c037ac62d69ebe8c3575d1",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2283,6 +2283,7 @@
         "confinement-operator-selection.witness.json",
         "constit-factor-and-volhyp.witness.json",
         "constit-factor-residual-phase5k.witness.json",
+        "constit-factor-varying-q-phase5k2.witness.json",
         "content-block-label-audit.witness.json",
         "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
@@ -2637,6 +2638,7 @@
         "qbeta-silver-ratio-pell-lucas-ck.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
         "residue-algebraic-verification.witness.json",
+        "rho-constit-equals-tau-M-proton-phase5l.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
         "rho-k-co-casimir-extended.witness.json",
@@ -2681,6 +2683,7 @@
         "t2-t3-proton-neutron-a1.witness.json",
         "t35-weak-vertex.witness.json",
         "tau-M-four-anchors.witness.json",
+        "tau-M-proton-closed-form-phase5l1.witness.json",
         "tau-hat-n-proton-level-1-empty.witness.json",
         "tau-hat-n-proton-realisation.witness.json",
         "tau-lepton-nf.witness.json",

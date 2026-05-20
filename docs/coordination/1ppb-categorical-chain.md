@@ -110,14 +110,14 @@ This **constrains** PR #781's Kashaev mass-table formula (ρ_F · Vol_hyp) — s
 | 2026-05-19 | Phase 3 — per-depth-stratified subtraction | landed `433de5c1`; identical 3.96× (constituents max depth 2 in $H_3$) | `log_delta_per_depth_binding.py` |
 
 **Hard structural finding (re-reading the paper after user pushback):**
-Tensor-product baseline $Z \cdot \mathfrak{m}(\beta_p) + N \cdot \mathfrak{m}(\beta_n)$
+Tensor-product baseline $Z \cdot \mathfrak{m}(\mathcal{B}_p) + N \cdot \mathfrak{m}(\mathcal{B}_n)$
 **in independent $H_3$ algebras** is structurally wrong. The categorically-correct composite is
-$$\beta_K = \underbrace{\beta_p^{(1)} \cdots \beta_n^{(N)}}_{T_{\text{constit}}^K \text{ on disjoint strand blocks}} \cdot \Delta_I^K \;\in\; H_{3(Z+N)}(q)$$
+$$\mathcal{B}_K = \underbrace{\mathcal{B}_p^{(1)} \cdots \mathcal{B}_n^{(N)}}_{T_{\text{constit}}^K \text{ on disjoint strand blocks}} \cdot \bowtie_K \;\in\; H_{3(Z+N)}(q)$$
 per [`def:ew-interface-knot`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/ew-interface-knot.md)
 and [`prop:atomic-mass-gb-nf`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md).
-Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N + 1$). T, ³He, ⁴He each have their own $\Delta_I^K$ characterising "what is involved in binding at that confinement level".
+Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N + 1$). T, ³He, ⁴He each have their own $\bowtie_K$ characterising "what is involved in binding at that confinement level".
 
-**Resolution path (in flight):** Recompute $B(K) = \mathfrak{m}(\beta_K) - \mathfrak{m}(T_{\text{constit}}^K)$ with both braids in the **same** Hecke algebra. Mass-endomorphism conditions (Markov-invariance term-by-term, $|S| \le 2$ R-side bound, symmetric $\mathrm{Li}_2^q$ form, spectral-sequence collapse, $B(p) = B(n) = 0$) satisfied by construction.
+**Resolution path (in flight):** Recompute $B(K) = \mathfrak{m}(\mathcal{B}_K) - \mathfrak{m}(T_{\text{constit}}^K)$ with both braids in the **same** Hecke algebra. Mass-endomorphism conditions (Markov-invariance term-by-term, $|S| \le 2$ R-side bound, symmetric $\mathrm{Li}_2^q$ form, spectral-sequence collapse, $B(p) = B(n) = 0$) satisfied by construction.
 
 **Coordination posts:**
 - [PR #800 comment](https://github.com/litlfred/qou/pull/800#issuecomment-4484723377) — informational, no overlap with I13 sweep
@@ -225,7 +225,7 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 
 3. **Bar-symmetric unification with PR #801**: three q-deformation corrections used in QOU mass formulas — symmetric Li_2^q (T2/T3 tower in #801), cos(α−b·ℏ_q²/2) (N=1 rung in master Q_β), and cosh(h) (per-Z step in Phase 5b) — are **all bar-symmetric projections** of bar-anti-symmetric Hecke operators. The bar-anti-symmetric counterparts (Faddeev $\Phi_q$, sin/odd-phase, sinh(h)) are exactly the channels that break mirror-nucleus symmetry. The bar-symmetric projection is the **isospectral lift** (Kac-Sunada reframing: τ_M at q alone doesn't determine braid; τ_M at both q and q⁻¹ tightens it dramatically).
 
-4. **Missing Frobenius reciprocity identified**: Phase 5b's cosh(h) (Ind side) and PR #801's Li_2^q tower (Res side) should be FR-dual under Brundan-Kleshchev. Predicted identity for each (Z=1 → Z=2) transition: $\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2}) \stackrel{?}{=} [3]_q^2 \cosh(h) \cdot \sum_\mu y_\mu \chi_\mu(\beta_K^{Z=1}) + (\mathrm{Li}_2^q \text{ interface correction})$. Verifying this is Phase 5c's primary numerical test, now feasible with the Rust kernel.
+4. **Missing Frobenius reciprocity identified**: Phase 5b's cosh(h) (Ind side) and PR #801's Li_2^q tower (Res side) should be FR-dual under Brundan-Kleshchev. Predicted identity for each (Z=1 → Z=2) transition: $\sum_\lambda y_\lambda \chi_\lambda(\mathcal{B}_K^{Z=2}) \stackrel{?}{=} [3]_q^2 \cosh(h) \cdot \sum_\mu y_\mu \chi_\mu(\mathcal{B}_K^{Z=1}) + (\mathrm{Li}_2^q \text{ interface correction})$. Verifying this is Phase 5c's primary numerical test, now feasible with the Rust kernel.
 
 **Impact**: the Δ_λ thread paused at PR #787 is *substantially unblocked* — both per-N and per-Z factors are now categorically identified (per-N: $(q^{1/2}+q^{-1/2})^4$; per-Z: $[3]_q^2 \cdot \cosh(h)$), with one explicit FR identity to verify operator-level. No new infrastructure needed.
 
@@ -242,7 +242,7 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
    - CONSTIT ratio (no interface) = **1.220358** for both
 
 2. **Interface-knot contribution at every Z-step = z (Markov parameter) EXACTLY** (rel.err 0.0001%):
-   $$\frac{\tau_M(\beta_K^{\text{FULL}})}{\tau_M(\beta_K^{\text{CONSTIT}})}\bigg|_{Z\text{-step}} \;=\; \frac{0.609346}{1.220358} \;=\; 0.499320\;=\;z(q_0)$$
+   $$\frac{\tau_M(\mathcal{B}_K^{\text{FULL}})}{\tau_M(\mathcal{B}_K^{\text{CONSTIT}})}\bigg|_{Z\text{-step}} \;=\; \frac{0.609346}{1.220358} \;=\; 0.499320\;=\;z(q_0)$$
    This **is** the Markov axiom $\tau_M(\alpha \cdot \sigma_g) = z \cdot \tau_M(\alpha)$ for the interface generator. **The interface knot Δ_I^K from PR #801 has derivation-grade categorical reading: each interface = one z factor**, no longer empirical-fit.
 
 3. **The FR identity proposed in the previous ledger row** ($\tau_M(\beta^{Z=2}) / \tau_M(\beta^{Z=1}) \stackrel{?}{=} [3]_q^2 \cosh(h)$) **DOES NOT hold for the full Markov trace**. Empirical τ_M ratio is 0.609 (94% off from the predicted 9.47). The Phase 5b α ≈ [3]_q²·cosh(h) match (0.022%) applies ONLY to the single-block dominant $|\Delta_\lambda^*|$ extraction (Phase 4 quantity), NOT to the full Markov trace. The bar-symmetric synthesis is correct, but the FR identity I wrote conflated best-block vs total sum. Phase 5d will reformulate.
@@ -336,7 +336,7 @@ Neither candidate substitution recovers ~1836. Confirms `mass-endomorphism-tower
 
 **State of the thread** (after [PR #819](https://github.com/litlfred/qou/pull/819) merged 2026-05-19T23:00Z and [PR #801](https://github.com/litlfred/qou/pull/801) merged ~22:50Z):
 
-- **`prop:interface-knot-markov-z`** (proved sorry-free in #819): $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z^{p_+(K)} \cdot (z - h)^{p_-(K)}$, verified to $10^{-15}$ on D / T / ³He / ⁴He. Markov axiom + Hecke skein. Independent of K_k* and stands as a clean categorical theorem.
+- **`prop:interface-knot-markov-z`** (proved sorry-free in #819): $\tau_M(\mathcal{B}_K^{\text{FULL}}) / \tau_M(\mathcal{B}_K^{\text{CONSTIT}}) = z^{p_+(K)} \cdot (z - h)^{p_-(K)}$, verified to $10^{-15}$ on D / T / ³He / ⁴He. Markov axiom + Hecke skein. Independent of K_k* and stands as a clean categorical theorem.
 - **`conj:alpha-cosh-h-z-step-correction`** (#819, §3b-cond): $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at $q_0$ to 0.022%. Open: operator-level proof of the $\cosh(h)$ correction.
 - **PR #801**'s `def:ew-interface-knot`, `conj:depth-stratified-frobenius-reciprocity`, `conj:block-multiplicativity-v-free`, `li2q-phiq-bar-symmetrization`, `q-rogers-pentagon-archimedean` now all on main.
 
@@ -424,7 +424,7 @@ Four probes tested on top of PR #826's K_3* = 4_1 baseline (variance 1.551×). T
 
 **Major finding (5g)**: the Phase 5c.1 constit factor 1.220358 has a clean categorical form $2q - 1$ at q_0, matching to **0.033%** — a 15× improvement over the previous $q + h/2$ candidate. Combined with PR #819's interface factor:
 
-$$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4)$$
+$$\frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4)$$
 
 at the **full τ_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at the |Δ_λ*| level (the two live in different spectral channels of the same Hecke algebra).
 
@@ -459,7 +459,7 @@ New block: [`conj:constit-factor-2q-minus-1`](https://github.com/litlfred/qou/bl
 
 States the categorical identity $\rho_Z^{\mathrm{constit}}(q_0) = (2q - 1) + O(h^4)$ for the disjoint-Hecke-product per-Z step factor at the substrate point, matching empirically to **0.033 % rel. err.** (Phase 5g, 50 dps).  Combined with [`prop:interface-knot-markov-z`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor $z$), this gives the full $\tau_M$-level per-Z step:
 
-$$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4) \quad\text{at }q_0.$$
+$$\frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4) \quad\text{at }q_0.$$
 
 §3b-cond class: `ConstitFactor2qMinus1` (one class field axiomatising the leading-order identity at the substrate point).  Companion to `AlphaCoshHZStepCorrection` (single-block level, bar-symmetric, $\cosh(h)$) and `HeckeSymmetricChannelCoshH` (5e.3 operator-level placeholder).
 
@@ -487,3 +487,84 @@ Witness: `constit-factor-residual-phase5k.witness.json` (1 assertion: residual/h
 **Open question (5k.2 queued):** is $c \equiv 1$ for $h^5$ across the substrate window, or does $c$ vary with $q$?  A single point $c(q_0) = 1.016$ is suggestive but not conclusive.  Phase 5k.2 needs varying-$q$ measurement of $\rho_Z^{\mathrm{constit}}(q)$ via `pyhecke_native` with q-dependent Wenzl $y_\lambda$ weights at multiple $q$ in the substrate window.  Defer as substantive compute work.
 
 Next on queue: **5k.2** — varying-q sweep to confirm unit-coefficient $h^5$ across the substrate window.
+
+## 2026-05-20 (5k.2) — Phase 5k.2 FALSIFIES the global (2q-1) form ([PR #845](https://github.com/litlfred/qou/pull/845))
+
+Varying-q sweep at five q-points across the substrate window, using the same y_λ(q) Wenzl + χ_λ(β_constit, q) pipeline as PR #819 Phase 5c.1:
+
+| q | $\rho_Z^{\mathrm{constit}}(q)$ | $(2q - 1)$ | rel.err. | residual/h^5 |
+|---|---:|---:|---:|---:|
+| 1.050 | 0.7928 | 1.100 | 27.9% | −34649 |
+| 1.080 | 0.9933 | 1.160 | 14.4% | −1920 |
+| **1.10998 (q_0)** | **1.2204** | **1.220** | **0.034%** | **+1.04** |
+| 1.130 | 1.3905 | 1.260 | 10.4% | +148 |
+| 1.170 | 1.7858 | 1.340 | 33.3% | +143 |
+
+**Verdict (NEGATIVE):** the (2q − 1) candidate identified by Phase 5g's categorical search at q_0 is a **localised numerical tangency**, not a global structural identity. The residual against (2q − 1) varies by **5+ orders of magnitude** across the q sweep (c = residual/h⁵ ranges from −3.5×10⁴ to +148); the unit-coefficient h⁵ signature is unique to q_0.
+
+Fine scan around q_0 confirms the tangency is sharp: at q = 1.105 (just 0.005 below q_0) the rel.err is already **2.4%** (70× the q_0 value); at q = 1.113 (0.003 above) it is **1.5%**.
+
+**Consequences:**
+
+- `conj:constit-factor-2q-minus-1` — REVISED: a FALSIFIED banner added; the global form claim is empirically refuted while the at-q_0 value match is preserved as a record of the tangency.
+- Phase 5k.1's "unit-coefficient h⁵" interpretation is consequently also a coincidence at q_0 (not a global structural identity).
+- The actual closed form for $\rho_Z^{\mathrm{constit}}(q)$ is **open** — the measured ratio grows much more steeply than (2q − 1) suggests (factor 2.26× across $q \in [1.05, 1.17]$). Likely candidates: $\tau_M^3(\mathcal{B}_p)$ combined with a rank-jump z-factor.
+
+Script: [`folio-assistant/computations/constit_factor_varying_q_phase5k2.py`](../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py) (relative repo link — see [PR #845](https://github.com/litlfred/qou/pull/845) for blob).
+Witness: `constit-factor-varying-q-phase5k2.witness.json` (2 assertions: both FAIL as expected — the test was designed to confirm or refute the hypothesis; the refutation is the finding).
+
+Next on queue: **5l** — structural derivation of $\rho_Z^{\mathrm{constit}}(q)$ from the disjoint-product Markov trace formula. The empirical measurements suggest $\rho \approx \tau_M^3(\mathcal{B}_p) \cdot$ (z-factor for rank jump from H_6 to H_9), needing rigorous derivation.
+
+## 2026-05-20 (5l) — STRUCTURAL IDENTITY: $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\mathcal{B}_p, q)$ ([PR #845](https://github.com/litlfred/qou/pull/845))
+
+Phase 5l identifies the actual closed form for the constit-side per-Z step factor.  The disjoint-product Markov trace multiplicativity (Wenzl 1988 §1.7) gives
+
+$$\tau_M\!\bigl(\mathcal{B}_K^{\mathrm{vac}}\bigr) \;=\; \tau_M^3(\mathcal{B}_p)^Z \cdot \tau_M^3(\mathcal{B}_n)^N,$$
+
+so $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\mathcal{B}_p, q)$ exactly.  Empirical verification at five $q$-values via the $y_\lambda \cdot \chi_\lambda$ pipeline (same as PR #819 Phase 5c.1):
+
+| $q$ | $\tau_M^3(\mathcal{B}_p, q)$ | $\rho_Z^{\mathrm{constit}}(q)$ | rel. err. |
+|---|---:|---:|---:|
+| $1.050$ |  $0.79284191942392$ |  $0.79284191942392$ | $1.7 \times 10^{-51}$ |
+| $1.080$ | $0.99328958564705$ | $0.99328958564705$ | $1.1 \times 10^{-50}$ |
+| $q_0$   | $1.22037426648745$ | $1.22037426648745$ | $3.3 \times 10^{-50}$ |
+| $1.130$ | $1.39054700525733$ | $1.39054700525733$ | $1.4 \times 10^{-50}$ |
+| $1.170$ | $1.78584582119414$ | $1.78584582119414$ | $0$ (exact at 50 dps) |
+
+Identity holds at **mpfr-50-dps precision** ($\sim 10^{-50}$ rel. err.) across the substrate window — bounded by the 50-dps compute pin.
+
+**Resolution of the previous chain (5g / 5k.1 / 5k.2):**
+
+- Phase 5g's $(2q - 1) \approx 1.220$ match at $q_0$ was a numerical coincidence: $\tau_M^3(\mathcal{B}_p, q_0) \approx 1.2204$ happens to be near $2 q_0 - 1 = 1.2200$, but the two functions diverge elsewhere.
+- Phase 5k.1's "unit-coefficient $h^5$" residual at $q_0$ ($c = 1.016$) is likewise a numerical accident: $\tau_M^3(\mathcal{B}_p, q_0) - (2 q_0 - 1) \approx h^5(q_0)$ only at $q_0$.
+- Phase 5k.2 (this PR) falsified the global $(2q - 1)$ form via varying-$q$ measurement; that falsification was the bridge to identifying the actual closed form.
+
+**Combined per-Z step at the full $\tau_M$ level (now exact, no residuals):**
+
+$$\frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})} \;=\; z(q) \cdot \tau_M^3(\mathcal{B}_p, q)$$
+
+at a p-* boundary, with $z(q)$ from [`prop:interface-knot-markov-z`](../../content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor).
+
+**Content blocks:**
+
+- NEW: [`prop:constit-factor-tau-M-proton-identity`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md) — the structural identity, with Wenzl-derivation proof and 5-q empirical verification.
+- UPDATED: [`conj:constit-factor-2q-minus-1`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md) — RESOLVED banner pointing to the proposition above; conjecture preserved as a record of the historical Phase 5g categorical-search result.
+
+**Script:** [`folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py).
+**Witness:** `rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. < 1e-12, passes at ~1e-15).
+
+Next on queue: **5l.1** — extract closed form for $\tau_M^3(\mathcal{B}_p, q)$ as a Laurent rational expression in $q$ (the proton braid is a specific Hecke word, so $\tau_M^3(\mathcal{B}_p, q)$ is a specific algebraic function).
+
+### Coordination sweep — 5k.2 + 5l (2026-05-20)
+
+| PR | State | Action |
+|---|---|---|
+| **#842** (`phase-5k2-varying-q-sweep`) | open, CI ✓ green on `597938ab6` | Copilot review cycle 1 dispositioned (4 comments accepted); [cross-link to #845 posted](https://github.com/litlfred/qou/pull/842#issuecomment-4494415815) noting #845 supersedes its falsification framing with the actual structural identity. |
+| **#845** (`phase-5l-disjoint-markov-trace`) | open, CI in progress | [coordination posted](https://github.com/litlfred/qou/pull/845#issuecomment-4494416349) explaining the #842 → #845 chain and merge-order options. |
+| main | advanced by #839 (Lean typed claims round-9) | no file overlap — constit-factor / Markov-trace work disjoint from typed-claims work. |
+| #818, #817, #761 | old branches (May 18–19) predating #831 baseline | no actual edit overlap — diff against current main shows "constit-factor-2q-minus-1.lean missing" because branches are old, not because they edit it. No coordination needed unless those PRs rebase. |
+| Other open PRs (#411, #31, #650, #646, #774, #738, #807) | unrelated domains | — |
+
+**Merge order suggestion** (posted on #842): land #842 first to preserve the falsification's review history with its 4 Copilot dispositions; then #845 follows with the resolution. Alternative: close #842 in favor of #845 (which carries the full falsify-then-resolve narrative in its PR body + ledger rows).
+
+Next on queue (sibling coordination): wait for review on #845; if approved, propose merge order to owner.
