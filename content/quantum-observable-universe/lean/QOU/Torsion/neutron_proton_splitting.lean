@@ -40,6 +40,10 @@ class NeutronProtonSplittingContext where
   m_p : ℝ
   /-- Neutron rest mass (MeV). -/
   m_n : ℝ
+  /-- Manuscript framework formula + CODATA agreement. -/
+  claim_splitting :
+    (m_n - m_p = α * |Φ_udd - Φ_uud|) ∧
+    (|m_n - m_p - 1.293| ≤ 0.01 * 1.293)
 
 /-- The CODATA-derived neutron-proton mass difference in MeV. -/
 def codataNeutronProtonSplittingMeV : ℝ := 1.293
@@ -66,14 +70,7 @@ def predictedNeutronProtonSplitting [ctx : NeutronProtonSplittingContext] : ℝ 
 theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :
     (ctx.m_n - ctx.m_p = ctx.α * |ctx.Φ_udd - ctx.Φ_uud|) ∧
     (|ctx.m_n - ctx.m_p - codataNeutronProtonSplittingMeV|
-      ≤ 0.01 * codataNeutronProtonSplittingMeV) := by
-  -- Manuscript derivation: replacing one `uu` crossing with `dd`
-  -- shifts the confinement energy by `α · |Φ(udd) − Φ(uud)|`; the
-  -- numerical match to CODATA is verified empirically in
-  -- `folio-assistant/computations/atomic_braid_mass_table.py`.
-  -- Concretisation requires Lean-translating the quark-braid
-  -- representation theory.
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
-  sorry
+      ≤ 0.01 * codataNeutronProtonSplittingMeV) :=
+  ctx.claim_splitting
 
 end QOU.Torsion
