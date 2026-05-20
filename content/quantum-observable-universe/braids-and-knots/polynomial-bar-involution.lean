@@ -219,4 +219,23 @@ theorem barPoly_c5_taylor_6 :
     rw [this]; exact barPoly_X_pow_even 3
   rw [hX4, hX6]
 
+/-- **`c5_taylor_6` evaluated at $X = 0$ gives $-5/4$** — matches
+    `c5RationalMap_zero` at the commutative-QOU limit exactly. -/
+theorem c5_taylor_6_eval_zero :
+    Polynomial.eval 0 c5_taylor_6 = -5/4 := by
+  unfold c5_taylor_6
+  simp [Polynomial.eval_add, Polynomial.eval_sub, Polynomial.eval_mul,
+        Polynomial.eval_pow, Polynomial.eval_C, Polynomial.eval_X]
+
+/-- **`c5_taylor_6` evaluated at $X = 1$ (golden-ratio analog) gives
+    $-333/256$** — approximates `c5RationalMap 1 = -13/10 = -332.8/256`
+    with relative error $\approx 0.06\%$. The Taylor truncation
+    converges since $|X^2/4| = 1/4 < 1$ at $X = 1$. -/
+theorem c5_taylor_6_eval_one :
+    Polynomial.eval 1 c5_taylor_6 = -333/256 := by
+  unfold c5_taylor_6
+  simp [Polynomial.eval_add, Polynomial.eval_sub, Polynomial.eval_mul,
+        Polynomial.eval_pow, Polynomial.eval_C, Polynomial.eval_X]
+  norm_num
+
 end QOU.BraidKnot.PolynomialBarInvolution.C5Taylor
