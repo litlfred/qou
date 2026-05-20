@@ -13,6 +13,127 @@
     "lean": "f217c618f728"
   },
   "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:70: - Depth match (✓ by construction): $\\mathrm{Li}_2^q$ at depth 2, | content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:72: - Numerical match (✓ Step 3 + Step 4 + 50-digit witness). | content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:73: - Inclusion (✓ Step 1). | content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:74: - Strong sharpness at this row (✓ Step 2 — Borel-rank is 1, exactly"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -26,10 +147,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:47:11.625Z",
-        "reviewed_sha": "f5eddfa5b10730722eca4a71451c1b489294113e"
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
       }
     ]
   },
-  "updated_at": "2026-05-20T14:47:11.625Z"
+  "updated_at": "2026-05-20T15:01:34.161Z"
 }

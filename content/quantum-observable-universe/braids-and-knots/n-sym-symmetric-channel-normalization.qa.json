@@ -13,6 +13,129 @@
     "lean": "9b2bb218707d"
   },
   "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:129: 2. **§3·A v4 wiring** closes: $\\mathcal{N}_{\\rm sym}$ is also the"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:98: \\cdot \\mathcal{C}(q),  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:101: where $\\mathcal{C}(q)$ is the substrate's vacuum-volume constant.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+      }
+    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -26,10 +149,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:47:11.625Z",
-        "reviewed_sha": "f5eddfa5b10730722eca4a71451c1b489294113e"
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
       }
     ]
   },
-  "updated_at": "2026-05-20T14:47:11.625Z"
+  "updated_at": "2026-05-20T15:01:34.161Z"
 }

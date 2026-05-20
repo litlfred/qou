@@ -13,6 +13,127 @@
     "lean": "8b8a2cd13aba"
   },
   "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "a2b131f3b3c0",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "a2b131f3b3c0",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "a2b131f3b3c0",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "a2b131f3b3c0",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "a2b131f3b3c0",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md:131: The cancellation count enumerates the σ²-relation reductions | content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md:134: interface contribution. Detailed σ²-adjacency analysis is given in | content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md:158: σ²-adjacency counting plus Ocneanu averaging across SYT paths in"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "a2b131f3b3c0",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "a2b131f3b3c0",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
+      }
+    ],
     "wall-side-correct": [
       {
         "field_hash": {
@@ -26,10 +147,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:47:11.625Z",
-        "reviewed_sha": "f5eddfa5b10730722eca4a71451c1b489294113e"
+        "reviewed_at": "2026-05-20T15:01:34.161Z",
+        "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273"
       }
     ]
   },
-  "updated_at": "2026-05-20T14:47:11.625Z"
+  "updated_at": "2026-05-20T15:01:34.161Z"
 }
