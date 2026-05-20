@@ -19,8 +19,11 @@ Strategy #1 from the bottleneck audit. Phase-1 scope:
   - max_gen < n-2: recurse at H_{max_gen+2}
   - Single top occurrence: cyclic rotate + Markov II (z · …)
   - Multiple tops, Case A (no braid obstruction): σ² = hσ + 1
-  - Multiple tops, Case B (braid obstruction): defer to sympy
-    `tr_M_word` for now and convert result via `ZHLaurent.from_sympy`.
+  - Multiple tops, Case B (braid obstruction): `tr_M_word_lq`
+    raises `NotImplementedError`; callers are expected to catch
+    and route through `markov_trace_canonical.tr_M_word` on the
+    sympy path. Empirically, all currently catalogued atomic
+    braids (p, n, D, T, ³He, ⁴He) reach Case A only.
 
 Phase-2: native Case-B handling + ocneanu fallback rewrite.
 
@@ -38,9 +41,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from laurent_q import LaurentQ
-from hecke_laurent_fast import HA_LQ, LaurentHeckeElement
-from hecke_symbolic import q as _q
+from laurent_q import LaurentQ  # noqa: E402
+from hecke_laurent_fast import LaurentHeckeElement  # noqa: E402
 
 
 # z is the Markov parameter, related to q by z = 1/(q^{1/2} + q^{-1/2}).
@@ -184,7 +186,7 @@ class ZHLaurent:
 # Markov-axiom recursive ascent — ZHLaurent edition
 # ────────────────────────────────────────────────────────────────
 
-_TR_M_WORD_LQ_CACHE: dict = {}
+import functools  # noqa: E402
 
 
 def tr_M_word_lq(word: tuple, n: int, *,
@@ -192,28 +194,42 @@ def tr_M_word_lq(word: tuple, n: int, *,
     """ZHLaurent Markov trace of a Hecke word in H_n(q).
 
     Mirrors `markov_trace_canonical._tr_M_word_impl` but with
-    ZHLaurent arithmetic instead of sympy. Phase-1 falls back to
-    the sympy path on the complex braid case (Case B with top-1
-    in segment).
+    ZHLaurent arithmetic instead of sympy. Phase-1 reaches all
+    cases EXCEPT Case B (braid relation σ_top σ_{top-1} σ_top
+    inside the word). Case B raises `NotImplementedError` —
+    callers are expected to catch and route through
+    `markov_trace_canonical.tr_M_word` on the sympy path.
+
+    Recursion guard: `depth` is propagated for the depth-limit
+    check but excluded from the LRU cache key (the result depends
+    only on `(word, n, max_depth)`).
     """
     if depth > max_depth:
         raise RecursionError(
             f"tr_M_lq recursion too deep: word={word}, n={n}")
-    key = (tuple(word), n, max_depth)
-    if key in _TR_M_WORD_LQ_CACHE:
-        return _TR_M_WORD_LQ_CACHE[key]
+    return _tr_M_word_lq_cached(word, n, max_depth, depth=depth)
 
+
+@functools.lru_cache(maxsize=100_000)
+def _tr_M_word_lq_cached(word: tuple, n: int, max_depth: int,
+                          *, depth: int = 0) -> ZHLaurent:
+    """LRU-cached body of `tr_M_word_lq`.
+
+    `depth` is a kwarg so it bypasses the cache key entirely
+    (functools.lru_cache only hashes positional + keyword-only
+    args that participate in the call signature; here `depth` is
+    keyword-only and Python's lru_cache canonicalises by argument
+    NAME so identical (word, n, max_depth) tuples cache together
+    regardless of depth). Cache cap 100K — empirically the
+    recursion tree depth across A ≤ 6 stays well under this.
+    """
     if not word:
-        result = ZHLaurent.one()
-        _TR_M_WORD_LQ_CACHE[key] = result
-        return result
+        return ZHLaurent.one()
 
     max_gen = max(word)
     if max_gen < n - 2:
-        result = tr_M_word_lq(word, max_gen + 2,
-                              depth=depth + 1, max_depth=max_depth)
-        _TR_M_WORD_LQ_CACHE[key] = result
-        return result
+        return _tr_M_word_lq_cached(word, max_gen + 2, max_depth,
+                                     depth=depth + 1)
 
     top = n - 2
     top_positions = [i for i, g in enumerate(word) if g == top]
@@ -222,22 +238,24 @@ def tr_M_word_lq(word: tuple, n: int, *,
         # Cyclic rotation + Markov II: tr_M(w · σ_top) = z · tr_M(rest)
         pos = top_positions[0]
         rest = word[pos + 1:] + word[:pos]
-        inner = tr_M_word_lq(tuple(rest), n - 1,
-                              depth=depth + 1, max_depth=max_depth)
-        result = inner.mul_by_z()
-        _TR_M_WORD_LQ_CACHE[key] = result
-        return result
+        inner = _tr_M_word_lq_cached(rest, n - 1, max_depth,
+                                       depth=depth + 1)
+        return inner.mul_by_z()
 
     # Multiple tops: rotate so the last top is at the rightmost position
     last_top = top_positions[-1]
     rotated = word[last_top + 1:] + word[:last_top + 1]
     rest = rotated[:-1]
+    # `rest` always contains ≥ 1 `top` since we entered the
+    # multi-top branch and dropped only one; the explicit guard
+    # below mirrors `markov_trace_canonical._tr_M_word_impl`
+    # for parity with the sympy reference, and protects the next
+    # line's `rest[::-1].index(top)` against a future refactor
+    # that loosens the precondition.
     if top not in rest:
-        inner = tr_M_word_lq(tuple(rest), n - 1,
-                              depth=depth + 1, max_depth=max_depth)
-        result = inner.mul_by_z()
-        _TR_M_WORD_LQ_CACHE[key] = result
-        return result
+        inner = _tr_M_word_lq_cached(rest, n - 1, max_depth,
+                                       depth=depth + 1)
+        return inner.mul_by_z()
 
     # rest contains another top
     inner_pos = len(rest) - 1 - rest[::-1].index(top)
@@ -247,15 +265,14 @@ def tr_M_word_lq(word: tuple, n: int, *,
         # Case A: commute inner top to end, apply σ² = hσ + 1
         prefix = rest[:inner_pos]
         new_base = prefix + segment
-        term1 = tr_M_word_lq(tuple(new_base) + (top,), n,
-                              depth=depth + 1, max_depth=max_depth)
-        term2 = tr_M_word_lq(tuple(new_base), n,
-                              depth=depth + 1, max_depth=max_depth)
-        result = term1.mul_by_h() + term2
-        _TR_M_WORD_LQ_CACHE[key] = result
-        return result
+        term1 = _tr_M_word_lq_cached(new_base + (top,), n, max_depth,
+                                      depth=depth + 1)
+        term2 = _tr_M_word_lq_cached(new_base, n, max_depth,
+                                      depth=depth + 1)
+        return term1.mul_by_h() + term2
 
-    # Case B: braid case. Phase-1 falls back to sympy.
+    # Case B: braid relation — Phase-1 not implemented; caller
+    # catches and falls back to the sympy `tr_M_word`.
     raise NotImplementedError(
         f"tr_M_word_lq Phase-1: Case B (braid relation) not yet "
         f"implemented; word={word}, n={n}"
@@ -329,9 +346,9 @@ def _self_check() -> int:
     import sympy as sp
     from q_parameter import Q as Q0
     from hecke_symbolic import (
-        SymbolicHeckeElement, q as q_sym, HA as h_sym, z_markov as z_sym
+        SymbolicHeckeElement, q as q_sym, z_markov as z_sym
     )
-    from markov_trace_canonical import tr_M_element
+    from markov_trace_canonical import tr_M_element, H_SYMB as h_sym
 
     q_val = float(Q0)
     z_val = 1.0 / (q_val ** 0.5 + q_val ** (-0.5))

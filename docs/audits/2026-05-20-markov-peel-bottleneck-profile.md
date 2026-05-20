@@ -83,7 +83,7 @@ def tr_M_element_lq(lq_elem: LaurentHeckeElement, n: int) -> ZHLaurent:
 
 **Validation:** cross-check `tr_M_element_lq(elem, n).subs(q=q₀, z=z₀, h=h₀)` against the existing sympy `tr_M_element(elem, n).subs(...)` to 1e-15 relative on every atom in {p, n, D, T, ³He, ⁴He, ⁵Li}.
 
-**Strategies #3 + #4** are cheap quick wins worth applying regardless of whether #1 lands. They each save ~50 % wall at A ≥ 4 with ≤ 1 hr engineering each.
+**Strategies #3 + #4** were originally framed as cheap quick wins (~50 % wall at A ≥ 4 each, ≤ 1 hr engineering). After implementation, see the Strategy #3 footnote ⚠️ above: that estimate applied to the **slow sympy path only**, not to the production fast path (which is the path the profile measured). Strategy #4 (`@lru_cache` on `tr_M_word`) is still a candidate; it would apply to either path, but its potential gain depends on word-repetition rates that the Phase-1 LaurentQ implementation already exploits via `_tr_M_word_lq_cached` (LRU cache, maxsize 100K). So once #1 lands, #4 is largely subsumed.
 
 ## Phase-1 implementation results (2026-05-20)
 
