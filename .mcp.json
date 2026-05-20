@@ -3,6 +3,22 @@
     "paper-assistant": {
       "command": "./scripts/start-folio-assistant.sh",
       "args": ["--stdio"]
+    },
+    "paper-search-mcp": {
+      "command": "uvx",
+      "args": ["paper-search-mcp"]
+    },
+    "openalex-paper-search": {
+      "command": "uvx",
+      "args": ["openalex-mcp-server"]
+    },
+    "mcp-scholar": {
+      "command": "uvx",
+      "args": ["mcp-scholar"]
+    },
+    "lean-lsp": {
+      "command": "uvx",
+      "args": ["lean-lsp-mcp"]
     }
   }
 }
