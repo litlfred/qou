@@ -3,14 +3,14 @@
   "label": "def:computational-horizon",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/computational-horizon.ts",
-    "md": "content/quantum-observable-universe/information-theory/computational-horizon.md",
-    "lean": "content/quantum-observable-universe/information-theory/computational-horizon.lean"
+    "ts": "quantum-observable-universe/information-theory/computational-horizon.ts",
+    "md": "quantum-observable-universe/information-theory/computational-horizon.md",
+    "lean": "quantum-observable-universe/information-theory/computational-horizon.lean"
   },
   "source_hashes": {
     "md": "504c2cd49d55",
     "ts": "86db91af9a68",
-    "lean": "cec46228f91d"
+    "lean": "6619b28cede8"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "504c2cd49d55",
+          "ts": "86db91af9a68",
+          "lean": "6619b28cede8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

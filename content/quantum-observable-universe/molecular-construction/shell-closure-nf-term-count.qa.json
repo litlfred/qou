@@ -3,14 +3,14 @@
   "label": "conj:shell-closure-nf-term-count",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts",
-    "md": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md",
-    "lean": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean"
+    "ts": "quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts",
+    "md": "quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md",
+    "lean": "quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean"
   },
   "source_hashes": {
     "md": "4635d4ab6144",
     "ts": "51f169c17899",
-    "lean": "c62f114ce63b"
+    "lean": "19502217c2ab"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "4635d4ab6144",
+          "ts": "51f169c17899",
+          "lean": "19502217c2ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

@@ -3,14 +3,14 @@
   "label": "thm:substrate-self-duality",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.lean"
+    "ts": "quantum-observable-universe/quantum-observable-universes/substrate-self-duality.ts",
+    "md": "quantum-observable-universe/quantum-observable-universes/substrate-self-duality.md",
+    "lean": "quantum-observable-universe/quantum-observable-universes/substrate-self-duality.lean"
   },
   "source_hashes": {
     "md": "5f9eac9dd4de",
-    "ts": "2ed7600b1fff",
-    "lean": "d076a9d3e322"
+    "ts": "4eeca4b530ee",
+    "lean": "734a19efe6d0"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

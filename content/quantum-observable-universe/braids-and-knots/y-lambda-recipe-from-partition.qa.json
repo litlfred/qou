@@ -3,14 +3,14 @@
   "label": "prop:y-lambda-recipe-from-partition",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts",
+    "md": "quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md",
+    "lean": "quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.lean"
   },
   "source_hashes": {
     "md": "d642c35af66b",
     "ts": "7b2f3805e448",
-    "lean": "fb910e38a4ac"
+    "lean": "124abc17a107"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "d642c35af66b",
+          "ts": "7b2f3805e448",
+          "lean": "124abc17a107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

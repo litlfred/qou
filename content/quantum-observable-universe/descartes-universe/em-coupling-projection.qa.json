@@ -3,14 +3,14 @@
   "label": "prop:em-coupling-projection",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/em-coupling-projection.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/em-coupling-projection.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/em-coupling-projection.lean"
+    "ts": "quantum-observable-universe/descartes-universe/em-coupling-projection.ts",
+    "md": "quantum-observable-universe/descartes-universe/em-coupling-projection.md",
+    "lean": "quantum-observable-universe/descartes-universe/em-coupling-projection.lean"
   },
   "source_hashes": {
     "md": "3c3c2c0dc1b4",
     "ts": "36e084a860e9",
-    "lean": "81d10f1bf767"
+    "lean": "f9274fd0fd2a"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "3c3c2c0dc1b4",
+          "ts": "36e084a860e9",
+          "lean": "f9274fd0fd2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

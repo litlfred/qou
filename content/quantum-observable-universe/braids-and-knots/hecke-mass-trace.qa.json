@@ -3,14 +3,14 @@
   "label": "prop:hecke-mass-trace",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/hecke-mass-trace.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/hecke-mass-trace.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/hecke-mass-trace.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/hecke-mass-trace.ts",
+    "md": "quantum-observable-universe/braids-and-knots/hecke-mass-trace.md",
+    "lean": "quantum-observable-universe/braids-and-knots/hecke-mass-trace.lean"
   },
   "source_hashes": {
     "md": "ed675b72dff1",
     "ts": "0cc2e8fab71d",
-    "lean": "7e53dce80e78"
+    "lean": "0841811a8c32"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "0cc2e8fab71d",
+          "lean": "0841811a8c32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

@@ -3,14 +3,14 @@
   "label": "prop:hecke-markov-transition",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/hecke-markov-transition.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/hecke-markov-transition.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/hecke-markov-transition.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/hecke-markov-transition.ts",
+    "md": "quantum-observable-universe/braids-and-knots/hecke-markov-transition.md",
+    "lean": "quantum-observable-universe/braids-and-knots/hecke-markov-transition.lean"
   },
   "source_hashes": {
     "md": "c9911c5c8b14",
     "ts": "f2528f31fb8c",
-    "lean": "59159f341279"
+    "lean": "b24e6dca92a1"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "c9911c5c8b14",
+          "ts": "f2528f31fb8c",
+          "lean": "b24e6dca92a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

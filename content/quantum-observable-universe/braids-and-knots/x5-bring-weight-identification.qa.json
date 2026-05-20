@@ -3,14 +3,14 @@
   "label": "prop:x5-bring-weight-identification",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.ts",
+    "md": "quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.md",
+    "lean": "quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.lean"
   },
   "source_hashes": {
     "md": "c9881e2ce847",
     "ts": "421b76d5dbf6",
-    "lean": "9577ea8bd51d"
+    "lean": "7fcd4185d475"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "7fcd4185d475"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

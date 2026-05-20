@@ -3,14 +3,14 @@
   "label": "conj:qbeta-c-k-closed-forms",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.ts",
+    "md": "quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.md",
+    "lean": "quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.lean"
   },
   "source_hashes": {
-    "md": "f7217ecea20f",
+    "md": "b35ecb2ebcaa",
     "ts": "a3ed44c1257b",
-    "lean": "97d464bfbfd4"
+    "lean": "95c5d60be687"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -45,6 +60,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-emoji-content": [
@@ -62,6 +92,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:50:30.131Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-first-person-work": [
@@ -79,6 +124,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-time-stamped-notes": [
@@ -96,6 +156,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-unicode-crash": [
@@ -115,6 +190,23 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.md:54: The current $Q_\\beta$ categorical prediction (Form A · cos · ∏ rungs)"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.md:54: The current $Q_\\beta$ categorical prediction (Form A · cos · ∏ rungs)"
       }
     ],
     "voice-editorializing": [
@@ -132,6 +224,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "framework-canonical": [
@@ -149,8 +256,23 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "b35ecb2ebcaa",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

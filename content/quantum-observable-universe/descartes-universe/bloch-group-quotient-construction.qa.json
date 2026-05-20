@@ -3,12 +3,12 @@
   "label": "prop:bloch-group-quotient-construction",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean"
+    "ts": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.ts",
+    "md": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md",
+    "lean": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean"
   },
   "source_hashes": {
-    "md": "903de29c0f78",
+    "md": "c1f0e7fb82c6",
     "ts": "48cdeed22b72",
     "lean": "a5be8ee3f9e6"
   },
@@ -30,6 +30,23 @@
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
     ],
     "voice-status-leak": [
@@ -47,6 +64,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-emoji-content": [
@@ -66,6 +98,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md:109: 1. ✅ `BlochGroup F` quotient construction (this proposition)."
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:50:30.131Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-first-person-work": [
@@ -83,6 +130,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-time-stamped-notes": [
@@ -100,6 +162,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-unicode-crash": [
@@ -119,6 +196,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md:109: 1. ✅ `BlochGroup F` quotient construction (this proposition)."
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-editorializing": [
@@ -136,6 +228,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "framework-canonical": [
@@ -153,8 +260,23 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c1f0e7fb82c6",
+          "ts": "48cdeed22b72",
+          "lean": "a5be8ee3f9e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

@@ -3,14 +3,14 @@
   "label": "prop:level-sufficiency",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/level-sufficiency.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/level-sufficiency.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/level-sufficiency.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/level-sufficiency.ts",
+    "md": "quantum-observable-universe/braids-and-knots/level-sufficiency.md",
+    "lean": "quantum-observable-universe/braids-and-knots/level-sufficiency.lean"
   },
   "source_hashes": {
     "md": "e2810bf11570",
     "ts": "cd305107d482",
-    "lean": "6571ae5c8221"
+    "lean": "96e611e965a5"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "96e611e965a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

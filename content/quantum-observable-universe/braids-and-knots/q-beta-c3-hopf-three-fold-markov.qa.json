@@ -3,14 +3,14 @@
   "label": "prop:q-beta-c3-hopf-three-fold-markov",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.ts",
+    "md": "quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md",
+    "lean": "quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.lean"
   },
   "source_hashes": {
     "md": "44225bc96f9d",
     "ts": "bc85776e02d7",
-    "lean": "eda58532ac7d"
+    "lean": "d854f6733026"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "44225bc96f9d",
+          "ts": "bc85776e02d7",
+          "lean": "d854f6733026"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

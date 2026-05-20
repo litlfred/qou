@@ -3,14 +3,14 @@
   "label": "prop:chi-lambda-w0-sign-weighting",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/chi-lambda-w0-sign-weighting.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/chi-lambda-w0-sign-weighting.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/chi-lambda-w0-sign-weighting.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/chi-lambda-w0-sign-weighting.ts",
+    "md": "quantum-observable-universe/braids-and-knots/chi-lambda-w0-sign-weighting.md",
+    "lean": "quantum-observable-universe/braids-and-knots/chi-lambda-w0-sign-weighting.lean"
   },
   "source_hashes": {
     "md": "d31f78db5901",
     "ts": "cb820bbea7b2",
-    "lean": "bf06f04fec8d"
+    "lean": "3499d69b6d89"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "d31f78db5901",
+          "ts": "cb820bbea7b2",
+          "lean": "3499d69b6d89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

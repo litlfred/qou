@@ -3,14 +3,14 @@
   "label": "prop:cohomological-embedding",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/cohomological-embedding.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/cohomological-embedding.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/cohomological-embedding.lean"
+    "ts": "quantum-observable-universe/descartes-universe/cohomological-embedding.ts",
+    "md": "quantum-observable-universe/descartes-universe/cohomological-embedding.md",
+    "lean": "quantum-observable-universe/descartes-universe/cohomological-embedding.lean"
   },
   "source_hashes": {
     "md": "89ebeb8e6511",
     "ts": "036116c0fe46",
-    "lean": "ecfe7da79871"
+    "lean": "84d3da4b01f6"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "89ebeb8e6511",
+          "ts": "036116c0fe46",
+          "lean": "84d3da4b01f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

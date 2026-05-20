@@ -3,14 +3,14 @@
   "label": "prop:tau-M-asymptotic-rep-theory",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.ts",
+    "md": "quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.md",
+    "lean": "quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.lean"
   },
   "source_hashes": {
     "md": "4c3d16d0a33c",
     "ts": "00daf9bf3916",
-    "lean": "fde6e20badc6"
+    "lean": "5b763878423a"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "4c3d16d0a33c",
+          "ts": "00daf9bf3916",
+          "lean": "5b763878423a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

@@ -3,14 +3,14 @@
   "label": "conj:alpha-cosh-h-z-step-correction",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.ts",
+    "md": "quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.md",
+    "lean": "quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.lean"
   },
   "source_hashes": {
     "md": "19f305f13e71",
     "ts": "68c8a50e5195",
-    "lean": "7492c532db8f"
+    "lean": "ea8401404357"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "19f305f13e71",
+          "ts": "68c8a50e5195",
+          "lean": "ea8401404357"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

@@ -3,14 +3,14 @@
   "label": "prop:brings-smoothness-resolution",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/brings-smoothness-resolution.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/brings-smoothness-resolution.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/brings-smoothness-resolution.lean"
+    "ts": "quantum-observable-universe/descartes-universe/brings-smoothness-resolution.ts",
+    "md": "quantum-observable-universe/descartes-universe/brings-smoothness-resolution.md",
+    "lean": "quantum-observable-universe/descartes-universe/brings-smoothness-resolution.lean"
   },
   "source_hashes": {
     "md": "4f2af8ddf70b",
     "ts": "a85416f15d99",
-    "lean": "6f7eb0a205d2"
+    "lean": "ba4b38f2c134"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "4f2af8ddf70b",
+          "ts": "a85416f15d99",
+          "lean": "ba4b38f2c134"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

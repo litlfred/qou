@@ -3,14 +3,14 @@
   "label": "prop:crystal-isospin-degeneracy",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.ts",
+    "md": "quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.md",
+    "lean": "quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.lean"
   },
   "source_hashes": {
     "md": "7d8c64baa3e4",
     "ts": "cec5ce588e36",
-    "lean": "eb9d02e6de8c"
+    "lean": "1feb34bbf4ab"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "7d8c64baa3e4",
+          "ts": "cec5ce588e36",
+          "lean": "1feb34bbf4ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

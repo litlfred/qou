@@ -3,14 +3,14 @@
   "label": "prop:qou-canonical-action",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean"
+    "ts": "quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts",
+    "md": "quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md",
+    "lean": "quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean"
   },
   "source_hashes": {
     "md": "766fe12d4720",
     "ts": "ab87d5e81e28",
-    "lean": "aa32efa233c5"
+    "lean": "a1354465dbe7"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "766fe12d4720",
+          "ts": "ab87d5e81e28",
+          "lean": "a1354465dbe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }
