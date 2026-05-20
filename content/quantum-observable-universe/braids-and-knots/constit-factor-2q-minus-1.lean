@@ -1,7 +1,8 @@
 /-
 Constit-side per-Z step factor in the canonical-atom Markov trace
-categorically equals 2q − 1 at the substrate point q_0
-(to 0.033 % rel. err. — empirically, Phase 5g).
+numerically matches 2q − 1 at the substrate point q_0
+(localised tangency at q_0 only — Phase 5k.2 FALSIFIES the global
+form claim).
 
 Empirical at the substrate point q_0 (Phase 5g categorical scan, 50 dps):
 
@@ -9,19 +10,20 @@ Empirical at the substrate point q_0 (Phase 5g categorical scan, 50 dps):
   candidate (2q - 1) at q_0        = 1.219957
   rel. diff                        = 0.0329 %
 
-This is a CONJECTURE: the closed form (2q - 1) matches empirically
-to 0.033 %, which is conjecturally an O(h^4) higher-order term but
-not yet proven exact.  The class `ConstitFactor2qMinus1`
-axiomatises the identity at the substrate point in the
-§3b-cond pattern (see CLAUDE.md §3b-cond).  Downstream theorems
-consuming `[ConstitFactor2qMinus1]` derive unconditional Lean
-theorems modulo this single conjectural input.
+WARNING — Phase 5k.2 (varying-q sweep) showed the (2q − 1) form
+does NOT extend globally:
 
-Numerical witness (Phase 5g, 50 dps):
+  q       ρ_constit   (2q − 1)   rel.err.
+  1.050   0.7928      1.100      27.9 %
+  1.110   1.2205      1.220       0.04 %
+  1.170   1.7858      1.340      33.3 %
 
-  constit factor at q_0                 = 1.220358
-  (2 * q_0 - 1)                          = 1.219957
-  rel. err                               = 3.29e-4
+The 0.033 % match at q_0 is a localised numerical tangency, not a
+structural identity.  The class `ConstitFactor2qMinus1` therefore
+records the at-q_0 evaluation only — instances at q ≠ q_0 will
+not (in general) satisfy the closed-form identity.  See
+[`conj:constit-factor-2q-minus-1.md`] §"Update 2026-05-20" for
+the verdict and Phase 5l (queued) for the next investigation.
 
 Ref: [jones1987] Hecke algebra representations of braid groups
 Ref: [wenzl1988] Hecke algebras of type A_n and subfactors

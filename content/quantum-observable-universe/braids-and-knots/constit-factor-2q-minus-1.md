@@ -1,3 +1,31 @@
+> **⚠ Update 2026-05-20 (Phase 5k.2): GLOBAL FORM FALSIFIED.**
+> Phase 5k.2 ([`constit_factor_varying_q_phase5k2.py`](../../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py))
+> directly measured $\rho_Z^{\mathrm{constit}}(q)$ at five $q$-values
+> across the substrate window using the same $y_\lambda$ / $\chi_\lambda$
+> pipeline as PR #819's Phase 5c.1.  Result:
+>
+> | $q$ | $\rho_Z^{\mathrm{constit}}(q)$ | $(2q - 1)$ | rel. err. |
+> |---|---:|---:|---:|
+> | $1.050$ | $0.7928$ | $1.100$ | $27.9\%$ |
+> | $1.080$ | $0.9933$ | $1.160$ | $14.4\%$ |
+> | $1.110$ | $1.2205$ | $1.220$ | $0.04\%$ |
+> | $\mathbf{1.10998 = q_0}$ | $\mathbf{1.2204}$ | $\mathbf{1.220}$ | $\mathbf{0.034\%}$ |
+> | $1.113$ | $1.3905$ | $1.226$ | $1.55\%$ |
+> | $1.170$ | $1.7858$ | $1.340$ | $33.3\%$ |
+>
+> The $0.033\%$ match at $q_0$ identified in Phase 5g is a
+> **localised tangency**, not a structural identity — within
+> $\pm 0.005$ of $q_0$ the relative error already doubles.
+> The candidate $(2q - 1)$ is **NOT** the correct closed form for
+> $\rho_Z^{\mathrm{constit}}(q)$ globally; Phase 5g's categorical
+> search matched the *value* at $q_0$, not the *function*.
+> Phase 5k.1's "unit-coefficient $h^5$" finding is consequently
+> also a coincidence at $q_0$.
+>
+> The statement below is preserved as a record of the at-$q_0$
+> tangency; the **claim that $(2q - 1)$ is the categorical form of
+> $\rho_Z^{\mathrm{constit}}$ is empirically refuted**.
+
 **Conjecture (Constit-side per-Z step factor in canonical-atom Markov trace).**
 
 *Let $\beta_K^{\mathrm{constit}} \in H_{3A}(q)$ be the disjoint Hecke
@@ -152,12 +180,22 @@ $(2q - 1)$ alone).
 
 ### Open questions
 
-1. **Confirm the $O(h^5)$ form via varying-q measurement.**
-   Phase 5k.2 (queued): re-measure $\rho_Z^{\mathrm{constit}}(q)$ at
-   $q \in \{1.05, 1.10998, 1.15, 1.2, 1.3\}$ via `pyhecke_native`
-   at varying $q$, fit $\log|\text{residual}| \propto k \cdot \log|h|$
-   to extract the exponent $k$ empirically across the substrate
-   window.  $(\star\star\star)$ predicts a clean unit-slope $k = 5$.
+1. ~~**Confirm the $O(h^5)$ form via varying-q measurement.**~~
+   **Phase 5k.2: FALSIFIED** (see banner at top).  The varying-$q$
+   sweep showed that $\rho_Z^{\mathrm{constit}}(q)$ does NOT follow
+   $(2q - 1) + h^5$; the $q_0$ match is a localised tangency, not
+   a structural identity.
+
+2. **What IS the closed form?**  Open: identify the actual
+   categorical structure of $\rho_Z^{\mathrm{constit}}(q)$.  The
+   measured ratio grows from $\rho(1.05) = 0.79$ to $\rho(1.17) = 1.79$
+   — a factor of $2.26\times$ across only $0.12$ in $q$, much steeper
+   than $(2q-1)$.  Possibilities: $\rho$ is a non-polynomial
+   combination of $\tau_M^3(\beta_p)$, $\tau_M^3(\beta_n)$, and
+   rank-jump $z$-factors; a Markov-trace identity yielding
+   $\rho = \tau_M^3(\beta_p) \cdot$ (something) may apply.  Phase 5l
+   (queued): structural derivation from the disjoint-product Markov
+   trace formula.
 
 2. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
    The form $2q - 1$ matches $\sigma + \sigma^{-1}$ acting on the

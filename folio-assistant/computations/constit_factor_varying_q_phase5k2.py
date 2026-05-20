@@ -1,0 +1,243 @@
+"""
+constit_factor_varying_q_phase5k2.py — Phase 5k.2: varying-q sweep
+to confirm the unit-coefficient h^5 finding at q_0 (Phase 5k.1).
+
+Phase 5k.1 found that the residual
+
+  r(q_0) := ρ_Z^constit(q_0) - (2*q_0 - 1)
+
+equals h^5(q_0) with coefficient c = 1.016 — only 1.6% off unity.
+
+If this is a TRUE structural identity (ρ = (2q - 1) + h^5 + O(h^7)),
+the coefficient c(q) := r(q) / h(q)^5 should be 1 (to leading order)
+for ALL q in the substrate window, not just at q_0.
+
+This script tests that hypothesis directly by measuring ρ_Z^constit
+at multiple q values, computing the residual, dividing by h^5, and
+checking if c(q) is approximately 1 across the window.
+
+  measurement pipeline at each q:
+    1. y_λ(q) via y_lambda_wenzl_bridge_numeric (Wenzl normalization)
+    2. χ_λ(β_p · β_n, q) via chi_lambda_braid (Rust kernel, q_value=q)
+    3. τ_M_constit(D) = Σ_{λ⊢6} y_λ(q) · χ_λ(β_constit_D, q)
+    4. τ_M_constit(³He) = Σ_{λ⊢9} y_λ(q) · χ_λ(β_constit_3He, q)
+    5. ρ(q) = τ_M_constit(³He) / τ_M_constit(D)
+
+  Ref: conj:constit-factor-2q-minus-1.md (PR #831)
+  Ref: PR #831 Phase 5k.1 (constit_factor_residual_phase5k.py)
+  Ref: PR #819 Phase 5c.1 (delta_lambda_fr_identity_phase5c.py)
+"""
+from __future__ import annotations
+
+import sys
+import time
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+import mpmath as mp  # noqa: E402
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q as Q0  # noqa: E402
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
+
+
+# Substrate-window q values to test.  q_0 ≈ 1.10998 is the substrate
+# point; q = 1 is the bar-symmetric origin (h=0, can't divide by h^5);
+# q values outside the substrate window (q < 1 or q > 2) are not
+# directly relevant.  Pick 5 points spanning the meaningful range.
+Q_VALUES = ["1.05", "1.08", "1.10998", "1.13", "1.17"]
+
+
+def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
+                          dps: int = 50) -> mp.mpf:
+    """Compute τ_M(β_constit_K) = Σ_λ y_λ · χ_λ(β_constit_K) at q.
+
+    Uses the CONSTIT factorisation (include_inter=False), so the
+    braid word has no interface generators.
+
+    Marshalling convention (matches delta_lambda_fr_identity_phase5c.py):
+      (c=1, d=0)    → positive σ
+      (c=1, d=-h)   → negative σ⁻¹ (Hecke skein at substrate q)
+      (c=1, d=-h/2) → averaged → σ convention (positive)
+    """
+    word = atom_braid_word_3A(Z, N, include_inter=False)
+    h_val = float(Q0 - 1 / Q0)  # h at the substrate point — defines word
+    word_m = []
+    for c, d, gen in word:
+        cf, df = float(c), float(d)
+        if abs(cf - 1.0) < 1e-10 and abs(df) < 1e-10:
+            word_m.append((1, gen + 1))           # σ
+        elif abs(cf - 1.0) < 1e-10 and abs(df + h_val) < 1e-10:
+            word_m.append((-1, gen + 1))          # σ⁻¹
+        elif abs(cf - 1.0) < 1e-10 and abs(df + h_val / 2) < 1e-10:
+            word_m.append((1, gen + 1))           # averaged → σ convention
+        else:
+            word_m.append((1, gen + 1))           # fallback
+    n = 3 * (Z + N)
+    q_f = float(q_val)
+    total = mp.mpf(0)
+    for lam in partitions_of(n):
+        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
+        chi = chi_lambda_braid(lam, word_m, q_value=q_f)
+        total += y * mp.mpf(str(chi))
+    return total
+
+
+def measure_rho_at_q(q_val: mp.mpf, dps: int = 50) -> dict:
+    """Compute ρ_Z^constit(q) = τ_M_constit(³He) / τ_M_constit(D)."""
+    t0 = time.time()
+    tau_D = compute_tau_M_constit(1, 1, q_val, dps=dps)
+    t1 = time.time()
+    tau_3He = compute_tau_M_constit(2, 1, q_val, dps=dps)
+    t2 = time.time()
+    if tau_D == 0:
+        return {"q": float(q_val), "error": "tau_M_constit(D) = 0"}
+    rho = tau_3He / tau_D
+    return {
+        "q": float(q_val),
+        "tau_M_constit_D": float(tau_D),
+        "tau_M_constit_3He": float(tau_3He),
+        "rho_Z_constit": float(rho),
+        "rho_Z_constit_str": mp.nstr(rho, 30),
+        "wall_seconds_D": t1 - t0,
+        "wall_seconds_3He": t2 - t1,
+    }
+
+
+def analyze_residual(q_val: mp.mpf, rho: mp.mpf) -> dict:
+    """Compute residual against (2q - 1) and the c = residual / h^5
+    coefficient (Phase 5k.1 hypothesis: c ≈ 1)."""
+    predicted = 2 * q_val - 1
+    residual = rho - predicted
+    h = q_val - 1 / q_val
+    h5 = h ** 5
+    c_h5 = residual / h5 if h5 != 0 else mp.mpf("nan")
+    return {
+        "predicted_2q_minus_1": float(predicted),
+        "residual": float(residual),
+        "h": float(h),
+        "h_to_5": float(h5),
+        "c_residual_over_h5": float(c_h5),
+        "rel_err_pct": float(abs(residual) / predicted * 100),
+    }
+
+
+def main() -> int:
+    set_compute_dps(50)
+
+    print(f"=== Phase 5k.2: varying-q sweep, q ∈ {Q_VALUES} ===\n")
+
+    results = []
+    for q_str in Q_VALUES:
+        q_val = mp.mpf(q_str)
+        print(f"  q = {q_str} ...")
+        meas = measure_rho_at_q(q_val)
+        if "error" in meas:
+            print(f"    ERROR: {meas['error']}")
+            continue
+        ana = analyze_residual(q_val, mp.mpf(meas["rho_Z_constit_str"]))
+        meas.update(ana)
+        results.append(meas)
+        print(f"    ρ_Z^constit = {meas['rho_Z_constit']:.10f}")
+        print(f"    (2q - 1)    = {meas['predicted_2q_minus_1']:.10f}")
+        print(f"    residual    = {meas['residual']:+.4e}")
+        print(f"    h^5(q)      = {meas['h_to_5']:.4e}")
+        print(f"    c = r / h^5 = {meas['c_residual_over_h5']:+.4f}")
+        print(f"    rel.err     = {meas['rel_err_pct']:.4f}%")
+        print()
+
+    print(f"=== Summary table ===\n")
+    print(f"  {'q':>8} {'ρ_Z^constit':>14} {'(2q-1)':>14} "
+          f"{'residual':>14} {'h^5':>14} {'c=r/h^5':>10}")
+    for r in results:
+        print(f"  {r['q']:>8.5f} {r['rho_Z_constit']:>14.8f} "
+              f"{r['predicted_2q_minus_1']:>14.8f} "
+              f"{r['residual']:>+14.4e} "
+              f"{r['h_to_5']:>14.4e} "
+              f"{r['c_residual_over_h5']:>+10.4f}")
+    print()
+
+    # Verdict
+    c_values = [r["c_residual_over_h5"] for r in results]
+    c_min, c_max = min(c_values), max(c_values)
+    c_mean = sum(c_values) / len(c_values)
+    c_spread = (c_max - c_min) / abs(c_mean) if c_mean != 0 else float("inf")
+    print(f"=== Verdict ===\n")
+    print(f"  c(q) range across {len(results)} q-points:")
+    print(f"    min  = {c_min:+.4f}")
+    print(f"    max  = {c_max:+.4f}")
+    print(f"    mean = {c_mean:+.4f}")
+    print(f"    spread / |mean| = {c_spread*100:.2f}%")
+    if c_spread < 0.10 and abs(c_mean - 1.0) < 0.10:
+        print(f"\n  ✓ UNIT-COEFFICIENT h^5 CONFIRMED across the substrate "
+              f"window (c ≈ 1 ± 10%).")
+        verdict = "unit-coefficient-h5-confirmed"
+    elif c_spread < 0.10:
+        print(f"\n  ⚠ c(q) is constant (~{c_mean:.3f}) but NOT unity. "
+              f"Suggests ρ = (2q-1) + c·h^5 + O(h^7) with c ≠ 1.")
+        verdict = "constant-coefficient-but-not-unity"
+    else:
+        print(f"\n  ✗ c(q) varies significantly across q "
+              f"(spread {c_spread*100:.1f}%). The h^5 hypothesis is "
+              f"NOT confirmed; the residual has a more complex "
+              f"q-dependence.")
+        verdict = "h5-form-not-confirmed"
+
+    # Witness
+    builder = WitnessBuilder(
+        "constit-factor-varying-q-phase5k2", engine="python"
+    )
+    builder.set_content_block("conj:constit-factor-2q-minus-1")
+    builder.add_parameter("q_values", Q_VALUES)
+    builder.set_description(
+        "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-"
+        "coefficient h^5 finding. For each q in the substrate window, "
+        "computes ρ_Z^constit(q) = τ_M_constit(³He, q) / "
+        "τ_M_constit(D, q) using y_λ(q) Wenzl weights and "
+        "χ_λ(β_constit, q) Hecke characters. Tests whether "
+        "c(q) := (ρ - (2q-1)) / h^5 is approximately 1 across q, "
+        "which would confirm the structural identity ρ = (2q-1) + "
+        "h^5 + O(h^7)."
+    )
+    builder.add_data("per_q_results", results)
+    builder.add_data("c_h5_range", {
+        "min": c_min, "max": c_max, "mean": c_mean,
+        "relative_spread": c_spread,
+    })
+    builder.add_data("verdict", verdict)
+    builder.add_assertion(
+        name="phase_5k_2_c_h5_close_to_unity",
+        computed=c_mean,
+        expected=1.0,
+        tolerance=0.15,
+        unit="dimensionless",
+        source=(
+            f"Phase 5k.2: mean of c(q) = (ρ - (2q-1)) / h^5 across "
+            f"{len(results)} q-points in the substrate window. "
+            f"If mean ≈ 1 ± 0.15 and spread < 10%, the unit-"
+            f"coefficient h^5 hypothesis is confirmed."
+        ),
+    )
+    builder.add_assertion(
+        name="phase_5k_2_c_h5_spread_small",
+        computed=c_spread,
+        expected=0.0,
+        tolerance=0.10,
+        unit="dimensionless",
+        source=(
+            "Relative spread (max - min) / |mean| of c(q). A small "
+            "spread (< 10%) indicates c is a true constant in q."
+        ),
+    )
+    builder.save()
+    print(f"\nWitness written: constit-factor-varying-q-phase5k2.witness.json")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
