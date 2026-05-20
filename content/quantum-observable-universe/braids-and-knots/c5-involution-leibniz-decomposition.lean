@@ -206,6 +206,43 @@ theorem c5RationalMap_max_at_zero (h : ℝ) :
   rw [c5RationalMap_zero]
   exact c5RationalMap_le_neg_five_quarters h
 
+/-- **`c_5` as a function of `h²`**: `c5OfHSquared(h²) = c5RationalMap(h)`.
+    Makes the "depends only on $h^2$" structure manifest, which is
+    the algebraic content of "$c_5$ is bar-symmetric because $h^2$
+    is bar-symmetric (anti × anti = sym)". -/
+noncomputable def c5OfHSquared (h_sq : ℝ) : ℝ := -3/2 + 1 / (h_sq + 4)
+
+/-- **Factorization theorem**: c5RationalMap factors as c5OfHSquared ∘ (·²).
+    Since h ↦ h² is the canonical anti-sym → sym projection (via
+    `IsBarSymmetric.of_mul_antisym`), this expresses c_5 as
+    bar-symmetric-projection-followed-by-rational-function. -/
+theorem c5RationalMap_factor (h : ℝ) :
+    c5RationalMap h = c5OfHSquared (h^2) := by
+  unfold c5RationalMap c5OfHSquared
+
+/-- **Sign signature of c_5 over ℝ**: `c5RationalMap` is strictly
+    negative everywhere on ℝ. Categorical content: the precision-
+    ladder rung-5 coefficient is always sign-negative, regardless
+    of the chosen quadratic specialisation of q. -/
+theorem c5RationalMap_strict_neg (h : ℝ) : c5RationalMap h < 0 := by
+  have hupper : c5RationalMap h ≤ -5/4 := c5RationalMap_le_neg_five_quarters h
+  linarith
+
+/-- **`c5OfHSquared` is monotonically decreasing on the nonneg domain**.
+    Larger $h^2$ (larger quantum deformation) → smaller (more
+    negative) c_5. Stated on `Set.Ici (0 : ℝ)` since the natural
+    domain is `h² ≥ 0`. -/
+theorem c5OfHSquared_antitone_on_nonneg
+    {x y : ℝ} (hx : 0 ≤ x) (hxy : x ≤ y) :
+    c5OfHSquared y ≤ c5OfHSquared x := by
+  unfold c5OfHSquared
+  have hx4 : (0 : ℝ) < x + 4 := by linarith
+  have hy4 : (0 : ℝ) < y + 4 := by linarith
+  have hinv : (1 : ℝ) / (y + 4) ≤ 1 / (x + 4) := by
+    rw [div_le_div_iff hy4 hx4]
+    linarith
+  linarith
+
 /-- **Commutative-QOU value of `c_5`.** At `q = 1`, `[2]_q = 2`,
     so `c_5(1) = -3/2 + 1/4 = -5/4`. The "-1/2" in the empirical
     decomposition is q-independent and SURVIVES the commutative
