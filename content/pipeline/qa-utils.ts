@@ -12,8 +12,9 @@ import {
   readdirSync,
   statSync,
 } from "fs";
-import { execSync } from "child_process";
-import { join } from "path";
+import { execFileSync } from "child_process";
+import { mkdirSync } from "fs";
+import { dirname, join } from "path";
 import type {
   BlockQaReport,
   QaFieldHash,
@@ -58,31 +59,54 @@ export function hashBlockFiles(paths: {
 
 // ── Repo info ───────────────────────────────────────────────────
 
-/** Current HEAD SHA (full). Returns empty string outside a git repo. */
-export function gitHeadSha(): string {
-  try {
-    return execSync("git rev-parse HEAD", { stdio: ["ignore", "pipe", "ignore"] })
-      .toString()
-      .trim();
-  } catch {
-    return "";
-  }
-}
+/**
+ * Sentinel used when git is unavailable or the path is untracked.
+ * Matches the convention in `witness_base._git_file_sha()` (Python
+ * compute pipeline) so JSON consumers see an explicit token rather
+ * than an empty string.
+ */
+export const GIT_SHA_UNKNOWN = "unknown";
 
 /**
- * Full git SHA of the most recent commit touching `path` (or empty
- * string if `path` is not tracked / outside a git repo). Used to
- * record `script_commit_sha` on each script-kind reviewer entry.
+ * Current HEAD SHA (full). Returns the `unknown` sentinel outside
+ * a git repo.
  */
-export function gitFileCommitSha(path: string): string {
+export function gitHeadSha(): string {
   try {
-    return execSync(`git log -n 1 --format=%H -- "${path}"`, {
+    return execFileSync("git", ["rev-parse", "HEAD"], {
       stdio: ["ignore", "pipe", "ignore"],
     })
       .toString()
       .trim();
   } catch {
-    return "";
+    return GIT_SHA_UNKNOWN;
+  }
+}
+
+/**
+ * Full git SHA of the most recent commit touching `relPath`, where
+ * `relPath` is repo-relative (e.g. `content/pipeline/foo.ts`).
+ * Returns the `unknown` sentinel if `path` is not tracked / outside
+ * a git repo.
+ *
+ * Runs `git -C <repoRoot> log ... -- <relPath>` via `execFileSync`
+ * (no shell interpolation) — git pathspecs are interpreted relative
+ * to the repo root, so passing an absolute path is brittle and
+ * tooling-cwd-dependent. Pinning cwd via `-C` makes the call
+ * robust regardless of where the qa-sweep process is invoked from.
+ */
+export function gitFileCommitSha(relPath: string, repoRoot: string): string {
+  try {
+    const out = execFileSync(
+      "git",
+      ["-C", repoRoot, "log", "-n", "1", "--format=%H", "--", relPath],
+      { stdio: ["ignore", "pipe", "ignore"] },
+    )
+      .toString()
+      .trim();
+    return out || GIT_SHA_UNKNOWN;
+  } catch {
+    return GIT_SHA_UNKNOWN;
   }
 }
 
@@ -92,17 +116,28 @@ export function gitFileCommitSha(path: string): string {
  * 12-char SHA-256 prefix of the concatenated content of `paths`,
  * in the order given. Used for `deps_hash` on reviewer entries
  * (multiple extra inputs roll up into one fingerprint).
+ *
+ * Each entry of `paths` is `{ label, abs }`: `abs` is the
+ * filesystem path to read bytes from; `label` is the path string
+ * mixed into the hash to disambiguate "two files with the same
+ * content but different declared paths" from each other AND to
+ * mark presence/absence. Callers should pass **repo-relative**
+ * labels (not absolute) so the hash is portable across machines /
+ * checkout locations — otherwise the same byte-identical inputs
+ * produce different `deps_hash` values per environment.
  */
-export function hashFiles(paths: string[]): string | undefined {
+export function hashFiles(
+  paths: Array<{ label: string; abs: string }>,
+): string | undefined {
   if (paths.length === 0) return undefined;
   const h = createHash("sha256");
-  for (const p of paths) {
-    if (!existsSync(p)) {
-      h.update(`__absent__:${p}\n`);
+  for (const { label, abs } of paths) {
+    if (!existsSync(abs)) {
+      h.update(`__absent__:${label}\n`);
       continue;
     }
-    h.update(`__file__:${p}\n`);
-    h.update(readFileSync(p));
+    h.update(`__file__:${label}\n`);
+    h.update(readFileSync(abs));
     h.update("\n");
   }
   return h.digest("hex").slice(0, 12);
@@ -145,14 +180,24 @@ export function computeCriterionScriptHashes(
   repoRoot: string = process.cwd(),
 ): CriterionScriptHashes {
   const absSource = join(repoRoot, sourceFile);
-  const absExtras = extraInputs.map((p) => join(repoRoot, p));
+  // Hash extra inputs with their repo-relative labels (NOT
+  // absolute paths) so the resulting `deps_hash` is portable across
+  // machines / checkout locations. Bytes are still read from the
+  // absolute path; only the label salt comes from the relative
+  // form.
+  const labelled = extraInputs.map((p) => ({
+    label: p,
+    abs: join(repoRoot, p),
+  }));
   return {
     criterion_id: criterionId,
     source_file: sourceFile,
     script_hash: hashFile(absSource) ?? "",
-    script_commit_sha: gitFileCommitSha(absSource),
+    // Pass the repo-relative `sourceFile` (not `absSource`) so git
+    // interprets the pathspec correctly against `repoRoot`.
+    script_commit_sha: gitFileCommitSha(sourceFile, repoRoot),
     extra_inputs: extraInputs,
-    deps_hash: extraInputs.length > 0 ? hashFiles(absExtras) : undefined,
+    deps_hash: extraInputs.length > 0 ? hashFiles(labelled) : undefined,
   };
 }
 
@@ -394,11 +439,14 @@ export function saveQaScriptSidecar(
   repoRoot: string = process.cwd(),
 ): void {
   const p = scriptSidecarPath(sidecar.criterion_id, repoRoot);
-  const dir = join(p, "..");
-  if (!existsSync(dir)) {
-    // Lazy mkdir; rely on the directory existing in the committed
-    // tree under normal use, but tolerate a fresh checkout.
-    execSync(`mkdir -p "${dir}"`);
-  }
+  // Use `dirname(p)` (not `join(p, "..")`) — the latter happens to
+  // normalise to the parent on POSIX but reads as "go up from this
+  // FILE", which is semantically wrong. `dirname` is the standard
+  // idiom and tools that statically interpret paths don't see a
+  // bogus directory entry.
+  // Native `mkdirSync({ recursive: true })` rather than shelling out
+  // to `mkdir -p` — avoids shell escaping issues if a criterion id
+  // ever contains unusual characters, and is faster.
+  mkdirSync(dirname(p), { recursive: true });
   writeFileSync(p, JSON.stringify(sidecar, null, 2) + "\n");
 }

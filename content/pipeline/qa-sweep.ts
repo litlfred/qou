@@ -409,9 +409,9 @@ function run(): void {
     results.push(sweepResult);
   }
 
-  // Write one script sidecar per automated criterion under sweep.
-  // Mirrors `content/pipeline/<criterion-id>.script.json`. Skipped
-  // under --dry-run.
+  // Write one script sidecar per automated criterion under sweep
+  // to `content/pipeline/script-sidecars/<criterion-id>.script.json`.
+  // Skipped under --dry-run.
   if (!args.dryRun) {
     for (const [id, hashes] of Object.entries(scriptHashesByCriterion)) {
       if (!hashes.script_hash) continue; // source file absent — skip
