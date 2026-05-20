@@ -415,3 +415,67 @@ theorem barPoly_odd_truncated_arbitrary
     ring
 
 end QOU.BraidKnot.PolynomialBarInvolution.ArbitraryOdd
+
+/-! ## Pre-archimedean generic versions (over `CommRing R`)
+
+Per CLAUDE.md §7c (Base ring convention), the bar-symmetry of
+even-power polynomial truncations is **algebraic**, not analytic
+— it holds over any commutative ring `R`, no `Field`/`ℝ` needed.
+This section provides the **pre-archimedean generic** versions of
+`c5_taylor_6`, `cos_truncated_6`, `cosh_truncated_6` parameterized
+by arbitrary coefficients in `R`. The archimedean specialisations
+(over `ℝ` with specific numerical coefficients) become instances.
+-/
+
+namespace QOU.BraidKnot.PolynomialBarInvolution.Generic
+
+open Polynomial QOU.BraidKnot.PolynomialBarInvolution
+
+variable {R : Type*} [CommRing R]
+
+/-- **Generic degree-6 even-polynomial** in `R[X]`:
+    $P(X) = c_0 + c_1 X^2 + c_2 X^4 + c_3 X^6$
+    for arbitrary coefficients $c_0, c_1, c_2, c_3 \in R$. -/
+noncomputable def evenPoly_6 (c0 c1 c2 c3 : R) : R[X] :=
+  C c0 + C c1 * X ^ 2 + C c2 * X ^ 4 + C c3 * X ^ 6
+
+/-- **Generic `evenPoly_6` is bar-symmetric** over any `CommRing R`,
+    no field structure needed. -/
+theorem barPoly_evenPoly_6 (c0 c1 c2 c3 : R) :
+    barPoly (evenPoly_6 c0 c1 c2 c3) = evenPoly_6 c0 c1 c2 c3 := by
+  unfold evenPoly_6
+  rw [barPoly_add, barPoly_add, barPoly_add,
+      barPoly_C, barPoly_mul, barPoly_C, barPoly_mul,
+      barPoly_C, barPoly_mul, barPoly_C, barPoly_X_pow_two]
+  have hX4 : barPoly ((X : R[X]) ^ 4) = X ^ 4 := by
+    have : (4 : ℕ) = 2 * 2 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 2
+  have hX6 : barPoly ((X : R[X]) ^ 6) = X ^ 6 := by
+    have : (6 : ℕ) = 2 * 3 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 3
+  rw [hX4, hX6]
+
+/-- **Generic degree-8 even-polynomial** in `R[X]`. -/
+noncomputable def evenPoly_8 (c0 c1 c2 c3 c4 : R) : R[X] :=
+  evenPoly_6 c0 c1 c2 c3 + C c4 * X ^ 8
+
+theorem barPoly_evenPoly_8 (c0 c1 c2 c3 c4 : R) :
+    barPoly (evenPoly_8 c0 c1 c2 c3 c4) = evenPoly_8 c0 c1 c2 c3 c4 := by
+  unfold evenPoly_8
+  rw [barPoly_add, barPoly_mul, barPoly_C, barPoly_evenPoly_6]
+  have hX8 : barPoly ((X : R[X]) ^ 8) = X ^ 8 := by
+    have : (8 : ℕ) = 2 * 4 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 4
+  rw [hX8]
+
+/-- **Generic arbitrary-degree even-polynomial truncation is bar-symmetric**
+    — over any `CommRing R`. Combines `Arbitrary.barPoly_even_truncated_arbitrary`
+    with the pre-archimedean naming convention. The same theorem, restated
+    here for the §7c discipline: nothing about this requires `ℝ`. -/
+theorem barPoly_even_truncated_pre_archimedean
+    (n : ℕ) (c : ℕ → R) :
+    barPoly (∑ k ∈ Finset.range n, C (c k) * X ^ (2 * k))
+      = ∑ k ∈ Finset.range n, C (c k) * X ^ (2 * k) :=
+  Arbitrary.barPoly_even_truncated_arbitrary n c
+
+end QOU.BraidKnot.PolynomialBarInvolution.Generic
