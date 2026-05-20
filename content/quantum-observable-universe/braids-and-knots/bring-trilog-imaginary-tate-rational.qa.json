@@ -783,7 +783,26 @@
         "reviewed_at": "2026-05-20T16:40:02.947Z",
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
       }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "4e6027f2c751",
+          "ts": "49bbe93b0d93",
+          "lean": "0d0d709a9622"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:47:18.199Z",
+        "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe/braids-and-knots/bring-trilog-imaginary-tate-rational.ts:5: title \"Im Li$_3$($\\\\zeta_5$) = 4$\\\\pi^3$/125 — Tate-rational, via Kummer reflection (50-dps verified)\" — first-person aside in the title"
+      }
     ]
   },
-  "updated_at": "2026-05-20T16:45:12.683Z"
+  "updated_at": "2026-05-20T16:47:18.199Z"
 }

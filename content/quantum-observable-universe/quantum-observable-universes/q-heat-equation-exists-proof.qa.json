@@ -453,7 +453,25 @@
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "1ef4f68db080",
+          "ts": "ab8bea470d01"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:47:18.199Z",
+        "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe/quantum-observable-universes/q-heat-equation-exists-proof.ts:5: title \"Proof of well-posedness of the $q$-heat equation\" — first-person aside in the title"
+      }
     ]
   },
-  "updated_at": "2026-05-20T16:45:12.683Z"
+  "updated_at": "2026-05-20T16:47:18.199Z"
 }

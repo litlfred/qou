@@ -760,6 +760,73 @@ export function checkProofConditionalClassBanner(
   };
 }
 
+// ─── Voice: content-block titles must be scholarly ─────────────
+//
+// Extract the `title:` field from the .ts manifest and flag
+// non-scholarly forms: questions, first-person, second-person,
+// imperatives, and casual aside markers.
+
+const TITLE_FIELD_RE = /\btitle:\s*(?:"([^"]+)"|'([^']+)')/;
+
+const NON_SCHOLARLY_TITLE_PATTERNS: Array<{
+  re: RegExp;
+  what: string;
+}> = [
+  { re: /\?$/, what: "ends in '?' — title is a question" },
+  {
+    re: /^(?:Why|How(?:\s+does|\s+do|\s+can|\s+is|\s+are|\s+to)|What(?:\s+is|\s+are|\s+does|\s+do|\s+if)|When|Where|Should|Could|Would|Do(?:es)?|Is|Are|Can)\b/i,
+    what: "starts with a question word",
+  },
+  {
+    re: /\b(?:I'?ll|we'?ll|let'?s|let\s+us|I'?m|we'?re|I\s+(?:will|am)|we\s+(?:will|are))\b/i,
+    what: "first-person aside in the title",
+  },
+  {
+    re: /\b(?:you'?ll|you'?re|your|you\s+(?:can|will|might|should|may))\b/i,
+    what: "second-person address in the title",
+  },
+  {
+    re: /^(?:Quick (?:note|aside|check|look)|TODO|FIXME|WIP|Note|Sidebar|Footnote|Punt|Stub|Placeholder)\b/i,
+    what: "casual / status-leak marker in the title",
+  },
+  {
+    re: /\bobviously|clearly|simply|trivially|easily|naturally\b/i,
+    what: "editorializing adverb in the title",
+  },
+  {
+    re: /\bhopefully|maybe|probably|perhaps|possibly\b/i,
+    what: "hedge in the title — titles state, not speculate",
+  },
+];
+
+export function checkVoiceTitleScholarly(
+  tsPath: string | undefined,
+): CheckerResult {
+  if (!tsPath) return { result: "n/a", hits: [] };
+  const text = readMaybe(tsPath);
+  if (!text) return { result: "n/a", hits: [] };
+  const m = text.match(TITLE_FIELD_RE);
+  if (!m) return { result: "n/a", hits: [] };
+  const title = m[1] ?? m[2] ?? "";
+  if (!title) return { result: "n/a", hits: [] };
+  const hits: CheckerHit[] = [];
+  for (const { re, what } of NON_SCHOLARLY_TITLE_PATTERNS) {
+    if (re.test(title)) {
+      // Find the line containing the title field for accurate
+      // reporting.
+      const lineIdx = text
+        .slice(0, m.index)
+        .split("\n").length;
+      hits.push({
+        file: tsPath,
+        line: lineIdx,
+        text: `title "${title.slice(0, 100)}" — ${what}`,
+      });
+    }
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
 // ─── Voice: statement should not contain interpretation ────────
 //
 // A theorem/proposition/lemma/corollary STATEMENT is the bare claim.
@@ -844,6 +911,7 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "proof-conditional-class-banner": (p) =>
     checkProofConditionalClassBanner(p.md, p.lean),
   // voice
+  "voice-title-scholarly": (p) => checkVoiceTitleScholarly(p.ts),
   "voice-statement-no-interpretation": (p) =>
     checkVoiceStatementNoInterpretation(p.md),
 };

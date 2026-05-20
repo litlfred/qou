@@ -111,6 +111,21 @@ const VOICE: QaCriterionDefinition[] = [
     automated: true,
   },
   {
+    id: "voice-title-scholarly",
+    domain: "voice",
+    description:
+      "Content block `title:` field is a scholarly noun-phrase (e.g. " +
+      "\"Borromean baryon\", \"Quantum-deformed Reeb flow\"), NOT a " +
+      "question (\"Why is this important?\"), an imperative " +
+      "(\"Compute the Markov trace\"), a first-person aside " +
+      "(\"We derive…\"), or a casual marker (\"Quick note on …\"). " +
+      "Scanned by extracting the `title:` value from the block's `.ts` " +
+      "manifest and applying scholarly-form patterns.",
+    default_severity: "minor",
+    depends_on: ["ts"],
+    automated: true,
+  },
+  {
     id: "voice-statement-no-interpretation",
     domain: "voice",
     description:

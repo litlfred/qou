@@ -789,7 +789,24 @@
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/polynomial-bar-involution.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "9dd1feecde0f",
+          "ts": "7f71c8539aaf",
+          "lean": "95b4bdc97157"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:47:18.199Z",
+        "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+      }
     ]
   },
-  "updated_at": "2026-05-20T16:45:12.683Z"
+  "updated_at": "2026-05-20T16:47:18.199Z"
 }
