@@ -177,6 +177,24 @@ https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
 If the branch is not yet pushed, say so explicitly and do not fabricate
 URLs.
 
+## Canonical derivation chain — cheat sheet (READ THIS FIRST for math work)
+
+**Authoritative cross-link**: [`docs/canonical-derivation-cheat-sheet.md`](docs/canonical-derivation-cheat-sheet.md).
+
+The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** (m_e, m_μ/m_e, Q_β) via a strict chain:
+
+```
+substrate q_0 → 𝐂 categorical action → Yekutieli non-abelian Stokes → 𝐇_n(q) Hecke
+             → Wedderburn decomposition (partitions λ ⊢ n)
+             → Frobenius pairing tr_M = Σ_λ y_λ χ_λ
+             → confinement SDP → canonical T_w → Archimedean functor at q_0
+             → MeV observables
+```
+
+Read the cheat sheet for: per-step math + paper references + canonical compute scripts; Φ_q (Faddeev) vs Li_2^q (Rogers) context-sorting; current Phase 5 findings (Phase 5l: ρ_Z^constit = tr_M^3(𝓑_p) structural identity); pipeline-discipline migration backlog.
+
+When working on math-affecting code or content, **trace the change to a step in the chain** and verify the canonical compute script is in the consumer set.
+
 ## Precision goals (STRICT — read before any precision-affecting work)
 
 The framework's headline precision goal has **two independent legs**.
