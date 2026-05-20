@@ -238,4 +238,80 @@ theorem c5_taylor_6_eval_one :
         Polynomial.eval_pow, Polynomial.eval_C, Polynomial.eval_X]
   norm_num
 
+/-- **Phase-layer avatar**: degree-6 Taylor truncation of $\cos$ in
+    $\mathbb{R}[X]$: $1 - X^2/2 + X^4/24 - X^6/720$.
+    Realises the categorical $\cos$ layer of the three-layer
+    synthesis as a polynomial in the universal kernel $X$. -/
+noncomputable def cos_truncated_6 : ℝ[X] :=
+  1 - C (1/2) * X^2 + C (1/24) * X^4 - C (1/720) * X^6
+
+/-- **Gain-layer avatar**: degree-6 Taylor truncation of $\cosh$ in
+    $\mathbb{R}[X]$: $1 + X^2/2 + X^4/24 + X^6/720$.
+    Realises the categorical $\cosh$ layer (per-Z step factor at
+    $[3]_q^2 \cdot \cosh(h)$) as a polynomial in $X$. -/
+noncomputable def cosh_truncated_6 : ℝ[X] :=
+  1 + C (1/2) * X^2 + C (1/24) * X^4 + C (1/720) * X^6
+
+/-- **`cos_truncated_6` is bar-symmetric**: even-power Taylor
+    polynomial with bar-symmetric coefficients. -/
+theorem barPoly_cos_truncated_6 :
+    barPoly cos_truncated_6 = cos_truncated_6 := by
+  unfold cos_truncated_6
+  rw [barPoly_sub, barPoly_add, barPoly_sub,
+      barPoly_one, barPoly_mul, barPoly_mul, barPoly_mul,
+      barPoly_C, barPoly_C, barPoly_C,
+      barPoly_X_pow_two]
+  have hX4 : barPoly ((X : ℝ[X]) ^ 4) = X ^ 4 := by
+    have : (4 : ℕ) = 2 * 2 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 2
+  have hX6 : barPoly ((X : ℝ[X]) ^ 6) = X ^ 6 := by
+    have : (6 : ℕ) = 2 * 3 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 3
+  rw [hX4, hX6]
+
+/-- **`cosh_truncated_6` is bar-symmetric**: even-power Taylor
+    polynomial with bar-symmetric coefficients. Same proof structure
+    as `cos_truncated_6` modulo signs. -/
+theorem barPoly_cosh_truncated_6 :
+    barPoly cosh_truncated_6 = cosh_truncated_6 := by
+  unfold cosh_truncated_6
+  rw [barPoly_add, barPoly_add, barPoly_add,
+      barPoly_one, barPoly_mul, barPoly_mul, barPoly_mul,
+      barPoly_C, barPoly_C, barPoly_C,
+      barPoly_X_pow_two]
+  have hX4 : barPoly ((X : ℝ[X]) ^ 4) = X ^ 4 := by
+    have : (4 : ℕ) = 2 * 2 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 2
+  have hX6 : barPoly ((X : ℝ[X]) ^ 6) = X ^ 6 := by
+    have : (6 : ℕ) = 2 * 3 := by norm_num
+    rw [this]; exact barPoly_X_pow_even 3
+  rw [hX4, hX6]
+
+/-- **The three-layer truncated polynomials in one place**: each is
+    bar-symmetric, each lives in the same polynomial ring `ℝ[X]`
+    with the same bar-involution. The categorical unification claim
+    at the truncated-polynomial level is **PROVED**: all three
+    layer avatars (`c5_taylor_6`, `cos_truncated_6`, `cosh_truncated_6`)
+    are bar-symmetric polynomials in the universal kernel `X`. -/
+theorem three_layer_truncated_all_bar_symmetric :
+    barPoly c5_taylor_6 = c5_taylor_6 ∧
+    barPoly cos_truncated_6 = cos_truncated_6 ∧
+    barPoly cosh_truncated_6 = cosh_truncated_6 :=
+  ⟨barPoly_c5_taylor_6, barPoly_cos_truncated_6, barPoly_cosh_truncated_6⟩
+
+/-- The sum of all three layer truncations is bar-symmetric — the
+    bar-symmetric subring is closed under addition. -/
+theorem barPoly_three_layer_sum :
+    barPoly (c5_taylor_6 + cos_truncated_6 + cosh_truncated_6)
+      = c5_taylor_6 + cos_truncated_6 + cosh_truncated_6 := by
+  rw [barPoly_add, barPoly_add, barPoly_c5_taylor_6,
+      barPoly_cos_truncated_6, barPoly_cosh_truncated_6]
+
+/-- The product of all three layer truncations is bar-symmetric. -/
+theorem barPoly_three_layer_product :
+    barPoly (c5_taylor_6 * cos_truncated_6 * cosh_truncated_6)
+      = c5_taylor_6 * cos_truncated_6 * cosh_truncated_6 := by
+  rw [barPoly_mul, barPoly_mul, barPoly_c5_taylor_6,
+      barPoly_cos_truncated_6, barPoly_cosh_truncated_6]
+
 end QOU.BraidKnot.PolynomialBarInvolution.C5Taylor
