@@ -39,6 +39,8 @@ pub mod gram;
 pub mod joint_tower_sdp_certificate;
 pub mod laurent_poly_q;
 pub mod laurent_rational_q;
+pub mod laurent_hecke_element;
+pub mod reduce_laurent;
 pub mod littlewood_richardson;
 pub mod precision_scalar;
 pub mod rational_round;
