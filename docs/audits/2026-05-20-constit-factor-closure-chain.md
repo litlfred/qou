@@ -32,7 +32,7 @@ block:
 - **5l.1** is a probe-style symbolic exploration. The y_λ normalization
   between symbolic and numeric Wenzl bridge implementations doesn't
   match yet (queued as Phase 5l.2). The probe's χ_λ closed forms are
-  clean (Laurent rationals) but the combined τ_M expression has a
+  clean (Laurent rationals) but the combined tr_M expression has a
   normalization gap that needs Phase 5l.2 reconciliation before
   promoting to a `prop:` block.
 

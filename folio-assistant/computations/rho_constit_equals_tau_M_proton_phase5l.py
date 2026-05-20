@@ -6,9 +6,9 @@ Phase 5k.2 ([PR #842]) FALSIFIED the (2q - 1) form for
 ρ_Z^constit(q).  Phase 5l identifies the correct structural form
 via the disjoint-product Markov trace formula:
 
-  τ_M(β_p ⊗ β_p ⊗ β_n in H_9)
-  ──────────────────────────────  =  τ_M(β_p, H_3)
-  τ_M(β_p ⊗ β_n in H_6)
+  tr_M(𝓑_p ⊗ 𝓑_p ⊗ 𝓑_n in H_9)
+  ──────────────────────────────  =  tr_M(𝓑_p, H_3)
+  tr_M(𝓑_p ⊗ 𝓑_n in H_6)
 
 The extra proton block contributes EXACTLY its H_3 Markov trace
 (disjoint Markov trace multiplicativity).
@@ -65,7 +65,7 @@ def marshal_intra(chain_g0, chain_g1, h_val: float):
 
 
 def compute_tau_M_proton_H3(q_val: mp.mpf, dps: int = 50) -> mp.mpf:
-    """τ_M^3(β_p, q) at H_3.  The proton H_3 braid is intra-only:
+    """tr_M^3(𝓑_p, q) at H_3.  The proton H_3 braid is intra-only:
     g0 chain + g1 chain, no atomic embedding."""
     h_val = float(Q0 - 1 / Q0)
     word = marshal_intra(_PROTON_G0, _PROTON_G1, h_val)
@@ -81,7 +81,7 @@ def compute_tau_M_proton_H3(q_val: mp.mpf, dps: int = 50) -> mp.mpf:
 
 def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
                           dps: int = 50) -> mp.mpf:
-    """τ_M(β_constit_K, q) for atom K = (Z, N), no interface generators.
+    """tr_M(𝓑_constit_K, q) for atom K = (Z, N), no interface generators.
 
     Per Gemini PR #854 review: braid marshalling centralized."""
     h_val = float(Q0 - 1 / Q0)
@@ -110,7 +110,7 @@ def main() -> int:
     # the conjecture is a predecessor referenced in the description.
     builder.set_content_block("prop:constit-factor-tau-M-proton-identity")
 
-    print(f"=== Phase 5l: ρ_Z^constit(q) =? τ_M^3(β_p, q) ===\n")
+    print(f"=== Phase 5l: ρ_Z^constit(q) =? tr_M^3(𝓑_p, q) ===\n")
 
     results = []
     for q_str in Q_VALUES:
@@ -133,14 +133,14 @@ def main() -> int:
             "wall_s": time.time() - t0,
         })
         print(f"  q = {q_str}:")
-        print(f"    τ_M^3(β_p, q)  = {float(tau_p_H3):.16f}")
+        print(f"    tr_M^3(𝓑_p, q)  = {float(tau_p_H3):.16f}")
         print(f"    ρ_Z^constit(q) = {float(rho):.16f}")
         print(f"    |diff|         = {abs(float(diff)):.4e}")
         print(f"    rel.err.       = {float(rel_err):.4e}")
         print()
 
     print(f"=== Summary ===\n")
-    print(f"  {'q':>8} {'τ_M^3(β_p)':>20} {'ρ_constit':>20} "
+    print(f"  {'q':>8} {'tr_M^3(𝓑_p)':>20} {'ρ_constit':>20} "
           f"{'|diff|':>14} {'rel.err':>12}")
     for r in results:
         print(f"  {r['q']:>8.5f} {r['tau_M_proton_H3']:>20.14f} "
@@ -155,7 +155,7 @@ def main() -> int:
     if max_rel_err < 1e-12:
         verdict = "structural-identity-confirmed"
         print(f"\n  ✓ STRUCTURAL IDENTITY CONFIRMED at mpfr-50-dps precision:")
-        print(f"      ρ_Z^constit(q) = τ_M^3(β_p, q)  exactly")
+        print(f"      ρ_Z^constit(q) = tr_M^3(𝓑_p, q)  exactly")
         print(f"    across the substrate window.  This is the disjoint")
         print(f"    Markov-trace multiplicativity result.")
     elif max_rel_err < 1e-6:
@@ -173,10 +173,10 @@ def main() -> int:
     builder.set_description(
         "Phase 5l: structural identity for the constit-side per-Z step "
         "factor.  Empirically verifies that ρ_Z^constit(q) := "
-        "τ_M(³He_constit, q) / τ_M(D_constit, q) equals τ_M^3(β_p, q) "
+        "tr_M(³He_constit, q) / tr_M(D_constit, q) equals tr_M^3(𝓑_p, q) "
         "exactly across the substrate window, as predicted by the "
-        "disjoint-product Markov trace formula τ_M(α ⊗ β) = "
-        "τ_M(α) · τ_M(β) for braids on disjoint strand sets.  "
+        "disjoint-product Markov trace formula tr_M(α ⊗ β) = "
+        "tr_M(α) · tr_M(β) for braids on disjoint strand sets.  "
         "Replaces the falsified (2q - 1) form (Phase 5k.2) with a "
         "rigorous closed form derivable from Wenzl's Markov trace."
     )
@@ -191,7 +191,7 @@ def main() -> int:
         unit="dimensionless",
         source=(
             f"Phase 5l: max relative error between ρ_Z^constit(q) and "
-            f"τ_M^3(β_p, q) across {len(results)} q-points in the "
+            f"tr_M^3(𝓑_p, q) across {len(results)} q-points in the "
             f"substrate window.  Identity holds at mpfr-50-dps precision if "
             f"max rel.err. < 1e-12."
         ),

@@ -18,10 +18,10 @@ checking if c(q) is approximately 1 across the window.
 
   measurement pipeline at each q:
     1. y_λ(q) via y_lambda_wenzl_bridge_numeric (Wenzl normalization)
-    2. χ_λ(β_p · β_n, q) via chi_lambda_braid (Rust kernel, q_value=q)
-    3. τ_M_constit(D) = Σ_{λ⊢6} y_λ(q) · χ_λ(β_constit_D, q)
-    4. τ_M_constit(³He) = Σ_{λ⊢9} y_λ(q) · χ_λ(β_constit_3He, q)
-    5. ρ(q) = τ_M_constit(³He) / τ_M_constit(D)
+    2. χ_λ(𝓑_p · 𝓑_n, q) via chi_lambda_braid (Rust kernel, q_value=q)
+    3. tr_M_constit(D) = Σ_{λ⊢6} y_λ(q) · χ_λ(𝓑_constit_D, q)
+    4. tr_M_constit(³He) = Σ_{λ⊢9} y_λ(q) · χ_λ(𝓑_constit_3He, q)
+    5. ρ(q) = tr_M_constit(³He) / tr_M_constit(D)
 
   Ref: conj:constit-factor-2q-minus-1.md (PR #831)
   Ref: PR #831 Phase 5k.1 (constit_factor_residual_phase5k.py)
@@ -56,7 +56,7 @@ Q_VALUES = ["1.05", "1.08", Q_50_DIGIT_STR, "1.13", "1.17"]
 
 def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
                           dps: int = 50) -> mp.mpf:
-    """Compute τ_M(β_constit_K) = Σ_λ y_λ · χ_λ(β_constit_K) at q.
+    """Compute tr_M(𝓑_constit_K) = Σ_λ y_λ · χ_λ(𝓑_constit_K) at q.
 
     Uses the CONSTIT factorisation (include_inter=False), so the
     braid word has no interface generators.
@@ -82,7 +82,7 @@ def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
 
 
 def measure_rho_at_q(q_val: mp.mpf, dps: int = 50) -> tuple[dict, mp.mpf]:
-    """Compute ρ_Z^constit(q) = τ_M_constit(³He) / τ_M_constit(D).
+    """Compute ρ_Z^constit(q) = tr_M_constit(³He) / tr_M_constit(D).
 
     Per Gemini PR #854 review: returns the high-precision rho as an
     mp.mpf object alongside the f64-summarized dict, so downstream
@@ -208,9 +208,9 @@ def main() -> int:
     builder.set_description(
         "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-"
         "coefficient h^5 finding. For each q in the substrate window, "
-        "computes ρ_Z^constit(q) = τ_M_constit(³He, q) / "
-        "τ_M_constit(D, q) using y_λ(q) Wenzl weights and "
-        "χ_λ(β_constit, q) Hecke characters. Tests whether "
+        "computes ρ_Z^constit(q) = tr_M_constit(³He, q) / "
+        "tr_M_constit(D, q) using y_λ(q) Wenzl weights and "
+        "χ_λ(𝓑_constit, q) Hecke characters. Tests whether "
         "c(q) := (ρ - (2q-1)) / h^5 is approximately 1 across q, "
         "which would confirm the structural identity ρ = (2q-1) + "
         "h^5 + O(h^7)."

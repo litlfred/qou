@@ -303,7 +303,6 @@ When a user request arrives, route to the right skill(s):
 | "audit compute / compute audit / what can be sped up / find slow scripts / where is sympy.simplify / LaurentQ wiring / BlockCache wiring" | `local/compute-audit` | collaborator |
 | "audit math compute integration / is X wired in / where is prop:foo consumed / props not in compute / validate mass-table sweep" | `local/compute-integration-watcher` | collaborator |
 | "coordinate / coordinate with PR / sibling PR / cherry-pick / cross-PR request" | `local/coordinate` | collaborator |
-| "work on todos / process feedback" | `local/todo-review` | reader |
 | "missing proof (narrative)" | `local/editor` §Proof workflow | collaborator |
 | "missing proof (Lean)" | `local/formalizer` + `local/proof-triage` | collaborator |
 | "test / unit test / coverage" | `local/test-engineer` | collaborator |
@@ -349,8 +348,6 @@ When a user request arrives, route to the right skill(s):
 | "watch one-voice / voice + AI slop + fit + framework + wall / QA reports per block / staleness map" | `local/one-voice-integration-watcher` | collaborator |
 | "/integration-watch one-voice / voice" | `local/integration-watch` (dispatcher → one-voice-integration-watcher child) | collaborator |
 | "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
-| "coordinate PRs / sibling PRs / cross-PR / cherry-pick / inconsistent finding" | `local/coordinate` (or `/coordinate` slash command) | collaborator |
-| "watch main / watch upstream / watch this PR / watch branch X" | `local/watch` | reader |
 | "session todos / work plan / what's left / track progress" | `local/todo-manager` (session work-plan, TodoWrite) | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
 
@@ -448,26 +445,16 @@ historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
 the dual at the time this rule was added). Do not repeat this
 pattern.
 
-**Current baseline (2026-05-18, re-measured against
-[`lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)):**
-the validator's narrowed hint list (`lp-dual` /
+**Current baseline.** Run
+[`lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)
+for the live count of missing-dual witnesses — do not cite a dated
+baseline from CLAUDE.md, as new LP/SDP witnesses land regularly.
+The validator's narrowed hint list (`lp-dual` /
 `operator-selection-lp` / `shadow-price` / `primal-dual` /
-`lp-duality`) now flags **14** witnesses; **11** include the full
-LP dual; **3 are missing one or more dual fields**:
+`lp-duality`) skips symbolic feasibility certificates and
+knot-particle probes that do not compute LP duals.
 
-| Witness | Script | Missing field(s) |
-|---------|--------|------------------|
-| `option-b-proton-mass-full-chain` | `option_b_proton_mass_full_chain.py` | `y_star` |
-| `probe-braid-word-basis-gram` | `probe_braid_word_basis_gram.py` | all 6 (does not call `lp_dual_solver`) |
-| `probe-sdp-active-set-dominant-partition` | `probe_sdp_active_set_dominant_partition.py` | `active_set` / `active_constraints` / `active_channels` |
-
-The historical 58/58 figure refers to the pre-tightening hint list
-(which incorrectly matched symbolic feasibility certificates and
-knot-particle probes that do not compute LP duals). The earlier
-"0 of 37 missing" baseline (2026-05-08) is **stale** — three new
-LP/SDP witnesses landed since then without routing through
-[`lp_dual_solver.py`](folio-assistant/computations/lp_dual_solver.py).
-Fix per offender: route the LP/SDP solve through
+**Fix per offender**: route the LP/SDP solve through
 `solve_operator_selection_lp()` or
 `solve_psd_operator_selection_sdp()`; the result's `.to_dict()`
 carries every required field.
@@ -583,14 +570,12 @@ All declarations live under the `QOU` root namespace.
 
 ### 3. Block kind determines Lean requirements
 
-| Block kind | `.lean` file required? |
-|---|---|
-| `definition` | **Yes** — enforced; will not build without it |
-| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** — warning if missing |
-| `conjecture` | **Optional but encouraged** — `sorry` = conjecture (see §3b) |
-| `example`, `remark` | Optional |
-| `simulator` | N/A |
-| `prose`, `equation`, `diagram` | N/A |
+The authoritative `kind → Lean requirement + label prefix` mapping
+is the **Type system** table in `## Content-object architecture`
+(below). Summary: `definition` requires a sibling `.lean` (enforced);
+`theorem`/`lemma`/`proposition`/`corollary` are expected and warn if
+missing; `conjecture` may carry `sorry` (see §3b for the propagation
+rule); other kinds have no Lean requirement.
 
 ### 3b. Conjectural propagation and Lean formalization of conjectures
 
@@ -655,9 +640,6 @@ declaration contains a class hypothesis matching one of the
 conjectures in its transitive `uses[]` cone, and confirm the
 narrative banner. The audit script will detect the pattern and
 classify the block accordingly.
-
-(Pre-existing CLAUDE.md text continues from line 335.)
-
 
 **Definitions and conjectures (clarification):** The propagation
 rule above applies to **provable claims** (`theorem`, `proposition`,
@@ -906,122 +888,38 @@ PDF immediately after the table of contents:
 
 Agents **must** treat those `.md` files as authoritative when picking
 a font/symbol for a concept. When adding a new symbol convention,
-edit the content block — not this section. CLAUDE.md mirrors only a
-short summary below; the content block is what readers see in the
-PDF and what `rendering-auditor`, `ontologist`, and Gemini-style
-review tools should cite.
+edit the content block — not this section.
 
-#### Summary (for quick agent lookup)
+**Do not mirror the per-chapter tables here.** The previous mirror
+drifted three sites in Phase 5n and is removed. Open the content
+block above when you need a symbol or a font.
 
-The register groups symbols by the chapter where each is **first
-introduced**; entries within a chapter are sorted alphabetically by
-concept name. Below is a flat per-chapter summary; for the full
-table with usage notes, open the content block above.
+#### Stable font-family conventions (rarely change)
 
-#### algebraic-substrate
+These five rules cover ~95% of authoring decisions. If your usage
+doesn't fit one, open `notation-register.md` before inventing a new
+convention.
 
-| Concept | Font | Symbols |
-|---------|------|---------|
-| $q$-shuffle Hopf algebra | calligraphic | `$\mathcal{H}_q$` — convolution algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under $\ast_q$; carries the grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$. **Never** plain `$H_q$` (collides with Hecke and Hamiltonian). |
-| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for the photon, Euler–Mascheroni constant, and Dirac matrices. |
+| Family | Use for | Examples |
+|--------|---------|----------|
+| **bold** `\mathbf{...}` | Categories | `$\mathbf{C}, \mathbf{Rep}$` |
+| **calligraphic** `\mathcal{...}` | Sheaves, bundles, algebras, curves, braid words | `$\mathcal{S}, \mathcal{O}, \mathcal{A}, \mathcal{H}_q, \mathcal{E}_q, \mathcal{B}_K$` |
+| **fraktur** `\mathfrak{...}` | Physical observables: mass, energy, bandwidth, particles | `$\mathfrak{m}, \mathfrak{E}, \mathfrak{B}, \mathfrak{p}, \mathfrak{n}, \mathfrak{H}$` |
+| **Greek lowercase** | Morphisms, measures, exponents | `$\varrho, \mu, \chi, \tau, \sigma$` |
+| **plain italic** | Scalars, weights, indices | `$q, z, y_\lambda, w_\lambda, c$` |
 
-#### braids-and-knots
+#### Top-of-mind collision rules (do not violate)
 
-| Concept | Font | Symbols |
-|---------|------|---------|
-| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
-| Hook-length product | Latin cap + arg | `$H_q(\lambda) = \prod_{x \in \lambda} [h_x(\lambda)]_q$` — always with partition argument; unambiguous in knot/partition contexts. |
-| Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
-| Jones–Markov central coefficient | plain italic | `$y_\lambda$` — coefficient in $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ ([procedure](#prop:alpha-k-derivation-procedure)). Wenzl hook–content closed form. Sign-indefinite at $n \geq 4$. **Distinct** from Plancherel $w_\lambda$ and q-deformed $\tilde w_\lambda$ at $q \neq 1$. **Never** confuse with $u_\lambda$ (LP shadow-price). |
-| LP shadow-price | plain italic | `$u_\lambda, u_0$` (Schrijver linear-programming convention) for operator-selection LP dual variables ([BW shadow price](#prop:bw-coefficient-shadow-price)). Non-negative by LP duality. **Never** write `$y_\lambda$` here (collides with Jones–Markov). |
-| Markov parameter | plain italic | `$z = 1/(q^{1/2} + q^{-1/2})$` |
-| Mass | fraktur | `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). |
-| Plancherel measure (classical) | plain italic | `$w_\lambda := (\dim V_\lambda)^2 / n!$` — classical Plancherel probability measure on partitions ([prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness)). Sums to $1$ exactly. **Distinct** from the q-deformed Wedderburn weight `$\tilde w_\lambda$`; coincide only at $q = 1$. |
-| Quantum dimension | plain italic | `$\dim_q(\lambda) = [n]_q! / \prod_{x \in \lambda} [h_x]_q$` ($q$-deformed Frame–Robinson–Thrall). Used in `$\tilde w_\lambda$`. Reduces to `$\dim V_\lambda$` at $q = 1$. |
-| Wedderburn-block weight (q-deformed) | plain italic with tilde | `$\tilde w_\lambda := \dim_q^2(\lambda) / [n]_q!$` — q-deformed analogue of Plancherel `$w_\lambda$`. **Not** a probability measure at $q \neq 1$ (empirically `$\sum \tilde w_\lambda \approx 1.51$` at $q_0$, $n = 12$). Used in [prop:plancherel-term-7-formulation](#prop:plancherel-term-7-formulation) and [prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical). **Never** call this "Plancherel weight" without the tilde. |
+For the full list with rationale, see `notation-collisions.md`. Quick
+rules of thumb:
 
-#### descartes-universe
-
-| Concept | Font | Symbols |
-|---------|------|---------|
-| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
-| Gravitational constant | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
-| Julia-set measure | Greek | `$\mu_J$` (measure on Julia set) |
-| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
-
-#### information-theory
-
-| Concept | Font | Symbols |
-|---------|------|---------|
-| Entropy (operational) | Greek | `$\eta_q = (2q-1)/q^3$` |
-| Information bandwidth | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
-| Lyapunov exponent | Greek | `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov). Distinct from $\chi_\zeta(c)$ (character). |
-
-#### observations
-
-| Concept | Font | Symbols |
-|---------|------|---------|
-| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
-| Mass number | Latin cap | `$A = Z + N$` |
-| Neutron number | Latin cap | `$N$` |
-| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
-| Proton number | Latin cap | `$Z$` (atomic number). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
-
-#### particle-interactions
-
-| Concept | Font | Symbols |
-|---------|------|---------|
-| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
-| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
-| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
-| Mass (categorical) | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass). **Never** plain `$m$` for categorical mass. |
-| Photon | Greek | `$\gamma$` — photon (standard physics convention). Used in pair production / Breit–Wheeler vertices (`$\gamma\gamma \to e^+ e^-$`) and photonic channels. Disambiguated from Euler–Mascheroni `$\gamma$` (only inside zeta-value identities) and Dirac matrices `$\gamma^\mu$` (always with Lorentz index) by context. **Never** for a vortex morphism — vortex is `$\varrho$`. |
-| $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
-
-#### quantum-observable-universes
-
-| Concept | Font | Symbols |
-|---------|------|---------|
-| Bundles / sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
-| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
-
-#### quantum-universes
-
-| Concept | Font | Symbols |
-|---------|------|---------|
-| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
-| Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
-
-**Key collision avoidances:**
 - `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
-- `$b$` = generic variable (never bottom quark; bottom is `$\mathfrak{b}$`)
-- `$p$` = brane point (never proton number; proton number is `$Z$`)
-- `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
-  Use `$\mathcal{S}_p$`, `$\mathbf{E}$`, or `$\mathcal{E}_q$` respectively.
-  `$E_{\mathfrak{H}}$` (with hadron subscript) is allowed for crossing energy.
-- `$\gamma$` = three reserved meanings, all standard, disambiguated by
-  context: (i) the **photon** (default in particle / QED contexts:
-  `$\gamma\gamma \to e^+ e^-$`, photonic channels, Breit–Wheeler);
-  (ii) the **Euler–Mascheroni constant** (only inside zeta-value
-  identities); (iii) **Dirac matrices** `$\gamma^\mu$` (always with
-  Lorentz index). **Never** use `$\gamma$` for a vortex or closed
-  cycle; the vortex morphism is `$\varrho$`.
-- `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
-- `$H_q$` alone = **not used**. Three distinct concepts share the letter $H$: `$\mathcal{H}_q$` (shuffle Hopf algebra), `$\hat{H}_q$` (Hamiltonian operator), `$H_n(q)$` or `$H_q(\lambda)$` (Hecke/hook-length, always with argument).
-- **Three partition-weight families** — Markov `$y_\lambda$`,
-  Plancherel `$w_\lambda$`, q-deformed Wedderburn `$\tilde w_\lambda$` —
-  are **distinct at $q \neq 1$** and must not be conflated.
-  Coincide at $q = 1$. Bare `$w_\lambda$` is **only** the classical
-  Plancherel probability measure `$(\dim V_\lambda)^2/n!$`; the
-  q-deformed analogue `$\dim_q^2/[n]_q!$` must carry the tilde
-  (`$\tilde w_\lambda$`). The Wenzl-bridge identification
-  `$y_\lambda = w_\lambda$` holds on the **self-conjugate stratum
-  only**. See `notation-collisions.md` for the full statement.
-- `$q = 1.1097$` (or any specific numerical value of the substrate
-  parameter) **must not appear** outside the introduction and
-  Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
-  Exception: Chapter 9 (Information Theory) may use numerical `$q$` for
-  falsifiability computations.
+- `$p$` = brane point (never proton; proton is `$\mathfrak{p}$`, proton count is `$Z$`)
+- `$\gamma$` = photon (never vortex; vortex is `$\varrho$`)
+- `$H_q$` alone = **forbidden** (collision); use `$\mathcal{H}_q$` (shuffle) / `$\hat{H}_q$` (Hamiltonian) / `$H_n(q)$` (Hecke) / `$H_q(\lambda)$` (hook-length)
+- `$E$` alone = **not used**; use `$\mathcal{S}_p$` (fibre), `$\mathfrak{E}$` (energy), `$\mathcal{E}_q$` (elliptic curve), or `$E_{\mathfrak{H}}$` (crossing energy with hadron subscript)
+- Three partition-weight families `$y_\lambda$` / `$w_\lambda$` / `$\tilde w_\lambda$` are **distinct** at `$q \neq 1$` — never conflate
+- `$q = 1.1097$` (or any specific numerical value) **must not appear** outside the introduction and Chapter 7
 
 ### 7ab. Observed / derived values — approximation convention (STRICT)
 

@@ -92,7 +92,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 | **5l.1** | Closed-form Laurent rationals for $\chi^\lambda(\mathcal{B}_p, q)$ for $\lambda \vdash 3$ | clean χ_λ closed forms (PR #854); y_λ normalization reconciliation queued as 5l.2 | partial closed form for $\mathrm{tr}_M^3(\mathcal{B}_p)$ |
 | **5n** | Comprehensive notation refactor: $\beta_K \to \mathcal{B}_K$, $\Delta_I^K \to \bowtie_K$, $\mathbf{E} \to \mathfrak{E}$, $\mathcal{B}(q) \to \mathfrak{B}(q)$, $\tau_M \to \mathrm{tr}_M$ | **MERGED** (PR #853) — register expansions: cal admits Hecke structurals; fraktur admits energies | notation discipline |
 
-**Combined Z-step factor at full τ_M level (post-5l + 5c.1):**
+**Combined Z-step factor at full tr_M level (post-5l + 5c.1):**
 
 $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})} \;=\; z(q) \cdot \mathrm{tr}_M^3(\mathcal{B}_p, q)$$
 
@@ -141,7 +141,7 @@ Per the deep review of last 10 days of math improvements (2026-05-20 audit), the
 | 1 | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with `prop:lambda-scale-bring-bloch-identity` derivation | `m_p_borromean_verification_50dps.py` | 3-calibration discipline violation; production m_p chain uses calibrated literal |
 | 2 | Migrate 20 importers of SUPERSEDED `mass_endomorphism.py` to the new `mass_tower_operator_valued` API (after extending the 2-factor verification to (Z+N)) | 20 scripts including `build_proton_mass_50dps_chain.py`, `mass_formula_6term.py`, `mass_at_3A_proper.py` | SUPERSEDED dependency in production |
 | 3 | Wire the Rust LR convention adapter (PR #829) into `atomic_tr_m_*` scripts for A ≥ 3 — expected ~500× speedup at ⁴He, ~10⁶× at ¹⁰B | `atomic_tr_m_helium4.py`, `atomic_tr_m_mpfr_50dps.py` + 6 mass scripts | massive compute speedup available, untaken |
-| 4 | Refactor 4 production τ_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_canonical.py`, `binding_depth_stratified*.py` | re-computes H_{3A} character per atom; closed form sidesteps this |
+| 4 | Refactor 4 production tr_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_canonical.py`, `binding_depth_stratified*.py` | re-computes H_{3A} character per atom; closed form sidesteps this |
 | 5 | Add compute verification for the Reeb-flow / Garside closed-form (4 paper-only commits — `b6ed74635`, `88d7934b4`, `172263c6e`, `6ce96b4ce`) | new script needed | substrate-side derivation unverified |
 
 These are the **5 final-stage bug-finding actions** identified from the 10-day audit. Each is a discrete, mechanical migration — the math is settled.
