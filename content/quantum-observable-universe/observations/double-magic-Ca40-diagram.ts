@@ -18,4 +18,7 @@ export default example({
     "lr-fusion-rigidity",
     "diagram",
   ],
+  cites: [
+    "geckpfeiffer2000",
+  ],
 });

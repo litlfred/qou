@@ -6,4 +6,7 @@ export default remark({
   title: "Nonabelian Stokes and the measurability conditions",
   uses: ["def:quantum-observable-universe"],
   tags: ["yekutieli", "stokes", "measurability", "flatness"],
+  cites: [
+    "yekutieli2015",
+  ],
 });

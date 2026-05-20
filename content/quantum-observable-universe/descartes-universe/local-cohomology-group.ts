@@ -8,5 +8,7 @@ export default definition({
   },
   uses: ["def:maximal-ideal-defect"],
   tags: ["local-cohomology", "defect", "H1", "derived-functor"],
-  cites: ["yekutieli2015"],
+  cites: ["yekutieli2015",
+    "yekutieli2010",
+  ],
 });

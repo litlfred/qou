@@ -13,4 +13,8 @@ export default proof({
     witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
     status: "verified",
   },
+  cites: [
+    "kashaev1997",
+    "murakami-murakami2001",
+  ],
 });

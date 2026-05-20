@@ -15,4 +15,11 @@ export default proof({
     "thm:jones-markov-trace",
     "prop:archimedean-realization-functor",
   ],
+  cites: [
+    "gromov1982",
+    "kashaev1997",
+    "mostow1968",
+    "murakami-murakami2001",
+    "thurston1978",
+  ],
 });

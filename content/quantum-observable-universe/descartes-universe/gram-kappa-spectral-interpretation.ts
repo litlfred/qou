@@ -13,4 +13,7 @@ export default remark({
     "numerical-evaluation",
     "no-hand-calculation",
   ],
+  cites: [
+    "jones1987",
+  ],
 });

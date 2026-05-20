@@ -28,4 +28,8 @@ export default conjecture({
     "habiro-ring",
     "open-problem",
   ],
+  cites: [
+    "kashaev1997",
+    "murakami-murakami2001",
+  ],
 });

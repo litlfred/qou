@@ -17,6 +17,7 @@ export default proposition({
     "lecouvey2007",
     "brundankleshchev2009",
     "khovanovlauda2009",
+    "kassel1995",
   ],
   tags: [
     "cpt",

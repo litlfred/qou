@@ -12,4 +12,7 @@ export default example({
     "def:brings-coordinate-ring",
     "ex:weight-decomposition-su2",
   ],
+  cites: [
+    "woronowicz1989",
+  ],
 });

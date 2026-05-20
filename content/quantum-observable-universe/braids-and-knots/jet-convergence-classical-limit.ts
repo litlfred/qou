@@ -15,4 +15,8 @@ export default conjecture({
     "wedderburn",
     "jet-filtration",
   ],
+  cites: [
+    "feray2010",
+    "kerov1996",
+  ],
 });

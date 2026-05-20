@@ -7,6 +7,8 @@ export default theorem({
     validation: "not_checked",
   },
   uses: ["def:rigid-dualizing-complex"],
-  cites: ["yekutieli2015", "kock2004"],
+  cites: ["yekutieli2015", "kock2004",
+    "yekutieli2010",
+  ],
   tags: ["self-duality", "frobenius", "dualizing-complex"],
 });

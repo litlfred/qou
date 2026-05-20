@@ -10,4 +10,7 @@ export default remark({
     "rem:yekutieli-stokes",
     "prop:yekutieli-lifting",
   ],
+  cites: [
+    "yekutieli2015",
+  ],
 });

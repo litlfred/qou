@@ -6,4 +6,7 @@ export default remark({
   title: "Entropic forces and the substrate parameter",
   uses: ["rem:gr-substrate-geometry"],
   tags: ["gravity", "entropic", "observation"],
+  cites: [
+    "carney2025",
+  ],
 });

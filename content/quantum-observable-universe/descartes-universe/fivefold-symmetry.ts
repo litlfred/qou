@@ -20,4 +20,7 @@ export default remark({
     "rem:force-knot-identification",
     "prop:skein-finiteness-bound",
   ],
+  cites: [
+    "shechtman1984",
+  ],
 });

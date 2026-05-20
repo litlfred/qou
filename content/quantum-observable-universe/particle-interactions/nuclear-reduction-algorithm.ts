@@ -12,4 +12,7 @@ export default remark({
     "leitner-pawloski",
   ],
   uses: ["prop:inductive-gb-reduction"],
+  cites: [
+    "leitnerpawloski2004",
+  ],
 });

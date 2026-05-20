@@ -7,4 +7,7 @@ export default example({
   lean: { ref: "qou:QOU.Examples.su2Connection", validation: "not_checked" },
   uses: ["def:categorical-connection", "ex:fiber-adjoint-su2"],
   tags: ["su2", "connection"],
+  cites: [
+    "woronowicz1987-twisted-su2",
+  ],
 });
