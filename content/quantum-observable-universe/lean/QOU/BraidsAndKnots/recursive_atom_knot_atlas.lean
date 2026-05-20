@@ -21,6 +21,7 @@ namespace QOU.BraidsAndKnots
 /-- Abstract context for the `recursive_atom_knot_atlas` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
+class RecursiveAtomKnotAtlasContext extends QOU.Shared.MarkovTraceContext where
   /-- Number of confined-particle registry entries (canonical T_w's). -/
   n_registered_particles : ℕ
   /-- Number of mass-table entries (atoms tabulated D..⁴⁰Ca). -/
