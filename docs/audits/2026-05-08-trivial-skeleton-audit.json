@@ -1,21 +1,13 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-20T02:21:36.512Z",
-  "total_flagged": 4,
-  "files_flagged": 4,
+  "generated": "2026-05-20T04:20:50.326Z",
+  "total_flagged": 2,
+  "files_flagged": 2,
   "patterns": {
-    "const_zero": 2,
-    "one_def": 1,
-    "prop_true": 1
+    "prop_true": 1,
+    "const_zero": 1
   },
   "flagged": {
-    "braids-and-knots/braid-link-types.lean": [
-      {
-        "line": 66,
-        "pattern": "one_def",
-        "snippet": "def Braid2.σ : Braid2 := 1"
-      }
-    ],
     "braids-and-knots/brane-tower-z-habiro.lean": [
       {
         "line": 276,
@@ -28,13 +20,6 @@
         "line": 63,
         "pattern": "const_zero",
         "snippet": "def lrCoefficient (_ν _λ _μ : Partition) : ℕ := 0"
-      }
-    ],
-    "lean/QOU/BraidKnot/PerNucleusMassDerivation.lean": [
-      {
-        "line": 74,
-        "pattern": "const_zero",
-        "snippet": "def placeholder_T_w (n : LightNucleus) : HeckeElement n.n₀ := 0"
       }
     ]
   }
