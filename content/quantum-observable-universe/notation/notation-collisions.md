@@ -137,3 +137,21 @@ under discussion. See
 [`CLAUDE.md` §7c](https://github.com/litlfred/qou/blob/main/CLAUDE.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict)
 for the typeclass cheat-sheet and the archimedean-wall membership
 list.
+
+**Archimedean / fibre / forgetful functors (Phase 5o disambiguation).**
+Three nominally similar functors appear in the QOU framework and must
+not be conflated:
+
+| Functor | Domain → Codomain | Role |
+|---|---|---|
+| **Fibre functor** $\tau$ | $\mathbf{C} \to \mathbf{Arch}$ | Tannakian fibre over a brane point; selects which substrate object becomes the observation. |
+| **Forgetful functor** $U$ | $\mathbf{Arch} \to \mathbf{Vec}_{\mathbb{R}}$ | Drops the archimedean enrichment, leaving the underlying real vector space. |
+| **Archimedean realisation** (informal "Arch") | $\mathbf{C}(R) \to \mathbf{C}(\mathbb{R})$ | Base-ring substitution (`R ↦ ℝ`) at the archimedean wall; **not** a functor between QOU categories — it lives at the Lean / compute level (CLAUDE.md §7c). |
+
+The category $\mathbf{Arch}$ is the target of $\tau$, not the name of
+a functor; "archimedean functor" in chat or commits usually means
+either the fibre functor $\tau$ (with explicit Arch codomain) or the
+base-ring realisation, and the two are categorically distinct. When
+authoring, **say which** — "$\tau$ specialised to $\mathbf{Arch}$"
+or "the $R \mapsto \mathbb{R}$ realisation" — and never write "the
+archimedean functor" without context.
