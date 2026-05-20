@@ -67,7 +67,7 @@ export async function buildPaper(
   const paper: Paper = paperMod.default;
 
   // 2. Resolve chapters and load all blocks
-  const resolvedChapters: { chapter: Chapter; manifestIdx: number }[] = [];
+  const resolvedChapters: { chapter: Chapter; manifestIdx: number; dir: string }[] = [];
   const chapterSlugs = new Map<number, string>();
   const chapterMeta = new Map<number, { slug: string; title: string; tabLabel?: string }>();
   const blocks = new Map<string, { block: Block; mdContent: string; sourceDir?: string }>();
@@ -85,7 +85,7 @@ export async function buildPaper(
     try {
       const chMod = await import(chPath);
       const chapter: Chapter = chMod.default;
-      resolvedChapters.push({ chapter, manifestIdx: chIdx });
+      resolvedChapters.push({ chapter, manifestIdx: chIdx, dir: chRef.dir });
 
       // Chapter slug is now simply the directory name (no ch#- prefix to strip).
       const slug = chRef.dir;
@@ -181,8 +181,11 @@ export async function buildPaper(
   const chapters = new Map<number, string>();
   let astValid = true;
 
-  for (const { chapter, manifestIdx } of resolvedChapters) {
-    const latex = renderChapter(chapter, blocks, opts);
+  // Paper slug = the last path segment of paperDir, used to build the
+  // `\sourcebase`-relative chapter URL inside \chapterannot{}.
+  const paperSlug = paperDir.split("/").filter(Boolean).pop() ?? "";
+  for (const { chapter, manifestIdx, dir } of resolvedChapters) {
+    const latex = renderChapter(chapter, blocks, opts, dir, paperSlug);
     chapters.set(manifestIdx, latex);
 
     // AST validation
