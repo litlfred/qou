@@ -122,7 +122,7 @@ similar weight-3 functional equations.
 | Item | Status before round 11 | Status after round 11 |
 |---|---|---|
 | Im Li_3(ζ_5) | Tate-rational (round 10) | Tate-rational (no change) |
-| Im Li_3(ζ_5$^2$) | candidate | **Tate-rational**: $2\pi^3/125$ |
+| Im Li_3($\zeta_5^2$) | candidate | **Tate-rational**: $2\pi^3/125$ |
 | Cl_3(2π/5) + Cl_3(4π/5) | candidate (open) | **theorem**: $-12\zeta(3)/25$ |
 | Cl_3(2π/5) - Cl_3(4π/5) | candidate (open) | **still open** — only remaining genuinely-new content |
 

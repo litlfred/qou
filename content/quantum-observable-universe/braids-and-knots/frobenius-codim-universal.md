@@ -282,7 +282,7 @@ The status table:
 | $3$ | $3$ | $1$ | $1$ ((2,1)) | inline at $\sigma_w$-trace | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
 | $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ⁴He (H_{12} block; PR #621) |
 | $7$ | $15$ | $7$ | $1$ ((4,2,1)) | `hecke_n7_frobenius_codim` | A ≥ 5 nuclei (PR #621) |
-| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ⁴He / ¹⁶O / $^2$⁰Ne (PR #631) |
+| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne (PR #631) |
 
 Each closure follows the same proof scheme: (i) a `Fin.sum_univ_*`
 decomposition lemma extending Mathlib's `Fin.sum_univ_eight` to

@@ -3,9 +3,9 @@
   "label": "thm:substrate-parameter-exists",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.lean"
+    "ts": "quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.ts",
+    "md": "quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.md",
+    "lean": "quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.lean"
   },
   "source_hashes": {
     "md": "4acb3523c862",
@@ -13,6 +13,42 @@
     "lean": "b23baa7d2c79"
   },
   "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "0f3f6b7d2eae"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:05:32.956Z",
+        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "b23baa7d2c79"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {
@@ -199,5 +235,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T06:39:43.529Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

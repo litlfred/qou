@@ -3,12 +3,12 @@
   "label": "rem:figure-8-muon-mass-cross-check",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.ts",
+    "md": "quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.md",
+    "lean": "quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.lean"
   },
   "source_hashes": {
-    "md": "4e1796e1c8ce",
+    "md": "4a967b2773f0",
     "ts": "e78490069579",
     "lean": "2929a16d580c"
   },
@@ -126,8 +126,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.md:49: [Vol(K)/ℏ_q²](#lem:topological-mass-cat-descended) ansatz at the"
+      },
+      {
+        "field_hash": {
+          "md": "4a967b2773f0",
+          "ts": "e78490069579",
+          "lean": "2929a16d580c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -233,5 +250,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

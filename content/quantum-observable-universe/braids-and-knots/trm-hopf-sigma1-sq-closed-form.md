@@ -110,7 +110,7 @@ claim, derivation pending).
    ([`markov_peel.tr_M_atomic`](folio-assistant/computations/markov_peel.py),
    [`markov_weights_symbolic.tr_M_canonical`](folio-assistant/computations/markov_weights_symbolic.py),
    [`markov_trace_canonical.tr_M_word`](folio-assistant/computations/markov_trace_canonical.py)).
-   All three produce identical output for σ_1$^2$ at q = q_0 to 50 dps.
+   All three produce identical output for $\sigma_1^2$ at $q = q_0$ to 50 dps.
 
 2. The binomial-coefficient closed form for the Taylor expansion is
    a special case of the more general identity

@@ -3,12 +3,12 @@
   "label": "def:gravitational-constant",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/gravitational-constant.ts",
-    "md": "content/quantum-observable-universe/information-theory/gravitational-constant.md",
-    "lean": "content/quantum-observable-universe/information-theory/gravitational-constant.lean"
+    "ts": "quantum-observable-universe/information-theory/gravitational-constant.ts",
+    "md": "quantum-observable-universe/information-theory/gravitational-constant.md",
+    "lean": "quantum-observable-universe/information-theory/gravitational-constant.lean"
   },
   "source_hashes": {
-    "md": "a73385bdbe5a",
+    "md": "153c6b1592ca",
     "ts": "1290d0055194",
     "lean": "0162c7d9d2f9"
   },
@@ -41,8 +41,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -247,5 +247,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

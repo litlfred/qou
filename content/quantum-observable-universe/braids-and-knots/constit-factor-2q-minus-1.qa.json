@@ -3,33 +3,16 @@
   "label": "conj:constit-factor-2q-minus-1",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.ts",
+    "md": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md",
+    "lean": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean"
   },
   "source_hashes": {
-    "md": "7c3a7cfdfa64",
+    "md": "4b33eff1f1b2",
     "ts": "01b93e3fab57",
     "lean": "0270f25bdb43"
   },
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "4b33eff1f1b2",
-          "ts": "01b93e3fab57",
-          "lean": "0270f25bdb43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
-      }
-    ],
     "voice-emoji-content": [
       {
         "field_hash": {
@@ -43,12 +26,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
-      },
+        "reviewed_at": "2026-05-20T04:50:30.131Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
+      }
+    ],
+    "voice-status-leak": [
       {
         "field_hash": {
-          "md": "7c3a7cfdfa64",
+          "md": "4b33eff1f1b2",
           "ts": "01b93e3fab57",
           "lean": "0270f25bdb43"
         },
@@ -58,8 +43,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:30:54.386Z",
-        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-first-person-work": [
@@ -75,8 +60,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-time-stamped-notes": [
@@ -92,8 +77,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-unicode-crash": [
@@ -109,8 +94,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-editorializing": [
@@ -126,42 +111,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "4b33eff1f1b2",
-          "ts": "01b93e3fab57",
-          "lean": "0270f25bdb43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
-      }
-    ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "4b33eff1f1b2",
-          "ts": "01b93e3fab57",
-          "lean": "0270f25bdb43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "framework-canonical": [
@@ -177,8 +128,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "wall-side-correct": [
@@ -194,12 +145,12 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T06:39:43.529Z",
-        "reviewed_sha": "05d6f0d51ac596e83cf8f65850886cb9828d5599",
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "evidence": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c. | quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

@@ -3,9 +3,9 @@
   "label": "prf:main-commutative-diagram",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.ts",
-    "md": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.md",
-    "lean": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean"
+    "ts": "quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.ts",
+    "md": "quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.md",
+    "lean": "quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean"
   },
   "source_hashes": {
     "md": "3d1035c95784",
@@ -41,8 +41,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -247,5 +247,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

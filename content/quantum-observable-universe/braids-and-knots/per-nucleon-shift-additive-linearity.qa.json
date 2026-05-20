@@ -3,12 +3,12 @@
   "label": "prop:per-nucleon-shift-additive-linearity",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.ts",
+    "md": "quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md",
+    "lean": "quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.lean"
   },
   "source_hashes": {
-    "md": "6866f98233de",
+    "md": "161fa3530513",
     "ts": "3dfbc9df6d95",
     "lean": "8b8a2cd13aba"
   },
@@ -141,8 +141,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md:131: The cancellation count enumerates the σ²-relation reductions | content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md:134: interface contribution. Detailed σ²-adjacency analysis is given in | content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md:158: σ²-adjacency counting plus Ocneanu averaging across SYT paths in"
+      },
+      {
+        "field_hash": {
+          "md": "161fa3530513",
+          "ts": "3dfbc9df6d95",
+          "lean": "8b8a2cd13aba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -248,5 +265,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

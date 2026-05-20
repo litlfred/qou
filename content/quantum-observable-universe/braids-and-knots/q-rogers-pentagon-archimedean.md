@@ -1,4 +1,4 @@
-**Proposition (Post-$\tau$ pentagon = pre-$\tau$ pentagon + q-log$^2$ Rogers correction).**
+**Proposition (Post-$\tau$ pentagon = pre-$\tau$ pentagon + $q$-$\log^2$ Rogers correction).**
 
 *The pentagon identity for the q-dilogarithm
 ([`def:q-dilogarithm`](#def:q-dilogarithm)) takes two structurally

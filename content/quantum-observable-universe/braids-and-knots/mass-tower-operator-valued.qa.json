@@ -3,12 +3,12 @@
   "label": "prop:mass-tower-operator-valued",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.ts",
+    "md": "quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md",
+    "lean": "quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.lean"
   },
   "source_hashes": {
-    "md": "bd1f2c11302d",
+    "md": "4bb7fd81ed96",
     "ts": "d50d6ec3d927",
     "lean": "adfcd13ffd1d"
   },
@@ -128,6 +128,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "4bb7fd81ed96",
+          "ts": "d50d6ec3d927",
+          "lean": "adfcd13ffd1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [
@@ -199,5 +214,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T05:54:36.387Z"
 }

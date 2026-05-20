@@ -106,7 +106,7 @@ unconditional inhabitation: the BlochGroup quotient is no longer
 typeclass-only, but a real Lean object. The remaining work for
 unconditional `BlochSuslinUniqueness` is:
 
-1.  `BlochGroup F` quotient construction (this proposition).
+1. (done) `BlochGroup F` quotient construction (this proposition).
 2. Pentagon identity proof for `Cl_2` on the unit-circle subset.
 3. Bloch-Wigner regulator $D \otimes \mathbb{Q}$ injectivity.
 4. Suslin map $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$.

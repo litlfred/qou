@@ -3,12 +3,12 @@
   "label": "thm:frobenius-codim-universal",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/frobenius-codim-universal.ts",
+    "md": "quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md",
+    "lean": "quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean"
   },
   "source_hashes": {
-    "md": "4f1dae059fcc",
+    "md": "68fe6001bcff",
     "ts": "4fffc1908ec8",
     "lean": "eb3e4e02a75f"
   },
@@ -126,8 +126,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md:285: | $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ⁴He / ¹⁶O / ²⁰Ne (PR #631) |"
+      },
+      {
+        "field_hash": {
+          "md": "68fe6001bcff",
+          "ts": "4fffc1908ec8",
+          "lean": "eb3e4e02a75f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -249,5 +266,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

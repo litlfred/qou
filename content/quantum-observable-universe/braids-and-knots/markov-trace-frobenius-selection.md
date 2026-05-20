@@ -141,7 +141,7 @@ unique trace satisfying the mass identity's requirements.* ∎
 The script
 [`habiro_coefficients_atomic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/habiro_coefficients_atomic.py)
 computes
-`tr_M = Σ_λ schur_weyl_weight(λ) · χ_λ` — this is
+`tr_M = sum_lambda schur_weyl_weight(lambda) * chi_lambda` — this is
 $\tau_{\mathrm{SW}}$, not $\tau_M$.  It is **mislabeled** as
 "Markov trace" but is actually the Schur-Weyl / SU(2)-projected
 functional.

@@ -3,12 +3,12 @@
   "label": "prf:atom-knot-mass-derivation",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.ts",
+    "md": "quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
+    "lean": "quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.lean"
   },
   "source_hashes": {
-    "md": "28d3586be018",
+    "md": "b24ffdb30851",
     "ts": "f1929d2638b2",
     "lean": "e6a07a88c8ce"
   },
@@ -126,8 +126,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md:112: - For `manual-historical` entries (²H, ³H, ³He) step 1 is pending;"
+      },
+      {
+        "field_hash": {
+          "md": "b24ffdb30851",
+          "ts": "f1929d2638b2",
+          "lean": "e6a07a88c8ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -233,5 +250,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

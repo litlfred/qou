@@ -51,7 +51,7 @@ Three concrete routes (from
 
 ## Why these aren't decoration
 
-The current $Q_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ ∏ rungs)
+The current $Q_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ $\prod$ rungs)
 already meets the 7.8 ppb L2 target at $N=3$ (residual +6.02 ppb,
 within target). The c_4..c_7 corrections push residual to sub-ppb,
 which is **research-grade precision beyond the 100×-experimental

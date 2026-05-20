@@ -3,12 +3,12 @@
   "label": "rem:post-pr665-open-rd-inventory",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.ts",
+    "md": "quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.md",
+    "lean": "quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.lean"
   },
   "source_hashes": {
-    "md": "cfab9ff82b29",
+    "md": "f573124016a2",
     "ts": "f35e474fdca4",
     "lean": "6c359d255199"
   },
@@ -126,8 +126,40 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/post-pr665-open-rd-inventory.md:80: - `hoefsmit_b_sq = d_1 · d_2 + 1` is symmetric → unchanged"
+      },
+      {
+        "field_hash": {
+          "md": "214999d22aa8",
+          "ts": "f35e474fdca4",
+          "lean": "6c359d255199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "f573124016a2",
+          "ts": "f35e474fdca4",
+          "lean": "6c359d255199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [
@@ -249,5 +281,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T05:54:36.387Z"
 }

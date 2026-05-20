@@ -3,12 +3,12 @@
   "label": "rem:chi-v3-closed-form-proof",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.ts",
+    "md": "quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.md",
+    "lean": "quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.lean"
   },
   "source_hashes": {
-    "md": "60241e3d54f8",
+    "md": "ef855385811e",
     "ts": "19bd3818b4e3",
     "lean": "66d0fb1e0636"
   },
@@ -141,8 +141,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.md:97: - **V_(1,1,1)** is the **q ↔ −q⁻¹ mirror** of V_(3) (antisymmetric irrep where each $\\sigma_i$ acts as $−q^{-1}$). The proof should mirror this module's structure exactly with $q \\mapsto -q^{-1}$."
+      },
+      {
+        "field_hash": {
+          "md": "ef855385811e",
+          "ts": "19bd3818b4e3",
+          "lean": "66d0fb1e0636"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -264,5 +281,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

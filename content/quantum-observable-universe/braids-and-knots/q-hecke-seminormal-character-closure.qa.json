@@ -3,12 +3,12 @@
   "label": "prop:q-hecke-seminormal-character-closure",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.ts",
+    "md": "quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md",
+    "lean": "quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.lean"
   },
   "source_hashes": {
-    "md": "024d971f35d3",
+    "md": "ca4964536233",
     "ts": "67dc99aab492",
     "lean": "ed0e71f89a5b"
   },
@@ -141,8 +141,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:68: | proton | 1.06530622859 | 1.06530622859 | 3.96 × 10⁻¹⁵ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:69: | neutron | 0.92323329717 | 0.92323329717 | 4.21 × 10⁻¹⁵ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:70: | deuteron | 0.38828647155 | 0.38828647155 | 7.01 × 10⁻¹⁵ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:71: | tritium | 0.10405211868 | 0.10405211868 | 1.07 × 10⁻¹⁴ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:72: | ³He | 0.20654085856 | 0.20654085856 | 1.03 × 10⁻¹⁴ |"
+      },
+      {
+        "field_hash": {
+          "md": "ca4964536233",
+          "ts": "67dc99aab492",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -248,5 +265,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

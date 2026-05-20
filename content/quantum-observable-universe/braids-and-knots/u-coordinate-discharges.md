@@ -13,7 +13,7 @@ and elsewhere.
 
 ## Substantive identities (all proved by `field_simp + ring`)
 
-| Identity | Form in `u = q²` |
+| Identity | Form in $u = q^2$ |
 |---|---|
 | Hoefsmit coupling squared $b^2$ | $\dfrac{u^2 + u + 1}{(u + 1)^2}$ |
 | $\dim_q^2(V_{(2,1)})$ | $u + 2 + u^{-1}$ |

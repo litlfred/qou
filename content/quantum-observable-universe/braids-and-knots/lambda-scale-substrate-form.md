@@ -14,7 +14,7 @@ $$
 $$
 
 *The series TERMINATES exactly at $h^2$; all higher $h^{2k}$ vanish.
-The h$^2$ coefficient is $+3/4$, NOT $-G$ — different sign and value
+The $h^2$ coefficient is $+3/4$, NOT $-G$ --- different sign and value
 than the original conjecture. Proved in*
 [`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py)
 *and formalised in Lean*
@@ -47,7 +47,7 @@ $$
    $\Sigma_{\mathrm{geom}}$ value within $10^{-3}$.
 5. **Single-knot ansatz $\mathrm{Vol}(K_p)/\hbar_q^2$:** no standard
    hyperbolic 3-manifold has $\mathrm{Vol} = 18.03$ within 0.28%
-   (closest: 9$\cdot$Vol(4_1) at +1.35%).
+   (closest: $9 \cdot \mathrm{Vol}(4_1)$ at $+1.35\%$).
 
 **Therefore:** the original conjecture's specific form is a
 **PSLQ-style numerical coincidence**, not a categorical identity.

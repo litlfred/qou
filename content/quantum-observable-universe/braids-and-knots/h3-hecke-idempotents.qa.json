@@ -3,12 +3,12 @@
   "label": "rem:h3-hecke-idempotents",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.ts",
+    "md": "quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md",
+    "lean": "quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.lean"
   },
   "source_hashes": {
-    "md": "512c05c3632f",
+    "md": "7a885124411e",
     "ts": "3ce456148ac2",
     "lean": "9f9a17326ec8"
   },
@@ -111,8 +111,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md:19: - `dimQ_V21 q : ℝ = q + q⁻¹` (= $[2]_q$ at H_3) | content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md:22: - `sigma_eigval_V111 q i : ℝ = -q⁻¹` (for every $i$)"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -202,5 +219,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

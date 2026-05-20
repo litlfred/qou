@@ -3,9 +3,9 @@
   "label": "conj:homological-shell-condensation",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.lean"
+    "ts": "quantum-observable-universe/lifting-and-descent/homological-shell-condensation.ts",
+    "md": "quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md",
+    "lean": "quantum-observable-universe/lifting-and-descent/homological-shell-condensation.lean"
   },
   "source_hashes": {
     "md": "b27594e2027b",
@@ -31,7 +31,7 @@
       },
       {
         "field_hash": {
-          "md": "b27594e2027b",
+          "md": "5649b3d6279c",
           "ts": "02fb46a80d61",
           "lean": "77e420b0f061"
         },
@@ -41,8 +41,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -264,5 +264,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T04:53:48.207Z"
 }

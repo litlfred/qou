@@ -3,12 +3,12 @@
   "label": "prop:trm-hopf-sigma1-sq-closed-form",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.ts",
+    "md": "quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.md",
+    "lean": "quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.lean"
   },
   "source_hashes": {
-    "md": "4b6712ff3306",
+    "md": "d97af37ac444",
     "ts": "dd3fea686998",
     "lean": "13caa022e403"
   },
@@ -141,8 +141,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.md:113: All three produce identical output for σ_1² at q = q_0 to 50 dps."
+      },
+      {
+        "field_hash": {
+          "md": "d97af37ac444",
+          "ts": "dd3fea686998",
+          "lean": "13caa022e403"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [
@@ -248,5 +265,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T05:30:40.400Z"
 }

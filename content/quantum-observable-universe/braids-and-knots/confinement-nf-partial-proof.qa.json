@@ -3,12 +3,12 @@
   "label": "prop:confinement-nf-partial-proof",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.ts",
+    "md": "quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.md",
+    "lean": "quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.lean"
   },
   "source_hashes": {
-    "md": "a9a40a015be7",
+    "md": "5fb672daf170",
     "ts": "5c3c745d188b",
     "lean": "683dfbda4401"
   },
@@ -141,8 +141,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.md:124: | Per new nucleon | Δσ | Δσ⁻¹ | Δavg | Δtotal generators | Δpole order | Δcancellation | **Δshift** |"
+      },
+      {
+        "field_hash": {
+          "md": "5fb672daf170",
+          "ts": "5c3c745d188b",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -248,5 +265,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T14:30:54.386Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

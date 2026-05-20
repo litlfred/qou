@@ -8,9 +8,9 @@ theorems:*
 
 - *(2-boundary) `Cl_2(0) - Cl_2(0) + Cl_2(0) - Cl_2(0) + Cl_2(0) = 0`,
   the all-zero-input pentagon.*
-- *(3-boundary) For every `(q, n)`, `(1 - q) * log Φ_n(0; q) -
-  Li_2(0) = 0`, the boundary case of the Faddeev-Kashaev limit
-  at `x = 0`.*
+- *(3-boundary) For every $(q, n)$, $(1 - q) \cdot \log \Phi_n(0; q) -
+  \mathrm{Li}_2(0) = 0$, the boundary case of the Faddeev-Kashaev limit
+  at $x = 0$.*
 
 > **Status: theorem (boundary cases, sorry-free).** This proposition
 > closes a non-trivial portion of substantive Mathlib gaps (2)
@@ -71,9 +71,9 @@ the following status:
 
 | Gap | Carrier | Boundary case | Full statement |
 |---|---|---|---|
-| (1) `BlochGroup F` quotient |  concrete construction | n/a | ⏳ pentagon generators wiring |
-| (2) $\mathrm{Cl}_2$ pentagon |  class hook |  all-zero unconditional | ⏳ Mathlib Fourier infra |
-| (3) Faddeev-Kashaev |  class hook |  `x = 0` unconditional | ⏳ Mathlib uniform Tauberian |
+| (1) `BlochGroup F` quotient | (done) concrete construction | n/a | (pending) pentagon generators wiring |
+| (2) $\mathrm{Cl}_2$ pentagon | (done) class hook | (done) all-zero unconditional | (pending) Mathlib Fourier infra |
+| (3) Faddeev-Kashaev | (done) class hook | (done) `x = 0` unconditional | (pending) Mathlib uniform Tauberian |
 
 This represents the maximum advance achievable without upstream
 Mathlib contributions or ~hundreds of lines of additional Lean

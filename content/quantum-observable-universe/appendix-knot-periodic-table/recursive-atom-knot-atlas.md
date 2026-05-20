@@ -22,7 +22,7 @@ volume-match results are **never** mixed with derivation-based ones.
 |---|---|---|
 | `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [`def:confined-particle`](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ → $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ → $\mathcal{B}_3$. |
 | `principled-gb-nf` | Trivial-NF entries (single strand or pure identity); closure is unknot or disjoint unknots. | neutrino, photon, quark. |
-| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | $^2$H = $6_2$, ³H = $8_{11}$, ³He = $L_{6a4}$. |
+| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | ${}^2$H = $6_2$, ³H = $8_{11}$, ³He = $L_{6a4}$. |
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ⁴He. |
 | `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ⁴He. | ⁸Be–⁴⁰Ca. |
 | `deprecated-volume-match` | **PROVISIONAL — do not cite as principled.**  Brute-force SnapPy volume search picked the closest knot to the AME-derived volume target; reverse-engineers the answer.  See [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json). | ⁶Li, ⁷Li (quarantined below). |
@@ -170,7 +170,7 @@ obtained.
 
 ### $\ell = 2$ — light atoms (recursive: ref to nucleon entries above)
 
-**Deuterium $^2$H = D = $[\mathfrak{p}, \mathfrak{n}]_{L_H}$**
+**Deuterium ${}^2$H = D = $[\mathfrak{p}, \mathfrak{n}]_{L_H}$**
 
 | Row | Content |
 |--:|---|
@@ -182,7 +182,7 @@ obtained.
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w \in H_9(q_0)$.  Closure $\widehat{T_w} = K_{8_{11}}$ (hyperbolic, $\mathrm{Vol} = 8.2863$). |
-| Prediction | $B_\mathrm{pred} = 2 \cdot m_e \cdot \mathrm{Vol}(K_{8_{11}}) = 8.469$ MeV vs $B_\mathrm{AME} = 8.482$.  **err = −0.16%**  ★ **best per-isotope**. |
+| Prediction | $B_\mathrm{pred} = 2 \cdot m_e \cdot \mathrm{Vol}(K_{8_{11}}) = 8.469$ MeV vs $B_\mathrm{AME} = 8.482$.  **err = −0.16%** — **best per-isotope**. |
 
 **Helium-3 ³He = $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}]_{L_{6a4}}$**
 
@@ -238,7 +238,7 @@ obtained.
 | Braid (NF) | Two $^4$He cluster braids fused, plus one α–α pair-energy correction. |
 | Prediction | $B_\mathrm{pred} = 2 B(^4\mathrm{He}_\mathrm{derived}) + c_{\alpha\alpha} = 62.34$ MeV vs $B_\mathrm{AME} = 56.50$.  **err = +10.34%**. |
 
-**Carbon-12 ¹$^2$C = $3 \cdot {}^4\mathrm{He} + 3 \cdot c_{\alpha\alpha}$**
+**Carbon-12 ${}^{12}$C = $3 \cdot {}^4\mathrm{He} + 3 \cdot c_{\alpha\alpha}$**
 
 | Row | Content |
 |--:|---|
@@ -326,7 +326,7 @@ where $h = q_0 - q_0^{-1}$.
 
 | Fusion | Description |
 |---|---|
-| $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (⁸Be, ¹$^2$C, …, ⁴⁰Ca) |
+| $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (⁸Be, ${}^{12}$C, …, ⁴⁰Ca) |
 | $\alpha$–N attachment | Layer 3: $^4$He cluster + valence nucleon (for non-magic $A$) |
 
 For an atom with mass number $A$, the canonical braid word in

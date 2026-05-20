@@ -3,9 +3,9 @@
   "label": "lem:tower-pair-equality-fixed-level",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.ts",
+    "md": "quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.md",
+    "lean": "quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.lean"
   },
   "source_hashes": {
     "md": "4a2f06be15e4",
@@ -31,7 +31,7 @@
       },
       {
         "field_hash": {
-          "md": "4a2f06be15e4",
+          "md": "b60d005478e7",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
         },
@@ -41,8 +41,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+        "reviewed_at": "2026-05-20T04:53:48.207Z",
+        "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb"
       }
     ],
     "voice-status-leak": [
@@ -126,8 +126,40 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.md:138: states the lemma in the abstract form `tr_M(prod over P_n) = z²·(sum"
+      },
+      {
+        "field_hash": {
+          "md": "e6dfc5082858",
+          "ts": "9448602a4fa3",
+          "lean": "9e7d22847263"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "4a2f06be15e4",
+          "ts": "9448602a4fa3",
+          "lean": "9e7d22847263"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [
@@ -264,5 +296,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T05:54:36.387Z"
 }
