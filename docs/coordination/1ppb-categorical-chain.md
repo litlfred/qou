@@ -527,3 +527,17 @@ at a p-* boundary, with $z(q)$ from [`prop:interface-knot-markov-z`](../../conte
 **Witness:** `rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. < 1e-12, passes at ~1e-15).
 
 Next on queue: **5l.1** — extract closed form for $\tau_M^3(\beta_p, q)$ as a Laurent rational expression in $q$ (the proton braid is a specific Hecke word, so $\tau_M^3(\beta_p, q)$ is a specific algebraic function).
+
+### Coordination sweep — 5k.2 + 5l (2026-05-20)
+
+| PR | State | Action |
+|---|---|---|
+| **#842** (`phase-5k2-varying-q-sweep`) | open, CI ✓ green on `597938ab6` | Copilot review cycle 1 dispositioned (4 comments accepted); [cross-link to #845 posted](https://github.com/litlfred/qou/pull/842#issuecomment-4494415815) noting #845 supersedes its falsification framing with the actual structural identity. |
+| **#845** (`phase-5l-disjoint-markov-trace`) | open, CI in progress | [coordination posted](https://github.com/litlfred/qou/pull/845#issuecomment-4494416349) explaining the #842 → #845 chain and merge-order options. |
+| main | advanced by #839 (Lean typed claims round-9) | no file overlap — constit-factor / Markov-trace work disjoint from typed-claims work. |
+| #818, #817, #761 | old branches (May 18–19) predating #831 baseline | no actual edit overlap — diff against current main shows "constit-factor-2q-minus-1.lean missing" because branches are old, not because they edit it. No coordination needed unless those PRs rebase. |
+| Other open PRs (#411, #31, #650, #646, #774, #738, #807) | unrelated domains | — |
+
+**Merge order suggestion** (posted on #842): land #842 first to preserve the falsification's review history with its 4 Copilot dispositions; then #845 follows with the resolution. Alternative: close #842 in favor of #845 (which carries the full falsify-then-resolve narrative in its PR body + ledger rows).
+
+Next on queue (sibling coordination): wait for review on #845; if approved, propose merge order to owner.
