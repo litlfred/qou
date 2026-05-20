@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "ee54ad79e3fe",
     "ts": "08e135d64dad",
-    "lean": "21014980fabc"
+    "lean": "f1ab2f05e57e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -181,8 +181,23 @@
         },
         "reviewed_at": "2026-05-20T15:10:05.080Z",
         "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      },
+      {
+        "field_hash": {
+          "md": "ee54ad79e3fe",
+          "ts": "08e135d64dad",
+          "lean": "f1ab2f05e57e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:57:35.485Z",
+        "reviewed_sha": "a92c99c1d3b638458c5ccf372ce3bb6e0c27069e"
       }
     ]
   },
-  "updated_at": "2026-05-20T15:10:05.080Z"
+  "updated_at": "2026-05-20T15:57:35.485Z"
 }
