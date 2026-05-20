@@ -499,21 +499,30 @@ export function checkProofNoBareSorries(
 ): CheckerResult {
   const src = readMaybe(leanPath);
   if (!src) return { result: "n/a", hits: [] };
-  const lines = src.split("\n");
+  // Mask comment regions before scanning, preserving line numbers:
+  //   /-! ... -/  Lean module docstring
+  //   /-  ... -/  block comment
+  //   --  ...     line comment (rest of line)
+  // Without this, the word "sorry" in narrative prose inside a
+  // docstring is flagged as a missing-citation bare `sorry`.
+  // For the `-- Ref:` lookback we still need the original lines.
+  const blankNonNewline = (m: string) => m.replace(/[^\n]/g, " ");
+  const masked = src
+    .replace(/\/-![\s\S]*?-\//g, blankNonNewline)
+    .replace(/\/-[\s\S]*?-\//g, blankNonNewline)
+    .replace(/--[^\n]*/g, blankNonNewline);
+  const lines = masked.split("\n");
+  const origLines = src.split("\n");
   const hits: CheckerHit[] = [];
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    // Match `sorry` as a whole token (not inside a comment or string).
-    if (!/\bsorry\b/.test(line)) continue;
-    if (/^\s*--/.test(line)) continue; // commented out
-    // Look back BARE_SORRY_REF_GAP_LINES lines for a `-- Ref:`.
+    if (!/\bsorry\b/.test(lines[i])) continue;
     let hasRef = false;
     for (
       let j = Math.max(0, i - BARE_SORRY_REF_GAP_LINES);
       j < i;
       j++
     ) {
-      if (/--\s*Ref:\s*\[/.test(lines[j])) {
+      if (/--\s*Ref:\s*\[/.test(origLines[j])) {
         hasRef = true;
         break;
       }
