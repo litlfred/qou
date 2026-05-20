@@ -78,22 +78,42 @@ def compute_tau_M_nucleon_H3(g0, g1, q_val: mp.mpf,
 
 
 def compute_tau_M_full(Z: int, N: int, q_val: mp.mpf,
-                       dps: int = 50) -> mp.mpf:
+                       dps: int = 50, *, label: str = "") -> mp.mpf:
     """tr_M(𝓑_K) via the FULL y_λ · χ_λ pipeline at H_{3A}.
 
     This is the expensive route — the closed form sidesteps the
-    H_{3A} partition sum."""
+    H_{3A} partition sum.
+
+    Per Gemini PR #863 review (long-compute logging discipline): emits
+    periodic progress lines for n ≥ 12 (4He and beyond) including units/sec
+    metric, wall elapsed time, and ETA so bottlenecks are visible.
+    """
     h_val = float(Q0 - 1 / Q0)
     word = atom_braid_word_3A(Z, N, include_inter=True)
     word_m = marshal_to_chi_lambda_braid(word, h_val)
     n = 3 * (Z + N)
     q_str = mp.nstr(q_val, dps, strip_zeros=False)
     total = mp.mpf(0)
-    for lam in partitions_of(n):
+    parts = list(partitions_of(n))
+    num_parts = len(parts)
+    t_start = time.time()
+    PROGRESS_THRESHOLD_N = 12  # Long-compute logging kicks in at H_12 (⁴He+)
+    PROGRESS_EVERY = 10        # one line per 10 partitions processed
+    for i, lam in enumerate(parts):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
         chi = chi_lambda_braid(lam, word_m, q_value=q_str,
                                 precision="mpfr_50dps")
         total += y * mp.mpf(str(chi))
+        if n >= PROGRESS_THRESHOLD_N and (i + 1) % PROGRESS_EVERY == 0:
+            elapsed = time.time() - t_start
+            done = i + 1
+            rate = done / elapsed if elapsed > 0 else 0.0
+            remaining = num_parts - done
+            eta = remaining / rate if rate > 0 else float("inf")
+            prefix = f"      [{label}] " if label else "      "
+            print(f"{prefix}progress: {done}/{num_parts} partitions  "
+                  f"{rate:.3f} parts/sec  elapsed {elapsed:.1f}s  "
+                  f"ETA {eta:.1f}s")
     return total
 
 
@@ -102,7 +122,14 @@ def main() -> int:
     builder = WitnessBuilder(
         "closed-form-tau-M-verification-phase5q", engine="python"
     )
-    builder.set_content_block("prop:interface-knot-markov-z")
+    # Per Copilot PR #863 review: prop:interface-knot-markov-z is wired
+    # to `delta-lambda-fr-identity-phase5c.witness.json`, not this Phase 5q
+    # verification witness — so setting contentBlock here would be a stale
+    # claim (audit-wiring would flag it as orphan + stale).  This Phase 5q
+    # script is a STANDALONE verification artifact for the combined
+    # Phase 5c.1 + 5l closed form (downstream consumer of both props).
+    # Mark as auditOnly anchored to the cheat sheet's §5 action #4 entry.
+    builder.set_audit_only("docs/canonical-derivation-cheat-sheet.md")
 
     q_val = mp.mpf(Q_50_DIGIT_STR)
     print(f"=== Phase 5q: closed-form tr_M(𝓑_K) verification ===\n")
@@ -124,7 +151,7 @@ def main() -> int:
     for name, Z, N in ATOMS:
         print(f"  {name} (Z={Z}, N={N}):")
         t0 = time.time()
-        tau_full_empirical = compute_tau_M_full(Z, N, q_val)
+        tau_full_empirical = compute_tau_M_full(Z, N, q_val, label=name)
         t_emp = time.time() - t0
         t0 = time.time()
         tau_full_closed = closed_form_tau_M(Z, N, q_val, tau_p, tau_n)

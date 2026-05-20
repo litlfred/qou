@@ -9,12 +9,17 @@ braid in H_3(q).
     T(B_p, q) := Σ_{λ ⊢ 3} y_λ(q) · χ_λ(B_p, q)
   using the symbolic Wenzl-bridge y_λ.  It is NOT the canonical
   Markov trace tr_M^3(𝓑_p, q) reported in
-  rho-constit-equals-tau-M-proton-phase5l.witness.json — the two
-  differ by a q-independent normalization constant (depends on the
-  chosen Markov-trace normalization for y_λ).  The IMPORTANT
-  output is the q-DEPENDENCE of T(B_p, q) as a Laurent rational
-  in q.  The normalization reconciliation between T(B_p, q) and
-  tr_M^3(𝓑_p, q) is deferred to Phase 5l.2.
+  rho-constit-equals-tau-M-proton-phase5l.witness.json.
+
+  Phase 5l.2 reconciliation finding (`normalization-reconciliation-phase5l2.witness.json`):
+  the relationship between T(B_p, q) and the canonical tr_M^3 is
+  **NOT a simple q-independent multiplicative constant** — both
+  hypotheses A (T at q, rel.spread 5.9e-2) and B (T at q^2,
+  rel.spread 8.1e-1) were FALSIFIED across the 5-point substrate
+  window.  The Wenzl-bridge symbolic implementation uses a deeper
+  convention mismatch (likely a different y_λ normalization that
+  depends on partition structure as well as q).  Full reconciliation
+  is queued as a research task.
 
 Phase 5l identified ρ_Z^constit(q) = tr_M^3(𝓑_p, q) as the
 structural identity for the constit-side per-Z step factor in the
@@ -44,6 +49,7 @@ from __future__ import annotations
 
 import sys
 import time
+import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -56,6 +62,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
+from canonical_braid_marshalling import marshal_to_symbolic_braid  # noqa: E402
 
 # h(q_0) value used to canonical-marshal the f64 atom braid word into
 # the symbolic (gen_idx, cross_type) format below.
@@ -65,37 +72,21 @@ _H_F64 = float(_Q_F64 - 1 / _Q_F64)
 
 def proton_braid_word_symbolic():
     """H_3 proton braid as [(gen_0idx, cross_type), ...] matching
-    hecke_character_symbolic.q_character_on_braid_word format.
+    `hecke_character_symbolic.q_character_on_braid_word` format.
 
     Derived from `mass_at_3A_proper.atom_braid_word_3A(1, 0,
     include_inter=False)` (the canonical f64 word for a single
-    proton block) by mapping each (c, d, gen_idx) entry to the
-    symbolic cross_type ∈ {"sigma", "sigma_inv", "averaged"} based
-    on the d value at q_0:
-        d ≈  0    → "sigma"      (positive σ)
-        d ≈ -h    → "sigma_inv"  (negative σ⁻¹)
-        d ≈ -h/2  → "averaged"   (u-d quark-pair averaged crossing)
+    proton block); marshalling is delegated to the shared
+    `canonical_braid_marshalling.marshal_to_symbolic_braid` utility
+    so the convention (d ≈ 0 → "sigma", d ≈ -h → "sigma_inv",
+    d ≈ -h/2 → "averaged") lives in exactly one place.
 
-    This keeps the probe aligned with the canonical Markov-trace
-    pipeline; if `atom_braid_word_3A` changes, this script picks up
-    the new convention automatically (per Copilot review #849:r3271382464).
+    Per Copilot PR #863 review: previously this function re-implemented
+    the marshalling inline, risking convention drift if
+    `atom_braid_word_3A` ever changed.
     """
     raw = atom_braid_word_3A(1, 0, include_inter=False)
-    word = []
-    for c, d, gen_idx in raw:
-        cf, df = float(c), float(d)
-        if abs(cf - 1.0) >= 1e-10:
-            raise ValueError(f"unexpected c={cf} in proton braid")
-        if abs(df) < 1e-10:
-            ct = "sigma"
-        elif abs(df + _H_F64) < 1e-10:
-            ct = "sigma_inv"
-        elif abs(df + _H_F64 / 2) < 1e-10:
-            ct = "averaged"
-        else:
-            raise ValueError(f"unexpected d={df} in proton braid")
-        word.append((gen_idx, ct))
-    return word
+    return marshal_to_symbolic_braid(raw, _H_F64)
 
 
 def _cross_to_cd(cross_type: str, q: sp.Symbol):
@@ -212,8 +203,22 @@ def main() -> int:
     q0_sympy = sp.Float(Q_50_DIGIT_STR, 50)
     tau_M_at_q0 = sp.N(tau_M_sym.subs(q, q0_sympy), 30)
     print(f"\nT(B_p, q_0) symbolic → numeric = {tau_M_at_q0}")
-    print(f"Canonical tr_M^3(𝓑_p, q_0) empirical = 1.22037426648745...")
-    print(f"(differ by a q-independent normalization constant — see header)")
+    # Load the canonical Phase 5l empirical value from its witness
+    # (Copilot PR #863 review: do not hardcode — the prior 5-digit
+    # truncation didn't match the witness's mpfr-50-dps value).
+    p5l_witness_path = HERE / "rho-constit-equals-tau-M-proton-phase5l.witness.json"
+    canonical_empirical_str = "unavailable"
+    try:
+        with p5l_witness_path.open() as f_witness:
+            p5l_data = json.load(f_witness)
+        for row in p5l_data["data"]["per_q_results"]:
+            if abs(float(row["q"]) - float(q0_sympy)) < 1e-6:
+                canonical_empirical_str = row["tau_M_proton_H3_str"]
+                break
+    except (FileNotFoundError, KeyError, json.JSONDecodeError):
+        pass
+    print(f"Canonical tr_M^3(𝓑_p, q_0) empirical (Phase 5l) = {canonical_empirical_str}")
+    print(f"(differ by a non-trivial convention mismatch — see header + Phase 5l.2)")
 
     # See module docstring's NORMALIZATION CAVEAT: T(B_p, q) is the
     # structural variant and may differ from the canonical tr_M^3(𝓑_p, q)

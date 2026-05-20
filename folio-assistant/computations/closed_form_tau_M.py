@@ -142,10 +142,13 @@ def canonical_interface_kinds(
 
       - "chi_lambda_braid" (DEFAULT, matches production):
           p-n is marshalled as positive σ in the chi_lambda_braid
-          pipeline (see hecke_characters.py marshalling code that
-          maps `(1, -h/2)` → `(sign=+1, gen)` — the averaging
-          coefficient is silently dropped).  This is what the 4
-          production tr_M scripts compute.
+          pipeline.  `chi_lambda_braid` itself only takes
+          `(sign, gen)` pairs; the averaged → σ simplification lives
+          in the marshalling layer
+          (`canonical_braid_marshalling.marshal_to_chi_lambda_braid`,
+          which maps `(c=1, d=-h/2)` → `(sign=+1, gen)` and silently
+          drops the -h/2 coefficient).  This is what the 4 production
+          tr_M scripts compute.
 
       - "strict_averaged" (math-correct, audit only):
           p-n uses (σ_g - (h/2)·I) which gives factor (z - h/2).

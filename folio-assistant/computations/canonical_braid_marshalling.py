@@ -101,7 +101,14 @@ def marshal_to_chi_lambda_braid(
         elif abs(df + h_val / 2) < eps:
             out.append((1, gen + 1))            # averaged → σ convention
         else:
-            out.append((1, gen + 1))            # fallback
+            # Per Copilot PR #863 review: raise on unknown (c,d) rather
+            # than silently falling back.  The canonical builder
+            # `atom_braid_word_3A` emits only {(1,0), (1,-h), (1,-h/2)};
+            # any other d means upstream drift that audits should catch.
+            raise ValueError(
+                f"unexpected d={df:.6g} in canonical braid at gen={gen} "
+                f"(expected 0, -h={-h_val:.6g}, or -h/2={-h_val/2:.6g})"
+            )
     return out
 
 
@@ -139,5 +146,11 @@ def marshal_to_symbolic_braid(
         elif abs(df + h_val / 2) < eps:
             out.append((gen, "averaged"))
         else:
-            out.append((gen, "sigma"))          # fallback
+            # Per Copilot PR #863 review: raise on unknown (c,d) rather
+            # than silently falling back.  Audits should catch upstream
+            # drift in `atom_braid_word_3A` rather than mask it here.
+            raise ValueError(
+                f"unexpected d={df:.6g} in canonical braid at gen={gen} "
+                f"(expected 0, -h={-h_val:.6g}, or -h/2={-h_val/2:.6g})"
+            )
     return out

@@ -46,10 +46,33 @@ PHASE5L1_WITNESS = HERE / "tau-M-proton-closed-form-phase5l1.witness.json"
 
 
 def load_phase5l_data() -> list[dict]:
-    """Load the 5-point (q, tr_M^3) table from Phase 5l witness."""
+    """Load the 5-point (q, tr_M^3) table from Phase 5l witness.
+
+    Per Copilot PR #863 review: the per_q_results table stores q as a
+    float (~16 dps truncation); the un-truncated 50-dps q-strings live
+    in `parameters.q_values`.  Build the rows with q resolved from the
+    string list so the audit uses the substrate's canonical 50-dps
+    pin, not the round-tripped float.
+    """
     with PHASE5L_WITNESS.open() as f:
         data = json.load(f)
-    return data["data"]["per_q_results"]
+    rows = data["data"]["per_q_results"]
+    params = data.get("parameters", {})
+    # WitnessBuilder serialises `parameters` as a dict; the q_values
+    # entry is the list of canonical-pin 50-dps strings.
+    q_strings: list[str] = list(params.get("q_values", []))
+    # Pair each row with its 50-dps q-string by index (order preserved
+    # by the Phase 5l writer).  Fallback to the row's float `q` if the
+    # parameter is absent.
+    enriched: list[dict] = []
+    for i, row in enumerate(rows):
+        enriched_row = dict(row)
+        if i < len(q_strings):
+            enriched_row["q_str"] = q_strings[i]
+        else:
+            enriched_row["q_str"] = repr(row["q"])
+        enriched.append(enriched_row)
+    return enriched
 
 
 def load_phase5l1_symbolic() -> str:
@@ -89,9 +112,13 @@ def main() -> int:
     ratios_A = []  # T evaluated at q
     ratios_B = []  # T evaluated at q^2 (Q = q^2 interpretation)
     for row in phase5l_rows:
-        q_val = mp.mpf(str(row["q"]))
+        # Use the un-truncated 50-dps q-string from Phase 5l parameters
+        # (Copilot PR #863 review) — the float `row["q"]` is already
+        # round-tripped through 64-bit, losing the canonical 50-digit
+        # pin's precision past digit 17.
+        q_val = mp.mpf(row["q_str"])
         tau_canonical = mp.mpf(row["tau_M_proton_H3_str"])
-        q_sympy = sp.Float(str(q_val), 50)
+        q_sympy = sp.Float(row["q_str"], 50)
         q_sq_sympy = sp.Float(str(q_val * q_val), 50)
         T_at_q = mp.mpf(str(sp.N(T_expr.subs(q, q_sympy), 50)))
         T_at_qsq = mp.mpf(str(sp.N(T_expr.subs(q, q_sq_sympy), 50)))
