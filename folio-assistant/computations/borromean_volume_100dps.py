@@ -17,7 +17,7 @@ artifact of whatever literature source was quoted.
 
 This script computes both sides at 100 dps and reports the gap.
 
-Ref: prop:borromean-baryon-mass-formula (the consumer);
+Ref: conj:borromean-baryon-mass-formula (the consumer);
      docs/audits/2026-05-18-lambda-scale-derivation-search.md §93–104
      (the audit raising the question).
 """
@@ -157,7 +157,9 @@ def main() -> int:
     print(f"  audit lit. (12dps) = 7.32772290647")
     print(f"  ours    (12dps)    = {vol_B3_str_10}")
 
-    out = w.save()
+    out = w.set_audit_only(
+        "docs/audits/2026-05-18-lambda-scale-derivation-search.md"
+    ).save()
     print(f"\n→ wrote {out}")
     return 0
 

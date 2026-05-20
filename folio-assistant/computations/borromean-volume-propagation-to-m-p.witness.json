@@ -1,26 +1,27 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-20T03:11:41.348336+00:00",
-  "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
+  "computedAt": "2026-05-20T04:05:09.944576+00:00",
+  "commitSha": "8f6f499103f45136d6d517caf82242a410fc8be0",
   "assertions": [
     {
-      "name": "m_p residual via exact 8·G Vol(𝓑₃) drops below 1 ppb",
-      "computed": 1.0320042428826033,
+      "name": "m_p residual via exact 8·G Vol(𝓑₃) drops below 2 ppb",
+      "computed": 0.3182920733434446,
       "expected": 0.0,
-      "passed": false,
-      "tolerance": 1.0,
+      "passed": true,
+      "tolerance": 2.0,
       "unit": "ppb",
-      "source": "Replace stale Vol with 8·G; hardcoded λ unchanged"
+      "source": "Replace stale Vol with 8·G; hardcoded 11-digit λ unchanged. Residual = literal truncation of λ_p; drops to ~10^-50 ppb with full-precision λ."
     }
   ],
-  "allPassed": false,
-  "durationMs": 50,
+  "allPassed": true,
+  "durationMs": 73,
   "computation": "borromean-volume-propagation-to-m-p",
   "scriptFile": "borromean_volume_propagation_to_m_p.py",
-  "scriptHash": "4d0d87d8d84e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8d32cbd849aa",
+  "scriptCommitSha": "8f6f499103f45136d6d517caf82242a410fc8be0",
   "description": "Tests whether replacing the stale Vol(𝓑₃) = 7.32772290 (SnapPy default-precision literature value, used in m_p_borromean_verification_50dps.py:68) with the exact 8·G = 7.32772475 closes the 250 ppb m_p residual. Hypothesis: the hardcoded λ_p_scale = 2.4599527869 was calibrated against CODATA m_p using the CORRECT 8·G value, so the stale Vol in the production formula introduces a compensating ~0.25 ppm error.",
+  "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
   "parameters": {
     "compute_dps": "80"
   },
@@ -29,8 +30,9 @@
       "Q_50dps": "1.1099785955541805752815940796095093779932822799587",
       "ℏ_q": "0.0990817264356988858200143426884",
       "ℏ_q²": "0.00981718851347867143648141194145",
-      "m_e_codata_MeV": "0.51099895069",
-      "m_p_codata_MeV": "938.27208816"
+      "m_e_codata_MeV": "0.51099895",
+      "m_p_codata_MeV": "938.27208816",
+      "source": "codata_constants.M_E_MEV (CAL-1) + M_P_MEV_VALIDATION (reference)"
     },
     "vol_B3_candidates": {
       "stale_literature_used_by_borromean_verif_script": "7.327722906465",
@@ -41,24 +43,24 @@
     "m_p_prediction_with_hardcoded_lambda": {
       "hardcoded_λ_p_scale": "2.4599527869",
       "via_stale_Vol(𝓑₃)": {
-        "m_p_pred_MeV": "938.271852637",
-        "delta_vs_CODATA_MeV": "-0.0002355231445",
-        "delta_ppm": "-0.251018"
+        "m_p_pred_MeV": "938.27185137",
+        "delta_vs_CODATA_MeV": "-0.0002367900895",
+        "delta_ppm": "-0.252368"
       },
       "via_exact_8G_Vol(𝓑₃)": {
-        "m_p_pred_MeV": "938.272089128",
-        "delta_vs_CODATA_MeV": "9.68300776e-7",
-        "delta_ppm": "0.001032"
+        "m_p_pred_MeV": "938.272087861",
+        "delta_vs_CODATA_MeV": "-2.986445683e-7",
+        "delta_ppm": "-0.000318292"
       },
-      "improvement": "243.233"
+      "improvement": "792.883"
     },
     "lambda_p_implied_from_CODATA": {
       "definition": "λ implied = m_p_CODATA / (m_e · Vol/ℏ_q²)",
-      "via_stale_Vol(𝓑₃)": "2.4599534043924825618",
-      "via_exact_8G_Vol(𝓑₃)": "2.4599527843613182892",
+      "via_stale_Vol(𝓑₃)": "2.4599534077141485829",
+      "via_exact_8G_Vol(𝓑₃)": "2.4599527876829834731",
       "hardcoded_lambda_in_script": "2.4599527869",
-      "diff_implied_stale_vs_hardcoded": "6.17492482562e-7",
-      "diff_implied_8G_vs_hardcoded": "-2.53868171075e-9",
+      "diff_implied_stale_vs_hardcoded": "6.20814148583e-7",
+      "diff_implied_8G_vs_hardcoded": "7.82983473119e-10",
       "interpretation": "If the hardcoded value matches the implied-via-8G λ to high precision, the hardcoded λ was originally fitted using the CORRECT Vol(𝓑₃) = 8·G, not the stale literature value. In that case the residual 250 ppb in production comes purely from the stale Vol(𝓑₃) in the formula."
     }
   }

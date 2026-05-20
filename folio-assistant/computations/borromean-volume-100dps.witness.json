@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-20T02:29:24.058658+00:00",
-  "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
+  "computedAt": "2026-05-20T04:05:09.796176+00:00",
+  "commitSha": "8f6f499103f45136d6d517caf82242a410fc8be0",
   "assertions": [
     {
       "name": "Λ(π/4) = G/2 (exact identity, to numerical precision)",
@@ -24,12 +24,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 62,
+  "durationMs": 67,
   "computation": "borromean-volume-100dps",
   "scriptFile": "borromean_volume_100dps.py",
-  "scriptHash": "45b0403f41f0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1531ccf271f5",
+  "scriptCommitSha": "8f6f499103f45136d6d517caf82242a410fc8be0",
   "description": "Vol(𝓑₃) at 100 dps via Lobachevsky-Catalan identity. Tests the audit claim that Vol(𝓑₃) and 8·G differ at the 7th digit. Computes Λ(π/4) numerically, mpmath.catalan to 100 dps, and 16·Λ(π/4) vs 8·G.",
+  "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
   "parameters": {
     "compute_dps": "110",
     "output_dps": "100"
