@@ -70,7 +70,7 @@ import {
 import {
   QA_CRITERIA_REGISTRY,
   QA_CRITERIA_BY_ID,
-  ONE_VOICE_WATCHER_CRITERIA,
+  WATCHER_CRITERIA_BY_AXIS,
 } from "./qa-criteria-registry";
 import { AUTOMATED_CHECKERS } from "./qa-checkers-voice";
 import type {
@@ -83,6 +83,7 @@ import type {
 interface Args {
   root: string;
   only?: string[];
+  axis?: string[];
   dryRun: boolean;
   json: boolean;
   ci: boolean;
@@ -97,13 +98,15 @@ function parseArgs(argv: string[]): Args {
     else if (a === "--ci") out.ci = true;
     else if (a === "--only") {
       out.only = (argv[++i] ?? "").split(",").filter(Boolean);
+    } else if (a === "--axis") {
+      out.axis = (argv[++i] ?? "").split(",").filter(Boolean);
     } else if (!a.startsWith("--")) {
       if (!out.root) out.root = a;
     }
   }
   if (!out.root) {
     console.error(
-      "usage: qa-sweep.ts <content-root> [--only ID,ID] [--dry-run] [--json] [--ci]",
+      "usage: qa-sweep.ts <content-root> [--only ID,ID] [--axis NAME[,NAME]] [--dry-run] [--json] [--ci]",
     );
     process.exit(2);
   }
@@ -150,10 +153,17 @@ function run(): void {
 
   const headSha = gitHeadSha();
   const nowIso = new Date().toISOString();
-  const criteriaToRun =
+  // Criterion-selection precedence (most-specific first):
+  //   --only ID[,ID]    explicit criterion IDs (any axis)
+  //   --axis NAME[,...] one or more watcher axes (one-voice, proof,
+  //                     canonical, compute, detangler)
+  //   (default)         every registered criterion across all axes
+  const criteriaToRun: string[] =
     args.only && args.only.length > 0
       ? args.only.filter((id) => QA_CRITERIA_BY_ID[id])
-      : ONE_VOICE_WATCHER_CRITERIA;
+      : args.axis && args.axis.length > 0
+        ? args.axis.flatMap((a) => WATCHER_CRITERIA_BY_AXIS[a] ?? [])
+        : QA_CRITERIA_REGISTRY.map((c) => c.id);
 
   const results: BlockSweepResult[] = [];
 

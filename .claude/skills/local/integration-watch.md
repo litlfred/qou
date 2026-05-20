@@ -34,7 +34,9 @@ more concrete child watchers and invokes them.
 /integration-watch detanglement                 → same as `detangler`
 /integration-watch one-voice                    → just one-voice-integration-watcher
 /integration-watch voice                        → same as `one-voice`
-/integration-watch all                          → all five in parallel
+/integration-watch bibliography                 → bibliography watcher (block-level bib QA)
+/integration-watch bib                          → same as `bibliography`
+/integration-watch all                          → all six in parallel
 /integration-watch proof,canonical              → those two in parallel
 /integration-watch proof canonical              → same (space-separated)
 /integration-watch proof detanglement canonical → three in parallel
@@ -144,6 +146,9 @@ When multiple watchers are dispatched in parallel:
   `local/detangler-integration-watcher`,
   `local/one-voice-integration-watcher`
 - **Inherits everything**: §0-§9 of the parent
+- **Write-side counterpart**: [`local/integration-backlog`](integration-backlog.md)
+  — same argument grammar, but DRAINS the open findings into
+  review-sized PRs instead of monitoring for new events.
 
 ## Examples
 

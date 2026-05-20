@@ -34,13 +34,15 @@ import {
   summariseFreshness,
 } from "./qa-utils";
 import {
-  ONE_VOICE_WATCHER_CRITERIA,
   QA_CRITERIA_BY_ID,
+  QA_CRITERIA_REGISTRY,
+  WATCHER_CRITERIA_BY_AXIS,
 } from "./qa-criteria-registry";
 
 interface Args {
   root: string;
   criteria?: string[];
+  axis?: string[];
   json: boolean;
   ci: boolean;
 }
@@ -53,6 +55,8 @@ function parseArgs(argv: string[]): Args {
     else if (a === "--ci") out.ci = true;
     else if (a === "--criteria") {
       out.criteria = (argv[++i] ?? "").split(",").filter(Boolean);
+    } else if (a === "--axis") {
+      out.axis = (argv[++i] ?? "").split(",").filter(Boolean);
     } else if (!a.startsWith("--")) {
       if (!out.root) out.root = a;
     }
@@ -84,10 +88,16 @@ function run(): void {
     console.error(`qa-staleness: root not found: ${rootAbs}`);
     process.exit(2);
   }
-  const wantCriteria =
+  // Criterion-selection precedence (most-specific first):
+  //   --criteria ID[,ID]  explicit criterion IDs (any axis)
+  //   --axis NAME[,...]   one or more watcher axes
+  //   (default)           every registered criterion across all axes
+  const wantCriteria: string[] =
     args.criteria && args.criteria.length > 0
       ? args.criteria.filter((id) => QA_CRITERIA_BY_ID[id])
-      : ONE_VOICE_WATCHER_CRITERIA;
+      : args.axis && args.axis.length > 0
+        ? args.axis.flatMap((a) => WATCHER_CRITERIA_BY_AXIS[a] ?? [])
+        : QA_CRITERIA_REGISTRY.map((c) => c.id);
 
   const blocks: BlockReport[] = [];
   let totalMissing = 0;

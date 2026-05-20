@@ -25,6 +25,7 @@
  */
 
 import { readFileSync, existsSync } from "fs";
+import { EXTENDED_AUTOMATED_CHECKERS } from "./qa-checkers-extended";
 
 export interface CheckerHit {
   file: string;
@@ -665,4 +666,9 @@ export const AUTOMATED_CHECKERS: Record<
   "framework-canonical": (p) =>
     p.md ? checkFrameworkCanonical(p.md) : { result: "pass", hits: [] },
   "wall-side-correct": (p) => checkWallSide(p.md, p.lean),
+  // Extended checkers for the non-voice integration axes
+  // (proof, canonical, compute, detangler, bibliography). The
+  // bodies live in `qa-checkers-extended.ts`; the spread below
+  // pulls them in as a single source of truth.
+  ...EXTENDED_AUTOMATED_CHECKERS,
 };

@@ -1,0 +1,330 @@
+---
+name: integration-backlog
+roles: [collaborator, owner]
+user_invocable: true
+description: >
+  Dispatcher for the `/integration-backlog <axes>` slash command.
+  Works the backlog identified by the integration watchers (proof,
+  canonical, compute, detangler, one-voice) by clustering the
+  open findings into review-sized batches (≤ 49 files per PR — the
+  Gemini review limit), proposing each batch to the author via
+  structured AskUserQuestion calls, running `/prepare-merge` on
+  each, resolving review comments (auto if mechanical, structured
+  AskUserQuestion if architectural), then merging — and repeating
+  until the axis is exhausted or the author signals stop.
+  Sister command to `/integration-watch`: the watcher MONITORS for
+  new events; this skill WORKS the backlog the watcher already
+  catalogued.
+allowed-tools: Read Edit Write Bash Grep Glob Agent Monitor Skill AskUserQuestion
+---
+
+# /integration-backlog — drive the backlog to zero, one PR at a time
+
+A workflow skill that turns each integration-watcher's open
+findings into a stream of small, reviewable PRs. Where
+[`local/integration-watch`](integration-watch.md) arms a Monitor
++ PR subscriptions to react to new events as they arrive, this
+skill instead **drains the existing backlog** that the watchers
+have already identified, working through it batch-by-batch with
+the author in the loop only when judgement is genuinely needed.
+
+## Argument grammar
+
+```
+/integration-backlog                              → ask which axes
+/integration-backlog proof                        → just proof backlog
+/integration-backlog canonical                    → just canonical backlog
+/integration-backlog compute                      → just compute backlog
+/integration-backlog detangler                    → just detangler backlog
+/integration-backlog one-voice                    → just one-voice backlog
+/integration-backlog voice                        → same as `one-voice`
+/integration-backlog all                          → drain all five (sequential)
+/integration-backlog proof,canonical              → drain those two (sequential)
+/integration-backlog proof canonical              → same (space-separated)
+/integration-backlog <unknown>                    → reject, re-prompt
+```
+
+**Axes are drained sequentially**, not in parallel — each PR
+needs to land before the next batch is computed (otherwise the
+backlog count drifts mid-flight and batches overlap). Inside
+a single axis, multiple batches may be in flight if they are
+genuinely independent (different chapters / different file
+trees) — see §4.
+
+## Argument-resolution & role gate
+
+Same alias and role-gate logic as `/integration-watch`:
+
+- `voice` → `one-voice`
+- `detanglement` → `detangler`
+- `compute-integration` → `compute`
+- `all` → all five axes
+- `compute` + `one-voice` + `all` require `collaborator`+
+- `proof`, `canonical`, `detangler` are also `collaborator`+ here
+  (this skill writes code; the read-only `reader` analog is
+  `/integration-watch`).
+
+If the user is a `reader`, fall back to `/integration-watch <args>`
+and explain the difference: the watcher monitors and triages;
+the backlog skill writes commits and merges.
+
+If no argument is supplied, surface a 4-chip
+`AskUserQuestion` (multi-select) listing the five axes plus
+`all`, prefixed with 🟡 per the CLAUDE.md user-accessibility
+convention.
+
+## Workflow (per axis)
+
+For each resolved axis, run §1 → §6 in order. The loop body in
+§2-§5 repeats until the axis is exhausted or the author types
+"stop".
+
+### §1. Audit — count + cluster open findings
+
+1. Read every `<block>.qa.json` (or watcher queue file) for the
+   axis to compute the **open-fail list**: per-block label, path,
+   criterion, severity, and a brief evidence quote.
+2. Cluster the open list into **batches** with these constraints:
+   - **≤ 49 files changed per batch** (Gemini's review-comment
+     limit — at 50+ files Gemini truncates). The accounting
+     includes `.qa.json` sidecars, since each `.md` edit
+     refreshes one sidecar.
+   - **Single-criterion batches preferred** (one PR = one axis,
+     easier review).
+   - **Same-chapter / same-file-tree batches preferred** (less
+     cross-cutting impact).
+   - **Mechanical vs judgement-needing split**: a batch is
+     "mechanical" if every block needs the same rewrite (e.g.
+     emoji → text); "judgement-needing" if each block needs an
+     author-decided rename (e.g. `\mathcal{C}` → `{\mathsf{C}, \hat{C}, \mathfrak{C}, \mathcal{C}_+, …}`).
+     Surface them separately.
+3. Emit a short status: `axis=X, open=N, batches=M (B_mech mech / B_jud judgement)`.
+
+### §2. Per-batch user authorization
+
+For each batch, **before** doing any edits, surface an
+`AskUserQuestion` (multi-select, 🟡 prefix) with:
+
+- **Evidence**: per-block file paths, line numbers, evidence
+  quotes (truncated to 80 chars each) for the first 3-5 blocks.
+  Linkable as GitHub blob URLs (use `https://github.com/litlfred/qou/blob/<branch>/<path>`).
+- **Per-option trade-offs**:
+  - **`apply mechanically`** — agent rewrites all N blocks with
+    the same pattern; commits + pushes; expected outcome
+    `criterion: N → 0`. Risk: low; reversible.
+  - **`split by sub-pattern`** — agent surfaces the 2-4
+    distinct sub-patterns inside the batch (e.g. table-cell
+    emoji vs body-prose emoji) and asks again with finer
+    granularity. Cost: extra round-trip; better for
+    judgement-needing batches.
+  - **`defer batch`** — skip this batch, move to next.
+    Use when scope is unclear or out-of-skill.
+  - **`other`** — free-text note from author overrides default
+    behaviour.
+- **Concrete consequences**: "if you pick `apply mechanically`,
+  I create branch `claude/integration-backlog-<axis>-<theme>-<utc>`,
+  apply the rewrite, push, open PR, `/prepare-merge`, address
+  review comments, and merge. ~5-15 min wall-clock per batch."
+
+### §3. Branch + commit per batch
+
+For each authorized batch:
+
+1. **Create branch** under the structured-name convention from
+   CLAUDE.md "user accessibility" §:
+   `claude/integration-backlog-<axis>-<theme>-<YYYY-MM-DD>`
+   - `axis` ∈ {proof, canonical, compute, detangler, one-voice}
+   - `theme` ≤ 40 chars, lowercase, hyphenated
+   - example: `claude/integration-backlog-one-voice-emoji-tables-2026-05-20`
+2. Apply the batch edits. For mechanical batches, do the
+   substitutions directly; for sub-pattern batches, dispatch a
+   focused `Agent(subagent_type: general-purpose)` per
+   sub-pattern.
+3. **Run validation**: `bun run validate <paper>` and the
+   relevant `qa-sweep --only <criterion>`. Refuse to push if
+   either fails — surface the failure to the user via
+   AskUserQuestion before recovering.
+4. **Commit** with the prescribed format (see CLAUDE.md
+   commit-message guidance: `<axis>: <theme> (N items)`,
+   include before/after counts in the body).
+5. **Push** `-u origin <branch>` with retry on network errors.
+6. **Open PR** via `mcp__github__create_pull_request` with body:
+   - Summary (theme, count, before/after numbers)
+   - Per-block bulleted change list (or aggregated table)
+   - Test plan (validation passes, sweep count drops)
+   - **Footer**: a tag identifying this PR as part of the
+     `/integration-backlog <axis>` campaign, so sibling sessions
+     can deduplicate.
+
+### §4. /prepare-merge integration
+
+Invoke `Skill prepare-merge once review comments resolved merge`
+(or equivalent) **on the PR just opened**. The prepare-merge
+skill handles:
+
+- Rebase onto current `origin/main`
+- `lean-ref` migration check
+- Content validation
+- `/gemini review` request
+- `request_copilot_review`
+- PR-activity subscription
+
+When review comments arrive (via the subscribed webhook),
+investigate each one:
+
+- **Mechanical** (line-X uses wrong glyph, missing import, regex
+  typo, etc.): fix directly, commit, push, reply on the thread.
+- **Architectural** (rename strategy, file split needed, scope
+  expansion): surface to user via AskUserQuestion (🟡, multi-
+  select, with the offending file + line + reviewer text quoted).
+- **Duplicate / outdated**: skip silently.
+- **Wrong** (false-positive review comment): post a polite
+  one-line counter-comment with the verifying grep/test.
+
+### §5. Pre-merge confirmation
+
+After all review comments are disposed of and the PR is
+mergeable_state: `clean`:
+
+1. Compute the before/after metric one more time
+   (`qa-sweep --only <criterion>` against current HEAD).
+2. Surface an `AskUserQuestion` (single-select OK here —
+   merging is mutually exclusive with not-merging):
+   - 🟡 prefix
+   - Evidence: PR number + URL + clean state + before/after
+     count + reviewer disposition (Gemini OK? Copilot OK?)
+   - Options:
+     - `merge` (default) — merge via `mcp__github__merge_pull_request`,
+       method `merge` (preserve commits) for multi-axis omnibus,
+       `squash` for single-axis cleanup
+     - `defer` — leave PR open; resume on next invocation
+     - `close` — close without merging (rare; only if
+       review surfaced fatal scope issue)
+3. Execute the chosen action. On `merge`, follow CLAUDE.md owner-
+   only convention: the agent invokes `merge_pull_request`
+   ONLY because the user just confirmed.
+
+### §6. Loop control
+
+After merging (or deferring) a batch:
+
+1. **Refresh the audit** (`qa-sweep` again — open count may have
+   dropped by collateral cleanup or risen if main moved).
+2. **Pick the next batch** per §1 clustering rules.
+3. **Repeat from §2**.
+4. **Stop conditions**:
+   - User types "stop" / "done" / "pause" / equivalent.
+   - All open fails for this axis are 0.
+   - Three batches in a row deferred (signals scope mismatch).
+   - The remaining batches all require author judgement and the
+     user has answered `defer` ≥ 3 times in a row — surface a
+     summary AskUserQuestion: "Remaining N batches all need
+     judgement. Continue / Open issue / Stop."
+
+When the axis is exhausted, emit a final status:
+`axis=X drained: N→0 fails across M batches (M-1 merged + 1
+deferred); wall-clock <Z>min`.
+
+## Multi-axis dispatch (`all` or comma-list)
+
+When multiple axes are requested:
+
+1. Compute the open-fail count per axis first; surface a single
+   AskUserQuestion asking which axis to drain first (default to
+   the axis with the highest critical-fail count).
+2. Drain them sequentially (§1-§6 per axis).
+3. Between axes, allow the user to insert other work via a
+   pause: AskUserQuestion "Axis X complete. Continue to next, or
+   pause?".
+
+## Persistence — `todos/integration-backlog-ledger.md`
+
+Per `local/integration-watcher §0a` (work-plan policy) and
+`local/coordinate §0a` (ledger discipline), every batch decision
+and merge outcome is appended to:
+
+```
+todos/integration-backlog-ledger.md
+```
+
+Entry format:
+
+```markdown
+### 2026-05-20T14:50Z — one-voice / voice-emoji-tables
+- batch: 17 blocks, 23 files (≤49 ✓)
+- user authorized: `apply mechanically` (2026-05-20T14:51Z)
+- branch: claude/integration-backlog-one-voice-emoji-tables-2026-05-20
+- PR: #952 ([url](https://github.com/litlfred/qou/pull/952))
+- /prepare-merge: clean rebase ✓ ; lean-ref ✓ ; validation ✓
+- reviews: Gemini 0 active, Copilot 2 mechanical (fixed inline)
+- merge: 2026-05-20T15:02Z @ sha `abcd1234`
+- delta: voice-emoji-content 20 → 3 (∇ 17)
+```
+
+This is the resume target for sessions that drop the loop mid-
+campaign.
+
+## Integration
+
+- **Built on**: `local/integration-watcher` (audit identification),
+  `local/integration-watch` (dispatcher pattern),
+  `local/prepare-merge` (merge workflow),
+  `local/coordinate` (ledger / sibling-PR coordination)
+- **Dispatches to**: per-axis `Agent` calls for mechanical batches,
+  direct edits for trivial ones, AskUserQuestion for judgement
+- **CLAUDE.md links**:
+  - §3 work-plan policy (TodoWrite + queue + idle-trigger)
+  - User-accessibility (🟡, multi-select default, structured
+    branch names)
+  - "Combine related work into one branch / one PR" — interpreted
+    here as "combine related batches when ≤ 49 files; otherwise
+    split"
+
+## Examples
+
+```
+User: /integration-backlog
+→ Preamble + 4-chip AskUserQuestion; user picks one or more axes.
+
+User: /integration-backlog one-voice
+→ §1 audit: "axis=one-voice, open=29, batches=4 (3 mech / 1 jud)"
+  §2: AskUserQuestion for batch 1 (emoji tables, 17 blocks, 23 files)
+  user answers `apply mechanically`
+  §3: branch + commit + push + PR #952
+  §4: /prepare-merge; Gemini posts 2 comments; both mechanical → fixed
+  §5: AskUserQuestion "merge?" — user says merge
+  merged
+  → §6: loop to batch 2 …
+
+User: /integration-backlog all
+→ Per-axis counts: one-voice=29, proof=18, canonical=4, compute=12, detangler=7.
+  AskUserQuestion "Start with one-voice (highest count)?" — user says yes
+  Drain one-voice; then ask before moving to proof.
+```
+
+## Failure modes
+
+- **Validation fails mid-batch**: revert the .md edits via
+  `git checkout .`, surface a focused AskUserQuestion with the
+  validation error + the offending line.
+- **Sweep counts not dropping**: the batch's rewrite missed a
+  case. Surface the leftover hits via AskUserQuestion with the
+  per-block residual count.
+- **Network / GitHub failures**: retry per CLAUDE.md `git push`
+  exponential-backoff convention; if persistent, defer the batch
+  and continue with the next.
+- **Conflicting sibling PR**: detect via `mcp__github__list_pull_requests`
+  before opening; if a sibling already covers the batch's scope,
+  defer + post a coordinate comment.
+
+## See also
+
+- [`local/integration-watch`](integration-watch.md) — read-side
+  dispatcher (monitor, no commits)
+- [`local/integration-watcher`](integration-watcher.md) — abstract
+  parent for the five concrete watchers
+- [`local/prepare-merge`](prepare-merge.md) — the merge workflow
+  each batch runs through
+- [`local/coordinate`](coordinate.md) — sibling-PR coordination
+- CLAUDE.md "Combine related work into one branch / one PR" and
+  "Structured branch names" rules
