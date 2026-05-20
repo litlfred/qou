@@ -1,16 +1,16 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-20T15:18:47.066261+00:00",
-  "commitSha": "aabccaa031462eed52e940b67968832ee54e8cd5",
+  "computedAt": "2026-05-20T17:09:53.509656+00:00",
+  "commitSha": "af6dd89b55ea3106e47c4acc51c52ca16c7f05e6",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 456,
+  "durationMs": 471,
   "computation": "tau-M-proton-closed-form-phase5l1",
   "scriptFile": "tau_M_proton_closed_form_phase5l1.py",
-  "scriptHash": "119ee149dfba",
-  "scriptCommitSha": "aabccaa031462eed52e940b67968832ee54e8cd5",
-  "description": "Phase 5l.1: symbolic closed-form derivation of tr_M^3(B_p, q) [structural form, normalization-pending] as a Laurent rational in q.  Decomposes the Markov trace as Σ_λ y_λ(q) · χ_λ(B_p, q) over partitions of 3.  Uses trivial / sign reps directly (scalar Hecke values) and Hoefsmit symbolic 2x2 matrices for (2,1).  y_λ(q) given by the Wenzl-bridge structural form (∝ q-hook-content).",
+  "scriptHash": "60956512cefe",
+  "scriptCommitSha": "af6dd89b55ea3106e47c4acc51c52ca16c7f05e6",
+  "description": "Phase 5l.1: symbolic closed-form derivation of T(B_p, q) [structural form; see header for normalization caveat] as a Laurent rational in q.  Decomposes the Markov trace as Σ_λ y_λ(q) · χ_λ(B_p, q) over partitions of 3.  Uses trivial / sign reps directly (scalar Hecke values) and Hoefsmit symbolic 2x2 matrices for (2,1).  y_λ(q) given by the Wenzl-bridge structural form (∝ q-hook-content).",
   "auditOnly": "docs/audits/2026-05-20-constit-factor-closure-chain.md",
   "parameters": {
     "q_symbol": "q"
@@ -26,7 +26,8 @@
       "(2, 1)": "q**2*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)**2*(1 - q**6)*(q**6*(1 - 1/(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1))))*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)) + 2*q**2*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)**2*(1 - q**6)) + (-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(11/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6))))",
       "(1, 1, 1)": "q**6*(1 - 1/(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1))))*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)*(q**6*(1 - 1/(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1))))*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6)) + 2*q**2*(1 - 1/(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1))))*(-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)**2*(1 - q**6)) + (-q**(3/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(7/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)*(-q**(11/2)/(q**(3/2) + (1 - q**2)*(q + 1)) + 1)/((1 - q**2)*(1 - q**4)*(1 - q**6))))"
     },
-    "tau_M_proton_symbolic": "(q**(25/2)*(1 - q**2)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(q**4 + 2*q**2 + 1)*(-q**(11/2) + q**(3/2) + (1 - q**2)*(q + 1)) + q**(19/2)*(1 - q**2)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**4 - 2*q**2 - 1) + q**2*(1 - q**4)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1))/(4*q**(23/2)*(2*q**(3/2)*(1 - q**4)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1)) + q**3*(1 - q**2)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1) + (1 - q**2)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(-q**(11/2) + q**(3/2) + (1 - q**2)*(q + 1))))",
-    "tau_M_proton_at_q0_symbolic_eval": "1.06530622859238925515327756997"
+    "T_proton_structural_symbolic": "(q**(25/2)*(1 - q**2)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(q**4 + 2*q**2 + 1)*(-q**(11/2) + q**(3/2) + (1 - q**2)*(q + 1)) + q**(19/2)*(1 - q**2)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**4 - 2*q**2 - 1) + q**2*(1 - q**4)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1))/(4*q**(23/2)*(2*q**(3/2)*(1 - q**4)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1)) + q**3*(1 - q**2)*(sqrt(q)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1)*(q**(5/2)*(q**(3/2) + (1 - q**2)*(q + 1)) - 1) + (1 - q**2)*(-q**(7/2) + q**(3/2) + (1 - q**2)*(q + 1))*(-q**(11/2) + q**(3/2) + (1 - q**2)*(q + 1))))",
+    "T_proton_structural_at_q0_eval": "1.06530622859238925515327756997",
+    "normalization_note": "T(B_p, q) is the structural symbolic form (∝ Wenzl y_λ).  Differs from canonical tr_M^3(𝓑_p, q) [Phase 5l witness] by a q-independent constant.  Phase 5l.2 reconciles the normalization."
   }
 }
