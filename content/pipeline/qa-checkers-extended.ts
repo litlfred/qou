@@ -739,8 +739,9 @@ export function checkProofNoTrivialSkeleton(
     .map((f) => {
       const target = normalize(f.snippet ?? "");
       if (!target) return null;
-      const from = Math.max(0, f.line - 4);
-      const to = Math.min(source.length - 1, f.line + 2);
+      const center = Math.max(0, f.line - 1);
+      const from = Math.max(0, center - 4);
+      const to = Math.min(source.length - 1, center + 2);
       for (let i = from; i <= to; i++) {
         if (normalize(source[i] ?? "") === target) {
           return { ...f, line: i + 1 };
