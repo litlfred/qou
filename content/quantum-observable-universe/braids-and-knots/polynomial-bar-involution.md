@@ -93,9 +93,18 @@ functors. Polynomial-level truncation work is `sorry`-free.
 
 Every Lean theorem below has both a narrative proof here and a
 fully formalised Lean proof in [`polynomial-bar-involution.lean`](polynomial-bar-involution.lean).
-The proofs use only the four ring-involution axioms plus
-Mathlib's `Polynomial.comp` lemmas — no archimedean or analytic
-infrastructure invoked.
+The **core** bar-involution proofs (axioms, `barPoly_X_pow_*`,
+`barPoly_natCast`, arbitrary-truncation theorems, generic `evenPoly_*`)
+use only the four ring-involution axioms plus Mathlib's
+`Polynomial.comp` lemmas — no archimedean or analytic infrastructure
+invoked. The trailing $\mathbb{R}[X]$ section (`c5_taylor_6`,
+`cos_truncated_6`, `cosh_truncated_6` and their concrete evaluations
+via `norm_num`) specialises to the archimedean base ring to produce
+falsifiable numerical predictions; per CLAUDE.md §7c the generic /
+specialised cut is a soft boundary inside this file, marked by the
+"Concrete archimedean instances over $\mathbb{R}$" section header,
+and may be moved to a sibling block under `observations/` in a
+follow-up if reviewers prefer a hard split.
 
 ### Core bar-involution axioms
 

@@ -101,8 +101,7 @@ theorem barPoly_X_pow (n : ℕ) :
   induction n with
   | zero => simp [barPoly_one]
   | succ k ih =>
-    have hstep : (X : R[X]) ^ (k + 1) = X * X ^ k := by ring
-    rw [hstep, barPoly_mul, barPoly_X, ih]
+    rw [pow_succ, barPoly_mul, ih, barPoly_X]
     ring
 
 /-- **`bar X^(2n) = X^(2n)`** — even powers of the indeterminate
@@ -174,7 +173,22 @@ theorem barPoly_neg (p : R[X]) : barPoly (-p) = -(barPoly p) := by
 
 end QOU.BraidKnot.PolynomialBarInvolution
 
-/-! ## c_5 Taylor truncations in `ℝ[X]`
+/-! # ═════════════════════════════════════════════════════════════
+    Concrete archimedean instances over ℝ
+    ═════════════════════════════════════════════════════════════
+
+    **CLAUDE.md §7c boundary.** Everything above this line is
+    generic-`R` over `CommRing R` — no `ℝ`, no `norm_num`, no
+    archimedean structure. The remainder of the file specialises
+    to `R := ℝ` for the concrete Taylor truncations
+    (`c5_taylor_6`, `cos_truncated_6`, `cosh_truncated_6`) and
+    their numerical evaluations (`norm_num`-discharged).
+
+    A future refactor may move this section to a sibling block
+    under `observations/` (per the §7c soft preference for hard
+    file splits); the cut here is the structural mark.
+
+    ## c_5 Taylor truncations in `ℝ[X]`
 
 The proved closed form $c_5(h) = -3/2 + 1/(h^2 + 4)$ from
 `c5_as_function_of_skein` admits a Taylor-series expansion in

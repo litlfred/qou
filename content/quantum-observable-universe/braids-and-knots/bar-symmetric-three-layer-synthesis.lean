@@ -434,7 +434,9 @@ def BarHeckeFunctor.evenPoly3 (c0 c1 c2 : R)
     have hh2 : BarInvolution.bar (h ^ 2) = h ^ 2 := by
       rw [sq, BarInvolution.bar_mul, (hh : BarInvolution.bar h = -h)]; ring
     have hh4 : BarInvolution.bar (h ^ 4) = h ^ 4 := by
-      have hrew : h ^ 4 = (h ^ 2) ^ 2 := by ring
+      have hrew : (h : R) ^ 4 = (h ^ 2) ^ 2 := by
+        have : (4 : ℕ) = 2 * 2 := by norm_num
+        rw [this, pow_mul]
       rw [hrew, sq, BarInvolution.bar_mul, hh2]
     rw [BarInvolution.bar_add, BarInvolution.bar_add,
         BarInvolution.bar_mul, BarInvolution.bar_mul,
@@ -455,13 +457,19 @@ def BarHeckeFunctor.evenPoly4 (c0 c1 c2 c3 : R)
     have hh2 : BarInvolution.bar (h ^ 2) = h ^ 2 := by
       rw [sq, BarInvolution.bar_mul, (hh : BarInvolution.bar h = -h)]; ring
     have hh4 : BarInvolution.bar (h ^ 4) = h ^ 4 := by
-      have hrew : h ^ 4 = (h ^ 2) ^ 2 := by ring
+      have hrew : (h : R) ^ 4 = (h ^ 2) ^ 2 := by
+        have : (4 : ℕ) = 2 * 2 := by norm_num
+        rw [this, pow_mul]
       rw [hrew, sq, BarInvolution.bar_mul, hh2]
     have hh6 : BarInvolution.bar (h ^ 6) = h ^ 6 := by
-      have hrew : h ^ 6 = (h ^ 2) ^ 3 := by ring
+      have hrew : (h : R) ^ 6 = (h ^ 2) ^ 3 := by
+        have : (6 : ℕ) = 2 * 3 := by norm_num
+        rw [this, pow_mul]
       rw [hrew]
-      have : (h ^ 2) ^ 3 = h ^ 2 * ((h ^ 2) ^ 2) := by ring
-      rw [this, BarInvolution.bar_mul, hh2, sq, BarInvolution.bar_mul, hh2]
+      have hstep : ((h : R) ^ 2) ^ 3 = h ^ 2 * ((h ^ 2) ^ 2) := by
+        have : (3 : ℕ) = 2 + 1 := by norm_num
+        rw [this, pow_add, pow_one, mul_comm]
+      rw [hstep, BarInvolution.bar_mul, hh2, sq, BarInvolution.bar_mul, hh2]
     rw [BarInvolution.bar_add, BarInvolution.bar_add, BarInvolution.bar_add,
         BarInvolution.bar_mul, BarInvolution.bar_mul, BarInvolution.bar_mul,
         (hc0 : BarInvolution.bar c0 = c0),
@@ -562,7 +570,22 @@ instance trivialBarSymmetricThreeLayerSynthesisFunctorial :
 
 end StrengthenedSynthesis
 
-/-! ## Concrete instances over ℝ (trivial bar)
+/-! # ═════════════════════════════════════════════════════════════
+    Concrete archimedean instances over ℝ
+    ═════════════════════════════════════════════════════════════
+
+    **CLAUDE.md §7c boundary.** Everything above this line is
+    generic-`R` over `Field R` / `CommRing R` with `[BarInvolution R]`
+    — no `ℝ`, no `norm_num`, no archimedean structure. The remainder
+    of the file specialises to `R := ℝ` for the trivial `id` bar-
+    involution on `ℝ`, the `c5BarHeckeFunctor` over that bar, and
+    its concrete numerical evaluations.
+
+    A future refactor may move this section to a sibling block
+    under `observations/` (per the §7c soft preference for hard
+    file splits); the cut here is the structural mark.
+
+    ## Concrete instances over ℝ (trivial bar)
 
 The minimal bar-involution on ℝ is the identity (`bar = id`),
 under which everything is trivially bar-symmetric. This gives a

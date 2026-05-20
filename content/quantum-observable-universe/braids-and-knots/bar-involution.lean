@@ -153,7 +153,9 @@ theorem IsBarAntiSymmetric.pow_two_mul {x : R}
     have : x ^ (2 * 0) = 1 := by simp
     rw [this]; exact isBarSymmetric_one
   | succ k ih =>
-    have hrew : x ^ (2 * (k + 1)) = x ^ (2 * k) * (x * x) := by ring
+    have hrew : x ^ (2 * (k + 1)) = x ^ (2 * k) * (x * x) := by
+      rw [Nat.mul_succ, pow_add]
+      ring
     rw [hrew]
     exact ih.mul (IsBarSymmetric.of_mul_antisym hx hx)
 
@@ -162,8 +164,7 @@ theorem IsBarAntiSymmetric.pow_two_mul {x : R}
 theorem IsBarAntiSymmetric.pow_two_mul_add_one {x : R}
     (hx : IsBarAntiSymmetric x) (n : ℕ) :
     IsBarAntiSymmetric (x ^ (2 * n + 1)) := by
-  have hrew : x ^ (2 * n + 1) = x ^ (2 * n) * x := by ring
-  rw [hrew]
+  rw [pow_succ]
   exact IsBarAntiSymmetric.of_sym_mul (hx.pow_two_mul n) hx
 
 end BarGrading
