@@ -1,0 +1,912 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-20T00:43:08.475028+00:00",
+  "commitSha": "ed051a8a282423bd0c96cb6ed19ed05533627b6a",
+  "assertions": [
+    {
+      "name": "operator_trace_identity_forward",
+      "computed": 5.1374175914410124e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "relative residual",
+      "source": "prop:mass-tower-operator-valued + prop:hecke-branching-trace-decomposition"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 336,
+  "computation": "mass-tower-operator-valued",
+  "scriptFile": "mass_tower_operator_valued.py",
+  "scriptHash": "495890c940a1",
+  "scriptCommitSha": "unknown",
+  "description": "Forward validation of prop:mass-tower-operator-valued at the two-factor (deuteron) case. Uses A^λ_{μν}(I) matrices from sublemma-2-1-A-operator-extract.witness.json + canonical proton/neutron H_3 braid words + standard interface I = σ_2 - (h/2)·I, computes the operator-trace RHS per λ ⊢ 6, compares to direct χ^λ(β_p · I · β_n). Per-(μ,ν)-block decomposition is reported for structural analysis.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "h_q_minus_q_inv": "0.20906032198987945",
+    "interface_c": "1.0",
+    "interface_d": "-0.10453016099493972",
+    "proton_word_len": "9",
+    "neutron_word_len": "9"
+  },
+  "data": {
+    "per_lambda": {
+      "(6,)": {
+        "lhs_chi_direct_re": 6.5769217643042825,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": 6.576921764304284,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 1.7763568394002505e-15,
+        "relative_residual": 2.7008939790667503e-16,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": 6.576921764304284,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 6.576921764304284
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            3
+          ],
+          "nu": [
+            3
+          ],
+          "c_lr": 1,
+          "d_mu": 1,
+          "d_nu": 1,
+          "block_trace_re": 6.576921764304284,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 6.576921764304284
+        }
+      },
+      "(5, 1)": {
+        "lhs_chi_direct_re": 3.7469632722653827,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": 3.746963272265376,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 6.661338147750939e-15,
+        "relative_residual": 1.777796488441038e-15,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": 2.0663851684230727,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 2.0663851684230727
+          },
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": 0.8402890519211519,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.8402890519211519
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": 0.8402890519211517,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.8402890519211517
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            3
+          ],
+          "nu": [
+            3
+          ],
+          "c_lr": 1,
+          "d_mu": 1,
+          "d_nu": 1,
+          "block_trace_re": 2.0663851684230727,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 2.0663851684230727
+        }
+      },
+      "(4, 2)": {
+        "lhs_chi_direct_re": -3.500799854569201,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": -3.5007998545692045,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 3.552713678800501e-15,
+        "relative_residual": 1.0148291323091615e-15,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": -0.83540279302466,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.83540279302466
+          },
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": -1.4412296643605234,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 1.4412296643605234
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": -1.4412296643605256,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 1.4412296643605256
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 2,
+            "block_trace_re": 0.21706226717650418,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.21706226717650418
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            2,
+            1
+          ],
+          "nu": [
+            3
+          ],
+          "c_lr": 1,
+          "d_mu": 2,
+          "d_nu": 1,
+          "block_trace_re": -1.4412296643605256,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 1.4412296643605256
+        }
+      },
+      "(4, 1, 1)": {
+        "lhs_chi_direct_re": 0.9910287794205308,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": 0.9910287794205266,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 4.218847493575595e-15,
+        "relative_residual": 4.2570383233899804e-15,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": 0.8402890519211522,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.8402890519211522
+          },
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": -0.3447746622108896,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.3447746622108896
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": 0.8402890519211537,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.8402890519211537
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 2,
+            "block_trace_re": -5.551115123125783e-16,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 5.551115123125783e-16
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": -0.3447746622108892,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.3447746622108892
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            2,
+            1
+          ],
+          "nu": [
+            3
+          ],
+          "c_lr": 1,
+          "d_mu": 2,
+          "d_nu": 1,
+          "block_trace_re": 0.8402890519211537,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 0.8402890519211537
+        }
+      },
+      "(3, 3)": {
+        "lhs_chi_direct_re": -2.9159420702889496,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": -2.9159420702889403,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 9.325873406851315e-15,
+        "relative_residual": 3.1982368586379996e-15,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": -2.2552682979405954,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 2.2552682979405954
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 2,
+            "block_trace_re": -0.6606737723483447,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.6606737723483447
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            3
+          ],
+          "nu": [
+            3
+          ],
+          "c_lr": 1,
+          "d_mu": 1,
+          "d_nu": 1,
+          "block_trace_re": -2.2552682979405954,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 2.2552682979405954
+        }
+      },
+      "(3, 2, 1)": {
+        "lhs_chi_direct_re": 2.9976021664879227e-15,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": 1.6792123247455493e-15,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 1.3183898417423734e-15,
+        "relative_residual": 1.3183898417423734e-15,
+        "metric_used": "abs",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": -7.771561172376096e-16,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 7.771561172376096e-16
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": 2.6645352591003757e-15,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 2.6645352591003757e-15
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 2,
+            "d_mu": 2,
+            "d_nu": 2,
+            "block_trace_re": -3.608224830031759e-16,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 3.608224830031759e-16
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": 1.1102230246251565e-16,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 1.1102230246251565e-16
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": 4.163336342344337e-17,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 4.163336342344337e-17
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            2,
+            1
+          ],
+          "nu": [
+            3
+          ],
+          "c_lr": 1,
+          "d_mu": 2,
+          "d_nu": 1,
+          "block_trace_re": 2.6645352591003757e-15,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 2.6645352591003757e-15
+        }
+      },
+      "(3, 1, 1, 1)": {
+        "lhs_chi_direct_re": 0.4326305584371103,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": 0.43263055843711035,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 5.551115123125783e-17,
+        "relative_residual": 1.283107495499009e-16,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              3
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": 0.3447746622108895,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.3447746622108895
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 2,
+            "block_trace_re": 2.220446049250313e-16,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 2.220446049250313e-16
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": -0.12845938299233484,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.12845938299233484
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              3
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": 0.3447746622108898,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.3447746622108898
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": -0.12845938299233434,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.12845938299233434
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            1,
+            1,
+            1
+          ],
+          "nu": [
+            3
+          ],
+          "c_lr": 1,
+          "d_mu": 1,
+          "d_nu": 1,
+          "block_trace_re": 0.3447746622108898,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 0.3447746622108898
+        }
+      },
+      "(2, 2, 2)": {
+        "lhs_chi_direct_re": 0.7133812785067829,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": 0.7133812785067828,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 1.1102230246251565e-16,
+        "relative_residual": 1.5562828154798576e-16,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 2,
+            "block_trace_re": 0.6606737723483455,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.6606737723483455
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": 0.052707506158437285,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.052707506158437285
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            2,
+            1
+          ],
+          "nu": [
+            2,
+            1
+          ],
+          "c_lr": 1,
+          "d_mu": 2,
+          "d_nu": 2,
+          "block_trace_re": 0.6606737723483455,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 0.6606737723483455
+        }
+      },
+      "(2, 2, 1, 1)": {
+        "lhs_chi_direct_re": 0.2431184307042022,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": 0.24311843070420094,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 1.2490009027033011e-15,
+        "relative_residual": 5.1374175914410124e-15,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 2,
+            "block_trace_re": -0.21706226717650742,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.21706226717650742
+          },
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": 0.22032831798857527,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.22032831798857527
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": 0.2203283179885756,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.2203283179885756
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": 0.01952406190355749,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.01952406190355749
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            1,
+            1,
+            1
+          ],
+          "nu": [
+            2,
+            1
+          ],
+          "c_lr": 1,
+          "d_mu": 1,
+          "d_nu": 2,
+          "block_trace_re": 0.2203283179885756,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 0.2203283179885756
+        }
+      },
+      "(2, 1, 1, 1, 1)": {
+        "lhs_chi_direct_re": -0.30521191544711623,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": -0.3052119154471163,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 5.551115123125783e-17,
+        "relative_residual": 1.8187740524460682e-16,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              2,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 2,
+            "d_nu": 1,
+            "block_trace_re": -0.128459382992335,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.128459382992335
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              2,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 2,
+            "block_trace_re": -0.12845938299233522,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.12845938299233522
+          },
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": -0.048293149462446054,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.048293149462446054
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            1,
+            1,
+            1
+          ],
+          "nu": [
+            2,
+            1
+          ],
+          "c_lr": 1,
+          "d_mu": 1,
+          "d_nu": 2,
+          "block_trace_re": -0.12845938299233522,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 0.12845938299233522
+        }
+      },
+      "(1, 1, 1, 1, 1, 1)": {
+        "lhs_chi_direct_re": -0.15370816177932062,
+        "lhs_chi_direct_im": 0.0,
+        "rhs_operator_trace_re": -0.1537081617793206,
+        "rhs_operator_trace_im": 0.0,
+        "residual_abs": 2.7755575615628914e-17,
+        "relative_residual": 1.8057320635632672e-16,
+        "metric_used": "rel",
+        "consistent": true,
+        "per_block": [
+          {
+            "mu": [
+              1,
+              1,
+              1
+            ],
+            "nu": [
+              1,
+              1,
+              1
+            ],
+            "c_lr": 1,
+            "d_mu": 1,
+            "d_nu": 1,
+            "block_trace_re": -0.1537081617793206,
+            "block_trace_im": 0.0,
+            "block_trace_abs": 0.1537081617793206
+          }
+        ],
+        "dominant_block": {
+          "mu": [
+            1,
+            1,
+            1
+          ],
+          "nu": [
+            1,
+            1,
+            1
+          ],
+          "c_lr": 1,
+          "d_mu": 1,
+          "d_nu": 1,
+          "block_trace_re": -0.1537081617793206,
+          "block_trace_im": 0.0,
+          "block_trace_abs": 0.1537081617793206
+        }
+      }
+    },
+    "max_relative_residual": 5.1374175914410124e-15,
+    "all_lambda_consistent": true,
+    "verdict": "PROVED forward direction: operator-trace formula reproduces χ^λ(β_p · I · β_n) on the canonical deuteron braid for all 11 λ ⊢ 6 partitions to 5.14e-15 relative residual. The 2-factor case of prop:mass-tower-operator-valued is forward-validated.",
+    "upstream_witness_hashes": [
+      {
+        "path": "sublemma-2-1-A-operator-extract.witness.json",
+        "sha256": "05cb4d567a8f4edbe1cc680fb051ca6675680e0ca0ddecd4877f34065e3cafb4",
+        "size_bytes": 38720,
+        "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+        "scriptCommitSha": null,
+        "computedAt": "2026-05-05T16:50:11.345275+00:00"
+      }
+    ]
+  }
+}

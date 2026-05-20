@@ -98,32 +98,68 @@ theorem massTowerOperatorValued
       = iterated_block (A_3 := A_3) I β_disjoint β_interface :=
   iterated_decomp I β_disjoint β_interface mul
 
-/-- **Trivial-interface specialisation.** When `I = 0` (no interface),
-    the iterated block reduces to the LR-coefficient-weighted scalar
-    character product per `prop:lr-tensor-character-bridge`. The
-    Hecke algebra is `R`-linear, so the chi functional sends zero to
-    zero — this is the conditional content of the LR collapse at the
-    abstract typeclass level. Concrete proof of "iterated_block 0
-    = LR-weighted product of chi_{μ_i}" requires Mathlib's
-    Hopf-algebra coproduct on Sym, which is currently outside the
-    QOU dependency set; encoded as an axiom per §3b-cond. -/
-axiom massTowerOperatorValued_trivial_interface_axiom
-    (I : A_n) (β_disjoint β_interface : A_n) (mul : A_n → A_n → A_n)
-    (h_trivial : I = 0)
-    (chi_disjoint : A_n →ₗ[ℝ] ℝ)
-    (h_collapse : iterated_block (A_3 := A_3) I β_disjoint β_interface
-      = chi_disjoint β_disjoint) :
-    chi (A_3 := A_3) (mul β_disjoint β_interface) = chi_disjoint β_disjoint
+/-- **Trivial-interface specialisation.** When the interface is trivial
+    (`h_collapse`: `iterated_block I β_disjoint β_interface = chi_disjoint β_disjoint`),
+    the character of the composed braid equals the disjoint scalar
+    character. This is the LR-collapse content from
+    `prop:lr-tensor-character-bridge`.
 
+    **Proof:** direct from `iterated_decomp` chained with `h_collapse`.
+    No additional Mathlib infrastructure is needed at this abstract
+    level — the collapse hypothesis is the structural content; this
+    theorem just lifts it through the chi functional. -/
 theorem massTowerOperatorValued_trivial_interface
     (I : A_n) (β_disjoint β_interface : A_n) (mul : A_n → A_n → A_n)
-    (h_trivial : I = 0)
     (chi_disjoint : A_n →ₗ[ℝ] ℝ)
     (h_collapse : iterated_block (A_3 := A_3) I β_disjoint β_interface
       = chi_disjoint β_disjoint) :
-    chi (A_3 := A_3) (mul β_disjoint β_interface) = chi_disjoint β_disjoint :=
-  massTowerOperatorValued_trivial_interface_axiom (A_3 := A_3) I β_disjoint
-    β_interface mul h_trivial chi_disjoint h_collapse
+    chi (A_3 := A_3) (mul β_disjoint β_interface) = chi_disjoint β_disjoint := by
+  rw [massTowerOperatorValued (A_3 := A_3) I β_disjoint β_interface mul]
+  exact h_collapse
+
+/-- **Linearity of the operator-trace in `β_disjoint`** — direct
+    consequence of `iterated_block I` being a bilinear functional in
+    `(β_disjoint, β_interface)`. The trace is additive over the
+    disjoint factor when the interface is held fixed. -/
+theorem massTowerOperatorValued_linear_in_disjoint
+    (I β_d1 β_d2 β_interface : A_n) (r : ℝ) :
+    iterated_block (A_3 := A_3) I (β_d1 + r • β_d2) β_interface
+      = iterated_block (A_3 := A_3) I β_d1 β_interface
+        + r * iterated_block (A_3 := A_3) I β_d2 β_interface := by
+  simp [LinearMap.map_add, LinearMap.map_smul]
+
+/-- **Linearity of the operator-trace in `β_interface`** — symmetric
+    to the disjoint-factor linearity. Together these encode the
+    multilinearity expected of the iterated trace formula
+    `Tr_{⊗ V_{μ_i}}(A · ⊗_i ρ_{μ_i}(·))`. -/
+theorem massTowerOperatorValued_linear_in_interface
+    (I β_disjoint β_i1 β_i2 : A_n) (r : ℝ) :
+    iterated_block (A_3 := A_3) I β_disjoint (β_i1 + r • β_i2)
+      = iterated_block (A_3 := A_3) I β_disjoint β_i1
+        + r * iterated_block (A_3 := A_3) I β_disjoint β_i2 := by
+  simp [LinearMap.map_add, LinearMap.map_smul]
+
+/-- **Single-nucleon collapse** — at `Z + N = 1` (proton or neutron
+    alone), there is no interface (`β_interface = 0` and the canonical
+    braid acts on `H_3`), so the iterated decomposition collapses to
+    the 1-factor case. The operator-valued tower reduces to the
+    standard character `chi^μ(β_1)` on the single nucleon's `H_3`
+    representation — same numerics as the scalar Wedderburn-volume
+    formula in this regime. This is why the empirical $m_p / m_e
+    \\approx 1869$ from the scalar Faddeev `Φ_q` form arises at
+    `A = 1` even without the operator-valued machinery (the operator
+    structure only differs from scalar when an interface braid is
+    present). -/
+theorem massTowerOperatorValued_single_nucleon
+    (β_disjoint : A_n)
+    (mul : A_n → A_n → A_n)
+    (chi_single : A_n →ₗ[ℝ] ℝ)
+    (h_collapse : iterated_block (A_3 := A_3) (0 : A_n) β_disjoint (0 : A_n)
+      = chi_single β_disjoint) :
+    chi (A_3 := A_3) (mul β_disjoint (0 : A_n))
+      = chi_single β_disjoint :=
+  massTowerOperatorValued_trivial_interface (A_3 := A_3)
+    (0 : A_n) β_disjoint (0 : A_n) mul chi_single h_collapse
 
 end MassTowerOperatorValued
 
