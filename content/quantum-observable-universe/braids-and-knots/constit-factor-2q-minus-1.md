@@ -1,4 +1,4 @@
-> **✓ RESOLVED 2026-05-20 (Phase 5l): see
+> **Resolved (Phase 5l, 2026-05-20): see
 > [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity).**
 > The correct closed form for the constit-side per-Z step factor
 > is $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$, the
