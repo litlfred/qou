@@ -30,8 +30,7 @@ LaTeX label: `conj:lambda-scale-substrate-form` (Family A theorem)
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot

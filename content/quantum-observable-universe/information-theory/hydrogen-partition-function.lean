@@ -14,7 +14,6 @@ See `GroundRingAnnotations.lean`.
 import QOU.QuantumObservableUniverse
 import QOU.MathConstants
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum

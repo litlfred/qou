@@ -29,8 +29,6 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.FieldSimp
-
 namespace QOU.Descartes
 
 /-- The Möbius transformation `q ↦ (4 - q)/(4q + 3)` defining the

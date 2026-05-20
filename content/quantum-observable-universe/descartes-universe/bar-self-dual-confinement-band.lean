@@ -21,7 +21,7 @@ LaTeX label: `prop:bar-self-dual-confinement-band`
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
 namespace QOU.Descartes.BarSelfDualConfBand
