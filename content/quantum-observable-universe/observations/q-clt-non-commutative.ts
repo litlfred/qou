@@ -16,6 +16,7 @@ export default conjecture({
   ],
   cites: [
     "blitvic2012",
+    "blitvic2012-clt",
     "marsh2006",
     "biane1998",
     "feray2010",

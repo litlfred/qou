@@ -14,7 +14,8 @@ $q \to 1^+$, $n\lvert 1 - q\rvert \to \infty$:*
 
 1. *(Blitvić $(q,t)$-Gaussian limit, **provable input**.) The joint
    moments of $S_n$ converge to those of a Blitvić $(q, t)$-Gaussian
-   random variable [`blitvic2012`] at parameter
+   random variable [`blitvic2012`] (and the corresponding
+   two-parameter non-commutative CLT [`blitvic2012-clt`]) at parameter
    $(q_{\mathrm{Blitvić}}, t = 1)$:*
    $$
      \mathrm{tr}_M\bigl(S_n^{\,k_1} \cdots S_n^{\,k_m}\bigr)
