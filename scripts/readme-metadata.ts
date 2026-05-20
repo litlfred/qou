@@ -16,14 +16,21 @@ const root = join(import.meta.dir, "..");
 interface PaperInfo { title: string; dir: string; abstract?: string }
 
 async function getPapers(): Promise<PaperInfo[]> {
+  // Authoritative paper order comes from content/folio.ts (paperRef calls
+  // in source order). Falling back to readdir was non-deterministic — the
+  // OS returns directory entries in arbitrary order, so README.md churned
+  // on every regenerate. The folio manifest is the canonical source.
   const contentDir = join(root, "content");
-  const skip = new Set(["schema", "pipeline", "node_modules"]);
-  const entries = await readdir(contentDir, { withFileTypes: true });
-  const papers: PaperInfo[] = [];
+  const folioPath = join(contentDir, "folio.ts");
+  const folioSrc = await readFile(folioPath, "utf-8");
+  // Match `paperRef({ dir: "..." })` in source order.
+  const orderedDirs = [
+    ...folioSrc.matchAll(/paperRef\(\s*\{[^}]*?dir:\s*["']([^"']+)["']/gs),
+  ].map(m => m[1]);
 
-  for (const e of entries) {
-    if (!e.isDirectory() || skip.has(e.name)) continue;
-    const manifest = join(contentDir, e.name, `${e.name}.ts`);
+  const papers: PaperInfo[] = [];
+  for (const dir of orderedDirs) {
+    const manifest = join(contentDir, dir, `${dir}.ts`);
     try {
       await stat(manifest);
     } catch { continue; }
@@ -31,8 +38,8 @@ async function getPapers(): Promise<PaperInfo[]> {
     const titleMatch = src.match(/title:\s*["']([^"']+)["']/);
     const abstractMatch = src.match(/abstract:\s*\n?\s*["']([^"']+)["']/);
     papers.push({
-      title: titleMatch?.[1] ?? e.name,
-      dir: e.name,
+      title: titleMatch?.[1] ?? dir,
+      dir,
       abstract: abstractMatch?.[1],
     });
   }

@@ -32,11 +32,11 @@ The repository hosts multiple papers as a **folio**:
 
 | Paper | Directory |
 |-------|-----------|
-| Integration of Skewed-Poisson Structures on Non-commutative Formal Groups | `content/fred2005-formal-groups/` |
-| Controlled Double-Slit Electron Diffraction | `content/bach2013-double-slit/` |
-| QOU Visualizer | `content/visualizer/` |
-| Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` |
 | On the Mechanics of Quantum Observable Universes | `content/quantum-observable-universe/` |
+| Controlled Double-Slit Electron Diffraction | `content/bach2013-double-slit/` |
+| Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` |
+| Integration of Skewed-Poisson Structures on Non-commutative Formal Groups | `content/fred2005-formal-groups/` |
+| QOU Visualizer | `content/visualizer/` |
 
 ## Chapters (Quantum Observable Universe)
 
