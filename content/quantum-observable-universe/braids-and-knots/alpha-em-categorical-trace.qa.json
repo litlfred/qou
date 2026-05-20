@@ -3,8 +3,8 @@
   "label": "rem:alpha-em-categorical-trace",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md"
+    "ts": "quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.ts",
+    "md": "quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md"
   },
   "source_hashes": {
     "md": "f14170a04e80",
@@ -25,6 +25,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "f14170a04e80",
+          "ts": "ea5c227c3a3f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
         "notes": "block has no .lean sibling"
       }
     ],

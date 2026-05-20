@@ -3,9 +3,9 @@
   "label": "prop:vertex-algebra-jet-relations",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/vertex-algebra-jet-relations.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/vertex-algebra-jet-relations.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/vertex-algebra-jet-relations.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/vertex-algebra-jet-relations.ts",
+    "md": "quantum-observable-universe/braids-and-knots/vertex-algebra-jet-relations.md",
+    "lean": "quantum-observable-universe/braids-and-knots/vertex-algebra-jet-relations.lean"
   },
   "source_hashes": {
     "md": "44e603fe2d09",
@@ -165,6 +165,175 @@
         "reviewed_at": "2026-05-19T17:59:48.610Z",
         "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
         "notes": "Jet-bundle lift of QU/QUO presentation to brane-tower Hecke generators σ_i^(n) — knot framing."
+      },
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-post-prepare-merge-rebase",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T04:01:14.142Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
+        "notes": "Hash-refresh post-rebase onto main 6bff6d33; previous verdict (pass) carried forward (semantic content unchanged)."
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "44e603fe2d09",
+          "ts": "326674dad5b3",
+          "lean": "24c746b753af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ]
   },

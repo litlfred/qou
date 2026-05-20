@@ -3,9 +3,9 @@
   "label": "prop:b1-figure-8-row-theorem",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md",
-    "lean": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean"
+    "ts": "quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.ts",
+    "md": "quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md",
+    "lean": "quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean"
   },
   "source_hashes": {
     "md": "ed38d29b423b",
@@ -183,6 +183,161 @@
         "reviewed_at": "2026-05-19T18:53:15.132Z",
         "reviewed_sha": "eb34683c75ba65428ce5d8a12f99478d1338fcc5",
         "notes": "Zero surreal keywords in 100-line file. Pure knot-theory proposition (Volume Conjecture for figure-8 via Murakami–Murakami + Bloch–Suslin). No surreal, ordw, No, or infinitesimal machinery."
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:70: - Depth match (✓ by construction): $\\mathrm{Li}_2^q$ at depth 2, | quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:72: - Numerical match (✓ Step 3 + Step 4 + 50-digit witness). | quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:73: - Inclusion (✓ Step 1). | quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md:74: - Strong sharpness at this row (✓ Step 2 — Borel-rank is 1, exactly"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "ed38d29b423b",
+          "ts": "9e57553f55fb",
+          "lean": "f217c618f728"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ]
   },

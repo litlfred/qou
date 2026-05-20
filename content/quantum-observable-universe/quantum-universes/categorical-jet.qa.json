@@ -3,9 +3,9 @@
   "label": "def:categorical-jet",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/categorical-jet.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/categorical-jet.md",
-    "lean": "content/quantum-observable-universe/quantum-universes/categorical-jet.lean"
+    "ts": "quantum-observable-universe/quantum-universes/categorical-jet.ts",
+    "md": "quantum-observable-universe/quantum-universes/categorical-jet.md",
+    "lean": "quantum-observable-universe/quantum-universes/categorical-jet.lean"
   },
   "source_hashes": {
     "md": "fabe473a946c",
@@ -165,6 +165,159 @@
         "reviewed_at": "2026-05-19T17:27:03.168Z",
         "reviewed_sha": "a20ef2eedd228f791f8d8fbdb0f0d105761ccc26",
         "notes": "Definition of jet object J^1(A) as universal extension; differential-geometric QU structure."
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "fabe473a946c",
+          "ts": "9278c2d1435d",
+          "lean": "6822a4caceab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ]
   },

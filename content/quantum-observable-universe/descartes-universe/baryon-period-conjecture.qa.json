@@ -3,9 +3,9 @@
   "label": "rem:baryon-period-ratio",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.lean"
+    "ts": "quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts",
+    "md": "quantum-observable-universe/descartes-universe/baryon-period-conjecture.md",
+    "lean": "quantum-observable-universe/descartes-universe/baryon-period-conjecture.lean"
   },
   "source_hashes": {
     "md": "016cc644bcd2",
@@ -165,6 +165,159 @@
         "reviewed_at": "2026-05-19T19:09:23.596Z",
         "reviewed_sha": "fe4effd2092e90b619161d721df95845e802f21e",
         "notes": "default-pass (chapter=descartes-universe)"
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "016cc644bcd2",
+          "ts": "bc9f20b7fe06",
+          "lean": "89f45ae370a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ]
   },

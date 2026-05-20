@@ -3,9 +3,9 @@
   "label": "lem:su2-emergence-dagger-unitarity",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.lean"
+    "ts": "quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.ts",
+    "md": "quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md",
+    "lean": "quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.lean"
   },
   "source_hashes": {
     "md": "c215cbcb23f5",
@@ -165,6 +165,159 @@
         "reviewed_at": "2026-05-19T19:13:48.429Z",
         "reviewed_sha": "6f8825bd1db6bfe695ea6f757547529ccb5ea9aa",
         "notes": "default-pass (chapter=quantum-observable-universes)"
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "c215cbcb23f5",
+          "ts": "37256b6e353d",
+          "lean": "10648eda53e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ]
   },

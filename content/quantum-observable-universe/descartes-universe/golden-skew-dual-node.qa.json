@@ -3,9 +3,9 @@
   "label": "prop:golden-skew-dual-node",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/golden-skew-dual-node.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/golden-skew-dual-node.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/golden-skew-dual-node.lean"
+    "ts": "quantum-observable-universe/descartes-universe/golden-skew-dual-node.ts",
+    "md": "quantum-observable-universe/descartes-universe/golden-skew-dual-node.md",
+    "lean": "quantum-observable-universe/descartes-universe/golden-skew-dual-node.lean"
   },
   "source_hashes": {
     "md": "60b8759bc9a3",
@@ -30,6 +30,23 @@
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/descartes-universe/golden-skew-dual-node.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "60b8759bc9a3",
+          "ts": "e63fa5e2fa98",
+          "lean": "7cdc28a6b653"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/descartes-universe/golden-skew-dual-node.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
     ],
     "voice-status-leak": [

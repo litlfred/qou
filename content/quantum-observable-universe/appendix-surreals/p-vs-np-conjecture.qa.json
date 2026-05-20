@@ -3,9 +3,9 @@
   "label": "conj:p-vs-np-qou",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.md",
-    "lean": "content/quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.lean"
+    "ts": "quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.ts",
+    "md": "quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.md",
+    "lean": "quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.lean"
   },
   "source_hashes": {
     "md": "b8f4a8f0ef70",
@@ -181,6 +181,159 @@
         "reviewed_at": "2026-05-19T18:53:15.132Z",
         "reviewed_sha": "eb34683c75ba65428ce5d8a12f99478d1338fcc5",
         "notes": "default-pass (agent reviewed at chapter level; no off-topic evidence quoted)"
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "055c6e9f4fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ]
   },
