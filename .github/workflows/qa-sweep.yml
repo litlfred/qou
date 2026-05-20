@@ -1,5 +1,6 @@
-# QA sweep CI — runs the `one-voice-integration-watcher`'s automated
-# checkers against the changed-block set on every PR + push to main.
+# QA sweep CI — runs the automated checkers for ALL six
+# integration-watcher axes (voice, proof, canonical, compute,
+# detangler, bibliography) against every change.
 #
 # Triggers
 # ────────
@@ -8,28 +9,30 @@
 #     - content/pipeline/qa-*.ts
 #     - content/pipeline/qa-criteria-registry.ts
 #     - folio-assistant/schemas/block-qa.ts
-#     - .claude/skills/local/one-voice-*.md
+#     - .claude/skills/local/*integration-watcher.md
+#     - .claude/skills/local/integration-{watch,backlog,audit}.md
 #     - this workflow file
 #   push (main) — same path filters
 #   workflow_dispatch — manual run
 #
 # Behaviour
 # ─────────
-#   - Runs `bun run qa-sweep:ci` on the QOU paper. Currently uses
-#     `continue-on-error: true` so the workflow does NOT fail on the
-#     baseline 213 critical findings (mostly `wall-side-correct`
-#     §7c drift that pre-dates this watcher). Once the baseline is
-#     cleaned up, flip to strict mode by removing `continue-on-error`.
+#   - Runs `bun run qa-sweep:ci` on the QOU paper. Defaults to
+#     every registered criterion across all six axes (31 total).
+#     Currently `continue-on-error: true` while the cross-axis
+#     baseline is cleaned up. Once each axis's critical count hits
+#     zero, flip to strict per-axis by adding a separate gating job.
 #   - Runs `bun run qa-staleness:ci` to surface blocks with stale or
-#     missing sidecars under the watcher's criterion set.
+#     missing sidecars under the full criterion set.
 #
 # Schema / skill references
 # ─────────────────────────
-#   - Skill: `.claude/skills/local/one-voice-integration-watcher.md`
+#   - Skills: `.claude/skills/local/{one-voice,proof,canonical,compute,detangler}-integration-watcher.md`
+#   - Dispatchers: `.claude/skills/local/integration-{watch,backlog,audit}.md`
 #   - Schema: `folio-assistant/schemas/block-qa.ts`
 #   - Registry: `content/pipeline/qa-criteria-registry.ts`
 
-name: QA sweep (one-voice integration watcher)
+name: QA sweep (all integration watchers)
 
 on:
   pull_request:
@@ -39,8 +42,10 @@ on:
       - "content/**/*.lean"
       - "content/pipeline/qa-*.ts"
       - "content/pipeline/qa-criteria-registry.ts"
+      - "content/pipeline/integration-audit.ts"
       - "folio-assistant/schemas/block-qa.ts"
-      - ".claude/skills/local/one-voice-*.md"
+      - ".claude/skills/local/*integration-watcher.md"
+      - ".claude/skills/local/integration-*.md"
       - ".github/workflows/qa-sweep.yml"
   push:
     branches: [main]
@@ -50,8 +55,10 @@ on:
       - "content/**/*.lean"
       - "content/pipeline/qa-*.ts"
       - "content/pipeline/qa-criteria-registry.ts"
+      - "content/pipeline/integration-audit.ts"
       - "folio-assistant/schemas/block-qa.ts"
-      - ".claude/skills/local/one-voice-*.md"
+      - ".claude/skills/local/*integration-watcher.md"
+      - ".claude/skills/local/integration-*.md"
       - ".github/workflows/qa-sweep.yml"
   workflow_dispatch:
 
@@ -86,6 +93,32 @@ jobs:
           echo ""
           echo "Sweep exit code: ${PIPESTATUS[0]}"
 
+      # Per-axis summary — one block per integration watcher, so a
+      # reviewer can scan the workflow run page and see which axis
+      # is driving the critical count.
+      - name: Per-axis fail summary
+        continue-on-error: true
+        run: |
+          cd content
+          for axis in one-voice proof canonical compute detangler bibliography; do
+            echo ""
+            echo "── axis: $axis ─────────────────────────────────"
+            bun run pipeline/qa-sweep.ts quantum-observable-universe \
+              --axis "$axis" --json 2>/dev/null \
+              | python3 -c "
+import json, sys, collections
+d = json.load(sys.stdin)
+c = collections.Counter()
+for b in d.get('blocks', []):
+    for det in b.get('details', []):
+        if 'fail' in det.get('outcome', ''):
+            c[det['criterion']] += 1
+print(f'criteria run: {len(d[\"want_criteria\"])}')
+for k, v in sorted(c.items(), key=lambda x: -x[1]):
+    print(f'  {v:4d} {k}')
+" 2>&1 | tee /tmp/qa-axis-$axis.log
+          done
+
       - name: QA staleness map
         continue-on-error: true
         run: |
@@ -117,4 +150,5 @@ jobs:
           path: |
             /tmp/qa-sweep.log
             /tmp/qa-staleness.log
+            /tmp/qa-axis-*.log
           retention-days: 14
