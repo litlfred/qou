@@ -1,29 +1,40 @@
 """
 tau_M_proton_closed_form_phase5l1.py — Phase 5l.1: symbolic closed
-form for tr_M^3(B_p, q) [structural form, normalization-pending].
+form for the **structural** Markov trace `T(B_p, q)` of the proton
+braid in H_3(q).
 
-Phase 5l identified ρ_Z^constit(q) = tr_M^3(B_p, q) [structural form, normalization-pending] as the structural
-identity for the constit-side per-Z step factor in the canonical-
-atom Markov trace.  Phase 5l.1 extracts tr_M^3(B_p, q) [structural form, normalization-pending] itself as a
-Laurent rational expression in q, completing the closed-form
-description.
+  NORMALIZATION CAVEAT (read this before using the output):
+
+  This script computes the STRUCTURAL form
+    T(B_p, q) := Σ_{λ ⊢ 3} y_λ(q) · χ_λ(B_p, q)
+  using the symbolic Wenzl-bridge y_λ.  It is NOT the canonical
+  Markov trace tr_M^3(𝓑_p, q) reported in
+  rho-constit-equals-tau-M-proton-phase5l.witness.json — the two
+  differ by a q-independent normalization constant (depends on the
+  chosen Markov-trace normalization for y_λ).  The IMPORTANT
+  output is the q-DEPENDENCE of T(B_p, q) as a Laurent rational
+  in q.  The normalization reconciliation between T(B_p, q) and
+  tr_M^3(𝓑_p, q) is deferred to Phase 5l.2.
+
+Phase 5l identified ρ_Z^constit(q) = tr_M^3(𝓑_p, q) as the
+structural identity for the constit-side per-Z step factor in the
+canonical-atom Markov trace.  Phase 5l.1 extracts T(B_p, q) — the
+un-normalised structural variant — as a closed-form Laurent
+rational in q.
 
 The proton braid B_p in H_3(q) — built from the canonical
 intra-nucleon chains _PROTON_G0 / _PROTON_G1 in hecke_core.py — is
-a specific 11-generator Hecke word.  Its Markov trace
-  tr_M^3(B_p, q) [structural form, normalization-pending] = Σ_{λ ⊢ 3} y_λ(q) · χ_λ(B_p, q)
-sums over the three partitions (3), (2,1), (1,1,1).  Each term
-admits a symbolic form:
+a specific 11-generator Hecke word.  Each partition contributes:
 
 - (3): trivial rep, χ_(3)(σ_i) = q, so χ_(3)(B_p) = q^writhe(B_p)
 - (1,1,1): sign rep, χ_(1,1,1)(σ_i) = -q^{-1}
 - (2,1): 2-dimensional Hoefsmit seminormal rep — symbolic matrix
   product through hecke_character_symbolic.q_character_on_braid_word
 
-y_λ(q) via y_lambda_macdonald_telescope.y_lambda_telescope_symbolic
-or y_lambda_wenzl_bridge (symbolic variant).
+y_λ(q) via y_lambda_wenzl_bridge.y_lambda_wenzl_bridge_symbolic.
 
-Output: a sympy expression for tr_M^3(B_p, q) [structural form, normalization-pending] as a function of q.
+Output: a sympy expression for the STRUCTURAL T(B_p, q) — a
+Laurent rational in q.
 
   Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l)
   Ref: hecke_character_symbolic.py (symbolic Hoefsmit matrices)
@@ -129,7 +140,7 @@ def main() -> int:
     builder.set_audit_only("docs/audits/2026-05-20-constit-factor-closure-chain.md")
 
     q = sp.Symbol("q", positive=True, real=True)
-    print(f"=== Phase 5l.1: symbolic tr_M^3(B_p, q) [structural form, normalization-pending] ===\n")
+    print(f"=== Phase 5l.1: symbolic T(B_p, q) [structural form; see header for normalization caveat] ===\n")
 
     # Build proton braid word symbolically
     braid_word = proton_braid_word_symbolic()
@@ -188,11 +199,11 @@ def main() -> int:
         print(f"  y^{lam}(q) computed [{time.time()-t0:.2f}s]")
     print()
 
-    # Sum: tr_M^3(B_p, q) [structural form, normalization-pending] = Σ y_λ · χ_λ
+    # Sum: T(B_p, q) [structural form; see header for normalization caveat] = Σ y_λ · χ_λ
     tau_M_sym = sp.together(sum(
         y_results[lam] * chi_results[lam] for lam in [(3,), (2, 1), (1, 1, 1)]
     ))
-    print(f"\ntr_M^3(B_p, q) [structural form, normalization-pending] (symbolic structural form) =")
+    print(f"\nT(B_p, q) [structural form; see header for normalization caveat] (symbolic structural form) =")
     print(f"  {tau_M_sym}")
 
     # Numerical check at q_0 — use canonical 50-digit pin from
@@ -200,20 +211,20 @@ def main() -> int:
     # at full precision, not f64-quantized + zero-padded.
     q0_sympy = sp.Float(Q_50_DIGIT_STR, 50)
     tau_M_at_q0 = sp.N(tau_M_sym.subs(q, q0_sympy), 30)
-    print(f"\ntr_M^3(B_p, q_0) symbolic → numeric = {tau_M_at_q0}")
-    print(f"Phase 5l empirical = 1.22037426648745...")
+    print(f"\nT(B_p, q_0) symbolic → numeric = {tau_M_at_q0}")
+    print(f"Canonical tr_M^3(𝓑_p, q_0) empirical = 1.22037426648745...")
+    print(f"(differ by a q-independent normalization constant — see header)")
 
-    # The structural symbolic form above may differ from the empirical
-    # measurement by a NORMALIZATION constant (the precise Wenzl-bridge
-    # constant depends on the chosen Markov-trace normalization).
-    # The IMPORTANT result is the q-DEPENDENCE: tr_M^3(B_p, q) [structural form, normalization-pending] is a
-    # specific Laurent rational in q, derivable in closed form from
-    # the H_3 character formulas.
+    # See module docstring's NORMALIZATION CAVEAT: T(B_p, q) is the
+    # structural variant and may differ from the canonical tr_M^3(𝓑_p, q)
+    # by a q-independent constant.  The IMPORTANT result is the
+    # q-DEPENDENCE: T(B_p, q) is a specific Laurent rational in q,
+    # derivable in closed form from the H_3 character formulas.
 
     # Witness
     builder.add_parameter("q_symbol", "q")
     builder.set_description(
-        "Phase 5l.1: symbolic closed-form derivation of tr_M^3(B_p, q) [structural form, normalization-pending] "
+        "Phase 5l.1: symbolic closed-form derivation of T(B_p, q) [structural form; see header for normalization caveat] "
         "as a Laurent rational in q.  Decomposes the Markov trace as "
         "Σ_λ y_λ(q) · χ_λ(B_p, q) over partitions of 3.  Uses "
         "trivial / sign reps directly (scalar Hecke values) and "
@@ -226,9 +237,17 @@ def main() -> int:
     builder.add_data("y_lambda_structural", {
         str(lam): sp.sstr(y) for lam, y in y_results.items()
     })
-    builder.add_data("tau_M_proton_symbolic", sp.sstr(tau_M_sym))
-    builder.add_data("tau_M_proton_at_q0_symbolic_eval",
+    # Field name reflects the structural-form caveat from the
+    # module docstring (Copilot PR #854 review): T(B_p, q) is the
+    # un-normalised symbolic variant, NOT the canonical tr_M^3.
+    builder.add_data("T_proton_structural_symbolic", sp.sstr(tau_M_sym))
+    builder.add_data("T_proton_structural_at_q0_eval",
                      str(tau_M_at_q0))
+    builder.add_data("normalization_note",
+                     "T(B_p, q) is the structural symbolic form (∝ Wenzl "
+                     "y_λ).  Differs from canonical tr_M^3(𝓑_p, q) "
+                     "[Phase 5l witness] by a q-independent constant.  "
+                     "Phase 5l.2 reconciles the normalization.")
     builder.save()
     print(f"\nWitness written: tau-M-proton-closed-form-phase5l1.witness.json")
     return 0
