@@ -11,7 +11,7 @@ It covers:
 
 - Lean tooling (`lean-lsp-mcp`) for proof diagnostics/navigation.
 - Literature discovery/retrieval MCPs:
-  - `paper-search-mcp` (`openags/paper-search-mcp`)
+- `paper-search-mcp` (`openags/paper-search-mcp`)
   - `openalex-mcp-server` (`LeoGitGuy/alex-paper-search-mcp`)
   - `mcp-scholar` (`renyumeng1/mcp_scholar`)
 
@@ -109,7 +109,15 @@ Configured servers:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-- Fill any needed API/environment values in `.mcp.json` (or provide them from shell).
+- Export needed API/environment variables from your shell before launching Claude Code.
+  `.mcp.json` intentionally does not hard-code secrets.
+
+Example:
+
+```bash
+export PAPER_SEARCH_MCP_UNPAYWALL_EMAIL="you@example.com"
+export OPENALEX_EMAIL="you@example.com"
+```
 
 This gives Claude Code parity with Copilot for literature retrieval MCP access.
 

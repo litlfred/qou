@@ -6,21 +6,11 @@
     },
     "paper-search-mcp": {
       "command": "uvx",
-      "args": ["paper-search-mcp"],
-      "env": {
-        "PAPER_SEARCH_MCP_UNPAYWALL_EMAIL": "",
-        "PAPER_SEARCH_MCP_CORE_API_KEY": "",
-        "PAPER_SEARCH_MCP_SEMANTIC_SCHOLAR_API_KEY": "",
-        "PAPER_SEARCH_MCP_GOOGLE_SCHOLAR_PROXY_URL": ""
-      }
+      "args": ["paper-search-mcp"]
     },
     "openalex-paper-search": {
       "command": "uvx",
-      "args": ["openalex-mcp-server"],
-      "env": {
-        "OPENALEX_EMAIL": "",
-        "OPENALEX_API_KEY": ""
-      }
+      "args": ["openalex-mcp-server"]
     },
     "mcp-scholar": {
       "command": "uvx",
