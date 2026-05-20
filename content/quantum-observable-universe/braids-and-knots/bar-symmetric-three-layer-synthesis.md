@@ -258,6 +258,71 @@ claim** itself (`unified_kernel`) remains conjectural until all
 three layer-functors are categorical equivalents — a structural-
 representation-theory project, not a one-PR closure.
 
+## Categorical-derivation infrastructure: `BarHeckeFunctor`
+
+The Lean sibling now provides a formal **type-level structure**
+for the categorical functors that the three layers are
+conjecturally instances of:
+
+```lean
+structure BarHeckeFunctor (R : Type*) [CommRing R] [BarInvolution R] where
+  apply : R → R
+  apply_bar_symmetric :
+    ∀ h : R, IsBarAntiSymmetric h → IsBarSymmetric (apply h)
+```
+
+A `BarHeckeFunctor` is a **map sending bar-anti-symmetric inputs
+to bar-symmetric outputs** — the abstract shape that
+$\Phi_q \to \mathrm{Li}_2^q$, $e^{i\alpha} \to \cos$, and
+$e^h \to \cosh$ all instantiate.
+
+**Concrete `BarHeckeFunctor` instances proved**:
+- `constZero`: $F(h) = 0$ (trivial functor)
+- `square`: $F(h) = h^2$ (anti × anti → sym; canonical kernel-squaring)
+- `constSym c`: $F(h) = c$ for bar-symmetric constant $c$
+- `evenPoly2 c_0 c_1`: $F(h) = c_0 + c_1 h^2$ (truncated cosh/cos-like)
+- `add F G`: $F(h) + G(h)$ (closure under sum)
+- `mul F G`: $F(h) \cdot G(h)$ (closure under product)
+
+**Strengthened synthesis class** `BarSymmetricThreeLayerSynthesisFunctorial`
+replaces the `True` placeholders with **explicit functor fields**:
+
+```lean
+class BarSymmetricThreeLayerSynthesisFunctorial R where
+  universal_kernel : R
+  universal_kernel_antisym : IsBarAntiSymmetric universal_kernel
+  series_F : BarHeckeFunctor R
+  phase_F  : BarHeckeFunctor R
+  gain_F   : BarHeckeFunctor R
+```
+
+The three avatars are now **derived**:
+$$
+\text{series\_avatar} = F_{\text{series}}(K_{\text{univ}}),
+\quad
+\text{phase\_avatar} = F_{\text{phase}}(K_{\text{univ}}),
+\quad
+\text{gain\_avatar} = F_{\text{gain}}(K_{\text{univ}}).
+$$
+
+The bar-symmetry of each avatar is now a **direct consequence**
+of the functors' own `apply_bar_symmetric` field — no class
+placeholder needed. Proved as
+`series_avatar_isBarSymmetric`, `phase_avatar_isBarSymmetric`,
+`gain_avatar_isBarSymmetric`.
+
+The **unification conjecture** now has a CONCRETE
+type-level shape: *there exist three `BarHeckeFunctor` instances
+$F_{\text{series}}, F_{\text{phase}}, F_{\text{gain}}$ and one
+bar-anti-symmetric $K_{\text{univ}}$ such that the three layer
+avatars are $F_\bullet(K_{\text{univ}})$*. Future categorical
+derivations populate the functors and kernel; the bar-symmetry
+half of the claim is already free from the structure.
+
+A `trivialBarSymmetricThreeLayerSynthesisFunctorial` instance is
+provided (universal kernel = 0, all functors `constZero`) to
+confirm class soundness.
+
 ## Status
 
 - **Series**: algebraic identity proved (`prop:li2q-phiq-bar-symmetrization`).
