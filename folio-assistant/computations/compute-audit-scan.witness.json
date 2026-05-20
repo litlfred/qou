@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T02:14:15.827546+00:00",
-  "commitSha": "9398aedb50b2b1579d210f237539f25efac2c159",
+  "computedAt": "2026-05-20T05:11:43.066493+00:00",
+  "commitSha": "4de38eec3dbbfb1ce916aca9a36357db7ad01611",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 649,
+    "files_scanned": 650,
     "patterns": [
       "P15",
       "P16",
@@ -24,8 +24,8 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 174,
-      "P16": 164,
+      "P15": 180,
+      "P16": 167,
       "P21": 32,
       "P30": 93,
       "P31": 25
@@ -96,6 +96,14 @@
         ]
       },
       {
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "count": 9,
+        "patterns": [
+          "P15",
+          "P16"
+        ]
+      },
+      {
         "file": "probe_term4_conventions.py",
         "count": 8,
         "patterns": [
@@ -139,14 +147,6 @@
       },
       {
         "file": "kazhdan_lusztig.py",
-        "count": 7,
-        "patterns": [
-          "P15",
-          "P16"
-        ]
-      },
-      {
-        "file": "lambda_scale_rd_hoefsmit_symbolic.py",
         "count": 7,
         "patterns": [
           "P15",
@@ -3381,6 +3381,69 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 94,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 103,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 164,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 175,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 192,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 198,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P16",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 138,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 139,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 140,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P30",

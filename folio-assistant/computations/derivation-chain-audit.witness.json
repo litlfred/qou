@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T02:14:16.900575+00:00",
-  "commitSha": "9398aedb50b2b1579d210f237539f25efac2c159",
+  "computedAt": "2026-05-20T05:11:43.418834+00:00",
+  "commitSha": "4de38eec3dbbfb1ce916aca9a36357db7ad01611",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2673,6 +2673,7 @@
         "t2-t3-proton-neutron-a1.witness.json",
         "t35-weak-vertex.witness.json",
         "tau-M-four-anchors.witness.json",
+        "tau-M-proton-closed-form-phase5l1.witness.json",
         "tau-hat-n-proton-level-1-empty.witness.json",
         "tau-hat-n-proton-realisation.witness.json",
         "tau-lepton-nf.witness.json",

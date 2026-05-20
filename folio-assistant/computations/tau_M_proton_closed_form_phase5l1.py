@@ -42,8 +42,7 @@ import sympy as sp  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
-from hecke_characters import partitions_of  # noqa: E402
+from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
 
@@ -103,49 +102,16 @@ def chi_lambda_sign_symbolic(braid_word, q: sp.Symbol) -> sp.Expr:
     return sp.cancel(sp.expand(val))
 
 
-def y_lambda_h3_symbolic(q: sp.Symbol) -> dict:
-    """Closed-form y_λ(q) for n = 3 via Wenzl bridge.  At n = 3 the
-    three partitions have explicit known Markov weights:
-
-      y_(3)     = q^3 / ([3]_q · [2]_q)   (Wenzl, hook-content)
-      y_(2,1)  = (q - q^{-1}) / [3]_q   (from Plancherel + sign-fixing)
-      y_(1,1,1) = q^{-3} / ([3]_q · [2]_q)
-
-    Sanity check: Σ_λ y_λ · dim V_λ should equal 1 at q = 1 by
-    Plancherel.
-
-    For the Wenzl Markov trace normalization at H_3, the standard
-    closed forms (verified empirically against the cached witness):
-    """
-    # q-integers
-    q2 = q + 1 / q                         # [2]_q
-    q3 = q ** 2 + 1 + q ** (-2)            # [3]_q
-
-    # Wenzl hook-content formulas for y_λ at n=3:
-    #   y_λ = (∏ q^{c_box}) / (∏ [h_box]_q · [n]_q!) · (Markov normalization)
-    # For (3): hooks = [3, 2, 1], contents = [0, 1, 2]
-    #   y_(3) = q^{0+1+2} / ([3]·[2]·[1]) · norm
-    # For (1,1,1): hooks = [3, 2, 1], contents = [0, -1, -2]
-    #   y_(1,1,1) = q^{0-1-2} / ([3]·[2]·[1]) · norm
-    # For (2,1): hooks = [3, 1, 1], contents = [0, 1, -1]
-    #   y_(2,1) = q^{0+1-1} / ([3]·[1]·[1]) · norm = 1/[3] · norm
-
-    # The Wenzl bridge normalisation depends on the trace normalisation
-    # convention.  Defer to y_lambda_wenzl_bridge_numeric for the
-    # canonical values, but report the structural form:
-
-    return {
-        (3,):       sp.simplify(q ** 3 / (q3 * q2 * q2)),
-        (2, 1):     sp.simplify((q - 1 / q) ** 2 / (q3 * q2)),
-        (1, 1, 1):  sp.simplify(q ** (-3) / (q3 * q2 * q2)),
-    }
-
-
 def main() -> int:
     builder = WitnessBuilder(
         "tau-M-proton-closed-form-phase5l1", engine="sympy"
     )
-    builder.set_content_block("prop:constit-factor-tau-M-proton-identity")
+    # Per user direction "don't do full infra yet" — this script is
+    # probe-style with no content-block wiring (the symbolic τ_M
+    # awaits Phase 5l.2 normalization reconciliation before promotion).
+    # Mark audit-only so the manifest-wiring audit doesn't flag this
+    # witness as an orphan claim.
+    builder.set_audit_only("docs/audits/2026-05-20-phase5l1-symbolic-tau-M-proton.md")
 
     q = sp.Symbol("q", positive=True, real=True)
     print(f"=== Phase 5l.1: symbolic τ_M^3(β_p, q) ===\n")
@@ -177,9 +143,10 @@ def main() -> int:
     print(f"  χ^(2,1)(β_p, q) ... [{time.time()-t0:.2f}s]")
     print(f"  χ^(2,1)(β_p, q) = {chi_21}")
 
-    # Symbolic y_λ via the canonical Wenzl-bridge implementation.
-    # The y_lambda_h3_symbolic above is structural-only; use the
-    # repo's authoritative symbolic Wenzl bridge for correct y_λ.
+    # Symbolic y_λ via the canonical Wenzl-bridge implementation —
+    # the repo's authoritative symbolic source for Wenzl-Markov
+    # weights (matches numeric `y_lambda_wenzl_bridge_numeric` modulo
+    # a Q = q^2 substitution convention; see Phase 5l.2 queue).
     print(f"\nComputing y_λ(q) symbolically via Wenzl-bridge:")
     y_results = {}
     for lam in [(3,), (2, 1), (1, 1, 1)]:
@@ -201,10 +168,11 @@ def main() -> int:
     print(f"\nτ_M^3(β_p, q) (symbolic structural form) =")
     print(f"  {tau_M_sym}")
 
-    # Numerical check at q_0
-    q_str = mp.nstr(mp.mpf(str(Q0)), 50, strip_zeros=False)
-    q0_val = sp.Rational(q_str)
-    tau_M_at_q0 = sp.N(tau_M_sym.subs(q, q0_val), 30)
+    # Numerical check at q_0 — use canonical 50-digit pin from
+    # q_parameter (not float-derived) so the substituted value is
+    # at full precision, not f64-quantized + zero-padded.
+    q0_sympy = sp.Float(Q_50_DIGIT_STR, 50)
+    tau_M_at_q0 = sp.N(tau_M_sym.subs(q, q0_sympy), 30)
     print(f"\nτ_M^3(β_p, q_0) symbolic → numeric = {tau_M_at_q0}")
     print(f"Phase 5l empirical = 1.22037426648745...")
 
