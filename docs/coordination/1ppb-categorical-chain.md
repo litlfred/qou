@@ -410,3 +410,30 @@ Extends [PR #826](https://github.com/litlfred/qou/pull/826)'s k=3 FR-pullback te
   - Phase 5g — Markov-trace constituent factor 1.220358 categorical identification (from #819 Phase 5d.3).
   - Phase 5h — Phase 5b cosh(h)-like correction integrated into the depth-stratified formula.
   - Phase 5i — Vol_hyp normalisation by Z to extract the bare hyperbolic content (from PR #787 Phase 3).
+
+## 2026-05-20 — Phase 5g + 5h + 5i: closing-the-1.54× campaign ([PR #831](https://github.com/litlfred/qou/pull/831) commits `8e296e85e`, `5ccd58e45`)
+
+Four probes tested on top of PR #826's K_3* = 4_1 baseline (variance 1.551×). Three of four are neutral; one (Phase 5g) produces a clean structural identification but does not directly close variance.
+
+| Phase | Probe | Result | Δ vs 1.551× baseline |
+|---|---|---|---:|
+| 5f | FR pullback at k=1, 2 (6×6 grid) | best (unknot, 5_2) | +0.5% |
+| 5h | cosh(h) at depth-stratified α_k | best (α_2·α_3·cosh(h)) | +0.85% |
+| **5g** | **constit factor 1.220358 categorical** | **= 2q − 1 (0.033% rel.err)** | n/a (identification) |
+| 5i | Vol_hyp normalisation sweep | per_A best | +3.04% |
+
+**Major finding (5g)**: the Phase 5c.1 constit factor 1.220358 has a clean categorical form $2q - 1$ at q_0, matching to **0.033%** — a 15× improvement over the previous $q + h/2$ candidate. Combined with PR #819's interface factor:
+
+$$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4)$$
+
+at the **full τ_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at the |Δ_λ*| level (the two live in different spectral channels of the same Hecke algebra).
+
+**Structural conclusion (5h + 5i)**: the residual 1.54× variance in the depth-stratified formula is NOT closed by FR pullback at additional depths, cosh(h) injection, or Vol_hyp normalisation. It lives in the |Δ_λ*| (single-block dominant) layer, NOT in the Φ_k (depth-stratified sum) layer.
+
+**Recommendation for `prop:depth-stratified-frobenius-reciprocity`**: the conjecture's claim of distinguished K_1*, K_2* knots is empirically falsified by Phase 5f (K_1* essentially flat across {unknot, 3_1, 4_1, 5_1, 5_2, 6_1}). The conjecture should be narrowed to K_3* = 4_1 only, with the residual variance attributed to a single-block-level correction (cosh(h) per Phase 5b) rather than a depth-stratified one.
+
+**Next concrete tasks (Phase 5j-onward)**:
+- 5j — Promote $\tau_M$ Z-step factor = $z \cdot (2q − 1)$ to a content block, OR extend `prop:interface-knot-markov-z` with a "constit-side companion identity" section.
+- 5k — Higher-precision measurement of the constit factor to characterise the 0.033% residual ($O(h^4)$ noise vs real second-order term).
+- 5e.3 — Lean operator-level cosh(h) proof from Hecke symmetric channel (substantive math).
+- 5e.4 — SnapPy bridge for Kashaev.lean's `pieceVolume` (large infrastructure).

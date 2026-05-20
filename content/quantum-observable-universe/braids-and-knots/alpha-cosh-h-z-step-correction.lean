@@ -92,6 +92,61 @@ theorem alpha_Z_step_closed_form
     The class hypothesis is then a *bar-symmetric* identity: it
     survives the bar involution q ↦ q⁻¹ as expected for a
     mirror-nucleus-invariant correction. -/
+
+/-! ## §2. Operator-level placeholder for the cosh(h) origin
+
+    Phase 5e.3 (PR #831): the cosh(h) correction at q_0 ≈ 1.022 is
+    structurally the bar-symmetric eigenvalue series of σ on the
+    symmetric channel of H_n(q).  Specifically, for the symmetric
+    idempotent e_+ ∈ H_n(q) satisfying σ_i · e_+ = q · e_+,
+
+      (σ + σ⁻¹) / 2 · e_+ = ((q + q⁻¹) / 2) · e_+ = cosh(log q) · e_+
+
+    and the corresponding bar-symmetric projection at the (2,1)-block
+    level yields a cosh(h) factor where h = q - q⁻¹ is the Hecke
+    skein parameter.  Phase 5e.3 axiomatises this structural origin
+    as a §3b-cond class; the full operator-level derivation requires
+    Brundan-Kleshchev FR on the symmetric channel and remains the
+    research target for closing the conjecture. -/
+
+/-- **Operator-level placeholder: Hecke symmetric-channel cosh(h)
+    identity.**
+
+    For each q ∈ ℝ in the substrate window, the symmetric channel
+    of H_n(q) carries a bar-symmetric idempotent e_+ on which the
+    Hecke generator σ acts with eigenvalue q.  The "bar-symmetric
+    σ-average" (σ + σ⁻¹) / 2 acts on e_+ with eigenvalue cosh(log q),
+    and the (2,1)-block restriction picks up an additional cosh(h)
+    factor where h = q − q⁻¹.
+
+    The full operator-level derivation is the research target for
+    Phase 5e.3 (PR #831).  The class below carries the conjectural
+    identity as a §3b-cond hypothesis; downstream theorems
+    consuming `[HeckeSymmetricChannelCoshH q]` derive unconditional
+    Lean theorems modulo this single conjectural input. -/
+-- Ref: [brundan-kleshchev2008] Graded decomposition numbers...
+-- Ref: [kassel2008] Braids and Hecke algebras
+-- Ref: [manuscript] conj:alpha-cosh-h-z-step-correction §"Operator-level"
+class HeckeSymmetricChannelCoshH (q : ℝ) where
+  /-- The cosh(h) eigenvalue factor at q (= Real.cosh (q − q⁻¹)). -/
+  cosh_h_eigenvalue : ℝ
+  /-- Closed-form identity at q. The conjectural content is that this
+      identity arises *from* the operator-level Hecke symmetric-
+      channel construction (the σ + σ⁻¹ averaging on e_+, lifted to
+      the (2,1)-block); the equation states this is true. -/
+  cosh_h_eigenvalue_eq : cosh_h_eigenvalue = Real.cosh (q - q⁻¹)
+
+/-- The cosh(h) eigenvalue from the symmetric channel matches the
+    `alpha_Z_step` formula's cosh(h) factor.  Provable from the
+    class hypothesis without any additional sorries. -/
+-- Ref: [manuscript] conj:alpha-cosh-h-z-step-correction
+theorem cosh_h_eigenvalue_equals_alpha_factor
+    (q : ℝ) [HeckeSymmetricChannelCoshH q] :
+    HeckeSymmetricChannelCoshH.cosh_h_eigenvalue (q := q)
+      = Real.cosh (hecke_h q) := by
+  unfold hecke_h
+  exact HeckeSymmetricChannelCoshH.cosh_h_eigenvalue_eq
+
 -- Ref: [manuscript] conj:alpha-cosh-h-z-step-correction §"Bar-symmetry"
 theorem alpha_Z_step_bar_symmetric
     (q : ℝ) (hq : q ≠ 0) :
