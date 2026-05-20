@@ -61,5 +61,6 @@ pub mod seminormal;
 pub mod seminormal_mn;
 pub mod seminormal_mpfr;
 pub mod sturm_psd;
+pub mod tr_m_word_lq;
 pub mod wedderburn_psd;
 pub mod wenzl_lr;

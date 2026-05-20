@@ -119,9 +119,14 @@ def compute_tr_m_canonical(
     """Compute |tr_M(β_atom, q_0)| via the requested fast path.
 
     Methods (ranked by speed at H_n):
+      - "laurent_q"    — LaurentQ-direct Markov-axiom recursive ascent
+                          (laurent_q_trace.tr_M_atomic_lq).
+                          ⁴He: 4s; ⁵Li: 22s; ⁶Li: ~4 min; ⁷Li: ~1.1 hr.
+                          (PR #859 / Strategy #1 from
+                          docs/audits/2026-05-20-markov-peel-bottleneck-profile.md)
       - "markov_peel"  — Symbolic-q Markov-axiom recursive ascent (markov_peel.tr_M_atomic).
-                          Fastest path through H_15+; symbolic output substituted at q_0.
-                          ⁴He: 13s; ⁵Li: 89s; ⁶Li: > 30 min.
+                          Original fast path; sympy-heavy in trace assembly.
+                          ⁴He: 11s; ⁵Li: 67s; ⁶Li: 17 min.
       - "rust_f64"     — Rust hecke-canonical-chi (direct Hoefsmit, f64).
                           ⁴He: 12s; ⁵Li: > 1500s (infeasible at H_15+).
       - "rust_mpfr"    — Rust hecke-canonical-chi (MPFR-50dps).
@@ -129,6 +134,25 @@ def compute_tr_m_canonical(
 
     Returns (|tr_M|, wall_seconds, error_str, method_used).
     """
+    if method == "laurent_q":
+        try:
+            from laurent_q_trace import tr_M_atomic_lq
+            from q_parameter import Q_50_DIGIT_STR
+            t0 = time.time()
+            zh = tr_M_atomic_lq(Z, N)
+            # MPFR-50dps evaluation — NEVER f64. Per CLAUDE.md §Precision
+            # goals L1, the production trace must be at 50-dps precision
+            # to preserve the structural-zero distinction needed for
+            # categorical identities.
+            tr_mp = zh.evaluate_mpf(Q_50_DIGIT_STR, dps=50)
+            wall = time.time() - t0
+            return abs(tr_mp), wall, None, "laurent_q"
+        except NotImplementedError as e:
+            # Case C — fall through to markov_peel sympy path which has ocneanu fallback.
+            return None, 0.0, f"laurent_q: case-C → fallback needed: {e}", "laurent_q"
+        except Exception as e:  # noqa: BLE001
+            return None, 0.0, f"laurent_q: {type(e).__name__}: {e}", "laurent_q"
+
     if method == "markov_peel":
         try:
             import sympy as sp
@@ -287,9 +311,16 @@ def main() -> int:
     )
     parser.add_argument(
         "--method",
-        choices=["markov_peel", "rust_f64", "rust_mpfr"],
+        choices=["markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
         default="markov_peel",
-        help="Computation method (default markov_peel — fastest at H_n ≥ 12).",
+        help=(
+            "Computation method. `laurent_q` (PR #859) is the fastest "
+            "production path: LaurentQ-direct Markov-axiom recursive "
+            "ascent with MPFR-50dps output. ~3-5× over `markov_peel` "
+            "at A ≥ 5. `markov_peel` is the prior production path "
+            "(sympy-heavy trace assembly). `rust_f64`/`rust_mpfr` use "
+            "the legacy direct-Hoefsmit path (don't scale past H_15)."
+        ),
     )
     parser.add_argument(
         "--target-dps", type=int, default=OUTPUT_DPS,

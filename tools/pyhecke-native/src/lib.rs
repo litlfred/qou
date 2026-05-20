@@ -7,6 +7,7 @@
 
 use hecke_engine::{
     geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
+    tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
 };
 use pyo3::prelude::*;
 
@@ -519,9 +520,147 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_q_via_gp, m)?)?;
     m.add_function(wrap_pyfunction!(debug_reduced_basis, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_gp_hoefsmit, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_f64, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_word_lq, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_word_lq_clear_cache, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
     m.add("__version__", env!("CARGO_PKG_VERSION"))?;
     Ok(())
+}
+
+/// Compute χ^λ(β, q) for every partition λ ⊢ n_strands, given a
+/// canonical-form atomic braid word `(sign, gen_1based)` where
+/// `sign ∈ {1, -1, 0}` with 0 = averaged half-sum (σ + σ⁻¹)/2.
+///
+/// Delegates to `hecke_engine::wenzl_lr::chi_lambda_canonical_all_partitions_f64`
+/// (rayon-parallel over partitions; direct-averaging f64 path, no
+/// 2^k sub-word expansion). Returns `Vec<(partition, χ^λ)>`.
+///
+/// Use case: the Python `markov_peel` critical path computes
+/// `tr_M(β, q) = Σ_λ y_λ(q) · χ^λ(β, q)` via the Wenzl bridge.
+/// The Σ_λ y_λ · χ^λ combine is cheap in Python; the per-partition
+/// χ^λ at H_{3A} (A ≥ 5) is the bottleneck. This exposes the
+/// Rust accelerator: dim 462 sympy matmul at H_12 → tens of ms
+/// in Rust per PR #682.
+#[pyfunction]
+fn chi_lambda_all_partitions_f64(
+    n_strands: usize,
+    word: Vec<(i32, u32)>,
+    q: f64,
+) -> Vec<(Vec<usize>, f64)> {
+    // Translate (sign, gen) → (Crossing, gen). The Rust API uses
+    // `Crossing::Sigma` / `SigmaInv` / `Averaged` for sign 1/-1/0.
+    let word_with_averaged: Vec<wenzl_lr::CrossingPair> = word
+        .iter()
+        .map(|&(sign, gen)| {
+            let c = match sign {
+                1 => wenzl_lr::Crossing::Sigma,
+                -1 => wenzl_lr::Crossing::SigmaInv,
+                0 => wenzl_lr::Crossing::Averaged,
+                _ => panic!(
+                    "chi_lambda_all_partitions_f64: unknown sign {} \
+                     (expected -1, 0, or 1)",
+                    sign
+                ),
+            };
+            (c, gen)
+        })
+        .collect();
+    wenzl_lr::chi_lambda_canonical_all_partitions_f64(
+        n_strands,
+        &word_with_averaged,
+        q,
+    )
+}
+
+/// **MPFR variant** of [`chi_lambda_all_partitions_f64`] at
+/// arbitrary precision (≥ 50 dps recommended).
+///
+/// Returns `Vec<(partition, chi_decimal_string)>`. The caller is
+/// expected to load each chi via `mpmath.mpf(decimal_string)` to
+/// preserve precision. Per CLAUDE.md §Precision goals L1 (50-dps
+/// compute floor), this is the production path for categorical
+/// identities; the f64 variant exists for speed-only use cases
+/// where structural-zero distinction is not required.
+///
+/// `q_str` is the substrate parameter as a decimal string (50+ dps
+/// recommended; pin to `q_parameter.Q_50_DIGIT_STR` from Python).
+/// `dps` controls the MPFR working precision (50 = production,
+/// 100 = research-grade).
+#[pyfunction]
+fn chi_lambda_all_partitions_mpfr(
+    n_strands: usize,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> Vec<(Vec<usize>, String)> {
+    let word_with_averaged: Vec<wenzl_lr::CrossingPair> = word
+        .iter()
+        .map(|&(sign, gen)| {
+            let c = match sign {
+                1 => wenzl_lr::Crossing::Sigma,
+                -1 => wenzl_lr::Crossing::SigmaInv,
+                0 => wenzl_lr::Crossing::Averaged,
+                _ => panic!(
+                    "chi_lambda_all_partitions_mpfr: unknown sign {} \
+                     (expected -1, 0, or 1)",
+                    sign
+                ),
+            };
+            (c, gen)
+        })
+        .collect();
+    wenzl_lr::chi_lambda_canonical_all_partitions_mpfr(
+        n_strands,
+        &word_with_averaged,
+        &q_str,
+        dps,
+    )
+}
+
+/// **Markov-axiom recursive ascent** in Rust — the canonical
+/// Jones-Markov trace `tr_M(w, q)` for a single Hecke word `w` in
+/// H_n(q), returned as a serialised ZHLaurent polynomial in (z, h)
+/// with BigInt-in-q^{1/2} coefficients.
+///
+/// Mirrors `folio-assistant/computations/laurent_q_trace.py
+/// tr_M_word_lq` exactly, but with BigInt arithmetic in Rust
+/// (no f64). Per CLAUDE.md §Precision goals L1 — every coefficient
+/// is exact; the Python caller evaluates at q₀ to mpmath.mpf at
+/// production dps.
+///
+/// `word`: 0-based generator indices (consistent with
+/// `markov_trace_canonical.tr_M_word` and the Python `tr_M_word_lq`).
+/// `n_strands`: H_n strand count.
+///
+/// Returns `Vec<((z_exp, h_exp), Vec<(q_half_exp, big_int_str)>)>`.
+/// The outer Vec has one entry per non-zero (z, h) monomial; each
+/// coefficient is a list of `(q_exp_doubled, BigInt_decimal_string)`
+/// pairs (where `q_exp_doubled = 2 * q_exp` to support half-integer
+/// q-exponents — see `hecke_engine::laurent_poly_q::LaurentPolyQ`
+/// for the encoding).
+///
+/// Raises `RuntimeError` on Case C (multiple top-1 in segment) —
+/// caller routes to the sympy ocneanu_fallback path same as the
+/// Python implementation.
+#[pyfunction]
+fn tr_m_word_lq(
+    word: Vec<u32>,
+    n_strands: usize,
+) -> PyResult<Vec<((i32, i32), Vec<(i32, String)>)>> {
+    match rust_tr_m_word_lq::tr_m_word_lq(&word, n_strands, 200) {
+        Ok(zh) => Ok(zh.to_ffi()),
+        Err(msg) => Err(pyo3::exceptions::PyRuntimeError::new_err(msg)),
+    }
+}
+
+/// Clear the global recursion cache. Call between independent
+/// atoms to prevent unbounded memory growth in long-running
+/// sessions (matches the Python `_tr_M_word_lq_cached.cache_clear()`).
+#[pyfunction]
+fn tr_m_word_lq_clear_cache() {
+    rust_tr_m_word_lq::clear_cache();
 }
