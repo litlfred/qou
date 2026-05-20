@@ -126,7 +126,7 @@ def main() -> int:
     # awaits Phase 5l.2 normalization reconciliation before promotion).
     # Mark audit-only so the manifest-wiring audit doesn't flag this
     # witness as an orphan claim.
-    # auditOnly path was removed (audit doc not yet created); witness is probe-style
+    builder.set_audit_only("docs/audits/2026-05-20-constit-factor-closure-chain.md")
 
     q = sp.Symbol("q", positive=True, real=True)
     print(f"=== Phase 5l.1: symbolic tr_M^3(B_p, q) [structural form, normalization-pending] ===\n")

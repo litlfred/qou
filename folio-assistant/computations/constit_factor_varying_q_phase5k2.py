@@ -199,7 +199,11 @@ def main() -> int:
 
     # Witness — builder constructed at start of main() for accurate
     # durationMs; populate now that the sweep has finished.
-    builder.set_content_block("conj:constit-factor-2q-minus-1")
+    # Phase 5k.2 is a falsification probe; the conjecture's primary
+    # computation wiring points at constit_factor_and_volhyp_test.py
+    # (Phase 5g categorical search). This witness is supplementary,
+    # tracked via auditOnly per docs/audits/2026-05-20-constit-factor-closure-chain.md.
+    builder.set_audit_only("docs/audits/2026-05-20-constit-factor-closure-chain.md")
     builder.add_parameter("q_values", Q_VALUES)
     builder.set_description(
         "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-"

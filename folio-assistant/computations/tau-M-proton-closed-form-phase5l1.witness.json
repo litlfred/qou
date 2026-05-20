@@ -1,16 +1,17 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-20T15:05:54.940880+00:00",
-  "commitSha": "7328d4537e91eef0578b1d51e9b0edf0eec74891",
+  "computedAt": "2026-05-20T15:18:47.066261+00:00",
+  "commitSha": "aabccaa031462eed52e940b67968832ee54e8cd5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 462,
+  "durationMs": 456,
   "computation": "tau-M-proton-closed-form-phase5l1",
   "scriptFile": "tau_M_proton_closed_form_phase5l1.py",
-  "scriptHash": "bf4b2e59d580",
-  "scriptCommitSha": "7328d4537e91eef0578b1d51e9b0edf0eec74891",
+  "scriptHash": "119ee149dfba",
+  "scriptCommitSha": "aabccaa031462eed52e940b67968832ee54e8cd5",
   "description": "Phase 5l.1: symbolic closed-form derivation of tr_M^3(B_p, q) [structural form, normalization-pending] as a Laurent rational in q.  Decomposes the Markov trace as Σ_λ y_λ(q) · χ_λ(B_p, q) over partitions of 3.  Uses trivial / sign reps directly (scalar Hecke values) and Hoefsmit symbolic 2x2 matrices for (2,1).  y_λ(q) given by the Wenzl-bridge structural form (∝ q-hook-content).",
+  "auditOnly": "docs/audits/2026-05-20-constit-factor-closure-chain.md",
   "parameters": {
     "q_symbol": "q"
   },
