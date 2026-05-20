@@ -191,6 +191,7 @@ export default chapter({
         "q-reeb-flow-on-coral-coords",
         "six-canonical-knot-operators",
         "garside-as-compound-flow",
+        "garside-flow-explicit-closed-form",
         // ── Boundary disc fusion + complement=volume (Commit 2) ─────
         "ramified-disc-fusion",
         "reeb-bundle-complement-equals-volume",
