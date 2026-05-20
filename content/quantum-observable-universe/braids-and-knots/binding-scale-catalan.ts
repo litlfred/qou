@@ -7,4 +7,11 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["def:borromean-baryon"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/catalan_binding.py",
+    witness: "folio-assistant/computations/catalan-binding.witness.json",
+    status: "verified",
+    requires: ["mpmath"],
+  },
 });

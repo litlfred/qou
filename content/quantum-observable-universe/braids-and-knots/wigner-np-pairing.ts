@@ -8,6 +8,13 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/b_over_a_evaluator.py",
+    witness: "folio-assistant/computations/b-over-a-witness.json",
+    status: "verified",
+    requires: ["mpmath"],
+  },
   cites: [
     "kerov1996",
     "feray-meliot2012",

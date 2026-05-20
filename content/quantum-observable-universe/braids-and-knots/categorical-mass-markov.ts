@@ -15,4 +15,12 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalMassMarkov",
     validation: "not_checked",
   },
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/canonical_isospin_pyhecke.py",
+    witness:
+      "folio-assistant/computations/canonical-isospin-pyhecke.witness.json",
+    status: "verified",
+    requires: ["pyhecke"],
+  },
 });

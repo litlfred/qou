@@ -22,4 +22,12 @@ export default proposition({
     "partition",
     "hecke-algebra",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/atom_level_wedderburn_tower.py",
+    witness:
+      "folio-assistant/computations/atom-level-wedderburn-tower.witness.json",
+    status: "verified",
+    requires: ["mpmath", "numpy"],
+  },
 });

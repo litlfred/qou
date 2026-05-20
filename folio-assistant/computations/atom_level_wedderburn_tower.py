@@ -75,7 +75,7 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
     A = Z + N
     k = 3 * A
     nfac = qfac(k)
-    crossings = atomic_braid_to_crossings(Z, N, include_inter)
+    crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
 
     descended = 0.0
     phi_q_atom_sum = 0.0
