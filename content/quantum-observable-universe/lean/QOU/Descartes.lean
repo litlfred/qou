@@ -22,6 +22,8 @@ import QOU.Descartes.PauliWitness
 -- note).
 import QOU.Descartes.NuclearGroebnerReduction
 import QOU.Descartes.WeierstrassProjection
+import QOU.Descartes.metallic_character_knot
+import QOU.Descartes.descartes
 
 /-!
 # Descartes Universe — Module Index
