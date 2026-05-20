@@ -564,23 +564,6 @@
         "evidence": "quantum-observable-universe/braids-and-knots/bring-trilog-imaginary-tate-rational.ts:5: title \"Im Li$_3$($\\\\zeta_5$) = 4$\\\\pi^3$/125 — Tate-rational, via Kummer reflection (50-dps verified)\" — first-person aside in the title"
       }
     ],
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {
-          "md": "4e6027f2c751",
-          "ts": "49bbe93b0d93",
-          "lean": "0d0d709a9622"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T17:52:35.574Z",
-        "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc"
-      }
-    ],
     "proof-no-axiom-growth": [
       {
         "field_hash": {
@@ -682,7 +665,24 @@
         "reviewed_at": "2026-05-20T17:52:35.574Z",
         "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc"
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "4e6027f2c751",
+          "ts": "49bbe93b0d93",
+          "lean": "0d0d709a9622"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T18:28:17.139Z",
+        "reviewed_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+      }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-20T18:28:17.139Z"
 }

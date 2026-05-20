@@ -491,42 +491,72 @@ export function checkDetanglerArchimedeanWall(
 
 // ─── Proof axis ─────────────────────────────────────────────────
 
-const BARE_SORRY_REF_GAP_LINES = 3; // a `-- Ref:` must appear within
-// the previous N lines of a `sorry`
+// Lookback rule: a `-- Ref:` covers a `sorry` if it appears
+//   (a) on the same line as the sorry, OR
+//   (b) anywhere between the sorry and the start of the enclosing
+//       top-level declaration (instance, def, theorem, …), OR
+//   (c) within the 5 lines immediately preceding that decl-opening
+//       (where authors typically place per-declaration citations).
+// This matches actual authoring practice — one `-- Ref:` above an
+// `instance ... where` covers every sorry-bodied field within it,
+// rather than requiring each field to repeat the citation.
+const BARE_SORRY_REF_PREDECL_LINES = 5;
+const DECL_BOUNDARY_RE =
+  /^(?:noncomputable\s+|@\[[^\]]*\]\s+)*(?:def|instance|theorem|lemma|proposition|example|abbrev|structure|class|inductive|opaque)\b/;
+const REF_LINE_RE = /--\s*Ref:\s*\[/;
+
+function bareSorryHasRefInScope(
+  origLines: string[],
+  sorryLineIdx: number,
+): boolean {
+  if (REF_LINE_RE.test(origLines[sorryLineIdx] ?? "")) return true;
+  let declStart = -1;
+  for (let j = sorryLineIdx - 1; j >= 0; j--) {
+    if (REF_LINE_RE.test(origLines[j])) return true;
+    if (DECL_BOUNDARY_RE.test(origLines[j])) {
+      declStart = j;
+      break;
+    }
+  }
+  if (declStart < 0) return false;
+  const stop = Math.max(0, declStart - BARE_SORRY_REF_PREDECL_LINES);
+  for (let j = declStart - 1; j >= stop; j--) {
+    if (REF_LINE_RE.test(origLines[j])) return true;
+  }
+  return false;
+}
 
 export function checkProofNoBareSorries(
   leanPath: string | undefined,
 ): CheckerResult {
   const src = readMaybe(leanPath);
   if (!src) return { result: "n/a", hits: [] };
-  const lines = src.split("\n");
+  // Mask comment regions before scanning, preserving line numbers:
+  //   /-! ... -/  Lean module docstring
+  //   /-  ... -/  block comment
+  //   --  ...     line comment (rest of line)
+  // Without this, the word "sorry" in narrative prose inside a
+  // docstring is flagged as a missing-citation bare `sorry`.
+  // For the `-- Ref:` lookback we still need the original lines.
+  const blankNonNewline = (m: string) => m.replace(/[^\n]/g, " ");
+  const masked = src
+    .replace(/\/-![\s\S]*?-\//g, blankNonNewline)
+    .replace(/\/-[\s\S]*?-\//g, blankNonNewline)
+    .replace(/--[^\n]*/g, blankNonNewline);
+  const lines = masked.split("\n");
+  const origLines = src.split("\n");
   const hits: CheckerHit[] = [];
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    // Match `sorry` as a whole token (not inside a comment or string).
-    if (!/\bsorry\b/.test(line)) continue;
-    if (/^\s*--/.test(line)) continue; // commented out
-    // Look back BARE_SORRY_REF_GAP_LINES lines for a `-- Ref:`.
-    let hasRef = false;
-    for (
-      let j = Math.max(0, i - BARE_SORRY_REF_GAP_LINES);
-      j < i;
-      j++
-    ) {
-      if (/--\s*Ref:\s*\[/.test(lines[j])) {
-        hasRef = true;
-        break;
-      }
-    }
-    if (!hasRef) {
-      hits.push({
-        file: leanPath ?? "(unknown)",
-        line: i + 1,
-        text:
-          `bare \`sorry\` at line ${i + 1} — no \`-- Ref: [key]\` citation in ` +
-          `the previous ${BARE_SORRY_REF_GAP_LINES} lines`,
-      });
-    }
+    if (!/\bsorry\b/.test(lines[i])) continue;
+    if (bareSorryHasRefInScope(origLines, i)) continue;
+    hits.push({
+      file: leanPath ?? "(unknown)",
+      line: i + 1,
+      text:
+        `bare \`sorry\` at line ${i + 1} — no \`-- Ref: [key]\` citation ` +
+        `on the same line, within the enclosing declaration, or in the ` +
+        `${BARE_SORRY_REF_PREDECL_LINES} lines preceding its opening`,
+    });
   }
   return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
