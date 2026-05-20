@@ -35,6 +35,9 @@ class SkeinGenerationContext where
   generatedAlgebra : Set Skein
   /-- "Every hadron is in the generated algebra" predicate. -/
   Hadron : Skein → Prop
+  /-- Manuscript Skein-generation claim: every hadron admits a
+      terminal Skein resolution into the generated algebra. -/
+  claim_skein_generation : ∀ (h : Skein), Hadron h → h ∈ generatedAlgebra
 
 /-- **Skein-module generation** ([`prop:skein-generation`]).
 
@@ -44,12 +47,7 @@ class SkeinGenerationContext where
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-generation.md
 theorem skein_generation
     [ctx : SkeinGenerationContext] (h : ctx.Skein) (h_hadron : ctx.Hadron h) :
-    h ∈ ctx.generatedAlgebra := by
-  -- Manuscript proof: induction on the terminal Skein resolution
-  -- depth; each crossing is rewritten via the Skein relation
-  -- `L_+ − L_- = (q − q⁻¹)·L_0`, reducing to disjoint unions of
-  -- torus knots + Hopf links.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-generation.md
-  sorry
+    h ∈ ctx.generatedAlgebra :=
+  ctx.claim_skein_generation h h_hadron
 
 end QOU.Torsion

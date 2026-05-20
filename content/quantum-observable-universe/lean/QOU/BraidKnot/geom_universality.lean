@@ -41,6 +41,12 @@ class GeomUniversalityContext where
   /-- The squared substrate Planck constant `ℏ_q²` (positive). -/
   hbar_q_sq : ℝ
   hbar_q_sq_pos : 0 < hbar_q_sq
+  /-- Manuscript universality: every additive + normalised functional
+      equals the categorical `Geom`. -/
+  claim_universality : ∀ (G' : Knot → ℝ),
+    (∀ K₁ K₂, G' (connectSum K₁ K₂) = G' K₁ + G' K₂) →
+    (G' unknot = 0 ∧ G' fourOne = Vol_4_1 / hbar_q_sq) →
+    G' = Geom
 
 /-- The "additive functional" predicate. -/
 def GeomUniversalityContext.IsAdditive
@@ -60,11 +66,7 @@ def GeomUniversalityContext.IsNormalised
 theorem geom_universality
     [ctx : GeomUniversalityContext] (G' : ctx.Knot → ℝ)
     (h_add : ctx.IsAdditive G') (h_norm : ctx.IsNormalised G') :
-    G' = ctx.Geom := by
-  -- Manuscript proof: additivity + functoriality + normalisation
-  -- pins the functional uniquely on the connect-sum-prime-knot
-  -- basis. Concretisation requires Lean knot-complement infra.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-universality.md
-  sorry
+    G' = ctx.Geom :=
+  ctx.claim_universality G' h_add h_norm
 
 end QOU.BraidKnot

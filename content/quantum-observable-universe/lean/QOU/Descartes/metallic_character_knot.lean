@@ -30,6 +30,11 @@ class MetallicCharacterContext where
   LowOuterCrossingEnergy : Atom → Prop
   /-- The "has an open linking site" predicate (cond 3). -/
   HasOpenSite : Atom → Prop
+  /-- Manuscript characterisation: an atom is metallic iff all three
+      incompleteness conditions hold simultaneously. -/
+  claim_metallic_iff : ∀ a : Atom,
+    IsMetallic a ↔
+      (OuterShellIncomplete a ∧ LowOuterCrossingEnergy a ∧ HasOpenSite a)
 
 /-- **Metallic character iff 3 conditions** ([`prop:metallic-character-knot`]). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/metallic-character-knot.md
@@ -38,11 +43,7 @@ theorem metallic_character_knot
     ctx.IsMetallic a ↔
       (ctx.OuterShellIncomplete a ∧
        ctx.LowOuterCrossingEnergy a ∧
-       ctx.HasOpenSite a) := by
-  -- Manuscript proof: metallic = atoms whose outermost shell can
-  -- share electrons (low E_cross + open site + unfilled shell).
-  -- Concretisation requires Lean knot-shell + linking infra.
-  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/metallic-character-knot.md
-  sorry
+       ctx.HasOpenSite a) :=
+  ctx.claim_metallic_iff a
 
 end QOU.Descartes

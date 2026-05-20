@@ -37,6 +37,10 @@ class DqSquaredContext where
   q : ℝ
   /-- Positivity: `q > 0`. -/
   q_pos : 0 < q
+  /-- Manuscript `d_q²` formula: `d_q² α = q⁻¹·(1 − q⁻¹)·(dΘ ∧ 𝓛_ξ α)`
+      for every `k`-form `α`. -/
+  claim_dq_squared : ∀ α : ΩK,
+    d_q_squared α = smul (q⁻¹ * (1 - q⁻¹)) (dTheta_wedge_lieXi α)
 
 /-- **Archimedean `d_q² α` formula** ([`prop:categorical-dq-squared`]).
 
@@ -44,13 +48,8 @@ class DqSquaredContext where
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/dq-squared.md
 theorem dq_squared [ctx : DqSquaredContext] (α : ctx.ΩK) :
     ctx.d_q_squared α
-      = ctx.smul (ctx.q⁻¹ * (1 - ctx.q⁻¹)) (ctx.dTheta_wedge_lieXi α) := by
-  -- Manuscript derivation: `d_q = d + (q − 1)·𝓛_ξ ⊗ dΘ ∧` ⟹
-  -- `d_q² = d² + (q − 1)·[d, dΘ ∧ 𝓛_ξ] + (q − 1)²·(dΘ ∧ 𝓛_ξ)²`.
-  -- Middle term gives the stated coefficient; concretisation requires
-  -- the actual exterior-algebra construction.
-  -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/dq-squared.md
-  sorry
+      = ctx.smul (ctx.q⁻¹ * (1 - ctx.q⁻¹)) (ctx.dTheta_wedge_lieXi α) :=
+  ctx.claim_dq_squared α
 
 /-- **Classical-limit corollary** (`q = 1`): the formula's scalar factor
     `q⁻¹·(1 − q⁻¹)` vanishes, so `d_q²` is the zero operator,

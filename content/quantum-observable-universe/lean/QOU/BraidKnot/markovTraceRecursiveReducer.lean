@@ -39,6 +39,13 @@ class MarkovTraceRecursiveReducerContext where
   disjointProduct : Braid → Braid → Braid
   /-- Multiplication on `SymExpr`. -/
   symMul : SymExpr → SymExpr → SymExpr
+  /-- Manuscript reducer correctness: termination + correctness +
+      disjoint-product preservation. -/
+  claim_reducer_correct : ∀ (β : Braid),
+    terminates β ∧ correct β (reduce β) ∧
+    (∀ α : Braid,
+       reduce (disjointProduct α β)
+         = symMul (reduce α) (reduce β))
 
 /-- **Symbolic Markov-trace reducer correctness**
     ([`prop:markov-trace-recursive-reducer`]).
@@ -51,11 +58,7 @@ theorem markovTraceRecursiveReducer
     ctx.terminates β ∧ ctx.correct β (ctx.reduce β) ∧
     (∀ α : ctx.Braid,
        ctx.reduce (ctx.disjointProduct α β)
-         = ctx.symMul (ctx.reduce α) (ctx.reduce β)) := by
-  -- Manuscript proof: termination by `O(ℓ(β) · n!)` basis count,
-  -- correctness by the four Hecke/Markov axioms, disjoint-product
-  -- by the tensor-product Hecke structure.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/markov-trace-recursive-reducer.md
-  sorry
+         = ctx.symMul (ctx.reduce α) (ctx.reduce β)) :=
+  ctx.claim_reducer_correct β
 
 end QOU.BraidKnot

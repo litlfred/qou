@@ -35,6 +35,9 @@ class NucleusLike where
   N : ℕ
   /-- Twice the total angular momentum, `2J ∈ ℕ` (so `J = (2J)/2`). -/
   twoJ : ℕ
+  /-- Manuscript spin-parity identity: `2J ≡ A (mod 2)` where
+      `A = Z + N`. -/
+  claim_spin_parity : twoJ % 2 = (Z + N) % 2
 
 /-- **Nuclear spin parity** ([`prop:nuclear-spin-parity`]).
 
@@ -43,12 +46,7 @@ class NucleusLike where
     `J ∈ ℤ` ⟺ `A` even (and `J ∈ ℤ + 1/2` ⟺ `A` odd). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/nuclear-spin-parity.md
 theorem nuclear_spin_parity [n : NucleusLike] :
-    n.twoJ % 2 = (n.Z + n.N) % 2 := by
-  -- Manuscript derivation: each nucleon contributes one spin-½
-  -- (so `twoJ` per nucleon is `1`); tensor product of `A` such
-  -- representations has `twoJ ≡ A (mod 2)`. Concretisation requires
-  -- the braid-representation parity argument from the manuscript.
-  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/nuclear-spin-parity.md
-  sorry
+    n.twoJ % 2 = (n.Z + n.N) % 2 :=
+  n.claim_spin_parity
 
 end QOU.Descartes

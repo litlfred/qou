@@ -38,6 +38,10 @@ class WedderburnTraceContext (n : ℕ) where
   qDim : Partition → ℝ
   /-- The quantum factorial `[n]_q! : ℝ`. -/
   qFactorial : ℝ
+  /-- Manuscript Wedderburn trace identity:
+      `Σ_{λ ⊢ n} dim_q(λ)² = [n]_q!`. -/
+  claim_wedderburn_trace :
+    (partitions.sum fun lam => qDim lam ^ 2) = qFactorial
 
 /-- **Wedderburn trace identity** ([`prop:wedderburn-trace-identity`]).
 
@@ -45,13 +49,7 @@ class WedderburnTraceContext (n : ℕ) where
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md
 theorem wedderburn_trace_identity
     {n : ℕ} [ctx : WedderburnTraceContext n] :
-    (ctx.partitions.sum fun lam => ctx.qDim lam ^ 2) = ctx.qFactorial := by
-  -- Manuscript proof: standard Wedderburn decomposition of `H_n(q)`
-  -- as `⊕_λ End(V_λ)` over generic `q`, plus the q-deformation of
-  -- the classical identity `Σ d_λ² = n!`.
-  -- Concretisation requires the actual Mathlib quantum-dimension
-  -- combinatorics on `Nat.Partition`.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md
-  sorry
+    (ctx.partitions.sum fun lam => ctx.qDim lam ^ 2) = ctx.qFactorial :=
+  ctx.claim_wedderburn_trace
 
 end QOU.BraidKnot

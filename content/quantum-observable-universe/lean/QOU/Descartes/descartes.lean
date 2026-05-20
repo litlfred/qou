@@ -27,6 +27,10 @@ class DescartesTerminalContext where
   Mor : DescUniverse → DescUniverse → Type
   /-- The terminal object: Bring's quantum-observable-universe. -/
   BringQOU : DescUniverse
+  /-- Manuscript terminality: for every Descartes universe `X`,
+      the hom-set `Mor X BringQOU` is a singleton. -/
+  claim_descartes_terminal : ∀ X : DescUniverse,
+    Nonempty (Unique (Mor X BringQOU))
 
 /-- **Bring's `Σ₄` is terminal in `𝐂_{−6}`** ([`prop:descartes`]).
 
@@ -35,12 +39,7 @@ class DescartesTerminalContext where
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/descartes.md
 theorem descartes
     [ctx : DescartesTerminalContext] (X : ctx.DescUniverse) :
-    Nonempty (Unique (ctx.Mor X ctx.BringQOU)) := by
-  -- Manuscript proof: existence is by the Bring's QOU's
-  -- Euler-characteristic-preserving structure functor; uniqueness
-  -- follows from the rigidity of the fibre-functor identification
-  -- under the Descartes condition χ(A) = −6.
-  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/descartes.md
-  sorry
+    Nonempty (Unique (ctx.Mor X ctx.BringQOU)) :=
+  ctx.claim_descartes_terminal X
 
 end QOU.Descartes

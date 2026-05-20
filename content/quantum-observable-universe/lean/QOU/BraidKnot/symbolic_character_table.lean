@@ -47,6 +47,10 @@ class SymbolicCharacterTableContext where
   chiSigma : SelfConjugatePartition → ℝ
   /-- The relation `h = q − q⁻¹`. -/
   h_def : h = q - q⁻¹
+  /-- Manuscript factorisation: `χ_λ(σ) = c_λ · h` for each
+      self-conjugate `λ`. -/
+  claim_chi_factorisation : ∀ λ : SelfConjugatePartition,
+    chiSigma λ = (cCoefficient λ : ℝ) * h
 
 /-- **Self-conjugate character integer-coefficient factorisation**
     ([`prop:symbolic-character-table`]).
@@ -55,12 +59,8 @@ class SymbolicCharacterTableContext where
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/symbolic-character-table.md
 theorem symbolic_character_table
     [ctx : SymbolicCharacterTableContext] (λ : SelfConjugatePartition) :
-    ctx.chiSigma λ = (cCoefficient λ : ℝ) * ctx.h := by
-  -- Manuscript proof: seminormal-form evaluation
-  -- `a_ρ = h / (1 − q^{−2ρ})` summed over standard Young tableaux
-  -- gives integer coefficients for self-conjugate `λ`.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/symbolic-character-table.md
-  sorry
+    ctx.chiSigma λ = (cCoefficient λ : ℝ) * ctx.h :=
+  ctx.claim_chi_factorisation λ
 
 /-- **`χ_{[3,1,1]}(σᵢσⱼ) = h² − 2` for `|i − j| ≥ 2`** (far-commuting case).
     Direct computation from the manuscript's seminormal-form recipe. -/

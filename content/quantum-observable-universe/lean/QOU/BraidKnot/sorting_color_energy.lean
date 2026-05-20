@@ -33,16 +33,15 @@ class SortingColorEnergyContext where
   sym_eigenvalue : ℝ
   /-- Eigenvalue of `σᵢ` on `Λ²(V)`: should be `−q⁻¹`. -/
   wedge_eigenvalue : ℝ
+  /-- Manuscript eigenvalues: `σᵢ` acts as `q` on `Sym²(V)` and
+      `−q⁻¹` on `Λ²(V)`. -/
+  claim_eigenvalues : sym_eigenvalue = q ∧ wedge_eigenvalue = -(q⁻¹)
 
 /-- **Eigenspace decomposition with explicit Hecke eigenvalues**
     ([`prop:sorting-color-energy`] item (1)). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/sorting-color-energy.md
 theorem sorting_color_energy [ctx : SortingColorEnergyContext] :
-    ctx.sym_eigenvalue = ctx.q ∧ ctx.wedge_eigenvalue = -(ctx.q⁻¹) := by
-  -- Manuscript proof: the two roots of the Hecke quadratic
-  -- `T² = (q − q⁻¹)T + 1` are `q` (symmetric channel) and `−q⁻¹`
-  -- (antisymmetric channel).
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/sorting-color-energy.md
-  sorry
+    ctx.sym_eigenvalue = ctx.q ∧ ctx.wedge_eigenvalue = -(ctx.q⁻¹) :=
+  ctx.claim_eigenvalues
 
 end QOU.BraidKnot

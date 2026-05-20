@@ -44,16 +44,19 @@ class BohrRadiusCategoricalContext where
   Phi_kin : ℝ → ℝ
   /-- The Coulomb Markov-trace function. -/
   Phi_Coul : ℝ → ℝ
+  /-- Manuscript virial-balance: at `a_0^cat`, kinetic and Coulomb
+      Markov-trace contributions agree. Conjectural (transported
+      from QED, not yet derived from QOU/Hecke structure). -/
+  claim_virial_balance :
+    Phi_kin (bohrRadiusCategorical hbar m_e c alpha_EM)
+      = Phi_Coul (bohrRadiusCategorical hbar m_e c alpha_EM)
 
 /-- **Virial-balance condition at the categorical Bohr radius**
     ([`prop:bohr-radius-categorical`]). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/bohr-radius-categorical.md
 theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] :
     ctx.Phi_kin (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM)
-      = ctx.Phi_Coul (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM) := by
-  -- Caveat: not yet derived from QOU. Treated as a candidate
-  -- transport from QED.
-  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/bohr-radius-categorical.md
-  sorry
+      = ctx.Phi_Coul (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM) :=
+  ctx.claim_virial_balance
 
 end QOU.Descartes

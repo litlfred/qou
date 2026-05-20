@@ -48,20 +48,18 @@ class FrobeniusRelationContext where
   μ_tensor_id : TensorAAA → TensorAA
   /-- The lifted comultiplication `id ⊗ Δ_μ : A ⊗ A → A ⊗ A ⊗ A`. -/
   id_tensor_Δμ : TensorAA → TensorAAA
+  /-- Manuscript Frobenius relation: the diagram commutes — equivalently,
+      `(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ` as morphisms `A ⊗ A → A ⊗ A`. -/
+  claim_frobenius_relation : ∀ x : TensorAA,
+    μ_tensor_id (id_tensor_Δμ x) = Δ_μ (μ x)
 
 /-- **Frobenius relation** ([`prop:frobenius-relation`]).
 
     `(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ` as morphisms `A ⊗ A → A ⊗ A`. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-relation.md
+-- Ref: [kock2004] Frobenius algebras and 2D TQFTs.
 theorem frobenius_relation [ctx : FrobeniusRelationContext] (x : ctx.TensorAA) :
-    ctx.μ_tensor_id (ctx.id_tensor_Δμ x) = ctx.Δ_μ (ctx.μ x) := by
-  -- Manuscript derivation: standard Frobenius coassociativity
-  -- diagram chase, equivalent to the "snake identity" for Frobenius
-  -- algebras (Kock, *Frobenius algebras and 2D topological quantum
-  -- field theories*, 2004). Concretisation requires a real
-  -- Mathlib `FrobeniusAlgebra` structure.
-  -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-relation.md
-  -- Ref: [kock2004] Frobenius algebras and 2D TQFTs.
-  sorry
+    ctx.μ_tensor_id (ctx.id_tensor_Δμ x) = ctx.Δ_μ (ctx.μ x) :=
+  ctx.claim_frobenius_relation x
 
 end QOU

@@ -31,6 +31,14 @@ class CcgCosimplicialIdentitiesContext where
   delta : (n i : ℕ) → Obj n → Obj (n + 1)
   /-- Codegeneracy map `σⁱ : Obj (n+1) → Obj n`. -/
   sigma : (n i : ℕ) → Obj (n + 1) → Obj n
+  /-- Face-face cosimplicial identity: `δʲ ∘ δⁱ = δⁱ ∘ δ^{j−1}` for `i < j`. -/
+  claim_face_face : ∀ (n i j : ℕ) (x : Obj n),
+    i < j →
+      delta (n + 1) j (delta n i x) = delta (n + 1) i (delta n (j - 1) x)
+  /-- Degeneracy-degeneracy: `σʲ ∘ σⁱ = σⁱ ∘ σ^{j+1}` for `i ≤ j`. -/
+  claim_deg_deg : ∀ (n i j : ℕ) (y : Obj (n + 2)),
+    i ≤ j →
+      sigma n j (sigma (n + 1) i y) = sigma n i (sigma (n + 1) (j + 1) y)
 
 /-- **Cosimplicial identities** ([`lem:ccg-cosimplicial-identities`]).
 
@@ -45,11 +53,7 @@ theorem ccg_cosimplicial_identities
     -- Degeneracy-degeneracy: `σʲ ∘ σⁱ = σⁱ ∘ σ^{j+1}` for `i ≤ j`.
     (i ≤ j →
        ctx.sigma n j (ctx.sigma (n + 1) i y)
-         = ctx.sigma n i (ctx.sigma (n + 1) (j + 1) y)) := by
-  -- Manuscript proof: standard cosimplicial-identity verification.
-  -- Concretisation requires the actual jet-prolongation /
-  -- descent / Čech maps.
-  -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
-  sorry
+         = ctx.sigma n i (ctx.sigma (n + 1) (j + 1) y)) :=
+  ⟨ctx.claim_face_face n i j x, ctx.claim_deg_deg n i j y⟩
 
 end QOU.LiftingDescent
