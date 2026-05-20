@@ -44,9 +44,14 @@ $$
     \begin{cases}
       \psi^{(g)}_0 - q\phi & \phi \in I_1 \\
       \psi^{(g)}_0 - q\pi/3 + q(\phi - \pi/3) & \phi \in I_2 \\
-      \psi^{(g)}_0 - q(\phi - \pi/3) + q\pi/3 \cdot 0 & \phi \in I_3
+      \psi^{(g)}_0 - q(\phi - 2\pi/3) & \phi \in I_3
     \end{cases}
 $$
+
+The I₃ branch evaluates to the I₂ endpoint $\psi^{(g)}(2\pi/3) = \psi^{(g)}_0$
+(green has cycled back to its starting position after the σ₂ sub-flow on $I_2$)
+and then decreases at rate $-q$ on the second σ₁ sub-flow, giving
+$\psi^{(g)}(\pi) = \psi^{(g)}_0 - q\pi/3$.
 
 $$
   \psi^{(b)}(\phi) =

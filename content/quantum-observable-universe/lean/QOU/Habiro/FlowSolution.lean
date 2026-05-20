@@ -14,17 +14,19 @@ $\widehat{\mathbb{Z}[q]}$ and admit archimedean shadows under the
 realisation functor $\tau_\infty$.
 
 This class is the **synthesis-level** placeholder.  The per-function
-existence/uniqueness content is already carried by the parent
-classes
+existence/uniqueness content is already supplied by the existing
+Lean developments
 `QOU.QExponential` (`prop:q-exponential-exists`,
 `prop:q-exponential-unique`),
 `QOU.QDilogarithm` (`prop:q-dilogarithm-exists`,
 `prop:q-dilogarithm-unique`),
-`QOU.CategoricalFourierTransform`
-(`prop:categorical-fourier-exists`).  What this class adds is the
-joint synthesis: that the three are *simultaneously* the unique
-algebraic objects in the Habiro completion solving their
-respective Reeb-flow equations.
+`QOU.CategoricalFourier`
+(`prop:categorical-fourier-exists`).  Those are `structure`s
+(not typeclasses), so `HabiroFlowSolution` does not extend them
+— it bundles their proven content into a single joint-existence
+claim: the three are *simultaneously* the unique algebraic
+objects in the Habiro completion solving their respective
+Reeb-flow equations.
 
 LaTeX label: `rem:generating-functions-solve-reeb-flow`
 -/
@@ -32,9 +34,12 @@ LaTeX label: `rem:generating-functions-solve-reeb-flow`
 namespace QOU.Habiro
 
 /-- The synthesis-level Habiro flow-solution class.  Conjectural:
-    the individual fixed-point properties are carried by the parent
-    classes; this class records that they hold *simultaneously* in
-    a common Habiro completion and that their archimedean shadows
+    the individual fixed-point properties are supplied by the
+    existing `QOU.QExponential`, `QOU.QDilogarithm`, and
+    `QOU.CategoricalFourier` developments (structures, not
+    typeclasses — `HabiroFlowSolution` does NOT extend them).
+    This class records that the three hold *simultaneously* in a
+    common Habiro completion and that their archimedean shadows
     under $\tau_\infty$ are mutually compatible (the $\tau_\infty$
     of $\mathrm{Li}_2^q$ gives the Bloch–Wigner volume function
     used by `prop:thurston-volume-additivity`, while
