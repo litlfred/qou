@@ -19,7 +19,7 @@ with strict PSD margin).  Then:*
    real-algebraic stratification in finitely many strata of
    codimension $\ge 1$ — the **phase boundaries** of $P$.  Each
    stratum is the zero locus of a determinant polynomial
-   $\det\bigl(\text{principal minor of }G(q)\bigr) = 0$ for some
+   $\det\bigl(\text{principal minor of }\mathrm{G}(q)\bigr) = 0$ for some
    principal minor of the SDP Gram matrix.*
 
 3. ***Local constancy on components.** Let $\Omega_\alpha \subseteq
@@ -67,7 +67,7 @@ Hence $\Omega(P)$ is a union of open neighbourhoods, i.e. open.*
 *Claim (2) — Stratification.
 The complement $\mathcal{G} \setminus \Omega(P)$ is defined by the
 vanishing of a finite product of principal-minor determinants of
-the Gram matrix $G(q)$ — each such determinant is a polynomial in
+the Gram matrix $\mathrm{G}(q)$ — each such determinant is a polynomial in
 $q$ with finitely many real zeros in $\mathcal{G}$.  The union of
 these zero sets forms a real-algebraic stratification; generic
 strata have codimension 1 (single-minor vanishing), with lower

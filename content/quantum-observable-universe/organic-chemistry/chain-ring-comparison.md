@@ -14,7 +14,7 @@ $$
   \xrightarrow{\text{scale separation}}
   |q + q^{-1}|_{\mathrm{mol}}
   \xrightarrow{\Delta_{T(2,6)}(q)}
-  \mathbf{E}_{\mathrm{cross}}.
+  \mathfrak{E}_{\mathrm{cross}}.
 $$
 
 1. The substrate parameter $q$ is fixed by $\chi(A) = -6$

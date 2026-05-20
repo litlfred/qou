@@ -7,7 +7,7 @@ hyperbolic geometry, it is the canonical instance of
 $\mathcal{R}_{\mathrm{top}}$ on the brane substrate.
 
 **Algebraic side (non-archimedean).** For a hyperbolic knot $K$
-presented as the closure of a braid $\beta_K$, the colored Jones
+presented as the closure of a braid $\mathcal{B}_K$, the colored Jones
 polynomial evaluated at the $N$-th root of unity
 $q = \exp(2\pi i / N)$ is a discrete algebraic trace over the
 local Hecke algebra $H_n(R, q)$
@@ -16,13 +16,13 @@ local Hecke algebra $H_n(R, q)$
 $$
   J_N(K)
   \;=\;
-  \mathrm{tr}_M\bigl(\rho(\beta_K)\bigr)
+  \mathrm{tr}_M\bigl(\rho(\mathcal{B}_K)\bigr)
   \;\in\;\mathbb{Z}[q^{1/2}, q^{-1/2}]\big/\Phi_N(q),
 $$
 
 a purely $p$-adic / cyclotomic datum at the $N$-th place of the
 [adelic substrate](#def:adelic-substrate). The
-algebraic quantum volume $\mathrm{Vol}_q(\beta_K)$ packages all
+algebraic quantum volume $\mathrm{Vol}_q(\mathcal{B}_K)$ packages all
 these local data into the global Habiro element.
 
 **Archimedean realization via $\tau$.** Taking the asymptotic
@@ -50,11 +50,11 @@ applied to the same input
 $$
   \mathrm{Vol}(S^3 \setminus K)
   \;=\;
-  \tau_{\mathrm{arch}}\bigl(\mathrm{Vol}_q(\beta_K)\bigr)
+  \tau_{\mathrm{arch}}\bigl(\mathrm{Vol}_q(\mathcal{B}_K)\bigr)
   \;=\;
-  (\pi_\infty \circ \tau)\bigl(\mathrm{Vol}_q(\beta_K)\bigr)
+  (\pi_\infty \circ \tau)\bigl(\mathrm{Vol}_q(\mathcal{B}_K)\bigr)
   \;=\;
-  \mathcal{R}_{\mathrm{top}}\bigl(\mathrm{Vol}_q(\beta_K)\bigr).
+  \mathcal{R}_{\mathrm{top}}\bigl(\mathrm{Vol}_q(\mathcal{B}_K)\bigr).
 $$
 
 The fibre-functor step $\tau$ is the hyperbolic realization

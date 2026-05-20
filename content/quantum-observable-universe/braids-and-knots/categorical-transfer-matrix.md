@@ -1,4 +1,4 @@
-Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a
+Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ be a
 [hadron](#def:hadron) at a brane point $p$
 ([localized hadron](#def:localized-hadron)), and let $\mathcal{S}_p$ be the
 exceptional divisor at $p$

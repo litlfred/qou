@@ -1,5 +1,5 @@
 **Proposition (operator-valued mass-endomorphism tower).**
-*Let $\beta_K = \beta_{\mathrm{disjoint}} \cdot \beta_{\mathrm{interface}} \in
+*Let $\mathcal{B}_K = \beta_{\mathrm{disjoint}} \cdot \beta_{\mathrm{interface}} \in
 H_n(R, q)$ be the canonical atomic braid of an atom $K = (Z, N)$ with
 $n = 3(Z+N)$, factored into disjoint constituent braids
 $\beta_{\mathrm{disjoint}} = \beta_1 \otimes \cdots \otimes \beta_{Z+N}$
@@ -12,7 +12,7 @@ admits the **operator-valued** form*
 
 $$
   \boxed{\;
-    \chi^\lambda(\beta_K)
+    \chi^\lambda(\mathcal{B}_K)
     \;=\;
     \sum_{(\mu_1, \ldots, \mu_{Z+N})} \;
     \operatorname{Tr}_{V_{\mu_1} \otimes \cdots \otimes V_{\mu_{Z+N}}}\!\Biggl(
@@ -70,7 +70,7 @@ $$
 
 *where the per-block magnitude inside the logarithm is the operator
 trace from the boxed identity above (replacing the scalar
-$|\chi^\lambda(\beta_K) \cdot \dim_q V_\lambda|$ of the
+$|\chi^\lambda(\mathcal{B}_K) \cdot \dim_q V_\lambda|$ of the
 depth-stratified formula
 [`prop:plancherel-term-7-formulation`](plancherel-term-7-formulation.md))
 and $\tilde w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ is the q-deformed
@@ -116,7 +116,7 @@ scalar $\hat V_i$ formula because the dimensional-scale carrier is
 **not in the scalar volumes** — it is in the operator $A^\lambda_{\vec\mu}(I)$,
 specifically in its non-scalar (off-diagonal) action on the boundary
 strands. The interface contribution to the canonical-atom Markov
-trace is pinned at $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z$
+trace is pinned at $\tau_M(\mathcal{B}_K) / \tau_M(\mathcal{B}_K^{\mathrm{vac}}) = z$
 per Z-step (derivation-grade, on `main` via the PR #819 Phase 5c.1
 family — `prop:interface-knot-markov-z`); the complementary
 constit-side ratio $\rho_Z^{\mathrm{constit}}(q)$ should factorize

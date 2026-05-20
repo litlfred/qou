@@ -54,6 +54,6 @@ The quantum temperature is the thermodynamic conjugate:
 
 $$
   \frac{1}{T_q}
-  \;=\; \frac{\partial S_q}{\partial \mathbf{E}_q}\bigg|_V
+  \;=\; \frac{\partial S_q}{\partial \mathfrak{E}_q}\bigg|_V
   \;=\; \frac{1}{\hbar_q}.
 $$

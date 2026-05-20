@@ -11,7 +11,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 1. Hydrogen (${}^{1}\mathrm{H}$, $Z=1$, $N=0$)
 
-**Knot formula.** $1\mathfrak{p} \bowtie 0\mathfrak{n} \bowtie 1 \cdot T_{2,3}$
+**Knot formula.** $1\mathfrak{p} \oplus 0\mathfrak{n} \oplus 1 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 1 \times 938.272 + 0 \times 939.565 = 938.3 \text{MeV}$
 
@@ -27,7 +27,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 2. Helium (${}^{4}\mathrm{He}$, $Z=2$, $N=2$)
 
-**Knot formula.** $2\mathfrak{p} \bowtie 2\mathfrak{n} \bowtie 2 \cdot T_{2,3}$
+**Knot formula.** $2\mathfrak{p} \oplus 2\mathfrak{n} \oplus 2 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 2 \times 938.272 + 2 \times 939.565 = 3755.7 \text{MeV}$
 
@@ -43,7 +43,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 3. Lithium (${}^{7}\mathrm{Li}$, $Z=3$, $N=4$)
 
-**Knot formula.** $3\mathfrak{p} \bowtie 4\mathfrak{n} \bowtie 3 \cdot T_{2,3}$
+**Knot formula.** $3\mathfrak{p} \oplus 4\mathfrak{n} \oplus 3 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 3 \times 938.272 + 4 \times 939.565 = 6573.1 \text{MeV}$
 
@@ -59,7 +59,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 4. Beryllium (${}^{9}\mathrm{Be}$, $Z=4$, $N=5$)
 
-**Knot formula.** $4\mathfrak{p} \bowtie 5\mathfrak{n} \bowtie 4 \cdot T_{2,3}$
+**Knot formula.** $4\mathfrak{p} \oplus 5\mathfrak{n} \oplus 4 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 4 \times 938.272 + 5 \times 939.565 = 8450.9 \text{MeV}$
 
@@ -75,7 +75,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 5. Boron (${}^{11}\mathrm{B}$, $Z=5$, $N=6$)
 
-**Knot formula.** $5\mathfrak{p} \bowtie 6\mathfrak{n} \bowtie 5 \cdot T_{2,3}$
+**Knot formula.** $5\mathfrak{p} \oplus 6\mathfrak{n} \oplus 5 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 5 \times 938.272 + 6 \times 939.565 = 10328.8 \text{MeV}$
 
@@ -91,7 +91,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 6. Carbon (${}^{12}\mathrm{C}$, $Z=6$, $N=6$)
 
-**Knot formula.** $6\mathfrak{p} \bowtie 6\mathfrak{n} \bowtie 6 \cdot T_{2,3}$
+**Knot formula.** $6\mathfrak{p} \oplus 6\mathfrak{n} \oplus 6 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 6 \times 938.272 + 6 \times 939.565 = 11267.0 \text{MeV}$
 
@@ -107,7 +107,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 7. Nitrogen (${}^{14}\mathrm{N}$, $Z=7$, $N=7$)
 
-**Knot formula.** $7\mathfrak{p} \bowtie 7\mathfrak{n} \bowtie 7 \cdot T_{2,3}$
+**Knot formula.** $7\mathfrak{p} \oplus 7\mathfrak{n} \oplus 7 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 7 \times 938.272 + 7 \times 939.565 = 13144.9 \text{MeV}$
 
@@ -123,7 +123,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 8. Oxygen (${}^{16}\mathrm{O}$, $Z=8$, $N=8$)
 
-**Knot formula.** $8\mathfrak{p} \bowtie 8\mathfrak{n} \bowtie 8 \cdot T_{2,3}$
+**Knot formula.** $8\mathfrak{p} \oplus 8\mathfrak{n} \oplus 8 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 8 \times 938.272 + 8 \times 939.565 = 15022.7 \text{MeV}$
 
@@ -139,7 +139,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 9. Fluorine (${}^{19}\mathrm{F}$, $Z=9$, $N=10$)
 
-**Knot formula.** $9\mathfrak{p} \bowtie 10\mathfrak{n} \bowtie 9 \cdot T_{2,3}$
+**Knot formula.** $9\mathfrak{p} \oplus 10\mathfrak{n} \oplus 9 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 9 \times 938.272 + 10 \times 939.565 = 17840.1 \text{MeV}$
 
@@ -155,7 +155,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 10. Neon (${}^{20}\mathrm{Ne}$, $Z=10$, $N=10$)
 
-**Knot formula.** $10\mathfrak{p} \bowtie 10\mathfrak{n} \bowtie 10 \cdot T_{2,3}$
+**Knot formula.** $10\mathfrak{p} \oplus 10\mathfrak{n} \oplus 10 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 10 \times 938.272 + 10 \times 939.565 = 18778.4 \text{MeV}$
 
@@ -171,7 +171,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 11. Sodium (${}^{23}\mathrm{Na}$, $Z=11$, $N=12$)
 
-**Knot formula.** $11\mathfrak{p} \bowtie 12\mathfrak{n} \bowtie 11 \cdot T_{2,3}$
+**Knot formula.** $11\mathfrak{p} \oplus 12\mathfrak{n} \oplus 11 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 11 \times 938.272 + 12 \times 939.565 = 21595.8 \text{MeV}$
 
@@ -187,7 +187,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 12. Magnesium (${}^{24}\mathrm{Mg}$, $Z=12$, $N=12$)
 
-**Knot formula.** $12\mathfrak{p} \bowtie 12\mathfrak{n} \bowtie 12 \cdot T_{2,3}$
+**Knot formula.** $12\mathfrak{p} \oplus 12\mathfrak{n} \oplus 12 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 12 \times 938.272 + 12 \times 939.565 = 22534.0 \text{MeV}$
 
@@ -203,7 +203,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 13. Aluminium (${}^{27}\mathrm{Al}$, $Z=13$, $N=14$)
 
-**Knot formula.** $13\mathfrak{p} \bowtie 14\mathfrak{n} \bowtie 13 \cdot T_{2,3}$
+**Knot formula.** $13\mathfrak{p} \oplus 14\mathfrak{n} \oplus 13 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 13 \times 938.272 + 14 \times 939.565 = 25351.4 \text{MeV}$
 
@@ -219,7 +219,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 14. Silicon (${}^{28}\mathrm{Si}$, $Z=14$, $N=14$)
 
-**Knot formula.** $14\mathfrak{p} \bowtie 14\mathfrak{n} \bowtie 14 \cdot T_{2,3}$
+**Knot formula.** $14\mathfrak{p} \oplus 14\mathfrak{n} \oplus 14 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 14 \times 938.272 + 14 \times 939.565 = 26289.7 \text{MeV}$
 
@@ -235,7 +235,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 15. Phosphorus (${}^{31}\mathrm{P}$, $Z=15$, $N=16$)
 
-**Knot formula.** $15\mathfrak{p} \bowtie 16\mathfrak{n} \bowtie 15 \cdot T_{2,3}$
+**Knot formula.** $15\mathfrak{p} \oplus 16\mathfrak{n} \oplus 15 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 15 \times 938.272 + 16 \times 939.565 = 29107.1 \text{MeV}$
 
@@ -251,7 +251,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 16. Sulfur (${}^{32}\mathrm{S}$, $Z=16$, $N=16$)
 
-**Knot formula.** $16\mathfrak{p} \bowtie 16\mathfrak{n} \bowtie 16 \cdot T_{2,3}$
+**Knot formula.** $16\mathfrak{p} \oplus 16\mathfrak{n} \oplus 16 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 16 \times 938.272 + 16 \times 939.565 = 30045.4 \text{MeV}$
 
@@ -267,7 +267,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 17. Chlorine (${}^{35}\mathrm{Cl}$, $Z=17$, $N=18$)
 
-**Knot formula.** $17\mathfrak{p} \bowtie 18\mathfrak{n} \bowtie 17 \cdot T_{2,3}$
+**Knot formula.** $17\mathfrak{p} \oplus 18\mathfrak{n} \oplus 17 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 17 \times 938.272 + 18 \times 939.565 = 32862.8 \text{MeV}$
 
@@ -283,7 +283,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 18. Argon (${}^{40}\mathrm{Ar}$, $Z=18$, $N=22$)
 
-**Knot formula.** $18\mathfrak{p} \bowtie 22\mathfrak{n} \bowtie 18 \cdot T_{2,3}$
+**Knot formula.** $18\mathfrak{p} \oplus 22\mathfrak{n} \oplus 18 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 18 \times 938.272 + 22 \times 939.565 = 37559.3 \text{MeV}$
 
@@ -299,7 +299,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 19. Potassium (${}^{39}\mathrm{K}$, $Z=19$, $N=20$)
 
-**Knot formula.** $19\mathfrak{p} \bowtie 20\mathfrak{n} \bowtie 19 \cdot T_{2,3}$
+**Knot formula.** $19\mathfrak{p} \oplus 20\mathfrak{n} \oplus 19 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 19 \times 938.272 + 20 \times 939.565 = 36618.5 \text{MeV}$
 
@@ -315,7 +315,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 20. Calcium (${}^{40}\mathrm{Ca}$, $Z=20$, $N=20$)
 
-**Knot formula.** $20\mathfrak{p} \bowtie 20\mathfrak{n} \bowtie 20 \cdot T_{2,3}$
+**Knot formula.** $20\mathfrak{p} \oplus 20\mathfrak{n} \oplus 20 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 20 \times 938.272 + 20 \times 939.565 = 37556.7 \text{MeV}$
 
@@ -331,7 +331,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 21. Scandium (${}^{45}\mathrm{Sc}$, $Z=21$, $N=24$)
 
-**Knot formula.** $21\mathfrak{p} \bowtie 24\mathfrak{n} \bowtie 21 \cdot T_{2,3}$
+**Knot formula.** $21\mathfrak{p} \oplus 24\mathfrak{n} \oplus 21 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 21 \times 938.272 + 24 \times 939.565 = 42253.3 \text{MeV}$
 
@@ -347,7 +347,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 22. Titanium (${}^{48}\mathrm{Ti}$, $Z=22$, $N=26$)
 
-**Knot formula.** $22\mathfrak{p} \bowtie 26\mathfrak{n} \bowtie 22 \cdot T_{2,3}$
+**Knot formula.** $22\mathfrak{p} \oplus 26\mathfrak{n} \oplus 22 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 22 \times 938.272 + 26 \times 939.565 = 45070.7 \text{MeV}$
 
@@ -363,7 +363,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 23. Vanadium (${}^{51}\mathrm{V}$, $Z=23$, $N=28$)
 
-**Knot formula.** $23\mathfrak{p} \bowtie 28\mathfrak{n} \bowtie 23 \cdot T_{2,3}$
+**Knot formula.** $23\mathfrak{p} \oplus 28\mathfrak{n} \oplus 23 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 23 \times 938.272 + 28 \times 939.565 = 47888.1 \text{MeV}$
 
@@ -379,7 +379,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 24. Chromium (${}^{52}\mathrm{Cr}$, $Z=24$, $N=28$)
 
-**Knot formula.** $24\mathfrak{p} \bowtie 28\mathfrak{n} \bowtie 24 \cdot T_{2,3}$
+**Knot formula.** $24\mathfrak{p} \oplus 28\mathfrak{n} \oplus 24 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 24 \times 938.272 + 28 \times 939.565 = 48826.3 \text{MeV}$
 
@@ -395,7 +395,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 25. Manganese (${}^{55}\mathrm{Mn}$, $Z=25$, $N=30$)
 
-**Knot formula.** $25\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 25 \cdot T_{2,3}$
+**Knot formula.** $25\mathfrak{p} \oplus 30\mathfrak{n} \oplus 25 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 25 \times 938.272 + 30 \times 939.565 = 51643.8 \text{MeV}$
 
@@ -411,7 +411,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 26. Iron (${}^{56}\mathrm{Fe}$, $Z=26$, $N=30$)
 
-**Knot formula.** $26\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 26 \cdot T_{2,3}$
+**Knot formula.** $26\mathfrak{p} \oplus 30\mathfrak{n} \oplus 26 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 26 \times 938.272 + 30 \times 939.565 = 52582.0 \text{MeV}$
 
@@ -427,7 +427,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 27. Cobalt (${}^{59}\mathrm{Co}$, $Z=27$, $N=32$)
 
-**Knot formula.** $27\mathfrak{p} \bowtie 32\mathfrak{n} \bowtie 27 \cdot T_{2,3}$
+**Knot formula.** $27\mathfrak{p} \oplus 32\mathfrak{n} \oplus 27 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 27 \times 938.272 + 32 \times 939.565 = 55399.4 \text{MeV}$
 
@@ -443,7 +443,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 28. Nickel (${}^{58}\mathrm{Ni}$, $Z=28$, $N=30$)
 
-**Knot formula.** $28\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 28 \cdot T_{2,3}$
+**Knot formula.** $28\mathfrak{p} \oplus 30\mathfrak{n} \oplus 28 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 28 \times 938.272 + 30 \times 939.565 = 54458.6 \text{MeV}$
 
@@ -459,7 +459,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 29. Copper (${}^{63}\mathrm{Cu}$, $Z=29$, $N=34$)
 
-**Knot formula.** $29\mathfrak{p} \bowtie 34\mathfrak{n} \bowtie 29 \cdot T_{2,3}$
+**Knot formula.** $29\mathfrak{p} \oplus 34\mathfrak{n} \oplus 29 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 29 \times 938.272 + 34 \times 939.565 = 59155.1 \text{MeV}$
 
@@ -475,7 +475,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 30. Zinc (${}^{64}\mathrm{Zn}$, $Z=30$, $N=34$)
 
-**Knot formula.** $30\mathfrak{p} \bowtie 34\mathfrak{n} \bowtie 30 \cdot T_{2,3}$
+**Knot formula.** $30\mathfrak{p} \oplus 34\mathfrak{n} \oplus 30 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 30 \times 938.272 + 34 \times 939.565 = 60093.4 \text{MeV}$
 
@@ -491,7 +491,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 31. Gallium (${}^{69}\mathrm{Ga}$, $Z=31$, $N=38$)
 
-**Knot formula.** $31\mathfrak{p} \bowtie 38\mathfrak{n} \bowtie 31 \cdot T_{2,3}$
+**Knot formula.** $31\mathfrak{p} \oplus 38\mathfrak{n} \oplus 31 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 31 \times 938.272 + 38 \times 939.565 = 64789.9 \text{MeV}$
 
@@ -507,7 +507,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 32. Germanium (${}^{74}\mathrm{Ge}$, $Z=32$, $N=42$)
 
-**Knot formula.** $32\mathfrak{p} \bowtie 42\mathfrak{n} \bowtie 32 \cdot T_{2,3}$
+**Knot formula.** $32\mathfrak{p} \oplus 42\mathfrak{n} \oplus 32 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 32 \times 938.272 + 42 \times 939.565 = 69486.4 \text{MeV}$
 
@@ -523,7 +523,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 33. Arsenic (${}^{75}\mathrm{As}$, $Z=33$, $N=42$)
 
-**Knot formula.** $33\mathfrak{p} \bowtie 42\mathfrak{n} \bowtie 33 \cdot T_{2,3}$
+**Knot formula.** $33\mathfrak{p} \oplus 42\mathfrak{n} \oplus 33 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 33 \times 938.272 + 42 \times 939.565 = 70424.7 \text{MeV}$
 
@@ -539,7 +539,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 34. Selenium (${}^{80}\mathrm{Se}$, $Z=34$, $N=46$)
 
-**Knot formula.** $34\mathfrak{p} \bowtie 46\mathfrak{n} \bowtie 34 \cdot T_{2,3}$
+**Knot formula.** $34\mathfrak{p} \oplus 46\mathfrak{n} \oplus 34 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 34 \times 938.272 + 46 \times 939.565 = 75121.2 \text{MeV}$
 
@@ -555,7 +555,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 35. Bromine (${}^{79}\mathrm{Br}$, $Z=35$, $N=44$)
 
-**Knot formula.** $35\mathfrak{p} \bowtie 44\mathfrak{n} \bowtie 35 \cdot T_{2,3}$
+**Knot formula.** $35\mathfrak{p} \oplus 44\mathfrak{n} \oplus 35 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 35 \times 938.272 + 44 \times 939.565 = 74180.4 \text{MeV}$
 
@@ -571,7 +571,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 36. Krypton (${}^{84}\mathrm{Kr}$, $Z=36$, $N=48$)
 
-**Knot formula.** $36\mathfrak{p} \bowtie 48\mathfrak{n} \bowtie 36 \cdot T_{2,3}$
+**Knot formula.** $36\mathfrak{p} \oplus 48\mathfrak{n} \oplus 36 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 36 \times 938.272 + 48 \times 939.565 = 78876.9 \text{MeV}$
 
@@ -587,7 +587,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 37. Rubidium (${}^{85}\mathrm{Rb}$, $Z=37$, $N=48$)
 
-**Knot formula.** $37\mathfrak{p} \bowtie 48\mathfrak{n} \bowtie 37 \cdot T_{2,3}$
+**Knot formula.** $37\mathfrak{p} \oplus 48\mathfrak{n} \oplus 37 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 37 \times 938.272 + 48 \times 939.565 = 79815.2 \text{MeV}$
 
@@ -603,7 +603,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 38. Strontium (${}^{88}\mathrm{Sr}$, $Z=38$, $N=50$)
 
-**Knot formula.** $38\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 38 \cdot T_{2,3}$
+**Knot formula.** $38\mathfrak{p} \oplus 50\mathfrak{n} \oplus 38 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 38 \times 938.272 + 50 \times 939.565 = 82632.6 \text{MeV}$
 
@@ -619,7 +619,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 39. Yttrium (${}^{89}\mathrm{Y}$, $Z=39$, $N=50$)
 
-**Knot formula.** $39\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 39 \cdot T_{2,3}$
+**Knot formula.** $39\mathfrak{p} \oplus 50\mathfrak{n} \oplus 39 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 39 \times 938.272 + 50 \times 939.565 = 83570.9 \text{MeV}$
 
@@ -635,7 +635,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 40. Zirconium (${}^{90}\mathrm{Zr}$, $Z=40$, $N=50$)
 
-**Knot formula.** $40\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 40 \cdot T_{2,3}$
+**Knot formula.** $40\mathfrak{p} \oplus 50\mathfrak{n} \oplus 40 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 40 \times 938.272 + 50 \times 939.565 = 84509.1 \text{MeV}$
 
@@ -651,7 +651,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 41. Niobium (${}^{93}\mathrm{Nb}$, $Z=41$, $N=52$)
 
-**Knot formula.** $41\mathfrak{p} \bowtie 52\mathfrak{n} \bowtie 41 \cdot T_{2,3}$
+**Knot formula.** $41\mathfrak{p} \oplus 52\mathfrak{n} \oplus 41 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 41 \times 938.272 + 52 \times 939.565 = 87326.5 \text{MeV}$
 
@@ -667,7 +667,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 42. Molybdenum (${}^{98}\mathrm{Mo}$, $Z=42$, $N=56$)
 
-**Knot formula.** $42\mathfrak{p} \bowtie 56\mathfrak{n} \bowtie 42 \cdot T_{2,3}$
+**Knot formula.** $42\mathfrak{p} \oplus 56\mathfrak{n} \oplus 42 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 42 \times 938.272 + 56 \times 939.565 = 92023.1 \text{MeV}$
 
@@ -683,7 +683,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 43. Technetium (${}^{98}\mathrm{Tc}$, $Z=43$, $N=55$)
 
-**Knot formula.** $43\mathfrak{p} \bowtie 55\mathfrak{n} \bowtie 43 \cdot T_{2,3}$
+**Knot formula.** $43\mathfrak{p} \oplus 55\mathfrak{n} \oplus 43 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 43 \times 938.272 + 55 \times 939.565 = 92021.8 \text{MeV}$
 
@@ -699,7 +699,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 44. Ruthenium (${}^{102}\mathrm{Ru}$, $Z=44$, $N=58$)
 
-**Knot formula.** $44\mathfrak{p} \bowtie 58\mathfrak{n} \bowtie 44 \cdot T_{2,3}$
+**Knot formula.** $44\mathfrak{p} \oplus 58\mathfrak{n} \oplus 44 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 44 \times 938.272 + 58 \times 939.565 = 95778.7 \text{MeV}$
 
@@ -715,7 +715,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 45. Rhodium (${}^{103}\mathrm{Rh}$, $Z=45$, $N=58$)
 
-**Knot formula.** $45\mathfrak{p} \bowtie 58\mathfrak{n} \bowtie 45 \cdot T_{2,3}$
+**Knot formula.** $45\mathfrak{p} \oplus 58\mathfrak{n} \oplus 45 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 45 \times 938.272 + 58 \times 939.565 = 96717.0 \text{MeV}$
 
@@ -731,7 +731,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 46. Palladium (${}^{106}\mathrm{Pd}$, $Z=46$, $N=60$)
 
-**Knot formula.** $46\mathfrak{p} \bowtie 60\mathfrak{n} \bowtie 46 \cdot T_{2,3}$
+**Knot formula.** $46\mathfrak{p} \oplus 60\mathfrak{n} \oplus 46 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 46 \times 938.272 + 60 \times 939.565 = 99534.4 \text{MeV}$
 
@@ -747,7 +747,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 47. Silver (${}^{107}\mathrm{Ag}$, $Z=47$, $N=60$)
 
-**Knot formula.** $47\mathfrak{p} \bowtie 60\mathfrak{n} \bowtie 47 \cdot T_{2,3}$
+**Knot formula.** $47\mathfrak{p} \oplus 60\mathfrak{n} \oplus 47 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 47 \times 938.272 + 60 \times 939.565 = 100472.7 \text{MeV}$
 
@@ -763,7 +763,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 48. Cadmium (${}^{114}\mathrm{Cd}$, $Z=48$, $N=66$)
 
-**Knot formula.** $48\mathfrak{p} \bowtie 66\mathfrak{n} \bowtie 48 \cdot T_{2,3}$
+**Knot formula.** $48\mathfrak{p} \oplus 66\mathfrak{n} \oplus 48 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 48 \times 938.272 + 66 \times 939.565 = 107048.3 \text{MeV}$
 
@@ -779,7 +779,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 49. Indium (${}^{115}\mathrm{In}$, $Z=49$, $N=66$)
 
-**Knot formula.** $49\mathfrak{p} \bowtie 66\mathfrak{n} \bowtie 49 \cdot T_{2,3}$
+**Knot formula.** $49\mathfrak{p} \oplus 66\mathfrak{n} \oplus 49 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 49 \times 938.272 + 66 \times 939.565 = 107986.6 \text{MeV}$
 
@@ -795,7 +795,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 50. Tin (${}^{120}\mathrm{Sn}$, $Z=50$, $N=70$)
 
-**Knot formula.** $50\mathfrak{p} \bowtie 70\mathfrak{n} \bowtie 50 \cdot T_{2,3}$
+**Knot formula.** $50\mathfrak{p} \oplus 70\mathfrak{n} \oplus 50 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 50 \times 938.272 + 70 \times 939.565 = 112683.2 \text{MeV}$
 
@@ -811,7 +811,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 51. Antimony (${}^{121}\mathrm{Sb}$, $Z=51$, $N=70$)
 
-**Knot formula.** $51\mathfrak{p} \bowtie 70\mathfrak{n} \bowtie 51 \cdot T_{2,3}$
+**Knot formula.** $51\mathfrak{p} \oplus 70\mathfrak{n} \oplus 51 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 51 \times 938.272 + 70 \times 939.565 = 113621.4 \text{MeV}$
 
@@ -827,7 +827,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 52. Tellurium (${}^{130}\mathrm{Te}$, $Z=52$, $N=78$)
 
-**Knot formula.** $52\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 52 \cdot T_{2,3}$
+**Knot formula.** $52\mathfrak{p} \oplus 78\mathfrak{n} \oplus 52 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 52 \times 938.272 + 78 \times 939.565 = 122076.2 \text{MeV}$
 
@@ -843,7 +843,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 53. Iodine (${}^{127}\mathrm{I}$, $Z=53$, $N=74$)
 
-**Knot formula.** $53\mathfrak{p} \bowtie 74\mathfrak{n} \bowtie 53 \cdot T_{2,3}$
+**Knot formula.** $53\mathfrak{p} \oplus 74\mathfrak{n} \oplus 53 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 53 \times 938.272 + 74 \times 939.565 = 119256.2 \text{MeV}$
 
@@ -859,7 +859,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 54. Xenon (${}^{132}\mathrm{Xe}$, $Z=54$, $N=78$)
 
-**Knot formula.** $54\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 54 \cdot T_{2,3}$
+**Knot formula.** $54\mathfrak{p} \oplus 78\mathfrak{n} \oplus 54 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 54 \times 938.272 + 78 \times 939.565 = 123952.8 \text{MeV}$
 
@@ -875,7 +875,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 55. Caesium (${}^{133}\mathrm{Cs}$, $Z=55$, $N=78$)
 
-**Knot formula.** $55\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 55 \cdot T_{2,3}$
+**Knot formula.** $55\mathfrak{p} \oplus 78\mathfrak{n} \oplus 55 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 55 \times 938.272 + 78 \times 939.565 = 124891.0 \text{MeV}$
 
@@ -891,7 +891,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 56. Barium (${}^{138}\mathrm{Ba}$, $Z=56$, $N=82$)
 
-**Knot formula.** $56\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 56 \cdot T_{2,3}$
+**Knot formula.** $56\mathfrak{p} \oplus 82\mathfrak{n} \oplus 56 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 56 \times 938.272 + 82 \times 939.565 = 129587.6 \text{MeV}$
 
@@ -907,7 +907,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 57. Lanthanum (${}^{139}\mathrm{La}$, $Z=57$, $N=82$)
 
-**Knot formula.** $57\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 57 \cdot T_{2,3}$
+**Knot formula.** $57\mathfrak{p} \oplus 82\mathfrak{n} \oplus 57 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 57 \times 938.272 + 82 \times 939.565 = 130525.8 \text{MeV}$
 
@@ -923,7 +923,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 58. Cerium (${}^{140}\mathrm{Ce}$, $Z=58$, $N=82$)
 
-**Knot formula.** $58\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 58 \cdot T_{2,3}$
+**Knot formula.** $58\mathfrak{p} \oplus 82\mathfrak{n} \oplus 58 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 58 \times 938.272 + 82 \times 939.565 = 131464.1 \text{MeV}$
 
@@ -939,7 +939,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 59. Praseodymium (${}^{141}\mathrm{Pr}$, $Z=59$, $N=82$)
 
-**Knot formula.** $59\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 59 \cdot T_{2,3}$
+**Knot formula.** $59\mathfrak{p} \oplus 82\mathfrak{n} \oplus 59 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 59 \times 938.272 + 82 \times 939.565 = 132402.4 \text{MeV}$
 
@@ -955,7 +955,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 60. Neodymium (${}^{142}\mathrm{Nd}$, $Z=60$, $N=82$)
 
-**Knot formula.** $60\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 60 \cdot T_{2,3}$
+**Knot formula.** $60\mathfrak{p} \oplus 82\mathfrak{n} \oplus 60 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 60 \times 938.272 + 82 \times 939.565 = 133340.6 \text{MeV}$
 
@@ -971,7 +971,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 61. Promethium (${}^{145}\mathrm{Pm}$, $Z=61$, $N=84$)
 
-**Knot formula.** $61\mathfrak{p} \bowtie 84\mathfrak{n} \bowtie 61 \cdot T_{2,3}$
+**Knot formula.** $61\mathfrak{p} \oplus 84\mathfrak{n} \oplus 61 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 61 \times 938.272 + 84 \times 939.565 = 136158.1 \text{MeV}$
 
@@ -987,7 +987,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 62. Samarium (${}^{152}\mathrm{Sm}$, $Z=62$, $N=90$)
 
-**Knot formula.** $62\mathfrak{p} \bowtie 90\mathfrak{n} \bowtie 62 \cdot T_{2,3}$
+**Knot formula.** $62\mathfrak{p} \oplus 90\mathfrak{n} \oplus 62 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 62 \times 938.272 + 90 \times 939.565 = 142733.7 \text{MeV}$
 
@@ -1003,7 +1003,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 63. Europium (${}^{153}\mathrm{Eu}$, $Z=63$, $N=90$)
 
-**Knot formula.** $63\mathfrak{p} \bowtie 90\mathfrak{n} \bowtie 63 \cdot T_{2,3}$
+**Knot formula.** $63\mathfrak{p} \oplus 90\mathfrak{n} \oplus 63 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 63 \times 938.272 + 90 \times 939.565 = 143672.0 \text{MeV}$
 
@@ -1019,7 +1019,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 64. Gadolinium (${}^{158}\mathrm{Gd}$, $Z=64$, $N=94$)
 
-**Knot formula.** $64\mathfrak{p} \bowtie 94\mathfrak{n} \bowtie 64 \cdot T_{2,3}$
+**Knot formula.** $64\mathfrak{p} \oplus 94\mathfrak{n} \oplus 64 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 64 \times 938.272 + 94 \times 939.565 = 148368.5 \text{MeV}$
 
@@ -1035,7 +1035,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 65. Terbium (${}^{159}\mathrm{Tb}$, $Z=65$, $N=94$)
 
-**Knot formula.** $65\mathfrak{p} \bowtie 94\mathfrak{n} \bowtie 65 \cdot T_{2,3}$
+**Knot formula.** $65\mathfrak{p} \oplus 94\mathfrak{n} \oplus 65 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 65 \times 938.272 + 94 \times 939.565 = 149306.8 \text{MeV}$
 
@@ -1051,7 +1051,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 66. Dysprosium (${}^{164}\mathrm{Dy}$, $Z=66$, $N=98$)
 
-**Knot formula.** $66\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 66 \cdot T_{2,3}$
+**Knot formula.** $66\mathfrak{p} \oplus 98\mathfrak{n} \oplus 66 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 66 \times 938.272 + 98 \times 939.565 = 154003.3 \text{MeV}$
 
@@ -1067,7 +1067,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 67. Holmium (${}^{165}\mathrm{Ho}$, $Z=67$, $N=98$)
 
-**Knot formula.** $67\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 67 \cdot T_{2,3}$
+**Knot formula.** $67\mathfrak{p} \oplus 98\mathfrak{n} \oplus 67 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 67 \times 938.272 + 98 \times 939.565 = 154941.6 \text{MeV}$
 
@@ -1083,7 +1083,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 68. Erbium (${}^{166}\mathrm{Er}$, $Z=68$, $N=98$)
 
-**Knot formula.** $68\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 68 \cdot T_{2,3}$
+**Knot formula.** $68\mathfrak{p} \oplus 98\mathfrak{n} \oplus 68 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 68 \times 938.272 + 98 \times 939.565 = 155879.9 \text{MeV}$
 
@@ -1099,7 +1099,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 69. Thulium (${}^{169}\mathrm{Tm}$, $Z=69$, $N=100$)
 
-**Knot formula.** $69\mathfrak{p} \bowtie 100\mathfrak{n} \bowtie 69 \cdot T_{2,3}$
+**Knot formula.** $69\mathfrak{p} \oplus 100\mathfrak{n} \oplus 69 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 69 \times 938.272 + 100 \times 939.565 = 158697.3 \text{MeV}$
 
@@ -1115,7 +1115,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 70. Ytterbium (${}^{174}\mathrm{Yb}$, $Z=70$, $N=104$)
 
-**Knot formula.** $70\mathfrak{p} \bowtie 104\mathfrak{n} \bowtie 70 \cdot T_{2,3}$
+**Knot formula.** $70\mathfrak{p} \oplus 104\mathfrak{n} \oplus 70 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 70 \times 938.272 + 104 \times 939.565 = 163393.8 \text{MeV}$
 
@@ -1131,7 +1131,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 71. Lutetium (${}^{175}\mathrm{Lu}$, $Z=71$, $N=104$)
 
-**Knot formula.** $71\mathfrak{p} \bowtie 104\mathfrak{n} \bowtie 71 \cdot T_{2,3}$
+**Knot formula.** $71\mathfrak{p} \oplus 104\mathfrak{n} \oplus 71 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 71 \times 938.272 + 104 \times 939.565 = 164332.1 \text{MeV}$
 
@@ -1147,7 +1147,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 72. Hafnium (${}^{180}\mathrm{Hf}$, $Z=72$, $N=108$)
 
-**Knot formula.** $72\mathfrak{p} \bowtie 108\mathfrak{n} \bowtie 72 \cdot T_{2,3}$
+**Knot formula.** $72\mathfrak{p} \oplus 108\mathfrak{n} \oplus 72 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 72 \times 938.272 + 108 \times 939.565 = 169028.6 \text{MeV}$
 
@@ -1163,7 +1163,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 73. Tantalum (${}^{181}\mathrm{Ta}$, $Z=73$, $N=108$)
 
-**Knot formula.** $73\mathfrak{p} \bowtie 108\mathfrak{n} \bowtie 73 \cdot T_{2,3}$
+**Knot formula.** $73\mathfrak{p} \oplus 108\mathfrak{n} \oplus 73 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 73 \times 938.272 + 108 \times 939.565 = 169966.9 \text{MeV}$
 
@@ -1179,7 +1179,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 74. Tungsten (${}^{184}\mathrm{W}$, $Z=74$, $N=110$)
 
-**Knot formula.** $74\mathfrak{p} \bowtie 110\mathfrak{n} \bowtie 74 \cdot T_{2,3}$
+**Knot formula.** $74\mathfrak{p} \oplus 110\mathfrak{n} \oplus 74 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 74 \times 938.272 + 110 \times 939.565 = 172784.3 \text{MeV}$
 
@@ -1195,7 +1195,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 75. Rhenium (${}^{187}\mathrm{Re}$, $Z=75$, $N=112$)
 
-**Knot formula.** $75\mathfrak{p} \bowtie 112\mathfrak{n} \bowtie 75 \cdot T_{2,3}$
+**Knot formula.** $75\mathfrak{p} \oplus 112\mathfrak{n} \oplus 75 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 75 \times 938.272 + 112 \times 939.565 = 175601.7 \text{MeV}$
 
@@ -1211,7 +1211,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 76. Osmium (${}^{192}\mathrm{Os}$, $Z=76$, $N=116$)
 
-**Knot formula.** $76\mathfrak{p} \bowtie 116\mathfrak{n} \bowtie 76 \cdot T_{2,3}$
+**Knot formula.** $76\mathfrak{p} \oplus 116\mathfrak{n} \oplus 76 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 76 \times 938.272 + 116 \times 939.565 = 180298.2 \text{MeV}$
 
@@ -1227,7 +1227,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 77. Iridium (${}^{193}\mathrm{Ir}$, $Z=77$, $N=116$)
 
-**Knot formula.** $77\mathfrak{p} \bowtie 116\mathfrak{n} \bowtie 77 \cdot T_{2,3}$
+**Knot formula.** $77\mathfrak{p} \oplus 116\mathfrak{n} \oplus 77 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 77 \times 938.272 + 116 \times 939.565 = 181236.5 \text{MeV}$
 
@@ -1243,7 +1243,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 78. Platinum (${}^{195}\mathrm{Pt}$, $Z=78$, $N=117$)
 
-**Knot formula.** $78\mathfrak{p} \bowtie 117\mathfrak{n} \bowtie 78 \cdot T_{2,3}$
+**Knot formula.** $78\mathfrak{p} \oplus 117\mathfrak{n} \oplus 78 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 78 \times 938.272 + 117 \times 939.565 = 183114.3 \text{MeV}$
 
@@ -1259,7 +1259,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 79. Gold (${}^{197}\mathrm{Au}$, $Z=79$, $N=118$)
 
-**Knot formula.** $79\mathfrak{p} \bowtie 118\mathfrak{n} \bowtie 79 \cdot T_{2,3}$
+**Knot formula.** $79\mathfrak{p} \oplus 118\mathfrak{n} \oplus 79 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 79 \times 938.272 + 118 \times 939.565 = 184992.2 \text{MeV}$
 
@@ -1275,7 +1275,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 80. Mercury (${}^{202}\mathrm{Hg}$, $Z=80$, $N=122$)
 
-**Knot formula.** $80\mathfrak{p} \bowtie 122\mathfrak{n} \bowtie 80 \cdot T_{2,3}$
+**Knot formula.** $80\mathfrak{p} \oplus 122\mathfrak{n} \oplus 80 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 80 \times 938.272 + 122 \times 939.565 = 189688.7 \text{MeV}$
 
@@ -1291,7 +1291,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 81. Thallium (${}^{205}\mathrm{Tl}$, $Z=81$, $N=124$)
 
-**Knot formula.** $81\mathfrak{p} \bowtie 124\mathfrak{n} \bowtie 81 \cdot T_{2,3}$
+**Knot formula.** $81\mathfrak{p} \oplus 124\mathfrak{n} \oplus 81 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 81 \times 938.272 + 124 \times 939.565 = 192506.1 \text{MeV}$
 
@@ -1307,7 +1307,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 82. Lead (${}^{208}\mathrm{Pb}$, $Z=82$, $N=126$)
 
-**Knot formula.** $82\mathfrak{p} \bowtie 126\mathfrak{n} \bowtie 82 \cdot T_{2,3}$
+**Knot formula.** $82\mathfrak{p} \oplus 126\mathfrak{n} \oplus 82 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 82 \times 938.272 + 126 \times 939.565 = 195323.5 \text{MeV}$
 
@@ -1323,7 +1323,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 83. Bismuth (${}^{209}\mathrm{Bi}$, $Z=83$, $N=126$)
 
-**Knot formula.** $83\mathfrak{p} \bowtie 126\mathfrak{n} \bowtie 83 \cdot T_{2,3}$
+**Knot formula.** $83\mathfrak{p} \oplus 126\mathfrak{n} \oplus 83 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 83 \times 938.272 + 126 \times 939.565 = 196261.8 \text{MeV}$
 
@@ -1339,7 +1339,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 84. Polonium (${}^{209}\mathrm{Po}$, $Z=84$, $N=125$)
 
-**Knot formula.** $84\mathfrak{p} \bowtie 125\mathfrak{n} \bowtie 84 \cdot T_{2,3}$
+**Knot formula.** $84\mathfrak{p} \oplus 125\mathfrak{n} \oplus 84 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 84 \times 938.272 + 125 \times 939.565 = 196260.5 \text{MeV}$
 
@@ -1355,7 +1355,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 85. Astatine (${}^{210}\mathrm{At}$, $Z=85$, $N=125$)
 
-**Knot formula.** $85\mathfrak{p} \bowtie 125\mathfrak{n} \bowtie 85 \cdot T_{2,3}$
+**Knot formula.** $85\mathfrak{p} \oplus 125\mathfrak{n} \oplus 85 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 85 \times 938.272 + 125 \times 939.565 = 197198.7 \text{MeV}$
 
@@ -1371,7 +1371,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 86. Radon (${}^{222}\mathrm{Rn}$, $Z=86$, $N=136$)
 
-**Knot formula.** $86\mathfrak{p} \bowtie 136\mathfrak{n} \bowtie 86 \cdot T_{2,3}$
+**Knot formula.** $86\mathfrak{p} \oplus 136\mathfrak{n} \oplus 86 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 86 \times 938.272 + 136 \times 939.565 = 208472.2 \text{MeV}$
 
@@ -1387,7 +1387,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 87. Francium (${}^{223}\mathrm{Fr}$, $Z=87$, $N=136$)
 
-**Knot formula.** $87\mathfrak{p} \bowtie 136\mathfrak{n} \bowtie 87 \cdot T_{2,3}$
+**Knot formula.** $87\mathfrak{p} \oplus 136\mathfrak{n} \oplus 87 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 87 \times 938.272 + 136 \times 939.565 = 209410.5 \text{MeV}$
 
@@ -1403,7 +1403,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 88. Radium (${}^{226}\mathrm{Ra}$, $Z=88$, $N=138$)
 
-**Knot formula.** $88\mathfrak{p} \bowtie 138\mathfrak{n} \bowtie 88 \cdot T_{2,3}$
+**Knot formula.** $88\mathfrak{p} \oplus 138\mathfrak{n} \oplus 88 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 88 \times 938.272 + 138 \times 939.565 = 212227.9 \text{MeV}$
 
@@ -1419,7 +1419,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 89. Actinium (${}^{227}\mathrm{Ac}$, $Z=89$, $N=138$)
 
-**Knot formula.** $89\mathfrak{p} \bowtie 138\mathfrak{n} \bowtie 89 \cdot T_{2,3}$
+**Knot formula.** $89\mathfrak{p} \oplus 138\mathfrak{n} \oplus 89 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 89 \times 938.272 + 138 \times 939.565 = 213166.2 \text{MeV}$
 
@@ -1435,7 +1435,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 90. Thorium (${}^{232}\mathrm{Th}$, $Z=90$, $N=142$)
 
-**Knot formula.** $90\mathfrak{p} \bowtie 142\mathfrak{n} \bowtie 90 \cdot T_{2,3}$
+**Knot formula.** $90\mathfrak{p} \oplus 142\mathfrak{n} \oplus 90 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 90 \times 938.272 + 142 \times 939.565 = 217862.7 \text{MeV}$
 
@@ -1451,7 +1451,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 91. Protactinium (${}^{231}\mathrm{Pa}$, $Z=91$, $N=140$)
 
-**Knot formula.** $91\mathfrak{p} \bowtie 140\mathfrak{n} \bowtie 91 \cdot T_{2,3}$
+**Knot formula.** $91\mathfrak{p} \oplus 140\mathfrak{n} \oplus 91 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 91 \times 938.272 + 140 \times 939.565 = 216921.9 \text{MeV}$
 
@@ -1467,7 +1467,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 92. Uranium (${}^{238}\mathrm{U}$, $Z=92$, $N=146$)
 
-**Knot formula.** $92\mathfrak{p} \bowtie 146\mathfrak{n} \bowtie 92 \cdot T_{2,3}$
+**Knot formula.** $92\mathfrak{p} \oplus 146\mathfrak{n} \oplus 92 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 92 \times 938.272 + 146 \times 939.565 = 223497.5 \text{MeV}$
 
@@ -1485,7 +1485,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 93. Neptunium (${}^{237}\mathrm{Np}$, $Z=93$, $N=144$)
 
-**Knot formula.** $93\mathfrak{p} \bowtie 144\mathfrak{n} \bowtie 93 \cdot T_{2,3}$
+**Knot formula.** $93\mathfrak{p} \oplus 144\mathfrak{n} \oplus 93 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 93 \times 938.272 + 144 \times 939.565 = 222556.7 \text{MeV}$
 
@@ -1501,7 +1501,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 94. Plutonium (${}^{244}\mathrm{Pu}$, $Z=94$, $N=150$)
 
-**Knot formula.** $94\mathfrak{p} \bowtie 150\mathfrak{n} \bowtie 94 \cdot T_{2,3}$
+**Knot formula.** $94\mathfrak{p} \oplus 150\mathfrak{n} \oplus 94 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 94 \times 938.272 + 150 \times 939.565 = 229132.3 \text{MeV}$
 
@@ -1517,7 +1517,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 95. Americium (${}^{243}\mathrm{Am}$, $Z=95$, $N=148$)
 
-**Knot formula.** $95\mathfrak{p} \bowtie 148\mathfrak{n} \bowtie 95 \cdot T_{2,3}$
+**Knot formula.** $95\mathfrak{p} \oplus 148\mathfrak{n} \oplus 95 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 95 \times 938.272 + 148 \times 939.565 = 228191.5 \text{MeV}$
 
@@ -1533,7 +1533,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 96. Curium (${}^{247}\mathrm{Cm}$, $Z=96$, $N=151$)
 
-**Knot formula.** $96\mathfrak{p} \bowtie 151\mathfrak{n} \bowtie 96 \cdot T_{2,3}$
+**Knot formula.** $96\mathfrak{p} \oplus 151\mathfrak{n} \oplus 96 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 96 \times 938.272 + 151 \times 939.565 = 231948.4 \text{MeV}$
 
@@ -1549,7 +1549,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 97. Berkelium (${}^{247}\mathrm{Bk}$, $Z=97$, $N=150$)
 
-**Knot formula.** $97\mathfrak{p} \bowtie 150\mathfrak{n} \bowtie 97 \cdot T_{2,3}$
+**Knot formula.** $97\mathfrak{p} \oplus 150\mathfrak{n} \oplus 97 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 97 \times 938.272 + 150 \times 939.565 = 231947.1 \text{MeV}$
 
@@ -1565,7 +1565,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 98. Californium (${}^{251}\mathrm{Cf}$, $Z=98$, $N=153$)
 
-**Knot formula.** $98\mathfrak{p} \bowtie 153\mathfrak{n} \bowtie 98 \cdot T_{2,3}$
+**Knot formula.** $98\mathfrak{p} \oplus 153\mathfrak{n} \oplus 98 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 98 \times 938.272 + 153 \times 939.565 = 235704.1 \text{MeV}$
 
@@ -1581,7 +1581,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 99. Einsteinium (${}^{252}\mathrm{Es}$, $Z=99$, $N=153$)
 
-**Knot formula.** $99\mathfrak{p} \bowtie 153\mathfrak{n} \bowtie 99 \cdot T_{2,3}$
+**Knot formula.** $99\mathfrak{p} \oplus 153\mathfrak{n} \oplus 99 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 99 \times 938.272 + 153 \times 939.565 = 236642.4 \text{MeV}$
 
@@ -1597,7 +1597,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 100. Fermium (${}^{257}\mathrm{Fm}$, $Z=100$, $N=157$)
 
-**Knot formula.** $100\mathfrak{p} \bowtie 157\mathfrak{n} \bowtie 100 \cdot T_{2,3}$
+**Knot formula.** $100\mathfrak{p} \oplus 157\mathfrak{n} \oplus 100 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 100 \times 938.272 + 157 \times 939.565 = 241338.9 \text{MeV}$
 
@@ -1613,7 +1613,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 101. Mendelevium (${}^{258}\mathrm{Md}$, $Z=101$, $N=157$)
 
-**Knot formula.** $101\mathfrak{p} \bowtie 157\mathfrak{n} \bowtie 101 \cdot T_{2,3}$
+**Knot formula.** $101\mathfrak{p} \oplus 157\mathfrak{n} \oplus 101 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 101 \times 938.272 + 157 \times 939.565 = 242277.2 \text{MeV}$
 
@@ -1629,7 +1629,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 102. Nobelium (${}^{259}\mathrm{No}$, $Z=102$, $N=157$)
 
-**Knot formula.** $102\mathfrak{p} \bowtie 157\mathfrak{n} \bowtie 102 \cdot T_{2,3}$
+**Knot formula.** $102\mathfrak{p} \oplus 157\mathfrak{n} \oplus 102 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 102 \times 938.272 + 157 \times 939.565 = 243215.4 \text{MeV}$
 
@@ -1645,7 +1645,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 103. Lawrencium (${}^{266}\mathrm{Lr}$, $Z=103$, $N=163$)
 
-**Knot formula.** $103\mathfrak{p} \bowtie 163\mathfrak{n} \bowtie 103 \cdot T_{2,3}$
+**Knot formula.** $103\mathfrak{p} \oplus 163\mathfrak{n} \oplus 103 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 103 \times 938.272 + 163 \times 939.565 = 249791.1 \text{MeV}$
 
@@ -1661,7 +1661,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 104. Rutherfordium (${}^{267}\mathrm{Rf}$, $Z=104$, $N=163$)
 
-**Knot formula.** $104\mathfrak{p} \bowtie 163\mathfrak{n} \bowtie 104 \cdot T_{2,3}$
+**Knot formula.** $104\mathfrak{p} \oplus 163\mathfrak{n} \oplus 104 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 104 \times 938.272 + 163 \times 939.565 = 250729.4 \text{MeV}$
 
@@ -1677,7 +1677,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 105. Dubnium (${}^{268}\mathrm{Db}$, $Z=105$, $N=163$)
 
-**Knot formula.** $105\mathfrak{p} \bowtie 163\mathfrak{n} \bowtie 105 \cdot T_{2,3}$
+**Knot formula.** $105\mathfrak{p} \oplus 163\mathfrak{n} \oplus 105 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 105 \times 938.272 + 163 \times 939.565 = 251667.7 \text{MeV}$
 
@@ -1693,7 +1693,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 106. Seaborgium (${}^{269}\mathrm{Sg}$, $Z=106$, $N=163$)
 
-**Knot formula.** $106\mathfrak{p} \bowtie 163\mathfrak{n} \bowtie 106 \cdot T_{2,3}$
+**Knot formula.** $106\mathfrak{p} \oplus 163\mathfrak{n} \oplus 106 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 106 \times 938.272 + 163 \times 939.565 = 252605.9 \text{MeV}$
 
@@ -1709,7 +1709,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 107. Bohrium (${}^{270}\mathrm{Bh}$, $Z=107$, $N=163$)
 
-**Knot formula.** $107\mathfrak{p} \bowtie 163\mathfrak{n} \bowtie 107 \cdot T_{2,3}$
+**Knot formula.** $107\mathfrak{p} \oplus 163\mathfrak{n} \oplus 107 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 107 \times 938.272 + 163 \times 939.565 = 253544.2 \text{MeV}$
 
@@ -1725,7 +1725,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 108. Hassium (${}^{277}\mathrm{Hs}$, $Z=108$, $N=169$)
 
-**Knot formula.** $108\mathfrak{p} \bowtie 169\mathfrak{n} \bowtie 108 \cdot T_{2,3}$
+**Knot formula.** $108\mathfrak{p} \oplus 169\mathfrak{n} \oplus 108 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 108 \times 938.272 + 169 \times 939.565 = 260119.9 \text{MeV}$
 
@@ -1741,7 +1741,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 109. Meitnerium (${}^{278}\mathrm{Mt}$, $Z=109$, $N=169$)
 
-**Knot formula.** $109\mathfrak{p} \bowtie 169\mathfrak{n} \bowtie 109 \cdot T_{2,3}$
+**Knot formula.** $109\mathfrak{p} \oplus 169\mathfrak{n} \oplus 109 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 109 \times 938.272 + 169 \times 939.565 = 261058.1 \text{MeV}$
 
@@ -1757,7 +1757,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 110. Darmstadtium (${}^{281}\mathrm{Ds}$, $Z=110$, $N=171$)
 
-**Knot formula.** $110\mathfrak{p} \bowtie 171\mathfrak{n} \bowtie 110 \cdot T_{2,3}$
+**Knot formula.** $110\mathfrak{p} \oplus 171\mathfrak{n} \oplus 110 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 110 \times 938.272 + 171 \times 939.565 = 263875.5 \text{MeV}$
 
@@ -1773,7 +1773,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 111. Roentgenium (${}^{282}\mathrm{Rg}$, $Z=111$, $N=171$)
 
-**Knot formula.** $111\mathfrak{p} \bowtie 171\mathfrak{n} \bowtie 111 \cdot T_{2,3}$
+**Knot formula.** $111\mathfrak{p} \oplus 171\mathfrak{n} \oplus 111 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 111 \times 938.272 + 171 \times 939.565 = 264813.8 \text{MeV}$
 
@@ -1789,7 +1789,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 112. Copernicium (${}^{285}\mathrm{Cn}$, $Z=112$, $N=173$)
 
-**Knot formula.** $112\mathfrak{p} \bowtie 173\mathfrak{n} \bowtie 112 \cdot T_{2,3}$
+**Knot formula.** $112\mathfrak{p} \oplus 173\mathfrak{n} \oplus 112 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 112 \times 938.272 + 173 \times 939.565 = 267631.2 \text{MeV}$
 
@@ -1805,7 +1805,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 113. Nihonium (${}^{286}\mathrm{Nh}$, $Z=113$, $N=173$)
 
-**Knot formula.** $113\mathfrak{p} \bowtie 173\mathfrak{n} \bowtie 113 \cdot T_{2,3}$
+**Knot formula.** $113\mathfrak{p} \oplus 173\mathfrak{n} \oplus 113 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 113 \times 938.272 + 173 \times 939.565 = 268569.5 \text{MeV}$
 
@@ -1821,7 +1821,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 114. Flerovium (${}^{289}\mathrm{Fl}$, $Z=114$, $N=175$)
 
-**Knot formula.** $114\mathfrak{p} \bowtie 175\mathfrak{n} \bowtie 114 \cdot T_{2,3}$
+**Knot formula.** $114\mathfrak{p} \oplus 175\mathfrak{n} \oplus 114 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 114 \times 938.272 + 175 \times 939.565 = 271386.9 \text{MeV}$
 
@@ -1837,7 +1837,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 115. Moscovium (${}^{290}\mathrm{Mc}$, $Z=115$, $N=175$)
 
-**Knot formula.** $115\mathfrak{p} \bowtie 175\mathfrak{n} \bowtie 115 \cdot T_{2,3}$
+**Knot formula.** $115\mathfrak{p} \oplus 175\mathfrak{n} \oplus 115 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 115 \times 938.272 + 175 \times 939.565 = 272325.2 \text{MeV}$
 
@@ -1853,7 +1853,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 116. Livermorium (${}^{293}\mathrm{Lv}$, $Z=116$, $N=177$)
 
-**Knot formula.** $116\mathfrak{p} \bowtie 177\mathfrak{n} \bowtie 116 \cdot T_{2,3}$
+**Knot formula.** $116\mathfrak{p} \oplus 177\mathfrak{n} \oplus 116 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 116 \times 938.272 + 177 \times 939.565 = 275142.6 \text{MeV}$
 
@@ -1869,7 +1869,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 117. Tennessine (${}^{294}\mathrm{Ts}$, $Z=117$, $N=177$)
 
-**Knot formula.** $117\mathfrak{p} \bowtie 177\mathfrak{n} \bowtie 117 \cdot T_{2,3}$
+**Knot formula.** $117\mathfrak{p} \oplus 177\mathfrak{n} \oplus 117 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 117 \times 938.272 + 177 \times 939.565 = 276080.8 \text{MeV}$
 
@@ -1885,7 +1885,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 ### 118. Oganesson (${}^{294}\mathrm{Og}$, $Z=118$, $N=176$)
 
-**Knot formula.** $118\mathfrak{p} \bowtie 176\mathfrak{n} \bowtie 118 \cdot T_{2,3}$
+**Knot formula.** $118\mathfrak{p} \oplus 176\mathfrak{n} \oplus 118 \cdot T_{2,3}$
 
 **Step 1.** Free nucleon mass: $M_{\text{free}} = 118 \times 938.272 + 176 \times 939.565 = 276079.5 \text{MeV}$
 

@@ -112,7 +112,7 @@ Markov non-degeneracy
 Each element displays:
 
 - **Symbol** and atomic number
-- **Nuclear knot**: $Z\mathcal{B}_3 \bowtie N\mathcal{B}_3$
+- **Nuclear knot**: $Z\mathcal{B}_3 \oplus N\mathcal{B}_3$
   with $k_\alpha$ sub-links highlighted
 - **Electron knot**: trefoil writhe diagram showing occupied
   shells and the current Fourier mode
@@ -181,4 +181,4 @@ The visualization should be an interactive HTML page
 9. **Shell eigenvalue display**: optional overlay showing
    $\lambda_+^n$ at the element's outermost electron shell,
    with the Chebyshev recurrence index and binding energy
-   $\mathbf{E}_{\mathrm{bind}} \propto \lambda_+^{-n}$.
+   $\mathfrak{E}_{\mathrm{bind}} \propto \lambda_+^{-n}$.

@@ -468,15 +468,15 @@ property follows by direct computation. Bar-functoriality is the
 categorical analog of the Hecke antipode $\iota(\sigma_i) =
 \sigma_i^{-1}$ — well-known in $H_n(q)$.
 
-**Connection to $\Delta_I$.** Per
+**Connection to $\bowtie_K$.** Per
 [`def:ew-interface-knot`](#def:ew-interface-knot), the Higgs-vev
-coupling introduces an interface knot $\Delta_I \in H_6(q)$ that
+coupling introduces an interface knot $\bowtie_K \in H_6(q)$ that
 breaks term-by-term bar-self-duality. Under bar-functoriality:
-$\iota(\Delta_I) = \Delta_I^{-1}$, so the interface contribution
+$\iota(\bowtie_K) = \bowtie_K^{-1}$, so the interface contribution
 flips orientation. The structural finding "2 of 76 tableaux
-remain $\Delta_I$-invariant" is the categorical statement that
+remain $\bowtie_K$-invariant" is the categorical statement that
 **the bar-involution-fixed sub-locus** of $\mathrm{End}_R(V^{\otimes 6})$
-under $\beta_{\rm EW}(\Delta_I)$ is 2-dimensional — exactly the
+under $\beta_{\rm EW}(\bowtie_K)$ is 2-dimensional — exactly the
 photon + fully-broken extreme.
 
 ### Reduction to $\sigma_i^{2k}$ on disjoint strand-pairs

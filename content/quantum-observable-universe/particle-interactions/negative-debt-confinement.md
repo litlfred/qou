@@ -51,7 +51,7 @@ The current computation uses $H_3(q)$ (3 strands = 3 quarks).
 This respects confinement (color-singlet closure via the
 Borromean braid $B_3$), is fully computable today, and produces
 the correct $Q_\beta$ by construction.  However, the energy scale
-$\mathbf{E}_0 \approx 4.155$ MeV is calibrated, not predicted.
+$\mathfrak{E}_0 \approx 4.155$ MeV is calibrated, not predicted.
 
 The natural next step is **nine-strand** Gröbner--Shirshov normal
 forms in $H_9(q)$, treating each quark as a 3-strand sub-braid
@@ -66,7 +66,7 @@ forms in $H_9(q)$, treating each quark as a 3-strand sub-braid
    is sparse (structured as $B_9 \cdot \text{crossings}$) and
    our reduction engine is already optimized for this pattern.
 
-3. **Could predict $\mathbf{E}_0$**: with color-resolved strands,
+3. **Could predict $\mathfrak{E}_0$**: with color-resolved strands,
    the coefficient differences may carry enough structure to fix
    the energy scale from the algebra alone, without calibration
    against $Q_\beta$.

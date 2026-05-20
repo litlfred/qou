@@ -1,9 +1,9 @@
 The Gröbner--Shirshov normal form coefficients are dimensionless Laurent
 polynomials in $q$.  To connect them to observed energies we need
-an **energy scale** $\mathbf{E}_0$ (in MeV) such that
+an **energy scale** $\mathfrak{E}_0$ (in MeV) such that
 
 $$
-  |\Delta(\mathrm{net})| \times \mathbf{E}_0
+  |\Delta(\mathrm{net})| \times \mathfrak{E}_0
   = 
   Q_{\beta}
   = 
@@ -11,15 +11,15 @@ $$
    \approx  0.7823 \text{MeV}.
 $$
 
-The framework gives $\mathbf{E}_0$ in two forms — a **single-Planck-tick**
+The framework gives $\mathfrak{E}_0$ in two forms — a **single-Planck-tick**
 ($N=0$) value and a **tower-summed** ($N \to \infty$) geometric form —
 that differ by the brane-tower correction $1/(1-\hbar_q^2) \approx 1.0099$
 at $q_0 \approx 1.110$.  Both are derivable from CAL-1 ($m_e$) and CAL-2
 ($q_0$) alone; CAL-3 ($Q_\beta(n)$) is the cross-check.  See the
 [notation register](../notation/notation-register.md) for the
-$\mathbf{E}_0^{(N=0)}$ / $\mathbf{E}_0^{\text{full}}$ symbol convention
+$\mathfrak{E}_0^{(N=0)}$ / $\mathfrak{E}_0^{\text{full}}$ symbol convention
 and the [collisions note](../notation/notation-collisions.md) for why
-$\mathbf{E}_0$ is **not** $Q_\beta(n)$.
+$\mathfrak{E}_0$ is **not** $Q_\beta(n)$.
 
 ## Linearity
 
@@ -42,14 +42,14 @@ From CODATA 2022:
 - $\mathfrak{m}_{e} \approx 0.51100\;\text{MeV}$
 - $Q_{\beta} \approx 0.78233\;\text{MeV}$
 
-**Derived energy scale — single-tick (Planck-tick) form, $\mathbf{E}_0^{(N=0)}$.**
+**Derived energy scale — single-tick (Planck-tick) form, $\mathfrak{E}_0^{(N=0)}$.**
 The leading-order energy scale is derivable from the categorical
 three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$) alone —
 $Q_\beta(n)$ ($H^2$) is the datum the framework predicts, not consumed
 here ([three-calibration discipline](#prop:three-calibration-discipline)):
 
 $$
-  \mathbf{E}_0^{(N=0)}
+  \mathfrak{E}_0^{(N=0)}
   :=
   \frac{m_e}{q_0(q_0 - 1)}
   =
@@ -60,29 +60,29 @@ $$
 This is the electron rest energy per Planck time
 ([energy scale and Planck time](#rem:energy-scale-planck)).
 
-**Derived energy scale — tower-summed form, $\mathbf{E}_0^{\text{full}}$.**
+**Derived energy scale — tower-summed form, $\mathfrak{E}_0^{\text{full}}$.**
 The full brane-tower geometric series ([symbolic derivation](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_beta_form_a_n1_extension.py#L32))
 is
 
 $$
-  \mathbf{E}_0^{\text{full}}
+  \mathfrak{E}_0^{\text{full}}
   :=
-  \mathbf{E}_0^{(N=0)} \cdot \sum_{k=0}^{\infty} \hbar_q^{2k}
+  \mathfrak{E}_0^{(N=0)} \cdot \sum_{k=0}^{\infty} \hbar_q^{2k}
   =
-  \frac{\mathbf{E}_0^{(N=0)}}{1 - \hbar_q^2}
+  \frac{\mathfrak{E}_0^{(N=0)}}{1 - \hbar_q^2}
   \approx  4.228 \text{MeV}
 $$
 
 at $q_0 \approx 1.110$, ≈ +0.99% over the single-tick value. Truncations
-$\mathbf{E}_0^{(N)} = \mathbf{E}_0^{(N=0)} \cdot (1 - \hbar_q^{2(N+1)})/(1 - \hbar_q^2)$
+$\mathfrak{E}_0^{(N)} = \mathfrak{E}_0^{(N=0)} \cdot (1 - \hbar_q^{2(N+1)})/(1 - \hbar_q^2)$
 recover the tower at finite depth.
 
-**Calibration cross-check, $\mathbf{E}_0^{(\text{cal})}$.**
+**Calibration cross-check, $\mathfrak{E}_0^{(\text{cal})}$.**
 The same scale can be extracted from CODATA by dividing the
 free neutron $Q$-value by the Hecke NF difference:
 
 $$
-  \mathbf{E}_0^{(\text{cal})}
+  \mathfrak{E}_0^{(\text{cal})}
   =
   \frac{Q_{\beta}}{|\Delta(\mathrm{net})|}
   =
@@ -94,13 +94,13 @@ $$
 The values, computed from the witness
 [`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-beta-form-a-n1-extension.witness.json):
 
-| Quantity | Value (MeV) | vs $\mathbf{E}_0^{(\text{cal,symb})}$ |
+| Quantity | Value (MeV) | vs $\mathfrak{E}_0^{(\text{cal,symb})}$ |
 |----------|------------:|------------------------------:|
-| $\mathbf{E}_0^{(N=0)}$ (single-tick derived) | $:val[E_0_N0_MeV]{precision=4}$ | $+0.17\%$ |
-| $\mathbf{E}_0^{\text{full}}$ (geometric-tower derived) | $:val[E_0_full_MeV]{precision=4}$ | $+1.16\%$ |
-| $\mathbf{E}_0^{\text{full},\mathrm{Li}_2^q}$ (symmetric q-dilogarithm candidate) | $:val[E_0_full_li2q_MeV]{precision=4}$ | $+1.15\%$ |
-| $\mathbf{E}_0^{(\text{cal,symb})}$ (CODATA / $h(h-2)/2$) | $:val[E_0_calibrated_MeV]{precision=4}$ | reference (symbolic) |
-| $\mathbf{E}_0^{(\text{cal,typed})}$ (CODATA / $\lvert\Delta(\text{net,typed})\rvert$) | $4.155$ | typed-crossings value (finite-size noise, 0.6% below symbolic) |
+| $\mathfrak{E}_0^{(N=0)}$ (single-tick derived) | $:val[E_0_N0_MeV]{precision=4}$ | $+0.17\%$ |
+| $\mathfrak{E}_0^{\text{full}}$ (geometric-tower derived) | $:val[E_0_full_MeV]{precision=4}$ | $+1.16\%$ |
+| $\mathfrak{E}_0^{\text{full},\mathrm{Li}_2^q}$ (symmetric q-dilogarithm candidate) | $:val[E_0_full_li2q_MeV]{precision=4}$ | $+1.15\%$ |
+| $\mathfrak{E}_0^{(\text{cal,symb})}$ (CODATA / $h(h-2)/2$) | $:val[E_0_calibrated_MeV]{precision=4}$ | reference (symbolic) |
+| $\mathfrak{E}_0^{(\text{cal,typed})}$ (CODATA / $\lvert\Delta(\text{net,typed})\rvert$) | $4.155$ | typed-crossings value (finite-size noise, 0.6% below symbolic) |
 
 **Open finding (2026-05-17).** Both the geometric tower form
 $1/(1-\hbar_q^2)$ and the bounded symmetric $\mathrm{Li}_2^q$
@@ -124,7 +124,7 @@ conjecture seeks.
 
 Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
 net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to
-keep $\mathbf{E}_0 > 0$.
+keep $\mathfrak{E}_0 > 0$.
 
 ## NF$_+$ / NF$_-$ decomposition
 
@@ -155,10 +155,10 @@ Terms $\ell < 2$ ($\gamma, \sigma_0, \sigma_1$) are virtual.
 | **Proton** | $+0.0655$ | $+0.9336$ |
 | **$\Delta$** | $-0.1101$ | $-0.0782$ |
 
-The observable-only $Q$-value, using $\mathbf{E}_0(\mathrm{net})$:
+The observable-only $Q$-value, using $\mathfrak{E}_0(\mathrm{net})$:
 
 $$
-  Q_{\geq 2} = |\Delta(\ell \geq 2)| \times \mathbf{E}_0
+  Q_{\geq 2} = |\Delta(\ell \geq 2)| \times \mathfrak{E}_0
   = 0.11007 \times 4.155
   \approx 0.4573 \text{MeV}
   =  58.5\% \text{of}Q_\beta.
@@ -166,7 +166,7 @@ $$
 
 ## Energy scale scenarios
 
-| Scenario | $|\Delta|$ | $\mathbf{E}_0$ (MeV) | $\mathbf{E}_0 / \mathfrak{m}_e$ |
+| Scenario | $|\Delta|$ | $\mathfrak{E}_0$ (MeV) | $\mathfrak{E}_0 / \mathfrak{m}_e$ |
 |:---|---:|---:|---:|
 | All terms $|\Delta\mathrm{net}|$ | $0.18829$ | $4.155$ | $8.131$ |
 | Observable $|\Delta(\ell \geq 2)|$ | $0.11007$ | $7.108$ | $13.909$ |
@@ -176,10 +176,10 @@ $$
 ## Full energy budget
 
 Each of the six NF terms contributes
-$\Delta_i \times \mathbf{E}_0$ to the total decay energy.
+$\Delta_i \times \mathfrak{E}_0$ to the total decay energy.
 The budget is:
 
-| Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathbf{E}_0$ (MeV) |
+| Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathfrak{E}_0$ (MeV) |
 |:---:|:---:|:---:|:---:|---:|---:|
 | $\gamma$ | $\mathbf{1}$ | photon | $0$ | $-0.10205$ | $+0.4240$ |
 | $\sigma_0$ | $\sigma_0$ | virtual | $1$ | $+0.01240$ | $-0.0515$ |
@@ -190,8 +190,8 @@ The budget is:
 |  |  |  |  | **Sum** | **$+0.782$ MeV** |
 
 (Signs: $\Delta(\mathrm{net}) < 0$ with typed crossings, so the
-$\mathbf{E}_0$ budget uses the sign convention
-$\Delta_i \times \mathbf{E}_0 \times (-\mathrm{sgn}\Delta_{\mathrm{net}})$
+$\mathfrak{E}_0$ budget uses the sign convention
+$\Delta_i \times \mathfrak{E}_0 \times (-\mathrm{sgn}\Delta_{\mathrm{net}})$
 to give $Q > 0$.)
 
 ## The $L_+$ dominance (typed crossings)

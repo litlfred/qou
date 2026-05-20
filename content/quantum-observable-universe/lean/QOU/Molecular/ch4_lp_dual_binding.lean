@@ -54,7 +54,7 @@ $$
 *The $S_4$ symmetry of the optimum means:*
 1. *Each C--H bond has the same traced volume $\hat{V}_b$*
 2. *Each H--H repulsion has the same $\Phi_1$ penalty*
-3. *The total binding energy is exactly $4 \times \mathbf{E}_{\mathrm{bind}}^{CH}$*
+3. *The total binding energy is exactly $4 \times \mathfrak{E}_{\mathrm{bind}}^{CH}$*
 
 *The LP dual shadow prices:*
 - *$y_{CH}$: marginal value of one C--H bond = single-bond

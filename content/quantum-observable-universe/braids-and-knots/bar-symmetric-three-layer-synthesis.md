@@ -57,7 +57,7 @@ $$h \;=\; \underbrace{(q^{1/2} - q^{-1/2})}_{h_{1/2},\;\text{bar-ANTI-sym}} \;\c
 The bar-anti-symmetry of $h$ comes *entirely* from the half-step
 factor $h_{1/2} = q^{1/2} - q^{-1/2}$; the second factor is the
 **Markov parameter** $z = 1/(q^{1/2}+q^{-1/2})$ that appears as
-the interface-knot value $\Delta_I^K = z$ in the cross-PR Phase 5c.1 cross-check (`delta_lambda_fr_identity_phase5c.py`)
+the interface-knot value $\bowtie_K = z$ in the cross-PR Phase 5c.1 cross-check (`delta_lambda_fr_identity_phase5c.py`)
 (0.0001% match — derivation-grade categorical equality).
 
 So **the same $z$ that is the Markov-axiom interface-knot factor

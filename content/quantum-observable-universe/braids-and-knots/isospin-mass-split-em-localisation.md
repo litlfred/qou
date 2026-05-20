@@ -11,7 +11,7 @@ equality $\mathfrak{m}_{\mathrm{Markov}}(T) =
 2. The **Hopf-antipode invariance** at every $q \in (1, \varphi)$
    established in
    [spin-involution / LP-dual invariance](#prop:spin-involution-lp-dual-invariance)
-   — applies to the canonical $\Delta_I$-coupled convention; the
+   — applies to the canonical $\bowtie_K$-coupled convention; the
    mechanism is the Frobenius-self-dual antipode
    $S \colon V_\lambda \leftrightarrow V_{\lambda^T}$, which acts as
    $Z \leftrightarrow N$ on the per-atom canonical braid recipe.

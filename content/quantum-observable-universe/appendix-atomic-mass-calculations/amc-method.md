@@ -62,15 +62,15 @@ The knot formula for a neutral atom is
 ([knot-particle generation](#def:knot-particle-generation)):
 
 $$
-  Z\mathfrak{p}  \bowtie  N\mathfrak{n}
-   \bowtie  Z \cdot T_{2,3}
+  Z\mathfrak{p}  \oplus  N\mathfrak{n}
+   \oplus  Z \cdot T_{2,3}
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p
-\bowtie \mathcal{L}_H$ (proton as color-linked Borromean quark
+\oplus \mathcal{L}_H$ (proton as color-linked Borromean quark
 triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d},
-\mathfrak{d}]_p \bowtie \mathcal{L}_H$ (neutron), $T_{2,3}$ is
-the trefoil (electron), and $\bowtie$ denotes Hopf linking.
+\mathfrak{d}]_p \oplus \mathcal{L}_H$ (neutron), $T_{2,3}$ is
+the trefoil (electron), and $\oplus$ denotes Hopf linking.
 
 ## Input parameters (single free parameter $q$)
 
@@ -91,7 +91,7 @@ from the lepton mass ratio).
 For each element $Z$ with most stable isotope mass number $A = Z + N$:
 
 **Step 1.** Write the knot formula:
-$Z\mathfrak{p} \bowtie N\mathfrak{n} \bowtie Z \cdot T_{2,3}$.
+$Z\mathfrak{p} \oplus N\mathfrak{n} \oplus Z \cdot T_{2,3}$.
 
 **Step 2.** Compute the unbound nucleon mass:
 $M_{\mathrm{free}}(Z, N) = Z \cdot m_{\mathfrak{p}} + N \cdot m_{\mathfrak{n}}$.

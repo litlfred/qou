@@ -22,5 +22,5 @@ The technical content is split across the rest of the section:
   $c = 3N$ crossings.
 
 Each Planck step is an application of one of these matrices; the
-information-theoretic cost is bounded by the bandwidth $\mathcal{B}(q)$
+information-theoretic cost is bounded by the bandwidth $\mathfrak{B}(q)$
 ([information speed of light](#def:information-speed-of-light)).

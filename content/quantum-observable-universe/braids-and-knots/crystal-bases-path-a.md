@@ -1,10 +1,10 @@
 **Compute-optimisation note** for the `Path A` verification of
 [per-nucleon shift additive linearity](#prop:per-nucleon-shift-additive-linearity):
-$\mathrm{shift}_{\mathrm{NF}}(\beta_K) = 18Z + 21N + 1$ for $A \geq 2$.
+$\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_K) = 18Z + 21N + 1$ for $A \geq 2$.
 
 The existing `Path A` verifier
 [`per_irrep_pole_atom.py`](../../../folio-assistant/computations/per_irrep_pole_atom.py)
-computes per-irrep $\chi^\lambda(\beta_K)(q)$ symbolically via
+computes per-irrep $\chi^\lambda(\mathcal{B}_K)(q)$ symbolically via
 Hoefsmit seminormal matrices, then extracts the $u$-pole order
 after substituting $q = u^2$.  At $H_n$ for $n \geq 9$ this
 becomes prohibitive: 26 partitions at $H_9$ × ~30s of sympy
@@ -28,15 +28,15 @@ yielding the lookup table:
 |---|--:|--:|
 | $\sigma$ (`d = 0`)        | $+2$ | $-2$ |
 | $\sigma^{-1}$ (`d = -h`)  | $-2$ | $+2$ |
-| $\Delta_I$ (`d = -h/2`)   | $-2$ | $-2$ (leading $u^{-2}$ from $\pm \tfrac{1}{2}(u^2 + u^{-2})$) |
+| $\bowtie_K$ (`d = -h/2`)   | $-2$ | $-2$ (leading $u^{-2}$ from $\pm \tfrac{1}{2}(u^2 + u^{-2})$) |
 
 Per-SYT $\mathrm{ord}_{u=0}$ is the *sum* of these per-letter
 contributions over the entire 47-letter ($A=4$ ⁴He) canonical
-$\Delta_I$-coupled atomic word; per-$\lambda$ $\mathrm{ord}_{u=0}$
+$\bowtie_K$-coupled atomic word; per-$\lambda$ $\mathrm{ord}_{u=0}$
 is the *minimum* over $T \in \mathrm{SYT}(\lambda)$ provided
 the leading-coefficient sum is non-cancelling.
 
-The total $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_K))$ is then
+The total $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\mathcal{B}_K))$ is then
 
 $$
   \min_{\lambda \,\vdash\, 3A,\; \mathrm{height}(\lambda) \leq 6}
@@ -136,8 +136,8 @@ structure).  Either:
    `per_irrep_pole_proton_h3` symbolic path).
 2. **Crystal-bases sub-leading correction** is needed at $A = 1$
    to recover the true symbolic-path pole.  The proton case
-   passes by accident of cancellation balance (1 $\Delta_I$ on
-   each generator); the neutron has 2 $\Delta_I$ on $G_0$, 0 on
+   passes by accident of cancellation balance (1 $\bowtie_K$ on
+   each generator); the neutron has 2 $\bowtie_K$ on $G_0$, 0 on
    $G_1$ — an asymmetry that the leading crystal expansion
    smooths over.
 

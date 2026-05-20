@@ -189,7 +189,7 @@ $$
   =
   \arg\min_{\Phi \in \mathrm{End}(A)_{\mathrm{on-shell}}}
   \left\{
-    \mathbf{E}_{\mathrm{cross}}(\Phi)
+    \mathfrak{E}_{\mathrm{cross}}(\Phi)
     \ \Big|\ 
     \langle \Phi, \mathrm{dem}(K) \rangle_F \geq
     \|\mathrm{dem}(K)\|_F

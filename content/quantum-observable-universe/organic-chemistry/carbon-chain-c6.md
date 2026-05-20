@@ -14,11 +14,11 @@ $$
   \mathrm{C}_6^{\mathrm{chain}}
   = 
   \mathcal{A}(6,6)_1
-   \underset{B_1}{\bowtie}
+   \underset{B_1}{\oplus}
   \mathcal{A}(6,6)_2
-   \underset{B_1}{\bowtie}
+   \underset{B_1}{\oplus}
   \cdots
-   \underset{B_1}{\bowtie}
+   \underset{B_1}{\oplus}
   \mathcal{A}(6,6)_6
 $$
 
@@ -41,7 +41,7 @@ $$
 The chain has 5 bonds, giving
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(\mathrm{C}_6^{\mathrm{chain}})
+  \mathfrak{E}_{\mathrm{cross}}(\mathrm{C}_6^{\mathrm{chain}})
   = 
   5 \cdot E_{\mathrm{bond}}(1).
 $$

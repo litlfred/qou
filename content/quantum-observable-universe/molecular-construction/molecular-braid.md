@@ -50,7 +50,7 @@ $\mathcal{M} = \mathrm{NF}\bigl(\prod_i \iota_i(\mathcal{A}_i) \cdot
 atoms is*
 
 $$
-  \mathbf{E}_{\mathrm{bind}} = \alpha \left(
+  \mathfrak{E}_{\mathrm{bind}} = \alpha \left(
     \sum_{i=1}^{k} \Phi_1(\mathcal{A}_i)
     - \Phi_1(\mathcal{M})
   \right)
@@ -58,4 +58,4 @@ $$
 
 *where $\alpha = m_e \times 8G$ is the same binding scale as in
 the [atomic mass formula](#thm:wedderburn-mass-formula).  Positive
-$\mathbf{E}_{\mathrm{bind}}$ means the molecule is bound.*
+$\mathfrak{E}_{\mathrm{bind}}$ means the molecule is bound.*

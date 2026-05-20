@@ -106,7 +106,7 @@
 | `(M, \*theta, G, P, E)` | `(\mathbf{C}, \theta, G, \mathcal{S})` | Not found | 0 violations | **Pass** |
 | `E_p[^_]` (state fibre) | `\mathcal{S}_p` | Found in 2 files: `q-exp-p-adic.md` (lines 87, 92) — but $E_p(x)$ is $p$-adic exponential, not state fibre | **Minor** (notation clash, but in context not ambiguous) |
 | `\omega.*fibre\|fibre.*\omega` | `\tau` (fibre functor) | Found in 2 files: `fibre-functor-atlas.md` (lines 5, 36) — $\omega$ is generic fibre functor name (standard notation, not violation) | **Pass** (contextually correct) |
-| `\mathfrak{E}` (energy) | `\mathbf{E}` | Not found | 0 violations | **Pass** |
+| `\mathfrak{E}` (energy) | `\mathfrak{E}` | Not found | 0 violations | **Pass** |
 | ` m\\,\|\\\,m` (categorical mass) | `\mathfrak{m}` | Not found | 0 violations | **Pass** |
 | `q = 1\.` (numerical $q$) | Not allowed in Ch 2 | Found 1: `hopf-non-cocommutativity.md:19` | **1 Major violation** | **Flag** |
 | `\\gamma` (vortex) | Should use canonical symbol | Found 3 instances (not checked in context) | 3 matches | **Minor** |

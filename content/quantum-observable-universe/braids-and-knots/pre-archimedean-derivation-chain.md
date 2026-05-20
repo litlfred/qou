@@ -11,7 +11,7 @@ The three pre-approved calibration inputs are
 | ----------- | --------------------------------------------------- |
 | $m_e$       | Leptonic mass scale (converts natural units to MeV) |
 | $m_\mu/m_e$ | Fixes the substrate parameter $q_0$                 |
-| $Q_\beta$   | Fixes the hadronic energy scale $\mathbf{E}_0$      |
+| $Q_\beta$   | Fixes the hadronic energy scale $\mathfrak{E}_0$      |
 
 ***
 
@@ -253,13 +253,13 @@ consistent with the semiclassical approximation.
 
 ## Step 9 — Hecke energy scale and mass identity
 
-The energy scale $\mathbf{E}_0$ is determined by the three calibration
+The energy scale $\mathfrak{E}_0$ is determined by the three calibration
 inputs:
 
 1. **Leptonic derivation.**  From $m_e$ and $q_0$ alone:
 
 $$
-  \mathbf{E}_0^{(\mathrm{lept})}
+  \mathfrak{E}_0^{(\mathrm{lept})}
   \;=\;
   \frac{m_e}{q_0(q_0 - 1)}
   \;=\;
@@ -270,7 +270,7 @@ $$
 2. **Hadronic calibration.**  From $Q_\beta$ and the symbolic NF difference:
 
 $$
-  \mathbf{E}_0^{(\mathrm{had})}
+  \mathfrak{E}_0^{(\mathrm{had})}
   \;=\;
   \frac{Q_\beta}{|\Delta(\mathrm{net})|}
   \;=\;
@@ -280,7 +280,7 @@ $$
 
 The $0.75\%$ discrepancy is the brane tower correction
 ([prop:atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation)).
-The hadronic calibration fixes $\mathbf{E}_0$ exactly; the leptonic
+The hadronic calibration fixes $\mathfrak{E}_0$ exactly; the leptonic
 expression is an approximation valid to the single-level accuracy.
 
 3. **Mass identity.**  After applying the Archimedean realization
@@ -315,7 +315,7 @@ The SDP minimizes the Frobenius residual
 
 $$
   \min_{T_w} \;\bigl\|
-    \mathrm{tr}_M(T_w) \cdot \mathbf{E}_0
+    \mathrm{tr}_M(T_w) \cdot \mathfrak{E}_0
     \;-\; B_{\mathrm{target}}
   \bigr\|^2
   \quad \text{subject to: }
@@ -345,7 +345,7 @@ $$
   Q_{\beta^-}(\mathfrak{H} \to \mathfrak{H}')
   \;=\;
   \bigl[\mathrm{net}(T_w^\mathfrak{H}) - \mathrm{net}(T_w^{\mathfrak{H}'})\bigr]
-  \times \mathbf{E}_0.
+  \times \mathfrak{E}_0.
 $$
 
 The symbolic NF computation
@@ -359,9 +359,9 @@ $$
   \;\approx\; -0.1883,
 $$
 
-so $Q_\beta = |\Delta(\mathrm{net})| \times \mathbf{E}_0$ by construction.
+so $Q_\beta = |\Delta(\mathrm{net})| \times \mathfrak{E}_0$ by construction.
 All other $Q$-values in the beta-decay chain are **predictions** once
-$\mathbf{E}_0$ is fixed.
+$\mathfrak{E}_0$ is fixed.
 
 ***
 

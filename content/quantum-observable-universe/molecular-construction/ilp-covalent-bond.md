@@ -15,7 +15,7 @@ the unknot gives equality ($\mathrm{tr}_M$ unchanged).  The LP
 selects the minimum-crossing knot that strictly decreases the
 trace:*
 
-| Knot | Crossings | $\mathrm{tr}_M(H \cdot K \cdot H)$ | $\mathbf{E}_{\mathrm{bind}}$ |
+| Knot | Crossings | $\mathrm{tr}_M(H \cdot K \cdot H)$ | $\mathfrak{E}_{\mathrm{bind}}$ |
 |:-----|:----------|:----------------------------------|:-------------------|
 | Unknot | 0 | $0.182$ | $0$ eV |
 | **Inverse trefoil** $T_{2,3}^{-1}$ | **3** | **$0.062$** | **$4.48$ eV** |

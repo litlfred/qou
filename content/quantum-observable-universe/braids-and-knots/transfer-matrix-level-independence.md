@@ -1,4 +1,4 @@
-Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a hadron
+Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ be a hadron
 with composite knot $K_{\mathfrak{H}} = \hat{\beta}_{\mathfrak{H}}$.  Let $\mathcal{T}(\mathfrak{H}_p)$
 be the categorical transfer matrix
 ([categorical transfer matrix](#def:categorical-transfer-matrix)).

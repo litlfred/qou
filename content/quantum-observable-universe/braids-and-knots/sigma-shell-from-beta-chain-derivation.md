@@ -4,14 +4,14 @@ nucleon count, $n = 3 \cdot A_{\mathrm{magic}}$, and let
 $\lambda_{\mathrm{shell}} \vdash n$ be the **staircase partition**
 of $n$ (the unique self-conjugate partition with all rows of
 distinct length and maximal height).  For an atom $K$ with braid
-word $\beta_K \in B_n$, the shell-operator magnitude
+word $\mathcal{B}_K \in B_n$, the shell-operator magnitude
 $y_{\mathrm{target}}(A_{\mathrm{magic}})$ is **derivable in closed form** as*
 
 $$
   y_{\mathrm{target}}(A_{\mathrm{magic}})
   \;=\;
-  \frac{C_{\lambda_{\mathrm{shell}}}(q_0)\,\cdot\,y_{\lambda_{\mathrm{shell}}}(q_0)\,\cdot\,|\chi^{\lambda_{\mathrm{shell}}}(\beta_K)|}
-       {|\mathrm{tr}_M(\beta_K)|}
+  \frac{C_{\lambda_{\mathrm{shell}}}(q_0)\,\cdot\,y_{\lambda_{\mathrm{shell}}}(q_0)\,\cdot\,|\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)|}
+       {|\mathrm{tr}_M(\mathcal{B}_K)|}
 $$
 
 *where:*
@@ -28,7 +28,7 @@ $$
   for $(3,2,1)$ at $q_0$, $y_{(3,2,1)}(q_0) = 0.00731845\ldots$
   (read from
   [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json));*
-- *$\chi^{\lambda_{\mathrm{shell}}}(\beta_K)$ is the **Hoefsmit
+- *$\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ is the **Hoefsmit
   character** of the atom braid in the irrep $\rho_{\lambda_{\mathrm{shell}}}$
   ([prop:hoefsmit-scattering-pipeline](#prop:hoefsmit-scattering-pipeline));
   computed for the deuteron via
@@ -84,8 +84,8 @@ The shell magnitude $y_{\mathrm{target}}$ is therefore a
 
 1. *the staircase Wedderburn coefficient $C_{\lambda_{\mathrm{shell}}}(q_0)$,*
 2. *the Wenzl-bridge central weight $y_{\lambda_{\mathrm{shell}}}(q_0)$,*
-3. *the Hoefsmit character $\chi^{\lambda_{\mathrm{shell}}}(\beta_K)$ of the atom braid,*
-4. *the canonical Markov trace $|\mathrm{tr}_M(\beta_K)|$.*
+3. *the Hoefsmit character $\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ of the atom braid,*
+4. *the canonical Markov trace $|\mathrm{tr}_M(\mathcal{B}_K)|$.*
 
 *Crucially, **no $Q_\beta$ or AME chain Q-values appear**.  The
 calibration anchors stay at the $\rho_K$ assembly level
@@ -119,7 +119,7 @@ partition of 6 with three rows of distinct length.*
 mass formula admits the Wedderburn-Schur decomposition*
 
 $$
-  M(K) \;=\; m_e \cdot \sum_\lambda y_\lambda(q)\,\chi^\lambda(\beta_K)\,\bigl(1 + \Delta_\lambda(K)\bigr),
+  M(K) \;=\; m_e \cdot \sum_\lambda y_\lambda(q)\,\chi^\lambda(\mathcal{B}_K)\,\bigl(1 + \Delta_\lambda(K)\bigr),
 $$
 
 *with the per-block binding-fraction $\Delta_\lambda(K)$ encoding
@@ -128,7 +128,7 @@ constituent piece.  For the staircase $\lambda_{\mathrm{shell}}$, this
 $\Delta$ contribution **is** the shell magnitude:*
 
 $$
-  \Delta\mathfrak{m}_{\mathrm{shell}}(K) \;=\; m_e \cdot y_{\lambda_{\mathrm{shell}}}(q)\,\chi^{\lambda_{\mathrm{shell}}}(\beta_K)\,\Delta_{\lambda_{\mathrm{shell}}}(K),
+  \Delta\mathfrak{m}_{\mathrm{shell}}(K) \;=\; m_e \cdot y_{\lambda_{\mathrm{shell}}}(q)\,\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)\,\Delta_{\lambda_{\mathrm{shell}}}(K),
 $$
 
 *where $\Delta_{\lambda_{\mathrm{shell}}}(K) = C_{\lambda_{\mathrm{shell}}}(q_0)$
@@ -141,10 +141,10 @@ Wedderburn coefficient.*
 $$
   y_{\mathrm{target}}(A_{\mathrm{magic}})
   \;=\;
-  \frac{\Delta\mathfrak{m}_{\mathrm{shell}}(K)}{m_e \cdot |\mathrm{tr}_M(\beta_K)|}
+  \frac{\Delta\mathfrak{m}_{\mathrm{shell}}(K)}{m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|}
   \;=\;
-  \frac{C_{\lambda_{\mathrm{shell}}}\,\cdot y_{\lambda_{\mathrm{shell}}}\,\cdot |\chi^{\lambda_{\mathrm{shell}}}(\beta_K)|}
-       {|\mathrm{tr}_M(\beta_K)|}
+  \frac{C_{\lambda_{\mathrm{shell}}}\,\cdot y_{\lambda_{\mathrm{shell}}}\,\cdot |\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)|}
+       {|\mathrm{tr}_M(\mathcal{B}_K)|}
 $$
 
 *is the desired closed form.*  $\blacksquare$
@@ -158,9 +158,9 @@ from the substrate:*
   [`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json) (ALL steps trust-basis = AXIOM or DERIVED, no SCRIPT_CITED frontier);*
 - *$y_{\lambda}(q_0)$ — closed form per
   [`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge);*
-- *$\chi^\lambda(\beta_K)$ — Hoefsmit character per
+- *$\chi^\lambda(\mathcal{B}_K)$ — Hoefsmit character per
   [`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline);*
-- *$|\mathrm{tr}_M(\beta_K)|$ — canonical Markov trace per
+- *$|\mathrm{tr}_M(\mathcal{B}_K)|$ — canonical Markov trace per
   [`prop:gs-graded-markov-trace-existence`](#prop:gs-graded-markov-trace-existence).*
 
 *No Q_β, no AME chain manifold, no fitted parameters.  The 780 ppb

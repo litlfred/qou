@@ -13,7 +13,7 @@ $$
   \mathfrak{p}
   = 
   \mathcal{B}_3(\nu_r, \nu_g, \nu_b)
-   \bowtie  \mathcal{L}_H
+   \oplus  \mathcal{L}_H
 $$
 
 *where $\nu_r$, $\nu_g$, $\nu_b$ are unknots

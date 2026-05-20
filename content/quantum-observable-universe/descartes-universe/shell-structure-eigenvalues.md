@@ -219,7 +219,7 @@ $$
 The binding energy at shell $n$ (relative to ionization):
 
 $$
-  \mathbf{E}_{\mathrm{bind}}(n)
+  \mathfrak{E}_{\mathrm{bind}}(n)
   = 
   E_{\infty} - E_n
    \propto 

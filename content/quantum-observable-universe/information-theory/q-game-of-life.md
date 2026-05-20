@@ -81,7 +81,7 @@ $$
    $q$-energy conservation
    ([quantum temperature](#def:quantum-temperature),
    [mass-energy equivalence](#thm:mass-energy-equivalence)):
-   the $q$-energy* $\mathbf{E}_q = \langle \Psi | \hat{H}_{\mathrm{q\text{-}GoL}} | \Psi \rangle$
+   the $q$-energy* $\mathfrak{E}_q = \langle \Psi | \hat{H}_{\mathrm{q\text{-}GoL}} | \Psi \rangle$
    *is conserved along the automaton orbit, where
    $\hat{H}_{\mathrm{q\text{-}GoL}} = i\hbar_q \ln \mathcal{U}_{\mathrm{q\text{-}GoL}}/t_P$
    is the generator of the $q$-GoL unitary flow.*
@@ -90,14 +90,14 @@ $$
    *One $q$-GoL generation advances in $3 \cdot |\mathcal{L}|$
    Planck steps (one Toffoli per triple, three Planck steps
    each). The substrate bandwidth
-   $\mathcal{B}(q) = q \eta_q / (q - 1)^2$
+   $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$
    ([bandwidth](#def:information-speed-of-light)) bounds the
    number of generations per unit time:*
 
 $$
   \text{gens / sec}
    \leq 
-  \frac{\mathcal{B}(q)}{3  |\mathcal{L}|}
+  \frac{\mathfrak{B}(q)}{3  |\mathcal{L}|}
    = 
   \frac{q \eta_q}{3  (q - 1)^2  |\mathcal{L}|}.
 $$

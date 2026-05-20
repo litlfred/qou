@@ -9,7 +9,7 @@ an unproven assumption rather than on a completed categorical derivation.
 |-------|------------|------|
 | $m_e = 0.51099895000$ MeV | Leptonic mass scale | |
 | $m_\mu/m_e = 206.7682830$ | Fixes $q_0$ | dimensionless |
-| $Q_\beta(n) = 0.78233341$ MeV | Hadronic energy scale $\mathbf{E}_0$ | |
+| $Q_\beta(n) = 0.78233341$ MeV | Hadronic energy scale $\mathfrak{E}_0$ | |
 
 **Gap categories:**
 - **GAP-A** Missing categorical derivation (formula used without proof from categorical axioms)
@@ -174,13 +174,13 @@ confinement SDP.
 
 ---
 
-## GAP-D-1 — Energy scale $\mathbf{E}_0$ predicted vs. calibrated
+## GAP-D-1 — Energy scale $\mathfrak{E}_0$ predicted vs. calibrated
 
 **Source:** `beta-decay-energy-scale.md`, `negative-debt-confinement.md`.
 
 **Description.**  The leptonic derivation gives
-$\mathbf{E}_0^{(\mathrm{lept})} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV,
-while the hadronic calibration gives $\mathbf{E}_0^{(\mathrm{had})} \approx 4.155$ MeV.
+$\mathfrak{E}_0^{(\mathrm{lept})} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV,
+while the hadronic calibration gives $\mathfrak{E}_0^{(\mathrm{had})} \approx 4.155$ MeV.
 The $0.75\%$ discrepancy is attributed to the brane tower correction,
 but the *specific* tower correction that would close this gap has not
 been computed.  In the 9-strand ($H_9(q)$) picture the gap should
@@ -208,4 +208,4 @@ hadronic input for normalization only.
 | GAP-B-2 | GAP-B | Fitted $\beta_3 \approx 0.050$ parameter | Open | — |
 | GAP-B-3 | GAP-B | Compound $\beta$-decay $y_{\mathrm{target}}$ calibration | Open | — |
 | GAP-C-1 | GAP-C | $q$-integer BW coefficient counting | Partially derived | — |
-| GAP-D-1 | GAP-D | $\mathbf{E}_0$ leptonic vs.\ hadronic $0.75\%$ gap | Open (brane tower) | [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) |
+| GAP-D-1 | GAP-D | $\mathfrak{E}_0$ leptonic vs.\ hadronic $0.75\%$ gap | Open (brane tower) | [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) |

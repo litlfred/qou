@@ -50,7 +50,7 @@ $$
 $$
 
 with each $u_\lambda^*$ depending on the per-block Frobenius
-pairing $y_\lambda \cdot \chi^\lambda(\beta_K)$. Mirror-pair
+pairing $y_\lambda \cdot \chi^\lambda(\mathcal{B}_K)$. Mirror-pair
 invariance follows because the active sets of $T$ and
 ${}^3\mathrm{He}$ are $\lambda$-conjugate under the Hopf
 antipode (per

@@ -2,7 +2,7 @@
 analogous to the atomic mass formula:*
 
 $$
-  \mathbf{E}_{\mathrm{bind}}(CO) = \alpha \sum_{i \in \mathrm{bonds}}
+  \mathfrak{E}_{\mathrm{bind}}(CO) = \alpha \sum_{i \in \mathrm{bonds}}
   \ln\lvert \hat{V}_i^{\mathrm{full}} \rvert
 $$
 

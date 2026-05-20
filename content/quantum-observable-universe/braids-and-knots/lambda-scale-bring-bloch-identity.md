@@ -1,7 +1,7 @@
 **Proposition (categorical identity for the per-knot scale factor
 $\lambda_K^{\mathrm{scale}}$).**
 *Let $K$ be an atom-knot in the QOU spectrum, with canonical Hecke
-braid $\beta_K \in H_n(R, q)$ closing to a knot
+braid $\mathcal{B}_K \in H_n(R, q)$ closing to a knot
 $K^{\mathrm{closure}} \subset S^3$. Let
 $\tau_{\mathrm{arch}}$ be the archimedean realisation of the QOU
 fibre functor
@@ -50,7 +50,7 @@ where $\hat V_S$ is the per-block spectral coordinate from the
 ([mass-tower operator-valued form](#prop:mass-tower-operator-valued))
 and $\rho_q = 1/\hbar_q^2$ is the substrate density. The diagram
 commutes by the
-([Φ$_q$-JSJ archimedean bridge](#prop:phi-q-tower-jsj-bridge))
+(Φ$_q$-JSJ archimedean bridge (forthcoming))
 together with the standard identification
 $D[Z_M] = \mathrm{Vol}_{\mathrm{hyp}}(M)$ for hyperbolic 3-manifolds.
 The Bloch-Wigner regulator $D$ is therefore the archimedean
@@ -148,7 +148,7 @@ Borel-regulator image of that class. The open work is:
 Three prior obstructions are now structurally addressed:
 
 - **The empirical $5/2 - h^2 \cdot G$ ansatz**
-  ([`prop:lambda-scale-substrate-form`](#prop:lambda-scale-substrate-form))
+  (`prop:lambda-scale-substrate-form` (forthcoming))
   was falsified in PR #701 as a PSLQ coincidence. The categorical
   identity above replaces it: $\lambda_p^{\mathrm{scale}}$ is *not*
   a polynomial in $h$, but rather the Bloch-Wigner regulator of an

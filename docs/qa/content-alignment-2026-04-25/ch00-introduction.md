@@ -136,7 +136,7 @@ Systematic scan of all mathematical notation in `intro.md`:
 
 | Symbol | Expected font | Found usage | Status |
 |---|---|---|---|
-| Energy | `$\mathbf{E}_q$`, `$\mathbf{E}_\times$` | None in intro | N/A |
+| Energy | `$\mathfrak{E}_q$`, `$\mathfrak{E}_\times$` | None in intro | N/A |
 | Mass (categorical) | `$\mathfrak{m}$` | `$\mathfrak{m}_A$`, `$\mathfrak{m}_{\mathfrak{H}}$` | ✓ Correct |
 | Hadron | `$\mathfrak{H}$` | `$\mathfrak{H}$` (lines 81, 248) | ✓ Correct |
 | Category | `$\mathbf{C}$` | `$\mathbf{C}$` (lines 55, 61, 112, 143) | ✓ Correct |

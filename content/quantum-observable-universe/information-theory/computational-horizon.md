@@ -22,16 +22,16 @@ $\mathcal{H}_c \subset \mathcal{R}(L)$ such that:
    witness and checks consistency at each crossing.
 
 3. **Bandwidth saturation.**  The information bandwidth
-   $\mathcal{B}(q)$ per Planck time
+   $\mathfrak{B}(q)$ per Planck time
    ([information bandwidth](#def:information-speed-of-light))
    bounds the rate at which resolution paths can be sampled.
    If $3^c$ paths must be explored to extract the degree-$0$
-   answer, and $\mathcal{B}(q) \cdot t$ bounds the total
+   answer, and $\mathfrak{B}(q) \cdot t$ bounds the total
    information accessible in $t$ Planck steps, then the
    computation requires
 
    $$
-     t  \geq  \frac{c \cdot \log 3}{\mathcal{B}(q)}
+     t  \geq  \frac{c \cdot \log 3}{\mathfrak{B}(q)}
       \cdot  3^{c - c_0}
    $$
 

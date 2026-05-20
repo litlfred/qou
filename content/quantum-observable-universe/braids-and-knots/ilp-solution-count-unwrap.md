@@ -6,7 +6,7 @@ parameter $q$ with NF currently expressed at level $\ell$:*
 
 *Let $N_\ell(K, q)$ be the number of integer solutions
 $x \in \mathbb{Z}_{\geq 0}^M$ of the Frobenius positivity ILP
-$G(q)\, x \geq 0$ within the confinement filtration $J^\ell(q)$
+$\mathrm{G}(q)\, x \geq 0$ within the confinement filtration $J^\ell(q)$
 ([stable atom](#def:stable-atom),
 [stable-atom-decidable](#prop:stable-atom-decidable)).*
 

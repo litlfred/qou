@@ -8,7 +8,7 @@ at fixed $p$.
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$.  For a multi-nucleon Hopf link
-$L = Z\mathfrak{p} \bowtie N\mathfrak{n}$ with $A = Z + N$,
+$L = Z\mathfrak{p} \oplus N\mathfrak{n}$ with $A = Z + N$,
 the beta-stable configuration satisfies
 $\partial \mathcal{L}_{\mathrm{bind}} / \partial n = 0$, which
 gives the beta-stability line

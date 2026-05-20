@@ -3,13 +3,13 @@
 **Proposition (graded ρ_K expansion).**
 *Multiplying the GB-NF identity
 ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
-$\mathcal{M}(K) = m_e \cdot \rho_K \cdot |\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))|$
+$\mathcal{M}(K) = m_e \cdot \rho_K \cdot |\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$
 through by $m_e \cdot |\!\operatorname{tr}_M\!|$ exposes the graded
 expansion of the categorical density $\rho_K$:*
 
 $$
   \boxed{
-    m_e \cdot |\!\operatorname{tr}_M(\beta_K)| \cdot \rho_K
+    m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)| \cdot \rho_K
     \;=\;
     \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece (Markov mult.)}}
     \;+\; \underbrace{\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|}_{\rho_K^{\text{single-gen}}\text{-piece}}
@@ -43,12 +43,12 @@ the LO piece **categorically**:
 $$
   \rho_K^{\mathrm{LO}}
   \;=\;
-  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot |\!\operatorname{tr}_M(\beta_K)|}.
+  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)|}.
 $$
 
 Numerical verification: `rho-k-markov-multiplicativity.witness.json`
 verifies the [Wenzl 1988] branching identity
-$\chi^\lambda(\beta_p \otimes \beta_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\beta_p) \chi^\nu(\beta_n)$
+$\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$
 to $3.2 \times 10^{-14}$ (machine precision) for all $\lambda \vdash 6$
 in the deuteron case.
 

@@ -94,25 +94,25 @@ The canonical $(Z, N)$-braid
 factors as
 
 $$
-  \beta_K
-  \;=\; \beta_K^{\mathrm{constit}} \cdot \Delta_I^K,
+  \mathcal{B}_K
+  \;=\; \mathcal{B}_K^{\mathrm{vac}} \cdot \bowtie_K,
 $$
 
-where $\beta_K^{\mathrm{constit}} = \beta_p^{(1)} \otimes \cdots
-\otimes \beta_n^{(N)}$ is the parabolic tensor of the
+where $\mathcal{B}_K^{\mathrm{vac}} = \mathcal{B}_p^{(1)} \otimes \cdots
+\otimes \mathcal{B}_n^{(N)}$ is the parabolic tensor of the
 $A := Z + N$ per-nucleon $H_3$ canonical sub-braids (constituent
-vacuum) and $\Delta_I^K$ is the
+vacuum) and $\bowtie_K$ is the
 ([electroweak interface knot](#def:ew-interface-knot)) --- a short
 word in the inter-nucleon Hecke generators $\sigma_{3k+2}$
 ($0 \leq k < A-1$), one single-generator crossing per adjacent
 nucleon pair, with sign $\sigma$ on a proton--proton arc and
 $\sigma^{-1}$ on a neutron--neutron arc. The present proposition
-applies directly to $\beta_K^{\mathrm{constit}}$; the interface
+applies directly to $\mathcal{B}_K^{\mathrm{vac}}$; the interface
 contribution is governed by the
 ([Markov-axiom interface identity](#prop:interface-knot-markov-z))
 
 $$
-  \frac{\tau_M(\beta_K)}{\tau_M(\beta_K^{\mathrm{constit}})}
+  \frac{\tau_M(\mathcal{B}_K)}{\tau_M(\mathcal{B}_K^{\mathrm{vac}})}
   \;=\; z(q)^{p_+(K)} \cdot \bigl(z(q) - h(q)\bigr)^{p_-(K)},
 $$
 
@@ -191,7 +191,7 @@ the canonical word that this corollary strictly governs.
 ## Scope of applicability
 
 The identity holds for tensor-product (parabolic) braids only. The
-interface knot $\Delta_I^K$ does not factor through the parabolic
+interface knot $\bowtie_K$ does not factor through the parabolic
 embedding; its contribution is the $I \neq \mathbf{1}$ regime
 governed by the
 ([branching trace decomposition](#prop:hecke-branching-trace-decomposition))

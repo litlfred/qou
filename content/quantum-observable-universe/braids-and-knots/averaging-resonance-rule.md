@@ -367,8 +367,8 @@ precision-ladder beyond rung 10.
 ### Falsified-FR caveat (cross-PR Phase 5c.1 cross-check)
 
 A naive Frobenius-reciprocity identity at the per-Wedderburn-
-block dominant level — $\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2})
-\stackrel{?}{=} [3]_q^2 \cosh(h) \sum_\mu y_\mu \chi_\mu(\beta_K^{Z=1})
+block dominant level — $\sum_\lambda y_\lambda \chi_\lambda(\mathcal{B}_K^{Z=2})
+\stackrel{?}{=} [3]_q^2 \cosh(h) \sum_\mu y_\mu \chi_\mu(\mathcal{B}_K^{Z=1})
 + \mathrm{Li}_2^q\text{ tower}$ — was tested at the full
 $\tau_M$ level and **falsified** (full ratio 0.609 vs predicted
 9.47). The $[3]_q^2 \cosh(h)$ to 0.022% match applies only at the
@@ -399,7 +399,7 @@ From there it propagates to every downstream observable:
 
 | Site | Role of $c_5$ |
 |---|---|
-| [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) | Rung-5 factor $(1 + c_5 b^5 \hbar_q^{10})$ in $\tau_M(\beta_n)/\tau_M(\beta_p)$. |
+| [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) | Rung-5 factor $(1 + c_5 b^5 \hbar_q^{10})$ in $\tau_M(\mathcal{B}_n)/\tau_M(\mathcal{B}_p)$. |
 | [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic) | Form A's relative-order-$\hbar_q^{10}$ correction to $Q_\beta$. |
 | [`conj:qbeta-c-k-closed-forms`](#conj:qbeta-c-k-closed-forms) | Conjectured closed form $c_5 = -(b^2 + 1/2)$ — the only $c_k$ that does **not** factor through $c_3$ and $b^2$. |
 | `qbeta_decay_sdp_extended_ck.py` (compute infra) | Per-rung extraction; $c_5$ is the unique entry tagged averaging-resonant at silver ratio. |

@@ -1,6 +1,6 @@
 **Definition.**
 *Let $K$ be an atom-knot ([atom](#def:atom-knot)) with NF
-$T_w \in H_{n(K)}(q)$.  Let $G(q)$ be the Frobenius Gram matrix
+$T_w \in H_{n(K)}(q)$.  Let $\mathrm{G}(q)$ be the Frobenius Gram matrix
 of the primitive Wedderburn-block operators
 $\{e_\lambda\}_{\lambda \vdash k,\;k \leq k_{\max}}$
 ([mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)).
@@ -20,7 +20,7 @@ an **ILP** (integer linear program) solution:*
 $$
   \exists\, x \in \mathbb{Z}_{\geq 0}^N
   \;\text{such that}\;
-  G(q) \, x \;\geq\; 0
+  \mathrm{G}(q) \, x \;\geq\; 0
   \;\text{coordinatewise.}
 $$
 
@@ -36,7 +36,7 @@ contradiction: stability tracks ILP-feasibility pointwise.*
 
 **Connection to LP-feasibility.**
 *The continuous LP relaxation
-($x \in \mathbb{R}_{\geq 0}^N$, $G(q) x \geq 0$) is always
+($x \in \mathbb{R}_{\geq 0}^N$, $\mathrm{G}(q) x \geq 0$) is always
 feasible (the trivial identity NF $T_e = e_{(k)}$ has
 $y_{(k)} = 0$).  The ILP version is strictly stronger:
 the proton derivation in

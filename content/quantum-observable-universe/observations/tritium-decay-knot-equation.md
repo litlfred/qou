@@ -85,14 +85,14 @@ In expanded link notation:
 $$
   q \Big[
     \mathcal{B}_3^{uud}
-    \bowtie \mathcal{B}_3^{udd}
-    \bowtie \mathcal{B}_3^{udd}
+    \oplus \mathcal{B}_3^{udd}
+    \oplus \mathcal{B}_3^{udd}
   \Big]
   - 
   q^{-1} \Big[
     \mathcal{B}_3^{uud}
-    \bowtie \mathcal{B}_3^{uud}
-    \bowtie \mathcal{B}_3^{udd}
+    \oplus \mathcal{B}_3^{uud}
+    \oplus \mathcal{B}_3^{udd}
   \Big]
   = 
   (q^{1/2} - q^{-1/2})

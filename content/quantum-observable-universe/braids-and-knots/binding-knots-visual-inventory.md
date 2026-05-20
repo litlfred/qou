@@ -11,7 +11,7 @@ context see [knot-particle-dictionary](#rem:knot-particle-dictionary).
 The unknot $0_1 = T_{1,0}$ is a single unknotted circle —
 the trivial element of every braid group. It carries
 **zero crossings**, hence zero $q$-deformed crossing energy
-$\mathbf{E}_\times(q) = \frac{1}{2}(q - q^{-1}) \cdot 0 = 0$,
+$\mathfrak{E}_\times(q) = \frac{1}{2}(q - q^{-1}) \cdot 0 = 0$,
 so its bare mass vanishes. Two disjoint roles:
 
 1. **Neutrino $\nu$**: a single unknot in $H_1(q)$
@@ -66,7 +66,7 @@ The trefoil knot is the simplest non-trivial knot, and the
 canonical **electron** identity. Its braid word
 $\sigma_0\sigma_1\sigma_0 \in B_3$ closes to a 3-cusp
 shape with three over/under crossings. Crossing energy
-$3 \cdot \mathbf{E}_\times(q) = \frac{3}{2}(q - q^{-1})$
+$3 \cdot \mathfrak{E}_\times(q) = \frac{3}{2}(q - q^{-1})$
 fixes the leptonic mass quantum.
 
 ```tex

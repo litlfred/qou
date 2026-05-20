@@ -126,7 +126,7 @@ only calibration that enters the unified mass formula
 [local substrate](#prop\:local-substrate-q)).*
 
 *Derived substrate constants — $\hbar_q = (q-1)/q$, $c_q = 1/(q-1)$,
-$G(q)$, $\eta_q$, $\chi_q$ — are all **functions of $q$ alone**,
+$G_q$, $\eta_q$, $\chi_q$ — are all **functions of $q$ alone**,
 so they never appear as independent calibrations in the mass
 formula.  They parametrize the same substrate but are derived,
 not additional.*

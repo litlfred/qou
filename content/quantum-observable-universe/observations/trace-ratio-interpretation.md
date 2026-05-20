@@ -30,7 +30,7 @@ Combining the trace ratio with the phase space integral:
 $$
   t_{1/2}
   = 
-  \frac{\ln 2 \cdot 2N_v^4}{243\mathbf{E}_{\times} \cdot \mu_0}
+  \frac{\ln 2 \cdot 2N_v^4}{243\mathfrak{E}_{\times} \cdot \mu_0}
    \cdot 
   \frac{1}{[2]_q  \cdot  s^2}
    \cdot 
@@ -43,10 +43,10 @@ $$
 $$
 
 where $s = q^{1/2} - q^{-1/2}$ is the Skein amplitude,
-$\mathbf{E}_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy,
+$\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy,
 $\mu_0$ is the single dimensional scale (unit choice),
 $N_v$ is the effective crossing count of the weak scale
-($v = N_v\mathbf{E}_{\times}\mu_0$), and
+($v = N_v\mathfrak{E}_{\times}\mu_0$), and
 $f(Z_d, Q)$ is the Coulomb-corrected phase space integral
 ([Skein-Coulomb enhancement](#prop:skein-coulomb-enhancement)).
 The prefactor replaces the standard-physics combination

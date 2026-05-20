@@ -12,17 +12,17 @@ $Z \leq 4$, with closed sub-Hopf links indicated.
   antineutrino ([antineutrino knot](#def:antineutrino-knot)),
   distinguished from the neutrino by orientation, not knot type.
 - **Interlocked circles**: Hopf link $\mathcal{L}_H$ — the
-  $\bowtie$ operation connecting components.
+  $\oplus$ operation connecting components.
 - **Green border**: closed $1s$ sub-link (2 electrons).
 - **Blue border**: closed $2s$ sub-link (2 electrons).
 - **Brown border**: nuclear sub-link (protons + neutrons).
 
 | $Z$ | Atom | $N$ | Structure | $k_\alpha$ | Shells |
 |----:|------|----:|-----------|---:|--------|
-| 1 | H | 0 | $[\mathfrak{p}] \bowtie T_{2,3}$ | 0 | $1s^1$ |
-| 2 | He | 2 | $[\alpha] \bowtie [T_{2,3} \bowtie T_{2,3}]^*$ | 1 | $1s^2$ ${}^*$ |
-| 3 | Li | 4 | $[3\mathfrak{p}4\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie T$ | 1 | $1s^2 + 2s^1$ |
-| 4 | Be | 5 | $[4\mathfrak{p}5\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie [T \bowtie T]^*$ | 2 | $1s^2 + 2s^2$ |
+| 1 | H | 0 | $[\mathfrak{p}] \oplus T_{2,3}$ | 0 | $1s^1$ |
+| 2 | He | 2 | $[\alpha] \oplus [T_{2,3} \oplus T_{2,3}]^*$ | 1 | $1s^2$ ${}^*$ |
+| 3 | Li | 4 | $[3\mathfrak{p}4\mathfrak{n}] \oplus [T \oplus T]^* \oplus T$ | 1 | $1s^2 + 2s^1$ |
+| 4 | Be | 5 | $[4\mathfrak{p}5\mathfrak{n}] \oplus [T \oplus T]^* \oplus [T \oplus T]^*$ | 2 | $1s^2 + 2s^2$ |
 
 $T = T_{2,3}$ (trefoil). Brackets $[\cdots]^*$ denote a
 **closed sub-Hopf link** — a sub-link that splits from the
@@ -35,7 +35,7 @@ remaining components.
    shell is open.
 
 2. **Helium** ($Z = 2$): the $\alpha$ particle
-   ($2\mathfrak{p} \bowtie 2\mathfrak{n}$) linked to two
+   ($2\mathfrak{p} \oplus 2\mathfrak{n}$) linked to two
    electrons forming a **closed Hopf pair**.  This is the first
    closed sub-link.  Both the nuclear and electronic sub-links
    are closed — helium is doubly stable.

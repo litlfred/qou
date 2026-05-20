@@ -38,7 +38,7 @@ The single open axiom is:
 
 > `DominantSubBraidAtEps6.dominant_subbraid_is_2_strand_2_crossings`:
 > the dominant sub-braid in the order-$\varepsilon^6$ expansion of
-> $\tau_M(\beta_n) - \tau_M(\beta_p)$ extracts the 2-strand 2-crossing
+> $\tau_M(\mathcal{B}_n) - \tau_M(\mathcal{B}_p)$ extracts the 2-strand 2-crossing
 > case.
 
 This is **empirically verified** via two probe runs:

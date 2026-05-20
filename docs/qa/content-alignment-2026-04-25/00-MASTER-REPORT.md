@@ -155,7 +155,7 @@ Two chapters are publication-ready as-is (Ch 1, Ch 13 Langlands). One blocker re
 | M-15 | Ch 11 | `neutron-proton-mass-splitting.md` | 54 | `\Delta m = 3.7445 \times 0.3476 = 1.302$ MeV` — derived value with `=`, no error term (§7ab) |
 | M-16 | Ch 11 | `qvalue-observation.md` | 28 | `\mathcal{Q}_{\mathrm{bare}} = 0.944$ MeV` — derived; needs `\approx` |
 | M-17 | Ch 11 | `tritium-qvalue-audit.md` | 121 | `\kappa_q = 0.018$ MeV` (table cell) — derived; needs `\approx` |
-| M-18..M-23 | Ch 12 | `molecular-braid.md`, `ilp-covalent-bond.md`, `h2-binding-energy.md`, `co-triple-bond-energy.md` (4 instances), `benzene-threading-emergence.md`, `co2-lp-dual-binding.md` | — | Binding energy written `$E_{\mathrm{bind}}$` should be `$\mathbf{E}_{\mathrm{bind}}$` (bold register per §7aa) |
+| M-18..M-23 | Ch 12 | `molecular-braid.md`, `ilp-covalent-bond.md`, `h2-binding-energy.md`, `co-triple-bond-energy.md` (4 instances), `benzene-threading-emergence.md`, `co2-lp-dual-binding.md` | — | Binding energy written `$E_{\mathrm{bind}}$` should be `$\mathfrak{E}_{\mathrm{bind}}$` (bold register per §7aa) |
 
 (IDs above sum to 23 majors.)
 
@@ -183,7 +183,7 @@ CLAUDE.md §7aa rules applied:
 | Jones polynomial `J_K(q)` | clean | no `V_K(t)` or bracket-`A` |
 | Hadron `\mathfrak{H}` | clean | |
 | Mass `\mathfrak{m}` | mostly clean | Ch 11 mixes `m_e` (CODATA) with `\mathfrak{m}` (categorical); register split needed |
-| Energy `\mathbf{E}` (bold) | **violated in Ch 12** | 6 binding-energy occurrences as `E_{\mathrm{bind}}` |
+| Energy `\mathfrak{E}` (bold) | **violated in Ch 12** | 6 binding-energy occurrences as `E_{\mathrm{bind}}` |
 | Vortex `\varrho` | violated in Ch 7 | 3 vortex blocks use `\gamma` |
 | Approximation `\approx` (§7ab) | **violated in Ch 11** | 3 derived values stated with `=` |
 | Hopf `\mathcal{H}` (calligraphic) | violated in Ch 6 | 5 occurrences of `H_\xi` should be `\mathcal{H}_\xi` |
@@ -216,7 +216,7 @@ Plus 45 chapter-local simplifications listed in the per-chapter reports.
    - Ch 6 `H_\xi` → `\mathcal{H}_\xi` (5 lines, 2 files)
    - Ch 11 `=` → `\approx` for derived numerics (3 lines)
    - Ch 11 Hecke `\sigma` → `T` mislabel (1 line)
-   - Ch 12 `E_{\mathrm{bind}}` → `\mathbf{E}_{\mathrm{bind}}` (6 instances)
+   - Ch 12 `E_{\mathrm{bind}}` → `\mathfrak{E}_{\mathrm{bind}}` (6 instances)
    - Ch 0 voice fixes (2 lines)
    - Ch 2 numerical-q deletion (1 line)
    - Ch 3 add forward breadcrumb to `def:descartes-condition`

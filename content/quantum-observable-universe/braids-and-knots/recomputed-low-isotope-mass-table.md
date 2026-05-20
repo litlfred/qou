@@ -2,7 +2,7 @@
 character gap closure).** *After PR #572's q-Hecke character
 closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure))
 and the cherry-picked* $\rho_K$ *refinement infrastructure from
-PR #564, **three independent production paths** to* $\mathrm{tr}_M(\beta_K)$
+PR #564, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
 1. **Canonical Markov-axiom reducer** —
@@ -35,10 +35,10 @@ The atomic-mass formula is
 
 $$
   \mathcal{M}(K) \;=\; (Z m_p + N m_n) \;+\; \mathrm{Binding}(K), \qquad
-  \mathrm{Binding}(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\beta_K)\,\Delta_\lambda(K),
+  \mathrm{Binding}(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\mathcal{B}_K)\,\Delta_\lambda(K),
 $$
 
-with $\beta_K = \mathtt{atom\_braid\_word\_3A}(Z, N) \in H_{3A}(q)$
+with $\mathcal{B}_K = \mathtt{atom\_braid\_word\_3A}(Z, N) \in H_{3A}(q)$
 the canonical 3A-strand atomic braid (β-decay-operator-unfolded form;
 see [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)),
 $y_\lambda$ the canonical Wenzl Markov weight (see
@@ -248,7 +248,7 @@ without the overhead of full 50-dps mpmath.
 
 ## Path A categorical verification of `18` (proton, 2026-05-09)
 
-The atomic-shift exponent $\mathrm{shift}_{\mathrm{NF}}(\beta_K)$
+The atomic-shift exponent $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_K)$
 that controls the $u$-power in the $D(u)$ denominator
 ([`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md))
 is now categorically verified for the proton by direct symbolic
@@ -258,7 +258,7 @@ witness:
 [`per-irrep-pole-proton-h3.witness.json`](../../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)):
 
 $$
-  \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\beta_p)\bigr) \;=\; 19 \;=\; 18 \cdot Z + 21 \cdot N + 1 \quad \text{at } (Z, N) = (1, 0).
+  \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\mathcal{B}_p)\bigr) \;=\; 19 \;=\; 18 \cdot Z + 21 \cdot N + 1 \quad \text{at } (Z, N) = (1, 0).
 $$
 
 **Cross-confirmation:** the orthogonal computation in

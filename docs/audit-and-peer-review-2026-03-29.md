@@ -24,7 +24,7 @@ produced 154 initial scanner warnings — all confirmed as false positives.
 
 | # | Severity | File | Issue | Fix |
 |---|----------|------|-------|-----|
-| 1 | ERROR | `ch5-brings-surface/spectral-decomposition-qvalue.md:55` | `\mathfrak{E}` used for energy | Replace with `\mathbf{E}` per §7aa |
+| 1 | ERROR | `ch5-brings-surface/spectral-decomposition-qvalue.md:55` | `\mathfrak{E}` used for energy | Replace with `\mathfrak{E}` per §7aa |
 | 2 | WARNING | `ch2-quantum-geometry/fibre-functor-atlas.md:7,15,22,34-35` | `$\omega$` used for fibre functors | Review: if generic fibre functors in atlas context, may be acceptable; if canonical, use `$\tau$` |
 
 **Clean checks:** No `V_K(t)` for Jones polynomial, no `\gamma` for vortex,

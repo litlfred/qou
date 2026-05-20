@@ -13,7 +13,7 @@ entropy $S_{\mathrm{cell}}(q) = (q-1)^2/q^3$.  Substituting
 $c_q = 1/(q-1)$ and $\hbar_q = (q-1)/q$ and reducing:
 
 $$
-  G(q)
+  G_q
   \;=\;
   \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
   \;=\;
@@ -28,7 +28,7 @@ form of $G$, before any unit conversion to Planck or SI.
 
 **Planck-unit identity.**
 Newton's constant in Planck units is the dimensionless ratio
-$G_{\mathrm{Planck}} = G(q) \cdot (\hbar_q / c_q)^2$.  With
+$G_{\mathrm{Planck}} = G_q \cdot (\hbar_q / c_q)^2$.  With
 $\hbar_q / c_q = (q-1)^2/q$,
 
 $$
@@ -102,7 +102,7 @@ lepton-mass cross-check
 not by gravity.
 
 **Summary (one line).**
-$G(q) = q^2/(q-1)^4$ in $q$-natural units; in Planck units
+$G_q = q^2/(q-1)^4$ in $q$-natural units; in Planck units
 $G_{\mathrm{Planck}} = 1$ identically for all $q \neq 0, 1$;
 the universal-residue prefactor reduces to
 $\alpha_{\mathrm{Planck}}(q) = 8 m_e(q)$ with no residual

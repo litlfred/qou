@@ -67,8 +67,8 @@ substrate-derived $n_\star$
 an open conjecture. The current best non-calibrated prediction
 remains the difference $Q_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
 
-- *Term 1 (descended $|\mathrm{tr}_M|$): $|\mathrm{tr}_M(\beta_p)|
-  \approx 1.065 > |\mathrm{tr}_M(\beta_n)| \approx 0.923$.
+- *Term 1 (descended $|\mathrm{tr}_M|$): $|\mathrm{tr}_M(\mathcal{B}_p)|
+  \approx 1.065 > |\mathrm{tr}_M(\mathcal{B}_n)| \approx 0.923$.
   Note this gives proton "heavier" in the Markov decomposition —
   opposite of CODATA. The framework's per-nucleon mass formula
   uses the brane tower to invert this; the NF-coefficient-sum

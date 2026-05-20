@@ -82,7 +82,7 @@ between consecutive strands), and the simultaneous-eigenspace
 decomposition degenerates. So $n = 6$ is the structural minimum
 for the simultaneous Hoefsmit identification.
 
-### Refinement (2026-05-06): coupling via interface knot $\Delta_I$, not disjoint product
+### Refinement (2026-05-06): coupling via interface knot $\bowtie_K$, not disjoint product
 
 The disjoint-product framing $\sigma_1^4 \cdot \sigma_3^6 \cdot
 \sigma_5^8$ — equivalent to a tensor product via far-commutativity
@@ -94,23 +94,23 @@ symmetry breaking $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y \to
 vacuum-expectation value, not a disjoint sum.
 
 The categorical analog of the Higgs-vev coupling is an **interface
-knot** $\Delta_I \in H_6(q)$ — directly parallel to the
+knot** $\bowtie_K \in H_6(q)$ — directly parallel to the
 inter-nucleon interface $I$ in the W-3 deuteron derivation
 ([`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf), where the
-deuteron braid $\beta_D = (\beta_p \otimes \beta_n) \cdot I$
+deuteron braid $\beta_D = (\mathcal{B}_p \otimes \mathcal{B}_n) \cdot I$
 contributes the $+1$ in $u_{\rm shift} = 18Z + 21N + 1$).
 
 The corrected EW braid is
 
 $$
-  \beta_{\rm EW}(\Delta_I)
+  \beta_{\rm EW}(\bowtie_K)
   \;:=\;
-  \sigma_1^{\,4} \cdot \Delta_I^{(W \to Z)} \cdot \sigma_3^{\,6}
-  \cdot \Delta_I^{(Z \to H)} \cdot \sigma_5^{\,8} \cdot \Delta_I^{(H \to W)}
+  \sigma_1^{\,4} \cdot \bowtie_K^{(W \to Z)} \cdot \sigma_3^{\,6}
+  \cdot \bowtie_K^{(Z \to H)} \cdot \sigma_5^{\,8} \cdot \bowtie_K^{(H \to W)}
   \;\in\; H_6(q),
 $$
 
-where $\Delta_I^{(X \to Y)}$ is the interface knot connecting the
+where $\bowtie_K^{(X \to Y)}$ is the interface knot connecting the
 strand-pair of $X$ to the strand-pair of $Y$. These interfaces use
 the **non-far-commutative** generators $\sigma_2, \sigma_4$ (which
 sit between adjacent strand-pairs) — analogues of the inter-nucleon
@@ -120,42 +120,42 @@ interface generator $\sigma_3$ in $H_6(q)$ for the deuteron.
 
 1. **Pattern multiplicities change.** The disjoint-product
    $(4, 2, 1, 3, 3, 1, 2, 4)$ multiplicities are computed
-   ignoring $\Delta_I$. With $\Delta_I$ inserted, $\beta_{\rm
+   ignoring $\bowtie_K$. With $\bowtie_K$ inserted, $\beta_{\rm
    EW}$ acts non-trivially across strand-pairs; pure-pattern
    counting needs recomputation.
 
 2. **Bar-self-duality may break or be modified.** The
    $\sigma_i^{2k}$ trace was bar-self-dual term-by-term; the
-   $\Delta_I$-coupled trace may have a $\Delta_I$-orientation-
+   $\bowtie_K$-coupled trace may have a $\bowtie_K$-orientation-
    dependent phase, or the duality may be restored only modulo
    the orientation of the interface knots.
 
 3. **Higgs-vev automorphism gets concrete form.** The Weinberg
    automorphism $(W^3, B) \to (Z, \gamma)$ pre-EWSB is plausibly
-   the change-of-basis induced by inserting a specific $\Delta_I$;
+   the change-of-basis induced by inserting a specific $\bowtie_K$;
    $\theta_W$ then reads off the eigendirections of the
    interface coupling.
 
-4. **The 8 pure patterns become 8 $\Delta_I$-twisted patterns.**
-   Mixing depends on $\Delta_I$'s structural data, suggesting
+4. **The 8 pure patterns become 8 $\bowtie_K$-twisted patterns.**
+   Mixing depends on $\bowtie_K$'s structural data, suggesting
    $\theta_W$ — and possibly the entire EW Wedderburn block
    structure — is *parametrised* by the interface knot's choice.
 
-**Action items prompted by the $\Delta_I$ refinement:**
+**Action items prompted by the $\bowtie_K$ refinement:**
 
-- Author $\Delta_I$ as a categorical content block (candidate
+- Author $\bowtie_K$ as a categorical content block (candidate
   `def:ew-interface-knot`), defining the analog of the
   inter-nucleon interface generalised to gauge-boson couplings.
 - Recompute the Hoefsmit pure-pattern enumeration under
-  $\beta_{\rm EW}(\Delta_I)$; extend
+  $\beta_{\rm EW}(\bowtie_K)$; extend
   [`hoefsmit-ew-cell-content.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
   to include $\sigma_2, \sigma_4$ in the eigenvalue analysis.
-- Re-derive $\mathrm{tr}_{\rm pure}(\beta_{\rm EW}(\Delta_I))$
+- Re-derive $\mathrm{tr}_{\rm pure}(\beta_{\rm EW}(\bowtie_K))$
   symbolically.
-- Connect the Weinberg-angle automorphism to $\Delta_I$
+- Connect the Weinberg-angle automorphism to $\bowtie_K$
   eigendirections — both the simple-uniform reading at 64% and
-  the corrected best at 8.4% are $\Delta_I$-free; the structural
-  closure likely lives in $\Delta_I$.
+  the corrected best at 8.4% are $\bowtie_K$-free; the structural
+  closure likely lives in $\bowtie_K$.
 
 ### Resolution of the dimension-collapse issue
 

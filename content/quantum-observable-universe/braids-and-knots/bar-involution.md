@@ -58,7 +58,7 @@ well-defined bar-action falls in one of these rows:
 | $\cosh(h)$ | hyperbolic-cosine of skein | per-Z gain $\alpha_Z \approx [3]_q^2 \cdot \cosh(h)$ |
 | Volume forms $\alpha \wedge d\alpha$ | contact volume | Reeb dynamics |
 | Unsigned linking $|\mathrm{lk}|$ | absolute linking | knot multiplicity |
-| Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ | Markov-axiom factor | interface knot $\Delta_I^K = z$ |
+| Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ | Markov-axiom factor | interface knot $\bowtie_K = z$ |
 | All $c_k(q)$ in the precision ladder | classical rationals in $q$ | $\tau_M$ expansion about $q=1$ |
 
 ### Bar-anti-symmetric (bar-odd, $P_{\mathrm{skew}}$ image, discarded)
@@ -100,7 +100,7 @@ $$h \;=\; q - q^{-1} \;=\; \underbrace{(q^{1/2} - q^{-1/2})}_{h_{1/2},\;\text{ba
 The bar-anti-symmetry of $h$ comes *entirely* from $h_{1/2}$; the
 bar-symmetric Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ factor
 is bar-invariant. This is the same $z$ that the cross-PR Phase 5c.1 cross-check
-identified as the interface-knot value $\Delta_I^K = z$ exactly.
+identified as the interface-knot value $\bowtie_K = z$ exactly.
 
 ### Hoefsmit-Quantum-2 identity
 

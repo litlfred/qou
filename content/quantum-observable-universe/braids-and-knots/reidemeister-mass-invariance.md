@@ -52,7 +52,7 @@ nucleon--nucleon) is the crossing energy of the Hopf link
 connecting them:
 
 $$
-  \mathbf{E}_{\mathrm{bind}}
+  \mathfrak{E}_{\mathrm{bind}}
   = 
   \sum_{\text{crossings of link}}
   \epsilon_i \cdot q^{\pm 1}
@@ -80,7 +80,7 @@ one particle's knot inside the other's Seifert surface.
   The binding energy **changes**. $\times$
 
 $$
-  \mathbf{E}_{\mathrm{bind}}
+  \mathfrak{E}_{\mathrm{bind}}
    \text{is invariant under R-II, R-III but \textbf{not} R-I.}
 $$
 

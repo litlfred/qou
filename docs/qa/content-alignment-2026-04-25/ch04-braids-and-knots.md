@@ -118,7 +118,7 @@ Chapter 4 is the largest chapter in QOU (~263 markdown blocks across 24 sections
 
 ✓ **Physical constants from $q$ alone:**
 - Mass: $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$ where $\hbar_q = (q-1)/q$ (line 19 of `topological-mass-trefoil.md`)
-- Crossing energy: $\mathbf{E}_{\times} = (q - q^{-1})$ per crossing (section "Crossing energy and Coulomb charge")
+- Crossing energy: $\mathfrak{E}_{\times} = (q - q^{-1})$ per crossing (section "Crossing energy and Coulomb charge")
 - Binding energy: Derived from Hecke relation eigenvalues in `binding-scale-catalan.md`
 - Speed of light: $c_q = 1/(q-1)$ (stated in CLAUDE.md §7aa, used in multiple blocks)
 

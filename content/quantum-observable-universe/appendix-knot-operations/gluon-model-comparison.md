@@ -4,7 +4,7 @@ Five models were tested
 (witness: `nucleon-with-gluons-nf.witness.json`).
 
 **Definition recall** ([Borromean baryon](#def:borromean-baryon)).
-$B = \mathcal{B}_3(K_{0_1}, K_{0_1}, K_{0_1}) \bowtie \mathcal{L}_H$.
+$B = \mathcal{B}_3(K_{0_1}, K_{0_1}, K_{0_1}) \oplus \mathcal{L}_H$.
 The three constituents are **unknots** (not trefoils); the Hopf
 link $\mathcal{L}_H$ binds them.  Up/down flavour is the
 **crossing orientation** of each unknot within $\mathcal{B}_3$:
@@ -49,7 +49,7 @@ gives $\Delta \times E_0 = -2.51$ MeV — overshooting by
 $3\times$.  This confirms that quarks interact as single-crossing
 unknots, not as full trefoils, consistent with Definition 4.27.1.
 
-**Interpretation: $\mathcal{B}_3 \bowtie \mathcal{L}_H$ is
+**Interpretation: $\mathcal{B}_3 \oplus \mathcal{L}_H$ is
 already encoded in $B_3$.**
 
 The Borromean braid $B_3$ has NF:
@@ -61,7 +61,7 @@ $$
 
 The $L_+ \approx +0.046$ and $L_- \approx -0.044$ terms ARE
 the Hopf link $\mathcal{L}_H$ from Definition 4.27.1.  The
-$\bowtie$ in $B = \mathcal{B}_3 \bowtie \mathcal{L}_H$ is not
+$\oplus$ in $B = \mathcal{B}_3 \oplus \mathcal{L}_H$ is not
 an additional multiplicative factor — it describes the Hopf-link
 content that the Borromean braid algebra automatically generates.
 

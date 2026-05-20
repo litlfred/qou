@@ -1,7 +1,7 @@
 The classical Bloch group $\mathcal{B}(\mathbb{C})$ is
 defined by the five-term relation of the dilogarithm
 $\mathrm{Li}_2$.  The **quantum Bloch group**
-$\mathcal{B}_q(R)$ replaces this with the **pentagon
+$\mathfrak{B}(q)(R)$ replaces this with the **pentagon
 identity** of the quantum dilogarithm $\Phi_q$:
 
 $$
@@ -34,7 +34,7 @@ exponential form**.  The connection to our framework:
 This explains **why** $\Phi_1$ is a quantum dilogarithm:
 the traced volumes are exponentials of quantum dilogarithm
 values, and their product lives in the quantum Bloch group.
-The regulator map $\mathcal{B}_q \to \mathbb{R}$ sends
+The regulator map $\mathfrak{B}(q) \to \mathbb{R}$ sends
 the algebraic volume to the hyperbolic volume, recovering
 $\mathrm{Vol}(S^3 \setminus K)$ from the algebraic data.
 

@@ -2,7 +2,7 @@
 We verify commutativity by tracing both paths around the diagram.
 
 **Top-right path** (variational → coupling). The Euler--Lagrange
-operator $\mathbf{E}[S_q]$ applied to a jet $j^1_p \sigma$ yields the
+operator $\mathfrak{E}[S_q]$ applied to a jet $j^1_p \sigma$ yields the
 variational equation
 $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
 ([GR substrate geometry](#rem:gr-substrate-geometry)). Solving for

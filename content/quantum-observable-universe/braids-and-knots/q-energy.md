@@ -9,7 +9,7 @@ Let $K = \hat{\beta}$ be a particle knot with braid representative
 $\beta \in B_n$.  The **$q$-energy** is:
 
 $$
-  \mathbf{E}_q(K) \;=\; \underbrace{J_q^2(K) \cdot \hbar_q}_{\text{rotational}}
+  \mathfrak{E}_q(K) \;=\; \underbrace{J_q^2(K) \cdot \hbar_q}_{\text{rotational}}
   \;+\;
   \underbrace{p_q(\beta)^2 \cdot \hbar_q / (2\,[n]_q)}_{\text{translational}}
   \;+\;
@@ -66,14 +66,14 @@ while the rotational and translational terms are $O(\hbar_q) \sim 0.1$.
 **At rest** ($p_q = 0$, $J_q = 0$):
 
 $$
-  \mathbf{E}_q(K)\big|_{\text{rest}} \;=\; S_q(K) \;=\; \mathfrak{m}(K) c^2
+  \mathfrak{E}_q(K)\big|_{\text{rest}} \;=\; S_q(K) \;=\; \mathfrak{m}(K) c^2
 $$
 
 recovering the topological mass formula.
 
 **Limits.**
 
-| Limit | $\mathbf{E}_q$ |
+| Limit | $\mathfrak{E}_q$ |
 |-------|-------|
 | $q = 1$ (classical) | $j(j+1) \cdot 0 + w^2 \cdot 0 + S_1 = S_1$ |
 | $q \to \infty$ (deep-quantum) | $J_q^2 \to q^{2j+1}, \; p_q \to w \cdot q, \; S_q \to \infty$ |
@@ -82,16 +82,16 @@ recovering the topological mass formula.
 **Relation to crossing energy.**
 
 Each crossing in the braid word contributes energy
-$\mathbf{E}_\times(q) = \frac{1}{2}(q - q^{-1}) = 0.1045$ (in units
+$\mathfrak{E}_\times(q) = \frac{1}{2}(q - q^{-1}) = 0.1045$ (in units
 of the mass scale $\mu_0$).  The total action is:
 
 $$
-  S_q(K) \;=\; \sum_{j=1}^{k} \mathbf{E}_\times^{(\epsilon_j)}(q)
+  S_q(K) \;=\; \sum_{j=1}^{k} \mathfrak{E}_\times^{(\epsilon_j)}(q)
 $$
 
 where $\epsilon_j = \pm 1$ is the crossing sign.  For a
-positive crossing: $\mathbf{E}_\times^{(+)} = q$.  For a negative
-crossing: $\mathbf{E}_\times^{(-)} = q^{-1}$.  The asymmetry
+positive crossing: $\mathfrak{E}_\times^{(+)} = q$.  For a negative
+crossing: $\mathfrak{E}_\times^{(-)} = q^{-1}$.  The asymmetry
 $q \neq q^{-1}$ at the substrate parameter $q$ means positive crossings
 carry more energy than negative ones — this is the energy
 signature of parity violation.

@@ -78,14 +78,14 @@ structure: the categorical mass $\mathfrak{m}(\varrho)$ is computed
 via the trace-norm through the comultiplication $\Delta$, and the
 topological decomposition ([topological mass](#thm:topological-mass))
 shows that every non-trivial vortex acquires at least one crossing
-energy $\mathbf{E}_\times(q) = \tfrac{1}{2}(q - q^{-1}) > 0$
+energy $\mathfrak{E}_\times(q) = \tfrac{1}{2}(q - q^{-1}) > 0$
 from the Skein relation.  In particular, the mass gap is bounded
 below by the minimum crossing energy:
 
 $$
   \Delta_q
    \geq 
-  \mathbf{E}_\times(q) \cdot (q - 1)^2
+  \mathfrak{E}_\times(q) \cdot (q - 1)^2
   = 
   \tfrac{1}{2}(q - q^{-1})(q - 1)^2
    >  0

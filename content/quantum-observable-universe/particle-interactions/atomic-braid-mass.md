@@ -74,7 +74,7 @@ $$
   \mathcal{M}(K)
   \;=\;
   m_e \cdot \rho_K \cdot
-  \bigl\lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\beta_K)\bigr)\!\bigr\rvert,
+  \bigl\lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\bigr\rvert,
 $$
 
 *where $\mathrm{NF}_{\mathrm{GS}}$ is the Gröbner–Shirshov normal

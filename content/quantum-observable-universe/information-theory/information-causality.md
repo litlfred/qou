@@ -60,7 +60,7 @@ and the operational entropy $\eta_q$
 ([operational entropy](#def:operational-entropy)):
 
 $$
-  \mathcal{B}(q)
+  \mathfrak{B}(q)
   =  c_q \cdot n_R(q) \cdot \eta_q
   =  \frac{q\eta_q}{(q-1)^2}
   \quad \text{($q$-bits per Planck time)}.

@@ -21,7 +21,7 @@ On top of these we build the composite hadrons: **Meson
 (categorical)** (def), **Proton (categorical)** (def), and **Neutron
 (categorical)** (def), with existence and uniqueness witnesses
 (prop pairs), **Proton formation: three pair productions and the
-energy scale $\mathbf{E}_0$** (rem) as the production chain, and
+energy scale $\mathfrak{E}_0$** (rem) as the production chain, and
 **Antiparticle crossing reversal** (prop) and **Left and right
 trefoils: electron and positron** (rem) as the chirality data.
 
@@ -35,7 +35,7 @@ knots, no more. **Two-strand spectral completeness over a commutative
 ring $R$** (thm) and **Uniqueness of the scalar gauge coupling on $A
 \otimes A$** (cor) lift the completeness to a generic-ring statement
 the next chapter can reuse. The block of remarks
-$(\mathbf{E}_0, \delta_{CS}, \kappa)$ that follow — including
+$(\mathfrak{E}_0, \delta_{CS}, \kappa)$ that follow — including
 **Conjectured Chern–Simons correction form** (conj), **Gram-determinant
 ratio $\kappa$ as a Plancherel-weighted character product** (prop),
 and **Open problems: deriving the $1.55 \times 10^{-3}$ correction**

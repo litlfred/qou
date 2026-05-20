@@ -998,7 +998,7 @@ author refinement pass.
 
 > _[draft]_ The previous section converted the $R$-matrix into a global energy for a closed strand. We now localise that energy at the points where strands cross. Each crossing has a sign and a weight, and the weights are forced on us by the Hecke relation rather than chosen by hand; the consequence is a per-crossing decomposition that splits cleanly into a strong baseline and an electromagnetic correction.
 > 
-> The section opens with **Crossing energy of a knot composite** (def), which assigns the weights $(q, -q^{-1})$ to positive and negative crossings and traces them back to the eigenvalues of the Hecke generator $T = P \circ R$. The worked example **Crossing energy and binding in the trefoil** (ex) carries the definition through a familiar case, and the remark on the **Categorical coordinate of the commutative limit** (rem) records how $i = \sqrt{\lambda_-}$ appears as the natural complex structure on the antisymmetric eigenspace. The structural pivot is **Coulomb charge of a knot composite** (def), which extracts the antisymmetric half $Q(\mathfrak{H}) = \tfrac{1}{2}(n_+ - n_-)$ of the crossing count and reads off the decomposition $\mathbf{E}_{\mathrm{cross}} = \text{strong baseline} + Q \cdot (q - q^{-1})$. The two propositions **Crossing asymmetry and per-crossing Coulomb correction** (prop) and **Skein relation $L_+ - L_- = (q - q^{-1})\,L_0$ is bar-antisymmetric** (prop) then close the loop, showing that the asymmetric piece transforms correctly under the bar involution $q \mapsto q^{-1}$. The next section, **Lagrange Resolvents and $q$-Deformed Kinematics**, takes the Coulomb-charge decomposition as the starting point for the discrete Fourier transform on the cyclic subgroup $C_5$ and reads off the kinematic observables from there.
+> The section opens with **Crossing energy of a knot composite** (def), which assigns the weights $(q, -q^{-1})$ to positive and negative crossings and traces them back to the eigenvalues of the Hecke generator $T = P \circ R$. The worked example **Crossing energy and binding in the trefoil** (ex) carries the definition through a familiar case, and the remark on the **Categorical coordinate of the commutative limit** (rem) records how $i = \sqrt{\lambda_-}$ appears as the natural complex structure on the antisymmetric eigenspace. The structural pivot is **Coulomb charge of a knot composite** (def), which extracts the antisymmetric half $Q(\mathfrak{H}) = \tfrac{1}{2}(n_+ - n_-)$ of the crossing count and reads off the decomposition $\mathfrak{E}_{\mathrm{cross}} = \text{strong baseline} + Q \cdot (q - q^{-1})$. The two propositions **Crossing asymmetry and per-crossing Coulomb correction** (prop) and **Skein relation $L_+ - L_- = (q - q^{-1})\,L_0$ is bar-antisymmetric** (prop) then close the loop, showing that the asymmetric piece transforms correctly under the bar involution $q \mapsto q^{-1}$. The next section, **Lagrange Resolvents and $q$-Deformed Kinematics**, takes the Coulomb-charge decomposition as the starting point for the discrete Fourier transform on the cyclic subgroup $C_5$ and reads off the kinematic observables from there.
 > 
 > _(draft.)_
 
@@ -1139,7 +1139,7 @@ author refinement pass.
 > | ----------- | --------------------------------------------------- |
 > | $m_e$       | Leptonic mass scale (converts natural units to MeV) |
 > | $m_\mu/m_e$ | Fixes the substrate parameter $q_0$                 |
-> | $Q_\beta$   | Fixes the hadronic energy scale $\mathbf{E}_0$      |
+> | $Q_\beta$   | Fixes the hadronic energy scale $\mathfrak{E}_0$      |
 > 
 > ***
 > 
@@ -1381,13 +1381,13 @@ author refinement pass.
 > 
 > ## Step 9 — Hecke energy scale and mass identity
 > 
-> The energy scale $\mathbf{E}_0$ is determined by the three calibration
+> The energy scale $\mathfrak{E}_0$ is determined by the three calibration
 > inputs:
 > 
 > 1. **Leptonic derivation.**  From $m_e$ and $q_0$ alone:
 > 
 > $$
->   \mathbf{E}_0^{(\mathrm{lept})}
+>   \mathfrak{E}_0^{(\mathrm{lept})}
 >   \;=\;
 >   \frac{m_e}{q_0(q_0 - 1)}
 >   \;=\;
@@ -1398,7 +1398,7 @@ author refinement pass.
 > 2. **Hadronic calibration.**  From $Q_\beta$ and the symbolic NF difference:
 > 
 > $$
->   \mathbf{E}_0^{(\mathrm{had})}
+>   \mathfrak{E}_0^{(\mathrm{had})}
 >   \;=\;
 >   \frac{Q_\beta}{|\Delta(\mathrm{net})|}
 >   \;=\;
@@ -1408,7 +1408,7 @@ author refinement pass.
 > 
 > The $0.75\%$ discrepancy is the brane tower correction
 > ([prop:atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation)).
-> The hadronic calibration fixes $\mathbf{E}_0$ exactly; the leptonic
+> The hadronic calibration fixes $\mathfrak{E}_0$ exactly; the leptonic
 > expression is an approximation valid to the single-level accuracy.
 > 
 > 3. **Mass identity.**  After applying the Archimedean realization
@@ -1443,7 +1443,7 @@ author refinement pass.
 > 
 > $$
 >   \min_{T_w} \;\bigl\|
->     \mathrm{tr}_M(T_w) \cdot \mathbf{E}_0
+>     \mathrm{tr}_M(T_w) \cdot \mathfrak{E}_0
 >     \;-\; B_{\mathrm{target}}
 >   \bigr\|^2
 >   \quad \text{subject to: }
@@ -1473,7 +1473,7 @@ author refinement pass.
 >   Q_{\beta^-}(\mathfrak{H} \to \mathfrak{H}')
 >   \;=\;
 >   \bigl[\mathrm{net}(T_w^\mathfrak{H}) - \mathrm{net}(T_w^{\mathfrak{H}'})\bigr]
->   \times \mathbf{E}_0.
+>   \times \mathfrak{E}_0.
 > $$
 > 
 > The symbolic NF computation
@@ -1487,9 +1487,9 @@ author refinement pass.
 >   \;\approx\; -0.1883,
 > $$
 > 
-> so $Q_\beta = |\Delta(\mathrm{net})| \times \mathbf{E}_0$ by construction.
+> so $Q_\beta = |\Delta(\mathrm{net})| \times \mathfrak{E}_0$ by construction.
 > All other $Q$-values in the beta-decay chain are **predictions** once
-> $\mathbf{E}_0$ is fixed.
+> $\mathfrak{E}_0$ is fixed.
 > 
 > ***
 > 
@@ -1896,7 +1896,7 @@ author refinement pass.
 > (categorical)** (def), **Proton (categorical)** (def), and **Neutron
 > (categorical)** (def), with existence and uniqueness witnesses
 > (prop pairs), **Proton formation: three pair productions and the
-> energy scale $\mathbf{E}_0$** (rem) as the production chain, and
+> energy scale $\mathfrak{E}_0$** (rem) as the production chain, and
 > **Antiparticle crossing reversal** (prop) and **Left and right
 > trefoils: electron and positron** (rem) as the chirality data.
 > 
@@ -1910,7 +1910,7 @@ author refinement pass.
 > ring $R$** (thm) and **Uniqueness of the scalar gauge coupling on $A
 > \otimes A$** (cor) lift the completeness to a generic-ring statement
 > the next chapter can reuse. The block of remarks
-> $(\mathbf{E}_0, \delta_{CS}, \kappa)$ that follow — including
+> $(\mathfrak{E}_0, \delta_{CS}, \kappa)$ that follow — including
 > **Conjectured Chern–Simons correction form** (conj), **Gram-determinant
 > ratio $\kappa$ as a Plancherel-weighted character product** (prop),
 > and **Open problems: deriving the $1.55 \times 10^{-3}$ correction**
@@ -2550,7 +2550,7 @@ author refinement pass.
 
 ### §11.1 Covalent bonding as shared sub-Hopf links  `sec:covalent-bonding`  · 🆕 **DRAFT**  · [`covalent-bonding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/covalent-bonding-intro.md)
 
-> _[draft]_ Where metallic bonding shares residual sub-links across an entire lattice, molecular chemistry localises the sharing between two atoms. We make this precise as a **covalent bond** of order $k$ — a shared sub-Hopf link of $k$ trefoils simultaneously linked to one open site in each partner — and read off single, double, and triple bonds as $k = 1, 2, 3$ (def: [covalent bond](#def:covalent-bond-types)). The crossing-energy formula $E_{\mathrm{bond}}(k) = k \cdot \mathbf{E}_{\mathrm{cross}}(T(2,2)) + \binom{k}{2} \Delta E_{\mathrm{inter}}$ then tracks higher bond order as additional rigidity. We close the section by partitioning carbon's electron cloud $6 \cdot T_{2,3}$ into a closed $1s^2$ pair and a residual sub-link of size four (rem: [carbon's four open linking sites](#rem:carbon-valence)), showing that the half-filling $|R|/2n^2 = 1/2$ is what places carbon at the maximally covalent midpoint of the metallic-character spectrum.
+> _[draft]_ Where metallic bonding shares residual sub-links across an entire lattice, molecular chemistry localises the sharing between two atoms. We make this precise as a **covalent bond** of order $k$ — a shared sub-Hopf link of $k$ trefoils simultaneously linked to one open site in each partner — and read off single, double, and triple bonds as $k = 1, 2, 3$ (def: [covalent bond](#def:covalent-bond-types)). The crossing-energy formula $E_{\mathrm{bond}}(k) = k \cdot \mathfrak{E}_{\mathrm{cross}}(T(2,2)) + \binom{k}{2} \Delta E_{\mathrm{inter}}$ then tracks higher bond order as additional rigidity. We close the section by partitioning carbon's electron cloud $6 \cdot T_{2,3}$ into a closed $1s^2$ pair and a residual sub-link of size four (rem: [carbon's four open linking sites](#rem:carbon-valence)), showing that the half-filling $|R|/2n^2 = 1/2$ is what places carbon at the maximally covalent midpoint of the metallic-character spectrum.
 > 
 > _(draft.)_
 
@@ -2847,7 +2847,7 @@ author refinement pass.
 
 > _[draft]_ Having fixed the Reeb-flow operational entropy and the Planck step in the preceding sections, we now extract from them a velocity and a mass--energy law. The $q$-connection on the state bundle, together with the substrate parameter $q_0$, picks out a Lieb--Robinson cone for information propagation; that cone is what the chapter will call the speed of light.
 > 
-> We open with **Speed of light as Lieb--Robinson velocity** (def), which packages the cone as $c_q = 1/(q-1)$ and identifies it with the maximum information bandwidth per Planck step. The mass--energy law **Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$)** (thm) follows by computing the categorical trace of the crossing energy in the ribbon category, and the proposition **Mass as photon threading cost** (prop) gives the Groebner--Shirshov reading of $\mathfrak{m}$ as the cost of threading a photon through a knot. The **Gravitational constant from information geometry** (def) supplies $G(q)$ along Jacobson's entropy--area line, and the remarks **Discrete recurrence of the Hausdorff dimension** (rem) and **Information causality and the light cone** (rem) close the section by linking $d_H(q) = (2q-1)^2/q^3$ to the Margolus--Levitin bound. The next section, **Computation at Planck Time Lengths**, consumes $c_q$ and $\mathcal{B}(q)$ as the bandwidth budget that bounds every Toffoli step. _(draft.)_
+> We open with **Speed of light as Lieb--Robinson velocity** (def), which packages the cone as $c_q = 1/(q-1)$ and identifies it with the maximum information bandwidth per Planck step. The mass--energy law **Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$)** (thm) follows by computing the categorical trace of the crossing energy in the ribbon category, and the proposition **Mass as photon threading cost** (prop) gives the Groebner--Shirshov reading of $\mathfrak{m}$ as the cost of threading a photon through a knot. The **Gravitational constant from information geometry** (def) supplies $G(q)$ along Jacobson's entropy--area line, and the remarks **Discrete recurrence of the Hausdorff dimension** (rem) and **Information causality and the light cone** (rem) close the section by linking $d_H(q) = (2q-1)^2/q^3$ to the Margolus--Levitin bound. The next section, **Computation at Planck Time Lengths**, consumes $c_q$ and $\mathfrak{B}(q)$ as the bandwidth budget that bounds every Toffoli step. _(draft.)_
 
 ### §13.5 Computation at Planck Time Lengths  `sec:planck-scale-computation`  · ✓ existing  · [`planck-scale-computation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/planck-scale-computation.md)
 
@@ -2875,14 +2875,14 @@ author refinement pass.
 >   $c = 3N$ crossings.
 > 
 > Each Planck step is an application of one of these matrices; the
-> information-theoretic cost is bounded by the bandwidth $\mathcal{B}(q)$
+> information-theoretic cost is bounded by the bandwidth $\mathfrak{B}(q)$
 > ([information speed of light](#def:information-speed-of-light)).
 
 ### §13.6 P versus NP as a Boundary Condition  `sec:p-vs-np-boundary`  · 🆕 **DRAFT**  · [`p-vs-np-boundary-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.md)
 
 > _[draft]_ The jet horizon of §1 separates degree-$0$ data from degree $\geq 1$ leakage, and the Skein Turing machine of the previous section encodes every decision problem as a braid closure. We now combine the two: the answer of an NP-complete decision is a degree-$0$ section of the resolution tree, the polynomial-time witnesses are degree-$1$ paths, and the gap between them is a jet horizon of complexity-theoretic origin.
 > 
-> **Computational horizon** (def) opens the section by transplanting the jet-horizon construction onto the Skein resolution tree $\mathcal{R}(L)$ of a braid closure. **Skein resolution obstruction $\kappa_c^{\mathrm{comp}}(L, q)$** (def) measures the obstruction via Yekutieli cohomology, and **Polynomial computation as sub-horizon bandwidth** (prop) shows that polynomial-time computation saturates the information bandwidth $\mathcal{B}(q)$ below the horizon. The structural statement **$\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity** (conj) recasts the millennium problem as a degree-$0$ opacity claim, **P versus NP through the event horizon: information loss and computational irreversibility** (rem) interprets the gap via Hawking radiation, and the closing conjecture **$\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$** (conj) localises the inequality at the QOU substrate. The next section, **$q$-Heat kernel and spectral analysis**, consumes the computational horizon as the discrete spectral cut-off below which the $q$-heat kernel must collapse to a Perron--Frobenius fallback. _(draft.)_
+> **Computational horizon** (def) opens the section by transplanting the jet-horizon construction onto the Skein resolution tree $\mathcal{R}(L)$ of a braid closure. **Skein resolution obstruction $\kappa_c^{\mathrm{comp}}(L, q)$** (def) measures the obstruction via Yekutieli cohomology, and **Polynomial computation as sub-horizon bandwidth** (prop) shows that polynomial-time computation saturates the information bandwidth $\mathfrak{B}(q)$ below the horizon. The structural statement **$\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity** (conj) recasts the millennium problem as a degree-$0$ opacity claim, **P versus NP through the event horizon: information loss and computational irreversibility** (rem) interprets the gap via Hawking radiation, and the closing conjecture **$\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$** (conj) localises the inequality at the QOU substrate. The next section, **$q$-Heat kernel and spectral analysis**, consumes the computational horizon as the discrete spectral cut-off below which the $q$-heat kernel must collapse to a Perron--Frobenius fallback. _(draft.)_
 
 ### §13.7 $q$-Heat kernel and spectral analysis  `sec:q-heat-kernel-analysis`  · 🆕 **DRAFT**  · [`q-heat-kernel-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro.md)
 

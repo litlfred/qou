@@ -19,7 +19,7 @@ is `tr` of the matrix product. The probe `probe_per_wedderburn_block_ck.py`
 symbolically computes (via `q_character_on_braid_word` + `sympy.cancel`):
 
 $$
-  \chi_{(2,1)}(\beta_n) - \chi_{(2,1)}(\beta_p)
+  \chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)
    = -\frac{(q^4 + 1)(q^2 - 1)}{4 q^3}.
 $$
 

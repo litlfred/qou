@@ -118,7 +118,7 @@ algebraically from $q$ alone.
 The $q$-Yang--Mills--Levi variation gives
 
 $$
-  G(q) =  \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
+  G_q =  \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
   =  \frac{c_q^3 \cdot \hbar_q \cdot (1 - \hbar_q^2)}
              {\eta_q \cdot \hbar_q^2}
   =  \frac{c_q^3 \cdot (2q - 1)}{q^2 \cdot \eta_q \cdot \hbar_q},
@@ -130,7 +130,7 @@ $\hbar_q = (q-1)/q$.  Converting to Planck units:
 
 $$
   G_{\mathrm{Planck}}
-  =  G(q) \cdot \left(\frac{\hbar_q}{c_q}\right)^2
+  =  G_q \cdot \left(\frac{\hbar_q}{c_q}\right)^2
   =  1
 $$
 
@@ -198,7 +198,7 @@ curves.  The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2) \approx 1.043$ 
 | --------- | ----------------------------------- | ------------------------- |
 | $c_q$     | $1/(q-1)$                           | $q$ only                  |
 | $\hbar_q$ | $(q-1)/q$                           | $q$ only                  |
-| $G(q)$    | $c_q^3 \hbar_q / S_{\mathrm{cell}}$ | $q$ and jet tower entropy |
+| $G_q$    | $c_q^3 \hbar_q / S_{\mathrm{cell}}$ | $q$ and jet tower entropy |
 
 The speed of light and Planck constant are algebraic in $q$.  The
 gravitational constant requires the full jet tower information

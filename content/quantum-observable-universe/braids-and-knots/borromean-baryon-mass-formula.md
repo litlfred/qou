@@ -1,6 +1,6 @@
 **Conjecture (Borromean baryon mass formula, common-scale form).**
 *Every Borromean baryon $B = \mathcal{B}_3(K_{0_1}, K_{0_1}, K_{0_1})
-\bowtie \mathcal{L}_H$ ([def:borromean-baryon](#def:borromean-baryon))
+\oplus \mathcal{L}_H$ ([def:borromean-baryon](#def:borromean-baryon))
 has rest mass*
 
 $$

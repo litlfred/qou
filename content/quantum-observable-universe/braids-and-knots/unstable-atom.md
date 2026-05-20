@@ -1,7 +1,7 @@
 **Definition.**
 *An atom-knot $K$ is **unstable at $q$** iff it fails to satisfy
 the [stable atom](#def:stable-atom) condition: no $x \in
-\mathbb{Z}_{\geq 0}^N$ exists with $G(q) x \geq 0$ within the
+\mathbb{Z}_{\geq 0}^N$ exists with $\mathrm{G}(q) x \geq 0$ within the
 confinement filtration $J^{\ell(K, q)}(q)$.*
 
 **Decay channel.**
@@ -12,7 +12,7 @@ or by transitioning to a different atom-knot $K'$ at the same or
 lower level.  The decay product is determined by:*
 
 1. *Identifying the violated constraint:
-   $\gamma^* = \arg\min_\gamma (G(q) x)_\gamma$ over all
+   $\gamma^* = \arg\min_\gamma (\mathrm{G}(q) x)_\gamma$ over all
    ILP-attempted $x$ — this is the constraint with the smallest
    shadow price contribution.*
 

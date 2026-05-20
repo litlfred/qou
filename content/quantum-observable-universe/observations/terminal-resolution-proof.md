@@ -24,5 +24,5 @@ See [`rem:dressed-quark-numerology-at-q0`](dressed-quark-numerology-at-q0.md)
 for the per-quark numerology and the closure tabulation.  By
 ([deuteron binding energy](#lem:deuteron-binding-energy)),
 smoothing the proton--neutron crossing of the six-component link $L_6$
-yields $\Delta \mathbf{E}_{\mathrm{bind}} \approx 2.224\,\text{MeV}$,
+yields $\Delta \mathfrak{E}_{\mathrm{bind}} \approx 2.224\,\text{MeV}$,
 matching the CODATA value to sub-keV precision.  $\square$

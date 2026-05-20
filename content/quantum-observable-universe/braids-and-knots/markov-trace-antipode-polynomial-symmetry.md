@@ -1,7 +1,7 @@
 ## Statement
 
 **Proposition (antipode-induced polynomial symmetry).**
-*Let $\beta_p$ denote the proton braid in $B_3$ used in*
+*Let $\mathcal{B}_p$ denote the proton braid in $B_3$ used in*
 *[`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf), and let*
 
 $$
@@ -11,7 +11,7 @@ $$
 *be the numerator of the closed-form Markov trace*
 
 $$
-  \operatorname{tr}_M(\beta_p) \;=\; \frac{p(q)}{12 \cdot q^{10}}
+  \operatorname{tr}_M(\mathcal{B}_p) \;=\; \frac{p(q)}{12 \cdot q^{10}}
 $$
 
 *derived in [PR #546](https://github.com/litlfred/qou/pull/546) via*
@@ -25,7 +25,7 @@ $$
 *Equivalently, the Markov trace itself satisfies*
 
 $$
-  \operatorname{tr}_M(\beta_p)\!\bigl(\tfrac{1}{q}\bigr) \;=\; -\operatorname{tr}_M(\beta_p)(q).
+  \operatorname{tr}_M(\mathcal{B}_p)\!\bigl(\tfrac{1}{q}\bigr) \;=\; -\operatorname{tr}_M(\mathcal{B}_p)(q).
 $$
 
 ## Proof
@@ -70,12 +70,12 @@ trace satisfies $\operatorname{tr}(S^2(x)) = \operatorname{tr}(x)$.
 For the Hecke algebra, $S^2$ acts as $q \leftrightarrow q^{-1}$ on
 the structural variable $q$ while preserving the algebra structure.
 
-The minus sign in $\operatorname{tr}_M(\beta_p)(1/q) = -\operatorname{tr}_M(\beta_p)(q)$
-reflects the **odd parity** of the proton word $\beta_p$ under the
-antipode-induced involution: $S(\beta_p)$ is the reversed word with
+The minus sign in $\operatorname{tr}_M(\mathcal{B}_p)(1/q) = -\operatorname{tr}_M(\mathcal{B}_p)(q)$
+reflects the **odd parity** of the proton word $\mathcal{B}_p$ under the
+antipode-induced involution: $S(\mathcal{B}_p)$ is the reversed word with
 each $\sigma$ replaced by $\sigma^{-1}$, and the $11$-crossing
 (odd) length contributes a parity sign. Specifically, the
-proton's word length $\ell(\beta_p) = 11$ has odd parity.
+proton's word length $\ell(\mathcal{B}_p) = 11$ has odd parity.
 
 ## Generalization conjecture
 
@@ -86,10 +86,10 @@ with $\operatorname{deg}_q p_K = 2 \cdot \mathrm{shift}(K)$, the
 polynomial satisfies
 
 $$
-  q^{2 \mathrm{shift}(K)} \cdot p_K(1/q) \;=\; (-1)^{\ell(\beta_K)} \cdot p_K(q),
+  q^{2 \mathrm{shift}(K)} \cdot p_K(1/q) \;=\; (-1)^{\ell(\mathcal{B}_K)} \cdot p_K(q),
 $$
 
-where $\ell(\beta_K)$ is the word length (or, more precisely, the
+where $\ell(\mathcal{B}_K)$ is the word length (or, more precisely, the
 parity of crossings under the Hecke-algebra antipode action). The
 $\mathrm{shift}(K)$ is the GS-filtration shift exponent
 ([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)),
@@ -99,7 +99,7 @@ closure.
 This conjecture is testable via [PR #546](https://github.com/litlfred/qou/pull/546)'s
 $A \geq 2$ extension and via the polynomial structure of the
 neutron's closed form
-$\operatorname{tr}_M(\beta_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
+$\operatorname{tr}_M(\mathcal{B}_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
 
 ## Witness
 

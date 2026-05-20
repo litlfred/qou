@@ -13,7 +13,7 @@ shared sub-Hopf link
 $$
   B_k(R_1, R_2)
   = 
-  \underbrace{T_{2,3} \bowtie \cdots \bowtie T_{2,3}}_{k \text{ shared trefoils}}
+  \underbrace{T_{2,3} \oplus \cdots \oplus T_{2,3}}_{k \text{ shared trefoils}}
 $$
 
 where each shared trefoil is simultaneously Hopf-linked to one
@@ -31,7 +31,7 @@ The crossing energy of the bond is
 $$
   E_{\mathrm{bond}}(k)
   = 
-  k \cdot \mathbf{E}_{\mathrm{cross}}(T(2,2))
+  k \cdot \mathfrak{E}_{\mathrm{cross}}(T(2,2))
   + 
   \binom{k}{2}  \Delta E_{\mathrm{inter}},
 $$

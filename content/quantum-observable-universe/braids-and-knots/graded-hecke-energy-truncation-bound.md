@@ -1,5 +1,5 @@
 **Proposition (graded Hecke energy truncation bound).**
-*Let $\hat{\beta}_K$ be the closure of a braid $\beta_K \in B_n$, let
+*Let $\hat{\beta}_K$ be the closure of a braid $\mathcal{B}_K \in B_n$, let
 $\mathfrak{M}_K$ be the stable highest-weight KLR module
 \cite{khovanovlauda2009, brundankleshchev2009} associated to
 $\hat{\beta}_K$, and let*
@@ -37,10 +37,10 @@ $\square$
 
 ## Computational consequence
 
-For numerical evaluation of $\mathrm{tr}_M(T_w(\beta_K), q_0) =
+For numerical evaluation of $\mathrm{tr}_M(T_w(\mathcal{B}_K), q_0) =
 P_K(q_0)$, only the grades $d \in \{0, 1, \ldots, \ell(K, q_0)\}$
 need to be enumerated. The naive enumeration over all $p(n)$
-partitions of the $n$ strands of $\beta_K$ overcounts:
+partitions of the $n$ strands of $\mathcal{B}_K$ overcounts:
 many partitions contribute zero or negligibly to the relevant
 grades. **The truncation reduces the effective work from $p(n)$
 partitions to at most $\ell(K, q_0) + 1$ effective grades.**
@@ -49,8 +49,8 @@ Empirically at $q_0 \approx 1.110$:
 
 | Atom | $n$ strands | $p(n)$ | $\ell(K, q_0)$ | Speedup |
 |------|------------:|-------:|---------------:|--------:|
-| proton ($\beta_p$) | 3 | 3 | 2 | 1.5× |
-| neutron ($\beta_n$) | 3 | 3 | 2 | 1.5× |
+| proton ($\mathcal{B}_p$) | 3 | 3 | 2 | 1.5× |
+| neutron ($\mathcal{B}_n$) | 3 | 3 | 2 | 1.5× |
 | deuteron ($\beta_D$) | 6 | 11 | 5 | 2.2× |
 | triton ($\beta_T$) | 9 | 30 | 8 | 3.7× |
 | ³He ($\beta_{^3\text{He}}$) | 9 | 30 | 8 | 3.7× |
@@ -64,7 +64,7 @@ partitions; conservative since the per-grade cost is comparable.
 The result also enables **resumable** numerical evaluation: a
 partial cache `chi-{atom}-h{n}.witness.json` can be made
 graded-stratified, so partial completion at grade $\ell^\star$
-exposes $\mathrm{tr}_{M, \leq \ell^\star}(\beta_K)$ immediately.
+exposes $\mathrm{tr}_{M, \leq \ell^\star}(\mathcal{B}_K)$ immediately.
 Resuming becomes a matter of picking up at grade $\ell^\star + 1$
 rather than partition $i+1$ — a structural property the partition-
 indexed cache does not have.

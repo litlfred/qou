@@ -191,8 +191,8 @@ None detected. All language is objective.
 | `$\mathfrak{n}$` | Particles (neutron) fraktur | molecular-crossing-table.md line 10: "$\mathfrak{n}_i\mathfrak{n}_j$" | ✓ Correct |
 | `$\mathfrak{H}$` | Hadron fraktur | NOT USED IN CHAPTER | N/A (hadrons are Ch 7 domain) |
 | `$\mathfrak{m}$` | Mass fraktur | NOT DIRECTLY USED; `E_{\text{bind}}` used instead | ✓ OK (no mass formula here) |
-| `$\mathbf{E}_{\text{bind}}$` | Binding energy bold | **ISSUE:** Not used; instead uses `$E_{\text{bind}}$` plain | ⚠ Minor drift |
-| `$\mathbf{E}$` bold | Energy (general) | `ilp-covalent-bond.md` line 18 uses `$E_{\text{bind}}$` plain | ⚠ Notational drift |
+| `$\mathfrak{E}_{\text{bind}}$` | Binding energy bold | **ISSUE:** Not used; instead uses `$E_{\text{bind}}$` plain | ⚠ Minor drift |
+| `$\mathfrak{E}$` bold | Energy (general) | `ilp-covalent-bond.md` line 18 uses `$E_{\text{bind}}$` plain | ⚠ Notational drift |
 | Categories `$\mathbf{C}$` | Bold | NOT USED (no category theory in §1–7) | N/A |
 | Molecular formulas | H₂, C₆H₆ (subscripts) | `molecular-construction.ts` line 12: "H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆" (plain text) | ⚠ Not TeX-rendered |
 
@@ -204,7 +204,7 @@ None detected. All language is objective.
    // To: $H_2 \to CO \to CO_2 \to CH_4 \to C_2H_6 \to C_6H_6$
    ```
 
-2. **MAJOR - Binding energy notation drift:** CLAUDE.md §7aa specifies `$\mathbf{E}_{\mathrm{bind}}$` (bold) but the entire chapter uses `$E_{\text{bind}}$` (plain italic). This appears in:
+2. **MAJOR - Binding energy notation drift:** CLAUDE.md §7aa specifies `$\mathfrak{E}_{\mathrm{bind}}$` (bold) but the entire chapter uses `$E_{\text{bind}}$` (plain italic). This appears in:
    - `molecular-braid.md` line 52: `$E_{\mathrm{bind}}$`
    - `ilp-covalent-bond.md` line 18: `$E_{\mathrm{bind}}$` (table)
    - `h2-binding-energy.md` line 4: `$E_{\mathrm{bind}}(H_2)$`
@@ -212,7 +212,7 @@ None detected. All language is objective.
    - `co-triple-bond-energy.md` lines 5, 37: `$E_{\mathrm{bind}}(CO)$`
    - `benzene-threading-emergence.md` line 44: `$E_{\mathrm{res}}$` (resonance)
 
-   **Fix:** Change all `$E_{\mathrm{bind}}$` to `$\mathbf{E}_{\mathrm{bind}}$`.
+   **Fix:** Change all `$E_{\mathrm{bind}}$` to `$\mathfrak{E}_{\mathrm{bind}}$`.
 
 3. **MINOR - Numerical predictions use `$\approx$` ✓:** Checked `ilp-covalent-bond.md` lines 62–65, `h2-binding-energy.md` lines 9–10, `co-lp-dual-binding.md` line 37. All use `$\approx$` correctly (not `$=$`). ✓
 
@@ -354,7 +354,7 @@ Add a remark block **after** `benzene-threading-emergence.md`:
 | Severity | Category | Count | Locations |
 |----------|----------|-------|-----------|
 | **Blocker** | 1. Molecular formulas in JSDoc not TeX-rendered | 1 | `molecular-construction.ts:12` |
-| **Major** | 2. Binding energy notation ($E$ vs $\mathbf{E}$) | 6 | molecular-braid, ilp-covalent-bond, h2-binding-energy, co-triple-bond-energy (4 instances); benzene-threading-emergence, co2-lp-dual-binding |
+| **Major** | 2. Binding energy notation ($E$ vs $\mathfrak{E}$) | 6 | molecular-braid, ilp-covalent-bond, h2-binding-energy, co-triple-bond-energy (4 instances); benzene-threading-emergence, co2-lp-dual-binding |
 | **Minor** | 3. Terminology clarity (bond order vs shared pairs) | 0 | Consistent usage ✓ |
 | **Minor** | 4. Referent consistency ($\Phi_1$ definition) | 0 | Stated once, used consistently ✓ |
 | **Simplification** | 5. Repeated molecular assembly setup | 5 | §§3, 4, 5, 6, 7 (each molecule defines iterative assembly) |
@@ -378,14 +378,14 @@ Add a remark block **after** `benzene-threading-emergence.md`:
 
 #### MAJOR (6)
 2. **Binding energy notation drift**
-   - Rule: CLAUDE.md §7aa specifies `$\mathbf{E}_{\mathrm{bind}}$` (bold)
+   - Rule: CLAUDE.md §7aa specifies `$\mathfrak{E}_{\mathrm{bind}}$` (bold)
    - Current: All files use `$E_{\mathrm{bind}}$` (plain italic)
    - Affected files:
      - `molecular-braid.md` lines 52–56 (3 instances)
      - `ilp-covalent-bond.md` line 18 (table header)
      - `h2-binding-energy.md` lines 4, 6 (2 instances)
      - `co-triple-bond-energy.md` lines 5, 37 (2 instances)
-   - Fix: Global replace `$E_{\mathrm{bind}}` → `$\mathbf{E}_{\mathrm{bind}}`
+   - Fix: Global replace `$E_{\mathrm{bind}}` → `$\mathfrak{E}_{\mathrm{bind}}`
    - Severity: Major because it's a systematic notation register violation affecting 6 blocks.
 
 #### MINOR (0)
@@ -420,7 +420,7 @@ No genuine minor issues found. Terminology and referent consistency is strong.
 | Priority | Task | Effort | Impact |
 |----------|------|--------|--------|
 | **Critical** | Fix TeX notation in `molecular-construction.ts` line 12 | 1 min | Docs rendering |
-| **Critical** | Replace `$E_{\mathrm{bind}}$` → `$\mathbf{E}_{\mathrm{bind}}$` in 6 files | 5 min | Notation compliance |
+| **Critical** | Replace `$E_{\mathrm{bind}}$` → `$\mathfrak{E}_{\mathrm{bind}}$` in 6 files | 5 min | Notation compliance |
 | **Recommended** | Create "Iterative molecular assembly" definition in §1 | 20 min | Reduce redundancy 15% |
 | **Recommended** | Add trefoil reminder in `covalent-bond-shared-trefoil.md` | 2 min | Improve clarity |
 | **Recommended** | Add classical/braid bridge remark for benzene | 10 min | Connect to standard textbooks |

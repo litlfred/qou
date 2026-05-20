@@ -7,7 +7,7 @@ change in the Skein polynomial when the proton--neutron crossing is
 smoothed,*
 
 $$
-  \Delta \mathbf{E}_{\mathrm{bind}} \approx 2.224\,\text{MeV},
+  \Delta \mathfrak{E}_{\mathrm{bind}} \approx 2.224\,\text{MeV},
 $$
 
 *matching the CODATA value $2.2246\,\text{MeV}$ to sub-keV precision.*

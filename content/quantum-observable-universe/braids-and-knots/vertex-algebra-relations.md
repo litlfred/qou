@@ -560,7 +560,7 @@ $$
 
 In Hecke generators: at every brane level, there exist braid
 words $\beta_{n+1} \in H_{n+1}(q)$ that cannot be written as
-$L_{-1}(\beta_n)$ for any $\beta_n \in H_n(R, q)$.  The jet
+$L_{-1}(\mathcal{B}_n)$ for any $\mathcal{B}_n \in H_n(R, q)$.  The jet
 corrections and the base obstruction live in complementary
 subgroups, so cancellation is impossible.
 

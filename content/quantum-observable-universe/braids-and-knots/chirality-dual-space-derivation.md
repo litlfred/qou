@@ -4,7 +4,7 @@
 $H_3(R, q)$.  For every pn crossing $c$ in the atomic braid,*
 
 $$
-  a_K \;=\; \prod_{\substack{\text{pn crossings}\\ c \in \beta_K}}
+  a_K \;=\; \prod_{\substack{\text{pn crossings}\\ c \in \mathcal{B}_K}}
   \bigl(1 + \mathrm{sign}(c) \cdot h\bigr),
   \qquad
   h \;=\; q - q^{-1},

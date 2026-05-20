@@ -1,26 +1,26 @@
 Three operations build every particle from the seven torus knot
-generators: **Hopf linking** ($\bowtie$), **Skein crossing change**
+generators: **Hopf linking** ($\oplus$), **Skein crossing change**
 ($\sigma$), and **color-tube linking** ($[\cdot]_p$).  This
 appendix table records the result of each operation applied to
 pairs of building block knots.
 
-## Table 1: Hopf linking $K_1 \bowtie K_2$
+## Table 1: Hopf linking $K_1 \oplus K_2$
 
 The Hopf link $\mathcal{L}_H$ joins two knots into a
 two-component link.  The linking number is always $\pm 1$.
 
-| $K_1$ | $K_2$ | $K_1 \bowtie K_2$ | Components | Physical role |
+| $K_1$ | $K_2$ | $K_1 \oplus K_2$ | Components | Physical role |
 |-------|-------|--------------------|:----------:|---------------|
-| $T_{2,3}$ | $T_{2,3}$ | $T_{2,3} \bowtie T_{2,3}$ | $2$ | $\mathfrak{u}\mathfrak{u}$ pair (Hopf-linked quarks) |
-| $T_{2,3}$ | $T_{2,3}^{\sigma}$ | $T_{2,3} \bowtie T_{2,3}^{\sigma}$ | $2$ | $\mathfrak{u}\mathfrak{d}^{\sigma}$ = $\pi^+$ (pion) |
-| $T_{2,3}^{\sigma}$ | $T_{2,3}^{\sigma}$ | $T_{2,3}^{\sigma} \bowtie T_{2,3}^{\sigma}$ | $2$ | $\mathfrak{d}\mathfrak{d}$ pair |
-| $T_{2,3}$ | $T_{1,0}$ | $T_{2,3} \bowtie T_{1,0}$ | $2$ | $e\nu$ pair |
+| $T_{2,3}$ | $T_{2,3}$ | $T_{2,3} \oplus T_{2,3}$ | $2$ | $\mathfrak{u}\mathfrak{u}$ pair (Hopf-linked quarks) |
+| $T_{2,3}$ | $T_{2,3}^{\sigma}$ | $T_{2,3} \oplus T_{2,3}^{\sigma}$ | $2$ | $\mathfrak{u}\mathfrak{d}^{\sigma}$ = $\pi^+$ (pion) |
+| $T_{2,3}^{\sigma}$ | $T_{2,3}^{\sigma}$ | $T_{2,3}^{\sigma} \oplus T_{2,3}^{\sigma}$ | $2$ | $\mathfrak{d}\mathfrak{d}$ pair |
+| $T_{2,3}$ | $T_{1,0}$ | $T_{2,3} \oplus T_{1,0}$ | $2$ | $e\nu$ pair |
 | $T_{1,0}$ | $T_{1,0}$ | $\mathcal{L}_H$ | $2$ | Hopf link (pure) |
-| $T_{2,3}$ | $T_{2,5}$ | $T_{2,3} \bowtie T_{2,5}$ | $2$ | $\mathfrak{u}\mathfrak{b}$ pair |
-| $T_{2,3}$ | $T_{2,5}^{\sigma}$ | $T_{2,3} \bowtie T_{2,5}^{\sigma}$ | $2$ | $\mathfrak{u}\mathfrak{s}^{\sigma}$ = $K^+$ (kaon) |
-| $\mathfrak{p}$ | $\mathfrak{n}$ | $\mathfrak{p} \bowtie \mathfrak{n}$ | $6$ | Deuteron |
-| $\mathfrak{p}$ | $\mathfrak{p}$ | $\mathfrak{p} \bowtie \mathfrak{p}$ | $6$ | Diproton (unstable) |
-| $\mathfrak{n}$ | $\mathfrak{n}$ | $\mathfrak{n} \bowtie \mathfrak{n}$ | $6$ | Dineutron (unstable) |
+| $T_{2,3}$ | $T_{2,5}$ | $T_{2,3} \oplus T_{2,5}$ | $2$ | $\mathfrak{u}\mathfrak{b}$ pair |
+| $T_{2,3}$ | $T_{2,5}^{\sigma}$ | $T_{2,3} \oplus T_{2,5}^{\sigma}$ | $2$ | $\mathfrak{u}\mathfrak{s}^{\sigma}$ = $K^+$ (kaon) |
+| $\mathfrak{p}$ | $\mathfrak{n}$ | $\mathfrak{p} \oplus \mathfrak{n}$ | $6$ | Deuteron |
+| $\mathfrak{p}$ | $\mathfrak{p}$ | $\mathfrak{p} \oplus \mathfrak{p}$ | $6$ | Diproton (unstable) |
+| $\mathfrak{n}$ | $\mathfrak{n}$ | $\mathfrak{n} \oplus \mathfrak{n}$ | $6$ | Dineutron (unstable) |
 
 ## Table 2: Skein crossing change $K^{\sigma}$ — mirror and transmutation
 
@@ -36,7 +36,7 @@ locally (at one crossing), it transmutes quark flavour.
 | $T_{1,0}$ ($\nu$) | Global mirror $\sigma$ | $T_{1,0}^{\sigma}$ ($\nu^{\sigma}$) | Neutrino → antineutrino |
 | $4_1$ ($H$) | Global mirror $\sigma$ | $4_1$ ($H$) | Self-mirror (amphichiral Higgs) |
 | $\mathfrak{n}$ = $[u,d,d]_p$ | Local $\sigma$ at one $d$ | $\mathfrak{p}$ = $[u,u,d]_p$ | Beta decay ($n \to p$) |
-| $T_{2,3} \bowtie T_{2,3}$ | Skein at crossing | $4_1$ | $\mathfrak{u}\mathfrak{u}$ Hopf → figure-eight (Higgs) |
+| $T_{2,3} \oplus T_{2,3}$ | Skein at crossing | $4_1$ | $\mathfrak{u}\mathfrak{u}$ Hopf → figure-eight (Higgs) |
 
 ## Table 3: Color-tube linking $[K_1, K_2, K_3]_p$ — Borromean construction
 

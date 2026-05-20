@@ -1,10 +1,10 @@
-Let $\mathfrak{H} = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a composite
+Let $\mathfrak{H} = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ be a composite
 of knots linked by a link $\mathcal{L}$, with braid word
 $\beta \in B_n$ representing the linking.  The *crossing energy*
 of $\mathfrak{H}$ is
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
+  \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H})
   = 
   \sum_{\text{crossings in } \beta}
   \begin{cases}
@@ -22,7 +22,7 @@ $$
   =  (q^{1/2} - q^{-1/2}) L_0.
 $$
 
-### Categorical origin: $\mathbf{E}_{\mathrm{cross}}$ is not an external postulate
+### Categorical origin: $\mathfrak{E}_{\mathrm{cross}}$ is not an external postulate
 
 The per-crossing weights $(q, -q^{-1})$ are not chosen as an
 energetic penalty laid on top of a topological framework.  They
@@ -49,20 +49,20 @@ rigid monoidal structure:
    crossing $L_{-}$ the weight $-q^{-1}$ is precisely the action
    of $T$ on a symmetric-channel input and $T^{-1}$ on an
    antisymmetric-channel input.  The sum
-   $\mathbf{E}_{\mathrm{cross}}(\mathfrak{H})$ is therefore a trace
+   $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{H})$ is therefore a trace
    of $T^{\pm 1}$-eigenvalues along the braid, dictated by the
    categorical structure.
 4. *Gröbner--Shirshov resolution.*  When $\mathfrak{H}$ is reduced
    to Gröbner--Shirshov normal form
    ([nuclear normal form](#prop:nuclear-groebner-reduction)), each
    crossing contributes its $T$-eigenvalue exactly once; the net
-   $\mathbf{E}_{\mathrm{cross}}$ is the resulting Laurent
+   $\mathfrak{E}_{\mathrm{cross}}$ is the resulting Laurent
    polynomial in $q$, read off the normal form.  Removing any of
    these weights would violate duality and break the Hecke
    relation.
 
 The crossing energy measures the net Skein weight of the composite:
-positive $\mathbf{E}_{\mathrm{cross}}$ indicates repulsion dominates,
+positive $\mathfrak{E}_{\mathrm{cross}}$ indicates repulsion dominates,
 negative indicates binding dominates.  This quantity is computed
 entirely from the $R$-matrix braiding
 ([R-matrix](#rem:r-matrix-braiding)) of

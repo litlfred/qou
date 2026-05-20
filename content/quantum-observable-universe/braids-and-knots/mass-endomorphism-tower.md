@@ -39,7 +39,7 @@ replacing the scalar Wedderburn-volume tower with the operator-trace
 form — is stated in [`prop:mass-tower-operator-valued`](mass-tower-operator-valued.md)
 (authored 2026-05-20 as the Stage-1 unblock).
 The graded expansion
-$\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\beta_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
+$\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
 ([prop:rho-k-graded-expansion](#prop\:rho-k-graded-expansion))
 replaces the $\rho_q$ ansatz with a categorically-derived series
 where the LO piece is the constituent-mass ratio (Markov
@@ -115,7 +115,7 @@ reduce to $\alpha \cdot \ln|V|$ either.*
 *Both forms above are concrete evaluations of the abstract GB-NF
 statement
 ([atomic mass via GB-NF](#prop\:atomic-mass-gb-nf))
-$\mathcal{M}(K) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
+$\mathcal{M}(K) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$.
 The substrate density $\rho_q = 1/\hbar_q^2$ above is a substrate-only
 ansatz for the categorical density $\rho_K$; empirically
 $\rho_K^{\mathrm{CODATA}}$ is strongly braid-class-dependent

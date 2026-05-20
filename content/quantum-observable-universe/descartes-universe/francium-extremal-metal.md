@@ -36,7 +36,7 @@ outermost crossing energy in two independent ways:
 
 2. **Maximal shell depth**: $n = 7$.  The crossing energy
    scales as
-   $\mathbf{E}_{\mathrm{cross}} \propto 1/n^2$
+   $\mathfrak{E}_{\mathrm{cross}} \propto 1/n^2$
    ([crossing energy](#def:crossing-energy)), so the $n = 7$
    trefoil is the most weakly bound of any alkali.
 

@@ -69,7 +69,7 @@ $$
   = 0.7976 - 1.0065 = -0.2089
 $$
 
-The energy scale $\mathbf{E}_0 = Q_\beta / |\Delta\mathrm{net}|
+The energy scale $\mathfrak{E}_0 = Q_\beta / |\Delta\mathrm{net}|
 \approx 4.155$ MeV converts each coefficient difference to MeV
 ([formation chain](#rem:meson-to-proton-via-borromean)).
 

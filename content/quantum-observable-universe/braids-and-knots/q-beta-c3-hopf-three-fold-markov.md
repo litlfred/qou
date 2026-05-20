@@ -49,7 +49,7 @@ underlying braid graph.
 ### Fact 3 — 2-strand sub-braid extraction at order 3
 
 At order $\hbar_q^6$ (the third perturbative order), the dominant
-contribution to $\tau_M(\beta_p) - \tau_M(\beta_n)$ comes from
+contribution to $\tau_M(\mathcal{B}_p) - \tau_M(\mathcal{B}_n)$ comes from
 **all $\binom{n}{2}$ choices of 2-strand sub-braids** of $\beta$.
 For each such 2-strand sub-braid, the Markov closure is the **Hopf
 link** (or the unknot, for trivial sub-braids).
@@ -70,7 +70,7 @@ $$
 $$
 
 Combining Facts 1–4: the third-order $\hbar_q^6$ coefficient in
-$\tau_M(\beta_p) - \tau_M(\beta_n)$ factors as
+$\tau_M(\mathcal{B}_p) - \tau_M(\mathcal{B}_n)$ factors as
 
 $$
   c_3 \cdot b^3 \cdot \hbar_q^6

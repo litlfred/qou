@@ -216,7 +216,7 @@ Per the structural narrative on PR #801 and
 - The depth-stratified $\alpha_k \cdot \Phi_k$ schedule is fixed
   ([`prop:plancherel-term-7-formulation`](#prop:plancherel-term-7-formulation),
   $\alpha_{k \ge 4} = m_e \cdot 8G$)
-- The convolution structure (Hecke-product with interface knot $\Delta_I^K$)
+- The convolution structure (Hecke-product with interface knot $\bowtie_K$)
   is fixed
   ([`def:ew-interface-knot`](#def:ew-interface-knot))
 - The bar-symmetrization Li_2^q / Φ_q split is established

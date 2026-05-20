@@ -5,7 +5,7 @@ Expanding the paper's per-block character closed forms from
 around $q = 1$ in $\varepsilon = q - 1$ exposes a clean structural
 pattern in the $\varepsilon^1$ leading-order coefficients:
 
-| irrep $\lambda$ | $\chi_\lambda(\beta_n - \beta_p)$ closed form | LO $\varepsilon^1$ coeff | Hopf-Jones absorption |
+| irrep $\lambda$ | $\chi_\lambda(\mathcal{B}_n - \mathcal{B}_p)$ closed form | LO $\varepsilon^1$ coeff | Hopf-Jones absorption |
 |:---:|:---:|:---:|:---|
 | $V_{(3)}$ | $-\dfrac{(q^2+1)^2(q^2-1)}{4q}$ | $\mathbf{-2}$ | **full** ($= J_{\text{Hopf}}(q{=}1)$) |
 | $V_{(2,1)}$ | $-\dfrac{(q^4+1)(q^2-1)}{4q^3}$ | $-1$ | half ($= J_{\text{Hopf}}(q{=}1)/2$) |
@@ -18,9 +18,9 @@ factoring out the common $(q^2-1) = q(q+1)\hbar_q$:
 
 $$
 \begin{aligned}
-\chi_{(3)}(\beta_n - \beta_p)     &= -\tfrac{1}{4}(q^2+1)^2 (q+1) \cdot \hbar_q, \\[4pt]
-\chi_{(2,1)}(\beta_n - \beta_p)   &= -\tfrac{1}{4q^2}(q^4+1) (q+1) \cdot \hbar_q, \\[4pt]
-\chi_{(1,1,1)}(\beta_n - \beta_p) &= -\tfrac{1}{4q^4}(q^2+1)^2 (q+1) \cdot \hbar_q.
+\chi_{(3)}(\mathcal{B}_n - \mathcal{B}_p)     &= -\tfrac{1}{4}(q^2+1)^2 (q+1) \cdot \hbar_q, \\[4pt]
+\chi_{(2,1)}(\mathcal{B}_n - \mathcal{B}_p)   &= -\tfrac{1}{4q^2}(q^4+1) (q+1) \cdot \hbar_q, \\[4pt]
+\chi_{(1,1,1)}(\mathcal{B}_n - \mathcal{B}_p) &= -\tfrac{1}{4q^4}(q^2+1)^2 (q+1) \cdot \hbar_q.
 \end{aligned}
 $$
 
@@ -64,12 +64,12 @@ $y_{(3)}(1) \cdot (-2) + y_{(2,1)}(1) \cdot (-1) + y_{(1,1,1)}(1) \cdot (-2)
 = -\tfrac{5}{4}$
 
 This is the Markov-trace LO coefficient
-$\tau_M(\beta_n - \beta_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$
+$\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$
 (NB: at $q_0$ rather than $q=1$, the $y_\lambda$ values differ — at
 $q_0$ they're $(0.4154, 0.2809, 0.0227)$ summing to $0.7191$, NOT $3/4$,
 because Wenzl-bridge weights are $q$-dependent rational functions, not
 a probability measure). The Markov-trace direct compute at $q_0$ gives
-$\tau_M(\beta_n - \beta_p) \approx -0.142$ (consistent with the
+$\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$ (consistent with the
 $y_\lambda(q_0) \cdot \chi_\lambda(q_0)$ sum).
 
 ## Why this matters

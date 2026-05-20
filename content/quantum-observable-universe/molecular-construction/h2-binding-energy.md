@@ -1,7 +1,7 @@
 *The binding energy of $H_2$ is:*
 
 $$
-  \mathbf{E}_{\mathrm{bind}}(H_2)
+  \mathfrak{E}_{\mathrm{bind}}(H_2)
   = \alpha \cdot y_{\mathrm{cov}}^*
   = \alpha \cdot \bigl(2\Phi_1^H - \Phi_1^{H_2}\bigr)
 $$

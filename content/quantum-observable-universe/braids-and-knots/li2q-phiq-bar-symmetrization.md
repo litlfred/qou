@@ -134,7 +134,7 @@ archimedean side.
 This characterises *exactly* what the substrate-archimedean wall does
 on the level-2 primitive: it splits one symmetric object into a
 bar-conjugate pair. The same mechanism extends to higher primitives
-([`def:q-multiple-zeta-values`](#def:q-multiple-zeta-values)) and is
+(`def:q-multiple-zeta-values` (forthcoming)) and is
 the structural content of the volume-conjecture program in QOU.
 
 ### Lean formalisation

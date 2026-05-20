@@ -70,7 +70,7 @@ knot type:
 
 **Precision data.** All torus knots have zero hyperbolic volume
 ($\mathrm{Vol} = 0$), so their bare mass vanishes.  Mass arises
-entirely from crossing energy $\mathbf{E}_{\times}(q) =
+entirely from crossing energy $\mathfrak{E}_{\times}(q) =
 \tfrac{1}{2}(q - q^{-1})$ at each self-crossing and from Hopf
 linking.  The figure-eight knot ($4_1$) is the unique amphichiral
 knot driving the mass mechanism, with

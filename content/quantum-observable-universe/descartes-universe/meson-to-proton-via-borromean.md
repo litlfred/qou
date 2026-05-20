@@ -88,11 +88,11 @@ With typed crossings at $q_0 \approx 1.1100$:
 | Proton $\mathfrak{p}$ | $\mathfrak{u}\mathfrak{u}\mathfrak{d}$ | $+0.9991$ |
 | Neutron $\mathfrak{n}$ | $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ | $+0.8108$ |
 
-## Why $\mathbf{E}_0 = Q / |\Delta\mathrm{net}|$
+## Why $\mathfrak{E}_0 = Q / |\Delta\mathrm{net}|$
 
 The NF coefficients are dimensionless Laurent polynomials in $q$.
 To convert to physical energies (MeV), a single scale
-$\mathbf{E}_0$ is needed.  This scale is **fixed by one
+$\mathfrak{E}_0$ is needed.  This scale is **fixed by one
 observable**: the beta decay $Q$-value.
 
 1. **Linearity.**  The normal form $\mathrm{NF}$ is coordinate
@@ -119,7 +119,7 @@ observable**: the beta decay $Q$-value.
    equivalent of the dimensionless transition $\Delta\mathrm{net}$:
 
    $$
-     \mathbf{E}_0
+     \mathfrak{E}_0
      = 
      \frac{Q_\beta}{|\Delta\mathrm{net}|}
      = 
@@ -138,8 +138,8 @@ observable**: the beta decay $Q$-value.
      $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ introduces
      $-H_A$ shifts that lower the neutron's net below the proton's.
 
-Once $\mathbf{E}_0$ is set, every other NF coefficient difference
-$\Delta_i$ contributes $\Delta_i \times \mathbf{E}_0$ MeV to the
+Once $\mathfrak{E}_0$ is set, every other NF coefficient difference
+$\Delta_i$ contributes $\Delta_i \times \mathfrak{E}_0$ MeV to the
 decay energy budget — and the six terms sum exactly to $Q_\beta$
 ([energy scale](#rem:beta-decay-energy-scale)).
 
