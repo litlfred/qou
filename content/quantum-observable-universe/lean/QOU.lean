@@ -99,3 +99,4 @@ import QOU.frobenius_dagger_positive_definite
 import QOU.volume_from_rigidity
 import QOU.substrate_radial_coordinate
 import QOU.Braiding.non_self_intersection
+import QOU.Information.p_bandwidth_bound

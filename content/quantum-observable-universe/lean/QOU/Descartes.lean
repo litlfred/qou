@@ -24,6 +24,7 @@ import QOU.Descartes.NuclearGroebnerReduction
 import QOU.Descartes.WeierstrassProjection
 import QOU.Descartes.metallic_character_knot
 import QOU.Descartes.descartes
+import QOU.Descartes.noble_gas_characterization
 
 /-!
 # Descartes Universe — Module Index
