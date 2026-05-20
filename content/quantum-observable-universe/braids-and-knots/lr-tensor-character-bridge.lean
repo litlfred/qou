@@ -42,9 +42,13 @@ import Mathlib.Data.List.Basic
 
 namespace QOU.BraidsAndKnots
 
-/-- A partition recorded as a non-increasing list of positive
-    naturals.  Concrete combinatorial model, sufficient for stating
-    the LR coefficient and the bridge identity. -/
+/-- An *unvalidated* partition representation — a `List ℕ` intended
+    to model a partition (non-increasing list of positive naturals)
+    but with no subtype proof enforcing the invariant. Sufficient for
+    stating the LR coefficient and the bridge identity at the
+    structural-stub level. The full proof upgrade target should
+    replace this with `Mathlib.Combinatorics.Partition` and propagate
+    the dependent type through the stubs below. -/
 structure Partition where
   parts : List ℕ
   deriving Repr
