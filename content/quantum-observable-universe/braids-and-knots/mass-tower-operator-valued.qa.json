@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.lean"
   },
   "source_hashes": {
-    "md": "68a1929f1b2d",
-    "ts": "7bfa235b06d1",
+    "md": "bd1f2c11302d",
+    "ts": "d50d6ec3d927",
     "lean": "adfcd13ffd1d"
   },
   "criteria": {
@@ -62,6 +62,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "bd1f2c11302d",
+          "ts": "d50d6ec3d927",
+          "lean": "adfcd13ffd1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -184,5 +199,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

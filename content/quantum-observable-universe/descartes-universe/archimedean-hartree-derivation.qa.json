@@ -47,25 +47,6 @@
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "6834452563bf",
-          "ts": "4254eed105f4",
-          "lean": "5cab846ca5a1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:171: - **4a ✓ — partial.** $V_i$ for the H_2 optimal ordering | quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:176: - **4b ✓ — relative spacing recovered.** Categorical shell"
-      }
-    ],
     "voice-first-person-work": [
       {
         "field_hash": {
@@ -202,7 +183,26 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "6834452563bf",
+          "ts": "4254eed105f4",
+          "lean": "5cab846ca5a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:57.915Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:171: - **4a ✓ — partial.** $V_i$ for the H_2 optimal ordering | quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:176: - **4b ✓ — relative spacing recovered.** Categorical shell"
+      }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:57.915Z"
 }

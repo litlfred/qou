@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/q-beta-gamma-gamma-canonical-derivation.md"
   },
   "source_hashes": {
-    "md": "fa5da9a8c952",
+    "md": "4e97ea6ab789",
     "ts": "78d4c22be7c3"
   },
   "criteria": {
@@ -101,6 +101,20 @@
         },
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      },
+      {
+        "field_hash": {
+          "md": "4e97ea6ab789",
+          "ts": "78d4c22be7c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -332,5 +346,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:29:54.988Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

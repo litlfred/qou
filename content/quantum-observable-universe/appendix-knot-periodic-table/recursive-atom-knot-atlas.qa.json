@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean"
   },
   "source_hashes": {
-    "md": "d4fc17f94c02",
+    "md": "c7297bfe65df",
     "ts": "75723ba8d873",
     "lean": "efa0b2bf80f3"
   },
@@ -60,25 +60,6 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "d4fc17f94c02",
-          "ts": "75723ba8d873",
-          "lean": "efa0b2bf80f3"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:185: | Prediction | $B_\\mathrm{pred} = 2 \\cdot m_e \\cdot \\mathrm{Vol}(K_{8_{11}}) = 8.469$ MeV vs $B_\\mathrm{AME} = 8.482$.  **err = −0.16%**  ★ **best per-isotope**. | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:541: | $\\mathfrak{n}$ | 1 | 1 | L1-borromean-via-canonical | 🟢 substrate | mass | 939.5652 | 939.5654 | -0.251 ppm | — | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:549: | $\\mathfrak{p}$ | 1 | 0 | L1-borromean-via-canonical | 🟢 substrate | mass | 938.2719 | 938.2721 | -0.251 ppm | — | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:550: | ${}^{2}$H | 2 | 1 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 2.2488 | 2.2246 | +1.09 % | 1875.5882 MeV (-285.5 ppm) | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:551: | ${}^{3}$H | 3 | 2 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 8.4686 | 8.4818 | -0.16 % | 2808.9336 MeV (-177.4 ppm) |"
       }
     ],
     "voice-first-person-work": [
@@ -233,7 +214,26 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "c7297bfe65df",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:57.915Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:185: | Prediction | $B_\\mathrm{pred} = 2 \\cdot m_e \\cdot \\mathrm{Vol}(K_{8_{11}}) = 8.469$ MeV vs $B_\\mathrm{AME} = 8.482$.  **err = −0.16%**  ★ **best per-isotope**. | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:541: | $\\mathfrak{n}$ | 1 | 1 | L1-borromean-via-canonical | 🟢 substrate | mass | 939.5652 | 939.5654 | -0.251 ppm | — | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:549: | $\\mathfrak{p}$ | 1 | 0 | L1-borromean-via-canonical | 🟢 substrate | mass | 938.2719 | 938.2721 | -0.251 ppm | — | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:550: | ${}^{2}$H | 2 | 1 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 2.2488 | 2.2246 | +1.09 % | 1875.5882 MeV (-285.5 ppm) | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:551: | ${}^{3}$H | 3 | 2 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 8.4686 | 8.4818 | -0.16 % | 2808.9336 MeV (-177.4 ppm) |"
+      }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:57.915Z"
 }

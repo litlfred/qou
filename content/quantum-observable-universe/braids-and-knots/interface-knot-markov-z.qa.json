@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.lean"
   },
   "source_hashes": {
-    "md": "9fbc90a14827",
+    "md": "acf3a3d2b56d",
     "ts": "340a2f4a626b",
     "lean": "6fb367832eb1"
   },
@@ -107,6 +107,21 @@
         },
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      },
+      {
+        "field_hash": {
+          "md": "acf3a3d2b56d",
+          "ts": "340a2f4a626b",
+          "lean": "6fb367832eb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -334,5 +349,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

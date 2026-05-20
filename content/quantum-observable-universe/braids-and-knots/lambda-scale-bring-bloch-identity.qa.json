@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:lambda-scale-bring-bloch-identity",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.lean"
+  },
+  "source_hashes": {
+    "md": "f46ae66d2f9d",
+    "ts": "7c9b3934ba0c",
+    "lean": "4c0c1426400f"
+  },
+  "criteria": {
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "f46ae66d2f9d",
+          "ts": "7c9b3934ba0c",
+          "lean": "4c0c1426400f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T14:30:54.386Z"
+}

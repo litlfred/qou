@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/staircase-partition.lean"
   },
   "source_hashes": {
-    "md": "4365e5c0ea89",
+    "md": "82d7ddfe58a9",
     "ts": "c3131a5bad1d",
     "lean": "f964c7a14cc4"
   },
@@ -62,6 +62,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "82d7ddfe58a9",
+          "ts": "c3131a5bad1d",
+          "lean": "f964c7a14cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -202,5 +217,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

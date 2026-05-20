@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram.lean"
   },
   "source_hashes": {
-    "md": "03c08d3bc93a",
+    "md": "03848e564716",
     "ts": "a976307c8751",
     "lean": "8712247df083"
   },
@@ -62,6 +62,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "03848e564716",
+          "ts": "a976307c8751",
+          "lean": "8712247df083"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -202,5 +217,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

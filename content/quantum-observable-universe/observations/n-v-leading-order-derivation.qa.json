@@ -47,25 +47,6 @@
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "9edee3bb1ded",
-          "ts": "9770bf45270b",
-          "lean": "9006458d3fcc"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/observations/n-v-leading-order-derivation.md:77: $\\approx 40.11$, so $\\varepsilon \\approx 0.003 < 0.006$. ✓*"
-      }
-    ],
     "voice-first-person-work": [
       {
         "field_hash": {
@@ -218,7 +199,26 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "9edee3bb1ded",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:57.915Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/observations/n-v-leading-order-derivation.md:77: $\\approx 40.11$, so $\\varepsilon \\approx 0.003 < 0.006$. ✓*"
+      }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:57.915Z"
 }

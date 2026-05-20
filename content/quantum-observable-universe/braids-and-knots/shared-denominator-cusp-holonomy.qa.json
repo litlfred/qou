@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/shared-denominator-cusp-holonomy.lean"
   },
   "source_hashes": {
-    "md": "9c0c451995e5",
+    "md": "84399eb689c6",
     "ts": "11bd70b90d64",
     "lean": "00f87a6d63d3"
   },
@@ -77,6 +77,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "84399eb689c6",
+          "ts": "11bd70b90d64",
+          "lean": "00f87a6d63d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -232,5 +247,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

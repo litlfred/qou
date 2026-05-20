@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/borromean-baryon.lean"
   },
   "source_hashes": {
-    "md": "830ca8e4f275",
+    "md": "8f4aafab935d",
     "ts": "290dc40636f2",
     "lean": "6aee1340d7de"
   },
@@ -62,6 +62,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "8f4aafab935d",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -218,5 +233,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

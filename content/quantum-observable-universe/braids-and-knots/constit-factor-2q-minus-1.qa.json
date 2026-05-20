@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean"
   },
   "source_hashes": {
-    "md": "4b33eff1f1b2",
+    "md": "7c3a7cfdfa64",
     "ts": "01b93e3fab57",
     "lean": "0270f25bdb43"
   },
@@ -45,6 +45,21 @@
         },
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      },
+      {
+        "field_hash": {
+          "md": "7c3a7cfdfa64",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -186,5 +201,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T06:39:43.529Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

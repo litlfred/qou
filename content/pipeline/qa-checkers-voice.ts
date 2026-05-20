@@ -82,7 +82,14 @@ export function checkStatusLeak(mdPath: string): CheckerResult {
 
 // ── voice-emoji-content ─────────────────────────────────────────
 
-const EMOJI_RE = /[✅❌⚠⏳🔧🚧☑☒✓✗★🎯🚀🔥]/;
+// Status-marker emoji that don't belong in scholarly prose. The `u`
+// flag is **required**: without it, the character class compiles as
+// raw UTF-16 code units, so e.g. `[🔧]` becomes `[🔧]` —
+// which matches the leading surrogate \uD83D of EVERY emoji in the
+// U+1F000+ plane (e.g. 🟢 🟡 🟠 ⚪), causing surprise false-
+// positives. With `u` the engine treats each emoji as a single
+// code-point literal and only the listed glyphs match.
+const EMOJI_RE = /[✅❌⚠⏳🔧🚧☑☒✓✗★🎯🚀🔥🟢🟡🟠⚪🔴🔵🟣🟤⬛⬜]/u;
 
 export function checkEmojiContent(mdPath: string): CheckerResult {
   // ✓ and ✗ are allowed inside table rows for compact comparison
@@ -91,7 +98,7 @@ export function checkEmojiContent(mdPath: string): CheckerResult {
   const hits = scan(mdPath, EMOJI_RE, (l) => {
     if (l.trim().startsWith("|")) {
       // In a table row, flag iff at least one non-✓/✗ emoji is present.
-      return /[✅❌⚠⏳🔧🚧☑☒★🎯🚀🔥]/.test(l);
+      return /[✅❌⚠⏳🔧🚧☑☒★🎯🚀🔥🟢🟡🟠⚪🔴🔵🟣🟤⬛⬜]/u.test(l);
     }
     // Body prose: every EMOJI_RE match is a hit.
     return true;

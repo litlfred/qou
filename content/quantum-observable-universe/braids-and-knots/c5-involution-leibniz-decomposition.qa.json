@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.lean"
   },
   "source_hashes": {
-    "md": "56015ad9f91c",
+    "md": "69dec89a7e5a",
     "ts": "4cb0656ad986",
     "lean": "672ededca6ac"
   },
@@ -48,9 +48,9 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "56015ad9f91c",
+          "md": "fa32135b9be6",
           "ts": "4cb0656ad986",
-          "lean": "672ededca6ac"
+          "lean": "4c154d51dbc2"
         },
         "result": "pass",
         "reviewer": {
@@ -58,14 +58,29 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:56:21.010Z",
-        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "56015ad9f91c",
+          "md": "fa32135b9be6",
+          "ts": "4cb0656ad986",
+          "lean": "4c154d51dbc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "69dec89a7e5a",
           "ts": "4cb0656ad986",
           "lean": "672ededca6ac"
         },
@@ -75,16 +90,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:56:21.010Z",
-        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "56015ad9f91c",
+          "md": "fa32135b9be6",
           "ts": "4cb0656ad986",
-          "lean": "672ededca6ac"
+          "lean": "4c154d51dbc2"
         },
         "result": "pass",
         "reviewer": {
@@ -92,16 +107,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:56:21.010Z",
-        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "56015ad9f91c",
+          "md": "fa32135b9be6",
           "ts": "4cb0656ad986",
-          "lean": "672ededca6ac"
+          "lean": "4c154d51dbc2"
         },
         "result": "pass",
         "reviewer": {
@@ -109,35 +124,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:56:21.010Z",
-        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "56015ad9f91c",
+          "md": "fa32135b9be6",
           "ts": "4cb0656ad986",
-          "lean": "672ededca6ac"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:56:21.010Z",
-        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.md:260: *Proof.* $[2]_{1+\\sqrt 2} = (1+\\sqrt 2) + 1/(1+\\sqrt 2) = (1+\\sqrt 2) + (\\sqrt 2 - 1) = 2\\sqrt 2$. So $[2]_q^2 = 8$. Lean: `field_simp; ring_nf; linarith [√2 · √2 = 2]`. $\\square$"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "56015ad9f91c",
-          "ts": "4cb0656ad986",
-          "lean": "672ededca6ac"
+          "lean": "4c154d51dbc2"
         },
         "result": "pass",
         "reviewer": {
@@ -145,8 +141,25 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T04:56:21.010Z",
-        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "fa32135b9be6",
+          "ts": "4cb0656ad986",
+          "lean": "4c154d51dbc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "framework-canonical": [
@@ -164,108 +177,6 @@
         },
         "reviewed_at": "2026-05-20T04:56:21.010Z",
         "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
-      }
-    ],
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "fa32135b9be6",
-          "ts": "4cb0656ad986",
-          "lean": "4c154d51dbc2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "fa32135b9be6",
-          "ts": "4cb0656ad986",
-          "lean": "4c154d51dbc2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "fa32135b9be6",
-          "ts": "4cb0656ad986",
-          "lean": "4c154d51dbc2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "fa32135b9be6",
-          "ts": "4cb0656ad986",
-          "lean": "4c154d51dbc2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "fa32135b9be6",
-          "ts": "4cb0656ad986",
-          "lean": "4c154d51dbc2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "fa32135b9be6",
-          "ts": "4cb0656ad986",
-          "lean": "4c154d51dbc2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-scholarly-default": [
@@ -303,5 +214,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:56:21.010Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

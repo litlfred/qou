@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/free-config-chi-lr-equivalence.md"
   },
   "source_hashes": {
-    "md": "f18c28d39cd3",
+    "md": "1873ac00f15b",
     "ts": "4bf56d8aa3a4"
   },
   "criteria": {
@@ -58,6 +58,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1873ac00f15b",
+          "ts": "4bf56d8aa3a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -188,5 +202,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:29:54.988Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

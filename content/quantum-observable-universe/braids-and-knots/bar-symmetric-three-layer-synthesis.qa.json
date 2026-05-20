@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean"
   },
   "source_hashes": {
-    "md": "ae094d69f775",
+    "md": "2781ea39df00",
     "ts": "ca0afc6dee24",
-    "lean": "3b92cb242f7b"
+    "lean": "81a3cb7d2b49"
   },
   "criteria": {
     "wall-side-correct": [
@@ -26,25 +26,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T00:52:21.578Z",
-        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
-      },
-      {
-        "field_hash": {
-          "md": "ae094d69f775",
-          "ts": "ca0afc6dee24",
-          "lean": "3b92cb242f7b"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:56:21.010Z",
-        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232",
+        "reviewed_at": "2026-05-20T06:39:43.529Z",
+        "reviewed_sha": "05d6f0d51ac596e83cf8f65850886cb9828d5599",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
@@ -81,6 +64,21 @@
         },
         "reviewed_at": "2026-05-20T04:56:21.010Z",
         "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      },
+      {
+        "field_hash": {
+          "md": "2781ea39df00",
+          "ts": "ca0afc6dee24",
+          "lean": "81a3cb7d2b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -201,26 +199,7 @@
         "reviewed_at": "2026-05-20T04:13:01.541Z",
         "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
-    ],
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "9615511ee7e1",
-          "ts": "ca0afc6dee24",
-          "lean": "c2d8ddfcd7f5"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T06:39:43.529Z",
-        "reviewed_sha": "05d6f0d51ac596e83cf8f65850886cb9828d5599",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
-      }
     ]
   },
-  "updated_at": "2026-05-20T04:56:21.010Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }

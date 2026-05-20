@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/stable-nucleus.lean"
   },
   "source_hashes": {
-    "md": "09902e32434d",
+    "md": "9df21831cd45",
     "ts": "83a1ae13998b",
     "lean": "f33451cadbc3"
   },
@@ -62,6 +62,21 @@
         },
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "9df21831cd45",
+          "ts": "83a1ae13998b",
+          "lean": "f33451cadbc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:30:54.386Z",
+        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
       }
     ],
     "voice-first-person-work": [
@@ -202,5 +217,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:25:42.968Z"
+  "updated_at": "2026-05-20T14:30:54.386Z"
 }
