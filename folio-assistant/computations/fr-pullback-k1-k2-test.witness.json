@@ -1,0 +1,523 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-20T02:23:32.577936+00:00",
+  "commitSha": "6bff6d33545747262826540e347d39c57d1a1f29",
+  "assertions": [
+    {
+      "name": "data_loaded",
+      "computed": 2.22456607,
+      "expected": 2.22456607,
+      "passed": true,
+      "tolerance": 1e-10,
+      "unit": "B(D) MeV",
+      "source": "AME 2020"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2127,
+  "computation": "fr-pullback-k1-k2-test",
+  "scriptFile": "fr_pullback_k1_k2_test.py",
+  "scriptHash": "03e26c4c1c38",
+  "scriptCommitSha": "unknown",
+  "description": "Empirical search for K_1*, K_2* of conj:depth-stratified-frobenius-reciprocity (PR #826 validated k=3 with 4_1 best). Sweeps candidate hyperbolic knots {4_1, 5_2} at k=1 and {5_2, 6_1, 6_2, 6_3} at k=2 via Wenzl embedding into H_{3A}; reports variance closure across {D, T, ³He, ⁴He}.",
+  "parameters": {
+    "m_e_CAL1_MeV": "0.51099894999999995182093925905064679682254791259766",
+    "q0_f64": "1.1099785955541805"
+  },
+  "data": {
+    "candidate_knots": {
+      "4_1": {
+        "conway_word": [
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "volume": 2.0298832,
+        "note": "figure-eight; braid index 3 (verified)"
+      },
+      "5_2": {
+        "conway_word": [
+          1,
+          1,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "volume": 2.828122,
+        "note": "braid index 3 (verified)"
+      },
+      "6_1": {
+        "conway_word": [
+          1,
+          1,
+          -2,
+          1,
+          -2,
+          -2
+        ],
+        "volume": 3.1639633,
+        "note": "3-strand (mislabeled — real 6_1 has braid index 4)"
+      },
+      "6_2": {
+        "conway_word": [
+          1,
+          1,
+          1,
+          -2,
+          1,
+          -2,
+          -2
+        ],
+        "volume": 4.4015175,
+        "note": "braid index 3"
+      },
+      "6_3": {
+        "conway_word": [
+          1,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "volume": 5.6927297,
+        "note": "braid index 3"
+      }
+    },
+    "baseline_variance_no_fr": 1.82,
+    "k3_reference_best_knot_PR826": {
+      "K_3*": "4_1",
+      "k3_best_variance": 1.551,
+      "k3_paper_named": "6_1"
+    },
+    "upstream_witnesses": [
+      "folio-assistant/computations/atom-chi-rust-d.witness.json",
+      "folio-assistant/computations/atom-chi-rust-t.witness.json",
+      "folio-assistant/computations/atom-chi-rust-3he.witness.json",
+      "folio-assistant/computations/atom-chi-rust-4he.witness.json"
+    ],
+    "sweeps": {
+      "k_1": {
+        "4_1": {
+          "per_atom": {
+            "D": {
+              "Z": 1,
+              "N": 1,
+              "A": 2,
+              "n_strands": 6,
+              "knot_name": "4_1",
+              "k_depth": 1,
+              "B_MeV": "0.5297723314398482503650889608586289169991",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "2.224566069999999839978954696562141180038",
+              "ratio_pred_over_AME": 0.23814636867128353
+            },
+            "T": {
+              "Z": 1,
+              "N": 2,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "4_1",
+              "k_depth": 1,
+              "B_MeV": "2.806291574912945753479487178871554922161",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "8.481797999999999504439074371475726366043",
+              "ratio_pred_over_AME": 0.3308604584679977
+            },
+            "3He": {
+              "Z": 2,
+              "N": 1,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "4_1",
+              "k_depth": 1,
+              "B_MeV": "2.651321924674010272031990102083157305730",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "7.718042800000000092097707238281145691872",
+              "ratio_pred_over_AME": 0.34352257345269066
+            },
+            "4He": {
+              "Z": 2,
+              "N": 2,
+              "A": 4,
+              "n_strands": 12,
+              "knot_name": "4_1",
+              "k_depth": 1,
+              "B_MeV": "14.06270654130779119302814397706027642050",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "28.29567400000000176873982127290219068527",
+              "ratio_pred_over_AME": 0.4969913966816196
+            }
+          },
+          "max_over_min": 2.086915704213921,
+          "all_signs_correct": true,
+          "atoms_skipped": 0
+        },
+        "5_2": {
+          "per_atom": {
+            "D": {
+              "Z": 1,
+              "N": 1,
+              "A": 2,
+              "n_strands": 6,
+              "knot_name": "5_2",
+              "k_depth": 1,
+              "B_MeV": "0.6011856317649293010318945680550604958774",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "2.224566069999999839978954696562141180038",
+              "ratio_pred_over_AME": 0.27024849469403683
+            },
+            "T": {
+              "Z": 1,
+              "N": 2,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "5_2",
+              "k_depth": 1,
+              "B_MeV": "2.806691965214996260555204488291305455918",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "8.481797999999999504439074371475726366043",
+              "ratio_pred_over_AME": 0.330907664296532
+            },
+            "3He": {
+              "Z": 2,
+              "N": 1,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "5_2",
+              "k_depth": 1,
+              "B_MeV": "2.651892975367864122908454539045688874844",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "7.718042800000000092097707238281145691872",
+              "ratio_pred_over_AME": 0.3435965625077726
+            },
+            "4He": {
+              "Z": 2,
+              "N": 2,
+              "A": 4,
+              "n_strands": 12,
+              "knot_name": "5_2",
+              "k_depth": 1,
+              "B_MeV": "14.06271620259825107673703612579336303640",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "28.29567400000000176873982127290219068527",
+              "ratio_pred_over_AME": 0.49699173812216846
+            }
+          },
+          "max_over_min": 1.839017600023416,
+          "all_signs_correct": true,
+          "atoms_skipped": 0
+        }
+      },
+      "k_2": {
+        "5_2": {
+          "per_atom": {
+            "D": {
+              "Z": 1,
+              "N": 1,
+              "A": 2,
+              "n_strands": 6,
+              "knot_name": "5_2",
+              "k_depth": 2,
+              "B_MeV": "0.6284310048686022646810741869329113984067",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "2.224566069999999839978954696562141180038",
+              "ratio_pred_over_AME": 0.2824959947665669
+            },
+            "T": {
+              "Z": 1,
+              "N": 2,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "5_2",
+              "k_depth": 2,
+              "B_MeV": "2.822560947421296184813581815911516452524",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "8.481797999999999504439074371475726366043",
+              "ratio_pred_over_AME": 0.33277860984443347
+            },
+            "3He": {
+              "Z": 2,
+              "N": 1,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "5_2",
+              "k_depth": 2,
+              "B_MeV": "2.666777287081937235125918370964555829896",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "7.718042800000000092097707238281145691872",
+              "ratio_pred_over_AME": 0.3455250710817433
+            },
+            "4He": {
+              "Z": 2,
+              "N": 2,
+              "A": 4,
+              "n_strands": 12,
+              "knot_name": "5_2",
+              "k_depth": 2,
+              "B_MeV": "14.06872098166080188610385860180170077494",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "28.29567400000000176873982127290219068527",
+              "ratio_pred_over_AME": 0.4972039535676302
+            }
+          },
+          "max_over_min": 1.760038948440602,
+          "all_signs_correct": true,
+          "atoms_skipped": 0
+        },
+        "6_1": {
+          "per_atom": {
+            "D": {
+              "Z": 1,
+              "N": 1,
+              "A": 2,
+              "n_strands": 6,
+              "knot_name": "6_1",
+              "k_depth": 2,
+              "B_MeV": "0.5820727672463666095449912479259455786924",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "2.224566069999999839978954696562141180038",
+              "ratio_pred_over_AME": 0.2616567676258618
+            },
+            "T": {
+              "Z": 1,
+              "N": 2,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "6_1",
+              "k_depth": 2,
+              "B_MeV": "2.801415966199517735153021252519020553672",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "8.481797999999999504439074371475726366043",
+              "ratio_pred_over_AME": 0.3302856264909301
+            },
+            "3He": {
+              "Z": 2,
+              "N": 1,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "6_1",
+              "k_depth": 2,
+              "B_MeV": "2.648812024504985248121403695693050466184",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "7.718042800000000092097707238281145691872",
+              "ratio_pred_over_AME": 0.34319737440494436
+            },
+            "4He": {
+              "Z": 2,
+              "N": 2,
+              "A": 4,
+              "n_strands": 12,
+              "knot_name": "6_1",
+              "k_depth": 2,
+              "B_MeV": "14.06162571152940385668947722287348232375",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "28.29567400000000176873982127290219068527",
+              "ratio_pred_over_AME": 0.4969531989776742
+            }
+          },
+          "max_over_min": 1.8992560501559754,
+          "all_signs_correct": true,
+          "atoms_skipped": 0
+        },
+        "6_2": {
+          "per_atom": {
+            "D": {
+              "Z": 1,
+              "N": 1,
+              "A": 2,
+              "n_strands": 6,
+              "knot_name": "6_2",
+              "k_depth": 2,
+              "B_MeV": "0.5886894728820361955115285525755903809673",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "2.224566069999999839978954696562141180038",
+              "ratio_pred_over_AME": 0.26463114798925086
+            },
+            "T": {
+              "Z": 1,
+              "N": 2,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "6_2",
+              "k_depth": 2,
+              "B_MeV": "2.818688407636110826506485905771532343304",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "8.481797999999999504439074371475726366043",
+              "ratio_pred_over_AME": 0.3323220392228288
+            },
+            "3He": {
+              "Z": 2,
+              "N": 1,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "6_2",
+              "k_depth": 2,
+              "B_MeV": "2.662733616400149250299365114744327628893",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "7.718042800000000092097707238281145691872",
+              "ratio_pred_over_AME": 0.34500114671560894
+            },
+            "4He": {
+              "Z": 2,
+              "N": 2,
+              "A": 4,
+              "n_strands": 12,
+              "knot_name": "6_2",
+              "k_depth": 2,
+              "B_MeV": "14.07111687471220438067699283669733541255",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "28.29567400000000176873982127290219068527",
+              "ratio_pred_over_AME": 0.4972886270428548
+            }
+          },
+          "max_over_min": 1.8791764719361546,
+          "all_signs_correct": true,
+          "atoms_skipped": 0
+        },
+        "6_3": {
+          "per_atom": {
+            "D": {
+              "Z": 1,
+              "N": 1,
+              "A": 2,
+              "n_strands": 6,
+              "knot_name": "6_3",
+              "k_depth": 2,
+              "B_MeV": "0.6382557629852319259371602996907369158094",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "2.224566069999999839978954696562141180038",
+              "ratio_pred_over_AME": 0.28691247771536493
+            },
+            "T": {
+              "Z": 1,
+              "N": 2,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "6_3",
+              "k_depth": 2,
+              "B_MeV": "2.821097300408856993659969036430368743936",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "8.481797999999999504439074371475726366043",
+              "ratio_pred_over_AME": 0.3326060465491936
+            },
+            "3He": {
+              "Z": 2,
+              "N": 1,
+              "A": 3,
+              "n_strands": 9,
+              "knot_name": "6_3",
+              "k_depth": 2,
+              "B_MeV": "2.658847571475992159322024259135587731896",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "7.718042800000000092097707238281145691872",
+              "ratio_pred_over_AME": 0.3444976453714395
+            },
+            "4He": {
+              "Z": 2,
+              "N": 2,
+              "A": 4,
+              "n_strands": 12,
+              "knot_name": "6_3",
+              "k_depth": 2,
+              "B_MeV": "14.06712921867376319174543656846860223891",
+              "B_pred_sign": "+",
+              "upstream_commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+              "atom_chi_errors_count": 0,
+              "free_chi_errors_count": 0,
+              "B_AME_MeV": "28.29567400000000176873982127290219068527",
+              "ratio_pred_over_AME": 0.4971476989264777
+            }
+          },
+          "max_over_min": 1.7327503595702074,
+          "all_signs_correct": true,
+          "atoms_skipped": 0
+        }
+      }
+    },
+    "best_per_depth": {
+      "1": {
+        "knot": "5_2",
+        "max_over_min": 1.839017600023416
+      },
+      "2": {
+        "knot": "6_3",
+        "max_over_min": 1.7327503595702074
+      }
+    },
+    "verdict": "PR #826 k=3 chain extension: K_1* = 5_2 (variance 1.839×, -1.0% vs no-FR baseline); K_2* = 6_3 (variance 1.733×, +4.8% vs no-FR baseline). For comparison, PR #826 found K_3* = 4_1 (1.551×, +14.8%)."
+  }
+}

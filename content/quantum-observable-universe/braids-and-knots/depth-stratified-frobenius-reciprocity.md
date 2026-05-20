@@ -121,11 +121,31 @@ If true, the FR refinement (FR) closes the variance on PR #801 to
 $\le 1.05\times$ (universal categorical constant) by enhancing the
 low-$k$ contributions through the per-knot ideal restriction:
 
-- $k = 3$ (named $K_3^* = 6_1$): chirality channel, full FR pullback
-  computable from the $6_1$ central projector in $H_n$.
-- $k = 1, 2$: **open** — the distinguished knots are NOT named in
-  the existing paper. Candidates: $K_1^* \in \{4_1, 5_2\}$ (smallest
-  hyperbolic), $K_2^* \in \{5_2, 6_1\}$ (chirality precursors).
+- $k = 3$ (named $K_3^* = 6_1$ in this proposition, empirically
+  $K_3^* = 4_1$): chirality channel, full FR pullback computable
+  from the $K_3^*$ central projector in $H_n$. Per [PR #826
+  empirical test](https://github.com/litlfred/qou/pull/826) (`fr-pullback-k3-test.witness.json`):
+  4_1 closes variance to $1.551\times$ (+14.8% vs 1.82× baseline);
+  the paper-named 6_1 (3-strand mislabel; real 6_1 has braid
+  index 4) gives $1.878\times$ (regression). The general FR
+  mechanism is validated; the specific naming K_3* = 6_1 in this
+  proposition should be corrected to K_3* = 4_1 (matching the
+  chirality derivation of [`prop:chirality-from-frobenius-self-pairing`](chirality-from-frobenius-self-pairing.md)
+  via Fricke trace at H_3).
+- $k = 1, 2$: **partially closed (PR #841, this branch)** —
+  per `fr-pullback-k1-k2-test.witness.json`:
+  - **K_1***: NO candidate from $\{4_1, 5_2\}$ improves the
+    baseline; best is 5_2 at $1.839\times$ ($-1.0\%$, slightly
+    *worse* than no-FR). Broader candidate sweep needed; the
+    smallest-hyperbolic ansatz fails at depth 1.
+  - **K_2***: best is $\mathbf{6_3}$ at $1.733\times$ ($+4.8\%$),
+    followed by 5_2 at $1.760\times$ ($+3.4\%$). The original
+    candidate set $\{5_2, 6_1\}$ in this proposition misses 6_3,
+    which is empirically best at depth 2.
+  - **Pattern**: variance closure strengthens with depth ($-1.0\%$
+    at k=1, $+4.8\%$ at k=2, $+14.8\%$ at k=3), suggesting that
+    the chirality channel becomes more localised in higher
+    Wedderburn depth.
   These need structural identification *before* the FR conjecture is
   computationally testable at $k = 1, 2$.
 
