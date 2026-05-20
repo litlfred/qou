@@ -208,6 +208,10 @@ export default chapter({
         "vertex-factorisation-intro",
         "vertex-is-exceptional-divisor",
         "vertex-is-exceptional-divisor-proof",
+        // Bridge from the six-canonical-knot-operators table
+        // (sec:exceptional-divisor-reeb) into the vertex-
+        // factorisation specialisation.
+        "six-operators-via-vertex-factorisation",
         // Photon polarisation states as Hecke generators on the exceptional divisor
         "breit-wheeler-vertex",
         // Literature alignment: Bilson--Thompson preons, Hecke parity, photonic hopfions
