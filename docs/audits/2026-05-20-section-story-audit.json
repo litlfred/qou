@@ -1,15 +1,15 @@
 {
   "paper": "quantum-observable-universe",
-  "generated_at": "2026-05-20T04:37:58.508Z",
-  "total": 51,
+  "generated_at": "2026-05-20T04:49:41.005Z",
+  "total": 56,
   "by_severity": {
-    "major": 31,
-    "minor": 20
+    "major": 32,
+    "minor": 24
   },
   "by_kind": {
     "abrupt-chapter-ending": 12,
-    "section-lead-too-short": 8,
-    "missing-section-story": 31
+    "section-lead-too-short": 12,
+    "missing-section-story": 32
   },
   "findings": [
     {
@@ -17,7 +17,7 @@
       "severity": "minor",
       "chapter": "quantum-universes",
       "section": "sec:qu-structures",
-      "detail": "Last block is remark (poisson-hkr-connection), not a closing prose / remark",
+      "detail": "Last block is remark (poisson-hkr-connection), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-universes/quantum-universes.ts"
     },
     {
@@ -25,7 +25,7 @@
       "severity": "minor",
       "chapter": "quantum-observable-universes",
       "section": "sec:physical-elaborations",
-      "detail": "Last block is remark (schrodinger-jet-coaction), not a closing prose / remark",
+      "detail": "Last block is remark (schrodinger-jet-coaction), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universes.ts"
     },
     {
@@ -65,7 +65,7 @@
       "severity": "minor",
       "chapter": "lifting-and-descent",
       "section": "sec:archimedean-lifting",
-      "detail": "Last block is example (topological-mass-su2), not a closing prose / remark",
+      "detail": "Last block is example (topological-mass-su2), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lifting-and-descent/lifting-and-descent.ts"
     },
     {
@@ -89,7 +89,7 @@
       "severity": "minor",
       "chapter": "braids-and-knots",
       "section": "sec:classical-limit",
-      "detail": "Last block is remark (adelic-tate-squeeze), not a closing prose / remark",
+      "detail": "Last block is remark (adelic-tate-squeeze), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/braids-and-knots.ts"
     },
     {
@@ -99,6 +99,38 @@
       "section": "sec:categorical-braiding",
       "detail": "Section has 18 non-prose blocks (band requires 3-para lead); lead has 1 para(s)",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/categorical-braiding-intro.md"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:su2-so3",
+      "detail": "Section has 5 non-prose blocks (band requires 1-para lead); lead has 0 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/su2-so3-intro.md"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:braid-involutions",
+      "detail": "Section has 3 non-prose blocks (band requires 1-para lead); lead has 0 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.md"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:trefoil-knot",
+      "detail": "Section has 2 non-prose blocks (band requires 1-para lead); lead has 0 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.md"
+    },
+    {
+      "kind": "section-lead-too-short",
+      "severity": "minor",
+      "chapter": "braids-and-knots",
+      "section": "sec:knot-fundamental-groups",
+      "detail": "Section has 3 non-prose blocks (band requires 1-para lead); lead has 0 para(s)",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.md"
     },
     {
       "kind": "section-lead-too-short",
@@ -163,6 +195,14 @@
       "section": "sec:hecke-baer-star-chirality",
       "detail": "Section \"Hecke-Baer-star foundation and chirality pairing\" opens with proposition (hecke-baer-star-generic), not a prose lead; 4 non-prose blocks",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts"
+    },
+    {
+      "kind": "missing-section-story",
+      "severity": "major",
+      "chapter": "braids-and-knots",
+      "section": "sec:mutant-jones-bloch-group",
+      "detail": "Section \"Mutant Jones falsifiability and Bloch group closure\" opens with unresolved (s existing knot-indexed convolutions in\n        // the bi-filtration grid.\n        ), not a prose lead; 13 non-prose blocks",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/s existing knot-indexed convolutions in\n        // the bi-filtration grid.\n        .ts"
     },
     {
       "kind": "missing-section-story",
@@ -297,7 +337,7 @@
       "severity": "minor",
       "chapter": "models-of-qous",
       "section": "sec:archimedean-encounter",
-      "detail": "Last block is remark (encounter-literature-bridge), not a closing prose / remark",
+      "detail": "Last block is remark (encounter-literature-bridge), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/models-of-qous/models-of-qous.ts"
     },
     {
@@ -305,7 +345,7 @@
       "severity": "minor",
       "chapter": "descartes-universe",
       "section": "sec:orbital-symmetry-embedding",
-      "detail": "Last block is remark (trivial-knot-photon-interpretation), not a closing prose / remark",
+      "detail": "Last block is remark (trivial-knot-photon-interpretation), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/descartes-universe.ts"
     },
     {
@@ -369,7 +409,7 @@
       "severity": "minor",
       "chapter": "particle-interactions",
       "section": "sec:branching-qvalue",
-      "detail": "Last block is remark (b3-local-minimum), not a closing prose / remark",
+      "detail": "Last block is remark (b3-local-minimum), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/particle-interactions.ts"
     },
     {
@@ -377,7 +417,7 @@
       "severity": "minor",
       "chapter": "observations",
       "section": "sec:simulations",
-      "detail": "Last block is simulator (beta-decay-simulator), not a closing prose / remark",
+      "detail": "Last block is simulator (beta-decay-simulator), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/observations/observations.ts"
     },
     {
@@ -385,7 +425,7 @@
       "severity": "minor",
       "chapter": "molecular-construction",
       "section": "sec:benzene-computation",
-      "detail": "Last block is remark (benzene-bond-equalization), not a closing prose / remark",
+      "detail": "Last block is remark (benzene-bond-equalization), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/molecular-construction/molecular-construction.ts"
     },
     {
@@ -393,7 +433,7 @@
       "severity": "minor",
       "chapter": "organic-chemistry",
       "section": "sec:carbon-chains-benzene",
-      "detail": "Last block is remark (organic-chain-taxonomy), not a closing prose / remark",
+      "detail": "Last block is remark (organic-chain-taxonomy), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/organic-chemistry/organic-chemistry.ts"
     },
     {
@@ -401,7 +441,7 @@
       "severity": "minor",
       "chapter": "fluid-dynamics",
       "section": "sec:ns-approaches",
-      "detail": "Last block is remark (q-ns-research-programme), not a closing prose / remark",
+      "detail": "Last block is remark (q-ns-research-programme), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/fluid-dynamics/fluid-dynamics.ts"
     },
     {
@@ -417,7 +457,7 @@
       "severity": "minor",
       "chapter": "q-geometric-langlands",
       "section": "sec:q-gl-weil-bound-stability",
-      "detail": "Last block is remark (geometric-rh-exposition), not a closing prose / remark",
+      "detail": "Last block is remark (geometric-rh-exposition), not a closing prose block",
       "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/q-geometric-langlands/q-geometric-langlands.ts"
     }
   ]

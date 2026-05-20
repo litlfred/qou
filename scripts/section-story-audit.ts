@@ -5,15 +5,39 @@
  * Implements the §Story coherence (STRICT) policy that landed in PR #738
  * (.claude/skills/local/detangler-integration-watcher.md §Slot D, lines
  * 122-198). Walks every chapter / section in the given paper and reports
- * findings against the policy's 7 finding kinds:
+ * findings against the policy's finding kinds:
  *
  *   missing-section-story        major — section has no opening prose block
- *   section-lead-too-short        minor — section with >12 blocks but <2-paragraph lead
- *   section-lead-block-title-list minor — section's lead is a block-title list
- *   generic-section-name          major — section label matches sec:.*-(part-N|extras|misc-N)$
+ *   section-lead-too-short        minor — section's prose lead has fewer
+ *                                          paragraphs than the §738 length-
+ *                                          scale table requires (1 / 2 / 3 /
+ *                                          4 paras for ≤5 / 6-12 / 13-20 /
+ *                                          >20 non-prose blocks).
+ *   section-lead-block-title-list minor — section's lead reads as a
+ *                                          sequential listing of block
+ *                                          titles ("arc runs from X through
+ *                                          Y to Z") — generated mechanically,
+ *                                          not motivated.
+ *   generic-section-name          major — section label matches
+ *                                          sec:.*-(part-N|extras|misc-N)$
  *   missing-chapter-intro         major — chapter has no opening narrative
- *   abrupt-chapter-ending         minor — chapter's last section ends without closing prose
- *   section-narrative-drift       minor — block ordering breaks the story arc
+ *   missing-chapter-manifest      major — chapter directory present in
+ *                                          paper manifest but the chapter
+ *                                          .ts file cannot be loaded
+ *                                          (parse failure / typo / missing
+ *                                          file). Distinct from missing-
+ *                                          chapter-intro: this is a
+ *                                          structural / build problem,
+ *                                          not a narrative problem.
+ *   abrupt-chapter-ending         minor — chapter's last block is not
+ *                                          a closing prose block.
+ *
+ * Note: §738 also lists `section-narrative-drift` (block ordering breaks
+ * the story arc), but the auditor here does NOT yet implement it — drift
+ * detection requires walking the block graph and comparing to the lead's
+ * implied ordering, which is a follow-up. The header was previously
+ * misleading; this revision removes the unimplemented kind from the
+ * documented set so the script's contract matches its behaviour.
  *
  * The audit is read-only and deterministic. Drafts for missing leads /
  * intros are NOT produced — that requires editorial judgement per the
@@ -27,6 +51,7 @@
  *   bun run scripts/section-story-audit.ts --json                 # JSON output
  *   bun run scripts/section-story-audit.ts --severity major       # major findings only
  *   bun run scripts/section-story-audit.ts --out report.json      # write JSON
+ *   bun run scripts/section-story-audit.ts --ref <sha-or-branch>  # blob-URL ref
  *
  * Exit code is the count of MAJOR findings (capped at 255), so this can be
  * wired into CI as a quality gate.
@@ -148,8 +173,19 @@ function isReferenceChapter(ch: ChapterInfo): boolean {
   );
 }
 
+/** Ref used in the GitHub blob URLs the audit emits.  Defaults to the CI
+ *  commit SHA / branch when available, falling back to `main` so links
+ *  resolve when run locally on a clean checkout.  Can be overridden via
+ *  the `--ref` CLI flag (set by the caller before `auditPaper` is run). */
+let BLOB_REF: string =
+  process.env.GITHUB_SHA ||
+  process.env.GITHUB_REF_NAME ||
+  "main";
+
+function setBlobRef(ref: string): void { BLOB_REF = ref; }
+
 function blobUrl(paper: string, chDir: string, basename?: string): string {
-  const base = `https://github.com/litlfred/qou/blob/main/content/${paper}/${chDir}`;
+  const base = `https://github.com/litlfred/qou/blob/${BLOB_REF}/content/${paper}/${chDir}`;
   return basename ? `${base}/${basename}` : `${base}/${chDir}.ts`;
 }
 
@@ -243,13 +279,17 @@ function auditPaper(paper: string): Finding[] {
       if (lastSec) {
         const lastBlock = lastSec.blocks[lastSec.blocks.length - 1];
         const lastInfo = lastBlock ? blockKinds.get(lastBlock) : undefined;
-        if (lastInfo && lastInfo.kind !== "prose") {
+        // Unknown block kinds are treated as non-prose so a parse failure
+        // surfaces as a finding rather than silently passing the check.
+        const lastIsProse = lastInfo?.kind === "prose";
+        if (lastBlock && !lastIsProse) {
+          const kindStr = lastInfo?.kind ?? "unresolved";
           findings.push({
             kind: "abrupt-chapter-ending",
             severity: "minor",
             chapter: dir,
             section: lastSec.label,
-            detail: `Last block is ${lastInfo.kind} (${lastBlock}), not a closing prose / remark`,
+            detail: `Last block is ${kindStr} (${lastBlock}), not a closing prose block`,
             link: blobUrl(paper, dir),
           });
         }
@@ -282,9 +322,13 @@ function auditPaper(paper: string): Finding[] {
       const firstBlock = sec.blocks[0];
       const firstInfo = blockKinds.get(firstBlock);
       const firstIsProse = firstInfo?.kind === "prose";
+      // sectionSize = count of non-prose blocks.  Blocks whose kind we
+      // couldn't resolve (parse failure / missing .ts) are conservatively
+      // counted as non-prose — undercounting them silences a finding,
+      // which is worse than over-counting and flagging an extra section.
       const sectionSize = sec.blocks.filter(b => {
         const k = blockKinds.get(b)?.kind;
-        return k && k !== "prose";
+        return k !== "prose"; // undefined ⇒ non-prose
       }).length;
 
       if (!firstIsProse && sectionSize > 0) {
@@ -293,13 +337,15 @@ function auditPaper(paper: string): Finding[] {
           severity: "major",
           chapter: dir,
           section: sec.label ?? sec.title,
-          detail: `Section "${sec.title}" opens with ${firstInfo?.kind ?? "?"} (${firstBlock}), not a prose lead; ${sectionSize} non-prose blocks`,
+          detail: `Section "${sec.title}" opens with ${firstInfo?.kind ?? "unresolved"} (${firstBlock}), not a prose lead; ${sectionSize} non-prose blocks`,
           link: blobUrl(paper, dir, `${firstBlock}.ts`),
         });
       }
 
-      // section-lead-too-short (only if lead exists and section is large enough)
-      if (firstIsProse && sectionSize > 5) {
+      // section-lead-too-short — applies across all §738 bands, including
+      // the ≤5 band (which requires a 1-paragraph lead). Only meaningful
+      // when the section has *some* non-prose content (sectionSize > 0).
+      if (firstIsProse && sectionSize > 0) {
         const mdPath = join(CONTENT, paper, dir, `${firstBlock}.md`);
         const paras = leadParagraphCount(mdPath);
         const required = requiredLeadParas(sectionSize);
@@ -346,6 +392,8 @@ if (import.meta.main) {
   const severityFilter = flagValue(args, "--severity");
   const outPath = flagValue(args, "--out");
   const jsonOnly = args.includes("--json");
+  const refOverride = flagValue(args, "--ref");
+  if (refOverride) setBlobRef(refOverride);
 
   const findings = auditPaper(paper);
   const filtered = severityFilter
