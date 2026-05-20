@@ -72,7 +72,7 @@ populate it:
   — the symmetry group acting on $\mathcal{H}_q^{(n, K)}$.
 - [`prop:knot-indexed-convolution-grid`](#prop:knot-indexed-convolution-grid)
   — placement of paper's existing knot-indexed convolutions
-  ($\mathrm{Lk}_R^{(k)}$, $\Delta_I$, Markov trace, Hoefsmit pairing,
+  ($\mathrm{Lk}_R^{(k)}$, $\bowtie_K$, Markov trace, Hoefsmit pairing,
   Higgs-vev coupling) into the $(n, K)$-grid.
 - [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
   — Beilinson regulator on $K_{2n-1}^{\mathrm{ind}}(\overline{\mathbb{Q}})$

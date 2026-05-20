@@ -14,7 +14,7 @@ $$
 gravitational coupling at substrate parameter $q$ is*
 
 $$
-  G(q) \;=\;
+  G_q \;=\;
   \frac{\alpha(q)}{8\, m_e}
   \;=\;
   \frac{1}{8\, m_e}
@@ -63,7 +63,7 @@ categorical face.
 
 2. *$q$-dependence.* If the residual cyclotomic pole structure
    ([full pole structure](#prop:full-pole-structure-mass-trace))
-   varies with $q$, so does $G(q)$.  At $q_0$ the universal
+   varies with $q$, so does $G_q$.  At $q_0$ the universal
    residue must reproduce the empirical Newton constant; this is a
    non-trivial cross-check between the cosmological and microscopic
    sectors.

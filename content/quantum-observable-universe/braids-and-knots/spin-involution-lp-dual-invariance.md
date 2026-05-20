@@ -140,7 +140,7 @@ $$
 **Corollary (QOU instance — isospin invariance).**
 *For $A = H_n(R, q)$ with $\tau$ the Markov trace and $\sigma = S$
 the Hopf antipode, the per-atom canonical braid recipe
-satisfies $S(\beta_K(Z, N)) \sim \beta_K(N, Z)$ (Markov-
+satisfies $S(\mathcal{B}_K(Z, N)) \sim \mathcal{B}_K(N, Z)$ (Markov-
 conjugate). Consequently, for every central cost operator
 $c \in Z(H_n(q))$ (in particular $c = P_\ell = e_\ell(J_1,
 \ldots, J_n)$, Murphy 1992) and every $\sigma$-stable Wedderburn

@@ -59,7 +59,7 @@ $$
   \tau_{\mathrm{arch}}\!
   \begin{pmatrix}
     \text{algebraic quantum volume}\\
-    \mathrm{Vol}_q(\beta_K) \in \mathbb{Z}[q^{\pm 1/2}]
+    \mathrm{Vol}_q(\mathcal{B}_K) \in \mathbb{Z}[q^{\pm 1/2}]
   \end{pmatrix}
   \;=\;
   r_\infty\!\bigl([K]\bigr)

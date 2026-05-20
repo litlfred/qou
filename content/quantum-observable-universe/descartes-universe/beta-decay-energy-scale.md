@@ -1,9 +1,9 @@
 The Gröbner--Shirshov normal form coefficients are dimensionless Laurent
 polynomials in $q$.  To connect them to observed energies we need
-an **energy scale** $\mathbf{E}_0$ (in MeV) such that
+an **energy scale** $\mathfrak{E}_0$ (in MeV) such that
 
 $$
-  |\Delta(\mathrm{net})| \times \mathbf{E}_0
+  |\Delta(\mathrm{net})| \times \mathfrak{E}_0
   = 
   Q_{\beta}
   = 
@@ -35,7 +35,7 @@ From CODATA 2022:
 Therefore:
 
 $$
-  \mathbf{E}_0
+  \mathfrak{E}_0
   = 
   \frac{Q_{\beta}}{|\Delta(\mathrm{net})|}
   = 
@@ -46,7 +46,7 @@ $$
 
 Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
 net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to
-keep $\mathbf{E}_0 > 0$.
+keep $\mathfrak{E}_0 > 0$.
 
 ## NF$_+$ / NF$_-$ decomposition
 
@@ -77,10 +77,10 @@ Terms $\ell < 2$ ($\gamma, \sigma_0, \sigma_1$) are virtual.
 | **Proton** | $+0.0655$ | $+0.9336$ |
 | **$\Delta$** | $-0.1101$ | $-0.0782$ |
 
-The observable-only $Q$-value, using $\mathbf{E}_0(\mathrm{net})$:
+The observable-only $Q$-value, using $\mathfrak{E}_0(\mathrm{net})$:
 
 $$
-  Q_{\geq 2} = |\Delta(\ell \geq 2)| \times \mathbf{E}_0
+  Q_{\geq 2} = |\Delta(\ell \geq 2)| \times \mathfrak{E}_0
   = 0.11007 \times 4.155
   \approx 0.4573 \text{MeV}
   =  58.5\% \text{of}Q_\beta.
@@ -88,7 +88,7 @@ $$
 
 ## Energy scale scenarios
 
-| Scenario | $|\Delta|$ | $\mathbf{E}_0$ (MeV) | $\mathbf{E}_0 / \mathfrak{m}_e$ |
+| Scenario | $|\Delta|$ | $\mathfrak{E}_0$ (MeV) | $\mathfrak{E}_0 / \mathfrak{m}_e$ |
 |:---|---:|---:|---:|
 | All terms $|\Delta\mathrm{net}|$ | $0.18829$ | $4.155$ | $8.131$ |
 | Observable $|\Delta(\ell \geq 2)|$ | $0.11007$ | $7.108$ | $13.909$ |
@@ -98,10 +98,10 @@ $$
 ## Full energy budget
 
 Each of the six NF terms contributes
-$\Delta_i \times \mathbf{E}_0$ to the total decay energy.
+$\Delta_i \times \mathfrak{E}_0$ to the total decay energy.
 The budget is:
 
-| Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathbf{E}_0$ (MeV) |
+| Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathfrak{E}_0$ (MeV) |
 |:---:|:---:|:---:|:---:|---:|---:|
 | $\gamma$ | $\mathbf{1}$ | photon | $0$ | $-0.10205$ | $+0.4240$ |
 | $\sigma_0$ | $\sigma_0$ | virtual | $1$ | $+0.01240$ | $-0.0515$ |
@@ -112,8 +112,8 @@ The budget is:
 |  |  |  |  | **Sum** | **$+0.782$ MeV** |
 
 (Signs: $\Delta(\mathrm{net}) < 0$ with typed crossings, so the
-$\mathbf{E}_0$ budget uses the sign convention
-$\Delta_i \times \mathbf{E}_0 \times (-\mathrm{sgn}\Delta_{\mathrm{net}})$
+$\mathfrak{E}_0$ budget uses the sign convention
+$\Delta_i \times \mathfrak{E}_0 \times (-\mathrm{sgn}\Delta_{\mathrm{net}})$
 to give $Q > 0$.)
 
 ## The $L_+$ dominance (typed crossings)

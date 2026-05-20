@@ -22,7 +22,7 @@ This combinatorial identity is the **arithmetic anchor** for the
 [staircase EW-residual conjecture](#conj:staircase-ew-residual):
 the empirically observed pairwise eigenvalue ratio
 $q^{1/h_{\mathrm{corner}}(\rho_k)}$ in the spectrum of
-$\beta_{\mathrm{EW}} \, \Delta_I^{\mathrm{minimal}}$ on
+$\beta_{\mathrm{EW}} \, \bowtie_K^{\mathrm{minimal}}$ on
 $V_{\rho_k}$ uses *exactly* this corner hook as the inverse
 exponent.  For $k = 3$ this gives the $q^{1/5}$ residual factor
 that closes the cot $\theta_W$ gap from $2.19\%$ to

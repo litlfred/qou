@@ -13,7 +13,7 @@ complements satisfying:*
 
 1. *Additivity: $\mathrm{Geom}(K_1 \# K_2) = \mathrm{Geom}(K_1) +
    \mathrm{Geom}(K_2)$.*
-2. *Functoriality: $\mathrm{Geom}(K) = \tau(\mathrm{tr}_M(\rho(\beta_K)))$
+2. *Functoriality: $\mathrm{Geom}(K) = \tau(\mathrm{tr}_M(\rho(\mathcal{B}_K)))$
    for some fibre functor $\tau$.*
 3. *Normalisation: $\mathrm{Geom}(\bigcirc) = 0$ (vacuum) and
    $\mathrm{Geom}(4_1) = \mathrm{Vol}(4_1)/\hbar_q^2$ (fixes $q_0$).*

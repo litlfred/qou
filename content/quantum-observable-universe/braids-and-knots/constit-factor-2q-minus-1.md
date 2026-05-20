@@ -1,6 +1,6 @@
 **Conjecture (Constit-side per-Z step factor in canonical-atom Markov trace).**
 
-*Let $\beta_K^{\mathrm{constit}} \in H_{3A}(q)$ be the disjoint Hecke
+*Let $\mathcal{B}_K^{\mathrm{vac}} \in H_{3A}(q)$ be the disjoint Hecke
 product of constituent 3-strand blocks for atom $K = (Z, N)$ (no
 interface generators), per [`def:ew-interface-knot`](#def:ew-interface-knot).
 The **constit-side per-Z step** is the ratio*
@@ -70,7 +70,7 @@ the per-Z step at the **full $\tau_M$ level** (adding a proton at a
 p-* boundary):
 $$
   \boxed{\;
-    \frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})}
+    \frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})}
     \;=\; z \cdot (2q - 1) \,+\, O(h^{4})
     \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^{4})
   \;}
@@ -89,7 +89,7 @@ extraction levels of the same Hecke algebra:
 
 | level | per-Z step factor | conjecture |
 |---|---|---|
-| full $\tau_M(\beta_K)$ | $z \cdot (2q - 1) + O(h^4)$ | $(\star\star)$ — this block |
+| full $\tau_M(\mathcal{B}_K)$ | $z \cdot (2q - 1) + O(h^4)$ | $(\star\star)$ — this block |
 | single-block $\|\Delta_\lambda^*\|$ | $[3]_q^2 \cdot \cosh(h) + O(?)$ | `conj:alpha-cosh-h-z-step-correction` |
 
 Phase 5h's negative result confirms the separation: injecting

@@ -99,14 +99,14 @@ in the typed-$\mathbf{B}_3$ braid recipe.
 From [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic),
 the typed-$\mathbf{B}_3$ proton braid uses ONE averaged $\sigma_1$:
 $$
-\beta_p \;=\; \sigma_0 \cdot (\sigma_1 - \tfrac{h}{2}\mathbf{1})
+\mathcal{B}_p \;=\; \sigma_0 \cdot (\sigma_1 - \tfrac{h}{2}\mathbf{1})
 \;=\; \sigma_0 \cdot \sigma_{1,\text{avg}}.
 $$
 
 The typed neutron braid uses TWO averaged crossings (one at $\sigma_0$,
 one at $\sigma_1$):
 $$
-\beta_n \;=\; (\sigma_0 - \tfrac{h}{2}\mathbf{1}) \cdot (\sigma_1 - h\mathbf{1})
+\mathcal{B}_n \;=\; (\sigma_0 - \tfrac{h}{2}\mathbf{1}) \cdot (\sigma_1 - h\mathbf{1})
 \;=\; \sigma_{0,\text{avg}} \cdot \sigma_1^{-1}.
 $$
 
@@ -121,7 +121,7 @@ precision-ladder corrections. The $h/2$ contributions from averaged
 positions propagate via the **Leibniz product expansion**:
 
 $$
-\tau_M(\beta_n - \beta_p) \;=\; \mathrm{net}(n) - \mathrm{net}(p)
+\tau_M(\mathcal{B}_n - \mathcal{B}_p) \;=\; \mathrm{net}(n) - \mathrm{net}(p)
 \;=\; \frac{h^2}{2} - h
 \;=\; \frac{h(h-2)}{2}.
 $$

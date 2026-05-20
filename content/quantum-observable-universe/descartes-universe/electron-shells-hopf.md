@@ -13,8 +13,8 @@ trefoil $T_{2,3}$.  The full atom
 $$
   \mathcal{A}(p, n)
   = 
-  \underbrace{Z\mathfrak{p} \bowtie N\mathfrak{n}}_{\text{nucleus}}
-   \bowtie 
+  \underbrace{Z\mathfrak{p} \oplus N\mathfrak{n}}_{\text{nucleus}}
+   \oplus 
   \underbrace{p \cdot T_{2,3}}_{\text{electron cloud}}.
 $$
 
@@ -26,7 +26,7 @@ from the remaining trefoils.
 
 **First example: helium ($p = 2$, $n = 2$).**
 
-The electron cloud is $T_{2,3} \bowtie T_{2,3}$ — a Hopf
+The electron cloud is $T_{2,3} \oplus T_{2,3}$ — a Hopf
 link of two trefoils.  This pair is itself a **closed sub-link**:
 it cannot accept a third trefoil without increasing the linking
 number.  The two electrons fill the $1s$ shell.
@@ -44,7 +44,7 @@ closed sub-Hopf link** at linking level $n$:
 
 | Shell $n$ | Capacity $2n^2$ | Cumulative | Noble gas | Closed sub-link |
 |----------:|----------------:|-----------:|-----------|----------------|
-| 1 | 2 | 2 | He | $T_{2,3} \bowtie T_{2,3}$ |
+| 1 | 2 | 2 | He | $T_{2,3} \oplus T_{2,3}$ |
 | 2 | 8 | 10 | Ne | $8 \cdot T_{2,3}$ (Hopf $8$-chain) |
 | 3 | 18 | 28 | Ni | $18 \cdot T_{2,3}$ |
 | 4 | 32 | 60 | Nd | $32 \cdot T_{2,3}$ |
@@ -90,7 +90,7 @@ The ionization energy of the outermost electron is
 
 $$
   E_{\mathrm{ion}}  \propto 
-  \frac{\mathbf{E}_{\mathrm{cross}}(\text{electron--nucleus link})}{n^2}
+  \frac{\mathfrak{E}_{\mathrm{cross}}(\text{electron--nucleus link})}{n^2}
 $$
 
 where $n$ is the shell number.  The atom becomes unstable

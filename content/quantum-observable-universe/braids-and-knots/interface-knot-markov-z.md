@@ -1,14 +1,14 @@
 **Proposition (Interface-knot contribution to canonical-atom Markov trace).**
 
-*Let $\beta_K \in H_{3A}(q)$ be the canonical atomic braid for atom
+*Let $\mathcal{B}_K \in H_{3A}(q)$ be the canonical atomic braid for atom
 $K = (Z, N)$ with $A = Z + N$, decomposed as*
 $$
-  \beta_K \;=\; \beta_K^{\mathrm{constit}} \cdot \Delta_I^K
+  \mathcal{B}_K \;=\; \mathcal{B}_K^{\mathrm{vac}} \cdot \bowtie_K
 $$
-*where $\beta_K^{\mathrm{constit}} = \beta_p^{(1)} \cdots \beta_n^{(N)}$
+*where $\mathcal{B}_K^{\mathrm{vac}} = \mathcal{B}_p^{(1)} \cdots \mathcal{B}_n^{(N)}$
 is the disjoint Hecke product on disjoint 3-strand blocks (constituent
 vacuum, [`def:ew-interface-knot`](#def:ew-interface-knot)) and
-$\Delta_I^K$ is the interface knot — a product of single-generator
+$\bowtie_K$ is the interface knot — a product of single-generator
 crossings at the strand-block boundaries
 $g \in \{3, 6, \ldots, 3(Z+N-1)\}$, each one either $\sigma_g$
 (positive) or $\sigma_g^{-1}$ (negative).*
@@ -17,7 +17,7 @@ $g \in \{3, 6, \ldots, 3(Z+N-1)\}$, each one either $\sigma_g$
 identity***
 $$
   \boxed{\;
-    \frac{\tau_M(\beta_K)}{\tau_M(\beta_K^{\mathrm{constit}})}
+    \frac{\tau_M(\mathcal{B}_K)}{\tau_M(\mathcal{B}_K^{\mathrm{vac}})}
     \;=\; z(q)^{p_+(K)} \cdot \bigl(z(q) - h(q)\bigr)^{p_-(K)}
   \;}
   \tag{$\star$}
@@ -25,7 +25,7 @@ $$
 *exactly, where $z(q) = 1/(q^{1/2}+q^{-1/2})$ is the Markov parameter,
 $h(q) = q - q^{-1}$ is the Hecke skein parameter, and $p_+(K)$ /
 $p_-(K)$ are the counts of positive / negative interface generators
-in $\Delta_I^K$.*
+in $\bowtie_K$.*
 
 ### Proof (Markov axiom + Hecke skein)
 
@@ -44,7 +44,7 @@ $$
   \;=\; (z - h) \cdot \tau_M(\alpha).
 $$
 Iterating over the $p_+(K) + p_-(K)$ interface generators of
-$\Delta_I^K$ — each one is "topmost" relative to the constituent
+$\bowtie_K$ — each one is "topmost" relative to the constituent
 sub-braid below it — and applying the appropriate factor per sign
 yields the boxed identity ($\star$).
 
@@ -71,7 +71,7 @@ Per-atom interface census (from `atom_braid_word_3A`):
 
 ### Structural reading
 
-The interface knot $\Delta_I^K$ is **categorically the Markov-axiom
+The interface knot $\bowtie_K$ is **categorically the Markov-axiom
 boundary contribution** to the canonical atomic braid:
 
 - **Positive interface** $\sigma_g$ (p-p or p-n boundary) → factor $z$ exactly
@@ -81,7 +81,7 @@ boundary contribution** to the canonical atomic braid:
   \sigma - h \cdot \mathbf{1}$).
 
 The crossing-sign / nucleon-flavor pairing is encoded in
-$\Delta_I^K$ via $p_+(K)$ and $p_-(K)$ counts — these are determined
+$\bowtie_K$ via $p_+(K)$ and $p_-(K)$ counts — these are determined
 structurally by the canonical-braid construction, not phenomenologically
 fit.
 
@@ -95,7 +95,7 @@ at the $\tau_M$ level.
 
 The factorisation $(\star)$ isolates the **interface** contribution
 to the $\tau_M$ ratio.  The complementary **constit** factor —
-$\tau_M(\beta_K^{\mathrm{constit}})$ at varying $Z$ — admits its own
+$\tau_M(\mathcal{B}_K^{\mathrm{vac}})$ at varying $Z$ — admits its own
 clean categorical form at the substrate point:
 $$
   \frac{\tau_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
@@ -108,7 +108,7 @@ This is the content of
 (Phase 5g, $0.033\%$ rel. err.).  Combining $(\star)$ with the
 constit-side conjecture yields the **full per-Z $\tau_M$ step**
 $$
-  \frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})}
+  \frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})}
   \;=\; z \cdot (2q - 1) \,+\, O(h^4)
   \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^4).
 $$
@@ -117,7 +117,7 @@ $$
 
 1. **Atom-braid trace factorisation.** For any canonical atomic braid:
    $$
-     \tau_M(\beta_K) \;=\; z^{p_+(K)} \cdot (z-h)^{p_-(K)} \cdot \tau_M(\beta_K^{\mathrm{constit}}).
+     \tau_M(\mathcal{B}_K) \;=\; z^{p_+(K)} \cdot (z-h)^{p_-(K)} \cdot \tau_M(\mathcal{B}_K^{\mathrm{vac}}).
    $$
 
 2. **Per-Z step.** Adding a proton (Z+1) inserts one positive interface

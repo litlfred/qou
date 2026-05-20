@@ -66,8 +66,8 @@ $n$ and every reduced word $w$.
    words), for $\sim 100 \times$ speedup at high $n$.
 3. **Atom-knot identification path** for ⁶Li, ⁷Li:
    - Enumerate hyperbolic knots $K$ with crossing-number $\leq 10$.
-   - For each $K$, take its braid representation $\beta_K \in B_n$.
-   - Compute $\mathrm{tr}_M(\beta_K) = \sum_\lambda y_\lambda(q_0) \cdot \chi_\lambda(\beta_K; q_0)$
+   - For each $K$, take its braid representation $\mathcal{B}_K \in B_n$.
+   - Compute $\mathrm{tr}_M(\mathcal{B}_K) = \sum_\lambda y_\lambda(q_0) \cdot \chi_\lambda(\mathcal{B}_K; q_0)$
      via Wenzl-bridge + q-MN.
    - Compare to AME binding × hyperbolic-volume ratio for ⁶Li / ⁷Li.
    - This is now tractable at $n = 18, 21$ in seconds per knot.

@@ -13,7 +13,7 @@ $$
   \xrightarrow{\text{gluon } \sigma_0^2}
   \mathfrak{p}
   \xrightarrow{\sigma_0}
-  \mathfrak{p} \bowtie T_{2,3}
+  \mathfrak{p} \oplus T_{2,3}
   = \mathcal{A}(1,0)
 $$
 

@@ -123,7 +123,7 @@ per tick) and the operational entropy per fibre
 ([operational entropy](#def\:operational-entropy)):
 
 $$
-  \mathcal{B}(q)
+  \mathfrak{B}(q)
   =  c_q \cdot n_R(q) \cdot \eta_q
   =  \frac{\eta_q}{\hbar_q \cdot (q-1)}
   =  \frac{\eta_q}{q^{-1}(q-1)^2}
@@ -138,6 +138,6 @@ $\mathcal{B} = q\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
 | Result                   | Bound                                   | QOU analog                                                |
 | ------------------------ | --------------------------------------- | --------------------------------------------------------- |
 | Margolus--Levitin (1998) | $\leq 2E/\pi\hbar$ ops/sec              | $n_R(q) = 1/\hbar_q$ ops per Planck time                  |
-| Bremermann (1962)        | $\leq mc^2/h$ bits/sec/kg               | $\mathcal{B}(q) = q\eta_q / (q-1)^2$ bits per Planck time |
+| Bremermann (1962)        | $\leq mc^2/h$ bits/sec/kg               | $\mathfrak{B}(q) = q\eta_q / (q-1)^2$ bits per Planck time |
 | Bekenstein (1981)        | $S \leq 2\pi RE / \hbar c$              | Fibre entropy $\leq \eta_q$ per operation                 |
 | Pawlowski (2009)         | No-signaling from information causality | Lieb--Robinson decay outside $\lvert Z\rvert = c_q$ cone  |

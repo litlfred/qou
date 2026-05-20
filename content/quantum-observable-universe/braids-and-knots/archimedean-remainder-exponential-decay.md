@@ -1,6 +1,6 @@
 **Conjecture.**
 *Let $K$ be a hyperbolic knot in $S^3$ admitting a Hecke-algebraic
-braid presentation $\beta_K$, and let $\mathcal{A}_n(K)$ denote the
+braid presentation $\mathcal{B}_K$, and let $\mathcal{A}_n(K)$ denote the
 truncation of the algebraic quantum volume
 ([algebraic quantum volume](#def\:algebraic-quantum-volume)) at
 degree-lex Gröbner--Shirshov filtration depth $n$. Write*
@@ -139,7 +139,7 @@ Concretely:
   reading of `n`.
 * The intended meaning of `algebraicVolume n` is
   $\mathcal{A}_n = \tau_{\mathrm{arch}}\!\bigl(\operatorname{tr}_M
-  \!\bigl(\operatorname{truncate}_n(\beta_K)\bigr)\bigr)$,
+  \!\bigl(\operatorname{truncate}_n(\mathcal{B}_K)\bigr)\bigr)$,
   where $\operatorname{truncate}_n$ projects onto $F_n$.
 * The Hecke deg-lex GS basis is supplied by
   [`UGB.GrobnerShirshov.HeckeGS.heckeRewritingSystem`](https://github.com/litlfred/qou/blob/claude/archimedean-remainder-formalization-bkBgZ/content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean):
@@ -162,7 +162,7 @@ $$
 $$
 
 **Strict :refterm[descent]{#descent}.** Given a `[GSStrictAt K n]` instance — the
-witness that the $(n+1)$-st graded piece of $\beta_K$ is non-zero
+witness that the $(n+1)$-st graded piece of $\mathcal{B}_K$ is non-zero
 (so depth $n+1$ captures genuinely new content):
 
 $$

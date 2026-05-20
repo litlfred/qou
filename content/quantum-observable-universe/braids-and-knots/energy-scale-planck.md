@@ -107,7 +107,7 @@ three-calibration inputs
 | $m_\mu/m_e$ | $H^1$ | $q_0$ | The shape (dimensionless) |
 | $Q_\beta(n)$ | $H^2$ | The $\beta$-decay scale | $E_0$ in MeV |
 
-Once $q_0$ is fixed, $c_q$, $\hbar_q$, $t_P$, and $G(q)$ are
+Once $q_0$ is fixed, $c_q$, $\hbar_q$, $t_P$, and $G_q$ are
 all determined.  The mass scale $E_0$ then sets the
 correspondence between the $q$-Planck system and SI units.
 The $1\%$ residual between $E_0$ and $m_e c_q^2 \hbar_q$

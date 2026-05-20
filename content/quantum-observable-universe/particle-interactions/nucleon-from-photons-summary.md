@@ -11,7 +11,7 @@ $$
   \underbrace{(q_1, q_2, q_3)}_{\text{3 quarks}}
   \xrightarrow{\mathcal{B}_3}
   \underbrace{\mathfrak{N}}_{\text{nucleon}}
-  \xrightarrow{\bowtie}
+  \xrightarrow{\oplus}
   \underbrace{\mathcal{A}}_{\text{atom}}
 $$
 
@@ -20,7 +20,7 @@ $$
 | $\gamma\gamma$ collision | 2 photons | $q\bar{q}$ pair | $0$ | $0$ | $0$ |
 | Quark selection | 3 pairs | 3 quarks + 3 antiquarks | $\pm 1$ | $0$ | $\pm 1$ |
 | $\mathcal{B}_3$ confinement | 3 quarks | nucleon ($\mathfrak{p}$ or $\mathfrak{n}$) | $+1$ | $0$ | $0,+1$ |
-| Hopf link $\bowtie e^-$ | nucleon + electron | atom | $+1$ | $+1$ | $0$ |
+| Hopf link $\oplus e^-$ | nucleon + electron | atom | $+1$ | $+1$ | $0$ |
 
 Baryon number ($B$), lepton number ($L$), and electric charge ($Q$)
 are conserved at every step.  The antiquarks either annihilate back

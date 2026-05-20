@@ -52,7 +52,7 @@ each to the typed crossings and measuring three quantities:
 | $(\sigma_0\sigma_1)^2$ | $+1.291$ | $0.292$ | $0.724$ | $0$ |
 | $\sigma_0\sigma_1^{-1}$ | $+1.009$ | $0.010$ | $0.507$ | $2$ |
 
-**Naive ranking** (minimise demand channels, then $\mathbf{E}_\times$) selects
+**Naive ranking** (minimise demand channels, then $\mathfrak{E}_\times$) selects
 $L_+$ — but $L_+$ gives $\mathrm{net} \approx 1.22$, far from the
 physical proton mass.  $L_+$ is a pairwise (mesonic) binding; it does
 not confine three quarks.

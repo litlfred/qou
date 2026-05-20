@@ -42,15 +42,15 @@ $m_e(\text{MeV}) / m_e(\text{natural}) \approx 4.57 \times 10^{-3}$ MeV.
 The third input sets the **hadronic energy scale**.
 The leptonic inputs ($m_e$, $q_0$) give a framework-derived
 hadronic scale in two forms — the single-Planck-tick value
-$\mathbf{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
+$\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
 ([energy scale](#rem:energy-scale-planck)) and the tower-summed
-$\mathbf{E}_0^{\text{full}} = \mathbf{E}_0^{(N=0)}/(1-\hbar_q^2)
+$\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2)
 \approx 4.228$ MeV ([beta-decay energy scale](../particle-interactions/beta-decay-energy-scale.md)
 §"tower-summed form"). The free neutron $\beta$-decay Q-value
-calibrates $\mathbf{E}_0$:
+calibrates $\mathfrak{E}_0$:
 
 $$
-  \mathbf{E}_0^{(\text{cal})}
+  \mathfrak{E}_0^{(\text{cal})}
   =
   \frac{Q_\beta(n)}{|\Delta(\mathrm{net})|}
   =
@@ -58,7 +58,7 @@ $$
   \approx  4.179 \text{ MeV}
 $$
 
-(The typed-crossings 6-term decomposition yields $\lvert\Delta(\text{net,typed})\rvert \approx 0.18829$ and a slightly smaller $\mathbf{E}_0 \approx 4.155$ MeV; the 0.6% gap is finite-size noise in the typed decomposition — see
+(The typed-crossings 6-term decomposition yields $\lvert\Delta(\text{net,typed})\rvert \approx 0.18829$ and a slightly smaller $\mathfrak{E}_0 \approx 4.155$ MeV; the 0.6% gap is finite-size noise in the typed decomposition — see
 [`beta-decay-energy-scale`](../particle-interactions/beta-decay-energy-scale.md) §"three values".)
 
 where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
@@ -66,11 +66,11 @@ difference between neutron and proton
 ([symbolic Q-value](#prop:neutron-qvalue-symbolic)).
 The free neutron is the simplest hadronic decay — one
 crossing change ($\mathfrak{d} \to \mathfrak{u}$) inside
-one nucleon, no nuclear environment. Once $\mathbf{E}_0$ is fixed,
+one nucleon, no nuclear environment. Once $\mathfrak{E}_0$ is fixed,
 **all other Q-values are predictions**.
 
 **CAL-3 gap — explicit tower-correction direction.**
-With the tower form $\mathbf{E}_0^{\text{full}}$ now wired into
+With the tower form $\mathfrak{E}_0^{\text{full}}$ now wired into
 production compute ([`derived_masses.py:e_0_full_mev`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derived_masses.py#L145)),
 the framework-derived value overshoots the calibrated value by
 **$+1.75\%$** (was $+0.75\%$ with the single-tick form). The

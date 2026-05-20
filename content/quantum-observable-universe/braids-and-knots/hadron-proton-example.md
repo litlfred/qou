@@ -13,7 +13,7 @@ $$
   \mathfrak{p}
   = 
   [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p
-   \bowtie  \mathcal{L}_{\mathrm{Bor}},
+   \oplus  \mathcal{L}_{\mathrm{Bor}},
 $$
 
 where $\mathcal{L}_{\mathrm{Bor}}$ is the Borromean link.
@@ -45,10 +45,10 @@ $$
   = 
   2\mathfrak{m}(\mathfrak{u})
   + \mathfrak{m}(\mathfrak{d})
-  + \mathbf{E}_{\mathrm{bind}},
+  + \mathfrak{E}_{\mathrm{bind}},
 $$
 
-where $\mathbf{E}_{\mathrm{bind}}$ is the binding energy from the
+where $\mathfrak{E}_{\mathrm{bind}}$ is the binding energy from the
 Borromean linking.  The individual quark masses
 $\mathfrak{m}(\mathfrak{u})$ and $\mathfrak{m}(\mathfrak{d})$ are
 small (a few MeV each in QCD terms), so the binding energy dominates:
@@ -60,7 +60,7 @@ The binding energy is computed from the
 word $\beta_{\mathrm{Bor}} \in B_3$.  The Borromean link has braid
 representation $\beta_{\mathrm{Bor}} = (\sigma_1^{-1}\sigma_2)^3$,
 contributing mutual crossings that make
-$\mathbf{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.  At the substrate
+$\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.  At the substrate
 parameter $q \approx 1.110$, the full computation yields
 
 $$

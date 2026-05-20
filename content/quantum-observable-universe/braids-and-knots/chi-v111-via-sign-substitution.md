@@ -13,18 +13,18 @@ sign-rep action:
 
 Applied to the canonical typed-$\mathbf{B}_3$ braids:
 
-  - $\beta_p$ (uud): 6$\sigma$ + 3$\sigma^{-1}$ + 2 averaged
-  - $\beta_n$ (udd): 5$\sigma$ + 4$\sigma^{-1}$ + 2 averaged
+  - $\mathcal{B}_p$ (uud): 6$\sigma$ + 3$\sigma^{-1}$ + 2 averaged
+  - $\mathcal{B}_n$ (udd): 5$\sigma$ + 4$\sigma^{-1}$ + 2 averaged
 
 yields:
 
-  - $\chi_{(1,1,1)}(\beta_p) = (-q^{-1})^6 \cdot (-q)^3 \cdot (-(q+q^{-1})/2)^2 = -q^{-3} \cdot (q+q^{-1})^2/4$
-  - $\chi_{(1,1,1)}(\beta_n) = (-q^{-1})^5 \cdot (-q)^4 \cdot (-(q+q^{-1})/2)^2 = -q^{-1} \cdot (q+q^{-1})^2/4$
+  - $\chi_{(1,1,1)}(\mathcal{B}_p) = (-q^{-1})^6 \cdot (-q)^3 \cdot (-(q+q^{-1})/2)^2 = -q^{-3} \cdot (q+q^{-1})^2/4$
+  - $\chi_{(1,1,1)}(\mathcal{B}_n) = (-q^{-1})^5 \cdot (-q)^4 \cdot (-(q+q^{-1})/2)^2 = -q^{-1} \cdot (q+q^{-1})^2/4$
 
 Difference (proved in `chi_V111_difference_eq_factored`):
 
 $$
-  \chi_{(1,1,1)}(\beta_n) - \chi_{(1,1,1)}(\beta_p)
+  \chi_{(1,1,1)}(\mathcal{B}_n) - \chi_{(1,1,1)}(\mathcal{B}_p)
    = -\frac{(q^2 + 1)^2 (q^2 - 1)}{4 q^5}.
 $$
 

@@ -58,7 +58,7 @@ own knot type.
    both $L_+$ and $L_-$ in its NF, confirming that the gluon
    field is encoded in the Borromean structure.  This is the
    Hopf link $\mathcal{L}_H$ from [Definition](#def:borromean-baryon):
-   $B = \mathcal{B}_3 \bowtie \mathcal{L}_H$.
+   $B = \mathcal{B}_3 \oplus \mathcal{L}_H$.
 
 5. **Hopf self-link** $\sigma_i^2 = \mathrm{HA}\cdot\sigma_i +
    \mathbf{1}$.  This is the Hecke relation itself — squaring

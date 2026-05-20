@@ -6,9 +6,9 @@ in the exceptional divisor** of Bring's surface.  A baryon is the
 Borromean link $\mathcal{B}_3(\nu_r, \nu_g, \nu_b)$ bound by the Hopf
 link $\mathcal{L}_H$ ([Definition](#def:borromean-baryon)):
 
-- **Proton**: $\mathcal{B}_3(\nu_r, \nu_g, \nu_b) \bowtie \mathcal{L}_H$
+- **Proton**: $\mathcal{B}_3(\nu_r, \nu_g, \nu_b) \oplus \mathcal{L}_H$
   with the $2 + 1$ crossing-orientation partition (two up + one down).
-- **Neutron**: $\mathcal{B}_3(\nu_r, \nu_g, \nu_b) \bowtie \mathcal{L}_H$
+- **Neutron**: $\mathcal{B}_3(\nu_r, \nu_g, \nu_b) \oplus \mathcal{L}_H$
   with the $1 + 2$ partition (one up + two down).
 
 Up/down flavour arises from the **crossing orientation** of each unknot

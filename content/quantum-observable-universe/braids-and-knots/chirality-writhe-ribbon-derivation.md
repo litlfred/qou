@@ -173,7 +173,7 @@ $(1 \pm h)$ over inter-nucleon crossings:*
 *This **matches paper's values exactly** under the rule*
 
 $$
-  a_K \;=\; \prod_{\text{pn crossings } c \in \beta_K}
+  a_K \;=\; \prod_{\text{pn crossings } c \in \mathcal{B}_K}
     (1 + \mathrm{sign}(c) \cdot h).
 $$
 

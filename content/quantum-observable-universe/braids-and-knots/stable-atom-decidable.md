@@ -14,11 +14,11 @@ locus, returns `True` if $K$ is stable at $q$ and `False` otherwise.*
    sort the finite set of shadow prices, find the smallest
    $\ell$ with $T_w \in J^\ell(q)$.*
 3. *Construct the LP-dual constraint matrix
-   $G(q) \in R^{N \times N}$ where $N$ is the number of primitive
+   $\mathrm{G}(q) \in R^{N \times N}$ where $N$ is the number of primitive
    operators in $J^{\ell(K, q)}(q)$ — finite by
    [confinement-level-exists](#prop:confinement-level-exists).*
 4. *Run an integer-linear-programming solver on $\{x \in
-   \mathbb{Z}_{\geq 0}^N : G(q) x \geq 0\}$.  By Lenstra's
+   \mathbb{Z}_{\geq 0}^N : \mathrm{G}(q) x \geq 0\}$.  By Lenstra's
    theorem, ILP feasibility in fixed dimension is decidable in
    polynomial time.*
 

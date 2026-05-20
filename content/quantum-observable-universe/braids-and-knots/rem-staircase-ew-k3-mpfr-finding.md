@@ -2,7 +2,7 @@
 at $k=3$).** The
 [staircase EW-residual conjecture](#conj:staircase-ew-residual) states
 that on the staircase Specht module $V_{\rho_k}$, the matrix image of
-the canonical $\beta_{\mathrm{EW}}\,\Delta_I^{\mathrm{minimal}}$
+the canonical $\beta_{\mathrm{EW}}\,\bowtie_K^{\mathrm{minimal}}$
 word has two nonzero eigenvalues whose pairwise ratio equals
 $q^{1/(2k-1)}$.
 

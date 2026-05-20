@@ -112,7 +112,7 @@ in
 [`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)
 +
 [`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json)),
-yielding $\mathrm{shift}_{\mathrm{NF}}(\beta_p) = 19$ and
+yielding $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p) = 19$ and
 $\mathrm{shift}_{\mathrm{NF}}(\beta_D) = 40$ — exact matches to
 $18 \cdot Z + 21 \cdot N + 1$ from
 [`prop:per-nucleon-shift-additive-linearity`](#prop:per-nucleon-shift-additive-linearity).

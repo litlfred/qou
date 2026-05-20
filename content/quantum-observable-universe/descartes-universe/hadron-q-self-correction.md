@@ -19,7 +19,7 @@ where the substrate $q_0$ is the background value
 $\delta q(p, n)$ is the hadron's self-deformation.
 
 **Proposition.**
-Let $\mathcal{N}(Z, N) = Z\mathfrak{p} \bowtie N\mathfrak{n}$
+Let $\mathcal{N}(Z, N) = Z\mathfrak{p} \oplus N\mathfrak{n}$
 be a nucleus ([stable nucleus](#def:stable-nucleus)).  The
 self-deformation of the substrate parameter is determined by the
 *signed* crossing excess — the imbalance between positive

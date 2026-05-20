@@ -65,8 +65,8 @@ $y_{(1,1,1)} = -0.5514$.
 From [`def:categorical-proton`](#def:categorical-proton)
 and [`def:categorical-neutron`](#def:categorical-neutron):
 
-- $\beta_p$ (uud): 11 typed crossings, $\{\sigma{:}6,\, \sigma^{-1}{:}3,\, \text{avg}{:}2\}$
-- $\beta_n$ (udd): 11 typed crossings, $\{\sigma{:}5,\, \sigma^{-1}{:}4,\, \text{avg}{:}2\}$
+- $\mathcal{B}_p$ (uud): 11 typed crossings, $\{\sigma{:}6,\, \sigma^{-1}{:}3,\, \text{avg}{:}2\}$
+- $\mathcal{B}_n$ (udd): 11 typed crossings, $\{\sigma{:}5,\, \sigma^{-1}{:}4,\, \text{avg}{:}2\}$
 
 ### Step 6 — τ_M values
 

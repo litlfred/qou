@@ -18,7 +18,7 @@ metallic character if and only if:
 2. **Low crossing energy**: the crossing energy
    ([crossing energy](#def:crossing-energy)) to attach or
    detach a trefoil from $R$ satisfies
-   $\mathbf{E}_{\mathrm{cross}}(R) \ll \mathbf{E}_{\mathrm{cross}}(S_k)$ —
+   $\mathfrak{E}_{\mathrm{cross}}(R) \ll \mathfrak{E}_{\mathrm{cross}}(S_k)$ —
    the outermost curls are loosely wound compared to the
    inner closed shells.
 
@@ -38,7 +38,7 @@ crossing energy.  This is the knot-theoretic picture of
 **electron delocalisation**:
 
 $$
-  R_a \bowtie R_b
+  R_a \oplus R_b
    \leadsto 
   \text{shared sub-link } R_{ab}
   = 

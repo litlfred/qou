@@ -16,7 +16,7 @@ sector ($q \in \mathbb{R}$, $q \geq 1$), crossing a topological
 barrier between connected components requires energy
 
 $$
-  \mathbf{E}_{\text{flip}}(e^-) =  +\infty.
+  \mathfrak{E}_{\text{flip}}(e^-) =  +\infty.
 $$
 
 No finite energy process can convert a single electron into a single
@@ -27,7 +27,7 @@ the original electron unchanged.
 
 **Composite fermions (proton, neutron).**
 The proton is a [Borromean baryon](#def:borromean-baryon):
-$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$, built from
+$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$, built from
 trefoils linked by the Hopf link.  Its antiparticle $\mathfrak{p}^{\sigma}$
 replaces every $T_{2,3}$ with $T_{2,3}^{\sigma}$
 ([chirality remark](#rem:chirality-trefoil-electron-positron)).
@@ -51,8 +51,8 @@ The topological protection is **equally strong** for composites:
 Therefore:
 
 $$
-  \mathbf{E}_{\text{flip}}(\mathfrak{p}) =  +\infty, \qquad
-  \mathbf{E}_{\text{flip}}(\mathfrak{n}) =  +\infty.
+  \mathfrak{E}_{\text{flip}}(\mathfrak{p}) =  +\infty, \qquad
+  \mathfrak{E}_{\text{flip}}(\mathfrak{n}) =  +\infty.
 $$
 
 The only way to produce $\mathfrak{p}^{\sigma}$ is pair creation at the

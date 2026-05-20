@@ -8,7 +8,7 @@ QOU object is defined.
 |:---|:---|:---|
 | Configuration space of paths | Braid group $B_n$ acting on $V^{\otimes n}$ | [braid action](#prop:braid-action-tensor) |
 | Path measure $\mathcal{D}\phi$ | Markov trace $\mathrm{tr}_M$ on $H_n(R, q)$ | [Jones--Markov trace](#thm:jones-markov-trace) |
-| Action functional $S[\phi]$ | $q$-energy $\mathbf{E}_q(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$ | [$q$-energy](#def:q-energy) |
+| Action functional $S[\phi]$ | $q$-energy $\mathfrak{E}_q(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$ | [$q$-energy](#def:q-energy) |
 | Transition amplitude $\langle\psi_f|\psi_i\rangle$ | Markov trace $\mathrm{tr}_M(\rho(\beta))$ | [categorical trace](#prop:feynman-categorical-trace) |
 | Amplitude phase $e^{iS[\phi]/\hbar}$ | $R$-matrix eigenvalues $q$, $-q^{-1}$ of $c_{V,V}$ | [$R$-matrix braiding](#rem:r-matrix-braiding) |
 | Propagator $K(x,y;t)$ | Categorical transfer matrix $\mathcal{T}(\mathfrak{H})$ | [transfer matrix](#def:categorical-transfer-matrix) |

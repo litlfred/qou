@@ -47,10 +47,10 @@ $$
 $$
   |y_i^*(q)|
    \leq 
-  \kappa(G(q)) \cdot \|t(q)\|,
+  \kappa(\mathrm{G}(q)) \cdot \|t(q)\|,
 $$
 
-   *where $\kappa(G(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$
+   *where $\kappa(\mathrm{G}(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$
    is the Gram condition number. At the physical substrate
    value $q_0 \approx 1.110$: $\kappa(G(q_0)) \approx 3.03$
    (verified in the witness file), and all shadow prices are
@@ -87,7 +87,7 @@ $$
 The Gram matrix $G$ over $H_3(q)$ has characteristic polynomial
 whose eigenvalue crossings are controlled by the discriminant
 of the Hecke relation $(T - q)(T + q^{-1}) = 0$. The smallest
-eigenvalue $\lambda_{\min}(G(q))$ is a continuous function of
+eigenvalue $\lambda_{\min}(\mathrm{G}(q))$ is a continuous function of
 $q$ and, in the computed witness scan, remains negative
 throughout the sampled domain, consistent with the standard
 representation channel carrying an indefinite pairing.
@@ -125,7 +125,7 @@ does **not** realise a CCNOT-semantics target flip.
 The boundedness of shadow prices follows from LP duality
 ([LP-dual stability](#prop:lp-dual-stability)): $|y^*|$ is
 bounded by the primal norm times the Gram condition number
-$\kappa(G(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$, which
+$\kappa(\mathrm{G}(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$, which
 is finite on $q > 1$. At $q_0 \approx 1.110$ the witness
 gives $\kappa(G(q_0)) \approx 3.03$ and
 $\lambda_{\min}(G(q_0)) \approx -0.956$
@@ -141,7 +141,7 @@ reversible computation is possible, and the substrate cannot
 support information-bearing automata.
 
 **Witness:** `toffoli-lp-stability.witness.json` evaluates
-$P_{7,7}(q)$, $\Phi(q)$, and the Gram spectrum $\{\lambda_i(G(q))\}$
+$P_{7,7}(q)$, $\Phi(q)$, and the Gram spectrum $\{\lambda_i(\mathrm{G}(q))\}$
 on the grid $q \in \{0.30, 0.35, q_\star, 0.45, 0.60, 0.80,
 0.95, 1.00, 1.05, q_0, 1.25, 1.50, 2.00, 3.00\}$. Confirms
 $P_{7,7}(q_\star) = 0$ numerically, locates the q-AND zero

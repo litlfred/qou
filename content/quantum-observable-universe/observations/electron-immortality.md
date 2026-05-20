@@ -18,8 +18,8 @@ invariant.
 
 | Particle | Structure | Internal d.o.f. | Beta decay? |
 |----------|-----------|----------------|-------------|
-| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | Quark flavour partition | Yes: $\mathfrak{n} \to \mathfrak{p} + e^- + \nu^{\sigma}$ |
-| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | Quark flavour partition | Yes (in nuclei): $\mathfrak{p} \to \mathfrak{n} + e^+ + \nu$ |
+| Neutron | $[u,d,d]_p \oplus \mathcal{L}_H$ | Quark flavour partition | Yes: $\mathfrak{n} \to \mathfrak{p} + e^- + \nu^{\sigma}$ |
+| Proton | $[u,u,d]_p \oplus \mathcal{L}_H$ | Quark flavour partition | Yes (in nuclei): $\mathfrak{p} \to \mathfrak{n} + e^+ + \nu$ |
 | Electron | $T_{2,3}$ | None | **No** |
 | Neutrino | $T_{1,0}$ (unknot) | None | **No** |
 

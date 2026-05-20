@@ -8,7 +8,7 @@ delivers a **complete formal proof** of the V_(3) component:
 
 $$
   \boxed{
-    \chi_{(3)}(\beta_n) - \chi_{(3)}(\beta_p)
+    \chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)
     \;=\; -\frac{(q^2 + 1)^2 (q^2 - 1)}{4 q}
     \;=\; -\frac{q^5 + q^3 - q - q^{-1}}{4}
   }
@@ -25,18 +25,18 @@ generator acts as the scalar $q$:
 
 The canonical typed-$\mathbf{B}_3$ braids carry:
 
-  - $\beta_p$ (uud): 6 $\sigma$ + 3 $\sigma^{-1}$ + 2 averaged
-  - $\beta_n$ (udd): 5 $\sigma$ + 4 $\sigma^{-1}$ + 2 averaged
+  - $\mathcal{B}_p$ (uud): 6 $\sigma$ + 3 $\sigma^{-1}$ + 2 averaged
+  - $\mathcal{B}_n$ (udd): 5 $\sigma$ + 4 $\sigma^{-1}$ + 2 averaged
 
 so the characters multiply as
 
-  - $\chi_{(3)}(\beta_p) = q^6 \cdot q^{-3} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q^3 \cdot \frac{(q + q^{-1})^2}{4}$
-  - $\chi_{(3)}(\beta_n) = q^5 \cdot q^{-4} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q \cdot \frac{(q + q^{-1})^2}{4}$
+  - $\chi_{(3)}(\mathcal{B}_p) = q^6 \cdot q^{-3} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q^3 \cdot \frac{(q + q^{-1})^2}{4}$
+  - $\chi_{(3)}(\mathcal{B}_n) = q^5 \cdot q^{-4} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q \cdot \frac{(q + q^{-1})^2}{4}$
 
 and the difference factors as
 
 $$
-  \chi_{(3)}(\beta_n) - \chi_{(3)}(\beta_p)
+  \chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)
   = (q - q^3) \cdot \frac{(q + q^{-1})^2}{4}
   = -q(q^2 - 1) \cdot \frac{(q^2 + 1)^2/q^2}{4}
   = -\frac{(q^2 + 1)^2 (q^2 - 1)}{4 q}.
@@ -67,7 +67,7 @@ $$
 **Hence for $k \geq 6$**:
 
 $$
-  [\varepsilon^k]\;\bigl(\chi_{(3)}(\beta_n) - \chi_{(3)}(\beta_p)\bigr)\big|_{q = 1 + \varepsilon}
+  [\varepsilon^k]\;\bigl(\chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)\bigr)\big|_{q = 1 + \varepsilon}
    \;=\; \frac{(-1)^k}{4}.
 $$
 

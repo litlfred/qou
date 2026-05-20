@@ -1,7 +1,7 @@
 **Conjecture (per-partition $\Delta_\lambda(K)$ as block algebraic residue).**
 
 *Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q_0$, and let $\beta_K \in B_{3A}$ be the
+substrate parameter $q_0$, and let $\mathcal{B}_K \in B_{3A}$ be the
 canonical atomic braid for knot $K = K(Z, N)$ in the Hecke algebra
 $H_n(R, q)$ at $n = 3A$. For each partition $\lambda \vdash n$, let
 $e_\lambda \in H_n(R, q)$ be the central idempotent projecting onto
@@ -29,7 +29,7 @@ master binding-energy formula*
 
 $$
   B(K) \;=\; m_e \cdot \sum_\lambda y_\lambda(q) \,
-    \chi^\lambda(\beta_K) \, \Delta_\lambda(K)
+    \chi^\lambda(\mathcal{B}_K) \, \Delta_\lambda(K)
 $$
 
 *is*
@@ -40,7 +40,7 @@ $$
     \;:=\;
     \tau_q\!\Bigl(\sum_{p \in \mathcal{O}_{\mathrm{prin}}^{(\lambda)}}
       \mathrm{Res}^{\mathrm{alg}}_p \bigl(
-        \chi^\lambda(\beta_K) \cdot \lambda^{(k)}_{\mathrm{SW}, \lambda}
+        \chi^\lambda(\mathcal{B}_K) \cdot \lambda^{(k)}_{\mathrm{SW}, \lambda}
       \bigr)\Bigr).
   \;}
 $$
@@ -49,7 +49,7 @@ $$
 
 | Ingredient | Where defined | $R$-side ring |
 |---|---|---|
-| $\chi^\lambda(\beta_K)$ — Hecke character | [Markov trace product](#thm:markov-trace-product) | $\mathbb{Z}[q^{\pm 1/2}]$ |
+| $\chi^\lambda(\mathcal{B}_K)$ — Hecke character | [Markov trace product](#thm:markov-trace-product) | $\mathbb{Z}[q^{\pm 1/2}]$ |
 | $e_\lambda$, $\pi_\lambda$ — central idempotent + projection | [explicit central idempotent](#prop:explicit-central-idempotent) | $\mathbb{Z}[q^{\pm 1/2}]$ |
 | $\Delta(z)$ — color-tube discriminant | [color-tube cubic](#rem:color-tube-cubic) | $\mathbb{Z}[z]$ |
 | $\lambda^{(k)}_{\mathrm{SW}}$ — SW differential, jet prolongation $k$ | [lepton mass integrals](#rem:lepton-mass-integrals) | over $\mathcal{E}_q$ |
@@ -92,7 +92,7 @@ per PR #777's flagging).*
 | Ansatz (PR #777) | Failure mode | This closure form |
 |---|---|---|
 | Occam single-support | underdetermined | residue selects orbits, not points |
-| Frobenius co-Casimir $1/\dim_q(\lambda)$ | wrong sign, vortex-blind | uses $\chi^\lambda(\beta_K)$ (vortex-aware) |
+| Frobenius co-Casimir $1/\dim_q(\lambda)$ | wrong sign, vortex-blind | uses $\chi^\lambda(\mathcal{B}_K)$ (vortex-aware) |
 | Demazure-fibre $y_\lambda \cdot D_w / D_{w_0}$ | reproduces M_LO tautologically | introduces residue (non-trivial structure) |
 | LP-Plancherel cost | shifts underdetermination | algebraic, not fit |
 | LP-Frobenius cost | same | same |

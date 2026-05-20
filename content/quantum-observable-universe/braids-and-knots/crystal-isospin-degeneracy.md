@@ -10,12 +10,12 @@ $\sigma_i^{-1}$ for some $i$.  It does **not** automatically extend
 to the canonical convention of
 [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py),
 which uses an operator-valued **dual-pairing interface**
-$\Delta_I = \sigma_g - \frac{h}{2} \cdot \mathbf{1}$
+$\bowtie_K = \sigma_g - \frac{h}{2} \cdot \mathbf{1}$
 (the "averaged" crossing) between unlike-isospin nucleons,
 $\sigma_g^{-1}$ between like-neutron pairs, and plain $\sigma_g$
 between like-proton pairs.  The interface coefficient $h = q - q^{-1}$
-diverges at $q = 0$, so $\Delta_I$ does **not** have a naive crystal
-limit; extending the proposition to canonical $\Delta_I$-coupled
+diverges at $q = 0$, so $\bowtie_K$ does **not** have a naive crystal
+limit; extending the proposition to canonical $\bowtie_K$-coupled
 words requires a regularised (or renormalised) crystal functional
 and is left as separate work (see the *Open work* section below).
 
@@ -124,10 +124,10 @@ $0.0020612874779541296$.*
 
 **Caveat — this corollary is *not* a statement about physical
 ${}^3\mathrm{H}$ vs.\ ${}^3\mathrm{He}$.** Under the canonical
-$\Delta_I$-coupled convention
+$\bowtie_K$-coupled convention
 [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py),
-${}^3\mathrm{H}$ has interface types $(pn{=}\Delta_I,\;nn{=}\sigma^{-1})$
-while ${}^3\mathrm{He}$ has $(pp{=}\sigma,\;pn{=}\Delta_I)$ — the
+${}^3\mathrm{H}$ has interface types $(pn{=}\bowtie_K,\;nn{=}\sigma^{-1})$
+while ${}^3\mathrm{He}$ has $(pp{=}\sigma,\;pn{=}\bowtie_K)$ — the
 words differ in *interface type*, not just generator signs, so the
 sign-flip proposition does not apply directly.  The legacy
 disjoint-product witness used by `term7_alpha5_crystal_derivation`
@@ -152,7 +152,7 @@ $\sigma_i \leftrightarrow \sigma_i^{-1}$ to the same SYT action).
 **Convergent finding from
 [spin-involution / LP-dual invariance](#prop:spin-involution-lp-dual-invariance):**
 the LP-dual binding-energy shadow price $y_0^*(K)$ at *finite* $q$
-in the *canonical* $\Delta_I$-coupled convention also satisfies
+in the *canonical* $\bowtie_K$-coupled convention also satisfies
 $y_0^*(T) = y_0^*({}^3\mathrm{He})$ exactly, in both 2-row and
 height-$6$ strata, at every probed
 $q \in \{1.001, 1.050, 1.110\}$ (witness:
@@ -184,7 +184,7 @@ words differ only by signed-generator inversions, the difference*
 
 $$
   \Delta S(K, K')(q)
-    \;:=\; S(\beta_K)(q) - S(\beta_{K'})(q)
+    \;:=\; S(\mathcal{B}_K)(q) - S(\beta_{K'})(q)
 $$
 
 *satisfies $\Delta S(K, K')(0) = 0$ and (empirically, for $K = T$,
@@ -194,13 +194,13 @@ a direct probe of the **curvature** of the flat-transport map
 underlying $\alpha_5$ at the height-$6$ stratum (cf.\ the
 ontological-agnosticism remark in this chapter).*
 
-## Open work: canonical $\Delta_I$ extension
+## Open work: canonical $\bowtie_K$ extension
 
 The proposition above is a structural identity proved at $q = 0$
 under the **legacy disjoint-product convention**.  The
 [Hopf-antipode invariance](#prop:spin-involution-lp-dual-invariance)
 shows the analogous equality $T \leftrightarrow {}^3\mathrm{He}$
-persists in the canonical $\Delta_I$-coupled convention at finite
+persists in the canonical $\bowtie_K$-coupled convention at finite
 $q$.  Two follow-ups remain to bridge the two:
 
 1. **Migrate
@@ -211,20 +211,20 @@ $q$.  Two follow-ups remain to bridge the two:
    disjoint 3-strand sub-word with no inter-nucleon coupling.  The
    canonical word emits triples $(c, d, g)$ with
    $d \in \{0, -h, -h/2\}$ encoding $\sigma_g$, $\sigma_g^{-1}$, and
-   $\Delta_I = \sigma_g - (h/2)\cdot\mathbf{1}$.
+   $\bowtie_K = \sigma_g - (h/2)\cdot\mathbf{1}$.
 
-2. **Define a regularised crystal functional for $\Delta_I$.**  The
+2. **Define a regularised crystal functional for $\bowtie_K$.**  The
    averaged interface coefficient $h = q - q^{-1}$ diverges at
    $q = 0$, so a naive $q \to 0$ limit of the canonical word is
    ill-defined.  A per-letter $q$-power renormalisation
    $\hat\sigma := q\sigma$, $\hat\sigma^{-1} := q\sigma^{-1}$,
-   $\hat\Delta_I := q\Delta_I$ yields bounded eigenvalues at
+   $\hat\bowtie_K := q\bowtie_K$ yields bounded eigenvalues at
    $q = 0$:
 
    $$
      \hat\sigma  \xrightarrow{q \to 0} {-P_-}, \qquad
      \hat\sigma^{-1} \xrightarrow{q \to 0} P_+, \qquad
-     \hat\Delta_I \xrightarrow{q \to 0} \tfrac{1}{2}(P_+ - P_-)
+     \hat\bowtie_K \xrightarrow{q \to 0} \tfrac{1}{2}(P_+ - P_-)
    $$
 
    where $P_\pm$ are the (anti)symmetric SYT projectors.  At the
@@ -280,7 +280,7 @@ single-generator-inversion direction
 $\sigma_5 \leftrightarrow \sigma_5^{-1}$.
 
 **Scoping caveat.** The 2-row dominance fractions in the table
-are computed from the canonical $\Delta_I$-coupled atomic braid
+are computed from the canonical $\bowtie_K$-coupled atomic braid
 words via
 [`global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py)
 at $q = q_0$.  They are **physical** quantities.  The proposition
@@ -294,7 +294,7 @@ requires the canonical migration in *Open work* above.
 ## Falsifiable predictions
 
 *All predictions below are scoped to the legacy disjoint-product
-convention until the canonical $\Delta_I$ migration completes
+convention until the canonical $\bowtie_K$ migration completes
 (see Open work).*
 
 1. *For every pair of legacy-convention atomic braid words that
@@ -303,13 +303,13 @@ convention until the canonical $\Delta_I$ migration completes
    (50 dps via
    [`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)).*
 
-2. *Once the canonical $\Delta_I$ extension is in place, the
+2. *Once the canonical $\bowtie_K$ extension is in place, the
    crystal-side prediction of the $T$–${}^3\mathrm{He}$ mass
    splitting will be non-zero (the tensor-product artefact removed)
    and should match $\approx 0.529$ MeV when paired with the AME-
    calibrated $\alpha_5$.  Failure of that match diagnoses curvature
    in the $q \to 0 \rightsquigarrow q_0$ transport at the
-   $\Delta_I$-stratum.*
+   $\bowtie_K$-stratum.*
 
 3. *The doubly-magic atom ${}^4\mathrm{He}$ has
    $|S_{\mathrm{crystal}}|$ approximately three orders of magnitude

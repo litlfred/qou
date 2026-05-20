@@ -21,7 +21,7 @@ $$
 |----------|-------------|-------------|-----------|----------------|--------|
 | $\nu$ | $T_{1,0}$ | $\mathrm{Vol}(0_1)/\hbar_q^2 = 0$ | $0$ | $< 0.8 \times 10^{-6}$ | KATRIN |
 | $e^-$ | $T_{2,3}$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) / 3$ (input) | $0.511$ | $0.51100$ | CODATA |
-| $\mu^-$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
+| $\mu^-$ | $(T_{2,3} \oplus T_{2,3})^{\sigma}$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
 
 The electron mass is an input (it fixes $\mu_{\mathfrak{u}}$ through the pair
 Skein mass).  The muon mass is the first *prediction* — it equals
@@ -49,11 +49,11 @@ panel after this table.
 
 | Particle | Knot formula | LO output (MeV) | Observed (MeV) | Source |
 |----------|-------------|---:|---:|--------|
-| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $938.272$ † | $938.272$ | CODATA |
-| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $939.565$ † | $939.565$ | CODATA |
+| Proton | $[u,u,d]_p \oplus \mathcal{L}_H$ | $938.272$ † | $938.272$ | CODATA |
+| Neutron | $[u,d,d]_p \oplus \mathcal{L}_H$ | $939.565$ † | $939.565$ | CODATA |
 | $n$-$p$ split | | $1.293$ † | $1.293$ | CODATA |
-| $\pi^{\pm}$ | $u \bowtie d^{\sigma}$ | $139.570$ | $139.570$ | PDG |
-| $K^{\pm}$ | $u \bowtie s^{\sigma}$ | $493.677$ | $493.677$ | PDG |
+| $\pi^{\pm}$ | $u \oplus d^{\sigma}$ | $139.570$ | $139.570$ | PDG |
+| $K^{\pm}$ | $u \oplus s^{\sigma}$ | $493.677$ | $493.677$ | PDG |
 
 † **Tautological under the LO chain.** The proton, neutron, and
 $n$-$p$ split rows read back the CODATA inputs because the LO
@@ -103,10 +103,10 @@ of the open Δ_λ research question per
 
 | Nucleus | Knot formula | LO output (MeV) | Observed (MeV) | $\Delta$ = CODATA binding | Source |
 |---------|-------------|---:|---:|---:|--------|
-| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $1877.838$ † | $1875.613$ | $-2.225$ MeV | CODATA |
-| Tritium | $\mathfrak{p} \bowtie 2\mathfrak{n}$ | $2817.403$ † | $2808.921$ | $-8.482$ MeV | AME2020 |
-| ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $2816.110$ † | $2808.392$ | $-7.718$ MeV | AME2020 |
-| ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $3755.675$ † | $3727.379$ | $-28.296$ MeV | AME2020 |
+| Deuteron | $\mathfrak{p} \oplus \mathfrak{n}$ | $1877.838$ † | $1875.613$ | $-2.225$ MeV | CODATA |
+| Tritium | $\mathfrak{p} \oplus 2\mathfrak{n}$ | $2817.403$ † | $2808.921$ | $-8.482$ MeV | AME2020 |
+| ${}^3\mathrm{He}$ | $2\mathfrak{p} \oplus \mathfrak{n}$ | $2816.110$ † | $2808.392$ | $-7.718$ MeV | AME2020 |
+| ${}^4\mathrm{He}$ | $2\mathfrak{p} \oplus 2\mathfrak{n}$ | $3755.675$ † | $3727.379$ | $-28.296$ MeV | AME2020 |
 
 † **LO output is constituent sum only.** Genuine FULL prediction
 not yet wired (see Workplan 0b §FULL chain status). Witness:

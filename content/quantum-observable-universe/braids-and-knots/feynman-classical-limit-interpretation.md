@@ -36,7 +36,7 @@ $[n]_q = (q^n - q^{-n})/(q - q^{-1}) \to n$.  The $q$-energy
 ([q-energy](#def:q-energy)) becomes
 
 $$
-  \mathbf{E}_1(K) = \underbrace{j(j+1) \cdot 0}_{\text{rot.}}
+  \mathfrak{E}_1(K) = \underbrace{j(j+1) \cdot 0}_{\text{rot.}}
   + \underbrace{w^2 \cdot 0}_{\text{trans.}} + S_1(K) = S_1(K),
 $$
 

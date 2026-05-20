@@ -14,7 +14,7 @@ $$
   \mathcal{R}_N
   = 
   [\mathcal{A}_1, \ldots, \mathcal{A}_N]
-   \bowtie 
+   \oplus 
   \mathcal{T}_N,
 $$
 
@@ -35,7 +35,7 @@ The crossing energy is determined by the threading link's
 Alexander polynomial evaluated at the substrate parameter:
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_N)
+  \mathfrak{E}_{\mathrm{cross}}(\mathcal{R}_N)
    \propto 
   \Delta_{T(2,N)}(q).
 $$

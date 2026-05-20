@@ -10,7 +10,7 @@ dilogarithm and $z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.
 *The boxed theorem below is the **six-term spectral expansion** of
 the Gröbner–Shirshov-NF mass identity
 ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
-$\mathfrak{m}(\varrho) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
+$\mathfrak{m}(\varrho) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$.
 The descended $\lvert\!\operatorname{tr}_M(T_w)\!\rvert$ piece supplies
 the GB-NF normal-form trace; the brane tower and Frobenius co-Casimir
 are the spectral decomposition of $\rho_K$ across Wedderburn blocks.

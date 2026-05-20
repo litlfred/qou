@@ -15,7 +15,7 @@ it wraps around the proton.
 ```tex
 \begin{tikzcd}[row sep=4em, column sep=5em]
   & \underset{\text{\normalsize large } T_{2,3}}{\bigcirc\!\!\!\bigcirc\!\!\!\bigcirc}
-    \ar[d, "\bowtie"', "\text{Hopf}", dashed] & \\
+    \ar[d, "\oplus"', "\text{Hopf}", dashed] & \\
   & \underset{\text{\normalsize small } \mathcal{B}_3}{\bullet}
     & \\
   & \underset{\text{proton (anchor)}}{\mathrm{Vol} \approx 7.328} &
@@ -25,7 +25,7 @@ it wraps around the proton.
 The trefoil orbits the Borromean anchor.  The Borromean volume
 pins the proton in place (massive); the trefoil's zero volume
 makes the electron light (mass from vacuum drag only).  The
-Hopf link $\bowtie$ is the electromagnetic binding: the
+Hopf link $\oplus$ is the electromagnetic binding: the
 trefoil threads through the proton's Seifert surface.
 
 **Shell transitions as Reidemeister I moves.**

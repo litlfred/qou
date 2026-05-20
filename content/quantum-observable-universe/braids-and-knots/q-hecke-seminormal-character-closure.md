@@ -1,8 +1,8 @@
-**Proposition (q-Hecke partition-sum closure).** *Let $\beta_K$ be the
+**Proposition (q-Hecke partition-sum closure).** *Let $\mathcal{B}_K$ be the
 canonical atomic-braid word for atom $(Z, N)$ — i.e. the
 $(c, d, \mathrm{gen\_idx})$ word produced by
 [`atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)
-($\beta_p \cdot I \cdot \beta_n$ with $I = \sigma_{n_1} - \frac{h}{2} \cdot 1$
+($\mathcal{B}_p \cdot I \cdot \mathcal{B}_n$ with $I = \sigma_{n_1} - \frac{h}{2} \cdot 1$
 the inter-nucleon interface). For each $\lambda \vdash 3A$ let
 $\rho_\lambda^q$ be the Hoefsmit seminormal representation at $q$
 ([`hecke_characters.build_seminormal_matrices`](../../../folio-assistant/computations/hecke_characters.py))
@@ -12,13 +12,13 @@ principal specialization
 Then the partition-sum form of the canonical Markov trace,*
 
 $$
-  \mathrm{tr}_M^{\mathrm{partition\text{-}sum}}(\beta_K)
+  \mathrm{tr}_M^{\mathrm{partition\text{-}sum}}(\mathcal{B}_K)
   \;:=\;
-  \sum_{\lambda \vdash 3A} y_\lambda(q) \cdot \mathrm{tr}_{V_\lambda}\!\bigl(\rho_\lambda^q(\beta_K)\bigr),
+  \sum_{\lambda \vdash 3A} y_\lambda(q) \cdot \mathrm{tr}_{V_\lambda}\!\bigl(\rho_\lambda^q(\mathcal{B}_K)\bigr),
 $$
 
 *equals the canonical Markov-axiom reducer*
-$\mathrm{tr}_M(\beta_K)$ ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer))
+$\mathrm{tr}_M(\mathcal{B}_K)$ ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer))
 *to numerical precision at $q = q_0$.*
 
 ## Why it matters
@@ -51,7 +51,7 @@ Both are now fixed (PR #572):
 - The weight is `y_\lambda(q)` via Wenzl Schur principal
   specialization. Audit + module:
   [`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition).
-- The character is `\chi^\lambda_q(\beta_K) = \mathrm{tr}\,\rho_\lambda^q(\beta_K)`
+- The character is `\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)`
   via Hoefsmit seminormal matrices at $q_0$. Audit:
   [`docs/audits/2026-05-08-q-hecke-character-gap-closure.md`](../../../docs/audits/2026-05-08-q-hecke-character-gap-closure.md).
 

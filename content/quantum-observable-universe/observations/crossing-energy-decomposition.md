@@ -13,7 +13,7 @@ $$
 
 **Statement.**
 For any knot composite $\mathfrak{H}$ with crossing energy
-$\mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) = \sum_i \epsilon_i$ where
+$\mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}) = \sum_i \epsilon_i$ where
 $\epsilon_i \in \{q, -q^{-1}\}$:
 
 1. **Symmetric channel.**  The component
@@ -30,7 +30,7 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
    antisymmetric:
 
    $$
-     \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma})
+     \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma})
      =  2E_{\mathrm{asym}}(\mathfrak{H}).
    $$
 

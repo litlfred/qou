@@ -4,13 +4,13 @@ protons, neutrons, and electrons via the three generation operations
 The knot formula for an atom with $Z$ protons and $N$ neutrons is
 
 $$
-  Z\mathfrak{p}  \bowtie  N\mathfrak{n}
-   \bowtie  Z \cdot T_{2,3}
+  Z\mathfrak{p}  \oplus  N\mathfrak{n}
+   \oplus  Z \cdot T_{2,3}
 $$
 
-where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ is the
-proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
-(electron), and $\bowtie$ denotes Hopf linking.
+where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the
+proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
+(electron), and $\oplus$ denotes Hopf linking.
 Here $Z$ is the atomic number (proton count) and $N$ is the
 neutron count, with $A = Z + N$ the mass number.
 
@@ -74,7 +74,7 @@ At the substrate parameter $q$, the dominant eigenvalue
 $\lambda_+ = 1.1073$ governs shell energy scaling via the
 Chebyshev recurrence
 $\hat{V}(n+1, q) = (q - q^{-1}) \hat{V}(n, q) + \hat{V}(n-1, q)$,
-reproducing the Rydberg formula $\mathbf{E}_{\mathrm{bind}} \propto \lambda_+^{-n} \approx 1/n^2$ for low shells.  Sub-shell
+reproducing the Rydberg formula $\mathfrak{E}_{\mathrm{bind}} \propto \lambda_+^{-n} \approx 1/n^2$ for low shells.  Sub-shell
 structure ($s, p, d, f$ with capacities $2, 6, 10, 14$) emerges
 from tensor product eigenvalue degeneracies of multi-electron
 atoms.
@@ -106,7 +106,7 @@ $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (one free parameter):
 $q = q_0 = 1.109978595554181\ldots$ (50 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09888$,
-$\mathbf{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10450$,
+$\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10450$,
 $m_{\mathfrak{p}} \approx 938.272$ MeV,
 $m_{\mathfrak{n}} \approx 939.565$ MeV,
 $m_e \approx 0.51100$ MeV.
@@ -116,7 +116,7 @@ $m_e \approx 0.51100$ MeV.
 | Symbol | Formula | Value |
 |--------|---------|:-----:|
 | $\hbar_q$ | $1 - q_0^{-1}$ | $\approx 0.09888$ |
-| $\mathbf{E}_{\times}$ | $\tfrac{1}{2}(q_0 - q_0^{-1})$ | $\approx 0.10450$ |
+| $\mathfrak{E}_{\times}$ | $\tfrac{1}{2}(q_0 - q_0^{-1})$ | $\approx 0.10450$ |
 | $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $\approx 0.05049$ |
 | $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $\approx 2.01099$ |
 

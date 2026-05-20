@@ -16,7 +16,7 @@ antiquark content is obtained by mirroring:
 $$
   \mathfrak{p}^{\sigma}
   = 
-  [u^{\sigma}, u^{\sigma}, d^{\sigma}]_p \bowtie \mathcal{L}_H
+  [u^{\sigma}, u^{\sigma}, d^{\sigma}]_p \oplus \mathcal{L}_H
 $$
 
 where $u^{\sigma} = T_{2,3}^{\sigma}$ and

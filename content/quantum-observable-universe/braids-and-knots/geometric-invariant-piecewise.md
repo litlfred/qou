@@ -32,8 +32,8 @@ For hyperbolic $K$, $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^2$.
 This originates from the Kashaev--Murakami--Murakami Volume Conjecture:
 the asymptotic growth of the coloured Jones polynomial $J_K^{(n)}(q)$
 at roots of unity is dominated by $\mathrm{Vol}(K)$.  In the
-categorical framework, $c_K = \mathrm{tr}_M(\rho(\beta_K))$ is the
-Hecke algebra Frobenius character of the braid $\beta_K$, and its
+categorical framework, $c_K = \mathrm{tr}_M(\rho(\mathcal{B}_K))$ is the
+Hecke algebra Frobenius character of the braid $\mathcal{B}_K$, and its
 leading asymptotics recover $\mathrm{Vol}(K)$.  Division by
 $\hbar_q^2 = (1 - 1/q)^2$ maps the topological volume to a
 mass/energy scale.

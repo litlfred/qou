@@ -141,12 +141,12 @@ floating-point roundoff in the seminormal eigenvalue route; the
 axiomatic form is exact in $\mathbb{Q}(q)$.
 
 The categorical-mass formula
-$M(K) = m_e \cdot \rho_K \cdot |\operatorname{tr}_M(\beta_K)|$
+$M(K) = m_e \cdot \rho_K \cdot |\operatorname{tr}_M(\mathcal{B}_K)|$
 ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov))
-gives, for the proton ($K = $ proton, $\beta_K = \sigma_1^7\sigma_2^4$):
+gives, for the proton ($K = $ proton, $\mathcal{B}_K = \sigma_1^7\sigma_2^4$):
 
 $$
-  \rho_p^{\mathrm{CODATA}} \;=\; \frac{1836.15}{|\operatorname{tr}_M(\beta_p)|(q_0)} \;\approx\; \frac{1836.15}{1.63315} \;\approx\; 1124.3.
+  \rho_p^{\mathrm{CODATA}} \;=\; \frac{1836.15}{|\operatorname{tr}_M(\mathcal{B}_p)|(q_0)} \;\approx\; \frac{1836.15}{1.63315} \;\approx\; 1124.3.
 $$
 
 ## Methodology generalisation

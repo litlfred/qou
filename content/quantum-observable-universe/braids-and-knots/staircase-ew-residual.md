@@ -5,13 +5,13 @@ $V_{\rho_k}$ be the Specht module of $H_{n_k}(q)$ at this shape
 (realised in
 [Hoefsmit seminormal form](#def:hoefsmit-seminormal-form)),
 and let
-$\beta_{\mathrm{EW}}\,\Delta_I^{\mathrm{minimal}} \in H_{n_k}(q)$
+$\beta_{\mathrm{EW}}\,\bowtie_K^{\mathrm{minimal}} \in H_{n_k}(q)$
 be the canonical electroweak braid word.  Then for every
 $k \geq 2$, the matrix image*
 
 $$
   \rho_{\rho_k}\!\bigl(\beta_{\mathrm{EW}}\,
-                       \Delta_I^{\mathrm{minimal}}\bigr)
+                       \bowtie_K^{\mathrm{minimal}}\bigr)
   \;\in\;
   \mathrm{Mat}_{f^{\rho_k} \times f^{\rho_k}}\!\bigl(\mathbb Q(q)\bigr)
 $$

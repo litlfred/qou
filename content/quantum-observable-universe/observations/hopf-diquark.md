@@ -8,7 +8,7 @@ $\mathcal{L}_H$:
 $$
   D_{ij}^{[ab]}
   = 
-  \mathfrak{q}_i^a  \bowtie  \mathfrak{q}_j^b,
+  \mathfrak{q}_i^a  \oplus  \mathfrak{q}_j^b,
 $$
 
 where $i, j \in \{\mathfrak{u}, \mathfrak{d}, \mathfrak{s}\}$ are
@@ -33,18 +33,18 @@ orientations $\epsilon_i, \epsilon_j \in \{+1, -1\}$, the Hopf
 crossing energy is
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(D_{ij}^{[ab]})
+  \mathfrak{E}_{\mathrm{cross}}(D_{ij}^{[ab]})
   = 
   \epsilon_i \cdot q^{\epsilon_i}
   + 
   \epsilon_j \cdot q^{\epsilon_j}
   + 
-  \mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H),
+  \mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H),
 $$
 
-where $\mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H)$ is the
+where $\mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H)$ is the
 linking contribution.  For an attractive (binding) diquark,
-$\mathbf{E}_{\mathrm{cross}} < 0$ is required.
+$\mathfrak{E}_{\mathrm{cross}} < 0$ is required.
 
 **Color representation.**
 

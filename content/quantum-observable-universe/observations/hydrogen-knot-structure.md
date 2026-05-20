@@ -6,9 +6,9 @@ $$
   \mathcal{A}(1, 0)
   = 
   \underbrace{
-    \mathcal{B}_3(\nu_r, \nu_g, \nu_b) \bowtie \mathcal{L}_H
+    \mathcal{B}_3(\nu_r, \nu_g, \nu_b) \oplus \mathcal{L}_H
   }_{\mathfrak{p}\text{ (proton)}}
-   \bowtie 
+   \oplus 
   \underbrace{T_{2,3}}_{e^-\text{ (electron)}}
 $$
 
@@ -22,7 +22,7 @@ $$
 | $\mathcal{B}_3$ | Borromean link | 1 | Color confinement |
 | $\mathcal{L}_H$ | Hopf link $T(2,2)$ | 1 | Baryon binding |
 | $e^-$ | Trefoil $T_{2,3}$ | 1 | Electron |
-| $\bowtie$ | Hopf link | 1 | Electron--proton binding |
+| $\oplus$ | Hopf link | 1 | Electron--proton binding |
 
 Total: **3 unknots** + **1 trefoil**, linked by **1 Borromean**
 + **2 Hopf** links.

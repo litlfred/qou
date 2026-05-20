@@ -38,19 +38,19 @@ crossings (the converting nucleon's quarks).  At each changed
 crossing:
 
 $$
-  \Delta \mathbf{E}_\times
+  \Delta \mathfrak{E}_\times
   = 
-  \mathbf{E}_\times^{(\epsilon_{\mathrm{par}})}(q)
-  - \mathbf{E}_\times^{(\epsilon_{\mathrm{dau}})}(q)
+  \mathfrak{E}_\times^{(\epsilon_{\mathrm{par}})}(q)
+  - \mathfrak{E}_\times^{(\epsilon_{\mathrm{dau}})}(q)
 $$
 
 For a $\mathfrak{d} \to \mathfrak{u}$ change ($\sigma_k^{-1} \to \sigma_k$):
-$\Delta \mathbf{E}_\times = q - q^{-1}$.
+$\Delta \mathfrak{E}_\times = q - q^{-1}$.
 
 $$
   Q
   = 
-  \sum_{\text{changed crossings}} \Delta \mathbf{E}_\times
+  \sum_{\text{changed crossings}} \Delta \mathfrak{E}_\times
   -  S_q(e)
 $$
 

@@ -15,7 +15,7 @@
 | 4 | 1.504 | 1.296 | 1.232 | 0.063 |
 | 5 | 1.665 | 1.418 | 1.348 | 0.040 |
 
-The binding energy $\mathbf{E}_{\mathrm{bind}}(n) = E_\infty - E_n \propto 1/\lambda_+^n$ gives the characteristic Rydberg
+The binding energy $\mathfrak{E}_{\mathrm{bind}}(n) = E_\infty - E_n \propto 1/\lambda_+^n$ gives the characteristic Rydberg
 ratios for low $n$.
 
 ## Sub-shell structure from multi-electron tensor products

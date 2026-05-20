@@ -53,7 +53,7 @@ the charge--mass duality
 ([charge--mass duality](#rem:hecke-charge-mass-duality)):
 
 1. **Horizontal** (crossing energy):
-   $\mathbf{E}_{\mathrm{cross}} = n_+ q - n_- q^{-1}$,
+   $\mathfrak{E}_{\mathrm{cross}} = n_+ q - n_- q^{-1}$,
    where $n_+$ counts proton--proton pairs and $n_-$ counts
    neutron--neutron pairs.
 
@@ -61,7 +61,7 @@ the charge--mass duality
    $\mathfrak{m}_{\mathrm{vert}} = |\mathrm{tr}_M^{\mathrm{full}}(\Phi_{\mathrm{mass}})|$.
 
 3. **Mixed** (vertex operator coupling):
-   $\mathfrak{m}_{\mathrm{mix}} = \mathbf{E}_{\mathrm{cross}} \cdot (q - 1)^2$.
+   $\mathfrak{m}_{\mathrm{mix}} = \mathfrak{E}_{\mathrm{cross}} \cdot (q - 1)^2$.
 
 ## Results for $Z = 1$--$10$
 

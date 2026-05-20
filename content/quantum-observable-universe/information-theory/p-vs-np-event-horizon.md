@@ -27,7 +27,7 @@ computational analog is:
 | Aeon: connected component of $\mathrm{Bun}^{\circ}$ | Complexity class: connected component of $\mathcal{R}^{\circ}$ |
 | Degree-$0$ opacity: no fibre value crosses $\mathcal{H}$ | Degree-$0$ opacity: no answer crosses $\mathcal{H}_c$ in poly time |
 | Degree $\geq 1$ leakage: winding, curvature cross | Degree $\geq 1$ leakage: witnesses verifiable in poly time |
-| Bekenstein bound: $\eta_q$ per operation | Bandwidth bound: $I(t) \leq t \cdot \mathcal{B}(q)$ |
+| Bekenstein bound: $\eta_q$ per operation | Bandwidth bound: $I(t) \leq t \cdot \mathfrak{B}(q)$ |
 | Big Bang state: $A_0\rvert_{\mathcal{S}_0} = 0$ | Unsolved NP instance: degree-$0$ answer not yet extracted |
 
 **The observer in $\mathrm{Bun}^{\circ}$ versus the
@@ -105,7 +105,7 @@ For NP-complete problems, the effective tree remains
 exponential.  The computation generates $\eta_q$ $q$-bits per tick
 but needs $c \cdot \log 3$ $q$-bits of aggregated information from
 the full tree.  The deficit is exponential: the bandwidth
-$\mathcal{B}(q)$ cannot bridge the gap in polynomial time.
+$\mathfrak{B}(q)$ cannot bridge the gap in polynomial time.
 
 **Why $\mathcal{H}_c$ is a boundary condition, not a
 resource bound.**

@@ -54,7 +54,7 @@ below.
 | $L_H$ | Hopf link $= \widehat{\sigma_1^2}$ in $B_2$. |
 | $K_{n_a m}$, $L_{n_a m}$ | Knots / links from SnapPy HT-tables (e.g.\ $K11a259$ = 11-crossing alternating knot, position 259). |
 | $B_3(\mathrm{flav})$ | Borromean baryon: 3-strand Borromean with flavor labels (uud, udd, etc.) on crossings. |
-| $\bowtie$ | Binding operator: $H = K \bowtie L$ decorates knot $K$ with link $L$. |
+| $\oplus$ | Binding operator: $H = K \oplus L$ decorates knot $K$ with link $L$. |
 | $[K_1, \ldots, K_n]_p$ | Composite hadron of valence $n$ with constituents $K_1, \ldots, K_n$ bound at link $p$. |
 | $\nu(\mathfrak{H})$ | Valence (number of constituent knots in a hadron). |
 
@@ -174,10 +174,10 @@ obtained.
 
 | Row | Content |
 |--:|---|
-| Braid (NF) | $T_w = (\mathfrak{p}\text{-braid}) \bowtie (\mathfrak{n}\text{-braid}) \bowtie L_H$ in $H_6(q_0)$.  Closure $\widehat{T_w} = K_{6_2}$ (hyperbolic, $\mathrm{Vol} = 4.4008$). |
+| Braid (NF) | $T_w = (\mathfrak{p}\text{-braid}) \oplus (\mathfrak{n}\text{-braid}) \oplus L_H$ in $H_6(q_0)$.  Closure $\widehat{T_w} = K_{6_2}$ (hyperbolic, $\mathrm{Vol} = 4.4008$). |
 | Prediction | $B_\mathrm{pred} = 1 \cdot m_e \cdot \mathrm{Vol}(K_{6_2}) = 2.249$ MeV vs $B_\mathrm{AME} = 2.225$.  **err = +1.09%**. |
 
-**Tritium ³H = T = $[\mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{L_H \bowtie T_{2, 3}}$**
+**Tritium ³H = T = $[\mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{L_H \oplus T_{2, 3}}$**
 
 | Row | Content |
 |--:|---|

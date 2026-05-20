@@ -7,7 +7,7 @@ introduce the following shorthand.
 |--------|---------|
 | $T_{m,n}$ | Torus knot generator (winding numbers $m, n$) |
 | $T(2,n)$ | Torus link ($n$ even) or knot ($n$ odd) |
-| $\bowtie$ | Hopf linking on exceptional divisor $\mathcal{S}_c$ |
+| $\oplus$ | Hopf linking on exceptional divisor $\mathcal{S}_c$ |
 | $[\cdot,\cdot,\cdot]_p$ | Color-tube linking through $(r,g,b)$ fibers |
 | $\sigma$ | Skein crossing change (transmutation) |
 | $K^{\sigma}$ | Mirror (antiparticle) of knot $K$ |
@@ -30,9 +30,9 @@ $\mathfrak{b} = T_{2,5}$, $\mathfrak{t} = T_{3,4}$.
 triples bound by Hopf links:
 
 $$
-  \mathfrak{p} =  [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H,
+  \mathfrak{p} =  [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H,
   \qquad
-  \mathfrak{n} =  [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H.
+  \mathfrak{n} =  [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H.
 $$
 
 **Nuclear composites** are iterated Hopf linkings of nucleons.
@@ -41,9 +41,9 @@ For a nucleus with $Z$ protons and $N$ neutrons:
 $$
   {}^A_Z\!\mathcal{K}
   = 
-  \underbrace{\mathfrak{p} \bowtie \cdots \bowtie \mathfrak{p}}_{Z}
-   \bowtie 
-  \underbrace{\mathfrak{n} \bowtie \cdots \bowtie \mathfrak{n}}_{N}
+  \underbrace{\mathfrak{p} \oplus \cdots \oplus \mathfrak{p}}_{Z}
+   \oplus 
+  \underbrace{\mathfrak{n} \oplus \cdots \oplus \mathfrak{n}}_{N}
 $$
 
 where $A = Z + N$.  A neutral atom appends $Z$ electrons:
@@ -52,7 +52,7 @@ $$
   {}^A_Z\!\mathcal{K}^0
   = 
   {}^A_Z\!\mathcal{K}
-   \bowtie 
+   \oplus 
   Z \cdot T_{2,3}.
 $$
 
@@ -104,28 +104,28 @@ exceptional divisors on Bring's surface
 
 | Particle | Symbol | Knot formula |
 |----------|--------|-------------|
-| Proton | $\mathfrak{p}$ | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ |
-| Neutron | $\mathfrak{n}$ | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ |
-| $\pi^+$ | | $\mathfrak{u} \bowtie \mathfrak{d}^{\sigma}$ |
-| $\pi^0$ | | $(\mathfrak{u} \bowtie \mathfrak{u}^{\sigma} + \mathfrak{d} \bowtie \mathfrak{d}^{\sigma})/\!\sqrt{2}$ |
-| $K^+$ | | $\mathfrak{u} \bowtie \mathfrak{s}^{\sigma}$ |
-| $\Lambda$ | | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{s}]_p \bowtie \mathcal{L}_H$ |
-| $\Sigma^+$ | | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{s}]_p \bowtie \mathcal{L}_H$ |
+| Proton | $\mathfrak{p}$ | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ |
+| Neutron | $\mathfrak{n}$ | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ |
+| $\pi^+$ | | $\mathfrak{u} \oplus \mathfrak{d}^{\sigma}$ |
+| $\pi^0$ | | $(\mathfrak{u} \oplus \mathfrak{u}^{\sigma} + \mathfrak{d} \oplus \mathfrak{d}^{\sigma})/\!\sqrt{2}$ |
+| $K^+$ | | $\mathfrak{u} \oplus \mathfrak{s}^{\sigma}$ |
+| $\Lambda$ | | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{s}]_p \oplus \mathcal{L}_H$ |
+| $\Sigma^+$ | | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{s}]_p \oplus \mathcal{L}_H$ |
 
 *Light nuclei and atoms.*
 
 | Nucleus | $A$ | $Z$ | Knot formula |
 |---------|-----|-----|-------------|
-| Hydrogen | $1$ | $1$ | $\mathfrak{p} \bowtie T_{2,3}$ |
-| Deuterium | $2$ | $1$ | $\mathfrak{p} \bowtie \mathfrak{n} \bowtie T_{2,3}$ |
-| Helium-3 | $3$ | $2$ | $2\mathfrak{p} \bowtie \mathfrak{n} \bowtie 2T_{2,3}$ |
-| Helium-4 | $4$ | $2$ | $2\mathfrak{p} \bowtie 2\mathfrak{n} \bowtie 2T_{2,3}$ |
-| Lithium-7 | $7$ | $3$ | $3\mathfrak{p} \bowtie 4\mathfrak{n} \bowtie 3T_{2,3}$ |
-| Carbon-12 | $12$ | $6$ | $6\mathfrak{p} \bowtie 6\mathfrak{n} \bowtie 6T_{2,3}$ |
-| Oxygen-16 | $16$ | $8$ | $8\mathfrak{p} \bowtie 8\mathfrak{n} \bowtie 8T_{2,3}$ |
-| Iron-56 | $56$ | $26$ | $26\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 26T_{2,3}$ |
+| Hydrogen | $1$ | $1$ | $\mathfrak{p} \oplus T_{2,3}$ |
+| Deuterium | $2$ | $1$ | $\mathfrak{p} \oplus \mathfrak{n} \oplus T_{2,3}$ |
+| Helium-3 | $3$ | $2$ | $2\mathfrak{p} \oplus \mathfrak{n} \oplus 2T_{2,3}$ |
+| Helium-4 | $4$ | $2$ | $2\mathfrak{p} \oplus 2\mathfrak{n} \oplus 2T_{2,3}$ |
+| Lithium-7 | $7$ | $3$ | $3\mathfrak{p} \oplus 4\mathfrak{n} \oplus 3T_{2,3}$ |
+| Carbon-12 | $12$ | $6$ | $6\mathfrak{p} \oplus 6\mathfrak{n} \oplus 6T_{2,3}$ |
+| Oxygen-16 | $16$ | $8$ | $8\mathfrak{p} \oplus 8\mathfrak{n} \oplus 8T_{2,3}$ |
+| Iron-56 | $56$ | $26$ | $26\mathfrak{p} \oplus 30\mathfrak{n} \oplus 26T_{2,3}$ |
 
-For heavier nuclei the formula $Z\mathfrak{p} \bowtie N\mathfrak{n} \bowtie ZT_{2,3}$ remains valid, but the Skein polynomial $Q(q)$
+For heavier nuclei the formula $Z\mathfrak{p} \oplus N\mathfrak{n} \oplus ZT_{2,3}$ remains valid, but the Skein polynomial $Q(q)$
 of the multi-body link grows combinatorially in $A$.  The binding
 energy at each Hopf junction is computable in principle from the
 pair Skein mass formula

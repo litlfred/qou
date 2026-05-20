@@ -23,7 +23,7 @@ $$
    [crossing energy](#def:crossing-energy) reduces to
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(\mathcal{S}_N)
+  \mathfrak{E}_{\mathrm{cross}}(\mathcal{S}_N)
   = 
   N \cdot \tfrac{1}{2}(n_+ + n_-)(q + q^{-1})
 $$
@@ -46,10 +46,10 @@ $$
    The binding component per baryon satisfies
 
 $$
-  \mathbf{E}_{\mathrm{bind}}^{(\mathrm{uds})}
+  \mathfrak{E}_{\mathrm{bind}}^{(\mathrm{uds})}
   =  8q^{-1}
    >  6q^{-1}
-  =  \mathbf{E}_{\mathrm{bind}}^{(\mathrm{udd})}
+  =  \mathfrak{E}_{\mathrm{bind}}^{(\mathrm{udd})}
 $$
 
    for all $q > 0$.  Strange matter has **strictly more
@@ -65,7 +65,7 @@ $Q = \frac{1}{2}(n_+ - n_-)$ vanishes by the partition
 $\{+, -, -\}$, independent of the specific torus knot types.
 
 Part (2) is immediate from the decomposition
-$\mathbf{E}_{\mathrm{cross}} = \text{strong} + Q \cdot (q - q^{-1})$
+$\mathfrak{E}_{\mathrm{cross}} = \text{strong} + Q \cdot (q - q^{-1})$
 with $Q = 0$.
 
 Part (3): the crossing count follows from the braid index.

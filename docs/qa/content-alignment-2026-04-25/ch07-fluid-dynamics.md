@@ -249,10 +249,10 @@
 |----------|-----------|-----------|
 | $\mathfrak{m}$ | **Not used** (would be for mass) | — | N/A |
 | $m$ | Mass (scalar) | madelung-fluid.md "mass $\propto$" | ✓ Standard |
-| $\mathbf{E}$ | **Not used** (would be for energy) | — | N/A |
+| $\mathfrak{E}$ | **Not used** (would be for energy) | — | N/A |
 | $E(k)$ | Energy per wavenumber | q-turbulence-spectrum.md | ✓ Standard |
 
-**Note:** CLAUDE.md §7aa mandates $\mathfrak{m}$ for mass and $\mathbf{E}$ for energy, but these are not used in the chapter. The chapter uses $m$ (scalar) and $E(k)$ (spectral), which is contextually appropriate. **Minor observation, not a violation** (the chapter's conventions are internally consistent).
+**Note:** CLAUDE.md §7aa mandates $\mathfrak{m}$ for mass and $\mathfrak{E}$ for energy, but these are not used in the chapter. The chapter uses $m$ (scalar) and $E(k)$ (spectral), which is contextually appropriate. **Minor observation, not a violation** (the chapter's conventions are internally consistent).
 
 ### 8. Substrate $q$ symbolic
 

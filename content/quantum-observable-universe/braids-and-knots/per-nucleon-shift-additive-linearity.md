@@ -93,13 +93,13 @@ Hoefsmit pole-order analysis:
   [`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py)
   (witness:
   [`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json))
-  computes $\chi^\lambda_q(\beta_p)$ for each $\lambda \vdash 3$
+  computes $\chi^\lambda_q(\mathcal{B}_p)$ for each $\lambda \vdash 3$
   via the Hoefsmit seminormal, sums
-  $\mathrm{tr}_M(\beta_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\beta_p)$
+  $\mathrm{tr}_M(\mathcal{B}_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\mathcal{B}_p)$
   with the canonical Wenzl Jones-Markov weights, substitutes $q = u^2$
   (per the $D(u)$ convention from
   [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py))
-  and reports $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_p)) = 19$,
+  and reports $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\mathcal{B}_p)) = 19$,
   matching $18 \cdot 1 + 21 \cdot 0 + 1$ exactly.
 - **Deuteron ($A = 2$, $H_6$):**
   [`per_irrep_pole_deuteron_h6.py`](../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py)
@@ -119,7 +119,7 @@ Hoefsmit pole-order analysis:
   $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_D)) = 40 = 18 \cdot 1 + 21 \cdot 1 + 1$
   rigorously.
 
-**Reading note.** The per-irrep maximum $\mathrm{ord}_{q=0}^{(-)}\chi^\lambda_q(\beta_p) = 11$
+**Reading note.** The per-irrep maximum $\mathrm{ord}_{q=0}^{(-)}\chi^\lambda_q(\mathcal{B}_p) = 11$
 (at $\lambda = (2, 1)$); the "$18$" in the formula is the
 per-proton additive coefficient of the **full summed** $u$-pole
 order of $\mathrm{tr}_M$, NOT the q-pole order of any single

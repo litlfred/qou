@@ -13,7 +13,7 @@ $(n, K)$ stratum of the bi-filtration $\mathcal{H}_q^{(n, K)}$
 |---|---|---|---|---|
 | Markov trace $\mathrm{tr}_M$ | [`thm:jones-markov-trace`](#thm:jones-markov-trace) | 0 | trivial (closed braid) | Laurent in $q$ — algebraic $\mathcal{P}_0$ |
 | Hoefsmit pairing $\langle \cdot, \chi_\lambda \rangle$ | [`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form) | 0 | partition $\lambda$ | $y_\lambda(q) \in \mathbb{Z}[q^{\pm 1}]$ |
-| EW interface knot $\Delta_I$ | `def:ew-interface-knot` (orphan block — not yet in any chapter section) | 0 | EW braid in $B_6$ with interface $I$ | element of $H_6(q)$ |
+| EW interface knot $\bowtie_K$ | `def:ew-interface-knot` (orphan block — not yet in any chapter section) | 0 | EW braid in $B_6$ with interface $I$ | element of $H_6(q)$ |
 | Higgs-vev mechanism $\mathrm{Lk}_R^{(1)}$ | `conj:categorical-higgs-mechanism` (orphan block) Step C | 0 | linking $k = 1$ | $\mathrm{End}_R(A)$ |
 | Categorical linking $\mathrm{Lk}_R^{(k)}$ | `conj:categorical-linking-operation` (orphan block) | 0 | linking integer $k$ | $\mathrm{End}_R(A)$ |
 | $q$-shuffle convolution $*_q$ | [`def:frobenius-hopf-substrate`](#def:frobenius-hopf-substrate) | preserves $n$ | preserves $K$ (or merges) | $\mathcal{H}_q^{(n_1 + n_2, K \cdot K')}$ |
@@ -26,7 +26,7 @@ $(n, K)$ stratum of the bi-filtration $\mathcal{H}_q^{(n, K)}$
 #### Observation 1: most "knot-indexed" operations sit at $n = 0$
 
 The paper's *operational* knot-indexed convolutions ($\mathrm{Lk}_R^{(k)}$,
-$\Delta_I$, Hoefsmit pairing, Markov trace) live at depth $n = 0$
+$\bowtie_K$, Hoefsmit pairing, Markov trace) live at depth $n = 0$
 on the algebraic side — they manipulate Hecke elements without
 introducing polylogarithms. Their *archimedean image* sits at
 higher depth depending on what is paired with: Markov trace + braid
@@ -38,19 +38,19 @@ algebraic side) and **output transcendence depth** (achieved only
 after applying $\tau_{\mathrm{arch}}$, which involves the depth-$n$
 grouplike $\mathrm{Li}_n^q$).
 
-#### Observation 2: the $\Delta_I$ "non-tensor product" pattern is a depth-0 knot index
+#### Observation 2: the $\bowtie_K$ "non-tensor product" pattern is a depth-0 knot index
 
 The original confusion in the first answer of this session — was
-$\Delta_I$ a Mikusiński-style convolution? — reduces to: **$\Delta_I$
+$\bowtie_K$ a Mikusiński-style convolution? — reduces to: **$\bowtie_K$
 is a depth-0, knot-indexed Hecke element**. In the bi-filtration
 language:
 
 $$
-  \Delta_I \;\in\; \mathcal{H}_q^{(0, \,\text{EW interface braid})}.
+  \bowtie_K \;\in\; \mathcal{H}_q^{(0, \,\text{EW interface braid})}.
 $$
 
 The "convolution" structure the user identified is the bi-filtration
-itself: convolution by $\Delta_I$ shifts the knot-index axis (via
+itself: convolution by $\bowtie_K$ shifts the knot-index axis (via
 left/right multiplication in $H_6(q)$) without changing the depth
 axis. This is a *structural translation*, not a polylogarithmic
 operation.
@@ -69,7 +69,7 @@ operation.
 
 This proposition serves three purposes:
 
-1. **Names the pattern.** The "$\Delta_I$-style" non-tensor products
+1. **Names the pattern.** The "$\bowtie_K$-style" non-tensor products
    are now collected under one definition: each is a knot-indexed
    convolution at a specific $(n, K)$ stratum.
 

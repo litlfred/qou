@@ -36,7 +36,7 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    of $\mathrm{SU}_q(2)$-gerbes is genuinely infinite.
 
 2. **Confinement is categorically robust.** The hadronic binding
-   energy $\mathbf{E}_{\mathrm{bind}}$ admits no closed-form algebraic
+   energy $\mathfrak{E}_{\mathrm{bind}}$ admits no closed-form algebraic
    reduction: the infinite tower is the categorical signature of
    quark confinement.  The Borromean baryon interpretation of the
    proton rests on an irreducible obstruction.
@@ -48,7 +48,7 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    ring is as rich as the formal Laurent polynomial ring admits.
 
 4. **Strong falsifiability.** The information-bandwidth bounds
-   $\mathcal{B}(q)$ are tight: any experimental evidence of
+   $\mathfrak{B}(q)$ are tight: any experimental evidence of
    algebraic relations among computed volumes would contradict the
    prediction.
 

@@ -12,7 +12,7 @@ correlated sequence of Reidemeister II moves along the backbone:
 crossings shift from one bond to the next, propagating like a
 phonon.  The restoring force is the crossing energy gradient —
 compressing two adjacent atoms below their equilibrium crossing
-distance increases $\mathbf{E}_{\mathrm{cross}}$ (overcrowded crossings),
+distance increases $\mathfrak{E}_{\mathrm{cross}}$ (overcrowded crossings),
 while stretching them reduces Hopf linking and destabilises the
 bond.
 

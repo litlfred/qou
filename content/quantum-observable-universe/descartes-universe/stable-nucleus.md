@@ -13,9 +13,9 @@ a brane point.)
 $$
   \mathcal{N}(Z, N)
   = 
-  \underbrace{\mathfrak{p} \bowtie \cdots \bowtie \mathfrak{p}}_{Z}
-   \bowtie 
-  \underbrace{\mathfrak{n} \bowtie \cdots \bowtie \mathfrak{n}}_{N}.
+  \underbrace{\mathfrak{p} \oplus \cdots \oplus \mathfrak{p}}_{Z}
+   \oplus 
+  \underbrace{\mathfrak{n} \oplus \cdots \oplus \mathfrak{n}}_{N}.
 $$
 
 The nucleus $\mathcal{N}(Z, N)$ is **stable** if $(Z, N)$ is a
@@ -40,7 +40,7 @@ A **stable atom** appends $Z$ electrons:
 $$
   \mathcal{A}(Z, N)
   = 
-  \mathcal{N}(Z, N)  \bowtie  Z \cdot T_{2,3}.
+  \mathcal{N}(Z, N)  \oplus  Z \cdot T_{2,3}.
 $$
 
 **Restricting the hadron definition.**

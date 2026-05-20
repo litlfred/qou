@@ -117,7 +117,7 @@ of the Hopf link binding the diquark:
 $$
   \Delta_{\mathrm{CFL}}
   = 
-  |\mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H)|
+  |\mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H)|
   = 
   q + q^{-1}
    \approx  2.011 \quad\text{Skein units}.

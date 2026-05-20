@@ -9,7 +9,7 @@ the same Hecke elements from first principles.
 ## Statement
 
 **Conjecture.**
-*Let $\mathbf{E}_0$ be the hadronic energy scale fixed by $Q_\beta$
+*Let $\mathfrak{E}_0$ be the hadronic energy scale fixed by $Q_\beta$
 and let $q = q_0$ be the substrate parameter fixed by $m_\mu/m_e$.
 For each light nucleus $\mathfrak{H} \in \{{}^2\mathrm{H}, {}^3\mathrm{H}, {}^3\mathrm{He}\}$,
 the joint mass-tower confinement SDP*
@@ -18,7 +18,7 @@ $$
   \min_{T_w \in H_{n_0}(q_0)^{\mathrm{GB\text{-}NF}},\,\rho \in \mathbb{Z}_{>0}}
   \Bigl\|
     \rho \cdot \bigl[|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w)
-    + \mathrm{tr}_M(C_{\dim_q})\bigr] \cdot \mathbf{E}_0
+    + \mathrm{tr}_M(C_{\dim_q})\bigr] \cdot \mathfrak{E}_0
     \;-\; B_{\mathrm{AME}}(\mathfrak{H})
   \Bigr\|^2
 $$
@@ -50,7 +50,7 @@ convention.)
 The knot assignments above were originally found by matching
 hyperbolic volumes to AME binding energies:
 
-| Nucleus | Knot/link | Vol (SnapPy) | Vol $/ \mathbf{E}_0$ (approx) | Match quality |
+| Nucleus | Knot/link | Vol (SnapPy) | Vol $/ \mathfrak{E}_0$ (approx) | Match quality |
 |---------|-----------|-------------|-------------------------------|---------------|
 | $^2$H | $6_2$ | $3.16396$ | $\approx 0.762$ | $< 1\%$ after multiplicity |
 | $^3$H | $8_{11}$ | $3.42721$ | $\approx 0.826$ | $< 0.5\%$ after $\rho = 2$ |

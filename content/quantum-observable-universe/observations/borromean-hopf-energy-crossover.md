@@ -48,14 +48,14 @@ $$
 2. **Binding energy comparison.**  The binding energy
    per baryon number is:
 
-   - Borromean: $\mathbf{E}_B = -V_B / \hbar_q^2$ (from
+   - Borromean: $\mathfrak{E}_B = -V_B / \hbar_q^2$ (from
      Borromean volume)
-   - Diquark: $\mathbf{E}_D = -\tfrac{3}{2}(q + q^{-1})$
+   - Diquark: $\mathfrak{E}_D = -\tfrac{3}{2}(q + q^{-1})$
      (from three Hopf links shared between two baryon-number
      units, strong channel only since the CFL condensate is
      color-neutral)
 
-   The crossover occurs when $|\mathbf{E}_D| > |\mathbf{E}_B|$,
+   The crossover occurs when $|\mathfrak{E}_D| > |\mathfrak{E}_B|$,
    i.e., when the Hopf-link binding per baryon number exceeds
    the Borromean binding:
 
@@ -96,7 +96,7 @@ $$
    compression (kinetic + Pauli exclusion) energy per baryon is
 
 $$
-  \mathbf{E}_{\mathrm{comp}}(\rho)
+  \mathfrak{E}_{\mathrm{comp}}(\rho)
    \sim 
   \frac{\hbar_q^2}{2\mathfrak{m}} \cdot (3\pi^2 \rho)^{2/3},
 $$
@@ -109,7 +109,7 @@ $$
    The **critical density** $\rho_c$ satisfies
 
 $$
-  \mathbf{E}_{\mathrm{comp}}(\rho_c)
+  \mathfrak{E}_{\mathrm{comp}}(\rho_c)
   = 
   \frac{V_B}{\hbar_q^2}
   - 

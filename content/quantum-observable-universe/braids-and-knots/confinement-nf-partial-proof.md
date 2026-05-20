@@ -96,17 +96,17 @@ $T_3$ and strong duality. $\square$
 
 ## Verification at the canonical pppnnn atomic braid
 
-For $\beta = \beta_p^Z \star_{(p,n)\text{ averaged}} \beta_n^N$
+For $\beta = \mathcal{B}_p^Z \star_{(p,n)\text{ averaged}} \mathcal{B}_n^N$
 in canonical pppnnn ordering with $A = Z + N \ge 2$, the partial
 proof predicts:
 
 - $\alpha_{\mathrm{shift}}(I) = \alpha_{\mathrm{shift}}(T_{2,1}) = 1 \cdot (2-1) = 1$ (single-crossing unknot at lowest torus index).
-- $\Delta_{\mathrm{struct}} = Z \cdot \mathrm{shift}_{\mathrm{NF}}(\beta_p \text{ in } H_{3A}) + N \cdot \mathrm{shift}_{\mathrm{NF}}(\beta_n \text{ in } H_{3A})$.
+- $\Delta_{\mathrm{struct}} = Z \cdot \mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p \text{ in } H_{3A}) + N \cdot \mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n \text{ in } H_{3A})$.
 - $\Delta_{\mathrm{resid}} = 0$.
 
 Together with the empirical n-context shifts
-$\mathrm{shift}_{\mathrm{NF}}(\beta_p \text{ in } H_{3A}) = 18$ and
-$\mathrm{shift}_{\mathrm{NF}}(\beta_n \text{ in } H_{3A}) = 21$
+$\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p \text{ in } H_{3A}) = 18$ and
+$\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n \text{ in } H_{3A}) = 21$
 (stable for all $A = 2, \ldots, 6$ per
 [habiro-coefficients-extended.witness.json](../../../folio-assistant/computations/habiro-coefficients-extended.witness.json)),
 the formula yields
@@ -119,7 +119,7 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 
 - **Sub-lemma 2.1** is established categorically in [`docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\rho_\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form, with off-diagonal Case-B contributions shown to vanish in the trace.
 - **Lean formalisation of $T_1$ and $T_3$**: see [`confinement-nf-partial-proof.lean`](#) — currently `sorry`-stubs against an LP-duality library; routine integration with Mathlib's LP infrastructure once it lands.
-- The atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\beta_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\beta_n) = 21$ are derived in commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9) on `claude/improve-charge-precision-AXKIA`. The coefficients emerge as **per-NEW-nucleon additive contributions**:
+- The atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n) = 21$ are derived in commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9) on `claude/improve-charge-precision-AXKIA`. The coefficients emerge as **per-NEW-nucleon additive contributions**:
 
 | Per new nucleon | Δσ | Δσ⁻¹ | Δavg | Δtotal generators | Δpole order | Δcancellation | **Δshift** |
 |---|---:|---:|---:|---:|---:|---:|---:|

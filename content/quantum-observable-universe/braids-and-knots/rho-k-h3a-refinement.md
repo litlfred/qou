@@ -1,9 +1,9 @@
 **Proposition (H_{3A} Wedderburn refinement of $\rho_K$ beyond leading-order).**
-*Let $K$ be an $A$-nucleon atom with braid word $\beta_K \in B_{3A}$,
+*Let $K$ be an $A$-nucleon atom with braid word $\mathcal{B}_K \in B_{3A}$,
 and let $\mathrm{tr}_M$ denote the canonical Markov trace on $H_{3A}(q)$
 ([gs-graded Markov trace existence](#prop:gs-graded-markov-trace-existence)).
 Then the categorical density
-$\rho_K = M(K) / (m_e \cdot |\mathrm{tr}_M(\beta_K)|)$
+$\rho_K = M(K) / (m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|)$
 admits the **Wedderburn-Schur decomposition**
 
 $$
@@ -11,21 +11,21 @@ $$
   \;=\;
   \rho_K^{\mathrm{LO}}(Z, N)
   \;+\;
-  \frac{1}{|\mathrm{tr}_M(\beta_K)|}
+  \frac{1}{|\mathrm{tr}_M(\mathcal{B}_K)|}
   \sum_{\lambda \vdash 3A}
-    y_\lambda(q)\,\chi^\lambda(\beta_K)\,\Delta_\lambda(K)
+    y_\lambda(q)\,\chi^\lambda(\mathcal{B}_K)\,\Delta_\lambda(K)
 $$
 
 *where:*
 
 - *$\rho_K^{\mathrm{LO}}(Z, N) = (Z\cdot m_p + N\cdot m_n) /
-  (m_e\cdot|\mathrm{tr}_M(\beta_K)|)$ is the **constituent-mass leading-
+  (m_e\cdot|\mathrm{tr}_M(\mathcal{B}_K)|)$ is the **constituent-mass leading-
   order ansatz** verified to ≤ 0.1 % residual on $\{D, T, {}^3\mathrm{He}\}$
   ([rho-k-leading-order verification](#prop:rho-k-scaling-structure));*
 - *$y_\lambda(q)$ is the **Wenzl-bridge central coefficient** of
   the partition $\lambda \vdash 3A$
   ([Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge));*
-- *$\chi^\lambda(\beta_K)$ is the **Hoefsmit character** of $\beta_K$
+- *$\chi^\lambda(\mathcal{B}_K)$ is the **Hoefsmit character** of $\mathcal{B}_K$
   in the irrep $\rho_\lambda$
   ([Hoefsmit scattering pipeline](#prop:hoefsmit-scattering-pipeline));*
 - *$\Delta_\lambda(K) \in \mathbb{R}$ is the **block-binding correction**
@@ -37,14 +37,14 @@ $$
 ([§T6 unit-convention resolution](#prop:t6-mittag-leffler-decomposition))*
 
 $$
-  M(K) \;=\; \rho_K(q) \cdot m_e \cdot |\mathrm{tr}_M(\beta_K)|
+  M(K) \;=\; \rho_K(q) \cdot m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|
 $$
 
 *is **exact** modulo the values of $\Delta_\lambda(K)$.  The leading-
 order ansatz amounts to setting $\Delta_\lambda(K) \equiv 0$, in which
 case the $\sum_\lambda$ contribution collapses by the
 Schur-Weyl identity
-$\sum_\lambda y_\lambda \chi^\lambda(\beta_K) = |\mathrm{tr}_M(\beta_K)|$
+$\sum_\lambda y_\lambda \chi^\lambda(\mathcal{B}_K) = |\mathrm{tr}_M(\mathcal{B}_K)|$
 to give exactly $\rho_K^{\mathrm{LO}}\cdot m_e \cdot |\mathrm{tr}_M|
 = Z\cdot m_p + N\cdot m_n$ — the constituent mass.  The residual
 binding-energy contribution lives entirely in the $\Delta_\lambda$
@@ -71,12 +71,12 @@ $\chi^\lambda$ and the closed-form $y_\lambda$ from
 $H_{3A}(q) \;\cong\; \bigoplus_{\lambda \vdash 3A} M_{f_\lambda}(K(q))$,
 so any element $T \in H_{3A}(q)$ admits a unique decomposition
 $T = \sum_{\lambda \vdash 3A} T_\lambda$ with $T_\lambda \in M_{f_\lambda}$.
-Applying this to $T_{\beta_K}$ (the Hecke representative of the
+Applying this to $T_{\mathcal{B}_K}$ (the Hecke representative of the
 atomic braid word) and taking the Markov trace block-by-block:*
 
 $$
-  |\mathrm{tr}_M(\beta_K)| \;=\;
-  \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\beta_K),
+  |\mathrm{tr}_M(\mathcal{B}_K)| \;=\;
+  \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\mathcal{B}_K),
 $$
 
 *the **Schur-Weyl identity** for the canonical Markov trace
@@ -89,7 +89,7 @@ mass functor $M$ satisfies the GS-graded factorization*
 
 $$
   M(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A}
-    y_\lambda(q)\,\chi^\lambda(\beta_K)\,\bigl(1 + \Delta_\lambda(K)\bigr),
+    y_\lambda(q)\,\chi^\lambda(\mathcal{B}_K)\,\bigl(1 + \Delta_\lambda(K)\bigr),
 $$
 
 *where the $1$ piece reproduces the Schur-Weyl identity in Step 1
@@ -100,33 +100,33 @@ $\Delta_\lambda(K)$ is the **per-block binding fraction**:*
 
 $$
   \Delta_\lambda(K) \;=\;
-  \frac{M_\lambda(K) - m_e\cdot y_\lambda\,\chi^\lambda(\beta_K)}
-       {m_e \cdot y_\lambda \chi^\lambda(\beta_K)},
+  \frac{M_\lambda(K) - m_e\cdot y_\lambda\,\chi^\lambda(\mathcal{B}_K)}
+       {m_e \cdot y_\lambda \chi^\lambda(\mathcal{B}_K)},
 $$
 
 *with $M_\lambda(K)$ the mass-functor's $\lambda$-block component.*
 
 *Step 3 — Recover $\rho_K^{\mathrm{LO}}$ at $\Delta \equiv 0$.*
 *Setting $\Delta_\lambda \equiv 0$ in Step 2 and dividing by
-$m_e \cdot |\mathrm{tr}_M(\beta_K)|$:*
+$m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|$:*
 
 $$
   \rho_K\Big|_{\Delta = 0}
   \;=\;
-  \frac{m_e \cdot \sum_\lambda y_\lambda \chi^\lambda(\beta_K)}
-       {m_e \cdot |\mathrm{tr}_M(\beta_K)|}
+  \frac{m_e \cdot \sum_\lambda y_\lambda \chi^\lambda(\mathcal{B}_K)}
+       {m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|}
   \;=\; 1,
 $$
 
 *so $\rho_K^{(0)} \cdot m_e \cdot |\mathrm{tr}_M| = m_e \cdot
 |\mathrm{tr}_M|$, **not** the constituent mass.  The constituent
 mass enters via the $A=1$ instances ($K = p, n$) which fix
-$y_{(1)}\chi^{(1)}(\beta_p) = m_p / m_e$ and analogously for the
+$y_{(1)}\chi^{(1)}(\mathcal{B}_p) = m_p / m_e$ and analogously for the
 neutron.  Substituting back:*
 
 $$
   \rho_K^{\mathrm{LO}} \;=\; \frac{Z\cdot m_p + N\cdot m_n}
-                                  {m_e \cdot |\mathrm{tr}_M(\beta_K)|}
+                                  {m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|}
 $$
 
 *as stated.*
@@ -137,8 +137,8 @@ $$
 $$
   \rho_K - \rho_K^{\mathrm{LO}}
   \;=\;
-  \frac{1}{|\mathrm{tr}_M(\beta_K)|}
-  \sum_\lambda y_\lambda \chi^\lambda(\beta_K) \Delta_\lambda(K),
+  \frac{1}{|\mathrm{tr}_M(\mathcal{B}_K)|}
+  \sum_\lambda y_\lambda \chi^\lambda(\mathcal{B}_K) \Delta_\lambda(K),
 $$
 
 *which is the refinement claim.  $\blacksquare$*

@@ -108,9 +108,9 @@ The standard Fermi theory writes the decay rate as
 $\Gamma = G_F^2m_e^5/(2\pi^3) \cdot |M|^2 \cdot f(Z, Q)$.
 This effective-theory formula packages together two mass scales:
 
-- the **electron mass** $m_e = 3\mathbf{E}_{\times}(q) \cdot \mu_0$
+- the **electron mass** $m_e = 3\mathfrak{E}_{\times}(q) \cdot \mu_0$
   ([building blocks](#rem:building-block-knots)), where
-  $\mathbf{E}_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy;
+  $\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy;
 - the **weak scale** $v \approx 246$ GeV, via $G_F = 1/(\sqrt{2}v^2)$.
 
 Both mass scales are determined by $q$ and the single dimensional
@@ -126,14 +126,14 @@ $$
   = 
   \frac{m_e^5}{2v^4}
   = 
-  \frac{(3\mathbf{E}_{\times})^5}{2(N_v\mathbf{E}_{\times})^4}
+  \frac{(3\mathfrak{E}_{\times})^5}{2(N_v\mathfrak{E}_{\times})^4}
    \cdot  \mu_0
   = 
-  \frac{243\mathbf{E}_{\times}}{2N_v^4}
+  \frac{243\mathfrak{E}_{\times}}{2N_v^4}
    \cdot  \mu_0
 $$
 
-where $N_v = v / (\mathbf{E}_{\times}\mu_0)$ is the effective crossing
+where $N_v = v / (\mathfrak{E}_{\times}\mu_0)$ is the effective crossing
 count of the weak scale.  This is a pure function of $q$ times
 $\mu_0$ — the Fermi constant is not an independent parameter.
 
@@ -203,8 +203,8 @@ The half-life formula uses:
 
 Every standard-physics constant decomposes into $q$-dependent
 factors times $\mu_0$: the electron mass
-$m_e = 3\mathbf{E}_{\times}\mu_0$, the weak scale
-$v = N_v\mathbf{E}_{\times}\mu_0$, and the fine structure constant
+$m_e = 3\mathfrak{E}_{\times}\mu_0$, the weak scale
+$v = N_v\mathfrak{E}_{\times}\mu_0$, and the fine structure constant
 $\alpha = q^{-1}/([9]_q \cdot [10]_q)$, with Chern-Simons correction
 ([EM coupling projection](#prop:em-coupling-projection)).
 The fine structure constant is now fully derived from $q$ alone

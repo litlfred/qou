@@ -1,6 +1,6 @@
 **Proposition (Q_β spectral bridge).**
 
-*Let $\beta_n$ be the canonical free-neutron braid word with single
+*Let $\mathcal{B}_n$ be the canonical free-neutron braid word with single
 wrap $A = 1$, let $q = q_0$ be the substrate parameter, let
 $h := q - q^{-1}$, and let*
 

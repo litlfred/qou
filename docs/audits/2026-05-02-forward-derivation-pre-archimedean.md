@@ -502,7 +502,7 @@ $\tau$-image identification).
 [`prop:hecke-mass-trace`](../../content/quantum-observable-universe/braids-and-knots/hecke-mass-trace.md).
 
 - **Statement.**
-  $\mathbf{E}_{\rm cross}(\mathfrak{H}) = |\mathrm{tr}_M(\Phi_{\rm mass})|$
+  $\mathfrak{E}_{\rm cross}(\mathfrak{H}) = |\mathrm{tr}_M(\Phi_{\rm mass})|$
   where $|\cdot|$ is the **Frobenius norm** in
   $\mathbb{Z}[q^{\pm 1}]$ (not Archimedean). Per-crossing weights
   $(q, -q^{-1})$ are the **two eigenvalues of the Hecke generator**

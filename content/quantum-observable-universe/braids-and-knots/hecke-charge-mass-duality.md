@@ -5,7 +5,7 @@ to the two Markov moves of the braid group.
 
 | Restriction | Markov move | $H_n(R, q)$ element | Physical invariant |
 |---|---|---|---|
-| Horizontal | Conjugation (within a fibre) | $\rho(\beta)$ | Charge $Q$, crossing energy $\mathbf{E}_{\mathrm{cross}}$ |
+| Horizontal | Conjugation (within a fibre) | $\rho(\beta)$ | Charge $Q$, crossing energy $\mathfrak{E}_{\mathrm{cross}}$ |
 | Vertical | Stabilisation (along the tower) | $\Phi_{\mathrm{mass}}(\beta)$ | Mass $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2$ |
 | Mixed | Both simultaneously | $Y(a, z)$ (vertex operator) | Full particle data |
 
@@ -19,7 +19,7 @@ $\rho(\beta) \in H_n(R, q)$ encodes the crossing structure directly.
 The crossing energy
 ([crossing energy](#def:crossing-energy)) reads off the Skein
 eigenvalue sum
-$\mathbf{E}_{\mathrm{cross}} = n_+ q - n_- q^{-1}$,
+$\mathfrak{E}_{\mathrm{cross}} = n_+ q - n_- q^{-1}$,
 and the Coulomb charge
 ([Coulomb charge](#def:coulomb-charge)) is the crossing asymmetry
 $Q = \tfrac{1}{2}(n_+ - n_-)$.

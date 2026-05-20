@@ -25,7 +25,7 @@ The staircase shapes index Specht modules
 $V_{\rho_k}$ of the Iwahori–Hecke algebra
 $H_{n_k}(q)$ that play a distinguished role in the QOU
 electroweak sector: the canonical
-$\beta_{\mathrm{EW}} \, \Delta_I^{\mathrm{minimal}}$
+$\beta_{\mathrm{EW}} \, \bowtie_K^{\mathrm{minimal}}$
 braid word acts on $V_{\rho_k}$ with a spectrum encoding the
 $q$-deformed Weinberg-angle ratio (see
 [`conj:staircase-ew-residual`](#conj:staircase-ew-residual)).

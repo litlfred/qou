@@ -1,7 +1,7 @@
 **Proposition (Hecke disjoint-product character via Littlewood-Richardson).**
 
-*Let $T_{\text{constit}}^K = \beta_p^{(1)} \cdot \beta_p^{(2)} \cdots
-\beta_n^{(N)} \in H_{3A}(q)$ be the disjoint Hecke product of $Z$
+*Let $T_{\text{constit}}^K = \mathcal{B}_p^{(1)} \cdot \mathcal{B}_p^{(2)} \cdots
+\mathcal{B}_n^{(N)} \in H_{3A}(q)$ be the disjoint Hecke product of $Z$
 proton braids and $N$ neutron braids on disjoint 3-strand blocks
 (the constituent-vacuum baseline of
 [`def:ew-interface-knot`](#def:ew-interface-knot)). For each partition
@@ -78,14 +78,14 @@ performing H_{3A}-character sums at high A:
 - **At free-side**: $\chi^\lambda(T_{\text{constit}}^K)$ is
   computable in $O(p(3A))$ via LR-decomposition from $H_3$ chi
   values — no $H_{3A}$-seminormal matrices required.
-- **At atom-side**: $\chi^\lambda(\beta_K) = \chi^\lambda(T_{\text{constit}}^K
-  \cdot \Delta_I^K)$ does NOT factorise via LR (the interface knot
-  $\Delta_I^K$ is a non-disjoint Hecke element), and requires
+- **At atom-side**: $\chi^\lambda(\mathcal{B}_K) = \chi^\lambda(T_{\text{constit}}^K
+  \cdot \bowtie_K)$ does NOT factorise via LR (the interface knot
+  $\bowtie_K$ is a non-disjoint Hecke element), and requires
   direct character computation (e.g. via the Rust kernel
   [`pyhecke_native.chi_q_atomic`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/tools/pyhecke-native/src/lib.rs)
   cherry-picked from PR #761).
 
-The CONVOLUTION structure $\beta_K = T_{\text{constit}}^K *_q \Delta_I^K$
+The CONVOLUTION structure $\mathcal{B}_K = T_{\text{constit}}^K *_q \bowtie_K$
 ([`def:ew-interface-knot`](#def:ew-interface-knot)) is preserved
 throughout — this is **NOT** a tensor-product reduction; the LR
 coefficients encode the Wedderburn-character branching from the

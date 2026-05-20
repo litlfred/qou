@@ -3,9 +3,9 @@ Carbon ($p = 6$) has electron cloud $6 \cdot T_{2,3}$ partitioned as
 $$
   \mathcal{E}_{\mathrm{C}}
   = 
-  \underbrace{T_{2,3} \bowtie T_{2,3}}_{\text{closed } 1s^2}
-   \bowtie 
-  \underbrace{T_{2,3} \bowtie T_{2,3} \bowtie T_{2,3} \bowtie T_{2,3}}_{\text{residual } R,  |R| = 4}.
+  \underbrace{T_{2,3} \oplus T_{2,3}}_{\text{closed } 1s^2}
+   \oplus 
+  \underbrace{T_{2,3} \oplus T_{2,3} \oplus T_{2,3} \oplus T_{2,3}}_{\text{residual } R,  |R| = 4}.
 $$
 
 The second shell has capacity $2 \cdot 2^2 = 8$

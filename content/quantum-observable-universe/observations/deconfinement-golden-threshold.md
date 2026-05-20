@@ -77,7 +77,7 @@ thermal energy matches the Hopf binding energy per baryon:
 $$
   k_B T_c
    \sim 
-  |\mathbf{E}_{\mathrm{cross}}(\mathfrak{p})|
+  |\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p})|
    \sim 
   \tfrac{1}{2}(q + q^{-1}) \cdot n_{\mathrm{link}},
 $$

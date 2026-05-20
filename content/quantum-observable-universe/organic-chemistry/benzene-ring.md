@@ -13,7 +13,7 @@ $$
   \mathrm{C}_6^{\mathrm{ring}}
   = 
   [\mathcal{A}(6,6)_1, \ldots, \mathcal{A}(6,6)_6]
-   \bowtie 
+   \oplus 
   T(2,6).
 $$
 

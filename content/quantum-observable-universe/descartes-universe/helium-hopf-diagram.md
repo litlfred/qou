@@ -4,7 +4,7 @@ trefoils $T_{2,3}$ joined by a Hopf link $\mathcal{L}_H$.
 
 ```tex
 \begin{tikzcd}[row sep=3em, column sep=4em]
-  & \boxed{\mathcal{N}(2{,}2)} \ar[dl, "\bowtie"', dashed] \ar[dr, "\bowtie", dashed] & \\
+  & \boxed{\mathcal{N}(2{,}2)} \ar[dl, "\oplus"', dashed] \ar[dr, "\oplus", dashed] & \\
   T_{2,3} \ar[rr, "\mathcal{L}_H"', "\text{Hopf link}", bend right=15]
   & & T_{2,3} \\
   \underset{e_1}{\text{electron 1}} & \underset{1s^2 \text{ (closed)}}{\text{—————————————}} & \underset{e_2}{\text{electron 2}}
@@ -20,9 +20,9 @@ surface of the other exactly once
 
 $$
   \mathcal{A}(2, 2) = 
-  \underbrace{2\mathfrak{p} \bowtie 2\mathfrak{n}}_{\alpha\text{-particle}}
-   \bowtie 
-  \underbrace{T_{2,3} \bowtie T_{2,3}}_{1s^2\text{ shell (closed)}}
+  \underbrace{2\mathfrak{p} \oplus 2\mathfrak{n}}_{\alpha\text{-particle}}
+   \oplus 
+  \underbrace{T_{2,3} \oplus T_{2,3}}_{1s^2\text{ shell (closed)}}
 $$
 
 **Why the shell is closed.**  The linking matrix of the
@@ -43,8 +43,8 @@ so the third electron is expelled to a higher shell.
 
 ```tex
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
-  & \boxed{\mathcal{N}(3{,}4)} \ar[d, "\bowtie"', dashed] & \\
-  & \underset{1s^2}{\bigl(T_{2,3} \bowtie T_{2,3}\bigr)} \ar[d, "\bowtie"', dashed, "\text{level 2}"] & \\
+  & \boxed{\mathcal{N}(3{,}4)} \ar[d, "\oplus"', dashed] & \\
+  & \underset{1s^2}{\bigl(T_{2,3} \oplus T_{2,3}\bigr)} \ar[d, "\oplus"', dashed, "\text{level 2}"] & \\
   & T_{2,3} & \\
   & \underset{2s^1}{\text{outer electron}} &
 \end{tikzcd}
@@ -52,10 +52,10 @@ so the third electron is expelled to a higher shell.
 
 $$
   \mathcal{A}(3, 4) = 
-  3\mathfrak{p} \bowtie 4\mathfrak{n}
-   \bowtie 
-  \underbrace{(T_{2,3} \bowtie T_{2,3})}_{1s^2}
-   \bowtie 
+  3\mathfrak{p} \oplus 4\mathfrak{n}
+   \oplus 
+  \underbrace{(T_{2,3} \oplus T_{2,3})}_{1s^2}
+   \oplus 
   \underbrace{T_{2,3}}_{2s^1}
 $$
 

@@ -12,17 +12,17 @@ to all three Wedderburn blocks of $H_3(q)$, exposing the
 ## Three closed forms
 
 For the canonical typed-$\mathbf{B}_3$ braids
-$\beta_p$ (uud, $6\sigma + 3\sigma^{-1} + 2\ \mathrm{averaged}$)
-and $\beta_n$ (udd, $5\sigma + 4\sigma^{-1} + 2\ \mathrm{averaged}$),
+$\mathcal{B}_p$ (uud, $6\sigma + 3\sigma^{-1} + 2\ \mathrm{averaged}$)
+and $\mathcal{B}_n$ (udd, $5\sigma + 4\sigma^{-1} + 2\ \mathrm{averaged}$),
 the per-Wedderburn-block character differences are:
 
 $$
 \begin{aligned}
-  \chi_{(3)}(\beta_n) - \chi_{(3)}(\beta_p)
+  \chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)
    &= -\dfrac{(q^2 + 1)^2 (q^2 - 1)}{4 q}, \\[6pt]
-  \chi_{(2,1)}(\beta_n) - \chi_{(2,1)}(\beta_p)
+  \chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)
    &= -\dfrac{(q^4 + 1)(q^2 - 1)}{4 q^3}, \\[6pt]
-  \chi_{(1,1,1)}(\beta_n) - \chi_{(1,1,1)}(\beta_p)
+  \chi_{(1,1,1)}(\mathcal{B}_n) - \chi_{(1,1,1)}(\mathcal{B}_p)
    &= -\dfrac{(q^2 + 1)^2 (q^2 - 1)}{4 q^5}.
 \end{aligned}
 $$
@@ -110,7 +110,7 @@ All proved by `field_simp + ring` after unfolding (sorry-free):
 
 Probe `probe_per_wedderburn_block_ck.py` (witness:
 `per-wedderburn-block-ck.witness.json`) computes the symbolic
-$\chi_\lambda(\beta_p), \chi_\lambda(\beta_n)$ via the existing
+$\chi_\lambda(\mathcal{B}_p), \chi_\lambda(\mathcal{B}_n)$ via the existing
 `q_character_on_braid_word` infrastructure, applies `sympy.cancel +
 sympy.factor`, and reports the three closed forms above plus all
 $\varepsilon^k$ coefficients ($k = 0..12$) of the difference at

@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 The empirical $c_k$ chain at $H_3$ (extracted from the
-$\varepsilon^{2k}$ coefficients of $\chi_\lambda(\beta_n; q) - \chi_\lambda(\beta_p; q)$
+$\varepsilon^{2k}$ coefficients of $\chi_\lambda(\mathcal{B}_n; q) - \chi_\lambda(\mathcal{B}_p; q)$
 at $q = 1 + \varepsilon$ per
 [`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms))
 does **not** match a uniform Plancherel-weighted sum
@@ -18,12 +18,12 @@ $\chi_\lambda(w_0) = (1, 0, -1)$ for $\lambda \in \{(3), (2,1), (1,1,1)\}$.
 ## Statement
 
 **Proposition.**
-*Let $\beta_p, \beta_n \in \mathbf{B}_3$ be the canonical typed-braid
+*Let $\mathcal{B}_p, \mathcal{B}_n \in \mathbf{B}_3$ be the canonical typed-braid
 representatives of the proton and neutron, and define*
 
 $$
   c_k^{(\lambda)} \;:=\; [\varepsilon^{2k}]\,
-  \bigl(\chi_\lambda(\beta_n;\,q) - \chi_\lambda(\beta_p;\,q)\bigr)\Big|_{q = 1 + \varepsilon}
+  \bigl(\chi_\lambda(\mathcal{B}_n;\,q) - \chi_\lambda(\mathcal{B}_p;\,q)\bigr)\Big|_{q = 1 + \varepsilon}
   \qquad (\lambda \vdash 3,\ k \geq 0).
 $$
 
@@ -108,9 +108,9 @@ the three character-difference closed forms are
 
 $$
 \begin{aligned}
-  \chi_{(3)}(\beta_n) - \chi_{(3)}(\beta_p)     &= -\tfrac{(q^2+1)^2(q^2-1)}{4q}, \\[4pt]
-  \chi_{(2,1)}(\beta_n) - \chi_{(2,1)}(\beta_p) &= -\tfrac{(q^4+1)(q^2-1)}{4q^3}, \\[4pt]
-  \chi_{(1,1,1)}(\beta_n) - \chi_{(1,1,1)}(\beta_p) &= -\tfrac{(q^2+1)^2(q^2-1)}{4q^5}.
+  \chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)     &= -\tfrac{(q^2+1)^2(q^2-1)}{4q}, \\[4pt]
+  \chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p) &= -\tfrac{(q^4+1)(q^2-1)}{4q^3}, \\[4pt]
+  \chi_{(1,1,1)}(\mathcal{B}_n) - \chi_{(1,1,1)}(\mathcal{B}_p) &= -\tfrac{(q^2+1)^2(q^2-1)}{4q^5}.
 \end{aligned}
 $$
 

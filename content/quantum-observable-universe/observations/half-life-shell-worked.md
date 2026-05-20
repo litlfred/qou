@@ -13,14 +13,14 @@ through the two extreme cases.
 ## Example 1: Tritium ${}^{3}\mathrm{H} \to {}^{3}\mathrm{He}$
 
 **Parent link.**
-$\mathcal{N}(1, 2) = \mathfrak{p} \bowtie \mathfrak{n} \bowtie \mathfrak{n}$: one proton
+$\mathcal{N}(1, 2) = \mathfrak{p} \oplus \mathfrak{n} \oplus \mathfrak{n}$: one proton
 ([categorical proton](#def:categorical-proton)) Hopf-linked to two
 neutrons ([categorical neutron](#def:categorical-neutron)).
 
 ```tex
 \begin{tikzcd}[row sep=0.5em, column sep=1.5em]
-  \mathfrak{p} \ar[r, no head, "\bowtie"]
-  & \mathfrak{n} \ar[r, no head, "\bowtie"]
+  \mathfrak{p} \ar[r, no head, "\oplus"]
+  & \mathfrak{n} \ar[r, no head, "\oplus"]
   & \mathfrak{n}
 \end{tikzcd}
 $\qquad
@@ -33,7 +33,7 @@ Crossing structure:
 - $\mathfrak{p}$--$\mathfrak{n}$: 2 mixed crossings (neutral)
 
 **Daughter link.**
-$\mathcal{N}(2, 1) = \mathfrak{p} \bowtie \mathfrak{p} \bowtie \mathfrak{n}$: the mirror configuration.
+$\mathcal{N}(2, 1) = \mathfrak{p} \oplus \mathfrak{p} \oplus \mathfrak{n}$: the mirror configuration.
 
 $$
   \ell_{\mathrm{net}}(2, 1) = \textstyle\binom{2}{2} - \binom{1}{2} = +1
@@ -80,7 +80,7 @@ superallowed mirror transitions, the self-deformation correction is sufficient.
 ## Example 2: Carbon-14 ${}^{14}\mathrm{C} \to {}^{14}\mathrm{N}$
 
 **Parent link.**
-$\mathcal{N}(6, 8) = 6\mathfrak{p} \bowtie 8\mathfrak{n}$: six
+$\mathcal{N}(6, 8) = 6\mathfrak{p} \oplus 8\mathfrak{n}$: six
 protons Hopf-linked to eight neutrons.
 
 $$
@@ -107,7 +107,7 @@ $$
 $$
 
 **Daughter link.**
-$\mathcal{N}(7, 7) = 7\mathfrak{p} \bowtie 7\mathfrak{n}$: the
+$\mathcal{N}(7, 7) = 7\mathfrak{p} \oplus 7\mathfrak{n}$: the
 stable nitrogen-14 configuration.
 
 $$

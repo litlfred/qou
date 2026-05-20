@@ -5,11 +5,11 @@ constraint — is well-defined.*
 
 *Proof.*
 *Since $K$ is unstable, the ILP
-$\{x \in \mathbb{Z}_{\geq 0}^N : G(q) x \geq 0\}$ has no
+$\{x \in \mathbb{Z}_{\geq 0}^N : \mathrm{G}(q) x \geq 0\}$ has no
 solution within the confinement filtration $J^{\ell(K, q)}(q)$.*
 
 *Run the LP relaxation
-$\{x \in \mathbb{R}_{\geq 0}^N : G(q) x \geq 0\}$.  This is
+$\{x \in \mathbb{R}_{\geq 0}^N : \mathrm{G}(q) x \geq 0\}$.  This is
 always feasible (the trivial $x = 0$ vector satisfies $G \cdot 0
 = 0 \geq 0$, and the relaxation is the convex hull of integer
 solutions).  Pick the unique optimal vertex $x^*_{LP} \in
@@ -21,7 +21,7 @@ $$
   \gamma^*(K, q)
   \;:=\;
   \arg\min_\gamma\;
-    (G(q)\, \lceil x^*_{LP} \rceil)_\gamma,
+    (\mathrm{G}(q)\, \lceil x^*_{LP} \rceil)_\gamma,
 $$
 
 *the constraint with the smallest (most negative) Frobenius

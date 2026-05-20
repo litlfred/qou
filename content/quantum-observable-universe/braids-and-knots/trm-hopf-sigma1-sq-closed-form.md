@@ -96,7 +96,7 @@ $\mathrm{tr}_M(\sigma_1^2) - 1$ above are NOT equal to these:
 The mismatch proves the $F_n := 1 + c_n \hbar_q^{2n}$ are NOT
 extracted from the bare Markov trace of $\sigma_1^2$. They are a
 SEPARATE decomposition of $Q_\beta$ in which each factor must
-arise from a distinct categorical object $\beta_n$ — for $F_3$
+arise from a distinct categorical object $\mathcal{B}_n$ — for $F_3$
 specifically, the V_(2,2,2) Wedderburn-block projection inside
 Hoefsmit $V_{(2,1)} \otimes V_{(2,1)}$ embedded in $H_6$
 (per [`prop:hopf-jones-c3-categorical`](#prop:hopf-jones-c3-categorical)

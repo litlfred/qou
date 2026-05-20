@@ -38,7 +38,7 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    after finitely many levels.
 
 2. **Confinement admits an algebraic closed form.** The hadronic
-   binding energy $\mathbf{E}_{\mathrm{bind}}$ reduces to a finite
+   binding energy $\mathfrak{E}_{\mathrm{bind}}$ reduces to a finite
    polynomial expression in $q$; the infinite-tower interpretation of
    confinement is categorically inessential.
 
@@ -55,7 +55,7 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    Laurent ring admits.
 
 5. **Partial QOU falsification.** The information-bandwidth bounds
-   $\mathcal{B}(q)$ are satisfied with slack; the substrate carries
+   $\mathfrak{B}(q)$ are satisfied with slack; the substrate carries
    less information-theoretic hardness than the full conjecture
    predicts.  This is a falsification of the strong form but not of
    the topological mass formula, Gr\"obner--Shirshov construction, or

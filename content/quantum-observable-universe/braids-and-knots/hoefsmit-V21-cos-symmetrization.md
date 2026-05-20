@@ -104,8 +104,8 @@ and the existing `hecke_characters.build_seminormal_matrices` infrastructure):
 
 | quantity | value at $q_0$ |
 |----------|---:|
-| $\chi^{(2,1)}_q(\beta_p)$ | $+1.8077033201$ |
-| $\chi^{(2,1)}_q(\beta_n)$ | $+1.7008888501$ |
+| $\chi^{(2,1)}_q(\mathcal{B}_p)$ | $+1.8077033201$ |
+| $\chi^{(2,1)}_q(\mathcal{B}_n)$ | $+1.7008888501$ |
 | $\Delta \chi^{(2,1)}_q$   | $+0.1068144700$ |
 | $y_{(2,1)} \cdot \Delta \chi^{(2,1)}_q$ | $+0.0913335577$ |
 | Markov-symmetrized factor $\cos\alpha$ | $0.99863..$ |

@@ -265,7 +265,7 @@
 |----------|---------|----------|
 | **Passive vs active voice** | Consistent passive voice in Propositions; brief imperative in algorithms. | ✓ No violation |
 | **Terminology consistency** | "Gröbner–Shirshov," "nuclear braid," "demand profile" used consistently. | ✓ No violation |
-| **Notation consistency** | Particle names ($\mathfrak{p}, \mathfrak{n}$), energy symbols ($\mathbf{E}_q$, $E_{\mathfrak{H}}$) uniform. | ✓ No violation |
+| **Notation consistency** | Particle names ($\mathfrak{p}, \mathfrak{n}$), energy symbols ($\mathfrak{E}_q$, $E_{\mathfrak{H}}$) uniform. | ✓ No violation |
 | **Level of detail** | Slight variation between expository blocks and computational witnesses; acceptable. | ✓ No violation |
 | **Explanations of concepts** | Transfer matrix mechanics explained once (§7) and referenced elsewhere. Binding energy derived once (tower formula) and specialized (deuterium). | ✓ No violation |
 
@@ -285,14 +285,14 @@
 | Hadron | `$\mathfrak{H}$` | ✓ Used when needed | ✓ |
 | Localized hadron | `$\mathfrak{H}_p$` | ✓ Present | ✓ |
 
-### Energy notations (mixed fonts)
+### Energy notations (post-Phase 5n: fraktur for all energies)
 
 | Concept | Correct Notation | Expected Usage | Found | Status |
 |---------|------------------|-----------------|-------|--------|
-| $q$-energy | `$\mathbf{E}_q$` (bold) | Should appear | ✓ Found 8 instances | ✓ |
+| $q$-energy | `$\mathfrak{E}_q$` (fraktur, Phase 5n) | Should appear | ✓ Found 8 instances | ✓ |
 | Crossing energy (hadron subscript) | `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$` (plain italic) | Should appear | ✓ Correct formula | ✓ |
-| Binding energy | `$\mathbf{E}_{\mathrm{bind}}$` (bold) | Should appear | ⚠️ Rarely used; see below | ⚠️ |
-| **Fraktur energy (WRONG)** | `$\mathfrak{E}$` | Should NOT appear | ✓ Not found | ✓ |
+| Binding energy | `$\mathfrak{E}_{\mathrm{bind}}$` (fraktur, Phase 5n) | Should appear | ⚠️ Rarely used; see below | ⚠️ |
+| **Legacy bold energy (DEPRECATED, Phase 5n)** | `$\mathbf{E}$` | Should NOT appear (relocated to fraktur in Phase 5n) | ✓ Not found post-Phase 5n | ✓ |
 
 ### Mass notations (fraktur)
 

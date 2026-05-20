@@ -170,7 +170,7 @@ small-piece collapse is verified.
 
 The bridge admits a clean motivic reading: the algebraic side
 $\Phi_q(\|V_S\|_F)$ is a class in the quantum Bloch group
-$\mathcal{B}_q$ ([quantum Bloch group](#rem:quantum-bloch-group)), the
+$\mathfrak{B}(q)$ ([quantum Bloch group](#rem:quantum-bloch-group)), the
 archimedean realisation $\tau_{\mathrm{arch}}$ is the $q$-deformed
 Borel/Beilinson regulator, and the right-hand side is the standard
 Neumann–Zagier decomposition of the volume of $S^3 \setminus K$ along

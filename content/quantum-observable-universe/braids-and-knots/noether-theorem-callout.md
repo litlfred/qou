@@ -10,7 +10,7 @@ analogy with Noether's theorem.
 
 | Symmetry | Generator | Conserved quantity ($q = 1$) | $q$-Deformed quantity | Source |
 |----------|-----------|-------|---------|--------|
-| Time translation | Reeb flow $\xi_R$ | Energy $E$ | $\mathbf{E}_q(K)$ | Categorical action $S_q$ |
+| Time translation | Reeb flow $\xi_R$ | Energy $E$ | $\mathfrak{E}_q(K)$ | Categorical action $S_q$ |
 | Spatial translation | Braid stabilisation | Momentum $p$ | $p_q(\beta)$ (writhe) | Markov II shift |
 | Rotation | $\mathrm{SU}(2)$ action | Angular momentum $J^2$ | $J_q^2 = [j]_q[j+1]_q$ | $\mathrm{SU}_q(2)$ Casimir |
 | Gauge | Quantum gauge group $G_q$ | Charge | Coulomb charge $Q(K)$ | Tannaka–Krein reconstruction |

@@ -124,7 +124,7 @@ The $S_5$-equivariance constraint pins which knots actually embed
 $S_5$-equivariantly in Bring's surface; the figure-8 and Borromean
 admit such embeddings up to standard ambiguities, and the higher
 isotope knots ($6_2, 8_{11}, L_{6a4}, \ldots$) inherit
-$S_5$-equivariance via the binding-operator $\bowtie$ structure of
+$S_5$-equivariance via the binding-operator $\oplus$ structure of
 the atlas.
 
 **Observation 4 (force carriers contribute zero to BW).** The

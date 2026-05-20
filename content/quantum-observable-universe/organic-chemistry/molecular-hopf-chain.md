@@ -11,11 +11,11 @@ $$
   \mathcal{C}_N^{(k)}
   = 
   \mathcal{A}_1
-   \underset{B_k}{\bowtie}
+   \underset{B_k}{\oplus}
   \mathcal{A}_2
-   \underset{B_k}{\bowtie}
+   \underset{B_k}{\oplus}
   \cdots
-   \underset{B_k}{\bowtie}
+   \underset{B_k}{\oplus}
   \mathcal{A}_N
 $$
 
@@ -48,7 +48,7 @@ for side bonds; each endpoint carbon uses 1, leaving 3.
 The total crossing energy is the sum over $N - 1$ bonds:
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N^{(k)})
+  \mathfrak{E}_{\mathrm{cross}}(\mathcal{C}_N^{(k)})
   = 
   (N - 1) \cdot E_{\mathrm{bond}}(k).
 $$

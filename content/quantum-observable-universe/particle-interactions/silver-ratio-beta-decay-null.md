@@ -115,7 +115,7 @@ The silver-ratio observation:
 
 1. **Identifies the algebraic landscape of $Q_\beta$**: silver-ratio
    (Pell-Lucas), NOT cyclotomic (as in FSC = $q \cdot [9]_q \cdot [10]_q$)
-   or simple q-rational (as in $G(q) = q^2/(q-1)^4$).
+   or simple q-rational (as in $G_q = q^2/(q-1)^4$).
 2. **Provides a clean test point** for $c_k$ closed forms:
    evaluating at $q = 1 + \sqrt{2}$ should give Pell-Lucas-clean
    rationals if the form is categorically correct.

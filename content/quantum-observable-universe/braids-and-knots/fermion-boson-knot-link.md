@@ -67,7 +67,7 @@ They are unknots Borromean-linked in the exceptional divisor
 link $\mathcal{B}_3$ has **three** components — neither a
 knot (1) nor a standard link (2).  Its statistics are
 determined by the overall baryon: the proton
-$\mathcal{B}_3(u,u,d) \bowtie \mathcal{L}_H$ is a composite
+$\mathcal{B}_3(u,u,d) \oplus \mathcal{L}_H$ is a composite
 fermion because the Borromean structure, when resolved via
 the Skein relation, reduces to an odd number of knot
 components.

@@ -27,11 +27,11 @@ The probe forms the $c_\lambda$-weighted observable
 
 $$
   W_c(K) \;:=\; \sum_{\substack{\lambda \,\vdash\, 3A \\ \mathrm{height}(\lambda) \,\leq\, 6}}
-                    c_\lambda(q_0) \cdot \chi^\lambda(\beta_K)(q_0)
+                    c_\lambda(q_0) \cdot \chi^\lambda(\mathcal{B}_K)(q_0)
 $$
 
-over the **canonical $\Delta_I$-coupled atomic word**
-$\beta_K = \texttt{atom\_braid\_word\_3A}(Z, N)$ for
+over the **canonical $\bowtie_K$-coupled atomic word**
+$\mathcal{B}_K = \texttt{atom\_braid\_word\_3A}(Z, N)$ for
 $K \in \{D, T, {}^3\mathrm{He}\}$.
 
 ## Why this is non-trivial
@@ -39,10 +39,10 @@ $K \in \{D, T, {}^3\mathrm{He}\}$.
 The canonical T and ${}^3\mathrm{He}$ words differ in *interface
 type*, not just generator signs:
 
-- $T$ (ordering $[p, n, n]$) has interfaces $(pn{=}\Delta_I, \,
+- $T$ (ordering $[p, n, n]$) has interfaces $(pn{=}\bowtie_K, \,
   nn{=}\sigma^{-1})$;
 - ${}^3\mathrm{He}$ (ordering $[p, p, n]$) has interfaces
-  $(pp{=}\sigma, \, pn{=}\Delta_I)$.
+  $(pp{=}\sigma, \, pn{=}\bowtie_K)$.
 
 Per [crystal-isospin-degeneracy §Open work](#prop:crystal-isospin-degeneracy),
 the sign-flip invariance argument does **not** automatically apply
@@ -107,9 +107,9 @@ is invariant.  Concretely at $A = 3$, $n = 9$:
 
 Only the self-conjugate $(3,3,3)$ has $c_\lambda = c_{\lambda^T}$;
 every other partition contributes asymmetrically.  Therefore
-$W_c(K) = \sum_\lambda c_\lambda \chi^\lambda(\beta_K)$ inherits a
+$W_c(K) = \sum_\lambda c_\lambda \chi^\lambda(\mathcal{B}_K)$ inherits a
 transpose-asymmetric weighting and cannot be $S$-invariant — even
-when $\beta_K$ and $\beta_{K^*}$ (mirror partner) realise the same
+when $\mathcal{B}_K$ and $\beta_{K^*}$ (mirror partner) realise the same
 Hopf-orbit on the Markov-trace pairing.
 
 ## Refines the mirror-isobar EM-localisation theorem
@@ -161,7 +161,7 @@ invariance.  Tracked here as future work.
 
 **Empirical falsification, expected outcome.**  The probe was
 designed to *test* whether Option E preserves the Hopf-antipode
-invariance under canonical $\Delta_I$-coupled words, and the
+invariance under canonical $\bowtie_K$-coupled words, and the
 result is a clean **no** (relative split $\sim 19$).  The
 explanation is structural (transpose-asymmetric $c_\lambda$), not
 numerical, so the result is robust under precision changes.
