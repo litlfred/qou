@@ -115,16 +115,18 @@ substitution recovers the empirical $m_p/m_e \approx 1836$ from the
 scalar $\hat V_i$ formula because the dimensional-scale carrier is
 **not in the scalar volumes** — it is in the operator $A^\lambda_{\vec\mu}(I)$,
 specifically in its non-scalar (off-diagonal) action on the boundary
-strands. The interface contribution to the canonical-atom Markov
-trace is pinned at $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z$
-per Z-step (derivation-grade, on `main` via the PR #819 Phase 5c.1
-family); the complementary constit-side ratio
-$\rho_Z^{\mathrm{constit}}(q)$ should factorize through the
-operator-valued $A^\lambda_{\vec\mu}(\mathbf{1})$ blocks (trivial-
-interface case) of the iterated formula, providing a candidate
-categorical derivation path now that the
-$(2q-1)$ closed form has been falsified globally by
-[PR #842 Phase 5k.2](https://github.com/litlfred/qou/pull/842).*
+strands. The
+[`prop:interface-knot-markov-z`](interface-knot-markov-z.md)
+identification $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z$
+(per Z-step, derivation-grade) pins one ratio in the constit-vs-full
+decomposition; the open complementary ratio
+$\rho_Z^{\mathrm{constit}}(q)$ — falsified at the global level by
+[PR #842 Phase 5k.2](https://github.com/litlfred/qou/pull/842) for the
+$(2q-1)$ closed form — should factorize through the operator-valued
+$A^\lambda_{\vec\mu}(\mathbf{1})$ blocks (trivial-interface case) of
+the iterated formula, providing a candidate categorical derivation
+for [`conj:constit-factor-2q-minus-1`](constit-factor-2q-minus-1.md)'s
+follow-on closed form.*
 
 *The operator-valued formula above resolves this:*
 
