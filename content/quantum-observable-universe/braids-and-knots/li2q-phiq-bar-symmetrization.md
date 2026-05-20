@@ -1,4 +1,34 @@
-**Proposition (Symmetric $\mathrm{Li}_2^q$ as bar-symmetrization of Faddeev $\Phi_q$).**
+> **ERRATUM (2026-05-20, witness
+> [`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/li2q-phiq-bar-symmetry.witness.json)):**
+> *The boxed identity below as stated — bar-**symmetrization** (sum)
+> with no prefactor — is numerically falsified.* For Faddeev's
+> $\Phi_q(z) = \prod_{k\geq 0}(1 - q^{2k+1}z)^{-1}$, the algebraic
+> fact is $\log \Phi_{q^{-1}}(z) = -\log \Phi_q(z)$ (each coefficient
+> sign-flips under $q \mapsto q^{-1}$), so the **sum**
+> $\tfrac{1}{2}(\log \Phi_q + \log \Phi_{q^{-1}})$ is identically zero,
+> not $\mathrm{Li}_2^q$. The correct identity is the bar-**anti-
+> symmetrization** with $h/2$ prefactor:
+>
+> $$
+>   \boxed{\;\;
+>   \mathrm{Li}_2^q(z) \;=\; -h \cdot \log \Phi_q(z) \;=\; \tfrac{h}{2}\bigl(\log \Phi_{q^{-1}}(z) - \log \Phi_q(z)\bigr),
+>   \;\;}
+> $$
+>
+> where $h = q - q^{-1}$. Numerically verified to $10^{-55}$ relative
+> precision at $q_0$ across seven test points
+> $z \in \{-1, -1/2, 1/4, 1/2, q_0/4, q_0/2, 3 q_0/4\}$. The §Proof
+> below contains an arithmetic error in the line "Adding and using
+> $q^n/(1-q^{2n}) + q^{-n}/(1-q^{-2n}) = -1/(q^n - q^{-n})$" — the
+> actual value is $0$, not $-1/(q^n - q^{-n})$; the
+> $-2/(q^n - q^{-n})$ structure appears in the **difference** of the
+> two coefficients, which is why the *anti-symmetrization* recovers
+> $\mathrm{Li}_2^q$. The §Structural interpretation section's
+> classification of $\mathrm{Li}_2^q$ as bar-invariant stands — but
+> "bar-invariant" here means *anti-symmetric image rescaled by
+> $h/2$*, not "symmetric average".
+
+**Proposition (Symmetric $\mathrm{Li}_2^q$ as bar-symmetrization of Faddeev $\Phi_q$ — SUPERSEDED; see ERRATUM above).**
 
 *Let $\mathrm{Li}_2^q$ be the symmetric q-dilogarithm
 ([`def:q-dilogarithm`](#def:q-dilogarithm)), defined as the level-2
