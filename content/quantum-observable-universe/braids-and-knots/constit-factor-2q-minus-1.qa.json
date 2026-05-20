@@ -1,0 +1,52 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:constit-factor-2q-minus-1",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.ts",
+    "md": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md",
+    "lean": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean"
+  },
+  "source_hashes": {
+    "md": "4b33eff1f1b2",
+    "ts": "01b93e3fab57",
+    "lean": "0270f25bdb43"
+  },
+  "criteria": {
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:47:44.535Z",
+        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:47:44.711Z",
+        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T05:47:44.711Z"
+}

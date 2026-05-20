@@ -3,12 +3,12 @@
   "label": "prop:plancherel-term-7-formulation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts",
+    "md": "quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md",
+    "lean": "quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.lean"
   },
   "source_hashes": {
-    "md": "95322f3c03c8",
+    "md": "c81551eedd77",
     "ts": "54749b90dec4",
     "lean": "d931f60ec218"
   },
@@ -96,6 +96,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c81551eedd77",
+          "ts": "54749b90dec4",
+          "lean": "d931f60ec218"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:47:44.535Z",
+        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
       }
     ],
     "voice-unicode-crash": [
@@ -130,6 +145,21 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "c81551eedd77",
+          "ts": "54749b90dec4",
+          "lean": "d931f60ec218"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:47:44.711Z",
+        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
       }
     ],
     "framework-canonical": [
@@ -150,5 +180,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:47:44.711Z"
 }

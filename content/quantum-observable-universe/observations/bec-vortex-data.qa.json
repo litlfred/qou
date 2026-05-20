@@ -3,12 +3,12 @@
   "label": "rem:bec-vortex-data",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/observations/bec-vortex-data.ts",
-    "md": "content/quantum-observable-universe/observations/bec-vortex-data.md"
+    "ts": "quantum-observable-universe/observations/bec-vortex-data.ts",
+    "md": "quantum-observable-universe/observations/bec-vortex-data.md"
   },
   "source_hashes": {
-    "md": "c91819688397",
-    "ts": "ba11f89ff634"
+    "md": "ee205b4398f6",
+    "ts": "48ba1e0cd045"
   },
   "criteria": {
     "wall-side-correct": [
@@ -90,6 +90,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "ee205b4398f6",
+          "ts": "48ba1e0cd045"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:47:44.535Z",
+        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
       }
     ],
     "voice-unicode-crash": [
@@ -122,6 +136,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "ee205b4398f6",
+          "ts": "48ba1e0cd045"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:47:44.711Z",
+        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
       }
     ],
     "framework-canonical": [
@@ -141,5 +169,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:47:44.711Z"
 }
