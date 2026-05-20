@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:lr-tensor-character-bridge",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/lr-tensor-character-bridge.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/lr-tensor-character-bridge.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/lr-tensor-character-bridge.lean"
+  },
+  "source_hashes": {
+    "md": "e0725732d1a7",
+    "ts": "33481b402a92",
+    "lean": "edd4b001bce6"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "e0725732d1a7",
+          "ts": "33481b402a92",
+          "lean": "edd4b001bce6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:05:32.956Z",
+        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T02:05:32.956Z"
+}
