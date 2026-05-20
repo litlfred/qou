@@ -5,6 +5,31 @@ roles: [reader, collaborator, owner]
 
 # Editor Skill
 
+## Heavy-proof discipline (MANDATORY)
+
+Whenever you add or modify a Lean theorem in a content block, you
+**MUST** also add or update a matching `**Proof.**` narrative block
+in the sibling `.md` file. See `formalizer.md` and
+`proof-narrative-lean-equivalence.md` for the canonical format.
+
+Anti-pattern (FORBIDDEN): touching `.lean` without touching `.md`,
+or vice versa. The Lean theorem and the narrative proof move
+together in a single coherent change. A `.md` that just describes
+the **claim** but omits the **proof** is incomplete — the reader
+must be able to follow the math from the `.md` alone.
+
+For every Lean theorem `foo` proved in the sibling, the `.md` must
+contain:
+
+```markdown
+**Proposition (Lean: `foo`).** <statement in math notation>
+*Proof.* <narrative sketch citing key lemmas / tactics> $\square$
+```
+
+When editing existing blocks, run the `proof-narrative-lean-equivalence`
+audit (skill in `.claude/skills/local/`) to surface any Lean theorems
+without narrative counterparts and backfill them.
+
 ## Role
 
 Claude acts as **editor** of the QOU manuscript. The author makes mathematical

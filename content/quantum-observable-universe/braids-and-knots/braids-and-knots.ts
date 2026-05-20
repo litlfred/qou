@@ -458,6 +458,7 @@ export default chapter({
       blocks: [
         "q-beta-categorical-precision-ladder",
         "bar-involution",
+        "polynomial-bar-involution",
         "li2q-phiq-bar-symmetrization",
         "c5-involution-leibniz-decomposition",
         "bar-symmetric-three-layer-synthesis",

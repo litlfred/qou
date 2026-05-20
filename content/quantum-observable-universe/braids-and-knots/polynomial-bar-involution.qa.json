@@ -1,0 +1,156 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:polynomial-bar-involution",
+  "kind": "proposition",
+  "paths": {
+    "ts": "quantum-observable-universe/braids-and-knots/polynomial-bar-involution.ts",
+    "md": "quantum-observable-universe/braids-and-knots/polynomial-bar-involution.md",
+    "lean": "quantum-observable-universe/braids-and-knots/polynomial-bar-involution.lean"
+  },
+  "source_hashes": {
+    "md": "42113bc12a83",
+    "ts": "7f71c8539aaf",
+    "lean": "e0103c15b17b"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "42113bc12a83",
+          "ts": "7f71c8539aaf",
+          "lean": "e0103c15b17b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:57:50.942Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/polynomial-bar-involution.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T04:57:50.942Z"
+}

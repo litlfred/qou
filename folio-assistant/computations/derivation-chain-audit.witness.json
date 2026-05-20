@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T05:49:39.710637+00:00",
-  "commitSha": "9dc4eb495dfbd6248120c7a9b5152bbda1830eb1",
+  "computedAt": "2026-05-20T06:15:58.987411+00:00",
+  "commitSha": "ced887a88aeb025e49a6685c6b66ffb7d9c87912",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2628,6 +2628,7 @@
         "qbeta-decay-sdp-full-ck-derivation.witness.json",
         "qbeta-decay-sdp-knot-operator.witness.json",
         "qbeta-fsc-g-pattern-comparison.witness.json",
+        "qbeta-golden-ratio-fibonacci-probe.witness.json",
         "qbeta-half-fill-probe.witness.json",
         "qbeta-operator-identification-probe.witness.json",
         "qbeta-per-block-paper-closed-forms.witness.json",

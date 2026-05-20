@@ -11,6 +11,43 @@ allowed-tools: Read Write Edit Bash Grep Glob
 
 # Lean 4 Formalizer (Narrative to Proof)
 
+## Heavy-proof discipline (MANDATORY)
+
+When formalising a content block, **every Lean theorem you add MUST
+have a matching `**Proof.**` narrative block in the sibling `.md`
+file**. The narrative proof is not optional — it is the
+authoritative human-readable form of the result.
+
+Required structure in the `.md` for every Lean theorem `foo`:
+
+```markdown
+**Proposition (Lean: `foo`).** Statement of the theorem.
+*Proof.* Brief narrative — one paragraph for typical algebraic
+identities, two or three for inductive or case-analysis proofs.
+Cite the Mathlib lemmas / structural moves used so a reader can
+follow the Lean proof line-by-line. End with $\square$ or □.
+```
+
+The narrative proof should:
+
+- State the theorem in math notation (not Lean syntax) + name the
+  Lean theorem with `(Lean: \`name\`)` so navigation is explicit.
+- Sketch the key idea in 1–3 sentences for trivial / algebraic
+  cases; expand for inductions / case-splits.
+- Cite the structural moves: Mathlib lemma names, induction
+  variable, key field identities (`field_simp`, `ring`, etc.).
+- Match the Lean proof's structure — if the Lean uses induction
+  on `n`, the narrative explains the base case + step.
+
+**Anti-pattern**: writing a Lean theorem with no `.md` counterpart,
+or with only a one-line "see Lean" stub. Both leave the paper
+narrative incomplete and force readers to read Lean to understand
+the math. The `.md` must stand on its own as a math reading.
+
+When generating Lean theorems, ALWAYS edit the `.md` in the same
+diff to add the narrative proof. Don't split into separate
+commits — Lean and narrative must move together.
+
 ## Overview
 
 This skill translates the **logical skeleton** of the paper into Lean 4
