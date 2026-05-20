@@ -104,7 +104,9 @@ recovered in two specialisations:*
 ### Why this is the Stage-1 unblock
 
 *Per the bar-symmetrization identity
-[`prop:li2q-phiq-bar-symmetrization`](li2q-phiq-bar-symmetrization.md),
+[`prop:li2q-phiq-bar-symmetrization`](li2q-phiq-bar-symmetrization.md)
+and the broader three-layer synthesis
+[`prop:bar-symmetric-three-layer-synthesis`](bar-symmetric-three-layer-synthesis.md),
 the substitution $\Phi_q \leftrightarrow \mathrm{Li}_2^q$ is **not** a
 function swap but a context-split: $\Phi_q$ is the post-$\tau$
 archimedean form (carries dimensional mass scale), $\mathrm{Li}_2^q$ is
@@ -113,7 +115,18 @@ substitution recovers the empirical $m_p/m_e \approx 1836$ from the
 scalar $\hat V_i$ formula because the dimensional-scale carrier is
 **not in the scalar volumes** — it is in the operator $A^\lambda_{\vec\mu}(I)$,
 specifically in its non-scalar (off-diagonal) action on the boundary
-strands.*
+strands. The
+[`prop:interface-knot-markov-z`](interface-knot-markov-z.md)
+identification $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z$
+(per Z-step, derivation-grade) pins one ratio in the constit-vs-full
+decomposition; the open complementary ratio
+$\rho_Z^{\mathrm{constit}}(q)$ — falsified at the global level by
+[PR #842 Phase 5k.2](https://github.com/litlfred/qou/pull/842) for the
+$(2q-1)$ closed form — should factorize through the operator-valued
+$A^\lambda_{\vec\mu}(\mathbf{1})$ blocks (trivial-interface case) of
+the iterated formula, providing a candidate categorical derivation
+for [`conj:constit-factor-2q-minus-1`](constit-factor-2q-minus-1.md)'s
+follow-on closed form.*
 
 *The operator-valued formula above resolves this:*
 
