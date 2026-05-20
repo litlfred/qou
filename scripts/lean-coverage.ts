@@ -84,15 +84,39 @@ function findLeanSibling(tsPath: string): string | null {
   return existsSync(sib) ? sib : null;
 }
 
-function inspectLean(leanPath: string): { hasSorry: boolean; hasClass: boolean } {
-  const src = readFileSync(leanPath, "utf-8");
-  // sorry tokens (avoid matching `-- sorry` in comments? Most sorries are not in comments)
-  // We want any `sorry` not inside `--` comments. Approximate by stripping line comments.
-  const stripped = src.split("\n").map(line => {
+function stripLeanComments(src: string): string {
+  // Strip Lean block comments (`/- ... -/`, `/-- ... -/`, `/-! ... -/`) first —
+  // they can contain prose like "sorry-free" that would otherwise be matched
+  // by /\bsorry\b/. Block comments can be nested (Lean's lexer supports
+  // arbitrary nesting), so we walk depth instead of using a single regex.
+  let out = "";
+  let depth = 0;
+  for (let i = 0; i < src.length; i++) {
+    if (depth === 0 && src[i] === "/" && src[i + 1] === "-") {
+      depth = 1;
+      i += 1;
+      continue;
+    }
+    if (depth > 0) {
+      if (src[i] === "/" && src[i + 1] === "-") { depth += 1; i += 1; continue; }
+      if (src[i] === "-" && src[i + 1] === "/") { depth -= 1; i += 1; continue; }
+      continue;
+    }
+    out += src[i];
+  }
+  // Then strip line comments (`-- ...` to EOL).
+  return out.split("\n").map(line => {
     const idx = line.indexOf("--");
     return idx >= 0 ? line.slice(0, idx) : line;
   }).join("\n");
+}
+
+function inspectLean(leanPath: string): { hasSorry: boolean; hasClass: boolean } {
+  const src = readFileSync(leanPath, "utf-8");
+  const stripped = stripLeanComments(src);
   const hasSorry = /\bsorry\b/.test(stripped);
+  // `class` keyword check uses raw source: class declarations carry doc
+  // comments above them, never inside, so stripping is unnecessary.
   const hasClass = /^\s*class\s+\w+/m.test(src);
   return { hasSorry, hasClass };
 }
@@ -189,12 +213,22 @@ function computeStats(paperDir: string): Stats {
 
 // ── CLI ─────────────────────────────────────────────────────────────
 
+/** Parse a `--flag value` pair from argv; returns the value, or null if the
+ *  flag is missing OR the index is the last element (no value follows). */
+function flagValue(args: string[], flag: string): string | null {
+  const idx = args.indexOf(flag);
+  if (idx < 0 || idx + 1 >= args.length) return null;
+  const next = args[idx + 1];
+  // Reject values that look like another flag — defensive against missing values.
+  if (next.startsWith("--")) return null;
+  return next;
+}
+
 if (import.meta.main) {
   const args = process.argv.slice(2);
-  const paper = args[args.indexOf("--paper") + 1] || "quantum-observable-universe";
+  const paper = flagValue(args, "--paper") || "quantum-observable-universe";
   const jsonOnly = args.includes("--json");
-  const outIdx = args.indexOf("--out");
-  const outPath = outIdx >= 0 ? args[outIdx + 1] : null;
+  const outPath = flagValue(args, "--out");
 
   const stats = computeStats(paper);
 

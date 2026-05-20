@@ -51,14 +51,16 @@ except ImportError:
     sys.exit(2)
 
 
-# Chapters bundled into front-matter.pdf rather than as standalone PDFs.
-# Order in this list is the order they will appear in front-matter.pdf.
-FRONT_MATTER_GROUP = {
+# Chapter slugs bundled into front-matter.pdf rather than as standalone PDFs.
+# Membership-only set: the actual page order in front-matter.pdf is determined
+# by the PDF bookmark traversal in `ranges` (whatever order the chapters
+# appear in main.pdf), not by this constant.
+FRONT_MATTER_GROUP: frozenset[str] = frozenset({
     "introduction",
     "notation",
     "glossary",
     "index-of-definitions",
-}
+})
 
 
 def parse_chapter_list(manifest_path: Path) -> list[str]:
@@ -152,11 +154,25 @@ def main() -> int:
     bookmarks = collect_top_level_bookmarks(reader)
     print(f"  {len(bookmarks)} top-level bookmarks")
 
-    # Sanity check: bookmark count should match (or closely match) main-chapter count.
-    if abs(len(bookmarks) - len(main_chapters_in_order)) > 2:
-        print(f"WARNING: bookmark count ({len(bookmarks)}) differs from manifest "
-              f"main-chapter count ({len(main_chapters_in_order)}) by more than 2; "
-              "split may not align — falling back to bookmark count.", file=sys.stderr)
+    # Hard fail: no bookmarks means the PDF has no outline (hyperref missing
+    # or compile produced unbookmarked output). Silently emitting zero
+    # outputs would let CI publish a broken paper without chapter PDFs.
+    if not bookmarks:
+        print("ERROR: main.pdf has no top-level bookmarks — cannot split. "
+              "Ensure hyperref is loaded and \\chapter{...} commands produce "
+              "outline entries.", file=sys.stderr)
+        return 1
+
+    # Hard fail: count mismatch of more than 2 indicates structural drift
+    # (manifest changed, chapters added/removed, or main.pdf was built from
+    # a different source). Publishing a misaligned split is worse than
+    # publishing nothing.
+    drift = abs(len(bookmarks) - len(main_chapters_in_order))
+    if drift > 2:
+        print(f"ERROR: bookmark count ({len(bookmarks)}) differs from manifest "
+              f"main-chapter count ({len(main_chapters_in_order)}) by {drift} "
+              "— split would be misaligned. Refusing to publish.", file=sys.stderr)
+        return 1
 
     # Pair bookmarks with chapter slugs by position.
     # If counts mismatch, we use the shorter of the two and warn.

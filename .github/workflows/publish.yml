@@ -262,10 +262,25 @@ jobs:
       # current scan from scripts/lean-coverage.ts. Idempotent — exits 0
       # without changes when the .md already matches. Runs before the
       # content pipeline so the rendered PDF embeds the latest numbers.
+      #
+      # Failure handling: on `main` publications, a refresh failure means
+      # the README and PDF would carry stale stats — surface as an error.
+      # On feature branches it is non-fatal (preview builds tolerate
+      # transient drift) but the warning is still logged so the author
+      # can see it in the run summary.
       - name: Refresh authors-note Lean coverage stats
-        continue-on-error: true
+        id: refresh-authors-note
+        continue-on-error: ${{ env.HEAD_REF != 'main' }}
         run: |
-          bun run scripts/refresh-authors-note.ts || true
+          if ! bun run scripts/refresh-authors-note.ts; then
+            if [ "${HEAD_REF}" = "main" ]; then
+              echo "::error::refresh-authors-note.ts failed on main publication"
+              exit 1
+            else
+              echo "::warning::refresh-authors-note.ts failed (feature branch — non-fatal)"
+              exit 1
+            fi
+          fi
 
       # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
       - name: Validate and build content objects for all papers

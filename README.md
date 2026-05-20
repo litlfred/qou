@@ -84,8 +84,8 @@ Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publis
 
 | Block kind | Total | With Lean sibling | Fully formalized |
 |------------|------:|------------------:|-----------------:|
-| Provable claims (theorem/lemma/proposition/corollary) | 567 | 567 | **385 sorry-free (67.9%)** |
-| Conjectures (open) | 132 | 132 | **121 class-axiomatised (91.7%)** |
+| Provable claims (theorem/lemma/proposition/corollary) | 567 | 564 | **559 sorry-free (98.6%)** |
+| Conjectures (open) | 132 | 130 | **121 class-axiomatised (91.7%)** |
 | Definitions | 214 | 214 | — |
 
 Class-axiomatised conjectures follow the conditional-class convention
@@ -167,6 +167,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.QuantumObservableUniverse` | `QuantumObservableUniverse.lean` |
 | `QOU.QuaternionicSpectralResolvents` | `QuaternionicSpectralResolvents.lean` |
 | `QOU.RepresentationTheory` | `RepresentationTheory.lean` |
+| `QOU.Shared` | `Shared.lean` |
 | `QOU.SkeinResolutionObstruction` | `SkeinResolutionObstruction.lean` |
 | `QOU.StaircaseCornerHook` | `StaircaseCornerHook.lean` |
 | `QOU.su2_emergence_dagger_unitarity` | `su2_emergence_dagger_unitarity.lean` |
@@ -217,6 +218,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.QuantumBloch.*` | `2 files` |
 | `QOU.QuantumObservableUniverse.*` | `16 files` |
 | `QOU.QuantumObservableUniverses.*` | `2 files` |
+| `QOU.Shared.*` | `4 files` |
 | `QOU.StaircaseCornerHook.*` | `1 files` |
 | `QOU.TopologicalMass.*` | `3 files` |
 | `QOU.Torsion.*` | `20 files` |

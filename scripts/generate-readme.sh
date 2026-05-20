@@ -141,8 +141,8 @@ json_get '
   if (!c) {
     console.log("| _coverage stats unavailable_ | — | — | — |");
   } else {
-    console.log(`| Provable claims (theorem/lemma/proposition/corollary) | ${c.provable_total} | ${c.provable_total} | **${c.provable_sorry_free} sorry-free (${c.provable_percent}%)** |`);
-    console.log(`| Conjectures (open) | ${c.conjectures_total} | ${c.conjectures_total} | **${c.conjectures_class_axiomatized} class-axiomatised (${c.conjectures_percent}%)** |`);
+    console.log(`| Provable claims (theorem/lemma/proposition/corollary) | ${c.provable_total} | ${c.provable_with_lean} | **${c.provable_sorry_free} sorry-free (${c.provable_percent}%)** |`);
+    console.log(`| Conjectures (open) | ${c.conjectures_total} | ${c.conjectures_with_lean} | **${c.conjectures_class_axiomatized} class-axiomatised (${c.conjectures_percent}%)** |`);
     console.log(`| Definitions | ${c.definitions_total} | ${c.definitions_with_lean} | — |`);
   }
 ' >> "$OUT"

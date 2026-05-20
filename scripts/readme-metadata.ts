@@ -158,10 +158,12 @@ async function getWorkflows(): Promise<WorkflowInfo[]> {
 import { computeStats } from "./lean-coverage";
 
 interface LeanCoverage {
-  provable_sorry_free: number;
   provable_total: number;
+  provable_with_lean: number;
+  provable_sorry_free: number;
   provable_percent: number;
   conjectures_total: number;
+  conjectures_with_lean: number;
   conjectures_class_axiomatized: number;
   conjectures_percent: number;
   definitions_total: number;
@@ -172,10 +174,12 @@ async function getLeanCoverage(): Promise<LeanCoverage | null> {
   try {
     const s = computeStats("quantum-observable-universe");
     return {
-      provable_sorry_free: s.provable.sorry_free,
       provable_total: s.provable.total,
+      provable_with_lean: s.provable.with_lean_file,
+      provable_sorry_free: s.provable.sorry_free,
       provable_percent: s.provable.percent_sorry_free,
       conjectures_total: s.conjectures.total,
+      conjectures_with_lean: s.conjectures.with_lean_file,
       conjectures_class_axiomatized: s.conjectures.class_axiomatized,
       conjectures_percent: s.conjectures.percent_class_axiomatized,
       definitions_total: s.definitions.total,
