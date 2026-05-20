@@ -21,14 +21,20 @@
  *   generic-section-name          major — section label matches
  *                                          sec:.*-(part-N|extras|misc-N)$
  *   missing-chapter-intro         major — chapter has no opening narrative
- *   missing-chapter-manifest      major — chapter directory present in
+ *   missing-chapter-manifest      major — chapter directory present in the
  *                                          paper manifest but the chapter
- *                                          .ts file cannot be loaded
- *                                          (parse failure / typo / missing
- *                                          file). Distinct from missing-
- *                                          chapter-intro: this is a
- *                                          structural / build problem,
- *                                          not a narrative problem.
+ *                                          .ts file is missing or
+ *                                          unreadable.  This checks only
+ *                                          file existence — a syntactically
+ *                                          broken manifest that still parses
+ *                                          to *something* under the regex
+ *                                          scan will not trip this finding;
+ *                                          the upstream content-validation
+ *                                          pipeline catches genuine TS /
+ *                                          Zod parse errors.  Distinct from
+ *                                          missing-chapter-intro: this is a
+ *                                          structural / build problem, not
+ *                                          a narrative problem.
  *   abrupt-chapter-ending         minor — chapter's last block is not
  *                                          a closing prose block.
  *
@@ -186,10 +192,16 @@ let BLOB_REF: string =
   process.env.GITHUB_REF_NAME ||
   "main";
 
+/** Repository slug used in the GitHub blob URLs.  Picks up `$GITHUB_REPOSITORY`
+ *  (set automatically in GitHub Actions) so links remain correct when the
+ *  audit runs from a fork or mirrored repo.  Falls back to `litlfred/qou`
+ *  for local runs against the canonical repository. */
+let BLOB_REPO: string = process.env.GITHUB_REPOSITORY || "litlfred/qou";
+
 function setBlobRef(ref: string): void { BLOB_REF = ref; }
 
 function blobUrl(paper: string, chDir: string, basename?: string): string {
-  const base = `https://github.com/litlfred/qou/blob/${BLOB_REF}/content/${paper}/${chDir}`;
+  const base = `https://github.com/${BLOB_REPO}/blob/${BLOB_REF}/content/${paper}/${chDir}`;
   return basename ? `${base}/${basename}` : `${base}/${chDir}.ts`;
 }
 
@@ -261,18 +273,21 @@ function auditPaper(paper: string): Finding[] {
       } else {
         const firstBlock = firstSec.blocks[0];
         const firstInfo = firstBlock ? blockKinds.get(firstBlock) : undefined;
-        const isIntroSection =
-          firstSec.label?.toLowerCase().includes("introduction") ||
-          firstSec.label?.toLowerCase().includes("intro") ||
-          firstSec.title?.toLowerCase().includes("introduction");
         const firstIsProse = firstInfo?.kind === "prose";
-        if (!isIntroSection && !firstIsProse) {
+        // §738 §Story coherence (STRICT): the chapter's first block must
+        // be a `prose` lead.  A section *labelled* "Introduction" that
+        // nonetheless opens with a definition / proposition is just as
+        // much a missing-chapter-intro violation as an un-labelled one —
+        // the label is descriptive, not a substitute for the narrative
+        // arc.  An unresolved block kind (parse failure) is treated as
+        // non-prose so the violation surfaces.
+        if (!firstIsProse) {
           findings.push({
             kind: "missing-chapter-intro",
             severity: "major",
             chapter: dir,
             section: firstSec.label,
-            detail: `First block is ${firstInfo?.kind ?? "(unknown)"} not prose; first section "${firstSec.title}" is not labelled as introduction`,
+            detail: `First block is ${firstInfo?.kind ?? "unresolved"} (${firstBlock}), not a prose lead — chapter opens without a narrative intro per §738 §Story coherence`,
             link: blobUrl(paper, dir),
           });
         }
