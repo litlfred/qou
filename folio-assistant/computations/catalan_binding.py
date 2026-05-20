@@ -236,6 +236,12 @@ if __name__ == "__main__":
         "formula_2_tower_per_block": results_f2,
         "formula_2b_tower_atom_only": results_f2b,
     }
+    # Wrap legacy payload via WitnessBuilder.wrap_legacy for provenance
+    sys.path.insert(0, str(Path(__file__).parent))
+    from witness_base import WitnessBuilder  # noqa: E402
+    (WitnessBuilder
+        .wrap_legacy("catalan-binding", witness,
+                     script_path=__file__, engine="python")
+        .save())
     out = Path(__file__).parent / "catalan-binding.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\n  Witness: {out}")

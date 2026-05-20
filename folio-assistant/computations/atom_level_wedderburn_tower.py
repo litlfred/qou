@@ -199,6 +199,12 @@ if __name__ == "__main__":
         },
         "results": results,
     }
+    # Wrap legacy payload via WitnessBuilder.wrap_legacy for provenance
+    sys.path.insert(0, str(Path(__file__).parent))
+    from witness_base import WitnessBuilder  # noqa: E402
+    (WitnessBuilder
+        .wrap_legacy("atom-level-wedderburn-tower", witness,
+                     script_path=__file__, engine="python")
+        .save())
     out = Path(__file__).parent / "atom-level-wedderburn-tower.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

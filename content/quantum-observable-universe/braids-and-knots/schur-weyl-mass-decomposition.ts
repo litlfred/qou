@@ -28,6 +28,6 @@ export default proposition({
     witness:
       "folio-assistant/computations/atom-level-wedderburn-tower.witness.json",
     status: "verified",
-    requires: ["mpmath", "numpy"],
+    requires: ["mpmath", "numpy", "scipy"],
   },
 });

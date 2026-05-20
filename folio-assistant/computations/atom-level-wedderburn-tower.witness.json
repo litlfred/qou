@@ -1,16 +1,26 @@
 {
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-20T03:25:31.233737+00:00",
+  "commitSha": "57ee2e7687d608c12f6240aecb0e5dcd30ca3c68",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "atom-level-wedderburn-tower",
-  "description": "Atom-level Wedderburn decomposition (\u03bb \u22a2 3A) with GB filtration level breakdown.  Per user directive: replaces per-generator H_3 projection with full H_{3A} channel sum.  Tests \u03a3_\u03bb w_\u03bb \u00b7 \u03a6_q(|\u03c7^\u03bb(\ud835\udc9c)|/dim) as atom-level brane tower candidate.",
+  "scriptFile": "atom_level_wedderburn_tower.py",
+  "scriptHash": "2ba9abd48c8c",
+  "scriptCommitSha": "57ee2e7687d608c12f6240aecb0e5dcd30ca3c68",
+  "description": "Atom-level Wedderburn decomposition (λ ⊢ 3A) with GB filtration level breakdown.  Per user directive: replaces per-generator H_3 projection with full H_{3A} channel sum.  Tests Σ_λ w_λ · Φ_q(|χ^λ(𝒜)|/dim) as atom-level brane tower candidate.",
   "reference_blocks": [
     "prop:schur-weyl-mass-decomposition",
     "thm:frobenius-codim-universal",
     "thm:frobenius-antipode-unifies-chirality-and-tower",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-05-20T02:07:42.339001+00:00",
+  "timestamp": "2026-05-20T03:25:31.227429+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
-    "level_heuristic": "len(\u03bb) - 1 (diagram height - 1)"
+    "level_heuristic": "len(λ) - 1 (diagram height - 1)"
   },
   "results": {
     "p": {
@@ -37,7 +47,7 @@
           "sum_phi_q": 836.424002405885
         }
       },
-      "walltime_sec": 0.20437145233154297
+      "walltime_sec": 0.1526644229888916
     },
     "n": {
       "Z": 0,
@@ -63,7 +73,7 @@
           "sum_phi_q": 17870.950532298517
         }
       },
-      "walltime_sec": 0.009685993194580078
+      "walltime_sec": 0.00686335563659668
     },
     "D atom": {
       "Z": 1,
@@ -104,7 +114,7 @@
           "sum_phi_q": 2.387698189701972
         }
       },
-      "walltime_sec": 0.04682564735412598
+      "walltime_sec": 0.0346219539642334
     },
     "T atom": {
       "Z": 1,
@@ -160,7 +170,7 @@
           "sum_phi_q": 0.0037624404593184406
         }
       },
-      "walltime_sec": 0.37296438217163086
+      "walltime_sec": 0.2848784923553467
     },
     "3He atom": {
       "Z": 2,
@@ -216,7 +226,7 @@
           "sum_phi_q": 0.00017599169191433734
         }
       },
-      "walltime_sec": 0.4060540199279785
+      "walltime_sec": 0.28951048851013184
     },
     "4He atom": {
       "Z": 2,
@@ -287,7 +297,7 @@
           "sum_phi_q": 7.533831565019047e-08
         }
       },
-      "walltime_sec": 275.1321303844452
+      "walltime_sec": 175.50696516036987
     }
   }
 }

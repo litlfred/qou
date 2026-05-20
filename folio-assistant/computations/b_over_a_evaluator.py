@@ -60,7 +60,7 @@ Inputs derived vs fitted
   -E_C/A in MeV.
 
 ──────────────────────────────────────────────────────────────────
-Output: folio-assistant/computations/b-over-a-witness.json
+Output: folio-assistant/computations/b-over-a.witness.json
 ──────────────────────────────────────────────────────────────────
 
 Per nucleus columns:
@@ -319,8 +319,16 @@ def build_witness() -> dict:
 
 def main() -> int:
     witness = build_witness()
-    out = HERE / "b-over-a-witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    # Wrap legacy payload via WitnessBuilder.wrap_legacy for provenance
+    # (engine, scriptFile, commitSha, scriptHash, computedAt) per the I14
+    # witness-provenance audit. Preserves every original key verbatim.
+    sys.path.insert(0, str(HERE))
+    from witness_base import WitnessBuilder  # noqa: E402
+    (WitnessBuilder
+        .wrap_legacy("b-over-a", witness,
+                     script_path=__file__, engine="python")
+        .save())
+    out = HERE / "b-over-a.witness.json"
 
     # Pretty print summary
     print(f"q_0 = {Q0:.10f}")

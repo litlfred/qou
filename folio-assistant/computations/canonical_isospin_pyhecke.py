@@ -122,6 +122,14 @@ if __name__ == "__main__":
         },
         "results": results,
     }
+    # Wrap legacy payload via WitnessBuilder.wrap_legacy for provenance
+    # (engine, scriptFile, commitSha, scriptHash, computedAt) per the I14
+    # witness-provenance audit. Preserves every original key verbatim.
+    sys.path.insert(0, str(Path(__file__).parent))
+    from witness_base import WitnessBuilder  # noqa: E402
+    (WitnessBuilder
+        .wrap_legacy("canonical-isospin-pyhecke", witness,
+                     script_path=__file__, engine="python")
+        .save())
     out = Path(__file__).parent / "canonical-isospin-pyhecke.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

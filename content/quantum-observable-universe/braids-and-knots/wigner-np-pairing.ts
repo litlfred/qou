@@ -11,7 +11,7 @@ export default proposition({
   computation: {
     engine: "python",
     script: "folio-assistant/computations/b_over_a_evaluator.py",
-    witness: "folio-assistant/computations/b-over-a-witness.json",
+    witness: "folio-assistant/computations/b-over-a.witness.json",
     status: "verified",
     requires: ["mpmath"],
   },

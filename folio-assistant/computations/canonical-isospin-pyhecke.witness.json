@@ -1,12 +1,22 @@
 {
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-20T03:16:43.116772+00:00",
+  "commitSha": "57ee2e7687d608c12f6240aecb0e5dcd30ca3c68",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "canonical-isospin-pyhecke",
-  "description": "Canonical Markov trace via pyhecke.trace.markov_trace_symbolic_eval for atomic braids p, n, D, T, \u00b3He, \u2074He.  Routes through the optimized backend (CRT/native).  Replaces the symbolic-q SymbolicHeckeDivision path which timed out on \u00b3He at >25 min wallclock.",
+  "scriptFile": "canonical_isospin_pyhecke.py",
+  "scriptHash": "0fefed63fc1c",
+  "scriptCommitSha": "57ee2e7687d608c12f6240aecb0e5dcd30ca3c68",
+  "description": "Canonical Markov trace via pyhecke.trace.markov_trace_symbolic_eval for atomic braids p, n, D, T, ³He, ⁴He.  Routes through the optimized backend (CRT/native).  Replaces the symbolic-q SymbolicHeckeDivision path which timed out on ³He at >25 min wallclock.",
   "reference_blocks": [
     "prop:categorical-mass-markov",
     "thm:jones-markov-trace",
     "rem:commutative-crossing-energy"
   ],
-  "timestamp": "2026-05-20T02:05:39.818596+00:00",
+  "timestamp": "2026-05-20T03:16:43.108509+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "precision": 30
@@ -17,42 +27,42 @@
       "N": 0,
       "include_inter": false,
       "tr_M_q0": 0.41539578633456653,
-      "walltime_sec": 1.6757855415344238
+      "walltime_sec": 4.508683919906616
     },
     "n   (Z=0, N=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
       "tr_M_q0": 0.41539578633456653,
-      "walltime_sec": 0.0002410411834716797
+      "walltime_sec": 0.0001628398895263672
     },
     "D   (Z=1, N=1)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
       "tr_M_q0": 0.07330859093712391,
-      "walltime_sec": 0.00041365623474121094
+      "walltime_sec": 0.00033545494079589844
     },
     "T   (Z=1, N=2)": {
       "Z": 1,
       "N": 2,
       "include_inter": true,
       "tr_M_q0": 0.015497627445745841,
-      "walltime_sec": 0.0011873245239257812
+      "walltime_sec": 0.0009434223175048828
     },
-    "\u00b3He (Z=2, N=1)": {
+    "³He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
       "include_inter": true,
       "tr_M_q0": 0.015497627445745841,
-      "walltime_sec": 0.0006365776062011719
+      "walltime_sec": 0.0005269050598144531
     },
-    "\u2074He (Z=2, N=2)": {
+    "⁴He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
       "include_inter": true,
       "tr_M_q0": 0.0026362413989130203,
-      "walltime_sec": 0.003299236297607422
+      "walltime_sec": 0.0020875930786132812
     }
   }
 }
