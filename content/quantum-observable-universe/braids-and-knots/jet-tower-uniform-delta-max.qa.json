@@ -3,14 +3,14 @@
   "label": "conj:jet-tower-uniform-delta-max",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.ts",
+    "md": "quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md",
+    "lean": "quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean"
   },
   "source_hashes": {
     "md": "a03edcb805d9",
     "ts": "af5a0098e271",
-    "lean": "a0726873ff87"
+    "lean": "d21e2fb14825"
   },
   "criteria": {
     "wall-side-correct": [
@@ -30,6 +30,23 @@
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "a03edcb805d9",
+          "ts": "af5a0098e271",
+          "lean": "d21e2fb14825"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
     ],
     "voice-status-leak": [
@@ -156,5 +173,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

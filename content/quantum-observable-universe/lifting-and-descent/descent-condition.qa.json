@@ -3,14 +3,14 @@
   "label": "prop:descent-condition",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/descent-condition.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/descent-condition.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/descent-condition.lean"
+    "ts": "quantum-observable-universe/lifting-and-descent/descent-condition.ts",
+    "md": "quantum-observable-universe/lifting-and-descent/descent-condition.md",
+    "lean": "quantum-observable-universe/lifting-and-descent/descent-condition.lean"
   },
   "source_hashes": {
     "md": "c8442322ffa5",
     "ts": "5433bed97943",
-    "lean": "7ff948b5b39d"
+    "lean": "9da84ecdf914"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "c8442322ffa5",
+          "ts": "5433bed97943",
+          "lean": "9da84ecdf914"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

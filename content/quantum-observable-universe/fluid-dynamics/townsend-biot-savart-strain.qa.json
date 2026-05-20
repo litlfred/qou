@@ -3,14 +3,14 @@
   "label": "rem:townsend-biot-savart-strain",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts",
-    "md": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.md",
-    "lean": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean"
+    "ts": "quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts",
+    "md": "quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.md",
+    "lean": "quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean"
   },
   "source_hashes": {
     "md": "e7a286167614",
     "ts": "cc11e0f08755",
-    "lean": "3bb455e5a3a6"
+    "lean": "bf2bc1887daf"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "e7a286167614",
+          "ts": "cc11e0f08755",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

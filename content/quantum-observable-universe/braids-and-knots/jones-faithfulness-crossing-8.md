@@ -40,8 +40,8 @@ class**.
 The original Q3 ("do distinct Bring-embeddable knots always produce
 distinct Jones polynomials?") refines to:
 
-- **Up to crossing 10**: ✓ theorem (HTW 1998).
-- **At crossing 11**: ✗ **falsified by the Conway-KT mutant pair**.
+- **Up to crossing 10**: (yes) theorem (HTW 1998).
+- **At crossing 11**: (no) **falsified by the Conway-KT mutant pair**.
   But Vol-injectivity *still holds* by Ruberman 1987 (mutation
   preserves volume for hyperbolic knots).
 - **At crossing $\geq 12$**: open whether more Jones-coincident pairs

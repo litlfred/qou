@@ -3,14 +3,14 @@
   "label": "def:gravitational-constant",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/gravitational-constant.ts",
-    "md": "content/quantum-observable-universe/information-theory/gravitational-constant.md",
-    "lean": "content/quantum-observable-universe/information-theory/gravitational-constant.lean"
+    "ts": "quantum-observable-universe/information-theory/gravitational-constant.ts",
+    "md": "quantum-observable-universe/information-theory/gravitational-constant.md",
+    "lean": "quantum-observable-universe/information-theory/gravitational-constant.lean"
   },
   "source_hashes": {
     "md": "153c6b1592ca",
-    "ts": "7f4e973d6b98",
-    "lean": "37007e1cb0db"
+    "ts": "1290d0055194",
+    "lean": "0162c7d9d2f9"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "153c6b1592ca",
+          "ts": "1290d0055194",
+          "lean": "0162c7d9d2f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

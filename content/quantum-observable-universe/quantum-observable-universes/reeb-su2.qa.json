@@ -3,14 +3,14 @@
   "label": "ex:reeb-su2",
   "kind": "example",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/reeb-su2.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/reeb-su2.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/reeb-su2.lean"
+    "ts": "quantum-observable-universe/quantum-observable-universes/reeb-su2.ts",
+    "md": "quantum-observable-universe/quantum-observable-universes/reeb-su2.md",
+    "lean": "quantum-observable-universe/quantum-observable-universes/reeb-su2.lean"
   },
   "source_hashes": {
     "md": "43ba6984b17e",
     "ts": "4920941480fb",
-    "lean": "a9e6ca76737a"
+    "lean": "ca25f2de8bd2"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "43ba6984b17e",
+          "ts": "4920941480fb",
+          "lean": "ca25f2de8bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

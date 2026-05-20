@@ -3,14 +3,14 @@
   "label": "conj:archimedean-remainder-exponential-decay",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.ts",
+    "md": "quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md",
+    "lean": "quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.lean"
   },
   "source_hashes": {
     "md": "dc775c74b7b7",
     "ts": "6e2f112f13fc",
-    "lean": "ace8c1e0613b"
+    "lean": "ef67e7efbce8"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "dc775c74b7b7",
+          "ts": "6e2f112f13fc",
+          "lean": "ef67e7efbce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }

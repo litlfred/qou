@@ -3,14 +3,14 @@
   "label": "def:delta-q-decoration",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/delta-q-decoration.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/delta-q-decoration.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/delta-q-decoration.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/delta-q-decoration.ts",
+    "md": "quantum-observable-universe/braids-and-knots/delta-q-decoration.md",
+    "lean": "quantum-observable-universe/braids-and-knots/delta-q-decoration.lean"
   },
   "source_hashes": {
     "md": "32974364915c",
     "ts": "bbba49d99973",
-    "lean": "496213661f79"
+    "lean": "f3d1bcc25a04"
   },
   "criteria": {
     "wall-side-correct": [
@@ -28,6 +28,21 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "32974364915c",
+          "ts": "bbba49d99973",
+          "lean": "f3d1bcc25a04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:23.033Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-status-leak": [
@@ -150,5 +165,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T06:32:23.033Z"
 }
