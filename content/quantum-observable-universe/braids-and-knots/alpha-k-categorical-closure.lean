@@ -71,7 +71,7 @@ class AlphaKCategoricalClosure (q : ℝ) : Type where
     higher analysis is required. -/
 -- Ref: [manuscript] conj:alpha-k-categorical-closure
 -- Ref: [manuscript] prop:alpha-k-derivation-procedure
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01239013
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 noncomputable instance (q : ℝ) : AlphaKCategoricalClosure q := by
   sorry
 

@@ -55,7 +55,10 @@ structure DownQuark where
   confined : Bool := true
 
 /-- The down quark is an unknot (same underlying knot as neutrino). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem down_quark_is_unknot :
     DownQuark.mk.crossing_number = Neutrino.mk.crossing_number ∧
     DownQuark.mk.genus = Neutrino.mk.genus := ⟨rfl, rfl⟩

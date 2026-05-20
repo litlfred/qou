@@ -16,7 +16,7 @@ namespace QOU
     Maps to Mathlib: related to `CategoryTheory.Monoidal.Transport`
     but requires 2-categorical infrastructure not yet available. -/
 -- Ref: [manuscript] Ch. 8 Glossary
--- Ref: [baez1995] https://doi.org/10.1063/1.531236
+-- Ref: [baez1995] Baez, "Knots and quantum gravity: progress and prospects," J. Math. Phys. 36 (1995)
 structure QuantumFlatness where
   /-- The 2-form datum B ∈ Ω²(A) ⊗ Ad(A) exists. -/
   two_form_exists : Prop

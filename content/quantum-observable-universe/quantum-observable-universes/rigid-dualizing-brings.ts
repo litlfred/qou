@@ -15,4 +15,7 @@ export default example({
     "def:rigid-dualizing-complex",
     "def:brings-coordinate-ring",
   ],
+  cites: [
+    "woronowicz1988",
+  ],
 });

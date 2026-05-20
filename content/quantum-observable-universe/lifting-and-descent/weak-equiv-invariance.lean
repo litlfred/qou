@@ -78,7 +78,7 @@ structure WeakEquivInvariance (R : Type*) [CommRing R] where
 
     We express this within a single WeakEquivInvariance over three
     levels: srcLevel = n, midLevel = m, tgtLevel = k. -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem weak_equiv_transitive {R : Type*} [CommRing R]
     (weq : WeakEquivalence R)
     (vac : VacuumState R weq.DirectLimit)

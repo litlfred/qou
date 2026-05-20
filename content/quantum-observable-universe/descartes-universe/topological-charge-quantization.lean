@@ -32,7 +32,7 @@ variable {C : Type u} [CategoryTheory.Category.{v} C]
     This is the algebraic counterpart of the Gauss–Bonnet theorem:
     non-degeneracy of the Frobenius pairing and periodicity of the
     Reeb derivation ξ_q force the total charge to be integral. -/
--- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 /-- The Reeb residue operator applied to the canonical form yields
     the observer trace: Res_ξ(ω) acts as the identity under Φ.
     Equivalently, the algebraic residue Res_q(ω, 1) = Φ(Res_ξ(ω)) = 1

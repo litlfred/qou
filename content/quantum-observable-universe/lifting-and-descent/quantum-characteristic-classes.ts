@@ -10,4 +10,7 @@ export default definition({
     "def:recursive-brane-tower",
     "def:yekutieli-lifting-condition",
   ],
+  cites: [
+    "yekutieli2010",
+  ],
 });

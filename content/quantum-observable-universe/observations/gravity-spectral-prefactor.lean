@@ -30,7 +30,7 @@ noncomputable def newtonG (U : UniversalResidue) : ℝ :=
     `α = m_e · 8G` is the prefactor of the deep-tower stratum
     `m^{≥4}_{q,K}` in the unified mass formula. -/
 -- Ref: [manuscript] §6/gravity-spectral-prefactor
--- Ref: [verlinde2011] https://doi.org/10.1007/JHEP04(2011)029
+-- Ref: [verlinde2011] On the origin of gravity and the laws of Newton — see content/schema/references.ts
 theorem gravity_spectral_prefactor (U : UniversalResidue) :
     U.α = U.m_e * 8 * newtonG U := by
   unfold newtonG

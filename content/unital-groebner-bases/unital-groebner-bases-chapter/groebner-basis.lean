@@ -29,7 +29,7 @@ namespace QOU.GrobnerShirshov.ContentBlock
     S-polynomials reduce to zero.
 
     This mirrors `QOU.GrobnerShirshov.IsGrobnerShirshovBasis`. -/
--- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
 structure IsGSBasis (G : Type*) (k : Type*) [Ring k] where
   /-- The S-polynomial for an overlap composition of generators i and j. -/
   overlapSPoly : G → G → k
@@ -44,7 +44,7 @@ structure IsGSBasis (G : Type*) (k : Type*) [Ring k] where
 
 /-- The **unital condition**: leading coefficients are units.
     Over a field, every Gröbner basis is unital. -/
--- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
 def IsGSBasis.isUnital {G : Type*} {k : Type*} [Ring k]
     (_gs : IsGSBasis G k) (leadingCoeffs : G → k) : Prop :=
   ∀ g : G, IsUnit (leadingCoeffs g)

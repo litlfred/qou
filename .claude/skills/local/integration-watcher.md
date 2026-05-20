@@ -120,6 +120,102 @@ These rules supersede any "default to parallel" / "one PR per
 item" framing earlier in this document. When in doubt: cluster
 more, dispatch fewer agents, ask before parallelising.
 
+## 0c. Sibling coordination (2026-05-19)
+
+Per CLAUDE.md §"User accessibility" item "Coordinate intent with
+sibling branches":
+
+- **At workplan start** (new branch / new tranche), list active
+  sibling PRs via `mcp__github__list_pull_requests` (open) and
+  recently-updated `claude/*` branches via `mcp__github__list_branches`.
+  Identify siblings whose scope overlaps (same chapter, same `.py`
+  or `.lean` file, same domain — e.g. canonical / detangler / proof /
+  bib).
+- **Post a 1-3 sentence intent comment** on each genuinely-overlapping
+  sibling PR. Format: "Starting <theme> on <branch>; will touch
+  <file or scope>; flag conflicts to me." Don't comment on every
+  sibling; don't make noise on the PR. Skip if no overlap.
+- **Inform siblings of critical findings** as they land. If you
+  discover something a sibling is waiting on (e.g. a URL-pattern
+  fix, a force-with-lease push convention, a paper-mismatch
+  finding), post on the sibling PR proactively — don't wait for
+  them to step on the rake.
+- **During idle (per §0b 5-minute trigger)** ALSO check sibling
+  PRs for coordination updates that affect your branch's scope.
+  `mcp__github__pull_request_read get_comments` on each watched
+  sibling; new comments addressed to "all watchers" or
+  referencing your branch's keywords are actionable backlog
+  items.
+
+This rule supersedes the historical "post on the PR only when
+asked" framing — proactive coordination on workplan start +
+during idle is now the default.
+
+## 0d. AskUserQuestion accessibility (2026-05-19)
+
+Per CLAUDE.md §"User accessibility" item "Default
+`AskUserQuestion` to `multiSelect: true` + 🟡 marker": the
+repo owner is physically disabled and types with difficulty.
+
+- **Default `multiSelect: true`.** Single-select forces the user
+  to type "1, 2" as free text when multiple options apply.
+  80% of watcher decision points are not mutually exclusive
+  ("which papers should I drill into?" — answer is usually a
+  multi-item subset), so multi-select is the safer default.
+- **Prefix questions with 🟡** to mark the agent as
+  waiting / blocked on input. The yellow circle is the agent-state
+  symbol for "blocked, needs user input" — consistent use lets
+  the user scan chat history and find every pending decision.
+- **Phrase questions to allow optional notes**: "Pick all that
+  apply; add 'Other' with a free-text note if needed." Don't
+  force the user to type follow-ups asking for amendments —
+  invite them up-front.
+- Single-select is OK only for genuinely mutually-exclusive actions
+  (e.g. "branch base: rebase off main OR cherry-pick onto X").
+  Even then, prefer multi-select if "do both later" is a reasonable
+  answer.
+
+## 0b. Idle-time backlog policy (5-minute trigger)
+
+Per CLAUDE.md §"Agent work-plan policy" item 4 (5-minute idle
+trigger, added 2026-05-19): when this watcher has been idle for
+> 5 minutes (no substantive output beyond TICK heartbeats or
+empty acks), automatically start processing backlog without
+waiting for the user to prompt. Walk the priority order:
+
+1. **Session todos** (TodoWrite list).
+2. **Current-PR todos** — open-PR body checklist + unresolved
+   review-comment threads on the branch's PR (via
+   `mcp__github__pull_request_read get_review_comments` and
+   `get` for the body).
+3. **Integration-watcher queue items** — this watcher's own
+   `todos/<name>-queue.json` first, then sibling watchers'.
+   Prefer items whose `block_or_script` overlaps the current
+   PR's scope (same chapter / same Python or Lean file).
+4. **Cross-cutting cleanups** (bare-URL `-- Ref:` upgrades,
+   `validate-bib` deferred items, glossary backfills).
+
+For this skill's children specifically:
+
+- The watcher's queue file is the integration-watcher's
+  primary backlog source (item 3). When triggered, read the
+  queue, pull the highest-priority `needs-author` or unresolved
+  `triage` item, and apply the §4 → §5 → §6 child-specific
+  procedure on it.
+- If the queue is empty/all-terminal, fall through to item 4
+  (cross-cutting cleanups). Don't sit idle if there's
+  uncommitted bibliographic improvement work or other
+  branch-scope reachable cleanups.
+- The "pause" command from the user IS a terminal state — do
+  not pursue backlog after the user says "pause" or
+  "stop until I'm back". Only the explicit "resume" /
+  "continue" / similar restart command lifts the pause.
+
+This rule exists because integration-watcher sessions often
+spend long stretches in idle monitor-TICK mode after the
+in-flight tranche lands. Productive idle is "work the next
+queue item", not "TICK heartbeats forever".
+
 ## 1. Baseline + setup (run once per session)
 
 ```bash

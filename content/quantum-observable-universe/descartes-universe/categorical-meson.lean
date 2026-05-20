@@ -18,7 +18,7 @@ namespace QOU.Torsion
 /-- **Meson (categorical)**: a hadron of valence 2, consisting of
     a quark–antiquark pair bound by the Hopf link.
     The braid word is T₀₁ · L_H · T₁₀ = (σ₀σ₁)² · σ₁σ₀. -/
--- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
+-- Ref: [jones1985] Jones, "A polynomial invariant for knots via von Neumann algebras," Bull. AMS 12 (1985)
 structure CategoricalMeson where
   /-- The underlying type of knot invariants. -/
   InvariantType : Type*

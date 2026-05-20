@@ -176,7 +176,7 @@ noncomputable def jonesMarkovTagged {R : Type u} [Field R]
 
 /-- **External axiom (Wenzl 1988):** y_λ recipe matches the canonical
     Jones-Markov coefficient via Macdonald hook telescope. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom y_lambda_recipe_correct_axiom :
     ∀ {R : Type u} [Field R] (q v : R) (lam : List ℕ),
       (∀ p ∈ lam, 0 < p) → List.Sorted (· ≥ ·) lam →
@@ -191,7 +191,7 @@ theorem y_lambda_recipe_correct {R : Type u} [Field R]
 
 /-- **External axiom (Wenzl 1988):** Plancherel completeness
     `Σ_λ⊢n d_λ · y_λ(q) = 1`. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom plancherel_via_recipe_axiom :
     ∀ {R : Type u} [Field R] (q v : R) (n : ℕ)
       (parts : List (List ℕ)),
@@ -219,7 +219,7 @@ opaque YLambdaRecipeCyclotomicFactor : Prop
 
 /-- **External axiom (Wenzl 1988):** cyclotomic factorisation of the
     y_λ recipe denominator. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom y_lambda_cyclotomic_via_recipe_axiom :
     ∀ {R : Type u} [Field R] (q v : R) (lam : List ℕ),
       YLambdaRecipeCyclotomicFactor
@@ -232,7 +232,7 @@ theorem y_lambda_cyclotomic_via_recipe {R : Type u} [Field R]
 /-! ## Worked example: n = 2 -/
 
 /-- **External axiom (Wenzl 1988):** explicit y_(2) recipe value. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom y_lambda_recipe_n2_partition_2_axiom :
     ∀ {R : Type u} [Field R] (q v : R),
       yLambdaRecipe [2] q v = (q * v + q + 1) / ((q + 1) * (q^2 + 1))

@@ -13,4 +13,7 @@ export default remark({
     "prop:feynman-classical-limit",
     "prop:photon-threading-mass",
   ],
+  cites: [
+    "yekutieli2015",
+  ],
 });

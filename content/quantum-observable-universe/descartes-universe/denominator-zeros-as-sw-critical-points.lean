@@ -10,7 +10,7 @@ Class-based packaging matches the conjectural-propagation pattern
 of CLAUDE.md §3b.
 
 -- Ref: [manuscript] conj:denominator-zeros-as-sw-critical-points
--- Ref: [witten2011] https://doi.org/10.1090/amsip/050/19
+-- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

@@ -21,7 +21,7 @@ namespace QOU
 open Complex
 
 /-- **Primitive fifth root of unity** ζ₅ = exp(2π i / 5). -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 noncomputable def zeta5 : ℂ :=
   Complex.exp (2 * Real.pi * Complex.I / 5)
 
@@ -40,7 +40,7 @@ def HyperellipticQuintic : ℂ × ℂ → Prop :=
   fun p => p.2 ^ 2 = p.1 ^ 5 - 1
 
 /-- The defining polynomial P(x) = x⁵ - 1 of the double cover. -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 noncomputable def quinticDefining : Polynomial ℂ :=
   Polynomial.X ^ 5 - Polynomial.C 1
 
@@ -49,13 +49,13 @@ noncomputable def quinticDefining : Polynomial ℂ :=
     The coercion `(k.val : ℂ)` is essential: using `k.val / 5`
     would be integer division on `ℕ`, which evaluates to `0` for
     every `k ∈ Fin 5` and would make every `fifthRoot k = 1`. -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 noncomputable def fifthRoot (k : Fin 5) : ℂ :=
   Complex.exp (2 * Real.pi * Complex.I * (k.val : ℂ) / 5)
 
 /-- ζ₅ raised to the fifth power is 1, since
     exp(2π i / 5)^5 = exp(2π i) = 1. -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
   unfold zeta5
   rw [← Complex.exp_nat_mul]
@@ -68,7 +68,7 @@ theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
 
 /-- Each fifth-root of unity is a root of x⁵ = 1.
     `(exp(2πi·k/5))^5 = exp(5 · 2πi·k/5) = exp(2πi·k) = (exp(2πi))^k = 1`. -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 theorem fifthRoot_is_root (k : Fin 5) : (fifthRoot k) ^ 5 = 1 := by
   unfold fifthRoot
   rw [← Complex.exp_nat_mul]

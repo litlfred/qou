@@ -66,7 +66,8 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
     inequality as a class, the conjectural content is visible at
     every use site rather than asserted universally. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — value-function monotonicity under domain expansion)
 class ShellClosureMonotone
     (D_prev D : DressedParticle)
     [HasFrobeniusStability D_prev] [HasFrobeniusStability D]
@@ -86,7 +87,8 @@ instance shellClosureMonotone_refl
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
     Per-instance form backed by `ShellClosureMonotone`. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — value-function monotonicity under domain expansion)
 theorem shell_closure_monotone
     (D_prev D : DressedParticle)
     [HasFrobeniusStability D_prev] [HasFrobeniusStability D]

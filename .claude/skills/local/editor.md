@@ -690,6 +690,37 @@ backfills `:refterm` from bare-text mentions; builder
 `chapters/glossary.tex`. See `local/glossary-build` skill,
 `.github/copilot-instructions.md §11.0`, and `CLAUDE.md §4c`.
 
+## Bibliography workflow
+
+When the user adds, edits, or audits bibliographic references — or
+when a code-review comment flags a wrong-work / DOI / metadata
+mismatch — the editor's primary tools are:
+
+| Tool | Purpose |
+|------|---------|
+| `cd content && bun run validate-refs` | Key-resolution + `-- Ref: [key]` / `\cite{key}` reachability. Always run after any `references.ts` change. |
+| `cd content && bun run validate-bib --cross-check` | Confirm each `-- Ref: [<id>] <desc>` description anchors the entry's author surname or a title word. Catches wrong-work resolutions (the class Copilot found on PR #792). |
+| `cd content && bun run validate-bib --doi` | HEAD/GET each DOI via doi.org; warn on 4xx/5xx. Needs outbound network. |
+| `cd content && bun run validate-bib --crossref` | Per-DOI Crossref API lookup; canonical title/author/year cross-check. Needs outbound network. |
+| `cd content && bun run validate-bib --all` | Run every mode in sequence. |
+| `bash scripts/upload-bib-papers.sh` | Batch-intake every publicly-downloadable paper in `references.ts` to `uploads/`. Per-paper commit; SSH push. |
+| `bash scripts/upload-to-uploads.sh <url>` | Ad-hoc single-file intake. |
+| `python3 scripts/gen-bib-papers-list.py` | Regenerate the batch-intake list from `references.ts`. |
+
+The full procedure for adding a new reference (or fixing a flagged
+one) is in `local/bib-qa` §"Adding a New Reference" and
+§"Investigating wrong-work resolutions". Default to invoking
+`local/bib-qa` for any non-trivial bib work; the editor handles only
+the immediate inline `-- Ref:` / `\cite{}` placement and delegates the
+correctness audit + intake.
+
+When a downloaded paper turns out to be an HTML landing page rather
+than the real PDF (signature: tiny size, `file uploads/X.pdf` reports
+"HTML document"), the fix lives in `scripts/gen-bib-papers-list.py`'s
+`url_to_pdf` function — add a URL pattern rule, regenerate the list,
+re-run `upload-bib-papers.sh`. The script's idempotency (sha256 +
+already-present skip) makes re-runs cheap.
+
 ## Delegation patterns
 
 | Task | Agent | Notes |

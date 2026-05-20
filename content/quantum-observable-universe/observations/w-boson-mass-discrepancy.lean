@@ -188,11 +188,11 @@ theorem forward_backward_agreement :
   forward_backward_agreement_axiom
 
 /-- **External axiom (Jones 1985): W/Z mass ratio bounded in (0, 1).** -/
--- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
+-- Ref: [jones1985] Jones, "A polynomial invariant for knots via von Neumann algebras," Bull. AMS 12 (1985)
 axiom w_z_ratio_bounds_axiom : 0 < w_z_ratio ∧ w_z_ratio < 1
 
 /-- The W/Z mass ratio from Markov traces is positive and less than 1. -/
--- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
+-- Ref: [jones1985] Jones, "A polynomial invariant for knots via von Neumann algebras," Bull. AMS 12 (1985)
 theorem w_z_ratio_bounds :
     0 < w_z_ratio ∧ w_z_ratio < 1 :=
   w_z_ratio_bounds_axiom

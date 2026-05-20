@@ -15,7 +15,7 @@ export default remark({
     "rem:discrete-planck-step",
     "rem:skein-turing-machine",
   ],
-  cites: ["cardona2021", "tao2019"],
+  cites: ["cardona2021", "cardona2023", "tao2019"],
   tags: [
     "reeb-flow",
     "turing-completeness",

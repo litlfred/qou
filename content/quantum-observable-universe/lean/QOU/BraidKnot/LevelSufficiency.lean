@@ -51,7 +51,10 @@ def kMax (P : ConfinedParticle) (_q : R_q) : ℕ :=
     the previous `opaque` with a class makes the data choice
     visible at every use site. -/
 -- Ref: [manuscript] braids-and-knots/wedderburn-mass-formula
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 class HasMarkovTrace (P : ConfinedParticle) (q : R_q) where
   /-- The Markov trace value at `(P, q)`. -/
   value : R_q
@@ -70,7 +73,10 @@ noncomputable def markovTrace (P : ConfinedParticle) (q : R_q)
     full `HeckeRep.character` machinery; until then, callers supply
     the witness for the pairs they actually use. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 class LevelSufficient
     (P P' : ConfinedParticle) (q : R_q)
     [HasMarkovTrace P q] [HasMarkovTrace P' q]
@@ -91,7 +97,10 @@ instance levelSufficient_refl
 /-- **Level sufficiency (headline)** (per-instance form).
     Backed by `LevelSufficient`. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem LevelSufficiency
     (P P' : ConfinedParticle) (q : R_q)
     [HasMarkovTrace P q] [HasMarkovTrace P' q]

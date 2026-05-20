@@ -79,7 +79,7 @@ noncomputable def CategoricalReeb.fromWeightDecomposition
     Formalising this requires Lie algebra infrastructure (infinitesimal
     generators of compact group actions on categorical objects) which
     is not available in Mathlib as of 2026-03. -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+-- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
 axiom categorical_reeb_exists
     {C : Type u} [Category.{v} C] [MonoidalCategory C]
     (mt : MaximalTorus C) (wd : WeightDecomposition C)

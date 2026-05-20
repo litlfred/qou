@@ -55,7 +55,7 @@ def ThreadingLink.numCrossings (t : ThreadingLink) : ℕ :=
     This is half the pairwise weight N.
     (Only valid for even N.) -/
 -- Ref: [manuscript] Ch. 10, Definition: Threading link T(2,N)
--- Ref: [kauffman1991] https://doi.org/10.1142/1116
+-- Ref: [kauffman1991] Kauffman, "Knots and Physics," World Scientific 1991
 def ThreadingLink.alexanderWeightAtOne (t : ThreadingLink) : ℕ :=
   t.atoms / 2
 

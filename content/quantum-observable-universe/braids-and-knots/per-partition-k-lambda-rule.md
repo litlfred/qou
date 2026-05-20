@@ -168,7 +168,7 @@ to the algebraic writhe.
 The negative finding above is **not** a failure of imagination; it
 is structurally forced. The operator-selection SDP / LP solver
 that produces the per-partition operator data
-([prop:operator-selection-sdp](#prop:operator-selection-sdp)
+([prop:operator-selection-lp](#prop:operator-selection-lp)
 and the LP / SDP infrastructure of CLAUDE.md §"LP / SDP duals —
 first-class infra") consumes **both** the substrate parameter
 $q_0$ (CAL-2) and the **braid word** $\beta_\mathfrak{H}$ as inputs:
@@ -212,7 +212,7 @@ Candidate routes (all $(q, \beta)$-aware):
 
 * **(Most promising) SDP active-set / shadow-price selector.** The
   operator-selection SDP of
-  [prop:operator-selection-sdp](#prop:operator-selection-sdp) —
+  [prop:operator-selection-lp](#prop:operator-selection-lp) —
   routed through `lp_dual_solver.solve_psd_operator_selection_sdp(t, G, n_target)`
   per CLAUDE.md §"LP / SDP duals — first-class infra" — produces,
   for inputs $(q_0, \beta_\mathfrak{H})$, a primal-dual pair whose

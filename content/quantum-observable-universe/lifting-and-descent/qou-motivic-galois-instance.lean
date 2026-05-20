@@ -83,7 +83,7 @@ proof. -/
     Empirically verified at primes ≤ 13 per
     `habiro-frobenius-probe.witness.json`; formal proof requires
     Hochschild-Kummer comparison applied to the Habiro element. -/
--- Ref: [yekutieli2010] https://doi.org/10.1090/conm/520/10268
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 axiom qouMotivicGaloisChar_almost_everywhere_nontrivial_axiom :
     ∀ {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
       (Q : QOUMotive Mhat),

@@ -184,13 +184,13 @@ noncomputable def muon_mass (q : ℝ) (μ₀ : ℝ) : ℝ :=
 
 /-- The muon-electron mass ratio is Vol(4₁)/ℏ_q² (leading term),
     derived purely from q. At q₀ this matches CODATA 206.768. -/
--- Ref: [jones1987], CODATA 2018
+-- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release
 noncomputable def muon_electron_ratio (q : ℝ) : ℝ :=
   vol_figure_eight / (hbar_q q) ^ 2
 
 /-- At the CODATA substrate parameter q₀, the muon-electron mass
     ratio matches the experimental value 206.768 to within 0.001. -/
--- Ref: [jones1987], CODATA 2018, [manuscript] Ch. 7
+-- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release; [manuscript] Ch. 7
 theorem muon_electron_ratio_from_substrate :
     |muon_electron_ratio q₀ - 206.768| < 1 := by
   -- muon_electron_ratio q₀ = vol_figure_eight / (hbar_q q₀)²

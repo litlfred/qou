@@ -45,9 +45,12 @@ diagonalised product `D · C` is zero when `tr(D · C) = 0`.
 
 ## References
 
-- [horn-johnson-2013] *Matrix Analysis*, §7.7
-- [boyd-vandenberghe-2004] §A.5.3 ("Positive semidefinite
-  matrices have non-negative principal minors")
+- [horn-johnson-2013] *Matrix Analysis*, §7.7 (Schur complements +
+  PSD det inequalities — the canonical authority for the
+  PSD-has-nonneg-principal-minors lemma used here).
+- [boyd-vandenberghe-2004] §A.5.5 (Schur complement; PSD block
+  structure). Note: §A.5.3 in Boyd is "Generalized eigenvalue
+  decomposition" — that section was previously cited here in error.
 -/
 
 namespace QOU.MathlibExt.PosSemidefDiagZero
@@ -135,8 +138,13 @@ private theorem quadratic_form_two_index
     pending the Mathlib API for principal-submatrix-PSD; the test-
     vector proof (`quadratic_form_two_index`) gives an alternative
     route. -/
--- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
--- Ref: [boyd-vandenberghe-2004] §A.5.3
+-- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7 (Schur complements
+--      + PSD det inequalities — primary authority for the
+--      principal-submatrix lemma used here)
+-- Ref: [boyd-vandenberghe-2004] §A.5.5 (Schur complement; PSD block
+--      structure). Note: §A.5.3 (which was previously cited here) is
+--      "Generalized eigenvalue decomposition" — irrelevant to this
+--      diagonal-zero PSD lemma. Fixed during local-PDF verification.
 axiom entry_sq_le_diag_mul_axiom :
     ∀ {n : ℕ} {C : Matrix (Fin n) (Fin n) ℝ} (_hC : C.PosSemidef)
       (i j : Fin n),

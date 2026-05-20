@@ -59,7 +59,10 @@ def weakCrossingNumber : ℕ := 10
     1. Charge (discrete, from writhe): Q_q(K) = [w(K)]_q
     2. Coupling strength (R-matrix): |tr_τ(σ_anti)|² = q⁻¹
     3. Normalisation by force-carrier complexity: [9]_q · [10]_q -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [manuscript] §5/em-coupling-projection
 noncomputable def emCoupling (q : R_q) : R_q :=
   antisymmetricEigenvalue q / (qInteger q strongCrossingNumber * qInteger q weakCrossingNumber)

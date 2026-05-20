@@ -6,4 +6,7 @@ export default remark({
   title: "Comparison with the classical Chern--Simons action",
   tags: ["chern-simons", "classical-limit", "rigid-trace", "comparison"],
   uses: ["rem:physicist-translation"],
+  cites: [
+    "witten1988",
+  ],
 });

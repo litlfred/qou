@@ -1,11 +1,17 @@
-Every proof in this paper — in progress, but nearly complete — has
-a corresponding Lean 4 formalisation, except where external
-references are cited for large prior results.  Computations —
-braid-word reductions, Gröbner–Shirshov normal forms, linear
-programs, hyperbolic volumes — are all symbolic in the substrate
-parameter $q$ and are attached as witnesses to the proofs they
-support wherever appropriate.  The implementations in Rust and
-Python, together with the Lean sources, are available at
+Every proof in this paper has a corresponding Lean 4 formalisation,
+except where external references are cited for large prior results.
+**564 of 572 (98.6%) provable claims** (theorems, lemmas,
+propositions, corollaries) carry **full Lean proofs** (sorry-free);
+the remainder are marked by `sorry` against an explicit bibliographic
+reference.  The paper contains
+**132 open conjectures**, of which **121 (91.7%) are class-axiomatised in Lean**
+following the conditional-class convention (CLAUDE.md §3b) so that
+downstream results can be stated as fully verified conditional
+theorems.  Computations — braid-word reductions, Gröbner–Shirshov
+normal forms, linear programs, hyperbolic volumes — are all symbolic
+in the substrate parameter $q$ and are attached as witnesses to the
+proofs they support wherever appropriate.  The implementations in
+Rust and Python, together with the Lean sources, are available at
 [https://github.com/litlfred/qou](https://github.com/litlfred/qou).
 We used large language models throughout the drafting and
 formalisation process, both because a physical disability prevents

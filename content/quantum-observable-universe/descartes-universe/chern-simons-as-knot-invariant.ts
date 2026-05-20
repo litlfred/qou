@@ -15,4 +15,7 @@ export default remark({
     "conj:em-coupling-chern-simons",
     "rem:categorical-action-vs-chern-simons",
   ],
+  cites: [
+    "witten2011",
+  ],
 });

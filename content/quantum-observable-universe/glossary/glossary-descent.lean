@@ -14,7 +14,7 @@ namespace QOU
     Maps to Mathlib: analogous to `CategoryTheory.EffectiveEpiFamily`
     or descent data in a fibered category. -/
 -- Ref: [manuscript] Ch. 8 Glossary
--- Ref: [lurie2009] https://doi.org/10.4310/CDM.2008.v2008.n1.a3
+-- Ref: [lurie2009] Lurie, "On the Classification of Topological Field Theories," arXiv:0905.0465
 structure DescentData where
   /-- Source brane level. -/
   level : ℕ

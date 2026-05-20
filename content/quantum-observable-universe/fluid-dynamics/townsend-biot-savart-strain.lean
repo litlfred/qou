@@ -124,7 +124,7 @@ theorem denominator_pos_near_zero
     (combining `Real.tendsto_log_div_pow_zero` and continuity); the
     full chain of filter lemmas is mechanical but tangential.  See
     Townsend §IV and Saffman §11.2 for the textbook treatment. -/
--- Ref: [townsend1951] https://doi.org/10.1098/rspa.1951.0179
+-- Ref: [townsend1951]     title: — see content/schema/references.ts
 /-- **External axiom (§3b-cond pattern): kappa_squared_tends_to_zero.**
 
     Auto-extracted from the single-sorry theorem body in this file.

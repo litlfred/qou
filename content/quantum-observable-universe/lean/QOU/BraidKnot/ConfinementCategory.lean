@@ -127,7 +127,7 @@ end ConfMorphism
     operator is transparent (list concatenation), so the category
     laws are proved theorems — no axioms required. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
--- Ref: [maclane1971] https://doi.org/10.1007/978-1-4757-4721-8
+-- Ref: [maclane1971] Mac Lane, "Categories for the Working Mathematician," Springer GTM 5, 1971
 instance : CategoryTheory.Category ConfinedParticle where
   Hom := ConfMorphism
   id P := ConfMorphism.id P

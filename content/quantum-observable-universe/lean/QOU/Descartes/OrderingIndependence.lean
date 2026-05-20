@@ -134,7 +134,7 @@ noncomputable def skeinPolynomialSym (config : NuclearConfig) : R_t :=
        where `w₁₂` is the permutation mapping `σ₁ → σ₂`.
     4. `e · T_w · B · T_w⁻¹ · e = e · B · e` because
        `e · T_w = q^{ℓ(w)} · e` (symmetric eigenvalue). -/
--- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+-- Ref: [murphy1992] Murphy, "On the representation theory of the symmetric groups and associated Hecke algebras," J. Algebra 152 (1992)
 theorem ordering_independence
     (config₁ config₂ : NuclearConfig)
     (h_same : config₁.length = config₂.length)

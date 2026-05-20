@@ -27,7 +27,7 @@ unpack the existential, conclude.
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [borel1974] https://doi.org/10.24033/asens.1269
+-- Ref: [borel1974] Borel, "Stable real cohomology of arithmetic groups," Ann. Sci. ENS 7 (1974)
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
@@ -46,7 +46,7 @@ namespace QOU.Descartes.OpenProblems
     empirically (helium-4 doubly magic excess) and structurally
     (level-5 = first shell-closure quorum). -/
 -- Ref: [manuscript] conj:shell-correction-term-seven
--- Ref: [mayer1949] DOI 10.1103/PhysRev.75.1969
+-- Ref: [mayer1949] Mayer 1949, Phys. Rev. 75 p.1969, DOI 10.1103/PhysRev.75.1969
 noncomputable def alpha5_value : ℝ := -1  -- sign-constraint witness; magnitude awaits derivation
 
 /-- **Term-7 shell-correction class — strengthened.** A concrete

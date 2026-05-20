@@ -54,7 +54,10 @@ def lambdaMinus : S.R := -(S.qHalf : S.R)⁻¹
 /-- **External axiom (Jones 1987): λ₊ − λ₋ = [2]_q · q^{−1/2} is a
     unit in R** (the Hecke deformation is invertible by SpectralRing
     construction). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom eigenvalues_distinct_axiom (S : SpectralRing) :
     IsUnit (lambdaPlus S - lambdaMinus S)
 
@@ -88,7 +91,10 @@ end SpectralRing
 -- Ref: [manuscript] §5/em-spectral-completeness
 /-- **External axiom (Jones 1987; manuscript §5): two-strand spectral
     completeness — exactly two central idempotents in End(A⊗A).** -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [manuscript] §5/em-spectral-completeness
 axiom em_spectral_completeness_axiom :
     ∀ (S : SpectralRing),

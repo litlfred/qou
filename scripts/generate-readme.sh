@@ -82,19 +82,38 @@ json_get '
 
 section "Chapters (Quantum Observable Universe)"
 
-line "| # | Directory | Title |"
-line "|---|-----------|-------|"
+line "Each chapter is also published as a standalone PDF on GitHub Pages —"
+line "useful when you only want the relevant slice of the paper rather than"
+line "the full document.  The **PDF** column links to the standalone build;"
+line "the **Directory** column links to the source content objects."
+line ""
+line "| # | Directory | Title | Standalone PDF |"
+line "|---|-----------|-------|----------------|"
 
 json_get '
+  const PAGES = "https://litlfred.github.io/qou/papers/quantum-observable-universe";
+  // Front-matter group is bundled into a single front-matter.pdf
+  const FRONT_MATTER = new Set(["introduction", "notation", "glossary", "index-of-definitions"]);
   let chNum = 0;
   for (const c of d.chapters) {
+    let pdfCell = "—";
     if (c.kind === "chapter") {
-      console.log(`| ${chNum} | \`${c.dir}/\` | ${c.title} |`);
+      if (FRONT_MATTER.has(c.dir)) {
+        pdfCell = `[front-matter.pdf](${PAGES}/chapters/front-matter.pdf)`;
+      } else {
+        pdfCell = `[${c.dir}.pdf](${PAGES}/chapters/${c.dir}.pdf)`;
+      }
+      console.log(`| ${chNum} | \`${c.dir}/\` | ${c.title} | ${pdfCell} |`);
       chNum++;
     } else if (c.kind === "appendix") {
-      console.log(`| App | \`${c.dir}/\` | ${c.title} |`);
+      pdfCell = `[${c.dir}.pdf](${PAGES}/${c.dir}.pdf)`;
+      console.log(`| App | \`${c.dir}/\` | ${c.title} | ${pdfCell} |`);
     } else {
-      console.log(`| — | \`${c.dir}/\` | ${c.title} |`);
+      // index-of-definitions etc — bundled in front-matter
+      if (FRONT_MATTER.has(c.dir)) {
+        pdfCell = `[front-matter.pdf](${PAGES}/chapters/front-matter.pdf)`;
+      }
+      console.log(`| — | \`${c.dir}/\` | ${c.title} | ${pdfCell} |`);
     }
   }
 ' >> "$OUT"
@@ -108,6 +127,32 @@ The Lean 4 formalization lives in `content/quantum-observable-universe/lean/`
 and covers the key mathematical structures, mass-parameter derivations,
 knot theory, and categorical constructions from the manuscript.
 LEAN_INTRO
+
+subsection "Coverage"
+
+line ""
+line "Live snapshot from \`scripts/lean-coverage.ts\` (regenerated on each \`main\` publish):"
+line ""
+line "| Block kind | Total | With Lean sibling | Fully formalized |"
+line "|------------|------:|------------------:|-----------------:|"
+
+json_get '
+  const c = d.leanCoverage;
+  if (!c) {
+    console.log("| _coverage stats unavailable_ | — | — | — |");
+  } else {
+    console.log(`| Provable claims (theorem/lemma/proposition/corollary) | ${c.provable_total} | ${c.provable_with_lean} | **${c.provable_sorry_free} sorry-free (${c.provable_percent}%)** |`);
+    console.log(`| Conjectures (open) | ${c.conjectures_total} | ${c.conjectures_with_lean} | **${c.conjectures_class_axiomatized} class-axiomatised (${c.conjectures_percent}%)** |`);
+    console.log(`| Definitions | ${c.definitions_total} | ${c.definitions_with_lean} | — |`);
+  }
+' >> "$OUT"
+
+line ""
+line "Class-axiomatised conjectures follow the conditional-class convention"
+line "(CLAUDE.md §3b): the conjecture is encoded as a Lean \`class\` with"
+line "explicit field axioms, and downstream theorems carry the class as an"
+line "\`[Instance]\` hypothesis — so dependent results are fully verified"
+line "by Lean modulo a single, named, axiomatised input."
 
 subsection "Modules"
 

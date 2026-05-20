@@ -25,7 +25,7 @@ namespace QOU.X5Classification
     non-negative combinations `a·5 + b·1` where `a ≥ 0` counts
     size-5 generic orbits and `b ∈ {0, 1, 2}` counts fixed-point
     contributions (the two fixed points of `x ↦ ζ₅·x` on `ℙ¹`). -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 def AdmissibleBranchSize (n : ℕ) : Prop :=
   ∃ a b : ℕ, b ≤ 2 ∧ n = 5 * a + b
 

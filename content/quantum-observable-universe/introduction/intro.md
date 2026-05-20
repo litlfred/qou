@@ -66,4 +66,4 @@ constraint $\chi = -6$ together fix the degrees of freedom:
 energy scale ($Q_\beta(n)$).  Every other mass, Q-value, binding
 energy, and coupling constant is a prediction.  That so much
 structure follows from so little input is, as Wigner put it,
-"something bordering on the mysterious."
+"something bordering on the mysterious" \cite{wigner1960}.

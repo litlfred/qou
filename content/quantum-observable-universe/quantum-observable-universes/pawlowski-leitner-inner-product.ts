@@ -11,4 +11,7 @@ export default proposition({
     "rem:adjoint-trace",
   ],
   tags: ["inner-product", "intertwiner", "orthogonality", "pawlowski-leitner"],
+  cites: [
+    "leitnerpawloski2004",
+  ],
 });

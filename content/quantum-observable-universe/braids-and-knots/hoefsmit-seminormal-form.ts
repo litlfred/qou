@@ -9,7 +9,10 @@ export default proposition({
   },
   uses: [
   ],
-  cites: ["hoefsmit1974", "wenzl1988"],
+  cites: ["hoefsmit1974", "wenzl1988",
+    "rutherford1948",
+    "young1901",
+  ],
   tags: [
     "hoefsmit",
     "seminormal",

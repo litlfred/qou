@@ -20,7 +20,7 @@ indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic
@@ -117,7 +117,7 @@ theorem orbital_dim_eq_square (n : ℕ) :
     Steps 1–3 are standard harmonic analysis; step 4 is the
     geometry specific to the QOU framework. -/
 -- Ref: [manuscript] Ch. 6, §3 — "The critical step"
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 axiom mode_is_so3_irrep :
   ∀ (ℓ : ℕ), ∃ (V : Type) [inst_acg : AddCommGroup V] [inst_mod : Module R_q V]
     [inst_fd : FiniteDimensional R_q V],

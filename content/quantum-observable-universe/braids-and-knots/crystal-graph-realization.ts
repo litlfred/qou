@@ -14,6 +14,7 @@ export default conjecture({
     "kashiwara1991",
     "lecouvey2007",
     "khovanovlauda2009",
+    "carter-leal-saliola-2000",
   ],
   tags: [
     "crystal-graph",

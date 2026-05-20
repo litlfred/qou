@@ -36,7 +36,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     Given a state a ∈ V_n (level n of the brane tower), the vertex
     operator Y(a, z) is a formal Laurent series in the affine
     coordinate z = v₁/v₂ on 𝒮_p whose modes are R-matrix insertions. -/
--- Ref: [frenkel2004] https://doi.org/10.1090/surv/088
+-- Ref: [frenkel2004] Frenkel, "Lectures on the Langlands program and conformal field theory," arXiv:hep-th/0512172 (related: 0007054)
 structure VertexOperator (q : R_q) where
   /-- The Reeb bundle (base space for the insertion). -/
   bundle : ReebBundle q
@@ -62,7 +62,9 @@ structure OPE (q : R_q) where
 
     This is the Skein relation L₊ - L₋ = (q - q⁻¹)L₀ applied
     to the strand collision on 𝒮_p. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 axiom ope_is_skein
     -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (Y₁ Y₂ : VertexOperator q)

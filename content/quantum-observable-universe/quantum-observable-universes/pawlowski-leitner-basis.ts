@@ -12,4 +12,7 @@ export default proposition({
   ],
   examples: ["rem:adjoint-trace"],
   tags: ["basis", "intertwiner", "representation", "pawlei"],
+  cites: [
+    "leitnerpawloski2004",
+  ],
 });

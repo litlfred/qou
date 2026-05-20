@@ -20,5 +20,7 @@ export default remark({
     "rem:substrate-computation",
     "rem:p-vs-np-event-horizon",
   ],
-  cites: ["goedel1931", "turing1936"],
+  cites: ["goedel1931", "turing1936",
+    "hawking1975",
+  ],
 });

@@ -80,7 +80,7 @@ noncomputable def S_w0 (c3 c21 c111 : ℝ) : ℝ :=
 
 -- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting
 -- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01239013
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 /-- The $S_3$ long-element character-weighted sum equals
     $c_k^{(3)} - c_k^{(1,1,1)}$ (since $\chi_{(2,1)}(w_0) = 0$). -/
 theorem S_w0_simp (c3 c21 c111 : ℝ) : S_w0 c3 c21 c111 = c3 - c111 := by

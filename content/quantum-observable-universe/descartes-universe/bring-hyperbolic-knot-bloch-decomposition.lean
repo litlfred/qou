@@ -20,7 +20,7 @@ This file establishes the unconditional algebraic skeleton:
 
 -- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [borel1974] https://doi.org/10.24033/asens.1269
+-- Ref: [borel1974] Borel, "Stable real cohomology of arithmetic groups," Ann. Sci. ENS 7 (1974)
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000]  AMS CRM Monograph 11 (2000).
 -- Ref: [thurston1978] The geometry and topology of three-manifolds.
@@ -39,7 +39,7 @@ namespace QOU.Descartes
     since `Q(ζ_n)` is totally imaginary of degree `φ(n)`. We
     package the formula as a definition so the three concrete
     values below close by `decide`. -/
--- Ref: [borel1974] https://doi.org/10.24033/asens.1269
+-- Ref: [borel1974] Borel, "Stable real cohomology of arithmetic groups," Ann. Sci. ENS 7 (1974)
 def r2Cyclotomic (n : ℕ) : ℕ := Nat.totient n / 2
 
 /-- For `n = 3`: `r_2(Q(ζ_3)) = 1`. Figure-8's trace field has

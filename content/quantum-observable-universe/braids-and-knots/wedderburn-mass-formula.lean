@@ -84,7 +84,7 @@ noncomputable def beta2 {R : Type u} [Field R]
     The interior partitions (hooks) contribute subdominant corrections
     identifiable with meson exchange channels. -/
 -- Ref: [manuscript] prop:three-parameters-wedderburn
--- Ref: [kazhdan-lusztig1979] https://doi.org/10.1007/BF01390002
+-- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
 theorem extremal_irreps_count :
     ∀ (n : ℕ), n ≥ 3 →
     -- S_n has exactly 3 one-row/one-column/hook partitions

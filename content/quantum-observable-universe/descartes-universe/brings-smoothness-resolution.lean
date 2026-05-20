@@ -10,7 +10,7 @@ import Mathlib.Data.Complex.Basic
 namespace QOU.BringsSurface
 
 -- Ref: [manuscript] Ch. 6, §1
--- Ref: [bring1786] https://doi.org/10.1007/BF02386200
+-- Ref: [bring1786] Bring, "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum," Lund 1786
 -- The Bring surface S is defined by three power-sum constraints in P^4.
 -- We encode the three transversality conditions as a structure.
 structure BringSurfaceSmoothness where

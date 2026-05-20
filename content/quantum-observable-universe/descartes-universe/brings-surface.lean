@@ -40,24 +40,24 @@ structure BringsSurface where
   num_equations_eq : num_equations = 3
 
 /-- Euler characteristic of a genus-g surface: χ = 2 − 2g. -/
--- Ref: [edge1978] https://doi.org/10.1017/S0305004100055699
+-- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
 def eulerCharacteristic (g : ℕ) : ℤ := 2 - 2 * (g : ℤ)
 
 /-- **Euler characteristic of Bring's surface**: χ(Σ₄) = 2 − 2·4 = −6. -/
--- Ref: [edge1978] https://doi.org/10.1017/S0305004100055699
+-- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
 theorem brings_euler_char : eulerCharacteristic 4 = -6 := by
   unfold eulerCharacteristic
   norm_num
 
 /-- The Euler characteristic of any genus-g surface equals 2 − 2g. -/
--- Ref: [edge1978] https://doi.org/10.1017/S0305004100055699
+-- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
 theorem euler_char_formula (Σ : BringsSurface) :
     eulerCharacteristic Σ.genus = -6 := by
   rw [Σ.genus_eq]
   exact brings_euler_char
 
 /-- The canonical instance of Bring's surface. -/
--- Ref: [edge1978] https://doi.org/10.1017/S0305004100055699
+-- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
 def standardBringsSurface : BringsSurface where
   genus := 4
   genus_eq := rfl
@@ -71,11 +71,11 @@ def standardBringsSurface : BringsSurface where
 /-- Hurwitz bound for genus 4: 84(g−1) = 252.
     Bring's surface achieves the maximal automorphism group for genus 4
     with |Aut| = 120 ≤ 252. -/
--- Ref: [edge1978] https://doi.org/10.1017/S0305004100055699
+-- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
 theorem hurwitz_bound_genus_4 : 84 * (4 - 1) = (252 : ℕ) := by norm_num
 
 /-- The dimension of the curve: ambient_dim − num_equations − 1 = 1. -/
--- Ref: [edge1978] https://doi.org/10.1017/S0305004100055699
+-- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
 theorem brings_is_curve (Σ : BringsSurface) :
     Σ.ambient_dim - Σ.num_equations - 1 = 1 := by
   rw [Σ.ambient_dim_eq, Σ.num_equations_eq]

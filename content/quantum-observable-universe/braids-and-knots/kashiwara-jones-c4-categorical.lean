@@ -24,7 +24,7 @@ Together, three consecutive coefficients are derived from QOU
 axioms with no empirical fit, falsifying Story A's prediction
 that c_3 = c_4 = 0 within CODATA noise.
 
-Ref: [kashiwara1990] https://doi.org/10.1007/BF02100009
+Ref: [kashiwara1990-cmp2] CMP 1990 (DOI 10.1007/BF02100009 — distinct from kashiwara1990 = CMP BF02097367)
 Ref: [jones1985] https://doi.org/10.2307/1971403
 Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
 -/

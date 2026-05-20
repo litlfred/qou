@@ -47,7 +47,7 @@ def isReachable (K : KnotType) : Prop :=
        number u(K), so K is reachable from T_{1,0} ∈ G by ≤ u(K) steps.
     2. Spectral filter: the Bring's surface imposes g(K) ≤ 4, and the
        mass functional annihilates terms with g > 4. -/
--- Ref: [kauffman1991] https://doi.org/10.1142/1116
+-- Ref: [kauffman1991] Kauffman, "Knots and Physics," World Scientific 1991
 -- Ref: [manuscript] §5/generation-completeness
 theorem generation_completeness (K : KnotType)
     (h_embed : isEmbeddable K) :

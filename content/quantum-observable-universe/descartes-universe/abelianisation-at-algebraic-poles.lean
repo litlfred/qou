@@ -7,7 +7,7 @@ prolonged Seiberg-Witten differential.  Class-based per CLAUDE.md
 §3b.
 
 -- Ref: [manuscript] conj:abelianisation-at-algebraic-poles
--- Ref: [witten2011] https://doi.org/10.1090/amsip/050/19
+-- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

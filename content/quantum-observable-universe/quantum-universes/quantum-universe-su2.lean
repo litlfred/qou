@@ -27,7 +27,7 @@ namespace QOU.Examples
     witnessing that Rep(SU(2)) satisfies the quantum universe axioms.
 
     LaTeX: `\label{ex:quantum-universe-su2}` -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure SU2QuantumUniverseData where
   /-- Dimension of the fundamental representation V = V_{1/2}. -/
   dimFundamental : ℕ
@@ -45,7 +45,7 @@ structure SU2QuantumUniverseData where
 /-- Tannaka–Krein faithfulness: the forgetful functor τ : Rep(SU(2)) → Vect
     is faithful, and Aut⊗(τ) ≅ SU(2). This is a classical result requiring
     Tannaka reconstruction for compact groups. -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem su2_tannaka_faithful (data : SU2QuantumUniverseData) :
     data.dimFundamental = 2 → data.lieAlgDim = 3 → data.numCoordGenerators = 4 := by
   intro h1 h2

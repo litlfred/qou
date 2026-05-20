@@ -49,7 +49,10 @@ universe u
     mass integrand becomes the Hecke mass element.  The Frobenius
     norm of `tr_M(Φ_mass)` (computed in `R`, not `ℝ`) equals the
     categorical mass. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure MarkovMassData (R : Type u) [Field R] where
   /-- The Markov trace of the mass element: `tr_M(Φ_mass(β))`. -/
   markovTrace : R
@@ -89,7 +92,10 @@ namespace Arch
 
     Per `QOU.GroundRingAnnotations`, this is the Archimedean
     realisation; the pre-Arch declaration lives in `Pre` above. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure MarkovMassData where
   /-- The Markov trace of the mass element: tr_M(Φ_mass(β)). -/
   markovTrace : ℝ
@@ -113,7 +119,10 @@ structure MarkovMassData where
     3. τ sends the mass integrand to the Hecke mass element (Schur–Weyl)
     4. The norm over ℝ is the absolute value -/
 -- Ref: [manuscript] §4/hecke-mass-trace
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 noncomputable def categoricalMassFromMarkov (d : MarkovMassData) : ℝ :=
   |d.markovTrace|
 
@@ -130,7 +139,9 @@ theorem mass_markov_upper_bound (d : MarkovMassData) :
     (as guaranteed in the archimedean realisation, where trace values
     are norms of holonomies and quantum dilogarithms). -/
 -- Ref: [manuscript] §4/hecke-mass-trace
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem mass_markov_exact (d : MarkovMassData)
     (h_desc : 0 ≤ d.descendedTrace)
     (h_trans : 0 ≤ d.transientTrace) :

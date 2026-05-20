@@ -143,7 +143,10 @@ theorem magic_from_shells :
 /-- The dominant eigenvalue of the torus knot transfer matrix
     T(c_n, d_n) at the inter-shell boundary.  For T_{2,n_s},
     this scales as q^{n_s}. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 noncomputable def shell_eigenvalue_ratio (q : ℝ) (n_s : ℕ) : ℝ :=
   q ^ (2 * n_s)
 

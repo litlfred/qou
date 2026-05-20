@@ -24,7 +24,7 @@ by `lake build`.  The co-located documentation stub at
 
 -- Ref: [manuscript] conj:jet-tower-uniform-delta-max
 -- Ref: [manuscript] prop:jet-tower-convergence
--- Ref: [yekutieli2010] https://doi.org/10.1090/conm/518/10212
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 LaTeX label: `conj:jet-tower-uniform-delta-max`
 -/
 

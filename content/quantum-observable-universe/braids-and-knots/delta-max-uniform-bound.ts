@@ -23,4 +23,10 @@ export default proposition({
     "def:recursive-brane-tower",
   ],
   cites: ["kassel1995", "leitner2026"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/gram-matrix-dual.py",
+    witness: "folio-assistant/computations/gram-matrix-dual.witness.json",
+    status: "verified",
+  },
 });

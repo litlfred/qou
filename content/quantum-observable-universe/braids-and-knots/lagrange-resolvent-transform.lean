@@ -18,7 +18,7 @@ import Mathlib.Tactic.NormNum
 namespace QOU.BringsSurface
 
 -- Ref: [manuscript] Ch. 6, §1
--- Ref: [bring1786] https://doi.org/10.1007/BF02386200
+-- Ref: [bring1786] Bring, "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum," Lund 1786
 noncomputable def ζ : ℂ := Complex.exp (2 * Real.pi * Complex.I / 5)
 
 /-- ζ is a primitive 5th root of unity: ζ^5 = 1.
@@ -88,7 +88,7 @@ theorem lagrange_resolvent_w0_vanishes
     Proof: case-split on k ∈ {0,1,2,3,4}, expand the Fin 5 sums,
     reduce powers of ζ modulo 5 using ζ^5 = 1, and close by ring. -/
 -- Ref: [manuscript] Ch. 6, §1
--- Ref: [bring1786] https://doi.org/10.1007/BF02386200
+-- Ref: [bring1786] Bring, "Meletemata quaedam mathematica circa transformationem aequationum algebraicarum," Lund 1786
 theorem lagrange_resolvent_diagonal_action
     (x : Fin 5 → ℂ) :
     ∀ k : Fin 5, lagrangeResolvent (cyclicPerm x) k = ζ⁻¹ ^ k.val * lagrangeResolvent x k := by

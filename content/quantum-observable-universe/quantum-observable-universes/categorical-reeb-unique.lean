@@ -27,7 +27,7 @@ namespace QOU
     The argument: ξ is the infinitesimal generator of the T-action
     on the vertical summand, uniquely determined by the normalisation
     θ_A(ξ) = id.  Then θ_A is fixed by the Maurer–Cartan relation. -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+-- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
 /-- **External axiom (§3b-cond pattern): CategoricalReeb.unique.**
 
     Auto-extracted from the single-sorry theorem body in this file.

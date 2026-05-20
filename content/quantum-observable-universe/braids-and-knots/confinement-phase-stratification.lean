@@ -69,7 +69,8 @@ private theorem confinementLocus_eq_univ (P : ConfinedParticleTy) :
 /-- **Phase stratification, claim (1) — openness.**
     `Ω(P)` is open in ℝ. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — feasibility-set topology + value-function continuity)
 theorem ConfinementPhaseStratification_open
     (P : ConfinedParticleTy) :
     IsOpen (confinementLocus P) := by
@@ -88,7 +89,8 @@ theorem ConfinementPhaseStratification_mu_constant
 
 /-- **Phase stratification (headline).** -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — feasibility-set topology + value-function continuity)
 theorem ConfinementPhaseStratification
     (P : ConfinedParticleTy) :
     IsOpen (confinementLocus P) :=

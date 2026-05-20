@@ -43,7 +43,7 @@ theorem self_dual_curvature (cqou : CQuantumObservableUniverse)
 
 /-- **Main Commutative Diagram data.**
     LaTeX: `\label{prop:main-commutative-diagram}` -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
     (sp : SubstrateParameter cqou.M)
     (inst : InstantonConnection cqou.toCRManifoldData) where
@@ -67,7 +67,7 @@ structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
   commutes : ∀ (x : JetBundle),
     substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
     (sp : SubstrateParameter cqou.M)
     (inst : InstantonConnection cqou.toCRManifoldData)

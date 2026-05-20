@@ -17,4 +17,7 @@ export default remark({
     "prop:strangelet-crossing-energy",
     "rem:golden-ratio-degeneration",
   ],
+  cites: [
+    "witten1984",
+  ],
 });

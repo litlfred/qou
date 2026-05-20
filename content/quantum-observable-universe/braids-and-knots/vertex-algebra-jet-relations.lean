@@ -45,7 +45,9 @@ open QOU.GrobnerShirshov.Hecke
 /-- The Hecke algebra at brane level n is H_{k}(q) where k is the
     strand count. The substrate parameter q is the same at every level
     (Euler characteristic stability). -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
     RewritingSystem (HeckeGen strands) R_q :=
   heckeRewritingSystem strands hp
@@ -56,7 +58,9 @@ def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
 
 /-- J-1: The Hecke relation at level n has the same form as at level 0.
     The substrate parameter q does not depend on the brane level. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
     (n m : ℕ) :
     levelHecke hp strands n = levelHecke hp strands m := by
@@ -70,7 +74,10 @@ theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
     tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w) for all w ∈ H^{(n)}(q).
     This is the knot-coordinate form of Euler characteristic stability:
     the Jones polynomial of a knot does not depend on brane level. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
     (w : AlgElement (HeckeGen n) R_q) :
     -- tr_M at level n+1 of the jet-embedded element equals
@@ -97,7 +104,7 @@ theorem euler_level_stable (n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num
     of the R-matrix at level n+1:
     κ_n = tr_M^{(n+1)}((1 - τ̂_n) Ř^{(n+1)}).
     Perpetual obstruction: κ_n ≠ 0 for all n when χ = -6. -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
     -- The Chebyshev degree of the obstruction at level n is (p-1)/2,
     -- which exceeds 4 for p ≥ 11. By genus-filtration-ideal, this
@@ -106,7 +113,7 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
     hp.q > 1 → hp.q⁻¹ * (1 - hp.q⁻¹) ≠ 0
 
 /-- The obstruction coefficient is nonzero (proved). -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -- theorem yekutieli_coeff_nonzero (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
   have hqi : q⁻¹ > 0 := by positivity
@@ -121,7 +128,7 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
     at brane level n.  Built from jet prolongation ℓ_n and descent
     homomorphism 𝔡_{n+1}.  This is a specific operator, not an
     arbitrary endomorphism. -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 structure DescentOperator (n : ℕ) (hp : HeckeParams) where
   /-- The jet prolongation ℓ_n : H^{(n)} → H^{(n+1)}. -/
   jet_embed : RewritingSystem (HeckeGen n) R_q → RewritingSystem (HeckeGen n) R_q
@@ -136,7 +143,7 @@ structure DescentOperator (n : ℕ) (hp : HeckeParams) where
 
     Proof: τ̂² = (ℓ ∘ 𝔡) ∘ (ℓ ∘ 𝔡) = ℓ ∘ (𝔡 ∘ ℓ) ∘ 𝔡 = ℓ ∘ id ∘ 𝔡 = ℓ ∘ 𝔡 = τ̂. -/
 -- Ref: [manuscript] §4/vertex-algebra-jet-relations
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem descent_idempotent {n : ℕ} {hp : HeckeParams}
     (op : DescentOperator n hp)
     (w : RewritingSystem (HeckeGen n) R_q) :

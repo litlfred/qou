@@ -111,7 +111,7 @@ class GSMonotonic (K : KnotData) where
 /-- **Monotone descent of the archimedean remainder.**
     `|R_{n+1}(K)| ≤ |R_n(K)|`. -/
 -- Ref: [manuscript] conj:archimedean-remainder-exponential-decay
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem remainder_monotone_descent
     (K : KnotData) [M : GSMonotonic K] (n : ℕ) :
     |remainder K (n + 1)| ≤ |remainder K n| := by
@@ -136,7 +136,7 @@ class GSStrictAt (K : KnotData) (n : ℕ) where
     `|R_{n+1}(K)| < |R_n(K)|` when the `(n+1)`-st graded piece is
     non-zero. -/
 -- Ref: [manuscript] conj:archimedean-remainder-exponential-decay
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem remainder_strict_descent
     (K : KnotData) (n : ℕ) [S : GSStrictAt K n] :
     |remainder K (n + 1)| < |remainder K n| := by

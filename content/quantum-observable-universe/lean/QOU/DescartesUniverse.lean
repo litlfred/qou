@@ -34,7 +34,7 @@ namespace QOU.DescartesUniverse
     bundle is `χ(E) = −6`.  A QOU satisfying this is a *Descartes universe*.
 
     LaTeX: `\label{def:descartes-condition}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure DescartesCondition where
   /-- The ℂ quantum observable universe. -/
   cqou : CQuantumObservableUniverse
@@ -74,7 +74,7 @@ LaTeX: `\label{rem:descartes-affine}`
     Proof: `χ = 2 − 2g = −6` gives `g = 4`.
 
     LaTeX: `\label{prop:genus-maximal-descent}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 theorem genus_of_maximal_descent (dc : DescartesCondition) (g : ℕ)
     (hchi : dc.eulerChar = 2 - 2 * (g : ℤ)) :
     g = 4 := by
@@ -100,7 +100,7 @@ LaTeX: `\label{rem:descartes-chirality}`
     at a singular point of the descent map.
 
     LaTeX: `\label{def:exceptional-divisor}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure ExceptionalDivisor (M : Type*) where
   /-- The singular point. -/
   point : M
@@ -132,7 +132,7 @@ structure ChiralSectorCoords where
     `χ(E) = −6` uniquely determines the geometry.
 
     LaTeX: `\label{thm:descartes}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 theorem descartes_universality (dc : DescartesCondition) :
     -- The Descartes condition forces genus 4, which is Bring's surface.
     -- Full proof: χ = −6 ⟹ g = 4 ⟹ maximal symmetry ⟹ Bring's surface.
@@ -156,7 +156,7 @@ structure TannakaKreinRigidity where
     natural isomorphism).
 
     LaTeX: `\label{thm:descartes}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 theorem descartes_terminal (dc : DescartesCondition) (tk : TannakaKreinRigidity) :
     dc.eulerChar = -6 ∧ tk.iso_count = 1 :=
   ⟨dc.descartes, tk.rigid⟩

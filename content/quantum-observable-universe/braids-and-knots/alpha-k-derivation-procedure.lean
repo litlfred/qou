@@ -36,7 +36,10 @@ noncomputable def solveJonesMarkov (n : ℕ) (S : JonesMarkovSystem n) : List �
     (Schur–Weyl-Hecke duality), so the linear system has a unique
     solution `y_λ ∈ R((z))`. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §α_k derivation procedure
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem alpha_k_derivation_procedure (n : ℕ) (S : JonesMarkovSystem n) :
     ∃ y : List ℝ, y = solveJonesMarkov n S :=
   ⟨solveJonesMarkov n S, rfl⟩

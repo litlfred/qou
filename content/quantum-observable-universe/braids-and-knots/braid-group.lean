@@ -18,7 +18,7 @@ namespace QOU
 
 /-- **Braid group on n strands**: abstract presentation with
     Artin generators σ₁, ..., σ_{n-1} satisfying the braid relation. -/
--- Ref: [birman1974] https://doi.org/10.1515/9781400881420
+-- Ref: [birman1974] Braids, Links, and Mapping Class Groups — see content/schema/references.ts
 structure BraidGroupData where
   /-- Number of strands. -/
   numStrands : ℕ

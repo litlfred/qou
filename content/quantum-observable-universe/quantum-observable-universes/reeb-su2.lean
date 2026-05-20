@@ -26,7 +26,7 @@ namespace QOU.Examples
 /-- **SU(2) Reeb data**: ξ = e₃ with contact form θ_A = ω₃.
 
     LaTeX: `\label{ex:reeb-su2}` -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+-- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
 structure SU2ReebData where
   /-- Index of the Lie algebra generator serving as ξ (e₃ → index 3). -/
   generatorIndex : ℕ

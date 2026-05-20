@@ -35,7 +35,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 /-- **SU(2) maximal torus data**: T ≅ U(1) with 2 weight spaces.
 
     LaTeX: `\label{ex:maximal-torus-su2}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure SU2MaximalTorusData where
   /-- Number of weight spaces in the fundamental V = ℂ². -/
   numWeightSpaces : ℕ

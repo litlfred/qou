@@ -52,7 +52,10 @@ noncomputable def unit_nf : Fin 6 → R_q
   | 4 => 0           -- L₋
   | 5 => 0           -- e⁻
 
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem unit_nf_no_trefoil : unit_nf 5 = 0 := by rfl
 
 /-- The complete NF of B₃ in ℤ[q, q⁻¹]:
@@ -60,7 +63,10 @@ theorem unit_nf_no_trefoil : unit_nf 5 = 0 := by rfl
     NF(B₃) = c_γ·γ + c_σ₀·σ₀ + c_σ₁·σ₁ + c_L₊·L₊ + c_L₋·L₋
 
     where c_e⁻ = 0 EXACTLY (the trefoil vanishing result). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 noncomputable def b3_nf_coefficients : Fin 6 → R_q
   | 0 => -q * q * q * q + 4 * q * q - 5 + 4 * q_inv * q_inv - q_inv * q_inv * q_inv * q_inv
   | 1 => -(q * q * q * q * q) + 4 * q * q * q - 7 * q + 7 * q_inv - 4 * q_inv * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv * q_inv
@@ -79,7 +85,10 @@ noncomputable def b3_nf_coefficients : Fin 6 → R_q
 
     This must equal the direct matrix trace tr(B₃) in the standard rep.
     Proving this by ring verifies the NF coefficients are correct. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem b3_nf_std_consistent :
     2 * b3_nf_coefficients 0
     + HA * b3_nf_coefficients 1
@@ -112,7 +121,10 @@ theorem b3_nf_std_consistent :
 
     Since all three character values are verified by ring (above),
     the NF coefficients are PROVED CORRECT. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- (Wedderburn-Artin decomposition uniquely determines NF from characters.)
 -- The formal proof needs: Wedderburn for finite-dim algebras (Mathlib),
 -- multiplicity analysis of each basis element in each irrep.
@@ -242,7 +254,10 @@ theorem unit2_nf_trivial_consistent :
 
     The correct approach for Lean: encode the step-by-step reduction
     as a chain of equalities, with each step justified by Hecke or YB. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Verified by symbolic Hecke algebra computation (sympy).
 -- The reduction steps that eliminate e⁻ involve cancellation between
 -- the L₊² = HA·e⁻ + L₋ contribution and the cross-term contributions.
@@ -254,7 +269,10 @@ theorem unit2_nf_hecke_reduction :
 /-! ## §3  The NF of B₃ = (σ₀σ₁⁻¹)³ -/
 
 /-- The e⁻ coefficient of B₃ is zero. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem b3_trefoil_zero : b3_nf_coefficients 5 = 0 := by rfl
 
 /-- The trivial character of the NF matches χ_triv(B₃) = 1.
@@ -263,7 +281,10 @@ theorem b3_trefoil_zero : b3_nf_coefficients 5 = 0 := by rfl
 
     This is a consistency check: if the NF coefficients are correct,
     then evaluating the trivial character must give 1. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem b3_nf_trivial_consistent :
     b3_nf_coefficients 0
     + q * b3_nf_coefficients 1
@@ -278,7 +299,10 @@ theorem b3_nf_trivial_consistent :
 /-- The alternating character of the NF matches χ_alt(B₃) = 1.
 
     χ_alt(Σ cᵢbᵢ) = c₀ − q⁻¹·c₁ − q⁻¹·c₂ + q⁻²·c₃ + q⁻²·c₄ − q⁻³·c₅ -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem b3_nf_alt_consistent :
     b3_nf_coefficients 0
     - q_inv * b3_nf_coefficients 1
@@ -300,7 +324,10 @@ theorem b3_nf_alt_consistent :
 
     Equivalently: Σ c_w · χ_triv(b_w) = 1 where
     χ_triv(γ) = 1, χ_triv(σ_i) = q, χ_triv(L_±) = q², χ_triv(e⁻) = q³. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem b3_trivial_char :
     q * q_inv = (1 : R_q) := by
   unfold q q_inv

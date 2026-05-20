@@ -36,8 +36,8 @@ namespace QOU.AlgebraicSubstrate
     (functional equation for the zeta function of a curve). -/
 /-- **External axiom (Weil 1948 §IV; Rosen 2002 Ch 5 Thm 5.9):
     functional-equation pairing of zeta eigenvalues.** -/
--- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
--- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
+-- Ref: [rosen2002] Rosen, "Number Theory in Function Fields," Springer GTM 210, 2002
 axiom eigenvalue_functional_equation_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8),
       ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i
@@ -56,7 +56,7 @@ theorem eigenvalue_functional_equation
     for function fields). -/
 /-- **External axiom (Weil 1948 §V; Milne 2013 §27; Rosen 2002 Ch 5
     Thm 5.10): Castelnuovo–Severi inequality on B × B.** -/
--- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
 axiom castelnuovo_severi_bound_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8),
@@ -75,7 +75,7 @@ theorem castelnuovo_severi_bound
     See [rosen2002] Ch 5, proof of Thm 5.12. -/
 /-- **External axiom (Rosen 2002 Ch 5 proof of Thm 5.12):
     functional equation + Castelnuovo–Severi force equality.** -/
--- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
+-- Ref: [rosen2002] Rosen, "Number Theory in Function Fields," Springer GTM 210, 2002
 axiom eigenvalue_norm_sq_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8)
       (_h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)

@@ -11,7 +11,7 @@ LaTeX label: `prop:baryon-product-from-alt`
 
 ## References
 
-- [fulton1991] Representation Theory: A First Course, §2 (Frobenius character formula).
+- [fulton-harris1991] Representation Theory: A First Course, §2 (Frobenius character formula).
 - [macdonald1995] Symmetric Functions and Hall Polynomials, §I.2.
 - [manuscript] §6/baryon-product-from-alt
 
@@ -29,12 +29,12 @@ namespace QOU.Descartes
 
 /-- The sign character `sgn : S_3 → ℤ`, viewed as the character of
     the alternating representation `Alt^3`. -/
--- Ref: [fulton1991] §2.1 (Frobenius character of the sign representation)
+-- Ref: [fulton-harris1991] §2.1 (Frobenius character of the sign representation)
 def signCharacter (σ : Equiv.Perm (Fin 3)) : ℤ :=
   Equiv.Perm.sign σ
 
 /-- The sign character takes only the values `±1`. -/
--- Ref: [fulton1991] §2.1
+-- Ref: [fulton-harris1991] §2.1
 lemma signCharacter_eq_one_or_neg_one (σ : Equiv.Perm (Fin 3)) :
     signCharacter σ = 1 ∨ signCharacter σ = -1 := by
   unfold signCharacter
@@ -42,7 +42,7 @@ lemma signCharacter_eq_one_or_neg_one (σ : Equiv.Perm (Fin 3)) :
     simp [h]
 
 /-- The sign character is a group homomorphism: `sgn(σ τ) = sgn(σ) sgn(τ)`. -/
--- Ref: [fulton1991] §2.1
+-- Ref: [fulton-harris1991] §2.1
 lemma signCharacter_mul (σ τ : Equiv.Perm (Fin 3)) :
     signCharacter (σ * τ) = signCharacter σ * signCharacter τ := by
   unfold signCharacter
@@ -50,7 +50,7 @@ lemma signCharacter_mul (σ τ : Equiv.Perm (Fin 3)) :
   rw [map_mul]
 
 /-- The sign character of the identity is `1`. -/
--- Ref: [fulton1991] §2.1
+-- Ref: [fulton-harris1991] §2.1
 lemma signCharacter_one : signCharacter (1 : Equiv.Perm (Fin 3)) = 1 := by
   unfold signCharacter
   simp
@@ -70,7 +70,7 @@ lemma signCharacter_one : signCharacter (1 : Equiv.Perm (Fin 3)) = 1 := by
     GB / fibre-functor infrastructure is formalised in Mathlib;
     the conditional-correctness chain is recorded in the `.md` sibling
     and in `proof-objects.json`. -/
--- Ref: [fulton1991] §2 (Frobenius character formula, sign-isotype projection)
+-- Ref: [fulton-harris1991] §2 (Frobenius character formula, sign-isotype projection)
 -- Ref: [macdonald1995] §I.2 (Vandermonde discriminant identity)
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/baryon-product-from-alt.md
 theorem baryonProductFromAlt :

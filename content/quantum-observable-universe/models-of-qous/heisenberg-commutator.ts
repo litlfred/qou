@@ -6,4 +6,7 @@ export default remark({
   title: "Heisenberg commutator and the Reeb fibre",
   tags: ["heisenberg", "uncertainty", "reeb", "fibre-coordinate"],
   uses: ["prop:heisenberg-commutator"],
+  cites: [
+    "heisenberg1958",
+  ],
 });

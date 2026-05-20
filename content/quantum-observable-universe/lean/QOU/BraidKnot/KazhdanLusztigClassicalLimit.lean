@@ -34,10 +34,12 @@ universe u
     the Kazhdan–Lusztig basis of `ℤ[S_n]`, and the compatibility of
     this limit with the observation functor `τ`.  The
     `kl_compatible_with_tau` field is the conjectural input. -/
--- Ref: [kassel1995] https://link.springer.com/book/10.1007/978-1-4612-0783-2
--- Ref: [khovanovlauda2009] https://doi.org/10.4171/RT/162
--- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
--- Ref: [lecouvey2007] https://doi.org/10.2969/msjmemoirs/01701C040
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
+-- Ref: [khovanovlauda2009] Khovanov & Lauda, "A diagrammatic approach to categorification of quantum groups," Repr. Theory 13 (2009), arXiv:0803.4121
+-- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
+-- Ref: [lecouvey2007] Lecouvey, "Combinatorics of crystal graphs for the root systems of types A_n, B_n, C_n, D_n and G_2," Combinatorial Aspect of Integrable Systems (MSJ Memoirs 17, 2007)
 class KazhdanLusztigClassicalLimit (R : Type u) [CommRing R] (q : R)
     [H : HeckeAnyonicSubstrate R q]
     [C : CrystalGraphRealization R q] where

@@ -37,7 +37,7 @@ namespace QOU.Glossary
     LaTeX: `\label{def:frobenius-hopf}`
     Mathlib: No direct equivalent — builds on `Mathlib.CategoryTheory.Monoidal.Category`
     Universes: objects in `u`, morphisms in `v` -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure FrobeniusHopfObject where
   /-- The carrier type of the underlying object. -/
   carrier : Type*
@@ -59,7 +59,7 @@ structure FrobeniusHopfObject where
     cocommutative case.
 
     LaTeX: `\label{def:quantum-parameter}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 noncomputable def quantumParameter : ℝ := 1.1097
 
 /-- **Fibre Functor**: An exact faithful k-linear monoidal functor
@@ -67,7 +67,7 @@ noncomputable def quantumParameter : ℝ := 1.1097
 
     LaTeX: `\label{def:fibre-functor}`
     Mathlib: `Mathlib.CategoryTheory.Functor.Basic` -/
--- Ref: [baez1995] https://doi.org/10.1063/1.531236
+-- Ref: [baez1995] Baez, "Knots and quantum gravity: progress and prospects," J. Math. Phys. 36 (1995)
 structure FibreFunctor where
   /-- Source category (representation category). -/
   source : Type*
@@ -80,7 +80,7 @@ structure FibreFunctor where
     via Tannaka-Krein duality from the fibre functor.
 
     LaTeX: `\label{def:quantum-gauge-group}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure QuantumGaugeGroup where
   /-- The carrier type of the quantum group. -/
   carrier : Type*
@@ -96,7 +96,7 @@ structure QuantumGaugeGroup where
 
     LaTeX: `\label{def:cr-manifold}`
     Mathlib: `Mathlib.Geometry.Manifold.IsManifold.Basic` -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+-- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
 structure CRManifold where
   /-- The underlying topological space. -/
   carrier : Type*
@@ -111,7 +111,7 @@ structure CRManifold where
     in CP⁴.
 
     LaTeX: `\label{def:brings-surface}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+-- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
 structure BringsSurface where
   /-- The carrier type. -/
   carrier : Type*
@@ -124,7 +124,7 @@ structure BringsSurface where
     chiral curvature to contact geometry on Bring's surface.
 
     LaTeX: `\label{def:substrate-parameter}` -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+-- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
 noncomputable def substrateParameter (p : ℝ) : ℝ := 1 + |p|
 
 /-! ## Jet Prolongation -/
@@ -133,7 +133,7 @@ noncomputable def substrateParameter (p : ℝ) : ℝ := 1 + |p|
     categorically by `A ⊗ Ω¹(A)` where `Ω¹(A) = ker(m : A ⊗ A → A)`.
 
     LaTeX: `\label{def:jet-prolongation}` -/
--- Ref: [lurie2009] https://doi.org/10.4310/CDM.2008.v2008.n1.a3
+-- Ref: [lurie2009] Lurie, "On the Classification of Topological Field Theories," arXiv:0905.0465
 structure JetProlongation where
   /-- The base type (algebra `A`). -/
   base : Type*
@@ -146,7 +146,7 @@ structure JetProlongation where
     first-order differential calculus.
 
     LaTeX: `\label{def:kahler-differentials}` -/
--- Ref: [lurie2009] https://doi.org/10.4310/CDM.2008.v2008.n1.a3
+-- Ref: [lurie2009] Lurie, "On the Classification of Topological Field Theories," arXiv:0905.0465
 structure KahlerDifferentials where
   /-- The algebra `A`. -/
   algebra : Type*
@@ -161,7 +161,7 @@ structure KahlerDifferentials where
     `⟨σ₁, σ₂ | σ₁σ₂σ₁ = σ₂σ₁σ₂⟩`.
 
     LaTeX: `\label{def:braid-group}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure BraidGroup (n : ℕ) where
   /-- Carrier type for braid group elements. -/
   carrier : Type*
@@ -174,7 +174,7 @@ structure BraidGroup (n : ℕ) where
     via the double cover `SU(2) → SO(3)`.
 
     LaTeX: `\label{def:binary-dihedral}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure BinaryDihedralGroup where
   /-- Carrier type for group elements. -/
   carrier : Type*
@@ -229,7 +229,7 @@ structure ReebVectorField where
 
     LaTeX: `\label{def:substrate-parameter}` (referenced within).
     Ref: [lusztig1993] -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure LusztigIntegralForm where
   /-- Carrier type of the integral form. -/
   carrier : Type*

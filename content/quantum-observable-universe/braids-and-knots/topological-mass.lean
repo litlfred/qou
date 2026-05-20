@@ -89,7 +89,7 @@ theorem mass_upper_bound (md : MassDecomposition R) :
     and each transient trace is `‖Φ_q(zᵢ)‖ ≥ 0`.  For non-negative
     reals, `‖a + b‖ = |a + b| = a + b = |a| + |b| = ‖a‖ + ‖b‖`. -/
 -- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem norm_additivity_of_nonneg_traces
     (md : MassDecomposition ℝ)
     /-- The descended trace is non-negative (norm of holonomy). -/

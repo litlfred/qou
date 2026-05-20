@@ -174,7 +174,7 @@ def polynomialObservable (T : ResolutionTree) (pb : PolyBound) : Prop :=
     This mirrors the jet horizon: H = V(h) where h is the ideal
     of degree-0 sections that vanish. -/
 -- Ref: [manuscript] §9/computational-horizon
--- Ref: [cook1971] https://doi.org/10.1145/800157.805047
+-- Ref: [cook1971]     title: — see content/schema/references.ts
 def hasComputationalHorizon (T : ResolutionTree) (pb : PolyBound) : Prop :=
   ¬ polynomialObservable T pb
 

@@ -99,7 +99,7 @@ class MultiLinkJonesAtOne : Type where
 
 -- Ref: [manuscript] rem:multi-link-jones-q1-extension
 -- Ref: [jones1985] doi:10.2307/1971403
--- Ref: [habiro2002] doi:10.4153/CMB-2002-038-4
+-- Ref: [habiro2002] Habiro 2006, doi:10.4153/CMB-2002-038-4
 /-- **Probe-derived default candidate**: `c_5 = -J_Borromean = +8`
     (sign-flipped Borromean Jones), `c_6 = J_Hopf · J_Borromean = 16`
     (Hopf-Borromean disjoint product). Both values are recorded as the

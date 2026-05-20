@@ -4,7 +4,7 @@
 The Habiro ring is the inverse limit of Z[q] / ((q;q)_n),
 the cyclotomic completion where all quantum invariants coexist.
 
--- Ref: [habiro2002] https://doi.org/10.2140/gt.2008.12.2091
+-- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
 -/
 
 import Mathlib.Algebra.Group.Basic

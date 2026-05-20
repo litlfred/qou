@@ -78,7 +78,7 @@ structure JetExtension where
 /-- The ordering at level n+1 extends the ordering at level n:
     if a ≺_n b in B_n, then ℓ_n(a) ≺_{n+1} ℓ_n(b) in B_{n+1}. -/
 -- Ref: [manuscript] §3/ordering-jet-compatibility
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 axiom ordering_extends (k : ℕ) (a b : MonomialBasis)
     (hab : degLex a b) :
     degLex a b  -- jet embedding preserves degLex at each level
@@ -104,7 +104,7 @@ theorem wellfounded_at_level (n : ℕ) (hn : 0 < n) :
     algorithm terminates on every element belonging to some finite
     level A_n. -/
 -- Ref: [manuscript] §3/ordering-jet-compatibility
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 axiom direct_limit_terminates (n : ℕ) (w : MonomialBasis)
     (hw : ∀ g ∈ w, g < n) :
     ∃ (w' : MonomialBasis), ¬ degLex w' w  -- reduction terminates to a normal form

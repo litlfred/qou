@@ -50,7 +50,10 @@ noncomputable def gramKappa (n : ℕ)
     is given by the Plancherel-weighted character product over
     Wedderburn blocks `λ ⊢ n`, with no 2-jet hand calculation. -/
 -- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem gram_determinant_plancherel_ratio
     (n : ℕ) (q_factorial n_factorial : ℝ)
     (cs cw : CharacterDecomposition n) :

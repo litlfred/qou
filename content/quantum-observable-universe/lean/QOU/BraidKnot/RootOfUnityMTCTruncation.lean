@@ -37,11 +37,11 @@ universe u
     whose simple objects (non-abelian anyons) are labelled by the
     truncated crystal nodes (partitions with at most `k - 1`
     columns). -/
--- Ref: [bakalovkirillov2001] https://bookstore.ams.org/ulect-21
--- Ref: [kitaev2006] https://doi.org/10.1016/j.aop.2005.10.005
--- Ref: [nayak2008] https://doi.org/10.1103/RevModPhys.80.1083
--- Ref: [khovanovlauda2009] https://doi.org/10.4171/RT/162
--- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
+-- Ref: [bakalovkirillov2001]     title: — see content/schema/references.ts
+-- Ref: [kitaev2006] Kitaev, "Anyons in an exactly solved model and beyond," arXiv:cond-mat/0506438
+-- Ref: [nayak2008] Nayak, Simon, Stern, Freedman, Das Sarma, "Non-Abelian Anyons and Topological Quantum Computation," arXiv:0707.1889
+-- Ref: [khovanovlauda2009] Khovanov & Lauda, "A diagrammatic approach to categorification of quantum groups," Repr. Theory 13 (2009), arXiv:0803.4121
+-- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
 class RootOfUnityMTCTruncation (R : Type u) [CommRing R] (q : R)
     (k : ℕ)
     [C : CrystalGraphRealization R q] where

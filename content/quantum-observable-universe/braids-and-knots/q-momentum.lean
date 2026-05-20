@@ -76,7 +76,10 @@ private lemma foldl_intSum_acc (acc : R_q) (signs : List ℤ) :
     Since crossing signs are always ±1 in practice:
       s = +1: (q²-1)/(q²-1) = 1 for q ≠ ±1
       s = -1: (q⁻²-1)/(q²-1) = -q⁻² → -1 as q → 1 -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [manuscript] Ch. 6, §q-momentum
 private lemma single_term_limit_pos_one :
     ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, 0 < |q - 1| → |q - 1| < δ →
@@ -118,7 +121,10 @@ private lemma single_term_limit_pos_one :
     function; the limit is `s` by direct L'Hôpital evaluation.
     Pending Mathlib's Polynomial.continuous_eval + Filter.Tendsto
     integration. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [manuscript] Ch. 6, §q-momentum
 private axiom single_term_limit (s : ℤ) :
     ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, 0 < |q - 1| → |q - 1| < δ →
@@ -127,7 +133,10 @@ private axiom single_term_limit (s : ℤ) :
 /-- At q = 1, q-momentum equals the writhe (sum of signs). -/
 -- Ref: [manuscript] §6/q-momentum
 -- The limit q → 1 of (q^{2ε} - 1)/(q² - 1) = ε by L'Hôpital.
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem qMomentum_classical_limit (signs : List ℤ) :
     -- In the q → 1 limit, each term (q^{2ε} - 1)/(q² - 1) → ε
     -- So q-momentum → writhe = Σε
