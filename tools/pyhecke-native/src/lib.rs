@@ -7,6 +7,7 @@
 
 use hecke_engine::{
     geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
+    wenzl_lr,
 };
 use pyo3::prelude::*;
 
@@ -519,9 +520,55 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_q_via_gp, m)?)?;
     m.add_function(wrap_pyfunction!(debug_reduced_basis, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_gp_hoefsmit, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_f64, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
     m.add("__version__", env!("CARGO_PKG_VERSION"))?;
     Ok(())
+}
+
+/// Compute χ^λ(β, q) for every partition λ ⊢ n_strands, given a
+/// canonical-form atomic braid word `(sign, gen_1based)` where
+/// `sign ∈ {1, -1, 0}` with 0 = averaged half-sum (σ + σ⁻¹)/2.
+///
+/// Delegates to `hecke_engine::wenzl_lr::chi_lambda_canonical_all_partitions_f64`
+/// (rayon-parallel over partitions; direct-averaging f64 path, no
+/// 2^k sub-word expansion). Returns `Vec<(partition, χ^λ)>`.
+///
+/// Use case: the Python `markov_peel` critical path computes
+/// `tr_M(β, q) = Σ_λ y_λ(q) · χ^λ(β, q)` via the Wenzl bridge.
+/// The Σ_λ y_λ · χ^λ combine is cheap in Python; the per-partition
+/// χ^λ at H_{3A} (A ≥ 5) is the bottleneck. This exposes the
+/// Rust accelerator: dim 462 sympy matmul at H_12 → tens of ms
+/// in Rust per PR #682.
+#[pyfunction]
+fn chi_lambda_all_partitions_f64(
+    n_strands: usize,
+    word: Vec<(i32, u32)>,
+    q: f64,
+) -> Vec<(Vec<usize>, f64)> {
+    // Translate (sign, gen) → (Crossing, gen). The Rust API uses
+    // `Crossing::Sigma` / `SigmaInv` / `Averaged` for sign 1/-1/0.
+    let word_with_averaged: Vec<wenzl_lr::CrossingPair> = word
+        .iter()
+        .map(|&(sign, gen)| {
+            let c = match sign {
+                1 => wenzl_lr::Crossing::Sigma,
+                -1 => wenzl_lr::Crossing::SigmaInv,
+                0 => wenzl_lr::Crossing::Averaged,
+                _ => panic!(
+                    "chi_lambda_all_partitions_f64: unknown sign {} \
+                     (expected -1, 0, or 1)",
+                    sign
+                ),
+            };
+            (c, gen)
+        })
+        .collect();
+    wenzl_lr::chi_lambda_canonical_all_partitions_f64(
+        n_strands,
+        &word_with_averaged,
+        q,
+    )
 }

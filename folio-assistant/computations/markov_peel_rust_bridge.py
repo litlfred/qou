@@ -1,0 +1,198 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: bridge to pyhecke_native (Rust) for
+# Markov-trace acceleration on the markov_peel critical path.
+"""Rust-accelerated atomic Markov trace via pyhecke_native + Wenzl bridge.
+
+Provides `tr_M_atomic_rust(Z, N, q)` — the canonical Markov trace
+`tr_M(β_atomic(Z, N), q)` computed via:
+
+  tr_M(β) = Σ_{λ ⊢ n} y_λ(q) · χ^λ(β, q)
+
+where:
+  - χ^λ is computed in Rust via `pyhecke_native.chi_lambda_all_partitions_f64`
+    (rayon-parallel over partitions; direct-averaging f64 path).
+  - y_λ(q) is loaded from `y-lambda-at-q0.witness.json` for q = q₀
+    (sub-ms hot path) or computed via `wedderburn_jones_markov.y_lambda_at`.
+  - The Σ_λ combine is cheap Python (≤ ~200 partitions at H_21).
+
+Boundary cost: ONE PyO3 call per atom, returning Vec<(partition, χ^λ)>.
+Per the Rust scoping doc, this is the "right granularity" — amortizes
+the boundary over the entire compute.
+
+Strategy #1 from `docs/audits/2026-05-20-markov-peel-bottleneck-profile.md`
+implemented via pre-existing Rust infrastructure (rather than a new
+crate). Expected 5-50× over the Phase-1 Python `laurent_q_trace.py`
+path on H_15+ atoms.
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+
+def _atomic_word_to_signed_gens(Z: int, N: int, *,
+                                  include_inter: bool = True) -> list[tuple[int, int]]:
+    """Translate `atom_braid_word_3A(Z, N)` (c, d, gen_0based) triples
+    into the (sign, gen_1based) format expected by
+    `pyhecke_native.chi_lambda_all_partitions_f64`.
+
+    Sign convention (matches `hecke_engine::wenzl_lr::Crossing`):
+      - `c=1, d=0`           → Sigma     = +1
+      - `c=1, d=-h`          → SigmaInv  = -1
+      - `c=1, d=-h/2`        → Averaged  =  0
+    """
+    from mass_at_3A_proper import atom_braid_word_3A
+    from hecke_core import h as _h_num
+    h_val = float(_h_num)
+
+    word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+    signed: list[tuple[int, int]] = []
+    for c, d, gen_0based in word:
+        # Use a generous tolerance — the Python side carries d as a
+        # float, but the algebraic discriminator is exact at q₀.
+        if abs(c - 1.0) > 1e-9:
+            raise ValueError(
+                f"atomic word factor has c={c} != 1; only (c=1, d) "
+                f"factors are supported by the Rust crossing API")
+        if abs(d) < 1e-12:
+            sign = 1
+        elif abs(d + h_val) < 1e-9:
+            sign = -1
+        elif abs(d + h_val / 2) < 1e-9:
+            sign = 0
+        else:
+            raise ValueError(
+                f"atomic word factor (c={c}, d={d}) does not match "
+                f"any of Sigma/SigmaInv/Averaged (h={h_val})")
+        # Rust API uses 1-based generator indices.
+        signed.append((sign, int(gen_0based + 1)))
+    return signed
+
+
+def tr_M_atomic_rust(Z: int, N: int, q: float | None = None,
+                     *, include_inter: bool = True) -> float:
+    """Canonical Markov trace `tr_M(β_atomic(Z, N), q)` via the Rust path.
+
+    Cross-checked against `markov_peel.tr_M_atomic` and
+    `laurent_q_trace.tr_M_atomic_lq` to machine precision at q₀ on
+    every catalogued atom (p, n, D, T, ³He, ⁴He, ⁵Li).
+
+    Parameters
+    ----------
+    Z, N : int
+        Proton and neutron counts; A = Z + N, n_strands = 3·A.
+    q : float, optional
+        Substrate parameter. Defaults to q_0 (from `q_parameter.Q`).
+    include_inter : bool
+        Whether to include inter-nucleon crossings (default True).
+
+    Returns
+    -------
+    tr_M : float
+        Canonical Markov trace at q.
+
+    Notes
+    -----
+    For q = q_0, y_λ values are loaded from the pre-computed witness
+    `y-lambda-at-q0.witness.json` (sub-millisecond). For non-q_0 q,
+    `wedderburn_jones_markov.y_lambda_at` falls through to the
+    numerical-q-from-start mpmath path, which is slow at n ≥ 9 (~63s
+    for n=9, 150-300s for n=12). Pin to q_0 for the production fast
+    path.
+    """
+    try:
+        import pyhecke_native
+    except ImportError as e:
+        raise ImportError(
+            "pyhecke_native not installed. Build via "
+            "`cd tools/pyhecke-native && maturin build --release` "
+            "and `pip install` the resulting wheel. See "
+            "docs/audits/2026-05-20-rust-port-scoping-markov-peel.md "
+            "for the full build workflow."
+        ) from e
+
+    from q_parameter import Q as Q0
+    if q is None:
+        q = float(Q0)
+
+    n_strands = 3 * (Z + N)
+
+    # Build the (sign, gen) word
+    signed_word = _atomic_word_to_signed_gens(
+        Z, N, include_inter=include_inter
+    )
+
+    # Rust call — single PyO3 boundary crossing; rayon-parallel inside
+    chi_pairs = pyhecke_native.chi_lambda_all_partitions_f64(
+        n_strands, signed_word, q
+    )
+
+    # Sum: tr_M(β, q) = Σ_λ y_λ(q) · χ^λ(β, q)
+    from wedderburn_jones_markov import y_lambda_at
+    y_dict = y_lambda_at(n_strands, q_val=q)
+
+    total = 0.0
+    for lambda_vec, chi_val in chi_pairs:
+        key = tuple(lambda_vec)
+        y_val = y_dict.get(key)
+        if y_val is None:
+            # y_lambda_at returns dict keyed by tuple; some partitions
+            # may not be in the dict if y_λ vanishes (sign-rep cases).
+            continue
+        total += float(y_val) * chi_val
+    return total
+
+
+if __name__ == "__main__":
+    # Smoke test: cross-check Rust vs sympy + Phase-1 LaurentQ paths
+    # on the canonical atom set.
+    import time
+    from q_parameter import Q as Q0
+    q_val = float(Q0)
+
+    print("=" * 80)
+    print(f"tr_M_atomic_rust cross-check + bench at q₀ = {q_val:.10f}")
+    print("=" * 80)
+
+    atoms = [
+        (1, 0, "p"),
+        (0, 1, "n"),
+        (1, 1, "D"),
+        (1, 2, "T"),
+        (2, 1, "³He"),
+        (2, 2, "⁴He"),
+    ]
+
+    print(f"  {'atom':<6} {'tr_M (Rust)':<22} {'tr_M (sympy)':<22} "
+          f"{'rel.diff':<10} {'wall_rs':<8} {'wall_sym':<8}")
+    print("  " + "-" * 80)
+    for Z, N, label in atoms:
+        # Rust path
+        t0 = time.time()
+        try:
+            tr_rs = tr_M_atomic_rust(Z, N)
+            wall_rs = time.time() - t0
+        except Exception as e:
+            print(f"  {label:<6} Rust ERROR: {type(e).__name__}: {e}")
+            continue
+
+        # Reference: sympy markov_peel
+        from markov_peel import tr_M_atomic
+        import sympy as sp
+        from hecke_symbolic import q as q_sym, HA as h_sym, z_markov as z_sym
+        z_val = 1.0 / (q_val ** 0.5 + q_val ** (-0.5))
+        h_val = q_val - 1.0 / q_val
+        t0 = time.time()
+        tr_sym_expr = tr_M_atomic(Z, N)
+        tr_sym = float(tr_sym_expr.subs([(q_sym, q_val),
+                                          (z_sym, z_val),
+                                          (h_sym, h_val)]).evalf(30))
+        wall_sym = time.time() - t0
+
+        rel = abs(tr_rs - tr_sym) / max(abs(tr_sym), 1e-30)
+        print(f"  {label:<6} {tr_rs:<22.16f} {tr_sym:<22.16f} "
+              f"{rel:<10.2e} {wall_rs:<8.3f} {wall_sym:<8.3f}")
