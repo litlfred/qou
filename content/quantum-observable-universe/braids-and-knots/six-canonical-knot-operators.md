@@ -88,13 +88,22 @@ the two-strand localisation rule.  The underlying differential-
 geometric existence of $\phi^q_t$ — the integrability of $\xi_q$,
 its smoothness, and the convergence of the formal flow to a
 continuous group of automorphisms of $\mathcal{R}_p$ — is the
-content of the class hypothesis.  Modulo that hypothesis, the
-boundary-permutation identification is a finite case check, fully
-verified in Lean by the conditional theorem
+content of the class hypothesis on the geometric side.  The
+*combinatorial* content of the boundary-permutation table is
+discharged by the Lean theorem
 `QOU.CategoricalReeb.boundary_perm_realises_S3`
 (which combines `boundaryPerm_injective`, `boundaryPerm_bijective`,
 and the count `canonical_braid_count_six`: the six constructors
-form a nodup list of length six).
+of `CanonicalBraid` form a nodup list of length six, so the
+induced map to permutations of `CoralSector` is an injection
+onto a set of size six $= |S_3|$).  This Lean theorem is
+unconditional — it is a finite case check on six branches —
+because the boundary-permutation table is itself purely
+combinatorial; the geometric identification of those
+permutations as the boundary footprints of the $q$-Reeb-flow
+trajectories is the content of the manuscript prose above and
+remains conditional on
+[$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords).
 
 **Volume corollaries.**  The two 3-cycle trajectories lie on a
 Heegaard torus, so their knot complement contains a Seifert-fibered

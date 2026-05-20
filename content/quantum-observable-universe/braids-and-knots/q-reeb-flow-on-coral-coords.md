@@ -28,11 +28,11 @@ $\mathcal{R}_p$: $t = 0$ at the **south foundry**
 $\mathfrak{r}(\phi,\psi) = O + R(\sin\phi(\cos(\psi + q\phi)T_1
 + \sin(\psi + q\phi)T_2) - \cos\phi N)$
 shows that the flow accumulates the coral-twist factor $q t$
-linearly: a strand sitting at $\psi = 0$ on the south foundry is
-delivered to the angular position $q\pi$ on the north foundry.
-For the canonical traversal $t \mapsto \phi = t$ across the divisor,
-the angular position of each sector advances by exactly $q$ full
-turns, in agreement with the static embedding in
+linearly in the angular coordinate: a strand sitting at $\psi = 0$
+on the south foundry is delivered to the angular position $q\pi$
+on the north foundry, an angular advance of $q\pi$ radians
+(equivalently $q/2$ full turns of the $2\pi$-periodic angle).
+This matches the static embedding in
 [coral-sector coordinates](#def:coral-sector-coords).
 
 **Composition.**  Sequential flows compose additively:

@@ -32,12 +32,18 @@ $$
   \;\approx\; 7.327724753\ldots,
 $$
 
-where $G$ is the Catalan constant.  Decomposed into ideal
-tetrahedra, the Borromean complement is built from eight
-regular ideal tetrahedra of shape $z = e^{i\pi/3}$, each
-contributing the Lobachevsky constant
-$D(e^{i\pi/3}) = v_3 \approx 1.01494$; the sum is
-$8 v_3 = 8 G$ (Milnor's identity for the Catalan constant).
+where $G$ is the Catalan constant.  Geometrically the
+Borromean complement decomposes into **two regular ideal
+octahedra**: each ideal octahedron of shape $z = i$ has volume
+$4 \cdot \mathrm{Cl}_2(\pi/2) = 4 G$, and the two-octahedron sum
+gives $V_{\mathrm{hyp}} = 8 G$.  (Note that $G \neq v_3$:
+the Catalan constant $G = \mathrm{Cl}_2(\pi/2) \approx 0.91596$ is the
+Lobachevsky function evaluated at $\pi/2$ — the contribution of
+a regular ideal octahedron's eighth — whereas
+$v_3 = \mathrm{Cl}_2(\pi/3) \approx 1.01494$ is its value at
+$\pi/3$ — the contribution of a regular ideal tetrahedron.  The
+$8 v_3$ decomposition does not apply here; the Borromean complement
+is *not* built from eight regular ideal tetrahedra.)
 
 **Figure-eight as the threshold case.**  Between the torus
 trefoil $T_{2,3}$ (volume zero) and the Borromean link (volume

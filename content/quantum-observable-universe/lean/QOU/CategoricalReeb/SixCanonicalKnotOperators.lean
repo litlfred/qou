@@ -87,7 +87,17 @@ theorem boundaryPerm_bijective (β : CanonicalBraid) :
 theorem boundaryPerm_involution_iff_transposition (β : CanonicalBraid) :
     (∀ s, β.boundaryPerm (β.boundaryPerm s) = s) ↔
       (β = .identity ∨ β = .sigma1 ∨ β = .sigma2 ∨ β = .garside) := by
-  cases β <;> decide
+  constructor
+  · intro h
+    cases β
+    case identity        => exact Or.inl rfl
+    case sigma1          => exact Or.inr (Or.inl rfl)
+    case sigma2          => exact Or.inr (Or.inr (Or.inl rfl))
+    case garside         => exact Or.inr (Or.inr (Or.inr rfl))
+    case threeCyclePos   => exfalso; have := h CoralSector.red; cases this
+    case threeCycleNeg   => exfalso; have := h CoralSector.red; cases this
+  · intro h s
+    rcases h with h | h | h | h <;> subst h <;> cases s <;> rfl
 
 /-- The two 3-cycles are inverses of each other on the boundary
     disc: applying `threeCyclePos` then `threeCycleNeg` returns
@@ -95,7 +105,8 @@ theorem boundaryPerm_involution_iff_transposition (β : CanonicalBraid) :
 theorem threeCycles_are_inverse :
     ∀ s, CanonicalBraid.threeCycleNeg.boundaryPerm
             (CanonicalBraid.threeCyclePos.boundaryPerm s) = s := by
-  decide
+  intro s
+  cases s <;> rfl
 
 /-- The Garside element coincides with the non-adjacent
     transposition $(rb)$ on the boundary. -/
@@ -122,13 +133,19 @@ theorem canonical_braid_count_six :
     CanonicalBraid.all.length = 6 ∧ CanonicalBraid.all.Nodup :=
   ⟨CanonicalBraid.all_length, CanonicalBraid.all_nodup⟩
 
-/-- **Six canonical knot operators realise $S_3$.**  Conditional
-    on a `QReebFlowOnCoralCoords q` instance, the six canonical
-    braid words map to six distinct bijections of
-    `CoralSector`, exhausting the six elements of $S_3$. -/
+/-- **Six canonical knot operators realise $S_3$.**
+
+    The six canonical braid words map to six distinct bijections
+    of `CoralSector`, exhausting the six elements of the
+    symmetric group on three sectors.  This is the combinatorial
+    boundary-permutation content of
+    `prop:six-canonical-knot-operators`; the geometric
+    identification of these permutations with the boundary
+    footprints of the $q$-Reeb flow trajectories (which DOES
+    consume the `QReebFlowOnCoralCoords q` class) lives in the
+    manuscript prose, not in this theorem. -/
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/six-canonical-knot-operators.md
-theorem boundary_perm_realises_S3
-    {q : ℝ} [_inst : QReebFlowOnCoralCoords q] :
+theorem boundary_perm_realises_S3 :
     Function.Injective CanonicalBraid.boundaryPerm ∧
     (∀ β : CanonicalBraid, Function.Bijective β.boundaryPerm) ∧
     (CanonicalBraid.all.length = 6 ∧ CanonicalBraid.all.Nodup) :=
