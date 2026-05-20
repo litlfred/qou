@@ -40,17 +40,17 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 
-# Substrate-window q values to test.  q_0 ≈ 1.10998 is the substrate
-# point; q = 1 is the bar-symmetric origin (h=0, can't divide by h^5);
-# q values outside the substrate window (q < 1 or q > 2) are not
-# directly relevant.  Pick 5 points spanning the meaningful range.
-Q_VALUES = ["1.05", "1.08", "1.10998", "1.13", "1.17"]
+# Substrate-window q values to test.  q_0 is the canonical 50-digit
+# substrate pin from q_parameter (Q_50_DIGIT_STR) so this witness is
+# precision-comparable with other canonical-q witnesses across the
+# codebase.  Surrounding q values frame the substrate window.
+Q_VALUES = ["1.05", "1.08", Q_50_DIGIT_STR, "1.13", "1.17"]
 
 
 def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
@@ -130,6 +130,12 @@ def analyze_residual(q_val: mp.mpf, rho: mp.mpf) -> dict:
 def main() -> int:
     set_compute_dps(50)
 
+    # Construct the WitnessBuilder BEFORE the sweep so the recorded
+    # durationMs reflects the full compute, not just the save step.
+    builder = WitnessBuilder(
+        "constit-factor-varying-q-phase5k2", engine="python"
+    )
+
     print(f"=== Phase 5k.2: varying-q sweep, q ∈ {Q_VALUES} ===\n")
 
     results = []
@@ -188,10 +194,8 @@ def main() -> int:
               f"q-dependence.")
         verdict = "h5-form-not-confirmed"
 
-    # Witness
-    builder = WitnessBuilder(
-        "constit-factor-varying-q-phase5k2", engine="python"
-    )
+    # Witness — builder constructed at start of main() for accurate
+    # durationMs; populate now that the sweep has finished.
     builder.set_content_block("conj:constit-factor-2q-minus-1")
     builder.add_parameter("q_values", Q_VALUES)
     builder.set_description(
