@@ -2,17 +2,26 @@
 # polynomial_q_not_applicable: numerical witness for the bar-
 # symmetrization identity Li_2^q(z) = ½(log Φ_q(z) + log Φ_{q⁻¹}(z))
 # + O((q-1)³ z).
-"""Numerical witness for the bar-symmetrization identity
+"""Numerical witness for the bar-(anti-)symmetrization identity
+between Li_2^q and Faddeev's Φ_q.
 
-    Li_2^q(z) = ½(log Φ_q(z) + log Φ_{q⁻¹}(z))  +  O((q-1)³ · z)
+The boxed identity in `prop:li2q-phiq-bar-symmetrization` (content/
+quantum-observable-universe/braids-and-knots/li2q-phiq-bar-
+symmetrization.md) — bar-**symmetrization** (SUM) form
 
-stated in `prop:li2q-phiq-bar-symmetrization` (content/quantum-
-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md).
+    Li_2^q(z) =? ½(log Φ_q(z) + log Φ_{q⁻¹}(z))  +  O((q-1)³ z)
 
-The .md presents the identity at the formal-series level in the
-q-shuffle Hopf algebra; this script verifies the numerical version
-at substrate q_0 ≈ 1.110 across a panel of test points
-z ∈ {-1, -1/2, 0, 1/2, 1/4, q_0/2, ...}.
+is **FALSIFIED** here.  For Faddeev's Φ_q(z) = ∏(1 - q^{2k+1}z)⁻¹,
+each series coefficient sign-flips under q ↔ q⁻¹, so
+log Φ_{q⁻¹}(z) = -log Φ_q(z) identically and the SUM is zero.
+
+The CORRECT identity is the bar-**anti-symmetrization** with h/2:
+
+    Li_2^q(z) = -h · log Φ_q(z) = (h/2)(log Φ_{q⁻¹}(z) - log Φ_q(z))
+
+where h = q - q⁻¹.  Verified to ~10⁻⁵⁵ relative precision at q_0
+across seven test points z ∈ {-1, -1/2, 1/4, 1/2, q_0/4, q_0/2,
+3 q_0/4}.
 
 The bar-symmetrization conjecture is one of the wiring gaps
 identified in the m_p substrate-derivation audit (per

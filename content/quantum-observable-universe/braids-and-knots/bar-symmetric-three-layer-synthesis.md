@@ -87,11 +87,23 @@ $\sigma \mapsto \sigma^{-1}$:
 | $b^2 = (q^4+q^2+1)/(q^2+1)^2$ | invariant | **sym** |
 | $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ | invariant | **sym** |
 | $\Phi_q(z)$ alone | NOT invariant | **anti-sym** |
-| $\mathrm{Li}_2^q(z) = \frac{1}{2}(\log \Phi_q + \log \Phi_{q^{-1}})$ | invariant | **sym** |
+| $\mathrm{Li}_2^q(z) = \tfrac{h}{2}\bigl(\log\Phi_{q^{-1}} - \log\Phi_q\bigr) = -h\cdot\log\Phi_q$ † | invariant (after $h$-twist) | **sym** |
 | $\cos(\alpha - b\hbar_q^2/2)$ | invariant | **sym** |
 | $\sin(\alpha)$ alone | NOT invariant | **anti-sym** |
 | $\cosh(h)$ | invariant ($\cosh$ even) | **sym** |
 | $\sinh(h)$ | NOT invariant ($\sinh$ odd) | **anti-sym** |
+
+† $\mathrm{Li}_2^q$ row corrected per
+([`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
+errata 2026-05-20 + witness
+[`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/li2q-phiq-bar-symmetry.witness.json)).
+The earlier "sum" form $\tfrac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}})$
+is identically zero (since $\log\Phi_{q^{-1}} = -\log\Phi_q$ for
+Faddeev's $\Phi_q$); the **bar-anti-symmetric image rescaled by
+$h/2$** is the correct relation. Bar-classification stands —
+$\mathrm{Li}_2^q$ is invariant once the $h$-twist is taken into
+account (its archimedean realisation is the regulator image of a
+bar-symmetric R-side object).
 
 > **Antiskew note.** The framework projects onto the bar-EVEN /
 > bar-SYMMETRIC component — $\cos, \cosh, \mathrm{Li}_2^q$ — and
