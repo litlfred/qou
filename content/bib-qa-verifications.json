@@ -1,5 +1,6 @@
 {
-  "_schema": "Per-paper verification status for QOU bibliography. Consumed by content/pipeline/bib-qa.ts (tags has_local_pdf, verification_status). Hand-edited; one entry per reference id in references.ts that has been examined. Absence = pending. Status values: verified-clean, partial, fixed, uncited, paper-mismatch, unfetchable.",
+  "_schema": "Per-paper verification status for QOU bibliography. Consumed by content/pipeline/bib-qa.ts (tags has_local_pdf, verification_status). Hand-edited; one entry per reference id in references.ts that has been examined. Absence = pending. Status values: verified-clean, partial, fixed, uncited, paper-mismatch, unfetchable, pending-placement.",
+  "_verified_by_caveat": "The `verified_by` field is CURRENTLY AGENT-ONLY (Claude (claude-opus-4-7) etc.). No entry has yet been independently human-adjudicated. A future schema refinement may split this into a discriminated union `{ kind: \"agent\" | \"human\", ... }` with separate `human_adjudicated` provenance. Until then, downstream consumers (validate-bib, dashboards, authors-note) MUST NOT treat agent-only verifications as equivalent to human review. See PR #820 coordination thread (2026-05-20) for context.",
   "_authoritative_for": "verification_status QA tag in bib-qa.json; markdown mirror at docs/coordination/2026-05-19-bib-verification-ledger.md",
   "entries": [
     {
