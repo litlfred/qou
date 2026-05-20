@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition (Magic-shell coupling slope — categorical closed form).**
 *The per-unit-excess magic-shell coupling slope $\kappa$, which
 controls the $(n_{pp} - n_{nn})$ excess contribution to atomic

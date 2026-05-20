@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition (cyclotomic factorisation of $y_\lambda$ at small $n$).**
 *Let $\sigma_i$ be the symmetric Hecke generators of $H_n(R, q)$ with
 Markov parameter $z = 1/(q^{1/2} + q^{-1/2})$, and write $r = q^{1/2}$.

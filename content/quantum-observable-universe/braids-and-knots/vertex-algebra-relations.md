@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The vertex operator algebra $(V, Y, |0\rangle)$
 ([vertex operator](#def\:vertex-operator)) inherits every QU and QUO
 axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$

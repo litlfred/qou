@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition (partial closures of substantive Mathlib gaps 2+3,
 sorry-free).**
 *The boundary cases of the $\mathrm{Cl}_2$ pentagon identity and

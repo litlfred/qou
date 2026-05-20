@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The
 [Levi degeneracy conjecture](#conj:levi-degeneracy) reduces the
 $q \to 1$ Navier–Stokes regularity question to the asymptotic

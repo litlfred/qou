@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Status (revised 2026-05-18 after exhaustive R&D — Class-A canonical-discipline note):**
 *The original substrate-form claim*
 $\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$

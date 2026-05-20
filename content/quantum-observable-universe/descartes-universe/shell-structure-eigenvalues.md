@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The orbital shell structure of an atom is determined by the
 **eigenvalues** of the photon-electron transfer matrix
 $T_{\gamma e}(q)$.  Shell $n$ corresponds to the $n$-th power

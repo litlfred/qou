@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Bring's surface $\Sigma_4$ ([Bring's surface](#def\:brings-surface)) gives rise
 to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 

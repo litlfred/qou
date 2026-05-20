@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Gröbner--Shirshov basis theory for the Iwahori--Hecke algebra
 $H_A(q)$ gives a stronger result than uniqueness of normal
 forms: the **energy** of the nuclear braid word is a topological

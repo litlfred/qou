@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The empirical $c_k$ chain at $H_3$ (extracted from the
 $\varepsilon^{2k}$ coefficients of $\chi_\lambda(\beta_n; q) - \chi_\lambda(\beta_p; q)$
 at $q = 1 + \varepsilon$ per

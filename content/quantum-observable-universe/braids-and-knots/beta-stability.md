@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The stable neutron number $n^*(p)$ for each element is determined
 by extremizing the Skein binding Lagrangian
 ([Skein binding Lagrangian](#def:skein-binding-lagrangian)) over $n$

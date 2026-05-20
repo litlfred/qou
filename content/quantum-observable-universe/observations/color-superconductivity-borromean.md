@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Conjecture.**
 *Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be the Descartes
 universe at substrate parameter $q = q_0$.  At baryon densities

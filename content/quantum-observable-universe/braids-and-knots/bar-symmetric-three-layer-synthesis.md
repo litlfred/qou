@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition (bar-symmetric three-layer synthesis — conjectural).**
 
 *The Hecke skein $h = q - q^{-1}$ is bar-anti-symmetric*

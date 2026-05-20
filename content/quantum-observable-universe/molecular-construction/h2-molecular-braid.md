@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Definition.**
 *The **hydrogen molecule** $H_2$ is the molecular braid of two
 hydrogen atoms sharing one electron pair.  The construction

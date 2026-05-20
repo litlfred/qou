@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The leading-order half-life formula
 ([hadron half-life](#prop:hadron-half-life)) evaluates the Skein
 polynomial on the **nucleus alone**, treating the emitted electron as

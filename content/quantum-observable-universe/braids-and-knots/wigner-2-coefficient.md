@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition.**
 *For any self-conjugate partition $\lambda = \lambda'$ of $k$,
 the per-generator trace in the Hoefsmit seminormal representation

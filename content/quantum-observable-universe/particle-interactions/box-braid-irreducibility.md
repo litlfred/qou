@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition.**
 *The process $\gamma\gamma \to \nu\nu^{\sigma}$ requires the
 $T_{3,5}$ torus knot topology (weak mediator,
