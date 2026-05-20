@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-19T23:23:33.684784+00:00",
+  "computedAt": "2026-05-20T00:07:57.512027+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -966,6 +966,22 @@
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "w.add_parameter(\"Q_beta_codata\", str(float(Q_BETA_MEV)))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_fsc_g_pattern_comparison.py",
+        "line": 43,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_fsc_g_pattern_comparison.py",
+        "line": 83,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_beta = mpf(str(Q_BETA_MEV))",
         "kind": "active"
       }
     ],
