@@ -170,6 +170,10 @@ witness = {
     "calibration_MeV_per_cat": calib,
     "particles": particle_data,
 }
+from witness_base import WitnessBuilder
+witness = WitnessBuilder.stamp_staleness_metadata(
+    witness, script_path=__file__, engine="python"
+)
 out = Path(__file__).parent / "entanglement-orders.witness.json"
 out.write_text(json.dumps(witness, indent=2, default=str))
 print(f"\n  Witness: {out}")

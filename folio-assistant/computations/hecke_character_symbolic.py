@@ -42,6 +42,22 @@ Witness: hecke-character-symbolic.witness.json
 """
 import functools
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
@@ -52,6 +68,7 @@ import sympy as sp
 import sys as _p25_sys
 from pathlib import Path as _P25Path
 _p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from syt_prefix_cache import BlockCache
 from witness_polynomial import expose_polynomial  # noqa: F401
 from sympy import Symbol, Rational, Integer, Matrix, simplify, sqrt, together
 

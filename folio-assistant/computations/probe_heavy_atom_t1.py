@@ -52,6 +52,7 @@ import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 
 from _precision import set_compute_dps, fmt  # noqa: E402

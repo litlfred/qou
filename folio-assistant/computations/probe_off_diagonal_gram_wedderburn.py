@@ -57,6 +57,7 @@ set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 from witness_base import WitnessBuilder  # noqa: E402
 

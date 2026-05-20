@@ -25,6 +25,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 from hecke_characters import (  # noqa: E402
     partitions_of, build_seminormal_matrices, qfac, dim_q,

@@ -31,6 +31,22 @@ Refs:
 """
 
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import re
 import sys
 from datetime import datetime, timezone

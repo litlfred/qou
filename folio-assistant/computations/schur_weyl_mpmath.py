@@ -24,6 +24,22 @@ at q_0 (mass-tower compute, P2.2a wiring, etc.), use this module.
 Witness: docs/audits/2026-05-01-p2-2b-mn-mpmath.witness.json
 """
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import sys
 import time
 from datetime import datetime, timezone

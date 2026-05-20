@@ -516,6 +516,10 @@ witness = {
         "Q_observed_MeV": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV
     },
 }
+from witness_base import WitnessBuilder
+witness = WitnessBuilder.stamp_staleness_metadata(
+    witness, script_path=__file__, engine="python"
+)
 
 out = Path("free-neutron-decay.witness.json")
 with open(out, "w") as f:

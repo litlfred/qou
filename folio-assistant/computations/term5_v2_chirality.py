@@ -49,6 +49,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 from q_parameter import Q as Q_0_FLOAT  # noqa: E402
 from mass_at_3A_proper import (  # noqa: E402

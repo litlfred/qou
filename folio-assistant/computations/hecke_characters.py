@@ -29,6 +29,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from syt_prefix_cache import BlockCache
 from q_parameter import Q, Q_INV, HA, q_int
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 

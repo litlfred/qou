@@ -27,6 +27,22 @@ With symbolic formula: ANY A — no cancellation, no precision concern.
 """
 from __future__ import annotations
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 from datetime import datetime, timezone
 from itertools import product as cartesian
 from pathlib import Path
@@ -168,7 +184,7 @@ def main():
     }
     out_path = Path(__file__).parent / "sigma-all-symbolic-decay.witness.json"
     with open(out_path, "w") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False, default=str)
+        _json_dump_witness(out, f, indent=2, ensure_ascii=False, default=str)
     print(f"\n→ wrote {out_path}")
 
 

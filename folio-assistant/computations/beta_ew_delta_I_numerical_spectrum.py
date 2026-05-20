@@ -22,6 +22,22 @@ numerical analog.
 """
 from __future__ import annotations
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import sys
 import time
 from datetime import datetime, timezone
@@ -31,6 +47,7 @@ import sympy as sp
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
+from syt_prefix_cache import BlockCache
 from q_parameter import Q_50_DIGIT_STR
 from hecke_character_symbolic import (
     standard_young_tableaux, _hoefsmit_build,

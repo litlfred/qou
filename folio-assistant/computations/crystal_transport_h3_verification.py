@@ -37,6 +37,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from syt_prefix_cache import BlockCache
 from witness_base import WitnessBuilder  # noqa: E402
 from hecke_characters import (  # noqa: E402
     standard_young_tableaux, build_seminormal_matrices, partitions_of,

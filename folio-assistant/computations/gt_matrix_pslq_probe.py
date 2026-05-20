@@ -17,6 +17,22 @@ Output: gt-matrix-pslq-probe.witness.json
 """
 from __future__ import annotations
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import sys
 import time
 from datetime import datetime, timezone
@@ -210,7 +226,7 @@ def main() -> None:
 
     out_path = Path(__file__).parent / "gt-matrix-pslq-probe.witness.json"
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2)
+        _json_dump_witness(out, f, indent=2)
     print(f"\nWitness: {out_path}\nCandidate clean closures: {len(candidates)}")
     for c in candidates:
         nr = c["nearest_rational"]

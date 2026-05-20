@@ -39,6 +39,7 @@ from pathlib import Path
 from typing import Tuple
 
 sys.path.insert(0, str(Path(__file__).parent))
+from syt_prefix_cache import BlockCache
 
 import numpy as np
 import mpmath as mp

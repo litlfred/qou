@@ -37,6 +37,22 @@ Output:
 from __future__ import annotations
 
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -289,7 +305,7 @@ def main():
     }
 
     with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, ensure_ascii=False)
+        _json_dump_witness(witness, f, indent=2, ensure_ascii=False)
     print(f"\n→ wrote {out_path}")
     print(f"  atoms: {witness['summary']['n_atoms']}, "
           f"all consistent: {witness['summary']['all_consistent']}")

@@ -276,6 +276,10 @@ if __name__ == "__main__":
         "parameters": {"q0": Q0, "E_0_MeV": float(Q_NEUTRON_MEV)},
         "results": results,
     }
+    from witness_base import WitnessBuilder
+    witness = WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python"
+    )
     out = Path(__file__).parent / "unified-lift.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

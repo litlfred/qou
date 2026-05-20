@@ -880,6 +880,7 @@ if __name__ == '__main__':
     import sys
     from datetime import datetime, timezone
     from pathlib import Path
+    from witness_base import WitnessBuilder
 
     nuclei = [
         ('2H',  1, 1),
@@ -944,6 +945,9 @@ if __name__ == '__main__':
         },
         'results': all_results,
     }
+    witness = WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python"
+    )
 
     out = Path(__file__).parent / 'hecke-division.witness.json'
     with open(out, 'w') as f:

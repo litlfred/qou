@@ -47,6 +47,7 @@ from typing import Iterable, Sequence
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
+from syt_prefix_cache import BlockCache
 from hecke_characters import (partitions_of, standard_young_tableaux)
 
 

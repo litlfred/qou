@@ -152,6 +152,10 @@ out = {
     "timestamp_utc": datetime.now(timezone.utc).isoformat(),
     "isotopes": results
 }
+from witness_base import WitnessBuilder
+out = WitnessBuilder.stamp_staleness_metadata(
+    out, script_path=__file__, engine="python"
+)
 out_path = Path(__file__).parent / "binding-ladder-catalog.witness.json"
 with open(out_path, "w") as fp:
     json.dump(out, fp, indent=2)

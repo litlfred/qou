@@ -49,6 +49,22 @@ Run:
 from __future__ import annotations
 
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import sys
 import time
 from datetime import datetime, timezone
@@ -60,6 +76,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 from hecke_character_symbolic import hoefsmit_matrices_symbolic  # noqa: E402
 from hoefsmit_symbolic import Q, chi_lambda_symbolic  # noqa: E402

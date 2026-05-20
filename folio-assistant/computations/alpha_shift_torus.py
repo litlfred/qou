@@ -39,6 +39,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402

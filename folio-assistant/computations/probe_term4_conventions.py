@@ -159,6 +159,10 @@ if __name__ == "__main__":
         },
         "rows": rows,
     }
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.stamp_staleness_metadata(
+        out, script_path=__file__, engine="python"
+    )
     out_path = Path(__file__).parent / "probe-term4-conventions.witness.json"
     out_path.write_text(json.dumps(out, indent=2, default=str))
     print(f"\nWitness: {out_path}")

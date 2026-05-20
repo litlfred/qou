@@ -106,6 +106,22 @@ from __future__ import annotations
 import sys
 import math
 import json
+from witness_base import WitnessBuilder
+
+_json_dump_raw = json.dump
+
+
+def _json_dump_witness(obj, fp, *args, **kwargs):
+    if isinstance(obj, dict):
+        try:
+            if str(getattr(fp, "name", "")).endswith(".witness.json"):
+                obj = WitnessBuilder.stamp_staleness_metadata(
+                    obj, script_path=__file__, engine="python"
+                )
+        except Exception:
+            pass
+    return _json_dump_raw(obj, fp, *args, **kwargs)
+
 import time
 from pathlib import Path
 from datetime import datetime, timezone
@@ -114,6 +130,7 @@ from itertools import combinations
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
+from syt_prefix_cache import BlockCache
 from q_parameter import Q as Q0, Q_INV as QI, HA as H0
 from experimental_constants import M_P_MEV
 from mass_endomorphism import Phi_q, z_mark

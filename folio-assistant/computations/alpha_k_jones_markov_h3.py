@@ -199,6 +199,10 @@ out = {
         "expected": {"1": 1, "σ_1": float(z_mark), "σ_1σ_2": float(z_mark**2)}
     }
 }
+from witness_base import WitnessBuilder
+out = WitnessBuilder.stamp_staleness_metadata(
+    out, script_path=__file__, engine="python"
+)
 out_path = Path(__file__).parent / "alpha-k-jones-markov-h3.witness.json"
 with open(out_path, "w") as fp:
     json.dump(out, fp, indent=2)

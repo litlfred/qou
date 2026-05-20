@@ -36,6 +36,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 from hecke_core import h as H_VAL, z as Z_MARK  # noqa: E402
 from mass_at_3A_proper import chi_lambda_of_word  # noqa: E402

@@ -54,6 +54,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+from syt_prefix_cache import BlockCache
 
 import numpy as np  # noqa: E402
 import sympy as sp  # noqa: E402
