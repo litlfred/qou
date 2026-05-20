@@ -311,9 +311,16 @@ def main() -> int:
     )
     parser.add_argument(
         "--method",
-        choices=["markov_peel", "rust_f64", "rust_mpfr"],
+        choices=["markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
         default="markov_peel",
-        help="Computation method (default markov_peel — fastest at H_n ≥ 12).",
+        help=(
+            "Computation method. `laurent_q` (PR #859) is the fastest "
+            "production path: LaurentQ-direct Markov-axiom recursive "
+            "ascent with MPFR-50dps output. ~3-5× over `markov_peel` "
+            "at A ≥ 5. `markov_peel` is the prior production path "
+            "(sympy-heavy trace assembly). `rust_f64`/`rust_mpfr` use "
+            "the legacy direct-Hoefsmit path (don't scale past H_15)."
+        ),
     )
     parser.add_argument(
         "--target-dps", type=int, default=OUTPUT_DPS,
