@@ -28,7 +28,6 @@ Status: experimental (probe).
 """
 from __future__ import annotations
 
-import json
 import sys
 from fractions import Fraction
 from pathlib import Path
@@ -54,8 +53,15 @@ def fibonacci_up_to(bound: int) -> list[int]:
 
 
 def lucas_up_to(bound: int) -> list[int]:
-    """Lucas numbers L_n: 2, 1, 3, 4, 7, 11, 18, 29, 47, 76, ...
-    up to and including the first value ≥ bound."""
+    """Generate the Lucas-number candidate set L_0, L_1, L_2, ... =
+    2, 1, 3, 4, 7, 11, 18, 29, 47, 76, ...
+
+    Returns every Lucas number L_n for n = 0, 1, 2, ... up to the first
+    index where L_n >= bound (that final term is included).  Because
+    L_1 = 1 < L_0 = 2, the returned list is NOT monotonically increasing
+    at the head — it is a candidate set (which is exactly how
+    is_fibonacci_lucas_clean consumes it), not a sorted prefix.
+    """
     if bound <= 0:
         return []
     a, b = 2, 1
@@ -103,21 +109,6 @@ def is_fibonacci_lucas_clean(value: Fraction) -> tuple[bool, str]:
                         return True, f"{f}^{j} ({name}_*)"
                     return True, f"{f}^{j} · 2^{quotient.bit_length() - 1}"
     return False, f"{num} inert (not f^j · 2^t for F/L number f)"
-
-
-def b_squared_at(q: Fraction | object) -> Fraction:
-    """b²(q) = (q⁴ + q² + 1) / (q²+1)² — exact at any algebraic q.
-
-    For q = φ (golden ratio root of q² = q + 1), substituting:
-      q² = q + 1
-      q⁴ = (q+1)² = q² + 2q + 1 = 3q + 2
-      q⁴ + q² + 1 = (3q + 2) + (q + 1) + 1 = 4q + 4 = 4(q + 1) = 4q²
-      (q² + 1)² = (q + 2)² = q² + 4q + 4 = (q+1) + 4q + 4 = 5q + 5 = 5(q + 1) = 5q²
-      b² = 4q²/5q² = 4/5
-
-    For golden ratio, b² is exactly 4/5.
-    """
-    raise NotImplementedError("Use the closed-form values directly")
 
 
 def main() -> None:

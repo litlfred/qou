@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T00:05:22.177144+00:00",
-  "commitSha": "956cd7a5e090a17b2839b70f51b80d76c38df375",
+  "computedAt": "2026-05-20T05:51:50.090880+00:00",
+  "commitSha": "a35637f64f990261c443e92ee7d80dc4db39bbce",
   "assertions": [
     {
       "name": "silver_unique_outlier_at_k5",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 14,
   "computation": "qbeta-golden-ratio-fibonacci-probe",
   "scriptFile": "qbeta_golden_ratio_fibonacci_probe.py",
-  "scriptHash": "18d53f0020ac",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "93c59822e2d3",
+  "scriptCommitSha": "8d176617c31899134d99d8640de4e9c639ca6910",
   "description": "Falsifiability probe: tests whether the c_5 outlier at silver ratio (q = 1+√2) is silver-specific or universal. Evaluates c_k closed forms at golden ratio (q = φ) where h = q - q⁻¹ = 1, b² = 4/5 exactly, q-integers reduce to Lucas L_n (n odd) or F_n·√5 (n even). Tests Fibonacci-or-Lucas-or-power-of-2 closure on each c_k numerator. Predicted outcome: all c_k clean (no outlier) at golden, since there is no β-decay null at h=1 to force the bar-invariant sector collapse.",
   "data": {
     "hypothesis": "c_5 outlier is silver-specific (β-decay null)",
