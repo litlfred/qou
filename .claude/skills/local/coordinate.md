@@ -29,6 +29,16 @@ context.  Without coordination they will:
 has all the answers; they look to the author for clarification on
 inconsistencies, and they cherry-pick from each other.
 
+## Workflow rule reminder (from CLAUDE.md §Branch + PR workflow)
+
+This skill assumes you've already created a branch + opened a PR for
+the work tranche being coordinated. Per CLAUDE.md (STRICT, supersedes
+default "no auto-PR" guidance for this repo): **always create a
+branch and open a PR at the start of every work tranche.** Commit
+early, commit often. Small structured commits cherry-pick cleanly;
+big mixed commits do not. Exception: integration-watcher batch
+audit-job sweeps may use a single bulk commit.
+
 ## When to invoke
 
 - Start of a session where the user mentioned **other branches/PRs**
