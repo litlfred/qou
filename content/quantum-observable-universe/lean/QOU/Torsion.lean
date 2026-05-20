@@ -15,3 +15,4 @@ import QOU.Torsion.TopologicalMass
 import QOU.Torsion.MassGap
 import QOU.Torsion.quantum_dilogarithm
 import QOU.Torsion.skein_generation
+import QOU.Torsion.brane_boundary_structure
