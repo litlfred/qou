@@ -42,6 +42,7 @@ import QOU.BraidKnot.AppliedHelium3Uniqueness
 import QOU.BraidKnot.AppliedDeuteronUniqueness
 import QOU.BraidKnot.AppliedTritiumUniqueness
 import QOU.BraidKnot.PerNucleusMassDerivation
+import QOU.BraidKnot.frobenius_antipode_unifies
 
 /-!
 # BraidKnot — Module Index
