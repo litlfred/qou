@@ -1,0 +1,43 @@
+name = "qou"
+defaultTargets = ["QOU"]
+
+[leanOptions]
+autoImplicit = false
+profiler = true          # report per-declaration elaboration times
+
+[[lean_lib]]
+name = "QOU"
+srcDir = "."
+
+# NOTE: Fred2005 has moved to content/fred2005-formal-groups/lean/
+# NOTE: GrobnerShirshov (formerly QOU.GrobnerShirshov) has moved to
+#       content/unital-groebner-bases/lean/
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+
+# Cross-paper dependency: Gröbner–Shirshov basis engine
+# (provides HeckeGS types for crossing energy / categorical mass)
+[[require]]
+name = "ugb"
+path = "../../unital-groebner-bases/lean"
+
+# doc-gen4 and checkdecls are CI-only dependencies.
+# Pinned to commit hashes matching the Lean toolchain version.
+
+# doc-gen4 is CI-only (blueprint.yml uses docgen-action; lean_ci.yml has
+# a fallback source browser).  Requiring it here forces ~20 heavy
+# metaprogramming modules into every local `lake build`, which can hang
+# on resource-constrained machines.  Un-comment if you need local docs.
+#
+# [[require]]
+# name = "doc-gen4"
+# git = "https://github.com/leanprover/doc-gen4"
+# rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"
+
+# [[require]]
+# name = "checkdecls"
+# git = "https://github.com/PatrickMassot/checkdecls"
+# rev = "master"
