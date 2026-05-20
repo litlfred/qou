@@ -1,13 +1,23 @@
-# Copilot Cloud Agent — Lean MCP Quickstart
+# Copilot + Claude Code MCP Quickstart
 
-This document explains how to wire the Lean MCP server (`lean-lsp-mcp`)
-into the GitHub Copilot coding agent for the **Quantum Observable Universe**
-repository, so that Copilot sessions have live Lean diagnostics, goal states,
-and Mathlib search available.
+This document explains how to wire MCP servers for both:
+
+1. **GitHub Copilot coding agent** (cloud sessions), and
+2. **Claude Code** (local `.mcp.json` sessions),
+
+in the **Quantum Observable Universe** repository.
+
+It covers:
+
+- Lean tooling (`lean-lsp-mcp`) for proof diagnostics/navigation.
+- Literature discovery/retrieval MCPs:
+  - `paper-search-mcp` (`openags/paper-search-mcp`)
+  - `openalex-mcp-server` (`LeoGitGuy/alex-paper-search-mcp`)
+  - `mcp-scholar` (`renyumeng1/mcp_scholar`)
 
 ---
 
-## 1. How it works
+## 1. Copilot cloud-agent setup (`copilot-setup-steps.yml`)
 
 The repository ships a
 [Copilot setup steps workflow](../.github/workflows/copilot-setup-steps.yml)
@@ -20,15 +30,14 @@ that runs on every Copilot session before the agent starts work. It:
    have to recompile Mathlib from scratch.
 4. Verifies that `uvx lean-lsp-mcp --help` succeeds.
 
-After setup, Copilot invokes `uvx lean-lsp-mcp` as a local MCP server on each
-session; this gives it access to Lean diagnostics, goal inspection, LeanSearch,
-and more.
+After setup, Copilot can invoke `uvx`-backed MCP servers (including `lean-lsp-mcp`
+and literature MCPs) from repository MCP settings.
 
 ---
 
-## 2. Repository settings — MCP server config
+## 2. Copilot repository settings — MCP server config
 
-Paste the following JSON into
+Paste the following JSON into:
 **Repository Settings → Copilot → Coding agent → Model context protocol (MCP) servers**:
 
 ```json
@@ -39,17 +48,74 @@ Paste the following JSON into
       "command": "uvx",
       "args": ["lean-lsp-mcp"],
       "tools": ["*"]
+    },
+    "paper-search-mcp": {
+      "type": "local",
+      "command": "uvx",
+      "args": ["paper-search-mcp"],
+      "tools": ["*"]
+    },
+    "openalex-paper-search": {
+      "type": "local",
+      "command": "uvx",
+      "args": ["openalex-mcp-server"],
+      "tools": ["*"]
+    },
+    "mcp-scholar": {
+      "type": "local",
+      "command": "uvx",
+      "args": ["mcp-scholar"],
+      "tools": ["*"]
     }
   }
 }
 ```
 
-This config tells Copilot to start `uvx lean-lsp-mcp` and expose all of its
-tools to the agent.
+This config tells Copilot to start all four MCP servers via `uvx` and expose
+their tools to the agent.
+
+### Copilot environment variables (recommended)
+
+For stable behavior and better rate limits, set these in
+**Settings → Environments → `copilot` → Environment variables / secrets**:
+
+- `PAPER_SEARCH_MCP_UNPAYWALL_EMAIL` (recommended)
+- `PAPER_SEARCH_MCP_CORE_API_KEY` (optional)
+- `PAPER_SEARCH_MCP_SEMANTIC_SCHOLAR_API_KEY` (optional)
+- `PAPER_SEARCH_MCP_GOOGLE_SCHOLAR_PROXY_URL` (optional)
+- `OPENALEX_EMAIL` (recommended)
+- `OPENALEX_API_KEY` (optional)
 
 ---
 
-## 3. Lean tools available to the agent
+## 3. Claude Code local setup (`.mcp.json`)
+
+This repository now includes the same literature MCP setup for Claude Code in:
+
+- [`.mcp.json`](../.mcp.json)
+
+Configured servers:
+
+1. `paper-assistant`
+2. `paper-search-mcp`
+3. `openalex-paper-search`
+4. `mcp-scholar`
+
+### Prerequisites for Claude Code
+
+- Install `uv` so `uvx` is available:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+- Fill any needed API/environment values in `.mcp.json` (or provide them from shell).
+
+This gives Claude Code parity with Copilot for literature retrieval MCP access.
+
+---
+
+## 4. Lean tools available to the agent
 
 Once the MCP server is running, the agent can use:
 
@@ -68,7 +134,7 @@ For the full list see the
 
 ---
 
-## 4. Verifying the setup
+## 5. Verifying the setup
 
 After the setup workflow runs you can confirm the environment is healthy:
 
@@ -77,6 +143,9 @@ After the setup workflow runs you can confirm the environment is healthy:
 lean --version          # should print leanprover/lean4:v4.x.x
 lake --version          # should print Lake v...
 uvx lean-lsp-mcp --help # should print the lean-lsp-mcp help text
+uvx paper-search-mcp --help
+uvx openalex-mcp-server --help
+uvx mcp-scholar --help
 ```
 
 To verify the Lake workspace builds:
@@ -89,7 +158,7 @@ lake build Fred2005   # fred2005-formal-groups package
 
 ---
 
-## 5. Related files
+## 6. Related files
 
 | File | Purpose |
 |------|---------|
