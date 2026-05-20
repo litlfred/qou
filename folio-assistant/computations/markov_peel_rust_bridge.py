@@ -397,7 +397,8 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
     import pyhecke_native  # type: ignore[import-not-found]
 
     from mass_at_3A_proper import atom_braid_word_3A
-    from hecke_symbolic import SymbolicHeckeElement, crossing_from_cd
+    from hecke_symbolic import SymbolicHeckeElement
+    from markov_peel import crossing_from_cd
     from laurent_q import LaurentQ
     from markov_trace_canonical import tr_M_element
     from hecke_core import h as _h_num
@@ -436,10 +437,7 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
 
     # Evaluate at q₀ to `dps` decimal places via mpmath.
     mpmath.mp.dps = max(int(dps), 50)
-    from hecke_symbolic import q as _q2, z as _z, h as _h
+    from hecke_symbolic import q as _q2
     q_mp = mpmath.mpf(Q_50_DIGIT_STR)
-    z_mp = 1 / (mpmath.sqrt(q_mp) + 1 / mpmath.sqrt(q_mp))
-    h_mp = q_mp - 1 / q_mp
-    tr_mp = mpmath.mpf(tr_sym.subs([(_q2, q_mp), (_z, z_mp), (_h, h_mp)])
-                              .evalf(dps))
+    tr_mp = mpmath.mpf(tr_sym.subs(_q2, q_mp).evalf(dps))
     return tr_mp
