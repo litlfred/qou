@@ -3,14 +3,14 @@
   "label": "def:bar-involution",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/bar-involution.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/bar-involution.ts",
+    "md": "quantum-observable-universe/braids-and-knots/bar-involution.md",
+    "lean": "quantum-observable-universe/braids-and-knots/bar-involution.lean"
   },
   "source_hashes": {
-    "md": "e9e656aedbdd",
+    "md": "2182c06b7812",
     "ts": "d86b2f619227",
-    "lean": "884eb560e5a8"
+    "lean": "39b220c68fd1"
   },
   "criteria": {
     "wall-side-correct": [
@@ -26,16 +26,31 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:05:32.956Z",
-        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      },
+      {
+        "field_hash": {
+          "md": "2182c06b7812",
+          "ts": "d86b2f619227",
+          "lean": "39b220c68fd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "e9e656aedbdd",
+          "md": "2182c06b7812",
           "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
+          "lean": "39b220c68fd1"
         },
         "result": "pass",
         "reviewer": {
@@ -43,16 +58,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "e9e656aedbdd",
+          "md": "2182c06b7812",
           "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
+          "lean": "39b220c68fd1"
         },
         "result": "pass",
         "reviewer": {
@@ -60,16 +75,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "e9e656aedbdd",
+          "md": "2182c06b7812",
           "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
+          "lean": "39b220c68fd1"
         },
         "result": "pass",
         "reviewer": {
@@ -77,16 +92,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "e9e656aedbdd",
+          "md": "2182c06b7812",
           "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
+          "lean": "39b220c68fd1"
         },
         "result": "pass",
         "reviewer": {
@@ -94,16 +109,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "e9e656aedbdd",
+          "md": "2182c06b7812",
           "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
+          "lean": "39b220c68fd1"
         },
         "result": "pass",
         "reviewer": {
@@ -111,16 +126,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "e9e656aedbdd",
+          "md": "2182c06b7812",
           "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
+          "lean": "39b220c68fd1"
         },
         "result": "pass",
         "reviewer": {
@@ -128,16 +143,16 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "e9e656aedbdd",
+          "md": "2182c06b7812",
           "ts": "d86b2f619227",
-          "lean": "884eb560e5a8"
+          "lean": "39b220c68fd1"
         },
         "result": "pass",
         "reviewer": {
@@ -145,10 +160,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T04:56:21.010Z",
+        "reviewed_sha": "7daa440ecbdf97fd2abc89021c53fab49ba7b232"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:56:21.010Z"
 }
