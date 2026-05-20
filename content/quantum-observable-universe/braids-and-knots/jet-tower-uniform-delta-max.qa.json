@@ -13,38 +13,6 @@
     "lean": "9ab1a3c1b7ee"
   },
   "criteria": {
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {
-          "md": "6dd623a8c127",
-          "ts": "af5a0098e271",
-          "lean": "d21e2fb14825"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      },
-      {
-        "field_hash": {
-          "md": "6dd623a8c127",
-          "ts": "af5a0098e271",
-          "lean": "9ab1a3c1b7ee"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:15:32.063Z",
-        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
-      }
-    ],
     "canonical-calibration-count": [
       {
         "field_hash": {
@@ -431,23 +399,6 @@
         "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "6dd623a8c127",
-          "ts": "af5a0098e271",
-          "lean": "9ab1a3c1b7ee"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:30:47.477Z",
-        "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f"
-      }
-    ],
     "voice-status-leak": [
       {
         "field_hash": {
@@ -636,7 +587,41 @@
         "reviewed_at": "2026-05-20T16:47:18.199Z",
         "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "6dd623a8c127",
+          "ts": "af5a0098e271",
+          "lean": "9ab1a3c1b7ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T17:52:35.574Z",
+        "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "6dd623a8c127",
+          "ts": "af5a0098e271",
+          "lean": "9ab1a3c1b7ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T17:52:35.574Z",
+        "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc"
+      }
     ]
   },
-  "updated_at": "2026-05-20T16:47:18.199Z"
+  "updated_at": "2026-05-20T17:52:35.574Z"
 }
