@@ -605,6 +605,46 @@ const BIBLIOGRAPHY: QaCriterionDefinition[] = [
   },
 ];
 
+// ── Domain: script-quality ──────────────────────────────────────
+//
+// Audits **script files** (not content blocks). Sidecar is
+// per-script `.script-qa.json`, schema in
+// `folio-assistant/schemas/script-qa.ts`. Driven by
+// `content/pipeline/script-sweep.ts`.
+//
+// Planned criteria (one PR per checker):
+//   - does_not_default_to_float   (implemented, this PR)
+//   - respects_archimedean_wall   (TODO — CLAUDE.md §7c)
+//   - code_is_commented           (TODO)
+//   - variables_typed             (TODO)
+//   - has_references_to_paper     (TODO)
+//   - connected_to_ci_pipeline    (TODO)
+//   - deprecated                  (TODO — also cross-axis to blocks)
+//   - uses_library_framework_appropriately (TODO — `_precision`,
+//                                  no hardcoded numerics, reads
+//                                  from witness JSONs)
+
+const SCRIPT_QUALITY: QaCriterionDefinition[] = [
+  {
+    id: "does_not_default_to_float",
+    domain: "script-quality",
+    description:
+      "Python script does not use bare float literals (`1.0`, " +
+      "`0.5`, `3.14e-10`, …) or unchecked `float(...)` casts in " +
+      "substrate-precision code paths. Use `mpmath.mpf(\"...\")`, " +
+      "`Decimal(\"...\")`, or pin the value via a witness JSON. " +
+      "Allow-listed sentinels: `float(\"inf\")`, `float(\"nan\")`. " +
+      "Heuristic regex-based — string literals and comments are " +
+      "stripped before scanning to avoid false positives. False " +
+      "positives are addressed with a `human` reviewer override " +
+      "on the script's sidecar.",
+    default_severity: "major",
+    depends_on: [],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+];
+
 // ── Exported registry ───────────────────────────────────────────
 
 export const QA_CRITERIA_REGISTRY: QaCriterionDefinition[] = [
@@ -617,7 +657,12 @@ export const QA_CRITERIA_REGISTRY: QaCriterionDefinition[] = [
   ...COMPUTE,
   ...DETANGLER,
   ...BIBLIOGRAPHY,
+  ...SCRIPT_QUALITY,
 ];
+
+export const SCRIPT_QUALITY_CRITERIA: string[] = SCRIPT_QUALITY.map(
+  (c) => c.id,
+);
 
 export const QA_CRITERIA_BY_ID: Record<string, QaCriterionDefinition> =
   Object.fromEntries(QA_CRITERIA_REGISTRY.map((c) => [c.id, c]));
