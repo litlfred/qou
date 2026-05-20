@@ -146,6 +146,9 @@ When multiple watchers are dispatched in parallel:
   `local/detangler-integration-watcher`,
   `local/one-voice-integration-watcher`
 - **Inherits everything**: §0-§9 of the parent
+- **Write-side counterpart**: [`local/integration-backlog`](integration-backlog.md)
+  — same argument grammar, but DRAINS the open findings into
+  review-sized PRs instead of monitoring for new events.
 
 ## Examples
 
