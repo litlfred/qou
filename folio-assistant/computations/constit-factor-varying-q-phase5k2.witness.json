@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T03:33:21.548205+00:00",
-  "commitSha": "2b99fbcbbdcbd619ad931af1fbbe903edeb89b6d",
+  "computedAt": "2026-05-20T03:52:09.297669+00:00",
+  "commitSha": "6a3a50708c23d03dd6b1f0de2313ee4f355a8eec",
   "assertions": [
     {
       "name": "phase_5k_2_c_h5_close_to_unity",
-      "computed": -7255.412627972177,
+      "computed": -7255.416906532142,
       "expected": 1.0,
       "passed": false,
       "tolerance": 0.15,
@@ -15,7 +15,7 @@
     },
     {
       "name": "phase_5k_2_c_h5_spread_small",
-      "computed": 4.795954488083816,
+      "computed": 4.795951659882607,
       "expected": 0.0,
       "passed": false,
       "tolerance": 0.1,
@@ -24,18 +24,18 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 17,
+  "durationMs": 139,
   "computation": "constit-factor-varying-q-phase5k2",
   "scriptFile": "constit_factor_varying_q_phase5k2.py",
-  "scriptHash": "0ba7eb6f77b0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a58254732ffe",
+  "scriptCommitSha": "6a3a50708c23d03dd6b1f0de2313ee4f355a8eec",
   "description": "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-coefficient h^5 finding. For each q in the substrate window, computes ρ_Z^constit(q) = τ_M_constit(³He, q) / τ_M_constit(D, q) using y_λ(q) Wenzl weights and χ_λ(β_constit, q) Hecke characters. Tests whether c(q) := (ρ - (2q-1)) / h^5 is approximately 1 across q, which would confirm the structural identity ρ = (2q-1) + h^5 + O(h^7).",
   "contentBlock": "conj:constit-factor-2q-minus-1",
   "parameters": {
     "q_values": [
       "1.05",
       "1.08",
-      "1.10998",
+      "1.10997859555418057528159407960950937799328227995870",
       "1.13",
       "1.17"
     ]
@@ -48,8 +48,8 @@
         "tau_M_constit_3He": 0.48275947004154396,
         "rho_Z_constit": 0.7928419194239207,
         "rho_Z_constit_str": "0.792841919423920676868929326502",
-        "wall_seconds_D": 0.0027322769165039062,
-        "wall_seconds_3He": 0.02112746238708496,
+        "wall_seconds_D": 0.002641439437866211,
+        "wall_seconds_3He": 0.021543502807617188,
         "predicted_2q_minus_1": 1.1,
         "residual": -0.3071580805760793,
         "h": 0.09761904761904762,
@@ -63,8 +63,8 @@
         "tau_M_constit_3He": 0.9481569288800769,
         "rho_Z_constit": 0.993289585647054,
         "rho_Z_constit_str": "0.993289585647054022461058904142",
-        "wall_seconds_D": 0.0024116039276123047,
-        "wall_seconds_3He": 0.020782947540283203,
+        "wall_seconds_D": 0.0023496150970458984,
+        "wall_seconds_3He": 0.021085739135742188,
         "predicted_2q_minus_1": 1.16,
         "residual": -0.16671041435294598,
         "h": 0.15407407407407409,
@@ -73,19 +73,19 @@
         "rel_err_pct": 14.37158744421948
       },
       {
-        "q": 1.10998,
-        "tau_M_constit_D": 1.4581941924676118,
-        "tau_M_constit_3He": 1.779542668028924,
-        "rho_Z_constit": 1.2203742664874517,
-        "rho_Z_constit_str": "1.22037426648745174770183545199",
-        "wall_seconds_D": 0.002518892288208008,
-        "wall_seconds_3He": 0.02119755744934082,
-        "predicted_2q_minus_1": 1.21996,
-        "residual": 0.0004142664874517477,
-        "h": 0.2090628663579524,
-        "h_to_5": 0.0003993783353746601,
-        "c_residual_over_h5": 1.037278316719711,
-        "rel_err_pct": 0.03395738282007178
+        "q": 1.1099785955541805,
+        "tau_M_constit_D": 1.4581657619769373,
+        "tau_M_constit_3He": 1.7794913820534781,
+        "rho_Z_constit": 1.2203628890866958,
+        "rho_Z_constit_str": "1.22036288908669570115915748732",
+        "wall_seconds_D": 0.002401113510131836,
+        "wall_seconds_3He": 0.02166604995727539,
+        "predicted_2q_minus_1": 1.219957191108361,
+        "residual": 0.0004056979783345506,
+        "h": 0.20906032198987945,
+        "h_to_5": 0.0003993540330973266,
+        "c_residual_over_h5": 1.0158855168884142,
+        "rel_err_pct": 0.033255099547055744
       },
       {
         "q": 1.13,
@@ -93,8 +93,8 @@
         "tau_M_constit_3He": 2.6717647942221525,
         "rho_Z_constit": 1.3905470052573294,
         "rho_Z_constit_str": "1.39054700525732932870009277902",
-        "wall_seconds_D": 0.0024137496948242188,
-        "wall_seconds_3He": 0.02095818519592285,
+        "wall_seconds_D": 0.0025844573974609375,
+        "wall_seconds_3He": 0.022351980209350586,
         "predicted_2q_minus_1": 1.26,
         "residual": 0.13054700525732932,
         "h": 0.2450442477876106,
@@ -108,8 +108,8 @@
         "tau_M_constit_3He": 5.912626471651041,
         "rho_Z_constit": 1.7858458211941335,
         "rho_Z_constit_str": "1.78584582119413359200011321611",
-        "wall_seconds_D": 0.002279996871948242,
-        "wall_seconds_3He": 0.020598411560058594,
+        "wall_seconds_D": 0.0022346973419189453,
+        "wall_seconds_3He": 0.021897554397583008,
         "predicted_2q_minus_1": 1.34,
         "residual": 0.4458458211941336,
         "h": 0.3152991452991453,
@@ -121,8 +121,8 @@
     "c_h5_range": {
       "min": -34648.87301909984,
       "max": 147.75573692331497,
-      "mean": -7255.412627972177,
-      "relative_spread": 4.795954488083816
+      "mean": -7255.416906532142,
+      "relative_spread": 4.795951659882607
     },
     "verdict": "h5-form-not-confirmed"
   }

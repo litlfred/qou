@@ -22,14 +22,25 @@
 > across the substrate window using the same $y_\lambda$ / $\chi_\lambda$
 > pipeline as PR #819's Phase 5c.1.  Result:
 >
+> Main sweep (5 q-values, recorded in the witness JSON):
+>
 > | $q$ | $\rho_Z^{\mathrm{constit}}(q)$ | $(2q - 1)$ | rel. err. |
 > |---|---:|---:|---:|
 > | $1.050$ | $0.7928$ | $1.100$ | $27.9\%$ |
 > | $1.080$ | $0.9933$ | $1.160$ | $14.4\%$ |
-> | $1.110$ | $1.2205$ | $1.220$ | $0.04\%$ |
 > | $\mathbf{1.10998 = q_0}$ | $\mathbf{1.2204}$ | $\mathbf{1.220}$ | $\mathbf{0.034\%}$ |
-> | $1.113$ | $1.3905$ | $1.226$ | $1.55\%$ |
+> | $1.130$ | $1.3905$ | $1.260$ | $10.4\%$ |
 > | $1.170$ | $1.7858$ | $1.340$ | $33.3\%$ |
+>
+> Supplementary fine scan around $q_0$ (separate from the witness):
+>
+> | $q$ | $\rho_Z^{\mathrm{constit}}(q)$ | rel. err. vs $(2q-1)$ |
+> |---|---:|---:|
+> | $1.105$ | $1.1805$ | $2.44\%$ |
+> | $1.108$ | $1.2044$ | $0.95\%$ |
+> | $1.110$ | $1.2205$ | $0.04\%$ |
+> | $1.111$ | $1.2287$ | $0.54\%$ |
+> | $1.113$ | $1.2450$ | $1.55\%$ |
 >
 > The $0.033\%$ match at $q_0$ identified in Phase 5g is a
 > **localised tangency**, not a structural identity — within
@@ -215,7 +226,7 @@ $(2q - 1)$ alone).
    (queued): structural derivation from the disjoint-product Markov
    trace formula.
 
-2. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
+3. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
    The form $2q - 1$ matches $\sigma + \sigma^{-1}$ acting on the
    trivial channel idempotent $e_+ = (\sigma + q^{-1}) / (q + q^{-1})$,
    suggesting an averaging-channel interpretation parallel to the
@@ -224,7 +235,7 @@ $(2q - 1)$ alone).
    The §3b-cond class `ConstitFactor2qMinus1` axiomatises this; the
    operator-level proof is queued.
 
-3. **Higher-rank extensions.**  Does the same $(2q - 1)$ companion
+4. **Higher-rank extensions.**  Does the same $(2q - 1)$ companion
    hold for $H_{3A}$ at $A > 4$?  The constit-side factor is
    independent of $A$ (disjoint product), so the identity should
    extend trivially — but the categorical fit needs verification.
