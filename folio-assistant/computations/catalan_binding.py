@@ -40,6 +40,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
 from mass_endomorphism import w_sym, w_std, w_alt, Phi_q
 from hecke_core import atom_per_generator_volumes
+from codata_constants import (
+    M_E_MEV as _M_E_MEV,
+    M_P_MEV_VALIDATION as _M_P_MEV,
+    M_N_MEV_VALIDATION as _M_N_MEV,
+)
 
 HBAR_Q = (q0 - 1.0) / q0
 HBAR_Q_SQ = HBAR_Q * HBAR_Q
@@ -48,10 +53,12 @@ HBAR_Q_SQ = HBAR_Q * HBAR_Q
 CATALAN_G = 0.915965594177219015054603514932
 VOL_BORROMEAN = 8.0 * CATALAN_G    # 7.32772475...
 
-# CODATA inputs
-M_E_MEV = 0.51099895
-M_P_MEV = 938.272
-M_N_MEV = 939.565
+# CODATA inputs — sourced from `codata_constants` (P31 audit: no
+# hardcoded literals). float() cast for legacy compatibility with the
+# downstream f64-based arithmetic in this script.
+M_E_MEV = float(_M_E_MEV)
+M_P_MEV = float(_M_P_MEV)
+M_N_MEV = float(_M_N_MEV)
 
 # Binding scale from paper
 ALPHA_MEV = M_E_MEV * VOL_BORROMEAN  # = 3.74447... MeV
@@ -102,6 +109,8 @@ def phi_atom_tower_per_block(Z: int, N: int,
 
 
 if __name__ == "__main__":
+    import time
+    start_time = time.monotonic()
     print("=" * 100)
     print("CATALAN-G BINDING PROBE — paper's ρ·Vol formula, no fitting")
     print("=" * 100)
@@ -241,7 +250,8 @@ if __name__ == "__main__":
     from witness_base import WitnessBuilder  # noqa: E402
     (WitnessBuilder
         .wrap_legacy("catalan-binding", witness,
-                     script_path=__file__, engine="python")
+                     script_path=__file__, engine="python",
+                     start_time=start_time)
         .save())
     out = Path(__file__).parent / "catalan-binding.witness.json"
     print(f"\n  Witness: {out}")

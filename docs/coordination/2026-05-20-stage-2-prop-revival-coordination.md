@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-20  
 **Session:** coordinate skill / PR #840 Stage 2: wire 5 propositions from #819 catalog  
-**Status:** Review triage complete; 1 manual fix required (witness filename)
+**Status:** Review triage complete; all Copilot review items addressed (witness filename renamed, provenance wrapped via `WitnessBuilder.wrap_legacy`, scipy added to `requires`)
 
 ## Scope Map (10 sibling PRs)
 
@@ -32,14 +32,14 @@
 
 | Thread | File | Issue | Classification | Action |
 |--------|------|-------|---|---|
-| A | `wigner-np-pairing.ts:15` | `b-over-a-witness.json` filename mismatch (wiring audit regex) | **ACCEPT** | **Manual fix required**: update .ts `witness` field from `b-over-a-witness.json` to `b-over-a.witness.json` |
+| A | `wigner-np-pairing.ts:15` | `b-over-a-witness.json` filename mismatch (wiring audit regex) | **ACCEPT** | **RESOLVED** (commit `46d347d8` 2026-05-20): renamed `b-over-a-witness.json` → `b-over-a.witness.json` and updated `.ts` pointer + script output path |
 | B | `catalan-binding.witness.json` | Missing provenance fields | **FIXED in diff** | WitnessBuilder.wrap_legacy() applied; fields present |
 | C | `canonical-isospin-pyhecke.witness.json` | Missing provenance | **FIXED in diff** | Fields present |
 | D | `atom-level-wedderburn-tower.witness.json` | Missing provenance | **FIXED in diff** | Fields present |
 | E | `schur-weyl-mass-decomposition.ts` | Missing `scipy` in `requires` | **FIXED in diff** | scipy added |
 | F | `e-infinity-page-identifications.ts` | Missing `scipy` in `requires` | **FIXED in diff** | scipy added |
 
-**Summary:** 5 of 6 comments are already addressed in the diff (WitnessBuilder provenance wrapping, scipy additions). **Only Thread A requires a push:** rename the witness file reference in the .ts manifest.
+**Summary:** All 6 Copilot review comments addressed in commit `46d347d8` (witness filename + provenance wrapping + scipy). Second-round Copilot review (`d9912989` rebase + cross-ref enrichment) addressed in commit `7bdb7c4e` (hardcoded CODATA → `codata_constants`, `start_time` for accurate `durationMs` across 4 wrapped scripts).
 
 ## Coordination Comments Posted
 
@@ -56,7 +56,7 @@ No file overlap with #840 scope.
 
 ## Next Steps
 
-1. **Push fix to #840**: update `wigner-np-pairing.ts` witness field to `b-over-a.witness.json`
+1. **DONE** (commit `46d347d8`): pushed witness-filename fix to #840
 2. **CI validation**: wiring audit should pass after step 1
 3. **Merge #840** when CI green
 4. **No cherry-pick** between #840 and siblings required; all 10 are independent

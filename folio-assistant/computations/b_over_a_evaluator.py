@@ -318,15 +318,19 @@ def build_witness() -> dict:
 
 
 def main() -> int:
+    import time
+    start_time = time.monotonic()
     witness = build_witness()
     # Wrap legacy payload via WitnessBuilder.wrap_legacy for provenance
-    # (engine, scriptFile, commitSha, scriptHash, computedAt) per the I14
-    # witness-provenance audit. Preserves every original key verbatim.
+    # (engine, scriptFile, commitSha, scriptHash, computedAt, durationMs)
+    # per the I14 witness-provenance audit. start_time captured before
+    # the heavy compute so durationMs reflects real runtime.
     sys.path.insert(0, str(HERE))
     from witness_base import WitnessBuilder  # noqa: E402
     (WitnessBuilder
         .wrap_legacy("b-over-a", witness,
-                     script_path=__file__, engine="python")
+                     script_path=__file__, engine="python",
+                     start_time=start_time)
         .save())
     out = HERE / "b-over-a.witness.json"
 

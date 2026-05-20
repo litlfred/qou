@@ -39,6 +39,15 @@ from hecke_characters import (
 )
 from hecke_character_symbolic import atomic_braid_to_crossings
 from mass_endomorphism import Phi_q
+from syt_prefix_cache import (
+    BlockCache,
+    build_seminormal_matrices_cached,
+)
+
+# Shared BlockCache for P21 compute-audit compliance — avoids
+# rebuilding Hoefsmit content-distance tables per shape at large n.
+_BLOCK_CACHE = BlockCache(float(Q0_FLOAT),
+                          float(Q0_FLOAT - 1.0 / Q0_FLOAT))
 
 
 Q0 = Q_MP  # was f64 roundtrip
@@ -46,7 +55,8 @@ Q0 = Q_MP  # was f64 roundtrip
 
 def chi_lambda_atom(shape, crossings):
     """χ^λ(atomic braid) via numerical Hoefsmit + crossing product."""
-    sigmas, dim, _ = build_seminormal_matrices(shape)
+    sigmas, dim, _ = build_seminormal_matrices_cached(
+        shape, cache=_BLOCK_CACHE)
     if dim == 0:
         return 0.0, 0
     from scipy import sparse as sp_sparse
@@ -122,6 +132,8 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
 
 
 if __name__ == "__main__":
+    import time
+    start_time = time.monotonic()
     print("ATOM-LEVEL WEDDERBURN TOWER (λ ⊢ 3A)")
     print("=" * 80)
     print(f"q_0 = {float(Q0):.6f}")
@@ -204,7 +216,8 @@ if __name__ == "__main__":
     from witness_base import WitnessBuilder  # noqa: E402
     (WitnessBuilder
         .wrap_legacy("atom-level-wedderburn-tower", witness,
-                     script_path=__file__, engine="python")
+                     script_path=__file__, engine="python",
+                     start_time=start_time)
         .save())
     out = Path(__file__).parent / "atom-level-wedderburn-tower.witness.json"
     print(f"\nWitness: {out}")
