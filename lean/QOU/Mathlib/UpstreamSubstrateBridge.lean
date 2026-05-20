@@ -1,3 +1,10 @@
+import QOU.Mathlib.SpectralSequence
+import QOU.Mathlib.HeckeAlgebra
+import QOU.Mathlib.RSKBridge
+import QOU.Mathlib.ArchimedeanRealization
+import QOU.Mathlib.NonAbelianStokes
+import QOU.Mathlib.PermutationEnumeration
+
 /-!
 # QOU.Mathlib.UpstreamSubstrateBridge — discharge substrate axioms via upstream
 
@@ -22,13 +29,6 @@ This shows the upstream infrastructure is downstream-usable.
 
 **File status**: bridge / glue file.  No sorries.
 -/
-
-import QOU.Mathlib.SpectralSequence
-import QOU.Mathlib.HeckeAlgebra
-import QOU.Mathlib.RSKBridge
-import QOU.Mathlib.ArchimedeanRealization
-import QOU.Mathlib.NonAbelianStokes
-import QOU.Mathlib.PermutationEnumeration
 
 namespace QOU.Mathlib.UpstreamSubstrateBridge
 

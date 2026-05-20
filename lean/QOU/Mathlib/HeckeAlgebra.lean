@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Field.Basic
+
 /-!
 # QOU.Mathlib.HeckeAlgebra — Iwahori–Hecke algebra at generic q
 
@@ -34,9 +37,6 @@ Wenzl, *Hecke algebras of type A_n and subfactors*, Invent. Math.
 92 (1988) 349-383.  Jones, *Hecke algebra representations of
 braid groups and link polynomials*, Annals (1987).
 -/
-
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Field.Basic
 
 namespace QOU.Mathlib.HeckeAlgebra
 

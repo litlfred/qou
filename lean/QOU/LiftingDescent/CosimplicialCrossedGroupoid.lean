@@ -1,3 +1,8 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Algebra.Group.Basic
+
 /-!
 # QOU.LiftingDescent.CosimplicialCrossedGroupoid
 
@@ -21,11 +26,6 @@ LaTeX label: `prop:cosimplicial-crossed-groupoid`
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU.LiftingDescent
 

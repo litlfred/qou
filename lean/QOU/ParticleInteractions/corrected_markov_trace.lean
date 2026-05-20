@@ -1,0 +1,59 @@
+/-!
+# QOU.ParticleInteractions.corrected_markov_trace — `tr_M(σ₀σ₁σ₀) = z³`
+
+**Proposition** ([`prop:corrected-markov-trace`](../../../quantum-observable-universe/particle-interactions/corrected-markov-trace.md)).
+
+*The Markov trace of the trefoil braid `σ₀σ₁σ₀` is*
+
+```
+  tr_M(σ₀ σ₁ σ₀) = z³
+```
+
+*— NOT `h·z² + z` as the vertex-volume product formula would give.
+The product factorisation is invalid when generators are **adjacent**.*
+
+The Lean encoding records the corrected value `z³` against an
+abstract `CorrectedMarkovTraceContext`, and asserts the contrast
+with the naive product-formula `h·z² + z`.
+
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
+-/
+
+namespace QOU.ParticleInteractions
+
+/-- Abstract context for the corrected Markov-trace identity. -/
+class CorrectedMarkovTraceContext where
+  /-- The Hecke parameter `h = q − q⁻¹`. -/
+  h : ℝ
+  /-- The Markov parameter `z = 1/(q^{1/2} + q^{−1/2})`. -/
+  z : ℝ
+  /-- The Markov trace of the trefoil braid `σ₀σ₁σ₀`. -/
+  trM_trefoil : ℝ
+
+/-- **Corrected Markov-trace of the trefoil**
+    ([`prop:corrected-markov-trace`]).
+
+    `tr_M(σ₀ σ₁ σ₀) = z³` (NOT the naive `h·z² + z`). -/
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
+theorem corrected_markov_trace
+    [ctx : CorrectedMarkovTraceContext] :
+    ctx.trM_trefoil = ctx.z ^ 3 := by
+  -- Manuscript proof: explicit Markov-trace computation on the
+  -- 3-strand braid `σ₀σ₁σ₀` using the Hecke quadratic and the
+  -- two Markov axioms `tr_M(xy) = tr_M(yx)`, `tr_M(x σ_{n−1}) = z·tr_M(x)`.
+  -- The intermediate ADJACENT generators force the standard
+  -- product formula to fail.
+  -- Concretisation requires Lean Hecke-algebra Markov-trace infra.
+  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
+  sorry
+
+/-- **Naive vs corrected**: the Markov trace is NOT `h·z² + z`. -/
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
+theorem corrected_markov_trace_ne_naive
+    [ctx : CorrectedMarkovTraceContext]
+    (h_distinct : ctx.z ^ 3 ≠ ctx.h * ctx.z ^ 2 + ctx.z) :
+    ctx.trM_trefoil ≠ ctx.h * ctx.z ^ 2 + ctx.z := by
+  rw [corrected_markov_trace]
+  exact h_distinct
+
+end QOU.ParticleInteractions

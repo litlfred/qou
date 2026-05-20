@@ -1,3 +1,7 @@
+import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.MathlibExt.FrobeniusInnerProduct
 
@@ -35,10 +39,6 @@ for closing `strict_complementarity_unique` in
 - [boyd-vandenberghe-2004] §A.1.1 ("Inner product on matrices").
 -/
 
-import Mathlib.LinearAlgebra.Matrix.PosDef
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic
-
 namespace QOU.MathlibExt.FrobeniusInnerProduct
 
 open Matrix
@@ -55,11 +55,15 @@ def Matrix.frobeniusInner (A B : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
 theorem Matrix.frobeniusInner_symm (A B : Matrix (Fin n) (Fin n) ℝ) :
     Matrix.frobeniusInner A B = Matrix.frobeniusInner B A := by
   unfold Matrix.frobeniusInner
-  rw [Matrix.trace_mul_comm, ← Matrix.transpose_transpose B,
-      ← Matrix.transpose_mul]
-  congr 1
-  rw [Matrix.transpose_transpose, Matrix.transpose_mul,
-      Matrix.transpose_transpose]
+  -- `tr M = tr Mᵀ`; apply to LHS, then expand the transpose of a
+  -- product and collapse `Aᵀᵀ = A`.
+  calc (A.transpose * B).trace
+      = ((A.transpose * B).transpose).trace :=
+        (Matrix.trace_transpose _).symm
+    _ = (B.transpose * A.transpose.transpose).trace := by
+        rw [Matrix.transpose_mul]
+    _ = (B.transpose * A).trace := by
+        rw [Matrix.transpose_transpose]
 
 /-- **Non-negativity on the diagonal**: `⟨A, A⟩_F = Σ A_ij² ≥ 0`. -/
 theorem Matrix.frobeniusInner_self_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
@@ -106,7 +110,7 @@ theorem Matrix.frobeniusInner_self_eq_zero_iff
     simp
 
 /-- **Frobenius norm** on matrices, `‖A‖_F := √(tr A^T · A)`. -/
-def Matrix.frobeniusNorm (A : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
+noncomputable def Matrix.frobeniusNorm (A : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
   Real.sqrt (Matrix.frobeniusInner A A)
 
 /-- **Frobenius norm is non-negative.** -/

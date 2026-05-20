@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.PerPartitionKLambda — per-partition $k_\lambda$ rule
 
@@ -55,10 +59,6 @@ Per PR #639 `probe-phiq-per-partition-klambda.witness.json`:
 Per-partition k_λ rule (`k_dom = 1`, `k_others = 2`) gives
 |tower|<2 for all three atoms.
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot.PerPartitionKLambda
 
@@ -139,7 +139,7 @@ def perPartitionTowerSigned (lamDom : Partition) : ℝ :=
 /-- **Theorem.** The per-partition rule collapses ³He's brane-tower
     magnitude to `|tower| < 2`, demonstrated by direct numerical
     bracket on the witness-derived constants. -/
--- Ref: [#639] probe_phiq_per_partition_klambda.py + witness JSON
+-- See PR #639 probe_phiq_per_partition_klambda.py + witness JSON
 theorem he3_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned he3DominantPartition| < 2 := by
   unfold perPartitionTowerSigned he3DominantPartition
@@ -150,7 +150,7 @@ theorem he3_per_partition_tower_magnitude_bounded :
 
 /-- **Theorem.** The per-partition rule collapses Deuteron's
     brane-tower magnitude to `|tower| < 2`. -/
--- Ref: [#639] probe_phiq_per_partition_klambda.py + witness JSON
+-- See PR #639 probe_phiq_per_partition_klambda.py + witness JSON
 theorem deuteron_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned deuteronDominantPartition| < 2 := by
   unfold perPartitionTowerSigned deuteronDominantPartition
@@ -160,7 +160,7 @@ theorem deuteron_per_partition_tower_magnitude_bounded :
 
 /-- **Theorem.** The per-partition rule collapses Tritium's
     brane-tower magnitude to `|tower| < 2`. -/
--- Ref: [#639] probe_phiq_per_partition_klambda.py + witness JSON
+-- See PR #639 probe_phiq_per_partition_klambda.py + witness JSON
 theorem tritium_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned tritiumDominantPartition| < 2 := by
   unfold perPartitionTowerSigned tritiumDominantPartition
@@ -190,7 +190,7 @@ def OpenPerPartitionConjecture : Prop :=
                  he3DominantPartition],
        |perPartitionTowerSigned lamDom| < 2)
 
--- Ref: [#639] probe_phiq_per_partition_klambda.py
+-- See PR #639 probe_phiq_per_partition_klambda.py
 -- Ref: [manuscript] rem:per-partition-k-lambda-rule
 /-- The OpenPerPartitionConjecture is **CONDITIONALLY** witnessed
     by the empirical max-|μ| selector — but the predicate

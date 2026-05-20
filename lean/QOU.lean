@@ -56,6 +56,7 @@ import QOU.Descartes
 import QOU.Interactions
 import QOU.Encounter
 import QOU.BraidKnot
+import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
 import QOU.ClassicalLimitObstruction
@@ -76,3 +77,16 @@ import QOU.PhiQPiece
 import QOU.Kashaev
 import QOU.PhiQJSJ
 import QOU.Infra
+import QOU.Observations.AlgebraicGnsEmbedding
+import QOU.Observations.QCltNonCommutative
+import QOU.Observations.TraceLocalityMeetsGsNonLocality
+import QOU.MathlibExt.RpowAlgebra
+import QOU.Braiding.HnMarkovTrace
+import QOU.Braiding.TrMHopfSigma1SqClosedForm
+import QOU.Information.HeckeLogDecomposition
+import QOU.JetHorizon
+import QOU.MagicShell.DeltaCouplingSubstrateForm
+-- Migrated from content-tree extract
+-- (`quantum-observable-universes/categorical-dq-squared-proof.lean`).
+-- See `AUDIT-REPORT.md §P3` for the open non-vanishing direction.
+import QOU.CategoricalDqSquared

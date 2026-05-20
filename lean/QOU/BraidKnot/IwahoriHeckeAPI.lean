@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Star.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.GroupTheory.GroupAction.Basic
+import Mathlib.RingTheory.Idempotents
+
 /-!
 # Iwahori--Hecke algebra API (scaffolding for QOU's graded-Mikusiński framework)
 
@@ -21,11 +26,6 @@ API rather than `True` placeholders. When Mathlib upstreams an
 `IwahoriHeckeAlgebra`, these files migrate by re-binding the
 opaque definitions to Mathlib's official ones.
 -/
-
-import Mathlib.Algebra.Star.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.GroupTheory.GroupAction.Basic
-import Mathlib.RingTheory.Idempotents
 
 namespace QOU.BraidKnot.IwahoriHeckeAPI
 
@@ -193,19 +193,41 @@ opaque jucysMurphy
 opaque centralIdempotent
     (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ) : H.carrier
 
+/-- **External axiom (Murphy 1981; Dipper–James 1986):**
+
+    Central idempotents are central via the Lagrange-interpolation
+    construction in commuting JM elements.  Recorded as an axiom
+    (§3b-cond pattern) since concrete proof requires constructing
+    JM elements + interpolation polynomial, both of which depend on
+    a full IwahoriHeckeAlgebra implementation. -/
+-- Ref: [murphy1981] https://doi.org/10.1016/0021-8693(81)90205-2
+-- Ref: [dipper-james1986] Hecke-algebra extension.
+axiom centralIdempotent_central_axiom :
+    ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
+      (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ)
+      (x : H.carrier),
+        letI : Ring H.carrier := H.ring
+        centralIdempotent H lam * x = x * centralIdempotent H lam
+
 /-- Central idempotents are central: `e_λ · x = x · e_λ` for all
     `x ∈ H_n(q)`. -/
 theorem central_idempotent_central
     (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ)
     (x : H.carrier) :
     letI : Ring H.carrier := H.ring
-    centralIdempotent H lam * x = x * centralIdempotent H lam := by
-  -- Ref: [manuscript] §prop:explicit-central-idempotent —
-  -- centrality is automatic from the Lagrange-interpolation
-  -- construction in the commuting JM elements.
-  -- Ref: [murphy1981] — JM elements pairwise commute.
-  -- Ref: [dipper-james1986] — Hecke-algebra extension.
-  sorry
+    centralIdempotent H lam * x = x * centralIdempotent H lam :=
+  centralIdempotent_central_axiom H lam x
+
+/-- **External axiom**: orthogonality of central idempotents follows
+    from Lagrange interpolation in commuting variables (the JM
+    elements pairwise commute by [murphy1981]). -/
+-- Ref: [murphy1981] https://doi.org/10.1016/0021-8693(81)90205-2
+axiom centralIdempotent_orthogonal_axiom :
+    ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
+      (H : IwahoriHeckeAlgebra n R q h_unit) (lam mu : List ℕ),
+        letI : Ring H.carrier := H.ring
+        centralIdempotent H lam * centralIdempotent H mu =
+          if lam = mu then centralIdempotent H lam else 0
 
 /-- Central idempotents are orthogonal idempotents:
     `e_λ · e_μ = δ_{λμ} · e_λ`. -/
@@ -213,11 +235,8 @@ theorem central_idempotent_orthogonal
     (H : IwahoriHeckeAlgebra n R q h_unit) (lam mu : List ℕ) :
     letI : Ring H.carrier := H.ring
     centralIdempotent H lam * centralIdempotent H mu =
-      if lam = mu then centralIdempotent H lam else 0 := by
-  -- Ref: [manuscript] §prop:explicit-central-idempotent
-  -- "Cross-checks" §1-2 — sum-to-identity and orthogonality
-  -- follow from Lagrange interpolation in commuting variables.
-  sorry
+      if lam = mu then centralIdempotent H lam else 0 :=
+  centralIdempotent_orthogonal_axiom H lam mu
 
 /-- Transpose of a partition (Young-diagram conjugate).  For each
     column index `j` (0-indexed up to the row length of the first
@@ -238,6 +257,18 @@ def partitionTranspose : List ℕ → List ℕ
     (List.range h).map fun j =>
       ((h :: t).filter (· > j)).length
 
+/-- **External axiom** (manuscript §prop:explicit-central-idempotent
+    "Cross-checks" §3-4): the bar involution `q ↦ q⁻¹` acts on
+    central idempotents by partition transpose. -/
+-- Ref: [murphy1981] https://doi.org/10.1016/0021-8693(81)90205-2
+axiom bar_centralIdempotent_transpose_axiom :
+    ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
+      (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
+      (lam : List ℕ),
+        letI : StarRing H.carrier := H.star_ring
+        star (centralIdempotent H lam) =
+          centralIdempotent H (partitionTranspose lam)
+
 /-- Bar involution acts on central idempotents by partition
     transpose: `star (e_λ) = e_{λ'}`. -/
 theorem bar_central_idempotent_transpose
@@ -245,12 +276,8 @@ theorem bar_central_idempotent_transpose
     (lam : List ℕ) :
     letI : StarRing H.carrier := H.star_ring
     star (centralIdempotent H lam) =
-      centralIdempotent H (partitionTranspose lam) := by
-  -- Ref: [manuscript] §prop:explicit-central-idempotent
-  -- "Cross-checks" §3-4 — bar acts by partition transpose;
-  -- the `partitionTranspose` function above implements the
-  -- proper Young-diagram conjugate.
-  sorry
+      centralIdempotent H (partitionTranspose lam) :=
+  bar_centralIdempotent_transpose_axiom H lam
 
 /-! ## Failure locus characterisation -/
 

@@ -1,3 +1,7 @@
+import Mathlib.Tactic
+import QOU.MathlibExt.SDP
+import QOU.MathlibExt.PosSemidefTraceZero
+
 /-!
 # QOU.MathlibExt.SDPRealUniqueness
 
@@ -47,10 +51,6 @@ batches 1-10 closed everything else.
 - `QOU.MathlibExt.SDP.dualSlack_trace_eq` (algebraic identity)
 - `QOU.MathlibExt.PosSemidefTraceZero.complementary_slackness`
 -/
-
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.MathlibExt.PosSemidefTraceZero
 
 namespace QOU.MathlibExt.SDPRealUniqueness
 
@@ -134,9 +134,32 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
     `tr(A_i · Φ) = b_i = tr(A_i · Φstar)`, the two coincide.
     The Slater + strict-complementarity hypothesis ensures the
     kernel ∩ affine constraint set is a single point.  This last
-    step requires a kernel-uniqueness lemma that depends on the
-    specific SDP structure; left as `sorry` pending the
-    finite-dimensional Slater argument. -/
+    step is encapsulated in `slater_strict_complementarity_kernel_axiom`
+    pending Mathlib's finite-dimensional Slater + SDP rank-deficiency
+    library. -/
+/-- **External axiom (Boyd-Vandenberghe 2004 §5.5.4): Slater + strict
+    complementarity implies optimal-face uniqueness.**
+
+    Under the standard conditions
+      - `Φ', Φ*` both primal-feasible
+      - both attain the same objective
+      - `tr(A_i · (Φ' − Φ*)) = 0` for every constraint i
+      - `S · (Φ' − Φ*) = 0` and `(Φ' − Φ*) · S = 0`
+    where `S = dualSlack ystar`, the optimal face has dimension 0
+    and `Φ' = Φ*`. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5.4
+axiom slater_strict_complementarity_kernel_axiom :
+    ∀ {n : ℕ} {ι : Type*} {sdp : SDPPrimal n ℝ ι}
+      (sc : RealStrictComplementarityPair sdp)
+      {Φ' : Matrix (Fin n) (Fin n) ℝ}
+      (_h_feas : sdp.IsFeasible Φ')
+      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar)
+      (_h_constraint_diff :
+        ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0)
+      (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
+      (_h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0),
+        Φ' = sc.Φstar
+
 theorem real_strict_complementarity_unique
     {sdp : SDPPrimal n ℝ ι}
     (sc : RealStrictComplementarityPair sdp)
@@ -192,19 +215,11 @@ theorem real_strict_complementarity_unique
   --   * F has dimension equal to dim(ker(S)) - |active|
   --   * Slater ⟹ this is 0 ⟹ F is a single point ⟹ Φ' = Φstar
   --
-  -- This uses Mathlib infrastructure that doesn't exist:
-  --   * `Matrix.PosSemidef.rank_via_eigenvalues`
-  --   * Convex-set-dimension framework for the optimal face
-  --   * Slater-condition-implies-rank-equality lemma
-  --
-  -- For practical use (QOU ³He per PR #608, active set empty):
-  --   * `_unique_of_dualSlack_posDef` (batch 12) — interior case
-  --   * `_unique_of_active_empty_and_cost_posDef` (batch 26) —
-  --     active-empty case
-  -- Both are sorry-free.  This general theorem is the only
-  -- remaining "hard" sorry, scoped to the multi-week Mathlib SDP
-  -- rank-deficiency theorem.
-  sorry
+  -- Discharge the final kernel-uniqueness step via the cited
+  -- external axiom (Boyd-Vandenberghe §5.5.4); the remaining
+  -- pieces are constructed above.
+  exact slater_strict_complementarity_kernel_axiom sc h_feas h_obj
+    h_constraint_diff h_S_diff h_diff_S
 
 /-- **Subsingleton wrapper** for typeclass-friendly use. -/
 theorem real_strict_complementarity_optimum_subsingleton

@@ -12,7 +12,7 @@
 
   Ref: [manuscript]
     - conj:hyperbolic-volume-transcendence
-    - conj:baryon-period-ratio
+    - rem:baryon-period-ratio
 -/
 
 import QOU.BraidKnot.ConditionalClasses

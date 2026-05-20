@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Topology.Algebra.Module.Basic
+
 /-!
 # QOU.BraidKnot.ChiralityWritheRibbon — chirality factor from ribbon-twist framing
 
@@ -38,10 +42,6 @@ LaTeX label: `prop:chirality-writhe-ribbon-derivation`
 - [mathas1999] https://doi.org/10.1090/ulect/015
 - [manuscript] braids-and-knots / chirality-writhe-ribbon-derivation
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Topology.Algebra.Module.Basic
 
 namespace QOU.BraidKnot.ChiralityWritheRibbon
 
@@ -210,7 +210,7 @@ theorem chirality_writhe_ribbon
     When writhe `w = 0`, the linearisation gives `a_K = 1 + O(h²)`.
     The chirality correction is second-order, consistent with
     `a_{4_1} = 1 - h²` for the amphichiral figure-eight knot. -/
--- Ref: [manuscript] braids-and-knots / figure-eight-bw-coefficients
+-- Ref: [manuscript] braids-and-knots / six-term-mass-formula-complete
 theorem chirality_writhe_zero
     (q : ℝ) [RT : RibbonTwistEigenvalue q]
     (channels : List WedderburnChannel)

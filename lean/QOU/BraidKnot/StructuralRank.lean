@@ -1,3 +1,13 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Finset.Lattice.Fold
+import Mathlib.LinearAlgebra.Dimension.Finrank
+import Mathlib.LinearAlgebra.Dimension.DivisionRing
+import Mathlib.LinearAlgebra.Dimension.Constructions
+import Mathlib.LinearAlgebra.DFinsupp
+import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.Order.SupIndep
+import Mathlib.Algebra.DirectSum.Module
+
 /-!
 # QOU.BraidKnot.StructuralRank — Hecke panel structural rank decomposition (conditional on Mackey-filtration nesting)
 
@@ -53,16 +63,6 @@ References:
 - Mathas, A. (1999). Iwahori–Hecke and Schur algebras of the
   symmetric group.  AMS Univ. Lect. Series 15.
 -/
-
-import Mathlib.Algebra.BigOperators.Group.Finset
-import Mathlib.Data.Finset.Lattice.Fold
-import Mathlib.LinearAlgebra.Dimension.Finrank
-import Mathlib.LinearAlgebra.Dimension.DivisionRing
-import Mathlib.LinearAlgebra.Dimension.Constructions
-import Mathlib.LinearAlgebra.DFinsupp
-import Mathlib.LinearAlgebra.Span.Basic
-import Mathlib.Order.SupIndep
-import Mathlib.Algebra.DirectSum.Module
 
 namespace QOU.BraidKnot
 

@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
 import QOU.BraidKnot.ConfinementLevel
 
@@ -94,6 +94,26 @@ theorem GBResidueSpectralSum.classical_limit_descended
 theorem gb_residue_spectral_sum [s : GBResidueSpectralSum] :
     s.mass = |s.descended| + ∑ ℓ : Fin s.levelBound, s.residue ℓ :=
   s.spectral_decomposition
+
+/-- **Finiteness (cardinality form).**
+
+    The spectral sum `∑ ℓ : Fin S.levelBound, S.residue ℓ` is
+    a sum over a `Finset` of cardinality `S.levelBound`, hence
+    finite by Mathlib's standard finite-sum machinery.
+
+    Note: this is the *algebraic* finiteness — the index set
+    `Fin S.levelBound` has cardinality `S.levelBound` by
+    construction, so the sum has at most `S.levelBound`
+    non-zero terms.  The *substantive* claim of
+    `conj:gs-spectral-sum-finite` — that `S.levelBound` truly
+    equals the confinement level `ℓ(K, q_0)` of the underlying
+    braid, so that any analytic extension of `S.residue` to
+    `ℕ` vanishes above the cutoff — is the conjectural part
+    and is not formalised here; see the `.md` narrative under
+    "Why a conjecture and not a theorem". -/
+theorem spectral_sum_finite (S : GBResidueSpectralSum) :
+    (Finset.univ : Finset (Fin S.levelBound)).card = S.levelBound := by
+  simp
 
 /-! ## Constructing instances from crystal-basis data
 

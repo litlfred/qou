@@ -218,7 +218,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- **Transport equation** (per-instance form). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [kobayashi1996] https://doi.org/10.1002/9780470316559
+-- Ref: [kobayashi1963] https://doi.org/10.1002/9780470316559
 theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)

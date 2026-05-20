@@ -1,3 +1,8 @@
+import Mathlib.Data.Int.Basic
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+import QOU.BraidKnot.PSDFeasibilityProxy
+
 /-!
 # QOU.BraidKnot.HopfBindingK
 
@@ -39,11 +44,6 @@ PSD-feasible, and `[3, 3]` (length 2, evenPower) is minimum.
   identification
 - `def:hopf-link` (manuscript) — the link-theoretic Hopf def
 -/
-
-import Mathlib.Data.Int.Basic
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
-import QOU.BraidKnot.PSDFeasibilityProxy
 
 namespace QOU.BraidKnot.HopfBindingK
 

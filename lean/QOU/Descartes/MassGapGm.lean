@@ -270,7 +270,6 @@ theorem pp_alternating_eigenvalue_neg_one :
   unfold FullRepTransferMatrix.fromCrossingMatrix T_pp transferMatrix
   simp [Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
         Matrix.vecHead, Matrix.vecTail]
-  ring
 
 /-! ## §5  Connection to q-NS: mass gap ↔ NS obstruction
 

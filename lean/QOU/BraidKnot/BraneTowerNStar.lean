@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # Gap 5 closure: non-tautological brane-tower recovery predicate
 
@@ -95,10 +99,6 @@ significant contribution, so per-partition and uniform-k coincide
 trivially.
 -/
 
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
-
 namespace QOU.BraidKnot.BraneTowerNStar
 
 /-! ## Substantive recovery predicate -/
@@ -141,7 +141,7 @@ def betaDecayNStarCandidates : NStarCandidates where
     requirement.) -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"What this conjecture
 --      would buy"
--- Ref: [#637 review] copilot-pull-request-reviewer comment on
+-- See PR #637 review copilot-pull-request-reviewer comment on
 --      RecoversWithRelativeError tautology
 def RecoversWithRelativeError
     (nStar : ℕ) (phiProj B_target eps : ℝ) : Prop :=

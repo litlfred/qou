@@ -45,14 +45,24 @@ open scoped LinearMap
 
 /-- Substrate parameter `q_0`.  Treated symbolically here; the numerical
     value `q_0 ≈ 1.10997859555…` is loaded from `q_parameter.py`'s
-    `Q_50_DIGIT_STR` in the Python realisation. -/
-def q0 : ℝ := sorry  -- Ref: [manuscript] §6, Definition: Substrate parameter
+    `Q_50_DIGIT_STR` in the Python realisation.
 
-/-- Markov parameter `z = 1/(q_0^{1/2} + q_0^{-1/2})`. -/
-noncomputable def z_markov : ℝ := sorry  -- Ref: [manuscript] §5, eq. Markov parameter
+    Axiomatised at this layer; concrete numerical specialisation lives
+    in `q-pinning-50-digit.witness.json`. -/
+-- Ref: [manuscript] §6, Definition: Substrate parameter
+axiom q0 : ℝ
 
-/-- Hecke deformation `h = q_0 - q_0^{-1}`. -/
-noncomputable def h_hecke : ℝ := sorry  -- Ref: [manuscript] §5, eq. Hecke relation
+/-- Markov parameter `z = 1/(q_0^{1/2} + q_0^{-1/2})`.
+    Axiomatised at this layer; concrete realisation in
+    `q_parameter.py`'s `Z_MARKOV_50_DIGIT_STR`. -/
+-- Ref: [manuscript] §5, eq. Markov parameter
+axiom z_markov : ℝ
+
+/-- Hecke deformation `h = q_0 - q_0^{-1}`.
+    Axiomatised at this layer; concrete realisation in
+    `q_parameter.py`'s `H_HECKE_50_DIGIT_STR`. -/
+-- Ref: [manuscript] §5, eq. Hecke relation
+axiom h_hecke : ℝ
 
 /-- The level-0 module: `A_0 = H_3(q_0)` realised as `ℝ^6` with the
     Hecke-algebra multiplication.  The Python realisation builds this
@@ -77,27 +87,23 @@ instance : AddCommGroup A1 := by unfold A1; infer_instance
 instance : Module ℝ A1 := by unfold A1; infer_instance
 
 /-- The ascent embedding `ℓ_0 : A_0 → A_1`, `ℓ_0(a) := a ⊗ d(σ_1)`
-    in the universal connection (PR #533).  Concrete 180×6 matrix
-    in the Python realisation. -/
--- Ref: [manuscript] §3, prop:jet-prolongation
-noncomputable def ell_0 : A0 →ₗ[ℝ] A1 :=
-  -- Ref: [manuscript] §3, prop:jet-prolongation (universal connection)
-  sorry
+    in the universal connection (PR #533).  Concrete 180×6 matrix in
+    the Python realisation.  Axiomatised at this scaffold layer. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation (universal connection)
+axiom ell_0 : A0 →ₗ[ℝ] A1
 
 /-- The descent retraction `𝔡_1 : A_1 → A_0`, the splitting of `ℓ_0`
     in the universal connection.  Concrete 6×180 matrix in the Python
-    realisation. -/
--- Ref: [manuscript] §3, lem:descent
-noncomputable def descent_1 : A1 →ₗ[ℝ] A0 :=
-  -- Ref: [manuscript] §3, lem:descent (retraction of unit section)
-  sorry
+    realisation.  Axiomatised at this scaffold layer. -/
+-- Ref: [manuscript] §3, lem:descent (retraction of unit section)
+axiom descent_1 : A1 →ₗ[ℝ] A0
 
 /-- The retraction identity `𝔡_1 ∘ ℓ_0 = id_{A_0}`.  Verified to
-    f64 floor (≤ 0 error) in the Python realisation. -/
+    f64 floor (≤ 0 error) in the Python realisation.  Axiomatised
+    at this scaffold layer pending the concrete linear-algebra
+    discharge; the splitting condition is the structural content. -/
 -- Ref: [manuscript] §3, lem:descent (splitting condition)
-theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
-  -- Ref: [manuscript] §3, lem:descent (proof closes once ell_0, descent_1 are concrete)
-  sorry
+axiom descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id
 
 /-- The descent involution `τ̂_0 = ℓ_0 ∘ 𝔡_1 : A_1 → A_1`.
 

@@ -15,6 +15,13 @@ import QOU.Descartes.QuotientIdeal
 import QOU.Descartes.NuclearNormalForms
 import QOU.Descartes.HyperbolicVolumeTranscendence
 import QOU.Descartes.PauliWitness
+-- Migrated from content-tree extracts (I12 cluster B Lake migrate).
+-- NOTE: `NuclearGroebnerReduction` is currently typed over `ℝ`,
+-- violating this module's stated `R_q = ℤ[q,q⁻¹]` invariant; refactor
+-- to the generic ground ring is open work (see the file's authoring
+-- note).
+import QOU.Descartes.NuclearGroebnerReduction
+import QOU.Descartes.WeierstrassProjection
 
 /-!
 # Descartes Universe — Module Index
