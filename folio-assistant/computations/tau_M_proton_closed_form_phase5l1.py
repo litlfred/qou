@@ -39,36 +39,51 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import sympy as sp  # noqa: E402
-import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
+
+# h(q_0) value used to canonical-marshal the f64 atom braid word into
+# the symbolic (gen_idx, cross_type) format below.
+from q_parameter import Q as _Q_F64  # noqa: E402
+_H_F64 = float(_Q_F64 - 1 / _Q_F64)
 
 
 def proton_braid_word_symbolic():
     """H_3 proton braid as [(gen_0idx, cross_type), ...] matching
     hecke_character_symbolic.q_character_on_braid_word format.
 
-    cross_type ∈ {"sigma", "sigma_inv", "averaged"}.  Matches
-    hecke_core._PROTON_G0 / _PROTON_G1 chain construction:
+    Derived from `mass_at_3A_proper.atom_braid_word_3A(1, 0,
+    include_inter=False)` (the canonical f64 word for a single
+    proton block) by mapping each (c, d, gen_idx) entry to the
+    symbolic cross_type ∈ {"sigma", "sigma_inv", "averaged"} based
+    on the d value at q_0:
+        d ≈  0    → "sigma"      (positive σ)
+        d ≈ -h    → "sigma_inv"  (negative σ⁻¹)
+        d ≈ -h/2  → "averaged"   (u-d quark-pair averaged crossing)
 
-      gen 0 (σ_1): 4× σ + 1× averaged + 2× σ = 7 entries
-        (B_3 confinement × 3 = σ; u-u pair = σ; u-d pair = averaged;
-         gluon × 2 = σ)
-
-      gen 1 (σ_2): 3× σ⁻¹ + 1× averaged = 4 entries
-        (B_3 confinement × 3 = σ⁻¹; u-d pair = averaged)
+    This keeps the probe aligned with the canonical Markov-trace
+    pipeline; if `atom_braid_word_3A` changes, this script picks up
+    the new convention automatically (per Copilot review #849:r3271382464).
     """
+    raw = atom_braid_word_3A(1, 0, include_inter=False)
     word = []
-    # gen 0 chain (σ_1)
-    for ct in ["sigma", "sigma", "sigma", "sigma", "averaged",
-               "sigma", "sigma"]:
-        word.append((0, ct))
-    # gen 1 chain (σ_2)
-    for ct in ["sigma_inv", "sigma_inv", "sigma_inv", "averaged"]:
-        word.append((1, ct))
+    for c, d, gen_idx in raw:
+        cf, df = float(c), float(d)
+        if abs(cf - 1.0) >= 1e-10:
+            raise ValueError(f"unexpected c={cf} in proton braid")
+        if abs(df) < 1e-10:
+            ct = "sigma"
+        elif abs(df + _H_F64) < 1e-10:
+            ct = "sigma_inv"
+        elif abs(df + _H_F64 / 2) < 1e-10:
+            ct = "averaged"
+        else:
+            raise ValueError(f"unexpected d={df} in proton braid")
+        word.append((gen_idx, ct))
     return word
 
 
@@ -90,7 +105,7 @@ def chi_lambda_trivial_symbolic(braid_word, q: sp.Symbol) -> sp.Expr:
     for _gen, cross_type in braid_word:
         c, d = _cross_to_cd(cross_type, q)
         val = val * (c * q + d)
-    return sp.cancel(sp.expand(val))
+    return sp.expand(val)
 
 
 def chi_lambda_sign_symbolic(braid_word, q: sp.Symbol) -> sp.Expr:
@@ -99,7 +114,7 @@ def chi_lambda_sign_symbolic(braid_word, q: sp.Symbol) -> sp.Expr:
     for _gen, cross_type in braid_word:
         c, d = _cross_to_cd(cross_type, q)
         val = val * (-c / q + d)
-    return sp.cancel(sp.expand(val))
+    return sp.expand(val)
 
 
 def main() -> int:
@@ -120,25 +135,26 @@ def main() -> int:
     braid_word = proton_braid_word_symbolic()
     print(f"Proton braid word (H_3): {len(braid_word)} crossings")
 
-    # χ^λ for each partition
+    # χ^λ for each partition.  Lighter normalization (sp.together)
+    # used inline; final cancel only on the assembled τ_M below.
     chi_results = {}
     for lam_tuple, fn in [
         ((3,), chi_lambda_trivial_symbolic),
         ((1, 1, 1), chi_lambda_sign_symbolic),
     ]:
         t0 = time.time()
-        chi = sp.cancel(fn(braid_word, q))
+        chi = fn(braid_word, q)
         chi_results[lam_tuple] = chi
         print(f"  χ^{lam_tuple}(β_p, q) = {chi}   "
               f"[{time.time()-t0:.2f}s]")
 
-    # (2,1) via Hoefsmit (symbolic 2x2 matrix product)
+    # (2,1) via Hoefsmit (symbolic 2x2 matrix product).
+    # q_character_on_braid_word expects [(gen_idx, cross_type), ...]
+    # where cross_type ∈ {"sigma", "sigma_inv", "averaged"}.
     t0 = time.time()
-    # q_character_on_braid_word expects [(gen, (c, d)), ...]
     chi_21 = q_character_on_braid_word(
         [2, 1], braid_word, q,
     )
-    chi_21 = sp.cancel(chi_21)
     chi_results[(2, 1)] = chi_21
     print(f"  χ^(2,1)(β_p, q) ... [{time.time()-t0:.2f}s]")
     print(f"  χ^(2,1)(β_p, q) = {chi_21}")
@@ -156,9 +172,10 @@ def main() -> int:
         # to ours if names differ.
         if y_sym.free_symbols and list(y_sym.free_symbols)[0].name != "q":
             y_sym = y_sym.subs(list(y_sym.free_symbols)[0], q)
-        y_sym = sp.cancel(y_sym)
+        # Skip per-term cancel (expensive on degree-80+ expressions);
+        # final cancel on the assembled τ_M sum below is sufficient.
         y_results[lam] = y_sym
-        print(f"  y^{lam}(q) = {y_sym}   [{time.time()-t0:.2f}s]")
+        print(f"  y^{lam}(q) computed [{time.time()-t0:.2f}s]")
     print()
 
     # Sum: τ_M^3(β_p, q) = Σ y_λ · χ_λ
