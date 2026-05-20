@@ -452,3 +452,17 @@ at the **full τ_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 
 CI green on #831 (`validate` ✓). One Copilot review comment on the ledger accepted in `02b3bcf75`.
 
 Next concrete task on the queue: **5j** — promote τ_M Z-step factor = z·(2q − 1) to a content block (extension of `prop:interface-knot-markov-z` with a constit-side companion identity section).
+
+## 2026-05-20 (late) — Phase 5j: constit-factor conjecture promoted to a content block ([PR #831](https://github.com/litlfred/qou/pull/831))
+
+New block: [`conj:constit-factor-2q-minus-1`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md).
+
+States the categorical identity $\rho_Z^{\mathrm{constit}}(q_0) = (2q - 1) + O(h^4)$ for the disjoint-Hecke-product per-Z step factor at the substrate point, matching empirically to **0.033 % rel. err.** (Phase 5g, 50 dps).  Combined with [`prop:interface-knot-markov-z`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor $z$), this gives the full $\tau_M$-level per-Z step:
+
+$$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} + O(h^4) \quad\text{at }q_0.$$
+
+§3b-cond class: `ConstitFactor2qMinus1` (one class field axiomatising the leading-order identity at the substrate point).  Companion to `AlphaCoshHZStepCorrection` (single-block level, bar-symmetric, $\cosh(h)$) and `HeckeSymmetricChannelCoshH` (5e.3 operator-level placeholder).
+
+`prop:interface-knot-markov-z.md` extended with a "Constit-side companion identity" section pointing to the new conjecture.
+
+Next on queue: **5k** — higher-precision measurement of the constit factor to resolve $O(h^4)$ vs second-order-correction question.

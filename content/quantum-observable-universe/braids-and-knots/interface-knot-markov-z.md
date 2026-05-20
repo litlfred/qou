@@ -91,6 +91,28 @@ contributes a Markov-trace factor that is either $z$ or $z - h$,
 determined by the crossing sign. No empirical-fit parameter remains
 at the $\tau_M$ level.
 
+### Constit-side companion identity (Phase 5g, conjectural)
+
+The factorisation $(\star)$ isolates the **interface** contribution
+to the $\tau_M$ ratio.  The complementary **constit** factor —
+$\tau_M(\beta_K^{\mathrm{constit}})$ at varying $Z$ — admits its own
+clean categorical form at the substrate point:
+$$
+  \frac{\tau_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
+       {\tau_M\!\bigl(\beta_{(Z, N)}^{\mathrm{constit}}\bigr)}
+  \;=\; (2q - 1) \,+\, O(h^4)
+  \quad\text{at }q_0.
+$$
+This is the content of
+[`conj:constit-factor-2q-minus-1`](#conj:constit-factor-2q-minus-1)
+(Phase 5g, $0.033\%$ rel. err.).  Combining $(\star)$ with the
+constit-side conjecture yields the **full per-Z $\tau_M$ step**
+$$
+  \frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})}
+  \;=\; z \cdot (2q - 1) \,+\, O(h^4)
+  \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^4).
+$$
+
 ### Consequences
 
 1. **Atom-braid trace factorisation.** For any canonical atomic braid:
