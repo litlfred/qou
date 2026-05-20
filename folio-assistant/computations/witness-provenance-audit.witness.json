@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T00:26:17.901809+00:00",
-  "commitSha": "94f35e7c0bef41627c8c28c7a3abcff3833aedd6",
+  "computedAt": "2026-05-20T05:16:28.281677+00:00",
+  "commitSha": "584e1d8bbe3882930c79374f4b9af2b61433eefe",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -35,8 +35,8 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 690,
-      "prov_ok": 659,
+      "total_scanned": 700,
+      "prov_ok": 669,
       "prov_audit_exempt": 31,
       "prov_missing": 0,
       "prov_parse_error": 0,
@@ -313,6 +313,14 @@
           "missing_fields": []
         },
         {
+          "witness": "borromean-volume-100dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "borromean-volume-propagation-to-m-p.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "branch-phase-fit-to-mass-tower.witness.json",
           "missing_fields": []
         },
@@ -338,6 +346,10 @@
         },
         {
           "witness": "brane-tower-two-avenues-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bring-bloch-tier0-search-m-p.witness.json",
           "missing_fields": []
         },
         {
@@ -1017,6 +1029,14 @@
           "missing_fields": []
         },
         {
+          "witness": "constit-factor-and-volhyp.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "constit-factor-residual-phase5k.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "cross-check-trM-1ppb.witness.json",
           "missing_fields": []
         },
@@ -1210,6 +1230,18 @@
         },
         {
           "witness": "flavor-dressed-mass-from-substrate-split.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "fr-pullback-cosh-h.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "fr-pullback-k1-k2.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "fr-pullback-k3-test.witness.json",
           "missing_fields": []
         },
         {
@@ -1698,6 +1730,10 @@
         },
         {
           "witness": "mass-table-ppb.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "mass-tower-operator-valued.witness.json",
           "missing_fields": []
         },
         {
@@ -2642,6 +2678,10 @@
         },
         {
           "witness": "wedderburn-pair-volumes.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "wenzl-lr-convention-adapter.witness.json",
           "missing_fields": []
         },
         {
