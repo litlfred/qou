@@ -1126,7 +1126,7 @@ export const references: CSLData[] = [
   // entry; bib metadata TODO until verified.
   ref({
     id: "pawlowski-leitner-rep",
-    type: "article-journal",
+    type: "manuscript",
     title: "TODO: verify exact title — Pawlowski-Leitner inner product / SU(2) intertwiner basis",
     author: [
       { family: "Pawłowski", given: "Jan" },
@@ -2753,7 +2753,7 @@ export const references: CSLData[] = [
   // → wenzl1988b.
   ref({
     id: "wenzl1988b",
-    type: "article-journal",
+    type: "manuscript",
     title: "Wenzl 1988 — placeholder (title/venue/pages to be verified)",
     author: [{ family: "Wenzl", given: "Hans" }],
     issued: { "date-parts": [[1988]] },
@@ -4125,101 +4125,109 @@ export const references: CSLData[] = [
 
   ref({
     id: "carter-leal-saliola-2000",
-    type: "article-journal",
+    type: "article",
     title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
     author: [
       { family: "Carter", given: "R. W." },
     ],
     issued: { "date-parts": [[2000]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/0008040",
     note: "arxiv:math/0008040 — added 2026-05-19 from uploads/ gap audit. TODO: confirm authors (only Carter visible from title page; co-authors likely Leal & Saliola or similar). Potential citation target in QOU crystal-basis / Lusztig-cone content.",
   }),
 
   ref({
     id: "geck-lambropoulou-2004",
-    type: "article-journal",
+    type: "article",
     title: "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
     author: [
       { family: "Geck", given: "Meinolf" },
       { family: "Lambropoulou", given: "Sofia" },
     ],
     issued: { "date-parts": [[2004]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/0405508",
     note: "arXiv:math/0405508. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's Hecke / Markov-trace content (braids-and-knots chapters). Potential citation target alongside jones1987 (Hecke type A Markov trace).",
   }),
 
   ref({
     id: "webster-williamson-2014-markov",
-    type: "article-journal",
+    type: "article",
     title: "The geometry of Markov traces",
     author: [
       { family: "Webster", given: "Ben" },
       { family: "Williamson", given: "Geordie" },
     ],
     issued: { "date-parts": [[2014]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/0911.4494",
     note: "arXiv:0911.4494, Duke Math. J. 2014. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's Markov-trace content (jones-markov-trace.lean, markov-trace-*.lean). Potential citation target.",
   }),
 
   ref({
     id: "kuhlmann-matusinski-2012",
-    type: "article-journal",
+    type: "article",
     title: "The exponential-logarithmic equivalence classes of surreal numbers",
     author: [
       { family: "Kuhlmann", given: "Salma" },
       { family: "Matusinski", given: "Mickaël" },
     ],
     issued: { "date-parts": [[2012]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/1203.4538",
     note: "arXiv:1203.4538. Added 2026-05-19 from uploads/ gap audit. Fits QOU's Surreal Numbers appendix content (alongside berarducci2018, ehrlich2012, gonshor1986). Potential citation target.",
   }),
 
   ref({
     id: "jing-liu-2021",
-    type: "article-journal",
+    type: "article",
     title: "On irreducible characters of the Iwahori-Hecke algebra in type A",
     author: [
       { family: "Jing", given: "Naihuan" },
       { family: "Liu", given: "Ning" },
     ],
     issued: { "date-parts": [[2021]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/2104.06067",
     note: "arXiv:2104.06067. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's chi-character Hecke type-A work (chi-v3-closed-form-proof.lean, chi-per-irrep-cyclotomic-closed-forms.lean, etc.). Potential citation target.",
   }),
 
   ref({
     id: "halverson-1998-markov-weights",
-    type: "article-journal",
+    type: "article",
     title: "Weights of Markov Traces on Hecke Algebras",
     author: [
       { family: "Halverson", given: "Tom" },
     ],
     issued: { "date-parts": [[1998]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/9806163",
     note: "arXiv:math/9806163. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's Wedderburn-block weight content (y-lambda-closed-form-wenzl-bridge.md, etc.). Potential citation target.",
   }),
 
   ref({
     id: "franecki-kapranov-1999",
-    type: "article-journal",
+    type: "article",
     title: "The Gauss Map and a Noncompact Riemann-Roch Formula for Constructible Sheaves on Semiabelian Varieties",
     author: [
       { family: "Franecki", given: "J." },
       { family: "Kapranov", given: "M." },
     ],
     issued: { "date-parts": [[1999]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/9909088",
     note: "arXiv:math/9909088. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's categorical / constructible-sheaves content but no obvious citation target found in current QOU prose; mark pending-placement.",
   }),
 
   ref({
     id: "lu-1999-canonical-bundles",
-    type: "article-journal",
+    type: "article",
     title: "On the lower bound estimates of sections of the canonical bundles over a Riemann surface",
     author: [
       { family: "Lu", given: "Zhiqin" },
     ],
     issued: { "date-parts": [[1999]] },
+    "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/9911033",
     note: "arXiv:math/9911033. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (descartes-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.",
   }),
@@ -4254,6 +4262,39 @@ export const references: CSLData[] = [
     issue: "3",
     page: "325-395",
     DOI: "10.1007/s13373-014-0054-6",
+  }),
+
+  // ── Khovanov 2000 (categorification of Jones polynomial) ──────
+  // Added 2026-05-20 — cited in conj-qbeta-c-k-closed-forms.lean
+  // alongside khovanov-rozansky2008 and khovanovlauda2009.
+  ref({
+    id: "khovanov2000",
+    type: "article-journal",
+    title: "A categorification of the Jones polynomial",
+    author: [{ family: "Khovanov", given: "Mikhail" }],
+    "container-title": "Duke Mathematical Journal",
+    issued: { "date-parts": [[2000]] },
+    volume: "101",
+    issue: "3",
+    page: "359-426",
+    DOI: "10.1215/S0012-7094-00-10131-7",
+  }),
+
+  // ── Khovanov–Rozansky 2008 (matrix factorisations & link homology)
+  ref({
+    id: "khovanov-rozansky2008",
+    type: "article-journal",
+    title: "Matrix factorizations and link homology",
+    author: [
+      { family: "Khovanov", given: "Mikhail" },
+      { family: "Rozansky", given: "Lev" },
+    ],
+    "container-title": "Fundamenta Mathematicae",
+    issued: { "date-parts": [[2008]] },
+    volume: "199",
+    issue: "1",
+    page: "1-91",
+    DOI: "10.4064/fm199-1-1",
   }),
 
 ];

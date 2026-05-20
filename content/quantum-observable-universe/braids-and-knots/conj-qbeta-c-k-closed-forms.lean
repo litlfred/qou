@@ -21,9 +21,9 @@ formalises the condition under which those instance values are
 PROVED rather than FIT.
 -/
 
--- Ref: [khovanov2000] doi:10.1215/S0012-7094-00-10131-7 (Khovanov homology)
--- Ref: [khovanov-rozansky-2008] doi:10.4064/fm199-1-1 (matrix factorisations)
--- Ref: [khovanov-lauda-2009] doi:10.1090/S1088-4165-09-00346-X (KLR algebras)
+-- Ref: [khovanov2000] Khovanov, doi:10.1215/S0012-7094-00-10131-7 (Khovanov homology)
+-- Ref: [khovanov-rozansky2008] Khovanov-Rozansky, doi:10.4064/fm199-1-1 (matrix factorisations)
+-- Ref: [khovanovlauda2009] Khovanov-Lauda, doi:10.1090/S1088-4165-09-00346-X (KLR algebras)
 -- Ref: [wenzl1988] doi:10.1007/BF01404457 (Hecke Markov trace)
 -- Ref: [hoefsmit1974] (Hoefsmit seminormal forms)
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf-link Jones polynomial)
