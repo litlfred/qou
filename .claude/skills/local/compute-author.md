@@ -27,6 +27,14 @@ This is the pre-work counterpart to `local/compute-audit` (post-hoc
 script review). Both share a vocabulary; this one gates entry, that
 one gates exit.
 
+**Workflow precondition** (CLAUDE.md §Branch + PR workflow, STRICT):
+before writing the first line of compute, create a branch
+(`claude/<theme>-<utc-ymd>`) and open a PR. Commit early + commit
+often; small structured commits cherry-pick cleanly. This is a
+standing authorization for ALWAYS-PR — agents do not need to wait
+for explicit "open a PR" from the user. Exception: integration-
+watcher batch sweeps may bulk-commit.
+
 ## When to use this skill
 
 Use this skill whenever a request mentions any of:

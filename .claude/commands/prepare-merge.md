@@ -5,6 +5,14 @@ description: Full pre-merge workflow — rebase onto upstream, integrate new con
 Prepare the current branch's PR for merge. Execute the steps **in order** —
 do not request external reviews until every earlier step has succeeded.
 
+**Workflow precondition** (per CLAUDE.md §Branch + PR workflow,
+STRICT, supersedes default "no auto-PR" guidance for this repo):
+you should already be on a feature branch with a PR open. If
+you're on `main` or a stale branch with uncommitted work, STOP —
+go back and create the branch + PR first, then return here.
+Commit early + commit often; small structured commits cherry-pick
+cleanly; bulk commits are reserved for integration-watcher sweeps.
+
 ## 1. Rebase onto upstream HEAD, resolve conflicts
 
 - `git fetch origin` and identify the upstream default branch (typically `main`).
