@@ -1,12 +1,11 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-20T04:57:44.000Z",
-  "total_flagged": 6,
-  "files_flagged": 5,
+  "generated": "2026-05-20T14:32:37.535Z",
+  "total_flagged": 4,
+  "files_flagged": 4,
   "patterns": {
-    "one_def": 3,
-    "const_zero": 2,
-    "prop_true": 1
+    "one_def": 1,
+    "const_zero": 1
   },
   "flagged": {
     "braids-and-knots/braid-link-types.lean": [
@@ -14,32 +13,6 @@
         "line": 66,
         "pattern": "one_def",
         "snippet": "def Braid2.σ : Braid2 := 1"
-      }
-    ],
-    "braids-and-knots/brane-tower-z-habiro.lean": [
-      {
-        "line": 276,
-        "pattern": "prop_true",
-        "snippet": "def lpDualActiveSetIncludesPairKnotAtMagicShells : Prop := True"
-      }
-    ],
-    "braids-and-knots/lambda-scale-bring-bloch-identity.lean": [
-      {
-        "line": 67,
-        "pattern": "one_def",
-        "snippet": "def AtomKnot.volClosure (_K : AtomKnot) : ℝ := 1"
-      },
-      {
-        "line": 78,
-        "pattern": "one_def",
-        "snippet": "def AtomKnot.bringBlochRegulator (_K : AtomKnot) : ℝ := 1"
-      }
-    ],
-    "braids-and-knots/lr-tensor-character-bridge.lean": [
-      {
-        "line": 63,
-        "pattern": "const_zero",
-        "snippet": "def lrCoefficient (_ν _λ _μ : Partition) : ℕ := 0"
       }
     ],
     "lean/QOU/BraidKnot/PerNucleusMassDerivation.lean": [

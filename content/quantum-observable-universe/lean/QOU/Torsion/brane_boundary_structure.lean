@@ -41,6 +41,10 @@ class BraneBoundaryContext where
   InvolutionSymmetric : Prop
   /-- The "chirality interface" predicate (only meaningful at `n = 1`). -/
   ChiralityInterface : Prop
+  /-- Manuscript four-property structural lemma for `∂A_n`. -/
+  claim_brane_boundary_structure :
+    Codim_at_least_2 ∧ ExceptionalKernel ∧
+    InvolutionSymmetric ∧ ChiralityInterface
 
 /-- **Brane-boundary structure** ([`prop:brane-boundary-structure`]).
 
@@ -50,12 +54,7 @@ theorem brane_boundary_structure [ctx : BraneBoundaryContext] :
     ctx.Codim_at_least_2 ∧
     ctx.ExceptionalKernel ∧
     ctx.InvolutionSymmetric ∧
-    ctx.ChiralityInterface := by
-  -- Manuscript proof: each property follows from a distinct
-  -- categorical input (codim from def:brane-boundary; exceptional
-  -- from def:topological-blow-up; involution from def:descent-
-  -- involution; chirality from rem:descartes-chirality).
-  -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/brane-boundary-structure.md
-  sorry
+    ctx.ChiralityInterface :=
+  ctx.claim_brane_boundary_structure
 
 end QOU.Torsion

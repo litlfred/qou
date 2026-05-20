@@ -22,7 +22,7 @@ LaTeX label: `prop:bar-t-duality-substrate`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
 
 namespace QOU.Descartes.BarTDualitySubstrate
 
@@ -56,7 +56,9 @@ theorem bar_fixed_point_pos {q : ℝ} (hq : 0 < q) :
   · intro h
     have h1 : q * q = 1 := by
       have hne : q ≠ 0 := ne_of_gt hq
-      field_simp at h
+      -- From h : q⁻¹ = q, multiply both sides by q: q * q⁻¹ = q * q, then q*q⁻¹ = 1.
+      have : q * q⁻¹ = q * q := by rw [h]
+      rw [mul_inv_cancel₀ hne] at this
       linarith
     nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1)]
   · intro h

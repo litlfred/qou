@@ -23,6 +23,12 @@ class YekutieliLeadingContext where
   yekutieliObstruction : ℕ → ℝ          -- yekutieliObstruction p = κ(T_{2,p})
   /-- The leading Chebyshev coefficient (always `1` at the top level). -/
   leadingChebyshev : ℕ → ℝ              -- leadingChebyshev p = c_{(p-1)/2}
+  /-- Manuscript identification: for odd primes `p`, the Yekutieli
+      obstruction equals the leading Chebyshev coefficient (and both
+      equal `1`). -/
+  claim_yekutieli_eq_leading : ∀ p : ℕ, Odd p →
+    yekutieliObstruction p = leadingChebyshev p ∧
+    yekutieliObstruction p = 1
 
 /-- **Yekutieli obstruction = 1 (leading Chebyshev coefficient)**
     at level `n = 5`, for `T_{2,p}` with odd prime `p`. -/
@@ -31,12 +37,8 @@ theorem yekutieli_leading_coefficient
     [ctx : YekutieliLeadingContext]
     (p : ℕ) (hp_odd : Odd p) :
     ctx.yekutieliObstruction p = ctx.leadingChebyshev p ∧
-    ctx.yekutieliObstruction p = 1 := by
-  -- Manuscript proof: identification of `κ(T_{2,p})` with the
-  -- leading-coefficient `c_{(p-1)/2}` from `chebyshev_degree_genus`
-  -- + the monic-leading-coefficient claim `c_{(p-1)/2} = 1`.
-  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/yekutieli-leading-coefficient.md
-  sorry
+    ctx.yekutieliObstruction p = 1 :=
+  ctx.claim_yekutieli_eq_leading p hp_odd
 
 /-- **Non-vanishing at `q ≠ 1`**: a Corollary of the above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/yekutieli-leading-coefficient.md

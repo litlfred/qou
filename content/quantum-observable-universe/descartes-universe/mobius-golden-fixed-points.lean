@@ -21,7 +21,7 @@ LaTeX label: `prop:mobius-golden-fixed-points`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
 
 namespace QOU.Descartes
 

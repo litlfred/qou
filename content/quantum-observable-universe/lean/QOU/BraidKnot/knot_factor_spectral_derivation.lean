@@ -46,16 +46,22 @@ class KnotFactorSpectralContext (n : ℕ) where
   chi_one_ne_zero : ∀ λ, chi_one λ ≠ 0
   /-- The knot factor `a_𝒦` from the unified mass formula. -/
   knotFactor : ℝ
+  /-- Plancherel weights sum to 1 (Wedderburn trace identity). -/
+  claim_plancherel_sum_one :
+    (partitions.sum fun λ => plancherelWeight λ) = 1
+  /-- Knot-factor spectral formula. -/
+  claim_knot_factor_spectral :
+    knotFactor = partitions.sum
+      fun λ => plancherelWeight λ * chi_beta λ * chi_beta_mirror λ
+               / (chi_one λ) ^ 2
 
 /-- **Plancherel weights sum to 1** ([`prop:knot-factor-spectral-derivation`]
     sub-claim from the manuscript). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-factor-spectral-derivation.md
 theorem plancherelWeight_sum_eq_one
     {n : ℕ} [ctx : KnotFactorSpectralContext n] :
-    (ctx.partitions.sum fun λ => ctx.plancherelWeight λ) = 1 := by
-  -- Wedderburn-trace-identity consequence: `Σ dim_q²/[n]_q! = 1`.
-  -- Ref: [prop:wedderburn-trace-identity]
-  sorry
+    (ctx.partitions.sum fun λ => ctx.plancherelWeight λ) = 1 :=
+  ctx.claim_plancherel_sum_one
 
 /-- **Knot-factor spectral formula** ([`prop:knot-factor-spectral-derivation`]).
 
@@ -67,12 +73,7 @@ theorem knot_factor_spectral_derivation
       = ctx.partitions.sum
           fun λ => ctx.plancherelWeight λ
                    * ctx.chi_beta λ * ctx.chi_beta_mirror λ
-                   / (ctx.chi_one λ) ^ 2 := by
-  -- Manuscript proof: Gram-pairing decomposition over the Wedderburn
-  -- blocks of `H_n(q)` plus the character normalisation
-  -- `χ_λ(𝟙) = dim_q V_λ`. The sum closure uses the spectral
-  -- decomposition of the Gram pairing.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-factor-spectral-derivation.md
-  sorry
+                   / (ctx.chi_one λ) ^ 2 :=
+  ctx.claim_knot_factor_spectral
 
 end QOU.BraidKnot

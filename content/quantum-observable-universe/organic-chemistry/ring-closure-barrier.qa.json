@@ -13,56 +13,9 @@
     "lean": "1ffafe10e5df"
   },
   "criteria": {
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:05:32.956Z",
-        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
-      },
-      {
-        "field_hash": {
-          "md": "d1174875f401",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
-      }
-    ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
@@ -73,28 +26,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
@@ -105,28 +43,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:30:54.386Z",
-        "reviewed_sha": "6c73c7719a41d68cac1f79c61e87841f8b2a7b3a"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
@@ -137,28 +60,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
@@ -169,28 +77,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
@@ -201,28 +94,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
@@ -233,78 +111,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
-          "md": "d1174875f401",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-organic-chemistry-refill",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T18:58:53.780Z",
-        "reviewed_sha": "b7b008a7191c2ead31d4e5b7af9a99246d2b849f",
-        "notes": "auto-fill after early heuristic-test reset cleared fit entries; previously adjudicated as pass by one-voice-audit agent in the initial 16-block test sweep."
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
-          "ts": "141de25a8dd3",
-          "lean": "1ffafe10e5df"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
@@ -315,14 +128,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "2d704aca7975",
+          "md": "d1174875f401",
           "ts": "141de25a8dd3",
           "lean": "1ffafe10e5df"
         },
@@ -332,9 +145,11 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "framework-canonical": [
       {
         "field_hash": {
           "md": "d1174875f401",
@@ -347,10 +162,27 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "1ffafe10e5df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ]
   },
-  "updated_at": "2026-05-20T14:37:46.065Z"
+  "updated_at": "2026-05-20T15:10:05.080Z"
 }

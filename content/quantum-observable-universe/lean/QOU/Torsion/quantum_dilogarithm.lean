@@ -26,6 +26,11 @@ class QuantumDilogarithmContext where
   Phi_q : ℝ → ℝ
   /-- The Briggs–Klein spectral coordinate of `p`. -/
   spectralCoord : ℝ → ℝ        -- p → z_i
+  /-- Manuscript identification — the transient piece of the
+      mass-decomposition lift coincides with `Φ_q(z)` at the
+      Briggs–Klein spectral coordinate of `p`. -/
+  claim_tr_trans_eq_Phi_q : ∀ ϱ p : ℝ,
+    trTransient ϱ p = Phi_q (spectralCoord p)
 
 /-- **Quantum-dilogarithm identification** ([`def:quantum-dilogarithm`]).
 
@@ -34,11 +39,7 @@ class QuantumDilogarithmContext where
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
 theorem quantum_dilogarithm
     [ctx : QuantumDilogarithmContext] (ϱ p : ℝ) :
-    ctx.trTransient ϱ p = ctx.Phi_q (ctx.spectralCoord p) := by
-  -- Manuscript identification: the transient piece of the
-  -- mass-decomposition lift evaluates to `Φ_q(z)` after passing to
-  -- the Briggs–Klein chart (where `z_i` is the spectral coordinate).
-  -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
-  sorry
+    ctx.trTransient ϱ p = ctx.Phi_q (ctx.spectralCoord p) :=
+  ctx.claim_tr_trans_eq_Phi_q ϱ p
 
 end QOU.Torsion

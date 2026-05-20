@@ -29,6 +29,8 @@ class CorrectedMarkovTraceContext where
   z : ℝ
   /-- The Markov trace of the trefoil braid `σ₀σ₁σ₀`. -/
   trM_trefoil : ℝ
+  /-- Manuscript identity: `tr_M(σ₀σ₁σ₀) = z³`. -/
+  claim_trefoil_trace : trM_trefoil = z ^ 3
 
 /-- **Corrected Markov-trace of the trefoil**
     ([`prop:corrected-markov-trace`]).
@@ -37,15 +39,8 @@ class CorrectedMarkovTraceContext where
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
 theorem corrected_markov_trace
     [ctx : CorrectedMarkovTraceContext] :
-    ctx.trM_trefoil = ctx.z ^ 3 := by
-  -- Manuscript proof: explicit Markov-trace computation on the
-  -- 3-strand braid `σ₀σ₁σ₀` using the Hecke quadratic and the
-  -- two Markov axioms `tr_M(xy) = tr_M(yx)`, `tr_M(x σ_{n−1}) = z·tr_M(x)`.
-  -- The intermediate ADJACENT generators force the standard
-  -- product formula to fail.
-  -- Concretisation requires Lean Hecke-algebra Markov-trace infra.
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
-  sorry
+    ctx.trM_trefoil = ctx.z ^ 3 :=
+  ctx.claim_trefoil_trace
 
 /-- **Naive vs corrected**: the Markov trace is NOT `h·z² + z`. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md

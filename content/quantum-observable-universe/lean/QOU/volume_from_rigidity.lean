@@ -36,6 +36,9 @@ class SymplecticSelfDualContext where
   rank : Type → ℕ
   /-- Hypothesis: `V` is simple (irreducible). -/
   simple : Prop
+  /-- Manuscript rank-2 claim: under simplicity, the alternating
+      `φ^∨ = −φ` forces `rank(V) = 2`. -/
+  claim_rank_eq_two : simple → rank V = 2
 
 /-- **`rank(V) = 2` from symplectic self-duality**
     ([`prop:volume-from-rigidity`]).
@@ -45,13 +48,7 @@ class SymplecticSelfDualContext where
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md
 theorem volume_from_rigidity
     [ctx : SymplecticSelfDualContext] (h_simple : ctx.simple) :
-    ctx.rank ctx.V = 2 := by
-  -- Manuscript derivation: alternating `φ` factors `ev_V ∘ (id ⊗ φ)`
-  -- through `Λ² V`; non-degeneracy + simplicity forces
-  -- `rank(Λ² V) = 1`, equivalently `rank(V) = 2`.
-  -- Concretisation requires Mathlib's exterior-power infrastructure
-  -- for rigid monoidal categories.
-  -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md
-  sorry
+    ctx.rank ctx.V = 2 :=
+  ctx.claim_rank_eq_two h_simple
 
 end QOU

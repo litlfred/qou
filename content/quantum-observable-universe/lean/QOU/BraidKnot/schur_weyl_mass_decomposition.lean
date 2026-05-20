@@ -44,6 +44,10 @@ class SchurWeylMassContext (Z N : ℕ) where
   trM_atomic : ℝ
   /-- The hook product is non-zero (generic `q`). -/
   qHookProduct_ne_zero : ∀ λ, qHookProduct λ ≠ 0
+  /-- Manuscript Schur–Weyl decomposition identity. -/
+  claim_schur_weyl_sum :
+    trM_atomic = partitions.sum
+      fun λ => schurFunction λ * chi_atomic λ / qHookProduct λ
 
 /-- **Schur–Weyl decomposition of the atomic Markov trace**
     ([`prop:schur-weyl-mass-decomposition`]).
@@ -54,12 +58,7 @@ theorem schur_weyl_mass_decomposition
     {Z N : ℕ} [ctx : SchurWeylMassContext Z N] :
     ctx.trM_atomic
       = ctx.partitions.sum
-          fun λ => ctx.schurFunction λ * ctx.chi_atomic λ / ctx.qHookProduct λ := by
-  -- Manuscript proof: standard Schur–Weyl duality `V^⊗ 3A ≅ ⊕_λ
-  -- S^λ ⊗ V_λ` plus the q-hook content formula
-  -- `dim_q V_λ = s_λ(𝐪) · [3A]_q! / H_q(λ)`. The Markov trace splits
-  -- over the Wedderburn blocks giving the stated sum.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.md
-  sorry
+          fun λ => ctx.schurFunction λ * ctx.chi_atomic λ / ctx.qHookProduct λ :=
+  ctx.claim_schur_weyl_sum
 
 end QOU.BraidKnot

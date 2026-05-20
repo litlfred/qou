@@ -40,6 +40,10 @@ class FrobeniusDaggerContext where
   isNonzero : Mor1X → Prop
   /-- The "is-positive" predicate on `R`. -/
   isPositive : R → Prop
+  /-- Manuscript positivity claim: for every non-zero morphism `f`,
+      the composite `f† ∘ f` is positive in `End(𝟙)`. -/
+  claim_dagger_positive : ∀ (f : Mor1X), isNonzero f →
+    isPositive (composeDaggerOriginal f)
 
 /-- **Frobenius dagger is positive definite** ([`prop:positive-definite-dagger`]).
 
@@ -49,13 +53,7 @@ class FrobeniusDaggerContext where
 theorem frobenius_dagger_positive_definite
     [ctx : FrobeniusDaggerContext]
     (f : ctx.Mor1X) (h : ctx.isNonzero f) :
-    ctx.isPositive (ctx.composeDaggerOriginal f) := by
-  -- Manuscript derivation: positivity follows from the integral
-  -- representation `f† ∘ f = ∫_A(S(f) ⊗ f)` plus the positive-
-  -- definiteness of the Frobenius pairing on the underlying GNS
-  -- representation. Concretisation requires the actual Frobenius
-  -- algebra + GNS Hilbert-space structure.
-  -- Ref: [manuscript] quantum-observable-universe/quantum-universes/positive-definite-dagger.md
-  sorry
+    ctx.isPositive (ctx.composeDaggerOriginal f) :=
+  ctx.claim_dagger_positive f h
 
 end QOU

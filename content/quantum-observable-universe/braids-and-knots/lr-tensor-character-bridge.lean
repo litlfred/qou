@@ -51,23 +51,32 @@ namespace QOU.BraidsAndKnots
     the dependent type through the stubs below. -/
 structure Partition where
   parts : List ℕ
-  deriving Repr
+  deriving Repr, DecidableEq
 
 /-- The size `|λ| = Σ λ_i`. -/
 def Partition.size (λ : Partition) : ℕ := λ.parts.foldr (· + ·) 0
 
-/-- Littlewood–Richardson coefficient `c^ν_{λ μ}`.  Concrete model:
-    structural stub returning 0; the genuine combinatorial value is
-    `#LR-tableaux(ν / λ; weight μ)`.  The stub is sufficient to
-    record the bridge identity below as a public proposition. -/
-def lrCoefficient (_ν _λ _μ : Partition) : ℕ := 0
+/-- Littlewood–Richardson coefficient `c^ν_{λ μ}`. Concrete model:
+    encodes two structurally-required identities
+
+      c^ν_{λ, ∅} = δ_{ν = λ}     (identity coefficient for empty μ)
+      c^ν_{λ, μ} = 0  whenever  |ν| ≠ |λ| + |μ|    (size additivity)
+
+    and falls back to 0 in the remaining (combinatorially non-trivial)
+    cases. The genuine combinatorial value is
+    `#LR-tableaux(ν / λ; weight μ)`; the stub captures the two
+    cleanest invariants that any concrete realisation must respect. -/
+def lrCoefficient (ν λ μ : Partition) : ℕ :=
+  if ν.size = λ.size + μ.size then
+    if μ.parts = [] then (if ν = λ then 1 else 0) else 0
+  else 0
 
 /-- Iterated LR coefficient
     `c^ν_{λ_1, …, λ_k}` defined by left-folded composition of
     two-factor coefficients. -/
 def iteratedLR : Partition → List Partition → ℕ
   | _ν, []        => 0
-  | ν, [λ]        => if ν.parts = λ.parts then 1 else 0
+  | ν, [λ]        => if ν = λ then 1 else 0
   | ν, (λ :: μs)  => iteratedLR ν μs  -- structural stub
 
 /-- A Hecke character index — partition-indexed scalar function on

@@ -13,71 +13,9 @@
     "lean": "637c7df512b4"
   },
   "criteria": {
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "36f5a389f9d2",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:05:32.956Z",
-        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
-      },
-      {
-        "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T04:13:01.541Z",
-        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
-      },
-      {
-        "field_hash": {
-          "md": "8cf38288473d",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
-      }
-    ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "8cf38288473d",
           "ts": "b92dc2dca638",
           "lean": "637c7df512b4"
@@ -88,26 +26,11 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
       {
         "field_hash": {
           "md": "8cf38288473d",
@@ -120,30 +43,15 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da",
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1",
         "severity": "major",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:151: | NV-1 | 🔴 inconclusive | 🟢 closed via Higgs trace | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:152: | HIGGS-SLOT (PR #513) | 🔴 retraction recommended | 🟢 scalar slot identified | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:153: | U2 (force-carrier dichotomy) | 🟡 structural premise | 🟢 derived | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:154: | U4 (EW mass eigenstate count) | 🟡 structural premise | 🟢 derived | | quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:155: | §3.A v4 calibration scale | 🟡 wrong direction | 🟢 calibrated to N_sym |"
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:151: | NV-1 | 🔴 inconclusive | 🟢 closed via Higgs trace | | content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:152: | HIGGS-SLOT (PR #513) | 🔴 retraction recommended | 🟢 scalar slot identified | | content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:153: | U2 (force-carrier dichotomy) | 🟡 structural premise | 🟢 derived | | content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:154: | U4 (EW mass eigenstate count) | 🟡 structural premise | 🟢 derived | | content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:155: | §3.A v4 calibration scale | 🟡 wrong direction | 🟢 calibrated to N_sym |"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "8cf38288473d",
           "ts": "b92dc2dca638",
           "lean": "637c7df512b4"
@@ -154,28 +62,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "8cf38288473d",
           "ts": "b92dc2dca638",
           "lean": "637c7df512b4"
@@ -186,45 +79,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.md:155: | §3·A v4 calibration scale | 🟡 wrong direction | 🟢 calibrated to N_sym |"
-      },
-      {
-        "field_hash": {
-          "md": "de0c91a739d9",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T05:30:40.400Z",
-        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
-      },
-      {
-        "field_hash": {
           "md": "8cf38288473d",
           "ts": "b92dc2dca638",
           "lean": "637c7df512b4"
@@ -235,28 +96,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "8cf38288473d",
           "ts": "b92dc2dca638",
           "lean": "637c7df512b4"
@@ -267,110 +113,13 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
-          "md": "8cf38288473d",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "36f5a389f9d2",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-adjudicator-qou-univs-A-K",
-          "version": "claude-sonnet-4-6-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T19:09:20.394Z",
-        "reviewed_sha": "f00bb4dc98a11f79eea010947f72ff7d970b49ac",
-        "notes": "default-pass (chapter=quantum-observable-universes)"
-      },
-      {
-        "field_hash": {
-          "md": "b50e29f670ab",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-refresh-after-unicode-mechanical",
-          "version": "claude-opus-4-7-2026-05-19"
-        },
-        "reviewed_at": "2026-05-19T23:24:10.426Z",
-        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
-        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
-      },
-      {
-        "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-fit-refresh-after-voice-fix-batch",
-          "version": "claude-opus-4-7-2026-05-20"
-        },
-        "reviewed_at": "2026-05-20T00:55:34.699Z",
-        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
-        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "b75b7a42eeb4",
-          "ts": "b92dc2dca638",
-          "lean": "637c7df512b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
-      {
-        "field_hash": {
           "md": "8cf38288473d",
           "ts": "b92dc2dca638",
           "lean": "637c7df512b4"
@@ -381,14 +130,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ],
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "b75b7a42eeb4",
+          "md": "8cf38288473d",
           "ts": "b92dc2dca638",
           "lean": "637c7df512b4"
         },
@@ -398,9 +147,11 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "framework-canonical": [
       {
         "field_hash": {
           "md": "8cf38288473d",
@@ -413,10 +164,27 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T14:37:46.065Z",
-        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "8cf38288473d",
+          "ts": "b92dc2dca638",
+          "lean": "637c7df512b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T15:10:05.080Z",
+        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
     ]
   },
-  "updated_at": "2026-05-20T14:37:46.065Z"
+  "updated_at": "2026-05-20T15:10:05.080Z"
 }

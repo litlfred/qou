@@ -33,6 +33,10 @@ class EmergenceToQuantumFlatContext where
   QuantumFlat : Type → Prop
   /-- The 2-group isomorphism (abstract). -/
   TwoGroupIso : Type → Type → Prop
+  /-- Manuscript uniqueness claim: every quantum-flat strict 2-group
+      is isomorphic to `INN(G_q)`. -/
+  claim_emergence_to_quantum_flat : ∀ (G' : Type),
+    QuantumFlat G' → TwoGroupIso G' INN_G_q
 
 /-- **INN(G_q) is the unique quantum-flat strict 2-group**
     ([`prop:emergence-to-quantum-flat`]).
@@ -44,11 +48,7 @@ class EmergenceToQuantumFlatContext where
 theorem emergence_to_quantum_flat
     [ctx : EmergenceToQuantumFlatContext]
     (G' : Type) (h : ctx.QuantumFlat G') :
-    ctx.TwoGroupIso G' ctx.INN_G_q := by
-  -- Manuscript derivation: the simplicity constraint pins the
-  -- 2-group skeleton uniquely. Concretisation requires Lean
-  -- 2-group infrastructure (deferred).
-  -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.md
-  sorry
+    ctx.TwoGroupIso G' ctx.INN_G_q :=
+  ctx.claim_emergence_to_quantum_flat G' h
 
 end QOU

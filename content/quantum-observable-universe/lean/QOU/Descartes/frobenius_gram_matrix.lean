@@ -84,17 +84,13 @@ theorem frobeniusGramMatrix_zero_zero :
     Frobenius-pairing property `tr_M(a · b) = tr_M(b · a)` (Markov-
     trace cyclicity).
 
-    Discharged by `decide` on the finite `Fin 6 × Fin 6` index set;
-    each off-diagonal pair is identical by construction. -/
+    Each off-diagonal pair is identical by construction, so the
+    proof is by index-case analysis. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/frobenius-gram-matrix.md
 theorem frobeniusGramMatrix_isSymm :
     (frobeniusGramMatrix h z : Matrix (Fin 6) (Fin 6) R).IsSymm := by
-  -- `IsSymm` ↔ `Mᵀ = M`; both sides are concrete `Fin 6 × Fin 6`
-  -- matrices in normal form. `decide`/`simp` close it after unfolding
-  -- (deferred to lake-verification — manuscript symmetry is built
-  -- into the matrix definition).
-  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/frobenius-gram-matrix.md
-  sorry
+  ext i j
+  fin_cases i <;> fin_cases j <;> rfl
 
 /-- **Proposition** (statement bundle):
     The matrix is well-defined and the (0, 0) entry coincides with

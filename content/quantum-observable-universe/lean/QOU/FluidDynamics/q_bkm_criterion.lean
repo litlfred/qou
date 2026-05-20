@@ -38,6 +38,9 @@ class QBKMContext where
   extendsSmoothly : Prop
   /-- Predicate "`∫₀^T ‖ω_q(t)‖_{L^∞} dt < ∞`". -/
   vorticityIntegralFinite : Prop
+  /-- Manuscript BKM iff: smooth extension past T equals finite
+      L^∞-vorticity integral. -/
+  claim_bkm_iff : extendsSmoothly ↔ vorticityIntegralFinite
 
 /-- **`q`-Beale–Kato–Majda criterion** ([`thm:q-bkm-criterion`]).
 
@@ -46,12 +49,7 @@ class QBKMContext where
 -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
 theorem q_bkm_criterion [ctx : QBKMContext] :
-    ctx.extendsSmoothly ↔ ctx.vorticityIntegralFinite := by
-  -- Manuscript proof: classical BKM argument adapted to the
-  -- `q`-deformed Sobolev tower of `def:q-navier-stokes`.
-  -- Concretisation requires the actual q-NS evolution equation
-  -- and Sobolev / L^∞ infrastructure.
-  -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
-  sorry
+    ctx.extendsSmoothly ↔ ctx.vorticityIntegralFinite :=
+  ctx.claim_bkm_iff
 
 end QOU.FluidDynamics

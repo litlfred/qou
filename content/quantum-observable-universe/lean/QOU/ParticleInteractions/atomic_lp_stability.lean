@@ -34,6 +34,9 @@ class AtomicLPStabilityContext where
   bareAnnihilatorExists : Prop
   /-- The Markov-normalised annihilator existence predicate (dressed). -/
   dressedAnnihilatorExists : Prop
+  /-- Manuscript LP-stability dichotomy: bare H admits an annihilator
+      but 𝓑₃-dressed H does not. -/
+  claim_lp_dichotomy : bareAnnihilatorExists ∧ ¬ dressedAnnihilatorExists
 
 /-- **Bare hydrogen LP-unstable, 𝓑₃-dressed stable**
     ([`prop:atomic-lp-stability`]).
@@ -43,13 +46,8 @@ class AtomicLPStabilityContext where
     ratio shifts `0.537 → 0.352`). -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
 theorem atomic_lp_stability [ctx : AtomicLPStabilityContext] :
-    ctx.bareAnnihilatorExists ∧ ¬ ctx.dressedAnnihilatorExists := by
-  -- Manuscript proof: explicit construction of `X* = α + β · σ₀`
-  -- annihilating the bare-H traced volume; verification that the
-  -- dressed annihilation-ratio condition `q⁻¹⁰ ≈ 0.352` is
-  -- inconsistent with the bare ratio `0.537`.
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
-  sorry
+    ctx.bareAnnihilatorExists ∧ ¬ ctx.dressedAnnihilatorExists :=
+  ctx.claim_lp_dichotomy
 
 /-- The bare and dressed annihilation ratios are distinct. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md

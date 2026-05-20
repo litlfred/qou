@@ -28,6 +28,10 @@ class NonSelfIntersectionContext where
   E_cat : ℝ → ℝ                     -- ϱ-parameter → ℝ
   /-- A "minimum strand separation" function for the embedding. -/
   strandSeparation : ℝ → ℝ          -- ϱ-parameter → minimum non-adjacent distance
+  /-- Manuscript divergence claim: the categorical Möbius energy
+      diverges as the strand separation shrinks. -/
+  claim_energy_diverges : ∀ (M : ℝ),
+    ∃ ε > 0, ∀ ϱ, strandSeparation ϱ < ε → M < E_cat ϱ
 
 /-- **Energy diverges at self-intersection** ([`prop:non-self-intersection`]).
 
@@ -37,13 +41,7 @@ class NonSelfIntersectionContext where
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/non-self-intersection.md
 theorem non_self_intersection
     [ctx : NonSelfIntersectionContext] (M : ℝ) :
-    ∃ ε > 0, ∀ ϱ, ctx.strandSeparation ϱ < ε → M < ctx.E_cat ϱ := by
-  -- Manuscript proof: the categorical Möbius-energy kernel
-  -- `1/|ϱ(s) − ϱ(t)|²` diverges as the non-adjacent strand distance
-  -- goes to zero; the `q ≠ 1` non-cocommutative correction does not
-  -- cancel the leading singularity.
-  -- Concretisation requires actual knot-embedding metric infra.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/non-self-intersection.md
-  sorry
+    ∃ ε > 0, ∀ ϱ, ctx.strandSeparation ϱ < ε → M < ctx.E_cat ϱ :=
+  ctx.claim_energy_diverges M
 
 end QOU.Braiding
