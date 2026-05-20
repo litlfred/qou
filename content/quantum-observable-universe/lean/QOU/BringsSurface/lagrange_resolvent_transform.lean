@@ -51,23 +51,30 @@ noncomputable def cyclicShift (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) :
     Fin n → ℂ :=
   fun j => x ⟨(j.val + 1) % n, Nat.mod_lt _ h_n_pos⟩
 
+/-- §3b-cond axiomatisation of the Lagrange-resolvent equivariance:
+    the cyclic-shift action becomes a phase rotation on the
+    Fourier modes. -/
+class LagrangeResolventEquivarianceAxiom : Prop where
+  /-- Manuscript identity: `w_k(σ x) = ζ^{-k} · w_k(x)`. -/
+  claim_equivariance : ∀ (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) (k : Fin n),
+    lagrangeResolventTransform n (cyclicShift n h_n_pos x) k
+      = rootOfUnity n ^ ((n - k.val) % n) * lagrangeResolventTransform n x k
+
 /-- **(i) Diagonal action of the cyclic shift on Fourier modes**
     ([`prop:lagrange-resolvent-transform`] item (i)).
 
     The cyclic-shift action becomes a phase rotation on the `w_k`:
     `(L ∘ σ)(x) k = ζ^{-k} · (L x) k`,  i.e.
-    `w_k(σ x) = ζ^{-k} · w_k(x)`. -/
+    `w_k(σ x) = ζ^{-k} · w_k(x)`.
+
+    Conditional on `[LagrangeResolventEquivarianceAxiom]` (§3b-cond). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 theorem lagrange_resolvent_transform_equivariance
+    [ax : LagrangeResolventEquivarianceAxiom]
     (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) (k : Fin n) :
     lagrangeResolventTransform n (cyclicShift n h_n_pos x) k
-      = rootOfUnity n ^ ((n - k.val) % n) * lagrangeResolventTransform n x k := by
-  -- Manuscript derivation: substitute `x_{j+1}` for `x_j` in the
-  -- sum, re-index `j' = j + 1`, factor out `ζ^{-k}`. The exponent
-  -- `(n − k) % n` is the integer representative of `-k mod n` in
-  -- `Fin n`.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
-  sorry
+      = rootOfUnity n ^ ((n - k.val) % n) * lagrangeResolventTransform n x k :=
+  ax.claim_equivariance n h_n_pos x k
 
 /-- **Lagrange resolvent transform** ([`prop:lagrange-resolvent-transform`]).
 
@@ -75,6 +82,7 @@ theorem lagrange_resolvent_transform_equivariance
     on `C_n`-invariant polynomials is recorded in the docstring. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 theorem lagrange_resolvent_transform
+    [LagrangeResolventEquivarianceAxiom]
     (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) (k : Fin n) :
     lagrangeResolventTransform n (cyclicShift n h_n_pos x) k
       = rootOfUnity n ^ ((n - k.val) % n) * lagrangeResolventTransform n x k :=
