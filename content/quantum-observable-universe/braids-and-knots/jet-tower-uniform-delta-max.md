@@ -67,9 +67,9 @@ Witness output (paste-ready for the conjecture cone):
 
 ```
 Atom    n_levels  max|Δ^(n)|  geometric-ratio  uniform-bound-pass
-D       3         <empirical> <empirical>      ✓
-T       3         <empirical> <empirical>      ✓
-³He     3         <empirical> <empirical>      ✓
+D       3         <empirical> <empirical>      (yes)
+T       3         <empirical> <empirical>      (yes)
+³He     3         <empirical> <empirical>      (yes)
 ```
 
 (Concrete numerical entries are produced on each run; the

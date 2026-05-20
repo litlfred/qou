@@ -73,7 +73,7 @@ with $\mathrm{Li}_2^q$ gives non-trivial period contributions for
 hyperbolic knots whose Hoefsmit decomposition includes the
 standard rep with non-trivial coefficient.
 
-Conclusion: structural verification ✓ (no specific hyperbolic
+Conclusion: structural verification (no specific hyperbolic
 3-strand example to test directly; 4_1 in $B_3$ has $(2,1)$ in its
 decomposition but not as DOMINANT cell, hence the figure-8 row uses
 $(2, 2)$ in $H_4$ rather than $(2,1)$ in $H_3$).

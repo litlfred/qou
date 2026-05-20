@@ -52,9 +52,8 @@ and the classical point $\varepsilon = 0$ coincides with $q = 1$.
    $O(\cdot)$ statements — see
    [surreal rate calculus](#prop:surreal-rate-calculus).
 
-**Notational convention for the remainder of the paper.** Whenever a
-later block writes $q - 1$, the reader should read $\varepsilon$;
-whenever a block writes $q = 1$, the reader should read
+**Notational convention for the remainder of the paper.** Throughout,
+$q - 1$ is identified with $\varepsilon$ and $q = 1$ with
 $\varepsilon = 0$.  The two conventions are logically identical;
 the $\varepsilon$-convention is the one in which the millennium-problem
 squeeze lemmas ([surreal squeeze](#lem:surreal-squeeze)) are literal,

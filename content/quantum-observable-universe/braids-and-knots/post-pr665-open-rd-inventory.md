@@ -52,9 +52,9 @@ positive**, so the YB-required value is **impossible**.
 
 The chapter $\sigma_1$ satisfies:
 
-  - Hecke quadratic $\sigma_1^2 = (q - q^{-1})\sigma_1 + 1$  ✓ (proved)
-  - trace $= q - q^{-1}$  ✓ (proved)
-  - det $= -1$  ✓ (proved)
+  - Hecke quadratic $\sigma_1^2 = (q - q^{-1})\sigma_1 + 1$  (proved)
+  - trace $= q - q^{-1}$  (proved)
+  - det $= -1$  (proved)
 
 but is **not** part of an $H_3$ representation with
 $\sigma_0 = \mathrm{diag}(q, -q^{-1})$.

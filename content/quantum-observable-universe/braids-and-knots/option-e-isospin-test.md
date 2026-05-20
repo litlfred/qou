@@ -1,10 +1,10 @@
-**H follow-up to PR #619.**  Tests whether the **Option E**
+Tests whether the **Option E**
 Kashiwara crystal weight $c_\lambda(q)$ used by
 [`rho_k_h3a_crystal.py`](../../../folio-assistant/computations/rho_k_h3a_crystal.py)
 preserves the structural $T = {}^3\mathrm{He}$ isospin invariance
-established at PR #622
+established in
 ([Hopf-antipode invariance](#prop:spin-involution-lp-dual-invariance))
-and at PR #624
+and
 ([crystal-limit sign-flip invariance](#prop:crystal-isospin-degeneracy)).
 
 ## Setup
@@ -133,7 +133,7 @@ What this does establish: **any per-block weight used for binding-
 energy reconstruction must be symmetrised** under $S$ (e.g., taken
 as $\tfrac{1}{2}(c_\lambda + c_{\lambda^T})$, or replaced by the
 genuine Markov coefficient $y_\lambda$) before it can be paired
-with mirror-isobar invariance.  Option E as currently written in
+with mirror-isobar invariance.  The Option E implementation in
 [`rho_k_h3a_crystal.py`](../../../folio-assistant/computations/rho_k_h3a_crystal.py)
 is therefore a **non-symmetrised** scheme; if Option E predictions
 end up agreeing with mirror-isobar mass differences, the agreement

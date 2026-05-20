@@ -121,7 +121,7 @@ algebra), and is consistent with this reading.
 
 ## Status
 
-🟡 **Conjectural** under CLAUDE.md §3b. The supporting evidence is:
+**Conjectural** under CLAUDE.md §3b. The supporting evidence is:
 
 1. Numerical verification at $n \in \{2, 8, 20\}$ via the
    matrix-evaluation programme.
