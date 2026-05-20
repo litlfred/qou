@@ -153,14 +153,48 @@ async function getWorkflows(): Promise<WorkflowInfo[]> {
   return workflows;
 }
 
+// ── Lean coverage stats ─────────────────────────────────────────────────────
+
+import { computeStats } from "./lean-coverage";
+
+interface LeanCoverage {
+  provable_sorry_free: number;
+  provable_total: number;
+  provable_percent: number;
+  conjectures_total: number;
+  conjectures_class_axiomatized: number;
+  conjectures_percent: number;
+  definitions_total: number;
+  definitions_with_lean: number;
+}
+
+async function getLeanCoverage(): Promise<LeanCoverage | null> {
+  try {
+    const s = computeStats("quantum-observable-universe");
+    return {
+      provable_sorry_free: s.provable.sorry_free,
+      provable_total: s.provable.total,
+      provable_percent: s.provable.percent_sorry_free,
+      conjectures_total: s.conjectures.total,
+      conjectures_class_axiomatized: s.conjectures.class_axiomatized,
+      conjectures_percent: s.conjectures.percent_class_axiomatized,
+      definitions_total: s.definitions.total,
+      definitions_with_lean: s.definitions.with_lean_file,
+    };
+  } catch {
+    return null;
+  }
+}
+
 // ── Main ────────────────────────────────────────────────────────────────────
 
-const [papers, chapters, leanModules, simulators, workflows] = await Promise.all([
+const [papers, chapters, leanModules, simulators, workflows, leanCoverage] = await Promise.all([
   getPapers(),
   getChapters(),
   getLeanModules(),
   getSimulators(),
   getWorkflows(),
+  getLeanCoverage(),
 ]);
 
-console.log(JSON.stringify({ papers, chapters, leanModules, simulators, workflows }, null, 2));
+console.log(JSON.stringify({ papers, chapters, leanModules, simulators, workflows, leanCoverage }, null, 2));

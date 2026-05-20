@@ -36,26 +36,40 @@ The repository hosts multiple papers as a **folio**:
 | Controlled Double-Slit Electron Diffraction | `content/bach2013-double-slit/` |
 | Integration of Skewed-Poisson Structures on Non-commutative Formal Groups | `content/fred2005-formal-groups/` |
 | QOU Visualizer | `content/visualizer/` |
-| Unital Gröbner Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` |
+| Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` |
 
 ## Chapters (Quantum Observable Universe)
 
-| # | Directory | Title |
-|---|-----------|-------|
-| 0 | `introduction/` | Introduction |
-| 1 | `quantum-universes/` | Quantum Universes |
-| 2 | `quantum-observable-universes/` | Quantum Observable Universes |
-| 3 | `lifting-and-descent/` | Lifting and Descent |
-| 4 | `braids-and-knots/` | Braids and Knots |
-| 5 | `models-of-qous/` | Models of QOUs |
-| 6 | `descartes-universe/` | The Descartes Universe |
-| 7 | `observations/` | Physical Observations |
-| 8 | `algebraic-substrate/` | The Algebraic Substrate |
-| 9 | `information-theory/` | Information-Theoretic Perspectives |
-| 10 | `glossary/` | Glossary |
-| App | `appendix-knot-periodic-table/` | Knot-Periodic Table of the Elements |
-| App | `appendix-transfer-matrices/` | Transfer Matrices |
-| — | `index-of-definitions/` | Index of Definitions |
+Each chapter is also published as a standalone PDF on GitHub Pages —
+useful when you only want the relevant slice of the paper rather than
+the full document.  The **PDF** column links to the standalone build;
+the **Directory** column links to the source content objects.
+
+| # | Directory | Title | Standalone PDF |
+|---|-----------|-------|----------------|
+| 0 | `introduction/` | Introduction | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
+| 1 | `notation/` | Notation | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
+| 2 | `quantum-universes/` | Quantum Universes | [quantum-universes.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/quantum-universes.pdf) |
+| 3 | `quantum-observable-universes/` | Quantum Observable Universes | [quantum-observable-universes.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/quantum-observable-universes.pdf) |
+| 4 | `lifting-and-descent/` | Lifting and Descent | [lifting-and-descent.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/lifting-and-descent.pdf) |
+| 5 | `braids-and-knots/` | Braids and Knots | [braids-and-knots.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/braids-and-knots.pdf) |
+| 6 | `models-of-qous/` | Models of QOUs | [models-of-qous.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/models-of-qous.pdf) |
+| 7 | `descartes-universe/` | The Descartes Universe | [descartes-universe.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/descartes-universe.pdf) |
+| 8 | `particle-interactions/` | Particle Interactions and Nuclear Structure | [particle-interactions.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/particle-interactions.pdf) |
+| 9 | `observations/` | Physical Observations | [observations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/observations.pdf) |
+| 10 | `molecular-construction/` | Molecular Construction from Nucleon Braids | [molecular-construction.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/molecular-construction.pdf) |
+| 11 | `organic-chemistry/` | Organic Chemistry from Hopf Chains | [organic-chemistry.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/organic-chemistry.pdf) |
+| 12 | `fluid-dynamics/` | Fluid Dynamics of the Brane | [fluid-dynamics.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/fluid-dynamics.pdf) |
+| 13 | `information-theory/` | Information-Theoretic Perspectives | [information-theory.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/information-theory.pdf) |
+| 14 | `q-geometric-langlands/` | $q$-Geometric Langlands Correspondence | [q-geometric-langlands.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/q-geometric-langlands.pdf) |
+| 15 | `glossary/` | Glossary | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
+| App | `appendix-knot-periodic-table/` | Knot-Periodic Table of the Elements | [appendix-knot-periodic-table.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-knot-periodic-table.pdf) |
+| App | `appendix-knot-operations/` | Knot Operation Actions Dictionary | [appendix-knot-operations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-knot-operations.pdf) |
+| App | `appendix-transfer-matrices/` | Transfer Matrices | [appendix-transfer-matrices.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-transfer-matrices.pdf) |
+| App | `appendix-atomic-mass-calculations/` | Atomic Mass Calculations | [appendix-atomic-mass-calculations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-atomic-mass-calculations.pdf) |
+| App | `appendix-qvalues/` | Q-Value Predictions from $q$ | [appendix-qvalues.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-qvalues.pdf) |
+| App | `appendix-surreals/` | Surreal-number lift of QOU (appendix) | [appendix-surreals.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-surreals.pdf) |
+| — | `index-of-definitions/` | Index of Definitions | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
 
 ## Lean 4 Formalization
 
@@ -63,38 +77,150 @@ The Lean 4 formalization lives in `content/quantum-observable-universe/lean/`
 and covers the key mathematical structures, mass-parameter derivations,
 knot theory, and categorical constructions from the manuscript.
 
+### Coverage
+
+
+Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publish):
+
+| Block kind | Total | With Lean sibling | Fully formalized |
+|------------|------:|------------------:|-----------------:|
+| Provable claims (theorem/lemma/proposition/corollary) | 567 | 567 | **385 sorry-free (67.9%)** |
+| Conjectures (open) | 132 | 132 | **121 class-axiomatised (91.7%)** |
+| Definitions | 214 | 214 | — |
+
+Class-axiomatised conjectures follow the conditional-class convention
+(CLAUDE.md §3b): the conjecture is encoded as a Lean `class` with
+explicit field axioms, and downstream theorems carry the class as an
+`[Instance]` hypothesis — so dependent results are fully verified
+by Lean modulo a single, named, axiomatised input.
+
 ### Modules
 
 | Module | Source |
 |--------|--------|
+| `QOU.AlgebraicSubstrate` | `AlgebraicSubstrate.lean` |
+| `QOU.AppendixSurreals` | `AppendixSurreals.lean` |
 | `QOU.ArchimedeanMassFormula` | `ArchimedeanMassFormula.lean` |
+| `QOU.AtomicMass` | `AtomicMass.lean` |
 | `QOU.Basic` | `Basic.lean` |
+| `QOU.BraidKnot` | `BraidKnot.lean` |
+| `QOU.BraidTwistFlip` | `BraidTwistFlip.lean` |
 | `QOU.BringsSurface` | `BringsSurface.lean` |
 | `QOU.Calculations` | `Calculations.lean` |
+| `QOU.CategoricalDqSquared` | `CategoricalDqSquared.lean` |
+| `QOU.CategoricalMassMarkov` | `CategoricalMassMarkov.lean` |
+| `QOU.ChannelSeparation` | `ChannelSeparation.lean` |
+| `QOU.ClassicalLimitObstruction` | `ClassicalLimitObstruction.lean` |
+| `QOU.CMBFunctor` | `CMBFunctor.lean` |
 | `QOU.CODATAChain` | `CODATAChain.lean` |
+| `QOU.ColorTubeFibers` | `ColorTubeFibers.lean` |
+| `QOU.ComputationalHorizon` | `ComputationalHorizon.lean` |
 | `QOU.Descartes` | `Descartes.lean` |
 | `QOU.DescartesUniverse` | `DescartesUniverse.lean` |
+| `QOU.dq_squared` | `dq_squared.lean` |
 | `QOU.Elaboration` | `Elaboration.lean` |
+| `QOU.emergence_to_quantum_flat` | `emergence_to_quantum_flat.lean` |
+| `QOU.Encounter` | `Encounter.lean` |
+| `QOU.FeynmanPathIntegrals` | `FeynmanPathIntegrals.lean` |
+| `QOU.FlavorDressing` | `FlavorDressing.lean` |
+| `QOU.frobenius_dagger_positive_definite` | `frobenius_dagger_positive_definite.lean` |
+| `QOU.frobenius_relation` | `frobenius_relation.lean` |
 | `QOU.GaugeFieldFluidDynamics` | `GaugeFieldFluidDynamics.lean` |
 | `QOU.Glossary` | `Glossary.lean` |
+| `QOU.GradedFrobeniusHopf` | `GradedFrobeniusHopf.lean` |
 | `QOU.GroundRingAnnotations` | `GroundRingAnnotations.lean` |
 | `QOU.HadronicMass` | `HadronicMass.lean` |
+| `QOU.Hecke` | `Hecke.lean` |
+| `QOU.HeckeAlgebra` | `HeckeAlgebra.lean` |
+| `QOU.HorizonFunctor` | `HorizonFunctor.lean` |
 | `QOU.InformationTheory` | `InformationTheory.lean` |
+| `QOU.Infra` | `Infra.lean` |
+| `QOU.Intent` | `Intent.lean` |
+| `QOU.Interactions` | `Interactions.lean` |
+| `QOU.JetHorizon` | `JetHorizon.lean` |
+| `QOU.Kashaev` | `Kashaev.lean` |
+| `QOU.KnotComplement` | `KnotComplement.lean` |
 | `QOU.KnotRegistry` | `KnotRegistry.lean` |
 | `QOU.KnotTheory` | `KnotTheory.lean` |
+| `QOU.LiftingDescent` | `LiftingDescent.lean` |
 | `QOU.LightningPath` | `LightningPath.lean` |
+| `QOU.MassComputationChainRoadmap` | `MassComputationChainRoadmap.lean` |
 | `QOU.MassDerivation` | `MassDerivation.lean` |
+| `QOU.MassEndomorphism` | `MassEndomorphism.lean` |
 | `QOU.MathConstants` | `MathConstants.lean` |
+| `QOU.MathlibExt` | `MathlibExt.lean` |
 | `QOU.MobiusEnergy` | `MobiusEnergy.lean` |
+| `QOU.MotivesArchimedean` | `MotivesArchimedean.lean` |
+| `QOU.ObservableSubcategory` | `ObservableSubcategory.lean` |
+| `QOU.orbital_fourier_decomposition` | `orbital_fourier_decomposition.lean` |
 | `QOU.PAdicQuantumGroups` | `PAdicQuantumGroups.lean` |
 | `QOU.PathIntegrals` | `PathIntegrals.lean` |
+| `QOU.PhiQJSJ` | `PhiQJSJ.lean` |
+| `QOU.PhiQPiece` | `PhiQPiece.lean` |
 | `QOU.PhotonThreading` | `PhotonThreading.lean` |
+| `QOU.q_gl_obstruction_calc` | `q_gl_obstruction_calc.lean` |
+| `QOU.QBirchSwinnertonDyer` | `QBirchSwinnertonDyer.lean` |
+| `QOU.QCollatz` | `QCollatz.lean` |
+| `QOU.QGeometricLanglands` | `QGeometricLanglands.lean` |
+| `QOU.qou_canonical_action` | `qou_canonical_action.lean` |
+| `QOU.QuantumBloch` | `QuantumBloch.lean` |
 | `QOU.QuantumObservableUniverse` | `QuantumObservableUniverse.lean` |
+| `QOU.QuaternionicSpectralResolvents` | `QuaternionicSpectralResolvents.lean` |
 | `QOU.RepresentationTheory` | `RepresentationTheory.lean` |
+| `QOU.SkeinResolutionObstruction` | `SkeinResolutionObstruction.lean` |
+| `QOU.StaircaseCornerHook` | `StaircaseCornerHook.lean` |
+| `QOU.su2_emergence_dagger_unitarity` | `su2_emergence_dagger_unitarity.lean` |
+| `QOU.su2_emergence_volume_determinant` | `su2_emergence_volume_determinant.lean` |
+| `QOU.Su2Generators` | `Su2Generators.lean` |
+| `QOU.substrate_radial_coordinate` | `substrate_radial_coordinate.lean` |
 | `QOU.Torsion` | `Torsion.lean` |
-| `QOU.Descartes.*` | `6 files` |
-| `QOU.QuantumObservableUniverse.*` | `9 files` |
-| `QOU.Torsion.*` | `6 files` |
+| `QOU.variational_equations` | `variational_equations.lean` |
+| `QOU.volume_from_rigidity` | `volume_from_rigidity.lean` |
+| `QOU.AlgebraicSubstrate.*` | `19 files` |
+| `QOU.AppendixSurreals.*` | `33 files` |
+| `QOU.AtomicMass.*` | `1 files` |
+| `QOU.BaryonWeight.*` | `1 files` |
+| `QOU.Braiding.*` | `10 files` |
+| `QOU.BraidKnot.*` | `121 files` |
+| `QOU.BraidsAndKnots.*` | `8 files` |
+| `QOU.BraidsKnots.*` | `4 files` |
+| `QOU.Brings.*` | `2 files` |
+| `QOU.BringsSurface.*` | `1 files` |
+| `QOU.CategoricalReeb.*` | `1 files` |
+| `QOU.Common.*` | `1 files` |
+| `QOU.CommutativeQOU.*` | `1 files` |
+| `QOU.Descartes.*` | `64 files` |
+| `QOU.DescartesUniverse.*` | `4 files` |
+| `QOU.Descent.*` | `1 files` |
+| `QOU.Encounter.*` | `1 files` |
+| `QOU.Experimental.*` | `2 files` |
+| `QOU.FeynmanPathIntegrals.*` | `1 files` |
+| `QOU.FlavorDressing.*` | `3 files` |
+| `QOU.FluidDynamics.*` | `19 files` |
+| `QOU.FrobeniusHopfData.*` | `1 files` |
+| `QOU.HadronicMass.*` | `3 files` |
+| `QOU.Hecke.*` | `9 files` |
+| `QOU.HeckeAlgebra.*` | `8 files` |
+| `QOU.HyperellipticQuintic.*` | `1 files` |
+| `QOU.Information.*` | `6 files` |
+| `QOU.Infra.*` | `4 files` |
+| `QOU.Interactions.*` | `27 files` |
+| `QOU.LiftingDescent.*` | `17 files` |
+| `QOU.MagicShell.*` | `1 files` |
+| `QOU.MassEndomorphism.*` | `4 files` |
+| `QOU.Mathlib.*` | `10 files` |
+| `QOU.MathlibExt.*` | `12 files` |
+| `QOU.Molecular.*` | `7 files` |
+| `QOU.Observations.*` | `10 files` |
+| `QOU.ParticleInteractions.*` | `21 files` |
+| `QOU.QGeometricLanglands.*` | `4 files` |
+| `QOU.QuantumBloch.*` | `2 files` |
+| `QOU.QuantumObservableUniverse.*` | `16 files` |
+| `QOU.QuantumObservableUniverses.*` | `2 files` |
+| `QOU.StaircaseCornerHook.*` | `1 files` |
+| `QOU.TopologicalMass.*` | `3 files` |
+| `QOU.Torsion.*` | `20 files` |
+| `QOU.WedderburnMass.*` | `4 files` |
 
 ### Knot Registry
 
@@ -127,10 +253,13 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 
 | Simulator | File |
 |-----------|------|
+| Beta Decay Braid | `simulators/beta_decay_braid.html` |
+| Beta Decay Halflife | `simulators/beta_decay_halflife.html` |
 | Brings Surface | `simulators/brings_surface.html` |
 | Double Slit Simulator | `simulators/double_slit_simulator.html` |
 | Knot Atom Diagrams | `simulators/knot_atom_diagrams.html` |
 | Knot Periodic Table | `simulators/knot_periodic_table.html` |
+| Knot Periodic Table Classic | `simulators/knot_periodic_table_classic.html` |
 | Q Double Slit | `simulators/q_double_slit.html` |
 | Quantum Brings Surface | `simulators/quantum_brings_surface.html` |
 | Valley Stability | `simulators/valley_stability.html` |
@@ -189,9 +318,12 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | `lean-build.yml` | Lean build and proof status updates |
 | `lean_ci.yml` | Lean build, proof status, axiom report, doc generation |
 | `publish.yml` | Full paper build — PDF, HTML, viewer, schema docs, deploy to gh-pages |
+| `pyhecke-native-wheels.yml` | pyhecke-native wheels |
+| `pyhecke.yml` | pyhecke |
 | `release-folio-assistant.yml` | Release Folio Assistant package |
 | `snappea_wasm.yml` | SnapPea WASM build and test |
 | `sync-skills.yml` | Sync external skill packages |
+| `witness-pipeline.yml` | Witness pipeline |
 
 ## Building
 
