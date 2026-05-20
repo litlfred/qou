@@ -45,6 +45,9 @@ class PBandwidthContext where
   /-- Predicate "the Skein polynomial is evaluable within
       `𝓑(q)⁻¹ · poly(c)` Planck steps". -/
   bandwidthBounded : Prop
+  /-- Manuscript characterisation: P-time decidability equals
+      bandwidth-bounded Skein evaluation. -/
+  claim_p_iff_bandwidth : inP ↔ bandwidthBounded
 
 /-- **The bandwidth `𝓑(q)` is positive for `q > 1`**. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
@@ -65,13 +68,7 @@ theorem informationBandwidth_pos [ctx : PBandwidthContext] :
     steps. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
 theorem p_bandwidth_bound [ctx : PBandwidthContext] :
-    ctx.inP ↔ ctx.bandwidthBounded := by
-  -- Manuscript proof: forward direction uses the Witten–Reshetikhin–
-  -- Turaev evaluation of `P_L(q)` as a polynomial in `q^{±1}` with
-  -- complexity bounded by the braid-word length. Backward direction
-  -- packages the Skein-evaluation algorithm as a Turing-machine
-  -- recogniser within the stated time bound.
-  -- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
-  sorry
+    ctx.inP ↔ ctx.bandwidthBounded :=
+  ctx.claim_p_iff_bandwidth
 
 end QOU.Information

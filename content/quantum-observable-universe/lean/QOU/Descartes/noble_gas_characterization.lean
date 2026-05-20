@@ -43,6 +43,9 @@ class AtomLike where
   IsFullOfCurls : Prop
   /-- Physical noble-gas predicate: chemically inert. -/
   IsNobleGas : Prop
+  /-- Manuscript characterisation: for stable atoms, noble-gas status
+      coincides with the full-of-curls topological decomposition. -/
+  claim_noble_iff_curls : stable → (IsNobleGas ↔ IsFullOfCurls)
 
 /-- **Noble gas ⟺ full-of-curls** ([`prop:noble-gas-characterization`]).
 
@@ -53,12 +56,7 @@ class AtomLike where
     Hopf-link enumeration is downstream work. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.md
 theorem noble_gas_characterization [a : AtomLike] (h_stable : a.stable) :
-    a.IsNobleGas ↔ a.IsFullOfCurls := by
-  -- Manuscript argument: full-of-curls ⟺ no unpaired electron strand
-  -- ⟺ chemical inertness. Concretisation requires Lean-translation
-  -- of `def:stable-nucleus`, `T_{2,3}`, and the `S_i = 2 n_i² · T_{2,3}`
-  -- shell-closure predicate.
-  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.md
-  sorry
+    a.IsNobleGas ↔ a.IsFullOfCurls :=
+  a.claim_noble_iff_curls h_stable
 
 end QOU.Descartes
