@@ -79,11 +79,14 @@ def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
         else:
             word_m.append((1, gen + 1))           # fallback
     n = 3 * (Z + N)
-    q_f = float(q_val)
+    # Pass q as a string to avoid f64 quantization; use mpfr_50dps
+    # precision for chi_lambda_braid to match y_λ's 50-dps pin.
+    q_str = mp.nstr(q_val, dps, strip_zeros=False)
     total = mp.mpf(0)
     for lam in partitions_of(n):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word_m, q_value=q_f)
+        chi = chi_lambda_braid(lam, word_m, q_value=q_str,
+                                precision="mpfr_50dps")
         total += y * mp.mpf(str(chi))
     return total
 

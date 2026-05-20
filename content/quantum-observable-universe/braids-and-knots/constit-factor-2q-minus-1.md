@@ -219,12 +219,11 @@ $(2q - 1)$ alone).
    categorical structure of $\rho_Z^{\mathrm{constit}}(q)$.  The
    measured ratio grows from $\rho(1.05) = 0.79$ to $\rho(1.17) = 1.79$
    — a factor of $2.26\times$ across only $0.12$ in $q$, much steeper
-   than $(2q-1)$.  Possibilities: $\rho$ is a non-polynomial
-   combination of $\tau_M^3(\beta_p)$, $\tau_M^3(\beta_n)$, and
-   rank-jump $z$-factors; a Markov-trace identity yielding
-   $\rho = \tau_M^3(\beta_p) \cdot$ (something) may apply.  Phase 5l
-   (queued): structural derivation from the disjoint-product Markov
-   trace formula.
+   than $(2q-1)$.  **Phase 5l RESOLVED this**: the actual closed form
+   is $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\beta_p, q)$ — exact,
+   not "non-polynomial combination plus z-factors".  See
+   [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity)
+   for the Wenzl-derivation and machine-precision verification.
 
 3. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
    The form $2q - 1$ matches $\sigma + \sigma^{-1}$ acting on the

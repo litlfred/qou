@@ -35,16 +35,16 @@ namespace QOU.BraidKnot
     disjoint-multiplicativity axiom that
       `τ_M(α ⊗ β) = τ_M(α) · τ_M(β)`
     for α, β on disjoint strand sets (Wenzl 1988 §1.7). -/
-class MarkovTraceDisjoint where
+class MarkovTraceDisjoint (R : Type*) [Field R] where
   /-- The Markov-trace value for the canonical proton block in H_3. -/
-  tau_M_proton : ℝ
+  tau_M_proton : R
   /-- The Markov-trace value for the canonical neutron block in H_3. -/
-  tau_M_neutron : ℝ
+  tau_M_neutron : R
   /-- The Markov-trace value of the constit (= disjoint product)
       braid for atom (Z, N).  The class axiom encodes Wenzl's
       disjoint multiplicativity:
         τ_M(β_constit_{Z,N}) = τ_M(β_p)^Z · τ_M(β_n)^N. -/
-  tau_M_constit : ℕ → ℕ → ℝ
+  tau_M_constit : ℕ → ℕ → R
   /-- Wenzl's disjoint multiplicativity, specialised to the
       per-nucleon factorisation. -/
   tau_M_constit_disjoint :
@@ -54,11 +54,13 @@ class MarkovTraceDisjoint where
 /-- **Theorem (conditional on Wenzl's disjoint multiplicativity).**
 
     The constit-side per-Z step factor in the canonical-atom Markov
-    trace equals τ_M(β_p), the proton's H_3 Markov trace. -/
+    trace equals τ_M(β_p), the proton's H_3 Markov trace.  Stated
+    over a generic field `R` per CLAUDE.md §7c (the statement is
+    purely algebraic; no archimedean structure needed). -/
 -- Ref: [manuscript] prop:constit-factor-tau-M-proton-identity
 -- Ref: [wenzl1988] §1.7 disjoint Markov trace multiplicativity
 theorem constit_factor_eq_tau_M_proton
-    [inst : MarkovTraceDisjoint]
+    {R : Type*} [Field R] [inst : MarkovTraceDisjoint R]
     (Z N : ℕ) (hZ : inst.tau_M_proton ≠ 0) (hN : inst.tau_M_neutron ≠ 0) :
     inst.tau_M_constit (Z + 1) N / inst.tau_M_constit Z N
       = inst.tau_M_proton := by
@@ -81,9 +83,9 @@ theorem constit_factor_eq_tau_M_proton
 
       τ_M(β_K^{Z+1, N}) / τ_M(β_K^{Z, N}) = z · τ_M(β_p)
 
-    — no residuals. -/
-noncomputable def full_tau_M_Z_step_exact
-    (z : ℝ) (tau_M_proton : ℝ) : ℝ :=
+    — no residuals.  Generic over any commutative ring. -/
+def full_tau_M_Z_step_exact {R : Type*} [CommRing R]
+    (z : R) (tau_M_proton : R) : R :=
   z * tau_M_proton
 
 end QOU.BraidKnot

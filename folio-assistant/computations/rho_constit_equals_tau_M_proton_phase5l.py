@@ -34,14 +34,17 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from hecke_core import _PROTON_G0, _PROTON_G1  # noqa: E402
 
 # Same q sweep as Phase 5k.2 for direct comparison.
-Q_VALUES = ["1.05", "1.08", "1.10998", "1.13", "1.17"]
+# Same q sweep as Phase 5k.2 for direct comparison.  q_0 uses the
+# canonical 50-digit pin from q_parameter to avoid f64 quantization
+# and keep witnesses comparable across the codebase.
+Q_VALUES = ["1.05", "1.08", Q_50_DIGIT_STR, "1.13", "1.17"]
 
 
 def marshal_intra(chain_g0, chain_g1, h_val: float):
