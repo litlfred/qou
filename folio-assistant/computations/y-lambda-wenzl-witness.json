@@ -453968,5 +453968,5 @@
   },
   "description": "Wenzl-bridge closed-form y_\u03bb for the generic Markov trace. Uses fractional principal Schur specialisation s_{\u03bb, X}(Q) with Q = q\u00b2 and X = qz/(1 - Q + qz).  Numerical at arbitrary precision (default 100 dps); symbolic in q via sympy.",
   "formula": "y_\u03bb = s_{\u03bb, X}(Q) / \u03a3_\u03bc d_\u03bc s_{\u03bc, X}(Q)  where s_{\u03bb, X}(Q) = Q^{n(\u03bb)} \u220f_x (1-X\u00b7Q^c)/(1-Q^h), Q=q\u00b2, X = q\u00b7z/(1-Q+q\u00b7z).",
-  "computedAt": "2026-05-18T03:20:54.076610+00:00"
+  "computedAt": "2026-05-19T16:11:42.896024+00:00"
 }

@@ -175,8 +175,6 @@ def main() -> int:
         ],
         "lean_axiom": "qou:QOU.BraidKnot.HabiroCompletion.tail_in_ideal",
         "input_witness": INPUT_WITNESS.name,
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "engine": "sympy.div over ZZ[u]",
         "overall_pass": overall_pass,
         "results": per_atom_results,
         "scriptFile": "habiro_witness_validator.py",
@@ -190,9 +188,19 @@ def main() -> int:
     # the witness JSON itself (which is bit-checked by CI drift
     # detection in .github/workflows/witness-pipeline.yml).
 
-    with OUTPUT_WITNESS.open("w") as f:
-        json.dump(output, f, indent=2)
-        f.write("\n")
+    # Migrated to WitnessBuilder.wrap_legacy per repo-wide provenance
+    # convention (Copilot review on PR #819): preserves the legacy
+    # payload keys verbatim while emitting `scriptFile`, `scriptHash`,
+    # `scriptCommitSha`, `commitSha`, `computedAt`, `durationMs`,
+    # `engineVersion` for run_pipeline.py's staleness detection (P30).
+    from witness_base import WitnessBuilder
+    builder = WitnessBuilder.wrap_legacy(
+        name="habiro-tail-in-ideal-validation",
+        payload=output,
+        script_path=__file__,
+        engine="sympy.div over ZZ[u]",
+    )
+    builder.save()
 
     # Console summary
     status = "PASS" if overall_pass else "FAIL"

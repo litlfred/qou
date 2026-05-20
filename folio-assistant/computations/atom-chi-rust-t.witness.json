@@ -1,0 +1,669 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T15:38:55.242558+00:00",
+  "commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+  "assertions": [
+    {
+      "name": "rust_kernel_loaded",
+      "computed": 30.0,
+      "expected": 30,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "partition count",
+      "source": "pyhecke_native.partitions_of(3A)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "atom-chi-rust-t",
+  "scriptFile": "compute_atom_chi_rust.py",
+  "scriptHash": "e51dee18cd20",
+  "scriptCommitSha": "unknown",
+  "description": "Full H_9 chi^λ(β_K) via Rust geck_pfeiffer + Hoefsmit seminormal kernel (cherry-picked from PR #761). Both atom (include_inter=True) and free (include_inter=False) configs for T (Z=1, N=2). f64 precision; for MPFR upgrade extend pyhecke_native.chi_q_atomic to chi_q_atomic_mpfr.",
+  "data": {
+    "atom": {
+      "n_strands": 9,
+      "n_partitions": 30,
+      "by_partition": [
+        {
+          "partition": [
+            9
+          ],
+          "dim": -1,
+          "chi_lambda": 1.5768015283810732
+        },
+        {
+          "partition": [
+            8,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 3.7402811795852773
+        },
+        {
+          "partition": [
+            7,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 3.1900195401578064
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.5793963030209981
+        },
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "dim": -1,
+          "chi_lambda": 10.167419521655633
+        },
+        {
+          "partition": [
+            6,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -6.34025567691464
+        },
+        {
+          "partition": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -1.0292774959533015
+        },
+        {
+          "partition": [
+            5,
+            4
+          ],
+          "dim": -1,
+          "chi_lambda": 4.42403846046479
+        },
+        {
+          "partition": [
+            5,
+            3,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 2.0741886151315905
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": -9.370718720007405
+        },
+        {
+          "partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -5.974292298351356
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 6.044697902429192
+        },
+        {
+          "partition": [
+            4,
+            4,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -2.607834385525164
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 7.02746384078861
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -3.744114651717302
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -2.170320133896986
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 3.759003484438892
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.311022660810805
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "dim": -1,
+          "chi_lambda": 9.451258089817204
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -2.217620596519401
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 3.3704109254459524
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 2.8661386620115232
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 3.381637510406574
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -1.0496122181378063
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -2.245440636943944
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 8.64984422999695
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -5.113738075027499
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -1.8834918906730067
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 2.6619148276336446
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.6843215231761931
+        }
+      ],
+      "compute_time_sec": 0.020421504974365234,
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "include_inter": true,
+      "q_0_f64": 1.1099785955541805,
+      "engine": "pyhecke_native.chi_q_atomic (Rust, f64)"
+    },
+    "free": {
+      "n_strands": 9,
+      "n_partitions": 30,
+      "by_partition": [
+        {
+          "partition": [
+            9
+          ],
+          "dim": -1,
+          "chi_lambda": 1.7407316832785678
+        },
+        {
+          "partition": [
+            8,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 11.034785575843266
+        },
+        {
+          "partition": [
+            7,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 31.22871695005383
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 23.99073690889584
+        },
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "dim": -1,
+          "chi_lambda": 49.0990531809207
+        },
+        {
+          "partition": [
+            6,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 73.19736123289945
+        },
+        {
+          "partition": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 16.269932534648945
+        },
+        {
+          "partition": [
+            5,
+            4
+          ],
+          "dim": -1,
+          "chi_lambda": 39.94743939866012
+        },
+        {
+          "partition": [
+            5,
+            3,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 99.01764250482142
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 65.48441437983618
+        },
+        {
+          "partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 48.25106809477516
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -9.078403328107612
+        },
+        {
+          "partition": [
+            4,
+            4,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 48.070286497539264
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 81.53686161627546
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 49.49378129824512
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 58.55861968154579
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -8.77922987490196
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -11.943456358886378
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "dim": -1,
+          "chi_lambda": 14.747650229086872
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 35.78723298693283
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -6.728214731419426
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "dim": -1,
+          "chi_lambda": 25.96430721046935
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 8.759336785941967
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -14.707035891751183
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 1.8847576218259485
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 9.073340243686593
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -5.121976800928481
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -1.9992907991485218
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": 2.5633842233366946
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "dim": -1,
+          "chi_lambda": -0.6131769109502389
+        }
+      ],
+      "compute_time_sec": 0.018804311752319336,
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "include_inter": false,
+      "q_0_f64": 1.1099785955541805,
+      "engine": "pyhecke_native.chi_q_atomic (Rust, f64)"
+    },
+    "canonical_status": "canonical-with-empirical-assignment"
+  }
+}

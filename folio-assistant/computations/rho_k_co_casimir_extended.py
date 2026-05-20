@@ -75,13 +75,18 @@ Q_MP = mp.mpf(Q_50_DIGIT_STR)
 
 
 def _chi_worker(args):
-    """Pool worker: chi_numeric for one partition. Re-imports inside
-    the worker subprocess so the global mpmath dps is set correctly
-    before any computation."""
+    """Pool worker: chi_numpy for one partition (10-50× faster than
+    chi_numeric, validated against mpmath at 1e-14 relative tolerance
+    per docs/audits/2026-05-19-cocasimir-compute-bottleneck.md).
+    Falls back to chi_numeric if numpy import unavailable."""
     lam, crossings, q_str, dps = args
     mp.mp.dps = dps
-    from rho_k_h3a_refinement import chi_numeric as _chi  # noqa: E402
-    return _chi(lam, crossings, mp.mpf(q_str))
+    try:
+        from hoefsmit_numpy import chi_numpy as _chi  # noqa: E402
+        return _chi(lam, crossings, float(mp.mpf(q_str)))
+    except ImportError:
+        from rho_k_h3a_refinement import chi_numeric as _chi  # noqa: E402
+        return _chi(lam, crossings, mp.mpf(q_str))
 
 
 # ── Helpers ──────────────────────────────────────────────────────
@@ -115,22 +120,67 @@ def evaluate_at_q0(expr) -> mp.mpf:
     return mp.mpf(str(val.evalf(60)))
 
 
-def load_y_lambda_for_n(n: int) -> dict[tuple[int, ...], sp.Expr]:
-    """Load symbolic y_λ for the given n from the Wenzl bridge witness."""
-    path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
-    d = json.loads(path.read_text())
-    block = d["tables_by_n"][str(n)]
-    out: dict[tuple[int, ...], sp.Expr] = {}
+_Y_LAMBDA_CACHE: dict[int, dict] = {}
+
+
+def load_y_lambda_for_n(n: int):
+    """Load y_λ for the given n. Returns dict[partition_tuple, value].
+
+    Prefer the SYMBOLIC witness (`y-lambda-wenzl-bridge-symbolic-
+    witness.json`) covering n=2..12 — full sympy expressions in q
+    (value type: sp.Expr).
+    Fall back to the NUMERIC witness (`y-lambda-wenzl-witness.json`)
+    covering n=2..30 — y_λ pre-evaluated at q_0 (value type: mp.mpf).
+
+    Cached per-n at module scope (Copilot review #1 on PR #822):
+    multi-atom runs no longer re-parse the (large) witness JSON
+    per atom — once per `n`, then dict lookup.
+
+    Per repo-owner directive 2026-05-19 "all nucleotides": the numeric
+    fallback extends co-Casimir coverage from n=12 (only ⁴He) to
+    n=30 (covers ⁵Li, ⁶Li, ⁷Li, ⁸Be, ⁹Be, ¹⁰Be — up to A=10).
+    """
+    if n in _Y_LAMBDA_CACHE:
+        return _Y_LAMBDA_CACHE[n]
+    # Try symbolic first (n=2..12)
+    sym_path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
+    if sym_path.exists():
+        d = json.loads(sym_path.read_text())
+        block = d.get("tables_by_n", {}).get(str(n))
+        if block:
+            out = {}
+            for w in block["weights"]:
+                lam = tuple(w["partition"])
+                expr = sp.sympify(w["y_lambda_symbolic"])
+                free = expr.free_symbols
+                if free:
+                    qsym = next(iter(free))
+                    if qsym is not Q_SYM:
+                        expr = expr.subs(qsym, Q_SYM)
+                out[lam] = expr
+            _Y_LAMBDA_CACHE[n] = out
+            return out
+    # Fall back to numeric (n=2..30) — pre-evaluated at q_0
+    num_path = HERE / "y-lambda-wenzl-witness.json"
+    if not num_path.exists():
+        raise FileNotFoundError(
+            f"No y_λ witness has n={n}; need symbolic (n≤12) or "
+            f"numeric (n≤30). Generate via "
+            f"`python3 y_lambda_wenzl_bridge.py {n}`."
+        )
+    d = json.loads(num_path.read_text())
+    block = d.get("tables_by_n", {}).get(str(n))
+    if not block:
+        raise KeyError(
+            f"y_λ numeric witness has no n={n}. Run "
+            f"`python3 y_lambda_wenzl_bridge.py {n}` to extend."
+        )
+    out_num = {}
     for w in block["weights"]:
         lam = tuple(w["partition"])
-        expr = sp.sympify(w["y_lambda_symbolic"])
-        free = expr.free_symbols
-        if free:
-            qsym = next(iter(free))
-            if qsym is not Q_SYM:
-                expr = expr.subs(qsym, Q_SYM)
-        out[lam] = expr
-    return out
+        out_num[lam] = mp.mpf(w["y_lambda_numeric"])
+    _Y_LAMBDA_CACHE[n] = out_num
+    return out_num
 
 
 def load_tr_M_for_atom(Z: int, N: int) -> mp.mpf | None:
@@ -230,8 +280,13 @@ def compute_co_casimir_for_atom(
         d_q_q0 = evaluate_at_q0(d_q)
         delta_B = mp.mpf(1) / d_q_q0
 
-        # y_λ at q_0
-        y_q0 = evaluate_at_q0(y_lambda[lam])
+        # y_λ at q_0 — load_y_lambda_for_n returns sp.Expr (n≤12,
+        # symbolic) or mp.mpf (n>12, pre-evaluated). Handle both.
+        y_lam_val = y_lambda[lam]
+        if isinstance(y_lam_val, mp.mpf):
+            y_q0 = y_lam_val
+        else:
+            y_q0 = evaluate_at_q0(y_lam_val)
 
         # χ^λ(β_atom) at q_0 — from parallel pool result.
         chi_q0 = chi_values[i]
@@ -303,10 +358,24 @@ DEFAULT_ATOMS = [
     (1, 2, "tritium"),
     (2, 1, "helium-3"),
     (2, 2, "helium-4"),
+    # Extended coverage (per repo-owner directive 2026-05-19
+    # "all nucleotides" + Wenzl-bridge numeric witness now n=2..30
+    # which covers A up to 10 via 3A=30 strands).
+    (3, 2, "lithium-5"),    # A=5, n=15, p(15)=176 partitions
+    (3, 3, "lithium-6"),    # A=6, n=18, p(18)=385 partitions
+    (3, 4, "lithium-7"),    # A=7, n=21, p(21)=792 partitions
+    (4, 3, "beryllium-7"),  # A=7, n=21
+    (4, 4, "beryllium-8"),  # A=8, n=24, p(24)=1575 partitions
+    (4, 5, "beryllium-9"),  # A=9, n=27, p(27)=3010 partitions
+    (5, 5, "boron-10"),     # A=10, n=30, p(30)=5604 partitions (boundary)
 ]
 
 
 def main(argv: list[str] | None = None) -> int:
+    # Capture start_time at the very top so WitnessBuilder.durationMs
+    # reflects actual compute time, not just serialization.
+    # (Copilot review #4 on PR #808.)
+    start_time = time.monotonic()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--atoms", default=None,
@@ -333,7 +402,11 @@ def main(argv: list[str] | None = None) -> int:
     # doesn't lose completed work.
     def _save_incremental(results_so_far: list[dict]) -> Path:
         b = (
-            WitnessBuilder("rho-k-co-casimir-extended", engine="python+mpmath")
+            WitnessBuilder(
+                "rho-k-co-casimir-extended",
+                engine="python+mpmath",
+                start_time=start_time,
+            )
             .set_description(
                 "Substrate-derived ρ_K^pred via the Frobenius co-Casimir "
                 "Option B for every L1 atom — incremental save."
@@ -380,18 +453,28 @@ def main(argv: list[str] | None = None) -> int:
 
     # Emit witness
     builder = (
-        WitnessBuilder("rho-k-co-casimir-extended", engine="python+mpmath")
+        WitnessBuilder(
+            "rho-k-co-casimir-extended",
+            engine="python+mpmath",
+            start_time=start_time,
+        )
         .set_description(
             "Substrate-derived ρ_K^pred via the Frobenius co-Casimir "
             "Option B (Δ_λ := 1/dim_q(λ), forced by "
             "thm:frobenius-codim-universal — zero free parameters, "
-            "τ-invariant) for every atom with both an L1 canonical "
-            "|tr_M| value (from canonical-mass-table-extended) and a "
-            "y_λ symbolic table for n=3A (from "
-            "y-lambda-wenzl-bridge-symbolic-witness). Generalises "
-            "rho_k_h3a_co_casimir.py from D-only to {p, n, D, T, "
-            "³He, ⁴He}. Per repo-owner directive 2026-05-19 — Q1 "
-            "of /coordinate PR #802 follow-up list."
+            "τ-invariant). Loads y_λ from EITHER the symbolic Wenzl-"
+            "bridge witness (n=2..12, sp.Expr in q) OR the numeric "
+            "Wenzl witness (n=2..30, mp.mpf at q_0) — picks whichever "
+            "covers the requested n. Per repo-owner directive 2026-"
+            "05-19 'all nucleotides', DEFAULT_ATOMS extended to "
+            "A ≤ 10 (5Li, 6Li, 7Li, 7Be, 8Be, 9Be, 10B); gate via "
+            "--max-A (default 4). Generalises rho_k_h3a_co_casimir.py "
+            "from D-only. Witness MeV scaling: rows use m_e (CAL-1) "
+            "as the natural scale for ρ_K^LO and the co-Casimir "
+            "correction; per-atom 'M_pred_MeV' = ρ_K_pred · m_e · "
+            "|tr_M|. Note: binding-via-interface-knot.witness.json "
+            "uses E_0 = Q_β(n) instead — different scale by ~m_e/E_0 "
+            "≈ 0.65×."
         )
         .add_parameter("q_0", Q_50_DIGIT_STR)
         .add_parameter("m_e_MeV", str(M_E_MEV))

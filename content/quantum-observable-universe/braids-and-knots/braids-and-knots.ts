@@ -443,6 +443,10 @@ export default chapter({
       label: "sec:markov-axioms-braid-link",
       blocks: [
         "q-beta-categorical-precision-ladder",
+        "bar-involution",
+        "li2q-phiq-bar-symmetrization",
+        "c5-involution-leibniz-decomposition",
+        "bar-symmetric-three-layer-synthesis",
         "markov-axioms-primitive",
         "markov-trace-inductive-limit",
         "braid-link-types",
@@ -876,6 +880,7 @@ export default chapter({
         "alpha-k-derivation-procedure",
         "alpha-k-categorical-closure",
         "chi-lambda-w0-sign-weighting",
+        "averaging-resonance-rule",
         "atom-knot-mass-derivation",
         "atom-knot-mass-derivation-proof",
         "joint-tower-sdp-confinement",

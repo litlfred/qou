@@ -1,4 +1,11 @@
 {
+  "engine": "sympy.div over ZZ[u]",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T23:28:03.298005+00:00",
+  "commitSha": "564f00432450881ba6870b13809acc68102f2cc9",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "habiro-tail-in-ideal-validation",
   "description": "Certifies the Lean axiom HabiroCompletion.tail_in_ideal on the witnesses produced by habiro_coefficients_atomic.py: for every atom and every truncation order N, the residual p(u) \u2212 \u03a3_{m<N} a_m(u) \u00b7 (u;u)_m is exactly divisible by (u;u)_N in \u2124[u].",
   "reference_blocks": [
