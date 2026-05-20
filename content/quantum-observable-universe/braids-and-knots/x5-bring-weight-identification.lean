@@ -23,12 +23,12 @@ namespace QOU.X5BringWeight
 open Complex
 
 /-- Primitive fifth root of unity (local copy). -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 noncomputable def zeta5 : ℂ :=
   Complex.exp (2 * Real.pi * Complex.I / 5)
 
 /-- ζ₅^5 = 1 — `(exp(2πi/5))^5 = exp(2πi) = 1`. -/
--- Ref: [bolza1887] https://doi.org/10.2307/2369402
+-- Ref: [bolza1887] Bolza, "On binary sextics with linear transformations into themselves," Amer. J. Math. 10 (1887)
 theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
   unfold zeta5
   rw [← Complex.exp_nat_mul]

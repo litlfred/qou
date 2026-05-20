@@ -224,7 +224,7 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
         rw [heq, hlen]
         omega
 
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 -- Well-foundedness of lexLt on `List SU2Gen`.
 -- The ordering has ordinal type ω⁴ (4-element alphabet).
 --
@@ -239,7 +239,7 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
 -- induction on `a`.  Encoding this mutual recursion in Lean 4 requires
 -- Mathlib's `List.Lex.isWellFounded` or a verbose `Acc.intro` term.
 --
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 -- Well-foundedness of lexLt via the standard Acc-based double induction:
 -- outer induction on head generator rank, inner induction on tail accessibility.
 -- Cf. Coq's Lexicographic_Exponentiation for the classical construction.
@@ -275,7 +275,7 @@ private theorem lexLt_implies_listLex :
         subst hxy
         exact List.Lex.cons (ih ys hrest)
 
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 -- Well-foundedness via List.Lex preserving well-foundedness of rankRel.
 -- TODO: replace sorry with correct Lean 4.24 API name for List.Lex WF
 theorem lexLt_wf : WellFounded lexLt :=
@@ -283,7 +283,7 @@ theorem lexLt_wf : WellFounded lexLt :=
     (fun {a b} h => lexLt_implies_listLex a b h)
     (sorry)
 
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem degLexLt_wf : WellFounded degLexLt :=
   Subrelation.wf
     (fun {a b} (h : degLexLt a b) => by

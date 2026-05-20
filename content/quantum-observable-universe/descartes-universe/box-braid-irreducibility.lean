@@ -62,7 +62,7 @@ theorem T35_crossing_number : T35.crossingNumber = 10 := by
 
 /-- The braid index of T(m,n) is min(m,n). -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
--- Ref: [morton1986] https://doi.org/10.1017/S0305004100064161
+-- Ref: [morton1986] Morton, "Seifert circles and knot polynomials," Math. Proc. Cambridge Philos. Soc. 99 (1986)
 noncomputable def TorusKnot.braidIndex (K : TorusKnot) : ℕ :=
   min K.m K.n
 
@@ -86,7 +86,7 @@ theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
     c(T(m,n)) crossings. This is because crossing number is a
     topological invariant — the minimum over ALL diagrams. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
--- Ref: [kawauchi1996] https://doi.org/10.1007/978-3-0348-9227-8
+-- Ref: [kawauchi1996] Kawauchi, "A Survey of Knot Theory," Birkhäuser 1996
 /-- **REMOVED 2026-05-17**: previous `crossing_number_is_minimum`
     axiom used `True` as the "w is a braid closing to K"
     hypothesis, making it equivalent to `∀ K w, w.length ≥ K.crossingNumber`

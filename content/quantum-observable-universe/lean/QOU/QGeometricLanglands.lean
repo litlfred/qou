@@ -61,7 +61,7 @@ namespace QOU.QGeometricLanglands
     uses: `def:categorical-q-connection`, `def:substrate-parameter`,
           `def:q-flat-connection`, `prop:categorical-dq-squared`,
           `prop:kummer-filtration-obstruction` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QLocalSystem (M : Type*) where
   /-- The underlying substrate parameter family. -/
   sp : SubstrateParameter M
@@ -93,7 +93,7 @@ structure QLocalSystem (M : Type*) where
     LaTeX: `\label{def:q-flat-connection}`
     uses: `def:q-local-system`, `def:categorical-q-connection`,
           `prop:categorical-dq-squared` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QFlatConnection (M : Type*) where
   /-- The substrate parameter. -/
   sp : SubstrateParameter M
@@ -128,7 +128,7 @@ structure QFlatConnection (M : Type*) where
 
     LaTeX: `\label{def:q-hecke-operator}`
     uses: `prop:braid-action-tensor`, `def:q-local-system` -/
--- Ref: [aganagic2018] https://doi.org/10.1090/mosc/278
+-- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 structure QHeckeOperator (M : Type*) where
   /-- The substrate parameter. -/
   sp : SubstrateParameter M
@@ -153,7 +153,7 @@ structure QHeckeOperator (M : Type*) where
 
     LaTeX: `\label{def:q-hecke-eigensheaf}`
     uses: `def:q-hecke-operator`, `def:q-local-system` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QHeckeEigensheaf (M : Type*) where
   /-- The q-Hecke operator data. -/
   heckeOp : QHeckeOperator M
@@ -180,7 +180,7 @@ structure QHeckeEigensheaf (M : Type*) where
 
     LaTeX: `\label{def:q-langlands-dual}`
     uses: `def:quantum-gauge-group`, `def:quantum-su2` -/
--- Ref: [aganagic2018] https://doi.org/10.1090/mosc/278
+-- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 structure QLanglandsDual (M : Type*) where
   /-- The original quantum gauge group. -/
   gaugeGroup : QuantumGaugeGroup M
@@ -216,7 +216,7 @@ theorem langlands_eigenvalue_swap {M : Type*} (ld : QLanglandsDual M)
 
     LaTeX: `\label{def:q-oper}`
     uses: `def:q-flat-connection`, `def:q-langlands-dual` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QOper (M : Type*) where
   /-- The underlying q-flat connection. -/
   connection : QFlatConnection M
@@ -241,7 +241,7 @@ structure QOper (M : Type*) where
     in Mathlib.
 
     LaTeX: `\label{rem:fibre-functor-rigidity}` -/
--- Ref: [deligne1990] https://doi.org/10.1007/978-0-8176-4576-2_8
+-- Ref: [deligne1990] Cat00e9gories tannakiennes — see content/schema/references.ts
 class FibreFunctorRigidity (M : Type*) where
   /-- Two q-local systems with the same substrate and the same
       holonomy residues at every point are equal. -/
@@ -260,7 +260,7 @@ class FibreFunctorRigidity (M : Type*) where
     LaTeX: `\label{prop:q-hecke-eigenvalue}`
     uses: `def:q-hecke-eigensheaf`, `def:q-hecke-operator`,
           `rem:fibre-functor-rigidity` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 theorem q_hecke_eigenvalue {M : Type*} [inst : FibreFunctorRigidity M]
     (es : QHeckeEigensheaf M) (es' : QHeckeEigensheaf M)
     (_h_op : es.heckeOp = es'.heckeOp)
@@ -319,7 +319,7 @@ theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
     LaTeX: `\label{prop:q-gl-kummer-filtration}`
     uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands`,
           `def:q-local-system` -/
--- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (hn : n ≥ 1) :
     -- The Kummer reduction vanishes iff n divides χ
     (↑n : ℤ) ∣ χ ↔ χ % ↑n = 0 := by
@@ -354,8 +354,8 @@ theorem kummer_no_universal_lift :
 
     LaTeX: `\label{conj:q-gl-kummer-filtration}`
     uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands` -/
--- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 theorem q_gl_kummer_filtration (χ : ℤ) (hχ : χ ≠ 0) :
     -- (1) Divisibility criterion at every level
     (∀ (n : ℕ), n ≥ 1 → ((↑n : ℤ) ∣ χ ↔ χ % ↑n = 0))
@@ -390,7 +390,7 @@ theorem q_gl_kummer_filtration (χ : ℤ) (hχ : χ ≠ 0) :
     LaTeX: `\label{conj:q-geometric-langlands}`
     uses: `def:q-local-system`, `def:q-hecke-eigensheaf`,
           `def:q-langlands-dual`, `def:q-flat-connection` -/
--- Ref: [aganagic2018] https://doi.org/10.1090/mosc/278
+-- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 class QGeometricLanglandsConjecture (M : Type*) where
   /-- The Langlands functor: eigensheaves ↦ local systems. -/
   langlandsFunctor : QHeckeEigensheaf M → QLocalSystem M
@@ -415,7 +415,7 @@ class QGeometricLanglandsConjecture (M : Type*) where
     LaTeX: `\label{thm:q-gl-fiber-functor}`
     uses: `conj:q-geometric-langlands`, `rem:fibre-functor-rigidity`,
           `def:q-hecke-eigensheaf`, `def:q-langlands-dual` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 theorem q_gl_fiber_functor {M : Type*}
     [QGeometricLanglandsConjecture M] [FibreFunctorRigidity M]
     (es : QHeckeEigensheaf M) :
@@ -429,7 +429,7 @@ theorem q_gl_fiber_functor {M : Type*}
     LaTeX: `\label{prop:q-oper-hecke}`
     uses: `def:q-oper`, `def:q-hecke-eigensheaf`,
           `conj:q-geometric-langlands` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 theorem q_oper_hecke {M : Type*}
     [QGeometricLanglandsConjecture M]
     (op op' : QOper M) (es es' : QHeckeEigensheaf M)
@@ -446,7 +446,7 @@ theorem q_oper_hecke {M : Type*}
     LaTeX: `\label{prop:q-gl-classical-limit}`
     uses: `conj:q-geometric-langlands`, `def:q-local-system`,
           `def:q-hecke-operator` -/
--- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+-- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 theorem q_gl_classical_limit {M : Type*} (ls : QLocalSystem M)
     (p : M) (h : ls.sp.field p = 1) :
     -- At q = 1, the q-holonomy residue vanishes (classical local system)

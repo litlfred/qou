@@ -33,7 +33,12 @@ to algebraic independence of hyperbolic volumes:
 
 - [zagier1986] https://doi.org/10.1007/BFb0084581
 - [reid1991] https://doi.org/10.1112/blms/23.4.383
-- [yekutieli2010] Nonabelian multiplicative integration on surfaces
+- [yekutieli2015] Nonabelian multiplicative integration on surfaces
+  (was previously cited as `[yekutieli2010]` which is the wrong key —
+  yekutieli2010 is "Central Extensions of Gerbes"; the "Nonabelian
+  multiplicative integration" book is yekutieli2015 per
+  content/schema/references.ts. Fixed during validate-bib --cross-check
+  audit on 2026-05-19.)
 -/
 
 open QOU.KnotTheory QOU.KnotRegistry
@@ -58,19 +63,19 @@ noncomputable def vol_B3 : ℝ := borromeanRingsEntry.volume.value
 /-! ## §2  Positivity (proved) -/
 
 /-- Vol(4₁) > 0. -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem vol_4_1_pos : vol_4_1 > 0 := by
   unfold vol_4_1 figureEightEntry vol_figure_eight
   norm_num
 
 /-- Vol(5₂) > 0. -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem vol_5_2_pos : vol_5_2 > 0 := by
   unfold vol_5_2
   norm_num
 
 /-- Vol(𝓑₃) > 0. -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem vol_B3_pos : vol_B3 > 0 := by
   unfold vol_B3 borromeanRingsEntry
   norm_num
@@ -175,7 +180,7 @@ noncomputable def baselineDecomposition
     -- Mathlib name for the previously-named `summable_of_ne_finset_zero`).
     -- Strategy: show |levelContribution n| = levelContribution n pointwise,
     -- then use HasSum.summable on hasSum_ite_eq.
-    -- Ref: [yekutieli2010] manuscript Chapter 5
+    -- Ref: [yekutieli2015] manuscript Chapter 5 (Nonabelian multiplicative integration on surfaces)
     have heq : (fun n => |if n = (0 : ℕ) then vol else (0 : ℝ)|) =
         fun n => if n = 0 then vol else 0 := by
       funext n
@@ -189,21 +194,21 @@ noncomputable def baselineDecomposition
   baseline_dominant := by simp [hvol]
 
 /-- Tower decomposition for Vol(4₁). -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 noncomputable def volumeTowerDecomp_4_1
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
   baselineDecomposition tower vol_4_1 vol_4_1_pos
 
 /-- Tower decomposition for Vol(5₂). -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 noncomputable def volumeTowerDecomp_5_2
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
   baselineDecomposition tower vol_5_2 vol_5_2_pos
 
 /-- Tower decomposition for Vol(𝓑₃). -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 noncomputable def volumeTowerDecomp_B3
     (tower : QOU.Torsion.RecursiveBraneTower) :
     VolumeTowerDecomposition :=
@@ -508,7 +513,7 @@ gives the Yekutieli bridge theorem. -/
 -- class is itself the open question.  Pattern 4 narrowing:
 -- typeclass binding to a specific Yekutieli witness, rather than a
 -- universal axiom.
--- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
+-- Ref: [yekutieli2015] Yekutieli, Nonabelian multiplicative integration on surfaces
 
 /-- **Tower-noncollapse → independence — typeclass.**
 

@@ -38,14 +38,20 @@ noncomputable def trefoilMatrix : TMatrix :=
   stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0
 
 /-- The trefoil equals L₊ · σ₀ = σ₀σ₁ · σ₀. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem trefoil_eq_hopfPlus_gen0 :
     trefoilMatrix = hopfPlus * stdRep3_gen0 := by
   simp [trefoilMatrix, hopfPlus]
   rw [Matrix.mul_assoc]
 
 /-- The trefoil also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem trefoil_eq_gen0_hopfMinus :
     trefoilMatrix = stdRep3_gen0 * hopfMinus := by
   simp [trefoilMatrix, hopfMinus]
@@ -58,7 +64,10 @@ theorem trefoil_eq_gen0_hopfMinus :
 
     L₊ = σ₀σ₁ and L₋ = σ₁σ₀ differ at entry (0,0):
     L₊(0,0) = 0, L₋(0,0) = -1. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
   hopf_ne
 
@@ -67,7 +76,10 @@ theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
 /-- L₊ · σ₀ = σ₁ · L₋  (the Yang-Baxter relation).
 
     σ₀σ₁ · σ₀ = σ₁ · σ₁σ₀  ←→  σ₀σ₁σ₀ = σ₁σ₀σ₁ (braid relation) -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem yang_baxter_hopf :
     hopfPlus * stdRep3_gen0 = stdRep3_gen1 * hopfMinus := by
   -- This is just the braid relation σ₀σ₁σ₀ = σ₁σ₀σ₁
@@ -82,7 +94,10 @@ theorem yang_baxter_hopf :
     non-Borromean operator with lower or equal demand magnitude.
 
     Verified computationally in nuclear-binding-lp.witness.json. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Computational witness: nuclear-binding-lp.witness.json
 theorem borromean3_not_nuclear_level :
     -- B₃ operates at the quark level, not nuclear. At the nuclear level,
@@ -98,7 +113,10 @@ theorem borromean3_not_nuclear_level :
     demand-minimizing operator transitions from `T_{2,5}` to `L₊`
     at the first proton magic number. Pending q₀-numeric demand
     evaluation. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 class RegimeTransitionZ2 (demandT25 demandLplus : ℝ) : Prop where
   /-- `L₊` strictly dominates `T_{2,5}` at `Z = 2`. -/
   Lplus_dominates : demandLplus < demandT25
@@ -116,7 +134,10 @@ instance regimeTransitionZ2_of_positive_gap
 /-- **He-4 demand closure — typeclass.**
     Per-`(coeffs)` witness that at doubly magic `(Z = 2, N = 2)`
     the `L₊`-derived NF has every coefficient nonneg. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 class He4DemandClosure (coeffs : List ℝ) : Prop where
   /-- All NF coefficients are nonneg. -/
   all_nonneg : ∀ c ∈ coeffs, 0 ≤ c

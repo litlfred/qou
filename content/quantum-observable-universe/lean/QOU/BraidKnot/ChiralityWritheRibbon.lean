@@ -153,8 +153,13 @@ theorem log_q_first_order (q : ℝ) (hq : 0 < q)
 
     In particular, the chirality factor is **linear in `h`** and
     **linear in the writhe** to first order. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -- Ref: [manuscript] braids-and-knots / chirality-writhe-ribbon-derivation
 theorem chirality_writhe_ribbon
     (q : ℝ) [RT : RibbonTwistEigenvalue q]

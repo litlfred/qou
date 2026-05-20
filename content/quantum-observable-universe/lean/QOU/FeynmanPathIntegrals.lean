@@ -57,7 +57,7 @@ theorem qNum_at_one (n : ℕ) : qNum 1 n = (n : ℝ) := by
 
     Proof: when `q > 1`, both `qⁿ > q⁻ⁿ` and `q > q⁻¹`, so num/denom > 0.
     When `0 < q < 1`, both inequalities reverse, so neg/neg > 0. -/
--- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+-- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     0 < qNum q n := by
   unfold qNum
@@ -112,7 +112,7 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     Sorry retained with this diagnosis.
 
     LaTeX: `\label{lem:feynman-eigenbasis-decomposition}` -/
--- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+-- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 theorem eigenbasis_decomposition
     (decomp : PathIntegrals.SchurWeylDecomposition) :
     decomp.partitions.length ≤ decomp.n / 2 + 1 :=
@@ -129,7 +129,7 @@ theorem eigenbasis_decomposition
     `eigenbasis_decomposition`; the trace collapse is a corollary.
 
     LaTeX: `\label{lem:feynman-trace-collapse}` -/
--- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+-- Ref: [feynman1948] Feynman, "Space-time approach to non-relativistic quantum mechanics," Rev. Mod. Phys. 20 (1948)
 theorem trace_collapse
     (decomp : PathIntegrals.SchurWeylDecomposition) :
     decomp.partitions.length ≤ decomp.n / 2 + 1 :=
@@ -145,7 +145,10 @@ theorem trace_collapse
     pending the full Wedderburn-Artin formalisation in Mathlib.
 
     LaTeX: `\label{lem:feynman-markov-identification}` -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 class MarkovIdentification (sumWeightedTraces markovTrace : ℝ) : Prop where
   /-- The weighted-character sum equals the Markov trace. -/
   identity : sumWeightedTraces = markovTrace
@@ -172,7 +175,10 @@ instance markovIdentification_refl (x : ℝ) : MarkovIdentification x x :=
     finite algebraic expression.
 
     LaTeX: `\label{prop:feynman-categorical-trace}` -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure FeynmanCategoricalTrace where
   /-- The q-Schur–Weyl decomposition providing the eigenbasis. -/
   decomp : PathIntegrals.SchurWeylDecomposition
@@ -208,7 +214,10 @@ theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) :
 /-- **Mass from transition amplitude**: the categorical mass at a single
     brane level equals the absolute value of the Markov trace, which
     equals the absolute value of the transition amplitude. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem mass_eq_abs_amplitude (fct : FeynmanCategoricalTrace)
     (h : fct.decomp.hecke.carrier) :
     |fct.markov.tr (fct.consistent.symm ▸ h)| = |fct.transitionAmplitude h| := by
@@ -250,7 +259,10 @@ theorem speed_diverges_at_one (ε : ℝ) (hε : 0 < ε) :
     The full J_K(1) = 1 result follows from the fact that every
     element of H_n(1) ≅ k[S_n] is a product of generators T_i,
     and tr is multiplicative on the augmentation ideal at z = 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem jones_trace_generator_at_one
     (markov : PathIntegrals.MarkovTrace)
     -- At q = 1, T² = 1 for each generator
@@ -264,7 +276,7 @@ theorem jones_trace_generator_at_one
 /-- The q-energy reduces to the classical action at q = 1:
     E_q(K) → S_1(K) because rotational and translational terms
     vanish with ℏ_q → 0. -/
--- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+-- Ref: [feynman1948] Feynman, "Space-time approach to non-relativistic quantum mechanics," Rev. Mod. Phys. 20 (1948)
 theorem q_energy_classical_limit (action rot trans h_q : ℝ) (hq1 : h_q = 0) :
     rot * h_q + trans * h_q + action = action := by
   rw [hq1]; ring
@@ -273,7 +285,7 @@ theorem q_energy_classical_limit (action rot trans h_q : ℝ) (hq1 : h_q = 0) :
     the Hecke algebra degenerates to the symmetric group algebra.
 
     LaTeX: `\label{prop:feynman-classical-limit}` -/
--- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+-- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 structure ClassicalLimitDegeneration where
   /-- Number of strands. -/
   n : ℕ
@@ -303,7 +315,7 @@ structure ClassicalLimitDegeneration where
     and the QOU categorical trace.
 
     LaTeX: `\label{rem:feynman-qou-dictionary}` -/
--- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+-- Ref: [feynman1948] Feynman, "Space-time approach to non-relativistic quantum mechanics," Rev. Mod. Phys. 20 (1948)
 structure FeynmanQOUDictionary where
   /-- Configuration space of paths ↔ Braid group B_n acting on V^{⊗n}. -/
   configSpace : PathIntegrals.SchurWeylDecomposition

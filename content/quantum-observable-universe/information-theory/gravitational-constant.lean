@@ -27,7 +27,7 @@ noncomputable def cellEntropy {k : Type*} [Field k] (q : k) : k :=
     G(q) := c_q³ · ℏ_q / S_cell(q)
 
     where c_q = 1/(q-1), ℏ_q = (q-1)/q, and S_cell = (q-1)²/q³. -/
--- Ref: [jacobson1995] https://doi.org/10.1103/PhysRevLett.75.1260
+-- Ref: [jacobson1995] Thermodynamics of Spacetime: The Einstein Equation — see content/schema/references.ts
 -- Ref: [manuscript] §9/gravitational-constant
 noncomputable def gravitationalConstant {k : Type*} [Field k] (q : k)
     (hq0 : q ≠ 0) (hq1 : q ≠ 1) : k :=

@@ -16,6 +16,19 @@ Adapt ALL responses accordingly:
   - **`preview` content** for options that benefit from side-by-side comparison (diff snippets, file-tree mockups, code samples, before/after numbers).
 
   This rule exists because terse questions force the user to type follow-ups asking for the context that should have been provided up front, which is the most painful kind of friction. When in doubt, err toward more context in the question, less in the post-answer explanation.
+- **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
+  - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
+  - **Prefix the question with 🟡** to mark the agent as waiting / blocked on input ("🟡 [Yellow Circle] Waiting on user — …"). The yellow circle is the agent-state symbol for "blocked, needs user input"; using it consistently lets the user scan the chat history and find every pending decision point.
+  - **Allow optional notes** in the question phrasing ("Pick all that apply; add 'Other' with a free-text note if needed.") so the user can amend a chosen option without typing follow-ups.
+  - Single-select is OK only when the chosen options describe genuinely mutually-exclusive actions (e.g. "merge approach: rebase OR merge-commit"). Even then, prefer multi-select if "do both later" is a reasonable answer.
+- **Coordinate intent with sibling branches on every new workplan (2026-05-19).** When opening a new branch or starting a substantive new tranche of work:
+  - **List active sibling branches** via `mcp__github__list_pull_requests` (open PRs) + `mcp__github__list_branches` (active claude/* branches), filtered to recently-updated.
+  - **Post a brief intent comment** on each PR whose scope overlaps your planned work (same chapter / same Python or Lean file / same domain). 1-3 sentences max — "Starting <theme> on <branch>; will touch <file>; flag conflicts to me." Don't post on every sibling — only the genuinely-overlapping ones, and don't make too much noise on the PR.
+  - **When critical findings land in your branch** that a sibling is waiting on (e.g. you discover the upload branch should use force-with-lease, and another sibling is about to push to a similar branch), proactively comment on the sibling PR with the finding. Don't wait for them to step on the rake.
+  - **During idle (per the 5-min idle trigger)**, also check sibling PRs for coordination updates / relevant commits. Use `mcp__github__pull_request_read get_comments` on the active siblings; new comments addressed to "all watchers" or referencing your branch's scope are actionable backlog.
+- **Structured branch names (2026-05-19).** All new branches follow the existing pattern:
+      claude/<theme>-<utc-ymd>
+  Theme is hyphenated, lowercase, ≤ 40 chars, descriptive of the work-tranche scope (e.g. `detangler-bib-followup-batch`, `i12-cluster-a-audit-regex-unique-decls`, `upload-bib-papers`). Date is the start day. Don't deviate from this pattern — it's what `coordinate.md` and the upload-branch idempotency rely on.
 - **Combine related work into one branch / one PR. Minimize their creation.** Default to stacking commits on an existing in-flight branch when the new work shares a theme (detangler structural cleanup, watcher infrastructure, doc currency, etc.) with what's already there. Before creating a new branch, check whether the active branches host related scope — if yes, switch to that branch and add a commit there. Only spin a new branch when the work is genuinely unrelated (different domain) or when the existing branch is already large enough that adding more would hurt reviewer comprehension. Reviewers prefer one coherent 6-commit PR to six 1-commit PRs covering the same theme. Mirrors `.claude/skills/local/integration-watcher.md` §0a item 1 and item 3 ("cluster aggressively", "group a lot").
 
 This repository is a formal mathematics paper with:
@@ -55,6 +68,36 @@ mentioned file.
    run, pull the next pending todo and work on it. Never just sleep
    or poll. (Exception: if the only remaining todos depend on the
    in-flight task, idle and wait for the notification.)
+
+   **5-minute idle trigger (2026-05-19).** If you have produced no
+   substantive output for > 5 minutes (just TICK heartbeats or
+   empty acks), start processing backlog automatically — do not
+   wait for the user to prompt. Walk this priority order:
+
+   1. **Current session todos** (TodoWrite list for this session).
+      Top of the queue first.
+   2. **Current PR todos** — the open PR's body checklist + any
+      unresolved review-comment threads on the branch's PR.
+      `mcp__github__pull_request_read get_review_comments` is the
+      authoritative source; `mcp__github__pull_request_read get`
+      gives the body's test-plan items.
+   3. **Integration-watcher requirements** — the active watchers'
+      queue items (`todos/proof-integration-watcher-queue.json`,
+      `todos/canonical-watcher-queue.json`,
+      `todos/compute-integration-watcher-queue.json`,
+      `todos/detangler-integration-watcher-queue.json`). Prefer
+      items whose `block_or_script` overlaps the current PR's
+      scope (e.g. the same chapter or the same Python/Lean file).
+   4. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades,
+      `validate-bib` deferred items, glossary backfills, doc
+      currency. Lowest priority because they're not gated on any
+      in-flight work.
+
+   "Substantive output" means: a new commit, a meaningful chat
+   response (not a TICK ack), or a tool call that advances a
+   queue item. If the only thing in the window is monitor TICKs
+   and "pause-mode TICK" acks, you are idle and the trigger
+   fires.
 
 5. **Update the plan when upstream lands.** The session-start hook
    arms `local/watch` on `origin/main` (and `local/coordinate`

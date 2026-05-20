@@ -155,7 +155,7 @@ theorem schur_weyl_nonempty (D : DescartesData) (sw : DescartesSchurWeyl D)
 
     Faithfulness for n = 3 follows from the distinct eigenvalues
     of the R-matrix (q ≠ -q⁻¹), which is guaranteed by q > 0, q ≠ 1. -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110218145
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure DescartesBraidRep (D : DescartesData) where
   /-- Number of strands. -/
   n : ℕ

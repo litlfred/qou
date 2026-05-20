@@ -6,4 +6,8 @@ export default remark({
   title: "Direct limit algebra and the Lusztig integral form",
   tags: ["lusztig", "integral-form", "divided-power"],
   uses: ["def:quaternionic-spectral-resolvents"],
+  cites: [
+    "fred2005",
+    "lusztig1993",
+  ],
 });

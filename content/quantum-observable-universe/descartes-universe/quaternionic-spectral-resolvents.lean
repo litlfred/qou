@@ -64,7 +64,7 @@ theorem uncertainty_vanishes (qr : QuaternionicResolvent) :
 
 /-- When ω₀ = 0, the remaining resolvents ω₁, ω₂, ω₃ are
     independent (at least one is nonzero for nontrivial input). -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 theorem three_resolvents_embed (qr : QuaternionicResolvent) :
     qr.omega 0 = 0 → (qr.omega 1 ≠ 0 ∨ qr.omega 2 ≠ 0 ∨ qr.omega 3 ≠ 0) :=
   fun _ => qr.nontrivial

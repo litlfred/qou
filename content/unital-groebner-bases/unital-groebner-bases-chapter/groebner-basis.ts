@@ -8,4 +8,8 @@ export default definition({
   },
   tags: ["groebner-basis", "unital", "s-polynomial"],
   uses: ["def:admissible-system", "def:monomial-basis"],
+  // Foundational GS-basis references: Bokut (general/Lie algebra
+  // setting) + Leitner-Pawloski (unital generalisation over arbitrary
+  // commutative ground rings — see Definition 5 of math/0409565).
+  cites: ["bokut2005", "leitnerpawloski2004"],
 });

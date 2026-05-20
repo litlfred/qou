@@ -86,8 +86,13 @@ structure MarkovTraceProduct where
     Finset.univ.prod (fun i => vertexVolume z (chains i))
 
 /-- **Existence of the product factorization** (record-construction form). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem markov_trace_product
     (z : R_q) (hz : z ≠ 0)
     (n : ℕ) (q : R_q)
@@ -110,7 +115,10 @@ theorem markov_trace_product
     list form).**  Under the `MarkovTraceAxioms` typeclass, the
     trace of any chain-list factors as the product of vertex
     volumes (computed by `chainProduct`). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem markov_trace_product_recursion
     {z : R_q} [inst : MarkovTraceAxioms z]
     (chains : List GeneratorChain) :

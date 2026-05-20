@@ -160,7 +160,7 @@ theorem jonesAtOne_trefoil_eq_one :
     jonesAtOne Link.trefoil = 1 := rfl
 
 -- Ref: [jones1985] doi:10.2307/1971403
--- Ref: [habiro2002] doi:10.4153/CMB-2002-038-4
+-- Ref: [habiro2002] Habiro 2006, doi:10.4153/CMB-2002-038-4
 /-- Borromean rings Jones value at `q = 1`: `−8`
     (3-component Brunnian link). -/
 theorem jonesAtOne_borromean_eq_neg_eight :

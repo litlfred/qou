@@ -58,7 +58,7 @@ structure WittVectorLift where
 
     We verify the fundamental identity: for any prime p,
     p ≠ 0 in ℤ. -/
--- Ref: [hazewinkel1978] https://doi.org/10.1007/978-3-642-35190-6
+-- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
 theorem witt_char_zero (p : ℕ) (hp : Nat.Prime p) : (p : ℤ) ≠ 0 := by
   exact_mod_cast hp.ne_zero
 
@@ -70,7 +70,7 @@ theorem witt_char_zero (p : ℕ) (hp : Nat.Prime p) : (p : ℤ) ≠ 0 := by
 
     We verify the dimensional identity: the Lie algebra dimension
     is preserved by reduction. -/
--- Ref: [hazewinkel1978] https://doi.org/10.1007/978-3-642-35190-6
+-- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
 theorem reduction_preserves_dim (W : WittVectorLift) :
     W.lieDim = W.lieDim := rfl
 
@@ -80,7 +80,7 @@ theorem reduction_preserves_dim (W : WittVectorLift) :
     For a 1-dimensional formal group of height h, Dist(Ĝ) is
     a free ℤ_p-module of countable rank with a PBW-type basis
     indexed by multi-indices of length lieDim. -/
--- Ref: [zink2002] https://doi.org/10.1007/978-3-642-51438-2
+-- Ref: [zink2002] The Display of a Formal p-Divisible Group — see content/schema/references.ts
 theorem dist_algebra_generators (W : WittVectorLift) :
     0 < W.lieDim := W.lie_dim_pos
 
@@ -107,7 +107,7 @@ theorem relevant_primes_ge_five (p : ℕ) (hp : Nat.Prime p)
     residue field 𝔽_p and uniformizer p.
 
     We verify the basic arithmetic: p^2 > p for any prime p. -/
--- Ref: [hazewinkel1978] https://doi.org/10.1007/978-3-642-35190-6
+-- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
 theorem witt_ring_uniformizer (p : ℕ) (hp : Nat.Prime p) :
     p < p ^ 2 := by
   have := hp.two_le

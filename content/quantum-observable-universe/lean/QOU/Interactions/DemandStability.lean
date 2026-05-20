@@ -43,12 +43,18 @@ open QOU.Descartes
 
     This is a finite condition: at fixed A, there are only A+1
     configurations to check.  -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- (Beta stability from NF demand minimization.)
 -- beta_stability_criterion: requires defining demandMag over ℝ (evaluating
 -- Laurent polynomials at q₀) and showing minimum over A+1 configurations.
 -- Not yet formalised; the typed crossing infrastructure is in DerivedAtom.lean.
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 
 /-! ## §3  The e⁻ coefficient as beta decay receptivity -/
 
@@ -64,7 +70,10 @@ open QOU.Descartes
     - `proton_trefoil_neg_on_interval`: c₅(p) < 0 for q ∈ (1, 3/2]
     - `neutron_trefoil_neg`: c₅(n) < 0 for all q > 1
     - `neutron_more_negative`: |c₅(n)| > |c₅(p)| for q > 1 -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- See: ProtonTrefoilSign.lean for the sign proofs.
 -- sorry  -- Replaced: the sign proofs are in ProtonTrefoilSign.lean
 
@@ -77,11 +86,17 @@ open QOU.Descartes
     Conjecture: the magic numbers are exactly {2, 8, 20, 28, 50, 82, 126}.
 
     Verified computationally for Z = 2 (He-3: demand = ∅). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- (Magic numbers from demand closure in the NF basis.)
 -- magic_numbers_conjecture: requires demand magnitude function over ℝ.
 -- Verified computationally for Z = 2 (He-4: demand = ∅).
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 
 /-! ## §5  Hecke square identity for typed crossings -/
 
@@ -104,7 +119,10 @@ theorem typed_crossing_square_pp (ρ : HeckeRep 3 2) (i : Fin 2) :
 
     This requires expanding (σ - ½HA)² and using the Hecke relation.
     Since ½ ∉ ℤ[t,t⁻¹], we multiply through by 4. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 /-- The mixed crossing square: (2σ - HA)² = 4 + HA².
     Uses the Hecke relation σ² = HA·σ + 1. -/
 theorem mixed_crossing_square_identity (ρ : HeckeRep 3 2) (i : Fin 2) :

@@ -50,7 +50,10 @@ structure Positron where
   orientation : ℤ := -1
 
 /-- The positron is a mirror trefoil T_{2,3} with reversed crossings. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem positron_is_mirror_torus_knot :
     Positron.mk.torusP = 2 ∧ Positron.mk.torusN = 3 := ⟨rfl, rfl⟩
 

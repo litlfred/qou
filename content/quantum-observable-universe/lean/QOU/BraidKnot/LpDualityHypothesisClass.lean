@@ -80,7 +80,7 @@ end OperatorSelectionLP
     - `dualityGapZero` — `lp.duality_gap = 0` (Schrijver §7.2).
     - `complementarySlackness` — `λ ∈ active_set ↔ tight λ`
       (Schrijver §7.4). -/
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
   /-- Strong duality theorem (Schrijver §7.2).  Bounded + feasible
       finite LPs satisfy `primal = dual`, hence `duality_gap = 0`. -/
@@ -95,14 +95,14 @@ namespace HasFiniteLPDuality
 /-- **External axiom (Schrijver 1986 §7.2): finite-dim LP strong
     duality.**  For every `OperatorSelectionLP lp`, the duality gap
     is zero.  Pending Mathlib's finite-dim LP-duality library. -/
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 axiom schrijver_strong_duality :
     ∀ (lp : OperatorSelectionLP), lp.duality_gap = 0
 
 /-- **External axiom (Schrijver 1986 §7.4): complementary slackness.**
     At the LP optimum, a partition `λ` lies in the active set iff
     its primal constraint is tight. -/
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 axiom schrijver_complementary_slackness :
     ∀ (lp : OperatorSelectionLP) (λ : lp.Λ),
       λ ∈ lp.active_set ↔ lp.tight λ
@@ -117,7 +117,7 @@ axiom schrijver_complementary_slackness :
 
     Provided as a `def` (not `instance`) to avoid polluting typeclass
     resolution. -/
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 noncomputable def schrijverModel (lp : OperatorSelectionLP) :
     HasFiniteLPDuality lp where
   dualityGapZero := schrijver_strong_duality lp
@@ -127,7 +127,7 @@ noncomputable def schrijverModel (lp : OperatorSelectionLP) :
     the hypothesis class.  Drop-in replacement for the existing
     `theorem_3_strong_duality` (which currently uses a `sorry`):
     `theorem_3_via_class` consumes the class instance instead. -/
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 theorem theorem_3_via_class
     (lp : OperatorSelectionLP) [hyp : HasFiniteLPDuality lp] :
     lp.duality_gap = 0 :=
@@ -137,7 +137,7 @@ theorem theorem_3_via_class
     hypothesis class.  Given the maximizer's tightness assumption
     + complementary slackness from the class, the maximizer lies in
     the active set. -/
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 theorem theorem_1_via_class
     (lp : OperatorSelectionLP) [hyp : HasFiniteLPDuality lp]
     (max_pole : lp.Λ) (h_tight : lp.tight max_pole) :

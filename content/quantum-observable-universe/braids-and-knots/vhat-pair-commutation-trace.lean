@@ -12,7 +12,9 @@ Per CLAUDE.md §3b, this is a `lemma` (provable, not conjectural).
 -- Ref: [manuscript] lem:vhat-pair-commutation-trace
 -- Ref: [manuscript] def:algebraic-quantum-volume
 -- Ref: [manuscript] prop:markov-pair-z2
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 -/
 
 import Mathlib.Algebra.Ring.Defs

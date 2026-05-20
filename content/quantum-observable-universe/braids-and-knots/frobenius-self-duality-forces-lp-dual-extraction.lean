@@ -17,7 +17,7 @@ identifies primal and dual LP variables.  The Observation Frame
 -/
 
 -- Ref: [frobenius1903] Über die Charaktere der symmetrischen Gruppe (J. reine angew. Math.)
--- Ref: [nakayama1939] On Frobenius algebras II, Ann. of Math. 42
+-- Ref: [nakayama1939] Nakayama, On Frobenius algebras II, Ann. of Math. 42
 -- Ref: [kassel1995] §XII.2 Markov trace on Hecke algebras
 
 namespace QOU.BraidKnot

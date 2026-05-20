@@ -23,4 +23,7 @@ export default conjecture({
     "rem:jet-planck-steps",
     "rem:complex-substrate-interpretation",
   ],
+  cites: [
+    "freedman2003",
+  ],
 });

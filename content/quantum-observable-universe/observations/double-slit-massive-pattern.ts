@@ -12,4 +12,7 @@ export default proposition({
     "def:q-hodge-star",
   ],
   tags: ["double-slit", "interference", "massive-particle", "q-laplacian"],
+  cites: [
+    "bach2013",
+  ],
 });

@@ -47,7 +47,10 @@ namespace QOU.Hecke
     applications give
 
       `trace [c₁, c₂] = vertexVolume z c₁ · vertexVolume z c₂`. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem markov_pair_value
     {z : R_q} [inst : MarkovTraceAxioms z]
     (c₁ c₂ : GeneratorChain) :
@@ -61,7 +64,9 @@ theorem markov_pair_value
     For an adjacent pair of "trivial" generator chains (each chain
     is `σ_i · 1 + 0`, i.e. the bare braid generator at index `i`),
     each `vertexVolume` equals `z`, so the pair's trace is `z²`. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 theorem markov_pair_z2
     {z : R_q} [inst : MarkovTraceAxioms z]
     (i j : ℕ)

@@ -22,7 +22,7 @@ universe u
     data. Closing this axiom requires Mathlib's finite-dim LP-
     duality library + a structure refactor carrying the LP-
     canonicity as a proof field. -/
--- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+-- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 -- Ref: [manuscript] prop:mass-coefficient-shadow-price
 axiom KnotOperatorEnergy.shadowPrice_canonical :
     ∀ {R : Type u} [CommRing R]

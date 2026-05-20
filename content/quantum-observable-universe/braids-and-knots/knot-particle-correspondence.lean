@@ -16,7 +16,10 @@ import Mathlib.Data.Real.Basic
 namespace QOU.Braiding
 
 -- Ref: [manuscript] Ch. 4, §10
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 /-- Irreducible summands of V^{⊗n} under q-Schur-Weyl duality,
     labelled by partitions λ ⊢ n. -/
 axiom IrrepSummand (n : ℕ) : Type
@@ -31,7 +34,10 @@ axiom markovTraceMap (n : ℕ) : IrrepSummand n → KnotType n
     closures.**  This is the categorical content of the knot-particle
     correspondence; recorded as an axiom pending a full Lean port of
     the q-Schur-Weyl duality framework. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [manuscript] Ch. 4, §10
 axiom knot_particle_correspondence_axiom :
     ∀ (n : ℕ), Function.Bijective (markovTraceMap n)

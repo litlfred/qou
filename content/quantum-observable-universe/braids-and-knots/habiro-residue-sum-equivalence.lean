@@ -146,7 +146,7 @@ noncomputable def proton_gb_mass : ℝ := 2.1225825095
 /-- **External axiom (§3b-cond pattern):** archimedean agreement for
     the proton instance, certified empirically at machine precision
     by `markov_pipeline_cross_validator.py` (rel_diff = 0.0). -/
--- Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127
+-- Ref: [habiro2004] A unified Witten-Reshetikhin-Turaev invariant for  — see content/schema/references.ts
 -- Ref: [jones1987] Hecke algebras and knot polynomials
 axiom protonExample_archimedean_agreement_axiom :
     (protonHabiroTrace.map (Int.castRingHom ℝ)).eval (Real.sqrt q_0_proton)

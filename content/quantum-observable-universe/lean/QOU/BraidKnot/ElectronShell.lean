@@ -68,7 +68,8 @@ def nobleGasMagic : Finset ℕ := ({2, 10, 18, 36, 54, 86} : Finset ℕ)
     caller bind to the witness for the specific `(S, q)` it cares
     about, rather than asserting a universal SDP property. -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
+--      (strong duality for convex problems) + §5.5 (KKT optimality)
 class NobleGasMultiOperator
     (S : ElectronShell) [HasBindingMultiplicity S] (q : R_q)
     (_h : S.nElectrons ∈ nobleGasMagic) : Prop where
@@ -89,7 +90,8 @@ instance nobleGasMultiOperator_of_fact
 /-- **Multi-operator regime at noble-gas `Z`** (per-instance form).
     Backed by `NobleGasMultiOperator`. -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
+--      (strong duality for convex problems) + §5.5 (KKT optimality)
 theorem noble_gas_multi_operator
     (S : ElectronShell) [HasBindingMultiplicity S] (q : R_q)
     (h : S.nElectrons ∈ nobleGasMagic)

@@ -16,4 +16,10 @@ export default remark({
     "literature",
   ],
   uses: ["def:exceptional-divisor", "rem:breit-wheeler-vertex"],
+  cites: [
+    "bilsonthompson2005",
+    "bilsonthompson2007",
+    "kauffman1991",
+    "sugic2021",
+  ],
 });

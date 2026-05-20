@@ -16,6 +16,7 @@ export default remark({
   uses: ["def:classical-limit-functor"],
   cites: [
     "berarducci-mantova2018",
+    "kuhlmann-matusinski-2012",
     "robinson1966",
     "alling1987",
   ],

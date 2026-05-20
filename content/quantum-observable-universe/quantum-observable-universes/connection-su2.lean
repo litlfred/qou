@@ -25,7 +25,7 @@ namespace QOU.Examples
     O(SU(2)) with its left-invariant 3D calculus.
 
     LaTeX: `\label{ex:connection-su2}` -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure SU2ConnectionData where
   /-- Number of components of the gauge potential (= dim su(2)). -/
   numComponents : ℕ

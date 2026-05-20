@@ -22,4 +22,7 @@ export default remark({
   uses: [
     "rem:mass-comparison-table",
   ],
+  cites: [
+    "kerov1996",
+  ],
 });

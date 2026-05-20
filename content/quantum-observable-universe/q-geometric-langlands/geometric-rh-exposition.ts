@@ -6,4 +6,7 @@ export default remark({
   title: "The geometric reason for the critical line",
   tags: ["exposition", "riemann-hypothesis", "unitary", "chern-classes", "flatness"],
   uses: ["rem:unitary-stability"],
+  cites: [
+    "yekutieli2015",
+  ],
 });

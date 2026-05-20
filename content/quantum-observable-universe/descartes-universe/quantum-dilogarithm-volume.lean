@@ -52,7 +52,7 @@ noncomputable def bindingEnergy (q : ℝ) (markovFactors : List ℝ) : ℝ :=
     At q = 1, all crossings have equal weight, V̂ᵢ = 1,
     Φ_q = 0 (no binding).  At q > 1, crossing asymmetry
     creates nonzero Φ_q and the nucleus is bound. -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221848
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 -- Ref: [manuscript] §5/quantum-dilogarithm-volume
 theorem quantum_dilogarithm_volume
     (q : ℝ) (hq : 1 < q)

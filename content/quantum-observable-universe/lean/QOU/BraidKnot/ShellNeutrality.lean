@@ -322,7 +322,7 @@ def StableCompletedShell (λ : YoungDiagram) : Prop := isSelfConjugate λ
     framework claim. The remaining equivalences are derived from the
     Hecke and partition-combinatorics typeclass fields. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
--- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
+-- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
 class SaturatedShellConjecture (λ : YoungDiagram) [Saturated λ] (q : ℝ)
     extends FullTwistContentFormula q,
             KappaZeroImpliesSelfConjugate where

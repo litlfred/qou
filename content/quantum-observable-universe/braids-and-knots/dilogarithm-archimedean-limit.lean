@@ -25,8 +25,8 @@ control on the principal-branch dilogarithm). The class formulation
 isolates that gap.
 
 -- Ref: [manuscript] conj:dilogarithm-archimedean-limit
--- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -/
 
 import Mathlib.Algebra.BigOperators.Basic
@@ -132,7 +132,7 @@ theorem partialProduct_to_LiTwo (x : ℝ) [h : ArchimedeanLimit x]
     Mathlib infrastructure; for every `x ∈ (0, 1)` the instance
     requires the full Tauberian argument from Faddeev 1994 /
     Kashaev 1997. -/
--- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
+-- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 instance archimedeanLimit_zero : ArchimedeanLimit 0 where
   faddeev_limit := by
     intro ε hε

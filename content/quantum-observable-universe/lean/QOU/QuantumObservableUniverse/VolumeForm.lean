@@ -83,7 +83,7 @@ structure QYangMillsLevi (cqou : CQuantumObservableUniverse)
     pending the categorical determinant formalisation in Mathlib.
 
     LaTeX: `\label{lem:su2-emergence-volume-determinant}` -/
--- Ref: [maclane1971] https://doi.org/10.1007/978-1-4757-4721-8
+-- Ref: [maclane1971] Mac Lane, "Categories for the Working Mathematician," Springer GTM 5, 1971
 class SU2EmergenceVolumeDeterminant (det_g : ℝ) : Prop where
   /-- The determinant of `g_V` is 1. -/
   det_eq_one : det_g = 1
@@ -94,7 +94,7 @@ class SU2EmergenceVolumeDeterminant (det_g : ℝ) : Prop where
     witness pending the categorical-dagger formalisation.
 
     LaTeX: `\label{lem:su2-emergence-dagger-unitarity}` -/
--- Ref: [woronowicz1987] https://doi.org/10.1007/BF01219077
+-- Ref: [woronowicz1987] Compact matrix pseudogroups — see content/schema/references.ts
 class SU2EmergenceDaggerUnitarity (g_dagger g_inv : ℝ → ℝ) : Prop where
   /-- `g†` agrees with `g⁻¹`. -/
   unitary : g_dagger = g_inv

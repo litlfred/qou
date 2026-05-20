@@ -14,4 +14,8 @@ export default proof({
     status: "verified",
     requires: ["snappy>=3.3"],
   },
+  cites: [
+    "kashaev1997",
+    "murakami-murakami2001",
+  ],
 });

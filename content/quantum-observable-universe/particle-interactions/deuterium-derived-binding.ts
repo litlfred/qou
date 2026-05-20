@@ -7,7 +7,10 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/q_pinning_50_digit.py",
-    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    witness: [
+      "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      "folio-assistant/computations/gram-matrix-dual.witness.json",
+    ],
     status: "verified",
   },
   tags: [

@@ -84,7 +84,7 @@ class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] 
     typeclass field. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
 --                   phi-q-tower-jsj-bridge
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 theorem bridge {q : ℝ} [VolumeConjecture q] [TowerSummandRealization q]
     [inst : PerPieceBridge q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
@@ -122,7 +122,7 @@ instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
     `sorry` inside an instance field is understood as the conjecture,
     not missing proof.  Discharges §3b-cond for downstream consumers. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 instance skeletonBridge (q : ℝ) [VolumeConjecture q] :
     PerPieceBridge q where
   bridge_per_piece := by

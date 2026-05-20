@@ -62,8 +62,8 @@ $y_{(1,1,1)} = -0.5514$.
 
 ### Step 5 — Canonical typed braids
 
-From [`prop:atomic-braid-recipe-p-canonical`](#prop:atomic-braid-recipe-p-canonical)
-and [`prop:atomic-braid-recipe-n`](#prop:atomic-braid-recipe-n):
+From [`def:categorical-proton`](#def:categorical-proton)
+and [`def:categorical-neutron`](#def:categorical-neutron):
 
 - $\beta_p$ (uud): 11 typed crossings, $\{\sigma{:}6,\, \sigma^{-1}{:}3,\, \text{avg}{:}2\}$
 - $\beta_n$ (udd): 11 typed crossings, $\{\sigma{:}5,\, \sigma^{-1}{:}4,\, \text{avg}{:}2\}$

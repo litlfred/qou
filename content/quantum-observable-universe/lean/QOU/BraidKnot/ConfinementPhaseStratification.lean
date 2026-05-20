@@ -91,7 +91,8 @@ three fields. Callers obtain the relevant claim by binding to a
     axioms) keeps the conceptual unit intact while moving the
     universal quantifier into per-instance evidence. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — feasibility-set topology + value-function continuity)
 class HasPhaseStratification (P : ConfinedParticle)
     [HasRealAxisData P] : Prop where
   /-- **Claim (1)** — openness of the confinement locus
@@ -121,7 +122,8 @@ instance hasPhaseStratification_of_facts (P : ConfinedParticle)
 /-- **Claim (1) — Openness** (per-instance form).
     Backed by `HasPhaseStratification.locus_open`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — feasibility-set topology + value-function continuity)
 theorem phase_locus_open (P : ConfinedParticle)
     [HasRealAxisData P] [h : HasPhaseStratification P] :
     IsOpen (confinementLocus P) :=
@@ -132,7 +134,8 @@ theorem phase_locus_open (P : ConfinedParticle)
 /-- **Claim (2) — local constancy of μ** (per-instance form).
     Backed by `HasPhaseStratification.mu_constant`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — feasibility-set topology + value-function continuity)
 theorem phase_mu_constant_on_components
     (P : ConfinedParticle) [HasRealAxisData P] [h : HasPhaseStratification P]
     (C : Set ℝ)
@@ -146,7 +149,8 @@ theorem phase_mu_constant_on_components
 /-- **Claim (3) — continuity of σ_F** (per-instance form).
     Backed by `HasPhaseStratification.sigmaF_continuous`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — feasibility-set topology + value-function continuity)
 theorem phase_sigmaF_continuous_on_locus
     (P : ConfinedParticle) [HasRealAxisData P] [h : HasPhaseStratification P] :
     ContinuousOn (sigmaFReal P) (confinementLocus P) :=

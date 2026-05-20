@@ -8,4 +8,7 @@ export default proof({
     "lem:brings-euler-characteristic",
     "lem:brings-riemann-hurwitz",
   ],
+  cites: [
+    "woronowicz1987-twisted-su2",
+  ],
 });

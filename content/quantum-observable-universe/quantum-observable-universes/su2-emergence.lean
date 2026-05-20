@@ -84,8 +84,8 @@ structure RankOneGaugeData (k : Type*) [Field k] where
 
     LaTeX: `\label{thm:su2-emergence}`
     Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
--- Ref: [deligne2007] https://doi.org/10.1090/pspum/055.2
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
+-- Ref: [deligne2007] Catégories tannakiennes — see content/schema/references.ts
 axiom su2_emergence {k : Type*} [Field k]
     (data : RankOneGaugeData.{u, v} k) :
     ∃ (sd : SpinDecomposition data.qou.C),

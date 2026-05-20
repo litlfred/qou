@@ -52,8 +52,8 @@ open QOU.PhiQPiece
     The `kvc_holds` field is the **conjectural input**: providing it
     is the role of mathematicians (not Lean).  Downstream theorems
     consuming `[VolumeConjecture q]` are conditional on it. -/
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
--- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
+-- Ref: [murakami-murakami2001] Murakami & Murakami, "The colored Jones polynomials and the simplicial volume of a knot," Acta Math. 186 (2001), arXiv:math/9905075
 class VolumeConjecture (q : ℝ) where
   /-- Hyperbolic volume of `S³ \ K_β`, with the convention that
       non-hyperbolic complements contribute zero. -/
@@ -80,7 +80,7 @@ class VolumeConjecture (q : ℝ) where
     class only constrains the full-braid limit, not the per-piece
     values. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+-- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture

@@ -9,4 +9,7 @@ export default remark({
     "def:mass-identity",
     "rem:betti-numbers-brane",
   ],
+  cites: [
+    "yekutieli2015",
+  ],
 });

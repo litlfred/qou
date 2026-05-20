@@ -49,7 +49,7 @@ structure ConcreteRigidData where
   dual_matches : dimV_dual = dimV
 
 /-- SU(2) rigid monoidal data: V = V_{1/2} ≅ ℂ², self-dual. -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def su2RigidData : ConcreteRigidData where
   dimV := 2
   dimV_dual := 2

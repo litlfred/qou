@@ -23,4 +23,10 @@ export default proposition({
     "prop:toffoli-lp-stability",
     "def:information-speed-of-light",
   ],
+  cites: [
+    "bennett1973",
+    "fredkin1982",
+    "pena2022",
+    "toffoli1980",
+  ],
 });

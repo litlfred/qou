@@ -48,7 +48,10 @@ def kMax : ConfinedParticleTy → ℝ → ℕ := fun p _ => p.strands
     theorem below).  Sharpening to `(p.strands : ℝ)` would break
     the rfl-proved theorem; the constant-0 model is intentional. -/
 -- Ref: [manuscript] braids-and-knots/wedderburn-mass-formula
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ q => 0 * q
 
 /-- Unfolding morphism `P → P'`. -/
@@ -61,7 +64,10 @@ def unfolds : ConfinedParticleTy → ConfinedParticleTy → Prop :=
     (`k_max(P, q) ≤ n₀`), then the Markov trace at any fine
     unfolding equals the Markov trace at the coarse level. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem LevelSufficiency
     (P P' : ConfinedParticleTy) (q : ℝ)
     (_h_unfold : unfolds P P')

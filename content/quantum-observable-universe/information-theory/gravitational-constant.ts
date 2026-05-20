@@ -22,5 +22,6 @@ export default definition({
   cites: [
     "jacobson1995",
     "bekenstein1981",
+    "mcmullen1998",
   ],
 });

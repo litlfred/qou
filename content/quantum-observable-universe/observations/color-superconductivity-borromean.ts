@@ -22,4 +22,7 @@ export default conjecture({
     "prop:borromean-hopf-energy-crossover",
     "rem:deconfinement-golden-threshold",
   ],
+  cites: [
+    "alford1999",
+  ],
 });

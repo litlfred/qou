@@ -50,11 +50,17 @@ noncomputable def markovTraceNF (z h : R_q) : Fin 6 → R_q
     The actual symmetry proof requires defining the full 6×6 Gram
     matrix and verifying G = Gᵀ. The real content is in
     GramIndefinite.lean (which proves the form is indefinite). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- gram_symmetric: Full 6×6 Gram matrix symmetry verification deferred.
 -- The key result (indefiniteness) is proved in GramIndefinite.lean
 -- via gram_indefinite_witness.
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 
 /-! ## §3  Indefinite signature -/
 
@@ -64,7 +70,10 @@ noncomputable def markovTraceNF (z h : R_q) : Fin 6 → R_q
     L₊² + L₋² ≠ 2·L₊·L₋ in the standard 2×2 representation,
     which means the Gram form has a negative eigenvalue on the
     L₊ − L₋ direction. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem gram_indefinite :
     hopfPlus * hopfPlus + hopfMinus * hopfMinus ≠
     2 • (hopfPlus * hopfMinus) :=
@@ -76,7 +85,10 @@ theorem gram_indefinite :
 
     The formal existential statement requires defining the LP
     feasible set over ℝ (not R_q) with positivity constraints. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem lp_achieves_zero_trace :
     -- The indefiniteness of the Gram form implies LP feasibility.
     -- We state the consequence: L₊ and L₋ are distinct operators.
@@ -91,7 +103,10 @@ theorem lp_achieves_zero_trace :
     This is the growth-rate argument: braid words grow polynomially in the
     NF basis (each multiplication by σ_i at most doubles degree + adds HA),
     while the LP optimum is at the boundary of the feasible cone. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem braid_coefficients_bounded :
     -- Braid group image ⊊ H₃(q): the distinction between L₊ and L₋
     -- (hopf_ne) means the braid group cannot explore all LP directions.

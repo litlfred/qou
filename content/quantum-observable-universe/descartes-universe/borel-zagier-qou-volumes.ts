@@ -14,4 +14,5 @@ export default conjecture({
     "open-problem",
   ],
   uses: ["conj:single-volume-irrationality"],
+  cites: ["borel1986", "borel1974"],
 });

@@ -81,7 +81,9 @@ class SchurWeylMassDecomposition (A : ℕ) where
     Ref: [manuscript] `prop:three-parameters-wedderburn`. -/
 /-- **External axiom (Kassel 1995): partitions of 3 are (3),(2,1),(1,1,1)
     — exactly 3 of them, so the H_3(q) Wedderburn has 3 channels.** -/
--- Ref: [kassel1995] https://doi.org/10.1017/CBO9780511615443
+-- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 axiom a_eq_one_three_channels_axiom :
     ∀ (S : SchurWeylMassDecomposition 1), S.partitions.length = 3
 

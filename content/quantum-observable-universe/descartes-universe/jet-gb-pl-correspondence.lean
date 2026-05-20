@@ -48,7 +48,7 @@ abbrev StratumIndex := ℕ
     `.md` sibling) requires formalising the GB spectral sequence,
     the fibre-functor jet correspondence, and the Yekutieli surface
     integral — none yet in Mathlib. -/
--- Ref: [yekutieli2015] https://doi.org/10.1090/memo/1119
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/jet-gb-pl-correspondence.md
 theorem jetGBPLCorrespondence
     (_p : StratumIndex) :

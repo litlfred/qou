@@ -91,7 +91,7 @@ attribute [instance] DescentCondition.grp DescentCondition.addComm
 
 /-- If all obstructions vanish, the distributional connection is
     globally consistent. -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem descent_condition_global
     (dc : DescentCondition)
     (h : ∀ n, dc.obstruction n = 0) :

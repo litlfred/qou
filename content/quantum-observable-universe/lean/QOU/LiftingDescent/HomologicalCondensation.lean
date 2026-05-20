@@ -101,7 +101,7 @@ def InfinityVanishesAtPositiveQ (n : ℕ) : Prop :=
     associated `.md` (combinatorial enumeration of complete-intersection
     BB-strata; Yekutieli MC-equation reduction). -/
 -- Ref: [manuscript] conj:homological-shell-condensation
--- Ref: [yekutieli2010] https://doi.org/10.1142/9789814322188
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 class ShellCondensationConjecture where
   /-- Both directions of the iff. -/
   collapse_iff_magic :

@@ -38,10 +38,10 @@ universe u
     - `raising` / `lowering` — Kashiwara `ẽ_i` and `f̃_i` operators;
     - `crystal_realises` — the conjecture itself: every node attached
       to a GS normal form is annihilated by every raising operator. -/
--- Ref: [brundankleshchev2009] https://doi.org/10.1007/s00222-009-0204-8
--- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
--- Ref: [lecouvey2007] https://doi.org/10.2969/msjmemoirs/01701C040
--- Ref: [khovanovlauda2009] https://doi.org/10.4171/RT/162
+-- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
+-- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
+-- Ref: [lecouvey2007] Lecouvey, "Combinatorics of crystal graphs for the root systems of types A_n, B_n, C_n, D_n and G_2," Combinatorial Aspect of Integrable Systems (MSJ Memoirs 17, 2007)
+-- Ref: [khovanovlauda2009] Khovanov & Lauda, "A diagrammatic approach to categorification of quantum groups," Repr. Theory 13 (2009), arXiv:0803.4121
 class CrystalGraphRealization (R : Type u) [CommRing R] (q : R) where
   /-- Abstract type of Hecke normal forms. -/
   NormalForm : Type u
@@ -74,8 +74,8 @@ theorem nodeOf_highest_weight
 /-- Highest-weight predicate on a crystal node: every Kashiwara raising
     operator `ẽ_i` annihilates it.  Standard Kashiwara/Lecouvey
     convention. -/
--- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
--- Ref: [lecouvey2007] https://doi.org/10.2969/msjmemoirs/01701C040
+-- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
+-- Ref: [lecouvey2007] Lecouvey, "Combinatorics of crystal graphs for the root systems of types A_n, B_n, C_n, D_n and G_2," Combinatorial Aspect of Integrable Systems (MSJ Memoirs 17, 2007)
 def IsHighestWeight {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q] (v : C.CrystalNode) : Prop :=
   ∀ i : ℕ, C.raising i v = none

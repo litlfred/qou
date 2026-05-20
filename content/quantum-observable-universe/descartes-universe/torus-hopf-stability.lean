@@ -41,7 +41,10 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     the quark crossing sum (3 trefoils ≈ 3 × 0.31), giving
     E_cross < 0. -/
 -- Ref: [manuscript] Ch. 5, §torus-hopf-stability
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem torus_hopf_stability
     -- (q : R_q) (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     -- (vol_binding : R_q) (hvol : 0 < vol_binding)  -- (archimedean; not meaningful over R_q)

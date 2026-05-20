@@ -56,6 +56,7 @@ classical setting. Three structural identifications follow.
 
 3. **Undecidability = observational horizon.** The undecidable
    trajectory problem of \cite{cardona2021}
+   (extended to stationary Beltrami fields in \cite{cardona2023})
    is the geometric face of the
    [computational horizon](#def:computational-horizon): no
    finite observer can predict whether a given Reeb orbit

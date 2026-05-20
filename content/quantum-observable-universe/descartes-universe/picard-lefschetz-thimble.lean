@@ -66,7 +66,7 @@ noncomputable def colorTubeDiscriminant (z : ℂ) : ℂ :=
     records how γ (the real axis) crosses the anti-thimble.
 
     Ref: [witten2011] §2, [manuscript] §5/picard-lefschetz-thimble -/
--- Ref: [witten2011] https://doi.org/10.1090/conm/560
+-- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 structure ThimbleData where
   /-- Critical point z_c where Δ(z_c) = 0. -/
   z_c : ℂ
@@ -85,7 +85,7 @@ axiom discriminant_degree_six :
 
 /-- The Picard–Lefschetz decomposition: γ = Σ n_σ 𝒥_σ expresses
     the real-axis contour as an integer combination of thimbles. -/
--- Ref: [witten2011] https://doi.org/10.1090/conm/560
+-- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 -- Ref: [manuscript] §5/picard-lefschetz-thimble
 axiom thimble_decomposition :
   ∃ (thimbles : Fin 6 → ThimbleData),

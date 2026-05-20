@@ -147,6 +147,10 @@ const leanFiles = [
   ...scanFilesRecursive(contentDir, ".lean"),
 ];
 
+// Bare bracket citation `[authorYYYY]` in .lean docstrings — matches
+// only when key resolves against a known reference (mirrors .md scan).
+const LEAN_BRACKET_PATTERN = /(?<![!\w])\[([a-z][a-z0-9_-]*\d{4}[a-z0-9_-]*)\](?!\()/g;
+
 const unresolvedLeanRefs = new Map<string, string[]>();
 for (const file of leanFiles) {
   const content = readFileSync(file, "utf-8");
@@ -159,6 +163,14 @@ for (const file of leanFiles) {
     if (!referenceMap.has(key) && key !== "manuscript" && !key.includes(":")) {
       if (!unresolvedLeanRefs.has(key)) unresolvedLeanRefs.set(key, []);
       unresolvedLeanRefs.get(key)!.push(file.replace(REPO_ROOT + "/", ""));
+    }
+  }
+  // Bare-bracket references in docstrings — only count those that resolve
+  const bracketP = new RegExp(LEAN_BRACKET_PATTERN.source, LEAN_BRACKET_PATTERN.flags);
+  while ((match = bracketP.exec(content)) !== null) {
+    const key = match[1];
+    if (referenceMap.has(key)) {
+      leanCitations.add(key);
     }
   }
 }
@@ -209,13 +221,35 @@ for (const file of texFiles) {
   }
 }
 
+// ── 6b. TypeScript manifest cites: array scan ───────────────────
+
+console.log("Cross-checking .ts manifest cites: arrays...");
+// Pattern: cites: [ "key1", "key2", `key3`, 'key4' ]
+const TS_CITES_BLOCK = /\bcites\s*:\s*\[([^\]]*?)\]/gs;
+const TS_CITES_KEY = /["'`]([a-z][a-z0-9_-]*\d{4}[a-z0-9_-]*)["'`]/gi;
+const tsCitations = new Set<string>();
+const tsFiles = scanFilesRecursive(contentDir, ".ts");
+for (const file of tsFiles) {
+  const content = readFileSync(file, "utf-8");
+  let blockMatch;
+  const blockP = new RegExp(TS_CITES_BLOCK.source, TS_CITES_BLOCK.flags);
+  while ((blockMatch = blockP.exec(content)) !== null) {
+    const block = blockMatch[1];
+    let keyMatch;
+    const keyP = new RegExp(TS_CITES_KEY.source, TS_CITES_KEY.flags);
+    while ((keyMatch = keyP.exec(block)) !== null) {
+      tsCitations.add(keyMatch[1]);
+    }
+  }
+}
+
 // ── 7. Orphan detection ─────────────────────────────────────────
 
 console.log("Checking for uncited references...");
-const allCitations = new Set([...leanCitations, ...texCitations]);
+const allCitations = new Set([...leanCitations, ...texCitations, ...tsCitations]);
 for (const entry of references) {
   if (!allCitations.has(entry.id)) {
-    info(entry.id, "Reference not cited in any .lean or .tex/.md file");
+    info(entry.id, "Reference not cited in any .lean / .tex/.md / .ts manifest");
   }
 }
 
@@ -241,6 +275,7 @@ for (const i of infos) {
 console.log(`\n  ${errors.length} errors, ${warnings.length} warnings, ${infos.length} info`);
 console.log(`  Lean citations found: ${leanCitations.size}`);
 console.log(`  LaTeX citations found: ${texCitations.size}`);
+console.log(`  TS manifest citations found: ${tsCitations.size}`);
 console.log("=".repeat(60));
 
 const exitCode = errors.length > 0 ? 1 : (strict && warnings.length > 0 ? 1 : 0);

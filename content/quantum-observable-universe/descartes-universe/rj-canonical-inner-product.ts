@@ -19,4 +19,7 @@ export default proposition({
   uses: [
     "prop:cohomological-embedding",
   ],
+  cites: [
+    "rosso-jones1993",
+  ],
 });

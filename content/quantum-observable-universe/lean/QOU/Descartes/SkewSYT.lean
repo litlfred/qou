@@ -175,7 +175,7 @@ def skewCorners (λ μ : Partition) : Finset Cell :=
     to the right place. The size (sum of parts) is invariant under
     permutation, so size-decrease lemmas continue to hold without
     a corner hypothesis. -/
--- Ref: [sagan2001] corner removal preserves partition property
+-- Ref: [sagan2001] Sagan, The Symmetric Group, §3.1 — corner removal preserves partition property
 def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
   ⟨(λ.parts.mapIdx fun i p => if i = row then p - 1 else p).insertionSort (· ≥ ·),
    List.sorted_insertionSort _ _⟩

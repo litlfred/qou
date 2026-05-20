@@ -61,7 +61,7 @@ def SpectralPersistence (spectral_limit : ℕ → Fin 8 → R_q) : Prop :=
     X^ρ/ρ violates the error bound. -/
 /-- **External axiom (von Koch 1901):** Riemann hypothesis is
     equivalent to optimal Chebyshev error. -/
--- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
+-- Ref: [vonkoch1901] Sur la distribution des nombres premiers — see content/schema/references.ts
 axiom macroscopic_iff_rh_axiom :
     ∀ (ψ : R_q → R_q) (ζ : ℂ → ℂ),
       MacroscopicStability ψ ↔ RiemannHypothesis ζ
@@ -72,13 +72,13 @@ theorem macroscopic_iff_rh (ψ : R_q → R_q) (ζ : ℂ → ℂ) :
 
 /-- **External axiom (Weil 1948 explicit formula):** RH ↔ spectral
     persistence under the classical limit. -/
--- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 axiom rh_iff_persistence_axiom :
     ∀ (ζ : ℂ → ℂ) (spectral_limit : ℕ → Fin 8 → R_q),
       RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit
 
 /-- The equivalence (2) ↔ (3). -/
--- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
+-- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 theorem rh_iff_persistence (ζ : ℂ → ℂ)
     (spectral_limit : ℕ → Fin 8 → R_q) :
     RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit :=

@@ -31,7 +31,7 @@ def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Quantum group 𝒰_q(𝔰𝔲(2))** generator data. -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure QuantumSu2 where
   /-- The deformation parameter q > 0, q ≠ 1. -/
   q : R_q

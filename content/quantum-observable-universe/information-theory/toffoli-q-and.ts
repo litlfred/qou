@@ -14,4 +14,9 @@ export default remark({
     "universality",
   ],
   uses: ["prop:toffoli-transfer-matrix"],
+  cites: [
+    "bennett1973",
+    "fredkin1982",
+    "toffoli1980",
+  ],
 });

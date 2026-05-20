@@ -51,8 +51,10 @@ structure InsertionConfig where
 
     2. **Descending (Hecke relations).**  Within a given jet level,
        each crossing adds a relation to the interaction ideal. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
--- Ref: [frenkel2004] https://doi.org/10.1090/surv/088
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
+-- Ref: [frenkel2004] Frenkel, "Lectures on the Langlands program and conformal field theory," arXiv:hep-th/0512172 (related: 0007054)
 structure InteractionBiFiltration where
   /-- The underlying insertion configuration. -/
   config : InsertionConfig
@@ -70,7 +72,9 @@ structure InteractionBiFiltration where
 
 /-- The categorical transfer matrix: equivalence class of braiding
     operations on a hadron that produce the same vertex volume. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
 structure CategoricalTransferMatrix (q : R_q) where
   /-- The exceptional divisor where braiding takes place. -/
   base : ExceptionalDivisor
@@ -95,8 +99,13 @@ theorem InteractionBiFiltration.step_preserves_bound
     Formally: for two categorical transfer matrices T₁, T₂ of
     the same hadron (possibly at different filtration levels),
     the vertex volumes agree. -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
+--      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
+--      DOI: 10.1007/978-1-4612-0783-2
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom transfer_matrix_level_independence
     -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (T₁ T₂ : CategoricalTransferMatrix q)

@@ -52,7 +52,7 @@ namespace QOU.PathIntegrals
     group of the trefoil knot complement.
 
     LaTeX: `\label{def:braid-group}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure BraidGroupB3 where
   /-- Carrier type for braid elements. -/
   carrier : Type*
@@ -75,7 +75,7 @@ structure BraidGroupB3 where
     Presentation: `⟨s₁, s₂ | s₁² = s₂² = (s₁s₂)³ = id⟩`.
 
     LaTeX: `\label{def:s3-group}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure SymmetricGroupS3 extends BraidGroupB3 where
   /-- Involution: `σ₁² = id`. -/
   sigma1_sq : mul sigma1 sigma1 = one
@@ -88,7 +88,7 @@ structure SymmetricGroupS3 extends BraidGroupB3 where
     matrices, with Lie bracket `[eₐ, eᵦ] = εₐᵦc ec`.
 
     LaTeX: `\label{def:su2-basis}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure SU2Basis where
   /-- The three basis elements `e₁, e₂, e₃`. -/
   e : Fin 3 → ℝ × ℝ × ℝ
@@ -101,7 +101,7 @@ structure SU2Basis where
     Relations: `α³ = β² = −I`, `βαβ⁻¹ = α⁻¹`.
 
     LaTeX: `\label{def:su2-generators}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure Dic3Generators where
   /-- Carrier type of `Dic₃`. -/
   carrier : Type*
@@ -130,7 +130,7 @@ structure Dic3Generators where
     - `R_β` = `π`-rotation about `e₁` (2-cycle)
 
     LaTeX: `\label{def:so3-generators}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure SO3Generators where
   /-- `R_α`: rotation by `2π/3` about the `e₃`-axis. -/
   R_alpha : Fin 3 → Fin 3 → ℝ
@@ -191,7 +191,7 @@ theorem twistFlip_order_two {α : Type*} (w : SpectralResolventTuple α) :
     `π₁(S³ \ K₃,₂) ≅ ⟨H₁, H₂ | H₁H₂H₁ = H₂H₁H₂⟩`.
 
     LaTeX: `\label{rem:holonomy-trefoil}` -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 structure HolonomyGenerators (α : Type*) where
   /-- Holonomy around first branch point. -/
   H₁ : SpectralResolventTuple α → SpectralResolventTuple α
@@ -208,7 +208,7 @@ structure HolonomyGenerators (α : Type*) where
     - `EF − FE = (K − K⁻¹)/(q − q⁻¹)`
 
     LaTeX: `\label{def:quantum-su2}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure QuantumSU2 where
   /-- Carrier type. -/
   carrier : Type*
@@ -256,7 +256,7 @@ structure QuantumSU2 where
     acquired under particle exchange.
 
     LaTeX: `\label{rem:r-matrix-braiding}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure RMatrix where
   /-- The quantum group. -/
   qsu2 : QuantumSU2

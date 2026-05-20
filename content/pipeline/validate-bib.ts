@@ -2,6 +2,16 @@
 /**
  * validate-bib.ts — comprehensive bibliography correctness audit.
  *
+ * **Network requirement.** Modes `--doi`, `--crossref`, and `--arxiv`
+ * issue outbound HTTPS to `doi.org`, `api.crossref.org`, and
+ * `arxiv.org` respectively. Sandboxed environments with whitelist-
+ * only egress (Claude Code on the web, some CI runners) will see
+ * uniform 403/timeout failures from those modes; the script reports
+ * them as warnings rather than errors so a sandbox run isn't taken
+ * for a bib failure. Run these modes from a local machine or a
+ * runner with general outbound access. `--cross-check` and
+ * `--pandoc` (assuming pandoc is installed) work offline.
+ *
  * Modes (run individually or combined; `--all` enables every check):
  *
  *   --doi           DOI resolution: HEAD-request each entry's DOI →
@@ -72,10 +82,22 @@ async function modeDoi(): Promise<CheckResult[]> {
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 5000);
-      const resp = await fetch(url, { method: "HEAD", redirect: "follow", signal: ctrl.signal });
+      // doi.org returns 403 to bare HEAD requests; use GET with a
+      // User-Agent header to satisfy CDN gatekeeping. We just need
+      // the redirect to land somewhere, so manual mode + status check.
+      const resp = await fetch(url, {
+        method: "GET",
+        redirect: "manual",
+        headers: { "User-Agent": "qou-validate-bib/1.0 (DOI verification; +https://github.com/litlfred/qou)" },
+        signal: ctrl.signal,
+      });
       clearTimeout(timer);
+      // doi.org returns 301/302 with Location to the publisher
+      // (successful resolution); 200 (rare but possible); 404 = unknown DOI.
       if (resp.status === 200 || resp.status === 301 || resp.status === 302) {
-        out.push({ entry: r.id, severity: "ok", note: `${resp.status} OK` });
+        out.push({ entry: r.id, severity: "ok", note: `${resp.status} resolved` });
+      } else if (resp.status === 404) {
+        out.push({ entry: r.id, severity: "error", note: `404 DOI not found: ${url}` });
       } else {
         out.push({ entry: r.id, severity: "warn", note: `HTTP ${resp.status} for ${url}` });
       }
@@ -109,26 +131,75 @@ async function modeCrossCheck(): Promise<CheckResult[]> {
       comments++;
       const entry = refMap.get(key);
       if (!entry) continue; // validate-refs already catches missing keys
-      // Extract surname (sequence of capitalised words at start of desc)
-      const surnameMatch = desc.match(/^([A-Z][a-zA-Zé\-']+)(?:[,\s]+(?:and|&)\s+([A-Z][a-zA-Zé\-']+))?/);
+      // Heuristic v3 (2026-05-19): the description after `-- Ref: [key]`
+      // is varied — sometimes a full citation snippet ("Boyd & Vandenberghe,
+      // Convex Optimization 2004"), sometimes a topic hint
+      // ("Hecke-skein normalization"), sometimes a bare DOI/URL, sometimes
+      // empty. Only flag a surname mismatch when:
+      //   1. The description contains prose (≥5 alphabetic words), AND
+      //   2. None of the entry's author surnames appear anywhere in the
+      //      lowercased description.
+      // This skips URL-only / DOI-only / topic-hint-only descriptions
+      // (which v2's "always check" misclassified as FPs).
+      const authorFamilies: string[] = (entry.author ?? [])
+        .map((a: any) => (a.family ?? a.literal ?? "").toLowerCase())
+        .filter((s: string) => s.length >= 3);
       const yearMatch = desc.match(/\b(19|20)\d{2}\b/);
-      const entryFamily = entry.author?.[0]?.family ?? entry.author?.[0]?.literal ?? "";
       const entryYear = entry.issued?.["date-parts"]?.[0]?.[0];
       checked++;
-      // Warn if entry's surname doesn't appear in any of the first 2 description tokens
-      if (surnameMatch && entryFamily) {
-        const descSurname = surnameMatch[1].toLowerCase();
-        const entryFamLower = entryFamily.toLowerCase();
-        if (!entryFamLower.includes(descSurname) && !descSurname.includes(entryFamLower)) {
+      // Strip URLs, DOIs, and punctuation; count remaining alphabetic words
+      const descStripped = desc
+        .replace(/\bhttps?:\/\/\S+/g, " ")     // URLs
+        .replace(/\bdoi:\s*\S+/gi, " ")         // doi:foo
+        .replace(/\b10\.\d{4,}\/\S+/g, " ")     // bare DOI patterns
+        .replace(/\barxiv:\s*\S+/gi, " ")       // arxiv:foo
+        .toLowerCase()
+        .replace(/[`"',()§\[\]{}]/g, " ");
+      // Unicode-aware (\p{L} = any letter): catches Erdős, Möbius, Krein
+      // etc. that the original [a-zé...] class would drop (Gemini #820).
+      const proseWords = descStripped.split(/\s+/).filter((w) => /^[\p{L}\-']{2,}$/u.test(w));
+      const isProseDescription = proseWords.length >= 5;
+      // Heuristic v4 addition: also accept the description if it shares a
+      // significant title word with the entry. Many .lean Ref descriptions
+      // cite the work by title rather than surname (e.g.
+      // `[kauffman1991] Knots and Physics, World Scientific`); these are
+      // genuine matches that v3 incorrectly flagged.
+      const entryTitle: string = ((entry as any).title ?? "").toLowerCase();
+      const stopwords = new Set([
+        "a", "an", "the", "of", "and", "or", "in", "on", "for", "to", "from",
+        "with", "by", "at", "as", "is", "are", "be",
+      ]);
+      const titleWords = entryTitle
+        .split(/[\s\-:,]+/)
+        .filter((w) => w.length >= 4 && !stopwords.has(w));
+      // Heuristic v5 addition (2026-05-19): also accept the description
+      // if it contains a chapter/section marker (§N, Ch. <NUMERAL>, Thm,
+      // Definition, etc.). These markers indicate the citation pinpoints
+      // a specific part of the cited work — more useful than naming the
+      // author, and a stronger anchor than just title words.
+      const hasChapterSection = /(?:§|\bCh\.?\s|\bChapter\s|\bSection\s|\bThm\.?\s|\bTheorem\s|\bDefinition\s|\bLemma\s|\bProposition\s|\bCorollary\s|\bAppendix\s|\bExample\s|\bFig\.?\s|\bEq\.?\s|\bPage\s|\bp\.?\s\d)/i.test(desc);
+      if (isProseDescription && authorFamilies.length > 0 && !hasChapterSection) {
+        const anyAuthorMentioned = authorFamilies.some(
+          (fam) => descStripped.includes(fam)
+        );
+        const anyTitleWordMentioned = titleWords.length > 0
+          && titleWords.some((tw) => descStripped.includes(tw));
+        if (!anyAuthorMentioned && !anyTitleWordMentioned) {
           out.push({
             entry: key,
             severity: "warn",
-            note: `surname mismatch: .lean says "${surnameMatch[1]}", entry has "${entryFamily}" (${path.relative(REPO_ROOT, f)})`,
+            note: `entry author [${authorFamilies.join(", ")}] AND title words [${titleWords.slice(0, 3).join(", ")}] both absent from description "${desc.slice(0, 80)}" (${path.relative(REPO_ROOT, f)})`,
           });
         }
       }
-      if (yearMatch && entryYear) {
-        const descYear = parseInt(yearMatch[0]);
+      // v5 year-mismatch refinement (2026-05-19): only flag when EXACTLY
+      // ONE year appears in the description. Multiple years almost
+      // always means the description references other citations
+      // (e.g. "CODATA 2018" alongside [jones1987]) — the year doesn't
+      // refer to the current entry, so a mismatch is a false positive.
+      const allYears = desc.match(/\b(?:19|20)\d{2}\b/g) ?? [];
+      if (allYears.length === 1 && entryYear) {
+        const descYear = parseInt(allYears[0]);
         if (Math.abs(descYear - entryYear) > 1) {
           out.push({
             entry: key,

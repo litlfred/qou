@@ -1,4 +1,7 @@
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Nucleon Hecke element: product of Borromean braid and typed crossings
 
 /-- The nucleon Hecke element for a flavor triple (f₁, f₂, f₃):

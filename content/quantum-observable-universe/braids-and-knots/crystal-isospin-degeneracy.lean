@@ -202,7 +202,7 @@ theorem crystal_isospin_degeneracy_aux
     Proof: instance of `crystal_isospin_degeneracy_aux` at
     `offset = 0`. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
--- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
+-- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
 theorem crystal_isospin_degeneracy
     {R : Type u} [Ring R] [_C : CrystalEigenlineSignBlind R]
     (flip : ℕ → Bool) (w : SignedBraidWord) :

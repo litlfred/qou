@@ -46,7 +46,10 @@ noncomputable def two_crossing_ud1 : TMatrix :=
     Therefore σ₀σ₁⁻¹ ↦ q·q⁻¹ = 1.
 
     This is a computation in R_t (scalars), not in 2×2 matrices. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem borromean_unit_trivial_char :
     q_from_t * q_inv_from_t = (1 : R_t) := by
   simp [q_from_t, q_inv_from_t]
@@ -55,7 +58,10 @@ theorem borromean_unit_trivial_char :
 /-- In the ALTERNATING representation: σ₀ ↦ −q⁻¹, σ₁⁻¹ ↦ −q.
     (σ₁ ↦ −q⁻¹, and σ₁⁻¹ = σ₁ − HA ↦ −q⁻¹ − (q−q⁻¹) = −q.)
     Therefore σ₀σ₁⁻¹ ↦ (−q⁻¹)(−q) = 1. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem borromean_unit_alt_char :
     (-q_inv_from_t) * (-q_from_t) = (1 : R_t) := by
   simp [q_from_t, q_inv_from_t]
@@ -68,7 +74,10 @@ theorem borromean_unit_alt_char :
     Proof: χ_triv is multiplicative on the group algebra.
     χ_triv(σ₀σ₁⁻¹) = 1 (proved above).
     χ_triv(B₃) = χ_triv((σ₀σ₁⁻¹)³) = 1³ = 1. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem borromean3_net_exact :
     (q_from_t * q_inv_from_t) ^ 3 = (1 : R_t) := by
   rw [borromean_unit_trivial_char]
@@ -78,7 +87,10 @@ theorem borromean3_net_exact :
 
     Same argument: χ_alt(σ₀σ₁⁻¹) = 1 (proved above).
     χ_alt(B₃) = 1³ = 1. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem borromean3_alt_char :
     ((-q_inv_from_t) * (-q_from_t)) ^ 3 = (1 : R_t) := by
   rw [borromean_unit_alt_char]
@@ -115,7 +127,10 @@ theorem borromean3_alt_char :
     Proved in ProtonTrefoilSign.lean:
     - `proton_trefoil_neg_on_interval`: c₅(p) < 0 for q ∈ (1, 3/2]
     - `neutron_trefoil_neg`: c₅(n) < 0 for all q > 1 -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- See: ProtonTrefoilSign.lean for the formal proofs of sign negativity.
 -- The matrix-level proof that typed crossings produce nonzero e⁻ is
 -- HeckeEngine.lean: `nf_proton4_trefoil` and `nf_neutron4_trefoil`.

@@ -48,8 +48,8 @@ noncomputable def categoricalMass (q : ℝ) (E : ℝ) : ℝ :=
     Proof: the ribbon trace sums spatial crossing weights (q^{±1}),
     while the categorical mass sums temporal transport costs (ℏ_q per
     step).  The ratio E/m = (q⁻¹/ℏ_q)² = c_q². -/
--- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
--- Ref: [yekutieli2015] https://doi.org/10.1016/j.aim.2015.06.003
+-- Ref: [reshetikhin1991] Reshetikhin & Turaev, "Invariants of 3-manifolds via link polynomials and quantum groups," Invent. Math. 103 (1991)
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 theorem massEnergyEquivalence (q : ℝ) (hq : q ≠ 1)
     (E : ℝ) :
     E = categoricalMass q E * speedOfLightSq q := by

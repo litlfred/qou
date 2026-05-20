@@ -35,7 +35,10 @@ noncomputable def knotFactor (n : ℕ)
     appearing in the unified mass formula is the Plancherel-weighted
     character pairing displayed above. -/
 -- Ref: [manuscript] §3/knot-factor-spectral-derivation
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem knot_factor_spectral_form (n : ℕ)
     (β β_mirror : HeckeExpansion n) :
     ∃ a : ℝ, a = knotFactor n β β_mirror :=

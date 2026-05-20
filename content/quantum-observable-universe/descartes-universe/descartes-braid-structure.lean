@@ -48,7 +48,7 @@ structure DescartesBraidStructure where
   kernel_trivial : kernelOrder = 1
 
 /-- The binary dihedral group Dic₃ has order 4n for n = 3, i.e. 12. -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110218145
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem dic3_order : 4 * 3 = (12 : ℕ) := by norm_num
 
 /-- S₃ has order 6, and three disjoint copies inside S₅ account for
@@ -73,7 +73,7 @@ theorem colour_sector_count : (3 : ℕ) = 3 := rfl
 theorem thirty_factorization : (30 : ℕ) = 2 * 3 * 5 := by norm_num
 
 /-- Dic₃ order divides S₅ order: 12 | 120. -/
--- Ref: [turaev2010] https://doi.org/10.1515/9783110218145
+-- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem dic3_divides_s5 : 12 ∣ (120 : ℕ) := ⟨10, by norm_num⟩
 
 end QOU.Descartes

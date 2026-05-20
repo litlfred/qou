@@ -24,7 +24,7 @@ namespace QOU.Examples
     to SU(2) via the QOU axioms.
 
     LaTeX: `\label{ex:su2-emergence}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 structure SU2EmergenceChain where
   /-- Dimension of Λ²ℂ². -/
   exteriorPowerDim : ℕ

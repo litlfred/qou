@@ -10,4 +10,7 @@ export default corollary({
     "ex:c-quantum-observable-universe",
     "def:mass-identity",
   ],
+  cites: [
+    "yekutieli2015",
+  ],
 });

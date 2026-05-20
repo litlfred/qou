@@ -18,6 +18,8 @@ export default proposition({
   cites: [
     "kassel1995",
     "habiro2002",
+    "kashaev1997",
+    "murakami-murakami2001",
   ],
   tags: [
     "mass",

@@ -45,7 +45,7 @@ def selfDualityMorphism {C : Type u} [Category.{v} C]
     The non-tautological content is that the *specific* morphism
     `selfDualityMorphism` (not just any isomorphism) is invertible. -/
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 §2.3
--- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 /-- **External axiom (§3b-cond pattern): substrate_self_duality.**
 
     Auto-extracted from the single-sorry theorem body in this file.

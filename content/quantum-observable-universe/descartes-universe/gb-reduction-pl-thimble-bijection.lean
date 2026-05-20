@@ -6,8 +6,8 @@ the τ_arch-image of one step of the gradient-flow ODE on a Picard-
 Lefschetz thimble.  Class-based per CLAUDE.md §3b.
 
 -- Ref: [manuscript] conj:gb-reduction-pl-thimble-bijection
--- Ref: [witten2011] https://doi.org/10.1090/amsip/050/19
--- Ref: [yekutieli2015] https://doi.org/10.1093/imrn/rnu123
+-- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

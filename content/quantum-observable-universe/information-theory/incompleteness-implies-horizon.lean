@@ -89,8 +89,8 @@ theorem diagonal_not_in_range (enum : ℕ → (ℕ → ℕ)) :
     The non-computable function populates the computational horizon
     H_c = V(h_c): it is a degree-0 section that exists in the full
     algebra but cannot be produced by any finite braid. -/
--- Ref: [goedel1931] https://doi.org/10.1007/BF01700692
--- Ref: [turing1936] https://doi.org/10.1112/plms/s2-42.1.230
+-- Ref: [goedel1931]     title: — see content/schema/references.ts
+-- Ref: [turing1936]     title: — see content/schema/references.ts
 theorem exists_noncomputable (S : TuringCompleteSystem) :
     ∃ f : ℕ → ℕ, ∀ p : S.Program, S.eval p ≠ f := by
   refine ⟨diagonal (S.eval ∘ S.enumerate), fun p h => ?_⟩
