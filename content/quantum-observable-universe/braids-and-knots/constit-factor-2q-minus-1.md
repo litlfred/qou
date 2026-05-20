@@ -1,3 +1,22 @@
+> **✓ RESOLVED 2026-05-20 (Phase 5l): see
+> [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity).**
+> The correct closed form for the constit-side per-Z step factor
+> is $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\beta_p, q)$, the
+> proton's H_3 Markov trace — a structural identity derivable from
+> Wenzl's disjoint Markov-trace multiplicativity (Wenzl 1988 §1.7),
+> empirically verified at machine precision ($\sim 10^{-15}$) across
+> the substrate window in [Phase 5l](../../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py).
+>
+> The $(2q - 1)$ form below is now understood as a numerical
+> coincidence at $q_0$: $\tau_M^3(\beta_p, q_0) \approx 1.2204$
+> happens to be close to $2 q_0 - 1 = 1.2200$, but the two
+> functions diverge away from $q_0$ (rel. err. 28% at $q = 1.05$
+> and 33% at $q = 1.17$ — see Phase 5k.2 / PR #842 for the
+> varying-$q$ falsification table).  The conjecture statement
+> below is preserved as a record of Phase 5g's categorical-search
+> result, but the **structural-form claim is superseded** by the
+> Phase 5l proposition.
+
 **Conjecture (Constit-side per-Z step factor in canonical-atom Markov trace).**
 
 *Let $\beta_K^{\mathrm{constit}} \in H_{3A}(q)$ be the disjoint Hecke

@@ -487,3 +487,43 @@ Witness: `constit-factor-residual-phase5k.witness.json` (1 assertion: residual/h
 **Open question (5k.2 queued):** is $c \equiv 1$ for $h^5$ across the substrate window, or does $c$ vary with $q$?  A single point $c(q_0) = 1.016$ is suggestive but not conclusive.  Phase 5k.2 needs varying-$q$ measurement of $\rho_Z^{\mathrm{constit}}(q)$ via `pyhecke_native` with q-dependent Wenzl $y_\lambda$ weights at multiple $q$ in the substrate window.  Defer as substantive compute work.
 
 Next on queue: **5k.2** — varying-q sweep to confirm unit-coefficient $h^5$ across the substrate window.
+
+## 2026-05-20 (5l) — STRUCTURAL IDENTITY: $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\beta_p, q)$ ([PR pending — phase-5l](https://github.com/litlfred/qou))
+
+Phase 5l identifies the actual closed form for the constit-side per-Z step factor.  The disjoint-product Markov trace multiplicativity (Wenzl 1988 §1.7) gives
+
+$$\tau_M\!\bigl(\beta_K^{\mathrm{constit}}\bigr) \;=\; \tau_M^3(\beta_p)^Z \cdot \tau_M^3(\beta_n)^N,$$
+
+so $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\beta_p, q)$ exactly.  Empirical verification at five $q$-values via the $y_\lambda \cdot \chi_\lambda$ pipeline (same as PR #819 Phase 5c.1):
+
+| $q$ | $\tau_M^3(\beta_p, q)$ | $\rho_Z^{\mathrm{constit}}(q)$ | rel. err. |
+|---|---:|---:|---:|
+| $1.050$ | $0.79284191942392$ | $0.79284191942392$ | $6.0 \times 10^{-16}$ |
+| $1.080$ | $0.99328958564705$ | $0.99328958564705$ | $1.0 \times 10^{-15}$ |
+| $q_0$   | $1.22037426648745$ | $1.22037426648745$ | $1.4 \times 10^{-15}$ |
+| $1.130$ | $1.39054700525733$ | $1.39054700525733$ | $6.3 \times 10^{-16}$ |
+| $1.170$ | $1.78584582119413$ | $1.78584582119413$ | $1.0 \times 10^{-15}$ |
+
+Identity holds at **machine precision** ($\sim 10^{-15}$) across the substrate window.
+
+**Resolution of the previous chain (5g / 5k.1 / 5k.2):**
+
+- Phase 5g's $(2q - 1) \approx 1.220$ match at $q_0$ was a numerical coincidence: $\tau_M^3(\beta_p, q_0) \approx 1.2204$ happens to be near $2 q_0 - 1 = 1.2200$, but the two functions diverge elsewhere.
+- Phase 5k.1's "unit-coefficient $h^5$" residual at $q_0$ ($c = 1.016$) is likewise a numerical accident: $\tau_M^3(\beta_p, q_0) - (2 q_0 - 1) \approx h^5(q_0)$ only at $q_0$.
+- Phase 5k.2 (PR #842) falsified the global $(2q - 1)$ form via varying-$q$ measurement; that falsification was the bridge to identifying the actual closed form.
+
+**Combined per-Z step at the full $\tau_M$ level (now exact, no residuals):**
+
+$$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; z(q) \cdot \tau_M^3(\beta_p, q)$$
+
+at a p-* boundary, with $z(q)$ from [`prop:interface-knot-markov-z`](../../content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md) (interface factor).
+
+**Content blocks:**
+
+- NEW: [`prop:constit-factor-tau-M-proton-identity`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md) — the structural identity, with Wenzl-derivation proof and 5-q empirical verification.
+- UPDATED: [`conj:constit-factor-2q-minus-1`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md) — RESOLVED banner pointing to the proposition above; conjecture preserved as a record of the historical Phase 5g categorical-search result.
+
+**Script:** [`folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py).
+**Witness:** `rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. < 1e-12, passes at ~1e-15).
+
+Next on queue: **5l.1** — extract closed form for $\tau_M^3(\beta_p, q)$ as a Laurent rational expression in $q$ (the proton braid is a specific Hecke word, so $\tau_M^3(\beta_p, q)$ is a specific algebraic function).
