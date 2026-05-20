@@ -59,6 +59,36 @@ This skill catches each case.
 Both skills should run on Lean-bearing blocks; they catch different
 failure modes.
 
+## Heavy-proof discipline — Class E (NEW)
+
+### Class E — Missing narrative proof (auto-finding)
+
+Lean has a substantive proved theorem, but the sibling `.md` has no
+`**Proof.**` narrative block for it. The block describes the claim
+(maybe with a title in the `.ts` manifest, or with a math statement
+in prose) but does not walk through the proof.
+
+**Detection**: enumerate theorems / instances / definitions in the
+`.lean` file. For each, search the `.md` for either:
+- A `Proposition (Lean: \`theorem_name\`)` header, OR
+- A `*Proof.*` block within 30 lines of the theorem statement.
+
+If neither is present → **Class E finding**.
+
+**Resolution**: write a `**Proof.**` block per `formalizer.md`'s
+"Heavy-proof discipline" section. The narrative should cite the
+Lean theorem name, give a 1–3 sentence sketch (longer for inductions
+or case-splits), and mention the key Mathlib lemmas / tactics used.
+
+This class catches the "Lean is comprehensive, paper narrative
+covers the high-level claims but doesn't enumerate Lean theorems"
+gap. The bridge must be explicit at the theorem level for every
+proved Lean result.
+
+**Audit output**: for each Class E finding, include the Lean
+theorem name, file:line of the Lean proof, and the recommended
+`.md` location where the proof block should be inserted.
+
 ## The four drift classes
 
 ### Class A — Stub weakening
