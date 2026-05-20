@@ -646,8 +646,10 @@ function loadConjPropAudit(): Record<string, unknown> | null {
   return conjPropCache;
 }
 
+type TrivialSkeletonHit = { line: number; pattern: string; snippet: string };
+
 let trivialSkeletonCache: {
-  flagged: Record<string, Array<{ line: number; pattern: string; snippet: string }>>;
+  flagged: Record<string, TrivialSkeletonHit[]>;
 } | null = null;
 function loadTrivialSkeletonAudit() {
   if (trivialSkeletonCache !== null) return trivialSkeletonCache;
@@ -740,16 +742,18 @@ export function checkProofNoTrivialSkeleton(
       const target = normalize(f.snippet ?? "");
       if (!target) return null;
       const center = Math.max(0, f.line - 1);
-      const from = Math.max(0, center - 4);
-      const to = Math.min(source.length - 1, center + 2);
+      const from = Math.max(0, center - 10);
+      const to = Math.min(source.length - 1, center + 10);
+      const span = Math.max(1, (f.snippet.match(/\r?\n/g) ?? []).length + 1);
       for (let i = from; i <= to; i++) {
-        if (normalize(source[i] ?? "") === target) {
+        const candidate = normalize(source.slice(i, i + span).join("\n"));
+        if (candidate === target) {
           return { ...f, line: i + 1 };
         }
       }
       return null;
     })
-    .filter((x): x is { line: number; pattern: string; snippet: string } => x !== null);
+    .filter((x): x is TrivialSkeletonHit => x !== null);
   if (stillFlagged.length === 0) return { result: "pass", hits: [] };
   return {
     result: "fail",
