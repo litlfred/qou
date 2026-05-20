@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 With notation as in [exceptional divisor](#def:exceptional-divisor), fix the
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) and set
 $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the

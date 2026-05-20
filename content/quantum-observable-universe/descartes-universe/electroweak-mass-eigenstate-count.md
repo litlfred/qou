@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Conjecture (electroweak mass-eigenstate count).**
 *The pre-Higgs gauge structure on the substrate is
 $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$, of total real dimension

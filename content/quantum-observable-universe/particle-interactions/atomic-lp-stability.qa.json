@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:atomic-lp-stability",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts",
+    "md": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.md",
+    "lean": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean"
+  },
+  "source_hashes": {
+    "md": "9adb1ca7705e",
+    "ts": "ae38780f0f08",
+    "lean": "d36b2b22a461"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "ae38780f0f08",
+          "lean": "d36b2b22a461"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:he4-channel-active-set",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/he4-channel-active-set.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/he4-channel-active-set.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/he4-channel-active-set.lean"
+  },
+  "source_hashes": {
+    "md": "7b901cffb85f",
+    "ts": "6abefca354cc",
+    "lean": "6b3af4af2f0a"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "7b901cffb85f",
+          "ts": "6abefca354cc",
+          "lean": "6b3af4af2f0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

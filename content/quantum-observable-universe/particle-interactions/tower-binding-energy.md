@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The nuclear binding energy of a derived atom $\mathcal{A}(Z, N)$
 ([derived atom](#def:derived-atom)) is determined by the brane
 tower partition function evaluated on **all three** Wedderburn

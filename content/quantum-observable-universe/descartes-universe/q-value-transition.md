@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The **$Q$-value** of a nuclear transition is the
 $q$-deformed transition energy.  It is NOT defined by classical
 energy conservation — it is defined directly from the categorical

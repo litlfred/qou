@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Gröbner--Shirshov normal form $\mathcal{N}(p, n)$ of a nucleus
 built by sequential Hopf linking
 ([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))

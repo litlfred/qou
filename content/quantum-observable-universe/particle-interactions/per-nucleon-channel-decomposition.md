@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Garside matrix element for a nucleus of mass number $A$
 factors as a product of **per-nucleon contributions**, each
 decomposed into four channels by the $T_{2,3}$ eigenstructure

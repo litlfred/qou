@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "sec:horizons-aeons-intro",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/information-theory/horizons-aeons-intro.ts",
+    "md": "content/quantum-observable-universe/information-theory/horizons-aeons-intro.md"
+  },
+  "source_hashes": {
+    "md": "04cfd612c893",
+    "ts": "4c7dc39903a6"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "04cfd612c893",
+          "ts": "4c7dc39903a6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

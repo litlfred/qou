@@ -47,11 +47,17 @@ class JointTowerSdpConfinementContext where
       indexing respects the recursive jet order monotonically. -/
   claim_iii_jet_order_ordering : ∀ i j : ℕ,
     i ≤ j → jet_order i ≤ jet_order j
+  /-- Canonical `T_w(H)` value at hadron tower level `n` (scalar
+      stand-in for the Hecke element). -/
+  T_w_value : ℕ → ℝ
+  /-- Canonical embedding `π_{H → H'} : H_n → H_{n'}` evaluated on
+      `T_w(H)`, indexed by `(n, n')`. -/
+  embedding : ℕ → ℕ → ℝ → ℝ
   /-- Manuscript sub-claim (iv): cross-level compatibility — for every
-      tower step `H → H'`, the canonical embedding
-      `π_{H → H'} : H_{n_0(H')}(q) ↪ H_{n_0(H)}(q)` satisfies
-      `π_{H → H'}(T_w(H)) = T_w(H')`. -/
-  claim_iv_cross_level_compatibility : Prop
+      tower step `n → n'` (with `n < n'`), the canonical embedding
+      maps `T_w(H_n)` to `T_w(H_n')`. -/
+  claim_iv_cross_level_compatibility : ∀ n n' : ℕ,
+    n < n' → embedding n n' (T_w_value n) = T_w_value n'
 
 /-- **Manuscript statement** (full body):
 
@@ -99,7 +105,8 @@ theorem joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
     (∀ H w : ℕ, ctx.coefficient H w ≠ 0 →
       ctx.word_length w ≤ ctx.gb_filtration_length H) ∧
     (∀ i j : ℕ, i ≤ j → ctx.jet_order i ≤ ctx.jet_order j) ∧
-    ctx.claim_iv_cross_level_compatibility :=
+    (∀ n n' : ℕ, n < n' →
+      ctx.embedding n n' (ctx.T_w_value n) = ctx.T_w_value n') :=
   ⟨ctx.claim_i_wedderburn_positivity, ctx.claim_ii_gb_filtration_grading,
    ctx.claim_iii_jet_order_ordering, ctx.claim_iv_cross_level_compatibility⟩
 

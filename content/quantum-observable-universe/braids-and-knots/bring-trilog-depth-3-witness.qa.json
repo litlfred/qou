@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:bring-trilog-depth-3-witness",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.lean"
+  },
+  "source_hashes": {
+    "md": "82a014de2bb3",
+    "ts": "c288d4aadcb7",
+    "lean": "ba91bd9c1563"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "82a014de2bb3",
+          "ts": "c288d4aadcb7",
+          "lean": "ba91bd9c1563"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

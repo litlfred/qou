@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Hecke mass element
 $\Phi_{\mathrm{mass}}(\beta) \in H_3(R, q)$
 ([Hecke mass element](#def\:hecke-mass-element)) has a

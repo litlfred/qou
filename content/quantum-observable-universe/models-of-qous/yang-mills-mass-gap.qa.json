@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:yang-mills-mass-gap",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts",
+    "md": "content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md",
+    "lean": "content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.lean"
+  },
+  "source_hashes": {
+    "md": "d640b28511c1",
+    "ts": "31b8da245e23",
+    "lean": "d39ad5044ad6"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "d640b28511c1",
+          "ts": "31b8da245e23",
+          "lean": "d39ad5044ad6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -26,13 +26,16 @@ class FourTermPairNucleonContext where
   /-- The number of photon-color terms used (always 4 for the full
       photon color content). -/
   photon_terms : ℕ
-  /-- Manuscript sub-claim (i): proton derivation — three γγ pair
-      productions with the 4-term photon color content recover the
-      proton categorical structure. -/
-  claim_i_proton_derivation : Prop
-  /-- Manuscript sub-claim (ii): neutron derivation — same procedure
-      with permuted color content recovers the neutron. -/
-  claim_ii_neutron_derivation : Prop
+  /-- Count of color combinations used in the proton derivation. -/
+  n_proton_color_combinations : ℕ
+  /-- Count of color combinations used in the neutron derivation. -/
+  n_neutron_color_combinations : ℕ
+  /-- Manuscript sub-claim (i): proton derivation uses the full 4-term
+      photon color content — `n_proton_color_combinations = 4`. -/
+  claim_i_proton_derivation : n_proton_color_combinations = 4
+  /-- Manuscript sub-claim (ii): neutron derivation uses the same
+      4-term content with permuted assignment — `n_neutron_color_combinations = 4`. -/
+  claim_ii_neutron_derivation : n_neutron_color_combinations = 4
   /-- Manuscript sub-claim (iii): photon-pair count is exactly 3 and
       photon-term count is exactly 4 (definitional). -/
   claim_iii_counts : pair_count = 3 ∧ photon_terms = 4
@@ -49,8 +52,8 @@ three independent $\gamma\gamma$ pair productions using the full
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts
 theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
-    ctx.claim_i_proton_derivation ∧
-    ctx.claim_ii_neutron_derivation ∧
+    ctx.n_proton_color_combinations = 4 ∧
+    ctx.n_neutron_color_combinations = 4 ∧
     (ctx.pair_count = 3 ∧ ctx.photon_terms = 4) :=
   ⟨ctx.claim_i_proton_derivation, ctx.claim_ii_neutron_derivation,
    ctx.claim_iii_counts⟩

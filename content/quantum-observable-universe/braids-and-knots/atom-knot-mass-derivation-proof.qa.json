@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:atom-knot-mass-derivation",
+  "kind": "proof",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.lean"
+  },
+  "source_hashes": {
+    "md": "c2c968fe517a",
+    "ts": "a3b2eceb7599",
+    "lean": "e6a07a88c8ce"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "c2c968fe517a",
+          "ts": "a3b2eceb7599",
+          "lean": "e6a07a88c8ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

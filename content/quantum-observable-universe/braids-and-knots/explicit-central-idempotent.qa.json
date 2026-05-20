@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:explicit-central-idempotent",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/explicit-central-idempotent.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/explicit-central-idempotent.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/explicit-central-idempotent.lean"
+  },
+  "source_hashes": {
+    "md": "5a1065703a7a",
+    "ts": "e0219fe6cffb",
+    "lean": "257a935e31a3"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "5a1065703a7a",
+          "ts": "e0219fe6cffb",
+          "lean": "257a935e31a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

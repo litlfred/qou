@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The Markov trace factorization
 ([factorization theorem](#thm:markov-trace-factorization)) gives
 an exact product $\prod_i \hat{V}_i$ that grows exponentially with

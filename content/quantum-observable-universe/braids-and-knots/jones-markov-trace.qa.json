@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:jones-markov-trace",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
+  },
+  "source_hashes": {
+    "md": "55381ff5100f",
+    "ts": "172b3ff4ecc2",
+    "lean": "0cb119d084ca"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "55381ff5100f",
+          "ts": "172b3ff4ecc2",
+          "lean": "0cb119d084ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

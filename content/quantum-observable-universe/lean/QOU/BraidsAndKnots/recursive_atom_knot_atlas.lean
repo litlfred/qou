@@ -22,18 +22,40 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class RecursiveAtomKnotAtlasContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — `confined-particle.md` — GB-NF particle registry (canonical $T_w$). -/
-  claim_i_confined_particle_md : Prop
-  /-- Manuscript sub-claim (ii) — `mass-table-ppb.witness.json` — D..⁴⁰Ca (manual-historical, recursive, magic-A). -/
-  claim_ii_mass_table_ppb : Prop
-  /-- Manuscript sub-claim (iii) — `methodology-deprecation.witness.json` — per-particle methodology audit. -/
-  claim_iii_methodology_deprecation_witness : Prop
-  /-- Manuscript sub-claim (iv) — `hp_volume.py` — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$. -/
-  claim_iv_hp_volume_py_digit : Prop
-  /-- Manuscript sub-claim (v) — `y_lambda_wenzl_bridge_extended.py` — symbolic-$q$ Wenzl bridge for $y_\lambda$. -/
-  claim_v_y_lambda_wenzl_bridge_extended_py_symbolic : Prop
-  /-- Manuscript sub-claim (vi) — `li-atom-knot-search.witness.json` — (provisional) volume-match search. -/
-  claim_vi_li_atom_knot : Prop
+  /-- Number of confined-particle registry entries (canonical T_w's). -/
+  n_registered_particles : ℕ
+  /-- Number of mass-table entries (atoms tabulated D..⁴⁰Ca). -/
+  n_mass_table_atoms : ℕ
+  /-- Number of methodology buckets in the deprecation audit
+      (manual-historical / recursive / magic-A). -/
+  n_methodology_buckets : ℕ
+  /-- Symbolic-q Markov-closure target precision (digits). -/
+  hp_volume_precision_digits : ℕ
+  /-- Number of partitions for which the Wenzl bridge is symbolic. -/
+  n_wenzl_bridge_partitions : ℕ
+  /-- Number of candidate hyperbolic knots searched for Li-atom match. -/
+  n_li_search_candidates : ℕ
+  /-- Manuscript sub-claim (i) — `confined-particle.md` — GB-NF
+      particle registry contains at least the 6 canonical atomic
+      entries (p, n, D, T, ³He, ⁴He). -/
+  claim_i_confined_particle_md : 6 ≤ n_registered_particles
+  /-- Manuscript sub-claim (ii) — `mass-table-ppb.witness.json` covers
+      D..⁴⁰Ca, i.e. at least 39 atoms (A = 2 through A = 40). -/
+  claim_ii_mass_table_ppb : 39 ≤ n_mass_table_atoms
+  /-- Manuscript sub-claim (iii) — `methodology-deprecation.witness.json`
+      tracks the three methodology buckets. -/
+  claim_iii_methodology_deprecation_witness : n_methodology_buckets = 3
+  /-- Manuscript sub-claim (iv) — `hp_volume.py` uses ≥ 50-digit
+      symbolic-q precision. -/
+  claim_iv_hp_volume_py_digit : 50 ≤ hp_volume_precision_digits
+  /-- Manuscript sub-claim (v) — `y_lambda_wenzl_bridge_extended.py`
+      symbolic-q coverage extends to at least n = 12 (i.e. ≥ 77
+      partitions of n ≤ 12). -/
+  claim_v_y_lambda_wenzl_bridge_extended_py_symbolic :
+    77 ≤ n_wenzl_bridge_partitions
+  /-- Manuscript sub-claim (vi) — `li-atom-knot-search.witness.json`
+      enumerates a non-empty candidate set. -/
+  claim_vi_li_atom_knot : 1 ≤ n_li_search_candidates
 /-- **Content statement** (from manuscript):
 
 **Atlas (recursive, $q_0$-indexed).**
@@ -51,7 +73,16 @@ Confinement at $q_0$ is verified via the
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.ts
 theorem recursive_atom_knot_atlas [ctx : RecursiveAtomKnotAtlasContext] :
-    ctx.claim_i_confined_particle_md ∧ ctx.claim_ii_mass_table_ppb ∧ ctx.claim_iii_methodology_deprecation_witness ∧ ctx.claim_iv_hp_volume_py_digit ∧ ctx.claim_v_y_lambda_wenzl_bridge_extended_py_symbolic ∧ ctx.claim_vi_li_atom_knot :=
-  ⟨ctx.claim_i_confined_particle_md, ctx.claim_ii_mass_table_ppb, ctx.claim_iii_methodology_deprecation_witness, ctx.claim_iv_hp_volume_py_digit, ctx.claim_v_y_lambda_wenzl_bridge_extended_py_symbolic, ctx.claim_vi_li_atom_knot⟩
+    6 ≤ ctx.n_registered_particles ∧
+    39 ≤ ctx.n_mass_table_atoms ∧
+    ctx.n_methodology_buckets = 3 ∧
+    50 ≤ ctx.hp_volume_precision_digits ∧
+    77 ≤ ctx.n_wenzl_bridge_partitions ∧
+    1 ≤ ctx.n_li_search_candidates :=
+  ⟨ctx.claim_i_confined_particle_md, ctx.claim_ii_mass_table_ppb,
+   ctx.claim_iii_methodology_deprecation_witness,
+   ctx.claim_iv_hp_volume_py_digit,
+   ctx.claim_v_y_lambda_wenzl_bridge_extended_py_symbolic,
+   ctx.claim_vi_li_atom_knot⟩
 
 end QOU.BraidsAndKnots

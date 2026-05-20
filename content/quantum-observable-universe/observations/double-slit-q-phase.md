@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q \in k^{\times}$
 ([substrate parameter](#def:substrate-parameter)), and let $\gamma_i$

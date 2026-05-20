@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:kashaev-as-archimedean-realization",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/kashaev-as-archimedean-realization.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/kashaev-as-archimedean-realization.md"
+  },
+  "source_hashes": {
+    "md": "4cbed09f994a",
+    "ts": "3a0f8b68845d"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "4cbed09f994a",
+          "ts": "3a0f8b68845d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -37,11 +37,16 @@ class WedderburnBratteliRecursionContext extends QOU.Shared.MarkovTraceContext w
       the q-content sign of the added cell. -/
   claim_ii_sign_tracking_added : ∀ k : ℕ,
     0 ≤ ratio k * q_content_sign k
+  /-- Markov parameter `z = 1 / (√q + 1/√q)`. -/
+  z_real : ℝ
+  /-- Diagonal ratio at the one-row partition `(n)`, indexed by `n`. -/
+  diagonal_ratio_n : ℕ → ℝ
   /-- Manuscript sub-claim (iii) — Trivial-rep limit: for the
       one-row partition `(n)`, the diagonal ratios approach `z` as
-      `n → ∞` (captured as an abstract Prop because it requires
-      a limit construction). -/
-  claim_iii_trivial_rep_limit : Prop
+      `n → ∞`. Stated as the ε-N convergence condition. -/
+  claim_iii_trivial_rep_limit : ∀ ε : ℝ, 0 < ε →
+    ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
+      |diagonal_ratio_n n - z_real| < ε
 /-- **Proposition statement** (from manuscript):
 
 Let $H_n(R, q)$ be the Iwahori–Hecke algebra at generic $q$ with
@@ -58,7 +63,9 @@ Then the family $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfies a
 theorem wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] :
     (∀ k : ℕ, ctx.ratio (k + 1) ≤ ctx.ratio k) ∧
     (∀ k : ℕ, 0 ≤ ctx.ratio k * ctx.q_content_sign k) ∧
-    ctx.claim_iii_trivial_rep_limit :=
+    (∀ ε : ℝ, 0 < ε →
+      ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
+        |ctx.diagonal_ratio_n n - ctx.z_real| < ε) :=
   ⟨ctx.claim_i_per_row_monotonicity, ctx.claim_ii_sign_tracking_added,
    ctx.claim_iii_trivial_rep_limit⟩
 

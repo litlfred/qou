@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:substrate-consistency-window",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/substrate-consistency-window.ts",
+    "md": "content/quantum-observable-universe/observations/substrate-consistency-window.md",
+    "lean": "content/quantum-observable-universe/observations/substrate-consistency-window.lean"
+  },
+  "source_hashes": {
+    "md": "85ec0239faf9",
+    "ts": "cd37dd04cc57",
+    "lean": "ff4338df5846"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "85ec0239faf9",
+          "ts": "cd37dd04cc57",
+          "lean": "ff4338df5846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

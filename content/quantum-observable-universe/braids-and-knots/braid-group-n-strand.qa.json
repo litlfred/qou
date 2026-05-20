@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:braid-group-n-strand",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.lean"
+  },
+  "source_hashes": {
+    "md": "449b0f42137e",
+    "ts": "a66698e1fd35",
+    "lean": "ffd12ef6653a"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "449b0f42137e",
+          "ts": "a66698e1fd35",
+          "lean": "ffd12ef6653a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

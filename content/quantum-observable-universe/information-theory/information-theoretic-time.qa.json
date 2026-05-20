@@ -1,0 +1,37 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:information-theoretic-time",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/information-theory/information-theoretic-time.ts",
+    "md": "content/quantum-observable-universe/information-theory/information-theoretic-time.md",
+    "lean": "content/quantum-observable-universe/information-theory/information-theoretic-time.lean"
+  },
+  "source_hashes": {
+    "md": "323d5213f792",
+    "ts": "1d15bd04f35b",
+    "lean": "f438dd847e4e"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "323d5213f792",
+          "ts": "1d15bd04f35b",
+          "lean": "f438dd847e4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "ex:rigid-monoidal-vect",
+  "kind": "example",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-vect.ts",
+    "md": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-vect.md",
+    "lean": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-vect.lean"
+  },
+  "source_hashes": {
+    "md": "4fa05fb8a54c",
+    "ts": "9b489932e8b7",
+    "lean": "14fd3159327f"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "4fa05fb8a54c",
+          "ts": "9b489932e8b7",
+          "lean": "14fd3159327f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

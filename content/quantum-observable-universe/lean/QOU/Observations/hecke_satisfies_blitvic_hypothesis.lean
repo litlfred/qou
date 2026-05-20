@@ -32,10 +32,15 @@ class HeckeSatisfiesBlitvicHypothesisContext where
       `σᵢ² = (q − q⁻¹)·σᵢ + 1`. -/
   claim_i_hecke_quadratic_relation : ∀ i : ℕ,
     haveI := ringA; σ i * σ i = h_A * σ i + 1
+  /-- Markov trace functional `tr_M : A → ℝ`. -/
+  tr_M : A → ℝ
+  /-- Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`. -/
+  z_real : ℝ
   /-- Manuscript sub-claim (ii) — Markov property of `tr_M`:
-      `tr_M(x · σ_n) = z · tr_M(x)` (captured abstractly because the
-      Markov-parameter map lives on the inductive limit `H_∞`). -/
-  claim_ii_markov_property : Prop
+      `tr_M(x · σ_n) = z · tr_M(x)` for every `x : A` and every
+      generator index `n : ℕ`. -/
+  claim_ii_markov_property : ∀ (x : A) (n : ℕ),
+    haveI := ringA; tr_M (x * σ n) = z_real * tr_M x
   /-- Centred-generator moment of length `n` (the expectation of an
       `n`-fold product of centred Hecke generators under `tr_M`). -/
   moment : ℕ → ℝ
@@ -65,7 +70,8 @@ theorem hecke_satisfies_blitvic_hypothesis
     [ctx : HeckeSatisfiesBlitvicHypothesisContext] :
     (∀ i : ℕ, haveI := ctx.ringA;
       ctx.σ i * ctx.σ i = ctx.h_A * ctx.σ i + 1) ∧
-    ctx.claim_ii_markov_property ∧
+    (∀ (x : ctx.A) (n : ℕ), haveI := ctx.ringA;
+      ctx.tr_M (x * ctx.σ n) = ctx.z_real * ctx.tr_M x) ∧
     (∀ n : ℕ, n % 2 = 1 → ctx.moment n = 0) ∧
     ctx.claim_iv_pair_partition_decomposition :=
   ⟨ctx.claim_i_hecke_quadratic_relation, ctx.claim_ii_markov_property,

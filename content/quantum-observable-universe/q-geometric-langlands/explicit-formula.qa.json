@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:explicit-formula",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/q-geometric-langlands/explicit-formula.ts",
+    "md": "content/quantum-observable-universe/q-geometric-langlands/explicit-formula.md",
+    "lean": "content/quantum-observable-universe/q-geometric-langlands/explicit-formula.lean"
+  },
+  "source_hashes": {
+    "md": "138be532d397",
+    "ts": "310f4135f0e0",
+    "lean": "a52fd931881d"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "138be532d397",
+          "ts": "310f4135f0e0",
+          "lean": "a52fd931881d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

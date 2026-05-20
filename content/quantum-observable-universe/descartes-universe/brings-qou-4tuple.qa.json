@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:brings-qou-4tuple",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/brings-qou-4tuple.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/brings-qou-4tuple.md"
+  },
+  "source_hashes": {
+    "md": "afdfdbbc8794",
+    "ts": "b3153a2e1ac5"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "afdfdbbc8794",
+          "ts": "b3153a2e1ac5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

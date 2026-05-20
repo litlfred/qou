@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:birthday-grading",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-surreals/birthday-grading.ts",
+    "md": "content/quantum-observable-universe/appendix-surreals/birthday-grading.md",
+    "lean": "content/quantum-observable-universe/appendix-surreals/birthday-grading.lean"
+  },
+  "source_hashes": {
+    "md": "0061063d575b",
+    "ts": "b62d28cb6916",
+    "lean": "547873d732da"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "0061063d575b",
+          "ts": "b62d28cb6916",
+          "lean": "547873d732da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

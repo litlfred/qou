@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:markov-trace-operator-construction",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/markov-trace-operator-construction.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/markov-trace-operator-construction.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/markov-trace-operator-construction.lean"
+  },
+  "source_hashes": {
+    "md": "ca5084b48ed9",
+    "ts": "690967efc662",
+    "lean": "12838040ff63"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ca5084b48ed9",
+          "ts": "690967efc662",
+          "lean": "12838040ff63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

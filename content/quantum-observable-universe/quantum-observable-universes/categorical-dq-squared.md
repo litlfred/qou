@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Let $d_q$ be the categorical $q$-deformed exterior derivative
 ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)).  The composition
 $d_q^2 = d_q \circ d_q \colon \Omega^k(A) \to \Omega^{k+2}(A)$ is

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "lem:chebyshev-degree-genus",
+  "kind": "lemma",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/chebyshev-degree-genus.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/chebyshev-degree-genus.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/chebyshev-degree-genus.lean"
+  },
+  "source_hashes": {
+    "md": "8cb84509fe97",
+    "ts": "ace152ae0ccb",
+    "lean": "d8525afe87a6"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "8cb84509fe97",
+          "ts": "ace152ae0ccb",
+          "lean": "d8525afe87a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

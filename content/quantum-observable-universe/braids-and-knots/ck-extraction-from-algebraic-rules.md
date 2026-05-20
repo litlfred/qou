@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
 > **Errata banner (2026-05-19) — $c_4$ closed form has shifted.**

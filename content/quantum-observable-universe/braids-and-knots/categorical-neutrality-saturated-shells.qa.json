@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:categorical-neutrality-saturated-shells",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.lean"
+  },
+  "source_hashes": {
+    "md": "05379e981ab5",
+    "ts": "618b5686c3ff",
+    "lean": "5c25d67d5fdf"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "05379e981ab5",
+          "ts": "618b5686c3ff",
+          "lean": "5c25d67d5fdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 > **Errata banner (2026-05-19) — this proposition's claimed
 > closed form $c_4 = b^2 + 1/2$ is superseded.** The 2026-05-19
 > SDP-$T_\beta$ derivation (PR #777) showed the empirical $c_4$ is

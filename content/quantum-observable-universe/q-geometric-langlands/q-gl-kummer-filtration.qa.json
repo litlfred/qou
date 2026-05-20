@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:q-gl-kummer-filtration",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.ts",
+    "md": "content/quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.md",
+    "lean": "content/quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.lean"
+  },
+  "source_hashes": {
+    "md": "1c4c579c47bd",
+    "ts": "630bfa9747fa",
+    "lean": "63116f9fe024"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "1c4c579c47bd",
+          "ts": "630bfa9747fa",
+          "lean": "63116f9fe024"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

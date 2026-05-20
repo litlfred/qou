@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "lem:surreal-squeeze",
+  "kind": "lemma",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.ts",
+    "md": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.md",
+    "lean": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean"
+  },
+  "source_hashes": {
+    "md": "f4b32f63fb0f",
+    "ts": "55c14e0bbbd9",
+    "lean": "176e2ebf3658"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "f4b32f63fb0f",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:projective-line-object",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/projective-line-object.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/projective-line-object.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/projective-line-object.lean"
+  },
+  "source_hashes": {
+    "md": "ce93feb52867",
+    "ts": "f67897a74730",
+    "lean": "b07f44f4af37"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ce93feb52867",
+          "ts": "f67897a74730",
+          "lean": "b07f44f4af37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

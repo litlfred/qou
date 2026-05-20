@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **Proposition.**
 The Hecke bar involution $\sigma \leftrightarrow \sigma^{-1}$, which
 on the substrate parameter acts as $q \leftrightarrow q^{-1}$ (equivalently

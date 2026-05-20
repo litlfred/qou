@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:knot-operator-selection",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/knot-operator-selection.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/knot-operator-selection.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/knot-operator-selection.lean"
+  },
+  "source_hashes": {
+    "md": "351f79300ee2",
+    "ts": "8b15dc9e94ae",
+    "lean": "31cf66721a57"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "351f79300ee2",
+          "ts": "8b15dc9e94ae",
+          "lean": "31cf66721a57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

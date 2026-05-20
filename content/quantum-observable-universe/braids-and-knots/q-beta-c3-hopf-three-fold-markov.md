@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **3-fold Markov closure → Hopf-link substructure → $c_3 = -2$.**
 
 This proposition formalizes the Track C direction: **proving** the

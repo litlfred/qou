@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:direct-limit-lusztig",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/lifting-and-descent/direct-limit-lusztig.ts",
+    "md": "content/quantum-observable-universe/lifting-and-descent/direct-limit-lusztig.md"
+  },
+  "source_hashes": {
+    "md": "302126a1d043",
+    "ts": "9a82847a16cc"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "302126a1d043",
+          "ts": "9a82847a16cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:q-gl-obstruction-calc",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts",
+    "md": "content/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.md",
+    "lean": "content/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.lean"
+  },
+  "source_hashes": {
+    "md": "666f3cc69a0e",
+    "ts": "0e6f911cc564",
+    "lean": "ef0b1d42d2a2"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564",
+          "lean": "ef0b1d42d2a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

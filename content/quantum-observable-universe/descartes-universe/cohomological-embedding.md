@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 The torus knots embeddable on the moduli surface $\Sigma_g$
 of a QOU form a **complete set of representations** — they
 exhaust the available cohomology and span the space of

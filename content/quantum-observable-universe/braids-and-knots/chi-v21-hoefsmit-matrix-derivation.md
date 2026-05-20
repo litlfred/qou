@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 **V_(2,1) Hoefsmit 2×2 matrix derivation — partial closure (item 1 of PR #672).**
 
 V_(2,1) is the **2-dimensional Hoefsmit irrep** of $H_3(q)$. Unlike

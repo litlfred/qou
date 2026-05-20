@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:y-lambda-closed-form-wenzl-bridge",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.lean"
+  },
+  "source_hashes": {
+    "md": "50ae586f6927",
+    "ts": "91a2efec7090",
+    "lean": "416b991e46d3"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "50ae586f6927",
+          "ts": "91a2efec7090",
+          "lean": "416b991e46d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

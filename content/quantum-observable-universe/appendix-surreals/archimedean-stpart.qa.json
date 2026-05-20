@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:archimedean-stpart",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-surreals/archimedean-stpart.ts",
+    "md": "content/quantum-observable-universe/appendix-surreals/archimedean-stpart.md",
+    "lean": "content/quantum-observable-universe/appendix-surreals/archimedean-stpart.lean"
+  },
+  "source_hashes": {
+    "md": "f6f29afa71d4",
+    "ts": "12cf9348d922",
+    "lean": "640c05153636"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "f6f29afa71d4",
+          "ts": "12cf9348d922",
+          "lean": "640c05153636"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

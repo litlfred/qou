@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:categorical-reeb",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb.lean"
+  },
+  "source_hashes": {
+    "md": "8bfd54e8d2c9",
+    "ts": "8456e1d80918",
+    "lean": "d3cadf4d0c4a"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "8bfd54e8d2c9",
+          "ts": "8456e1d80918",
+          "lean": "d3cadf4d0c4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

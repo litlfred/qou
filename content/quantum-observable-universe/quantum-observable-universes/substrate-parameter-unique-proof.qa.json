@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:substrate-parameter-unique",
+  "kind": "proof",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique-proof.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique-proof.md"
+  },
+  "source_hashes": {
+    "md": "86c1d42b23bc",
+    "ts": "49e80a18f08b"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "86c1d42b23bc",
+          "ts": "49e80a18f08b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T00:52:21.578Z",
+        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T00:52:21.578Z"
+}

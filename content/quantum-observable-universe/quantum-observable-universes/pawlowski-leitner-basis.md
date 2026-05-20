@@ -1,3 +1,5 @@
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+
 Let $G = \mathrm{SU}(2)$ be the emergent gauge group
 ([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)) and let
 $V_{1/2} \cong \mathbb{C}^2$ be the
