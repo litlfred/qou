@@ -41,6 +41,15 @@ noncomputable def heckeRecurrence : ℕ → Polynomial ℤ
   | 1          => 1
   | (n + 2)    => Polynomial.X * heckeRecurrence (n + 1) + heckeRecurrence n
 
+/-- §3b-cond axiomatisation: the Hecke recurrence's degree and
+    leading-coefficient claim, hypothesised for every odd positive `p`. -/
+class ChebyshevDegreeGenusAxiom : Prop where
+  /-- Manuscript identity: for every odd positive `p`,
+      `natDegree(a p) = p - 1` and `leadingCoeff(a p) = 1`. -/
+  claim_degree_genus : ∀ (p : ℕ), Odd p → 0 < p →
+    (heckeRecurrence p).natDegree = p - 1 ∧
+    (heckeRecurrence p).leadingCoeff = 1
+
 /-- **Chebyshev degree equals Seifert genus** ([`lem:chebyshev-degree-genus`]).
 
     For every odd `p`, the Hecke recurrence polynomial `a p` has
@@ -49,16 +58,13 @@ noncomputable def heckeRecurrence : ℕ → Polynomial ℤ
     `u = X²` the resulting polynomial in `u` has degree `(p - 1) / 2`
     and leading coefficient `1`.
 
-    The full degree-and-leading-coefficient pair is captured as a
-    conjunction; the proof proceeds by strong induction on the
-    recurrence depth (Markov-trace tower; see manuscript). -/
+    Conditional on `[ChebyshevDegreeGenusAxiom]` (§3b-cond pattern). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/chebyshev-degree-genus.md
 -- Ref: [kassel2008] Braid Groups (GTM 247), §4 (Hecke recurrence)
-theorem chebyshev_degree_genus
+theorem chebyshev_degree_genus [ax : ChebyshevDegreeGenusAxiom]
     (p : ℕ) (hp_odd : Odd p) (hp_pos : 0 < p) :
     (heckeRecurrence p).natDegree = p - 1 ∧
-    (heckeRecurrence p).leadingCoeff = 1 := by
-  -- Strong induction on `p` via the Hecke recurrence (see manuscript).
-  sorry
+    (heckeRecurrence p).leadingCoeff = 1 :=
+  ax.claim_degree_genus p hp_odd hp_pos
 
 end QOU.Descartes

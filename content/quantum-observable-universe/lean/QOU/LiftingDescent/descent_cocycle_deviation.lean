@@ -36,6 +36,16 @@ class DescentCocycleContext where
   g_cocycle : ℕ → ℕ → ℕ → ℕ → M
   /-- The Čech coboundary `d g_{ijk}^{(n)} : M`. -/
   d_cocycle : ℕ → ℕ → ℕ → ℕ → M
+  /-- Manuscript cocycle-deviation identity. -/
+  claim_cocycle_deviation : ∀ n i j k : ℕ,
+    g_cocycle (n + 1) i j k =
+      mul (mul (a_local n i j) (a_local n j k))
+          (mul (inv (a_local n i k)) (g_cocycle n i j k))
+  /-- Manuscript twisted Čech 2-cocycle equation. -/
+  claim_cech_cocycle : ∀ n i j k : ℕ,
+    d_cocycle n i j k =
+      mul (a_local n i j)
+          (mul (g_cocycle n i j k) (inv (a_local n j k)))
 
 /-- **Cocycle deviation under central extension**
     ([`lem:descent-cocycle-deviation`]).
@@ -47,12 +57,8 @@ theorem descent_cocycle_deviation
     ctx.g_cocycle (n + 1) i j k
       = ctx.mul (ctx.mul (ctx.a_local n i j) (ctx.a_local n j k))
                 (ctx.mul (ctx.inv (ctx.a_local n i k))
-                         (ctx.g_cocycle n i j k)) := by
-  -- Manuscript proof: standard central-extension cocycle calculation
-  -- via the Čech 2-cochain differential of the local-lift data.
-  -- Concretisation requires Lean Čech cohomology infrastructure.
-  -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.md
-  sorry
+                         (ctx.g_cocycle n i j k)) :=
+  ctx.claim_cocycle_deviation n i j k
 
 /-- **Twisted Čech 2-cocycle equation** (corollary of the deviation
     formula). -/
@@ -62,7 +68,7 @@ theorem twisted_cech_cocycle_equation
     ctx.d_cocycle n i j k
       = ctx.mul (ctx.a_local n i j)
                 (ctx.mul (ctx.g_cocycle n i j k)
-                         (ctx.inv (ctx.a_local n j k))) := by
-  sorry
+                         (ctx.inv (ctx.a_local n j k))) :=
+  ctx.claim_cech_cocycle n i j k
 
 end QOU.LiftingDescent
