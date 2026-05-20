@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T03:57:51.160854+00:00",
-  "commitSha": "271272f2d5bdb0df3fca82a7c4d496894be0efa1",
+  "computedAt": "2026-05-20T05:00:54.024856+00:00",
+  "commitSha": "d7fceb9f62fdd152f994e26864376f49e26e753e",
   "assertions": [
     {
       "name": "hydrogen_constituent_structural_identity",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "atom-mass-additive-baseline",
   "scriptFile": "atom_mass_additive_baseline.py",
-  "scriptHash": "fc9011d23c37",
-  "scriptCommitSha": "67db009fab664a12ec7f6cfcb2e33af353ac2023",
+  "scriptHash": "9b37ccbceb7c",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
   "description": "Additive atomic-mass baseline:  M_atom ≈ Z·M_p + N·M_n + Z·M_e − E_binding(A, Z).  Records the constituent-vs-AME residual Δ_binding for every isotope in the `atom_mass_derived.py` ELEMENTS table.  At A = 1 the physical Δ_binding is the 13.6 eV atomic binding ≈ 14 ppb at the 938 MeV scale; the observed AME-residual is publication-rounding-floor-limited (3 dp at 938.783 MeV gives ~533 ppb floor; the witness reports 92.79 ppb).  At A ≥ 4 the residual is the nuclear binding that the Frobenius-packing law (rem:frobenius-packing-density) is expected to reproduce.",
   "auditOnly": "docs/audits/atom-mass-additive-baseline.md",
   "data": {
