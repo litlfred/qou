@@ -435,6 +435,61 @@ const DETANGLER: QaCriterionDefinition[] = [
   },
 ];
 
+// ── Domain: bibliography ────────────────────────────────────────
+//
+// Block-level bibliography QA. Per-reference QA lives in the
+// separate `content/pipeline/bib-qa.ts` (writes `bib-qa.json`); this
+// domain projects the relevant per-reference findings DOWN to each
+// content block that cites the reference, so a block's `.qa.json`
+// surfaces its bibliography-readiness alongside its voice / proof /
+// canonical / compute / detangler axes.
+
+const BIBLIOGRAPHY: QaCriterionDefinition[] = [
+  {
+    id: "bib-cite-resolves",
+    domain: "bibliography",
+    description:
+      "Every `\\cite{key}` and `-- Ref: [key]` in the block resolves to a " +
+      "registered entry in `content/schema/references.ts`. Mirrors the " +
+      "`validate-bib` skill's resolution check at block granularity.",
+    default_severity: "critical",
+    depends_on: ["md", "lean"],
+    automated: true,
+  },
+  {
+    id: "bib-cited-ref-has-url",
+    domain: "bibliography",
+    description:
+      "Every reference the block cites has a URL or DOI (resolves to one) " +
+      "per `bib-qa.ts` tag `has_url`. A block citing an URL-less reference " +
+      "fails — the reader has no way to consult the source.",
+    default_severity: "major",
+    depends_on: ["md", "lean"],
+    automated: true,
+  },
+  {
+    id: "bib-cited-ref-metadata-ok",
+    domain: "bibliography",
+    description:
+      "Every reference the block cites has complete metadata (title, " +
+      "author/editor, year) per `bib-qa.ts` tag `metadata_ok`.",
+    default_severity: "major",
+    depends_on: ["md", "lean"],
+    automated: true,
+  },
+  {
+    id: "bib-cited-ref-has-screenshot",
+    domain: "bibliography",
+    description:
+      "Every reference the block cites has a screenshot under " +
+      "`content/bib-qa-images/<id>.*` per `bib-qa.ts` tag " +
+      "`has_screenshot`. Provides provenance for the citation.",
+    default_severity: "minor",
+    depends_on: ["md", "lean"],
+    automated: true,
+  },
+];
+
 // ── Exported registry ───────────────────────────────────────────
 
 export const QA_CRITERIA_REGISTRY: QaCriterionDefinition[] = [
@@ -446,6 +501,7 @@ export const QA_CRITERIA_REGISTRY: QaCriterionDefinition[] = [
   ...CANONICAL,
   ...COMPUTE,
   ...DETANGLER,
+  ...BIBLIOGRAPHY,
 ];
 
 export const QA_CRITERIA_BY_ID: Record<string, QaCriterionDefinition> =
@@ -481,9 +537,12 @@ export const COMPUTE_WATCHER_CRITERIA: string[] = COMPUTE.map((c) => c.id);
 export const DETANGLER_WATCHER_CRITERIA: string[] = DETANGLER.map(
   (c) => c.id,
 );
+export const BIBLIOGRAPHY_WATCHER_CRITERIA: string[] = BIBLIOGRAPHY.map(
+  (c) => c.id,
+);
 
 /**
- * All 5 watcher buckets, keyed by watcher short name (matches the
+ * All 6 watcher buckets, keyed by watcher short name (matches the
  * `/integration-watch` / `/integration-backlog` axis arguments).
  */
 export const WATCHER_CRITERIA_BY_AXIS: Record<string, string[]> = {
@@ -492,4 +551,5 @@ export const WATCHER_CRITERIA_BY_AXIS: Record<string, string[]> = {
   canonical: CANONICAL_WATCHER_CRITERIA,
   compute: COMPUTE_WATCHER_CRITERIA,
   detangler: DETANGLER_WATCHER_CRITERIA,
+  bibliography: BIBLIOGRAPHY_WATCHER_CRITERIA,
 };

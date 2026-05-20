@@ -311,6 +311,7 @@ When a user request arrives, route to the right skill(s):
 | "watch wiring / compute integration watcher / is X wired in / mass-table sweep validation" | `local/compute-integration-watcher` | collaborator |
 | "/integration-watch proof / canonical" | `local/integration-watch` (dispatcher) | reader |
 | "/integration-watch compute / all (compute-wiring requires write access to scripts)" | `local/integration-watch` (dispatcher → compute-integration-watcher child) | collaborator |
+| "/integration-audit xxx / invalidate sidecar entries / re-audit after checker fix / mark stale / repopulate" | `local/integration-audit` (sidecar maintenance — script-only) | collaborator |
 | "watch shared mechanics / parent watcher / inherit-from" | `local/integration-watcher` (abstract parent of the 3 watcher children) | reader |
 | "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
