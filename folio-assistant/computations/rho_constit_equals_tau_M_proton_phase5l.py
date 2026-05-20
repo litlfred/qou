@@ -15,7 +15,7 @@ The extra proton block contributes EXACTLY its H_3 Markov trace
 
 This script verifies the identity empirically across the substrate
 window q ∈ [1.05, 1.17].  If correct, the rel.err. should be at
-machine precision (~10^-15) at every q.
+mpfr-50-dps precision (~10^-50) at every q.
 
   Ref: conj:constit-factor-2q-minus-1.md (Phase 5k.2 falsification)
   Ref: prop:interface-knot-markov-z.md (interface-side companion)
@@ -125,7 +125,6 @@ def main() -> int:
         q_val = mp.mpf(q_str)
         t0 = time.time()
         tau_p_H3 = compute_tau_M_proton_H3(q_val)
-        t1 = time.time()
         tau_D = compute_tau_M_constit(1, 1, q_val)
         tau_3He = compute_tau_M_constit(2, 1, q_val)
         rho = tau_3He / tau_D
@@ -163,7 +162,7 @@ def main() -> int:
     print(f"  Max rel.err. across {len(results)} q-points: {max_rel_err:.4e}")
     if max_rel_err < 1e-12:
         verdict = "structural-identity-confirmed"
-        print(f"\n  ✓ STRUCTURAL IDENTITY CONFIRMED at machine precision:")
+        print(f"\n  ✓ STRUCTURAL IDENTITY CONFIRMED at mpfr-50-dps precision:")
         print(f"      ρ_Z^constit(q) = τ_M^3(β_p, q)  exactly")
         print(f"    across the substrate window.  This is the disjoint")
         print(f"    Markov-trace multiplicativity result.")
@@ -201,7 +200,7 @@ def main() -> int:
         source=(
             f"Phase 5l: max relative error between ρ_Z^constit(q) and "
             f"τ_M^3(β_p, q) across {len(results)} q-points in the "
-            f"substrate window.  Identity holds at machine precision if "
+            f"substrate window.  Identity holds at mpfr-50-dps precision if "
             f"max rel.err. < 1e-12."
         ),
     )

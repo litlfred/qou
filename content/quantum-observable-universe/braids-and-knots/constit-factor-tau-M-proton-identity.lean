@@ -6,13 +6,13 @@ disjoint-product Markov trace multiplicativity.
 Empirical verification (Phase 5l, 50 dps via y_λ · χ_λ pipeline):
 
   q        τ_M^3(β_p, q)    ρ_Z^constit(q)    rel. err.
-  1.050    0.79284191942    0.79284191942     5.97e-16
-  1.080    0.99328958565    0.99328958565     1.04e-15
-  q_0      1.22037426649    1.22037426649     1.45e-15
-  1.130    1.39054700526    1.39054700526     6.34e-16
-  1.170    1.78584582119    1.78584582119     1.01e-15
+  1.050    0.79284191942    0.79284191942     1.69e-51
+  1.080    0.99328958565    0.99328958565     1.08e-50
+  q_0      1.22037426649    1.22037426649     3.29e-50
+  1.130    1.39054700526    1.39054700526     1.35e-50
+  1.170    1.78584582119    1.78584582119     0 (exact at 50 dps)
 
-Identity holds at machine precision across the substrate window.
+Identity holds at mpfr-50-dps precision across the substrate window.
 
 Ref: [wenzl1988] Hecke algebras of type A_n and subfactors §1.7
      (disjoint Markov trace multiplicativity)
