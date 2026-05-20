@@ -44,9 +44,16 @@ class DeuteriumDerivedBindingContext where
   /-- The Markov-trace evaluation `tr_M(T_pn · n) : ℝ` of the
       inter-nucleon-coupled neutron. -/
   tr_M_Tpn_n : ℝ
+  /-- Proton NF braid word in `H_3(q)` (encoded as a `List ℤ` of
+      Hecke-generator indices; negatives denote inverses). -/
+  NF_p_braid_word : List ℤ
+  /-- Neutron NF braid word in `H_3(q)`. -/
+  NF_n_braid_word : List ℤ
   /-- Manuscript sub-claim (i): `NF(𝔭)` and `NF(𝔫)` exist as proton
-      and neutron normal forms in `H_3(q)`. -/
-  claim_i_NF_existence : Prop
+      and neutron normal forms in `H_3(q)` — both braid words are
+      non-empty (existence witnessed by the field values themselves). -/
+  claim_i_NF_existence :
+    NF_p_braid_word ≠ [] ∧ NF_n_braid_word ≠ []
   /-- Length of the Borromean baryon braid word `𝓑_3 = σ_0σ_1σ_2σ_0σ_1σ_2`. -/
   braid_length_B3 : ℕ
   /-- Manuscript sub-claim (ii): the Borromean baryon factor has the
@@ -119,7 +126,7 @@ pair).
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts
 theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
-    ctx.claim_i_NF_existence ∧
+    (ctx.NF_p_braid_word ≠ [] ∧ ctx.NF_n_braid_word ≠ []) ∧
     ctx.braid_length_B3 = 6 ∧
     (ctx.h3_strand_count = 3 ∧
      ctx.h6_strand_count = 2 * ctx.h3_strand_count) ∧

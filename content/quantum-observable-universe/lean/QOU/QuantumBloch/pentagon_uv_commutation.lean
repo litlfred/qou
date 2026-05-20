@@ -33,9 +33,12 @@ class PentagonUvCommutationContext extends QOU.Shared.MarkovTraceContext where
   claim_i_hecke_braid_relation : ∀ s : ℕ,
     haveI := ringR;
       σ s * σ (s + 1) * σ s = σ (s + 1) * σ s * σ (s + 1)
-  /-- Manuscript sub-claim (ii) — Descent involution split:
-      `τ̂_n` separates `H_n(R, q)` into descended / transient parts. -/
-  claim_ii_descent_involution_split : Prop
+  /-- Descent involution `τ̂_n : R → R`. -/
+  tau_hat : R → R
+  /-- Manuscript sub-claim (ii) — Descent involution: `τ̂_n` squares
+      to the identity, separating `H_n(R, q)` into ±1 eigenspaces
+      (descended / transient parts). -/
+  claim_ii_descent_involution_split : ∀ x : R, tau_hat (tau_hat x) = x
   /-- Manuscript sub-claim (iii) — Eigenvalue specialisation reduces
       the descended part to scalar form where commutation is trivial. -/
   claim_iii_eigenvalue_specialisation : Prop
@@ -60,7 +63,7 @@ theorem pentagon_uv_commutation [ctx : PentagonUvCommutationContext] :
     (∀ s : ℕ, haveI := ctx.ringR;
       ctx.σ s * ctx.σ (s + 1) * ctx.σ s =
         ctx.σ (s + 1) * ctx.σ s * ctx.σ (s + 1)) ∧
-    ctx.claim_ii_descent_involution_split ∧
+    (∀ x : ctx.R, ctx.tau_hat (ctx.tau_hat x) = x) ∧
     ctx.claim_iii_eigenvalue_specialisation ∧
     ctx.claim_iv_operator_lift_transient :=
   ⟨ctx.claim_pentagon_master, ctx.claim_i_hecke_braid_relation,
