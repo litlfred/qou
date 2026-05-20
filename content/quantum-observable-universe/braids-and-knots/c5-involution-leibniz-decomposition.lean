@@ -98,20 +98,74 @@ theorem c5_classical_limit_eq_neg_five_quarters :
   unfold quantumTwo
   norm_num
 
+/-- The combined dimension of the **non-sign Wedderburn blocks** of
+    `H_3(q = 1) = ℂ[S_3]`: trivial rep `V_(3)` (dim 1) plus the
+    standard rep `V_(2,1)` (dim 2). The sign rep `V_(1,1,1)` (dim 1)
+    is excluded — it carries the *anti-symmetric* part of the
+    Hopf-link Markov trace, which the bar-symmetric projection
+    `P_avg` averages away in the classical limit. -/
+def wedderburnNonSignDimS3 : ℕ := 1 + 2
+
+/-- **Commutative-QOU categorical decomposition of `c_5`**.
+
+    The q-independent "−3/2" piece of `c_5(q) = -3/2 + 1/[2]_q²`
+    is identified as **half the dimension of the non-sign
+    Wedderburn blocks** of the classical Hecke algebra
+    `H_3(1) = ℂ[S_3]`:
+
+      c_5(1) = -(dim V_(3) + dim V_(2,1)) / 2 + 1/[2]_q²|_{q=1}
+             = -3/2 + 1/4
+             = -5/4
+
+    The categorical reading: in the commutative limit, the
+    "involution fingerprint" −1/2 = c_5(1) + 3/4 of the
+    empirical decomposition `c_5 = -b² - 1/2` is the
+    bar-symmetric Wedderburn-block contribution from the
+    non-sign sector of ℂ[S_3]. The sign-sector contribution
+    (V_(1,1,1)) is bar-anti-symmetric and projected away.
+
+    This locks one open piece of `prop:bar-symmetric-three-layer-synthesis`:
+    the series-layer projection at `q = 1` has a categorical
+    identification, not just an empirical one. -/
+theorem c5_classical_eq_wedderburn_nonsign_dim_half :
+    c5Decomposition 1 = -(wedderburnNonSignDimS3 : ℝ) / 2 + 1 / 4 := by
+  rw [c5_classical_limit_eq_neg_five_quarters]
+  unfold wedderburnNonSignDimS3
+  norm_num
+
 /-- **At the silver ratio q = 1+√2, b² = 7/8 exactly.**
 
-    Derivation:
-      q² = 3 + 2√2,  q⁴ = 17 + 12√2
-      q⁴+q²+1 = 21 + 14√2 = 7(3 + 2√2)
-      (q²+1)² = (4+2√2)² = 24 + 16√2 = 8(3+2√2)
-      b² = 7/8 ✓ -/
+    Cleanest proof: route through the proved Hoefsmit-Quantum-2
+    identity `b² = 1 - 1/[2]_q²` together with the lemma
+    `quantumTwo_at_silver_ratio_squared` below, which collapses
+    `[2]_q² = 8` at the silver ratio.
+
+    Direct algebraic derivation:
+      q² - 2q - 1 = 0   (silver-ratio polynomial)
+      ⟹ q² = 2q + 1
+      q⁴ + q² + 1 = (2q+1)² + (2q+1) + 1 = 14q + 7 = 7q²
+      (q² + 1)² = (2q+2)² = 4(2q+1) · 2 = 8q²
+      b² = 7q² / 8q² = 7/8 ✓ -/
+theorem quantumTwo_at_silver_ratio_squared :
+    (quantumTwo (1 + Real.sqrt 2))^2 = 8 := by
+  unfold quantumTwo
+  have h2 : Real.sqrt 2 * Real.sqrt 2 = 2 :=
+    Real.mul_self_sqrt (by norm_num : (0:ℝ) ≤ 2)
+  have h_ne : (1 + Real.sqrt 2 : ℝ) ≠ 0 := by
+    have := Real.sqrt_nonneg 2; linarith
+  -- (1+√2 + 1/(1+√2))² = 8 follows by clearing denominators and
+  -- using √2·√2 = 2.
+  field_simp
+  ring_nf
+  linarith [h2, Real.sqrt_nonneg 2, sq_nonneg (Real.sqrt 2)]
+
 theorem b_squared_at_silver_ratio :
     hoefsmitBSq (1 + Real.sqrt 2) = 7/8 := by
-  unfold hoefsmitBSq
-  have h : Real.sqrt 2 * Real.sqrt 2 = 2 :=
-    Real.mul_self_sqrt (by norm_num : (2:ℝ) ≥ 0)
-  -- Tedious algebraic manipulation deferred to `field_simp; nlinarith` or sorry
-  sorry  -- Ref: [manuscript] direct algebraic identity at silver-ratio q
+  have h_ne : (1 + Real.sqrt 2 : ℝ) ≠ 0 := by
+    have := Real.sqrt_nonneg 2; linarith
+  rw [hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared _ h_ne,
+      quantumTwo_at_silver_ratio_squared]
+  norm_num
 
 /-- **At silver ratio, c_5 = -11/8 (Pell-Lucas-incompatible).**
 

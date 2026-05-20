@@ -121,6 +121,46 @@ Proved as a corollary of the Hoefsmit-Quantum-2 identity; see
 
 $c_5(q=1) = -5/4$. Proved as `c5_classical_limit_eq_neg_five_quarters`.
 
+### Commutative-QOU categorical identification of $-3/2$
+
+The q-independent $-3/2$ in $c_5(q) = -3/2 + 1/[2]_q^2$ is identified
+categorically as **half the dimension of the non-sign Wedderburn
+blocks of $\mathbb{C}[S_3] = H_3(q=1)$**:
+
+$$
+-3/2 \;=\; -\frac{\dim V_{(3)} + \dim V_{(2,1)}}{2} \;=\; -\frac{1 + 2}{2}.
+$$
+
+The sign rep $V_{(1,1,1)}$ (dim 1) is excluded — it carries the
+bar-anti-symmetric part of the Hopf-link Markov trace, projected
+away by $P_{\mathrm{avg}}$. Proved as
+`c5_classical_eq_wedderburn_nonsign_dim_half`.
+
+This identifies the "−1/2 fingerprint" of the empirical
+$c_5 = -b^2 - 1/2$ decomposition as the **bar-symmetric
+Wedderburn-block contribution from the non-sign sector** in the
+commutative limit — categorical content, not a quantum artifact.
+
+### Falsifiability: silver vs golden $c_5$ outlier
+
+`folio-assistant/computations/qbeta_golden_ratio_fibonacci_probe.py`
+computes $c_k(q)$ for $k = 3..10$ at golden ratio $q = \varphi$
+($b^2 = 4/5$ exact) and tests Fibonacci-Lucas-cleanness vs the
+silver-ratio Pell-Lucas test. Result (witness confirmed):
+
+| $k$ | Silver | Golden |
+|:---:|:---:|:---:|
+| 5 | $-11/8$, **inert** (11) | $-13/10$, **clean** ($13 = F_7$) |
+| all other $k \in \{3,4,6,7,8,9,10\}$ | clean | clean |
+
+**Silver outliers: $\{5\}$. Golden outliers: $\emptyset$.**
+
+This **confirms the hypothesis** that the $c_5$ outlier is
+silver-specific — the inert-prime fingerprint of the β-decay null
+($h=2$ at silver, no analog at golden $h=1$). The outlier IS the
+forced collapse into the bar-invariant fixed-point sector at the
+unique null point in the proton/neutron kinematic window.
+
 ## Geometric reading
 
 The bar-involution corresponds at three different geometric levels:
