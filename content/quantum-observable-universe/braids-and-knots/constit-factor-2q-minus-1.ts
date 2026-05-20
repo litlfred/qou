@@ -20,7 +20,7 @@ export default conjecture({
       "folio-assistant/computations/constit_factor_and_volhyp_test.py",
     witness:
       "folio-assistant/computations/constit-factor-and-volhyp.witness.json",
-    status: "verified-empirically-033pct",
+    status: "verified",
   },
   tags: [
     "markov-trace",

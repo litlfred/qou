@@ -147,12 +147,15 @@ def fr_pullback_weights_per_depth(
         knot_word = K_per_depth[depth]
         s_uniform_per_depth[depth] += mp.mpf(str(dq * dq)) / qfact
         if not knot_word:
-            # unknot: χ^λ(unknot) = dim V_λ = classical dim, so |χ| ≈ dim_q
-            # at q=1; at q≠1 the unknot character is partition-dim-like.
-            # Use dim_q itself as a proxy for "uniform FR" (i.e., FR
-            # pullback through the trivial projector reduces to uniform
-            # Plancherel — this case is the control).
-            chi_K = float(dq)
+            # unknot baseline: set χ^λ = 1 constant so that the FR
+            # pullback weight reduces to uniform Plancherel.  With
+            #   chi_K = 1, Z_norm = Σ_μ dim_q²(μ) = [n]_q!,
+            # giving w_λ^{(unknot)} = dim_q²/[n]_q! · S_{uniform,k} —
+            # exactly the uniform Plancherel weight at depth k.  Per
+            # #831 Copilot review (the previous chi_K = dq made
+            # weights proportional to dim_q^3, not the uniform
+            # Plancherel claim in this comment).
+            chi_K = 1.0
         else:
             try:
                 chi_K = chi_lambda_braid_via_rust(list(shape), knot_word, q_f64)
@@ -230,7 +233,10 @@ def compute_B_with_K(atom: str, K_per_depth: dict) -> dict:
                 "contrib": fmt(contrib),
             }
 
-    B_MeV = mp.mpf(str(M_E_MEV)) * B_dim
+    # alpha_k_base() already includes the m_e·8G factor for k≥4
+    # (matches binding_depth_stratified_rust.py:62), so B_dim is in
+    # MeV.  Do NOT multiply by M_E_MEV again — see #831 Copilot review.
+    B_MeV = B_dim
     B_ame = B_AME[atom]
     return {
         "B_MeV": fmt(B_MeV), "B_AME_MeV": fmt(B_ame),

@@ -197,7 +197,10 @@ def compute_B_with_variant(atom, variant):
     if variant == "v4_global_cosh_h":
         B_dim = B_dim * cosh_h
 
-    B_MeV = mp.mpf(str(M_E_MEV)) * B_dim
+    # alpha_k_base() already includes the m_e·8G factor for k≥4
+    # (matches binding_depth_stratified_rust.py:62), so B_dim is in
+    # MeV.  Do NOT multiply by M_E_MEV again — see #831 Copilot review.
+    B_MeV = B_dim
     B_ame = B_AME[atom]
     return {
         "B_MeV": fmt(B_MeV), "B_AME_MeV": fmt(B_ame),

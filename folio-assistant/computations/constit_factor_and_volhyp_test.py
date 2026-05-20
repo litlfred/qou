@@ -252,7 +252,10 @@ def compute_B(atom: str, vol_hyp_normaliser: str = "none"):
         phi_f = phi_k_with_weights(free_data["by_partition"], k, w_free)
         B_dim += ak * (phi_f - phi_a)
 
-    B_MeV = mp.mpf(str(M_E_MEV)) * B_dim
+    # alpha_k_base() already includes the m_e·8G factor for k≥4
+    # (matches binding_depth_stratified_rust.py:62), so B_dim is in
+    # MeV.  Do NOT multiply by M_E_MEV again — see #831 Copilot review.
+    B_MeV = B_dim
 
     # Apply normaliser
     Z_mp = mp.mpf(Z)
