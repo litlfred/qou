@@ -488,6 +488,33 @@ Witness: `constit-factor-residual-phase5k.witness.json` (1 assertion: residual/h
 
 Next on queue: **5k.2** — varying-q sweep to confirm unit-coefficient $h^5$ across the substrate window.
 
+## 2026-05-20 (5k.2) — Phase 5k.2 FALSIFIES the global (2q-1) form ([PR pending](claude/phase-5k2-varying-q-sweep))
+
+Varying-q sweep at five q-points across the substrate window, using the same y_λ(q) Wenzl + χ_λ(β_constit, q) pipeline as PR #819 Phase 5c.1:
+
+| q | $\rho_Z^{\mathrm{constit}}(q)$ | $(2q - 1)$ | rel.err. | residual/h^5 |
+|---|---:|---:|---:|---:|
+| 1.050 | 0.7928 | 1.100 | 27.9% | −34649 |
+| 1.080 | 0.9933 | 1.160 | 14.4% | −1920 |
+| **1.10998 (q_0)** | **1.2204** | **1.220** | **0.034%** | **+1.04** |
+| 1.130 | 1.3905 | 1.260 | 10.4% | +148 |
+| 1.170 | 1.7858 | 1.340 | 33.3% | +143 |
+
+**Verdict (NEGATIVE):** the (2q − 1) candidate identified by Phase 5g's categorical search at q_0 is a **localised numerical tangency**, not a global structural identity. The residual against (2q − 1) varies by **5+ orders of magnitude** across the q sweep (c = residual/h⁵ ranges from −3.5×10⁴ to +148); the unit-coefficient h⁵ signature is unique to q_0.
+
+Fine scan around q_0 confirms the tangency is sharp: at q = 1.105 (just 0.005 below q_0) the rel.err is already **2.4%** (70× the q_0 value); at q = 1.113 (0.003 above) it is **1.5%**.
+
+**Consequences:**
+
+- `conj:constit-factor-2q-minus-1` — REVISED: a FALSIFIED banner added; the global form claim is empirically refuted while the at-q_0 value match is preserved as a record of the tangency.
+- Phase 5k.1's "unit-coefficient h⁵" interpretation is consequently also a coincidence at q_0 (not a global structural identity).
+- The actual closed form for $\rho_Z^{\mathrm{constit}}(q)$ is **open** — the measured ratio grows much more steeply than (2q − 1) suggests (factor 2.26× across $q \in [1.05, 1.17]$). Likely candidates: $\tau_M^3(\beta_p)$ combined with a rank-jump z-factor.
+
+Script: [`constit_factor_varying_q_phase5k2.py`](https://github.com/litlfred/qou/blob/claude/phase-5k2-varying-q-sweep/folio-assistant/computations/constit_factor_varying_q_phase5k2.py).
+Witness: `constit-factor-varying-q-phase5k2.witness.json` (2 assertions: both FAIL as expected — the test was designed to confirm or refute the hypothesis; the refutation is the finding).
+
+Next on queue: **5l** — structural derivation of $\rho_Z^{\mathrm{constit}}(q)$ from the disjoint-product Markov trace formula. The empirical measurements suggest $\rho \approx \tau_M^3(\beta_p) \cdot$ (z-factor for rank jump from H_6 to H_9), needing rigorous derivation.
+
 ## 2026-05-20 (5l) — STRUCTURAL IDENTITY: $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\beta_p, q)$ ([PR pending — phase-5l](https://github.com/litlfred/qou))
 
 Phase 5l identifies the actual closed form for the constit-side per-Z step factor.  The disjoint-product Markov trace multiplicativity (Wenzl 1988 §1.7) gives
