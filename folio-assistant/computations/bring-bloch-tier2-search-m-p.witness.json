@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-20T06:34:35.952343+00:00",
-  "commitSha": "e118c2a5ced9c0ac9fcc196a0c639f2afc6e7a5f",
+  "computedAt": "2026-05-20T15:59:44.780619+00:00",
+  "commitSha": "b547ff7992e1e7dce96040ee5625fefea4a37fb1",
   "assertions": [
     {
       "name": "Tier 2 PSLQ at proton CODATA target — NO relation expected (negative result is substantive)",
@@ -11,15 +11,15 @@
       "passed": true,
       "tolerance": 0.5,
       "unit": "boolean",
-      "source": "mpmath.pslq at max_coef=10^6, tol=1e-20 (matched to ~15-dps basis precision for Tier 2 KnotInfo values). Negative result extends Tier 0 + Tier 1; positive would require paper-level update."
+      "source": "mpmath.pslq at max_coef=10^6, tol=1e-12 (matched to ~14-15 dps basis precision for Tier 2 KnotInfo values). Negative result extends Tier 0 + Tier 1; positive would require paper-level update."
     }
   ],
   "allPassed": true,
-  "durationMs": 143,
+  "durationMs": 113,
   "computation": "bring-bloch-tier2-search-m-p",
   "scriptFile": "bring_bloch_tier2_search_m_p.py",
-  "scriptHash": "2d44073d556d",
-  "scriptCommitSha": "e118c2a5ced9c0ac9fcc196a0c639f2afc6e7a5f",
+  "scriptHash": "3bb8b1ec1150",
+  "scriptCommitSha": "ada8875c43432a2d4bc8a7b7c84b005a081a9a0e",
   "description": "Tier 2 Bring-Bloch K-search for Vol(K_p^eff) = λ_p · 8G. Extends Tier 0 (PR #843) and Tier 1 (this branch) — both returned negative — to the bridge-3 hyperbolic-knot basis through 8 crossings (16-element basis total). Sibling: tier_2_hyperbolic_bridge3_pslq.py targets 2/(3π) instead.",
   "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
   "parameters": {

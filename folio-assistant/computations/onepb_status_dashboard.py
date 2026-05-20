@@ -140,10 +140,18 @@ def main() -> None:
         if isinstance(raw.get("parameters"), dict)
         else None
     ) or trm.get("tolerance_relative", 1e-9)
+    # Normalise to float — the witness may store this as a decimal
+    # string (parameters.tolerance_relative) or as a numeric literal
+    # (legacy top-level); downstream tooling expects float-comparable.
+    try:
+        tolerance_float = float(tolerance)
+    except (TypeError, ValueError):
+        tolerance_float = 1e-9
     trm_summary = {
         "atoms_compared": trm.get("atoms_compared", 0),
         "any_diverge": trm.get("any_diverge", None),
-        "tolerance_relative": tolerance,
+        "tolerance_relative": tolerance_float,
+        "tolerance_relative_raw": tolerance,
         "max_rel_delta": max(
             (float(d.get("rel_delta", 0)) for d in trm.get("deltas", [])),
             default=0.0,

@@ -184,8 +184,9 @@ def main() -> int:
     })
 
     # ── (3) Skein interpretation table ────────────────────────
-    M_E = mp.mpf("0.51099895")
-    M_P_CODATA = mp.mpf("938.27208816")
+    # Per compute-audit P31: CODATA values from central registry,
+    # not inline literals.
+    from codata_constants import M_E_MEV as M_E, M_P_MEV_VALIDATION as M_P_CODATA
     M_P_ANCHOR = M_P_CODATA / M_E  # m_p / m_e = 1836.1527
     VOL_OVER_HBAR_SQ = VOL_B3 / HBAR_Q ** 2
     LAMBDA_CURRENT = mp.mpf("2.4599527869")

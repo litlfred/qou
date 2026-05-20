@@ -236,8 +236,10 @@ def main() -> int:
                 pct = 100 * progress / n_chi
                 el = time.monotonic() - chi_start
                 eta = el * (n_chi - progress) / max(progress, 1)
+                u_sec = progress / el if el > 0 else 0
                 print(f"      progress: {progress}/{n_chi} ({pct:.1f}%) "
-                      f"wall={el:.1f}s ETA={eta:.0f}s", flush=True)
+                      f"wall={el:.1f}s {u_sec:.1f} units/sec ETA={eta:.0f}s",
+                      flush=True)
     chi_time = time.monotonic() - t0
     print(f"      done in {chi_time:.1f}s", flush=True)
 
@@ -260,12 +262,23 @@ def main() -> int:
             continue
 
         pairs = []
+        any_high_multiplicity = False
         for xi in parts_9:
             for nu in parts_3:
                 c = lr_table.get((xi, nu, lam), 0)
                 if c > 0:
+                    if c > 1:
+                        any_high_multiplicity = True
                     d_xi = shape_dim(xi)
                     d_nu = shape_dim(nu)
+                    # Phase-1 limitation: when LR coefficient c > 1, the
+                    # correct A-block lives on a (c · d_ξ · d_ν)-dimensional
+                    # multiplicity space, not on V_ξ ⊗ V_ν. We size the
+                    # unknown as (d_ξ · d_ν)² for the c == 1 case; for
+                    # c > 1 the lstsq solution is a least-squares
+                    # projection onto the c == 1 subspace and is recorded
+                    # but flagged as multiplicity-incomplete. Phase 2
+                    # extends with an explicit multiplicity-space basis.
                     pairs.append({"xi": xi, "nu": nu, "c": c,
                                   "d_xi": d_xi, "d_nu": d_nu,
                                   "n_entries": (d_xi * d_nu) ** 2})
@@ -343,6 +356,7 @@ def main() -> int:
             "underdetermined": bool(underdet),
             "max_relative_residual": max_rel,
             "consistent": bool(consistent),
+            "multiplicity_incomplete": bool(any_high_multiplicity),
             "A_per_pair_summary": A_per_pair,
         }
 

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T07:35:18.646329+00:00",
-  "commitSha": "932a8905d0e4f79d68c0b65e5a15d4f4f306608b",
+  "computedAt": "2026-05-20T15:59:44.863096+00:00",
+  "commitSha": "b547ff7992e1e7dce96040ee5625fefea4a37fb1",
   "assertions": [
     {
       "name": "framework documented + prerequisite witnesses checked",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 29,
   "computation": "sublemma-2-1-h12-helium-4-framework",
   "scriptFile": "sublemma_2_1_h12_helium_4_framework.py",
-  "scriptHash": "8ace6675a615",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "96505d14b17a",
+  "scriptCommitSha": "90ef1279d9a3d0287007065c7f00cb0ac77a9ec6",
   "description": "Framework / next-step scaffold for the H_{12} ⁴He A-operator extract — extending prop:mass-tower-operator-valued from A = 3 (PROVED, this branch) to A = 4 (OPEN). Documents the iterated 3-interface formula, verifies prerequisite H_6 + H_9 witnesses, and records the deferred H_{12} extraction plan.",
   "auditOnly": "docs/coordination/2026-05-20-lambda-p-followons-ledger.md",
   "data": {

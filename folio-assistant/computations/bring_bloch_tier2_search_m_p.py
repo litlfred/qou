@@ -104,16 +104,27 @@ def main() -> int:
     vols = list(basis.values())
     vec = [target] + vols
 
-    print(f"  PSLQ on {len(vec)} reals, tol=1e-20 (Tier 2 lit "
+    # tol=1e-12 matches Tier 2 KnotInfo basis precision (~14-15 dps
+    # strings); a tighter tol would label genuine relations as
+    # "missed" rather than informative-negative.
+    TOL = mpf("1e-12")
+    print(f"  PSLQ on {len(vec)} reals, tol={TOL} (Tier 2 lit "
           f"precision), maxcoeff=10^{MAX_COEF_EXP}")
     try:
-        rel = pslq(vec, tol=mpf("1e-20"), maxcoeff=10 ** MAX_COEF_EXP)
+        rel = pslq(vec, tol=TOL, maxcoeff=10 ** MAX_COEF_EXP)
     except Exception as e:
         print(f"  PSLQ raised: {e}")
         rel = None
 
+    # `relation_found` semantics: true iff PSLQ returns a non-trivial
+    # ℤ-relation whose target coefficient is non-zero. A basis-only
+    # relation (rel[0] == 0) is not informative for the target search.
+    relation_found = rel is not None and rel[0] != 0
     if rel is None:
         print("  ✗ Tier 2 PSLQ — no relation found.")
+        w.add_data("relation_found", False)
+    elif rel[0] == 0:
+        print("  ✗ Tier 2 PSLQ — basis-only relation (n_target = 0), not informative")
         w.add_data("relation_found", False)
     else:
         n_target, *n_basis = rel
@@ -136,17 +147,18 @@ def main() -> int:
         })
 
     # Assert SUBSTANTIVE NEGATIVE expectation: no Tier 2 PSLQ
-    # relation. If a positive find lands, this assertion flips
+    # relation TARGETING the CODATA λ_p (basis-only relations
+    # ignored). If a positive find lands, this assertion flips
     # and CI surfaces it as a major paper-level finding.
     w.add_assertion(
         "Tier 2 PSLQ at proton CODATA target — NO relation expected (negative result is substantive)",
-        computed=float(rel is None),
+        computed=float(not relation_found),
         expected=1.0,
         tolerance=0.5,
         unit="boolean",
         source=(
-            "mpmath.pslq at max_coef=10^6, tol=1e-20 (matched to "
-            "~15-dps basis precision for Tier 2 KnotInfo values). "
+            "mpmath.pslq at max_coef=10^6, tol=1e-12 (matched to "
+            "~14-15 dps basis precision for Tier 2 KnotInfo values). "
             "Negative result extends Tier 0 + Tier 1; positive "
             "would require paper-level update."
         ),

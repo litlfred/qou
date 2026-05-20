@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T06:34:36.305663+00:00",
-  "commitSha": "e118c2a5ced9c0ac9fcc196a0c639f2afc6e7a5f",
+  "computedAt": "2026-05-20T15:59:44.931491+00:00",
+  "commitSha": "b547ff7992e1e7dce96040ee5625fefea4a37fb1",
   "assertions": [
     {
       "name": "all_witnesses_present",
@@ -33,8 +33,8 @@
   "durationMs": 10,
   "computation": "onepb-status-dashboard",
   "scriptFile": "onepb_status_dashboard.py",
-  "scriptHash": "5c510731f05c",
-  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+  "scriptHash": "cf4ca9a4d9ee",
+  "scriptCommitSha": "ada8875c43432a2d4bc8a7b7c84b005a081a9a0e",
   "description": "Aggregated 1ppb-readiness dashboard.  Single source of truth for the headline metric `max_non_anchor_delta_ppb` across the QOU primary observables (CODATA reconciliation), structural audits (Brundan–Kleshchev, Macdonald-telescope Plancherel completeness), and the open atomic-binding derivation gap (atom_mass_additive_baseline + rho_f_volume_binding_gap).",
   "auditOnly": "docs/audits/onepb-status-dashboard.md",
   "data": {
@@ -356,7 +356,8 @@
       "markov_trace_consistency": {
         "atoms_compared": 8,
         "any_diverge": false,
-        "tolerance_relative": "0.000000001000000000000000062281591457779856418897068692786",
+        "tolerance_relative": 1e-09,
+        "tolerance_relative_raw": "0.000000001000000000000000062281591457779856418897068692786",
         "max_rel_delta": 0.0,
         "all_within_1ppb": true
       },

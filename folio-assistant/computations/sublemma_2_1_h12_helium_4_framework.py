@@ -109,7 +109,8 @@ def check_prereqs() -> tuple[list[dict], bool]:
         field = entry.get("passed_field", "allPassed")
         if present:
             try:
-                d = json.load(path.open())
+                with path.open(encoding="utf-8") as f:
+                    d = json.load(f)
                 passed = d.get(field, None)
             except Exception as e:
                 passed = f"PARSE_ERROR: {e}"
