@@ -3,9 +3,9 @@
   "label": "prop:reeb-bundle-complement-equals-volume",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.ts",
+    "md": "quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.md",
+    "lean": "quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.lean"
   },
   "source_hashes": {
     "md": "b03924fc020c",
@@ -148,7 +148,41 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b03924fc020c",
+          "ts": "8e303ae898b7",
+          "lean": "b57073d70488"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b03924fc020c",
+          "ts": "8e303ae898b7",
+          "lean": "b57073d70488"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:13:01.541Z"
 }

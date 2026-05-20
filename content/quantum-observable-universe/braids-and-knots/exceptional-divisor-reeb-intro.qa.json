@@ -154,7 +154,40 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "4380136ddd6c",
+          "ts": "232f355898ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "4380136ddd6c",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:13:01.541Z"
 }

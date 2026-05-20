@@ -7,7 +7,7 @@
     "md": "quantum-observable-universe/braids-and-knots/q-rogers-pentagon-archimedean.md"
   },
   "source_hashes": {
-    "md": "773fedc26ec6",
+    "md": "9fbd041b1c58",
     "ts": "0eb6fa29c5de"
   },
   "criteria": {
@@ -57,6 +57,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-emoji-content": [
@@ -73,6 +87,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-first-person-work": [
@@ -89,6 +117,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-time-stamped-notes": [
@@ -105,6 +147,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-unicode-crash": [
@@ -123,6 +179,20 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-rogers-pentagon-archimedean.md:1: **Proposition (Post-$\\tau$ pentagon = pre-$\\tau$ pentagon + q-log² Rogers correction).**"
+      },
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-editorializing": [
@@ -139,6 +209,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "framework-canonical": [
@@ -155,8 +239,55 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9fbd041b1c58",
+          "ts": "0eb6fa29c5de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:13:01.541Z"
 }

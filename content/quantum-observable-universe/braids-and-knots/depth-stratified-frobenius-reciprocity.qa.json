@@ -7,7 +7,7 @@
     "md": "quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md"
   },
   "source_hashes": {
-    "md": "85a0c18f47f5",
+    "md": "1b2c4318fd3f",
     "ts": "8d9c6aca0911"
   },
   "criteria": {
@@ -26,6 +26,21 @@
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-status-leak": [
@@ -42,6 +57,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-emoji-content": [
@@ -58,6 +87,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-first-person-work": [
@@ -74,6 +117,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-time-stamped-notes": [
@@ -90,6 +147,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-unicode-crash": [
@@ -106,6 +177,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-editorializing": [
@@ -122,6 +207,20 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "framework-canonical": [
@@ -138,8 +237,55 @@
         },
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      },
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "1b2c4318fd3f",
+          "ts": "8d9c6aca0911"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:13:01.541Z"
 }

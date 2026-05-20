@@ -1,0 +1,190 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:constit-factor-2q-minus-1",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.ts",
+    "md": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md",
+    "lean": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean"
+  },
+  "source_hashes": {
+    "md": "4b33eff1f1b2",
+    "ts": "01b93e3fab57",
+    "lean": "0270f25bdb43"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "4b33eff1f1b2",
+          "ts": "01b93e3fab57",
+          "lean": "0270f25bdb43"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c. | quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T04:13:01.541Z"
+}

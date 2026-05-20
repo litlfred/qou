@@ -28,12 +28,27 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "26c2bdcef925",
+          "ts": "7c3aec38fe8d",
+          "lean": "ab3a2421941d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -43,14 +58,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -60,14 +75,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -77,14 +92,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -94,33 +109,31 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:25: induced by the recursive structure of $\\mathcal{R}$ (e.g.\\ ²H = ⁴He | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:114: | ¹²C | 3 ⊗ ⁴He | $H_{36} \\hookleftarrow H_{12}^{\\otimes 3}$ | | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:117: | ²H | nucleon ⊗ nucleon (Hopf-link binding) | $H_6 \\hookleftarrow H_3^{\\otimes 2}$ | | content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md:160: | 3 | Extend to $H_6, H_9, H_{12}$ (²H, ³H, ³He, ⁴He) | medium; verify against `mass-table-ppb` |"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -130,14 +143,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "67f6ebc1d71e",
+          "md": "26c2bdcef925",
           "ts": "7c3aec38fe8d",
           "lean": "ab3a2421941d"
         },
@@ -147,8 +160,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "fit-section-chapter": [
@@ -185,108 +198,6 @@
         "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ],
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "26c2bdcef925",
-          "ts": "7c3aec38fe8d",
-          "lean": "ab3a2421941d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "26c2bdcef925",
-          "ts": "7c3aec38fe8d",
-          "lean": "ab3a2421941d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "26c2bdcef925",
-          "ts": "7c3aec38fe8d",
-          "lean": "ab3a2421941d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "26c2bdcef925",
-          "ts": "7c3aec38fe8d",
-          "lean": "ab3a2421941d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "26c2bdcef925",
-          "ts": "7c3aec38fe8d",
-          "lean": "ab3a2421941d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "26c2bdcef925",
-          "ts": "7c3aec38fe8d",
-          "lean": "ab3a2421941d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -320,24 +231,7 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "26c2bdcef925",
-          "ts": "7c3aec38fe8d",
-          "lean": "ab3a2421941d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:13:01.541Z"
 }

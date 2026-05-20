@@ -28,12 +28,27 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "4404ee465520",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "9303abaed820",
+          "md": "4404ee465520",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
@@ -43,14 +58,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "9303abaed820",
+          "md": "4404ee465520",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
@@ -60,14 +75,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "9303abaed820",
+          "md": "4404ee465520",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
@@ -77,14 +92,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "9303abaed820",
+          "md": "4404ee465520",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
@@ -94,33 +109,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "9303abaed820",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:129: 2. **§3·A v4 wiring** closes: $\\mathcal{N}_{\\rm sym}$ is also the"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "9303abaed820",
+          "md": "4404ee465520",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
@@ -130,14 +126,31 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "4404ee465520",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "9303abaed820",
+          "md": "4404ee465520",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
@@ -147,10 +160,10 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:98: \\cdot \\mathcal{C}(q),  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:101: where $\\mathcal{C}(q)$ is the substrate's vacuum-volume constant.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+        "evidence": "quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:98: \\cdot \\mathcal{C}(q),  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:101: where $\\mathcal{C}(q)$ is the substrate's vacuum-volume constant.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
     ],
     "fit-section-chapter": [
@@ -187,108 +200,6 @@
         "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
       }
     ],
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "4404ee465520",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "4404ee465520",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "4404ee465520",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "4404ee465520",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "4404ee465520",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "4404ee465520",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -322,26 +233,7 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "4404ee465520",
-          "ts": "f4e6aa46fb79",
-          "lean": "9b2bb218707d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:98: \\cdot \\mathcal{C}(q),  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:101: where $\\mathcal{C}(q)$ is the substrate's vacuum-volume constant.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
-      }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:13:01.541Z"
 }

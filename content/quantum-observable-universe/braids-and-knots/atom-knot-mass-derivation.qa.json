@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.lean"
   },
   "source_hashes": {
-    "md": "400e85959eb4",
+    "md": "52f3e59c6dc4",
     "ts": "d8b804a962b3",
     "lean": "38361d743506"
   },
@@ -28,12 +28,27 @@
         },
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      },
+      {
+        "field_hash": {
+          "md": "52f3e59c6dc4",
+          "ts": "d8b804a962b3",
+          "lean": "38361d743506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "400e85959eb4",
+          "md": "52f3e59c6dc4",
           "ts": "d8b804a962b3",
           "lean": "38361d743506"
         },
@@ -43,14 +58,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "400e85959eb4",
+          "md": "52f3e59c6dc4",
           "ts": "d8b804a962b3",
           "lean": "38361d743506"
         },
@@ -60,14 +75,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "400e85959eb4",
+          "md": "52f3e59c6dc4",
           "ts": "d8b804a962b3",
           "lean": "38361d743506"
         },
@@ -77,14 +92,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "400e85959eb4",
+          "md": "52f3e59c6dc4",
           "ts": "d8b804a962b3",
           "lean": "38361d743506"
         },
@@ -94,33 +109,31 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "400e85959eb4",
+          "md": "52f3e59c6dc4",
           "ts": "d8b804a962b3",
           "lean": "38361d743506"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md:372: \\texttt{manual-historical-volume-match} (²H, ³H, ³He) — i.e.\\ the | content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md:395: inputs (electron $\\sigma_1^3$, proton/neutron Borromean, ²H/³H/³He | content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md:430: ²H ($6_2$) is **not** PSD-feasible on its own ($\\alpha^* = 0.89$"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "400e85959eb4",
+          "md": "52f3e59c6dc4",
           "ts": "d8b804a962b3",
           "lean": "38361d743506"
         },
@@ -130,14 +143,14 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "400e85959eb4",
+          "md": "52f3e59c6dc4",
           "ts": "d8b804a962b3",
           "lean": "38361d743506"
         },
@@ -147,8 +160,8 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T02:29:29.163Z",
-        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
     ],
     "fit-section-chapter": [
@@ -201,108 +214,6 @@
         "notes": "Hash-refresh post-rebase onto main 6bff6d33; previous verdict (pass) carried forward (semantic content unchanged)."
       }
     ],
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "52f3e59c6dc4",
-          "ts": "d8b804a962b3",
-          "lean": "38361d743506"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "52f3e59c6dc4",
-          "ts": "d8b804a962b3",
-          "lean": "38361d743506"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "52f3e59c6dc4",
-          "ts": "d8b804a962b3",
-          "lean": "38361d743506"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "52f3e59c6dc4",
-          "ts": "d8b804a962b3",
-          "lean": "38361d743506"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "52f3e59c6dc4",
-          "ts": "d8b804a962b3",
-          "lean": "38361d743506"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "52f3e59c6dc4",
-          "ts": "d8b804a962b3",
-          "lean": "38361d743506"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -336,24 +247,7 @@
         "reviewed_at": "2026-05-20T02:28:44.364Z",
         "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
       }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "52f3e59c6dc4",
-          "ts": "d8b804a962b3",
-          "lean": "38361d743506"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T02:28:44.364Z",
-        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
-      }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T04:13:01.541Z"
 }
