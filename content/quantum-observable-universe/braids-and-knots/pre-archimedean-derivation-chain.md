@@ -13,6 +13,16 @@ The three pre-approved calibration inputs are
 | $m_\mu/m_e$ | Fixes the substrate parameter $q_0$                 |
 | $Q_\beta$   | Fixes the hadronic energy scale $\mathfrak{E}_0$      |
 
+> **Audience reading note.** This is the paper-side rendering of the canonical
+> derivation chain.  The **compute-pipeline mapping** (which script implements
+> which step), the **dilog context-sorting** ($\Phi_q$ Faddeev for mass-anchor
+> contexts vs $\mathrm{Li}_2^q$ Rogers for binding / bar-symmetric contexts),
+> the **Phase 5 findings** (interface = $z$ exact; $\rho_Z^{\mathrm{constit}} =
+> \mathrm{tr}_M^3(\mathcal{B}_p)$ structural identity), and the **migration
+> backlog** are kept separately in
+> [`docs/canonical-derivation-cheat-sheet.md`](../../../docs/canonical-derivation-cheat-sheet.md)
+> so this content block stays focused on the categorical chain itself.
+
 ***
 
 ## Step 1 — Categorical action of $\mathbf{C}$ on $\mathcal{S}$
@@ -332,6 +342,37 @@ extends the identification to $A \leq 60$.
 from first principles (without matching to historical hyperbolic
 volumes) is an open problem
 ([conj:canonical-knot-id-sdp](#conj\:canonical-knot-id-sdp)).
+
+***
+
+## Step 10.5 — Closed-form Z-step factor at full $\mathrm{tr}_M$ level (Phase 5l + 5c.1, 2026-05)
+
+Two recent structural identities close the per-Z step factor in the
+canonical-atom Markov trace to a single closed form:
+
+1. **Interface factor (exact)**, $\mathrm{tr}_M(\mathcal{B}_K) / \mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) = z^{p_+(K)} \cdot (z-h)^{p_-(K)}$,
+   from the Markov axiom + Hecke skein
+   ([`prop:interface-knot-markov-z`](#prop\:interface-knot-markov-z)).
+2. **Vacuum factor (exact)**, $\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) = \mathrm{tr}_M^3(\mathcal{B}_p)^Z \cdot \mathrm{tr}_M^3(\mathcal{B}_n)^N$,
+   from Wenzl's disjoint Markov-trace multiplicativity ([wenzl1988] §1.7),
+   so the per-Z step on the constit side reduces to
+   $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$
+   ([`prop:constit-factor-tau-M-proton-identity`](#prop\:constit-factor-tau-M-proton-identity)).
+
+Combining the two:
+
+$$
+  \boxed{\;
+    \frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})}
+    \;=\; z(q) \cdot \mathrm{tr}_M^3(\mathcal{B}_p, q)
+  \;}
+$$
+
+at a p-$\ast$ boundary, with no residuals.  This is the substrate-derived
+"per-Z step factor" at the full $\mathrm{tr}_M$ level, complementing
+the $|\Delta_\lambda^*|$-level conjecture
+$\alpha \approx [3]_q^2 \cdot \cosh(h)$ of
+[`conj:alpha-cosh-h-z-step-correction`](#conj\:alpha-cosh-h-z-step-correction).
 
 ***
 
