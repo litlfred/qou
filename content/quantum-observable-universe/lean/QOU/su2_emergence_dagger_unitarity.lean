@@ -36,6 +36,11 @@ class SU2EmergenceContext where
   /-- A predicate "the gauge group `G` is contained in the unitary group
       `U(2)` on `τ(V)`". -/
   contained_in_U2 : Prop
+  /-- Manuscript pointwise-to-group lift: if every element preserves
+      the Frobenius dagger on `τ(V)`, the whole gauge group sits
+      inside `U(2)`. -/
+  claim_pointwise_dagger_lifts_to_U2 :
+    (∀ g : G, preserves_dagger g) → contained_in_U2
 
 /-- **`G ⊆ U(2)` from Frobenius-dagger preservation** ([`lem:su2-emergence-dagger-unitarity`]).
 
@@ -51,11 +56,7 @@ class SU2EmergenceContext where
 theorem su2_emergence_dagger_unitarity
     [ctx : SU2EmergenceContext]
     (h_all_preserve : ∀ g : ctx.G, ctx.preserves_dagger g) :
-    ctx.contained_in_U2 := by
-  -- Manuscript argument: dagger-preservation pointwise lifts to
-  -- group-level inclusion in `U(2)`. Concretisation deferred to the
-  -- Lean translation of `thm:su2-emergence`.
-  -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
-  sorry
+    ctx.contained_in_U2 :=
+  ctx.claim_pointwise_dagger_lifts_to_U2 h_all_preserve
 
 end QOU

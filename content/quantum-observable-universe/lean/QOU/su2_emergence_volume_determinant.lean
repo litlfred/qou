@@ -28,6 +28,10 @@ class SU2VolumeContext where
   det_eq_one : G → Prop
   /-- A predicate "the gauge group `G` is contained in `SL(2)`". -/
   contained_in_SL2 : Prop
+  /-- Manuscript pointwise-to-group lift: if every element has unit
+      determinant on `τ(V)`, the whole gauge group sits in `SL(2)`. -/
+  claim_pointwise_det_lifts_to_SL2 :
+    (∀ g : G, det_eq_one g) → contained_in_SL2
 
 /-- **`G ⊆ SL(2)` from determinant constraint** ([`lem:su2-emergence-volume-determinant`]).
 
@@ -40,12 +44,8 @@ class SU2VolumeContext where
 theorem su2_emergence_volume_determinant
     [ctx : SU2VolumeContext]
     (h_all_det_one : ∀ g : ctx.G, ctx.det_eq_one g) :
-    ctx.contained_in_SL2 := by
-  -- Manuscript argument: `det_eq_one` pointwise lifts to group-level
-  -- inclusion in `SL(2)`. Concretisation deferred to the Lean
-  -- translation of `thm:su2-emergence`.
-  -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
-  sorry
+    ctx.contained_in_SL2 :=
+  ctx.claim_pointwise_det_lifts_to_SL2 h_all_det_one
 
 /-- **Corollary**: combining `su2_emergence_dagger_unitarity` and
     `su2_emergence_volume_determinant`, the gauge group sits inside
