@@ -11,8 +11,8 @@ It covers:
 
 - Lean tooling (`lean-lsp-mcp`) for proof diagnostics/navigation.
 - Literature discovery/retrieval MCPs:
-- `paper-search-mcp` (`openags/paper-search-mcp`)
-  - `openalex-mcp-server` (`LeoGitGuy/alex-paper-search-mcp`)
+  - `paper-search-mcp` (`openags/paper-search-mcp`)
+  - `openalex-mcp-server` package from `LeoGitGuy/alex-paper-search-mcp`
   - `mcp-scholar` (`renyumeng1/mcp_scholar`)
 
 ---
