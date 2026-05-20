@@ -66,10 +66,23 @@ SIGN_SIGMA_INV = -1
 SIGN_AVERAGED = 0
 
 
+_CTYPE_SIGNS = {
+    "sigma": SIGN_SIGMA,
+    "sigma_inv": SIGN_SIGMA_INV,
+    "averaged": SIGN_AVERAGED,
+}
+
+
 def _ctype_to_sign(ctype: str) -> int:
-    return {"sigma": SIGN_SIGMA,
-            "sigma_inv": SIGN_SIGMA_INV,
-            "averaged": SIGN_AVERAGED}[ctype]
+    """Map a ctype literal to its LR-wire sign code. Raises
+    ValueError (not KeyError) on an unrecognised ctype so the
+    public adapter surface emits actionable errors."""
+    if ctype not in _CTYPE_SIGNS:
+        raise ValueError(
+            f"unrecognised ctype {ctype!r}; "
+            f"expected one of {sorted(_CTYPE_SIGNS)}"
+        )
+    return _CTYPE_SIGNS[ctype]
 
 
 def nucleon_factor_spec_3strand(nucleon: str, label: str | None = None) -> dict:
