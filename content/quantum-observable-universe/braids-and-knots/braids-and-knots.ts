@@ -422,6 +422,7 @@ export default chapter({
       title: "Hoefsmit, convergence, and atomic-shell evidence",
       label: "sec:hoefsmit-convergence-atomic",
       blocks: [
+        "intro-hoefsmit-convergence-atomic",
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
         "hecke-convergence-bound",
@@ -456,6 +457,7 @@ export default chapter({
       title: "Markov axioms and braid-link enumeration",
       label: "sec:markov-axioms-braid-link",
       blocks: [
+        "intro-markov-axioms-braid-link",
         "q-beta-categorical-precision-ladder",
         "bar-involution",
         "polynomial-bar-involution",
@@ -481,6 +483,7 @@ export default chapter({
       title: "Hecke $u$-coordinate, $\\chi$-character closed-forms",
       label: "sec:hecke-chi-closed-forms",
       blocks: [
+        "intro-hecke-chi-closed-forms",
         "u-coordinate-discharges",
         "multi-link-jones-q1-extension",
         "per-wedderburn-block-c5-c6",
@@ -504,6 +507,7 @@ export default chapter({
       title: "Kashiwara-Jones interpretations and quantum-dilogarithm",
       label: "sec:kashiwara-jones-quantum-dilog",
       blocks: [
+        "intro-kashiwara-jones-quantum-dilog",
         "kashiwara-jones-alternation-interpretation",
         "hopf-jones-c3-categorical",
         "kashiwara-jones-c4-categorical",
@@ -525,6 +529,7 @@ export default chapter({
       title: "Archimedean realization and Kashaev volume",
       label: "sec:archimedean-realization-kashaev",
       blocks: [
+        "intro-archimedean-realization-kashaev",
         "archimedean-realization-functor",
         // Absorbed from former Ch `encounter`: pre-tau-vs-post-tau
         // interprets `def:archimedean-realization-functor` directly
@@ -552,6 +557,7 @@ export default chapter({
       label: "sec:cyclotomic-depth-3-trilog",
       blocks: [
         // 50-digit functional-equation cross-validated depth-3 witness.
+        "intro-cyclotomic-depth-3-trilog",
         "bring-trilog-depth-3-witness",
         // Im Li_3(ζ_5) = 4π³/125 (Tate-rational, Kummer reflection).
         "bring-trilog-imaginary-tate-rational",
@@ -577,6 +583,7 @@ export default chapter({
       label: "sec:hecke-baer-star-chirality",
       blocks: [
         // Hecke-algebra Baer-* foundation (generic q).
+        "intro-hecke-baer-star-chirality",
         "hecke-baer-star-generic",
         // Explicit central primitive idempotents via Murphy elements.
         "explicit-central-idempotent",
@@ -593,6 +600,7 @@ export default chapter({
       label: "sec:mutant-jones-bloch-group",
       blocks: [
         // Placement of paper's existing knot-indexed convolutions in
+        "intro-mutant-jones-bloch-group",
         // the bi-filtration grid.
         "knot-indexed-convolution-grid",
         // Conway-KT mutant pair: B1 Vol-injectivity sanity check.
@@ -638,6 +646,7 @@ export default chapter({
       title: "Confinement level and the cemetery group",
       label: "sec:confinement-level",
       blocks: [
+        "intro-confinement-level",
         "confinement-level",
         "confinement-level-exists",
         "confinement-level-unique",
@@ -655,6 +664,7 @@ export default chapter({
       title: "Pair production and anyon collapse",
       label: "sec:pair-production-anyon",
       blocks: [
+        "intro-pair-production-anyon",
         "symmetric-crystal-pair-production",
         "two-photon-pair-production",
         "hecke-anyonic-substrate",
@@ -669,6 +679,7 @@ export default chapter({
       title: "Confined particles and shells",
       label: "sec:confined-particles-shells",
       blocks: [
+        "intro-confined-particles-shells",
         "confined-particle",
         "confinement-category",
         "electron-shell",
@@ -687,6 +698,7 @@ export default chapter({
       title: "Atom and isotope knots",
       label: "sec:atom-isotope-knots",
       blocks: [
+        "intro-atom-isotope-knots",
         "atom-knot",
         "atom-knot-exists",
         "atom-knot-unique",
@@ -704,6 +716,7 @@ export default chapter({
       title: "Magic shells and the $\\kappa$ coupling",
       label: "sec:magic-shells",
       blocks: [
+        "intro-magic-shells",
         "ilp-solution-count-unwrap",
         "shell-schur-weyl-self-duality",
         "compound-beta-shell-calibration",
@@ -751,6 +764,7 @@ export default chapter({
       title: "LP-dual and Jucys-Murphy central elements",
       label: "sec:lp-dual-jucys-murphy",
       blocks: [
+        "intro-lp-dual-jucys-murphy",
         "jucys-murphy-central-elements-qou",
         "mass-formula-iterative-lp-dual",
         "alpha-5-jm-central-empirical-findings",
@@ -769,6 +783,7 @@ export default chapter({
       title: "$\\varphi_q$ resummation, Markov trace, and Schur-Weyl tower",
       label: "sec:phi-q-markov-schur-weyl-tower",
       blocks: [
+        "intro-phi-q-markov-schur-weyl-tower",
         "phi-q-resums-trace-series",
         "markov-axiom-recursive-ascent",
         "per-braid-mass-tower",
@@ -796,6 +811,7 @@ export default chapter({
       label: "sec:gs-axiomatic-backing",
       blocks: [
         // GAP 13a — explicit conjectures backing GS noncomputable opaque axioms
+        "intro-gs-axiomatic-backing",
         "gs-graded-markov-trace-existence",
         "gs-residue-at-root-existence",
         "gs-spectral-decomposition-existence",
@@ -816,6 +832,7 @@ export default chapter({
       title: "Parity classification, atomic atlas, and discrepancy resolution",
       label: "sec:parity-classification-discrepancy",
       blocks: [
+        "intro-parity-classification-discrepancy",
         "mn-classical-parity-blind",
         "q-character-closes-parity-gap",
         "frobenius-codim-universal",
@@ -835,6 +852,7 @@ export default chapter({
       title: "Spectral sequence, chirality, and confinement-NF structure",
       label: "sec:spectral-sequence-chirality-confinement",
       blocks: [
+        "intro-spectral-sequence-chirality-confinement",
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
         "gb-spectral-sequence",
@@ -858,6 +876,7 @@ export default chapter({
       title: "Plancherel, $\\alpha$, ribbon, and knot-factor",
       label: "sec:plancherel-alpha-ribbon",
       blocks: [
+        "intro-plancherel-alpha-ribbon",
         "alpha-em-categorical-trace",
         "plancherel-term-7-formulation",
         "plancherel-weight-boundedness",
@@ -891,6 +910,7 @@ export default chapter({
       title: "$\\alpha_k$ derivation procedure",
       label: "sec:alpha-k-procedure",
       blocks: [
+        "intro-alpha-k-procedure",
         "flavor-dressed-mass-from-substrate-split",
         "flavor-mass-splitting-bound",
         "alpha-k-derivation-procedure",
@@ -909,6 +929,7 @@ export default chapter({
       title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\alpha_k$",
       label: "sec:wenzl-bridge-cyclotomic",
       blocks: [
+        "intro-wenzl-bridge-cyclotomic",
         "y-lambda-cyclotomic-factorization",
         "y-lambda-recipe-from-partition",
         "graded-hecke-energy-truncation-bound",
@@ -933,6 +954,7 @@ export default chapter({
       title: "Six-term mass formula, crystal, isospin, and chirality",
       label: "sec:six-term-crystal-isospin-chirality",
       blocks: [
+        "intro-six-term-crystal-isospin-chirality",
         "six-term-mass-formula-complete",
         "six-term-per-derivation-weights",
         "shell-correction-term-seven",
@@ -950,6 +972,7 @@ export default chapter({
       title: "Beta stability closure",
       label: "sec:beta-stability-closure",
       blocks: [
+        "intro-beta-stability-closure",
         "deuteron-first-principles",
         "markov-pair-z2",
         "pentagon-uv-commutation",
@@ -1057,6 +1080,7 @@ export default chapter({
         // by the appendix-surreal Millennium bounds; lives here as
         // the bridge to those bounds.
         "adelic-tate-squeeze",
+        "outro-braids-and-knots",
       ],
     }),
   ],

@@ -143,9 +143,13 @@ function parseChapterManifest(paper: string, dir: string): ChapterInfo | null {
     const blocksMatch = body.match(/blocks:\s*\[([\s\S]*?)\]/);
     const blocks: string[] = [];
     if (blocksMatch) {
+      // Strip `//` line comments first — apostrophes inside comments
+      // (e.g. "paper's existing knot-indexed ...") would otherwise be
+      // matched as quote delimiters and yield a spurious first block.
+      const stripped = blocksMatch[1].replace(/\/\/[^\n]*/g, "");
       const blocksRe = /["']([^"']+)["']/g;
       let bm;
-      while ((bm = blocksRe.exec(blocksMatch[1])) !== null) {
+      while ((bm = blocksRe.exec(stripped)) !== null) {
         blocks.push(bm[1]);
       }
     }
