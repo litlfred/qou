@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean"
   },
   "source_hashes": {
-    "md": "3f800c1deedb",
+    "md": "7ee3b0a18ef5",
     "ts": "c226b1c5a9fd",
     "lean": "b64c5eecab4d"
   },
@@ -132,6 +132,55 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:7: \\mathcal{C}(\\kappa)  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:19: $\\mathcal{C}(\\kappa) \\leq 1 + C(\\kappa - 1)$ for a universal  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:29: \\mathcal{C}(\\kappa) = O(1)  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:47: \\mathcal{C}(\\kappa) \\sim \\kappa  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+      },
+      {
+        "field_hash": {
+          "md": "7ee3b0a18ef5",
+          "ts": "c226b1c5a9fd",
+          "lean": "b64c5eecab4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:22:25.857Z",
+        "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "7ee3b0a18ef5",
+          "ts": "c226b1c5a9fd",
+          "lean": "b64c5eecab4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "7ee3b0a18ef5",
+          "ts": "c226b1c5a9fd",
+          "lean": "b64c5eecab4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "wall-side-correct": [

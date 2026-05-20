@@ -89,9 +89,9 @@ Frobenius pairing.
 
 **Step 2 — σ stabilises the constraint cone.**
 Since $\Sigma$ is $\sigma$-stable, the polyhedral cone
-$\mathcal{C} := \{x \in A : \tau(\pi_\lambda \cdot x) \geq 0\
-\forall \lambda \in \Sigma\}$ satisfies $\sigma(\mathcal{C}) =
-\mathcal{C}$ (apply Step 1 to each constraint).
+$\mathcal{K}_+ := \{x \in A : \tau(\pi_\lambda \cdot x) \geq 0\
+\forall \lambda \in \Sigma\}$ satisfies $\sigma(\mathcal{K}_+) =
+\mathcal{K}_+$ (apply Step 1 to each constraint).
 
 **Step 3 — σ stabilises the cost functional.**
 Because $\sigma(c) = c$ and $\tau \circ \sigma = \tau$:

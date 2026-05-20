@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.lean"
   },
   "source_hashes": {
-    "md": "b60d005478e7",
+    "md": "4a2f06be15e4",
     "ts": "9448602a4fa3",
     "lean": "9e7d22847263"
   },
@@ -16,7 +16,7 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "b60d005478e7",
+          "md": "4a2f06be15e4",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
         },
@@ -33,7 +33,7 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "b60d005478e7",
+          "md": "4a2f06be15e4",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
         },
@@ -50,7 +50,7 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "b60d005478e7",
+          "md": "4a2f06be15e4",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
         },
@@ -67,7 +67,7 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "b60d005478e7",
+          "md": "4a2f06be15e4",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
         },
@@ -84,11 +84,11 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "b60d005478e7",
+          "md": "4a2f06be15e4",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -98,12 +98,42 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.md:138: states the lemma in the abstract form `tr_M(prod over P_n) = z²·(sum"
+      },
+      {
+        "field_hash": {
+          "md": "e6dfc5082858",
+          "ts": "9448602a4fa3",
+          "lean": "9e7d22847263"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "4a2f06be15e4",
+          "ts": "9448602a4fa3",
+          "lean": "9e7d22847263"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "b60d005478e7",
+          "md": "4a2f06be15e4",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
         },
@@ -120,9 +150,76 @@
     "framework-canonical": [
       {
         "field_hash": {
+          "md": "4a2f06be15e4",
+          "ts": "9448602a4fa3",
+          "lean": "7ce9e1f20f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
           "md": "b60d005478e7",
           "ts": "9448602a4fa3",
           "lean": "9e7d22847263"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "Jet-tower mass formula pair contribution at jet level n — brane-tower for knot mass."
+      },
+      {
+        "field_hash": {
+          "md": "4a2f06be15e4",
+          "ts": "9448602a4fa3",
+          "lean": "7ce9e1f20f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      },
+      {
+        "field_hash": {
+          "md": "4a2f06be15e4",
+          "ts": "9448602a4fa3",
+          "lean": "7ce9e1f20f77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-3-final",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:34.732Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash refresh: replaced z²·(sum → z^2 * (sum inside backtick code span. Semantic content unchanged."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "4a2f06be15e4",
+          "ts": "9448602a4fa3",
+          "lean": "7ce9e1f20f77"
         },
         "result": "pass",
         "reviewer": {

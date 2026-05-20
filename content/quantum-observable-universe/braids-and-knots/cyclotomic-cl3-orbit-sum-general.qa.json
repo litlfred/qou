@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/cyclotomic-cl3-orbit-sum-general.lean"
   },
   "source_hashes": {
-    "md": "838c066ce05d",
+    "md": "023a7ba43802",
     "ts": "56452ace0560",
     "lean": "2e8b1f677f54"
   },
@@ -16,7 +16,7 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "838c066ce05d",
+          "md": "8673e720ede9",
           "ts": "56452ace0560",
           "lean": "2e8b1f677f54"
         },
@@ -33,11 +33,11 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "838c066ce05d",
+          "md": "8673e720ede9",
           "ts": "56452ace0560",
           "lean": "2e8b1f677f54"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -47,12 +47,27 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-cl3-orbit-sum-general.md:103: ✓"
+      },
+      {
+        "field_hash": {
+          "md": "023a7ba43802",
+          "ts": "56452ace0560",
+          "lean": "2e8b1f677f54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:02.376Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "838c066ce05d",
+          "md": "8673e720ede9",
           "ts": "56452ace0560",
           "lean": "2e8b1f677f54"
         },
@@ -69,7 +84,7 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "838c066ce05d",
+          "md": "8673e720ede9",
           "ts": "56452ace0560",
           "lean": "2e8b1f677f54"
         },
@@ -86,7 +101,7 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "838c066ce05d",
+          "md": "8673e720ede9",
           "ts": "56452ace0560",
           "lean": "2e8b1f677f54"
         },
@@ -103,7 +118,7 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "838c066ce05d",
+          "md": "8673e720ede9",
           "ts": "56452ace0560",
           "lean": "2e8b1f677f54"
         },
@@ -120,7 +135,73 @@
     "framework-canonical": [
       {
         "field_hash": {
+          "md": "8673e720ede9",
+          "ts": "56452ace0560",
+          "lean": "2e8b1f677f54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      },
+      {
+        "field_hash": {
+          "md": "023a7ba43802",
+          "ts": "56452ace0560",
+          "lean": "2e8b1f677f54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
           "md": "838c066ce05d",
+          "ts": "56452ace0560",
+          "lean": "2e8b1f677f54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-braids-A-D",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:14:09.489Z",
+        "reviewed_sha": "6f8825bd1db6bfe695ea6f757547529ccb5ea9aa",
+        "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-A-D)"
+      },
+      {
+        "field_hash": {
+          "md": "8673e720ede9",
+          "ts": "56452ace0560",
+          "lean": "2e8b1f677f54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-voice-fix-batch",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T00:55:34.699Z",
+        "reviewed_sha": "f8424873b7ba95dd574e4434cbb755a5a8acd379",
+        "notes": "Hash-refresh after voice-emoji mechanical edits in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "8673e720ede9",
           "ts": "56452ace0560",
           "lean": "2e8b1f677f54"
         },

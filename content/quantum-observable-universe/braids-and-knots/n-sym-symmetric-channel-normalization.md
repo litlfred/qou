@@ -95,10 +95,10 @@ $$
   \prod_{i = 1}^{3} \dim_q(\mathrm{Goldstone}_i)
   \;=\;
   [\text{$T_3 - Y$ rotation}]_q \cdot [W^+]_q \cdot [W^-]_q
-  \cdot \mathcal{C}(q),
+  \cdot \mathcal{V}_0(q),
 $$
 
-where $\mathcal{C}(q)$ is the substrate's vacuum-volume constant.
+where $\mathcal{V}_0(q)$ is the substrate's vacuum-volume constant.
 This route ties $\mathcal{N}_{\rm sym}$ directly to the Higgs
 mechanism categorical structure (U2/U4).
 
@@ -126,7 +126,7 @@ succeeding):
    $\{q^k, [k]_q, \hbar_q^k, [2k]_q^2/[2]_q, \mathcal{N}_{\rm sym}\}$
    would (by the consistency identity above) trivially confirm the
    closed form.
-2. **§3·A v4 wiring** closes: $\mathcal{N}_{\rm sym}$ is also the
+2. **§3.A v4 wiring** closes: $\mathcal{N}_{\rm sym}$ is also the
    correct calibration constant for translating Markov-trace
    tower terms (depth-1 + depth-2) into MeV mass corrections.
    The naïve calibration $\alpha_{\rm bind} = 8 \cdot m_e \cdot G$

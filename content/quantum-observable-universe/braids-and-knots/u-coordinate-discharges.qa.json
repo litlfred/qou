@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/u-coordinate-discharges.lean"
   },
   "source_hashes": {
-    "md": "bdebe7582513",
+    "md": "ab85c9ce45ab",
     "ts": "58973cb79503",
     "lean": "a23da0006ab9"
   },
@@ -88,7 +88,7 @@
           "ts": "58973cb79503",
           "lean": "a23da0006ab9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -98,6 +98,21 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/u-coordinate-discharges.md:16: | Identity | Form in `u = q²` |"
+      },
+      {
+        "field_hash": {
+          "md": "ab85c9ce45ab",
+          "ts": "58973cb79503",
+          "lean": "a23da0006ab9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [

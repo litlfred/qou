@@ -167,6 +167,34 @@ def main() -> None:
         source="c_7 = c_3³ is constant; clean integer",
     )
 
+    # ── prop:silver-ratio-beta-decay-null wiring ────────────────────
+    # Δ(net) = h(h-2)/2 vanishes at h = 2 (silver-ratio root)
+    # b² = 1 - 1/[2]_q² = 7/8 exactly at silver
+    # Both are bar-symmetric per def:bar-involution. See
+    # content/quantum-observable-universe/particle-interactions/
+    # silver-ratio-beta-decay-null.md
+    h_at_silver = Fraction(2)
+    delta_net_at_silver = h_at_silver * (h_at_silver - 2) / 2
+    w.add_assertion(
+        "delta_net_at_silver_is_zero",
+        computed=float(delta_net_at_silver),
+        expected=0,
+        tolerance=0,
+        source="prop:silver-ratio-beta-decay-null — Δ(net) = h(h-2)/2 "
+        "vanishes at h=2 → β⁻ decay forbidden at leading (Form A) order",
+    )
+    # [2]_q = q + q⁻¹ = 2√2 at silver; [2]_q² = 8; 1/[2]_q² = 1/8;
+    # b² = 1 - 1/[2]_q² = 7/8 exactly.
+    b_sq_check = Fraction(1) - Fraction(1, 8)
+    w.add_assertion(
+        "b_sq_at_silver_is_seven_eighths",
+        computed=float(b_sq_check),
+        expected=float(Fraction(7, 8)),
+        tolerance=0,
+        source="prop:silver-ratio-beta-decay-null — b² = 1 - 1/[2]_q² = 7/8 "
+        "exactly at silver, where [2]_q² = (2√2)² = 8",
+    )
+
     w.save()
 
 

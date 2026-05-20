@@ -7,14 +7,14 @@
     "md": "content/quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.md"
   },
   "source_hashes": {
-    "md": "4c758b3a68c1",
+    "md": "e628442af4b3",
     "ts": "3f295e8876d4"
   },
   "criteria": {
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "4c758b3a68c1",
+          "md": "e628442af4b3",
           "ts": "3f295e8876d4"
         },
         "result": "pass",
@@ -30,10 +30,10 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "4c758b3a68c1",
+          "md": "e628442af4b3",
           "ts": "3f295e8876d4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -43,12 +43,26 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.md:43: - **Up to crossing 10**: ✓ theorem (HTW 1998). | content/quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.md:44: - **At crossing 11**: ✗ **falsified by the Conway-KT mutant pair**."
+      },
+      {
+        "field_hash": {
+          "md": "e628442af4b3",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:02.376Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "4c758b3a68c1",
+          "md": "e628442af4b3",
           "ts": "3f295e8876d4"
         },
         "result": "pass",
@@ -64,7 +78,7 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "4c758b3a68c1",
+          "md": "e628442af4b3",
           "ts": "3f295e8876d4"
         },
         "result": "pass",
@@ -80,7 +94,7 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "4c758b3a68c1",
+          "md": "e628442af4b3",
           "ts": "3f295e8876d4"
         },
         "result": "pass",
@@ -96,7 +110,7 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "4c758b3a68c1",
+          "md": "e628442af4b3",
           "ts": "3f295e8876d4"
         },
         "result": "pass",
@@ -112,7 +126,7 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "4c758b3a68c1",
+          "md": "e628442af4b3",
           "ts": "3f295e8876d4"
         },
         "result": "pass",

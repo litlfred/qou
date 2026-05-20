@@ -27,12 +27,12 @@ Numerical match at $q_0 = 1.10998…$ for the four atoms in the table
 
 | atom | err (Kashaev) | err (corrected) | improvement |
 |------|--------------:|----------------:|------------:|
-| ²H   | $+1.090\,\%$  | $+0.011\,\%$    | $\times 99$ |
-| ⁴He  | $+5.867\,\%$  | $+0.057\,\%$    | $\times 103$ |
-| ¹²C  | $+5.410\,\%$  | $+0.063\,\%$    | $\times 86$ |
-| ¹⁶O  | $+5.301\,\%$  | $+0.152\,\%$    | $\times 35$ |
+| ${}^2$H   | $+1.090\,\%$  | $+0.011\,\%$    | $\times 99$ |
+| ${}^4$He  | $+5.867\,\%$  | $+0.057\,\%$    | $\times 103$ |
+| ${}^{12}$C  | $+5.410\,\%$  | $+0.063\,\%$    | $\times 86$ |
+| ${}^{16}$O  | $+5.301\,\%$  | $+0.152\,\%$    | $\times 35$ |
 
-¹²C and ¹⁶O close *via propagation* through the existing α-cluster
+${}^{12}$C and ${}^{16}$O close *via propagation* through the existing α-cluster
 formula: their predicted binding energies are derived from
 $B(\!^4\!\mathrm{He})$ as
 $B(\!^{4n}\!\mathrm{X}) = n \cdot B(\!^4\!\mathrm{He}) + \binom{n}{2} \cdot c_{\alpha\alpha}$;
@@ -71,7 +71,7 @@ that the substrate alone cannot absorb.
 This conjecture is an **empirical regularity** at the $10^{-3}$
 precision level — falsifiable by any single Z=N atom whose binding
 deviates from the formula by more than $10^{-3}$. The natural
-falsification target is **²⁰Ne** ($n_\alpha = 5$) once its native
+falsification target is **${}^{20}$Ne** ($n_\alpha = 5$) once its native
 non-α-cluster knot pairing is identified.
 
 A categorical derivation requires three lemmas:

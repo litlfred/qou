@@ -88,7 +88,7 @@
           "ts": "69298294c430",
           "lean": "f33ae965ec21"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -98,6 +98,36 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.md:203: | ²H | 2 | 6 | $L_H$ (Hopf) | $\\{p, n\\}$ | 1 |"
+      },
+      {
+        "field_hash": {
+          "md": "b1d4957bbd3d",
+          "ts": "69298294c430",
+          "lean": "f33ae965ec21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
+      },
+      {
+        "field_hash": {
+          "md": "6ed4e2709f3c",
+          "ts": "69298294c430",
+          "lean": "f33ae965ec21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [
@@ -121,6 +151,40 @@
       {
         "field_hash": {
           "md": "9f95baba13e8",
+          "ts": "69298294c430",
+          "lean": "f33ae965ec21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "Joint mass-tower SDP selects Hecke elements T_w for light nuclei — knot/braid framing."
+      },
+      {
+        "field_hash": {
+          "md": "cb564ed5d539",
+          "ts": "69298294c430",
+          "lean": "f33ae965ec21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "cb564ed5d539",
           "ts": "69298294c430",
           "lean": "f33ae965ec21"
         },

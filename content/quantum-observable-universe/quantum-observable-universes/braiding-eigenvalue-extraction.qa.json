@@ -150,6 +150,40 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "a0f9349b6653",
+          "ts": "dc6f9a0e6d22",
+          "lean": "4587335bb95c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "a0f9349b6653",
+          "ts": "dc6f9a0e6d22",
+          "lean": "4587335bb95c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
     ]
   },
   "updated_at": "2026-05-20T15:01:34.161Z"

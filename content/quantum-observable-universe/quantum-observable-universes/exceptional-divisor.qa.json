@@ -1,0 +1,256 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:exceptional-divisor",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.lean"
+  },
+  "source_hashes": {
+    "md": "e02b983e7a03",
+    "ts": "0c595f5e6475",
+    "lean": "c6e107834c94"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:05:32.956Z",
+        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7023319b254a",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "severity": "major",
+        "evidence": "exceptional-divisor.md:1: 'Let (C,Θ,G,S) be a QOU and let p∈M be a brane point with outward normal N(p)=p/|p|...'",
+        "notes": "Pure brane geometry — exceptional P^1(C) fibre of state bundle, blow-up map. Zero knot/braid framing. Belongs in quantum-observable-universes/ or descartes-universe/."
+      },
+      {
+        "field_hash": {
+          "md": "7023319b254a",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-orchestrator-resolver-relocation",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:14:19.413Z",
+        "reviewed_sha": "5bd5a24c30a8571808f5dff0c95dfbe441f8ce5a",
+        "notes": "Relocated from braids-and-knots/; P^1(C) state-bundle fibre + blow-up belongs with QOU brane infrastructure."
+      },
+      {
+        "field_hash": {
+          "md": "7023319b254a",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-qou-univs-A-K",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:09:20.394Z",
+        "reviewed_sha": "f00bb4dc98a11f79eea010947f72ff7d970b49ac",
+        "notes": "default-pass (chapter=quantum-observable-universes)"
+      },
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-post-prepare-merge-rebase",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T04:01:14.142Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
+        "notes": "Hash-refresh post-rebase onto main 6bff6d33; previous verdict (pass) carried forward (semantic content unchanged)."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "e02b983e7a03",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T04:25:42.968Z"
+}

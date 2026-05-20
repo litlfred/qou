@@ -75,6 +75,34 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/option-e-isospin-test.md:136: with mirror-isobar invariance.  Option E as currently written in"
+      },
+      {
+        "field_hash": {
+          "md": "4a81dd636266",
+          "ts": "1a3c32ec7cd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:47:44.535Z",
+        "reviewed_sha": "e3d5450219a0f7d77336751a170f69c937774f6c"
+      },
+      {
+        "field_hash": {
+          "md": "9a0d458f01a4",
+          "ts": "1a3c32ec7cd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-unicode-crash": [

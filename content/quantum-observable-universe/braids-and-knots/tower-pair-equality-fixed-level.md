@@ -135,7 +135,7 @@ plus Markov-trace factorization
 ([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization)),
 all of which are themselves provable. The corresponding Lean stub
 [qou:QOU.BraidKnot.TowerPairEqualityFixedLevel](tower-pair-equality-fixed-level.lean)
-states the lemma in the abstract form `tr_M(prod over P_n) = z²·(sum
+states the lemma in the abstract form `tr_M(prod over P_n) = z^2 * (sum
 of dilogs)` and reduces to those upstream lemmas.
 
 This block closes audit GAP 17b

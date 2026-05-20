@@ -129,17 +129,17 @@ produces an asymmetric emission pattern determined by $q^w$.
 The $\mathbb{Z}/2$ symmetry $q \leftrightarrow q^{-1}$ that
 exchanges $\beta^- \leftrightarrow \beta^+$
 ([beta decay](#def:beta-decay-skein)) is the **combined**
-$\mathcal{CP}$ operation: parity $\mathcal{P}$ (mirror all
-crossings) composed with charge conjugation $\mathcal{C}$
+$\widehat{CP}$ operation: parity $\mathcal{P}$ (mirror all
+crossings) composed with charge conjugation $\hat{C}$
 (exchange particle $\leftrightarrow$ antiparticle, i.e.,
 $T_{2,3} \leftrightarrow T_{2,3}^{\sigma}$).
 
 - $\mathcal{P}$ alone: violated ($q \neq q^{-1}$)
-- $\mathcal{C}$ alone: violated (electron $\neq$ positron in
+- $\hat{C}$ alone: violated (electron $\neq$ positron in
   mass ordering)
-- $\mathcal{CP}$: the $q \leftrightarrow q^{-1}$ involution,
+- $\widehat{CP}$: the $q \leftrightarrow q^{-1}$ involution,
   which IS a symmetry of the Iwahori--Hecke algebra
 
 This gives the standard result: $\mathcal{P}$ violated,
-$\mathcal{C}$ violated, $\mathcal{CP}$ conserved (to leading
+$\hat{C}$ violated, $\widehat{CP}$ conserved (to leading
 order in the Descartes framework).

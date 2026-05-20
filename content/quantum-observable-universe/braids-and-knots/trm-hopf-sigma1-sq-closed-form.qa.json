@@ -88,7 +88,7 @@
           "ts": "dd3fea686998",
           "lean": "13caa022e403"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -98,6 +98,36 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.md:113: All three produce identical output for σ_1² at q = q_0 to 50 dps."
+      },
+      {
+        "field_hash": {
+          "md": "d97af37ac444",
+          "ts": "dd3fea686998",
+          "lean": "13caa022e403"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "cfd79ab4824e",
+          "ts": "dd3fea686998",
+          "lean": "13caa022e403"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [
@@ -121,6 +151,40 @@
       {
         "field_hash": {
           "md": "cf95dc0da278",
+          "ts": "dd3fea686998",
+          "lean": "13caa022e403"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "Closed form for canonical Markov trace tr_M(σ_1²) in H_n(q) — pure Hecke."
+      },
+      {
+        "field_hash": {
+          "md": "1e444eef7ec0",
+          "ts": "dd3fea686998",
+          "lean": "13caa022e403"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-after-unicode-mechanical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T23:24:10.426Z",
+        "reviewed_sha": "63ef22ec707ea14ca358b3606064c2d979afc976",
+        "notes": "Hash-refresh after mechanical unicode-→-TeX substitution in PR #823; semantic content unchanged. Previous verdict (pass) carried forward."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "1e444eef7ec0",
           "ts": "dd3fea686998",
           "lean": "13caa022e403"
         },

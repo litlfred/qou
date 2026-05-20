@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.lean"
   },
   "source_hashes": {
-    "md": "a006881ef458",
+    "md": "9cc2b1d9fa60",
     "ts": "818290759af3",
     "lean": "eb43c1c13ad7"
   },
@@ -132,6 +132,55 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md:5: *Let $\\mathcal{C}$ denote the upstream conjectural class  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md:11: [**conditional on $\\mathcal{C}$**], the  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+      },
+      {
+        "field_hash": {
+          "md": "9cc2b1d9fa60",
+          "ts": "818290759af3",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:22:25.857Z",
+        "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9cc2b1d9fa60",
+          "ts": "818290759af3",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9cc2b1d9fa60",
+          "ts": "818290759af3",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "wall-side-correct": [

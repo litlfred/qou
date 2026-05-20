@@ -189,7 +189,7 @@ investigation:
   spectral-gap argument.
 
 **Tried and failed (transport detected; argument withdrawn):**
-- Rounds 1–3: parity-based mechanisms (σ alone, σ·ε combined) —
+- Rounds 1-3: parity-based mechanisms ($\sigma$ alone, $\sigma \cdot \varepsilon$ combined) ---
   ruled out by the Skein identity making
   $\sigma_i - \sigma_i^{-1} = h\,\mathbf{1}$ commute with all
   inner automorphisms.
@@ -462,7 +462,7 @@ candidate mechanism (rounds 1–3, 9, 10, 13).
 
 **Mechanisms ruled out:**
 - Coupling-parity (rounds 1–3, by Skein).
-- Operator-parity / σ·ε (rounds 1–3).
+- Operator-parity / $\sigma \cdot \varepsilon$ (rounds 1-3).
 - Hopf-link rank-2 → $\alpha^2$ (round 9, refuted in 10).
 - Leading h-power matching (round 13).
 
@@ -787,7 +787,7 @@ $$
   \alpha_{EM} \;=\; \frac{h^{2}}{q \cdot (q^{9}-q^{-9})(q^{10}-q^{-10})}
 $$
 
-(witness assertion `α_EM = h²/[q·δ_q(T_29)·δ_q(T_35)]` passes).
+(witness assertion $\alpha_{EM} = h^2/[q \cdot \delta_q(T_{29}) \cdot \delta_q(T_{35})]$ passes).
 
 **What this means.**
 

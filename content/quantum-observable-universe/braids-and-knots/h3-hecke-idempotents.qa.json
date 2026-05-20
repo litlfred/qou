@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.lean"
   },
   "source_hashes": {
-    "md": "512c05c3632f",
+    "md": "7a885124411e",
     "ts": "3ce456148ac2",
     "lean": "9f9a17326ec8"
   },
@@ -88,7 +88,7 @@
           "ts": "3ce456148ac2",
           "lean": "9f9a17326ec8"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -98,6 +98,21 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md:19: - `dimQ_V21 q : ℝ = q + q⁻¹` (= $[2]_q$ at H_3) | content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md:22: - `sigma_eigval_V111 q i : ℝ = -q⁻¹` (for every $i$)"
+      },
+      {
+        "field_hash": {
+          "md": "7a885124411e",
+          "ts": "3ce456148ac2",
+          "lean": "9f9a17326ec8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
       }
     ],
     "voice-editorializing": [

@@ -141,7 +141,7 @@ Plausible missing factors (not tested in this PR):
 - Combined: $\dim_q(\lambda) / \hbar_q^2 \approx 510$, too large.
 
 **Honest assessment.** The bare closure form is **not numerically
-correct**, but the order of magnitude (~ 10⁻¹ MeV vs target 2.225 MeV)
+correct**, but the order of magnitude ($\sim 10^{-1}$ MeV vs target 2.225 MeV)
 is the right ballpark — much closer than the six failed ansätze from
 PR #777 which were either tautologically zero or off by orders of
 magnitude wrong-sign. The closure form's **structure** (per-λ algebraic

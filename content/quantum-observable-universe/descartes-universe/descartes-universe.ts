@@ -22,6 +22,24 @@ export default chapter({
       ],
     }),
 
+    // ── §0a. Algebraic substructure of Bring's surface ───────────────
+    // Relocated from braids-and-knots/ per the PR #823 fit-section-
+    // chapter audit. These blocks supply the algebraic infrastructure
+    // (hyperelliptic quintic, Z_5 automorphism, Lagrange resolvent,
+    // binary-dihedral SU(2) lifting, weight identification) that the
+    // subsequent §1 Bring's-surface-as-QOU sections build on.
+    section({
+      title: "Bring's surface algebraic substructure",
+      label: "sec:bring-algebraic-substructure",
+      blocks: [
+        "su2-generators",
+        "hyperelliptic-quintic",
+        "x5-z5-automorphism",
+        "lagrange-resolvent-transform",
+        "x5-bring-weight-identification",
+      ],
+    }),
+
     // ── §1a. Bring's surface as a QOU ────────────────────────────────
     // (P5 split: 31-block sec:brings-geometry → 4 focused sections)
     section({

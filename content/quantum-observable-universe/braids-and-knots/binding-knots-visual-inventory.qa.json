@@ -81,7 +81,7 @@
           "md": "419686cc162a",
           "ts": "64747da52a7a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -91,6 +91,34 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/binding-knots-visual-inventory.md:172: | $6_2$ | Deuteron ²H (census-assigned) |"
+      },
+      {
+        "field_hash": {
+          "md": "d1e968d9094c",
+          "ts": "64747da52a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
+      },
+      {
+        "field_hash": {
+          "md": "23bb24729b84",
+          "ts": "64747da52a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [

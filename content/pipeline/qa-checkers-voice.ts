@@ -3,9 +3,23 @@
  * criteria. Each checker returns `result: "pass" | "fail"` plus
  * (on fail) evidence in the form `file:line: <quote>`.
  *
- * Non-automated criteria (scholarly-default, ai-slop, fit-section-
- * chapter) are NOT covered here — they require agent / human
- * adjudication, which the watcher dispatches separately.
+ * Coverage:
+ *
+ * - Eight voice criteria are now fully automated: status-leak,
+ *   emoji-content, first-person-work, time-stamped-notes,
+ *   unicode-crash, editorializing, **ai-slop** (heuristic LLM-tell
+ *   detection), and **scholarly-default** (second-person address +
+ *   lecturer cadence + past-tense narration).
+ * - `framework-canonical` and `wall-side-correct` complete the
+ *   automated set.
+ * - Only `fit-section-chapter` remains agent-only — it requires
+ *   semantic block-vs-section reasoning that no lexical heuristic
+ *   captures faithfully.
+ *
+ * The automated checkers are conservative — they prefer
+ * false-positive `fail` over false-negative `pass`. Agent entries
+ * appended later via `qa-merge-findings.ts` overrule the script
+ * entries when the script is being overzealous.
  *
  * @module content/pipeline/qa-checkers-voice
  */
@@ -24,8 +38,20 @@ export interface CheckerResult {
 }
 
 function readLines(path: string): string[] {
-  if (!existsSync(path)) return [];
-  return readFileSync(path, "utf-8").split("\n");
+  return readSource(path).lines;
+}
+
+/**
+ * Read a file once and return both the whole-file string and the
+ * line array. Centralised so every checker uses the same access
+ * pattern (avoids duplicate `readFileSync` calls + ambiguous
+ * "line vs source" handling). Returns empty when the file is
+ * absent so callers can treat missing input as a pass.
+ */
+function readSource(path: string): { src: string; lines: string[] } {
+  if (!existsSync(path)) return { src: "", lines: [] };
+  const src = readFileSync(path, "utf-8");
+  return { src, lines: src.split("\n") };
 }
 
 function scan(
@@ -56,7 +82,14 @@ export function checkStatusLeak(mdPath: string): CheckerResult {
 
 // ── voice-emoji-content ─────────────────────────────────────────
 
-const EMOJI_RE = /[✅❌⚠⏳🔧🚧☑☒✓✗★🎯🚀🔥]/;
+// Status-marker emoji that don't belong in scholarly prose. The `u`
+// flag is **required**: without it, the character class compiles as
+// raw UTF-16 code units, so e.g. `[🔧]` becomes `[🔧]` —
+// which matches the leading surrogate \uD83D of EVERY emoji in the
+// U+1F000+ plane (e.g. 🟢 🟡 🟠 ⚪), causing surprise false-
+// positives. With `u` the engine treats each emoji as a single
+// code-point literal and only the listed glyphs match.
+const EMOJI_RE = /[✅❌⚠⏳🔧🚧☑☒✓✗★🎯🚀🔥🟢🟡🟠⚪🔴🔵🟣🟤⬛⬜]/u;
 
 export function checkEmojiContent(mdPath: string): CheckerResult {
   // ✓ and ✗ are allowed inside table rows for compact comparison
@@ -65,7 +98,7 @@ export function checkEmojiContent(mdPath: string): CheckerResult {
   const hits = scan(mdPath, EMOJI_RE, (l) => {
     if (l.trim().startsWith("|")) {
       // In a table row, flag iff at least one non-✓/✗ emoji is present.
-      return /[✅❌⚠⏳🔧🚧☑☒★🎯🚀🔥]/.test(l);
+      return /[✅❌⚠⏳🔧🚧☑☒★🎯🚀🔥🟢🟡🟠⚪🔴🔵🟣🟤⬛⬜]/u.test(l);
     }
     // Body prose: every EMOJI_RE match is a hit.
     return true;
@@ -101,7 +134,11 @@ export function checkTimeStampedNotes(mdPath: string): CheckerResult {
 const UNICODE_CRASH_RE = /[↦⁻√─✅❌⚠·²]/;
 
 export function checkUnicodeCrash(mdPath: string): CheckerResult {
-  // Allow inside fenced code blocks (```...```) since those don't go through pdflatex.
+  // Skip inside fenced code blocks (```...```) AND inside backtick
+  // inline code spans — neither goes through pdflatex as prose.
+  // The mdast pipeline emits them as \texttt{} or verbatim macros
+  // that escape the offending characters; only crash-hazard chars
+  // appearing in raw prose (or math) genuinely break the build.
   const lines = readLines(mdPath);
   let inFence = false;
   const hits: CheckerHit[] = [];
@@ -111,7 +148,8 @@ export function checkUnicodeCrash(mdPath: string): CheckerResult {
       return;
     }
     if (inFence) return;
-    if (UNICODE_CRASH_RE.test(l)) {
+    const cleanedLine = stripInlineCode(l);
+    if (UNICODE_CRASH_RE.test(cleanedLine)) {
       hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
     }
   });
@@ -235,7 +273,16 @@ export function checkWallSide(
   // Strip Lean block comments (/- ... -/) AND line comments (-- ...)
   // to reduce false positives when archimedean markers appear inside
   // narrative comments of an otherwise-algebraic file.
-  const stripped = leanSrc.replace(/\/-[\s\S]*?-\/|--.*$/gm, "");
+  // Strip Lean block comments (/- ... -/), line comments (-- ...),
+  // AND `import ...` lines so that an archimedean/algebraic marker
+  // appearing only inside a Mathlib import path (e.g.
+  // `Mathlib.Topology.Algebra.Order.Field`) does not falsely flag
+  // the file as a mixed substrate-archimedean placement.  Imports
+  // declare a dependency; they say nothing about how the body of
+  // the file uses ℝ vs a generic ring.
+  const stripped = leanSrc
+    .replace(/\/-[\s\S]*?-\/|--.*$/gm, "")
+    .replace(/^\s*import\s+[^\n]*$/gm, "");
   const isArchimedean = ARCHIMEDEAN_LEAN_RE.test(stripped);
   const isAlgebraic = ALGEBRAIC_LEAN_RE.test(stripped);
   const hits: CheckerHit[] = [];
@@ -256,7 +303,7 @@ export function checkWallSide(
     // Archimedean is fine if the .md acknowledges the specialisation.
     // Without acknowledgement we flag for review.
     const acknowledged =
-      /archimedean|over\s+\\?mathbb\{R\}|over\s+ℝ|specialise|specialize|numerical evaluation|CODATA|experimental/.test(
+      /archimedean|over\s+\\?mathbb\{R\}|over\s+ℝ|specialise|specialize|numerical evaluation|codata|experimental/.test(
         md.toLowerCase(),
       );
     if (!acknowledged) {
@@ -272,6 +319,323 @@ export function checkWallSide(
   }
 
   return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+// ── voice-ai-slop ───────────────────────────────────────────────
+
+/**
+ * Strip backtick-delimited inline code spans from a markdown line.
+ * Used by the line-by-line ai-slop / scholarly-default scans so
+ * technical variable names or `you`-named identifiers inside code
+ * spans don't trigger false positives.
+ *
+ * Does not handle escaped backticks. Markdown's strict rules
+ * (matching backtick-run lengths) are not enforced — for our
+ * scanner the simpler regex is good enough; the only goal is to
+ * suppress obvious inline-code matches.
+ */
+function stripInlineCode(line: string): string {
+  return line.replace(/`[^`]+`/g, "");
+}
+
+/**
+ * Direct LLM tells — phrases that should NEVER appear in published
+ * scholarly prose. These produce few false-positives in practice;
+ * any hit is a likely ai-slop violation.
+ *
+ * Note: the "it's important/worth to note that" pattern was removed
+ * after Gemini PR #823 review — those phrases are standard in
+ * scholarly technical writing and were producing false positives on
+ * legitimate prose at the critical-severity level. The remaining
+ * patterns are LLM-specific (lecturer phrases, status updates,
+ * conversational fillers).
+ */
+const AI_SLOP_DIRECT_RE =
+  /\b(let me (?:think|clarify|explain|address|now|first|see)|here'?s what (?:I|we)(?: did| will| have)?|I'?ll (?:go ahead|now|first|address|explain)|great question|let'?s (?:explore|dive (?:in|into)|unpack|examine)|note that we should|delve (?:into|in)|in (?:a )?nutshell)\b/i;
+
+/**
+ * Hedging / softener language frequently inserted by LLMs but
+ * inappropriate in a precise mathematical paper. Conservative —
+ * single-word hits should be a hint, not necessarily a violation.
+ * We treat *combinations* (≥ 3 distinct tokens in the same block)
+ * as the actual signal — the threshold balances catching real
+ * LLM-output concentrations against the false-positive rate on
+ * legitimate technical writing that uses one or two of these words
+ * naturally.
+ */
+const AI_SLOP_HEDGE_TOKENS = [
+  /\bessentially\b/i,
+  /\bcomprehensive(ly)?\b/i,
+  /\bleverag(e|ing|es)\b/i,
+  /\bstreamlin(e|ing|es)\b/i,
+  /\brobust(ly|ness)?\b/i,
+  /\boverall(?:,|\s+then)?\b/i,
+  /\bin (?:summary|conclusion),/i,
+  /\bcrucial(ly)?\b/i,
+];
+
+/**
+ * Lecturer "First, ... Second, ... Third, ..." cadence used as a
+ * structural crutch. Strictly: the same prose block must contain
+ * "First," and "Second," (as sentence openers) AND "Third," or
+ * "Finally,". Real scholarly use of these words in math context
+ * (e.g. "First-order term...") will NOT match the comma-anchored
+ * pattern.
+ */
+const AI_SLOP_FIRST_SECOND_THIRD_RE =
+  /\bFirst,\s.*?\bSecond,\s.*?\b(?:Third|Finally),\s/is;
+
+export function checkAiSlop(mdPath: string): CheckerResult {
+  const { src, lines } = readSource(mdPath);
+  if (!src) return { result: "pass", hits: [] };
+
+  const hits: CheckerHit[] = [];
+
+  // Pass 1 — direct LLM tells (line-by-line so we can cite line).
+  // Both fenced code blocks (skipped via inFence) and inline
+  // backtick spans (stripped per-line) are excluded from the scan.
+  let inFence = false;
+  const proseLineIndices: number[] = []; // for fence-aware Pass-3 idx
+  lines.forEach((l, i) => {
+    if (/^```/.test(l.trim())) {
+      inFence = !inFence;
+      return;
+    }
+    if (inFence) return;
+    proseLineIndices.push(i);
+    const cleanedLine = stripInlineCode(l);
+    if (AI_SLOP_DIRECT_RE.test(cleanedLine)) {
+      hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
+    }
+  });
+
+  // Pass 2 — hedge-token concentration. Strip BOTH fenced code
+  // blocks AND inline backtick spans, then count distinct hedge
+  // tokens in the remaining prose. ≥ 3 distinct hedge tokens in
+  // one .md file is the signal.
+  const proseOnly = src
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`]+`/g, "");
+  const distinctHedges = AI_SLOP_HEDGE_TOKENS.filter((re) =>
+    re.test(proseOnly),
+  );
+  if (distinctHedges.length >= 3) {
+    hits.push({
+      file: mdPath,
+      line: 1,
+      text: `hedge-token concentration: ${distinctHedges.length} distinct AI-slop softener tokens present (essentially / comprehensive / leverage / streamline / robust / crucial / etc.)`,
+    });
+  }
+
+  // Pass 3 — First/Second/Third cadence (whole-file scan).
+  // Fence-aware idx: find the first "First," that lives on a prose
+  // line (not inside a fenced block). Without this, a code snippet
+  // containing "First," earlier in the file would mislocate the
+  // evidence pointer.
+  if (AI_SLOP_FIRST_SECOND_THIRD_RE.test(proseOnly)) {
+    const firstProseIdx = proseLineIndices.find((i) =>
+      /\bFirst,\s/.test(stripInlineCode(lines[i])),
+    );
+    hits.push({
+      file: mdPath,
+      line: firstProseIdx !== undefined ? firstProseIdx + 1 : 1,
+      text: "First/Second/Third bullet cadence — characteristic LLM structural crutch",
+    });
+  }
+
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+// ── voice-scholarly-default ─────────────────────────────────────
+
+/**
+ * Second-person address — the paper addresses the mathematics, not
+ * the reader. "you can see", "the reader will note", etc. are
+ * non-scholarly.
+ */
+const SECOND_PERSON_RE =
+  /\b(you (?:can|will|note|see|may|might|should|need|have|are|now)|the reader (?:will|can|may|might|should))\b/i;
+
+/**
+ * Lecturer cadence — informal sentence openers more at home in a
+ * lecture than a paper.
+ */
+const LECTURER_OPENER_RE =
+  /^\s*(?:So (?:what (?:we|I)(?:'re)?(?: going to)?(?: do)?|let'?s|now)|Now (?:we (?:want|need|will|are|have)|let'?s)|Alright|Okay|Well,)/i;
+
+/**
+ * Past-tense narration of the paper's own derivation. Paper voice
+ * is present-tense for definitions and theorems; past-tense reads
+ * as draft narration. Pattern: "we constructed", "we defined",
+ * "we showed", "we proved" — limited to first-person plural since
+ * generic past tense is fine in proofs ("Hilbert proved ...").
+ */
+const PAPER_PAST_TENSE_RE =
+  /\b(we (?:constructed|defined|showed|proved|established|derived|computed|verified)) (?:above|earlier|before|in the (?:previous|preceding))/i;
+
+export function checkScholarlyDefault(
+  mdPath: string | undefined,
+  leanPath: string | undefined,
+): CheckerResult {
+  const { lines } = mdPath ? readSource(mdPath) : { src: "", lines: [] };
+  if (lines.length === 0 && !leanPath) return { result: "pass", hits: [] };
+
+  const hits: CheckerHit[] = [];
+
+  // Scan .md. Fenced code blocks (```) are skipped via `inFence`;
+  // inline backtick spans are stripped per-line so technical terms
+  // / identifiers in code don't trigger false positives. HTML-style
+  // `<!-- ... -->` comments are intentionally NOT stripped — they
+  // render as visible text in the markdown pipeline.
+  if (mdPath) {
+    let inFence = false;
+    lines.forEach((l, i) => {
+      if (/^```/.test(l.trim())) {
+        inFence = !inFence;
+        return;
+      }
+      if (inFence) return;
+      const cleanedLine = stripInlineCode(l);
+      if (SECOND_PERSON_RE.test(cleanedLine)) {
+        hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
+      }
+      if (LECTURER_OPENER_RE.test(cleanedLine)) {
+        hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
+      }
+      if (PAPER_PAST_TENSE_RE.test(cleanedLine)) {
+        hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
+      }
+    });
+  }
+
+  // Also scan Lean docstrings — proof bodies share the scholarly
+  // standard. Extract /-! ... -/ module docs and /-- ... -/ decl
+  // docstrings as line-tracked spans so we can cite the actual
+  // offending line + quote (not just `line: 1`).
+  if (leanPath) {
+    const { src: leanSrc } = readSource(leanPath);
+    if (leanSrc) {
+      for (const span of extractLeanDocstrings(leanSrc)) {
+        // span.startLine is 1-based; span.body has the raw text.
+        // Iterate INTERNAL docstring lines so we cite the exact
+        // offender. The three RE's use the same matchers as the
+        // .md scan above (incl. PAPER_PAST_TENSE_RE — missing
+        // from the previous version).
+        span.body.split("\n").forEach((dl, j) => {
+          const cleanedLine = stripInlineCode(dl);
+          const lineNo = span.startLine + j;
+          // SECOND_PERSON_RE is case-insensitive, not anchored — fine.
+          if (SECOND_PERSON_RE.test(cleanedLine)) {
+            hits.push({
+              file: leanPath,
+              line: lineNo,
+              text: dl.trim().slice(0, 200) || "(empty)",
+            });
+          }
+          // LECTURER_OPENER_RE uses `^` so it must match line-start.
+          // Per-line iteration applies the anchor naturally; the prior
+          // whole-doc-string scan needed the `m` flag.
+          if (LECTURER_OPENER_RE.test(cleanedLine)) {
+            hits.push({
+              file: leanPath,
+              line: lineNo,
+              text: dl.trim().slice(0, 200) || "(empty)",
+            });
+          }
+          if (PAPER_PAST_TENSE_RE.test(cleanedLine)) {
+            hits.push({
+              file: leanPath,
+              line: lineNo,
+              text: dl.trim().slice(0, 200) || "(empty)",
+            });
+          }
+        });
+      }
+    }
+  }
+
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+/**
+ * Extract Lean docstring spans (/-! ... -/ and /-- ... -/) with
+ * line-number tracking. Returns `{ startLine, body }` per span,
+ * where `startLine` is the 1-based line of the opening delimiter's
+ * line in the source, and `body` is the inner text (NOT including
+ * the `/-! ` or trailing ` -/`).
+ *
+ * Handles **nested** block comments — Lean permits `/- /- … -/ -/`
+ * — by tracking nesting depth. Without this, a docstring containing
+ * a nested `-/` would terminate the span prematurely.
+ */
+function extractLeanDocstrings(
+  src: string,
+): Array<{ startLine: number; body: string }> {
+  const out: Array<{ startLine: number; body: string }> = [];
+  // Find all docstring openers. `/-!` or `/--` followed by anything
+  // except `-/`. We do a manual nested scan rather than a regex.
+  let i = 0;
+  const n = src.length;
+  let lineNum = 1;
+  // Pre-compute newline positions so startLine is O(1) per opener.
+  const newlineAt: number[] = [];
+  for (let k = 0; k < n; k++) {
+    if (src.charCodeAt(k) === 10 /* \n */) newlineAt.push(k);
+  }
+  const lineOf = (pos: number): number => {
+    // Lower bound on newlineAt for pos.
+    let lo = 0;
+    let hi = newlineAt.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >>> 1;
+      if (newlineAt[mid] < pos) lo = mid + 1;
+      else hi = mid;
+    }
+    return lo + 1;
+  };
+  void lineNum; // suppress unused
+
+  while (i < n - 2) {
+    const isDocOpener =
+      src[i] === "/" &&
+      src[i + 1] === "-" &&
+      (src[i + 2] === "!" || src[i + 2] === "-");
+    if (!isDocOpener) {
+      i++;
+      continue;
+    }
+    const startLine = lineOf(i);
+    // Skip the opening `/-!` or `/--`.
+    let j = i + 3;
+    let depth = 1;
+    while (j < n - 1 && depth > 0) {
+      if (src[j] === "/" && src[j + 1] === "-") {
+        depth++;
+        j += 2;
+      } else if (src[j] === "-" && src[j + 1] === "/") {
+        depth--;
+        j += 2;
+      } else if (src[j] === '"') {
+        // Skip past Lean string literal so a `"-/"` inside the
+        // string does not terminate the docstring prematurely.
+        // Handles standard backslash escapes.
+        j++;
+        while (j < n && src[j] !== '"') {
+          if (src[j] === "\\" && j + 1 < n) j += 2;
+          else j++;
+        }
+        if (j < n) j++; // skip closing quote
+      } else {
+        j++;
+      }
+    }
+    // body = inside the docstring, between opener+3 and the closing -/.
+    const bodyEnd = depth === 0 ? j - 2 : j;
+    const body = src.slice(i + 3, bodyEnd);
+    out.push({ startLine, body });
+    i = j;
+  }
+  return out;
 }
 
 // ── Dispatch table ──────────────────────────────────────────────
@@ -292,6 +656,12 @@ export const AUTOMATED_CHECKERS: Record<
     p.md ? checkUnicodeCrash(p.md) : { result: "pass", hits: [] },
   "voice-editorializing": (p) =>
     p.md ? checkEditorializing(p.md) : { result: "pass", hits: [] },
+  "voice-ai-slop": (p) =>
+    p.md ? checkAiSlop(p.md) : { result: "pass", hits: [] },
+  "voice-scholarly-default": (p) =>
+    p.md || p.lean
+      ? checkScholarlyDefault(p.md, p.lean)
+      : { result: "pass", hits: [] },
   "framework-canonical": (p) =>
     p.md ? checkFrameworkCanonical(p.md) : { result: "pass", hits: [] },
   "wall-side-correct": (p) => checkWallSide(p.md, p.lean),

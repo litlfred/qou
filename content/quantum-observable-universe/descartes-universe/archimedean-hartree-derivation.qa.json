@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.lean"
   },
   "source_hashes": {
-    "md": "6834452563bf",
+    "md": "9c22952d7cf9",
     "ts": "4254eed105f4",
     "lean": "5cab846ca5a1"
   },
@@ -47,6 +47,21 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:171: - **4a ✓ — partial.** $V_i$ for the H_2 optimal ordering | content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:176: - **4b ✓ — relative spacing recovered.** Categorical shell"
+      },
+      {
+        "field_hash": {
+          "md": "9c22952d7cf9",
+          "ts": "4254eed105f4",
+          "lean": "5cab846ca5a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:32:02.376Z",
+        "reviewed_sha": "cd1dfc143cb65a46b4cb9feca7c24744d7430b11"
       }
     ],
     "voice-first-person-work": [

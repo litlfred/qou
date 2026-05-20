@@ -36,7 +36,7 @@ $\lambda$ (hook-length formula).*
 The SDP witnesses for all four currently identified particles give the
 following heuristic table.  **Caveat (issue #604, deliverable 4):** the
 "Dominant $\lambda^*$" entries here are *conjectural* and were
-populated before the H_{3·A} binding-K analysis below; they are kept
+populated before the $H_{3 \cdot A}$ binding-K analysis below; they are kept
 for historical reference and reconciliation with the older narrative.
 The numerically verified rule (see "Critical structural finding" below)
 must be evaluated at the atomic strand count $n_0 = 3 \cdot A$:
@@ -119,7 +119,7 @@ $\lambda^*$ is computed from the *braid strand count* alone:
 |------|-----------|------------------------------|--------------------|------------|
 | proton  | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
 | neutron | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
-| ²H ($6_2$) | $\sigma_1 \sigma_2^{-1} \sigma_1^3 \sigma_2^{-1}$ | $(3)$ | $1.000$ | $\mathbf{1}$ |
+| ${}^2$H ($6_2$) | $\sigma_1 \sigma_2^{-1} \sigma_1^3 \sigma_2^{-1}$ | $(3)$ | $1.000$ | $\mathbf{1}$ |
 | ³He ($L_{6a4}$) | $(\sigma_1^{-1} \sigma_2)^3$ | $(2,1)$ | $2.011$ | $\mathbf{2}$ |
 
 Proton, neutron, and ³He have **identical** $\chi_\lambda$ values across all
@@ -143,7 +143,7 @@ T_w(\mathfrak{H})
 $$
 
 The binding operator $K(\mathfrak{H})$ links the $A$ nucleon-trefoils
-together (Hopf link $L_H$ for ²H, an $8_{11}$-class link for ³H,
+together (Hopf link $L_H$ for ${}^2$H, an $8_{11}$-class link for ${}^3$H,
 $L_{6a4}$ for ³He).  The dominant $\lambda^* \vdash 3 \cdot A$ of
 $K$ — *not* of the whole-particle braid image at $H_3$ — is what
 carries the $\rho$ information.
@@ -155,7 +155,7 @@ which already enforce $T_w(\mathfrak{H}) \hookleftarrow T_w(\mathfrak{H}')$
 across confinement levels.  Wiring an explicit
 "binding-K SDP solver mode" — that finds $K(\mathfrak{H})$ from
 substrate data + constituent $T_w$'s alone — is the natural
-follow-up deliverable for issue #604 (after the H_{3·A} Hoefsmit
+follow-up deliverable for issue #604 (after the $H_{3 \cdot A}$ Hoefsmit
 infrastructure lands).  The Lean class
 [`conj-rho-prefactor-structural.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.lean)
 records `A` (not the braid strand count) as its primary parameter and
@@ -182,7 +182,7 @@ records $\rho_\star$ per atom directly:
 
 The deuterium discrepancy is because the prototype's single-term
 cost function does not select $6_2$ at first principle (PR #608
-"²H needs multi-term wiring").  Once T2–T6 of
+"${}^2$H needs multi-term wiring").  Once T2--T6 of
 [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
 land in `cost_for_candidate`, the historical $\rho = 1$ at $6_2$
 should be recovered.

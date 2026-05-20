@@ -91,6 +91,34 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md:215: | `binding_K_direct.py` | 0 | 0 (uses depth-stratified χ·dim_q) |"
+      },
+      {
+        "field_hash": {
+          "md": "6b3ec85bcf5c",
+          "ts": "480ceec3c6cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "3e74361421d7",
+          "ts": "480ceec3c6cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "voice-editorializing": [

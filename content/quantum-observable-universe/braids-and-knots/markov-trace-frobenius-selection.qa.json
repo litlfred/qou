@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.lean"
   },
   "source_hashes": {
-    "md": "7655a08d99ee",
+    "md": "9e89bc26f0f9",
     "ts": "09a7cac8e6f1",
     "lean": "7d3092df1d41"
   },
@@ -88,7 +88,7 @@
           "ts": "09a7cac8e6f1",
           "lean": "7d3092df1d41"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
@@ -98,6 +98,36 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md:144: `tr_M = Σ_λ schur_weyl_weight(λ) · χ_λ` — this is"
+      },
+      {
+        "field_hash": {
+          "md": "4af63b23df14",
+          "ts": "09a7cac8e6f1",
+          "lean": "7d3092df1d41"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:30:40.400Z",
+        "reviewed_sha": "2dfb8fa47b6f80b4633f0266cb96e922a75fb7d6"
+      },
+      {
+        "field_hash": {
+          "md": "9e89bc26f0f9",
+          "ts": "09a7cac8e6f1",
+          "lean": "7d3092df1d41"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:54:36.387Z",
+        "reviewed_sha": "000c5ab570758e328511c02623d8d45aadce28f0"
       }
     ],
     "voice-editorializing": [

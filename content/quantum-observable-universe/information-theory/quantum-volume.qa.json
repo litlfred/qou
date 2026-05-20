@@ -150,6 +150,57 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-volume.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ddac50a91b3e",
+          "ts": "20a1949dbfcf",
+          "lean": "91b10838f3de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ddac50a91b3e",
+          "ts": "20a1949dbfcf",
+          "lean": "91b10838f3de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T04:13:01.541Z",
+        "reviewed_sha": "97d9527277b84ceeb753cc99169b9271fde74429"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ddac50a91b3e",
+          "ts": "20a1949dbfcf",
+          "lean": "91b10838f3de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:39:43.529Z",
+        "reviewed_sha": "05d6f0d51ac596e83cf8f65850886cb9828d5599"
+      }
     ]
   },
   "updated_at": "2026-05-20T15:01:34.161Z"

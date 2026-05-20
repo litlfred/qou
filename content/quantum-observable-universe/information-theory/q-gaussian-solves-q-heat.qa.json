@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.lean"
   },
   "source_hashes": {
-    "md": "998ed2682b87",
+    "md": "2b90483339db",
     "ts": "d7003bc28923",
     "lean": "3208f85f48cc"
   },
@@ -132,6 +132,55 @@
         "reviewed_sha": "7940713f1d65ad9464bfe43ecb649c4a874ea273",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md:23: + q^{-1}(1 - q^{-1})\\,\\mathcal{C}  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md:27: where $\\mathcal{C}$ is the Coriolis cross-coupling and $\\Delta_\\xi$ is  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md:28: the pure Reeb-spin Laplacian.  Each of $\\mathcal{C}$ and $\\Delta_\\xi$  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+      },
+      {
+        "field_hash": {
+          "md": "2b90483339db",
+          "ts": "d7003bc28923",
+          "lean": "3208f85f48cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T06:22:25.857Z",
+        "reviewed_sha": "bb80323987add2fb8450a79ffc65dc207111c4f7"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "2b90483339db",
+          "ts": "d7003bc28923",
+          "lean": "3208f85f48cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "2b90483339db",
+          "ts": "d7003bc28923",
+          "lean": "3208f85f48cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T14:37:46.065Z",
+        "reviewed_sha": "bcdb62446c3561329164a765cfc4be289e9850da"
       }
     ],
     "wall-side-correct": [

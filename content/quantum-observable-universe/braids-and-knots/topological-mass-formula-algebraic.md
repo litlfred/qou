@@ -7,7 +7,7 @@ $$
 $$
 
 where $\mathrm{Vol}(K)$ is the hyperbolic volume of $S^3 \setminus K$
-under the archimedean fibre functor. Audit §4·B flagged that
+under the archimedean fibre functor. Audit §4.B flagged that
 identity as a **wall risk** for callers that treat it as an
 algebraic-side input. This block supplies the **algebraic-side
 restatement** in $\mathbb{Q}(q)$ via $\mathrm{Vol}_q(K)$
@@ -150,7 +150,7 @@ Markov-trace factorization). The corresponding Lean stub
 states the identity as a `theorem` parametric on the substrate
 package.
 
-This block closes the **audit §4·B** wall risk for callers that
+This block closes the **audit §4.B** wall risk for callers that
 need the mass-volume identity on the algebraic side: those callers
 must now route through
 [`prop:topological-mass-formula-algebraic`](#prop:topological-mass-formula-algebraic),

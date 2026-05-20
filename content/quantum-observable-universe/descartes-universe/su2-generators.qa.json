@@ -1,0 +1,256 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:su2-generators",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/descartes-universe/su2-generators.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/su2-generators.md",
+    "lean": "content/quantum-observable-universe/descartes-universe/su2-generators.lean"
+  },
+  "source_hashes": {
+    "md": "bf94fdccda1c",
+    "ts": "68c34e8b27a1",
+    "lean": "a20631adef11"
+  },
+  "criteria": {
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:05:32.956Z",
+        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "44b5732c2230",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "severity": "major",
+        "evidence": "su2-generators.md:1-15: 'Every finite subgroup of SO(3) lifts...binary dihedral group Dic_3 ⊂ SU(2) of order 12, generated by α, β with exp matrix forms'",
+        "notes": "Pure binary dihedral SU(2) lifting — no knot, no braid, no Hecke. Belongs in substrate / quantum-universes/ (Ch 2)."
+      },
+      {
+        "field_hash": {
+          "md": "44b5732c2230",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-orchestrator-resolver-relocation",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:14:19.413Z",
+        "reviewed_sha": "5bd5a24c30a8571808f5dff0c95dfbe441f8ce5a",
+        "notes": "Relocated; binary dihedral Dic_3 ⊂ SU(2) lifting belongs with the Descartes coral-tube infrastructure."
+      },
+      {
+        "field_hash": {
+          "md": "44b5732c2230",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-descartes-R-Z",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:08:11.188Z",
+        "reviewed_sha": "f00bb4dc98a11f79eea010947f72ff7d970b49ac",
+        "notes": "default-pass (chapter=descartes-universe)"
+      },
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-refresh-post-prepare-merge-rebase",
+          "version": "claude-opus-4-7-2026-05-20"
+        },
+        "reviewed_at": "2026-05-20T04:01:14.142Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff",
+        "notes": "Hash-refresh post-rebase onto main 6bff6d33; previous verdict (pass) carried forward (semantic content unchanged)."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "bf94fdccda1c",
+          "ts": "68c34e8b27a1",
+          "lean": "a20631adef11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:28:44.364Z",
+        "reviewed_sha": "8215c977593d9740906041479c23cbacc8d58fff"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T04:25:42.968Z"
+}

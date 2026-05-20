@@ -143,6 +143,12 @@ export default chapter({
         "quantum-planck-constant",
         "planck-limits",
         "q-hodge-star",
+        // Brane geometry primitives relocated from braids-and-knots/
+        // per the PR #823 fit-section-chapter audit. These supply
+        // the state-bundle fibre + U(1)-equivariant machinery that
+        // later chapters (vertex operators, gauge structure) build on.
+        "exceptional-divisor",
+        "u1-equivariant-reduction",
       ],
     }),
 

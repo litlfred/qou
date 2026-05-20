@@ -47,7 +47,18 @@
  */
 
 import { existsSync } from "fs";
-import { resolve, relative } from "path";
+import { resolve, relative, dirname } from "path";
+import { fileURLToPath } from "url";
+
+// Stable anchor for path normalisation: repo root, computed from
+// this file's location (`content/pipeline/qa-sweep.ts` → repo root
+// is two levels up). Using `process.cwd()` instead would make the
+// emitted `.qa.json` paths sensitive to the directory from which
+// the sweep is invoked (sweep run from `content/` produced bare
+// paths, sweep run from repo root produced `content/...` paths —
+// noisy diffs in CI vs local). The repo-root anchor is invariant.
+const __filename = fileURLToPath(import.meta.url);
+const REPO_ROOT = resolve(dirname(__filename), "..", "..");
 import {
   hashBlockFiles,
   gitHeadSha,
@@ -159,28 +170,37 @@ function run(): void {
 
     // Load or initialise report.
     const qaPath = block.root + ".qa.json";
-    let report: BlockQaReport = loadQaReport(qaPath) ?? {
+    const existingReport = loadQaReport(qaPath);
+    const newPaths = {
+      ts: relative(REPO_ROOT, block.ts),
+      md: block.md ? relative(REPO_ROOT, block.md) : undefined,
+      lean: block.lean ? relative(REPO_ROOT, block.lean) : undefined,
+    };
+    let report: BlockQaReport = existingReport ?? {
       $schema: "block-qa/v1",
       label: block.label,
       kind: block.kind,
-      paths: {
-        ts: relative(process.cwd(), block.ts),
-        md: block.md ? relative(process.cwd(), block.md) : undefined,
-        lean: block.lean ? relative(process.cwd(), block.lean) : undefined,
-      },
+      paths: newPaths,
       source_hashes: currentHashes,
       criteria: {},
       updated_at: nowIso,
     };
 
+    // Detect whether metadata drifted — moved files, renamed blocks,
+    // or refreshed hashes (chapter relocation triggers all three).
+    // Any drift forces a save even when every criterion is fresh.
+    const metadataDrifted =
+      !existingReport ||
+      existingReport.label !== block.label ||
+      existingReport.kind !== block.kind ||
+      JSON.stringify(existingReport.paths) !== JSON.stringify(newPaths) ||
+      JSON.stringify(existingReport.source_hashes) !==
+        JSON.stringify(currentHashes);
+
     // Refresh top-level metadata (paths / hashes may have shifted).
     report.label = block.label;
     report.kind = block.kind;
-    report.paths = {
-      ts: relative(process.cwd(), block.ts),
-      md: block.md ? relative(process.cwd(), block.md) : undefined,
-      lean: block.lean ? relative(process.cwd(), block.lean) : undefined,
-    };
+    report.paths = newPaths;
     report.source_hashes = currentHashes;
 
     const sweepResult: BlockSweepResult = {
@@ -208,12 +228,21 @@ function run(): void {
         continue;
       }
 
-      // Skip if a fresh entry already exists.
+      // Skip if a fresh entry already exists. An `n/a` entry whose
+      // depends_on files are now all present (i.e. the criterion is
+      // newly applicable — typically because `depends_on` was
+      // relaxed in the registry) must NOT short-circuit the sweep;
+      // it has to be re-evaluated against the actual checker.
       const existing = report.criteria[criterionId] ?? [];
       const freshExisting = existing.find((e) =>
         entryIsFresh(e, currentHashes, def.depends_on),
       );
-      if (freshExisting) {
+      const dependsOnSatisfied = def.depends_on.every(
+        (k) => currentHashes[k] !== undefined,
+      );
+      const staleNa =
+        freshExisting?.result === "n/a" && dependsOnSatisfied;
+      if (freshExisting && !staleNa) {
         sweepResult.criteria_skipped_fresh++;
         sweepResult.details.push({
           criterion: criterionId,
@@ -327,12 +356,17 @@ function run(): void {
     }
 
     report.updated_at = nowIso;
-    // Save if any criterion entry was added or refreshed (including n/a).
+    // Save when any of the following changed since the loaded sidecar:
+    //   - new automated criterion entry written (criteria_run > 0)
+    //   - new n/a marker written for an inapplicable criterion
+    //   - sidecar metadata drifted (file moved, kind/label changed,
+    //     source-file content hash changed)
     const wroteSomething =
       sweepResult.criteria_run > 0 ||
       sweepResult.details.some(
         (d) => d.outcome === "n/a-no-md" || d.outcome === "n/a-no-lean",
-      );
+      ) ||
+      metadataDrifted;
     if (!args.dryRun && wroteSomething) {
       saveQaReport(qaPath, report);
     }
