@@ -1,4 +1,15 @@
 {
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-20T05:03:02.625568+00:00",
+  "commitSha": "11db3a6cf92a809443e64969d4e1e56a49cfb09f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "b-over-a",
+  "scriptFile": "b_over_a_evaluator.py",
+  "scriptHash": "044ffb8db65b",
+  "scriptCommitSha": "98f8fb83435d8a979bacad784280fef747507717",
   "schema_version": "1.0.0",
   "generator": "folio-assistant/computations/b_over_a_evaluator.py",
   "block": "prop:b-over-a-spectral-decomposition",
@@ -127,6 +138,5 @@
       "residual_MeV": -7.225508529281742,
       "residual_pct": -84.49599242292034
     }
-  ],
-  "computedAt": "2026-04-26T17:20:32.997766+00:00"
+  ]
 }

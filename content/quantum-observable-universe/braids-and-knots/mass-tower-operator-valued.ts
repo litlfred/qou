@@ -39,10 +39,21 @@ export default proposition({
     "prop:hecke-branching-trace-decomposition",
     "prop:rho-k-graded-expansion",
     "prop:li2q-phiq-bar-symmetrization",
+    "prop:bar-symmetric-three-layer-synthesis",
     "def:canonical-braid-interface-composition",
     "prop:plancherel-term-7-formulation",
   ],
   cites: ["wenzl1988", "hoefsmit1974"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/mass_tower_operator_valued.py",
+    witness: [
+      "folio-assistant/computations/mass-tower-operator-valued.witness.json",
+      "folio-assistant/computations/sublemma-2-1-h9-tritium-branching-verify.witness.json",
+    ],
+    status: "verified",
+    requires: ["mpmath", "numpy"],
+  },
   lean: {
     ref: "qou:QOU.BraidKnot.massTowerOperatorValued",
     validation: "not_checked",

@@ -104,7 +104,9 @@ recovered in two specialisations:*
 ### Why this is the Stage-1 unblock
 
 *Per the bar-symmetrization identity
-[`prop:li2q-phiq-bar-symmetrization`](li2q-phiq-bar-symmetrization.md),
+[`prop:li2q-phiq-bar-symmetrization`](li2q-phiq-bar-symmetrization.md)
+and the broader three-layer synthesis
+[`prop:bar-symmetric-three-layer-synthesis`](bar-symmetric-three-layer-synthesis.md),
 the substitution $\Phi_q \leftrightarrow \mathrm{Li}_2^q$ is **not** a
 function swap but a context-split: $\Phi_q$ is the post-$\tau$
 archimedean form (carries dimensional mass scale), $\mathrm{Li}_2^q$ is
@@ -113,7 +115,16 @@ substitution recovers the empirical $m_p/m_e \approx 1836$ from the
 scalar $\hat V_i$ formula because the dimensional-scale carrier is
 **not in the scalar volumes** — it is in the operator $A^\lambda_{\vec\mu}(I)$,
 specifically in its non-scalar (off-diagonal) action on the boundary
-strands.*
+strands. The interface contribution to the canonical-atom Markov
+trace is pinned at $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z$
+per Z-step (derivation-grade, on `main` via the PR #819 Phase 5c.1
+family — `prop:interface-knot-markov-z`); the complementary
+constit-side ratio $\rho_Z^{\mathrm{constit}}(q)$ should factorize
+through the operator-valued $A^\lambda_{\vec\mu}(\mathbf{1})$ blocks
+(trivial-interface case) of the iterated formula, providing a
+candidate categorical derivation path now that the $(2q-1)$ closed
+form has been falsified globally by
+[PR #842 Phase 5k.2](https://github.com/litlfred/qou/pull/842).*
 
 *The operator-valued formula above resolves this:*
 
@@ -201,14 +212,38 @@ structural content beyond the boundary-generator operator is required
 
 **Proven (boxed identity)** at the two-factor case via
 [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md);
-**conditional** for $k = Z+N \geq 3$ factors on the iterated extension
-(structural induction, expected to hold). **Open** for the bridge
-claim to the mass-endomorphism tower — the proposition lays out the
-explicit reduction to the scalar formula's open pair-gen piece and a
-falsifiable witness path, but neither has been executed yet
-(tracked under
+forward-validated on the canonical deuteron at all 11 partitions
+$\lambda \vdash 6$ to ~$10^{-15}$ relative residual
+(`mass-tower-operator-valued.witness.json`, all assertions passed).
+
+**Proven at the three-factor (A=3) case** via the SYT-branching-basis
+approach of `sublemma_2_1_h9_branching_basis.py`
+(witness `sublemma-2-1-h9-tritium-branching-verify.witness.json`,
+assertion `all_lambda_path_a_eq_path_b_machine_eps` passes across all
+30 $\lambda \vdash 9$): direct $\chi^\lambda(\beta_T)$ at H_9 equals
+the iterated Path-B trace
+$\sum_{(\xi, \nu)} \mathrm{Tr}(P_{(\xi,\nu)} \cdot \rho_\lambda(\beta_T))$
+to machine $\varepsilon$ for every $\lambda \vdash 9$, where
+$(\xi, \nu)$ ranges over the iterated $H_6 \times H_3$ Wedderburn
+blocks. This validates the iterated boxed identity at $k = Z+N = 3$
+for tritium (Z=1, N=2). The corresponding ${}^3$He (Z=2, N=1) case
+follows by the same algorithm with a different nucleon braid.
+
+**Open** for $k \geq 4$ (the ${}^4$He case at H_12): the iterated
+branching basis approach scales to H_12 in principle
+(`sublemma_2_1_h12_he4_branching.py` is in place) but is memory- and
+time-bounded; closure pending.
+
+**Open** for the bridge claim from the boxed identity to a CONCRETE
+mass prediction under the operator-valued tower — the operator-trace
+formula gives the same numerical $\chi^\lambda$ as direct evaluation
+(since both compute the same character), so the structural mass
+prediction only differs from the scalar case if a NEW formula
+(e.g. taking the LOG of the operator trace separately per (μ, ν)
+block, rather than per λ) is wired in. That formula change is the
+remaining Stage-1 unblock, tracked under
 [`docs/coordination/1ppb-categorical-chain.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/1ppb-categorical-chain.md)
-"Stage-1 blocker entry").
+"Stage-1 blocker entry".
 
 ### Lean formalisation
 

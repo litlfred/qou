@@ -38,6 +38,8 @@ def trace_atom(Z, N, include_inter=True, m_pp=1, m_pn=1, m_nn=1,
 
 
 if __name__ == "__main__":
+    import time
+    start_time = time.monotonic()
     print("PYHECKE-OPTIMIZED CANONICAL MARKOV TRACE — T vs ³He vs others")
     print("=" * 80)
     print(f"q_0 = {float(Q0):.6f}")
@@ -122,6 +124,15 @@ if __name__ == "__main__":
         },
         "results": results,
     }
+    # Wrap legacy payload via WitnessBuilder.wrap_legacy for provenance
+    # (engine, scriptFile, commitSha, scriptHash, computedAt) per the I14
+    # witness-provenance audit. Preserves every original key verbatim.
+    sys.path.insert(0, str(Path(__file__).parent))
+    from witness_base import WitnessBuilder  # noqa: E402
+    (WitnessBuilder
+        .wrap_legacy("canonical-isospin-pyhecke", witness,
+                     script_path=__file__, engine="python",
+                     start_time=start_time)
+        .save())
     out = Path(__file__).parent / "canonical-isospin-pyhecke.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")
