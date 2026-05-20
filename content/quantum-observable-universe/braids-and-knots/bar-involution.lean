@@ -168,6 +168,32 @@ theorem IsBarAntiSymmetric.pow_two_mul_add_one {x : R}
 
 end BarGrading
 
+/-! ## Bar on integers, inverses (provable, no axiom needed)
+
+`bar` fixes every rational scalar — proved from the four ring-
+involution axioms alone. Used by the `Field`-section projection
+identities below. -/
+
+section BarOnScalars
+variable {R : Type*} [CommRing R] [BarInvolution R]
+
+/-- `bar 2 = 2`. -/
+theorem bar_two : BarInvolution.bar (2 : R) = 2 := by
+  have h : (2 : R) = 1 + 1 := by ring
+  rw [h, BarInvolution.bar_add, BarInvolution.bar_one]
+
+/-- `bar` fixes every natural-number scalar. -/
+theorem bar_natCast (n : ℕ) : BarInvolution.bar ((n : R)) = (n : R) := by
+  induction n with
+  | zero =>
+    show BarInvolution.bar (0 : R) = 0
+    exact BarInvolution.bar_zero
+  | succ k ih =>
+    have hstep : ((k + 1 : ℕ) : R) = (k : R) + 1 := by push_cast; ring
+    rw [hstep, BarInvolution.bar_add, BarInvolution.bar_one, ih]
+
+end BarOnScalars
+
 /-! ## Projection identities (require `Field` for division by 2)
 
 `P_avg` acts as the identity on bar-symmetric, kills bar-anti-symmetric.
@@ -175,6 +201,27 @@ end BarGrading
 
 section Projections
 variable {R : Type*} [Field R] [BarInvolution R]
+
+/-- `bar (x⁻¹) = (bar x)⁻¹` over a field. From `bar(x · x⁻¹) = bar 1 = 1`
+    and the multiplicativity of bar. -/
+theorem bar_inv (x : R) :
+    BarInvolution.bar x⁻¹ = (BarInvolution.bar x)⁻¹ := by
+  by_cases hx : x = 0
+  · rw [hx, inv_zero, BarInvolution.bar_zero, inv_zero]
+  · have h_bar_ne : BarInvolution.bar x ≠ 0 := by
+      intro h
+      apply hx
+      have hbb : BarInvolution.bar (BarInvolution.bar x) =
+          BarInvolution.bar 0 := by rw [h]
+      rw [BarInvolution.bar_involutive, BarInvolution.bar_zero] at hbb
+      exact hbb
+    have h1 : BarInvolution.bar x * BarInvolution.bar x⁻¹ = 1 := by
+      rw [← BarInvolution.bar_mul, mul_inv_cancel₀ hx, BarInvolution.bar_one]
+    exact (eq_inv_of_mul_eq_one_right h1).symm
+
+/-- `bar(1/2) = 1/2`. Foundation for `barSymmetricProjection` idempotency. -/
+theorem bar_half : BarInvolution.bar ((1 : R) / 2) = 1 / 2 := by
+  rw [one_div, bar_inv, bar_two, one_div]
 
 /-- `P_avg(x) = x` when `x` is bar-symmetric. -/
 theorem barSymmetricProjection_of_sym {x : R} (hx : IsBarSymmetric x) :
@@ -234,23 +281,45 @@ theorem barSkewProjection_pow_odd_of_antisym
     barSkewProjection (x ^ (2 * n + 1)) = x ^ (2 * n + 1) :=
   barSkewProjection_of_antisym (hx.pow_two_mul_add_one n)
 
-/-- `P_avg` is idempotent: applying twice = applying once.
+/-- **`P_avg(x)` is bar-symmetric** for every `x : R`. Uses
+    `bar_half` (proved above). -/
+theorem barSymmetricProjection_isBarSymmetric (x : R) :
+    IsBarSymmetric (barSymmetricProjection x) := by
+  unfold IsBarSymmetric barSymmetricProjection
+  rw [show (x + BarInvolution.bar x) / 2 =
+        (x + BarInvolution.bar x) * (1 / 2) by ring,
+      BarInvolution.bar_mul, BarInvolution.bar_add,
+      BarInvolution.bar_involutive, bar_half]
+  ring
 
-    Proof: `P_avg(x)` is bar-symmetric by construction, so a second
-    application acts as identity. Formal proof requires showing
-    `P_avg(x)` itself is bar-symmetric, which needs an explicit
-    `bar(1/2) = 1/2` lemma over the field — provable but verbose.
-    For now this records the structural claim. -/
+/-- **`P_avg` is idempotent**: applying twice = applying once.
+    Follows directly from `barSymmetricProjection_isBarSymmetric`
+    and `barSymmetricProjection_of_sym`. -/
 theorem barSymmetricProjection_idempotent (x : R) :
-    barSymmetricProjection (barSymmetricProjection x) = barSymmetricProjection x := by
-  -- The proof goes via showing `P_avg(x)` is bar-symmetric, then
-  -- applying `barSymmetricProjection_of_sym`. The bar-symmetry of
-  -- `P_avg(x) = (x + bar x)/2` requires `bar(1/2) = 1/2` (true since
-  -- 1/2 ∈ ℚ and bar fixes rational scalars by ring-homomorphism +
-  -- involutivity). This is provable but requires a `bar_rat_cast`
-  -- lemma not currently in the `BarInvolution` axioms.
-  -- Ref: [manuscript] def:bar-involution (extended axioms)
-  sorry
+    barSymmetricProjection (barSymmetricProjection x) = barSymmetricProjection x :=
+  barSymmetricProjection_of_sym (barSymmetricProjection_isBarSymmetric x)
+
+/-- **`P_skew(x)` is bar-anti-symmetric** for every `x : R`. -/
+theorem barSkewProjection_isBarAntiSymmetric (x : R) :
+    IsBarAntiSymmetric (barSkewProjection x) := by
+  unfold IsBarAntiSymmetric barSkewProjection
+  rw [show (x - BarInvolution.bar x) / 2 =
+        (x - BarInvolution.bar x) * (1 / 2) by ring,
+      BarInvolution.bar_mul, bar_half,
+      show x - BarInvolution.bar x =
+        x + (-1) * BarInvolution.bar x by ring,
+      BarInvolution.bar_add, BarInvolution.bar_mul,
+      BarInvolution.bar_involutive]
+  -- bar(-1) = -1, from `bar_neg 1` + `bar_one`.
+  have hbar_neg_one : BarInvolution.bar (-1 : R) = -1 := by
+    rw [show (-1 : R) = -(1 : R) by ring, bar_neg, BarInvolution.bar_one]
+  rw [hbar_neg_one]
+  ring
+
+/-- **`P_skew` is idempotent**. -/
+theorem barSkewProjection_idempotent (x : R) :
+    barSkewProjection (barSkewProjection x) = barSkewProjection x :=
+  barSkewProjection_of_antisym (barSkewProjection_isBarAntiSymmetric x)
 
 end Projections
 
