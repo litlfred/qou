@@ -269,3 +269,66 @@ threaded into the canonical mass-table sweep.
 - "Universal" extrapolation from a single atom (b ≠ 2·|S_n|; 7b5b51a8).
 - Removing the slow path. Always keep it as `use_fast=False` opt-out
   for symbolic-output callers (e69d0acf).
+
+## §Long-compute logging discipline (STRICT — 2026-05-20)
+
+Any Python compute script expected to run **> 5 minutes wall** (mass
+table beyond ⁴He, A-operator extraction at H_9+, joint-tower SDP,
+PSLQ basis size > 30, anything calling `markov_peel.tr_M_atomic`
+with `A ≥ 4`) **must** emit periodic progress lines to stdout —
+not silent until finish.
+
+**Why:** silent long computes are unmonitorable. When the agent
+launches a script via `Bash(run_in_background=true)` and the script
+prints nothing for an hour, the agent cannot distinguish "making
+progress" from "hung" from "crashed silently" — all three look
+identical. Periodic progress lines let the agent (and the user)
+identify the actual bottleneck.
+
+**Rules for the script author:**
+
+1. **Print a header line** at the start: total work units (atoms,
+   partitions, test pairs), expected scaling, estimated wall.
+2. **Per-unit progress** every ~10 seconds OR every ~5% of work,
+   whichever is more frequent. Include: unit index, wall elapsed,
+   units/sec, ETA.
+3. **Phase markers** when transitioning between expensive steps
+   (e.g. "Pre-compute ρ_λ done; entering bilinear-system solve").
+4. **Per-partition / per-atom timing** for variable-cost loops —
+   so post-hoc bottleneck identification is trivial.
+5. **`print(flush=True)`** OR run via `python -u` to defeat stdout
+   buffering.
+
+**Rules for the agent launching the script:**
+
+1. **Always `python -u`** (or set `PYTHONUNBUFFERED=1`) to defeat
+   stdout buffering when running long computes in the background.
+2. **Tee to a file** for post-hoc inspection:
+   `python -u script.py 2>&1 | tee /tmp/<script>.log`. The Bash
+   tool's BG output captures stdout, but a `/tmp/*.log` tee makes
+   the log inspectable by other tools (Read, grep, etc.) without
+   `Read`-ing the task's output buffer.
+3. **Monitor task output** at intervals — read the BG task's
+   output file every few minutes if the work is on the critical
+   path; otherwise wait for the task-completion notification.
+4. **When the script ends silently with no output** (0-byte
+   output, no completion notification within expected window),
+   **assume it crashed**. Re-launch with stricter logging and
+   investigate, do not silently abandon.
+5. **Report bottlenecks** in the end-of-task summary: "⁶Li at
+   H_{18} took 18 min wall, dominated by markov_peel.tr_M_atomic
+   (16.2 min of 18.0)" — the user needs to know what's slow.
+
+**Example: canonical_mass_table_extended.py launching pattern:**
+
+```bash
+# WRONG — silent until finish
+python3 canonical_mass_table_extended.py --atoms ...,7Li
+
+# RIGHT — unbuffered + teed + verbose
+python3 -u canonical_mass_table_extended.py --atoms ...,7Li 2>&1 \
+  | tee /tmp/canonical-mass-table-7li.log
+```
+
+This rule is enforced by `compute-audit` review and is included
+in `coordinate.md`'s long-compute checklist.

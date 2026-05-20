@@ -69,6 +69,29 @@ mentioned file.
    or poll. (Exception: if the only remaining todos depend on the
    in-flight task, idle and wait for the notification.)
 
+   **Long-compute logging discipline (2026-05-20):** any background
+   Python script expected to run > 5 minutes (mass table beyond
+   ⁴He, A-operator extracts at H_9+, joint-tower SDP, PSLQ basis
+   > 30, anything calling `markov_peel.tr_M_atomic` with A ≥ 4)
+   **must** be launched with progress logging enabled and a teed
+   log file:
+
+   ```bash
+   python3 -u script.py 2>&1 | tee /tmp/<script>.log
+   ```
+
+   `-u` defeats stdout buffering; `tee` captures the log for
+   post-hoc bottleneck inspection. The script itself must emit
+   periodic progress lines (every ~10 sec or ~5% of work) including
+   wall elapsed + ETA. **When the script ends silently with 0-byte
+   output and no completion notification within expected window**,
+   assume it crashed — re-launch with stricter logging, do not
+   silently abandon. Always report bottlenecks in the end-of-task
+   summary ("⁶Li at H_{18} took 18 min wall, dominated by
+   markov_peel.tr_M_atomic"). Full discipline:
+   [`.claude/skills/local/compute-audit.md §Long-compute logging
+   discipline`](.claude/skills/local/compute-audit.md).
+
    **5-minute idle trigger (2026-05-19).** If you have produced no
    substantive output for > 5 minutes (just TICK heartbeats or
    empty acks), start processing backlog automatically — do not
