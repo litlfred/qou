@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-11T15:40:15.161634+00:00",
-  "commitSha": "eedc8f66b7cad4f7de3f8f86b895e4c14dc971b7",
+  "computedAt": "2026-05-20T05:00:29.244236+00:00",
+  "commitSha": "d7fceb9f62fdd152f994e26864376f49e26e753e",
   "assertions": [
     {
       "name": "markov_m3_completeness_n2",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 38,
+  "durationMs": 16,
   "computation": "alpha-k-macdonald-closed-form",
   "scriptFile": "alpha_k_macdonald_closed_form.py",
-  "scriptHash": "395ddae07e69",
-  "scriptCommitSha": "2e44f1ec9376f4fa1247a7ee3db1db09907b81df",
+  "scriptHash": "c86fcb4198f2",
+  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
   "description": "α_k mass-tower coefficients via the Macdonald hook-content closed form for y_λ.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_λ for every partition λ ⊢ n at every n ≤ 6, and cross-checks against the Markov-axiom prediction tr_M(σ_1 ⋯ σ_{k-1}) = z^{k-1}.",
   "contentBlock": "prop:macdonald-hook-telescope",
   "data": {

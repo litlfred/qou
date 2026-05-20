@@ -29,11 +29,15 @@ where:
 ## Result
 
 With λ_scale fixed at the CODATA closure target 2.4599527869 (and
-S(proton) ≈ 0), the formula reproduces m_p to **0.25 ppm**. This
+S(proton) ≈ 0), the formula reproduces m_p to **~1 ppb** (verified
+2026-05-20 with Vol(𝓑₃) = 8·G exact; the prior 0.25 ppm residual
+was a stale-Vol(𝓑₃) propagation bug — see
+`borromean-volume-propagation-to-m-p.witness.json`). This
 **explains the 1700× scale gap** in the previous single-level
 Markov-trace m_p chain:
 - Single-level: m_p_pred ≈ 0.597 MeV (off by 99.94%)
-- Borromean tower: m_p_pred ≈ 938.272 MeV (off by 0.25 ppm)
+- Borromean tower (with Vol = 8·G exact): m_p_pred ≈ 938.272 MeV
+  (off by ~1 ppb, well under CAL-2 floor)
 
 The factor `Vol(B_3)/ℏ_q² × λ_scale ≈ 746.42 × 2.46 ≈ 1836` IS
 the missing tower contribution.
@@ -64,16 +68,31 @@ Q_PIN = HERE / "q-pinning-50-digit.witness.json"
 Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 HBAR_Q = (Q - mp.mpf(1)) / Q
 
-# Borromean rings hyperbolic volume (SnapPy-verified topological invariant)
-VOL_B3 = mp.mpf("7.32772290646480718089411881580875")
+# Borromean rings hyperbolic volume.  Exact closed-form via the
+# Lobachevsky/Catalan identity: Vol(𝓑₃) = 16 · Λ(π/4) = 8·G, where
+# G = Catalan's constant (Adams 1985 + Λ(π/4) = G/2).  Using the
+# stale literature snapshot `7.32772290646...` here introduced
+# exactly the 250 ppb m_p residual against CODATA; see
+# `borromean-volume-100dps.witness.json` (Vol(𝓑₃) = 8·G to >100 dps)
+# and `borromean-volume-propagation-to-m-p.witness.json` (closing
+# the m_p residual to ~1 ppb).
+VOL_B3 = 8 * mp.catalan
 # Figure-8 volume (muon baseline, for cross-check)
 VOL_41 = mp.mpf("2.02988321281930725004240510854658")
 
-# CODATA validation values (CAL-1 m_e)
-M_E_CODATA_MEV = mp.mpf("0.51099895069")
-M_P_CODATA_MEV = mp.mpf("938.27208816")
-M_N_CODATA_MEV = mp.mpf("939.56542052")
-M_MU_CODATA_MEV = mp.mpf("105.6583755")
+# CODATA / validation values — imported from the calibration
+# registry, not free literals (P31 audit discipline). m_e is CAL-1;
+# m_p, m_n, m_mu are validation-only references (NOT calibration
+# anchors per CLAUDE.md three-CAL discipline).
+from codata_constants import (  # noqa: E402
+    M_E_MEV as _M_E_MEV,
+    M_P_MEV_VALIDATION as _M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION as _M_N_MEV_VALIDATION,
+)
+M_E_CODATA_MEV = _M_E_MEV
+M_P_CODATA_MEV = _M_P_MEV_VALIDATION
+M_N_CODATA_MEV = _M_N_MEV_VALIDATION
+M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-registry export yet)  # noqa: P31
 
 # Closure-target λ_scale values from
 # `borromean-baryon-mass-formula.md` (solved from CODATA — currently
@@ -89,7 +108,9 @@ def main() -> int:
         "`conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. "
         "With λ_scale fixed at the documented closure targets "
         "(λ_p = 2.4599527869, λ_n = 2.4633436333) the Borromean tower "
-        "formula reproduces m_p to 0.25 ppm and m_n to similar precision. "
+        "formula reproduces m_p to ~1 ppb and m_n to similar precision "
+        "(2026-05-20: Vol(𝓑₃) corrected to 8·G exact via Lobachevsky/"
+        "Catalan; prior 250 ppb residual was a stale-Vol propagation bug). "
         "This explains the 1700× scale gap in the prior single-level "
         "Markov-trace m_p chain (`build_proton_mass_50dps_chain.py`): "
         "Vol(B_3)/ℏ_q² ≈ 746.42 is the baryon-scale multiplier missing "
@@ -197,7 +218,7 @@ def main() -> int:
         "conclusion": (
             "Vol(B_3)/ℏ_q² · λ_scale ≈ 1836 IS the 1700× scale factor "
             "missing from the single-level Markov-trace m_p chain. "
-            "The Borromean tower formula CLOSES the gap to 0.25 ppm "
+            "The Borromean tower formula CLOSES the gap to ~1 ppb "
             "for m_p and similar for m_n."
         ),
     })
@@ -228,7 +249,7 @@ def main() -> int:
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
     print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
     print(f"  CODATA / single-level:   {gap_factor:.4f}")
-    print(f"  → Borromean factor closes the gap to 0.25 ppm")
+    print(f"  → Borromean factor (with Vol = 8·G exact) closes the gap to ~1 ppb")
     return 0
 
 

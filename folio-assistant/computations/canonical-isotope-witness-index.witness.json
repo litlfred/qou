@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:03:42.468405+00:00",
-  "commitSha": "d3c673521389bcc71f798b3517bbd1f8bc8e630a",
+  "computedAt": "2026-05-20T05:32:33.564294+00:00",
+  "commitSha": "2b8d065db24f65a30c93808827059b0a09d75413",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-isotope-witness-index",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "47ef4dceb05e",
-  "scriptCommitSha": "c0bbeb6a94cc1a0dd54ecdd184cff66bf2f05a1c",
+  "scriptCommitSha": "befa7a1642b80f9a56cf48bc40b664254566a77e",
   "description": "Cross-shard index for the per-Z canonical-isotope witness family. Each shard (canonical-isotope-witness-Z<NN>.witness.json) covers one element's isotope chain; this index aggregates the coverage map.",
   "parameters": {
     "n_shards": 119,

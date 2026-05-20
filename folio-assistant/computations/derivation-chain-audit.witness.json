@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T04:11:21.711106+00:00",
-  "commitSha": "d9912989c1c000408d58a1f702daec6c579344a1",
+  "computedAt": "2026-05-20T05:49:39.710637+00:00",
+  "commitSha": "9dc4eb495dfbd6248120c7a9b5152bbda1830eb1",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2094,6 +2094,8 @@
         "binding-q-target-sweep.witness.json",
         "binding-via-interface-knot.witness.json",
         "borromean-axial-coupling.witness.json",
+        "borromean-volume-100dps.witness.json",
+        "borromean-volume-propagation-to-m-p.witness.json",
         "braid-encoding-audit.witness.json",
         "branch-phase-fit-to-mass-tower.witness.json",
         "branching-qvalue-chain.witness.json",
@@ -2102,6 +2104,7 @@
         "brane-tower-isospin-diagnosis.witness.json",
         "brane-tower-per-channel-phi-q-probe.witness.json",
         "brane-tower-two-avenues-probe.witness.json",
+        "bring-bloch-tier0-search-m-p.witness.json",
         "bring-trilog-zeta5-depth-3.witness.json",
         "brundan-kleshchev-audit.witness.json",
         "build-six-term-substrate-model-b.witness.json",
