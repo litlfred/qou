@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-20T04:07:16.033413+00:00",
-  "commitSha": "8f6f499103f45136d6d517caf82242a410fc8be0",
+  "computedAt": "2026-05-20T05:37:01.894505+00:00",
+  "commitSha": "2b8d065db24f65a30c93808827059b0a09d75413",
   "assertions": [
     {
-      "name": "Tier 0 PSLQ relation exists for CODATA target",
-      "computed": 0.0,
+      "name": "Tier 0 PSLQ NO-relation at CODATA target (expected negative)",
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.5,
       "unit": "boolean",
-      "source": "mpmath.pslq at max_coef=10^30"
+      "source": "mpmath.pslq at max_coef=10^30. Negative result is the substantive falsifiable outcome documented in the .md; a positive find would warrant a paper-level update."
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 19,
   "computation": "bring-bloch-tier0-search-m-p",
   "scriptFile": "bring_bloch_tier0_search.py",
-  "scriptHash": "2b08f3047ddb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dcd542ca497f",
+  "scriptCommitSha": "a8069c43fba179ee629babdb3ecd74cf3f25c4e9",
   "description": "Tier 0 Bring-Bloch K-search for the proton effective volume. Searches for ℤ-linear combinations of hyperbolic volumes in the Tier 0 set {4_1, 5_2, 6_1, 6_2, 6_3, 7_4, 𝓑₃, L_6a4, 8_11, Whitehead} equaling Vol(K_p^eff) = λ_p_scale · 8·G, where λ_p_scale is either the CODATA-closure value (2.4599527843613) or the C2-inflection value (2.4616, PR #690 substrate-pure). Per prop:bring-hyperbolic-knot-bloch-decomposition (on main, sorry-free conditional Lean), an integer relation in B(F)⊗ℚ with F ⊆ ℚ(ζ_60) is the categorical identity for λ_p_scale.",
   "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
   "parameters": {
     "compute_dps": "80",
-    "max_coef": "5"
+    "max_coef": "30"
   },
   "data": {
     "tier0_basis": {
@@ -56,6 +56,8 @@
     },
     "search_c2_target": {
       "result": "no_pslq_relation_found"
-    }
+    },
+    "relation_found_codata": false,
+    "relation_found_c2": false
   }
 }

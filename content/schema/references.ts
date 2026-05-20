@@ -4297,6 +4297,31 @@ export const references: CSLData[] = [
     DOI: "10.4064/fm199-1-1",
   }),
 
+  // ── Adams 1985 (Borromean rings = 2 ideal regular octahedra) ──
+  ref({
+    id: "adams1985hyperbolic",
+    type: "article-journal",
+    title: "The noncompact hyperbolic 3-manifold of minimal volume",
+    author: [{ family: "Adams", given: "Colin C." }],
+    "container-title": "Proceedings of the American Mathematical Society",
+    volume: "100",
+    issue: "4",
+    page: "601-606",
+    issued: { "date-parts": [[1985]] },
+    DOI: "10.2307/2045438",
+  }),
+
+  // ── Lewin 1981 (polylogarithms; Λ(π/4) = G/2 identity) ────────
+  ref({
+    id: "lewin1981",
+    type: "book",
+    title: "Polylogarithms and Associated Functions",
+    author: [{ family: "Lewin", given: "Leonard" }],
+    publisher: "North Holland",
+    issued: { "date-parts": [[1981]] },
+    URL: "https://www.sciencedirect.com/book/9780444005502/polylogarithms-and-associated-functions",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

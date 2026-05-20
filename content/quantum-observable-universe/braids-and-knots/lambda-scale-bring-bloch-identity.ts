@@ -26,5 +26,11 @@ export default proposition({
     "conj:borromean-baryon-mass-formula",
     "def:atomic-braid",
   ],
-  cites: ["borel1974", "wenzl1988", "macdonald1995"],
+  cites: [
+    "borel1974",
+    "wenzl1988",
+    "macdonald1995",
+    "adams1985hyperbolic",  // Vol(𝓑₃) = 2 ideal regular octahedra
+    "lewin1981",            // Λ(π/4) = G/2 identity for Catalan
+  ],
 });

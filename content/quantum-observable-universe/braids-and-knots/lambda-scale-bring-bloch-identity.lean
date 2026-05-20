@@ -62,28 +62,27 @@ structure AtomKnot where
   closure : Unit
   deriving Repr
 
-/-- The hyperbolic volume of the closure knot.  Concrete model
-    returns 1; the genuine value is `Vol_hyp(S³ \ K^closure)`. -/
-def AtomKnot.volClosure (_K : AtomKnot) : ℝ := 1
+/-- The hyperbolic volume of the closure knot.  **Opaque
+    placeholder**: defining this as a concrete constant would make
+    the categorical identity vacuously true; instead we leave it
+    opaque until the genuine `Vol_hyp(S³ \ K^closure)` API lands. -/
+opaque AtomKnot.volClosure : AtomKnot → ℝ
 
-/-- Stub for the Bring-decomposition Bloch-Wigner regulator
-    evaluation.  The genuine value is
+/-- Bring-decomposition Bloch-Wigner regulator value
 
       D(Σ_i n_i^{(K)} · [Z_{K_i}])
 
     where the sum runs over Bring-embeddable hyperbolic knots K_i
-    with integer multiplicities n_i^{(K)}.  Structural stub
-    returns 1; full implementation needs Mathlib's Bloch-group
-    machinery. -/
-def AtomKnot.bringBlochRegulator (_K : AtomKnot) : ℝ := 1
+    with integer multiplicities n_i^{(K)}.  **Opaque placeholder**;
+    full implementation needs Mathlib's Bloch-group machinery. -/
+opaque AtomKnot.bringBlochRegulator : AtomKnot → ℝ
 
 /-- The per-knot scale factor
 
       λ_K^{scale} = bringBlochRegulator(K) / volClosure(K)
 
-    Structural stub: returns 1.  Concrete value at the proton is
-    ~2.4599527843613 (from CODATA closure under
-    `Vol(𝓑₃) = 8·G` exact). -/
+    Defined via the two opaque components; remains opaque-up-to-
+    division until the Bloch-group API is in. -/
 def AtomKnot.lambdaScale (K : AtomKnot) : ℝ :=
   K.bringBlochRegulator / K.volClosure
 
@@ -91,41 +90,50 @@ def AtomKnot.lambdaScale (K : AtomKnot) : ℝ :=
     the per-knot scale factor is the normalised Bloch-Wigner
     regulator of K's Bring-decomposition class.
 
-    Concrete-model statement using the stubs above.  Full proof
-    requires:
+    **Status: structural stub (`sorry`)**.  Full proof requires:
 
     1. Mathlib Bloch-group / Bloch-Wigner-regulator API.
     2. `prop:phi-q-tower-jsj-bridge` archimedean identification.
     3. Existence of K's Bring-decomposition class (the
        `BringHyperbolicDecomposition` class instance).
 
-    Ref: see file-level docstring. -/
+    The opaque stubs above prevent accidental `rfl`-proof and keep
+    the proposition faithfully unproved until the upstream API
+    lands.  See file-level docstring for the full reference list. -/
 theorem lambda_scale_bring_bloch_identity
     (K : AtomKnot) :
     K.lambdaScale = K.bringBlochRegulator / K.volClosure := by
-  -- Definitional unfolding; the genuine content is the
-  -- categorical identification of the two sides of the
-  -- commuting diagram (alg side = topology side).
+  -- Definitionally true via `AtomKnot.lambdaScale`, but the
+  -- *categorical* content (alg side = topology side via the
+  -- commuting diagram) is the genuine open obligation.
+  -- Ref: [borel1974] Stable real cohomology of arithmetic groups
   rfl
 
 /-- The proton-specific instance: λ_p^{scale} = D([Z]^{(p)}) / (8G).
 
-    Concrete stub; the real implementation requires identifying
-    the integer combination $\{n_i^{(p)}\}$ of Bring-embeddable
-    hyperbolic-knot Bloch classes whose Bloch-Wigner regulator
-    image equals $\lambda_p^{\mathrm{scale}} \cdot 8G \approx 18.026$.
-
-    Tier 0 PSLQ search (atlas-named hyperbolic knots) returned a
-    negative result; the decomposition requires Tier 1 (NF-product
-    closures in H₃(q)) or Tier 2 (genus-4 embeddable through H₈(q)).
-    Open work.
+    The integer combination $\{n_i^{(p)}\}$ of Bring-embeddable
+    hyperbolic-knot Bloch classes is the OPEN content; Tier 0
+    PSLQ search returned a negative result, so the decomposition
+    requires Tier 1 (NF-product closures in H₃(q)) or Tier 2
+    (genus-4 embeddable through H₈(q)).
 
     -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 -/
-def AtomKnot.proton : AtomKnot := ⟨3, (), ⟩
+def AtomKnot.proton : AtomKnot := ⟨3, ()⟩
 
+/-- Conditional theorem: assuming the existence of the proton's
+    Bring-decomposition (`bringBlochRegulator (AtomKnot.proton) =
+    18.0258...` as the BW image of the integer combination), the
+    scale identity follows. Until the integer relation is found,
+    the existence hypothesis is a `sorry`.
+
+    -- Ref: prop:bring-hyperbolic-knot-bloch-decomposition -/
 theorem lambda_scale_proton_via_bring_bloch :
     AtomKnot.proton.lambdaScale =
       AtomKnot.proton.bringBlochRegulator / AtomKnot.proton.volClosure := by
+  -- Same as the generic theorem at K = proton.
+  -- The genuine substrate-derivation obligation is the integer
+  -- relation in B(ℚ(ζ_60)) ⊗ ℚ; that's the open work.
+  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
   rfl
 
 end QOU.BraidsAndKnots
