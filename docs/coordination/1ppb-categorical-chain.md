@@ -466,3 +466,24 @@ $$\frac{\tau_M(\beta_K^{Z+1, N})}{\tau_M(\beta_K^{Z, N})} \;=\; \frac{2q - 1}{q^
 `prop:interface-knot-markov-z.md` extended with a "Constit-side companion identity" section pointing to the new conjecture.
 
 Next on queue: **5k** — higher-precision measurement of the constit factor to resolve $O(h^4)$ vs second-order-correction question.
+
+## 2026-05-20 (late, +5k.1) — Phase 5k.1: residual matches h^5 with unit coefficient ([PR #831](https://github.com/litlfred/qou/pull/831))
+
+Power-of-$h$ decomposition of the $0.033\%$ residual at $q_0$ identifies the structural order:
+
+| $k$ | $h^k(q_0)$ | residual$/h^k$ at $q_0$ |
+|:-:|---:|---:|
+| 4 | $1.91 \times 10^{-3}$ | $0.21$ |
+| **5** | $\mathbf{3.99 \times 10^{-4}}$ | $\mathbf{1.016}$ ← unit coefficient |
+| 6 | $8.35 \times 10^{-5}$ | $4.86$ |
+
+Refined candidate: $\rho_Z^{\mathrm{constit}}(q) = (2q - 1) + h^5 + O(h^7)$ at $q_0$.  Evaluates to $1.2203565$ vs measured $1.2203629$ — **64× improvement** over $(2q - 1)$ alone (residual drops from $4.06 \times 10^{-4}$ to $6.3 \times 10^{-6}$).
+
+Updates `conj:constit-factor-2q-minus-1.md` with the refined boxed identity.
+
+Script: [`constit_factor_residual_phase5k.py`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/folio-assistant/computations/constit_factor_residual_phase5k.py).
+Witness: `constit-factor-residual-phase5k.witness.json` (1 assertion: residual/h^5 ≈ 1.016 ± 0.05, passes).
+
+**Open question (5k.2 queued):** is $c \equiv 1$ for $h^5$ across the substrate window, or does $c$ vary with $q$?  A single point $c(q_0) = 1.016$ is suggestive but not conclusive.  Phase 5k.2 needs varying-$q$ measurement of $\rho_Z^{\mathrm{constit}}(q)$ via `pyhecke_native` with q-dependent Wenzl $y_\lambda$ weights at multiple $q$ in the substrate window.  Defer as substantive compute work.
+
+Next on queue: **5k.2** — varying-q sweep to confirm unit-coefficient $h^5$ across the substrate window.
