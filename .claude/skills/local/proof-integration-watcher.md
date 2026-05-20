@@ -81,6 +81,41 @@ content block label.
 `.lean` exists, also check (1) `.md` presence + non-triviality and
 (2) semantic match per the four drift classes.
 
+### Sidecar criteria → Lean skill mapping
+
+The 5 proof criteria registered in `qa-criteria-registry.ts §PROOF`
+each route to a specific existing Lean skill on `fail`. This is
+how `qa-sweep --axis proof` finds work to do, and how
+`/integration-backlog proof` knows which agent to dispatch per
+batch.
+
+| Criterion | Reviewer kind | Routes to | Failure handler |
+|-----------|---------------|-----------|-----------------|
+| `proof-no-bare-sorries` | script | `proof-status-tracking` + `proof-gap-audit` | Add `-- Ref: [key] <url>` per CLAUDE.md §1 |
+| `proof-no-axiom-growth` | script | `lean-witness-audit` | Investigate new axiom dep; usually demands a proof refactor or an `axiom` declaration with `-- Ref:` |
+| `proof-build-green` | script | `lean-build-fix` | Walk failure log → patch `.lean` → re-build |
+| `proof-narrative-lean-equiv` | agent | `proof-narrative-lean-equivalence` | Adjudicate the four drift classes A/B/C/D |
+| `proof-substantive` | script | `lean-substantive-pass` | Bulk-split typed sub-claims; replace `holds:Prop` with hypothesis |
+
+Watcher invocation pattern:
+
+```
+1. qa-sweep --axis proof writes pass/fail entries to each block's .qa.json
+2. proof-integration-watcher inherits §5a backlog discovery — reads
+   the fail entries to produce its work queue
+3. For each fail, dispatch the mapped skill above as an Agent call
+4. Apply the skill's recommendation (auto-discharge if §4e band 0-3,
+   author-ask if band 4+)
+5. Re-run qa-sweep --only <criterion> after the fix to confirm pass
+```
+
+### When the registry is updated
+
+If a new proof criterion lands in `qa-criteria-registry.ts §PROOF`,
+this dispatch table must be updated in the same PR. The
+`/integration-audit proof` command will then mark existing sidecars
+stale + the sweep will populate fresh entries.
+
 ## Slot D — §4c finding taxonomy
 
 | Finding | Severity | Description |
