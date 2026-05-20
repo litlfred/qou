@@ -90,3 +90,6 @@ import QOU.MagicShell.DeltaCouplingSubstrateForm
 -- (`quantum-observable-universes/categorical-dq-squared-proof.lean`).
 -- See `AUDIT-REPORT.md §P3` for the open non-vanishing direction.
 import QOU.CategoricalDqSquared
+import QOU.frobenius_relation
+import QOU.dq_squared
+import QOU.emergence_to_quantum_flat
