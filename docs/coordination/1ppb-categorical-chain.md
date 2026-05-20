@@ -437,3 +437,18 @@ at the **full τ_M level**. This complements Phase 5b's $\alpha \approx [3]_q^2 
 - 5k — Higher-precision measurement of the constit factor to characterise the 0.033% residual ($O(h^4)$ noise vs real second-order term).
 - 5e.3 — Lean operator-level cosh(h) proof from Hecke symmetric channel (substantive math).
 - 5e.4 — SnapPy bridge for Kashaev.lean's `pieceVolume` (large infrastructure).
+
+### Coordination sweep — post-5g/5h/5i (2026-05-20)
+
+| PR | State | Action |
+|---|---|---|
+| #826 (`fr-pullback-k3-numerical`) | open, dirty | [coord ack posted](https://github.com/litlfred/qou/pull/826#issuecomment-4493323401) — its K_3* = 4_1 finding now incorporated into #831's 5f/5g/5h/5i probes; no file overlap. |
+| #829 (`show-mass-sweep-table-2xEBG`) | open, clean | [coord ack posted](https://github.com/litlfred/qou/pull/829#issuecomment-4493324255) — `prop:lr-tensor-character-bridge` validates #819's interface-knot framing; complementary, no file overlap. |
+| #806 (`lean-substantive-pass-2026-05-19`) | **closed unmerged** | dropped from scope. |
+| main | advanced by #816 + #833 (FSC/G + averaging-resonance) | no conflict — disjoint compute areas. |
+
+§3b-cond placeholder added in this branch: `HeckeSymmetricChannelCoshH` class (5e.3 stub) in [`alpha-cosh-h-z-step-correction.lean`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/content/quantum-observable-universe/braids-and-knots/alpha-cosh-h-z-step-correction.lean) — provable theorem `cosh_h_eigenvalue_equals_alpha_factor` derives from the class with no sorry. The class instance itself is the conjectural input awaiting Brundan–Kleshchev FR on the symmetric channel.
+
+CI green on #831 (`validate` ✓). One Copilot review comment on the ledger accepted in `02b3bcf75`.
+
+Next concrete task on the queue: **5j** — promote τ_M Z-step factor = z·(2q − 1) to a content block (extension of `prop:interface-knot-markov-z` with a constit-side companion identity section).
