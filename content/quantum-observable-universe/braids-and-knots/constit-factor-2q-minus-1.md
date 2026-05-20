@@ -1,3 +1,60 @@
+> **✓ RESOLVED 2026-05-20 (Phase 5l): see
+> [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity).**
+> The correct closed form for the constit-side per-Z step factor
+> is $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\mathcal{B}_p, q)$, the
+> proton's H_3 Markov trace — a structural identity derivable from
+> Wenzl's disjoint Markov-trace multiplicativity (Wenzl 1988 §1.7),
+> empirically verified at machine precision ($\sim 10^{-15}$) across
+> the substrate window in [Phase 5l](../../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py).
+>
+> The $(2q - 1)$ form below is now understood as a numerical
+> coincidence at $q_0$: $\tau_M^3(\mathcal{B}_p, q_0) \approx 1.2204$
+> happens to be close to $2 q_0 - 1 = 1.2200$, but the two
+> functions diverge away from $q_0$ (rel. err. 28% at $q = 1.05$
+> and 33% at $q = 1.17$ — see Phase 5k.2 (this PR) for the
+> varying-$q$ falsification table).  The conjecture statement
+> below is preserved as a record of Phase 5g's categorical-search
+> result, but the **structural-form claim is superseded** by the
+> Phase 5l proposition.
+> **⚠ Update 2026-05-20 (Phase 5k.2): GLOBAL FORM FALSIFIED.**
+> Phase 5k.2 (this PR, [`constit_factor_varying_q_phase5k2.py`](../../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py))
+> directly measured $\rho_Z^{\mathrm{constit}}(q)$ at five $q$-values
+> across the substrate window using the same $y_\lambda$ / $\chi_\lambda$
+> pipeline as PR #819's Phase 5c.1.  Result:
+>
+> Main sweep (5 q-values, recorded in the witness JSON):
+>
+> | $q$ | $\rho_Z^{\mathrm{constit}}(q)$ | $(2q - 1)$ | rel. err. |
+> |---|---:|---:|---:|
+> | $1.050$ | $0.7928$ | $1.100$ | $27.9\%$ |
+> | $1.080$ | $0.9933$ | $1.160$ | $14.4\%$ |
+> | $\mathbf{1.10998 = q_0}$ | $\mathbf{1.2204}$ | $\mathbf{1.220}$ | $\mathbf{0.034\%}$ |
+> | $1.130$ | $1.3905$ | $1.260$ | $10.4\%$ |
+> | $1.170$ | $1.7858$ | $1.340$ | $33.3\%$ |
+>
+> Supplementary fine scan around $q_0$ (separate from the witness):
+>
+> | $q$ | $\rho_Z^{\mathrm{constit}}(q)$ | rel. err. vs $(2q-1)$ |
+> |---|---:|---:|
+> | $1.105$ | $1.1805$ | $2.44\%$ |
+> | $1.108$ | $1.2044$ | $0.95\%$ |
+> | $1.110$ | $1.2205$ | $0.04\%$ |
+> | $1.111$ | $1.2287$ | $0.54\%$ |
+> | $1.113$ | $1.2450$ | $1.55\%$ |
+>
+> The $0.033\%$ match at $q_0$ identified in Phase 5g is a
+> **localised tangency**, not a structural identity — within
+> $\pm 0.005$ of $q_0$ the relative error already doubles.
+> The candidate $(2q - 1)$ is **NOT** the correct closed form for
+> $\rho_Z^{\mathrm{constit}}(q)$ globally; Phase 5g's categorical
+> search matched the *value* at $q_0$, not the *function*.
+> Phase 5k.1's "unit-coefficient $h^5$" finding is consequently
+> also a coincidence at $q_0$.
+>
+> The statement below is preserved as a record of the at-$q_0$
+> tangency; the **claim that $(2q - 1)$ is the categorical form of
+> $\rho_Z^{\mathrm{constit}}$ is empirically refuted**.
+
 **Conjecture (Constit-side per-Z step factor in canonical-atom Markov trace).**
 
 *Let $\mathcal{B}_K^{\mathrm{vac}} \in H_{3A}(q)$ be the disjoint Hecke
@@ -152,14 +209,23 @@ $(2q - 1)$ alone).
 
 ### Open questions
 
-1. **Confirm the $O(h^5)$ form via varying-q measurement.**
-   Phase 5k.2 (queued): re-measure $\rho_Z^{\mathrm{constit}}(q)$ at
-   $q \in \{1.05, 1.10998, 1.15, 1.2, 1.3\}$ via `pyhecke_native`
-   at varying $q$, fit $\log|\text{residual}| \propto k \cdot \log|h|$
-   to extract the exponent $k$ empirically across the substrate
-   window.  $(\star\star\star)$ predicts a clean unit-slope $k = 5$.
+1. ~~**Confirm the $O(h^5)$ form via varying-q measurement.**~~
+   **Phase 5k.2: FALSIFIED** (see banner at top).  The varying-$q$
+   sweep showed that $\rho_Z^{\mathrm{constit}}(q)$ does NOT follow
+   $(2q - 1) + h^5$; the $q_0$ match is a localised tangency, not
+   a structural identity.
 
-2. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
+2. **What IS the closed form?**  Open: identify the actual
+   categorical structure of $\rho_Z^{\mathrm{constit}}(q)$.  The
+   measured ratio grows from $\rho(1.05) = 0.79$ to $\rho(1.17) = 1.79$
+   — a factor of $2.26\times$ across only $0.12$ in $q$, much steeper
+   than $(2q-1)$.  **Phase 5l RESOLVED this**: the actual closed form
+   is $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\mathcal{B}_p, q)$ — exact,
+   not "non-polynomial combination plus z-factors".  See
+   [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity)
+   for the Wenzl-derivation and machine-precision verification.
+
+3. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
    The form $2q - 1$ matches $\sigma + \sigma^{-1}$ acting on the
    trivial channel idempotent $e_+ = (\sigma + q^{-1}) / (q + q^{-1})$,
    suggesting an averaging-channel interpretation parallel to the
@@ -168,7 +234,7 @@ $(2q - 1)$ alone).
    The §3b-cond class `ConstitFactor2qMinus1` axiomatises this; the
    operator-level proof is queued.
 
-3. **Higher-rank extensions.**  Does the same $(2q - 1)$ companion
+4. **Higher-rank extensions.**  Does the same $(2q - 1)$ companion
    hold for $H_{3A}$ at $A > 4$?  The constit-side factor is
    independent of $A$ (disjoint product), so the identity should
    extend trivially — but the categorical fit needs verification.

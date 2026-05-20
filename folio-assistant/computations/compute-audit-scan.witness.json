@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T15:36:40.739581+00:00",
-  "commitSha": "65fb1e7f233bf9c84c4d922b178bfb8c4666775d",
+  "computedAt": "2026-05-20T18:36:17.508249+00:00",
+  "commitSha": "eca76463f9da79d27abe9671be2da53ead14babe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 667,
+    "files_scanned": 674,
     "patterns": [
       "P15",
       "P16",
@@ -24,11 +24,11 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 174,
+      "P15": 175,
       "P16": 164,
       "P21": 32,
       "P30": 93,
-      "P31": 26
+      "P31": 24
     },
     "top_files": [
       {
@@ -3348,20 +3348,6 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
-        "pattern": "P31",
-        "file": "skein_proton_canonical.py",
-        "line": 187,
-        "snippet": "CODATA literal \"0.51099895\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
-        "file": "skein_proton_canonical.py",
-        "line": 188,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
         "pattern": "P30",
         "file": "sublemma_2_1_A_operator_extract.py",
         "line": 1,
@@ -3388,6 +3374,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "tau_M_proton_closed_form_phase5l1.py",
+        "line": 182,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P30",
