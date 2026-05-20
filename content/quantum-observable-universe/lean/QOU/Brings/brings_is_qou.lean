@@ -18,9 +18,12 @@ namespace QOU.Brings
 class BringsIsQouContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i) — Quantum universe: `C = Rep(SU_q(2))`
-      over `R` with `A = O_q(SU(2))` and forgetful fibre functor `τ`. -/
-  claim_i_quantum_universe : Prop
+  /-- Quantum-group arity for the categorical realisation
+      `C = Rep(SU_q(N))` (manuscript: `N = 2`). -/
+  quantum_group_arity : ℕ
+  /-- Manuscript sub-claim (i) — Quantum universe: `C = Rep(SU_q(2))`,
+      i.e. the quantum-group arity is `2`. -/
+  claim_i_quantum_universe : quantum_group_arity = 2
   /-- Dimension of the hom-space `Hom(𝟙, Ad(A))`. -/
   hom_one_to_ad_A_dim : ℕ
   /-- Manuscript sub-claim (ii) — Observability: `dim Hom(𝟙, Ad(A)) = 0`
@@ -60,7 +63,7 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-is-qou.ts
 theorem brings_is_qou [ctx : BringsIsQouContext] :
-    ctx.claim_i_quantum_universe ∧
+    ctx.quantum_group_arity = 2 ∧
     ctx.hom_one_to_ad_A_dim = 0 ∧
     (∀ n : ℕ, ctx.kappa n ≠ 0) ∧
     (ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6) ∧
