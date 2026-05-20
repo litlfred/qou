@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-20T06:07:09.610820+00:00",
-  "commitSha": "f5e132250de61ee2a97f0d72950fdb3fb6168af5",
+  "computedAt": "2026-05-20T06:34:36.210133+00:00",
+  "commitSha": "e118c2a5ced9c0ac9fcc196a0c639f2afc6e7a5f",
   "assertions": [
     {
       "name": "FALSIFICATION: ½(log Φ_q + log Φ_{q⁻¹}) is identically 0 (NOT Li_2^q)",
@@ -24,12 +24,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 180,
+  "durationMs": 178,
   "computation": "li2q-phiq-bar-symmetry",
   "scriptFile": "li2q_phiq_bar_symmetry_witness.py",
-  "scriptHash": "61f726a9a2c1",
-  "scriptCommitSha": "unknown",
-  "description": "Numerical witness for prop:li2q-phiq-bar-symmetrization at the substrate parameter q_0 ≈ 1.110. Tests the boxed identity Li_2^q(z) = ½(log Φ_q(z) + log Φ_{q⁻¹}(z)) + O((q-1)³ z) on a panel of z ∈ {-1, -1/2, 1/4, 1/2, q_0/4, q_0/2, q_0 · 0.9} test points. Faddeev's Φ_q is evaluated via the formal-series log expansion (Σ z^n/n · q^n/(1-q^{2n})).",
+  "scriptHash": "6cfe667d9822",
+  "scriptCommitSha": "3576c7c29ae9ac983d9cbb02175e40b83019b3e0",
+  "description": "Numerical witness for prop:li2q-phiq-bar-symmetrization at the substrate parameter q_0 ≈ 1.110. Tests the boxed identity Li_2^q(z) = ½(log Φ_q(z) + log Φ_{q⁻¹}(z)) + O((q-1)³ z) on a panel of z ∈ {-1, -1/2, 1/4, 1/2, q_0/4, q_0/2, 3·q_0/4} test points. Faddeev's Φ_q is evaluated via the formal-series log expansion (Σ z^n/n · q^n/(1-q^{2n})).",
   "contentBlock": "prop:li2q-phiq-bar-symmetrization",
   "parameters": {
     "compute_dps": "60"

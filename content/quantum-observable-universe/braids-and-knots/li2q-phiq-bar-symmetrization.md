@@ -1,34 +1,4 @@
-> **ERRATUM (2026-05-20, witness
-> [`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/li2q-phiq-bar-symmetry.witness.json)):**
-> *The boxed identity below as stated — bar-**symmetrization** (sum)
-> with no prefactor — is numerically falsified.* For Faddeev's
-> $\Phi_q(z) = \prod_{k\geq 0}(1 - q^{2k+1}z)^{-1}$, the algebraic
-> fact is $\log \Phi_{q^{-1}}(z) = -\log \Phi_q(z)$ (each coefficient
-> sign-flips under $q \mapsto q^{-1}$), so the **sum**
-> $\tfrac{1}{2}(\log \Phi_q + \log \Phi_{q^{-1}})$ is identically zero,
-> not $\mathrm{Li}_2^q$. The correct identity is the bar-**anti-
-> symmetrization** with $h/2$ prefactor:
->
-> $$
->   \boxed{\;\;
->   \mathrm{Li}_2^q(z) \;=\; -h \cdot \log \Phi_q(z) \;=\; \tfrac{h}{2}\bigl(\log \Phi_{q^{-1}}(z) - \log \Phi_q(z)\bigr),
->   \;\;}
-> $$
->
-> where $h = q - q^{-1}$. Numerically verified to $10^{-55}$ relative
-> precision at $q_0$ across seven test points
-> $z \in \{-1, -1/2, 1/4, 1/2, q_0/4, q_0/2, 3 q_0/4\}$. The §Proof
-> below contains an arithmetic error in the line "Adding and using
-> $q^n/(1-q^{2n}) + q^{-n}/(1-q^{-2n}) = -1/(q^n - q^{-n})$" — the
-> actual value is $0$, not $-1/(q^n - q^{-n})$; the
-> $-2/(q^n - q^{-n})$ structure appears in the **difference** of the
-> two coefficients, which is why the *anti-symmetrization* recovers
-> $\mathrm{Li}_2^q$. The §Structural interpretation section's
-> classification of $\mathrm{Li}_2^q$ as bar-invariant stands — but
-> "bar-invariant" here means *anti-symmetric image rescaled by
-> $h/2$*, not "symmetric average".
-
-**Proposition (Symmetric $\mathrm{Li}_2^q$ as bar-symmetrization of Faddeev $\Phi_q$ — SUPERSEDED; see ERRATUM above).**
+**Proposition ($\mathrm{Li}_2^q$ as bar-anti-symmetrization of Faddeev $\Phi_q$, rescaled by $h/2$).**
 
 *Let $\mathrm{Li}_2^q$ be the symmetric q-dilogarithm
 ([`def:q-dilogarithm`](#def:q-dilogarithm)), defined as the level-2
@@ -38,19 +8,36 @@ representation $\mathrm{Li}_2^q(z) = \sum_n z^n/(n \cdot [n]_q)$
 Faddeev's quantum dilogarithm (the Volume-conjecture form, per
 [Andersen-Kashaev 2014]).*
 
-*Then $\mathrm{Li}_2^q$ is the **bar-symmetrization** of $\log \Phi_q$
-under the bar involution $q \mapsto q^{-1}$:*
+*Then $\mathrm{Li}_2^q$ is the **bar-anti-symmetrization** of
+$\log \Phi_q$ under the bar involution $q \mapsto q^{-1}$,
+rescaled by $h/2$:*
 
 $$
   \boxed{\;
-    \mathrm{Li}_2^q(z) \;=\; \tfrac{1}{2}\bigl(\log \Phi_q(z) + \log \Phi_{q^{-1}}(z)\bigr) + O\bigl((q-1)^3 \cdot z\bigr).
+    \mathrm{Li}_2^q(z) \;=\; -h\cdot\log\Phi_q(z) \;=\; \tfrac{h}{2}\bigl(\log\Phi_{q^{-1}}(z) - \log\Phi_q(z)\bigr),
   \;}
 $$
 
-*The bar-symmetrization is exact in the q-shuffle Hopf algebra
-$\mathcal{H}_q$ at the **level of formal q-rational denominators**;
-the $O((q-1)^3)$ correction lies in the divided-power tower's
-sub-leading terms that vanish in the classical limit $q \to 1$.*
+*where $h = q - q^{-1}$. The identity is exact at the level of
+formal q-rational power-series in
+$\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}][\![z]\!]$; numerical
+verification to $\sim 10^{-55}$ relative precision at $q_0$ across
+seven test points is recorded in
+[`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/li2q-phiq-bar-symmetry.witness.json).*
+
+> **Historical note (superseded 2026-05-20).** *An earlier version
+> of this proposition stated the identity as the bar-**symmetri-
+> zation** (SUM) $\mathrm{Li}_2^q(z) \stackrel{?}{=}
+> \tfrac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}}) + O((q-1)^3 z)$.
+> This is **numerically falsified**: each series coefficient
+> sign-flips under $q \mapsto q^{-1}$, so $\log\Phi_{q^{-1}}(z) =
+> -\log\Phi_q(z)$ identically and the SUM is zero. The §Proof
+> below contains the original arithmetic error in the line
+> "Adding and using $q^n/(1-q^{2n}) + q^{-n}/(1-q^{-2n}) =
+> -1/(q^n-q^{-n})$" — the actual value is $0$; the
+> $-2/(q^n-q^{-n})$ structure appears in the **difference** of
+> the coefficients, recovered as the boxed anti-symmetrization
+> above.*
 
 ### Proof (series-level, classical limit)
 
@@ -72,25 +59,28 @@ $$
   \log \Phi_{q^{-1}}(z) = \sum_{n \ge 1} \frac{z^n}{n} \cdot \frac{q^{-n}}{1 - q^{-2n}}.
 $$
 
-Adding and using $\dfrac{q^n}{1 - q^{2n}} + \dfrac{q^{-n}}{1 - q^{-2n}}
-= \dfrac{q^n - q^n \cdot q^{-2n}}{(1-q^{2n})(1-q^{-2n})} \cdot \ldots
-= -\dfrac{1}{q^n - q^{-n}}$ (algebraic):
+Each coefficient sign-flips: $\dfrac{q^{-n}}{1-q^{-2n}}
+= -\dfrac{q^n}{1-q^{2n}}$ (multiply numerator and denominator by
+$q^{2n}$). Therefore
+$\log\Phi_{q^{-1}}(z) = -\log\Phi_q(z)$ identically, and the
+SUM $\log\Phi_q + \log\Phi_{q^{-1}} \equiv 0$. The
+**difference** picks up the structural content:
 
 $$
-  \tfrac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}}) =
-  -\sum_n \frac{z^n}{n} \cdot \frac{1}{2(q^n - q^{-n})}
-  \cdot (q - q^{-1})
-  = \sum_n \frac{z^n}{n \cdot [n]_q} = \mathrm{Li}_2^q(z),
+  \log\Phi_{q^{-1}}(z) - \log\Phi_q(z)
+   =\;
+  -2\sum_{n\ge 1} \frac{z^n}{n}\cdot\frac{q^n}{1-q^{2n}}
+   =\;
+  \frac{2}{q-q^{-1}} \sum_{n\ge 1} \frac{z^n}{n\cdot [n]_q}
+   =\;
+  \frac{2}{h}\,\mathrm{Li}_2^q(z),
 $$
 
-where the prefactor $(q - q^{-1})/2$ recovers $[n]_q$ in the denominator.
-
-A careful computation shows the sign is correct and that the
-exact equality holds in the formal-series ring
-$\mathbb{Z}[q^{\pm 1/2}, (q - q^{-1})^{-1}][\![z]\!]$. The
-$O((q-1)^3)$ correction in the boxed statement is a *normalisation
-choice* in the principal-branch selection of $\log \Phi_q$ — in the
-strict series equality it vanishes.
+since $q^n/(1-q^{2n}) = -1/(q^n - q^{-n})$ and
+$[n]_q = (q^n - q^{-n})/h$ with $h = q - q^{-1}$. Multiplying
+through by $h/2$ recovers the boxed identity. The identity is
+exact in $\mathbb{Z}[q^{\pm 1/2}, h^{-1}][\![z]\!]$ — there is no
+$O((q-1)^3)$ residual.
 
 ### Structural interpretation
 
@@ -101,7 +91,7 @@ independent forms, but **bar-paired**:
 |---|---|:-:|---|
 | $\log \Phi_q$ | non-symmetric R-matrix log (Faddeev–Kashaev) | bar-asymmetric | **archimedean** state-integral, Volume-conjecture |
 | $\log \Phi_{q^{-1}}$ | conjugate R-matrix log | conjugate of above | archimedean dual |
-| $\mathrm{Li}_2^q$ | **symmetric** level-2 primitive (this paper's convention) | bar-invariant | bridges via $\tau_{\mathrm{arch}}$ |
+| $\mathrm{Li}_2^q$ | level-2 primitive (this paper's convention) | bar-anti-symmetric image, $h/2$-rescaled (sym after $h$-twist) | bridges via $\tau_{\mathrm{arch}}$ |
 
 The bar-symmetric Li_2^q is **R-side** (categorical, lives in the
 Habiro ring per

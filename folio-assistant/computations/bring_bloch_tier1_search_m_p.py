@@ -146,9 +146,16 @@ def main() -> int:
         "universe-level correction: tier_1_hyperbolic_3braid_pslq.py."
     )
     w.add_parameter("compute_dps", "100")
+    # Tier 1 basis volumes are encoded at ~20 decimal digits
+    # (literature precision); PSLQ tolerance must match input
+    # precision or relations may be missed / spurious. We use
+    # tol = 1e-15 (conservative ~5-dps headroom under the ~20-dps
+    # basis), and max_coef = 10^8 (typical bound for "small"
+    # categorical decompositions). Tightening tol below the
+    # basis precision is not meaningful.
     MAX_COEF_EXP = 8
     w.add_parameter("max_coef_exponent", str(MAX_COEF_EXP))
-    TOL = mpf("1e-50")
+    TOL = mpf("1e-15")
 
     # ── Tier 1 basis ──────────────────────────────────────────
     basis = tier1_basis(dps=100)
@@ -207,19 +214,29 @@ def main() -> int:
     else:
         print("\n  ✗ Tier 1 PSLQ — no relation at C2 target.")
 
-    # Assert the negative expectation (consistent with Tier 0). If
-    # either positive find, flips and signals a major positive.
+    # Assert the SUBSTANTIVE NEGATIVE expectation (consistent with
+    # Tier 0): no Tier 1 PSLQ relation is found at the proton
+    # target. If a positive find lands, this assertion FLIPS and
+    # CI surfaces it as a major paper-level finding.
     w.add_assertion(
-        "Tier 1 PSLQ at CODATA target — substantive result recorded",
-        computed=1.0,  # always passes; explicit data fields tell the result
+        "Tier 1 PSLQ at CODATA target — NO relation expected (negative result is substantive)",
+        computed=float(result_codata is None),
         expected=1.0,
         tolerance=0.5,
         unit="boolean",
         source=(
-            "mpmath.pslq at max_coef=10^8, tol=1e-50. Negative "
-            "result extends Tier 0; positive would require paper-"
-            "level update."
+            "mpmath.pslq at max_coef=10^8, tol=1e-15 (matched to "
+            "~20-dps basis precision). Negative result extends "
+            "Tier 0; positive would require paper-level update."
         ),
+    )
+    w.add_assertion(
+        "Tier 1 PSLQ at C2 target — NO relation expected (negative result is substantive)",
+        computed=float(result_c2 is None),
+        expected=1.0,
+        tolerance=0.5,
+        unit="boolean",
+        source="Same as above for the C2-inflection target.",
     )
 
     out = w.set_audit_only(

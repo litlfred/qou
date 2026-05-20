@@ -118,14 +118,18 @@ bar-symmetric R-side object).
 ### Series layer (additive $\tau_M$ correction)
 
 $$
-\mathrm{Li}_2^q(z) \;=\; \tfrac{1}{2}\bigl(\log \Phi_q(z) + \log \Phi_{q^{-1}}(z)\bigr) + O\bigl((q-1)^3 \cdot z\bigr).
+\mathrm{Li}_2^q(z) \;=\; \tfrac{h}{2}\bigl(\log \Phi_{q^{-1}}(z) - \log \Phi_q(z)\bigr) \;=\; -h\cdot \log \Phi_q(z),
+\qquad h = q - q^{-1}.
 $$
 
 Proved as a formal-power-series identity in
-[`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization).
-The bar-anti-symmetric kernel here is
-$\log \Phi_q - \log \Phi_{q^{-1}}$; the bar-symmetric projection
-$P_{\mathrm{avg}}$ kills it and produces Li_2^q on the residual.
+[`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
+(corrected form; the earlier "sum" version was numerically
+falsified — see the historical note in that block). The
+**bar-anti-symmetric kernel** $\log \Phi_{q^{-1}} - \log \Phi_q$
+*is* the structural object, rescaled by $h/2$; the bar-symmetric
+average $\tfrac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}})$ vanishes
+identically and contributes nothing.
 
 ### Phase layer (oscillatory $N=1$ rung)
 

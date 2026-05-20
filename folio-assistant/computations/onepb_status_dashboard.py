@@ -126,13 +126,24 @@ def main() -> None:
     lp_summary["dual_values"] = lp_data.get("lp_dual_summary", [])
 
     # ── Layer 2: Markov-trace consistency (Hoefsmit vs markov_peel) ─
-    # cross-check-trM-1ppb is a hand-rolled witness (no `data`
-    # field) — fields live at top level.
-    trm = sources.get("cross_check_trM_1ppb") or {}
+    # cross-check-trM-1ppb was originally hand-rolled (no `data`
+    # field); it has since migrated to the standard WitnessBuilder
+    # layout where the substantive fields live under `data.*`.
+    # Read from both locations so older snapshots remain compatible.
+    raw = sources.get("cross_check_trM_1ppb") or {}
+    trm = raw.get("data", raw) if isinstance(raw, dict) else {}
+    # Tolerance still lives in `parameters.tolerance_relative` on
+    # the migrated form; fall back to the field at top level for
+    # legacy snapshots.
+    tolerance = (
+        raw.get("parameters", {}).get("tolerance_relative")
+        if isinstance(raw.get("parameters"), dict)
+        else None
+    ) or trm.get("tolerance_relative", 1e-9)
     trm_summary = {
         "atoms_compared": trm.get("atoms_compared", 0),
         "any_diverge": trm.get("any_diverge", None),
-        "tolerance_relative": trm.get("tolerance_relative", 1e-9),
+        "tolerance_relative": tolerance,
         "max_rel_delta": max(
             (float(d.get("rel_delta", 0)) for d in trm.get("deltas", [])),
             default=0.0,

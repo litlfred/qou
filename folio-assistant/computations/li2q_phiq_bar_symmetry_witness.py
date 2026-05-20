@@ -113,7 +113,7 @@ def main() -> int:
         "the substrate parameter q_0 ≈ 1.110. Tests the boxed "
         "identity Li_2^q(z) = ½(log Φ_q(z) + log Φ_{q⁻¹}(z)) + "
         "O((q-1)³ z) on a panel of z ∈ {-1, -1/2, 1/4, 1/2, q_0/4, "
-        "q_0/2, q_0 · 0.9} test points. Faddeev's Φ_q is evaluated "
+        "q_0/2, 3·q_0/4} test points. Faddeev's Φ_q is evaluated "
         "via the formal-series log expansion (Σ z^n/n · q^n/(1-q^{2n}))."
     )
     w.add_parameter("compute_dps", "60")

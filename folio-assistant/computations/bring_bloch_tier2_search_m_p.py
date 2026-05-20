@@ -135,13 +135,21 @@ def main() -> int:
             "residual_abs": mp.nstr(residual, 12),
         })
 
+    # Assert SUBSTANTIVE NEGATIVE expectation: no Tier 2 PSLQ
+    # relation. If a positive find lands, this assertion flips
+    # and CI surfaces it as a major paper-level finding.
     w.add_assertion(
-        "Tier 2 PSLQ search recorded (positive or negative)",
-        computed=1.0,
+        "Tier 2 PSLQ at proton CODATA target — NO relation expected (negative result is substantive)",
+        computed=float(rel is None),
         expected=1.0,
         tolerance=0.5,
         unit="boolean",
-        source="mpmath.pslq Tier 2 (16-element basis)",
+        source=(
+            "mpmath.pslq at max_coef=10^6, tol=1e-20 (matched to "
+            "~15-dps basis precision for Tier 2 KnotInfo values). "
+            "Negative result extends Tier 0 + Tier 1; positive "
+            "would require paper-level update."
+        ),
     )
     out = w.set_audit_only(
         "docs/audits/2026-05-18-lambda-scale-derivation-search.md"
