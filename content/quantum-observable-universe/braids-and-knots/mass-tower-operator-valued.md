@@ -201,14 +201,38 @@ structural content beyond the boundary-generator operator is required
 
 **Proven (boxed identity)** at the two-factor case via
 [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md);
-**conditional** for $k = Z+N \geq 3$ factors on the iterated extension
-(structural induction, expected to hold). **Open** for the bridge
-claim to the mass-endomorphism tower — the proposition lays out the
-explicit reduction to the scalar formula's open pair-gen piece and a
-falsifiable witness path, but neither has been executed yet
-(tracked under
+forward-validated on the canonical deuteron at all 11 partitions
+$\lambda \vdash 6$ to ~$10^{-15}$ relative residual
+(`mass-tower-operator-valued.witness.json`, all assertions passed).
+
+**Proven at the three-factor (A=3) case** via the SYT-branching-basis
+approach of `sublemma_2_1_h9_branching_basis.py`
+(witness `sublemma-2-1-h9-tritium-branching-verify.witness.json`,
+assertion `all_lambda_path_a_eq_path_b_machine_eps` passes across all
+30 $\lambda \vdash 9$): direct $\chi^\lambda(\beta_T)$ at H_9 equals
+the iterated Path-B trace
+$\sum_{(\xi, \nu)} \mathrm{Tr}(P_{(\xi,\nu)} \cdot \rho_\lambda(\beta_T))$
+to machine $\varepsilon$ for every $\lambda \vdash 9$, where
+$(\xi, \nu)$ ranges over the iterated $H_6 \times H_3$ Wedderburn
+blocks. This validates the iterated boxed identity at $k = Z+N = 3$
+for tritium (Z=1, N=2). The corresponding ${}^3$He (Z=2, N=1) case
+follows by the same algorithm with a different nucleon braid.
+
+**Open** for $k \geq 4$ (the ${}^4$He case at H_12): the iterated
+branching basis approach scales to H_12 in principle
+(`sublemma_2_1_h12_he4_branching.py` is in place) but is memory- and
+time-bounded; closure pending.
+
+**Open** for the bridge claim from the boxed identity to a CONCRETE
+mass prediction under the operator-valued tower — the operator-trace
+formula gives the same numerical $\chi^\lambda$ as direct evaluation
+(since both compute the same character), so the structural mass
+prediction only differs from the scalar case if a NEW formula
+(e.g. taking the LOG of the operator trace separately per (μ, ν)
+block, rather than per λ) is wired in. That formula change is the
+remaining Stage-1 unblock, tracked under
 [`docs/coordination/1ppb-categorical-chain.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/1ppb-categorical-chain.md)
-"Stage-1 blocker entry").
+"Stage-1 blocker entry".
 
 ### Lean formalisation
 
