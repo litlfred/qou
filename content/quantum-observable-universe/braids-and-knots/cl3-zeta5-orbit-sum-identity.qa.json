@@ -3,12 +3,12 @@
   "label": "prop:cl3-zeta5-orbit-sum-identity",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.ts",
+    "md": "quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.md",
+    "lean": "quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.lean"
   },
   "source_hashes": {
-    "md": "a03f43ff8901",
+    "md": "a2615f305260",
     "ts": "12d0288e1c8a",
     "lean": "35eb64a43f10"
   },
@@ -115,6 +115,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.md:125: | Im Li_3(ζ_5²) | candidate | **Tate-rational**: $2\\pi^3/125$ |"
+      },
+      {
+        "field_hash": {
+          "md": "a2615f305260",
+          "ts": "12d0288e1c8a",
+          "lean": "35eb64a43f10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -152,5 +167,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

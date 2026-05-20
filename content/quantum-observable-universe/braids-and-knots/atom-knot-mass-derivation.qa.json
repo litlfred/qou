@@ -3,12 +3,12 @@
   "label": "prop:atom-knot-mass-derivation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.lean"
+    "ts": "quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.ts",
+    "md": "quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
+    "lean": "quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.lean"
   },
   "source_hashes": {
-    "md": "400e85959eb4",
+    "md": "72c60e95609c",
     "ts": "d8b804a962b3",
     "lean": "38361d743506"
   },
@@ -115,6 +115,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md:372: \\texttt{manual-historical-volume-match} (²H, ³H, ³He) — i.e.\\ the | content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md:395: inputs (electron $\\sigma_1^3$, proton/neutron Borromean, ²H/³H/³He | content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md:430: ²H ($6_2$) is **not** PSD-feasible on its own ($\\alpha^* = 0.89$"
+      },
+      {
+        "field_hash": {
+          "md": "72c60e95609c",
+          "ts": "d8b804a962b3",
+          "lean": "38361d743506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -152,5 +167,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

@@ -65,7 +65,7 @@ utility module's `interface_composition(ordering)` function.
 
 The Δ_coupling residual fit (PR #656 v6) localised the ³He
 proton-heavy anomaly to the **pp interface asymmetry**: ³He has
-$n_{pp} = 1$ (excess σ) while T has $n_{nn} = 1$ (excess σ⁻¹), and
+$n_{pp} = 1$ (excess $\sigma$) while T has $n_{nn} = 1$ (excess $\sigma^{-1}$), and
 the pp/nn interfaces contribute non-equivalently through the
 hook's antisymmetric column. A linear fit
 

@@ -3,11 +3,11 @@
   "label": "rem:binding-knots-visual-inventory",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/binding-knots-visual-inventory.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/binding-knots-visual-inventory.md"
+    "ts": "quantum-observable-universe/braids-and-knots/binding-knots-visual-inventory.ts",
+    "md": "quantum-observable-universe/braids-and-knots/binding-knots-visual-inventory.md"
   },
   "source_hashes": {
-    "md": "5f0d694c9602",
+    "md": "d1e968d9094c",
     "ts": "64747da52a7a"
   },
   "criteria": {
@@ -108,6 +108,20 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/binding-knots-visual-inventory.md:172: | $6_2$ | Deuteron ²H (census-assigned) |"
+      },
+      {
+        "field_hash": {
+          "md": "d1e968d9094c",
+          "ts": "64747da52a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -143,5 +157,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T02:29:29.163Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

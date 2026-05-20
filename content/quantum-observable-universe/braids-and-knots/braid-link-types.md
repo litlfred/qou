@@ -45,9 +45,9 @@ closed by `closure2_at_two_crossings_eq_hopf` + `jonesAtOne_hopf_eq_neg_two`.
 
 | Track-C atom | Lean status |
 |---|---|
-| Atom 1: closure of σ² = Hopf link (Alexander-Markov 1923/1936) | proved via `closure2_at_two_crossings_eq_hopf` |
+| Atom 1: closure of $\sigma^2$ = Hopf link (Alexander-Markov 1923/1936) | proved via `closure2_at_two_crossings_eq_hopf` |
 | Atom 2: J_Hopf(q=1) = -2 (Jones 1985) | proved via `jonesAtOne_hopf_eq_neg_two` |
-| Composed chain σ² → Hopf → -2 | proved via composition |
+| Composed chain $\sigma^2$ $\to$ Hopf $\to$ -2 | proved via composition |
 
 **Both atomic Track-C axioms are now Lean theorems.** The 2-strand
 case is fully discharged.

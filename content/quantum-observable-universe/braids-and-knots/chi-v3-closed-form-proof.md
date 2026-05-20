@@ -94,7 +94,7 @@ unfolding.
 
 V_(2,1) and V_(1,1,1) await analogous formal closed forms:
 
-- **V_(1,1,1)** is the **q ↔ −q⁻¹ mirror** of V_(3) (antisymmetric irrep where each $\sigma_i$ acts as $−q^{-1}$). The proof should mirror this module's structure exactly with $q \mapsto -q^{-1}$.
+- **V_(1,1,1)** is the **q $\leftrightarrow$ $-q^{-1}$ mirror** of V_(3) (antisymmetric irrep where each $\sigma_i$ acts as $-q^{-1}$). The proof should mirror this module's structure exactly with $q \mapsto -q^{-1}$.
 - **V_(2,1)** requires the 2×2 Hoefsmit matrix expansion (more involved — needs the $\sigma_0$, $\sigma_1$ matrix products).
 
 Following the user direction "first prove formally V", this block

@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/braids-and-knots/braid-link-types.lean"
   },
   "source_hashes": {
-    "md": "eb76800058f7",
+    "md": "ee54ad79e3fe",
     "ts": "08e135d64dad",
     "lean": "21014980fabc"
   },
@@ -130,6 +130,21 @@
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/braid-link-types.md:48: | Atom 1: closure of σ² = Hopf link (Alexander-Markov 1923/1936) | proved via `closure2_at_two_crossings_eq_hopf` | | content/quantum-observable-universe/braids-and-knots/braid-link-types.md:50: | Composed chain σ² → Hopf → -2 | proved via composition |"
+      },
+      {
+        "field_hash": {
+          "md": "ee54ad79e3fe",
+          "ts": "08e135d64dad",
+          "lean": "21014980fabc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -167,5 +182,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:53:48.207Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

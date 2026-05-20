@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.lean"
   },
   "source_hashes": {
-    "md": "b35ecb2ebcaa",
+    "md": "849896377d12",
     "ts": "a3ed44c1257b",
     "lean": "95c5d60be687"
   },
@@ -207,6 +207,21 @@
         "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.md:54: The current $Q_\\beta$ categorical prediction (Form A · cos · ∏ rungs)"
+      },
+      {
+        "field_hash": {
+          "md": "849896377d12",
+          "ts": "a3ed44c1257b",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -274,5 +289,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:53:48.207Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }

@@ -8,7 +8,7 @@
     "lean": "quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean"
   },
   "source_hashes": {
-    "md": "9bce17db035d",
+    "md": "439f0bb7c24a",
     "ts": "75723ba8d873",
     "lean": "efa0b2bf80f3"
   },
@@ -211,6 +211,21 @@
         "reviewed_sha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
         "severity": "critical",
         "evidence": "quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:25: | `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | ²H = $6_ | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:173: **Deuterium ²H = D = $[\\mathfrak{p}, \\mathfrak{n}]_{L_H}$** | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:241: **Carbon-12 ¹²C = $3 \\cdot {}^4\\mathrm{He} + 3 \\cdot c_{\\alpha\\alpha}$** | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:329: | $c_{\\alpha\\alpha}$ | $\\alpha$–$\\alpha$ pair-energy correction (⁸Be, ¹²C, …, ⁴⁰Ca) |"
+      },
+      {
+        "field_hash": {
+          "md": "439f0bb7c24a",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T05:08:59.052Z",
+        "reviewed_sha": "40ff9328f76105950677cee2d61c257ca23a5baa"
       }
     ],
     "voice-editorializing": [
@@ -278,5 +293,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T04:53:48.207Z"
+  "updated_at": "2026-05-20T05:08:59.052Z"
 }
