@@ -57,6 +57,7 @@ export default chapter({
         "chain-ring-comparison",
         "organic-taxonomy-intro",
         "organic-chain-taxonomy",
+        "outro-organic-chemistry",
       ],
     }),
   ],

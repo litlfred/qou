@@ -220,7 +220,8 @@ export default chapter({
       title: "Pair production and knot-operator selection",
       label: "sec:pair-production-knot-operators",
       blocks: [
-        // q-deformed kinematics (definitions in braids-and-knots; applied here)
+"intro-pair-production-knot-operators",
+                // q-deformed kinematics (definitions in braids-and-knots; applied here)
         "q-value-transition",
         // Pair production and quark-antiquark creation
         "breit-wheeler-pair-production",
@@ -236,7 +237,8 @@ export default chapter({
       title: "Mesons and nucleons",
       label: "sec:mesons-nucleons",
       blocks: [
-        // Meson, proton, neutron
+"intro-mesons-nucleons",
+                // Meson, proton, neutron
         "categorical-meson",
         "meson-formation-chain",
         "categorical-proton",
@@ -260,7 +262,8 @@ export default chapter({
       title: "Stable nucleus and torus knots",
       label: "sec:stable-nucleus-torus-knots",
       blocks: [
-        "stable-nucleus",
+"intro-stable-nucleus-torus-knots",
+                "stable-nucleus",
         "torus-hopf-stability",
         "unmapped-torus-knots",
         "torus-knot-prime-powers",
@@ -275,7 +278,8 @@ export default chapter({
       title: "EM completeness and gauge coupling",
       label: "sec:em-completeness-gauge-coupling",
       blocks: [
-        "force-carrier-spectral-interpretation",
+"intro-em-completeness-gauge-coupling",
+                "force-carrier-spectral-interpretation",
         "em-spectral-completeness",
         "gauge-coupling-uniqueness",
         "em-completeness-interpretation",
@@ -297,7 +301,8 @@ export default chapter({
       title: "Archimedean Hartree, crystal basis, and Mathlib bridge",
       label: "sec:archimedean-hartree-crystal",
       blocks: [
-        "archimedean-hartree-derivation",
+"intro-archimedean-hartree-crystal",
+                "archimedean-hartree-derivation",
         "archimedean-functor-uniqueness",
         "bring-hyperbolic-knot-bloch-decomposition",
         "mass-tower-open-problems-classes",
@@ -322,7 +327,8 @@ export default chapter({
       title: "Integer stability and the Diophantine valley",
       label: "sec:integer-stability-diophantine",
       blocks: [
-        "integer-stability",
+"intro-integer-stability-diophantine",
+                "integer-stability",
         "diophantine-valley",
         "valley-stability",
       ],
@@ -474,6 +480,7 @@ export default chapter({
         "cohomological-embedding",
         "knot-basis-color-content",
         "trivial-knot-photon-interpretation",
+        "outro-descartes-universe",
       ],
     }),
   ],

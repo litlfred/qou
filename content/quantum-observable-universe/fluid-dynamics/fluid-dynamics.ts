@@ -111,6 +111,7 @@ export default chapter({
       title: "NS obstruction tower, specialisations, and observable MTC",
       label: "sec:ns-obstruction-tower-mtc",
       blocks: [
+        "intro-ns-obstruction-tower-mtc",
         "ns-obstruction-tower",
         "ns-obstruction-computation",
         "ns-kummer-specialisation",
@@ -143,6 +144,7 @@ export default chapter({
         "hyperbolic-overlap-saturation",
         "leray-profile",
         "q-ns-research-programme",
+        "outro-fluid-dynamics",
       ],
     }),
   ],

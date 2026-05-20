@@ -315,6 +315,7 @@ export default chapter({
         "brings-surface-simulator",
         "quantum-brings-surface",
         "beta-decay-simulator",
+        "outro-observations",
       ],
     }),
   ],

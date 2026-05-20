@@ -226,6 +226,7 @@ export default chapter({
         "topological-mass-dilogarithm-proof",
         "topological-mass-proof",
         "topological-mass-su2",
+        "outro-lifting-and-descent",
       ],
     }),
   ],

@@ -312,6 +312,29 @@ jobs:
           export PATH="$HOME/.bun/bin:$PATH"
           bun run scripts/audit-wiring.ts --warn-only
 
+      - name: Section-story compliance audit (warn-only)
+        # Enforces the §Story coherence (STRICT) policy from PR #738
+        # (.claude/skills/local/detangler-integration-watcher.md). Reports
+        # missing-section-story, abrupt-chapter-ending, section-lead-too-
+        # short, etc.  Warn-only until the post-#847 cleanup of the 31
+        # major findings completes; flip to strict once the count is 0
+        # by removing `|| true` below.
+        run: |
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run scripts/section-story-audit.ts || true
+          # Always emit JSON for download as an artifact.
+          bun run scripts/section-story-audit.ts \
+            --json --out docs/audits/section-story-audit-latest.json || true
+
+      - name: Upload section-story audit JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: section-story-audit
+          path: docs/audits/section-story-audit-latest.json
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Trivial-skeleton audit (baseline-strict)
         # Flags `.lean` declarations whose body is a tautological
         # constant — the def/instance is Lean-verified but encodes

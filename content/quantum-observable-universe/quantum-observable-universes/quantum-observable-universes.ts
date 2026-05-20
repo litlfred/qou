@@ -379,6 +379,7 @@ export default chapter({
       title: "$q$-Resolvent and categorical Wick rotation",
       label: "sec:q-resolvent-wick",
       blocks: [
+        "intro-q-resolvent-wick",
         "q-resolvent",
         "q-resolvent-exists",
         "q-resolvent-exists-proof",
@@ -393,6 +394,7 @@ export default chapter({
       title: "$q$-Exponential, logarithm, and dilogarithm",
       label: "sec:q-special-functions",
       blocks: [
+        "intro-q-special-functions",
         "q-exponential",
         "q-exponential-exists",
         "q-exponential-exists-proof",
@@ -475,6 +477,7 @@ export default chapter({
         "q-harmonic-physical",
         "linearisation-convention",
         "schrodinger-jet-coaction",
+        "outro-quantum-observable-universes",
       ],
     }),
 

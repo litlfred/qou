@@ -185,6 +185,7 @@ export default chapter({
         "frobenius-positivity-filter",
         "categorical-quantity-map",
         "b3-local-minimum",
+        "outro-particle-interactions",
       ],
     }),
   ],
