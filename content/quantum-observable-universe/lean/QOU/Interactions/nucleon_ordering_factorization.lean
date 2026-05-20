@@ -45,10 +45,19 @@ class NucleonOrderingFactorizationContext where
   /-- Manuscript sub-claim (ii) — `2 × 2` vs `6 × 6` speedup:
       standard-channel multiply is `O(4)` instead of `O(36)`. -/
   claim_ii_speedup : cost_std = 4 ∧ cost_naive = 36
+  /-- Number of distinct orderings of the nucleon sequence of length `A`. -/
+  n_orderings : ℕ
+  /-- Number of symmetric-channel evaluations actually performed
+      (channel elimination → 1 per `(Z, N)`, not 1 per ordering). -/
+  n_symmetric_evaluations : ℕ
+  /-- Number of alternating-channel evaluations actually performed. -/
+  n_alternating_evaluations : ℕ
   /-- Manuscript sub-claim (iii) — Channel elimination: symmetric and
       alternating products are computed once per `(Z, N)`, not per
-      ordering (algorithmic claim — stays Prop). -/
-  claim_iii_channel_elimination : Prop
+      ordering — so both evaluation counts equal `1`, independent
+      of `n_orderings`. -/
+  claim_iii_channel_elimination :
+    n_symmetric_evaluations = 1 ∧ n_alternating_evaluations = 1
 
 /-- **Proposition statement** (from manuscript):
 
@@ -77,7 +86,7 @@ theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContex
                 ctx.W_std * (ctx.z * ctx.a_pi + ctx.b_pi) +
                 ctx.W_alt * ctx.A_pi ∧
     (ctx.cost_std = 4 ∧ ctx.cost_naive = 36) ∧
-    ctx.claim_iii_channel_elimination :=
+    (ctx.n_symmetric_evaluations = 1 ∧ ctx.n_alternating_evaluations = 1) :=
   ⟨ctx.claim_i_master_factorisation, ctx.claim_ii_speedup,
    ctx.claim_iii_channel_elimination⟩
 

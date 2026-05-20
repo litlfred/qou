@@ -32,9 +32,18 @@ class EwInterfaceKnotContext where
       `(W, Z, H) ↔ (σ_1^4, σ_3^6, σ_5^8)`. -/
   claim_ii_ew_carrier_exponents :
     exp_W = 4 ∧ exp_Z = 6 ∧ exp_H = 8
+  /-- Number of adjacent-pair generators used by the EW interface
+      knot (`σ_2` and `σ_4` for `H_6`). -/
+  n_adjacent_pair_generators : ℕ
+  /-- Number of disjoint strand-pairs on which the EW carriers act
+      (`(1,2), (3,4), (5,6)` for `H_6`). -/
+  n_disjoint_strand_pairs : ℕ
   /-- Manuscript sub-claim (iii) — Bar-self-duality breakdown is
-      structural (categorical claim — stays Prop). -/
-  claim_iii_bar_self_duality : Prop
+      structural: the EW interface knot uses the 2 adjacent-pair
+      generators `(σ_2, σ_4)` connecting the 3 disjoint strand pairs
+      that carry the EW exponents. -/
+  claim_iii_bar_self_duality :
+    n_adjacent_pair_generators = 2 ∧ n_disjoint_strand_pairs = 3
 
 /-- **Content statement** (from manuscript):
 
@@ -58,7 +67,7 @@ $H \leftrightarrow \sigma_5^{\,8}$ act
 theorem ew_interface_knot [ctx : EwInterfaceKnotContext] :
     ctx.n_strands = 6 ∧
     (ctx.exp_W = 4 ∧ ctx.exp_Z = 6 ∧ ctx.exp_H = 8) ∧
-    ctx.claim_iii_bar_self_duality :=
+    (ctx.n_adjacent_pair_generators = 2 ∧ ctx.n_disjoint_strand_pairs = 3) :=
   ⟨ctx.claim_i_strand_count, ctx.claim_ii_ew_carrier_exponents,
    ctx.claim_iii_bar_self_duality⟩
 

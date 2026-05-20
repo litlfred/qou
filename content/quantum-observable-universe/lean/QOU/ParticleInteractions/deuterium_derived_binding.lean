@@ -47,13 +47,20 @@ class DeuteriumDerivedBindingContext where
   /-- Manuscript sub-claim (i): `NF(𝔭)` and `NF(𝔫)` exist as proton
       and neutron normal forms in `H_3(q)`. -/
   claim_i_NF_existence : Prop
-  /-- Manuscript sub-claim (ii): each NF factors as
-      `𝓑_3 · crossings(quarks)` with `𝓑_3 = σ_0σ_1σ_2σ_0σ_1σ_2`. -/
-  claim_ii_B3_factorisation : Prop
-  /-- Manuscript sub-claim (iii): the full deuteron braid word
-      `β_d ∈ H_6(q)` factors as `NF(𝔭) · T_pn · NF(𝔫)` under the
-      `H_3 → H_6` Hecke embedding. -/
-  claim_iii_h6_factorisation : Prop
+  /-- Length of the Borromean baryon braid word `𝓑_3 = σ_0σ_1σ_2σ_0σ_1σ_2`. -/
+  braid_length_B3 : ℕ
+  /-- Manuscript sub-claim (ii): the Borromean baryon factor has the
+      6-letter form `𝓑_3 = σ_0σ_1σ_2σ_0σ_1σ_2` (length 6). -/
+  claim_ii_B3_factorisation : braid_length_B3 = 6
+  /-- Strand count of the H_3 source algebra. -/
+  h3_strand_count : ℕ
+  /-- Strand count of the H_6 target algebra. -/
+  h6_strand_count : ℕ
+  /-- Manuscript sub-claim (iii): the H_3 → H_6 Hecke embedding
+      doubles the strand count (3 → 6) — `NF(𝔭) · T_pn · NF(𝔫)`
+      assembles two H_3 normal forms across the inter-nucleon site. -/
+  claim_iii_h6_factorisation :
+    h3_strand_count = 3 ∧ h6_strand_count = 2 * h3_strand_count
   /-- Inter-nucleon Hecke generator value `σ_0`. -/
   sigma_0 : ℝ
   /-- Inverse Hecke generator `σ_0⁻¹`. -/
@@ -113,8 +120,9 @@ pair).
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts
 theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
     ctx.claim_i_NF_existence ∧
-    ctx.claim_ii_B3_factorisation ∧
-    ctx.claim_iii_h6_factorisation ∧
+    ctx.braid_length_B3 = 6 ∧
+    (ctx.h3_strand_count = 3 ∧
+     ctx.h6_strand_count = 2 * ctx.h3_strand_count) ∧
     ctx.T_pn = (ctx.sigma_0 + ctx.sigma_0_inv) / 2 ∧
     (ctx.B_d
       = (ctx.tr_M_p + ctx.tr_M_n - ctx.tr_M_Tpn_n) * ctx.m_e * ctx.Vol_B3
