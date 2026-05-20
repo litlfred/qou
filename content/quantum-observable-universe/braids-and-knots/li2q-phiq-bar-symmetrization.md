@@ -160,3 +160,53 @@ $z_0 = 0.5$, $q_0 \approx 1.110$: agreement to $10^{-6}$.
 analytic branch remainder is structural rather than empirical.
 Empirical verification at $q_0$ is recorded in the m_p_m_e_li2q
 witness. Lean skeleton in place.
+
+### Compute-side caller registry (2026-05-20 audit)
+
+Per this proposition, every q-dilogarithm caller in
+`folio-assistant/computations/` is classified by context:
+
+**MASS callers — use Φ_q (`_phi_q_util.py`)**:
+`build_proton_mass_50dps_chain`, `canonical_plus_multibrane`,
+`canonical_tower`, `habiro_exact_mass_endomorphism`, `mass_endomorphism`,
+`mass_formula_6term`, `mass_formula_6term_mpfr_50dps`, `multi_level_jet_sum`,
+`paper_six_term_isotope_sweep`, `probe_proton_with_wenzl_weights`,
+`proton_m_e_anomaly_audit`, `proton_residual_rootcause`,
+`tower_isotope_absolute`, `mass_at_3A_proper` (via β-decay-energy-scale).
+
+**BINDING callers — should use Li_2^q (`_li_2_q_util.py`,
+`compute_t2_t3_from_vols`)**:
+`brane_tower_isospin_diagnosis` (diagnostic — documents Φ_q's −737 MeV
+mirror-nucleus pathology and motivates the migration; keep Φ_q for
+historical record but tag as DIAGNOSTIC),
+`brane_tower_two_avenues_probe`, `delta_coupling_closed_form_probe`,
+`derived_masses` (structural revision required — see
+`mass-endomorphism-tower.md` SUPERSEDED banner),
+`entanglement_orders`, `gb_residue_tower` (deprecated stub),
+`m_p_m_e_li2q` (already on Li_2^q — produces the 99.82% projection
+witness that empirically validates the bar-symmetric loss claim),
+`path_b_habiro_mass_probe` (structural revision required),
+`probe_beta_decay_n1_brane_tower`, `probe_brane_tower_finite_laurent`,
+`probe_phiq_pair_knot_magic_shell`, `probe_phiq_pair_knot_markov_trace`,
+`probe_proton_t2_t3_li2q_comparison` (already on Li_2^q),
+`probe_t2_t3_proton_neutron_a1`.
+
+**PROBE callers — leave as-is** (exploratory / structural diagnosis,
+not a mass or binding claim):
+`adjacent_vs_full_probe`, `alpha_blend_tower`, `alpha_high_precision`,
+`crt_markov`, `probe_lp_cost_dominant_partition`,
+`probe_phiq_avg_chi_over_classical_dim`,
+`probe_phiq_multiplicity_refined`, `probe_phiq_operator_valued`,
+`probe_phiq_per_partition_klambda`, `probe_phiq_per_partition_n_sweep`,
+`probe_phiq_uniform_k`, `probe_phiq_yekutieli_truncation`,
+`schur_weyl_mpmath`, `toffoli-lp-stability`.
+
+**Total: 14 MASS / 14 BINDING / 14 PROBE.**
+
+The actual code migrations for the 14 BINDING callers are tracked
+separately — most do not match `compute_t2_t3_from_vols`'s canonical
+$T_2 + z^2 T_3$ shape (their Φ_q use is bespoke: pair-knot collapse,
+isospin diagnosis, β-decay closure, Habiro residue, etc.) so per-script
+analysis is required, not a mechanical sweep. See
+[`docs/coordination/1ppb-categorical-chain.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/1ppb-categorical-chain.md)
+"Stage-1 blocker entry" for the migration tracker.
