@@ -399,25 +399,6 @@
         "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc"
       }
     ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "ee54ad79e3fe",
-          "ts": "08e135d64dad",
-          "lean": "f1ab2f05e57e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:30:47.477Z",
-        "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-link-types.lean:66: trivial-skeleton pattern 'one_def' at line 66: def Braid2.σ : Braid2 := 1"
-      }
-    ],
     "voice-status-leak": [
       {
         "field_hash": {
@@ -604,7 +585,26 @@
         "reviewed_at": "2026-05-20T16:47:18.199Z",
         "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
       }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "ee54ad79e3fe",
+          "ts": "08e135d64dad",
+          "lean": "f1ab2f05e57e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T17:52:35.574Z",
+        "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-link-types.lean:66: trivial-skeleton pattern 'one_def' at line 66: def Braid2.σ : Braid2 := 1"
+      }
     ]
   },
-  "updated_at": "2026-05-20T16:47:18.199Z"
+  "updated_at": "2026-05-20T17:52:35.574Z"
 }
