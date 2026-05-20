@@ -182,6 +182,214 @@
         "reviewed_at": "2026-05-20T15:10:05.080Z",
         "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/observations/n-v-bring-action.lean:10: bare `sorry` at line 10 — no `-- Ref: [key]` citation in the previous 3 lines | quantum-observable-universe/observations/n-v-bring-action.lean:78: bare `sorry` at line 78 — no `-- Ref: [key]` citation in the previous 3 lines"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/observations/n-v-bring-action.md:1: \\cite{bring1786} or -- Ref: [bring1786] does not resolve in references.ts | quantum-observable-universe/observations/n-v-bring-action.md:1: \\cite{klein1888} or -- Ref: [klein1888] does not resolve in references.ts | quantum-observable-universe/observations/n-v-bring-action.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "cf23accf1f7c",
+          "lean": "fbbaee3a6b26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
     ]
   },
   "updated_at": "2026-05-20T15:10:05.080Z"

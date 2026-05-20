@@ -184,6 +184,212 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.md:1: \\cite{kashaev1997} or -- Ref: [kashaev1997] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.md:1: \\cite{murakami-murakami2001} or -- Ref: [murakami-murakami2001] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "df4721b5a67b",
+          "ts": "afb4d9f8f154",
+          "lean": "2132e9192a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
     ]
   },
   "updated_at": "2026-05-20T15:10:05.080Z"

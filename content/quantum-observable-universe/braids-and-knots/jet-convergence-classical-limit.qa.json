@@ -182,6 +182,214 @@
         "reviewed_at": "2026-05-20T15:10:05.080Z",
         "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.lean:9: bare `sorry` at line 9 — no `-- Ref: [key]` citation in the previous 3 lines"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.md:1: \\cite{kerov1996} or -- Ref: [kerov1996] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.md:1: \\cite{feray2010} or -- Ref: [feray2010] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "7ee235393f9b",
+          "ts": "e04ecc6f38f4",
+          "lean": "a872bf1297bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:00:31.287Z",
+        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      }
     ]
   },
   "updated_at": "2026-05-20T15:10:05.080Z"
