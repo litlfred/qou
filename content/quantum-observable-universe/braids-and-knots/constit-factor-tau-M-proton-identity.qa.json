@@ -1,0 +1,38 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:constit-factor-tau-M-proton-identity",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.lean"
+  },
+  "source_hashes": {
+    "md": "451d1df4499f",
+    "ts": "ed4c3271a277",
+    "lean": "7b2dfe4dde7c"
+  },
+  "criteria": {
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "451d1df4499f",
+          "ts": "ed4c3271a277",
+          "lean": "7b2dfe4dde7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b528b1ec573f",
+          "script_commit_sha": "c4d5e467cfb8464af955497735476fd678799bed",
+          "deps_hash": "aad470ec2aa8"
+        },
+        "reviewed_at": "2026-05-20T20:20:19.153Z",
+        "reviewed_sha": "2f7eabe1e15f92a350816a7d3969666a9bd8743e"
+      }
+    ]
+  },
+  "updated_at": "2026-05-20T20:20:19.153Z"
+}
