@@ -48,7 +48,7 @@ with $\dim V_\lambda$ vertices (one per SYT) and edges given by the
 $\tilde f_i$ Kashiwara operators. For $V_{(2,1)}$:
 
 ```
-  T_1 = [[1,2],[3]]  --(f̃_1)-->  T_2 = [[1,3],[2]]
+  T_1 = [[1,2],[3]]  --(\tilde{f}_1)-->  T_2 = [[1,3],[2]]
 ```
 
 a single edge with weight $b_\lambda$. The N=1 eigenphase shift

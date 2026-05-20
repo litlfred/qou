@@ -110,7 +110,7 @@ at $q_0 \approx 1.110$:
 
 - $E_0^{(N=0)} \approx :val[E_0_N0_MeV]{precision=4}$ MeV — single Planck-tick (CAL-1 + CAL-2)
 - $E_0^{\text{full,geom}} = :val[E_0_full_MeV]{precision=4}$ MeV — geometric closure
-- $E_0^{\text{full,Li_2^q}} = :val[E_0_full_li2q_MeV]{precision=4}$ MeV — bounded q-dilogarithm closure
+- $E_0^{\text{full,}Li_2^q} = :val[E_0_full_li2q_MeV]{precision=4}$ MeV — bounded q-dilogarithm closure
 - $E_0^{(\text{cal})} \approx :val[E_0_calibrated_MeV]{precision=4}$ MeV — CODATA cross-check
 
 The two candidate closures agree to four significant figures at

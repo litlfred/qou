@@ -397,7 +397,7 @@ Type-B-folded-crystal structure of $H_{3A}(q_0)$ (CLAUDE.md §7b):
 |:---|:---|:---:|
 | R1 mult-shifted | $\max(1, k_{\mathrm{Hecke}} - m_{\max} + 1)$ | $1, 6, 1$ |
 | R2 mult-truncated | $\max(1, \lfloor k_{\mathrm{Hecke}} / m_{\max} \rfloor)$ | $1, 2, 1$ |
-| R3 Type-B depth | $\mathrm{depth}(\lambda_\star = \mathrm{argmax}_{\lambda=\lambda^T} |y_\lambda \chi^\lambda_q|)$ | $2, 3, 3$ |
+| R3 Type-B depth | $\mathrm{depth}(\lambda_\star = \mathrm{argmax}_{\lambda=\lambda^T} \lvert y_\lambda \chi^\lambda_q\rvert)$ | $2, 3, 3$ |
 | R4 combined | $\max(1, \mathrm{depth}(\lambda_\star) - m_{\max} + 1)$ | $1, 1, 1$ |
 
 with $\lambda_\star^D = (3,2,1)$, $\lambda_\star^T = \lambda_\star^{{}^3\mathrm{He}} = (3,3,3)$;
@@ -592,7 +592,7 @@ seminormal compute ~10 min, deferred).
 
 ### Result — refined pair-knot Markov-trace form also refuted
 
-| Atom | $n_\star$ | $|V̂_{\text{shell}}|$ Markov | tower | $B_{\text{pred}}$ | $B_{\text{AME}}$ | err |
+| Atom | $n_\star$ | $|\hat{V}_{\text{shell}}|$ Markov | tower | $B_{\text{pred}}$ | $B_{\text{AME}}$ | err |
 |:-:|:-:|---:|---:|---:|---:|---:|
 | D | 1 | n/a (no shell) | $31.07$ | $17.71$ | $2.225$ | $+696\%$ |
 | T | 2 | $\mathrm{tr}_M(\sigma_{nn}) = 0.0622$ | $88.36$ | $93.01$ | $8.482$ | $+997\%$ |

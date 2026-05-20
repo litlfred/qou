@@ -8,7 +8,7 @@ formulations**:
 
 | Version | Statement | What it says |
 |---|---|---|
-| **Soft sharpness** | $\tau_{\mathrm{arch}}(G^{(n)}|_F) \neq 0$ in $\mathcal{P}_n / \mathcal{P}_{n-1}$ for each Bring-natural $F$ | image is non-trivial at depth $n$ |
+| **Soft sharpness** | $\tau_{\mathrm{arch}}(G^{(n)}\rvert_F) \neq 0$ in $\mathcal{P}_n / \mathcal{P}_{n-1}$ for each Bring-natural $F$ | image is non-trivial at depth $n$ |
 | **Strong sharpness** | image equals $\mathcal{P}_n / \mathcal{P}_{n-1}$ | image generates the full period quotient |
 
 *This proposition records that the soft version is **theorem-level**
