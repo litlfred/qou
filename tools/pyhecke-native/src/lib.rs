@@ -521,6 +521,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(debug_reduced_basis, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_gp_hoefsmit, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_f64, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_mpfr, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
@@ -570,5 +571,50 @@ fn chi_lambda_all_partitions_f64(
         n_strands,
         &word_with_averaged,
         q,
+    )
+}
+
+/// **MPFR variant** of [`chi_lambda_all_partitions_f64`] at
+/// arbitrary precision (≥ 50 dps recommended).
+///
+/// Returns `Vec<(partition, chi_decimal_string)>`. The caller is
+/// expected to load each chi via `mpmath.mpf(decimal_string)` to
+/// preserve precision. Per CLAUDE.md §Precision goals L1 (50-dps
+/// compute floor), this is the production path for categorical
+/// identities; the f64 variant exists for speed-only use cases
+/// where structural-zero distinction is not required.
+///
+/// `q_str` is the substrate parameter as a decimal string (50+ dps
+/// recommended; pin to `q_parameter.Q_50_DIGIT_STR` from Python).
+/// `dps` controls the MPFR working precision (50 = production,
+/// 100 = research-grade).
+#[pyfunction]
+fn chi_lambda_all_partitions_mpfr(
+    n_strands: usize,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> Vec<(Vec<usize>, String)> {
+    let word_with_averaged: Vec<wenzl_lr::CrossingPair> = word
+        .iter()
+        .map(|&(sign, gen)| {
+            let c = match sign {
+                1 => wenzl_lr::Crossing::Sigma,
+                -1 => wenzl_lr::Crossing::SigmaInv,
+                0 => wenzl_lr::Crossing::Averaged,
+                _ => panic!(
+                    "chi_lambda_all_partitions_mpfr: unknown sign {} \
+                     (expected -1, 0, or 1)",
+                    sign
+                ),
+            };
+            (c, gen)
+        })
+        .collect();
+    wenzl_lr::chi_lambda_canonical_all_partitions_mpfr(
+        n_strands,
+        &word_with_averaged,
+        &q_str,
+        dps,
     )
 }

@@ -149,9 +149,17 @@ class ZHLaurent:
         return ZHLaurent({(a, b + 1): c for (a, b), c in self.terms.items()})
 
     def evaluate(self, q_val: float, z_val: float, h_val: float) -> complex:
-        """Substitute (q, z, h) → numerical values; return complex.
+        """**LOSSY f64 evaluation** — use `evaluate_mpf` for production.
 
-        For cross-checking against the sympy path at q₀.
+        Returns a Python `complex` at machine f64 precision. Adequate
+        for *cross-checking* against the sympy reference (~1e-15 rel)
+        but **inadequate** for categorical identities that need
+        structural-zero distinction at >1e-30 precision.
+
+        Per project precision policy (CLAUDE.md §Precision goals L1
+        is 50-dps compute), the production evaluator is
+        `evaluate_mpf(q_str, dps=50)` which returns `mpmath.mpf` at
+        arbitrary precision.
         """
         import sympy as sp
         total = complex(0)
@@ -166,6 +174,46 @@ class ZHLaurent:
                 c += c_val * (q_val ** exp)
             total += c * (z_val ** a) * (h_val ** b)
         return total
+
+    def evaluate_mpf(self, q_str: str, dps: int = 50):
+        """**Production MPFR-precision evaluation.**
+
+        Evaluates ZHLaurent at (q, z, h) where:
+          - `q = mpmath.mpf(q_str)` — arbitrary-precision substrate
+          - `z = 1 / (q^{1/2} + q^{-1/2})` — exact at `dps`
+          - `h = q - q^{-1}` — exact at `dps`
+
+        Coefficient evaluation uses `sympy.Rational` (exact) → `mpmath.mpf`
+        conversion at `dps` precision, then the polynomial sum is
+        accumulated entirely in mpmath. Per CLAUDE.md §Precision goals
+        L1 (compute precision ≤ 1 ppb), `dps=50` is the production
+        floor; tighter targets (e.g. 100-dps for substrate-derivation
+        cross-checks) pass `dps=100`.
+
+        Returns `mpmath.mpf` (real-valued; the canonical Markov trace
+        is real on Laurent rationals at q ∈ ℝ).
+        """
+        import mpmath as mp
+        import sympy as sp
+        with mp.workdps(dps):
+            q = mp.mpf(q_str)
+            z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+            h = q - 1 / q
+            total = mp.mpf(0)
+            for (a, b), coef in self.terms.items():
+                # LaurentQ coef: sum of sym_coef * q^exp
+                c_mp = mp.mpf(0)
+                for exp, sym_coef in coef.coefs.items():
+                    # sympy Rational → exact via numerator/denominator
+                    if isinstance(sym_coef, sp.Rational):
+                        c_term = mp.mpf(int(sym_coef.p)) / mp.mpf(
+                            int(sym_coef.q))
+                    else:
+                        # Fallback: convert via decimal string at dps
+                        c_term = mp.mpf(str(sp.N(sym_coef, dps + 5)))
+                    c_mp += c_term * (q ** exp)
+                total += c_mp * (z ** a) * (h ** b)
+            return total
 
     def to_sympy(self, q_sym, z_sym, h_sym):
         """Convert to a sympy expression for cross-check / debug."""

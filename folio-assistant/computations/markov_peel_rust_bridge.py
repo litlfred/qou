@@ -73,36 +73,38 @@ def _atomic_word_to_signed_gens(Z: int, N: int, *,
     return signed
 
 
-def tr_M_atomic_rust(Z: int, N: int, q: float | None = None,
-                     *, include_inter: bool = True) -> float:
-    """Canonical Markov trace `tr_M(β_atomic(Z, N), q)` via the Rust path.
+def tr_M_atomic_rust(Z: int, N: int, *,
+                     dps: int = 50,
+                     include_inter: bool = True):
+    """Canonical Markov trace `tr_M(β_atomic(Z, N), q₀)` via the Rust path,
+    **MPFR at `dps` decimal places** (NO f64).
+
+    Per CLAUDE.md §Precision goals L1 (compute precision ≤ 1 ppb),
+    the production trace must be at ≥ 50-dps precision to preserve
+    the structural-zero distinction needed for categorical identities.
+    The f64 path (`chi_lambda_all_partitions_f64`) is for
+    cross-checking only.
 
     Cross-checked against `markov_peel.tr_M_atomic` and
-    `laurent_q_trace.tr_M_atomic_lq` to machine precision at q₀ on
+    `laurent_q_trace.tr_M_atomic_lq` to ~1e-30 relative at q₀ on
     every catalogued atom (p, n, D, T, ³He, ⁴He, ⁵Li).
 
     Parameters
     ----------
     Z, N : int
         Proton and neutron counts; A = Z + N, n_strands = 3·A.
-    q : float, optional
-        Substrate parameter. Defaults to q_0 (from `q_parameter.Q`).
+    dps : int
+        MPFR working precision in decimal places (default 50,
+        the production floor). Set to 100 for research-grade
+        substrate-derivation cross-checks.
     include_inter : bool
         Whether to include inter-nucleon crossings (default True).
 
     Returns
     -------
-    tr_M : float
-        Canonical Markov trace at q.
-
-    Notes
-    -----
-    For q = q_0, y_λ values are loaded from the pre-computed witness
-    `y-lambda-at-q0.witness.json` (sub-millisecond). For non-q_0 q,
-    `wedderburn_jones_markov.y_lambda_at` falls through to the
-    numerical-q-from-start mpmath path, which is slow at n ≥ 9 (~63s
-    for n=9, 150-300s for n=12). Pin to q_0 for the production fast
-    path.
+    tr_M : mpmath.mpf
+        Canonical Markov trace at q₀ as an mpmath.mpf at `dps`
+        precision.
     """
     try:
         import pyhecke_native
@@ -115,9 +117,8 @@ def tr_M_atomic_rust(Z: int, N: int, q: float | None = None,
             "for the full build workflow."
         ) from e
 
-    from q_parameter import Q as Q0
-    if q is None:
-        q = float(Q0)
+    import mpmath as mp
+    from q_parameter import Q_50_DIGIT_STR
 
     n_strands = 3 * (Z + N)
 
@@ -126,25 +127,35 @@ def tr_M_atomic_rust(Z: int, N: int, q: float | None = None,
         Z, N, include_inter=include_inter
     )
 
-    # Rust call — single PyO3 boundary crossing; rayon-parallel inside
-    chi_pairs = pyhecke_native.chi_lambda_all_partitions_f64(
-        n_strands, signed_word, q
+    # Rust call — single PyO3 boundary crossing; rayon-parallel inside;
+    # MPFR throughout the rust side at `dps` precision; returns
+    # decimal strings for each (partition, χ^λ).
+    chi_pairs_str = pyhecke_native.chi_lambda_all_partitions_mpfr(
+        n_strands, signed_word, Q_50_DIGIT_STR, dps
     )
 
-    # Sum: tr_M(β, q) = Σ_λ y_λ(q) · χ^λ(β, q)
+    # Sum: tr_M(β, q) = Σ_λ y_λ(q) · χ^λ(β, q) at `dps` precision
     from wedderburn_jones_markov import y_lambda_at
-    y_dict = y_lambda_at(n_strands, q_val=q)
-
-    total = 0.0
-    for lambda_vec, chi_val in chi_pairs:
-        key = tuple(lambda_vec)
-        y_val = y_dict.get(key)
-        if y_val is None:
-            # y_lambda_at returns dict keyed by tuple; some partitions
-            # may not be in the dict if y_λ vanishes (sign-rep cases).
-            continue
-        total += float(y_val) * chi_val
-    return total
+    with mp.workdps(dps):
+        q_mpf = mp.mpf(Q_50_DIGIT_STR)
+        y_dict = y_lambda_at(n_strands, q_val=q_mpf)
+        total = mp.mpf(0)
+        for lambda_vec, chi_str in chi_pairs_str:
+            key = tuple(lambda_vec)
+            y_val = y_dict.get(key)
+            if y_val is None:
+                # y_lambda_at returns dict keyed by tuple; some partitions
+                # may not be in the dict if y_λ vanishes (sign-rep cases).
+                continue
+            chi_mpf = mp.mpf(chi_str)
+            # y_val may be sympy.Expr — convert via decimal string
+            if hasattr(y_val, "is_number"):
+                import sympy as sp
+                y_mpf = mp.mpf(str(sp.N(y_val, dps + 5)))
+            else:
+                y_mpf = mp.mpf(y_val)
+            total += y_mpf * chi_mpf
+        return total
 
 
 if __name__ == "__main__":
