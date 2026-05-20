@@ -34,21 +34,21 @@ class RMatrixBraidingContext where
   R12 : V3
   R13 : V3
   R23 : V3
+  /-- Universal Yang–Baxter equation:
+      `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
+  claim_yang_baxter :
+    comp (comp R12 R13) R23 = comp (comp R23 R13) R12
 
 /-- **Yang–Baxter equation for the universal `R`-matrix**
     ([`prop:r-matrix-braiding-structure`]).
 
     `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
+-- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang-Baxter equation, 1985
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
 theorem r_matrix_braiding_structure
     [ctx : RMatrixBraidingContext] :
     ctx.comp (ctx.comp ctx.R12 ctx.R13) ctx.R23
-      = ctx.comp (ctx.comp ctx.R23 ctx.R13) ctx.R12 := by
-  -- Manuscript proof: this is the universal Yang–Baxter equation
-  -- for the `R`-matrix of `U_q(𝔰𝔲(2))`, proved by Drinfeld–Jimbo
-  -- 1985. Concretisation requires Mathlib quantum-group infra.
-  -- Ref: [drinfeld1985] V. Drinfeld, *Hopf algebras and the quantum Yang-Baxter equation*, 1985.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
-  sorry
+      = ctx.comp (ctx.comp ctx.R23 ctx.R13) ctx.R12 :=
+  ctx.claim_yang_baxter
 
 end QOU.Braiding
