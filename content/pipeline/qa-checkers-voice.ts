@@ -74,7 +74,7 @@ function scan(
 // ── voice-status-leak ───────────────────────────────────────────
 
 const STATUS_LEAK_RE =
-  /(\*\*Done\*\*|\*\*Completed\*\*|\*\*Pending\*?\*?|\(TODO\)|\(TBD\)|\bTODO:|\bFIXME:|\bXXX:|\bWIP\b|\bTO-DO\b)/;
+  /(\*\*Done\*\*|\*\*Completed\*\*|\*\*Pending\*?\*?|\*\*Blocked\*?\*?|\*\*Deferred\*?\*?|\*\*In progress\*?\*?|\*\*Punted\*?\*?|\(TODO\)|\(TBD\)|\(TBA\)|\(WIP\)|\(stub\)|\(placeholder\)|\bTODO:|\bFIXME:|\bXXX:|\bHACK:|\bWIP\b|\bTO-DO\b|\bTBD\b|\bplaceholder\b|\b(?:stub(?:bed)?|punt(?:ed|ing)?)\s+(?:for\s+now|until|pending)|\bneeds\s+(?:work|fixing|attention|review|filling\s+in)|\bkick\s+the\s+can|\bnot\s+yet\s+(?:implemented|written|filled\s+in))/i;
 
 export function checkStatusLeak(mdPath: string): CheckerResult {
   const hits = scan(mdPath, STATUS_LEAK_RE);
@@ -110,7 +110,7 @@ export function checkEmojiContent(mdPath: string): CheckerResult {
 // ── voice-first-person-work ─────────────────────────────────────
 
 const FIRST_PERSON_WORK_RE =
-  /\b(we'?ll add|I'?ll (?:add|fix|update|do)|let me\b|needs more work|note to self|we should fix|TODO for me|gonna|here'?s what (?:I|we) (?:did|will))/i;
+  /\b(we'?ll (?:add|fix|update|do|write|put in|need to|have to)|I'?ll (?:add|fix|update|do|write|put in|now|first|need to|have to)|let me\b|let'?s\s+(?:add|fix|update|write|punt|defer|move|skip|drop)|needs more work|note to self|we should (?:fix|add|do|write|punt|defer)|TODO for me|gonna\b|going to (?:add|fix|update|write)|here'?s what (?:I|we) (?:did|will|are\s+doing)|(?:I|we) went ahead and|(?:I|we) (?:just|already) (?:added|fixed|updated|wrote)|(?:I|we) decided to)/i;
 
 export function checkFirstPersonWork(mdPath: string): CheckerResult {
   const hits = scan(mdPath, FIRST_PERSON_WORK_RE);
@@ -120,7 +120,7 @@ export function checkFirstPersonWork(mdPath: string): CheckerResult {
 // ── voice-time-stamped-notes ────────────────────────────────────
 
 const TIME_STAMPED_RE =
-  /\b(as of 20\d{2}[- ]\d{2}|after the recent (?:push|merge|fix|rebase)|in the current draft|as currently written|prior to (?:the )?(?:recent )?(?:fix|push))\b/i;
+  /\b(as of (?:20\d{2}[- ]\d{2}|today|yesterday|now)|after the (?:recent|last|previous) (?:push|merge|fix|rebase|commit|PR|review)|in the current (?:draft|state|version|implementation)|as currently (?:written|implemented|configured|stated)|prior to (?:the )?(?:recent |last |previous )?(?:fix|push|merge|commit|PR|review|rebase)|(?:yesterday|today|tomorrow|last week|this week|recently)(?:'s| )(?:fix|push|merge|update|review|commit|change|edit)|in (?:PR\s*#\s*\d+|commit\s+[a-f0-9]{7,}|the\s+(?:latest|recent)\s+(?:PR|commit))|(?:earlier|later) (?:today|this (?:week|session))|since (?:the )?(?:last|recent|previous) (?:fix|push|merge|commit|PR|rebase))\b/i;
 
 export function checkTimeStampedNotes(mdPath: string): CheckerResult {
   const hits = scan(mdPath, TIME_STAMPED_RE);
@@ -132,7 +132,27 @@ export function checkTimeStampedNotes(mdPath: string): CheckerResult {
 // Source of truth: `.claude/skills/local/one-voice-audit.md` §1
 // item 5 + §Workflow grep. Each of these characters crashes pdflatex
 // unless explicitly mapped in the preamble.
-const UNICODE_CRASH_RE = /[↦⁻√─✅❌⚠·²]/;
+// Expanded to catch every Unicode glyph that either (a) crashes
+// pdflatex when emitted as prose or (b) reliably renders wrong
+// without the correct LaTeX wrapper. Includes:
+//   - arrows: ↦ ↔ ⇒ ⇔ → ←
+//   - super/sub digits: ⁰-⁹ ₀-₉ ⁺ ⁻
+//   - operators: ·  × ÷ ± ∓ √
+//   - relations: ≤ ≥ ≠ ≈ ≡ ≃ ≅
+//   - logical: ¬ ∧ ∨ ∀ ∃ ∈ ∉ ⊂ ⊃ ⊆ ⊇ ∪ ∩
+//   - greek-as-prose (sub-set; mostly fine inside $…$): catch in
+//     prose with `\b` semantic by including a small set commonly
+//     used incorrectly outside math (α, β, γ, δ at start-of-block)
+//   - big-operator: ∑ ∏ ∫ ∬ ∮
+//   - separator: ─ ━ ┃ │ ┄
+//   - misc: ∞ ′ ″ … ™ ®
+//
+// `✓` / `✗` are EXEMPT inside table rows (table-cell-OK markers per
+// existing convention); checkEmojiContent handles that path. This
+// regex applies to body prose only — fenced code (```...```) and
+// inline backtick spans (`...`) are stripped before testing.
+const UNICODE_CRASH_RE =
+  /[↦↔⇒⇔→←⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻₀₁₂₃₄₅₆₇₈₉·×÷±∓√≤≥≠≈≡≃≅¬∧∨∀∃∈∉⊂⊃⊆⊇∪∩∑∏∫∬∮─━┃┄∞′″…™®─✅❌⚠]/;
 
 export function checkUnicodeCrash(mdPath: string): CheckerResult {
   // Skip inside fenced code blocks (```...```) AND inside backtick
@@ -160,7 +180,7 @@ export function checkUnicodeCrash(mdPath: string): CheckerResult {
 // ── voice-editorializing ────────────────────────────────────────
 
 const EDITORIALIZING_RE =
-  /\b(surprisingly|remarkably|interestingly|notably|perhaps the most (?:surprising|important|significant)|it is worth noting that|the reader will (?:appreciate|note|see)|it turns out that|one might expect|a beautiful (?:result|theorem|proof)|an elegant proof)\b/i;
+  /\b(surprisingly|remarkably|interestingly|notably|amazingly|fortunately|unfortunately|of course\b|clearly|obviously|trivially|naturally|simply|merely|just\s+(?:a|the)|easily|effortlessly|seamlessly|elegantly|beautifully|perhaps the most (?:surprising|important|significant|interesting|elegant)|it is (?:worth|important|interesting|notable|easy|clear|obvious) (?:to (?:note|see|observe|point\s+out)|noting|that)|the reader (?:will|may|can) (?:appreciate|note|see|enjoy|find)|it turns out that|one might (?:expect|hope|wonder|think|imagine|suspect)|a beautiful (?:result|theorem|proof|fact|observation)|an elegant (?:proof|argument|construction|formulation)|(?:a|the) (?:truly|particularly|especially)\s+(?:beautiful|elegant|striking|surprising|remarkable)|nicely|cleanly|crisply|tidily)\b/i;
 
 export function checkEditorializing(mdPath: string): CheckerResult {
   // Skip lines that are clearly in fenced code (Lean / TeX snippets).
@@ -352,7 +372,7 @@ function stripInlineCode(line: string): string {
  * conversational fillers).
  */
 const AI_SLOP_DIRECT_RE =
-  /\b(let me (?:think|clarify|explain|address|now|first|see)|here'?s what (?:I|we)(?: did| will| have)?|I'?ll (?:go ahead|now|first|address|explain)|great question|let'?s (?:explore|dive (?:in|into)|unpack|examine)|note that we should|delve (?:into|in)|in (?:a )?nutshell)\b/i;
+  /\b(let me (?:think|clarify|explain|address|now|first|see|walk|break|elaborate|verify|check|confirm)|here'?s what (?:I|we)(?: did| will| have| are doing| think| found| see| observed)?|I'?ll (?:go ahead|now|first|address|explain|verify|check|confirm|do that|take a look|elaborate)|great (?:question|point|catch|observation|note)|happy to (?:help|clarify|elaborate|verify)|(?:sure|of course|absolutely|certainly),?\s*(?:I|let'?s|we)|let'?s (?:explore|dive (?:in|into)|unpack|examine|break (?:this|it) down|see what|think about|consider|walk through)|note that we should|delve (?:into|in)|in (?:a )?nutshell|(?:that's|that is) (?:a )?(?:good|great|excellent|interesting) (?:point|question|catch|observation)|(?:as|just) (?:noted|mentioned|established|discussed|stated)\s+(?:above|earlier)|(?:to|let'?s) (?:break|summarize|recap)|(?:I|we) (?:can|will|should) (?:see|note|observe|verify|check|confirm) that|here you go|there you have it|hope (?:this|that) helps|feel free to|please (?:let me know|don'?t hesitate)|by all means)\b/i;
 
 /**
  * Hedging / softener language frequently inserted by LLMs but
@@ -367,12 +387,32 @@ const AI_SLOP_DIRECT_RE =
 const AI_SLOP_HEDGE_TOKENS = [
   /\bessentially\b/i,
   /\bcomprehensive(ly)?\b/i,
-  /\bleverag(e|ing|es)\b/i,
-  /\bstreamlin(e|ing|es)\b/i,
+  /\bleverag(e|ing|es|ed)\b/i,
+  /\bstreamlin(e|ing|es|ed)\b/i,
   /\brobust(ly|ness)?\b/i,
   /\boverall(?:,|\s+then)?\b/i,
   /\bin (?:summary|conclusion),/i,
   /\bcrucial(ly)?\b/i,
+  /\bvital(ly)?\b/i,
+  /\bfundamental(ly)?\b/i,
+  /\bsignificant(ly)?\b/i,
+  /\bnotabl[ye]\b/i,
+  /\bimportantly\b/i,
+  /\bcritical(ly)?\b/i,
+  /\bnuance[ds]?\b/i,
+  /\bholistic(ally)?\b/i,
+  /\bseamless(ly)?\b/i,
+  /\bsynerg(y|ies|istic)\b/i,
+  /\bcutting[- ]edge\b/i,
+  /\bstate[- ]of[- ]the[- ]art\b/i,
+  /\binnovativ(e|ely)\b/i,
+  /\bgame[- ]chang(er|ing)\b/i,
+  /\bdive (?:deep|deeper)\b/i,
+  /\bdeep dive\b/i,
+  /\btapestry\b/i,
+  /\brealm of\b/i,
+  /\bjourney\b/i,
+  /\blandscape\b/i,
 ];
 
 /**
@@ -455,14 +495,14 @@ export function checkAiSlop(mdPath: string): CheckerResult {
  * non-scholarly.
  */
 const SECOND_PERSON_RE =
-  /\b(you (?:can|will|note|see|may|might|should|need|have|are|now)|the reader (?:will|can|may|might|should))\b/i;
+  /\b(you (?:can|will|note|see|may|might|should|need|have|are|now|find|get|want|know|notice|observe|understand|imagine|think|try|recall|remember)|your (?:reader|attention|intuition|favourite|favorite)|the reader (?:will|can|may|might|should|finds?|knows?|notices?|observes?|imagines?|recalls?))\b/i;
 
 /**
  * Lecturer cadence — informal sentence openers more at home in a
  * lecture than a paper.
  */
 const LECTURER_OPENER_RE =
-  /^\s*(?:So (?:what (?:we|I)(?:'re)?(?: going to)?(?: do)?|let'?s|now)|Now (?:we (?:want|need|will|are|have)|let'?s)|Alright|Okay|Well,)/i;
+  /^\s*(?:So (?:what (?:we|I)(?:'re)?(?: going to)?(?: do)?|let'?s|now|first|why|here|the)|Now (?:we (?:want|need|will|are|have|move|turn|introduce|consider)|let'?s|that|here|first|comes?)|OK,?\b|Okay,?\b|Alright,?\b|Well,|Right,?\b|Anyway,|Anyhow,|Basically,|Briefly,|Long story short|Recap:|In short,|To recap,|At this point,?\s+(?:we|let'?s)|First (?:off|things first)|Before (?:we|getting|moving|diving)|Without further ado)/i;
 
 /**
  * Past-tense narration of the paper's own derivation. Paper voice
@@ -472,7 +512,7 @@ const LECTURER_OPENER_RE =
  * generic past tense is fine in proofs ("Hilbert proved ...").
  */
 const PAPER_PAST_TENSE_RE =
-  /\b(we (?:constructed|defined|showed|proved|established|derived|computed|verified)) (?:above|earlier|before|in the (?:previous|preceding))/i;
+  /\b(we (?:constructed|defined|showed|proved|established|derived|computed|verified|developed|introduced|formulated|presented|gave|wrote|stated|sketched|argued|claimed|noted|observed|demonstrated|argued|exhibited|obtained))\s+(?:above|earlier|before|previously|in the (?:previous|preceding|earlier)|just\s+now|just\s+above|in (?:a|the) (?:prior|preceding|earlier) (?:section|paragraph|chapter|lemma|theorem|proposition)|several (?:lines|paragraphs|sections) (?:above|back|ago)|further\s+up|up\s+the\s+page)/i;
 
 export function checkScholarlyDefault(
   mdPath: string | undefined,

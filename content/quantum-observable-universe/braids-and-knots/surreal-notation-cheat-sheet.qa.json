@@ -11,169 +11,6 @@
     "ts": "c6a873248f18"
   },
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:24: **When you see $\\varepsilon$ in the substrate-level definitions | content/quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:32: **When you see a surreal-bound statement** — e.g. | content/quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:37: the only piece you need; the bound says \"the inequality holds up"
-      }
-    ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "framework-canonical": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1"
-      }
-    ],
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "9c16948da54d",
-          "ts": "c6a873248f18"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T15:10:05.080Z",
-        "reviewed_sha": "497db8b68ecbb1d1c05ed071f38a5a9ede5d12f1",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "canonical-calibration-count": [
       {
         "field_hash": {
@@ -280,6 +117,20 @@
         },
         "reviewed_at": "2026-05-20T16:28:23.168Z",
         "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f"
+      },
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:45:12.683Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -324,6 +175,20 @@
         },
         "reviewed_at": "2026-05-20T16:28:23.168Z",
         "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f"
+      },
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:45:12.683Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
       }
     ],
     "detangler-archimedean-wall": [
@@ -427,7 +292,188 @@
         "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:14: | $\\omega$ | The surreal representation of the first infinite ordinal. $\\omega > n$ for every $n \\in \\mathbb{N}$ (but $\\omega - 1$, $\\omega/2$, $\\sqrt{\\omega}$, … are also infinite surreals — there is | quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:15: | $\\varepsilon$ | The positive infinitesimal defined as $1/\\omega$. $0 < \\varepsilon < 1/n$ for every $n \\in \\mathbb{N}$ (but $\\varepsilon/2$, $\\varepsilon^2$, … are also infinitesimal — there is no s"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:24: **When you see $\\varepsilon$ in the substrate-level definitions | quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:32: **When you see a surreal-bound statement** — e.g. | quantum-observable-universe/braids-and-knots/surreal-notation-cheat-sheet.md:37: the only piece you need; the bound says \"the inequality holds up"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:40:02.947Z",
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "9c16948da54d",
+          "ts": "c6a873248f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T16:47:18.199Z",
+        "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+      }
     ]
   },
-  "updated_at": "2026-05-20T16:30:47.477Z"
+  "updated_at": "2026-05-20T16:47:18.199Z"
 }
