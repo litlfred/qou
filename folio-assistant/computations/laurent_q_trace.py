@@ -13,19 +13,21 @@ Output type is `ZHLaurent` — a formal polynomial in (z, h) with
 LaurentQ-in-q coefficients. At the boundary, `.to_sympy()` or
 `.evaluate(q0, z0, h0)` extracts the final value.
 
-Strategy #1 from the bottleneck audit. Phase-1 scope:
+Strategy #1 from the bottleneck audit. Phase-1+2 scope:
 
   - Empty word: tr = 1
   - max_gen < n-2: recurse at H_{max_gen+2}
   - Single top occurrence: cyclic rotate + Markov II (z · …)
   - Multiple tops, Case A (no braid obstruction): σ² = hσ + 1
-  - Multiple tops, Case B (braid obstruction): `tr_M_word_lq`
-    raises `NotImplementedError`; callers are expected to catch
-    and route through `markov_trace_canonical.tr_M_word` on the
-    sympy path. Empirically, all currently catalogued atomic
-    braids (p, n, D, T, ³He, ⁴He) reach Case A only.
+  - Multiple tops, Case B (braid obstruction with single top-1
+    in segment): apply σ_top · σ_{top-1} · σ_top =
+    σ_{top-1} · σ_top · σ_{top-1} and recurse
+  - Multiple tops, Case C (multiple top-1 surrounding inner top):
+    raises `NotImplementedError`; callers route the WHOLE element
+    through `markov_trace_canonical.tr_M_element` whose ocneanu
+    fallback handles these.
 
-Phase-2: native Case-B handling + ocneanu fallback rewrite.
+Phase-3 (future): ocneanu fallback in LaurentQ.
 
 Cross-check: every result must agree with the sympy path at q₀
 to 1e-15 relative on the atom set {p, n, D, T, ³He, ⁴He}. The
@@ -194,11 +196,13 @@ def tr_M_word_lq(word: tuple, n: int, *,
     """ZHLaurent Markov trace of a Hecke word in H_n(q).
 
     Mirrors `markov_trace_canonical._tr_M_word_impl` but with
-    ZHLaurent arithmetic instead of sympy. Phase-1 reaches all
-    cases EXCEPT Case B (braid relation σ_top σ_{top-1} σ_top
-    inside the word). Case B raises `NotImplementedError` —
-    callers are expected to catch and route through
-    `markov_trace_canonical.tr_M_word` on the sympy path.
+    ZHLaurent arithmetic instead of sympy. Phases 1-2 reach all
+    cases EXCEPT Case C (multiple top-1 surrounding the inner
+    top — i.e. both alpha AND beta segments contain top-1).
+    Case C raises `NotImplementedError` — callers are expected
+    to catch and route the WHOLE element through
+    `markov_trace_canonical.tr_M_element` whose ocneanu fallback
+    natively handles these.
 
     Recursion guard: `depth` is propagated for the depth-limit
     check but excluded from the LRU cache key (the result depends
@@ -271,12 +275,37 @@ def _tr_M_word_lq_cached(word: tuple, n: int, max_depth: int,
                                       depth=depth + 1)
         return term1.mul_by_h() + term2
 
-    # Case B: braid relation — Phase-1 not implemented; caller
-    # catches and falls back to the sympy `tr_M_word`.
-    raise NotImplementedError(
-        f"tr_M_word_lq Phase-1: Case B (braid relation) not yet "
-        f"implemented; word={word}, n={n}"
-    )
+    # Case B: segment contains top-1. Apply braid relation
+    # σ_top · σ_{top-1} · σ_top = σ_{top-1} · σ_top · σ_{top-1}.
+    # Mirrors `markov_trace_canonical._tr_M_word_impl` lines 140-182.
+    tm1_positions = [i for i, g in enumerate(segment) if g == top - 1]
+    first_tm1_in_seg = tm1_positions[0]
+    alpha = segment[:first_tm1_in_seg]
+    if (top - 1) in alpha:
+        # Shouldn't happen since we took FIRST top-1, but match
+        # the sympy reference's safeguard.
+        raise NotImplementedError(
+            f"tr_M_word_lq: unexpected top-1 in alpha segment; "
+            f"word={word}, n={n}"
+        )
+    beta = segment[first_tm1_in_seg + 1:]
+    if (top - 1) in beta:
+        # Case C (per the sympy reference's terminology): multiple
+        # top-1 surrounding the inner top. The sympy path falls
+        # through to the Ocneanu-weight fallback; we raise here so
+        # the caller can route the WHOLE element through the sympy
+        # `tr_M_element` (which handles ocneanu_fallback natively).
+        raise NotImplementedError(
+            f"tr_M_word_lq: Case C (multiple top-1 in segment) "
+            f"not implemented; word={word}, n={n}"
+        )
+    # Build the braid-rewritten word:
+    #   (rest[:inner_pos]) · alpha · σ_{top-1} · σ_top · σ_{top-1} · beta
+    new_word = (rest[:inner_pos] + alpha
+                 + (top - 1, top, top - 1)
+                 + beta)
+    return _tr_M_word_lq_cached(new_word, n, max_depth,
+                                 depth=depth + 1)
 
 
 def tr_M_element_lq(lq_elem: LaurentHeckeElement, n: int) -> ZHLaurent:
