@@ -6,8 +6,8 @@
 //! the wheel small and the build simple.
 
 use hecke_engine::{
-    geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
-    tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
+    geck_pfeiffer, gram, laurent_hecke_element, littlewood_richardson, reduce_laurent, seminormal,
+    seminormal_mn, seminormal_mpfr, tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
 };
 use pyo3::prelude::*;
 
@@ -524,11 +524,66 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq_clear_cache, m)?)?;
+    m.add_function(wrap_pyfunction!(incremental_reduce_rust, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
     m.add("__version__", env!("CARGO_PKG_VERSION"))?;
     Ok(())
+}
+
+/// FFI-shaped Hecke element: `Vec<(word, Vec<(exp, num_decimal, den_decimal)>)>`.
+///
+/// - `word: Vec<i32>` — sequence of signed Hecke generator indices
+///   (non-negative = σ_i; negative = formal variable that commutes
+///   with anything, per `hecke_laurent_fast.py`'s convention).
+/// - Coefficients are sparse Laurent polys in q with rational coeffs,
+///   one entry per non-zero monomial: `(q-exponent, numerator-as-decimal-string,
+///   denominator-as-decimal-string)`. Decimal strings preserve arbitrary
+///   precision through the PyO3 boundary (mirrors the pattern used by
+///   `tr_m_word_lq::to_ffi`).
+type FfiHeckeElement = Vec<(Vec<i32>, Vec<(i32, String, String)>)>;
+
+/// Incremental Hecke-element reduce in Rust. Mirrors
+/// `hecke_laurent_fast.py::incremental_reduced_element_fast`:
+/// start from identity, multiply factors one at a time, and reduce
+/// (R1/R2/R3 fixpoint) after each multiplication.
+///
+/// Inputs:
+/// - `factors`: list of factor elements in FFI form (see
+///   `FfiHeckeElement`). Each element typically has a small number of
+///   terms (one or two) — it's the σ-word representation of a single
+///   crossing.
+/// - `max_iterations_per_step`: per-multiplication reduce cap (matches
+///   the Python `max_iterations_per_step` kwarg). Use the Python
+///   default of 5000 unless you have evidence a step needs more.
+///
+/// Returns the reduced element in the same FFI form.
+///
+/// This is the Tier 1.A boundary: ONE PyO3 call per atomic-braid
+/// reduction. Output is the fully-reduced Hecke element ready for
+/// `tr_M_element` evaluation on the Python side.
+#[pyfunction]
+#[pyo3(signature = (factors, max_iterations_per_step = 5000))]
+fn incremental_reduce_rust(
+    factors: Vec<FfiHeckeElement>,
+    max_iterations_per_step: usize,
+) -> PyResult<FfiHeckeElement> {
+    let mut elem = laurent_hecke_element::LaurentHeckeElement::identity();
+    for (idx, raw) in factors.iter().enumerate() {
+        let factor = laurent_hecke_element::LaurentHeckeElement::from_ffi(raw)
+            .map_err(|msg| {
+                pyo3::exceptions::PyValueError::new_err(format!(
+                    "incremental_reduce_rust: factor {} parse failed: {}",
+                    idx, msg
+                ))
+            })?;
+        elem = elem.mul(&factor);
+        let (reduced, _iter) =
+            reduce_laurent::reduce_laurent_rules(&elem, max_iterations_per_step);
+        elem = reduced;
+    }
+    Ok(elem.to_ffi())
 }
 
 /// Compute χ^λ(β, q) for every partition λ ⊢ n_strands, given a

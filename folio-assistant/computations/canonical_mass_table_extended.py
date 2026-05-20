@@ -153,6 +153,25 @@ def compute_tr_m_canonical(
         except Exception as e:  # noqa: BLE001
             return None, 0.0, f"laurent_q: {type(e).__name__}: {e}", "laurent_q"
 
+    if method == "laurent_q_rust":
+        # Tier 1.A — Rust LaurentQ reduce + Markov trace.
+        # Wheel `pyhecke-native` must include `incremental_reduce_rust`
+        # (added 2026-05-21). Failure to import is reported as a
+        # method-level error so callers can fall back to "laurent_q".
+        try:
+            from markov_peel_rust_bridge import tr_M_atomic_rust_full
+            t0 = time.time()
+            tr_mp = tr_M_atomic_rust_full(Z, N, dps=50)
+            wall = time.time() - t0
+            return abs(tr_mp), wall, None, "laurent_q_rust"
+        except ImportError as e:
+            return None, 0.0, (
+                f"laurent_q_rust: pyhecke_native missing "
+                f"incremental_reduce_rust (rebuild wheel): {e}"
+            ), "laurent_q_rust"
+        except Exception as e:  # noqa: BLE001
+            return None, 0.0, f"laurent_q_rust: {type(e).__name__}: {e}", "laurent_q_rust"
+
     if method == "markov_peel":
         try:
             import sympy as sp
@@ -311,7 +330,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--method",
-        choices=["markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
+        choices=["markov_peel", "laurent_q", "laurent_q_rust", "rust_f64", "rust_mpfr"],
         default="markov_peel",
         help=(
             "Computation method. `laurent_q` (PR #859) is the fastest "

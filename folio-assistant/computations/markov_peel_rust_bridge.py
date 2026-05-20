@@ -318,3 +318,126 @@ if __name__ == "__main__":
         rel = abs(tr_rs - tr_sym) / max(abs(tr_sym), 1e-30)
         print(f"  {label:<6} {tr_rs:<22.16f} {tr_sym:<22.16f} "
               f"{rel:<10.2e} {wall_rs:<8.3f} {wall_sym:<8.3f}")
+
+
+# ── Tier 1.A: Rust LaurentQ reduce + Markov trace ─────────────────────
+#
+# `tr_M_atomic_rust_full(Z, N, dps)` routes the atomic-braid reduction
+# through the Rust port of `LaurentQ.__mul__` + `reduce_laurent_rules`
+# (rules R1, R2, R3), then takes the Markov trace on the Python side.
+#
+# This is the "Tier 1.A" path from the 2026-05-20 compute-optimisation
+# roadmap. The boundary cost is ONE PyO3 call per atomic-braid reduce,
+# amortising the FFI marshalling over the full reduction.
+#
+# Status: implementation complete; empirical cross-check vs the Python
+# LaurentQ path (`tr_M_atomic_lq`) and the heavy-atom speedup gate
+# (⁶Li < 60 s, ⁸Be < 5 min) are deferred to a follow-up session that
+# can run the wheel build + multi-atom sweep.
+
+
+def _factor_to_ffi(lq_factor):
+    """Serialise a Python `LaurentHeckeElement`-like dict
+    `{word_tuple: LaurentQ}` into the FFI shape expected by
+    `pyhecke_native.incremental_reduce_rust`:
+
+      list of (list[int], list[(int, str, str)])
+
+    where each (numer, denom) pair is a decimal-string-encoded
+    `Fraction`-style coefficient on the q^exp monomial.
+    """
+    out = []
+    for word, lq in lq_factor.items():
+        # `lq.coefs` is `dict[int, Fraction]` per laurent_q.LaurentQ.
+        triples = [(int(exp), str(c.numerator), str(c.denominator))
+                   for exp, c in lq.coefs.items()]
+        out.append((list(int(g) for g in word), triples))
+    return out
+
+
+def _ffi_to_laurent_hecke_element(ffi):
+    """Inverse of `_factor_to_ffi`: parse the FFI shape back into a
+    Python `LaurentHeckeElement` from `hecke_laurent_fast`."""
+    from fractions import Fraction
+    from laurent_q import LaurentQ
+    from hecke_laurent_fast import LaurentHeckeElement
+    terms = {}
+    for word, triples in ffi:
+        coefs = {}
+        for exp, ns, ds in triples:
+            coefs[int(exp)] = Fraction(int(ns), int(ds))
+        lq = LaurentQ(coefs)
+        terms[tuple(int(g) for g in word)] = lq
+    return LaurentHeckeElement(terms)
+
+
+def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
+                          max_iterations_per_step=5000):
+    """Canonical Markov trace `tr_M(β_atomic(Z, N), q₀)` via the
+    Tier 1.A Rust LaurentQ-reduce path.
+
+    Routes:
+      1. atomic-braid word → Python `crossing_from_cd` → per-crossing
+         `LaurentHeckeElement` factors (Python LaurentQ coeffs)
+      2. factors → FFI tuples → `pyhecke_native.incremental_reduce_rust`
+         (single PyO3 call; ALL reduce iterations happen in Rust)
+      3. reduced FFI element → Python `LaurentHeckeElement`
+      4. `tr_M_element` on the sympy-converted element (existing path)
+
+    Returns the trace as an `mpmath.mpf` at `dps` decimal places.
+
+    Bit-identical to `hecke_laurent_fast.tr_M_atomic_fast` (which uses
+    the pure-Python reduce) modulo the rational-coefficient algebra.
+    The Markov trace step is shared.
+    """
+    import mpmath
+    import pyhecke_native  # type: ignore[import-not-found]
+
+    from mass_at_3A_proper import atom_braid_word_3A
+    from hecke_symbolic import SymbolicHeckeElement, crossing_from_cd
+    from laurent_q import LaurentQ
+    from hecke_laurent_fast import LaurentHeckeElement
+    from markov_trace_canonical import tr_M_element
+    from hecke_core import h as _h_num
+    from q_parameter import Q_50_DIGIT_STR  # noqa: F401 — used by caller for q₀
+
+    h_num_float = float(_h_num)
+    word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+
+    # Build per-crossing factors as FFI tuples (small per-call cost; the
+    # heavy reduce work happens in Rust).
+    from hecke_symbolic import q as _q
+    factors_ffi = []
+    for c, d, gen in word:
+        sym_factor = crossing_from_cd(gen, c, d, h_num=h_num_float)
+        # Each sym_factor is a SymbolicHeckeElement with sympy-poly
+        # coeffs in q. Convert each coefficient to LaurentQ, then to
+        # the FFI shape.
+        lq_factor_terms = {}
+        for w, coef in sym_factor.terms.items():
+            lq = LaurentQ.from_sympy(coef, _q)
+            if not lq.is_zero():
+                lq_factor_terms[w] = lq
+        factors_ffi.append(_factor_to_ffi(lq_factor_terms))
+
+    # Single PyO3 call: identity * f1 → reduce → * f2 → reduce → ...
+    reduced_ffi = pyhecke_native.incremental_reduce_rust(
+        factors_ffi, max_iterations_per_step,
+    )
+
+    # Marshal back to Python LaurentHeckeElement and take the Markov
+    # trace via the existing sympy path.
+    fast_elem = _ffi_to_laurent_hecke_element(reduced_ffi)
+    n_strands = 3 * (Z + N)
+    sym_elem = SymbolicHeckeElement(fast_elem.to_sympy_element())
+    tr_sym = tr_M_element(sym_elem, n_strands, simplify=False)
+
+    # Evaluate at q₀ to `dps` decimal places via mpmath.
+    mpmath.mp.dps = max(int(dps), 50)
+    from hecke_symbolic import q as _q2, z as _z, h as _h
+    q_mp = mpmath.mpf(Q_50_DIGIT_STR)
+    z_mp = 1 / (mpmath.sqrt(q_mp) + 1 / mpmath.sqrt(q_mp))
+    h_mp = q_mp - 1 / q_mp
+    tr_mp = mpmath.mpf(tr_sym.subs([(_q2, q_mp), (_z, z_mp), (_h, h_mp)])
+                              .evalf(dps))
+    return tr_mp
