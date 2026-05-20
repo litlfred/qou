@@ -284,6 +284,27 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 
 ## 2026-05-19 — Stage-1 (Faddeev → Li_2^q) migration is structurally blocked (branch `claude/fr-pullback-k3-numerical`, [PR #826](https://github.com/litlfred/qou/pull/826))
 
+### 2026-05-20 — Stage-1b migration audit: binding pipeline already Φ_q-free
+
+Per follow-up audit on `claude/fr-pullback-k3-numerical`:
+
+| Script category | Φ_q refs total | Li_2^q refs total | Migration status |
+|---|---:|---:|---|
+| `binding_*.py` (14 scripts) | 0 | 18 | **COMPLETE** — depth-stratified χ·dim_q (PR #801) needs no q-dilog; the 2 Li_2^q-using scripts are on the binding-context branch correctly |
+| `fr_*.py` (1 script) | 0 | 0 | **COMPLETE** |
+| `mass_*.py`, `derived_masses.py`, `proton_*.py`, etc. (14 mass-anchor scripts) | many | 0 | **CORRECT AS-IS** — Φ_q is canonical for MASS context per `prop:li2q-phiq-bar-symmetrization`; bar-asymmetric component carries the dimensional mass scale |
+| 14 PROBE scripts | many | a few | **CORRECT AS-IS** — Φ_q usage is the subject of study (divergence diagnostics, two-form comparisons), not a binding compute |
+| 14 BINDING-class scripts (per the agent classification) | many | a few | **NOT MIGRATION TARGETS** — closer inspection showed all are diagnostics / probes / structural-revision-required; the genuine binding-compute pipeline (above) is already Phi_q-free |
+
+**Conclusion**: the Stage-1 "migrate 42 Phi_q callers to Li_2^q"
+framing was based on a too-broad classification. The actual binding
+compute pipeline (downstream of `prop:atomic-mass-gb-nf` and
+`prop:depth-stratified-frobenius-reciprocity`) is Phi_q-free; the 42
+remaining Phi_q callers are correctly mass-context or probe-context.
+The structural unblock remaining is the operator-valued
+$A^\lambda_{\mu,\nu}(I)$ formulation (research-grade, deferred —
+see entry below).
+
 | Date | Phase | Status | Notes |
 |---|---|---|---|
 | 2026-05-19 | Faddeev `Phi_q` → symmetric `Li_2^q` substitution sweep | **BLOCKED** | Function-substitution alone catastrophically regresses m_p/m_e |

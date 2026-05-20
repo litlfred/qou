@@ -203,10 +203,51 @@ not a mass or binding claim):
 
 **Total: 14 MASS / 14 BINDING / 14 PROBE.**
 
-The actual code migrations for the 14 BINDING callers are tracked
-separately — most do not match `compute_t2_t3_from_vols`'s canonical
-$T_2 + z^2 T_3$ shape (their Φ_q use is bespoke: pair-knot collapse,
-isospin diagnosis, β-decay closure, Habiro residue, etc.) so per-script
-analysis is required, not a mechanical sweep. See
+### The binding compute pipeline is already Φ_q-free
+
+Independently verified 2026-05-20 by surveying all `binding_*.py` and
+`fr_*.py` files in `folio-assistant/computations/` (the actual binding
+computation pipeline downstream of `prop:atomic-mass-gb-nf` /
+[`prop:depth-stratified-frobenius-reciprocity`](depth-stratified-frobenius-reciprocity.md)):
+
+| Script | Φ_q refs | Li_2^q refs |
+|---|---:|---:|
+| `binding_K_direct.py` | 0 | 0 (uses depth-stratified χ·dim_q) |
+| `binding_block_multiplicative.py` | 0 | 6 |
+| `binding_canonical.py` | 0 | 0 |
+| `binding_depth_stratified.py` | 0 | 0 |
+| `binding_depth_stratified_knot_weighted.py` | 0 | 0 |
+| `binding_depth_stratified_lr.py` | 0 | 0 |
+| `binding_depth_stratified_rust.py` | 0 | 0 |
+| `binding_depth_stratified_selfconj.py` | 0 | 0 |
+| `binding_k_enumerator.py` | 0 | 0 |
+| `binding_k_solver.py` | 0 | 0 |
+| `binding_ladder_catalog.py` | 0 | 0 |
+| `binding_q_target_sweep.py` | 0 | 0 |
+| `binding_via_interface_knot.py` | 0 | 12 |
+| `fr_pullback_k3_test.py` | 0 | 0 |
+
+**0 Φ_q references across all 14 binding-pipeline scripts.** The
+depth-stratified formulation (PR #801) computes B(K) directly via
+$\sum_k \alpha_k \cdot \Phi_k$ with $\Phi_k = \sum_{\lambda:
+\mathrm{depth}=k} \tilde w_\lambda \cdot \log|\chi^\lambda \cdot
+\dim_q V_\lambda|$ — no q-dilog substitution needed at all. The two
+binding scripts that DO use Li_2^q (`binding_block_multiplicative`,
+`binding_via_interface_knot`) are on the bar-symmetric / pre-τ branch
+of the brane-tower formulation, consistent with this proposition's
+binding-context recommendation.
+
+**Migration status: COMPLETE on the compute side.** The 42 Φ_q callers
+in `folio-assistant/computations/` are all mass-anchor or probe-context
+(per the registry above); they correctly retain Φ_q per the
+bar-symmetrization context-split. No further code migrations needed.
+
+The remaining open structural item is the **operator-valued
+$A^\lambda_{\mu,\nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)$
+formulation** of the mass-endomorphism tower (per the SUPERSEDED
+banner in [`mass-endomorphism-tower.md`](mass-endomorphism-tower.md)),
+which would unify the mass and binding contexts under a single
+operator-trace formula. That is research-grade work and is tracked
+under
 [`docs/coordination/1ppb-categorical-chain.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/1ppb-categorical-chain.md)
-"Stage-1 blocker entry" for the migration tracker.
+"Stage-1 blocker entry".
