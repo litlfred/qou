@@ -20,7 +20,7 @@ export default proposition({
       "folio-assistant/computations/delta_lambda_fr_identity_phase5c.py",
     witness:
       "folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json",
-    status: "verified-empirically-4-atoms",
+    status: "verified",
   },
   tags: [
     "markov-trace",

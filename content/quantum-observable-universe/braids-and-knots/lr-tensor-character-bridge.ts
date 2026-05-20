@@ -9,10 +9,13 @@ export default proposition({
   title: "LR comultiplication bridge for tensor-product braids (trivial-interface specialisation)",
   tags: ["hecke-algebra", "littlewood-richardson", "symmetric-functions",
          "markov-trace", "compute-bridge"],
+  // Note: prop:interface-knot-markov-z and def:ew-interface-knot are
+  // currently unslotted orphans on main with their own large unresolved
+  // conjecture cascade; .md narrative cites them via [...](#label) which
+  // produces warning-level (not error) unresolved cross-refs. Lifting
+  // them into uses[] requires the upstream slotting work to complete.
   uses: [
     "prop:hecke-branching-trace-decomposition",
-    "prop:interface-knot-markov-z",
-    "def:ew-interface-knot",
     "rem:hecke-algebra-from-braiding",
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:wenzl-bridge-applicability-qou",
