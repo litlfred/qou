@@ -80,14 +80,34 @@ def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
     raise ValueError(f"unknown interface kind: {kind!r}")
 
 
-def canonical_interface_kinds(Z: int, N: int) -> list[InterfaceKind]:
+def canonical_interface_kinds(
+    Z: int, N: int,
+    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
+        = "chi_lambda_braid",
+) -> list[InterfaceKind]:
     """Interface kinds for the canonical atomic braid 𝓑_K.
 
-    Mirrors `mass_at_3A_proper.atom_braid_word_3A`:
+    Two conventions for the p-n boundary:
+
+      - "chi_lambda_braid" (DEFAULT, matches production):
+          p-n is marshalled as positive σ in the chi_lambda_braid
+          pipeline (see hecke_characters.py marshalling code that
+          maps `(1, -h/2)` → `(sign=+1, gen)` — the averaging
+          coefficient is silently dropped).  This is what the 4
+          production tr_M scripts compute.
+
+      - "strict_averaged" (math-correct, audit only):
+          p-n uses (σ_g - (h/2)·I) which gives factor (z - h/2).
+          Phase 5q confirmed this convention disagrees with the
+          production pipeline by ~21% relative for atoms with at
+          least one p-n interface.  Use this only when probing the
+          marshalling-bug audit trail; do NOT use it for the closed
+          form that production scripts validate against.
+
+    Mirrors `mass_at_3A_proper.atom_braid_word_3A` interface logic:
       - p-p boundary → positive (σ_g)
-      - n-n boundary → negative (σ_g^{-1}, via skein)
-      - p-n boundary → averaged (σ_g - (h/2)·I, the canonical
-        Hecke-averaged choice for matter-antimatter symmetry)
+      - n-n boundary → negative (σ_g^{-1}, via Hecke skein)
+      - p-n boundary → depends on convention (see above)
 
     The ordering is protons-first then neutrons: K = p^Z n^N.
     """
@@ -102,18 +122,25 @@ def canonical_interface_kinds(Z: int, N: int) -> list[InterfaceKind]:
             kinds.append("positive")
         elif nuc == "n" and next_nuc == "n":
             kinds.append("negative")
-        else:
-            kinds.append("averaged")
+        else:  # p-n
+            if pn_convention == "strict_averaged":
+                kinds.append("averaged")
+            else:
+                kinds.append("positive")
     return kinds
 
 
-def closed_form_ratio(Z: int, N: int, q: mp.mpf) -> mp.mpf:
+def closed_form_ratio(
+    Z: int, N: int, q: mp.mpf,
+    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
+        = "chi_lambda_braid",
+) -> mp.mpf:
     """tr_M(𝓑_K) / tr_M(𝓑_K^vac) as a closed-form product.
 
     Iterates over the canonical interface kinds for atom (Z, N)
     and multiplies the Markov-axiom factors.
     """
-    kinds = canonical_interface_kinds(Z, N)
+    kinds = canonical_interface_kinds(Z, N, pn_convention=pn_convention)
     product = mp.mpf(1)
     for kind in kinds:
         product *= interface_factor(kind, q)
@@ -123,6 +150,8 @@ def closed_form_ratio(Z: int, N: int, q: mp.mpf) -> mp.mpf:
 def closed_form_tau_M(
     Z: int, N: int, q: mp.mpf,
     tau_M_proton_H3: mp.mpf, tau_M_neutron_H3: mp.mpf,
+    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
+        = "chi_lambda_braid",
 ) -> mp.mpf:
     """Full closed-form tr_M(𝓑_K) at q.
 
@@ -135,13 +164,19 @@ def closed_form_tau_M(
     """
     constit_part = (mp.mpf(tau_M_proton_H3) ** Z
                     * mp.mpf(tau_M_neutron_H3) ** N)
-    interface_part = closed_form_ratio(Z, N, q)
+    interface_part = closed_form_ratio(
+        Z, N, q, pn_convention=pn_convention
+    )
     return constit_part * interface_part
 
 
-def interface_census(Z: int, N: int) -> dict[str, int]:
+def interface_census(
+    Z: int, N: int,
+    pn_convention: Literal["chi_lambda_braid", "strict_averaged"]
+        = "chi_lambda_braid",
+) -> dict[str, int]:
     """Counts of each interface kind in 𝓑_K."""
-    kinds = canonical_interface_kinds(Z, N)
+    kinds = canonical_interface_kinds(Z, N, pn_convention=pn_convention)
     return {
         "positive": sum(1 for k in kinds if k == "positive"),
         "negative": sum(1 for k in kinds if k == "negative"),
