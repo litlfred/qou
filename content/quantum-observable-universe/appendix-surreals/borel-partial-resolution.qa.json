@@ -29,7 +29,128 @@
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "2a83f1c1c632",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "2a83f1c1c632",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md:69: - Inclusion: ✓ (theorem-level — Bloch–Suslin). | content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md:70: - Sharpness at depth 2 over $\\mathbb{Q}(\\zeta_6)$: ✓ (Borel + Suslin"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "2a83f1c1c632",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "2a83f1c1c632",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "2a83f1c1c632",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "2a83f1c1c632",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "2a83f1c1c632",
+          "ts": "b6a5f9510f6c",
+          "lean": "55419151e0a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:05:32.956Z"
+  "updated_at": "2026-05-20T02:29:29.163Z"
 }

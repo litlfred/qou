@@ -29,7 +29,128 @@
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "de4bb79650e1",
+          "ts": "1aa05dc8f962",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "de4bb79650e1",
+          "ts": "1aa05dc8f962",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "de4bb79650e1",
+          "ts": "1aa05dc8f962",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "de4bb79650e1",
+          "ts": "1aa05dc8f962",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "de4bb79650e1",
+          "ts": "1aa05dc8f962",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:68: | proton | 1.06530622859 | 1.06530622859 | 3.96 × 10⁻¹⁵ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:69: | neutron | 0.92323329717 | 0.92323329717 | 4.21 × 10⁻¹⁵ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:70: | deuteron | 0.38828647155 | 0.38828647155 | 7.01 × 10⁻¹⁵ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:71: | tritium | 0.10405211868 | 0.10405211868 | 1.07 × 10⁻¹⁴ | | content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md:72: | ³He | 0.20654085856 | 0.20654085856 | 1.03 × 10⁻¹⁴ |"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "de4bb79650e1",
+          "ts": "1aa05dc8f962",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "de4bb79650e1",
+          "ts": "1aa05dc8f962",
+          "lean": "ed0e71f89a5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:05:32.956Z"
+  "updated_at": "2026-05-20T02:29:29.163Z"
 }

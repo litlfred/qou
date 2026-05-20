@@ -31,7 +31,126 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/information-theory/phase-transition-boundary.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "18a160a8bc50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "18a160a8bc50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "18a160a8bc50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "18a160a8bc50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "18a160a8bc50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "18a160a8bc50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "18a160a8bc50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:05:32.956Z"
+  "updated_at": "2026-05-20T02:29:29.163Z"
 }

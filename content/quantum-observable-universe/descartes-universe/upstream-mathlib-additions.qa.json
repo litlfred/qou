@@ -29,7 +29,128 @@
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "d7be62838c1a",
+          "ts": "52c1348f757a",
+          "lean": "22fe04021f7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "d7be62838c1a",
+          "ts": "52c1348f757a",
+          "lean": "22fe04021f7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "d7be62838c1a",
+          "ts": "52c1348f757a",
+          "lean": "22fe04021f7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "d7be62838c1a",
+          "ts": "52c1348f757a",
+          "lean": "22fe04021f7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "d7be62838c1a",
+          "ts": "52c1348f757a",
+          "lean": "22fe04021f7f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/descartes-universe/upstream-mathlib-additions.md:12: | `complexLiTwo : ℂ → ℂ` | `Σ_{k≥1} z^(k+1)/(k+1)²` via `tsum` | unconditional definition; convergence on closed unit disk implicit | | content/quantum-observable-universe/descartes-universe/upstream-mathlib-additions.md:14: | `blochWigner : ℂ → ℝ` | `Im(Li_2(z)) + log\\|z\\|·arg(1-z)` | unconditional definition using Mathlib's `Complex.log`, `Complex.arg`, `Complex.abs` | | content/quantum-observable-universe/descartes-universe/upstream-mathlib-additions.md:25: geometric-style series; the `1/k²` factor makes the series summable | content/quantum-observable-universe/descartes-universe/upstream-mathlib-additions.md:47: | Absolute convergence of `complexLiTwo` on `\\|z\\| ≤ 1` | `Summable` proof using comparison with `1/k²` series (Mathlib has `Real.tsum_geometric_lt_top` analogues; needs adaptation) |"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "d7be62838c1a",
+          "ts": "52c1348f757a",
+          "lean": "22fe04021f7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "d7be62838c1a",
+          "ts": "52c1348f757a",
+          "lean": "22fe04021f7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:05:32.956Z"
+  "updated_at": "2026-05-20T02:29:29.163Z"
 }

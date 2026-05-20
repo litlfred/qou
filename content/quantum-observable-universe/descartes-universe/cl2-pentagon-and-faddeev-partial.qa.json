@@ -29,7 +29,130 @@
         "reviewed_at": "2026-05-20T02:05:32.956Z",
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "ef975baeddff",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "ef975baeddff",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:74: | (1) `BlochGroup F` quotient | ✅ concrete construction | n/a | ⏳ pentagon generators wiring | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:75: | (2) $\\mathrm{Cl}_2$ pentagon | ✅ class hook | ✅ all-zero unconditional | ⏳ Mathlib Fourier infra | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:76: | (3) Faddeev-Kashaev | ✅ class hook | ✅ `x = 0` unconditional | ⏳ Mathlib uniform Tauberian |"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "ef975baeddff",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "ef975baeddff",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "ef975baeddff",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:11: - *(3-boundary) For every `(q, n)`, `(1 - q) · log Φ_n(0; q) - | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:74: | (1) `BlochGroup F` quotient | ✅ concrete construction | n/a | ⏳ pentagon generators wiring | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:75: | (2) $\\mathrm{Cl}_2$ pentagon | ✅ class hook | ✅ all-zero unconditional | ⏳ Mathlib Fourier infra | | content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:76: | (3) Faddeev-Kashaev | ✅ class hook | ✅ `x = 0` unconditional | ⏳ Mathlib uniform Tauberian |"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "ef975baeddff",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "ef975baeddff",
+          "ts": "f34912e5dac3",
+          "lean": "fa5d2b6cfce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:05:32.956Z"
+  "updated_at": "2026-05-20T02:29:29.163Z"
 }

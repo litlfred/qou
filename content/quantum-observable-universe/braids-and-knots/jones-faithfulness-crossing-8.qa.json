@@ -27,7 +27,121 @@
         "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "4c758b3a68c1",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "4c758b3a68c1",
+          "ts": "3f295e8876d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.md:43: - **Up to crossing 10**: ✓ theorem (HTW 1998). | content/quantum-observable-universe/braids-and-knots/jones-faithfulness-crossing-8.md:44: - **At crossing 11**: ✗ **falsified by the Conway-KT mutant pair**."
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "4c758b3a68c1",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "4c758b3a68c1",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "4c758b3a68c1",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "4c758b3a68c1",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "4c758b3a68c1",
+          "ts": "3f295e8876d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
     ]
   },
-  "updated_at": "2026-05-20T02:05:32.956Z"
+  "updated_at": "2026-05-20T02:29:29.163Z"
 }
