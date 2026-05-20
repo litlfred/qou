@@ -121,6 +121,50 @@ theorem c5_as_function_of_skein
   rw [c5_decomposition_via_quantum_two q hq,
       quantum_two_squared_eq_skein_squared_plus_four q hq]
 
+/-- **The `c5` rational map** as a function on the real line:
+    `c5 : ℝ → ℝ`, `c5(h) = -3/2 + 1/(h² + 4)`. Concrete realization
+    of the BarHeckeFunctor-shape for c_5 at the archimedean level. -/
+noncomputable def c5RationalMap (h : ℝ) : ℝ := -3/2 + 1 / (h^2 + 4)
+
+/-- **c5 rational map at the Hecke skein gives c_5**: bridge from
+    the abstract rational-map formulation to the concrete c_5
+    closed form. -/
+theorem c5RationalMap_at_skein_eq_c5Decomposition
+    (q : ℝ) (hq : q ≠ 0) :
+    c5RationalMap (heckeSkein q) = c5Decomposition q := by
+  unfold c5RationalMap
+  rw [(c5_as_function_of_skein q hq).symm]
+
+/-- **`h² + 4 > 0` over `ℝ`** — the denominator in `c5RationalMap`
+    is positive for every real `h`, hence nonzero. Required for the
+    `c5RationalMap` to be well-defined as a function on `ℝ`. -/
+theorem h_sq_plus_four_pos (h : ℝ) : h^2 + 4 > 0 := by
+  have : h^2 ≥ 0 := sq_nonneg h
+  linarith
+
+/-- **`c5RationalMap` is well-defined for every real h** — the
+    denominator never vanishes. -/
+theorem h_sq_plus_four_ne_zero (h : ℝ) : h^2 + 4 ≠ 0 :=
+  ne_of_gt (h_sq_plus_four_pos h)
+
+/-- **c_5 classical limit via the rational map**: `c5RationalMap 0 = -5/4`.
+    Confirms the bridge: substituting `h = q - q⁻¹ = 0` at `q = 1`
+    gives the commutative-QOU value -5/4. -/
+theorem c5RationalMap_zero : c5RationalMap 0 = -5/4 := by
+  unfold c5RationalMap; norm_num
+
+/-- **c_5 at silver via the rational map**: at $h = 2$ (silver
+    ratio), `c5RationalMap 2 = -11/8`. Confirms the bridge at the
+    β-decay null point. -/
+theorem c5RationalMap_two : c5RationalMap 2 = -11/8 := by
+  unfold c5RationalMap; norm_num
+
+/-- **c_5 at golden via the rational map**: at $h = 1$ (golden
+    ratio), `c5RationalMap 1 = -13/10`. Confirms the bridge at
+    golden-ratio specialisation. -/
+theorem c5RationalMap_one : c5RationalMap 1 = -13/10 := by
+  unfold c5RationalMap; norm_num
+
 /-- **Commutative-QOU value of `c_5`.** At `q = 1`, `[2]_q = 2`,
     so `c_5(1) = -3/2 + 1/4 = -5/4`. The "-1/2" in the empirical
     decomposition is q-independent and SURVIVES the commutative
