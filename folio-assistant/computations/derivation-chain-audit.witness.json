@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T02:14:16.900575+00:00",
-  "commitSha": "9398aedb50b2b1579d210f237539f25efac2c159",
+  "computedAt": "2026-05-20T04:36:06.271823+00:00",
+  "commitSha": "08a19a0ef0658ef16413f53cb0cb97ab8bc26232",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2276,6 +2276,7 @@
         "confinement-operator-selection.witness.json",
         "constit-factor-and-volhyp.witness.json",
         "constit-factor-residual-phase5k.witness.json",
+        "constit-factor-varying-q-phase5k2.witness.json",
         "content-block-label-audit.witness.json",
         "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
@@ -2629,6 +2630,7 @@
         "qbeta-silver-ratio-pell-lucas-ck.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
         "residue-algebraic-verification.witness.json",
+        "rho-constit-equals-tau-M-proton-phase5l.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
         "rho-k-co-casimir-extended.witness.json",
