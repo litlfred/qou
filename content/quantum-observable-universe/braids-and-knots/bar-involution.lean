@@ -65,4 +65,107 @@ theorem decompose {R : Type*} [Field R] [BarInvolution R] (x : R) :
   unfold barSymmetricProjection barSkewProjection
   ring
 
+/-! ## Bar-grading algebraic structure (all PROVED, no `sorry`)
+
+The bar-involution induces a $\mathbb{Z}/2\mathbb{Z}$-grading on
+`R`: the bar-symmetric subspace is a subring (closed under +, ×),
+and bar-anti-symmetric satisfies anti × anti → sym, sym × anti → anti.
+
+Concrete corollaries used by the three-layer synthesis:
+- `h = q - q⁻¹` bar-anti-symmetric  ⟹  `h²` bar-symmetric (and `cosh(h)`, `Li_2^q` etc.)
+- `b² = (q⁴+q²+1)/(q²+1)²` bar-symmetric (proved on c5 sibling)
+- Even/odd powers of any bar-anti-symmetric element classify cleanly.
+-/
+
+section BarGrading
+variable {R : Type*} [CommRing R] [BarInvolution R]
+
+/-- `0` is bar-symmetric. -/
+theorem isBarSymmetric_zero : IsBarSymmetric (0 : R) := BarInvolution.bar_zero
+
+/-- `1` is bar-symmetric. -/
+theorem isBarSymmetric_one : IsBarSymmetric (1 : R) := BarInvolution.bar_one
+
+/-- Sum of bar-symmetric elements is bar-symmetric. -/
+theorem IsBarSymmetric.add {x y : R}
+    (hx : IsBarSymmetric x) (hy : IsBarSymmetric y) :
+    IsBarSymmetric (x + y) := by
+  unfold IsBarSymmetric at *
+  rw [BarInvolution.bar_add, hx, hy]
+
+/-- Product of bar-symmetric elements is bar-symmetric. -/
+theorem IsBarSymmetric.mul {x y : R}
+    (hx : IsBarSymmetric x) (hy : IsBarSymmetric y) :
+    IsBarSymmetric (x * y) := by
+  unfold IsBarSymmetric at *
+  rw [BarInvolution.bar_mul, hx, hy]
+
+/-- Sum of bar-anti-symmetric elements is bar-anti-symmetric. -/
+theorem IsBarAntiSymmetric.add {x y : R}
+    (hx : IsBarAntiSymmetric x) (hy : IsBarAntiSymmetric y) :
+    IsBarAntiSymmetric (x + y) := by
+  unfold IsBarAntiSymmetric at *
+  rw [BarInvolution.bar_add, hx, hy, neg_add]
+
+/-- **Anti-sym × anti-sym = bar-symmetric** — the key "even pair → even"
+    identity. Concretely produces $h^2$ bar-symmetric from $h$
+    bar-anti-symmetric; same identity that makes $\cosh(h)$ and
+    $\mathrm{Li}_2^q$ bar-symmetric. -/
+theorem IsBarSymmetric.of_mul_antisym {x y : R}
+    (hx : IsBarAntiSymmetric x) (hy : IsBarAntiSymmetric y) :
+    IsBarSymmetric (x * y) := by
+  unfold IsBarSymmetric IsBarAntiSymmetric at *
+  rw [BarInvolution.bar_mul, hx, hy]; ring
+
+/-- Sym × anti-sym = anti-sym. -/
+theorem IsBarAntiSymmetric.of_sym_mul {x y : R}
+    (hx : IsBarSymmetric x) (hy : IsBarAntiSymmetric y) :
+    IsBarAntiSymmetric (x * y) := by
+  unfold IsBarSymmetric IsBarAntiSymmetric at *
+  rw [BarInvolution.bar_mul, hx, hy]; ring
+
+/-- `bar (-x) = -bar x` — bar commutes with negation. -/
+theorem bar_neg (x : R) : BarInvolution.bar (-x) = -BarInvolution.bar x := by
+  have h0 : BarInvolution.bar x + BarInvolution.bar (-x) = 0 := by
+    rw [← BarInvolution.bar_add, add_neg_cancel]
+    exact BarInvolution.bar_zero
+  exact eq_neg_of_add_eq_zero_left h0
+
+/-- Negation of bar-symmetric is bar-symmetric. -/
+theorem IsBarSymmetric.neg {x : R} (hx : IsBarSymmetric x) :
+    IsBarSymmetric (-x) := by
+  unfold IsBarSymmetric at *
+  rw [bar_neg, hx]
+
+/-- Negation of bar-anti-symmetric is bar-anti-symmetric. -/
+theorem IsBarAntiSymmetric.neg {x : R} (hx : IsBarAntiSymmetric x) :
+    IsBarAntiSymmetric (-x) := by
+  unfold IsBarAntiSymmetric at *
+  rw [bar_neg, hx]; ring
+
+/-- **Even powers of a bar-anti-symmetric element are bar-symmetric.**
+    Direct corollary: `h^(2n)` is bar-symmetric for any bar-anti-sym `h`. -/
+theorem IsBarAntiSymmetric.pow_two_mul {x : R}
+    (hx : IsBarAntiSymmetric x) (n : ℕ) :
+    IsBarSymmetric (x ^ (2 * n)) := by
+  induction n with
+  | zero =>
+    have : x ^ (2 * 0) = 1 := by simp
+    rw [this]; exact isBarSymmetric_one
+  | succ k ih =>
+    have hrew : x ^ (2 * (k + 1)) = x ^ (2 * k) * (x * x) := by ring
+    rw [hrew]
+    exact ih.mul (IsBarSymmetric.of_mul_antisym hx hx)
+
+/-- **Odd powers of a bar-anti-symmetric element are bar-anti-symmetric.**
+    Direct corollary: `h^(2n+1)` is bar-anti-symmetric. -/
+theorem IsBarAntiSymmetric.pow_two_mul_add_one {x : R}
+    (hx : IsBarAntiSymmetric x) (n : ℕ) :
+    IsBarAntiSymmetric (x ^ (2 * n + 1)) := by
+  have hrew : x ^ (2 * n + 1) = x ^ (2 * n) * x := by ring
+  rw [hrew]
+  exact IsBarAntiSymmetric.of_sym_mul (hx.pow_two_mul n) hx
+
+end BarGrading
+
 end QOU.BraidKnot.BarInvolutionDef

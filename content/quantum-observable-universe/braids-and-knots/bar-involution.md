@@ -141,6 +141,43 @@ $c_5 = -b^2 - 1/2$ decomposition as the **bar-symmetric
 Wedderburn-block contribution from the non-sign sector** in the
 commutative limit — categorical content, not a quantum artifact.
 
+### Bar-grading algebraic structure (all PROVED in Lean, no `sorry`)
+
+The bar-involution induces a $\mathbb{Z}/2\mathbb{Z}$-grading on
+the underlying ring. The bar-symmetric subspace is a **subring**;
+the bar-anti-symmetric subspace is an $R^+$-module that satisfies
+the natural sign rules:
+
+| Combination | Result | Lean theorem |
+|---|---|---|
+| sym + sym | sym | `IsBarSymmetric.add` |
+| sym × sym | sym | `IsBarSymmetric.mul` |
+| anti + anti | anti | `IsBarAntiSymmetric.add` |
+| **anti × anti** | **sym** | `IsBarSymmetric.of_mul_antisym` |
+| sym × anti | anti | `IsBarAntiSymmetric.of_sym_mul` |
+| $-$sym | sym | `IsBarSymmetric.neg` |
+| $-$anti | anti | `IsBarAntiSymmetric.neg` |
+| $h^{2n}$ (h anti) | sym | `IsBarAntiSymmetric.pow_two_mul` |
+| $h^{2n+1}$ (h anti) | anti | `IsBarAntiSymmetric.pow_two_mul_add_one` |
+| $\mathrm{bar}(-x) = -\mathrm{bar}(x)$ | identity | `bar_neg` |
+
+These are **fully proved** from the four ring-involution axioms
+alone — no `sorry`, no auxiliary `Field` instance needed (only
+`CommRing`). They formalize previously narrative-only claims:
+
+- *"$h^2$ is bar-symmetric because $h$ is bar-anti-symmetric"* —
+  now `IsBarSymmetric.of_mul_antisym hx hx` for any
+  `hx : IsBarAntiSymmetric h`.
+- *"$\cosh(h) = (e^h + e^{-h})/2$ is even, hence bar-symmetric"* —
+  the formal-series structure that makes $\cosh$, $\cos$,
+  $\mathrm{Li}_2^q$ bar-symmetric reduces to repeated applications
+  of `pow_two_mul` and `add`.
+- *"The framework retains only the even part"* — the
+  bar-symmetric subspace is closed under the ring operations, so
+  applying $P_{\mathrm{avg}}$ to any sequence of operations
+  on bar-symmetric inputs lands in the bar-symmetric subspace
+  again.
+
 ### Falsifiability: silver vs golden $c_5$ outlier
 
 `folio-assistant/computations/qbeta_golden_ratio_fibonacci_probe.py`
