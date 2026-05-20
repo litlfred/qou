@@ -26,10 +26,133 @@
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-20T00:52:21.578Z",
-        "reviewed_sha": "37fc840b9098396e9f43e6d7a52dff28a94366ed"
+        "reviewed_at": "2026-05-20T02:05:32.956Z",
+        "reviewed_sha": "f86360bbd9827f05bbd7c8de4e7a761950aa1c94"
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:185: | Prediction | $B_\\mathrm{pred} = 2 \\cdot m_e \\cdot \\mathrm{Vol}(K_{8_{11}}) = 8.469$ MeV vs $B_\\mathrm{AME} = 8.482$.  **err = −0.16%**  ★ **best per-isotope**. | | content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:541: | $\\mathfrak{n}$ | 1 | 1 | L1-borromean-via-canonical | 🟢 substrate | mass | 939.5652 | 939.5654 | -0.251 ppm | — | | content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:549: | $\\mathfrak{p}$ | 1 | 0 | L1-borromean-via-canonical | 🟢 substrate | mass | 938.2719 | 938.2721 | -0.251 ppm | — | | content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:550: | ${}^{2}$H | 2 | 1 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 2.2488 | 2.2246 | +1.09 % | 1875.5882 MeV (-285.5 ppm) | | content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:551: | ${}^{3}$H | 3 | 2 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 8.4686 | 8.4818 | -0.16 % | 2808.9336 MeV (-177.4 ppm) |"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:25: | `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | ²H = $6_ | content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:173: **Deuterium ²H = D = $[\\mathfrak{p}, \\mathfrak{n}]_{L_H}$** | content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:241: **Carbon-12 ¹²C = $3 \\cdot {}^4\\mathrm{He} + 3 \\cdot c_{\\alpha\\alpha}$** | content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:329: | $c_{\\alpha\\alpha}$ | $\\alpha$–$\\alpha$ pair-energy correction (⁸Be, ¹²C, …, ⁴⁰Ca) |"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-20T02:29:29.163Z",
+        "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
     ]
   },
-  "updated_at": "2026-05-20T00:52:21.578Z"
+  "updated_at": "2026-05-20T02:29:29.163Z"
 }

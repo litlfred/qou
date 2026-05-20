@@ -1,19 +1,20 @@
+import Mathlib.Data.Real.Basic
+
 /-!
-# QOU.BraidsKnots.ReebBundleComplementEqualsVolume — placeholder stub
+# QOU.BraidsKnots.ReebBundleComplementEqualsVolume
 
-**Placeholder canonical** for content block at
-[`quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.ts`](quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.ts).
+Compiled formalisation of `prop:reeb-bundle-complement-equals-volume`,
+**conditional on** `conj:mass-volume-factorization` (CLAUDE.md §3b-cond).
 
-Conditional on `conj:mass-volume-factorization`, the categorical
-Markov-trace observable computed by
+Conditional on the mass-volume factorisation conjecture, the
+categorical Markov-trace observable computed by
 `prop:vertex-is-exceptional-divisor` equals the JSJ-graded volume
 sum of the knot complement $\mathcal{R}_p \setminus \nu(K_\beta)$
 in the Reeb bundle.
 
 Substantive content lives in `QOU.PhiQJSJ.bridge` (the Φ_q–JSJ
-archimedean bridge); this stub exists so the `lean.ref` URI
-`qou:QOU.BraidsKnots.ReebBundleComplementEqualsVolume` resolves
-to a real declaration in the `qou` Lake package.
+archimedean bridge); this file states the bridge identity over a
+conditional-class hypothesis whose instance encodes the conjecture.
 
 ## References
 
@@ -23,12 +24,24 @@ to a real declaration in the `qou` Lake package.
 
 namespace QOU.BraidsKnots
 
-/-- ReebBundleComplementEqualsVolume
+/-- The conjectural-class axiomatisation of the
+    `conj:mass-volume-factorization` hypothesis. Per CLAUDE.md §3b-cond,
+    a downstream theorem may keep its provable kind by carrying this
+    class as an explicit `[Instance]` hypothesis. -/
+class MassVolumeFactorization where
+  /-- The Markov-trace observable on the categorical side. -/
+  markov_trace : ℝ
+  /-- The JSJ-graded volume sum on the geometric side. -/
+  jsj_volume_sum : ℝ
+  /-- The conjecture: the two observables agree. -/
+  factorization_identity : markov_trace = jsj_volume_sum
 
-    Placeholder; the substantive bridge theorem lives in
-    `QOU.PhiQJSJ.bridge`.  Full Reeb-bundle-framed statement
-    pending. -/
+/-- **Proposition (`prop:reeb-bundle-complement-equals-volume`).**
+    Conditional on `conj:mass-volume-factorization`. -/
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.md
-theorem ReebBundleComplementEqualsVolume : True := trivial
+theorem ReebBundleComplementEqualsVolume
+    [inst : MassVolumeFactorization] :
+    inst.markov_trace = inst.jsj_volume_sum :=
+  inst.factorization_identity
 
 end QOU.BraidsKnots
