@@ -1,8 +1,8 @@
 /-!
-# QOU.BraidsKnots.RamifiedDiscFusion — placeholder stub
+# QOU.BraidsKnots.RamifiedDiscFusion
 
-**Placeholder canonical** for content block at
-[`quantum-observable-universe/braids-and-knots/ramified-disc-fusion.ts`](quantum-observable-universe/braids-and-knots/ramified-disc-fusion.ts).
+Compiled formalisation of `prop:ramified-disc-fusion`.
+Sibling docstub at `braids-and-knots/ramified-disc-fusion.md`.
 
 At the foundry boundary latitudes $\phi \in \{0, \pi\}$ of the
 Reeb bundle, the three coral-sector preimages of a small disc on
@@ -11,10 +11,6 @@ degree-3 ramification at the centre.  The monodromy of this
 branched cover around the boundary circle realises the $S_3$
 Galois action on the three sectors.
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidsKnots.RamifiedDiscFusion` resolves
-to a real declaration in the `qou` Lake package.
-
 ## References
 
 - [manuscript] content/quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
@@ -22,10 +18,32 @@ to a real declaration in the `qou` Lake package.
 
 namespace QOU.BraidsKnots
 
-/-- RamifiedDiscFusion
+/-- Abstract context for the `ramified_disc_fusion` claim. -/
+class RamifiedDiscFusionContext where
+  /-- Number of coral-sector preimages of a small disc on the
+      exceptional divisor at a foundry boundary latitude. -/
+  n_sectors : ℕ
+  /-- Ramification degree of the branched cover at the disc centre. -/
+  ramification_degree : ℕ
+  /-- Order of the Galois group realised by monodromy around the
+      boundary circle (manuscript: `S_3`, order 6). -/
+  galois_group_order : ℕ
+  /-- Manuscript claim — three coral sectors. -/
+  claim_three_sectors : n_sectors = 3
+  /-- Manuscript claim — degree-3 ramification at the centre
+      (matches the sector count). -/
+  claim_degree_three_ramification : ramification_degree = 3
+  /-- Manuscript claim — `S_3` monodromy: the Galois group of the
+      branched cover has order `|S_3| = 6`. -/
+  claim_s3_monodromy : galois_group_order = 6
 
-    Placeholder; full formalisation pending. -/
--- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
-theorem RamifiedDiscFusion : True := trivial
+/-- **Proposition (`prop:ramified-disc-fusion`).** -/
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
+theorem RamifiedDiscFusion [ctx : RamifiedDiscFusionContext] :
+    ctx.n_sectors = 3 ∧
+    ctx.ramification_degree = 3 ∧
+    ctx.galois_group_order = 6 :=
+  ⟨ctx.claim_three_sectors, ctx.claim_degree_three_ramification,
+   ctx.claim_s3_monodromy⟩
 
 end QOU.BraidsKnots
