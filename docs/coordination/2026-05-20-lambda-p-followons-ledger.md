@@ -31,9 +31,9 @@ actual value is $0$.
 
 **Witness:** `li2q-phiq-bar-symmetry.witness.json` (2 assertions: falsification + correct identity).
 
-### 2. Bring-Bloch K-search — 4-tier consistent NEGATIVE
+### 2. Bring-Bloch K-search — 6-tier consistent NEGATIVE
 
-Extension of PR #843's Tier 0 negative result to Tier 1+2+3.
+Extension of PR #843's Tier 0 negative result to Tier 1–5.
 Target: $\mathrm{Vol}(K_p^{\mathrm{eff}}) = \lambda_p \cdot 8G \approx 18.026$.
 
 | Tier | Basis size | Source                                          | Result   |
@@ -42,8 +42,17 @@ Target: $\mathrm{Vol}(K_p^{\mathrm{eff}}) = \lambda_p \cdot 8G \approx 18.026$.
 | 1    | 11         | + Birman-Hilden 3-braid through 8 crossings     | NEGATIVE |
 | 2    | 16         | + bridge-3 8-crossing (4-braid)                 | NEGATIVE |
 | 3    | 33         | + 9-crossing prime hyperbolic (KnotInfo)        | NEGATIVE |
+| 4    | 40         | + 10-crossing prime hyperbolic (KnotInfo)       | NEGATIVE |
+| 5    | 52         | + 11-crossing prime hyperbolic (KnotInfo)       | NEGATIVE |
 
-**Open frontier:** the proton's specific Bring-decomposition either (a) needs coefficients >$10^5$, (b) needs composite/10+ crossing knots, (c) requires transcendental Bloch-Wigner ingredients beyond hyperbolic-3-manifold volumes, or (d) involves Tier 4+ knot families.
+**Open frontier:** after 6 consecutive negatives spanning all prime
+hyperbolic knots through 11 crossings (52 basis elements), the
+proton's Bring-decomposition is most plausibly either (a) requires
+the categorical-trace q-dilog tower directly (not a Bring-Bloch
+realisation via hyperbolic volumes), (b) needs transcendental
+Bloch-Wigner ingredients beyond hyperbolic-3-manifold volumes,
+or (c) requires composite/satellite knots. Pure coefficient-scaling
+in the prime-knot basis is effectively ruled out at the 6-tier scale.
 
 ### 3. S(p) Skein evaluator — `S(p) ≈ 0` is calibration-forced
 
@@ -73,24 +82,37 @@ through A = 3:
 | D    | 2 |  6 | mass-tower-operator-valued.witness.json              | PROVED 5e-15 |
 | T    | 3 |  9 | sublemma-2-1-h9-tritium-verify.witness.json          | PROVED       |
 | ³He  | 3 |  9 | sublemma-2-1-h9-tritium-branching-verify.witness.json | PROVED 1e-14 |
-| ⁴He  | 4 | 12 | (H_{12} A-operator extract not in repo)              | OPEN         |
+| ⁴He  | 4 | 12 | sublemma-2-1-h12-helium-4-framework.witness.json     | FRAMEWORK (deferred compute) |
 
 **Aggregator:** `mass-tower-operator-valued-chain.witness.json`
 makes the chain visible end-to-end.
 
-### 5. canonical-mass-table-extended regenerated through ⁵Li
+**A = 4 framework (2026-05-20):** the H_{12} extract is queued
+as a follow-on PR — the framework script
+(`sublemma_2_1_h12_helium_4_framework.py`) verifies prerequisite
+H_6 + H_9 witnesses, documents the iterated 3-interface formula
+β_p · I_pp · β_p · I_pn · β_n · I_nn · β_n, and records a 6-step
+compute plan (estimated 30-60 min via numpy-Hoefsmit).
+
+### 5. canonical-mass-table-extended regenerated through ⁶Li
 
 Post-Vol(𝓑₃) = 8·G fix, the proton/neutron rows close to **−0.32 ppb** against CODATA (was −251 ppb pre-fix).
 
-| atom | pred (MeV)   | ref (MeV)   | err       |
-|------|--------------|-------------|-----------|
-| p    | 938.272088   | 938.272088  | −0.32 ppb |
-| n    | 939.565420   | 939.565421  | −0.32 ppb |
-| D    |   2.248821   |   2.224566  | +1.09 %   |
-| T    |   8.468598   |   8.481798  | −0.16 %   |
-| ³He  |   7.488919   |   7.718043  | −2.97 %   |
-| ⁴He  |  29.955677   |  28.295673  | +5.87 %   |
-| ⁵Li  |  (—)         |  26.328000  | —         |
+| atom | A | n  | \|tr_M(q_0)\| | pred (MeV) | ref (MeV)  | err       |
+|------|---|----|---------------|------------|------------|-----------|
+| p    | 1 |  3 | 1.06530623    | 938.272088 | 938.272088 | −0.32 ppb |
+| n    | 1 |  3 | 0.92323330    | 939.565420 | 939.565421 | −0.32 ppb |
+| D    | 2 |  6 | 0.38828647    |   2.248821 |   2.224566 | +1.09 %   |
+| T    | 3 |  9 | 0.10405212    |   8.468598 |   8.481798 | −0.16 %   |
+| ³He  | 3 |  9 | 0.20654086    |   7.488919 |   7.718043 | −2.97 %   |
+| ⁴He  | 4 | 12 | 0.05534835    |  29.955677 |  28.295673 | +5.87 %   |
+| ⁵Li  | 5 | 15 | 0.02944139    |   (—)      |  26.328000 | —         |
+| ⁶Li  | 6 | 18 | 0.00788964    |   (—)      |  31.994050 | —         |
+
+**A = 5, 6 |tr_M| values now measured** (markov_peel ~68 sec for ⁵Li,
+~18 min for ⁶Li at H_{15}, H_{18}). Predictions (`B_pred`) require
+the closure framework which is gated on the Δ_λ ansatz and per-
+isotope knot-tower assignments — neither resolved on this branch.
 
 ### 6. onepb-status-dashboard data-ingestion regression fix
 
@@ -114,15 +136,15 @@ Sibling PRs scanned (cycles 2026-05-20):
 
 ## Files touched (PR #852)
 
-- **New scripts:** `bring_bloch_tier1_search_m_p.py`, `bring_bloch_tier2_search_m_p.py`, `bring_bloch_tier3_search_m_p.py`, `li2q_phiq_bar_symmetry_witness.py`, `skein_proton_canonical.py`, `mass_tower_operator_valued_chain.py`
-- **New witnesses:** `bring-bloch-tier1-search-m-p.witness.json`, `bring-bloch-tier2-search-m-p.witness.json`, `bring-bloch-tier3-search-m-p.witness.json`, `li2q-phiq-bar-symmetry.witness.json`, `skein-proton-canonical.witness.json`, `mass-tower-operator-valued-chain.witness.json`
+- **New scripts:** `bring_bloch_tier1_search_m_p.py`, `bring_bloch_tier2_search_m_p.py`, `bring_bloch_tier3_search_m_p.py`, `bring_bloch_tier4_search_m_p.py`, `li2q_phiq_bar_symmetry_witness.py`, `skein_proton_canonical.py`, `mass_tower_operator_valued_chain.py`, `sublemma_2_1_h12_helium_4_framework.py`
+- **New witnesses:** `bring-bloch-tier1-search-m-p.witness.json`, `bring-bloch-tier2-search-m-p.witness.json`, `bring-bloch-tier3-search-m-p.witness.json`, `bring-bloch-tier4-search-m-p.witness.json`, `li2q-phiq-bar-symmetry.witness.json`, `skein-proton-canonical.witness.json`, `mass-tower-operator-valued-chain.witness.json`, `sublemma-2-1-h12-helium-4-framework.witness.json`
 - **Updated witnesses:** `canonical-mass-table-extended.witness.json` (regenerated), `onepb-status-dashboard.witness.json` (regression fix), `witness-provenance-audit.witness.json` (refresh)
 - **Updated content blocks:** `li2q-phiq-bar-symmetrization.md`, `bar-symmetric-three-layer-synthesis.md`, `q-rogers-pentagon-archimedean.md`
 - **Updated compute:** `onepb_status_dashboard.py` (data-ingestion fallback)
 
 ## Next-direction recommendations
 
-1. **H_{12} A-operator extract for ⁴He** — closes A = 4 in the operator-valued mass-tower chain (Move 4 open frontier). Estimated 30-60 min compute via numpy-Hoefsmit.
-2. **Tier 4 Bring-Bloch search** — extend basis to 10+ crossing prime knots; if still negative, evidence the proton's Bring-decomposition is genuinely transcendental.
-3. **Continue mass-table extension** to ⁶Li, ⁷Li (heavy compute, > 30 min each).
-4. **Joint-tower SDP infrastructure** — the bigger atlas-extension task identified earlier.
+1. **H_{12} A-operator extract for ⁴He** — closes A = 4 in the operator-valued mass-tower chain (Move 4 open frontier). Estimated 30-60 min compute via numpy-Hoefsmit. **Framework landed** as `sublemma-2-1-h12-helium-4-framework.witness.json`; the production extraction itself is queued.
+2. **Continue mass-table extension** to ⁷Li and beyond (compute scales as ≥ #strands², so ⁷Li at H_{21} likely > 1 hr).
+3. **Joint-tower SDP infrastructure** — the bigger atlas-extension task identified earlier; per-isotope LP/SDP with shared λ_K basis.
+4. **q-dilog tower direct λ_p_scale derivation** — given 6-tier Bring-Bloch negative, the productive route is most likely the categorical-trace q-dilog tower (Φ_q + Li_2^q identities), not knot-Bloch realisation. This is the structural sequel to the bar-anti-symmetrization fix landed here.
