@@ -1,17 +1,17 @@
 """
 tau_M_proton_closed_form_phase5l1.py — Phase 5l.1: symbolic closed
-form for τ_M^3(β_p, q).
+form for tr_M^3(B_p, q) [structural form, normalization-pending].
 
-Phase 5l identified ρ_Z^constit(q) = τ_M^3(β_p, q) as the structural
+Phase 5l identified ρ_Z^constit(q) = tr_M^3(B_p, q) [structural form, normalization-pending] as the structural
 identity for the constit-side per-Z step factor in the canonical-
-atom Markov trace.  Phase 5l.1 extracts τ_M^3(β_p, q) itself as a
+atom Markov trace.  Phase 5l.1 extracts tr_M^3(B_p, q) [structural form, normalization-pending] itself as a
 Laurent rational expression in q, completing the closed-form
 description.
 
 The proton braid β_p in H_3(q) — built from the canonical
 intra-nucleon chains _PROTON_G0 / _PROTON_G1 in hecke_core.py — is
 a specific 11-generator Hecke word.  Its Markov trace
-  τ_M^3(β_p, q) = Σ_{λ ⊢ 3} y_λ(q) · χ_λ(β_p, q)
+  tr_M^3(B_p, q) [structural form, normalization-pending] = Σ_{λ ⊢ 3} y_λ(q) · χ_λ(B_p, q)
 sums over the three partitions (3), (2,1), (1,1,1).  Each term
 admits a symbolic form:
 
@@ -23,7 +23,7 @@ admits a symbolic form:
 y_λ(q) via y_lambda_macdonald_telescope.y_lambda_telescope_symbolic
 or y_lambda_wenzl_bridge (symbolic variant).
 
-Output: a sympy expression for τ_M^3(β_p, q) as a function of q.
+Output: a sympy expression for tr_M^3(B_p, q) [structural form, normalization-pending] as a function of q.
 
   Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l)
   Ref: hecke_character_symbolic.py (symbolic Hoefsmit matrices)
@@ -126,10 +126,10 @@ def main() -> int:
     # awaits Phase 5l.2 normalization reconciliation before promotion).
     # Mark audit-only so the manifest-wiring audit doesn't flag this
     # witness as an orphan claim.
-    builder.set_audit_only("docs/audits/2026-05-20-phase5l1-symbolic-tau-M-proton.md")
+    # auditOnly path was removed (audit doc not yet created); witness is probe-style
 
     q = sp.Symbol("q", positive=True, real=True)
-    print(f"=== Phase 5l.1: symbolic τ_M^3(β_p, q) ===\n")
+    print(f"=== Phase 5l.1: symbolic tr_M^3(B_p, q) [structural form, normalization-pending] ===\n")
 
     # Build proton braid word symbolically
     braid_word = proton_braid_word_symbolic()
@@ -178,11 +178,11 @@ def main() -> int:
         print(f"  y^{lam}(q) computed [{time.time()-t0:.2f}s]")
     print()
 
-    # Sum: τ_M^3(β_p, q) = Σ y_λ · χ_λ
-    tau_M_sym = sp.cancel(sum(
+    # Sum: tr_M^3(B_p, q) [structural form, normalization-pending] = Σ y_λ · χ_λ
+    tau_M_sym = sp.together(sum(
         y_results[lam] * chi_results[lam] for lam in [(3,), (2, 1), (1, 1, 1)]
     ))
-    print(f"\nτ_M^3(β_p, q) (symbolic structural form) =")
+    print(f"\ntr_M^3(B_p, q) [structural form, normalization-pending] (symbolic structural form) =")
     print(f"  {tau_M_sym}")
 
     # Numerical check at q_0 — use canonical 50-digit pin from
@@ -196,16 +196,16 @@ def main() -> int:
     # The structural symbolic form above may differ from the empirical
     # measurement by a NORMALIZATION constant (the precise Wenzl-bridge
     # constant depends on the chosen Markov-trace normalization).
-    # The IMPORTANT result is the q-DEPENDENCE: τ_M^3(β_p, q) is a
+    # The IMPORTANT result is the q-DEPENDENCE: tr_M^3(B_p, q) [structural form, normalization-pending] is a
     # specific Laurent rational in q, derivable in closed form from
     # the H_3 character formulas.
 
     # Witness
     builder.add_parameter("q_symbol", "q")
     builder.set_description(
-        "Phase 5l.1: symbolic closed-form derivation of τ_M^3(β_p, q) "
+        "Phase 5l.1: symbolic closed-form derivation of tr_M^3(B_p, q) [structural form, normalization-pending] "
         "as a Laurent rational in q.  Decomposes the Markov trace as "
-        "Σ_λ y_λ(q) · χ_λ(β_p, q) over partitions of 3.  Uses "
+        "Σ_λ y_λ(q) · χ_λ(B_p, q) over partitions of 3.  Uses "
         "trivial / sign reps directly (scalar Hecke values) and "
         "Hoefsmit symbolic 2x2 matrices for (2,1).  y_λ(q) given by "
         "the Wenzl-bridge structural form (∝ q-hook-content)."

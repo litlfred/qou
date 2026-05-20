@@ -1,4 +1,4 @@
-**Proposition (Constit-side per-Z step factor = $\tau_M^3(\mathcal{B}_p)$).**
+**Proposition (Constit-side per-Z step factor = $\mathrm{tr}_M^3(\mathcal{B}_p)$).**
 
 *Let $\mathcal{B}_K^{\mathrm{vac}}$ be the disjoint Hecke product
 defining the constituent vacuum of atom $K = (Z, N)$ — per
@@ -9,16 +9,16 @@ $$
   \boxed{\;
     \rho_Z^{\mathrm{constit}}(q)
     \;:=\;
-    \frac{\tau_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
-         {\tau_M\!\bigl(\beta_{(Z, N)}^{\mathrm{constit}}\bigr)}
+    \frac{\mathrm{tr}_M\!\bigl(\mathcal{B}_{(Z+1, N)}^{\mathrm{vac}}\bigr)}
+         {\mathrm{tr}_M\!\bigl(\mathcal{B}_{(Z, N)}^{\mathrm{vac}}\bigr)}
     \;=\;
-    \tau_M\!\bigl(\mathcal{B}_p,\, H_3(q)\bigr)
+    \mathrm{tr}_M\!\bigl(\mathcal{B}_p,\, H_3(q)\bigr)
   \;}
   \tag{$\dagger$}
 $$
 *for all $q$ in the substrate window, where $\mathcal{B}_p \in H_3(q)$
 is the canonical 3-strand proton braid (intra-nucleon crossings
-only) and $\tau_M$ is the Jones–Markov trace.*
+only) and $\mathrm{tr}_M$ is the Jones–Markov trace.*
 
 ### Proof
 
@@ -45,29 +45,29 @@ denoting parabolic embedding into $H_{3A}(q)$ with $A = Z + N$.
 $\alpha \in H_n(q)$ and $\beta \in H_m(q)$ acting on **disjoint
 strand sets** inside $H_{n+m}(q)$,
 $$
-  \tau_M(\alpha \otimes \beta) \;=\; \tau_M(\alpha) \cdot \tau_M(\beta).
+  \mathrm{tr}_M(\alpha \otimes \beta) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta).
 $$
 Applying this inductively across the $A = Z + N$ disjoint nucleon
 blocks of $\mathcal{B}_K^{\mathrm{vac}}$,
 $$
-  \tau_M\!\bigl(\mathcal{B}_K^{\mathrm{vac}}\bigr)
-    \;=\; \prod_{k=1}^{Z} \tau_M(\mathcal{B}_p^{(k)})
-    \cdot \prod_{k=1}^{N} \tau_M(\mathcal{B}_n^{(k)}).
+  \mathrm{tr}_M\!\bigl(\mathcal{B}_K^{\mathrm{vac}}\bigr)
+    \;=\; \prod_{k=1}^{Z} \mathrm{tr}_M(\mathcal{B}_p^{(k)})
+    \cdot \prod_{k=1}^{N} \mathrm{tr}_M(\mathcal{B}_n^{(k)}).
 $$
 Since all proton blocks are isomorphic ($\mathcal{B}_p^{(k)} = \mathcal{B}_p$ as
 abstract H_3 braids) and likewise all neutron blocks
 ($\mathcal{B}_n^{(k)} = \mathcal{B}_n$),
 $$
-  \tau_M\!\bigl(\mathcal{B}_K^{\mathrm{vac}}\bigr)
-    \;=\; \tau_M(\mathcal{B}_p)^Z \cdot \tau_M(\mathcal{B}_n)^N.
+  \mathrm{tr}_M\!\bigl(\mathcal{B}_K^{\mathrm{vac}}\bigr)
+    \;=\; \mathrm{tr}_M(\mathcal{B}_p)^Z \cdot \mathrm{tr}_M(\mathcal{B}_n)^N.
 $$
 The per-Z step ratio then satisfies
 $$
   \rho_Z^{\mathrm{constit}}(q)
     \;=\;
-    \frac{\tau_M(\mathcal{B}_p)^{Z+1} \cdot \tau_M(\mathcal{B}_n)^N}
-         {\tau_M(\mathcal{B}_p)^Z \cdot \tau_M(\mathcal{B}_n)^N}
-    \;=\; \tau_M(\mathcal{B}_p),
+    \frac{\mathrm{tr}_M(\mathcal{B}_p)^{Z+1} \cdot \mathrm{tr}_M(\mathcal{B}_n)^N}
+         {\mathrm{tr}_M(\mathcal{B}_p)^Z \cdot \mathrm{tr}_M(\mathcal{B}_n)^N}
+    \;=\; \mathrm{tr}_M(\mathcal{B}_p),
 $$
 yielding $(\dagger)$. $\square$
 
@@ -78,7 +78,7 @@ Direct measurement at five $q$-values in the substrate window via
 recomputing $y_\lambda(q)$ (Wenzl bridge) and
 $\chi_\lambda(\beta, q)$ (Hecke characters) at each $q$:
 
-| $q$ | $\tau_M^3(\mathcal{B}_p, q)$ | $\rho_Z^{\mathrm{constit}}(q)$ | rel. err. |
+| $q$ | $\mathrm{tr}_M^3(\mathcal{B}_p, q)$ | $\rho_Z^{\mathrm{constit}}(q)$ | rel. err. |
 |---|---:|---:|---:|
 | $1.050$ | $0.79284191942392$ | $0.79284191942392$ | $1.69 \times 10^{-51}$ |
 | $1.080$ | $0.99328958564705$ | $0.99328958564705$ | $1.08 \times 10^{-50}$ |
@@ -97,36 +97,36 @@ $y_\lambda \cdot \chi_\lambda$ measurement pipeline shared with PR
 
 | Result | Status |
 |---|---|
-| [`conj:constit-factor-2q-minus-1`](#conj:constit-factor-2q-minus-1) (Phase 5g, PR #831) | RESOLVED — $(2q - 1)$ was a numerical coincidence at $q_0$ ($\tau_M^3(\mathcal{B}_p, q_0) \approx 1.220 \approx 2 q_0 - 1$), not a global structural identity.  Phase 5l ($\dagger$) is the correct closed form. |
-| Phase 5k.1 unit-coefficient $h^5$ (PR #831) | RESOLVED — same coincidence: $\tau_M^3(\mathcal{B}_p, q_0) - (2 q_0 - 1) \approx h^5(q_0)$ at $q_0$ only, not globally. |
+| [`conj:constit-factor-2q-minus-1`](#conj:constit-factor-2q-minus-1) (Phase 5g, PR #831) | RESOLVED — $(2q - 1)$ was a numerical coincidence at $q_0$ ($\mathrm{tr}_M^3(\mathcal{B}_p, q_0) \approx 1.220 \approx 2 q_0 - 1$), not a global structural identity.  Phase 5l ($\dagger$) is the correct closed form. |
+| Phase 5k.1 unit-coefficient $h^5$ (PR #831) | RESOLVED — same coincidence: $\mathrm{tr}_M^3(\mathcal{B}_p, q_0) - (2 q_0 - 1) \approx h^5(q_0)$ at $q_0$ only, not globally. |
 | Phase 5k.2 varying-q falsification (this PR §5k.2) | CONSISTENT — the falsification of $(2q - 1)$ was the bridge to identifying $(\dagger)$ as the actual structural form. |
 
-### Combined per-Z step at the full $\tau_M$ level
+### Combined per-Z step at the full $\mathrm{tr}_M$ level
 
 Combining $(\dagger)$ with the interface-knot factor $z$ from
 [`prop:interface-knot-markov-z`](#prop:interface-knot-markov-z)
-gives the **exact** full $\tau_M$ per-Z step at a p-$\ast$ boundary:
+gives the **exact** full $\mathrm{tr}_M$ per-Z step at a p-$\ast$ boundary:
 $$
   \boxed{\;
-    \frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})}
-    \;=\; z(q) \cdot \tau_M^3(\mathcal{B}_p, q)
+    \frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})}
+    \;=\; z(q) \cdot \mathrm{tr}_M^3(\mathcal{B}_p, q)
   \;}
 $$
 — no $O(h^k)$ residuals.  This is the substrate-derived "Z-step
-factor" in fully closed form at the $\tau_M$ level, living in a
+factor" in fully closed form at the $\mathrm{tr}_M$ level, living in a
 different spectral channel of $H_n(q)$ than the
 $|\Delta_\lambda^*|$-level conjecture
 [`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction).
 
 ### Open questions
 
-1. **Closed form for $\tau_M^3(\mathcal{B}_p, q)$ as a substrate primitive.**
+1. **Closed form for $\mathrm{tr}_M^3(\mathcal{B}_p, q)$ as a substrate primitive.**
    $(\dagger)$ reduces the per-Z step factor to a per-proton H_3
    Markov-trace evaluation.  The next step is to characterise
-   $\tau_M^3(\mathcal{B}_p, q)$ itself as a substrate-derived function —
+   $\mathrm{tr}_M^3(\mathcal{B}_p, q)$ itself as a substrate-derived function —
    the proton braid is a specific Hecke word $(\sigma_1)^{6} \cdot
    (\sigma_2^{-1})^{3} \cdot \sigma_2$ (modulo averaged crossings),
-   so $\tau_M^3(\mathcal{B}_p, q)$ is a closed-form rational/Laurent
+   so $\mathrm{tr}_M^3(\mathcal{B}_p, q)$ is a closed-form rational/Laurent
    expression in $q$.  Phase 5l.1 (queued): extract this expression
    symbolically.
 

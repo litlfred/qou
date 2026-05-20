@@ -1,14 +1,14 @@
 > **✓ RESOLVED 2026-05-20 (Phase 5l): see
 > [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity).**
 > The correct closed form for the constit-side per-Z step factor
-> is $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\mathcal{B}_p, q)$, the
+> is $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$, the
 > proton's H_3 Markov trace — a structural identity derivable from
 > Wenzl's disjoint Markov-trace multiplicativity (Wenzl 1988 §1.7),
-> empirically verified at machine precision ($\sim 10^{-15}$) across
+> empirically verified at mpfr-50-dps precision ($\sim 10^{-50}$) across
 > the substrate window in [Phase 5l](../../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py).
 >
 > The $(2q - 1)$ form below is now understood as a numerical
-> coincidence at $q_0$: $\tau_M^3(\mathcal{B}_p, q_0) \approx 1.2204$
+> coincidence at $q_0$: $\mathrm{tr}_M^3(\mathcal{B}_p, q_0) \approx 1.2204$
 > happens to be close to $2 q_0 - 1 = 1.2200$, but the two
 > functions diverge away from $q_0$ (rel. err. 28% at $q = 1.05$
 > and 33% at $q = 1.17$ — see Phase 5k.2 (this PR) for the
@@ -63,8 +63,8 @@ interface generators), per [`def:ew-interface-knot`](#def:ew-interface-knot).
 The **constit-side per-Z step** is the ratio*
 $$
   \rho_Z^{\mathrm{constit}}(q) \;:=\;
-    \frac{\tau_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
-         {\tau_M\!\bigl(\beta_{(Z, N)}^{\mathrm{constit}}\bigr)}
+    \frac{\mathrm{tr}_M\!\bigl(\mathcal{B}_{(Z+1, N)}^{\mathrm{vac}}\bigr)}
+         {\mathrm{tr}_M\!\bigl(\mathcal{B}_{(Z, N)}^{\mathrm{vac}}\bigr)}
 $$
 *— independent of $N$ since the constit factorisation is disjoint in $Z$
 and $N$.*
@@ -118,16 +118,16 @@ $q$-deformation of the unit** — the categorical "rate of growth"
 per added proton in the disjoint Hecke product, measured at $H_3$
 per added 3-strand block.
 
-### Combined per-Z step at the full $\tau_M$ level
+### Combined per-Z step at the full $\mathrm{tr}_M$ level
 
 Combining $(\star\star)$ with the interface-knot factor $z = 1/(q^{1/2}
 + q^{-1/2})$ from
 [`prop:interface-knot-markov-z`](#prop:interface-knot-markov-z) gives
-the per-Z step at the **full $\tau_M$ level** (adding a proton at a
+the per-Z step at the **full $\mathrm{tr}_M$ level** (adding a proton at a
 p-* boundary):
 $$
   \boxed{\;
-    \frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})}
+    \frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})}
     \;=\; z \cdot (2q - 1) \,+\, O(h^{4})
     \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^{4})
   \;}
@@ -137,7 +137,7 @@ to $0.0001\%$ in Phase 5c.1.
 
 ### Relation to `conj:alpha-cosh-h-z-step-correction`
 
-$(\star\star)$ lives at the **full $\tau_M$** level, complementing
+$(\star\star)$ lives at the **full $\mathrm{tr}_M$** level, complementing
 [`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction)
 which states that the per-Z step factor in the **single-block
 $|\Delta_\lambda^*|$** extraction is $[3]_q^2 \cdot \cosh(h)$ (to
@@ -146,14 +146,14 @@ extraction levels of the same Hecke algebra:
 
 | level | per-Z step factor | conjecture |
 |---|---|---|
-| full $\tau_M(\mathcal{B}_K)$ | $z \cdot (2q - 1) + O(h^4)$ | $(\star\star)$ — this block |
+| full $\mathrm{tr}_M(\mathcal{B}_K)$ | $z \cdot (2q - 1) + O(h^4)$ | $(\star\star)$ — this block |
 | single-block $\|\Delta_\lambda^*\|$ | $[3]_q^2 \cdot \cosh(h) + O(?)$ | `conj:alpha-cosh-h-z-step-correction` |
 
 Phase 5h's negative result confirms the separation: injecting
 $\cosh(h)$ at the depth-stratified $\Phi_k$ level does **not** close
 the residual $1.54\times$ variance in the full formula — that
 residual lives at the $|\Delta_\lambda^*|$ layer (per Phase 5b), not
-the $\tau_M$ layer where $(\star\star)$ is exact-to-$O(h^4)$.
+the $\mathrm{tr}_M$ layer where $(\star\star)$ is exact-to-$O(h^4)$.
 
 ### Bar-symmetry
 
@@ -220,7 +220,7 @@ $(2q - 1)$ alone).
    measured ratio grows from $\rho(1.05) = 0.79$ to $\rho(1.17) = 1.79$
    — a factor of $2.26\times$ across only $0.12$ in $q$, much steeper
    than $(2q-1)$.  **Phase 5l RESOLVED this**: the actual closed form
-   is $\rho_Z^{\mathrm{constit}}(q) = \tau_M^3(\mathcal{B}_p, q)$ — exact,
+   is $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$ — exact,
    not "non-polynomial combination plus z-factors".  See
    [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity)
    for the Wenzl-derivation and machine-precision verification.
