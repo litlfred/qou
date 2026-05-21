@@ -403,9 +403,9 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
     from hecke_core import h as _h_num
     from q_parameter import Q_50_DIGIT_STR
 
-    # Parity guard: low-A atoms stay on the canonical LaurentQ
+    # Parity guard: very-low-A atoms stay on the canonical LaurentQ
     # reference path until Rust reducer normal forms are bit-identical.
-    if Z + N <= 2:
+    if Z + N <= 5:
         from laurent_q_trace import tr_M_atomic_lq
         tr_ref = tr_M_atomic_lq(
             Z, N, include_inter=include_inter, max_iterations=max_iterations_per_step
