@@ -733,7 +733,44 @@ export function checkProofNoTrivialSkeleton(
     audit.flagged[leanChapter] ??
     audit.flagged[leanAbs];
   if (!flagged || flagged.length === 0) return { result: "pass", hits: [] };
-  const source = readFileSync(leanPath, "utf-8").split(/\r?\n/);
+  const stripLeanComments = (text: string): string => {
+    let out = "";
+    let i = 0;
+    let blockDepth = 0;
+    while (i < text.length) {
+      const c = text[i];
+      const n = text[i + 1] ?? "";
+      if (blockDepth > 0) {
+        if (c === "/" && n === "-") {
+          blockDepth += 1;
+          i += 2;
+          continue;
+        }
+        if (c === "-" && n === "/") {
+          blockDepth -= 1;
+          i += 2;
+          continue;
+        }
+        if (c === "\n") out += "\n";
+        i += 1;
+        continue;
+      }
+      if (c === "/" && n === "-") {
+        blockDepth = 1;
+        i += 2;
+        continue;
+      }
+      if (c === "-" && n === "-") {
+        i += 2;
+        while (i < text.length && text[i] !== "\n") i += 1;
+        continue;
+      }
+      out += c;
+      i += 1;
+    }
+    return out;
+  };
+  const source = stripLeanComments(readFileSync(leanPath, "utf-8")).split(/\r?\n/);
   const normalize = (s: string) => s.replace(/\s+/g, " ").trim();
   // Guard against stale audit rows: only fail when the captured snippet
   // still appears at (or very near) the recorded location.
