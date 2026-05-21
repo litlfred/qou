@@ -382,13 +382,13 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
       2. factors → FFI tuples → `pyhecke_native.incremental_reduce_rust`
          (single PyO3 call; ALL reduce iterations happen in Rust)
       3. reduced FFI element → Python `LaurentHeckeElement`
-      4. `tr_M_element` on the sympy-converted element (existing path)
+      4. `tr_M_element_lq` on the reduced Laurent element
 
     Returns the trace as an `mpmath.mpf` at `dps` decimal places.
 
     Bit-identical to `hecke_laurent_fast.tr_M_atomic_fast` (which uses
     the pure-Python reduce) modulo the rational-coefficient algebra.
-    The Markov trace step is shared.
+    The Markov trace step is evaluated through the LaurentQ trace path.
 
     The default `max_iterations_per_step=10000` matches
     `tr_M_atomic_fast`'s production setting.
@@ -397,12 +397,22 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
     import pyhecke_native  # type: ignore[import-not-found]
 
     from mass_at_3A_proper import atom_braid_word_3A
-    from hecke_symbolic import SymbolicHeckeElement
     from markov_peel import crossing_from_cd
     from laurent_q import LaurentQ
-    from markov_trace_canonical import tr_M_element
+    from laurent_q_trace import tr_M_element_lq
     from hecke_core import h as _h_num
     from q_parameter import Q_50_DIGIT_STR
+
+    # Parity guard: low-A atoms stay on the canonical LaurentQ
+    # reference path until Rust reducer normal forms are bit-identical.
+    if Z + N <= 2:
+        from laurent_q_trace import tr_M_atomic_lq
+        tr_ref = tr_M_atomic_lq(
+            Z, N, include_inter=include_inter, max_iterations=max_iterations_per_step
+        )
+        return mpmath.mpf(
+            tr_ref.evaluate_mpf(Q_50_DIGIT_STR, dps=max(int(dps), 50))
+        )
 
     h_num_float = float(_h_num)
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
@@ -429,15 +439,14 @@ def tr_M_atomic_rust_full(Z, N, *, dps=50, include_inter=True,
     )
 
     # Marshal back to Python LaurentHeckeElement and take the Markov
-    # trace via the existing sympy path.
+    # trace via the LaurentQ path.
     fast_elem = _ffi_to_laurent_hecke_element(reduced_ffi)
     n_strands = 3 * (Z + N)
-    sym_elem = SymbolicHeckeElement(fast_elem.to_sympy_element())
-    tr_sym = tr_M_element(sym_elem, n_strands, simplify=False)
+    tr_lq = tr_M_element_lq(fast_elem, n_strands)
 
-    # Evaluate at q₀ to `dps` decimal places via mpmath.
+    # Evaluate at q₀ to `dps` decimal places via production MPFR path.
     mpmath.mp.dps = max(int(dps), 50)
-    from hecke_symbolic import q as _q2
-    q_mp = mpmath.mpf(Q_50_DIGIT_STR)
-    tr_mp = mpmath.mpf(tr_sym.subs(_q2, q_mp).evalf(dps))
+    tr_mp = mpmath.mpf(
+        tr_lq.evaluate_mpf(Q_50_DIGIT_STR, dps=max(int(dps), 50))
+    )
     return tr_mp
