@@ -598,6 +598,8 @@ jobs:
             # Only copy appendix-related PDFs (those generated from standalone-*.tex)
             if [ -f "standalone-${apdf%.pdf}.tex" ] || echo "$apdf" | grep -qE '^(glossary|appendix-|index-of-)'; then
               cp "$apdf" "${PAPER_OUTDIR}/${apdf}"
+              mkdir -p "${PAPER_OUTDIR}/chapters"
+              cp "$apdf" "${PAPER_OUTDIR}/chapters/${apdf}"
               echo "  ✓ Appendix: ${apdf}"
             fi
           done

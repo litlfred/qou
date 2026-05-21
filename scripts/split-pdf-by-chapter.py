@@ -3,7 +3,7 @@
 
 Reads top-level outline (bookmarks) from a compiled main.pdf and slices
 the document into smaller per-chapter PDFs, plus a bundled front-matter
-PDF (front matter + notation + glossary + index).
+PDF (front matter aggregate).
 
 Per-appendix PDFs are produced upstream by direct `pdflatex` of
 `standalone-*.tex` files and are NOT touched by this script.
@@ -20,10 +20,8 @@ Chapter list is taken from the paper manifest
 assumed to match the chapter order in the manifest, **after excluding**
 any chapters marked as appendices (their PDFs are produced standalone).
 
-Front matter chapters (introduction, notation, glossary,
-index-of-definitions) are merged into a single front-matter PDF per
-the user's request "one for the front matter, glossary, notation,
-index".
+Front matter chapters are still emitted as individual chapter PDFs when
+they exist in main.pdf, and also aggregated into front-matter.pdf.
 
 Outputs (in --out-dir, default = current directory):
     <slug>.pdf                   — one per main chapter
@@ -289,25 +287,10 @@ def main() -> int:
             next_page = next_outline_page_after_last
         ranges.append((slug, title, page, next_page))
 
-    # Identify the content-chapter region.  Front-matter chapters
-    # (introduction / notation / glossary / index-of-definitions) are
-    # NOT emitted as standalone PDFs; instead the *page range* containing
-    # them is bundled into front-matter.pdf along with the document's
-    # unbookmarked head (title page, TOC, abstract) and tail.  This is
-    # robust to front-matter chapters either matching their own bookmark
-    # or being absorbed into the unbookmarked head.
-    content_ranges = [r for r in ranges if r[0] not in FRONT_MATTER_GROUP]
-    if not content_ranges:
-        print("ERROR: no content chapters matched bookmarks "
-              "(only front-matter chapters matched).", file=sys.stderr)
-        return 1
-
-    first_content_start = content_ranges[0][2]
-    last_content_end = content_ranges[-1][3]
-
-    # Write per-chapter PDFs for content chapters.
+    # Write per-chapter PDFs for all matched chapters (including front matter
+    # chapters when they are present in main.pdf).
     outputs = []
-    for slug, title, start, end in content_ranges:
+    for slug, title, start, end in ranges:
         dest = out_dir / f"{slug}.pdf"
         slice_pdf(reader, start, end, dest)
         outputs.append({"slug": slug, "title": title,
@@ -315,8 +298,14 @@ def main() -> int:
                         "path": str(dest.name)})
         print(f"  [chapter] {slug}: pages {start + 1}–{end} → {dest.name}")
 
+    non_front_ranges = [r for r in ranges if r[0] not in FRONT_MATTER_GROUP]
+    if non_front_ranges:
+        first_content_start = non_front_ranges[0][2]
+    else:
+        first_content_start = total_pages
+
     # Build front-matter bundle = pages [0, first_content_start).
-    # We deliberately do NOT include the tail [last_content_end, total_pages):
+    # We deliberately do NOT include the tail [*, total_pages):
     # in QOU's render the tail contains stray appendix bookmarks (Q-Value,
     # Surreal, Appendix B references) that already have their own standalone
     # PDFs from step 2c. Glossary and index-of-definitions live in the head
