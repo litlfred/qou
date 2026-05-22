@@ -1,3 +1,10 @@
+> **Archimedean specialisation (CLAUDE.md §7c).** The Lean encoding
+> of this conjecture works over $\mathbb{R}$ — both the `q : ℝ`
+> parameter and the `Real.sqrt` evaluation are archimedean-specific.
+> The conjecture's structural content (the closed-form $\rho_Z(q)$
+> shape) is a numerical claim at the substrate $q_0 \in \mathbb{R}$,
+> not a generic-ring identity.
+>
 > **Resolved (Phase 5l, 2026-05-20): see
 > [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity).**
 > The correct closed form for the constit-side per-Z step factor
