@@ -1,14 +1,14 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T04:45:24.573779+00:00",
-  "commitSha": "60882ea0ab37ece3eac2f57e2c423351e6828890",
+  "computedAt": "2026-05-22T14:52:17.513977+00:00",
+  "commitSha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 59,
   "computation": "canonical-isotope-witness-Z01",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "47ef4dceb05e",
+  "scriptHash": "8741bbbd4e0b",
   "scriptCommitSha": "befa7a1642b80f9a56cf48bc40b664254566a77e",
   "description": "Per-Z=1 shard of the recursive atom-knot atlas. Element: H. Covers every (Z=1, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
@@ -28,11 +28,11 @@
         "element": "H",
         "prediction_type": "mass",
         "layer": "L1-borromean-via-canonical",
-        "canonical_status": "canonical-substrate",
-        "prediction_MeV_50dps": "938.2718526368309",
+        "canonical_status": "borromean-tower-via-fitted-lambda",
+        "prediction_MeV_50dps": "938.2720878613554",
         "reference_MeV_50dps": 938.27208816,
-        "err_MeV": -0.00023552316906716442,
-        "err_ppm": -0.2510179851230974,
+        "err_MeV": -2.9864452244510176e-07,
+        "err_ppm": -0.0003182920244710243,
         "ame_reference": {
           "B_AME_keV": 0.0,
           "mass_excess_keV": 7288.971064,
@@ -54,10 +54,10 @@
         "err_pct": 1.090306724283319,
         "err_ppm": 10903.06724283319,
         "composite_mass": {
-          "M_pred_MeV": 1875.588689818595,
+          "M_pred_MeV": 1875.588687282958,
           "M_AME_MeV": 1876.123927735323,
-          "err_MeV": -0.5352379167279651,
-          "err_ppm": -285.2892118774121,
+          "err_MeV": -0.5352404523648602,
+          "err_ppm": -285.2905634069446,
           "canonical_status": "canonical-with-empirical-assignment",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -85,10 +85,10 @@
         "err_pct": -0.15560163384945264,
         "err_ppm": -1556.0163384945263,
         "composite_mass": {
-          "M_pred_MeV": 2808.934333712086,
+          "M_pred_MeV": 2808.9343299077573,
           "M_AME_MeV": 2809.4321181576593,
-          "err_MeV": -0.4977844455734157,
-          "err_ppm": -177.183297064265,
+          "err_MeV": -0.497788249901987,
+          "err_ppm": -177.18465119150895,
           "canonical_status": "canonical-with-empirical-assignment",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -230,11 +230,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "dfe598c57f241559378fef2d96c95013ec074ed2127a867a795202cbd714d30d",
-        "size_bytes": 51154,
-        "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
-        "scriptCommitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
-        "computedAt": "2026-05-19T03:04:06.897651+00:00"
+        "sha256": "c7b4ca360a98e787b918934e29d5b5f0e389f5ea8d160cbd7101dc8d0eb2f180",
+        "size_bytes": 51153,
+        "commitSha": "2d570b32c2661ca014c16667202d76a138c4114d",
+        "scriptCommitSha": "123d8860d2ac92c38a1559007a8c91be78cf35a9",
+        "computedAt": "2026-05-20T07:38:07.240140+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
@@ -254,11 +254,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "cd305db00f5a7393f74ec4fdbe1762c28bdf80028494dff59765d688711ec85e",
-        "size_bytes": 4632,
-        "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
-        "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
-        "computedAt": "2026-05-20T03:15:55.773785+00:00"
+        "sha256": "7982942be3b0dbc356bdb9a09d5bba979f03e0aefc3020c4d1cc94e79d6b45a1",
+        "size_bytes": 5032,
+        "commitSha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
+        "scriptCommitSha": "9e5e6ab8ae93a5158781cd86ec7d080ef96df5de",
+        "computedAt": "2026-05-22T14:51:35.913199+00:00"
       },
       {
         "path": "ame2020.json",
