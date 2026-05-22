@@ -89,7 +89,7 @@ truncated $\cos$ / $\cosh$ / Li_2^q expansions in $X$, and
 extend to `RatFunc R = FractionRing (R[X])` for rational-function
 functors. Polynomial-level truncation work is `sorry`-free.
 
-## Proofs (Lean ↔ paper bridge)
+## Proofs (Lean $\leftrightarrow$ paper bridge)
 
 Every Lean theorem below has both a narrative proof here and a
 fully formalised Lean proof in [`polynomial-bar-involution.lean`](polynomial-bar-involution.lean).

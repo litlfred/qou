@@ -33,7 +33,7 @@ that the recursive reducer does not directly expose.
 
 The two formulas — recursive Markov-axiom ascent, and
 partition-sum Wedderburn — must agree. The agreement was previously
-**broken** at q ≠ 1 by a wrong character convention: the legacy
+**broken** at q $\ne$ 1 by a wrong character convention: the legacy
 `schur_weyl_symbolic.specht_character_atomic` returned the q = 1
 classical Murnaghan–Nakayama character $\chi^\lambda_{\mathrm{MN}}(\pi(\beta))$
 instead of the q-Hecke character $\chi^\lambda_q(\beta)$. That bug
@@ -60,7 +60,7 @@ Both are now fixed (PR #572):
 [`folio-assistant/computations/tr_m_q_hecke_seminormal.py`](../../../folio-assistant/computations/tr_m_q_hecke_seminormal.py)
 produces
 [`tr-m-q-hecke-seminormal.witness.json`](../../../folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json)
-(10 / 10 assertions pass — five atoms × two tolerance bands at
+(10 / 10 assertions pass — five atoms $\times$ two tolerance bands at
 $10^{-3}$ and $10^{-6}$):
 
 | Atom | $|\mathrm{tr}_M|$ canonical | partition-sum (q-Hecke) | rel err |

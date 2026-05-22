@@ -9,9 +9,9 @@ $c_\lambda \in \mathbb{Q}(q^2)$.*
 | Partition | $\chi(\sigma)/h$ | Note |
 |:---------:|:----------------:|:----:|
 | $[2,1]$ | $1$ | standard rep |
-| $[3,1,1]$ | $3$ | H₅ Wigner |
-| $[3,2,1]$ | $8$ | H₆ dominant (36% Plancherel) |
-| $[4,1,1,1]$ | $10$ | H₇ self-conjugate |
+| $[3,1,1]$ | $3$ | H$_{5}$ Wigner |
+| $[3,2,1]$ | $8$ | H$_{6}$ dominant (36% Plancherel) |
+| $[4,1,1,1]$ | $10$ | H$_{7}$ self-conjugate |
 
 *Pair characters (exact in $q$):*
 

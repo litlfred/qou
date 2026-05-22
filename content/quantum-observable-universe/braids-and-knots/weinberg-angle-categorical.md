@@ -77,7 +77,7 @@ $$
 
 The Hoefsmit-projector trace at the (sym, sym, sym) pure pattern
 (multiplicity 4) gives, on the W and B slots:
-- $\mathrm{tr}_M(e_W^{+} \cdot \sigma_1^4) \stackrel{?}{=} 4 \cdot q^{4}$ (sym contribution × pattern multiplicity)
+- $\mathrm{tr}_M(e_W^{+} \cdot \sigma_1^4) \stackrel{?}{=} 4 \cdot q^{4}$ (sym contribution $\times$ pattern multiplicity)
 - $\mathrm{tr}_M(e_B^{+} \cdot \sigma_5^8) \stackrel{?}{=} 4 \cdot q^{8}$
 
 Ratio $\cot\theta_W \stackrel{?}{=} q^{4 - 8} = q^{-4}$. At $q_0

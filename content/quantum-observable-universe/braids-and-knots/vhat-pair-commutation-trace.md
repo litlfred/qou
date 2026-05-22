@@ -160,7 +160,7 @@ by `mul_comm` on the underlying commutative ring.
 
 This block closes audit GAP 17a
 ([line 113 of `derivation-audit-2026-04-20.md`](../../../docs/audits/derivation-audit-2026-04-20.md))
-and the corresponding "Pentagon → uv-commutation" subconjecture
+and the corresponding "Pentagon $\to$ uv-commutation" subconjecture
 in
 [`rem:mass-endomorphism-jet-tower`](#rem\:mass-endomorphism-jet-tower)
 §"Remaining open subconjectures" (item 2): the question is

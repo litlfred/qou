@@ -182,7 +182,7 @@ categorical derivation pipeline above, not further empirical sweeping.
 
 Candidate (a) Gram determinant of the EW Wedderburn block: probed in 9
 forms ([`n-sym-gram-determinant-probe.witness.json`](../../folio-assistant/computations/n-sym-gram-determinant-probe.witness.json));
-best fit (3×3 Cartan with diag $[2k]_q$) is 6.16% off — falsified.
+best fit (3$\times$3 Cartan with diag $[2k]_q$) is 6.16% off — falsified.
 
 ### Required next step (single-target)
 

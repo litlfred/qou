@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/per-partition-k-lambda-rule.md"
   },
   "source_hashes": {
-    "md": "366670dffafc",
+    "md": "a393f674c54d",
     "ts": "059af3785153"
   },
   "criteria": {
@@ -343,19 +343,19 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "366670dffafc",
+          "md": "a393f674c54d",
           "ts": "059af3785153"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/per-partition-k-lambda-rule.md:14: | Scalar-eigenvalue family (uniform $k$, GB grade, additive $\\ell n_0 + k$) | **refuted** | PR #638 §\"Closure (2026-05-11): scalar-eigenvalue form…\" | | quantum-observable-universe/braids-and-knots/per-partition-k-lambda-rule.md:151: writhes, producing different eigenvalue magnitudes (³He max | quantum-observable-universe/braids-and-knots/per-partition-k-lambda-rule.md:362: The σ-basis → Murphy expansion is the canonical bridge to the"
+        "reviewed_at": "2026-05-22T19:09:35.413Z",
+        "reviewed_sha": "5041a8c1fd9e188561a3f5329330b2c7422a5e8b"
       }
     ],
     "voice-editorializing": [
@@ -475,5 +475,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T19:09:35.413Z"
 }

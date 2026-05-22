@@ -116,7 +116,7 @@ Computational consequences of the post-$\tau$ pentagon (R):
 
 1. **T3 reorganisation**:
    [`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/pentagon_reduction_li2q.py)
-   uses (P′) — the duplication form of (R) — to evaluate
+   uses (P$'$) — the duplication form of (R) — to evaluate
    $\mathrm{Li}_2^q(|V_i V_j|)$ at out-of-radius arguments via factorisation
    $z = uv$ with $|u|, |v| < q_0$. The Rogers $\log_q^2$ correction
    ensures the reorganisation is numerically consistent.
@@ -158,5 +158,5 @@ as the open paper-track derivation in
 
 **Classical case ($q = 1$): proven** (Rogers 1907, Lewin 1981).
 **q-deformation: numerical evidence at $q_0$** to 1-5% (improving on
-classical by 1.5–5×). Formal q-deformed proof tracked as open
+classical by 1.5–5$\times$). Formal q-deformed proof tracked as open
 research; Lean skeleton in place.

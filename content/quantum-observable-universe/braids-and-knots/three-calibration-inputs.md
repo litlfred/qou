@@ -7,7 +7,7 @@ is a prediction.*
 
 | ID | Quantity | What it fixes | Sector |
 |----|----------|--------------|--------|
-| **CAL-1** | $m_e = 0.51099895\ldots\;\mathrm{MeV}$ | leptonic mass scale (MeV ↔ natural units) | leptonic size |
+| **CAL-1** | $m_e = 0.51099895\ldots\;\mathrm{MeV}$ | leptonic mass scale (MeV $\leftrightarrow$ natural units) | leptonic size |
 | **CAL-2** | $m_\mu / m_e = 206.7682830\ldots$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
 | **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $\mathfrak{E}_0$ via $\mathfrak{E}_0^{(\text{cal})} = Q_\beta(n)/\lvert\Delta(\mathrm{net})\rvert \approx 4.179\;\mathrm{MeV}$ using the symbolic $\Delta(\text{net}) = h(h-2)/2$; cross-checks the framework-derived $\mathfrak{E}_0^{(N=0)} \approx 4.186\;\mathrm{MeV}$ (CAL-1 + CAL-2) and the tower-summed $\mathfrak{E}_0^{\text{full}} \approx 4.228\;\mathrm{MeV}$ | hadronic interaction strength |
 
@@ -124,7 +124,7 @@ VEV, QCD theta angle). The QOU framework replaces all 19 with these
 - mixing angles are Clebsch-Gordan coefficients of the knot eigenbasis
   decomposition.
 
-The 19 → 3 reduction is the testable framework-level claim: any
+The 19 $\to$ 3 reduction is the testable framework-level claim: any
 prediction of the paper that *would* require a 4th calibration to
 match data is a falsification of the framework, not a free-parameter
 adjustment.

@@ -11,7 +11,7 @@ following structural form. The progression of refutations
 
 | Form of $n_\star$ | Verdict | Witness |
 |:---|:---:|:---|
-| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\ell n_0 + k$) | **refuted** | PR #638 §"Closure (2026-05-11): scalar-eigenvalue form…" |
+| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\ell n_0 + k$) | **refuted** | PR #638 §"Closure (2026-05-11): scalar-eigenvalue form$\ldots$" |
 | Per-eigenvalue operator-valued ($\Phi_q$ per $\mu_a^{(\lambda)}$, signed) | **refuted** at uniform $k$ | PR #638 §"Operator-valued probe" |
 | Type-B-folded-crystal depth ($\#\{\lambda \vdash 3A : \lambda = \lambda^T\}$) | **partial** — fits $D$ and $T$, fails ${}^3\mathrm{He}$ | [probe-phiq-type-b-fold-depth.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-type-b-fold-depth.witness.json) (PR #639) |
 | Type-B + scalar near-pole multiplicity $m$ (4 two-input rules) | **refuted** | [probe-phiq-multiplicity-refinement.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-multiplicity-refinement.witness.json) (PR #639) |
@@ -148,7 +148,7 @@ explicit $(-q)^{3w/2}$ Kauffman correction. Consequently:
 * This is why ${}^3\mathrm{He}$'s spectrum at $[5, 4]$ differs from
   $T$'s spectrum at the same $\lambda$: $(Z, N) = (2, 1)$ vs $(1, 2)$
   gives different p–n / n–n crossing patterns and hence different
-  writhes, producing different eigenvalue magnitudes (³He max
+  writhes, producing different eigenvalue magnitudes (${}^{3}$He max
   $\lvert\mu\rvert \approx 10.69$ vs $T$'s $\approx 8.23$).
 * The candidate SDP-active-set selector (above) reads the writhe-
   encoded SDP output and therefore inherits the writhe-dependence
@@ -359,7 +359,7 @@ per-partition. The Murphy basis is:
   those are functorial-categorical structures Murphy doesn't speak
   to directly.
 
-The σ-basis → Murphy expansion is the canonical bridge to the
+The σ-basis $\to$ Murphy expansion is the canonical bridge to the
 per-cell selector refinement. Atomic braid words
 $\beta_\mathfrak{H} = \mathtt{atom\_braid\_word\_3A}(Z, N)$ are
 specific σ-products; their Murphy expansion gives a substrate-

@@ -31,7 +31,7 @@ recomputed at 50 dps via sympy + mpmath, no float64):*
 ~2.7 because $\hat V_0^{\mathfrak{n}} = 0.7194$ (symbolic at 50
 dps) sits far from the $q_0 = 1.11$ pole of $\Phi_q$ (distance
 $0.391$ vs proton's $\hat V_0^{\mathfrak{p}} = 0.9890$ with
-pole distance $0.121$ — a 3.23× pole-distance ratio). The
+pole distance $0.121$ — a 3.23$\times$ pole-distance ratio). The
 tower formula's $\Phi_q(\hat V)$ is pole-centric, so pole-distance
 matters structurally. The cyclotomic projection of $\Phi_q$ at
 high truncation $N$ converges to a fixed ratio: $\Phi_q(\hat

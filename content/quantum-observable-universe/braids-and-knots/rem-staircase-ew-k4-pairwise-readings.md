@@ -24,10 +24,10 @@ $$
 
 The actual best pair $(e_{236}, e_{188})$ gives
 $|r - q_0^{1/7}|/q_0^{1/7} = 1.42 \times 10^{-3}$ —
-**3.73 × *worse* than the random-coincidence floor.** If the
+**3.73 $\times$ *worse* than the random-coincidence floor.** If the
 conjecture were structural, the empirical match should be
 *tighter* than the random floor by several orders of magnitude;
-instead it is 3.7 × *looser*.
+instead it is 3.7 $\times$ *looser*.
 
 **The $0.14\%$ match is essentially noise** — not evidence of a
 structural $q^{1/7}$ identity in the $V_{(4,3,2,1)}$ spectrum.
@@ -41,7 +41,7 @@ $6.95\%$ at 50 dps), the literal content of
 | --- | --- | --- | --- | --- |
 | $2$ | $2$ | untestable | n/a (length-0 word at $n=3$) | — |
 | $3$ | $16$ | 50 dps (mpmath) | $6.95\,\%$ | falsified |
-| $4$ | $768$ | float64 (probe-only; NOT 1-ppb cross-method verified) + coincidence test | $0.14\,\%$ (3.7× worse than random) | falsified |
+| $4$ | $768$ | float64 (probe-only; NOT 1-ppb cross-method verified) + coincidence test | $0.14\,\%$ (3.7$\times$ worse than random) | falsified |
 
 The empirical content that *survives* is the **leading-order match**
 via the CODATA-residual reading (only directly testable at $k=3$,

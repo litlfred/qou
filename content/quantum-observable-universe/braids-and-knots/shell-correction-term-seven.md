@@ -228,7 +228,7 @@ phenomenological extension to a derived prediction; failing it
 diagnoses curvature in the connection map at the level-$5$ stratum.*
 
 *A purely-algebraic derivation of $\alpha_5$ itself (without AME
-calibration) would require either (a) closure of the $q$-FSC ↔ $q_0$
+calibration) would require either (a) closure of the $q$-FSC $\leftrightarrow$ $q_0$
 identification, or (b) a substrate-level identification of the
 crystal-limit signed-permutation trace with a closed-form $q_0$-
 algebraic functional.*

@@ -94,7 +94,7 @@ sympy, where $d = \dim S^\lambda = f^\lambda$:*
   prohibitive.  For $A \geq 2$ use the **numerical**
   Hoefsmit pipeline in
   `folio-assistant/computations/hecke_characters.py`
-  (well-tested, handles 2×2 block $b^2$ sign with
+  (well-tested, handles 2$\times$2 block $b^2$ sign with
   `sqrt(abs(b^2))` where the symbolic expression can turn
   negative off the unitary locus).*
 
@@ -125,7 +125,7 @@ Witness: `hecke-character-symbolic.witness.json`.*
 `folio-assistant/computations/hecke_characters.py` (full $H_{3A}$
 Wedderburn sum) to $A = 2$ (deuteron) with all $11$ partitions of
 $6$, weighted by the exact symbolic $w_\lambda(q_0)$.  The
-numerical Hoefsmit handles the 2×2 block $b^2$ sign robustly.
+numerical Hoefsmit handles the 2$\times$2 block $b^2$ sign robustly.
 This is the final piece needed for deuteron binding energy from
 first principles — the only inputs are $E_0$ ($\beta$-decay) and
 $q_0$ (substrate).*

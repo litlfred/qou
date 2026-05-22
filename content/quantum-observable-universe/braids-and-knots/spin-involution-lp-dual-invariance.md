@@ -225,7 +225,7 @@ Markov trace does.
 (per [`prop:operator-selection-lp`](#prop:operator-selection-lp))
 confirms that $\sigma_{pp}, \sigma_{nn}$ are in the active set
 EXACTLY at magic-shell atoms ($Z=2$ activates $\sigma_{pp}$, $N=2$
-activates $\sigma_{nn}$, doubly magic ⁴He activates both) — see
+activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both) — see
 [brane-tower-z-habiro §"Pair-knot magic-shell probe"](#conj:brane-tower-z-habiro).
 This is the operator-level signature of $Z=2$/$N=2$ closed-shell
 structure in the substrate algebra; the spin-involution corollary

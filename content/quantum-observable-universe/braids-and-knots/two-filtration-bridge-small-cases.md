@@ -108,7 +108,7 @@ small $n$. The general statement at $n \geq 5$ is open.
 - **General $n$**: the bridge map for arbitrary partitions of
   $n \geq 5$ requires extending the Vol/CS dictionary to larger
   Hecke-cell decompositions. The *structural* argument
-  (self-conj. → even depth, chiral pair → odd depth) extends, but
+  (self-conj. $\to$ even depth, chiral pair $\to$ odd depth) extends, but
   individual partition verification is open.
 - **Mixed cells**: partitions whose Hecke action is a mixture of
   self-conj. and chiral parts — currently the bridge formula

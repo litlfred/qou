@@ -105,7 +105,7 @@ The assembly is implemented in
 as `assemble_per_derivation_weights(Z, N)` with hardcoded
 constants $E_{0,\beta} = 0.78233341$ MeV (CODATA β-decay $Q$),
 $\alpha = m_e \cdot 8G = 3.74446989$ MeV, $m_e = 0.51099895$ MeV.
-Across the proton..⁹Be spectrum (12 atoms):
+Across the proton..${}^{9}$Be spectrum (12 atoms):
 
 | atom | $A$ | $\mathcal{M}_{\mathrm{AME}}$ (MeV) | $\mathcal{M}_{\mathrm{pred}}$ | err % |
 |------|-----|------:|------:|------:|
@@ -113,21 +113,21 @@ Across the proton..⁹Be spectrum (12 atoms):
 | n    |  1  |  939.5654 |  939.5654 |  0.000 |
 | D    |  2  | 1876.1239 | 1876.0406 | -0.004 |
 | T    |  3  | 2809.4322 | 2813.7535 | +0.154 |
-| ³He  |  3  | 2809.4135 | 2811.1360 | +0.061 |
-| ⁴He  |  4  | 3728.4013 | 3747.9809 | +0.525 |
-| ⁵Li  |  5  | 4669.1510 | 4680.8490 | +0.250 |
-| ⁶Li  |  6  | 5603.0520 | 5616.2553 | +0.236 |
-| ⁷Li  |  7  | 6535.3660 | 6551.0997 | +0.241 |
-| ⁷Be  |  7  | 6536.2270 | 6546.8392 | +0.162 |
-| ⁸Be  |  8  | 7456.8940 | 7480.7621 | +0.320 |
-| ⁹Be  |  9  | 8392.7490 | 8414.1242 | +0.255 |
+| ${}^{3}$He  |  3  | 2809.4135 | 2811.1360 | +0.061 |
+| ${}^{4}$He  |  4  | 3728.4013 | 3747.9809 | +0.525 |
+| ${}^{5}$Li  |  5  | 4669.1510 | 4680.8490 | +0.250 |
+| ${}^{6}$Li  |  6  | 5603.0520 | 5616.2553 | +0.236 |
+| ${}^{7}$Li  |  7  | 6535.3660 | 6551.0997 | +0.241 |
+| ${}^{7}$Be  |  7  | 6536.2270 | 6546.8392 | +0.162 |
+| ${}^{8}$Be  |  8  | 7456.8940 | 7480.7621 | +0.320 |
+| ${}^{9}$Be  |  9  | 8392.7490 | 8414.1242 | +0.255 |
 
 **Mean $\lvert\delta\mathcal{M}/\mathcal{M}\rvert = 0.184\%$,
-max $= 0.525\%$ (⁴He).**
+max $= 0.525\%$ (${}^{4}$He).**
 
 This matches the standalone
 the *atomic-braid mass formula* in the particle-interactions chapter formula's empirical
-fit (0.13–0.16% mean across the same spectrum) and **76× improves**
+fit (0.13–0.16% mean across the same spectrum) and **76$\times$ improves**
 on the proton-fitted single-$E_0$ assembly (14.7% mean) — the
 improvement is entirely from honouring the per-term derivation
 weights.
@@ -150,7 +150,7 @@ weights.
    contributing to the heavier-atom predictions; expect
    ${\sim}\,$few-keV-level corrections per atom based on the
    $A \leq 4$ pattern.
-3. *⁴He outlier (0.525 %).* Largest residual in the spectrum.
+3. *${}^{4}$He outlier (0.525 %).* Largest residual in the spectrum.
    Worth a focused look — possibly a missing $T_4$ contribution
-   that would manifest only at the doubly-magic ⁴He
+   that would manifest only at the doubly-magic ${}^{4}$He
    configuration.

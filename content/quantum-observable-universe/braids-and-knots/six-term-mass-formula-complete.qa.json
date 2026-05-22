@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.lean"
   },
   "source_hashes": {
-    "md": "98d7a403a659",
+    "md": "54ec6b701cbf",
     "ts": "aa8bcad8c6ea",
     "lean": "d5859dfaded3"
   },
@@ -446,20 +446,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "98d7a403a659",
+          "md": "54ec6b701cbf",
           "ts": "aa8bcad8c6ea",
           "lean": "d5859dfaded3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md:66: Tiny p/n asymmetries between mirror nuclei (T = 1p+2n vs ³He = 2p+1n) | quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md:67: amplify by $\\sim 10^5 \\times$, predicting T − ³He $\\approx -737$ MeV"
+        "reviewed_at": "2026-05-22T19:09:35.413Z",
+        "reviewed_sha": "5041a8c1fd9e188561a3f5329330b2c7422a5e8b"
       }
     ],
     "voice-editorializing": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T19:09:35.413Z"
 }

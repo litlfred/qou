@@ -71,8 +71,8 @@ Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/comput
 | $N=4$ ($c_3 \cdot b^4$) | $1 - 2 b^4 \cdot b^4 \hbar_q^8$ | $\mathbf{-0.57}$ ppb |
 | $N=5$ ($-(b^2 + 1/2)$) | $1 - (b^2 + 1/2) b^5 \hbar_q^{10}$ | $\mathbf{\sim 0}$ ppb (sub-ppt) |
 
-The N=3 rung is the first to beat the **7.80 ppb 100× experimental
-target** (CAL-3 σ = 0.78 ppm). N=4, N=5 further reduce by $\sim$10×
+The N=3 rung is the first to beat the **7.80 ppb 100$\times$ experimental
+target** (CAL-3 σ = 0.78 ppm). N=4, N=5 further reduce by $\sim$10$\times$
 each, putting the categorical prediction at sub-ppb agreement with
 CODATA Q_β — well within Subgoal-2 territory (research-grade,
 sub-CAL-2-floor).
@@ -101,7 +101,7 @@ $$
 | $+0.04$ ppb ($N=5$, $c_3^2 \cdot 3 + b$) | $+0.02$ ppb |
 
 At $N=3$, the n−p mass-split residual is **3.6 ppb** — already
-below the 4.74 ppb 100×-experimental Δm_pn target. At $N=4$ and
+below the 4.74 ppb 100$\times$-experimental Δm_pn target. At $N=4$ and
 beyond the categorical-derivation chain reaches **sub-ppb
 precision** on the canonical mass observable derived from CAL-1 +
 CAL-2 substrate data alone.

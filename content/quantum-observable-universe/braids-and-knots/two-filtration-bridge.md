@@ -1,4 +1,4 @@
-**Conjecture (two-filtration bridge: iterated-integral depth ↔
+**Conjecture (two-filtration bridge: iterated-integral depth $\leftrightarrow$
 partition-cellular GB-depth via central idempotents).**
 
 *The substrate convolution Hopf algebra $\mathcal{H}_q$ carries
@@ -71,7 +71,7 @@ the conjecture predicts.
 | $(3), (1,1,1)$ chiral pair | 3 | **3** | $\mathrm{CS}(3_1) \in \mathcal{P}_3^-$ |
 | $(2, 1)$ self-conj. | 3 | **2** | hyperbolic vol if 3-mfd (not $T(2,3) = 3_1$) |
 | $(4)$ totally symm | 4 | **2** | sym-channel vol (depends on shape) |
-| $(2, 2, 1, \ldots)$ | depends | **2** if self-conj, **3** if pair | … |
+| $(2, 2, 1, \ldots)$ | depends | **2** if self-conj, **3** if pair | $\ldots$ |
 
 The general pattern: **self-conjugacy under partition transpose
 $\Rightarrow$ even iterated-integral depth (real period); chiral
@@ -83,7 +83,7 @@ pair $\Rightarrow$ odd depth (Tate-twisted period)**. Verifies
 At $n = 2, 3, 4$: the table above can be checked exhaustively against
 the Hecke-cell structure. Self-conjugate partitions of small $n$ are
 $(1)$, $(2,1)$ [no, $(2,1)$ is its own transpose], $(2,2)$, $(3,2,1)$,
-… (these are the partitions equal to their transpose, called
+$\ldots$ (these are the partitions equal to their transpose, called
 *self-conjugate*). The bridge map gives them depth-$2$ witnesses;
 chiral pairs split into depth-$3$ witnesses.
 

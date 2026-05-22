@@ -36,6 +36,6 @@ $A^\lambda_{\mu,\nu}(I)$ family.
 This is the quantitative magnitude budget that drives the
 [`structural-diagnosis-operator-valued`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-structural-diagnosis-operator-valued.md)
 audit's conclusion: the symmetric scalar substrate cannot, in
-principle, account for the empirical Z↔N-asymmetric mass-formula
+principle, account for the empirical Z$\leftrightarrow$N-asymmetric mass-formula
 residuals (Δ_coupling +0.796 MeV; T5 −0.325 MeV) — those are
 operator-valued at the per-Wedderburn-block level by construction.

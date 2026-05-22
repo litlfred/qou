@@ -64,12 +64,12 @@ $n$ and every reduced word $w$.
    in `depth_resolved_phi_k_hoefsmit.py` can replace its Hoefsmit
    character calls with q-MN where applicable (canonical braid
    words), for $\sim 100 \times$ speedup at high $n$.
-3. **Atom-knot identification path** for ⁶Li, ⁷Li:
+3. **Atom-knot identification path** for ${}^{6}$Li, ${}^{7}$Li:
    - Enumerate hyperbolic knots $K$ with crossing-number $\leq 10$.
    - For each $K$, take its braid representation $\mathcal{B}_K \in B_n$.
    - Compute $\mathrm{tr}_M(\mathcal{B}_K) = \sum_\lambda y_\lambda(q_0) \cdot \chi_\lambda(\mathcal{B}_K; q_0)$
      via Wenzl-bridge + q-MN.
-   - Compare to AME binding × hyperbolic-volume ratio for ⁶Li / ⁷Li.
+   - Compare to AME binding $\times$ hyperbolic-volume ratio for ${}^{6}$Li / ${}^{7}$Li.
    - This is now tractable at $n = 18, 21$ in seconds per knot.
 
 ## Code
@@ -94,7 +94,7 @@ permutation braids at $n = 3, 4, 5$.
 
 ## Open
 
-- **Atom-knot identification** for ⁶Li ($A = 6$, $n = 18$) and ⁷Li
+- **Atom-knot identification** for ${}^{6}$Li ($A = 6$, $n = 18$) and ${}^{7}$Li
   ($A = 7$, $n = 21$): now tractable but requires hyperbolic-knot
   enumeration and braid-representation extraction. Open project.
 - **Mass-formula refactor** to use Wenzl-bridge + q-MN instead of

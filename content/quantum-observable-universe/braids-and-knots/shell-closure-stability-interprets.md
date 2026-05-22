@@ -44,8 +44,8 @@ the periodic table:*
 arrows
 $\mathrm{dress}_{S_1}: P^{(Z)} \to P^{(Z+1)}$ that remain feasible
 at the electromagnetic scale.  For $Z$ far from noble-gas values,
-$v(Z) > 0$ (one or more feasible arrows → reactive atom).  For $Z
-\in \mathcal{Z}_{\mathrm{noble}}$, $v(Z) = 0$ (terminal object →
+$v(Z) > 0$ (one or more feasible arrows $\to$ reactive atom).  For $Z
+\in \mathcal{Z}_{\mathrm{noble}}$, $v(Z) = 0$ (terminal object $\to$
 inert).  Classical valence rules (octet, 18-electron rule) are
 shadow-statements of the feasibility count, and hybridised
 bonding is a composite of dressing + folding morphisms in
