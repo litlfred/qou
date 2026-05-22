@@ -62,7 +62,7 @@ realisation via the muon/electron mass ratio
 related by the specialisation map
 $\iota \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{C}$.
 
-**Summary.** The substrate parameter is not merely "known to exist" —
+**Summary.** The substrate parameter is not only "known to exist" —
 it is extracted by a three-step algorithm: (1) form $V \otimes V$,
 (2) diagonalise $c_{V,V}$, (3) read off the symmetric eigenvalue.
 On Bring's surface, the Descartes condition pins $q$ to a specific

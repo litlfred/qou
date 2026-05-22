@@ -23,7 +23,7 @@ $\pi_1 = \ker\partial$.
 The *inner-automorphism $2$-group*
 $\mathrm{INN}(G) = (G \xrightarrow{\mathrm{id}} G)$
 has $\ker\partial = 1$ and $\mathrm{coker}\partial = 1$, so it is
-connected and simply connected as a $2$-group. A $2$-connection for
+connected and connected as a $2$-group. A $2$-connection for
 $\mathrm{INN}(G)$ on a principal $2$-bundle over $M$ consists of a
 $\mathfrak{g}$-valued $1$-form $A$ and a $\mathfrak{g}$-valued
 $2$-form $B$, subject to the *:refterm[quantum flatness]{#quantum-flatness}* condition
@@ -70,6 +70,6 @@ This perspective clarifies the relationship between the instanton
 condition in Chapter 1 and the higher-categorical structures of later
 chapters: the parallel-transport $2$-functor of the
 $\mathrm{INN}(\mathrm{SU}(2))$ $2$-bundle assigns to paths in $M$
-not merely group elements in $\mathrm{SU}(2)$ but $2$-morphisms
+not only group elements in $\mathrm{SU}(2)$ but $2$-morphisms
 encoding the self-dual curvature, with the simplicity constraint
 selecting the physical (instanton) sector.

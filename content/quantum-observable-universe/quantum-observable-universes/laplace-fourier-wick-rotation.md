@@ -3,7 +3,7 @@ The categorical Laplace
 categorical Fourier
 ([categorical Fourier transform](#def:categorical-fourier))
 transforms are **two real forms of a single complex spectral
-pairing**.  Both are defined by pairing against the $q$-exponential
+pairing**. Both are defined by pairing against the $q$-exponential
 grouplike $\exp_q \in G(\mathcal{H}_q)$ ([$q$-exponential](#def:q-exponential));
 they differ only in which character of the Reeb-translation object
 one evaluates:
@@ -20,7 +20,7 @@ $$
   \boxed{\;\mathcal{F}[f](\xi) \;=\; \mathcal{L}[f](i\xi)\;}
 $$
 
-— the *categorical Wick rotation*.  The two transforms are related
+— the *categorical Wick rotation*. The two transforms are related
 by an automorphism of the spectral plane (rotation by $\pi/2$) acting
 on the single abstract grouplike.
 
@@ -41,35 +41,35 @@ $\tau = t + i\varTheta$, a complex Reeb-time.
 
 **What Wick rotation exchanges.**
 
-1. **Heat kernel $\leftrightarrow$ propagator.**  The $q$-heat kernel
-   $K_q(t; x, y)$ and the Schrödinger propagator
-   $P_q(t; x, y)$ satisfy $P_q(t) = K_q(it)$ as formal objects in
-   the complex time plane.
-2. **Gaussian $\leftrightarrow$ plane wave.**  The Reeb-invariant $q$-Gaussian
-   ([$q$-Gaussian solves the $q$-heat equation](#prop:q-gaussian-solves-q-heat))
-   becomes a plane-wave ansatz under $t \mapsto it$; the variance
-   $\sigma^2 = t/q^2$ becomes an imaginary "spread" — the phase of a
-   stationary wave packet.
-3. **Laplace poles $\leftrightarrow$ Fourier spectrum.**  The resolvent poles of
-   $\mathcal{L}$ at $s = -\mu_\lambda(q)$
-   ([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)) become,
-   under $s \to i\xi$, the continuous Fourier spectrum
-   $\xi_\lambda = i\mu_\lambda(q)$ — complex eigenvalues of the
-   non-self-adjoint Schrödinger evolution.
+1. **Heat kernel $\leftrightarrow$ propagator.** The $q$-heat kernel
+ $K_q(t; x, y)$ and the Schrödinger propagator
+ $P_q(t; x, y)$ satisfy $P_q(t) = K_q(it)$ as formal objects in
+ the complex time plane.
+2. **Gaussian $\leftrightarrow$ plane wave.** The Reeb-invariant $q$-Gaussian
+ ([$q$-Gaussian solves the $q$-heat equation](#prop:q-gaussian-solves-q-heat))
+ becomes a plane-wave ansatz under $t \mapsto it$; the variance
+ $\sigma^2 = t/q^2$ becomes an imaginary "spread" — the phase of a
+ stationary wave packet.
+3. **Laplace poles $\leftrightarrow$ Fourier spectrum.** The resolvent poles of
+ $\mathcal{L}$ at $s = -\mu_\lambda(q)$
+ ([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)) become,
+ under $s \to i\xi$, the continuous Fourier spectrum
+ $\xi_\lambda = i\mu_\lambda(q)$ — complex eigenvalues of the
+ non-self-adjoint Schrödinger evolution.
 
-**Base-ring independence of Wick rotation.**  Because Wick rotation
+**Base-ring independence of Wick rotation.** Because Wick rotation
 acts only on the spectral parameter (not on the grouplike itself),
 it is meaningful in *any* base ring in which $i$ (a primitive fourth
-root of unity) exists: over $\mathbb{C}$ trivially, over
+root of unity) exists: over $\mathbb{C}$ by definition, over
 $\mathbb{F}_p$ when $p \equiv 1 \pmod{4}$, over $\mathbb{Q}_p$ for
-the same primes.  In finite-field realisations, the Laplace--Fourier
+the same primes. In finite-field realisations, the Laplace--Fourier
 duality becomes a concrete symmetry of character tables under
 Frobenius twists.
 
-**Role in the $q$-heat story.**  Wick rotation says: *everything we
+**Role in the $q$-heat story.** Wick rotation says: *everything we
 derive about the $q$-heat equation — the Reeb-invariant Gaussian,
 the Peter--Weyl spectral decomposition, the Mercer kernel, the
 content-Casimir eigenvalues $\mu_\lambda(q)$ — has a mirror
 statement about the quantum-mechanical $q$-Schrödinger evolution,
-obtained by $t \mapsto it$*.  Together they are the full analytic
+obtained by $t \mapsto it$*. Together they are the full analytic
 shadow of the single Hopf-algebraic object $\exp_q \in G(\mathcal{H}_q)$.
