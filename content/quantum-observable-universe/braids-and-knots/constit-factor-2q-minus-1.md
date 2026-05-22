@@ -44,8 +44,8 @@
 >
 > The $0.033\%$ match at $q_0$ identified in Phase 5g is a
 > **localised tangency**, not a structural identity — within
-> $\pm 0.005$ of $q_0$ the relative error jumps by ~28× (to $\sim 0.95\%$
-> at $q = 1.108$) and by ~70× at $q = 1.105$ (to $\sim 2.44\%$), per the
+> $\pm 0.005$ of $q_0$ the relative error jumps by $\sim 28 \times$ (to $\sim 0.95\%$
+> at $q = 1.108$) and by $\sim 70 \times$ at $q = 1.105$ (to $\sim 2.44\%$), per the
 > fine-scan table above.
 > The candidate $(2q - 1)$ is **NOT** the correct closed form for
 > $\rho_Z^{\mathrm{constit}}(q)$ globally; Phase 5g's categorical
