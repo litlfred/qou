@@ -75,7 +75,7 @@ $$
   \Phi_q^{[\leq k_\star(T_w)]}(z_i),
 $$
 
-so the brane-tower contribution from the $i$-th divisor is
+The brane-tower contribution from the $i$-th divisor is
 $\Phi_q^{[\leq k_\star(T_w)]}(z_i)$, a **finite product** of
 $k_\star(T_w)$ factors.
 

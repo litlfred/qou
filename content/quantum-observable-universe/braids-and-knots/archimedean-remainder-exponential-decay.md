@@ -47,7 +47,7 @@ The expected route — to be formalised once each gap is closed:
    factors through the partial product
    $\Phi_n(x; q)$ of the
    [$q$-Pochhammer partial product](#def\:q-pochhammer-partial-product),
-   so the *multiplicative remainder* — the unreduced piece of the
+   The *multiplicative remainder* — the unreduced piece of the
    Gröbner--Shirshov ideal at depth $n$ — is
    $\Phi_\infty / \Phi_n = \prod_{k \ge n}(1 - x q^k)$.
 

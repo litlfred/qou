@@ -93,7 +93,7 @@ Same architecture as
    $|\xi| \leq \varepsilon$.
 
 2. $\mathrm{St}(\xi) = 0$ by `standardPart_of_infinitesimal`.
-   So the standard-part of the hom-space contains no non-zero
+   The standard-part of the hom-space contains no non-zero
    elements: $\mathrm{Hom}_{\mathbb{R}}(\mathbf{1},
    \mathrm{Ad}(\mathrm{St}(A))) = 0$.
 

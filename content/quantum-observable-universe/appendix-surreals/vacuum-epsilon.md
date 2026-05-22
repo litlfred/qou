@@ -70,7 +70,7 @@ appendix's relaxation conjectures: pick an
 $\varepsilon \in \mathbf{No}$, recompute the QOU mass spectrum,
 and check whether the archimedean image agrees with the strict-
 vacuum prediction. The arithmetic is rational in $\varepsilon$,
-so the test reduces to a comparison of two polynomials in
+The test reduces to a comparison of two polynomials in
 $\varepsilon$ at the standard-part.
 
 ## Proof strategy

@@ -38,7 +38,7 @@ $$
   |\mathrm{Branch}(\pi)|  =  2g(X) + 2,
 $$
 
-so the size is even and at least $4$ (for $g \geq 1$, which is forced
+The size is even and at least $4$ (for $g \geq 1$, which is forced
 by (ii): a sphere has $\mathrm{Aut}(\mathbb{P}^1) = \mathrm{PGL}_2$
 admitting $\mathbb{Z}_5$ but is excluded from hyperelliptic indexing
 $g \geq 2$; for $g = 0$ one takes $X = \mathbb{P}^1$ itself, not a

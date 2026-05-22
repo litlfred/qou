@@ -95,7 +95,7 @@ Two ingredients:
      \;=\;
      \frac{1}{3},
    $$
- so the substrate factor of the proposition equals $1/3$ of the
+ The substrate factor of the proposition equals $1/3$ of the
  bound expression. Multiplication by $M_N$ preserves the
  inequality; the Skein-side adjustment factor
  $(q^{1/2} + q^{-1/2})/(q + q^{-1}) < 1$ at $q > 1$ tightens the

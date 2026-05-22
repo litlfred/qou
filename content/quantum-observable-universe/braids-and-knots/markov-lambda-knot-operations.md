@@ -19,7 +19,7 @@ $$
   \dim V_\lambda = d_\lambda = |\mathrm{SYT}(\lambda)|,
 $$
 
-so the amplitude matrix of any braid $\beta \in B_n$ splits
+The amplitude matrix of any braid $\beta \in B_n$ splits
 
 $$
   \rho_q(\beta)

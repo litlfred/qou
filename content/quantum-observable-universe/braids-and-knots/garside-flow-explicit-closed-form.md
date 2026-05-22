@@ -87,7 +87,7 @@ of red and an equal half from blue.
 **Sector centre-of-mass check.**  The sum
 $\Delta\psi^{(r)} + \Delta\psi^{(g)} + \Delta\psi^{(b)}
  = 2q\pi/3 - q\pi/3 - q\pi/3 = 0$,
-so the three-sector centre of mass is preserved across the
+The three-sector centre of mass is preserved across the
 trajectory (no net global rotation).  This contrasts with the
 3-cycle, whose centre of mass shifts by $\pm 2q\pi/3$ since all
 three rates are equal-signed.  Centre-of-mass preservation is

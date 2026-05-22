@@ -28,7 +28,7 @@ The canonical typed-$\mathbf{B}_3$ braids carry:
   - $\mathcal{B}_p$ (uud): 6 $\sigma$ + 3 $\sigma^{-1}$ + 2 averaged
   - $\mathcal{B}_n$ (udd): 5 $\sigma$ + 4 $\sigma^{-1}$ + 2 averaged
 
-so the characters multiply as
+The characters multiply as
 
   - $\chi_{(3)}(\mathcal{B}_p) = q^6 \cdot q^{-3} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q^3 \cdot \frac{(q + q^{-1})^2}{4}$
   - $\chi_{(3)}(\mathcal{B}_n) = q^5 \cdot q^{-4} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q \cdot \frac{(q + q^{-1})^2}{4}$

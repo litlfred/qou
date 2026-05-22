@@ -14,7 +14,7 @@ has no periodic orbits other than the fixed point $P = 1$.
 odd steps and $k_{\mathrm{even}}$ even steps satisfies
 $\mathcal{C}_q^k(P) = P$. The odd steps multiply by
 $[3]_q / [2]_q$ and the even steps multiply by $1/[2]_q$,
-so the return condition requires:
+The return condition requires:
 
 $$
   \frac{[3]_q^{k_{\mathrm{odd}}}}{[2]_q^{k_{\mathrm{odd}} + k_{\mathrm{even}}}}

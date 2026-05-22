@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/averaging-resonance-rule.lean"
   },
   "source_hashes": {
-    "md": "46dc1288d1fc",
+    "md": "d0bc68c18b2c",
     "ts": "49628d543fd3",
     "lean": "130a54c27ae3"
   },
@@ -486,20 +486,20 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "fe2f48619b32",
+          "md": "d0bc68c18b2c",
           "ts": "49628d543fd3",
           "lean": "130a54c27ae3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/averaging-resonance-rule.md:331: So the $-1/2$ in $c_5$ is the *series-layer avatar* of the same | quantum-observable-universe/braids-and-knots/averaging-resonance-rule.md:444: So the math distinction: $c_5$ is the only $c_k$ (in $k = 3..10$)"
+        "reviewed_at": "2026-05-22T20:45:57.153Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-ai-slop": [
@@ -690,5 +690,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:36:25.926Z"
+  "updated_at": "2026-05-22T20:45:57.153Z"
 }

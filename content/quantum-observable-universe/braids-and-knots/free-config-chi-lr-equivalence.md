@@ -26,7 +26,7 @@ $\sum_{\nu} c^{\nu}_{\mu_1, \mu_2} \cdots c^{\lambda}_{\nu, \mu_A}$.*
 ### Proof sketch
 
 Each $\beta_{x_k}$ acts as the identity on strands outside the $k$-th block,
-so the disjoint product factors through the Hecke subalgebra
+The disjoint product factors through the Hecke subalgebra
 $H_3 \times H_3 \times \cdots \times H_3 \hookrightarrow H_{3A}$ as a
 direct-summand inclusion. The character of an element in the induced
 representation $\mathrm{Ind}_{H_3^A}^{H_{3A}}(\chi^{\mu_1} \boxtimes
