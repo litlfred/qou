@@ -61,25 +61,37 @@ PyO3 call to the all-Rust + MPFR pipeline), `wall_python` =
 existing `tr_M_atomic_lq.evaluate_mpf` (post-#859 Python LaurentQ
 + mpmath path).
 
+**Initial measurement (commit `22e3c1cd` — all-Rust + MPFR
+pipeline, no R1 fast-path):**
+
 | atom | wall_rust | wall_python | speedup |
 |------|----------:|------------:|--------:|
-| p    | 0.065 s   | 0.003 s     | 0.05×   |
-| n    | 0.001 s   | 0.003 s     | 3.14×   |
-| D    | 0.016 s   | 0.045 s     | 2.86×   |
-| T    | 0.252 s   | 0.610 s     | 2.42×   |
-| ³He  | 0.120 s   | 0.316 s     | 2.64×   |
-| ⁴He  | 1.516 s   | 3.870 s     | 2.55×   |
 | ⁵Li  | 9.072 s   | 20.524 s    | 2.26×   |
-| ⁶Li  | **94.607 s** | 225.047 s | **2.38×** |
+| ⁶Li  | 94.607 s  | 225.047 s   | 2.38×   |
 
-(The `p` row's "0.05×" is wheel-import + first-call MPFR-context
+**After R1 fast-path (commit `52940b5f` — `add_h_times` bypasses
+the `coeff * h` allocation + per-coef GCDs):**
+
+| atom | wall_rust | wall_python | speedup | rel.diff |
+|------|----------:|------------:|--------:|---------:|
+| p    | 0.064 s   | 0.004 s     | 0.06×   | 0.0      |
+| n    | 0.001 s   | 0.002 s     | 3.17×   | 2.9 × 10⁻⁵¹ |
+| D    | 0.014 s   | 0.044 s     | 3.16×   | 8.6 × 10⁻⁵¹ |
+| T    | 0.220 s   | 0.646 s     | 2.93×   | 2.6 × 10⁻⁵⁰ |
+| ³He  | 0.098 s   | 0.322 s     | 3.28×   | 4.9 × 10⁻⁵¹ |
+| ⁴He  | 1.339 s   | 3.930 s     | 2.93×   | 2.1 × 10⁻⁵⁰ |
+| ⁵Li  | 7.977 s   | 20.641 s    | 2.59×   | 3.4 × 10⁻⁵⁰ |
+| ⁶Li  | **84.487 s** | 223.738 s | **2.65×** | 5.6 × 10⁻⁴⁹ |
+
+(The `p` row's "0.06×" is wheel-import + first-call MPFR-context
 setup overhead — not representative of the steady-state.)
 
-**Gate (⁶Li < 60 s):  open at 94.6 s.**  The architecture is in
-place (single PyO3 call, no Python ↔ Rust shuttling of decimal-
+**Gate (⁶Li < 60 s):  still open at 84.5 s.**  The architecture is
+in place (single PyO3 call, no Python ↔ Rust shuttling of decimal-
 string-encoded coefficients between pipeline stages, all MPFR
 combine internal to Rust) — but the empirical 4× target was not
-hit on ⁶Li.  Measured 2.38× over the Python LaurentQ baseline.
+hit on ⁶Li.  Measured 2.65× over the Python LaurentQ baseline,
+up from 2.38× before the R1 fast-path.
 
 ## Why we're at 2.4×, not 4×
 
@@ -118,14 +130,13 @@ to roughly 2-3× without further optimisation.
 In priority order (each is independent of the Tier 1.A
 architectural work):
 
-1. **R1 fast-path: `LaurentRationalQ::add_h_times(other)`** —
-   when R1 fires, `coeff * h` is currently a full `Mul` call
-   producing a fresh BTreeMap with N GCDs.  But `h = q − q⁻¹`
-   has all-integer coefficients ±1, so `coeff * h` is just
-   `(exp, c) → (exp+1, +c) + (exp-1, −c)` — no GCD needed,
-   no fresh allocation, can write directly into `new_terms[w1]`.
-   Saves ~2 BigRational multiplications + GCDs per coef per R1
-   fire; on ⁶Li, ~40 % of reduce wall.  *Estimated speedup: 1.4-2×*.
+1. ~~**R1 fast-path: `LaurentRationalQ::add_h_times(other)`**~~
+   — **landed in commit `52940b5f`.**  Result on ⁶Li:
+   95s → 85s, speedup 2.38× → 2.65×.  Modest empirical impact
+   (~11 % wall reduction) — less than the 1.4-2× estimate.
+   Suggests the R1 multiplication was not the single dominant
+   cost; the BTreeMap operations and the per-passthrough `+=` on
+   the entry are also significant.
 
 2. **`FxHashMap` for inner reduce `new_terms`** — `BTreeMap`
    insertion is O(log N); for ~4000 terms that's ~12 hashable
@@ -183,5 +194,7 @@ Combined (1) + (2) is realistically achievable in another
 | `2a80810c` | feat(markov_peel): tr_M_atomic_rust_full — Tier 1.A full pipeline |
 | `4117476f` | feat(tr_m_word_lq): cyclic-canonical cache key — Tier 1.C |
 | `22e3c1cd` | feat(hecke-engine): tr_m_atomic_mpfr — end-to-end Rust + MPFR (v0.6.0) |
+| `4e3cf28c` | docs(audits): Tier 1.A empirical results + roadmap status (this doc) |
+| `52940b5f` | perf(hecke-engine): R1 fast-path — add_h_times avoids GCDs |
 
-Plus this results doc (next commit).
+Plus an amendment to this doc with the post-R1-fast-path numbers.
