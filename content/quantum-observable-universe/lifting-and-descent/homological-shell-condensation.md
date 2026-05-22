@@ -77,7 +77,7 @@ not via shell-model fitting.
 
 Conditional on
 [`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md),
-the full-twist $\Delta_n^2$ acts trivially on $\Phi_n$ at
+the full-twist $\Delta_n^2$ acts as the identity on $\Phi_n$ at
 $n \in \mathfrak{M}$. The categorical neutrality forces the
 Wedderburn support of $\Phi_n$ onto self-conjugate partitions. Pairing
 this with Yekutieli rigidity \cite{yekutieli2010}, the :refterm[descent]{#descent}
@@ -124,15 +124,15 @@ algebra), and is consistent with this reading.
 **Conjectural** under CLAUDE.md §3b. The supporting evidence is:
 
 1. Numerical verification at $n \in \{2, 8, 20\}$ via the
-   matrix-evaluation programme.
+ matrix-evaluation programme.
 2. Conditional equivalence with
-   [`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
-   under Yekutieli rigidity (the Hecke-side conjecture is stated
-   independently).
+ [`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+ under Yekutieli rigidity (the Hecke-side conjecture is stated
+ independently).
 3. Phenomenological agreement: the seven values
-   $\{2, 8, 20, 28, 50, 82, 126\}$ are the only nucleon counts at
-   which the experimental binding curve exhibits a discontinuous
-   first-derivative drop (the empirical signature of shell closure).
+ $\{2, 8, 20, 28, 50, 82, 126\}$ are the only nucleon counts at
+ which the experimental binding curve exhibits a discontinuous
+ first-derivative drop (the empirical signature of shell closure).
 
 The downstream cone is the higher-magic-number predictions
 $n \in \{50, 82, 126\}$ where matrix evaluation is unavailable.

@@ -25,7 +25,7 @@ base algebra and are insensitive to cotangent fluctuations.
 $3$-dimensional, isomorphic to the cotangent complement
 $\Omega^1(\mathrm{SU}(2)/\mathrm{U}(1)) \cong \Omega^1(\mathbb{CP}^1) \oplus \mathbb{C}$.
 Explicitly, $\mathfrak{A}^{\mathrm{trans}}$ is spanned by
-endomorphisms that act non-trivially on the fibre directions
+endomorphisms that act non-by definition on the fibre directions
 $\omega_1, \omega_2, \omega_3$ but are killed by
 $\mathrm{U}(1)$-averaging.
 

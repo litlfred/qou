@@ -25,7 +25,7 @@ $$
 of neighbour sites \cite{pena2022}. Specifically:*
 
 1. **(Building block.)** *The non-linear transition operator is
-   the $q$-AND*
+ the $q$-AND*
 
 $$
   \mathrm{Toff}_q
@@ -34,23 +34,23 @@ $$
   |c_1, c_2,  t \oplus_q (c_1 \wedge_q c_2)\rangle,
 $$
 
-   *where $\wedge_q$ is the Hecke-algebra q-AND amplitude
-   $\Phi(q) = (q - 1)(q^{3/2} + q^{1/2} - 1)
+ *where $\wedge_q$ is the Hecke-algebra q-AND amplitude
+ $\Phi(q) = (q - 1)(q^{3/2} + q^{1/2} - 1)
    (q^{3/2} + q + 1) / 2(q+1)^2$
-   ([q-AND](#rem:toffoli-q-and)). Each $\mathrm{Toff}_q$
-   executes in **$3$ Planck steps**
-   ([Planck step](#rem:discrete-planck-step)).*
+ ([q-AND](#rem:toffoli-q-and)). Each $\mathrm{Toff}_q$
+ executes in **$3$ Planck steps**
+ ([Planck step](#rem:discrete-planck-step)).*
 
 2. **(Superposition.)** *Cell states are prepared in
-   "maybe-alive" superpositions $|\psi_i\rangle = \alpha_i|0\rangle + \beta_i|1\rangle$
-   via Hadamard rotations $H \in \mathrm{End}(\mathcal{S}_{p_i})$.
-   Hadamard generates a single-qubit gate outside the Clifford
-   group, so $\{\mathrm{Toff}_q, H\}$ is universal for quantum
-   computation ([universality](#prop:toffoli-transfer-matrix)).*
+ "maybe-alive" superpositions $|\psi_i\rangle = \alpha_i|0\rangle + \beta_i|1\rangle$
+ via Hadamard rotations $H \in \mathrm{End}(\mathcal{S}_{p_i})$.
+ Hadamard generates a single-qubit gate outside the Clifford
+ group, so $\{\mathrm{Toff}_q, H\}$ is universal for quantum
+ computation ([universality](#prop:toffoli-transfer-matrix)).*
 
 3. **(Conway's rules as Toffoli circuits.)** *Survival
-   ($k = 2, 3$) and birth ($k = 3$) at site $i$ with
-   neighbourhood $N(i)$ are realised by the composite operator*
+ ($k = 2, 3$) and birth ($k = 3$) at site $i$ with
+ neighbourhood $N(i)$ are realised by the composite operator*
 
 $$
   \mathcal{U}_i^{\mathrm{rule}}
@@ -62,13 +62,13 @@ $$
   \right)
 $$
 
-   *composed via ancilla qubits to encode the neighbour sum.
-   The binary count $k \in \{2, 3\}$ is computed via a
-   ripple-carry adder of $O(|N(i)|)$ Toffoli gates acting on
-   $\lceil \log_2 |N(i)| \rceil$ ancilla strands.*
+ *composed via ancilla qubits to encode the neighbour sum.
+ The binary count $k \in \{2, 3\}$ is computed via a
+ ripple-carry adder of $O(|N(i)|)$ Toffoli gates acting on
+ $\lceil \log_2 |N(i)| \rceil$ ancilla strands.*
 
 4. **(Reversibility and energy conservation.)**
-   *Each $\mathrm{Toff}_q$ is its own inverse:*
+ *Each $\mathrm{Toff}_q$ is its own inverse:*
 
 $$
   \mathrm{Toff}_q^\dagger  \mathrm{Toff}_q
@@ -76,23 +76,23 @@ $$
   \mathbb{I},
 $$
 
-   *so $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is unitary. The
-   classical dissipation of Conway's GoL is replaced by
-   $q$-energy conservation
-   ([quantum temperature](#def:quantum-temperature),
-   [mass-energy equivalence](#thm:mass-energy-equivalence)):
-   the $q$-energy* $\mathfrak{E}_q = \langle \Psi | \hat{H}_{\mathrm{q\text{-}GoL}} | \Psi \rangle$
-   *is conserved along the automaton orbit, where
-   $\hat{H}_{\mathrm{q\text{-}GoL}} = i\hbar_q \ln \mathcal{U}_{\mathrm{q\text{-}GoL}}/t_P$
-   is the generator of the $q$-GoL unitary flow.*
+ *so $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is unitary. The
+ classical dissipation of Conway's GoL is replaced by
+ $q$-energy conservation
+ ([quantum temperature](#def:quantum-temperature),
+ [mass-energy equivalence](#thm:mass-energy-equivalence)):
+ the $q$-energy* $\mathfrak{E}_q = \langle \Psi | \hat{H}_{\mathrm{q\text{-}GoL}} | \Psi \rangle$
+ *is conserved along the automaton orbit, where
+ $\hat{H}_{\mathrm{q\text{-}GoL}} = i\hbar_q \ln \mathcal{U}_{\mathrm{q\text{-}GoL}}/t_P$
+ is the generator of the $q$-GoL unitary flow.*
 
 5. **(Information bandwidth budget.)**
-   *One $q$-GoL generation advances in $3 \cdot |\mathcal{L}|$
-   Planck steps (one Toffoli per triple, three Planck steps
-   each). The substrate bandwidth
-   $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$
-   ([bandwidth](#def:information-speed-of-light)) bounds the
-   number of generations per unit time:*
+ *One $q$-GoL generation advances in $3 \cdot |\mathcal{L}|$
+ Planck steps (one Toffoli per triple, three Planck steps
+ each). The substrate bandwidth
+ $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$
+ ([bandwidth](#def:information-speed-of-light)) bounds the
+ number of generations per unit time:*
 
 $$
   \text{gens / sec}
@@ -114,7 +114,7 @@ $$
 *with three operator zeros in $(0, 1]$ that bound the
 sub-physical behaviour: $q_\star = 1/\varphi^2 \approx 0.382$
 (golden-ratio zero of $P_{7,7}$), $q_\Phi \approx 0.466$ (cubic
-root of $\Phi$), and $q = 1$ (classical limit, $\Phi$ trivially
+root of $\Phi$), and $q = 1$ (classical limit, $\Phi$ by definition
 vanishes). See [Toffoli LP-stability](#prop:toffoli-lp-stability)
 for the full table. The physical substrate value $q_0 \approx 1.110$
 is safely inside the stable regime $q > 1$.*

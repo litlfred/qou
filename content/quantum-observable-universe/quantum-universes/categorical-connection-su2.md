@@ -54,7 +54,7 @@ corresponds to the natural transformation implementing parallel
 transport in $\mathbf{Rep}(\mathrm{SU}(2))$. Flatness ($F = 0$)
 means that parallel transport around any contractible loop is trivial
 — equivalently, the monodromy depends only on the homotopy class of
-the path. Since $\mathrm{SU}(2) \cong S^3$ is simply connected,
+the path. Since $\mathrm{SU}(2) \cong S^3$ is connected,
 *all* monodromy is trivial: the Maurer--Cartan connection has trivial
 holonomy.
 

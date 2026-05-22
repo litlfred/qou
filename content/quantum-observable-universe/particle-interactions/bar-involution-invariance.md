@@ -6,19 +6,19 @@ involution on the $A_{n-1}$ Hecke algebra after Type-B folding;
 Then:*
 
 1. *(**Plancherel-weight invariance**) For every partition
-   $\lambda \vdash n$ and every $q > 0$, the Plancherel weight
-   satisfies $\overline{w_\lambda(q)} = w_\lambda(q)$, i.e.
-   $w_\lambda(q^{-1}) = w_\lambda(q)$.*
+ $\lambda \vdash n$ and every $q > 0$, the Plancherel weight
+ satisfies $\overline{w_\lambda(q)} = w_\lambda(q)$, i.e.
+ $w_\lambda(q^{-1}) = w_\lambda(q)$.*
 2. *(**Transpose-pair equality**) $w_\lambda(q) = w_{\lambda^T}(q)$
-   for every $\lambda \vdash n$, where $\lambda^T$ is the transpose
-   partition (the Dynkin involution / chirality-reversal
-   from [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)).*
+ for every $\lambda \vdash n$, where $\lambda^T$ is the transpose
+ partition (the Dynkin involution / chirality-reversal
+ from [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)).*
 3. *(**Type-B-folded normal forms**) Any Hecke normal form $T_w$
-   produced by the symmetric-crystal pair-production engine of
-   [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)
-   is bar-invariant: $\overline{T_w} = T_w$.  Equivalently, the
-   image of the folded crystal-step operator
-   $(\tilde f_i, \tilde f_{\bar i})$ is fixed by the bar-involution.*
+ produced by the symmetric-crystal pair-production engine of
+ [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)
+ is bar-invariant: $\overline{T_w} = T_w$. Equivalently, the
+ image of the folded crystal-step operator
+ $(\tilde f_i, \tilde f_{\bar i})$ is fixed by the bar-involution.*
 
 ## Why this is a witness against hand-rolled CPT violations
 
@@ -89,7 +89,7 @@ hook lengths
 Transpose pairing $(3) \leftrightarrow (1, 1, 1)$ has identical
 hook products $\to$ identical $\dim_q$ $\to$ identical $w_\lambda$, as
 predicted by (2). The self-dual $(2, 1)$ has $\lambda = \lambda^T$
-trivially.
+by definition.
 
 Bar-invariance under $q \mapsto q^{-1}$ follows from $[k]_{q^{-1}} = [k]_q$
 on every factor.
@@ -99,13 +99,13 @@ on every factor.
 [`bar-involution-invariance.lean`](bar-involution-invariance.lean)
 
 - Defines `barInvolution : ℝ → ℝ → ℝ` as the substitution
-  $q \mapsto q^{-1}$ on the multiplicative group $\mathbb{R}_{>0}$.
+ $q \mapsto q^{-1}$ on the multiplicative group $\mathbb{R}_{>0}$.
 - Defines `qInteger` (the $q$-integer $[k]_q$) and proves
-  `q_integer_bar_invariant`: $[k]_{q^{-1}} = [k]_q$ for $q > 0$.
+ `q_integer_bar_invariant`: $[k]_{q^{-1}} = [k]_q$ for $q > 0$.
 - Defines the abstract Plancherel weight as a quotient of
-  $q$-integer products and proves
-  `plancherel_weight_bar_invariant` and
-  `plancherel_weight_transpose_eq` (parts 1 and 2 above).
+ $q$-integer products and proves
+ `plancherel_weight_bar_invariant` and
+ `plancherel_weight_transpose_eq` (parts 1 and 2 above).
 - Records part 3 as a conditional theorem under the class
-  `SymmetricCrystalPairProduction n` (per CLAUDE.md §3b-cond),
-  citing the upstream conjecture.
+ `SymmetricCrystalPairProduction n` (per CLAUDE.md §3b-cond),
+ citing the upstream conjecture.

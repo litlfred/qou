@@ -1,20 +1,20 @@
 This appendix carries out the atomic mass calculation for every
 known element ($Z = 1$ through $Z = 118$) from the QOU topological
-mass formula.  Every intermediate step is shown so that the reader
+mass formula. Every intermediate step is shown so that the reader
 can reproduce each result independently.
 
 The elements divide into two groups:
 
-- **Naturally occurring** ($Z = 1$--$92$, Hydrogen through
-  Uranium): formed in stellar nucleosynthesis under ambient
-  substrate parameter $q = q_0$.  Observed masses are precise
-  (AME2020).
+- **accordingly occurring** ($Z = 1$--$92$, Hydrogen through
+ Uranium): formed in stellar nucleosynthesis under ambient
+ substrate parameter $q = q_0$. Observed masses are precise
+ (AME2020).
 
 - **Synthetic** ($Z = 93$--$118$, Neptunium through Oganesson):
-  produced in nuclear reactors (Z = 93--100) or heavy-ion
-  accelerators (Z = 101--118).  Observed masses carry larger
-  uncertainties; for $Z > 109$ the AME2020 values are
-  extrapolated from systematics.
+ produced in nuclear reactors (Z = 93--100) or heavy-ion
+ accelerators (Z = 101--118). Observed masses carry larger
+ uncertainties; for $Z > 109$ the AME2020 values are
+ extrapolated from systematics.
 
 ## The topological mass formula
 
@@ -36,25 +36,25 @@ $$
 where:
 
 1. $m_{\mathfrak{p}}$ is the proton mass from the pair Skein
-   formula ([terminal resolution](#prop:terminal-resolution)):
+ formula ([terminal resolution](#prop:terminal-resolution)):
 
-   $$
+ $$
      m_{\mathfrak{p}}
      = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
    $$
 
 2. $m_{\mathfrak{n}}$ is the neutron mass:
 
-   $$
+ $$
      m_{\mathfrak{n}}
      = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
    $$
 
 3. $m_e$ is the electron mass from the trefoil knot
-   ([electron knot](#ex:electron-knot-concrete)).
+ ([electron knot](#ex:electron-knot-concrete)).
 
 4. $B(Z, N)$ is the total nuclear binding energy from the
-   Skein polynomial of the multi-nucleon Hopf link.
+ Skein polynomial of the multi-nucleon Hopf link.
 
 ## Knot structure of an atom
 
@@ -111,17 +111,17 @@ nucleon from AME2020.
 The binding energy per nucleon $B/A$ is computed from the nuclear
 Skein polynomial
 ([transfer matrix operator](#def:transfer-matrix-operator))
-via transfer matrix multiplication.  In this appendix, the
+via transfer matrix multiplication. In this appendix, the
 AME2020 values of $B/A$ are used as the reference, since the
-transfer matrix computation reproduces them.  Each element's
+transfer matrix computation reproduces them. Each element's
 calculation shows the explicit $B/A$ value used.
 
 ## Observed masses
 
 Observed atomic masses $M_o$ are taken from the AME2020 Atomic
 Mass Evaluation (nuclear mass plus $Z \cdot m_e$), expressed in
-MeV/$c^2$.  The most stable (longest-lived) isotope is listed for
-each element.  For $Z > 109$, AME2020 provides extrapolated
+MeV/$c^2$. The most stable (longest-lived) isotope is listed for
+each element. For $Z > 109$, AME2020 provides extrapolated
 values with uncertainties of order $\sim 0.5$--$1$ MeV.
 
 ## The $q$-torsion hypothesis for synthetic elements
@@ -133,25 +133,25 @@ observed mass derivation, the deviations shown here are small
 
 The deeper test of the QOU framework is whether the Skein
 polynomial computed purely at $q_0$ reproduces the AME2020
-$B/A$ values.  For naturally occurring elements ($Z \leq 92$),
+$B/A$ values. For accordingly occurring elements ($Z \leq 92$),
 the transfer matrix calculation
 ([transfer matrix operator](#def:transfer-matrix-operator))
 confirms this to high precision.
 
 For synthetic elements ($Z \geq 93$), a distinct prediction
-arises.  These nuclei were assembled under conditions very
+arises. These nuclei were assembled under conditions very
 different from stellar nucleosynthesis:
 
 1. **Neutron capture in reactors** ($Z = 93$--$100$): high
-   thermal neutron flux, moderate gauge-field curvature.
-   The local substrate parameter is expected to be close to
-   $q_0$.
+ thermal neutron flux, moderate gauge-field curvature.
+ The local substrate parameter is expected to be close to
+ $q_0$.
 
 2. **Heavy-ion fusion** ($Z = 101$--$118$): nuclei are created
-   in transient heavy-ion collision fireballs
-   ($\sqrt{s_{NN}} \sim$ GeV, lifetime $\sim 10^{-23}$ s)
-   where concentrated gauge-field curvature may shift the
-   local substrate parameter to $q_{\mathrm{eff}} > q_0$.
+ in transient heavy-ion collision fireballs
+ ($\sqrt{s_{NN}} \sim$ GeV, lifetime $\sim 10^{-23}$ s)
+ where concentrated gauge-field curvature may shift the
+ local substrate parameter to $q_{\mathrm{eff}} > q_0$.
 
 If the crossing resolutions of the nuclear Skein polynomial
 "lock in" at the formation-time $q_{\mathrm{eff}}$, then
@@ -163,6 +163,6 @@ deviations that grow with $Z$.
 **Prediction.** When $B/A$ is computed from the Skein
 polynomial at $q_0$ (rather than taken from AME2020),
 the deviations for accelerator-produced elements should be
-systematically larger than for natural elements.  Improved
+systematically larger than for natural elements. Improved
 mass measurements of superheavy elements (e.g.\ at RIKEN
 or GSI) would test this prediction.

@@ -129,7 +129,7 @@ obtained.
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w = \mathbf{1} \in H_1(q_0)$. Closure $\widehat{T_w} = 0_1$ (unknot). |
-| Prediction | $m_\nu \approx 0$ MeV (CODATA upper bound $\lesssim 1$ eV). Confinement at $q_0$: trivially Frobenius-PSD ($\Phi^* = \mathbf{1}$). |
+| Prediction | $m_\nu \approx 0$ MeV (CODATA upper bound $\lesssim 1$ eV). Confinement at $q_0$: by definition Frobenius-PSD ($\Phi^* = \mathbf{1}$). |
 
 **Photon $\gamma$** (4 polarisation $\times$ chirality components)
 
@@ -260,12 +260,12 @@ provisional ${}^{6}$Li / ${}^{7}$Li volume-match results):
 - Tritium $^3$H at $\sim 1.6 \times 10^{-3}$ (`manual-historical`).
 - Deuteron $^2$H at $\sim 1.1 \times 10^{-2}$ (`manual-historical`).
 - $\alpha$-cluster atoms ${}^{8}$Be–${}^{40}$Ca: mean $|\mathrm{err}| \sim 8$%
-  (`recursive-on-⁴He`).
+ (`recursive-on-⁴He`).
 
 Provisional (${}^{6}$Li, ${}^{7}$Li) — **not counted in the principled summary**:
 
 - ${}^{7}$Li: $+4{,}009$ ppb at $L_{11a62}$, $\rho = 5$ (volume-match coincidence;
-  see methodology caveat above).
+ see methodology caveat above).
 - ${}^{6}$Li: $-164{,}991$ ppb at $K_{11a259}$, $\rho = 5$ (search noise floor).
 
 Atlas covers $\ell \leq 2$ at $q_0$; further atoms ($\ell = 3$
@@ -386,36 +386,36 @@ to the rendered appendix on the next `bun run build`.
 ## Open
 
 - **Principled derivation for ${}^{6}$Li, ${}^{7}$Li (and any new atom)**: the only
-  admissible path is a **joint SDP on the full mass tower** — over all
-  confinement levels $\ell$ and all atoms simultaneously — with
-  **Gröbner–Shirshov filtration tracking** and **jet-order tracking**,
-  yielding a canonical $T_w \in H_{n_0}(q_0)$ *per atom* as a structured
-  certificate. Status: **certificate format proof-of-concept complete**
-  ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py)
-  + [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
-  The reducer computes filtration grade + jet-order events exactly in
-  symbolic $q$ via SymPy on the test cases $\sigma_1^3$ (electron) and
-  $(\sigma_1 \sigma_2^{-1})^3$ (proton/neutron body). The joint-tower
-  SDP solver consumes this certificate format; until that solver lands,
-  the volume-match results stay quarantined. The Markov closure of $T_w$ is then taken in $S^3$ and
-  $\mathrm{Vol}_{\mathrm{hyp}}$ is computed at $\geq 50$ decimal digits
-  via `hp_volume_of_link_closure(braid_word, digits=50)`; comparison to
-  $K_{11a259}$ / $L_{11a62}$ (or whatever closure the SDP yields) happens
-  *a posteriori*. Per-atom volume-match search is FORBIDDEN as a
-  derivation route — the SDP must be joint over the tower so the GB
-  filtration and the jet ordering are consistent across confinement
-  levels. Until that joint SDP is run, the volume-match results stay
-  quarantined.
+ admissible path is a **joint SDP on the full mass tower** — over all
+ confinement levels $\ell$ and all atoms simultaneously — with
+ **Gröbner–Shirshov filtration tracking** and **jet-order tracking**,
+ yielding a canonical $T_w \in H_{n_0}(q_0)$ *per atom* as a structured
+ certificate. Status: **certificate format proof-of-concept complete**
+ ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py)
+ + [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+ The reducer computes filtration grade + jet-order events exactly in
+ symbolic $q$ via SymPy on the test cases $\sigma_1^3$ (electron) and
+ $(\sigma_1 \sigma_2^{-1})^3$ (proton/neutron body). The joint-tower
+ SDP solver consumes this certificate format; until that solver lands,
+ the volume-match results stay quarantined. The Markov closure of $T_w$ is then taken in $S^3$ and
+ $\mathrm{Vol}_{\mathrm{hyp}}$ is computed at $\geq 50$ decimal digits
+ via `hp_volume_of_link_closure(braid_word, digits=50)`; comparison to
+ $K_{11a259}$ / $L_{11a62}$ (or whatever closure the SDP yields) happens
+ *a posteriori*. Per-atom volume-match search is FORBIDDEN as a
+ derivation route — the SDP must be joint over the tower so the GB
+ filtration and the jet ordering are consistent across confinement
+ levels. Until that joint SDP is run, the volume-match results stay
+ quarantined.
 - **Structural rule for $\rho$ in $B = \rho \cdot m_e \cdot \mathrm{Vol}(K)$**:
-  pattern $\rho \in \{1, 2\}$ for $\ell \leq 2$ atoms breaks at
-  ${}^{6}$Li, ${}^{7}$Li (both at $\rho = 5$ in the volume-match search). Open:
-  derive $\rho(Z, N)$ from ILP / confinement structure.
+ pattern $\rho \in \{1, 2\}$ for $\ell \leq 2$ atoms breaks at
+ ${}^{6}$Li, ${}^{7}$Li (both at $\rho = 5$ in the volume-match search). Open:
+ derive $\rho(Z, N)$ from ILP / confinement structure.
 - **Hyperbolic-knot identification beyond $\ell = 2$**: ${}^{9}$Be, ${}^{11}$B,
-  ${}^{14}$N — no entries are in scope until a *principled* (GB-NF) derivation
-  exists. Volume-match search will not be used.
-- **Photon $\rho$-factor**: photon mass $= 0$ trivially (no $\rho$
-  needed), but for the recursive structure may tie to gauge-boson
-  Higgs coupling.
+ ${}^{14}$N — no entries are in scope until a *principled* (GB-NF) derivation
+ exists. Volume-match search will not be used.
+- **Photon $\rho$-factor**: photon mass $= 0$ by definition (no $\rho$
+ needed), but for the recursive structure may tie to gauge-boson
+ Higgs coupling.
 
 
 ## Per-element stability summary ($Z = 1$ to $92$)

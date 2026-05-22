@@ -53,7 +53,7 @@ $$
 - $\Delta_\beta$ is **scalar** (proportional to $\mathbb{I}$): it commutes with every transfer matrix.
 - At $q = 1$: $q - q^{-1} = 0$ and $\Delta_\beta = 0$ (no parity violation classically).
 - **Universality**: the same $\Delta_\beta$ applies to every nucleus, for
-  every converting nucleon, regardless of the partner.
+ every converting nucleon, regardless of the partner.
 
 ## 2. Reverse beta decay ($\beta^+$)
 
@@ -64,8 +64,8 @@ $$
 $$
 
 $\beta^+$ decay is $\mathfrak{u} \to \mathfrak{d}$, the reverse
-of $\beta^-$ ($\mathfrak{d} \to \mathfrak{u}$).  The matrix is
-simply negated.
+of $\beta^-$ ($\mathfrak{d} \to \mathfrak{u}$). The matrix is
+ negated.
 
 ## 3. Photon absorption (Reidemeister I move)
 
@@ -109,9 +109,9 @@ $$
 
 Pair creation consumes a **two-photon crossing** (empty–empty)
 and produces a **particle–antiparticle crossing** (trefoil–mirror
-trefoil).  A single photon cannot pair-produce in vacuum
+trefoil). A single photon cannot pair-produce in vacuum
 (momentum conservation requires either a second photon or a
-nearby nucleus to absorb recoil).  The transfer matrix change
+nearby nucleus to absorb recoil). The transfer matrix change
 is the same as $\beta^+$ decay: a chirality-changing crossing
 replacement.
 
@@ -132,7 +132,7 @@ $$
 
 where $C_i$ is the product of unchanged transfer matrices
 between the two converting positions, and $L_i, R_i$ are
-the products to the left and right.  The **quadratic term**
+the products to the left and right. The **quadratic term**
 $\Delta_\beta \cdot C_i \cdot \Delta_\beta$ is the nuclear
 matrix element of double beta decay.
 
@@ -170,7 +170,7 @@ The full $2 \times 2$ Toffoli transfer matrix $\mathbf{M}(q)$:
 
 **Single-crossing type-blindness:** at generator $\sigma_1$
 (one crossing), $\hat{V}_1 = z$ regardless of crossing
-type.  A single crossing carries no type information.
+type. A single crossing carries no type information.
 
 ## 7. Catalogue of all $\Delta$ operators
 

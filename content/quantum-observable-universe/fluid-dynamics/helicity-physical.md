@@ -7,5 +7,5 @@ as observed in [trefoil chirality flips](#rem:trefoil-vortex-chirality-flip).
 The quantisation of $\Gamma_i^{(q)} = [j_i]_q[j_i+1]_q$ ensures
 that each term in the helicity sum is individually quantised.
 Helicity takes values in a discrete lattice determined by the
-$\mathrm{SU}_q(2)$ representation labels $\{j_i\}$, not merely
+$\mathrm{SU}_q(2)$ representation labels $\{j_i\}$, not only
 a continuous conserved quantity.

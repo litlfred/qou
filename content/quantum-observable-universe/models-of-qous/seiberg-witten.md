@@ -1,13 +1,13 @@
 The infinite geometric torsion $T$ and the six topological defects on the
 $\mathbb{P}^1(\mathbb{C})$ base $z=x_0/x_1$ are strictly artefacts of
-dimensional projection.  The total space, when lifted into the
+dimensional projection. The total space, when lifted into the
 complete coordinate framework, is a globally smooth complex manifold.
 
 **1. The blow-up and the exceptional divisor.**
 Near a spacetime defect $z_c$ where chiral sheets (e.g. $x_2$ and
 $x_3$) merge, the singularity is resolved by blowing up the point into
 an exceptional divisor parameterised by the local coordinate
-$\delta=x_2-x_3$.  The local geometry satisfies
+$\delta=x_2-x_3$. The local geometry satisfies
 
 $$
   z-z_c \sim \delta^2,
@@ -31,16 +31,16 @@ $\lvert\det(J)\rvert=1$, so the global volume form never collapses:
 
 This is the *spectral volume constraint*: the top-degree analogue
 of the categorical volume constraint
-([quantum observable universe](#def:quantum-observable-universe), item (iii)).  The categorical
+([quantum observable universe](#def:quantum-observable-universe), item (iii)). The categorical
 constraint provides a non-degenerate pairing
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$ on the rank-$2$ fundamental
 object; the spectral volume constraint
 extends this to the full chiral fibre, ensuring that the $4$-form $\Omega$
-is everywhere non-degenerate.  Both enforce $\det = 1$: the categorical
+is everywhere non-degenerate. Both enforce $\det = 1$: the categorical
 form forces $g_V \in \mathrm{SL}(V)$, while the spectral form forces
 $\det(J) \in \mathrm{U}(1)$.
 
-The link is made explicit by the symplectic form.  On the categorical
+The link is made explicit by the symplectic form. On the categorical
 side, the alternating pairing on $V \cong \mathbb{C}^2$ is
 ([volume from rigidity](#lem:volume-from-rigidity))
 
@@ -52,10 +52,10 @@ $$
 
 On the Brings surface, the spectral coordinates split into conjugate
 pairs $(w_1, w_4)$ and $(w_2, w_3)$ with
-$\overline{w_k} = w_{5-k}$.  The quadric
+$\overline{w_k} = w_{5-k}$. The quadric
 constraint is
 $w_1 w_4 + w_2 w_3 = 0$,
-which is the Plucker relation $\Lambda^2 V \hookrightarrow V \otimes V$.  The induced symplectic $2$-form on the chiral fibre is
+which is the Plucker relation $\Lambda^2 V \hookrightarrow V \otimes V$. The induced symplectic $2$-form on the chiral fibre is
 
 ```tex
 \begin{equation}\label{eq:chiral-symplectic-form}
@@ -104,8 +104,8 @@ torus:
 
 By lifting the Bring's surface into the full spatial and spectral
 coordinate spaces, the degenerate branch points resolve completely into
-smooth exceptional divisors.  The infinite local torsion is geometrically
+smooth exceptional divisors. The infinite local torsion is geometrically
 captured as trapped flux, revealing that the discrete braid-group
-($B_3$) holonomy ([holonomy of trefoil](#rem:holonomy-trefoil)) is simply the
+($B_3$) holonomy ([holonomy of trefoil](#rem:holonomy-trefoil)) is the
 continuous Kodaira monodromy of a globally smooth Seiberg--Witten gauge
 theory.

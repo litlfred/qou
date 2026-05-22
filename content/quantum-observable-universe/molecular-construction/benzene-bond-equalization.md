@@ -1,9 +1,9 @@
 *The $D_6$ symmetry of the threading link $T(2, 6)$ ensures
-that all six C--C bonds are identical.  Each bond has:*
+that all six C--C bonds are identical. Each bond has:*
 
 - *1 $\sigma$ pair (from step 1--4 of the construction)*
 - *$\frac{1}{2}$ $\pi$ pair (from the threading link — each
-  $\pi$ electron is shared between 2 adjacent carbons)*
+ $\pi$ electron is shared between 2 adjacent carbons)*
 
 *Total bond order per C--C bond: $1 + \frac{1}{2} = \frac{3}{2}$.*
 
@@ -20,8 +20,8 @@ minimum for 6 $\pi$ electrons on a 6-membered ring.*
 *Extension to larger aromatics (naphthalene $C_{10}H_8$,
 anthracene $C_{14}H_{10}$) proceeds by the same construction:
 build the $\sigma$ framework iteratively, then apply the LP
-dual to select the optimal $\pi$ configuration.  The threading
-link $T(2, N)$ generalises naturally to $N$-membered rings,
+dual to select the optimal $\pi$ configuration. The threading
+link $T(2, N)$ generalises accordingly to $N$-membered rings,
 with Alexander polynomial
 $\Delta_{T(2,N)}(q) = (q^{N/2} - q^{-N/2})/(q - q^{-1})$
 for even $N$.*

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean"
   },
   "source_hashes": {
-    "md": "7ee3b0a18ef5",
+    "md": "6b65f415e71f",
     "ts": "c226b1c5a9fd",
     "lean": "b64c5eecab4d"
   },
@@ -425,20 +425,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "7ee3b0a18ef5",
+          "md": "6b65f415e71f",
           "ts": "c226b1c5a9fd",
           "lean": "b64c5eecab4d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:56: — a gauge mode acts trivially in the integrable direction."
+        "reviewed_at": "2026-05-22T20:32:53.779Z",
+        "reviewed_sha": "62032eec1ffa052f738df0f38803a560d3d6e0b0"
       }
     ],
     "voice-scholarly-default": [
@@ -561,5 +561,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:32:53.779Z"
 }

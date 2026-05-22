@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 [QOU](#def:quantum-observable-universe) with
-[substrate parameter](#def:substrate-parameter) $q > 1$.  Let
+[substrate parameter](#def:substrate-parameter) $q > 1$. Let
 $\Delta_q = d_q\delta_q + \delta_q d_q$ be the
 [$q$-Laplacian](#rem:q-laplacian-interpretation) acting on
 $\Omega^1(A)$, and let
@@ -40,7 +40,7 @@ $$
   \left(1 + q^{-4k}\right)
 $$
 
-for all $k \geq 1$.  In particular,
+for all $k \geq 1$. In particular,
 $\mu_k^{(q)} = \Theta(q^{2k})$ — exponential in $k$.
 
 **(c) Categorical Sobolev embedding.**
@@ -59,9 +59,9 @@ $$
 $$
 
 The constant $C_q$ is finite for all $q > 1$ (the series
-converges because $[k]_q^{-2} = O(q^{-2k})$).  As $q \to 1$,
+converges because $[k]_q^{-2} = O(q^{-2k})$). As $q \to 1$,
 $[k]_q \to k$ and $C_q^2 \to \sum k^{-2} = \pi^2/6$ in the
-1-dimensional case.  On the 3-dimensional state bundle
+1-dimensional case. On the 3-dimensional state bundle
 $\mathcal{S}$, eigenvalue multiplicities $(2j+1)^2$ cause
 $C_q$ to diverge — the embedding fails in the classical limit.
 
@@ -106,7 +106,7 @@ $(\lambda - \Delta_q)^{-1}$ acts on the eigenbasis as
 $(\lambda - \Delta_q)^{-1}(z^k) = (\lambda + [k]_q^2)^{-1}z^k$.
 Since $[k]_q^2 \to \infty$ exponentially, the eigenvalues
 $(\lambda + [k]_q^2)^{-1} \to 0$ super-exponentially, so the
-resolvent is not merely compact but **trace-class**:
+resolvent is not only compact but **trace-class**:
 
 $$
   \sum_{k=1}^\infty \frac{1}{|\lambda + [k]_q^2|}
@@ -135,6 +135,6 @@ $$
   \left(\sum_k (1+[k]_q^2)|\hat{v}_k|^2\right)^{1/2}
 $$
 
-by Cauchy--Schwarz.  The first factor is $C_q$ (finite for
+by Cauchy--Schwarz. The first factor is $C_q$ (finite for
 $q > 1$ since $[k]_q^{-2} = O(q^{-2k})$); the second is
 $\lVert v \rVert_{H^1_q}$.
