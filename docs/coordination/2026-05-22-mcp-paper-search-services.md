@@ -175,3 +175,37 @@ policy.
   [`docs/coordination/2026-05-19-bib-verification-ledger.md`](2026-05-19-bib-verification-ledger.md)
 - Network policy:
   [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web)
+
+## Coordination ledger
+
+| Date | PR | Phase | Status | Cherry-pick / dependency |
+|------|----|-------|--------|--------------------------|
+| 2026-05-22 | [#883](https://github.com/litlfred/qou/pull/883) | `.mcp.json` repair + bib audit + design doc | landed [`a6319b41`](https://github.com/litlfred/qou/commit/a6319b41caaa9981ed0cbb2231c7a5397ee75e93) | **Depends on [#880](https://github.com/litlfred/qou/pull/880)** — without that PR's `$HOME/.local/bin` PATH fix in `scripts/start-folio-assistant.sh`, the `uvx`-based MCP servers I configured won't be found by the session-start launcher. Order: land #880 first or together. |
+| 2026-05-22 | [#880](https://github.com/litlfred/qou/pull/880) | MCP PATH fix + proof-axis backlog drain | open ([`39b7f740`](https://github.com/litlfred/qou/commit/39b7f7407c33dbb4d26ee47a7f9aa51435ac1f84) — `scripts/start-folio-assistant.sh` PATH export) | prerequisite for #883's MCP server fixes to function in remote-execution sessions |
+
+## Sibling scope map (snapshot 2026-05-22)
+
+| PR | Branch | Overlap with #883 | Dependency | Cherry-pick | Coordination posted |
+|----|--------|---|---|---|---|
+| #880 | `claude/friendly-wright-GH0qG` | none (different files) | I depend on theirs | none | [comment](https://github.com/litlfred/qou/pull/880#issuecomment-4519815234) |
+| #881 | `claude/prepare-merge-no-squash-default-2026-05-22` | none | independent | none | — |
+| #882 | `claude/eager-gauss-S36Uk` | none (one-voice sidecars ≠ bib) | independent | none | — |
+| #875 | `copilot/integration-backlog-proof` | none | independent | none | — |
+| #872 | `claude/qa-script-criteria-2026-05-20` | none | independent | none | — |
+| #878 | `claude/wenzl-lr-consumer-fix-2026-05-22` | none | independent | none | — |
+| #871 | `copilot/optimize-compute-pipeline` [DRAFT] | none | independent | none | — |
+| #876 | `copilot/review-pull-872` | none | independent | none | — |
+| #807 | `claude/compute-audit-P33-P34-2026-05-19` | none | independent | none | — |
+| #818 | `claude/i1-probe-knot-factor-borromean-composite-2026-05-19` | none | independent | none | — |
+| #827 | `copilot/sub-pr-826` | none | independent | none | — |
+| #817 | `claude/cor-knot-factor-amphicheiral-revise-2026-05-19` | none | independent | none | — |
+| #761 | `claude/combine-all-open-prs` | none (chirality/Hoefsmit/GP stack) | independent | none | — |
+| #774 | `claude/iw-meta-tighten-guarded-off-heuristic` | none | independent | none | — |
+| #646 | `copilot/fix-lake-errors` | none | independent | none | — |
+| #650 | `copilot/add-q-clt-proof-derivation` | none | independent | none | — |
+| #31  | `copilot/add-svg-illustration-affine-light` | none | independent | none | — |
+| #411 | `copilot/sub-pr-410` | none (Dockerfile only — different surface; both touch MCP infra but no shared files) | independent | none | — |
+
+## Main delta during session
+
+- `236d742f78113cf0fc096757d68fd9853d3b1c6c → 07e272f49…` — 3 commits (audit doc only), files: `docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`. **No overlap with this branch's scope** (§8a — additive). Not merged into the branch; will resolve cleanly on PR merge.
