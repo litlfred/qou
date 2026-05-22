@@ -119,7 +119,7 @@ The categorical formula is invariant under the bar involution
   b(q⁻¹) = b(q)    (symmetric in (q² + q⁻²))
   ℏ_q(q⁻¹) = -ℏ_q(q) but enters at even powers
 
-So the full product is even in `(q - q⁻¹)`, consistent with the
+The full product is even in `(q - q⁻¹)`, consistent with the
 classical-limit decategorification principle. -/
 
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder

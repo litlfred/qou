@@ -61,7 +61,7 @@ namespace QOU.Descartes
 
     via Mathlib's `tsum`. The series converges absolutely and
     uniformly on all of `ℝ` (since `|sin(k θ) / k²| ≤ 1 / k²`),
-    so the `tsum` is well-defined and continuous. Outside the
+    The `tsum` is well-defined and continuous. Outside the
     standard fundamental domain `[0, 2π]` the function extends
     by periodicity (`Cl_2(θ + 2π) = Cl_2(θ)`). -/
 -- Ref: [zagier1986] Cl_2 in hyperbolic volume formulas

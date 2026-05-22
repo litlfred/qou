@@ -42,7 +42,7 @@ import Mathlib.Algebra.BigOperators.Basic
 namespace QOU.BraidsAndKnots
 
 /-- Local mirror of the categorical 1-dim Markov-trace family axiom
-    so the conditional uniqueness theorem in this file does not
+    The conditional uniqueness theorem in this file does not
     require a cross-module import. The genuine class lives in the
     sibling `wenzl-bridge-applicability-qou.lean` (cf. `prop:wenzl-
     bridge-applicability-qou`); both encode Chlouveraki HDR Theorem

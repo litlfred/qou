@@ -56,7 +56,7 @@ structure MassSpectrum (K : Type*) where
 
 /-- The graded Markov trace from GS-filtration descent
     (`conj:gs-graded-markov-trace-existence`).  Stated as a class
-    so the truncation theorem is conditional per CLAUDE.md §3b-cond
+    The truncation theorem is conditional per CLAUDE.md §3b-cond
     on this conjecture's content.  An instance asserts that the
     descent holds — i.e. the Markov trace descends to a sequence
     `tr_{M, ℓ}` along the GS filtration `J^•(q)`. -/

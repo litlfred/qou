@@ -16,7 +16,7 @@ crossing arises as a **symmetric-channel dual-space pairing**:
     τ_sym(σ) - τ_sym(σ⁻¹)  =  h          (symmetric channel)
     τ_sym(σ⁻¹) - τ_sym(σ)  = -h
 
-so the per-crossing factor is `1 + sign(c) · h`.
+The per-crossing factor is `1 + sign(c) · h`.
 
 Specialises to the three paper values observed for isotopes:
 

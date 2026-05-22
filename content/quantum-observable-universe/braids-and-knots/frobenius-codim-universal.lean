@@ -420,7 +420,7 @@ noncomputable def heckeH6DimQ (q : ℝ) (i : Fin 11) : ℝ :=
     `∑ i : Fin (n+1), f i = (∑ i : Fin n, f i.castSucc) + f (Fin.last n)`),
     then bridge through Mathlib's `Fin.sum_univ_eight` for the
     remaining 8.  Each `Fin.castSucc` chain reduces definitionally
-    so the final `rfl` closes the goal.  This is exactly the same
+    The final `rfl` closes the goal.  This is exactly the same
     recursive pattern Mathlib uses internally for `Fin.sum_univ_eight`
     via `Fin.sum_univ_castSucc + Fin.sum_univ_seven`. -/
 private lemma Fin_sum_univ_eleven {M : Type*} [AddCommMonoid M]

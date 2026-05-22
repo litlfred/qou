@@ -14,7 +14,7 @@ $$
 $$
 
 where $\chi_k$ is the character $\sigma \mapsto \zeta_5^{\,-k}$ and the
-right-hand side is the non-trivial $\mathbb{Z}_5$-isotypical part of
+The right-hand side is the non-trivial $\mathbb{Z}_5$-isotypical part of
 Bring's rational $H^1$ (the remaining weight-$0$ summand is contained
 in the $S_5$-standard isotype and does not see the cyclic structure).
 

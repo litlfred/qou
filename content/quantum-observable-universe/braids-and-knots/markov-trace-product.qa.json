@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "7f748a050a3e",
     "ts": "2d062d9da723",
-    "lean": "0d14bd14e99a"
+    "lean": "7f506e2909f8"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -482,20 +482,22 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "cd10e645ed94",
+          "md": "7f748a050a3e",
           "ts": "2d062d9da723",
-          "lean": "0d14bd14e99a"
+          "lean": "7f506e2909f8"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T20:59:31.864Z",
+        "reviewed_sha": "2cdada401e638187079cdcb5539602d280eaac65",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/markov-trace-product.lean:72: right* (`trace (cs ++ [c]) = trace cs · vertexVolume z c`), but | quantum-observable-universe/braids-and-knots/markov-trace-product.lean:196: so the theorem genuinely captures the Markov-property recursion"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-product.lean:72: right* (`trace (cs ++ [c]) = trace cs · vertexVolume z c`), but"
       }
     ],
     "voice-ai-slop": [
@@ -686,5 +688,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T19:09:35.413Z"
+  "updated_at": "2026-05-22T20:59:31.864Z"
 }

@@ -31,7 +31,7 @@ universe u
     particle: its braid-strand count and its total colour charge
     (mod 3 sum of strand colours).  These are content-bearing
     fields; the categorical-axiom theorems below never inspect them
-    so downstream proofs continue to close by `rfl`-style
+    Downstream proofs continue to close by `rfl`-style
     evaluation. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
 structure ConfinedParticleTy where

@@ -193,7 +193,7 @@ def QCasimir_EF (qs : QuantumSu2) (d : QCasimirData qs) : qs.Algebra :=
 /-- **EF/FE equivalence**: `QCasimir = QCasimir_EF`.
 
     Derivation.  Let `Δ := (qK + q⁻¹K⁻¹) - (q⁻¹K + qK⁻¹) = (q-q⁻¹)(K - K⁻¹)`,
-    so the difference of the bracketed parts equals `ι(q-q⁻¹)·(K-K⁻¹)`.
+    The difference of the bracketed parts equals `ι(q-q⁻¹)·(K-K⁻¹)`.
     Multiplying by `invQm · invQm` and using `invQm_right` once,
 
     `Δ · invQm · invQm = ι(q-q⁻¹) · (K - K⁻¹) · invQm · invQm`

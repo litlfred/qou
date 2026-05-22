@@ -28,7 +28,7 @@ variable {C : Type u} [CategoryTheory.Category.{v} C]
     vanishes on the support of the unit particle state Li_q(z).
 
     In a 3-dimensional torsion leaf L_q, Legendrian curves are knots,
-    so the unit particle inherits a knot type from its embedding.
+    The unit particle inherits a knot type from its embedding.
     The Legendrian condition (θ = 0 on supp) means the defect carries
     no transverse angular momentum. -/
 -- Ref: [manuscript] Ch 8 §2

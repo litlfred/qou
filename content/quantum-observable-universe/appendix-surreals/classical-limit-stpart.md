@@ -62,7 +62,7 @@ cases where the left-hand side has obstructions. The
 classical-limit obstruction
 ([classical limit obstruction](#def\:classical-limit-obstruction))
 $\mathrm{HH}^2(\mathcal{U}_q, \mathrm{Ad})$ becomes, on the
-right-hand side, a *non-zero finite surreal* in
+The right-hand side, a *non-zero finite surreal* in
 $\mathbf{No}_{\mathrm{fin}}$ whose standard-part vanishes only
 when the obstruction itself vanishes.
 

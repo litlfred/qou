@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "c2b5592e6aef",
     "ts": "827fe91b4e3e",
-    "lean": "d779e90fe1c6"
+    "lean": "416491e0a81e"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -444,20 +444,20 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "ef2913f7f1f0",
+          "md": "c2b5592e6aef",
           "ts": "827fe91b4e3e",
-          "lean": "d779e90fe1c6"
+          "lean": "416491e0a81e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.lean:64: so the `tsum` is well-defined and continuous. Outside the"
+        "reviewed_at": "2026-05-22T20:59:31.864Z",
+        "reviewed_sha": "2cdada401e638187079cdcb5539602d280eaac65"
       }
     ],
     "voice-ai-slop": [
@@ -546,5 +546,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:00:08.749Z"
+  "updated_at": "2026-05-22T20:59:31.864Z"
 }

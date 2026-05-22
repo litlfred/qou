@@ -36,7 +36,7 @@ namespace QOU.HadronicMass
     Hopf-link volume `vol_hopf_link` (internal pairwise binding).
     The lemma packages the existence of a coherent datum: the Lake
     module's `proton_quarks` already realises one such instance,
-    so the existence statement holds. -/
+    The existence statement holds. -/
 -- Ref: [manuscript] §10 Observations / nucleon-borromean-topology
 theorem nucleon_borromean_topology :
     ∃ (qff : QuarkFlavorFactor) (v_borr v_hopf : ℝ),
