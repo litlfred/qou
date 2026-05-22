@@ -149,7 +149,7 @@ Three prior obstructions are now structurally addressed:
 
 - **The empirical $5/2 - h^2 \cdot G$ ansatz**
   (`prop:lambda-scale-substrate-form` (forthcoming))
-  was falsified in PR #701 as a PSLQ coincidence. The categorical
+  was falsified as a PSLQ coincidence. The categorical
   identity above replaces it: $\lambda_p^{\mathrm{scale}}$ is *not*
   a polynomial in $h$, but rather the Bloch-Wigner regulator of an
   integer combination of hyperbolic-knot classes.

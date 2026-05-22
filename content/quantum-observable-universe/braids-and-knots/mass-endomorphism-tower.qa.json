@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean"
   },
   "source_hashes": {
-    "md": "e45749982840",
+    "md": "c3aabb117d60",
     "ts": "2dc33456752b",
     "lean": "7d5293e1f96f"
   },
@@ -429,20 +429,20 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "e45749982840",
+          "md": "c3aabb117d60",
           "ts": "2dc33456752b",
           "lean": "7d5293e1f96f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md:183: `kahler_lift.py` (recursion fix landed in PR #526)."
+        "reviewed_at": "2026-05-22T15:34:59.203Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "voice-unicode-crash": [
@@ -686,5 +686,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T15:34:59.203Z"
 }

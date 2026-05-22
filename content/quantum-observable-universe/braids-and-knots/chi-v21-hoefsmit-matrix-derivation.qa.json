@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.lean"
   },
   "source_hashes": {
-    "md": "b173be58d07a",
+    "md": "c6cc6c670cdf",
     "ts": "074e93034678",
     "lean": "33735ff57a23"
   },
@@ -391,20 +391,20 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "b173be58d07a",
+          "md": "c6cc6c670cdf",
           "ts": "074e93034678",
           "lean": "33735ff57a23"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md:103: level**. The proof is the only remaining `sorry` in PR #672's"
+        "reviewed_at": "2026-05-22T15:34:59.203Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "voice-unicode-crash": [
@@ -546,5 +546,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T15:34:59.203Z"
 }

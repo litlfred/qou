@@ -56,9 +56,9 @@ $1/(1 - \hbar_q^2)$ truncated at depth $N+1$. Numerically it
 ($1.15\%$ observed vs $97$ ppm ceiling) and **makes the residual
 worse than $N=0$** by a factor of $\sim 6.9$ in absolute terms.
 
-This is consistent with the handoff documented in PR #637
-(commit `e1b005b2`): five candidate naive $N=1$ lifts all overshot
-by factors of $42$–$134\times$. The geometric-series lift is
+This is consistent with prior handoff documentation: five
+candidate naive $N=1$ lifts all overshot by factors of
+$42$–$134\times$. The geometric-series lift is
 qualitatively the same failure mode: a uniform multiplicative
 correction to $E_0$ that doesn't respect the per-partition
 Wedderburn-block structure of the brane-tower truncation.

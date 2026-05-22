@@ -178,9 +178,9 @@ $|\hat V_i|^n$ as the $n$-th power evaluation of the per-generator
 transfer-matrix chain, each $z^n$ summand factors through
 $\mathrm{tr}_M(\sigma_i^n)$ — which IS Markov-invariant.  See
 `brane_tower_plancherel_scaffold.py` for a numerical scaffold; the
-production wiring depends on PR #526's term-trace infrastructure.
-An equivalent Kähler-derivative reformulation is available via
-`kahler_lift.py` (recursion fix landed in PR #526).
+production wiring depends on the term-trace infrastructure noted
+above. An equivalent Kähler-derivative reformulation is available
+via `kahler_lift.py` (recursion-fixed).
 
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative

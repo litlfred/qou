@@ -147,7 +147,7 @@ succeeding):
 
 ### Status
 
-**Status: open.** Numerical value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is fixed by consistency. **Closed form requires categorical derivation, not ansatz-fitting** (per the methodological correction in PR #515 follow-up):
+**Status: open.** Numerical value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is fixed by consistency. **Closed form requires categorical derivation, not ansatz-fitting** (per the methodological correction documented separately):
 
 1. Discharging
    [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
