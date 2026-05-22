@@ -77,7 +77,6 @@ export function sidecarPathFor(scriptAbs: string): string {
  */
 function* walkRoot(
   rootAbs: string,
-  rootRel: string,
   root: ScriptRoot,
   repoRoot: string,
 ): Generator<ScriptTarget> {
@@ -117,6 +116,6 @@ export function* walkScripts(
   roots: ScriptRoot[] = SCRIPT_ROOTS,
 ): Generator<ScriptTarget> {
   for (const r of roots) {
-    yield* walkRoot(join(repoRoot, r.dir), r.dir, r, repoRoot);
+    yield* walkRoot(join(repoRoot, r.dir), r, repoRoot);
   }
 }
