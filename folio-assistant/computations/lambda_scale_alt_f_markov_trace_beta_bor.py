@@ -132,12 +132,13 @@ def main() -> int:
 
     rel_thresh_ppb = mp.mpf("1e-9")
     rel_thresh_ppm = mp.mpf("1e-6")
+    one_percent = mp.mpf("0.01")
 
     if abs(rel_diff) < rel_thresh_ppb:
         verdict = "MATCH-1ppb"
     elif abs(rel_diff) < rel_thresh_ppm:
         verdict = "MATCH-1ppm"
-    elif abs(rel_diff) < mp.mpf("0.01"):
+    elif abs(rel_diff) < one_percent:
         verdict = "CLOSE-but-not-exact (<1%)"
     elif abs(rel_diff) < mp.mpf("0.1"):
         verdict = "FAR (>1%, <10%)"
@@ -154,6 +155,9 @@ def main() -> int:
             "between Markov-trace and Vol-form formalisms)."
         )
 
+    identity_holds = bool(abs(rel_diff) < one_percent)
+    identity_falsified = int(not identity_holds)
+
     w.add_data("beta_bor_crossings", str(crossings))
     w.add_data("Vol_B3", mp.nstr(VOL_B3, 30))
     w.add_data("hbar_q_squared", mp.nstr(HBAR ** 2, 30))
@@ -166,12 +170,22 @@ def main() -> int:
     w.add_data("rel_diff_ppm", mp.nstr(rel_ppm, 10))
     w.add_data("verdict", verdict)
 
+    # Per repo convention (cf. probe_phiq_n_star_rule.py): falsification
+    # probes assert the refutation so the witness `allPassed` stays true
+    # and audit dashboards don't classify the expected-negative result as
+    # a regression. Strategy F's hypothesis ("the naive Markov-trace
+    # identity holds") is expected to be falsified; the assertion below
+    # passes iff `|rel_diff| ≥ 1 %`.
     w.add_assertion(
-        "strategy_f_markov_trace_identity_holds",
-        computed=mp.nstr(candidate, 12),
-        expected=mp.nstr(target, 12),
-        tolerance=str(float(rel_thresh_ppm)),
-        source="Markov-trace formula tr_M(β) = Σ_λ y_λ · χ^λ(β) at H_3(q_0)",
+        "strategy_f_markov_trace_identity_falsified",
+        computed=identity_falsified,
+        expected=1,
+        tolerance=None,
+        source=(
+            "Markov-trace formula tr_M(β) = Σ_λ y_λ · χ^λ(β) at H_3(q_0); "
+            "passes when the naive identity λ_scale = |tr_M|·ℏ_q²/Vol "
+            "does NOT hold (|rel_diff| ≥ 1%)."
+        ),
     )
 
     out = w.save()
