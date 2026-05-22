@@ -37,6 +37,7 @@ import {
 import {
   gitHeadSha,
   computeCriterionScriptHashes,
+  entryIsFresh,
   saveQaScriptSidecar,
   type CriterionScriptHashes,
 } from "./qa-utils";
@@ -99,6 +100,7 @@ interface ScriptSweepResult {
   script_path: string;
   language: ScriptLanguage;
   criteria_run: number;
+  criteria_skipped_fresh: number;
   fail_critical: number;
   fail_major: number;
   fail_minor: number;
@@ -163,30 +165,54 @@ async function run(): Promise<void> {
       updated_at: nowIso,
       criteria: {},
     };
+    const metadataDrifted =
+      !!existing &&
+      (existing.script_path !== target.rel ||
+        existing.language !== target.language ||
+        existing.source_hash !== target.source_hash);
     report.script_path = target.rel;
     report.language = target.language;
     report.source_hash = target.source_hash;
+
+    // Per-target field hash. `"ts"` is the QaFieldHash convention
+    // for the primary source file across every QA axis; in the
+    // script-quality axis it carries the audited script's content
+    // hash regardless of extension (`.py`, `.rs`, …).
+    const currentHashes = { ts: target.source_hash };
 
     const sweepRow: ScriptSweepResult = {
       script_path: target.rel,
       language: target.language,
       criteria_run: 0,
+      criteria_skipped_fresh: 0,
       fail_critical: 0,
       fail_major: 0,
       fail_minor: 0,
     };
 
-    let anyChange = !existing;
+    let anyChange = false;
     for (const cid of runnableIds) {
       const def = QA_CRITERIA_BY_ID[cid];
       const checker = SCRIPT_CHECKERS[cid];
       if (!def || !checker) continue;
 
-      const checkRes = checker(target);
+      // Freshness short-circuit (mirrors qa-sweep.ts:266-282). Skip
+      // the checker entirely when a prior entry's `field_hash` +
+      // checker `script_hash` still match — prevents unbounded
+      // sidecar growth and constant git churn on `updated_at`.
       const sh = scriptHashesByCriterion[cid];
+      const prevEntries = report.criteria[cid] ?? [];
+      const freshExisting = prevEntries.find((e) =>
+        entryIsFresh(e, currentHashes, def.depends_on, sh),
+      );
+      if (freshExisting) {
+        sweepRow.criteria_skipped_fresh++;
+        continue;
+      }
+
+      const checkRes = checker(target);
       const entry: QaCriterionEntry = {
-        field_hash: { ts: target.source_hash }, // script content is the
-                                                // sole audit input
+        field_hash: currentHashes,
         result: checkRes.result,
         reviewer: {
           kind: "script",
@@ -203,7 +229,7 @@ async function run(): Promise<void> {
         entry.severity = def.default_severity;
         entry.evidence = checkRes.hits
           .slice(0, 5)
-          .map((h) => `${relative(process.cwd(), h.file)}:${h.line}: ${h.text}`)
+          .map((h) => `${relative(REPO_ROOT, h.file)}:${h.line}: ${h.text}`)
           .join(" | ");
         if (def.default_severity === "critical") {
           sweepRow.fail_critical++;
@@ -217,16 +243,22 @@ async function run(): Promise<void> {
         }
         sweepRow.first_hit ??= entry.evidence?.slice(0, 80);
       }
-      report.criteria[cid] = [...(report.criteria[cid] ?? []), entry];
+      report.criteria[cid] = [...prevEntries, entry];
       sweepRow.criteria_run++;
       anyChange = true;
     }
 
-    if (!args.dryRun && anyChange) {
+    const wroteSomething = anyChange || metadataDrifted || !existing;
+    if (!args.dryRun && wroteSomething) {
       report.updated_at = nowIso;
       saveScriptQa(target.sidecar_abs, report);
     }
-    if (sweepRow.criteria_run > 0) results.push(sweepRow);
+    if (
+      sweepRow.criteria_run > 0 ||
+      sweepRow.criteria_skipped_fresh > 0
+    ) {
+      results.push(sweepRow);
+    }
   }
 
   // Refresh per-criterion script sidecars (same convention as
