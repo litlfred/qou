@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "def:phi-q-piece",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
     "prop:graded-markov-trace-from-gs-filtration",
     "prop:gb-spectral-sequence",
   ],

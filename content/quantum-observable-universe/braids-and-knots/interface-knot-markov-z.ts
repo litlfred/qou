@@ -11,7 +11,7 @@ export default proposition({
   uses: [
     "def:ew-interface-knot",
     "thm:jones-markov-trace",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
   ],
   cites: ["jones1987", "markov1936"],
   computation: {

@@ -17,7 +17,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
         "rem:hecke-charge-mass-duality",
   ],
 });

@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "def:ew-interface-knot",
     "prop:atomic-mass-gb-nf",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
     "thm:jones-markov-trace",
   ],
   computation: {

@@ -19,7 +19,7 @@ export default remark({
     "prop:schur-weyl-mass-decomposition",
     "prop:graded-trace-residue-split",
     "rem:bw-mass-decomposition-dictionary",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
     "def:confinement-level",
     "def:braid-twist-flip",
   ],

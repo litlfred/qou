@@ -15,7 +15,7 @@ export default proposition({
     "wedderburn",
   ],
   uses: [
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
     "rem:mass-endomorphism-jet-tower",
     "prop:graded-trace-residue-split",
     "prop:wedderburn-weight-canonical",

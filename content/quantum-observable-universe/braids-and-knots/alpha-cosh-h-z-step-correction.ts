@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "prop:interface-knot-markov-z",
     "thm:jones-markov-trace",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
   ],
   cites: ["wenzl1988", "jones1987"],
   computation: {
