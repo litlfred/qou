@@ -6,7 +6,8 @@
 //! the wheel small and the build simple.
 
 use hecke_engine::{
-    geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
+    geck_pfeiffer, gram, littlewood_richardson,
+    reduce_laurent as rust_reduce_laurent, seminormal, seminormal_mn, seminormal_mpfr,
     tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
 };
 use pyo3::prelude::*;
@@ -524,6 +525,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq_clear_cache, m)?)?;
+    m.add_function(wrap_pyfunction!(incremental_reduce_rust, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
@@ -663,4 +665,47 @@ fn tr_m_word_lq(
 #[pyfunction]
 fn tr_m_word_lq_clear_cache() {
     rust_tr_m_word_lq::clear_cache();
+}
+
+/// **Tier 1.A entry point — Rust `incremental_reduced_element_fast`.**
+///
+/// Runs the Markov-peel reduce loop (R1 Hecke quadratic, R2 far-comm,
+/// R3 Yang-Baxter braid — see `hecke_engine::reduce_laurent`) on an
+/// atomic-braid signed word.  Returns the fully-reduced
+/// `LaurentHeckeElement` as a flat FFI vector.
+///
+/// Tier 1.A of the compute-optimisation roadmap
+/// (`docs/audits/2026-05-20-compute-optimization-roadmap.md`): port
+/// of `folio-assistant/computations/hecke_laurent_fast.py`'s
+/// `incremental_reduced_element_fast` driver, addressing the 60-70%
+/// of wall on ⁶Li `tr_M_atomic` that the cProfile attributed to
+/// sympy `Rational` arithmetic inside the Python LaurentQ `__mul__`.
+///
+/// `signed_word`: `[(sign, gen_0based), ...]` where `sign ∈ {-1, 0, +1}`
+///   (the same encoding used by `chi_lambda_all_partitions_*`, but with
+///   0-based generator indices to match the Python reduce convention).
+/// `max_iterations_per_step`: per-step fixpoint cap (production: 10000).
+///
+/// Returns `Vec<(Vec<i32>, Vec<(q_exp, num_str, den_str)>)>` — each
+/// element is `(σ-word, list of (q-exponent, BigInt-numerator decimal,
+/// BigInt-denominator decimal))`.  The Python bridge reconstructs
+/// `dict[tuple, sympy.Rational]` or evaluates directly to `mpmath.mpf`
+/// at `q₀`.
+///
+/// **R4 is not implemented** — see the module-level docstring on
+/// `hecke_engine::reduce_laurent` for the rationale (R4 sympy
+/// round-trip was empirically slower than the unfolded LaurentQ
+/// reduce).  Words containing negative entries (formal-variable
+/// markers) round-trip unchanged so a future R4 port can slot in.
+#[pyfunction]
+#[pyo3(signature = (signed_word, max_iterations_per_step=10_000))]
+fn incremental_reduce_rust(
+    signed_word: Vec<(i8, i32)>,
+    max_iterations_per_step: u32,
+) -> Vec<(Vec<i32>, Vec<(i32, String, String)>)> {
+    let elem = rust_reduce_laurent::incremental_reduce(
+        &signed_word,
+        max_iterations_per_step,
+    );
+    elem.to_ffi()
 }

@@ -137,6 +137,34 @@ fn add_to(
     *entry += &coef;
 }
 
+/// Incremental reduce — mirror of `incremental_reduced_element_fast`
+/// from `folio-assistant/computations/hecke_laurent_fast.py:219`.
+///
+/// Multiplies factors one at a time (via [`LaurentHeckeElement::Mul`])
+/// and reduces after each step (via [`reduce_laurent_rules`]).
+/// Returns the final reduced [`LaurentHeckeElement`].
+///
+/// `signed_word`: list of `(sign, gen_0based)` pairs.  Each pair
+/// constructs a [`LaurentHeckeElement::crossing_factor`] which is
+/// then multiplied into the accumulating element.
+///
+/// `max_iterations_per_step`: passed straight through to
+/// [`reduce_laurent_rules`] for the per-step fixpoint loop.  The
+/// Python default is `5000`; production calls pass `10000`.
+pub fn incremental_reduce(
+    signed_word: &[(i8, i32)],
+    max_iterations_per_step: u32,
+) -> LaurentHeckeElement {
+    let mut elem = LaurentHeckeElement::identity();
+    for &(sign, gen) in signed_word {
+        let factor = LaurentHeckeElement::crossing_factor(gen, sign);
+        elem = &elem * &factor;
+        let (reduced, _) = reduce_laurent_rules(&elem, max_iterations_per_step);
+        elem = reduced;
+    }
+    elem
+}
+
 /// R1 finder: first position `pos` with `word[pos] == word[pos+1] >= 0`.
 /// Returns `None` if no σ² pattern is present.
 #[inline]
@@ -358,6 +386,42 @@ mod tests {
         assert_eq!(reduced.n_terms(), 1);
         assert!(reduced.terms.contains_key(&vec![1]));
         assert!(!reduced.terms.contains_key(&vec![0]));
+    }
+
+    #[test]
+    fn incremental_reduce_proton_like_pair() {
+        // A two-crossing braid: σ_0 then σ_0 (two positive crossings
+        // at the same generator).  Should reduce to the same
+        // h·σ_0 + 1 form as σ_0² directly.
+        let signed_word = vec![(1i8, 0i32), (1i8, 0i32)];
+        let reduced = incremental_reduce(&signed_word, 10000);
+        assert_eq!(reduced.n_terms(), 2);
+        let h = LaurentRationalQ::hecke_h();
+        let empty: Vec<i32> = Vec::new();
+        assert_eq!(reduced.terms[&vec![0]], h);
+        assert_eq!(reduced.terms[&empty], one());
+    }
+
+    #[test]
+    fn incremental_reduce_averaged_squared() {
+        // ((σ_0 − h/2) · (σ_0 − h/2))
+        // = σ_0² − h σ_0 + h²/4
+        // After R1 on σ_0²: (h σ_0 + 1) − h σ_0 + h²/4
+        // = 1 + h²/4
+        // h² = q² − 2 + q⁻², so h²/4 = q²/4 − 1/2 + q⁻²/4.
+        // Total: 1/2 + q²/4 + q⁻²/4 on the constant word [].
+        let signed_word = vec![(0i8, 0i32), (0i8, 0i32)];
+        let reduced = incremental_reduce(&signed_word, 10000);
+        assert_eq!(reduced.n_terms(), 1, "expected only the constant word, got {:?}", reduced.terms.keys().collect::<Vec<_>>());
+        let empty: Vec<i32> = Vec::new();
+        // Expected: q²/4 + 1/2 + q⁻²/4
+        let expected = LaurentRationalQ::from_terms(vec![
+            (2, BigRational::new(BigInt::from(1), BigInt::from(4))),
+            (0, BigRational::new(BigInt::from(1), BigInt::from(2))),
+            (-2, BigRational::new(BigInt::from(1), BigInt::from(4))),
+        ]);
+        assert_eq!(reduced.terms[&empty], expected,
+                   "got {}", reduced.terms[&empty].pretty());
     }
 
     /// End-to-end smoke: a small atomic-like word reduces to a
