@@ -142,6 +142,23 @@
 \newunicodechar{✅}{\textbf{[done]}}               % U+2705 check mark
 \newunicodechar{🔓}{\textbf{[open]}}               % U+1F513 unlocked
 \newunicodechar{🟡}{\textbf{[!]}}                  % U+1F7E1 yellow circle
+% Additional status/math Unicode added to fix LaTeX errors in generated chapters
+\newunicodechar{⚪}{\textbf{[--]}}                 % U+26AA white circle (pending)
+\newunicodechar{🟢}{\textbf{[OK]}}                 % U+1F7E2 green circle
+\newunicodechar{🔴}{\textbf{[X]}}                  % U+1F534 red circle
+\newunicodechar{🟠}{\textbf{[~]}}                  % U+1F7E0 orange circle
+\newunicodechar{⟵}{\unimathsafe{\longleftarrow}}  % U+27F5 long left arrow
+\newunicodechar{⟹}{\unimathsafe{\Longrightarrow}} % U+27F9 long double right arrow
+\newunicodechar{↦}{\unimathsafe{\mapsto}}          % U+21A6 maps to
+\newunicodechar{─}{\texttt{-}}                     % U+2500 box drawing horizontal
+\newunicodechar{│}{\texttt{|}}                     % U+2502 box drawing vertical
+\newunicodechar{⋆}{\unimathsafe{\star}}            % U+22C6 star operator
+\newunicodechar{□}{\unimathsafe{\square}}          % U+25A1 white square
+\newunicodechar{◄}{\unimathsafe{\triangleleft}}    % U+25C4 left-pointing triangle
+\newunicodechar{▼}{\unimathsafe{\triangledown}}    % U+25BC down-pointing triangle
+\newunicodechar{►}{\unimathsafe{\triangleright}}   % U+25BA right-pointing triangle
+\newunicodechar{▲}{\unimathsafe{\triangle}}        % U+25B2 up-pointing triangle
+\newunicodechar{ℏ}{\unimathsafe{\hbar}}            % U+210F h-bar
 
 % ── Custom symbols ───────────────────────────────────────────────────────────
 \newcommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
@@ -347,6 +364,14 @@
 % positional args may be empty — that icon is simply omitted. The leading
 % \mbox{} anchors the marginnote to a non-floating reference point in the
 % body line so adjacent margin notes don't collide.
+%
+% NOTE: \makeatletter is required here so that \blockannot@i (and the
+% internal \@tmp / \@empty refs in its body) are tokenised with @ as a
+% letter (catcode 11).  Without it, \blockannot@i is tokenised as
+% \blockannot (catcode-12 @ stops the control-word scan), which causes
+% "Command \blockannot already defined" and a subsequent parameter-stack
+% overflow when \blockannot recurses into itself.
+\makeatletter
 \newcommand{\blockannot}[3]{\blockannot@i{}{#1}{#2}{#3}}
 \newcommand{\blockannotok}[3]{\blockannot@i{ok}{#1}{#2}{#3}}
 \newcommand{\blockannot@i}[4]{%
@@ -368,6 +393,7 @@
     \fi
   }%
 }
+\makeatother
 
 % \chapterannot{chapterDir}{trackerLabel}
 % Chapter-level annotation: link to the chapter directory + tracker.

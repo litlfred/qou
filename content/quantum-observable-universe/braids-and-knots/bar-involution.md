@@ -57,7 +57,7 @@ well-defined bar-action falls in one of these rows:
 | $\cos(\alpha - b\hbar_q^2/2)$ | phase factor at $N{=}1$ | master $Q_\beta$ formula |
 | $\cosh(h)$ | hyperbolic-cosine of skein | per-Z gain $\alpha_Z \approx [3]_q^2 \cdot \cosh(h)$ |
 | Volume forms $\alpha \wedge d\alpha$ | contact volume | Reeb dynamics |
-| Unsigned linking $|\mathrm{lk}|$ | absolute linking | knot multiplicity |
+| Unsigned linking $\lvert\mathrm{lk}\rvert$ | absolute linking | knot multiplicity |
 | Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ | Markov-axiom factor | interface knot $\bowtie_K = z$ |
 | All $c_k(q)$ in the precision ladder | classical rationals in $q$ | $\tau_M$ expansion about $q=1$ |
 

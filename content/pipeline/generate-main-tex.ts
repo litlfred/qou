@@ -164,23 +164,32 @@ export function generateMainTex(
   lines.push("\\clearpage");
   lines.push("");
 
+  // Introduction (if present) is emitted before the TOC per chapter-reorg
+  // intent, so readers see framing before navigation.
+  const sortedEntries = [...opts.chapterSlugs.entries()].sort(
+    ([a], [b]) => a - b,
+  );
+  const introEntry = sortedEntries.find(
+    ([num, slug]) => slug === "introduction" && !opts.excludeChapterIndices?.has(num),
+  );
+  if (introEntry) {
+    lines.push("% ── Introduction (pre-TOC) ───────────────────────────────────────────────");
+    lines.push(`\\input{${opts.chaptersDir}${introEntry[1]}}`);
+    lines.push("");
+  }
+
   // Table of contents — depth limited to chapters + sections by preamble.
-  // The notation register is the first chapter (\chapter*{Notation}) and
-  // sits immediately after the TOC, so readers see symbol conventions
-  // before the introduction. The renderer prepends \clearpage to every
-  // chapter (see render-latex.ts renderChapter), so no extra \clearpage
-  // is needed here.
+  // The renderer prepends \clearpage to every chapter (see render-latex.ts
+  // renderChapter), so no extra \clearpage is needed here.
   lines.push("% ── Table of contents ─────────────────────────────────────────────────────");
   lines.push("\\tableofcontents");
   lines.push("");
 
   // 4. Chapter includes (excluding standalone appendices)
   lines.push("% ── Chapters (generated from manifest) ────────────────────────────────────");
-  const sortedEntries = [...opts.chapterSlugs.entries()].sort(
-    ([a], [b]) => a - b,
-  );
   for (const [num, slug] of sortedEntries) {
     if (opts.excludeChapterIndices?.has(num)) continue;
+    if (introEntry && num === introEntry[0]) continue; // already emitted pre-TOC
     lines.push(`\\input{${opts.chaptersDir}${slug}}`);
   }
   lines.push("");

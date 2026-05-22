@@ -598,6 +598,8 @@ jobs:
             # Only copy appendix-related PDFs (those generated from standalone-*.tex)
             if [ -f "standalone-${apdf%.pdf}.tex" ] || echo "$apdf" | grep -qE '^(glossary|appendix-|index-of-)'; then
               cp "$apdf" "${PAPER_OUTDIR}/${apdf}"
+              mkdir -p "${PAPER_OUTDIR}/chapters"
+              cp "$apdf" "${PAPER_OUTDIR}/chapters/${apdf}"
               echo "  ✓ Appendix: ${apdf}"
             fi
           done
@@ -783,6 +785,69 @@ jobs:
           path: _site
           retention-days: 1
 
+      # ── 4b. Assemble downloadable build-artifacts zip ───────────────────────
+      # Collect all PDFs, TypeDoc schema docs, Lake/Lean docs, and key JSON
+      # manifests into a single zip attachment on the workflow run.  This is
+      # the "download everything in one click" artifact — unlike the 1-day
+      # publish-site artifact (used only by the deploy job), this one lives
+      # for 30 days and is directly downloadable from the Actions run page
+      # without waiting for a gh-pages deploy.
+      - name: Assemble build-artifacts zip
+        env:
+          FNAME_BASE: ${{ steps.names.outputs.base }}
+        run: |
+          mkdir -p build-artifacts/pdfs/chapters
+
+          # ── PDFs ──────────────────────────────────────────────────────────
+          # Full paper PDF
+          [ -f main.pdf ] && cp main.pdf "build-artifacts/pdfs/${FNAME_BASE}.pdf"
+
+          # Diff PDF (feature branches)
+          [ -f diff.pdf ] && cp diff.pdf "build-artifacts/pdfs/${FNAME_BASE}-diff.pdf"
+
+          # Standalone appendix PDFs (knot table, transfer matrices, etc.)
+          for apdf in *.pdf; do
+            case "$apdf" in main.pdf|diff.pdf|standalone-*) continue;; esac
+            echo "$apdf" | grep -qE '^(glossary|appendix-|index-of-)' \
+              && cp "$apdf" "build-artifacts/pdfs/chapters/${apdf}"
+          done
+
+          # Per-chapter PDFs (from split step)
+          if [ -d chapter-pdfs ] && ls chapter-pdfs/*.pdf >/dev/null 2>&1; then
+            cp chapter-pdfs/*.pdf build-artifacts/pdfs/chapters/
+            [ -f chapter-pdfs/pdf-split-manifest.json ] \
+              && cp chapter-pdfs/pdf-split-manifest.json build-artifacts/pdfs/chapters/manifest.json
+          fi
+
+          # ── TypeDoc schema docs ────────────────────────────────────────────
+          if [ -d build/schema-docs ]; then
+            cp -r build/schema-docs build-artifacts/schema-docs
+          fi
+
+          # ── Lean / Lake docs (copied from _site if present) ───────────────
+          if [ -d _site/lean ]; then
+            cp -r _site/lean build-artifacts/lean-sources
+          fi
+
+          # ── Key JSON/SVG manifests ──────────────────────────────────────
+          [ -f _site/proof-objects.json ]    && cp _site/proof-objects.json    build-artifacts/
+          [ -f _site/dependency-graph.svg ]  && cp _site/dependency-graph.svg  build-artifacts/
+          [ -f glossary.json ]               && cp glossary.json               build-artifacts/
+          [ -f mapping.json ]                && cp mapping.json                build-artifacts/
+          [ -f _site/builds.json ]           && cp _site/builds.json           build-artifacts/
+          [ -f build-warnings.log ]          && cp build-warnings.log          build-artifacts/
+
+          echo "── build-artifacts contents:"
+          find build-artifacts -type f | sort
+
+      - name: Upload build-artifacts zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts-${{ steps.names.outputs.base }}-${{ env.HEAD_SHA }}
+          path: build-artifacts
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Prepare builds.json root artifact
         if: env.HEAD_REF != 'main'
         run: |
@@ -849,6 +914,10 @@ jobs:
             raw_diff_row=""
           fi
 
+          # Build artifact zip URL (Actions run page — direct download)
+          run_url="${repo_url}/actions/runs/${{ github.run_id }}"
+          artifact_name="build-artifacts-${FNAME_BASE}-${{ env.HEAD_SHA }}"
+
           for pr in $pr_numbers; do
             # Avoid duplicate comments: skip if we already posted a link
             # for this exact commit
@@ -883,6 +952,7 @@ jobs:
           | Knot Table | [⬇ appendix-knot-periodic-table.pdf](${raw_base}/appendix-knot-periodic-table.pdf) |
           | Transfer Matrices | [⬇ appendix-transfer-matrices.pdf](${raw_base}/appendix-transfer-matrices.pdf) |
           | Atomic Masses | [⬇ appendix-atomic-mass-calculations.pdf](${raw_base}/appendix-atomic-mass-calculations.pdf) |
+          | **All PDFs + TypeDoc + manifests (zip)** | [⬇ ${artifact_name}](${run_url}#artifacts) |
 
           **Source (repo)**
           | Resource | Link |
