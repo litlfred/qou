@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "prop:shell-transition-knot",
   label: "rem:shell-transition-knot-interpretation",
-  title: "Why the shell-transition threshold is $N = 3$",
+  title: "Shell-transition threshold at $N = 3$",
   tags: [
     "nuclear-shell",
     "borromean",

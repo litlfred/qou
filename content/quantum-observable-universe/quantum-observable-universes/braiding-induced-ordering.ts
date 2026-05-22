@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:braiding-induced-ordering",
   title:
-    "The braiding induces a canonical admissible well-ordering on the Hecke basis",
+    "Canonical admissible ordering on the Hecke basis induced by braiding",
   tags: [
     "braiding",
     "well-ordering",

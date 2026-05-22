@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:cyclotomic-trilog-imaginary-closed-form",
   title:
-    "General closed form: Im Li$_3$($\\zeta_n$) = $(n - 1)(n - 2)\\pi^3 / (3 n^3)$ for every root of unity",
+    "Trilogarithm imaginary part at $\\zeta_n$: closed form $(n - 1)(n - 2)\\pi^3 / (3 n^3)$ for every root of unity",
   lean: {
     ref: "qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds",
     validation: "not_checked",

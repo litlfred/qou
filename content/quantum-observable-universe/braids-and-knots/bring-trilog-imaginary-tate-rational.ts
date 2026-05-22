@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:bring-trilog-imaginary-tate-rational",
   title:
-    "Im Li$_3$($\\zeta_5$) = 4$\\pi^3$/125 — Tate-rational, via Kummer reflection (50-dps verified)",
+    "Trilogarithm imaginary part at $\\zeta_5$: Tate-rational closed form $4\\pi^3/125$ via Kummer reflection (50-dps verified)",
   lean: {
     ref: "qou:QOU.BraidKnot.BringTrilogImaginaryTateRational.im_li3_zeta5_closed_form",
     validation: "not_checked",

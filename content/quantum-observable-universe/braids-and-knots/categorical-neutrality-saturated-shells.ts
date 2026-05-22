@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:categorical-neutrality-saturated-shells",
   title:
-    "Proposition (categorical neutrality of saturated shells): the full-twist acts trivially on $\\Phi_n$ at magic $n$",
+    "Categorical neutrality of saturated shells: full-twist identity action on $\\Phi_n$ at magic $n$",
   lean: {
     ref: "qou:QOU.ShellNeutrality.SaturatedShellConjecture",
     validation: "not_checked",
