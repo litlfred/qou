@@ -57,11 +57,11 @@ and `P(z) = 64z⁶+96z⁵+120z⁴+160z³+105z²+66z+39 = Res_c(F, F_z)`.
 - Numerical match against production `sw_3root_product_degree1`
   at `z=0.1` is machine ε ✓
 
-This is correct mathematics. The `.md` is right; the `.ts` and `.lean`
-docstrings still say `D = disc_c(F)` without the sign correction
-(Copilot already flagged this; uncommitted patches partly address
-the `.md` but leave `.ts` line 15 and `.lean` lines 11/48 in the
-old form).
+This is correct mathematics. All three siblings (`.md`, `.ts`, `.lean`)
+now carry the sign-correction docstring `D(z) = Res_c(F, F_c) =
+-disc_c(F)` (verified against `main` and on this branch; the
+PR #751 round-1 Copilot reviews on `sw-3root-rational-integrand.{ts,lean}`
+were addressed before this audit landed).
 
 ### 1.2 Polynomial-division structure
 
@@ -71,9 +71,13 @@ $$
 
 so $\int_{-a}^{a}(-P/D)\,dz = -8a + (\text{remainder integral})$. The
 remainder integral is sum-of-arctangents over the three irrational
-w-roots of `D̃(w) = 16w³+24w²−13w+2` (discriminant $-80000$,
-**not** a perfect square in $\mathbb{Q}$ — so D(z) is irreducible
-over $\mathbb{Q}$, ruling out clean factorisation).
+w-roots of `D̃(w) = 16w³+24w²−13w+2`. By the rational-root theorem
+the only candidates are $\pm 2^a / 2^b$ with $a \le 1$, $b \le 4$;
+direct evaluation rules them all out (`Poly(D̃).is_irreducible =
+True` in sympy), so $\tilde D$ is irreducible over $\mathbb{Q}$.
+Combined with $\mathrm{disc}(\tilde D) = -80000 < 0$, $\tilde D$
+has one real and two complex-conjugate roots, none rational;
+$D(z)$ therefore does not split over $\mathbb{Q}$.
 
 This is sound but **not** what the merged PR claims. It does **not**
 give a closed-form expression for $A(a)$, just a rational

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T03:19:29.270731+00:00",
-  "commitSha": "dbfc940f3d58cce2a1a86bcd497c1a8178f19977",
+  "computedAt": "2026-05-22T19:56:17.792983+00:00",
+  "commitSha": "62d168c66fd1532619d797a0bb2014daea4be5f9",
   "assertions": [
     {
       "name": "a(1) = 3/7",
@@ -35,12 +35,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 148,
+  "durationMs": 277,
   "computation": "mobius-limit-from-thimble",
   "scriptFile": "mobius_limit_from_thimble.py",
-  "scriptHash": "57084e42ae29",
-  "scriptCommitSha": "0093f06021ac3d14750159144fa9da757890d69a",
-  "description": "Closed-form integration limit a(q) = (4-q)/(4q+3) from steepest-descent re-entry point of the PL thimble. Algebraic identity verified by sympy; archimedean Hessian data lives in picard-lefschetz-thimble.witness.json.",
+  "scriptHash": "97cc92cdf772",
+  "scriptCommitSha": "8889cab021f7590a4cb92a36ff2a60fc82818e1c",
+  "description": "Closed-form Möbius pencil a(q) = (4-q)/(4q+3) — CAL-4-fitted ansatz on the categorical-action integration limit (conj:mobius-limit-from-thimble). The earlier PL re-entry-abscissa framing was retracted on main (commit f86ea9d7a); the q-source is open work. Algebraic identity (closed form, sanity at q=1) verified by sympy.",
   "contentBlock": "conj:mobius-limit-from-thimble",
   "parameters": {
     "q0": 1.1099785955541805
@@ -67,6 +67,6 @@
     "mobius_matrix_trace": 2
   },
   "caveats": [
-    "The algebraic identity is the certified statement.  Numerical agreement with the steepest-descent re-entry point recorded in picard-lefschetz-thimble.witness.json is informational; subleading Hessian-residual corrections of order |H(z_c)|^{-1/2} are absorbed into the tolerance."
+    "Closed-form Möbius pencil — CAL-4-fitted ansatz (conj:mobius-limit-from-thimble). The earlier steepest-descent re-entry framing was retracted on main (commit f86ea9d7a) since the PL crossing is numerically at x_re ≈ 3.86, not at a(q_0) ≈ 0.388. The q-source is open work; this witness certifies only the algebraic closed form and its sanity at q = 1."
   ]
 }

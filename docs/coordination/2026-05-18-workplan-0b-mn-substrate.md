@@ -156,5 +156,6 @@ Subject to user direction (see end-of-turn options): either
 `bring_bloch_tier{1..5}_search_m_p.py` scripts for whether THAT
 candidate replacement is itself a substrate derivation or a
 Bring-volume PSLQ fit to CODATA, or (b) open a follow-up PR
-demoting `conj:mobius-limit-from-thimble → conj:` with the
-explicit "q is not sourced" banner from §3.5 of the audit.
+adding the explicit "q is not sourced" banner from §3.5 of the
+audit to `prop:mobius-limit-from-thimble` and demoting it to
+`conj:mobius-limit-from-thimble`.
