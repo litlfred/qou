@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "f0a58a009b58",
-    "ts": "ddbbf83d7866"
+    "ts": "49b8b1540e08"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -444,19 +444,19 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "f708f6975b70",
-          "ts": "ddbbf83d7866"
+          "md": "f0a58a009b58",
+          "ts": "49b8b1540e08"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7ea11950d58f",
+          "script_commit_sha": "e2805fa0d5a6a74447ea13f1dba5cb8a264bc0c7"
         },
-        "reviewed_at": "2026-05-20T16:47:18.199Z",
-        "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/kashiwara-jones-alternation-interpretation.ts:5: title \"Why the $Q_\\\\beta$ precision-ladder coefficients $c_k$ alternate between Kashiwara matrix elements (\" — starts with a question word"
+        "reviewed_at": "2026-05-22T19:53:42.609Z",
+        "reviewed_sha": "6348c5fc541b23613a2c2e7ce7d9b542f92323fd"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -477,5 +477,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T19:05:44.405Z"
+  "updated_at": "2026-05-22T19:53:42.609Z"
 }

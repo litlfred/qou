@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:kashiwara-jones-alternation-interpretation",
   title:
-    "Why the $Q_\\beta$ precision-ladder coefficients $c_k$ alternate between Kashiwara matrix elements (intra-block) and Jones invariants (inter-block) — interpretation via two moduli spaces meeting at Markov closure, twisted by GB jet order",
+    "Alternation of $Q_\\beta$ precision-ladder coefficients $c_k$ between Kashiwara matrix elements (intra-block) and Jones invariants (inter-block): interpretation via two moduli spaces meeting at Markov closure, twisted by GB jet order",
   interprets: "prop:q-beta-categorical-precision-ladder",
   uses: [
     "prop:q-beta-categorical-precision-ladder",

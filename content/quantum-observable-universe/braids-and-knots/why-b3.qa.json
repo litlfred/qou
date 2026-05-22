@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "ab276dab061d",
-    "ts": "ecdde8302d3c"
+    "ts": "f7f40af11f64"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -441,18 +441,18 @@
       {
         "field_hash": {
           "md": "ab276dab061d",
-          "ts": "ecdde8302d3c"
+          "ts": "f7f40af11f64"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7ea11950d58f",
+          "script_commit_sha": "e2805fa0d5a6a74447ea13f1dba5cb8a264bc0c7"
         },
-        "reviewed_at": "2026-05-20T16:47:18.199Z",
-        "reviewed_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/why-b3.ts:6: title \"Why $B_3$ in the Descartes universe\" — starts with a question word"
+        "reviewed_at": "2026-05-22T19:53:42.609Z",
+        "reviewed_sha": "6348c5fc541b23613a2c2e7ce7d9b542f92323fd"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T19:53:42.609Z"
 }
