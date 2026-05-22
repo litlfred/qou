@@ -150,7 +150,7 @@ Per the deep review of last 10 days of math improvements (2026-05-20 audit), the
 
 | # | Action | Where | Risk |
 |---|---|---|---|
-| 1 | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with `prop:lambda-scale-bring-bloch-identity` derivation | `m_p_borromean_verification_50dps.py` | 3-calibration discipline violation; production m_p chain uses calibrated literal |
+| 1 | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with `conj:lambda-scale-bring-bloch-identity` derivation | `m_p_borromean_verification_50dps.py` | 3-calibration discipline violation; production m_p chain uses calibrated literal |
 | 2 | Migrate 20 importers of SUPERSEDED `mass_endomorphism.py` to the new `mass_tower_operator_valued` API (after extending the 2-factor verification to (Z+N)) | 20 scripts including `build_proton_mass_50dps_chain.py`, `mass_formula_6term.py`, `mass_at_3A_proper.py` | SUPERSEDED dependency in production |
 | 3 | Wire the Rust LR convention adapter (PR #829) into `atomic_tr_m_*` scripts for A ≥ 3 — expected ~500× speedup at ⁴He, ~10⁶× at ¹⁰B | `atomic_tr_m_helium4.py`, `atomic_tr_m_mpfr_50dps.py` + 6 mass scripts | massive compute speedup available, untaken |
 | 4 | Refactor 4 production tr_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_canonical.py`, `binding_depth_stratified*.py` | re-computes H_{3A} character per atom; closed form sidesteps this |
@@ -204,7 +204,7 @@ These are the **5 final-stage bug-finding actions** identified from the 10-day a
 **The 3-calibration rule** is strict: only $m_e$, $m_\mu/m_e$, $Q_\beta$ may be calibrated against experiment. Everything else MUST derive from these three via the chain above.
 
 **Common pitfalls** (look for these in code review):
-- Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `prop:lambda-scale-bring-bloch-identity`.
+- Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `conj:lambda-scale-bring-bloch-identity`.
 - Φ_q in a binding-context script → **bar-symmetry violation**. The binding context wants Li_2^q.
 - Calibration parameters not in the 3-input set → **4th-calibration violation**. The CLAUDE.md `Δ_λ gate` (Track A blocker) explicitly forbids a 7th closure ansatz.
 - Substrate-side compute using $q$ as $\mathbb{R}$ before the Archimedean functor → **§7c base-ring violation**. Everything categorical should be generic over `[Field R]` until step 9.

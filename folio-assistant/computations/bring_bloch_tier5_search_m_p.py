@@ -25,7 +25,7 @@ likely needs the categorical-trace machinery (q-dilog tower)
 directly, not a Bring-Bloch realisation via hyperbolic knots.
 
 Refs:
-- prop:lambda-scale-bring-bloch-identity (PR #843)
+- conj:lambda-scale-bring-bloch-identity (PR #843)
 - conj:bring-hyperbolic-knot-bloch-decomposition
 - Tier 0/1/2/3/4 sibling scripts on this branch and #843
 """

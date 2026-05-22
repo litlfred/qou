@@ -13,7 +13,7 @@ Target: Vol(K_p^eff) = λ_p · Vol(𝓑₃) = λ_p · 8·G, where:
   - CODATA-implied λ_p = 2.4599527843613...  → target ≈ 18.0259
   - C2-inflection λ_p   ≈ 2.4616             → target ≈ 18.0372
 
-Per `prop:lambda-scale-bring-bloch-identity` (just merged in
+Per `conj:lambda-scale-bring-bloch-identity` (just merged in
 PR #843), the categorical identity for λ_p^scale is the Bloch-
 Wigner regulator of the proton's specific Bring-decomposition class
 normalised by Vol(𝓑₃) = 8G. If a Tier 1 ℤ-linear relation exists,
@@ -37,7 +37,7 @@ Basis (high-precision hyperbolic volumes from SnapPy/KnotInfo):
   Vol(7_4)  = 5.099098...
 
 References:
-- prop:lambda-scale-bring-bloch-identity (this PR's upstream)
+- conj:lambda-scale-bring-bloch-identity (this PR's upstream)
 - conj:bring-hyperbolic-knot-bloch-decomposition
 - tier_1_hyperbolic_3braid_pslq.py (same basis, 2/(3π) target)
 """

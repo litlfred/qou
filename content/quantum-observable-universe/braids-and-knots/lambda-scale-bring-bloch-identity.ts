@@ -1,7 +1,20 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:lambda-scale-bring-bloch-identity",
+// CAL-4 caveat (2026-05-22): demoted prop → conj per CLAUDE.md §3b
+// conjectural propagation rule (uses[] contains conj:bring-hyperbolic-
+// knot-bloch-decomposition with no §3b-cond class-instance hypothesis
+// on the Lean side), and per the empirical falsification of the
+// hyperbolic-knot-basis route: Bring-Bloch PSLQ search at tiers 0-5
+// (Tier 5 over 52-knot basis through 11-crossing at coefficient
+// 10^30, dps=100) returned NO integer relation for the proton
+// CODATA-closure target 18.0258... Per the tier 5 conclusion
+// (bring_bloch_tier5_search_m_p.py), the proton's Bring-decomposition
+// is "genuinely transcendental" in the tested basis; the q-dilog
+// tower is the remaining research direction. The Lean theorem here
+// is currently vacuous (rfl against an opaque def — says nothing
+// about WHICH integer combination realises the scale).
+export default conjecture({
+  label: "conj:lambda-scale-bring-bloch-identity",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.lambda_scale_bring_bloch_identity",
     validation: "not_checked",

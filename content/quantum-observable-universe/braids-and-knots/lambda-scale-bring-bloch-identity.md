@@ -1,5 +1,41 @@
-**Proposition (categorical identity for the per-knot scale factor
-$\lambda_K^{\mathrm{scale}}$).**
+**Conjecture (categorical identity for the per-knot scale factor
+$\lambda_K^{\mathrm{scale}}$, status revised 2026-05-22).**
+
+> **CAL-4 caveat.** This block was originally framed as a
+> proposition asserting that $\lambda_K^{\mathrm{scale}}$ equals the
+> Bloch-Wigner regulator of a finite $\mathbb{Z}$-linear combination
+> of hyperbolic-knot Bloch classes. Two updates retract the
+> "proposition" framing:
+>
+> 1. **Empirical falsification (PSLQ tier 0–5).** The proton-specific
+>    instance was searched via PSLQ at 100 dps with maximum coefficient
+>    $10^{30}$ over a 52-knot basis through 11-crossing prime
+>    hyperbolic knots (Tiers 0–5;
+>    [`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)
+>    conclusion). **No integer relation was found** at any tier.
+>    Per the tier 5 conclusion: "consistent negative across 52
+>    hyperbolic-knot Bloch-Wigner values strengthens the case that
+>    the proton's Bring-decomposition is **genuinely transcendental**"
+>    in the tested basis. The q-dilog tower is the remaining
+>    research direction.
+> 2. **§3b conjectural propagation.** `uses[]` includes
+>    [`conj:bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition).
+>    Per CLAUDE.md §3b, a block downstream of a conjecture cannot be
+>    a `proposition` unless it satisfies the §3b-cond class-instance
+>    exception. The Lean theorem here is `rfl` against an `opaque`
+>    definitional unfold (`AtomKnot.lambdaScale := bringBlochRegulator
+>    / volClosure`), so it does not source the integer-combination
+>    content from a class hypothesis — the §3b-cond exception is not
+>    satisfied.
+>
+> Block kind demoted from `proposition` to `conjecture` until either
+> (a) the integer combination is derived from a substrate-pure
+> mechanism (knot-operator LP/SDP on $\mathcal{B}_K$'s canonical
+> Hecke element, per §"What it identifies for the nucleon" item 1
+> below), or (b) the q-dilog tower route closes.
+
+*The original statement, retained as conjecture:*
+
 *Let $K$ be an atom-knot in the QOU spectrum, with canonical Hecke
 braid $\mathcal{B}_K \in H_n(R, q)$ closing to a knot
 $K^{\mathrm{closure}} \subset S^3$. Let
@@ -143,21 +179,31 @@ Borel-regulator image of that class. The open work is:
    $q^2 + q - 1 = 0$ should arise from a Bloch-group action on the
    $\mathbb{Q}(\zeta_5)$ stratum.
 
-## What this resolves
+## What this would resolve (conditional on the conjecture closing)
 
-Three prior obstructions are now structurally addressed:
+If the conjecture above is eventually closed — i.e. if a substrate-
+pure derivation of the integer coefficients $\{n_i^{(K)}\}$ is found
+— three prior obstructions would be structurally addressed:
 
 - **The empirical $5/2 - h^2 \cdot G$ ansatz**
-  (`prop:lambda-scale-substrate-form` (forthcoming))
+  ([`conj:lambda-scale-substrate-form`](#conj:lambda-scale-substrate-form))
   was falsified as a PSLQ coincidence. The categorical
-  identity above replaces it: $\lambda_p^{\mathrm{scale}}$ is *not*
-  a polynomial in $h$, but rather the Bloch-Wigner regulator of an
-  integer combination of hyperbolic-knot classes.
-- **The "hidden CAL-4" objection**: the $\lambda_p^{\mathrm{scale}}$
-  literal $2.4599527869$ in the production script was a calibration-
-  closure value. Under the Bring-Bloch identity it becomes the
-  K-theoretic content of $K_p^{\mathrm{eff}}$ — no longer free,
-  fixed by the choice of integer combination $n_i^{(p)}$.
+  identity above *would* replace it: $\lambda_p^{\mathrm{scale}}$ is
+  *not* a polynomial in $h$, but rather the Bloch-Wigner regulator
+  of an integer combination of hyperbolic-knot classes (if such
+  a combination exists in a substrate-natural basis).
+- **The "hidden CAL-4" objection**: the literal
+  $\lambda_p^{\mathrm{scale}} = 2.4599527869$ in the production
+  script (now renamed `LAMBDA_PROTON_FITTED_FROM_CODATA` per PR
+  #888 truth-in-naming) is a calibration-closure value. Under the
+  Bring-Bloch identity it *would* become the K-theoretic content of
+  $K_p^{\mathrm{eff}}$ — but **PSLQ tiers 0–5 have empirically
+  refuted this route** in the tested 52-knot hyperbolic-knot basis
+  (coefficient $\le 10^{30}$, dps = 100); the proton's
+  Bring-decomposition is "genuinely transcendental" in that basis.
+  Closing the CAL-4 objection therefore now requires either (a) the
+  q-dilog tower route, or (b) a non-hyperbolic-knot basis whose
+  natural elements include the proton's class.
 - **The 251 ppb residual** flagged in
   [`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-lambda-scale-derivation-search.md)
   §93–104 was a stale-Vol propagation bug; fixing the script to use

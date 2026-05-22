@@ -20,7 +20,7 @@ Literature volumes from KnotInfo (~15 dps; production should
 promote to SnapPy 50+ dps).
 
 References:
-- prop:lambda-scale-bring-bloch-identity (consumer)
+- conj:lambda-scale-bring-bloch-identity (consumer)
 - conj:bring-hyperbolic-knot-bloch-decomposition
 - tier_2_hyperbolic_bridge3_pslq.py (2/(3π) target with same basis)
 """
