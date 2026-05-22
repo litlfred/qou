@@ -60,6 +60,7 @@ CONSTANTS
 from __future__ import annotations
 
 import os
+from typing import Any
 from mpmath import mp, mpf
 
 # ── Defaults ────────────────────────────────────────────────────
@@ -109,7 +110,7 @@ def set_compute_dps(dps: int | None = None) -> int:
     return mp.dps
 
 
-def fmt(value, dps: int | None = None, strip_zeros: bool = False) -> str:
+def fmt(value: Any, dps: int | None = None, strip_zeros: bool = False) -> str:
     """Serialize an mpmath value to its output-precision string form.
 
     Uses ``mp.nstr`` with ``OUTPUT_DPS`` (default) or an explicit per-
