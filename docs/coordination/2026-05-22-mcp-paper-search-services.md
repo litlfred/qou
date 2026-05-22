@@ -208,7 +208,8 @@ policy.
 
 ## Main delta during session
 
-- `236d742f… → e60cf0c4…` — 11 commits across two PRs:
+- `236d742f… → 56c4dcaa…` — 14 commits across three PRs:
   - **#879** (3 commits) — `docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md` (210× scale-gap audit, third pass)
-  - **#875** (8 commits, merged 2026-05-22 by #880's author) — `content/pipeline/qa-checkers-extended.ts` + `content/pipeline/script-sidecars/proof-no-trivial-skeleton.script.json` (proof-no-trivial-skeleton hardening)
-- File overlap with this branch: **empty** (this branch touches `.mcp.json` / `content/bib-qa-verifications.json` / `scripts/bib-papers-list.txt` / `docs/coordination/2026-05-22-mcp-paper-search-services.md`). Per §8a both PRs are additive; will resolve cleanly on PR merge. Delta is above §8c's >10 threshold but the empty overlap removes any rebase-storm risk; flagged here per the §8c "continue + flag" branch.
+  - **#875** (8 commits, merged by #880's author) — `content/pipeline/qa-checkers-extended.ts` + `content/pipeline/script-sidecars/proof-no-trivial-skeleton.script.json`
+  - **#888** (3 commits) — CAL-4 truth-in-naming `LAMBDA_*_FITTED` + I13 audit (canonical-witness refresh, new audit infrastructure)
+- File overlap with this branch: **empty**. Per §8a all three PRs are additive; will resolve cleanly on PR merge. Delta is above §8c's >10 threshold but the empty overlap removes any rebase-storm risk; flagged here per the §8c "continue + flag" branch.

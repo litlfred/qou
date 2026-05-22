@@ -196,6 +196,49 @@ offline pipeline (`gen-bib-papers-list.py` + `upload-bib-papers.sh`
 on a normal-network machine). The new services are an
 accelerator, not a replacement.
 
+**Local CLI wrapper for both paths** (added 2026-05-22):
+[`scripts/bib-mcp-cli.py`](../../../scripts/bib-mcp-cli.py) drives
+the same `paper-search-mcp` / `pyalex` libraries as a normal Python
+CLI — no MCP server needed. Designed to run from a normal-network
+machine when the Claude-Code-on-the-web allowlist blocks
+arxiv/openalex/scholar:
+
+```bash
+# Prereqs (one-time):
+pip install paper-search-mcp pyalex
+pip install playwright && playwright install chromium  # for scholar-snapshot
+
+# Status — probes network, lists what's possible:
+scripts/bib-mcp-cli.py status
+
+# Backfill URLs for the 37 no-URL entries (dry-run by default):
+scripts/bib-mcp-cli.py backfill-urls          # propose
+scripts/bib-mcp-cli.py backfill-urls --apply  # write to references.ts
+
+# Download missing arxiv PDFs:
+scripts/bib-mcp-cli.py download --apply
+
+# Enrich DOI-only entries with OpenAlex canonical metadata:
+scripts/bib-mcp-cli.py enrich-doi --apply
+
+# Capture HTTP 'as-viewed-on' evidence pages (HTML/PDF + SHA-256):
+scripts/bib-mcp-cli.py snapshot --apply
+
+# Capture Google Scholar / Books preview PDFs via headless Chromium:
+scripts/bib-mcp-cli.py scholar-snapshot --apply
+
+# Run all of the above in dry-run mode:
+scripts/bib-mcp-cli.py audit
+```
+
+Each subcommand is idempotent: re-running skips entries already
+done. Network probes fail-fast with a friendly error when the
+required host is in the deny-list. The `snapshot` /
+`scholar-snapshot` outputs land in `content/bib-qa-evidence/<refid>/`
+as `<utc>-<source>.{html,pdf}` + `<utc>-<source>.meta.json` (the
+"as-viewed-on" provenance record) — humans can review the
+snapshot to validate the citation without re-fetching.
+
 #### `validate-bib` — comprehensive correctness audit
 
 `content/pipeline/validate-bib.ts` is the umbrella correctness audit
