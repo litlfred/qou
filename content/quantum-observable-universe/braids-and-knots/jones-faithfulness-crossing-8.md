@@ -28,7 +28,7 @@ Restricted to **Bring-embeddable knots** (Seifert genus $g \leq 4$,
 | $\leq 4$ | finite explicit list | **yes** (theorem; trivially since each knot has different Jones polynomial) |
 | 5–8 | finite explicit list | **yes** (HTW 1998) |
 | 9–10 | finite explicit list | **yes** (HTW 1998) |
-| 11 (Conway-KT) | mutant pair has $g \leq ?$ | **no for the mutant pair** (Conway = 11n34, KT = 11n42, both have genus 3 ≤ 4 — *Bring-embeddable*) |
+| 11 (Conway-KT) | mutant pair has $g \leq ?$ | **no for the mutant pair** (Conway = 11n34, KT = 11n42, both have genus 3 $\le$ 4 — *Bring-embeddable*) |
 
 So the strict statement: **for Bring-embeddable knots up to crossing
 10, Jones-distinguishes; the Conway-KT mutant pair at crossing 11

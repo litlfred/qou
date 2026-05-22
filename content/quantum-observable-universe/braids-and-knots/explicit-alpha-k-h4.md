@@ -147,6 +147,6 @@ $n = 5, \ldots, 12$ are also available via the
 
 [`folio-assistant/computations/wedderburn_orthogonal_r_k.py`](#) —
 implements the class-function basis construction, character
-evaluation via `build_seminormal_matrices`, and 4×5 linear-system
+evaluation via `build_seminormal_matrices`, and 4$\times$5 linear-system
 solve.  Output:
 [`wedderburn-orthogonal-r-3-h4.witness.json`](#).

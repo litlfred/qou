@@ -123,7 +123,7 @@ plus, for $\dim = 2$ irreps, the cos-resummation from
 
 For $n \geq 4$ the trivial and sign irreps remain 1-dimensional with the
 same generator eigenvalues, so this closed form extends without
-modification to ⁴He ($H_{12}$), ⁶Li ($H_{18}$), and all heavier
+modification to ${}^{4}$He ($H_{12}$), ${}^{6}$Li ($H_{18}$), and all heavier
 isotopes.  Higher-dimensional irreps grow combinatorially (per
 Robinson-Schensted), but their contribution to the 1-d backbone of
 $\tau_M$ is captured by exactly the same closed forms — only the

@@ -66,7 +66,7 @@ $\chi^\lambda(T_{\text{constit}}^K)$ has been cross-validated against
 direct H_{3A}-Wedderburn-weighted character sums from
 [`markov_trace_3A(Z, N, include_inter=False)`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/mass_at_3A_proper.py#L314)
 — **byte-identical** chi values at all 11 + 30 + 30 partitions
-combined (consistent to >40 dps).  For ⁴He at $H_{12}$, cross-validation
+combined (consistent to >40 dps).  For ${}^{4}$He at $H_{12}$, cross-validation
 uses the cached 24-partition partial witness; all match.
 
 ### Significance

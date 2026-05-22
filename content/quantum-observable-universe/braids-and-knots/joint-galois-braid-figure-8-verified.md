@@ -1,7 +1,7 @@
-**Proposition (joint Galois × braid action commutes on the figure-8
+**Proposition (joint Galois $\times$ braid action commutes on the figure-8
 bi-filtration cell — verified directly).**
 
-The joint motivic-Galois × braid-group action conjecture
+The joint motivic-Galois $\times$ braid-group action conjecture
 ([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action))
 predicts commutativity on each $\mathcal{H}_q^{(n, K)}$ stratum.
 *This proposition verifies the prediction on the figure-8 row
@@ -121,7 +121,7 @@ braid acts non-trivially on the swapped pair.
 
 **Verified**: $(\lambda, K) = ((2, 2), 4_1)$ — a self-conjugate cell.
 By extension, any self-conjugate cell with a polylog argument in
-$F^\times$ has trivially commuting bar × braid action.
+$F^\times$ has trivially commuting bar $\times$ braid action.
 
 **Remaining (open)**: chiral-pair cases, e.g.
 
@@ -148,7 +148,7 @@ theorem-level B1 status
 
 > **The figure-8 row of the bi-filtration carries the full
 > graded-Mikusiński structure as a theorem**: depth-2 inclusion,
-> strong sharpness over $\mathbb{Q}(\zeta_6)$, joint Galois × braid
+> strong sharpness over $\mathbb{Q}(\zeta_6)$, joint Galois $\times$ braid
 > commutativity, VC asymptotic match, depth correspondence
 > verified.
 

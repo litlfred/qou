@@ -154,7 +154,7 @@ infrastructure is already first-class
 and witnesses for individual confinements are in place. To
 promote to `proposition`:
 
-1. **Discharge** the LP-feasibility ↔ confinement-realisability
+1. **Discharge** the LP-feasibility $\leftrightarrow$ confinement-realisability
    equivalence (currently asserted as part of [`prop:operator-selection-lp`](#prop:operator-selection-lp); requires
    a categorical-physics statement linking the Frobenius-positive
    cone to physical confinement).

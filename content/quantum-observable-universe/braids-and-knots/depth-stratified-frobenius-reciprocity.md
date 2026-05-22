@@ -19,12 +19,12 @@ a distinguished hyperbolic knot $K_k^*$. Empirical resolution at
 $k = 3$ (per [PR #826](https://github.com/litlfred/qou/pull/826), with
 canonical braid words cross-verified against KnotInfo via hyperbolic
 volume): $K_3^* = 4_1$ (figure-eight knot) gives the best variance
-reduction at 1.551× (+14.8% vs 1.82× baseline), consistent with the
+reduction at 1.551$\times$ (+14.8% vs 1.82$\times$ baseline), consistent with the
 Fricke-trace derivation in
 [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing)
 giving $\chi_{4_1}((2,1)) = 2 - [3]_q$ at $H_3$. The previously
 asserted $K_3^* = 6_1$ (Stevedore) does NOT empirically validate —
-6_1 regresses the variance to 1.878× (worse than baseline). At
+6_1 regresses the variance to 1.878$\times$ (worse than baseline). At
 $k = 1, 2$ the distinguished knots are unnamed — open structural
 question. The depth-$k$ contribution to the mass formula is*
 
@@ -78,7 +78,7 @@ $\dim_q^2 / [n]_q!$ is correct.
 
 [`binding_depth_stratified_knot_weighted.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/binding_depth_stratified_knot_weighted.py)
 tested two simple empirical forms of "ideal restriction at low $k$" —
-*both falsified* on D, T, ³He, ⁴He:
+*both falsified* on D, T, ${}^{3}$He, ${}^{4}$He:
 
 | Form tested | Hypothesis | max/min variance | Verdict |
 |---|---|---:|---|
@@ -106,7 +106,7 @@ crossings. Beyond this, **Conway–KT mutant pairs**
 same Jones polynomial but distinct hyperbolic volumes — they are
 "isospectral isobars".
 
-For atomic braids of D, T, ³He, ⁴He (at crossings $22^+$), the
+For atomic braids of D, T, ${}^{3}$He, ${}^{4}$He (at crossings $22^+$), the
 canonical Jones polynomial may *not* distinguish them from
 Kanenobu/mutant twins. The FR refinement (FR) above is precisely the
 **enrichment of the Wedderburn sum** that breaks the Jones-only
@@ -122,7 +122,7 @@ This is the categorical content of:
 - the FR pullback $\chi^\lambda \to \chi^\lambda \cdot \chi^\lambda(e_{K_k^*})$
   recovers the missing volume information at low curvature-rank.
 
-### Significance: closing the 1.82× variance
+### Significance: closing the 1.82$\times$ variance
 
 If true, the FR refinement (FR) closes the variance on PR #801 to
 $\le 1.05\times$ (universal categorical constant) by enhancing the

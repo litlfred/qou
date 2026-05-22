@@ -42,7 +42,7 @@ $c_{\mathfrak{H}, w}(q_0) \in \mathbb{Q}$ for every $w \in S_{n_0}$.
 These index the basis $\{T_w\}_{w \in S_{n_0}}$ of $H_{n_0}(q_0)$ in
 GB-NF.  Total variable count is $\sum_{\mathfrak{H}} |S_{n_0(\mathfrak{H})}|
 = \sum_{\mathfrak{H}} n_0(\mathfrak{H})!$, which for $\mathcal{R}$
-covering up to ⁴⁰Ca ($n_0 = 120$) is astronomically large.  In practice
+covering up to ${}^{40}$Ca ($n_0 = 120$) is astronomically large.  In practice
 the **filtration cuts the problem down**: only $w$ with $\ell(w) \leq L$
 for some cutoff $L = O(n_0)$ contribute non-trivially (most $T_w$ are
 zero for atomic braids of finite GB-NF length), so the effective
@@ -94,8 +94,8 @@ Two effects:
 ### (4) Cross-level consistency
 
 For each tower-edge $\mathfrak{H} \to \mathfrak{H}'$ where
-$\mathfrak{H}'$ is a constituent of $\mathfrak{H}$ (e.g.\ ⁴He is a
-constituent of ⁸Be in the α-cluster decomposition), the canonical
+$\mathfrak{H}'$ is a constituent of $\mathfrak{H}$ (e.g.\ ${}^{4}$He is a
+constituent of ${}^{8}$Be in the α-cluster decomposition), the canonical
 embedding
 $\pi_{\mathfrak{H} \to \mathfrak{H}'} : H_{n_0(\mathfrak{H}')}(q_0) \hookrightarrow H_{n_0(\mathfrak{H})}(q_0)$
 must send $T_w(\mathfrak{H}')$ to $T_w(\mathfrak{H})$ inside the
@@ -110,14 +110,14 @@ $\ell \leq 2$ the explicit edges are:
 
 | from | to | embedding |
 |---|---|---|
-| ⁸Be | 2 ⊗ ⁴He | $H_{24} \hookleftarrow H_{12}^{\otimes 2}$ |
+| ${}^{8}$Be | 2 ⊗ ${}^{4}$He | $H_{24} \hookleftarrow H_{12}^{\otimes 2}$ |
 | ${}^{12}$C | 3 ⊗ ${}^4$He | $H_{36} \hookleftarrow H_{12}^{\otimes 3}$ |
-| ⁴He | 4 ⊗ nucleon | $H_{12} \hookleftarrow H_3^{\otimes 4}$ |
+| ${}^{4}$He | 4 ⊗ nucleon | $H_{12} \hookleftarrow H_3^{\otimes 4}$ |
 | nucleon | 3 ⊗ quark | $H_3 \hookleftarrow H_1^{\otimes 3}$ |
 | ${}^2$H | nucleon ⊗ nucleon (Hopf-link binding) | $H_6 \hookleftarrow H_3^{\otimes 2}$ |
-| ³H, ³He | 3 ⊗ nucleon | $H_9 \hookleftarrow H_3^{\otimes 3}$ |
+| ${}^{3}$H, ${}^{3}$He | 3 ⊗ nucleon | $H_9 \hookleftarrow H_3^{\otimes 3}$ |
 
-For ⁶Li, ⁷Li the embedding is open: $\mathfrak{H} \to \{\alpha, p, n\}$
+For ${}^{6}$Li, ${}^{7}$Li the embedding is open: $\mathfrak{H} \to \{\alpha, p, n\}$
 or $\mathfrak{H} \to \{\alpha, p, 2n\}$ respectively, with explicit
 embeddings $H_{18} \hookleftarrow H_{12} \otimes H_3 \otimes H_3$ and
 $H_{21} \hookleftarrow H_{12} \otimes H_3 \otimes H_3 \otimes H_3$.
@@ -158,11 +158,11 @@ for the atom-knot mass derivation
 | 1 | Validate solver design on $H_3$ ground truth | known answer; unit test |
 | 2 | Run on tower $\{H_1, H_2, H_3\}$ jointly (electron, quark, nucleon) | small; known answers |
 | 3 | Extend to $H_6, H_9, H_{12}$ (${}^2$H, ${}^3$H, ${}^3$He, ${}^4$He) | medium; verify against `mass-table-ppb` |
-| 4 | Extend to $H_{18}, H_{21}$ (⁶Li, ⁷Li) — replaces deprecated volume-match | research-grade |
-| 5 | Scale to $\ell = 2$ α-cluster atoms ⁸Be→⁴⁰Ca | large; needs SDP-decomposition tricks |
+| 4 | Extend to $H_{18}, H_{21}$ (${}^{6}$Li, ${}^{7}$Li) — replaces deprecated volume-match | research-grade |
+| 5 | Scale to $\ell = 2$ α-cluster atoms ${}^{8}$Be$\to$${}^{40}$Ca | large; needs SDP-decomposition tricks |
 
-The certificate format (Wedderburn block × filtration grade × jet
-position → coefficient) is identical at every scale; only the variable
+The certificate format (Wedderburn block $\times$ filtration grade $\times$ jet
+position $\to$ coefficient) is identical at every scale; only the variable
 count grows.
 
 ## Refs

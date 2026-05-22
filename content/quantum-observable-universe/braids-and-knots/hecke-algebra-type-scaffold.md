@@ -40,7 +40,7 @@ hypotheses, and the per-n discharges plug in when ready.
 | $n$ | Status | Discharge source |
 |---:|---|---|
 | 2 | trivial (cyclic) | `Braid2 := ℤ` in `rem:braid-link-types` |
-| 3 | partial | `hoefsmit-V21-cos-symmetrization.lean` covers Hecke quadratic (proved) + YB cubic (anomaly: requires d_1↔d_2 swap per `rem:post-pr665-open-rd-inventory`) |
+| 3 | partial | `hoefsmit-V21-cos-symmetrization.lean` covers Hecke quadratic (proved) + YB cubic (anomaly: requires d_1$\leftrightarrow$d_2 swap per `rem:post-pr665-open-rd-inventory`) |
 | 6, 12 | open | needed for di-baryon (B_6) and α-particle (B_12) physics |
 
 ## Status

@@ -73,7 +73,7 @@ $$
 $$
 
 *where $\bar\beta$ is the braid obtained from $\beta(Z, N)$
-by collapsing each nucleon (B₃ confinement + quark crossings +
+by collapsing each nucleon (B$_{3}$ confinement + quark crossings +
 gluon dressing) to a single effective crossing, retaining only
 the inter-nucleon topology.*
 

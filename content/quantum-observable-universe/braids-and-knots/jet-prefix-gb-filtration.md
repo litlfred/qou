@@ -140,7 +140,7 @@ not just better implementation.*
   level-by-level.*
 - *Paper's figure-eight BW coefficients
   ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
-  give the A≥3 specialisation that the prefix formula must
+  give the A$\ge$3 specialisation that the prefix formula must
   reproduce.*
 
 **Open questions.**

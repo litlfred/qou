@@ -187,7 +187,7 @@ multiplier for each EW projector. **This framing is wrong.** The
 Hoefsmit cell-content data give a more direct quantity: the
 **unweighted trace** of the operator product
 $\sigma_1^4 \sigma_3^6 \sigma_5^8$ on each pure pattern is
-just (cell-content multiplicity) × (eigenvalue of pattern).
+just (cell-content multiplicity) $\times$ (eigenvalue of pattern).
 No external Plancherel prefactor is required.
 
 Concretely, $\sigma_i^{2k}$ has eigenvalue $q^{2k}$ on a sym

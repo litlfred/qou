@@ -146,7 +146,7 @@ bar-symmetrization identity above is the **canonical bridge**:
   evaluated via state-integral over $\mathbb{R}$ (Faddeev / Andersen–Kashaev),
   numerically realising Kashaev volume conjecture.
 
-$\tau_{\mathrm{arch}}$ acts as the *bar-symmetrization → bar-pair*
+$\tau_{\mathrm{arch}}$ acts as the *bar-symmetrization $\to$ bar-pair*
 expansion: an algebraic Habiro element (one bar-invariant object)
 realises as a pair of bar-conjugate analytic objects on the
 archimedean side.

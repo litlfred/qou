@@ -64,5 +64,5 @@ value directly.*
 neutron, and deuteron atoms are emitted by
 `markov_pipeline_cross_validator.py` and stored under
 `folio-assistant/computations/markov-pipeline-cross-validation.witness.json`,
-agreeing with the Habiro-side values to relative tolerance ≤ $10^{-9}$
+agreeing with the Habiro-side values to relative tolerance $\le$ $10^{-9}$
 across every available atom.*

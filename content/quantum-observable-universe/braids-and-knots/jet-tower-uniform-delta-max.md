@@ -16,7 +16,7 @@ The audit
 [`derivation-audit-2026-04-20.md` line 112](../../../docs/audits/derivation-audit-2026-04-20.md)
 flagged this hypothesis as open (GAP 14a). This block names the
 hypothesis as a conjecture, summarises the empirical evidence at
-$n = 1, 2, 3$ for D, T, ³He, and points to the measurement
+$n = 1, 2, 3$ for D, T, ${}^{3}$He, and points to the measurement
 infrastructure (`unified_lift.py` + the new
 `jet-tower-delta-max.witness.json`).
 
@@ -107,7 +107,7 @@ The current scoreboard:
   — assuming the bound on $\Delta^{(n)}$ as a hypothesis.
 * *(conjectural)* The uniform bound on $\Delta^{(n)}$ is conjectural (this
   block).
-* *(empirical)* At $n = 1, 2, 3$ for D, T, ³He, the bound holds empirically
+* *(empirical)* At $n = 1, 2, 3$ for D, T, ${}^{3}$He, the bound holds empirically
   with margin.
 
 ## Path to a proof
@@ -136,7 +136,7 @@ empirical motivation citable.
 ## Status
 
 **Status: conjectural** under CLAUDE.md §3b, with strong empirical
-support at $n = 1, 2, 3$ for D, T, ³He via `jet_tower_delta_max.py`.
+support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via `jet_tower_delta_max.py`.
 The downstream cone of this conjecture includes
 [prop:jet-tower-convergence](#prop\:jet-tower-convergence) — but
 that proposition's *statement* is provable in pure analysis (the

@@ -14,7 +14,7 @@ Empirical data on $y_0^*$ from
 as proved by [`prop:spin-involution-lp-dual-invariance`](#prop:spin-involution-lp-dual-invariance).
 
 **Non-separability of $g(q) \cdot h(A, |T_3|)$.** The ratio
-$T/D$ depends on $q$ non-trivially (21 → 55 across the physical
+$T/D$ depends on $q$ non-trivially (21 $\to$ 55 across the physical
 regime). This rules out the simplest separable closed form
 
 $$

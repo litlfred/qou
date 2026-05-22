@@ -62,7 +62,7 @@ weight because two Wedderburn blocks are simultaneously tight.*
 *The active support $\mathcal{S}^*$ admits a natural parameterisation
 by atomic quantum numbers $(n, \ell, m, s)$:*
 
-- *Principal number $n$ identifies which 2×2 PSD block of the
+- *Principal number $n$ identifies which 2$\times$2 PSD block of the
   multi-level SDP is saturated.*
 - *Orbital $\ell$ and magnetic $m$ index generators $\sigma_i$ in
   the active block.*

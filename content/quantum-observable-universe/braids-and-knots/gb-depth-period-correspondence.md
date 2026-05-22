@@ -1,4 +1,4 @@
-**Conjecture (GS-depth ↔ Goncharov period-depth correspondence).**
+**Conjecture (GS-depth $\leftrightarrow$ Goncharov period-depth correspondence).**
 
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)) and let

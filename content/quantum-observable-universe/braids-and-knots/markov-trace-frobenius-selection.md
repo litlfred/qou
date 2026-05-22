@@ -11,7 +11,7 @@ different linear functionals:*
 | Jones-Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | ✓ on $H_n(q)$ |
 | Schur-Weyl $\tau_{\mathrm{SW}}$ | $\approx 2$ at $q_0$ | $\approx 0.883$ at $q_0$ | $s_\lambda(q,q^{-1})/H_q(\lambda)$ | $\times$ kernel = height $> 2$ |
 
-## The chain: cat-action → Markov trace
+## The chain: cat-action $\to$ Markov trace
 
 Starting from the QOU substrate and tracing each step:
 
@@ -150,7 +150,7 @@ The from-scratch chain
 [`folio-assistant/computations/from_scratch/`](https://github.com/litlfred/qou/tree/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch)
 correctly implements $\tau_M$ via the Markov axioms and
 reproduces the Wenzl-bridge $y_\lambda$ values bit-exactly for D,
-T, ³He.
+T, ${}^{3}$He.
 
 The PR #472 `prop:habiro-residue-sum-equivalence` claims agreement
 between two pipelines (polynomial path and residue path) — this
