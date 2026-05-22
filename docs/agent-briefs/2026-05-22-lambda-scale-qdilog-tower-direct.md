@@ -647,7 +647,7 @@ basis beyond what's been tried:
   - **Tier 1+ q-dilog basis extensions (3 paths).** Refuted by
     [PR #928](https://github.com/litlfred/qou/pull/928) (|V̂_S| at
     H_3 + Q(ζ_60) D-values + tier-0 hyperbolic-knot vols,
-    PSLQ coeff ≤ 10³⁰) AND [this PR's e64b2806 commit](https://github.com/litlfred/qou/commit/e64b2806)
+    PSLQ coeff ≤ 10³⁰) AND [this PR's c94c2c0c commit](https://github.com/litlfred/qou/commit/c94c2c0c)
     (2-variable L_2(x,y) at root-of-unity pairs + Q(ζ_n) D-values
     for n | 60, PSLQ coeff ≤ 10²⁰). Combined: substrate-natural
     q-dilog + |V̂_S|-extended + Q(ζ_60)-D + 2-var-L_2 + tier-0-
@@ -655,6 +655,15 @@ basis beyond what's been tried:
     (λ_p − Family A). The empirical case that the framework's 3 %
     CODATA gap is honest (per #895 + #917) is strengthened by
     every additional negative basis extension.
+  - **Φ_q functional-equation route.** Refuted by commit
+    [`7711f48d`](https://github.com/litlfred/qou/commit/7711f48d)
+    on main: tested whether `λ_p = Φ_q(qz)/Φ_q(z) = 1/(1−z)` for
+    substrate-natural `z` (back-solve z_* ≈ 0.5935; closest of 11
+    substrate candidates is 1/φ at 4.14 % relative error). The
+    structurally-distinct non-linear Φ_q route is now also closed
+    in its tested form. 4th independent negative search in the
+    cluster (Bring-Bloch tier 0-5 + q-dilog Tier 0 + q-dilog Tier
+    1+ + Φ_q functional-equation).
   - **Strategy I (Yekutieli per-cell curvature) — framework's
     substrate-pure prediction.** Per the formalised audit
     [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
