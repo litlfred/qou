@@ -194,9 +194,14 @@ mergeable_state: `clean`:
    - Evidence: PR number + URL + clean state + before/after
      count + reviewer disposition (Gemini OK? Copilot OK?)
    - Options:
-     - `merge` (default) — merge via `mcp__github__merge_pull_request`,
-       method `merge` (preserve commits) for multi-axis omnibus,
-       `squash` for single-axis cleanup
+     - `merge` (default) — merge via `mcp__github__merge_pull_request`
+       with `merge_method: "rebase"` per CLAUDE.md §Branch + PR
+       workflow rule 7. Both multi-axis omnibus PRs and single-axis
+       cleanups use rebase-merge — preserves per-cluster commits
+       for cherry-pick / bisect. Override to `"squash"` only if the
+       branch history is noisy (`wip` / `oops` commits) or to
+       `"merge"` only for sub-merges of already-landed siblings —
+       both require explicit user instruction at this step.
      - `defer` — leave PR open; resume on next invocation
      - `close` — close without merging (rare; only if
        review surfaced fatal scope issue)
