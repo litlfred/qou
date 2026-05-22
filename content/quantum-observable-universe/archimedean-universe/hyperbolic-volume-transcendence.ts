@@ -11,7 +11,7 @@ export default conjecture({
     "open-problem",
   ],
   uses: ["rem:baryon-period-ratio"],
-  lean: { ref: "qou:QOU.Descartes.HyperbolicVolumeIndependence",
+  lean: { ref: "qou:QOU.Archimedean.HyperbolicVolumeIndependence",
     validation: "not_checked",
   },
 });

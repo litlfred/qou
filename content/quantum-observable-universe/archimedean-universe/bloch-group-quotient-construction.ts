@@ -18,7 +18,7 @@ export default proposition({
     "lean-construction",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.BlochQuotient.BlochGroup",
+    ref: "qou:QOU.Archimedean.BlochQuotient.BlochGroup",
     validation: "not_checked",
   },
 });

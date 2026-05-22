@@ -23,7 +23,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:archimedean-hartree-derivation",
-  lean: { ref: "qou:QOU.Descartes.archimedean_hartree_derivation", validation: "not_started" },
+  lean: { ref: "qou:QOU.Archimedean.archimedean_hartree_derivation", validation: "not_started" },
   title:
     "Archimedean energy unit $E_{\\mathrm{Hartree}} = m_e c^2 \\alpha_{EM}^2$ per $\\Phi_1$ (transport sketch; closure open)",
   uses: [

@@ -13,7 +13,7 @@ export default proposition({
     "laurent-polynomial",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.morse_wall_q_moduli",
+    ref: "qou:QOU.Archimedean.morse_wall_q_moduli",
     validation: "not_checked",
   },
   uses: [

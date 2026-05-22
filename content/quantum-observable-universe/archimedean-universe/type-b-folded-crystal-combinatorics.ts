@@ -18,7 +18,7 @@ export default proposition({
     "combinatorics",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
+    ref: "qou:QOU.Archimedean.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
     validation: "not_checked",
   },
 });

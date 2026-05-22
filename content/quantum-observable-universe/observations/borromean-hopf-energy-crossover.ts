@@ -13,7 +13,7 @@ export default proposition({
     "phase-transition",
     "color-superconductivity",
   ],
-  lean: { ref: "qou:QOU.Descartes.borromean_hopf_energy_crossover",
+  lean: { ref: "qou:QOU.Archimedean.borromean_hopf_energy_crossover",
     validation: "not_checked",
   },
   uses: ["def:hopf-diquark"],

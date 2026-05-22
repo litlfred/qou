@@ -14,7 +14,7 @@ export default proposition({
     "nuclear",
     "binding-energy",
   ],
-  lean: { ref: "qou:QOU.Descartes.generator_volume_decomposition",
+  lean: { ref: "qou:QOU.Archimedean.generator_volume_decomposition",
     validation: "not_checked",
   },
   uses: ["thm:groebner-shirshov-energy"],

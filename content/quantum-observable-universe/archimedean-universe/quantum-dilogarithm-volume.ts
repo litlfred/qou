@@ -14,7 +14,7 @@ export default proposition({
     "q-value",
     "topological-mass",
   ],
-  lean: { ref: "qou:QOU.Descartes.quantum_dilogarithm_volume",
+  lean: { ref: "qou:QOU.Archimedean.quantum_dilogarithm_volume",
     validation: "not_checked",
   },
   uses: [

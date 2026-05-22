@@ -13,7 +13,7 @@ export default definition({
     "colored-photon",
     "normal-form",
   ],
-  lean: { ref: "qou:QOU.Descartes.BreitWheelerPairProduction",
+  lean: { ref: "qou:QOU.Archimedean.BreitWheelerPairProduction",
     validation: "not_checked",
   },
 });

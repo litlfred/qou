@@ -30,7 +30,7 @@ export default proposition({
     "equivalence",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.swPeriodThimbleEquivalence",
+    ref: "qou:QOU.Archimedean.swPeriodThimbleEquivalence",
     validation: "not_checked",
   },
   computation: {

@@ -14,7 +14,7 @@ export default proposition({
     "substrate-parameter",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.BarSelfDualConfBand.bar_self_dual_confinement_band",
+    ref: "qou:QOU.Archimedean.BarSelfDualConfBand.bar_self_dual_confinement_band",
     validation: "not_checked",
   },
   uses: [

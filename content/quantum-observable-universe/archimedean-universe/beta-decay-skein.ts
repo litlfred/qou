@@ -14,7 +14,7 @@ export default definition({
     "lepton",
     "normal-form",
   ],
-  lean: { ref: "qou:QOU.Descartes.BetaDecaySkein",
+  lean: { ref: "qou:QOU.Archimedean.BetaDecaySkein",
     validation: "not_checked",
   },
   uses: ["def:positron-knot"],

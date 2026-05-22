@@ -25,7 +25,7 @@ export default proposition({
     "keystone",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.jetGBPLCorrespondence",
+    ref: "qou:QOU.Archimedean.jetGBPLCorrespondence",
     validation: "not_checked",
   },
   computation: {

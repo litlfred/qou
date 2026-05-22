@@ -2,7 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:descartes-knot-eigenbasis",
-  lean: { ref: "qou:QOU.Descartes.descartes_knot_eigenbasis",
+  lean: { ref: "qou:QOU.Archimedean.descartes_knot_eigenbasis",
     validation: "not_checked",
   },
   title: "Knot eigenbasis completeness for a Descartes universe",

@@ -19,7 +19,7 @@ export default proposition({
     "partial-closure",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.PartialClosures.partial_closures_at_boundary",
+    ref: "qou:QOU.Archimedean.PartialClosures.partial_closures_at_boundary",
     validation: "not_checked",
   },
 });

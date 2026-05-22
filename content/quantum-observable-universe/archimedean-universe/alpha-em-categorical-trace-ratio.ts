@@ -38,7 +38,7 @@ export default proposition({
     "prop:force-carrier-intertwining-correspondence",
     "conj:e-hartree-categorical-derivation",
   ],
-  lean: { ref: "qou:QOU.DescartesUniverse.alpha_em_categorical_trace_ratio" },
+  lean: { ref: "qou:QOU.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },
   tags: [
     "alpha-em",
     "fine-structure",

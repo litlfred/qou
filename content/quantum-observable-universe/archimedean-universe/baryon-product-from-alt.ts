@@ -23,7 +23,7 @@ export default proposition({
     "categorical",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.baryonProductFromAlt",
+    ref: "qou:QOU.Archimedean.baryonProductFromAlt",
     validation: "not_checked",
   },
   computation: {

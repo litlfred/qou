@@ -13,7 +13,7 @@ export default proposition({
     "hecke-bar",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.BarTDualitySubstrate.bar_t_duality_substrate",
+    ref: "qou:QOU.Archimedean.BarTDualitySubstrate.bar_t_duality_substrate",
     validation: "not_checked",
   },
   uses: [

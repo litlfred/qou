@@ -12,7 +12,7 @@ export default proposition({
     "proof-reuse",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.BarApplyTransfer.bar_apply_transfer",
+    ref: "qou:QOU.Archimedean.BarApplyTransfer.bar_apply_transfer",
     validation: "not_checked",
   },
   uses: [

@@ -58,7 +58,7 @@ export default proposition({
     status: "verified",
     requires: ["mpmath", "sympy"],
   },
-  lean: { ref: "qou:QOU.Descartes.AlphaEmShiftChain.alpha_em_shift_chain" },
+  lean: { ref: "qou:QOU.Archimedean.AlphaEmShiftChain.alpha_em_shift_chain" },
   tags: [
     "alpha-em",
     "multiplicative-chain",

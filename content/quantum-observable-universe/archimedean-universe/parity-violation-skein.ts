@@ -14,7 +14,7 @@ export default proposition({
     "crossing-chirality",
     "symmetry-breaking",
   ],
-  lean: { ref: "qou:QOU.Descartes.parity_violation_skein",
+  lean: { ref: "qou:QOU.Archimedean.parity_violation_skein",
     validation: "not_checked",
   },
   uses: [

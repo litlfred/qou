@@ -19,7 +19,7 @@ export default proposition({
     "upstream-contribution",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.UpstreamAdditions.complexLiTwo",
+    ref: "qou:QOU.Archimedean.UpstreamAdditions.complexLiTwo",
     validation: "not_checked",
   },
 });

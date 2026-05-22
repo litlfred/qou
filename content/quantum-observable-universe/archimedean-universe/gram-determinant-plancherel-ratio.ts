@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Gram-determinant ratio $\\kappa$ as a Plancherel-weighted character product",
   lean: {
-    ref: "qou:QOU.Descartes.gram_determinant_plancherel_ratio",
+    ref: "qou:QOU.Archimedean.gram_determinant_plancherel_ratio",
     validation: "not_checked",
   },
   uses: [

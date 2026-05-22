@@ -45,7 +45,7 @@ export default proposition({
     "thurston1978",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.archimedean_functor_uniqueness",
+    ref: "qou:QOU.Archimedean.archimedean_functor_uniqueness",
     validation: "not_checked",
   },
 });

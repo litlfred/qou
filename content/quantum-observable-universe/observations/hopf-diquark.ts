@@ -10,7 +10,7 @@ export default definition({
     "color-superconductivity",
     "color-antitriplet",
   ],
-  lean: { ref: "qou:QOU.Descartes.HopfDiquark",
+  lean: { ref: "qou:QOU.Archimedean.HopfDiquark",
     validation: "not_checked",
   },
 });

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Knot/link dichotomy of force-carriers — categorical (path-α-Bring)",
   lean: {
-    ref: "qou:QOU.Descartes.force_carrier_knot_vs_link_dichotomy",
+    ref: "qou:QOU.Archimedean.force_carrier_knot_vs_link_dichotomy",
     validation: "not_checked",
   },
   uses: [

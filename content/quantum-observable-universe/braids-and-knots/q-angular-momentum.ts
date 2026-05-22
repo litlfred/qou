@@ -12,7 +12,7 @@ export default definition({
     "braid",
     "jones-wenzl",
   ],
-  lean: { ref: "qou:QOU.Descartes.QAngularMomentum",
+  lean: { ref: "qou:QOU.Archimedean.QAngularMomentum",
     validation: "not_checked",
   },
   uses: [

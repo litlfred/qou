@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots",
   lean: {
-    ref: "qou:QOU.Descartes.force_carrier_bring_uniqueness",
+    ref: "qou:QOU.Archimedean.force_carrier_bring_uniqueness",
     validation: "not_checked",
   },
   uses: ["prop:torus-knot-genus-four-unique"],

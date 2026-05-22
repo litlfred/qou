@@ -15,7 +15,7 @@ export default proposition({
     "prop:volume-tower-decomposition",
     "prop:yekutieli-lifting",
   ],
-  lean: { ref: "qou:QOU.Descartes.CSEvaluationFaithful",
+  lean: { ref: "qou:QOU.Archimedean.CSEvaluationFaithful",
     validation: "not_checked",
   },
 });

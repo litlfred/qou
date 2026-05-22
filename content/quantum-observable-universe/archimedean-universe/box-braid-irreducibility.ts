@@ -15,7 +15,7 @@ export default proposition({
     "photon",
     "virtual-particles",
   ],
-  lean: { ref: "qou:QOU.Descartes.BoxBraidIrreducibility",
+  lean: { ref: "qou:QOU.Archimedean.BoxBraidIrreducibility",
     validation: "not_checked",
   },
   uses: [

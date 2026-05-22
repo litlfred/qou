@@ -15,7 +15,7 @@ export default definition({
     "universal",
     "interaction",
   ],
-  lean: { ref: "qou:QOU.Descartes.TransferMatrixOperator",
+  lean: { ref: "qou:QOU.Archimedean.TransferMatrixOperator",
     validation: "not_checked",
   },
   uses: [

@@ -13,7 +13,7 @@ export default proposition({
     "substrate-parameter",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.golden_skew_dual_node",
+    ref: "qou:QOU.Archimedean.golden_skew_dual_node",
     validation: "not_checked",
   },
   uses: [

@@ -12,7 +12,7 @@ export default definition({
     "fermion",
     "beta-decay",
   ],
-  lean: { ref: "qou:QOU.Descartes.Antineutrino",
+  lean: { ref: "qou:QOU.Archimedean.Antineutrino",
     validation: "not_checked",
   },
   uses: ["prop:parity-violation-skein"],

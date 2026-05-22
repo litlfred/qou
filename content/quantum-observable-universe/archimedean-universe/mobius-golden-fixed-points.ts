@@ -14,7 +14,7 @@ export default proposition({
     "bar-involution",
     "skew-symmetry",
   ],
-  lean: { ref: "qou:QOU.Descartes.mobius_golden_fixed_points",
+  lean: { ref: "qou:QOU.Archimedean.mobius_golden_fixed_points",
     validation: "not_checked",
   },
   uses: [

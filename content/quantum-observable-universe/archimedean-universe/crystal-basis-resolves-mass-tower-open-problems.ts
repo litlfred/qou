@@ -31,7 +31,7 @@ export default proposition({
     "open-problem-reduction",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.crystal_basis_reduction",
+    ref: "qou:QOU.Archimedean.crystal_basis_reduction",
     validation: "not_checked",
   },
 });

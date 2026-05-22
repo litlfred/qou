@@ -15,7 +15,7 @@ export default proposition({
     "prop:cosimplicial-crossed-groupoid",
     "prop:topological-mass-formula",
   ],
-  lean: { ref: "qou:QOU.Descartes.VolumeTowerDecomposition",
+  lean: { ref: "qou:QOU.Archimedean.VolumeTowerDecomposition",
     validation: "not_checked",
   },
 });

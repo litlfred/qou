@@ -12,7 +12,7 @@ export default proposition({
     "golden-ratio",
     "weierstrass",
   ],
-  lean: { ref: "qou:QOU.Descartes.descartes_elliptic_curve",
+  lean: { ref: "qou:QOU.Archimedean.descartes_elliptic_curve",
     validation: "not_checked",
   },
   uses: [

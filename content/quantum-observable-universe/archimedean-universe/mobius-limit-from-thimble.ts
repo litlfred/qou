@@ -27,7 +27,7 @@ export default conjecture({
     "laurent-polynomial",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.mobiusLimitFromThimble",
+    ref: "qou:QOU.Archimedean.mobiusLimitFromThimble",
     validation: "not_checked",
   },
   computation: {

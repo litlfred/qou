@@ -14,7 +14,7 @@ export default proposition({
     "electron",
     "crossing",
   ],
-  lean: { ref: "qou:QOU.Descartes.skein_coulomb_enhancement",
+  lean: { ref: "qou:QOU.Archimedean.skein_coulomb_enhancement",
     validation: "not_checked",
   },
 });

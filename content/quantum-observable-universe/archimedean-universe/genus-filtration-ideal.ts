@@ -14,7 +14,7 @@ export default proposition({
     "hecke-algebra",
     "completeness",
   ],
-  lean: { ref: "qou:QOU.Descartes.genus_filtration_ideal",
+  lean: { ref: "qou:QOU.Archimedean.genus_filtration_ideal",
     validation: "not_checked",
   },
   uses: [

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Genus-$4$ torus knots: $\\{T_{2,9}, T_{3,5}\\}$ are the only solutions",
   lean: {
-    ref: "qou:QOU.Descartes.torus_knot_genus_four_unique",
+    ref: "qou:QOU.Archimedean.torus_knot_genus_four_unique",
     validation: "not_checked",
   },
   uses: ["prop:torus-knot-generators"],

@@ -5,7 +5,7 @@ export default remark({
   title: "Picard--Lefschetz thimbles: archimedean shadow of the algebraic residue",
   interprets: "prop:sw-period-thimble-equivalence",
   lean: {
-    ref: "qou:QOU.Descartes.ThimbleData",
+    ref: "qou:QOU.Archimedean.ThimbleData",
     validation: "not_checked",
   },
   tags: [

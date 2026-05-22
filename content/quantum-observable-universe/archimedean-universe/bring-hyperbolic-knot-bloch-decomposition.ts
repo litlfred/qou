@@ -39,7 +39,7 @@ export default conjecture({
     "structural-sub-conjecture",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.bring_hyperbolic_decomposition",
+    ref: "qou:QOU.Archimedean.bring_hyperbolic_decomposition",
     validation: "not_checked",
   },
 });

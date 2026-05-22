@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Per-partition $\\Delta_\\lambda(K)$ as the per-block algebraic residue at $\\mathcal{O}_{\\mathrm{prin}}^{(\\lambda)}$",
   lean: {
-    ref: "qou:QOU.Descartes.DeltaLambdaCategoricalClosure",
+    ref: "qou:QOU.Archimedean.DeltaLambdaCategoricalClosure",
     validation: "not_checked",
   },
   tags: [
