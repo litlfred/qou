@@ -41,7 +41,7 @@
   "scriptHash": "57084e42ae29",
   "scriptCommitSha": "0093f06021ac3d14750159144fa9da757890d69a",
   "description": "Closed-form integration limit a(q) = (4-q)/(4q+3) from steepest-descent re-entry point of the PL thimble. Algebraic identity verified by sympy; archimedean Hessian data lives in picard-lefschetz-thimble.witness.json.",
-  "contentBlock": "prop:mobius-limit-from-thimble",
+  "contentBlock": "conj:mobius-limit-from-thimble",
   "parameters": {
     "q0": 1.1099785955541805
   },

@@ -1,7 +1,7 @@
 **Remark (Möbius integration limit — algebraic structure).**
 *The categorical integration limit for the baryon period is the
 Möbius transformation $a: q \mapsto (4-q)/(4q+3)$
-([Möbius limit from thimble](#prop:mobius-limit-from-thimble)),
+([Möbius limit from thimble](#conj:mobius-limit-from-thimble)),
 acting on substrate parameter $q$ via its
 $\mathrm{PGL}_2(\mathbb{Z})$ matrix:*
 
@@ -66,7 +66,7 @@ empirical input.*
 
 **Open follow-up.**
 *Open question #2 ("Why Möbius vs golden node") is **resolved**
-([mobius-limit-from-thimble Step 3](#prop:mobius-limit-from-thimble),
+([mobius-limit-from-thimble Step 3](#conj:mobius-limit-from-thimble),
 [morse-wall-q-moduli](#prop:morse-wall-q-moduli)). Open question #1
 ("Why product $\prod_k dc_k/dz$ rather than sum") is the
 $\mathrm{Alt}^3$ projector — derived in

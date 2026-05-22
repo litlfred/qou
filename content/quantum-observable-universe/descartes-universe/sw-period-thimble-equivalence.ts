@@ -14,7 +14,7 @@ export default proposition({
     "prop:gb-spectral-sequence",
     "prop:categorical-mass-markov",
     "prop:baryon-product-from-alt",
-    "prop:mobius-limit-from-thimble",
+    "conj:mobius-limit-from-thimble",
     "rem:yekutieli-stokes",
   ],
   defines: [],

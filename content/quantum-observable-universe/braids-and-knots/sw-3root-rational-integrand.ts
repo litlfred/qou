@@ -23,8 +23,12 @@ import { proposition } from "../../schema/builders";
  * against production `picard_lefschetz_thimble.sw_3root_product_degree1`.
  *
  * Status: PROVED. The rational form makes ∫_{-a}^{a} λ_{SW}^(1)
- * computable in closed form via partial fractions, providing the
- * algebraic foundation for the substrate-m_p categorical action.
+ * computable in closed form via partial fractions for any given a.
+ * Scope: this proposition derives the INTEGRAND of A(a); it does
+ * NOT derive the INTEGRATION LIMIT a at which A(a) matches CODATA
+ * m_p. The integration-limit question is conjectural (see
+ * conj:lambda-scale-substrate-form and cheat-sheet Migration
+ * Backlog #1) and a known CAL-4 anchor in the production chain.
  */
 export default proposition({
   label: "prop:sw-3root-rational-integrand",

@@ -1,10 +1,21 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-**Status (revised 2026-05-18 after exhaustive R&D — Class-A canonical-discipline note):**
+**Status (revised 2026-05-22 — explicit CAL-4 banner):**
 *The original substrate-form claim*
 $\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$
 *matches CODATA $m_p$ to 5.4 ppm but is* **NOT structurally derived**
-*— it is a PSLQ-style numerical near-coincidence ([2026-05-18 falsification audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md)).
+*— it is a PSLQ-style numerical near-coincidence
+([2026-05-18 falsification audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md)).
+Empirical only; treated as a* **4th calibration anchor** *in the
+production chain — see PR #879 audit
+[`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md)
+§"Sneak CAL-4 confirmed" and the cheat-sheet Migration Backlog
+\#1.* **The label `conj:lambda-scale-substrate-form` is retained for
+graph-stability**; readers should interpret it as
+"$\lambda_{\mathrm{scale}}$ empirical fit form (substrate-source
+open)" until
+[`prop:lambda-scale-bring-bloch-identity`](#prop:lambda-scale-bring-bloch-identity)
+or an equivalent genuinely-substrate-sourced derivation lands.
 What IS proved (Family A theorem):*
 
 $$

@@ -69,3 +69,92 @@ None at this time. No inconsistent findings across siblings — PR #772's `ρ_K 
 **Wait for review-round resolution on #751 before further work on this branch.** The two existing Copilot review batches (commits `8197914d` and `76d8f432`) are addressed in `fa01be4f` + `79cefddd`. Next CI cycle / sibling event will surface any follow-up.
 
 If the user wants substantive progress on the open structural question in Route A ("why does inflection point of A(a) produce `5/2 − h²·G`?") that work belongs on a **fresh** branch — not in this PR — since #751's scope is "routes concrete + cross-PR finding", not "derive the inflection-point semantics".
+
+---
+
+## 2026-05-22 update — post-merge audit + #879 coordination
+
+PR #751 was merged. A critical re-analysis on the merged tip
+(`docs/audits/2026-05-22-pr751-critical-reanalysis.md`,
+commit `42deac024` on `claude/workplan-0b-mn-substrate`)
+triple-checked the merged work for CAL-4 leakage. Findings:
+
+**One solid positive:** `prop:sw-3root-rational-integrand` is
+correct — `integrand_baryon = -P(z)/D(z)` via Vieta-resultant,
+machine-precision verified.
+
+**One sneak CAL-4 (curve-fit face):** `(4-q)/(4q+3)` as
+integration limit produces `A(a(q)) ≈ CODATA m_p` at q_0, but the
+color-tube cubic `F(z,c)` has coefficients in z only (no q
+anywhere). So A(a) is q-independent and the q-dependence enters
+exclusively through the integration-limit choice — exactly what
+fitting a curve through CODATA m_p over the q-range looks like.
+
+**Main has partly fixed this (2026-05-18):**
+- `f86ea9d7a` demotes `def:picard-lefschetz-thimble → rem:`
+- `3a4a85f48` / `c5e3894fa` / `7dba7772b` reframe
+  `prop:sw-period-thimble-equivalence` as algebraic residue on
+  the principal Galois orbit over `ℤ[q^{±1/2}, ζ_5]`
+- New `mobius-limit-from-thimble.md` explicitly states PL is
+  "not numerically supported" (witness shows descent crossing
+  at z ≈ 3.86, 10× larger than `a(q_0)`)
+- Witness `derive-a-thimble-intersection.witness.json` labels
+  the (4-q)/(4q+3) entry as **"← post-hoc"** in its own output
+
+**Main has NOT fixed:** the replacement "algebraic-Galois" Step 1
+in the new `mobius-limit-from-thimble.md` sources the **constants**
+{4, 3} from the cubic's c²-coefficient and degree, but does not
+source the **variable q** in either `4-q` or `4q+3`. Re-narration
+without elimination.
+
+### Sibling discovery — PR #879 (open, 2026-05-22)
+
+[`audit: 210× scale-gap third pass — identifies CAL-4 in λ_scale (corrects PR #772 + interim v2)`](https://github.com/litlfred/qou/pull/879)
+independently catches the **literal** face of the same CAL-4:
+`LAMBDA_PROTON_DOC = 2.4599527869` hardcoded in
+`m_p_borromean_verification_50dps.py`. The cheat sheet
+[`docs/canonical-derivation-cheat-sheet.md`](https://github.com/litlfred/qou/blob/claude/210x-scale-gap-root-cause-v2/docs/canonical-derivation-cheat-sheet.md)
+§5 Migration Backlog #1 + §8 Pitfalls track this as a known
+3-calibration discipline violation with proposed replacement
+`prop:lambda-scale-bring-bloch-identity` (open R&D).
+
+| Audit | Face of the CAL-4 | Manifestation |
+|---|---|---|
+| **PR #879** | Literal | `LAMBDA_PROTON_DOC = 2.4599527869` hardcoded |
+| **PR #751 critical re-analysis** (this branch) | Curve-fit | `a(q) = (4-q)/(4q+3)` → `A(a(q)) ≈ 2.4599` at q_0 |
+
+Both reduce to the same observable: `λ_scale` has no substrate
+derivation. The two-faces framing should help downstream readers
+not "fix" one face without the other.
+
+**Classification of #879 vs #751:**
+
+| Axis | Value |
+|---|---|
+| Overlap | **additive** (same finding, two surfaces — literal vs curve-fit) |
+| Dependency | **independent** (different files, both doc-only) |
+| Cherry-pick opportunity | none in either direction; cross-link is sufficient |
+
+### Posted coordination comments (round 2)
+
+| Sibling | Action | Topic |
+|---|---|---|
+| #879 | post `add_issue_comment` (this update) | Two-faces of same CAL-4; link my audit; agree the named replacement `prop:lambda-scale-bring-bloch-identity` covers both |
+
+### Escalations
+
+None. PR #879's framing (literal CAL-4 in production scripts) and
+this branch's framing (curve-fit CAL-4 in narrative blocks) are
+**consistent, complementary findings**, not inconsistent. Both
+point at the same Migration Backlog #1 resolution
+(`prop:lambda-scale-bring-bloch-identity` or equivalent).
+
+### Next concrete task (non-overlapping)
+
+Subject to user direction (see end-of-turn options): either
+(a) audit `prop:lambda-scale-bring-bloch-identity` + the 5
+`bring_bloch_tier{1..5}_search_m_p.py` scripts for whether THAT
+candidate replacement is itself a substrate derivation or a
+Bring-volume PSLQ fit to CODATA, or (b) open a follow-up PR
+demoting `conj:mobius-limit-from-thimble → conj:` with the
+explicit "q is not sourced" banner from §3.5 of the audit.

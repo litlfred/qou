@@ -128,6 +128,17 @@ used in
 Because $\lambda_{SW}^{(1)}$ is rational, the integral
 $\int_{-a}^{a} \lambda_{SW}^{(1)}(z)\,dz$ is computable in closed
 form via partial fractions (logs + arctans of polynomial roots).
+Polynomial division gives
+
+$$
+  -\frac{P(z)}{D(z)} \;=\; -4 \;+\; \frac{20 z^4 + 40 z^3 + 35 z^2 + 30 z + 25}{D(z)},
+$$
+
+so $\int_{-a}^{a} (-P/D)\,dz = -8a + R(a)$ where $R(a)$ is a sum of
+arctangents over the three irrational $w$-roots of
+$\tilde D(w) = 16 w^3 + 24 w^2 - 13 w + 2$ ($w = z + 1/z$ palindromic
+substitution; $\mathrm{disc}(\tilde D) = -80000$, not a perfect
+square in $\mathbb{Q}$ — so $D(z)$ is irreducible over $\mathbb{Q}$).
 
 The Wedderburn-decomposition target
 
@@ -137,8 +148,20 @@ $$
 
 (where $y_\lambda$ are the H_3 Markov weights — natural since the
 cubic is 3-strand) reduces to identifying the partition-indexed
-pieces $g_\lambda(a)$. This is the structural path forward for
-deriving the substrate $m_p$ anchor categorically.
+pieces $g_\lambda(a)$.
+
+**Scope caveat.** This proposition computes the **integrand** of
+$A(a)$ in exact rational form. It does **not** derive the
+**integration limit** $a$ at which $A(a)$ matches CODATA $m_p$. The
+integration-limit question is conjectural (see
+[`conj:lambda-scale-substrate-form`](#conj:lambda-scale-substrate-form)
+and the cheat-sheet Migration Backlog #1) and known to be a CAL-4
+anchor in the production chain
+([`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md)).
+The rational-integrand result here is a **necessary** structural
+input for any future substrate derivation of $a$, but not a
+**sufficient** one — given the integrand alone, the substrate value
+of $a$ remains undetermined.
 
 ## Citation
 

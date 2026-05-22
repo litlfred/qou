@@ -2,7 +2,7 @@
 
 *Let $a: q \mapsto (4-q)/(4q+3)$ be the categorical integration-limit
 Möbius transformation
-([Möbius limit from thimble](#prop:mobius-limit-from-thimble)), viewed
+([Möbius limit from thimble](#conj:mobius-limit-from-thimble)), viewed
 as an element of $\operatorname{Frac}(R)$ for $R = \mathbb{Z}[q^{\pm 1}]$
 (equivalently, defined over the localisation $R[(4q+3)^{-1}]$).
 The locus where $a$ acts trivially — its fixed-point set in

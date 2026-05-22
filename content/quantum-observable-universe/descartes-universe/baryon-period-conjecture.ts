@@ -15,7 +15,7 @@ export default remark({
   ],
   uses: [
     "prop:sw-period-thimble-equivalence",
-    "prop:mobius-limit-from-thimble",
+    "conj:mobius-limit-from-thimble",
     "rem:picard-lefschetz-thimble",
   ],
 });

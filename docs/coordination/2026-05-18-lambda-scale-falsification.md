@@ -54,7 +54,7 @@ Five findings relevant to the λ_scale / m_p / C2-inflection thread:
 
 1. **Color-tube cubic is $q$-independent** ($F \in \mathbb{Z}[z][c]$). $z_c$ and $H(z_c)$ are fixed complex numbers; the $d^2 S = 0$ wall must live in $q$-moduli, not $z$-plane. Rules out "saddle point of PL contour" as the meaning of $d^2 A/da^2 = 0$.
 2. **Möbius $a(q)=(4-q)/(4q+3)$** has fixed points $q=1/\varphi,-\varphi$ from $q^2+q-1=0$ (golden node). $d^2 A/da^2 = 0$ at $a = a(q_0)$ is the archimedean reading of this algebraic wall via $\tau_q$.
-3. **`prop:mobius-limit-from-thimble` Step 3 is unsupported** numerically — the actual descent re-entry is $z\approx 3.86$, not $0.388$. The Möbius value comes from the cubic's binomial $\binom{4}{1}=4,\binom{4}{3}=4,\deg_c F=3$, not steepest-descent geometry.
+3. **`conj:mobius-limit-from-thimble` Step 3 is unsupported** numerically — the actual descent re-entry is $z\approx 3.86$, not $0.388$. The Möbius value comes from the cubic's binomial $\binom{4}{1}=4,\binom{4}{3}=4,\deg_c F=3$, not steepest-descent geometry.
 4. **`prop:sw-period-thimble-equivalence` A2.4** is mis-framed as Lefschetz decomposition; correct framing is Cauchy residue on $\mathcal{E}_q$ restricted to the principal Galois orbit $\{z_c^\pm\}$.
 5. **Laurent-ring check** ($\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$, with $\sqrt{5}\in\mathbb{Z}[\zeta_5]$): the Möbius $(4-q)/(4q+3)$ IS Laurent-compatible — contrary to "fails canonical form" judgment in PR #751's Route A table.
 

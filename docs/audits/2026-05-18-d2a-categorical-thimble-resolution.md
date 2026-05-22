@@ -12,7 +12,7 @@ limits need to be in QOU."
 This document collects **four research deliverables**, in increasing
 formality:
 
-1. Rewrite of `prop:mobius-limit-from-thimble` Step 3 (drop the
+1. Rewrite of `conj:mobius-limit-from-thimble` Step 3 (drop the
    unverified thimble-re-entry claim).
 2. Categorical replacement for `prop:sw-period-thimble-equivalence`
    hypothesis A2.4 (Cauchy/residue, not Lefschetz decomposition).
@@ -63,7 +63,7 @@ re-entry; it is a **section of the $q$-moduli golden-wall family**.
 
 ---
 
-## 1. Rewrite of `prop:mobius-limit-from-thimble` Step 3
+## 1. Rewrite of `conj:mobius-limit-from-thimble` Step 3
 
 The current Step 3 claims the steepest-descent ODE re-entry on
 $\mathbb{R}$ produces $a(q) = (4-q)/(4q+3)$. The numerical witness
@@ -511,7 +511,7 @@ $q$-family. Deferred.
 2. Owner sanctions adding the Tier-1 references first
    (Pham, Arnold–GZ–V, Seidel) — these alone resolve the citation
    gap for the existing claims.
-3. Owner sanctions deleting `prop:mobius-limit-from-thimble` Step 3's
+3. Owner sanctions deleting `conj:mobius-limit-from-thimble` Step 3's
    thimble-re-entry sentence and replacing it with §1 above.
 4. Run the numerical check from Appendix A (small, local, no CI).
 5. Defer the `prop:morse-wall-q-moduli` new block until §1+§2 are in.

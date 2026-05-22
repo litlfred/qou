@@ -17,7 +17,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:mobius-limit-from-thimble",
+    "conj:mobius-limit-from-thimble",
     "prop:mobius-golden-fixed-points",
     "rem:color-tube-cubic",
     "rem:golden-ratio-degeneration",
