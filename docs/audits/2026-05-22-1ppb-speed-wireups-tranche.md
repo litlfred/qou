@@ -56,7 +56,14 @@ Wedderburn-block lattice:
 
 ```python
 from pyhecke_native import chi_lambda_all_partitions_mpfr as _rust_chi_all
-word_signed = [(int(c), int(g)) for (c, _d, g) in word]
+# Translate Python (c, d, g) → Rust (sign, gen_1based):
+#   d ≈ 0     → sign = +1 (σ_g)
+#   d ≈ -h    → sign = -1 (σ_g^{-1})
+#   d ≈ -h/2  → sign =  0 (averaged)
+#   gen = g + 1  (Rust kernel is 1-based)
+h_f64 = float(q - mp.mpf(1) / q)
+sign_map = {round(0.0, 9): 1, round(-h_f64, 9): -1, round(-h_f64 / 2, 9): 0}
+word_signed = [(sign_map[round(float(d), 9)], int(g) + 1) for (_c, d, g) in word]
 rust_results = _rust_chi_all(n, word_signed, q_str, dps)
 ```
 

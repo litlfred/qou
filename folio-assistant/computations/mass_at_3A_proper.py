@@ -206,10 +206,13 @@ def _cached_seminormal(shape: tuple[int, ...]):
                     n_sigmas = sum(
                         1 for k in npz.files if k.startswith("sig")
                     )
-                # np.asarray materialises the mmap into a dense ndarray
-                # so the caller can keep it after the context closes.
+                # np.array (not np.asarray) makes an explicit copy
+                # of the memmap-backed array, detaching from the
+                # underlying file so the data stays valid after the
+                # npz context closes (np.asarray on a memmap returns
+                # a view that becomes invalid post-close).
                 sigmas = [
-                    np.asarray(npz[f"sig{i}"]) for i in range(n_sigmas)
+                    np.array(npz[f"sig{i}"]) for i in range(n_sigmas)
                 ]
             syts = [{int(k): int(v) for k, v in d.items()}
                     for d in meta["syts"]]

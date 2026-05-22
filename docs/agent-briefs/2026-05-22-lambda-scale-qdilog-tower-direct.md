@@ -30,7 +30,9 @@ $$
   calibration inputs.
 - `Vol(𝓑₃) = 8G ≈ 7.32772...` is a fixed topological invariant
   (Catalan's constant identity per
-  [`prop:borromean-vol-8G`](../../content/quantum-observable-universe/braids-and-knots/)).
+  [`prop:binding-scale-catalan`](../../content/quantum-observable-universe/braids-and-knots/binding-scale-catalan.md);
+  see also the 100-dps witness chain referenced from
+  [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)).
 - `ℏ_q = (q-1)/q` is the q-deformed Planck constant; at `q_0`
   this gives `Vol(𝓑₃)/ℏ_q² ≈ 746.4`.
 - `S(B)` is the Skein-orientation correction (different for proton

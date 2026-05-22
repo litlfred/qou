@@ -354,21 +354,73 @@ def tr_M_via_wenzl_bridge_mpfr(
         # χ_λ-over-all-partitions. Falls back to pure Python below if
         # pyhecke_native is unavailable (no native wheel built) or
         # raises during the call.
+        #
+        # Word-encoding bridge: the Python convention is `(c, d, g)`
+        # where the factor is `c·σ_g + d·I` and `g` is **0-based**
+        # (per `mass_at_3A_proper.atom_braid_word_3A` docstring).
+        # The Rust kernel takes `(sign, gen_1based)` with sign ∈
+        # {-1, 0, +1} for {σ⁻¹, averaged, σ}; the σ⁻¹ and averaged
+        # cases are encoded on the Python side as `(1.0, -h, g)` and
+        # `(1.0, -h/2, g)` respectively. We translate the
+        # `d`-coefficient to Rust's `sign` enum, asserting `c ≈ 1.0`
+        # (the only case the Rust kernel supports) and shifting the
+        # generator index by +1.
         rust_chi_by_partition: dict[tuple[int, ...], mp.mpf] | None = None
         try:
             from pyhecke_native import (
                 chi_lambda_all_partitions_mpfr as _rust_chi_all,
             )
-            # Rust takes signed (sign, gen) — averaged crossings (sign=0)
-            # are handled natively via the (σ + σ⁻¹)/2 = σ − h/2·I path.
-            word_signed = [(int(c), int(g)) for (c, _d, g) in word]
+            # Build the sign-from-d map at the active dps so the
+            # round(d, 9) lookup is stable.
+            h_f64 = float(q - mp.mpf(1) / q)
+            sign_map = {
+                round(0.0, 9): 1,       # σ_g
+                round(-h_f64, 9): -1,    # σ_g^{-1} = σ_g - h
+                round(-h_f64 / 2, 9): 0,  # averaged = σ_g - h/2
+            }
+
+            def _translate(factor: tuple[float, float, int]):
+                c, d, g = factor
+                if abs(float(c) - 1.0) > 1e-9:
+                    raise ValueError(
+                        f"Rust path requires c == 1.0; got c={c}"
+                    )
+                sign = sign_map.get(round(float(d), 9))
+                if sign is None:
+                    raise ValueError(
+                        f"unrecognised d={d}; expected one of "
+                        f"{{0.0, -h, -h/2}} with h={h_f64}"
+                    )
+                return (sign, int(g) + 1)
+
+            word_signed = [_translate(factor) for factor in word]
             rust_results = _rust_chi_all(n, word_signed, q_str, dps)
             rust_chi_by_partition = {
                 tuple(lam): mp.mpf(chi_str)
                 for lam, chi_str in rust_results
             }
-        except (ImportError, Exception):  # noqa: BLE001
+        except (ImportError, ValueError, RuntimeError, KeyError,
+                AssertionError):
+            # ImportError: pyhecke_native wheel not built.
+            # ValueError: unsupported factor encoding (c != 1.0 or
+            #   unrecognised d); ValueError is also raised by the
+            #   Rust kernel on invalid (sign, gen) tuples.
+            # RuntimeError: Rust panic / FFI boundary error.
+            # KeyError/AssertionError: defensive against future API
+            #   changes in the Rust kernel.
             rust_chi_by_partition = None
+
+        # `d_lambda` (= dim of Specht module) is the combinatorial
+        # partition dimension; computing it via Murnaghan-Nakayama
+        # avoids the heavy Hoefsmit seminormal build when the Rust
+        # fast path has already supplied χ_λ and we only need `dim`
+        # for the breakdown payload.
+        _d_lambda_combinatorial = None
+        if return_breakdown and rust_chi_by_partition is not None:
+            try:
+                from murnaghan_nakayama import d_lambda as _d_lambda_combinatorial  # noqa: E501
+            except ImportError:
+                _d_lambda_combinatorial = None
 
         for shape in partitions_of(n):
             shape_t = tuple(shape)
@@ -387,12 +439,14 @@ def tr_M_via_wenzl_bridge_mpfr(
                         continue
                     chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
                 else:
-                    # Need `dim` for the breakdown payload only; cheap
-                    # lookup via the cached seminormal builder when
-                    # asked, else 0 as sentinel.
                     dim = 0
                     if return_breakdown:
-                        _, dim = _build_seminormal_matrices_mpf(shape_t, q)
+                        # Prefer combinatorial d_lambda over the heavy
+                        # _build_seminormal_matrices_mpf call.
+                        if _d_lambda_combinatorial is not None:
+                            dim = int(_d_lambda_combinatorial(shape_t))
+                        else:
+                            _, dim = _build_seminormal_matrices_mpf(shape_t, q)
             else:
                 sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
                 if dim == 0:
