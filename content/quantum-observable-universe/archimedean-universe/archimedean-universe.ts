@@ -1,22 +1,29 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 6: The Descartes Universe.
+ * Chapter 6: The Archimedean Universe.
  *
- * The concrete realisation with χ(A) = −6.  Sections:
+ * The concrete archimedean realisation with χ(A) = −6.  Sections:
  * (1) Bring's surface geometry and coordinates,
  * (2) spectral and gauge structures, (3) the Descartes condition,
  * particles, and the Descartes theorem, (4) topological mass and the
  * knot-particle spectrum.
+ *
+ * Renamed from "Descartes Universe" → "Archimedean Universe" on
+ * 2026-05-22 per the chapter-reorg proposal (PR-R1).  The Descartes
+ * specialisation is now positioned downstream of the Archimedean
+ * functor in chapter `models-of-qous`.  The legacy `chap:descartes-
+ * universe` label is retired; cross-references migrate to
+ * `chap:archimedean-universe`.
  */
 export default chapter({
-  title: "The Descartes Universe",
-  label: "chap:descartes-universe",
+  title: "The Archimedean Universe",
+  label: "chap:archimedean-universe",
   sections: [
     // ── Preamble (does not count as a numbered section) ──────────────
     section({
       title: "Why this universe",
-      label: "sec:descartes-preamble",
+      label: "sec:archimedean-preamble",
       blocks: [
         "descartes-preamble",
       ],

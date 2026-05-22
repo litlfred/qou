@@ -21,7 +21,7 @@ export default paper({
     "(Chapters 4--8) develops the structural consequences: braiding and " +
     "knot theory, models over various ground fields, the algebraic " +
     "substrate, fluid dynamics, and information-theoretic " +
-    "perspectives.  Part~III (Chapters 9--10) specialises to the Descartes " +
+    "perspectives.  Part~III (Chapters 9--10) specialises to the Archimedean " +
     "universe on Bring's surface ($\\chi = -6$) and collects physical " +
     "predictions.  Chapter~11 develops the $q$-geometric Langlands " +
     "correspondence.",
@@ -53,7 +53,7 @@ export default paper({
     // ── Part II: Structure (physics narrative — bk, particles, obs) ──
     chapterRef({ dir: "braids-and-knots" }),                  // Braids, knots, Hecke, classical-limit machinery
     chapterRef({ dir: "models-of-qous" }),                    // Models of QOUs — the archimedean wall (Calabi-Yau, ALE, SW)
-    chapterRef({ dir: "descartes-universe" }),                // Bring's surface, χ = −6, fundamental particles (incl. cohomological defect)
+    chapterRef({ dir: "archimedean-universe" }),              // Bring's surface, χ = −6, fundamental particles (incl. cohomological defect)
     chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
     chapterRef({ dir: "observations" }),                      // Physical observations / CODATA
     chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂ → benzene
