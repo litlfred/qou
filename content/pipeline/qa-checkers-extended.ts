@@ -192,29 +192,47 @@ function readTs(path: string | undefined): string {
 
 function getComputationField(tsSrc: string): {
   witness?: string;
+  witnesses?: string[];
   probe?: string;
 } {
   // Light extraction — looks for `computation: { witness: "..." }`,
   // `computation: { witness: [...] }`, and `probe: "..."` patterns at
   // any nesting depth.
   //
-  // Multi-witness array form `witness: ["a.witness.json", "b.witness.json"]`
-  // is matched and the FIRST path is returned for the `witness?: string`
-  // slot — sufficient for `canonical-witness-pinned` (which only needs
-  // to know that ANY canonical witness is declared) and for
-  // `compute-witness-exists` (which checks the declared witness path
-  // exists; an array implies at least one path that should exist).
-  const result: { witness?: string; probe?: string } = {};
-  const witnessStringMatch = tsSrc.match(/witness:\s*["']([^"']+)["']/);
-  if (witnessStringMatch) {
-    result.witness = witnessStringMatch[1];
-  } else {
-    const witnessArrayMatch = tsSrc.match(
-      /witness:\s*\[\s*["']([^"']+)["']/,
-    );
-    if (witnessArrayMatch) result.witness = witnessArrayMatch[1];
+  // Comments are stripped first so a `witness:` token inside a `//`
+  // or `/* */` comment is not picked up as a real declaration.
+  //
+  // Both forms are normalised into a `witnesses: string[]` so consumers
+  // can validate the FULL declared dependency set (`checkComputeWitnessExists`
+  // iterates and checks every path on disk). The legacy `witness?: string`
+  // slot returns the first element for back-compat with consumers that
+  // only need to know that SOMETHING is declared
+  // (e.g. `canonical-witness-pinned`).
+  const cleanSrc = tsSrc.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, "");
+  const result: {
+    witness?: string;
+    witnesses?: string[];
+    probe?: string;
+  } = {};
+  const witnessRe = /witness:\s*(?:\[([^\]]*)\]|["']([^"']+)["'])/;
+  const witnessMatch = cleanSrc.match(witnessRe);
+  if (witnessMatch) {
+    if (witnessMatch[2]) {
+      // String form: witness: "path"
+      result.witnesses = [witnessMatch[2]];
+    } else {
+      // Array form: witness: ["a", "b", ...] — extract every quoted item.
+      const arrayBody = witnessMatch[1] ?? "";
+      const items = [...arrayBody.matchAll(/["']([^"']+)["']/g)].map(
+        (m) => m[1],
+      );
+      if (items.length > 0) result.witnesses = items;
+    }
+    if (result.witnesses && result.witnesses.length > 0) {
+      result.witness = result.witnesses[0];
+    }
   }
-  const probeMatch = tsSrc.match(/probe:\s*["']([^"']+)["']/);
+  const probeMatch = cleanSrc.match(/probe:\s*["']([^"']+)["']/);
   if (probeMatch) result.probe = probeMatch[1];
   return result;
 }
@@ -274,42 +292,40 @@ export function checkComputeWitnessExists(
 ): CheckerResult {
   const ts = readTs(tsPath);
   if (!ts) return { result: "n/a", hits: [] };
-  const { witness } = getComputationField(ts);
-  if (!witness) return { result: "pass", hits: [] };
-  const absPath = witness.startsWith("/")
-    ? witness
-    : resolve(REPO_ROOT, witness);
-  if (!existsSync(absPath)) {
-    return {
-      result: "fail",
-      hits: [
-        {
+  const { witnesses } = getComputationField(ts);
+  if (!witnesses || witnesses.length === 0) {
+    return { result: "pass", hits: [] };
+  }
+  // Iterate the full declared dependency set; surface every missing /
+  // empty witness so a multi-witness block doesn't hide a stale entry
+  // behind the first valid one.
+  const hits: CheckerHit[] = [];
+  for (const witness of witnesses) {
+    const absPath = witness.startsWith("/")
+      ? witness
+      : resolve(REPO_ROOT, witness);
+    if (!existsSync(absPath)) {
+      hits.push({
+        file: tsPath ?? "(unknown)",
+        line: 1,
+        text: `declared witness '${witness}' does not exist on disk`,
+      });
+      continue;
+    }
+    try {
+      const content = readFileSync(absPath, "utf-8");
+      if (content.trim().length === 0) {
+        hits.push({
           file: tsPath ?? "(unknown)",
           line: 1,
-          text: `declared witness '${witness}' does not exist on disk`,
-        },
-      ],
-    };
-  }
-  // Also check non-empty.
-  try {
-    const content = readFileSync(absPath, "utf-8");
-    if (content.trim().length === 0) {
-      return {
-        result: "fail",
-        hits: [
-          {
-            file: tsPath ?? "(unknown)",
-            line: 1,
-            text: `declared witness '${witness}' exists but is empty`,
-          },
-        ],
-      };
+          text: `declared witness '${witness}' exists but is empty`,
+        });
+      }
+    } catch {
+      /* fall through to pass */
     }
-  } catch {
-    /* fall through to pass */
   }
-  return { result: "pass", hits: [] };
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
 
 const LP_DUAL_HINT_RE =

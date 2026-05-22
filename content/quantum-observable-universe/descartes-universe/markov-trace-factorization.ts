@@ -20,6 +20,7 @@ export default theorem({
   uses: ["prop:generator-volume-decomposition", "thm:markov-trace-product"],
   computation: {
     engine: "mpmath",
+    script: "folio-assistant/computations/derive-crossing-budget.py",
     witness: "folio-assistant/computations/gram-matrix-dual.witness.json",
     status: "verified",
   },
