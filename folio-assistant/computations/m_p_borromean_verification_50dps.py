@@ -1,5 +1,39 @@
 #!/usr/bin/env python3
 """
+═══════════════════════════════════════════════════════════════════
+⚠️  CAL-4 VIOLATION BANNER (acknowledged, awaiting derivation) ⚠️
+
+This script tests `conj:borromean-baryon-mass-formula` numerically.
+The closure-target values
+
+    LAMBDA_PROTON_FITTED_FROM_CODATA = 2.4599527869
+    LAMBDA_NEUTRON_FITTED_FROM_CODATA = 2.4633436333
+
+are SOLVED FROM CODATA (m_p, m_n), NOT derived from substrate.
+They are **CAL-4 fittings**: a fourth calibration input on top of
+the three permitted by CLAUDE.md (CAL-1 m_e, CAL-2 m_μ/m_e, CAL-3
+Q_β).  The downstream "reproduces m_p to ~1 ppb" claim is therefore
+**tautological**, not predictive.
+
+Bring-Bloch decomposition (tier0-5 PSLQ search) failed to recover
+either value across hyperbolic-knot bases.  Per the conclusion in
+[`bring_bloch_tier5_search_m_p.py`](bring_bloch_tier5_search_m_p.py)
+the λ_p_scale likely needs the categorical q-dilog tower directly,
+not a Bring-Bloch realisation.
+
+**Downstream consumers MUST NOT label outputs of this script as
+"canonical-substrate"**.  See
+[`canonical_isotope_witness.taxonomy`](canonical_isotope_witness.py)
+for the corrected `"borromean-tower-via-fitted-lambda"` taxonomy.
+
+The emitted witness carries `derivation_status:
+"FITTED_FROM_CODATA"` and `cal_class: "CAL-4-VIOLATION"` so the
+audit pipeline can flag misuse.
+
+Tracking: cheat sheet §5 fix #1
+  ([`docs/canonical-derivation-cheat-sheet.md`](../../docs/canonical-derivation-cheat-sheet.md))
+═══════════════════════════════════════════════════════════════════
+
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -94,37 +128,56 @@ M_P_CODATA_MEV = _M_P_MEV_VALIDATION
 M_N_CODATA_MEV = _M_N_MEV_VALIDATION
 M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-registry export yet)  # noqa: P31
 
-# Closure-target λ_scale values from
-# `borromean-baryon-mass-formula.md` (solved from CODATA — currently
-# open R&D to derive from substrate).
-LAMBDA_PROTON_DOC = mp.mpf("2.4599527869")
-LAMBDA_NEUTRON_DOC = mp.mpf("2.4633436333")
+# ⚠️ CAL-4 FITTING — closure-target λ_scale values FITTED FROM CODATA
+# m_p / m_n via the Borromean tower formula.  See script-level
+# banner for the full discipline context.  These are NOT substrate
+# derivations; the names carry "FITTED_FROM_CODATA" so downstream
+# audits and code review pick up the violation by grep.
+LAMBDA_PROTON_FITTED_FROM_CODATA = mp.mpf("2.4599527869")
+LAMBDA_NEUTRON_FITTED_FROM_CODATA = mp.mpf("2.4633436333")
+# Back-compat aliases (older consumers that haven't migrated yet).
+LAMBDA_PROTON_DOC = LAMBDA_PROTON_FITTED_FROM_CODATA
+LAMBDA_NEUTRON_DOC = LAMBDA_NEUTRON_FITTED_FROM_CODATA
 
 
 def main() -> int:
     w = WitnessBuilder("m-p-borromean-verification-50dps", engine="mpmath")
     w.set_description(
+        "⚠️ CAL-4-VIOLATION (acknowledged, awaiting substrate derivation). "
         "Numerical verification at MPFR 50 dps of "
         "`conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. "
-        "With λ_scale fixed at the documented closure targets "
-        "(λ_p = 2.4599527869, λ_n = 2.4633436333) the Borromean tower "
-        "formula reproduces m_p to ~1 ppb and m_n to similar precision "
-        "(2026-05-20: Vol(𝓑₃) corrected to 8·G exact via Lobachevsky/"
-        "Catalan; prior 250 ppb residual was a stale-Vol propagation bug). "
-        "This explains the 1700× scale gap in the prior single-level "
-        "Markov-trace m_p chain (`build_proton_mass_50dps_chain.py`): "
-        "Vol(B_3)/ℏ_q² ≈ 746.42 is the baryon-scale multiplier missing "
-        "from that chain. The remaining R&D is to DERIVE λ_scale from "
-        "substrate (currently closed numerically against CODATA)."
+        "λ_scale values are FITTED FROM CODATA (λ_p = 2.4599527869, "
+        "λ_n = 2.4633436333) and the resulting ~1 ppb agreement with "
+        "m_p / m_n is therefore tautological, NOT predictive — see "
+        "`derivation_status` + `cal_class` fields below. Bring-Bloch "
+        "PSLQ search (`bring_bloch_tier0-5_search_m_p.py`) failed to "
+        "recover λ_p from a hyperbolic-knot basis; the open R&D path "
+        "is the categorical q-dilog tower per tier5 conclusion. "
+        "Tracked: cheat sheet §5 fix #1. The 1700× scale gap in the "
+        "prior single-level Markov-trace m_p chain is real (Vol(B_3)/"
+        "ℏ_q² ≈ 746.42 IS the baryon-scale multiplier the substrate "
+        "chain must produce), but the per-knot λ_scale residue is "
+        "still empirical."
     )
     w.set_content_block("conj:borromean-baryon-mass-formula")
+    # Discipline markers for downstream audits.
+    w.add_parameter("derivation_status", "FITTED_FROM_CODATA")
+    w.add_parameter("cal_class", "CAL-4-VIOLATION")
+    w.add_parameter("tracking_doc", "docs/canonical-derivation-cheat-sheet.md §5 fix #1")
     w.add_parameter("q_0_50dps", mp.nstr(Q, 20))
     w.add_parameter("hbar_q_50dps", mp.nstr(HBAR_Q, 20))
     w.add_parameter("Vol_B3", mp.nstr(VOL_B3, 20))
     w.add_parameter("Vol_4_1", mp.nstr(VOL_41, 20))
     w.add_parameter("m_e_codata_MeV", mp.nstr(M_E_CODATA_MEV, 20))
-    w.add_parameter("lambda_scale_proton_doc", mp.nstr(LAMBDA_PROTON_DOC, 15))
-    w.add_parameter("lambda_scale_neutron_doc", mp.nstr(LAMBDA_NEUTRON_DOC, 15))
+    w.add_parameter("lambda_proton_fitted_from_codata",
+                    mp.nstr(LAMBDA_PROTON_FITTED_FROM_CODATA, 15))
+    w.add_parameter("lambda_neutron_fitted_from_codata",
+                    mp.nstr(LAMBDA_NEUTRON_FITTED_FROM_CODATA, 15))
+    # Back-compat aliases (older consumers — to be migrated).
+    w.add_parameter("lambda_scale_proton_doc",
+                    mp.nstr(LAMBDA_PROTON_FITTED_FROM_CODATA, 15))
+    w.add_parameter("lambda_scale_neutron_doc",
+                    mp.nstr(LAMBDA_NEUTRON_FITTED_FROM_CODATA, 15))
 
     # ── Cross-check: muon (sanity) ────────────────────────────
     mu_pred = (VOL_41 / HBAR_Q**2) * M_E_CODATA_MEV

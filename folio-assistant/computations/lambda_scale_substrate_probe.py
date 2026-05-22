@@ -39,8 +39,12 @@ Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
-VOL_B3_LIT = mp.mpf("7.32772290646480718089411881580875")
-VOL_B3_FROM_G = 8 * G  # 7.327724753...
+# Exact closed form Vol(𝓑₃) = 8·G (PR #843).  Retained `VOL_B3_LIT`
+# alias for back-compat with downstream consumers, now derived from
+# the exact form rather than the Adams 1985 truncated literal
+# (CAL-4 audit, 2026-05-22).
+VOL_B3_FROM_G = 8 * G
+VOL_B3_LIT = VOL_B3_FROM_G
 VOL_41 = mp.mpf("2.02988321281930725004240510854658")
 
 # CODATA validation (CAL-1: m_e MeV; comparison only)

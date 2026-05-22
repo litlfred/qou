@@ -45,6 +45,7 @@ WITNESS_REGEN_TARGETS=(
   "folio-assistant/computations/derivation-chain-audit.witness.json"
   "folio-assistant/computations/cross-check-trM-1ppb.witness.json"
   "folio-assistant/computations/e0-calibration-audit.witness.json"
+  "folio-assistant/computations/fitted-labelled-canonical-audit.witness.json"
 )
 cnt=0
 loop_break=""
@@ -61,7 +62,8 @@ while git status 2>/dev/null | grep -q "rebase in progress"; do
   done < <(git status --short | grep "^UU" | cut -c 4-)
   [ -n "$loop_break" ] && break
   for s in compute_audit_scan derivation_chain_validator \
-           cross_check_trM_1ppb e0_calibration_audit; do
+           cross_check_trM_1ppb e0_calibration_audit \
+           fitted_labelled_canonical_audit; do
     args=()
     case "$s" in cross_check_trM_1ppb|e0_calibration_audit) args=(--strict);; esac
     if ! python3 "folio-assistant/computations/${s}.py" "${args[@]}" \
@@ -98,6 +100,7 @@ python3 folio-assistant/computations/compute_audit_scan.py >/dev/null 2>&1
 python3 folio-assistant/computations/derivation_chain_validator.py >/dev/null 2>&1
 python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict >/dev/null 2>&1
 python3 folio-assistant/computations/e0_calibration_audit.py --strict >/dev/null 2>&1
+python3 folio-assistant/computations/fitted_labelled_canonical_audit.py >/dev/null 2>&1
 set +e
 git add "${WITNESS_REGEN_TARGETS[@]}" 2>/dev/null
 git diff --cached --quiet || git commit -m "fix(witness-pipeline): post-rebase drift refresh"

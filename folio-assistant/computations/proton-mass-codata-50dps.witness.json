@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:09:13.941280+00:00",
-  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
+  "computedAt": "2026-05-22T15:00:47.737094+00:00",
+  "commitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
   "assertions": [
     {
       "name": "m_p_within_10_ppm_conditional_on_conjecture",
-      "computed": "5.3660102",
+      "computed": "5.6180616",
       "expected": "< 10",
       "passed": false,
       "tolerance": 10.0,
@@ -15,7 +15,7 @@
     },
     {
       "name": "m_p_within_1_ppb_target",
-      "computed": "0.000005366010183402252426874421564766865918523390991663",
+      "computed": "0.0000056180615886318892878952500683372255384221827900682",
       "expected": "0",
       "passed": false,
       "tolerance": 1e-09,
@@ -29,10 +29,10 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "proton-mass-codata-50dps",
   "scriptFile": "build_proton_mass_50dps_chain.py",
-  "scriptHash": "3ba7bcf323d9",
+  "scriptHash": "8c0487f4affc",
   "scriptCommitSha": "9d90d8c1be442721be328306ed7cf4c67a64ca26",
   "description": "Cross-pipeline m_p prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
@@ -44,20 +44,20 @@
     "conjecture_label": "conj:lambda-scale-substrate-form"
   },
   "data": {
-    "m_p_pred_MeV": "938.27712293757986865595781089122366594196895167849",
+    "m_p_pred_MeV": "938.27735943037817712967971941169296415130499626176",
     "m_p_codata_MeV": "938.27208816",
-    "rel_diff": "0.000005366010183402252426874421564766865918523390991663",
-    "rel_diff_ppb": "5366.0101834",
+    "rel_diff": "0.0000056180615886318892878952500683372255384221827900682",
+    "rel_diff_ppb": "5618.06158863",
     "target_ppb": "1.0",
-    "gap_orders_of_magnitude_to_1ppb": "3.72965",
+    "gap_orders_of_magnitude_to_1ppb": "3.74959",
     "upstream_witness_hashes": [
       {
         "path": "option-b-proton-mass-full-chain.witness.json",
-        "sha256": "cc412c0a7624cadcac869c9ce2faabc1e28163cdb5941b20dee4d5ace213938d",
-        "size_bytes": 18817,
-        "commitSha": "1f9d08c0ae95a6092fe56100849d3d0f22171f36",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-05-18T19:21:32.810661+00:00"
+        "sha256": "1561075f06ce0817736f40757938f7d2a0ad9fe56cf546f1bc6a337cfa0dc32e",
+        "size_bytes": 18134,
+        "commitSha": "a565201b866a99c843cd8e85aaa08a52d691b28d",
+        "scriptCommitSha": "299567fa008ae080c59a726e2f09d68eb5e0a074",
+        "computedAt": "2026-05-19T04:06:28.829453+00:00"
       }
     ],
     "reference_blocks": [

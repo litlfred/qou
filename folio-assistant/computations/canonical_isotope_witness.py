@@ -197,11 +197,23 @@ def assemble_row(
             "prediction_type": "mass",
             "layer": "L1-borromean-via-canonical",
             # canonical_status taxonomy (added 2026-05-19 per user
-            # directive "L4 only use canonical; fix l1 empirical too"):
+            # directive "L4 only use canonical; fix l1 empirical too";
+            # updated 2026-05-22 per CAL-4 audit — Borromean tower
+            # nucleons are NOT "canonical-substrate": their λ_p / λ_n
+            # are fitted from CODATA per
+            # `m_p_borromean_verification_50dps.py` CAL-4 banner):
             #   canonical-substrate    — pure substrate derivation
-            #                            (Borromean tower nucleons,
-            #                            conditional on conj:borromean-
-            #                            baryon-mass-formula).
+            #                            (NOT yet achieved for any
+            #                            nucleon mass; reserved for
+            #                            the eventual substrate-pure
+            #                            λ_p / λ_n derivation).
+            #   borromean-tower-via-fitted-lambda
+            #                          — Borromean tower formula
+            #                            consumed but λ_scale is
+            #                            FITTED FROM CODATA, so the
+            #                            ~1 ppb residual is
+            #                            tautological.  This is what
+            #                            L1-borromean currently is.
             #   canonical-with-empirical-assignment — canonical |tr_M| /
             #                            Vol(K) / m_e BUT the (knot, ρ_K)
             #                            assignment per atom is from the
@@ -218,7 +230,7 @@ def assemble_row(
             #                            NOT derivation, MUST NOT feed
             #                            downstream "canonical" outputs.
             #   pending                — no framework prediction.
-            "canonical_status": "canonical-substrate",
+            "canonical_status": "borromean-tower-via-fitted-lambda",
             "prediction_MeV_50dps": (
                 l1.get("prediction_MeV_50dps") if l1 else None
             ),

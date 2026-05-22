@@ -124,7 +124,7 @@ Skill rule: **never block on the queue.**  If no pending P0/P1
 question and the foreground is busy, work the next compute
 integration improvement instead.
 
-## The 12 integration antipatterns (I1–I12)
+## The 13 integration antipatterns (I1–I13)
 
 ### Group A — Missing wiring
 
@@ -281,6 +281,29 @@ integration improvement instead.
   surfaced here because it commonly catches "Lean theorem renamed,
   forgot to update content block".
 
+### Group E — Discipline drift
+
+- **I13. FITTED LITERAL LABELLED AS SUBSTRATE-CANONICAL.** A
+  production script defines a module-level high-precision numerical
+  literal (`X = mp.mpf("1.234567890...")`) AND its docstring or
+  emitted witness claims the value is "substrate" / "canonical" /
+  "derived" / "predicted", but the literal was solved from CODATA
+  (or any other empirical anchor) rather than computed from the
+  three permitted calibrations (CAL-1 / 2 / 3).  The discrepancy
+  propagates into downstream `canonical_status` taxonomies, making
+  the framework's predictive accuracy look better than it is.
+  Detected by `fitted_labelled_canonical_audit.py` (warn-only in
+  CI; 0-issue baseline).  Fix: rename the variable to include
+  `_FITTED_FROM_*`, add a CAL-4-VIOLATION banner to the docstring,
+  emit `derivation_status: "FITTED_FROM_CODATA"` + `cal_class:
+  "CAL-4-VIOLATION"` in the witness, and demote any downstream
+  `canonical_status` label to a less-substrate-claiming taxonomy
+  slot (e.g. `"borromean-tower-via-fitted-lambda"` instead of
+  `"canonical-substrate"`).  Tracked in
+  `docs/canonical-derivation-cheat-sheet.md §5 fix #1`; originating
+  case was `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` in
+  `m_p_borromean_verification_50dps.py`.
+
 ## Workflow
 
 ### Reactive mode (per-commit / per-PR-event)
@@ -290,7 +313,7 @@ changed by the commit:
 
 1. `git diff <prev_sha>..<new_sha> -- content/` — find affected labels.
 2. For each label `L`:
-   - Walk **I1–I12** below in order.  Stop at the first hit; emit a
+   - Walk **I1–I13** below in order.  Stop at the first hit; emit a
      concrete fix recommendation.
    - If clean, emit a one-liner: `L: ✓ wired`.
 3. Roll the per-label results up into a single comment summary, with
