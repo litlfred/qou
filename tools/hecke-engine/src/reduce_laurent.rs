@@ -33,6 +33,13 @@ use crate::laurent_hecke_element::LaurentHeckeElement;
 use crate::laurent_rational_q::LaurentRationalQ;
 use std::collections::BTreeMap;
 
+// `hecke_h` is no longer constructed per R1 fire — the
+// `LaurentRationalQ::add_h_times` fast path bypasses the `coeff * h`
+// allocation entirely, doing the shift-and-sign-flip in place.
+// Kept commented for reference: prior implementation built
+// `let hecke_h = LaurentRationalQ::hecke_h();` once per reduce call
+// and threaded it through R1.
+
 /// Reduce `elem` to fixpoint under R1 / R2 / R3.
 ///
 /// Returns `(reduced, iteration_count)`.  `iteration_count` is the
@@ -43,7 +50,6 @@ pub fn reduce_laurent_rules(
     elem: &LaurentHeckeElement,
     max_iterations: u32,
 ) -> (LaurentHeckeElement, u32) {
-    let hecke_h = LaurentRationalQ::hecke_h();
     let mut terms: BTreeMap<Vec<i32>, LaurentRationalQ> = elem.terms.clone();
     let mut iteration: u32 = 0;
     let mut changed = true;
@@ -71,13 +77,17 @@ pub fn reduce_laurent_rules(
                 w2.extend_from_slice(prefix);
                 w2.extend_from_slice(suffix);
 
-                // c1 = coeff · h    (placed on the h·σ_i term)
-                // c2 = coeff · 1    (placed on the constant term)
-                let c1 = coeff * &hecke_h;
-                let c2 = coeff.clone();
-
-                add_to(&mut new_terms, w1, c1);
-                add_to(&mut new_terms, w2, c2);
+                // R1 hot-path: write coeff·h directly into new_terms[w1]
+                // via LaurentRationalQ::add_h_times — avoids the fresh
+                // `coeff * &hecke_h` LRQ allocation and the two
+                // BigRational multiplications + GCDs per q-coefficient.
+                {
+                    let entry = new_terms
+                        .entry(w1)
+                        .or_insert_with(LaurentRationalQ::zero);
+                    entry.add_h_times(coeff);
+                }
+                add_to(&mut new_terms, w2, coeff);
                 changed = true;
                 continue;
             }
@@ -91,7 +101,7 @@ pub fn reduce_laurent_rules(
                 nw.push(jg);
                 nw.push(ig);
                 nw.extend_from_slice(&word[pos + 2..]);
-                add_to(&mut new_terms, nw, coeff.clone());
+                add_to(&mut new_terms, nw, coeff);
                 changed = true;
                 continue;
             }
@@ -106,13 +116,13 @@ pub fn reduce_laurent_rules(
                 nw.push(a);
                 nw.push(b);
                 nw.extend_from_slice(&word[pos + 3..]);
-                add_to(&mut new_terms, nw, coeff.clone());
+                add_to(&mut new_terms, nw, coeff);
                 changed = true;
                 continue;
             }
 
             // No rule fired — passthrough.
-            add_to(&mut new_terms, word.clone(), coeff.clone());
+            add_to(&mut new_terms, word.clone(), coeff);
         }
 
         // End-of-pass: strip any newly-zero entries (multiple
@@ -127,14 +137,18 @@ pub fn reduce_laurent_rules(
 }
 
 /// `new_terms[key] += coef`, treating an absent key as zero.
+///
+/// Takes `coef` by reference to avoid the per-call clone that the
+/// previous by-value signature required.  Saves one
+/// `LaurentRationalQ::clone()` per R2 / R3 / passthrough.
 #[inline]
 fn add_to(
     new_terms: &mut BTreeMap<Vec<i32>, LaurentRationalQ>,
     key: Vec<i32>,
-    coef: LaurentRationalQ,
+    coef: &LaurentRationalQ,
 ) {
     let entry = new_terms.entry(key).or_insert_with(LaurentRationalQ::zero);
-    *entry += &coef;
+    *entry += coef;
 }
 
 /// Incremental reduce — mirror of `incremental_reduced_element_fast`

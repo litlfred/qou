@@ -329,6 +329,40 @@ impl LaurentRationalQ {
         // Multiplying by a nonzero rational cannot introduce zero
         // coefficients, so no retain pass needed.
     }
+
+    /// **R1 hot-path: `self += other · h` where `h = q − q⁻¹`.**
+    ///
+    /// Skips the [`Mul`] route — `other * &hecke_h()` would allocate
+    /// a fresh BTreeMap and run a BigRational multiplication + GCD
+    /// per `(coef × ±1)` pair, even though `h`'s coefficients are
+    /// integers ±1 and the result is just the input with each
+    /// exponent shifted ±1 (with a sign flip on the `q⁻¹` shift).
+    ///
+    /// This method writes those shifted contributions directly into
+    /// `self.coefs`, doing only the BigRational additions that
+    /// `+= (other · h)` would have done anyway.  Net savings: two
+    /// BigRational multiplications + GCDs per coefficient per R1
+    /// fire — the dominant cost of the Markov-peel reduce loop on
+    /// large atomic braids.
+    ///
+    /// Algebraic identity (verified by the `add_h_times_matches_mul`
+    /// test):
+    /// ```text
+    ///   self + other · h
+    ///     = self + other · (q − q⁻¹)
+    ///     = self + Σ_(e,c) ∈ other:  (e+1, +c) + (e−1, −c)
+    /// ```
+    pub fn add_h_times(&mut self, other: &LaurentRationalQ) {
+        for (&e, c) in &other.coefs {
+            let entry = self.coefs.entry(e + 1).or_insert_with(BigRational::zero);
+            *entry += c;
+            let entry = self.coefs.entry(e - 1).or_insert_with(BigRational::zero);
+            *entry -= c;
+        }
+        // Zero coefs can appear when an additive contribution cancels
+        // an existing entry (e.g. R1 cascading into a sibling word).
+        self.coefs.retain(|_, v| !v.is_zero());
+    }
 }
 
 impl PartialEq for LaurentRationalQ {
@@ -539,6 +573,51 @@ mod tests {
             (v_f64 - expected).abs() < 1e-12,
             "(q/2 + q⁻¹/3) at q=6 expected {expected}, got {v_f64}"
         );
+    }
+
+    #[test]
+    fn add_h_times_matches_mul() {
+        // self + other · h  ≡  self + (other · hecke_h())  via the
+        // general Mul path.  Compare bit-for-bit on a non-trivial
+        // mix of rational coefs + multiple exponents.
+        let other = LaurentRationalQ::from_terms(vec![
+            (2, br(1, 2)),
+            (0, br(-3, 5)),
+            (-1, br(7, 1)),
+        ]);
+        let self_init = LaurentRationalQ::from_terms(vec![
+            (3, br(1, 1)),
+            (-2, br(1, 3)),
+        ]);
+        let expected = self_init.clone()
+            + (other.clone() * LaurentRationalQ::hecke_h());
+        let mut a = self_init;
+        a.add_h_times(&other);
+        assert_eq!(a, expected);
+    }
+
+    #[test]
+    fn add_h_times_zero_into_self_no_change() {
+        let self_init = LaurentRationalQ::from_terms(vec![(2, br(1, 1))]);
+        let zero = LaurentRationalQ::zero();
+        let before = self_init.clone();
+        let mut a = self_init;
+        a.add_h_times(&zero);
+        assert_eq!(a, before);
+    }
+
+    #[test]
+    fn add_h_times_strips_cancelling_terms() {
+        // Construct self s.t. self + other·h has a vanishing coef.
+        // other = q^0 with coef 1; other·h = q¹ − q⁻¹.
+        // self = q⁻¹ with coef 1 → self + other·h = q¹ + 0·q⁻¹
+        //   → after strip: only q¹ remains.
+        let other = LaurentRationalQ::q_pow(0);
+        let mut a = LaurentRationalQ::q_pow(-1);
+        a.add_h_times(&other);
+        assert_eq!(a, LaurentRationalQ::q_pow(1));
+        // No stray zero entries:
+        assert!(!a.coefs.contains_key(&(-1)));
     }
 
     #[test]
