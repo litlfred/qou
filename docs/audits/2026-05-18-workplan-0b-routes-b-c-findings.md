@@ -15,7 +15,7 @@
 > sourced from substrate data). Readers should treat the entries
 > below as **search-space documentation**, not as derivation chains.
 > The named substrate-pure replacement target remains
-> [`conj:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+> [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
 > (cheat-sheet Migration Backlog #1; active R&D, not yet landed).
 
 **Date:** 2026-05-18
