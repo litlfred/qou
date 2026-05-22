@@ -178,6 +178,10 @@ def main() -> int:
     print(f"  parameter `(4-q)/(4q+3) ≈ {float(c2_input_parameter):.4f}` is NOT a mass-scale")
     print(f"  candidate (it is the argument `a` of the action, not its value).")
     print(f"  → Route C requires a new categorical construction.")
+    print()
+    print(f"  CAL-4 caveat (2026-05-22): both `5/2 - h²·G` and A((4-q)/(4q+3))")
+    print(f"  are CODATA-m_p-fitted forms (literal + curve-fit twins of the")
+    print(f"  same CAL-4). See PR #879 audit + cheat-sheet Migration Backlog #1.")
 
     out = w.save()
     print(f"\nWitness emitted: {out.name}")

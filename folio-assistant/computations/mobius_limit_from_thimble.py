@@ -2,7 +2,7 @@
 """
 Möbius integration limit a(q) = (4-q)/(4q+3) — closed-form witness.
 
-Linked to content block: prop:mobius-limit-from-thimble.
+Linked to content block: conj:mobius-limit-from-thimble.
 
 The proposition asserts that the integration limit appearing in the
 baryon-period real-axis integral
@@ -51,7 +51,7 @@ def build_witness() -> WitnessBuilder:
         "identity verified by sympy; archimedean Hessian data lives in "
         "picard-lefschetz-thimble.witness.json."
     )
-    w.set_content_block("prop:mobius-limit-from-thimble")
+    w.set_content_block("conj:mobius-limit-from-thimble")
     w.add_parameter("q0", float(q0))
 
     # ── Algebraic identity ─────────────────────────────────────

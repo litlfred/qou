@@ -6,7 +6,7 @@ applied at vertical degree $k = 3$, with the baryon channel
 selected by the $\mathrm{Alt}^3$ projector
 ([baryon product from Alt](#prop:baryon-product-from-alt)) and the
 integration limit fixed by the Möbius pencil
-([Möbius limit from thimble](#prop:mobius-limit-from-thimble)).*
+([Möbius limit from thimble](#conj:mobius-limit-from-thimble)).*
 
 $$
   \frac{m_p}{m_e}

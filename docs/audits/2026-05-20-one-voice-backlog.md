@@ -84,7 +84,7 @@
 - [`prop:hoefsmit-seminormal-form`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md) (critical)
 - [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) (critical)
 - [`prop:mobius-golden-fixed-points`](../../content/quantum-observable-universe/descartes-universe/mobius-golden-fixed-points.md) (critical)
-- [`prop:mobius-limit-from-thimble`](../../content/quantum-observable-universe/descartes-universe/mobius-limit-from-thimble.md) (critical)
+- [`conj:mobius-limit-from-thimble`](../../content/quantum-observable-universe/descartes-universe/mobius-limit-from-thimble.md) (critical)
 - [`prop:phase-transition-boundary`](../../content/quantum-observable-universe/information-theory/phase-transition-boundary.md) (critical)
 - [`prop:quantum-ideal-gas-law`](../../content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.md) (critical)
 - [`prop:spectral-chart-correspondence`](../../content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.md) (critical)

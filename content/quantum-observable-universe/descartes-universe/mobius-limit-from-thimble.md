@@ -1,5 +1,28 @@
-**Proposition (Möbius integration limit from cubic Galois data).**
-*The categorical integration limit is the Möbius transformation*
+**Conjecture (Möbius integration limit, q-source open).**
+
+> **CAL-4 caveat (2026-05-22).** This block was originally framed as
+> a proposition deriving $a(q) = (4-q)/(4q+3)$ from cubic geometry
+> via Picard–Lefschetz steepest descent. Main retracted that
+> derivation on commit `f86ea9d7a` (PL re-entry abscissa is
+> numerically $\sim z \approx 3.86$, an order of magnitude larger
+> than $a(q_0) \approx 0.388$ — witness
+> [`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derive-a-thimble-intersection.witness.json)
+> labels the $(4-q)/(4q+3)$ entry **"← post-hoc"** in its own
+> output). The replacement "algebraic Galois data" framing below
+> sources the **constants** $\{4, 3\}$ in the Möbius matrix from
+> the cubic's $c^2$-coefficient and degree, but does **not** source
+> the **variable $q$** in either `4-q` or `4q+3` — the color-tube
+> cubic $F(z,c)$ has coefficients in $z$ only, with no $q$ anywhere
+> in its data. Consequently $a(q) = (4-q)/(4q+3)$ remains a
+> CODATA-$m_p$-fitted Möbius pencil; it is the **curve-fit twin**
+> of the literal CAL-4 in `LAMBDA_PROTON_DOC` (see PR #879 audit
+> [`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md)
+> and cheat-sheet Migration Backlog #1). Block kind demoted from
+> `proposition` to `conjecture` until a derivation that genuinely
+> sources $q$ from substrate data lands.
+
+*The categorical integration limit is conjectured to be the
+Möbius transformation*
 
 $$
   a \;\colon\; q \;\mapsto\; \frac{4 - q}{4q + 3}
@@ -9,10 +32,11 @@ $$
 $$
 
 *with $\tau_q$ the archimedean fibre functor at substrate $q$. The
-matrix $M$ is determined entirely by the color-tube cubic's $R$-side
-algebraic structure (Step 1); its fixed points solve $q^2+q-1=0$,
-giving $\{1/\varphi, -\varphi\}$
-([Möbius golden fixed points](#prop:mobius-golden-fixed-points)).*
+fixed points of $M$ solve $q^2+q-1=0$, giving $\{1/\varphi, -\varphi\}$
+([Möbius golden fixed points](#prop:mobius-golden-fixed-points)).
+The **constants** in $M$ are determined by Step 1 below; the
+**variable $q$** in $a(q)$ is not yet sourced from substrate data
+(see the CAL-4 caveat above).*
 
 **Step 1 (Coefficient identification — algebraic).**
 *From $F(z, c) = c^3 + (4z+1)c^2 + (6z^2+3z+1)c + (4z^3+3z^2+2z+1)

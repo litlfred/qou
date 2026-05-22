@@ -83,7 +83,7 @@ over $\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$
 (\[`grothendieck1966`], \[`hartshorne1966`]). The Galois selection
 of $\mathcal{O}_{\mathrm{prin}}$ via palindromy + conjugation is
 algebraic
-([Möbius limit from thimble](#prop:mobius-limit-from-thimble) Step 2).*
+([Möbius limit from thimble](#conj:mobius-limit-from-thimble) Step 2).*
 
 *Step 4 (Channel selection by $\mathrm{Alt}^3$, A2.5).*
 *The baryon integrand $\prod_k dc_k/dz$ is the sign-isotype

@@ -1,5 +1,23 @@
 # Workplan-0b/M_N Routes B + C — concrete-compute findings
 
+> **§0 honesty banner (added 2026-05-22).** This document records
+> *numerical correspondences* between several candidate multiplicative
+> factors and the CODATA-derived target
+> $M_N \cdot \hbar_q^2 / (\mathrm{Vol}(\mathcal{B}_3) \cdot m_e) \approx 2.4616$.
+> It does **not** record substrate-derivations. In particular, the
+> "PR #690 C2-inflection output ≈ `5/2 − h²·G`" correspondence reported
+> in §"Headline finding" is a numerical agreement at $q_0$, not a
+> structural identity (PR #701 R&D 4 already classified `5/2 − h²·G`
+> as empirical-only; PR #879 confirms the literal CAL-4 in
+> `LAMBDA_PROTON_DOC`; the PR #751 critical re-analysis confirms the
+> curve-fit CAL-4 in `A((4-q)/(4q+3))` — the cubic $F(z,c)$ has
+> coefficients in $z$ only, so the $q$-dependence of $a(q)$ is not
+> sourced from substrate data). Readers should treat the entries
+> below as **search-space documentation**, not as derivation chains.
+> The named substrate-pure replacement target remains
+> [`conj:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+> (cheat-sheet Migration Backlog #1; active R&D, not yet landed).
+
 **Date:** 2026-05-18
 **Branch:** `claude/workplan-0b-mn-substrate`
 **Predecessor:** PR #701 (merged) — `5/2 − h²·G` falsified as Wedderburn sum

@@ -18,7 +18,7 @@ export default conjecture({
   ],
   uses: [
     "prop:sw-period-thimble-equivalence",
-    "prop:mobius-limit-from-thimble",
+    "conj:mobius-limit-from-thimble",
     "prop:morse-wall-q-moduli",
     "rem:picard-lefschetz-thimble",
     "rem:color-tube-cubic",

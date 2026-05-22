@@ -12,7 +12,7 @@ This is an **archimedean** statement: it requires the embedding
 existence of the Möbius transformation; the identification with the
 steepest-descent re-entry point lives downstream of `τ`.
 
-LaTeX label: `prop:mobius-limit-from-thimble`
+LaTeX label: `conj:mobius-limit-from-thimble`
 
 ## References
 
