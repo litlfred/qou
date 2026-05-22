@@ -19,7 +19,7 @@ provides the standard period-theoretic language for the framework.
 | 3 | **mostly conjectural** | $K_5^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ has known Borel-rank; whether Goncharov regulator generates $\mathcal{P}_3 / \mathcal{P}_2$ is Beilinson's conjecture |
 | $\geq 4$ | **fully conjectural** | Beilinson's conjectures on motivic cohomology |
 
-So the framing is honest: "Rosetta" is an *analogy that becomes a
+The framing is honest: "Rosetta" is an *analogy that becomes a
 theorem at low depth and a conjecture at high depth*, not a
 fully-established equivalence at all depths.
 
@@ -112,7 +112,7 @@ The keystone's discharge targets, restated in K-theoretic language:
  $\mathcal{P}_n / \mathcal{P}_{n-1}$" — the latter is essentially
  **Beilinson's conjecture**, still open at $n \geq 3$.
 
-So the K-theoretic language **partially** reduces B1's
+The K-theoretic language **partially** reduces B1's
 discharge:
 
 - *Borel-rank-positive* $K_{2n-1}^{\mathrm{ind}}$ is a theorem (gives

@@ -52,7 +52,7 @@ $$
   \;=\; \frac{1}{K}.
 $$
 
-So the Bernoulli polynomial evaluates at $1/K$ — a particularly
+The Bernoulli polynomial evaluates at $1/K$ — a particularly
 clean specialisation. Substituting into Step 1:
 
 $$

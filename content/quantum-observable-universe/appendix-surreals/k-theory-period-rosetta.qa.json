@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/appendix-surreals/k-theory-period-rosetta.md"
   },
   "source_hashes": {
-    "md": "0168df388388",
+    "md": "40ac0d1157d7",
     "ts": "02f086fc2593"
   },
   "criteria": {
@@ -379,19 +379,19 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "ad6a1466cf08",
+          "md": "40ac0d1157d7",
           "ts": "02f086fc2593"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/appendix-surreals/k-theory-period-rosetta.md:22: So the framing is honest: \"Rosetta\" is an *analogy that becomes a | quantum-observable-universe/appendix-surreals/k-theory-period-rosetta.md:115: So the K-theoretic language **partially** reduces B1's"
+        "reviewed_at": "2026-05-22T20:45:57.153Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-ai-slop": [
@@ -477,5 +477,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:25:38.506Z"
+  "updated_at": "2026-05-22T20:45:57.153Z"
 }

@@ -328,7 +328,7 @@ operates at three independent layers of the framework:
 | **Phase** | $N=1$ rung in master $Q_\beta$ | $\alpha = (z-1)h/2$ (bar-odd) | $\cos(\alpha - b\hbar_q^2/2)$ |
 | **Gain** | per-$Z$ step factor | $h$ (bar-odd) | $[3]_q^2 \cdot \cosh(h)$, 0.022% empirical |
 
-So the $-1/2$ in $c_5$ is the *series-layer avatar* of the same
+The $-1/2$ in $c_5$ is the *series-layer avatar* of the same
 universal categorical operator that produces $\cos$ at phase and
 $\cosh$ at gain. The "involution" framing isolated this at the
 series level; the three-layer synthesis claims it is the same
@@ -440,7 +440,7 @@ $\tau_M$ as $q$ leaves $1$. Cyclically:
 - $c_6, c_7, c_8, c_9, c_{10}$: all factor as $(c_3)^a \cdot b^{2c}$. They are monomials in $c_3$ and $b^2$ with integer
  exponents.
 
-So the math distinction: $c_5$ is the only $c_k$ (in $k = 3..10$)
+The math distinction: $c_5$ is the only $c_k$ (in $k = 3..10$)
 that is **not** a monomial in $c_3$ and $b^2$. The extra $-1/2$ is
 the algebraic fingerprint of the averaging-resonance.
 

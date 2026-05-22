@@ -80,7 +80,7 @@ to **distinct jet orders**:
   Jones (inter-block) contributions; both modular spaces contribute at
   this order.
 
-So the precision ladder is essentially:
+The precision ladder is essentially:
 
 $$
   Q_\beta^{\text{cat}}

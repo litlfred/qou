@@ -113,7 +113,7 @@ $n$). The $q$-BSD data undergoes a phase transition:
  of unity.
 
 * **The $q$-integers degenerate**: $[n]_{\zeta_n} = 0$,
- so the $q$-factorial $[r]_q!$ and the explicit formula
+ The $q$-factorial $[r]_q!$ and the explicit formula
  have poles/zeros at the torsion points.
 
 * **The $L$-function truncates**: the Euler product over
@@ -151,7 +151,7 @@ $q$-zeta function
 ([local $q$-zeta](#def\:local-q-zeta-function)) act on $H^1(\mathcal{B})$,
 the first étale cohomology of Bring's curve. The elliptic fiber
 $\mathcal{E}_q \hookrightarrow \mathcal{B}$ is a genus-$1$ sub-curve,
-so the restriction of Frobenius to
+The restriction of Frobenius to
 $H^1(\mathcal{E}_q) \subset H^1(\mathcal{B})$ yields a conjugate
 pair $\alpha_{\mathcal{E}}, \bar{\alpha}_{\mathcal{E}}$ with
 $|\alpha_{\mathcal{E}}| = q^{1/2}$ (by the Hasse--Weil bound).

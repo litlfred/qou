@@ -140,7 +140,7 @@ is the Newton's-constant identification at the deep-tower stratum.
  trace ($\alpha_1 = 0$ exactly). At generic $q$,
  $\mathrm{HH}^k(H_n(R, q)) = 0$ for $k \geq 1$
  ([spectral sequence collapse](#prop:spectral-sequence-collapse)),
- so the Gerstenhaber bracket has empty target on the surviving
+ The Gerstenhaber bracket has empty target on the surviving
  $\mathrm{HH}^0$ — the spectral-sequence $\alpha_1$ is
  **structurally forced to zero**, not only an artifact of
  representative choice.

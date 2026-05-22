@@ -91,7 +91,7 @@ Hecke NF difference $\lvert\Delta\mathrm{net}\rvert \approx 0.188$
 gives $E_0 = Q_\beta / \lvert\Delta\mathrm{net}\rvert \approx 4.179$ MeV.
 
 This is analogous to measuring the speed of light by timing
-the simplest electromagnetic process: you need one clean
+the simplest electromagnetic process: we need one clean
 measurement to set the scale, and every other speed follows.
 
 ## The three calibration inputs in Planck units

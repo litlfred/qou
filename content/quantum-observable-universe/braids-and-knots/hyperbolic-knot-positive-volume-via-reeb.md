@@ -16,7 +16,7 @@ Heegaard torus inside $\mathcal{R}_p \cong S^3$: the
 non-adjacent-transposition signature
 ([$\rho$ as $S_3$ holonomy on Lagrange resolvents](#rem:rho-s3-holonomy-exposition))
 forces the trajectory to cross between the two Heegaard tori,
-so the complement is *not* Seifert-fibered.  The JSJ
+The complement is *not* Seifert-fibered.  The JSJ
 decomposition therefore contains a hyperbolic piece, and
 [Thurston volume additivity](#prop:thurston-volume-additivity)
 gives a strictly positive Bloch–Wigner sum.

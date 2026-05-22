@@ -147,7 +147,7 @@ $$
   \frac{1}{[2]_q} - \frac{q}{[2]_q^3},
 $$
 
-so the orbit shrinks by slightly more than $1/[2]_q$
+The orbit shrinks by slightly more than $1/[2]_q$
 per cycle.  The **margin** — the gap between two halvings
 and the minimum needed — is:
 

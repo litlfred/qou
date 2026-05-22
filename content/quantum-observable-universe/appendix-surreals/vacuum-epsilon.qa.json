@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/vacuum-epsilon.lean"
   },
   "source_hashes": {
-    "md": "ad07780b54ca",
+    "md": "290fddbf2f7c",
     "ts": "e56ea8d6891f",
     "lean": "3e4c846d9d31"
   },
@@ -444,20 +444,20 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "7818b4c50f3c",
+          "md": "290fddbf2f7c",
           "ts": "e56ea8d6891f",
           "lean": "3e4c846d9d31"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/appendix-surreals/vacuum-epsilon.md:73: so the test reduces to a comparison of two polynomials in"
+        "reviewed_at": "2026-05-22T20:45:57.153Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-ai-slop": [
@@ -563,5 +563,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:25:38.506Z"
+  "updated_at": "2026-05-22T20:45:57.153Z"
 }

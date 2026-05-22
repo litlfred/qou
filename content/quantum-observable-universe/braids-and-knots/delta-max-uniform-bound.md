@@ -71,7 +71,7 @@ Jones--Wenzl module, this pairing multiplies the operator norm
 by at most $\hbar_q^{-1}$ per level (the $\Omega^1$ weight),
 but the Markov trace absorbs exactly one factor of $\hbar_q^{-1}$
 through the normalization $z = \hbar_q / (1 - q^{-1/2})\cdots$
-so the **net** norm of a transient contribution is bounded
+The **net** norm of a transient contribution is bounded
 above by the level-0 operator norm
 $\|\rho(\beta)\|_{\mathrm{op}}$ independent of $n$.
 

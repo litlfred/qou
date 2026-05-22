@@ -69,7 +69,7 @@ is $q$-independent.
 For the $q$-Plancherel measure $w_\lambda = d_q(\lambda)^2/[k]_q!$:
 the ``typical'' partition $\lambda$ (concentrating the measure)
 has $d_q(\lambda) \approx \dim(\lambda) \cdot (1 + O(h^2/k))$,
-so the weighted branching is dominated by the first-order
+The weighted branching is dominated by the first-order
 $q$-correction to the classical Plancherel branching.
 
 The classical Plancherel branching gives
