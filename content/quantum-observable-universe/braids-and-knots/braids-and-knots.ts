@@ -81,6 +81,12 @@ export default chapter({
       label: "sec:braid-involutions",
       blocks: [
         "braid-involutions-intro",
+        // prop:lagrange-resolvent-transform moved here from
+        // descartes-universe/sec:bring-algebraic-substructure per
+        // detangler P37 (2026-05-22). 6 H1 fwd-refs cleared.
+        // Emits new H2 to def:brings-surface @ descartes-universe
+        // (accepted §5).
+        "lagrange-resolvent-transform",
         "braid-twist-flip",
         "holonomy-trefoil",
         "rho-s3-holonomy-exposition",
@@ -300,6 +306,12 @@ export default chapter({
       label: "sec:skein-particle-generation",
       blocks: [
         "skein-particle-generation-intro",
+        // def:atomic-braid moved here from
+        // particle-interactions/sec:atomic-braid-mass per detangler
+        // P32 (2026-05-22). 8 H1 fwd-refs cleared. Emits new H2 to
+        // def:transfer-matrix-operator + def:derived-atom @
+        // particle-interactions (accepted §5).
+        "atomic-braid",
         "skein-generation",
         "skein-mass-from-linking",
         "skein-mass-from-linking-proof",
@@ -427,6 +439,12 @@ export default chapter({
       label: "sec:hoefsmit-convergence-atomic",
       blocks: [
         "intro-hoefsmit-convergence-atomic",
+        // prop:operator-selection-lp moved here from
+        // particle-interactions/sec:confinement-selection per
+        // detangler P28 (2026-05-22). 14 H1 fwd-refs cleared.
+        // Emits new H2 to prop:confinement-lp @ particle-interactions
+        // (accepted §5).
+        "operator-selection-lp",
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
         "hecke-convergence-bound",
@@ -512,6 +530,13 @@ export default chapter({
       label: "sec:kashiwara-jones-quantum-dilog",
       blocks: [
         "intro-kashiwara-jones-quantum-dilog",
+        // prop:sw-period-thimble-equivalence moved here from
+        // descartes-universe/sec:topological-mass-spectrum per
+        // detangler P36 (2026-05-22). 6 H1 fwd-refs cleared.
+        // New H2 to rem:picard-lefschetz-thimble,
+        // prop:baryon-product-from-alt + 1 more @ descartes-universe
+        // (accepted §5).
+        "sw-period-thimble-equivalence",
         "kashiwara-jones-alternation-interpretation",
         "hopf-jones-c3-categorical",
         "kashiwara-jones-c4-categorical",
@@ -796,6 +821,11 @@ export default chapter({
       label: "sec:phi-q-markov-schur-weyl-tower",
       blocks: [
         "intro-phi-q-markov-schur-weyl-tower",
+        // thm:markov-trace-factorization moved here from
+        // particle-interactions/sec:groebner-engine per detangler
+        // P31 (2026-05-22). 8 H1 fwd-refs cleared. New H2 to
+        // prop:generator-volume-decomposition (accepted §5).
+        "markov-trace-factorization",
         "phi-q-resums-trace-series",
         "markov-axiom-recursive-ascent",
         "per-braid-mass-tower",
@@ -867,7 +897,6 @@ export default chapter({
         "intro-spectral-sequence-chirality-confinement",
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
-        "gb-spectral-sequence",
         "curvature-rank-gb-stratification",
         "spectral-sequence-collapse",
         "delta-q-decoration",
@@ -923,6 +952,11 @@ export default chapter({
       label: "sec:alpha-k-procedure",
       blocks: [
         "intro-alpha-k-procedure",
+        // prop:confinement-sdp moved here from
+        // particle-interactions/sec:confinement-selection per
+        // detangler P33 (2026-05-22). 7 H1 fwd-refs cleared.
+        // New H2 to prop:confinement-lp (accepted §5).
+        "confinement-sdp",
         "flavor-dressed-mass-from-substrate-split",
         "flavor-mass-splitting-bound",
         "alpha-k-derivation-procedure",

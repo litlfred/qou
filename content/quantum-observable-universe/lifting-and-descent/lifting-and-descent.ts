@@ -121,6 +121,13 @@ export default chapter({
       label: "sec:mass-brane",
       blocks: [
         "mass-brane-intro",
+        // prop:gb-spectral-sequence moved here from
+        // braids-and-knots/sec:spectral-sequence-chirality-confinement
+        // per detangler P29 (2026-05-22). 12 H1 fwd-refs cleared.
+        // New H2 to prop:graded-trace-residue-split +
+        // thm:knot-mass-formula-unified @ braids-and-knots
+        // (accepted §5).
+        "gb-spectral-sequence",
         "mass-noncommutative-drag",
         "euler-char-stability",
         "euler-char-stability-proof",

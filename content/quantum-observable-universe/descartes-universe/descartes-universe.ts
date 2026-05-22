@@ -35,7 +35,6 @@ export default chapter({
         "su2-generators",
         "hyperelliptic-quintic",
         "x5-z5-automorphism",
-        "lagrange-resolvent-transform",
         "x5-bring-weight-identification",
       ],
     }),
@@ -475,7 +474,6 @@ export default chapter({
         "morse-wall-q-moduli",
         "delta-lambda-categorical-closure",
         // Categorical Markov-Frobenius ≡ algebraic residue (PL = archimedean shadow)
-        "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
         // Algebraic-geometric duality with SW theory
         "gb-reduction-pl-thimble-bijection",

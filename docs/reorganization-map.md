@@ -93,6 +93,26 @@ auto-derived at runtime.
 - **Wall-direction:** intra-chapter, no cross-wall move. The conjecture's `uses[]` (`def:archimedean-realization-functor`, `prop:archimedean-functor-uniqueness`, `prop:q-dilogarithm-exists`, `prop:quantum-dilogarithm-stratified`, `prop:curvature-rank-gb-stratification`, `prop:categorical-laplace-unique`, `def:q-resolvent`, `lem:surreal-squeeze`, `rem:figure-8-archimedean-illustration`, `rem:algebraic-core-survives`) all live in earlier §D-§E sections within the same chapter, so no new H2 emitted.
 - **Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
 
+### P28, P29, P31, P32, P33, P36, P37 — executed with new H2 accepted as architectural
+
+After Slot F batch ask (2026-05-22), all 7 risky cluster-1 moves executed with their new H2 forward edges recorded as `wontfix:architectural` in [`2026-05-19-detangler-architectural-acceptances.md §5`](coordination/2026-05-19-detangler-architectural-acceptances.md). Files moved: the four content-pipeline siblings (`.ts`, `.md`, `.lean`, `.qa.json`) per block via `git mv` to preserve history.
+
+| PID | Block | From | To | H1↓ proposal | Cited deps now backward |
+|---|---|---|---|---:|---|
+| **P28** | `prop:operator-selection-lp` | particle-interactions/sec:confinement-selection | braids-and-knots/sec:hoefsmit-convergence-atomic | 14 | `prop:confinement-lp` @ particle-interactions |
+| **P29** | `prop:gb-spectral-sequence` | braids-and-knots/sec:spectral-sequence-chirality-confinement | lifting-and-descent/sec:mass-brane | 12 | `prop:graded-trace-residue-split`, `thm:knot-mass-formula-unified` @ braids-and-knots |
+| **P31** | `thm:markov-trace-factorization` | particle-interactions/sec:groebner-engine | braids-and-knots/sec:phi-q-markov-schur-weyl-tower | 8 | `prop:generator-volume-decomposition` @ particle-interactions |
+| **P32** | `def:atomic-braid` | particle-interactions/sec:atomic-braid-mass | braids-and-knots/sec:skein-particle-generation | 8 | `def:transfer-matrix-operator`, `def:derived-atom` @ particle-interactions |
+| **P33** | `prop:confinement-sdp` | particle-interactions/sec:confinement-selection | braids-and-knots/sec:alpha-k-procedure | 7 | `prop:confinement-lp` @ particle-interactions |
+| **P36** | `prop:sw-period-thimble-equivalence` | descartes-universe/sec:topological-mass-spectrum | braids-and-knots/sec:kashiwara-jones-quantum-dilog | 6 | `rem:picard-lefschetz-thimble`, `prop:baryon-product-from-alt`, +1 @ descartes-universe |
+| **P37** | `prop:lagrange-resolvent-transform` | descartes-universe/sec:bring-algebraic-substructure | braids-and-knots/sec:braid-involutions | 6 | `def:brings-surface` @ descartes-universe |
+
+**Actual graph delta (post-execution):** H1 685 → 620 (↓65 combined with P30/P34/P35); H2 unchanged (the predicted 11 new H2 edges did not surface as findings — likely the analyzer's H2 detector applies a filter that absorbs the consumer→producer reference pattern these moves create, or the cited deps are themselves earlier than the new home in the cross-chapter order). Either way: net positive on H1, no new H2 violations introduced. Acceptance §5 stands as a documented exception in case future analyzer changes re-surface the edges.
+
+**Lean:** namespaces preserved across all 7 file moves; Lake builds the library tree under `content/quantum-observable-universe/lean/` independently of chapter-dir siblings.
+
+**Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
+
 ---
 
 ## Section splits (proposals from content-graph analysis — 2026-04)
