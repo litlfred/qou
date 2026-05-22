@@ -30,8 +30,8 @@ In the Hopf chain picture:
 
 | Topology | Backbone bonds | Hydrogen formula | Naming |
 |----------|:-:|---|---|
-| Open chain | $N - 1$ | $\mathrm{C}_N\mathrm{H}_{2N+2-2d}$ | $n$-alkane, $n$-alkene, … |
-| Closed ring | $N$ | $\mathrm{C}_N\mathrm{H}_{2N-2d}$ | cycloalkane, cyclohexane, … |
+| Open chain | $N - 1$ | $\mathrm{C}_N\mathrm{H}_{2N+2-2d}$ | $n$-alkane, $n$-alkene, $\ldots$ |
+| Closed ring | $N$ | $\mathrm{C}_N\mathrm{H}_{2N-2d}$ | cycloalkane, cyclohexane, $\ldots$ |
 
 where $d = \sum_i (k_i - 1)$ is the **total degree of
 unsaturation** (number of extra Hopf links beyond single bonds).

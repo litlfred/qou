@@ -29,7 +29,7 @@ The surgery preserves:
 |---|---|---|---|
 | **Pass-through** | $\varrho_i, \varrho_j \to \varrho_i, \varrho_j$ | Elastic scattering | $q$ (symmetric) |
 | **Strand exchange** | $\varrho_i, \varrho_j \to \varrho_i', \varrho_j'$ | Reconnection | $-q^{-1}$ (antisymmetric) |
-| **Annihilation** | $\varrho_i, \bar\varrho_i \to E_0$ | Pair annihilation → exceptional divisor | — |
+| **Annihilation** | $\varrho_i, \bar\varrho_i \to E_0$ | Pair annihilation $\to$ exceptional divisor | — |
 
 The first two types correspond to the two eigenvalues of the
 [Hecke relation](#rem:braid-fluid) $(T - q)(T + q^{-1}) = 0$,

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.lean"
   },
   "source_hashes": {
-    "md": "579b620c60f3",
+    "md": "09d1c7a9e3ab",
     "ts": "2f4acb505909",
     "lean": "9bc78107d62d"
   },
@@ -446,20 +446,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "579b620c60f3",
+          "md": "09d1c7a9e3ab",
           "ts": "2f4acb505909",
           "lean": "9bc78107d62d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/organic-chemistry/chain-ring-comparison.md:68: | $\\mathrm{C}_6$ chain → ring barrier (gas phase) | $\\sim 200\\text{--}400 \\mathrm{kJ/mol}$ | Ab initio (CCSD(T)) | | quantum-observable-universe/organic-chemistry/chain-ring-comparison.md:69: | Bergman cyclisation (enediyne → ring) | $\\sim 120\\text{--}170 \\mathrm{kJ/mol}$ | Experimental kinetics |"
+        "reviewed_at": "2026-05-22T18:53:34.095Z",
+        "reviewed_sha": "5446217111454e94e7617263e334f452d6fcb04e"
       }
     ],
     "voice-editorializing": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:53:34.095Z"
 }

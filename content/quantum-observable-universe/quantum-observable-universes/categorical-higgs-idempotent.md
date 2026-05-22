@@ -84,10 +84,10 @@ This single artifact unlocks **four** downstream open problems:
 4. **HIGGS-SLOT** (PR #513/#514): the Higgs scalar lives on the
    single residual direction in $(1 - e_H) \cdot \mathrm{End}(A) \cdot
    (1 - e_H)$ orthogonal to the 3 broken-gauge directions — a
-   **scalar slot** distinct from the W±, Z vector slots. This
+   **scalar slot** distinct from the W$\pm$, Z vector slots. This
    resolves the −11.4% deficit found by PR #513 testing
    $m_H \propto \mathrm{tr}_M(T(2,8))$: the Higgs scalar is NOT
-   a torus link in the same family as W±, Z; its categorical
+   a torus link in the same family as W$\pm$, Z; its categorical
    slot is the residual scalar of the symmetry-broken doublet.
 
 ### Construction sketch

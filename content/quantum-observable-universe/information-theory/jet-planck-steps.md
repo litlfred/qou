@@ -277,7 +277,7 @@ all emerge together in a single Planck step.
 **Encodability versus scattering.**
 The particle table above describes **encodability**: which knot
 types have enough polynomial degree to be *resolvable* at each
-jet order.  This is not a scattering process.  Step 0 → Step 1
+jet order.  This is not a scattering process.  Step 0 $\to$ Step 1
 does not mean "$\gamma + \gamma \to \nu + \nu^{\sigma}$".  It means
 that the first application of $\nabla_q$ creates horizontal
 transport, and the unknot $0_1$ — which requires one winding with
