@@ -87,7 +87,21 @@ function parseArgs(argv: string[]): Args {
     else if (a === "--only") {
       out.only = (argv[++i] ?? "").split(",").filter(Boolean);
     } else if (a === "--filter") {
-      out.filter = new RegExp(argv[++i] ?? "");
+      const pat = argv[++i] ?? "";
+      try {
+        out.filter = new RegExp(pat);
+      } catch (e) {
+        // Surface a clean error rather than a raw stack trace —
+        // `--filter` is user-facing CLI input and an invalid
+        // pattern should not crash the sweep with low-context
+        // noise.
+        console.error(
+          `script-sweep: --filter pattern is not a valid regex: ` +
+            `${pat ? `"${pat}"` : "(empty)"} — ` +
+            (e instanceof Error ? e.message : String(e)),
+        );
+        process.exit(1);
+      }
     }
   }
   return out;

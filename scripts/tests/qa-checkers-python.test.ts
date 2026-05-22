@@ -183,3 +183,58 @@ describe("checkDoesNotDefaultToFloat — multiline casts", () => {
     expect(r.bare_literals).toBe(0);
   });
 });
+
+describe("checkDoesNotDefaultToFloat — trailing-comma sentinel (Black)", () => {
+  test('single-line float("inf",) is exempt', () => {
+    const r = runChecker('u = float("inf",)\n');
+    expect(r).toEqual({ bare_literals: 0, float_casts: 0, hits: [] });
+  });
+
+  test('multiline float(\\n  "inf",\\n) is exempt', () => {
+    const r = runChecker('v = float(\n    "inf",\n)\n');
+    expect(r).toEqual({ bare_literals: 0, float_casts: 0, hits: [] });
+  });
+
+  test('float("nan",) is exempt', () => {
+    const r = runChecker('w = float("nan",)\n');
+    expect(r).toEqual({ bare_literals: 0, float_casts: 0, hits: [] });
+  });
+});
+
+describe("checkDoesNotDefaultToFloat — format-spec exemption", () => {
+  test("f-string format spec {x:.2f} does not flag .2 as a bare float", () => {
+    // `.2f` after `:` is a precision specifier, not code. The `:`
+    // lookbehind blocks the bare-literal regex.
+    const r = runChecker('aa = f"value is {x:.2f}"\n');
+    expect(r).toEqual({ bare_literals: 0, float_casts: 0, hits: [] });
+  });
+
+  test("f-string width.precision spec {x:10.5f} does not flag 10.5", () => {
+    const r = runChecker('ab = f"{x:10.5f}"\n');
+    expect(r).toEqual({ bare_literals: 0, float_casts: 0, hits: [] });
+  });
+
+  test("regular `.format()` spec is also exempt", () => {
+    const r = runChecker('ac = "{x:.2f}".format(x=v)\n');
+    expect(r.bare_literals).toBe(0);
+  });
+});
+
+describe("checkDoesNotDefaultToFloat — f-string limitations (documented)", () => {
+  // F-string expression regions are masked uniformly with their text
+  // portions, so bare floats inside `f'{1.0}'` are CURRENTLY false
+  // negatives. This is a documented heuristic limitation; the test
+  // locks in the current behaviour so a future change is intentional.
+  // Full f-string awareness lands in a follow-up PR.
+  test("bare float inside f-string expression is a (documented) false negative", () => {
+    const r = runChecker('ad = f"{1.0}"\n');
+    expect(r.bare_literals).toBe(0); // current heuristic limitation
+  });
+
+  test("text-only f-string content does not produce false positives", () => {
+    // The mask correctly suppresses bare-float matches inside the
+    // text portion of an f-string.
+    const r = runChecker('ae = f"value is 1.0 by default"\n');
+    expect(r.bare_literals).toBe(0);
+  });
+});

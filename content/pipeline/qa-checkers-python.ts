@@ -46,12 +46,18 @@ const PY_COMMENT_RE = /#[^\n]*/g;
 // or another identifier char. PEP 515 numeric underscores (`1_000.5`,
 // `1.5_5e1_0`) are accepted between digits.
 //
+// The lookbehind class blocks identifier chars, digits, dots, AND
+// `:` — the `:` exclusion prevents false positives in f-string
+// format specs like `{x:.2f}` / `{x:0.4f}` / `{x:10.5f}`, where
+// the digit+dot sequence after `:` is a width/precision specifier,
+// not a code literal.
+//
 // Alternatives are ordered specific→general: the exponent form
 // matches before the dot-only form so `1.5e10` matches as the full
 // e-literal, not just `1.5` (the original regex stopped at the
 // dot and missed the exponent suffix).
 const BARE_FLOAT_LITERAL_RE =
-  /(?<![A-Za-z_0-9.])(?:\d[\d_]*(?:\.[\d_]*)?[eE][+-]?\d[\d_]*|\d[\d_]*\.[\d_]*|\.\d[\d_]*)(?![jJ])/g;
+  /(?<![A-Za-z_0-9.:])(?:\d[\d_]*(?:\.[\d_]*)?[eE][+-]?\d[\d_]*|\d[\d_]*\.[\d_]*|\.\d[\d_]*)(?![jJ])/g;
 
 // A `float(...)` cast call. The inner `(?:[^()]|\([^()]*\))*`
 // alternation allows one level of nested parens — `float(int(x))`
@@ -63,8 +69,23 @@ const BARE_FLOAT_LITERAL_RE =
 // `float(\n  "inf"\n)` are handled by the same pattern.
 const FLOAT_CALL_RE =
   /\bfloat\s*\((?:[^()]|\([^()]*\))*\)/g;
+// Sentinel allow-list: case-insensitive `inf`/`-inf`/`nan`/`infinity`/
+// `-infinity`, optional trailing comma (`float("inf",)` is valid
+// Python and is the form Black produces for multiline single-arg
+// calls).
 const FLOAT_CALL_SENTINEL_RE =
-  /^\s*['"](?:inf|-inf|nan|infinity|-infinity)['"]\s*$/i;
+  /^\s*['"](?:inf|-inf|nan|infinity|-infinity)['"]\s*,?\s*$/i;
+
+// Known heuristic limitations (documented; not bugs to file):
+//   - f-string expression regions are currently masked uniformly
+//     with their text portions, so bare floats inside `f'{1.0}'`
+//     are false negatives. Naïve unmasking introduces false
+//     positives on format specs (`{x:>10.4f}`) and literal text
+//     (`f'value 1.0'`); proper f-string expression scanning needs
+//     a tokeniser and lands in a follow-up PR.
+//   - 2+ levels of nested parens inside `float(...)` (e.g.
+//     `float(int(int(x)))`) — the outer call is missed but each
+//     inner `float(...)` is caught via its own `\bfloat` anchor.
 
 const blankNonNewline = (m: string) => m.replace(/[^\n]/g, " ");
 
@@ -139,9 +160,8 @@ export function checkDoesNotDefaultToFloat(
         text:
           `bare \`float(${display.slice(0, 40)}${
             display.length > 40 ? "…" : ""
-          })\` cast — use \`mpmath.mpf(...)\` / \`Decimal(...)\` ` +
-          `for substrate-precision values, or string-quote the ` +
-          `literal if intentional`,
+          })\` cast — use \`mpmath.mpf("...")\` / \`Decimal("...")\` ` +
+          `to preserve substrate precision`,
       });
     }
     // Blank the cast region (newlines preserved) so the per-line

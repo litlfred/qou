@@ -633,15 +633,18 @@ const SCRIPT_QUALITY: QaCriterionDefinition[] = [
       "`0.5`, `3.14e-10`, `1_000.5`, …) or unchecked `float(...)` " +
       "casts. Use `mpmath.mpf(\"...\")`, `Decimal(\"...\")`, or pin " +
       "the value via a witness JSON. Allow-listed sentinels (case- " +
-      "insensitive): `float(\"inf\")`, `float(\"-inf\")`, `float(\"nan\")`, " +
-      "`float(\"infinity\")`, `float(\"-infinity\")`. Heuristic " +
-      "whole-source regex scan; string literals and `#` comments are " +
-      "stripped before matching to avoid false positives. Multiline " +
-      "casts and one level of nested parens (`float(int(x))`) are " +
-      "handled; deeper nesting and PEP 515 underscore validation are " +
-      "known heuristic limitations. Remaining false positives are " +
-      "addressed with a `human` reviewer override on the script's " +
-      "sidecar.",
+      "insensitive, optional trailing comma): `float(\"inf\")`, " +
+      "`float(\"-inf\")`, `float(\"nan\")`, `float(\"infinity\")`, " +
+      "`float(\"-infinity\")`. Heuristic whole-source regex scan; " +
+      "string literals and `#` comments are stripped before matching " +
+      "to avoid false positives. Multiline casts and one level of " +
+      "nested parens (`float(int(x))`) are handled; deeper nesting, " +
+      "PEP 515 underscore validation, and bare floats inside f-string " +
+      "expression regions (`f'{1.0}'`) are documented heuristic " +
+      "limitations. Format-spec contexts (`{x:.2f}`, `{x:0.4f}`) are " +
+      "correctly exempted from false positives via a `:` lookbehind. " +
+      "Remaining false positives are addressed with a `human` reviewer " +
+      "override on the script's sidecar.",
     default_severity: "major",
     // `"ts"` is the conventional primary-source-file key in
     // `QaFieldHash` across every QA axis (extension-agnostic — the
