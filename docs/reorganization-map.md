@@ -63,6 +63,18 @@ auto-derived at runtime.
 
 ---
 
+## Block moves (R6 — 2026-05-22, detangler P35)
+
+### P35 — `conj:gb-depth-period-correspondence` moved earlier within braids-and-knots
+
+- **Source:** `braids-and-knots/sec:classical-limit` (graded-Mikusiński / joint-Galois-braid machinery sub-section).
+- **Target:** `braids-and-knots/sec:archimedean-realization-kashaev`, immediately before `vc-as-depth-2-instance`.
+- **Story:** the conjecture is the keystone (depth-period correspondence between GS-depth and Goncharov periods); its downstream consumers in §D-archimedean-realization (`vc-as-depth-2-instance`, `bring-figure-eight-depth-2-witness`) plus the §classical-limit graded-Mikusiński machinery (`hq-bi-filtration`, `joint-galois-braid-action`, `two-filtration-bridge`, …) all sit AFTER it now. Eliminates 7 H1 forward refs.
+- **Wall-direction:** intra-chapter, no cross-wall move. The conjecture's `uses[]` (`def:archimedean-realization-functor`, `prop:archimedean-functor-uniqueness`, `prop:q-dilogarithm-exists`, `prop:quantum-dilogarithm-stratified`, `prop:curvature-rank-gb-stratification`, `prop:categorical-laplace-unique`, `def:q-resolvent`, `lem:surreal-squeeze`, `rem:figure-8-archimedean-illustration`, `rem:algebraic-core-survives`) all live in earlier §D-§E sections within the same chapter, so no new H2 emitted.
+- **Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
+
+---
+
 ## Section splits (proposals from content-graph analysis — 2026-04)
 
 ### P5 — `sec:brings-geometry` → 4 sections (descartes-universe)

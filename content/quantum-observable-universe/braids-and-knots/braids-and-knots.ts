@@ -543,6 +543,14 @@ export default chapter({
         "phi-q-tower-algebraic-stratification",
         "kashaev-volume-conjecture",
         "figure-8-archimedean-illustration",
+        // Graded-Mikusiński depth-period correspondence: keystone
+        // conjecture relating GS-depth filtration to Goncharov
+        // periods. Moved here (was sec:classical-limit) so its
+        // downstream consumers (vc-as-depth-2-instance,
+        // bring-figure-eight-depth-2-witness, and the rest of the
+        // graded-Mikusiński machinery in this chapter) sit AFTER
+        // the conjecture they reference. Detangler P35 (2026-05-22).
+        "gb-depth-period-correspondence",
         // Graded-Mikusiński depth-2 instance: VC = depth-2 case of
         // conj:gb-depth-period-correspondence.
         "vc-as-depth-2-instance",
@@ -1062,7 +1070,10 @@ export default chapter({
         "reeb-epsilon",
         "q-from-epsilon",
         // Graded-Mikusiński / joint-Galois-braid machinery.
-        "gb-depth-period-correspondence",
+        // (conj:gb-depth-period-correspondence moved earlier to
+        // sec:archimedean-realization-kashaev per detangler P35;
+        // its downstream consumers in this section now reference
+        // it backward.)
         "hq-bi-filtration",
         "joint-galois-braid-action",
         "joint-galois-braid-figure-8-verified",
