@@ -865,6 +865,18 @@ export interface ChapterRef {
   uri?: string;
   /** Directory name under the paper root (e.g. "quantum-universes"). */
   dir: string;
+  /**
+   * Optional Part banner emitted before this chapter in the rendered
+   * paper.  When set, the LaTeX renderer emits `\part{<partTitle>}`
+   * immediately before this chapter's `\input{}` line, grouping it
+   * with subsequent chapters until the next chapterRef with its own
+   * `partTitle` (or end of paper).
+   *
+   * Use this for narrative section banners like
+   * "Part II: Knots, braids, and particles" without splitting the
+   * chapters into separate sub-directories.
+   */
+  partTitle?: string;
 }
 
 export interface Chapter {
