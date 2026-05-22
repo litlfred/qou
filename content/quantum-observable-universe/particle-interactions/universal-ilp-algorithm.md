@@ -53,10 +53,10 @@ Proceed to the next level.*
 
 | Level | Input | Frobenius | ILP selects | Crossings |
 |:------|:------|:----------|:-----------|:----------|
-| Quarks → confinement | uud (3 crossings) | **FAIL** ($Gx[\gamma] < 0$) | $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ | 6 |
-| Proton → gluon | $\mathcal{B}_3 \times$ quarks (9) | **FAIL** ($Gx[\gamma] < 0$) | $\sigma_0 \sigma_0$ | 2 |
-| Proton → H atom | proton + gluon (11) | **PASS** | $\sigma_1^{-1}$ (pe crossing) | 1 |
-| H → H₂ molecule | H atom | **PASS** | $T_{2,3}^{-1} = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ | 3 |
+| Quarks $\to$ confinement | uud (3 crossings) | **FAIL** ($Gx[\gamma] < 0$) | $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ | 6 |
+| Proton $\to$ gluon | $\mathcal{B}_3 \times$ quarks (9) | **FAIL** ($Gx[\gamma] < 0$) | $\sigma_0 \sigma_0$ | 2 |
+| Proton $\to$ H atom | proton + gluon (11) | **PASS** | $\sigma_1^{-1}$ (pe crossing) | 1 |
+| H $\to$ H$_{2}$ molecule | H atom | **PASS** | $T_{2,3}^{-1} = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ | 3 |
 
 *At every level, the algorithm uses the same $6 \times 6$ Gram
 matrix $G$ and the same Frobenius positivity constraint

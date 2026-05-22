@@ -70,7 +70,7 @@ $\sigma$-orbits
 
 | orbit | partitions | self-dual? | role |
 |---|---|---|---|
-| $\{(3), (1,1,1)\}$ | size 2 | no | sym ↔ alt: chirality pair |
+| $\{(3), (1,1,1)\}$ | size 2 | no | sym $\leftrightarrow$ alt: chirality pair |
 | $\{(2, 1)\}$ | size 1 | yes | std: self-dual / mixed channel |
 
 Then:
@@ -137,7 +137,7 @@ transpose involutivity is recorded as
 [kassel1995] / standard partition combinatorics).
 
 The density-value lemmas
-`cpt_orbit_closure_density` (CPT-saturated → $2 m_e$) and
+`cpt_orbit_closure_density` (CPT-saturated $\to$ $2 m_e$) and
 `cpt_orbit_closure_density_single_chirality` (not CPT-saturated
-→ $m_e$) are unconditional and proved directly by `if_pos` /
+$\to$ $m_e$) are unconditional and proved directly by `if_pos` /
 `if_neg` on the decidable predicate.

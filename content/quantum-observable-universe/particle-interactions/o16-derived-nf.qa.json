@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/particle-interactions/o16-derived-nf.md"
   },
   "source_hashes": {
-    "md": "b13b08de8ebe",
+    "md": "030f8b92f02b",
     "ts": "7601599c785f"
   },
   "criteria": {
@@ -343,19 +343,19 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "b13b08de8ebe",
+          "md": "030f8b92f02b",
           "ts": "7601599c785f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/o16-derived-nf.md:14: → 16 quark triples. | quantum-observable-universe/particle-interactions/o16-derived-nf.md:17: → 8 proton NFs + 8 neutron NFs. | quantum-observable-universe/particle-interactions/o16-derived-nf.md:36: 4. **8 electron Hopf links** → closed $1s^2 2s^2 2p^4$ | quantum-observable-universe/particle-interactions/o16-derived-nf.md:47: | $1 \\to 4$ | $1s$ filling | $T_{2,5}$, $L_+$, $L_+$ | I → II | | quantum-observable-universe/particle-interactions/o16-derived-nf.md:48: | $5 \\to 8$ | $1p$ proton fill | $L_-$, $C_{pn}$, $C_{pp}$, $C_{pn}$ | II → III |"
+        "reviewed_at": "2026-05-22T18:39:37.988Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:39:37.988Z"
 }

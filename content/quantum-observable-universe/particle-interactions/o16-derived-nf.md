@@ -11,10 +11,10 @@ The derived atom $\mathcal{A}(8, 8)$ is built by the
 ([derived atom](#def:derived-atom)):
 
 1. **48 pair productions** ($3 \times 16$ photon collisions)
-   → 16 quark triples.
+   $\to$ 16 quark triples.
 
 2. **16 Borromean confinements** ($\mathcal{B}_3$ for each nucleon)
-   → 8 proton NFs + 8 neutron NFs.
+   $\to$ 8 proton NFs + 8 neutron NFs.
 
 3. **Inductive nuclear assembly** — 15 inter-nucleon crossings,
    each followed by Gröbner--Shirshov reduction
@@ -33,7 +33,7 @@ $$
    where $\Phi_k$ is the demand-minimizing operator at step $k$
    ([nuclear operator regimes](#prop:nuclear-operator-regimes)).
 
-4. **8 electron Hopf links** → closed $1s^2 2s^2 2p^4$
+4. **8 electron Hopf links** $\to$ closed $1s^2 2s^2 2p^4$
    electron configuration.
 
 ## Expected operator sequence
@@ -44,9 +44,9 @@ the 15 inter-nucleon operators are predicted to follow the pattern:
 
 | Steps | Shell | Operators | Regime |
 |:---|:---|:---|:---:|
-| $1 \to 4$ | $1s$ filling | $T_{2,5}$, $L_+$, $L_+$ | I → II |
-| $5 \to 8$ | $1p$ proton fill | $L_-$, $C_{pn}$, $C_{pp}$, $C_{pn}$ | II → III |
-| $9 \to 12$ | $1p$ neutron fill | $L_+$, $C_{pn}$, $C_{nn}$, $C_{pn}$ | II → III |
+| $1 \to 4$ | $1s$ filling | $T_{2,5}$, $L_+$, $L_+$ | I $\to$ II |
+| $5 \to 8$ | $1p$ proton fill | $L_-$, $C_{pn}$, $C_{pp}$, $C_{pn}$ | II $\to$ III |
+| $9 \to 12$ | $1p$ neutron fill | $L_+$, $C_{pn}$, $C_{nn}$, $C_{pn}$ | II $\to$ III |
 | $13 \to 16$ | shell closure | $L_+$ (magic), ... | II |
 
 At step 16 ($N = 8$, magic), the final operator should be a

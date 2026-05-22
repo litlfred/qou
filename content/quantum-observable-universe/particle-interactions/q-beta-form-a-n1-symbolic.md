@@ -89,7 +89,7 @@ the Wedderburn weights $y_\lambda(q_0)$.
 ## Provenance
 
 Witness: [`q_beta_form_a_n1_extension.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_beta_form_a_n1_extension.py)
-→ [`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-beta-form-a-n1-extension.witness.json)
+$\to$ [`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-beta-form-a-n1-extension.witness.json)
 on PR #639. Three assertions pass:
 1. Geometric-$N{=}1$ lift overshoots the per-braid ceiling.
 2. The factor identity $1 + \hbar_q^2 = (2q^2 - 2q + 1)/q^2$ holds

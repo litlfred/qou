@@ -40,7 +40,7 @@ optimisation:
 | Engine | Representation | Peak memory | Speed |
 |:-------|:---------------|:------------|:------|
 | v9 (hecke-bigint) | BigInt polynomial | $O(A!)$ bytes | exact, slow |
-| v11 (hecke-modular) | $\mathbb{F}_P$ dense array | $O(A! \times 200)$ bytes | 5× faster |
+| v11 (hecke-modular) | $\mathbb{F}_P$ dense array | $O(A! \times 200)$ bytes | 5$\times$ faster |
 | v13 (hecke-stream) | streaming + leading-term cancel | $O(N)$ during reduce | lower peak |
 | v14 (hecke-hapower) | sparse $H_A^k$ pairs | $O(A! \times 20)$ bytes | fits ${}^{11}\mathrm{B}$ |
 

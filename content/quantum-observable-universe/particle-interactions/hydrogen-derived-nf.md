@@ -30,7 +30,7 @@ $\mathcal{B}_3$
 crossings) stabilises the confined state
 ([integer LP gluon](#prop:mass-endomorphism-tower)), yielding
 the proton NF with $\mathrm{net}(\mathfrak{p}) \approx +0.986$
-($11$ total crossings: $6$ B₃ + $3$ quarks + $2$ gluon).
+($11$ total crossings: $6$ B$_{3}$ + $3$ quarks + $2$ gluon).
 
 **Step 3**: The proton is Hopf-linked to the electron (trefoil
 $T_{2,3}$) via the electromagnetic crossing $\sigma_0$:

@@ -74,9 +74,9 @@ nuclear construction:*
 * *$[2]_q = \dim_q(\text{standard representation})$: the dimension
   of the 2D seminormal representation of $H_3(q)$.*
 * *$[7]_q$: related to the proton's internal crossing count
-  (7 crossings on generator 0: 3 B₃ + 1 uu + 2 gluon + 1 ud).*
+  (7 crossings on generator 0: 3 B$_{3}$ + 1 uu + 2 gluon + 1 ud).*
 * *$[4]_q$: the 4 crossings on generator 1 per proton
-  (3 B₃ inverse + 1 ud mixed).*
+  (3 B$_{3}$ inverse + 1 ud mixed).*
 * *$[6]_q$: the 6 crossings in the Borromean link $\mathcal{B}_3$.*
 * *$[3]_q$: the 3-strand structure of the nucleon.*
 

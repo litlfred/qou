@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.md"
   },
   "source_hashes": {
-    "md": "b1b0d9a475b4",
+    "md": "27ba1fcb0fa8",
     "ts": "35e6541f4681"
   },
   "criteria": {
@@ -343,19 +343,19 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "b1b0d9a475b4",
+          "md": "27ba1fcb0fa8",
           "ts": "35e6541f4681"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/groebner-reduction-methods.md:43: | v11 (hecke-modular) | $\\mathbb{F}_P$ dense array | $O(A! \\times 200)$ bytes | 5× faster |"
+        "reviewed_at": "2026-05-22T18:39:37.988Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:39:37.988Z"
 }
