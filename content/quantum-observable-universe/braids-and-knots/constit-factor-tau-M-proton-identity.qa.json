@@ -13,7 +13,7 @@
     "lean": "7b2dfe4dde7c"
   },
   "criteria": {
-    "canonical-witness-pinned": [
+    "voice-emoji-content": [
       {
         "field_hash": {
           "md": "451d1df4499f",
@@ -23,51 +23,15 @@
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "ab4c277feefa",
-          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-22T14:51:26.564Z",
+        "reviewed_at": "2026-05-22T15:21:17.723Z",
         "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
-      },
-      {
-        "field_hash": {
-          "md": "451d1df4499f",
-          "ts": "ed4c3271a277",
-          "lean": "7b2dfe4dde7c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "ef6357be8381",
-          "script_commit_sha": "363600454865d18dbfcf16cda21e2e80b23244fe"
-        },
-        "reviewed_at": "2026-05-22T15:26:12.474Z",
-        "reviewed_sha": "068fcd3c1d4fa13f2780f9c360e1b7feec1c3e88"
-      }
-    ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "451d1df4499f",
-          "ts": "ed4c3271a277",
-          "lean": "7b2dfe4dde7c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "ef6357be8381",
-          "script_commit_sha": "363600454865d18dbfcf16cda21e2e80b23244fe"
-        },
-        "reviewed_at": "2026-05-22T15:26:12.474Z",
-        "reviewed_sha": "068fcd3c1d4fa13f2780f9c360e1b7feec1c3e88"
       }
     ]
   },
-  "updated_at": "2026-05-22T15:26:12.474Z"
+  "updated_at": "2026-05-22T15:21:17.723Z"
 }
