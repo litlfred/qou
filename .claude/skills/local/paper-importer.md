@@ -41,6 +41,24 @@ content objects (.ts + .md triples), ready for formalization.
 | LaTeX file(s) | Store in `uploads/<paper-id>/` preserving structure |
 | arXiv ID | Fetch metadata via API, download source tarball to `uploads/<paper-id>/` |
 
+**Preferred fetch path (added 2026-05-22):** when the session
+network allows `arxiv.org`, use the `paper-search-mcp` MCP server
+rather than raw `curl` / `WebFetch`:
+
+| Tool | Use for |
+|------|---------|
+| `paper-search-mcp.search_arxiv(query=…)` | resolve an author/title to an arxiv ID + canonical metadata (title, authors, year, abstract, primary category) — feeds `import-meta.json` |
+| `paper-search-mcp.download_arxiv(arxiv_id, output_dir="uploads/<paper-id>/")` | fetch the PDF to `uploads/` with the canonical arxiv-id-named filename — single call, no shell |
+| `paper-search-mcp.read_arxiv_paper(arxiv_id)` | parsed text body for downstream environment extraction (Phase 2) — useful when PDF OCR is brittle |
+| `openalex-paper-search.get_work(doi=…)` | metadata-only path for papers without an arxiv preprint (paywalled or pre-arxiv era) — fills the same `import-meta.json` shape |
+
+Sandboxed sessions (Claude-Code-on-the-web with the github-only
+allowlist) cannot reach `arxiv.org` / `api.openalex.org`; the MCP
+servers stay configured but fail soft. In those sessions, queue
+the actual fetch onto `scripts/upload-bib-papers.sh` running on a
+normal-network machine (handoff documented in
+[`bib-qa.md §Batch intake pipeline`](bib-qa.md#batch-intake-pipeline)).
+
 All uploads are committed to the repo under `uploads/` for reprocessing.
 Metadata is stored in `uploads/<paper-id>/import-meta.json`:
 

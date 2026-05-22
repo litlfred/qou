@@ -137,6 +137,65 @@ The script uses `git push --force-with-lease` so re-runs after a fix
 (URL pattern update, etc.) cleanly replace the prior branch tip
 without manual force-push intervention.
 
+#### MCP services for intake + reaudit (added 2026-05-22)
+
+`.mcp.json` ships two paper/scholar MCP servers that the bib-QA
+agent should leverage when they are live (i.e. the session's
+network policy allows `arxiv.org` / `api.openalex.org`). The
+servers fail soft in sandboxed Claude-Code-on-the-web sessions
+whose allowlist only permits `github.com` — in those sessions,
+fall back to the offline pipeline above and hand the download
+step to a normal-network machine.
+
+| Server (`.mcp.json` key) | Package | Tools (most useful) | Use for |
+|--------------------------|---------|---------------------|---------|
+| `paper-search-mcp` | [openags/paper-search-mcp](https://github.com/openags/paper-search-mcp) | `search_arxiv`, `search_pubmed`, `search_biorxiv`, `search_medrxiv`, `search_google_scholar`, `download_arxiv`, `read_arxiv_paper` | Find arxiv preprints by title for URL-missing entries; bulk-download to `uploads/`; pull parsed paper text for `validate-bib --cross-check` cross-references |
+| `openalex-paper-search` | [drAbreu/alex-mcp](https://github.com/drAbreu/alex-mcp)@4.1.0 | OpenAlex `get_work`, `search_works`, `get_work_citations`, `get_work_references`, author disambiguation | Fill metadata gaps for the 9 no-arxiv-URL DOI refs (canonical title/author/year/venue); resolve wrong-work mismatches via author IDs (e.g. `leitnerpawloski2004` PL-inner-product split); citation-network mapping |
+
+(Notes: the legacy `mcp-scholar` entry in `.mcp.json` was removed
+on 2026-05-22 — it's broken at every PyPI version against modern
+FastMCP. Use `paper-search-mcp.search_google_scholar` instead.
+See [`docs/coordination/2026-05-22-mcp-paper-search-services.md`](../../../docs/coordination/2026-05-22-mcp-paper-search-services.md)
+for the design rationale and per-server feature matrix.)
+
+**Workflows that gain leverage from these servers**
+
+1. **URL backfill for the 37 no-URL entries** (offline-prep,
+   network-only step is the actual fetch):
+
+   ```python
+   # Pseudo-code; run from a session with arxiv.org allowed.
+   for entry in references.ts where entry.url is None and entry.type in {"article-journal","article"}:
+     hits = paper_search_mcp.search_arxiv(query=entry.title, max_results=3)
+     if best_match(hits, entry).confidence > 0.8:
+       propose entry.url = hits[0].url   # human reviewer accepts
+   ```
+
+2. **Verification cross-check** — for any entry in
+   `bib-qa-verifications.json` whose status is `partial` or
+   `pending`, `read_arxiv_paper(arxiv_id)` returns the parsed
+   body. Grep the cited `-- Ref: [<id>] <description>` keywords
+   against that body to confirm the description anchors a real
+   passage. Beats opening the PDF in a viewer.
+
+3. **Author-ID-based wrong-work resolution** — when a single
+   bib key citation-splits across two unrelated works (the
+   leitnerpawloski2004 PL-inner-product mismatch is the
+   canonical example), OpenAlex author IDs cleanly disambiguate
+   "Pawlowski-Leitner-arXiv-math/0409565" from
+   "Pawlowski-thesis-or-other-paper".
+
+4. **Metadata enrichment for paywalled entries** — for the 141
+   doi.org URLs we can't fetch, `alex-mcp.get_work(doi=…)`
+   returns canonical title/author/year/venue without paywall.
+   Useful for filling `references.ts` gaps without ever
+   downloading the PDF.
+
+**When the new MCP services are NOT available**: drop back to the
+offline pipeline (`gen-bib-papers-list.py` + `upload-bib-papers.sh`
+on a normal-network machine). The new services are an
+accelerator, not a replacement.
+
 #### `validate-bib` — comprehensive correctness audit
 
 `content/pipeline/validate-bib.ts` is the umbrella correctness audit
