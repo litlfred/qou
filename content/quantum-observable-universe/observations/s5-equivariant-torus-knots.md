@@ -31,7 +31,7 @@ partitions:
 | $(4)(1)$ | $4$ |
 | $(5)$ | $5$ |
 
-so the orders realised in $S_5$ are $\{1, 2, 3, 4, 5, 6\}$.
+The orders realised in $S_5$ are $\{1, 2, 3, 4, 5, 6\}$.
 Restricting to odd $s \geq 3$ (forced by $\gcd(2, s) = 1$)
 leaves $\{3, 5\}$.  $\square$
 

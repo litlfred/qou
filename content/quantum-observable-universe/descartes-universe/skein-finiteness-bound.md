@@ -92,7 +92,7 @@ $$
 $$
 
 This is automatically satisfied for $q > 1$ because the
-right side decreases exponentially with $A$.  **Individual
+The right side decreases exponentially with $A$.  **Individual
 generator volumes do not flip sign.**
 
 ## The product sign flip

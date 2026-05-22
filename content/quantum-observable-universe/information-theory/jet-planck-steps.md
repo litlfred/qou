@@ -288,7 +288,7 @@ neutrino is not *produced from* the photon; it becomes
 Actual scattering processes require far more structure. Consider
 $\gamma\gamma \to \nu\nu^{\sigma}$: in standard QFT this cannot
 happen at tree level because neutrinos carry no electric charge,
-so it requires a box diagram with virtual charged particles and a
+It requires a box diagram with virtual charged particles and a
 $Z^0$ mediator. In the QOU framework the same obstruction
 appears accordingly:
 

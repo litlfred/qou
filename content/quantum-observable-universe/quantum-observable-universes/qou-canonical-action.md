@@ -30,7 +30,7 @@ $$
   \bigr),
 $$
 
-so the categorical action expands to three terms:
+The categorical action expands to three terms:
 
 ```tex
 \begin{equation}\label{eq:canonical-action-decomposition}

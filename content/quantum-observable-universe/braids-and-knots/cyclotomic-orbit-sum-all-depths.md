@@ -71,7 +71,7 @@ NOT Tate-rational, conjecturally transcendental over $\mathbb{Q}$).
 
 **For $n$ even**: orbit sum vanishes by definition. The individual
 $\mathrm{Cl}_n$ values are bar-anti-symmetric (Glaisher convention),
-so they pair-cancel. No reduction occurs — all $(N - 1)/2$ distinct
+They pair-cancel. No reduction occurs — all $(N - 1)/2$ distinct
 $\mathrm{Cl}_n$ magnitudes are independent (modulo Beilinson).
 
 ### Generalises Theorem B (PR #635 round 3)

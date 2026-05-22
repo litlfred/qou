@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/descartes-universe/schrodinger-color-falsifiability.md"
   },
   "source_hashes": {
-    "md": "880171397e41",
+    "md": "ea8ac1b931c9",
     "ts": "72cd17464d6b"
   },
   "criteria": {
@@ -377,19 +377,19 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "a2eee9ada9cd",
+          "md": "ea8ac1b931c9",
           "ts": "72cd17464d6b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/schrodinger-color-falsifiability.md:76: So the predicted crossover from the Riemannian regime to the"
+        "reviewed_at": "2026-05-22T20:55:25.431Z",
+        "reviewed_sha": "b130a842b0bae67e91f6ff67a9f1531d2e168d3d"
       }
     ],
     "voice-ai-slop": [
@@ -475,5 +475,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:29:51.882Z"
+  "updated_at": "2026-05-22T20:55:25.431Z"
 }

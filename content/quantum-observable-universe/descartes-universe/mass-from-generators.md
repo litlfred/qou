@@ -55,7 +55,7 @@ $$
 
 The figure-eight has hyperbolic volume
 $\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx :val[Vol_4_1]{precision=6}$,
-so the muon-to-electron mass ratio is governed by the Higgs
+The muon-to-electron mass ratio is governed by the Higgs
 mechanism:
 
 $$

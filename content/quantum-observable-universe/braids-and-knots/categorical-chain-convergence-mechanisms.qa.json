@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/categorical-chain-convergence-mechanisms.lean"
   },
   "source_hashes": {
-    "md": "312f6d6abf99",
+    "md": "248884d4823c",
     "ts": "6b9614c81a55",
     "lean": "900c4e6f1d8b"
   },
@@ -480,20 +480,20 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "312f6d6abf99",
+          "md": "248884d4823c",
           "ts": "6b9614c81a55",
           "lean": "900c4e6f1d8b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/categorical-chain-convergence-mechanisms.md:49: So their categorical-chain contributions are **additive in $\\log Q_\\beta^{\\text{cat}}$**:"
+        "reviewed_at": "2026-05-22T20:55:25.431Z",
+        "reviewed_sha": "b130a842b0bae67e91f6ff67a9f1531d2e168d3d"
       }
     ],
     "voice-ai-slop": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:55:25.431Z"
 }

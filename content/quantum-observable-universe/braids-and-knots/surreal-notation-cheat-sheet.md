@@ -21,7 +21,7 @@ of the appendix.
 | $a \sim b$ | $a$ and $b$ have the **same standard part** — i.e. $a - b$ is infinitesimal (or zero). Used in Millennium-bound statements: the surreal bound holds **up to a $1 + \varepsilon$ multiplier**, which collapses to equality under $\mathrm{st}$. |
 | $a \prec b$ | $a$ is **infinitesimal relative to** $b$, i.e. $|a/b|$ is infinitesimal. Conway's asymptotic-domination order. |
 
-**When you see $\varepsilon$ in the substrate-level definitions
+**where you find $\varepsilon$ in the substrate-level definitions
 below** — primarily in
 [`def:reeb-epsilon`](#def:reeb-epsilon),
 [`def:q-from-epsilon`](#def:q-from-epsilon),
@@ -29,12 +29,12 @@ and the joint Galois-braid action — read it as "the positive
 infinitesimal $1/\omega$". You do not need the appendix machinery
 to follow these definitions.
 
-**When you see a surreal-bound statement** — e.g.
+**where you find a surreal-bound statement** — e.g.
 [BSD](#rem:bsd-surreal-bound),
 [Collatz](#rem:collatz-surreal-bound), or the unified
 [graded-Mikusiński bound](#rem:surreal-bounds-graded-mikusinski) —
 the cheat-sheet entry for $\mathrm{st}$ and $a \sim b$ is
-the only piece you need; the bound says "the inequality holds up
+the only piece we need; the bound says "the inequality holds up
 to a $1 + \varepsilon$ factor", and applying $\mathrm{st}$
 recovers the classical statement.
 

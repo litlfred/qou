@@ -46,7 +46,7 @@ $$
   \tau_M(K_1 \sqcup K_2) \;=\; \tau_M(K_1) \cdot \tau_M(K_2) \quad (\text{linking-trivial limit}).
 $$
 
-So their categorical-chain contributions are **additive in $\log Q_\beta^{\text{cat}}$**:
+Their categorical-chain contributions are **additive in $\log Q_\beta^{\text{cat}}$**:
 
 $$
   \log Q_\beta^{\text{cat,full}}(K_1 \sqcup K_2)

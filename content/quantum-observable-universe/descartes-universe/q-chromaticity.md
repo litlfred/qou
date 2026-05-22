@@ -127,7 +127,7 @@ $$
 
 where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the
 three coral tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
-so the $q$-chromaticity diagram is a triangle (the $q$-simplex).
+The $q$-chromaticity diagram is a triangle (the $q$-simplex).
 
 For color-neutral states (hadrons): $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$
 — the white point at the centroid.  For individual quarks, some

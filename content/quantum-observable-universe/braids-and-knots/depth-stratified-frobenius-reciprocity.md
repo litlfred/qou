@@ -117,7 +117,7 @@ data**.
 
 This is the categorical content of:
 
-- "you can hear *more than* the Jones polynomial when you know which
+- "one can hear *more than* the Jones polynomial when as known which
  knot ideal each Wedderburn block belongs to";
 - the FR pullback $\chi^\lambda \to \chi^\lambda \cdot \chi^\lambda(e_{K_k^*})$
  recovers the missing volume information at low curvature-rank.

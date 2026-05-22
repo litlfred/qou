@@ -103,7 +103,7 @@ $$
   = \tau(c \cdot x).
 $$
 
-So the cost is $\sigma$-invariant: replacing $x$ by $\sigma(x)$
+The cost is $\sigma$-invariant: replacing $x$ by $\sigma(x)$
 does not change the objective.
 
 **Step 4 — σ relates the two LPs.**

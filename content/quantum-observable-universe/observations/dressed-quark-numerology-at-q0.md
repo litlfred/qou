@@ -83,7 +83,7 @@ $$
   3.88\,\text{MeV},
 $$
 
-so the realised value $1.286\,\text{MeV}$ sits at about $33\%$ of
+The realised value $1.286\,\text{MeV}$ sits at about $33\%$ of
 the bound.  Per the slack-ratio identity in
 [`thm:flavor-mass-splitting-bound`](../braids-and-knots/flavor-mass-splitting-bound.md)
 the closed form for this ratio is

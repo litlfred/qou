@@ -111,7 +111,7 @@ kills every $n \geq 1$ term, recovering the original Gröbner-Shirshov
 mass endomorphism.  The condition $D(z_q) = 0$ occurs at real
 $z_q$ — precisely the boundary of the Descartes curve at
 $q = 1/\varphi^2$ ([golden-ratio degeneration](#prop:descartes-elliptic-curve)) —
-so the GB framework is the **real-axis degeneration** of the
+The GB framework is the **real-axis degeneration** of the
 volumized theory.
 
 ## Status

@@ -108,7 +108,7 @@ but **not** the converse. NS blowup could occur even without
 observability (through a different mechanism). And NS regularity
 is **compatible** with a QPU (where observability fails).
 
-So the argument is:
+The argument is:
 - If the physical universe is a QOU (observability holds), then
  NS blows up.
 - If the physical universe is only a QPU (observability fails),
