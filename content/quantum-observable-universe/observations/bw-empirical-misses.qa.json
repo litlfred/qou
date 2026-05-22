@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/observations/bw-empirical-misses.md"
   },
   "source_hashes": {
-    "md": "fde2d6807f7d",
-    "ts": "add27c8ce5bc"
+    "md": "8d2d2b7a0d17",
+    "ts": "558a0facd13a"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -359,19 +359,19 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "fde2d6807f7d",
-          "ts": "add27c8ce5bc"
+          "md": "8d2d2b7a0d17",
+          "ts": "558a0facd13a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/observations/bw-empirical-misses.md:56: non-trivially entangled but all pairwise links are trivial) from"
+        "reviewed_at": "2026-05-22T20:25:38.506Z",
+        "reviewed_sha": "3786c58a4ff41ad346acab157eabda358f6736f4"
       }
     ],
     "voice-scholarly-default": [
@@ -475,5 +475,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T20:25:38.506Z"
 }

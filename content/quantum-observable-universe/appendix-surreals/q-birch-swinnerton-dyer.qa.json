@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.lean"
   },
   "source_hashes": {
-    "md": "4b4b6090dcbc",
+    "md": "fd3084e410a7",
     "ts": "75ae06c96798",
     "lean": "69cc09285788"
   },
@@ -425,20 +425,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "4b4b6090dcbc",
+          "md": "fd3084e410a7",
           "ts": "75ae06c96798",
           "lean": "69cc09285788"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md:45: acts non-trivially on it.  The first cohomology | quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md:71: (on which $G$ acts trivially), but $\\mathcal{E}_q$ is"
+        "reviewed_at": "2026-05-22T20:25:38.506Z",
+        "reviewed_sha": "3786c58a4ff41ad346acab157eabda358f6736f4"
       }
     ],
     "voice-scholarly-default": [
@@ -563,5 +563,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:25:38.506Z"
 }

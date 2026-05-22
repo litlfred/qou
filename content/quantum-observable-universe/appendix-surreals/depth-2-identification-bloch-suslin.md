@@ -23,7 +23,7 @@ archimedean evaluation of $\mathrm{Li}_2^q$.*
 
 ### Proof chain
 
-**Step 1 (Bloch group, Bloch 1978).**  Define the Bloch group of $F$:
+**Step 1 (Bloch group, Bloch 1978).** Define the Bloch group of $F$:
 
 $$
   \mathfrak{B}(F)
@@ -49,7 +49,7 @@ $$
 because $D$ satisfies the 5-term relation as a function on
 $F$-points (Wigner 1955; Bloch 1978).
 
-**Step 2 (Suslin's isomorphism, Suslin 1986).**  *Theorem (Suslin).*
+**Step 2 (Suslin's isomorphism, Suslin 1986).** *Theorem (Suslin).*
 There is a natural isomorphism of $\mathbb{Q}$-vector spaces
 
 $$
@@ -73,7 +73,7 @@ $$
 is the **Bloch–Suslin regulator**, and it is *injective after
 tensoring with $\mathbb{R}$* (Borel + Suslin).
 
-**Step 3 (archimedean image of $G^{(2)}$, this paper).**  The
+**Step 3 (archimedean image of $G^{(2)}$, this paper).** The
 substrate convolution algebra $\mathcal{H}_q$'s depth-2 grouplike
 $\mathrm{Li}_2^q(z)$ for $z \in F^\times$ has archimedean image
 
@@ -85,7 +85,7 @@ $$
 
 by [`prop:categorical-laplace-unique`](#prop:categorical-laplace-unique)
 combined with the analytic continuation of $\mathrm{Li}_2^q$ to
-$\mathrm{Li}_2$ at $q \to 1$.  The Bloch–Wigner companion
+$\mathrm{Li}_2$ at $q \to 1$. The Bloch–Wigner companion
 
 $$
   D(z)
@@ -102,7 +102,7 @@ $$
   D(z) \pmod{\pi^2 \mathbb{Q}}.
 $$
 
-**Step 4 (composition).**  Combining Steps 1–3:
+**Step 4 (composition).** Combining Steps 1–3:
 
 $$
   \begin{array}{rcl}
@@ -125,24 +125,24 @@ injectivity. $\square$
 
 **Proved**:
 - $G^{(2)}(\mathcal{H}_q)\big|_F \big/ \mathcal{P}_1$ has dimension
-  $\dim K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q} = r_2$ (Borel for
-  $n = 2$), where $r_2$ = number of complex places of $F$.
+ $\dim K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q} = r_2$ (Borel for
+ $n = 2$), where $r_2$ = number of complex places of $F$.
 - Image of $\tau_{\mathrm{arch}}$ on $G^{(2)}|_F$ equals image of
-  Bloch–Suslin regulator on $K_3^{\mathrm{ind}}(F)$.
+ Bloch–Suslin regulator on $K_3^{\mathrm{ind}}(F)$.
 - For each Bring-natural $F = \mathbb{Q}(z_K)$, the depth-2 row
-  of [`rem:transcendental-accounting`](#rem:transcendental-accounting)
-  is a *theorem*, not a conjecture.
+ of [`rem:transcendental-accounting`](#rem:transcendental-accounting)
+ is a *theorem*, not a conjecture.
 
 **Not proved by this**:
 - Identification of *abstract Hopf algebras*: $G^{(2)}(\mathcal{H}_q)$
-  as a Hopf algebra over $F$ vs $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
-  as a $\mathbb{Q}$-vector space. The image-direction match is
-  what is proved here; abstract structural equivalence requires
-  the motivic interpretation of $\mathcal{H}_q$ (open).
+ as a Hopf algebra over $F$ vs $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
+ as a $\mathbb{Q}$-vector space. The image-direction match is
+ what is proved here; abstract structural equivalence requires
+ the motivic interpretation of $\mathcal{H}_q$ (open).
 - Generation of *all* of $\mathcal{P}_2 / \mathcal{P}_1$ across
-  *all* number fields by $G^{(2)}(\mathcal{H}_q)$. This is depth-2
-  generation, expected but technical (compatibility across
-  $F$'s).
+ *all* number fields by $G^{(2)}(\mathcal{H}_q)$. This is depth-2
+ generation, expected but technical (compatibility across
+ $F$'s).
 
 ### Generalisations (depth $\geq 3$, conditional)
 
@@ -155,7 +155,7 @@ The same proof chain at depth 3 requires:
 | 3 (single-valued) | Bloch–Wigner $D(z)$ | Goncharov $D_3(z)$ — single-valued trilog | provable |
 | 4 (image direction) | $\tau_{\mathrm{arch}} \mathrm{Li}_2^q = D \pmod{\mathcal{P}_1}$ | $\tau_{\mathrm{arch}} \mathrm{Li}_3^q = D_3 \pmod{\mathcal{P}_2}$ | provable |
 
-Steps 3, 4 generalize cleanly. **Step 2 (Goncharov's motivic
+Steps 3, 4 generalize. **Step 2 (Goncharov's motivic
 conjecture) is the open piece**. Conditional on Step 2, the
 depth-3 identification follows by the same argument.
 
@@ -166,10 +166,10 @@ The combination with [`prop:borel-partial-resolution`](#prop:borel-partial-resol
 yields:
 
 - **Depth 2** of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
-  is provably correct over every Bring-natural number field
-  $F = \mathbb{Q}(z_K)$ — the keystone is a theorem here.
+ is provably correct over every Bring-natural number field
+ $F = \mathbb{Q}(z_K)$ — the keystone is a theorem here.
 - **Depth 3** is conditional on Goncharov's motivic conjecture
-  but has all *non-Goncharov* steps provable.
+ but has all *non-Goncharov* steps provable.
 - **Depth $\geq 4$** is conditional on Beilinson + Goncharov.
 
 This is the precise sense in which the keystone has been

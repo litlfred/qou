@@ -17,9 +17,9 @@ $$
 $$
 
 — **none are hyperbolic** (torus-knot complements are Seifert-fibred,
-not hyperbolic). So the depth-2 row's *volume claim* is trivially
+not hyperbolic). So the depth-2 row's *volume claim* is by definition
 zero for each: $\mathrm{Vol}(T(p, q)) = 0$ in $\mathcal{P}_2 /
-\mathcal{P}_1$. This depth-2 trivial row of B1 is *trivially*
+\mathcal{P}_1$. This depth-2 trivial row of B1 is *by definition*
 theorem-level.
 
 The non-trivial content is at **depth 3**: each torus knot has a
@@ -42,13 +42,13 @@ when reduced mod the Tate twist.
 For each torus-knot row $K = T(p, q)$ in B1:
 
 1. **Depth-2 inclusion**: $\mathrm{Vol}(K) = 0 \in \mathcal{P}_2 / \mathcal{P}_1$
-   — trivially in the period filtration.
+ — by definition in the period filtration.
 2. **Depth-3 inclusion**: $\mathrm{CS}(T(p, q)) \in \pi^2 \cdot \mathbb{Q} \subset \mathcal{P}_2$
-   — degenerate (no genuine $\mathrm{Li}_3$ contribution).
+ — degenerate (no genuine $\mathrm{Li}_3$ contribution).
 3. **Volume Conjecture for torus knots**: discharged by
-   Garoufalidis–Lê 2005 (arXiv:math/0411521): the asymptotic of
-   $J_{T(p,q)}^{(N)}$ at roots of unity equals exactly the
-   above CS-rational expression. **Theorem (published).**
+ Garoufalidis–Lê 2005 (arXiv:math/0411521): the asymptotic of
+ $J_{T(p,q)}^{(N)}$ at roots of unity equals exactly the
+ above CS-rational expression. **Theorem (published).**
 
 Combining (1)–(3): B1 at every torus-knot row is **theorem-level
 and degenerate** — no genuine trilog content arises here.

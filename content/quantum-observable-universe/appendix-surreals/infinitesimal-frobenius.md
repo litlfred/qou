@@ -23,16 +23,16 @@ arbitrary $K$-linear endomorphism (the *deviation*).
 The conjecture has two parts:
 
 1. **Standard-part recovery**: applying the standard-part functor
-   $\mathrm{St}$
-   ([standard-part functor](#def:standard-part-functor)) to a
-   relaxed Frobenius axiom yields a strict Frobenius axiom on the
-   archimedean image. Concretely, $\mathrm{St}(\delta) = 0$ is
-   automatic if and only if the deviation is birthday-shifted.
+ $\mathrm{St}$
+ ([standard-part functor](#def:standard-part-functor)) to a
+ relaxed Frobenius axiom yields a strict Frobenius axiom on the
+ archimedean image. Concretely, $\mathrm{St}(\delta) = 0$ is
+ automatic if and only if the deviation is birthday-shifted.
 
 2. **Strict generalisation**: there exist relaxed Frobenius
-   structures with non-trivial deviation $\delta$ (i.e. not
-   gauge-equivalent to the strict structure) that nonetheless
-   project to the same archimedean Frobenius structure.
+ structures with non-trivial deviation $\delta$ (i.e. not
+ gauge-equivalent to the strict structure) that nonetheless
+ project to the same archimedean Frobenius structure.
 
 If (2) holds, the relaxation is a *strict* generalisation of the
 classical Frobenius axiom, with the surreal QOU carrying first-
@@ -64,24 +64,24 @@ strict $A$ is open.
 Three uses:
 
 1. **Möbius energy**: the diagonal regularisation in the Möbius
-   energy formula
-   ([Möbius energy proof](#prf:mobius-energy)) is naturally read
-   as an infinitesimal Frobenius deviation: the strict Frobenius
-   axiom $\int \delta(0) = $ infinity becomes $\int \delta(\varepsilon)
+ energy formula
+ ([Möbius energy proof](#prf:mobius-energy)) is accordingly read
+ as an infinitesimal Frobenius deviation: the strict Frobenius
+ axiom $\int \delta(0) = $ infinity becomes $\int \delta(\varepsilon)
    = 1/\varepsilon$, and the regularised value is the
-   standard-part.
+ standard-part.
 
 2. **CODATA fits**: the QOU mass formula's $\sim 4\%$ MAE on
-   $\mathcal{Q}$-values may be partly attributable to a small
-   non-Frobenius deviation in the underlying algebra. An
-   infinitesimal Frobenius axiom would absorb such deviations
-   into a single $\varepsilon$-parameter.
+ $\mathcal{Q}$-values may be partly attributable to a small
+ non-Frobenius deviation in the underlying algebra. An
+ infinitesimal Frobenius axiom would absorb such deviations
+ into a single $\varepsilon$-parameter.
 
 3. **Mathematical interest**: even without physical motivation,
-   the relaxation gives a one-parameter deformation theory for
-   Frobenius algebras, parallel to the classical
-   Hochschild-cohomology obstruction theory but valued in
-   $\mathbf{No}$ rather than $\mathbb{R}$.
+ the relaxation gives a one-parameter deformation theory for
+ Frobenius algebras, parallel to the classical
+ Hochschild-cohomology obstruction theory but valued in
+ $\mathbf{No}$ rather than $\mathbb{R}$.
 
 ## Status
 
@@ -105,39 +105,39 @@ and strict generalisation (hard).
 **Standard-part recovery (provable now)**:
 
 1. Assume an $\varepsilon$-relaxed Frobenius algebra
-   $(A, \mu, \int_A, \delta)$ over $\mathbf{No}$.
+ $(A, \mu, \int_A, \delta)$ over $\mathbf{No}$.
 
 2. Apply $\mathrm{St}$ to all components: $\mathrm{St}(\delta)$ has
-   coefficients in $\mathbb{R}$. Since $\delta$ is multiplied by
-   the infinitesimal $\varepsilon$, the term $\varepsilon \cdot \delta$
-   is itself infinitesimal.
+ coefficients in $\mathbb{R}$. Since $\delta$ is multiplied by
+ the infinitesimal $\varepsilon$, the term $\varepsilon \cdot \delta$
+ is itself infinitesimal.
 
 3. By `standardPart_of_infinitesimal`, $\mathrm{St}(\varepsilon
    \cdot \delta) = 0$. So $\mathrm{St}((\int \circ \mu) \circ \eta)
    = \mathrm{St}(\mathrm{id} + \varepsilon \cdot \delta) = \mathrm{id}$,
-   recovering the strict Frobenius axiom.
+ recovering the strict Frobenius axiom.
 
 **Strict generalisation (open)**:
 
 4. Construct a candidate non-trivial $\delta$ in a non-rigid
-   Frobenius algebra. Concrete proposal: take
-   $A = \bigwedge^* V$ (exterior algebra) at infinitesimal
-   $q$-deformation; the rigidity argument doesn't apply because
-   $\bigwedge^* V$ is not the regular representation.
+ Frobenius algebra. Concrete proposal: take
+ $A = \bigwedge^* V$ (exterior algebra) at infinitesimal
+ $q$-deformation; the rigidity argument doesn't apply because
+ $\bigwedge^* V$ is not the regular representation.
 
 5. Verify the deformed pairing satisfies
-   $\int_\varepsilon \circ \mu_\varepsilon = \mathrm{id} +
+ $\int_\varepsilon \circ \mu_\varepsilon = \mathrm{id} +
    \varepsilon \cdot \delta$ for non-zero $\delta$.
 
 6. Show the deformed structure is **not** gauge-equivalent to
-   the strict structure (a Hochschild-cohomology computation).
+ the strict structure (a Hochschild-cohomology computation).
 
 **Required infrastructure**:
 - `standardPart_of_infinitesimal` (proved).
 - `standardPart_add` (axiomatic; reduces to
-   `IsFinite_decomposition`).
+ `IsFinite_decomposition`).
 - Hochschild cohomology of Frobenius algebras over $\mathbf{No}$
-  (does not exist in mathlib).
+ (does not exist in mathlib).
 
 **Falsification path**: prove a *rigidity theorem* for
 $\varepsilon$-Frobenius algebras: every $\varepsilon$-deformation

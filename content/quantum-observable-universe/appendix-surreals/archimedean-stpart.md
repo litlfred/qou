@@ -56,7 +56,7 @@ quantum corrections to the Frobenius pairing, observability
 cohomology, volume normalisation, and vacuum.
 
 Whether such infinitesimal corrections are *physical* (i.e.
-distinguish observable predictions) or merely *mathematical*
+distinguish observable predictions) or only *mathematical*
 (distinguished only by the surreal structure) is itself open.
 
 ## Relation to the classical-limit conjecture
@@ -65,12 +65,12 @@ This conjecture is the **categorical** counterpart of
 [classical limit as standard-part](#conj:classical-limit-stpart):
 
 - Classical-limit-stpart says: the $q \to 1$ classical-limit
-  functor on $\mathbf{C}_q$ is $\mathrm{St} \circ \mathrm{ev}_{1
+ functor on $\mathbf{C}_q$ is $\mathrm{St} \circ \mathrm{ev}_{1
   + \varepsilon}$ (single-category statement).
 - Archimedean-stpart says: the entire QOU framework
-  $(\mathbf{C}, \varTheta, G, \mathcal{S})$ is the
-  standard-part of an $\varepsilon$-relaxed surreal QOU
-  (whole-tuple statement).
+ $(\mathbf{C}, \varTheta, G, \mathcal{S})$ is the
+ standard-part of an $\varepsilon$-relaxed surreal QOU
+ (whole-tuple statement).
 
 The two conjectures are likely equivalent modulo functoriality,
 but a precise reduction is open.
@@ -81,27 +81,27 @@ If true, the appendix's $\varepsilon$-relaxation is a *strict*
 generalisation of the main paper:
 
 1. The main paper's QOU axioms are recovered as
-   $\mathrm{St}_{\mathrm{QOU}}$ applied to the surreal axioms.
+ $\mathrm{St}_{\mathrm{QOU}}$ applied to the surreal axioms.
 2. Every theorem proved in the main paper has a surreal
-   counterpart; the surreal counterpart may have additional
-   non-trivial first-order corrections that vanish under
-   $\mathrm{St}$.
+ counterpart; the surreal counterpart may have additional
+ non-trivial first-order corrections that vanish under
+ $\mathrm{St}$.
 3. Future work can investigate whether these corrections are
-   physically meaningful (e.g., explain corrections to the QOU
-   mass formula's $4\%$ MAE on $\mathcal{Q}$-values).
+ physically meaningful (e.g., explain corrections to the QOU
+ mass formula's $4\%$ MAE on $\mathcal{Q}$-values).
 
 ## Status
 
 **Open.** Even formulating the precise statement requires:
 
 - defining the category $\mathbf{QOU}_{\mathbf{No}}^{\varepsilon}$
-  with the relaxed axioms (the appendix's conjectures
-  [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
-  [infinitesimal-observability](#conj:infinitesimal-observability),
-  [vacuum-epsilon](#conj:vacuum-epsilon) make a start);
+ with the relaxed axioms (the appendix's conjectures
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
+ [infinitesimal-observability](#conj:infinitesimal-observability),
+ [vacuum-epsilon](#conj:vacuum-epsilon) make a start);
 - showing that $\mathrm{St}$ extends from
-  $\mathbf{No}_{\mathrm{fin}}$ to morphisms in this category in a
-  functorial way.
+ $\mathbf{No}_{\mathrm{fin}}$ to morphisms in this category in a
+ functorial way.
 
 Both steps require the surreal-categorical machinery that does
 not yet exist in mathlib.
@@ -113,30 +113,30 @@ The conjecture is the *category-level* counterpart of
 to that conjecture via:
 
 1. **Functorial reduction**. Show
-   $\mathrm{St}_{\mathrm{QOU}} = (\mathrm{St}, \mathrm{St}, \mathrm{St},
+ $\mathrm{St}_{\mathrm{QOU}} = (\mathrm{St}, \mathrm{St}, \mathrm{St},
    \mathrm{St})$ — the standard-part applied to each component of the
-   QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
+ QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 2. **Reduce each component**:
-   - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
-     $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
-     $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
-     [classical-limit-stpart](#conj:classical-limit-stpart).
-   - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
-     $\mathrm{St}$ acts entry-wise.
-   - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
-     of an algebraic group object.
-   - $\mathcal{S}$: state bundle; standard-part of fibre.
+ - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
+ $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
+ $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
+ [classical-limit-stpart](#conj:classical-limit-stpart).
+ - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
+ $\mathrm{St}$ acts entry-wise.
+ - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
+ of an algebraic group object.
+ - $\mathcal{S}$: state bundle; standard-part of fibre.
 
 3. **Verify axioms**: each $\varepsilon$-relaxed axiom (Frobenius,
-   observability, volume, vacuum) becomes the strict axiom under
-   $\mathrm{St}$ — content of conjectures
-   [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
-   [infinitesimal-observability](#conj:infinitesimal-observability),
-   [vacuum-epsilon](#conj:vacuum-epsilon).
+ observability, volume, vacuum) becomes the strict axiom under
+ $\mathrm{St}$ — content of conjectures
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
+ [infinitesimal-observability](#conj:infinitesimal-observability),
+ [vacuum-epsilon](#conj:vacuum-epsilon).
 
 4. **Essential surjectivity**: every archimedean QOU lifts (set
-   $\varepsilon = 0$ trivially). This direction is automatic.
+ $\varepsilon = 0$ by definition). This direction is automatic.
 
 **Required infrastructure**:
 - The five sub-conjectures above (or worked examples).

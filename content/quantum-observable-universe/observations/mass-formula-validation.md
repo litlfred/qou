@@ -1,6 +1,6 @@
 The atomic mass computation $M(Z,N) = Z\mathfrak{m}_\mathfrak{p} + N\mathfrak{m}_\mathfrak{n} + Zm_e - B(Z,N)$
 uses CODATA nucleon masses and AME2020 binding energies as direct inputs.
-This recombines observed constants and is trivially correct --- the
+This recombines observed constants and is by definition correct --- the
 $<0.1$ MeV deviations in the mass table arise solely from rounding.
 The 0.0000% entries are arithmetic checks, not predictions.
 
@@ -18,11 +18,11 @@ ratios only.
 $E_0 = m_e/(q_0(q_0 - 1)) = m_e \cdot c_q^2 \cdot \hbar_q \approx 4.186$ MeV.
 This agrees with the calibrated value
 $E_0^{(\mathrm{cal})} = Q_\beta/|\Delta\mathrm{net}| \approx 4.155$ MeV
-to $0.75\%$.  The residual is the brane-tower correction
-(single-level vs full-tower).  Using the derived $E_0$, the
+to $0.75\%$. The residual is the brane-tower correction
+(single-level vs full-tower). Using the derived $E_0$, the
 neutron $Q$-value becomes a prediction:
 $Q_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
-(CODATA: $0.782$ MeV, $0.75\%$ error).  In this derivation
+(CODATA: $0.782$ MeV, $0.75\%$ error). In this derivation
 the hadronic scale $E_0$ is itself derived from $Q_\beta(n)$;
 the complete framework uses three calibration inputs
 ([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
@@ -34,13 +34,13 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 \to \hbar_q \to q_0$ yields:
 
 - **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$
-  (definitional, by construction).
+ (definitional, by construction).
 - **$Q$-values**: mass differences $\Delta m = \Delta\mathrm{net}
   \times E_0$ where $E_0 = Q_\mathrm{neutron}/|\Delta\mathrm{net}|
   \approx 4.155$ MeV. This predicts e.g. $Q_{\mathrm{n}\ge 2} \approx 0.457$
-  MeV for the higher-order spectral components of neutron $\beta$-decay.
+ MeV for the higher-order spectral components of neutron $\beta$-decay.
 - **Half-life ratios**: the $\log_q(ft)$ values from the transfer
-  matrix encode relative decay rates.
+ matrix encode relative decay rates.
 
 **Mass predictions** ($k = 12$, zero fitted parameters, gluon-dressed
 nucleons, categorical Chebyshev shell, knot factors from Frobenius norm):
@@ -67,11 +67,11 @@ Mean $|\Delta/M| = 0.010\%$ across 15 isotopes.
 | ${}^{16}\mathrm{O}$ | $2\sigma_0$/nucleon + $1\sigma_1$ | stable (1 extra $\sigma_1$) |
 | ${}^{14}\mathrm{C}$, $A \geq 20$ | needs multi-word ILP | unstable (single-operator insufficient) |
 
-The gluon count is $A$-dependent.  The proton ILP gives $2\sigma_0$
+The gluon count is $A$-dependent. The proton ILP gives $2\sigma_0$
 (minimum-action stabiliser); this suffices for $A \leq 12$.
 At $A = 16$ (${}^{16}\mathrm{O}$), the $\sigma_0$ and $L_-$ channels
 violate Frobenius positivity, requiring one additional $\sigma_1$
-crossing.  For $A \geq 20$, no single-operator repetition stabilises
+crossing. For $A \geq 20$, no single-operator repetition stabilises
 the braid — the full multi-word ILP
 ([universal ILP](#def:universal-ilp-algorithm)) is needed.
 
@@ -95,7 +95,7 @@ the braid — the full multi-word ILP
 
 MAE $\approx 4.4\%$ across all six $\beta^-$ benchmarks. Light
 nuclei ($A \leq 14$) achieve $\leq 2.2\%$ with no shell corrections.
-These are the real predictions --- not the trivially correct 0.0000%
+These are the real predictions --- not the by definition correct 0.0000%
 mass table entries.
 
 ## BW mass table (k=12, zero fitted parameters)
@@ -194,15 +194,15 @@ words of $S_3$, i.e. $\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1,
 $A$ nucleons:
 
 - $\mathrm{net}(q_0)$: the sum of all 6 NF coefficients after
-  reducing $w$ to the Gröbner--Shirshov normal form. This is the
-  Markov trace of the braid.
+ reducing $w$ to the Gröbner--Shirshov normal form. This is the
+ Markov trace of the braid.
 - $\mathrm{tr\_alt}(q_0)$: the alternating trace --- the projection
-  of the NF onto the alternating (sign) irrep of $S_3$. This picks
-  out the antisymmetric channel.
+ of the NF onto the alternating (sign) irrep of $S_3$. This picks
+ out the antisymmetric channel.
 - $F_\mathrm{Pauli}(q_0)$: the ratio
-  $\mathrm{tr\_alt}/\mathrm{tr\_sym}$, measuring the Pauli exclusion
-  statistical weight. For identical fermions, $F_\mathrm{Pauli}$
-  suppresses symmetric configurations.
+ $\mathrm{tr\_alt}/\mathrm{tr\_sym}$, measuring the Pauli exclusion
+ statistical weight. For identical fermions, $F_\mathrm{Pauli}$
+ suppresses symmetric configurations.
 
 **Irrep decomposition.** The regular representation of $H_3(q)$
 decomposes into three irreps:
@@ -250,13 +250,13 @@ nucleon has a *deficit* --- these are the channels it is receptive to
 **Key observations:**
 
 - Both nucleons have negative $\gamma$ (identity) and $e^-$ (trefoil)
-  coefficients. These channels carry mass-energy deficit.
+ coefficients. These channels carry mass-energy deficit.
 - The neutron additionally has a negative $L_+$ (Hopf link)
-  coefficient --- it is receptive to the $L_+$ gluon channel.
-  The proton's $L_+$ is positive ($+0.099$).
+ coefficient --- it is receptive to the $L_+$ gluon channel.
+ The proton's $L_+$ is positive ($+0.099$).
 - $\mathrm{net}(p) = +0.999$, $\mathrm{net}(n) = +0.811$.
-  The $\Delta\mathrm{net} = -0.188$ drives the neutron $\beta$-decay
-  $Q$-value.
+ The $\Delta\mathrm{net} = -0.188$ drives the neutron $\beta$-decay
+ $Q$-value.
 
 **Beta decay: why free neutron is the simplest.** Free neutron decay
 $n \to p + e^- + \bar{\nu}$ is the simplest possible $\beta^-$ decay:
@@ -329,15 +329,15 @@ receptive to. A binding operator $\hat{B}$ must supply what the
 negative channels demand. Concretely:
 
 - Both p and n have negative $\gamma$ and $e^-$ --- the binding
-  operator must supply identity and trefoil content.
+ operator must supply identity and trefoil content.
 - The neutron has negative $L_+$ --- the binding operator must supply
-  Hopf link content to the neutron.
+ Hopf link content to the neutron.
 
 **Open problem.** The outstanding computational goal is to identify a
 torus knot $T(2,k)$ whose normal form, when applied to both proton
 and neutron simultaneously, fills their negative channels and yields
-$B/A$ matching the AME2020 curve.  The candidate must have positive
-$\gamma$, positive $e^-$, and positive $L_+$ coefficients.  The
+$B/A$ matching the AME2020 curve. The candidate must have positive
+$\gamma$, positive $e^-$, and positive $L_+$ coefficients. The
 Borromean link $B_3 = (\sigma_0\sigma_1^{-1})^3$ already provides
 exactly this pattern with $\mathrm{net}(B_3) = +1.000$,
 $L_+ = +0.046$, $L_- = -0.044$, but operates at the single-nucleon

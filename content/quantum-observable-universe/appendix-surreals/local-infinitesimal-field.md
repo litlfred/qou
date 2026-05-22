@@ -46,19 +46,19 @@ infinitesimals on $X(\mathcal{O})$. Writing $\varepsilon(x)$ for
 the stalk at a point $x \in X$:
 
 1. **Local variation**: $\varepsilon(x)$ may differ from
-   $\varepsilon(y)$ for distinct $x, y \in X$ — the substrate
-   parameter *fluctuates* across the scheme.
+ $\varepsilon(y)$ for distinct $x, y \in X$ — the substrate
+ parameter *fluctuates* across the scheme.
 
 2. **Standard-part global constant**: $\mathrm{st}(\varepsilon(x)) = 0$
-   for all $x$, so the classical substrate is $q_{\mathrm{classical}} = 1$
-   everywhere — matching the archimedean limit to a trivial
-   constant.
+ for all $x$, so the classical substrate is $q_{\mathrm{classical}} = 1$
+ everywhere — matching the archimedean limit to a trivial
+ constant.
 
 3. **Birthday-uniform at archimedean scale**: the *leading
-   surreal coefficient* of $\varepsilon(x)$ (i.e., the coefficient
-   of $\omega^{-1}$ in the Conway normal form) *is* globally
-   constant, and equals the paper's archimedean substrate deviation
-   $q_0 - 1 \approx 0.11$.
+ surreal coefficient* of $\varepsilon(x)$ (i.e., the coefficient
+ of $\omega^{-1}$ in the Conway normal form) *is* globally
+ constant, and equals the paper's archimedean substrate deviation
+ $q_0 - 1 \approx 0.11$.
 
 Informally: $q(x) = 1 + (q_0 - 1) + \delta(x)$ where $\delta(x)$
 is a strictly-infinitesimal local fluctuation with zero mean and
@@ -67,22 +67,22 @@ birthday-ordered magnitude distribution.
 ## Why this matters
 
 1. **Halo structure**: every classical real point of $X$ is
-   surrounded by a *halo* (monad) of infinitesimally-fluctuated
-   surreal points. Under the functor $X(\mathrm{st})$ all halo
-   points collapse to the classical point — but within the halo,
-   distinct surreal fluctuations are resolved.
+ surrounded by a *halo* (monad) of infinitesimally-fluctuated
+ surreal points. Under the functor $X(\mathrm{st})$ all halo
+ points collapse to the classical point — but within the halo,
+ distinct surreal fluctuations are resolved.
 
 2. **Non-global symmetries**: a symmetry of the main paper's QOU
-   that is global in the archimedean sense may be broken at the
-   infinitesimal scale *locally* (at specific points $x$), without
-   affecting the classical image. This is analogous to approximate
-   isospin / chiral symmetries in particle physics.
+ that is global in the archimedean sense may be broken at the
+ infinitesimal scale *locally* (at specific points $x$), without
+ affecting the classical image. This is analogous to approximate
+ isospin / chiral symmetries in particle physics.
 
 3. **Singularity detection**: a "singularity" of the main paper's
-   QOU is a point $x_0$ where some quantity diverges. In the
-   surreal lift, the divergence has a specific normal-form order
-   $\ordw(\cdot)$ — which, by locality, can vary in a neighbourhood
-   of $x_0$.
+ QOU is a point $x_0$ where some quantity diverges. In the
+ surreal lift, the divergence has a specific normal-form order
+ $\ordw(\cdot)$ — which, by locality, can vary in a neighbourhood
+ of $x_0$.
 
 ## Relation to existing conjectures
 
@@ -93,7 +93,7 @@ shadow agrees with the paper in both cases.
 
 It also specialises [archimedean-stpart](#conj:archimedean-stpart)
 to the sheaf-theoretic setting: the archimedean QOU is the
-standard-part *sheaf-morphism* of the surreal QOU, not just a
+standard-part *sheaf-morphism* of the surreal QOU, not a
 single-point morphism.
 
 ## Proof strategy
@@ -101,38 +101,38 @@ single-point morphism.
 **Mathematical layer (existence of local sheaf structure)**:
 
 1. Show that $\mathcal{O}$ is a valid coefficient ring for the
-   scheme $X$: it is a local ring, hence satisfies all standard
-   sheaf-construction axioms (easy).
+ scheme $X$: it is a local ring, hence satisfies all standard
+ sheaf-construction axioms (easy).
 
 2. Define $\mathfrak{m}_X$ as the kernel sheaf of the structure-
-   sheaf morphism $\mathcal{O}_X \to (\mathcal{O}/\mathfrak{m})_X
+ sheaf morphism $\mathcal{O}_X \to (\mathcal{O}/\mathfrak{m})_X
    = \mathbb{R}_X$. This is the standard construction of an ideal
-   sheaf.
+ sheaf.
 
 3. Verify that global sections of $\mathfrak{m}_X$ exist
-   (non-vacuously): the constant section $\varepsilon \mapsto
+ (non-vacuously): the constant section $\varepsilon \mapsto
    \varepsilon$ witnesses this.
 
 4. Characterise which global sections give consistent QOU
-   structure — i.e., which $\varepsilon$-valued $q$ deformations
-   preserve the rigid monoidal axioms up to the
-   $\varepsilon$-relaxations of
-   [infinitesimal-frobenius](#conj:infinitesimal-frobenius) etc.
+ structure — i.e., which $\varepsilon$-valued $q$ deformations
+ preserve the rigid monoidal axioms up to the
+ $\varepsilon$-relaxations of
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius) etc.
 
 **Physical layer (uniqueness of the fluctuation distribution)**:
 
 5. Assume the fluctuation distribution $\delta(x)$ has some
-   explicit form (e.g., zero-mean Gaussian on the classical
-   spectrum of $X$).
+ explicit form (e.g., zero-mean Gaussian on the classical
+ spectrum of $X$).
 
 6. Show that the classical observables (particle masses,
-   $\mathcal{Q}$-values, spectral gaps) are *unchanged* under
-   standard-part — equivalent to the sheaf being $\mathrm{st}$-
-   compatible.
+ $\mathcal{Q}$-values, spectral gaps) are *unchanged* under
+ standard-part — equivalent to the sheaf being $\mathrm{st}$-
+ compatible.
 
 7. Show that there are *no* non-trivial fluctuation distributions
-   at leading order beyond the global one — equivalent to
-   rigidity of the main-paper QOU.
+ at leading order beyond the global one — equivalent to
+ rigidity of the main-paper QOU.
 
 **Falsification path**: produce two distinct sheaf sections
 $\varepsilon_1, \varepsilon_2$ on $X$ both producing the same

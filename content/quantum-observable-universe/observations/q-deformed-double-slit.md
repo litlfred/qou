@@ -1,4 +1,4 @@
-The [substrate parameter](#def:substrate-parameter) $q$ is not merely a formal algebraic interpolation between classical and quantum regimes. Instead, it encodes a physical deformation of wave propagation through matter. The slit material acts as a defining boundary of the brane, where the Reeb vector field exerts a geometric push on the traversing test particle.
+The [substrate parameter](#def:substrate-parameter) $q$ is not only a formal algebraic interpolation between classical and quantum regimes. Instead, it encodes a physical deformation of wave propagation through matter. The slit material acts as a defining boundary of the brane, where the Reeb vector field exerts a geometric push on the traversing test particle.
 
 At the categorical level, wave propagation is governed by the
 categorical Dirac equation
@@ -17,7 +17,7 @@ and $\sigma_0\sigma_1$ is the Hopf link dressing
 on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)) --- propagating
 on an instanton background
-([categorical instanton](#def:categorical-instanton)).  The identity
+([categorical instanton](#def:categorical-instanton)). The identity
 component $\mathbf{1}$ (degree $0$) propagates as pure horizontal
 flux; the generators $\varphi_i\sigma_i$ (degree $1$) carry
 additional polarisation-dependent phase from the Hecke eigenvalues
@@ -32,7 +32,7 @@ As $q \to 1$, the quantum Planck constant $\hbar_q = 1 - q^{-1}$ vanishes, and $
 The Reeb contraction term $(1-q^{-1})\iota_\xi\nabla$ in $\mathcal{D}_\nabla$ is
 the physical mechanism behind wavefront spreading
 ([wavefront propagation](#rem:wavefront-propagation)): it is what allows a photon
-emitted from a point source to illuminate both slits simultaneously.  The beam
+emitted from a point source to illuminate both slits simultaneously. The beam
 width $w_0$ at the barrier is not a free parameter but is determined by the
 Green's function of $\mathcal{D}_\nabla$ on the flat instanton background
 ($F_\nabla = 0$) between source and barrier.
@@ -51,7 +51,7 @@ On an instanton background the Lagrangian simplifies
 $$\mathcal{L}_q\big|_{\text{instanton}} = c_2(A) + \psi^* \otimes \mathcal{D}_\nabla\psi,$$
 
 so the gauge sector is topological ($c_2$ fixed by the barrier material's knot
-type) and all observable physics is in $\mathcal{D}_\nabla\psi = 0$.  The
+type) and all observable physics is in $\mathcal{D}_\nabla\psi = 0$. The
 complete derivation of the intensity pattern from $\mathcal{D}_\nabla\psi = 0$,
 including the torsion phase profile, is given in
 [the photon wavefront example](#ex:photon-wavefront).
@@ -68,7 +68,7 @@ double-slit analysis in two ways.
 
 **1. Polarisation-weighted phase.**
 Each polarisation mode $\sigma_i$ acquires its own Reeb phase along
-path $\gamma_j$ through slit $j$.  The total phase for a color-dressed
+path $\gamma_j$ through slit $j$. The total phase for a color-dressed
 photon is
 
 $$
@@ -83,7 +83,7 @@ $$
 
 where $+q$ and $-q^{-1}$ are the Hecke eigenvalues of $\sigma_0$ and
 $\sigma_1$ respectively
-([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)).  The bare-photon
+([Breit--Wheeler vertex](#rem:breit-wheeler-vertex)). The bare-photon
 phase difference $\Delta\Phi_q$ of the
 [$q$-deformed path phase](#def:double-slit-q-phase) acquires a
 polarisation correction
@@ -97,7 +97,7 @@ $$
 $$
 
 where $\Delta\phi_\xi$ is the Reeb phase mismatch between the two
-paths.  For unpolarised light ($\varphi_0 = \varphi_1$) the correction
+paths. For unpolarised light ($\varphi_0 = \varphi_1$) the correction
 reduces to $(\varphi_0)(q - q^{-1})\Delta\phi_\xi$, proportional to
 the Hecke parameter $h = q - q^{-1}$.
 
@@ -106,7 +106,7 @@ When a photon's path amplitudes interfere at the detector, the product
 of the two path states in $H_3(q)$ generates cross-color terms
 $\sigma_0\sigma_1$ and $\sigma_1\sigma_0$ --- the Hopf-link basis
 elements $L_{\pm}$
-([color content](#rem:knot-basis-color-content)).  Their coefficients
+([color content](#rem:knot-basis-color-content)). Their coefficients
 $\varphi_0\psi_1$ and $\varphi_1\psi_0$ (where $\psi_i$ are the
 color weights imparted by the slit-wall Reeb interaction --- the
 same torsion mechanism that produces $\tau(y)$ in the

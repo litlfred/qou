@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.lean"
   },
   "source_hashes": {
-    "md": "4d5f657676dc",
+    "md": "429f471be927",
     "ts": "4fa3b43d3a72",
     "lean": "e83d6560ed49"
   },
@@ -495,20 +495,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "47436a9a9743",
+          "md": "429f471be927",
           "ts": "4fa3b43d3a72",
           "lean": "e83d6560ed49"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.md:81: | Each Bring-natural row of B1 lands non-trivially at its depth | conjectural | **theorem** | | quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.md:83: | $\\mathrm{Cl}_3(2\\pi/5)$ lives non-trivially in $\\mathcal{P}_3/\\mathcal{P}_2$ | conjectural | **theorem** (Borel + Lewin) | | quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.md:111: grouplike value lands non-trivially in $\\mathcal{P}_n / \\mathcal{P}_{n-1}$."
+        "reviewed_at": "2026-05-22T20:25:38.506Z",
+        "reviewed_sha": "3786c58a4ff41ad346acab157eabda358f6736f4"
       }
     ],
     "voice-scholarly-default": [
@@ -716,5 +716,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:46:57.612Z"
+  "updated_at": "2026-05-22T20:25:38.506Z"
 }

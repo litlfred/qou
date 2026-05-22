@@ -24,20 +24,20 @@ The **nimber field** $\mathbf{On}_p$ is the field of all ordinals
 under:
 
 - **nim-addition**: $\alpha \oplus \beta$ is the unique ordinal
-  $\gamma$ such that $\gamma \neq \alpha' \oplus \beta$ for all
-  $\alpha' < \alpha$ and $\gamma \neq \alpha \oplus \beta'$ for
-  all $\beta' < \beta$. For finite ordinals in base $p$, this is
-  digit-wise XOR-mod-$p$.
+ $\gamma$ such that $\gamma \neq \alpha' \oplus \beta$ for all
+ $\alpha' < \alpha$ and $\gamma \neq \alpha \oplus \beta'$ for
+ all $\beta' < \beta$. For finite ordinals in base $p$, this is
+ digit-wise XOR-mod-$p$.
 - **nim-multiplication**: $\alpha \otimes \beta$ defined
-  recursively via the mex (minimum-excluded-value) operator.
+ recursively via the mex (minimum-excluded-value) operator.
 
 For each prime $p$:
 
 - $\mathbf{On}_2$ is an algebraically closed field of
-  characteristic $2$, equal to the union of $\mathbb{F}_{2^{2^k}}$
-  for all $k$ (Conway, Lenstra).
+ characteristic $2$, equal to the union of $\mathbb{F}_{2^{2^k}}$
+ for all $k$ (Conway, Lenstra).
 - $\mathbf{On}_p$ for odd $p$ is constructed analogously by Pruss
-  and others.
+ and others.
 
 These fields are the **char-$p$ analogues** of $\mathbf{No}$:
 they form the algebraic-geometric ambient for ordinal-valued
@@ -58,10 +58,10 @@ $$
 where:
 
 - $\mathrm{KLcells}_n(\zeta_p)$ is the set of Kazhdan--Lusztig
-  cells of $H_n(\zeta_p)$ (which replace the Hoefsmit tableaux
-  in the modular setting), and
+ cells of $H_n(\zeta_p)$ (which replace the Hoefsmit tableaux
+ in the modular setting), and
 - $\mathbf{On}_p^{[n]}$ is the set of nimbers of *p-adic depth*
-  $\leq n$ (analogous to dyadic surreals of birthday $\leq n$).
+ $\leq n$ (analogous to dyadic surreals of birthday $\leq n$).
 
 The bijection $\Phi_p$ is determined by the *p-ary fusion data*:
 at each step, a vector decomposes into $p$ eigencomponents
@@ -75,22 +75,22 @@ it is visible in characteristic $0$ as the limit behaviour of the
 Hecke algebra near roots of unity. Specifically:
 
 - **Dixmier--Lusztig truncation**: at generic $q$, every tensor
-  power $V^{\otimes n}$ has $\lfloor n/2 \rfloor + 1$
-  summands (binary Hoefsmit tree). At $q = \zeta_p$, summands
-  with $\dim_q(\lambda) = 0$ disappear; the surviving summands
-  are reorganised into $p$-cycles.
+ power $V^{\otimes n}$ has $\lfloor n/2 \rfloor + 1$
+ summands (binary Hoefsmit tree). At $q = \zeta_p$, summands
+ with $\dim_q(\lambda) = 0$ disappear; the surviving summands
+ are reorganised into $p$-cycles.
 
 - **Quantum trivialisation**: when you tensor exactly $p$ copies of
-  $V$ at $q = \zeta_p$, the trivial representation acquires
-  *multiplicity $p$* (or $0$, depending on parity), instead of
-  $1$. This is the "$p$ braids coming together" — $p$ strands
-  fuse into a single quantum-trivial channel.
+ $V$ at $q = \zeta_p$, the trivial representation acquires
+ *multiplicity $p$* (or $0$, depending on parity), instead of
+ $1$. This is the "$p$ braids coming together" — $p$ strands
+ fuse into a single quantum-trivial channel.
 
 - **Fusion ring**: the truncated tensor product
-  $\otimes_{\zeta_p}$ on $\mathrm{Rep}(\mathfrak{u}_{\zeta_p}(\mathfrak{sl}_2))$
-  has $p-1$ simple objects with $p$-ary fusion rules. The fusion
-  graph is the **Dynkin diagram $A_{p-1}$**, generalising the
-  binary $A_1$ of generic Hecke.
+ $\otimes_{\zeta_p}$ on $\mathrm{Rep}(\mathfrak{u}_{\zeta_p}(\mathfrak{sl}_2))$
+ has $p-1$ simple objects with $p$-ary fusion rules. The fusion
+ graph is the **Dynkin diagram $A_{p-1}$**, generalising the
+ binary $A_1$ of generic Hecke.
 
 In QOU specifically, the **golden-ratio degeneration** at
 $q_{\mathrm{gold}} = 1/\varphi^2$
@@ -125,31 +125,31 @@ If the conjecture holds, QOU has a *parallel theory* in
 characteristic $p$ for each prime $p$:
 
 - **QOU**$_{\mathbf{No}}$: the surreal lift over $\mathbf{No}$
-  (this appendix).
+ (this appendix).
 - **QOU**$_{\mathbf{On}_p}$: the modular lift over $\mathbf{On}_p$,
-  one for each prime $p$.
+ one for each prime $p$.
 
 The two lifts are related by:
 
 - both reduce to the same archimedean QOU when "evaluated at
-  $q = q_0$" (in the sense of the standard-part for char 0;
-  in some analogous sense for char $p$);
+ $q = q_0$" (in the sense of the standard-part for char 0;
+ in some analogous sense for char $p$);
 - they record different *kinds* of fine structure
-  (infinitesimal-corrections in char 0 vs. $p$-ary fusion data
-  in char $p$);
+ (infinitesimal-corrections in char 0 vs. $p$-ary fusion data
+ in char $p$);
 - they are *both* valid algebraic ambients for the same
-  underlying $\mathbb{Z}[q^{\pm 1}]$-form of QOU.
+ underlying $\mathbb{Z}[q^{\pm 1}]$-form of QOU.
 
 Possible physical readings (highly speculative):
 
 - Char-$p$ QOU at $p = 2$ might capture **fermion–boson
-  alternation** combinatorically.
+ alternation** combinatorically.
 - Char-$p$ QOU at $p$ matching specific knot crossing data
-  might capture **fusion of $p$-quark systems** (e.g. pentaquark,
-  hexaquark — the $p$-strand fusion combinatorics).
+ might capture **fusion of $p$-quark systems** (e.g. pentaquark,
+ hexaquark — the $p$-strand fusion combinatorics).
 - The golden-ratio degeneration suggests a **5-ary fusion**
-  natural to particle generations, hinting at why three
-  generations exist.
+ natural to particle generations, hinting at why three
+ generations exist.
 
 These are conjectural. The mathematical content — that modular
 Hecke at $\zeta_p$ corresponds to $\mathbf{On}_p$ surreals — is
@@ -161,11 +161,11 @@ the actual claim.
 because:
 
 1. Mathlib's nimber-arithmetic library is even less developed
-   than its surreal library.
+ than its surreal library.
 2. Modular Hecke combinatorics requires Kazhdan--Lusztig cell
-   theory, also under-developed in formalisation.
-3. The $p$-ary sign-sequence-to-nimber map is not as cleanly
-   recursive as Conway's binary case.
+ theory, also under-developed in formalisation.
+3. The $p$-ary sign-sequence-to-nimber map is not as 
+ recursive as Conway's binary case.
 
 A first goal would be to verify the conjecture for $H_3(\zeta_2)$
 (the simplest non-trivial case) by hand: KL cells of $H_3$ at $q
@@ -188,34 +188,34 @@ established) and Hecke $\leftrightarrow$ nimber correspondence (open).
 **Layer 1: nimber field existence (cited)**:
 
 1. $\mathbf{On}_2$ is constructed by Conway–Lenstra
-   [@conway1976] as the union of $\mathbb{F}_{2^{2^k}}$;
-   algebraically closed, characteristic 2.
+ [@conway1976] as the union of $\mathbb{F}_{2^{2^k}}$;
+ algebraically closed, characteristic 2.
 
 2. $\mathbf{On}_p$ for odd $p$: similar construction via
-   nim-arithmetic. Established in the algebraic-geometry
-   literature.
+ nim-arithmetic. Established in the algebraic-geometry
+ literature.
 
 **Layer 2: Hecke-cell $\leftrightarrow$ nimber bijection (open)**:
 
 3. **Smallest case** ($p = 2$, $n = 3$): compute the
-   Kazhdan–Lusztig cells of $H_3(\zeta_2) = H_3(-1)$ explicitly.
-   $H_3(-1)$ has 3 cells: $\{1\}$, $\{\sigma_1, \sigma_2, \sigma_1\sigma_2\sigma_1\}$,
-   and $\{\sigma_1\sigma_2, \sigma_2\sigma_1\}$ (with appropriate $W$-graph
-   structure).
+ Kazhdan–Lusztig cells of $H_3(\zeta_2) = H_3(-1)$ explicitly.
+ $H_3(-1)$ has 3 cells: $\{1\}$, $\{\sigma_1, \sigma_2, \sigma_1\sigma_2\sigma_1\}$,
+ and $\{\sigma_1\sigma_2, \sigma_2\sigma_1\}$ (with appropriate $W$-graph
+ structure).
 
 4. **Match against** the first 3 elements of $\mathbf{On}_2$: the
-   nim-numbers $0, 1, *2$ (where $*2$ is the third nimber, equal
-   to the surreal $\{0,1 \mid \}$).
+ nim-numbers $0, 1, *2$ (where $*2$ is the third nimber, equal
+ to the surreal $\{0,1 \mid \}$).
 
 5. **Verify** that the bijection respects the $\mathbb{Z}/2$
-   action (Frobenius / sign symmetry).
+ action (Frobenius / sign symmetry).
 
 6. **Generalise** to larger $n$ and other primes $p$ by
-   induction on KL-cell complexity.
+ induction on KL-cell complexity.
 
 **Required infrastructure**:
 - Mathlib's nimber arithmetic (`Mathlib.Combinatorics.Nimber`,
-  exists but limited).
+ exists but limited).
 - Kazhdan–Lusztig cell theory in Lean (does not exist).
 - Modular Hecke algebra at root of unity (does not exist).
 

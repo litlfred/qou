@@ -8,34 +8,34 @@ The conjecture is the *category-level* counterpart of
 to that conjecture via:
 
 1. **Functorial reduction.** Show
-   $\mathrm{St}_{\mathrm{QOU}} = (\mathrm{St}, \mathrm{St}, \mathrm{St},
+ $\mathrm{St}_{\mathrm{QOU}} = (\mathrm{St}, \mathrm{St}, \mathrm{St},
    \mathrm{St})$ — the standard-part applied to each component of the
-   QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
+ QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 2. **Reduce each component**:
-   - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
-     $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
-     $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
-     [classical-limit-stpart](#conj:classical-limit-stpart).
-   - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
-     $\mathrm{St}$ acts entry-wise.
-   - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
-     of an algebraic group object. This is the categorical
-     counterpart of the archimedean realization $\tau$ of
-     [fibre functor rigidity](#rem:fibre-functor-rigidity) — the
-     image of the rigid monoidal embedding into $\mathbb{R}$-linear
-     endomorphisms.
-   - $\mathcal{S}$: state bundle; standard-part of fibre.
+ - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
+ $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
+ $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
+ [classical-limit-stpart](#conj:classical-limit-stpart).
+ - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
+ $\mathrm{St}$ acts entry-wise.
+ - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
+ of an algebraic group object. This is the categorical
+ counterpart of the archimedean realization $\tau$ of
+ [fibre functor rigidity](#rem:fibre-functor-rigidity) — the
+ image of the rigid monoidal embedding into $\mathbb{R}$-linear
+ endomorphisms.
+ - $\mathcal{S}$: state bundle; standard-part of fibre.
 
 3. **Verify axioms.** Each $\varepsilon$-relaxed axiom (Frobenius,
-   observability, volume, vacuum) becomes the strict axiom under
-   $\mathrm{St}$ — content of conjectures
-   [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
-   [infinitesimal-observability](#conj:infinitesimal-observability),
-   [vacuum-epsilon](#conj:vacuum-epsilon).
+ observability, volume, vacuum) becomes the strict axiom under
+ $\mathrm{St}$ — content of conjectures
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
+ [infinitesimal-observability](#conj:infinitesimal-observability),
+ [vacuum-epsilon](#conj:vacuum-epsilon).
 
 4. **Essential surjectivity.** Every archimedean QOU lifts (set
-   $\varepsilon = 0$ trivially). This direction is automatic.
+ $\varepsilon = 0$ by definition). This direction is automatic.
 
 **Required infrastructure**:
 
