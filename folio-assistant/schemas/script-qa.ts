@@ -34,9 +34,15 @@ import type {
 
 /**
  * Source language of the audited script. Determines which checker
- * subset applies (`does_not_default_to_float` runs on Python and
- * Rust; `respects_archimedean_wall` runs on Python, TypeScript,
- * and Rust; some criteria are Python-only).
+ * subset applies — `script-sweep` dispatches per language, returning
+ * `n/a` for any (criterion, language) pair lacking a registered
+ * checker.
+ *
+ * Currently only the `python` checker for `does_not_default_to_float`
+ * is wired (see `SCRIPT_CHECKERS` in `content/pipeline/script-sweep.ts`).
+ * Future criteria (`respects_archimedean_wall`, `variables_typed`, …)
+ * will extend coverage to TypeScript and Rust as separate follow-up
+ * PRs land each checker.
  */
 export type ScriptLanguage = "python" | "typescript" | "rust";
 

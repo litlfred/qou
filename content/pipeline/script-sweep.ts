@@ -28,7 +28,6 @@ const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = resolve(dirname(__filename), "..", "..");
 
 import {
-  QA_CRITERIA_REGISTRY,
   QA_CRITERIA_BY_ID,
   SCRIPT_QUALITY_CRITERIA,
   getCriterionSourceFile,
@@ -110,7 +109,12 @@ interface ScriptSweepResult {
 function loadScriptQa(path: string): ScriptQaReport | undefined {
   if (!existsSync(path)) return undefined;
   try {
-    return JSON.parse(readFileSync(path, "utf-8")) as ScriptQaReport;
+    const parsed = JSON.parse(readFileSync(path, "utf-8"));
+    // Schema guard — refuse to treat unrelated JSON (or a future
+    // schema version) as a v1 ScriptQaReport. Mirrors `loadQaReport`
+    // in `qa-utils.ts`.
+    if (parsed?.$schema !== "script-qa/v1") return undefined;
+    return parsed as ScriptQaReport;
   } catch {
     return undefined;
   }
@@ -328,4 +332,7 @@ async function run(): Promise<void> {
   }
 }
 
-run();
+run().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
