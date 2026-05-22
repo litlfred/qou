@@ -85,6 +85,11 @@ export default chapter({
         "kummer-filtration-obstruction",
         "kummer-tower",
         "hochschild-kummer-connection",
+        // def:motivic-substrate — substrate of the classical-limit
+        // functor; lives here alongside motivic-galois-character +
+        // qou-motivic-galois-instance (its consumers). Detangler
+        // P34 (2026-05-22).
+        "motivic-substrate",
         "motivic-galois-character",
         "qou-motivic-galois-instance",
         "motivic-perpetual-obstruction",
@@ -215,6 +220,12 @@ export default chapter({
         "brane-boundary-structure-proof",
         "quantum-dilogarithm",
         "quantum-dilogarithm-proof",
+        // thm:topological-mass — the theorem statement, moved here
+        // from braids-and-knots/sec:categorical-mass-foundations
+        // alongside its proof + conjecture-extension + eigenspace/
+        // holonomy/transient/dilogarithm variants. Detangler P30
+        // (2026-05-22).
+        "topological-mass",
         "topological-mass-conjecture",
         "topological-mass-eigenspace-decomp",
         "topological-mass-eigenspace-decomp-proof",

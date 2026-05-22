@@ -63,7 +63,27 @@ auto-derived at runtime.
 
 ---
 
-## Block moves (R6 — 2026-05-22, detangler P35)
+## Block moves (R6 — 2026-05-22, detangler P30 + P34 + P35)
+
+### P30 — `thm:topological-mass` moved earlier (braids-and-knots → lifting-and-descent)
+
+- **Source:** `braids-and-knots/sec:categorical-mass-foundations`.
+- **Target:** `lifting-and-descent/sec:archimedean-lifting`, between `quantum-dilogarithm-proof` and `topological-mass-conjecture`.
+- **Files moved:** `topological-mass.ts`, `topological-mass.md`, `topological-mass.lean`, `topological-mass.qa.json` (via `git mv`, history preserved).
+- **Story:** the section already houses the theorem's proof (`topological-mass-proof`), conjecture-extension (`topological-mass-conjecture`), and a full family of eigenspace / holonomy / transient / dilogarithm variants. Reuniting the theorem statement with its proof and variants is the canonical home. Eliminates 8 H1 forward refs.
+- **Wall-direction:** `lifting-and-descent` sits before `braids-and-knots` in the paper manifest, so this is a move-earlier. The theorem's `uses[]` has no dependency back into `braids-and-knots`, so no new H2 forward edges emitted.
+- **Lean:** the `.lean` namespace `QOU.Torsion` stays unchanged; Lake builds the library tree under `content/quantum-observable-universe/lean/`, not chapter-dir siblings, so the file move is transparent to the Lake build.
+- **Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
+
+### P34 — `def:motivic-substrate` moved earlier (braids-and-knots → lifting-and-descent)
+
+- **Source:** `braids-and-knots/sec:classical-limit`.
+- **Target:** `lifting-and-descent/sec:yekutieli-lifting`, immediately before `motivic-galois-character`.
+- **Files moved:** `motivic-substrate.ts`, `motivic-substrate.md`, `motivic-substrate.lean`, `motivic-substrate.qa.json` (via `git mv`).
+- **Story:** the substrate of the classical-limit functor naturally lives alongside its motivic-Galois consumers (`motivic-galois-character`, `qou-motivic-galois-instance`) which already sit in `sec:yekutieli-lifting`. Eliminates 7 H1 forward refs.
+- **Wall-direction:** move-earlier; the definition's `uses[]` are all in chapters before `lifting-and-descent`, so no new H2 emitted.
+- **Lean:** namespace preserved across the file move.
+- **Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
 
 ### P35 — `conj:gb-depth-period-correspondence` moved earlier within braids-and-knots
 

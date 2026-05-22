@@ -356,7 +356,11 @@ export default chapter({
       label: "sec:categorical-mass-foundations",
       blocks: [
         "categorical-mass-foundations-intro",
-        "topological-mass",
+        // thm:topological-mass moved earlier to
+        // lifting-and-descent/sec:archimedean-lifting (alongside its
+        // proof + conjecture-extension + eigenspace/holonomy/transient/
+        // dilogarithm variants that already live there). Detangler
+        // P30 (2026-05-22). Files moved: topological-mass.{ts,md,lean,qa.json}.
         "topological-mass-cat-eigenspace",
         "topological-mass-cat-eigenspace-proof",
         "topological-mass-cat-descended",
@@ -1054,7 +1058,11 @@ export default chapter({
       label: "sec:classical-limit",
       blocks: [
         "classical-limit-intro",
-        "motivic-substrate",
+        // def:motivic-substrate moved earlier to
+        // lifting-and-descent/sec:yekutieli-lifting (alongside
+        // motivic-galois-character + qou-motivic-galois-instance
+        // which already live there). Detangler P34 (2026-05-22).
+        // Files moved: motivic-substrate.{ts,md,lean,qa.json}.
         "adelic-substrate",
         "classical-limit-functor",
         "quantum-gap-collapse",
