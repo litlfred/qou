@@ -1087,16 +1087,17 @@ export default chapter({
     // the rest of the surreal-formalism story. Cheat-sheet remark for
     // first-time surreal notation should sit at the head of this
     // section's surreal-flavored sub-block (reeb-epsilon / q-from-epsilon).
+    // Detangler P11 split (2026-05-22): the 23-block
+    // sec:classical-limit was split into construction (the
+    // functor + obstruction + joint-Galois-braid machinery) and
+    // implications (graded Baer-star + two-filtration bridge +
+    // classical zeta/RH + adelic squeeze + chapter outro). Each
+    // new section sits in the 3-18 block band.
     section({
-      title: "Classical limit and the macroscopic continuum",
-      label: "sec:classical-limit",
+      title: "Classical limit: construction",
+      label: "sec:classical-limit-construction",
       blocks: [
         "classical-limit-intro",
-        // def:motivic-substrate moved earlier to
-        // lifting-and-descent/sec:yekutieli-lifting (alongside
-        // motivic-galois-character + qou-motivic-galois-instance
-        // which already live there). Detangler P34 (2026-05-22).
-        // Files moved: motivic-substrate.{ts,md,lean,qa.json}.
         "adelic-substrate",
         "classical-limit-functor",
         "quantum-gap-collapse",
@@ -1114,12 +1115,18 @@ export default chapter({
         // Graded-Mikusiński / joint-Galois-braid machinery.
         // (conj:gb-depth-period-correspondence moved earlier to
         // sec:archimedean-realization-kashaev per detangler P35;
-        // its downstream consumers in this section now reference
-        // it backward.)
+        // its downstream consumers here now reference it backward.)
         "hq-bi-filtration",
         "joint-galois-braid-action",
         "joint-galois-braid-figure-8-verified",
         "joint-galois-braid-discharged",
+      ],
+    }),
+    section({
+      title: "Classical limit: implications",
+      label: "sec:classical-limit-implications",
+      blocks: [
+        "classical-limit-implications-intro",
         "graded-baer-star-Hq",
         "two-filtration-bridge",
         "two-filtration-bridge-small-cases",
