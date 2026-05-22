@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/ew_higgs_sdp_probe.py",
+  "language": "python",
+  "source_hash": "dd02a8db6287",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "dd02a8db6287"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/ew_higgs_sdp_probe.py:168: bare `float(sym_eig)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/ew_higgs_sdp_probe.py:169: bare `float(alt_eig)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/ew_higgs_sdp_probe.py:54: bare float literal `91.188` — wrap in `mpmath.mpf(\"91.188\")` / `Decimal(\"91.188\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/ew_higgs_sdp_probe.py:65: bare float literal `125.25` — wrap in `mpmath.mpf(\"125.25\")` / `Decimal(\"125.25\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/ew_higgs_sdp_probe.py:76: bare float literal `80.379` — wrap in `mpmath.mpf(\"80.379\")` / `Decimal(\"80.379\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

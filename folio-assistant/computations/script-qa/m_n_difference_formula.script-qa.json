@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/m_n_difference_formula.py",
+  "language": "python",
+  "source_hash": "e69b7d320e89",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "e69b7d320e89"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/m_n_difference_formula.py:91: bare float literal `1e6` — wrap in `mpmath.mpf(\"1e6\")` / `Decimal(\"1e6\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/m_n_difference_formula.py:103: bare float literal `861.3450120161809611302321540664741083884394557178` — wrap in `mpmath.mpf(\"861.3450120161809611302321540664741083884394557178\")` / `Decimal(\"861.3450120161809611302321540664741083884394557178\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/m_n_difference_formula.py:145: bare float literal `8.325` — wrap in `mpmath.mpf(\"8.325\")` / `Decimal(\"8.325\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/m_n_difference_formula.py:169: bare float literal `2.77` — wrap in `mpmath.mpf(\"2.77\")` / `Decimal(\"2.77\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

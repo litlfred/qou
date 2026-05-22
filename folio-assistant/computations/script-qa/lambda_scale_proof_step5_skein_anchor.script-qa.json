@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py",
+  "language": "python",
+  "source_hash": "f85d3f27ea8f",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "f85d3f27ea8f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py:111: bare `float((delta_S_substrate - delta_S_codata) / d…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py:112: bare float literal `1e6` — wrap in `mpmath.mpf(\"1e6\")` / `Decimal(\"1e6\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py:134: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py:135: bare float literal `2000.0` — wrap in `mpmath.mpf(\"2000.0\")` / `Decimal(\"2000.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/from_scratch/wedderburn_markov.py",
+  "language": "python",
+  "source_hash": "348fcd8c0752",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "348fcd8c0752"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/from_scratch/wedderburn_markov.py:337: bare float literal `0.049435` — wrap in `mpmath.mpf(\"0.049435\")` / `Decimal(\"0.049435\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/from_scratch/wedderburn_markov.py:338: bare float literal `0.288326` — wrap in `mpmath.mpf(\"0.288326\")` / `Decimal(\"0.288326\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

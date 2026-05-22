@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/brane_tower_isospin_diagnosis.py",
+  "language": "python",
+  "source_hash": "b2bdd820835f",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "b2bdd820835f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/brane_tower_isospin_diagnosis.py:177: bare `float(abs_mpf(v))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/brane_tower_isospin_diagnosis.py:197: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/brane_tower_isospin_diagnosis.py:197: bare float literal `0.7` — wrap in `mpmath.mpf(\"0.7\")` / `Decimal(\"0.7\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/brane_tower_isospin_diagnosis.py:197: bare float literal `0.85` — wrap in `mpmath.mpf(\"0.85\")` / `Decimal(\"0.85\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/brane_tower_isospin_diagnosis.py:197: bare float literal `0.9` — wrap in `mpmath.mpf(\"0.9\")` / `Decimal(\"0.9\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

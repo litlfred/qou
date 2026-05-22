@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/atom_mass_additive_baseline.py",
+  "language": "python",
+  "source_hash": "9b37ccbceb7c",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "9b37ccbceb7c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/atom_mass_additive_baseline.py:72: bare float literal `938.783` — wrap in `mpmath.mpf(\"938.783\")` / `Decimal(\"938.783\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atom_mass_additive_baseline.py:73: bare float literal `3728.401` — wrap in `mpmath.mpf(\"3728.401\")` / `Decimal(\"3728.401\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atom_mass_additive_baseline.py:74: bare float literal `6535.367` — wrap in `mpmath.mpf(\"6535.367\")` / `Decimal(\"6535.367\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atom_mass_additive_baseline.py:75: bare float literal `8394.794` — wrap in `mpmath.mpf(\"8394.794\")` / `Decimal(\"8394.794\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atom_mass_additive_baseline.py:76: bare float literal `10255.103` — wrap in `mpmath.mpf(\"10255.103\")` / `Decimal(\"10255.103\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

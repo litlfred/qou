@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/canonical_a_k_magnitude_audit.py",
+  "language": "python",
+  "source_hash": "7cc640b43ebe",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "7cc640b43ebe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/canonical_a_k_magnitude_audit.py:200: bare `float(disjoint)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/canonical_a_k_magnitude_audit.py:201: bare `float(implied_tr_M)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/canonical_a_k_magnitude_audit.py:201: bare `float(expected)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/canonical_a_k_magnitude_audit.py:192: bare float literal `0.7823` — wrap in `mpmath.mpf(\"0.7823\")` / `Decimal(\"0.7823\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/canonical_a_k_magnitude_audit.py:200: bare float literal `14.6` — wrap in `mpmath.mpf(\"14.6\")` / `Decimal(\"14.6\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

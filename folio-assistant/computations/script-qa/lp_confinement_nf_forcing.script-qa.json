@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/lp_confinement_nf_forcing.py",
+  "language": "python",
+  "source_hash": "3fcac72c6e1d",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "3fcac72c6e1d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/lp_confinement_nf_forcing.py:93: bare `float(chi.subs(q_sym, q0_sp).evalf())` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/lp_confinement_nf_forcing.py:185: bare `float(sum(dims_q1))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/lp_confinement_nf_forcing.py:185: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/lp_confinement_nf_forcing.py:188: bare float literal `1e3` — wrap in `mpmath.mpf(\"1e3\")` / `Decimal(\"1e3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/lp_confinement_nf_forcing.py:188: bare float literal `1e-7` — wrap in `mpmath.mpf(\"1e-7\")` / `Decimal(\"1e-7\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

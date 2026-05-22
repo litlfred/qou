@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py",
+  "language": "python",
+  "source_hash": "901258402180",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "901258402180"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:125: bare `float(fit[\"predicted\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:126: bare `float(fit[\"observed\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:42: bare float literal `3.052012052160693` — wrap in `mpmath.mpf(\"3.052012052160693\")` / `Decimal(\"3.052012052160693\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:43: bare float literal `3.4763537648638594` — wrap in `mpmath.mpf(\"3.4763537648638594\")` / `Decimal(\"3.4763537648638594\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:44: bare float literal `3.819245328124024` — wrap in `mpmath.mpf(\"3.819245328124024\")` / `Decimal(\"3.819245328124024\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

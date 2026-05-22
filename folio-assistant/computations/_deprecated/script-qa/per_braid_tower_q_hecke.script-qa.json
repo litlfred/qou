@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/per_braid_tower_q_hecke.py",
+  "language": "python",
+  "source_hash": "d43d59462a2f",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "d43d59462a2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/per_braid_tower_q_hecke.py:129: bare `float(out[\"total\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/per_braid_tower_q_hecke.py:33: bare float literal `0.51099895000` — wrap in `mpmath.mpf(\"0.51099895000\")` / `Decimal(\"0.51099895000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/per_braid_tower_q_hecke.py:36: bare float literal `1875.61294257` — wrap in `mpmath.mpf(\"1875.61294257\")` / `Decimal(\"1875.61294257\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/per_braid_tower_q_hecke.py:37: bare float literal `2808.39148127` — wrap in `mpmath.mpf(\"2808.39148127\")` / `Decimal(\"2808.39148127\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/per_braid_tower_q_hecke.py:38: bare float literal `2808.92113298` — wrap in `mpmath.mpf(\"2808.92113298\")` / `Decimal(\"2808.92113298\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

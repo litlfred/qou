@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/binding_from_level_walk.py",
+  "language": "python",
+  "source_hash": "5122a6407604",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "5122a6407604"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/binding_from_level_walk.py:30: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/binding_from_level_walk.py:85: bare float literal `2.22` — wrap in `mpmath.mpf(\"2.22\")` / `Decimal(\"2.22\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/binding_from_level_walk.py:85: bare float literal `8.48` — wrap in `mpmath.mpf(\"8.48\")` / `Decimal(\"8.48\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/binding_from_level_walk.py:85: bare float literal `7.72` — wrap in `mpmath.mpf(\"7.72\")` / `Decimal(\"7.72\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/binding_from_level_walk.py:85: bare float literal `28.30` — wrap in `mpmath.mpf(\"28.30\")` / `Decimal(\"28.30\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

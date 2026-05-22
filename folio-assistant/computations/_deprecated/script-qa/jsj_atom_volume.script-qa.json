@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/jsj_atom_volume.py",
+  "language": "python",
+  "source_hash": "df09231e2eee",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "df09231e2eee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/jsj_atom_volume.py:57: bare `float(M.volume().real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/jsj_atom_volume.py:57: bare `float(M.volume())` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/jsj_atom_volume.py:37: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/jsj_atom_volume.py:38: bare float literal `8.0` — wrap in `mpmath.mpf(\"8.0\")` / `Decimal(\"8.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/jsj_atom_volume.py:39: bare float literal `0.51099895` — wrap in `mpmath.mpf(\"0.51099895\")` / `Decimal(\"0.51099895\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

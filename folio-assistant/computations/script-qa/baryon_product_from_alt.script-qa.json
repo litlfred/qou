@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/baryon_product_from_alt.py",
+  "language": "python",
+  "source_hash": "a6060bc4cd59",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "a6060bc4cd59"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/baryon_product_from_alt.py:130: bare `float(q0)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/baryon_product_from_alt.py:134: bare float literal `0.10` — wrap in `mpmath.mpf(\"0.10\")` / `Decimal(\"0.10\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/baryon_product_from_alt.py:134: bare float literal `0.93` — wrap in `mpmath.mpf(\"0.93\")` / `Decimal(\"0.93\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/baryon_product_from_alt.py:135: bare float literal `0.12` — wrap in `mpmath.mpf(\"0.12\")` / `Decimal(\"0.12\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/baryon_product_from_alt.py:135: bare float literal `1.05` — wrap in `mpmath.mpf(\"1.05\")` / `Decimal(\"1.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

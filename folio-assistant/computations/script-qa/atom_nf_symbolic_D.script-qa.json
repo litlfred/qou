@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/atom_nf_symbolic_D.py",
+  "language": "python",
+  "source_hash": "d1290075ae9f",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "d1290075ae9f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/atom_nf_symbolic_D.py:53: bare `float(Q0_FLOAT)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atom_nf_symbolic_D.py:76: bare `float(HA_sym.subs(q_sym, _Q0_RATIONAL))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atom_nf_symbolic_D.py:78: bare `float(HA_sym.subs(q_sym, _Q0_RATIONAL))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atom_nf_symbolic_D.py:61: bare float literal `1e-12` — wrap in `mpmath.mpf(\"1e-12\")` / `Decimal(\"1e-12\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atom_nf_symbolic_D.py:62: bare float literal `1e-12` — wrap in `mpmath.mpf(\"1e-12\")` / `Decimal(\"1e-12\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

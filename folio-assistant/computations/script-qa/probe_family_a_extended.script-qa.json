@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_family_a_extended.py",
+  "language": "python",
+  "source_hash": "c2d4f7e90ddb",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "c2d4f7e90ddb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_family_a_extended.py:28: bare `float(M_NUCLEON * HBAR**2 / (VOL_B3 * M_E))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_family_a_extended.py:119: bare float literal `14.10` — wrap in `mpmath.mpf(\"14.10\")` / `Decimal(\"14.10\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_family_a_extended.py:119: bare float literal `7.3` — wrap in `mpmath.mpf(\"7.3\")` / `Decimal(\"7.3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_family_a_extended.py:143: bare float literal `14.10` — wrap in `mpmath.mpf(\"14.10\")` / `Decimal(\"14.10\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_family_a_extended.py:143: bare float literal `.3` — wrap in `mpmath.mpf(\".3\")` / `Decimal(\".3\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

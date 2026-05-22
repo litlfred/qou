@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/hecke_knot_ideal_tracker.py",
+  "language": "python",
+  "source_hash": "2d48a330c206",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "2d48a330c206"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/hecke_knot_ideal_tracker.py:131: bare `float((Q0**n - QI**n) / (Q0 - QI))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/hecke_knot_ideal_tracker.py:46: bare float literal `2.0298832` — wrap in `mpmath.mpf(\"2.0298832\")` / `Decimal(\"2.0298832\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/hecke_knot_ideal_tracker.py:47: bare float literal `2.8281220` — wrap in `mpmath.mpf(\"2.8281220\")` / `Decimal(\"2.8281220\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/hecke_knot_ideal_tracker.py:48: bare float literal `3.1639633` — wrap in `mpmath.mpf(\"3.1639633\")` / `Decimal(\"3.1639633\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/hecke_knot_ideal_tracker.py:49: bare float literal `4.4015175` — wrap in `mpmath.mpf(\"4.4015175\")` / `Decimal(\"4.4015175\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

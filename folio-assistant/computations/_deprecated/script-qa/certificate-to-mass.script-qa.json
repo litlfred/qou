@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/certificate-to-mass.py",
+  "language": "python",
+  "source_hash": "cb9b58ac0869",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "cb9b58ac0869"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/certificate-to-mass.py:61: bare float literal `0.0000` — wrap in `mpmath.mpf(\"0.0000\")` / `Decimal(\"0.0000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:62: bare float literal `1.1121` — wrap in `mpmath.mpf(\"1.1121\")` / `Decimal(\"1.1121\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:63: bare float literal `2.8273` — wrap in `mpmath.mpf(\"2.8273\")` / `Decimal(\"2.8273\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:64: bare float literal `1.7200` — wrap in `mpmath.mpf(\"1.7200\")` / `Decimal(\"1.7200\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:65: bare float literal `0.5700` — wrap in `mpmath.mpf(\"0.5700\")` / `Decimal(\"0.5700\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

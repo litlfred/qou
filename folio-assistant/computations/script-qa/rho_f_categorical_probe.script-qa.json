@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/rho_f_categorical_probe.py",
+  "language": "python",
+  "source_hash": "ed7c0c1feb39",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "ed7c0c1feb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/rho_f_categorical_probe.py:71: bare `float(trm)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/rho_f_categorical_probe.py:110: bare `float(n)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/rho_f_categorical_probe.py:218: bare `float(c0)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/rho_f_categorical_probe.py:76: bare float literal `1.0653062285923891` — wrap in `mpmath.mpf(\"1.0653062285923891\")` / `Decimal(\"1.0653062285923891\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/rho_f_categorical_probe.py:77: bare float literal `0.9232332971695835` — wrap in `mpmath.mpf(\"0.9232332971695835\")` / `Decimal(\"0.9232332971695835\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

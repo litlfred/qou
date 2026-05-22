@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/path_b_open_questions.py",
+  "language": "python",
+  "source_hash": "a2042b295f8c",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "a2042b295f8c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/path_b_open_questions.py:285: bare float literal `7.` — wrap in `mpmath.mpf(\"7.\")` / `Decimal(\"7.\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/path_b_open_questions.py:349: bare float literal `10.4` — wrap in `mpmath.mpf(\"10.4\")` / `Decimal(\"10.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/path_b_open_questions.py:349: bare float literal `10.4` — wrap in `mpmath.mpf(\"10.4\")` / `Decimal(\"10.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/path_b_open_questions.py:354: bare float literal `.4` — wrap in `mpmath.mpf(\".4\")` / `Decimal(\".4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/path_b_open_questions.py:437: bare float literal `5e-3` — wrap in `mpmath.mpf(\"5e-3\")` / `Decimal(\"5e-3\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

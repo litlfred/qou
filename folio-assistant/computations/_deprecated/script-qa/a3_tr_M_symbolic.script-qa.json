@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/a3_tr_M_symbolic.py",
+  "language": "python",
+  "source_hash": "3d326f836541",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "3d326f836541"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/a3_tr_M_symbolic.py:40: bare `float(w['y_lambda'])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/a3_tr_M_symbolic.py:45: bare float literal `1800.0` — wrap in `mpmath.mpf(\"1800.0\")` / `Decimal(\"1800.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/a3_tr_M_symbolic.py:52: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/a3_tr_M_symbolic.py:71: bare float literal `0.10405211867552573` — wrap in `mpmath.mpf(\"0.10405211867552573\")` / `Decimal(\"0.10405211867552573\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/a3_tr_M_symbolic.py:72: bare float literal `0.20654085856226275` — wrap in `mpmath.mpf(\"0.20654085856226275\")` / `Decimal(\"0.20654085856226275\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

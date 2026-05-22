@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/atom_knot_search.py",
+  "language": "python",
+  "source_hash": "9f08b2055359",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "9f08b2055359"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/atom_knot_search.py:147: bare `float(v_raw.real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/atom_knot_search.py:147: bare `float(v_raw)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/atom_knot_search.py:48: bare float literal `2.22456612` — wrap in `mpmath.mpf(\"2.22456612\")` / `Decimal(\"2.22456612\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/atom_knot_search.py:49: bare float literal `8.4817984` — wrap in `mpmath.mpf(\"8.4817984\")` / `Decimal(\"8.4817984\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/atom_knot_search.py:50: bare float literal `7.7180375` — wrap in `mpmath.mpf(\"7.7180375\")` / `Decimal(\"7.7180375\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/hardcoded_literal_audit.py",
+  "language": "python",
+  "source_hash": "82ea041c3646",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "82ea041c3646"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/hardcoded_literal_audit.py:268: bare float literal `1e-3` — wrap in `mpmath.mpf(\"1e-3\")` / `Decimal(\"1e-3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/hardcoded_literal_audit.py:272: bare float literal `1e-3` — wrap in `mpmath.mpf(\"1e-3\")` / `Decimal(\"1e-3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/hardcoded_literal_audit.py:272: bare float literal `0.511` — wrap in `mpmath.mpf(\"0.511\")` / `Decimal(\"0.511\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/hardcoded_literal_audit.py:273: bare float literal `0.51099895` — wrap in `mpmath.mpf(\"0.51099895\")` / `Decimal(\"0.51099895\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/hardcoded_literal_audit.py:279: bare float literal `1e-6` — wrap in `mpmath.mpf(\"1e-6\")` / `Decimal(\"1e-6\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

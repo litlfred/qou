@@ -1,0 +1,26 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/regenerate_y_lambda_mpfr.py",
+  "language": "python",
+  "source_hash": "e6ce4177a9fd",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "e6ce4177a9fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+      }
+    ]
+  }
+}

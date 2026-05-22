@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_c3_taylor_extraction.py",
+  "language": "python",
+  "source_hash": "9a0416ce1e0b",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "9a0416ce1e0b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_c3_taylor_extraction.py:87: bare float literal `1e-10` — wrap in `mpmath.mpf(\"1e-10\")` / `Decimal(\"1e-10\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_c3_taylor_extraction.py:109: bare float literal `2.` — wrap in `mpmath.mpf(\"2.\")` / `Decimal(\"2.\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

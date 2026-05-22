@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/knot-operator-table.py",
+  "language": "python",
+  "source_hash": "e646fe7bc736",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "e646fe7bc736"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/knot-operator-table.py:30: bare float literal `2.029883212819307` — wrap in `mpmath.mpf(\"2.029883212819307\")` / `Decimal(\"2.029883212819307\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/knot-operator-table.py:30: bare float literal `206.768283` — wrap in `mpmath.mpf(\"206.768283\")` / `Decimal(\"206.768283\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/knot-operator-table.py:31: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/knot-operator-table.py:31: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/knot-operator-table.py:32: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

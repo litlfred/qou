@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/term6_full_pole_sum.py",
+  "language": "python",
+  "source_hash": "65aa9994b574",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "65aa9994b574"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/term6_full_pole_sum.py:110: bare float literal `0.05` — wrap in `mpmath.mpf(\"0.05\")` / `Decimal(\"0.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/term6_full_pole_sum.py:199: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/term6_full_pole_sum.py:451: bare float literal `6.` — wrap in `mpmath.mpf(\"6.\")` / `Decimal(\"6.\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/term6_full_pole_sum.py:458: bare float literal `1.11` — wrap in `mpmath.mpf(\"1.11\")` / `Decimal(\"1.11\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/term6_full_pole_sum.py:471: bare float literal `0.05` — wrap in `mpmath.mpf(\"0.05\")` / `Decimal(\"0.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

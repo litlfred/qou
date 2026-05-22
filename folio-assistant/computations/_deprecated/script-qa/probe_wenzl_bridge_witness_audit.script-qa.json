@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/probe_wenzl_bridge_witness_audit.py",
+  "language": "python",
+  "source_hash": "de98b91725e9",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "de98b91725e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/probe_wenzl_bridge_witness_audit.py:86: bare `float(sp.cancel(chi).subs(q, q0).evalf(20))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/probe_wenzl_bridge_witness_audit.py:88: bare `float(y.subs(q, q0).evalf(20))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/probe_wenzl_bridge_witness_audit.py:97: bare `float(sp.cancel(total).subs(q, q0).evalf(30))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/probe_wenzl_bridge_witness_audit.py:212: bare float literal `1.994` — wrap in `mpmath.mpf(\"1.994\")` / `Decimal(\"1.994\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/probe_wenzl_bridge_witness_audit.py:216: bare float literal `1.7339` — wrap in `mpmath.mpf(\"1.7339\")` / `Decimal(\"1.7339\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

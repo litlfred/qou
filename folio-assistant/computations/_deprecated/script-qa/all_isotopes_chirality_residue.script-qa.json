@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/all_isotopes_chirality_residue.py",
+  "language": "python",
+  "source_hash": "7ce36dff22b6",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "7ce36dff22b6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/all_isotopes_chirality_residue.py:60: bare float literal `2.0299` — wrap in `mpmath.mpf(\"2.0299\")` / `Decimal(\"2.0299\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/all_isotopes_chirality_residue.py:61: bare float literal `2.8281` — wrap in `mpmath.mpf(\"2.8281\")` / `Decimal(\"2.8281\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/all_isotopes_chirality_residue.py:62: bare float literal `3.1640` — wrap in `mpmath.mpf(\"3.1640\")` / `Decimal(\"3.1640\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/all_isotopes_chirality_residue.py:63: bare float literal `4.4015` — wrap in `mpmath.mpf(\"4.4015\")` / `Decimal(\"4.4015\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/all_isotopes_chirality_residue.py:64: bare float literal `5.6927` — wrap in `mpmath.mpf(\"5.6927\")` / `Decimal(\"5.6927\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

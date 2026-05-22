@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/fresh_derivation_pn_true_sdp.py",
+  "language": "python",
+  "source_hash": "965204969fd1",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "965204969fd1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/fresh_derivation_pn_true_sdp.py:59: bare float literal `0.9991251252427813` — wrap in `mpmath.mpf(\"0.9991251252427813\")` / `Decimal(\"0.9991251252427813\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/fresh_derivation_pn_true_sdp.py:60: bare float literal `0.8108354875878183` — wrap in `mpmath.mpf(\"0.8108354875878183\")` / `Decimal(\"0.8108354875878183\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/fresh_derivation_pn_true_sdp.py:64: bare float literal `1.845956` — wrap in `mpmath.mpf(\"1.845956\")` / `Decimal(\"1.845956\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/fresh_derivation_pn_true_sdp.py:65: bare float literal `1.493885` — wrap in `mpmath.mpf(\"1.493885\")` / `Decimal(\"1.493885\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/isospin_mass_tower_collapse.py",
+  "language": "python",
+  "source_hash": "767467ef0afa",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "767467ef0afa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/isospin_mass_tower_collapse.py:37: bare `float(_M_E_MEV_MP)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/isospin_mass_tower_collapse.py:41: bare float literal `0.76` — wrap in `mpmath.mpf(\"0.76\")` / `Decimal(\"0.76\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/isospin_mass_tower_collapse.py:47: bare float literal `1.813186209713881` — wrap in `mpmath.mpf(\"1.813186209713881\")` / `Decimal(\"1.813186209713881\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/isospin_mass_tower_collapse.py:47: bare float literal `7.874495793321092` — wrap in `mpmath.mpf(\"7.874495793321092\")` / `Decimal(\"7.874495793321092\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/isospin_mass_tower_collapse.py:48: bare float literal `7.872184876047902` — wrap in `mpmath.mpf(\"7.872184876047902\")` / `Decimal(\"7.872184876047902\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/end-to-end-halflife.py",
+  "language": "python",
+  "source_hash": "04503c74977c",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "04503c74977c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/end-to-end-halflife.py:36: bare float literal `0.51100` — wrap in `mpmath.mpf(\"0.51100\")` / `Decimal(\"0.51100\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/end-to-end-halflife.py:45: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/end-to-end-halflife.py:45: bare float literal `939.565` — wrap in `mpmath.mpf(\"939.565\")` / `Decimal(\"939.565\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/end-to-end-halflife.py:109: bare float literal `0.01861` — wrap in `mpmath.mpf(\"0.01861\")` / `Decimal(\"0.01861\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/end-to-end-halflife.py:109: bare float literal `12.32` — wrap in `mpmath.mpf(\"12.32\")` / `Decimal(\"12.32\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

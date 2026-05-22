@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/coulomb_subtracted_binding.py",
+  "language": "python",
+  "source_hash": "76984cb55236",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "76984cb55236"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/coulomb_subtracted_binding.py:85: bare float literal `1.44` — wrap in `mpmath.mpf(\"1.44\")` / `Decimal(\"1.44\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/coulomb_subtracted_binding.py:118: bare float literal `8.3` — wrap in `mpmath.mpf(\"8.3\")` / `Decimal(\"8.3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/coulomb_subtracted_binding.py:118: bare float literal `12.4` — wrap in `mpmath.mpf(\"12.4\")` / `Decimal(\"12.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/coulomb_subtracted_binding.py:119: bare float literal `8.4` — wrap in `mpmath.mpf(\"8.4\")` / `Decimal(\"8.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/coulomb_subtracted_binding.py:119: bare float literal `12.4` — wrap in `mpmath.mpf(\"12.4\")` / `Decimal(\"12.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}
