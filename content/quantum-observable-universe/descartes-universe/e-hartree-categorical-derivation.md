@@ -165,7 +165,7 @@ Direct test of the round-9 LP-cost factorization lemma yields a
   to the Bring complex (a particular knot on the genus-4 Bring
   surface), not to arbitrary Hecke crossings.
 
-**The Hopf-link → rank-2 → $\alpha^{2}$ argument is therefore
+**The Hopf-link $\to$ rank-2 $\to$ $\alpha^{2}$ argument is therefore
 withdrawn.** The bound-state Markov trace simply doesn't carry
 $\alpha^{2}$ scaling intrinsically.
 
@@ -193,7 +193,7 @@ investigation:
   ruled out by the Skein identity making
   $\sigma_i - \sigma_i^{-1} = h\,\mathbf{1}$ commute with all
   inner automorphisms.
-- Round-9 sharpened 4d: Hopf-link rank-2 → $\alpha^{2}$ — refuted
+- Round-9 sharpened 4d: Hopf-link rank-2 $\to$ $\alpha^{2}$ — refuted
   by direct Markov-trace computation in round 10.
 
 **Remains transported / not derived:**
@@ -463,7 +463,7 @@ candidate mechanism (rounds 1–3, 9, 10, 13).
 **Mechanisms ruled out:**
 - Coupling-parity (rounds 1–3, by Skein).
 - Operator-parity / $\sigma \cdot \varepsilon$ (rounds 1-3).
-- Hopf-link rank-2 → $\alpha^2$ (round 9, refuted in 10).
+- Hopf-link rank-2 $\to$ $\alpha^2$ (round 9, refuted in 10).
 - Leading h-power matching (round 13).
 
 **Remaining open:**
@@ -623,7 +623,7 @@ gives an irrep restriction. The hypothesis (untested):
 
 | $\lambda$ | Carries force-carrier content? |
 |---|---|
-| $(4)$ symmetric | $\sigma_1$ acts as $q$ → $T_{2,9}$-like trace $q^9$ |
+| $(4)$ symmetric | $\sigma_1$ acts as $q$ $\to$ $T_{2,9}$-like trace $q^9$ |
 | $(2,2)$ self-conjugate | three-strand symmetry, possible $T_{3,5}$-like content |
 | other | no obvious force-carrier alignment |
 
@@ -1370,7 +1370,7 @@ in-$h$ coefficient of a single covalent crossing to vanish**.
 
 #### Structural conclusion
 
-Parity-based mechanisms (A, C, C′, σε, …) are **structurally
+Parity-based mechanisms (A, C, C$'$, σε, $\ldots$) are **structurally
 insufficient** for $J^{1}$-vanishing in the molecular Hecke
 algebra $H_n(q)$. The Skein identity is the obstruction: it
 trades a $\sigma$-antisymmetric Hecke generator for a *scalar
@@ -1477,7 +1477,7 @@ itself sensitive to LP-precision artefacts and a more careful
 
 **Status of the conjecture after four rounds.**
 - The $J^{1}$-vanishing framing of the original brief was
-  diagnosed as misdirected: parity-based mechanisms (A, C, C′,
+  diagnosed as misdirected: parity-based mechanisms (A, C, C$'$,
   σε) are structurally insufficient because of the Skein
   identity. No "linear-Stark vanishing" categorical analogue is
   required; the $\alpha^{2}$ scaling is dimensional/virial.
@@ -1543,7 +1543,7 @@ outputs picks up exactly two factors of $\alpha_{EM}$.
 #### Standard physics translation (derivation sketch)
 
 Categorical $\Phi_1$ has dimension of action ($\hbar$). Mapping
-action × inverse-length gives energy. The natural categorical
+action $\times$ inverse-length gives energy. The natural categorical
 length scale at a covalent bond is the **categorical Bohr radius**
 $a_{0}^{\mathrm{cat}}$, set by balance of the EM force-carrier
 coupling $\alpha_{EM}$ against the electron mass $m_{e}$:
@@ -1664,7 +1664,7 @@ gives:
 |---|---:|---:|
 | $(4)$ | $+0.018$ | $+0.028$ |
 | $(3,1)$ | $-0.136$ | $-0.195$ |
-| $(2,2)$ | $0$ | $+0.048$ ← **unzeroed** |
+| $(2,2)$ | $0$ | $+0.048$ $\leftarrow$ **unzeroed** |
 | $(2,1,1)$ | $+0.111$ | $+0.063$ |
 | $(1,1,1,1)$ | $-0.010$ | $-0.006$ |
 

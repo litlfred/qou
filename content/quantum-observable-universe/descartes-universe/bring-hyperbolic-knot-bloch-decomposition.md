@@ -241,7 +241,7 @@ The decomposition search for $2/(3\pi)$ therefore has a
 **concrete finite candidate set** at each tier:
 
 1. **Tier 0** (atlas-named): $\{4_1, \mathcal{B}_3, 6_2, 8_{11}, L_{6a4}\}$
-   — rank ≤ 4 lattice, immediate falsifiability check.
+   — rank $\le$ 4 lattice, immediate falsifiability check.
 2. **Tier 1** (3-braid hyperbolic): all closures of NF-product
    words in $H_3(q)$ — ~30 prime knots, manageable enumeration.
 3. **Tier 2** (genus-4 embeddable): all hyperbolic knots through

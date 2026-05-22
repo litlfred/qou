@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.lean"
   },
   "source_hashes": {
-    "md": "44a2e1f831f0",
+    "md": "220e32f015b1",
     "ts": "9e60f86c9900",
     "lean": "1b252a45e73b"
   },
@@ -410,20 +410,39 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "5503bdc3264a",
+          "md": "7c8b89ca7230",
           "ts": "9e60f86c9900",
           "lean": "1b252a45e73b"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:29:51.882Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:168: **The Hopf-link → rank-2 → $\\alpha^{2}$ argument is therefore | quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:196: - Round-9 sharpened 4d: Hopf-link rank-2 → $\\alpha^{2}$ — refuted | quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:466: - Hopf-link rank-2 → $\\alpha^2$ (round 9, refuted in 10). | quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:626: | $(4)$ symmetric | $\\sigma_1$ acts as $q$ → $T_{2,9}$-like trace $q^9$ | | quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:1373: Parity-based mechanisms (A, C, C′, σε, …) are **structurally"
+        "evidence": "content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:1373: Parity-based mechanisms (A, C, C′, σε, …) are **structurally | content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:1480: diagnosed as misdirected: parity-based mechanisms (A, C, C′, | content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:1546: action × inverse-length gives energy. The natural categorical"
+      },
+      {
+        "field_hash": {
+          "md": "220e32f015b1",
+          "ts": "9e60f86c9900",
+          "lean": "1b252a45e73b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T18:34:07.964Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -567,5 +586,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T15:21:17.723Z"
+  "updated_at": "2026-05-22T18:34:07.964Z"
 }

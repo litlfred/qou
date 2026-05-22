@@ -111,8 +111,8 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
 
 1. **Mass** $= \mathrm{Vol}(S^3 \setminus K) / \hbar_q^2$.
    Only moves that change Vol change the mass.
-   - R2 ($q$-deformed) and R1 and Skein change Vol → change mass.
-   - R3, far-comm, Markov I preserve Vol → preserve mass.
+   - R2 ($q$-deformed) and R1 and Skein change Vol $\to$ change mass.
+   - R3, far-comm, Markov I preserve Vol $\to$ preserve mass.
 
 2. **Binding energy** $= \mathcal{S}_q^{\mathrm{gauge}}$ evaluated
    on the Gröbner--Shirshov normal form.

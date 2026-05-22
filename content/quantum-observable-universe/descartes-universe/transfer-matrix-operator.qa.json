@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/transfer-matrix-operator.lean"
   },
   "source_hashes": {
-    "md": "0125c6a7d3d4",
+    "md": "a514b0978736",
     "ts": "b074a0f7b390",
     "lean": "0fd7a61c96da"
   },
@@ -415,13 +415,32 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:29:51.882Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/transfer-matrix-operator.md:237: This is a 2×2 matrix with polynomial entries in $q$."
+        "evidence": "content/quantum-observable-universe/descartes-universe/transfer-matrix-operator.md:237: This is a 2×2 matrix with polynomial entries in $q$."
+      },
+      {
+        "field_hash": {
+          "md": "a514b0978736",
+          "ts": "b074a0f7b390",
+          "lean": "0fd7a61c96da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T18:34:07.964Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -578,5 +597,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:34:07.964Z"
 }

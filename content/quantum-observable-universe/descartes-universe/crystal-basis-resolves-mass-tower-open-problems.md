@@ -88,7 +88,7 @@ RSK / hook-content computation [`khovanovlauda2009`].
 
 The α_5 magnitude open in `Term7ShellCorrectionClass` reduces to:
 *compute the crystal-vertex sum at height 6 for $A = 4$ ($^4$He),
-$A = 5$ ($^5$Li, $^5$He), …, multiply by the Wedderburn weight
+$A = 5$ ($^5$Li, $^5$He), $\ldots$, multiply by the Wedderburn weight
 $w_\lambda(q_0)$, and read off the AME-residual amplitude.* No new
 mathematical machinery; just the finite crystal computation.
 

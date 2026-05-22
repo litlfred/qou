@@ -280,7 +280,7 @@ The GB curvature-rank stratification suggests
 $y_{\mathrm{cov}}^{*} \sim \alpha_{EM}^{(\text{rank})}$ where
 "rank" counts independent EM force-carrier insertions. A
 covalent bond shares two electrons (Pauli + singlet), each
-mediated by one EM exchange, giving **rank 2 → $\alpha^{2}$**.
+mediated by one EM exchange, giving **rank 2 $\to$ $\alpha^{2}$**.
 
 **Limitation honestly noted:** atomic spectra (single electron)
 also scale as $\alpha^{2}$, but a single atom has only *one*
@@ -303,7 +303,7 @@ $\alpha^2$ rather than $\alpha^k$ for other $k$.
 
 The conjecture is closer to closure than after round 7, but the
 absolute-scale step still requires either a uniqueness lemma
-(option 4e) or further work on the curvature-rank → $\alpha$-power
+(option 4e) or further work on the curvature-rank $\to$ $\alpha$-power
 mapping (sharpening 4d to handle atomic as well as covalent
 binding).
 

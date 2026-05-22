@@ -176,7 +176,7 @@ yielded the following:
 - **4b (yes) — relative spacing recovered.** Categorical shell
   ratios $(2k+1)^{-2}$ match Bohr $1/n^2$ exactly with
   $n = 2k+1$. Pure Hecke, no transport.
-- **4d partial.** Covalent rank-2 → $\alpha^2$ works for
+- **4d partial.** Covalent rank-2 $\to$ $\alpha^2$ works for
   covalent binding but doesn't explain atomic $\alpha^2$ (single
   electron systems also at $\alpha^2$ but only one EM coupling).
 
@@ -191,7 +191,7 @@ closure but the universal-scale step still requires either:
 1. **Option 4e (functorial uniqueness)** — prove a uniqueness
    lemma for $\rho_\infty$ via $q \to 1$ smoothness; reduces
    empirical input to "match standard QED at one point".
-2. **Sharpening 4d** — extend curvature-rank → $\alpha$-power
+2. **Sharpening 4d** — extend curvature-rank $\to$ $\alpha$-power
    to atomic single-electron case; would require identifying the
    "second electron" categorical structure that gives the
    second factor of $\alpha$ in atomic binding (perhaps the
@@ -208,14 +208,14 @@ $\alpha^2$ scaling).
 
 > ### Caveat — Round 9 (withdrawn)
 >
-> The Hopf-link → 2-crossings → $\alpha^2$ argument presented
+> The Hopf-link $\to$ 2-crossings $\to$ $\alpha^2$ argument presented
 > below was **refuted in Round 10** (see
 > [`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation)
 > "Round 10 — LP-cost factorization REFUTED"). Direct computation
 > gives $\mathrm{tr}_M(\sigma_1^2) = h\,z + 1 \approx 1.10$ at
 > $q_0$ — i.e. $O(1)$, not $O(\alpha^2)$. The Hopf-link Hecke
 > generators carry Markov weight $z$, not $\alpha_{EM}$, so the
-> "each crossing → 1 $\alpha$ factor" mapping fails.
+> "each crossing $\to$ 1 $\alpha$ factor" mapping fails.
 >
 > The Round-9 argument is preserved here as an **investigation
 > record**, not as an active closure route. Skip to Round 10
@@ -231,8 +231,8 @@ $(p, e)$ pair**, and the Hopf link's minimum crossing number is
 |---|---|---:|---|
 | Free $e^-$ + free $p$ | 0 | 0 | $\alpha^0$ (no binding) |
 | Single H atom | 1 | 2 | $\alpha^2$ ✓ |
-| H₂ molecule | 2 (one per atom) | 4 (per pair) | $\alpha^2$ × shell-factor ✓ |
-| He atom | 1 (proton + 2 e) | $\geq 2$ | $\alpha^2$ × shell-factor ✓ |
+| H$_{2}$ molecule | 2 (one per atom) | 4 (per pair) | $\alpha^2$ $\times$ shell-factor ✓ |
+| He atom | 1 (proton + 2 e) | $\geq 2$ | $\alpha^2$ $\times$ shell-factor ✓ |
 
 **Categorical statement (sharpened 4d):**
 

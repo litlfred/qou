@@ -12,7 +12,7 @@ and the categorical definitions:
 |-----------|---------|:---:|
 | Which nuclei are stable | $p^*(A)$ from the beta-stability line at $q$ | From $q$ |
 | Sensitivity to $q$ | $\partial \ln \Gamma / \partial \ln q \approx 48$ | Exact |
-| Ground-state ordering | Minimum $\Phi_q$ over braid representatives | Computed (A ≤ 14 exhaustive) |
+| Ground-state ordering | Minimum $\Phi_q$ over braid representatives | Computed (A $\le$ 14 exhaustive) |
 | Markov trace | $\mathrm{tr}(\mathcal{N}) = \prod_i \hat{V}_i$ | **Theorem** |
 | Trace sign structure | $\mathrm{sign}(\mathrm{tr})$ per nucleus | Exact (Singular) |
 | Hecke step count | $\Delta(\text{R2 steps}) = -1$ universally | Computed |

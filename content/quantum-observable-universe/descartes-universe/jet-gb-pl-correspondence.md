@@ -1,4 +1,4 @@
-**Proposition (GB ↔ jet ↔ PL keystone).**
+**Proposition (GB $\leftrightarrow$ jet $\leftrightarrow$ PL keystone).**
 
 *Let $H_n(R, q)$ carry the Gröbner–Shirshov filtration
 $\{J^p(q)\}_{p \geq 0}$

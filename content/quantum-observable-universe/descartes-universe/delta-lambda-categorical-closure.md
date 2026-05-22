@@ -130,14 +130,14 @@ deuteron binding $B(D) = 2.22456$ MeV at the required precision:
 - Empirical best-single-block $\Delta_{[5,1]}(D) \approx -22.96$.
 - My closure form predicts $\Delta_{[5,1]}(D) \approx |c_3| \approx 0.260$
   (using $k = 3$ at the principal pair).
-- Ratio: ≈ **88×**, missing a large structural factor.
+- Ratio: $\approx$ **88$\times$**, missing a large structural factor.
 
 Plausible missing factors (not tested in this PR):
 
 - $1/\hbar_q^2 \approx 102$ (Borromean / Planck-tick rescaling) —
-  gives ≈ 26.5, close to 22.96.
+  gives $\approx$ 26.5, close to 22.96.
 - A dimension-of-irrep factor $\dim_q(\lambda)$ — the standard partition
-  $[5,1]$ has $\dim_q = 5$, giving ≈ 1.3, too small alone.
+  $[5,1]$ has $\dim_q = 5$, giving $\approx$ 1.3, too small alone.
 - Combined: $\dim_q(\lambda) / \hbar_q^2 \approx 510$, too large.
 
 **Honest assessment.** The bare closure form is **not numerically
@@ -162,7 +162,7 @@ diagnostic; the **normalization** needs a categorical refinement.
 
 Phase 2 will pursue path (1) — the per-$\lambda$ discriminant
 factorization is the categorical refinement most consistent with
-the algebraic-residue framework, and the empirical 88× factor
+the algebraic-residue framework, and the empirical 88$\times$ factor
 suggests a non-trivial block-decomposition is present.
 
 ## Risk register
@@ -206,5 +206,5 @@ class DeltaLambdaCategoricalClosure (R : Type*) [CommRing R] where
         sum_residues_at_principal_orbit lambda K
 ```
 
-Concrete instances will be constructed for specific atoms (D, T, ³He)
+Concrete instances will be constructed for specific atoms (D, T, ${}^{3}$He)
 once Phase 1b verifies the formula numerically.

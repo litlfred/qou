@@ -34,7 +34,7 @@ links = $4$ gluon crossings) as the minimum-action
 stabiliser.  The neutron needs more gluon than the proton
 ($4$ vs $2$) because the $\mathfrak{d}\mathfrak{d}$ crossing
 creates deeper instability ($\mathrm{tr}_M = -0.132$ vs
-$-0.006$).  Total: $13$ crossings ($6$ B₃ + $3$ quarks
+$-0.006$).  Total: $13$ crossings ($6$ B$_{3}$ + $3$ quarks
 + $4$ gluon).
 
 **Step 3: neutron NF (with Hopf gluon).**

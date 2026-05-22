@@ -121,7 +121,7 @@ generator connecting $m = 2$ (leptons) and $m = 3$ (quarks)
 |----------|-------|---------------------|
 | Winding | $(3, 5)$ | Bridges $m = 3$ (quark) and $n = 5$ (second generation) |
 | Genus | $4$ (saturating) | Near-boundary of embeddability |
-| Crossings | $10$ | High complexity → weak coupling |
+| Crossings | $10$ | High complexity $\to$ weak coupling |
 | Hyperbolic volume | $0$ | Zero bare mass from volume; mass from crossings |
 | Knot group | $\langle x, y \mid x^3 = y^5 \rangle$ | Intertwines 3-color and 5-fold winding |
 

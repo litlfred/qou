@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.lean"
   },
   "source_hashes": {
-    "md": "9c22952d7cf9",
+    "md": "ee39ec885320",
     "ts": "4254eed105f4",
     "lean": "5cab846ca5a1"
   },
@@ -448,20 +448,39 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "9c22952d7cf9",
+          "md": "851f037a7a95",
           "ts": "4254eed105f4",
           "lean": "5cab846ca5a1"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:29:51.882Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:179: - **4d partial.** Covalent rank-2 → $\\alpha^2$ works for | quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:194: 2. **Sharpening 4d** — extend curvature-rank → $\\alpha$-power | quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:211: > The Hopf-link → 2-crossings → $\\alpha^2$ argument presented | quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:218: > \"each crossing → 1 $\\alpha$ factor\" mapping fails. | quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:234: | H₂ molecule | 2 (one per atom) | 4 (per pair) | $\\alpha^2$ × shell-factor ✓ |"
+        "evidence": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:234: | H$_{2}$ molecule | 2 (one per atom) | 4 (per pair) | $\\alpha^2$ × shell-factor ✓ | | content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:235: | He atom | 1 (proton + 2 e) | $\\geq 2$ | $\\alpha^2$ × shell-factor ✓ |"
+      },
+      {
+        "field_hash": {
+          "md": "ee39ec885320",
+          "ts": "4254eed105f4",
+          "lean": "5cab846ca5a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T18:34:07.964Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -686,5 +705,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:34:07.964Z"
 }

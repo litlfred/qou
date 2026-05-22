@@ -15,7 +15,7 @@ needed.
 **Regime 2: Symbolic Gröbner--Shirshov with stripping ($O(A^3)$).**
 The full NF is needed for the Pauli factor $F_{\mathrm{Pauli}}$,
 the coral content, and the per-length weight distribution.  With
-inductive quotient stripping at strand boundaries (I₈ + I₉
+inductive quotient stripping at strand boundaries (I$_{8}$ + I$_{9}$
 applied after each strand), the intermediate term count stays
 bounded at $O(A^2)$ per strand, giving $O(A^3)$ total.  All
 coefficients are exact Laurent polynomials in $\mathbb{Z}[t, t^{-1}]$.
@@ -29,7 +29,7 @@ observable.
 
 ## Inductive quotient chaining
 
-The key optimisation: at each strand boundary, apply I₉
+The key optimisation: at each strand boundary, apply I$_{9}$
 (chain collapse) and accumulate the **Pauli data** of stripped
 terms as symbolic polynomials.  The surviving element has only
 $\sim A$ terms (the optimal basis).  The next strand's
@@ -56,7 +56,7 @@ characteristic pattern:
    The term count grows to $\sim 14{,}000$ (for $A = 8$) or
    $\sim 230{,}000$ (for $A = 9$).  This takes $\leq 10$ seconds.
 
-2. **Strand 8 boundary**: the I₉ strip reduces $\sim 230{,}000$
+2. **Strand 8 boundary**: the I$_{9}$ strip reduces $\sim 230{,}000$
    terms to $\sim 9$ terms.  The stripped terms' Pauli data is
    accumulated exactly.
 
@@ -97,7 +97,7 @@ result goes back to pending for re-checking.
 
 ### Batch quotient stripping ($O(A \cdot L_{\max})$)
 
-The I₉ strip processes all terms at each length level in one
+The I$_{9}$ strip processes all terms at each length level in one
 pass, from longest to shortest.  At length $\ell$: collect all
 terms whose prefix (length $\ell - 1$) exists; remove them in
 batch.  This is $O(n)$ per length level, $O(n \cdot L_{\max})$
@@ -116,7 +116,7 @@ without mid-crossing stripping).
 
 At each strand boundary, the engine reports the **most frequent
 suffix patterns** (sub-words appearing in many terms).  These
-are candidates for new structural ideals beyond I₈ and I₉.
+are candidates for new structural ideals beyond I$_{8}$ and I$_{9}$.
 High-frequency patterns that persist across strands indicate
 universal structural operations that could be added to the
 quotient ideal, further reducing term counts.

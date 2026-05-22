@@ -87,7 +87,7 @@ stability at every intermediate step) and selects the one
 with minimum $|\mathrm{tr}_M|$.  Among $40$ feasible
 solutions, the optimum is $\sigma_0 \to \sigma_0$: two
 bare $\sigma_0$ crossings, giving $11$ crossings total
-($6$ B₃ + $3$ quarks + $2$ gluon) with
+($6$ B$_{3}$ + $3$ quarks + $2$ gluon) with
 $|\mathrm{tr}_M| = 0.027$.
 
 **Step 3: proton NF (with Hopf gluon).**
@@ -110,7 +110,7 @@ $$
 The dominant term is $e^- \approx +1.022$ — the Hopf
 gluon link redistributes the NF weight from $\sigma_1$
 to the trefoil channel.  The Hopf link content
-$L_\pm \approx \pm 0.11$ is larger than the B₃-only
+$L_\pm \approx \pm 0.11$ is larger than the B$_{3}$-only
 value ($\pm 0.045$), reflecting the additional gluon
 binding.  The construction is LP stable at every
 intermediate step.
