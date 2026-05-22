@@ -75,11 +75,18 @@ tau_hat_n_proton_realisation.py:272
 
 Verified at dps=50: `mp.mpf(repr(Q_FLOAT))` vs
 `mp.mpf(Q_50_DIGIT_STR)` differ by **6.78 × 10⁻¹⁷** relative —
-exactly the f64 epsilon. This is the precision floor propagating
-through downstream MPFR computes. Switching all 8 callsites to
-`Q_50_DIGIT_STR` is the **concrete fix for Q6**; expected to drop
-the worst cross-check residual from ~3.7e-15 to ~1e-49 (true MPFR
-floor at 50 dps) for the affected paths.
+exactly the f64 epsilon. This was the precision floor propagating
+through downstream MPFR computes prior to the Q6 fix.
+
+**Status (2026-05-22 update).** Q6 fix has LANDED — the 8 affected
+call-sites were migrated to `Q_50_DIGIT_STR` in PR #749 (e.g.
+`canonical_tr_m_via_chi_cache.py:108`). A repo-wide search for
+`mp.mpf(repr(Q_FLOAT))` now returns zero hits in production paths.
+The 1ppb gate is green at all 8 atoms with the worst residual
+below 1e-13 per the [L1 dashboard](../../folio-assistant/computations/onepb-status-dashboard.witness.json).
+This subsection is retained as historical context for the v6
+workplan; new precision work should reference the dashboard, not
+this paragraph.
 
 ## 2. Since v5 (2026-05-17 evening → 2026-05-18 afternoon)
 

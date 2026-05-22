@@ -77,13 +77,15 @@ crossings (sign == 0); each averaged crossing expands to
 crossing in the worst case. For ⁴He at H_12 with 16+ averaged
 crossings, the worst-case post-expansion basis is 2¹⁶ × |mixed basis|.
 The empirical sparsity at canonical atomic words is **not yet
-measured** — it requires extending `braid_to_hecke` to handle sign
-== 0 (see "Known limitation" below).
+measured** but the GP path now does support sign == 0 (see
+"Averaged-crossing handling — implemented" below).
 
-## Known limitation: averaged-crossing handling
+## Averaged-crossing handling — implemented
 
-`tools/hecke-engine/src/geck_pfeiffer.rs:203 braid_to_hecke` does
-not handle sign == 0:
+`tools/hecke-engine/src/geck_pfeiffer.rs` provides
+`braid_to_hecke_with_avg` + `hecke_mul_ts_averaged_right` (sign == 0
+path); the public `braid_to_hecke` delegates to these. Original
+prototype (kept for historical context):
 
 ```rust
 pub fn braid_to_hecke(n: usize, word: &[(i32, u32)]) -> HeckeElement {

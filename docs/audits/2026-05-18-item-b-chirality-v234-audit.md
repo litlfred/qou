@@ -20,7 +20,12 @@
 > 2. **pn-counting discrepancy at T/³He** between
 >    `term5_aK_audit.aK_closed_form` (adjacency count → 1.209) and
 >    `prop:chirality-dual-space-derivation`'s tabulation (amphichiral
->    1+/1− → 0.956). Still actionable; logged for a separate audit.
+>    1+/1− → 0.956). **Resolved** in this branch: closure documented
+>    in [`2026-05-18-chirality-pn-counting-finding2.md`](2026-05-18-chirality-pn-counting-finding2.md);
+>    `term5_aK_audit.aK_closed_form` now derives signs from the
+>    canonical `(Z, N)` pattern and the witness has been regenerated
+>    to reflect the corrected closed-form values for tritium and
+>    helium-3.
 >
 > What was **dropped** from this branch's plan:
 >
@@ -158,10 +163,12 @@ visibility.
 - Audit doc (this file): closes the V2/V3/V4 thread by deferring to
   upstream PR #683's resolution.
 - Code change (`term5_aK_audit.py`): V4 retirement
-  ([`71234ce1`](https://github.com/litlfred/qou/commit/71234ce1)).
-- Witness: unchanged from main (the pre-existing
-  `term5-aK-audit.witness.json` covers V1 for the spectrum + V2/V3/V4
-  for {p, n}).
+  ([`71234ce1`](https://github.com/litlfred/qou/commit/71234ce1)) +
+  Finding 2 closure (`aK_closed_form` now derives signs from canonical
+  `(Z, N)` pattern).
+- Witness regenerated (`term5-aK-audit.witness.json`) with the
+  corrected closed-form values for tritium and helium-3; the prior
+  rows for V1 across the spectrum + V2/V3/V4 for {p, n} are preserved.
 
 ## Related blocks / audits
 

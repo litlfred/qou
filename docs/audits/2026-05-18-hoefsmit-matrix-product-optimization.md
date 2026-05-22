@@ -276,6 +276,9 @@ Steps 4+5 are **research-grade** and target ⁶Li and beyond
 ## Status
 
 **Documentation-only audit** — no Rust code changes in this branch.
-Next concrete step is implementing candidate G (confinement block
-fusion) which is mechanical and low-risk. Candidates B and C
-follow naturally; C is the gate for the bigger payoff at n ≥ 15.
+Next concrete step is implementing candidate B (inner rayon over the
+dim outer loop), which is mechanical and low-risk. Candidate C-gate
+follows as the highest-leverage investment for n ≥ 12. Candidate G
+(confinement block fusion) was deprioritised after the §G revisit
+showed it requires atom batching for a real win and is not the
+simple mechanical optimisation initially scoped.

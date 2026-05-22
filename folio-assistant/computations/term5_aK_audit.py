@@ -250,11 +250,16 @@ def aK_closed_form(Z: int, N: int) -> float:
     from paper_six_term_isotope_sweep import (
         chirality_signs_for_isotope_inferred,
     )
+    from mpmath import mp, mpf
     signs = chirality_signs_for_isotope_inferred(Z, N)
-    h_val = float(_h_num)
-    a_K = 1.0
+    # Carry the product in mpmath at the global dps (typically 50)
+    # so the closed-form value matches the 50-dps witness baseline;
+    # cast to float only at the return boundary (caller comparison
+    # is float-keyed against the legacy witness).
+    h_val = mpf(repr(_h_num))
+    a_K = mpf("1")
     for s in signs:
-        a_K *= 1.0 + s * h_val
+        a_K *= mpf("1") + s * h_val
     return float(a_K)
 
 
@@ -282,7 +287,8 @@ def main() -> int:
             "for deuteron in this implementation). Use `--variants V1` "
             "for fast incremental backfill of the canonical-Hecke variant "
             "across the spectrum. (V4 was retired 2026-05-18 — it was "
-            "byte-identical to V2; passing 'V4' raises ValueError.)"
+            "byte-identical to V2; passing 'V4' (or any other unknown "
+            "variant) exits non-zero with an error message.)"
         ),
     )
     ap.add_argument(
@@ -308,6 +314,14 @@ def main() -> int:
         )
         return 2
     requested_variants = [v for v in raw_variants if v in {"V1", "V2", "V3"}]
+    unknown = [v for v in raw_variants if v not in {"V1", "V2", "V3"}]
+    if unknown:
+        print(
+            f"ERROR: unknown variant(s) in --variants: {unknown!r}. "
+            f"Supported: V1, V2, V3. (V4 was retired 2026-05-18.)",
+            flush=True,
+        )
+        return 2
     if not requested_variants:
         print("ERROR: no valid variants in --variants", flush=True)
         return 2
