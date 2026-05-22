@@ -290,7 +290,7 @@ def tr_M_atomic_rust_recursive(Z: int, N: int, *,
 def tr_M_atomic_rust_full(Z: int, N: int, *,
                             dps: int = 50,
                             include_inter: bool = True,
-                            use_prefix_cache: bool = True):
+                            use_prefix_cache: bool = False):
     """**Tier 1.A — full Markov-trace pipeline entirely in Rust + MPFR.**
 
     Single PyO3 call: `pyhecke_native.tr_m_atomic_mpfr` (v0.6.0+)
@@ -316,6 +316,21 @@ def tr_M_atomic_rust_full(Z: int, N: int, *,
 
     Cross-checks bit-identical to
     `laurent_q_trace.tr_M_atomic_lq.evaluate_mpf(Q_50_DIGIT_STR, dps)`.
+
+    ``use_prefix_cache=False`` (default) — single-shot all-Rust
+    path.  This is the production path; matches the bench numbers
+    in ``docs/audits/2026-05-22-rust-laurent-q-reduce-results.md``.
+
+    ``use_prefix_cache=True`` — **experimental, currently a net
+    loss** per the 2026-05-22 sweep bench (see audit doc).  Loads
+    the longest cached signed-word prefix's reduced state via the
+    ``_prefix_cache`` infra and resumes from it.  Correctness is
+    intact (cross-check at 1e-49), but the FFI marshalling cost of
+    shipping a multi-MB cached state into Rust exceeds the saving
+    from skipping the prefix's reduce work — even on the headline
+    5Li → 6Li transition (cache 72.2 s vs cold 64.4 s).  Kept
+    available for follow-up investigation (move the cache into
+    Rust process memory to skip the FFI roundtrip).
 
     Falls back via ``NotImplementedError`` if the trace recursion
     hits Case C (multiple top-1 in segment) on any reduced word —
