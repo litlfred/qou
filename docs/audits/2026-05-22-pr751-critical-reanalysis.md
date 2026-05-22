@@ -241,6 +241,34 @@ upgrade from "PL re-entry abscissa" (numerically wrong) to
 "algebraic-Galois data" (numerically right but not derived) is a
 narrative shift, not a structural derivation.
 
+### 3.6 Status update from PR #888 (2026-05-22)
+
+While this branch was preparing, main landed PR #888
+"truth-in-naming `LAMBDA_*_FITTED`" (commits `760078d0e`,
+`56c4dcaa8`), which:
+
+- Renames the literal twin `LAMBDA_PROTON_DOC = 2.4599527869` →
+  `LAMBDA_PROTON_FITTED_FROM_CODATA` (and same for neutron), with
+  an unambiguous CAL-4 VIOLATION banner at the top of
+  `m_p_borromean_verification_50dps.py`.
+- Records that `bring_bloch_tier5_search_m_p.py` PSLQ search
+  failed for both proton and neutron — so the named replacement
+  target `prop:lambda-scale-bring-bloch-identity` is now known to
+  be empirically unsolvable in the tested hyperbolic-knot bases.
+  Per the tier5 conclusion, the q-dilog tower is the remaining
+  research path.
+- Adds `fitted_labelled_canonical_audit.py` to catch the literal
+  pattern (scripts claiming "substrate" while consuming hardcoded
+  CODATA-derived constants).
+
+**The curve-fit twin this PR addresses (`(4-q)/(4q+3)`) is
+complementary, not redundant**: the literal audit catches
+`mp.mpf("<10+ digit literal>")` patterns, but it does **not**
+catch a Möbius pencil $a(q) = (\alpha - \beta q)/(\gamma q + \delta)$
+that produces the same numerical value at $q_0$ via fitting.
+Recommendation §6 item 3 of this audit (add a curve-fit-ansatz
+detector) remains open.
+
 ### 3.4 What PR #701 already concluded
 
 PR #701's R&D 4 deep exploration (file
