@@ -14,7 +14,7 @@ Empirical data on $y_0^*$ from
 as proved by [`prop:spin-involution-lp-dual-invariance`](#prop:spin-involution-lp-dual-invariance).
 
 **Non-separability of $g(q) \cdot h(A, |T_3|)$.** The ratio
-$T/D$ depends on $q$ non-trivially (21 $\to$ 55 across the physical
+$T/D$ depends on $q$ non-by definition (21 $\to$ 55 across the physical
 regime). This rules out the simplest separable closed form
 
 $$
@@ -83,18 +83,18 @@ $y_0^*(A, |T_3|)$ as a sum of crystal-graph weights.
 **Witness-able next probes.**
 
 1. **${}^4\mathrm{He}$ probe** ($A = 4, |T_3| = 0$, $n = 12$;
-   sympy expensive). *Hypothesis*:
-   $y_0^*({}^4\mathrm{He}) / y_0^*(D)$ is $q$-rational — both
-   sit on the $|T_3| = 0$ branch — distinct from the
-   $|T_3| = \tfrac{1}{2}$ branch ($T, {}^3\mathrm{He}$).
+ sympy expensive). *Hypothesis*:
+ $y_0^*({}^4\mathrm{He}) / y_0^*(D)$ is $q$-rational — both
+ sit on the $|T_3| = 0$ branch — distinct from the
+ $|T_3| = \tfrac{1}{2}$ branch ($T, {}^3\mathrm{He}$).
 
 2. **$q \to 0^+$ crystal sweep** at $q \in \{1/2, 1/4, \ldots\}$
-   to approach the Kashiwara crystal limit.
+ to approach the Kashiwara crystal limit.
 
 3. **Demazure-sliced LP**: solve the LP restricted to a
-   single Demazure sub-crystal (chosen by the
-   $\max(y_\lambda \cdot |\chi^\lambda|)$ selector of #619)
-   to test (e).
+ single Demazure sub-crystal (chosen by the
+ $\max(y_\lambda \cdot |\chi^\lambda|)$ selector of #619)
+ to test (e).
 
 **No closed form is asserted as proved.** This remark
 consolidates the empirical structure (mirror-pair invariance

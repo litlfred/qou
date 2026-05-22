@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/mass-tower-syt-cells.md"
   },
   "source_hashes": {
-    "md": "7a83367bdf02",
+    "md": "246c95140096",
     "ts": "0d0650fa1527"
   },
   "criteria": {
@@ -359,19 +359,19 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "7a83367bdf02",
+          "md": "246c95140096",
           "ts": "0d0650fa1527"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/mass-tower-syt-cells.md:7: is most naturally expressed in the JM / SYT cell basis. | quantum-observable-universe/braids-and-knots/mass-tower-syt-cells.md:34: [jet-brane form](#rem\\:mass-endomorphism-jet-tower) is naturally | quantum-observable-universe/braids-and-knots/mass-tower-syt-cells.md:164: form is not merely a basis change: it captures SYT-content"
+        "reviewed_at": "2026-05-22T20:40:21.603Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-scholarly-default": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T20:40:21.603Z"
 }

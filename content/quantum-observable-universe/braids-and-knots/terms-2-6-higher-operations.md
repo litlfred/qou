@@ -12,9 +12,9 @@ This proposition sketches concrete avenues to close both via
 $A$ carries a canonical **Gerstenhaber algebra** structure:*
 
 - *Cup product $\cup \colon HH^p \otimes HH^q \to HH^{p+q}$
-  (graded-commutative, associative).*
+ (graded-commutative, associative).*
 - *Gerstenhaber bracket $[-, -] \colon HH^p \otimes HH^q \to HH^{p+q-1}$
-  (graded Lie bracket of degree $-1$).*
+ (graded Lie bracket of degree $-1$).*
 
 *For $A = H_n(R, q)$, the cup product gives a ring structure on
 $\bigoplus_p HH^p$, and the Gerstenhaber bracket measures the
@@ -35,18 +35,18 @@ $$
 $$
 
 *Expansion: $\Phi_q(z) = \sum_k z^k / (q;q)_k$ (Cauchy's $q$-exponential),
-with $(q;q)_k = \prod_{j=1}^k(1 - q^j)$.  The $z^k$ coefficient
+with $(q;q)_k = \prod_{j=1}^k(1 - q^j)$. The $z^k$ coefficient
 $1/(q;q)_k$ is the $q$-binomial coefficient tracking partition
 counts at the $k$-th level of the flag.*
 
 **Derivation sketch.**
 *Each generator $[\sigma_i] \in HH^1$ pairs with
 $\mathrm{tr}_M$ via the Markov trace at degree $1$:
-$\langle \mathrm{tr}_M, [\sigma_i]\rangle = z$.  The $k$-fold
+$\langle \mathrm{tr}_M, [\sigma_i]\rangle = z$. The $k$-fold
 cup product $[\sigma_i]^{\cup k}$ lives in $HH^k$ (higher
 filtration stratum) and its Markov-trace pairing is
 $z \cdot q^{-(k-1)} \cdot (\text{weight})$ by the recursive
-Hecke relation.  Summing over $k$ with the $(q;q)_k$ normalisation
+Hecke relation. Summing over $k$ with the $(q;q)_k$ normalisation
 gives the full $\Phi_q$ kernel.*
 
 **DECISIVE NEGATIVE RESULT: $HH^1(H_3(R, q)) = 0$.**
@@ -54,10 +54,10 @@ gives the full $\Phi_q$ kernel.*
 *Direct symbolic computation in `hochschild_h3.py`:*
 
 - *dim Der$(H_3(R, q)) = 3$ (total derivations, linear-algebra nullspace
-  of $216$ constraint equations on $36$ matrix entries).*
+ of $216$ constraint equations on $36$ matrix entries).*
 - *dim Inner$(H_3(R, q)) = 3$ (inner derivations $[x, \cdot]$ span).*
 - ***$HH^1 = \text{Der}/\text{Inner} = 3 - 3 = \mathbf{0}$***
-  at generic $q$.*
+ at generic $q$.*
 
 *This is consistent with $H_3(R, q)$ being **semisimple** over
 $\mathbb{R}[q, q^{-1}]$ away from roots of unity: semisimple algebras
@@ -66,7 +66,7 @@ is inner).*
 
 *Consequence: **the cup-product tower hypothesis for Term 2 is null**.
 Since $HH^1(H_3(R, q)) = 0$, there is no non-trivial class $[\sigma_0]$
-to take cup products of.  The Cauchy kernel $\Phi_q$ in Term 2
+to take cup products of. The Cauchy kernel $\Phi_q$ in Term 2
 **does not** come from Hochschild cup products on $H_3(R, q)$.*
 
 **Corrected framework.**
@@ -80,40 +80,40 @@ $$
   \quad (\text{graded pieces, NOT } HH^p(H_3(R, q))).
 $$
 
-*These are distinct from Hochschild cohomology classes.  My earlier
+*These are distinct from Hochschild cohomology classes. My earlier
 claim that Terms 2, 3 were "pages paired with cup product" confused
 two different homological objects:*
 
 1. ***Spectral sequence on filtered algebra*** (what we have):
-   pages $E_r^{p, *}$ are graded pieces $\mathrm{gr}^p H_n(R, q)$;
-   pairing with $\mathrm{tr}_M$ is direct projection.
+ pages $E_r^{p, *}$ are graded pieces $\mathrm{gr}^p H_n(R, q)$;
+ pairing with $\mathrm{tr}_M$ is direct projection.
 2. ***Hochschild cohomology $HH^*$*** (what I conflated):
-   classes are outer-derivation cocycles; cup product is on
-   cochains; $HH^1(H_3(R, q)) = 0$ generically so no tower exists.
+ classes are outer-derivation cocycles; cup product is on
+ cochains; $HH^1(H_3(R, q)) = 0$ generically so no tower exists.
 
 **Where Term 2's Cauchy kernel actually comes from.**
 
 *The $\Phi_q$ Cauchy expansion $\Phi_q(z) = \sum z^k/(q;q)_k$ is
-NOT from HH cup products.  Possible sources:*
+NOT from HH cup products. Possible sources:*
 
 1. ***Cyclic cohomology $HC^*(H_3(R, q))$*** (Connes, Tsygan):
-   Markov trace is a cyclic cocycle, so it lives in $HC^0$; the
-   S-operator $HC^0 \to HC^2$ creates higher cyclic classes that
-   DO have non-trivial structure even when $HH^*$ is trivial.
-   Cauchy kernel may arise from the periodicity $\mathrm{Ph}(\mathrm{tr}_M)$
-   in the cyclic complex.
+ Markov trace is a cyclic cocycle, so it lives in $HC^0$; the
+ S-operator $HC^0 \to HC^2$ creates higher cyclic classes that
+ DO have non-trivial structure even when $HH^*$ is trivial.
+ Cauchy kernel may arise from the periodicity $\mathrm{Ph}(\mathrm{tr}_M)$
+ in the cyclic complex.
 2. ***Deformation resolution***: Treating $H_3(R, q)$ as a deformation
-   of $\mathbb{R}[S_3]$, $\Phi_q$ arises in the deformation
-   cohomology $HH^*(\mathbb{R}[S_3], \mathbb{R}[S_3])_q$ at
-   non-trivial order in $q - 1$. **TESTED, FAILS.**
+ of $\mathbb{R}[S_3]$, $\Phi_q$ arises in the deformation
+ cohomology $HH^*(\mathbb{R}[S_3], \mathbb{R}[S_3])_q$ at
+ non-trivial order in $q - 1$. **TESTED, FAILS.**
 3. ***Root-of-unity limit***: At $q = \zeta_\ell$, $H_n(R, q)$ becomes
-   non-semisimple and $HH^1 \neq 0$; Cauchy expansion could arise
-   from the $q \to \zeta$ limit of filtered trace pairings.
+ non-semisimple and $HH^1 \neq 0$; Cauchy expansion could arise
+ from the $q \to \zeta$ limit of filtered trace pairings.
 4. ***Quantum group $U_q(\mathfrak{sl}_2)$ representation theory***:
-   Via Schur–Weyl duality, $H_n(R, q)$ is paired with $U_q(\mathfrak{sl}_2)$
-   acting on $V^{\otimes n}$; $\Phi_q$ appears as a character of
-   specific $U_q$-modules (unipotent / Verma structure).  Most
-   plausible natural source.
+ Via Schur–Weyl duality, $H_n(R, q)$ is paired with $U_q(\mathfrak{sl}_2)$
+ acting on $V^{\otimes n}$; $\Phi_q$ appears as a character of
+ specific $U_q$-modules (unipotent / Verma structure). Most
+ plausible natural source.
 
 ***Option 2 (deformation cohomology) ruled out.***
 *Direct computation in
@@ -122,10 +122,10 @@ NOT from HH cup products.  Possible sources:*
 - *$\dim \mathrm{Der}(\mathbb{R}[S_3]) = 3 = \dim \mathrm{Inner}(\mathbb{R}[S_3])$*
 - *$HH^1(\mathbb{R}[S_3]) = 0$*
 - *$HH^2(\mathbb{R}[S_3]) = 0$ by Burghelea's theorem: for finite
-  group $G$ over a characteristic-$0$ field,
-  $HH^p(k[G]) = \bigoplus_{[C]} H^p(C_G(C); k)$, and group
-  cohomology of finite $G$ with $\mathbb{R}$/$\mathbb{C}$
-  coefficients vanishes in positive degrees (Maschke).*
+ group $G$ over a characteristic-$0$ field,
+ $HH^p(k[G]) = \bigoplus_{[C]} H^p(C_G(C); k)$, and group
+ cohomology of finite $G$ with $\mathbb{R}$/$\mathbb{C}$
+ coefficients vanishes in positive degrees (Maschke).*
 
 *The Hecke deformation $H_3(R, q)$ exists despite $HH^2 = 0$ because
 $H_3(R, q) \cong \mathbb{R}[S_3]$ as abstract $\mathbb{R}[q, q^{-1}]$-algebras
@@ -142,10 +142,10 @@ Options 2 and the HH* cup-product route are both CLOSED.*
 - *Option 1 (cyclic cohomology $HC^*$): untested, plausible.*
 - *Option 3 (root-of-unity limit): untested, plausible.*
 - *Option 4 (quantum group $U_q(\mathfrak{sl}_2)$): **most natural**
-  — $\Phi_q(z) = \prod(1 - q^{-k}z)^{-1}$ is the character of
-  the irreducible Verma module for $U_q(\mathfrak{sl}_2)$ acting
-  on the Fock space; Schur–Weyl duality then transports this
-  structure to $H_n(R, q)$.*
+ — $\Phi_q(z) = \prod(1 - q^{-k}z)^{-1}$ is the character of
+ the irreducible Verma module for $U_q(\mathfrak{sl}_2)$ acting
+ on the Fock space; Schur–Weyl duality then transports this
+ structure to $H_n(R, q)$.*
 
 **CORRECTION 1: colored Jones / Kashaev / Habiro IS the algebraic source.**
 
@@ -168,15 +168,15 @@ $$
 $$
 
 *where $a_m(K)$ are integer-coefficient Laurent polynomials and
-$(q; q)_m = \prod_{k=1}^m (1 - q^k)$ is the $q$-Pochhammer.  The
+$(q; q)_m = \prod_{k=1}^m (1 - q^k)$ is the $q$-Pochhammer. The
 sum converges in the Habiro ring for all $q$ in the closure of
 roots of unity AND extends to generic $q$ by evaluation.*
 
 **Immediate identification.**
 *The $q$-Pochhammer structure $(q; q)_m$ is **exactly** the
 denominator of the $\Phi_q(z) = \sum_n z^n / (q; q)_n$ Taylor
-expansion.  So the **inverse cyclotomic structure** of the Habiro
-unified invariant IS the $\Phi_q$ Cauchy kernel.  The
+expansion. So the **inverse cyclotomic structure** of the Habiro
+unified invariant IS the $\Phi_q$ Cauchy kernel. The
 identification is:*
 
 $$
@@ -203,15 +203,15 @@ $$
 [mass endomorphism conjecture](#conj:mass-endomorphism).*
 
 *For our purposes: the **infinite-$N$ limit of colored Jones**
-gives the $\Phi_q$ expansion.  Each colored-Jones evaluation at
+gives the $\Phi_q$ expansion. Each colored-Jones evaluation at
 level $N$ corresponds to a specific Wedderburn component of
-$H_n(R, q)$ at that level.  Summing across all $N$ reproduces the
+$H_n(R, q)$ at that level. Summing across all $N$ reproduces the
 brane-tower Φ_q-kernel.*
 
 **Algebraic source.**
 
 *Term 2 is derivable from the algebraically-established colored
-Jones / Habiro framework.  The paper's
+Jones / Habiro framework. The paper's
 [mass endomorphism conjecture](#conj:mass-endomorphism) and
 [algebraic quantum volume](#def:algebraic-quantum-volume)
 explicitly use these structures for the volume-conjecture side;
@@ -232,10 +232,10 @@ the same machinery gives Term 2's Cauchy kernel.*
 
 **CORRECTION 2: Wedderburn weights ARE used inside Term 2 already.**
 
-*The search above asked the wrong question.  Term 2 does NOT need
+*The search above asked the wrong question. Term 2 does NOT need
 a new algebraic source for $\Phi_q$ as a "character" — the
 **Wedderburn weights already enter** inside the argument of
-$\Phi_q$.  From
+$\Phi_q$. From
 [mass endomorphism tower](#prop:mass-endomorphism-tower):*
 
 $$
@@ -260,7 +260,7 @@ $$
 
 *and generalised in
 [Frobenius universal](#thm:frobenius-codim-universal) for arbitrary
-$H_n(R, q)$.  The "tower" $\Phi_q(|\hat V_i^{\mathrm{full}}|)$ is
+$H_n(R, q)$. The "tower" $\Phi_q(|\hat V_i^{\mathrm{full}}|)$ is
 therefore:*
 
 $$
@@ -285,7 +285,7 @@ $$
 $$
 
 *where $w_\lambda^{(k)} = \dim_q(\lambda)^2 / [k]_q!$ are the
-Wedderburn weights at level $k$.  This limit is exactly the
+Wedderburn weights at level $k$. This limit is exactly the
 cluster-algebra / quantum-dilogarithm generating function that
 the paper's exceptional-divisor blow-up resolves.*
 
@@ -293,15 +293,15 @@ the paper's exceptional-divisor blow-up resolves.*
 
 - *Terms 1, 3, 4: FINITE Wedderburn sums at level $k = n$.*
 - *Term 2, 6: INFINITE Wedderburn sums in the $k \to \infty$ limit,
-  expressed compactly as $\Phi_q$ and cyclotomic residues.*
+ expressed compactly as $\Phi_q$ and cyclotomic residues.*
 - *Term 5: Wedderburn-weighted ribbon character
-  (chirality coefficient).*
+ (chirality coefficient).*
 
 *No new algebraic source is needed; all terms use the same
 [three-parameters Wedderburn](#prop:three-parameters-wedderburn)
-machinery, either at finite or infinite level.  The earlier search
+machinery, either at finite or infinite level. The earlier search
 for "Where does $\Phi_q$ come from?" in Hochschild/deformation
-cohomology was **looking in the wrong place**: $\Phi_q$ is simply
+cohomology was **looking in the wrong place**: $\Phi_q$ is 
 an infinite Wedderburn sum, and the Wedderburn weights themselves
 have been algebraically derived from the start.*
 
@@ -310,7 +310,7 @@ have been algebraically derived from the start.*
 *Status revised: Term 2 IS algebraically derived, via
 [mass endomorphism tower](#prop:mass-endomorphism-tower) +
 [three-parameters Wedderburn](#prop:three-parameters-wedderburn)
-+ [Frobenius universal](#thm:frobenius-codim-universal).  The
++ [Frobenius universal](#thm:frobenius-codim-universal). The
 "open" status in earlier blocks was due to mis-framing: I was
 searching for a new algebraic home for $\Phi_q$ when the
 Wedderburn-based derivation was already in place.*
@@ -319,7 +319,7 @@ Wedderburn-based derivation was already in place.*
 $E_\infty$ page of the GB spectral sequence corresponds to the
 infinite-level Wedderburn sum** — i.e., the translation between
 "level-$k$ truncation of Jones–Wenzl trace" and "pairing with
-$E_\infty^{\ell, *}$ for $\ell \geq 1$".  This is a reindexing
+$E_\infty^{\ell, *}$ for $\ell \geq 1$". This is a reindexing
 question, not a missing-derivation question.*
 
 **Previous naive proxy test (for reference).**
@@ -339,13 +339,13 @@ $1/(q; q)_k$.*
 
 *Ratios vary wildly (sign flips, non-monotone), and
 $\mathrm{tr}_M(\sigma_0^k)$ **oscillates** rather than matching
-the $\Phi_q$ generating-function growth.  The hypothesis
+the $\Phi_q$ generating-function growth. The hypothesis
 "$\mathrm{tr}_M(\sigma_0^k) \propto 1/(q;q)_k$" is FALSE.*
 
 **Why the shortcut is wrong.**
 
 *Cup product in Hochschild cohomology $HH^*(A, A)$ is NOT algebra
-multiplication.  For a cochain $f \in HH^p$ represented by a map
+multiplication. For a cochain $f \in HH^p$ represented by a map
 $A^{\otimes p} \to A$ and $g \in HH^q$ represented by
 $A^{\otimes q} \to A$, the cup product $f \cup g \in HH^{p+q}$ is
 defined by*
@@ -361,7 +361,7 @@ A class $[\sigma_0] \in HH^1$ would be represented by a specific
 $1$-cocycle $f_{\sigma_0}: A \to A$ (an outer derivation), and
 $[\sigma_0]^{\cup k}$ is a $k$-cocycle $(f_{\sigma_0})^{\cup k}$
 paired against $a_1 \otimes \cdots \otimes a_k$ as a specific
-iterated-product.  Identifying this cocycle explicitly in
+iterated-product. Identifying this cocycle explicitly in
 $HH^1(H_3(R, q))$ is a non-trivial computation — NOT equivalent to
 $\sigma_0^k$.*
 
@@ -370,16 +370,16 @@ $\sigma_0^k$.*
 *To rigorously verify Term 2 as a cup-product tower:*
 
 1. *Compute $HH^1(H_3(R, q))$ over $\mathbb{R}[q, q^{-1}]$ — the
-   space of outer derivations modulo inner.  This is a
-   finite-rank $R$-module.*
+ space of outer derivations modulo inner. This is a
+ finite-rank $R$-module.*
 2. *Identify the class $[\sigma_0] \in HH^1$ as a specific
-   outer-derivation cocycle $f_{\sigma_0}$.*
+ outer-derivation cocycle $f_{\sigma_0}$.*
 3. *Compute $(f_{\sigma_0})^{\cup k} \in HH^k$ for $k = 1, 2, 3, \ldots$
-   via the Hochschild cochain formula.*
+ via the Hochschild cochain formula.*
 4. *Evaluate the pairing
-   $\langle \mathrm{tr}_M, (f_{\sigma_0})^{\cup k}\rangle \in \mathbb{R}[q, q^{-1}]$.*
+ $\langle \mathrm{tr}_M, (f_{\sigma_0})^{\cup k}\rangle \in \mathbb{R}[q, q^{-1}]$.*
 5. *Compare to $\Phi_q$ Cauchy coefficients with the correct
-   normalisation.*
+ normalisation.*
 
 *This is a **standard finite-dimensional Hochschild-cohomology
 computation**, but requires machinery (cochain complex, cup
@@ -401,7 +401,7 @@ right object.*
 *Four candidate prefix conventions have been tested (three upstream
 + one GB-filtration in
 [jet-prefix GB filtration](#prop:jet-prefix-gb-filtration));
-**all fail**.  We propose that Term 6 is structurally **not** a
+**all fail**. We propose that Term 6 is structurally **not** a
 prefix-word product but is instead the **root-of-unity residue
 contribution** already captured by
 [GB residue spectral sum](#prop:gb-residue-spectral-sum).*
@@ -426,7 +426,7 @@ Terms 2, 3 as the dominant $\zeta_1 = 1$ pole).*
 $a_k(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta_k) / \sum_\lambda w_\lambda \dim \mathrm{Res}^{H_k}_{H_3} V_\lambda$
 has no algebraic match against the higher-strata $E_\infty^{\ell \geq 3}$
 pages of the spectral sequence — consistent with the four failed
-tests.  Meanwhile, the **cyclotomic** formula DOES correspond
+tests. Meanwhile, the **cyclotomic** formula DOES correspond
 to higher $E_\infty$ strata (via the residue-spectral-sum
 derivation in
 [GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
@@ -436,26 +436,26 @@ prefix product; the correct identification is with root-of-unity
 residues summed over all $\ell \geq 2$.*
 
 **Caveat.**
-*This is a structural proposal, not a proof.  It requires:*
+*This is a structural proposal, not a proof. It requires:*
 
 1. *Confirming that the cyclotomic sum for $\ell \geq 2$ reproduces
-   the empirical Term 6 corrections needed to close the $A \geq 3$
-   binding errors (typically $5\%$-$20\%$ from the BW+$\chi$
-   + shell).*
+ the empirical Term 6 corrections needed to close the $A \geq 3$
+ binding errors (typically $5\%$-$20\%$ from the BW+$\chi$
+ + shell).*
 2. *Rigorously identifying $E_\infty^{\ell, *}$ for $\ell \geq 3$
-   with specific ribbon-residue combinations via the Cauchy
-   kernel of Term 2.*
+ with specific ribbon-residue combinations via the Cauchy
+ kernel of Term 2.*
 
 *If confirmed, the unified mass formula collapses from 6 terms to
 **5 independent structural pieces**:*
 
 1. *Descended $|\mathrm{tr}_M|$ (Term 1)*
 2. *Brane tower $\sum \Phi_q(|\hat V_i|) + z^2 \sum \Phi_q(|\hat V_i \hat V_j|)$
-   (Terms 2 + 3, combined as Cauchy kernel tower on $HH^{\geq 1}$)*
+ (Terms 2 + 3, combined as Cauchy kernel tower on $HH^{\geq 1}$)*
 3. *Frobenius co-Casimir $m_e \cdot \tau(C_{\dim_q})$ (Term 4)*
 4. *Chirality / ribbon twist $a_K$ (Term 5)*
 5. *Higher-stratum residues (what was Term 6, now = cyclotomic
-   residue sum at $\zeta_\ell$ for $\ell \geq 2$)*
+ residue sum at $\zeta_\ell$ for $\ell \geq 2$)*
 
 *A much cleaner structural story.*
 
@@ -480,11 +480,11 @@ $$
 $$
 
 *where $\mathcal{R}_{\mathrm{rib}}$ denotes the chirality-couplable piece (e.g.,
-$B_{\mathrm{bulk}}$ in the BW+$\chi$ form).  Four structurally
+$B_{\mathrm{bulk}}$ in the BW+$\chi$ form). Four structurally
 distinct pieces, not six.*
 
 **Caveat.**
-*All of this is proposed, not proven.  The cup-product tower
+*All of this is proposed, not proven. The cup-product tower
 derivation for Term 2 and the root-of-unity residue
 identification for Term 6 are **concrete computational
 targets** but have not been verified for any nontrivial case.
@@ -493,10 +493,10 @@ They are the natural next steps.*
 **Computational tasks, prioritized.**
 
 1. *Compute $[\sigma_0]^{\cup k}$ for $k = 1, 2, 3$ in $HH^*(H_3(R, q))$
-   over $\mathbb{R}[q, q^{-1}]$; verify Markov-trace pairings
-   match $\Phi_q$ Taylor coefficients.*
+ over $\mathbb{R}[q, q^{-1}]$; verify Markov-trace pairings
+ match $\Phi_q$ Taylor coefficients.*
 2. *Compute cyclotomic residue at $\zeta_2 = -1$ for D's
-   atomic braid; compare to residual $5$–$20\%$ binding errors
-   at $A \geq 3$.*
+ atomic braid; compare to residual $5$–$20\%$ binding errors
+ at $A \geq 3$.*
 3. *If Term 2 + Term 6 unification holds, the 6-term formula
-   reduces to the 4-term boxed form above.*
+ reduces to the 4-term boxed form above.*

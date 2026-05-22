@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.lean"
   },
   "source_hashes": {
-    "md": "2289b8c3ff30",
+    "md": "0d2672c5e929",
     "ts": "a6e7aebb4a5e",
     "lean": "5952d413603e"
   },
@@ -463,20 +463,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "2289b8c3ff30",
+          "md": "0d2672c5e929",
           "ts": "a6e7aebb4a5e",
           "lean": "5952d413603e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.md:104: $-1$ eigenspace (antisymmetric) is mapped to itself non-trivially. | quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.md:144: *$d_r$ for $r \\geq 3$ acts trivially (the filtration has depth 4: | quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.md:166: just the degree-1 Markov trace of the surviving class.*"
+        "reviewed_at": "2026-05-22T20:40:21.603Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-scholarly-default": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:40:21.603Z"
 }

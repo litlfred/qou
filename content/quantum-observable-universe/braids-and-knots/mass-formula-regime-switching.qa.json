@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.lean"
   },
   "source_hashes": {
-    "md": "450d0d259dc6",
+    "md": "1f8cc34bb259",
     "ts": "dcb1c86b7b98",
     "lean": "072d39aa8605"
   },
@@ -461,20 +461,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "450d0d259dc6",
+          "md": "1f8cc34bb259",
           "ts": "dcb1c86b7b98",
           "lean": "072d39aa8605"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.md:123: *The Schur–Weyl pipeline cleanly describes $A = 2$ because:*"
+        "reviewed_at": "2026-05-22T20:40:21.603Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-scholarly-default": [
@@ -682,5 +682,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:40:21.603Z"
 }

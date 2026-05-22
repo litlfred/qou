@@ -99,25 +99,25 @@ sensitive to $\lvert\mu\rvert$ as $k$ grows).
 **Rules in:**
 
 * The Wedderburn-decomposition of the brane-tower operator is the
-  **correct level of structure** at which to formulate $n_\star$ —
-  not a single scalar invariant per atom.
+ **correct level of structure** at which to formulate $n_\star$ —
+ not a single scalar invariant per atom.
 * The eigenvalue-magnitude profile of $\rho_\lambda(\beta_\mathfrak{H})$
-  carries the multiplicity information that scalar substrate
-  invariants miss.
+ carries the multiplicity information that scalar substrate
+ invariants miss.
 
 **Rules out:**
 
 * Any *uniform* $n_\star \in \mathbb{N}$ per atom (closed at uniform
-  $k$ for at most $2/3$ of $\{D, T, {}^3\mathrm{He}\}$).
+ $k$ for at most $2/3$ of $\{D, T, {}^3\mathrm{He}\}$).
 * Any rule constructed from scalar partitions of $(\ell, n_0, k, m)$
-  alone (the four-tuple's $m$ is per-atom, not per-partition).
+ alone (the four-tuple's $m$ is per-atom, not per-partition).
 * **Any partition-shape-only selector.** The Hoefsmit content
-  spread $\Delta c_{\max}(\lambda)$ test
-  ([probe-hoefsmit-content-selector.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-hoefsmit-content-selector.witness.json))
-  refutes content-spread argmax for all 3 atoms: empirical dominants
-  $\{[2,2,1,1], [6,3], [5,4]\}$ have spreads $\{4, 6, 5\}$, while
-  the partition-only argmax of spread is the single-row / single-
-  column family with spread $= n - 1$.
+ spread $\Delta c_{\max}(\lambda)$ test
+ ([probe-hoefsmit-content-selector.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-hoefsmit-content-selector.witness.json))
+ refutes content-spread argmax for all 3 atoms: empirical dominants
+ $\{[2,2,1,1], [6,3], [5,4]\}$ have spreads $\{4, 6, 5\}$, while
+ the partition-only argmax of spread is the single-row / single-
+ column family with spread $= n - 1$.
 
 ## Writhe accounting (audit)
 
@@ -142,18 +142,18 @@ $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$ **directly**, without an
 explicit $(-q)^{3w/2}$ Kauffman correction. Consequently:
 
 * The eigenvalue spectra $\{\mu_a^{(\lambda)}\}$ in #638's probe
-  are the spectra of the **writhe-encoded** operator
-  $\rho_\lambda(\beta_\mathfrak{H})$ — different writhes produce
-  different spectra even at the same $\lambda$ and $q_0$.
+ are the spectra of the **writhe-encoded** operator
+ $\rho_\lambda(\beta_\mathfrak{H})$ — different writhes produce
+ different spectra even at the same $\lambda$ and $q_0$.
 * This is why ${}^3\mathrm{He}$'s spectrum at $[5, 4]$ differs from
-  $T$'s spectrum at the same $\lambda$: $(Z, N) = (2, 1)$ vs $(1, 2)$
-  gives different p–n / n–n crossing patterns and hence different
-  writhes, producing different eigenvalue magnitudes (${}^{3}$He max
-  $\lvert\mu\rvert \approx 10.69$ vs $T$'s $\approx 8.23$).
+ $T$'s spectrum at the same $\lambda$: $(Z, N) = (2, 1)$ vs $(1, 2)$
+ gives different p–n / n–n crossing patterns and hence different
+ writhes, producing different eigenvalue magnitudes (${}^{3}$He max
+ $\lvert\mu\rvert \approx 10.69$ vs $T$'s $\approx 8.23$).
 * The candidate SDP-active-set selector (above) reads the writhe-
-  encoded SDP output and therefore inherits the writhe-dependence
-  automatically — no separate writhe normalization is needed in
-  the selector definition.
+ encoded SDP output and therefore inherits the writhe-dependence
+ automatically — no separate writhe normalization is needed in
+ the selector definition.
 
 The half-Hecke p–n interpolant $(1.0, -h/2)$ is a framework choice
 (it corresponds to a sign-mixed isospin crossing in the categorical
@@ -205,66 +205,66 @@ dependence observation above:
 > **closed-form structural rule** in terms of substrate data
 > $(q_0, \beta_\mathfrak{H}, \lambda)$ — without empirical
 > evaluation of the eigenvalue spectrum, but explicitly
-> consuming the braid word $\beta_\mathfrak{H}$, not just the
+> consuming the braid word $\beta_\mathfrak{H}$, not the
 > partition $\lambda$ in isolation.*
 
 Candidate routes (all $(q, \beta)$-aware):
 
 * **(Most promising) SDP active-set / shadow-price selector.** The
-  operator-selection SDP of
-  [prop:operator-selection-lp](#prop:operator-selection-lp) —
-  routed through `lp_dual_solver.solve_psd_operator_selection_sdp(t, G, n_target)`
-  per CLAUDE.md §"LP / SDP duals — first-class infra" — produces,
-  for inputs $(q_0, \beta_\mathfrak{H})$, a primal-dual pair whose
-  **dual** carries:
-  - a shadow price $y_0^\star$ on the net constraint,
-  - per-block shadow prices $y_\lambda^\star \geq 0$ on the
-    Wedderburn Frobenius-positivity constraints,
-  - an **active set** $\mathrm{Active} = \{\lambda : y_\lambda^\star > 0\}$
-    of binding blocks.
+ operator-selection SDP of
+ [prop:operator-selection-lp](#prop:operator-selection-lp) —
+ routed through `lp_dual_solver.solve_psd_operator_selection_sdp(t, G, n_target)`
+ per CLAUDE.md §"LP / SDP duals — first-class infra" — produces,
+ for inputs $(q_0, \beta_\mathfrak{H})$, a primal-dual pair whose
+ **dual** carries:
+ - a shadow price $y_0^\star$ on the net constraint,
+ - per-block shadow prices $y_\lambda^\star \geq 0$ on the
+ Wedderburn Frobenius-positivity constraints,
+ - an **active set** $\mathrm{Active} = \{\lambda : y_\lambda^\star > 0\}$
+ of binding blocks.
 
-  The natural candidate for the per-partition selector is:
+ The natural candidate for the per-partition selector is:
 
-  $$
+ $$
     \mathrm{isMaxEigSpectrum}(\lambda)
     \;\stackrel{?}{=}\;
     \lambda = \mathop{\mathrm{argmax}}_{\lambda' \in \mathrm{Active}}
     \; y_{\lambda'}^\star.
   $$
 
-  This is substrate-only (no eigenvalue evaluation), $(q_0, \beta)$-dependent
-  (the SDP inputs), and **already infrastructure-supported**: the SDP
-  emits the required dual fields per the LP / SDP first-class-infra
-  contract (`y_star`, `active_set`, `duality_gap`). Testable directly
-  against PR #639's empirical dominants $\{[2,2,1,1], [6,3], [5,4]\}$
-  by running the SDP at each atom's braid word and reading off the
-  argmax of $y_\lambda^\star$.
+ This is substrate-only (no eigenvalue evaluation), $(q_0, \beta)$-dependent
+ (the SDP inputs), and **already infrastructure-supported**: the SDP
+ emits the required dual fields per the LP / SDP first-class-infra
+ contract (`y_star`, `active_set`, `duality_gap`). Testable directly
+ against PR #639's empirical dominants $\{[2,2,1,1], [6,3], [5,4]\}$
+ by running the SDP at each atom's braid word and reading off the
+ argmax of $y_\lambda^\star$.
 
-  Predicted alignment: the dominant partition $\lambda_\mathrm{dom}$
-  identified empirically by max-$\lvert\mu\rvert$ should equal
-  $\mathrm{argmax}_\lambda y_\lambda^\star$ — both measure
-  "where the operator's binding-energy demand concentrates," one
-  via the spectrum, the other via the LP shadow price. The
-  prop:mass-coefficient-shadow-price linkage between BW coefficients
-  and SDP shadow prices (per the existing LP/SDP infra) supports
-  the structural equivalence.
+ Predicted alignment: the dominant partition $\lambda_\mathrm{dom}$
+ identified empirically by max-$\lvert\mu\rvert$ should equal
+ $\mathrm{argmax}_\lambda y_\lambda^\star$ — both measure
+ "where the operator's binding-energy demand concentrates," one
+ via the spectrum, the other via the LP shadow price. The
+ prop:mass-coefficient-shadow-price linkage between BW coefficients
+ and SDP shadow prices (per the existing LP/SDP infra) supports
+ the structural equivalence.
 
 * **Hoefsmit hook-content asymptotic along a reduced braid word.**
-  The maximum eigenvalue of $\rho_\lambda(\sigma_i)$ in the
-  Hoefsmit seminormal form is bounded by a hook-content product
-  over the Young diagram of $\lambda$. Iterating along a braid
-  word's reduced expression $\beta = \sigma_{i_1}^{\varepsilon_1}
+ The maximum eigenvalue of $\rho_\lambda(\sigma_i)$ in the
+ Hoefsmit seminormal form is bounded by a hook-content product
+ over the Young diagram of $\lambda$. Iterating along a braid
+ word's reduced expression $\beta = \sigma_{i_1}^{\varepsilon_1}
   \cdots \sigma_{i_\ell}^{\varepsilon_\ell}$ gives an a-priori
-  upper bound on $\max \lvert\mu(\rho_\lambda(\beta))\rvert$ — the
-  bound is $\beta$-dependent (through the index sequence
-  $i_1, \ldots, i_\ell$) and $q_0$-dependent (through the
-  Hoefsmit matrix entries), matching the structural shape needed.
+ upper bound on $\max \lvert\mu(\rho_\lambda(\beta))\rvert$ — the
+ bound is $\beta$-dependent (through the index sequence
+ $i_1, \ldots, i_\ell$) and $q_0$-dependent (through the
+ Hoefsmit matrix entries), matching the structural shape needed.
 * **Type-B-folded-crystal weight asymptotic** (the natural next
-  refinement of [audit-2026-05-11-type-b-fold-depth-n-star.md](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-11-type-b-fold-depth-n-star.md)).
+ refinement of [audit-2026-05-11-type-b-fold-depth-n-star.md](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-11-type-b-fold-depth-n-star.md)).
 * **Symbolic action of $\beta$ in the Kashiwara crystal.** The
-  combinatorial action of the braid word on Young tableaux may
-  identify the dominant partition without numerical eigenvalue
-  evaluation.
+ combinatorial action of the braid word on Young tableaux may
+ identify the dominant partition without numerical eigenvalue
+ evaluation.
 
 Closure of this open form would constitute the structural lift
 formula of [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) — the missing piece flagged in
@@ -291,7 +291,7 @@ The Gram $G_{wv} = \mathrm{tr}_M(\sigma_w \cdot \sigma_v)$ in the
 six-element reduced-word basis $\{e, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\sigma_0\}$
 at $q_0 = 1.109978595554181\ldots$ (50 dps):
 
-|   | $e$ | $\sigma_0$ | $\sigma_1$ | $\sigma_0\sigma_1$ | $\sigma_1\sigma_0$ | $\sigma_0\sigma_1\sigma_0$ |
+| | $e$ | $\sigma_0$ | $\sigma_1$ | $\sigma_0\sigma_1$ | $\sigma_1\sigma_0$ | $\sigma_0\sigma_1\sigma_0$ |
 |---|---:|---:|---:|---:|---:|---:|
 | $e$ | $1.000$ | $0.499$ | $0.499$ | $0.249$ | $0.249$ | $0.551$ |
 | $\sigma_0$ | $0.499$ | $1.104$ | $0.249$ | $0.551$ | $0.551$ | $0.365$ |
@@ -303,22 +303,22 @@ at $q_0 = 1.109978595554181\ldots$ (50 dps):
 **Structural findings**:
 
 1. **All 15 off-diagonal entries are non-zero.** Max magnitude
-   $G_{\sigma_0\sigma_1, \sigma_1\sigma_0} = 1.220$ — actually
-   *larger* than the diagonal $G_{\sigma_0\sigma_1, \sigma_0\sigma_1} = 0.365$.
-   The σ-basis is overcomplete with respect to the Markov bilinear form.
+ $G_{\sigma_0\sigma_1, \sigma_1\sigma_0} = 1.220$ — actually
+ *larger* than the diagonal $G_{\sigma_0\sigma_1, \sigma_0\sigma_1} = 0.365$.
+ The σ-basis is overcomplete with respect to the Markov bilinear form.
 2. **Symmetric** (Markov-trace cyclicity): $G_{wv} = G_{vw}$ for all
-   pairs, confirmed to numerical precision.
+ pairs, confirmed to numerical precision.
 3. **Substrate-only**: every entry is a $\mathbb{Z}[q^{\pm 1}]$ polynomial in $q$
-   evaluated at $q_0$ via the Wenzl bridge
+ evaluated at $q_0$ via the Wenzl bridge
 
-   $$
+ $$
      G_{wv}(q_0) = \sum_{\lambda \vdash 3} y_\lambda(q_0) \cdot
        \mathrm{tr}_{V_\lambda}\!\bigl(\rho_\lambda(\sigma_w \cdot \sigma_v)\bigr),
    $$
 
-   with $y_\lambda(q_0)$ from the canonical Jones-Markov machinery
-   and $\rho_\lambda(\sigma_w \sigma_v)$ from Hoefsmit seminormal
-   matrix products.
+ with $y_\lambda(q_0)$ from the canonical Jones-Markov machinery
+ and $\rho_\lambda(\sigma_w \sigma_v)$ from Hoefsmit seminormal
+ matrix products.
 
 ### Operator-selection LP in $\sigma_w$ basis
 
@@ -348,16 +348,16 @@ per-cell ranking at $(\lambda, T)$-resolution — strictly finer than
 per-partition. The Murphy basis is:
 
 * **Over $\mathbb{Z}[q^{\pm 1}]$** — matches the paper's parameter ring
-  (Habiro / brane-tower bicompletion lives over the same ring).
+ (Habiro / brane-tower bicompletion lives over the same ring).
 * **Cellular** — block-diagonal in $\lambda$ under dominance order
-  (same Wedderburn block-structure as Hoefsmit), but with genuine
-  off-diagonal $(S, T)$-structure *within each block*.
+ (same Wedderburn block-structure as Hoefsmit), but with genuine
+ off-diagonal $(S, T)$-structure *within each block*.
 * **Aligned with QOU's Gröbner–Shirshov filtration** — Murphy is
-  cellular w.r.t. the dominance order on partitions, which is the
-  natural partial order refining GS depth.
+ cellular w.r.t. the dominance order on partitions, which is the
+ natural partial order refining GS depth.
 * **NOT directly aligned with Type-B folding / Kashiwara crystals** —
-  those are functorial-categorical structures Murphy doesn't speak
-  to directly.
+ those are functorial-categorical structures Murphy doesn't speak
+ to directly.
 
 The σ-basis $\to$ Murphy expansion is the canonical bridge to the
 per-cell selector refinement. Atomic braid words
@@ -411,17 +411,17 @@ extractable from the same operator data.
 Surviving candidates for the spectral substrate-derivable selector:
 
 * **Hoefsmit hook-content asymptotic along a reduced braid word**
-  (the upper-bound route on $\max\lvert\mu(\rho_\lambda(\beta))\rvert$ —
-  already listed above).
+ (the upper-bound route on $\max\lvert\mu(\rho_\lambda(\beta))\rvert$ —
+ already listed above).
 * **q-Casimir spectral bound**: in the centre of $H_n(q)$, the
-  q-Casimir element has spectrum on $V_\lambda$ given by a
-  $\lambda$-content polynomial; this bounds $\max\lvert\mu\rvert$
-  for any operator built from σ-generators with explicit
-  $(q, \beta)$-dependence.
+ q-Casimir element has spectrum on $V_\lambda$ given by a
+ $\lambda$-content polynomial; this bounds $\max\lvert\mu\rvert$
+ for any operator built from σ-generators with explicit
+ $(q, \beta)$-dependence.
 * **Operator-norm via Schur-Weyl duality**: $\rho_\lambda(\beta)$ in
-  $V_\lambda$ corresponds (via Schur-Weyl) to a $U_q(\mathfrak{sl}_n)$
-  intertwiner whose operator norm has a closed-form expression in
-  terms of the q-deformed weight diagram.
+ $V_\lambda$ corresponds (via Schur-Weyl) to a $U_q(\mathfrak{sl}_n)$
+ intertwiner whose operator norm has a closed-form expression in
+ terms of the q-deformed weight diagram.
 
 Both Murphy/cell-level structure and the σ-basis Gram remain
 valuable for other questions (per-cell selectors, σ-basis SDP) —
