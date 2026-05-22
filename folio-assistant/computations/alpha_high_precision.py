@@ -183,10 +183,10 @@ def main() -> int:
         ('11/36', mp.mpf(11)/36),
         ('7/23', mp.mpf(7)/23),
         ('19/62', mp.mpf(19)/62),
-        # q-algebraic
+        # q-algebraic (acknowledged PSLQ-search basis — no CAL-4 disguise)
         ('1/[3]_q', 1/(q**2 + 1 + qi**2)),
         ('1/(2·[2]_q)', 1/(2*(q + qi))),
-        ('(q-1)/(q+1)', (q-1)/(q+1)),
+        ('(q-1)/(q+1)', (q-1)/(q+1)),  # noqa: P31 — generic q-rational basis element
         ('h_q/[3]_q', hQ/(q**2 + 1 + qi**2)),
         ('h_q²/[2]_q²', hQ**2/(q+qi)**2),
         ('1/(q+q⁻¹+1)', 1/(q + qi + 1)),

@@ -877,10 +877,14 @@ def main():
     # Test canonical q-derived integration limits
     from q_parameter import q_int
 
+    # CAL-4 caveat (2026-05-22): (4-q)/(4q+3) is the post-hoc-fitted
+    # Möbius pencil, retained here as a comparison limit alongside
+    # canonical q-derived candidates. See conj:mobius-limit-from-thimble
+    # for the demotion and PR #892 audit doc.
     limits_to_test = [
         ("z₀", z0),
         ("ℏ_q", HBAR_Q),
-        ("(4-q)/(4q+3)", (4 - q0) / (4*q0 + 3)),
+        ("(4-q)/(4q+3) (post-hoc-fitted, conj:mobius-limit)", (4 - q0) / (4*q0 + 3)),
         ("Vol(4₁)/5", 2.029883212819307 / 5),
         ("ℏ_q·[4]_q", HBAR_Q * q_int(4)),
         ("1/(2q)", 1.0 / (2*q0)),
@@ -1048,7 +1052,8 @@ def main():
         "Nine simultaneous 3-root prescriptions are tested. The product prescription "
         "∏_k dc_k/dz yields 0.0006% agreement with CODATA m_p on the real axis. "
         "Theoretical justification for this prescription (why product, not sum) "
-        "and for the integration limit a = (4-q)/(4q+3) remains to be established."
+        "and for the post-hoc-fitted integration limit a = (4-q)/(4q+3) (conj:mobius-"
+        "limit-from-thimble, CAL-4 ansatz; see PR #892 audit) remains to be established."
     )
     w.add_caveat(
         "HONEST TAG (2026-05-17 audit, commit 8732de45): the 6 ppm m_p closure "
