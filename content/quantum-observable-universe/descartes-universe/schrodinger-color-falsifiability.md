@@ -95,7 +95,7 @@ campaign with $\Delta d \in \{1, 2, 5, 10, 20, 50\}$ — can fit a
 single $\eta$ and yield a confidence interval $[\eta_-, \eta_+]$.
 The QOU framework then admits three distinct outcomes:
 
-| Fitted $\eta$ | Verdict on the direct $q_0$ ↔ color identification |
+| Fitted $\eta$ | Verdict on the direct $q_0$ $\leftrightarrow$ color identification |
 |---|---|
 | $\eta \in [0.08, 0.13]$ | **Confirmation.** The substrate parameter $q_0$ predicts macroscopic color perception with no rescaling. |
 | $\eta \in [0.02, 0.50]$ but outside $[0.08, 0.13]$ | **Refinement.** A scale renormalization $q_{\mathrm{color}} = q_0^{\,\alpha}$ between substrate and retinal cone-cell physics is required; $\alpha$ is then a derived quantity from the cone-spectral-response cascade. |

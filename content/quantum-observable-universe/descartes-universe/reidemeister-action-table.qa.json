@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/reidemeister-action-table.lean"
   },
   "source_hashes": {
-    "md": "77e6fe5645cd",
+    "md": "1bc9da0bacdc",
     "ts": "93fc11bf9816",
     "lean": "461f3ff67a98"
   },
@@ -446,20 +446,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "77e6fe5645cd",
+          "md": "1bc9da0bacdc",
           "ts": "93fc11bf9816",
           "lean": "461f3ff67a98"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/reidemeister-action-table.md:114: - R2 ($q$-deformed) and R1 and Skein change Vol → change mass. | quantum-observable-universe/descartes-universe/reidemeister-action-table.md:115: - R3, far-comm, Markov I preserve Vol → preserve mass."
+        "reviewed_at": "2026-05-22T18:29:51.882Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:29:51.882Z"
 }

@@ -3,8 +3,8 @@ open problems).**
 
 After the α_EM derivation chain
 [`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness)
-→ [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
-→ [`conj:bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition),
+$\to$ [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
+$\to$ [`conj:bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition),
 four structural gaps remain in the mass-tower derivation. The Lean
 file [`mass-tower-open-problems-classes.lean`](mass-tower-open-problems-classes.lean)
 consolidates them as typeclasses in the §3b-cond pattern, each with

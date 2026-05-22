@@ -1,4 +1,4 @@
-**Conjecture (GB reduction ↔ PL thimble flow).**
+**Conjecture (GB reduction $\leftrightarrow$ PL thimble flow).**
 *Under the archimedean realisation functor $\tau$, each inductive
 Gröbner–Shirshov normal-form reduction step on $H_n(R, q)$
 corresponds to one step of the gradient-flow ODE
@@ -20,12 +20,12 @@ the **dynamics**, not just the **filtration data**: the inductive
 reduction operator is the steepest-descent ODE under $\tau$. Two
 consequences:
 
-1. **Memoised substructures ↔ rigid descent endpoints.** Borromean
+1. **Memoised substructures $\leftrightarrow$ rigid descent endpoints.** Borromean
    nucleon caches sit at endpoints of completed thimble flows; by
    Mostow rigidity those endpoints have fixed shape parameters. The
    cached transfer matrices are the $\tau$-image of rigid thimble
    endpoints.
-2. **Topological invariance ↔ constant phase.** Each GB reduction
+2. **Topological invariance $\leftrightarrow$ constant phase.** Each GB reduction
    preserves Markov / Skein equivalence; steepest-descent flow
    preserves $\mathrm{Im}\,S$. The two invariants are identified.
 

@@ -36,7 +36,7 @@ where shape parameters are unit-circle roots:
 ## Mathlib gaps remaining
 
 The unit-circle restriction of $D$ is **all that's needed for the
-hyperbolic-knot ↔ Bloch-Wigner chain in the QOU framework**: every
+hyperbolic-knot $\leftrightarrow$ Bloch-Wigner chain in the QOU framework**: every
 hyperbolic knot embeddable in Bring's surface has shape parameters
 on the unit circle (since the corresponding Kleinian groups are
 arithmetic). The general $D : \mathbb{C} \setminus \{0,1\} \to \mathbb{R}$

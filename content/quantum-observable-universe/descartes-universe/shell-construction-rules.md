@@ -149,9 +149,9 @@ $$
 This captures:
 - **Shell closure gain**: when $n^{\mathrm{dau}}$ hits a magic
   number, $\tau(n_{\mathrm{shell}}) > \tau(n^{\mathrm{par}})$,
-  so $\Delta > 0$ → daughter more bound → $Q$ decreases.
+  so $\Delta > 0$ $\to$ daughter more bound $\to$ $Q$ decreases.
 - **Shell opening cost**: when the parent has a magic closure
-  that the daughter breaks, $\Delta < 0$ → $Q$ increases.
+  that the daughter breaks, $\Delta < 0$ $\to$ $Q$ increases.
 
 ### Step 5: Weak vertex
 
@@ -201,7 +201,7 @@ and $\mu_0 = m_e / (3 E_{\times})$.
 **Step 1:**
 - $n_p^{\mathrm{par}} = 27 - 20 = 7$ (open, size-8 shell)
 - $n_n^{\mathrm{par}} = 33 - 28 = 5$ (open, size-22 shell)
-- $n_p^{\mathrm{dau}} = 28 - 28 = 0$ **← magic!**
+- $n_p^{\mathrm{dau}} = 28 - 28 = 0$ **$\leftarrow$ magic!**
   Use $n_{\mathrm{shell}}(28) = 28 - 20 = 8$.
 - $n_n^{\mathrm{dau}} = 32 - 28 = 4$ (open)
 

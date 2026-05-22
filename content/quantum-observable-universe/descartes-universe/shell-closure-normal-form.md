@@ -139,7 +139,7 @@ next step ($0.095 \to 1.409$: the new nucleon must start a fresh
 shell).  The ratio $1.409 / 0.095 = 14.8$ is the **shell gap**
 in Hecke energy units.
 
-## Optimal normal form (quotient ideals I₈ + I₉)
+## Optimal normal form (quotient ideals I$_{8}$ + I$_{9}$)
 
 The raw normal form has up to $A!$ terms. Quotient ideals reduce
 this to exactly $A$ terms — the **optimal Gröbner--Shirshov basis** — for
@@ -147,20 +147,20 @@ nuclei in the valley of stability ($N \geq Z - 1$).
 
 **Definition (quotient ideals).**
 
-- **I₈ (adjacency correlation):** A reduced word
+- **I$_{8}$ (adjacency correlation):** A reduced word
   $\sigma_i \sigma_{i+1}$ of length 2 is *absorbed* into $\sigma_{i+1}$
   when $\sigma_{i+1}$ is present in the normal form. The coefficient of
   $\sigma_i \sigma_{i+1}$ is determined by the off-diagonal entry of the
   transfer matrix product $M_i$ — it is structural, not independent.
 
-- **I₉ (closed shell chain collapse):** A reduced word $w \cdot \sigma_j$
+- **I$_{9}$ (closed shell chain collapse):** A reduced word $w \cdot \sigma_j$
   is *absorbed* when its prefix $w$ is present in the normal form. This
   implements the per-generator transfer matrix factorization: the product
   of $\hat{V}_i$ volumes replaces the expanded Hecke element.
 
 **Theorem (Optimal Normal Form).**
 *For any nucleus $N(Z, N)$ with $N \geq Z - 1$ (valley of stability),
-the Gröbner--Shirshov normal form after quotient ideals I₈ + I₉ has exactly
+the Gröbner--Shirshov normal form after quotient ideals I$_{8}$ + I$_{9}$ has exactly
 $A = Z + N$ terms:*
 
 $$
@@ -181,9 +181,9 @@ By induction on $A$. Adding strand $A$ creates cross-terms
 $\sigma_i \cdot \sigma_{A-1}$ for all $i < A - 1$. These are absorbed:
 
 - If $|i - (A-1)| \geq 2$: far-commutativity reduces to
-  $\sigma_{A-1} \cdot \sigma_i$, then I₉ absorbs (prefix $\sigma_i$
+  $\sigma_{A-1} \cdot \sigma_i$, then I$_{9}$ absorbs (prefix $\sigma_i$
   present).
-- If $|i - (A-1)| = 1$: adjacency pair, I₈ absorbs (prefix
+- If $|i - (A-1)| = 1$: adjacency pair, I$_{8}$ absorbs (prefix
   $\sigma_{A-1}$ present).
 - If $i = A - 1$: Hecke relation $\sigma_{A-1}^2 = (q - q^{-1})\sigma_{A-1}
   + \mathbf{1}$, both terms already in basis.
@@ -192,14 +192,14 @@ The identity term $\mathbf{1}$ survives because $d \neq 0$ for nn and pn
 crossings. The condition $N \geq Z - 1$ ensures at least one nn or pn
 crossing at every generator.  $\square$
 
-Verified computationally for all $A \leq 8$ (14,256 terms → 8 for
+Verified computationally for all $A \leq 8$ (14,256 terms $\to$ 8 for
 ${}^8\mathrm{Be}$). Formally proved in Lean (OptimalNF.lean).
 
 **Valley of stability boundary.**
 The optimality fails for $N < Z - 1$ (proton-heavy nuclei). When all
 crossings are pp type ($d = 0$), the identity term vanishes: multiplying
 by $(c \cdot \sigma_k + 0)$ does not preserve the identity. Without
-$\mathbf{1}$ in the support, I₉ chain-stripping has no root.
+$\mathbf{1}$ in the support, I$_{9}$ chain-stripping has no root.
 
 | $Z \backslash N$ | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|

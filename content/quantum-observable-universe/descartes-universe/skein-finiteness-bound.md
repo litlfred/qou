@@ -148,7 +148,7 @@ ratio $1 - |P|/\Sigma|c_w|$ measures destructive interference:
 | $3$ | $0.601$ | $1.52$ | $60\%$ |
 | $4$ | $0.060$ | $2.42$ | $97.5\%$ |
 | $5$ | $0.141$ | $4.00$ | $96.5\%$ |
-| $6$ | $0.005$ | $11.4$ | $99.95\%$ ← **sign flip** |
+| $6$ | $0.005$ | $11.4$ | $99.95\%$ $\leftarrow$ **sign flip** |
 
 The sign flips when $(A-1)!$ cross-terms overwhelm the dominant
 term.  The critical condition is:

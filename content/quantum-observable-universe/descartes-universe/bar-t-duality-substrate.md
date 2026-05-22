@@ -69,8 +69,8 @@ $(1/\varphi^2,\,1)$ extend to the super-classical wing $(1,\,\varphi^2)$
 
 This refactoring opportunity applies to every existing block whose
 $q$-range is one-sided.  In particular, deconfinement statements
-phrased as "$q < q_{\mathrm{gold}}$ ⇒ deconfined" gain the bar
-companion "$q > \varphi^2$ ⇒ deconfined" with no additional proof
+phrased as "$q < q_{\mathrm{gold}}$ $\Rightarrow$ deconfined" gain the bar
+companion "$q > \varphi^2$ $\Rightarrow$ deconfined" with no additional proof
 work — only an application of $\iota_*$ to the existing argument.
 
 **Hecke-algebraic origin.**

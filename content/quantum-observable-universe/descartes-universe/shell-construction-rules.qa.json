@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/descartes-universe/shell-construction-rules.md"
   },
   "source_hashes": {
-    "md": "ad70948a4479",
+    "md": "e541298314cb",
     "ts": "f1c471526da4"
   },
   "criteria": {
@@ -343,19 +343,19 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "ad70948a4479",
+          "md": "e541298314cb",
           "ts": "f1c471526da4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/shell-construction-rules.md:152: so $\\Delta > 0$ → daughter more bound → $Q$ decreases. | quantum-observable-universe/descartes-universe/shell-construction-rules.md:154: that the daughter breaks, $\\Delta < 0$ → $Q$ increases. | quantum-observable-universe/descartes-universe/shell-construction-rules.md:204: - $n_p^{\\mathrm{dau}} = 28 - 28 = 0$ **← magic!**"
+        "reviewed_at": "2026-05-22T18:29:51.882Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:29:51.882Z"
 }

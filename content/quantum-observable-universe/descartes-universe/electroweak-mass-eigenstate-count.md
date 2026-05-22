@@ -32,7 +32,7 @@ irreducible representations of $\mathfrak{g}$.
 The Higgs is a complex doublet $\Phi \in \mathbb{C}^2$ in the
 fundamental representation of $\mathrm{SU}(2)_L$ with hypercharge
 $Y_\Phi = +1/2$. Its real dimension is $\dim_{\mathbb{R}} \Phi = 4$
-(two complex components × 2). The Higgs vacuum
+(two complex components $\times$ 2). The Higgs vacuum
 $\langle \Phi \rangle = (0, v/\sqrt{2})^T$ breaks
 $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y \to \mathrm{U}(1)_{em}$
 with

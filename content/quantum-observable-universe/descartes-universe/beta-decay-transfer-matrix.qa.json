@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/beta-decay-transfer-matrix.lean"
   },
   "source_hashes": {
-    "md": "72be9c65c8dc",
+    "md": "f607dd4c6afc",
     "ts": "999c7dd217f8",
     "lean": "e8a0cdd7aed6"
   },
@@ -453,13 +453,32 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:29:51.882Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/beta-decay-transfer-matrix.md:5: insertion at the converting quark produces a **universal** 2×2"
+        "evidence": "content/quantum-observable-universe/descartes-universe/beta-decay-transfer-matrix.md:5: insertion at the converting quark produces a **universal** 2×2"
+      },
+      {
+        "field_hash": {
+          "md": "f607dd4c6afc",
+          "ts": "999c7dd217f8",
+          "lean": "e8a0cdd7aed6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T18:34:07.964Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -684,5 +703,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:34:07.964Z"
 }
