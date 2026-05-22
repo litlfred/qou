@@ -548,6 +548,9 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(incremental_reduce_rust, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_with_state, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_cached, m)?)?;
+    m.add_function(wrap_pyfunction!(atomic_reduce_cache_clear, m)?)?;
+    m.add_function(wrap_pyfunction!(atomic_reduce_cache_size, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
@@ -764,6 +767,47 @@ fn tr_m_atomic_mpfr(
 ) -> PyResult<String> {
     rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr(&signed_word, n_strands, &q_str, dps)
         .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// **Rust-side cached variant of [`tr_m_atomic_mpfr`].**
+///
+/// Looks up the longest cached prefix of `signed_word` in the
+/// in-process `hecke_engine::atomic_reduce_cache`, resumes the
+/// reduce from that state, applies the suffix, and caches the
+/// final state under the full signed-word's hash.
+///
+/// **Zero FFI marshalling on cache hit.**  The cached
+/// `LaurentHeckeElement` never crosses the Python ↔ Rust boundary —
+/// Python passes only the signed word, hash + lookup happen
+/// entirely in Rust.  Productive variant of the prefix-cache
+/// pattern (the disk-resident JSON `_prefix_cache.py` path is a
+/// net loss per `docs/audits/2026-05-22-prefix-cache-negative-bench.md`).
+///
+/// Cache lifetime: process-bound.  Use `atomic_reduce_cache_clear()`
+/// to drop state between independent sessions.
+#[pyfunction]
+#[pyo3(signature = (signed_word, n_strands, q_str, dps=50))]
+fn tr_m_atomic_mpfr_cached(
+    signed_word: Vec<(i8, i32)>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+) -> PyResult<String> {
+    rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_cached(&signed_word, n_strands, &q_str, dps)
+        .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// Empty the Rust-side atomic-reduce cache.  Call between
+/// independent sessions / benchmarks to avoid warm-cache bias.
+#[pyfunction]
+fn atomic_reduce_cache_clear() {
+    hecke_engine::atomic_reduce_cache::clear_cache();
+}
+
+/// Number of cached reduced-state entries in the Rust-side cache.
+#[pyfunction]
+fn atomic_reduce_cache_size() -> usize {
+    hecke_engine::atomic_reduce_cache::cache_size()
 }
 
 /// **Resume-from-state variant of [`tr_m_atomic_mpfr`].**

@@ -20,6 +20,8 @@
 //! final MPFR substitution; precision is set by the `dps` argument
 //! (production default 50, research-grade 100+).
 
+use crate::atomic_reduce_cache;
+use crate::laurent_hecke_element::LaurentHeckeElement;
 use crate::reduce_laurent;
 use crate::tr_m_word_lq;
 use rug::ops::Pow;
@@ -107,6 +109,61 @@ pub fn tr_m_atomic_mpfr_with_state(
     dps: u32,
     initial_state: crate::laurent_hecke_element::LaurentHeckeElement,
 ) -> Result<(String, crate::laurent_hecke_element::LaurentHeckeElement), String> {
+    let reduced = reduce_laurent::incremental_reduce_from_state(
+        initial_state,
+        signed_word_suffix,
+        10_000,
+    );
+    let val = eval_reduced_to_mpfr(&reduced, n_strands, q_str, dps)?;
+    Ok((val, reduced))
+}
+
+/// **Rust-side cached variant of [`tr_m_atomic_mpfr`].**
+///
+/// Looks up the longest cached prefix of `signed_word` in the
+/// in-process [`atomic_reduce_cache`], resumes the reduce from
+/// that state, applies the suffix, and caches the final state
+/// under the full signed-word's hash for future calls.
+///
+/// **Zero FFI marshalling on cache hit.**  The cached
+/// [`LaurentHeckeElement`] never crosses the Python ↔ Rust
+/// boundary — Python passes only the signed word, hash + lookup
+/// happen entirely in Rust.  This is the productive variant of
+/// the prefix-cache infra (the disk-resident JSON path in
+/// `_prefix_cache.py` is a net loss per
+/// `docs/audits/2026-05-22-prefix-cache-negative-bench.md`).
+pub fn tr_m_atomic_mpfr_cached(
+    signed_word: &[(i8, i32)],
+    n_strands: usize,
+    q_str: &str,
+    dps: u32,
+) -> Result<String, String> {
+    let (_prefix_len, initial_state_opt) =
+        atomic_reduce_cache::find_longest_cached_prefix(signed_word);
+    let initial = initial_state_opt.unwrap_or_else(LaurentHeckeElement::identity);
+    let suffix_start = signed_word.len().saturating_sub(
+        signed_word.len() - _prefix_len,
+    );
+    // The find_longest_cached_prefix returned `prefix_len` such
+    // that `signed_word[..prefix_len]` was cached.  Suffix starts
+    // at `prefix_len`.
+    let _ = suffix_start;  // suppress unused-binding warning
+    let suffix = &signed_word[_prefix_len..];
+    let reduced =
+        reduce_laurent::incremental_reduce_from_state(initial, suffix, 10_000);
+    atomic_reduce_cache::save_prefix_state(signed_word, &reduced);
+    eval_reduced_to_mpfr(&reduced, n_strands, q_str, dps)
+}
+
+/// MPFR evaluation of a reduced `LaurentHeckeElement` at `q₀`.
+/// Shared by `tr_m_atomic_mpfr*` entry points (factored out so
+/// the from-scratch / resume / cached paths reuse it bit-for-bit).
+fn eval_reduced_to_mpfr(
+    reduced: &LaurentHeckeElement,
+    n_strands: usize,
+    q_str: &str,
+    dps: u32,
+) -> Result<String, String> {
     let prec = dps_to_prec(dps);
     let q = Float::with_val(
         prec,
@@ -120,12 +177,6 @@ pub fn tr_m_atomic_mpfr_with_state(
     let z = Float::with_val(prec, Float::with_val(prec, &q_half + &q_half_inv).recip());
     // h = q − q^{-1}
     let h = Float::with_val(prec, &q - &q_inv);
-
-    let reduced = reduce_laurent::incremental_reduce_from_state(
-        initial_state,
-        signed_word_suffix,
-        10_000,
-    );
 
     let mut total = Float::with_val(prec, 0);
     for (word, coef) in &reduced.terms {
@@ -159,8 +210,7 @@ pub fn tr_m_atomic_mpfr_with_state(
     // Emit at full precision so mpmath.mpf can reconstruct without
     // loss.  `Some(dps + 5)` gives a small over-precision buffer
     // so the decimal representation is unambiguous to `dps` places.
-    let val = total.to_string_radix(10, Some((dps + 5) as usize));
-    Ok((val, reduced))
+    Ok(total.to_string_radix(10, Some((dps + 5) as usize)))
 }
 
 // ── Tests ─────────────────────────────────────────────────────────

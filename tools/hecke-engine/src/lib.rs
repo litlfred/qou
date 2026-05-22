@@ -63,6 +63,7 @@ pub mod sdp_verifier;
 pub mod seminormal;
 pub mod seminormal_mn;
 pub mod seminormal_mpfr;
+pub mod atomic_reduce_cache;
 pub mod sturm_psd;
 pub mod tr_m_atomic_mpfr;
 pub mod tr_m_word_lq;
