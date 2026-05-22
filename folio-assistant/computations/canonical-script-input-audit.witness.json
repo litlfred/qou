@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T14:40:39.312235+00:00",
-  "commitSha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
+  "computedAt": "2026-05-22T15:17:03.467702+00:00",
+  "commitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "canonical-script-input-audit",
   "scriptFile": "canonical_script_input_audit.py",
   "scriptHash": "6bec73dc14ca",
@@ -13,11 +13,11 @@
   "description": "Audit of every Python computation script under folio-assistant/computations/ for alignment with the paper's 3-input canonical scheme (calibration-inputs.md): q_0 from m_μ/m_e, m_e, and Q_β(n). Flags scripts that use both m_p AND m_n from CODATA (over-counts hadronic input), use Vol_hyp (fitted under option B), or omit canonical input modules entirely.",
   "contentBlock": "calibration-inputs.md",
   "parameters": {
-    "total_scripts_audited": 675
+    "total_scripts_audited": 676
   },
   "data": {
     "by_scheme": {
-      "no-hadronic-input (substrate-only or pure dimensionless)": 514,
+      "no-hadronic-input (substrate-only or pure dimensionless)": 515,
       "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 49,
       "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 55,
       "Q_β-only-hadronic": 18,
@@ -4044,6 +4044,26 @@
           "substrate_splitting_witness": false
         },
         "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "fitted_labelled_canonical_audit.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },

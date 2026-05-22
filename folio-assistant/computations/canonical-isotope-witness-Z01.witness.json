@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T14:52:17.513977+00:00",
-  "commitSha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
+  "computedAt": "2026-05-22T15:23:51.768825+00:00",
+  "commitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 59,
+  "durationMs": 45,
   "computation": "canonical-isotope-witness-Z01",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "8741bbbd4e0b",
-  "scriptCommitSha": "befa7a1642b80f9a56cf48bc40b664254566a77e",
+  "scriptCommitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
   "description": "Per-Z=1 shard of the recursive atom-knot atlas. Element: H. Covers every (Z=1, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
     "Z": 1,
@@ -230,11 +230,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "c7b4ca360a98e787b918934e29d5b5f0e389f5ea8d160cbd7101dc8d0eb2f180",
-        "size_bytes": 51153,
-        "commitSha": "2d570b32c2661ca014c16667202d76a138c4114d",
-        "scriptCommitSha": "123d8860d2ac92c38a1559007a8c91be78cf35a9",
-        "computedAt": "2026-05-20T07:38:07.240140+00:00"
+        "sha256": "e6ddfaa294a361c11c58151f9cac1857c7a2465bd1918b4feee60e245fa0aca6",
+        "size_bytes": 51114,
+        "commitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
+        "scriptCommitSha": "5471828e36481fd7f3e16af4d14c25a33d34cf5d",
+        "computedAt": "2026-05-22T15:23:30.313196+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
