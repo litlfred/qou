@@ -89,7 +89,7 @@ well-defined bar-action falls in one of these rows:
 | Symbol | Reads | Where it appears |
 |---|---|---|
 | Any $r \in \mathbb{Q}$ (constant) | rational constant | structure constants like $-1/2$, $-3/2$ |
-| Any $r \in \mathbb{Q}(\sqrt 2)$ at silver (computed) | rational at silver | $-11/8$, $-49/32$, $7/2$, ... |
+| Any $r \in \mathbb{Q}(\sqrt 2)$ at silver (computed) | rational at silver | $-11/8$, $-49/32$, $7/2$,... |
 
 ## Key algebraic identities
 
@@ -143,7 +143,7 @@ commutative limit — categorical content, not a quantum artifact.
 
 ### $c_5$ as a rational function of the bar-anti-symmetric Hecke skein
 
-The closed form $c_5(q) = -3/2 + 1/[2]_q^2$ rewrites cleanly as a
+The closed form $c_5(q) = -3/2 + 1/[2]_q^2$ rewrites as a
 function of the bar-anti-symmetric Hecke skein $h = q - q^{-1}$
 alone, using the algebraic identity (PROVED in Lean as
 `quantum_two_squared_eq_skein_squared_plus_four`):
@@ -160,7 +160,7 @@ $$
 $$
 
 Both terms are **even functions of $h$** (the constant $-3/2$
-trivially; $1/(h^2 + 4)$ because $h^2$ is bar-symmetric by
+by definition; $1/(h^2 + 4)$ because $h^2$ is bar-symmetric by
 `IsBarAntiSymmetric.pow_two_mul`).
 
 **Categorical reading**: this expresses $c_5$ purely as a function
@@ -199,17 +199,17 @@ alone — no `sorry`, no auxiliary `Field` instance needed (only
 `CommRing`). They formalize previously narrative-only claims:
 
 - *"$h^2$ is bar-symmetric because $h$ is bar-anti-symmetric"* —
-  now `IsBarSymmetric.of_mul_antisym hx hx` for any
-  `hx : IsBarAntiSymmetric h`.
+ now `IsBarSymmetric.of_mul_antisym hx hx` for any
+ `hx : IsBarAntiSymmetric h`.
 - *"$\cosh(h) = (e^h + e^{-h})/2$ is even, hence bar-symmetric"* —
-  the formal-series structure that makes $\cosh$, $\cos$,
-  $\mathrm{Li}_2^q$ bar-symmetric reduces to repeated applications
-  of `pow_two_mul` and `add`.
+ the formal-series structure that makes $\cosh$, $\cos$,
+ $\mathrm{Li}_2^q$ bar-symmetric reduces to repeated applications
+ of `pow_two_mul` and `add`.
 - *"The framework retains only the even part"* — the
-  bar-symmetric subspace is closed under the ring operations, so
-  applying $P_{\mathrm{avg}}$ to any sequence of operations
-  on bar-symmetric inputs lands in the bar-symmetric subspace
-  again.
+ bar-symmetric subspace is closed under the ring operations, so
+ applying $P_{\mathrm{avg}}$ to any sequence of operations
+ on bar-symmetric inputs lands in the bar-symmetric subspace
+ again.
 
 ### Falsifiability: silver vs golden $c_5$ outlier
 

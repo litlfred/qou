@@ -79,7 +79,7 @@ $$
 $$
 
 with $\alpha \approx +0.224$ MeV, $\beta \approx +1.093$ MeV,
-$\gamma \approx -1.295$ MeV closes the 4-atom probe set trivially
+$\gamma \approx -1.295$ MeV closes the 4-atom probe set by definition
 (3 free parameters, 3 non-trivial equations). The fit is **not
 predictive** until extended to atoms with distinct $(n_{pp}, n_{nn})$
 combinations beyond the $\{$D, T, ${}^{3}$He, ${}^{4}$He$\}$ set. See

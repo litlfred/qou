@@ -5,7 +5,7 @@ $$
 $$
 
 is currently determined case-by-case as a numerical by-product of
-the Wedderburn SDP search.  This conjecture proposes a structural rule
+the Wedderburn SDP search. This conjecture proposes a structural rule
 for $\rho$ in terms of the categorical data of $\mathfrak{H}$.
 
 ## Statement
@@ -13,7 +13,7 @@ for $\rho$ in terms of the categorical data of $\mathfrak{H}$.
 **Conjecture.**
 *Let $\mathfrak{H}$ be a confined particle/atom
 ([confined particle](#def:confined-particle)) with canonical Hecke
-element $T_w \in H_{n_0}(q)$.  The SDP multiplicity is:*
+element $T_w \in H_{n_0}(q)$. The SDP multiplicity is:*
 
 $$
   \rho(\mathfrak{H})
@@ -34,7 +34,7 @@ $\lambda$ (hook-length formula).*
 ## Evidence (heuristic, pre-binding-K refinement)
 
 The SDP witnesses for all four currently identified particles give the
-following heuristic table.  **Caveat (issue #604, deliverable 4):** the
+following heuristic table. **Caveat (issue #604, deliverable 4):** the
 "Dominant $\lambda^*$" entries here are *conjectural* and were
 populated before the $H_{3 \cdot A}$ binding-K analysis below; they are kept
 for historical reference and reconciliation with the older narrative.
@@ -54,8 +54,8 @@ convention $n_0 = 3 \cdot A$ used in
 [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
 and in
 [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
-(`atomic_n_0 = 9` for ${}^{3}$H, ${}^{3}$He).  This table is now reconciled to
-$n_0 = 3 \cdot A$.  The conjectural $\lambda^* \vdash 9$ entries
+(`atomic_n_0 = 9` for ${}^{3}$H, ${}^{3}$He). This table is now reconciled to
+$n_0 = 3 \cdot A$. The conjectural $\lambda^* \vdash 9$ entries
 remain to be verified once Hoefsmit at $H_9$ is implemented (deferred
 — see "Critical structural finding" below).
 
@@ -67,9 +67,9 @@ shapes has not been derived from first principles.
 ## The rounding question
 
 The exact quantum dimension $[2]_{q_0} = q_0 + q_0^{-1} \approx 2.01$
-(with $q_0 = 1.109978595554181\ldots$ (50 dps)), so $\dim_q((2,1)) \approx 2.01$.  The
+(with $q_0 = 1.109978595554181\ldots$ (50 dps)), so $\dim_q((2,1)) \approx 2.01$. The
 nearest-integer round gives $\rho = 2$, but the proton/neutron uses
-$\rho = 1$.  This suggests the rule may be:
+$\rho = 1$. This suggests the rule may be:
 
 $$
   \rho(\mathfrak{H})
@@ -81,7 +81,7 @@ $$
 $$
 
 (The symbol $\lfloor \cdot \rceil$ in earlier drafts denotes
-*round-to-nearest*, not floor.  The Lean class
+*round-to-nearest*, not floor. The Lean class
 [`conj-rho-prefactor-structural.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.lean)
 encodes this as the inequality
 $|\rho - \dim_q(\lambda^*)| \leq 1/2$.)
@@ -94,18 +94,18 @@ and $\rho = 2$ for double-cover nuclei.
 ## Proof obligations
 
 1. Identify the dominant $\lambda^*$ for each particle from the
-   Markov-weight data and show it is $\lambda^* = (2,1)$ for proton
-   and $(3,3)$ for $^3$H/$^3$He.
+ Markov-weight data and show it is $\lambda^* = (2,1)$ for proton
+ and $(3,3)$ for $^3$H/$^3$He.
 
 2. Show the multiplicity rule (exact quantum dimension, rounded, or
-   orthogonal-copy count) reproduces the known $\rho$ values.
+ orthogonal-copy count) reproduces the known $\rho$ values.
 
 3. Provide a categorical interpretation of $\rho$: it should count
-   a natural structural quantity of the confinement-SDP solution space
-   (orthogonal copies, Wedderburn summand multiplicity, etc.).
+ a natural structural quantity of the confinement-SDP solution space
+ (orthogonal copies, Wedderburn summand multiplicity, etc.).
 
 4. Extend the rule to heavier nuclei $A \leq 60$ in the recursive
-   atom-knot atlas and verify no per-atom re-tuning is needed.
+ atom-knot atlas and verify no per-atom re-tuning is needed.
 
 ## Critical structural finding (issue #604, deliverable 4)
 
@@ -117,14 +117,14 @@ $\lambda^*$ is computed from the *braid strand count* alone:
 
 | atom | knot braid | dominant $\lambda^* \vdash 3$ | $\dim_q$ at $q_0$ | obs $\rho$ |
 |------|-----------|------------------------------|--------------------|------------|
-| proton  | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
-| neutron | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
+| proton | $(\sigma_1 \sigma_2^{-1})^3$ | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
+| neutron | $(\sigma_1 \sigma_2^{-1})^3$ | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
 | ${}^2$H ($6_2$) | $\sigma_1 \sigma_2^{-1} \sigma_1^3 \sigma_2^{-1}$ | $(3)$ | $1.000$ | $\mathbf{1}$ |
 | ${}^{3}$He ($L_{6a4}$) | $(\sigma_1^{-1} \sigma_2)^3$ | $(2,1)$ | $2.011$ | $\mathbf{2}$ |
 
 Proton, neutron, and ${}^{3}$He have **identical** $\chi_\lambda$ values across all
-three blocks — their braid words are mutual inverses (or trivially equal),
-hence Markov-equivalent in $H_3(q_0)$.  No rule of the form
+three blocks — their braid words are mutual inverses (or by definition equal),
+hence Markov-equivalent in $H_3(q_0)$. No rule of the form
 "$\rho = f(\chi_\lambda, y_\lambda)$ at the braid strand count" can
 distinguish $\rho_{\mathrm{p}} = 1$ from $\rho_{^3\mathrm{He}} = 2$.
 
@@ -144,7 +144,7 @@ $$
 
 The binding operator $K(\mathfrak{H})$ links the $A$ nucleon-trefoils
 together (Hopf link $L_H$ for ${}^2$H, an $8_{11}$-class link for ${}^3$H,
-$L_{6a4}$ for ${}^{3}$He).  The dominant $\lambda^* \vdash 3 \cdot A$ of
+$L_{6a4}$ for ${}^{3}$He). The dominant $\lambda^* \vdash 3 \cdot A$ of
 $K$ — *not* of the whole-particle braid image at $H_3$ — is what
 carries the $\rho$ information.
 
@@ -152,11 +152,11 @@ This is the natural framework for the joint-tower SDP cross-level
 consistency constraints (4) of
 [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement),
 which already enforce $T_w(\mathfrak{H}) \hookleftarrow T_w(\mathfrak{H}')$
-across confinement levels.  Wiring an explicit
+across confinement levels. Wiring an explicit
 "binding-K SDP solver mode" — that finds $K(\mathfrak{H})$ from
 substrate data + constituent $T_w$'s alone — is the natural
 follow-up deliverable for issue #604 (after the $H_{3 \cdot A}$ Hoefsmit
-infrastructure lands).  The Lean class
+infrastructure lands). The Lean class
 [`conj-rho-prefactor-structural.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.lean)
 records `A` (not the braid strand count) as its primary parameter and
 derives $n_0 = 3 \cdot A$ structurally; per-atom instances must be
@@ -172,17 +172,17 @@ follows from the Wedderburn trace identity.
 
 The Lean side is now stated as
 [`rho_eq_qdim_via_canonical_knot`](conj-rho-prefactor-structural.lean)
-in `conj-rho-prefactor-structural.lean`.  PR #608's R5-full witness
+in `conj-rho-prefactor-structural.lean`. PR #608's R5-full witness
 records $\rho_\star$ per atom directly:
 
 | Atom | Witness $\rho_\star$ | Notes |
 |------|----------------------|-------|
 | $^3\mathrm{He}$ | $3$ | At canonical $T_w = L_{6a4}$ |
-| $^2\mathrm{H}$  | $3$ | At prototype's L=8 winner $\sigma_2 \sigma_1^6 \sigma_2^{-1}$ — **not** the historical $\rho = 1$ |
+| $^2\mathrm{H}$ | $3$ | At prototype's L=8 winner $\sigma_2 \sigma_1^6 \sigma_2^{-1}$ — **not** the historical $\rho = 1$ |
 
 The deuterium discrepancy is because the prototype's single-term
 cost function does not select $6_2$ at first principle (PR #608
-"${}^2$H needs multi-term wiring").  Once T2--T6 of
+"${}^2$H needs multi-term wiring"). Once T2--T6 of
 [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
 land in `cost_for_candidate`, the historical $\rho = 1$ at $6_2$
 should be recovered.

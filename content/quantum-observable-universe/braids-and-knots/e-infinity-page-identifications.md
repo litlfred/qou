@@ -2,7 +2,7 @@ Having established the GB spectral sequence exists and converges
 ([GB spectral sequence](#prop:gb-spectral-sequence)), the remaining
 task is to **identify** each $E_\infty^{p, *}$ page with a specific
 mass-formula term from
-([unified knot mass](#thm:knot-mass-formula-unified)).  This
+([unified knot mass](#thm:knot-mass-formula-unified)). This
 proposition attempts that identification for all six terms, marking
 derivation status per term.
 
@@ -45,7 +45,7 @@ generators with positive energy
 ([confinement level](#def:confinement-level)), the quotient is
 $1$-dimensional, spanned by the class of the identity $\mathbf{1}$.*
 
-*Higher differentials $d_r$ for $r \geq 1$ act trivially on
+*Higher differentials $d_r$ for $r \geq 1$ act by definition on
 $E_r^{0, *}$ (there is nothing to kill), so $E_\infty^{0, *}
 \cong E_0^{0, *} = R\cdot\{[\mathbf{1}]\}$ for the paper's categorical
 base ring $R$ (the fibre-functor value ring;
@@ -53,12 +53,12 @@ base ring $R$ (the fibre-functor value ring;
 
 *Pairing with $\mathrm{tr}_M$ gives the image of $T_w$ under the
 projection $H_n(R, q) \to H_n(R, q)/J^1(q) \to R$ (paper's categorical
-base ring) evaluated by $\mathrm{tr}_M$.  The archimedean
+base ring) evaluated by $\mathrm{tr}_M$. The archimedean
 calibration $\tau\colon R \to \mathbb{R}$
 ([categorical mass, Markov](#prop:categorical-mass-markov))
-converts this to MeV at the final step.  This projection extracts the "descended"
+converts this to MeV at the final step. This projection extracts the "descended"
 component — the part of $T_w$ that reduces to the identity under
-Gröbner–Shirshov normalisation.  For atomic braids this is
+Gröbner–Shirshov normalisation. For atomic braids this is
 exactly the descended Markov trace:*
 
 $$
@@ -76,14 +76,14 @@ $$
 
 *The 1-st page is $E_0^{1, *} = J^1(q)/J^2(q)$, spanned by the
 classes of **single Hecke generators** $\sigma_i$ for
-$i = 0, \ldots, n-2$.  The graded piece is
+$i = 0, \ldots, n-2$. The graded piece is
 $\bigoplus_i R\cdot[\sigma_i]$, a rank-$(n-1)$ free $R$-module
 over the chosen ground ring.*
 
 *Higher differentials: $d_1: E_1^{1, *} \to E_1^{2, *}$ takes
-$[\sigma_i]$ to its "2-crossing interaction" in $J^2/J^3$.  The
+$[\sigma_i]$ to its "2-crossing interaction" in $J^2/J^3$. The
 kernel $\ker d_1 \subset E_1^{1, *}$ modulo image gives
-$E_2^{1, *}$, and similarly for higher $r$.  Convergence gives
+$E_2^{1, *}$, and similarly for higher $r$. Convergence gives
 $E_\infty^{1, *}$.*
 
 **Claim.**
@@ -111,13 +111,13 @@ $$
 $$
 
 *The leading term $1$ corresponds to $[\mathbf{1}] \in E_\infty^{0, *}$
-(which we already counted in §1).  The order-$q^{-1}$ term
+(which we already counted in §1). The order-$q^{-1}$ term
 corresponds to the class of $\sigma_i$ in $E_\infty^{1, *}$.
 Higher-order terms correspond to classes in
 $E_\infty^{\ell \geq 2, *}$.*
 
 *So $\Phi_q(|\hat V_i|) - 1$ equals the sum of $\sigma_i$'s
-contribution to all $E_\infty^{p, *}$ for $p \geq 1$.  Summing
+contribution to all $E_\infty^{p, *}$ for $p \geq 1$. Summing
 over $i$:*
 
 $$
@@ -135,9 +135,9 @@ normalisation.*
 **Still needed:** *An explicit identification of $d_r$ on
 $[\sigma_i]$ for $r \geq 1$ that produces exactly the
 coefficient $q^{-r}(1 + q^{-1} + \cdots)$ from the $\Phi_q$
-expansion.  This is a **computable** task for $H_3(R, q)$: the
+expansion. This is a **computable** task for $H_3(R, q)$: the
 differentials on the 3-dimensional $E_1$ page can be written out
-explicitly.  Done for toy examples but not verified on the full
+explicitly. Done for toy examples but not verified on the full
 atomic braid; flagged as **computational next step**.*
 
 ---
@@ -149,7 +149,7 @@ atomic braid; flagged as **computational next step**.*
 reducible to single-generator content by Hecke + far-commutativity.
 For non-adjacent pairs ($|i - j| \geq 2$), far-commutativity gives
 $\sigma_i \sigma_j = \sigma_j \sigma_i$, so these classes are
-symmetric.  For adjacent pairs ($|i - j| = 1$), the Yang–Baxter
+symmetric. For adjacent pairs ($|i - j| = 1$), the Yang–Baxter
 rewrite $d_{YB}(\sigma_i \sigma_{i+1} \sigma_i) = \sigma_{i+1}
 \sigma_i \sigma_{i+1}$ identifies triples but leaves pairs as
 non-trivial classes.*
@@ -164,7 +164,7 @@ $E_0^{2, *}$ whose Markov trace is $z^2$ by the Markov
 factorisation property
 ([Markov trace factorization](#thm:markov-trace-factorization)):
 $\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$ for adjacent pairs
-(by successive Markov reductions).  The coefficient $z^2$ in the
+(by successive Markov reductions). The coefficient $z^2$ in the
 pair-tower term is accounted for.*
 
 *The $\Phi_q(|\hat V_i \hat V_j|)$ factor comes from the same
@@ -179,7 +179,7 @@ single-gen ($p = 1$) and pair-gen ($p = 2$) seeds.*
 
 **Still needed:** *Explicit $d_r$ computation for pair classes,
 and verification that the pair-tower expansion produces exactly
-the paper's formula.  Same computational status as §2.*
+the paper's formula. Same computational status as §2.*
 
 ---
 
@@ -205,19 +205,19 @@ through $\mathrm{tr}_M$, which is cyclic, times a scalar).*
 *For an amphichiral braid $\beta$ with $\beta \varTheta \beta^{-1}
 \varTheta^{-1} = 1 + \text{corrections}$, the pairing gives
 $\phi_\varTheta(\beta) = 1 - c_K h^2$ where $c_K$ is a
-topology-dependent constant.  For $\beta = 4_1$:
+topology-dependent constant. For $\beta = 4_1$:
 $c_{4_1} = 1$, giving $1 - h^2$ — matches paper.*
 
 *For a chiral braid $\beta$ with $\beta \varTheta \beta^{-1}$ not
 reducing to a scalar at Hecke level, the first-order correction
-is $1 + w(\beta) \cdot h + O(h^2)$ where $w$ is writhe.  For
+is $1 + w(\beta) \cdot h + O(h^2)$ where $w$ is writhe. For
 $\beta_D$ (satellite with one positive pn crossing):
 $w(\beta_D) = 1$, giving $1 + h$ — matches paper **up to
 higher-order terms**.*
 
 **Still needed:** *A rigorous derivation of the $w$-to-$h$
 linearisation from the ribbon twist's action on the Markov
-trace.  Currently the $1 + h$ formula is derived numerically
+trace. Currently the $1 + h$ formula is derived numerically
 (matches paper's value at $q_0$) but not symbolically from
 first principles.*
 
@@ -252,7 +252,7 @@ straightforward PL computation using the same machinery that
 evaluates Terms 1–3 — provided the upstream A2.4 hypothesis
 (real-axis = thimble sum) of
 ([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence))
-is checked at order $\ell$.  The $R$-side identification of Term 6
+is checked at order $\ell$. The $R$-side identification of Term 6
 with $E_\infty^{\ell, *}$ remains the same; the change is to provide
 a convergent archimedean evaluation route.*
 
@@ -270,20 +270,20 @@ Cauchy-kernel residues at roots of unity).*
 derivation status is:*
 
 - ***Derived (five of six)*:** *Terms 1, 2, 3, 4 via the
-  algebraically-derived Wedderburn weights
-  ([three-parameters Wedderburn](#prop:three-parameters-wedderburn),
-  [Frobenius universal](#thm:frobenius-codim-universal)) combined
-  with the mass-endomorphism tower
-  ([mass endomorphism tower](#prop:mass-endomorphism-tower));
-  Term 6 via the Mittag-Leffler residue sum
-  ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+ algebraically-derived Wedderburn weights
+ ([three-parameters Wedderburn](#prop:three-parameters-wedderburn),
+ [Frobenius universal](#thm:frobenius-codim-universal)) combined
+ with the mass-endomorphism tower
+ ([mass endomorphism tower](#prop:mass-endomorphism-tower));
+ Term 6 via the Mittag-Leffler residue sum
+ ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
 - ***Partial (Term 5)*:** *chirality writhe-ribbon linearisation
-  has correct structural form but coefficient requires
-  quantum-group machinery beyond Markov trace
-  ([chirality writhe-ribbon](#prop:chirality-writhe-ribbon-derivation)).*
+ has correct structural form but coefficient requires
+ quantum-group machinery beyond Markov trace
+ ([chirality writhe-ribbon](#prop:chirality-writhe-ribbon-derivation)).*
 
 *The six-term formula is a unified Wedderburn-weight pairing with
 the braid word, evaluated either at **finite level** $k = n$ (Terms
 1, 3, 4) or as an **infinite-level limit** (Terms 2, 6) via the
-quantum-dilogarithm / exceptional-divisor resolution.  All source
+quantum-dilogarithm / exceptional-divisor resolution. All source
 blocks are now cross-referenced correctly.*

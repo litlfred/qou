@@ -68,7 +68,7 @@ uniform.)
 
 ### Why $n = 6$ is the minimum
 
-Each EW carrier $T(2, 2k)$ acts non-trivially on a **single
+Each EW carrier $T(2, 2k)$ acts non-by definition on a **single
 strand-pair** (the two endpoints of its 2-component link
 projection). Three carriers therefore need three disjoint
 strand-pairs:
@@ -119,43 +119,43 @@ interface generator $\sigma_3$ in $H_6(q)$ for the deuteron.
 **Implications:**
 
 1. **Pattern multiplicities change.** The disjoint-product
-   $(4, 2, 1, 3, 3, 1, 2, 4)$ multiplicities are computed
-   ignoring $\bowtie_K$. With $\bowtie_K$ inserted, $\beta_{\rm
-   EW}$ acts non-trivially across strand-pairs; pure-pattern
-   counting needs recomputation.
+ $(4, 2, 1, 3, 3, 1, 2, 4)$ multiplicities are computed
+ ignoring $\bowtie_K$. With $\bowtie_K$ inserted, $\beta_{\rm
+   EW}$ acts non-by definition across strand-pairs; pure-pattern
+ counting needs recomputation.
 
 2. **Bar-self-duality may break or be modified.** The
-   $\sigma_i^{2k}$ trace was bar-self-dual term-by-term; the
-   $\bowtie_K$-coupled trace may have a $\bowtie_K$-orientation-
-   dependent phase, or the duality may be restored only modulo
-   the orientation of the interface knots.
+ $\sigma_i^{2k}$ trace was bar-self-dual term-by-term; the
+ $\bowtie_K$-coupled trace may have a $\bowtie_K$-orientation-
+ dependent phase, or the duality may be restored only modulo
+ the orientation of the interface knots.
 
 3. **Higgs-vev automorphism gets concrete form.** The Weinberg
-   automorphism $(W^3, B) \to (Z, \gamma)$ pre-EWSB is plausibly
-   the change-of-basis induced by inserting a specific $\bowtie_K$;
-   $\theta_W$ then reads off the eigendirections of the
-   interface coupling.
+ automorphism $(W^3, B) \to (Z, \gamma)$ pre-EWSB is plausibly
+ the change-of-basis induced by inserting a specific $\bowtie_K$;
+ $\theta_W$ then reads off the eigendirections of the
+ interface coupling.
 
 4. **The 8 pure patterns become 8 $\bowtie_K$-twisted patterns.**
-   Mixing depends on $\bowtie_K$'s structural data, suggesting
-   $\theta_W$ — and possibly the entire EW Wedderburn block
-   structure — is *parametrised* by the interface knot's choice.
+ Mixing depends on $\bowtie_K$'s structural data, suggesting
+ $\theta_W$ — and possibly the entire EW Wedderburn block
+ structure — is *parametrised* by the interface knot's choice.
 
 **Action items prompted by the $\bowtie_K$ refinement:**
 
 - Author $\bowtie_K$ as a categorical content block (candidate
-  `def:ew-interface-knot`), defining the analog of the
-  inter-nucleon interface generalised to gauge-boson couplings.
+ `def:ew-interface-knot`), defining the analog of the
+ inter-nucleon interface generalised to gauge-boson couplings.
 - Recompute the Hoefsmit pure-pattern enumeration under
-  $\beta_{\rm EW}(\bowtie_K)$; extend
-  [`hoefsmit-ew-cell-content.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
-  to include $\sigma_2, \sigma_4$ in the eigenvalue analysis.
+ $\beta_{\rm EW}(\bowtie_K)$; extend
+ [`hoefsmit-ew-cell-content.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
+ to include $\sigma_2, \sigma_4$ in the eigenvalue analysis.
 - Re-derive $\mathrm{tr}_{\rm pure}(\beta_{\rm EW}(\bowtie_K))$
-  symbolically.
+ symbolically.
 - Connect the Weinberg-angle automorphism to $\bowtie_K$
-  eigendirections — both the simple-uniform reading at 64% and
-  the corrected best at 8.4% are $\bowtie_K$-free; the structural
-  closure likely lives in $\bowtie_K$.
+ eigendirections — both the simple-uniform reading at 64% and
+ the corrected best at 8.4% are $\bowtie_K$-free; the structural
+ closure likely lives in $\bowtie_K$.
 
 ### Resolution of the dimension-collapse issue
 
@@ -166,18 +166,18 @@ in a 2-dimensional algebra — dimensionally inconsistent. The Hoefsmit
 identification at $n = 6$ resolves this:
 
 - The six EW projectors live as **rank-1 to rank-3** projectors in
-  $\mathrm{End}_R(V^{\otimes 6})$ (multiplicities depending on
-  pattern).
+ $\mathrm{End}_R(V^{\otimes 6})$ (multiplicities depending on
+ pattern).
 - They are pairwise orthogonal (as eigenspace projectors of
-  pairwise-commuting generators with distinct eigenvalues at
-  generic $q$).
+ pairwise-commuting generators with distinct eigenvalues at
+ generic $q$).
 - They sit alongside two **non-EW** projectors (vacuum and
-  fully-broken) in the 8-pattern decomposition of the
-  pure-eigenspace.
+ fully-broken) in the 8-pattern decomposition of the
+ pure-eigenspace.
 - Total: 8 pairwise-orthogonal projectors of multiplicities $(4,
   2, 1, 3, 3, 1, 2, 4)$, summing to a rank-20 projector on the
-  pure-eigenspace; the complementary rank-56 mixed-eigenspace
-  carries off-diagonal generator mixing.
+ pure-eigenspace; the complementary rank-56 mixed-eigenspace
+ carries off-diagonal generator mixing.
 
 ### The Plancherel weight is a degenerate special case
 
@@ -266,23 +266,23 @@ $\mathrm{tr}_{\rm pure}$ is the operative quantity going forward.
 (verified by the witness enumeration); the open inputs are:
 
 1. **The $W \leftrightarrow \sigma_1^4$, $Z \leftrightarrow \sigma_3^6$,
-   $H \leftrightarrow \sigma_5^8$ identification** — currently a
-   structural proposal motivated by disjoint-strand-pair commutativity
-   plus matching twist parameters $k = 2, 3, 4$ to the EW link triplet.
-   Needs a categorical-physics block (the "categorical Higgs mechanism"
-   item from
-   [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
-   §Status) discharging the boson-to-strand-pair assignment.
+ $H \leftrightarrow \sigma_5^8$ identification** — currently a
+ structural proposal motivated by disjoint-strand-pair commutativity
+ plus matching twist parameters $k = 2, 3, 4$ to the EW link triplet.
+ Needs a categorical-physics block (the "categorical Higgs mechanism"
+ item from
+ [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
+ §Status) discharging the boson-to-strand-pair assignment.
 2. **The non-uniform Plancherel weight derivation** — the
-   multiplicities $(2, 1, 3, 3, 1, 2)$ are read off from the
-   tableaux enumeration; promoting them to a closed-form
-   $q$-rational requires identifying their generating function in
-   the Hoefsmit cell-content arithmetic.
+ multiplicities $(2, 1, 3, 3, 1, 2)$ are read off from the
+ tableaux enumeration; promoting them to a closed-form
+ $q$-rational requires identifying their generating function in
+ the Hoefsmit cell-content arithmetic.
 3. **Refinement of upstream blocks** — the existing
-   [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)
-   and
-   [`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization)
-   should be edited to reference this $n = 6$ formulation.
+ [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)
+ and
+ [`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization)
+ should be edited to reference this $n = 6$ formulation.
 
 ### Audit-flag impact
 

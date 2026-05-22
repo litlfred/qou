@@ -10,14 +10,14 @@ parameter $q$) to the :refterm[symmetric monoidal category]{#symmetric-monoidal-
 algebra by:
 
 1. **Quantum gap collapse**: $\hbar_q = 1 - q^{-1} \to 0$, so that
-   the non-commutativity vanishes.
+ the non-commutativity vanishes.
 2. **Differential smoothing**: The Jackson $q$-derivative
-   $d_q f(z) = \frac{f(qz) - f(z)}{(q-1)z}$ converges to the
-   ordinary derivative $\frac{df}{dz}$.
+ $d_q f(z) = \frac{f(qz) - f(z)}{(q-1)z}$ converges to the
+ ordinary derivative $\frac{df}{dz}$.
 3. **Braiding trivialization**: The braiding
-   $\sigma_{X,Y} : X \otimes Y \to Y \otimes X$ specializes to the
-   symmetric swap $\tau_{X,Y}$, since $R(q) \to \mathrm{id}$ as
-   $q \to 1$.
+ $\sigma_{X,Y} : X \otimes Y \to Y \otimes X$ specializes to the
+ symmetric swap $\tau_{X,Y}$, since $R(q) \to \mathrm{id}$ as
+ $q \to 1$.
 
 The functor $\mathcal{L}$ is exact (preserves short exact sequences)
 but **not** full: quantum information is lost in the limit.
@@ -38,7 +38,7 @@ $\rho_\infty = \mathcal{L}$, landing in $\mathbb{R}$. The
 at the archimedean place** ([adelic Tate squeeze](#rem\:adelic-tate-squeeze));
 the classical continuum is what remains after that single local
 $\varepsilon_v$ is collapsed, while the non-archimedean $\varepsilon_p$'s
-are simply discarded.
+are discarded.
 
 **Why $\mathcal{L}$ is not full: phase decoherence.** The full
 motivic class $[X] \in \widehat{\mathcal{M}}$ carries the relative
@@ -63,13 +63,13 @@ a literal evaluation in Conway's surreal field at
 $q = 1 + \varepsilon$, then takes standard-part:
 
 * At the **single-functor** level —
-  $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$
-  ([classical limit as standard-part](#conj\:classical-limit-stpart)).
+ $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$
+ ([classical limit as standard-part](#conj\:classical-limit-stpart)).
 * At the **whole-tuple** level — the entire QOU
-  $(\mathbf{C}, \varTheta, G, \mathcal{S})$ is the standard-part of
-  an $\varepsilon$-relaxed surreal QOU
-  ([archimedean QOU is standard-part of surreal](#conj\:archimedean-stpart),
-  with [proof strategy](#rem\:archimedean-stpart-strategy)).
+ $(\mathbf{C}, \varTheta, G, \mathcal{S})$ is the standard-part of
+ an $\varepsilon$-relaxed surreal QOU
+ ([archimedean QOU is standard-part of surreal](#conj\:archimedean-stpart),
+ with [proof strategy](#rem\:archimedean-stpart-strategy)).
 
 Both replacements are conjectural; if either holds it removes the
 need for any analytic / topological machinery on the parameter

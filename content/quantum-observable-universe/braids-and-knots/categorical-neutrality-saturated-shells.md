@@ -14,23 +14,23 @@ substrate (Frobenius–Hopf object $A$, fibre functor $\tau$). For
 $n \in \mathbb{N}$ write
 
 * $H_n(q)$ for the Iwahori–Hecke algebra at parameter $q$, generated
-  by $\sigma_1, \dots, \sigma_{n-1}$ subject to the braid relations
-  and $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$
-  ([CLAUDE.md §7a](../../../CLAUDE.md));
+ by $\sigma_1, \dots, \sigma_{n-1}$ subject to the braid relations
+ and $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$
+ ([CLAUDE.md §7a](../../../CLAUDE.md));
 * $\Delta_n^2 = (\sigma_1 \sigma_2 \cdots \sigma_{n-1})^n
   \in Z(B_n)$ for the **full-twist** generator of the centre of the
-  braid group, mapped under the Hecke quotient to the central
-  element $\Delta_n^2 \in Z(H_n(q))$
-  \cite{kassel1995, geckpfeiffer2000};
+ braid group, mapped under the Hecke quotient to the central
+ element $\Delta_n^2 \in Z(H_n(q))$
+ \cite{kassel1995, geckpfeiffer2000};
 * $\Phi_n \in \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$ for the
-  **categorical mass endomorphism** at level $n$ —
-  the global section of the mass functor over the rigid braided
-  :refterm[monoidal category]{#monoidal-category}, related to the Hecke-mass element
-  $\Phi_{\mathrm{mass}}$ by
-  $\Phi_{\mathrm{mass}}(\beta) = (\tau \otimes \cdots \otimes \tau) \circ \Phi_n \circ \rho(\beta)$
-  ([Hecke mass element](#def\:hecke-mass-element));
+ **categorical mass endomorphism** at level $n$ —
+ the global section of the mass functor over the rigid braided
+ :refterm[monoidal category]{#monoidal-category}, related to the Hecke-mass element
+ $\Phi_{\mathrm{mass}}$ by
+ $\Phi_{\mathrm{mass}}(\beta) = (\tau \otimes \cdots \otimes \tau) \circ \Phi_n \circ \rho(\beta)$
+ ([Hecke mass element](#def\:hecke-mass-element));
 * $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ for the seven
-  observed nuclear magic numbers.
+ observed nuclear magic numbers.
 
 ## Statement
 
@@ -41,7 +41,7 @@ QOU substrate axioms ([Frobenius–Hopf substrate](#def\:frobenius-hopf-substrat
 and let $\Phi_n$ be the categorical mass endomorphism at level $n$
 ([mass-endomorphism conjecture](#conj\:mass-endomorphism)). Then for
 every $n \in \mathfrak{M}$ the full-twist
-$\Delta_n^2$ acts trivially on $\Phi_n$:*
+$\Delta_n^2$ acts as the identity on $\Phi_n$:*
 
 $$
   \Delta_n^2 \cdot \Phi_n \;=\; \Phi_n \cdot \Delta_n^2 \;=\; \Phi_n

@@ -25,7 +25,7 @@ $\sum_{\nu} c^{\nu}_{\mu_1, \mu_2} \cdots c^{\lambda}_{\nu, \mu_A}$.*
 
 ### Proof sketch
 
-Each $\beta_{x_k}$ acts trivially on strands outside the $k$-th block,
+Each $\beta_{x_k}$ acts as the identity on strands outside the $k$-th block,
 so the disjoint product factors through the Hecke subalgebra
 $H_3 \times H_3 \times \cdots \times H_3 \hookrightarrow H_{3A}$ as a
 direct-summand inclusion. The character of an element in the induced
@@ -66,7 +66,7 @@ $\chi^\lambda(T_{\text{constit}}^K)$ has been cross-validated against
 direct H_{3A}-Wedderburn-weighted character sums from
 [`markov_trace_3A(Z, N, include_inter=False)`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/mass_at_3A_proper.py#L314)
 — **byte-identical** chi values at all 11 + 30 + 30 partitions
-combined (consistent to >40 dps).  For ${}^{4}$He at $H_{12}$, cross-validation
+combined (consistent to >40 dps). For ${}^{4}$He at $H_{12}$, cross-validation
 uses the cached 24-partition partial witness; all match.
 
 ### Significance
@@ -76,14 +76,14 @@ depth-stratified binding-energy compute to large atoms without
 performing H_{3A}-character sums at high A:
 
 - **At free-side**: $\chi^\lambda(T_{\text{constit}}^K)$ is
-  computable in $O(p(3A))$ via LR-decomposition from $H_3$ chi
-  values — no $H_{3A}$-seminormal matrices required.
+ computable in $O(p(3A))$ via LR-decomposition from $H_3$ chi
+ values — no $H_{3A}$-seminormal matrices required.
 - **At atom-side**: $\chi^\lambda(\mathcal{B}_K) = \chi^\lambda(T_{\text{constit}}^K
   \cdot \bowtie_K)$ does NOT factorise via LR (the interface knot
-  $\bowtie_K$ is a non-disjoint Hecke element), and requires
-  direct character computation (e.g. via the Rust kernel
-  [`pyhecke_native.chi_q_atomic`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/tools/pyhecke-native/src/lib.rs)
-  cherry-picked from PR #761).
+ $\bowtie_K$ is a non-disjoint Hecke element), and requires
+ direct character computation (e.g. via the Rust kernel
+ [`pyhecke_native.chi_q_atomic`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/tools/pyhecke-native/src/lib.rs)
+ cherry-picked from PR #761).
 
 The CONVOLUTION structure $\mathcal{B}_K = T_{\text{constit}}^K *_q \bowtie_K$
 ([`def:ew-interface-knot`](#def:ew-interface-knot)) is preserved

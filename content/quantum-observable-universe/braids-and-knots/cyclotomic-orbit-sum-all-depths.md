@@ -1,7 +1,7 @@
 **Proposition (general orbit-sum identity at every depth $n$).**
 
 [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
-established the orbit sum at $n = 3$.  *This proposition extends to
+established the orbit sum at $n = 3$. *This proposition extends to
 all depths $n \geq 2$:*
 
 $$
@@ -18,9 +18,9 @@ $$
 *where $\mathrm{Cl}_n$ is the Glaisher Clausen function*:
 
 - *$\mathrm{Cl}_n(\theta) = \mathrm{Re}\,\mathrm{Li}_n(e^{i\theta})$
-  for $n$ odd*
+ for $n$ odd*
 - *$\mathrm{Cl}_n(\theta) = \mathrm{Im}\,\mathrm{Li}_n(e^{i\theta})$
-  for $n$ even.*
+ for $n$ even.*
 
 ### Proof
 
@@ -37,18 +37,18 @@ The RHS is real ($\zeta(n) \in \mathbb{R}$).
 
 **Step 2 (extract Re / Im).**
 
-- *$n$ odd:* $\mathrm{Cl}_n = \mathrm{Re}\,\mathrm{Li}_n$.  Taking real
-  part of both sides:
-  $\sum_k \mathrm{Cl}_n(2\pi k/N) = (N^{1 - n} - 1)\, \zeta(n)$.
-- *$n$ even:* $\mathrm{Cl}_n = \mathrm{Im}\,\mathrm{Li}_n$.  Taking
-  imaginary part of both sides:
-  $\sum_k \mathrm{Cl}_n(2\pi k/N) = \mathrm{Im}((N^{1 - n} - 1)\,\zeta(n)) = 0$
-  (since $\zeta(n) \in \mathbb{R}$). $\square$
+- *$n$ odd:* $\mathrm{Cl}_n = \mathrm{Re}\,\mathrm{Li}_n$. Taking real
+ part of both sides:
+ $\sum_k \mathrm{Cl}_n(2\pi k/N) = (N^{1 - n} - 1)\, \zeta(n)$.
+- *$n$ even:* $\mathrm{Cl}_n = \mathrm{Im}\,\mathrm{Li}_n$. Taking
+ imaginary part of both sides:
+ $\sum_k \mathrm{Cl}_n(2\pi k/N) = \mathrm{Im}((N^{1 - n} - 1)\,\zeta(n)) = 0$
+ (since $\zeta(n) \in \mathbb{R}$). $\square$
 
 ### Verifications
 
 Verified at 50 dps for $n \in \{2, 3, 4, 5\}$, $N \in \{3, 4, 5, 6, 7\}$
-(20 combinations), max residual $8.0 \times 10^{-51}$.  Witness:
+(20 combinations), max residual $8.0 \times 10^{-51}$. Witness:
 [`jonquiere-cyclotomic-general.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/jonquiere-cyclotomic-general.witness.json).
 
 Sample values:
@@ -69,7 +69,7 @@ genuinely-new content "absorbed" into the classical $\zeta(n)$-line
 of $\mathcal{P}_n / \mathcal{P}_{n-1}$ (when $n$ is odd, $\zeta(n)$ is
 NOT Tate-rational, conjecturally transcendental over $\mathbb{Q}$).
 
-**For $n$ even**: orbit sum vanishes trivially. The individual
+**For $n$ even**: orbit sum vanishes by definition. The individual
 $\mathrm{Cl}_n$ values are bar-anti-symmetric (Glaisher convention),
 so they pair-cancel. No reduction occurs — all $(N - 1)/2$ distinct
 $\mathrm{Cl}_n$ magnitudes are independent (modulo Beilinson).
@@ -77,7 +77,7 @@ $\mathrm{Cl}_n$ magnitudes are independent (modulo Beilinson).
 ### Generalises Theorem B (PR #635 round 3)
 
 Theorem B ([`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general))
-is the $n = 3$ case.  This proposition extends the pattern to all $n$
+is the $n = 3$ case. This proposition extends the pattern to all $n$
 with a single proof.
 
 ### Dimension consequences

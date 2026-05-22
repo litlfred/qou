@@ -6,7 +6,7 @@ $$
 $$
 
 so the commutator $[e_a,e_b]$ is the first-order Taylor polynomial of
-the non-commutativity.  Higher-order corrections (the full
+the non-commutativity. Higher-order corrections (the full
 Baker--Campbell--Hausdorff series) encode the complete nonlinear group
-law and reappear naturally in the universal enveloping algebra
+law and reappear accordingly in the universal enveloping algebra
 ([Section](#sec:enveloping-algebras)).

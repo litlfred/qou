@@ -24,7 +24,7 @@ confinement level $\ell(K, q_0)$
 [graded-trace residue split](#prop:graded-trace-residue-split):
 the $E_\infty$-pairing of $\mathrm{tr}_M$ with $T_w$ in the filtered
 Hochschild spectral sequence ([GB spectral sequence](#prop:gb-spectral-sequence))
-splits cleanly into the level-$0$ descended piece (smooth/Strutinsky
+splits into the level-$0$ descended piece (smooth/Strutinsky
 liquid-drop part) and the higher-stratum cyclotomic residues
 (shell-correction part).*
 
@@ -36,7 +36,7 @@ spectral_decomposition :
   mass = |descended| + ∑ ℓ : Fin levelBound, residue ℓ
 ```
 
-*on `GBResidueSpectralSum`.  It is the analytic content of the
+*on `GBResidueSpectralSum`. It is the analytic content of the
 `noncomputable opaque` block: instances must supply this identity as
 input, currently as `sorry` per CLAUDE.md §3b.*
 
@@ -44,13 +44,13 @@ input, currently as `sorry` per CLAUDE.md §3b.*
 *A Lean proof requires:*
 
 1. *[graded Markov trace existence](#conj:gs-graded-markov-trace-existence)
-   and [residue at root existence](#conj:gs-residue-at-root-existence)
-   as formal Lean defs (not class fields).*
+ and [residue at root existence](#conj:gs-residue-at-root-existence)
+ as formal Lean defs (not class fields).*
 2. *The classical Habiro–Mittag-Leffler bridge identifying the
-   cyclotomic tail of $\mathrm{tr}_M(T_w, q_0)$ with the residue
-   sum — i.e. an analytic identification of the spectral-sequence
-   $E_\infty$-pairing with the contour integral over the Descartes
-   elliptic curve.*
+ cyclotomic tail of $\mathrm{tr}_M(T_w, q_0)$ with the residue
+ sum — i.e. an analytic identification of the spectral-sequence
+ $E_\infty$-pairing with the contour integral over the Descartes
+ elliptic curve.*
 
 *Effort is "very large" per the
 [audit](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md);
@@ -60,5 +60,5 @@ atom) is the working substitute.*
 **Empirical witness.**
 *Cross-pipeline validation at `proton`, `neutron`, `deuteron` records
 relative difference $\le$ $10^{-9}$ to machine precision on every
-checkpoint.  See
+checkpoint. See
 `folio-assistant/computations/markov-pipeline-cross-validation.witness.json`.*

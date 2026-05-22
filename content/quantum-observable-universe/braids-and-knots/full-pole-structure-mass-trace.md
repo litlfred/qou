@@ -41,17 +41,17 @@ $$
 *The expansion has the following properties:*
 
 1. *(Roots of unity.) $\mathrm{tr}_M(T_w, q)$ has well-defined values
-   at every root of unity $\zeta_n^{(j)}$, since $(q;q)_m$ vanishes
-   at $\zeta_n^{(j)}$ for every $n \leq m$ and the partial sums are
-   polynomials in $q$.*
+ at every root of unity $\zeta_n^{(j)}$, since $(q;q)_m$ vanishes
+ at $\zeta_n^{(j)}$ for every $n \leq m$ and the partial sums are
+ polynomials in $q$.*
 2. *(Cyclotomic truncation.) Truncation at order $m$ exactly
-   suppresses the contribution from every root of unity of order
-   $\leq m$: the residual $\mathrm{tr}_M(T_w) - \sum_{k < m} a_k (q;q)_k$
-   lies in the ideal $((q;q)_m) \subset \widehat{\mathbb{Z}[q]}$.*
+ suppresses the contribution from every root of unity of order
+ $\leq m$: the residual $\mathrm{tr}_M(T_w) - \sum_{k < m} a_k (q;q)_k$
+ lies in the ideal $((q;q)_m) \subset \widehat{\mathbb{Z}[q]}$.*
 3. *(Confinement-level support.) For an atomic closed braid the
-   expansion terminates: $a_m = 0$ for $m > m_{\max}(T_w)$ with
-   $m_{\max}$ controlled by the confinement level
-   ([atomic Habiro expansion](#cor:habiro-expansion-atomic)).*
+ expansion terminates: $a_m = 0$ for $m > m_{\max}(T_w)$ with
+ $m_{\max}$ controlled by the confinement level
+ ([atomic Habiro expansion](#cor:habiro-expansion-atomic)).*
 
 **What the Mittag-Leffler picture actually was.**
 *The earlier "$\sum_{n,j} r_n^{(j)}/(q_0 - \zeta_n^{(j)})$" expression
@@ -72,7 +72,7 @@ vanish on the atomic trefoil class).*
 *The qualitative regimes formerly described as "$\zeta_1$-dominant",
 "resonant cancellation", and "resonant enhancement" reflect the
 distribution of nonzero $a_m$ across cyclotomic orders. In Habiro
-form they are cleanly stated as: a braid is regime-(1) if only
+form they are stated as: a braid is regime-(1) if only
 $a_0, a_1$ are nonzero; regime-(2) if signs alternate across $a_m$;
 regime-(3) if signs reinforce. The Habiro expansion is the natural
 target for the symbolic computation of these regimes (see
@@ -120,20 +120,20 @@ Property (3) is the termination clause of the atomic case. $\square$
 Two specific failures of the "meromorphic on $\mathbb{C}$" picture:
 
 1. **Density on $S^1$.** The set
-   $\{\zeta_n^{(j)} : \gcd(j,n)=1, n \geq 2\}$ is dense in $S^1$.
-   A meromorphic function on a connected open set has only
-   isolated poles; with poles dense in $S^1$ the only consistent
-   picture is that $S^1$ is a natural boundary, and there is no
-   single connected meromorphic continuation across it. The Habiro
-   ring sidesteps this by working in the cyclotomic completion of
-   $\mathbb{Z}[q]$, where evaluation at each root of unity is
-   defined polynomially without any complex-analytic continuation.
+ $\{\zeta_n^{(j)} : \gcd(j,n)=1, n \geq 2\}$ is dense in $S^1$.
+ A meromorphic function on a connected open set has only
+ isolated poles; with poles dense in $S^1$ the only consistent
+ picture is that $S^1$ is a natural boundary, and there is no
+ single connected meromorphic continuation across it. The Habiro
+ ring sidesteps this by working in the cyclotomic completion of
+ $\mathbb{Z}[q]$, where evaluation at each root of unity is
+ defined polynomially without any complex-analytic continuation.
 2. **Convergence.** The Cauchy-kernel partial sum
-   $\sum_{n \leq N} \sum_j r_n^{(j)}/(q - \zeta_n^{(j)})$ does not
-   converge uniformly on any neighbourhood that crosses $S^1$.
-   The Habiro expansion converges in the $q$-adic
-   $((q;q)_\bullet)$-topology by construction, and reduces
-   modulo $(q;q)_m$ at every truncation order.
+ $\sum_{n \leq N} \sum_j r_n^{(j)}/(q - \zeta_n^{(j)})$ does not
+ converge uniformly on any neighbourhood that crosses $S^1$.
+ The Habiro expansion converges in the $q$-adic
+ $((q;q)_\bullet)$-topology by construction, and reduces
+ modulo $(q;q)_m$ at every truncation order.
 
 This proposition replaces the earlier "meromorphic with poles at
 all primitive roots of unity" wording with the algebraically

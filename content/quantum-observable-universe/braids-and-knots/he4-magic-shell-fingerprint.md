@@ -8,21 +8,21 @@ independent compute paths:
 
 | level | machinery | dominant structure | binding source |
 |---|---|---|---|
-| **Channel** (LP)                  | operator-selection LP on $\Delta_\mathrm{cat}$ anchors | primal $\mathrm{T} \oplus p$; dual $y^\star_{\mathrm{D} \oplus \mathrm{D}} = 3.778$ | deuteron-pairing receptivity |
-| **Wedderburn block** (braid)      | $\Sigma_\lambda y_\lambda \cdot \chi^\lambda_q(\beta_{{}^4\mathrm{He}})$ at $n = 12$ | two-row stratum $\Lambda^2(12)$ at $86.6\,\%$; $\lambda^\star = (9, 3)$ at $29.0\,\%$ | $q$-symmetric spin-pairing |
+| **Channel** (LP) | operator-selection LP on $\Delta_\mathrm{cat}$ anchors | primal $\mathrm{T} \oplus p$; dual $y^\star_{\mathrm{D} \oplus \mathrm{D}} = 3.778$ | deuteron-pairing receptivity |
+| **Wedderburn block** (braid) | $\Sigma_\lambda y_\lambda \cdot \chi^\lambda_q(\beta_{{}^4\mathrm{He}})$ at $n = 12$ | two-row stratum $\Lambda^2(12)$ at $86.6\,\%$; $\lambda^\star = (9, 3)$ at $29.0\,\%$ | $q$-symmetric spin-pairing |
 
-These are not two ways of saying the same thing trivially:
+These are not two ways of saying the same thing by definition:
 
 - The channel decomposition operates at the
-  categorical atom level — it consumes
-  the empirical $\Delta_\mathrm{cat}$ values of $D, T, {}^3\mathrm{He}, {}^4\mathrm{He}$
-  and solves a 3-dimensional LP on coupling residuals.
+ categorical atom level — it consumes
+ the empirical $\Delta_\mathrm{cat}$ values of $D, T, {}^3\mathrm{He}, {}^4\mathrm{He}$
+ and solves a 3-dimensional LP on coupling residuals.
 
 - The Wedderburn decomposition operates at the per-irrep matrix
-  trace level on the Hecke algebra $H_{12}(q)$ — it consumes
-  the canonical 47-crossing braid word
-  $\beta_{{}^4\mathrm{He}} = \mathrm{atom\_braid\_word\_3A}(2, 2)$ and
-  evaluates the Wedderburn sum over all $77$ partitions of $12$.
+ trace level on the Hecke algebra $H_{12}(q)$ — it consumes
+ the canonical 47-crossing braid word
+ $\beta_{{}^4\mathrm{He}} = \mathrm{atom\_braid\_word\_3A}(2, 2)$ and
+ evaluates the Wedderburn sum over all $77$ partitions of $12$.
 
 The compute infrastructure for the two is independent: the LP uses
 `scipy.linprog`; the Wedderburn sum uses Hoefsmit per-irrep

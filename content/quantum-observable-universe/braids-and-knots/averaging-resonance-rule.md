@@ -119,9 +119,9 @@ A $k$-position substructure selecting $m$ averaged crossings and
 $k - m$ non-averaged crossings has:
 
 - **Pure-$\sigma$ weight**: $\binom{n_\sigma + n_{\sigma^{-1}}}{k - m}$
-  ways to choose non-averaged positions
+ ways to choose non-averaged positions
 - **Averaging weight**: $\binom{n_{\mathrm{avg}}}{m}$
-  ways to choose averaged positions
+ ways to choose averaged positions
 
 The **dominant configuration** at order $k$ has $m = m_k$ averaged
 positions where $m_k$ maximises $\binom{n_{\mathrm{avg}}}{m} \binom{n_\sigma + n_{\sigma^{-1}}}{k-m}$.
@@ -136,14 +136,14 @@ At $q = 1 + \sqrt{2}$:
 
 - $\sigma$-eigenvalues = $1 \pm \sqrt{2}$ (silver-ratio conjugates)
 - Sums $\sigma^a + \sigma^{-a}$ reduce to Pell-Lucas numbers
-  ($a_n$: 1, 1, 3, 7, 17, 41, 99, 239, ...)
+ ($a_n$: 1, 1, 3, 7, 17, 41, 99, 239,...)
 - $b^2 = 7/8$ exactly
 - Pure-$\sigma$ products live in $\mathbb{Z}[1+\sqrt 2]$;
-  symmetric combinations give Pell-Lucas integers
+ symmetric combinations give Pell-Lucas integers
 - Averaging contributions carry an extra $1/(2^{m_k})$ factor,
-  PLUS the symmetric-combination integer — when reduced, the
-  denominator $2^{m_k}$ may not divide the integer numerator,
-  giving a non-Pell-Lucas-clean rational.
+ PLUS the symmetric-combination integer — when reduced, the
+ denominator $2^{m_k}$ may not divide the integer numerator,
+ giving a non-Pell-Lucas-clean rational.
 
 This is the **silver-ratio Pell-Lucas test** for sector classification.
 
@@ -155,14 +155,14 @@ authoritative classifier
 
 | $k$ | Conjectured closed form | Silver-ratio value | Pell-Lucas clean? | Sector |
 |:---:|:-----------------------:|:------------------:|:----------------:|:------:|
-| 3   | $c_3$                   | $-2$               | yes ($2^1$)      | pure-$\sigma$ |
-| 4   | $c_3 \cdot b^4$         | $-49/32 = -a_3^2/2^5$ | yes ($a_3^2$) | pure-$\sigma$ |
-| 5   | $-(b^2 + 1/2)$          | $-11/8$            | **NO ($11 \notin$ Pell-Lucas)** | **averaging-resonant** |
-| 6   | $c_3^2 \cdot b^2$       | $7/2 = a_3/2$      | yes ($a_3$)      | pure-$\sigma$ |
-| 7   | $c_3^3$                 | $-8 = -2^3$        | yes              | pure-$\sigma$ |
-| 8   | $c_3^2 \cdot b^4$       | $49/16 = a_3^2/2^4$ | yes ($a_3^2$)   | pure-$\sigma$ |
-| 9   | $c_3^3 \cdot b^2 = -7$  | $-7 = -a_3$        | yes              | pure-$\sigma$ |
-| 10  | $c_3^2 \cdot b^6$       | $343/128 = a_3^3/2^7$ | yes ($a_3^3$) | pure-$\sigma$ |
+| 3 | $c_3$ | $-2$ | yes ($2^1$) | pure-$\sigma$ |
+| 4 | $c_3 \cdot b^4$ | $-49/32 = -a_3^2/2^5$ | yes ($a_3^2$) | pure-$\sigma$ |
+| 5 | $-(b^2 + 1/2)$ | $-11/8$ | **NO ($11 \notin$ Pell-Lucas)** | **averaging-resonant** |
+| 6 | $c_3^2 \cdot b^2$ | $7/2 = a_3/2$ | yes ($a_3$) | pure-$\sigma$ |
+| 7 | $c_3^3$ | $-8 = -2^3$ | yes | pure-$\sigma$ |
+| 8 | $c_3^2 \cdot b^4$ | $49/16 = a_3^2/2^4$ | yes ($a_3^2$) | pure-$\sigma$ |
+| 9 | $c_3^3 \cdot b^2 = -7$ | $-7 = -a_3$ | yes | pure-$\sigma$ |
+| 10 | $c_3^2 \cdot b^6$ | $343/128 = a_3^3/2^7$ | yes ($a_3^3$) | pure-$\sigma$ |
 
 **Observed averaging-resonant rungs:** $\{5\}$ — **c_5 is the ONLY outlier**.
 
@@ -190,16 +190,16 @@ $$
 
 Computation:
 
-| $k$ | $\binom{2}{0}\binom{9}{k}$ | $\binom{2}{1}\binom{9}{k-1}$ | $\binom{2}{2}\binom{9}{k-2}$ | $m_k$ |  Predicted | Empirical |
+| $k$ | $\binom{2}{0}\binom{9}{k}$ | $\binom{2}{1}\binom{9}{k-1}$ | $\binom{2}{2}\binom{9}{k-2}$ | $m_k$ | Predicted | Empirical |
 |:---:|:--------:|:--------:|:--------:|:--:|:----:|:----:|
-| 3   | 84       | 72       | 9        | 0  | pure-$\sigma$ ✓ | pure-$\sigma$ |
-| 4   | 126      | 168      | 36       | 1  | averaging ✗ | pure-$\sigma$ |
-| 5   | 126      | 252      | 84       | 1  | averaging ✓ | **averaging** |
-| 6   | 84       | 252      | 126      | 1  | averaging ✗ | pure-$\sigma$ |
-| 7   | 36       | 168      | 126      | 1  | averaging ✗ | pure-$\sigma$ |
-| 8   | 9        | 72       | 84       | 2  | averaging ✗ | pure-$\sigma$ |
-| 9   | 1        | 18       | 36       | 2  | averaging ✗ | pure-$\sigma$ |
-| 10  | 0        | 2        | 9        | 2  | averaging ✗ | pure-$\sigma$ |
+| 3 | 84 | 72 | 9 | 0 | pure-$\sigma$ ✓ | pure-$\sigma$ |
+| 4 | 126 | 168 | 36 | 1 | averaging ✗ | pure-$\sigma$ |
+| 5 | 126 | 252 | 84 | 1 | averaging ✓ | **averaging** |
+| 6 | 84 | 252 | 126 | 1 | averaging ✗ | pure-$\sigma$ |
+| 7 | 36 | 168 | 126 | 1 | averaging ✗ | pure-$\sigma$ |
+| 8 | 9 | 72 | 84 | 2 | averaging ✗ | pure-$\sigma$ |
+| 9 | 1 | 18 | 36 | 2 | averaging ✗ | pure-$\sigma$ |
+| 10 | 0 | 2 | 9 | 2 | averaging ✗ | pure-$\sigma$ |
 
 **Accuracy: 2/8 = 25%.** The argmax-binomial rule predicts
 averaging for k $\in$ {4, 5, 6, 7, 8, 9, 10} but empirical evidence
@@ -208,23 +208,23 @@ shows only k = 5 is averaging. **This naive rule is FALSIFIED.**
 ## Refinements to investigate
 
 1. **σ-eigenvalue weighting**: not all $k$-fold substructures
-   contribute equally. The $\sigma$-eigenvalues $q$ and $-q^{-1}$
-   are unequal, weighting different selections differently. At
-   silver ratio, the symmetric combinations $q^a + q^{-a}$ may
-   produce non-trivial cancellations that effectively make some
-   $m \ne m_k$ configurations dominant.
+ contribute equally. The $\sigma$-eigenvalues $q$ and $-q^{-1}$
+ are unequal, weighting different selections differently. At
+ silver ratio, the symmetric combinations $q^a + q^{-a}$ may
+ produce non-trivial cancellations that effectively make some
+ $m \ne m_k$ configurations dominant.
 
 2. **Cyclic structure constraints**: Markov-trace cyclicity
-   $\tau_M(xy) = \tau_M(yx)$ restricts which substructures
-   contribute. The $k$-fold substructures must close cyclically,
-   reducing the effective count.
+ $\tau_M(xy) = \tau_M(yx)$ restricts which substructures
+ contribute. The $k$-fold substructures must close cyclically,
+ reducing the effective count.
 
 3. **Higher-order Wedderburn-block weighting**: the 1D reps
-   ($V_{(3)}, V_{(1,1,1)}$) and 2D rep ($V_{(2,1)}$) contribute to
-   $\tau_M$ with different per-block prefactors. The dominant
-   configuration in each Wedderburn block may differ, with the
-   sector outcome determined by the block whose absorption is
-   strongest at order $k$.
+ ($V_{(3)}, V_{(1,1,1)}$) and 2D rep ($V_{(2,1)}$) contribute to
+ $\tau_M$ with different per-block prefactors. The dominant
+ configuration in each Wedderburn block may differ, with the
+ sector outcome determined by the block whose absorption is
+ strongest at order $k$.
 
 ## Why $k = 5$ specifically? — the half-fill cyclic hypothesis
 
@@ -288,16 +288,16 @@ choice through $b^2$. At two natural quadratic fields:
 the precision ladder. The chain of reasoning:
 
 1. $\Delta(\mathrm{net}) = h(h-2)/2$ has a root at $h = 2$ (silver),
-   not at $h = 1$ (golden) or any other small $h$.
+ not at $h = 1$ (golden) or any other small $h$.
 2. At the β-decay null ($h = 2$), proton/neutron Markov traces
-   become categorically indistinguishable — the system collapses
-   into the bar-invariant fixed-point sector.
+ become categorically indistinguishable — the system collapses
+ into the bar-invariant fixed-point sector.
 3. That collapse leaves an inert-prime fingerprint ($11$, the
-   first inert prime in $\mathbb{Z}[1+\sqrt 2]$) in the c_5
-   numerator.
+ first inert prime in $\mathbb{Z}[1+\sqrt 2]$) in the c_5
+ numerator.
 4. At golden ratio there is no analogous null at small $h$, so no
-   forced collapse, and $c_5$'s numerator stays inside the natural
-   closure (Fibonacci $13 = F_7$).
+ forced collapse, and $c_5$'s numerator stays inside the natural
+ closure (Fibonacci $13 = F_7$).
 
 So "c_5 is the outlier" is more precisely **"c_5 is the outlier at
 the β-decay null, which is silver"**. The half-fill hypothesis
@@ -429,17 +429,16 @@ So $c_k$ is the **rung-$k$ logarithmic-derivative coefficient** of
 $\tau_M$ as $q$ leaves $1$. Cyclically:
 
 - $c_3$: cubic — first non-trivial rung. Picks up the
-  "$J_{\text{Hopf}}$ at $q=1$" contribution; value $-2$ is a
-  topological invariant of the typed braid's Hopf-link content.
+ "$J_{\text{Hopf}}$ at $q=1$" contribution; value $-2$ is a
+ topological invariant of the typed braid's Hopf-link content.
 - $c_4$: quartic. Factors as $c_3 \cdot b^4$ — pure-$\sigma$
-  self-coupling.
+ self-coupling.
 - $c_5$: quintic. Should factor as $(c_3)^a \cdot b^{2c}$ if
-  pure-$\sigma$, but the empirical form $-(b^2 + 1/2)$ has an
-  explicit **additive $-1/2$ term** that does not come from any
-  product of $c_3$ and $b^2$.
-- $c_6, c_7, c_8, c_9, c_{10}$: all factor as $(c_3)^a \cdot b^{2c}$
-  cleanly. They are monomials in $c_3$ and $b^2$ with integer
-  exponents.
+ pure-$\sigma$, but the empirical form $-(b^2 + 1/2)$ has an
+ explicit **additive $-1/2$ term** that does not come from any
+ product of $c_3$ and $b^2$.
+- $c_6, c_7, c_8, c_9, c_{10}$: all factor as $(c_3)^a \cdot b^{2c}$. They are monomials in $c_3$ and $b^2$ with integer
+ exponents.
 
 So the math distinction: $c_5$ is the only $c_k$ (in $k = 3..10$)
 that is **not** a monomial in $c_3$ and $b^2$. The extra $-1/2$ is
@@ -467,52 +466,52 @@ neutron $Q_\beta$ — well below experimental sensitivity. Its
 contribution:
 
 1. **Bar-invariance signal**: the $-1/2$ is the *only* place in the
-   $k = 3..10$ ladder where the Markov trace picks up a
-   categorically-bar-invariant piece (the projection
-   $P_{\mathrm{avg}} = (1 + \overline{\,\cdot\,})/2$). All other
-   rungs are pure-$\sigma$ eigenvalue monomials.
+ $k = 3..10$ ladder where the Markov trace picks up a
+ categorically-bar-invariant piece (the projection
+ $P_{\mathrm{avg}} = (1 + \overline{\,\cdot\,})/2$). All other
+ rungs are pure-$\sigma$ eigenvalue monomials.
 2. **Half-fill cyclicity**: the $1/2$ surfaces specifically at the
-   rung where a $k$-fold cyclic substructure covers exactly half
-   the typed braid (§Why $k = 5$ specifically). Half-fill is the
-   unique configuration that captures both averaged crossings
-   without overlap-washing.
+ rung where a $k$-fold cyclic substructure covers exactly half
+ the typed braid (§Why $k = 5$ specifically). Half-fill is the
+ unique configuration that captures both averaged crossings
+ without overlap-washing.
 3. **Falsifiability anchor**: $c_5$ is the *one* observable in the
-   precision ladder that **cannot** be predicted from $c_3$ alone.
-   A categorical derivation of the level-selection rule must
-   reproduce $-1/2$ exactly — that is the discriminating data
-   point.
+ precision ladder that **cannot** be predicted from $c_3$ alone.
+ A categorical derivation of the level-selection rule must
+ reproduce $-1/2$ exactly — that is the discriminating data
+ point.
 
 ### Why $c_5$ specifically — what supplies the $1/2$
 
 Three layers of explanation, in order of specificity:
 
 1. **Involution (supplies the *magnitude*, $1/2$)**. The typed
-   braid recipe uses averaged crossings
-   $\sigma_{\mathrm{avg}} = P_{\mathrm{avg}}(\sigma) = (\sigma + \sigma^{-1})/2 = \sigma - h/2$.
-   The single-crossing $h/2$ propagates through the Markov-trace
-   expansion as a $1/2$ coefficient in the rung that picks it up.
-   But involution does **not** pick the rung — naive propagation
-   makes *every* rung with averaged-crossing coverage inherit
-   $1/2$, which is the falsified argmax-binomial heuristic.
+ braid recipe uses averaged crossings
+ $\sigma_{\mathrm{avg}} = P_{\mathrm{avg}}(\sigma) = (\sigma + \sigma^{-1})/2 = \sigma - h/2$.
+ The single-crossing $h/2$ propagates through the Markov-trace
+ expansion as a $1/2$ coefficient in the rung that picks it up.
+ But involution does **not** pick the rung — naive propagation
+ makes *every* rung with averaged-crossing coverage inherit
+ $1/2$, which is the falsified argmax-binomial heuristic.
 
 2. **Half-fill cyclicity (supplies the *rung*, $k = 5$)**. For
-   $n_{\text{total}} = 11$, the rung
-   $k = \lfloor n_{\text{total}}/2 \rfloor = 5$ is the unique $k$
-   where a $k$-fold cyclic substructure captures both averaged
-   crossings exactly once (no double-cover, no leftover-tail
-   dilution). At $k < 5$ at most one averaged crossing is inside
-   any $k$-fold substructure (low-$m$ substructures dominate
-   combinatorially); at $k > 5$ both averaged crossings are forced
-   inside but accompanied by enough pure-$\sigma$ tail that the
-   $1/2$ is overwhelmed.
+ $n_{\text{total}} = 11$, the rung
+ $k = \lfloor n_{\text{total}}/2 \rfloor = 5$ is the unique $k$
+ where a $k$-fold cyclic substructure captures both averaged
+ crossings exactly once (no double-cover, no leftover-tail
+ dilution). At $k < 5$ at most one averaged crossing is inside
+ any $k$-fold substructure (low-$m$ substructures dominate
+ combinatorially); at $k > 5$ both averaged crossings are forced
+ inside but accompanied by enough pure-$\sigma$ tail that the
+ $1/2$ is overwhelmed.
 
 3. **Markov-trace cyclicity (supplies the *uniqueness*)**. The
-   closure constraint $\tau_M(xy) = \tau_M(yx)$ collapses naive
-   substructure counts into a cyclic-orbit count. Half-fill rungs
-   sit at the cyclic-orbit minimum where each orbit covers each
-   averaged crossing exactly once. Lower or higher $k$ produces
-   orbits that either miss an averaged crossing or double-cover
-   one — both wash the $1/2$.
+ closure constraint $\tau_M(xy) = \tau_M(yx)$ collapses naive
+ substructure counts into a cyclic-orbit count. Half-fill rungs
+ sit at the cyclic-orbit minimum where each orbit covers each
+ averaged crossing exactly once. Lower or higher $k$ produces
+ orbits that either miss an averaged crossing or double-cover
+ one — both wash the $1/2$.
 
 The proposed formula is a **layered prediction**:
 
@@ -540,13 +539,13 @@ $$
 Reading the terms:
 
 - $(c_3/2)\cdot b^2 = -b^2$: at half-fill, the pure-$\sigma$
-  contribution carries a cyclic-orbit factor of $1/2$ on $c_3$;
-  multiplied by the rung's $b^2$ companion gives $-b^2$.
+ contribution carries a cyclic-orbit factor of $1/2$ on $c_3$;
+ multiplied by the rung's $b^2$ companion gives $-b^2$.
 - $(c_3/4)\cdot P_{\mathrm{avg}}^{(2)} = -1/2$: the
-  $P_{\mathrm{avg}}^{(2)} = 1$ is the trivial bar-invariant
-  scalar; the $c_3/4 = -1/2$ packages a half-fill $1/2$ with the
-  involution $1/2$ ($P_{\mathrm{avg}}^2 = P_{\mathrm{avg}}/2$ in
-  the symmetric-projector calculus).
+ $P_{\mathrm{avg}}^{(2)} = 1$ is the trivial bar-invariant
+ scalar; the $c_3/4 = -1/2$ packages a half-fill $1/2$ with the
+ involution $1/2$ ($P_{\mathrm{avg}}^2 = P_{\mathrm{avg}}/2$ in
+ the symmetric-projector calculus).
 
 Both terms carry an explicit $1/2$ from half-fill cyclicity, but
 only the second carries the **additional** $1/2$ from $P_{\mathrm{avg}}$.
@@ -574,15 +573,15 @@ $n_{\text{total}}$.
 **Three open R&D directions for closing the rule:**
 
 1. σ-eigenvalue weighting — non-trivial cancellations under the
-   silver-ratio reduction may select rungs by parity of substructure
-   eigenvalue combinations.
+ silver-ratio reduction may select rungs by parity of substructure
+ eigenvalue combinations.
 2. Cyclic structure constraints — Markov-trace cyclicity
-   $\tau_M(xy) = \tau_M(yx)$ enforces a closure that nontrivially
-   restricts substructure counting (the half-fill hypothesis is an
-   instance of this).
+ $\tau_M(xy) = \tau_M(yx)$ enforces a closure that nontrivially
+ restricts substructure counting (the half-fill hypothesis is an
+ instance of this).
 3. Per-Wedderburn-block weighting — the 1D ($V_{(3)}, V_{(1,1,1)}$)
-   and 2D ($V_{(2,1)}$) blocks contribute with different prefactors;
-   the dominant configuration may differ per block.
+ and 2D ($V_{(2,1)}$) blocks contribute with different prefactors;
+ the dominant configuration may differ per block.
 
 A future Lean theorem would require: (i) explicit symbolic expansion
 of $\tau_M(\beta_{\text{typed}})$ to high order in $h$, (ii)

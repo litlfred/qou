@@ -1,6 +1,6 @@
 This proposition derives the chiral-case factor $a_K = 1 + w(K) \cdot h$
 (first order in $h = q - q^{-1}$) from the **Kauffman framing
-formula** applied to the ribbon twist on $H_n(R, q)$.  The amphichiral
+formula** applied to the ribbon twist on $H_n(R, q)$. The amphichiral
 case $a_K = 1 - h^2$ is derived elsewhere
 ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete));
 this proposition closes the chiral case
@@ -106,7 +106,7 @@ is the character-weighted average content.*
 *For a braid whose character is **dominated by the standard
 channel** (the middle Wedderburn block, with $c(\lambda) = 0$
 at $H_3$ for $\lambda = (2,1)$) — the cross-term vanishes, and
-one needs the **next** non-trivial channel.  For $H_n(R, q)$ with
+one needs the **next** non-trivial channel. For $H_n(R, q)$ with
 $n \geq 3$, the self-dual channel pairing $\lambda \leftrightarrow
 \lambda^T$ gives $c(\lambda) + c(\lambda^T) = 0$, so the
 character-weighted average $\langle c\rangle_\beta$ equals a
@@ -117,7 +117,7 @@ $\chi^\lambda$ and $\chi^{\lambda^T}$.*
 *Script `ribbon_content_average.py` computes
 $\langle c\rangle_\beta$ and the predicted
 $a_K = 1 + w(\beta) \cdot \langle c\rangle_\beta \cdot h$
-for the deuteron atomic braid.  Results:*
+for the deuteron atomic braid. Results:*
 
 | braid | writhe $w$ | $\langle c\rangle_\beta$ | predicted $a_K$ | paper's $a_D$ |
 |---|---|---|---|---|
@@ -137,27 +137,27 @@ close but without deeper structural justification at $A=1$.*
 
 **What this test establishes.**
 *The **structural form** $a_K = 1 + w \cdot (\text{something}) \cdot h
-+ O(h^2)$ is correct (linear in $h$ and writhe).  The **coefficient
-"something"** is NOT simply the Wedderburn-averaged content
-$\langle c\rangle_\beta$.  Possible refinements:*
++ O(h^2)$ is correct (linear in $h$ and writhe). The **coefficient
+"something"** is NOT the Wedderburn-averaged content
+$\langle c\rangle_\beta$. Possible refinements:*
 
 1. *Weighting by $\dim_q(\lambda)$ instead of $\dim_q(\lambda)^2$
-   — a different Markov-trace normalisation.*
+ — a different Markov-trace normalisation.*
 2. *Framing by topological writhe (linking number of closure) vs
-   algebraic writhe (signed crossing count).  Averaged crossings
-   $(1, -h/2)$ may contribute $1/2$ to topological writhe even
-   though their algebraic writhe is $0$.*
+ algebraic writhe (signed crossing count). Averaged crossings
+ $(1, -h/2)$ may contribute $1/2$ to topological writhe even
+ though their algebraic writhe is $0$.*
 3. *The formula $a_K = 1 + w h$ may be a **paper-empirical
-   ansatz**, not a rigorous leading-order result.  Paper's
-   derivation says "chiral deviation is first-order in $h$,
-   with positive sign from the positive crossing" — which
-   **does not** uniquely determine the coefficient.*
+ ansatz**, not a rigorous leading-order result. Paper's
+ derivation says "chiral deviation is first-order in $h$,
+ with positive sign from the positive crossing" — which
+ **does not** uniquely determine the coefficient.*
 4. *The derivation should use the true **Hecke-algebra ribbon
-   element** $\varTheta_{H_n(R, q)}$, which at $H_6(R, q)$ has a more
-   complex structure than the naive $q^{2c(\lambda)}$ — it
-   involves a product of primitive idempotents weighted by
-   Hoefsmit content, which may differ from the classical content
-   sum $c(\lambda)$.*
+ element** $\varTheta_{H_n(R, q)}$, which at $H_6(R, q)$ has a more
+ complex structure than the naive $q^{2c(\lambda)}$ — it
+ involves a product of primitive idempotents weighted by
+ Hoefsmit content, which may differ from the classical content
+ sum $c(\lambda)$.*
 
 **Empirical observation: multiplicative per-pn-crossing pattern.**
 
@@ -178,26 +178,26 @@ $$
 $$
 
 *The observation is empirical: it reproduces all three paper
-assignments from a simple multiplicative rule.  A rigorous
+assignments from a simple multiplicative rule. A rigorous
 derivation of **why** each pn crossing contributes $(1 \pm h)$ — and
-not other $h$-polynomials — remains open.  Plausible categorical
+not other $h$-polynomials — remains open. Plausible categorical
 origins:*
 
 1. *$(1 + h)$ is the Hecke-eigenvalue spread for $\sigma$ in a
-   specific normalisation: $(q) - (-q^{-1}) \cdot q^{-1}$ or similar.*
+ specific normalisation: $(q) - (-q^{-1}) \cdot q^{-1}$ or similar.*
 2. *It is the **Markov-trace ratio** $\mathrm{tr}_M(\sigma) / \mathrm{tr}_M(1)$
-   in a specific convention differing from the standard $z$.*
+ in a specific convention differing from the standard $z$.*
 3. *It is the **spin-1/2 braiding eigenvalue** $R_{11}$ in $U_q(\mathfrak{sl}_2)$
-   on $V_1 \otimes V_1$ — the "up-up" braid eigenvalue on the
-   symmetric component.  This is $(1 + h)$ in a specific
-   normalisation.*
+ on $V_1 \otimes V_1$ — the "up-up" braid eigenvalue on the
+ symmetric component. This is $(1 + h)$ in a specific
+ normalisation.*
 
-*Option 3 is the most structurally natural.  The $R$-matrix of
+*Option 3 is the most structurally natural. The $R$-matrix of
 $U_q(\mathfrak{sl}_2)$ acts on $V_1 \otimes V_1 = V_2 \oplus V_0$
 with eigenvalues $q$ (on $V_2$ symmetric) and $-q^{-1}$ (on $V_0$
-antisymmetric).  For a pn crossing (one positive, one negative
+antisymmetric). For a pn crossing (one positive, one negative
 strand mixing), the "effective" braiding eigenvalue weighted by
-the pn-specific Wedderburn component would give $(1 + h)$.  A
+the pn-specific Wedderburn component would give $(1 + h)$. A
 detailed derivation requires specifying the pn coupling in
 Schur–Weyl terms.*
 
@@ -227,31 +227,31 @@ All 7 other variants diverge by $>80\%$.*
 
 *This is **strong negative evidence** that paper's chirality
 factor is NOT derivable from a simple Hecke-trace formula at
-the writhe-ribbon level.  Possible resolutions:*
+the writhe-ribbon level. Possible resolutions:*
 
 1. *Paper's $\{1+h, 1-h^2, (1-h^2)^2\}$ assignments are
-   **phenomenological ansätze** motivated by knot-theoretic
-   intuition but without rigorous Hecke-trace derivation.
-   The "Frobenius-norm-deviation derivation" mentioned in
-   upstream commits may be heuristic rather than theorem.*
+ **phenomenological ansätze** motivated by knot-theoretic
+ intuition but without rigorous Hecke-trace derivation.
+ The "Frobenius-norm-deviation derivation" mentioned in
+ upstream commits may be heuristic rather than theorem.*
 2. *The correct derivation uses the **quantum-group ribbon
-   element** (from $U_q(\mathfrak{sl}_2)$ acting on Schur–Weyl
-   quotients), not just the Hecke-algebra Markov trace.  The
-   former adds a framing-dependent global factor absent from
-   Markov-trace computations.*
+ element** (from $U_q(\mathfrak{sl}_2)$ acting on Schur–Weyl
+ quotients), not the Hecke-algebra Markov trace. The
+ former adds a framing-dependent global factor absent from
+ Markov-trace computations.*
 3. *The chirality factor is the **signature** of a specific
-   Hermitian form on the knot-complement state space, not a
-   Markov-trace quantity.  Computing it would require
-   infrastructure beyond what is in-scope here.*
+ Hermitian form on the knot-complement state space, not a
+ Markov-trace quantity. Computing it would require
+ infrastructure beyond what is in-scope here.*
 
 *Term 5 status: the writhe-$h$ linearisation **form** is correct;
 the coefficient is **not** captured by any tested Hecke-trace
-formula.  A full derivation requires quantum-group or
+formula. A full derivation requires quantum-group or
 knot-complement machinery.*
 
 **Consistency with amphichiral case.**
 *For an amphichiral braid, writhe $w = 0$, so the first-order
-chirality correction vanishes.  The second-order $h^2$ term then
+chirality correction vanishes. The second-order $h^2$ term then
 dominates and gives $a_K = 1 - c_K h^2$
 ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete)),
 matching the $4_1$ knot's $a_K = 1 - h^2$.*
@@ -259,9 +259,9 @@ matching the $4_1$ knot's $a_K = 1 - h^2$.*
 **Result.** The derivation is complete to leading order; the $\langle c \rangle$ coefficient requires channel-by-channel computation.
 
 *The general formula $a_K = 1 + w(\beta)\langle c\rangle_\beta h
-+ O(h^2)$ is derived.  The **specific** value
++ O(h^2)$ is derived. The **specific** value
 $\langle c\rangle_{\beta_D} = 1$ giving the $(1 + h)$ factor
-requires an explicit $H_6(R, q)$ character computation.  For
+requires an explicit $H_6(R, q)$ character computation. For
 amphichiral $4_1$, the $O(h^2)$ coefficient $c_K = 1$ is given by
 paper's Fricke-identity derivation.*
 
@@ -275,8 +275,8 @@ this block.*
 *Per
 ([$E_\infty$ page identifications](#prop:e-infinity-page-identifications))
 §5, the chirality factor is the **ribbon 0-cocycle** paired with
-$\tau$.  The derivation above makes this concrete: the ribbon
+$\tau$. The derivation above makes this concrete: the ribbon
 cocycle is $f_\varTheta(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta)
 \varTheta_\lambda^{w(\beta)/2}$, and its $\tau$-normalisation gives
-$a_K$.  Cohomologically, $f_\varTheta \in HH^0$ (degree $0$ Hochschild
+$a_K$. Cohomologically, $f_\varTheta \in HH^0$ (degree $0$ Hochschild
 cocycle) because it factors through the cyclic trace.*
