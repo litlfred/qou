@@ -34,7 +34,7 @@ sits at the **crossroads**: it computes the Markov closure of a typed braid,
 which simultaneously lives in $H_n(q)$ (Kashiwara side) and produces an
 invariant of $\widehat\beta$ (Jones side).
 
-## Why even $k$ → Kashiwara, odd $k$ → Jones
+## Why even $k$ $\to$ Kashiwara, odd $k$ $\to$ Jones
 
 The structural rule (empirically validated through $k = 4$):
 
@@ -98,18 +98,18 @@ the "quadratic" structure is the Hecke relation $\sigma_i^2 = h\sigma_i + 1$.
 
 The user's intuition extends to operator-type dependence:
 
-- **Hyperbolic links/knots** (figure-8, Borromean rings, …): $\mathrm{Vol} > 0$.
+- **Hyperbolic links/knots** (figure-8, Borromean rings, $\ldots$): $\mathrm{Vol} > 0$.
   Their τ_M values (and Jones polynomials) carry the Vol Conjecture-style
   asymptotics. Their classical-limit Jones values are integer-valued and
   enter the precision ladder via Markov closure at $q = 1$.
-- **Torus knots** (trefoil $3_1$, $T(2,5)$, …): $\mathrm{Vol} = 0$. Their
+- **Torus knots** (trefoil $3_1$, $T(2,5)$, $\ldots$): $\mathrm{Vol} = 0$. Their
   Jones values at $q = 1$ collapse to $1$ (unknot-like classical limit).
   Torus structure is captured by **Jucys–Murphy elements** — diagonal in
   the seminormal basis, so they contribute to the **Kashiwara** side
   (intra-block, no link invariant).
 
 The QOU β-decay braid has $11$ typed crossings with the closure being a
-**3-strand braid → 3-component link** (Borromean structure per
+**3-strand braid $\to$ 3-component link** (Borromean structure per
 [`rem:borromean-baryon-interpretation`](#rem:borromean-baryon-interpretation)).
 The closure is **hyperbolic** ($\mathrm{Vol}(\mathcal{B}_3) \approx 7.328$);
 its sub-link structure (Hopf at 3-fold closure, full Borromean at higher

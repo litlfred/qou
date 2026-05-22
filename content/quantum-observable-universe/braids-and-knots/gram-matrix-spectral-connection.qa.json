@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/gram-matrix-spectral-connection.md"
   },
   "source_hashes": {
-    "md": "0df383806583",
+    "md": "37569c33c364",
     "ts": "f68c16775b3c"
   },
   "criteria": {
@@ -343,19 +343,19 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "0df383806583",
+          "md": "37569c33c364",
           "ts": "f68c16775b3c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/gram-matrix-spectral-connection.md:73: **Gram ↔ Wedderburn conjugation.**"
+        "reviewed_at": "2026-05-22T19:05:44.405Z",
+        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1"
       }
     ],
     "voice-editorializing": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T19:05:44.405Z"
 }

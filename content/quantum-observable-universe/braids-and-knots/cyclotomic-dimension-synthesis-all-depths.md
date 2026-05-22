@@ -34,10 +34,10 @@ generators per depth.
 [`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality):
 
 - *$n$ odd:* All $(K - 1)/2$ imaginary parts are Tate-rational
-  ($\in \pi^n \mathbb{Q}$) → collapse to 0 in
+  ($\in \pi^n \mathbb{Q}$) $\to$ collapse to 0 in
   $\mathcal{P}_n / \mathrm{Tate}$. Right-parity = Re, giving
   $(K - 1)/2$ real-part candidates.
-- *$n$ even:* All $(K - 1)/2$ real parts are Tate-rational → collapse
+- *$n$ even:* All $(K - 1)/2$ real parts are Tate-rational $\to$ collapse
   to 0. Right-parity = Im, giving $(K - 1)/2$ imaginary-part
   candidates.
 

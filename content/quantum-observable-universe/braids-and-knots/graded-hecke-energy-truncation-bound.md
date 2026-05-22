@@ -49,12 +49,12 @@ Empirically at $q_0 \approx 1.110$:
 
 | Atom | $n$ strands | $p(n)$ | $\ell(K, q_0)$ | Speedup |
 |------|------------:|-------:|---------------:|--------:|
-| proton ($\mathcal{B}_p$) | 3 | 3 | 2 | 1.5× |
-| neutron ($\mathcal{B}_n$) | 3 | 3 | 2 | 1.5× |
-| deuteron ($\beta_D$) | 6 | 11 | 5 | 2.2× |
-| triton ($\beta_T$) | 9 | 30 | 8 | 3.7× |
-| ³He ($\beta_{^3\text{He}}$) | 9 | 30 | 8 | 3.7× |
-| ⁴He ($\beta_{^4\text{He}}$) | 12 | 77 | 11 | 7.0× |
+| proton ($\mathcal{B}_p$) | 3 | 3 | 2 | 1.5$\times$ |
+| neutron ($\mathcal{B}_n$) | 3 | 3 | 2 | 1.5$\times$ |
+| deuteron ($\beta_D$) | 6 | 11 | 5 | 2.2$\times$ |
+| triton ($\beta_T$) | 9 | 30 | 8 | 3.7$\times$ |
+| ${}^{3}$He ($\beta_{^3\text{He}}$) | 9 | 30 | 8 | 3.7$\times$ |
+| ${}^{4}$He ($\beta_{^4\text{He}}$) | 12 | 77 | 11 | 7.0$\times$ |
 
 Speedups assume $\ell(K, q_0) + 1$ effective grades vs $p(n)$
 partitions; conservative since the per-grade cost is comparable.

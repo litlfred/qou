@@ -84,7 +84,7 @@ the computational content of
 **Earlier special case.**
 *The remark
 [nucleon-as-unit justification](#rem:confinement-nucleon-unit)
-is the special case of this framework at the atom→nucleon
+is the special case of this framework at the atom$\to$nucleon
 transition ($\ell = 2 \to \ell = 1$).
 [Prop:level-sufficiency](#prop:level-sufficiency) generalises it
 uniformly across the full hierarchy — quark to molecule — and for

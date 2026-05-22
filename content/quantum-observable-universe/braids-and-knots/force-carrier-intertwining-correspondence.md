@@ -47,7 +47,7 @@ channel.
 
 ### Worked example: $H_4(q)$ molecular braid
 
-For the H₂ molecular bound state in
+For the H$_{2}$ molecular bound state in
 [`prop:h2-lp-dual-binding`](#prop:h2-lp-dual-binding), the braid
 acts on $n = 4$ strands ($p_1, e_2, e_1, p_2$ in the optimal
 ordering).  The two force-carrier predictions:

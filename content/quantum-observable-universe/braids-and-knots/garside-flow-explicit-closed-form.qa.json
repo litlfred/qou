@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md"
   },
   "source_hashes": {
-    "md": "ccba72d36fcc",
+    "md": "d71baaf59d2b",
     "ts": "29873eef2e26"
   },
   "criteria": {
@@ -343,19 +343,37 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "ccba72d36fcc",
+          "md": "9f8cfa5cb636",
           "ts": "29873eef2e26"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T19:05:44.405Z",
+        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md:51: The I₃ branch evaluates to the I₂ endpoint $\\psi^{(g)}(2\\pi/3) = \\psi^{(g)}_0$ | quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md:52: (green has cycled back to its starting position after the σ₂ sub-flow on $I_2$) | quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md:53: and then decreases at rate $-q$ on the second σ₁ sub-flow, giving"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md:52: (green has cycled back to its starting position after the σ₂ sub-flow on $I_2$) | content/quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md:53: and then decreases at rate $-q$ on the second σ₁ sub-flow, giving"
+      },
+      {
+        "field_hash": {
+          "md": "d71baaf59d2b",
+          "ts": "29873eef2e26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T19:06:55.468Z",
+        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1"
       }
     ],
     "voice-editorializing": [
@@ -475,5 +493,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T19:06:55.468Z"
 }

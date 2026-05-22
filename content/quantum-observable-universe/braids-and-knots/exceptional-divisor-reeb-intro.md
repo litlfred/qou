@@ -41,7 +41,7 @@ the three colour tubes fuse into a single triply-ramified disc;
 the
 [ramified-disc fusion](#prop:ramified-disc-fusion)
 proposition identifies the monodromy as the $S_3$ Galois action
-on Lagrange resolvents, closing the loop "Reeb trajectory →
+on Lagrange resolvents, closing the loop "Reeb trajectory $\to$
 boundary observable" geometrically.
 
 **Complement is the volume.**  Removing tubular neighbourhoods of

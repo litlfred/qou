@@ -72,7 +72,7 @@ underlying combinatorial count.*
 The atomic braid for a 4-nucleon system (e.g. $^4$He) lives on $3 \cdot 4 = 12$
 strands; for a 3-nucleon system on $9$.  The "10" comes from the
 **combined leptonic + baryonic strand structure**: 9 quark strands
-(3 nucleons × 3 quarks) + 1 lepton strand → 10 total.
+(3 nucleons $\times$ 3 quarks) + 1 lepton strand $\to$ 10 total.
 The pair-count $\binom{10}{2} = 45$ then enumerates all
 strand-strand couplings, including **lepton-quark crossings** which
 mediate the EM coupling.

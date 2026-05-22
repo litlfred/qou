@@ -89,7 +89,7 @@ $|\hbar_q^{2n} \Delta^{(n)}| \leq |\hbar_q^{2(n-1)} \Delta^{(n-1)}|
 \cdot \hbar_q^2$ to three significant figures, and the
 `uniform_bound_pass` flag in
 [`jet-tower-delta-max.witness.json`](../../../folio-assistant/computations/jet-tower-delta-max.witness.json)
-is **true** for D, T, ³He across $n = 1, \dots, 7$ — consistent
+is **true** for D, T, ${}^{3}$He across $n = 1, \dots, 7$ — consistent
 with $\Delta^{(n)}$ being bounded (in fact roughly constant).
 Promoting that observation to a theorem closes the open
 subconjecture

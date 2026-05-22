@@ -1,4 +1,4 @@
-**Proposition (joint motivic-Galois × braid action commutes
+**Proposition (joint motivic-Galois $\times$ braid action commutes
 on every bi-filtration cell — discharged in general by the
 disjoint-action argument).**
 
@@ -126,7 +126,7 @@ are essentially complete**:
 |---|---|
 | Bi-filtration definition well-defined | theorem ([`def:hq-bi-filtration`](#def:hq-bi-filtration)) |
 | Bridge map $d_{\mathrm{II}}$, small partitions | theorem |
-| Joint Galois × braid action commutes (any cell) | **theorem (this prop.)** |
+| Joint Galois $\times$ braid action commutes (any cell) | **theorem (this prop.)** |
 | B1 row at figure-8 / torus knots / Borromean / Whitehead | theorem |
 
 **Open remaining**: depth-3 strong sharpness over $\mathbb{Q}(\zeta_5)$

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean"
   },
   "source_hashes": {
-    "md": "6dd623a8c127",
+    "md": "4e9b4be15aec",
     "ts": "af5a0098e271",
     "lean": "9ab1a3c1b7ee"
   },
@@ -470,20 +470,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "6dd623a8c127",
+          "md": "4e9b4be15aec",
           "ts": "af5a0098e271",
           "lean": "9ab1a3c1b7ee"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md:19: $n = 1, 2, 3$ for D, T, ³He, and points to the measurement | quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md:110: * *(empirical)* At $n = 1, 2, 3$ for D, T, ³He, the bound holds empirically | quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md:139: support at $n = 1, 2, 3$ for D, T, ³He via `jet_tower_delta_max.py`."
+        "reviewed_at": "2026-05-22T19:05:44.405Z",
+        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1"
       }
     ],
     "voice-editorializing": [
@@ -623,5 +623,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T19:05:44.405Z"
 }

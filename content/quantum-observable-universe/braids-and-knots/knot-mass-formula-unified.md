@@ -194,8 +194,8 @@ hosting an isotope braid.*
 | atom | $A$ | per-vortex $1{\cdot}m_e\Sigma_3$ | per-A $A{\cdot}m_e\Sigma_3$ | **per-$3A$ $m_e\Sigma_{3A}$ (algebraic)** |
 |---|---:|---:|---:|---:|
 | D | 2 | 1.276 MeV | 2.552 MeV | **1.636 MeV** |
-| T, ³He | 3 | 1.276 MeV | 3.828 MeV | **1.300 MeV** |
-| ⁴He | 4 | 1.276 MeV | 5.105 MeV | **1.151 MeV** |
+| T, ${}^{3}$He | 3 | 1.276 MeV | 3.828 MeV | **1.300 MeV** |
+| ${}^{4}$He | 4 | 1.276 MeV | 5.105 MeV | **1.151 MeV** |
 
 *The per-$3A$ values are close to the per-vortex value ($\sim
 1.2$–$1.6$ MeV) because $\sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$
@@ -262,7 +262,7 @@ the first two pieces (descended + brane tower).*
 adds a **vortex-dependent chirality factor**
 $a_K \in \{1 + h,\; 1 - h^2,\; (1 - h^2)^2\}$ for $\{D, T, ^4\mathrm{He}\}$
 respectively — reflecting the knot type (chiral+, amphichiral,
-Borromean×2).  Upstream verification
+Borromean$\times$2).  Upstream verification
 (`folio-assistant/computations/bw_chirality_isotopes.py`) gives
 $T: 0.505\%$ and $^3\mathrm{He}: 0.856\%$ agreement with AME
 using these factors.*

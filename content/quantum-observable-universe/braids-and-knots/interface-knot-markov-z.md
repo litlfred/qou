@@ -57,8 +57,8 @@ using `pyhecke_native` for full $\tau_M$ at $H_n$ for $n \in \{6, 9, 12\}$:
 |---|:-:|:-:|:-:|---:|---:|---:|
 | D    | 2 | 1 | 0 | 0.49932033 | 0.49932033 | $5\times10^{-16}$ |
 | T    | 3 | 1 | 1 | 0.14493273 | 0.14493273 | $9\times10^{-16}$ |
-| ³He  | 3 | 2 | 0 | 0.24932080 | 0.24932080 | $1\times10^{-15}$ |
-| ⁴He  | 4 | 2 | 1 | 0.07236786 | 0.07236786 | $1\times10^{-15}$ |
+| ${}^{3}$He  | 3 | 2 | 0 | 0.24932080 | 0.24932080 | $1\times10^{-15}$ |
+| ${}^{4}$He  | 4 | 2 | 1 | 0.07236786 | 0.07236786 | $1\times10^{-15}$ |
 
 Max rel. err. across all 4 atoms: $\sim 10^{-15}$ — exact at f64 precision.
 
@@ -66,18 +66,18 @@ Per-atom interface census (from `atom_braid_word_3A`):
 
 - **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
 - **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ — 1 positive (p-n) + 1 negative (n-n).
-- **³He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n$ — 2 positive (p-p, p-n).
-- **⁴He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n \cdot \sigma_9^{-1} \cdot n$ — 2 positive (p-p, p-n) + 1 negative (n-n).
+- **${}^{3}$He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n$ — 2 positive (p-p, p-n).
+- **${}^{4}$He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n \cdot \sigma_9^{-1} \cdot n$ — 2 positive (p-p, p-n) + 1 negative (n-n).
 
 ### Structural reading
 
 The interface knot $\bowtie_K$ is **categorically the Markov-axiom
 boundary contribution** to the canonical atomic braid:
 
-- **Positive interface** $\sigma_g$ (p-p or p-n boundary) → factor $z$ exactly
+- **Positive interface** $\sigma_g$ (p-p or p-n boundary) $\to$ factor $z$ exactly
   (single application of the Markov axiom).
 - **Negative interface** $\sigma_g^{-1}$ (n-n boundary, antisymmetric quark
-  pair) → factor $z - h$ exactly (Markov axiom + Hecke skein $\sigma^{-1} =
+  pair) $\to$ factor $z - h$ exactly (Markov axiom + Hecke skein $\sigma^{-1} =
   \sigma - h \cdot \mathbf{1}$).
 
 The crossing-sign / nucleon-flavor pairing is encoded in

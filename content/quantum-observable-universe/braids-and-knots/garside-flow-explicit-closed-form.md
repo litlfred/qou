@@ -48,9 +48,9 @@ $$
     \end{cases}
 $$
 
-The I₃ branch evaluates to the I₂ endpoint $\psi^{(g)}(2\pi/3) = \psi^{(g)}_0$
-(green has cycled back to its starting position after the σ₂ sub-flow on $I_2$)
-and then decreases at rate $-q$ on the second σ₁ sub-flow, giving
+The I$_{3}$ branch evaluates to the I$_{2}$ endpoint $\psi^{(g)}(2\pi/3) = \psi^{(g)}_0$
+(green has cycled back to its starting position after the $\sigma_2$ sub-flow on $I_2$)
+and then decreases at rate $-q$ on the second $\sigma_1$ sub-flow, giving
 $\psi^{(g)}(\pi) = \psi^{(g)}_0 - q\pi/3$.
 
 $$

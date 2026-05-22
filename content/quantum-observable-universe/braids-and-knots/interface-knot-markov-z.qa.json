@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.lean"
   },
   "source_hashes": {
-    "md": "acf3a3d2b56d",
+    "md": "5a3d0f970010",
     "ts": "340a2f4a626b",
     "lean": "6fb367832eb1"
   },
@@ -446,20 +446,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "acf3a3d2b56d",
+          "md": "5a3d0f970010",
           "ts": "340a2f4a626b",
           "lean": "6fb367832eb1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md:60: | ³He  | 3 | 2 | 0 | 0.24932080 | 0.24932080 | $1\\times10^{-15}$ | | quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md:61: | ⁴He  | 4 | 2 | 1 | 0.07236786 | 0.07236786 | $1\\times10^{-15}$ | | quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md:69: - **³He**: $p \\cdot \\sigma_3 \\cdot p \\cdot \\sigma_6 \\cdot n$ — 2 positive (p-p, p-n). | quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md:70: - **⁴He**: $p \\cdot \\sigma_3 \\cdot p \\cdot \\sigma_6 \\cdot n \\cdot \\sigma_9^{-1} \\cdot n$ — 2 positive (p-p, p-n) + 1 negative (n-n). | quantum-observable-universe/braids-and-knots/interface-knot-markov-z.md:77: - **Positive interface** $\\sigma_g$ (p-p or p-n boundary) → factor $z$ exactly"
+        "reviewed_at": "2026-05-22T19:05:44.405Z",
+        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1"
       }
     ],
     "voice-editorializing": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T19:05:44.405Z"
 }

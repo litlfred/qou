@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.lean"
   },
   "source_hashes": {
-    "md": "59c6ca46ad83",
+    "md": "220c2c9c2645",
     "ts": "e000f8115f63",
     "lean": "475327903f07"
   },
@@ -446,20 +446,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "59c6ca46ad83",
+          "md": "220c2c9c2645",
           "ts": "e000f8115f63",
           "lean": "475327903f07"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.md:143: give the A≥3 specialisation that the prefix formula must"
+        "reviewed_at": "2026-05-22T19:05:44.405Z",
+        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1"
       }
     ],
     "voice-editorializing": [
@@ -686,5 +686,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T19:05:44.405Z"
 }

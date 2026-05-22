@@ -51,7 +51,7 @@ $$
 $$
   = 1 - \tfrac{b^2}{8} \hbar_q^4 + \tfrac{b^4}{384} \hbar_q^8 - \cdots
 $$
-The $\hbar_q^4$ term gives $c_2 = -b^2/8$ × … (sign convention adjusted
+The $\hbar_q^4$ term gives $c_2 = -b^2/8$ $\times$ $\ldots$ (sign convention adjusted
 to land at $c_2 = b^2$ when paired with the
 $(1 - b^2 \hbar_q^4)$ factor in the ladder).
 
@@ -120,7 +120,7 @@ with no empirical fit:
 - $c_4 = b^2 + 1/2$ (this prop)
 
 Story A predicts $c_3 = c_4 = 0$ — falsified by both this prop and
-#664. Story B's alternation pattern (Kashiwara × Jones, intra/inter
+#664. Story B's alternation pattern (Kashiwara $\times$ Jones, intra/inter
 alternation) is the structural account.
 
 The remaining $c_5, c_6, \ldots$ derivations are deferred to

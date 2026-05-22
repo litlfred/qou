@@ -70,7 +70,7 @@ $$
 $q = q_0$, $\det G \neq 0$ (generically), confirming the
 Frobenius property.*
 
-**Gram ↔ Wedderburn conjugation.**
+**Gram $\leftrightarrow$ Wedderburn conjugation.**
 *In the central-idempotent basis $\{e_\lambda\}$, the Gram matrix
 is **block-diagonal**: $G_{\lambda, \mu} = \delta_{\lambda \mu}
 \cdot \tau(e_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(e_\lambda)

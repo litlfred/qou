@@ -125,5 +125,5 @@ dim 1 = $\mathrm{Cl}_2(2\pi/3)$ (Gieseking).
 - Bloch–Suslin (depth-2 theorem):
   [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- K-theory ↔ depth filtration: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
+- K-theory $\leftrightarrow$ depth filtration: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)

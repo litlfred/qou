@@ -84,8 +84,8 @@ For the dominant partitions at each level:
 The BW scaling of each partition is determined by:
 
 1. **Content sum** $c(\lambda) = \sum_{(i,j) \in \lambda} (j - i)$:
-   positive → $A$-dominated (volume/surface), negative → $Z/N$-dominated
-   (Coulomb/exchange), zero → isospin-sensitive (Wigner/hook).
+   positive $\to$ $A$-dominated (volume/surface), negative $\to$ $Z/N$-dominated
+   (Coulomb/exchange), zero $\to$ isospin-sensitive (Wigner/hook).
 
 2. **Self-conjugacy** ($\lambda = \lambda'$):
    self-conjugate partitions contribute isospin Casimir terms

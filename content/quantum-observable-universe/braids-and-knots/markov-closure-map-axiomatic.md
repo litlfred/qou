@@ -4,7 +4,7 @@ content to two atomic axioms.
 Per the Track-C plan in
 [`rem:F3-eps6-leading-eq-neg-2b-cubed`](#rem:F3-eps6-leading-eq-neg-2b-cubed),
 the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives
-in the **3-fold Markov closure → Hopf-link substructure**
+in the **3-fold Markov closure $\to$ Hopf-link substructure**
 identification (Step 3 of the Track-C chain).
 
 This remark **factorises that content** into two ATOMIC axioms:

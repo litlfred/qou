@@ -1,4 +1,4 @@
-**Conjecture (joint motivic-Galois × braid-group action on the
+**Conjecture (joint motivic-Galois $\times$ braid-group action on the
 bi-filtration).**
 
 *Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration

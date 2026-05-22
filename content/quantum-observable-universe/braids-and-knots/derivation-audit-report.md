@@ -165,7 +165,7 @@ $y_{\mathrm{target}}$ values used in practice has not been derived.
 expressed as products of $q$-integers $[n]_q$ evaluated at $q_0$.
 The proposition notes "derivation of the five standard terms" from
 Wedderburn and crossing counts, but the specific $q$-integer factors
-(e.g.\ $[7]_q$ from "7 crossings on generator 0: 3 B₃ + 1 uu +
+(e.g.\ $[7]_q$ from "7 crossings on generator 0: 3 B$_{3}$ + 1 uu +
 2 gluon + 1 ud") rest on counting arguments that have not been
 derived from first principles within the Hecke algebra framework.
 The crossing counts themselves are empirically motivated (they
