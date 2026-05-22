@@ -190,7 +190,7 @@ policy.
 | #880 | `claude/friendly-wright-GH0qG` | none (different files) | I depend on theirs | none | [comment](https://github.com/litlfred/qou/pull/880#issuecomment-4519815234) |
 | #881 | `claude/prepare-merge-no-squash-default-2026-05-22` | none | independent | none | — |
 | #882 | `claude/eager-gauss-S36Uk` | none (one-voice sidecars ≠ bib) | independent | none | — |
-| #875 | `copilot/integration-backlog-proof` | none | independent | none | — |
+| #875 | `copilot/integration-backlog-proof` (now under #880 author per [their coord reply](https://github.com/litlfred/qou/pull/883#issuecomment-4519821141)) | none (`content/pipeline/qa-checkers-extended.ts`) | independent | none | — |
 | #872 | `claude/qa-script-criteria-2026-05-20` | none | independent | none | — |
 | #878 | `claude/wenzl-lr-consumer-fix-2026-05-22` | none | independent | none | — |
 | #871 | `copilot/optimize-compute-pipeline` [DRAFT] | none | independent | none | — |
