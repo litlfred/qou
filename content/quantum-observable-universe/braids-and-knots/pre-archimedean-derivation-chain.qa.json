@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md"
   },
   "source_hashes": {
-    "md": "490c8b36a50b",
+    "md": "c064715f69dd",
     "ts": "0d40eedeace9"
   },
   "criteria": {
@@ -41,6 +41,22 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "c064715f69dd",
+          "ts": "0d40eedeace9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ab4c277feefa",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+        },
+        "reviewed_at": "2026-05-22T14:56:19.210Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "compute-witness-exists": [
@@ -471,5 +487,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T14:56:19.210Z"
 }

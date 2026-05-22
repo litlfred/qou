@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.lean"
   },
   "source_hashes": {
-    "md": "3fce13efb3f0",
+    "md": "22d04b18c2fe",
     "ts": "cff2f59b55ca",
     "lean": "ab5dd2abb1c8"
   },
@@ -45,6 +45,23 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "22d04b18c2fe",
+          "ts": "cff2f59b55ca",
+          "lean": "ab5dd2abb1c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ab4c277feefa",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+        },
+        "reviewed_at": "2026-05-22T14:56:19.210Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "compute-witness-exists": [
@@ -561,5 +578,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T14:56:19.210Z"
 }

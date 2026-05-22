@@ -37,16 +37,16 @@
           "ts": "482284bfe1d6",
           "lean": "794d5e50acda"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ab4c277feefa",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
         },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-operator-selection.md:48: :val[confinement_B3_net_proton] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/particle-interactions/confinement-operator-selection.md:49: :val[confinement_Lplus_net_proton] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/particle-interactions/confinement-operator-selection.md:51: :val[confinement_id_net_proton] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/particle-interactions/confinement-operator-selection.md:61: :val[confinement_B3_net_proton] has no `witness=` attribute and the block has no `computation:` field"
+        "reviewed_at": "2026-05-22T14:56:19.210Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "compute-prop-has-probe": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T14:56:19.210Z"
 }

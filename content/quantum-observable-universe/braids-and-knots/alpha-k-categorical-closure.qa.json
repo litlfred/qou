@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.lean"
   },
   "source_hashes": {
-    "md": "7c66942ac8e1",
+    "md": "e015ddce7cef",
     "ts": "e13714c4f311",
     "lean": "e632040eab38"
   },
@@ -33,20 +33,20 @@
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "7c66942ac8e1",
+          "md": "e015ddce7cef",
           "ts": "e13714c4f311",
           "lean": "e632040eab38"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ab4c277feefa",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
         },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md:37: :val[E_0_full_MeV] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md:38: :val[E_0_full_li2q_MeV] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md:41: :val[E_0_N0_MeV] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md:111: :val[E_0_N0_MeV] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md:112: :val[E_0_full_MeV] has no `witness=` attribute and the block has no `computation:` field"
+        "reviewed_at": "2026-05-22T14:56:19.210Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "compute-witness-exists": [
@@ -563,5 +563,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T14:56:19.210Z"
 }

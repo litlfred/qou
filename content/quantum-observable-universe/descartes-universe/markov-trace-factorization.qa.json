@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "63aa18ec5b60",
-    "ts": "7117ae69fca0",
+    "ts": "ef4f4c9fd5d3",
     "lean": "f526596e9778"
   },
   "criteria": {
@@ -40,13 +40,32 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ab4c277feefa",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
         },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
+        "reviewed_at": "2026-05-22T14:56:19.210Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/markov-trace-factorization.md:142: :val[gram_z] has no `witness=` attribute and the block has no `computation:` field | quantum-observable-universe/descartes-universe/markov-trace-factorization.md:142: :val[gram_z] has no `witness=` attribute and the block has no `computation:` field"
+        "evidence": "content/quantum-observable-universe/descartes-universe/markov-trace-factorization.md:142: :val[gram_z] has no `witness=` attribute and the block has no `computation:` field | content/quantum-observable-universe/descartes-universe/markov-trace-factorization.md:142: :val[gram_z] has no `witness=` attribute and the block has no `computation:` field"
+      },
+      {
+        "field_hash": {
+          "md": "63aa18ec5b60",
+          "ts": "ef4f4c9fd5d3",
+          "lean": "f526596e9778"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "ab4c277feefa",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+        },
+        "reviewed_at": "2026-05-22T14:57:23.789Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "compute-prop-has-probe": [
@@ -684,5 +703,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T14:57:23.789Z"
 }
