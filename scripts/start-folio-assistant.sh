@@ -62,7 +62,7 @@ done
 # Prepend both unconditionally — harmless if the directories
 # don't exist; required if they do.
 
-export PATH="$HOME/.bun/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bun/bin:$HOME/.elan/bin:$HOME/.local/bin${PATH:+:${PATH}}"
 
 if ! command -v bun &>/dev/null; then
   echo "[start-folio-assistant] bun not found. Installing..." >&2
