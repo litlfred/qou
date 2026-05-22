@@ -368,16 +368,23 @@ of PR #701, not a derivation):
   | V_7 = Σ dim_q V_λ / [4]_q (quotient) | −13/16 | 2.4652 | −2.67 % | +0.144 % |
   | V_8 = harmonic of dim_q V_λ | +85/361 | 1.5891 | −37.3 % | −35.4 % |
 
-**V_3 and V_4 are the structural refinement candidates.** Among
-the Wedderburn sums tested, V_3 and V_4 land within ±0.3 % of
-Family A while keeping the substrate-pure / positive-h² /
-all-sum-form discipline that PR #701 settled. They are
-candidate **refinements** of Family A: alternative natural
-weightings of the H_4 character data that adjust the leading
-3/4·h² coefficient slightly. If a substrate justification can
-be derived for V_3 or V_4 (Frobenius-pairing weighting vs
-hook-content weighting), the framework's m_p accuracy improves
-modestly within the same theoretical commitment.
+**V_3 and V_4 are ALSO fits, not refinements (closed-negative
+2026-05-22 post-/coordinate user challenge).** Among the
+Wedderburn sums tested, V_3 and V_4 land within ±0.3 % of
+Family A — but the follow-up probe
+[`lambda_scale_alt_h_v3_v4_substrate_probe.py`](../../folio-assistant/computations/lambda_scale_alt_h_v3_v4_substrate_probe.py)
+documents that their normalisations 5/48 and 1/48 are PINNED by
+the desired classical limit (5/2 at q = 1), not derived from a
+natural category-theoretic measure on H_4. They are
+**fit-siblings** of Family A in the same sense that
+`LAMBDA_PROTON_FITTED_FROM_CODATA` was a fit before PR #895
+rescued the production chain with the proved Family A theorem
+— same antipattern, just normalised against a different target
+constant. V_3 and V_4 should NOT be presented as substrate-pure
+refinement candidates.
+
+**V_3/V_4 verdict.** Closed-negative. Witness:
+[`lambda-scale-alt-h-v3-v4-substrate-probe.witness.json`](../../folio-assistant/computations/lambda-scale-alt-h-v3-v4-substrate-probe.witness.json).
 
 **V_7 is a separate observation.** The quotient form
 `Σ dim_q V_λ / [4]_q` lands close to the retired CODATA target
@@ -529,46 +536,67 @@ candidates worth filtering.
 **Status.** Verification scaffold; runs against any candidate
 from F/G/H/I/K.
 
-### Recommended ordering (revised after 2026-05-22 results, post-#895 framing)
+### Recommended ordering (revised 2026-05-22 evening, after q-dilog Tier 0 spike + V_3/V_4 closure)
 
-The 3 % framework-vs-CODATA gap on m_p is the open research
-question. Family A is the current substrate-derived baseline;
-the strategies below are ranked by likelihood of producing a
-substrate-pure refinement that lands closer to CODATA than
-Family A's 966 MeV.
+**Current empirical state of the substrate-pure search:**
 
-  1. **Strategy A / B (Rogers / Faddeev PSLQ on q-dilog tower)**
-     — the original brief's primary direction. The q-dilog
-     tower at q_0 is the most natural source of sub-leading
-     corrections beyond Family A's H_4 Wedderburn sum. PR #909
-     (Strategy D stage-1) found tentative −h⁶/6 next-order
-     structure that didn't survive 32-digit precision; PSLQ on
-     `{h^k · G^j · ζ(2k')}` extended basis is the cheap test.
-  2. **Strategy H refinement (V_3, V_4 Family A variants)** —
-     V_3 and V_4 land within ±0.3 % of Family A on the H_4
-     Wedderburn data, differing only in weighting (hook-content
-     vs Frobenius). If a substrate justification picks one over
-     V_1 (Family A), the framework's m_p accuracy improves
-     modestly within the same theoretical commitment.
-  3. **Strategy I (Yekutieli curvature)** — derive a per-cell
+- **Bring-Bloch leg:** REFUTED at Tier 5 (52 prime hyperbolic
+  knots ≤ 11 crossings; PR #888 + #904).
+- **q-dilog tower direct leg:** REFUTED at Tier 0 (23-element
+  substrate-natural Li_2^q + Φ_q basis, coeff ≤ 10²⁰; commit
+  `af2d27ee` "spike(q-dilog): no λ_scale closure in
+  substrate-natural q-dilog basis", audit
+  [`docs/audits/2026-05-22-q-dilog-tower-spike-lambda-scale.md`](../audits/2026-05-22-q-dilog-tower-spike-lambda-scale.md)).
+- **Wedderburn-sum leg (Strategy H):** V_1 (Family A) is the
+  framework's substrate λ_scale per #895; V_3, V_4 confirmed as
+  fits, not refinements (this PR's `lambda_scale_alt_h_v3_v4_substrate_probe`).
+- **Single-polynomial Skein leg:** CLOSED-NEGATIVE (this PR's
+  Strategy G).
+- **Markov-trace identity on β_Bor:** CLOSED-NEGATIVE (this
+  PR's Strategy F).
+
+**Implication.** The 3 % CODATA gap on m_p is **not** closeable
+by any substrate-natural basis tested through 2026-05-22. The
+remaining open directions all require ENLARGING the search
+basis beyond what's been tried:
+
+  1. **q-dilog Tier 1+ extensions** (per `af2d27ee` audit
+     §Recommendation): the operator-valued spectral coordinates
+     `|V̂_S|` from
+     [`prop:mass-tower-operator-valued`](../../content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md);
+     2-variable Bloch-Wigner regulators
+     `L_2(x,y) := D[x] + D[y] + D[xy/((1−x)(1−y))]`; the
+     `Q(ζ_60)` trace-field rank-8 basis. These are bigger
+     bases; the Tier 0 negative does not rule them out.
+  2. **Strategy I (Yekutieli curvature)** — derive a per-cell
      curvature term that, ADDED to Family A's 5/2 + (3/4)h²,
-     accounts for the residual 3 %. Per-cell octahedral volume
-     G/2 from `Λ(π/4) = G/2` is the natural ingredient.
+     accounts for the residual 3 %. Per-cell octahedral
+     volume G/2 from `Λ(π/4) = G/2` is the natural ingredient.
+     Independent of basis-extension PSLQ.
+  3. **Strategy K (Bloch class explicit construction via
+     triangulation)** — bypass PSLQ entirely; construct
+     `[Z_K_p]` from K_p's actual SnapPy triangulation. Note:
+     `prop:lambda-scale-bring-bloch-identity` was demoted to
+     `conj:` by PR #904 (now merged); the Bloch-class route is
+     conjectural, not theorem.
   4. **Strategy J (HOMFLYPT cross-orientation)** — secondary
-     verification of the Skein term `S(p) / S(n)`; doesn't
+     check of the Skein term `S(p) / S(n)`; doesn't directly
      change λ_scale but pins the orientation correction.
-  5. **Strategy K (Bloch class explicit construction)** — if
-     all categorical approaches fail, fall back to the
-     SnapPy-triangulation route. Note: `prop:lambda-scale-bring-bloch-identity`
-     was demoted to `conj:` by PR #904 (now merged); the
-     Bloch-class route is conjectural, not theorem.
-  6. **Strategy D (LP/SDP on 𝓑_p)** — only if 1-5 all fail.
-     PR #909 stage-1 found that the naive LP setups (D1/D2/D3/D6)
-     do NOT yield λ_scale; the formulation needs more structure
-     than the original brief sketch. The LP/SDP infrastructure
-     lift is large.
+  5. **Strategy D (LP/SDP on 𝓑_p)** — PR #909 stage-1 found
+     that the naive LP setups (D1/D2/D3/D6) do NOT yield
+     λ_scale; the formulation needs more structure than the
+     brief sketch. Large infrastructure lift; lower priority
+     than #1-#3 above.
+  6. **Accept the 3 % gap as the framework's honest accuracy.**
+     Per PR #895 + #917, this is already the production state.
+     If #1-#5 all exhaust, the cluster's standing decision is
+     that Family A IS the framework-derived λ_scale; the gap
+     is what the framework knows, and tighter closures await
+     either a substrate-derivation of q_0 (out of scope per
+     CLAUDE.md §Precision goals Subgoal-2) or a fundamentally
+     new structural ingredient.
 
-### Strategies closed-negative by 2026-05-22 first-pass
+### Strategies closed-negative by 2026-05-22 sweep
 
   - **Strategy F (Markov-trace identity on β_Bor).** The naive
     identity `λ_scale ?= |tr_M(β_Bor)|·ℏ_q²/Vol(𝓑_3)` does not
@@ -596,9 +624,29 @@ Family A's 966 MeV.
     candidate. V_7's negative h² coefficient is a real
     structural feature (denominator over-cancellation), but it
     does not survive PR #701's exhaustive falsification of the
-    `5/2 - ε·h²` family for the CODATA value. The V_3 / V_4
-    sum-form refinements above are the remaining Wedderburn
-    direction.
+    `5/2 - ε·h²` family for the CODATA value.
+  - **Strategy H V_3 / V_4 sum-form siblings.** Per the
+    follow-up probe `lambda_scale_alt_h_v3_v4_substrate_probe.py`
+    (this PR, post-/coordinate user challenge): V_3 and V_4
+    normalisations 5/48 and 1/48 are PINNED by the desired
+    classical limit 5/2-at-q=1, not derived from any natural
+    category-theoretic measure on H_4. They are
+    fit-siblings of Family A — same antipattern that
+    LAMBDA_*_FITTED_FROM_CODATA was before #895 — and should
+    NOT be presented as substrate-pure refinement candidates.
+  - **Original brief Strategies A / B (Rogers / Faddeev PSLQ
+    direct).** Refuted at Tier 0 by commit `af2d27ee` on main:
+    23-element substrate-natural Li_2^q + Φ_q basis at
+    `{1/φ, 1/φ², 3/7, 1/[2]_q, ±h_q, ±h_q²}` with classical
+    anchors `{1, G, [n]_q, φ, h_q}`, PSLQ coeff ≤ 10²⁰, dps 60
+    — no relation to λ_scale or to `Vol_eff_p = λ_scale·8G`.
+    Sweep B with pentagon-identity 1−z arguments at dps 80,
+    coeff ≤ 10³⁰: only trivial Rogers identity, target coeff 0.
+    Audit:
+    [`docs/audits/2026-05-22-q-dilog-tower-spike-lambda-scale.md`](../audits/2026-05-22-q-dilog-tower-spike-lambda-scale.md).
+    **Tier 1+ extensions are still open** (operator-valued
+    `|V̂_S|` basis, 2-variable Bloch-Wigner regulators,
+    Q(ζ_60) rank-8) — see Recommended ordering #1 above.
 
 ## Verification criteria
 
