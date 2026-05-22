@@ -1,0 +1,15 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-18T19:21:09.169865+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "A-h-expansion-fixed",
+  "scriptFile": "probe_A_h_expansion_fixed.py",
+  "scriptHash": "54cdfb82e455",
+  "scriptCommitSha": "ffcf23584fd5c3c3e3e238e70453f2ed5b22cba8",
+  "description": "Numerical h-fit of A((4-q)/(4q+3)) — proof attempt of `5/2 - h²·G`.",
+  "contentBlock": "conj:flavor-dressed-mass-from-substrate-split"
+}

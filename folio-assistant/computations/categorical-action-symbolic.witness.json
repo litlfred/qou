@@ -1,0 +1,15 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-18T19:21:17.790613+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "categorical-action-symbolic",
+  "scriptFile": "probe_categorical_action_symbolic.py",
+  "scriptHash": "41445e1e0b0e",
+  "scriptCommitSha": "c76db95119278eb717a9a5b7b2165c79699d90ce",
+  "description": "Symbolic derivation that integrand_baryon = -P(z)/D(z) as exact rational function via Vieta-resultant identity on the color-tube cubic.",
+  "contentBlock": "prop:sw-3root-rational-integrand"
+}

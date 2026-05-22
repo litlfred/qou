@@ -143,6 +143,7 @@ def main():
         print(f"  {name:<40s}  at q=1={str(V_at_1):>10s}  at q_0={V_q0:>14.10f}  ({rel:+.3f}%)")
 
     w = WitnessBuilder("family-a-extended-variants", engine="sympy+mpmath")
+    w.set_content_block("conj:lambda-scale-substrate-form")  # noqa: linkage per Copilot review on PR #751
     w.set_description(
         "Extended Family A variants. V7 = Σ dim_q V_λ / [4]_q gives "
         "5/2 - (13/16)h² + O(h^4) — within 11% of empirical -G "

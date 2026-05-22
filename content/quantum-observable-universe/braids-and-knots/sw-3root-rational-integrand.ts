@@ -36,7 +36,6 @@ export default proposition({
   },
   uses: ["def:categorical-action", "rem:color-tube-cubic"],
   cites: [
-    "lang2002algebra",
   ],
   tags: [
     "schur-weyl",

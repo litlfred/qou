@@ -1,6 +1,6 @@
 **Proposition.** *The Schur-Weyl 3-root product `λ_{SW}^{(1)}(z)`
-appearing in the categorical action
-([def:categorical-action](#def:categorical-action))
+appearing in the categorical action integral
+([conj:flavor-dressed-mass-from-substrate-split](#conj:flavor-dressed-mass-from-substrate-split))
 is an EXACT rational function of z with polynomial numerator and
 denominator of degree 6:*
 
@@ -26,7 +26,7 @@ $$
 *The denominator $D(z)$ has* **palindromic coefficients**
 *(16, 24, 35, 50, 35, 24, 16), reflecting the $z \leftrightarrow 1/z$
 symmetry of the underlying color-tube cubic
-[`rem:color-tube-cubic`](#rem:color-tube-cubic) at its discriminant.*
+[`conj:flavor-dressed-mass-from-substrate-split`](#conj:flavor-dressed-mass-from-substrate-split) at its discriminant.*
 
 *The roots $\{c_k(z)\}_{k=1,2,3}$ are the three color-channel
 prolongations of the cubic*
@@ -65,17 +65,10 @@ Since the color-tube cubic is monic in $c$:
 $$
   \prod_k F_z(z, c_k) \;=\; \mathrm{Res}_c(F, F_z)
   \quad\text{and}\quad
-  \prod_k F_c(z, c_k) \;=\; \mathrm{Res}_c(F, F_c).
+  \prod_k F_c(z, c_k) \;=\; \mathrm{Res}_c(F, F_c) \;=\; \mathrm{disc}_c(F)
 $$
 
-*Note on sign convention.* For a monic polynomial of degree $n$ in $c$, the discriminant and the
-$c$-derivative resultant differ by the sign $(-1)^{n(n-1)/2}$. With $n = 3$ this sign is
-$(-1)^{3} = -1$, so $\mathrm{disc}_c(F) = -\mathrm{Res}_c(F, F_c) = -D(z)$. In particular
-$D(0) = +16$ while $\mathrm{disc}_c(F)|_{z=0} = -16$, since the cubic $c^3 + c^2 + c + 1$ has
-one real and two purely imaginary roots (negative discriminant). The denominator $D(z)$ defined
-in this proposition is therefore the **derivative-resultant** $\mathrm{Res}_c(F, F_c)$, equal to
-the negative of the discriminant. Its zeros are still the Picard–Lefschetz critical points
-(roots of $\mathrm{disc}_c(F)$ and of $\mathrm{Res}_c(F, F_c)$ agree as sets).
+where the last equality (with sign correction (-1)^{n(n-1)/2} for monic F of degree n=3) relates the c-derivative resultant to the discriminant.
 
 Direct symbolic computation (sympy `resultant`):
 
@@ -87,8 +80,6 @@ $$
   \mathrm{Res}_c(F, F_c) = 16 z^6 + 24 z^5 + 35 z^4 + 50 z^3 + 35 z^2 + 24 z + 16 = D(z)
 $$
 
-(equivalently $\mathrm{disc}_c(F) = -D(z)$; see the sign-convention note above).
-
 Substituting gives the claimed form $\lambda_{SW}^{(1)}(z) = -P(z)/D(z)$. $\square$
 
 ## Numerical sanity
@@ -98,15 +89,16 @@ At $z = 0.1$:
 | Quantity | Value |
 |----------|-------|
 | Symbolic $-P(0.1)/D(0.1)$ | $-2.4900888950\ldots$ |
-| Production [`sw_3root_product_degree1(0.1)`](../../../folio-assistant/computations/picard_lefschetz_thimble.py) | $-2.4900888950\ldots$ |
+| Production [`sw_3root_product_degree1(0.1)`](../../folio-assistant/computations/picard_lefschetz_thimble.py) | $-2.4900888950\ldots$ |
 
 Match to machine precision.
 
 ## Categorical reading
 
-- $D(z) = \mathrm{Res}_c(F, F_c) = -\mathrm{disc}_c(F)$: the zeros of $D$ (equivalently of
-  the discriminant) are the **Picard-Lefschetz critical points** where two cubic roots
-  collide. These mark the **branch points** of the SW 3-root product as a function of $z$.
+- $D(z) = \mathrm{Res}_c(F, F_c) = -\mathrm{disc}_c(F)$: the zeros of the discriminant are
+  the **Picard-Lefschetz critical points** where two cubic roots
+  collide. These mark the **branch points** of the SW 3-root
+  product as a function of $z$.
 
 - $P(z) = \mathrm{Res}_c(F, F_z)$: encodes the derivative information
   of all three roots; vanishes at critical points where
@@ -142,4 +134,4 @@ deriving the substrate $m_p$ anchor categorically.
 
 The Vieta-resultant identity is classical (Lang, *Algebra* §IV.8).
 The specific cubic $F(z, c)$ here is the QOU color-tube cubic
-from [`rem:color-tube-cubic`](#rem:color-tube-cubic).
+from [`conj:flavor-dressed-mass-from-substrate-split`](#prop:color-tube-cubic).

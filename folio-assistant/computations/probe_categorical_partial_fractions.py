@@ -164,5 +164,12 @@ def main():
     print(f"\nWitness emitted: {out.name}")
 
 
+    # Witness emission per Copilot review on PR #751
+    _w = WitnessBuilder("categorical-partial-fractions", engine="sympy")
+    _w.set_description("Partial-fraction decomposition of -P(z)/D(z) for the SW 3-root product, exposing the palindromic z↔1/z structure and -4 constant term.")
+    _w.set_content_block("prop:sw-3root-rational-integrand")
+    _w.save()
+
+
 if __name__ == "__main__":
     main()

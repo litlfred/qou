@@ -167,5 +167,12 @@ def main():
     print(f"\nWitness emitted: {out.name}")
 
 
+    # Witness emission per Copilot review on PR #751
+    _w = WitnessBuilder("categorical-action-symbolic", engine="sympy")
+    _w.set_description("Symbolic derivation that integrand_baryon = -P(z)/D(z) as exact rational function via Vieta-resultant identity on the color-tube cubic.")
+    _w.set_content_block("prop:sw-3root-rational-integrand")
+    _w.save()
+
+
 if __name__ == "__main__":
     main()

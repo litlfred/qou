@@ -210,6 +210,7 @@ def main():
     print(f"    value = {best_at_q0['value_at_q0']:.6f}, rel = {best_at_q0['rel_pct_vs_target']:+.3f}%")
 
     w = WitnessBuilder("family-a-variants-investigation", engine="sympy+mpmath")
+    w.set_content_block("conj:lambda-scale-substrate-form")  # noqa: linkage per Copilot review on PR #751
     w.set_description(
         "Investigation of Family A variants: 8 natural Wedderburn-sum "
         "normalizations tested for leading 5/2 at q=1 and h² coefficient. "

@@ -1,0 +1,15 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-18T19:22:33.383957+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "categorical-partial-fractions",
+  "scriptFile": "probe_categorical_partial_fractions.py",
+  "scriptHash": "a73f601af992",
+  "scriptCommitSha": "b1289d894255d4236f71b7e15abbe1dca5da7b14",
+  "description": "Partial-fraction decomposition of -P(z)/D(z) for the SW 3-root product, exposing the palindromic z↔1/z structure and -4 constant term.",
+  "contentBlock": "prop:sw-3root-rational-integrand"
+}

@@ -1,17 +1,17 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T19:53:44.738280+00:00",
+  "computedAt": "2026-05-18T19:21:08.361555+00:00",
   "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 15,
   "computation": "family-a-extended-variants",
   "scriptFile": "probe_family_a_extended.py",
-  "scriptHash": "c2d4f7e90ddb",
+  "scriptHash": "711a54e60624",
   "scriptCommitSha": "9d0f6cfd499823887ba88cea6116c66d8a283630",
   "description": "Extended Family A variants. V7 = Σ dim_q V_λ / [4]_q gives 5/2 - (13/16)h² + O(h^4) — within 11% of empirical -G and matches CODATA factor to 0.144% (20× better than V1).",
-  "contentBlock": "conj:flavor-dressed-mass-from-substrate-split",
+  "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {
     "target": 2.4616482108893916,
     "variants": [

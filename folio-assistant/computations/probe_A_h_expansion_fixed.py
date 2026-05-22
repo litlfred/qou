@@ -29,6 +29,7 @@ from scipy import integrate
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from witness_base import WitnessBuilder
 from picard_lefschetz_thimble import cubic_roots, sw_3root_product_degree1
 from witness_base import WitnessBuilder
 
@@ -150,6 +151,13 @@ def main():
     w.add_data("A_samples_at_a_post_hoc", [None if np.isnan(v) else float(v) for v in A_vals.tolist()])
     out = w.save()
     print(f"\nWitness emitted: {out.name}")
+
+
+    # Witness emission per Copilot review on PR #751
+    _w = WitnessBuilder("A-h-expansion-fixed", engine="sympy")
+    _w.set_description("Numerical h-fit of A((4-q)/(4q+3)) — proof attempt of `5/2 - h²·G`.")
+    _w.set_content_block("conj:flavor-dressed-mass-from-substrate-split")
+    _w.save()
 
 
 if __name__ == "__main__":

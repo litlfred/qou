@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T20:34:09.040376+00:00",
-  "commitSha": "76d8f4327f8043f573a97f542ae263eb2c84f30d",
+  "computedAt": "2026-05-18T19:21:01.138678+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "workplan-0b-route-c-bring",
   "scriptFile": "probe_workplan_0b_route_c_bring.py",
-  "scriptHash": "8e7adc37c66b",
-  "scriptCommitSha": "fa01be4f33b453813feb60aa4ec4232292c93bab",
+  "scriptHash": "58508e5f6bf9",
+  "scriptCommitSha": "a2a15d1c7cbb81804816ff7df038552dcdf6bfe3",
   "description": "Route C concrete: Bring zero-mode analog for M_N. Tests secondary characteristic classes of B_3 complement as candidates for Vol(K_p) = 18.03 = Vol(B_3) + Σ_secondary.",
   "contentBlock": "conj:flavor-dressed-mass-from-substrate-split",
   "data": {
@@ -32,7 +32,6 @@
       "(1 + 1/q)^2 / 2": 1.8067451413853415,
       "Vol(4_1)/h": 9.709557478427557,
       "[2]_q · (5/4)": 2.513621086398102
-    },
-    "c2_input_parameter": 0.38844820732799046
+    }
   }
 }
