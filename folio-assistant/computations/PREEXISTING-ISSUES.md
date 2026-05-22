@@ -103,8 +103,8 @@
   ⚠ [p-bandwidth-bound]: prop:p-bandwidth-bound: no Lean declaration yet
   ⚠ [brings-physics-interpretations]: Undefined cross-reference(s) in .md: chap:descartes-universe
   ⚠ [color-tube-constraints]: Undefined cross-reference(s) in .md: eq:z-from-SD
-  ⚠ [descartes-leptons]: Undefined cross-reference(s) in .md: def:fermion
-  ⚠ [descartes-chirality]: Undefined cross-reference(s) in .md: def:fermion, def:boson
+  ⚠ [archimedean-leptons]: Undefined cross-reference(s) in .md: def:fermion
+  ⚠ [archimedean-chirality]: Undefined cross-reference(s) in .md: def:fermion, def:boson
   ⚠ [breit-wheeler-pair-production]: Undefined cross-reference(s) in .md: rem:photon-knot-operations, rem:photon-knot-operations
   ⚠ [knot-operator-selection]: prop:knot-operator-selection: no Lean declaration yet
   ⚠ [frobenius-gram-matrix]: prop:frobenius-gram-matrix: no Lean declaration yet

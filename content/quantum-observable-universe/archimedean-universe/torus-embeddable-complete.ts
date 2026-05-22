@@ -17,7 +17,7 @@ export default proposition({
   },
   uses: ["thm:embeddability-closure"],
   examples: [
-    "rem:descartes-chirality",
+    "rem:archimedean-chirality",
     "rem:light-cone-affine",
     "rem:chirality-trefoil",
     "rem:linking-relations-table",
@@ -25,6 +25,6 @@ export default proposition({
     "rem:unmapped-torus-knots",
     "rem:force-knot-identification",
     "rem:diophantine-valley",
-    "ex:descartes-yekutieli",
+    "ex:archimedean-yekutieli",
   ],
 });

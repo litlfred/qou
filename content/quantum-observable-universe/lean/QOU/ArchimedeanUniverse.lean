@@ -52,7 +52,7 @@ abbrev DescartesUniverse := ArchimedeanCondition
 
 On a Calabi–Yau manifold, the Archimedean condition `χ(E) = −6`
 constrains the Hodge numbers of the underlying Calabi–Yau.
-LaTeX: `\label{rem:descartes-calabi-yau}`
+LaTeX: `\label{rem:archimedean-calabi-yau}`
 Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
 
 On an ALE space with finite subgroup `Γ ⊂ SU(2)`, the Descartes
@@ -86,12 +86,12 @@ theorem genus_of_maximal_descent (dc : ArchimedeanCondition) (g : ℕ)
 Electrons and muons correspond to fermions
 (Definition `\label{def:fermion}`) with specific Reeb decompositions:
 the vertical component encodes the lepton generation.
-LaTeX: `\label{rem:descartes-leptons}`
+LaTeX: `\label{rem:archimedean-leptons}`
 
 Chirality corresponds to the orientation of the Reeb vector field
 `ξ` on the CR manifold: left-handed particles have `θ(ξ) = +1`,
 right-handed have `θ(ξ) = −1`.
-LaTeX: `\label{rem:descartes-chirality}`
+LaTeX: `\label{rem:archimedean-chirality}`
 -/
 
 /-! ## §5  Exceptional Divisor -/

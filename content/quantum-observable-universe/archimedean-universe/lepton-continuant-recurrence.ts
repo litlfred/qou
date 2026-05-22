@@ -20,6 +20,6 @@ export default proposition({
   },
   uses: [
     "def:beta-decay-skein",
-    "rem:descartes-leptons",
+    "rem:archimedean-leptons",
   ],
 });

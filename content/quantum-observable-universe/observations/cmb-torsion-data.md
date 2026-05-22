@@ -12,5 +12,5 @@
 
 **Potential new experiments.**
 
-- A dedicated search for spiral (chiral) patterns in existing CMB $B$-mode data, testing for the preferred handedness predicted by the Reeb orientation ([Descartes chirality](#rem:descartes-chirality)).
+- A dedicated search for spiral (chiral) patterns in existing CMB $B$-mode data, testing for the preferred handedness predicted by the Reeb orientation ([Descartes chirality](#rem:archimedean-chirality)).
 - Cross-correlation of CMB anomalies (e.g. the Cold Spot, hemispherical asymmetry) with the angular structure of $q$-torsion leaves.

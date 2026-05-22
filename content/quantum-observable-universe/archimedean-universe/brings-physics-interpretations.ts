@@ -7,6 +7,6 @@ export default remark({
   tags: ["lepton", "chirality", "colour", "brings-surface", "S5"],
   uses: [
     "rem:brings-realisations",
-    "rem:descartes-leptons",
+    "rem:archimedean-leptons",
   ],
 });

@@ -52,7 +52,7 @@ Archimedean condition $\chi(\mathcal{S}) = -6$
   authoritative statement and proof in
   \hyperref[chap:archimedean-universe]{Chapter~\ref*{chap:archimedean-universe}})
   & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)
-  & \cite{yekutieli2010}; Ex.~\ref{ex:descartes-yekutieli} \\[6pt]
+  & \cite{yekutieli2010}; Ex.~\ref{ex:archimedean-yekutieli} \\[6pt]
 Cosimplicial crossed groupoid
   (Prop.~\ref{prop:cosimplicial-crossed-groupoid})
   & Cosimplicial object in crossed groupoids; \v{C}ech nerve of a gerbe

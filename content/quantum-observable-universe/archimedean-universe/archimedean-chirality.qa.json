@@ -1,21 +1,21 @@
 {
   "$schema": "block-qa/v1",
-  "label": "rem:descartes-leptons",
+  "label": "rem:archimedean-chirality",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/archimedean-universe/archimedean-leptons.ts",
-    "md": "content/quantum-observable-universe/archimedean-universe/archimedean-leptons.md"
+    "ts": "content/quantum-observable-universe/descartes-universe/archimedean-chirality.ts",
+    "md": "content/quantum-observable-universe/descartes-universe/archimedean-chirality.md"
   },
   "source_hashes": {
-    "md": "4019c63ac9bc",
-    "ts": "6ae3a237694d"
+    "md": "df4f6a5ea6e0",
+    "ts": "fb61d984d83c"
   },
   "criteria": {
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -30,8 +30,8 @@
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -46,8 +46,8 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -62,8 +62,8 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -78,8 +78,8 @@
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -92,8 +92,8 @@
       },
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -106,8 +106,8 @@
       },
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -120,8 +120,8 @@
       },
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -136,8 +136,8 @@
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -150,8 +150,8 @@
       },
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -164,8 +164,8 @@
       },
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -178,8 +178,8 @@
       },
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -194,8 +194,8 @@
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -211,8 +211,8 @@
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -228,8 +228,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -245,8 +245,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -262,8 +262,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -279,8 +279,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -295,8 +295,8 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -311,8 +311,8 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -327,8 +327,8 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -343,8 +343,8 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -359,8 +359,8 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -375,24 +375,26 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-sweep.ts",
           "version": "v1"
         },
         "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/descartes-universe/archimedean-chirality.md:4: right-handed chiralities correspond to the two orientations of $\\xi$ relative"
       }
     ],
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -407,8 +409,8 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -423,8 +425,8 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
@@ -440,8 +442,8 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "pass",
         "reviewer": {
@@ -456,8 +458,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "4019c63ac9bc",
-          "ts": "6ae3a237694d"
+          "md": "df4f6a5ea6e0",
+          "ts": "fb61d984d83c"
         },
         "result": "n/a",
         "reviewer": {
