@@ -8,27 +8,27 @@
 
 | # | Item | Status | PR / commit |
 |---|---|---|---|
-| **D1** | Block-graph hygiene (15 .ts files SUPERSEDED → mass-tower-operator-valued) | ✅ MERGED | #889 / `5a123ca39` |
-| **D2** | Wenzl bridge Rust rayon MPFR wire-up | ✅ MERGED | #901 / `c9df2d34a` |
-| **D3** | `mass_at_3A_proper` mmap-mode | ✅ MERGED | #901 / `c9df2d34a` |
-| **D4** | H_12 A-operator Phase-1 extraction launched | ⏳ background compute, ~60-90 min | log `/tmp/h12-phase1-extract.log` |
-| **D5** | λ_scale q-dilog-tower agent brief | ✅ MERGED | #901 / `c9df2d34a` |
-| **D6** | 210× scale-gap audit v3 (CAL-4 in λ_scale identified) | ✅ MERGED | #879 / `07e272f42` |
-| **D7** | skill: default merge=merge-commit | ✅ MERGED | #881 / `52e5518eb` |
+| **D1** | Block-graph hygiene (15 .ts files SUPERSEDED → mass-tower-operator-valued) | MERGED | #889 / `5a123ca39` |
+| **D2** | Wenzl bridge Rust rayon MPFR wire-up | MERGED | #901 / `c9df2d34a` |
+| **D3** | `mass_at_3A_proper` mmap-mode | MERGED | #901 / `c9df2d34a` |
+| **D4** | H_12 A-operator Phase-1 extraction launched | background compute, ~60-90 min | log `/tmp/h12-phase1-extract.log` |
+| **D5** | λ_scale q-dilog-tower agent brief | MERGED | #901 / `c9df2d34a` |
+| **D6** | 210× scale-gap audit v3 (CAL-4 in λ_scale identified) | MERGED | #879 / `07e272f42` |
+| **D7** | skill: default merge=merge-commit | MERGED | #881 / `52e5518eb` |
 
 ## Prioritised queue (ranked by ROI × independence)
 
 | Pri | # | Item | Effort | Status |
 |----:|---|---|---|---|
-| **1** | **W1** | Refactor `atomic_tr_m_helium4.direct_h12_recursion` to use Wenzl bridge (unblocks item #1 of speed tranche; auto-benefits from #901's Rust wire-up) | hours | 🔄 **in progress** (smoke-testing) |
-| **2** | W2 | Closed-form `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` refactor (Migration Backlog #4) — 4 production scripts | 4-8 hrs | 📋 queued |
-| **3** | W3 | Strategy A — Rogers `Li_2^q` PSLQ at ℚ(q_0) algebraic locus (λ_scale closure candidate, parallel to #909's Strategy D) | hours | 📋 queued |
-| **4** | W4 | Strategy C — cosh / cos_q ladder higher-order PSLQ (λ_scale; cheapest forward path) | hours | 📋 queued |
-| **5** | W5 | Reeb-flow / Garside closed-form compute verification (Migration Backlog #5) | hours | 📋 queued |
-| **6** | W6 | Strategy B — Faddeev `Φ_q` PSLQ (mass-side, parallel to W3) | hours | 📋 queued |
-| **7** | W7 | H_12 Phase-2 (≥3500 test words, multi-nucleon canonical braids) — gated on D4 completion + rank-deficiency mitigation | 2-3 days compute | ⏸️ **gated on D4** |
-| **8** | W8 | Migrate remaining 20 SUPERSEDED-importer scripts off `mass_endomorphism.py` — gated on W7 | hours per script | ⏸️ gated on W7 |
-| **9** | W9 | Strategy E — universe-level closure cross-check (verification leg for any A/B/C/D candidate) | hours | ⏸️ gated on a candidate from W3/W4/W6/#909 |
+| **1** | **W1** | Refactor `atomic_tr_m_helium4.direct_h12_recursion` to use Wenzl bridge (unblocks item #1 of speed tranche; auto-benefits from #901's Rust wire-up) | hours | **in progress** (smoke-testing) |
+| **2** | W2 | Closed-form `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` refactor (Migration Backlog #4) — 4 production scripts | 4-8 hrs | queued |
+| **3** | W3 | Strategy A — Rogers `Li_2^q` PSLQ at ℚ(q_0) algebraic locus (λ_scale closure candidate, parallel to #909's Strategy D) | hours | queued |
+| **4** | W4 | Strategy C — cosh / cos_q ladder higher-order PSLQ (λ_scale; cheapest forward path) | hours | queued |
+| **5** | W5 | Reeb-flow / Garside closed-form compute verification (Migration Backlog #5) | hours | queued |
+| **6** | W6 | Strategy B — Faddeev `Φ_q` PSLQ (mass-side, parallel to W3) | hours | queued |
+| **7** | W7 | H_12 Phase-2 (≥3500 test words, multi-nucleon canonical braids) — gated on D4 completion + rank-deficiency mitigation | 2-3 days compute | **gated on D4** |
+| **8** | W8 | Migrate remaining 20 SUPERSEDED-importer scripts off `mass_endomorphism.py` — gated on W7 | hours per script | gated on W7 |
+| **9** | W9 | Strategy E — universe-level closure cross-check (verification leg for any A/B/C/D candidate) | hours | gated on a candidate from W3/W4/W6/#909 |
 
 ## Sibling-PR review queue (waiting)
 
