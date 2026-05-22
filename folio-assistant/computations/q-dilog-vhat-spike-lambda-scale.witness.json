@@ -1,0 +1,58 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-22T20:35:32.812562+00:00",
+  "commitSha": "af2d27ee52b7ecde5fddd624010a6ee59208573d",
+  "assertions": [
+    {
+      "name": "no_nontrivial_relation_found_in_combined_basis",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "q-dilog-vhat-spike-lambda-scale",
+  "scriptFile": "q_dilog_vhat_spike_lambda_scale.py",
+  "scriptHash": "918d13c100f0",
+  "scriptCommitSha": "unknown",
+  "description": "Extended spike for substrate-pure λ_scale: tests three paths left open by q-dilog-tower-spike (PR #923): (a) operator-valued |V̂_S| spectral coords from canonical proton braid via Li_2^q, (b) 2-variable Bloch-Wigner D at ζ_n for n ∈ {3,5,8,10,12,15,20,60}, (c) hyperbolic-knot trace-field volumes. PSLQ at 80 dps, maxcoeff 10^30, against λ_p / Vol_eff_p / Vol_eff_p - 8G. Companion to PR #888 + #904 + #923.",
+  "contentBlock": "conj:lambda-scale-bring-bloch-identity",
+  "parameters": {
+    "dps": 80,
+    "pslq_maxcoeff": 1000000000000000000000000000000
+  },
+  "data": {
+    "basis_path_a_size": 4,
+    "basis_path_b_size": 8,
+    "basis_path_c_size": 6,
+    "basis_total_size": 23,
+    "results": [
+      {
+        "target": "lambda_p",
+        "found_nontrivial": false,
+        "found_trivial": false,
+        "no_relation": true,
+        "a0": null,
+        "n_nonzero_terms": 0
+      },
+      {
+        "target": "Vol_eff_p",
+        "found_nontrivial": false,
+        "found_trivial": false,
+        "no_relation": true,
+        "a0": null,
+        "n_nonzero_terms": 0
+      },
+      {
+        "target": "Vol_eff_p - 8G",
+        "found_nontrivial": false,
+        "found_trivial": false,
+        "no_relation": true,
+        "a0": null,
+        "n_nonzero_terms": 0
+      }
+    ]
+  }
+}
