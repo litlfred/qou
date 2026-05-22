@@ -62,7 +62,7 @@ multiplicative chain.
 **Round 8** carried out direct attempts at options 4a, 4b, 4c,
 4d. Findings:
 
-- **4a ✓ partial.** Symbolic recompute reveals that the optimal
+- **4a partial.** Symbolic recompute reveals that the optimal
   H_2 ordering produces $V_i$ values that decompose **additively**
   in $\{h_b, h_d\}$ — cross-terms $h_b \cdot h_d$ cancel in the
   multiplicative chain. Specifically $V_H = z + h_b - h_d$,
@@ -71,13 +71,13 @@ multiplicative chain.
   representation. Round-7 claim that "no per-generator additive
   decomposition exists" was overstated — it exists for the
   optimal ordering.
-- **4b ✓ relative spacing.** Categorical shell-gap ratios
+- **4b relative spacing.** Categorical shell-gap ratios
   $\Delta_{\mathrm{kin}}(k)/\Delta_{\mathrm{Coul}} = 2k+1$
   invert to give $(2k+1)^{-2}$ — the **exact Bohr $1/n^2$
   spacing** with $n = 2k+1$. Pure Hecke, no transport. The
   *relative* atomic energy structure is derived; the absolute
   scale $E_h$ is not.
-- **4c ✗.** Length-grading of $H_n(q)$ is non-canonical; the
+- **4c .** Length-grading of $H_n(q)$ is non-canonical; the
   unit-conversion factor still has to come from somewhere
   external. Speculative.
 - **4d partial.** Curvature-rank-2 stratification predicts
@@ -105,7 +105,7 @@ cover atomic systems. Both are concrete next directions.
 
 Both atomic and covalent bound states are realised as
 **Hopf-linked $(p, e)$ pairs** in QOU. The Hopf link's minimum
-crossing number is **2** (classical knot theory).  Each crossing
+crossing number is **2** (classical knot theory). Each crossing
 contributes one $\alpha_{EM}$ factor via operator-selection.
 Therefore:
 
@@ -121,14 +121,14 @@ $$
 This is a **single categorical mechanism** explaining both
 atomic and covalent $\alpha^2$ scaling, derived from Hecke-
 algebraic structure (Hopf link in $H_n(q)$) plus knot theory
-(crossing number).  The previous concern that 4d only handled
+(crossing number). The previous concern that 4d only handled
 covalent and not atomic is resolved.
 
 **Remaining open question (post-round-9):** the precise
 mechanism for "each LP-active Hecke crossing contributes one
 $\alpha_{EM}$ factor". The operator-selection LP weight
 $\alpha_{EM} = 1/(q [9]_q [10]_q)$ is the cost of the *whole*
-EM Bring complex, not obviously per-crossing.  A
+EM Bring complex, not obviously per-crossing. A
 multiplicative-decomposition lemma is needed:
 
 $$
@@ -155,7 +155,7 @@ Direct test of the round-9 LP-cost factorization lemma yields a
 - **Disjoint case** ($n$ disjoint Bring complexes): factorization
   holds by Markov property —
   $\mathrm{tr}_M(K_1 \otimes \cdots \otimes K_n) =
-   \prod_i \mathrm{tr}_M(K_i) = \alpha_{EM}^{n}$. ✓
+   \prod_i \mathrm{tr}_M(K_i) = \alpha_{EM}^{n}$. 
 - **Hopf-link case** (the actual bound state): the Markov trace
   $\mathrm{tr}_M(\sigma_1^{2}) = h\,z + 1 \approx 1.10$ is $O(1)$,
   **not** $O(\alpha_{EM}^{2}) \approx 5 \times 10^{-5}$.
@@ -239,16 +239,16 @@ traces.
 
 The NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-, \dots\}$
 of $H_n(q)$ that the operator-selection LP uses lives in the
-**Markov-trace layer**.  None of these basis elements individually
-carries $\alpha_{EM}$ as a factor.  This explains why round-10's
+**Markov-trace layer**. None of these basis elements individually
+carries $\alpha_{EM}$ as a factor. This explains why round-10's
 test failed: we were searching for $\alpha_{EM}$ in the wrong
 layer.
 
-**Implication for closure.**  To rigorously derive $\alpha_{EM}^2$
+**Implication for closure.** To rigorously derive $\alpha_{EM}^2$
 scaling in the bound-state energy, the formalism needs an
 explicit **q-dimension decoration** of the NF basis — a map
 $\delta_q : \{b_i\} \to R$ assigning to each Markov-basis
-element its q-dimension content.  The combined functor
+element its q-dimension content. The combined functor
 
 $$
   (\mathrm{tr}_M, \delta_q) : H_n(q) \to R \otimes R
@@ -285,9 +285,9 @@ The brief's "$J^1$-vanishing" question then becomes:
 > *Is the bound-state energy $E_{\mathrm{bind}}$ supported on
 > filtration rank $\geq 2$, with the rank-1 component vanishing?*
 
-**Caveat (honest check):**  The Hopf link $\sigma_1^2$ at the
+**Caveat (honest check):** The Hopf link $\sigma_1^2$ at the
 single Markov-trace level uses ONE Hecke relation ($\sigma_i^2 = h\sigma_i + 1$),
-so it is naïvely **rank-1** in the Hecke filtration.  This would
+so it is naïvely **rank-1** in the Hecke filtration. This would
 predict $\alpha^1$ scaling for atomic binding, not $\alpha^2$.
 
 Either (a) the Hopf link's GB rank is actually 2 once
@@ -300,10 +300,10 @@ beyond curvature-rank counting.
 
 The key insight — **$\alpha_{EM}$ lives in the q-dimension layer,
 not the Markov-trace layer** — sharpens the closure programme
-substantially.  The conjecture remains open, but the missing
+substantially. The conjecture remains open, but the missing
 ingredient is now concretely identifiable: a q-dimension
 decoration $\delta_q$ of the NF basis, dual to the
-GB-filtration / jet-expansion structure.  This is the **single
+GB-filtration / jet-expansion structure. This is the **single
 specific infrastructure addition** that would close the
 conjecture (modulo the rank-assignment caveat above).
 
@@ -327,11 +327,11 @@ $$
 
 Each $[n]_q = (q^n - q^{-n})/h$ contributes one factor of $h^{-1}$
 in the denominator of $1/\alpha_{EM}$, equivalently one factor of
-$h$ in $\alpha_{EM}$.  The two force-carrier q-dimensions
+$h$ in $\alpha_{EM}$. The two force-carrier q-dimensions
 $[9]_q$ and $[10]_q$ together contribute $h^{2}$.
 
 **Therefore $\alpha_{EM}^{2} \propto h^{4}$ in the skein
-expansion.**  At $q_0$: $h^{2} \approx 0.0437$, and the ratio
+expansion.** At $q_0$: $h^{2} \approx 0.0437$, and the ratio
 $\alpha_{EM}/h^{2} = 1/(q(q^9-q^{-9})(q^{10}-q^{-10}))
 \approx 0.167$ at $q_0$.
 
@@ -339,7 +339,7 @@ $\alpha_{EM}/h^{2} = 1/(q(q^9-q^{-9})(q^{10}-q^{-10}))
 to scale as $\alpha^{2} \cdot m_e c^{2}$, the molecular Markov
 trace's $h$-expansion must combine with the explicit $h^{4}$
 from $\alpha^{2}$ in a way that gives the observed
-$E_{\mathrm{bind}}$.  Numerically:
+$E_{\mathrm{bind}}$. Numerically:
 
 | Quantity | Value at $q_0$ |
 |---|---:|
@@ -553,7 +553,7 @@ question**:
 > producing the inverse $\delta_q$-products that give
 > $\alpha_{EM}^{2}$?*
 
-This is sharper than any prior framing.  Closing it requires
+This is sharper than any prior framing. Closing it requires
 a single calculation — the LP-optimum-to-force-carrier projection
 — rather than building infrastructure or identifying new
 mechanisms.
@@ -765,9 +765,9 @@ Witness: [`delta-q-decoration.witness.json`](folio-assistant/computations/delta-
 
 | $\lambda \vdash 4$ | $\chi_\lambda$ | $w_\lambda \cdot \chi_\lambda / f^\lambda$ | Hypothesised? |
 |---|---:|---:|---|
-| $(4)$ | $1.368$ | $+0.0181$ | yes — nonzero ✓ |
+| $(4)$ | $1.368$ | $+0.0181$ | yes — nonzero |
 | $(3,1)$ | $-1.110$ | $-0.1363$ | no — DOMINANT |
-| $(2,2)$ | $0.000$ | $\;\;\,0.0000$ | yes — **ZERO!** ✗ |
+| $(2,2)$ | $0.000$ | $\;\;\,0.0000$ | yes — **ZERO!** |
 | $(2,1,1)$ | $0.901$ | $+0.1106$ | no |
 | $(1,1,1,1)$ | $-0.731$ | $-0.0097$ | no |
 
@@ -833,10 +833,10 @@ The round-15 hypothesis assigned force carriers to
 **wrong correspondence**. The correct framing is via
 **strand intertwining**:
 
-> A torus-knot force carrier $T_{p,q}$ has $p$ strands.  When
+> A torus-knot force carrier $T_{p,q}$ has $p$ strands. When
 > applied to a 4-strand molecular braid via Hecke action, it
 > *intertwines $p$ of the 4 strands*, leaving the remaining
-> $4 - p$ strands carrying along untouched.  The corresponding
+> $4 - p$ strands carrying along untouched. The corresponding
 > Wedderburn projection lands on the partition with one part of
 > size $p$ and the rest of size 1.
 
@@ -853,9 +853,9 @@ round-17:
 | $\lambda$ | Round-17 weight | Interpretation |
 |---|---:|---|
 | $(4)$ | $+0.018$ | all 4 strands together (no free) |
-| $(3,1)$ | $-0.136$ | $T_{3,5}$ intertwining ✓ |
+| $(3,1)$ | $-0.136$ | $T_{3,5}$ intertwining |
 | $(2,2)$ | $\;\;\,0.000$ | impossible: 2 simultaneous 2-strand ops |
-| $(2,1,1)$ | $+0.111$ | $T_{2,9}$ intertwining ✓ |
+| $(2,1,1)$ | $+0.111$ | $T_{2,9}$ intertwining |
 | $(1,1,1,1)$ | $-0.010$ | all 4 strands free (no intertwining) |
 
 **The exact zero at $(2,2)$ is now physically explained**: a
@@ -924,12 +924,12 @@ of $E_{\mathrm{Hartree}}$ requires:
    $\Phi_1^{\mathrm{Coul}}$** as distinct, computable components
    of the molecular Markov trace. The current LP/SDP framework
    does not separate them; they are pedagogical conveniences from
-   QED.  Defining them would require a new theoretical result
+   QED. Defining them would require a new theoretical result
    about how the LP/SDP optimum factorizes over crossing types
    (intra-atomic dressed vs inter-atomic bare).
 2. **A proof that these contributions balance at a specific
    categorical length, derived from Hecke structure** — not from
-   transported dimensional analysis.  Likely requires a symbolic
+   transported dimensional analysis. Likely requires a symbolic
    $q$-polynomial recompute of the optimal $\Phi_1^{H_2}(\pi^{*})$
    tracking each crossing-type's contribution separately through
    the multiplicative chain.
@@ -987,7 +987,7 @@ as the leading order.
 
 This block is registered as **conjecture, not proposition**, because
 no candidate mechanism we can articulate closes the
-$J^{1}$-vanishing step rigorously.  All three candidate
+$J^{1}$-vanishing step rigorously. All three candidate
 mechanisms below have an explicit, identifiable gap.
 
 ### What is rigorous
@@ -1091,12 +1091,12 @@ not zero. A rigorous argument requires showing the bare separated
 atoms already saturate the relevant Frobenius-pairing equality —
 i.e.\ live on the active facet — so that turning on
 $\varepsilon$ is a smooth deformation along the facet rather than
-an activation.  This has not been verified.
+an activation. This has not been verified.
 
 #### Mechanism C — parity / antipode invariance of the Markov trace
 
 The Hopf-algebra antipode $S$ of the Iwahori-Hecke algebra acts on
-generators by $S(\sigma_i) = \sigma_i^{-1}$.  The Markov trace is
+generators by $S(\sigma_i) = \sigma_i^{-1}$. The Markov trace is
 $S$-invariant: $\mathrm{tr}_M(S(\beta)) = \mathrm{tr}_M(\beta)$
 (equivalently, the Jones polynomial of a knot equals that of its
 reverse-orientation companion). For a homonuclear (or definite-parity
@@ -1140,10 +1140,10 @@ because both kinetic energy
 $T \sim \hbar^{2}/(m_{e} a_{0}^{2})$ and Coulomb potential
 $V \sim e^{2}/a_{0}$ are quadratic in
 $1/a_{0} \propto \alpha_{EM}$, and the virial theorem balances
-them at $E = -\tfrac{1}{2}V \propto \alpha_{EM}^{2}$.  The
+them at $E = -\tfrac{1}{2}V \propto \alpha_{EM}^{2}$. The
 $\alpha_{EM}^{1}$ contribution is the *linear Stark shift*, which
 vanishes in any state of definite parity by symmetry of the
-electric-dipole matrix element.  See
+electric-dipole matrix element. See
 [antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)
 for the QOU categorical analogue of charge-conjugation parity
 (the $\sigma$-involution flipping the Coulomb channel sign).
@@ -1156,7 +1156,7 @@ the categorical analogue of the linear-Stark vanishing.
 A natural follow-up to Mechanism C is to ask whether some involution
 $\iota$ of $R$ *other* than the antipode-induced
 $q \leftrightarrow q^{-1}$ flips the sign of
-$\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$.  Direct calculation rules out
+$\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$. Direct calculation rules out
 all four automorphisms generated by the obvious sign-flips
 $q \mapsto \pm q^{\pm 1}$:
 
@@ -1170,7 +1170,7 @@ $q \mapsto \pm q^{\pm 1}$:
 The relevant identities are $[n]_{-q^{\pm 1}} = (-1)^{n+1}\,[n]_q$,
 so the sign factors from $q$ and $[10]_q$ (even index, sign-flipped)
 *cancel against each other* under $\tau = q \mapsto -q^{-1}$, and
-likewise under $\rho = q \mapsto -q$ versus the identity.  None of
+likewise under $\rho = q \mapsto -q$ versus the identity. None of
 the four maps the *coupling* $\alpha_{EM}$ to $-\alpha_{EM}$.
 
 This is a structural obstruction: $\alpha_{EM}$ is a positive scalar
@@ -1186,7 +1186,7 @@ involution.
 The standard physics linear-Stark vanishing is
 $\langle \psi_0 \,|\, \hat r \,|\, \psi_0 \rangle = 0$, where the
 parity-odd object is the *operator* $\hat r$ (the dipole), not the
-coupling $\alpha_{EM}$.  The categorical analogue should therefore
+coupling $\alpha_{EM}$. The categorical analogue should therefore
 seek a $\sigma$-antisymmetric *Hecke-algebra perturbation operator*
 $\Delta_{\mathrm{cov}}$ (built from
 $(\sigma_i - \sigma_i^{-1})$ skein factors, which *are*
@@ -1244,7 +1244,7 @@ $$
 
 so $\mathrm{tr}_M(\sigma_1^{3} - \sigma_1^{-3}) = h\,(3 + h^{2})$.
 
-This is **nonzero**.  The structural reason is that the Markov
+This is **nonzero**. The structural reason is that the Markov
 trace is $\sigma$-equivariant, not $\sigma$-killing: for any
 $\sigma$-antisymmetric $X \in H_n(q)$ (algebra-antisymmetric:
 $\sigma(X) = -X$),
@@ -1254,19 +1254,19 @@ $$
 $$
 
 forcing $\mathrm{tr}_M(X) = (q - q^{-1})\,\cdot\,p(q)$ for some
-palindromic $p \in R$ — but **not** $p = 0$ generically.  The
+palindromic $p \in R$ — but **not** $p = 0$ generically. The
 trace acquires one factor of the skein parameter $h$, not a full
 zero.
 
 #### Implication: $\sigma$-parity alone is insufficient
 
 The naïve operator-parity argument therefore does not close
-$J^{1}$-vanishing.  In an expansion of $\Phi_1(\mathcal{M})$ in
+$J^{1}$-vanishing. In an expansion of $\Phi_1(\mathcal{M})$ in
 the *skein parameter* $h = q - q^{-1}$, the $\sigma$-equivariance
 identity does enforce that the **odd-$h$** part of any
 $\sigma$-antisymmetric trace carries an extra factor of $h$ —
 which is itself $h$-odd, so the **product is $h$-even** —
-delivering the desired $h$-evenness of the bare-atom trace.  But
+delivering the desired $h$-evenness of the bare-atom trace. But
 the LP-dual expansion of interest is in the *coupling*
 $\alpha_{EM}$, not in $h$, and the two are not proportional:
 
@@ -1282,7 +1282,7 @@ trace, or
 (b) an *additional* symmetry beyond $\sigma$ — most plausibly the
 **nuclear-exchange involution** $\varepsilon$ for homonuclear (or
 definite-parity) molecules, which swaps the two atomic strands
-(conjugation by a half-twist braid).  Combined $\sigma\varepsilon$
+(conjugation by a half-twist braid). Combined $\sigma\varepsilon$
 parity may kill the residual palindromic factor that $\sigma$
 alone leaves behind.
 
@@ -1312,13 +1312,13 @@ $\varepsilon$-symmetry. Standard physics predicts a nonzero
 permanent dipole moment for such molecules, and
 $\alpha_{EM}^{1}$ contributions to binding *do* in fact appear
 (though they are smaller than $\alpha_{EM}^{2}$ at
-$\alpha_{EM} \approx 1/137$).  This is consistent with the
+$\alpha_{EM} \approx 1/137$). This is consistent with the
 $\sigma\varepsilon$ argument requiring nuclear-exchange symmetry.
 
 ### Round-3: Skein-identity obstruction kills *all* parity arguments
 
 A direct computation in $H_4(q)$ on the single covalent crossing
-$\sigma_2$ closes the parity route negatively.  The Skein identity
+$\sigma_2$ closes the parity route negatively. The Skein identity
 
 $$
   \sigma_i - \sigma_i^{-1} \;=\; (q - q^{-1})\,\mathbf{1}
@@ -1364,7 +1364,7 @@ $$
 
 This is independent of which inner-automorphism $\varepsilon$ one
 chooses, because the identity element is a fixed point of every
-inner automorphism.  Hence **no $\mathbb{Z}/2$ parity grading
+inner automorphism. Hence **no $\mathbb{Z}/2$ parity grading
 generated by Hopf antipode and conjugations can force the linear-
 in-$h$ coefficient of a single covalent crossing to vanish**.
 
@@ -1372,7 +1372,7 @@ in-$h$ coefficient of a single covalent crossing to vanish**.
 
 Parity-based mechanisms (A, C, C′, σε, …) are **structurally
 insufficient** for $J^{1}$-vanishing in the molecular Hecke
-algebra $H_n(q)$.  The Skein identity is the obstruction: it
+algebra $H_n(q)$. The Skein identity is the obstruction: it
 trades a $\sigma$-antisymmetric Hecke generator for a *scalar
 multiple of the identity*, against which every parity argument
 collapses.
@@ -1381,11 +1381,11 @@ collapses.
 
 Re-examining the standard physics: the $\alpha^{2}$ scaling of
 $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ does **not**
-come from the linear-Stark vanishing.  The two facts are
+come from the linear-Stark vanishing. The two facts are
 independent:
 
 - $E \sim \alpha^{2}$ comes from **dimensional analysis** at the
-  Bohr radius $a_0 \sim 1/(m_e c \alpha)$:  both kinetic energy
+  Bohr radius $a_0 \sim 1/(m_e c \alpha)$: both kinetic energy
   $T \sim \hbar^{2}/(m_e a_0^{2}) \sim m_e c^{2}\alpha^{2}$ and
   Coulomb potential
   $V \sim e^{2}/a_0 \sim m_e c^{2}\alpha^{2}$ scale quadratically
@@ -1400,23 +1400,23 @@ independent:
 The QOU-categorical analogue should therefore be a **virial /
 scaling** argument, not a parity argument.
 
-**Mechanism D (virial/scaling).**  At the bound-state LP/SDP
+**Mechanism D (virial/scaling).** At the bound-state LP/SDP
 optimum, the molecular Markov trace decomposes into two
-contributions analogous to kinetic and potential energy.  Both
+contributions analogous to kinetic and potential energy. Both
 involve the *bound-state characteristic eigenvalue*
 $\lambda_{\mathrm{bound}}$ of the molecular transfer matrix
 ($T_1 = T_{e_2 \mathfrak{p}_2}^{\mathrm{dressed}}$ in
 [`prop:h2-lp-dual-binding`](#prop:h2-lp-dual-binding), with
-eigenvalues $(q^{5}, -q^{-5})$).  By the virial-theorem analogue,
+eigenvalues $(q^{5}, -q^{-5})$). By the virial-theorem analogue,
 both contributions scale as $\lambda_{\mathrm{bound}}^{-2}$, and
 $\lambda_{\mathrm{bound}}^{-1}$ is the categorical analogue of
-$\alpha_{EM}$.  The leading order is therefore $\alpha_{EM}^{2}$
+$\alpha_{EM}$. The leading order is therefore $\alpha_{EM}^{2}$
 by dimensional matching, with no $\alpha_{EM}^{1}$ term to
 suppress in the first place.
 
 **What this changes.** The $J^{1}$-vanishing is not a *theorem*
 to prove — it is a *trivial consequence* of the LP/SDP being
-quadratic in the bound-state scale.  The conjecture sharpens to:
+quadratic in the bound-state scale. The conjecture sharpens to:
 
 > *The bound-state characteristic scale $\lambda_{\mathrm{bound}}$
 > of the molecular transfer matrix relates to $\alpha_{EM}$ by
@@ -1462,13 +1462,13 @@ witness precision:
 
 The closest candidate $1/(q\,[5]_q)$ is off by $1.6\%$, well
 outside the LP-dual numerical precision (witness reports a single
-$f64$ optimum without symbolic-$q$ traceback).  The standard
+$f64$ optimum without symbolic-$q$ traceback). The standard
 physics ratio $1/6$ is off by $1.9\%$, suggesting the QOU value
 deviates from textbook by $\sim 2\%$ — not implausible for a
 substrate-corrected calculation.
 
 **Honest reading.** $c_2$ does *not* trivially equal a low-degree
-$R$-rational at $q_0$ within obvious search scope.  Either (i)
+$R$-rational at $q_0$ within obvious search scope. Either (i)
 $c_2$ is a more elaborate Frobenius-pairing expression in $R$
 that requires explicit symbolic computation of
 $\Phi_1^{H_2}(\pi^{*})$, or (ii) the witness numerical value is
@@ -1479,7 +1479,7 @@ itself sensitive to LP-precision artefacts and a more careful
 - The $J^{1}$-vanishing framing of the original brief was
   diagnosed as misdirected: parity-based mechanisms (A, C, C′,
   σε) are structurally insufficient because of the Skein
-  identity.  No "linear-Stark vanishing" categorical analogue is
+  identity. No "linear-Stark vanishing" categorical analogue is
   required; the $\alpha^{2}$ scaling is dimensional/virial.
 - Mechanism D survives as the structural answer at the heuristic
   level, supported empirically by the witness ratio
@@ -1499,16 +1499,16 @@ Tracing the actual H_2 pipeline numerically settles the conjecture's
 framing:
 
 ```
-binding_Phi_diff = 0.6870   (Phi_1 units, dimensionless, ~ O(1))
-E_HARTREE        = 27.30 eV (= 511000 eV * alpha^2, HARDCODED in
+binding_Phi_diff = 0.6870 (Phi_1 units, dimensionless, ~ O(1))
+E_HARTREE = 27.30 eV (= 511000 eV * alpha^2, HARDCODED in
                               folio-assistant/computations/hecke_core.py:198)
-E_MOL            = E_HARTREE / TWO_Q^2 = 6.75 eV per Phi_1 unit
-E_bind           = binding_Phi_diff * E_MOL = 4.64 eV
+E_MOL = E_HARTREE / TWO_Q^2 = 6.75 eV per Phi_1 unit
+E_bind = binding_Phi_diff * E_MOL = 4.64 eV
 ```
 
 **The LP/SDP output $y_{\mathrm{cov}}^{*} = $ binding_Phi_diff is
 pure Hecke-trace, dimensionless, and does NOT depend on
-$\alpha_{EM}$ at all.**  $\alpha_{EM}^{2}$ enters the eV value
+$\alpha_{EM}$ at all.** $\alpha_{EM}^{2}$ enters the eV value
 *only* at the unit-conversion step
 $E_{\mathrm{HARTREE}} = m_e c^{2}\,\alpha_{EM}^{2}$, which is
 hardcoded.
@@ -1516,7 +1516,7 @@ hardcoded.
 This means **the brief's request to "expand $y_{\mathrm{cov}}$ in
 $\alpha_{EM}$" was a category error**: $y_{\mathrm{cov}}$ is the
 $\Phi_1$-unit LP-dual output, which has no $\alpha_{EM}$
-dependence to expand.  The whole "$J^{1}$-vanishing" question is
+dependence to expand. The whole "$J^{1}$-vanishing" question is
 therefore *vacuously true*: there is no $\alpha_{EM}^{1}$
 contribution to suppress because there is no $\alpha_{EM}$ in
 $y_{\mathrm{cov}}$ at all.
@@ -1534,7 +1534,7 @@ The actual categorical question is **upstream** of the LP:
 > $m_e c^{2}$ or $m_e c^{2}\,\alpha_{EM}$?*
 
 This is the actual content of "Hartree-energy categorical
-derivation".  It is *not* a question about the LP at all — it is a
+derivation". It is *not* a question about the LP at all — it is a
 question about the **archimedean realization functor**
 ([archimedean realization](#def:archimedean-realization-functor)):
 specifically about why its restriction to molecular-binding-LP
@@ -1542,8 +1542,8 @@ outputs picks up exactly two factors of $\alpha_{EM}$.
 
 #### Standard physics translation (derivation sketch)
 
-Categorical $\Phi_1$ has dimension of action ($\hbar$).  Mapping
-action × inverse-length gives energy.  The natural categorical
+Categorical $\Phi_1$ has dimension of action ($\hbar$). Mapping
+action × inverse-length gives energy. The natural categorical
 length scale at a covalent bond is the **categorical Bohr radius**
 $a_{0}^{\mathrm{cat}}$, set by balance of the EM force-carrier
 coupling $\alpha_{EM}$ against the electron mass $m_{e}$:
@@ -1567,7 +1567,7 @@ $$
 $$
 
 This is the standard Bohr-virial picture, transported into the
-QOU functorial framework.  The two factors of $\alpha_{EM}$ in
+QOU functorial framework. The two factors of $\alpha_{EM}$ in
 $E_{\mathrm{HARTREE}}$ are not a parity miracle and not an LP
 expansion — they are **dimensional** and arise from $\alpha_{EM}$
 appearing both as the force-coupling LP weight *and* as the
@@ -1596,7 +1596,7 @@ is forced to multiply Markov-trace outputs by $1/(a_{0}^{\mathrm{cat}})^{2}$;
 Frobenius pairing structure.
 
 This is genuinely tractable but well beyond the scope of the
-present block.  It is recommended as the **definitive next
+present block. It is recommended as the **definitive next
 deliverable** — a separate proposition on "$\alpha_{EM}^{2}$ in
 the molecular archimedean realization functor" — once the
 categorical Bohr radius is given a precise Hecke definition.
@@ -1604,7 +1604,7 @@ categorical Bohr radius is given a precise Hecke definition.
 ### What this block does *not* claim
 
 - It does **not** claim a proof of $E_h \propto \alpha_{EM}^{2}$
-  from QOU principles.  It claims only that this scaling is the
+  from QOU principles. It claims only that this scaling is the
   expected leading behaviour and identifies the open structural
   step.
 - It does **not** introduce $\pi$, transcendentals, or PSLQ-fitted
@@ -1619,7 +1619,7 @@ categorical Bohr radius is given a precise Hecke definition.
 ### Honest reporting
 
 We attempted three derivation mechanisms here and
-identified an explicit gap in each.  Mechanism C with the
+identified an explicit gap in each. Mechanism C with the
 $q \mapsto -q^{-1}$ involution is the most promising line of
 attack; pursuing it is the recommended next research step.
 Reporting the partial chain — rather than papering over with

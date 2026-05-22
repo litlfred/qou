@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean"
   },
   "source_hashes": {
-    "md": "879d4dc2bb39",
+    "md": "93c867502b20",
     "ts": "01b93e3fab57",
     "lean": "fe1d067bfe7e"
   },
@@ -45,40 +45,6 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      },
-      {
-        "field_hash": {
-          "md": "879d4dc2bb39",
-          "ts": "01b93e3fab57",
-          "lean": "fe1d067bfe7e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "ab4c277feefa",
-          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
-        },
-        "reviewed_at": "2026-05-22T14:56:19.210Z",
-        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
-      },
-      {
-        "field_hash": {
-          "md": "879d4dc2bb39",
-          "ts": "01b93e3fab57",
-          "lean": "fe1d067bfe7e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "ef6357be8381",
-          "script_commit_sha": "363600454865d18dbfcf16cda21e2e80b23244fe"
-        },
-        "reviewed_at": "2026-05-22T15:26:12.474Z",
-        "reviewed_sha": "068fcd3c1d4fa13f2780f9c360e1b7feec1c3e88"
       }
     ],
     "compute-witness-exists": [
@@ -465,6 +431,42 @@
         },
         "reviewed_at": "2026-05-20T16:40:02.947Z",
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      },
+      {
+        "field_hash": {
+          "md": "879d4dc2bb39",
+          "ts": "01b93e3fab57",
+          "lean": "fe1d067bfe7e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T15:21:17.723Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md:19: > **⚠ Update 2026-05-20 (Phase 5k.2): GLOBAL FORM FALSIFIED.**"
+      },
+      {
+        "field_hash": {
+          "md": "93c867502b20",
+          "ts": "01b93e3fab57",
+          "lean": "fe1d067bfe7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T15:22:09.050Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "voice-first-person-work": [
@@ -659,5 +661,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T15:26:12.474Z"
+  "updated_at": "2026-05-22T15:22:09.050Z"
 }

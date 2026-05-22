@@ -16,7 +16,7 @@
 > below is preserved as a record of Phase 5g's categorical-search
 > result, but the **structural-form claim is superseded** by the
 > Phase 5l proposition.
-> **⚠ Update 2026-05-20 (Phase 5k.2): GLOBAL FORM FALSIFIED.**
+> ** Update 2026-05-20 (Phase 5k.2): GLOBAL FORM FALSIFIED.**
 > Phase 5k.2 (this PR, [`constit_factor_varying_q_phase5k2.py`](../../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py))
 > directly measured $\rho_Z^{\mathrm{constit}}(q)$ at five $q$-values
 > across the substrate window using the same $y_\lambda$ / $\chi_\lambda$

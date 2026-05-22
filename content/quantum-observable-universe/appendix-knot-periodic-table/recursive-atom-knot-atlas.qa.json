@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean"
   },
   "source_hashes": {
-    "md": "6e4c8c567b50",
+    "md": "fd6335cd600b",
     "ts": "75723ba8d873",
     "lean": "efa0b2bf80f3"
   },
@@ -395,20 +395,20 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "6e4c8c567b50",
+          "md": "fd6335cd600b",
           "ts": "75723ba8d873",
           "lean": "efa0b2bf80f3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:541: | $\\mathfrak{n}$ | 1 | 1 | L1-borromean-via-canonical | 🟢 substrate | mass | 939.5652 | 939.5654 | -0.251 ppm | — | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:549: | $\\mathfrak{p}$ | 1 | 0 | L1-borromean-via-canonical | 🟢 substrate | mass | 938.2719 | 938.2721 | -0.251 ppm | — | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:550: | ${}^{2}$H | 2 | 1 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 2.2488 | 2.2246 | +1.09 % | 1875.5882 MeV (-285.5 ppm) | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:551: | ${}^{3}$H | 3 | 2 | L1-canonical | 🟡 +empirical-(K,ρ) | binding_energy | 8.4686 | 8.4818 | -0.16 % | 2808.9336 MeV (-177.4 ppm) | | quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:552: | ${}^{4}$H | 4 | 3 | L?-pending | ⚪ pending | binding_energy | — | 6.8818 | — | — |"
+        "reviewed_at": "2026-05-22T15:21:17.723Z",
+        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
       }
     ],
     "voice-first-person-work": [
@@ -688,5 +688,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T15:21:17.723Z"
 }
