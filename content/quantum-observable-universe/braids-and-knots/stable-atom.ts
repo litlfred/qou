@@ -8,7 +8,7 @@ export default definition({
   },
   uses: [
     "def:atom-knot",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
   ],
   cites: [],
   tags: [

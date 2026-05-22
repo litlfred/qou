@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "prop:alpha-k-derivation-procedure",
     "prop:unified-curvature-rank-mass-formula",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
     "prop:categorical-mass-markov",
     "rem:beta-decay-energy-scale",
   ],

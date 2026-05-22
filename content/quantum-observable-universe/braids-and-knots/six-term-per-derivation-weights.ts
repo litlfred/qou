@@ -14,7 +14,7 @@ export default proposition({
     "thm:frobenius-codim-universal",
     "prop:chirality-dual-space-derivation",
     "prop:full-pole-structure-mass-trace",
-    "prop:mass-endomorphism-tower",
+    "prop:mass-tower-operator-valued",
   ],
   cites: [],
   computation: {
