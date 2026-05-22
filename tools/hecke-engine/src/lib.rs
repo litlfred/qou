@@ -37,11 +37,13 @@ pub mod gb_nf_reducer;
 pub mod geck_pfeiffer;
 pub mod gram;
 pub mod joint_tower_sdp_certificate;
+pub mod laurent_hecke_element;
 pub mod laurent_poly_q;
 pub mod laurent_rational_q;
 pub mod littlewood_richardson;
 pub mod precision_scalar;
 pub mod rational_round;
+pub mod reduce_laurent;
 // Clarabel-rs SDP backends are opt-in behind the `clarabel-sdp` feature.
 // Default builds use only the bisection-based α* verifier (sdp_verifier),
 // which works at any d without an external SDP solver.
