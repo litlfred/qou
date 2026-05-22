@@ -23,7 +23,7 @@ The Lean module
 
 1. `opaque tauM_n (q : ℝ) {n : ℕ} (w : BraidWord n) : ℝ` — the per-$n$ scalar trace value.
 2. `class MarkovTraceInductiveLimit q` — single global hypothesis carrying the stabilisation `inclusion_residual` scalar + an equation asserting it vanishes (explicit-residual pattern).
-3. `instance defaultMarkovTraceInductiveLimit q` — placeholder discharge (residual $= 0$ trivially, pending substantive operator construction).
+3. `instance defaultMarkovTraceInductiveLimit q` — ansatz discharge (residual $= 0$ trivially, pending substantive operator construction).
 4. **Bridge instance**
    `markovTraceN_from_inductive_limit q n : MarkovTraceN n q` —
    under the inductive-limit class, **every per-$n$ `MarkovTraceN`

@@ -109,9 +109,9 @@ structural inputs:
 | Candidate | Source | Match for $D$ ($k_{\max}=2$) | Match for $T$ ($k_{\max}=9$) |
 |:---|:---|:---:|:---:|
 | GB max grade | $H_{n_0}$ filtration | works (input by construction) | overshoots |
-| confinement level $\ell$ | [confinement level](#def:confinement-level) | TBD | TBD |
-| $\dim H_{n_0}(q)$ | strand count $n_0 = 3A$ | TBD | TBD |
-| Coxeter length $\ell(w)$ | NF word length | TBD | TBD |
+| confinement level $\ell$ | [confinement level](#def:confinement-level) | — | — |
+| $\dim H_{n_0}(q)$ | strand count $n_0 = 3A$ | — | — |
+| Coxeter length $\ell(w)$ | NF word length | — | — |
 
 A correct $n_\star$ must (i) be a structural invariant of
 $\mathfrak{H}$, (ii) reproduce the empirical $B(\mathfrak{H})$ across

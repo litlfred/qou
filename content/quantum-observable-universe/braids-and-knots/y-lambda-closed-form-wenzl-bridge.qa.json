@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.lean"
   },
   "source_hashes": {
-    "md": "50ae586f6927",
+    "md": "af3816b472fb",
     "ts": "91a2efec7090",
     "lean": "416b991e46d3"
   },
@@ -378,20 +378,20 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "50ae586f6927",
+          "md": "af3816b472fb",
           "ts": "91a2efec7090",
           "lean": "416b991e46d3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md:204: element (axiomatic stub pending full Mathlib partition machinery) | quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md:244: = (q^2, q \\cdot z)$\" was structurally vacuous on the placeholder | quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md:248: data (machine-precision agreement) as a `True := trivial` placeholder."
+        "reviewed_at": "2026-05-22T20:00:08.749Z",
+        "reviewed_sha": "efd9fc023861c66ee1f16769e16435f996f95b45"
       }
     ],
     "voice-emoji-content": [
@@ -686,5 +686,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:00:08.749Z"
 }

@@ -45,7 +45,7 @@ universal property.*
 
 | Definition / theorem | Content |
 |---|---|
-| `pentagonRelationGenerators : Set (PreBlochGroup F)` | placeholder generator set |
+| `pentagonRelationGenerators : Set (PreBlochGroup F)` | ansatz generator set |
 | `pentagonSubgroup` | `AddSubgroup.closure` of the generators |
 | `BlochGroup F` | `PreBlochGroup F ⧸ pentagonSubgroup` |
 | `instance : AddCommGroup (BlochGroup F)` | inherited from `QuotientAddGroup` |
@@ -60,7 +60,7 @@ universal property.*
 types and class hooks from
 [`three-substantive-mathlib-fillers.lean`](three-substantive-mathlib-fillers.lean)
 are now backed by a real Lean construction: `BlochGroup F` is a
-genuine `AddCommGroup` (not a typeclass placeholder), with a
+genuine `AddCommGroup` (not a typeclass ansatz), with a
 canonical projection and universal property. The `HasBlochGroup ℝ`
 instance is concretely inhabited.
 

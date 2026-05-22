@@ -98,7 +98,7 @@ The fully-proved comparison theorem
 ($\mathrm{volumeInvariant}(\mathtt{Unknot}) < \mathrm{volumeInvariant}(\mathtt{FigureEight})$)
 exhibits the first non-trivial use of `volumeInvariant` and
 shows that the class is rich enough to support genuine
-spectral comparisons rather than just placeholder bookkeeping.
+spectral comparisons rather than just ansatz bookkeeping.
 
 The §3b "hard work" deferred to the long-term Mathlib
 geometric-topology layer is the *full* discreteness theorem

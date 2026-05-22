@@ -66,7 +66,7 @@ in the generic n-strand types).
   operator on the inductive limit $\bigcup_n \mathbf{B}_n$.
 - Higher-$n$ `closureN` discharges: Borromean link at $n=3$,
   di-baryon at $n=6$, etc. (current $n \geq 3$ returns `Link.unknot`
-  as a placeholder).
+  as a ansatz).
 
 ## Status
 

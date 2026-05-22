@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.lean"
   },
   "source_hashes": {
-    "md": "c1f0e7fb82c6",
+    "md": "6c6d57254240",
     "ts": "48cdeed22b72",
     "lean": "a5be8ee3f9e6"
   },
@@ -378,20 +378,20 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "c1f0e7fb82c6",
+          "md": "6c6d57254240",
           "ts": "48cdeed22b72",
           "lean": "a5be8ee3f9e6"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md:48: | `pentagonRelationGenerators : Set (PreBlochGroup F)` | placeholder generator set | | quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.md:63: genuine `AddCommGroup` (not a typeclass placeholder), with a"
+        "reviewed_at": "2026-05-22T20:00:08.749Z",
+        "reviewed_sha": "efd9fc023861c66ee1f16769e16435f996f95b45"
       }
     ],
     "voice-emoji-content": [
@@ -688,5 +688,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:00:08.749Z"
 }

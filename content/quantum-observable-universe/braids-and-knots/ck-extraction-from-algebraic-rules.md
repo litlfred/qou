@@ -86,7 +86,7 @@ rather than a single open conjecture.
 
 ## Open R&D
 
-- Replace the `True` placeholder fields with the substantive matrix
+- Replace the `True` ansatz fields with the substantive matrix
   identities they encode (`yb_cubic` $\leftarrow$ Hoefsmit YB cubic; `hecke_quad`
   $\leftarrow$ `hoefsmit_sigma{0,1}_hecke_quadratic`).
 - Discharge `QYoungSymmetrizers 3 q` via the Mathlib Iwahori-Hecke

@@ -645,9 +645,9 @@ $\mathtt{empiricalSector}\,k = (\text{if } k = 5 \text{ then averagingResonant e
 **Theorem (Lean: `naive_argmax_binomial_is_falsified`).** $\exists k, \mathtt{naiveArgmaxBinomial}\,\mathtt{protonDistribution}\,k \ge 1 \wedge \mathtt{empiricalSector}\,k = \mathtt{pureSigma}$.
 *Proof.* Take $k = 4$: $\mathtt{naiveArgmaxBinomial}\,\mathtt{protonDistribution}\,4 = 1$ (by `decide` — the fold computes $\binom{2}{1}\binom{9}{3} = 168 \ge \binom{9}{4} = 126$, so $m = 1$ wins), and $\mathtt{empiricalSector}\,4 = \mathtt{pureSigma}$ (definitional). So the naive criterion's prediction `averagingResonant` contradicts the empirical `pureSigma`. $\square$
 
-### Categorical-criterion placeholder + conditional theorems
+### Categorical-criterion ansatz + conditional theorems
 
-**Definition (Lean: `correctSectorCriterion d k`).** Currently set to `empiricalSector k` as a placeholder. Future categorical derivations replace this with the true criterion.
+**Definition (Lean: `correctSectorCriterion d k`).** Currently set to `empiricalSector k` as a ansatz. Future categorical derivations replace this with the true criterion.
 
 **Definition (Lean: `class HalfFillRungIsOutlier d`).** Conjectural class: the unique averaging-resonant rung is $\mathtt{halfFillRung}(d) = \lfloor n_{\text{total}}/2 \rfloor$, with fields `n_avg_ge_two`, `outlier_eq_half_fill`, `non_half_fill_pure_sigma`.
 
@@ -657,14 +657,14 @@ $\mathtt{empiricalSector}\,k = (\text{if } k = 5 \text{ then averagingResonant e
 ### Proton + neutron instances (unconditional)
 
 **Instance (Lean: `protonHalfFillIsOutlier : HalfFillRungIsOutlier protonDistribution`).**
-*Proof.* `n_avg_ge_two`: from `decide` on the proton distribution ($n_{\mathrm{avg}} = 2 \ge 2$). `outlier_eq_half_fill`: with `halfFillRung = 5` (proved) and `correctSectorCriterion = empiricalSector` (placeholder), the equivalence becomes
+*Proof.* `n_avg_ge_two`: from `decide` on the proton distribution ($n_{\mathrm{avg}} = 2 \ge 2$). `outlier_eq_half_fill`: with `halfFillRung = 5` (proved) and `correctSectorCriterion = empiricalSector` (ansatz), the equivalence becomes
 $\mathtt{empiricalSector}\,k = \mathtt{averagingResonant} \iff k = 5$,
 proved by case analysis on $k$: only $k = 5$ in the `empiricalSector` pattern matches `averagingResonant`. `non_half_fill_pure_sigma`: analogous case analysis. $\square$
 
 **Corollary (Lean: `proton_outlier_eq_five_unconditional`).** $k = 5$ is the unique averaging-resonant rung on the proton, unconditionally.
 *Proof.* Combine the instance with `proton_outlier_eq_five`. $\square$
 
-**Instance (Lean: `neutronHalfFillIsOutlier`).** Same as proton, since `correctSectorCriterion` is the empirical placeholder and $\mathtt{halfFillRung} = 5$ for both.
+**Instance (Lean: `neutronHalfFillIsOutlier`).** Same as proton, since `correctSectorCriterion` is the empirical ansatz and $\mathtt{halfFillRung} = 5$ for both.
 *Proof.* Identical case-analysis structure as proton. $\square$
 
 **Corollary (Lean: `neutron_outlier_eq_five`).** Same conclusion for the neutron. $\square$

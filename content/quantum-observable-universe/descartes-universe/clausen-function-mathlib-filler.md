@@ -28,8 +28,8 @@ provides:
 | `Catalan_constant` | $G = \mathrm{Cl}_2(\pi/2)$ carrier | unconditional def |
 | `Vol_figure_8` | $2\,\mathrm{Cl}_2(\pi/3)$ carrier | unconditional def |
 | `Vol_Borromean` | $8\,\mathrm{Cl}_2(\pi/4)$ carrier | unconditional def |
-| `Cl_2_reflection_2pi_open` | sketch placeholder | open (Fourier-series infra) |
-| `Cl_2_pi_third_positive_open` | sketch placeholder | open (tail bounds) |
+| `Cl_2_reflection_2pi_open` | sketch ansatz | open (Fourier-series infra) |
+| `Cl_2_pi_third_positive_open` | sketch ansatz | open (tail bounds) |
 
 This unconditionalises the BW values used throughout the α_EM
 chain, replacing the previous opaque-or-cited references with

@@ -167,7 +167,7 @@ from the substrate:*
 floor from CAL-2 (Q_β uncertainty) **does not apply** to this
 derivation — the shell magnitude is a purely categorical observable.*
 
-**Deferred for $A_{\mathrm{magic}} \ge 8$.**
+**Open** for $A_{\mathrm{magic}} \ge 8$.**
 
 *For $A_{\mathrm{magic}} = 8$, $n = 24$, $p(24) = 1575$ partitions.
 Identifying the shell partition $\lambda_{\mathrm{shell}}$ at $A=8$

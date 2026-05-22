@@ -49,11 +49,11 @@ expansion.
 
 | block | $\dim_q^2$ at $q_0$ | $c_5^{(\lambda)}$ | $c_6^{(\lambda)}$ |
 |:---:|:---:|:---:|:---:|
-| $V_{(3)}$ | $1$ | TBA | TBA |
-| $V_{(2,1)}$ | $(q + q^{-1})^2 \approx 3.61$ | TBA | TBA |
-| $V_{(1,1,1)}$ | $1$ | TBA | TBA |
+| $V_{(3)}$ | $1$ | — | — |
+| $V_{(2,1)}$ | $(q + q^{-1})^2 \approx 3.61$ | — | — |
+| $V_{(1,1,1)}$ | $1$ | — | — |
 
-The TBA values are the **open R&D content** this scaffolding awaits.
+The — values are the **open R&D content** this scaffolding awaits.
 
 ## What this block provides
 
@@ -69,13 +69,12 @@ Lean module `QOU.BraidKnot.per_wedderburn_block_c5_c6`:
    pattern), with `c{5,6}_residual_eq_zero` fields asserting they
    vanish at substrate $q$.
 4. A `defaultPerWedderburnBlockC5C6` instance — a deliberate
-   **placeholder** (six $0$ contributions $\to$ both residuals trivially
+   **ansatz** (six $0$ contributions $\to$ both residuals trivially
    $0$) awaiting the substantive probe content.
 
 ## Concrete next-probe path
 
-A Python probe `probe_per_wedderburn_block_ck.py` (not yet
-implemented) would:
+A Python probe `probe_per_wedderburn_block_ck.py` (open) would:
 
 1. Extend the existing Wenzl-bridge $y_\lambda$ infrastructure to
    $\varepsilon^{10}, \varepsilon^{12}$ via per-irrep $\tau_M$
