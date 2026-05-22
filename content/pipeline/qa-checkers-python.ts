@@ -82,32 +82,62 @@ export function checkDoesNotDefaultToFloat(
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
   const lines = masked.split("\n");
+  // `maskStringsAndComments` blanks string/comment regions in place
+  // (same length, same line breaks), so column offsets in the masked
+  // text align with the original text and we can recover sentinel
+  // arguments from `origLines` using indices computed against
+  // `maskedLine`.
   const origLines = src.split("\n");
   const hits: CheckerHit[] = [];
 
   for (let i = 0; i < lines.length; i++) {
     const maskedLine = lines[i];
+    const origLine = origLines[i];
     // Skip lines that are entirely whitespace once strings + comments
     // are stripped — purely commented or string-literal lines.
     if (!maskedLine.trim()) continue;
 
-    // float(...) casts that aren't sentinels.
+    // Scan for `float(...)` casts first and blank the matched region
+    // in a working copy of the line so the bare-literal scan below
+    // does NOT double-flag literals that appear inside the cast
+    // (`float(1.0)` would otherwise be reported twice).
+    let lineForLiterals = maskedLine;
     for (const m of maskedLine.matchAll(FLOAT_CALL_RE)) {
-      const arg = m[1] ?? "";
-      if (FLOAT_CALL_SENTINEL_RE.test(arg)) continue;
-      hits.push({
-        file: scriptPath,
-        line: i + 1,
-        text:
-          `bare \`float(${arg.slice(0, 40)}${arg.length > 40 ? "…" : ""})\` ` +
-          `cast — use \`mpmath.mpf(...)\` / \`Decimal(...)\` for ` +
-          `substrate-precision values, or string-quote the literal if ` +
-          `intentional`,
-      });
+      // Test the sentinel against the ORIGINAL source slice (the
+      // masked line has `float("inf")` blanked to `float(    )`,
+      // which never matches `FLOAT_CALL_SENTINEL_RE` — Gemini
+      // r3276657081).
+      const startOfArg = m.index! + m[0].indexOf("(") + 1;
+      const endOfArg = m.index! + m[0].lastIndexOf(")");
+      const rawArg = origLine.slice(startOfArg, endOfArg);
+      const isSentinel = FLOAT_CALL_SENTINEL_RE.test(rawArg);
+
+      if (!isSentinel) {
+        const trimmed = rawArg.trim();
+        hits.push({
+          file: scriptPath,
+          line: i + 1,
+          text:
+            `bare \`float(${trimmed.slice(0, 40)}${
+              trimmed.length > 40 ? "…" : ""
+            })\` cast — use \`mpmath.mpf(...)\` / \`Decimal(...)\` ` +
+            `for substrate-precision values, or string-quote the ` +
+            `literal if intentional`,
+        });
+      }
+      // Blank the cast region in `lineForLiterals` regardless of
+      // sentinel status — the inner literal (if any) is either
+      // already reported via the cast hit above or is a sentinel arg
+      // that should never be reported.
+      lineForLiterals =
+        lineForLiterals.substring(0, m.index!) +
+        " ".repeat(m[0].length) +
+        lineForLiterals.substring(m.index! + m[0].length);
     }
 
-    // Bare float literals.
-    for (const m of maskedLine.matchAll(BARE_FLOAT_LITERAL_RE)) {
+    // Bare float literals in the region not consumed by a `float()`
+    // cast.
+    for (const m of lineForLiterals.matchAll(BARE_FLOAT_LITERAL_RE)) {
       hits.push({
         file: scriptPath,
         line: i + 1,
