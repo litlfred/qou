@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/observations/mass-formula-validation.md"
   },
   "source_hashes": {
-    "md": "2e83d091d0da",
+    "md": "d30313523ec3",
     "ts": "06ee4fe752b5"
   },
   "criteria": {
@@ -349,13 +349,31 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:46:57.612Z",
+        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/observations/mass-formula-validation.md:40: \\approx 4.155$ MeV. This predicts e.g. $Q_\\mathrm{≥2} \\approx 0.457$"
+        "evidence": "content/quantum-observable-universe/observations/mass-formula-validation.md:40: \\approx 4.155$ MeV. This predicts e.g. $Q_\\mathrm{≥2} \\approx 0.457$"
+      },
+      {
+        "field_hash": {
+          "md": "d30313523ec3",
+          "ts": "06ee4fe752b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T18:49:12.358Z",
+        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846"
       }
     ],
     "voice-editorializing": [
@@ -475,5 +493,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:49:12.358Z"
 }

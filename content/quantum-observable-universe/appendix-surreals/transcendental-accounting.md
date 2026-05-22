@@ -43,7 +43,7 @@ QOU paper.
 | $\mathrm{Cl}_3(2\pi/5) = \mathrm{Re}\,\mathrm{Li}_3(\zeta_5)$ | **3** | $\zeta_5$ | `conj:bring-trilog-depth-3-witness` | $\mathrm{Re}\,\mathrm{Li}_3^q(\zeta_5)$ | unknown geometric realisation (open: hyperbolic 4-mfd? CS?) |
 | $S_3(2\pi/5) = \mathrm{Im}\,\mathrm{Li}_3(\zeta_5)$ | **3** | $\zeta_5$ | `conj:bring-trilog-depth-3-witness` | $\mathrm{Im}\,\mathrm{Li}_3^q(\zeta_5)$ | bar-pair partner of $\mathrm{Cl}_3$ ([`rem:chirality-period-pairing`](#rem:chirality-period-pairing)) |
 | $\mathrm{CS}(K)$ for $K$ hyperbolic | **3** | shape param $z_K$ | `prop:vol-through-tau` (paired with Vol), open | depth-3 partner of $\mathrm{Vol}(K)$ in $\mathcal{H}_q$; bar-twisted under $\lambda \leftrightarrow \lambda'$ | $\mathrm{CS}(K) + i\,\mathrm{Vol}(K) \in \mathbb{C}/\pi^2\mathbb{Z}$ — complexified volume |
-| $\zeta(n)$ multiple-zeta values | **$n$** | — | future / open | $\mathrm{Li}_n^q$ traces; conjecturally span $\mathcal{P}_n$ at every depth | Euler relations ($\zeta(\overline{2,3}) = ...$); MZV algebra is graded by depth × weight |
+| $\zeta(n)$ multiple-zeta values | **$n$** | — | future / open | $\mathrm{Li}_n^q$ traces; conjecturally span $\mathcal{P}_n$ at every depth | Euler relations ($\zeta(\overline{2,3}) = ...$); MZV algebra is graded by depth $\times$ weight |
 
 ### Two structural facts the table makes visible
 

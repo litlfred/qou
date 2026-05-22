@@ -47,7 +47,7 @@ The QOU error has a characteristic sign pattern that tracks
 the **nuclear shell model**:
 
 - **Under-binding** (QOU lighter) for $Z = 3$--$10$ (p-shell):
-  the transfer matrix chain overestimates Φ₁ because the
+  the transfer matrix chain overestimates $\Phi_1$ because the
   near-zero generator ($\hat{V} \approx 0.0015$) dominates.
 - **Over-binding** (QOU heavier) for $Z = 11$--$20$ (sd-shell):
   the increasing nn/pp asymmetry ($\Phi_2$ channel) grows faster

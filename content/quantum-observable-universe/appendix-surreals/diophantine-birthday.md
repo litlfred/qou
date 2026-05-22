@@ -165,7 +165,7 @@ trajectory and bounded continued-fraction quotients — this would
 refute conjecture (2).
 
 **Provability assessment**: structurally clean once continued-
-fraction ↔ birthday bijection is formalised. The deep content
+fraction $\leftrightarrow$ birthday bijection is formalised. The deep content
 (distinguishing algebraic from transcendental) depends on Roth's
 theorem, which is deep but classical.
 

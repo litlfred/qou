@@ -53,7 +53,7 @@ Three concrete consequences of unifying the four bounds:
 2. **Cross-bound transport.** A technique that closes the squeeze at
    depth $n$ for one millennium problem candidate-transports to any
    other problem at the same depth. (E.g. depth-2 techniques for BSD
-   ↔ Collatz.)
+   $\leftrightarrow$ Collatz.)
 3. **Depth-3 prediction.** The keystone naturally predicts a
    depth-3 surreal bound for any open problem whose archimedean
    reading involves weight-3 Goncharov periods (multiple zeta

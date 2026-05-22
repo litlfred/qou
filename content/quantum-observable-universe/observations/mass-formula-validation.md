@@ -37,7 +37,7 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
   (definitional, by construction).
 - **$Q$-values**: mass differences $\Delta m = \Delta\mathrm{net}
   \times E_0$ where $E_0 = Q_\mathrm{neutron}/|\Delta\mathrm{net}|
-  \approx 4.155$ MeV. This predicts e.g. $Q_\mathrm{≥2} \approx 0.457$
+  \approx 4.155$ MeV. This predicts e.g. $Q_{\mathrm{n}\ge 2} \approx 0.457$
   MeV for the higher-order spectral components of neutron $\beta$-decay.
 - **Half-life ratios**: the $\log_q(ft)$ values from the transfer
   matrix encode relative decay rates.

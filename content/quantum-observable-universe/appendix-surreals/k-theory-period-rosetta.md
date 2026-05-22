@@ -1,4 +1,4 @@
-**Remark (K-theory ↔ depth filtration — known at depths 1–2,
+**Remark (K-theory $\leftrightarrow$ depth filtration — known at depths 1–2,
 conjectural at depths $\geq 3$).**
 
 The graded-Mikusiński depth filtration
@@ -100,7 +100,7 @@ The keystone's discharge targets, restated in K-theoretic language:
    *K-theoretic version*: identify $G^{(n)}$ with (a subspace of)
    $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K)) \otimes \mathbb{Q}$
    so that $\tau_{\mathrm{arch}}$ is the Beilinson regulator. The
-   *regulator → period* direction is then trivial (definition of
+   *regulator $\to$ period* direction is then trivial (definition of
    the regulator); the **content** is the identification.
 
 2. **Sharpness target**: image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$
@@ -129,5 +129,5 @@ would overstate it.
 - Keystone (depth = period): [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
 - Bi-filtration framework: [`def:hq-bi-filtration`](#def:hq-bi-filtration)
-- Joint Galois × braid action: [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
+- Joint Galois $\times$ braid action: [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
 - Depth-3 realisation question: [`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization)

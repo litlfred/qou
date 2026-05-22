@@ -43,7 +43,7 @@ points instead to:
 - **Six generations.**  The mass tower has $6$ generations
   between $m_e$ and the EW scale (counting electron, muon, tau,
   $u$/$d$ at hadronic scales, $c$/$s$ at intermediate, $b$/$t$ at
-  weak): the SM 3 generations × charged/neutral doubling = 6.
+  weak): the SM 3 generations $\times$ charged/neutral doubling = 6.
 - **Fifteen-element structure** per generation.
 
 Both factorisations are numerically consistent with $90$; neither
@@ -65,8 +65,8 @@ $v$-supporting blocks.
 
 (b) **Derivation of $90$ from the structure of (a).**  Once
 defined, depth-90 should follow from the Bring quintic
-combinatorics: $5$ cycles × $18$ Hecke transitions, OR $6$
-generations × $15$ structural levels.  Either factorisation needs
+combinatorics: $5$ cycles $\times$ $18$ Hecke transitions, OR $6$
+generations $\times$ $15$ structural levels.  Either factorisation needs
 proof.
 
 (c) **Sub-leading correction.**  $\log_{q_0}(v/m_e) = 125.41$, not

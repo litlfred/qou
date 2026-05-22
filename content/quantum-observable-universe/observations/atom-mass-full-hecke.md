@@ -1,5 +1,5 @@
 The existing atomic mass appendix
-([atomic mass calculations](#sec:amc-calculations)) uses the 2×2
+([atomic mass calculations](#sec:amc-calculations)) uses the 2$\times$2
 **standard** irrep of $H_3(q)$ for the transfer matrix chain.
 This projects the Hecke element onto the $(2,1)$-seminormal representation
 and discards the symmetric (trivial) and alternating (sign)
@@ -85,7 +85,7 @@ with $q$-derived Bethe--Weizsäcker coefficients.
 
 ## Key observations
 
-1. **Standard channel suppression.**  The standard (2×2) trace
+1. **Standard channel suppression.**  The standard (2$\times$2) trace
    shrinks rapidly with $A$ for odd-$A$ and neutron-excess
    nuclei: from $1.0$ at $A = 1$ to $\sim 10^{-7}$ at $A = 19$
    (${}^{19}\mathrm{F}$).  For even-even nuclei (${}^{16}\mathrm{O}$,

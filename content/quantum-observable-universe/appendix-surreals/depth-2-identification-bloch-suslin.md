@@ -173,7 +173,7 @@ yields:
 - **Depth $\geq 4$** is conditional on Beilinson + Goncharov.
 
 This is the precise sense in which the keystone has been
-*partially proved*: depth ≤ 2 is provable; depth ≥ 3 is reduced
+*partially proved*: depth $\le$ 2 is provable; depth $\ge$ 3 is reduced
 to standard external conjectures (Goncharov, Beilinson).
 
 ### Cross-references

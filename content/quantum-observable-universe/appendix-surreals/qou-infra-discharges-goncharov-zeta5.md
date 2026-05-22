@@ -37,7 +37,7 @@ restricted to $\zeta_5$-arguments.
 | GB stratification (depth grading) | filters Hecke centre by max-hook; depth-$k$ projector $\mathrm{proj}_{Z^{(k)}(A)}$ extracts depth-$k$ component |
 | JM-element + Lagrange-interpolation $e_\lambda$ | explicit central idempotents — concrete generators of period classes per [`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent) |
 | Bring's $S_5$-cyclotomic structure | natural action on $\{\zeta_5^k : k \in (\mathbb{Z}/5)^\times\}$ |
-| Joint Galois × braid action ([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)) | structures the period-class permutations |
+| Joint Galois $\times$ braid action ([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)) | structures the period-class permutations |
 
 ### Avenue A — Jones-coincident pair generation
 
@@ -134,6 +134,6 @@ infrastructure and Goncharov's depth-3 polylogarithm machinery.
 - Depth-2 theorem-level identification: [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
 - Bring trilog witness: [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
-- Joint Galois × braid action: [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
+- Joint Galois $\times$ braid action: [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
 - Conway-KT precedent: [`rem:conway-kt-vol-injectivity-test`](#rem:conway-kt-vol-injectivity-test)
 - K-theory bridge: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)

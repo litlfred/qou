@@ -24,8 +24,8 @@ closer inspection:
 **Net effect.** The Möbius energy proof is the only block whose
 argument genuinely depends on Lebesgue measure, and it is used
 as a motivational cross-check rather than as a load-bearing step
-in the mass formula. The mass formula itself — Hoefsmit →
-Markov trace → Jones → substrate value → categorical mass —
+in the mass formula. The mass formula itself — Hoefsmit $\to$
+Markov trace $\to$ Jones $\to$ substrate value $\to$ categorical mass —
 never integrates.
 
 ## 2. Hilbert-space completion: stylistic, not load-bearing

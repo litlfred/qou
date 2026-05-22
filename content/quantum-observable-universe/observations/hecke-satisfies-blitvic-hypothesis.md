@@ -67,5 +67,5 @@ converging to a $(q, t)$-Gaussian process at parameter $(q, 1)$.
 The QOU q-CLT
 ([`conj:q-clt-non-commutative`](#conj:q-clt-non-commutative))
 is therefore conditional only on the *parameter-identification*
-step (Blitvić's $q$ ↔ QOU's $q$ ↔ Tsallis's $q$), not on the
+step (Blitvić's $q$ $\leftrightarrow$ QOU's $q$ $\leftrightarrow$ Tsallis's $q$), not on the
 underlying CLT.

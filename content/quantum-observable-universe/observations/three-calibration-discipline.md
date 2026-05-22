@@ -130,7 +130,7 @@ audits. Companion task **P1.5** in the
 sweeps the paper for blocks that violate this discipline (e.g.
 compound-shell calibration, atlas base cases). Companion task
 **P0.1** sweeps proof blocks for Archimedean-side derivation
-inputs (Vol(K), hyperbolic, Mostow, …) — the
+inputs (Vol(K), hyperbolic, Mostow, $\ldots$) — the
 $\mathbb{Q}(q_0)$-rationality clause forbids such inputs in
 algebraic-side derivations.
 
