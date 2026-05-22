@@ -16,15 +16,15 @@ $$
 where:
 
 - $\rho_\lambda$ is the **Hoefsmit seminormal representation** of
-  $H_n(q)$ on $V_\lambda$;
+ $H_n(q)$ on $V_\lambda$;
 - $b_\lambda \in V_\lambda \otimes V_\lambda^*$ is the **off-diagonal
-  coupling** of $\rho_\lambda(\sigma_i)$ in the standard-tableau basis;
+ coupling** of $\rho_\lambda(\sigma_i)$ in the standard-tableau basis;
 - $c_k^{(\lambda)}(b_\lambda)$ is a degree-$k$ polynomial in $b_\lambda$
-  arising from the Kashiwara crystal-graph matrix elements at level $k$;
+ arising from the Kashiwara crystal-graph matrix elements at level $k$;
 - the expansion is **even in $\hbar_q$** (only powers of $\hbar_q^2$
-  appear) by Markov-cyclicity invariance under the bar involution
-  $q \leftrightarrow q^{-1}$ (see
-  [`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation)).
+ appear) by Markov-cyclicity invariance under the bar involution
+ $q \leftrightarrow q^{-1}$ (see
+ [`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation)).
 
 The empirical instances proved at single-wrap by PR #655 and follow-ups:
 
@@ -33,7 +33,7 @@ The empirical instances proved at single-wrap by PR #655 and follow-ups:
 | $k = 0$ | any $V_\lambda$ | $c_0 = 0$ | trivial (Form A baseline) |
 | $k = 1$ | $V_{(2,1)}$ | $c_1(b) = b$ | $74$ ppm at $q_0$ (PR #655 N=1) |
 | $k = 2$ | $V_{(2,1)}$ | $c_2(b) \approx 1$ geometric | $-22$ ppm (PR #655 N=2) |
-| $k = 1$ | $V_{(n)}, V_{(1^n)}$ | $c_1 = 0$ | exact, trivially (1-d) |
+| $k = 1$ | $V_{(n)}, V_{(1^n)}$ | $c_1 = 0$ | exact, by definition (1-d) |
 
 ## Four parallel rep-theory anchors
 
@@ -139,7 +139,7 @@ precision. The $c_k^{(\lambda)}(b_\lambda)$ coefficients beyond $k = 2$
 are open R&D — pinning them down requires either:
 
 - Full Kashiwara crystal-graph matrix-exponential machinery
-  (per-irrep $\exp(\tilde f_1)$ computation);
+ (per-irrep $\exp(\tilde f_1)$ computation);
 - JM symmetric-function expansion with explicit $c_T(k)$ tabulation;
 - Macdonald $(q, q^2)$ specialisation evaluations;
 - Habiro-residue Borel resummation at chosen $\zeta_N$.

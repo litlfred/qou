@@ -43,11 +43,11 @@ realization functor $\tau_{\mathrm{arch}}$
 the bar involution acts on the period side by:
 
 - **Hyperbolic volume**: $\mathrm{Vol}(K) = \mathrm{Vol}(\overline{K})$
-  — bar-INVARIANT (orientation-reversal preserves the metric).
-  Lives in $\mathcal{P}_2^+$ (real, bar-fixed).
+ — bar-INVARIANT (orientation-reversal preserves the metric).
+ Lives in $\mathcal{P}_2^+$ (real, bar-fixed).
 - **Chern–Simons**: $\mathrm{CS}(K) = -\mathrm{CS}(\overline{K})$ mod
-  $\pi^2 \mathbb{Z}$ — bar-ANTI-INVARIANT (CS picks up the
-  orientation sign). Lives in $\mathcal{P}_3^-$ (Tate-twisted).
+ $\pi^2 \mathbb{Z}$ — bar-ANTI-INVARIANT (CS picks up the
+ orientation sign). Lives in $\mathcal{P}_3^-$ (Tate-twisted).
 
 These are the two characteristic period-class bar-types at depths 2
 and 3 respectively.
@@ -59,9 +59,9 @@ e_\lambda$ — the cell is bar-fixed. Pairing with a depth-$n$ grouplike
 $g \in G^{(n)}(\mathcal{H}_q)$ under Markov trace yields a value in
 the bar-fixed component of $\mathcal{P}_n / \mathcal{P}_{n - 1}$:
 
-- At $n = 2$: pairs with $\mathrm{Vol}$ (bar-fixed) — non-trivially.
+- At $n = 2$: pairs with $\mathrm{Vol}$ (bar-fixed) — non-by definition.
 - At $n = 3$: pairs with $\mathrm{CS}$ (bar-anti-fixed) — gives zero
-  on bar-fixed cells.
+ on bar-fixed cells.
 
 So bar-fixed cell $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 2$.
 
@@ -70,11 +70,11 @@ e_{\lambda'}$ — bar swaps the two cells. The bar-eigenspaces of the
 direct sum $e_\lambda + e_{\lambda'}$ decompose as:
 
 - Bar-symmetric: $(e_\lambda + e_{\lambda'})/2$ — pairs with depth-2
-  (Vol-type) periods.
+ (Vol-type) periods.
 - Bar-antisymmetric: $(e_\lambda - e_{\lambda'})/2$ — pairs with
-  depth-3 (CS-type) periods non-trivially.
+ depth-3 (CS-type) periods non-by definition.
 
-The bar-symmetric part pairs trivially with depth-2 of a chiral knot
+The bar-symmetric part pairs by definition with depth-2 of a chiral knot
 (volume can be non-zero, but in the chiral pair the antisymmetric
 content carries the orientation-dependent signature). The
 bar-antisymmetric part is the natural pairing partner of
@@ -90,10 +90,10 @@ The argument is *structural*, not case-by-case:
 
 1. **No upper bound on $n$.** Works for partitions of any size.
 2. **Bar-class of $\lambda$ is computable.** Self-conjugate partitions
-   of $n$ are exactly those with bar-fixed Young diagram (a
-   well-defined combinatorial property).
+ of $n$ are exactly those with bar-fixed Young diagram (a
+ well-defined combinatorial property).
 3. **Depth assignment is binary.** Either 2 or 3 — no other values
-   arise in this bridge.
+ arise in this bridge.
 
 | $n$ | Self-conjugate partitions of $n$ | Chiral pairs |
 |---|---|---|
@@ -115,9 +115,9 @@ at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
 
 **Consequence for B1**:
 - For each self-conjugate cell, B1's depth-2 row is theorem-level
-  (combining Bloch–Suslin + per-knot VC where available).
+ (combining Bloch–Suslin + per-knot VC where available).
 - For each chiral pair, B1's depth-3 row is conditional on the CS
-  computation per knot.
+ computation per knot.
 
 **Combined with
 [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
@@ -135,5 +135,5 @@ $H_n(q)$.
 - Chirality structure: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)
 - Joint action discharge: [`prop:joint-galois-braid-discharged`](#prop:joint-galois-braid-discharged)
 - Hecke-Baer-* and bar action on $e_\lambda$:
-  [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic),
-  [`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)
+ [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic),
+ [`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)

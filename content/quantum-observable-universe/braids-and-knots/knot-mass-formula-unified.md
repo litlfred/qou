@@ -1,9 +1,9 @@
 Let $\varrho \colon \mathbf{1} \to A$ be a vortex with braid
 representative $\beta \in B_n$ and Hecke mass element
 $T_w \in H_n(R, q)$
-([Hecke mass element](#def:hecke-mass-element)).  Let
+([Hecke mass element](#def:hecke-mass-element)). Let
 $\hat V_i^{\mathrm{full}}$ denote the additive-Wedderburn traced
-volume at generator $i$ of the braid word.  Let
+volume at generator $i$ of the braid word. Let
 $\Phi_q(z) = \prod_{k \geq 1} (1 - q^{-k} z)^{-1}$ be the quantum
 dilogarithm and $z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.
 
@@ -38,7 +38,7 @@ $$
 
 *where $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$
 is the symmetric q-dilogarithm with
-$[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$. Per
 ([mass endomorphism tower proof](#prop:mass-endomorphism-tower)), this
 is the closed-form result of integrating the Briggs–Klein
 expansion flow $\int_0^V (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$
@@ -49,16 +49,16 @@ over each resolved defect $E_i \cong \mathbb{P}^1(\mathbb{C})$.*
 \Phi_q(|\hat V_i \hat V_j|)$ is the **archimedean Kashaev specialisation**
 of the algebraic R-side form
 $\sum_i z\,\mathrm{Vol}_q^{(\{i\})}(\beta) + z^2\sum_{i<j}\mathrm{Vol}_q^{(\{i,j\})}(\beta)$
-in `prop:mass-endomorphism-tower`.  The Kashaev substitution
+in `prop:mass-endomorphism-tower`. The Kashaev substitution
 $\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q(|\hat V_i|)$ evaluates the
 quantum dilogarithm on per-generator amplitudes, which are NOT
-Markov-invariant.  Numerically at $q_0 \approx 1.110$ this
+Markov-invariant. Numerically at $q_0 \approx 1.110$ this
 specialisation produces $\Phi_q(0.99) \approx 6.7 \times 10^5$ — i.e.
 each per-generator term contributes $\sim 10^5$ Hecke-units, summing
-to $\sim 10^6$ for atomic braids.  Tiny p/n asymmetries between
+to $\sim 10^6$ for atomic braids. Tiny p/n asymmetries between
 mirror nuclei (T = 1p+2n vs $^3$He = 2p+1n) get amplified by
 $\sim 10^5\times$, predicting T − $^3$He $\approx -737$ MeV against
-CODATA $+0.019$ MeV.  See
+CODATA $+0.019$ MeV. See
 `brane-tower-isospin-diagnosis.witness.json` and
 `paper-six-term-isotope-sweep.witness.json` (the four `tower_mode`
 variants).*
@@ -67,32 +67,32 @@ variants).*
 $\mathrm{tr}_M(\sigma_i) = z$ and $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
 (Markov axiom; `prop:markov-pair-z2`) for every braid
 $\beta$, so $T_2 = (n-1)\cdot z^2$ and $T_3 = \binom{n-1}{2}\cdot z^4$
-universally, depending only on the strand count $n$.  These are
+universally, depending only on the strand count $n$. These are
 isospin-exact (T and $^3$He get identical T2+T3 since both have
 $n=3A=9$) and $O(1)$ Hecke-units at $q_0$ — six orders of
-magnitude smaller than the Kashaev-specialisation form.  At
+magnitude smaller than the Kashaev-specialisation form. At
 $q\to 1$ the closed-form trace value is $(1/2)^{2A-1}$, also
 isospin-exact.*
 
-*Implications.  The boxed Kashaev specialisation in this theorem is
+*Implications. The boxed Kashaev specialisation in this theorem is
 **Markov-invariance-broken at $q_0$** and produces hundreds-of-MeV
-isospin pathologies at the atomic-braid scale.  A complete proof
+isospin pathologies at the atomic-braid scale. A complete proof
 requires either:*
 
 1. *replacing the boxed formula with the R-side algebraic form
-   $\sum_S z^{|S|}\,\mathrm{Vol}_q^{(S)}(\beta)$ — Markov-invariant
-   by construction; or*
+ $\sum_S z^{|S|}\,\mathrm{Vol}_q^{(S)}(\beta)$ — Markov-invariant
+ by construction; or*
 2. *replacing the per-generator $\Phi_q(|\hat V_i|)$ with a
-   q-deformed Wedderburn-weighted trace expansion $\sum_n c_n\,\mathrm{tr}_M(\sigma_i^n)$
-   (Heine identity; `brane-tower-plancherel-scaffold.witness.json`)
-   — converges to $\Phi_q(z)$ but each summand is a trace; or*
+ q-deformed Wedderburn-weighted trace expansion $\sum_n c_n\,\mathrm{tr}_M(\sigma_i^n)$
+ (Heine identity; `brane-tower-plancherel-scaffold.witness.json`)
+ — converges to $\Phi_q(z)$ but each summand is a trace; or*
 3. *using the Habiro-coefficient sum $\sum_m a_m(T_w)\,(u;u)_m / \mathrm{denom}(u)$
-   per `prop:full-pole-structure-mass-trace` — single trace,
-   absorbs T2+T3+T6 into one cyclotomic expansion.*
+ per `prop:full-pole-structure-mass-trace` — single trace,
+ absorbs T2+T3+T6 into one cyclotomic expansion.*
 
 *Empirical: Path 3 (Habiro form) gives sub-1% atomic-mass errors
 on $\{p, n, D, T, ^3\mathrm{He}\}$ via a single-prefactor binding
-model (`path-b-habiro-mass-probe.witness.json`).  None of the
+model (`path-b-habiro-mass-probe.witness.json`). None of the
 additive variants of paths 1, 2 reach this accuracy when forced
 through the proton-calibration in the boxed theorem — suggesting
 that the additive structure itself may need to be re-derived from
@@ -102,7 +102,7 @@ than treated as a sum of independent pieces.*
 
 *This is **not a refutation of the theorem** — the algebraic form
 $\sum_S z^{|S|}\mathrm{Vol}_q^{(S)}$ is correct as a Hochschild-page
-decomposition (`prop:gb-spectral-sequence`).  It is a flag that
+decomposition (`prop:gb-spectral-sequence`). It is a flag that
 the boxed Kashaev specialisation is the wrong evaluation step at
 $q_0$, and the open derivation question is which of paths 1–3
 (or another structural reformulation) gives the canonical numerical
@@ -183,7 +183,7 @@ not $A$ copies of the single-vortex $(n=3)$ value.*
 [Frobenius co-Casimir universal](#thm:frobenius-codim-universal):
 when the isotope's braid lives in $H_{3A}(R, q)$, the central
 idempotents $p_\lambda$ are indexed by partitions $\lambda \vdash 3A$,
-not by partitions of $3$.  The per-A heuristic
+not by partitions of $3$. The per-A heuristic
 $A \cdot \tau(C_{\dim_q}^{H_3})$ would correspond to a disconnected sum
 of $A$ independent $H_3$-blocks, which is**not** the algebra
 hosting an isotope braid.*
@@ -201,7 +201,7 @@ hosting an isotope braid.*
 1.2$–$1.6$ MeV) because $\sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$
 is dominated by the two extreme blocks $((3A))$ and $((1^{3A}))$
 each contributing $1$, plus a $q$-dependent middle that grows
-slowly in $A$.  This explains why the per-vortex heuristic was
+slowly in $A$. This explains why the per-vortex heuristic was
 empirically a good approximation, but it is not the rigorous
 statement.*
 
@@ -224,7 +224,7 @@ the Frobenius sum grows with $n$; see table in
 
 **Classical limit ($q \to 1$).**
 *The Hecke algebra reduces to $\mathbb{C}[S_n]$; $\dim_q \to d_\lambda$
-and $[2]_q \to 2$.  The Frobenius co-Casimir trace reduces to
+and $[2]_q \to 2$. The Frobenius co-Casimir trace reduces to
 $\sum_\lambda 1/d_\lambda$ (classical reciprocal-dimension sum).
 For $n = 3$ this is exactly $5/2$ — recovering the upstream
 classical discovery
@@ -235,12 +235,12 @@ classical discovery
 derivations:*
 
 1. *Descended $|\mathrm{tr}_M|$ — `prop:categorical-mass-markov`,
-   the mass-identity prescription.*
+ the mass-identity prescription.*
 2. *Brane tower $\sum \Phi_q$ — `prop:mass-endomorphism-tower`,
-   derived from the quantum-dilogarithm resolution of the
-   exceptional divisor.*
+ derived from the quantum-dilogarithm resolution of the
+ exceptional divisor.*
 3. *Frobenius correction — `thm:frobenius-codim-universal` (new),
-   derived from self-dual Frobenius structure of $H_n(R, q)$.*
+ derived from self-dual Frobenius structure of $H_n(R, q)$.*
 
 *This theorem combines them into a single three-term formula.
 Each term is independently derived; the sum is the total mass.*
@@ -249,9 +249,9 @@ Each term is independently derived; the sum is the total mass.*
 
 *The Frobenius correction $m_e \cdot \mathrm{tr}_M(C_{\dim_q})$
 **does not depend on the specific vortex $\varrho$** — only on
-the ambient Hecke algebra $H_n(R, q)$.  All trefoil-like vortices
+the ambient Hecke algebra $H_n(R, q)$. All trefoil-like vortices
 on $H_3(R, q)$ (proton, neutron, any quark configuration) get
-the same additive offset $(2 + 1/[2]_q) \cdot m_e$.  Mass
+the same additive offset $(2 + 1/[2]_q) \cdot m_e$. Mass
 differences between such vortices therefore must come from
 the first two pieces (descended + brane tower).*
 
@@ -262,16 +262,16 @@ the first two pieces (descended + brane tower).*
 adds a **vortex-dependent chirality factor**
 $a_K \in \{1 + h,\; 1 - h^2,\; (1 - h^2)^2\}$ for $\{D, T, ^4\mathrm{He}\}$
 respectively — reflecting the knot type (chiral+, amphichiral,
-Borromean$\times$2).  Upstream verification
+Borromean$\times$2). Upstream verification
 (`folio-assistant/computations/bw_chirality_isotopes.py`) gives
 $T: 0.505\%$ and $^3\mathrm{He}: 0.856\%$ agreement with AME
 using these factors.*
 
 *The chirality factor is a fourth structural layer beyond the
-three Frobenius-universal layers of this theorem.  It is vortex-
+three Frobenius-universal layers of this theorem. It is vortex-
 dependent, like the descended and tower pieces, but algebra-
 independent in form (depends only on the knot type of the
-isotope braid, not on the specific $T_w$ expansion).  A
+isotope braid, not on the specific $T_w$ expansion). A
 complete mass formula is therefore:*
 
 $$
@@ -295,19 +295,19 @@ per upstream `pure_hecke_binding.py`.*
 **Consistency checks.**
 
 1. *At $q = 1$: classical Hecke reduces to $\mathbb{C}[S_n]$, brane
-   tower collapses ($\Phi_1$ singular — handled by a separate
-   classical-limit argument), Frobenius term reduces to $\sum
+ tower collapses ($\Phi_1$ singular — handled by a separate
+ classical-limit argument), Frobenius term reduces to $\sum
    1/d_\lambda$ (number of conjugacy classes / involutions).*
 2. *For the identity braid $T_e = 1 \in H_n(R, q)$:
-   $|\mathrm{tr}_M(1)| = 1$; brane tower vanishes (no crossings);
-   Frobenius term is pure $\sum 1/\dim_q$ — this is the
-   **vacuum mass** of the trivial vortex, consistent with
-   the unit object's fibre-functor value.*
+ $|\mathrm{tr}_M(1)| = 1$; brane tower vanishes (no crossings);
+ Frobenius term is pure $\sum 1/\dim_q$ — this is the
+ **vacuum mass** of the trivial vortex, consistent with
+ the unit object's fibre-functor value.*
 3. *Under braid concatenation $T_{w_1 w_2} = T_{w_1} T_{w_2}$
-   (Hecke multiplication): the descended piece is multiplicative
-   in $|\mathrm{tr}_M|$; the brane tower is additive;
-   the Frobenius piece is **vortex-count-additive** (per
-   deuteron observation).  Total mass is therefore not simply
-   additive or multiplicative — the three pieces compose by
-   their own rules and the sum respects the expected
-   thermodynamic behaviour of bound-state mass defects.*
+ (Hecke multiplication): the descended piece is multiplicative
+ in $|\mathrm{tr}_M|$; the brane tower is additive;
+ the Frobenius piece is **vortex-count-additive** (per
+ deuteron observation). Total mass is therefore not 
+ additive or multiplicative — the three pieces compose by
+ their own rules and the sum respects the expected
+ thermodynamic behaviour of bound-state mass defects.*

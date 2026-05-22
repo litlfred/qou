@@ -18,7 +18,7 @@ $$
   \mathfrak{m}
 $$
 
-*Stage 1 (Hoefsmit).  Each crossing $\sigma_i$ in the braid word acts
+*Stage 1 (Hoefsmit). Each crossing $\sigma_i$ in the braid word acts
 on the Wedderburn--Artin block $\rho_\lambda$ via the Hoefsmit
 seminormal matrix
 ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
@@ -36,12 +36,12 @@ $$
 
 *where $a_\rho = h/(1 - q^{-2\rho})$ is the $q$-deformed axial
 distance and $b_\rho = \sqrt{a_\rho a_{-\rho} + 1}$ is the exchange
-amplitude.  The matrix is maximally sparse: at most $2$ nonzeros per
+amplitude. The matrix is maximally sparse: at most $2$ nonzeros per
 row.*
 
-*Stage 2 (Markov trace).  The product of Hoefsmit matrices over all
+*Stage 2 (Markov trace). The product of Hoefsmit matrices over all
 crossings in $\beta$ gives the braid representation matrix
-$\rho_\lambda(\beta)$.  The Markov trace sums over all
+$\rho_\lambda(\beta)$. The Markov trace sums over all
 Wedderburn--Artin blocks:*
 
 $$
@@ -61,9 +61,9 @@ $f^{\lambda/\mu}$ and the three base characters
 $\chi^{\mathrm{sym}}$, $\chi^{\mathrm{std}}$,
 $\chi^{\mathrm{alt}}$.*
 
-*Stage 3 (Observation frame).  The fibre functor $\tau$ evaluates the
+*Stage 3 (Observation frame). The fibre functor $\tau$ evaluates the
 abstract Jones polynomial $J_K(q)$ on the knot complement
-$S^3 \setminus K$.  The evaluation is geometric, determined by
+$S^3 \setminus K$. The evaluation is geometric, determined by
 Thurston's geometrization
 ([Geom(K) alignment](#prop:geom-yekutieli-alignment)):*
 
@@ -79,7 +79,7 @@ measurable observable: $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$
 (mass/energy), $\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$
 (coupling phase), or $0$ for the unknot (vacuum).*
 
-*Stage 4 (Physical mass).  The mass is the norm of the evaluated
+*Stage 4 (Physical mass). The mass is the norm of the evaluated
 trace, scaled by the electron mass $m_e$
 ([topological mass formula](#prop:topological-mass-formula)):*
 
@@ -89,7 +89,7 @@ $$
     \frac{\chi_\lambda(\beta)}{\dim(\lambda)}
 $$
 
-*At Hecke level $k$, this sum truncates to $p(k)$ partitions.  The
+*At Hecke level $k$, this sum truncates to $p(k)$ partitions. The
 truncation error satisfies:*
 
 $$
@@ -106,7 +106,7 @@ Each stage is proved separately:
 The $q$-deformation of the classical axial distance $1/\rho$ to
 $h/(1 - q^{-2\rho})$ follows from the Hecke relation
 $\sigma_i^2 = h\sigma_i + 1$ and the requirement $\det = -1$ for each $2 \times 2$
-block.  The eigenvalues are $q$ (symmetric) and $-q^{-1}$
+block. The eigenvalues are $q$ (symmetric) and $-q^{-1}$
 (antisymmetric), which are the eigenvalues of the universal
 $R$-matrix $\check{\mathcal{R}}$ of $U_q(\mathfrak{sl}_2)$ restricted
 to the isotypic component of type $\lambda$.
@@ -114,23 +114,23 @@ to the isotypic component of type $\lambda$.
 **Stage 2** is [Wedderburn--Artin trace identity](#prop:wedderburn-trace-identity).
 The Markov trace $\mathrm{tr}_M$ factors through the
 Wedderburn--Artin decomposition $H_k(R, q) \cong \bigoplus_\lambda
-M_{d_\lambda}(\mathbb{C})$.  The weight $w_\lambda$ ensures that
+M_{d_\lambda}(\mathbb{C})$. The weight $w_\lambda$ ensures that
 $\mathrm{tr}_M$ is the unique trace satisfying the Markov property
 $\mathrm{tr}_M(x\sigma_k) = z \cdot \mathrm{tr}_M(x)$ for
 $x \in H_k(R, q)$.
 
 **Stage 3** is [Geom(K) alignment](#prop:geom-yekutieli-alignment).
 The observation frame $\tau$ is the fibre functor of the
-Tannakian category $(\mathbf{C}, A, \tau)$.  On the τ-image
+Tannakian category $(\mathbf{C}, A, \tau)$. On the τ-image
 (geometric) side, its evaluation on the knot complement is determined
 by τ-image Thurston geometrization and the Yekutieli rigid
 dualizing complex: the UNIQUE non-degenerate pairing
 $\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
 yields $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$ and
 $\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$. On the algebraic
-side this is just the [algebraic-quantum-volume](#def:algebraic-quantum-volume)
+side this is the [algebraic-quantum-volume](#def:algebraic-quantum-volume)
 pairing in $\mathbb{Z}[q^{\pm 1/2}]$; the geometric reading
-appears only after applying $\tau_{\mathrm{arch}}$.  The universality
+appears only after applying $\tau_{\mathrm{arch}}$. The universality
 follows from the rigidity of $\omega_A^\bullet$ (Yekutieli): the
 pairing is unique up to the scalar $\hbar_q^2$, and the scalar is
 fixed by requiring that $\mathrm{Geom}(\bigcirc) = 0$ (vacuum

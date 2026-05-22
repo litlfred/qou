@@ -3,7 +3,7 @@
 The vertex operator algebra $(V, Y, |0\rangle)$
 ([vertex operator](#def\:vertex-operator)) inherits every QU and QUO
 axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$
-of $H_n(R, q)$.  Below we list each axiom and its explicit
+of $H_n(R, q)$. Below we list each axiom and its explicit
 translation into **knot coordinates** — braid words in $\sigma_i$,
 the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace
 $\mathrm{tr}_M$, and cup/cap morphisms
@@ -19,7 +19,7 @@ $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
 The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke
 representation $\rho_n\colon B_n \to H_n(R, q)$, where we write
 $\sigma_i$ both for the braid generator in $B_n$ and for its image
-$\rho_n(\sigma_i)$ in $H_n(R, q)$ (CLAUDE.md §7a).  Rigidity and
+$\rho_n(\sigma_i)$ in $H_n(R, q)$ (CLAUDE.md §7a). Rigidity and
 braiding are encoded by three families of relations:
 
 **(QU-1a) Hecke relation** (quadratic):
@@ -93,7 +93,7 @@ $$
 $$
 
 In knot coordinates: merging three strands is independent of
-grouping.  For braid words $\beta_1, \beta_2, \beta_3$:
+grouping. For braid words $\beta_1, \beta_2, \beta_3$:
 
 $$
   \mathrm{tr}_M\!\bigl(
@@ -119,7 +119,7 @@ $$
 
 In knot coordinates this is the **saddle-point relation**: a
 strand merge followed by a split equals a split followed by a
-merge.  Graphically, this is the genus-$0$ cobordism identity —
+merge. Graphically, this is the genus-$0$ cobordism identity —
 a pair of pants composed either way gives the same surface.
 
 **(QU-2c) Non-degenerate Frobenius pairing** ($A \cong A^{\vee}$):
@@ -193,7 +193,7 @@ acts as a unit for splitting.
 
 The fibre functor $\tau\colon \mathbf{C} \to R\text{-Mod}$
 realises as the Jones--Markov trace
-([Jones--Markov trace](#thm\:jones-markov-trace)).  Its defining
+([Jones--Markov trace](#thm\:jones-markov-trace)). Its defining
 relation on Hecke generators is:
 
 **(QU-3a) Markov property I** (conjugation invariance):
@@ -271,7 +271,7 @@ operator; translation annihilates the vacuum.
 
 ### QUO-1: Non-degenerate integration
 
-The Frobenius form $\int_A$ induces $A \cong A^{\vee}$.  In
+The Frobenius form $\int_A$ induces $A \cong A^{\vee}$. In
 knot coordinates this sharpens QU-2c:
 
 $$
@@ -290,7 +290,7 @@ invertible.
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
 
 There is no braid word invariant under the adjoint (conjugation)
-action.  In Hecke generators:
+action. In Hecke generators:
 
 $$
   \sigma_i w \sigma_i^{-1} =  w
@@ -301,7 +301,7 @@ $$
 $$
 
 Equivalently: the only braid word commuting with all generators
-is the identity.  In the vertex algebra, this means there is no
+is the identity. In the vertex algebra, this means there is no
 nontrivial state $a \in V$ with $Y(a, z) = \lambda\mathrm{id}$
 for all $z$ — every state produces a genuinely $z$-dependent
 operator.
@@ -335,7 +335,7 @@ $$
 $$
 
 where $[\sigma_i, \sigma_j] = \sigma_i \sigma_j - \sigma_j \sigma_i$ and $\dagger$ is the
-anti-involution $\sigma_i^{\dagger} = \sigma_i^{-1}$.  This ensures no
+anti-involution $\sigma_i^{\dagger} = \sigma_i^{-1}$. This ensures no
 topological phases accumulate under transport around the adjoint
 bundle.
 
@@ -343,7 +343,7 @@ bundle.
 
 The exterior power $\Lambda^2 V$ maps onto $\mathbf{1}$ via a
 non-degenerate epimorphism $\epsilon$ preserved by gauge
-automorphisms.  The antisymmetriser in $H_2(R, q)$ is:
+automorphisms. The antisymmetriser in $H_2(R, q)$ is:
 
 $$
   \mathrm{Alt}_2
@@ -458,7 +458,7 @@ curvature.
 The categorical Hodge star
 ([categorical Hodge star](#def\:categorical-hodge-star))
 $\star\colon \Omega^k(A) \to \Omega^{n-k}(A)$ satisfies
-$\star^2 = \mathrm{id}$.  In knot coordinates, $\star$ acts on
+$\star^2 = \mathrm{id}$. In knot coordinates, $\star$ acts on
 modes via the antipode:
 
 $$
@@ -486,7 +486,7 @@ $$
 $$
 
 where $\mathrm{vol} = \int_A(\mathrm{vol}) = 1$ normalises
-the top form.  The pairing is non-degenerate by QUO-1.
+the top form. The pairing is non-degenerate by QUO-1.
 
 ### C-4: Euler characteristic constraint
 
@@ -532,7 +532,7 @@ embeddable torus knots to the 7 generators $\mathcal{G}$.
 
 The quantum characteristic classes $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$
 ([quantum characteristic classes](#def\:quantum-characteristic-classes))
-obstruct lifting from brane level $n$ to $n+1$.  In knot
+obstruct lifting from brane level $n$ to $n+1$. In knot
 variables, the obstruction is detected by the failure of
 Markov stabilisation at the jet level:
 
@@ -560,14 +560,14 @@ $$
 
 In Hecke generators: at every brane level, there exist braid
 words $\beta_{n+1} \in H_{n+1}(q)$ that cannot be written as
-$L_{-1}(\mathcal{B}_n)$ for any $\mathcal{B}_n \in H_n(R, q)$.  The jet
+$L_{-1}(\mathcal{B}_n)$ for any $\mathcal{B}_n \in H_n(R, q)$. The jet
 corrections and the base obstruction live in complementary
 subgroups, so cancellation is impossible.
 
 ### C-6: Betti numbers and spectral sequence
 
 The Betti numbers $b_k = \dim H^k(\mathcal{S}_n, \mathbb{R})$
-are controlled by the Leray--Serre spectral sequence.  In knot
+are controlled by the Leray--Serre spectral sequence. In knot
 variables, $b_k$ counts linearly independent $k$-fold products
 of Hecke generators modulo the de Rham relation:
 
@@ -603,7 +603,7 @@ with $\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi) q^{-\ell(\pi)} T_\pi
 
 The categorical instanton condition $\star_q F_\nabla = F_\nabla$
 ([instanton on-shell](#rem\:instanton-on-shell)) becomes a
-relation on the curvature 2-form in Hecke generators.  The
+relation on the curvature 2-form in Hecke generators. The
 curvature $F_\nabla = \nabla^2$ has components:
 
 $$
@@ -645,14 +645,14 @@ $$
 $$
 
 By QUO-3b this vanishes for the adjoint — the adjoint bundle
-is flat.  For the fundamental representation, $c_2(A)$ is the
+is flat. For the fundamental representation, $c_2(A)$ is the
 **topological charge** (knot crossing number modulo signs).
 
 ### C-8: Hodge--Laplacian and harmonic braid words
 
 The $q$-Laplacian $\Delta_q = d_q \delta_q + \delta_q d_q$
 ([Hodge--Laplacian](#rem\:hodge-laplacian-relation)) is
-self-adjoint.  In knot coordinates:
+self-adjoint. In knot coordinates:
 
 $$
   \Delta_q
@@ -670,7 +670,7 @@ where $\Delta = d\delta + \delta d$ is the undeformed Laplacian
 and $\iota_\xi$ is contraction with the weight vector.
 
 **Harmonic states** are braid words $\beta$ satisfying
-$\Delta_q \rho(\beta) = 0$.  In Hecke generators:
+$\Delta_q \rho(\beta) = 0$. In Hecke generators:
 
 $$
   \Delta_q \sigma_\beta = 0
@@ -682,16 +682,16 @@ $$
 
 The space $\ker \Delta_q$ is the **particle state space** —
 its dimension equals the number of linearly independent
-knot-particles at each brane level.  Over $K = \mathbb{R}$ it
+knot-particles at each brane level. Over $K = \mathbb{R}$ it
 acquires the Hilbert structure of $\ker \Delta_q \subset L^2(A)$;
-over a general field it is simply a finite-dimensional vector
+over a general field it is a finite-dimensional vector
 space.
 
 ### C-9: Cohomological embedding (knot basis for $H^*$)
 
 The cohomology of the moduli surface $\Sigma_g$
 ([cohomological embedding](#prop\:cohomological-embedding))
-admits a knot basis.  In knot coordinates, each cohomology
+admits a knot basis. In knot coordinates, each cohomology
 generator is a specific Hecke word:
 
 $$
@@ -717,24 +717,24 @@ braid word $\sigma^{(m,n)} \in B_m$.
 
 **Hodge decomposition in Hecke generators**:
 
-| $H^p(\Sigma_4)$ | dim | Hecke generators                                          |
+| $H^p(\Sigma_4)$ | dim | Hecke generators |
 | :-------------: | :-: | :-------------------------------------------------------- |
-|      $H^0$      | $1$ | $1$ (empty braid = photon)                                |
-|    $H^{1,0}$    | $4$ | $T_{(2,3)}, T_{(2,5)}, T_{(2,7)}, T_{(3,5)}$              |
-|    $H^{0,1}$    | $4$ | $T_{(2,9)}, T_{(3,4)}, T_{(4_1)}, T_{(4_1)}^*$            |
-|      $H^2$      | $1$ | $\mathrm{vol} = \epsilon \circ \mathrm{Alt}_2$ (neutrino) |
+| $H^0$ | $1$ | $1$ (empty braid = photon) |
+| $H^{1,0}$ | $4$ | $T_{(2,3)}, T_{(2,5)}, T_{(2,7)}, T_{(3,5)}$ |
+| $H^{0,1}$ | $4$ | $T_{(2,9)}, T_{(3,4)}, T_{(4_1)}, T_{(4_1)}^*$ |
+| $H^2$ | $1$ | $\mathrm{vol} = \epsilon \circ \mathrm{Alt}_2$ (neutrino) |
 
 **Completeness**: the $6 \times 5$ character matrix
 $M_{ij} = \chi_{\lambda_j}(T_{(r_i, s_i)})$
 over irreps $\lambda \vdash r$ of $H_2(R, q) \oplus H_3(R, q)$
-has rank $5$.  Every knot observable on $\Sigma_4$ is a
+has rank $5$. Every knot observable on $\Sigma_4$ is a
 linear combination of evaluations of the $6$ torus-knot
 Hecke words.
 
 ### C-10: \v{C}ech--Yekutieli :refterm[descent]{#descent} cocycle
 
 The cosimplicial crossed groupoid structure on the brane tower
-gives a \v{C}ech cocycle condition at each level.  In knot
+gives a \v{C}ech cocycle condition at each level. In knot
 variables, the twisted 2-cocycle reads:
 
 $$
@@ -768,39 +768,39 @@ algebra on generators $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \s
 
 **Structural relations (QU/QUO axioms)**:
 
-| Label  | Relation                                                                         | Axiom            |
+| Label | Relation | Axiom |
 | ------ | -------------------------------------------------------------------------------- | ---------------- |
-| QU-1a  | $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$                                          | Hecke (braiding) |
-| QU-1b  | $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$            | Yang--Baxter     |
-| QU-1c  | $\sigma_i \sigma_j = \sigma_j \sigma_i$ ($\lvert i-j\rvert \geq 2$)              | Locality         |
-| QU-1d  | $(\cap \otimes 1)(1 \otimes \cup) = \mathrm{id}$                                 | Rigidity         |
-| QU-2b  | $(\mu \otimes 1)(1 \otimes \Delta) = \Delta \circ \mu$                           | Frobenius        |
-| QU-2d  | $\mu(S \otimes 1)\Delta = \eta\varepsilon$                                       | Antipode         |
-| QU-3a  | $\mathrm{tr}_M(\sigma_i w) = \mathrm{tr}_M(w \sigma_i)$                          | Markov I         |
-| QU-3b  | $\mathrm{tr}_M(w \sigma_n^{\pm 1}) = \delta^{-1}\mathrm{tr}_M(w)$                | Markov II        |
-| QU-4a  | $[L_{-1}, a_m] = -ma_{m-1}$                                                      | Translation      |
-| QUO-1  | $\det G_{ij} \neq 0$                                                             | Non-degeneracy   |
-| QUO-2  | $\sigma_i w \sigma_i^{-1} = w\forall i \Rightarrow w \in R$                      | Observability    |
-| QUO-3a | $\sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$                             | $c_1 = 0$        |
-| QUO-3b | $\sum_{i<j} \mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^{\dagger}) = 0$ | $c_2 = 0$        |
-| QUO-4  | $\epsilon \circ \Lambda^2 g_V = \epsilon$                                        | Volume           |
+| QU-1a | $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ | Hecke (braiding) |
+| QU-1b | $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ | Yang--Baxter |
+| QU-1c | $\sigma_i \sigma_j = \sigma_j \sigma_i$ ($\lvert i-j\rvert \geq 2$) | Locality |
+| QU-1d | $(\cap \otimes 1)(1 \otimes \cup) = \mathrm{id}$ | Rigidity |
+| QU-2b | $(\mu \otimes 1)(1 \otimes \Delta) = \Delta \circ \mu$ | Frobenius |
+| QU-2d | $\mu(S \otimes 1)\Delta = \eta\varepsilon$ | Antipode |
+| QU-3a | $\mathrm{tr}_M(\sigma_i w) = \mathrm{tr}_M(w \sigma_i)$ | Markov I |
+| QU-3b | $\mathrm{tr}_M(w \sigma_n^{\pm 1}) = \delta^{-1}\mathrm{tr}_M(w)$ | Markov II |
+| QU-4a | $[L_{-1}, a_m] = -ma_{m-1}$ | Translation |
+| QUO-1 | $\det G_{ij} \neq 0$ | Non-degeneracy |
+| QUO-2 | $\sigma_i w \sigma_i^{-1} = w\forall i \Rightarrow w \in R$ | Observability |
+| QUO-3a | $\sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$ | $c_1 = 0$ |
+| QUO-3b | $\sum_{i<j} \mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^{\dagger}) = 0$ | $c_2 = 0$ |
+| QUO-4 | $\epsilon \circ \Lambda^2 g_V = \epsilon$ | Volume |
 
 **Cohomological relations**:
 
-| Label | Relation                                                                                 | Constraint            |
+| Label | Relation | Constraint |
 | ----- | ---------------------------------------------------------------------------------------- | --------------------- |
-| C-1   | $d^2 = 0$ on $\ker[\xi, \cdot]$                                                          | De Rham nilpotence    |
-| C-2   | $d_q^2\alpha = q^{-1}(1-q^{-1})\omega_V\wedge_q[\xi,\alpha]$                             | $q$-obstruction       |
-| C-3   | $\mathrm{tr}_M(\rho(\beta)\cdot S(\rho(\beta'))^*) = \delta_{\beta\beta'}$               | Poincar'e duality     |
-| C-4a  | $\chi(A_{n+1}) = \chi(A_n)$                                                              | Euler stability       |
-| C-4b  | $\mathrm{tr}_M(\mathrm{id}) = -6$                                                        | Descartes             |
-| C-5   | $\kappa_n = \mathrm{tr}_M(\check{R}_{(n+1)} - L_{-1}\check{R}_{(n)}) \neq 0$             | Perpetual obstruction |
-| C-6   | $b_k = \dim(\ker d / \mathrm{im} d)$ on $\mathrm{Alt}_k \cdot H_n(R, q)$                 | Betti numbers         |
-| C-7   | $S([\sigma_i,\sigma_j])^* = [\sigma_i,\sigma_j]$                                         | Self-dual curvature   |
-| C-7a  | $\sum_{i<j}\mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^\dagger) = c_2(A)$       | Bogomolny bound       |
-| C-8   | $\Delta_q \sigma_\beta = 0 \Leftrightarrow d_q \sigma_\beta = \delta_q \sigma_\beta = 0$ | Harmonic braids       |
-| C-9   | $\mathrm{rank} M_{ij} = 5$ on $\Sigma_4$                                                 | Completeness          |
-| C-10  | $T_{g_{ijk}}T_{g_{jkl}} = T_{a_{ij}}T_{g_{ikl}}T_{a_{kl}}^{-1}$                          | \v{C}ech cocycle      |
+| C-1 | $d^2 = 0$ on $\ker[\xi, \cdot]$ | De Rham nilpotence |
+| C-2 | $d_q^2\alpha = q^{-1}(1-q^{-1})\omega_V\wedge_q[\xi,\alpha]$ | $q$-obstruction |
+| C-3 | $\mathrm{tr}_M(\rho(\beta)\cdot S(\rho(\beta'))^*) = \delta_{\beta\beta'}$ | Poincar'e duality |
+| C-4a | $\chi(A_{n+1}) = \chi(A_n)$ | Euler stability |
+| C-4b | $\mathrm{tr}_M(\mathrm{id}) = -6$ | Descartes |
+| C-5 | $\kappa_n = \mathrm{tr}_M(\check{R}_{(n+1)} - L_{-1}\check{R}_{(n)}) \neq 0$ | Perpetual obstruction |
+| C-6 | $b_k = \dim(\ker d / \mathrm{im} d)$ on $\mathrm{Alt}_k \cdot H_n(R, q)$ | Betti numbers |
+| C-7 | $S([\sigma_i,\sigma_j])^* = [\sigma_i,\sigma_j]$ | Self-dual curvature |
+| C-7a | $\sum_{i<j}\mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^\dagger) = c_2(A)$ | Bogomolny bound |
+| C-8 | $\Delta_q \sigma_\beta = 0 \Leftrightarrow d_q \sigma_\beta = \delta_q \sigma_\beta = 0$ | Harmonic braids |
+| C-9 | $\mathrm{rank} M_{ij} = 5$ on $\Sigma_4$ | Completeness |
+| C-10 | $T_{g_{ijk}}T_{g_{jkl}} = T_{a_{ij}}T_{g_{ikl}}T_{a_{kl}}^{-1}$ | \v{C}ech cocycle |
 
 These **26 relations** (14 structural + 12 cohomological),
 together with the Hecke--Skein dictionary

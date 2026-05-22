@@ -25,7 +25,7 @@ Restricted to **Bring-embeddable knots** (Seifert genus $g \leq 4$,
 
 | Crossing range | Bring-embeddable count | Jones-distinguishes? |
 |---|---|---|
-| $\leq 4$ | finite explicit list | **yes** (theorem; trivially since each knot has different Jones polynomial) |
+| $\leq 4$ | finite explicit list | **yes** (theorem; by definition since each knot has different Jones polynomial) |
 | 5–8 | finite explicit list | **yes** (HTW 1998) |
 | 9–10 | finite explicit list | **yes** (HTW 1998) |
 | 11 (Conway-KT) | mutant pair has $g \leq ?$ | **no for the mutant pair** (Conway = 11n34, KT = 11n42, both have genus 3 $\le$ 4 — *Bring-embeddable*) |
@@ -42,12 +42,12 @@ distinct Jones polynomials?") refines to:
 
 - **Up to crossing 10**: (yes) theorem (HTW 1998).
 - **At crossing 11**: (no) **falsified by the Conway-KT mutant pair**.
-  But Vol-injectivity *still holds* by Ruberman 1987 (mutation
-  preserves volume for hyperbolic knots).
+ But Vol-injectivity *still holds* by Ruberman 1987 (mutation
+ preserves volume for hyperbolic knots).
 - **At crossing $\geq 12$**: open whether more Jones-coincident pairs
-  exist. Anstee–Przytycki–Rolfsen 1989 constructions give some
-  non-mutant Jones-coincident pairs, but their genus / Bring-
-  embeddability is not always recorded.
+ exist. Anstee–Przytycki–Rolfsen 1989 constructions give some
+ non-mutant Jones-coincident pairs, but their genus / Bring-
+ embeddability is not always recorded.
 
 ### Significance for B1's Vol-injectivity prediction
 
@@ -64,10 +64,10 @@ For Bring-embeddable knots:
 
 - Up to crossing 10: vacuously true (no Jones-coincident pairs).
 - At crossing 11 (Conway-KT): satisfied (Ruberman), confirmed in
-  [`rem:conway-kt-vol-injectivity-test`](#rem:conway-kt-vol-injectivity-test).
+ [`rem:conway-kt-vol-injectivity-test`](#rem:conway-kt-vol-injectivity-test).
 - At crossing $\geq 12$: depends on whether non-mutant
-  Jones-coincident Bring-embeddable pairs exist; if any do, B1
-  predicts equal volumes — falsifiable.
+ Jones-coincident Bring-embeddable pairs exist; if any do, B1
+ predicts equal volumes — falsifiable.
 
 ### The strong falsification target
 
@@ -78,13 +78,13 @@ Vol-injectivity. None are currently known. Existence is open.
 If such a pair were found:
 
 - The Volume Conjecture asymptotic mechanism would still be
-  consistent (the asymptotic uses *coloured* Jones, not just
-  $J_K^{(2)}$, so $J_{K_1}^{(2)} = J_{K_2}^{(2)}$ doesn't imply
-  $J_{K_1}^{(N)} = J_{K_2}^{(N)}$ for higher $N$).
+ consistent (the asymptotic uses *coloured* Jones, not just
+ $J_K^{(2)}$, so $J_{K_1}^{(2)} = J_{K_2}^{(2)}$ doesn't imply
+ $J_{K_1}^{(N)} = J_{K_2}^{(N)}$ for higher $N$).
 - B1's stronger version (Vol-injectivity from $J^{(2)}$ alone) would
-  fail.
+ fail.
 - The framework would still be valid for the *coloured* version of
-  the Jones-faithfulness implication.
+ the Jones-faithfulness implication.
 
 ### Status
 

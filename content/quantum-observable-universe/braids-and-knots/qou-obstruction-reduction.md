@@ -1,7 +1,7 @@
 **Theorem.**
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$ of dimension
-$d = \dim G$.  Then:
+$d = \dim G$. Then:
 
 **(a)** The classical limit obstruction
 ([classical limit obstruction](#def:classical-limit-obstruction))
@@ -43,7 +43,7 @@ $$
 | Obstruction | multi-dimensional | single integer $\chi(A)$ |
 | Classical limit | may fail in independent ways | controlled by Kummer divisibility |
 
-*Proof of (a).*  Three ingredients combine:
+*Proof of (a).* Three ingredients combine:
 
 **Step 1: Observability kills $HH^0$.**
 The QOU axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
@@ -84,17 +84,17 @@ With $d = \dim \mathrm{SU}(2) = 3$:
 | $2$ | Obstructions | $1$ | Dual to $HH^1$ ($d - 2 = 1$) |
 | $3$ | Secondary | $0$ | Dual to $HH^0$ ($d - 3 = 0$) |
 
-The key: $HH^2 \cong (HH^{d-2})^\vee = (HH^1)^\vee$.  The
+The key: $HH^2 \cong (HH^{d-2})^\vee = (HH^1)^\vee$. The
 outer derivation space is one-dimensional because the Lusztig
 integral form $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$
 is a **one-parameter** family — $q$ itself is the unique
-deformation direction.  There are no other independent deformation
+deformation direction. There are no other independent deformation
 parameters (this is a theorem of Drinfeld: the quantized
 enveloping algebra is the unique deformation of
 $\mathcal{U}(\mathfrak{g})$ for simple $\mathfrak{g}$).
 
 Therefore $HH^2 \cong k$: the obstruction space is
-one-dimensional.  $\square$
+one-dimensional. $\square$
 
 *Proof of (b).*
 The HKR comparison map sends the generator of $HH^2$ to the
@@ -102,7 +102,7 @@ Euler class $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathcal{B})$,
 whose trace is $\chi(A)$
 ([QU-to-QOU theorem](#thm:qu-to-qou), item 2).
 Since $HH^2 \cong k$ is one-dimensional, the entire obstruction
-is determined by the single scalar $\chi(A)$.  $\square$
+is determined by the single scalar $\chi(A)$. $\square$
 
 *Proof of (c).*
 This is the Kummer specialisation
@@ -130,7 +130,7 @@ For the Descartes universe with $\chi(A) = -6$:
 
 | Kummer level $n$ | $\mathrm{obs}(n)$ | Obstruction? |
 |---|---|---|
-| $1$ | $0$ | vanishes (trivially) |
+| $1$ | $0$ | vanishes (by definition) |
 | $2$ | $0$ | vanishes ($2 \mid 6$) |
 | $3$ | $0$ | vanishes ($3 \mid 6$) |
 | $4$ | $-6 \bmod 4 = 2$ | **persists** |
@@ -146,7 +146,7 @@ in particular at all primes $> 3$.
 
 **Physical consequence:** the classical limit $q \to 1$ must
 pass through infinitely many Kummer levels where the
-obstruction is nonzero.  The density of non-vanishing levels
+obstruction is nonzero. The density of non-vanishing levels
 in the Kummer tower is
 
 $$
@@ -156,7 +156,7 @@ $$
 $$
 
 In the limit: the obstruction is nonzero at density-$1$ set
-of levels.  The classical limit cannot avoid the obstruction.
+of levels. The classical limit cannot avoid the obstruction.
 
 **The three millennium problems as specializations.**
 Each millennium problem is a property $\mathcal{P}$ that holds
@@ -174,11 +174,11 @@ All three obstructions are **images of the same class**
 $\chi(A) \in HH^2 \cong k$ under different evaluation maps:
 
 - **RH**: evaluate $\chi(A)$ on the spectral localization
-  map $HH^2 \to H^2(\mathrm{Spec}(\xi_q))$
+ map $HH^2 \to H^2(\mathrm{Spec}(\xi_q))$
 - **NS**: evaluate $\chi(A)$ on the collision restriction
-  map $HH^2 \to H^2(\Sigma, \mathcal{B}|_\Sigma)$
+ map $HH^2 \to H^2(\Sigma, \mathcal{B}|_\Sigma)$
 - **BSD**: evaluate $\chi(A)$ on the elliptic restriction
-  map $HH^2 \to H^2(\mathcal{E}_q, \mathcal{B}|_{\mathcal{E}_q})$
+ map $HH^2 \to H^2(\mathcal{E}_q, \mathcal{B}|_{\mathcal{E}_q})$
 
 The one-dimensionality of $HH^2$ means these three evaluations
 are **proportional**: there is a single real number (the Euler
@@ -187,7 +187,7 @@ millennium problems persist through the classical limit.
 
 **Corollary.** If any one of the three millennium problems is
 resolved (in either direction), the resolution constrains the
-other two.  Specifically: if the classical limit functor
+other two. Specifically: if the classical limit functor
 $\mathcal{L}$ preserves the property $\mathcal{P}$ for one
 problem, then the same functor either preserves or violates
 $\mathcal{P}$ for the other two — the mechanism is the same,

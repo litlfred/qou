@@ -9,10 +9,10 @@ $\iota_n : \mathbf{B}_n \hookrightarrow \mathbf{B}_{n+1}$
 (adjoining a non-interacting strand on the right). The axioms M1-M4
 (Jones 1985) characterise $\tau_M$ uniquely:
 
-  - M1: $\tau_M(1_n) = 1$ (per-$n$ normalisation)
-  - M2: $\tau_M(xy) = \tau_M(yx)$ (cyclicity, per-$n$)
-  - M3: $\tau_M(\iota_n(x) \cdot \sigma_n) = z \cdot \tau_M(x)$ (stabilisation)
-  - M4: $\tau_M(\iota_n(x) \cdot \sigma_n^{-1}) = z \cdot \tau_M(x)$
+ - M1: $\tau_M(1_n) = 1$ (per-$n$ normalisation)
+ - M2: $\tau_M(xy) = \tau_M(yx)$ (cyclicity, per-$n$)
+ - M3: $\tau_M(\iota_n(x) \cdot \sigma_n) = z \cdot \tau_M(x)$ (stabilisation)
+ - M4: $\tau_M(\iota_n(x) \cdot \sigma_n^{-1}) = z \cdot \tau_M(x)$
 
 with $z = 1/(\sqrt{q} + 1/\sqrt{q})$ the Markov-Jones parameter.
 
@@ -23,12 +23,12 @@ The Lean module
 
 1. `opaque tauM_n (q : ℝ) {n : ℕ} (w : BraidWord n) : ℝ` — the per-$n$ scalar trace value.
 2. `class MarkovTraceInductiveLimit q` — single global hypothesis carrying the stabilisation `inclusion_residual` scalar + an equation asserting it vanishes (explicit-residual pattern).
-3. `instance defaultMarkovTraceInductiveLimit q` — ansatz discharge (residual $= 0$ trivially, pending substantive operator construction).
+3. `instance defaultMarkovTraceInductiveLimit q` — ansatz discharge (residual $= 0$ by definition, pending substantive operator construction).
 4. **Bridge instance**
-   `markovTraceN_from_inductive_limit q n : MarkovTraceN n q` —
-   under the inductive-limit class, **every per-$n$ `MarkovTraceN`
-   class is automatically derivable** (the per-$n$ axioms are the
-   restrictions of the global ones).
+ `markovTraceN_from_inductive_limit q n : MarkovTraceN n q` —
+ under the inductive-limit class, **every per-$n$ `MarkovTraceN`
+ class is automatically derivable** (the per-$n$ axioms are the
+ restrictions of the global ones).
 
 ## Consolidation benefit
 
@@ -45,6 +45,6 @@ closure constructing the global trace) is open R&D. The scaffold
 suffices to consolidate the per-$n$ class discharges into a single
 global hypothesis with a clear API.
 
-The default instance discharges trivially via the explicit-residual
+The default instance discharges by definition via the explicit-residual
 pattern; a future Mathlib-tier construction would supply a
 substantive witness without changing the surrounding API.

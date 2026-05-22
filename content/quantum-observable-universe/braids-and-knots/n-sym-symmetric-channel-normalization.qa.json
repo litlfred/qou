@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.lean"
   },
   "source_hashes": {
-    "md": "38d342497162",
+    "md": "1b19f3c4c8cd",
     "ts": "f4e6aa46fb79",
     "lean": "9b2bb218707d"
   },
@@ -465,20 +465,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "ef813f7ab875",
+          "md": "1b19f3c4c8cd",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:127: would (by the consistency identity above) trivially confirm the"
+        "reviewed_at": "2026-05-22T20:40:21.603Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-scholarly-default": [
@@ -601,5 +601,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T19:45:43.260Z"
+  "updated_at": "2026-05-22T20:40:21.603Z"
 }

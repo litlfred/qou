@@ -123,43 +123,43 @@ If $\mathcal{N}_{\rm sym}(q)$ is derived (any of (a)/(b)/(c)
 succeeding):
 
 1. **NV-1** closes: PSLQ on the extended basis
-   $\{q^k, [k]_q, \hbar_q^k, [2k]_q^2/[2]_q, \mathcal{N}_{\rm sym}\}$
-   would (by the consistency identity above) trivially confirm the
-   closed form.
+ $\{q^k, [k]_q, \hbar_q^k, [2k]_q^2/[2]_q, \mathcal{N}_{\rm sym}\}$
+ would (by the consistency identity above) by definition confirm the
+ closed form.
 2. **§3.A v4 wiring** closes: $\mathcal{N}_{\rm sym}$ is also the
-   correct calibration constant for translating Markov-trace
-   tower terms (depth-1 + depth-2) into MeV mass corrections.
-   The naïve calibration $\alpha_{\rm bind} = 8 \cdot m_e \cdot G$
-   used in [`v4-mass-pipeline.witness.json`](../../folio-assistant/computations/v4-mass-pipeline.witness.json)
-   evaluates to zero correction; the correct scale is
-   $\alpha_{\rm bind}^{\rm EW} = m_e \cdot \mathcal{N}_{\rm sym}(q_0)
+ correct calibration constant for translating Markov-trace
+ tower terms (depth-1 + depth-2) into MeV mass corrections.
+ The naïve calibration $\alpha_{\rm bind} = 8 \cdot m_e \cdot G$
+ used in [`v4-mass-pipeline.witness.json`](../../folio-assistant/computations/v4-mass-pipeline.witness.json)
+ evaluates to zero correction; the correct scale is
+ $\alpha_{\rm bind}^{\rm EW} = m_e \cdot \mathcal{N}_{\rm sym}(q_0)
    \approx 108.9$ MeV — a categorical EW-sector binding scale.
 3. **SHELL-7-SCALE reweighting** informed: the q-deformed
-   Wedderburn-block weight
-   $\tilde w_\lambda = \dim_q^2/[n]_q!$ used in
-   [`shell7-bb-stratum.witness.json`](../../folio-assistant/computations/shell7-bb-stratum.witness.json)
-   blew up because it has no $q_0 > 1$ damping. $\mathcal{N}_{\rm sym}(q)$ likely
-   provides the correct $q_0$-bounded q-deformed weight (its closed
-   form is bounded above by the simple $\dim_q^2$ growth — needs the
-   (b) or (c) Higgs/Hochschild structure to suppress). Distinct from
-   the classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$
-   ([`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)).
+ Wedderburn-block weight
+ $\tilde w_\lambda = \dim_q^2/[n]_q!$ used in
+ [`shell7-bb-stratum.witness.json`](../../folio-assistant/computations/shell7-bb-stratum.witness.json)
+ blew up because it has no $q_0 > 1$ damping. $\mathcal{N}_{\rm sym}(q)$ likely
+ provides the correct $q_0$-bounded q-deformed weight (its closed
+ form is bounded above by the simple $\dim_q^2$ growth — needs the
+ (b) or (c) Higgs/Hochschild structure to suppress). Distinct from
+ the classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$
+ ([`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)).
 
 ### Status
 
 **Status: open.** Numerical value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is fixed by consistency. **Closed form requires categorical derivation, not ansatz-fitting** (per the methodological correction documented separately):
 
 1. Discharging
-   [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
-   (U2 from PR #511) — the categorical Higgs mechanism
+ [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
+ (U2 from PR #511) — the categorical Higgs mechanism
 2. Discharging
-   [`conj:electroweak-mass-eigenstate-count`](#conj:electroweak-mass-eigenstate-count)
-   (U4 from PR #511) — the broken-Wedderburn split
+ [`conj:electroweak-mass-eigenstate-count`](#conj:electroweak-mass-eigenstate-count)
+ (U4 from PR #511) — the broken-Wedderburn split
 3. Compute the symmetric-channel Frobenius trace
-   $\mathrm{tr}_F\bigl(e_{\rm sym}^{\rm EW}\bigr)$ where
-   $e_{\rm sym}^{\rm EW} = \otimes_{k=2,3,4} e_{\rm sym}^{(T(2,2k))}$
-   from the resulting Higgs-mechanism structure — this *is*
-   $\mathcal{N}_{\rm sym}(q)$ by construction.
+ $\mathrm{tr}_F\bigl(e_{\rm sym}^{\rm EW}\bigr)$ where
+ $e_{\rm sym}^{\rm EW} = \otimes_{k=2,3,4} e_{\rm sym}^{(T(2,2k))}$
+ from the resulting Higgs-mechanism structure — this *is*
+ $\mathcal{N}_{\rm sym}(q)$ by construction.
 
 ### Empirical anchors recorded (NOT ansatz-fits)
 
@@ -194,7 +194,7 @@ This single artifact unlocks:
 - $\mathcal{N}_{\rm sym}$ closed form via the trace formula above
 - U2 + U4 from `conj:electroweak-higgs-torus-link-triplet`
 - The Higgs slot question raised by PR #513 / #514 (the scalar's
-  categorical placement)
+ categorical placement)
 
 Until that derivation exists, `conj:n-sym-symmetric-channel-normalization`
 remains *open* — the numerical value is pinned, the closed form is not.

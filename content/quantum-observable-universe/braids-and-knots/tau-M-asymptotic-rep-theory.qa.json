@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.lean"
   },
   "source_hashes": {
-    "md": "427bf4168461",
+    "md": "310819efaeac",
     "ts": "00daf9bf3916",
     "lean": "5b763878423a"
   },
@@ -480,20 +480,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "4c3d16d0a33c",
+          "md": "310819efaeac",
           "ts": "00daf9bf3916",
           "lean": "5b763878423a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.md:36: | $k = 1$ | $V_{(n)}, V_{(1^n)}$ | $c_1 = 0$ | exact, trivially (1-d) |"
+        "reviewed_at": "2026-05-22T20:40:21.603Z",
+        "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
       }
     ],
     "voice-scholarly-default": [
@@ -701,5 +701,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T15:40:56.603Z"
+  "updated_at": "2026-05-22T20:40:21.603Z"
 }

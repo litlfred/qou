@@ -72,22 +72,22 @@ realization, Bloch--Wigner regulator — agree on this common domain.
 Each is useful for a different formal manipulation:
 
 * The **adelic** picture
-  ([archimedean realization functor](#def:archimedean-realization-functor))
-  is what controls the *categorical* compatibility ($\tau_{\mathrm{arch}}$
-  factoring through the QOU fibre functor $\tau$).
+ ([archimedean realization functor](#def:archimedean-realization-functor))
+ is what controls the *categorical* compatibility ($\tau_{\mathrm{arch}}$
+ factoring through the QOU fibre functor $\tau$).
 * The **Euler-characteristic** picture
-  ([motivic mass measure](#def:motivic-mass-measure)) governs the
-  blow-up calculus for arc-space integrals.
+ ([motivic mass measure](#def:motivic-mass-measure)) governs the
+ blow-up calculus for arc-space integrals.
 * The **Bloch--Wigner / regulator** picture is the one that connects
-  $\mathrm{Vol}_q$ to existing motivic-cohomology and quantum-topology
-  literature (Kashaev, Murakami--Murakami, Garoufalidis--Zagier).
+ $\mathrm{Vol}_q$ to existing motivic-cohomology and quantum-topology
+ literature (Kashaev, Murakami--Murakami, Garoufalidis--Zagier).
 
 **Scope.**
 This is an *interpretive remark*: it makes no new mathematical claim
 beyond what is in
 [$\mathrm{Vol}(K)$ factors through $\tau$](#prop:vol-through-tau).
-It simply names the existing factorisation in motivic-period
+It names the existing factorisation in motivic-period
 language so that the
 [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and the
 [archimedean remainder decay conjecture](#conj:archimedean-remainder-exponential-decay)
-can be cross-referenced cleanly with the regulator literature.
+can be cross-referenced with the regulator literature.
