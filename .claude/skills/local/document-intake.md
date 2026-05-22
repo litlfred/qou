@@ -94,6 +94,18 @@ Supported formats:
 - **DOCX** — Word documents (WHO often distributes as Word)
 - **Images** — scanned pages (PNG, JPG, TIFF)
 
+**For academic papers, prefer the MCP fetch path** (added 2026-05-22):
+when the session network allows the upstream host, use
+`paper-search-mcp` (arxiv / PubMed / bioRxiv / medRxiv) or
+`openalex-paper-search` (alex-mcp; OpenAlex catalog) rather than
+`curl`/`WebFetch`. The MCP tools return canonical metadata and the
+PDF in one call, eliminating the OCR-then-extract-then-name dance.
+See [`paper-importer.md §Phase 1`](paper-importer.md#phase-1-acquisition)
+for the per-tool routing table. Sandboxed Claude-Code-on-the-web
+sessions (github-only allowlist) cannot reach those hosts; in
+those sessions, queue the fetch onto a normal-network machine
+per [`bib-qa.md §Batch intake pipeline`](bib-qa.md#batch-intake-pipeline).
+
 ### Stage 2: Extraction (→ `extracted`)
 
 Convert raw format to `extracted-text.md`:
