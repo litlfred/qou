@@ -45,6 +45,13 @@ export default chapter({
     }),
 
     // ── Archimedean realisations ────────────────────────────────────
+    // R2 (Rec 2): Removed 4 Descartes-coded blocks (brings-surface-
+    // unit-circle, seiberg-witten, primordial-vortex, geometric-drag)
+    // that previewed χ = −6 / Bring's-surface / mass-residue material.
+    // They now live in descartes-universe/sec:physical-regimes.
+    // `cosmological-limits` retained here per the audit's separate
+    // physical-limits-cluster minor pattern (orthogonal to Descartes
+    // chapter scope).
     section({
       title: "Archimedean specialisations",
       label: "sec:archimedean-models",
@@ -52,13 +59,9 @@ export default chapter({
         "archimedean-models-intro",
         "calabi-yau",
         "ale",
-        "brings-surface-unit-circle",
         "cosmological-limits",
         "instanton",
         "irreducible-connection",
-        "seiberg-witten",
-        "primordial-vortex",
-        "geometric-drag",
         "self-dual-curvature",
         "c-substrate-via-levi",
         "webster-inner-product",

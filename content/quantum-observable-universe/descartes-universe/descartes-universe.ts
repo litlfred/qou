@@ -22,6 +22,24 @@ export default chapter({
       ],
     }),
 
+    // ── §0. Physical regimes and limiting context ────────────────────
+    // R2: Imported from models-of-qous/ per the fit-section-chapter
+    // audit on PR #882 (2026-05-22).  These blocks were previously
+    // sitting in sec:archimedean-models but explicitly preview Bring's-
+    // surface / χ = −6 / cosmological-limit material; they belong in
+    // this chapter as physical-context framing before the formal
+    // development begins.
+    section({
+      title: "Physical regimes and limiting context",
+      label: "sec:physical-regimes",
+      blocks: [
+        "brings-surface-unit-circle",
+        "seiberg-witten",
+        "primordial-vortex",
+        "geometric-drag",
+      ],
+    }),
+
     // ── §0a. Algebraic substructure of Bring's surface ───────────────
     // Relocated from braids-and-knots/ per the PR #823 fit-section-
     // chapter audit. These blocks supply the algebraic infrastructure
