@@ -4,7 +4,7 @@ $\sigma_2\sigma_1$ in
 activate the *global vortex* sector of the $q$-Reeb flow: all
 three colour tubes rotate uniformly with rate $\dot\psi = \pm q$.
 The resulting trajectory in $\mathcal{R}_p \cong S^3$ is a
-right-handed (resp. left-handed) helix on a Heegaard torus
+The right-handed (resp. left-handed) helix on a Heegaard torus
 $T^2 \subset S^3$ determined by the Hopf decomposition
 $S^3 = D^2 \times S^1 \cup_{T^2} S^1 \times D^2$.
 

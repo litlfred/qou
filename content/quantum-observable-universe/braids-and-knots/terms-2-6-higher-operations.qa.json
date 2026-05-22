@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.lean"
   },
   "source_hashes": {
-    "md": "b1fafa800442",
+    "md": "93c64af4970b",
     "ts": "ec8301fb8dfb",
     "lean": "7ff592a5f7ed"
   },
@@ -482,20 +482,22 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "2590bb8273d2",
+          "md": "93c64af4970b",
           "ts": "ec8301fb8dfb",
           "lean": "7ff592a5f7ed"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T20:59:31.864Z",
+        "reviewed_sha": "2cdada401e638187079cdcb5539602d280eaac65",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md:395: right object.*"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md:395: Right-object.*"
       }
     ],
     "voice-ai-slop": [
@@ -686,5 +688,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:40:21.603Z"
+  "updated_at": "2026-05-22T20:59:31.864Z"
 }

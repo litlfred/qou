@@ -134,7 +134,7 @@ At n = 3 the σ-orbits on Part(3) = {(3), (2,1), (1,1,1)} are:
   · `{(3), (1,1,1)}` — size-2 chirality pair (sym ↔ alt)
   · `{(2,1)}`        — self-dual / mixed channel
 
-so the populated-blocks list is CPT-saturated iff every (3) in
+The populated-blocks list is CPT-saturated iff every (3) in
 the list comes paired with a (1,1,1) (and vice versa); (2,1)
 contributes by itself in either case.
 

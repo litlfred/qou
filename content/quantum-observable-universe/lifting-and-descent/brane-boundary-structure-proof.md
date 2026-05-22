@@ -37,5 +37,5 @@ $\mathbb{P}^1(\mathbb{C})$, which separates the base (spacetime) coordinates fro
 fibre (chiral) coordinates.  The Reeb vector field $\xi$ is vertical, so
 its reversal $\xi \mapsto -\xi$ exchanges the two sides of $\partial \mathcal{S}_1$:
 one side carries left-handed fermions (positive Reeb eigenspace), the other
-right-handed (negative eigenspace), in agreement with
+The right-handed (negative eigenspace), in agreement with
 [Descartes chirality](#rem\:descartes-chirality).

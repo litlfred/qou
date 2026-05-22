@@ -37,7 +37,7 @@ open SubstantiveFillers
 /-- **Pentagon identity at zero arguments.** When all five
     arguments of the 5-term identity are zero, the identity
     holds unconditionally (each Cl_2(0) = 0 by `Cl_2_zero`,
-    so the alternating sum is `0 - 0 + 0 - 0 + 0 = 0`). -/
+    The alternating sum is `0 - 0 + 0 - 0 + 0 = 0`). -/
 -- Ref: [zagier1986]
 theorem Cl_2_pentagon_at_zero_unconditional :
     Cl_2 0 - Cl_2 0 + Cl_2 0 - Cl_2 0 + Cl_2 0 = 0 := by

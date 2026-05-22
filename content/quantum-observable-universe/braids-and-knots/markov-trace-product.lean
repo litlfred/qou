@@ -193,7 +193,7 @@ theorem markov_trace_product
     the input here is *not* a free `traceValue`: it is `MarkovTraceAxioms.trace
     chains`, the actual Markov trace value determined by the typeclass
     instance.  The conclusion asserts this equals the explicit product,
-    so the theorem genuinely captures the Markov-property recursion
+    The theorem genuinely captures the Markov-property recursion
     rather than being trivially true.
 
     The proof is a straight cons-induction on the chain list, mirroring

@@ -84,7 +84,7 @@ theorem parityViolationStrength_classical :
 
 /-- CP is conserved: the q ↔ q⁻¹ involution IS a symmetry.
     Under CP: coeff_plus ↔ coeff_minus AND L₊ ↔ L₋,
-    so the Skein relation maps to itself. -/
+    The Skein relation maps to itself. -/
 -- Ref: [manuscript] §6/parity-violation-skein
 -- theorem cp_conservation (q : R_q) (hq : 0 < q) :  -- (archimedean; not meaningful over R_q)
     let s := SkeinCoefficients.mk q hq

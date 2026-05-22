@@ -96,7 +96,7 @@ $\mathrm{sign}(\mathrm{tr}_M(\mathcal{A}))$, which tracks the
 chirality of the atomic braid (number of $\sigma_i^{+1}$ versus
 $\sigma_i^{-1}$ crossings). BW is chirality-blind. Predicted:
 mirror-reversed nuclear configurations (left-handed vs
-right-handed closures) have identical BW masses but distinct
+The right-handed closures) have identical BW masses but distinct
 categorical masses, producing a CP-sensitive splitting.
 Magnitude: small but non-zero, potentially visible in precision
 beta-asymmetry experiments.*

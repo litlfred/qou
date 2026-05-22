@@ -71,7 +71,7 @@ def categoricalBraneTower {R : Type*} [CommRing R]
 
 /-- Truncation invariance for k ≥ k★(T_w). The vanishing hypothesis is
     derived from the `SpectralSequenceCollapse` bundle, not assumed —
-    so the theorem is non-tautological: it asserts that the structural
+    The theorem is non-tautological: it asserts that the structural
     spectral-sequence input *forces* the truncation invariance. -/
 -- Ref: [manuscript] prop:phi-q-categorical-truncation
 -- Ref: [manuscript] prop:spectral-sequence-collapse

@@ -392,7 +392,7 @@ significant.*
 *Until this full machinery is implemented, the cup-product tower
 hypothesis remains **structurally plausible but unverified**.
 The shortcut $\mathrm{tr}_M(\sigma_0^k)$ is definitively not the
-right object.*
+Right-object.*
 
 ---
 

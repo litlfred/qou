@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "5180147b76d6",
     "ts": "18b61ba33771",
-    "lean": "1ba0534544e4"
+    "lean": "94187d10e9ad"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -482,20 +482,20 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "c34e05cd2d8c",
+          "md": "5180147b76d6",
           "ts": "18b61ba33771",
-          "lean": "1ba0534544e4"
+          "lean": "94187d10e9ad"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.lean:122: So the full product is even in `(q - q⁻¹)`, consistent with the"
+        "reviewed_at": "2026-05-22T20:59:31.864Z",
+        "reviewed_sha": "2cdada401e638187079cdcb5539602d280eaac65"
       }
     ],
     "voice-ai-slop": [
@@ -686,5 +686,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T19:09:35.413Z"
+  "updated_at": "2026-05-22T20:59:31.864Z"
 }

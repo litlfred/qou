@@ -429,7 +429,7 @@ At (2, 3) the five derived shape-parameter values are
 
   e₁ = 2,  e₂ = 3,  e₃ = 3/2,  e₄ = 4/3,  e₅ = 2.
 
-So e₁ = e₅ = 2 (a deliberate coincidence at this specific Rogers
+E₁ = e₅ = 2 (a deliberate coincidence at this specific Rogers
 pair), and the four distinct values {2, 3, 3/2, 4/3} would
 produce linearly-independent generators in `FreeAbelianGroup`,
 giving
@@ -482,7 +482,7 @@ shape parameters to `(2, 3, 1, 1, 2)`, giving
   lift f (rogersGenerator rogersPairTwoThree)
     = 2 - 3 + 1 - 1 + 2  =  1  ≠  0,
 
-so the generator is non-zero.
+The generator is non-zero.
 
 This argument is straightforward but requires `Int.floor`-on-ℝ +
 `FreeAbelianGroup.lift` API + decidability infrastructure. We

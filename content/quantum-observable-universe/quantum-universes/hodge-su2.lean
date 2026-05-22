@@ -9,7 +9,7 @@ The Hodge star operator on the 3D differential algebra of O(SU(2)):
 - ⋆ is an involution: ⋆² = id (in odd dimension)
 
 In 3D the Hodge star maps Ω¹ → Ω² and Ω² → Ω¹ (not self-maps),
-so there is no non-trivial self-dual/anti-self-dual decomposition.
+There is no non-trivial self-dual/anti-self-dual decomposition.
 The self-dual decomposition becomes non-trivial in the 4D archimedean
 case (dim_ℝ H = 4).
 
