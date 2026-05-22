@@ -144,15 +144,28 @@ def compute_tr_m_canonical(
     if method == "laurent_q_rust":
         try:
             from markov_peel_rust_bridge import tr_M_atomic_rust_full
+            # Honor caller-provided dps when it exceeds the 50-dps
+            # production floor; never go below 50 (CLAUDE.md §L1
+            # mandates ≥ 50 dps for the production trace).  The
+            # `dps=0` default from the function signature collapses
+            # to 50, matching the implicit policy used in the
+            # sibling `laurent_q` / `markov_peel` branches below.
+            effective_dps = max(int(dps), 50)
             t0 = time.time()
-            tr_mp = tr_M_atomic_rust_full(Z, N, dps=50)
+            tr_mp = tr_M_atomic_rust_full(Z, N, dps=effective_dps)
             wall = time.time() - t0
             return abs(tr_mp), wall, None, "laurent_q_rust"
         except NotImplementedError as e:
-            # Case C — fall through to laurent_q which has the same
-            # Case-C contract, or markov_peel sympy ocneanu.
+            # Case C — return an error tuple; the outer caller
+            # (`main()`) currently SKIPS atoms with a non-empty `err`
+            # rather than chaining into `laurent_q` / `markov_peel`.
+            # Re-running the script with `--method laurent_q` (or
+            # `markov_peel`) handles the same atom via the sympy
+            # ocneanu path.  Manual chain — no automatic fallback
+            # here, see PR #886 review thread r3289356832.
             return None, 0.0, (
-                f"laurent_q_rust: case-C → fallback needed: {e}"
+                f"laurent_q_rust: Case C — re-run with --method "
+                f"laurent_q or markov_peel: {e}"
             ), "laurent_q_rust"
         except ImportError as e:
             return None, 0.0, (

@@ -27,11 +27,14 @@ use rug::Float;
 
 /// Decimal precision (`dps`) → MPFR binary precision (bits).
 ///
-/// `bits = ⌈dps · log₂10⌉ + 32 guard bits` — log₂(10) ≈ 3.3219;
-/// rounding up to 3.4 absorbs the ceiling, plus 32-bit guard for
-/// intermediate-rounding accumulation across a long sum.
+/// `bits = ⌈dps · log₂10⌉ + 32 guard bits` — log₂(10) ≈ 3.3219.
+/// Using `3.4` as the slope is conservative (an upper bound) but
+/// integer-truncation (`as u32`) would still under-allocate by
+/// one bit at small `dps` (e.g. `dps = 2` → `6.8` truncates to
+/// `6`, but `⌈2 · log₂10⌉ = 7`).  `ceil()` enforces the
+/// documented bound at every `dps`.
 fn dps_to_prec(dps: u32) -> u32 {
-    ((dps as f64 * 3.4) as u32) + 32
+    ((dps as f64 * 3.4).ceil() as u32) + 32
 }
 
 /// **Tier 1.A entry point — full pipeline in Rust + MPFR.**

@@ -132,11 +132,16 @@ Currently q₀ is a numerical 50-dps mpf. The "substrate-derivation of q₀ from
 
 **Tier 1.A: architectural delivery complete; 4× bench gate open.**
 See [`2026-05-22-rust-laurent-q-reduce-results.md`](2026-05-22-rust-laurent-q-reduce-results.md)
-for full details.  Empirical 2.4× speedup on ⁶Li
-(94.6 s vs 225 s Python LaurentQ); cross-check bit-identical to
-5.6 × 10⁻⁴⁹ relative.  Follow-up optimisations (R1 fast-path,
-FxHashMap reduce, GCD deferral) tracked in that doc to close
-the 4× target.
+for full details.  Empirical ⁶Li speedup vs Python LaurentQ:
+- After all-Rust + MPFR pipeline (commit `22e3c1cd`): **2.38×**
+  (94.6 s vs 225 s baseline)
+- After R1 fast-path (commit `52940b5f`): **2.65×**
+  (84.5 s vs 223.7 s baseline)
+
+Cross-check bit-identical to 5.6 × 10⁻⁴⁹ relative on every
+atom from p through ⁶Li.  Follow-up optimisations (FxHashMap
+intermediate, GCD deferral via Ratio::new_raw) tracked in the
+results doc to close the remaining gap to the 60 s gate.
 
 **Tier 1.C: complete.**  Cyclic-canonical cache key in
 `tr_m_word_lq.rs`; shipped on the same branch.
