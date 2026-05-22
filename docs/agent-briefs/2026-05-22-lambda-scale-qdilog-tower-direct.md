@@ -644,9 +644,41 @@ basis beyond what's been tried:
     coeff ≤ 10³⁰: only trivial Rogers identity, target coeff 0.
     Audit:
     [`docs/audits/2026-05-22-q-dilog-tower-spike-lambda-scale.md`](../audits/2026-05-22-q-dilog-tower-spike-lambda-scale.md).
-    **Tier 1+ extensions are still open** (operator-valued
-    `|V̂_S|` basis, 2-variable Bloch-Wigner regulators,
-    Q(ζ_60) rank-8) — see Recommended ordering #1 above.
+  - **Tier 1+ q-dilog basis extensions (3 paths).** Refuted by
+    [PR #928](https://github.com/litlfred/qou/pull/928) (|V̂_S| at
+    H_3 + Q(ζ_60) D-values + tier-0 hyperbolic-knot vols,
+    PSLQ coeff ≤ 10³⁰) AND [this PR's e64b2806 commit](https://github.com/litlfred/qou/commit/e64b2806)
+    (2-variable L_2(x,y) at root-of-unity pairs + Q(ζ_n) D-values
+    for n | 60, PSLQ coeff ≤ 10²⁰). Combined: substrate-natural
+    q-dilog + |V̂_S|-extended + Q(ζ_60)-D + 2-var-L_2 + tier-0-
+    knot bases all NEGATIVE for λ_p, Vol_eff_p, and the residual
+    (λ_p − Family A). The empirical case that the framework's 3 %
+    CODATA gap is honest (per #895 + #917) is strengthened by
+    every additional negative basis extension.
+  - **Strategy I (Yekutieli per-cell curvature) — partial.**
+    Audit [`docs/audits/2026-05-18-conjecture-proof-step3-yekutieli.md`](../audits/2026-05-18-conjecture-proof-step3-yekutieli.md)
+    derives `λ_scale = 5/2 − G·h²` via half-symmetric H_4
+    projection extracting ONE octahedral cell from 𝓑_3's 8-fold
+    tessellation. The h²-coefficient `−G` is the cell-volume
+    `−Vol(𝓑_3)/8`. **Load-bearing conjecture** (audit's own
+    flagging): the cell-↔-half-sym-projection bijection. The
+    follow-up audit [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
+    formalises the conjecture and tests both readings:
+    - **Reading A** (audit as stated, `5/2 − G·h²`): lands in the
+      same 5.6 ppm coincidence basin PR #701 falsified for
+      Wedderburn-sum candidates. Without the categorical-bijection
+      proof, structurally indistinguishable from the coincidence.
+    - **Reading B** (Family A leading + Yekutieli per-cell h²,
+      `5/2 + (3/4 − G)·h² ≈ 2.493`): off from CODATA by ~1.3%
+      and from Family A by ~1.6%; does NOT close the 3% gap.
+    Witness:
+    [`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../folio-assistant/computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json).
+    Yekutieli structural argument unresolved between Reading A
+    (coincidence basin, requires categorical bijection proof) and
+    Reading B (off-target, doesn't close the gap). Per audit §
+    "Concrete next R&D" item 1, the next step is the explicit
+    construction of the cell-↔-half-sym-projection bijection at
+    H_4 — categorical theory work, not compute.
 
 ## Verification criteria
 
