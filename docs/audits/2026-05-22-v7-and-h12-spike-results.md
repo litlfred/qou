@@ -118,6 +118,28 @@ exists; this spike does not find one.
    and update the cheat-sheet §5 #1 status to track V_7 alongside
    Family A as a "best-known categorical λ" with no closure yet.
 
+### Cumulative empirical case for Position 2 (2026-05-22 update)
+
+The V_7 spike here is the **fourth independent negative search**
+for `λ_scale ≈ 2.4599527869` in the published series:
+
+| Search | Basis | Coeff | Result | Ref |
+|---|---|---|---|---|
+| `bring_bloch_tier{0..5}` | 52 hyperbolic knots ≤ 11 crossings | 10³⁰ | NEG | PR #888, #904 |
+| `q_dilog_tower_spike` | Substrate-natural Li_2^q + Φ_q | 10³⁰ | NEG | PR #923 |
+| `q_dilog_vhat_spike` | V̂_S + ℚ(ζ_60) D + tier-0 vols | 10³⁰ | NEG | PR #928 (merged 2026-05-22) |
+| **V_7 sub-leading (this doc)** | `{h²·G, h^4, h^6, h², ℏ²·G}` | 10¹² | **NEG** | this spike |
+
+Four independent searches; four negatives.  **The
+substrate-categorical proof that the target itself is a fitted
+value (per #888 truth-in-naming) is now matched by an
+empirical-search proof that no small-coefficient categorical
+identity reproduces it.**  Position 2 ("V_7 is one of many
+proved categorical functionals on H_4, no selection rule yet
+picks it; the 0.144 % proximity to a fitted target is suggestive
+but not structural") is the conservative consensus across the
+λ_scale cluster.
+
 ## H_12 A-operator extract details
 
 **Setup.** Per cheat-sheet §5 #2 manager view, the H_12 A-operator
