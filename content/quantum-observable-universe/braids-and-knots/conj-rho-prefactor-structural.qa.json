@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.lean"
   },
   "source_hashes": {
-    "md": "8b45a0d18265",
+    "md": "cb038f9190f9",
     "ts": "e943c0523fae",
     "lean": "8c45ce1524e3"
   },
@@ -408,20 +408,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "8b45a0d18265",
+          "md": "cb038f9190f9",
           "ts": "e943c0523fae",
           "lean": "8c45ce1524e3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md:46: | Proton/neutron | trefoil $3_1$ | $3$ ($A=1$) | $(2,1)$ | $[2]_{q_0} \\approx 2.01$ → $\\rho = 1$ (hook special case) | $1$ | | quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md:48: | Tritium $^3$H | $8_{11}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\\approx 2.0$ → $\\rho = 2$ | $2$ | | quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md:49: | Helium-3 $^3$He | $L_{6a4}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\\approx 2.0$ → $\\rho = 2$ | $2$ | | quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md:52: $n_0 = 6$ for ³H/³He, which conflicted with the joint-tower SDP | quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md:57: (`atomic_n_0 = 9` for ³H, ³He).  This table is now reconciled to"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -563,5 +563,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

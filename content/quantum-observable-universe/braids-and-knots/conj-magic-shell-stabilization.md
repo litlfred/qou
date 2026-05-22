@@ -14,7 +14,7 @@ The **operator-selection LP dual** ([`prop:operator-selection-lp`](#prop:operato
 nonetheless confirms a real structural feature: the pair-knot
 composite operators $\sigma_{pp}, \sigma_{nn}$ are in the active
 set EXACTLY at magic-shell atoms (Z=2 activates $\sigma_{pp}$,
-N=2 activates $\sigma_{nn}$, doubly magic ⁴He activates both),
+N=2 activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both),
 with strong duality (LP gap $\leq 10^{-15}$, SDP gap $\leq 10^{-6}$).
 The
 [spin-involution corollary](#prop:spin-involution-lp-dual-invariance)
@@ -78,17 +78,17 @@ conventions give different **measured residuals** for
 $\Delta_{\mathrm{shell}}$ (residuals to be matched by the conjecture's
 prediction, not free parameters):
 
-| Convention | $\Delta_{\mathrm{shell}}(Z=2)$ from ³He | $\Delta_{\mathrm{shell}}(Z=N=2)$ from ⁴He | Z↔N consistent? |
+| Convention | $\Delta_{\mathrm{shell}}(Z=2)$ from ${}^{3}$He | $\Delta_{\mathrm{shell}}(Z=N=2)$ from ${}^{4}$He | Z$\leftrightarrow$N consistent? |
 |:---|---:|---:|:---:|
 | Operator-valued per-eigenvalue, $n_\star=1$ | $+4.32$ MeV | n/a | n/a |
 | Pair-knot product-volume | $-16.88$ MeV | $+5.50$ MeV | NO ($\Delta_n = +22.38$ MeV $\neq \Delta_p$) |
 | Pair-knot Markov-trace (canonical) | $-11.92$ MeV | TBD | TBD |
 
-The Z↔N inconsistency under product-volume is a known artifact
+The Z$\leftrightarrow$N inconsistency under product-volume is a known artifact
 of the convention (see
 [brane-tower-z-habiro §"Pair-knot Markov-trace refinement"](#conj:brane-tower-z-habiro)),
 but the correct operator-volume convention for which
-$\Delta_{\mathrm{shell}}$ is well-defined and Z↔N-symmetric is
+$\Delta_{\mathrm{shell}}$ is well-defined and Z$\leftrightarrow$N-symmetric is
 **open**.
 
 ### Empirical status (2026-05-11, post-instantiation probe)
@@ -113,8 +113,8 @@ extracts per-atom $\Delta_{\mathrm{cat}}(\mathfrak{H}) :=
 |:-:|:---:|---:|---:|---:|
 | D | $0.388286472\ldots$ | $0.198$ | $2.225$ | $+2.026$ |
 | T | $0.104052119\ldots$ | $0.106$ | $8.482$ | $+8.375$ |
-| ³He | $0.206540859\ldots$ | $0.211$ | $7.718$ | $+7.507$ |
-| ⁴He | $0.055348346\ldots$ | $0.085$ | $28.296$ | $+28.211$ |
+| ${}^{3}$He | $0.206540859\ldots$ | $0.211$ | $7.718$ | $+7.507$ |
+| ${}^{4}$He | $0.055348346\ldots$ | $0.085$ | $28.296$ | $+28.211$ |
 
 **Additivity REFUTED.** The `he4_eq_twice_he3_shell` Lean
 theorem predicts $\Delta_{\mathrm{cat}}(^4\mathrm{He}) = 2 \cdot
@@ -126,16 +126,16 @@ theorem predicts $\Delta_{\mathrm{cat}}(^4\mathrm{He}) = 2 \cdot
 - Deviation $1.76\sigma$ from prediction; the actual doubly-magic
   stabilization is $\sim 88\%$ MORE than additivity predicts.
 
-Since Z↔N symmetry was empirically supported by AME directly
-(³He vs ³H Coulomb-corrected substrate-binding difference
+Since Z$\leftrightarrow$N symmetry was empirically supported by AME directly
+(${}^{3}$He vs ${}^{3}$H Coulomb-corrected substrate-binding difference
 $\sim 0.03$ MeV, see audit), the refutation must fall on
-**`MagicShellAdditivity`**. The doubly-magic ⁴He has
+**`MagicShellAdditivity`**. The doubly-magic ${}^{4}$He has
 super-additive stabilization — proton-shell and neutron-shell
 closures couple beyond simple addition.
 
 ### Refined proof obligations
 
-1. **Z↔N symmetry HOLDS** (empirically AME-confirmed).  Lean
+1. **Z$\leftrightarrow$N symmetry HOLDS** (empirically AME-confirmed).  Lean
    class `MagicShellStabilization.z_n_symmetry` is the right
    axiom; the spin-involution corollary gives the algebraic basis.
 
@@ -152,17 +152,17 @@ closures couple beyond simple addition.
        + \Delta_n \cdot \mathbb{1}_{N \in \mathrm{magic}}
        + \Delta_{\mathrm{coupling}}(Z, N) \cdot \mathbb{1}_{Z, N \in \mathrm{magic}}
    $$
-   with $\Delta_p = \Delta_n$ (Z↔N) and the cross-shell
+   with $\Delta_p = \Delta_n$ (Z$\leftrightarrow$N) and the cross-shell
    $\Delta_{\mathrm{coupling}}(Z, N)$ accounting for doubly-magic
    super-additivity.
 
-4. **Extract** $\Delta_p$ as a measured residual from ³He, ⁴He,
+4. **Extract** $\Delta_p$ as a measured residual from ${}^{3}$He, ${}^{4}$He,
    and the cross-shell
    $\Delta_{\mathrm{coupling}}(2, 2) = \Delta_{\mathrm{cat}}(^4\mathrm{He})
    - 2 \Delta_{\mathrm{cat}}(^3\mathrm{He}) = 28.211 - 15.014 = +13.20$ MeV.
 
 5. **Extend to other magic shells.** Test predictions at $Z = 8$
-   (¹⁶O), $N = 8$ (¹⁵N + ¹⁷O), and onwards.  At $Z = 8$ the
+   (${}^{16}$O), $N = 8$ (${}^{15}$N + ${}^{17}$O), and onwards.  At $Z = 8$ the
    intra-O sub-braid spans the 16 intra-strand generators across
    the 8 protons.
 
@@ -178,7 +178,7 @@ closures couple beyond simple addition.
 - LP-dual active-set finding: $\sigma_{pp}, \sigma_{nn}$ are
   structurally privileged at exactly magic-shell atoms (PR #638
   family 5).
-- Markov-trace Z↔N symmetry:
+- Markov-trace Z$\leftrightarrow$N symmetry:
   $\mathrm{tr}_M(\sigma_{pp}) = \mathrm{tr}_M(\sigma_{nn}) =
   0.0622\ldots$ exactly (provable algebraically via the
   spin-involution corollary; 50-dps Hoefsmit evaluation in
@@ -189,12 +189,12 @@ closures couple beyond simple addition.
   $\{D, T, {}^3\mathrm{He}\}$, regardless of pair-knot collapse —
   consistent with a missing **subtracted** stabilization
   contribution rather than a missing additive contribution.
-  (At doubly-magic ⁴He under pair-knot collapse, the brane-tower
+  (At doubly-magic ${}^{4}$He under pair-knot collapse, the brane-tower
   UNDER-shoots by $19.4\%$ — consistent with an **added**
   stabilization, since both Z=2 and N=2 shells contribute.)
 
 The sign discrepancy in the empirical $\Delta_{\mathrm{shell}}$
-residual (negative for ³He, positive for ⁴He under product-volume;
+residual (negative for ${}^{3}$He, positive for ${}^{4}$He under product-volume;
 sign undetermined under Markov-trace) is the central empirical
 puzzle this conjecture seeks to resolve.
 

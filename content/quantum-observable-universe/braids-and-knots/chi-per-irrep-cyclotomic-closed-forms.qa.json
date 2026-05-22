@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.lean"
   },
   "source_hashes": {
-    "md": "a94db2e88cb3",
+    "md": "e35e120eebb6",
     "ts": "7459b0ee9734",
     "lean": "b9b3e64ea560"
   },
@@ -408,20 +408,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "a94db2e88cb3",
+          "md": "e35e120eebb6",
           "ts": "7459b0ee9734",
           "lean": "b9b3e64ea560"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.md:63: acts as a 2×2 matrix on the SYT basis $\\{v_{T_1}, v_{T_2}\\}$: | quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.md:102: | `chi_V3_diff_polynomial_form` | $V_{(3)}$ factored ↔ polynomial form | | quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.md:103: | `chi_V21_diff_polynomial_form` | $V_{(2,1)}$ factored ↔ polynomial form | | quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.md:104: | `chi_V111_diff_polynomial_form` | $V_{(1,1,1)}$ factored ↔ polynomial form |"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -544,5 +544,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

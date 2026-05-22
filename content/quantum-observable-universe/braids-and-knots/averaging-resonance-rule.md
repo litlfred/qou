@@ -202,7 +202,7 @@ Computation:
 | 10  | 0        | 2        | 9        | 2  | averaging ✗ | pure-$\sigma$ |
 
 **Accuracy: 2/8 = 25%.** The argmax-binomial rule predicts
-averaging for k ∈ {4, 5, 6, 7, 8, 9, 10} but empirical evidence
+averaging for k $\in$ {4, 5, 6, 7, 8, 9, 10} but empirical evidence
 shows only k = 5 is averaging. **This naive rule is FALSIFIED.**
 
 ## Refinements to investigate
@@ -601,7 +601,7 @@ typed-$\mathbf{B}_n$ recipe with $n_{\mathrm{avg}} \ge 2$. Verified
 at $k \in \{3, \ldots, 10\}$ on the proton ladder; next test points
 are higher-$n_{\text{total}}$ probes.
 
-## Proofs (Lean ↔ paper bridge)
+## Proofs (Lean $\leftrightarrow$ paper bridge)
 
 Every Lean construction in [`averaging-resonance-rule.lean`](averaging-resonance-rule.lean) has a narrative proof here. The genuine conjectural piece is the general `HalfFillRungIsOutlier` class for $n_{\text{total}} \neq 11$; everything else is `sorry`-free.
 
@@ -623,8 +623,8 @@ $n_{\text{total}} = n_\sigma + n_{\sigma^{-1}} + n_{\mathrm{avg}}$.
 
 **Definition (Lean: `empiricalSector : ℕ → RungSector`).** The
 case-defined function mapping each $k \in \{3, ..., 10\}$ to its
-empirically-observed sector (only $k = 5$ → `averagingResonant`;
-all others → `pureSigma`; default `pureSigma` for $k \ge 11$).
+empirically-observed sector (only $k = 5$ $\to$ `averagingResonant`;
+all others $\to$ `pureSigma`; default `pureSigma` for $k \ge 11$).
 
 **Theorem (Lean: `empirical_sector_classification k hk`).** For $3 \le k \le 10$,
 $\mathtt{empiricalSector}\,k = (\text{if } k = 5 \text{ then averagingResonant else pureSigma})$.

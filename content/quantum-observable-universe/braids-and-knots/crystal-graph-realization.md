@@ -26,7 +26,7 @@ vertices are in bijection.*
 
 **Why a conjecture and not a theorem.**
 *The literature establishes the Brundan–Kleshchev isomorphism and
-the GS↔crystal bijection at the level of generic Hecke and KLR
+the GS$\leftrightarrow$crystal bijection at the level of generic Hecke and KLR
 algebras.  What remains conjectural in this manuscript is that the
 **specific** GS reduction order used here
 ([Hecke normal form](#def:hecke-normal-form), shortlex on the

@@ -25,7 +25,7 @@ formalises what the brane-tower contributes; closure of the nucleon-
 mass anchors requires the additional categorical content in
 $\rho_K$.
 
-**Class-A discipline status.** The 173× shortfall is captured by
+**Class-A discipline status.** The 173$\times$ shortfall is captured by
 $\rho_K$ in [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md), which
 admits a **graded substrate expansion**
 ([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) — the
@@ -226,8 +226,8 @@ conventional language.  The QOU mass identity does **not** depend on
 the conjecture — it depends only on the finite-categorical
 $\mathrm{tr}_M(T_w)$.
 
-In particular the geometric construction (Reeb-vortex density →
-Mostow → Gromov), available on the post-Archimedean side as
+In particular the geometric construction (Reeb-vortex density $\to$
+Mostow $\to$ Gromov), available on the post-Archimedean side as
 *another* way to write the same number, is **not part of the QOU
 derivation** and need not be derived internally.
 
@@ -329,7 +329,7 @@ implementations:
   reference, exact in $q$ via SymPy + cvxpy SDP feasibility for $H_3$.
 - **Rust production scaling** ([`tools/hecke-engine/src/{gb_nf_reducer,joint_tower_sdp_certificate,wedderburn_psd,cross_level_embedding,sdp_verifier}.rs`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/),
   binary [`joint-tower-sdp`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/bin/joint_tower_sdp.rs)) — bit-for-bit
-  match with Python on small cases; **3,400× speedup** (47.5 s → 14 ms
+  match with Python on small cases; **3,400$\times$ speedup** (47.5 s $\to$ 14 ms
   for the 7-atom registry); scales to $H_5+$ where Python defers.
   See [RUST_INTEGRATION.md](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/RUST_INTEGRATION.md)
   for the implementation plan.
@@ -355,7 +355,7 @@ implementations:
 For each historical entry the verifier emits
 $\alpha^*(\mathfrak{H}) := \max\{\alpha \in [0,1] :
 \alpha \cdot \rho_\lambda(T_w) + (1-\alpha) \cdot I \succeq 0
-\text{ for all } \lambda\}$.  $\alpha^* = 1$ ⇒ all blocks PSD;
+\text{ for all } \lambda\}$.  $\alpha^* = 1$ $\Rightarrow$ all blocks PSD;
 $\alpha^* < 1$ quantifies the gap.
 
 | atom | knot ID | $\alpha^*$ | gap $1-\alpha^*$ | diagnostic |
@@ -369,15 +369,15 @@ $\alpha^* < 1$ quantifies the gap.
 
 Steps 5–8 currently substitute $\mathrm{Vol}_{\mathrm{hyp}}(K)$ from
 SnapPy for $\mathrm{tr}_M(T_w)|_{q=q_0}$ on entries flagged
-\texttt{manual-historical-volume-match} (${}^2$H, ³H, ³He) — i.e.\ the
+\texttt{manual-historical-volume-match} (${}^2$H, ${}^{3}$H, ${}^{3}$He) — i.e.\ the
 post-Archimedean naming convention is used in place of the
 pre-Archimedean Markov-trace evaluation.  This is acceptable for
 existing established knot identifications because the volume
 conjecture commits both quantities to the same number, but the
-*principled* path (Step 1a → Step 5) does not depend on this
+*principled* path (Step 1a $\to$ Step 5) does not depend on this
 substitution.
 
-The quarantined provisional ⁶Li, ⁷Li entries
+The quarantined provisional ${}^{6}$Li, ${}^{7}$Li entries
 ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
 §"Provisional / deprecated methodology") run *backwards* from Step
 6 to a candidate knot, bypassing Step 1a entirely.  Such shortcuts
@@ -392,10 +392,10 @@ Markov-trace computation) and the production-scale Rust port
 
 1. **Joint mass-tower confinement SDP — solver mode (R5-full).**
    The current Rust binary verifies that *given* candidate $T_w$
-   inputs (electron $\sigma_1^3$, proton/neutron Borromean, ${}^2$H/³H/³He
+   inputs (electron $\sigma_1^3$, proton/neutron Borromean, ${}^2$H/${}^{3}$H/${}^{3}$He
    historical IDs) the certificate format is well-formed and quantifies
    the PSD-cone gap $\alpha^*$.  The remaining work is to invert this:
-   for ⁶Li ($H_{18}$), ⁷Li ($H_{21}$), and α-cluster atoms ($H_{24}$
+   for ${}^{6}$Li ($H_{18}$), ${}^{7}$Li ($H_{21}$), and α-cluster atoms ($H_{24}$
    to $H_{120}$) where canonical $T_w$ is *unknown*, formulate and
    solve the SDP
 
@@ -424,7 +424,7 @@ Markov-trace computation) and the production-scale Rust port
 
    The cemetery + dedup pass compresses the search space by **99 %**
    ($13088 \to 138$ canonical-basis classes at $L_{\max} = 8$).  The
-   historical canonical $T_w$ for ³He ($L_{6a4}$) is found to be
+   historical canonical $T_w$ for ${}^{3}$He ($L_{6a4}$) is found to be
    **fully PSD-feasible** at $q_0$ ($\alpha^* = 0$) and ranks in the
    top 17 % of the 138 canonical-basis classes by single-term cost;
    ${}^2$H ($6_2$) is **not** PSD-feasible on its own ($\alpha^* = 0.89$
@@ -435,7 +435,7 @@ Markov-trace computation) and the production-scale Rust port
    which prevents the historical $T_w$ from being the unique global
    winner; wiring the multi-term tower (T2--T6 of
    [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified))
-   into the cost is the next-session deliverable.  ³H ($8_{11}$ in
+   into the cost is the next-session deliverable.  ${}^{3}$H ($8_{11}$ in
    $B_5$) is also next-session work — needs Hoefsmit seminormal at
    $H_5$, consistent with the deferred-to-Rust posture in
    [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint_tower_sdp_solver_v2.py).
@@ -445,7 +445,7 @@ downstream consequence: once the SDP-solver returns canonical $T_w$
 per atom, $\nu_{\mathrm{SDP}}$ is read off as the multiplicity of $T_w$'s solution
 in the Wedderburn decomposition.  No separate derivation is needed.
 
-The geometric "leg" (Reeb density → Mostow → Gromov → Vol) and the
+The geometric "leg" (Reeb density $\to$ Mostow $\to$ Gromov $\to$ Vol) and the
 volume conjecture are *not* part of the QOU derivation.  They appear
 post-Archimedean as borrowed theorems that name the same number in
 conventional 3-manifold-theory language.

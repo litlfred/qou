@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.lean"
   },
   "source_hashes": {
-    "md": "48d4f0c1eb3d",
+    "md": "28ac3fa8e2f3",
     "ts": "5c3c745d188b",
     "lean": "683dfbda4401"
   },
@@ -448,20 +448,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "48d4f0c1eb3d",
+          "md": "28ac3fa8e2f3",
           "ts": "5c3c745d188b",
           "lean": "683dfbda4401"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.md:129: Verified at all 6 atomic transitions D→T, D→³He, T→⁴He, ³He→⁴He, ⁴He→⁵Li, ⁵Li→⁶Li. Per-new-proton = 18 and per-new-neutron = 21 hold **independent of the host nucleus**, giving the additive linearity "
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -686,5 +686,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

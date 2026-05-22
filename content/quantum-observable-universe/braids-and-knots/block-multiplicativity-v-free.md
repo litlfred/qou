@@ -25,14 +25,14 @@ count $3A$ or the flavor content of the other blocks.*
 ### Empirical verification
 
 Computed via [`per_generator_V_hat_3A`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/mass_at_3A_proper.py)
-on D, T, ³He at $H_6, H_9, H_9$ respectively (50 dps), as recorded in
+on D, T, ${}^{3}$He at $H_6, H_9, H_9$ respectively (50 dps), as recorded in
 [`binding-via-interface-knot.witness.json`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/binding-via-interface-knot.witness.json):
 
 | atom | proton block (gens 0, 1) | neutron block | matches D? |
 |---|---|---|:-:|
 | D (A=2) | $V_0 = 0.6714$, $V_1 = 1.0551$ | $V_0 = 0.5517$, $V_1 = 1.0884$ | — |
 | T (A=3) | same | same | ✓ |
-| ³He (A=3) | same | same | ✓ |
+| ${}^{3}$He (A=3) | same | same | ✓ |
 
 Block-multiplicativity holds **exactly** to 4 digits, the resolution
 of the recorded witness. The block factors evaluate to
@@ -133,7 +133,7 @@ sum entirely beyond the one-time $H_6$ calibration of
 $\{v_p, v_n, |\hat V^{pp}_{\text{inter}}|, |\hat V^{nn}_{\text{inter}}|\}$.
 
 [`binding_block_multiplicative.py`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/binding_block_multiplicative.py)
-applies this to 16 atoms (D → ⁵⁶Fe) in $< 1$ s total, all signs correct;
+applies this to 16 atoms (D $\to$ ${}^{56}$Fe) in $< 1$ s total, all signs correct;
 finer agreement awaits the $T_3$ pair-term closure (see
 [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower)
 §T_3 deferral).
@@ -152,9 +152,9 @@ consequences (the closed-form $B^{(1)}_{\text{dim}}$) are then
 fully verified by Lean modulo this single class-axiomatised
 conjectural input.
 
-Falsifiability: a single H_12 (⁴He) computation showing $V^{(12)}_g$ on
+Falsifiability: a single H_12 (${}^{4}$He) computation showing $V^{(12)}_g$ on
 a proton block differs from $V^{(6)}_g$ on the same proton block by
-more than $10^{-3}$ at $q_0$ refutes the conjecture. The ⁴He H_12
+more than $10^{-3}$ at $q_0$ refutes the conjecture. The ${}^{4}$He H_12
 character sum requires $> 12$ GB RAM on commodity hardware and
 ~5 minutes; deferred to PR #761 Rust geck_pfeiffer kernel cherry-pick
 or a larger-RAM host.

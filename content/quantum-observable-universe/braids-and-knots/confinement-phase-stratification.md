@@ -99,9 +99,9 @@ the open stratum.*
 
 *Claim (5) — Phase transitions.
 A boundary crossing at $q_0$ is by definition either a Slater-loss
-event (primal strict PSD feasibility breaks → deconfinement) or an
+event (primal strict PSD feasibility breaks $\to$ deconfinement) or an
 active-support transition (some $u_\lambda^*$ passes through zero
-→ regime switch with $\mu$-jump).  Both correspond to the
+$\to$ regime switch with $\mu$-jump).  Both correspond to the
 discrete-regime-switch phenomenology already logged in
 [prop:parity-regime-selection](#thm:parity-regime-selection) and
 the [deconfinement golden threshold](#rem:deconfinement-golden-threshold).

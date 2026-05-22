@@ -193,7 +193,7 @@ Candidate refinements:
    $q = q_0$ rather than $q = 1$. The character ring of $H_3(q)$
    differs from that of $S_3$ at $q \neq 1$; the appropriate
    weighting may use the q-deformed evaluation.
-3. **Higher partitions** (k ≥ 7) where additional $\lambda \vdash 3$
+3. **Higher partitions** (k $\ge$ 7) where additional $\lambda \vdash 3$
    cancellations or new $\lambda \vdash 6$ contributions enter via
    the Wenzl-bridge inductive ascent.
 

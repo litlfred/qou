@@ -43,18 +43,18 @@ must be evaluated at the atomic strand count $n_0 = 3 \cdot A$:
 
 | Particle | Knot | $n_0 = 3\cdot A$ | Conjectural dominant $\lambda^*$ | $\dim_q(\lambda^*)$ at $q_0$ | Obs.\ $\rho$ |
 |----------|------|------------------|----------------------------------|------------------------------|--------------|
-| Proton/neutron | trefoil $3_1$ | $3$ ($A=1$) | $(2,1)$ | $[2]_{q_0} \approx 2.01$ → $\rho = 1$ (hook special case) | $1$ |
+| Proton/neutron | trefoil $3_1$ | $3$ ($A=1$) | $(2,1)$ | $[2]_{q_0} \approx 2.01$ $\to$ $\rho = 1$ (hook special case) | $1$ |
 | Deuterium $^2$H | $6_2$ | $6$ ($A=2$) | $(3,2,1)$ | $\approx 1.0$ | $1$ |
-| Tritium $^3$H | $8_{11}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\approx 2.0$ → $\rho = 2$ | $2$ |
-| Helium-3 $^3$He | $L_{6a4}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\approx 2.0$ → $\rho = 2$ | $2$ |
+| Tritium $^3$H | $8_{11}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\approx 2.0$ $\to$ $\rho = 2$ | $2$ |
+| Helium-3 $^3$He | $L_{6a4}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\approx 2.0$ $\to$ $\rho = 2$ | $2$ |
 
 The earlier draft of this table (pre-deliverable-4) listed
-$n_0 = 6$ for ³H/³He, which conflicted with the joint-tower SDP
+$n_0 = 6$ for ${}^{3}$H/${}^{3}$He, which conflicted with the joint-tower SDP
 convention $n_0 = 3 \cdot A$ used in
 [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
 and in
 [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
-(`atomic_n_0 = 9` for ³H, ³He).  This table is now reconciled to
+(`atomic_n_0 = 9` for ${}^{3}$H, ${}^{3}$He).  This table is now reconciled to
 $n_0 = 3 \cdot A$.  The conjectural $\lambda^* \vdash 9$ entries
 remain to be verified once Hoefsmit at $H_9$ is implemented (deferred
 — see "Critical structural finding" below).
@@ -120,9 +120,9 @@ $\lambda^*$ is computed from the *braid strand count* alone:
 | proton  | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
 | neutron | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
 | ${}^2$H ($6_2$) | $\sigma_1 \sigma_2^{-1} \sigma_1^3 \sigma_2^{-1}$ | $(3)$ | $1.000$ | $\mathbf{1}$ |
-| ³He ($L_{6a4}$) | $(\sigma_1^{-1} \sigma_2)^3$ | $(2,1)$ | $2.011$ | $\mathbf{2}$ |
+| ${}^{3}$He ($L_{6a4}$) | $(\sigma_1^{-1} \sigma_2)^3$ | $(2,1)$ | $2.011$ | $\mathbf{2}$ |
 
-Proton, neutron, and ³He have **identical** $\chi_\lambda$ values across all
+Proton, neutron, and ${}^{3}$He have **identical** $\chi_\lambda$ values across all
 three blocks — their braid words are mutual inverses (or trivially equal),
 hence Markov-equivalent in $H_3(q_0)$.  No rule of the form
 "$\rho = f(\chi_\lambda, y_\lambda)$ at the braid strand count" can
@@ -144,7 +144,7 @@ $$
 
 The binding operator $K(\mathfrak{H})$ links the $A$ nucleon-trefoils
 together (Hopf link $L_H$ for ${}^2$H, an $8_{11}$-class link for ${}^3$H,
-$L_{6a4}$ for ³He).  The dominant $\lambda^* \vdash 3 \cdot A$ of
+$L_{6a4}$ for ${}^{3}$He).  The dominant $\lambda^* \vdash 3 \cdot A$ of
 $K$ — *not* of the whole-particle braid image at $H_3$ — is what
 carries the $\rho$ information.
 

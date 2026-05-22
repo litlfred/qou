@@ -7,7 +7,7 @@ The existing `Path A` verifier
 computes per-irrep $\chi^\lambda(\mathcal{B}_K)(q)$ symbolically via
 Hoefsmit seminormal matrices, then extracts the $u$-pole order
 after substituting $q = u^2$.  At $H_n$ for $n \geq 9$ this
-becomes prohibitive: 26 partitions at $H_9$ × ~30s of sympy
+becomes prohibitive: 26 partitions at $H_9$ $\times$ ~30s of sympy
 arithmetic per partition; 77 partitions at $H_{12}$ projecting
 to ${\sim} 1$ hour total.  At $H_{15}$ ($n_{\mathrm{partitions}}
 = 176$) and $H_{18}$ (${=}\,297$) the symbolic path is
@@ -31,7 +31,7 @@ yielding the lookup table:
 | $\bowtie_K$ (`d = -h/2`)   | $-2$ | $-2$ (leading $u^{-2}$ from $\pm \tfrac{1}{2}(u^2 + u^{-2})$) |
 
 Per-SYT $\mathrm{ord}_{u=0}$ is the *sum* of these per-letter
-contributions over the entire 47-letter ($A=4$ ⁴He) canonical
+contributions over the entire 47-letter ($A=4$ ${}^{4}$He) canonical
 $\bowtie_K$-coupled atomic word; per-$\lambda$ $\mathrm{ord}_{u=0}$
 is the *minimum* over $T \in \mathrm{SYT}(\lambda)$ provided
 the leading-coefficient sum is non-cancelling.
@@ -151,7 +151,7 @@ inputs and is left as an open follow-up.
 
 ## Status
 
-(B) ⁴He Path A consistency check **CLOSED**:
+(B) ${}^{4}$He Path A consistency check **CLOSED**:
 $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})) = 79$
 verified via crystal-bases Path A in $13.7$ s, matching the
 closed-form prediction $18 \cdot 2 + 21 \cdot 2 + 1 = 79$.
@@ -159,7 +159,7 @@ closed-form prediction $18 \cdot 2 + 21 \cdot 2 + 1 = 79$.
 The naive symbolic attempt with
 [`hecke_laurent_fast.tr_M_atomic_fast(2, 2)`](../../../folio-assistant/computations/hecke_laurent_fast.py)
 did not return in $600$ s; the crystal-bases route at $H_{12}$
-with the $y_\lambda$ pole-order cache pre-built is **40000×
+with the $y_\lambda$ pole-order cache pre-built is **40000$\times$
 faster end-to-end** than even the projected symbolic completion.
 
 Phase 3 (Schensted-incremental + Bratteli-recursive amortisation)

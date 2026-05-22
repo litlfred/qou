@@ -60,7 +60,7 @@ $\Phi_8(q) = q^4+1$.
 ## Where the V_(2,1) closed form comes from
 
 V_(2,1) is the **2-dimensional Hoefsmit irrep**. Each typed crossing
-acts as a 2×2 matrix on the SYT basis $\{v_{T_1}, v_{T_2}\}$:
+acts as a 2$\times$2 matrix on the SYT basis $\{v_{T_1}, v_{T_2}\}$:
 
 - $\sigma_0 \mapsto \mathrm{diag}(q, -q^{-1})$ (diagonal, eigenvalues $q$ and $-q^{-1}$)
 - $\sigma_1 \mapsto \begin{pmatrix} d_1 & b \\ b & d_2 \end{pmatrix}$ with $d_1 = q^3/(q^2 + 1), d_2 = -q^{-1}/(q^2 + 1), b = \sqrt{d_1 d_2 + 1}$
@@ -99,9 +99,9 @@ All proved by `field_simp + ring` after unfolding (sorry-free):
 
 | theorem | content |
 |---|---|
-| `chi_V3_diff_polynomial_form` | $V_{(3)}$ factored ↔ polynomial form |
-| `chi_V21_diff_polynomial_form` | $V_{(2,1)}$ factored ↔ polynomial form |
-| `chi_V111_diff_polynomial_form` | $V_{(1,1,1)}$ factored ↔ polynomial form |
+| `chi_V3_diff_polynomial_form` | $V_{(3)}$ factored $\leftrightarrow$ polynomial form |
+| `chi_V21_diff_polynomial_form` | $V_{(2,1)}$ factored $\leftrightarrow$ polynomial form |
+| `chi_V111_diff_polynomial_form` | $V_{(1,1,1)}$ factored $\leftrightarrow$ polynomial form |
 | `chi_V111_eq_V3_div_q4` | conjugate-partition symmetry: $V_{(1,1,1)} = V_{(3)} / q^4$ |
 | `chi_V3_diff_at_one`, `chi_V21_diff_at_one`, `chi_V111_diff_at_one` | all vanish at $q = 1$ (isospin invariance) |
 | `chi_V3_diff_via_cyclotomic`, `chi_V21_diff_via_cyclotomic`, `chi_V111_diff_via_cyclotomic` | re-expression via $\Phi_d(q)$ cyclotomic factors |

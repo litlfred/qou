@@ -55,7 +55,7 @@ pattern (per Copilot review #r3213373225, made consistent with the
 > atomic braids D ($H_6$), T ($H_9$), $^3$He ($H_9$) at $q_0$ — see
 > `chirality-avg-content-atomic.witness.json` and the "Generalisation"
 > subsection below — finds the exact ratio diverges by $\sim 10^4$
-> (T) and $\sim 10^4$ (³He) from the empirical $(1+h)(1-h) \approx
+> (T) and $\sim 10^4$ (${}^{3}$He) from the empirical $(1+h)(1-h) \approx
 > 0.956$ pattern, and the first-order linearisation does not match
 > either.  The conjecture **Statement** above is therefore **scoped
 > as historical/aspirational** for the audited atomic braids until

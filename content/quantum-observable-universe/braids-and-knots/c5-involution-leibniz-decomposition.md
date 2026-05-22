@@ -229,7 +229,7 @@ the framework. This proposition sets up the categorical grammar;
 its full proof is gated on the order-by-order Hecke expansion
 machinery (open R&D).
 
-## Proofs (Lean ↔ paper bridge)
+## Proofs (Lean $\leftrightarrow$ paper bridge)
 
 Every substantive Lean theorem in [`c5-involution-leibniz-decomposition.lean`](c5-involution-leibniz-decomposition.lean) has both a narrative proof here and a `sorry`-free Lean proof.
 
@@ -316,6 +316,6 @@ $[2]_q^2 = h^2 + 4$ where $h = q - q^{-1}$.
 
 Categorical reading: $c_5$ factors as
 $$h \xrightarrow{\text{squaring}} h^2 \xrightarrow{\text{rational fn}} c_5$$
-where the first arrow is the canonical anti-sym → sym projection (`IsBarSymmetric.of_mul_antisym`) and the second is a bar-symmetric-preserving function. This makes the bar-symmetric structure of $c_5$ explicit at the level of function composition.
+where the first arrow is the canonical anti-sym $\to$ sym projection (`IsBarSymmetric.of_mul_antisym`) and the second is a bar-symmetric-preserving function. This makes the bar-symmetric structure of $c_5$ explicit at the level of function composition.
 
 All 24 substantive Lean theorems / definitions in the sibling have narrative proofs above. The Lean file is `sorry`-free.

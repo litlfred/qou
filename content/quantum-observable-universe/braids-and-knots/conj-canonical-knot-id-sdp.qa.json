@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean"
   },
   "source_hashes": {
-    "md": "6ed4e2709f3c",
+    "md": "899ab05b7586",
     "ts": "69298294c430",
     "lean": "f33ae965ec21"
   },
@@ -408,20 +408,39 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "6ed4e2709f3c",
+          "md": "bcf7934d9059",
           "ts": "69298294c430",
           "lean": "f33ae965ec21"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.md:37: (Earlier drafts of this table listed $n_0 = 6$ for ³H/³He.  Reconciled | quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.md:42: — `atomic_n_0 = 9` for ³H/³He.  See \"Structural decomposition\" below | quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.md:134: ⇒ uniqueness in SDP).  Closing the `sorry` requires either | quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.md:165: and ³He have Markov-equivalent braid words in $H_3(q_0)$ (mutual | quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.md:204: | ³H | 3 | 9 | 8₁₁-class link | $\\{p, n, n\\}$ | 2 |"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.md:204: | ${}^{3}$H | 3 | 9 | 8₁₁-class link | $\\{p, n, n\\}$ | 2 |"
+      },
+      {
+        "field_hash": {
+          "md": "899ab05b7586",
+          "ts": "69298294c430",
+          "lean": "f33ae965ec21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T19:01:28.990Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -561,5 +580,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T19:01:28.990Z"
 }

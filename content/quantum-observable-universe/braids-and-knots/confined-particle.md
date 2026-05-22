@@ -15,7 +15,7 @@ $$
    this definition.);*
 
 2. *$\ell \in \mathbb{Z}_{\ge 0}$ is the **confinement level**
-   (quark = 0, nucleon = 1, atom = 2, molecule/compound = 3, …);*
+   (quark = 0, nucleon = 1, atom = 2, molecule/compound = 3, $\ldots$);*
 
 3. *$[K]_M$ is the **Markov-equivalence class** of a closed braid
    $K$ — i.e. the class of $K$ under braid-group conjugation and
@@ -57,7 +57,7 @@ $\mathrm{GS}(P_1) = \mathrm{GS}(P_2)$.*
   $\Phi^* = \mathbf{1} \succeq 0$.*
 - *`photon`: $\ell = 0$, $n_0 = 4$,
   $[K]_M = [\mathbf{1}_{B_4}]$ — four-strand identity in $B_4$
-  (no crossings; four polarisation × chirality components on the
+  (no crossings; four polarisation $\times$ chirality components on the
   exceptional divisor $\mathcal{S}_p$).  Confined at $q_0$ via
   the Reeb-bundle holonomy
   ([breit-wheeler-vertex](#rem:breit-wheeler-vertex));

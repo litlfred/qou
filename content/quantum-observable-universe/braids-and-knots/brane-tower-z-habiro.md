@@ -410,7 +410,7 @@ per-eigenvalue operator-valued tower (using the spectra persisted in
 
 ### Result — refuted, but with structural finding worth recording
 
-| Rule × form | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
+| Rule $\times$ form | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
 |:---|---:|---:|---:|---:|
 | R1 mult-shifted, op | $-6.87\%$ | $+37{,}784\%$ | $-55.97\%$ | $37{,}784\%$ |
 | **R2 mult-truncated, op** | $\mathbf{-6.87\%}$ ✓ | $\mathbf{-8.00\%}$ ✓ | $-55.97\%$ | $56.0\%$ |
@@ -457,7 +457,7 @@ best-rule max error ($56.0\%$ on R2-op).
 
 ## Pair-knot magic-shell probe (2026-05-11): partial closure with LP dual confirmation
 
-The (D, T) per-atom sweet spots and ³He holdout under the
+The (D, T) per-atom sweet spots and ${}^{3}$He holdout under the
 operator-valued form (§"Operator-valued probe") plus the refuted
 multiplicity / Type-B-fold candidates above point at a deeper
 structural reformulation: **for magic-shell nuclei the brane-tower's
@@ -468,7 +468,7 @@ $\Phi_q(|\hat V_i|)$ contributions.
 
 The per-generator magnitudes make the structure visible:
 
-| pos | type | D | T | ³He | ⁴He |
+| pos | type | D | T | ${}^{3}$He | ${}^{4}$He |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | 0 | intra-p | $0.989$ | $0.989$ | $0.989$ | $0.989$ |
 | 1 | intra-p | $0.971$ | $0.971$ | $0.971$ | $0.971$ |
@@ -476,10 +476,10 @@ The per-generator magnitudes make the structure visible:
 | 3 | intra | n $0.854$ | n $0.854$ | **p $0.989$** ⟵ | **p $0.989$** ⟵ |
 | 4 | intra | n $0.976$ | n $0.976$ | **p $0.971$** ⟵ | **p $0.971$** ⟵ |
 | 5 | inter | — | n-n $0.160$ | p-n $0.264$ | p-n $0.264$ |
-| 6+ | intra-n | — | n $0.854, 0.976$ | n $0.854, 0.976$ | n × 5 |
+| 6+ | intra-n | — | n $0.854, 0.976$ | n $0.854, 0.976$ | n $\times$ 5 |
 
-³He has Z=2 magic → **duplicated intra-p block** at positions
-{0,1} and {3,4}; ⁴He is doubly magic (Z=N=2) → both intra-p and
+${}^{3}$He has Z=2 magic $\to$ **duplicated intra-p block** at positions
+{0,1} and {3,4}; ${}^{4}$He is doubly magic (Z=N=2) $\to$ both intra-p and
 intra-n blocks duplicated.
 
 ### Pair-knot composite operator + LP-dual confirmation
@@ -510,8 +510,8 @@ CLAUDE.md "LP / SDP duals — first-class infra":
 |:-:|:-:|:-:|:-:|
 | D | none | $\{\sigma_0, \sigma_1, \sigma_3, \sigma_4\}$ | $\sigma_{pp}, \sigma_{nn}$ absent (no shell) |
 | T | $N{=}2$ | $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_6, \sigma_7, \sigma_{nn}\}$ | **$\sigma_{nn}$ active** |
-| ³He | $Z{=}2$ | $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_6, \sigma_7, \sigma_{pp}\}$ | **$\sigma_{pp}$ active** |
-| ⁴He | $Z{=}2$ + $N{=}2$ | $\{\sigma_0, \ldots, \sigma_{10}, \sigma_{pp}, \sigma_{nn}\}$ | **both active** |
+| ${}^{3}$He | $Z{=}2$ | $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_6, \sigma_7, \sigma_{pp}\}$ | **$\sigma_{pp}$ active** |
+| ${}^{4}$He | $Z{=}2$ + $N{=}2$ | $\{\sigma_0, \ldots, \sigma_{10}, \sigma_{pp}, \sigma_{nn}\}$ | **both active** |
 
 The LP dual confirms the pair-knot composites $\sigma_{pp}, \sigma_{nn}$
 are **structurally distinguishable from per-generator operators at
@@ -525,10 +525,10 @@ $Z=2$ / $N=2$ shell closure showing up in the substrate algebra.
 |:-:|---:|---:|---:|---:|---:|
 | D | $17.71$ | $17.71$ | $2.225$ | $+696\%$ | $+696\%$ |
 | T | $201.83$ | $98.13$ | $8.482$ | $+2280\%$ | $+1057\%$ |
-| ³He | $53.64$ | $24.60$ | $7.718$ | $+595\%$ | $+219\%$ |
-| **⁴He** | $100.88$ | $\mathbf{22.80}$ | $\mathbf{28.296}$ | $+257\%$ | $\mathbf{-19.4\%}$ |
+| ${}^{3}$He | $53.64$ | $24.60$ | $7.718$ | $+595\%$ | $+219\%$ |
+| **${}^{4}$He** | $100.88$ | $\mathbf{22.80}$ | $\mathbf{28.296}$ | $+257\%$ | $\mathbf{-19.4\%}$ |
 
-⁴He at $-19.4\%$ is the closest any probed form has come to a uniform
+${}^{4}$He at $-19.4\%$ is the closest any probed form has come to a uniform
 closure (any atom, any rule). But pair-knot collapse alone does not
 close the AME light-isotope sample uniformly.
 
@@ -544,7 +544,7 @@ The $Z{=}2$ / $N{=}2$ symmetry fails: the two extracted
 corrections have **opposite signs** and differ in magnitude by a
 factor of $1.326\times$. A doubly-magic-symmetry assumption
 $\Delta_{\text{shell}}(N{=}2) = \Delta_{\text{shell}}(Z{=}2)$
-gives the wrong sign on ⁴He (predicted $-11$ MeV vs AME $+28.3$
+gives the wrong sign on ${}^{4}$He (predicted $-11$ MeV vs AME $+28.3$
 MeV, $-139\%$ error).
 
 ### Status update
@@ -556,7 +556,7 @@ diagnosis but does not close the conjecture**:
   shells** (LP-dual confirmed via strong duality with non-trivial
   shadow prices on $\sigma_{pp}, \sigma_{nn}$ at magic atoms).
 - **Pair-knot collapse alone does not close the gap uniformly**;
-  ³He still at $+219\%$, ⁴He at $-19.4\%$.
+  ${}^{3}$He still at $+219\%$, ${}^{4}$He at $-19.4\%$.
 - **Magic-shell correction does not respect $Z{=}2$ / $N{=}2$
   symmetry** under the simple product-volume convention.
 
@@ -587,7 +587,7 @@ first-class infra".
 The refined probe
 [`probe_phiq_pair_knot_markov_trace.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_pair_knot_markov_trace.py)
 ([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json))
-implements all three.  Scope: $D, T, {}^3\mathrm{He}$ (⁴He n=12
+implements all three.  Scope: $D, T, {}^3\mathrm{He}$ (${}^{4}$He n=12
 seminormal compute ~10 min, deferred).
 
 ### Result — refined pair-knot Markov-trace form also refuted
@@ -596,7 +596,7 @@ seminormal compute ~10 min, deferred).
 |:-:|:-:|---:|---:|---:|---:|---:|
 | D | 1 | n/a (no shell) | $31.07$ | $17.71$ | $2.225$ | $+696\%$ |
 | T | 2 | $\mathrm{tr}_M(\sigma_{nn}) = 0.0622$ | $88.36$ | $93.01$ | $8.482$ | $+997\%$ |
-| ³He | 1 | $\mathrm{tr}_M(\sigma_{pp}) = 0.0622$ | $16.46$ | $19.64$ | $7.718$ | $+154\%$ |
+| ${}^{3}$He | 1 | $\mathrm{tr}_M(\sigma_{pp}) = 0.0622$ | $16.46$ | $19.64$ | $7.718$ | $+154\%$ |
 
 LP+SDP both confirm strong duality (LP gap $< 10^{-15}$, SDP gap
 $< 10^{-6}$ via cvxpy/SCS) at the full Frobenius Gram.  Refined
@@ -624,7 +624,7 @@ holds exactly.
 The brane-tower formula's $\Phi_q$-truncated tower at **any**
 operator-volume convention probed (product, geometric mean, OR
 canonical Markov trace) overshoots at the AME light-isotope scale.
-The ³He gap is **not** an operator-volume choice issue — it is a
+The ${}^{3}$He gap is **not** an operator-volume choice issue — it is a
 structural deficit of the brane-tower formula itself at the
 $A{=}3$ / $n_0{=}9$ regime.
 
@@ -632,7 +632,7 @@ This closes the level-selection question for `conj:brane-tower-z-habiro`:
 no `n_⋆` choice and no operator-volume refinement we have probed
 recovers the AME light-isotope binding uniformly.  The surviving
 open paths are recorded in §"What survives the closure" above (the
-algebraic Cauchy-limit half, and the ³He structural-gap branch).
+algebraic Cauchy-limit half, and the ${}^{3}$He structural-gap branch).
 
 The Lean form
 [`witness_refutes_pair_knot_markov_trace_form`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)

@@ -48,9 +48,9 @@ Combined with [`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive),
 two previously-axiomatic class hypotheses have been replaced by purely
 algebraic/arithmetic theorems:
 
-1. `MarkovDisjointStabilisation` → discharged by `MarkovTraceAxioms` (M1 + M3
+1. `MarkovDisjointStabilisation` $\to$ discharged by `MarkovTraceAxioms` (M1 + M3
    primitive axioms; iterated stabilisation theorem).
-2. `ThreeFoldMarkovHopfExtraction` (leading order) → discharged by
+2. `ThreeFoldMarkovHopfExtraction` (leading order) $\to$ discharged by
    `F3_eps6_leading_eq_neg_2b_cubed` (exact $-2 \cdot b(1)^3$ identity).
 
 The substantive open content of `ThreeFoldMarkovHopfExtraction` reduces to

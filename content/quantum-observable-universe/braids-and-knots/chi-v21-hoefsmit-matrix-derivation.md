@@ -1,10 +1,10 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-**V_(2,1) Hoefsmit 2×2 matrix derivation — partial closure (item 1 of PR #672).**
+**V_(2,1) Hoefsmit 2$\times$2 matrix derivation — partial closure (item 1 of PR #672).**
 
 V_(2,1) is the **2-dimensional Hoefsmit irrep** of $H_3(q)$. Unlike
 V_(3) and V_(1,1,1) (1-d, scalar arithmetic), V_(2,1) requires the
-full 2×2 matrix representation:
+full 2$\times$2 matrix representation:
 
 $$
   \sigma_0 \mapsto \begin{pmatrix} q & 0 \\ 0 & -q^{-1} \end{pmatrix},
@@ -29,7 +29,7 @@ $$
 |---|---|---|
 | `hoefsmit_v21_sigma0_trace` | $q + (-q^{-1}) = q - q^{-1}$ | `ring` |
 | `hoefsmit_v21_sigma1_trace` | $d_1 + d_2 = q - q^{-1}$ | `field_simp + ring` |
-| `chi_V21_difference_factored_eq_polynomial` | factored ↔ polynomial form | `field_simp + ring` |
+| `chi_V21_difference_factored_eq_polynomial` | factored $\leftrightarrow$ polynomial form | `field_simp + ring` |
 | `chi_V21_laurent_decomposition` | explicit Laurent: $-q^3/4 + q/4 - q^{-1}/4 + q^{-3}/4$ | `field_simp + ring` |
 | `chi_V21_difference_at_{one,two}` | numerical cross-checks at $q = 1, 2$ | `norm_num` |
 
@@ -55,7 +55,7 @@ for the V_(2,1) coefficients (proved earlier in the conversation).
 ## What's deferred to follow-up PR
 
 The **full Lean matrix-product trace derivation** (computing
-$\mathrm{tr}\bigl(\prod_{c \in \beta} M_c\bigr)$ from the 2×2
+$\mathrm{tr}\bigl(\prod_{c \in \beta} M_c\bigr)$ from the 2$\times$2
 matrices) requires:
 
 1. Importing the Hoefsmit $\sigma_0, \sigma_1$ definitions from
@@ -75,7 +75,7 @@ Lean-level proof tying the matrix-product to the rational form.
 
 ## Full matrix-product trace theorem (statement)
 
-Now formalised explicitly with the Hoefsmit 2×2 matrices:
+Now formalised explicitly with the Hoefsmit 2$\times$2 matrices:
 
 ```lean
 noncomputable def sigma0_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
@@ -104,14 +104,14 @@ level**. The proof is the only remaining `sorry` in this
 chapter-block content — discharged by the substantive sympy
 verification recorded in `per-wedderburn-block-ck.witness.json`.
 
-A full Lean proof would unfold the 11-matrix product on `(Fin 2)
-× (Fin 2) → ℝ` matrices with `Real.sqrt` entries; tractable but
-length-substantial.
+A full Lean proof would unfold the 11-matrix product on
+`(Fin 2) × (Fin 2) → ℝ` matrices with `Real.sqrt` entries; tractable
+but length-substantial.
 
 ## Status
 
 **Closed at the rational-identity level** (5 theorems sorry-free):
-factored ↔ polynomial, Laurent decomposition, numerical checks
+factored $\leftrightarrow$ polynomial, Laurent decomposition, numerical checks
 at q=1, q=2.
 
 **Matrix-product trace identity STATED** with explicit matrices

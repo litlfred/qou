@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.lean"
   },
   "source_hashes": {
-    "md": "10dde20a64a6",
+    "md": "84da68b0e372",
     "ts": "6e2f112f13fc",
     "lean": "ef67e7efbce8"
   },
@@ -408,20 +408,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "10dde20a64a6",
+          "md": "84da68b0e372",
           "ts": "6e2f112f13fc",
           "lean": "ef67e7efbce8"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md:228: is unconditional algebra (geometric ↔ exponential form), and the | quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md:250: → [`c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/c-k-beta-decay-bound.witness.json). | quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md:251: Both assertions (50-dps geometric ↔ exponential agreement + $N=0$"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -563,5 +563,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

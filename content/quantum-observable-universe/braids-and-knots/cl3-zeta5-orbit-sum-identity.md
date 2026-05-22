@@ -12,7 +12,7 @@ depth-3 element of the regulator image.*
 
 ### Closed-form identities
 
-**Sum identity (depth-3 ↔ ζ(3)):**
+**Sum identity (depth-3 $\leftrightarrow$ ζ(3)):**
 
 $$
   \boxed{\;
@@ -99,7 +99,7 @@ following decomposition:
 
 | Generator | Closed form / status | Dimension |
 |---|---|---|
-| **(a)** $\zeta(3)$-line (= sum of real parts × $-25/12$) | **theorem**: external; classical Apéry constant | 1 |
+| **(a)** $\zeta(3)$-line (= sum of real parts $\times$ $-25/12$) | **theorem**: external; classical Apéry constant | 1 |
 | **(b)** Antisymmetric: $\mathrm{Cl}_3(2\pi/5) - \mathrm{Cl}_3(4\pi/5)$ | **open**: no closed form modulo $\zeta(3)$ + Tate | 1 |
 | **Total** | | **2** (matches Borel rank) |
 
@@ -128,7 +128,7 @@ similar weight-3 functional equations.
 
 **The depth-3 unproved surface for B1 over $\mathbb{Q}(\zeta_5)$
 shrinks from "2 candidate generators, 4 unknowns" to "1 specific
-real number" (≈ 0.955).**
+real number" ($\approx$ 0.955).**
 
 ### Cross-references
 

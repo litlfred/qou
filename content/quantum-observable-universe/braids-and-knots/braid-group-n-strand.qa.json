@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.lean"
   },
   "source_hashes": {
-    "md": "449b0f42137e",
+    "md": "b7a747eb690a",
     "ts": "a66698e1fd35",
     "lean": "ffd12ef6653a"
   },
@@ -410,20 +410,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "449b0f42137e",
+          "md": "b7a747eb690a",
           "ts": "a66698e1fd35",
           "lean": "ffd12ef6653a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/braid-group-n-strand.md:51: | `closureN @ n=2` ↔ `closure2 ∘ writhe` | n=2 specialisation | `closureN_eq_closure2` | `rfl` | | quantum-observable-universe/braids-and-knots/braid-group-n-strand.md:52: | `BraidWord 3` → `TypedBraidWord3` | n=3 conversion | `BraidWord.toBraid3` (`def`) | mapped via `BraidCrossing.toTypedB3` (`sigma`/`sigma_inv` subset) |"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -548,5 +548,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

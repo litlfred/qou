@@ -126,7 +126,7 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 | +proton | +7 | +3 | +2 | +12 | +9.0 | +3.0 | **+18** |
 | +neutron | +5 | +5 | +2 | +12 | +10.5 | +1.5 | **+21** |
 
-   Verified at all 6 atomic transitions D→T, D→³He, T→⁴He, ³He→⁴He, ⁴He→⁵Li, ⁵Li→⁶Li. Per-new-proton = 18 and per-new-neutron = 21 hold **independent of the host nucleus**, giving the additive linearity in (Z, N) that the empirical formula encodes.
+   Verified at all 6 atomic transitions D$\to$T, D$\to$${}^{3}$He, T$\to$${}^{4}$He, ${}^{3}$He$\to$${}^{4}$He, ${}^{4}$He$\to$${}^{5}$Li, ${}^{5}$Li$\to$${}^{6}$Li. Per-new-proton = 18 and per-new-neutron = 21 hold **independent of the host nucleus**, giving the additive linearity in (Z, N) that the empirical formula encodes.
 
 ## Combined status of the W-3 D(u) closed form
 

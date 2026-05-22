@@ -1,6 +1,6 @@
 <!-- Conjecture (witness only — no Lean proof). -->
 
-**Conjecture (Confinement → NF-structure forcing).**
+**Conjecture (Confinement $\to$ NF-structure forcing).**
 *Let $\beta = \beta_1 \star I \star \beta_2 \in B_n$ be a compound
 braid where $I$ is a basis interface braid (e.g. a torus-knot
 generator). Let $A := \{\lambda \vdash n : y_\lambda^* > 0\}$ be the
@@ -31,7 +31,7 @@ LP is solved via [`solve_operator_selection_lp`](../../folio-assistant/computati
 the active set $A$ is read off the dual vector $y_\lambda^*$, and
 the seminormal pole order of $T_\beta$ is computed independently.
 
-| compound                  | $n$ | $\ell(\beta)$ | $\mathrm{pole}(\beta)$ | $\lambda^\star$ | $\alpha_{\mathrm{shift}}(I)$ | $\Delta$ | $\lvert A \rvert / n!$ | conf.  | max ∈ A | gap   |
+| compound                  | $n$ | $\ell(\beta)$ | $\mathrm{pole}(\beta)$ | $\lambda^\star$ | $\alpha_{\mathrm{shift}}(I)$ | $\Delta$ | $\lvert A \rvert / n!$ | conf.  | max $\in$ A | gap   |
 |---------------------------|----:|--------------:|-----------------------:|-----------------|-----------------------------:|---------:|-----------------------:|:------:|:-------:|------:|
 | `n3_id_cyc1_id`           | 3   | 2             | 2                      | (1,1,1)         | 2                            | 0        | 2/6                    | ✓      | ✓       | 0     |
 | `n3_s1_cyc1_s1`           | 3   | 4             | 4                      | (1,1,1)         | 2                            | 2        | 2/6                    | ✓      | ✓       | 0     |

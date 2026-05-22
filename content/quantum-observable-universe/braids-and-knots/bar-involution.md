@@ -16,7 +16,7 @@ reflection of the braid diagram).*
 
 The bar-involution is an involution: $\overline{\overline x} = x$.
 Every Hecke-algebra element $x \in H_n(q)$ over a field of
-characteristic ≠ 2 decomposes uniquely as
+characteristic $\ne$ 2 decomposes uniquely as
 
 $$x \;=\; P_{\mathrm{avg}}(x) + P_{\mathrm{skew}}(x),$$
 
@@ -184,10 +184,10 @@ the natural sign rules:
 | Combination | Result | Lean theorem |
 |---|---|---|
 | sym + sym | sym | `IsBarSymmetric.add` |
-| sym × sym | sym | `IsBarSymmetric.mul` |
+| sym $\times$ sym | sym | `IsBarSymmetric.mul` |
 | anti + anti | anti | `IsBarAntiSymmetric.add` |
-| **anti × anti** | **sym** | `IsBarSymmetric.of_mul_antisym` |
-| sym × anti | anti | `IsBarAntiSymmetric.of_sym_mul` |
+| **anti $\times$ anti** | **sym** | `IsBarSymmetric.of_mul_antisym` |
+| sym $\times$ anti | anti | `IsBarAntiSymmetric.of_sym_mul` |
 | $-$sym | sym | `IsBarSymmetric.neg` |
 | $-$anti | anti | `IsBarAntiSymmetric.neg` |
 | $h^{2n}$ (h anti) | sym | `IsBarAntiSymmetric.pow_two_mul` |
@@ -237,7 +237,7 @@ The bar-involution corresponds at three different geometric levels:
 
 | Level | Bar action |
 |---|---|
-| **Knot diagram** | Mirror reflection (over- ↔ under-crossing swap) |
+| **Knot diagram** | Mirror reflection (over- $\leftrightarrow$ under-crossing swap) |
 | **Color tube** | Orientation reversal of winding around the chromaticity axis |
 | **Exceptional divisor (Bring blowup)** | Orientation reversal of ED components |
 | **Contact 3-manifold** | $\alpha \to -\alpha$, $R \to -R$ (Reeb flow reversal) |
@@ -285,7 +285,7 @@ blocks that consume it (with their primary bar-classification):
 | `IsBarSymmetric x` | Lean predicate $\overline x = x$ |
 | `IsBarAntiSymmetric x` | Lean predicate $\overline x = -x$ |
 
-## Proofs (Lean ↔ paper bridge)
+## Proofs (Lean $\leftrightarrow$ paper bridge)
 
 Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a narrative proof here and a `sorry`-free formal proof. Theorems split into three sections by structural prerequisite (`CommRing` / `Field`).
 
@@ -307,7 +307,7 @@ Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a na
 *Proof.* $\overline{x+y} = \overline x + \overline y = -x + (-y) = -(x+y)$. $\square$
 
 **Theorem (Lean: `IsBarSymmetric.of_mul_antisym`).** $x, y$ bar-anti-symmetric $\Rightarrow$ $x \cdot y$ bar-symmetric.
-*Proof.* $\overline{x \cdot y} = \overline x \cdot \overline y = (-x)(-y) = x \cdot y$. **This is the "anti × anti = sym" identity that generates the bar-symmetric content from bar-anti-symmetric kernels** (e.g., $h^2$ bar-sym from $h$ bar-anti-sym). $\square$
+*Proof.* $\overline{x \cdot y} = \overline x \cdot \overline y = (-x)(-y) = x \cdot y$. **This is the "anti $\times$ anti = sym" identity that generates the bar-symmetric content from bar-anti-symmetric kernels** (e.g., $h^2$ bar-sym from $h$ bar-anti-sym). $\square$
 
 **Theorem (Lean: `IsBarAntiSymmetric.of_sym_mul`).** $x$ bar-symmetric, $y$ bar-anti-symmetric $\Rightarrow$ $x \cdot y$ bar-anti-symmetric.
 *Proof.* $\overline{x \cdot y} = \overline x \cdot \overline y = x \cdot (-y) = -(x \cdot y)$. $\square$

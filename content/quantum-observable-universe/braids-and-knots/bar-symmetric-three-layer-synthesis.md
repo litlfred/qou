@@ -207,7 +207,7 @@ verified empirical matches, all in the bar-symmetric projection:
 
 | Layer | Empirical match | Source |
 |---|---|---|
-| Series (Li_2^q) | sign-correct binding energies on D, T, ³He; variance $1.82\times$ | `folio-assistant/computations/binding_depth_stratified_rust.py` |
+| Series (Li_2^q) | sign-correct binding energies on D, T, ${}^{3}$He; variance $1.82\times$ | `folio-assistant/computations/binding_depth_stratified_rust.py` |
 | Phase (cos at N=1) | $Q_\beta$ to sub-ppt | `prop:neutron-qvalue-symbolic` |
 | Gain (cosh at per-Z step) | rel. error $0.022\%$ on $\alpha_Z$ | cross-PR Phase 5b audit (`docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`) |
 
@@ -251,7 +251,7 @@ pure-$\sigma$ avatar.
 Three concrete refinement targets to move pieces from class fields
 into proved theorems:
 
-1. **Series-layer proof from category alone**. Li_2^q ↔ Φ_q ↔
+1. **Series-layer proof from category alone**. Li_2^q $\leftrightarrow$ Φ_q $\leftrightarrow$
    Φ_{q^{-1}} identity is proved algebraically in
    [`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
    over $\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. Lifting that
@@ -294,7 +294,7 @@ $e^h \to \cosh$ all instantiate.
 
 **Concrete `BarHeckeFunctor` instances proved**:
 - `constZero`: $F(h) = 0$ (trivial functor)
-- `square`: $F(h) = h^2$ (anti × anti → sym; canonical kernel-squaring)
+- `square`: $F(h) = h^2$ (anti $\times$ anti $\to$ sym; canonical kernel-squaring)
 - `constSym c`: $F(h) = c$ for bar-symmetric constant $c$
 - `evenPoly2 c_0 c_1`: $F(h) = c_0 + c_1 h^2$ (truncated cosh/cos-like)
 - `add F G`: $F(h) + G(h)$ (closure under sum)
@@ -347,7 +347,7 @@ confirm class soundness.
 - **Unification**: open R&D (this proposition).
 - **Empirical anchor**: 3/3 matches, 3/3 falsifications recorded.
 
-## Proofs (Lean ↔ paper bridge)
+## Proofs (Lean $\leftrightarrow$ paper bridge)
 
 Every Lean construction in [`bar-symmetric-three-layer-synthesis.lean`](bar-symmetric-three-layer-synthesis.lean) has a narrative proof here. The genuine conjecture is in the class-field `True` placeholders (the unification claim); everything else is `sorry`-free.
 
@@ -398,10 +398,10 @@ The synthesis file has its own `class BarInvolution R` matching the four ring-in
 *Proof.* Each summand bar-symmetric (constants by hypothesis; $h^2$ by the `square` argument); sum bar-symmetric by `bar_add`. $\square$
 
 **Constructor (Lean: `evenPoly3 c0 c1 c2`).** $F(h) := c_0 + c_1 h^2 + c_2 h^4$.
-*Proof.* Same as `evenPoly2` extended by one term: $h^4 = (h^2)^2$, bar-sym × bar-sym = bar-sym. $\square$
+*Proof.* Same as `evenPoly2` extended by one term: $h^4 = (h^2)^2$, bar-sym $\times$ bar-sym = bar-sym. $\square$
 
 **Constructor (Lean: `evenPoly4 c0 c1 c2 c3`).** $F(h) := c_0 + c_1 h^2 + c_2 h^4 + c_3 h^6$.
-*Proof.* Same pattern as `evenPoly3`; $h^6 = h^2 \cdot h^4$ bar-sym × bar-sym. $\square$
+*Proof.* Same pattern as `evenPoly3`; $h^6 = h^2 \cdot h^4$ bar-sym $\times$ bar-sym. $\square$
 
 **Constructor (Lean: `add F G`).** $(F + G)(h) := F(h) + G(h)$.
 *Proof.* $F(h)$ and $G(h)$ are bar-sym (by their `apply_bar_symmetric` fields); sum is bar-sym. $\square$
