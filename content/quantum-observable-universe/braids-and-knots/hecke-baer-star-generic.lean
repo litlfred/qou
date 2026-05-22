@@ -44,7 +44,7 @@ class BaerStarRing (A : Type*) [Ring A] [StarRing A] : Prop where
 
 variable {K : Type*} [Field K]
 
-/-- Right annihilators in a matrix algebra `Matrix (Fin n) (Fin n) K`
+/-- The right annihilators in a matrix algebra `Matrix (Fin n) (Fin n) K`
     are principal right ideals.  This is the linear-algebra core of
     the proof: any subspace `V ⊆ Matrix n n K` (treated as a set of
     rows or columns) has a complementary projection `p` such that

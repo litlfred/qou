@@ -55,7 +55,7 @@ structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
   euler_lagrange : JetBundle → FieldEqns
   /-- Left: jet evaluation `j : J¹E → Γ(E_lin)`. -/
   jet_eval : JetBundle → LinSections
-  /-- Right: substrate coupling `κ : FieldEqns → Solutions`,
+  /-- The right arrow: substrate coupling `κ : FieldEqns → Solutions`,
       sending a Levi form to the q-Schrödinger equation it induces
       via `q(p) = 1 + |⟨L_θ, F_A⁺⟩|(p)`. -/
   substrate_coupling : FieldEqns → Solutions

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "148fb4583293",
     "ts": "57692926aa65",
-    "lean": "cb4357670e4e"
+    "lean": "bc8dba8d8975"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -444,20 +444,20 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "05379e981ab5",
-          "ts": "618b5686c3ff",
-          "lean": "cb4357670e4e"
+          "md": "148fb4583293",
+          "ts": "57692926aa65",
+          "lean": "bc8dba8d8975"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.lean:96: Right-iteration analogue of `fullTwist_iter_neutral`:"
+        "reviewed_at": "2026-05-22T21:33:59.692Z",
+        "reviewed_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
       }
     ],
     "voice-ai-slop": [
@@ -565,5 +565,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:36:25.926Z"
+  "updated_at": "2026-05-22T21:33:59.692Z"
 }

@@ -95,7 +95,7 @@ end BraidWord
 The canonical Borromean braid word in `B_3` is the 6-crossing
 alternating word `σ_0 σ_1⁻¹ σ_0 σ_1⁻¹ σ_0 σ_1⁻¹`. Its Markov closure
 is the Borromean link (Brunnian, 3-component). Defined here BEFORE
-`closureN` so the n=3 dispatch case can reference it. -/
+`closureN`, where the n=3 dispatch case can reference it. -/
 
 /-- The canonical Borromean braid word in `B_3` (6 alternating
     crossings, writhe 0). -/

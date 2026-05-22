@@ -48,9 +48,9 @@ noncomputable def h2_id : H2_NF := fun i =>
   | 0 => 1
   | 1 => 0
 
-/-- Right-multiply an H₂(q) element by σ₀.
+/-- Multiplication on the right by σ₀ on an H₂(q) element.
     Using the Hecke relation: σ₀² = HA·σ₀ + 𝟏.
-    So: (a·𝟏 + b·σ₀)·σ₀ = a·σ₀ + b·(HA·σ₀ + 𝟏) = b·𝟏 + (a + HA·b)·σ₀ -/
+    Then: (a·𝟏 + b·σ₀)·σ₀ = a·σ₀ + b·(HA·σ₀ + 𝟏) = b·𝟏 + (a + HA·b)·σ₀ -/
 noncomputable def h2_mul_s0 (x : H2_NF) : H2_NF := fun i =>
   match i with
   | 0 => x 1                -- 𝟏 coefficient: b

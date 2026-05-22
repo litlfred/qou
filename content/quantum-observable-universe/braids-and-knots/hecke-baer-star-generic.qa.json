@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "365bbcf20bc0",
     "ts": "0a261c35418b",
-    "lean": "36820d09b0f3"
+    "lean": "95171feb9cae"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -499,9 +499,9 @@
         "field_hash": {
           "md": "365bbcf20bc0",
           "ts": "0a261c35418b",
-          "lean": "36820d09b0f3"
+          "lean": "95171feb9cae"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -509,10 +509,8 @@
           "script_hash": "5650958b9f3a",
           "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-22T21:05:03.668Z",
-        "reviewed_sha": "bd3d9a7ca6ce5c88d7f9ba66401b19066a31a000",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.lean:47: Right annihilators in a matrix algebra `Matrix (Fin n) (Fin n) K`"
+        "reviewed_at": "2026-05-22T21:33:59.692Z",
+        "reviewed_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
       }
     ],
     "voice-ai-slop": [
@@ -703,5 +701,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T21:05:03.668Z"
+  "updated_at": "2026-05-22T21:33:59.692Z"
 }

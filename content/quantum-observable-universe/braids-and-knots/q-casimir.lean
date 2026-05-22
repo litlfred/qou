@@ -88,7 +88,7 @@ structure QCasimirData (qs : QuantumSu2) where
   qInv : R_q
   /-- Left inverse witness for `qInv`. -/
   qInv_left  : qInv * qs.q = 1
-  /-- Right inverse witness for `qInv`. -/
+  /-- Witness that `qInv` is a right inverse. -/
   qInv_right : qs.q * qInv = 1
   /-- Embedding of the ground ring into the algebra. -/
   ι : R_q →+* qs.Algebra
@@ -100,7 +100,7 @@ structure QCasimirData (qs : QuantumSu2) where
   invQm : qs.Algebra
   /-- Left inverse witness for `invQm`. -/
   invQm_left  : invQm * ι (qs.q - qInv) = 1
-  /-- Right inverse witness for `invQm`. -/
+  /-- Witness that `invQm` is a right inverse. -/
   invQm_right : ι (qs.q - qInv) * invQm = 1
   /-- `invQm` is central.  Automatic once `ι(q - qInv)` is a unit and
       `ι` is central: the inverse of a central unit is central. -/

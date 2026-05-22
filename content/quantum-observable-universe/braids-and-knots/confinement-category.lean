@@ -74,7 +74,7 @@ def ConfComp {P Q R : ConfinedParticleTy}
   | ConfMorphism.fold _ _      => ConfMorphism.fold P R
   | ConfMorphism.dress _ _ s   => ConfMorphism.dress P R s
 
-/-- Right-identity law: `ConfComp f (ConfId P) = f` for every `f`. -/
+/-- The right-identity law `ConfComp f (ConfId P) = f` for every `f`. -/
 theorem ConfComp_right_id (P Q : ConfinedParticleTy) (f : ConfMorphism P Q) :
     ConfComp f (ConfId P) = f := by
   cases f <;> rfl
