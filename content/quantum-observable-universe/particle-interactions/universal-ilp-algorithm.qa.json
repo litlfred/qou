@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean"
   },
   "source_hashes": {
-    "md": "35333a978be0",
+    "md": "92bff9b83b3e",
     "ts": "94cb68b714fd",
     "lean": "dbd028e9bad5"
   },
@@ -408,20 +408,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "35333a978be0",
+          "md": "92bff9b83b3e",
           "ts": "94cb68b714fd",
           "lean": "dbd028e9bad5"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/universal-ilp-algorithm.md:56: | Quarks → confinement | uud (3 crossings) | **FAIL** ($Gx[\\gamma] < 0$) | $\\mathcal{B}_3 = (\\sigma_0\\sigma_1^{-1})^3$ | 6 | | quantum-observable-universe/particle-interactions/universal-ilp-algorithm.md:57: | Proton → gluon | $\\mathcal{B}_3 \\times$ quarks (9) | **FAIL** ($Gx[\\gamma] < 0$) | $\\sigma_0 \\sigma_0$ | 2 | | quantum-observable-universe/particle-interactions/universal-ilp-algorithm.md:58: | Proton → H atom | proton + gluon (11) | **PASS** | $\\sigma_1^{-1}$ (pe crossing) | 1 | | quantum-observable-universe/particle-interactions/universal-ilp-algorithm.md:59: | H → H₂ molecule | H atom | **PASS** | $T_{2,3}^{-1} = \\sigma_0^{-1}\\sigma_1^{-1}\\sigma_0^{-1}$ | 3 |"
+        "reviewed_at": "2026-05-22T18:39:37.988Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -578,5 +578,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:39:37.988Z"
 }

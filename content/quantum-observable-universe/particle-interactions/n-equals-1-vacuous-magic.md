@@ -67,7 +67,7 @@ The Lean proof
 [`one_isAlgebraicallyPrime`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean)
 encodes the four steps above. The auxiliary lemma
 `sum_ge_length_of_all_pos` is proved by list induction (base case:
-empty list trivial; step case: sum of `a :: as` ≥ 1 + length of
+empty list trivial; step case: sum of `a :: as` $\ge$ 1 + length of
 `as`, by inductive hypothesis on the tail). The main theorem
 combines `length ≥ 2` and `sum = 1` via `omega` to derive the
 contradiction.

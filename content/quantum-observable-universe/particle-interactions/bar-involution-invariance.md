@@ -87,7 +87,7 @@ hook lengths
 | $(1, 1, 1)$ | $3, 2, 1$ | $[3]_q [2]_q [1]_q$ |
 
 Transpose pairing $(3) \leftrightarrow (1, 1, 1)$ has identical
-hook products → identical $\dim_q$ → identical $w_\lambda$, as
+hook products $\to$ identical $\dim_q$ $\to$ identical $w_\lambda$, as
 predicted by (2). The self-dual $(2, 1)$ has $\lambda = \lambda^T$
 trivially.
 

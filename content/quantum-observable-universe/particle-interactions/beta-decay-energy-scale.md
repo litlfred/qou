@@ -73,7 +73,7 @@ $$
   \approx  4.228 \text{MeV}
 $$
 
-at $q_0 \approx 1.110$, ≈ +0.99% over the single-tick value. Truncations
+at $q_0 \approx 1.110$, $\approx$ +0.99% over the single-tick value. Truncations
 $\mathfrak{E}_0^{(N)} = \mathfrak{E}_0^{(N=0)} \cdot (1 - \hbar_q^{2(N+1)})/(1 - \hbar_q^2)$
 recover the tower at finite depth.
 
@@ -105,12 +105,12 @@ The values, computed from the witness
 **Open finding (2026-05-17).** Both the geometric tower form
 $1/(1-\hbar_q^2)$ and the bounded symmetric $\mathrm{Li}_2^q$
 candidate move the framework prediction *further from* the
-calibrated values at the substrate level (only ≈ 0.01% apart
+calibrated values at the substrate level (only $\approx$ 0.01% apart
 at $q_0$). The direction-of-residual puzzle is recorded in
 [`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)
 (the audit independently confirms $-\mathrm{Li}_2^q(-V)$ is the
 correct Kashaev specialisation, while the asserted $\Phi_q(V)$
-form is off by 10⁶), and the open closure question is now formally
+form is off by $10^{6}$), and the open closure question is now formally
 posed as the conjecture
 [`conj:alpha-k-categorical-closure`](../braids-and-knots/alpha-k-categorical-closure.md)
 (existence, family selection, CAL-3 direction). The H_3 explicit

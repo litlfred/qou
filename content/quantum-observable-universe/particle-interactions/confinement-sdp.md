@@ -42,7 +42,7 @@ $$
   \end{pmatrix}
   \;\succeq\; 0
   \quad \forall\, \text{adjacent generator pairs } (i, j)
-  \qquad (\text{2×2 pair PSD})
+  \qquad (\text{$2 \times 2$ pair PSD})
 $$
 
 $$
@@ -50,7 +50,7 @@ $$
   \qquad (\text{normalisation})
 $$
 
-*where the 2×2 blocks range over adjacent pairs $(\sigma_i, \sigma_{i+1})$
+*where the 2$\times$2 blocks range over adjacent pairs $(\sigma_i, \sigma_{i+1})$
 in the Hecke generator chain — one block per confinement level from
 $\ell = 3$ (baryonic) up to $\ell = 7$ (molecular), as tabulated in
 the multi-level SDP infrastructure.*

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/particle-interactions/deuterium-derived-binding.lean"
   },
   "source_hashes": {
-    "md": "a84db87c8c7e",
+    "md": "a3170a366145",
     "ts": "de2ebd22f7fa",
     "lean": "f23cb9c9d8e9"
   },
@@ -465,20 +465,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "a84db87c8c7e",
+          "md": "a3170a366145",
           "ts": "de2ebd22f7fa",
           "lean": "f23cb9c9d8e9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/deuterium-derived-binding.md:19: under the H_3 → H_6 Hecke embedding, where"
+        "reviewed_at": "2026-05-22T18:39:37.988Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -703,5 +703,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T15:26:12.474Z"
+  "updated_at": "2026-05-22T18:39:37.988Z"
 }

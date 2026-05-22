@@ -234,7 +234,7 @@ $$
   T_{K_1', K_2'}(q) - T_{K_1, K_2}(q)
 $$
 
-This is a 2×2 matrix with polynomial entries in $q$.
+This is a 2$\times$2 matrix with polynomial entries in $q$.
 
 | Interaction | $\Delta$ operator | Physical process |
 |-------------|-------------------|------------------|

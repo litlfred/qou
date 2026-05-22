@@ -50,11 +50,11 @@ $$
 
 | Step | Nucleons | Selected $\Phi_k$ | Regime | $|\mathrm{dem}|$ |
 |:---|:---|:---|:---:|---:|
-| $p \to pp$ | 1 → 2 | $T_{2,5}$ (cinquefoil) | I | $0.005$ |
-| $pp \to ppn$ | 2 → 3 | $L_+$ (Hopf link) | II | $0.000$ |
-| $ppn \to ppnn$ | 3 → 4 | $L_+$ | II | $0.000$ |
-| $ppnn \to pppnn$ | 4 → 5 | $L_-$ (mirror Hopf) | II | $0.000$ |
-| $pppnn \to pppnnn$ | 5 → 6 | $C_{pn}$ (bare crossing) | III | $0.000$ |
+| $p \to pp$ | 1 $\to$ 2 | $T_{2,5}$ (cinquefoil) | I | $0.005$ |
+| $pp \to ppn$ | 2 $\to$ 3 | $L_+$ (Hopf link) | II | $0.000$ |
+| $ppn \to ppnn$ | 3 $\to$ 4 | $L_+$ | II | $0.000$ |
+| $ppnn \to pppnn$ | 4 $\to$ 5 | $L_-$ (mirror Hopf) | II | $0.000$ |
+| $pppnn \to pppnnn$ | 5 $\to$ 6 | $C_{pn}$ (bare crossing) | III | $0.000$ |
 
 **Key observation:** the operator transitions from $T_{2,5}$
 (torus knot) to $L_+$ (Hopf) at the first magic number ($Z = 2$),

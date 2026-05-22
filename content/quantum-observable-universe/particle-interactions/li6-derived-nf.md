@@ -16,7 +16,7 @@ He-4 magic shell closes.
 | $ppnn \to pppnn$ | $A = 5$ | $L_-$ (mirror Hopf) | II | $0.000$ |
 | $pppnn \to pppnnn$ | $A = 6$ | $C_{pn}$ (bare crossing) | **III** | $0.000$ |
 
-The He-4 core ($ppnn$) is built by Regime I → II operators
+The He-4 core ($ppnn$) is built by Regime I $\to$ II operators
 (torus knot, then Hopf links).  The fifth nucleon (proton)
 still uses a Hopf link ($L_-$), riding the stability of the
 doubly-magic core.  But the sixth nucleon (neutron) transitions

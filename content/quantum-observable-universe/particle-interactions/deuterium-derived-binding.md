@@ -16,7 +16,7 @@ The full canonical deuteron braid word
 $\beta_D = \mathtt{atom\_braid\_word\_3A}(1, 1) \in H_6(q)$
 ([`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py))
 factors as $\mathrm{NF}(\mathfrak{p}) \cdot T_{pn} \cdot \mathrm{NF}(\mathfrak{n})$
-under the H_3 → H_6 Hecke embedding, where
+under the H_3 $\to$ H_6 Hecke embedding, where
 $T_{pn} = \frac{1}{2}(\sigma_0 + \sigma_0^{-1})$ is the time-reversal
 symmetric crossing operator at the inter-nucleon site (the unique
 generator of $\beta_D$ that crosses a proton strand with a neutron

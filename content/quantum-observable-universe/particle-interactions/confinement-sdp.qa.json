@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/particle-interactions/confinement-sdp.lean"
   },
   "source_hashes": {
-    "md": "4a1b9c53a9f6",
+    "md": "ac95dd819c3f",
     "ts": "e42c9aedd8b7",
     "lean": "6a810100a322"
   },
@@ -446,20 +446,39 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "4a1b9c53a9f6",
+          "md": "59517158737c",
           "ts": "e42c9aedd8b7",
           "lean": "6a810100a322"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:39:37.988Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-sdp.md:45: \\qquad (\\text{2×2 pair PSD}) | quantum-observable-universe/particle-interactions/confinement-sdp.md:53: *where the 2×2 blocks range over adjacent pairs $(\\sigma_i, \\sigma_{i+1})$"
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp.md:45: \\qquad (\\text{2×2 pair PSD})"
+      },
+      {
+        "field_hash": {
+          "md": "ac95dd819c3f",
+          "ts": "e42c9aedd8b7",
+          "lean": "6a810100a322"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T18:41:42.190Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -684,5 +703,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:41:42.190Z"
 }

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean"
   },
   "source_hashes": {
-    "md": "ff182321748e",
+    "md": "c29c6fbf33e1",
     "ts": "72ad1143f454",
     "lean": "168f2f973c63"
   },
@@ -446,20 +446,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "ff182321748e",
+          "md": "c29c6fbf33e1",
           "ts": "72ad1143f454",
           "lean": "168f2f973c63"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:73: | $\\{(3), (1,1,1)\\}$ | size 2 | no | sym ↔ alt: chirality pair | | quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:140: `cpt_orbit_closure_density` (CPT-saturated → $2 m_e$) and | quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:142: → $m_e$) are unconditional and proved directly by `if_pos` /"
+        "reviewed_at": "2026-05-22T18:39:37.988Z",
+        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
       }
     ],
     "voice-editorializing": [
@@ -688,5 +688,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:39:37.988Z"
 }
