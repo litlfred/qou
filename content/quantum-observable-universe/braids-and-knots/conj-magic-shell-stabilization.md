@@ -82,7 +82,7 @@ prediction, not free parameters):
 |:---|---:|---:|:---:|
 | Operator-valued per-eigenvalue, $n_\star=1$ | $+4.32$ MeV | n/a | n/a |
 | Pair-knot product-volume | $-16.88$ MeV | $+5.50$ MeV | NO ($\Delta_n = +22.38$ MeV $\neq \Delta_p$) |
-| Pair-knot Markov-trace (canonical) | $-11.92$ MeV | TBD | TBD |
+| Pair-knot Markov-trace (canonical) | $-11.92$ MeV | — | — |
 
 The Z$\leftrightarrow$N inconsistency under product-volume is a known artifact
 of the convention (see

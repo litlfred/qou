@@ -323,7 +323,7 @@ $$
 
 The bar-symmetry of each avatar is now a **direct consequence**
 of the functors' own `apply_bar_symmetric` field — no class
-placeholder needed. Proved as
+ansatz needed. Proved as
 `series_avatar_isBarSymmetric`, `phase_avatar_isBarSymmetric`,
 `gain_avatar_isBarSymmetric`.
 

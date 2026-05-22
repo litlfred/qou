@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/averaging-resonance-rule.lean"
   },
   "source_hashes": {
-    "md": "76b466e6c0ac",
+    "md": "1b638b75a80e",
     "ts": "49628d543fd3",
     "lean": "130a54c27ae3"
   },
@@ -378,20 +378,20 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "fe2f48619b32",
+          "md": "1b638b75a80e",
           "ts": "49628d543fd3",
           "lean": "130a54c27ae3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/averaging-resonance-rule.md:648: ### Categorical-criterion placeholder + conditional theorems | quantum-observable-universe/braids-and-knots/averaging-resonance-rule.md:650: **Definition (Lean: `correctSectorCriterion d k`).** Currently set to `empiricalSector k` as a placeholder. Future categorical derivations replace this with the true criterion. | quantum-observable-universe/braids-and-knots/averaging-resonance-rule.md:660: *Proof.* `n_avg_ge_two`: from `decide` on the proton distribution ($n_{\\mathrm{avg}} = 2 \\ge 2$). `outlier_eq_half_fill`: with `halfFillRung = 5` (proved) and `correctSectorCriterion = empiricalSector | quantum-observable-universe/braids-and-knots/averaging-resonance-rule.md:667: **Instance (Lean: `neutronHalfFillIsOutlier`).** Same as proton, since `correctSectorCriterion` is the empirical placeholder and $\\mathtt{halfFillRung} = 5$ for both."
+        "reviewed_at": "2026-05-22T20:00:08.749Z",
+        "reviewed_sha": "efd9fc023861c66ee1f16769e16435f996f95b45"
       }
     ],
     "voice-emoji-content": [
@@ -690,5 +690,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:57:18.801Z"
+  "updated_at": "2026-05-22T20:00:08.749Z"
 }

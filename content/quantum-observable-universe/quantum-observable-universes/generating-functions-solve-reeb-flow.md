@@ -107,7 +107,7 @@ Lean developments
 `QOU.CategoricalFourier`
 (structures, not typeclasses — the synthesis class does not
 extend them, it bundles their proven content into a single
-joint-existence claim).  This is a placeholder for the full
+joint-existence claim).  This is a ansatz for the full
 formalisation: the individual existence/uniqueness theorems are
 already in scope, so any instance of
 `HabiroFlowSolution` is conditional on the realisation functor

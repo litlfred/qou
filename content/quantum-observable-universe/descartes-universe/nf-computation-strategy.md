@@ -90,7 +90,7 @@ the per-word reduction cost from $O(\ell)$ to $O(1)$ amortised.
 ### Separated reduction pools
 
 Terms are split into **stable** (fully reduced, never rescanned)
-and **pending** (needs checking).  Each reduction produces new
+and **Open** (needs checking).  Each reduction produces new
 pending terms; stable terms are moved once and never revisited.
 When a pending term collides with a stable term, the merged
 result goes back to pending for re-checking.

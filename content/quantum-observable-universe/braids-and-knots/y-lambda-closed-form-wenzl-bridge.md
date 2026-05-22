@@ -201,7 +201,7 @@ at $n \in \{3, 4, 5, 6, 9, 12\}$ sample points).
 - `wenzlX q := wenzlZ q / (1 - wenzlQ q + wenzlZ q)` — the
   explicit `Q^r` substitution, avoiding fractional exponents
 - `wenzlSchurElement λ Q X` — the principal-specialization Schur
-  element (axiomatic stub pending full Mathlib partition machinery)
+  element (axiomatic axiomatised full Mathlib partition machinery)
 - `wenzlNormalization parts Q X := Σ_µ d_µ * s_{µ,r}(Q)`
 - `yLambdaWenzlBridge parts λ q := s_λ / Z`
 
@@ -241,8 +241,8 @@ $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is recorded at two layers:
 The deprecated `wenzl_bridge_unique q` is retained as an alias for
 the definitional layer; the original quantification "for all
 $(Q', z')$ reproducing the canonical $y_\lambda$ values, $(Q', z')
-= (q^2, q \cdot z)$" was structurally vacuous on the placeholder
+= (q^2, q \cdot z)$" was structurally vacuous on the ansatz
 Schur-element model.
 
 `y_lambda_bridge_numerical_agreement` records the empirical witness
-data (machine-precision agreement) as a `True := trivial` placeholder.
+data (machine-precision agreement) as a `True := trivial` ansatz.

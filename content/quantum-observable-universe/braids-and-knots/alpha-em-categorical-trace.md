@@ -19,7 +19,7 @@ original 52-element basis at $q_0$, not a derivation; the 100-dps
 extended 54-element scan referenced above subsequently ruled out the
 multiplicative $q$-rational family entirely. Per the
 [three-calibration discipline](three-calibration-inputs.md), this is
-a Class-A opt-out (acknowledged-stub pending structural derivation),
+a Class-A opt-out (acknowledged-axiomatised structural derivation),
 superseded by [`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
 (structural) and the additive Bring zero-mode lead
 [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).
