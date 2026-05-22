@@ -20,12 +20,12 @@ volume-match results are **never** mixed with derivation-based ones.
 
 | Tag | Definition | Examples |
 |---|---|---|
-| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [`def:confined-particle`](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ → $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ → $\mathcal{B}_3$. |
+| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [`def:confined-particle`](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ $\to$ $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
 | `principled-gb-nf` | Trivial-NF entries (single strand or pure identity); closure is unknot or disjoint unknots. | neutrino, photon, quark. |
-| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | ${}^2$H = $6_2$, ³H = $8_{11}$, ³He = $L_{6a4}$. |
-| `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ⁴He. |
-| `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ⁴He. | ⁸Be–⁴⁰Ca. |
-| `deprecated-volume-match` | **PROVISIONAL — do not cite as principled.** Brute-force SnapPy volume search picked the closest knot to the AME-derived volume target; reverse-engineers the answer. See [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json). | ⁶Li, ⁷Li (quarantined below). |
+| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
+| `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
+| `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ${}^{4}$He. | ${}^{8}$Be–${}^{40}$Ca. |
+| `deprecated-volume-match` | **PROVISIONAL — do not cite as principled.** Brute-force SnapPy volume search picked the closest knot to the AME-derived volume target; reverse-engineers the answer. See [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json). | ${}^{6}$Li, ${}^{7}$Li (quarantined below). |
 
 The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the
 $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's
@@ -43,7 +43,7 @@ below.
 | $\sigma_i$ ($i = 1, \ldots, n-1$) | Standard generators of the braid group $B_n$: half-twist between strands $i$ and $i + 1$. Hecke relation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$. |
 | $\sigma_i^{-1}$ | Inverse half-twist (negative crossing). |
 | $\mathbf{1}_{B_n}$ | Identity element of $B_n$ (no crossings); Markov closure $= n$ disjoint unknots. |
-| $\widehat{\beta}$ | Markov closure (braid → knot/link in $S^3$). |
+| $\widehat{\beta}$ | Markov closure (braid $\to$ knot/link in $S^3$). |
 | $T_{p, q}$ | Torus knot/link with braid word $(\sigma_1 \sigma_2 \cdots \sigma_{p-1})^q$ in $B_p$. |
 | $0_1$ | Unknot (Rolfsen). $T_{1, 0}$ in torus form. |
 | $3_1$ | Trefoil. $= T_{2, 3}$. Braid word $\sigma_1^3$ in $B_2$. |
@@ -99,7 +99,7 @@ carrier), and as the binding link in deuteron $D = [\mathfrak{p}, \mathfrak{n}]_
 
 Word: $\mathbf{1}_{B_4}$ (identity, no crossings). Closure:
 4 disjoint unknots — knot-trivial, but the 4 strands carry
-polarisation × chirality components on the exceptional divisor
+polarisation $\times$ chirality components on the exceptional divisor
 $\mathcal{S}_p$. Used for: **photon**, vacuum-flux carrier.
 
 ### Hyperbolic atom-knots inventory
@@ -113,7 +113,7 @@ obtained.
 | $6_2$ | Rolfsen | 6 | 4.4008 | Deuteron $^2$H | `manual-historical-volume-match` |
 | $8_{11}$ | Rolfsen | 8 | 8.2863 | Tritium $^3$H | `manual-historical-volume-match` |
 | $L_{6a4}$ | Thistlethwaite link | 6 | 7.3277 | $^3$He | `manual-historical-volume-match` |
-| $\mathcal{B}_3$ | Borromean | 6 | 7.3277… (hp50) | Proton/neutron $B_3$ | `principled-derivation` (closure of $(\sigma_1 \sigma_2^{-1})^3$) |
+| $\mathcal{B}_3$ | Borromean | 6 | 7.3277$\ldots$ (hp50) | Proton/neutron $B_3$ | `principled-derivation` (closure of $(\sigma_1 \sigma_2^{-1})^3$) |
 | $K_{11a259}$ | HT-table | 11 | 12.5201 | $^6$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` *(deprecated)* |
 | $L_{11a62}$ | HT-table | 11 | 15.3600 | $^7$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` *(deprecated)* |
 
@@ -131,12 +131,12 @@ obtained.
 | Braid (NF) | $T_w = \mathbf{1} \in H_1(q_0)$. Closure $\widehat{T_w} = 0_1$ (unknot). |
 | Prediction | $m_\nu \approx 0$ MeV (CODATA upper bound $\lesssim 1$ eV). Confinement at $q_0$: trivially Frobenius-PSD ($\Phi^* = \mathbf{1}$). |
 
-**Photon $\gamma$** (4 polarisation × chirality components)
+**Photon $\gamma$** (4 polarisation $\times$ chirality components)
 
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w = \mathbf{1}_{B_4} \in H_4(q_0)$. Closure $\widehat{T_w} = 4 \cdot 0_1$ (4 disjoint unknots). |
-| Prediction | $m_\gamma = 0$ MeV (massless, gauge boson). 4 components encode the $\sigma_0/\sigma_1$ polarisation × $(+q, -q^{-1})$ chirality on $\mathcal{S}_p$. |
+| Prediction | $m_\gamma = 0$ MeV (massless, gauge boson). 4 components encode the $\sigma_0/\sigma_1$ polarisation $\times$ $(+q, -q^{-1})$ chirality on $\mathcal{S}_p$. |
 
 **Quark $\mathfrak{q}$** (single-strand H_1 unit)
 
@@ -177,28 +177,28 @@ obtained.
 | Braid (NF) | $T_w = (\mathfrak{p}\text{-braid}) \oplus (\mathfrak{n}\text{-braid}) \oplus L_H$ in $H_6(q_0)$. Closure $\widehat{T_w} = K_{6_2}$ (hyperbolic, $\mathrm{Vol} = 4.4008$). |
 | Prediction | $B_\mathrm{pred} = 1 \cdot m_e \cdot \mathrm{Vol}(K_{6_2}) = 2.249$ MeV vs $B_\mathrm{AME} = 2.225$. **err = +1.09%**. |
 
-**Tritium ³H = T = $[\mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{L_H \oplus T_{2, 3}}$**
+**Tritium ${}^{3}$H = T = $[\mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{L_H \oplus T_{2, 3}}$**
 
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w \in H_9(q_0)$. Closure $\widehat{T_w} = K_{8_{11}}$ (hyperbolic, $\mathrm{Vol} = 8.2863$). |
 | Prediction | $B_\mathrm{pred} = 2 \cdot m_e \cdot \mathrm{Vol}(K_{8_{11}}) = 8.469$ MeV vs $B_\mathrm{AME} = 8.482$. **err = −0.16%** — **best per-isotope**. |
 
-**Helium-3 ³He = $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}]_{L_{6a4}}$**
+**Helium-3 ${}^{3}$He = $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}]_{L_{6a4}}$**
 
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w \in H_9(q_0)$. Closure $\widehat{T_w} = L_{6a4}$ (link, $\mathrm{Vol} = 7.3277$). |
 | Prediction | $B_\mathrm{pred} = 2 \cdot m_e \cdot 7.3277 = 7.489$ MeV vs $B_\mathrm{AME} = 7.718$. **err = −2.97%**. |
 
-**Helium-4 ⁴He = $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{4 \cdot 8 G}$**
+**Helium-4 ${}^{4}$He = $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{4 \cdot 8 G}$**
 
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w \in H_{12}(q_0)$. Magic A-rule formula: $B = A \cdot 8 G \cdot m_e$. |
 | Prediction | $B_\mathrm{pred} = 2 \cdot m_e \cdot 4 \cdot 8 G = 29.956$ MeV vs $B_\mathrm{AME} = 28.296$. **err = +5.87%**. |
 
-### Caveat — provisional / deprecated methodology — ⁶Li, ⁷Li
+### Caveat — provisional / deprecated methodology — ${}^{6}$Li, ${}^{7}$Li
 
 > **The two entries below are NOT principled.** They come from a
 > brute-force SnapPy volume-match search
@@ -213,7 +213,7 @@ obtained.
 > [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json)
 > for the full per-particle methodology audit.
 
-**⁶Li (PROVISIONAL — `deprecated-volume-match`)**
+**${}^{6}$Li (PROVISIONAL — `deprecated-volume-match`)**
 
 | Row | Content |
 |--:|---|
@@ -221,7 +221,7 @@ obtained.
 | Braid (NF) | *Not derived.* Volume-match search at $\rho = 5$ returned closure $= K_{11a259}$ (HT-table 11-crossing alternating, $\mathrm{Vol} = 12.5201$). No explicit $\sigma$-word in $H_{18}$ available. |
 | Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 12.5201 = 31.989$ MeV vs $B_\mathrm{AME} = 31.994$. err $= -164{,}991$ ppb (near search noise floor). |
 
-**⁷Li (PROVISIONAL — `deprecated-volume-match`)**
+**${}^{7}$Li (PROVISIONAL — `deprecated-volume-match`)**
 
 | Row | Content |
 |--:|---|
@@ -229,9 +229,9 @@ obtained.
 | Braid (NF) | *Not derived.* Volume-match search at $\rho = 5$ returned closure $= L_{11a62}$ (HT-table 11-crossing link, $\mathrm{Vol} = 15.3600$). No explicit $\sigma$-word in $H_{21}$ available. |
 | Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 15.3600 = 39.245$ MeV vs $B_\mathrm{AME} = 39.245$. err $= +4{,}009$ ppb. **Striking precision but cannot be distinguished from numerical coincidence in a $\sim 2400$-knot search absent an independent $\sigma$-word derivation.** |
 
-### $\ell = 2$ — α-cluster atoms (recursive: ref to ⁴He)
+### $\ell = 2$ — α-cluster atoms (recursive: ref to ${}^{4}$He)
 
-**Beryllium-8 ⁸Be = $2 \cdot {}^4\mathrm{He} + 1 \cdot c_{\alpha\alpha}$**
+**Beryllium-8 ${}^{8}$Be = $2 \cdot {}^4\mathrm{He} + 1 \cdot c_{\alpha\alpha}$**
 
 | Row | Content |
 |--:|---|
@@ -245,7 +245,7 @@ obtained.
 | Braid (NF) | Three α-cluster fused (Hoyle state), three α–α pairs. |
 | Prediction | $B_\mathrm{pred} = 97.15$ MeV vs $B_\mathrm{AME} = 92.16$. **err = +5.41%**. |
 
-**Oxygen-16 ¹⁶O = $4 \cdot {}^4\mathrm{He} + 6 \cdot c_{\alpha\alpha}$**
+**Oxygen-16 ${}^{16}$O = $4 \cdot {}^4\mathrm{He} + 6 \cdot c_{\alpha\alpha}$**
 
 | Row | Content |
 |--:|---|
@@ -255,18 +255,18 @@ obtained.
 ## Statistical summary
 
 Restricted to **principled** entries (excludes the quarantined
-provisional ⁶Li / ⁷Li volume-match results):
+provisional ${}^{6}$Li / ${}^{7}$Li volume-match results):
 
 - Tritium $^3$H at $\sim 1.6 \times 10^{-3}$ (`manual-historical`).
 - Deuteron $^2$H at $\sim 1.1 \times 10^{-2}$ (`manual-historical`).
-- $\alpha$-cluster atoms ⁸Be–⁴⁰Ca: mean $|\mathrm{err}| \sim 8$%
+- $\alpha$-cluster atoms ${}^{8}$Be–${}^{40}$Ca: mean $|\mathrm{err}| \sim 8$%
   (`recursive-on-⁴He`).
 
-Provisional (⁶Li, ⁷Li) — **not counted in the principled summary**:
+Provisional (${}^{6}$Li, ${}^{7}$Li) — **not counted in the principled summary**:
 
-- ⁷Li: $+4{,}009$ ppb at $L_{11a62}$, $\rho = 5$ (volume-match coincidence;
+- ${}^{7}$Li: $+4{,}009$ ppb at $L_{11a62}$, $\rho = 5$ (volume-match coincidence;
   see methodology caveat above).
-- ⁶Li: $-164{,}991$ ppb at $K_{11a259}$, $\rho = 5$ (search noise floor).
+- ${}^{6}$Li: $-164{,}991$ ppb at $K_{11a259}$, $\rho = 5$ (search noise floor).
 
 Atlas covers $\ell \leq 2$ at $q_0$; further atoms ($\ell = 3$
 molecules, heavier nuclei) defer to
@@ -326,7 +326,7 @@ where $h = q_0 - q_0^{-1}$.
 
 | Fusion | Description |
 |---|---|
-| $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (⁸Be, ${}^{12}$C, …, ⁴⁰Ca) |
+| $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (${}^{8}$Be, ${}^{12}$C, $\ldots$, ${}^{40}$Ca) |
 | $\alpha$–N attachment | Layer 3: $^4$He cluster + valence nucleon (for non-magic $A$) |
 
 For an atom with mass number $A$, the canonical braid word in
@@ -364,7 +364,7 @@ The atlas is auto-rendered by
 **Sources of truth** (in order):
 
 1. [`confined-particle.md`](#def:confined-particle) — GB-NF particle registry (canonical $T_w$).
-2. [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/mass-table-ppb.witness.json) — D..⁴⁰Ca (manual-historical, recursive, magic-A).
+2. [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/mass-table-ppb.witness.json) — D..${}^{40}$Ca (manual-historical, recursive, magic-A).
 3. [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) — per-particle methodology audit.
 4. [`hp_volume.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
 5. [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
@@ -385,7 +385,7 @@ to the rendered appendix on the next `bun run build`.
 
 ## Open
 
-- **Principled derivation for ⁶Li, ⁷Li (and any new atom)**: the only
+- **Principled derivation for ${}^{6}$Li, ${}^{7}$Li (and any new atom)**: the only
   admissible path is a **joint SDP on the full mass tower** — over all
   confinement levels $\ell$ and all atoms simultaneously — with
   **Gröbner–Shirshov filtration tracking** and **jet-order tracking**,
@@ -408,10 +408,10 @@ to the rendered appendix on the next `bun run build`.
   quarantined.
 - **Structural rule for $\rho$ in $B = \rho \cdot m_e \cdot \mathrm{Vol}(K)$**:
   pattern $\rho \in \{1, 2\}$ for $\ell \leq 2$ atoms breaks at
-  ⁶Li, ⁷Li (both at $\rho = 5$ in the volume-match search). Open:
+  ${}^{6}$Li, ${}^{7}$Li (both at $\rho = 5$ in the volume-match search). Open:
   derive $\rho(Z, N)$ from ILP / confinement structure.
-- **Hyperbolic-knot identification beyond $\ell = 2$**: ⁹Be, ¹¹B,
-  ¹⁴N — no entries are in scope until a *principled* (GB-NF) derivation
+- **Hyperbolic-knot identification beyond $\ell = 2$**: ${}^{9}$Be, ${}^{11}$B,
+  ${}^{14}$N — no entries are in scope until a *principled* (GB-NF) derivation
   exists. Volume-match search will not be used.
 - **Photon $\rho$-factor**: photon mass $= 0$ trivially (no $\rho$
   needed), but for the recursive structure may tie to gauge-boson
@@ -578,8 +578,8 @@ _2 of 11 isotopes with a framework prediction; 0 of 11 with L4 composite mass $M
 | ${}^{3}$Li | 3 | 0 | L?-pending | pending | binding_energy | — | -6.8010 | — | — |
 | ${}^{4}$Li | 4 | 1 | L?-pending | pending | binding_energy | — | 4.6150 | — | — |
 | ${}^{5}$Li | 5 | 2 | L?-pending | pending | binding_energy | — | 26.3307 | — | — |
-| ${}^{6}$Li | 6 | 3 | L3-partial-shell:f=0.500 from A=4→8 | heuristic | binding_energy | 43.6570 | 31.9940 | +36.45 % | — |
-| ${}^{7}$Li | 7 | 4 | L3-partial-shell:f=0.750 from A=4→8 | heuristic | binding_energy | 51.3377 | 39.2451 | +30.81 % | — |
+| ${}^{6}$Li | 6 | 3 | L3-partial-shell:f=0.500 from A=4$\to$8 | heuristic | binding_energy | 43.6570 | 31.9940 | +36.45 % | — |
+| ${}^{7}$Li | 7 | 4 | L3-partial-shell:f=0.750 from A=4$\to$8 | heuristic | binding_energy | 51.3377 | 39.2451 | +30.81 % | — |
 | ${}^{8}$Li | 8 | 5 | L?-pending | pending | binding_energy | — | 41.2777 | — | — |
 | ${}^{9}$Li | 9 | 6 | L?-pending | pending | binding_energy | — | 45.3399 | — | — |
 | ${}^{10}$Li | 10 | 7 | L?-pending | pending | binding_energy | — | 45.3135 | — | — |
@@ -597,8 +597,8 @@ _3 of 12 isotopes with a framework prediction; 1 of 12 with L4 composite mass $M
 | ${}^{6}$Be | 6 | 2 | L?-pending | pending | binding_energy | — | 26.9235 | — | — |
 | ${}^{7}$Be | 7 | 3 | L?-pending | pending | binding_energy | — | 37.6008 | — | — |
 | ${}^{8}$Be | 8 | 4 | L2-alpha-cluster | recursive | binding_energy | 62.3383 | 56.4995 | +10.33 % | 7449.0098 MeV (-1057.4 ppm) |
-| ${}^{9}$Be | 9 | 5 | L3-partial-shell:f=0.250 from A=8→12 | heuristic | binding_energy | 67.3058 | 58.1640 | +15.72 % | — |
-| ${}^{10}$Be | 10 | 6 | L3-partial-shell:f=0.500 from A=8→12 | heuristic | binding_energy | 75.5932 | 64.9763 | +16.34 % | — |
+| ${}^{9}$Be | 9 | 5 | L3-partial-shell:f=0.250 from A=8$\to$12 | heuristic | binding_energy | 67.3058 | 58.1640 | +15.72 % | — |
+| ${}^{10}$Be | 10 | 6 | L3-partial-shell:f=0.500 from A=8$\to$12 | heuristic | binding_energy | 75.5932 | 64.9763 | +16.34 % | — |
 | ${}^{11}$Be | 11 | 7 | L?-pending | pending | binding_energy | — | 65.4779 | — | — |
 | ${}^{12}$Be | 12 | 8 | L?-pending | pending | binding_energy | — | 68.6487 | — | — |
 | ${}^{13}$Be | 13 | 9 | L?-pending | pending | binding_energy | — | 68.1387 | — | — |
@@ -616,8 +616,8 @@ _2 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M
 | ${}^{7}$B | 7 | 2 | L?-pending | pending | binding_energy | — | 24.9109 | — | — |
 | ${}^{8}$B | 8 | 3 | L?-pending | pending | binding_energy | — | 37.7372 | — | — |
 | ${}^{9}$B | 9 | 4 | L?-pending | pending | binding_energy | — | 56.3136 | — | — |
-| ${}^{10}$B | 10 | 5 | L3-partial-shell:f=0.500 from A=8→12 | heuristic | binding_energy | 75.5932 | 64.7508 | +16.74 % | — |
-| ${}^{11}$B | 11 | 6 | L3-partial-shell:f=0.750 from A=8→12 | heuristic | binding_energy | 83.8806 | 76.2051 | +10.07 % | — |
+| ${}^{10}$B | 10 | 5 | L3-partial-shell:f=0.500 from A=8$\to$12 | heuristic | binding_energy | 75.5932 | 64.7508 | +16.74 % | — |
+| ${}^{11}$B | 11 | 6 | L3-partial-shell:f=0.750 from A=8$\to$12 | heuristic | binding_energy | 83.8806 | 76.2051 | +10.07 % | — |
 | ${}^{12}$B | 12 | 7 | L?-pending | pending | binding_energy | — | 79.5747 | — | — |
 | ${}^{13}$B | 13 | 8 | L?-pending | pending | binding_energy | — | 84.4535 | — | — |
 | ${}^{14}$B | 14 | 9 | L?-pending | pending | binding_energy | — | 85.4230 | — | — |
@@ -640,7 +640,7 @@ _2 of 16 isotopes with a framework prediction; 1 of 16 with L4 composite mass $M
 | ${}^{10}$C | 10 | 4 | L?-pending | pending | binding_energy | — | 60.3204 | — | — |
 | ${}^{11}$C | 11 | 5 | L?-pending | pending | binding_energy | — | 73.4410 | — | — |
 | ${}^{12}$C | 12 | 6 | L2-alpha-cluster | recursive | binding_energy | 97.1480 | 92.1617 | +5.41 % | 11169.8742 MeV (-720.6 ppm) |
-| ${}^{13}$C | 13 | 7 | L3-partial-shell:f=0.250 from A=12→16 | heuristic | binding_energy | 101.0622 | 97.1080 | +4.07 % | — |
+| ${}^{13}$C | 13 | 7 | L3-partial-shell:f=0.250 from A=12$\to$16 | heuristic | binding_energy | 101.0622 | 97.1080 | +4.07 % | — |
 | ${}^{14}$C | 14 | 8 | L?-pending | pending | binding_energy | — | 105.2845 | — | — |
 | ${}^{15}$C | 15 | 9 | L?-pending | pending | binding_energy | — | 106.5025 | — | — |
 | ${}^{16}$C | 16 | 10 | L?-pending | pending | binding_energy | — | 110.7529 | — | — |
@@ -662,8 +662,8 @@ _2 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M
 | ${}^{11}$N | 11 | 4 | L?-pending | pending | binding_energy | — | 58.9424 | — | — |
 | ${}^{12}$N | 12 | 5 | L?-pending | pending | binding_energy | — | 74.0413 | — | — |
 | ${}^{13}$N | 13 | 6 | L?-pending | pending | binding_energy | — | 94.1052 | — | — |
-| ${}^{14}$N | 14 | 7 | L3-partial-shell:f=0.500 from A=12→16 | heuristic | binding_energy | 109.9563 | 104.6586 | +5.06 % | — |
-| ${}^{15}$N | 15 | 8 | L3-partial-shell:f=0.750 from A=12→16 | heuristic | binding_energy | 118.8505 | 115.4919 | +2.91 % | — |
+| ${}^{14}$N | 14 | 7 | L3-partial-shell:f=0.500 from A=12$\to$16 | heuristic | binding_energy | 109.9563 | 104.6586 | +5.06 % | — |
+| ${}^{15}$N | 15 | 8 | L3-partial-shell:f=0.750 from A=12$\to$16 | heuristic | binding_energy | 118.8505 | 115.4919 | +2.91 % | — |
 | ${}^{16}$N | 16 | 9 | L?-pending | pending | binding_energy | — | 117.9808 | — | — |
 | ${}^{17}$N | 17 | 10 | L?-pending | pending | binding_energy | — | 123.8659 | — | — |
 | ${}^{18}$N | 18 | 11 | L?-pending | pending | binding_energy | — | 126.6941 | — | — |
@@ -687,8 +687,8 @@ _3 of 18 isotopes with a framework prediction; 1 of 18 with L4 composite mass $M
 | ${}^{14}$O | 14 | 6 | L?-pending | pending | binding_energy | — | 98.7319 | — | — |
 | ${}^{15}$O | 15 | 7 | L?-pending | pending | binding_energy | — | 111.9554 | — | — |
 | ${}^{16}$O | 16 | 8 | L2-alpha-cluster | recursive | binding_energy | 134.3846 | 127.6193 | +5.30 % | 14888.3117 MeV (-728.7 ppm) |
-| ${}^{17}$O | 17 | 9 | L3-partial-shell:f=0.250 from A=16→20 | heuristic | binding_energy | 137.2455 | 131.7624 | +4.16 % | — |
-| ${}^{18}$O | 18 | 10 | L3-partial-shell:f=0.500 from A=16→20 | heuristic | binding_energy | 146.7464 | 139.8078 | +4.96 % | — |
+| ${}^{17}$O | 17 | 9 | L3-partial-shell:f=0.250 from A=16$\to$20 | heuristic | binding_energy | 137.2455 | 131.7624 | +4.16 % | — |
+| ${}^{18}$O | 18 | 10 | L3-partial-shell:f=0.500 from A=16$\to$20 | heuristic | binding_energy | 146.7464 | 139.8078 | +4.96 % | — |
 | ${}^{19}$O | 19 | 11 | L?-pending | pending | binding_energy | — | 143.7634 | — | — |
 | ${}^{20}$O | 20 | 12 | L?-pending | pending | binding_energy | — | 151.3714 | — | — |
 | ${}^{21}$O | 21 | 13 | L?-pending | pending | binding_energy | — | 155.1769 | — | — |
@@ -712,7 +712,7 @@ _1 of 19 isotopes with a framework prediction; 0 of 19 with L4 composite mass $M
 | ${}^{16}$F | 16 | 7 | L?-pending | pending | binding_energy | — | 111.4248 | — | — |
 | ${}^{17}$F | 17 | 8 | L?-pending | pending | binding_energy | — | 128.2196 | — | — |
 | ${}^{18}$F | 18 | 9 | L?-pending | pending | binding_energy | — | 137.3695 | — | — |
-| ${}^{19}$F | 19 | 10 | L3-partial-shell:f=0.750 from A=16→20 | heuristic | binding_energy | 156.2474 | 147.8014 | +5.71 % | — |
+| ${}^{19}$F | 19 | 10 | L3-partial-shell:f=0.750 from A=16$\to$20 | heuristic | binding_energy | 156.2474 | 147.8014 | +5.71 % | — |
 | ${}^{20}$F | 20 | 11 | L?-pending | pending | binding_energy | — | 154.4027 | — | — |
 | ${}^{21}$F | 21 | 12 | L?-pending | pending | binding_energy | — | 162.5042 | — | — |
 | ${}^{22}$F | 22 | 13 | L?-pending | pending | binding_energy | — | 167.7345 | — | — |
@@ -738,8 +738,8 @@ _3 of 20 isotopes with a framework prediction; 1 of 20 with L4 composite mass $M
 | ${}^{18}$Ne | 18 | 8 | L?-pending | pending | binding_energy | — | 132.1426 | — | — |
 | ${}^{19}$Ne | 19 | 9 | L?-pending | pending | binding_energy | — | 143.7795 | — | — |
 | ${}^{20}$Ne | 20 | 10 | L2-alpha-cluster | recursive | binding_energy | 174.0483 | 160.6448 | +8.34 % | 18604.3221 MeV (-994.4 ppm) |
-| ${}^{21}$Ne | 21 | 11 | L3-partial-shell:f=0.250 from A=20→24 | heuristic | binding_energy | 175.8559 | 167.4060 | +5.05 % | — |
-| ${}^{22}$Ne | 22 | 12 | L3-partial-shell:f=0.500 from A=20→24 | heuristic | binding_energy | 185.9636 | 177.7702 | +4.61 % | — |
+| ${}^{21}$Ne | 21 | 11 | L3-partial-shell:f=0.250 from A=20$\to$24 | heuristic | binding_energy | 175.8559 | 167.4060 | +5.05 % | — |
+| ${}^{22}$Ne | 22 | 12 | L3-partial-shell:f=0.500 from A=20$\to$24 | heuristic | binding_energy | 185.9636 | 177.7702 | +4.61 % | — |
 | ${}^{23}$Ne | 23 | 13 | L?-pending | pending | binding_energy | — | 182.9709 | — | — |
 | ${}^{24}$Ne | 24 | 14 | L?-pending | pending | binding_energy | — | 191.8398 | — | — |
 | ${}^{25}$Ne | 25 | 15 | L?-pending | pending | binding_energy | — | 195.9950 | — | — |

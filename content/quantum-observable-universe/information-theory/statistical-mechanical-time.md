@@ -18,7 +18,7 @@ thermodynamic quantities from microscopic dynamics.
 | Time-average (integral) | Continuous Reeb flow average |
 
 The mapping is not metaphorical — it is structural.  The same
-mathematical mechanism (Riemann sum → integral as the number of
+mathematical mechanism (Riemann sum $\to$ integral as the number of
 terms diverges) produces both thermodynamic equilibrium from
 molecular collisions and continuous time from discrete Reeb
 operations.

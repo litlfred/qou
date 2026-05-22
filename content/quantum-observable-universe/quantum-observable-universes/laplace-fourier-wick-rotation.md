@@ -41,16 +41,16 @@ $\tau = t + i\varTheta$, a complex Reeb-time.
 
 **What Wick rotation exchanges.**
 
-1. **Heat kernel ↔ propagator.**  The $q$-heat kernel
+1. **Heat kernel $\leftrightarrow$ propagator.**  The $q$-heat kernel
    $K_q(t; x, y)$ and the Schrödinger propagator
    $P_q(t; x, y)$ satisfy $P_q(t) = K_q(it)$ as formal objects in
    the complex time plane.
-2. **Gaussian ↔ plane wave.**  The Reeb-invariant $q$-Gaussian
+2. **Gaussian $\leftrightarrow$ plane wave.**  The Reeb-invariant $q$-Gaussian
    ([$q$-Gaussian solves the $q$-heat equation](#prop:q-gaussian-solves-q-heat))
    becomes a plane-wave ansatz under $t \mapsto it$; the variance
    $\sigma^2 = t/q^2$ becomes an imaginary "spread" — the phase of a
    stationary wave packet.
-3. **Laplace poles ↔ Fourier spectrum.**  The resolvent poles of
+3. **Laplace poles $\leftrightarrow$ Fourier spectrum.**  The resolvent poles of
    $\mathcal{L}$ at $s = -\mu_\lambda(q)$
    ([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)) become,
    under $s \to i\xi$, the continuous Fourier spectrum

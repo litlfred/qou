@@ -1,4 +1,4 @@
-# QOU MotivicGaloisCharacter instance via Habiro → Frob_p
+# QOU MotivicGaloisCharacter instance via Habiro $\to$ Frob_p
 
 The QOU brane-tower substrate carries a concrete instance of
 [`def:motivic-galois-character`](#def:motivic-galois-character)

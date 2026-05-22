@@ -1,5 +1,5 @@
 The linear $\mathrm{C}_6$ chain
-([linear C₆](#ex:carbon-chain-c6)) and benzene
+([linear C$_{6}$](#ex:carbon-chain-c6)) and benzene
 ([benzene ring](#ex:benzene-ring)) represent two fundamentally
 different topological states of six carbon atoms: pairwise
 Hopf-linked versus threaded by $T(2,6)$.
@@ -60,8 +60,8 @@ non-local topological structure that cannot be broken by any
 local perturbation.
 
 **Asymmetry of the barriers.**
-The closure barrier (chain → ring) is primarily **geometric**:
-getting the atoms into position.  The opening barrier (ring →
+The closure barrier (chain $\to$ ring) is primarily **geometric**:
+getting the atoms into position.  The opening barrier (ring $\to$
 chain) is primarily **topological**: dissolving the threading
 link $T(2,6)$ into 5 separate Hopf links, which costs
 
