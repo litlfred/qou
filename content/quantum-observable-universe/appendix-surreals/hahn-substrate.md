@@ -35,7 +35,7 @@ $\mathbf{No}$.
 
 ## Conjecture
 
-The substrate parameter $q$ is naturally an element of the Hahn
+The substrate parameter $q$ is accordingly an element of the Hahn
 series ring
 
 $$
@@ -73,9 +73,9 @@ unchanged. But within the surreal ambient, the $\alpha_k$ store
 information that can refine predictions:
 
 - $\alpha_2$ might encode the leading-order quantum correction
-  to particle masses (a single-parameter shift).
+ to particle masses (a single-parameter shift).
 - $\alpha_3, \alpha_4, \ldots$ might encode higher-order
-  corrections systematically.
+ corrections systematically.
 
 If determined by a constraint (e.g., requiring that the surreal
 mass formula agrees with measurement to $1$ ppb rather than
@@ -102,23 +102,23 @@ the leading term has a clean categorical interpretation
 **Speculative**. The conjecture has two layers:
 
 1. **Mathematical layer**: $q \in \mathbf{No}$ does live in a
-   Hahn-series sub-field — this is automatic from
-   [@ehrlich2012].
+ Hahn-series sub-field — this is automatic from
+ [@ehrlich2012].
 
 2. **Physical layer**: the $\alpha_k$ are determined by some
-   QOU-internal constraint (perhaps "the surreal categorical
-   mass formula reproduces CODATA to $1$ ppb"). This is
-   open, and might fail entirely — perhaps the only consistent
-   $\alpha_k$ are $0$.
+ QOU-internal constraint (perhaps "the surreal categorical
+ mass formula reproduces CODATA to $1$ ppb"). This is
+ open, and might fail entirely — perhaps the only consistent
+ $\alpha_k$ are $0$.
 
 A serious test would be:
 
 - pick the specific Hahn-series sub-field to work in (probably
-  $\mathbb{R}(\!(\varepsilon^{\mathbb{Q}})\!)$);
+ $\mathbb{R}(\!(\varepsilon^{\mathbb{Q}})\!)$);
 - redo the QOU mass formula with $q = 1 + \varepsilon + \alpha_2
   \varepsilon^2$;
 - ask: is there a *unique* choice of $\alpha_2 \in \mathbb{R}$
-  for which the formula agrees with CODATA at second order?
+ for which the formula agrees with CODATA at second order?
 
 If yes (and the $\alpha_2$ has a clean closed form), the
 conjecture is plausible. If no (the choice is over-constrained
@@ -140,15 +140,15 @@ constraint determination) need separate strategies.
 **Layer 1: mathematical existence (provable now)**:
 
 1. Cite Ehrlich [@ehrlich2012] Theorem 12.5: every Hahn series
-   ring $\mathbb{R}((\varepsilon^G))$ for divisible ordered
-   abelian $G$ embeds in $\mathbf{No}$.
+ ring $\mathbb{R}((\varepsilon^G))$ for divisible ordered
+ abelian $G$ embeds in $\mathbf{No}$.
 
 2. Specifically $G = \mathbb{Q}$ gives the
-   $\mathbb{R}((\varepsilon^{\mathbb{Q}}))$ sub-field of
-   $\mathbf{No}$ used here.
+ $\mathbb{R}((\varepsilon^{\mathbb{Q}}))$ sub-field of
+ $\mathbf{No}$ used here.
 
 3. Verify $1 + \varepsilon \in \mathbb{R}((\varepsilon^{\mathbb{Q}}))$
-   (trivially: it's a finite sum).
+ (by definition: it's a finite sum).
 
 This is provable as soon as mathlib has `HahnSeries` integrated
 with `Surreal` (partial work exists).
@@ -159,25 +159,25 @@ with `Surreal` (partial work exists).
    + \alpha_2 \varepsilon^2 + \cdots$ truncated at order 2.
 
 5. Find $\alpha_2 \in \mathbb{R}$ such that the formula's
-   second-order $\varepsilon$-coefficient matches measured
-   particle-mass corrections (e.g., the residual $\sim 4\%$ MAE
-   on $\mathcal{Q}$-values).
+ second-order $\varepsilon$-coefficient matches measured
+ particle-mass corrections (e.g., the residual $\sim 4\%$ MAE
+ on $\mathcal{Q}$-values).
 
 6. Determine: is $\alpha_2$ uniquely determined? Is it consistent
-   across different particles?
+ across different particles?
 
 7. If unique: declare the conjecture vindicated at order 2.
-   Iterate to higher orders.
+ Iterate to higher orders.
 
 8. If non-unique or inconsistent: declare the conjecture
-   refuted (the higher-order $\alpha_k$ are *free parameters*,
-   not predictions).
+ refuted (the higher-order $\alpha_k$ are *free parameters*,
+ not predictions).
 
 **Required infrastructure** (Layer 2):
 - A precise CODATA-comparison protocol for second-order
-  corrections.
+ corrections.
 - A Lean (or Python) recomputation of the QOU mass spectrum
-  with $q$ as a Hahn series.
+ with $q$ as a Hahn series.
 
 **Falsification path**: Layer 2 falsification by inconsistency
 across particles (e.g., $\alpha_2$ for the proton differs from

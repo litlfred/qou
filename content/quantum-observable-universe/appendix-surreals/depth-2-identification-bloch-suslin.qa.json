@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.lean"
   },
   "source_hashes": {
-    "md": "7f3eacdffa1f",
+    "md": "f41fe913f797",
     "ts": "9553637ffc7d",
     "lean": "23f69823217e"
   },
@@ -463,20 +463,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "5bcf3c1375cc",
+          "md": "f41fe913f797",
           "ts": "9553637ffc7d",
           "lean": "23f69823217e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md:158: Steps 3, 4 generalize cleanly. **Step 2 (Goncharov's motivic"
+        "reviewed_at": "2026-05-22T20:25:38.506Z",
+        "reviewed_sha": "3786c58a4ff41ad346acab157eabda358f6736f4"
       }
     ],
     "voice-scholarly-default": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:46:57.612Z"
+  "updated_at": "2026-05-22T20:25:38.506Z"
 }

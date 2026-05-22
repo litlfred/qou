@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/on-p-modular-hecke.lean"
   },
   "source_hashes": {
-    "md": "c8d38790cfb0",
+    "md": "1232757ce508",
     "ts": "9c893db49e14",
     "lean": "914b2042b25a"
   },
@@ -427,20 +427,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "12be743b7391",
+          "md": "1232757ce508",
           "ts": "9c893db49e14",
           "lean": "914b2042b25a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/appendix-surreals/on-p-modular-hecke.md:167: 3. The $p$-ary sign-sequence-to-nimber map is not as cleanly"
+        "reviewed_at": "2026-05-22T20:25:38.506Z",
+        "reviewed_sha": "3786c58a4ff41ad346acab157eabda358f6736f4"
       }
     ],
     "voice-scholarly-default": [
@@ -563,5 +563,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:46:57.612Z"
+  "updated_at": "2026-05-22T20:25:38.506Z"
 }

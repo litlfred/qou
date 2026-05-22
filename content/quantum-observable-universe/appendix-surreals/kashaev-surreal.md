@@ -15,10 +15,10 @@ volume.
 The conjecture has two awkward features when viewed through QOU:
 
 1. The **left-hand side** is hyperbolic volume — pure analytic
-   geometry, broken under surreal replacement (see
-   [analytic obstructions](#rem:analytic-obstructions)).
+ geometry, broken under surreal replacement (see
+ [analytic obstructions](#rem:analytic-obstructions)).
 2. The **right-hand side** uses an asymptotic-$n$ limit at a root
-   of unity — a *singular* limit in $\mathbb{C}$.
+ of unity — a *singular* limit in $\mathbb{C}$.
 
 Under the surreal lift, both sides admit cleaner reformulations,
 and the gap between them sharpens.
@@ -52,13 +52,13 @@ The reformulation **does not solve** the volume conjecture. It
 trades:
 
 - (classical) an analytic limit $\lim_{n \to \infty}$ of complex
-  numbers, plus a hyperbolic-volume identity in $\mathbb{R}$;
+ numbers, plus a hyperbolic-volume identity in $\mathbb{R}$;
 
 for:
 
 - (surreal) an evaluation of a polynomial-in-$n$ at $n = \omega$,
-  plus the *standard-part* identity that the result agrees with
-  hyperbolic volume.
+ plus the *standard-part* identity that the result agrees with
+ hyperbolic volume.
 
 The right-hand side of the surreal version is *manifestly*
 well-defined (rational arithmetic in $\mathbf{No}$), so the
@@ -121,12 +121,12 @@ evaluation, which Kashaev relates to hyperbolic volume.
 Under the surreal lift:
 
 - Hoefsmit/Markov-trace side lifts to $\mathbf{No}$ exactly
-  (algebraic — see [algebraic core survives](#rem:algebraic-core-survives)).
-- Jones polynomial at $q = q_0 \in \mathbb{R}$ lifts trivially
-  ($q_0 \in \mathbb{R} \subset \mathbf{No}$).
+ (algebraic — see [algebraic core survives](#rem:algebraic-core-survives)).
+- Jones polynomial at $q = q_0 \in \mathbb{R}$ lifts by definition
+ ($q_0 \in \mathbb{R} \subset \mathbf{No}$).
 - Hyperbolic volume side stays in $\mathbb{R}$ (external anchor).
 - Kashaev's identity, recast as a surreal standard-part
-  identity, bridges the two cleanly.
+ identity, bridges the two.
 
 If the surreal Kashaev conjecture is proved (or even just
 proved for the knot class relevant to QOU), the QOU mass formula
@@ -138,41 +138,41 @@ geometry.
 **Reformulation reducibility (provable now)**:
 
 1. Show: the classical Kashaev statement (limit form) and the
-   surreal Kashaev statement (standard-part form) are
-   *equivalent* — one holds iff the other does.
+ surreal Kashaev statement (standard-part form) are
+ *equivalent* — one holds iff the other does.
 
 2. Forward direction: if $\lim_{n \to \infty} 2\pi \log
    |J_K(\zeta_n, n)|/n = \mathrm{Vol}(S^3 \setminus K)$, then by
-   the transfer principle the standard-part of the surreal
-   evaluation matches.
+ the transfer principle the standard-part of the surreal
+ evaluation matches.
 
 3. Backward direction: if $\mathrm{st}(\cdots) =
    \mathrm{Vol}(\cdots)$, then by definition of $\mathrm{st}$
-   the asymptotic limit converges to $\mathrm{Vol}$.
+ the asymptotic limit converges to $\mathrm{Vol}$.
 
 **Verification on known cases (provable now)**:
 
 4. The figure-eight knot $4_1$ (Murakami–Murakami 2001
-   [@murakami-murakami2001]) and the trefoil $3_1$ have the volume
-   conjecture proved. Compute $J_K(\zeta_\omega, \omega)$
-   directly, take $\mathrm{st}$, and verify equality with the
-   known volume.
+ [@murakami-murakami2001]) and the trefoil $3_1$ have the volume
+ conjecture proved. Compute $J_K(\zeta_\omega, \omega)$
+ directly, take $\mathrm{st}$, and verify equality with the
+ known volume.
 
 5. Use `QOU.AppendixSurreals.gonshorIn` and
-   `omegaSurreal` to express the surreal evaluations.
+ `omegaSurreal` to express the surreal evaluations.
 
 **General case (open)**:
 
 6. The general Kashaev conjecture for hyperbolic knots is open
-   classically. The surreal reformulation does not provide a new
-   line of attack, but it *separates* the algebraic content
-   (rational-in-$\omega$ evaluations of $J_K$) from the geometric
-   content (the volume identity).
+ classically. The surreal reformulation does not provide a new
+ line of attack, but it *separates* the algebraic content
+ (rational-in-$\omega$ evaluations of $J_K$) from the geometric
+ content (the volume identity).
 
 **Required infrastructure**:
 - Coloured Jones polynomial in Lean (does not exist in mathlib).
 - Berarducci–Mantova exponential/logarithm on $\mathbf{No}$
-  (partial in mathlib).
+ (partial in mathlib).
 - Hyperbolic-volume formalisation (does not exist in mathlib).
 
 **Falsification path**: identical to the classical Kashaev

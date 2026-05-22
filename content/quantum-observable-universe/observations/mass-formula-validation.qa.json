@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/observations/mass-formula-validation.md"
   },
   "source_hashes": {
-    "md": "d30313523ec3",
+    "md": "c5e3dff7fa3d",
     "ts": "06ee4fe752b5"
   },
   "criteria": {
@@ -379,19 +379,19 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "2e83d091d0da",
+          "md": "c5e3dff7fa3d",
           "ts": "06ee4fe752b5"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/observations/mass-formula-validation.md:3: This recombines observed constants and is trivially correct --- the | quantum-observable-universe/observations/mass-formula-validation.md:98: These are the real predictions --- not the trivially correct 0.0000%"
+        "reviewed_at": "2026-05-22T20:25:38.506Z",
+        "reviewed_sha": "3786c58a4ff41ad346acab157eabda358f6736f4"
       }
     ],
     "voice-scholarly-default": [
@@ -493,5 +493,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:49:12.358Z"
+  "updated_at": "2026-05-22T20:25:38.506Z"
 }

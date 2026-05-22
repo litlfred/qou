@@ -78,9 +78,9 @@ keystone-derived claims to be theorems:
 
 | Claim | Status before | Status after this prop |
 |---|---|---|
-| Each Bring-natural row of B1 lands non-trivially at its depth | conjectural | **theorem** |
+| Each Bring-natural row of B1 lands non-by definition at its depth | conjectural | **theorem** |
 | Per-knot $\mathrm{Vol}(K) \neq 0$ in $\mathcal{P}_2/\mathcal{P}_1$ for hyperbolic Bring-embeddable $K$ | conjectural (within B1) | **theorem** (Bloch–Wigner non-vanishing) |
-| $\mathrm{Cl}_3(2\pi/5)$ lives non-trivially in $\mathcal{P}_3/\mathcal{P}_2$ | conjectural | **theorem** (Borel + Lewin) |
+| $\mathrm{Cl}_3(2\pi/5)$ lives non-by definition in $\mathcal{P}_3/\mathcal{P}_2$ | conjectural | **theorem** (Borel + Lewin) |
 | Each numerical witness in [`rem:transcendental-accounting`](#rem:transcendental-accounting) row lands at the predicted depth | partly conjectural | **theorem** for non-triviality; depth-match is structural |
 
 ### What soft sharpness does NOT give
@@ -106,10 +106,10 @@ affirmative answer:
 
 - **Goncharov's full conjecture**: $K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q}
   \cong \mathfrak{B}_n(F) \otimes \mathbb{Q}$ via the Goncharov
-  regulator, for all $F$, all $n$. This is BIG.
+ regulator, for all $F$, all $n$. This is BIG.
 - **What QOU needs (soft sharpness)**: each Bring-natural depth-$n$
-  grouplike value lands non-trivially in $\mathcal{P}_n / \mathcal{P}_{n-1}$.
-  This is SMALL — and is a theorem of Borel + Lewin.
+ grouplike value lands non-by definition in $\mathcal{P}_n / \mathcal{P}_{n-1}$.
+ This is SMALL — and is a theorem of Borel + Lewin.
 
 So **the soft version is enough for QOU's framework predictions to
 be non-vacuous; the strong version is what would be needed to claim

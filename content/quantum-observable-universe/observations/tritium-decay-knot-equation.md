@@ -59,13 +59,13 @@ $\sigma_4$: $u$-$d$ (mixed), $\sigma_5$: $d$-$d$ (negative).
 **The Skein crossing change.**
 
 In $\beta^-$ decay, one neutron (say $\mathfrak{n}_1$ on
-strands 3-5) converts to a proton.  This changes the quark
+strands 3-5) converts to a proton. This changes the quark
 content $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d}) \to \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$:
 one $d$-quark strand becomes a $u$-quark strand.
 
 The crossing change occurs at the internal $d$-$d$ crossing
-of $\mathfrak{n}_1$, at generator $\sigma_5$.  Before: $d$-$d$
-(negative crossing).  After: $u$-$d$ (mixed crossing).
+of $\mathfrak{n}_1$, at generator $\sigma_5$. Before: $d$-$d$
+(negative crossing). After: $u$-$d$ (mixed crossing).
 
 The **knot equation** for the decay:
 
@@ -118,7 +118,7 @@ $$
 $$
 
 The traces differ only at generators $\sigma_4$ and $\sigma_5$
-(the internal generators of the converting nucleon).  At $\sigma_5$:
+(the internal generators of the converting nucleon). At $\sigma_5$:
 
 - Parent: $d$-$d$ crossing $\Rightarrow$ $(c, d) = (q^2, -q(q^{1/2} - q^{-1/2}))$
 - Daughter: $u$-$d$ crossing $\Rightarrow$ $(c, d) = ((1 + q^2)/2, -q(q^{1/2} - q^{-1/2})/2)$
@@ -145,8 +145,8 @@ $$
   \frac{q(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})}{q^{1/2} + q^{-1/2}}
 $$
 
-Wait — this needs the full pair Skein difference, not just the
-converting crossing.  The re-reduction of the braid word after
+Wait — this needs the full pair Skein difference, not the
+converting crossing. The re-reduction of the braid word after
 the crossing change also affects the inter-nucleon crossings:
 changing the quark flavour of strand 5 from $d$ to $u$ modifies
 every inter-nucleon crossing involving that strand.
@@ -154,12 +154,12 @@ every inter-nucleon crossing involving that strand.
 **Inter-nucleon crossing changes.**
 
 Strand 5 (was $d$, now $u$) crosses with strands from the other
-two nucleons.  Each of those crossings changes type:
+two nucleons. Each of those crossings changes type:
 
 - Strand 5 $\times$ proton strands (0,1,2): was $d$-$u$/$d$-$u$/$d$-$d$,
-  now $u$-$u$/$u$-$u$/$u$-$d$
+ now $u$-$u$/$u$-$u$/$u$-$d$
 - Strand 5 $\times$ neutron-2 strands (6,7,8): was $d$-$u$/$d$-$d$/$d$-$d$,
-  now $u$-$u$/$u$-$d$/$u$-$d$
+ now $u$-$u$/$u$-$d$/$u$-$d$
 
 These 6 inter-nucleon crossing changes, plus the 1 internal
 crossing change at $\sigma_5$, give 7 modified crossings total.
@@ -176,5 +176,5 @@ $$
 $$
 
 This is the exact knot equation for the tritium $Q$-value:
-no approximation, no fitted parameter.  Every term is determined
+no approximation, no fitted parameter. Every term is determined
 by $q_0$ and the quark content of the nucleons.

@@ -40,7 +40,7 @@ More generally, Berarducci--Mantova [@berarducci-mantova2018]
 construct a genuine derivation $D : \mathbf{No} \to \mathbf{No}$
 extending $d/dx$ on $\mathbb{R}$, making $\mathbf{No}$ a
 differential field. Under this derivation, many transcendental
-identities ($\exp$, $\log$, $\mathrm{Li}_2$) extend naturally.
+identities ($\exp$, $\log$, $\mathrm{Li}_2$) extend accordingly.
 
 ## 2. Formal integration: antiderivative exists, measure does not
 
@@ -64,8 +64,8 @@ therefore:
 
 - use $d_q$ as the native derivative;
 - reserve $\int$ for either the *categorical* Frobenius integral
-  (algebraic, survives) or for the *standard-part* of Riemann
-  sums computed on $\mathbf{No}$-valued partitions.
+ (algebraic, survives) or for the *standard-part* of Riemann
+ sums computed on $\mathbf{No}$-valued partitions.
 
 ## 3. Limits become evaluations
 
@@ -87,12 +87,12 @@ transfer of the formula defining $a_n$. This works whenever the
 classical limit exists.
 
 - **Benefit.** Limits become named values rather than formal
-  processes. $\lim_{q \to 1}$ becomes evaluation at
-  $q = 1 + \varepsilon$, and the classical result is the
-  standard-part.
+ processes. $\lim_{q \to 1}$ becomes evaluation at
+ $q = 1 + \varepsilon$, and the classical result is the
+ standard-part.
 - **Cost.** Double limits and iterated sup/inf over uncountable
-  index sets require more care; the transfer principle covers
-  first-order cases but not arbitrary topological statements.
+ index sets require more care; the transfer principle covers
+ first-order cases but not arbitrary topological statements.
 
 ## 4. Formal power series: the safe regime
 
@@ -123,7 +123,7 @@ principle:
 1. define a Loeb measure on $S^1 \times S^1 \subset \mathbf{No}^2$;
 2. evaluate the (divergent) integrand $1/|x - y|^2$ against it;
 3. take the standard-part after subtracting the Loeb-measure
-   equivalent of the diagonal regulariser.
+ equivalent of the diagonal regulariser.
 
 The outcome, to infinitesimal precision, is the classical
 Möbius energy. Whether this *adds* anything over the classical

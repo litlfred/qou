@@ -8,11 +8,11 @@ particle masses.
 This strict-zero condition is awkward in two ways:
 
 1. It introduces a *boundary case* — the unknot must be
-   special-cased in the geometric-energy formula.
+ special-cased in the geometric-energy formula.
 2. It is *physically suspicious* — a "vacuum energy" of exactly
-   zero is the textbook signature of a fine-tuned theory, and is
-   thought by many to be the wrong setting (cosmological
-   constant problem, vacuum-fluctuation arguments, etc.).
+ zero is the textbook signature of a fine-tuned theory, and is
+ thought by many to be the wrong setting (cosmological
+ constant problem, vacuum-fluctuation arguments, etc.).
 
 Under a surreal lift, the strict zero can be relaxed.
 
@@ -34,34 +34,34 @@ $\mathrm{st}(\varepsilon) = 0$.
 If the conjecture holds, several existing results lift:
 
 1. **Geometric-energy formula** simplifies: the special case for
-   $\unicode{9737}$ is absorbed into the general formula, giving
-   $\mathrm{Geom}(L) = (\text{generic formula}) +
+ $\unicode{9737}$ is absorbed into the general formula, giving
+ $\mathrm{Geom}(L) = (\text{generic formula}) +
    \varepsilon \cdot (\text{number of unknot components})$.
 
-2. **Möbius energy regularisation** maps cleanly: the diagonal
-   subtraction in the Möbius energy is exactly the
-   $\varepsilon$-vacuum contribution.
+2. **Möbius energy regularisation** maps : the diagonal
+ subtraction in the Möbius energy is exactly the
+ $\varepsilon$-vacuum contribution.
 
 3. **Mass spectrum** acquires an infinitesimal shift: every
-   particle mass $\mathfrak{m}(\mathfrak{H})$ becomes
-   $\mathfrak{m}(\mathfrak{H}) + \varepsilon \cdot c_{\mathfrak{H}}$
-   for some standard-real $c_{\mathfrak{H}}$. Standard-part of
-   this shift is zero, so archimedean predictions are unchanged.
+ particle mass $\mathfrak{m}(\mathfrak{H})$ becomes
+ $\mathfrak{m}(\mathfrak{H}) + \varepsilon \cdot c_{\mathfrak{H}}$
+ for some standard-real $c_{\mathfrak{H}}$. Standard-part of
+ this shift is zero, so archimedean predictions are unchanged.
 
 ## Why this matters
 
 Two reasons:
 
 1. **Cleaner axioms**: the strict-zero vacuum is a fine-tuning
-   that would-be reviewers can object to. The
-   $\varepsilon$-vacuum is a parameter, not a fine-tuning, and
-   the archimedean theory is recovered by standard-part.
+ that would-be reviewers can object to. The
+ $\varepsilon$-vacuum is a parameter, not a fine-tuning, and
+ the archimedean theory is recovered by standard-part.
 
 2. **Möbius regularisation absorbed**: the diagonal-subtraction
-   trick in the Möbius energy
-   ([Möbius energy proof](#prf:mobius-energy)) becomes a special
-   case of $\varepsilon$-vacuum subtraction. This unifies two
-   regularisations into one.
+ trick in the Möbius energy
+ ([Möbius energy proof](#prf:mobius-energy)) becomes a special
+ case of $\varepsilon$-vacuum subtraction. This unifies two
+ regularisations into one.
 
 ## Status
 
@@ -78,26 +78,26 @@ $\varepsilon$ at the standard-part.
 The most direct of the conjectures: pure computation.
 
 1. **Recompute geometric energy** with vacuum convention
-   $\mathrm{Geom}(\unicode{9737}) = \varepsilon$. For each link
-   $L$ in the QOU mass table (Z=1–20),
-   $\mathrm{Geom}(L)$ now has an additive $\varepsilon$-dependent
-   correction proportional to the number of unknot components.
+ $\mathrm{Geom}(\unicode{9737}) = \varepsilon$. For each link
+ $L$ in the QOU mass table (Z=1–20),
+ $\mathrm{Geom}(L)$ now has an additive $\varepsilon$-dependent
+ correction proportional to the number of unknot components.
 
 2. **Recompute particle masses**:
-   $\mathfrak{m}(\mathfrak{H}) \to \mathfrak{m}(\mathfrak{H}) +
+ $\mathfrak{m}(\mathfrak{H}) \to \mathfrak{m}(\mathfrak{H}) +
    \varepsilon \cdot c_{\mathfrak{H}}$.
 
 3. **Apply $\mathrm{St}$**: standard-part of
-   $\mathfrak{m}(\mathfrak{H}) + \varepsilon \cdot c_{\mathfrak{H}}$
-   equals $\mathfrak{m}(\mathfrak{H})$ — the original mass. So
-   archimedean predictions are unchanged.
+ $\mathfrak{m}(\mathfrak{H}) + \varepsilon \cdot c_{\mathfrak{H}}$
+ equals $\mathfrak{m}(\mathfrak{H})$ — the original mass. So
+ archimedean predictions are unchanged.
 
 4. **Verify Möbius regularisation absorbed**: show that the
-   diagonal subtraction in
-   [Möbius energy proof](#prf:mobius-energy) is exactly
-   $\varepsilon \cdot (\text{boundary contribution})$, so the
-   classical regularisation is the $\mathrm{St}$-image of the
-   $\varepsilon$-vacuum subtraction.
+ diagonal subtraction in
+ [Möbius energy proof](#prf:mobius-energy) is exactly
+ $\varepsilon \cdot (\text{boundary contribution})$, so the
+ classical regularisation is the $\mathrm{St}$-image of the
+ $\varepsilon$-vacuum subtraction.
 
 **Required infrastructure**:
 - `QOU.AppendixSurreals.standardPart_of_infinitesimal` (proved).

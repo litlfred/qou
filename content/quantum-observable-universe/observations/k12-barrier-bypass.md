@@ -26,18 +26,18 @@ The matrix-evaluation programme produces, for each
 $n \leq 10$ and each $\lambda \vdash n$:
 
 * the seminormal-form matrices for $\sigma_1, \dots, \sigma_{n-1}$
-  acting on $V_\lambda$,
+ acting on $V_\lambda$,
 * the full-twist eigenvalue $q^{c(\lambda)}$ via direct multiplication,
 * the BB-stratified spectral-sequence entries $E_\infty^{p, q}(n)$
-  by computing the :refterm[descent]{#descent}-graded jet algebra at level $n$ and
-  reading off cohomology.
+ by computing the :refterm[descent]{#descent}-graded jet algebra at level $n$ and
+ reading off cohomology.
 
 At $n \in \{2, 8\}$ (and partial coverage of $n = 20$ via
 branching-rule extrapolation from $n = 10$) the matrix-evaluation
 results agree with the predictions of the homological framework:
 $E_\infty^{p, q}(n) = 0$ for $q > 0$, the LR fusion at double-magic
 $(Z = 8, N = 8)$ collapses to a single $\nu$, and the full-twist
-acts trivially on the saturated $\Phi_n$. Empirical computational
+acts as the identity on the saturated $\Phi_n$. Empirical computational
 verification is therefore in hand at the small magic numbers.
 
 ## What the matrix-evaluation programme cannot reach
@@ -58,14 +58,14 @@ combinatorial objects whose verification at large $n$ is a
 finite-data check rather than a matrix computation:
 
 1. **Saturated-shell content sum.** For each $n \in \mathfrak{M}$,
-   the existence of a self-conjugate partition $\lambda \vdash n$
-   with $c(\lambda) = 0$ is a finite combinatorial statement
-   verifiable in $O(p(n))$ partition operations.
+ the existence of a self-conjugate partition $\lambda \vdash n$
+ with $c(\lambda) = 0$ is a finite combinatorial statement
+ verifiable in $O(p(n))$ partition operations.
 2. **LR-rigidity at double-magic.** For each pair
-   $(Z, N) \in \mathfrak{M} \times \mathfrak{M}$, the existence of
-   a *unique* self-conjugate $\nu_{ZN} \vdash Z + N$ produced by
-   LR fusion of self-conjugate $\lambda_Z, \mu_N$ is a finite
-   LR-coefficient computation, not a matrix evaluation.
+ $(Z, N) \in \mathfrak{M} \times \mathfrak{M}$, the existence of
+ a *unique* self-conjugate $\nu_{ZN} \vdash Z + N$ produced by
+ LR fusion of self-conjugate $\lambda_Z, \mu_N$ is a finite
+ LR-coefficient computation, not a matrix evaluation.
 
 Both are testable at $n = 50, 82, 126$ on present hardware in
 seconds. The numerical *prediction* therefore exists; what is

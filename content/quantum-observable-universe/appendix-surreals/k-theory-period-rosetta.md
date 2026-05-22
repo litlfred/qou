@@ -86,37 +86,37 @@ Goncharov–Manin). For computation and exposition, the paper
 should freely use whichever is cleaner in context:
 
 - **Hopf-algebra language** (used in the keystone) is cleaner for
-  describing structural relations between grouplikes (multiplicative
-  vs co-multiplicative, bar involution, joint actions).
+ describing structural relations between grouplikes (multiplicative
+ vs co-multiplicative, bar involution, joint actions).
 - **K-theory language** (this remark) is cleaner for citing
-  external results (Borel's regulator theorem, Beilinson's conjecture
-  on $L$-values, Bloch's elliptic dilogarithm program).
+ external results (Borel's regulator theorem, Beilinson's conjecture
+ on $L$-values, Bloch's elliptic dilogarithm program).
 
 ### Significance for B1's discharge — what K-theory actually buys
 
 The keystone's discharge targets, restated in K-theoretic language:
 
 1. **Inclusion target**: $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$.
-   *K-theoretic version*: identify $G^{(n)}$ with (a subspace of)
-   $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K)) \otimes \mathbb{Q}$
-   so that $\tau_{\mathrm{arch}}$ is the Beilinson regulator. The
-   *regulator $\to$ period* direction is then trivial (definition of
-   the regulator); the **content** is the identification.
+ *K-theoretic version*: identify $G^{(n)}$ with (a subspace of)
+ $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K)) \otimes \mathbb{Q}$
+ so that $\tau_{\mathrm{arch}}$ is the Beilinson regulator. The
+ *regulator $\to$ period* direction is then trivial (definition of
+ the regulator); the **content** is the identification.
 
 2. **Sharpness target**: image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$
-   non-trivially.
-   - **Borel's theorem (1977)**: $K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
-     is non-zero of *known explicit rank* for $n \geq 2$ when $F$
-     has appropriate signature. **Theorem-level.**
-   - But "non-zero rank" is *weaker* than "image generates
-     $\mathcal{P}_n / \mathcal{P}_{n-1}$" — the latter is essentially
-     **Beilinson's conjecture**, still open at $n \geq 3$.
+ non-by definition.
+ - **Borel's theorem (1977)**: $K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
+ is non-zero of *known explicit rank* for $n \geq 2$ when $F$
+ has appropriate signature. **Theorem-level.**
+ - But "non-zero rank" is *weaker* than "image generates
+ $\mathcal{P}_n / \mathcal{P}_{n-1}$" — the latter is essentially
+ **Beilinson's conjecture**, still open at $n \geq 3$.
 
 So the K-theoretic language **partially** reduces B1's
 discharge:
 
 - *Borel-rank-positive* $K_{2n-1}^{\mathrm{ind}}$ is a theorem (gives
-  non-emptiness of the image).
+ non-emptiness of the image).
 - *Generation of the period quotient* is Beilinson's conjecture.
 
 The improvement over the original B1 statement is therefore
