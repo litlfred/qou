@@ -109,12 +109,47 @@ _H = _Q_0 - mp.mpf(1) / _Q_0
 _CATALAN_G = mp.catalan
 _VOL_B3_LIT = 8 * _CATALAN_G
 
-# Substrate-form λ_scale (CONJECTURAL — see conj:lambda-scale-substrate-form)
-LAMBDA_SCALE_SUBSTRATE_FORM = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
+# λ_scale categorical identity (PROVED — Family A theorem in
+# `lambda_scale_all_c_i_family_a.py` + Lean
+# `lambda-scale-substrate-form.lean`):
+#
+#     λ_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ = 5/2 + (3/4) h²
+#
+# This is the actual categorical sum at H_4 (conjugate-pair half-
+# symmetric partition count, q-deformed via Frame–Robinson–Thrall).
+# It TERMINATES exactly at h² (all higher h^{2k} vanish).
+#
+# The PRIOR form `5/2 − h²·G` shipped in PR #701 / #843 was a
+# PSLQ-style empirical fit to CODATA m_p (5.4 ppm match) that the
+# 2026-05-18 falsification audit ruled out as a categorical
+# identity:
+#   - Family A gives + 3h²/4 (positive), not −G (negative) — sign
+#     mismatch.
+#   - 32 sign-flipped Wedderburn variants at H_4 — none give a
+#     negative h² coefficient.
+#   - Hecke levels H_2 through H_7 — all positive h².
+#   - Transcendental ansätze (Bloch-Wigner, Clausen, ζ(3), Cl_2)
+#     — no candidate matches the empirical Σ_geom within 1e-3.
+# See `docs/audits/2026-05-18-conjecture-falsification.md`.
+#
+# This expression is the FRAMEWORK'S ACTUAL PREDICTION — it puts
+# the m_p prediction further from CODATA than the falsified fit
+# did, but it is the categorical truth as established to date.
+# The Bring–Bloch path (`conj:lambda-scale-bring-bloch-identity`)
+# remains the open R&D direction for closing m_p to ppb.
+LAMBDA_SCALE_SUBSTRATE_FORM = mp.mpf(5) / 2 + mp.mpf(3) * _H**2 / 4
 
-# Borromean tower prediction (CONJECTURAL — gates ¹H lift to `derived`)
+# Empirical legacy (falsified, retained for the comparison column
+# in the audit witness).  Removing it in a follow-up commit once
+# downstream consumers stop reading the legacy form.
+LAMBDA_SCALE_FALSIFIED_FIT = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
+
+# Borromean tower prediction (now using the PROVED Family A λ).
 M_P_PRED_BORROMEAN_MEV = (
     _VOL_B3_LIT / _HBAR_Q**2 * LAMBDA_SCALE_SUBSTRATE_FORM * M_E_MEV_CODATA
+)
+M_P_PRED_BORROMEAN_FALSIFIED_FIT_MEV = (
+    _VOL_B3_LIT / _HBAR_Q**2 * LAMBDA_SCALE_FALSIFIED_FIT * M_E_MEV_CODATA
 )
 
 # Production chain prediction:

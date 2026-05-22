@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T15:23:51.768825+00:00",
-  "commitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
+  "computedAt": "2026-05-22T19:42:51.508411+00:00",
+  "commitSha": "63cccc576a7357b5b597cd04b44e85589dd8fc3d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 45,
+  "durationMs": 32,
   "computation": "canonical-isotope-witness-Z01",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "8741bbbd4e0b",
@@ -54,10 +54,10 @@
         "err_pct": 1.090306724283319,
         "err_ppm": 10903.06724283319,
         "composite_mass": {
-          "M_pred_MeV": 1875.588687282958,
+          "M_pred_MeV": 1929.850425810508,
           "M_AME_MeV": 1876.123927735323,
-          "err_MeV": -0.5352404523648602,
-          "err_ppm": -285.2905634069446,
+          "err_MeV": 53.72649807518519,
+          "err_ppm": 28636.966503614007,
           "canonical_status": "canonical-with-empirical-assignment",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -85,10 +85,10 @@
         "err_pct": -0.15560163384945264,
         "err_ppm": -1556.0163384945263,
         "composite_mass": {
-          "M_pred_MeV": 2808.9343299077573,
+          "M_pred_MeV": 2889.6802715215263,
           "M_AME_MeV": 2809.4321181576593,
-          "err_MeV": -0.497788249901987,
-          "err_ppm": -177.18465119150895,
+          "err_MeV": 80.248153363867,
+          "err_ppm": 28563.8342514897,
           "canonical_status": "canonical-with-empirical-assignment",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -230,11 +230,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "e6ddfaa294a361c11c58151f9cac1857c7a2465bd1918b4feee60e245fa0aca6",
-        "size_bytes": 51114,
-        "commitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
+        "sha256": "a7307e9f097d257d0a81dc81a452f447aba46368282efbc28b76e2e5673031f1",
+        "size_bytes": 40250,
+        "commitSha": "07d90411dc8d042529bf1c39dfcf852f3eba6ca3",
         "scriptCommitSha": "5471828e36481fd7f3e16af4d14c25a33d34cf5d",
-        "computedAt": "2026-05-22T15:23:30.313196+00:00"
+        "computedAt": "2026-05-22T18:57:00.515960+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
@@ -254,11 +254,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "7982942be3b0dbc356bdb9a09d5bba979f03e0aefc3020c4d1cc94e79d6b45a1",
-        "size_bytes": 5032,
-        "commitSha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
-        "scriptCommitSha": "9e5e6ab8ae93a5158781cd86ec7d080ef96df5de",
-        "computedAt": "2026-05-22T14:51:35.913199+00:00"
+        "sha256": "a1e7885e892b79bfe5f23ee25f12a509c23554f86250b356485512ab4829ddf4",
+        "size_bytes": 5456,
+        "commitSha": "63cccc576a7357b5b597cd04b44e85589dd8fc3d",
+        "scriptCommitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
+        "computedAt": "2026-05-22T19:42:51.144307+00:00"
       },
       {
         "path": "ame2020.json",

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T05:05:07.683003+00:00",
-  "commitSha": "260522a6b92529e5656455e73d825392f847f5cb",
+  "computedAt": "2026-05-22T18:51:11.993808+00:00",
+  "commitSha": "3ee249f510da13790a1a0d7d245aa900a3713c3d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-tr-m-mpfr-50dps",
   "scriptFile": "atomic_tr_m_mpfr_50dps.py",
-  "scriptHash": "06180d514f65",
-  "scriptCommitSha": "c50ad12ea46d0a90e8bd513f0676f8e4a70d30bc",
+  "scriptHash": "a3df4b6c3096",
+  "scriptCommitSha": "15ea5d83d80d7d74ae61ec7b15c18ba5b9c42c68",
   "description": "Plan F advance — tr_M(T_w, q_0) via the 3A-strand atom-braid convention for proton, neutron, deuteron, tritium, ³He, evaluated at q_0 to 50 dps via the Hoefsmit + Wenzl bridge (Σ_λ y_λ · χ_λ) and (where applicable) compared against the published Jones polynomial of the historical knot ID. Companion to proton-mass-mpfr-50dps.witness.json.  Tritium / ³He at H_9 unblocked vs. legacy sympy path (>4-min timeout).",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision": "mpfr_50dps",
@@ -28,14 +28,27 @@
       "n_strands_3A": 3,
       "rho_factor": 1,
       "word_length_3A": 11,
+      "n_crossings_canonical": 11,
       "tr_M_at_q0_50dps": "1.065306228592389255153277569968066119334",
       "term1_b_pred_mev_50dps": "0.5443703642391708873746069273122333205101",
-      "bridge_elapsed_sec": 0.0013153553009033203,
+      "bridge_elapsed_sec": 0.0013382434844970703,
+      "method": "rust-with-python-crosscheck",
+      "effective_method": "rust-with-python-crosscheck",
+      "rust_canonical_chi_elapsed_sec": 0.42500972747802734,
+      "python_hoefsmit_elapsed_sec": 0.0013382434844970703,
+      "rust_crosscheck": {
+        "tr_M_python_50dps": "1.065306228592389255153277569968066119334",
+        "abs_delta": "2.138211768073756516912429173721185503052e-50",
+        "rel_diff": "2.007133452039437646341780269452816742003e-50",
+        "agree_at_25dps": true,
+        "python_wall_sec": 0.0013382434844970703,
+        "speedup_vs_python": 0.003148736129966005
+      },
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.01145625114440918,
+        "elapsed_sec": 0.008965015411376953,
         "tr_M_at_q0_50dps": "1.065306228592389255153277569968066119334",
-        "abs_diff_vs_bridge": "8.018294130276586938421609401454445636446e-50"
+        "abs_diff_vs_bridge": "1.015650589835034345533403857517563113950e-49"
       },
       "historical_K_comparison": null
     },
@@ -47,14 +60,27 @@
       "n_strands_3A": 3,
       "rho_factor": 1,
       "word_length_3A": 11,
+      "n_crossings_canonical": 11,
       "tr_M_at_q0_50dps": "0.9232332971695836424637698809187137593269",
       "term1_b_pred_mev_50dps": "0.4717712454586952132361618221910877663666",
-      "bridge_elapsed_sec": 0.0006678104400634766,
+      "bridge_elapsed_sec": 0.0006353855133056641,
+      "method": "rust-with-python-crosscheck",
+      "effective_method": "rust-with-python-crosscheck",
+      "rust_canonical_chi_elapsed_sec": 0.0031690597534179688,
+      "python_hoefsmit_elapsed_sec": 0.0006353855133056641,
+      "rust_crosscheck": {
+        "tr_M_python_50dps": "0.9232332971695836424637698809187137593269",
+        "abs_delta": "2.271850003578366299219455997078759596993e-50",
+        "rel_diff": "2.460753972526039295733176677947046965943e-50",
+        "agree_at_25dps": true,
+        "python_wall_sec": 0.0006353855133056641,
+        "speedup_vs_python": 0.2004965392717424
+      },
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.0041234493255615234,
+        "elapsed_sec": 0.004575967788696289,
         "tr_M_at_q0_50dps": "0.9232332971695836424637698809187137593269",
-        "abs_diff_vs_bridge": "4.677338242661342380745938817515093287927e-50"
+        "abs_diff_vs_bridge": "6.949188246239708679965394814593852884920e-50"
       },
       "historical_K_comparison": null
     },
@@ -66,14 +92,27 @@
       "n_strands_3A": 6,
       "rho_factor": 1,
       "word_length_3A": 23,
+      "n_crossings_canonical": 23,
       "tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713",
       "term1_b_pred_mev_50dps": "0.1984139792600863602202122496845482243370",
-      "bridge_elapsed_sec": 0.03726053237915039,
+      "bridge_elapsed_sec": 0.03816533088684082,
+      "method": "rust-with-python-crosscheck",
+      "effective_method": "rust-with-python-crosscheck",
+      "rust_canonical_chi_elapsed_sec": 0.003814697265625,
+      "python_hoefsmit_elapsed_sec": 0.03816533088684082,
+      "rust_crosscheck": {
+        "tr_M_python_50dps": "0.3882864715477132785110659223165687998713",
+        "abs_delta": "1.737297061559927169991348703648463221230e-50",
+        "rel_diff": "4.474266266952453576440350065000149325372e-50",
+        "agree_at_25dps": true,
+        "python_wall_sec": 0.03816533088684082,
+        "speedup_vs_python": 10.0048125
+      },
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.10796737670898438,
+        "elapsed_sec": 0.1309981346130371,
         "tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713",
-        "abs_diff_vs_bridge": "2.739583827844500537294049878830268925786e-50"
+        "abs_diff_vs_bridge": "1.002286766284573367302701175181805704556e-50"
       },
       "historical_K_comparison": {
         "historical_K": "6_2",
@@ -91,14 +130,27 @@
       "n_strands_3A": 9,
       "rho_factor": 1,
       "word_length_3A": 35,
+      "n_crossings_canonical": 35,
       "tr_M_at_q0_50dps": "0.1040521186755256548979583274321227548353",
       "term1_b_pred_mev_50dps": "0.05317052338846900035091906246157092399196",
-      "bridge_elapsed_sec": 21.004501819610596,
+      "bridge_elapsed_sec": 23.798507928848267,
+      "method": "rust-with-python-crosscheck",
+      "effective_method": "rust-with-python-crosscheck",
+      "rust_canonical_chi_elapsed_sec": 0.321087121963501,
+      "python_hoefsmit_elapsed_sec": 23.798507928848267,
+      "rust_crosscheck": {
+        "tr_M_python_50dps": "0.1040521186755256548979583274321227548353",
+        "abs_delta": "6.347816186468964659583774109484769462186e-51",
+        "rel_diff": "6.100612142520505474994524049307756106061e-50",
+        "agree_at_25dps": true,
+        "python_wall_sec": 23.798507928848267,
+        "speedup_vs_python": 74.11853762093118
+      },
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 1.411064863204956,
+        "elapsed_sec": 1.4284484386444092,
         "tr_M_at_q0_50dps": "0.1040521186755256548979583274321227548353",
-        "abs_diff_vs_bridge": "6.347816186468964659583774109484769462186e-51"
+        "abs_diff_vs_bridge": "0.0"
       },
       "historical_K_comparison": null
     },
@@ -110,14 +162,27 @@
       "n_strands_3A": 9,
       "rho_factor": 1,
       "word_length_3A": 35,
+      "n_crossings_canonical": 35,
       "tr_M_at_q0_50dps": "0.2065408585622626294891049090129267784181",
       "term1_b_pred_mev_50dps": "0.1055421618574147132931716449454511201985",
-      "bridge_elapsed_sec": 21.779183864593506,
+      "bridge_elapsed_sec": 25.02026867866516,
+      "method": "rust-with-python-crosscheck",
+      "effective_method": "rust-with-python-crosscheck",
+      "rust_canonical_chi_elapsed_sec": 0.33762621879577637,
+      "python_hoefsmit_elapsed_sec": 25.02026867866516,
+      "rust_crosscheck": {
+        "tr_M_python_50dps": "0.2065408585622626294891049090129267784181",
+        "abs_delta": "9.354676485322684761491877635030186575853e-51",
+        "rel_diff": "4.529213517577529256891379267844330809473e-50",
+        "agree_at_25dps": true,
+        "python_wall_sec": 25.02026867866516,
+        "speedup_vs_python": 74.10641498135381
+      },
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.5788655281066895,
+        "elapsed_sec": 0.5752649307250977,
         "tr_M_at_q0_50dps": "0.2065408585622626294891049090129267784181",
-        "abs_diff_vs_bridge": "1.937754414816841843451888938684824362141e-50"
+        "abs_diff_vs_bridge": "1.002286766284573367302701175181805704556e-50"
       },
       "historical_K_comparison": null
     }

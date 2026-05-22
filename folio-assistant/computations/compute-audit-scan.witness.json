@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T15:11:02.550621+00:00",
-  "commitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
+  "computedAt": "2026-05-22T19:46:14.771794+00:00",
+  "commitSha": "488df699fd6d2d51c62626b982f0d406860940cb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
@@ -3385,7 +3385,7 @@
       {
         "pattern": "P15",
         "file": "term5_aK_audit.py",
-        "line": 199,
+        "line": 207,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
