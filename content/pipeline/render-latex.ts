@@ -351,8 +351,19 @@ function renderMdastNode(node: any): string {
     case "heading": {
       const depth = node.depth ?? 1;
       const text = renderChildren(node).join("");
-      const cmds = ["\\chapter", "\\section", "\\subsection",
-                     "\\subsubsection", "\\paragraph", "\\subparagraph"];
+      // Block bodies render inside a \chapter + \section context that
+      // renderChapter / renderSection already emitted, so `#`-style
+      // markdown headings inside a block must NOT introduce new TOC
+      // entries — otherwise generic block-body labels ("Statement",
+      // "Proof", "Witnesses", "References") flood the chapter outline
+      // and obscure the section structure. Map every markdown heading
+      // depth to a non-structural LaTeX command:
+      //   depth 1-2 (`#`, `##`) → \paragraph (bold inline label)
+      //   depth ≥ 3 (`###`+)    → \subparagraph (indented inline)
+      // Both commands are unnumbered and excluded from the TOC by
+      // LaTeX's default `\setcounter{secnumdepth}{...}` for book/report
+      // classes, which is exactly what within-block labels should be.
+      const cmds = ["\\paragraph", "\\paragraph", "\\subparagraph"];
       const cmd = cmds[Math.min(depth - 1, cmds.length - 1)];
       return `${cmd}{${text}}`;
     }
