@@ -547,6 +547,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(tr_m_word_lq_clear_cache, m)?)?;
     m.add_function(wrap_pyfunction!(incremental_reduce_rust, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_with_state, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
@@ -763,4 +764,50 @@ fn tr_m_atomic_mpfr(
 ) -> PyResult<String> {
     rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr(&signed_word, n_strands, &q_str, dps)
         .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// **Resume-from-state variant of [`tr_m_atomic_mpfr`].**
+///
+/// Returns `(mpf_decimal_string, final_reduced_state_ffi)`.  The
+/// `final_reduced_state_ffi` can be persisted via
+/// `_prefix_cache.save_prefix_state(...)` and replayed later via
+/// `initial_state_ffi`.
+///
+/// `initial_state_ffi=None` (or `[]`) → start from identity (same
+/// as `tr_m_atomic_mpfr`).
+///
+/// Per PR #886 prefix-cache infra: when computing `tr_M(β_K)` for
+/// atom K whose signed word starts with a cached prefix `P`, pass
+/// the cached state as `initial_state_ffi` and the SUFFIX
+/// `signed_word[len(P):]` as `signed_word_suffix`.  Result is
+/// numerically identical to the from-scratch path but skips the
+/// already-reduced work.
+#[pyfunction]
+#[pyo3(signature = (signed_word_suffix, n_strands, q_str, dps=50, initial_state_ffi=None))]
+fn tr_m_atomic_mpfr_with_state(
+    signed_word_suffix: Vec<(i8, i32)>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+    initial_state_ffi: Option<Vec<(Vec<i32>, Vec<(i32, String, String)>)>>,
+) -> PyResult<(String, Vec<(Vec<i32>, Vec<(i32, String, String)>)>)> {
+    let initial = match initial_state_ffi {
+        None => hecke_engine::laurent_hecke_element::LaurentHeckeElement::identity(),
+        Some(data) if data.is_empty() => {
+            hecke_engine::laurent_hecke_element::LaurentHeckeElement::identity()
+        }
+        Some(data) => {
+            hecke_engine::laurent_hecke_element::LaurentHeckeElement::from_ffi(&data)
+                .map_err(pyo3::exceptions::PyValueError::new_err)?
+        }
+    };
+    let (val, final_state) = rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_with_state(
+        &signed_word_suffix,
+        n_strands,
+        &q_str,
+        dps,
+        initial,
+    )
+    .map_err(pyo3::exceptions::PyRuntimeError::new_err)?;
+    Ok((val, final_state.to_ffi()))
 }

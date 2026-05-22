@@ -115,6 +115,42 @@ impl LaurentHeckeElement {
         Self { terms }
     }
 
+    /// FFI deserialisation — inverse of [`to_ffi`](Self::to_ffi).
+    ///
+    /// Builds a [`LaurentHeckeElement`] from the wire-format
+    /// `Vec<(word, Vec<(q_exp, num_decimal, den_decimal)>)>`.
+    /// Used by the prefix-cache infra (commit on PR #886) to
+    /// resume an incremental reduce from a previously-saved state.
+    pub fn from_ffi(
+        data: &[(Vec<i32>, Vec<(i32, String, String)>)],
+    ) -> Result<Self, String> {
+        use num_bigint::BigInt;
+        use num_rational::BigRational;
+        use std::collections::BTreeMap;
+        let mut terms: BTreeMap<Vec<i32>, LaurentRationalQ> = BTreeMap::new();
+        for (word, coef_data) in data {
+            let mut coefs: BTreeMap<i32, BigRational> = BTreeMap::new();
+            for (e, num_str, den_str) in coef_data {
+                let n = BigInt::parse_bytes(num_str.as_bytes(), 10)
+                    .ok_or_else(|| format!(
+                        "LaurentHeckeElement::from_ffi: invalid numerator decimal {:?}",
+                        num_str
+                    ))?;
+                let d = BigInt::parse_bytes(den_str.as_bytes(), 10)
+                    .ok_or_else(|| format!(
+                        "LaurentHeckeElement::from_ffi: invalid denominator decimal {:?}",
+                        den_str
+                    ))?;
+                coefs.insert(*e, BigRational::new(n, d));
+            }
+            let lrq = LaurentRationalQ { coefs };
+            if !lrq.is_zero() {
+                terms.insert(word.clone(), lrq);
+            }
+        }
+        Ok(LaurentHeckeElement { terms })
+    }
+
     /// FFI serialisation for the PyO3 bridge.
     ///
     /// Emits each `(word, coef)` as

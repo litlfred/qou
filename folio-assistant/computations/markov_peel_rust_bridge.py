@@ -289,7 +289,8 @@ def tr_M_atomic_rust_recursive(Z: int, N: int, *,
 
 def tr_M_atomic_rust_full(Z: int, N: int, *,
                             dps: int = 50,
-                            include_inter: bool = True):
+                            include_inter: bool = True,
+                            use_prefix_cache: bool = True):
     """**Tier 1.A — full Markov-trace pipeline entirely in Rust + MPFR.**
 
     Single PyO3 call: `pyhecke_native.tr_m_atomic_mpfr` (v0.6.0+)
@@ -324,22 +325,38 @@ def tr_M_atomic_rust_full(Z: int, N: int, *,
         import pyhecke_native
     except ImportError as e:
         raise ImportError(
-            "pyhecke_native (>= 0.6.0) not installed.  Build via "
+            "pyhecke_native (>= 0.8.0) not installed.  Build via "
             "`cd tools/pyhecke-native && maturin build --release` "
             "and `pip install` the resulting wheel."
         ) from e
 
+    import time
     import mpmath as mp
     from q_parameter import Q_50_DIGIT_STR
+    import _prefix_cache
 
     n_strands = 3 * (Z + N)
     signed_word = _atomic_word_to_signed_gens_0based(
         Z, N, include_inter=include_inter
     )
 
+    # Prefix-cache lookup: if any cached prefix of `signed_word` is
+    # available, resume from that state instead of from identity.
+    # `pyhecke_native.tr_m_atomic_mpfr_with_state` accepts an FFI
+    # initial state (or None for from-scratch) and returns
+    # `(mpf_decimal, final_state_ffi)`.
+    initial_state_ffi = None
+    prefix_len = 0
+    if use_prefix_cache:
+        prefix_len, initial_state_ffi = _prefix_cache.find_longest_cached_prefix(
+            signed_word
+        )
+    suffix = signed_word[prefix_len:]
+
+    t0 = time.time()
     try:
-        result_str = pyhecke_native.tr_m_atomic_mpfr(
-            signed_word, n_strands, Q_50_DIGIT_STR, dps
+        result_str, final_state_ffi = pyhecke_native.tr_m_atomic_mpfr_with_state(
+            suffix, n_strands, Q_50_DIGIT_STR, dps, initial_state_ffi
         )
     except RuntimeError as e:
         raise NotImplementedError(
@@ -348,6 +365,20 @@ def tr_M_atomic_rust_full(Z: int, N: int, *,
             f"markov_peel.tr_M_atomic (sympy ocneanu path).  "
             f"Underlying: {e}"
         ) from e
+    wall = time.time() - t0
+
+    # Persist the final reduced state — keyed by the FULL signed
+    # word — so future computes whose signed word starts with this
+    # one (e.g., 6Li after 5Li) can resume.
+    if use_prefix_cache:
+        try:
+            _prefix_cache.save_prefix_state(
+                signed_word, final_state_ffi, n_strands, wall,
+            )
+        except OSError:
+            # Cache write failures are non-fatal: the compute still
+            # returned the right answer.  Swallow + continue.
+            pass
 
     with mp.workdps(dps):
         return mp.mpf(result_str)

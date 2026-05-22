@@ -73,6 +73,40 @@ pub fn tr_m_atomic_mpfr(
     q_str: &str,
     dps: u32,
 ) -> Result<String, String> {
+    let (val, _final) = tr_m_atomic_mpfr_with_state(
+        signed_word,
+        n_strands,
+        q_str,
+        dps,
+        crate::laurent_hecke_element::LaurentHeckeElement::identity(),
+    )?;
+    Ok(val)
+}
+
+/// **Resume-from-state variant of [`tr_m_atomic_mpfr`].**
+///
+/// Takes an `initial_state` (a pre-reduced
+/// [`crate::laurent_hecke_element::LaurentHeckeElement`]) and the
+/// `signed_word` *suffix* to apply on top of it.  Returns
+/// `(mpf_decimal_string, final_reduced_state)` so the caller can
+/// persist the final state as a cache entry for future resumes.
+///
+/// Use case (per `markov_peel_rust_bridge` prefix-cache wiring):
+/// computing `tr_M(β_{6Li})` after `β_{5Li}` is already cached.
+/// Since the 5Li signed word is a strict prefix of the 6Li one,
+/// the 5Li reduced state is the correct initial accumulator —
+/// only the extra 12 crossings need to be applied (the part where
+/// term-count growth would otherwise blow up).
+///
+/// Identity-state input (the `tr_m_atomic_mpfr` wrapper above)
+/// reproduces the from-scratch path exactly.
+pub fn tr_m_atomic_mpfr_with_state(
+    signed_word_suffix: &[(i8, i32)],
+    n_strands: usize,
+    q_str: &str,
+    dps: u32,
+    initial_state: crate::laurent_hecke_element::LaurentHeckeElement,
+) -> Result<(String, crate::laurent_hecke_element::LaurentHeckeElement), String> {
     let prec = dps_to_prec(dps);
     let q = Float::with_val(
         prec,
@@ -87,7 +121,11 @@ pub fn tr_m_atomic_mpfr(
     // h = q − q^{-1}
     let h = Float::with_val(prec, &q - &q_inv);
 
-    let reduced = reduce_laurent::incremental_reduce(signed_word, 10_000);
+    let reduced = reduce_laurent::incremental_reduce_from_state(
+        initial_state,
+        signed_word_suffix,
+        10_000,
+    );
 
     let mut total = Float::with_val(prec, 0);
     for (word, coef) in &reduced.terms {
@@ -121,7 +159,8 @@ pub fn tr_m_atomic_mpfr(
     // Emit at full precision so mpmath.mpf can reconstruct without
     // loss.  `Some(dps + 5)` gives a small over-precision buffer
     // so the decimal representation is unambiguous to `dps` places.
-    Ok(total.to_string_radix(10, Some((dps + 5) as usize)))
+    let val = total.to_string_radix(10, Some((dps + 5) as usize));
+    Ok((val, reduced))
 }
 
 // ── Tests ─────────────────────────────────────────────────────────

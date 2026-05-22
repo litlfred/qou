@@ -184,6 +184,36 @@ fn add_to(
     entry.add_assign_unreduced(coef);
 }
 
+/// Incremental reduce — **resume-from-state variant**.
+///
+/// Takes a pre-reduced [`LaurentHeckeElement`] as the starting
+/// accumulator, applies the crossings in `suffix` one at a time
+/// (multiply by `crossing_factor` + reduce), and returns the
+/// final reduced element.
+///
+/// Used by the prefix-cache infra: when computing
+/// `tr_M(β_{Z',N'})` for an atomic braid whose signed word starts
+/// with `β_{Z,N}`'s signed word (e.g., 5Li ⊂ 6Li), the cached
+/// reduced state for 5Li is loaded, and only the SUFFIX (the
+/// extra crossings) needs to be reduced.  This collapses the
+/// exponential reduce-work growth that dominates ⁵Li → ⁶Li
+/// → ⁷Li → ... compute chains (verified by the prefix-structure
+/// check in `markov_peel_rust_bridge`).
+pub fn incremental_reduce_from_state(
+    initial_state: LaurentHeckeElement,
+    suffix: &[(i8, i32)],
+    max_iterations_per_step: u32,
+) -> LaurentHeckeElement {
+    let mut elem = initial_state;
+    for &(sign, gen) in suffix {
+        let factor = LaurentHeckeElement::crossing_factor(gen, sign);
+        elem = &elem * &factor;
+        let (reduced, _) = reduce_laurent_rules(&elem, max_iterations_per_step);
+        elem = reduced;
+    }
+    elem
+}
+
 /// Incremental reduce — mirror of `incremental_reduced_element_fast`
 /// from `folio-assistant/computations/hecke_laurent_fast.py:219`.
 ///
