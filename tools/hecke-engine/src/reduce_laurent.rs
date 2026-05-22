@@ -31,6 +31,7 @@
 
 use crate::laurent_hecke_element::LaurentHeckeElement;
 use crate::laurent_rational_q::LaurentRationalQ;
+use rustc_hash::FxHashMap;
 use std::collections::BTreeMap;
 
 // `hecke_h` is no longer constructed per R1 fire — the
@@ -39,6 +40,14 @@ use std::collections::BTreeMap;
 // Kept commented for reference: prior implementation built
 // `let hecke_h = LaurentRationalQ::hecke_h();` once per reduce call
 // and threaded it through R1.
+//
+// Inner-loop storage: `FxHashMap<Vec<i32>, LaurentRationalQ>` for
+// the per-pass `new_terms` builder.  `BTreeMap` has O(log n)
+// insertion (Vec<i32> key compare per node); `FxHashMap` (a fast
+// non-cryptographic hash from rustc-hash) gives O(1) expected.
+// Output is converted back to `BTreeMap` at the function boundary
+// so `LaurentHeckeElement.terms` retains its deterministic
+// iteration order for FFI and equality tests.
 
 /// Reduce `elem` to fixpoint under R1 / R2 / R3.
 ///
@@ -50,12 +59,18 @@ pub fn reduce_laurent_rules(
     elem: &LaurentHeckeElement,
     max_iterations: u32,
 ) -> (LaurentHeckeElement, u32) {
-    let mut terms: BTreeMap<Vec<i32>, LaurentRationalQ> = elem.terms.clone();
+    // Copy the input BTreeMap into a FxHashMap for fast inner-loop
+    // access.  Convert back to BTreeMap at the function boundary.
+    let mut terms: FxHashMap<Vec<i32>, LaurentRationalQ> = elem
+        .terms
+        .iter()
+        .map(|(k, v)| (k.clone(), v.clone()))
+        .collect();
     let mut iteration: u32 = 0;
     let mut changed = true;
     while changed && iteration < max_iterations {
         changed = false;
-        let mut new_terms: BTreeMap<Vec<i32>, LaurentRationalQ> = BTreeMap::new();
+        let mut new_terms: FxHashMap<Vec<i32>, LaurentRationalQ> = FxHashMap::default();
 
         for (word, coeff) in &terms {
             if coeff.is_zero() {
@@ -133,7 +148,11 @@ pub fn reduce_laurent_rules(
         iteration += 1;
     }
 
-    (LaurentHeckeElement { terms }, iteration)
+    // Convert FxHashMap → BTreeMap so the returned LaurentHeckeElement
+    // has deterministic key order (for FFI and equality tests).
+    let terms_btree: BTreeMap<Vec<i32>, LaurentRationalQ> =
+        terms.into_iter().collect();
+    (LaurentHeckeElement { terms: terms_btree }, iteration)
 }
 
 /// `new_terms[key] += coef`, treating an absent key as zero.
@@ -143,7 +162,7 @@ pub fn reduce_laurent_rules(
 /// `LaurentRationalQ::clone()` per R2 / R3 / passthrough.
 #[inline]
 fn add_to(
-    new_terms: &mut BTreeMap<Vec<i32>, LaurentRationalQ>,
+    new_terms: &mut FxHashMap<Vec<i32>, LaurentRationalQ>,
     key: Vec<i32>,
     coef: &LaurentRationalQ,
 ) {

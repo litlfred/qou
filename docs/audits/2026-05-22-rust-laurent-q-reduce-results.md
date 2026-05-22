@@ -74,14 +74,23 @@ the `coeff * h` allocation + per-coef GCDs):**
 
 | atom | wall_rust | wall_python | speedup | rel.diff |
 |------|----------:|------------:|--------:|---------:|
-| p    | 0.064 s   | 0.004 s     | 0.06×   | 0.0      |
-| n    | 0.001 s   | 0.002 s     | 3.17×   | 2.9 × 10⁻⁵¹ |
-| D    | 0.014 s   | 0.044 s     | 3.16×   | 8.6 × 10⁻⁵¹ |
-| T    | 0.220 s   | 0.646 s     | 2.93×   | 2.6 × 10⁻⁵⁰ |
-| ³He  | 0.098 s   | 0.322 s     | 3.28×   | 4.9 × 10⁻⁵¹ |
-| ⁴He  | 1.339 s   | 3.930 s     | 2.93×   | 2.1 × 10⁻⁵⁰ |
 | ⁵Li  | 7.977 s   | 20.641 s    | 2.59×   | 3.4 × 10⁻⁵⁰ |
-| ⁶Li  | **84.487 s** | 223.738 s | **2.65×** | 5.6 × 10⁻⁴⁹ |
+| ⁶Li  | 84.487 s  | 223.738 s   | 2.65×   | 5.6 × 10⁻⁴⁹ |
+
+**After FxHashMap intermediate (commit follow-up — `BTreeMap` →
+`FxHashMap` inside the reduce fixpoint loop, converted to `BTreeMap`
+only at the function boundary):**
+
+| atom | wall_rust | wall_python | speedup | rel.diff |
+|------|----------:|------------:|--------:|---------:|
+| p    | 0.081 s   | 0.004 s     | 0.05×   | 0.0      |
+| n    | 0.001 s   | 0.003 s     | 3.12×   | 2.9 × 10⁻⁵¹ |
+| D    | 0.020 s   | 0.053 s     | 2.62×   | 8.6 × 10⁻⁵¹ |
+| T    | 0.215 s   | 0.654 s     | 3.04×   | 2.6 × 10⁻⁵⁰ |
+| ³He  | 0.099 s   | 0.341 s     | 3.46×   | 4.9 × 10⁻⁵¹ |
+| ⁴He  | 1.260 s   | 3.869 s     | 3.07×   | 2.1 × 10⁻⁵⁰ |
+| ⁵Li  | 7.310 s   | 21.781 s    | **2.98×** | 3.4 × 10⁻⁵⁰ |
+| ⁶Li  | **79.167 s** | 234.174 s | **2.96×** | 5.6 × 10⁻⁴⁹ |
 
 (The `p` row's "0.06×" is wheel-import + first-call MPFR-context
 setup overhead — not representative of the steady-state.)
@@ -138,12 +147,12 @@ architectural work):
    cost; the BTreeMap operations and the per-passthrough `+=` on
    the entry are also significant.
 
-2. **`FxHashMap` for inner reduce `new_terms`** — `BTreeMap`
-   insertion is O(log N); for ~4000 terms that's ~12 hashable
-   compares per insertion.  `rustc-hash::FxHashMap` (already in
-   `Cargo.toml`) gives O(1) lookup.  Convert to `BTreeMap` once
-   at end-of-iteration for FFI determinism.  *Estimated speedup:
-   1.2-1.5×*.
+2. ~~**`FxHashMap` for inner reduce `new_terms`**~~ — **landed
+   in the follow-up commit.**  Result on ⁶Li: 84.5 s → 79.2 s,
+   speedup 2.65× → 2.96×.  Matches the 1.2-1.5× estimate at the
+   lower end.  The Vec<i32>-key compare in BTreeMap insertion
+   was a real but secondary cost; the inner loop's BigRational
+   arithmetic still dominates.
 
 3. **Defer GCDs via `Ratio::new_raw`** — num-rational does a GCD
    on every `+`, `-`, `*`.  Switching to `new_raw` (skip GCD)
