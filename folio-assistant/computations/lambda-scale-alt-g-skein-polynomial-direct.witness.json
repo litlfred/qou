@@ -1,0 +1,45 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-22T19:55:37.576939+00:00",
+  "commitSha": "c9df2d34a99173650fb53bd520a8777e4092d29e",
+  "assertions": [
+    {
+      "name": "strategy_g_skein_polynomial_yields_lambda_scale",
+      "computed": "2.46035925276",
+      "expected": "2.4599527869",
+      "passed": false,
+      "tolerance": "1e-4",
+      "source": "Direct evaluation of Borromean Jones / Kauffman / HOMFLYPT closed forms at q_0"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 22,
+  "computation": "lambda-scale-alt-g-skein-polynomial-direct",
+  "scriptFile": "lambda_scale_alt_g_skein_polynomial_direct.py",
+  "scriptHash": "75f21d35dcb0",
+  "scriptCommitSha": "unknown",
+  "description": "Strategy G: direct evaluation of closed-form Skein-family polynomials of 𝓑_3 — Jones V, Kauffman ⟨·⟩, HOMFLYPT P — at q_0, check if any natural combination yields λ_p = 2.4599527869. No PSLQ; structural test complementary to Strategies A/B/D.",
+  "contentBlock": "conj:borromean-baryon-mass-formula",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "candidates": {
+      "V(𝓑_3, q_0)": "4.0105393499353453209",
+      "V(𝓑_3, q_0²)": "4.0378920286117253548",
+      "V(𝓑_3, sqrt q_0)": "4.0027001104815794006",
+      "<𝓑_3>(q_0^{1/2})": "4.0378920286117253548",
+      "P_HOMFLYPT(𝓑_3, q_0^-1, q_0 - q_0^-1)": "14.397201394793156976",
+      "P_HOMFLYPT(𝓑_3, q_0, q_0 - q_0^-1)": "14.397201394793156976",
+      "V(𝓑_3, q_0)^{1/3}": "1.5887940105416337219",
+      "sqrt V(𝓑_3, q_0²)": "2.0094506783227413554",
+      "5/2 - ℏ_q² · <𝓑_3>": "2.4603592527580458789"
+    },
+    "best_candidate_name": "5/2 - ℏ_q² · <𝓑_3>",
+    "best_candidate_value": "2.46035925275804587893225781764",
+    "best_candidate_rel_diff": "0.0001652331948037514314",
+    "target_lambda_p": "2.4599527869",
+    "verdict": "WEAK-SIGNAL (<1%)"
+  }
+}
