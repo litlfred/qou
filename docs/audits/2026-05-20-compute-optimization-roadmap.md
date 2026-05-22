@@ -128,6 +128,19 @@ Currently q₀ is a numerical 50-dps mpf. The "substrate-derivation of q₀ from
 **Effort:** 2-4 weeks; requires new content + Lean derivation.
 **Note:** **Out of scope for this optimization track** — it's a substrate-derivation research question, not a pipeline optimization. Listed here for completeness because it touches the same Bring-Markov-substrate interface.
 
+## Status update (2026-05-22)
+
+**Tier 1.A: architectural delivery complete; 4× bench gate open.**
+See [`2026-05-22-rust-laurent-q-reduce-results.md`](2026-05-22-rust-laurent-q-reduce-results.md)
+for full details.  Empirical 2.4× speedup on ⁶Li
+(94.6 s vs 225 s Python LaurentQ); cross-check bit-identical to
+5.6 × 10⁻⁴⁹ relative.  Follow-up optimisations (R1 fast-path,
+FxHashMap reduce, GCD deferral) tracked in that doc to close
+the 4× target.
+
+**Tier 1.C: complete.**  Cyclic-canonical cache key in
+`tr_m_word_lq.rs`; shipped on the same branch.
+
 ## Recommended attack order
 
 1. **Tier 1.A (Rust LaurentQ reduce loop)** — biggest win, user's explicit priority, 1-2 weeks

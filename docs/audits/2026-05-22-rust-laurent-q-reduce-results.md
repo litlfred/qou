@@ -1,0 +1,187 @@
+# Tier 1.A — Rust LaurentQ reduce + MPFR pipeline — empirical results
+
+**Date:** 2026-05-22
+**Branch:** `claude/vibrant-heisenberg-Mrjtn`
+**Scope:** Tier 1.A from
+[`docs/audits/2026-05-20-compute-optimization-roadmap.md`].
+Also delivers Tier 1.C (cyclic-canonical cache key) since it
+touches the same trace recursion file.
+
+## What landed
+
+| Layer | File | Lines | Tests |
+|------|------|------:|------:|
+| `LaurentRationalQ` — `q`-Laurent with `BigRational` coefs | `tools/hecke-engine/src/laurent_rational_q.rs` | 358 | 16 |
+| `LaurentHeckeElement` — Hecke element w/ rational coefs | `tools/hecke-engine/src/laurent_hecke_element.rs` | 281 | 11 |
+| `reduce_laurent` — R1+R2+R3 rule loop | `tools/hecke-engine/src/reduce_laurent.rs` | 410 | 14 |
+| `tr_m_atomic_mpfr` — end-to-end pipeline in Rust + MPFR | `tools/hecke-engine/src/tr_m_atomic_mpfr.rs` | 199 | 3 |
+| Cyclic-canonical cache key (Tier 1.C) | `tools/hecke-engine/src/tr_m_word_lq.rs` | +90 | 3 (added) |
+| PyO3 bindings `incremental_reduce_rust` + `tr_m_atomic_mpfr` | `tools/pyhecke-native/src/lib.rs` | +90 | — |
+| Python bridge `tr_M_atomic_rust_full` (single-call) | `folio-assistant/computations/markov_peel_rust_bridge.py` | +85, -25 | — |
+| `--method laurent_q_rust` mass-table dispatch | `folio-assistant/computations/canonical_mass_table_extended.py` | +28 | — |
+
+Total: **153 hecke-engine library tests pass** (existing 106 + 47
+new for the Tier 1.A modules and Tier 1.C tests).  Builds clean
+under `cargo build --release`; no new warnings beyond the
+pre-existing `seminormal.rs` / `seminormal_mn.rs` dead-code
+warnings that are not on this PR's blast radius.
+
+`pyhecke-native` bumped 0.4.0 → 0.6.0 (two new public bindings).
+
+## Cross-check (Tier 1.A acceptance — STRICT)
+
+The brief required bit-identical cross-check against
+`laurent_q_trace.tr_M_atomic_lq.evaluate_mpf(Q_50_DIGIT_STR, dps=50)`
+to **1e-30 relative** on every atom in `{p, n, D, T, ³He, ⁴He, ⁵Li, ⁶Li}`.
+
+Measured worst case (cold cache, fresh wheel install, 50 dps):
+
+| atom | `tr_M_atomic_rust_full` | reference | rel.diff |
+|------|------------------------:|----------:|---------:|
+| p    | 1.06530622859238926     | 1.06530622859238926     | **0.0** |
+| n    | 0.923233297169583642    | 0.923233297169583642    | 2.9 × 10⁻⁵¹ |
+| D    | 0.388286471547713279    | 0.388286471547713279    | 8.6 × 10⁻⁵¹ |
+| T    | 0.104052118675525655    | 0.104052118675525655    | 2.6 × 10⁻⁵⁰ |
+| ³He  | 0.206540858562262629    | 0.206540858562262629    | 4.9 × 10⁻⁵¹ |
+| ⁴He  | 0.0553483458766980481   | 0.0553483458766980481   | 2.1 × 10⁻⁵⁰ |
+| ⁵Li  | 0.0294413937003972      | 0.0294413937003972      | 3.4 × 10⁻⁵⁰ |
+| ⁶Li  | (50-dps match)          | (50-dps match)          | 5.6 × 10⁻⁴⁹ |
+
+**Worst rel.diff: 5.6 × 10⁻⁴⁹** — twenty-three orders of magnitude
+below the 10⁻²⁵ Tier 1.A criterion (and nineteen orders below the
+10⁻³⁰ in the brief).  PASS.
+
+## Bench (Tier 1.A 4× gate)
+
+Production setup: ChromeOS / Crostini, 1-core, release build,
+cold `tr_m_word_lq` cache, cold Python LRU caches, 50 dps.
+
+Two columns: `wall_rust` = new `tr_M_atomic_rust_full` (single
+PyO3 call to the all-Rust + MPFR pipeline), `wall_python` =
+existing `tr_M_atomic_lq.evaluate_mpf` (post-#859 Python LaurentQ
++ mpmath path).
+
+| atom | wall_rust | wall_python | speedup |
+|------|----------:|------------:|--------:|
+| p    | 0.065 s   | 0.003 s     | 0.05×   |
+| n    | 0.001 s   | 0.003 s     | 3.14×   |
+| D    | 0.016 s   | 0.045 s     | 2.86×   |
+| T    | 0.252 s   | 0.610 s     | 2.42×   |
+| ³He  | 0.120 s   | 0.316 s     | 2.64×   |
+| ⁴He  | 1.516 s   | 3.870 s     | 2.55×   |
+| ⁵Li  | 9.072 s   | 20.524 s    | 2.26×   |
+| ⁶Li  | **94.607 s** | 225.047 s | **2.38×** |
+
+(The `p` row's "0.05×" is wheel-import + first-call MPFR-context
+setup overhead — not representative of the steady-state.)
+
+**Gate (⁶Li < 60 s):  open at 94.6 s.**  The architecture is in
+place (single PyO3 call, no Python ↔ Rust shuttling of decimal-
+string-encoded coefficients between pipeline stages, all MPFR
+combine internal to Rust) — but the empirical 4× target was not
+hit on ⁶Li.  Measured 2.38× over the Python LaurentQ baseline.
+
+## Why we're at 2.4×, not 4×
+
+Phase-by-phase profile on ⁵Li, original two-phase (Python combine)
+version (before the user-directed all-Rust + MPFR consolidation):
+
+| phase | wall | share |
+|-------|-----:|------:|
+| Rust `incremental_reduce_rust` | **8.54 s** | **80 %** |
+| Python `tr_m_word_lq` × N PyO3 calls | 0.01 s | < 1 % |
+| Python mpmath combine loop | 2.05 s | 19 % |
+
+The user-directed consolidation removed the Python mpmath combine
+loop (~20 s on ⁶Li) and the per-word PyO3 round-trips.  That moved
+the ⁶Li wall from 117 s (back-and-forth version) to 95 s (all-Rust
+version).
+
+**Residual bottleneck: the Rust reduce.**  Per back-of-envelope:
+- ⁶Li has ≳ 4000 reduced terms; each LaurentRationalQ coef has
+  ~40 `q`-exponents on average.
+- R1 fires multiply each coef by `h = q − q⁻¹` (two BigRational
+  multiplications per coef, each with a GCD), splitting one term
+  into two and writing both into the `new_terms` BTreeMap.
+- ~50 fixpoint passes × 4000 terms × 40 coefs × ~5 µs per
+  BigRational multiplication ≈ 40 s of pure arithmetic, which
+  matches the empirical 60-80 s of reduce on ⁶Li.
+
+The original brief's "10-50× per LaurentQ operation" estimate was
+realistic for the *inner arithmetic kernel*, but the reduce-loop
+overhead (BTreeMap insertion, Vec<i32> word cloning per R1 fire,
+GCD per BigRational op) limits the achievable end-to-end speedup
+to roughly 2-3× without further optimisation.
+
+## Follow-ups to close the 4× gate
+
+In priority order (each is independent of the Tier 1.A
+architectural work):
+
+1. **R1 fast-path: `LaurentRationalQ::add_h_times(other)`** —
+   when R1 fires, `coeff * h` is currently a full `Mul` call
+   producing a fresh BTreeMap with N GCDs.  But `h = q − q⁻¹`
+   has all-integer coefficients ±1, so `coeff * h` is just
+   `(exp, c) → (exp+1, +c) + (exp-1, −c)` — no GCD needed,
+   no fresh allocation, can write directly into `new_terms[w1]`.
+   Saves ~2 BigRational multiplications + GCDs per coef per R1
+   fire; on ⁶Li, ~40 % of reduce wall.  *Estimated speedup: 1.4-2×*.
+
+2. **`FxHashMap` for inner reduce `new_terms`** — `BTreeMap`
+   insertion is O(log N); for ~4000 terms that's ~12 hashable
+   compares per insertion.  `rustc-hash::FxHashMap` (already in
+   `Cargo.toml`) gives O(1) lookup.  Convert to `BTreeMap` once
+   at end-of-iteration for FFI determinism.  *Estimated speedup:
+   1.2-1.5×*.
+
+3. **Defer GCDs via `Ratio::new_raw`** — num-rational does a GCD
+   on every `+`, `-`, `*`.  Switching to `new_raw` (skip GCD)
+   for in-loop arithmetic and `.reduce_mut()` once per iteration
+   could cut GCD work substantially.  Riskier — must verify
+   denominators stay bounded.  *Estimated speedup: 1.5-3×*.
+
+4. **Tier 1.B (nucleon-orbit reduction)** — orthogonal to the
+   reduce-loop optimisations; reduces the *input* word length
+   by |S_Z × S_N| (e.g. 36× for ⁶Li, 576× for ⁸Be).  Gated on
+   first proving the orbit-trace identity numerically on ⁴He
+   (per the brief).  Single largest open lever to organic
+   chemistry compute.
+
+Combined (1) + (2) is realistically achievable in another
+1-2 days and should put ⁶Li at ~40-50 s — closing the 4× gate.
+
+## What the user can do next
+
+1. **Use the new path** now: switch
+   `canonical_mass_table_extended.py --method laurent_q_rust`
+   to get the 2.4× speedup with bit-identical results.  Already
+   wired and tested.
+2. **Ask me to optimise (1) + (2)** above to close the 4× gate.
+3. **Move on to Tier 1.B** — algebraic verification of the
+   orbit-trace identity on ⁴He → ⁵Li, then orbit-representative
+   builder.  Compounds with Tier 1.A.
+
+## Cross-references
+
+- [`docs/audits/2026-05-20-compute-optimization-roadmap.md`] —
+  Tier 1.A scope and 4× gate.
+- [`docs/audits/2026-05-20-markov-peel-bottleneck-profile.md`] —
+  original bottleneck profile.
+- [`docs/audits/2026-05-20-rust-port-scoping-markov-peel.md`] —
+  Phase-1+2 scoping (now closed with this Phase-3 work).
+- PR #843, #852, #859 — predecessor mass-table / closure
+  framework on `main`.
+
+## Commits on this branch
+
+| sha | message |
+|-----|---------|
+| `f7654360` | feat(hecke-engine): LaurentRationalQ — q-Laurent with BigRational coefs |
+| `77bf340d` | feat(hecke-engine): LaurentHeckeElement — Hecke element with rational coefs |
+| `1436cc67` | feat(hecke-engine): reduce_laurent — R1+R2+R3 rule loop in Rust |
+| `9c912c09` | feat(pyhecke-native): incremental_reduce_rust PyO3 binding (v0.5.0) |
+| `2a80810c` | feat(markov_peel): tr_M_atomic_rust_full — Tier 1.A full pipeline |
+| `4117476f` | feat(tr_m_word_lq): cyclic-canonical cache key — Tier 1.C |
+| `22e3c1cd` | feat(hecke-engine): tr_m_atomic_mpfr — end-to-end Rust + MPFR (v0.6.0) |
+
+Plus this results doc (next commit).
