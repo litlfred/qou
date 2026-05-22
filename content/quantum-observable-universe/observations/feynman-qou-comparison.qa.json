@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/observations/feynman-qou-comparison.md"
   },
   "source_hashes": {
-    "md": "c2c2c723ef8d",
+    "md": "d859732a312e",
     "ts": "a797998a754e"
   },
   "criteria": {
@@ -349,13 +349,31 @@
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:46:57.612Z",
+        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/observations/feynman-qou-comparison.md:50: the transfer matrix chain overestimates Φ₁ because the"
+        "evidence": "content/quantum-observable-universe/observations/feynman-qou-comparison.md:50: the transfer matrix chain overestimates Φ₁ because the"
+      },
+      {
+        "field_hash": {
+          "md": "d859732a312e",
+          "ts": "a797998a754e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T18:49:12.358Z",
+        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846"
       }
     ],
     "voice-editorializing": [
@@ -473,5 +491,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:49:12.358Z"
 }

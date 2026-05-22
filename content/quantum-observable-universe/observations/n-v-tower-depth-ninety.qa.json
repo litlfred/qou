@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean"
   },
   "source_hashes": {
-    "md": "3019f680d36a",
+    "md": "4581ea5e4012",
     "ts": "2de7d10a7660",
     "lean": "7bcb0fe78f87"
   },
@@ -406,20 +406,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "3019f680d36a",
+          "md": "4581ea5e4012",
           "ts": "2de7d10a7660",
           "lean": "7bcb0fe78f87"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/observations/n-v-tower-depth-ninety.md:46: weak): the SM 3 generations × charged/neutral doubling = 6. | quantum-observable-universe/observations/n-v-tower-depth-ninety.md:68: combinatorics: $5$ cycles × $18$ Hecke transitions, OR $6$ | quantum-observable-universe/observations/n-v-tower-depth-ninety.md:69: generations × $15$ structural levels.  Either factorisation needs"
+        "reviewed_at": "2026-05-22T18:46:57.612Z",
+        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846"
       }
     ],
     "voice-editorializing": [
@@ -559,5 +559,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:46:57.612Z"
 }

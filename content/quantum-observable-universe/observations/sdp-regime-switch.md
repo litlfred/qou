@@ -70,9 +70,9 @@ $k$-cap $= 5$, pairs at $H_4(q) \oplus H_5(q)$):
    (trivial shell), N=6 (closed $p_{3/2}$), and Z=N=20 (double-
    magic $s\text{-}d$ shell closure).
 
-3. **Isoscalar vs isovector structure**: the $(3,1)$↔$(2,1,1)$
+3. **Isoscalar vs isovector structure**: the $(3,1)$$\leftrightarrow$$(2,1,1)$
    pair changes sign most frequently (sensitive to N vs Z parity);
-   the $(3,2)$↔$(2,2,1)$ pair varies most smoothly (less sensitive
+   the $(3,2)$$\leftrightarrow$$(2,2,1)$ pair varies most smoothly (less sensitive
    to individual-nucleon structure).
 
 **Physical interpretation** (conjectural — awaiting Lean

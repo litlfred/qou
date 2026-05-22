@@ -171,7 +171,7 @@ The conjecture predicts:
 
 1. **Neutron star mass-radius relation**: the CFL core has
    a stiffer equation of state than nuclear matter (zero
-   volume contribution to mass → lower density at given
+   volume contribution to mass $\to$ lower density at given
    pressure).  This should produce a kink in the $M(R)$
    relation at $\rho_c$.
 

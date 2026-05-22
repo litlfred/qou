@@ -1,4 +1,4 @@
-**Remark (physics names are q₀-dependent labels for categorical knot operations).**
+**Remark (physics names are q$_{0}$-dependent labels for categorical knot operations).**
 
 *The names that physicists give to phenomena (alpha particle, gluon
 condensate, valence shell, isospin, etc.) are convenient labels for

@@ -156,9 +156,9 @@ every inter-nucleon crossing involving that strand.
 Strand 5 (was $d$, now $u$) crosses with strands from the other
 two nucleons.  Each of those crossings changes type:
 
-- Strand 5 × proton strands (0,1,2): was $d$-$u$/$d$-$u$/$d$-$d$,
+- Strand 5 $\times$ proton strands (0,1,2): was $d$-$u$/$d$-$u$/$d$-$d$,
   now $u$-$u$/$u$-$u$/$u$-$d$
-- Strand 5 × neutron-2 strands (6,7,8): was $d$-$u$/$d$-$d$/$d$-$d$,
+- Strand 5 $\times$ neutron-2 strands (6,7,8): was $d$-$u$/$d$-$d$/$d$-$d$,
   now $u$-$u$/$u$-$d$/$u$-$d$
 
 These 6 inter-nucleon crossing changes, plus the 1 internal

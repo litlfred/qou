@@ -183,7 +183,7 @@ Hoefsmit machinery would go in the modular setting.
 ## Proof strategy
 
 The conjecture's two halves: nimber existence (mathematically
-established) and Hecke ↔ nimber correspondence (open).
+established) and Hecke $\leftrightarrow$ nimber correspondence (open).
 
 **Layer 1: nimber field existence (cited)**:
 
@@ -195,7 +195,7 @@ established) and Hecke ↔ nimber correspondence (open).
    nim-arithmetic. Established in the algebraic-geometry
    literature.
 
-**Layer 2: Hecke-cell ↔ nimber bijection (open)**:
+**Layer 2: Hecke-cell $\leftrightarrow$ nimber bijection (open)**:
 
 3. **Smallest case** ($p = 2$, $n = 3$): compute the
    Kazhdan–Lusztig cells of $H_3(\zeta_2) = H_3(-1)$ explicitly.
