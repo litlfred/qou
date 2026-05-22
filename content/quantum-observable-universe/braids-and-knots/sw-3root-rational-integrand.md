@@ -137,8 +137,15 @@ $$
 so $\int_{-a}^{a} (-P/D)\,dz = -8a + R(a)$ where $R(a)$ is a sum of
 arctangents over the three irrational $w$-roots of
 $\tilde D(w) = 16 w^3 + 24 w^2 - 13 w + 2$ ($w = z + 1/z$ palindromic
-substitution; $\mathrm{disc}(\tilde D) = -80000$, not a perfect
-square in $\mathbb{Q}$ — so $D(z)$ is irreducible over $\mathbb{Q}$).
+substitution). $\tilde D$ has no rational roots (by the
+rational-root theorem the candidates are $\pm 2^a / 2^b$ with $a \le 1$,
+$b \le 4$; direct evaluation rules them all out — verified in
+sympy: `Poly(D̃).is_irreducible = True`), so $\tilde D$ is
+irreducible over $\mathbb{Q}$; combined with $\mathrm{disc}(\tilde D)
+= -80000 < 0$ this means $\tilde D$ has one real and two complex-
+conjugate roots, none in $\mathbb{Q}$. Consequently $D(z)$ does
+not split over $\mathbb{Q}$ and the partial-fraction expansion of
+$-P/D$ requires extending to a cubic-radical field.
 
 The Wedderburn-decomposition target
 

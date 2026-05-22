@@ -5,26 +5,33 @@ Möbius integration limit a(q) = (4-q)/(4q+3) — closed-form witness.
 Linked to content block: conj:mobius-limit-from-thimble.
 
 The conjecture asserts that the integration limit appearing in the
-baryon-period real-axis integral
+baryon-period real-axis integral is the closed-form Möbius pencil
 
-    a(q) = (4 - q) / (4 q + 3)
+    a(q) = (4 - q) / (4 q + 3).
 
-is the leading-order asymptotic re-entry point on ℝ of the
-steepest-descent contour emanating from the complex critical point
-z_c^+ ∈ ℂ of the SW action (see picard-lefschetz-thimble.witness.json
-for the full Hessian data).
+CAL-4 caveat (2026-05-22). The earlier framing — that a(q) is the
+"steepest-descent re-entry abscissa of the Picard–Lefschetz thimble
+emanating from z_c^+" — was retracted on main (def:picard-lefschetz-
+thimble demoted to rem: on commit f86ea9d7a; the descent crossing
+witness gives x_re ≈ 3.86, an order of magnitude larger than
+a(q_0) ≈ 0.388). The Möbius matrix M = [[-1, 4], [4, 3]] entries
+{4, 3} match the cubic's c²-coefficient + degree, but the variable
+q in (4-q) and (4q+3) is NOT sourced by the color-tube cubic
+F(z, c) ∈ ℤ[z][c] (no q in F). Consequently this ansatz remains
+a fit to the CODATA m_p target (cheat-sheet Migration Backlog #1;
+companion to LAMBDA_PROTON_FITTED_FROM_CODATA per PR #888).
 
 This script certifies the closed-form algebraically, evaluates it at
-q = q₀, and cross-checks the q = 1 sanity value a(1) = 3/7.
+q = q₀, and cross-checks the q = 1 sanity value a(1) = 3/7. It does
+NOT derive a(q); the q-source is open work.
 
 Trust chain
 -----------
-sympy closed-form   ──→   evaluate at q₀   ──→   compare to numerical
-                                                steepest-descent re-entry
-                                                point in PLT witness.
+sympy closed-form   ──→   evaluate at q₀   ──→   numerical sanity at q = 1.
 
-The numerical comparison is informational; the asserted equality is the
-algebraic identity itself, verified by sympy.
+The asserted equality is the algebraic identity itself (sympy-
+verified). The numerical agreement with CODATA m_p via A(a(q)) is
+empirical (CAL-4-fitted, per the caveat above).
 
 Usage
 -----
@@ -46,10 +53,12 @@ from witness_polynomial import expose_polynomial
 def build_witness() -> WitnessBuilder:
     w = WitnessBuilder("mobius-limit-from-thimble", engine="sympy")
     w.set_description(
-        "Closed-form integration limit a(q) = (4-q)/(4q+3) from "
-        "steepest-descent re-entry point of the PL thimble. Algebraic "
-        "identity verified by sympy; archimedean Hessian data lives in "
-        "picard-lefschetz-thimble.witness.json."
+        "Closed-form Möbius pencil a(q) = (4-q)/(4q+3) — CAL-4-"
+        "fitted ansatz on the categorical-action integration limit "
+        "(conj:mobius-limit-from-thimble). The earlier PL "
+        "re-entry-abscissa framing was retracted on main "
+        "(commit f86ea9d7a); the q-source is open work. Algebraic "
+        "identity (closed form, sanity at q=1) verified by sympy."
     )
     w.set_content_block("conj:mobius-limit-from-thimble")
     w.add_parameter("q0", float(q0))
@@ -107,15 +116,19 @@ def build_witness() -> WitnessBuilder:
     w.add_data("mobius_matrix_det", int(M.det()))
     w.add_data("mobius_matrix_trace", int(M.trace()))
 
-    # Hessian-residual cross-check: at q₀ the steepest-descent
-    # numerical re-entry x_re is recorded in the PLT witness data
-    # (informational; structural agreement is what matters).
+    # CAL-4 caveat (2026-05-22): the historical PL re-entry-abscissa
+    # cross-check is no longer informative — the descent crossing
+    # witness gives x_re ≈ 3.86, an order of magnitude larger than
+    # a(q_0) ≈ 0.388. The retained certification is the algebraic
+    # identity at q = 1 and the closed-form evaluation at q_0.
     w.add_caveat(
-        "The algebraic identity is the certified statement.  "
-        "Numerical agreement with the steepest-descent re-entry "
-        "point recorded in picard-lefschetz-thimble.witness.json is "
-        "informational; subleading Hessian-residual corrections of "
-        "order |H(z_c)|^{-1/2} are absorbed into the tolerance."
+        "Closed-form Möbius pencil — CAL-4-fitted ansatz "
+        "(conj:mobius-limit-from-thimble). The earlier "
+        "steepest-descent re-entry framing was retracted on main "
+        "(commit f86ea9d7a) since the PL crossing is numerically at "
+        "x_re ≈ 3.86, not at a(q_0) ≈ 0.388. The q-source is open "
+        "work; this witness certifies only the algebraic closed form "
+        "and its sanity at q = 1."
     )
 
     return w
