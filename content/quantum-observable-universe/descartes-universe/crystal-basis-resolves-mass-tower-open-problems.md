@@ -9,14 +9,14 @@ finite-graph combinatorics on Kashiwara crystals
 $\mathrm{Cryst}(\mathfrak{sl}_n)$ [`kashiwara1991`]:*
 
 - *the chirality factor's $\langle c \rangle_\beta$ Wedderburn-weighted
-  average becomes a sum over **integer crystal multiplicities**;*
+ average becomes a sum over **integer crystal multiplicities**;*
 - *Term 7's level-5 character projector $\chi_5(T_w)$ becomes a
-  **height-6 crystal-vertex count**;*
+ **height-6 crystal-vertex count**;*
 - *the brane-tower $|V|\to 1$ divergence is regularised by the
-  Kazhdan-Lusztig classical-limit functor
-  ([`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)),
-  whose action collapses $H_n(R, q)$ to $\mathbb{Z}[S_n]$ via
-  integer KL coefficients.*
+ Kazhdan-Lusztig classical-limit functor
+ ([`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)),
+ whose action collapses $H_n(R, q)$ to $\mathbb{Z}[S_n]$ via
+ integer KL coefficients.*
 
 > **Status: structural reduction (sorry-free conditional).**
 > This proposition does *not* close the four open problems. It
@@ -90,7 +90,7 @@ The α_5 magnitude open in `Term7ShellCorrectionClass` reduces to:
 *compute the crystal-vertex sum at height 6 for $A = 4$ ($^4$He),
 $A = 5$ ($^5$Li, $^5$He), $\ldots$, multiply by the Wedderburn weight
 $w_\lambda(q_0)$, and read off the AME-residual amplitude.* No new
-mathematical machinery; just the finite crystal computation.
+mathematical machinery; the finite crystal computation.
 
 The shell-closure sign $\alpha_5 < 0$
 ([`Term7ShellCorrectionClass`](mass-tower-open-problems-classes.lean))

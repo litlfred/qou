@@ -7,10 +7,10 @@ the Faddeev-Kashaev quasi-classical limit are unconditional Lean
 theorems:*
 
 - *(2-boundary) `Cl_2(0) - Cl_2(0) + Cl_2(0) - Cl_2(0) + Cl_2(0) = 0`,
-  the all-zero-input pentagon.*
+ the all-zero-input pentagon.*
 - *(3-boundary) For every $(q, n)$, $(1 - q) \cdot \log \Phi_n(0; q) -
   \mathrm{Li}_2(0) = 0$, the boundary case of the Faddeev-Kashaev limit
-  at $x = 0$.*
+ at $x = 0$.*
 
 > **Status: theorem (boundary cases, sorry-free).** This proposition
 > closes a non-trivial portion of substantive Mathlib gaps (2)
@@ -25,7 +25,7 @@ theorems:*
 
 | Theorem | Closes |
 |---|---|
-| `Cl_2_pentagon_at_zero_unconditional` | (2) at all-zero arguments — pentagon trivially holds |
+| `Cl_2_pentagon_at_zero_unconditional` | (2) at all-zero arguments — pentagon holds by definition |
 | `Cl_2_pentagon_zero_substitution` | (2) function-level zero substitution |
 | `Cl_2_pentagon_consistent_with_zero` | (2) consistency between pentagon class and `Cl_2_zero` |
 | `faddeev_kashaev_at_zero_unconditional` | (3) at `x = 0` — both sides identically zero |

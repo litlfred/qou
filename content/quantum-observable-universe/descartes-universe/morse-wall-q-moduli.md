@@ -5,7 +5,7 @@ Möbius transformation
 ([Möbius limit from thimble](#conj:mobius-limit-from-thimble)), viewed
 as an element of $\operatorname{Frac}(R)$ for $R = \mathbb{Z}[q^{\pm 1}]$
 (equivalently, defined over the localisation $R[(4q+3)^{-1}]$).
-The locus where $a$ acts trivially — its fixed-point set in
+The locus where $a$ acts as the identity — its fixed-point set in
 $\operatorname{Frac}(R)$ — is given by the **square-root golden
 fixed points**:*
 
@@ -56,7 +56,7 @@ $$
 *The Möbius fixed points are **not** the elliptic-curve degeneration
 locus of $\mathcal{E}_q$ — those are at $q_{\mathrm{gold}} =
 1/\varphi^2 \approx 0.382$
-([golden ratio degeneration](#rem:golden-ratio-degeneration)).  The
+([golden ratio degeneration](#rem:golden-ratio-degeneration)). The
 relationship is the squaring map:*
 
 $$
@@ -68,7 +68,7 @@ $$
 *That is, the Möbius fixed points sit at $\sqrt{q_{\mathrm{gold}}}$
 (positive root) and $-\sqrt{q_{\mathrm{gold}}^{-1}}$ (negative root).
 The integration-limit pencil therefore encodes the **square root** of
-the elliptic-curve degeneration locus.  Categorically, $a(q)$ is a
+the elliptic-curve degeneration locus. Categorically, $a(q)$ is a
 2-to-1 cover of the moduli space ramified at the golden node.*
 
 ## Physical substrate sits in the Morse-positive region
@@ -79,7 +79,7 @@ $$
   q_0 - 1/\varphi \;\approx\; 1.110 - 0.618 \;=\; 0.492,
 $$
 
-*and $a(q_0) \approx 0.388$, well inside $(0, 1)$.  The "C2 inflection"
+*and $a(q_0) \approx 0.388$, well inside $(0, 1)$. The "C2 inflection"
 phenomenon observed in
 ([baryon integration limit](#rem:baryon-integration-limit)) and PR
 #690's substrate-pure $m_p$ derivation is, structurally, the
@@ -95,7 +95,7 @@ algebra over $\mathbb{Z}[q^{\pm 1}, \zeta_5]$ after the routine
 localisation at $4q+3$); the only archimedean input is the
 **direction** "$q \to 1/\varphi$ along the substrate-positive ray",
 which uses the $\mathbb{R}$-ordering on $q$ to choose between the
-two fixed points.  An ordering-free reformulation in terms of
+two fixed points. An ordering-free reformulation in terms of
 $(q-1/\varphi)$-adic limits is straightforward and is the default
 formulation in the Lean file
 ([qou:QOU.Descartes.morse_wall_q_moduli](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/morse-wall-q-moduli.lean)).*
@@ -103,11 +103,11 @@ formulation in the Lean file
 ## Open follow-ups
 
 - *Explicit identification of the $A(a)$ Hessian's degeneration order
-  at the wall (cusp / fold catastrophe classification per
-  \[arnold-gusein-zade-varchenko1988] §10–11).*
+ at the wall (cusp / fold catastrophe classification per
+ \[arnold-gusein-zade-varchenko1988] §10–11).*
 - *Lean formalisation of the algebraic-residue statement of
-  ([sw-period thimble equivalence](#prop:sw-period-thimble-equivalence))
-  over $\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$, with this proposition as
-  the boundary condition.*
+ ([sw-period thimble equivalence](#prop:sw-period-thimble-equivalence))
+ over $\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$, with this proposition as
+ the boundary condition.*
 - *Coordination with PR #690's $A(a)$ probe to align the C2 inflection
-  with the algebraic Morse-wall statement.*
+ with the algebraic Morse-wall statement.*

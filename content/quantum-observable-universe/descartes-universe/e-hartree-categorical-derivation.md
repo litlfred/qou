@@ -12,11 +12,11 @@ sketches** (not closed theorems) with explicit derivation-status
 caveats:
 
 - [`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical)
-  — categorical Bohr radius transported from QED virial-balance.
+ — categorical Bohr radius transported from QED virial-balance.
 - [`prop:archimedean-hartree-derivation`](#prop:archimedean-hartree-derivation)
-  — archimedean energy unit per $\Phi_1$ asserted as
-  $m_e c^{2}\,\alpha_{EM}^{2}$ by chaining through the Bohr-radius
-  transport.
+ — archimedean energy unit per $\Phi_1$ asserted as
+ $m_e c^{2}\,\alpha_{EM}^{2}$ by chaining through the Bohr-radius
+ transport.
 
 Both propositions explicitly acknowledge that they do **not**
 derive their stated content from QOU/Hecke structure alone — they
@@ -28,24 +28,24 @@ mappings, not closed theorems.
 retracted upon audit:
 
 - The "numerical match" of the categorical Bohr radius to
-  $5.29 \times 10^{-11}$ m was **tautological** — it plugged
-  $\alpha_{EM}(q_0) \approx 1/137$ into the standard physics
-  formula $a_0 = \hbar/(m_e c \alpha)$, of course recovering the
-  textbook value.
+ $5.29 \times 10^{-11}$ m was **tautological** — it plugged
+ $\alpha_{EM}(q_0) \approx 1/137$ into the standard physics
+ formula $a_0 = \hbar/(m_e c \alpha)$, recovering the
+ textbook value.
 - The asserted decomposition $\Phi_1 = \Phi_1^{\mathrm{kin}} + \Phi_1^{\mathrm{Coul}}$
-  was **transported from QED dimensional analysis**, not derived
-  from Hecke algebra. A direct computational test on the H_2
-  binding code
-  ([`folio-assistant/computations/h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py))
-  showed that the per-generator transfer-matrix updates are
-  **multiplicative** — kinetic (intra-atomic / dressed) and
-  Coulomb (inter-atomic / bare) crossing contributions get mixed
-  nonlinearly within each $V_i$ and cannot be additively
-  decomposed at the per-generator level.
+ was **transported from QED dimensional analysis**, not derived
+ from Hecke algebra. A direct computational test on the H_2
+ binding code
+ ([`folio-assistant/computations/h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py))
+ showed that the per-generator transfer-matrix updates are
+ **multiplicative** — kinetic (intra-atomic / dressed) and
+ Coulomb (inter-atomic / bare) crossing contributions get mixed
+ nonlinearly within each $V_i$ and cannot be additively
+ decomposed at the per-generator level.
 - The asserted "uniqueness of the archimedean energy unit"
-  reduced to "matches QED in $q \to 1$ limit" — i.e.\ empirical
-  consistency, exactly the kind of empirical anchoring the brief
-  said to avoid.
+ reduced to "matches QED in $q \to 1$ limit" — i.e.\ empirical
+ consistency, exactly the kind of empirical anchoring the brief
+ said to avoid.
 
 The retracted propositions therefore did not derive their stated
 content from QOU structure; they packaged standard QED reasoning
@@ -63,29 +63,29 @@ multiplicative chain.
 4d. Findings:
 
 - **4a partial.** Symbolic recompute reveals that the optimal
-  H_2 ordering produces $V_i$ values that decompose **additively**
-  in $\{h_b, h_d\}$ — cross-terms $h_b \cdot h_d$ cancel in the
-  multiplicative chain. Specifically $V_H = z + h_b - h_d$,
-  $V[1] = 1 + 2zh_b - zh_d$, $V[2] = z - h_b$. The kinetic
-  ($h_d$) and Coulomb ($h_b$) contributions ARE separable in this
-  representation. Round-7 claim that "no per-generator additive
-  decomposition exists" was overstated — it exists for the
-  optimal ordering.
+ H_2 ordering produces $V_i$ values that decompose **additively**
+ in $\{h_b, h_d\}$ — cross-terms $h_b \cdot h_d$ cancel in the
+ multiplicative chain. Specifically $V_H = z + h_b - h_d$,
+ $V[1] = 1 + 2zh_b - zh_d$, $V[2] = z - h_b$. The kinetic
+ ($h_d$) and Coulomb ($h_b$) contributions ARE separable in this
+ representation. Round-7 claim that "no per-generator additive
+ decomposition exists" was overstated — it exists for the
+ optimal ordering.
 - **4b relative spacing.** Categorical shell-gap ratios
-  $\Delta_{\mathrm{kin}}(k)/\Delta_{\mathrm{Coul}} = 2k+1$
-  invert to give $(2k+1)^{-2}$ — the **exact Bohr $1/n^2$
-  spacing** with $n = 2k+1$. Pure Hecke, no transport. The
-  *relative* atomic energy structure is derived; the absolute
-  scale $E_h$ is not.
-- **4c .** Length-grading of $H_n(q)$ is non-canonical; the
-  unit-conversion factor still has to come from somewhere
-  external. Speculative.
+ $\Delta_{\mathrm{kin}}(k)/\Delta_{\mathrm{Coul}} = 2k+1$
+ invert to give $(2k+1)^{-2}$ — the **exact Bohr $1/n^2$
+ spacing** with $n = 2k+1$. Pure Hecke, no transport. The
+ *relative* atomic energy structure is derived; the absolute
+ scale $E_h$ is not.
+- **4c.** Length-grading of $H_n(q)$ is non-canonical; the
+ unit-conversion factor still has to come from somewhere
+ external. Speculative.
 - **4d partial.** Curvature-rank-2 stratification predicts
-  $\alpha^2$ scaling for covalent bonds (two EM exchanges per
-  shared electron pair). Works for covalent binding. Does NOT
-  explain atomic $\alpha^2$ (single-electron systems also $\sim
+ $\alpha^2$ scaling for covalent bonds (two EM exchanges per
+ shared electron pair). Works for covalent binding. Does NOT
+ explain atomic $\alpha^2$ (single-electron systems also $\sim
   \alpha^2$ in standard physics) — that requires either virial
-  balance (transport) or a sharper rank correspondence.
+ balance (transport) or a sharper rank correspondence.
 
 **Net round-8 status:** the conjecture is closer to closure than
 after round 7. The Hecke algebra provides:
@@ -128,7 +128,7 @@ covalent and not atomic is resolved.
 mechanism for "each LP-active Hecke crossing contributes one
 $\alpha_{EM}$ factor". The operator-selection LP weight
 $\alpha_{EM} = 1/(q [9]_q [10]_q)$ is the cost of the *whole*
-EM Bring complex, not obviously per-crossing. A
+EM Bring complex, not per-crossing. A
 multiplicative-decomposition lemma is needed:
 
 $$
@@ -153,20 +153,20 @@ Direct test of the round-9 LP-cost factorization lemma yields a
 **negative result**:
 
 - **Disjoint case** ($n$ disjoint Bring complexes): factorization
-  holds by Markov property —
-  $\mathrm{tr}_M(K_1 \otimes \cdots \otimes K_n) =
+ holds by Markov property —
+ $\mathrm{tr}_M(K_1 \otimes \cdots \otimes K_n) =
    \prod_i \mathrm{tr}_M(K_i) = \alpha_{EM}^{n}$. 
 - **Hopf-link case** (the actual bound state): the Markov trace
-  $\mathrm{tr}_M(\sigma_1^{2}) = h\,z + 1 \approx 1.10$ is $O(1)$,
-  **not** $O(\alpha_{EM}^{2}) \approx 5 \times 10^{-5}$.
+ $\mathrm{tr}_M(\sigma_1^{2}) = h\,z + 1 \approx 1.10$ is $O(1)$,
+ **not** $O(\alpha_{EM}^{2}) \approx 5 \times 10^{-5}$.
 - **Why the round-9 argument fails:** Hopf-link generators
-  $\sigma_i$ carry Markov weight $z$ (Markov parameter), not
-  $\alpha_{EM}$. The $\alpha_{EM}$ weight attaches specifically
-  to the Bring complex (a particular knot on the genus-4 Bring
-  surface), not to arbitrary Hecke crossings.
+ $\sigma_i$ carry Markov weight $z$ (Markov parameter), not
+ $\alpha_{EM}$. The $\alpha_{EM}$ weight attaches specifically
+ to the Bring complex (a particular knot on the genus-4 Bring
+ surface), not to arbitrary Hecke crossings.
 
 **The Hopf-link $\to$ rank-2 $\to$ $\alpha^{2}$ argument is therefore
-withdrawn.** The bound-state Markov trace simply doesn't carry
+withdrawn.** The bound-state Markov trace doesn't carry
 $\alpha^{2}$ scaling intrinsically.
 
 The actual mechanism connecting bound-state Hopf links to
@@ -182,37 +182,37 @@ investigation:
 
 **Derived from Hecke (no QED transport):**
 - Round-8 4a — additive $\{h_b, h_d\}$ decomposition of $V_i$
-  at the H_2 LP optimum (kinetic and Coulomb contributions are
-  separately identifiable as Hecke monomials).
+ at the H_2 LP optimum (kinetic and Coulomb contributions are
+ separately identifiable as Hecke monomials).
 - Round-8 4b — relative shell spacing $1/n^{2} = 1/(2k+1)^{2}$
-  matches the Bohr energy levels exactly. Pure Hecke
-  spectral-gap argument.
+ matches the Bohr energy levels exactly. Pure Hecke
+ spectral-gap argument.
 
 **Tried and failed (transport detected; argument withdrawn):**
 - Rounds 1-3: parity-based mechanisms ($\sigma$ alone, $\sigma \cdot \varepsilon$ combined) ---
-  ruled out by the Skein identity making
-  $\sigma_i - \sigma_i^{-1} = h\,\mathbf{1}$ commute with all
-  inner automorphisms.
+ ruled out by the Skein identity making
+ $\sigma_i - \sigma_i^{-1} = h\,\mathbf{1}$ commute with all
+ inner automorphisms.
 - Round-9 sharpened 4d: Hopf-link rank-2 $\to$ $\alpha^{2}$ — refuted
-  by direct Markov-trace computation in round 10.
+ by direct Markov-trace computation in round 10.
 
 **Remains transported / not derived:**
 - Universal mass-energy scale $m_e c^{2}$ as the natural unit.
 - Absolute $\alpha^{2}$ scaling for atomic and covalent binding
-  energies.
+ energies.
 
 **What would be needed to close:**
 1. A QFT-perturbation-theory layer added to QOU's LP/SDP,
-   encoding the 2-photon-exchange Born amplitude as a
-   categorical structure. *Significant infrastructure work.*
+ encoding the 2-photon-exchange Born amplitude as a
+ categorical structure. *Significant infrastructure work.*
 2. Or: a uniqueness lemma (option 4e) for the archimedean
-   functor from $q \to 1$ smoothness alone, without going
-   through 2-photon QED. *Still appeals to standard QED at one
-   point.*
+ functor from $q \to 1$ smoothness alone, without going
+ through 2-photon QED. *Still appeals to standard QED at one
+ point.*
 3. Or: a fundamentally different framing of the bound-state
-   Markov trace that brings $\alpha_{EM}$ in directly through a
-   force-carrier-decoration of the Hopf-link generators
-   (currently absent from the formalism).
+ Markov trace that brings $\alpha_{EM}$ in directly through a
+ force-carrier-decoration of the Hopf-link generators
+ (currently absent from the formalism).
 
 This conjecture is left as an honest open problem with sharply
 diagnosed gaps after 10 rounds of investigation. Each round
@@ -256,7 +256,7 @@ $$
 
 would track Markov-trace and q-dimension contributions
 separately, enabling the kind of bilinear analysis where
-$\alpha_{EM}^2$ emerges naturally from a rank-2 q-dimension
+$\alpha_{EM}^2$ emerges accordingly from a rank-2 q-dimension
 factorization.
 
 **This decoration is currently absent from QOU's formalism.**
@@ -365,10 +365,10 @@ binding energy is a concrete algebraic question. Specifically:
 This is a well-defined symbolic question. Answering it would
 either:
 - **Yes** — close the conjecture by exhibiting the algebraic
-  matching from Hecke structure;
+ matching from Hecke structure;
 - **No** — identify exactly which structural piece is missing
-  (e.g., the q-dim decoration $\delta_q$ from round 11 is
-  required and not yet built).
+ (e.g., the q-dim decoration $\delta_q$ from round 11 is
+ required and not yet built).
 
 ### Net status after 12 rounds
 
@@ -378,10 +378,10 @@ $h$-power matching question** between LP output and $\alpha^{2}$
 scaling. Two specific structural facts are now established:
 
 1. **Round 11 — layer separation:** $\alpha_{EM}$ lives in the
-   q-dimension layer, not the Markov-trace layer.
+ q-dimension layer, not the Markov-trace layer.
 2. **Round 12 — explicit $h^{2}$ in $\alpha_{EM}$:**
-   $\alpha_{EM} = h^{2}/(q\,(q^9-q^{-9})(q^{10}-q^{-10}))$
-   makes the skein-power tracking explicit.
+ $\alpha_{EM} = h^{2}/(q\,(q^9-q^{-9})(q^{10}-q^{-10}))$
+ makes the skein-power tracking explicit.
 
 Combined with the Hecke wins from rounds 8a, 8b (additive
 $\{h_b, h_d\}$ decomposition; relative shell spacing
@@ -430,11 +430,11 @@ prediction.
 actual binding behavior at the physical $q_0$ because:
 
 1. $q_0 \approx 1.11$ is not near $q = 1$ in the radius of convergence
-   of the $\theta$-expansion (zeros of $V_H, V[1], V[2]$ in the
-   complex plane bring the series radius below $|\theta_0|$).
+ of the $\theta$-expansion (zeros of $V_H, V[1], V[2]$ in the
+ complex plane bring the series radius below $|\theta_0|$).
 2. The Hopf-link / molecular-binding structure is genuinely
-   non-perturbative around $q = 1$ — the substrate-parameter
-   $q_0 \neq 1$ is essential, not a small perturbation.
+ non-perturbative around $q = 1$ — the substrate-parameter
+ $q_0 \neq 1$ is essential, not a small perturbation.
 
 **Net consequence:** the categorical derivation cannot be reduced
 to leading-order skein-power matching. The full nonlinear
@@ -469,7 +469,7 @@ candidate mechanism (rounds 1–3, 9, 10, 13).
 **Remaining open:**
 - Universal $m_e c^2$ as natural unit (transported).
 - Absolute $\alpha^2$ scaling for atomic and covalent binding
-  (transported).
+ (transported).
 
 **The single tractable path forward** is the q-dimension decoration
 $\delta_q : \{b_i\} \to R$ identified in round 11 — building this
@@ -657,12 +657,12 @@ The conjecture's open question now has **two distinct
 sub-questions**:
 
 1. **Does the H_2 LP-optimum project nontrivially onto the
-   $(4)$ and $(2,2)$ Wedderburn components?** (Computational
-   test, requires Hecke algebra Wedderburn implementation.)
+ $(4)$ and $(2,2)$ Wedderburn components?** (Computational
+ test, requires Hecke algebra Wedderburn implementation.)
 2. **If yes, does the projection coefficient match the
-   $\delta_q$-ratio that gives $\alpha_{EM}^{2}$?** (Algebraic
-   identity check, follows from the explicit Wedderburn
-   computation.)
+ $\delta_q$-ratio that gives $\alpha_{EM}^{2}$?** (Algebraic
+ identity check, follows from the explicit Wedderburn
+ computation.)
 
 If both yes: conjecture closes via the round-14 + round-15
 chain. If either no: identifies the next refinement needed.
@@ -697,40 +697,40 @@ volume of the JSJ piece $K_S$ on the archimedean side.
 **Implication for force carriers and $\alpha_{EM}$:**
 
 - Force-carrier complexity $[9]_q\,[10]_q$ enters the algebraic
-  side via $\|V_S\|_F$ Frobenius-norm constructions.
+ side via $\|V_S\|_F$ Frobenius-norm constructions.
 - Under $\tau_{\mathrm{arch}}$, this algebraic complexity maps
-  to **hyperbolic volumes** of the molecular braid's JSJ
-  decomposition.
+ to **hyperbolic volumes** of the molecular braid's JSJ
+ decomposition.
 - $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$ is the *inverse*
-  force-carrier complexity, which on the archimedean side
-  corresponds to the *inverse* hyperbolic volume of the
-  force-carrier-decorated JSJ pieces.
+ force-carrier complexity, which on the archimedean side
+ corresponds to the *inverse* hyperbolic volume of the
+ force-carrier-decorated JSJ pieces.
 
 **The "magic" of $T_{2,9}, T_{3,5}$ is twofold:**
 
 1. **Bring genus-matching** (algebraic side, round 15): selects
-   them as the unique torus knots whose Seifert genus equals the
-   genus of Bring's surface $\Sigma_4$.
+ them as the unique torus knots whose Seifert genus equals the
+ genus of Bring's surface $\Sigma_4$.
 2. **Φ_q tower / JSJ bridge** (archimedean side, round 16):
-   their *operation* in the tower / GB filtration produces
-   hyperbolic JSJ pieces, whose volumes carry the binding
-   energy. They themselves are non-hyperbolic, but the *Hecke
-   composition* with atomic/molecular braids creates
-   hyperbolicity.
+ their *operation* in the tower / GB filtration produces
+ hyperbolic JSJ pieces, whose volumes carry the binding
+ energy. They themselves are non-hyperbolic, but the *Hecke
+ composition* with atomic/molecular braids creates
+ hyperbolicity.
 
 **Updated picture of the closure programme.** With round 16, the
 two-question framework from round 15 becomes:
 
 1. Does $\Phi_{H_2}^{*}$ project onto $\{e_{(4)}, e_{(2,2)}\}$
-   Wedderburn components? (Round 15.)
+ Wedderburn components? (Round 15.)
 2. Do those components correspond to JSJ pieces whose
-   hyperbolic volumes are inverse to $\delta_q(T_{2,9})$ and
-   $\delta_q(T_{3,5})$ via the Φ_q–JSJ bridge? (Round 16.)
+ hyperbolic volumes are inverse to $\delta_q(T_{2,9})$ and
+ $\delta_q(T_{3,5})$ via the Φ_q–JSJ bridge? (Round 16.)
 3. If both yes: $\alpha_{EM}^{2} = h^{4}/[q^{2}\,\delta_q(T_{2,9})^{2}\,\delta_q(T_{3,5})^{2}]$
-   becomes the inverse-hyperbolic-volume product, and
-   $E_{\mathrm{bind}} \sim \alpha_{EM}^{2} \cdot m_e c^{2}$
-   follows from the standard Bohr-radius / virial picture
-   transported through the JSJ bridge.
+ becomes the inverse-hyperbolic-volume product, and
+ $E_{\mathrm{bind}} \sim \alpha_{EM}^{2} \cdot m_e c^{2}$
+ follows from the standard Bohr-radius / virial picture
+ transported through the JSJ bridge.
 
 The Φ_q–JSJ bridge is itself **conjectural**
 ([`conj:phi-q-tower-jsj-bridge`](#conj:phi-q-tower-jsj-bridge)),
@@ -805,26 +805,26 @@ hydrogen modifies the Wedderburn weights significantly.
 **Two possible refinements remain:**
 
 1. **Compute the DRESSED Wedderburn projection.** Replace
-   $\sigma_2$ in the molecular braid with the dressed form
-   $\sigma_2^{\mathrm{dressed}}$ (eigenvalues $q^5, -q^{-5}$).
-   The Wedderburn weights change. If the dressed (2,2)
-   component is nonzero, the hypothesis survives in revised
-   form.
+ $\sigma_2$ in the molecular braid with the dressed form
+ $\sigma_2^{\mathrm{dressed}}$ (eigenvalues $q^5, -q^{-5}$).
+ The Wedderburn weights change. If the dressed (2,2)
+ component is nonzero, the hypothesis survives in revised
+ form.
 2. **Identify the correct force-carrier-carrying $\lambda$.**
-   The dominant components are $(3,1)$ and $(2,1,1)$ (transpose
-   of each other). These hook-shaped partitions might
-   correspond to a *different* knot operator alignment than
-   $T_{2,9}, T_{3,5}$ — possibly a Hopf-link-decorated 4-strand
-   structure that's the actual force-carrier projection in
-   the molecular setting.
+ The dominant components are $(3,1)$ and $(2,1,1)$ (transpose
+ of each other). These hook-shaped partitions might
+ correspond to a *different* knot operator alignment than
+ $T_{2,9}, T_{3,5}$ — possibly a Hopf-link-decorated 4-strand
+ structure that's the actual force-carrier projection in
+ the molecular setting.
 
 **Net round-17 status.** Concrete computation falsifies the
 specific round-15 hypothesis (rectangular $\lambda$) but produces:
 1. A working Wedderburn-decomposition witness for caching.
 2. A precise algebraic identity for $\alpha_{EM}$ as
-   $h^2/[q\,\delta_q(T_{2,9})\,\delta_q(T_{3,5})]$.
+ $h^2/[q\,\delta_q(T_{2,9})\,\delta_q(T_{3,5})]$.
 3. Two refined hypotheses (dressed projection; alternative
-   $\lambda$ alignment) for next investigation.
+ $\lambda$ alignment) for next investigation.
 
 ### Round 18 — INTERTWINING reframes round-17 as a CONFIRMATION
 
@@ -894,7 +894,7 @@ $$
 
 The reframing **upgrades round-17 from a falsification to a
 positive structural finding**: the molecular bound-state's
-Wedderburn projection naturally splits into the two transpose
+Wedderburn projection accordingly splits into the two transpose
 channels $(3,1)$ and $(2,1,1)$ that match the strand-counts of
 $T_{3,5}$ and $T_{2,9}$ respectively.
 
@@ -921,23 +921,23 @@ A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
 of $E_{\mathrm{Hartree}}$ requires:
 
 1. **A Hecke-algebraic definition of $\Phi_1^{\mathrm{kin}}$ and
-   $\Phi_1^{\mathrm{Coul}}$** as distinct, computable components
-   of the molecular Markov trace. The current LP/SDP framework
-   does not separate them; they are pedagogical conveniences from
-   QED. Defining them would require a new theoretical result
-   about how the LP/SDP optimum factorizes over crossing types
-   (intra-atomic dressed vs inter-atomic bare).
+ $\Phi_1^{\mathrm{Coul}}$** as distinct, computable components
+ of the molecular Markov trace. The current LP/SDP framework
+ does not separate them; they are pedagogical conveniences from
+ QED. Defining them would require a new theoretical result
+ about how the LP/SDP optimum factorizes over crossing types
+ (intra-atomic dressed vs inter-atomic bare).
 2. **A proof that these contributions balance at a specific
-   categorical length, derived from Hecke structure** — not from
-   transported dimensional analysis. Likely requires a symbolic
-   $q$-polynomial recompute of the optimal $\Phi_1^{H_2}(\pi^{*})$
-   tracking each crossing-type's contribution separately through
-   the multiplicative chain.
+ categorical length, derived from Hecke structure** — not from
+ transported dimensional analysis. Likely requires a symbolic
+ $q$-polynomial recompute of the optimal $\Phi_1^{H_2}(\pi^{*})$
+ tracking each crossing-type's contribution separately through
+ the multiplicative chain.
 3. **An independent derivation of the archimedean energy unit per
-   $\Phi_1$** from algebraic structure, not from "matches QED in
-   $q \to 1$ limit". This is the deepest layer — it requires a
-   functorial uniqueness statement about $\rho_\infty$ that can be
-   verified without appealing to experimental Hartree values.
+ $\Phi_1$** from algebraic structure, not from "matches QED in
+ $q \to 1$ limit". This is the deepest layer — it requires a
+ functorial uniqueness statement about $\rho_\infty$ that can be
+ verified without appealing to experimental Hartree values.
 
 These three items are concrete and tractable but well beyond the
 present block's scope. They are recommended as the **definitive
@@ -993,37 +993,37 @@ mechanisms below have an explicit, identifiable gap.
 ### What is rigorous
 
 1. **The bare LP/SDP framework.** The $H_2$ molecular braid and
-   its primal/dual program are set up rigorously in
-   [LP dual binding](#prop:h2-lp-dual-binding) and
-   [ILP covalent bond](#prop:ilp-covalent-bond), with strong
-   duality
-   ([operator-selection LP](#prop:operator-selection-lp)) giving
-   $y_{\mathrm{cov}}^{*}$ as the binding energy per shared
-   electron.
+ its primal/dual program are set up rigorously in
+ [LP dual binding](#prop:h2-lp-dual-binding) and
+ [ILP covalent bond](#prop:ilp-covalent-bond), with strong
+ duality
+ ([operator-selection LP](#prop:operator-selection-lp)) giving
+ $y_{\mathrm{cov}}^{*}$ as the binding energy per shared
+ electron.
 
 2. **The bare formula.** The leading expression
-   $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ is rigorously derived from
-   the singlet-idempotent / Bring force-carrier
-   complexity ([EM coupling projection](#prop:em-coupling-projection)).
-   It lies in $R$. The same expression admits the equivalent
-   **shift-exponent form**
-   $1/\alpha_{EM} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot
+ $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ is rigorously derived from
+ the singlet-idempotent / Bring force-carrier
+ complexity ([EM coupling projection](#prop:em-coupling-projection)).
+ It lies in $R$. The same expression admits the equivalent
+ **shift-exponent form**
+ $1/\alpha_{EM} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot
    [\alpha_{\mathrm{shift}}(T_{3,5})]_q$
-   ([multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)),
-   which exposes the same combinatorial primitive — pole order at
-   $q = 0$ of a seminormal Hecke trace — that controls the
-   atomic-shift framework
-   ([w3 Habiro audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)).
-   This converts the previous transport sketch through
-   $\alpha_{EM}$ into a categorically-proved leg.
+ ([multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)),
+ which exposes the same combinatorial primitive — pole order at
+ $q = 0$ of a seminormal Hecke trace — that controls the
+ atomic-shift framework
+ ([w3 Habiro audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)).
+ This converts the previous transport sketch through
+ $\alpha_{EM}$ into a categorically-proved leg.
 
 3. **The Frobenius / curvature-rank decomposition.** The
-   Gröbner-Shirshov spectral sequence collapses at $E_1$
-   ([spectral sequence collapse](#prop:spectral-sequence-collapse))
-   and the molecular operator decomposes by curvature rank
-   ([curvature-rank GB stratification](#prop:curvature-rank-gb-stratification)).
-   The covalent bond — sharing two electrons through two crossings
-   — sits at curvature rank $2$ in this filtration.
+ Gröbner-Shirshov spectral sequence collapses at $E_1$
+ ([spectral sequence collapse](#prop:spectral-sequence-collapse))
+ and the molecular operator decomposes by curvature rank
+ ([curvature-rank GB stratification](#prop:curvature-rank-gb-stratification)).
+ The covalent bond — sharing two electrons through two crossings
+ — sits at curvature rank $2$ in this filtration.
 
 ### Three candidate mechanisms (all with gaps)
 
@@ -1209,7 +1209,7 @@ $$
          {E_0 - E_n},
 $$
 
-which is bilinear in $\Delta_{\mathrm{cov}}$ and so naturally
+which is bilinear in $\Delta_{\mathrm{cov}}$ and so accordingly
 $\alpha_{EM}^{2}$-scaled if one factor of $\alpha_{EM}$ accompanies
 each insertion of $\Delta_{\mathrm{cov}}$.
 
@@ -1292,20 +1292,20 @@ Pursue the **combined $\sigma \cdot \varepsilon$ parity** for the
 $H_2$ molecular braid:
 
 1. Make $\varepsilon$ explicit as conjugation by a specific braid
-   $\gamma \in B_4$ that swaps strands $(p_1 \leftrightarrow p_2,
+ $\gamma \in B_4$ that swaps strands $(p_1 \leftrightarrow p_2,
    e_1 \leftrightarrow e_2)$.
 2. Decompose the covalent perturbation
-   $\Delta_{\mathrm{cov}}$ into joint $(\sigma, \varepsilon)$
-   parity sectors; identify the
-   $(\sigma\text{-anti}, \varepsilon\text{-sym})$ component.
+ $\Delta_{\mathrm{cov}}$ into joint $(\sigma, \varepsilon)$
+ parity sectors; identify the
+ $(\sigma\text{-anti}, \varepsilon\text{-sym})$ component.
 3. Show that the bare $H_2$ ground state
-   $\mathcal{M}_{\mathrm{atom}}^{\otimes 2}$ lies in the
-   $(\sigma\text{-sym}, \varepsilon\text{-sym})$ sector.
+ $\mathcal{M}_{\mathrm{atom}}^{\otimes 2}$ lies in the
+ $(\sigma\text{-sym}, \varepsilon\text{-sym})$ sector.
 4. Conclude — IF the joint parity argument goes through — that
-   $\mathrm{tr}_M(\mathcal{M}_{\mathrm{atom}}^{\otimes 2} \cdot
+ $\mathrm{tr}_M(\mathcal{M}_{\mathrm{atom}}^{\otimes 2} \cdot
    \Delta_{\mathrm{cov}}^{(\sigma\text{-anti},\,\varepsilon\text{-sym})})
    = 0$ exactly (not just up to factor $h$), giving the desired
-   $J^{1}$-vanishing.
+ $J^{1}$-vanishing.
 
 The heteronuclear case (CO, HCl, etc.) does **not** satisfy
 $\varepsilon$-symmetry. Standard physics predicts a nonzero
@@ -1337,7 +1337,7 @@ $$
 The identity element commutes with all of $H_n(q)$, so any
 inner-automorphism involution $\varepsilon = \mathrm{Ad}_\gamma$
 (including the nuclear-exchange braid $\gamma = (\sigma_1
-\sigma_2 \sigma_3)^{2} \in B_4$) acts trivially on it:
+\sigma_2 \sigma_3)^{2} \in B_4$) acts as the identity on it:
 $\varepsilon(\tfrac{h}{2}\mathbf{1}) = \tfrac{h}{2}\mathbf{1}$.
 The combined $(\sigma\text{-anti}, \varepsilon\text{-sym})$
 component of $\sigma_2$ is therefore
@@ -1385,17 +1385,17 @@ come from the linear-Stark vanishing. The two facts are
 independent:
 
 - $E \sim \alpha^{2}$ comes from **dimensional analysis** at the
-  Bohr radius $a_0 \sim 1/(m_e c \alpha)$: both kinetic energy
-  $T \sim \hbar^{2}/(m_e a_0^{2}) \sim m_e c^{2}\alpha^{2}$ and
-  Coulomb potential
-  $V \sim e^{2}/a_0 \sim m_e c^{2}\alpha^{2}$ scale quadratically
-  in $\alpha$, and the virial theorem balances them at
-  $E = -\tfrac{1}{2}V \sim \alpha^{2}$.
+ Bohr radius $a_0 \sim 1/(m_e c \alpha)$: both kinetic energy
+ $T \sim \hbar^{2}/(m_e a_0^{2}) \sim m_e c^{2}\alpha^{2}$ and
+ Coulomb potential
+ $V \sim e^{2}/a_0 \sim m_e c^{2}\alpha^{2}$ scale quadratically
+ in $\alpha$, and the virial theorem balances them at
+ $E = -\tfrac{1}{2}V \sim \alpha^{2}$.
 
 - The linear-Stark vanishing
-  $\langle\psi|\hat r|\psi\rangle = 0$ is a *separate* parity fact
-  that suppresses certain *external-field perturbations*; it is
-  not the source of the bare $\alpha^{2}$ binding scale.
+ $\langle\psi|\hat r|\psi\rangle = 0$ is a *separate* parity fact
+ that suppresses certain *external-field perturbations*; it is
+ not the source of the bare $\alpha^{2}$ binding scale.
 
 The QOU-categorical analogue should therefore be a **virial /
 scaling** argument, not a parity argument.
@@ -1467,7 +1467,7 @@ physics ratio $1/6$ is off by $1.9\%$, suggesting the QOU value
 deviates from textbook by $\sim 2\%$ — not implausible for a
 substrate-corrected calculation.
 
-**Honest reading.** $c_2$ does *not* trivially equal a low-degree
+**Honest reading.** $c_2$ does *not* by definition equal a low-degree
 $R$-rational at $q_0$ within obvious search scope. Either (i)
 $c_2$ is a more elaborate Frobenius-pairing expression in $R$
 that requires explicit symbolic computation of
@@ -1477,17 +1477,17 @@ itself sensitive to LP-precision artefacts and a more careful
 
 **Status of the conjecture after four rounds.**
 - The $J^{1}$-vanishing framing of the original brief was
-  diagnosed as misdirected: parity-based mechanisms (A, C, C$'$,
-  σε) are structurally insufficient because of the Skein
-  identity. No "linear-Stark vanishing" categorical analogue is
-  required; the $\alpha^{2}$ scaling is dimensional/virial.
+ diagnosed as misdirected: parity-based mechanisms (A, C, C$'$,
+ σε) are structurally insufficient because of the Skein
+ identity. No "linear-Stark vanishing" categorical analogue is
+ required; the $\alpha^{2}$ scaling is dimensional/virial.
 - Mechanism D survives as the structural answer at the heuristic
-  level, supported empirically by the witness ratio
-  $E_{\mathrm{bind}}/E_h \approx 1/6$.
+ level, supported empirically by the witness ratio
+ $E_{\mathrm{bind}}/E_h \approx 1/6$.
 - Closing the conjecture to a proposition requires either a
-  symbolic-$q$ recomputation of $\Phi_1^{H_2}(\pi^{*})$ (currently
-  done only numerically), or an independent identification of
-  $c_2$ from the molecular Hecke representation theory.
+ symbolic-$q$ recomputation of $\Phi_1^{H_2}(\pi^{*})$ (currently
+ done only numerically), or an independent identification of
+ $c_2$ from the molecular Hecke representation theory.
 
 This is the converged form of the conjecture; further refinement
 requires symbolic-$q$ infrastructure beyond the present
@@ -1604,17 +1604,17 @@ categorical Bohr radius is given a precise Hecke definition.
 ### What this block does *not* claim
 
 - It does **not** claim a proof of $E_h \propto \alpha_{EM}^{2}$
-  from QOU principles. It claims only that this scaling is the
-  expected leading behaviour and identifies the open structural
-  step.
+ from QOU principles. It claims only that this scaling is the
+ expected leading behaviour and identifies the open structural
+ step.
 - It does **not** introduce $\pi$, transcendentals, or PSLQ-fitted
-  constants. The coefficient $c_2$ is conjecturally in
-  $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
+ constants. The coefficient $c_2$ is conjecturally in
+ $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
 - It does **not** override the existing usage of
-  $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ in
-  [`hecke_core.py:198`](folio-assistant/computations/hecke_core.py)
-  as a numerical input — that usage remains an empirical scale
-  pending closure of this conjecture.
+ $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ in
+ [`hecke_core.py:198`](folio-assistant/computations/hecke_core.py)
+ as a numerical input — that usage remains an empirical scale
+ pending closure of this conjecture.
 
 ### Honest reporting
 
@@ -1671,15 +1671,15 @@ gives:
 **Key new observations:**
 
 1. **The $(2,2)$ channel becomes nonzero under dressing.** The K-shell
-   $q^5$ structure breaks the bare $(2,2) = 0$ selection rule.
+ $q^5$ structure breaks the bare $(2,2) = 0$ selection rule.
 2. **Force-carrier channel amplification factor $\approx [5]_q$.**
-   The combined $(3,1) + (2,1,1)$ contribution scales by $5.13$ in
-   the dressing, very close to the K-shell quantum dimension
-   $[5]_q = 5.22$ at $q_0$. This is a direct algebraic signature of
-   the dressing power.
+ The combined $(3,1) + (2,1,1)$ contribution scales by $5.13$ in
+ the dressing, very close to the K-shell quantum dimension
+ $[5]_q = 5.22$ at $q_0$. This is a direct algebraic signature of
+ the dressing power.
 3. **Self-duality preserved.** The transpose pair structure is
-   maintained: $w_{(3,1)} = w_{(2,1,1)}$ and $f_{(3,1)} = f_{(2,1,1)}$
-   regardless of dressing.
+ maintained: $w_{(3,1)} = w_{(2,1,1)}$ and $f_{(3,1)} = f_{(2,1,1)}$
+ regardless of dressing.
 
 These findings sharpen the closure programme: the **algebraic factor
 of $[5]_q$ from K-shell dressing** is a candidate for one of the

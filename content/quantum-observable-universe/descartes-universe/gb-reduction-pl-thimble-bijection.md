@@ -16,18 +16,18 @@ phase $\mathrm{Im}\,S$.*
 
 The bijection refines
 ([jet–GB–PL correspondence](#prop:jet-gb-pl-correspondence)) by giving
-the **dynamics**, not just the **filtration data**: the inductive
+the **dynamics**, not the **filtration data**: the inductive
 reduction operator is the steepest-descent ODE under $\tau$. Two
 consequences:
 
 1. **Memoised substructures $\leftrightarrow$ rigid descent endpoints.** Borromean
-   nucleon caches sit at endpoints of completed thimble flows; by
-   Mostow rigidity those endpoints have fixed shape parameters. The
-   cached transfer matrices are the $\tau$-image of rigid thimble
-   endpoints.
+ nucleon caches sit at endpoints of completed thimble flows; by
+ Mostow rigidity those endpoints have fixed shape parameters. The
+ cached transfer matrices are the $\tau$-image of rigid thimble
+ endpoints.
 2. **Topological invariance $\leftrightarrow$ constant phase.** Each GB reduction
-   preserves Markov / Skein equivalence; steepest-descent flow
-   preserves $\mathrm{Im}\,S$. The two invariants are identified.
+ preserves Markov / Skein equivalence; steepest-descent flow
+ preserves $\mathrm{Im}\,S$. The two invariants are identified.
 
 ## Proof sketch
 

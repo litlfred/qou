@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.lean"
   },
   "source_hashes": {
-    "md": "8d34b64e18a5",
+    "md": "75b9630f85f5",
     "ts": "f43371129a97",
     "lean": "43a2f3a2225c"
   },
@@ -484,20 +484,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "6bd2c7a8a356",
+          "md": "75b9630f85f5",
           "ts": "f43371129a97",
           "lean": "43a2f3a2225c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md:93: mathematical machinery; just the finite crystal computation."
+        "reviewed_at": "2026-05-22T20:21:58.963Z",
+        "reviewed_sha": "46718c39488db0edb8fa98206aa54841be78bc13"
       }
     ],
     "voice-scholarly-default": [
@@ -705,5 +705,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:34:07.964Z"
+  "updated_at": "2026-05-22T20:21:58.963Z"
 }

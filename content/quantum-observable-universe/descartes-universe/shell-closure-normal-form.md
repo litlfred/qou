@@ -12,13 +12,13 @@ Build the nucleus one nucleon at a time by alternating
 proton–neutron Hopf linking:
 
 1. Start with $\mathcal{N}(1, 0) = \mathbf{1}$ (identity
-   in $H_1(q)$).
+ in $H_1(q)$).
 2. **Hopf-link** the next nucleon: append crossings
-   $\sigma_j^{\epsilon(j,k)}$ for all existing nucleons $j < k$.
+ $\sigma_j^{\epsilon(j,k)}$ for all existing nucleons $j < k$.
 3. **Reduce** via the Gröbner--Shirshov basis $G = \{\sigma_i^2 - (q - q^{-1})\sigma_i - 1, \text{YB}, \text{far-comm}\}$.
 4. Record the **Hecke reduction energy** $\Delta E_k$
-   ([Gröbner–Shirshov energy](#thm:groebner-shirshov-energy))
-   and the **word-length histogram** $h_k(\ell) = \#\{w \in
+ ([Gröbner–Shirshov energy](#thm:groebner-shirshov-energy))
+ and the **word-length histogram** $h_k(\ell) = \#\{w \in
    \mathrm{supp}(\mathcal{N}) : |w| = \ell\}$.
 
 Repeat until $A = p + n$ nucleons are linked.
@@ -34,14 +34,14 @@ filling.**
 $\mathcal{N}(p, n)$ is in Gröbner--Shirshov normal form for **every**
 $A \geq 1$, by induction on $A$:
 
-- **Base case.** $\mathcal{N}(1, 0) = \mathbf{1}$ is trivially
-  in normal form (the empty word has no squares, no YB triples, no
-  far-comm pairs).
+- **Base case.** $\mathcal{N}(1, 0) = \mathbf{1}$ is by definition
+ in normal form (the empty word has no squares, no YB triples, no
+ far-comm pairs).
 
 - **Inductive step.** Given $\mathcal{N}$ at step $A$ in normal
-  form in $H_A(q)$, the Hopf-link step produces:
+ form in $H_A(q)$, the Hopf-link step produces:
 
-  $$
+ $$
     \xi_{A+1}
     = 
     \mathcal{N}(A)
@@ -49,34 +49,34 @@ $A \geq 1$, by induction on $A$:
     \prod_{j=0}^{A-1}(c_j \sigma_j + d_j)
   $$
 
-  where each factor $(c_j \sigma_j + d_j)$ is the crossing element
-  for the new nucleon with nucleon $j$ (already in normal form:
-  linear in $\sigma_j$, no squares).  The product $\xi_{A+1}$ may
-  contain $\sigma_j^2$ terms from multiplying $\sigma_j$ factors.
-  Apply the Gröbner--Shirshov division algorithm
-  ([division algorithm](#unital-groebner-bases:def:division-algorithm))
-  with the Hecke basis $G$:
+ where each factor $(c_j \sigma_j + d_j)$ is the crossing element
+ for the new nucleon with nucleon $j$ (already in normal form:
+ linear in $\sigma_j$, no squares). The product $\xi_{A+1}$ may
+ contain $\sigma_j^2$ terms from multiplying $\sigma_j$ factors.
+ Apply the Gröbner--Shirshov division algorithm
+ ([division algorithm](#unital-groebner-bases:def:division-algorithm))
+ with the Hecke basis $G$:
 
-  $$
+ $$
     \mathcal{N}(A+1)
      := 
     r(\xi_{A+1}, G)
   $$
 
-  By the **main theorem** of Gröbner--Shirshov basis theory
-  ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)):
+ By the **main theorem** of Gröbner--Shirshov basis theory
+ ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)):
 
-  1. The algorithm **terminates** (the length-lex ordering on positive
-     braid monomials is well-founded).
-  2. The remainder $r(\xi_{A+1}, G)$ is **unique** (independent of
-     reduction path).
-  3. The remainder is in **normal form** (no word in its support
-     contains a leading monomial of any $g \in G$).
+ 1. The algorithm **terminates** (the length-lex ordering on positive
+ braid monomials is well-founded).
+ 2. The remainder $r(\xi_{A+1}, G)$ is **unique** (independent of
+ reduction path).
+ 3. The remainder is in **normal form** (no word in its support
+ contains a leading monomial of any $g \in G$).
 
-  Therefore $\mathcal{N}(A+1)$ is in normal form.  $\square$
+ Therefore $\mathcal{N}(A+1)$ is in normal form. $\square$
 
 The normal form has at most $A!$ terms (the dimension of $H_A(q)$
-over $\mathbb{Z}[q^{\pm 1}]$, equal to $|S_A|$).  This is a
+over $\mathbb{Z}[q^{\pm 1}]$, equal to $|S_A|$). This is a
 **finite** representation for any nucleus.
 
 **(ii) Symmetric histogram at shell closures.**
@@ -136,7 +136,7 @@ the $k$-th nucleon) exhibits a **gap** at shell breaks:
 The energy drops at the closure ($0.274 \to 0.095$: the last
 nucleon fits into the existing shell) and then **jumps** at the
 next step ($0.095 \to 1.409$: the new nucleon must start a fresh
-shell).  The ratio $1.409 / 0.095 = 14.8$ is the **shell gap**
+shell). The ratio $1.409 / 0.095 = 14.8$ is the **shell gap**
 in Hecke energy units.
 
 ## Optimal normal form (quotient ideals I$_{8}$ + I$_{9}$)
@@ -148,15 +148,15 @@ nuclei in the valley of stability ($N \geq Z - 1$).
 **Definition (quotient ideals).**
 
 - **I$_{8}$ (adjacency correlation):** A reduced word
-  $\sigma_i \sigma_{i+1}$ of length 2 is *absorbed* into $\sigma_{i+1}$
-  when $\sigma_{i+1}$ is present in the normal form. The coefficient of
-  $\sigma_i \sigma_{i+1}$ is determined by the off-diagonal entry of the
-  transfer matrix product $M_i$ — it is structural, not independent.
+ $\sigma_i \sigma_{i+1}$ of length 2 is *absorbed* into $\sigma_{i+1}$
+ when $\sigma_{i+1}$ is present in the normal form. The coefficient of
+ $\sigma_i \sigma_{i+1}$ is determined by the off-diagonal entry of the
+ transfer matrix product $M_i$ — it is structural, not independent.
 
 - **I$_{9}$ (closed shell chain collapse):** A reduced word $w \cdot \sigma_j$
-  is *absorbed* when its prefix $w$ is present in the normal form. This
-  implements the per-generator transfer matrix factorization: the product
-  of $\hat{V}_i$ volumes replaces the expanded Hecke element.
+ is *absorbed* when its prefix $w$ is present in the normal form. This
+ implements the per-generator transfer matrix factorization: the product
+ of $\hat{V}_i$ volumes replaces the expanded Hecke element.
 
 **Theorem (Optimal Normal Form).**
 *For any nucleus $N(Z, N)$ with $N \geq Z - 1$ (valley of stability),
@@ -181,16 +181,16 @@ By induction on $A$. Adding strand $A$ creates cross-terms
 $\sigma_i \cdot \sigma_{A-1}$ for all $i < A - 1$. These are absorbed:
 
 - If $|i - (A-1)| \geq 2$: far-commutativity reduces to
-  $\sigma_{A-1} \cdot \sigma_i$, then I$_{9}$ absorbs (prefix $\sigma_i$
-  present).
+ $\sigma_{A-1} \cdot \sigma_i$, then I$_{9}$ absorbs (prefix $\sigma_i$
+ present).
 - If $|i - (A-1)| = 1$: adjacency pair, I$_{8}$ absorbs (prefix
-  $\sigma_{A-1}$ present).
+ $\sigma_{A-1}$ present).
 - If $i = A - 1$: Hecke relation $\sigma_{A-1}^2 = (q - q^{-1})\sigma_{A-1}
   + \mathbf{1}$, both terms already in basis.
 
 The identity term $\mathbf{1}$ survives because $d \neq 0$ for nn and pn
 crossings. The condition $N \geq Z - 1$ ensures at least one nn or pn
-crossing at every generator.  $\square$
+crossing at every generator. $\square$
 
 Verified computationally for all $A \leq 8$ (14,256 terms $\to$ 8 for
 ${}^8\mathrm{Be}$). Formally proved in Lean (OptimalNF.lean).
@@ -213,16 +213,16 @@ The boundary $N \geq Z - 1$ matches the nuclear valley of stability.
 
 The Poincaré palindrome at $(p, p)$ nuclei means the Gröbner--Shirshov
 normal form fills the **entire Bruhat lattice of $S_{2p}$
-symmetrically**.  Every reduced word of length $\ell$ is paired
+symmetrically**. Every reduced word of length $\ell$ is paired
 with a reduced word of length $L - \ell$ with matching
-coefficient magnitude.  This is the algebraic signature of
+coefficient magnitude. This is the algebraic signature of
 **complete shell filling**: all available crossing configurations
 within the shell are occupied, and the structure is invariant
 under the Bruhat duality $w \mapsto w_0 w$ (where $w_0$ is the
 longest element of $S_{2p}$).
 
 The Borromean closure — the 3-body linking that creates the
-shell — is encoded in the dominant word.  At each shell closure,
+shell — is encoded in the dominant word. At each shell closure,
 the dominant word jumps to a significantly **longer** reduced
 word (from length 1 at $A = 3$ to length 4 at $A = 4$; from
 length 9 at $A = 7$ to length 16 at $A = 8$), reflecting the

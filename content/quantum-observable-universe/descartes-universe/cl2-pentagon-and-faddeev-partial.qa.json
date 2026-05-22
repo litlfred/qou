@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.lean"
   },
   "source_hashes": {
-    "md": "09a2f176cef5",
+    "md": "954bb8a97057",
     "ts": "f34912e5dac3",
     "lean": "fa5d2b6cfce7"
   },
@@ -463,20 +463,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "09a2f176cef5",
+          "md": "954bb8a97057",
           "ts": "f34912e5dac3",
           "lean": "fa5d2b6cfce7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.md:28: | `Cl_2_pentagon_at_zero_unconditional` | (2) at all-zero arguments — pentagon trivially holds |"
+        "reviewed_at": "2026-05-22T20:21:58.963Z",
+        "reviewed_sha": "46718c39488db0edb8fa98206aa54841be78bc13"
       }
     ],
     "voice-scholarly-default": [
@@ -686,5 +686,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:21:58.963Z"
 }
