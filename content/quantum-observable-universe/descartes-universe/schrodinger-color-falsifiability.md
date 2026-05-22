@@ -73,7 +73,7 @@ $$
   d^{\,*} := 1/\eta \approx 9.59.
 $$
 
-So the predicted crossover from the Riemannian regime to the
+The predicted crossover from the Riemannian regime to the
 Weber–Fechner regime sits at $\Delta E \approx 9.6$ on a normalized
 $L^{*}$-style scale (where unit $\Delta E$ is the typical
 small-difference just-noticeable threshold). This is in striking

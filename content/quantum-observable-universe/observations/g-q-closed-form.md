@@ -62,7 +62,7 @@ $$
   8\, m_e(q),
 $$
 
-so the only $q$-dependence of the universal-residue prefactor in
+The only $q$-dependence of the universal-residue prefactor in
 Planck units is carried by the electron mass $m_e(q)$ and by the
 Plancherel-weighted residue $\sum_{k \geq 4}\Phi_k$.  $G$ itself
 contributes no further $q$-dependence — its $q$-rational content

@@ -287,7 +287,7 @@ The brief's "$J^1$-vanishing" question then becomes:
 
 **Caveat (honest check):** The Hopf link $\sigma_1^2$ at the
 single Markov-trace level uses ONE Hecke relation ($\sigma_i^2 = h\sigma_i + 1$),
-so it is naïvely **rank-1** in the Hecke filtration. This would
+It is naïvely **rank-1** in the Hecke filtration. This would
 predict $\alpha^1$ scaling for atomic binding, not $\alpha^2$.
 
 Either (a) the Hopf link's GB rank is actually 2 once
@@ -411,7 +411,7 @@ $$
 
 (detailed series: $-9\theta - 308\theta^2 + \cdots$)
 
-So the leading $h$-order is $O(h^1)$ as predicted in round 12.
+The leading $h$-order is $O(h^1)$ as predicted in round 12.
 
 **But the expansion does NOT converge well at the physical $q_0$:**
 
@@ -734,7 +734,7 @@ two-question framework from round 15 becomes:
 
 The Φ_q–JSJ bridge is itself **conjectural**
 ([`conj:phi-q-tower-jsj-bridge`](#conj:phi-q-tower-jsj-bridge)),
-so this closure path is conditional on that conjecture also
+This closure path is conditional on that conjecture also
 closing.
 
 ### Net status after 16 rounds
@@ -1168,7 +1168,7 @@ $q \mapsto \pm q^{\pm 1}$:
 | $\rho$ | $-q$ | $\times 1$ | $\times 1$ |
 
 The relevant identities are $[n]_{-q^{\pm 1}} = (-1)^{n+1}\,[n]_q$,
-so the sign factors from $q$ and $[10]_q$ (even index, sign-flipped)
+The sign factors from $q$ and $[10]_q$ (even index, sign-flipped)
 *cancel against each other* under $\tau = q \mapsto -q^{-1}$, and
 likewise under $\rho = q \mapsto -q$ versus the identity. None of
 the four maps the *coupling* $\alpha_{EM}$ to $-\alpha_{EM}$.
@@ -1275,7 +1275,7 @@ $$
   \qquad \alpha_{EM} \neq c \cdot h.
 $$
 
-So even the operator-parity route requires either:
+Even the operator-parity route requires either:
 (a) a translation showing the $\alpha_{EM}$-expansion of
 $y_{\mathrm{cov}}$ inherits the $h$-evenness of the underlying
 trace, or
@@ -1650,7 +1650,7 @@ $$
   \;=\; -h.
 $$
 
-So the combined (3,1)+(2,1,1) force-carrier Markov-trace contribution
+The combined (3,1)+(2,1,1) force-carrier Markov-trace contribution
 of the bare braid is exactly $-w\,h/f$.
 
 **Task 2 — Dressed projection.** Replacing the middle crossing

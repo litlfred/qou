@@ -72,7 +72,7 @@ permutation $\sigma\in S_3$ of $(x_2,x_3,x_4)$ acts as
 \end{equation}
 ```
 
-so the $w_k$ transform as vector fields over the $(x_0,x_1)$ plane and
+The $w_k$ transform as vector fields over the $(x_0,x_1)$ plane and
 the $S_3$ permutes how these fields couple to the base.  The same
 $\mathrm{SO}(3)$ representation realises this
 action, now playing the role of the holonomy group on the internal

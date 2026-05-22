@@ -25,7 +25,7 @@ $$
     \neq  \mathrm{id}_{\mathbf{V} \otimes \mathbf{V}},
 $$
 
-so the braiding does not square to the identity on simples.  This
+The braiding does not square to the identity on simples.  This
 is the hallmark of a genuinely modular (non-symmetric) tensor
 category and is the prerequisite for anyonic statistics.
 

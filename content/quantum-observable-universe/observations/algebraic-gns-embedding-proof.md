@@ -18,7 +18,7 @@ $\mathrm{tr}_{M,n+1}(x \cdot \sigma_n) = z \cdot \mathrm{tr}_{M,n}(x)$,
 where $z = 1/(q^{1/2}+q^{-1/2})$
 ([Jones–Markov trace](#thm:jones-markov-trace)).
 Equivalently, $\mathrm{tr}_{M,n+1}|_{H_n(q)} = \mathrm{tr}_{M,n}$,
-so the family is compatible with the inclusions of step (1). By the
+The family is compatible with the inclusions of step (1). By the
 universal property of the colimit, there is a unique
 $R\otimes\mathbb{Q}$-linear trace
 $\mathrm{tr}_M \colon H_\infty(q) \to R\otimes\mathbb{Q}$ extending

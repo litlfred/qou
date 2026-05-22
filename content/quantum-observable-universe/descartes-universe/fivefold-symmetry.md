@@ -64,7 +64,7 @@ points where two or more coordinates coincide.  At a generic
 ramification point, two sheets merge (simple branching).  The
 **monodromy** around such a point is a transposition
 $(x_i x_j) \in S_5$.  The transpositions generate $S_5$,
-so the full $5$-fold symmetry is recovered by encircling all
+The full $5$-fold symmetry is recovered by encircling all
 ramification points.
 
 The regular pentagon inscribed in the unit circle has vertices

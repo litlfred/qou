@@ -119,7 +119,7 @@ provides structural content: each rung's coefficient is derived from
 substrate-only data via the categorical chain, not fitted.
 
 **Selection rule**: when two interpretations match the data equally
-well, the categorical-chain interpretation (Story B) is canonical
+the categorical-chain interpretation (Story B) is canonical
 because it traces back to substrate principles, while the
 empirical-fit interpretation (Story A) has free parameters.
 

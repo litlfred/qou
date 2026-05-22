@@ -15,7 +15,7 @@ g = \begin{pmatrix} \alpha & -\bar{\beta} \\ \beta & \bar{\alpha} \end{pmatrix},
 $$
 
 the inverse is $g^{-1} = g^\dagger = \bigl(\begin{smallmatrix} \bar{\alpha} & \bar{\beta} \\ -\beta & \alpha \end{smallmatrix}\bigr)$,
-so the Maurer--Cartan form evaluates to:
+The Maurer--Cartan form evaluates to:
 
 $$
 \varTheta = g^{-1} dg

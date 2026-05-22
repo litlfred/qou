@@ -14,7 +14,7 @@ via the Hecke relation leaves at least one unmatched single
 $\tilde\sigma_i$ factor; by Markov property applied at that factor,
 $\mathrm{tr}_M(x \cdot \tilde\sigma_i) = \mathrm{tr}_M(x \cdot \sigma_i)
 - z \mathrm{tr}_M(x) = z \mathrm{tr}_M(x) - z \mathrm{tr}_M(x) = 0$,
-so the entire word vanishes under $\mathrm{tr}_M$.
+The entire word vanishes under $\mathrm{tr}_M$.
 
 **Even length reduces to pair-partitions.** For $k$ even, proceed
 by induction on the number of generator types appearing. The base

@@ -68,7 +68,7 @@ plus a non-magic-check at every other $n$ in the relevant range.
 | ... | conjectural | through 28, 50, 82, 126 |
 | `IsKnownNotMagic n q_0`, $n \notin$ ladder | conjectural | $\psi_n(q_0)$ in some tensor span |
 
-So the proof status is: **1 of 8 forward-direction primalities
+The proof status is: **1 of 8 forward-direction primalities
 proved unconditionally**; the other 7 forward primalities and all
 reverse-direction non-primalities require the SDP machinery.
 

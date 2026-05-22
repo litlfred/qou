@@ -60,7 +60,7 @@ The correction arises from the :refterm[descent]{#descent} decomposition of the
 coupling endomorphism $P_{\mathrm{anti}}$ on the force-carrier
 configuration.  The torus knots $T_{2,9}$ (strong, 9 crossings)
 and $T_{3,5}$ (weak, 10 crossings) are non-hyperbolic torus knots,
-so their τ-image geometric invariant is the Chern–Simons functional rather than the non-hyperbolic-vanishing hyperbolic volume:
+Their τ-image geometric invariant is the Chern–Simons functional rather than the non-hyperbolic-vanishing hyperbolic volume:
 
 $$
   \mathrm{CS}(T_{m,n})

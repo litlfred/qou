@@ -37,7 +37,7 @@ requires $\mathrm{lk}(e_3, e_1) \geq 1$ and
 $\mathrm{lk}(e_3, e_2) \geq 1$, increasing the total linking
 number from $1$ to at least $3$.  The crossing energy cost
 of these additional links exceeds the binding energy gained,
-so the third electron is expelled to a higher shell.
+The third electron is expelled to a higher shell.
 
 **Comparison: lithium ($p = 3$, $n = 4$).**
 

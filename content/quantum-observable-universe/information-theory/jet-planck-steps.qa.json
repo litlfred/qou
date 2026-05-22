@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/information-theory/jet-planck-steps.md"
   },
   "source_hashes": {
-    "md": "5f3f26cf602a",
+    "md": "c1a17275a87a",
     "ts": "8ae139d5e4e2"
   },
   "criteria": {
@@ -379,19 +379,21 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "80751474af56",
+          "md": "c1a17275a87a",
           "ts": "8ae139d5e4e2"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T20:55:25.431Z",
+        "reviewed_sha": "b130a842b0bae67e91f6ff67a9f1531d2e168d3d",
         "severity": "major",
-        "evidence": "quantum-observable-universe/information-theory/jet-planck-steps.md:197: right trefoil $T_{2,3}^{\\sigma}$ are distinct knots"
+        "evidence": "content/quantum-observable-universe/information-theory/jet-planck-steps.md:197: right trefoil $T_{2,3}^{\\sigma}$ are distinct knots"
       }
     ],
     "voice-ai-slop": [
@@ -477,5 +479,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:32:53.779Z"
+  "updated_at": "2026-05-22T20:55:25.431Z"
 }

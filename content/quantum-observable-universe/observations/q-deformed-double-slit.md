@@ -50,7 +50,7 @@ On an instanton background the Lagrangian simplifies
 
 $$\mathcal{L}_q\big|_{\text{instanton}} = c_2(A) + \psi^* \otimes \mathcal{D}_\nabla\psi,$$
 
-so the gauge sector is topological ($c_2$ fixed by the barrier material's knot
+The gauge sector is topological ($c_2$ fixed by the barrier material's knot
 type) and all observable physics is in $\mathcal{D}_\nabla\psi = 0$. The
 complete derivation of the intensity pattern from $\mathcal{D}_\nabla\psi = 0$,
 including the torsion phase profile, is given in

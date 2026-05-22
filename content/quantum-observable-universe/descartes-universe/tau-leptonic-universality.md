@@ -38,7 +38,7 @@ $$
   \bigl|\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})\bigr|^2,
 $$
 
-so the matrix-element ratio is exactly $1$, and the branching
+The matrix-element ratio is exactly $1$, and the branching
 ratio reduces to the **pure phase-space ratio**:
 
 $$

@@ -116,7 +116,7 @@ $\pi$ in $2/(3\pi)$ is therefore *not* an external import: it is
 the unique archimedean shadow of substrate pentagon data on
 Bring's surface, propagated through $D$.
 
-In short, the dichotomy is intentional and forced:
+In summary, the dichotomy is intentional and forced:
 
 - **Pre-archimedean side** ($q$-rational, in $R$): the bare formula
   $q[9]_q[10]_q$ and its categorical trace-ratio derivation. No
@@ -169,7 +169,7 @@ $$
   \approx 0.038,
 $$
 which is $\sim 5.6\times$ smaller than the required $2/(3\pi) \approx 0.212$.
-So the naive 3-manifold zero-mode picture does not directly yield the
+The naive 3-manifold zero-mode picture does not directly yield the
 constant.
 
 **The exact form $\mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3)) = 4\pi/(3\cdot 2\pi^2)$
