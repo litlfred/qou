@@ -40,9 +40,8 @@ violation. This block invokes the **conditional-class exception**
 2. **Explicit hypothesis on the Lean side.** The theorem's
    declaration carries the class as an explicit `[Instance]`
    argument:
-   `theorem confinement_grading_correspondence_conditional
-     [CrystalGraphRealization n] : … := …` with no
-   `sorry` inside the proof body.
+   `theorem confinement_grading_correspondence_conditional [CrystalGraphRealization n] : ... := ...`
+   with no `sorry` inside the proof body.
 3. **Conditional banner.** The proposition statement above is
    prefixed with "**Theorem (conditional on
    [`conj:crystal-graph-realization`](#conj:crystal-graph-realization))**".

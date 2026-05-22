@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.lean"
   },
   "source_hashes": {
-    "md": "9cc2b1d9fa60",
+    "md": "b3532932549a",
     "ts": "818290759af3",
     "lean": "eb43c1c13ad7"
   },
@@ -45,6 +45,23 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
+      },
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "818290759af3",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7ea11950d58f",
+          "script_commit_sha": "e2805fa0d5a6a74447ea13f1dba5cb8a264bc0c7"
+        },
+        "reviewed_at": "2026-05-22T19:43:26.431Z",
+        "reviewed_sha": "c6b42088f213a384f68c9d4ab1b738dab52e4203"
       }
     ],
     "compute-prop-has-probe": [
@@ -407,6 +424,23 @@
         },
         "reviewed_at": "2026-05-20T16:40:02.947Z",
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      },
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "818290759af3",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T19:43:26.431Z",
+        "reviewed_sha": "c6b42088f213a384f68c9d4ab1b738dab52e4203"
       }
     ],
     "voice-first-person-work": [
@@ -441,25 +475,42 @@
         },
         "reviewed_at": "2026-05-20T16:40:02.947Z",
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
+      },
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "818290759af3",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T19:43:26.431Z",
+        "reviewed_sha": "c6b42088f213a384f68c9d4ab1b738dab52e4203"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "9cc2b1d9fa60",
+          "md": "b3532932549a",
           "ts": "818290759af3",
           "lean": "eb43c1c13ad7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md:44: [CrystalGraphRealization n] : … := …` with no"
+        "reviewed_at": "2026-05-22T19:43:26.431Z",
+        "reviewed_sha": "c6b42088f213a384f68c9d4ab1b738dab52e4203"
       }
     ],
     "voice-editorializing": [
@@ -684,5 +735,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T19:43:26.431Z"
 }
