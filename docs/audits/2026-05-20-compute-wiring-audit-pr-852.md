@@ -46,7 +46,7 @@ CAL-4|CAL4|fourth_cal|cal_4_|calibration_4   → 0 hits in live
 
 | Prop / finding | Witness(es) | Status |
 |----------------|-------------|--------|
-| `prop:lambda-scale-bring-bloch-identity` (#843) | tier{0..5}-search-m-p witnesses | 6-tier NEGATIVE |
+| `conj:lambda-scale-bring-bloch-identity` (#843) | tier{0..5}-search-m-p witnesses | 6-tier NEGATIVE |
 | `prop:li2q-phiq-bar-symmetrization` (corrected) | `li2q-phiq-bar-symmetry.witness.json` | falsification + correct identity verified to 1e-55 |
 | `prop:mass-tower-operator-valued` (Stage 1) | chain aggregator + h9-tritium + h9-³He + h12 framework | A=2,3 PROVED; A=4 framework + deferred extract |
 | Skein S(p) hypothesis | `skein-proton-canonical.witness.json` | 3 hypotheses; only S(p)=0 closes 1 ppb |

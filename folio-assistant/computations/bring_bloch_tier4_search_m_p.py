@@ -23,7 +23,7 @@ Bring-decomposition either:
   (d) requires 11+ crossing knots (Tier 5+ territory)
 
 Refs:
-- prop:lambda-scale-bring-bloch-identity (PR #843)
+- conj:lambda-scale-bring-bloch-identity (PR #843)
 - conj:bring-hyperbolic-knot-bloch-decomposition
 - Tier 0/1/2/3 sibling scripts on this branch and #843
 """

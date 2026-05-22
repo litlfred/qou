@@ -16,14 +16,14 @@ Tier 3 9-crossing volumes (KnotInfo, prime hyperbolic, ~15 dps):
   This script adds the bridge-3 hyperbolic subset that's
   Bring-embeddable (genus-4 constraint).
 
-Per the merged PR #843 prop:lambda-scale-bring-bloch-identity:
+Per the merged PR #843 conj:lambda-scale-bring-bloch-identity:
 the proton's specific Bring-decomposition Σ_i n_i^{(p)} [Z_{K_i}]
 with Bloch-Wigner regulator hitting λ_p · 8G is the categorical
 identity. Tier 3 widens the search to include the next layer
 beyond Tier 0/1/2.
 
 Refs:
-- prop:lambda-scale-bring-bloch-identity (PR #843)
+- conj:lambda-scale-bring-bloch-identity (PR #843)
 - conj:bring-hyperbolic-knot-bloch-decomposition
 - tier_1/tier_2 sibling scripts targeting 2/(3π) over same bases
 """

@@ -22,7 +22,7 @@ m_p chain:
    [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
    and is explicitly flagged as a **3-calibration discipline
    violation**. The proposed first-principles replacement
-   (`prop:lambda-scale-bring-bloch-identity`) is in active R&D
+   (`conj:lambda-scale-bring-bloch-identity`) is in active R&D
    (Bring-Bloch tier-1..5 searches) but not yet wired.
 
 2. **20 production scripts still import SUPERSEDED `mass_endomorphism.py`** —
@@ -44,14 +44,14 @@ underlying issues**. This audit's value-add is calling out that
 
 | # | Action | Where | Risk |
 |---|---|---|---|
-| 1 | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with `prop:lambda-scale-bring-bloch-identity` derivation | `m_p_borromean_verification_50dps.py` | **3-calibration discipline violation; production m_p chain uses calibrated literal** |
+| 1 | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with `conj:lambda-scale-bring-bloch-identity` derivation | `m_p_borromean_verification_50dps.py` | **3-calibration discipline violation; production m_p chain uses calibrated literal** |
 | 2 | Migrate 20 importers of SUPERSEDED `mass_endomorphism.py` to the new `mass_tower_operator_valued` API | 20 scripts | SUPERSEDED dependency in production |
 
 §8 — Common pitfalls:
 
 > "Hardcoded literal values where a categorical derivation exists →
 > **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869`
-> should derive from `prop:lambda-scale-bring-bloch-identity`."
+> should derive from `conj:lambda-scale-bring-bloch-identity`."
 
 > "Calibration parameters not in the 3-input set →
 > **4th-calibration violation**."
@@ -206,7 +206,7 @@ For probe scripts that pair `|tr_M|` with an `E_0`:
 ## Action items downstream of this audit
 
 1. **Track Migration Backlog #1** (resolve CAL-4 via
-   `prop:lambda-scale-bring-bloch-identity`). The five `bring_bloch_tier{1..5}_search_m_p.py`
+   `conj:lambda-scale-bring-bloch-identity`). The five `bring_bloch_tier{1..5}_search_m_p.py`
    scripts are the active R&D; closing this is the only first-principles
    resolution of the 210× symptom.
 2. **Track Migration Backlog #2** (migrate 20 scripts off SUPERSEDED
@@ -225,7 +225,7 @@ For probe scripts that pair `|tr_M|` with an `E_0`:
 - [`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
   — formula with `λ_scale` as conjectural common-scale; "why this is a
   conjecture, not a fit" section discusses the ΔS independence.
-- [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+- [`conj:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
   — proposed first-principles derivation of `λ_scale`.
 - [`prop:mass-tower-operator-valued`](../../content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md)
   — Stage-1 unblock of SUPERSEDED `mass-endomorphism-tower`.

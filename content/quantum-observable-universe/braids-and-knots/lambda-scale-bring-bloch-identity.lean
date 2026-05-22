@@ -1,7 +1,16 @@
 /-
   Categorical identity for the per-knot scale factor λ_K_scale
   via the Bring-Bloch decomposition
-  (prop:lambda-scale-bring-bloch-identity).
+  (conj:lambda-scale-bring-bloch-identity).
+
+  CAL-4 caveat (2026-05-22): demoted prop → conj per §3b
+  conjectural-propagation rule + empirical PSLQ tier 0-5 failure.
+  The theorems below are `rfl` against `opaque AtomKnot.lambdaScale
+  := bringBlochRegulator / volClosure` — definitionally true but
+  saying NOTHING about which integer combination realises the
+  scale. The integer-coefficient content is the open work
+  (`bring_bloch_tier5_search_m_p.py` consistent-negative across
+  52-knot basis through 11-crossing).
 
   Public statement.  For an atom-knot K with canonical Hecke braid
   β_K closing to K^{closure} ⊂ S³, the scale factor λ_K^{scale}
