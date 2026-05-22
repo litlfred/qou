@@ -1,0 +1,37 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-22T21:13:33.849846+00:00",
+  "commitSha": "e64b2806027cec1214f25c6f92044fac64ac71a9",
+  "assertions": [
+    {
+      "name": "yekutieli_landscape_matches_audit_documented_outcomes",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Reading A lands in the 1 ppm-100 ppm coincidence-basin band vs CODATA (consistent with audit §'5.6 ppm match'); Reading B lands >1% from CODATA (consistent with not being the production λ_scale). If either condition fails the audit's derivation has a numerical bug worth re-examining."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "lambda-scale-alt-i-yekutieli-percell-numerical",
+  "scriptFile": "lambda_scale_alt_i_yekutieli_percell_numerical.py",
+  "scriptHash": "56ecef19b753",
+  "scriptCommitSha": "unknown",
+  "description": "Strategy I (Yekutieli per-cell curvature) numerical landscape: evaluates the audit's two natural readings — Reading A (λ = 5/2 - G·h² as stated) and Reading B (λ = 5/2 + (3/4 - G)·h² corrected for combination with Family A) — at q_0 + MPFR-50dps and compares to Family A (#895 production substrate λ_scale) and the retired CODATA-derived closure target. Reading A lands in the same coincidence basin PR #701 falsified for Wedderburn sums (5.6 ppm match to CODATA); Reading B lands at 2.493 which matches neither. Yekutieli's structural argument unresolved between these readings; load-bearing categorical bijection step (audit §Concrete next R&D #1) is needed to decide.",
+  "contentBlock": "conj:lambda-scale-substrate-form",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "family_A_at_q0": "2.53277966367288405831871",
+    "reading_A_at_q0": "2.45996660784924980282539",
+    "reading_B_at_q0": "2.4927462715221338611441",
+    "codata_target": "2.4599527869",
+    "reading_A_vs_codata_ppm": "5.618379882",
+    "reading_B_vs_codata_pct": "1.333094066",
+    "reading_A_vs_family_A_pct": "-2.874827877",
+    "reading_B_vs_family_A_pct": "-1.580610928",
+    "structural_status": "Reading A: in coincidence basin (5.6 ppm); structurally indistinguishable from PR #701's falsified Wedderburn-sum candidates absent cell-↔-projection bijection. Reading B: off-target (matches neither Family A nor CODATA). Yekutieli argument unresolved; categorical bijection step is the gap."
+  }
+}
