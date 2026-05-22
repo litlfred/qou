@@ -53,6 +53,11 @@ from mass_at_3A_proper import atom_braid_word_3A
 from markov_trace_canonical import tr_M_element, Z_SYMB, H_SYMB
 from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
 from canonical_tr_m_via_rust import compute_tr_m as _canonical_rust_compute_tr_m
+# Re-assert our working precision after the canonical_tr_m_via_rust
+# import — historically that module set `mp.mp.dps = 30` at import
+# time (since fixed, but this guard makes the script robust if the
+# upstream regression returns).  Copilot PR #895 review.
+set_compute_dps()
 
 Q0 = HERE / "q-pinning-50-digit.witness.json"
 OUT = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
@@ -109,7 +114,7 @@ def _bridge_tr_M(Z: int, N: int, q_str: str, dps: int = 50):
     return tr, n_strands, len(word), dt
 
 
-def _rust_canonical_tr_M(Z: int, N: int, label: str, q_str: str):
+def _rust_canonical_tr_M(Z: int, N: int, label: str):
     """Compute tr_M(W_canonical(Z, N)) via the Rust LR convention adapter
     + Phase-2 `canonical_tr_m_via_rust.compute_tr_m`.
 
@@ -118,18 +123,38 @@ def _rust_canonical_tr_M(Z: int, N: int, label: str, q_str: str):
     with averaged-crossing expansion + per-partition mpmath
     combiner) into this consumer.  Expected speedup: ~500× at ⁴He
     (n=12), ~10⁶× at ¹⁰B vs the Python `tr_M_via_wenzl_bridge_mpfr`
-    kernel.  Returns the SAME (tr_mpf, n_strands, word_length, dt)
-    tuple shape as `_bridge_tr_M` so the call-site stays unchanged.
+    kernel.
 
-    Falls back gracefully (returns None tuple components) if the
-    Rust binary is not built.
+    The Rust binary uses its own pinned q value (loaded by
+    `canonical_tr_m_via_rust.compute_tr_m` from the same
+    `q-pinning-50-digit.witness.json` source as this script — see
+    that module for the q-pin chain), so the caller does NOT pass q.
+
+    Returns `(tr_mpf_50dps, n_strands, n_crossings_canonical, dt)`:
+        tr_mpf_50dps      — SIGNED Markov trace at 50 dps mpmath
+                            (per Copilot review on PR #895: do not
+                            collapse to abs; sign is algebraic).
+        n_strands         — 3·(Z+N).
+        n_crossings_canonical — canonical-word crossing count
+                            (NOT the Hecke-factor word length used
+                            by the Python bridge — call sites that
+                            need the latter must still go through
+                            `_bridge_tr_M`).
+        dt                — wall-clock seconds.
+
+    Returns `(None, None, None, dt)` if the Rust binary is unavailable
+    (graceful fallback).
     """
     t0 = time.time()
     r = _canonical_rust_compute_tr_m(Z, N, label)
     dt = time.time() - t0
     if "tr_M_q0_unavail_reason" in r:
         return None, None, None, dt
-    tr_str = r.get("tr_M_q0_mp30dps") or r.get("abs_tr_M_q0_mp30dps")
+    # Prefer the new 50-dps signed field (PR #895 review fix); fall
+    # back to the 30-dps signed alias if older Rust output is in
+    # play.  Never silently swap in `abs_*` — sign loss is a real
+    # algebraic regression (Gemini PR #895 review).
+    tr_str = r.get("tr_M_q0_mp50dps") or r.get("tr_M_q0_mp30dps")
     if tr_str is None:
         return None, None, None, dt
     return (mpf(tr_str),
@@ -163,35 +188,46 @@ def main(also_symbolic: bool = False, method: str = "hoefsmit-python") -> int:
         bridge_t_python = None
         bridge_t_rust = None
         rust_crosscheck = None
+        n_crossings_canonical = None  # canonical-word crossing count
+                                      # — distinct from Hecke-factor word length
+        effective_method = method     # tracks fallback (PR #895 review)
         if method in ("canonical-rust", "rust-with-python-crosscheck"):
             tr_at_q0_mpf, n_strands_rust, n_crossings_rust, bridge_t_rust = (
-                _rust_canonical_tr_M(Z, N, label, q_str)
+                _rust_canonical_tr_M(Z, N, label)
             )
             if tr_at_q0_mpf is None:
                 print(f"    [rust] hecke-canonical-chi unavailable; "
                       f"falling back to Hoefsmit+Wenzl bridge")
+                effective_method = "hoefsmit-python-fallback"
                 tr_at_q0_mpf, n_strands, word_len, bridge_t_python = \
                     _bridge_tr_M(Z, N, q_str, dps=50)
             else:
-                # n_crossings_rust is the canonical crossing count
-                # (not the H_n word length used by the Python kernel).
                 n_strands = n_strands_rust
-                word_len = n_crossings_rust
+                # The Hecke-factor word length isn't known on the Rust
+                # path (the Rust kernel marshalls a canonical-crossings
+                # word, not the H_{3A} Hecke-factor word).  Compute it
+                # separately so the witness can carry both consistently
+                # (Copilot PR #895 review fix).
+                word_len = len(atom_braid_word_3A(Z, N))
+                n_crossings_canonical = n_crossings_rust
                 print(f"    n_strands = {n_strands},  "
-                      f"n_crossings (canonical) = {word_len}")
+                      f"word_length_3A = {word_len},  "
+                      f"n_crossings_canonical = {n_crossings_canonical}")
                 print(f"    [rust]   tr_M(q_0) = {tr_at_q0_mpf}  "
                       f"({bridge_t_rust:.3f}s)")
                 if method == "rust-with-python-crosscheck":
                     # Independent Hoefsmit+Wenzl bridge for cross-check.
+                    # Sign-preserving (no `abs` collapse) per Gemini fix.
                     tr_python, _, _, bridge_t_python = _bridge_tr_M(
                         Z, N, q_str, dps=50)
-                    delta = abs(abs(tr_at_q0_mpf) - abs(tr_python))
+                    delta = abs(tr_at_q0_mpf - tr_python)
                     rel = (delta / max(abs(tr_python), mpf("1e-30")))
+                    agree_25 = bool(rel < mpf("1e-25"))
                     rust_crosscheck = {
                         "tr_M_python_50dps": fmt(tr_python),
                         "abs_delta": fmt(delta),
                         "rel_diff": fmt(rel),
-                        "agree_at_25dps": bool(rel < mpf("1e-25")),
+                        "agree_at_25dps": agree_25,
                         "python_wall_sec": float(bridge_t_python),
                         "speedup_vs_python":
                             float(bridge_t_python / bridge_t_rust)
@@ -202,13 +238,36 @@ def main(also_symbolic: bool = False, method: str = "hoefsmit-python") -> int:
                     print(f"    [crosscheck] |Δ| = {fmt(delta)}  "
                           f"rel = {fmt(rel)}  "
                           f"speedup = {rust_crosscheck['speedup_vs_python']:.1f}×")
+                    # Enforce the gate (Copilot PR #895 review fix):
+                    # cross-check mode is a verification mode, so a
+                    # failing agreement must surface as a hard error.
+                    if not agree_25:
+                        raise RuntimeError(
+                            f"rust-with-python-crosscheck failed for "
+                            f"{label} (Z={Z}, N={N}): rel.diff = "
+                            f"{fmt(rel)} exceeds 25-dps acceptance gate "
+                            f"(1e-25).  This indicates a real divergence "
+                            f"between the Rust and Python kernels, not "
+                            f"numerical noise."
+                        )
         else:
             tr_at_q0_mpf, n_strands, word_len, bridge_t_python = _bridge_tr_M(
                 Z, N, q_str, dps=50)
             print(f"    n_strands = {n_strands},  word_length = {word_len}")
             print(f"    [bridge] tr_M(q_0) = {tr_at_q0_mpf}  "
                   f"({bridge_t_python:.2f}s)")
-        bridge_t = bridge_t_python if bridge_t_python is not None else bridge_t_rust
+        # `bridge_elapsed_sec` reflects the PRIMARY kernel's wall time —
+        # rust when canonical-rust path is the one that produced
+        # `tr_at_q0_mpf`, python otherwise.  Cross-check overhead is
+        # separately recorded in `rust_crosscheck.python_wall_sec`
+        # (Copilot PR #895 review fix — dashboards must not see the
+        # cross-check Python time as the production primary).
+        if effective_method == "canonical-rust" and bridge_t_rust is not None:
+            bridge_t = bridge_t_rust
+        elif bridge_t_python is not None:
+            bridge_t = bridge_t_python
+        else:
+            bridge_t = bridge_t_rust
         b_term1 = M_E_MEV * rho * abs(tr_at_q0_mpf)
         print(f"    Term-1 contribution: m_e · ρ · |tr_M| = {b_term1} MeV")
 
@@ -302,10 +361,15 @@ def main(also_symbolic: bool = False, method: str = "hoefsmit-python") -> int:
             "n_strands_3A": n_strands,
             "rho_factor": rho,
             "word_length_3A": word_len,
+            "n_crossings_canonical": n_crossings_canonical,
             "tr_M_at_q0_50dps": fmt(tr_at_q0_mpf),
             "term1_b_pred_mev_50dps": fmt(b_term1),
             "bridge_elapsed_sec": bridge_t,
+            # `method` is the user-requested kernel; `effective_method`
+            # reflects what actually produced `tr_M_at_q0_50dps` after
+            # any fallback (Copilot PR #895 review).
             "method": method,
+            "effective_method": effective_method,
             "rust_canonical_chi_elapsed_sec": bridge_t_rust,
             "python_hoefsmit_elapsed_sec": bridge_t_python,
             "rust_crosscheck": rust_crosscheck,

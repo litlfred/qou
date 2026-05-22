@@ -46,7 +46,13 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.mp.dps = 30
+# NOTE (Copilot PR #895 review fix): we previously set
+# `mp.mp.dps = 30` at module import time, which silently downgraded
+# the working precision of any caller that had set `mp.mp.dps = 50`
+# (e.g. `atomic_tr_m_mpfr_50dps.py` after `set_compute_dps()`).
+# `compute_tr_m` now raises `mp.mp.dps` to 50 inside its own scope
+# only if the caller's working precision is lower; it never lowers
+# the caller's precision.
 
 REPO_ROOT = HERE.parent.parent
 BIN_CANDIDATES = [
@@ -98,6 +104,12 @@ def canonical_word_for(Z: int, N: int) -> tuple[int, list[list[int]]]:
 def compute_tr_m(Z: int, N: int, label: str,
                  *, q_val: float | None = None,
                  timeout_sec: int = 3600) -> dict:
+    # Ensure working precision is at least 50 dps for the y_λ ·
+    # chi combiner (Copilot PR #895 review).  Never lower the
+    # caller's precision (the prior module-level `mp.mp.dps = 30`
+    # is removed).
+    if mp.mp.dps < 50:
+        mp.mp.dps = 50
     bin_path = find_binary()
     if bin_path is None:
         return {
@@ -185,6 +197,14 @@ def compute_tr_m(Z: int, N: int, label: str,
         "n_averaged_crossings": rust_out["n_averaged_crossings"],
         "averaging_denominator": averaging_denom,
         "rust_duration_ms": rust_out["duration_ms"],
+        # Signed Markov trace at 50 dps (the precision the Rust kernel
+        # + y_λ combiner actually computes at — per Copilot/Gemini
+        # PR #895 review which flagged that the prior `mp30dps` output
+        # truncated a 50-dps internal compute).
+        "tr_M_q0_mp50dps": mp.nstr(tr_m_sum, 50),
+        "abs_tr_M_q0_mp50dps": mp.nstr(abs(tr_m_sum), 50),
+        # 30-dps back-compat aliases — to be removed after consumers
+        # are migrated to the 50-dps field names.
         "tr_M_q0_mp30dps": mp.nstr(tr_m_sum, 30),
         "abs_tr_M_q0_mp30dps": mp.nstr(abs(tr_m_sum), 30),
         "top5_contributions": sorted(
