@@ -40,7 +40,7 @@ $$
 The conjectural class
 [`mass-volume-factorization.lean`](mass-volume-factorization.md) carries a
 field `cptSaturated : Bool` on its `FrobeniusPackingDensity`
-structure.  The proposition above replaces this Boolean by the
+structure. The proposition above replaces this Boolean by the
 *structural* predicate $\mathrm{CPTSat}$: a property of the orbit
 structure of $\Lambda(\mathcal{K})$ under $\sigma$.
 
@@ -59,7 +59,7 @@ cptSaturated  =  decide (isCPTSaturated populatedBlocks)
 ```
 
 — provided the populated-blocks set is decidable, which it is for
-finite $\Lambda \subset \mathrm{Part}(n)$.  The Boolean flag is no
+finite $\Lambda \subset \mathrm{Part}(n)$. The Boolean flag is no
 longer an independent piece of data; it is recovered by the
 $\mathbb{Z}/2\mathbb{Z}$ orbit count.
 
@@ -76,13 +76,13 @@ $\sigma$-orbits
 Then:
 
 - $\Lambda = \{(3)\}$ — *not* fold-closed (alt missing); $\rho_F = m_e$,
-  matching the "single-chirality" branch of the original rule.
+ matching the "single-chirality" branch of the original rule.
 - $\Lambda = \{(3), (1, 1, 1)\}$ — fold-closed; $\rho_F = 2 m_e$,
-  matching the "alt $\in \Lambda$" branch.
+ matching the "alt $\in \Lambda$" branch.
 - $\Lambda = \{(2, 1)\}$ — fold-closed by self-duality; $\rho_F$ at
-  the doubled scale corresponds to the std block contributing
-  symmetrically to itself, consistent with the Plancherel-weight
-  arithmetic of [the packing dictionary](#rem:frobenius-packing-density).
+ the doubled scale corresponds to the std block contributing
+ symmetrically to itself, consistent with the Plancherel-weight
+ arithmetic of [the packing dictionary](#rem:frobenius-packing-density).
 
 In every case the original Boolean flag is recovered as the orbit-
 closure check, with no per-link case analysis.
@@ -103,7 +103,7 @@ So $\sigma$ is not a chosen-by-fiat $\mathbb{Z}/2\mathbb{Z}$
 action but the *intrinsic* fold whose existence is guaranteed by
 the symmetric-crystal structure. Every populated-blocks set
 $\Lambda$ inherits a $\sigma$-action, and "single-chirality vs
-CPT-saturated" is just the question of whether $\Lambda$ lies in
+CPT-saturated" is the question of whether $\Lambda$ lies in
 a fundamental domain of $\sigma$ or is invariant.
 
 ## Crystal-basis shortcut

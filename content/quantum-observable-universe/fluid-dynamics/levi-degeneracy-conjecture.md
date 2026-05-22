@@ -1,5 +1,5 @@
 Let $\{q_\kappa = e^{i\pi/\kappa}\}_{\kappa \geq 2}$ be the
-sequence of roots of unity converging to $q = 1$.  For each
+sequence of roots of unity converging to $q = 1$. For each
 $\kappa$, let $v_\kappa$ be the q-NS solution for anti-parallel
 vortex pair initial data, and let
 
@@ -30,12 +30,12 @@ $$
   \quad\text{as } \kappa \to \infty.
 $$
 
-The condition number stays bounded.  The Levi form remains
+The condition number stays bounded. The Levi form remains
 non-degenerate at the collision locus $\Sigma$ in the
-$q \to 1$ limit.  The contact structure does not degenerate.
+$q \to 1$ limit. The contact structure does not degenerate.
 The [observability axiom](#def:quantum-observable-universe)
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds locally
-on $\Sigma$.  The [vorticity lower
+on $\Sigma$. The [vorticity lower
 bound](#prop:vorticity-lower-bound) holds, the
 [q-BKM criterion](#thm:q-bkm) diverges, and the
 [counter-example](#conj:ns-counterexample) is established.
@@ -49,35 +49,35 @@ $$
 $$
 
 The condition number grows at the same rate as the truncation
-level relaxes.  The Levi form degenerates in the $\parallel$
+level relaxes. The Levi form degenerates in the $\parallel$
 direction: $\lambda_\parallel \to 0$ while $\lambda_\perp$
-stays bounded.  The contact structure becomes partially
-integrable at $\Sigma$.  The observability axiom fails locally
-— a gauge mode acts trivially in the integrable direction.
+stays bounded. The contact structure becomes partially
+integrable at $\Sigma$. The observability axiom fails locally
+— a gauge mode acts as the identity in the integrable direction.
 The vortex core flattens into a sheet, the vorticity spreads,
-and the lower bound fails.  Classical 3d Navier--Stokes is
+and the lower bound fails. Classical 3d Navier--Stokes is
 globally regular.
 
 **Equivalent formulations.**
 
 1. **Contact geometry:** Does the
-   [Levi form](#def:levi-form-defect) $\mathcal{L}_\varTheta$
-   degenerate at the collision locus when $q \to 1$?
+ [Levi form](#def:levi-form-defect) $\mathcal{L}_\varTheta$
+ degenerate at the collision locus when $q \to 1$?
 
 2. **Representation theory:** Does the finite-dimensional
-   approximation of $\mathrm{SU}_q(2)$ at roots of unity
-   preserve the isotropy of the Frobenius inner product in
-   the $\kappa \to \infty$ limit?
+ approximation of $\mathrm{SU}_q(2)$ at roots of unity
+ preserve the isotropy of the Frobenius inner product in
+ the $\kappa \to \infty$ limit?
 
 3. **Observability:** Does the QOU observability axiom
-   $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ hold
-   locally on the collision locus at $q = 1$?
+ $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ hold
+ locally on the collision locus at $q = 1$?
 
 4. **Integrability:** Does the horizontal distribution
-   $\ker(\varTheta)$ remain maximally non-integrable at the
-   collision point, or does a 2-dimensional integral
-   submanifold form?
+ $\ker(\varTheta)$ remain maximally non-integrable at the
+ collision point, or does a 2-dimensional integral
+ submanifold form?
 
 5. **Fluid dynamics:** Do colliding anti-parallel vortex
-   filaments maintain tubular cores ($\kappa = O(1)$), or
-   flatten into sheets ($\kappa \to \infty$)?
+ filaments maintain tubular cores ($\kappa = O(1)$), or
+ flatten into sheets ($\kappa \to \infty$)?

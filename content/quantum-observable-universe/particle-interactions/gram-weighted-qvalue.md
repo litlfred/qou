@@ -7,7 +7,7 @@ be the typed Garside element
 nucleus in $H_A(q)$, and let $G$ be the Gram matrix
 $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ restricted to the NF
 subspace spanned by $\mathcal{G}_{\mathrm{par}}$ and all conversion
-daughters.  Then the $Q$-value for $\beta^-$ decay is:*
+daughters. Then the $Q$-value for $\beta^-$ decay is:*
 
 ```tex
 \begin{equation}\label{eq:gram-weighted-qvalue}
@@ -24,11 +24,11 @@ daughters.  Then the $Q$-value for $\beta^-$ decay is:*
 *where:*
 
 1. *The sum runs over all $N$ neutrons in the parent
-   (all possible conversion channels).*
+ (all possible conversion channels).*
 
 2. *$\mathcal{G}_{\mathrm{dau}}^{(k)}$ is the typed Garside
-   element of the daughter obtained by converting neutron $k$
-   ($t_k = n \mapsto p$), and*
+ element of the daughter obtained by converting neutron $k$
+ ($t_k = n \mapsto p$), and*
 
 ```tex
 \begin{equation}\label{eq:nf-reduction-cost}
@@ -40,8 +40,8 @@ daughters.  Then the $Q$-value for $\beta^-$ decay is:*
 \end{equation}
 ```
 
-   *is the NF reduction cost (change in $L^1$ norm of the
-   Gröbner--Shirshov normal form).*
+ *is the NF reduction cost (change in $L^1$ norm of the
+ Gröbner--Shirshov normal form).*
 
 3. *The Gram weight for neutron $k$ is:*
 
@@ -65,51 +65,51 @@ daughters.  Then the $Q$-value for $\beta^-$ decay is:*
 \end{equation}
 ```
 
-   *where $\lVert \cdot \rVert_F$ is the Frobenius norm induced
-   by the Gram matrix.*
+ *where $\lVert \cdot \rVert_F$ is the Frobenius norm induced
+ by the Gram matrix.*
 
-**Inputs.**  The substrate parameter $q$
+**Inputs.** The substrate parameter $q$
 (from $\mathrm{Vol}(4_1)$ and $m_\mu/m_e$) and the electron
-mass $m_e$.  No other parameters.
+mass $m_e$. No other parameters.
 
 ## Structure of the formula
 
 The $Q$-value has three factors:
 
 - **$\Delta_k$** (NF reduction cost): measures how much algebraic
-  complexity the nucleus sheds when neutron $k$ converts.  The
-  daughter has fewer $nn$ crossings ($d = -(q-q^{-1})$, the
-  most repulsive type), so $\lVert \mathcal{G}_{\mathrm{dau}}^{(k)} \rVert_1 <
+ complexity the nucleus sheds when neutron $k$ converts. The
+ daughter has fewer $nn$ crossings ($d = -(q-q^{-1})$, the
+ most repulsive type), so $\lVert \mathcal{G}_{\mathrm{dau}}^{(k)} \rVert_1 <
   \lVert \mathcal{G}_{\mathrm{par}} \rVert_1$ and $\Delta_k > 0$.
 
 - **$w_k^G$** (Gram weight): the Frobenius norm of $\delta_k$
-  measures how far (in the Gram metric) the parent is from each
-  daughter.  Boundary neutrons (at the edge of the neutron shell)
-  produce larger $\lVert \delta_k \rVert_F$ than interior
-  neutrons, giving them higher weight.  The weights sum to $1$.
+ measures how far (in the Gram metric) the parent is from each
+ daughter. Boundary neutrons (at the edge of the neutron shell)
+ produce larger $\lVert \delta_k \rVert_F$ than interior
+ neutrons, giving them higher weight. The weights sum to $1$.
 
 - **$N$** (neutron count): the coherent sum over all conversion
-  channels.  Each of the $N$ neutrons can convert; the physical
-  $Q$-value is the sum of all weighted contributions.
+ channels. Each of the $N$ neutrons can convert; the physical
+ $Q$-value is the sum of all weighted contributions.
 
 ## Why the Gram weight is non-uniform
 
 The Gram matrix $G$ on $H_A(q)$ is symmetric but **not positive
-definite** — it has both positive and negative eigenvalues.  The
+definite** — it has both positive and negative eigenvalues. The
 negative eigenspace corresponds to the $nn$ repulsive channel
 (the direction $L_+ - L_-$ in $H_3(q)$, generalised to $H_A(q)$).
 
 Each difference element $\delta_k$ projects onto both the positive
-and negative eigenspaces of $G$.  The Frobenius norm
+and negative eigenspaces of $G$. The Frobenius norm
 $\lVert \delta_k \rVert_F = \sqrt{|\delta_k \cdot G \cdot \delta_k|}$
-combines these projections.  Neutrons deep in the interior of the
+combines these projections. Neutrons deep in the interior of the
 neutron shell have $\delta_k$ dominated by the negative eigenspace
 (many $nn$ crossings change), which suppresses their Frobenius norm.
 Boundary neutrons have more balanced projections, hence larger
 $\lVert \delta_k \rVert_F$.
 
 This is the adjoint character of the Frobenius algebra: $G$ acts
-as an averaging operator over the representation, naturally
+as an averaging operator over the representation, accordingly
 suppressing interior conversion channels and enhancing boundary ones.
 
 ## Verified instances

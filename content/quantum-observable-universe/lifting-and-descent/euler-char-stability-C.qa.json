@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/lifting-and-descent/euler-char-stability-C.md"
   },
   "source_hashes": {
-    "md": "9cd6fd823f17",
+    "md": "da4aaa4df53d",
     "ts": "9fd743764753"
   },
   "criteria": {
@@ -359,19 +359,19 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "9cd6fd823f17",
+          "md": "da4aaa4df53d",
           "ts": "9fd743764753"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/lifting-and-descent/euler-char-stability-C.md:17: base acts trivially on $H^*(F; \\mathbb{Q})$.  In the brane tower the fibre"
+        "reviewed_at": "2026-05-22T20:32:53.779Z",
+        "reviewed_sha": "62032eec1ffa052f738df0f38803a560d3d6e0b0"
       }
     ],
     "voice-scholarly-default": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T20:32:53.779Z"
 }

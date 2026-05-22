@@ -14,14 +14,14 @@ $$
 $$
 
 where $\lambda_\alpha$ are the eigenvalues and $v_\alpha$ the
-orthonormal eigenvectors.  Each eigenspace corresponds to a
+orthonormal eigenvectors. Each eigenspace corresponds to a
 sector of the Wedderburn-Artin decomposition
 $H_A(R, q) \cong \bigoplus_\lambda M_{d_\lambda}(R)$.
 
 The Gram matrix is **not positive definite**: it has both
-positive and negative eigenvalues.  For $A = 4$
+positive and negative eigenvalues. For $A = 4$
 (${}^4\mathrm{He}$), the signature is $(7{+}, 1{-})$ on
-the $8$-dimensional NF subspace.  For $A = 6$
+the $8$-dimensional NF subspace. For $A = 6$
 (${}^6\mathrm{He}$), the signature has hundreds of negative
 eigenvalues.
 
@@ -43,7 +43,7 @@ $$
 $$
 
 The positive eigenspaces contribute positively and the negative
-eigenspaces contribute negatively.  The physical Frobenius norm
+eigenspaces contribute negatively. The physical Frobenius norm
 $\lVert \delta_k \rVert_F = \sqrt{|\sum_\alpha \lambda_\alpha c_{k\alpha}^2|}$
 is the absolute magnitude.
 
@@ -64,7 +64,7 @@ $k = 2$ adjacent to the last proton) have larger Frobenius norms
 than the interior neutrons ($k = 1, 3$ deep in the neutron shell).
 
 This non-uniformity is the **adjoint character** of the Frobenius
-algebra: the Gram inner product naturally weights each conversion
+algebra: the Gram inner product accordingly weights each conversion
 channel by the geometric distance (in the Frobenius metric)
 between parent and daughter in $H_A(q)$.
 
@@ -83,7 +83,7 @@ $\chi_\lambda$ is the character of irrep $\lambda$
 ([RJ inner product](#prop:rj-canonical-inner-product)).
 
 The Gram matrix is the matrix of this bilinear form restricted
-to the NF basis.  Its eigenvalues $\lambda_\alpha$ encode the
+to the NF basis. Its eigenvalues $\lambda_\alpha$ encode the
 Schur elements: the small eigenvalues (near zero) correspond to
 representations with large Schur elements (highly symmetric
 tableaux), while the large eigenvalues correspond to

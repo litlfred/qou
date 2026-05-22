@@ -18,7 +18,7 @@ $\mathrm{SU}(2) \to \mathbb{CP}^1$) and $\ell$ is the ascent
 
 **Idempotence.** Since :refterm[descent]{#descent} is averaging over the $\mathrm{U}(1)$
 action and ascent re-embeds the result, we have $\hat{\tau}^2 = \hat{\tau}$. That
-is, $\hat{\tau}$ is a projection, not merely an involution of order $2$.
+is, $\hat{\tau}$ is a projection, not only an involution of order $2$.
 Explicitly, for $\phi \in \mathrm{End}_{\mathbf{C}}(A_1)$,
 
 $$

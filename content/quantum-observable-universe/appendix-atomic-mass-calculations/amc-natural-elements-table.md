@@ -1,4 +1,4 @@
-The QOU mass formula's predictions for all 92 naturally
+The QOU mass formula's predictions for all 92 accordingly
 occurring elements ($Z = 1$ to $92$). Each row gives the QOU
 prediction $M_q$, the observed mass $M_o$ (CODATA 2022 + AME2020),
 the absolute deviation $|\Delta|$, and the relative deviation $\delta$

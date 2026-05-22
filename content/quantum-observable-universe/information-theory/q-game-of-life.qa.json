@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/information-theory/q-game-of-life.lean"
   },
   "source_hashes": {
-    "md": "65dba1787058",
+    "md": "f7d4fd2718f3",
     "ts": "ff64be64383e",
     "lean": "ad31c4c56271"
   },
@@ -463,20 +463,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "65dba1787058",
+          "md": "f7d4fd2718f3",
           "ts": "ff64be64383e",
           "lean": "ad31c4c56271"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/information-theory/q-game-of-life.md:117: root of $\\Phi$), and $q = 1$ (classical limit, $\\Phi$ trivially"
+        "reviewed_at": "2026-05-22T20:32:53.779Z",
+        "reviewed_sha": "62032eec1ffa052f738df0f38803a560d3d6e0b0"
       }
     ],
     "voice-scholarly-default": [
@@ -684,5 +684,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:32:53.779Z"
 }

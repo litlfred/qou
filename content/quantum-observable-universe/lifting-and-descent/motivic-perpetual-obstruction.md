@@ -1,6 +1,6 @@
 The Kummer-tower perpetuity result
 ([Kummer tower](#rem:kummer-tower)) — the obstruction $\kappa_0$
-persists at every level $n \nmid \chi(A)$ — lifts cleanly to a single
+persists at every level $n \nmid \chi(A)$ — lifts to a single
 algebraic statement at the level of the
 [motivic Galois character](#def:motivic-galois-character).
 
