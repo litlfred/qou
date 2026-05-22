@@ -44,18 +44,43 @@ safest-minimal-risk production state; V_7 is the next step.
 
 ## Plan to close — execution order
 
-### Track A: code-level work that can start now
+### Track A: BLOCKED on convention reconciliation (2026-05-22 spike)
 
-1. **#4 — Closed-form `tr_M(𝓑_K)` refactor (next session)**
-   - Wire `closed_form_tau_M(Z, N, q, tau_p, tau_n)` (already
-     verified at Phase 5q, rel.err 1e-50) into one of the 4 target
-     scripts as a `--method closed-form` opt-in (mirrors the
-     `--method canonical-rust` pattern from #895).
-   - Cross-check against `canonical_tr_m_via_rust` at the boundary
-     so production output bit-identical for the chi_lambda_braid
-     convention.
-   - Then propagate to the remaining 3 scripts.
-   - **Effort:** ~1 day per script, mostly mechanical.
+1. **#4 — Closed-form `tr_M(𝓑_K)` refactor**
+   - Original plan: wire `closed_form_tau_M(Z, N, q, tau_p, tau_n)`
+     (Phase 5q verification green at rel.err 1e-50) into the 4
+     target scripts as a `--method closed-form` opt-in.
+   - **Spike result (deuteron, 2026-05-22):** the closed-form path
+     gives `|tr_M(D)| ≈ 0.491-0.728` depending on tau_p source,
+     while the production sympy + canonical-rust paths give
+     `|tr_M(D)| = 0.388` (canonical convention).  **Same atom,
+     different conventions, factor-of-1.27 to 1.87 numerical
+     mismatch.**
+
+   | Path | \|tr_M(D)\| | tau_p source |
+   |---|---:|---|
+   | `binding_canonical` sympy (production) | 0.388 | symbolic `tr_M_element` |
+   | `canonical_tr_m_via_rust(1, 1, "D")` | 0.388 | `hecke-canonical-chi` Rust |
+   | `closed_form_tau_M` w/ canonical tau_p (1.0653) | 0.491 | (mixed convention) |
+   | `closed_form_tau_M` w/ Phase 5q tau_p (1.2204) | 0.728 | `chi_lambda_braid` convention (Phase 5q witness) |
+
+   Phase 5q is internally consistent in its own convention.  But
+   **direct substitution into production gives a different number,
+   not a more-precise version of the same number** — so the swap
+   is unsafe without convention reconciliation.
+
+   **Concrete unblockers:**
+   - **(a)** Identify the basis conversion between the two
+     conventions (likely a per-partition normalisation factor;
+     suspect connected to the `[n]_q!` denominator in the Wenzl
+     bridge weights vs the canonical y_λ normalisation).
+   - **(b)** Add a `pn_convention="canonical"` variant to
+     `closed_form_tau_M` that takes canonical-convention
+     (tau_p, tau_n) and returns canonical-convention tr_M(K).
+   - **(c)** Then wire that variant into the 4 production scripts.
+
+   **Revised effort:** 2-3 days of research + 1 day of wiring per
+   script (was "mostly mechanical").
 
 ### Track B: blocked on compute
 
