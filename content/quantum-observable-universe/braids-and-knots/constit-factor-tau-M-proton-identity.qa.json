@@ -13,13 +13,18 @@
     "lean": "7b2dfe4dde7c"
   },
   "criteria": {
+<<<<<<< HEAD
     "voice-first-person-work": [
+=======
+    "detangler-section-band": [
+>>>>>>> fa8563910 (audit: invalidate + re-sweep detangler-axis qa.json sidecars (bulk))
       {
         "field_hash": {
           "md": "451d1df4499f",
           "ts": "ed4c3271a277",
           "lean": "7b2dfe4dde7c"
         },
+<<<<<<< HEAD
         "result": "pass",
         "reviewer": {
           "kind": "script",
@@ -34,4 +39,58 @@
     ]
   },
   "updated_at": "2026-05-22T15:40:56.603Z"
+=======
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b528b1ec573f",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+        },
+        "reviewed_at": "2026-05-22T15:39:17.062Z",
+        "reviewed_sha": "1d1700c4025bde6c6df3700ec565df10775abe4d"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "451d1df4499f",
+          "ts": "ed4c3271a277",
+          "lean": "7b2dfe4dde7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b528b1ec573f",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+        },
+        "reviewed_at": "2026-05-22T15:39:17.062Z",
+        "reviewed_sha": "1d1700c4025bde6c6df3700ec565df10775abe4d"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "451d1df4499f",
+          "ts": "ed4c3271a277",
+          "lean": "7b2dfe4dde7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b528b1ec573f",
+          "script_commit_sha": "ae58cbaed5e9539e22e66f7e1937b81e98e90489"
+        },
+        "reviewed_at": "2026-05-22T15:39:17.062Z",
+        "reviewed_sha": "1d1700c4025bde6c6df3700ec565df10775abe4d"
+      }
+    ]
+  },
+  "updated_at": "2026-05-22T15:39:17.062Z"
+>>>>>>> fa8563910 (audit: invalidate + re-sweep detangler-axis qa.json sidecars (bulk))
 }
