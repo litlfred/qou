@@ -200,9 +200,7 @@ survey doc.
 
 ## Recommended dispatch sequence
 
-1. **This branch (survey doc — landed here)**: capture state +
-   asks. PR title: "detangler: backlog survey + per-cluster Slot F
-   asks (no code surgery)".
+1. **This branch (survey doc — landed here)**: capture state + asks.
 2. **Cluster 1 batch ask** → answered → execute on
    `claude/detangler-moves-bridge-batch-2026-05-22`.
 3. **Cluster 2 R3 sweep** → execute on
@@ -213,10 +211,11 @@ survey doc.
 5. **Cluster 3 R1 re-audit** → run after cluster 1 lands; only the
    residual goes to its own discharge cycle.
 
-This survey-first sequence respects CLAUDE.md "Minimize PR
-creation": each follow-up PR is dedicated to one cluster, so
-review burden per PR stays low. Survey doc lands first so the
-asks are durable across sessions.
+This survey-first sequence follows the CLAUDE.md guidance to
+combine related work and minimise their creation: each follow-up
+PR is dedicated to one cluster, so review burden per PR stays
+low. Survey doc lands first so the asks are durable across
+sessions.
 
 ## Architectural acceptances carried forward
 
