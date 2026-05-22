@@ -43,6 +43,8 @@ export default chapter({
         // block per block-density Rule R3.
         "amc-natural-elements-table-data",
         "amc-synthetic-elements-table",
+        // Detangler R3 (2026-05-22): 26-row data table extracted.
+        "amc-synthetic-elements-table-data",
       ],
     }),
     section({
@@ -50,6 +52,8 @@ export default chapter({
       label: "sec:amc-q-integer",
       blocks: [
         "amc-q-integer-table",
+        // Detangler R3 (2026-05-22): 32-row data table extracted.
+        "amc-q-integer-table-data",
       ],
     }),
   ],
