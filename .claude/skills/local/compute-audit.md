@@ -263,8 +263,8 @@ numerical equivalence at q₀ before/after.
   the Gram matrix becoming **non-symmetric** (`‖G − Gᵀ‖ > 1e-3`)
   because `b_i·b_j` and `b_j·b_i` reduced to the same NF element
   but their bug-affected trace evaluations differed.  Discrepancy
-  was 4.4× at q_0.  Reference fix: `pyhecke.gram` line 50 + 178
-  (sympy Fraction mirror); audit doc:
+  was 4.4× at q₀.  Reference fix: `pyhecke.gram` line 50 +
+  `_TR_M_FRAC` block (~182-184, sympy Fraction mirror); audit doc:
   `docs/audits/2026-05-19-trm5-markov-bug.md`.
 
   Producer recommendation: every algebra-valued witness emits a
@@ -288,6 +288,8 @@ numerical equivalence at q₀ before/after.
 | P30 | witness_base.py:136-183 |
 | P31 | codata_constants.py + canonical_derivation_pipeline_compliance.py |
 | P32 | witness_reproducibility_check.py + build_markov_trace_assembly_neutron_chain.py:260 (drift fix) |
+| P33 | pn_alpha_lp_dual.py + molecular-frobenius-lp.py (8ce8630fc — drop shadowing TR_M redefs) |
+| P34 | pyhecke.gram line 50 + `_TR_M_FRAC` ~182-184 (be773569f — Markov-axiom-derived TR_M[5]) |
 
 ## Verification checklist before landing any speedup
 
