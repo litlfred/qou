@@ -88,15 +88,16 @@ export default chapter({
     }),
 
     // ── Non-Archimedean models ──────────────────────────────────────
-    // R2: Merged four 1-block sections (categorical-reformulation,
-    // enveloping-algebras, p-adic-fields, p-adic-realisation) into one.
+    // R3 (Rec 3): Removed 3 TODO-outline prose blocks
+    // (categorical-reformulation, p-adic-fields, finite-fields-outlook
+    // — the last in sec:finite-fields below).  `enveloping-algebras`
+    // retained because 3 sibling chapters (kronheimer-mrowka, reducible-
+    // reps, first-order-taylor) cross-reference sec:enveloping-algebras.
     section({
       title: "Non-Archimedean models",
       label: "sec:non-archimedean-models",
       blocks: [
-        "categorical-reformulation",
         "enveloping-algebras",
-        "p-adic-fields",
         "p-adic-realisation",
       ],
     }),
@@ -113,14 +114,14 @@ export default chapter({
     }),
 
     // ── Finite-field models and Jones polynomials ───────────────────
-    // R3: Merged 1-block sec:jones-polynomials into sec:finite-fields.
+    // R3 (Rec 3): Removed `finite-fields-outlook` (sec:finite-fields)
+    // — was a TODO bullet outline redundant with finite-fields-intro.
     section({
       title: "Finite fields and Jones polynomials",
       label: "sec:finite-fields",
       blocks: [
         "finite-fields-intro",
         "finite-field-realisation",
-        "finite-fields-outlook",
         "jones-polynomials",
       ],
     }),
