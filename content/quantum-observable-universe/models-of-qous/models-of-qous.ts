@@ -44,30 +44,40 @@ export default chapter({
       ],
     }),
 
-    // ── Archimedean realisations ────────────────────────────────────
-    // R2 (Rec 2): Removed 4 Descartes-coded blocks (brings-surface-
-    // unit-circle, seiberg-witten, primordial-vortex, geometric-drag)
-    // that previewed χ = −6 / Bring's-surface / mass-residue material.
-    // They now live in descartes-universe/sec:physical-regimes.
-    // `cosmological-limits` retained here per the audit's separate
-    // physical-limits-cluster minor pattern (orthogonal to Descartes
-    // chapter scope).
+    // ── Archimedean witnesses (R1: split from sec:archimedean-models) ───
+    // The catalogue of archimedean realisations — explicit examples,
+    // not bridge/wall material.  After Rec 2 (4 Descartes-coded blocks
+    // moved out), this section holds: the intro + 6 explicit witnesses
+    // + cosmological-limits (kept here per audit minor pattern as a
+    // separate physical-limits cluster).
     section({
-      title: "Archimedean specialisations",
-      label: "sec:archimedean-models",
+      title: "Archimedean witnesses",
+      label: "sec:archimedean-witnesses",
       blocks: [
         "archimedean-models-intro",
         "calabi-yau",
         "ale",
-        "cosmological-limits",
         "instanton",
         "irreducible-connection",
         "self-dual-curvature",
+        "reeb-decomposition",
+        "cosmological-limits",
+      ],
+    }),
+
+    // ── Categorical-differential bridge (R1: split from sec:archimedean-models) ──
+    // The "bridge" sub-section: how the categorical machinery (Levi
+    // substrate, Webster inner product, Heisenberg commutator, spatial-
+    // realisation functor, categorical-archimedean bridge) connects to
+    // differential-geometric witnesses on the archimedean side.
+    section({
+      title: "Categorical-differential bridge",
+      label: "sec:categorical-differential-bridge",
+      blocks: [
         "c-substrate-via-levi",
         "webster-inner-product",
         "heisenberg-commutator-prop",
         "heisenberg-commutator",
-        "reeb-decomposition",
         "observation-archimedean",
         "spatial-realization-functor",
         "categorical-archimedean-bridge",
