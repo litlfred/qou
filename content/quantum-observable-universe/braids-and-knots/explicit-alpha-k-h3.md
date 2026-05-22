@@ -1,6 +1,6 @@
 **Proposition (explicit $\alpha_k$ at $H_3(R, q)$).**
 *Let $z = 1/(q^{1/2} + q^{-1/2})$ be the Markov parameter and
-$h = q - q^{-1}$ the Hecke amplitude.  The structural prefactors of
+$h = q - q^{-1}$ the Hecke amplitude. The structural prefactors of
 the unified curvature-rank mass formula
 ([unified mass formula](#prop:unified-curvature-rank-mass-formula))
 at the single-nucleon Hecke algebra $H_3(R, q)$ are*
@@ -34,16 +34,16 @@ four surviving $E_\infty^{p, *}$ classes are:
 
 The $\alpha_k$ are extracted via the Markov-trace pairing on each class.
 
-**Jones-Markov weights.**  Solving the linear system
+**Jones-Markov weights.** Solving the linear system
 $\mathrm{tr}_M(\mathbf{1}) = 1$, $\mathrm{tr}_M(\sigma_i) = z$,
 $\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$ in the Wedderburn block
 decomposition gives unique weights $y_\lambda$ on the three irreps
 $\lambda \in \{(3), (2,1), (1,1,1)\}$.
 
-**$\alpha_0 = 1$.**  Trivial: $\mathrm{tr}_M([\mathbf{1}]) = 1$ by
+**$\alpha_0 = 1$.** Trivial: $\mathrm{tr}_M([\mathbf{1}]) = 1$ by
 Jones-Markov normalisation.
 
-**$\alpha_1 = 0$.**  By cyclicity of the Markov trace and equal
+**$\alpha_1 = 0$.** By cyclicity of the Markov trace and equal
 contributions from $\sigma_1, \sigma_2$:
 
 $$
@@ -53,12 +53,12 @@ $$
 $$
 
 The vanishing is exact (verified to numerical precision $10^{-16}$ in
-[explicit α_k witness](#witness:alpha-k-jones-markov-h3)).  An
+[explicit α_k witness](#witness:alpha-k-jones-markov-h3)). An
 $\alpha_1$ value beyond zero would require a higher Hochschild
 operation (Gerstenhaber bracket on $HH^*(H_3(R, q))$) — not the
 direct trace pairing.
 
-**$\alpha_2 = z^2$.**  By Markov factorisation:
+**$\alpha_2 = z^2$.** By Markov factorisation:
 
 $$
   \mathrm{tr}_M(\sigma_1 \sigma_2)
@@ -69,7 +69,7 @@ $$
 hence $\mathrm{tr}_M([\sigma_1 \sigma_2 + \sigma_2 \sigma_1]) = 2 z^2$
 and $\alpha_2 = 2 z^2 / 2 = z^2$.
 
-**$\alpha_3 = h z^2 + z$.**  By cyclicity and the Hecke relation
+**$\alpha_3 = h z^2 + z$.** By cyclicity and the Hecke relation
 $\sigma_1^2 = h \sigma_1 + \mathbf{1}$:
 
 $$
@@ -121,7 +121,7 @@ uniform application of the bridge formula (see also
 This proposition closes the H_3 stratum-prefactor derivation that the
 [unified mass formula](#prop:unified-curvature-rank-mass-formula) and
 [plancherel-term-7-formulation](#prop:plancherel-term-7-formulation)
-left implicit ("stratum-dependent prefactors $\alpha_k$").  All four
+left implicit ("stratum-dependent prefactors $\alpha_k$"). All four
 $\alpha_k$ are now explicit q-algebraic functions — no transcendental
 constants, no per-isotope fitting.
 
@@ -131,42 +131,42 @@ is the Newton's-constant identification at the deep-tower stratum.
 
 ## Open
 
-- **$\alpha_1$ disambiguation.**  Two distinct objects share the
-  symbol "$\alpha_1$":
+- **$\alpha_1$ disambiguation.** Two distinct objects share the
+ symbol "$\alpha_1$":
 
-  *(i) Spectral-sequence $\alpha_1$* (this proposition): the Markov
-  pairing of $\mathrm{tr}_M$ with the alternating-pair representative
-  $[\sigma_1 - \sigma_2]$.  This vanishes by cyclicity of the Markov
-  trace ($\alpha_1 = 0$ exactly).  At generic $q$,
-  $\mathrm{HH}^k(H_n(R, q)) = 0$ for $k \geq 1$
-  ([spectral sequence collapse](#prop:spectral-sequence-collapse)),
-  so the Gerstenhaber bracket has empty target on the surviving
-  $\mathrm{HH}^0$ — the spectral-sequence $\alpha_1$ is
-  **structurally forced to zero**, not merely an artifact of
-  representative choice.
+ *(i) Spectral-sequence $\alpha_1$* (this proposition): the Markov
+ pairing of $\mathrm{tr}_M$ with the alternating-pair representative
+ $[\sigma_1 - \sigma_2]$. This vanishes by cyclicity of the Markov
+ trace ($\alpha_1 = 0$ exactly). At generic $q$,
+ $\mathrm{HH}^k(H_n(R, q)) = 0$ for $k \geq 1$
+ ([spectral sequence collapse](#prop:spectral-sequence-collapse)),
+ so the Gerstenhaber bracket has empty target on the surviving
+ $\mathrm{HH}^0$ — the spectral-sequence $\alpha_1$ is
+ **structurally forced to zero**, not only an artifact of
+ representative choice.
 
-  *(ii) Plancherel-mass depth-1 contribution* (in the unified mass
-  formula): the depth-1 stratum $\Lambda_1 = \{(n - 1, 1)\}$ has
-  Plancherel-mass weight $y_{(n-1, 1)} \neq 0$
-  ([procedure](#prop:alpha-k-derivation-procedure)).  At $H_3$:
-  $y_{(2, 1)} \approx 0.281$ — non-zero and structurally extracted
-  from the witness, contributing
-  $0.281 \cdot \chi_{(2, 1)}(\beta) \cdot \log|\chi_{(2, 1)}(\beta)|$
-  to the unified mass formula at every nucleon.
+ *(ii) Plancherel-mass depth-1 contribution* (in the unified mass
+ formula): the depth-1 stratum $\Lambda_1 = \{(n - 1, 1)\}$ has
+ Plancherel-mass weight $y_{(n-1, 1)} \neq 0$
+ ([procedure](#prop:alpha-k-derivation-procedure)). At $H_3$:
+ $y_{(2, 1)} \approx 0.281$ — non-zero and structurally extracted
+ from the witness, contributing
+ $0.281 \cdot \chi_{(2, 1)}(\beta) \cdot \log|\chi_{(2, 1)}(\beta)|$
+ to the unified mass formula at every nucleon.
 
-  The unified mass formula uses sense (ii); the spectral-sequence
-  vanishing in sense (i) does **not** imply the depth-1 stratum is
-  empty.
+ The unified mass formula uses sense (ii); the spectral-sequence
+ vanishing in sense (i) does **not** imply the depth-1 stratum is
+ empty.
 
-- **$\alpha_k$ at $H_n$ for $n \geq 6$.**  The analogous derivation
-  for multi-nucleon Hecke algebras requires explicit $E_\infty^{p, *}$
-  pages at higher $H_n$, generalising
-  [$H_3$ explicit pages](#prop:spectral-sequence-h3-explicit).
+- **$\alpha_k$ at $H_n$ for $n \geq 6$.** The analogous derivation
+ for multi-nucleon Hecke algebras requires explicit $E_\infty^{p, *}$
+ pages at higher $H_n$, generalising
+ [$H_3$ explicit pages](#prop:spectral-sequence-h3-explicit).
 
 ## Witness
 
 [`folio-assistant/computations/alpha_k_jones_markov_h3.py`](#)
 implements the Jones-Markov linear system and the explicit Markov
-pairings.  Produces witness `alpha-k-jones-markov-h3.witness.json`
+pairings. Produces witness `alpha-k-jones-markov-h3.witness.json`
 with $\alpha_2 = z^2$ verified to $10^{-17}$ and $\alpha_3 = h z^2 + z$
 verified to numerical precision.

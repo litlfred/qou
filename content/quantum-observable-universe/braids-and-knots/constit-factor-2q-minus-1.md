@@ -12,7 +12,7 @@
 > happens to be close to $2 q_0 - 1 = 1.2200$, but the two
 > functions diverge away from $q_0$ (rel. err. 28% at $q = 1.05$
 > and 33% at $q = 1.17$ — see Phase 5k.2 (this PR) for the
-> varying-$q$ falsification table).  The conjecture statement
+> varying-$q$ falsification table). The conjecture statement
 > below is preserved as a record of Phase 5g's categorical-search
 > result, but the **structural-form claim is superseded** by the
 > Phase 5l proposition.
@@ -20,7 +20,7 @@
 > Phase 5k.2 (this PR, [`constit_factor_varying_q_phase5k2.py`](../../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py))
 > directly measured $\rho_Z^{\mathrm{constit}}(q)$ at five $q$-values
 > across the substrate window using the same $y_\lambda$ / $\chi_\lambda$
-> pipeline as PR #819's Phase 5c.1.  Result:
+> pipeline as PR #819's Phase 5c.1. Result:
 >
 > Main sweep (5 q-values, recorded in the witness JSON):
 >
@@ -71,7 +71,7 @@ $$
 *— independent of $N$ since the constit factorisation is disjoint in $Z$
 and $N$.*
 
-*Conjecture.  At the substrate point $q_0$, this ratio admits the
+*Conjecture. At the substrate point $q_0$, this ratio admits the
 clean categorical form*
 $$
   \boxed{\;
@@ -81,7 +81,7 @@ $$
   \;}
   \tag{$\star\star$}
 $$
-*where $h(q) = q - q^{-1}$ is the Hecke skein parameter.  The 50-dps
+*where $h(q) = q - q^{-1}$ is the Hecke skein parameter. The 50-dps
 empirical measurement is*
 $$
   \rho_Z^{\mathrm{constit}}(q_0) \;=\; 1.220358\ldots
@@ -115,7 +115,7 @@ $$
 $$
 i.e. it is the leading two terms of the series for $\exp(h)$ in the
 substrate window $q \in (1, 2)$, where $h = q - q^{-1} \approx q - 1$
-to leading order.  Equivalently, $2q - 1$ is the **doubled
+to leading order. Equivalently, $2q - 1$ is the **doubled
 $q$-deformation of the unit** — the categorical "rate of growth"
 per added proton in the disjoint Hecke product, measured at $H_3$
 per added 3-strand block.
@@ -143,7 +143,7 @@ $(\star\star)$ lives at the **full $\mathrm{tr}_M$** level, complementing
 [`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction)
 which states that the per-Z step factor in the **single-block
 $|\Delta_\lambda^*|$** extraction is $[3]_q^2 \cdot \cosh(h)$ (to
-$0.022\%$).  The two conjectures are at structurally distinct
+$0.022\%$). The two conjectures are at structurally distinct
 extraction levels of the same Hecke algebra:
 
 | level | per-Z step factor | conjecture |
@@ -160,7 +160,7 @@ the $\mathrm{tr}_M$ layer where $(\star\star)$ is exact-to-$O(h^4)$.
 ### Bar-symmetry
 
 Under the bar involution $q \mapsto q^{-1}$, the candidate $2q - 1$
-maps to $2q^{-1} - 1 = (2 - q) / q$.  These differ at $q \neq 1$:
+maps to $2q^{-1} - 1 = (2 - q) / q$. These differ at $q \neq 1$:
 $$
   (2q - 1) \;\neq\; (2q^{-1} - 1) \quad\text{at }q \neq 1.
 $$
@@ -199,7 +199,7 @@ $$
   \;}
   \tag{$\star\star\star$}
 $$
-at the substrate point.  Evaluated at $q_0$:
+at the substrate point. Evaluated at $q_0$:
 
 $$
   (2q_0 - 1) + h(q_0)^5 \;\approx\; 1.2203565
@@ -212,34 +212,34 @@ $(2q - 1)$ alone).
 ### Open questions
 
 1. ~~**Confirm the $O(h^5)$ form via varying-q measurement.**~~
-   **Phase 5k.2: FALSIFIED** (see banner at top).  The varying-$q$
-   sweep showed that $\rho_Z^{\mathrm{constit}}(q)$ does NOT follow
-   $(2q - 1) + h^5$; the $q_0$ match is a localised tangency, not
-   a structural identity.
+ **Phase 5k.2: FALSIFIED** (see banner at top). The varying-$q$
+ sweep showed that $\rho_Z^{\mathrm{constit}}(q)$ does NOT follow
+ $(2q - 1) + h^5$; the $q_0$ match is a localised tangency, not
+ a structural identity.
 
-2. **What IS the closed form?**  Open: identify the actual
-   categorical structure of $\rho_Z^{\mathrm{constit}}(q)$.  The
-   measured ratio grows from $\rho(1.05) = 0.79$ to $\rho(1.17) = 1.79$
-   — a factor of $2.26\times$ across only $0.12$ in $q$, much steeper
-   than $(2q-1)$.  **Phase 5l RESOLVED this**: the actual closed form
-   is $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$ — exact,
-   not "non-polynomial combination plus z-factors".  See
-   [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity)
-   for the Wenzl-derivation and machine-precision verification.
+2. **What IS the closed form?** Open: identify the actual
+ categorical structure of $\rho_Z^{\mathrm{constit}}(q)$. The
+ measured ratio grows from $\rho(1.05) = 0.79$ to $\rho(1.17) = 1.79$
+ — a factor of $2.26\times$ across only $0.12$ in $q$, much steeper
+ than $(2q-1)$. **Phase 5l RESOLVED this**: the actual closed form
+ is $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$ — exact,
+ not "non-polynomial combination plus z-factors". See
+ [`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity)
+ for the Wenzl-derivation and machine-precision verification.
 
 3. **Operator-level derivation of $2q - 1$ from the Hecke skein.**
-   The form $2q - 1$ matches $\sigma + \sigma^{-1}$ acting on the
-   trivial channel idempotent $e_+ = (\sigma + q^{-1}) / (q + q^{-1})$,
-   suggesting an averaging-channel interpretation parallel to the
-   $\cosh(h)$ eigenvalue identity (see
-   [`alpha-cosh-h-z-step-correction.lean §2`](alpha-cosh-h-z-step-correction.lean)).
-   The §3b-cond class `ConstitFactor2qMinus1` axiomatises this; the
-   operator-level proof is queued.
+ The form $2q - 1$ matches $\sigma + \sigma^{-1}$ acting on the
+ trivial channel idempotent $e_+ = (\sigma + q^{-1}) / (q + q^{-1})$,
+ suggesting an averaging-channel interpretation parallel to the
+ $\cosh(h)$ eigenvalue identity (see
+ [`alpha-cosh-h-z-step-correction.lean §2`](alpha-cosh-h-z-step-correction.lean)).
+ The §3b-cond class `ConstitFactor2qMinus1` axiomatises this; the
+ operator-level proof is queued.
 
-4. **Higher-rank extensions.**  Does the same $(2q - 1)$ companion
-   hold for $H_{3A}$ at $A > 4$?  The constit-side factor is
-   independent of $A$ (disjoint product), so the identity should
-   extend trivially — but the categorical fit needs verification.
+4. **Higher-rank extensions.** Does the same $(2q - 1)$ companion
+ hold for $H_{3A}$ at $A > 4$? The constit-side factor is
+ independent of $A$ (disjoint product), so the identity should
+ extend by definition — but the categorical fit needs verification.
 
 ### Implementation reference
 

@@ -12,17 +12,17 @@ $$
 *with each term derived (no fitting):*
 
 - *$\alpha = m_e \cdot 8G$ (Borromean prefactor;
-  [binding scale](#prop:binding-scale-catalan));*
+ [binding scale](#prop:binding-scale-catalan));*
 - *$\Phi_1, \Phi_2, \Phi_3$ extracted from per-generator transfer-matrix
-  chains using only the inter-nucleon generators (positions $3k+2$ for
-  $k = 0, \ldots, A{-}2$);*
+ chains using only the inter-nucleon generators (positions $3k+2$ for
+ $k = 0, \ldots, A{-}2$);*
 - *$\Delta_W = -m_e \cdot H_q((2,2)) \cdot \min(Z, N)/A$
-  (Wigner $T=0$ pn pairing,
-  [Wigner np pairing](#prop:wigner-np-pairing));*
+ (Wigner $T=0$ pn pairing,
+ [Wigner np pairing](#prop:wigner-np-pairing));*
 - *$\Delta_{T=1} = -m_e \cdot H_q((2,2)) \cdot (n_{pp} + n_{nn})/A$
-  (natural $T=1$ isovector extension using the same self-conjugate
-  partition $(2,2) \vdash 4$ and the same $1/A$ normalisation, with
-  $n_{pp} = Z(Z{-}1)/2$ and $n_{nn} = N(N{-}1)/2$);*
+ (natural $T=1$ isovector extension using the same self-conjugate
+ partition $(2,2) \vdash 4$ and the same $1/A$ normalisation, with
+ $n_{pp} = Z(Z{-}1)/2$ and $n_{nn} = N(N{-}1)/2$);*
 
 *reproduces the atomic masses of all isotopes from $\mathfrak{p}$
 through $^7$Li to sub-percent accuracy.*
@@ -59,7 +59,7 @@ energies by $30\%$ to $76\%$ across light isotopes:*
 | $^7$Li | +22.58 | +39.24 | $-$42% |
 
 *The under-binding pattern is structural: the formula misses an
-intra-shell binding mechanism present in nature.  Closing the gap
+intra-shell binding mechanism present in nature. Closing the gap
 universally requires a new derived term (not phenomenological
 patches), which remains an open research direction.*
 
@@ -71,7 +71,7 @@ The Wedderburn 3-term correction is the paper's
 [binding scale](#prop:binding-scale-catalan).
 The functionals $\Phi_1, \Phi_2, \Phi_3$ are evaluated using only
 inter-nucleon generators of the atomic braid: this convention isolates
-inter-nucleon interactions cleanly, and ensures free nucleons ($A = 1$)
+inter-nucleon interactions, and ensures free nucleons ($A = 1$)
 contribute exactly zero to $\Phi$ (preserving the constituent baseline
 inputs and the proton-neutron mass splitting exactly).
 
@@ -111,6 +111,6 @@ The shell-correction conjecture
 ([Term 7 shell correction](#conj:shell-correction-term-seven))
 identifies the binding gap at $A \geq 5$ with the GB-filtration
 level $\ell = 5$ (height-6 partitions) of the brane-tower
-spectral sequence.  Adding the conjectural Term 7 to the formula
+spectral sequence. Adding the conjectural Term 7 to the formula
 above is expected to bridge the binding gap structurally; the
 specific shadow-price form is open research.

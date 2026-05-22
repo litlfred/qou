@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/he4-magic-shell-fingerprint.md"
   },
   "source_hashes": {
-    "md": "6b742024cbe8",
+    "md": "36a4619c7535",
     "ts": "faea65d5f282"
   },
   "criteria": {
@@ -359,19 +359,19 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "6b742024cbe8",
+          "md": "36a4619c7535",
           "ts": "faea65d5f282"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/he4-magic-shell-fingerprint.md:14: These are not two ways of saying the same thing trivially:"
+        "reviewed_at": "2026-05-22T20:36:25.926Z",
+        "reviewed_sha": "1b2171f53c3a8f9a13b285e45bde67374938572b"
       }
     ],
     "voice-scholarly-default": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T20:36:25.926Z"
 }

@@ -6,7 +6,7 @@ H_{3A}(q)$ denote the **constituent vacuum** — the disjoint Hecke
 product of $Z$ proton braids and $N$ neutron braids on disjoint
 3-strand blocks, with no interface crossings
 ([`def:ew-interface-knot`](#def:ew-interface-knot)). For each
-generator $\sigma_g$ acting non-trivially only inside the $k$-th
+generator $\sigma_g$ acting non-by definition only inside the $k$-th
 nucleon block, the Wedderburn-weighted per-generator character ratio*
 
 $$

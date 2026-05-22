@@ -17,7 +17,7 @@ the Laurent polynomial entries of the transfer matrix chain
 
 *The algebraic quantum volume lives in
 $\mathbb{Z}[q^{1/2}, q^{-1/2}]$ — the ring of Laurent
-polynomials in $q^{1/2}$.  It is an algebraic object.
+polynomials in $q^{1/2}$. It is an algebraic object.
 Its real-valued archimedean shadow is obtained by
 applying the QOU fibre functor*
 
@@ -61,7 +61,7 @@ correspond to three algebraic volumes:*
 | $\Phi_2$ | $\prod \det(M_i)$ | sym $\times$ alt product |
 | $\Phi_3$ | $\prod (\lambda_i^{\mathrm{sym}}/\lambda_i^{\mathrm{alt}})$ | sym/alt ratio |
 
-*Each factor is algebraic in $q$.  The mass formula is the
+*Each factor is algebraic in $q$. The mass formula is the
 $\tau_{\mathrm{arch}}$-image of the categorical product, evaluated
 on the three Wedderburn channels:*
 
@@ -84,7 +84,7 @@ which categorical data crosses into archimedean geometry.*
 *For the Habiro ring: the algebraic volume embeds into
 $\widehat{\mathbb{Z}[q]}$ (the cyclotomic completion),
 where it coexists with the colored Jones polynomials at all
-roots of unity.  The mass at $q_0$ is the evaluation at a
+roots of unity. The mass at $q_0$ is the evaluation at a
 non-root-of-unity point.*
 
 ## Partial-product (q-Pochhammer) expansion
@@ -124,5 +124,5 @@ polynomial whose zero locus is the algebraic address of the JSJ-piece
 cusps under the Archimedean realization
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
 This factorisation does not change $\mathrm{Vol}_q(\beta)$ as a
-Laurent polynomial; it merely names the denominator structure that
+Laurent polynomial; it only names the denominator structure that
 the subsequent thimble / volume-tower derivations rely on.*

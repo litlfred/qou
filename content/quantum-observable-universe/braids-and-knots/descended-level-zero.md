@@ -3,15 +3,15 @@ The jet-tower decomposition
 asserts that the descended (holonomy) contribution to the mass
 appears **once only**, at jet level $0$, and that levels
 $n \ge 1$ carry only singleton and quadratic transient
-contributions.  This proposition provides the derivation: the
+contributions. This proposition provides the derivation: the
 descended projector stabilises under composition, so iterated
 :refterm[descent]{#descent} collapses to the base-level holonomy regardless of the
 jet level at which it is read off.
 
-**Proposition.**  Let $\hat\tau_n$ be the :refterm[descent]{#descent} involution at
+**Proposition.** Let $\hat\tau_n$ be the :refterm[descent]{#descent} involution at
 level $n$ ([:refterm[descent]{#descent} involution](#def\:descent-involution)) and
 $\mathcal{A}^{\mathrm{desc}}_{n+1} = \mathrm{im}\,\hat\tau_n$
-the descended subalgebra.  For every jet level $n \ge 0$, the
+the descended subalgebra. For every jet level $n \ge 0$, the
 descended component of the mass integrand $\alpha^{(n+1)}$
 equals the base-level descended contribution:
 
@@ -25,14 +25,14 @@ $$
   \Bigl\lvert \textstyle\prod_i \hat V_i^{(0)} \Bigr\rvert,
 $$
 
-independent of $n$.  Consequently the descended term enters
+independent of $n$. Consequently the descended term enters
 the tower sum **at level $0$ only**; levels $n \ge 1$
 contribute only through transient modes
 $\mathcal{A}^{\mathrm{trans}}_{n+1} = \ker\hat\tau_n$.
 
 ## Derivation
 
-*Step 1 — :refterm[Descent]{#descent} is idempotent.*  By construction
+*Step 1 — :refterm[Descent]{#descent} is idempotent.* By construction
 ([:refterm[descent]{#descent} involution](#def\:descent-involution)),
 $\hat\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$ with
 $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}_{\mathrm{End}(A_n)}$,
@@ -47,7 +47,7 @@ $$
 The descended subalgebra is the fixed-point subspace:
 $\hat\tau_n|_{\mathcal{A}^{\mathrm{desc}}_{n+1}} = \mathrm{id}$.
 
-*Step 2 — :refterm[Descent]{#descent} factors through the base.*  For any
+*Step 2 — :refterm[Descent]{#descent} factors through the base.* For any
 $\alpha \in \mathrm{End}(A_{n+1})$,
 
 $$
@@ -71,9 +71,9 @@ $$
 The descended trace at level $n+1$ therefore equals the level-$n$
 trace of the descended representative — a level-lowering step.
 
-*Step 3 — Recursion to the base.*  Apply Step 2 iteratively.
+*Step 3 — Recursion to the base.* Apply Step 2 iteratively.
 Let $\alpha^{(k)} := \mathfrak{d}_k(\alpha^{(k+1)})$ be the
-recursive :refterm[descent]{#descent} to level $k$.  Then for all $0 \le k \le n$,
+recursive :refterm[descent]{#descent} to level $k$. Then for all $0 \le k \le n$,
 
 $$
   \mathrm{tr}\bigl(\hat\tau_n \circ \hat\tau_{n-1} \circ \cdots
@@ -84,7 +84,7 @@ $$
 
 At the base level $k = 0$, $\alpha^{(0)}$ is the mass integrand
 $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho_0$ of
-the base-level cycle $\varrho_0$.  The iterated descended trace
+the base-level cycle $\varrho_0$. The iterated descended trace
 therefore equals the base-level mass:
 
 $$
@@ -93,10 +93,10 @@ $$
   \;=\; \mathfrak{m}(\varrho_0).
 $$
 
-*Step 4 — Independence from $n$.*  Step 3 holds for every
-$n \ge 0$.  The descended norm is therefore a **single
+*Step 4 — Independence from $n$.* Step 3 holds for every
+$n \ge 0$. The descended norm is therefore a **single
 $n$-independent quantity**, namely the level-$0$ base-cycle
-mass.  In the explicit formula
+mass. In the explicit formula
 ([mass endomorphism tower](#prop\:mass-endomorphism-tower)):
 
 $$
@@ -106,7 +106,7 @@ $$
 $$
 
 the right-hand side of which involves only the level-$0$ Hecke
-traced volumes.  The desc term entering at each jet level is
+traced volumes. The desc term entering at each jet level is
 therefore **the same object**, not a new per-level contribution.
 $\square$
 
@@ -125,7 +125,7 @@ $$
     \Bigr),
 $$
 
-every level would carry a separate descended product.  By
+every level would carry a separate descended product. By
 Step 4 each such product equals $\mathfrak{m}(\varrho_0)$ (up
 to the $\hbar_q^{2n}$ brane-tower weight), and the tower sum
 would overcount the base-level holonomy by
@@ -140,7 +140,7 @@ $$
 At $q_0 \approx 1.11$ and $N = 3$, this overcount is
 $\approx 0.00991 \cdot \mathfrak{m}(\varrho_0)$ — a **1%
 contamination** of every binding-energy prediction, much larger
-than the target ppm precision.  The $\hbar_q^{2n}$ weights damp
+than the target ppm precision. The $\hbar_q^{2n}$ weights damp
 but do not eliminate the double count; only explicit restriction
 to level $0$ for the descended term eliminates it.
 
@@ -164,7 +164,7 @@ $$
     \Bigr).
 $$
 
-The descended factor is pulled out of the level sum.  Only
+The descended factor is pulled out of the level sum. Only
 the transient contributions (singletons and pairs) retain
 the per-level $\hbar_q^{2n}$ weights, and they vanish
 geometrically by the jet-tower tail bound
@@ -181,7 +181,7 @@ HIGH-#1 fix in the infrastructure audit
 > as singleton + pair only.
 
 The fix is not a numerical trick or heuristic: it is the
-correct implementation of Step 4 above.  The code's prior
+correct implementation of Step 4 above. The code's prior
 behaviour of re-adding the descended product at every jet
 level violated the idempotence of $\hat\tau_n$ and overcounted
 the level-$0$ holonomy by the geometric series displayed above.
@@ -191,7 +191,7 @@ the level-$0$ holonomy by the geometric series displayed above.
 At the base level, the Nakayama automorphism
 $\Psi = S^2 = \mathrm{id}$ in $H_n(R, q)$
 ([categorical mass as Markov trace](#prop\:categorical-mass-markov)),
-so the single-level mass is simply $|\mathrm{tr}_M(\rho(\beta))|$.
+so the single-level mass is $|\mathrm{tr}_M(\rho(\beta))|$.
 The base-level descended term $\prod_i \hat V_i^{(0)}$ is
 exactly this Markov trace by the factorization theorem
 ([Markov trace factorization](#thm\:markov-trace-factorization)).

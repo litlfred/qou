@@ -19,20 +19,20 @@ $$
 *where:*
 
 1. *$\mathrm{tr}_{\mathrm{gr}}(T_w, q_0)$ is the Markov trace of the
-   **image of $T_w$ in $\mathrm{gr}\,H_n(q_0)$** — i.e., the trace
-   computed on the associated graded algebra, obtained by
-   replacing each generator product with its leading-order term
-   in the Gröbner–Shirshov filtration (no rewriting defects).*
+ **image of $T_w$ in $\mathrm{gr}\,H_n(q_0)$** — i.e., the trace
+ computed on the associated graded algebra, obtained by
+ replacing each generator product with its leading-order term
+ in the Gröbner–Shirshov filtration (no rewriting defects).*
 2. *$\mathrm{Res}_{\mathrm{GB}}(T_w, q_0)$ is the sum of
-   rewriting-defect residues from
-   ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).
-   In symbolic feeding-lemma form this is
-   $\sum_{\ell \geq 1} (q_0 - \zeta_\ell)^{-1} \cdot
+ rewriting-defect residues from
+ ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).
+ In symbolic feeding-lemma form this is
+ $\sum_{\ell \geq 1} (q_0 - \zeta_\ell)^{-1} \cdot
    \mathrm{Res}_{q=\zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)]$
-   — formal cyclotomic shadow, not a $\mathbb{C}$-analytic
-   identity. The convergent statement is the Habiro expansion
-   ([Habiro completion](#prop:full-pole-structure-mass-trace))
-   of $\mathrm{tr}_M(T_w)$ minus its level-$0$ piece.*
+ — formal cyclotomic shadow, not a $\mathbb{C}$-analytic
+ identity. The convergent statement is the Habiro expansion
+ ([Habiro completion](#prop:full-pole-structure-mass-trace))
+ of $\mathrm{tr}_M(T_w)$ minus its level-$0$ piece.*
 
 *Both pieces are computable from $T_w$ alone; neither involves
 empirical calibration.*
@@ -40,7 +40,7 @@ empirical calibration.*
 **Why the split is canonical.**
 *The filtration $J^\bullet(q)$ makes $H_n(R, q)$ a filtered algebra
 with compatible trace
-([Hecke mass trace](#prop:hecke-mass-trace)).  Any such filtered
+([Hecke mass trace](#prop:hecke-mass-trace)). Any such filtered
 trace admits the canonical splitting*
 
 $$
@@ -53,7 +53,7 @@ $$
 
 *where $\sigma: J^\ell \to J^\ell/J^{\ell+1}$ is the symbol map
 and the second summand — the defect of the symbol map to preserve
-the trace — is precisely the residue sum above.  The
+the trace — is precisely the residue sum above. The
 decomposition is functorial in the filtered algebra and does not
 depend on the choice of Gröbner–Shirshov normal form.*
 
@@ -72,7 +72,7 @@ $$
 $$
 
 *which is the content predicted by the
-[mass endomorphism conjecture](#conj:mass-endomorphism).  The
+[mass endomorphism conjecture](#conj:mass-endomorphism). The
 graded piece reproduces the regular-value brane-tower formula
 ([mass endomorphism tower](#prop:mass-endomorphism-tower)) when
 $T_w$ lies in filtration level $0$ and all cross-pair terms
@@ -85,12 +85,12 @@ absorbed into $\mathrm{Res}_{\mathrm{GB}}$.*
 decomposition $E = \tilde E + \delta E_{\mathrm{shell}}$: the
 graded trace is the categorical analogue of the liquid-drop
 (macroscopic) energy, and the residue sum is the shell
-correction.  This is not merely a formal analogy: the Strutinsky
+correction. This is not only a formal analogy: the Strutinsky
 smoothing procedure (Gaussian convolution of the single-particle
 spectrum) is the physics shadow of the symbol map $\sigma$ on
 $\mathrm{gr}\,H_n(R, q)$, and the oscillating $\delta E_{\mathrm{shell}}$
 is the residue contribution from filtration strata that the
-smoothing collapses.  The precise identification is made in
+smoothing collapses. The precise identification is made in
 ([Strutinsky from graded trace](#rem:strutinsky-from-graded-trace)).*
 
 **Cohomological form.**
@@ -98,7 +98,7 @@ smoothing collapses.  The precise identification is made in
 ([GB residue spectral sum](#prop:gb-residue-spectral-sum)),
 $\mathrm{tr}_{\mathrm{gr}}$ is the pairing with the $E^\infty$
 page restricted to filtration level $0$; $\mathrm{Res}_{\mathrm{GB}}$
-is the pairing with the higher strata.  The full Markov trace is
+is the pairing with the higher strata. The full Markov trace is
 the pairing with all of $E^\infty$, i.e., the total
 Hochschild-type cohomology class of $T_w$.*
 

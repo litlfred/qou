@@ -38,12 +38,12 @@ norm: $10^8$. **No relation found** in any candidate basis.
 This is a **PSLQ certificate**, not a proof. Standard interpretation:
 
 - **If a relation existed** $\sum a_i \cdot v_i = 0$ with all $|a_i| \leq 10^8$,
-  PSLQ at 50 dps would have found it (with overwhelming probability).
+ PSLQ at 50 dps would have found it (with overwhelming probability).
 - **No such relation found** $\Rightarrow$ either:
-  (i) $X$ is truly $\mathbb{Q}$-independent of the basis, or
-  (ii) the integer coefficients of any relation exceed $10^8$
-       (extremely unlikely for natural mathematical relations,
-       which typically have small coefficients).
+ (i) $X$ is truly $\mathbb{Q}$-independent of the basis, or
+ (ii) the integer coefficients of any relation exceed $10^8$
+ (extremely unlikely for natural mathematical relations,
+ which typically have small coefficients).
 
 ### What this implies for B1
 
@@ -58,11 +58,11 @@ Combined with [`prop:cl3-zeta5-orbit-sum-identity`](#prop:cl3-zeta5-orbit-sum-id
 
 So **at the level of accessible numerical certification**, the
 2-dim Borel-rank space for $K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q}$
-splits cleanly:
+splits :
 
 - 1-dim: $\zeta(3)$-line (classical, external).
 - 1-dim: $X$ — *genuinely new*, with strong numerical evidence of
-  irreducibility against the natural weight-3 basis.
+ irreducibility against the natural weight-3 basis.
 
 The depth-3 surface for B1 over $\mathbb{Q}(\zeta_5)$ is:
 **one specific real number, certified independent of the standard
@@ -73,14 +73,14 @@ period basis up to coefficient norm $10^8$**.
 A genuine **proof** of $X$'s irreducibility would require:
 
 1. **Goncharov's motivic conjecture at $\mathbb{Q}(\zeta_5)$** — would
-   give the algebraic structure of all weight-3 relations, hence
-   show $X$ is independent of any specific basis a priori.
+ give the algebraic structure of all weight-3 relations, hence
+ show $X$ is independent of any specific basis a priori.
 2. **Higher PSLQ precision** (e.g., 100+ dps with $10^{12}$
-   coefficient bound) would extend the numerical certification but
-   not constitute a proof.
+ coefficient bound) would extend the numerical certification but
+ not constitute a proof.
 3. **Goncharov 22-term at specific $\zeta_5$-arguments** — would
-   either find a relation (closing one more avenue of unproved
-   surface) or further constrain the basis.
+ either find a relation (closing one more avenue of unproved
+ surface) or further constrain the basis.
 
 The current PSLQ result is the **strongest unconditional numerical
 evidence** available without these external developments.

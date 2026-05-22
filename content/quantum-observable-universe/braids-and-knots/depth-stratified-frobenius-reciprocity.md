@@ -112,15 +112,15 @@ Kanenobu/mutant twins. The FR refinement (FR) above is precisely the
 **enrichment of the Wedderburn sum** that breaks the Jones-only
 spectral degeneracy — by weighting partitions through the
 distinguished knot-ideal central projector $e_{K_k^*}$, the formula
-"hears" not just the Jones spectrum but the **knot-ideal-restricted
+"hears" not the Jones spectrum but the **knot-ideal-restricted
 data**.
 
 This is the categorical content of:
 
 - "you can hear *more than* the Jones polynomial when you know which
-  knot ideal each Wedderburn block belongs to";
+ knot ideal each Wedderburn block belongs to";
 - the FR pullback $\chi^\lambda \to \chi^\lambda \cdot \chi^\lambda(e_{K_k^*})$
-  recovers the missing volume information at low curvature-rank.
+ recovers the missing volume information at low curvature-rank.
 
 ### Significance: closing the 1.82$\times$ variance
 
@@ -129,17 +129,17 @@ $\le 1.05\times$ (universal categorical constant) by enhancing the
 low-$k$ contributions through the per-knot ideal restriction:
 
 - $k = 3$ ($K_3^* = 4_1$, empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826)):
-  chirality channel, full FR pullback computable from the $4_1$
-  central projector in $H_n$. Empirically reduces variance to
-  $1.551\times$ (+14.8% vs the $1.82\times$ uniform-Plancherel
-  baseline). The Fricke-trace derivation in
-  [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing)
-  independently picks out $4_1$ at $H_3$ via $\chi_{4_1}((2,1)) = 2 - [3]_q$.
+ chirality channel, full FR pullback computable from the $4_1$
+ central projector in $H_n$. Empirically reduces variance to
+ $1.551\times$ (+14.8% vs the $1.82\times$ uniform-Plancherel
+ baseline). The Fricke-trace derivation in
+ [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing)
+ independently picks out $4_1$ at $H_3$ via $\chi_{4_1}((2,1)) = 2 - [3]_q$.
 - $k = 1, 2$: **open** — the distinguished knots are NOT named in
-  the existing paper. Candidates: $K_1^* \in \{4_1, 5_2\}$ (smallest
-  hyperbolic), $K_2^* \in \{5_2, 6_1\}$ (chirality precursors).
-  These need structural identification *before* the FR conjecture is
-  computationally testable at $k = 1, 2$.
+ the existing paper. Candidates: $K_1^* \in \{4_1, 5_2\}$ (smallest
+ hyperbolic), $K_2^* \in \{5_2, 6_1\}$ (chirality precursors).
+ These need structural identification *before* the FR conjecture is
+ computationally testable at $k = 1, 2$.
 
 ### Existence requirements
 
@@ -147,22 +147,22 @@ For the conjecture to be well-defined, three structural ingredients
 must exist:
 
 1. **Distinguished knot $K_k^*$ at each $k \in \{1, 2, 3\}$**: at
-   $k = 3$ this is $4_1$ (empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826),
-   consistent with the Fricke-trace derivation in
-   [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing));
-   at $k = 1, 2$ this is the open question. Candidates and selection
-   criteria are recorded in
-   [`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md).
+ $k = 3$ this is $4_1$ (empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826),
+ consistent with the Fricke-trace derivation in
+ [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing));
+ at $k = 1, 2$ this is the open question. Candidates and selection
+ criteria are recorded in
+ [`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md).
 
 2. **Central projector $e_{K_k^*} \in Z(H_n)$**: the Hecke-ideal
-   central projector for $K_k^*$. For $K_k^*$ a knot on $m$ strands,
-   this is its image in $H_n$ via the standard inclusion
-   $H_m \hookrightarrow H_n$ via Wenzl branching.
+ central projector for $K_k^*$. For $K_k^*$ a knot on $m$ strands,
+ this is its image in $H_n$ via the standard inclusion
+ $H_m \hookrightarrow H_n$ via Wenzl branching.
 
 3. **Convergence of the FR sum**: at low $k$, the FR-restricted sum
-   is over a *strict subset* of partitions (those for which
-   $\chi^\lambda(e_{K_k^*}) \ne 0$) — finite by Wedderburn-block
-   finiteness.
+ is over a *strict subset* of partitions (those for which
+ $\chi^\lambda(e_{K_k^*}) \ne 0$) — finite by Wedderburn-block
+ finiteness.
 
 ### Falsification path
 
@@ -182,18 +182,18 @@ originally-asserted $6_1$.
 A concrete computation requires:
 
 1. The braid word for $4_1$ in $H_3$: $4_1 = $ closure of
-   $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$
-   (figure-eight; braid index 3).  $4_1$ has hyperbolic volume
-   $\approx 2.0299$ (smallest among hyperbolic knots).
+ $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$
+ (figure-eight; braid index 3). $4_1$ has hyperbolic volume
+ $\approx 2.0299$ (smallest among hyperbolic knots).
 2. Wenzl-embedded $4_1 \in H_n$ for $n = 3A$ via the standard
-   inclusion at strand-positions $\{i, i+1, i+2\}$ for some $i$
-   inside the atomic braid.
+ inclusion at strand-positions $\{i, i+1, i+2\}$ for some $i$
+ inside the atomic braid.
 3. $\chi^\lambda(4_1^{(n)})$ for each $\lambda \vdash n$ of depth 3 —
-   computable via the Rust kernel
-   ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
-   or the symbolic Hoefsmit pipeline.  The script
-   [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
-   (from PR #826) carries this end-to-end with KnotInfo cross-validation.
+ computable via the Rust kernel
+ ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
+ or the symbolic Hoefsmit pipeline. The script
+ [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
+ (from PR #826) carries this end-to-end with KnotInfo cross-validation.
 
 ### Lean formalisation
 
@@ -212,17 +212,17 @@ Per the structural narrative on PR #801 and
 [`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md):
 
 - The unified mass formula is established
-  ([`prop:unified-curvature-rank-mass-formula`](#prop:unified-curvature-rank-mass-formula))
+ ([`prop:unified-curvature-rank-mass-formula`](#prop:unified-curvature-rank-mass-formula))
 - The depth-stratified $\alpha_k \cdot \Phi_k$ schedule is fixed
-  ([`prop:plancherel-term-7-formulation`](#prop:plancherel-term-7-formulation),
-  $\alpha_{k \ge 4} = m_e \cdot 8G$)
+ ([`prop:plancherel-term-7-formulation`](#prop:plancherel-term-7-formulation),
+ $\alpha_{k \ge 4} = m_e \cdot 8G$)
 - The convolution structure (Hecke-product with interface knot $\bowtie_K$)
-  is fixed
-  ([`def:ew-interface-knot`](#def:ew-interface-knot))
+ is fixed
+ ([`def:ew-interface-knot`](#def:ew-interface-knot))
 - The bar-symmetrization Li_2^q / Φ_q split is established
-  ([`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization))
+ ([`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization))
 - The pre-$\tau$ / post-$\tau$ pentagon distinction is established
-  ([`prop:q-rogers-pentagon-archimedean`](#prop:q-rogers-pentagon-archimedean))
+ ([`prop:q-rogers-pentagon-archimedean`](#prop:q-rogers-pentagon-archimedean))
 
 The **only remaining structural ambiguity** in the binding-energy
 chain at low $k$ is which **Wedderburn-weight modification** captures

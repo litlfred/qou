@@ -175,13 +175,13 @@ unification:
 ### Conjectural (axiomatised as class fields)
 
 - `class BarSymmetricThreeLayerSynthesis`: holds the three avatars
-  (series / phase / gain) and the claim that each is the bar-
-  symmetric projection of the SAME universal bar-anti-symmetric
-  kernel $K_{\mathrm{univ}}$.
+ (series / phase / gain) and the claim that each is the bar-
+ symmetric projection of the SAME universal bar-anti-symmetric
+ kernel $K_{\mathrm{univ}}$.
 - `series_from_universal`, `phase_from_universal`,
-  `gain_from_universal`: the genuinely conjectural part — that all
-  three are functorial images of one categorical operator under
-  Markov-trace / oscillatory-factor / per-Z-induction respectively.
+ `gain_from_universal`: the genuinely conjectural part — that all
+ three are functorial images of one categorical operator under
+ Markov-trace / oscillatory-factor / per-Z-induction respectively.
 
 ### Meta-justification (Kac–Sunada drum)
 
@@ -233,10 +233,10 @@ sits at the *series-layer* level (precision-ladder rung 5 of
 $\tau_M$). Under the three-layer synthesis:
 
 - The $-b^2$ part of $c_5 = -b^2 - 1/2$ is pure series-layer
-  pure-$\sigma$ (bar-symmetric monomial in $c_3$ and $b^2$).
+ pure-$\sigma$ (bar-symmetric monomial in $c_3$ and $b^2$).
 - The $-1/2$ part is the **bar-symmetric projection at the
-  half-fill cyclic substructure** — $P_{\mathrm{avg}}$ applied to
-  the bar-anti-symmetric Hopf-link kernel at $k = \lfloor n_{\text{total}}/2 \rfloor$.
+ half-fill cyclic substructure** — $P_{\mathrm{avg}}$ applied to
+ the bar-anti-symmetric Hopf-link kernel at $k = \lfloor n_{\text{total}}/2 \rfloor$.
 
 So $c_5$ is the series-layer manifestation of the same universal
 $P_{\mathrm{avg}}$ operator that produces $\cos$ at phase and
@@ -252,20 +252,20 @@ Three concrete refinement targets to move pieces from class fields
 into proved theorems:
 
 1. **Series-layer proof from category alone**. Li_2^q $\leftrightarrow$ Φ_q $\leftrightarrow$
-   Φ_{q^{-1}} identity is proved algebraically in
-   [`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
-   over $\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. Lifting that
-   to a `theorem` (no `sorry`) is the first concrete target.
+ Φ_{q^{-1}} identity is proved algebraically in
+ [`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
+ over $\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. Lifting that
+ to a `theorem` (no `sorry`) is the first concrete target.
 
 2. **Phase-layer proof from N=1 rung structure**. The $\cos$
-   factor arises from the symmetric quotient of an oscillatory
-   $e^{i\alpha}$ Wedderburn-decomposition contribution. The
-   `phase_avatar_bar_symmetric` field can become a theorem once
-   the precision-ladder formal-derivation is Lean-stated.
+ factor arises from the symmetric quotient of an oscillatory
+ $e^{i\alpha}$ Wedderburn-decomposition contribution. The
+ `phase_avatar_bar_symmetric` field can become a theorem once
+ the precision-ladder formal-derivation is Lean-stated.
 
 3. **Gain-layer proof from induction-restriction**. The 0.022%
-   empirical match suggests $[3]_q^2 \cdot \cosh(h)$ is structural.
-   Bridging that to a Hecke-induction theorem $\mathrm{Ind}^{H_{3(A+1)}}_{H_{3A}}
+ empirical match suggests $[3]_q^2 \cdot \cosh(h)$ is structural.
+ Bridging that to a Hecke-induction theorem $\mathrm{Ind}^{H_{3(A+1)}}_{H_{3A}}
    \to (\text{per-Z gain})$ is the longest-pole target.
 
 Each refinement that lands as a `theorem` moves one field out of
@@ -386,7 +386,7 @@ The synthesis file has its own `class BarInvolution R` matching the four ring-in
 **Definition (Lean: `structure BarHeckeFunctor R`).** A `BarHeckeFunctor` over $R$ is an `apply : R → R` together with a proof that bar-anti-symmetric inputs map to bar-symmetric outputs.
 
 **Constructor (Lean: `constZero`).** $F(h) := 0$.
-*Proof of bar-symmetry of output.* $\overline 0 = 0$ trivially. $\square$
+*Proof of bar-symmetry of output.* $\overline 0 = 0$ by definition. $\square$
 
 **Constructor (Lean: `square`).** $F(h) := h^2$.
 *Proof.* $\overline{h^2} = \overline h \cdot \overline h = (-h)(-h) = h^2$ for bar-anti-sym $h$. $\square$
@@ -417,7 +417,7 @@ The synthesis file has its own `class BarInvolution R` matching the four ring-in
 *Proof.* Direct from the functor's `apply_bar_symmetric` field applied to `universal_kernel_antisym`. $\square$
 
 **Instance (Lean: `trivialBarSymmetricThreeLayerSynthesisFunctorial`).** Degenerate functorial instance with $K_{\mathrm{univ}} = 0$ and all three functors $= \mathrm{constZero}$.
-*Proof.* Each field satisfies its constraint trivially. $\square$
+*Proof.* Each field satisfies its constraint by definition. $\square$
 
 ### Trivial real bar + c_5 BarHeckeFunctor
 

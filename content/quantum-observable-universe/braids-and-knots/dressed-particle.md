@@ -3,7 +3,7 @@
 at level $\ell$ (typically a bare nucleus, $\ell = 2$) and let
 $S = (\{e_k\}, \iota, W_{\mathrm{bind}})$ be an
 [electron shell](#def:electron-shell) of multiplicity $Z$ attached
-to it.  The **dressing morphism** at $S$ is the arrow in the
+to it. The **dressing morphism** at $S$ is the arrow in the
 [confinement category](#def:confinement-category):*
 
 $$
@@ -31,15 +31,15 @@ the cabling embedding.*
 **Examples.**
 
 - *Bare proton $\xrightarrow{\mathrm{dress}_{[1s^1]}}$ neutral
-  hydrogen ${}^1\mathrm{H}$.*
+ hydrogen ${}^1\mathrm{H}$.*
 - *Bare $^4$He-nucleus $\xrightarrow{\mathrm{dress}_{[1s^2]}}$
-  neutral helium (noble gas, $Z = 2$).*
+ neutral helium (noble gas, $Z = 2$).*
 - *Bare $^{20}$Ne-nucleus $\xrightarrow{\mathrm{dress}_{[1s^2 2s^2 2p^6]}}$
-  neutral neon (noble gas, $Z = 10$).*
+ neutral neon (noble gas, $Z = 10$).*
 
 **Composition.**
 *Dressing is not generally invertible: stripping electrons changes
-the binding subword non-trivially via the SDP.  However, dressings
+the binding subword non-by definition via the SDP. However, dressings
 compose:*
 
 $$
@@ -49,7 +49,7 @@ $$
 $$
 
 *where $\oplus$ concatenates shell data when the combined $Z$
-remains SDP-feasible.  Partial dressing ($0 < Z' < Z_{\max}$) yields
+remains SDP-feasible. Partial dressing ($0 < Z' < Z_{\max}$) yields
 **ions**.*
 
 **Stability under dressing.**
@@ -74,7 +74,7 @@ $$
 $$
 
 *where $\mathcal{S}^*(S, q)$ is the SDP active support and $w_\lambda$
-are the block shadow prices.  For $\mu(S, q) = 1$ this collapses to
+are the block shadow prices. For $\mu(S, q) = 1$ this collapses to
 the scalar-LP product; for $\mu \ge 2$ the full matrix shadow
 contributes, which is the content of the multi-operator binding
 regime.*
