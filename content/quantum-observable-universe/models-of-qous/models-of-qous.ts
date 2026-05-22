@@ -25,10 +25,22 @@ export default chapter({
       blocks: [
         "models-of-qous-intro",
         "q-yang-mills-levi",
-        "yang-mills-mass-gap",
-        "gr-substrate-geometry",
         "main-commutative-diagram",
         "main-commutative-diagram-proof",
+      ],
+    }),
+
+    // ── Headline conjectures ──────────────────────────────────────────
+    // R4 YM-split: `conj:yang-mills-mass-gap` was competing with
+    // `prop:main-commutative-diagram` for 'the main result' framing in
+    // sec:physical-interpretation.  Split into its own subsection paired
+    // with the GR-substrate-geometry interpretation that motivates it.
+    section({
+      title: "Headline conjectures",
+      label: "sec:headline-conjectures",
+      blocks: [
+        "yang-mills-mass-gap",
+        "gr-substrate-geometry",
       ],
     }),
 
