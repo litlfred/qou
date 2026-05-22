@@ -34,43 +34,61 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
-def _atomic_word_to_signed_gens(Z: int, N: int, *,
-                                  include_inter: bool = True) -> list[tuple[int, int]]:
-    """Translate `atom_braid_word_3A(Z, N)` (c, d, gen_0based) triples
-    into the (sign, gen_1based) format expected by
-    `pyhecke_native.chi_lambda_all_partitions_f64`.
+def _crossing_sign(c: float, d: float, h_val: float) -> int:
+    """Discriminate the float `(c, d)` pair from `atom_braid_word_3A`
+    into a sign symbol `{+1, -1, 0}` matching the three Hecke factor
+    types — Sigma+ / Sigma⁻¹ / Averaged.
 
     Sign convention (matches `hecke_engine::wenzl_lr::Crossing`):
       - `c=1, d=0`           → Sigma     = +1
       - `c=1, d=-h`          → SigmaInv  = -1
       - `c=1, d=-h/2`        → Averaged  =  0
     """
+    if abs(c - 1.0) > 1e-9:
+        raise ValueError(
+            f"atomic word factor has c={c} != 1; only (c=1, d) "
+            f"factors are supported by the Rust crossing API")
+    if abs(d) < 1e-12:
+        return 1
+    if abs(d + h_val) < 1e-9:
+        return -1
+    if abs(d + h_val / 2) < 1e-9:
+        return 0
+    raise ValueError(
+        f"atomic word factor (c={c}, d={d}) does not match "
+        f"any of Sigma/SigmaInv/Averaged (h={h_val})")
+
+
+def _atomic_word_to_signed_gens(Z: int, N: int, *,
+                                  include_inter: bool = True) -> list[tuple[int, int]]:
+    """Translate `atom_braid_word_3A(Z, N)` (c, d, gen_0based) triples
+    into the (sign, gen_1based) format expected by
+    `pyhecke_native.chi_lambda_all_partitions_f64`.
+    """
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_core import h as _h_num
     h_val = float(_h_num)
 
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
-    signed: list[tuple[int, int]] = []
-    for c, d, gen_0based in word:
-        # Use a generous tolerance — the Python side carries d as a
-        # float, but the algebraic discriminator is exact at q₀.
-        if abs(c - 1.0) > 1e-9:
-            raise ValueError(
-                f"atomic word factor has c={c} != 1; only (c=1, d) "
-                f"factors are supported by the Rust crossing API")
-        if abs(d) < 1e-12:
-            sign = 1
-        elif abs(d + h_val) < 1e-9:
-            sign = -1
-        elif abs(d + h_val / 2) < 1e-9:
-            sign = 0
-        else:
-            raise ValueError(
-                f"atomic word factor (c={c}, d={d}) does not match "
-                f"any of Sigma/SigmaInv/Averaged (h={h_val})")
-        # Rust API uses 1-based generator indices.
-        signed.append((sign, int(gen_0based + 1)))
-    return signed
+    # Rust chi-bridge API uses 1-based generator indices.
+    return [(_crossing_sign(c, d, h_val), int(gen_0based + 1))
+            for c, d, gen_0based in word]
+
+
+def _atomic_word_to_signed_gens_0based(Z: int, N: int, *,
+                                          include_inter: bool = True) -> list[tuple[int, int]]:
+    """0-based counterpart of `_atomic_word_to_signed_gens` for the
+    Tier 1.A `incremental_reduce_rust` API, which uses 0-based
+    generator indices to match the Python reduce loop in
+    `hecke_laurent_fast.py`.
+    """
+    from mass_at_3A_proper import atom_braid_word_3A
+    from hecke_core import h as _h_num
+    h_val = float(_h_num)
+
+    word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+    return [(_crossing_sign(c, d, h_val), int(gen_0based))
+            for c, d, gen_0based in word]
 
 
 def tr_M_atomic_rust(Z: int, N: int, *,
@@ -261,6 +279,118 @@ def tr_M_atomic_rust_recursive(Z: int, N: int, *,
                 for q_half_exp, big_int_str in coef_list:
                     # q_half_exp = 2 * (q-exponent) per LaurentPolyQ
                     # encoding; q^{q_half_exp/2}
+                    c_zh += mp.mpf(big_int_str) * (
+                        q ** (mp.mpf(q_half_exp) / 2)
+                    )
+                zh_val += c_zh * (z_mp ** z_exp) * (h_mp ** h_exp)
+            total += c_mp * zh_val
+        return total
+
+
+def tr_M_atomic_rust_full(Z: int, N: int, *,
+                            dps: int = 50,
+                            include_inter: bool = True,
+                            max_iterations_per_step: int = 10_000):
+    """**Tier 1.A — canonical Markov trace via the FULL Rust pipeline.**
+
+    Reduce step in Rust (`pyhecke_native.incremental_reduce_rust`,
+    new in v0.5.0) + trace recursion in Rust (`tr_m_word_lq`, from
+    PR #859) + mpmath combine.  Single PyO3 call for the reduce
+    (which was 60-70% of wall in the Python LaurentQ path); one
+    PyO3 call per distinct reduced word for the trace recursion.
+
+    Per CLAUDE.md §Precision goals L1 (50-dps compute floor):
+    every coefficient is exact `BigRational` on the Rust side; the
+    Python evaluation at q₀ uses mpmath at `dps` precision.  No
+    f64 anywhere in the critical path.
+
+    Cross-checks bit-identical to
+    `laurent_q_trace.tr_M_atomic_lq.evaluate_mpf(Q_50_DIGIT_STR, dps)`
+    to 1e-30 relative.
+
+    Parameters
+    ----------
+    Z, N : int
+        Proton and neutron counts; A = Z + N, n_strands = 3·A.
+    dps : int
+        MPFR working precision in decimal places (default 50,
+        production floor).  Use 100+ for substrate-derivation
+        cross-checks.
+    include_inter : bool
+        Include inter-nucleon crossings (default True).
+    max_iterations_per_step : int
+        Per-step fixpoint cap passed to the Rust reducer
+        (default 10000, matching the Python default).
+
+    Returns
+    -------
+    tr_M : mpmath.mpf
+        Canonical Markov trace at q₀ at `dps` precision.
+
+    Falls back via ``NotImplementedError`` if the trace recursion
+    hits Case C on any reduced word — caller routes to
+    `markov_peel.tr_M_atomic` (sympy ocneanu path), same contract
+    as the Phase-2 wrapper.
+    """
+    try:
+        import pyhecke_native
+    except ImportError as e:
+        raise ImportError(
+            "pyhecke_native not installed.  Build via "
+            "`cd tools/pyhecke-native && maturin build --release` "
+            "and `pip install` the resulting wheel."
+        ) from e
+
+    import mpmath as mp
+    from q_parameter import Q_50_DIGIT_STR
+
+    n_strands = 3 * (Z + N)
+    signed_word = _atomic_word_to_signed_gens_0based(
+        Z, N, include_inter=include_inter
+    )
+
+    # Rust reduce — ONE PyO3 call; the Hecke fixpoint loop now lives
+    # entirely in Rust with `BigRational` arithmetic.
+    reduced_ffi = pyhecke_native.incremental_reduce_rust(
+        signed_word, max_iterations_per_step
+    )
+
+    # Trace assembly: for each reduced σ-word, call the Phase-2
+    # Rust `tr_m_word_lq` and accumulate the contribution in mpmath.
+    with mp.workdps(dps):
+        q = mp.mpf(Q_50_DIGIT_STR)
+        z_mp = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+        h_mp = q - 1 / q
+        total = mp.mpf(0)
+        for word_list, coef_list in reduced_ffi:
+            # Skip formal-variable entries (negative gens make no
+            # contribution to the trace; matches the Python convention
+            # in `tr_M_element`).
+            if any(g < 0 for g in word_list):
+                continue
+            # Evaluate the LaurentRationalQ coefficient at q₀.
+            c_mp = mp.mpf(0)
+            for q_exp, num_str, den_str in coef_list:
+                c_term = mp.mpf(num_str) / mp.mpf(den_str)
+                c_mp += c_term * (q ** q_exp)
+            if c_mp == 0:
+                continue
+            # Trace of the pure-σ word via Phase-2 Rust recursion.
+            try:
+                zh_ffi = pyhecke_native.tr_m_word_lq(
+                    list(word_list), n_strands
+                )
+            except RuntimeError as e:
+                raise NotImplementedError(
+                    f"Rust recursion hit Case C on word {word_list}; "
+                    f"caller should fall back to markov_peel.tr_M_atomic "
+                    f"(sympy ocneanu path).  Underlying: {e}"
+                ) from e
+            zh_val = mp.mpf(0)
+            for (z_exp, h_exp), poly_terms in zh_ffi:
+                c_zh = mp.mpf(0)
+                for q_half_exp, big_int_str in poly_terms:
+                    # q_half_exp = 2·(q-exponent) per LaurentPolyQ encoding.
                     c_zh += mp.mpf(big_int_str) * (
                         q ** (mp.mpf(q_half_exp) / 2)
                     )
