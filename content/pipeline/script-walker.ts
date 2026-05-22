@@ -13,7 +13,9 @@ import {
   existsSync,
   readdirSync,
   statSync,
-  readFileSync,
+  openSync,
+  readSync,
+  closeSync,
 } from "fs";
 import { createHash } from "crypto";
 import { join, relative, basename, extname, dirname } from "path";
@@ -60,8 +62,27 @@ const SIDECAR_DIR_NAME = "script-qa";
 const SIDECAR_EXT = ".script-qa.json";
 
 function hashFile(abs: string): string {
-  const buf = readFileSync(abs);
-  return createHash("sha256").update(buf).digest("hex").slice(0, 12);
+  // Stream the file through SHA-256 in 64 KiB chunks via the
+  // synchronous file-descriptor API. `walkScripts` is a synchronous
+  // generator, so we cannot adopt the async streaming API without
+  // restructuring every caller; `openSync` + `readSync` gives us
+  // deterministic chunked reads with bounded memory. Most scripts
+  // under `SCRIPT_ROOTS` are small enough to fit in one chunk, but
+  // if the walker is ever pointed at a directory that contains a
+  // misplaced data file or large generated artefact the loop keeps
+  // memory at ~64 KiB regardless of file size.
+  const h = createHash("sha256");
+  const fd = openSync(abs, "r");
+  try {
+    const buf = Buffer.alloc(64 * 1024);
+    let bytesRead = 0;
+    while ((bytesRead = readSync(fd, buf, 0, buf.length, null)) > 0) {
+      h.update(buf.subarray(0, bytesRead));
+    }
+  } finally {
+    closeSync(fd);
+  }
+  return h.digest("hex").slice(0, 12);
 }
 
 /** Sidecar path next to a script: `<parent>/script-qa/<base>.script-qa.json`. */
