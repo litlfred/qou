@@ -115,8 +115,6 @@ def main():
 
     # ── (2) Φ_q ratios at substrate-natural arguments ────────────
     print(f"(2) Φ_q(z)/Φ_q(w) ratios:")
-    ratio_args = ["h_q", "-h_q", "h_q²", "-h_q²", "1/φ", "1/φ²",
-                  "1/[2]_q", "(q-1)/q", "z_c_Re"]
     ratio_vals = {
         "h_q":     h,
         "-h_q":    -h,
@@ -129,13 +127,14 @@ def main():
         "z_c_Re":  mp.mpf("0.10582958"),
     }
     phi_at = {}
+    phi_eval_errors: list[str] = []
     for name, z in ratio_vals.items():
         if abs(z) >= 1 / Q0i:  # |z| < q convergence
             continue
         try:
             phi_at[name] = phi_q(z, Q0i)
-        except Exception:
-            pass
+        except Exception as e:
+            phi_eval_errors.append(f"{name}: {type(e).__name__}: {e}")
 
     print(f"    Computed Φ_q at {len(phi_at)} substrate-natural arguments")
     matched_ratios = 0
@@ -146,8 +145,8 @@ def main():
                 continue
             r = phi_at[a] / phi_at[b]
             rel = abs(r - lambda_p) / lambda_p
-            if rel < mp.mpf(10)**(-3):  # within 1%
-                marker = " ← <0.1%" if rel < mp.mpf(10)**(-3) else ""
+            if rel < mp.mpf(10)**(-3):  # within 0.1%
+                marker = " ← <0.1%"
                 print(f"    Φ_q({a:<10s}) / Φ_q({b:<10s}) = {mp.nstr(r, 10)} "
                       f"(Δ rel = {mp.nstr(rel, 5)}){marker}")
                 matched_ratios += 1
@@ -162,7 +161,7 @@ def main():
                     })
             if rel < best_ratio_err:
                 best_ratio_err = rel
-    print(f"    {matched_ratios} ratios within 1% of λ_p (smallest err: {mp.nstr(best_ratio_err, 5)})")
+    print(f"    {matched_ratios} ratios within 0.1% of λ_p (smallest err: {mp.nstr(best_ratio_err, 5)})")
     print()
 
     # ── (3) Pentagon-implied identities ───────────────────────────
@@ -170,7 +169,7 @@ def main():
     # Heisenberg pair UV = q²·VU. On the real line, the commutative
     # analog is:
     #     Φ_q(z) · Φ_q(w) = Φ_q(z + w − zw)  ?  (commutative Rogers)
-    # This is the famous Roger's identity for Li_2; the Faddeev
+    # This is the famous Rogers' identity for Li_2; the Faddeev
     # analog needs operator-theoretic interpretation. For numerical
     # spike: check whether Φ_q(z) · Φ_q(w) / Φ_q(z + w − zw) ≈ λ_p
     # for substrate-natural (z, w) pairs.
@@ -185,12 +184,13 @@ def main():
                 continue
             try:
                 phi_c = phi_q(zc, Q0i)
-            except Exception:
+            except Exception as e:
+                phi_eval_errors.append(f"phi_c({a}+{b}-{a}·{b}): {type(e).__name__}: {e}")
                 continue
             v = phi_at[a] * phi_at[b] / phi_c
             rel = abs(v - lambda_p) / lambda_p
             if rel < mp.mpf(10)**(-3):
-                marker = " ← <0.1%" if rel < mp.mpf(10)**(-3) else ""
+                marker = " ← <0.1%"
                 print(f"    Φ_q({a}) Φ_q({b}) / Φ_q({a}+{b}−{a}·{b}) = "
                       f"{mp.nstr(v, 10)} (Δ rel = {mp.nstr(rel, 5)}){marker}")
                 pent_matched += 1
@@ -203,8 +203,10 @@ def main():
                     })
             if rel < best_pent_err:
                 best_pent_err = rel
-    print(f"    {pent_matched} pentagon-like values within 1% of λ_p "
+    print(f"    {pent_matched} pentagon-like values within 0.1% of λ_p "
           f"(smallest: {mp.nstr(best_pent_err, 5)})")
+    if phi_eval_errors:
+        print(f"    Note: {len(phi_eval_errors)} Φ_q evaluations failed (recorded in witness)")
     print()
 
     # Summary
@@ -231,9 +233,14 @@ def main():
     w.add_data("smallest_pentagon_rel_err", mp.nstr(best_pent_err, 10))
     w.add_data("n_ppb_matches", len(findings))
     w.add_data("findings", findings)
+    w.add_data("phi_eval_errors", phi_eval_errors)
+    w.add_data("n_phi_eval_errors", len(phi_eval_errors))
+    # Assertion fails (computed=0) if any Φ_q evaluation raised, so
+    # the witness honestly reflects compute-state — not just whether
+    # the script's main loop completed.
     w.add_assertion(
         "spike_completed_no_compute_errors",
-        computed=1.0,
+        computed=float(len(phi_eval_errors) == 0),
         expected=1.0,
     )
     if findings:
