@@ -140,3 +140,13 @@ After #917 merges:
 3. **Defer Track C** until A + B complete.
 
 This ledger updates after every merged PR in the cluster.
+
+## 2026-05-22 update — V_7 + H_12 spike results (this session)
+
+See [`docs/audits/2026-05-22-v7-and-h12-spike-results.md`](../audits/2026-05-22-v7-and-h12-spike-results.md)
+for the full record.  Manager table update:
+
+| Item | Prior | Post-spike |
+|---|---|---|
+| §5 #1 V_7 refinement (PR #916 next step) | "recommended" | **NEGATIVE.** 100 dps PSLQ at coeff ≤ 10¹² finds NO clean categorical correction for the −0.00523 V_7-vs-target gap.  V_7's "0.144 % proximity" is suggestive but not structural; Position 2 (V_7 is one of many proved categorical functionals, none with selection-rule justification) is the conservative read. |
+| §5 #2 H_12 A-operator extract | "2-3 day compute" | **Memory-bounded.**  Died silently at the 12321 × 77 = 950K character sweep — likely OOM on the seminormal-matrix lru_cache.  Needs chunk-and-GC restructure (1-2 day impl) BEFORE the compute can complete. |
