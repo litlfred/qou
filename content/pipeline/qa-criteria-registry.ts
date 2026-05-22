@@ -629,17 +629,22 @@ const SCRIPT_QUALITY: QaCriterionDefinition[] = [
     id: "does_not_default_to_float",
     domain: "script-quality",
     description:
-      "Python script does not use bare float literals (`1.0`, " +
-      "`0.5`, `3.14e-10`, …) or unchecked `float(...)` casts in " +
-      "substrate-precision code paths. Use `mpmath.mpf(\"...\")`, " +
-      "`Decimal(\"...\")`, or pin the value via a witness JSON. " +
-      "Allow-listed sentinels: `float(\"inf\")`, `float(\"nan\")`. " +
-      "Heuristic regex-based — string literals and comments are " +
-      "stripped before scanning to avoid false positives. False " +
-      "positives are addressed with a `human` reviewer override " +
-      "on the script's sidecar.",
+      "Python script source contains no bare float literals (`1.0`, " +
+      "`0.5`, `3.14e-10`, …) or unchecked `float(...)` casts. Use " +
+      "`mpmath.mpf(\"...\")`, `Decimal(\"...\")`, or pin the value via " +
+      "a witness JSON. Allow-listed sentinels: `float(\"inf\")`, " +
+      "`float(\"nan\")`, `float(\"-inf\")`. Heuristic whole-file regex " +
+      "scan; string literals and `#` comments are stripped before " +
+      "matching to avoid false positives. Remaining false positives " +
+      "are addressed with a `human` reviewer override on the " +
+      "script's sidecar.",
     default_severity: "major",
-    depends_on: [],
+    // `"ts"` is the conventional primary-source-file key in
+    // `QaFieldHash` across every QA axis (extension-agnostic — the
+    // script-quality axis hashes `.py` / `.rs` files under it). With
+    // an empty `depends_on` the staleness logic could never detect
+    // a script-source change.
+    depends_on: ["ts"],
     automated: true,
     source_file: "content/pipeline/qa-checkers-python.ts",
   },
