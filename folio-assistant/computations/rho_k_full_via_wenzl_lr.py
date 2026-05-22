@@ -59,12 +59,33 @@ CODATA cross-check targets in the side-by-side diff below.
 
 ## Status
 
-This script's output is consumable by the ρ_K refinement chain
-(`atomic_mass_via_rho_k.py` and downstream). The per-atom
-`|tr_M|` values it emits supersede the placeholder values in
-`atomic-tr-m-mpfr-50dps.witness.json` for A ≥ 2.
+⚠ **NOT consumable as a canonical |tr_M| source for mass
+derivation.** The output of this script is the
+tensor-product |tr_M(β_p ⊗ β_n ⊗ …)|, not |tr_M(β_canonical(Z, N))|
+— the two diverge by ~80 % on D, T, ³He per
+`cross_check_trM_wenzl_lr_1ppb.py`. The witness is emitted with
+`set_audit_only` so any downstream wiring that imports it must
+treat it as an audit-only / building-block artefact.
 
-Workplan: `docs/audits/2026-05-17-1ppb-workplan-v4.md` §3 Item 1.
+**Canonical consumer:** [`canonical_tr_m_via_rust.py`](canonical_tr_m_via_rust.py)
+is the production consumer — it calls the
+`hecke-canonical-chi` Rust binary which handles the averaged-
+crossing inter-nucleon arc structure correctly. Mass-prediction
+chains (`atomic_mass_via_rho_k.py`, `rho_k_h3a_refinement.py`,
+the Borromean-tower chain) consume canonical |tr_M| via that
+path, never via this script's output.
+
+**Building-block role:** This script remains in the codebase as
+a tensor-product χ^λ primitive — useful as input to a future
+canonical Wenzl-bridge consumer that handles non-tensor inter-
+nucleon braiding per
+[`hecke-branching-trace-decomposition.md`](../../content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md).
+Until that consumer is implemented, the script's output stays
+audit-only.
+
+Workplan: `docs/audits/2026-05-17-1ppb-workplan-v4.md` §3 Item 1
+(superseded by the canonical Rust route documented in
+`docs/audits/2026-05-17-knot-fusion-step1-audit.md`).
 
 ## Dependencies
 
@@ -301,23 +322,33 @@ def main() -> int:
             },
         },
         "description": (
-            "ρ_K^full consumer: removes the LO tautology in "
-            "`atomic_mass_via_rho_k.py` by computing |tr_M(canonical β)| "
-            "directly via the Wenzl LR bridge (PR #674). For each atom "
-            "(Z, N), assembles per-nucleon factors via "
-            "`canonical_factor_spec`, calls `hecke-tr-m-wenzl-lr` to "
-            "get all χ^λ at H_{3*(Z+N)}, normalises by "
-            "averaging_denominator, and combines with y_λ(q_0) from "
-            "`y-lambda-at-q0.witness.json` to yield |tr_M(β)|. ⁴He "
-            "at H_12 is the first canonical value (prior witness was "
-            "DEPRECATED_DISJOINT placeholder)."
+            "ρ_K^full producer-side primitive: emits the tensor-"
+            "product |tr_M(β_p ⊗ β_n ⊗ …)| via the Wenzl LR bridge "
+            "(PR #674). ⚠ **Output is NOT the canonical |tr_M(β_canonical)|** — "
+            "the canonical atomic braid is not a tensor product (inter-"
+            "nucleon arc crossings break tensor structure), and the two "
+            "diverge by ~80 % on D, T, ³He per "
+            "`cross_check_trM_wenzl_lr_1ppb.py`. The canonical mass-"
+            "derivation consumer is `canonical_tr_m_via_rust.py` "
+            "(via `hecke-canonical-chi` Rust binary), which handles "
+            "the averaged-crossing structure correctly. This script's "
+            "witness is retained as an audit-only building block for a "
+            "future non-tensor Wenzl bridge per "
+            "`hecke-branching-trace-decomposition.md`."
         ),
         "calibration_discipline": (
-            "Pure prediction from q_0 (CAL-2 input) and the canonical "
-            "braid word. No new calibration."
+            "Pure prediction from q_0 (CAL-2 input) and per-nucleon "
+            "braid words. No new calibration. Output is audit-only "
+            "per the consumer-scope bug — does not feed any production "
+            "mass-derivation chain."
         ),
         "rows": rows,
-        "workplan_ref": "docs/audits/2026-05-17-1ppb-workplan-v4.md §3 Item 1",
+        "workplan_ref": (
+            "docs/audits/2026-05-17-1ppb-workplan-v4.md §3 Item 1 "
+            "(superseded by canonical Rust route in "
+            "docs/audits/2026-05-17-knot-fusion-step1-audit.md). "
+            "Canonical consumer: canonical_tr_m_via_rust.py."
+        ),
     }
     out_path = (
         WitnessBuilder.wrap_legacy(
