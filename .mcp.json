@@ -6,15 +6,11 @@
     },
     "paper-search-mcp": {
       "command": "uvx",
-      "args": ["paper-search-mcp"]
+      "args": ["--from", "paper-search-mcp", "python", "-m", "paper_search_mcp.server"]
     },
     "openalex-paper-search": {
       "command": "uvx",
-      "args": ["openalex-mcp-server"]
-    },
-    "mcp-scholar": {
-      "command": "uvx",
-      "args": ["mcp-scholar"]
+      "args": ["--from", "git+https://github.com/drAbreu/alex-mcp.git@4.1.0", "alex-mcp"]
     },
     "lean-lsp": {
       "command": "uvx",
