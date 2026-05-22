@@ -92,6 +92,41 @@ only at the function boundary):**
 | ⁵Li  | 7.310 s   | 21.781 s    | **2.98×** | 3.4 × 10⁻⁵⁰ |
 | ⁶Li  | **79.167 s** | 234.174 s | **2.96×** | 5.6 × 10⁻⁴⁹ |
 
+**After GCD deferral via `Ratio::new_raw` (`add_h_times_unreduced`
++ `add_assign_unreduced` + `reduce_in_place` once per pass —
+defers the per-add BigRational GCD until end-of-pass, where one
+GCD per coefficient amortises over all the unreduced adds):**
+
+| atom | wall_rust | wall_python | speedup | rel.diff |
+|------|----------:|------------:|--------:|---------:|
+| p    | 1.897 s*  | 0.004 s     | (setup) | 0.0      |
+| n    | 0.001 s   | 0.002 s     | 3.27×   | 2.9 × 10⁻⁵¹ |
+| D    | 0.013 s   | 0.045 s     | 3.57×   | 8.6 × 10⁻⁵¹ |
+| T    | 0.192 s   | 0.621 s     | 3.24×   | 2.6 × 10⁻⁵⁰ |
+| ³He  | 0.089 s   | 0.321 s     | 3.60×   | 4.9 × 10⁻⁵¹ |
+| ⁴He  | 1.155 s   | 3.750 s     | 3.25×   | 2.1 × 10⁻⁵⁰ |
+| ⁵Li  | 6.742 s   | 20.724 s    | **3.07×** | 3.4 × 10⁻⁵⁰ |
+| ⁶Li  | 79.854 s  | 225.457 s   | 2.82×   | 5.6 × 10⁻⁴⁹ |
+
+(*proton wall is wheel-reimport + first-call MPFR-context setup
+overhead — not the production steady-state.  Subsequent atoms
+take milliseconds, confirming the cold-start interpretation.)
+
+**Finding (honest, negative on the gate atom):** GCD deferral
+gives a small win on smaller atoms (⁵Li: 7.31 → 6.74, −8%; ⁴He
+1.34 → 1.16, −13%) but is essentially flat on ⁶Li (79.17 → 79.85,
++0.9% — within bench noise).  The hypothesis — "GCD per add is
+30-50% of wall" — does not hold up on the gate atom.  Denominator
+growth in unreduced intermediates (for ⁶Li the chain of additions
+between matching-denominator coefs accumulates) appears to offset
+the saved GCD work.
+
+Code is kept on-tree (tested correct against the canonical path,
+two equivalence tests in `laurent_rational_q::tests`) because the
+small-atom win is real and the optimisation may compound with
+future changes (e.g. arena allocator for BigInt).  But it does
+not close the 4× gate on ⁶Li.
+
 (The `p` row's "0.06×" is wheel-import + first-call MPFR-context
 setup overhead — not representative of the steady-state.)
 
@@ -154,11 +189,15 @@ architectural work):
    was a real but secondary cost; the inner loop's BigRational
    arithmetic still dominates.
 
-3. **Defer GCDs via `Ratio::new_raw`** — num-rational does a GCD
-   on every `+`, `-`, `*`.  Switching to `new_raw` (skip GCD)
-   for in-loop arithmetic and `.reduce_mut()` once per iteration
-   could cut GCD work substantially.  Riskier — must verify
-   denominators stay bounded.  *Estimated speedup: 1.5-3×*.
+3. ~~**Defer GCDs via `Ratio::new_raw`**~~ — **landed and
+   measured negative on the gate atom.**  ⁵Li: 7.31 → 6.74 s
+   (−8%); ⁶Li: 79.17 → 79.85 s (within noise, +0.9%).  Denominator
+   growth in unreduced intermediates apparently offsets the saved
+   GCD per add.  Code is kept (tested correct vs canonical path)
+   because the small-atom win is real and the path may compound
+   with future BigInt-arena work; but **this lever did not close
+   the 4× gate**.  Risk hypothesis "must verify denominators stay
+   bounded" partially validated — they grow enough to matter.
 
 4. **Tier 1.B (nucleon-orbit reduction)** — orthogonal to the
    reduce-loop optimisations; reduces the *input* word length

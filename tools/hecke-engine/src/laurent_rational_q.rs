@@ -363,6 +363,76 @@ impl LaurentRationalQ {
         // an existing entry (e.g. R1 cascading into a sibling word).
         self.coefs.retain(|_, v| !v.is_zero());
     }
+
+    /// **`Ratio::new_raw` add-assign — defers GCD.**
+    ///
+    /// Like `+= other` but builds the result via `Ratio::new_raw`
+    /// (no GCD-reduction).  Coefficients become non-canonical
+    /// (denominators grow as products of the operand denoms);
+    /// callers MUST follow up with [`reduce_in_place`](Self::reduce_in_place)
+    /// before any cross-LaurentRationalQ equality comparison or
+    /// MPFR evaluation.
+    ///
+    /// Used inside the Markov-peel reduce fixpoint loop where the
+    /// GCD per add is ~30-50% of inner-loop wall on ⁶Li.  See
+    /// [`reduce_in_place`](Self::reduce_in_place) for the
+    /// end-of-pass canonicalisation pattern.
+    pub fn add_assign_unreduced(&mut self, other: &LaurentRationalQ) {
+        for (&e, c) in &other.coefs {
+            let entry = self.coefs.entry(e).or_insert_with(BigRational::zero);
+            // (a/b) + (c/d) = (a·d + c·b) / (b·d)  — no GCD reduce.
+            let new_num = entry.numer() * c.denom() + c.numer() * entry.denom();
+            if new_num.is_zero() {
+                self.coefs.remove(&e);
+            } else {
+                let new_den = entry.denom() * c.denom();
+                *entry = BigRational::new_raw(new_num, new_den);
+            }
+        }
+    }
+
+    /// **`Ratio::new_raw` variant of [`add_h_times`](Self::add_h_times).**
+    ///
+    /// Skips GCD-reduction on every constituent add.  Callers MUST
+    /// follow up with [`reduce_in_place`](Self::reduce_in_place)
+    /// before observing any coefficient externally.
+    pub fn add_h_times_unreduced(&mut self, other: &LaurentRationalQ) {
+        for (&e, c) in &other.coefs {
+            // +c at q^{e+1}
+            let entry = self.coefs.entry(e + 1).or_insert_with(BigRational::zero);
+            let new_num = entry.numer() * c.denom() + c.numer() * entry.denom();
+            if new_num.is_zero() {
+                self.coefs.remove(&(e + 1));
+            } else {
+                let new_den = entry.denom() * c.denom();
+                *entry = BigRational::new_raw(new_num, new_den);
+            }
+            // -c at q^{e-1}
+            let entry = self.coefs.entry(e - 1).or_insert_with(BigRational::zero);
+            let new_num = entry.numer() * c.denom() - c.numer() * entry.denom();
+            if new_num.is_zero() {
+                self.coefs.remove(&(e - 1));
+            } else {
+                let new_den = entry.denom() * c.denom();
+                *entry = BigRational::new_raw(new_num, new_den);
+            }
+        }
+    }
+
+    /// Canonicalise each coefficient via `Ratio::new` (does the GCD
+    /// reduction).  Call after a batch of `*_unreduced` adds, before
+    /// any cross-LaurentRationalQ equality comparison or MPFR
+    /// evaluation.
+    ///
+    /// num-rational doesn't expose a public `reduce()` method on
+    /// `Ratio`; round-tripping through `Ratio::new` forces the GCD.
+    pub fn reduce_in_place(&mut self) {
+        for v in self.coefs.values_mut() {
+            let n = v.numer().clone();
+            let d = v.denom().clone();
+            *v = BigRational::new(n, d);
+        }
+    }
 }
 
 impl PartialEq for LaurentRationalQ {
@@ -604,6 +674,59 @@ mod tests {
         let mut a = self_init;
         a.add_h_times(&zero);
         assert_eq!(a, before);
+    }
+
+    #[test]
+    fn add_assign_unreduced_then_reduce_matches_canonical() {
+        // Build a chain of adds that would normally each do a GCD;
+        // the unreduced path defers, then reduce_in_place catches up.
+        // Result must equal the canonical += chain bit-for-bit.
+        let parts: Vec<LaurentRationalQ> = (0i32..10)
+            .map(|i| {
+                LaurentRationalQ::from_terms(vec![
+                    (i, br(1, 1i32 << (i.unsigned_abs() % 5))),
+                    (i + 1, br(-1, 3)),
+                ])
+            })
+            .collect();
+        // Canonical accumulator.
+        let mut canonical = LaurentRationalQ::zero();
+        for p in &parts {
+            canonical += p;
+        }
+        // Unreduced accumulator + final reduce.
+        let mut unreduced = LaurentRationalQ::zero();
+        for p in &parts {
+            unreduced.add_assign_unreduced(p);
+        }
+        unreduced.reduce_in_place();
+        assert_eq!(canonical, unreduced);
+    }
+
+    #[test]
+    fn add_h_times_unreduced_then_reduce_matches_canonical() {
+        // self + Σ_i other_i · h via both paths must agree.
+        let self_init = LaurentRationalQ::from_terms(vec![
+            (3, br(5, 6)),
+            (-2, br(1, 4)),
+        ]);
+        let others: Vec<LaurentRationalQ> = vec![
+            LaurentRationalQ::from_terms(vec![(2, br(1, 2)), (0, br(-3, 7))]),
+            LaurentRationalQ::from_terms(vec![(0, br(7, 5)), (-1, br(2, 3))]),
+            LaurentRationalQ::from_terms(vec![(1, br(-1, 6))]),
+        ];
+        // Canonical: + Σ other_i · h
+        let mut canonical = self_init.clone();
+        for o in &others {
+            canonical.add_h_times(o);
+        }
+        // Unreduced: same with deferred GCDs.
+        let mut unreduced = self_init.clone();
+        for o in &others {
+            unreduced.add_h_times_unreduced(o);
+        }
+        unreduced.reduce_in_place();
+        assert_eq!(canonical, unreduced);
     }
 
     #[test]

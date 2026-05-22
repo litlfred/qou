@@ -61,6 +61,13 @@ pub fn reduce_laurent_rules(
 ) -> (LaurentHeckeElement, u32) {
     // Copy the input BTreeMap into a FxHashMap for fast inner-loop
     // access.  Convert back to BTreeMap at the function boundary.
+    //
+    // GCD-deferral optimisation: per-add BigRational normalisation
+    // is ~30-50% of inner-loop wall on ⁶Li.  Use *_unreduced ops
+    // during the pass, then `reduce_in_place` once per coef at
+    // end-of-pass to canonicalise.  Denominators grow within one
+    // pass (modest: typically 2 → 4 → 8 for atomic-braid coefs)
+    // but are bounded by the end-of-pass reduce.
     let mut terms: FxHashMap<Vec<i32>, LaurentRationalQ> = elem
         .terms
         .iter()
@@ -93,14 +100,16 @@ pub fn reduce_laurent_rules(
                 w2.extend_from_slice(suffix);
 
                 // R1 hot-path: write coeff·h directly into new_terms[w1]
-                // via LaurentRationalQ::add_h_times — avoids the fresh
-                // `coeff * &hecke_h` LRQ allocation and the two
-                // BigRational multiplications + GCDs per q-coefficient.
+                // via LaurentRationalQ::add_h_times_unreduced — avoids
+                // the fresh `coeff * &hecke_h` LRQ allocation, the two
+                // BigRational multiplications per q-coefficient, AND
+                // the GCD that `+=` would run on every constituent
+                // add.  Final canonicalisation happens at end-of-pass.
                 {
                     let entry = new_terms
                         .entry(w1)
                         .or_insert_with(LaurentRationalQ::zero);
-                    entry.add_h_times(coeff);
+                    entry.add_h_times_unreduced(coeff);
                 }
                 add_to(&mut new_terms, w2, coeff);
                 changed = true;
@@ -140,8 +149,13 @@ pub fn reduce_laurent_rules(
             add_to(&mut new_terms, word.clone(), coeff);
         }
 
-        // End-of-pass: strip any newly-zero entries (multiple
-        // contributions that summed to zero).
+        // End-of-pass: canonicalise (a single GCD reduce per
+        // coefficient, amortising over all the unreduced adds that
+        // happened during the pass) then strip any newly-zero
+        // entries (multiple contributions that summed to zero).
+        for v in new_terms.values_mut() {
+            v.reduce_in_place();
+        }
         new_terms.retain(|_, v| !v.is_zero());
 
         terms = new_terms;
@@ -155,11 +169,11 @@ pub fn reduce_laurent_rules(
     (LaurentHeckeElement { terms: terms_btree }, iteration)
 }
 
-/// `new_terms[key] += coef`, treating an absent key as zero.
+/// `new_terms[key] += coef` via the GCD-deferred unreduced add.
+/// End-of-pass `reduce_in_place` canonicalises the accumulator.
 ///
 /// Takes `coef` by reference to avoid the per-call clone that the
-/// previous by-value signature required.  Saves one
-/// `LaurentRationalQ::clone()` per R2 / R3 / passthrough.
+/// previous by-value signature required.
 #[inline]
 fn add_to(
     new_terms: &mut FxHashMap<Vec<i32>, LaurentRationalQ>,
@@ -167,7 +181,7 @@ fn add_to(
     coef: &LaurentRationalQ,
 ) {
     let entry = new_terms.entry(key).or_insert_with(LaurentRationalQ::zero);
-    *entry += coef;
+    entry.add_assign_unreduced(coef);
 }
 
 /// Incremental reduce — mirror of `incremental_reduced_element_fast`
