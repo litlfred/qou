@@ -22,8 +22,13 @@ m_p chain:
    [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
    and is explicitly flagged as a **3-calibration discipline
    violation**. The proposed first-principles replacement
-   (`conj:lambda-scale-bring-bloch-identity`) is in active R&D
-   (Bring-Bloch tier-1..5 searches) but not yet wired.
+   (`conj:lambda-scale-bring-bloch-identity`) has been **empirically
+   refuted in the hyperbolic-knot basis** — Bring-Bloch tier 0–5
+   PSLQ searches at 100 dps over 52 prime hyperbolic knots through
+   11 crossings, coefficient ≤ 10³⁰, returned NO integer relation
+   (per tier 5 conclusion: "genuinely transcendental" in the tested
+   basis; PR #904 demoted the block to `conj:`). The remaining
+   research direction is the **q-dilog tower** route.
 
 2. **20 production scripts still import SUPERSEDED `mass_endomorphism.py`** —
    Migration Backlog #2 in the same cheat sheet. The new
@@ -205,10 +210,13 @@ For probe scripts that pair `|tr_M|` with an `E_0`:
 
 ## Action items downstream of this audit
 
-1. **Track Migration Backlog #1** (resolve CAL-4 via
-   `conj:lambda-scale-bring-bloch-identity`). The five `bring_bloch_tier{1..5}_search_m_p.py`
-   scripts are the active R&D; closing this is the only first-principles
-   resolution of the 210× symptom.
+1. **Track Migration Backlog #1** (resolve CAL-4 via a derivation
+   of `λ_scale`). The `bring_bloch_tier{0..5}_search_m_p.py`
+   scripts (hyperbolic-knot-basis PSLQ) **returned consistent
+   negatives**; `conj:lambda-scale-bring-bloch-identity` was
+   correspondingly demoted to a conjecture in PR #904. The
+   remaining first-principles direction is the **q-dilog tower**
+   route; closing it would resolve the 210× symptom.
 2. **Track Migration Backlog #2** (migrate 20 scripts off SUPERSEDED
    `mass_endomorphism.py`). Blocked on (Z+N) extension of the new API.
 3. **Block-graph hygiene**: update `uses[]` and `interprets:` arrays in

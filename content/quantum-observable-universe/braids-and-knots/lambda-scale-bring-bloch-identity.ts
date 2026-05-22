@@ -11,8 +11,11 @@ import { conjecture } from "../../schema/builders";
 // (bring_bloch_tier5_search_m_p.py), the proton's Bring-decomposition
 // is "genuinely transcendental" in the tested basis; the q-dilog
 // tower is the remaining research direction. The Lean theorem here
-// is currently vacuous (rfl against an opaque def — says nothing
-// about WHICH integer combination realises the scale).
+// is currently vacuous: `rfl` against the definitional unfold of
+// `AtomKnot.lambdaScale := bringBlochRegulator / volClosure`, whose
+// components `bringBlochRegulator` and `volClosure` are `opaque`
+// placeholders — says nothing about WHICH integer combination
+// realises the scale.
 export default conjecture({
   label: "conj:lambda-scale-bring-bloch-identity",
   lean: {

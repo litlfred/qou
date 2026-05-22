@@ -36,7 +36,7 @@ numerically validates the commuting diagram
 
 that ties the categorical mass-tower endomorphism to the
 Bring-Bloch decomposition (per
-`conj:lambda-scale-bring-bloch-identity` just merged in PR #843).
+`conj:lambda-scale-bring-bloch-identity`, introduced in PR #843).
 
 References:
 - prop:li2q-phiq-bar-symmetrization (the identity)

@@ -22,11 +22,13 @@ $\lambda_K^{\mathrm{scale}}$, status revised 2026-05-22).**
 >    [`conj:bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition).
 >    Per CLAUDE.md §3b, a block downstream of a conjecture cannot be
 >    a `proposition` unless it satisfies the §3b-cond class-instance
->    exception. The Lean theorem here is `rfl` against an `opaque`
->    definitional unfold (`AtomKnot.lambdaScale := bringBlochRegulator
->    / volClosure`), so it does not source the integer-combination
->    content from a class hypothesis — the §3b-cond exception is not
->    satisfied.
+>    exception. The Lean theorem here is `rfl` against the
+>    definitional unfold of `def AtomKnot.lambdaScale :=
+>    bringBlochRegulator / volClosure`, whose *components*
+>    `bringBlochRegulator` and `volClosure` are declared `opaque`
+>    placeholders, so it does not source the integer-combination
+>    content from a class hypothesis — the §3b-cond exception is
+>    not satisfied.
 >
 > Block kind demoted from `proposition` to `conjecture` until either
 > (a) the integer combination is derived from a substrate-pure
