@@ -31,7 +31,7 @@ $\mathrm{Li}(x)$ as follows:
 | Additive (abelian) | Multiplicative (nonabelian) |
 | Result: a real number $\mathrm{Li}(x)$ | Result: a holonomy matrix in $\mathrm{GL}(V)$ |
 
-The crucial step is the application of the *nonabelian Stokes
+The key step is the application of the *nonabelian Stokes
 theorem* \cite{yekutieli2015} ([nonabelian Stokes](#rem:yekutieli-stokes)). In the
 classical setting, Stokes' theorem reduces a 2-dimensional integral
 over a region to a 1-dimensional integral over its boundary. The

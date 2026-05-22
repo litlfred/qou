@@ -29,7 +29,7 @@ $$
 
 The ratio $P_D / P_B \sim V_B / [\hbar_q^2 \cdot (q + q^{-1})] \gg 1$: the CFL phase has a **much stiffer equation of state**.
 This produces a **kink** in the mass-radius relation $M(R)$
-at the critical central density $\rho_c$.
+at the central density $\rho_c$ at criticality.
 
 **Prediction**: neutron stars with $M \gtrsim 2M_\odot$ (those
 with CFL cores) should have systematically **larger radii** at a

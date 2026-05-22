@@ -52,8 +52,8 @@ QOU paper.
 Every hyperbolic 3-manifold volume in the paper is depth 2 — one
 $\mathrm{Li}_2$ factor. This is **not** a paper-specific claim;
 it is forced by the Bloch–Wigner formula $\mathrm{Vol}(M) =
-\sum_i D(z_i)$ over ideal-tetrahedron triangulation. To break out
-of depth 2 a different invariant is needed: $\mathrm{CS}$, hyperbolic
+\sum_i D(z_i)$ over ideal-tetrahedron triangulation. Escaping
+depth 2 requires a different invariant: $\mathrm{CS}$, hyperbolic
 4-manifolds, or trilog at algebraic points (the `bring-trilog-zeta5`
 route).
 

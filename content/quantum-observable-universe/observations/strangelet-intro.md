@@ -32,7 +32,7 @@ Push the density up — neutron star cores — and the story
 changes.  Three topological thresholds appear, each a genuine
 change in linking topology:
 
-First, **Borromean dissolution**.  Normal baryons are Borromean
+**Stage 1 — Borromean dissolution.**  Normal baryons are Borromean
 links $\mathcal{B}_3$: no two quarks are pairwise linked, yet
 all three are inseparable.  That topological fact is
 confinement.  The Borromean complement volume
@@ -40,7 +40,7 @@ $V_B = 7.32772 = 8G$ (eight times Catalan's constant) is where
 ninety-nine percent of the baryon mass lives.  Squeeze hard
 enough and the Borromean structure breaks.
 
-Second, **Hopf diquark condensation**.  Freed quarks re-pair as
+**Stage 2 — Hopf diquark condensation.**  Freed quarks re-pair as
 Hopf-linked diquarks $D_{[ij]}^{[ab]}$: now each pair *is*
 linked, with linking number $\pm 1$.  The antisymmetric tensor
 $\epsilon^{abc}$ of color-flavor locking arises from the Hopf
@@ -48,7 +48,7 @@ linking orientation — it is not imposed but inherited from the
 topology.  This is color superconductivity
 \cite{alford1999}.
 
-Third, **the golden ratio wall**.  At
+**Stage 3 — the golden ratio wall.**  At
 $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$ the elliptic
 fiber of Bring's surface acquires a node, the $S_5$ color
 symmetry breaks, and confinement ends entirely.  This is the
