@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/golden-quartet-galois.lean"
   },
   "source_hashes": {
-    "md": "c162d719246b",
+    "md": "76a6be6d4c15",
     "ts": "5d30c5f5b516",
     "lean": "783d3d5a932d"
   },
@@ -546,20 +546,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "014e050f5a0e",
+          "md": "76a6be6d4c15",
           "ts": "5d30c5f5b516",
           "lean": "783d3d5a932d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/descartes-universe/golden-quartet-galois.md:87: All four elements appear; $|G| = 4 = |Q|$, so the action is simply"
+        "reviewed_at": "2026-05-22T20:21:58.963Z",
+        "reviewed_sha": "46718c39488db0edb8fa98206aa54841be78bc13"
       }
     ],
     "voice-scholarly-default": [
@@ -767,5 +767,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:34:07.964Z"
+  "updated_at": "2026-05-22T20:21:58.963Z"
 }

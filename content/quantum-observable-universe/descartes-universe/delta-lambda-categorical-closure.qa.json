@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/descartes-universe/delta-lambda-categorical-closure.lean"
   },
   "source_hashes": {
-    "md": "cbd08dfb7b72",
-    "ts": "c28123687dad",
+    "md": "8cc92cd4183b",
+    "ts": "25d5f236d715",
     "lean": "b963df8300e4"
   },
   "criteria": {
@@ -446,20 +446,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "0765c5cdd381",
-          "ts": "c28123687dad",
+          "md": "8cc92cd4183b",
+          "ts": "25d5f236d715",
           "lean": "b963df8300e4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/descartes-universe/delta-lambda-categorical-closure.md:171: not factor cleanly from $\\Delta(z)$ under $\\pi_\\lambda$. The | quantum-observable-universe/descartes-universe/delta-lambda-categorical-closure.md:188: orbits; the formula encodes this naturally."
+        "reviewed_at": "2026-05-22T20:21:58.963Z",
+        "reviewed_sha": "46718c39488db0edb8fa98206aa54841be78bc13"
       }
     ],
     "voice-scholarly-default": [
@@ -582,5 +582,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:34:07.964Z"
+  "updated_at": "2026-05-22T20:21:58.963Z"
 }

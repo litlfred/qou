@@ -20,14 +20,14 @@ synthesis is structurally well-formed.
 The Lean file gives a **structural carrier** for the Bloch group:
 
 - `PreBlochElement F` — a structure carrying `val : F` with
-  `val ≠ 0` and `val ≠ 1`. These are the elements on which the
-  Bloch group is built.
+ `val ≠ 0` and `val ≠ 1`. These are the elements on which the
+ Bloch group is built.
 - `PreBlochGroup F := FreeAbelianGroup (PreBlochElement F)` —
-  Mathlib's `FreeAbelianGroup` over the pre-Bloch elements.
+ Mathlib's `FreeAbelianGroup` over the pre-Bloch elements.
 - `HasPentagonRelation F` typeclass — axiomatises the existence
-  of the pentagon-relation sub-additive-group.
+ of the pentagon-relation sub-additive-group.
 - `HasBlochGroup F` typeclass — axiomatises the quotient as an
-  abelian group plus the existence of the Bloch-Wigner regulator.
+ abelian group plus the existence of the Bloch-Wigner regulator.
 
 This is **not** the full ~150-line construction (which would
 explicitly enumerate the pentagon relations, prove the quotient
@@ -52,10 +52,10 @@ pentagon closure relation. The full Lean proof requires Mathlib's
 sine-series rearrangement infrastructure. We provide:
 
 - `Cl_2_PentagonHolds` typeclass with two boolean fields (general
-  pentagon + the specific instance at $\pi/3$).
+ pentagon + the specific instance at $\pi/3$).
 - `Cl_2_pentagon_at_zero` — sorry-free sanity-check theorem
-  showing the pentagon is consistent with the boundary lemma
-  $\mathrm{Cl}_2(0) = 0$ (trivially, $5 \cdot \mathrm{Cl}_2(0) = 0$).
+ showing the pentagon is consistent with the boundary lemma
+ $\mathrm{Cl}_2(0) = 0$ (by definition, $5 \cdot \mathrm{Cl}_2(0) = 0$).
 
 ## (3) Faddeev-Kashaev quasi-classical limit
 
@@ -70,11 +70,11 @@ content of [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-
 This file adds:
 
 - `FaddeevKashaevQuasiClassicalLimit x` typeclass — surrogate for
-  the upstream `ArchimedeanLimit` class with explicit named
-  reference to Faddeev 1994 / Kashaev 1997.
+ the upstream `ArchimedeanLimit` class with explicit named
+ reference to Faddeev 1994 / Kashaev 1997.
 - `faddeev_kashaev_at_zero` — sorry-free boundary theorem
-  (trivially holds at $x = 0$ since both sides are identically zero
-  there).
+ (holds by definition at $x = 0$ since both sides are identically zero
+ there).
 
 ## What's *fully* closed by this file
 
@@ -94,11 +94,11 @@ synthesis is structurally well-formed.
 After this file, the open content is exactly:
 
 1. **An explicit `HasBlochGroup F` instance** — full FreeAbelianGroup
-   quotient construction, ~150 lines.
+ quotient construction, ~150 lines.
 2. **An explicit `Cl_2_PentagonHolds` instance** — proof via
-   Mathlib Fourier-series rearrangements once those are available.
+ Mathlib Fourier-series rearrangements once those are available.
 3. **An explicit `FaddeevKashaevQuasiClassicalLimit x` instance
-   for $x \in (0, 1)$** — uniform Tauberian theorem proof.
+ for $x \in (0, 1)$** — uniform Tauberian theorem proof.
 
 Each is a separate, well-isolated mathematical task. The §3b-cond
 scaffolding is structurally complete; the residual mathematical

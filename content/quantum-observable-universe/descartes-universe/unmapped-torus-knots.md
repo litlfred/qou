@@ -1,6 +1,6 @@
 The particle dictionary
 ([knot formula table](#rem:knot-formula-table)) assigns physical
-identities to five of the seven torus knot generators.  Two generators
+identities to five of the seven torus knot generators. Two generators
 remain without particle assignments:
 
 | Generator | Knot | Genus | Crossings | Assignment |
@@ -9,7 +9,7 @@ remain without particle assignments:
 | $T_{3,5}$ | $10_{124}$ | $4$ | $10$ | **?** |
 
 Both are **genus-$4$ saturating** generators — they exactly fill the
-maximal Seifert genus allowed by the Bring's surface.  Their high
+maximal Seifert genus allowed by the Bring's surface. Their high
 crossing numbers ($9$ and $10$) place them at the top of the
 complexity hierarchy within $\mathcal{G}$.
 
@@ -22,7 +22,7 @@ The current mapping uses:
 - $T_{2,7}$: tau lepton $\tau$, charm quark $\mathfrak{c}$ (on divisor) (genus $3$)
 - $T_{3,4}$: Hopf${}^2$ color binding (genus $3$, force carrier)
 
-The Standard Model fermion content is exhausted at genus $3$.  Yet
+The Standard Model fermion content is exhausted at genus $3$. Yet
 the Bring's surface provides two additional generators at genus $4$
 that the generation scheme
 ([knot-particle generation](#def:knot-particle-generation)) does not
@@ -31,7 +31,7 @@ require for known matter particles.
 **The three-fold cover structure of $T_{2,9}$.**
 
 The longitudinal winding number of $T_{2,9}$ factorises as
-$9 = 3 \times 3$.  This is unique among the $T_{2,n}$ generators:
+$9 = 3 \times 3$. This is unique among the $T_{2,n}$ generators:
 
 | Generator | $n$ | $n/3$ | Role |
 |-----------|-----|-------|------|
@@ -42,12 +42,12 @@ $9 = 3 \times 3$.  This is unique among the $T_{2,n}$ generators:
 
 On the torus, $T_{2,9}$ traces the trefoil pattern **three times
 around the longitude** — it is the unique three-fold cover of
-$T_{2,3}$ within $\mathcal{G}$.  The knot group relation
+$T_{2,3}$ within $\mathcal{G}$. The knot group relation
 $x^2 = y^9 = (y^3)^3$ reflects this factorisation: the longitudinal
 generator $y$ completes three full $T_{2,3}$ periods before closing.
 
 This three-fold structure resonates with the three coral tubes
-([color tube interpretation](#rem:color-tube-interpretation)).  Each
+([color tube interpretation](#rem:color-tube-interpretation)). Each
 color fiber carries one copy of the trefoil pattern; $T_{2,9}$
 interpolates all three simultaneously, wrapping once through each
 coral tube per longitudinal period.
@@ -57,17 +57,17 @@ The matter/force distinction in the Standard Model aligns with a
 winding number dichotomy:
 
 - **Matter generators** ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$)
-  have winding numbers that are *prime* and do not factor through a
-  lower generator.
+ have winding numbers that are *prime* and do not factor through a
+ lower generator.
 - **Force generators** ($T_{3,4}$, $T_{3,5}$, $T_{2,9}$)
-  populate the $H^{0,1}$ antiholomorphic sector
-  ([cohomological embedding](#prop:cohomological-embedding)):
-  $T_{2,9}$ has composite winding $9 = 3 \times 3$ that factors
-  through $T_{2,3}$; $T_{3,4}$ provides Hopf-squared color
-  binding; $T_{3,5}$ mediates the weak interaction.
+ populate the $H^{0,1}$ antiholomorphic sector
+ ([cohomological embedding](#prop:cohomological-embedding)):
+ $T_{2,9}$ has composite winding $9 = 3 \times 3$ that factors
+ through $T_{2,3}$; $T_{3,4}$ provides Hopf-squared color
+ binding; $T_{3,5}$ mediates the weak interaction.
 
 A generator whose winding interpolates three matter copies is
-naturally a **binding agent** rather than a standalone particle.
+accordingly a **binding agent** rather than a standalone particle.
 The candidate identification is:
 
 $$
@@ -76,18 +76,18 @@ $$
 
 The $9$ crossings of $T_{2,9}$ — all of the same sign, as for any
 torus knot — provide exactly three crossing triples, one per coral
-tube.  In the Borromean baryon
+tube. In the Borromean baryon
 ([categorical proton](#def:categorical-proton)), the three quark
 components (each $T_{2,3}$) are threaded through the color fibers;
 $T_{2,9}$ as their three-fold cover supplies the topological rigidity
-that holds the configuration together.  The zero hyperbolic volume of
+that holds the configuration together. The zero hyperbolic volume of
 $T_{2,9}$ (shared by all torus knots) is consistent with gluons
 being massless force carriers.
 
 **The structure of $T_{3,5}$.**
 
 The torus knot $T_{3,5}$ has $3$-strand meridional winding, placing it in the force
-carrier family alongside $T_{3,4}$ (Hopf${}^2$ color binding).  Its longitudinal winding
+carrier family alongside $T_{3,4}$ (Hopf${}^2$ color binding). Its longitudinal winding
 $n = 5$ is the same as that of $T_{2,5}$ (muon, bottom), creating a
 cross-link between the two winding families:
 
@@ -97,13 +97,13 @@ cross-link between the two winding families:
 | $3$ | — | **force** | **force** | — | — |
 
 $T_{3,5}$ sits at the intersection of the $m = 3$ (quark) row and the
-$n = 5$ (second-generation) column.  Its knot group relation
+$n = 5$ (second-generation) column. Its knot group relation
 $x^3 = y^5$ intertwines the three-strand color structure with
 five-fold longitudinal winding.
 
 If $T_{2,9}$ carries the strong force, $T_{3,5}$ is a natural
 candidate for a **flavor-changing interaction** — a topological
-mediator that connects the $m = 2$ and $m = 3$ families.  The
+mediator that connects the $m = 2$ and $m = 3$ families. The
 weak force, which is the only Standard Model interaction that
 changes quark flavor (e.g., $u \leftrightarrow d$ via $W^{\pm}$),
 requires precisely this kind of cross-family mediation.

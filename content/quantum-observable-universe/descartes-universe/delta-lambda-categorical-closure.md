@@ -129,15 +129,15 @@ deuteron binding $B(D) = 2.22456$ MeV at the required precision:
 
 - Empirical best-single-block $\Delta_{[5,1]}(D) \approx -22.96$.
 - My closure form predicts $\Delta_{[5,1]}(D) \approx |c_3| \approx 0.260$
-  (using $k = 3$ at the principal pair).
+ (using $k = 3$ at the principal pair).
 - Ratio: $\approx$ **88$\times$**, missing a large structural factor.
 
 Plausible missing factors (not tested in this PR):
 
 - $1/\hbar_q^2 \approx 102$ (Borromean / Planck-tick rescaling) —
-  gives $\approx$ 26.5, close to 22.96.
+ gives $\approx$ 26.5, close to 22.96.
 - A dimension-of-irrep factor $\dim_q(\lambda)$ — the standard partition
-  $[5,1]$ has $\dim_q = 5$, giving $\approx$ 1.3, too small alone.
+ $[5,1]$ has $\dim_q = 5$, giving $\approx$ 1.3, too small alone.
 - Combined: $\dim_q(\lambda) / \hbar_q^2 \approx 510$, too large.
 
 **Honest assessment.** The bare closure form is **not numerically
@@ -151,14 +151,14 @@ diagnostic; the **normalization** needs a categorical refinement.
 **Next refinement paths:**
 
 1. **Per-$\lambda$ discriminant factorization** (the R1 risk in the
-   workplan): if $\Delta^{(\lambda)}(z) \neq \Delta(z)$ for non-trivial
-   $\lambda$, the per-$\lambda$ Galois orbit is different — possibly
-   larger — giving larger residues.
+ workplan): if $\Delta^{(\lambda)}(z) \neq \Delta(z)$ for non-trivial
+ $\lambda$, the per-$\lambda$ Galois orbit is different — possibly
+ larger — giving larger residues.
 2. **Borromean-tower rescaling**: factor of $1/\hbar_q^2$ matches the
-   m_p Borromean tower normalization; integration into Δ_λ would tie
-   it back to the substrate-derived $\rho_K$ thread.
+ m_p Borromean tower normalization; integration into Δ_λ would tie
+ it back to the substrate-derived $\rho_K$ thread.
 3. **Higher jet prolongation** $k \geq 4$ — currently only $k \in \{0, 1, 2, 3\}$
-   are implemented; higher-order corrections may rescale.
+ are implemented; higher-order corrections may rescale.
 
 Phase 2 will pursue path (1) — the per-$\lambda$ discriminant
 factorization is the categorical refinement most consistent with
@@ -168,24 +168,24 @@ suggests a non-trivial block-decomposition is present.
 ## Risk register
 
 - **R1 (high):** Per-$\lambda$ discriminant $\Delta^{(\lambda)}(z)$ may
-  not factor cleanly from $\Delta(z)$ under $\pi_\lambda$. The
-  block-decomposition of a polynomial in $z$ may not respect the
-  Hecke block structure of $H_n(R, q)$. *Resolution if R1 fires:*
-  redefine $\Delta^{(\lambda)}$ via the per-block Wedderburn
-  discriminant (an algebraic invariant of $\mathrm{End}(V_\lambda)$),
-  not by polynomial-projection.
+ not factor from $\Delta(z)$ under $\pi_\lambda$. The
+ block-decomposition of a polynomial in $z$ may not respect the
+ Hecke block structure of $H_n(R, q)$. *Resolution if R1 fires:*
+ redefine $\Delta^{(\lambda)}$ via the per-block Wedderburn
+ discriminant (an algebraic invariant of $\mathrm{End}(V_\lambda)$),
+ not by polynomial-projection.
 
 - **R2 (medium):** Numerical $\Delta_\lambda(D)$ may match empirical
-  binding only loosely (10–50% level), not at 1 ppm. *Resolution if
-  R2 fires:* the closure form is qualitatively right but
-  quantitatively requires refinement — likely the
-  $\mathrm{Res}^{\mathrm{alg}}$ at higher jet prolongation $k \geq 4$,
-  matching the higher-order Picard–Lefschetz residue structure.
+ binding only loosely (10–50% level), not at 1 ppm. *Resolution if
+ R2 fires:* the closure form is qualitatively right but
+ quantitatively requires refinement — likely the
+ $\mathrm{Res}^{\mathrm{alg}}$ at higher jet prolongation $k \geq 4$,
+ matching the higher-order Picard–Lefschetz residue structure.
 
 - **R3 (low):** $\mathcal{O}_{\mathrm{prin}}^{(\lambda)}$ may differ from
-  the trivial-block case (A2.4) at non-trivial $\lambda$. *Resolution:*
-  this is expected — different blocks have different "innermost"
-  orbits; the formula encodes this naturally.
+ the trivial-block case (A2.4) at non-trivial $\lambda$. *Resolution:*
+ this is expected — different blocks have different "innermost"
+ orbits; the formula encodes this accordingly.
 
 ## Status
 

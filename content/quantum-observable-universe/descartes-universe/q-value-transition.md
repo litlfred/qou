@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 The **$Q$-value** of a nuclear transition is the
-$q$-deformed transition energy.  It is NOT defined by classical
+$q$-deformed transition energy. It is NOT defined by classical
 energy conservation — it is defined directly from the categorical
 action.
 
@@ -22,7 +22,7 @@ binding energy at Hecke level $k$
 
 This definition is consistent with the mass accuracy: if
 $|\Delta M/M| \approx 0.002\%$, then $Q$-values for transitions
-with $Q \gg \Delta M$ inherit the same precision.  For transitions
+with $Q \gg \Delta M$ inherit the same precision. For transitions
 with small $Q$ (e.g.\ ${}^3\mathrm{H} \to {}^3\mathrm{He}$,
 $Q = 18.6$ keV), catastrophic cancellation amplifies the mass
 error: $\delta Q/Q \approx (M/Q) \times (\delta M/M)$.
@@ -34,7 +34,7 @@ $Q({}^3\mathrm{H} \to {}^3\mathrm{He}) = 0.01823$ MeV ($-2.1\%$).
 
 The parent and daughter normal forms $\mathcal{N}(p,n)$
 and $\mathcal{N}(p+1, n-1)$ differ at exactly $|\delta p|$
-crossings (the converting nucleon's quarks).  At each changed
+crossings (the converting nucleon's quarks). At each changed
 crossing:
 
 $$
@@ -74,7 +74,7 @@ $$
 
 This equality uses $E_{\mathrm{before}} = E_{\mathrm{after}}$
 (first law of thermodynamics / Noether's theorem for time
-translation).  In the $q$-deformed framework, this
+translation). In the $q$-deformed framework, this
 conservation law **may fail** because the $q$-differential
 does not satisfy $d_q^2 = 0$:
 
@@ -87,15 +87,15 @@ $$
 $$
 
 The $q$-Leibniz rule has a **shift** $f(qx)$ rather than $f(x)$.
-This means the $q$-differential of a product is NOT simply the
-sum of differentials.  Squaring:
+This means the $q$-differential of a product is NOT the
+sum of differentials. Squaring:
 
 $$
   d_q^2  \neq  0 \quad \text{for } q \neq 1
 $$
 
 **Consequence:** The total $q$-energy of the products need not
-equal the total $q$-energy of the parent.  There is a
+equal the total $q$-energy of the parent. There is a
 **$q$-anomaly**:
 
 $$
@@ -106,14 +106,14 @@ $$
   (T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}})
 $$
 
-This anomaly does NOT vanish in general.  It is a genuine
+This anomaly does NOT vanish in general. It is a genuine
 physical effect of the $q$-deformation, not a computational
 artefact.
 
 ## Structure of the $q$-anomaly
 
 The $q$-anomaly arises from the non-commutativity of the
-Iwahori--Hecke algebra.  When the Skein crossing change converts one
+Iwahori--Hecke algebra. When the Skein crossing change converts one
 quark, the re-reduction to Gröbner--Shirshov normal form
 ([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))
 introduces R2 moves $T^2 = (q - q^{-1})T + 1$.
@@ -149,7 +149,7 @@ $$
 $Q \to Q_{\mathrm{classical}}$ (classical
 conservation restored).
 
-**At the substrate parameter $q$:** $\delta_q \neq 0$.  For tritium ($A = 3$):
+**At the substrate parameter $q$:** $\delta_q \neq 0$. For tritium ($A = 3$):
 $\Delta q_{\mathrm{eff}} = 2/9 \cdot \hbar_q^2 \approx 0.0022$,
 giving a correction $\delta_q / Q \sim 5\%$.
 This is the **same correction** that brings the tritium
@@ -159,12 +159,12 @@ half-life prediction from 13 yr to 12.4 yr (vs observed 12.32 yr).
 
 The $q$-anomaly $\delta_q$ means that $Q$ defined
 as the action difference is NOT equal to the sum of kinetic
-energies.  The "missing" energy goes into the $q$-deformation
+energies. The "missing" energy goes into the $q$-deformation
 of the vacuum — it is absorbed by the change in the effective
 substrate parameter from $q$ to $q + \Delta q_{\mathrm{eff}}$.
 
 This is not a violation of physics — it is the $q$-deformed
-version of the quantum anomaly.  The conserved quantity is not
+version of the quantum anomaly. The conserved quantity is not
 $Q$ but the **full categorical action** $S_q$ of
 the entire system (products + vacuum shift):
 
@@ -181,7 +181,7 @@ $$
 $$
 
 Note: the daughter is evaluated at the **shifted** $q$, not the
-original.  This is the $q$-analogue of energy conservation.
+original. This is the $q$-analogue of energy conservation.
 
 ## Limits
 
@@ -194,7 +194,7 @@ original.  This is the $q$-analogue of energy conservation.
 ## $q$-Momentum
 
 The $q$-momentum ([q-momentum](#def:q-momentum)) satisfies
-a similar non-conservation.  Classically:
+a similar non-conservation. Classically:
 
 $$
   \vec{p}_{\mathrm{par}} = \vec{p}_{\mathrm{dau}} + \vec{p}_e + \vec{p}_{\nu^{\sigma}}

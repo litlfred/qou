@@ -34,7 +34,7 @@ knot. The saturation condition $g(K) = g(\Sigma_4) = 4$ forces
 both. By Riemann–Hurwitz on the $S_5$-quotient of $\Sigma_4$, the
 sub-orbit structure of these knots under $S_5\times\langle\hat
 \tau\rangle$ generates the symplectic homology lattice
-$H_1(\Sigma_4, \mathbb{Z}) \cong \mathbb{Z}^{8}$.  No multi-
+$H_1(\Sigma_4, \mathbb{Z}) \cong \mathbb{Z}^{8}$. No multi-
 component link is needed; a 1-component saturator suffices.
 
 **Step 2 — sub-saturation requires multiple components.**
@@ -108,7 +108,7 @@ $\mathrm{Hom}_R(\mathbf{1}, A)$.
 A 2-component link $\hat\beta$ closes to **two** Markov-trace
 strands. Under the same Schur–Weyl decomposition, its image on
 each Wedderburn block is a $f_\lambda \times f_\lambda$ matrix
-acting non-trivially on the seminormal basis (Hoefsmit form):
+acting non-by definition on the seminormal basis (Hoefsmit form):
 $\sigma_1^{2k}$ in $H_n(q)$ for $n \geq 3$ has *seminormal*
 eigenvalues $q^{2 c(b)}$ where $c(b)$ is the cell content of basis
 element $b$ in $V_\lambda$
@@ -136,12 +136,12 @@ $n \geq 3$ formulation outlined here.
 Topologically, the Higgs mechanism corresponds to *linking*
 between the gauge boson and the eaten Goldstone:
 - pre-EWSB: gauge boson = single-component loop in
-  $\mathbf{Rep}(SU(2)_L \times U(1)_Y)$;
+ $\mathbf{Rep}(SU(2)_L \times U(1)_Y)$;
 - post-EWSB: gauge boson + Goldstone = two-component link
-  with linking number $\mathrm{lk} = 1$ (one Goldstone "thread"
-  per broken generator).
+ with linking number $\mathrm{lk} = 1$ (one Goldstone "thread"
+ per broken generator).
 
-Hence broken-symmetry mediators are **2-component links**.  This
+Hence broken-symmetry mediators are **2-component links**. This
 is the topological dual of the Higgs mechanism: the gauge boson
 acquires mass by being linked to a Goldstone thread; the linking
 number is the Higgs charge.
@@ -160,29 +160,29 @@ structurally complete in its **categorical** form (path-α-Bring
 refinement, 2026-05-05) but currently relies on:
 
 1. A categorical formulation of the Higgs mechanism in
-   $\mathbf{Rep}$-language — open content gap (Step 6 above
-   is the topological **interpretation**, not a categorical
-   derivation).
+ $\mathbf{Rep}$-language — open content gap (Step 6 above
+ is the topological **interpretation**, not a categorical
+ derivation).
 2. The Hoefsmit cell-content identification of $W, Z, H$
-   inside $\mathrm{End}_R(A)$ for $A$ the multi-strand
-   substrate — i.e. concrete $(\lambda_W, c_W)$,
-   $(\lambda_Z, c_Z)$, $(\lambda_H, c_H)$ assignments at some
-   minimum strand count $n \geq 3$. This replaces the earlier
-   "asymmetric-genus-$4$-host" gap.
+ inside $\mathrm{End}_R(A)$ for $A$ the multi-strand
+ substrate — i.e. concrete $(\lambda_W, c_W)$,
+ $(\lambda_Z, c_Z)$, $(\lambda_H, c_H)$ assignments at some
+ minimum strand count $n \geq 3$. This replaces the earlier
+ "asymmetric-genus-$4$-host" gap.
 3. The Wirtinger / Seifert combinatorial input for Step 3
-   (component-count vs $H_1$ rank) — standard but not yet
-   content-blocked in QOU.
+ (component-count vs $H_1$ rank) — standard but not yet
+ content-blocked in QOU.
 
 **To promote to `proposition`:**
 - Author the categorical Higgs mechanism block.
 - Author the **Hoefsmit cell-content identification** for the EW
-  triplet inside $\mathrm{End}_R(A)$ — minimum $n \geq 3$, with
-  concrete $(\lambda, c)$ data per carrier. This is what
-  resolves the $\mathrm{End}_R(A)$-decomposition issue flagged
-  in the audit.
+ triplet inside $\mathrm{End}_R(A)$ — minimum $n \geq 3$, with
+ concrete $(\lambda, c)$ data per carrier. This is what
+ resolves the $\mathrm{End}_R(A)$-decomposition issue flagged
+ in the audit.
 - Cite Wirtinger / Seifert classical results explicitly with
-  Lean-formalised analogs (deferred to research-level
-  formalisation).
+ Lean-formalised analogs (deferred to research-level
+ formalisation).
 
 ### Downstream consequence (closing U2 of NV-1)
 
@@ -192,12 +192,12 @@ If this conjecture holds, the structural premise (U2) of
 from a structural premise to a **derived consequence** of:
 
 - the **categorical component-count factorisation** (Step 5):
-  $d$-component closure ⟹ $d - 1$ residual operator-strands ⟹
-  image in $\mathrm{End}_R(A^{\otimes (d-1)})$;
+ $d$-component closure ⟹ $d - 1$ residual operator-strands ⟹
+ image in $\mathrm{End}_R(A^{\otimes (d-1)})$;
 - the Higgs mechanism interpreted as **categorical linking**
-  (Step 6): each broken generator pulls in one Goldstone thread,
-  lifting the boson from $\mathrm{Hom}_R(\mathbf{1}, A)$ to
-  $\mathrm{End}_R(A)$.
+ (Step 6): each broken generator pulls in one Goldstone thread,
+ lifting the boson from $\mathrm{Hom}_R(\mathbf{1}, A)$ to
+ $\mathrm{End}_R(A)$.
 
 This is the principal value of the conjecture: it converts U2
 from a free input into a derivable consequence. The
@@ -208,14 +208,14 @@ refinement.
 ### What this changes downstream
 
 - [`conj:electroweak-higgs-torus-link-triplet`](#conj:electroweak-higgs-torus-link-triplet):
-  U2 is now purely categorical (link vs knot, not host distinct).
-  (refined 2026-05-05).
+ U2 is now purely categorical (link vs knot, not host distinct).
+ (refined 2026-05-05).
 - [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness):
-  the H_2(q)-only formulation is dimensionally inconsistent;
-  needs lift to $\mathrm{End}_R(A)$ with $n \geq 3$ Hoefsmit
-  cell-content data (flagged in audit).
+ the H_2(q)-only formulation is dimensionally inconsistent;
+ needs lift to $\mathrm{End}_R(A)$ with $n \geq 3$ Hoefsmit
+ cell-content data (flagged in audit).
 - [`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization):
-  the closed form $\mathcal{N}_{\rm sym}(q) = q^6 (1+q^2+q^4)/3$
-  is currently the **trace-side** Plancherel partition (Fix B
-  reading); its derivation as a true Wedderburn-orthogonal
-  Plancherel weight requires the Hoefsmit lift.
+ the closed form $\mathcal{N}_{\rm sym}(q) = q^6 (1+q^2+q^4)/3$
+ is currently the **trace-side** Plancherel partition (Fix B
+ reading); its derivation as a true Wedderburn-orthogonal
+ Plancherel weight requires the Hoefsmit lift.

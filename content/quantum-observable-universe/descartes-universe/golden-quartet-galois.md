@@ -14,7 +14,7 @@ $$
    =  (x^2 - x - 1)(x^2 + x - 1)
 $$
 
-over $\mathbb{Q}$.  Under the Galois action of $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q})
+over $\mathbb{Q}$. Under the Galois action of $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q})
 = \langle \tau \rangle \cong \mathbb{Z}/2$ (where $\tau \colon
 \sqrt{5} \mapsto -\sqrt{5}$), the quartet splits into **two orbits**
 of size $2$:
@@ -71,7 +71,7 @@ $$
 Hence $Q_+$ and $Q_-$ are the two Galois orbits.
 
 For the bar involution: $\iota(\varphi) = 1/\varphi \in Q_-$, so
-$\iota$ does not preserve $Q_+$.  It exchanges $Q_+$ and $Q_-$
+$\iota$ does not preserve $Q_+$. It exchanges $Q_+$ and $Q_-$
 because $\varphi \cdot 1/\varphi = 1$ and $-\varphi \cdot (-1/\varphi)
 = 1$, so $\iota(\varphi) = 1/\varphi$, $\iota(-\varphi) = -1/\varphi$.
 
@@ -84,14 +84,14 @@ The product action of $G$ on $Q$ has orbit $G \cdot \varphi = Q$:
 | $(\mathrm{id}, \iota)$ | $1/\varphi$ |
 | $(\tau, \iota)$ | $-\varphi$ |
 
-All four elements appear; $|G| = 4 = |Q|$, so the action is simply
+All four elements appear; $|G| = 4 = |Q|$, so the action is 
 transitive. $\square$
 
 **Consequence: replace $\zeta_5$ Galois arithmetic with quartet orbit.**
 
 Several existing arguments invoke the Galois action of
 $\mathrm{Gal}(\mathbb{Q}(\zeta_5)/\mathbb{Q}) \cong \mathbb{Z}/4$ to track
-$S_5$-equivariance on Bring's surface coordinates.  Where the action
+$S_5$-equivariance on Bring's surface coordinates. Where the action
 ultimately descends to $\varphi$ and $1/\varphi$ (real values), the
 relevant subgroup is the order-2 quotient
 $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$, since
@@ -102,14 +102,14 @@ The quartet-orbit description above lets such arguments be
 **rewritten without $\zeta_5$**: instead of "the $\zeta_5$-action
 on the coral tube coordinates fixes $\varphi$ as a real combination",
 one writes "the golden quartet $Q$ is closed under $G$-action, and
-$\varphi$ is a $\mathrm{Gal}$-orbit representative".  This eliminates
+$\varphi$ is a $\mathrm{Gal}$-orbit representative". This eliminates
 roots-of-unity bookkeeping where it is not essential.
 
 **Connection to Bring's surface.**
 
 The quartic $P(x) = x^4 - 3x^2 + 1$ is the **shadow on the maximal
 real subfield** of the resolvent that determines the chiral
-fibration of Bring's surface.  Its discriminant
+fibration of Bring's surface. Its discriminant
 $\mathrm{disc}(P) = 400 = 2^4 \cdot 5^2$
 (via the depressed-quartic formula $16\,d\,(b^2 - 4d)^2$ at
 $b = -3,\,d = 1$) encodes the depth of the

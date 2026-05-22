@@ -7,7 +7,7 @@ $10$ crossings of the weak vertex
 The weak force in the Descartes universe ($\chi(A) = -6$,
 the substrate $q$) is carried by the torus knot $T_{3,5}$, which has
 **$10$ crossings** — the highest crossing count among generators
-on the Bring surface.  A beta transition inserts the $T_{3,5}$
+on the Bring surface. A beta transition inserts the $T_{3,5}$
 braid into the nuclear braid at the converting quark, then
 reduces the resulting word to obtain the daughter normal form
 plus the emitted lepton pair.
@@ -22,9 +22,9 @@ $\mathcal{N}(Z, N)$ in the Iwahori--Hecke algebra $H_{3A}(q)$
 Each nucleon is a Borromean link $\mathcal{B}_3(q_1, q_2, q_3)$
 with quark strands:
 - Proton: $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$
-  ([categorical proton](#def:categorical-proton))
+ ([categorical proton](#def:categorical-proton))
 - Neutron: $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$
-  ([categorical neutron](#def:categorical-neutron))
+ ([categorical neutron](#def:categorical-neutron))
 
 The crossing type at each generator $\sigma_i$ depends on the
 quark flavours of the two strands: $\mathfrak{u}\text{-}\mathfrak{u}$ (positive), $\mathfrak{d}\text{-}\mathfrak{d}$
@@ -40,10 +40,10 @@ $$
   \beta_{T_{3,5}} =  (\sigma_1 \sigma_2)^5
 $$
 
-This word has **$10$ crossings**.  In the Iwahori--Hecke algebra $H_3(q)$,
+This word has **$10$ crossings**. In the Iwahori--Hecke algebra $H_3(q)$,
 the Hecke reduction of $(\sigma_1 \sigma_2)^5$ eliminates squares
 via $T^2 = (q - q^{-1})T + 1$, producing a polynomial in the
-reduced basis of $H_3(q)$.  The Markov trace of this polynomial
+reduced basis of $H_3(q)$. The Markov trace of this polynomial
 is the **weak vertex form factor**:
 
 $$
@@ -61,7 +61,7 @@ the Markov trace $\mathcal{W}(q)$ of all $10$ crossings.
 ## The $10$-crossing budget
 
 When the $T_{3,5}$ braid is inserted at the converting quark,
-it introduces $10$ crossings into the nuclear braid word.  These
+it introduces $10$ crossings into the nuclear braid word. These
 $10$ crossings are resolved by the Gröbner--Shirshov reduction into three
 components:
 
@@ -72,7 +72,7 @@ components:
 | $7$ | Nuclear re-reduction | R2 moves absorbed into daughter normal form |
 
 The $7$ re-reduction crossings change the R2 step count between
-parent and daughter normal forms.  This is the dominant
+parent and daughter normal forms. This is the dominant
 contribution to the $Q$-value
 ([transition energy](#def:Q-value-transition)) — the single-crossing
 approximation misses $6$ of these $7$ crossings.
@@ -156,7 +156,7 @@ The $T_{3,5}$ braid $(\sigma_1 \sigma_2)^5$ decomposes under
 Gröbner--Shirshov reduction into the lepton pair plus reduction residue.
 The electron trefoil $T_{2,3} = (\sigma_1)^3$ accounts for $3$ of
 the $10$ crossings; the antineutrino unknot $K_{0_1}$ accounts
-for $0$.  The remaining $7$ crossings are the **weak vertex
+for $0$. The remaining $7$ crossings are the **weak vertex
 residue** — absorbed into R2 moves during re-reduction.
 
 $$
@@ -187,7 +187,7 @@ $$
 
 The parent and daughter normal forms differ at all crossings
 affected by the $T_{3,5}$ insertion and its subsequent
-re-reduction — not just the single converting crossing.  The
+re-reduction — not the single converting crossing. The
 $7$ re-reduction crossings from the weak vertex residue modify
 inter-nucleon crossing types at the converting quark's strand,
 changing $\binom{A-1}{1} \cdot 3$ inter-nucleon crossings
@@ -195,14 +195,14 @@ changing $\binom{A-1}{1} \cdot 3$ inter-nucleon crossings
 
 **Re-reduction cost (10-crossing).**
 After the $T_{3,5}$ insertion at the converting quark, the braid
-word gains $10$ crossings.  The Gröbner--Shirshov reduction must:
+word gains $10$ crossings. The Gröbner--Shirshov reduction must:
 
 1. Extract the $3$-crossing electron trefoil from the
-   $T_{3,5}$ decomposition.
+ $T_{3,5}$ decomposition.
 2. Reduce the remaining $7$ crossings via R2 moves
-   ($T^2 = (q - q^{-1})T + 1$) and R3/far-commutativity moves.
+ ($T^2 = (q - q^{-1})T + 1$) and R3/far-commutativity moves.
 3. Propagate the flavour change through all inter-nucleon crossings
-   involving the converting quark's strand.
+ involving the converting quark's strand.
 
 The net R2 step count from all $10$ crossings (not just $1$)
 determines the $Q$-value:
@@ -216,22 +216,22 @@ $$
 ## Why single-crossing was insufficient
 
 The previous single-crossing approximation captured only $1$
-of the $10$ crossings in the weak vertex.  This explains:
+of the $10$ crossings in the weak vertex. This explains:
 
 1. **Systematic overshoot** of $10$–$17\%$ in heavy-nucleus
-   half-life predictions: the missing $9$ crossings contribute
-   additional phase space that shortens the predicted half-life
-   when properly included.
+ half-life predictions: the missing $9$ crossings contribute
+ additional phase space that shortens the predicted half-life
+ when properly included.
 
 2. **Tritium accuracy** ($< 2\%$ error): for $A = 3$, the
-   nuclear braid is short enough that the $7$ re-reduction
-   crossings have limited room to propagate — the single-crossing
-   approximation is accidentally good.
+ nuclear braid is short enough that the $7$ re-reduction
+ crossings have limited room to propagate — the single-crossing
+ approximation is accidentally good.
 
 3. **Mass-dependent correction**: heavier nuclei have more
-   inter-nucleon crossings affected by the converting quark's
-   flavour change, so the $7$ re-reduction crossings modify
-   more transfer matrices.
+ inter-nucleon crossings affected by the converting quark's
+ flavour change, so the $7$ re-reduction crossings modify
+ more transfer matrices.
 
 **Open computation:** The exact weak vertex form factor
 $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$

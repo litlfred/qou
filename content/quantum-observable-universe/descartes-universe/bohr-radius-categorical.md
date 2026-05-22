@@ -37,7 +37,7 @@ $$
 > shows that per-generator transfer-matrix updates are in general
 > *multiplicative*, mixing intra-atomic (dressed/kinetic-like) and
 > inter-atomic (bare/Coulomb-like) crossing contributions
-> nonlinearly within each $V_i$.  Round-8 below finds that the
+> nonlinearly within each $V_i$. Round-8 below finds that the
 > cross-terms $h_b \cdot h_d$ happen to **cancel for the optimal
 > ordering** $[p_1, e_2, e_1, p_2]$ of $H_2$, leaving an additive
 > $\{h_b, h_d\}$ decomposition there; but this cancellation is
@@ -55,24 +55,24 @@ $$
 
 **Rigorous (in QOU):**
 - $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$ as the operator-selection
-  LP weight of the EM force-carrier (Bring complex)
-  — see [`prop:em-coupling-projection`](#prop:em-coupling-projection).
+ LP weight of the EM force-carrier (Bring complex)
+ — see [`prop:em-coupling-projection`](#prop:em-coupling-projection).
 - The dressed transfer matrix eigenvalues $(q^{2k+1}, -q^{-(2k+1)})$
-  for shell $k$ — derived from the $B_3$ dressing of the bare
-  $pe$ crossing.
+ for shell $k$ — derived from the $B_3$ dressing of the bare
+ $pe$ crossing.
 - $a_{0}^{\mathrm{cat}}$ at $q_0 \approx 1.11$ evaluates to
-  $5.29 \times 10^{-11}$ m using $\alpha_{EM}(q_0) \approx 1/137$
-  and standard $\hbar, m_e, c$.
+ $5.29 \times 10^{-11}$ m using $\alpha_{EM}(q_0) \approx 1/137$
+ and standard $\hbar, m_e, c$.
 
 **Transported from standard QED (not derived from Hecke):**
 - The dimensional analysis $\Phi_{1}^{\mathrm{kin}} \sim \hbar^2/(m_e \ell^2)$
-  and $\Phi_{1}^{\mathrm{Coul}} \sim \alpha_{EM}\,\hbar c / \ell$.
+ and $\Phi_{1}^{\mathrm{Coul}} \sim \alpha_{EM}\,\hbar c / \ell$.
 - The virial-balance equation $\Phi_{1}^{\mathrm{kin}} = \Phi_{1}^{\mathrm{Coul}}$
-  as the defining property of the bound-state length.
+ as the defining property of the bound-state length.
 - The agreement of $a_{0}^{\mathrm{cat}}(q_0)$ with the experimental
-  Bohr radius — this match is **tautological** because
-  $a_0 = \hbar/(m_e c \alpha)$ is the standard physics formula,
-  and we used standard $\alpha \approx 1/137$ as input.
+ Bohr radius — this match is **tautological** because
+ $a_0 = \hbar/(m_e c \alpha)$ is the standard physics formula,
+ and we used standard $\alpha \approx 1/137$ as input.
 
 ### Companion remark — why this matters anyway
 
@@ -80,16 +80,16 @@ Even as a transport sketch, this proposition serves a structural
 purpose:
 
 1. It identifies the **layer in QOU where the Bohr-virial
-   physics must be encoded** — namely, the relationship between
-   the dressed transfer matrix's eigenvalue structure and the
-   archimedean energy scale.
+ physics must be encoded** — namely, the relationship between
+ the dressed transfer matrix's eigenvalue structure and the
+ archimedean energy scale.
 2. It pinpoints the **specific Hecke-algebraic gap** (the absence
-   of a per-generator additive decomposition into kinetic and
-   Coulomb components) as the obstruction to categorical
-   closure.
+ of a per-generator additive decomposition into kinetic and
+ Coulomb components) as the obstruction to categorical
+ closure.
 3. It provides a target equation
-   ($a_{0}^{\mathrm{cat}} = \hbar/(m_e c \alpha_{EM})$) against
-   which any future categorical derivation can be compared.
+ ($a_{0}^{\mathrm{cat}} = \hbar/(m_e c \alpha_{EM})$) against
+ which any future categorical derivation can be compared.
 
 ### Five candidate routes for genuine categorical closure (Option 4a–4e)
 
@@ -104,7 +104,7 @@ alone. Five routes worth pursuing:
 Modify the H_2 binding code to compute $V_i$ symbolically in $q$
 *and* track separately the contribution of each crossing type
 (intra-atomic dressed vs inter-atomic bare). The transfer-matrix
-update being multiplicative means we cannot simply split $V_i$
+update being multiplicative means we cannot split $V_i$
 additively, but a polynomial-ring recompute would yield $V_i$ as
 a polynomial in $\{h, [n]_q, [k]_q\}$ where the kinetic
 coefficient (from dressed crossings) and Coulomb coefficient (from
@@ -120,7 +120,7 @@ between the two monomial families.
 **Pros:** concrete, computational, leverages existing
 infrastructure.
 **Cons:** the multiplicative mixing means the "balance" may not
-be cleanly identifiable; the result may be a fully-mixed
+be identifiable; the result may be a fully-mixed
 polynomial without a natural kinetic/Coulomb factorization.
 
 #### Option 4b — Spectral-gap of dressed vs bare crossings
@@ -129,7 +129,7 @@ Pure Hecke-algebraic quantities:
 - $\Delta_{\mathrm{kin}}(k) := \log|q^{2k+1}/q^{-(2k+1)}|
   = (4k+2)\log q$ — spectral gap of the shell-$k$ dressed crossing.
 - $\Delta_{\mathrm{Coul}} := \log|q/q^{-1}| = 2\log q$
-  — spectral gap of the bare crossing.
+ — spectral gap of the bare crossing.
 
 These are **categorical** definitions in the sense that they are
 extracted directly from the Hecke generator eigenvalues (no QED
@@ -262,7 +262,7 @@ $$
 $$
 
 This is **exactly the Bohr $1/n^2$ energy-level spacing** if we
-identify $n = 2k+1$.  The QOU shell index $k$ relates to the
+identify $n = 2k+1$. The QOU shell index $k$ relates to the
 physics quantum number $n$ by $n = 2k+1$ — so QOU $k=0$
 corresponds to physics $n=1$ (ground state), $k=1$ to $n=3$,
 etc., with the dressing-power $2k+1$ playing the role of the

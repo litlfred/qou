@@ -6,7 +6,7 @@ $$
 $$
 
 The unknot has Seifert genus $0$, crossing number $0$, and
-trivial Skein polynomial $J_\nu(q) = 1$.  It contributes no
+trivial Skein polynomial $J_\nu(q) = 1$. It contributes no
 hyperbolic volume and hence no bare mass: the neutrino mass
 comes entirely from vacuum drag
 ([mass identity](#def:mass-identity)), not from knot topology.
@@ -18,10 +18,10 @@ fermion) and the outlined trefoil (backward-time fermion).
 **Properties.**
 
 - **Zero crossing chirality**: $Q(\nu) = 0$ (no crossings to
-  be asymmetric).  The neutrino is electrically neutral.
-- **Trivial braiding**: the $R$-matrix acts trivially on the
-  unknot component.  Neutrinos do not participate in the
-  crossing-energy interactions that produce Coulomb repulsion.
+ be asymmetric). The neutrino is electrically neutral.
+- **Trivial braiding**: the $R$-matrix acts as the identity on the
+ unknot component. Neutrinos do not participate in the
+ crossing-energy interactions that produce Coulomb repulsion.
 - **Vacuum drag mass**: the neutrino mass
-  $m_\nu \sim \mu_0 \cdot (q - 1)$ is proportional to the
-  baseline vacuum drag, which vanishes at $q = 1$.
+ $m_\nu \sim \mu_0 \cdot (q - 1)$ is proportional to the
+ baseline vacuum drag, which vanishes at $q = 1$.

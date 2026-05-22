@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/descartes-universe/shell-closure-normal-form.lean"
   },
   "source_hashes": {
-    "md": "1a8332273643",
+    "md": "2f1a53cf6021",
     "ts": "67bd68ac5939",
     "lean": "9f7ff271d8f1"
   },
@@ -465,20 +465,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "ea4848236dae",
+          "md": "2f1a53cf6021",
           "ts": "67bd68ac5939",
           "lean": "9f7ff271d8f1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/descartes-universe/shell-closure-normal-form.md:37: - **Base case.** $\\mathcal{N}(1, 0) = \\mathbf{1}$ is trivially"
+        "reviewed_at": "2026-05-22T20:21:58.963Z",
+        "reviewed_sha": "46718c39488db0edb8fa98206aa54841be78bc13"
       }
     ],
     "voice-scholarly-default": [
@@ -686,5 +686,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:29:51.882Z"
+  "updated_at": "2026-05-22T20:21:58.963Z"
 }

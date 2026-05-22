@@ -1,9 +1,9 @@
 When a nuclear shell closes (palindromic Poincaré histogram,
 [shell closure](#prop:shell-closure-normal-form)), the next
-nucleon cannot enter the closed shell.  It must start a new
+nucleon cannot enter the closed shell. It must start a new
 shell, and the **inter-shell crossing** is mediated by a torus
 knot operator $T_{2,k}$ whose index $k$ equals the size of the
-closed shell.  This proposition formalizes the inductive
+closed shell. This proposition formalizes the inductive
 construction across shell boundaries and derives the magic
 numbers from the torus knot hierarchy.
 
@@ -11,21 +11,21 @@ numbers from the torus knot hierarchy.
 
 The inductive construction
 ([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))
-builds the nucleus one nucleon at a time.  Within a shell, each
+builds the nucleus one nucleon at a time. Within a shell, each
 new nucleon crosses existing nucleons via **bare transfer
 matrices** $T(c, d)$ with crossing coefficients pp, nn, or mix
 ([transfer matrix operator](#def:transfer-matrix-operator)).
 
-At a shell boundary, the situation changes.  The closed shell's
+At a shell boundary, the situation changes. The closed shell's
 nucleons form a tightly intertwined braid — its normal form
-fills the Bruhat lattice symmetrically.  A new nucleon crossing
+fills the Bruhat lattice symmetrically. A new nucleon crossing
 this closed shell does not see individual nucleons; it sees the
 **collective torus knot** $T_{2, n_s}$ where $n_s$ is the
 shell occupancy.
 
 **Definition (inter-shell operator).**
 Let shell $\ell$ contain $n_s$ nucleons and be closed
-(palindromic histogram).  The crossing of a new nucleon
+(palindromic histogram). The crossing of a new nucleon
 (starting shell $\ell + 1$) with the closed shell $\ell$ is
 encoded by the torus knot transfer matrix:
 
@@ -105,7 +105,7 @@ produces a Gröbner--Shirshov normal form, by the same argument as the
 intra-shell step: the Chebyshev crossing element
 $(c_{n_s}\sigma + d_{n_s})$ is linear in $\sigma$ (no
 squares), and the division algorithm produces a unique normal
-form remainder.  The palindromic structure of the previous
+form remainder. The palindromic structure of the previous
 shell is **not destroyed** — the new nucleon's generators
 act on strands $A, A+1, \ldots$, which are disjoint from the
 closed shell's generators $0, \ldots, A_{\mathrm{close}} - 1$.
@@ -113,7 +113,7 @@ closed shell's generators $0, \ldots, A_{\mathrm{close}} - 1$.
 **(iii) Magic numbers from the six embeddable torus knots.**
 The embeddable torus knots on the Bring surface
 ([torus knot generators](#prop:torus-knot-generators)) assign
-shell sizes via their $r \times s$ products.  The six
+shell sizes via their $r \times s$ products. The six
 nontrivial torus knots and their shell assignments:
 
 | Torus knot | $(r, s)$ | Seifert genus | Degree | $r \times s$ | Shell |
@@ -126,13 +126,13 @@ nontrivial torus knots and their shell assignments:
 | $T_{3,5}$ | $(3, 5)$ | $4$ | $2$ | $15$ | $4'$ |
 
 The **shell capacity** is the number of nucleon pairs that
-the torus knot can bind.  Each torus knot $T_{r,s}$ mediates
+the torus knot can bind. Each torus knot $T_{r,s}$ mediates
 a shell of size $r \times s$ nucleon crossings, but the actual
 shell occupancy is the number of nucleon **pairs** (proton +
 neutron) that fill the shell before palindromic closure.
 
 The degree-$1$ knots ($T_{2,n}$, single-strand meridional
-winding) give the **primary shell sequence**.  The degree-$2$
+winding) give the **primary shell sequence**. The degree-$2$
 knots ($T_{2,9}$, $T_{3,4}$) give **sub-shell splittings**
 that refine the primary shells.
 
@@ -157,7 +157,7 @@ $\{2, 8, 20, 28, 50, 82, 126\}$.
 **(v) Energy gap at shell boundaries.**
 The Hecke energy $\Delta E$ jumps by a factor
 $\sim |\lambda_+(T_{2,n_s})/\lambda_-(T_{2,n_s})|$ at each
-shell boundary.  For the first shell closure (He-4 $\to$
+shell boundary. For the first shell closure (He-4 $\to$
 Li-5):
 
 $$
@@ -169,7 +169,7 @@ $$
 
 This ratio is the **shell gap** — the algebraic signature of
 the transition from intra-shell (bare crossings) to inter-shell
-(torus knot crossings).  The gap grows with shell size because
+(torus knot crossings). The gap grows with shell size because
 the torus knot eigenvalue ratio $|\lambda_+/\lambda_-| = q^{2n_s}$
 increases exponentially.
 
@@ -178,30 +178,30 @@ increases exponentially.
 The full inductive argument for the construction of any nucleus
 $\mathcal{A}(Z, N)$ proceeds:
 
-1. **Base.** $\bar{\mathcal{N}}(1, 0) = \mathbf{1}$ — trivially
-   in normal form.
+1. **Base.** $\bar{\mathcal{N}}(1, 0) = \mathbf{1}$ — by definition
+ in normal form.
 
 2. **Intra-shell step.** Given $\bar{\mathcal{N}}_A$ in normal
-   form within shell $\ell$, the next nucleon crosses via bare
-   transfer matrix $(c_j\sigma_j + d_j)$.  Apply Gröbner--Shirshov
-   division: the result is in normal form
-   ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)).
+ form within shell $\ell$, the next nucleon crosses via bare
+ transfer matrix $(c_j\sigma_j + d_j)$. Apply Gröbner--Shirshov
+ division: the result is in normal form
+ ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)).
 
 3. **Shell closure detection.** After each step, check the
-   word-length histogram.  If palindromic, the shell is closed.
+ word-length histogram. If palindromic, the shell is closed.
 
 4. **Inter-shell step.** The next nucleon after a shell closure
-   crosses the closed shell via the Chebyshev crossing element
-   $(c_{n_s}\sigma + d_{n_s})$ of $T_{2, n_s}$.  This element
-   is linear in $\sigma$ — no $\sigma^2$ terms — so it enters
-   the Gröbner--Shirshov division on the same footing as any intra-shell
-   crossing.  The division algorithm produces a normal form.
+ crosses the closed shell via the Chebyshev crossing element
+ $(c_{n_s}\sigma + d_{n_s})$ of $T_{2, n_s}$. This element
+ is linear in $\sigma$ — no $\sigma^2$ terms — so it enters
+ the Gröbner--Shirshov division on the same footing as any intra-shell
+ crossing. The division algorithm produces a normal form.
 
 5. **Repeat** until $A = Z + N$ nucleons are linked.
 
 At every step — intra-shell or inter-shell — the Gröbner--Shirshov
-division algorithm produces a unique normal form.  The
+division algorithm produces a unique normal form. The
 inter-shell step differs only in the **magnitude** of the
 crossing coefficients (Chebyshev-enhanced), not in the
-algebraic structure.  Normalization preservation follows from
+algebraic structure. Normalization preservation follows from
 the same main theorem used for intra-shell steps.
