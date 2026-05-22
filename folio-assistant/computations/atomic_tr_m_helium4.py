@@ -140,7 +140,8 @@ def disjoint_product_value() -> tuple[mp.mpf, mp.mpf, mp.mpf]:
     return tr_p ** 2 * tr_n ** 2, tr_p, tr_n
 
 
-# ── (B) Direct H_12 recursion via markov_trace_recursive ─────
+# ── (B) Direct H_12 trace via Wenzl bridge (preferred) or
+#       markov_trace_recursive (legacy fallback) ─────────────
 class _Timeout(Exception):
     pass
 
@@ -149,21 +150,76 @@ def _alarm(sig, frame):  # noqa: ARG001
     raise _Timeout()
 
 
-def direct_h12_recursion(budget_sec: float) -> tuple[mp.mpf | None, float, str | None]:
-    """Try `markov_trace_of_word(12, helium4_word)` with a soft
-    time budget.  Returns (|tr_M|, elapsed, error_or_None)."""
-    import sympy as sp  # noqa: F401  (used inside the import)
+def _helium4_word_to_factors() -> list[tuple[float, float, int]]:
+    """Convert HELIUM4_WORD (jet-tracker 1-indexed signed ints) into
+    the (c, d, g) factor triples consumed by `tr_M_via_wenzl_bridge_mpfr`.
 
-    from markov_trace_recursive import markov_trace_of_word
+    Convention:
+      positive i  → σ_i                  → (1.0,  0.0, i-1)
+      negative i  → σ_{|i|}^{-1} = σ - h → (1.0, -h,   |i|-1)
 
+    `g` is 0-based (σ_0 = sigmas[0]); the Rust fast path inside
+    `tr_M_via_wenzl_bridge_mpfr` shifts g back to 1-based at the
+    FFI boundary (PR #901). `d` is rounded against the global h
+    snap-map (`{0.0, -h, -h/2}`), so we pass the f64 `-h_val`
+    matching `_chi_lambda_of_word_mpf`'s `round(d, 9)` key.
+    """
+    h_val = float(Q0_MP - 1 / Q0_MP)
+    factors: list[tuple[float, float, int]] = []
+    for i in HELIUM4_WORD:
+        if i > 0:
+            factors.append((1.0, 0.0, i - 1))
+        else:
+            factors.append((1.0, -h_val, abs(i) - 1))
+    return factors
+
+
+def direct_h12_recursion(
+    budget_sec: float,
+    *,
+    use_wenzl_bridge: bool = True,
+) -> tuple[mp.mpf | None, float, str | None]:
+    """Compute |tr_M(⁴He)| at H_12 with a soft time budget.
+
+    Default path (PR #921+) is the Wenzl bridge
+    `Σ_λ y_λ · χ_λ(W)` via `tr_M_via_wenzl_bridge_mpfr`, which
+    benefits from the Rust hecke-engine fast path (rayon-parallel
+    χ_λ over all 77 partitions of 12) wired in PR #901 — expected
+    sub-second wall time when `pyhecke_native` is built, with a
+    Python-mpmath fallback otherwise.
+
+    `use_wenzl_bridge=False` reverts to the legacy
+    `markov_trace_of_word` markov-peel ascent, kept for
+    cross-validation (sympy-based; previously hit the 8 min budget
+    at H_12).
+
+    Returns (|tr_M|, elapsed, error_or_None).
+    """
     t0 = time.time()
-    # Use SIGALRM as a soft watchdog (POSIX only; safe on Linux deploy).
     have_alarm = hasattr(signal, "SIGALRM")
     if have_alarm:
         signal.signal(signal.SIGALRM, _alarm)
         signal.alarm(int(budget_sec))
     try:
-        tr_sym = markov_trace_of_word(HELIUM4_N, HELIUM4_WORD)
+        if use_wenzl_bridge:
+            from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
+            from q_parameter import Q_50_DIGIT_STR
+
+            factors = _helium4_word_to_factors()
+            tr_mpf = tr_M_via_wenzl_bridge_mpfr(
+                factors, HELIUM4_N, Q_50_DIGIT_STR, dps=mp.mp.dps,
+            )
+            return abs(mp.mpf(tr_mpf)), time.time() - t0, None
+        else:
+            # Legacy markov-peel ascent — sympy expression, then
+            # numerical substitution at q_0.
+            import sympy as sp
+            from markov_trace_recursive import markov_trace_of_word
+
+            tr_sym = markov_trace_of_word(HELIUM4_N, HELIUM4_WORD)
+            q_sym = sp.symbols("q", positive=True)
+            val_sym = tr_sym.subs(q_sym, sp.sympify(str(Q_MP))).evalf(mp.mp.dps)
+            return abs(mp.mpf(str(val_sym))), time.time() - t0, None
     except _Timeout:
         return None, time.time() - t0, f"timeout_after_{int(budget_sec)}s"
     except Exception as exc:  # pragma: no cover
@@ -171,12 +227,6 @@ def direct_h12_recursion(budget_sec: float) -> tuple[mp.mpf | None, float, str |
     finally:
         if have_alarm:
             signal.alarm(0)
-
-    # Evaluate at q_0 to 50 dps.
-    import sympy as sp
-    q_sym = sp.symbols("q", positive=True)
-    val_sym = tr_sym.subs(q_sym, sp.sympify(str(Q_MP))).evalf(mp.mp.dps)
-    return abs(mp.mpf(str(val_sym))), time.time() - t0, None
 
 
 # ── Main ─────────────────────────────────────────────────────
