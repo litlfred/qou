@@ -213,7 +213,7 @@ ephemeral.
    the PR + CI visible to siblings.
 
 7. **Default merge method: "Rebase and merge".** When a PR is
-   ready and the user authorises the merge, use
+   ready and the user authorizes the merge, use
    `mcp__github__merge_pull_request` with `merge_method: "rebase"`
    (equivalently the "Rebase and merge" button in the GitHub UI).
    This applies the branch's structured commits to `main` as a
@@ -241,8 +241,20 @@ ephemeral.
 
    The standing-authorization rule for ALWAYS-PR (above) applies
    here too: agents do not need to ask "which merge method?" each
-   time — default to rebase-merge unless the user has explicitly
-   said otherwise for the PR in question.
+   time — default to rebase-merge unless the branch history is
+   noisy (see the **Squash** exception above; check `git log
+   <merge-base>..HEAD --oneline` for `wip` / `oops` / `fix typo`
+   patterns before committing to a method) or the user has
+   explicitly said otherwise for the PR in question.
+
+   **Supersedes older guidance.** This rule overrides any
+   conflicting merge-method recommendation that appears in
+   `.claude/skills/local/*.md` skill documents. Where a skill
+   (e.g. `integration-backlog.md`) historically suggested
+   `merge_method: "merge"` or `"squash"` as a default, those
+   options now apply only as the exceptions described above.
+   Skill authors updating skill docs should refer to this rule
+   rather than restating the policy in their own words.
 
 ### Exception: batch audit-job runs
 
