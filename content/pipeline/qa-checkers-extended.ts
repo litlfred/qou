@@ -194,11 +194,26 @@ function getComputationField(tsSrc: string): {
   witness?: string;
   probe?: string;
 } {
-  // Light extraction — looks for `computation: { witness: "..." }`
-  // and `probe: "..."` patterns at any nesting depth.
+  // Light extraction — looks for `computation: { witness: "..." }`,
+  // `computation: { witness: [...] }`, and `probe: "..."` patterns at
+  // any nesting depth.
+  //
+  // Multi-witness array form `witness: ["a.witness.json", "b.witness.json"]`
+  // is matched and the FIRST path is returned for the `witness?: string`
+  // slot — sufficient for `canonical-witness-pinned` (which only needs
+  // to know that ANY canonical witness is declared) and for
+  // `compute-witness-exists` (which checks the declared witness path
+  // exists; an array implies at least one path that should exist).
   const result: { witness?: string; probe?: string } = {};
-  const witnessMatch = tsSrc.match(/witness:\s*["']([^"']+)["']/);
-  if (witnessMatch) result.witness = witnessMatch[1];
+  const witnessStringMatch = tsSrc.match(/witness:\s*["']([^"']+)["']/);
+  if (witnessStringMatch) {
+    result.witness = witnessStringMatch[1];
+  } else {
+    const witnessArrayMatch = tsSrc.match(
+      /witness:\s*\[\s*["']([^"']+)["']/,
+    );
+    if (witnessArrayMatch) result.witness = witnessArrayMatch[1];
+  }
   const probeMatch = tsSrc.match(/probe:\s*["']([^"']+)["']/);
   if (probeMatch) result.probe = probeMatch[1];
   return result;

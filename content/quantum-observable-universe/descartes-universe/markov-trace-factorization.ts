@@ -18,4 +18,9 @@ export default theorem({
     validation: "not_checked",
   },
   uses: ["prop:generator-volume-decomposition", "thm:markov-trace-product"],
+  computation: {
+    engine: "mpmath",
+    witness: "folio-assistant/computations/gram-matrix-dual.witness.json",
+    status: "verified",
+  },
 });
