@@ -123,6 +123,7 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                         Q_beta_n_mev: float = float(_Q_BETA_N),
                         reduce_before_trace: bool = True,
+                        use_closed_form: bool = False,
                         verbose: bool = False,
                         **kwargs) -> dict:
     """Binding via canonical Markov trace.
@@ -168,40 +169,104 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     n_strands = 3 * A
     div = SymbolicHeckeDivision() if reduce_before_trace else None
 
-    atom_elem = build_atom_symbolic(Z, N, include_inter=True,
-                                      m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
-    free_elem = build_atom_symbolic(Z, N, include_inter=False,
-                                      m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
+    # ── Fast path: closed-form tr_M(𝓑_K) (Phase 5q identity) ────
+    # When `use_closed_form=True`, skip the symbolic H_{3A} tr_M
+    # recursion entirely. The Phase 5c.1 + 5l identity gives
+    #   tr_M(𝓑_K)      = tr_M^3(p)^Z · tr_M^3(n)^N · ∏_i f_i(q)
+    #   tr_M(𝓑_K^vac) = tr_M^3(p)^Z · tr_M^3(n)^N           (no interfaces)
+    # where the H_3 building blocks tr_M^3(p), tr_M^3(n) are computed
+    # ONCE at q_0 and reused for every (Z, N). For A=3 this cuts the
+    # 5-12 k-op sympy aggregation entirely; for A≥4 it sidesteps the
+    # H_{3A} partition sum which is the asymptotic bottleneck per
+    # cheat-sheet §5 Migration Backlog #4.
+    if use_closed_form:
+        try:
+            from closed_form_tau_M import closed_form_tau_M
+            from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
+            from hecke_core import (
+                _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
+            )
+            import mpmath as mp
+            from q_parameter import Q_50_DIGIT_STR
 
-    if reduce_before_trace:
-        atom_elem, _ = div.reduce(atom_elem, engine='laurent')
-        free_elem, _ = div.reduce(free_elem, engine='laurent')
+            t0 = time.time()
+            q_val = mp.mpf(Q_50_DIGIT_STR)
+            # tau_p, tau_n via the Wenzl bridge at H_3 — same
+            # entry point as the production atom-level code, with
+            # Python fallback when pyhecke_native is unavailable.
+            def _nucleon_word(g0, g1):
+                return (
+                    [(c, d, 0) for c, d in g0]
+                    + [(c, d, 1) for c, d in g1]
+                )
+            tau_p = tr_M_via_wenzl_bridge_mpfr(
+                _nucleon_word(_PROTON_G0, _PROTON_G1),
+                3, Q_50_DIGIT_STR, dps=50,
+            )
+            tau_n = tr_M_via_wenzl_bridge_mpfr(
+                _nucleon_word(_NEUTRON_G0, _NEUTRON_G1),
+                3, Q_50_DIGIT_STR, dps=50,
+            )
+            # `strict_averaged` matches the symbolic path's literal
+            # σ - h/2 factor for p-n interfaces (the convention in
+            # `_factor_from` inside build_atom_symbolic). The default
+            # `chi_lambda_braid` convention treats averaged as σ (the
+            # production marshalling for chi_lambda_braid) which
+            # gives a different numerical value here.
+            tr_atom_mp = closed_form_tau_M(
+                Z, N, q_val, tau_p, tau_n,
+                pn_convention="strict_averaged",
+            )
+            # Free config = no interface factors → just the constit part.
+            tr_free_mp = (mp.mpf(tau_p) ** Z) * (mp.mpf(tau_n) ** N)
+            dt = time.time() - t0
+            tr_atom = complex(float(tr_atom_mp), 0.0)
+            tr_free = complex(float(tr_free_mp), 0.0)
+            atom_n_terms = -1  # not computed in closed-form path
+            free_n_terms = -1
+            tr_atom_sym = None
+            tr_free_sym = None
+        except Exception as e:
+            return {"status": "closed_form_error", "error": str(e),
+                    "Z": Z, "N": N, "A": A}
+    else:
+        # ── Legacy symbolic path ──────────────────────────────
+        atom_elem = build_atom_symbolic(Z, N, include_inter=True,
+                                          m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
+        free_elem = build_atom_symbolic(Z, N, include_inter=False,
+                                          m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
 
-    if verbose:
-        print(f"  atom NF: {atom_elem.n_terms()} terms;  "
-              f"free NF: {free_elem.n_terms()} terms")
+        if reduce_before_trace:
+            atom_elem, _ = div.reduce(atom_elem, engine='laurent')
+            free_elem, _ = div.reduce(free_elem, engine='laurent')
 
-    t0 = time.time()
-    try:
-        # `simplify=False`: skip the `sp.simplify` step in tr_M_element.
-        # At A=3 the aggregated total has ~5000-12000 sympy ops; calling
-        # `simplify` exceeds 30 minutes (³He) while the recursion itself
-        # runs in seconds.  Numerical evaluation at q=q₀ (below) is
-        # unaffected.  See #508 Phase 2 part 2.
-        tr_atom_sym = tr_M_element(atom_elem, n_strands, simplify=False)
-        tr_free_sym = tr_M_element(free_elem, n_strands, simplify=False)
-    except (NotImplementedError, RecursionError) as e:
-        return {"status": "trace_error", "error": str(e),
-                "Z": Z, "N": N, "A": A,
-                "n_atom_terms": atom_elem.n_terms(),
-                "n_free_terms": free_elem.n_terms()}
-    dt = time.time() - t0
+        if verbose:
+            print(f"  atom NF: {atom_elem.n_terms()} terms;  "
+                  f"free NF: {free_elem.n_terms()} terms")
 
-    try:
-        tr_atom = complex(sp.N(tr_atom_sym.subs(q_sym, Q0_NUM)))
-        tr_free = complex(sp.N(tr_free_sym.subs(q_sym, Q0_NUM)))
-    except Exception as e:
-        return {"status": "eval_error", "error": str(e)}
+        t0 = time.time()
+        try:
+            # `simplify=False`: skip the `sp.simplify` step in tr_M_element.
+            # At A=3 the aggregated total has ~5000-12000 sympy ops; calling
+            # `simplify` exceeds 30 minutes (³He) while the recursion itself
+            # runs in seconds.  Numerical evaluation at q=q₀ (below) is
+            # unaffected.  See #508 Phase 2 part 2.
+            tr_atom_sym = tr_M_element(atom_elem, n_strands, simplify=False)
+            tr_free_sym = tr_M_element(free_elem, n_strands, simplify=False)
+        except (NotImplementedError, RecursionError) as e:
+            return {"status": "trace_error", "error": str(e),
+                    "Z": Z, "N": N, "A": A,
+                    "n_atom_terms": atom_elem.n_terms(),
+                    "n_free_terms": free_elem.n_terms()}
+        dt = time.time() - t0
+        atom_n_terms = atom_elem.n_terms()
+        free_n_terms = free_elem.n_terms()
+
+        try:
+            tr_atom = complex(sp.N(tr_atom_sym.subs(q_sym, Q0_NUM)))
+            tr_free = complex(sp.N(tr_free_sym.subs(q_sym, Q0_NUM)))
+        except Exception as e:
+            return {"status": "eval_error", "error": str(e)}
 
     tr_atom_r = tr_atom.real if abs(tr_atom.imag) < 1e-6 else tr_atom
     tr_free_r = tr_free.real if abs(tr_free.imag) < 1e-6 else tr_free
@@ -213,8 +278,9 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         "tr_M_free": str(tr_free_r),
         "Q_beta_n_MeV": Q_beta_n_mev,
         "B_MeV": float(B),
-        "n_atom_terms": atom_elem.n_terms(),
-        "n_free_terms": free_elem.n_terms(),
+        "n_atom_terms": atom_n_terms,
+        "n_free_terms": free_n_terms,
+        "use_closed_form": use_closed_form,
     }
 
 
