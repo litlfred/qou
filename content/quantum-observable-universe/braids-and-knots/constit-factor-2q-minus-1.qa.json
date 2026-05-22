@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean"
   },
   "source_hashes": {
-    "md": "b08eb1cd5f58",
+    "md": "c3776f7a07ca",
     "ts": "01b93e3fab57",
     "lean": "fe1d067bfe7e"
   },
@@ -693,20 +693,20 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "7c3a7cfdfa64",
+          "md": "c3776f7a07ca",
           "ts": "01b93e3fab57",
           "lean": "fe1d067bfe7e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-05-22T21:45:39.698Z",
+        "reviewed_sha": "8e98b3ac76d7b2349718b7cb8df1aeec41bab432"
       }
     ],
     "voice-title-scholarly": [
@@ -761,5 +761,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:36:25.926Z"
+  "updated_at": "2026-05-22T21:45:39.698Z"
 }
