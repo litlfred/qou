@@ -5,7 +5,7 @@ export default corollary({
   lean: { ref: "qou:QOU.Archimedean.descartes_braid_structure",
     validation: "not_checked",
   },
-  title: "Braid-group structure of a Descartes universe",
+  title: "Braid-group structure of a Archimedean universe",
   tags: ["descartes-universe", "braid-group", "dic3"],
   uses: [
     "prop:braid-action-tensor",

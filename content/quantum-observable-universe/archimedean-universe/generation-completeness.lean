@@ -4,7 +4,7 @@
 Every knot with Seifert genus g(K) ≤ 4 is reachable from the generator
 set G by a finite sequence of Skein crossing changes.  The generation
 scheme applied to G produces every knot type that admits a localized
-knot structure in the Descartes universe.
+knot structure in the Archimedean universe.
 
 LaTeX label: `thm:generation-completeness`
 

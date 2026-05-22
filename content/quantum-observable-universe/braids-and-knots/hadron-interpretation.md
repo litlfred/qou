@@ -12,4 +12,4 @@ eigenbasis without reference to a specific Euler characteristic
 or base point.  Localization to a point is a separate operation
 ([localized hadron](#def:localized-hadron)).  The specific knot
 content (which torus knots serve as generators) is determined by
-$\chi(A)$ in the Descartes universe.
+$\chi(A)$ in the Archimedean universe.

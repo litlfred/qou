@@ -47,7 +47,7 @@ observability axiom fails.
 
 The torus is a quantum pre-universe (QPU), not a QOU.
 
-**Contrast with the Descartes universe.**
+**Contrast with the Archimedean universe.**
 
 | | Torus ($g = 1$) | Bring's ($g = 4$) |
 |---|---|---|

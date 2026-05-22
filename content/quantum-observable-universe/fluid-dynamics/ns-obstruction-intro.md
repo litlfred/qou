@@ -32,7 +32,7 @@ class in the Yekutieli tower** (prop); its evaluation on a concrete
 universe is **Computation of the NS obstruction for the Descartes
 universe** (prop). The lift to $q = 1$ is **Kummer specialisation:
 the NS obstruction survives $q = 1$ for $\gcd(\chi(A), n) \neq n$**
-(prop), and the headline consequence is **The Descartes universe
+(prop), and the headline consequence is **The Archimedean universe
 is NS-singular: Navier--Stokes admits finite-time blowup** (thm).
 
 We complement this with **The torus quantum universe: $\chi(A) = 0$

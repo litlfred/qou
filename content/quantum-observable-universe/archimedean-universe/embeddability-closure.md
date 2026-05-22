@@ -8,7 +8,7 @@ admits a localized knot structure
 manifold via the fibre functor $\tau$.
 
 **Theorem.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe with
 $\chi(A) = -6$ and fiber genus $g(\Sigma_4) = 4$.  Let $K$ be any
 knot type appearing as a component of a link produced by a finite
 sequence of Hopf linkings $\ell_H$, color-tube threadings $\ell_c$,
@@ -104,6 +104,6 @@ the categorical braiding.  A hypothetical particle corresponding to
 a genus-$5$ knot would be unobservable — it could not be localized
 in the Bring's surface fiber, could not descend to the base, and would
 have zero coupling to all other particles.  The $\chi = -6$
-constraint of the Descartes universe therefore guarantees a
+constraint of the Archimedean universe therefore guarantees a
 self-consistent, fully interacting particle spectrum with no dark
 sectors arising from the generation scheme.

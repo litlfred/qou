@@ -126,7 +126,7 @@ $$
 \end{cases}
 $$
 
-For the Descartes universe with $\chi(A) = -6$:
+For the Archimedean universe with $\chi(A) = -6$:
 
 | Kummer level $n$ | $\mathrm{obs}(n)$ | Obstruction? |
 |---|---|---|

@@ -18,8 +18,8 @@ those integrals.
 The closing blocks bridge to the next section. **Coral sector
 coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$** (def) fixes
 the color sectorisation in resolvent variables, **Braid-group
-structure of a Descartes universe** (cor) and **Knot eigenbasis
-completeness for a Descartes universe** (cor) extract the categorical
+structure of a Archimedean universe** (cor) and **Knot eigenbasis
+completeness for a Archimedean universe** (cor) extract the categorical
 braid action and the knot eigenbasis from the spectral data, and
 **The Descartes elliptic curve $\mathcal{E}_q$** (prop) names the
 elliptic curve over the spectral plane that the Archimedean condition

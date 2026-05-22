@@ -11,7 +11,7 @@ Skein polynomial on the **full outgoing link**
 $T_{2,3} \cup \mathcal{N}(Z, N)$ gives the Coulomb enhancement.
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be a Descartes universe with substrate
+Let $(\mathbf{C}, A, \tau)$ be a Archimedean universe with substrate
 parameter $q$.  In the beta decay
 $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1) + T_{2,3} + \nu^{\sigma}$, the emitted electron $T_{2,3}$ crosses each of the
 $Z = p + 1$ proton strands of the daughter nucleus as it exits the

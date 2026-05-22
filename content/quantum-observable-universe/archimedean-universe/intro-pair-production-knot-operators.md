@@ -1,4 +1,4 @@
-Particle creation in the Descartes universe is a Breit–Wheeler
+Particle creation in the Archimedean universe is a Breit–Wheeler
 pair-production event resolved at the categorical level: two
 incoming photonic knot states ($0_1$ exceptional divisors) collide
 and emerge as a particle/antiparticle pair selected by the

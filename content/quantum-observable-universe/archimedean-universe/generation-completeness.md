@@ -13,7 +13,7 @@ sequence of Skein crossing changes.  In particular, the generation
 scheme
 ([knot-particle generation](#def:knot-particle-generation)) applied to
 $\mathcal{G}$ produces every knot type that admits a localized knot
-structure in the Descartes universe.
+structure in the Archimedean universe.
 
 **Proof.**
 The argument proceeds in two steps.
@@ -69,7 +69,7 @@ are the *seeds*, and Skein crossing changes explore the full knot
 landscape within the genus bound.
 
 **Physical interpretation.**
-The completeness theorem means the Descartes universe does not
+The completeness theorem means the Archimedean universe does not
 arbitrarily select which knots become particles.  Every topologically
 admissible knot type is physically realizable — the $7$ generators
 and the Skein algebra are sufficient to span the entire embeddable

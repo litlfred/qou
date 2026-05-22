@@ -1,5 +1,5 @@
 With matter particles in hand, we now derive the electromagnetic
-coupling itself.  The Descartes universe is *EM-complete* in a
+coupling itself.  The Archimedean universe is *EM-complete* in a
 strong sense: the photon spectrum saturates the categorical
 state space, the gauge coupling $\alpha_{\mathrm{EM}}$ is fixed
 uniquely by the substrate parameter, and the Chern–Simons form

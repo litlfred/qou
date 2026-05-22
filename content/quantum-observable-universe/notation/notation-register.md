@@ -60,7 +60,7 @@ refers to it.
 | Information bandwidth | fraktur | $\mathfrak{B}(q)$ — information bandwidth per Planck time, a scalar function of $q$; not a sheaf, hence relocated from $\mathcal{B}(q)$ to fraktur (Phase 5n). |
 | Lyapunov exponent | Greek | $\chi_q = 1/(2q - 1)$. Distinct from $\chi_\zeta(c)$ (character). |
 
-### Descartes universe (Chapter 9)
+### Archimedean universe (Chapter 9)
 
 | Concept | Font | Symbols |
 |---------|------|---------|

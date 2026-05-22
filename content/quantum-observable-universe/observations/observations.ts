@@ -5,7 +5,7 @@ import { chapter, section } from "../../schema/builders";
  *
  * CODATA/PDG comparisons, experimental predictions, and proposed
  * experiments.  All setup (knot→particle mapping, mass formulas,
- * skein decomposition) lives in Ch. 6 (The Descartes Universe);
+ * skein decomposition) lives in Ch. 6 (The Archimedean Universe);
  * this chapter is purely observational data and predictions.
  */
 export default chapter({

@@ -1,5 +1,5 @@
 The [Descartes theorem](#thm\:descartes) asserts that for every
-Descartes universe $(\mathbf{C}, A, \tau)$ in $\mathbf{C}_{-6}$,
+Archimedean universe $(\mathbf{C}, A, \tau)$ in $\mathbf{C}_{-6}$,
 there exists a *unique* morphism to the
 [Bring's QOU](#prop\:brings-is-qou). We construct this morphism
 step by step.

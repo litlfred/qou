@@ -320,7 +320,7 @@ def kummerVanishes (skeinDegree : ℕ) (n : ℕ) : Prop :=
     -- d = (d + N + 1) * k, but d + N + 1 > d, so k = 0, giving d = 0
     omega
 
-/-- For the Descartes universe (χ = -6), the obstruction persists
+/-- For the Archimedean universe (χ = -6), the obstruction persists
     at all levels n where n does not divide 6. -/
 theorem descartes_kummer_persistence (n : ℕ) (hn : ¬ n ∣ 6) :
     ¬ kummerVanishes 6 n := by

@@ -63,7 +63,7 @@ antiparticle) and the neutrino carries $L = -1$ (or $+1$)
 so that each pair sums to zero.
 
 **The $\chi = -6$ constraint.**
-In the Descartes universe, the Euler characteristic
+In the Archimedean universe, the Euler characteristic
 $\chi(A) = -6$ constrains the Bring's surface.  The torus knot
 generators $T(2, n)$ with $n$ odd and $n \leq 7$ exhaust the
 fermion spectrum ([torus knot generators](#prop:torus-knot-generators)).

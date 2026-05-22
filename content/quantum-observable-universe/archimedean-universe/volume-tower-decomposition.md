@@ -1,4 +1,4 @@
-Let $K$ be a hyperbolic knot or link appearing in the Descartes universe
+Let $K$ be a hyperbolic knot or link appearing in the Archimedean universe
 mass spectrum, and let $\{\mathfrak{G}_n\}_{n \geq 0}$ be the
 [cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid) of
 the brane tower with [obstruction classes](#def:quantum-characteristic-classes)

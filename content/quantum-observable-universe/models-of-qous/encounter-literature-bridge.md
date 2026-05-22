@@ -18,7 +18,7 @@ remark records the matches.
   near the rigid hyperbolic point is the critical behaviour of
   the Neumann--Zagier potential $\Phi_{\mathrm{NZ}}(z)$.  The
   cubic stability potential studied in
-  [Chapter 9](#chap:descartes-universe) (colour-tube cubic;
+  [Chapter 9](#chap:archimedean-universe) (colour-tube cubic;
   [Picard--Lefschetz thimble](#rem:picard-lefschetz-thimble))
   is isogenous to $\Phi_{\mathrm{NZ}}$, with critical points
   at the "settled" configurations where the meridian and

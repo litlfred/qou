@@ -83,7 +83,7 @@ Different QOU realisations (different $\chi(A)$) could in
 principle give different $\alpha$, because $\chi(A)$ affects the
 number of embeddable torus knots (the "species" of vortex
 filaments), which affects the nonlinear interaction count.  For
-the Descartes universe with $\chi(A) = -6$ (Bring's surface,
+the Archimedean universe with $\chi(A) = -6$ (Bring's surface,
 genus 4), there are 6 embeddable torus knots, yielding a
 specific nonlinear coupling structure.
 

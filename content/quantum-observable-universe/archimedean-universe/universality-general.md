@@ -1,4 +1,4 @@
-The Descartes theorem ([Descartes universe](#thm:descartes)) is expected to be a
+The Descartes theorem ([Archimedean universe](#thm:descartes)) is expected to be a
 special case of a more general result: for any admissible Euler
 characteristic $\chi$, the category $\mathbf{C}_{\chi}$ of $\mathbb{C}$
 quantum observable universes with $\chi(\mathcal{S}) = \chi$ should admit a terminal

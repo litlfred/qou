@@ -5,4 +5,4 @@ $M_0$ defines a causal structure.  The *light cone* of the affine chart
 is the boundary of the causal future in $U$: it is determined by the metric
 on $M_0$ and has the property that no singularity of the ambient space is
 visible from within the chart.  In this way, the affine chart provides a
-non-singular window onto a portion of the Descartes universe.
+non-singular window onto a portion of the Archimedean universe.

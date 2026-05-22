@@ -115,7 +115,7 @@ common algebraic framework: the mass gap and the
 [classical limit obstruction](#def:classical-limit-obstruction)
 both reduce to divisibility of
 $\chi(A)$ in the Kummer tower.  Since $\chi(A) = -6$ for the
-Descartes universe, the
+Archimedean universe, the
 [obstruction is one-dimensional](#thm:qou-obstruction-reduction)
 and persists at all primes $> 3$.
 

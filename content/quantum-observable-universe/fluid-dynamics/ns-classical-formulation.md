@@ -21,5 +21,5 @@ $\mathrm{NS}(A) \neq 0$ implies blowup.  The obstruction
 depends on $\chi(A)$.  For $\chi(A) = 0$
 ([torus example](#ex:torus-ns-regular)), the equation is
 globally regular.  For $\chi(A) = -6$
-([Descartes universe](#thm:ns-singularity-descartes)),
+([Archimedean universe](#thm:ns-singularity-descartes)),
 singularities form.

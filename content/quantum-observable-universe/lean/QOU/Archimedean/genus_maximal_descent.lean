@@ -15,7 +15,7 @@ namespace QOU.Archimedean
 /-- Abstract context for the `genus_maximal_descent` claim — manuscript-themed
     typed fields below; `claim_i` / `claim_ii` carry the two main assertions. -/
 class GenusMaximalDescentContext where
-  /-- Categorical object `A` of the Descartes universe `(C, A, τ)`. -/
+  /-- Categorical object `A` of the Archimedean universe `(C, A, τ)`. -/
   CategoricalObj : Type
   /-- The fibre functor `τ : C → Vect`. -/
   Functor : Type → Type

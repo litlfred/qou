@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe with
 $\chi(A) = -6$.  Every baryon formed from torus knot generators
 $\mathcal{G}$ ([torus knot generators](#prop:torus-knot-generators))
 linked by the Hopf link $\mathcal{L}_H$ satisfies the stability

@@ -1,7 +1,7 @@
 The [topological mass formula](#prop:topological-mass-formula) assigns mass
 $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$, where $q$ is the
 [substrate parameter](#def:substrate-parameter).  Three non-zero
-hyperbolic volumes drive the Descartes universe mass spectrum:
+hyperbolic volumes drive the Archimedean universe mass spectrum:
 
 | Knot/Link | Volume | QOU identity |
 |-----------|--------|-------------|

@@ -21,7 +21,7 @@ $$
 $$
 
 where $N(\chi)$ is a cutoff determined by the Euler characteristic
-of the Frobenius--Hopf object.  For the Descartes universe with
+of the Frobenius--Hopf object.  For the Archimedean universe with
 $\chi(A) = -6$, the bound is $N(-6) = 9$, admitting:
 
 | Generator | Knot | Genus | Crossings | Particle sector |

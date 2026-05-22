@@ -66,7 +66,7 @@ $q \to 1$ (classicality).
 
 **Summary.**
 The $4$-tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$, with $G = \mathrm{SU}(2)$,
-constitutes a Descartes universe ($\chi(\mathcal{S}) = -6$)
+constitutes a Archimedean universe ($\chi(\mathcal{S}) = -6$)
 ([Bring's surface](#ex:brings-surface)), and every QOU structure---contact
 form, Reeb field, Levi form, substrate parameter, $q$-deformed
 operators---is determined by the spacetime coordinate $z = x_0/x_1$ and

@@ -57,5 +57,5 @@ interactions become comparable.
 
 The specific assignment of Coulomb charges to protons and
 neutrons — and the consequences for nuclear stability — require
-the Descartes universe ($\chi = -6$) and are developed in
+the Archimedean universe ($\chi = -6$) and are developed in
 Chapter 6.

@@ -27,7 +27,7 @@ against local variations in $q$.
 
 2. **Light elements** ($p \leq 6$): the $q$-stability window
    extends from $q = 1$ to well above $q = q_0$.  These nuclei
-   would exist in *any* Descartes universe with $q > 1$.
+   would exist in *any* Archimedean universe with $q > 1$.
 
 3. **Medium elements** ($p = 10$--$26$): the window narrows to
    $\Delta q \approx 0.02$--$0.10$.  The prediction becomes

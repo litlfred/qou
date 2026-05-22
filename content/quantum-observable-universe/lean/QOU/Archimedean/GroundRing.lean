@@ -6,7 +6,7 @@ import Mathlib.Tactic
 /-!
 # Ground Ring: ℤ[q, q⁻¹]
 
-All formal proofs in the Descartes universe are conducted over the
+All formal proofs in the Archimedean universe are conducted over the
 Laurent polynomial ring `ℤ[q, q⁻¹]`.  This is an integral domain
 with no zero divisors.  Results do NOT require ℝ.
 

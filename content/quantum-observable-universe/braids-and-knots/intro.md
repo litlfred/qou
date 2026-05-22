@@ -21,5 +21,5 @@ knot $3_1$ is identified with the electron; and heavier charged leptons
 tower. Quarks sit inside a Borromean braid configuration of three linked
 unknots on the exceptional divisor.
 The geometry that carries these knots — Bring's surface — is developed in
-[Chapter 9](#chap:descartes-universe); the physical predictions it generates
+[Chapter 9](#chap:archimedean-universe); the physical predictions it generates
 are collected in [Chapter 11](#chap:observations).

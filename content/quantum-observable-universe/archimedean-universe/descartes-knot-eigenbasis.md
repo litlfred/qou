@@ -1,6 +1,6 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
+Let $(\mathbf{C}, A, \tau)$ be a Archimedean universe
 ([Archimedean condition](#def:archimedean-condition)) with
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Then the knot-type eigenbasis is complete:

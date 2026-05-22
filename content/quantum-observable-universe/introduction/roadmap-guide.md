@@ -10,7 +10,7 @@ Part II (Chapters 4–8) develops the structural consequences: braids
 and knots, models over various ground fields, the algebraic substrate
 (including the $q$-Riemann hypothesis), fluid dynamics, and
 information theory.  Part III (Chapters 9–12) specialises to the
-Descartes universe on Bring's surface, develops particle
+Archimedean universe on Bring's surface, develops particle
 interactions, confronts predictions with experiment, and extends
 the formalism to molecules.  Chapter 13 develops the $q$-geometric
 Langlands correspondence.

@@ -2,7 +2,7 @@
 # QOU.Archimedean.descartes
 
 Descartes theorem: Bring's surface Σ₄ is the terminal object in the
-category C_{-6} of Descartes universes (QOUs with χ(A) = -6).
+category C_{-6} of Archimedean universes (QOUs with χ(A) = -6).
 
 LaTeX label: `thm:descartes`
 -/
@@ -13,7 +13,7 @@ import Mathlib.Data.Nat.Basic
 
 namespace QOU.Archimedean
 
-/-- **Descartes universe data**: a QOU satisfying the Archimedean condition
+/-- **Archimedean universe data**: a QOU satisfying the Archimedean condition
     χ(A) = -6 together with its geometric invariants.
 
     LaTeX: `\label{thm:descartes}`
@@ -30,7 +30,7 @@ structure DescartesUniverse where
   /-- Order of the automorphism group |Aut(Σ)|. -/
   autOrder : ℕ
 
-/-- Any Descartes universe has genus 4. -/
+/-- Any Archimedean universe has genus 4. -/
 -- Ref: [manuscript] Chapter 6, §Descartes theorem
 theorem DescartesUniverse.genus_eq_four (D : DescartesUniverse) :
     D.genus = 4 := by
@@ -38,7 +38,7 @@ theorem DescartesUniverse.genus_eq_four (D : DescartesUniverse) :
   have := D.euler_eq
   linarith
 
-/-- **Bring's surface** as a Descartes universe: genus 4, |Aut| = 120 = |S₅|.
+/-- **Bring's surface** as a Archimedean universe: genus 4, |Aut| = 120 = |S₅|.
     This is the terminal object in C_{-6}.
 
     Ref: [manuscript] Chapter 6, §Descartes theorem -/
@@ -65,11 +65,11 @@ theorem brings_hurwitz_bound : (120 : ℤ) ≤ 84 * (4 - 1) := by norm_num
 /-- **Terminality criterion**: Bring's surface is terminal in C_{-6} because
     it is the unique genus-4 curve with automorphism group S₅.
 
-    For any Descartes universe D, the genus is forced to be 4
+    For any Archimedean universe D, the genus is forced to be 4
     (by genus_eq_four), and the S₅ symmetry of Bring's curve
     means there is a unique morphism D → Bring's QOU preserving χ.
 
-    We encode uniqueness as: any two Descartes universes with the same
+    We encode uniqueness as: any two Archimedean universes with the same
     Euler characteristic have the same genus. -/
 -- Ref: [manuscript] Chapter 6, §Descartes theorem
 theorem descartes_terminal_genus (D₁ D₂ : DescartesUniverse) :

@@ -5,7 +5,7 @@ export default corollary({
   lean: { ref: "qou:QOU.Archimedean.descartes_knot_eigenbasis",
     validation: "not_checked",
   },
-  title: "Knot eigenbasis completeness for a Descartes universe",
+  title: "Knot eigenbasis completeness for a Archimedean universe",
   tags: ["descartes-universe", "knot-invariant", "hecke-algebra", "schur-weyl"],
   uses: [
     "cor:descartes-braid-structure",

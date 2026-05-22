@@ -28,4 +28,4 @@ the depth-2 modular cocycle that the Langlands chapter pulls back
 along the Tannaka–Krein equivalence.  Readers focused on the
 substrate-level statements can take the proofs on first reading;
 the archimedean / $p$-adic specialisations are deferred to the
-Descartes universe.
+Archimedean universe.

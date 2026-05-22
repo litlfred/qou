@@ -70,11 +70,11 @@ $$
   =  0.7277,
 $$
 
-measures the **stability margin** of the Descartes universe:
+measures the **stability margin** of the Archimedean universe:
 how far the chiral elliptic fiber is from collapsing.
 
 **The golden ratio in other contexts.**
-The appearance of $\varphi$ in the Descartes universe connects
+The appearance of $\varphi$ in the Archimedean universe connects
 to its role elsewhere in mathematics and physics:
 
 - **Penrose tilings**: $\varphi$ governs the quasicrystalline

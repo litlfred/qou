@@ -25,7 +25,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 namespace QOU.Archimedean
 
-/-- Data for a beta-decay calculation in a Descartes universe.
+/-- Data for a beta-decay calculation in a Archimedean universe.
     All quantities derived from q — no fitted parameters. -/
 -- Ref: [manuscript] §6/hadron-half-life
 structure BetaDecayData where

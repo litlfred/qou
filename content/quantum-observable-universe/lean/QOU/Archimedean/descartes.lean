@@ -7,7 +7,7 @@
 over `R` satisfying the Archimedean condition `χ(A) = −6`, with
 morphisms given by QOU maps that preserve the Euler characteristic.
 Then Bring's surface `Σ₄` is a terminal object in `𝐂_{−6}`: for
-every Descartes universe `(𝐂, A, τ)` in `𝐂_{−6}`, there exists a
+every Archimedean universe `(𝐂, A, τ)` in `𝐂_{−6}`, there exists a
 **unique** morphism to the Bring's QOU.*
 
 The Lean encoding records the universal-property statement: for
@@ -21,20 +21,20 @@ namespace QOU.Archimedean
 
 /-- Abstract context for the `Bring's-Σ₄ is terminal in 𝐂_{−6}` claim. -/
 class DescartesTerminalContext where
-  /-- Objects of `𝐂_{−6}` (Descartes universes). -/
+  /-- Objects of `𝐂_{−6}` (Archimedean universes). -/
   DescUniverse : Type
-  /-- Morphisms between Descartes universes (Euler-char preserving). -/
+  /-- Morphisms between Archimedean universes (Euler-char preserving). -/
   Mor : DescUniverse → DescUniverse → Type
   /-- The terminal object: Bring's quantum-observable-universe. -/
   BringQOU : DescUniverse
-  /-- Manuscript terminality: for every Descartes universe `X`,
+  /-- Manuscript terminality: for every Archimedean universe `X`,
       the hom-set `Mor X BringQOU` is a singleton. -/
   claim_descartes_terminal : ∀ X : DescUniverse,
     Nonempty (Unique (Mor X BringQOU))
 
 /-- **Bring's `Σ₄` is terminal in `𝐂_{−6}`** ([`prop:descartes`]).
 
-    For every Descartes universe `X`, the hom-set `Mor X BringQOU` is
+    For every Archimedean universe `X`, the hom-set `Mor X BringQOU` is
     a singleton (`Unique`). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/descartes.md
 theorem descartes

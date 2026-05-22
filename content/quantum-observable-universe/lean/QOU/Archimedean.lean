@@ -27,9 +27,9 @@ import QOU.Archimedean.descartes
 import QOU.Archimedean.noble_gas_characterization
 
 /-!
-# Descartes Universe — Module Index
+# Archimedean Universe — Module Index
 
-Re-exports all Descartes universe formalization modules.
+Re-exports all Archimedean universe formalization modules.
 
 **Note to reader**: all Lean proofs in this module work exclusively
 over `ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).  Numerical

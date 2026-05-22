@@ -23,7 +23,7 @@ class NsSingularityDescartesContext extends QOU.Shared.SobolevHkRegularityContex
   NS_A : ℝ
   /-- Euler characteristic `χ(A) = -6` for Bring's surface. -/
   chi_A : ℤ
-  /-- Manuscript identity: Descartes universe has Euler
+  /-- Manuscript identity: Archimedean universe has Euler
       characteristic `-6`. -/
   claim_chi_A_is_neg_six : chi_A = -6
   /-- Manuscript identity: the NS obstruction is non-zero

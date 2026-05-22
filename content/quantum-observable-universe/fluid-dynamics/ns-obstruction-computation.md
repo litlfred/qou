@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe with
 $\chi(A) = -6$ (Bring's surface of genus 4).  Let $\Sigma$ be
 the collision locus of an anti-parallel vortex pair with
 linking number $\mathrm{lk} = 1$.
@@ -105,7 +105,7 @@ Therefore:
 
 **(d) Result.**
 
-For the Descartes universe with $\chi(A) = -6$:
+For the Archimedean universe with $\chi(A) = -6$:
 
 $$
   \kappa_n\big|_\Sigma  \neq  0

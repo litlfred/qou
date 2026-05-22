@@ -1,7 +1,7 @@
 /-!
 # QOU.Archimedean.descartes_knot_eigenbasis
 
-Instantiation theorem: a Descartes universe (χ(A) = -6) provides all the
+Instantiation theorem: a Archimedean universe (χ(A) = -6) provides all the
 data needed for `KnotEigenbasisData`, establishing that knot types form a
 complete eigenbasis for the algebraic direct limit V_phys = colim V^⊗n
 (no metric completion is used).
@@ -43,7 +43,7 @@ abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
-/-! ## Descartes Universe Data (from descartes-condition.lean) -/
+/-! ## Archimedean Universe Data (from descartes-condition.lean) -/
 
 /-- Archimedean condition: χ(A) = -6 with 6 invertible. -/
 structure DescartesData where
@@ -62,7 +62,7 @@ structure DescartesData where
   dimV : ℕ
   dimV_eq : dimV = 2
 
-/-- The genus of a Descartes universe is 4. -/
+/-- The genus of a Archimedean universe is 4. -/
 theorem DescartesData.genus_is_four (D : DescartesData) :
     (1 : ℤ) - D.eulerChar / 2 = 4 := by
   rw [D.euler_eq]; norm_num
@@ -74,7 +74,7 @@ theorem DescartesData.q_ne_zero (D : DescartesData) : D.q ≠ 0 :=
 /-! ## Hecke Algebra from the Descartes R-Matrix -/
 
 /-- The Hecke algebra H_n(q) constructed from the R-matrix of
-    U_q(su(2)) in a Descartes universe.
+    U_q(su(2)) in a Archimedean universe.
 
     The braiding c_{V,V} has eigenvalues q and -q⁻¹.
     The quadratic relation (T_i - q)(T_i + q⁻¹) = 0 defines
@@ -109,7 +109,7 @@ theorem eigenvalues_distinct_of_descartes (D : DescartesData) :
 
 /-! ## Schur-Weyl Decomposition for Rep(SU_q(2)) -/
 
-/-- **Schur-Weyl data** for a Descartes universe at level n.
+/-- **Schur-Weyl data** for a Archimedean universe at level n.
 
     For C = Rep(SU_q(2)) with V the spin-1/2 representation:
     V^⊗n ≅ ⊕_{j} V_j ⊗ S_j where j ranges over spins
@@ -185,7 +185,7 @@ structure DescartesBraidRep (D : DescartesData) where
 
 /-! ## Markov Trace from the Descartes Hecke Algebra -/
 
-/-- **Markov trace** on the Hecke algebra tower of a Descartes universe.
+/-- **Markov trace** on the Hecke algebra tower of a Archimedean universe.
     The trace exists, is unique, and detects every irreducible summand. -/
 -- Ref: [jones1987] Annals of Mathematics 126 (1987)
 structure DescartesMarkovTrace (D : DescartesData) where
@@ -208,14 +208,14 @@ structure DescartesMarkovTrace (D : DescartesData) where
 
 /-- **Descartes knot eigenbasis completeness.**
 
-    A Descartes universe provides all the data needed for knot
+    A Archimedean universe provides all the data needed for knot
     eigenbasis completeness: the Hecke algebra (from the R-matrix),
     the Schur-Weyl decomposition (from semisimplicity), and the
     Markov trace (from Jones's construction).
 
     This is the instantiation theorem that bridges the abstract
     `KnotEigenbasisData` structure (Chapter 4) with the concrete
-    Descartes universe (Chapter 6). -/
+    Archimedean universe (Chapter 6). -/
 -- Ref: [chari1994guide], [jones1987], [kassel1995]
 structure DescartesKnotEigenbasis (D : DescartesData) where
   /-- Schur-Weyl decomposition at each level n. -/
@@ -239,7 +239,7 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
     - Markov trace existence ← Jones's construction (1987)
     - Alexander surjectivity ← classical topology (Alexander, 1923)
 
-    All four are available for any Descartes universe. -/
+    All four are available for any Archimedean universe. -/
 -- Ref: [chari1994guide] Ch. 10, [jones1987] §3
 /-- **External axiom (§3b-cond pattern): descartes_knot_eigenbasis.**
 
@@ -265,7 +265,7 @@ theorem descartes_knot_eigenbasis (D : DescartesData) :
             ∃ (jonesVal : R_q), jonesVal ≠ 0 :=
   descartes_knot_eigenbasis_axiom D
 
-/-- **Corollary**: for n = 3 in a Descartes universe, both summands
+/-- **Corollary**: for n = 3 in a Archimedean universe, both summands
     (spin-3/2 symmetric and spin-1/2 mixed symmetry) are detected by
     knot types: the unknot detects the symmetric sector, and the
     trefoil detects the mixed-symmetry sector. -/
@@ -298,7 +298,7 @@ theorem descartes_n3_both_detected (D : DescartesData) :
       linarith
 
 /-- **Corollary**: the eigenvalues q and -q⁻¹ of the R-matrix braiding
-    are always distinct in a Descartes universe, ensuring the Hecke
+    are always distinct in a Archimedean universe, ensuring the Hecke
     algebra quotient is well-defined and the braid representation
     is faithful. -/
 theorem descartes_eigenvalues_distinct (D : DescartesData) :

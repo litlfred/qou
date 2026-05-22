@@ -43,7 +43,7 @@ contour integrals, no factors of $2 \pi i$, and no renormalisation-group
 running are required at the fundamental level.
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe over $R$ with
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe over $R$ with
 substrate parameter $q$ and force-carrier generators $T_{2,9}$
 (crossing number $c_s = 9$) and $T_{3,5}$ (crossing number
 $c_w = 10$) — uniquely determined by the genus-$4$ classification
@@ -164,7 +164,7 @@ channel has been missed: the Frobenius mass of $\mathrm{End}(A
 makes sense over any specialisation $\iota \colon R \to k$:
 archimedean ($k = \mathbb{R}$), $p$-adic ($k = \mathbb{Q}_p$), or
 finite ($k = \mathbb{F}_\ell$).  The fine structure constant is a
-**ring-theoretic invariant** of the Descartes universe, not a
+**ring-theoretic invariant** of the Archimedean universe, not a
 continuous parameter requiring measurement.
 
 **Remark on the classical limit.**

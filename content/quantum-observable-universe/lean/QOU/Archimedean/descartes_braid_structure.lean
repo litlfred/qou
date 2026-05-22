@@ -17,7 +17,7 @@ namespace QOU.Archimedean
 class DescartesBraidStructureContext where
   /-- Braid representative type (`B_3`). -/
   Braid : Type
-  /-- Categorical object `A` of the Descartes universe `(C, A, τ)`. -/
+  /-- Categorical object `A` of the Archimedean universe `(C, A, τ)`. -/
   CategoricalObj : Type
   /-- The fibre functor `τ : C → Vect`. -/
   Functor : Type → Type
@@ -47,7 +47,7 @@ class DescartesBraidStructureContext where
 
 /-- **Manuscript statement** (full body):
 
-Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
+Let $(\mathbf{C}, A, \tau)$ be a Archimedean universe
 ([Archimedean condition](#def:archimedean-condition)).  Then:
 
 1. The braiding of $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$

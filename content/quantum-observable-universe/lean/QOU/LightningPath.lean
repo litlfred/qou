@@ -65,7 +65,7 @@ open HadronicMass CODATAChain DescartesUniverse Torsion
        reproduces proton, neutron, deuteron masses and binding energy to
        sub-keV precision (`end_to_end`).
 
-    5. **Descartes terminality**: the Descartes universe with `χ = −6` is the
+    5. **Descartes terminality**: the Archimedean universe with `χ = −6` is the
        unique rigid completion (`descartes_terminal`).
 
     This remark carries no new mathematical content — it exists solely as

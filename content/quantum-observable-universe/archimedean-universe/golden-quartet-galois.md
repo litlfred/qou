@@ -120,4 +120,4 @@ The four golden values are therefore not "four arbitrary algebraic
 numbers" — they are the **complete real Galois orbit** generated
 by either $\varphi$ or $1/\varphi$ together with the bar involution,
 encoding the full set of phase boundaries and Möbius fixed points
-of the Descartes universe.
+of the Archimedean universe.

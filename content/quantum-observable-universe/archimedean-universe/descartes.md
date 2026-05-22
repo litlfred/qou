@@ -6,7 +6,7 @@ over $R$ satisfying the Archimedean condition $\chi(A) = -6$
 that preserve the Euler characteristic.  Then Bring's surface $\Sigma_4$
 ([Bring's surface](#def:brings-surface),
 [Bring's surface is QOU](#prop:brings-is-qou)) is a terminal object in
-$\mathbf{C}_{-6}$: for every Descartes universe
+$\mathbf{C}_{-6}$: for every Archimedean universe
 $(\mathbf{C}, A, \tau)$ in $\mathbf{C}_{-6}$, there exists a unique
 morphism to the Bring's QOU.
 

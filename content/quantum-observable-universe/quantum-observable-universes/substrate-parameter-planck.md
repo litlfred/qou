@@ -26,4 +26,4 @@ the substrate parameter is an element of $\mathrm{End}(\mathbf{1}) \cong k^\time
 Here we work with the concrete representative $q \in \mathbb{C}^*$
 obtained by evaluating this endomorphism. In geometric realisations
 (Chapter 6), $q$ further specialises to a real parameter $q > 1$
-governing the Descartes universe.
+governing the Archimedean universe.

@@ -8,7 +8,7 @@ parameter $q$ ([substrate parameter](#def:substrate-parameter))
 through the $q$-deformed transition amplitude.
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe with substrate
 parameter the substrate $q$.  A nucleus $\mathcal{N}(Z, N)$
 ([stable nucleus](#def:stable-nucleus)) with proton displacement
 $\delta p = p - p_{\mathrm{stab}}(A)$ from the valley of stability

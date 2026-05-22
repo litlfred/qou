@@ -20,7 +20,7 @@
 {\shortstack{Ch5: Models\\Bring's surface $(g{=}4)$,\\Descartes theorem}}
   \arrow[d]
 \\
-{\shortstack{Ch6: The Descartes Universe\\particle spectrum,\\nuclear physics}}
+{\shortstack{Ch6: The Archimedean Universe\\particle spectrum,\\nuclear physics}}
   \arrow[d]
 \\
 {\shortstack{Ch7: Observations\\single parameter $q$,\\6-sig-fig predictions}}

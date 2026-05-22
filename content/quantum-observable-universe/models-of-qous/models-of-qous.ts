@@ -5,10 +5,10 @@ import { chapter, section } from "../../schema/builders";
  *
  * Concrete realisations of the QOU axioms.  First half: general models
  * (Archimedean, p-adic, finite-field, Witt-vector, Jones, fluid).
- * Second half: the Descartes universe — the specific realisation with
+ * Second half: the Archimedean universe — the specific realisation with
  * χ(A) = −6 and Bring's surface as fibre geometry.
  *
- * Merged from former Ch 5 (Models of QOU) + Ch 6 (The Descartes Universe).
+ * Merged from former Ch 5 (Models of QOU) + Ch 6 (The Archimedean Universe).
  */
 export default chapter({
   title: "Models of QOUs",

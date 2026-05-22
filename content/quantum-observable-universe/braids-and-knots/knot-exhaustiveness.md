@@ -8,7 +8,7 @@ the Markov trace
 surjectivity of detection: no summand is invisible.
 
 A stronger question: **do the knot types that appear in the
-Descartes universe exhaust the space of states?**
+Archimedean universe exhaust the space of states?**
 
 The generation completeness theorem shows that every knot
 with Seifert genus $g(\mathfrak{K}) \leq 4$ appears in the
@@ -42,7 +42,7 @@ This leaves three nested questions:
    $\mathfrak{K} \neq \mathfrak{K}'$ have the same Jones
    polynomial $J_{\mathfrak{K}}(q) = J_{\mathfrak{K}'}(q)$,
    they would be physically indistinguishable in the
-   Descartes universe — they would represent the same
+   Archimedean universe — they would represent the same
    particle.  Whether this occurs (and whether it has
    physical consequences) is an open question.
 

@@ -1,4 +1,4 @@
-By the :refterm[descent]{#descent} theorem ([Descartes universe](#thm\:descartes)), it is sufficient
+By the :refterm[descent]{#descent} theorem ([Archimedean universe](#thm\:descartes)), it is sufficient
 to study dimension-zero manifolds equipped with their bundles $P$ and $\mathcal{S}$.
 At a point $p\in M_0$, the substrate parameter
 $q(p)= 1 + \lvert\langle L_\varTheta, F_A^{+}\rangle\rvert(p)$

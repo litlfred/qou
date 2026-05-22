@@ -16,9 +16,9 @@ import Mathlib.Data.Nat.Basic
 namespace QOU.Archimedean
 
 /-- **Descartes braid structure**: packages the algebraic data arising from
-    the braiding on a Descartes universe.
+    the braiding on a Archimedean universe.
 
-    Given a Descartes universe (C, A, τ) with C = Rep(SU_q(2)):
+    Given a Archimedean universe (C, A, τ) with C = Rep(SU_q(2)):
     1. The braiding induces ρ₃ : B₃ → Aut_C(V^⊗3)
     2. The image under the fibre functor τ is Dic₃ ⊂ SU(2), order 12
     3. The composite B₃ → Dic₃ ↠ S₃ yields three copies of S₃ ⊂ S₅

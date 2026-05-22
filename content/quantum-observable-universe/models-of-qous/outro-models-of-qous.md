@@ -5,7 +5,7 @@ pairing at the wall — Mostow confinement on one side, finite-field /
 $p$-adic obstructions on the other — fixes which models survive the
 specialisation to numerical evaluation.
 
-The next chapter (Descartes universe) makes the wall concrete: it
+The next chapter (Archimedean universe) makes the wall concrete: it
 chooses the archimedean model in which the substrate parameter $q$
 acquires a numerical value and the categorical objects are realised
 as sections of bundles over Bring's surface.  The remaining chapters

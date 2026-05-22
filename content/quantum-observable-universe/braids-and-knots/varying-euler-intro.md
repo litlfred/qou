@@ -1,4 +1,4 @@
-The Descartes universe fixes Bring's surface
+The Archimedean universe fixes Bring's surface
 ($\chi = -6$) as the spacetime base, but the categorical
 substrate is compatible with a *family* of base surfaces of
 varying Euler characteristic.  This section surveys the

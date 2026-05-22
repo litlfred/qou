@@ -15,7 +15,7 @@ theory truncates to the maximal torus $\mathrm{U}(1) \subset \mathrm{SU}(2)$.
 By [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction),
 $\mathrm{U}(1)$-equivariant observables on $\mathcal{S}_p$ reduce to
 a single phase coordinate $\varphi \in S^1$.  All three non-abelian
-tubes of the Descartes universe are consequently indistinguishable at
+tubes of the Archimedean universe are consequently indistinguishable at
 the level of observables and collapse to **one $\mathrm{U}(1)$ phase
 tube**.
 

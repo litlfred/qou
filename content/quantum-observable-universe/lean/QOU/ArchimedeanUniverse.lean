@@ -5,9 +5,9 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
 
 /-!
-# Chapter 6 — The Descartes Universe
+# Chapter 6 — The Archimedean Universe
 
-Formalization of the Archimedean condition and the Descartes universe
+Formalization of the Archimedean condition and the Archimedean universe
 from Chapter 6 of the QOU manuscript.
 
 LaTeX source: `chapters/descartes-universe.tex`
@@ -17,7 +17,7 @@ LaTeX source: `chapters/descartes-universe.tex`
 1. **Archimedean condition** — `χ(E) = −6`
 2. **Genus theorem** — one-complex-dimensional descent has genus 4
 3. **Exceptional divisor** — structure at singular fibre points
-4. **Descartes theorem** — universality of the Descartes universe
+4. **Descartes theorem** — universality of the Archimedean universe
 
 ## References
 
@@ -31,7 +31,7 @@ namespace QOU.ArchimedeanUniverse
 
 /-- **Archimedean condition**: a ℂ quantum observable universe satisfies
     the Archimedean condition if the Euler characteristic of the bulk
-    bundle is `χ(E) = −6`.  A QOU satisfying this is a *Descartes universe*.
+    bundle is `χ(E) = −6`.  A QOU satisfying this is a *Archimedean universe*.
 
     LaTeX: `\label{def:archimedean-condition}` -/
 -- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
@@ -44,7 +44,7 @@ structure ArchimedeanCondition where
   descartes : eulerChar = -6
 
 set_option linter.dupNamespace false in
-/-- A shorthand: a **Descartes universe** is a QOU satisfying the Descartes
+/-- A shorthand: a **Archimedean universe** is a QOU satisfying the Descartes
     condition. -/
 abbrev DescartesUniverse := ArchimedeanCondition
 
@@ -67,7 +67,7 @@ LaTeX: `\label{rem:descartes-affine}`
 
 /-! ## §3  Descent to One Complex Dimension -/
 
-/-- **Proposition (Genus of the maximal descent)**: if a Descartes universe
+/-- **Proposition (Genus of the maximal descent)**: if a Archimedean universe
     descends to a compact one-complex-dimensional variety `M₀`, then `M₀`
     is a Riemann surface of genus `g = 4`.
 
@@ -124,7 +124,7 @@ structure ChiralSectorCoords where
 
 /-! ## §6  The Descartes Theorem -/
 
-/-- **Theorem (Descartes)**: every Descartes universe with
+/-- **Theorem (Descartes)**: every Archimedean universe with
     one-complex-dimensional descent is isomorphic (as a QOU) to
     Bring's surface.
 
@@ -151,7 +151,7 @@ structure TannakaKreinRigidity where
   rigid : iso_count = 1 := by rfl
 
 /-- **Terminality of Bring's surface in C_{-6}.**
-    For every Descartes universe (C, A, ω, q), the Euler characteristic
+    For every Archimedean universe (C, A, ω, q), the Euler characteristic
     is −6 and fibre-preserving monoidal functors are rigid (unique up to
     natural isomorphism).
 
@@ -163,7 +163,7 @@ theorem descartes_terminal (dc : ArchimedeanCondition) (tk : TannakaKreinRigidit
 
 /-! ## §7  Light Cone and Bring's Curve
 
-The light cone of an affine chart on the Descartes universe is
+The light cone of an affine chart on the Archimedean universe is
 determined by the contact structure: null geodesics are integral
 curves of the horizontal distribution `H = ker θ`.
 LaTeX: `\label{rem:light-cone-affine}`

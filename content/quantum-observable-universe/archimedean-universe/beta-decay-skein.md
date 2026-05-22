@@ -4,7 +4,7 @@
 $10$ crossings of the weak vertex
 ([force identification](#rem:force-knot-identification)).**
 
-The weak force in the Descartes universe ($\chi(A) = -6$,
+The weak force in the Archimedean universe ($\chi(A) = -6$,
 the substrate $q$) is carried by the torus knot $T_{3,5}$, which has
 **$10$ crossings** — the highest crossing count among generators
 on the Bring surface. A beta transition inserts the $T_{3,5}$

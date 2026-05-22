@@ -5,7 +5,7 @@ neutron numbers.  The stable hadrons are integer solutions to a
 quadratic energy minimisation.
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe with
 the substrate $q$.  At fixed mass number $A = Z + N$, the nuclear
 binding energy is a **convex quadratic** in the proton number
 $p$:

@@ -170,7 +170,7 @@ via any process.
    reduces the barrier.
 
 The neutrino is therefore the **most stable** particle in the
-Descartes universe: it has no decay channels at any energy below
+Archimedean universe: it has no decay channels at any energy below
 the $T_{3,5}$ crossing threshold.  Unlike the electron (which is
 stable by topological invariance of the trefoil — it *could*
 interact but cannot *decay*), the neutrino is stable by

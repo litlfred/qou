@@ -65,7 +65,7 @@ binding energy beyond the liquid-drop prediction.
 
 **Predicted factorizations.**
 
-For the Descartes universe ($\chi = -6$), the following
+For the Archimedean universe ($\chi = -6$), the following
 factorizations are expected:
 
 | $p$ | $n$ | Nucleus | Closed sub-links | Shell type |

@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * particles, and the Descartes theorem, (4) topological mass and the
  * knot-particle spectrum.
  *
- * Renamed from "Descartes Universe" → "Archimedean Universe" on
+ * Renamed from "Archimedean Universe" → "Archimedean Universe" on
  * 2026-05-22 per the chapter-reorg proposal (PR-R1).  The Descartes
  * specialisation is now positioned downstream of the Archimedean
  * functor in chapter `models-of-qous`.  The legacy `chap:descartes-

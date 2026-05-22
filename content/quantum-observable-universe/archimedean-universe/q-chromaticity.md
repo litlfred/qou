@@ -25,7 +25,7 @@ locus is not contained in any triangular cone.
 
 **The $q$-deformed color space.**
 
-In the Descartes universe, the "color space" is the Skein module
+In the Archimedean universe, the "color space" is the Skein module
 $\mathcal{S}_q(\mathbf{C})$.  The three coral tubes
 $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ provide three
 distinguished directions — the "primaries" of the categorical
@@ -43,7 +43,7 @@ forces **negative coefficients** into the expansion: the term
 $-q^{-1}[L_-]$ is unavoidable.  This is the $q$-deformed analogue
 of the chromaticity negativity.  At $q = 1$, the relation becomes
 $[L_+] - [L_-] = 0$ and the negativity vanishes — but at $q \neq 1$
-(the physical Descartes universe), negative Skein coefficients are
+(the physical Archimedean universe), negative Skein coefficients are
 mandatory.
 
 **Three primaries, three trefoils, three $S_3$ subgroups.**

@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe with
 $\chi(A) = -6$ and substrate parameter $q$.  Set
 $s = \sqrt{q}$.  The coral elliptic fiber
 ([coral elliptic](#prop:coral-elliptic)) of Bring's surface

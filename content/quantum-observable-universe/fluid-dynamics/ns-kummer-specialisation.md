@@ -42,7 +42,7 @@ $$
   n \mid \chi(A).
 $$
 
-For the Descartes universe with $\chi(A) = -6$: the divisors
+For the Archimedean universe with $\chi(A) = -6$: the divisors
 of $6$ are $\{1, 2, 3, 6\}$.  So $\kappa_0 \bmod n = 0$ only
 for $n \in \{1, 2, 3, 6\}$, and $\kappa_0 \bmod n \neq 0$ for
 all other $n$ (in particular for $n = 5, 7, 11, 13, \ldots$).

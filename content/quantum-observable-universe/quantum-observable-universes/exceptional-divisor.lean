@@ -3,7 +3,7 @@
 
 The exceptional divisor at brane point p: the ℙ¹(ℂ) fiber
 parametrized by spherical coordinates (φ, ψ) obtained by
-blowing up p in the Descartes universe.
+blowing up p in the Archimedean universe.
 
 LaTeX label: `def:exceptional-divisor`
 

@@ -694,7 +694,7 @@ theorem jet_exponent_increasing (n m : ℕ) (h : n < m) :
 -- §14  Kummer specialisation: obstruction persists at q = 1
 -- ════════════════════════════════════════════════════════════════
 
-/-- χ(A) = -6 for the Descartes universe. -/
+/-- χ(A) = -6 for the Archimedean universe. -/
 def descartes_euler : ℤ := -6
 
 /-- χ(A) ≠ 0. -/
@@ -750,10 +750,10 @@ theorem observability_q_independent (C : Type*)
   obs.observable  -- Same value for any q — it doesn't appear in the type.
 
 -- ════════════════════════════════════════════════════════════════
--- §16  NS-singularity of the Descartes universe (main theorem)
+-- §16  NS-singularity of the Archimedean universe (main theorem)
 -- ════════════════════════════════════════════════════════════════
 
-/-- **NS-singularity theorem** for the Descartes universe.
+/-- **NS-singularity theorem** for the Archimedean universe.
 
     The logical chain:
     (1) Observability Hom(1, Ad(A)) = 0 — base property, q-independent
@@ -766,7 +766,7 @@ theorem observability_q_independent (C : Type*)
     survives Kummer specialisation (2κ ∤ -6 for κ ≥ 4).
 
     LaTeX: `\label{thm:ns-singularity-descartes}` -/
--- Ref: [manuscript] Ch 5 §8 NS-singularity of the Descartes universe
+-- Ref: [manuscript] Ch 5 §8 NS-singularity of the Archimedean universe
 structure NSSingularityDescartes (C : Type*) where
   /-- Euler characteristic. -/
   chi : ℤ := -6

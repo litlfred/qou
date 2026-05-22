@@ -6,7 +6,7 @@ A quantum observable universe satisfies the Archimedean condition if
 all n and produces 6 branch points in the geometric descent.
 
 Renamed from `QOU.ArchimedeanCondition` on 2026-05-22 per the chapter
-reorg (Descartes universe → Archimedean universe).
+reorg (Archimedean universe → Archimedean universe).
 
 LaTeX label: `def:archimedean-condition`
 -/

@@ -153,7 +153,7 @@ where $\mathrm{lk}(\varrho_1, \varrho_2)$ is the linking number
 of the two filaments and $e(\xi)|_\Sigma$ is the Euler class of
 the Reeb bundle restricted to $\Sigma$.
 
-For the Descartes universe ($\chi(A) = -6$, Bring's surface):
+For the Archimedean universe ($\chi(A) = -6$, Bring's surface):
 $e(\xi) = -6 \cdot [\Sigma_4]$ in $H^2(\Sigma_4, \mathbb{Z})$.
 The restriction $e(\xi)|_\Sigma$ is nonzero when $\Sigma$ is
 homologically nontrivial in $\Sigma_4$, which holds for the

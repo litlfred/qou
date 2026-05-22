@@ -5,7 +5,7 @@ precise: the spectral locus is a curved boundary that no inscribed
 triangle can contain.  Some spectral colors always require
 *negative* amounts of at least one primary.
 
-In the Descartes universe, the same geometric constraint —
+In the Archimedean universe, the same geometric constraint —
 transplanted to the Skein algebra — explains color confinement.
 
 **The analogy.**

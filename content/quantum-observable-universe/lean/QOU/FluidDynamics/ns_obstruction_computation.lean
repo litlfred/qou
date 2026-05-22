@@ -39,7 +39,7 @@ class NsObstructionComputationContext extends QOU.Shared.SobolevHkRegularityCont
     ∀ n : ℕ, 1 ≤ n → (delta_n n ≠ 0 ↔ jet_diverges n)
 /-- **Content statement** (from manuscript):
 
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
+Let $(\mathbf{C}, A, \tau)$ be the Archimedean universe with
 $\chi(A) = -6$ (Bring's surface of genus 4).  Let $\Sigma$ be
 the collision locus of an anti-parallel vortex pair with
 linking number $\mathrm{lk} = 1$.
