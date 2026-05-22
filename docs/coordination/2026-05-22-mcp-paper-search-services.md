@@ -180,8 +180,8 @@ policy.
 
 | Date | PR | Phase | Status | Cherry-pick / dependency |
 |------|----|-------|--------|--------------------------|
-| 2026-05-22 | [#883](https://github.com/litlfred/qou/pull/883) | `.mcp.json` repair + bib audit + design doc | landed [`a6319b41`](https://github.com/litlfred/qou/commit/a6319b41caaa9981ed0cbb2231c7a5397ee75e93) | **Depends on [#880](https://github.com/litlfred/qou/pull/880)** — without that PR's `$HOME/.local/bin` PATH fix in `scripts/start-folio-assistant.sh`, the `uvx`-based MCP servers I configured won't be found by the session-start launcher. Order: land #880 first or together. |
-| 2026-05-22 | [#880](https://github.com/litlfred/qou/pull/880) | MCP PATH fix + proof-axis backlog drain | open ([`39b7f740`](https://github.com/litlfred/qou/commit/39b7f7407c33dbb4d26ee47a7f9aa51435ac1f84) — `scripts/start-folio-assistant.sh` PATH export) | prerequisite for #883's MCP server fixes to function in remote-execution sessions |
+| 2026-05-22 | [#883](https://github.com/litlfred/qou/pull/883) | `.mcp.json` repair + bib audit + design doc | open · branch-tip [`a6319b41`](https://github.com/litlfred/qou/commit/a6319b41caaa9981ed0cbb2231c7a5397ee75e93) (not yet merged to main) | **Depends on [#880](https://github.com/litlfred/qou/pull/880)** — without that PR's `$HOME/.local/bin` PATH fix in `scripts/start-folio-assistant.sh`, the `uvx`-based MCP servers I configured won't be found by the session-start launcher. Order: land #880 first or together. |
+| 2026-05-22 | [#880](https://github.com/litlfred/qou/pull/880) | MCP PATH fix + proof-axis backlog drain | open · branch-tip [`39b7f740`](https://github.com/litlfred/qou/commit/39b7f7407c33dbb4d26ee47a7f9aa51435ac1f84) (not yet merged to main) — `scripts/start-folio-assistant.sh` PATH export | prerequisite for #883's MCP server fixes to function in remote-execution sessions |
 
 ## Sibling scope map (snapshot 2026-05-22)
 
