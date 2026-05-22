@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/typed-b3-sub-braid-extraction.lean"
   },
   "source_hashes": {
-    "md": "cffcef51d1c0",
+    "md": "c3308bd74b40",
     "ts": "3db4ef9fc2ee",
     "lean": "4689d8c29151"
   },
@@ -408,20 +408,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "cffcef51d1c0",
+          "md": "c3308bd74b40",
           "ts": "3db4ef9fc2ee",
           "lean": "4689d8c29151"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/typed-b3-sub-braid-extraction.md:46: - [`probe_q_beta_operator_valued_N3.py`](../../folio-assistant/computations/q-beta-operator-valued-N3.witness.json) — empirical residual after N=3 is $-0.0066$ ppm (112× tightening), validating the ma"
+        "reviewed_at": "2026-05-22T19:09:35.413Z",
+        "reviewed_sha": "5041a8c1fd9e188561a3f5329330b2c7422a5e8b"
       }
     ],
     "voice-editorializing": [
@@ -544,5 +544,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T19:09:35.413Z"
 }

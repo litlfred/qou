@@ -103,7 +103,7 @@ runs the categorical-derivation chain end-to-end and observes:
 | Story B at N=3 (+ Hopf $c_3 = -2$) | $+0.011$ ppm |
 | Story B at N=4 (+ mixed $c_4 = b^2 + \tfrac12$) | $+0.018$ ppm |
 
-The **N=2 → N=3 transition** reduces the residual by **112×**. This
+The **N=2 $\to$ N=3 transition** reduces the residual by **112$\times$**. This
 reduction is **observable** above CODATA $Q_\beta$'s ~0.4 ppm
 measurement floor — so the categorical identification
 $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ is **empirically validated**, not
@@ -140,7 +140,7 @@ The remaining open question (Track C per PR #657 plan): **can the
 $c_3 = -2$ Hopf assignment be PROVED rigorously**, not just identified
 empirically? The current state is "Story B is empirically observable
 above CODATA noise and structurally suggestive"; a Lean-level proof
-would require formalising the 3-fold Markov closure → Hopf-link
+would require formalising the 3-fold Markov closure $\to$ Hopf-link
 substructure identification at the categorical level — substantial
 follow-up work tracking through PR #487's selection theorem +
 Hoefsmit machinery.

@@ -63,7 +63,7 @@ the bar-fixed component of $\mathcal{P}_n / \mathcal{P}_{n - 1}$:
 - At $n = 3$: pairs with $\mathrm{CS}$ (bar-anti-fixed) — gives zero
   on bar-fixed cells.
 
-So bar-fixed cell ⇒ $d_{\mathrm{II}}(\lambda) = 2$.
+So bar-fixed cell $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 2$.
 
 *Chiral pair case $\lambda \neq \lambda'$.* $\mathrm{bar}(e_\lambda) =
 e_{\lambda'}$ — bar swaps the two cells. The bar-eigenspaces of the
@@ -80,7 +80,7 @@ content carries the orientation-dependent signature). The
 bar-antisymmetric part is the natural pairing partner of
 $\mathrm{CS}$ (which is bar-anti-invariant).
 
-So chiral pair ⇒ $d_{\mathrm{II}}(\lambda) = 3$.
+So chiral pair $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 3$.
 
 $\square$
 

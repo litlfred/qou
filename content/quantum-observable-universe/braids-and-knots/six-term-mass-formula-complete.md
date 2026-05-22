@@ -63,8 +63,8 @@ archimedean specialisation at $q_0$**.*
   $\Phi_q(0.99) \approx 6.7 \times 10^5$.  Per-generator amplitudes
   $|\hat V_i^{\mathrm{full}}|$ for atomic braids are typically
   0.85–0.99, so each summand contributes $\sim 10^5$ Hecke units.
-  Tiny p/n asymmetries between mirror nuclei (T = 1p+2n vs ³He = 2p+1n)
-  amplify by $\sim 10^5 \times$, predicting T − ³He $\approx -737$ MeV
+  Tiny p/n asymmetries between mirror nuclei (T = 1p+2n vs ${}^{3}$He = 2p+1n)
+  amplify by $\sim 10^5 \times$, predicting T − ${}^{3}$He $\approx -737$ MeV
   versus CODATA $+0.019$ MeV.  See
   `brane-tower-isospin-diagnosis.witness.json`.*
 - *Source: [mass endomorphism tower](#prop:mass-endomorphism-tower).*

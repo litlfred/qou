@@ -1,9 +1,9 @@
 **Per-Wedderburn-block $c_5/c_6$ scaffolding for the
 $Q_\beta$ precision-ladder investigation.**
 
-The simple alternating Kashiwara × Jones pattern from $c_3 = -2$
+The simple alternating Kashiwara $\times$ Jones pattern from $c_3 = -2$
 does **not** extend to $c_5, c_6$: empirically $c_5 \approx -395$
-and $c_6 \approx -45485$, 50–3000× off any simple multi-link Jones
+and $c_6 \approx -45485$, 50–3000$\times$ off any simple multi-link Jones
 candidate (see
 [`rem:multi-link-jones-q1-extension`](#rem:multi-link-jones-q1-extension)).
 
@@ -69,7 +69,7 @@ Lean module `QOU.BraidKnot.per_wedderburn_block_c5_c6`:
    pattern), with `c{5,6}_residual_eq_zero` fields asserting they
    vanish at substrate $q$.
 4. A `defaultPerWedderburnBlockC5C6` instance — a deliberate
-   **placeholder** (six $0$ contributions → both residuals trivially
+   **placeholder** (six $0$ contributions $\to$ both residuals trivially
    $0$) awaiting the substantive probe content.
 
 ## Concrete next-probe path

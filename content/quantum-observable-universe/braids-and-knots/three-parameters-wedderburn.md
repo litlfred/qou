@@ -105,8 +105,8 @@ factorizes through these three crossing types.
 For $H_2(R, q)$ (two strands, leptonic physics):
 - Partitions of $2$: $(2)$ and $(1{,}1)$
 - $H_2(R, q) \cong k \oplus k$, $\dim = 1^2 + 1^2 = 2$
-- Two irreps → two parameters ($q$ and $m_e$)
-- No standard representation → no interaction scale needed
+- Two irreps $\to$ two parameters ($q$ and $m_e$)
+- No standard representation $\to$ no interaction scale needed
 
 This is consistent: leptonic physics (electron, muon, tau)
 requires only two inputs.  The third input ($Q_\beta$) is

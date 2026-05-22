@@ -77,11 +77,11 @@ chapter's value).
 
 The swap is a basis-permutation, so:
 
-  - `hoefsmit_b_sq = d_1 * d_2 + 1` is symmetric → unchanged
+  - `hoefsmit_b_sq = d_1 * d_2 + 1` is symmetric $\to$ unchanged
   - Hecke quadratic still holds (constraints at (0,0) and (1,1) swap, both true)
   - All scalar invariants (trace, det, eigenvalues, `hoefsmitB`, Markov trace $\tau_M$) are basis-permutation-invariant
-  - `N_k_factor` formulae in the precision ladder use only `hoefsmitB q` (= $b$) → unaffected
-  - `ckFromReduction q k` uses only `hoefsmitB_local q` → unaffected
+  - `N_k_factor` formulae in the precision ladder use only `hoefsmitB q` (= $b$) $\to$ unaffected
+  - `ckFromReduction q k` uses only `hoefsmitB_local q` $\to$ unaffected
   - τ_M numerical predictions at $q_0$ are unchanged (all use traces / Wedderburn dimensions)
 
 ## What this means for the c_k chain

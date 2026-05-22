@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.lean"
   },
   "source_hashes": {
-    "md": "eaca4017d141",
+    "md": "38d342497162",
     "ts": "f4e6aa46fb79",
     "lean": "9b2bb218707d"
   },
@@ -412,20 +412,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "ef813f7ab875",
+          "md": "38d342497162",
           "ts": "f4e6aa46fb79",
           "lean": "9b2bb218707d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:185: best fit (3×3 Cartan with diag $[2k]_q$) is 6.16% off — falsified."
+        "reviewed_at": "2026-05-22T19:09:35.413Z",
+        "reviewed_sha": "5041a8c1fd9e188561a3f5329330b2c7422a5e8b"
       }
     ],
     "voice-editorializing": [
@@ -567,5 +567,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T15:34:59.203Z"
+  "updated_at": "2026-05-22T19:09:35.413Z"
 }

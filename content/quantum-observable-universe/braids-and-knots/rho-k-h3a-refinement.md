@@ -20,7 +20,7 @@ $$
 
 - *$\rho_K^{\mathrm{LO}}(Z, N) = (Z\cdot m_p + N\cdot m_n) /
   (m_e\cdot|\mathrm{tr}_M(\mathcal{B}_K)|)$ is the **constituent-mass leading-
-  order ansatz** verified to ≤ 0.1 % residual on $\{D, T, {}^3\mathrm{He}\}$
+  order ansatz** verified to $\le$ 0.1 % residual on $\{D, T, {}^3\mathrm{He}\}$
   ([rho-k-leading-order verification](#prop:rho-k-scaling-structure));*
 - *$y_\lambda(q)$ is the **Wenzl-bridge central coefficient** of
   the partition $\lambda \vdash 3A$

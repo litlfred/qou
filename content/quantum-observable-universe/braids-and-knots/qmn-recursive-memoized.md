@@ -29,7 +29,7 @@ $(\rho, \lambda)$ gives:*
 
 ## Why memoisation wins for atom-knot work
 
-For ⁶Li / ⁷Li atom-knot identification ([wenzl-qmn-synergy](#prop:wenzl-qmn-synergy)),
+For ${}^{6}$Li / ${}^{7}$Li atom-knot identification ([wenzl-qmn-synergy](#prop:wenzl-qmn-synergy)),
 we need $\chi_\lambda(\mathcal{B}_K; q_0)$ for **many** hyperbolic knots
 $K$ with crossing-number $\leq 10$ at $H_{18}, H_{21}$. Each braid
 $\mathcal{B}_K$ has cycle type $\rho_K$ in $S_n$.

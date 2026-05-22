@@ -136,7 +136,7 @@ cubic terms at level $n$
    support: the
    [`jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
    measurement script confirms `uniform_bound_pass = true` for
-   D, T, ³He across $n = 1, \dots, 7$. The path-(a) proof from
+   D, T, ${}^{3}$He across $n = 1, \dots, 7$. The path-(a) proof from
    GS spectral-sequence $E_2$-collapse remains open.
 2. **Pentagon $\to$ uv-commutation** — *(resolved)* by
    [`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace).

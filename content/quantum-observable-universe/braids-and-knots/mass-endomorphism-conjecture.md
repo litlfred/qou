@@ -115,14 +115,14 @@ $26\%$ comes from higher jet prolongations.
 
 ## What is known
 
-**Step 1 (Categorical → Markov, proved).**
+**Step 1 (Categorical $\to$ Markov, proved).**
 $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$.
 This is
 [categorical mass as Markov trace](#prop:categorical-mass-markov):
 the Nakayama automorphism is $S^2 = \mathrm{id}$, so the
 mass reduces to the Markov trace of the braid word.
 
-**Step 2 (Tower sum → Vol, archimedean).**
+**Step 2 (Tower sum $\to$ Vol, archimedean).**
 $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$.
 This is the
 [archimedean mass formula](#prop:topological-mass-formula):

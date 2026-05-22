@@ -1,4 +1,4 @@
-**Remark (Volume Conjecture as the depth-2 instance of the GS ↔
+**Remark (Volume Conjecture as the depth-2 instance of the GS $\leftrightarrow$
 period correspondence).**
 
 The Kashaev–Murakami–Murakami volume conjecture

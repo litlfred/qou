@@ -22,7 +22,7 @@ law.
 
 ### Empirical support
 
-Numerical match at $q_0 = 1.10998…$ for the four atoms in the table
+Numerical match at $q_0 = 1.10998\ldots$ for the four atoms in the table
 ([per-atom δρ probe](../../../folio-assistant/computations/per-atom-rho-deviation.witness.json)):
 
 | atom | err (Kashaev) | err (corrected) | improvement |
@@ -58,10 +58,10 @@ scaled by $m_e \cdot \mathrm{Vol}_{\rm hyp}(K_A)$.
 
 ### Why Z=N specifically
 
-The Z=N line has a Z↔N exchange symmetry of the substrate fluid
-that the formula respects. For $Z \neq N$ atoms (³H, ³He), the
-formula fails: ³H and ³He have q-corrections differing by $2.9\,\%$,
-ruling out any Z↔N exchange-symmetric closed form and pointing to
+The Z=N line has a Z$\leftrightarrow$N exchange symmetry of the substrate fluid
+that the formula respects. For $Z \neq N$ atoms (${}^{3}$H, ${}^{3}$He), the
+formula fails: ${}^{3}$H and ${}^{3}$He have q-corrections differing by $2.9\,\%$,
+ruling out any Z$\leftrightarrow$N exchange-symmetric closed form and pointing to
 a **Coulomb-asymmetry** correction
 (cf. [Coulomb-q-Hecke audit](../../../docs/audits/2026-05-02-coulomb-q-hecke-principled.md))
 that the substrate alone cannot absorb.
@@ -87,7 +87,7 @@ A categorical derivation requires three lemmas:
    follow-up audit.
 3. **L-3** (Z=N decoupling): the isospin-asymmetry correction
    $\delta_{\rm asym}(Z, N)$ vanishes at $Z = N$. Should follow from
-   the Z↔N substrate symmetry; **tractable**.
+   the Z$\leftrightarrow$N substrate symmetry; **tractable**.
 
 This block is the **conjectural form**; downstream theorems consume
 it via the Lean class

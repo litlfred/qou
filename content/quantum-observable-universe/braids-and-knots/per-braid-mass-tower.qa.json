@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.lean"
   },
   "source_hashes": {
-    "md": "1cb5f6064859",
+    "md": "393c794373a3",
     "ts": "a217d7e80c0a",
     "lean": "e8bb77600abd"
   },
@@ -444,20 +444,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "1cb5f6064859",
+          "md": "393c794373a3",
           "ts": "a217d7e80c0a",
           "lean": "e8bb77600abd"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md:139: The per-braid tower has been computed for D, ³He, ³H, ⁴He via | quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md:149: | ³He  | $8.83 \\times 10^{-4}$ | $5.55 \\times 10^{3}$ | $8.62 \\times 10^{-1}$ | $5.55 \\times 10^{3}$ | $0.67$ | yes | | quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md:150: | ³H   | $8.83 \\times 10^{-4}$ | $5.55 \\times 10^{3}$ | $8.62 \\times 10^{-1}$ | $5.55 \\times 10^{3}$ | $0.67$ | yes | | quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md:151: | ⁴He  | $4.43 \\times 10^{-6}$ | $7.40 \\times 10^{3}$ | $1.72$               | $7.40 \\times 10^{3}$ | $0.67$ | yes | | quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md:182: corrections (triples, …) are absorbed by pentagon-ascension"
+        "reviewed_at": "2026-05-22T19:09:35.413Z",
+        "reviewed_sha": "5041a8c1fd9e188561a3f5329330b2c7422a5e8b"
       }
     ],
     "voice-editorializing": [
@@ -682,5 +682,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T19:09:35.413Z"
 }

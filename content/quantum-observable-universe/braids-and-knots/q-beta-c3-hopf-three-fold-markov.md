@@ -1,6 +1,6 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-**3-fold Markov closure → Hopf-link substructure → $c_3 = -2$.**
+**3-fold Markov closure $\to$ Hopf-link substructure $\to$ $c_3 = -2$.**
 
 This proposition formalizes the Track C direction: **proving** the
 categorical identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ in the
@@ -90,9 +90,9 @@ the prediction is empirically observable:
 - N=2 (Kashiwara $b^2$ alone): residual $+1.25$ ppm (above CODATA's
   $0.4$ ppm floor)
 - N=3 (+ structural $c_3 = -2$): residual $+0.011$ ppm (within floor)
-- **112× tightening** at N=3 from the structural identification.
+- **112$\times$ tightening** at N=3 from the structural identification.
 
-This 112× residual reduction is **observable above CODATA noise**,
+This 112$\times$ residual reduction is **observable above CODATA noise**,
 empirically validating the categorical-chain prediction.
 
 ## Open formalization steps
@@ -115,7 +115,7 @@ class rule for results downstream of an unproved structural input.
 
 The classical-limit Jones evaluation $J_{\text{Hopf}}(1) = -2$ is
 elementary; the 2-strand sub-braid extraction at order 3 is the
-substantive open step. Empirical observation (112× tightening) and
+substantive open step. Empirical observation (112$\times$ tightening) and
 two convergent structural arguments (Markov cyclicity + KL
 decategorification) give strong support, but a fully-formalised proof
 requires:

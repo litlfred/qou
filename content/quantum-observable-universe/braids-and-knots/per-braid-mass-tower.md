@@ -136,7 +136,7 @@ keeping the natural sub-braid scale.
 
 ## Numerical verification
 
-The per-braid tower has been computed for D, ³He, ³H, ⁴He via
+The per-braid tower has been computed for D, ${}^{3}$He, ${}^{3}$H, ${}^{4}$He via
 [`folio-assistant/computations/per_braid_tower.py`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/folio-assistant/computations/per_braid_tower.py),
 with witness
 [`docs/audits/2026-05-01-per-braid-tower.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/docs/audits/2026-05-01-per-braid-tower.witness.json).
@@ -146,9 +146,9 @@ Per-braid tower values (at $q_0 \approx 1.11$):
 | Atom | descended $|\mathrm{tr}_M(W)|$ | single $\sum\Phi_q$ | pair $z^2\sum\Phi_q$ | total | max sub-trace | $\Phi_q$ conv |
 |------|------------------------------:|--------------------:|---------------------:|------:|--------------:|:-------------:|
 | D    | $1.56 \times 10^{-2}$ | $3.70 \times 10^{3}$ | $2.87 \times 10^{-1}$ | $3.70 \times 10^{3}$ | $0.67$ | yes |
-| ³He  | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
-| ³H   | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
-| ⁴He  | $4.43 \times 10^{-6}$ | $7.40 \times 10^{3}$ | $1.72$               | $7.40 \times 10^{3}$ | $0.67$ | yes |
+| ${}^{3}$He  | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
+| ${}^{3}$H   | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
+| ${}^{4}$He  | $4.43 \times 10^{-6}$ | $7.40 \times 10^{3}$ | $1.72$               | $7.40 \times 10^{3}$ | $0.67$ | yes |
 
 For comparison, the per-generator H\_3 tower at the same atoms
 gives totals $\sim 10^{6}$ — reflecting the H\_3-at-H\_{3A}
@@ -179,7 +179,7 @@ per-braid tower is the **expansion** of this conjectural element
 along the $\mathcal{S}_\bullet$ stratification; the descended
 term gives the level-0 part, the single tower the level-1
 correction, the pair tower the level-2 correction. Higher-level
-corrections (triples, …) are absorbed by pentagon-ascension
+corrections (triples, $\ldots$) are absorbed by pentagon-ascension
 ([pentagon-uv-commutation](#prop\:pentagon-uv-commutation),
 [mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)).
 

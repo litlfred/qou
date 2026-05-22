@@ -68,10 +68,10 @@ precision-ladder $c_k$ extraction, this would close the categorical-
 chain derivation **at every order** for arbitrary multi-baryon
 typed braids:
 
-- B_3 → c_k for proton/neutron (current)
-- B_6 → c_k for di-baryon (deuteron) systems
-- B_9 → c_k for tritium / He-3
-- B_12 → c_k for α-particle (⁴He)
+- B_3 $\to$ c_k for proton/neutron (current)
+- B_6 $\to$ c_k for di-baryon (deuteron) systems
+- B_9 $\to$ c_k for tritium / He-3
+- B_12 $\to$ c_k for α-particle (${}^{4}$He)
 
 The cyclotomic structure also opens a **literature bridge** to
 Ariki-Koike cyclotomic Hecke algebras (Mathas 1999), where Specht
@@ -92,7 +92,7 @@ All sorry-free, closed by `ring` after unfolding.
 
 ## Status
 
-**n = 3 fully verified** in Lean. **n ≥ 4 open** — concrete next
+**n = 3 fully verified** in Lean. **n $\ge$ 4 open** — concrete next
 probe is the B_4 typed-braid character difference at each of the
 five irreps, testing whether the predicted $\Phi_4, \Phi_{12}, \Phi_8$
 factors appear.

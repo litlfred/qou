@@ -27,14 +27,14 @@ $$
 |---|---|---:|---:|
 | (1, 1) | D | 40 | 40 ✓ |
 | (1, 2) | T | 61 | 61 ✓ |
-| (2, 1) | ³He | 58 | 58 ✓ |
-| (2, 2) | ⁴He | 79 | 79 ✓ |
-| (3, 2) | ⁵Li | 97 | 97 ✓ |
-| (3, 3) | ⁶Li | 118 | 118 ✓ |
+| (2, 1) | ${}^{3}$He | 58 | 58 ✓ |
+| (2, 2) | ${}^{4}$He | 79 | 79 ✓ |
+| (3, 2) | ${}^{5}$Li | 97 | 97 ✓ |
+| (3, 3) | ${}^{6}$Li | 118 | 118 ✓ |
 
 (Witness: [`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json),
 5/5 assertions pass.  Cross-validated against
-`term6-residues-at-roots.witness.json` for ⁵Li.)
+`term6-residues-at-roots.witness.json` for ${}^{5}$Li.)
 
 ### Generator-count decomposition
 
@@ -167,7 +167,7 @@ This proposition closes the categorical derivation of the shift
 exponent in the atomic Markov-trace denominator, providing:
 
 1. **Closed-form predictions for unmeasured atoms.** $D(u)$ for
-   ⁷Li $(Z = 3, N = 4)$, ⁸Be $(Z = 4, N = 4)$, etc., is now
+   ${}^{7}$Li $(Z = 3, N = 4)$, ${}^{8}$Be $(Z = 4, N = 4)$, etc., is now
    structurally determined — no Hecke NF computation required.
 2. **Cross-validation gate.** Any atomic mass / binding pipeline
    that involves $D(u)$ can verify shift = 18Z + 21N + 1 as a

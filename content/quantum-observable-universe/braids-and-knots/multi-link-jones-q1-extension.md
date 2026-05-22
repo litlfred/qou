@@ -7,7 +7,7 @@ The $Q_\beta$ precision ladder
 closed $c_1, c_2$ from Kashiwara ($b, b^2$), $c_3$ from
 $J_{\mathrm{Hopf}}(q{=}1) = -2$ at the 3-fold Markov closure, $c_4$
 from the mixed Kashiwara-plus-Hopf-half $b^2 + 1/2$. The simple
-alternating Kashiwara × Jones pattern at odd $k = 3$ suggests trying
+alternating Kashiwara $\times$ Jones pattern at odd $k = 3$ suggests trying
 multi-link Jones values for $c_5, c_7, \ldots$ — Borromean rings,
 double-Hopf, etc.
 
@@ -16,8 +16,8 @@ double-Hopf, etc.
 
 | coefficient | empirical | closest simple multi-link Jones candidate |
 |:---:|---:|---:|
-| $c_5$ | $\approx -395.4$ | $-J_{\mathrm{Borromean}} = +8$ (50× off in scale and sign) |
-| $c_6$ | $\approx -45{,}485$ | $J_{\mathrm{Hopf}} \cdot J_{\mathrm{Borromean}} = 16$ (3000× off) |
+| $c_5$ | $\approx -395.4$ | $-J_{\mathrm{Borromean}} = +8$ (50$\times$ off in scale and sign) |
+| $c_6$ | $\approx -45{,}485$ | $J_{\mathrm{Hopf}} \cdot J_{\mathrm{Borromean}} = 16$ (3000$\times$ off) |
 
 ## What this block provides
 
@@ -50,7 +50,7 @@ This is **infrastructure, not closure**. The Lean module
 
 ## Why the simple multi-link pattern fails
 
-Three structural hypotheses for the 50–3000× mismatch:
+Three structural hypotheses for the 50–3000$\times$ mismatch:
 
 1. **Precision-ladder normalisation revision**: the $b^k$ factor
    multiplying $c_k$ beyond $k = 4$ may carry an extra

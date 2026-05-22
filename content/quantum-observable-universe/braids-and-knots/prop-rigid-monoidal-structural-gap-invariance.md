@@ -82,7 +82,7 @@ consequences of a single structural fact.
 | Finding | Categorical content |
 |:---|:---|
 | (1) Pair-knot operators active at magic shells | LP-dual active set selects S-conjugate composites in Type-B-fixed locus (categorical: sub-algebra structure in $\mathbf{Rep}(\mathrm{SU}_q(2))$) |
-| (2) Z↔N substrate-binding symmetry | $\tau$ is S-invariant ⇒ $\tau(\sigma_{pp}) = \tau(\sigma_{nn})$ algebraically |
+| (2) Z$\leftrightarrow$N substrate-binding symmetry | $\tau$ is S-invariant $\Rightarrow$ $\tau(\sigma_{pp}) = \tau(\sigma_{nn})$ algebraically |
 | (3) Convention-independence of structural gap | The categorical $\tau(\beta_{\mathfrak{H}})$ is the only invariant; conventions vary the non-categorical regularizer |
 
 ## Proof sketch
@@ -135,7 +135,7 @@ endomorphism algebra. $\square$
 3. **Magic-shell decomposition.**  $\Delta_{\mathrm{cat}}(Z, N)$
    should decompose as
    $\Delta_{\mathrm{cat}}(Z, N) = \Delta_0(A) + \mathbb{1}_{Z \in \mathrm{magic}} \cdot \Delta_p + \mathbb{1}_{N \in \mathrm{magic}} \cdot \Delta_n$
-   with $\Delta_p = \Delta_n$ (the Z↔N symmetry constraint).  This
+   with $\Delta_p = \Delta_n$ (the Z$\leftrightarrow$N symmetry constraint).  This
    is the precise content of
    [`conj:magic-shell-stabilization`](#conj:magic-shell-stabilization).
 

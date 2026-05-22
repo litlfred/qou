@@ -140,7 +140,7 @@ An earlier draft used the typed-crossings 6-term decomposition
 ([`beta-decay-energy-scale.md`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md))
 with $|\Delta(\mathrm{net})| = 0.18829$ from the witness, giving
 $Q_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The
-single-wrap form is **4.46× tighter** because the $L_\pm$ and
+single-wrap form is **4.46$\times$ tighter** because the $L_\pm$ and
 $e^-$ contributions, which exactly vanish in the symbolic
 single-wrap difference, picked up small asymmetric finite-size
 contributions in the typed-crossings basis. The single-wrap form
@@ -216,7 +216,7 @@ The $+2.225$ MeV / $+8.482$ MeV / $+7.718$ MeV differences are
 the actual nuclear binding energies — the
 [deuteron binding](https://en.wikipedia.org/wiki/Deuterium),
 [tritium binding](https://en.wikipedia.org/wiki/Tritium),
-[³He binding](https://en.wikipedia.org/wiki/Helium-3).  Predicting
+[${}^{3}$He binding](https://en.wikipedia.org/wiki/Helium-3).  Predicting
 these from the categorical structure (rather than reading them
 from CODATA) is the territory of:
 
