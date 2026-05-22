@@ -655,30 +655,64 @@ basis beyond what's been tried:
     (λ_p − Family A). The empirical case that the framework's 3 %
     CODATA gap is honest (per #895 + #917) is strengthened by
     every additional negative basis extension.
-  - **Strategy I (Yekutieli per-cell curvature) — partial.**
-    Audit [`docs/audits/2026-05-18-conjecture-proof-step3-yekutieli.md`](../audits/2026-05-18-conjecture-proof-step3-yekutieli.md)
-    derives `λ_scale = 5/2 − G·h²` via half-symmetric H_4
-    projection extracting ONE octahedral cell from 𝓑_3's 8-fold
-    tessellation. The h²-coefficient `−G` is the cell-volume
-    `−Vol(𝓑_3)/8`. **Load-bearing conjecture** (audit's own
-    flagging): the cell-↔-half-sym-projection bijection. The
-    follow-up audit [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
-    formalises the conjecture and tests both readings:
-    - **Reading A** (audit as stated, `5/2 − G·h²`): lands in the
-      same 5.6 ppm coincidence basin PR #701 falsified for
-      Wedderburn-sum candidates. Without the categorical-bijection
-      proof, structurally indistinguishable from the coincidence.
-    - **Reading B** (Family A leading + Yekutieli per-cell h²,
-      `5/2 + (3/4 − G)·h² ≈ 2.493`): off from CODATA by ~1.3%
-      and from Family A by ~1.6%; does NOT close the 3% gap.
+  - **Strategy I (Yekutieli per-cell curvature) — framework's
+    substrate-pure prediction.** Per the formalised audit
+    [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
+    (revised 2026-05-22 evening per user direction "framework B
+    only, remove A"), the framework's honest substrate-pure
+    Yekutieli-extended λ_scale is the CATEGORICAL SUM of two
+    independently-derived contributions:
+
+    ```
+    λ_scale^Yekutieli = Family A + Yekutieli per-cell curvature
+                      = (5/2 + (3/4)·h²) + (−G · h²)
+                      = 5/2 + (3/4 − G) · h²  +  O(h⁴)
+    ```
+
+    At q_0: `λ ≈ 2.49266`; m_p prediction ≈ **951 MeV** vs
+    CODATA 938.27 MeV → **framework gap halves from ~3 %
+    (Family A alone) to ~1.4 %**. Both contributing terms are
+    derived from independent substrate-natural principles:
+    Family A is a proved theorem (PR #701 + Lean, on production
+    via #895); the Yekutieli per-cell `−G = −Vol(𝓑_3)/8` is
+    the non-abelian-Stokes curvature contribution per ideal
+    octahedral cell. Neither is fit against CODATA.
+
+    **Load-bearing conjecture** (audit's own flagging): the
+    explicit cell-↔-half-sym-projection bijection at H_4 (audit
+    §"Concrete next R&D" item 1). The Yekutieli per-cell `−G`
+    contribution requires that the half-symmetric Wedderburn
+    projection extract exactly ONE of 8 ideal octahedral cells
+    from 𝓑_3's tessellation; the audit gives the bijection
+    sketch (vertex / edge / center octahedra ↔ conjugate-pair /
+    self-conj partitions) but the explicit construction +
+    sign-convention verification is the gate.
+
+    The "Reading A" alternative `5/2 − G·h²` (Yekutieli REPLACES
+    Wedderburn h² rather than adding to it) was **removed as a
+    framework candidate** because: (1) it lands at +5.6 ppm from
+    CODATA — same coincidence basin as PR #701's falsified
+    Wedderburn-sum candidates; (2) it would conflict with
+    Family A's proved theorem at h² order. Treating it as the
+    framework's prediction would re-enter the CAL-4 antipattern
+    PR #895 escaped.
+
+    **Next R&D** (audit §"Concrete next R&D"):
+    1. Construct cell-↔-half-sym-projection bijection at H_4
+       (categorical theory work, not compute).
+    2. Derive h⁴ corrections from the per-cell tessellation to
+       close the residual 1.4 % gap.
+    3. Lean formalisation pending Mathlib's non-abelian
+       multiplicative integral primitive (long-term).
+
     Witness:
     [`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../folio-assistant/computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json).
-    Yekutieli structural argument unresolved between Reading A
-    (coincidence basin, requires categorical bijection proof) and
-    Reading B (off-target, doesn't close the gap). Per audit §
-    "Concrete next R&D" item 1, the next step is the explicit
-    construction of the cell-↔-half-sym-projection bijection at
-    H_4 — categorical theory work, not compute.
+    Production-update path: a follow-up PR could swap Family A →
+    Yekutieli (5/2 + (3/4)h² → 5/2 + (3/4−G)h²) in
+    `m_p_borromean_verification_50dps.py`, contingent on either
+    the bijection proof or explicit owner authorisation
+    (analogous to Family A's status pre-#895 — conjecture-
+    conditional but the framework's honest derivation).
 
 ## Verification criteria
 
