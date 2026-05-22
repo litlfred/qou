@@ -58,20 +58,28 @@ def main() -> int:
         "the natural categorical Family A: λ_A(q) = (1/4) Σ_λ dim_q V_λ "
         "at H_4. Proved by direct algebraic manipulation: λ_A = "
         "5/2 + (3/4)·h², series TERMINATES (c_4 = c_6 = ... = 0). "
-        "NOTE: the theorem is correct algebra but FALSIFIES the "
-        "identification λ_A = λ_scale — λ_A(q_0) = 2.5328 vs λ_p "
-        "target 2.4600 (+2.96 %), and the sign of c_2 disagrees with "
-        "the empirical fit (+3/4 vs ≈ -G). See "
+        "Per PR #895 this IS the framework-derived substrate λ_scale "
+        "(replacing the CAL-4-fitted literal 2.4599527869 in "
+        "m_p_borromean_verification_50dps.py). Framework m_p prediction "
+        "is now 966 MeV (~3 % off CODATA's 938.27 MeV); the 3 % gap is "
+        "the framework's honest accuracy, not an error. See "
         "docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md "
-        "§Strategy H for the V_7 Wedderburn variant that has the "
-        "right sign on h² (closer to a structural candidate)."
+        "§Alternatives to Strategy D for the search for substrate-pure "
+        "refinements (V_3, V_4 Wedderburn sums; q-dilog tower; Yekutieli "
+        "curvature) that could close the 3 % residual."
     )
-    # No content_block tag: this script PROVES an algebraic identity for a
-    # specific linear functional on H_4 characters, but the identification
-    # λ_A := λ_scale is FALSIFIED (off by 2.96 %, wrong sign on h²). The
-    # earlier conj:lambda-scale-substrate-form tag misleadingly suggested
-    # this was the substrate form; that conjecture is now closed-negative.
-    # See probe_family_a_variants.py and the 2026-05-22 brief §Strategy H.
+    # The earlier conj:lambda-scale-substrate-form content_block tag
+    # is dropped here intentionally — that label was demoted to
+    # `conj:` in PR #892 (now merged) as a CAL-4 honesty banner, and
+    # its meaning shifted away from "Family A IS λ_scale". Family A
+    # is now the framework's substrate λ_scale per PR #895, but
+    # there is no single content block whose `lean.ref` points at
+    # this proof: the algebraic identity is documented inline in
+    # this script's description + witness assertions, and consumed
+    # by m_p_borromean_verification_50dps.py via the production
+    # `lambda_proton_family_a()` helper. The content-block layer
+    # references Family A through that consumer's witness, not
+    # through this proof script directly.
 
     q = sp.Symbol("q", positive=True)
     h = sp.Symbol("h", real=True)
