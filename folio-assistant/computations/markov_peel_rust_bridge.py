@@ -289,54 +289,42 @@ def tr_M_atomic_rust_recursive(Z: int, N: int, *,
 
 def tr_M_atomic_rust_full(Z: int, N: int, *,
                             dps: int = 50,
-                            include_inter: bool = True,
-                            max_iterations_per_step: int = 10_000):
-    """**Tier 1.A — canonical Markov trace via the FULL Rust pipeline.**
+                            include_inter: bool = True):
+    """**Tier 1.A — full Markov-trace pipeline entirely in Rust + MPFR.**
 
-    Reduce step in Rust (`pyhecke_native.incremental_reduce_rust`,
-    new in v0.5.0) + trace recursion in Rust (`tr_m_word_lq`, from
-    PR #859) + mpmath combine.  Single PyO3 call for the reduce
-    (which was 60-70% of wall in the Python LaurentQ path); one
-    PyO3 call per distinct reduced word for the trace recursion.
+    Single PyO3 call: `pyhecke_native.tr_m_atomic_mpfr` (v0.6.0+)
+    ships the signed word + `q_str` + `dps` to Rust; gets back ONE
+    decimal-string-encoded MPFR value parsed via `mpmath.mpf`.
 
-    Per CLAUDE.md §Precision goals L1 (50-dps compute floor):
-    every coefficient is exact `BigRational` on the Rust side; the
-    Python evaluation at q₀ uses mpmath at `dps` precision.  No
-    f64 anywhere in the critical path.
+    Inside Rust (no Python crossings between stages):
+      1. R1+R2+R3 reduce with exact BigRational coefficients
+         (`hecke_engine::reduce_laurent::incremental_reduce`).
+      2. Per reduced σ-word: Markov-axiom trace recursion via
+         `hecke_engine::tr_m_word_lq::tr_m_word_lq` (Phase-2, from
+         PR #859) producing a ZHLaurent in (z, h) with BigInt
+         coefficients in q^{1/2}.
+      3. MPFR substitution at `q₀`: every BigRational/BigInt → MPFR
+         via decimal-string round-trip; accumulate `coef · ZHLaurent`
+         into the running total.
+
+    No back-and-forth Python ↔ Rust data shuttling.  No Python
+    mpmath combine loop.  No per-word PyO3 calls.
+
+    Per CLAUDE.md §Precision goals L1 (50-dps compute floor): every
+    intermediate is exact up to the final MPFR substitution.
 
     Cross-checks bit-identical to
-    `laurent_q_trace.tr_M_atomic_lq.evaluate_mpf(Q_50_DIGIT_STR, dps)`
-    to 1e-30 relative.
-
-    Parameters
-    ----------
-    Z, N : int
-        Proton and neutron counts; A = Z + N, n_strands = 3·A.
-    dps : int
-        MPFR working precision in decimal places (default 50,
-        production floor).  Use 100+ for substrate-derivation
-        cross-checks.
-    include_inter : bool
-        Include inter-nucleon crossings (default True).
-    max_iterations_per_step : int
-        Per-step fixpoint cap passed to the Rust reducer
-        (default 10000, matching the Python default).
-
-    Returns
-    -------
-    tr_M : mpmath.mpf
-        Canonical Markov trace at q₀ at `dps` precision.
+    `laurent_q_trace.tr_M_atomic_lq.evaluate_mpf(Q_50_DIGIT_STR, dps)`.
 
     Falls back via ``NotImplementedError`` if the trace recursion
-    hits Case C on any reduced word — caller routes to
-    `markov_peel.tr_M_atomic` (sympy ocneanu path), same contract
-    as the Phase-2 wrapper.
+    hits Case C (multiple top-1 in segment) on any reduced word —
+    caller routes to `markov_peel.tr_M_atomic` (sympy ocneanu path).
     """
     try:
         import pyhecke_native
     except ImportError as e:
         raise ImportError(
-            "pyhecke_native not installed.  Build via "
+            "pyhecke_native (>= 0.6.0) not installed.  Build via "
             "`cd tools/pyhecke-native && maturin build --release` "
             "and `pip install` the resulting wheel."
         ) from e
@@ -349,54 +337,20 @@ def tr_M_atomic_rust_full(Z: int, N: int, *,
         Z, N, include_inter=include_inter
     )
 
-    # Rust reduce — ONE PyO3 call; the Hecke fixpoint loop now lives
-    # entirely in Rust with `BigRational` arithmetic.
-    reduced_ffi = pyhecke_native.incremental_reduce_rust(
-        signed_word, max_iterations_per_step
-    )
+    try:
+        result_str = pyhecke_native.tr_m_atomic_mpfr(
+            signed_word, n_strands, Q_50_DIGIT_STR, dps
+        )
+    except RuntimeError as e:
+        raise NotImplementedError(
+            f"Rust pipeline hit Case C on some reduced word "
+            f"(see error message); caller should fall back to "
+            f"markov_peel.tr_M_atomic (sympy ocneanu path).  "
+            f"Underlying: {e}"
+        ) from e
 
-    # Trace assembly: for each reduced σ-word, call the Phase-2
-    # Rust `tr_m_word_lq` and accumulate the contribution in mpmath.
     with mp.workdps(dps):
-        q = mp.mpf(Q_50_DIGIT_STR)
-        z_mp = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
-        h_mp = q - 1 / q
-        total = mp.mpf(0)
-        for word_list, coef_list in reduced_ffi:
-            # Skip formal-variable entries (negative gens make no
-            # contribution to the trace; matches the Python convention
-            # in `tr_M_element`).
-            if any(g < 0 for g in word_list):
-                continue
-            # Evaluate the LaurentRationalQ coefficient at q₀.
-            c_mp = mp.mpf(0)
-            for q_exp, num_str, den_str in coef_list:
-                c_term = mp.mpf(num_str) / mp.mpf(den_str)
-                c_mp += c_term * (q ** q_exp)
-            if c_mp == 0:
-                continue
-            # Trace of the pure-σ word via Phase-2 Rust recursion.
-            try:
-                zh_ffi = pyhecke_native.tr_m_word_lq(
-                    list(word_list), n_strands
-                )
-            except RuntimeError as e:
-                raise NotImplementedError(
-                    f"Rust recursion hit Case C on word {word_list}; "
-                    f"caller should fall back to markov_peel.tr_M_atomic "
-                    f"(sympy ocneanu path).  Underlying: {e}"
-                ) from e
-            zh_val = mp.mpf(0)
-            for (z_exp, h_exp), poly_terms in zh_ffi:
-                c_zh = mp.mpf(0)
-                for q_half_exp, big_int_str in poly_terms:
-                    # q_half_exp = 2·(q-exponent) per LaurentPolyQ encoding.
-                    c_zh += mp.mpf(big_int_str) * (
-                        q ** (mp.mpf(q_half_exp) / 2)
-                    )
-                zh_val += c_zh * (z_mp ** z_exp) * (h_mp ** h_exp)
-            total += c_mp * zh_val
-        return total
+        return mp.mpf(result_str)
 
 
 if __name__ == "__main__":

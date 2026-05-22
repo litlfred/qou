@@ -8,6 +8,7 @@
 use hecke_engine::{
     geck_pfeiffer, gram, littlewood_richardson,
     reduce_laurent as rust_reduce_laurent, seminormal, seminormal_mn, seminormal_mpfr,
+    tr_m_atomic_mpfr as rust_tr_m_atomic_mpfr,
     tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
 };
 use pyo3::prelude::*;
@@ -526,6 +527,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(tr_m_word_lq, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq_clear_cache, m)?)?;
     m.add_function(wrap_pyfunction!(incremental_reduce_rust, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
@@ -708,4 +710,38 @@ fn incremental_reduce_rust(
         max_iterations_per_step,
     );
     elem.to_ffi()
+}
+
+/// **Tier 1.A — full pipeline in Rust + MPFR, single decimal string out.**
+///
+/// End-to-end equivalent of:
+///   `tr_M(β_atomic, q₀) @ dps`
+/// implemented entirely in Rust (R1+R2+R3 reduce → tr_M_word_lq
+/// per reduced word → MPFR substitution at `q₀`).  No per-word
+/// PyO3 calls; no Python mpmath combine loop; no Python ↔ Rust
+/// shuttling of BigInt decimal strings per coefficient.
+///
+/// `signed_word`: `[(sign, gen_0based), ...]` — same shape as
+/// `incremental_reduce_rust`.
+/// `n_strands`: `3·A` (where `A = Z + N`).
+/// `q_str`: substrate parameter as a decimal string.
+/// `dps`: working precision in decimal places (default 50,
+/// CLAUDE.md §Precision goals L1 floor).
+///
+/// Returns: one decimal-string-encoded MPFR value at full precision.
+/// Python caller does `mpmath.mpf(result_str)`.
+///
+/// Raises `RuntimeError` if the trace recursion hits Case C —
+/// caller routes to the sympy ocneanu fallback (same contract as
+/// `tr_m_word_lq`).
+#[pyfunction]
+#[pyo3(signature = (signed_word, n_strands, q_str, dps=50))]
+fn tr_m_atomic_mpfr(
+    signed_word: Vec<(i8, i32)>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+) -> PyResult<String> {
+    rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr(&signed_word, n_strands, &q_str, dps)
+        .map_err(pyo3::exceptions::PyRuntimeError::new_err)
 }
