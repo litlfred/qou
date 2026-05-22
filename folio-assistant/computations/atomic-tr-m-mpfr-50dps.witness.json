@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T05:05:07.683003+00:00",
-  "commitSha": "260522a6b92529e5656455e73d825392f847f5cb",
+  "computedAt": "2026-05-22T16:15:55.483218+00:00",
+  "commitSha": "56c4dcaa80e821da83562f7d1cf89b94797bc1a3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-tr-m-mpfr-50dps",
   "scriptFile": "atomic_tr_m_mpfr_50dps.py",
-  "scriptHash": "06180d514f65",
-  "scriptCommitSha": "c50ad12ea46d0a90e8bd513f0676f8e4a70d30bc",
+  "scriptHash": "f9fb02e3cec8",
+  "scriptCommitSha": "bb68fc2a7785a02c3955014ff69fa223cf14b753",
   "description": "Plan F advance — tr_M(T_w, q_0) via the 3A-strand atom-braid convention for proton, neutron, deuteron, tritium, ³He, evaluated at q_0 to 50 dps via the Hoefsmit + Wenzl bridge (Σ_λ y_λ · χ_λ) and (where applicable) compared against the published Jones polynomial of the historical knot ID. Companion to proton-mass-mpfr-50dps.witness.json.  Tritium / ³He at H_9 unblocked vs. legacy sympy path (>4-min timeout).",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision": "mpfr_50dps",
@@ -28,14 +28,18 @@
       "n_strands_3A": 3,
       "rho_factor": 1,
       "word_length_3A": 11,
-      "tr_M_at_q0_50dps": "1.065306228592389255153277569968066119334",
-      "term1_b_pred_mev_50dps": "0.5443703642391708873746069273122333205101",
-      "bridge_elapsed_sec": 0.0013153553009033203,
+      "tr_M_at_q0_50dps": "1.065306228592389255153277569970000000000",
+      "term1_b_pred_mev_50dps": "0.5443703642391708873746069273132044254289",
+      "bridge_elapsed_sec": 0.4453442096710205,
+      "method": "canonical-rust",
+      "rust_canonical_chi_elapsed_sec": 0.4453442096710205,
+      "python_hoefsmit_elapsed_sec": null,
+      "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.01145625114440918,
+        "elapsed_sec": 0.009112119674682617,
         "tr_M_at_q0_50dps": "1.065306228592389255153277569968066119334",
-        "abs_diff_vs_bridge": "8.018294130276586938421609401454445636446e-50"
+        "abs_diff_vs_bridge": "1.933880666236799020798963337077934437066e-30"
       },
       "historical_K_comparison": null
     },
@@ -47,14 +51,18 @@
       "n_strands_3A": 3,
       "rho_factor": 1,
       "word_length_3A": 11,
-      "tr_M_at_q0_50dps": "0.9232332971695836424637698809187137593269",
-      "term1_b_pred_mev_50dps": "0.4717712454586952132361618221910877663666",
-      "bridge_elapsed_sec": 0.0006678104400634766,
+      "tr_M_at_q0_50dps": "0.9232332971695836424637698809190000000000",
+      "term1_b_pred_mev_50dps": "0.4717712454586952132361618221912192103038",
+      "bridge_elapsed_sec": 0.0031440258026123047,
+      "method": "canonical-rust",
+      "rust_canonical_chi_elapsed_sec": 0.0031440258026123047,
+      "python_hoefsmit_elapsed_sec": null,
+      "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.0041234493255615234,
+        "elapsed_sec": 0.004526615142822266,
         "tr_M_at_q0_50dps": "0.9232332971695836424637698809187137593269",
-        "abs_diff_vs_bridge": "4.677338242661342380745938817515093287927e-50"
+        "abs_diff_vs_bridge": "2.862406731125549268296422022120991338613e-31"
       },
       "historical_K_comparison": null
     },
@@ -66,20 +74,24 @@
       "n_strands_3A": 6,
       "rho_factor": 1,
       "word_length_3A": 23,
-      "tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713",
-      "term1_b_pred_mev_50dps": "0.1984139792600863602202122496845482243370",
-      "bridge_elapsed_sec": 0.03726053237915039,
+      "tr_M_at_q0_50dps": "0.3882864715477132785110659223170000000000",
+      "term1_b_pred_mev_50dps": "0.1984139792600863602202122496847623322705",
+      "bridge_elapsed_sec": 0.003998279571533203,
+      "method": "canonical-rust",
+      "rust_canonical_chi_elapsed_sec": 0.003998279571533203,
+      "python_hoefsmit_elapsed_sec": null,
+      "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.10796737670898438,
+        "elapsed_sec": 0.13404536247253418,
         "tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713",
-        "abs_diff_vs_bridge": "2.739583827844500537294049878830268925786e-50"
+        "abs_diff_vs_bridge": "4.312001286864123280696882843189283635344e-31"
       },
       "historical_K_comparison": {
         "historical_K": "6_2",
         "J_K_published": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + q**(-5)",
         "J_K_at_q0_50dps": "1.026920012551320993303754071031154426914",
-        "tr_M_over_J_K_at_q0_50dps": "0.3781078046994516142005638574058190051110",
+        "tr_M_over_J_K_at_q0_50dps": "0.3781078046994516142005638574062389016204",
         "note": "If the ratio is a power of q_0, then tr_M = q_0^k · J_K, i.e. they agree up to writhe normalisation. q_0 = 1.1099785955541805752815940796..., so log(ratio)/log(q_0) should be close to an integer."
       }
     },
@@ -91,14 +103,18 @@
       "n_strands_3A": 9,
       "rho_factor": 1,
       "word_length_3A": 35,
-      "tr_M_at_q0_50dps": "0.1040521186755256548979583274321227548353",
-      "term1_b_pred_mev_50dps": "0.05317052338846900035091906246157092399196",
-      "bridge_elapsed_sec": 21.004501819610596,
+      "tr_M_at_q0_50dps": "0.1040521186755256548979583274320000000000",
+      "term1_b_pred_mev_50dps": "0.05317052338846900035091906246150652559127",
+      "bridge_elapsed_sec": 0.35294222831726074,
+      "method": "canonical-rust",
+      "rust_canonical_chi_elapsed_sec": 0.35294222831726074,
+      "python_hoefsmit_elapsed_sec": null,
+      "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 1.411064863204956,
+        "elapsed_sec": 1.4508039951324463,
         "tr_M_at_q0_50dps": "0.1040521186755256548979583274321227548353",
-        "abs_diff_vs_bridge": "6.347816186468964659583774109484769462186e-51"
+        "abs_diff_vs_bridge": "1.227548353230573249499538520837758495776e-31"
       },
       "historical_K_comparison": null
     },
@@ -110,14 +126,18 @@
       "n_strands_3A": 9,
       "rho_factor": 1,
       "word_length_3A": 35,
-      "tr_M_at_q0_50dps": "0.2065408585622626294891049090129267784181",
-      "term1_b_pred_mev_50dps": "0.1055421618574147132931716449454511201985",
-      "bridge_elapsed_sec": 21.779183864593506,
+      "tr_M_at_q0_50dps": "0.2065408585622626294891049090130000000000",
+      "term1_b_pred_mev_50dps": "0.1055421618574147132931716449454852198364",
+      "bridge_elapsed_sec": 0.29468488693237305,
+      "method": "canonical-rust",
+      "rust_canonical_chi_elapsed_sec": 0.29468488693237305,
+      "python_hoefsmit_elapsed_sec": null,
+      "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.5788655281066895,
+        "elapsed_sec": 0.6309752464294434,
         "tr_M_at_q0_50dps": "0.2065408585622626294891049090129267784181",
-        "abs_diff_vs_bridge": "1.937754414816841843451888938684824362141e-50"
+        "abs_diff_vs_bridge": "7.322158188667431755003956068044036078540e-32"
       },
       "historical_K_comparison": null
     }
