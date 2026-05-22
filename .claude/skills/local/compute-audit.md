@@ -228,7 +228,7 @@ numerical equivalence at q₀ before/after.
   module body:
 
   ```python
-  from pyhecke.gram import TR_M as _PG_TR_M  # corrected upstream
+  from pyhecke.gram import TR_M  # corrected upstream
   ...
   TR_M = np.array([1.0, z, z, z**2, z**2, z**3])  # ← shadowing
   ```
