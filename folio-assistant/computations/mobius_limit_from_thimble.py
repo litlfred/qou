@@ -4,7 +4,7 @@ Möbius integration limit a(q) = (4-q)/(4q+3) — closed-form witness.
 
 Linked to content block: conj:mobius-limit-from-thimble.
 
-The proposition asserts that the integration limit appearing in the
+The conjecture asserts that the integration limit appearing in the
 baryon-period real-axis integral
 
     a(q) = (4 - q) / (4 q + 3)

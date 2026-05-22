@@ -77,7 +77,7 @@ def main() -> int:
         "secondary characteristic classes of B_3 complement as "
         "candidates for Vol(K_p) = 18.03 = Vol(B_3) + Σ_secondary."
     )
-    w.set_content_block("conj:flavor-dressed-mass-from-substrate-split")
+    w.set_content_block("prop:flavor-dressed-mass-from-substrate-split")
 
     # Implied Vol(K_p) from M_NUCLEON
     vol_K_p_implied = M_NUCLEON * HBAR**2 / M_E
