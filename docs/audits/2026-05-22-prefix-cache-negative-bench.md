@@ -107,8 +107,8 @@ the state internally.  No marshalling.
 
 ## Status
 
-- `use_prefix_cache=True` remains accessible for debug / repro of
-  this finding but is **disabled by default**.
+- `use_prefix_cache=True` (disk JSON path) remains accessible for
+  debug / repro of this finding but is **disabled by default**.
 - The audit doc (this file) catalogues the negative result so a
   future agent doesn't redo the same investigation.
 - Removing the prefix-cache infra entirely is not advised — the
@@ -116,6 +116,75 @@ the state internally.  No marshalling.
   generalisation of `tr_m_atomic_mpfr` (identity → from-scratch,
   cached state → resume) and the `_prefix_cache.py` module is
   independent of the disabled wiring.
+
+## Follow-up: Rust-side cache (pyhecke-native v0.9.0)
+
+Per the "where would prefix-cache pay off" §3 above — moving the
+cache into Rust process memory eliminates the FFI marshalling
+cost.  Landed in commit `80cab0b9`:
+
+- `hecke_engine::atomic_reduce_cache`: `OnceLock<Mutex<HashMap<u64,
+  LaurentHeckeElement>>>` keyed by FxHash of the signed-word prefix.
+- `pyhecke_native.tr_m_atomic_mpfr_cached(signed_word, n, q_str,
+  dps)`: looks up the longest cached prefix internally, resumes
+  the reduce, saves the final state under the full signed-word's
+  hash.  Zero FFI marshalling of cached state.
+- Wired as the new default in `tr_M_atomic_rust_full`
+  (`use_rust_cache=True`).
+
+### Rust-cache bench (canonical sweep)
+
+| atom | word_len | wall_rust_cache | wall_cold | speedup |
+|------|---------:|----------------:|----------:|--------:|
+| p    | 11 |  0.001 s |  0.000 s | 0.7× |
+| n    | 11 |  0.001 s |  0.000 s | 1.0× |
+| D    | 23 |  0.011 s |  0.011 s | 1.0× |
+| T    | 35 |  0.165 s |  0.174 s | 1.1× |
+| ³He  | 35 |  0.083 s |  0.081 s | 1.0× |
+| ⁴He  | 47 |  0.965 s |  1.040 s | 1.1× |
+| ⁵Li  | 59 |  6.336 s |  6.258 s | 1.0× |
+| **⁶Li** | 71 | **63.032 s** | 68.155 s | **1.1×** |
+| **TOTAL** | | **70.593 s** | **75.719 s** | **1.1× sweep-wide** |
+
+vs disk JSON cache: 80.6 s / 0.9× (net loss).
+Net improvement of the Rust cache over the JSON cache: ~10 s
+across the sweep + no overhead on individual atoms.
+
+### Why only 1.1× (not the predicted 5-10×)
+
+The ⁶Li cold wall is 68 s.  Per the prefix profile
+(2026-05-22-rust-laurent-q-reduce-results.md §"Phase-by-phase
+profile"), **94% of that wall is in the LAST 17 crossings**
+(k=53 → k=70) where term count goes 2K → 32K.  When ⁶Li resumes
+from ⁵Li's cached state (k=59), the SUFFIX is the 12 crossings
+where the exponential blowup happens.  Saved: the cheap first
+59 crossings (~5 s).  Unavoidable: the expensive suffix (~63 s).
+
+The prefix-cache pattern is a perfect fit only when:
+- The expensive work is in the PREFIX (not the suffix), OR
+- The prefix dominates total wall, OR
+- There are many atoms sharing the same expensive prefix.
+
+Atomic-braid mass-table compute has the OPPOSITE shape: the
+last few crossings carry the cost.  So the cache can only ever
+save the cheap prefix (~10% of wall).
+
+### What WOULD give a larger speedup
+
+The compounding wins from §3 above remain:
+
+- **Tier 1.B orbit reduction** — quotients the atomic braid by
+  the (S_Z × S_N) same-species permutation symmetry BEFORE
+  reducing, shrinking the suffix word itself.  Gated on the
+  algebraic-verification step per the original brief.
+- **Algorithm-level**: avoid the exponential term-count blowup
+  in the last 17 crossings.  This is the structural cost the
+  current σ-word reduce inherits.  Crystal basis / canonical KL
+  basis could collapse the blowup; that's a 2-4 week
+  architectural change.
+
+The 1.1× from the Rust cache is the achievable win without
+algorithm change.  Defaulted on; documented.
 
 ## What still works after this commit
 
