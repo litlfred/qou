@@ -29,7 +29,9 @@ import type { CheckerResult, CheckerHit } from "./qa-checkers-voice";
  * - String args to high-precision constructors:
  *   `mpf("1.5")`, `Decimal("0.5")`, `mpmath.mpf("3.14")` —
  *   the float-looking content is a string, not a Python float.
- * - Sentinel values: `float("inf")`, `float("nan")`, `float("-inf")`.
+ * - Sentinel values: `float("inf")`, `float("-inf")`, `float("nan")`,
+ *   `float("infinity")` (Python's float() accepts the long form too;
+ *   matching is case-insensitive).
  * - Comments / docstrings: anywhere after `#` or inside `""" ... """`
  *   / `''' ... '''` — narrative, not code.
  *
@@ -40,18 +42,29 @@ const PY_STRING_RE = /"""[\s\S]*?"""|'''[\s\S]*?'''|"(?:[^"\\]|\\.)*"|'(?:[^'\\]
 const PY_COMMENT_RE = /#[^\n]*/g;
 
 // A "bare float literal" is a numeric token that contains a `.`
-// or exponent and is NOT immediately followed by a string (already
-// stripped) or `j` (complex). We also require word-boundary on
-// the left to avoid matching attribute-style identifiers like
-// `obj.5x` (which Python wouldn't parse anyway).
+// or exponent and is NOT immediately followed by `j`/`J` (complex)
+// or another identifier char. PEP 515 numeric underscores (`1_000.5`,
+// `1.5_5e1_0`) are accepted between digits.
+//
+// Alternatives are ordered specific→general: the exponent form
+// matches before the dot-only form so `1.5e10` matches as the full
+// e-literal, not just `1.5` (the original regex stopped at the
+// dot and missed the exponent suffix).
 const BARE_FLOAT_LITERAL_RE =
-  /(?<![A-Za-z_0-9.])(?:\d+\.\d*|\.\d+|\d+(?:\.\d*)?[eE][+-]?\d+)(?![jJ])/g;
+  /(?<![A-Za-z_0-9.])(?:\d[\d_]*(?:\.[\d_]*)?[eE][+-]?\d[\d_]*|\d[\d_]*\.[\d_]*|\.\d[\d_]*)(?![jJ])/g;
 
-// A `float(...)` cast call. We allow `float("inf")` etc. via a
-// secondary check on the captured arg.
-const FLOAT_CALL_RE = /\bfloat\s*\(\s*([^)]*?)\s*\)/g;
+// A `float(...)` cast call. The inner `(?:[^()]|\([^()]*\))*`
+// alternation allows one level of nested parens — `float(int(x))`
+// matches as a single call. Two or more levels of nesting
+// (`float(int(int(x)))`) remain a known heuristic limitation; the
+// inner `float(...)` calls are still caught via the recursive scan
+// because each is a separate `\bfloat` anchor. `[^()]` matches
+// newlines by default in JS regex, so multiline casts like
+// `float(\n  "inf"\n)` are handled by the same pattern.
+const FLOAT_CALL_RE =
+  /\bfloat\s*\((?:[^()]|\([^()]*\))*\)/g;
 const FLOAT_CALL_SENTINEL_RE =
-  /^\s*['"](?:inf|-inf|nan|infinity)['"]\s*$/i;
+  /^\s*['"](?:inf|-inf|nan|infinity|-infinity)['"]\s*$/i;
 
 const blankNonNewline = (m: string) => m.replace(/[^\n]/g, " ");
 
@@ -81,63 +94,72 @@ export function checkDoesNotDefaultToFloat(
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
-  const lines = masked.split("\n");
   // `maskStringsAndComments` blanks string/comment regions in place
-  // (same length, same line breaks), so column offsets in the masked
-  // text align with the original text and we can recover sentinel
-  // arguments from `origLines` using indices computed against
-  // `maskedLine`.
-  const origLines = src.split("\n");
+  // (same length, same line breaks), so offsets in the masked text
+  // align with the original text — we can recover sentinel
+  // arguments from `src` using indices computed against `masked`.
   const hits: CheckerHit[] = [];
 
-  for (let i = 0; i < lines.length; i++) {
-    const maskedLine = lines[i];
-    const origLine = origLines[i];
-    // Skip lines that are entirely whitespace once strings + comments
-    // are stripped — purely commented or string-literal lines.
-    if (!maskedLine.trim()) continue;
-
-    // Scan for `float(...)` casts first and blank the matched region
-    // in a working copy of the line so the bare-literal scan below
-    // does NOT double-flag literals that appear inside the cast
-    // (`float(1.0)` would otherwise be reported twice).
-    let lineForLiterals = maskedLine;
-    for (const m of maskedLine.matchAll(FLOAT_CALL_RE)) {
-      // Test the sentinel against the ORIGINAL source slice (the
-      // masked line has `float("inf")` blanked to `float(    )`,
-      // which never matches `FLOAT_CALL_SENTINEL_RE` — Gemini
-      // r3276657081).
-      const startOfArg = m.index! + m[0].indexOf("(") + 1;
-      const endOfArg = m.index! + m[0].lastIndexOf(")");
-      const rawArg = origLine.slice(startOfArg, endOfArg);
-      const isSentinel = FLOAT_CALL_SENTINEL_RE.test(rawArg);
-
-      if (!isSentinel) {
-        const trimmed = rawArg.trim();
-        hits.push({
-          file: scriptPath,
-          line: i + 1,
-          text:
-            `bare \`float(${trimmed.slice(0, 40)}${
-              trimmed.length > 40 ? "…" : ""
-            })\` cast — use \`mpmath.mpf(...)\` / \`Decimal(...)\` ` +
-            `for substrate-precision values, or string-quote the ` +
-            `literal if intentional`,
-        });
-      }
-      // Blank the cast region in `lineForLiterals` regardless of
-      // sentinel status — the inner literal (if any) is either
-      // already reported via the cast hit above or is a sentinel arg
-      // that should never be reported.
-      lineForLiterals =
-        lineForLiterals.substring(0, m.index!) +
-        " ".repeat(m[0].length) +
-        lineForLiterals.substring(m.index! + m[0].length);
+  // Precompute newline offsets so we can map a char offset back to a
+  // 1-indexed line number in O(log n) per lookup. Whole-source scan
+  // (rather than per-line) lets us catch multiline `float(\n ...)`
+  // casts that Black-formatted code may produce.
+  const newlineOffsets: number[] = [];
+  for (let i = 0; i < masked.length; i++) {
+    if (masked[i] === "\n") newlineOffsets.push(i);
+  }
+  const lineForOffset = (offset: number): number => {
+    let lo = 0;
+    let hi = newlineOffsets.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >>> 1;
+      if (newlineOffsets[mid] < offset) lo = mid + 1;
+      else hi = mid;
     }
+    return lo + 1;
+  };
 
-    // Bare float literals in the region not consumed by a `float()`
-    // cast.
-    for (const m of lineForLiterals.matchAll(BARE_FLOAT_LITERAL_RE)) {
+  // Phase 1 — whole-source scan for `float(...)` casts. For each
+  // match, recover the original arg from `src` (since the masked
+  // copy has string contents blanked), test the sentinel allow-list,
+  // and blank the matched region in a working copy so the literal
+  // scan below does not double-flag arguments like `float(1.0)`.
+  let workingSource = masked;
+  for (const m of masked.matchAll(FLOAT_CALL_RE)) {
+    const startOfArg = m.index! + m[0].indexOf("(") + 1;
+    const endOfArg = m.index! + m[0].lastIndexOf(")");
+    const rawArg = src.slice(startOfArg, endOfArg);
+    const isSentinel = FLOAT_CALL_SENTINEL_RE.test(rawArg.trim());
+
+    if (!isSentinel) {
+      const display = rawArg.trim().replace(/\s+/g, " ");
+      hits.push({
+        file: scriptPath,
+        line: lineForOffset(m.index!),
+        text:
+          `bare \`float(${display.slice(0, 40)}${
+            display.length > 40 ? "…" : ""
+          })\` cast — use \`mpmath.mpf(...)\` / \`Decimal(...)\` ` +
+          `for substrate-precision values, or string-quote the ` +
+          `literal if intentional`,
+      });
+    }
+    // Blank the cast region (newlines preserved) so the per-line
+    // literal scan below does not see the cast's interior.
+    const blanked = m[0].replace(/[^\n]/g, " ");
+    workingSource =
+      workingSource.substring(0, m.index!) +
+      blanked +
+      workingSource.substring(m.index! + m[0].length);
+  }
+
+  // Phase 2 — bare float literals in regions not consumed by a
+  // `float(...)` cast. Per-line scan is fine here; literals do not
+  // span lines.
+  const workingLines = workingSource.split("\n");
+  for (let i = 0; i < workingLines.length; i++) {
+    if (!workingLines[i].trim()) continue;
+    for (const m of workingLines[i].matchAll(BARE_FLOAT_LITERAL_RE)) {
       hits.push({
         file: scriptPath,
         line: i + 1,

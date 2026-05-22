@@ -630,14 +630,18 @@ const SCRIPT_QUALITY: QaCriterionDefinition[] = [
     domain: "script-quality",
     description:
       "Python script source contains no bare float literals (`1.0`, " +
-      "`0.5`, `3.14e-10`, …) or unchecked `float(...)` casts. Use " +
-      "`mpmath.mpf(\"...\")`, `Decimal(\"...\")`, or pin the value via " +
-      "a witness JSON. Allow-listed sentinels: `float(\"inf\")`, " +
-      "`float(\"nan\")`, `float(\"-inf\")`. Heuristic whole-file regex " +
-      "scan; string literals and `#` comments are stripped before " +
-      "matching to avoid false positives. Remaining false positives " +
-      "are addressed with a `human` reviewer override on the " +
-      "script's sidecar.",
+      "`0.5`, `3.14e-10`, `1_000.5`, …) or unchecked `float(...)` " +
+      "casts. Use `mpmath.mpf(\"...\")`, `Decimal(\"...\")`, or pin " +
+      "the value via a witness JSON. Allow-listed sentinels (case- " +
+      "insensitive): `float(\"inf\")`, `float(\"-inf\")`, `float(\"nan\")`, " +
+      "`float(\"infinity\")`, `float(\"-infinity\")`. Heuristic " +
+      "whole-source regex scan; string literals and `#` comments are " +
+      "stripped before matching to avoid false positives. Multiline " +
+      "casts and one level of nested parens (`float(int(x))`) are " +
+      "handled; deeper nesting and PEP 515 underscore validation are " +
+      "known heuristic limitations. Remaining false positives are " +
+      "addressed with a `human` reviewer override on the script's " +
+      "sidecar.",
     default_severity: "major",
     // `"ts"` is the conventional primary-source-file key in
     // `QaFieldHash` across every QA axis (extension-agnostic — the
