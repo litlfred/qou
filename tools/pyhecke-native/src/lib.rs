@@ -186,6 +186,24 @@ fn partitions_of(n: usize) -> Vec<Vec<usize>> {
     seminormal::partitions_of(n)
 }
 
+/// **Batch `chi_q_atomic`** — f64 character of `c·σ + d·I` Hecke
+/// factors evaluated across every partition of `n_strands`.  Returns
+/// `Vec<(partition, chi_value)>`.  Rayon-parallel on the Rust side.
+///
+/// F-B of the `ffi-roundtrip-audit` skill: replaces Python
+/// `for shape in partitions_of(n): chi_q_atomic(shape, factors, q)`
+/// per-shape loops (saved one PyO3 crossing per partition + gained
+/// work-stealing parallelism).  See
+/// `.claude/skills/local/ffi-roundtrip-audit.md` §F-B.
+#[pyfunction]
+fn chi_q_atomic_all_partitions(
+    n_strands: usize,
+    factors: Vec<(f64, f64, u32)>,
+    q: f64,
+) -> Vec<(Vec<usize>, f64)> {
+    seminormal::chi_q_atomic_all_partitions(n_strands, &factors, q)
+}
+
 /// **Classical Murnaghan-Nakayama character** `χ^λ(μ)`.
 ///
 /// Computes the irreducible character of the symmetric group `S_n`
@@ -515,6 +533,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;

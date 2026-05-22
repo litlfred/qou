@@ -165,16 +165,20 @@ def main():
         else PRECISION_F64_FALLBACK
     )
     chi_kwargs = {"precision": "mpfr_50dps"} if _RUST_CHI_AVAILABLE else {}
+    # Batch character evaluation across partitions per case — F-A
+    # of ffi-roundtrip-audit (single PyO3 crossing, rayon-parallel
+    # on the Rust side).  Import here to avoid module-load reorder.
+    from hecke_characters import chi_lambdas_braid
     for case in CASES:
         word = case["word"]
         w = case["writhe"]
         num = mpf(0)
         den = mpf(0)
         per_lam = []
-        for shape in parts:
+        chi_raw_values = chi_lambdas_braid(parts, word, Q0, **chi_kwargs)
+        for shape, chi_raw in zip(parts, chi_raw_values):
             c_lam = content_sum(shape)
             w_lam = dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q
-            chi_raw = chi_lambda_braid(shape, word, Q0, **chi_kwargs)
             # Rust mpfr returns a decimal string; parse to mpf.
             if isinstance(chi_raw, str):
                 chi_raw = mpf(chi_raw)

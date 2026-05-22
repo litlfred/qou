@@ -356,10 +356,10 @@ def main() -> int:
     parser.add_argument(
         "--method",
         choices=["laurent_q_rust", "markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
-        default="markov_peel",
+        default="laurent_q_rust",
         help=(
-            "Computation method. `laurent_q_rust` (Tier 1.A) is the "
-            "fastest production path: full reduce + trace + MPFR in "
+            "Computation method. `laurent_q_rust` (Tier 1.A, **default**) "
+            "is the fastest production path: full reduce + trace + MPFR in "
             "Rust via pyhecke_native.tr_m_atomic_mpfr (v0.6.0+). "
             "`laurent_q` (PR #859) is the prior fast path: Python "
             "LaurentQ-direct Markov-axiom recursive ascent with "

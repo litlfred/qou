@@ -72,11 +72,16 @@ def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
     # Pass q as a string to avoid f64 quantization; use mpfr_50dps
     # precision for chi_lambda_braid to match y_λ's 50-dps pin.
     q_str = mp.nstr(q_val, dps, strip_zeros=False)
+    # Batch character evaluation across partitions (F-A of ffi-roundtrip-
+    # audit): one PyO3 crossing + rayon-parallel inside Rust, vs the
+    # p(n) per-shape FFI calls the loop used to make.
+    from hecke_characters import chi_lambdas_braid
+    parts = list(partitions_of(n))
+    chi_values = chi_lambdas_braid(parts, word_m, q_value=q_str,
+                                    precision="mpfr_50dps")
     total = mp.mpf(0)
-    for lam in partitions_of(n):
+    for lam, chi in zip(parts, chi_values):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word_m, q_value=q_str,
-                                precision="mpfr_50dps")
         total += y * mp.mpf(str(chi))
     return total
 

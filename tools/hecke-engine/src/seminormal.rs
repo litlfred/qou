@@ -516,6 +516,36 @@ fn apply_factor_left(v: &mut [f64], blocks: &[Block], c: f64, d: f64) {
 ///
 /// f64 throughout. For arbitrary precision use the `_mpfr` variant
 /// (TODO).
+/// **Batch `chi_q_atomic` over all partitions of `n_strands`** —
+/// returns `Vec<(partition, chi_value)>` for every λ ⊢ n_strands,
+/// computed in parallel via rayon.
+///
+/// F-B fix from `ffi-roundtrip-audit` (2026-05-22): caller-side
+/// `for shape in partitions_of(n): chi_q_atomic(shape, factors, q)`
+/// is the Python ↔ Rust ping-pong anti-pattern — `p(n)` PyO3 boundary
+/// crossings.  This batch entry-point collapses that to a single
+/// crossing + Rust-side rayon parallelism.
+///
+/// Same f64 numerical contract as [`chi_q_atomic`].  For MPFR
+/// precision, see [`crate::seminormal_mpfr::chi_q_atomic_all_partitions_mpfr`]
+/// (currently not implemented; the F-B fix landed only on the f64
+/// side per the existing `compute_atom_chi_rust.py` caller).
+pub fn chi_q_atomic_all_partitions(
+    n_strands: usize,
+    factors: &[(f64, f64, u32)],
+    q: f64,
+) -> Vec<(Vec<usize>, f64)> {
+    use rayon::prelude::*;
+    let shapes = partitions_of(n_strands);
+    shapes
+        .par_iter()
+        .map(|shape| {
+            let chi = chi_q_atomic(shape, factors, q);
+            (shape.clone(), chi)
+        })
+        .collect()
+}
+
 pub fn chi_q_atomic(shape: &[usize], factors: &[(f64, f64, u32)], q: f64) -> f64 {
     let n: usize = shape.iter().sum();
     if n == 0 {

@@ -387,6 +387,69 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
     return float(np.trace(product))
 
 
+def chi_lambdas_braid(shapes, word, q_value=None, precision=None):
+    """**Batch variant of `chi_lambda_braid`** — single PyO3 crossing for
+    a list of partitions, all evaluated on the same braid word at the
+    same parameter `q`.
+
+    Args mirror `chi_lambda_braid` but take a *list* of `shapes` and
+    return a list of characters in the same order.
+
+    Backed by `pyhecke_native.chi_lambdas_braid` (f64) or
+    `chi_lambdas_braid_mpfr` (MPFR-50dps).  Both are rayon-parallel
+    over partitions on the Rust side — substantially faster than
+    Python-level `for shape in shapes: chi_lambda_braid(...)` because
+    it (a) saves N-1 PyO3 boundary crossings, (b) shares the
+    word-marshalling work, and (c) gets work-stealing parallelism.
+
+    Tier 1 of the `ffi-roundtrip-audit` skill catalogues 5 sites
+    where this batch form replaces the per-shape loop (F-A pattern);
+    see `.claude/skills/local/ffi-roundtrip-audit.md`.
+    """
+    if q_value is None:
+        q_value = float(q0)
+    tag, dps = _parse_precision(precision)
+
+    word_marshalled = [
+        (1 if (s == '+' or s == 1 or s is True) else -1, int(g))
+        for s, g in word
+    ]
+
+    if tag == PRECISION_SYMBOLIC_Q:
+        raise NotImplementedError(
+            "symbolic-in-q character evaluation is deferred to F3."
+        )
+
+    shapes_list = [list(s) for s in shapes]
+
+    if tag.startswith("mpfr_"):
+        if not _RUST_CHI_AVAILABLE:
+            raise NotImplementedError(
+                f"precision={tag} requires the Rust kernel "
+                "(pyhecke_native).  Install via `maturin build` in "
+                "tools/pyhecke-native/."
+            )
+        if isinstance(q_value, str):
+            q_str = q_value
+        else:
+            q_str = format(float(q_value), f".{(dps or 50) + 5}g")
+        return _pyn.chi_lambdas_braid_mpfr(
+            shapes_list, word_marshalled, q_str, dps or 50
+        )
+
+    # f64 path.
+    if _RUST_CHI_AVAILABLE:
+        return _pyn.chi_lambdas_braid(
+            shapes_list, word_marshalled, float(q_value)
+        )
+
+    # Python fallback (slow): loop the singular path.
+    return [
+        chi_lambda_braid(s, word, q_value=q_value, precision=precision)
+        for s in shapes_list
+    ]
+
+
 def crossing_coeffs(ti, tj):
     """Crossing (c, d) for nucleon types: 1=proton, 0=neutron."""
     if ti == 1 and tj == 1:
