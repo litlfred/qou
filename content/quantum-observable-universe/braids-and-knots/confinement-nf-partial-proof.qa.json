@@ -105,20 +105,22 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "48d4f0c1eb3d",
+          "md": "28ac3fa8e2f3",
           "ts": "5c3c745d188b",
           "lean": "683dfbda4401"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "e2805fa0d5a6a74447ea13f1dba5cb8a264bc0c7"
         },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
+        "reviewed_at": "2026-05-22T21:29:02.224Z",
+        "reviewed_sha": "8866237f64c757d0c54c425839dad811c1dad328",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.ts:1: LP/SDP witness 'folio-assistant/computations/shift-from-nf-basis.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.ts:1: LP/SDP witness 'folio-assistant/computations/shift-from-nf-basis.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
       }
     ],
     "detangler-section-band": [
@@ -686,5 +688,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T18:57:18.801Z"
+  "updated_at": "2026-05-22T21:29:02.224Z"
 }

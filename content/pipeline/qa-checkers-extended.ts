@@ -350,8 +350,14 @@ export function checkComputeLpDualPresent(
   if (!ts) return { result: "n/a", hits: [] };
   const { witness } = getComputationField(ts);
   if (!witness) return { result: "pass", hits: [] };
-  // Filter: only blocks whose ts mentions LP/SDP/operator-selection.
-  if (!LP_DUAL_HINT_RE.test(ts)) return { result: "pass", hits: [] };
+  // Filter: only blocks whose ts mentions LP/SDP/operator-selection
+  // OUTSIDE the `uses: [...]` array. References inside `uses:` are
+  // downstream dependencies (the block consumes an LP result) — they
+  // do not imply the block's OWN witness must carry LP dual fields.
+  const tsWithoutUses = ts.replace(/\buses\s*:\s*\[[\s\S]*?\]/g, "");
+  if (!LP_DUAL_HINT_RE.test(tsWithoutUses)) {
+    return { result: "pass", hits: [] };
+  }
   const absPath = witness.startsWith("/")
     ? witness
     : resolve(REPO_ROOT, witness);
@@ -362,11 +368,22 @@ export function checkComputeLpDualPresent(
   } catch {
     return { result: "pass", hits: [] };
   }
+  // LP fields may live at the top level OR nested under `data.*`
+  // (the conventional location for WitnessBuilder.add_data outputs
+  // from `solve_operator_selection_lp` / `solve_psd_operator_selection_sdp`).
+  const nested =
+    body.data && typeof body.data === "object" && body.data !== null
+      ? (body.data as Record<string, unknown>)
+      : {};
+  const hasField = (f: string) => f in body || f in nested;
+  const hasActive = LP_DUAL_ACTIVE_ALIASES.some(
+    (a) => a in body || a in nested,
+  );
   const missing: string[] = [];
   for (const f of LP_DUAL_REQUIRED_FIELDS) {
-    if (!(f in body)) missing.push(f);
+    if (!hasField(f)) missing.push(f);
   }
-  if (!LP_DUAL_ACTIVE_ALIASES.some((a) => a in body)) {
+  if (!hasActive) {
     missing.push(`active_set (or alias: ${LP_DUAL_ACTIVE_ALIASES.join("/")})`);
   }
   if (missing.length === 0) return { result: "pass", hits: [] };
