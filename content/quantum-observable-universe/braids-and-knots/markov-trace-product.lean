@@ -69,7 +69,7 @@ noncomputable def vertexVolume (z : R_q) (gc : GeneratorChain) : R_q :=
       by that chain's vertex volume).
 
     The Markov property as stated in Jones 1987 is *peeling-from-the-
-    right* (`trace (cs ++ [c]) = trace cs · vertexVolume z c`), but
+    From the right (`trace (cs ++ [c]) = trace cs · vertexVolume z c`), but
     since `R_q = ℤ[q, q⁻¹]` is commutative the cons- and snoc-form
     Markov axioms are equivalent and the cons form is more
     tractable in Lean.

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.lean"
   },
   "source_hashes": {
-    "md": "93c64af4970b",
+    "md": "76936aec6234",
     "ts": "ec8301fb8dfb",
     "lean": "7ff592a5f7ed"
   },
@@ -477,16 +477,14 @@
         },
         "reviewed_at": "2026-05-22T20:40:21.603Z",
         "reviewed_sha": "d501ed255c428f183fef4da04d96f253245e9b4d"
-      }
-    ],
-    "voice-scholarly-default": [
+      },
       {
         "field_hash": {
-          "md": "93c64af4970b",
+          "md": "76936aec6234",
           "ts": "ec8301fb8dfb",
           "lean": "7ff592a5f7ed"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -494,10 +492,27 @@
           "script_hash": "5650958b9f3a",
           "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-22T20:59:31.864Z",
-        "reviewed_sha": "2cdada401e638187079cdcb5539602d280eaac65",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md:395: Right-object.*"
+        "reviewed_at": "2026-05-22T21:05:03.668Z",
+        "reviewed_sha": "bd3d9a7ca6ce5c88d7f9ba66401b19066a31a000"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "76936aec6234",
+          "ts": "ec8301fb8dfb",
+          "lean": "7ff592a5f7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T21:05:03.668Z",
+        "reviewed_sha": "bd3d9a7ca6ce5c88d7f9ba66401b19066a31a000"
       }
     ],
     "voice-ai-slop": [
@@ -688,5 +703,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:59:31.864Z"
+  "updated_at": "2026-05-22T21:05:03.668Z"
 }

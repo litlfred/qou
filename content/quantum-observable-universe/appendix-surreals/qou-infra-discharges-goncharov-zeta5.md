@@ -122,7 +122,7 @@ specific cyclotomic case, not the general statement.
 - Avenue B: need to express the Goncharov 22-term relation at
   $\zeta_5$ as a Markov trace of an explicit Hecke element. The
   key technical step is identifying the right $H_n(q)$ and the
-  right braid word.
+  The right braid word.
 
 Both are concrete projects of approximately 1–2 weeks of focused
 work for a contributor familiar with both QOU's Hecke / NF
