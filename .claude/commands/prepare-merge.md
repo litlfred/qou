@@ -255,8 +255,21 @@ cycle.
 
 ## 7. Merging
 
-- After all review comments are disposed of, resolve conflicts so that a merge can be performed
+- After all review comments are disposed of, resolve conflicts so that a merge can be performed.
 - Ask the user if they are ready to proceed with the merge (provide PR # and URL).  If confirmed, perform merge.
+- **Merge method: ALWAYS `merge` (merge-commit), NEVER `squash`, unless
+  the user EXPLICITLY requests squash on the merge command itself.**
+  Small structured commits are a deliberate authoring discipline in this
+  repo (CLAUDE.md §"Branch + PR workflow" rule 4) — they exist so
+  cherry-pick, `git bisect`, focused review attention, and granular
+  rollback all work. Squashing destroys that record. The default for
+  `mcp__github__merge_pull_request` must be `merge_method: "merge"`.
+  Treat squash as a destructive operation: do not infer it from "merge",
+  "ship", "land", or any other generic verb — only from the explicit
+  word "squash" in the user's instruction.
+  - `merge` (default) — preserves every commit on the branch
+  - `rebase` — only if the user explicitly says "rebase-merge"
+  - `squash` — only if the user explicitly says "squash"
 
 ## Failure handling
 
