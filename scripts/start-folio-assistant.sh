@@ -54,7 +54,15 @@ for arg in "$@"; do
   esac
 done
 
-# ── Ensure bun is available ──────────────────────────────────────
+# ── Ensure tool PATH (bun + lean toolchain + uv) ────────────────
+#
+# The MCP server's lean_* tools probe for `lean`/`lake`/`elan` via
+# `command -v`, so they need `~/.elan/bin` on PATH. Similarly,
+# `uv` (used by paper-search-mcp etc.) lives at `~/.local/bin`.
+# Prepend both unconditionally — harmless if the directories
+# don't exist; required if they do.
+
+export PATH="$HOME/.bun/bin:$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 
 if ! command -v bun &>/dev/null; then
   echo "[start-folio-assistant] bun not found. Installing..." >&2
