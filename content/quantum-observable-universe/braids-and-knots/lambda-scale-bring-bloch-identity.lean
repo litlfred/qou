@@ -5,8 +5,10 @@
 
   CAL-4 caveat (2026-05-22): demoted prop → conj per §3b
   conjectural-propagation rule + empirical PSLQ tier 0-5 failure.
-  The theorems below are `rfl` against `opaque AtomKnot.lambdaScale
-  := bringBlochRegulator / volClosure` — definitionally true but
+  The theorems below are `rfl` against the definitional unfold of
+  `def AtomKnot.lambdaScale := bringBlochRegulator / volClosure`,
+  whose *components* `bringBlochRegulator` and `volClosure` are
+  declared `opaque` (see lines below) — definitionally true but
   saying NOTHING about which integer combination realises the
   scale. The integer-coefficient content is the open work
   (`bring_bloch_tier5_search_m_p.py` consistent-negative across

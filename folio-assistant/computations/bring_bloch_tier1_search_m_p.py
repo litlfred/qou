@@ -37,7 +37,7 @@ Basis (high-precision hyperbolic volumes from SnapPy/KnotInfo):
   Vol(7_4)  = 5.099098...
 
 References:
-- conj:lambda-scale-bring-bloch-identity (this PR's upstream)
+- conj:lambda-scale-bring-bloch-identity (upstream content block)
 - conj:bring-hyperbolic-knot-bloch-decomposition
 - tier_1_hyperbolic_3braid_pslq.py (same basis, 2/(3π) target)
 """
