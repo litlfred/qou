@@ -100,7 +100,7 @@ theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
 ```
 
 The theorem statement is now **explicit at the matrix-product
-level**. The proof is the only remaining `sorry` in PR #672's
+level**. The proof is the only remaining `sorry` in this
 chapter-block content — discharged by the substantive sympy
 verification recorded in `per-wedderburn-block-ck.witness.json`.
 

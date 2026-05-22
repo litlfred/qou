@@ -114,7 +114,7 @@ defining identity for the algebraic level-2 primitive in $\mathcal{H}_q$.
 
 Computational consequences of the post-$\tau$ pentagon (R):
 
-1. **T3 reorganisation in PR #801**:
+1. **T3 reorganisation**:
    [`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/pentagon_reduction_li2q.py)
    uses (P′) — the duplication form of (R) — to evaluate
    $\mathrm{Li}_2^q(|V_i V_j|)$ at out-of-radius arguments via factorisation

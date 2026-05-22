@@ -103,7 +103,7 @@ identity.  $\square$
 ### Methodology gating
 
 The proof above presumes the joint-tower SDP is constructively in
-place (step 1 of the algorithm).  In the current implementation:
+place (step 1 of the algorithm).  Within the present implementation:
 
 - For `principled-derivation` entries (electron, proton, neutron)
   the explicit $\sigma$-words are direct (electron $\sigma_1^3$ in

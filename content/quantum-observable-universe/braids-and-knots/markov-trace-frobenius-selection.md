@@ -176,7 +176,7 @@ non-degeneracy requirement.
 The compute side has TWO parallel implementations.  Once the
 mislabeling in `habiro_coefficients_atomic` is fixed (relabel
 its output as $\tau_{\mathrm{SW}}$ rather than $\mathrm{tr}_M$),
-the agreement asserted in PR #472 between polynomial and residue
+the asserted agreement between polynomial and residue
 paths becomes correctly stated as "two computations of
 $\tau_{\mathrm{SW}}$".  The QOU mass formula must then be evaluated
 using $\tau_M$ (= the Wenzl-bridge / from-scratch-validated value),

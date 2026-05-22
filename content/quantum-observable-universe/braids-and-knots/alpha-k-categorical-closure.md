@@ -126,5 +126,5 @@ is the recommended **first follow-up** after the E_0 disentanglement
 listed as item 6 in the post-PR-#665 R&D inventory
 ([`rem:post-pr665-open-rd-inventory`](#rem:post-pr665-open-rd-inventory)).
 The required input infrastructure (per-irrep $\chi_\lambda$ closed
-forms, Wedderburn-block scaffolding) shipped in PR #672 and is
-now ready for the categorical resummation analysis.
+forms, Wedderburn-block scaffolding) is in place and ready for the
+categorical resummation analysis.

@@ -13,7 +13,7 @@ This block records them with **initial findings** from investigation.
 | 1 | $\sigma_1$ off-diagonal substantive discharge | partial (chapter has $\sigma_1$ Hecke quadratic; full matrix-level discharge pending) |
 | 2 | Full Hecke algebra type at $H_n(q)$ | open (Mathlib lift) |
 | 3 | Per-Wedderburn-block Python probe at $\varepsilon^{10}, \varepsilon^{12}$ | open |
-| 4 | Inductive-limit Markov-trace operator construction | open (scaffold landed in PR #665) |
+| 4 | Inductive-limit Markov-trace operator construction | open (scaffold present) |
 | 5 | Full perturbative-expansion infrastructure on typed-$B_3$ words | open |
 | 6 | **Matrix-level Yang-Baxter cubic on $V_{(2,1)}$ Hoefsmit matrices** | **NEGATIVE FINDING** — chapter conventions fail YB |
 
