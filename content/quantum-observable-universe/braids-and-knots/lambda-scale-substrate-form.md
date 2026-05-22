@@ -7,15 +7,22 @@ $\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$
 *— it is a PSLQ-style numerical near-coincidence
 ([2026-05-18 falsification audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md)).
 Empirical only; treated as a* **4th calibration anchor** *in the
-production chain — see PR #879 audit
+production chain. The truth-in-naming pass (PR #888) renamed the
+literal twin to* `LAMBDA_PROTON_FITTED_FROM_CODATA` *in
+[`m_p_borromean_verification_50dps.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m_p_borromean_verification_50dps.py),
+with an explicit CAL-4 VIOLATION banner. See PR #879 audit
 [`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md)
 §"Sneak CAL-4 confirmed" and the cheat-sheet Migration Backlog
 \#1.* **The label `conj:lambda-scale-substrate-form` is retained for
 graph-stability**; readers should interpret it as
 "$\lambda_{\mathrm{scale}}$ empirical fit form (substrate-source
-open)" until
+open)". The named candidate
 [`prop:lambda-scale-bring-bloch-identity`](#prop:lambda-scale-bring-bloch-identity)
-or an equivalent genuinely-substrate-sourced derivation lands.
+PSLQ-failed at tier 5 (see
+[`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)
+conclusion), so a derivation route through it is **not currently
+expected to close**; the remaining research direction per PR #888
+is the q-dilog tower.
 What IS proved (Family A theorem):*
 
 $$
