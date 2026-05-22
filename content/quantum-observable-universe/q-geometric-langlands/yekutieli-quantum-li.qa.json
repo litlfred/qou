@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/q-geometric-langlands/yekutieli-quantum-li.md"
   },
   "source_hashes": {
-    "md": "cb58cbadb146",
+    "md": "604d228a1ebc",
     "ts": "8f99a37b7050"
   },
   "criteria": {
@@ -391,19 +391,19 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "cb58cbadb146",
+          "md": "604d228a1ebc",
           "ts": "8f99a37b7050"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/q-geometric-langlands/yekutieli-quantum-li.md:1: hedge-token concentration: 3 distinct AI-slop softener tokens present (essentially / comprehensive / leverage / streamline / robust / crucial / etc.)"
+        "reviewed_at": "2026-05-22T20:07:10.171Z",
+        "reviewed_sha": "6862494ccd1a79931caec83c7c1e86c9f19d8ab8"
       }
     ],
     "framework-canonical": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T20:07:10.171Z"
 }

@@ -73,7 +73,7 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
 
    separating the ground state (laminar flow) from the first
    excited mode.  This gap prevents spontaneous onset of turbulence
-   below a critical energy injection rate — the brane fluid is
+   below a threshold energy injection rate — the brane fluid is
    stable against infinitesimal perturbations, unlike classical
    Navier--Stokes where $\mathrm{Re} \to \infty$ always produces
    instability.

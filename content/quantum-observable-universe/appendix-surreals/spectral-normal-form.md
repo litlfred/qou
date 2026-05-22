@@ -99,7 +99,7 @@ Under the surreal lift, all of this is replaced by:
 - *no convergence requirement* — everything is formal power series
   with infinite-birthday exponents.
 
-This is a significant conceptual simplification; whether it
+This is a substantive conceptual simplification; whether it
 corresponds to a practical *proof* technique (replacing current
 spectral-gap proofs in the paper with surreal evaluations)
 depends on computability of the normal forms.
