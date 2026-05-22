@@ -1,9 +1,9 @@
-# Extended q-dilog spike: |V̂_S|, 2-var Bloch-Wigner, ℚ(ζ_60) trace-field
+# Extended q-dilog spike: V̂_S, ℚ(ζ_60) Bloch-Wigner, Tier-0 knot volumes
 
 **Date:** 2026-05-22
 **Branch:** `claude/iw-q-dilog-vhat-spike-2026-05-22`
 **Predecessor:** [PR #923](https://github.com/litlfred/qou/pull/923) — original q-dilog spike, negative in substrate-natural-argument basis.
-**Status:** Negative result extended across all three open paths from PR #923's audit; λ_scale remains transcendental in every tested substrate-natural basis.
+**Status:** Extended negative result — no integer relation found for λ_scale in the tested 23-element basis at coefficient bound 10³⁰. Strengthens the empirical case from PR #923 (this is **not** a mathematical transcendence result; PSLQ negatives only rule out integer relations within the tested basis and coefficient bound).
 
 ## Context
 
@@ -24,26 +24,31 @@ PSLQ tolerance dps = 80, coefficient ≤ 10³⁰ (matching
 
 Script: [`q_dilog_vhat_spike_lambda_scale.py`](../../folio-assistant/computations/q_dilog_vhat_spike_lambda_scale.py).
 
-### Path (a) — operator-valued $|\hat V_S|$
+### Path (a) — operator-valued $\hat V_S$ (signed)
 
 For the canonical proton braid in $H_3$ (Z=1, N=0, A=1), extract
-$|\hat V_i^\lambda|$ values via
+$\hat V_i^\lambda$ values via
 [`canonical_tower.per_irrep_V_hat`](../../folio-assistant/computations/canonical_tower.py).
-Per partition $\lambda \vdash 3$ and generator $i \in \{0, 1\}$:
+Per partition $\lambda \vdash 3$ and generator $i \in \{0, 1\}$
+(values are signed):
 
-| $\lambda$ | $|\hat V_0|$ | $|\hat V_1|$ |
+| $\lambda$ | $\hat V_0$ | $\hat V_1$ |
 |---|---|---|
-| $(3)$ | 1.8804 (skipped; $\ge q_0$) | 0.7352 |
-| $(2, 1)$ | 0.6714 | 1.0551 |
-| $(1, 1, 1)$ | $-0.5376$ | 1.3750 (skipped; $\ge q_0$) |
+| $(3)$ | $+1.8804$ (skipped; $|V| \ge q_0$) | $+0.7352$ |
+| $(2, 1)$ | $+0.6714$ | $+1.0551$ |
+| $(1, 1, 1)$ | $-0.5376$ | $+1.3750$ (skipped; $|V| \ge q_0$) |
 
-The four in-range values feed $\mathrm{Li}_2^q(|\hat V|)$.
+The four in-range values feed $\mathrm{Li}_2^q(\hat V)$ directly
+(signed argument; $\mathrm{Li}_2^q$ converges for any $|z| < q$).
 
-### Path (b) — Bloch-Wigner at ℚ(ζ_n) roots of unity
+### Path (b) — Bloch-Wigner at primitive $\zeta_n$ (ℚ(ζ_60) trace-field tower, 1-variable)
 
-$D(\zeta_n)$ for $n \in \{3, 5, 8, 10, 12, 15, 20, 60\}$, primitive
-roots, giving 8 anchors covering the full trace-field tower
+$D(\zeta_n) = D(e^{2\pi i / n})$ for $n \in \{3, 4, 5, 6, 8, 10, 12, 15, 20, 60\}$ — 10
+anchors covering the full ℚ(ζ_60) trace-field tower
 $\{\mathbb{Q}(\zeta_3), \mathbb{Q}(\zeta_4), \mathbb{Q}(\zeta_5), \mathbb{Q}(\zeta_{60})\}$.
+**This is the 1-variable basis** — true 2-variable Bloch-Wigner / 5-term
+Rogers-pentagon pairings are deferred (listed in §"What this does
+NOT rule out" item 2).
 
 ### Path (c) — hyperbolic-knot trace-field volumes
 
@@ -126,11 +131,14 @@ exhaustion. Remaining open:
 |---|---|---|---|
 | `bring_bloch_tier{0..5}_search_m_p.py` | 52 hyperbolic knots through 11-crossing | $10^{30}$ | negative |
 | `q_dilog_tower_spike_lambda_scale.py` (PR #923) | 23 elements: $\mathrm{Li}_2^q + \Phi_q$ at substrate-natural | $10^{20}/10^{30}$ | negative |
-| **`q_dilog_vhat_spike_lambda_scale.py`** (this spike) | 23 elements: $|\hat V_S|$ + ℚ(ζ_60) trace-field $D$ + Tier 0 knots | $10^{30}$ | **negative** |
+| **`q_dilog_vhat_spike_lambda_scale.py`** (this spike) | 23 elements: $\hat V_S$ (signed) + ℚ(ζ_60) trace-field $D$ + Tier-0 knots | $10^{30}$ | **negative** |
 
-Three independent searches, all negative. The empirical case that
-$\lambda_p$ is **transcendental** in every tested substrate-natural
-basis at coefficient bound $10^{30}$ is now strengthened.
+Three independent searches, all negative. **No integer relation
+exists for $\lambda_p$ in any of the tested bases at coefficient
+bound $10^{30}$** — note this is an empirical PSLQ-bound finding
+and does **not** establish mathematical transcendence (a $\lambda_p$
+satisfying a relation with coefficients $> 10^{30}$ or with a
+non-tested basis element would not be caught).
 
 ## Recommendation
 
