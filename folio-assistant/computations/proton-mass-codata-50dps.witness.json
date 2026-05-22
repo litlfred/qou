@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T15:00:47.737094+00:00",
-  "commitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
+  "computedAt": "2026-05-22T18:56:21.538550+00:00",
+  "commitSha": "07d90411dc8d042529bf1c39dfcf852f3eba6ca3",
   "assertions": [
     {
       "name": "m_p_within_10_ppm_conditional_on_conjecture",
-      "computed": "5.6180616",
+      "computed": "29604.989",
       "expected": "< 10",
       "passed": false,
       "tolerance": 10.0,
@@ -15,7 +15,7 @@
     },
     {
       "name": "m_p_within_1_ppb_target",
-      "computed": "0.0000056180615886318892878952500683372255384221827900682",
+      "computed": "0.029604989313024919765444989826378372721510929602065",
       "expected": "0",
       "passed": false,
       "tolerance": 1e-09,
@@ -29,11 +29,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "proton-mass-codata-50dps",
   "scriptFile": "build_proton_mass_50dps_chain.py",
-  "scriptHash": "8c0487f4affc",
-  "scriptCommitSha": "9d90d8c1be442721be328306ed7cf4c67a64ca26",
+  "scriptHash": "b0d02bf84d34",
+  "scriptCommitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
   "description": "Cross-pipeline m_p prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
@@ -44,12 +44,12 @@
     "conjecture_label": "conj:lambda-scale-substrate-form"
   },
   "data": {
-    "m_p_pred_MeV": "938.27735943037817712967971941169296415130499626176",
+    "m_p_pred_MeV": "966.04962330268637535444052801600599162367484206799",
     "m_p_codata_MeV": "938.27208816",
-    "rel_diff": "0.0000056180615886318892878952500683372255384221827900682",
-    "rel_diff_ppb": "5618.06158863",
+    "rel_diff": "0.029604989313024919765444989826378372721510929602065",
+    "rel_diff_ppb": "29604989.313",
     "target_ppb": "1.0",
-    "gap_orders_of_magnitude_to_1ppb": "3.74959",
+    "gap_orders_of_magnitude_to_1ppb": "7.47136",
     "upstream_witness_hashes": [
       {
         "path": "option-b-proton-mass-full-chain.witness.json",

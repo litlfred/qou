@@ -1,9 +1,9 @@
 {
   "target": "m_p (MeV)",
-  "target_value": "938.27735943037817712967971941169296415130499626176",
+  "target_value": "966.04962330268637535444052801600599162367484206799",
   "target_tolerance": 0.01,
   "content_block": "prop:full-pole-structure-mass-trace",
-  "description": "Mass-formula assembly chain for the proton at 50 dps.  Replaces the f64 chain `proton-mass-assembly-MeV` (PR #476) with a precision-lifted version anchored in the fully-trusted Markov-trace assembly chain (PR #480) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current proton mass prediction: 938.277 MeV vs CODATA 938.27208816 (rel_diff 5.618e-6, 5618.1 ppb).  Target: 1 ppb.",
+  "description": "Mass-formula assembly chain for the proton at 50 dps.  Replaces the f64 chain `proton-mass-assembly-MeV` (PR #476) with a precision-lifted version anchored in the fully-trusted Markov-trace assembly chain (PR #480) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current proton mass prediction: 966.05 MeV vs CODATA 938.27208816 (rel_diff 0.0296, 2.9605e+7 ppb).  Target: 1 ppb.",
   "steps": [
     {
       "name": "tr_M(p, q_0) at 50 dps via Markov-trace assembly chain",
@@ -80,11 +80,11 @@
         "m_p_over_m_e"
       ],
       "output_name": "m_p_pred_MeV",
-      "output_value": "938.27735943037817712967971941169296415130499626176",
+      "output_value": "966.04962330268637535444052801600599162367484206799",
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
-      "notes": "COMPUTATIONAL leaf: m_p_pred ≈ 938.277 MeV vs CODATA m_p = 938.27208816 MeV.  Current relative error: 5.618e-6 = 5618.1 ppb (target: 1 ppb, gap of ~6 orders of magnitude).  Closing the gap requires Phase A item completion (Terms 2-6 at full 50 dps without f64 chokepoints) + Phase B (q_0 derivation)."
+      "notes": "COMPUTATIONAL leaf: m_p_pred ≈ 966.05 MeV vs CODATA m_p = 938.27208816 MeV.  Current relative error: 0.0296 = 2.9605e+7 ppb (target: 1 ppb, gap of ~6 orders of magnitude).  Closing the gap requires Phase A item completion (Terms 2-6 at full 50 dps without f64 chokepoints) + Phase B (q_0 derivation)."
     }
   ]
 }
