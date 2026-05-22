@@ -148,15 +148,31 @@ Pick the right avatar by context — same content, different "lens" on the subst
 
 Per the deep review of last 10 days of math improvements (2026-05-20 audit), the following **pipeline-discipline migrations** are queued. The MATH is correct; the COMPUTE has not migrated to the new canonical sources yet.
 
-| # | Action | Where | Risk |
-|---|---|---|---|
-| 1 | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with `conj:lambda-scale-bring-bloch-identity` derivation | `m_p_borromean_verification_50dps.py` | 3-calibration discipline violation; production m_p chain uses calibrated literal |
-| 2 | Migrate 20 importers of SUPERSEDED `mass_endomorphism.py` to the new `mass_tower_operator_valued` API (after extending the 2-factor verification to (Z+N)) | 20 scripts including `build_proton_mass_50dps_chain.py`, `mass_formula_6term.py`, `mass_at_3A_proper.py` | SUPERSEDED dependency in production |
-| 3 | Wire the Rust LR convention adapter (PR #829) into `atomic_tr_m_*` scripts for A ≥ 3 — expected ~500× speedup at ⁴He, ~10⁶× at ¹⁰B | `atomic_tr_m_helium4.py`, `atomic_tr_m_mpfr_50dps.py` + 6 mass scripts | massive compute speedup available, untaken |
-| 4 | Refactor 4 production tr_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_canonical.py`, `binding_depth_stratified*.py` | re-computes H_{3A} character per atom; closed form sidesteps this |
-| 5 | Add compute verification for the Reeb-flow / Garside closed-form (4 paper-only commits — `b6ed74635`, `88d7934b4`, `172263c6e`, `6ce96b4ce`) | new script needed | substrate-side derivation unverified |
+**Status legend.** ✅ closed · 🟡 in-flight · ⏸️ gated · ⬜ not started.
+Tracker last updated: **2026-05-22**.
 
-These are the **5 final-stage bug-finding actions** identified from the 10-day audit. Each is a discrete, mechanical migration — the math is settled.
+| # | Status | Action | Where | Closure / PR |
+|---|---|---|---|---|
+| 1 | ✅ | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with substrate-derived `λ_scale` | `m_p_borromean_verification_50dps.py` | **Closed by #888 (literal truth-in-naming + I13 audit) + #895 (PROVED Family A categorical λ_A = 5/2 + (3/4)h² now in production). Honest residual ~3% vs CODATA; falsified `5/2 − h²·G` retired.** Open R&D: PR #916 identifies **Strategy H V_7 = Σ dim_q V_λ / [4]_q** as the FIRST categorical functional with the right sign on h² (c_2 = -13/16, lands +0.144% vs target — vs Family A's +2.89 % wrong sign). V_7 family is the recommended next step; Family A is the safest minimal-risk swap that's in place today. Bring-Bloch tier 0-5 PSLQ refuted. |
+| 2 | ⏸️ | Migrate 20 importers of SUPERSEDED `mass_endomorphism.py` to the new `mass_tower_operator_valued` API | 20 scripts including `build_proton_mass_50dps_chain.py`, `mass_formula_6term.py`, `mass_at_3A_proper.py` | **15 of 20 graph-edges migrated** by PR #889 (block-graph hygiene, `uses[]` / `interprets:` swap). **Code-level migration of the remaining 14 `.py` importers gated on H_12 A-operator extract** (2-3 day compute task; rank-deficiency risk noted). |
+| 3 | ✅ | Wire the Rust LR convention adapter (PR #829) into `atomic_tr_m_*` scripts for A ≥ 3 | `atomic_tr_m_mpfr_50dps.py` + tr_m_wenzl_bridge + `atomic_tr_m_helium4.py` | **Closed by #901 (bridge-level wiring) + #895 (entry-point `--method canonical-rust` flag + 76-90× speedup at A ≥ 3) + #915 (helium4 refactor to Wenzl bridge — 300× speedup at H_3 cross-check, sub-second H_12 expected).** Both `atomic_tr_m_*` files now Rust-backed. |
+| 4 | ⬜ | Refactor 4 production tr_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_canonical.py`, `binding_depth_stratified*.py` | **Verification green at Phase 5q** (`closed-form-tau-M-verification-phase5q.witness.json`: rel.err 1e-50 across D, T, ³He, ⁴He at q_0). **Production swap blocked on `pn_convention` reconciliation** (closed-form gives D=0.728 in `chi_lambda_braid` convention vs canonical D=0.388; basis factor difference). Sub-task: implement `pn_convention="bring_color_weighted"` (research-level — needs quark-mass-aware closed form). |
+| 5 | ⬜ | Add compute verification for the Reeb-flow / Garside closed-form (4 paper-only commits — `b6ed74635`, `88d7934b4`, `172263c6e`, `6ce96b4ce`) | new script needed | Not started. Lowest-impact item — substrate-side derivation is paper-only; verification script blocks audit traceability but does not gate production. |
+
+### Manager view — what's next (2026-05-22)
+
+The two remaining concrete code-level migrations:
+
+1. **Fix #2 unlocks heavy-atom production paths**. The compute blocker (H_12 A-operator extract) is the same as the Tier 1.B orbit-reduction blocker. Doing it once unblocks both.
+2. **Fix #4 is convention-reconciliation work**. The math (Phase 5c.1 + 5l) is settled; what's needed is to thread the `pn_convention="chi_lambda_braid"` flag through `closed_form_tau_M` so production callers can opt-in incrementally, atom-by-atom, with a cross-check against `canonical_tr_m_via_rust` at the boundary.
+
+#5 is a documentation-tier item; defer until #2 and #4 are done.
+
+### Adjacent open work (not in §5 but cited by the cluster)
+
+- **Tier 1.A 4× gate** (PR #886): ⁶Li wall 84.5 s, target < 60 s. 1-2 day Rust optimisation (FxHashMap intermediate + defer-GCDs in `reduce_laurent`).
+- **Tier 1.B orbit reduction** (gates A ≥ 8, ¹²C / ¹⁴N / ¹⁶O — organic chemistry): preflight required (`§4.2` of the handover doc; orbit-trace identity must validate at 1e-25 on ⁴He / ⁵Li / ⁶Li before implementation).
+- **Bring color-tube quark-weighted p-n averaging**: closes Δm_{n−p} to ~0.14 % per `probe_pn_flavor_asymmetry.py` Scheme 4. Research-grade.
 
 ---
 
@@ -204,7 +220,7 @@ These are the **5 final-stage bug-finding actions** identified from the 10-day a
 **The 3-calibration rule** is strict: only $m_e$, $m_\mu/m_e$, $Q_\beta$ may be calibrated against experiment. Everything else MUST derive from these three via the chain above.
 
 **Common pitfalls** (look for these in code review):
-- Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `conj:lambda-scale-bring-bloch-identity`.
+- Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `prop:lambda-scale-bring-bloch-identity`.
 - Φ_q in a binding-context script → **bar-symmetry violation**. The binding context wants Li_2^q.
 - Calibration parameters not in the 3-input set → **4th-calibration violation**. The CLAUDE.md `Δ_λ gate` (Track A blocker) explicitly forbids a 7th closure ansatz.
 - Substrate-side compute using $q$ as $\mathbb{R}$ before the Archimedean functor → **§7c base-ring violation**. Everything categorical should be generic over `[Field R]` until step 9.
