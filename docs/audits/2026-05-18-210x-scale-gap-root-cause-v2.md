@@ -101,7 +101,7 @@ and **either** of the two production frameworks.
 |---|---|
 | `m_p` absolute value | **No** — uses `λ_scale` literal (Migration Backlog #1) |
 | `m_n` absolute value | **No** — uses `λ_scale` literal (Migration Backlog #1) |
-| `m_n − m_p` difference | **Yes** — Borromean form predicts via ΔS = S(n) − S(p); independent of `λ_scale` per [`rem:delta-skein-substrate-identity`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md). Agreement with CODATA `m_n − m_p` to ~1015 ppm. |
+| `m_n − m_p` difference | **Conditionally yes** — under the common-scale conjecture (one `λ_scale` for both p and n), Borromean form predicts ΔS = (m_n − m_p)/m_e from CAL-1 + CAL-2 + Vol(𝓑₃) alone (per [`rem:delta-skein-substrate-identity`](../../content/quantum-observable-universe/braids-and-knots/delta-skein-substrate-identity.md)). The 1015 ppm agreement with CODATA is **not** independent evidence for the conjecture — it is consistent with the existing substrate Q_β ansatz's own ~760 ppm residual at the current q_0 pinning. |
 | `m_μ / m_e` (CAL-2) | **Yes** — `Vol(4_1)/ℏ_q²` (figure-8 sector, no calibration) |
 | `Q_β` | calibration input (CAL-3) |
 | `B(K)` binding energies | uses `|tr_M|` chain; `B(K)/B(reference)` ratios are CAL-4-free; absolute scale relies on the same fitted normalisation chain |
@@ -139,28 +139,41 @@ and the script's own header (line 31) states:
 So `Vol(𝓑₃)/ℏ_q² · λ_scale = m_p/m_e` is a tautology by construction
 of `λ_scale`. The "1 ppm" agreement is round-trip, not derivation.
 
-What's NOT circular in the Borromean framework: the **common-scale
-hypothesis** (same `λ_scale` for p and n) implies a substrate-derived
-prediction for `ΔS = m_n − m_p`. THAT prediction agrees with CODATA
-to ~1000 ppm. That is the first-principles content of the Borromean
-form — and it's worth preserving in the audit story.
+What's NOT circular in the Borromean framework: under the
+**common-scale hypothesis** (same `λ_scale` for p and n), the
+identity `ΔS = (m_n − m_p)/m_e` is substrate-derivable from
+{m_e, q_0, Vol(𝓑₃)} alone, with no fit to m_p or m_n
+individually. The 1015 ppm agreement with CODATA, however, is
+**not independent evidence** for the common-scale conjecture —
+per [`rem:delta-skein-substrate-identity`](../../content/quantum-observable-universe/braids-and-knots/delta-skein-substrate-identity.md)
+it is consistent with the existing substrate Q_β ansatz's own
+~760 ppm residual at the current q_0 pinning. The first-
+principles content of the Borromean form is the *structure* of
+the orientation-difference identity, not yet a falsified
+prediction.
 
 ## Migration status (answers to "are all refs migrated?")
 
-**Block references** — `prop:mass-endomorphism-tower` appears in:
+**Block references** — `prop:mass-endomorphism-tower` appears in
+**15 `.ts` files** (excluding the SUPERSEDED block's own
+`mass-endomorphism-tower.ts` and the replacement
+`mass-tower-operator-valued.ts` which mentions the old block
+only in its supersession note):
 
-- `uses[]` arrays in 7 `.ts` files (still listed as dependency):
-  - `phi-q-tower-jsj-bridge.ts`, `phi-q-tower-algebraic-stratification.ts`,
-    `block-multiplicativity-v-free.ts`, `six-term-per-derivation-weights.ts`,
-    `interface-knot-markov-z.ts`, `bw-empirical-misses.ts`,
-    `three-calibration-discipline.ts` (+ `alpha-cosh-h-z-step-correction.ts`,
-    `alpha-k-categorical-closure.ts`, `quantum-dilogarithm-disambiguation.ts`,
-    `stable-atom.ts`, `per-braid-mass-tower.ts`)
-- `interprets:` in 2 `.ts` files (`mass-endomorphism-jet-tower.ts`,
-  `phi-q-resums-trace-series.ts`)
-- ~60 in-prose `[…](#prop:mass-endomorphism-tower)` links across `.md` files
+- All 15 list it in `uses[]` arrays:
+  `alpha-cosh-h-z-step-correction.ts`, `alpha-k-categorical-closure.ts`,
+  `block-multiplicativity-v-free.ts`, `interface-knot-markov-z.ts`,
+  `mass-endomorphism-jet-tower.ts`, `per-braid-mass-tower.ts`,
+  `phi-q-resums-trace-series.ts`, `phi-q-tower-algebraic-stratification.ts`,
+  `phi-q-tower-jsj-bridge.ts`, `quantum-dilogarithm-disambiguation.ts`,
+  `six-term-per-derivation-weights.ts`, `stable-atom.ts`,
+  `bw-empirical-misses.ts`, `three-calibration-discipline.ts`,
+  `tower-binding-energy.ts`.
+- 2 of those 15 also list it in `interprets:`
+  (`mass-endomorphism-jet-tower.ts`, `phi-q-resums-trace-series.ts`).
+- ~60 in-prose `[…](#prop:mass-endomorphism-tower)` links across `.md` files.
 - ~12 `Ref: [manuscript] prop:mass-endomorphism-tower` lines across
-  `.lean` files (under `lean/QOU/...`)
+  `.lean` files (under `lean/QOU/...`).
 
 Most in-prose links can be either updated to `mass-tower-operator-valued`
 or left in place (the SUPERSEDED block still exists with a pointer
@@ -199,7 +212,7 @@ For probe scripts that pair `|tr_M|` with an `E_0`:
 2. **Track Migration Backlog #2** (migrate 20 scripts off SUPERSEDED
    `mass_endomorphism.py`). Blocked on (Z+N) extension of the new API.
 3. **Block-graph hygiene**: update `uses[]` and `interprets:` arrays in
-   the 12+ `.ts` files that still reference `prop:mass-endomorphism-tower`,
+   the 15 `.ts` files that still reference `prop:mass-endomorphism-tower`,
    so the dep graph reflects the canonical block (`mass-tower-operator-valued`).
 4. **Don't** wire any new "fix" for the 210× symptom — it dissolves
    automatically once #1 and #2 close.
