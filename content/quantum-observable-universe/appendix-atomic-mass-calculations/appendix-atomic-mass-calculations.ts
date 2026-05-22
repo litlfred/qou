@@ -38,6 +38,10 @@ export default chapter({
       blocks: [
         "amc-summary",
         "amc-natural-elements-table",
+        // Detangler R3 (2026-05-22): 92-row data table extracted
+        // from amc-natural-elements-table.md to its own kind:"table"
+        // block per block-density Rule R3.
+        "amc-natural-elements-table-data",
         "amc-synthetic-elements-table",
       ],
     }),
