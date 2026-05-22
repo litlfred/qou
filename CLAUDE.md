@@ -212,6 +212,38 @@ ephemeral.
    moving fast): `git push -u origin <branch>`. This is what makes
    the PR + CI visible to siblings.
 
+7. **Default merge method: "Rebase and merge".** When a PR is
+   ready and the user authorises the merge, use
+   `mcp__github__merge_pull_request` with `merge_method: "rebase"`
+   (equivalently the "Rebase and merge" button in the GitHub UI).
+   This applies the branch's structured commits to `main` as a
+   linear sequence — no merge commit, no squash. Rationale:
+
+   - **Preserves the per-cluster commits** that rule 4 above
+     mandates. A 6-commit PR addressing 3 review passes stays as
+     6 cherry-pickable commits on `main`; squash would collapse
+     them.
+   - **Bisection stays meaningful.** Each commit is a coherent
+     unit; `git bisect` lands on the actual offending change.
+   - **No empty merge-commit noise** on `main`. The branch
+     terminates cleanly; future readers see the work, not the
+     branch ceremony.
+
+   Exceptions (require explicit user instruction at merge time):
+   - **Squash** when the branch's commits are noisy / WIP
+     (e.g. a draft PR with many `wip` / `oops` commits that
+     don't map to logical units). Prefer fixing the branch
+     locally with `git rebase -i` instead, and rebase-merging
+     the cleaned-up history.
+   - **Create a merge commit** when the PR is a sub-merge of
+     several already-merged sibling branches and the merge
+     commit serves as a navigable boundary marker.
+
+   The standing-authorization rule for ALWAYS-PR (above) applies
+   here too: agents do not need to ask "which merge method?" each
+   time — default to rebase-merge unless the user has explicitly
+   said otherwise for the PR in question.
+
 ### Exception: batch audit-job runs
 
 When an integration-watcher (`compute-integration-watcher`,
