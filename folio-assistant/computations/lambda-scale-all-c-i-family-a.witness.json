@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-22T20:00:06.322266+00:00",
-  "commitSha": "c9df2d34a99173650fb53bd520a8777e4092d29e",
+  "computedAt": "2026-05-22T20:20:14.198872+00:00",
+  "commitSha": "92772aa1e767ffa7ec4090f3561dae13374e5b15",
   "assertions": [
     {
       "name": "lambda_A_h_form_equals_lambda_A_q_form",
@@ -47,12 +47,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 342,
+  "durationMs": 371,
   "computation": "lambda-scale-all-c-i-family-a",
   "scriptFile": "lambda_scale_all_c_i_family_a.py",
-  "scriptHash": "0b8cdd01dc95",
-  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
-  "description": "Closed-form proof of ALL h-expansion coefficients c_i for the natural categorical Family A: λ_A(q) = (1/4) Σ_λ dim_q V_λ at H_4. Proved by direct algebraic manipulation: λ_A = 5/2 + (3/4)·h², series TERMINATES (c_4 = c_6 = ... = 0). NOTE: the theorem is correct algebra but FALSIFIES the identification λ_A = λ_scale — λ_A(q_0) = 2.5328 vs λ_p target 2.4600 (+2.96 %), and the sign of c_2 disagrees with the empirical fit (+3/4 vs ≈ -G). See docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md §Strategy H for the V_7 Wedderburn variant that has the right sign on h² (closer to a structural candidate).",
+  "scriptHash": "97a0b1813d24",
+  "scriptCommitSha": "925e3601532a849394838eac6b4e1ec9487b358f",
+  "description": "Closed-form proof of ALL h-expansion coefficients c_i for the natural categorical Family A: λ_A(q) = (1/4) Σ_λ dim_q V_λ at H_4. Proved by direct algebraic manipulation: λ_A = 5/2 + (3/4)·h², series TERMINATES (c_4 = c_6 = ... = 0). Per PR #895 this IS the framework-derived substrate λ_scale (replacing the CAL-4-fitted literal 2.4599527869 in m_p_borromean_verification_50dps.py). Framework m_p prediction is now 966 MeV (~3 % off CODATA's 938.27 MeV); the 3 % gap is the framework's honest accuracy, not an error. See docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md §Alternatives to Strategy D for the search for substrate-pure refinements (V_3, V_4 Wedderburn sums; q-dilog tower; Yekutieli curvature) that could close the 3 % residual.",
   "data": {
     "dim_q_H4": {
       "(4)": "1",

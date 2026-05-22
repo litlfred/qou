@@ -189,27 +189,66 @@ verify `Σ_p D([Z]^(p)) = 2/(3π)`. This is a **constraint** the
 correct `λ_scale` parametrisation must satisfy. If you find a
 candidate via A/B/C, plug it into the closure identity and check.
 
-## Alternatives to Strategy D (added 2026-05-22)
+## Alternatives to Strategy D (added 2026-05-22, post-#895 framing)
+
+**Framing note.** This section is written in the post-PR #895
+framing: `λ_scale := λ_A(q) = 5/2 + (3/4)·h²` (the Family A
+theorem, proved in `lambda_scale_all_c_i_family_a.py` + Lean) IS
+the framework-derived substrate value. The production
+`m_p_borromean_verification_50dps.py` was rewritten in
+[PR #895](https://github.com/litlfred/qou/pull/895) (commits
+`19bbcbdd` + `61923f2c`) to use Family A in place of the
+CAL-4-fitted literal `LAMBDA_PROTON_DOC = 2.4599527869`. The
+framework's honest m_p prediction is now 966 MeV (~3 % off
+CODATA's 938.27 MeV); the CODATA value was a fitted closure
+target, not a substrate derivation
+([PR #917](https://github.com/litlfred/qou/pull/917) dashboard
+refresh quantifies this).
+
+The strategies below ask whether **structural refinements of
+Family A** — alternative substrate-pure functionals on the same
+H_n Wedderburn / Hecke-trace / Skein-polynomial data — close the
+3 % gap to CODATA. They do **not** claim Family A is wrong; they
+search for the next-order substrate term that combines with
+Family A's leading 5/2 to land closer to 938.27 MeV.
 
 Strategy D requires extending `lp_dual_solver.py` with a
 `lambda_scale_from_braid_p` solver — substantial infrastructure
-work. The strategies below are structural alternatives that
-either bypass LP/SDP or use existing infrastructure with smaller
-incremental cost. They occupy the same "structural / non-PSLQ"
-solution slot as Strategy D and should be exhausted before
-committing to D's infrastructure lift.
+work. The alternatives below either bypass LP/SDP or use existing
+infrastructure with smaller incremental cost, and should be
+exhausted before committing to D's infrastructure lift.
+
+**Two reference values appear in the result tables below:**
+
+- **Family A prediction** — `λ_A(q_0) = 5/2 + (3/4)·h²(q_0) ≈
+  2.5327796637` (the substrate-derived value; the framework's
+  honest λ_scale per #895).
+- **CODATA-derived target** — `(m_p^CODATA / m_e) · ℏ_q² /
+  Vol(𝓑_3) ≈ 2.4599527876` (the value λ_scale would have if the
+  m_p Borromean formula closed exactly to CODATA; this is the
+  CAL-4-anchored quantity that #895 explicitly retired from
+  production).
+
+Refinements compatible with Framing A should land near
+**2.5328** (the framework's actual prediction); refinements that
+hit **2.4600** identify the residual mechanism that would close
+the 3 % gap — useful for future precision work but **not** a
+sign that Family A is wrong.
 
 Empirical results from the 2026-05-22 first-pass execution are
 recorded inline.
 
 ### Strategy F — Markov-trace identity test on β_Bor
 
-Test the hypothesis that the two formalisms (Markov-trace, Vol-form)
-agree on the bare 6-crossing Borromean braid:
+Test whether the two formalisms (Markov-trace on H_3,
+Vol-form on 𝓑_3) coincide on the bare 6-crossing Borromean braid:
 
   `λ_scale  ?=  |tr_M(β_Bor, q_0)| · ℏ_q² / Vol(𝓑_3)`
 
-where `β_Bor = (σ_1^{-1} σ_2)^3 ∈ B_3 ⊆ H_3(q)`.
+where `β_Bor = (σ_1^{-1} σ_2)^3 ∈ B_3 ⊆ H_3(q)`. If the naive
+identity holds, λ_scale would be over-determined: Markov-trace
+alone produces it, and Family A's prediction would need to equal
+the Markov-trace expression for consistency.
 
 **Compute kernel.** `lambda_scale_alt_f_markov_trace_beta_bor.py`
 (this brief; uses existing `hecke_character_symbolic` and
@@ -219,29 +258,33 @@ where `β_Bor = (σ_1^{-1} σ_2)^3 ∈ B_3 ⊆ H_3(q)`.
 
 **Result (2026-05-22, witness
 `lambda-scale-alt-f-markov-trace-beta-bor.witness.json`):**
-**FALSIFIED.**
+**naive identity DOES NOT HOLD.**
 
   | quantity | value at q_0 |
   |---|---:|
   | `tr_M(β_Bor, q_0)` | 0.998366621839... |
   | `ℏ_q² / Vol(𝓑_3)` | 1.339903... × 10⁻³ |
   | candidate (above product) | 0.001337543870979 |
-  | target λ_p | 2.4599527869 |
-  | rel diff | −99.95 % (three orders of magnitude off) |
+  | Family A prediction λ_A(q_0) | 2.5327796637 |
+  | CODATA-derived target | 2.4599527876 |
+  | rel diff vs Family A | −99.95 % (three orders of magnitude off) |
 
-The naive identity fails by ~1836× — exactly the m_p/m_e ratio,
-which IS the quantity the framework is trying to derive.
-Consistent with the 2026-05-11 brief's PR #487 agent finding #6:
-"the Vol-based mass formula's `λ_scale` may NOT have a substrate
-derivation independent of the bridging map to the τ_M
-formalism." The Markov-trace formalism produces `O(1)` numbers
-(binding-energy decomposition, cheat-sheet step 9); the Vol-form
-produces `O(1836)` numbers (absolute rest mass). They do not
-coincide on β_Bor.
+The naive product `|tr_M|·ℏ_q²/Vol` ≈ 0.00134 differs from
+both Family A (2.5328) and the CODATA target (2.4600) by ~1836×
+— exactly the m_p/m_e ratio. Consistent with the 2026-05-11
+brief's PR #487 agent finding #6: the Markov-trace formalism
+produces `O(1)` numbers (binding-energy decomposition,
+cheat-sheet step 9); the Vol-form produces `O(1836)` numbers
+(absolute rest mass). They do not coincide on β_Bor under this
+naive ratio.
 
-**Implication.** The bridging factor between Markov-trace and
-Vol-form formalisms IS what `λ_scale` measures structurally —
-the naive identity is the wrong shape. Strategy F is closed.
+**Implication.** The Markov-trace formalism and the Vol-form
+formalism measure different invariants of the Borromean
+substrate. λ_scale lives on the Vol-form side; testing it via a
+direct ratio against Markov-trace was a category error. Strategy
+F closed-negative; **no consequence for Family A**, which is
+derived from H_4 Wedderburn data (not from β_Bor's H_3
+Markov-trace).
 
 ### Strategy G — Skein-family polynomial direct evaluation at q_0
 
@@ -258,91 +301,110 @@ closed forms; the test is just whether one matches.
 
 **Result (2026-05-22, witness
 `lambda-scale-alt-g-skein-polynomial-direct.witness.json`):**
-**WEAK SIGNAL** — best match is `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})`
-at +165 ppm, but all direct Jones / HOMFLYPT evaluations are off
-by 18–630 % from λ_p.
+**no single-polynomial Skein form matches Family A.** All direct
+Jones / HOMFLYPT evaluations are far from both Family A's
+2.5328 and the CODATA target 2.4600. Distances quoted relative
+to the CODATA target (the more demanding reference):
 
-  | candidate | value at q_0 | |rel diff| |
+  | candidate | value at q_0 | |rel diff vs CODATA tgt| |
   |---|---:|---:|
   | V(𝓑_3, q_0) | 4.0105 | 63 % |
   | V(𝓑_3, q_0²) | 4.0379 | 64 % |
   | √V(𝓑_3, q_0²) | 2.0094 | 18 % |
   | V(𝓑_3, q_0)^{1/3} | 1.5888 | 35 % |
   | P_HOMFLYPT(𝓑_3, q_0^−1, q_0−q_0^−1) | 14.397 | 485 % |
-  | **5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})** | **2.4604** | **165 ppm** |
+  | `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})` | **2.4604** | **165 ppm vs CODATA**, +2.86 % vs Family A |
 
-Note the best-match form `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})`
-parallels the earlier `5/2 − h² · G` PSLQ coincidence
-(2026-05-18 audit) but is **structurally different**: `ℏ_q² ≠
-h²` (they differ by `(q − q⁻¹)² vs ((q − 1)/q)²`), and `⟨𝓑_3⟩`
-is the Kauffman bracket vs `G` Catalan. Both share the
-"5/2 − topological·O(h²)" template but resolve different
-substructure. The 165 ppm gap is the same magnitude as the
-known PSLQ-fit coincidence: neither form is the categorical
-λ_scale, but both reveal the **template** `5/2 − topological-h²-term`.
+The best match `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})` lands close to
+the CODATA target (165 ppm) but ~2.86 % away from the
+framework-derived Family A value. Per PR #701's exhaustive
+falsification of the `5/2 − h²·G` form (5 independent
+structural routes), forms of shape `5/2 − topological·h²`
+that produce the CODATA value are **numerical coincidences**,
+not derivations. The form here parallels that pattern with
+different structural ingredients (`ℏ_q² ≠ h²`, `⟨𝓑_3⟩ ≠ G`)
+but lands in the same coincidence basin.
 
 **Implication.** Strategy G is closed for the single-polynomial
-identity. The next refinement is **Strategy H** below: scan
-alternative Wedderburn linear functionals for the substrate
-form, since 5/2 is robustly the leading coefficient.
+identity. No Skein-family polynomial of 𝓑_3 at q_0, including
+the ratio-form variants, provides a substrate-pure refinement
+of Family A; the candidates either disagree with Family A by
+%-level (so they are not refinements at all) or coincide
+numerically with the retired CODATA-anchored target (so they
+are coincidences in the sense of PR #701).
 
-### Strategy H — Wedderburn linear-functional scan (Family A variants)
+### Strategy H — Wedderburn linear-functional scan (Family A = V_1; V_2-V_8 alternatives)
 
-The "Family A" theorem proves that
+The Family A theorem (PR #701, on main via #888 / #895) proves
+that
 `λ_A(q) := (1/4) · Σ_{λ ⊢ 4} dim_q V_λ = 5/2 + (3/4)·h²` exactly
-([`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py)).
-This is the algebraically correct closed form of the linear
-functional `(1/4) Σ dim_q` on H_4, but the identification
-`λ_scale = λ_A` is **falsified**: at q_0, λ_A = 2.5328 vs target
-λ_p = 2.4600, off by **+2.96 %** with **wrong sign on h²**
-(c_2 = +3/4 vs target ≈ −G).
+([`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py))
+across the framework's substrate window. Per #895 this IS the
+framework-derived λ_scale; m_p prediction = 966 MeV, ~3 % off
+CODATA.
 
-The probe `probe_family_a_variants.py` already scans seven other
-natural linear functionals V_2 — V_8 on the H_4 character table:
+The companion probe `probe_family_a_variants.py` scans seven
+other natural linear functionals V_2 — V_8 on the H_4 character
+table — all SUMS (positive-coefficient combinations); none
+matches Family A. PR #701 used this scan + 32-variant
+sign-flipped Wedderburn enumeration + Hecke level scan H_2-H_7
+to falsify the empirical `5/2 − h²·G` form.
 
-  | variant | h² coeff | at q_0 | rel vs target |
-  |---|---:|---:|---|
-  | V_1 = (1/4) Σ dim_q V_λ (Family A) | +3/4 | 2.5328 | +2.89 % |
-  | V_2 = (1/(48·5)) Σ dim_q² V_λ (Plancherel) | +5/3 | 2.5734 | +4.54 % |
-  | V_3 = (1/(48·5)) Σ dim_q · dim_cl | +5/6 | 2.5364 | +3.04 % |
-  | V_4 = (1/48) Σ hook_cl · dim_q | +7/12 | 2.5255 | +2.59 % |
-  | V_6 = (1/(4·5)) · dim_q V_(2,2) only | +5/4 | 2.5546 | +3.78 % |
-  | **V_7 = Σ dim_q V_λ / [4]_q** | **−13/16** | **2.4652** | **+0.144 %** |
-  | V_8 = harmonic of dim_q V_λ | +85/361 | 1.5891 | −35.4 % |
+This Strategy H tranche extends the search to **quotient**
+forms, which PR #701's sum-based enumeration did not consider.
+Both reference values are quoted below: rel diff vs Family A
+(the framework's substrate value, what a refinement should land
+near) and rel diff vs the retired CODATA target (informational
+only — a candidate hitting 2.4600 is a coincidence in the sense
+of PR #701, not a derivation):
 
-**V_7 is the structural signal.** Among the eight natural
-Wedderburn linear functionals on H_4, **only V_7 has the right
-sign on h²**, with magnitude `|c_2| = 13/16 ≈ 0.8125` —
-order-of-magnitude correct vs the target `−G ≈ −0.916`. The
-value at q_0 lands within **+0.144 %** (1440 ppm) of λ_p.
+  | variant | h² coeff | at q_0 | rel vs Family A (2.5328) | rel vs CODATA tgt (2.4600) |
+  |---|---:|---:|---:|---:|
+  | V_1 = (1/4) Σ dim_q V_λ (**Family A**) | +3/4 | 2.5328 | 0 | +2.89 % |
+  | V_2 = (1/(48·5)) Σ dim_q² V_λ (Plancherel) | +5/3 | 2.5734 | +1.60 % | +4.54 % |
+  | V_3 = (1/(48·5)) Σ dim_q · dim_cl | +5/6 | 2.5364 | +0.14 % | +3.04 % |
+  | V_4 = (1/48) Σ hook_cl · dim_q | +7/12 | 2.5255 | −0.29 % | +2.59 % |
+  | V_6 = (1/(4·5)) · dim_q V_(2,2) only | +5/4 | 2.5546 | +0.86 % | +3.78 % |
+  | V_7 = Σ dim_q V_λ / [4]_q (quotient) | −13/16 | 2.4652 | −2.67 % | +0.144 % |
+  | V_8 = harmonic of dim_q V_λ | +85/361 | 1.5891 | −37.3 % | −35.4 % |
 
-**Why V_7 is structurally natural.** Σ dim_q V_λ is the sum of
-all irreducible Hecke characters at the identity (the regular
-trace); dividing by `[4]_q` is the **q-deformed Plancherel
-normalisation** that makes the functional dimensionally correct.
-At q = 1, `[4]_q → 4` reproduces 5/2 = (1+3+2+3+1)/4. The
-negative h² coefficient is a categorical-derivation artifact:
-the q-correction of the denominator `[4]_q = q³ + q + q⁻¹ + q⁻³
-≈ 4 + 4h² + ...` over-cancels the numerator's leading 3/4·h²,
-producing a NET negative h² for the quotient.
+**V_3 and V_4 are the structural refinement candidates.** Among
+the Wedderburn sums tested, V_3 and V_4 land within ±0.3 % of
+Family A while keeping the substrate-pure / positive-h² /
+all-sum-form discipline that PR #701 settled. They are
+candidate **refinements** of Family A: alternative natural
+weightings of the H_4 character data that adjust the leading
+3/4·h² coefficient slightly. If a substrate justification can
+be derived for V_3 or V_4 (Frobenius-pairing weighting vs
+hook-content weighting), the framework's m_p accuracy improves
+modestly within the same theoretical commitment.
 
-**Next step.** Try the refined Wedderburn family `V_7^{(k)} = (Σ
-dim_q V_λ + correction(k)) / [4]_q` for small categorical
-corrections (e.g. subtract a single
-dim_q V_(2,2) contribution; add a half-symmetric projector
-factor). The target c_2 = −0.916 is 13 % below V_7's −0.8125;
-a single sub-leading character contribution can plausibly close
-the gap.
+**V_7 is a separate observation.** The quotient form
+`Σ dim_q V_λ / [4]_q` lands close to the retired CODATA target
+(2.4652 vs 2.4600 — within 0.144 %), but disagrees with Family
+A by 2.67 %. Under the post-#895 framing, V_7 is **not** a
+substrate-pure candidate for λ_scale — it instead identifies
+the same coincidence basin that the falsified `5/2 − h²·G` form
+landed in (PR #701). The negative h² coefficient (−13/16) arises
+from the q-correction of the denominator `[4]_q ≈ 4 + (5/2)h²`
+over-cancelling the numerator's positive h² — a structural
+mechanism, but PR #701's exhaustive search rules out the family
+of forms that land at the CODATA target as substrate-derived.
 
-**Status.** WEAK-POSITIVE — V_7 is the first Wedderburn linear
-functional with the right sign and right order-of-magnitude on
-c_2; identifies the **family of candidate substrate forms**.
+**Status.** WEAK-POSITIVE for Family A refinement: V_3, V_4 are
+plausible substrate-pure variants within ±0.3 % of Family A,
+worth probing for categorical justification. NEGATIVE for
+hitting CODATA: V_7's quotient form is in the
+falsified-coincidence basin, not a new substrate-pure
+derivation. The 3 % framework-vs-CODATA gap remains open
+research; the q-dilog tower (Strategies A/B/C in the original
+brief) is the unchanged primary direction.
 
 **Anti-pattern to avoid (per
 [`CLAUDE.md §Δ_λ gate`](../../CLAUDE.md)):** do not fit a
-seven-parameter `α · V_7 + β · V_8 + γ · ...` ansatz against
-m_p. Find the categorical justification for the specific
-correction term first, then verify the numerical match.
+seven-parameter `α · V_3 + β · V_4 + γ · V_7 + ...` ansatz
+against m_p. Find the categorical justification for the
+specific variant first, then verify the numerical match.
 
 ### Strategy J — HOMFLYPT cross-orientation closure
 
@@ -467,46 +529,76 @@ candidates worth filtering.
 **Status.** Verification scaffold; runs against any candidate
 from F/G/H/I/K.
 
-### Recommended ordering (revised after 2026-05-22 results)
+### Recommended ordering (revised after 2026-05-22 results, post-#895 framing)
 
-  1. **Strategy H finding** — V_7 = Σ dim_q V_λ / [4]_q is the
-     first Wedderburn functional with the right sign on h².
-     Pursue refined V_7 family (categorical correction terms)
-     **first**, since the substrate justification of a
-     small-correction Wedderburn functional is the most
-     theoretically defensible path.
-  2. **Strategy I (Yekutieli curvature)** — derive the
-     `Σ_geom = (3/4 + G)·h²` coefficient categorically. If V_7
-     refinement (H) doesn't yield exact match, the residual is
-     where Yekutieli enters.
-  3. **Strategy A / B (Rogers / Faddeev PSLQ)** — the original
-     brief's primary direction; viable but more
-     fit-prone. Run only after H/I to constrain the basis.
+The 3 % framework-vs-CODATA gap on m_p is the open research
+question. Family A is the current substrate-derived baseline;
+the strategies below are ranked by likelihood of producing a
+substrate-pure refinement that lands closer to CODATA than
+Family A's 966 MeV.
+
+  1. **Strategy A / B (Rogers / Faddeev PSLQ on q-dilog tower)**
+     — the original brief's primary direction. The q-dilog
+     tower at q_0 is the most natural source of sub-leading
+     corrections beyond Family A's H_4 Wedderburn sum. PR #909
+     (Strategy D stage-1) found tentative −h⁶/6 next-order
+     structure that didn't survive 32-digit precision; PSLQ on
+     `{h^k · G^j · ζ(2k')}` extended basis is the cheap test.
+  2. **Strategy H refinement (V_3, V_4 Family A variants)** —
+     V_3 and V_4 land within ±0.3 % of Family A on the H_4
+     Wedderburn data, differing only in weighting (hook-content
+     vs Frobenius). If a substrate justification picks one over
+     V_1 (Family A), the framework's m_p accuracy improves
+     modestly within the same theoretical commitment.
+  3. **Strategy I (Yekutieli curvature)** — derive a per-cell
+     curvature term that, ADDED to Family A's 5/2 + (3/4)h²,
+     accounts for the residual 3 %. Per-cell octahedral volume
+     G/2 from `Λ(π/4) = G/2` is the natural ingredient.
   4. **Strategy J (HOMFLYPT cross-orientation)** — secondary
-     verification of the Skein term; pins S(p)/S(n) ratio.
+     verification of the Skein term `S(p) / S(n)`; doesn't
+     change λ_scale but pins the orientation correction.
   5. **Strategy K (Bloch class explicit construction)** — if
      all categorical approaches fail, fall back to the
-     SnapPy-triangulation route.
+     SnapPy-triangulation route. Note: `prop:lambda-scale-bring-bloch-identity`
+     was demoted to `conj:` by PR #904 (now merged); the
+     Bloch-class route is conjectural, not theorem.
   6. **Strategy D (LP/SDP on 𝓑_p)** — only if 1-5 all fail.
-     The LP/SDP infrastructure lift is large and the alternative
-     non-PSLQ approaches (F-H above) are cheaper to refute.
+     PR #909 stage-1 found that the naive LP setups (D1/D2/D3/D6)
+     do NOT yield λ_scale; the formulation needs more structure
+     than the original brief sketch. The LP/SDP infrastructure
+     lift is large.
 
-### Strategies closed by 2026-05-22 first-pass
+### Strategies closed-negative by 2026-05-22 first-pass
 
-  - **Strategy F (Markov-trace identity on β_Bor).** FALSIFIED;
-    candidate value 0.00134 vs target 2.46 (3 orders of
-    magnitude off). The naive identity is the wrong shape; the
-    bridging factor between Markov-trace and Vol-form
-    formalisms IS λ_scale, so an identity between them is
-    structurally impossible.
+  - **Strategy F (Markov-trace identity on β_Bor).** The naive
+    identity `λ_scale ?= |tr_M(β_Bor)|·ℏ_q²/Vol(𝓑_3)` does not
+    hold: candidate 0.00134 vs Family A 2.5328 (and vs CODATA
+    target 2.4600), three orders of magnitude off. The H_3
+    Markov trace of the 6-crossing braid is an `O(1)` number;
+    λ_scale lives on the Vol-form side at `O(m_p/m_e)`. Direct
+    identity between the two formalisms was a category error.
+    No consequence for Family A (which is H_4-derived, not
+    H_3-β_Bor-derived).
   - **Strategy G (single-polynomial Skein identity).** No
-    direct Jones / Kauffman / HOMFLYPT value at q_0 equals λ_p.
-    The best ratio-form `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})` at
-    +165 ppm reveals the same `5/2 − topological-h²` template
-    as the earlier PSLQ-coincidence form, but is itself another
-    coincidence (different structural ingredient with similar
-    magnitude). Closed for the single-polynomial form; the
-    multi-polynomial linear combinations still allow A/B/J.
+    direct Jones / Kauffman / HOMFLYPT value at q_0 equals
+    Family A. The best ratio-form `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})`
+    at +165 ppm vs the CODATA target lands in the same
+    coincidence basin as PR #701's falsified `5/2 − h²·G` form
+    — different structural ingredients (`ℏ_q² ≠ h²`, `⟨𝓑_3⟩ ≠ G`),
+    same numerical-coincidence basin. Closed for single-polynomial;
+    Strategy J's multi-orientation HOMFLYPT is the remaining
+    Skein direction.
+  - **Strategy H V_7 quotient form.** `Σ dim_q V_λ / [4]_q` is
+    the first Wedderburn-quotient functional in the search;
+    lands at +0.144 % from the CODATA target but −2.67 % from
+    Family A. Per PR #701, hitting the CODATA target is
+    coincidence (not derivation) — V_7 is not a new substrate
+    candidate. V_7's negative h² coefficient is a real
+    structural feature (denominator over-cancellation), but it
+    does not survive PR #701's exhaustive falsification of the
+    `5/2 - ε·h²` family for the CODATA value. The V_3 / V_4
+    sum-form refinements above are the remaining Wedderburn
+    direction.
 
 ## Verification criteria
 
