@@ -25,7 +25,7 @@ Hook lengths of the 2×2 Young diagram: {3, 2, 2, 1}.  The product
 - Satuła et al. 1997, empirical Wigner energy [satula1997]
 -/
 
-namespace QOU.Descartes.ConfinedKnotBinding.Unified
+namespace QOU.Archimedean.ConfinedKnotBinding.Unified
 
 open scoped BigOperators
 
@@ -150,4 +150,4 @@ theorem unified_iterative_correction {A : ℕ} (q m_e : F) (L : ℕ → F)
     = Delta22 q m_e * w22 q * (L A - 2) :=
   unified_telescope q m_e L hL0
 
-end QOU.Descartes.ConfinedKnotBinding.Unified
+end QOU.Archimedean.ConfinedKnotBinding.Unified

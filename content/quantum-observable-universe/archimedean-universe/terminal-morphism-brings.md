@@ -11,7 +11,7 @@ $\mathbf{C}_B = \mathrm{Rep}(\mathrm{SU}_q(2))$, and $\tau_B$ the
 forgetful functor.
 
 **Step 1: match the substrate parameters.** Both source and target
-have $\chi(A) = -6$, so the Descartes condition determines
+have $\chi(A) = -6$, so the Archimedean condition determines
 $q + q^{-1} = -6$ in both. By the
 [constructive extraction](#ex\:substrate-parameter-brings), both
 algebras are defined over
@@ -67,7 +67,7 @@ $\int_{A_B} \circ\, \phi' = \int_{A_B} \circ\, \phi$. This forces
 $\phi' = \phi$ as Frobenius-algebra homomorphisms. $\square$
 
 **Summary.** The terminal morphism is constructed in four steps:
-(1) match substrate parameters via the Descartes condition,
+(1) match substrate parameters via the Archimedean condition,
 (2) build a :refterm[monoidal functor]{#monoidal-functor} via Tannaka–Krein,
 (3) extract the Hopf algebra map on generators,
 (4) verify uniqueness via Haar-state rigidity.

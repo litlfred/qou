@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.genus_ideal_characterisation — genus-filtration ideal as `(u⁵)`
+# QOU.Archimedean.genus_ideal_characterisation — genus-filtration ideal as `(u⁵)`
 
 **Lemma** ([`lem:genus-ideal-characterisation`](../../../quantum-observable-universe/descartes-universe/genus-ideal-characterisation.md)).
 
@@ -23,7 +23,7 @@ which is downstream of this lemma).
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.RingTheory.Ideal.Quotient.Defs
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Polynomial
 
@@ -48,4 +48,4 @@ theorem genus_ideal_characterisation :
   -- Ref: Mathlib `Mathlib.RingTheory.Ideal.Quotient.Defs`
   exact Ideal.mk_ker
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,4 +1,4 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Tactic
 
@@ -17,7 +17,7 @@ Bring surface `Σ₄`.
 - [rosso-jones1993] Rosso–Jones formula for torus knot invariants.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-! ## §1  Torus knot labels -/
 
@@ -128,4 +128,4 @@ def TorusKnotLabel.shellNumber (τ : TorusKnotLabel) : ℕ :=
 /-- Magic numbers: cumulative shell sizes `{2, 8, 20, 28, 50, 82, 126}`. -/
 def magicNumbers : List ℕ := [2, 8, 20, 28, 50, 82, 126]
 
-end QOU.Descartes
+end QOU.Archimedean

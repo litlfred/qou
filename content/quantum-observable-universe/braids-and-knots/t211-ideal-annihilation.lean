@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.t211_ideal_annihilation
+# QOU.Archimedean.t211_ideal_annihilation
 
 T_{2,11} is the first excluded torus knot generator: Seifert genus 5 > 4.
 Its symmetry group is D₁₁ (order 22), and Z₁₁ cannot embed in
@@ -26,10 +26,10 @@ import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.GroupTheory.OrderOfElement
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -186,4 +186,4 @@ axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4)
 theorem t2_11_in_ideal_all_levels (n : ℕ) : seifertGenus_T2 11 > 4 := by
   simp [seifertGenus_T2]; omega
 
-end QOU.Descartes
+end QOU.Archimedean

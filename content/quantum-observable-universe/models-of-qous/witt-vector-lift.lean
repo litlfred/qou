@@ -84,7 +84,7 @@ theorem reduction_preserves_dim (W : WittVectorLift) :
 theorem dist_algebra_generators (W : WittVectorLift) :
     0 < W.lieDim := W.lie_dim_pos
 
-/-- The Witt vector lift is compatible with the Descartes condition:
+/-- The Witt vector lift is compatible with the Archimedean condition:
     when the Euler characteristic is -6, the genus is 4, and the
     formal group dimension is 2g = 8.
 

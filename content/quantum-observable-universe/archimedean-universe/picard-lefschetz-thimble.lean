@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.picard_lefschetz_thimble — Picard–Lefschetz thimble decomposition
+# QOU.Archimedean.picard_lefschetz_thimble — Picard–Lefschetz thimble decomposition
 
 The Seiberg–Witten action S(z) = ∫ λ_SW^(1) dz on the color-tube cubic
 has critical points where the discriminant Δ(z) vanishes (two color sheets
@@ -27,7 +27,7 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Data.Finset.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The color-tube cubic polynomial F(z, c). -/
 noncomputable def colorTubeCubicPoly (z c : ℂ) : ℂ :=
@@ -93,4 +93,4 @@ axiom thimble_decomposition :
     -- the sum of intersection numbers is nonzero (γ is non-trivial in homology)
     (Finset.univ.sum (fun i => (thimbles i).intersection_number)) ≠ 0
 
-end QOU.Descartes
+end QOU.Archimedean

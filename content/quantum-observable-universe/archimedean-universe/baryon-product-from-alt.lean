@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.baryonProductFromAlt — Alt-isotype identification of the baryon integrand
+# QOU.Archimedean.baryonProductFromAlt — Alt-isotype identification of the baryon integrand
 
 The product `∏_k dc_k/dz` of color-tube prolongations equals the
 projection of `(dc_1/dz) ⊗ (dc_2/dz) ⊗ (dc_3/dz)` onto the sign
@@ -25,7 +25,7 @@ LaTeX label: `prop:baryon-product-from-alt`
 import Mathlib.Data.Real.Basic
 import Mathlib.GroupTheory.Perm.Sign
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The sign character `sgn : S_3 → ℤ`, viewed as the character of
     the alternating representation `Alt^3`. -/
@@ -81,4 +81,4 @@ theorem baryonProductFromAlt :
       sign_isotype_projection := by
   intro h; exact h
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BaryonPeriodRatio — Proton–electron mass ratio from thimble periods
+# QOU.Archimedean.BaryonPeriodRatio — Proton–electron mass ratio from thimble periods
 
 The proton–electron mass ratio m_p/m_e ≈ 1836 arises as the ratio
 of Picard–Lefschetz thimble periods of the Seiberg–Witten differential
@@ -24,7 +24,7 @@ wired into a Lake target (see `(somethings maybe didn't migrate to
 standard lake architecture)` migration note) — we mirror the
 `PLCorrectnessHypotheses` class here under a fully-qualified name.
 Once the migration lands, this mirror should be deleted in favour of
-`import QOU.Descartes.SwPeriodThimbleEquivalence` and a single
+`import QOU.Archimedean.SwPeriodThimbleEquivalence` and a single
 canonical `PLCorrectnessHypotheses` definition.
 
 ## References
@@ -37,7 +37,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.NormNum
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **Mirror of `PLCorrectnessHypotheses`** from
     `sw-period-thimble-equivalence.lean`.
@@ -141,4 +141,4 @@ noncomputable instance : BaryonPeriodRatio (1.1100 : ℝ) where
     -- Numerical inequality 1835 < 1836.15 < 1837.
     refine ⟨?_, ?_⟩ <;> norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

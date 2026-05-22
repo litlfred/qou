@@ -31,12 +31,12 @@ provides a concrete Lean handle for downstream usage.
 -/
 
 import Mathlib.Tactic
-import QOU.Descartes.MassTowerOpenProblemsClasses
-import QOU.Descartes.TypeBFoldedCrystalCombinatorics
-import QOU.Descartes.ClausenFunctionMathlibFiller
-import QOU.Descartes.BlochWignerMathlibFiller
+import QOU.Archimedean.MassTowerOpenProblemsClasses
+import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.BlochWignerMathlibFiller
 
-namespace QOU.Descartes.DeeperFillers
+namespace QOU.Archimedean.DeeperFillers
 
 /-! ## (A) Height-6 partition enumeration -/
 
@@ -149,4 +149,4 @@ theorem Cl_2_zero_consistent_with_pentagon
     (F : Type*) [DeeperMathlibFillers F] :
     Cl_2 0 = 0 := Cl_2_zero
 
-end QOU.Descartes.DeeperFillers
+end QOU.Archimedean.DeeperFillers

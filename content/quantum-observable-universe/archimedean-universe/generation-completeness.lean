@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.generation_completeness — All embeddable knots are reachable
+# QOU.Archimedean.generation_completeness — All embeddable knots are reachable
 
 Every knot with Seifert genus g(K) ≤ 4 is reachable from the generator
 set G by a finite sequence of Skein crossing changes.  The generation
@@ -16,7 +16,7 @@ LaTeX label: `thm:generation-completeness`
 
 import Mathlib.Data.Nat.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The genus bound for the Bring's surface. -/
 def genusBound : ℕ := 4
@@ -69,4 +69,4 @@ theorem spectrum_complete (K : KnotType) (h : K.seifertGenus ≤ 4) :
   · exact h
   · exact generation_completeness K h
 
-end QOU.Descartes
+end QOU.Archimedean

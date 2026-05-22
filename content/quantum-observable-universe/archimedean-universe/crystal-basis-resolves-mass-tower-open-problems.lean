@@ -32,9 +32,9 @@ coefficient pre-archimedean combinatorial objects.
 -/
 
 import Mathlib.Tactic
-import QOU.Descartes.MassTowerOpenProblemsClasses
+import QOU.Archimedean.MassTowerOpenProblemsClasses
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open OpenProblems
 
@@ -149,4 +149,4 @@ theorem crystal_basis_reduction
    term7_via_crystal,
    zhabiro_via_crystal⟩
 
-end QOU.Descartes
+end QOU.Archimedean

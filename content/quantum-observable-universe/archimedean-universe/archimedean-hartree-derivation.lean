@@ -1,8 +1,8 @@
 /-!
-# QOU.Descartes.archimedean_hartree_derivation — sibling stub
+# QOU.Archimedean.archimedean_hartree_derivation — sibling stub
 
 **Sibling-resolution stub** for content block
-[`prop:archimedean-hartree-derivation`](archimedean-hartree-derivation.md): *QOU.Descartes.archimedean_hartree_derivation*.
+[`prop:archimedean-hartree-derivation`](archimedean-hartree-derivation.md): *QOU.Archimedean.archimedean_hartree_derivation*.
 
 The (placeholder) canonical lives at
 [`../lean/QOU/Descartes/archimedean_hartree_derivation.lean`](../lean/QOU/Descartes/archimedean_hartree_derivation.lean) under the `qou` Lake package.

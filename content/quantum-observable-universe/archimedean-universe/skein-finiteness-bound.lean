@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.skein_finiteness_bound
+# QOU.Archimedean.skein_finiteness_bound
 
 Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary.
 
@@ -22,7 +22,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 -- ═══════════════════════════════════════════════════════════════════
 -- The stability condition: P(q) > 0
@@ -167,4 +167,4 @@ theorem particle_finiteness :
   unfold torusEmbeddable at hemb
   constructor <;> constructor <;> omega
 
-end QOU.Descartes
+end QOU.Archimedean

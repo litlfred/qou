@@ -1,16 +1,16 @@
 /-!
-# QOU.Descartes.archimedean_hartree_derivation — placeholder stub
+# QOU.Archimedean.archimedean_hartree_derivation — placeholder stub
 
 **Placeholder canonical** for content block
-[`prop:archimedean-hartree-derivation`](../../../quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md): *QOU.Descartes.archimedean_hartree_derivation*.
+[`prop:archimedean-hartree-derivation`](../../../quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md): *QOU.Archimedean.archimedean_hartree_derivation*.
 
 The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Descartes.archimedean_hartree_derivation` resolves to a real declaration in
+the `lean.ref` URI `qou:QOU.Archimedean.archimedean_hartree_derivation` resolves to a real declaration in
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `archimedean_hartree_derivation` claim —
@@ -73,4 +73,4 @@ theorem archimedean_hartree_derivation [ctx : ArchimedeanHartreeDerivationContex
         * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ)) :=
   ctx.claim_archimedean_factorisation
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.Electron — Trefoil T_{2,3} (lepton sector)
+# QOU.Archimedean.Electron — Trefoil T_{2,3} (lepton sector)
 
 The electron is the trefoil knot T_{2,3} in the lepton sector.
 It is the same knot type as the up quark, but not localized in a
@@ -20,10 +20,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -68,4 +68,4 @@ theorem electron_crossing_number : Electron.mk.crossing_number = 3 := rfl
 -- Ref: [manuscript] Ch. 5, §electron-knot
 theorem electron_nonhyperbolic : Electron.mk.volume = (0 : R_q) := rfl
 
-end QOU.Descartes
+end QOU.Archimedean

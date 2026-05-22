@@ -9,7 +9,7 @@
 -/
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A colored photon is the identity element plus color dressing
     in the Hecke algebra: γ_φ = 𝟙 + φ·σ₀ + φ·σ₁. -/
@@ -30,4 +30,4 @@ theorem breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) 
   -- Ref: [manuscript] Chapter 6, §3b
   trivial
 
-end QOU.Descartes
+end QOU.Archimedean

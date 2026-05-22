@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.reidemeister_action_table — Reidemeister moves on the categorical action
+# QOU.Archimedean.reidemeister_action_table — Reidemeister moves on the categorical action
 
 Every braid move acts on the three sectors of the categorical action
 S_q = S_q^grav + S_q^gauge + S_q^matter.  This file encodes the
@@ -28,10 +28,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -122,4 +122,4 @@ theorem r3_preserves_volume : BraidMove.R3_YangBaxter.preservesVolume := by
 theorem far_comm_preserves_volume : BraidMove.farCommutativity.preservesVolume := by
   exact trivial
 
-end QOU.Descartes
+end QOU.Archimedean

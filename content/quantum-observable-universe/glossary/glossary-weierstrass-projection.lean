@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.weierstrassProjection — Glossary: Weierstrass projection ℘_q(z)
+# QOU.Archimedean.weierstrassProjection — Glossary: Weierstrass projection ℘_q(z)
 
 The Weierstrass elliptic function on ℂ/Λ_q uniformising the
 Descartes elliptic curve ℰ_q.
@@ -17,7 +17,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Complex.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Glossary reference: the Weierstrass projection ℘_q : ℂ/Λ_q → ℙ¹
     is the meromorphic function uniformising ℰ_q.
@@ -29,4 +29,4 @@ theorem weierstrass_projection_exists (g2 g3 : ℝ) :
     ∃ (wp : ℂ → ℂ), True := ⟨fun _ => 0, trivial⟩
     -- Full construction in descartes-universe/weierstrass-projection.lean
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,18 +1,18 @@
 /-!
-# QOU.Descartes.skein_polynomial_transfer_matrix — placeholder stub
+# QOU.Archimedean.skein_polynomial_transfer_matrix — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/skein-polynomial-transfer-matrix.ts`](quantum-observable-universe/descartes-universe/skein-polynomial-transfer-matrix.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.skein_polynomial_transfer_matrix` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.skein_polynomial_transfer_matrix` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `skein_polynomial_transfer_matrix` claim —
@@ -116,4 +116,4 @@ theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixCon
   ⟨ctx.claim_i_factorisation, ctx.claim_ii_degree_bound,
    ctx.claim_iii_binomial_cost⟩
 
-end QOU.Descartes
+end QOU.Archimedean

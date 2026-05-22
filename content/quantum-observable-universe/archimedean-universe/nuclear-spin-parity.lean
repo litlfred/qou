@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.nuclear_spin_parity — Nuclear spin parity from A mod 2
+# QOU.Archimedean.nuclear_spin_parity — Nuclear spin parity from A mod 2
 
 The nuclear spin quantum number J is integral when A is even and
 half-integral when A is odd.  This follows from each nucleon being
@@ -15,7 +15,7 @@ LaTeX label: `prop:nuclear-spin-parity`
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Nat.Parity
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A nucleus has integer or half-integer spin determined by A mod 2. -/
 -- Ref: [manuscript] §6/nuclear-spin-parity
@@ -62,4 +62,4 @@ theorem beta_decay_preserves_spin_parity (p n : ℕ) :
   unfold nuclearSpinParity
   omega
 
-end QOU.Descartes
+end QOU.Archimedean

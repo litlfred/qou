@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.descartes
+# QOU.Archimedean.descartes
 
 Descartes theorem: Bring's surface Σ₄ is the terminal object in the
 category C_{-6} of Descartes universes (QOUs with χ(A) = -6).
@@ -11,9 +11,9 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
-/-- **Descartes universe data**: a QOU satisfying the Descartes condition
+/-- **Descartes universe data**: a QOU satisfying the Archimedean condition
     χ(A) = -6 together with its geometric invariants.
 
     LaTeX: `\label{thm:descartes}`
@@ -21,7 +21,7 @@ namespace QOU.Descartes
 structure DescartesUniverse where
   /-- Euler characteristic χ(A) = tr(id_A). -/
   eulerChar : ℤ
-  /-- Descartes condition: χ = -6. -/
+  /-- Archimedean condition: χ = -6. -/
   euler_eq : eulerChar = -6
   /-- Genus of the base Riemann surface. -/
   genus : ℤ
@@ -86,4 +86,4 @@ theorem brings_genus : bringsSurface.genus = 4 := rfl
 -- Ref: [manuscript] Chapter 6, §Descartes theorem
 theorem brings_euler : bringsSurface.eulerChar = -6 := rfl
 
-end QOU.Descartes
+end QOU.Archimedean

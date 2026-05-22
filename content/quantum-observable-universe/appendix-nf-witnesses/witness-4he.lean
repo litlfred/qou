@@ -8,5 +8,5 @@
 -- Denominator: 2⁴ = 16
 -- Computed by hecke-engine 0.8.0
 
--- See QOU.Descartes.PauliWitness.tr_alt_4he for the exact Laurent polynomial.
--- See QOU.Descartes.PauliWitness.net_4he for the net polynomial.
+-- See QOU.Archimedean.PauliWitness.tr_alt_4he for the exact Laurent polynomial.
+-- See QOU.Archimedean.PauliWitness.net_4he for the net polynomial.

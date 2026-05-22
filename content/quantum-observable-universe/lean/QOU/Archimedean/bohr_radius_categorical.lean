@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.bohr_radius_categorical — `a_0^cat = ℏ / (m_e c α_EM)` virial balance
+# QOU.Archimedean.bohr_radius_categorical — `a_0^cat = ℏ / (m_e c α_EM)` virial balance
 
 **Proposition (transport sketch)** ([`prop:bohr-radius-categorical`](../../../quantum-observable-universe/descartes-universe/bohr-radius-categorical.md)).
 
@@ -20,7 +20,7 @@ research-grade direction.*
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/bohr-radius-categorical.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The candidate categorical Bohr radius `a_0^cat = ℏ / (m_e c α_EM)`. -/
 noncomputable def bohrRadiusCategorical (hbar m_e c α_EM : ℝ) : ℝ :=
@@ -59,4 +59,4 @@ theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] :
       = ctx.Phi_Coul (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM) :=
   ctx.claim_virial_balance
 
-end QOU.Descartes
+end QOU.Archimedean

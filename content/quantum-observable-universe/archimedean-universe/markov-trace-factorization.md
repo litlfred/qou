@@ -80,7 +80,7 @@ The substrate parameter $q$ is simultaneously:
 2. **The variable** of the Skein polynomial, in which each
    transfer matrix entry is polynomial.
 3. **The physical parameter** the substrate $q$, determined by the
-   Descartes condition $\chi(A) = -6$.
+   Archimedean condition $\chi(A) = -6$.
 
 The entire nuclear physics is encoded in the polynomial
 $P_{\mathcal{N}}(q)$.  Computing the polynomial requires

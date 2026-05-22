@@ -6,5 +6,5 @@
 -- Gröbner NF: 5,040 terms collapsing to 8 after I₈ + I₉ quotient
 -- Computed by hecke-engine 0.8.0
 
--- See QOU.Descartes.PauliWitness.tr_alt_8be for the exact Laurent polynomial.
--- See QOU.Descartes.PauliWitness.net_8be for the net polynomial.
+-- See QOU.Archimedean.PauliWitness.tr_alt_8be for the exact Laurent polynomial.
+-- See QOU.Archimedean.PauliWitness.net_8be for the net polynomial.

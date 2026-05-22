@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.shell_structure_eigenvalues — placeholder stub
+# QOU.Archimedean.shell_structure_eigenvalues — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/shell-structure-eigenvalues.ts`](quantum-observable-universe/descartes-universe/shell-structure-eigenvalues.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.shell_structure_eigenvalues` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.shell_structure_eigenvalues` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `shell_structure_eigenvalues` claim —
@@ -181,4 +181,4 @@ theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] :
   ⟨ctx.claim_i_char_poly_product, ctx.claim_ii_eigenvalue_sum,
    ctx.claim_iii_chebyshev_second_kind, ctx.claim_iv_traced_volume⟩
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.nuclear_groebner_reduction — Unique nuclear normal form via Gröbner reduction
+# QOU.Archimedean.nuclear_groebner_reduction — Unique nuclear normal form via Gröbner reduction
 
 The Hecke algebra H_A(q) = R[B_A] / Skein has an admissible system
 (positive braid monomials, length-lex ordering) with Gröbner basis
@@ -16,7 +16,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A braid word: a list of generator indices. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
@@ -123,4 +123,4 @@ noncomputable def nuclear_groebner_reduction (q : ℝ) (hq : 1 < q)
     (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.Nodup) ∧
     (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.length ≤ p + n - 1)
 
-end QOU.Descartes
+end QOU.Archimedean

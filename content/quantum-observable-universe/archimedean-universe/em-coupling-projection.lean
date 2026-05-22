@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.em_coupling_projection — Electromagnetic coupling from braiding
+# QOU.Archimedean.em_coupling_projection — Electromagnetic coupling from braiding
 
 The electromagnetic fine structure constant is determined by three
 finite combinatorial ingredients: the antisymmetric eigenvalue of the
@@ -24,10 +24,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -93,4 +93,4 @@ theorem em_coupling_classical_limit :
     |emCoupling q - 1 / 90| < ε :=
   em_coupling_classical_limit_axiom
 
-end QOU.Descartes
+end QOU.Archimedean

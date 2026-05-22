@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.nuclear_spin_parity — `J ∈ ℤ ⟺ A ∈ 2ℤ`
+# QOU.Archimedean.nuclear_spin_parity — `J ∈ ℤ ⟺ A ∈ 2ℤ`
 
 **Proposition** ([`prop:nuclear-spin-parity`](../../../quantum-observable-universe/descartes-universe/nuclear-spin-parity.md)).
 
@@ -23,7 +23,7 @@ side-steps the half-integer issue by working with `2J : ℕ`.
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/nuclear-spin-parity.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract nucleus record: proton/neutron counts and the
     twice-angular-momentum `2J`.  Working with `2J : ℕ` rather than
@@ -49,4 +49,4 @@ theorem nuclear_spin_parity [n : NucleusLike] :
     n.twoJ % 2 = (n.Z + n.N) % 2 :=
   n.claim_spin_parity
 
-end QOU.Descartes
+end QOU.Archimedean

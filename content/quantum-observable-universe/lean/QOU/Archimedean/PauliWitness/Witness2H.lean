@@ -1,6 +1,6 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
-namespace QOU.Descartes.PauliWitness
+namespace QOU.Archimedean.PauliWitness
 
 /-- F_Pauli for 2H (Z=1, N=1, A=2), exact in t = q^{1/2}.
     Computed by hecke-engine 0.8.0, 0ms.
@@ -26,4 +26,4 @@ noncomputable def observable_2h : LaurentPolynomial ℤ :=
 noncomputable def coral_2h : LaurentPolynomial ℤ :=
   0
 
-end QOU.Descartes.PauliWitness
+end QOU.Archimedean.PauliWitness

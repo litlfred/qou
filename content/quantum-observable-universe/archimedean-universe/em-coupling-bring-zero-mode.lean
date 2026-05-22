@@ -14,7 +14,7 @@ This file axiomatises the missing structural input as a Lean
 typeclass `BringZeroModeBlochClass`. The class field asserts that
 there exists a class `[Z] ∈ B(ℂ)` whose Bloch-Wigner value `D[Z]`
 equals `2/(3π)` under the chosen normalisation. Combined with the
-sibling typeclass `QOU.Descartes.BlochSuslinUniqueness` from
+sibling typeclass `QOU.Archimedean.BlochSuslinUniqueness` from
 `prop:archimedean-functor-uniqueness`, the resulting conditional
 proposition is:
 
@@ -40,7 +40,7 @@ documented in `em-coupling-bring-zero-mode.md`.
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Carrier for the additive Bring zero-mode contribution as a real
     number; the candidate value at g = 4 is `2/(3π)`. -/
@@ -101,4 +101,4 @@ theorem bring_zero_mode_additive_form
   refine ⟨z, ?_⟩
   rw [hz, hodgeRatio_at_g4]
 
-end QOU.Descartes
+end QOU.Archimedean

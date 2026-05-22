@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.delta_lambda_categorical_closure — Per-partition Δ_λ closure
+# QOU.Archimedean.delta_lambda_categorical_closure — Per-partition Δ_λ closure
 
 Per-partition `Δ_λ(K)` in the binding-energy master formula
 
@@ -17,7 +17,7 @@ where the ingredients are:
   - `λ^(k)_{SW,λ}` := π_λ(λ^(k)_SW) — per-λ SW differential
   - `Δ^(λ)(z)` := π_λ(Δ(z)) — per-λ discriminant
   - `O_prin^(λ)` — innermost conjugate pair of Δ^(λ)
-  - `Res^alg_p` — algebraic residue (per QOU.Descartes.SwPeriodThimbleEquivalence)
+  - `Res^alg_p` — algebraic residue (per QOU.Archimedean.SwPeriodThimbleEquivalence)
   - `τ_q` — archimedean fibre functor at substrate q
 
 The conjecture is OPEN: the verification witness (Phase 1b) on the
@@ -40,7 +40,7 @@ committing to a specific concrete value until the closure is verified.
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract type-class encoding the per-partition Δ_λ closure
     hypothesis. Instances are constructed for specific atoms once
@@ -99,11 +99,11 @@ theorem closure_reduces_to_trivial_isotype
   --   1. Concrete Partition type with the trivial-isotype partition (n)
   --   2. Concrete chi_lambda function with chi_(n) = 1
   --   3. Concrete delta-projection pi_lambda with pi_(n) = id
-  --   4. Cross-reference to QOU.Descartes.SwPeriodThimbleEquivalence
+  --   4. Cross-reference to QOU.Archimedean.SwPeriodThimbleEquivalence
   --
   -- Deferred to Phase 3 of the closed-forms workplan.
   --
   -- Ref: [manuscript] prop:sw-period-thimble-equivalence A2.4
   trivial
 
-end QOU.Descartes
+end QOU.Archimedean

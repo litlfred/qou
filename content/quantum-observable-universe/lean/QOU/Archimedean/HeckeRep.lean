@@ -1,5 +1,5 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TransferMatrix
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TransferMatrix
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Tactic.Ring
@@ -31,7 +31,7 @@ The eigenvalues of each generator are `t² = q` and `−t⁻² = −q⁻¹`.
   groups and associated Hecke algebras.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Matrix
 
@@ -199,7 +199,7 @@ lemma t_inv_mul_t : t_inv * t = (1 : R_t) := by
   simp [LaurentPolynomial.T_zero]
 
 /-- `q · q⁻¹ = 1` in `R_t` (using `q_from_t`/`q_inv_from_t`).
-    Distinct from `QOU.Descartes.q_mul_q_inv` (which uses the
+    Distinct from `QOU.Archimedean.q_mul_q_inv` (which uses the
     `q`/`q_inv` aliases in `GroundRing.lean`). -/
 lemma q_from_t_mul_q_inv_from_t : q_from_t * q_inv_from_t = (1 : R_t) := by
   unfold q_from_t q_inv_from_t
@@ -315,4 +315,4 @@ theorem transferMatrix_swap (a₁ b₁ a₂ b₂ : R_t) (M : TMatrix) :
     M * transferMatrix a₂ b₂ * transferMatrix a₁ b₁ := by
   rw [Matrix.mul_assoc, Matrix.mul_assoc, transferMatrix_comm]
 
-end QOU.Descartes
+end QOU.Archimedean

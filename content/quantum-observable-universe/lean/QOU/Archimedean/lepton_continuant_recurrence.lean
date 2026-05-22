@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.lepton_continuant_recurrence — Morgan–Voyce continuant NF
+# QOU.Archimedean.lepton_continuant_recurrence — Morgan–Voyce continuant NF
 
 **Proposition** ([`prop:lepton-continuant-recurrence`](../../../quantum-observable-universe/descartes-universe/lepton-continuant-recurrence.md)).
 
@@ -30,7 +30,7 @@ recurrence itself; downstream specialisation to specific
 
 import Mathlib.Algebra.Polynomial.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Polynomial
 
@@ -91,4 +91,4 @@ theorem lepton_continuant_recurrence (n : ℕ) :
     morganVoyceB 1 = 1 := by
   refine ⟨morganVoyceA_succ n, morganVoyceB_recurrence n, ?_, ?_⟩ <;> rfl
 
-end QOU.Descartes
+end QOU.Archimedean

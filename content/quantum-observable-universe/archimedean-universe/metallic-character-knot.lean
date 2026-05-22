@@ -1,8 +1,8 @@
 /-!
-# QOU.Descartes.metallic_character_knot — sibling stub
+# QOU.Archimedean.metallic_character_knot — sibling stub
 
 **Sibling-resolution stub** for content block
-[`prop:metallic-character-knot`](metallic-character-knot.md): *QOU.Descartes.metallic_character_knot*.
+[`prop:metallic-character-knot`](metallic-character-knot.md): *QOU.Archimedean.metallic_character_knot*.
 
 The (placeholder) canonical lives at
 [`../lean/QOU/Descartes/metallic_character_knot.lean`](../lean/QOU/Descartes/metallic_character_knot.lean) under the `qou` Lake package.

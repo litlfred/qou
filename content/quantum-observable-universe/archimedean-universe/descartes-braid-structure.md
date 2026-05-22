@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
-([Descartes condition](#def:descartes-condition)).  Then:
+([Archimedean condition](#def:archimedean-condition)).  Then:
 
 1. The braiding of $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$
    induces a faithful representation

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.bar_self_dual_confinement_band — Maximal bar-invariant band
+# QOU.Archimedean.bar_self_dual_confinement_band — Maximal bar-invariant band
 
 The open interval ℬ = (1/φ², φ²) is the maximal connected open
 sub-interval of ℝ_{>0} that is invariant under the bar involution
@@ -24,7 +24,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-namespace QOU.Descartes.BarSelfDualConfBand
+namespace QOU.Archimedean.BarSelfDualConfBand
 
 /-- The golden ratio φ = (1 + √5)/2. -/
 noncomputable def phi : ℝ := (1 + Real.sqrt 5) / 2
@@ -171,4 +171,4 @@ theorem bar_self_dual_confinement_band :
   ⟨qGold_mul_qGoldDual, qGold_lt_qGoldDual, one_mem_confBand,
    fun q hq => bar_invariant_confBand q hq⟩
 
-end QOU.Descartes.BarSelfDualConfBand
+end QOU.Archimedean.BarSelfDualConfBand

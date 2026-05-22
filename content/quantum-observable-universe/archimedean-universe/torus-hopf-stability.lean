@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.torus_hopf_stability
+# QOU.Archimedean.torus_hopf_stability
 
 Torus knot composites linked by Hopf links on Bring's surface
 have negative crossing energy, establishing hadron stability.
@@ -15,10 +15,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -53,4 +53,4 @@ theorem torus_hopf_stability
     -vol_binding * q⁻¹ ^ 2 + crossing_sum < 0 := by
   linarith
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -30,9 +30,9 @@ This file establishes the unconditional algebraic skeleton:
 import Mathlib.Data.Nat.Totient
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
-import QOU.Descartes.EmCouplingBringZeroMode
+import QOU.Archimedean.EmCouplingBringZeroMode
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Borel regulator dimension for the cyclotomic field `Q(ζ_n)`
     with `n ≥ 3` odd: by Borel's theorem, `r_2(Q(ζ_n)) = φ(n) / 2`,
@@ -347,4 +347,4 @@ theorem borromean_eq_L6a4_class
   class_equality_from_value_equality D z_borromean z_L6a4
     (borromeanValue cl2_pi_4) h_b h_L
 
-end QOU.Descartes
+end QOU.Archimedean

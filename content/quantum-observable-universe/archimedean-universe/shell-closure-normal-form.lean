@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.shell_closure_normal_form
+# QOU.Archimedean.shell_closure_normal_form
 
 Shell closure as symmetric Poincaré distribution in the Hecke normal form.
 
@@ -26,7 +26,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART 0: Inductive normal form verification
@@ -244,4 +244,4 @@ theorem nonclosure_ratio_moderate :
     dominant_coeff 9 / dominant_coeff 8 < 1.6 := by
   unfold dominant_coeff; norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

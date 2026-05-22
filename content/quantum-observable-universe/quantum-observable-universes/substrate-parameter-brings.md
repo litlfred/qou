@@ -43,7 +43,7 @@ $\chi(A) = -6$ constrains $q$ further. The quantum dimension of
 $A = \mathcal{O}_q(\mathrm{SU}(2))$ satisfies
 $\mathrm{tr}(\mathrm{id}_A) = [N]_q [N-1]_q / [1]_q$ at $N = 2$, giving
 $\chi(A) = [2]_q [1]_q / [1]_q = [2]_q = q + q^{-1}$.
-The Descartes condition $\chi(A) = 2 - 2g = -6$ requires
+The Archimedean condition $\chi(A) = 2 - 2g = -6$ requires
 $q + q^{-1} = -6$, i.e. $q^2 + 6q + 1 = 0$, so
 $q = -3 \pm 2\sqrt{2}$. The two roots are both negative
 (consistent with $q + q^{-1} < 0$). Choosing the root closer to
@@ -65,5 +65,5 @@ $\iota \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{C}$.
 **Summary.** The substrate parameter is not only "known to exist" —
 it is extracted by a three-step algorithm: (1) form $V \otimes V$,
 (2) diagonalise $c_{V,V}$, (3) read off the symmetric eigenvalue.
-On Bring's surface, the Descartes condition pins $q$ to a specific
+On Bring's surface, the Archimedean condition pins $q$ to a specific
 algebraic number.

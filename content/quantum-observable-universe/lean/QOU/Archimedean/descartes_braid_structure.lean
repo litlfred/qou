@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.descartes_braid_structure — placeholder stub
+# QOU.Archimedean.descartes_braid_structure — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/descartes-braid-structure.ts`](quantum-observable-universe/descartes-universe/descartes-braid-structure.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.descartes_braid_structure` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.descartes_braid_structure` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `descartes_braid_structure` claim — manuscript-themed
@@ -48,7 +48,7 @@ class DescartesBraidStructureContext where
 /-- **Manuscript statement** (full body):
 
 Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
-([Descartes condition](#def:descartes-condition)).  Then:
+([Archimedean condition](#def:archimedean-condition)).  Then:
 
 1. The braiding of $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$
    induces a faithful representation
@@ -81,4 +81,4 @@ theorem descartes_braid_structure [ctx : DescartesBraidStructureContext] :
   ⟨ctx.claim_i_faithful_rep, ctx.claim_ii_image_order_eq_12,
    ctx.claim_iii_three_S3_copies, ctx.claim_iv_padic_universal⟩
 
-end QOU.Descartes
+end QOU.Archimedean

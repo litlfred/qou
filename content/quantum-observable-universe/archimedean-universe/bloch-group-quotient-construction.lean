@@ -35,9 +35,9 @@ import Mathlib.GroupTheory.QuotientGroup.Basic
 import Mathlib.GroupTheory.FreeAbelianGroup
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic
-import QOU.Descartes.ThreeSubstantiveMathlibFillers
+import QOU.Archimedean.ThreeSubstantiveMathlibFillers
 
-namespace QOU.Descartes.BlochQuotient
+namespace QOU.Archimedean.BlochQuotient
 
 open SubstantiveFillers
 
@@ -512,4 +512,4 @@ theorem pentagonSubgroup_real_neBot
   rw [h] at hmem
   exact AddSubgroup.mem_bot.mp hmem
 
-end QOU.Descartes.BlochQuotient
+end QOU.Archimedean.BlochQuotient

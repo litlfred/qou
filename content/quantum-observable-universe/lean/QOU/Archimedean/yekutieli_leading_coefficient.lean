@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.yekutieli_leading_coefficient — `κ(T_{2,p}) = 1 ≠ 0`
+# QOU.Archimedean.yekutieli_leading_coefficient — `κ(T_{2,p}) = 1 ≠ 0`
 
 **Lemma** ([`lem:yekutieli-leading-coefficient`](../../../quantum-observable-universe/descartes-universe/yekutieli-leading-coefficient.md)).
 
@@ -13,7 +13,7 @@ coefficient and the non-vanishing claim at `q ≠ 1`.
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/yekutieli-leading-coefficient.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract context for the Yekutieli-leading-coefficient lemma. -/
 class YekutieliLeadingContext where
@@ -52,4 +52,4 @@ theorem yekutieli_obstruction_ne_zero
   -- `0 = 1` is absurd
   exact zero_ne_one h_eq_one
 
-end QOU.Descartes
+end QOU.Archimedean

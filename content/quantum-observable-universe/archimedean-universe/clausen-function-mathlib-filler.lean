@@ -52,7 +52,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The **Clausen function** `Cl_2 : ℝ → ℝ` defined by the Fourier
     series
@@ -118,4 +118,4 @@ theorem Vol_Borromean_eq_eight_Catalan :
   unfold Vol_Borromean Catalan_constant
   rfl
 
-end QOU.Descartes
+end QOU.Archimedean

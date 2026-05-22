@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.generator_volume_decomposition — Nuclear energy as sum of generator volumes
+# QOU.Archimedean.generator_volume_decomposition — Nuclear energy as sum of generator volumes
 
 E = Σ_i V_i where V_i = |a_i| + |b_i| is the Hecke-reduced weight
 at generator σ_i. The (a_i, b_i) follow a 2×2 transfer matrix
@@ -16,7 +16,7 @@ import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The transfer matrix step: multiply (a σ + b)(c σ + d) and reduce
     via σ² = (q-q⁻¹)σ + 1 to get (a', b'). -/
@@ -121,4 +121,4 @@ noncomputable def generator_volume_decomposition (q : ℝ)
     generatorVolume a b
   nuclearEnergy volumes
 
-end QOU.Descartes
+end QOU.Archimedean

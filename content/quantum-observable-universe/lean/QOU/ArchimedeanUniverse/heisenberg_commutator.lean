@@ -1,15 +1,15 @@
 /-!
-# QOU.DescartesUniverse.heisenberg_commutator — placeholder stub
+# QOU.ArchimedeanUniverse.heisenberg_commutator — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts`](quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.DescartesUniverse.heisenberg_commutator` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.ArchimedeanUniverse.heisenberg_commutator` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.DescartesUniverse
+namespace QOU.ArchimedeanUniverse
 
 
 /-- Abstract context for the `heisenberg_commutator` claim — manuscript-themed
@@ -64,4 +64,4 @@ theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] :
     (ctx.q = 1 → ctx.commutator_q = 0) :=
   ctx.claim_heisenberg_commutator
 
-end QOU.DescartesUniverse
+end QOU.ArchimedeanUniverse

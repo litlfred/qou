@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.force_carrier_bring_uniqueness
+# QOU.Archimedean.force_carrier_bring_uniqueness
 
 Bring's surface `Σ_4` has genus 4.  By the genus-4 torus-knot
 uniqueness ([torus_knot_genus_four_unique]), the force-carrier
@@ -15,9 +15,9 @@ LaTeX label: `prop:force-carrier-bring-uniqueness`
 - [manuscript] §5/force-carrier-bring-uniqueness
 -/
 
-import QOU.Descartes.TorusKnotGenusFourUnique
+import QOU.Archimedean.TorusKnotGenusFourUnique
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A force-carrier knot must satisfy the Bring saturation
     condition: its Seifert genus equals `g(Σ_4) = 4`. -/
@@ -43,4 +43,4 @@ theorem force_carrier_categorical_complexity (K : TorusKnot)
     K.crossingNumber = 9 ∨ K.crossingNumber = 10 :=
   genus_four_crossing_numbers K h
 
-end QOU.Descartes
+end QOU.Archimedean

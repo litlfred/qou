@@ -31,7 +31,7 @@ and $\chi^{\lambda^T}(\beta)$ along the Demazure components.
 
 import Mathlib.Tactic
 
-namespace QOU.Descartes.TypeBCrystal
+namespace QOU.Archimedean.TypeBCrystal
 
 /-- A cell of a Young diagram, parameterised by `(row, column)`
     with both components 0-indexed. The **content** of a cell is
@@ -124,4 +124,4 @@ theorem PartitionWithCells.self_transpose_content_sum_zero
   rw [← h] at key
   linarith
 
-end QOU.Descartes.TypeBCrystal
+end QOU.Archimedean.TypeBCrystal

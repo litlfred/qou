@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.Antineutrino — Mirror unknot (antiparticle of neutrino)
+# QOU.Archimedean.Antineutrino — Mirror unknot (antiparticle of neutrino)
 
 The antineutrino is the mirror unknot T̄_{1,0}.  Since the unknot is
 amphichiral, ν and ν̄ share all knot invariants; the distinction is
@@ -19,10 +19,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -50,4 +50,4 @@ theorem unknot_amphichiral :
     Antineutrino.mk.genus = 0 := by
   exact ⟨rfl, rfl, rfl⟩
 
-end QOU.Descartes
+end QOU.Archimedean

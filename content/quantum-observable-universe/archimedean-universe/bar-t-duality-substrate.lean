@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.bar_t_duality_substrate — Substrate-level bar T-duality
+# QOU.Archimedean.bar_t_duality_substrate — Substrate-level bar T-duality
 
 The bar involution q ↦ q⁻¹ on the substrate parameter induces an
 involution on the Descartes-family elliptic curves: 𝓔_q ↔ 𝓔_{q⁻¹}.
@@ -24,7 +24,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
-namespace QOU.Descartes.BarTDualitySubstrate
+namespace QOU.Archimedean.BarTDualitySubstrate
 
 /-- The bar involution on the multiplicative group ℝˣ. -/
 noncomputable def bar (q : ℝ) : ℝ := q⁻¹
@@ -97,4 +97,4 @@ theorem bar_t_duality_substrate :
     (∀ {f : ℝ → ℝ} {a : ℝ}, 0 < a → f a = 0 → (f ∘ bar) (a⁻¹) = 0) :=
   ⟨bar_involutive, bar_one, bar_lt_iff, bar_paired_zero_locus⟩
 
-end QOU.Descartes.BarTDualitySubstrate
+end QOU.Archimedean.BarTDualitySubstrate

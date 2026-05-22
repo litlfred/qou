@@ -22,7 +22,7 @@ structure of a Descartes universe** (cor) and **Knot eigenbasis
 completeness for a Descartes universe** (cor) extract the categorical
 braid action and the knot eigenbasis from the spectral data, and
 **The Descartes elliptic curve $\mathcal{E}_q$** (prop) names the
-elliptic curve over the spectral plane that the Descartes condition
+elliptic curve over the spectral plane that the Archimedean condition
 of the next section will pin down via $\chi = -6$.
 
 _(draft.)_

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.genus_from_hecke_completeness — `g_min = 4`
+# QOU.Archimedean.genus_from_hecke_completeness — `g_min = 4`
 
 **Lemma** ([`lem:genus-from-hecke-completeness`](../../../quantum-observable-universe/descartes-universe/genus-from-hecke-completeness.md)).
 
@@ -14,7 +14,7 @@ the embeddable-count monotonicity claim.
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/genus-from-hecke-completeness.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The number of embeddable torus knots `T_{r,s}` with `r ∈ {2, 3}`
     at genus `g`. -/
@@ -38,4 +38,4 @@ theorem genus_from_hecke_completeness :
   intro g hg
   interval_cases g <;> decide
 
-end QOU.Descartes
+end QOU.Archimedean

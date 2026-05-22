@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.torus_knot_genus_four_unique
+# QOU.Archimedean.torus_knot_genus_four_unique
 
 The torus knots `T_{m,n}` with `gcd(m,n) = 1`, `2 ≤ m ≤ n`, and
 genus `(m-1)(n-1)/2 = 4` are exactly `T_{2,9}` and `T_{3,5}`.
@@ -16,7 +16,7 @@ import Mathlib.Data.Nat.Defs
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Tactic.IntervalCases
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A torus knot `T_{m,n}` with `2 ≤ m ≤ n`, `gcd(m,n) = 1`. -/
 structure TorusKnot where
@@ -92,4 +92,4 @@ theorem genus_four_crossing_numbers (K : TorusKnot)
     unfold TorusKnot.crossingNumber
     rw [hm, hn]
 
-end QOU.Descartes
+end QOU.Archimedean

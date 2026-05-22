@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BoxBraidIrreducibility — The γγ → νν̄ box braid is irreducible
+# QOU.Archimedean.BoxBraidIrreducibility — The γγ → νν̄ box braid is irreducible
 
 The process γγ → νν̄ requires the T_{3,5} torus knot topology
 (weak mediator). The crossing number c(T_{3,5}) = 10 is a
@@ -21,10 +21,10 @@ import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -138,4 +138,4 @@ theorem box_braid_min_crossings :
 noncomputable def BoxBraidIrreducibility : Prop :=
   T35.crossingNumber = 10
 
-end QOU.Descartes
+end QOU.Archimedean

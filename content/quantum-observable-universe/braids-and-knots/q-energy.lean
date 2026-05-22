@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.QEnergy — q-Energy from angular momentum + momentum + action
+# QOU.Archimedean.QEnergy — q-Energy from angular momentum + momentum + action
 
 The q-energy of a particle knot is the sum of three terms:
   E_q = J_q² · ℏ_q + p_q² · ℏ_q/(2[n]_q) + S_q
@@ -19,10 +19,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -90,4 +90,4 @@ noncomputable def crossingEnergy_neg (q : R_q) : R_q := 1 / q
   rw [div_lt_iff (by linarith : (0 : R_q) < q)]
   nlinarith
 
-end QOU.Descartes
+end QOU.Archimedean

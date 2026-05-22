@@ -12,7 +12,7 @@ import Mathlib.Algebra.GroupPower.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-namespace QOU.DescartesUniverse
+namespace QOU.ArchimedeanUniverse
 
 /-- The skein parameter h := q − q⁻¹ in the substrate ring R. -/
 def h_skein {R : Type*} [Field R] (q : R) : R := q - q⁻¹
@@ -94,4 +94,4 @@ theorem alpha_em_categorical_trace_ratio
   field_simp
   ring
 
-end QOU.DescartesUniverse
+end QOU.ArchimedeanUniverse

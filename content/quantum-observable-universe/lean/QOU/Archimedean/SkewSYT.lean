@@ -33,7 +33,7 @@ standard Young tableaux (SYT).
 - [fulton1997] W. Fulton, *Young Tableaux*.
 -/
 
-namespace QOU.Descartes.SkewSYT
+namespace QOU.Archimedean.SkewSYT
 
 /-! ## §1  Partitions -/
 
@@ -920,4 +920,4 @@ class SquaredToLinearTransition (k : ℕ) (_hk : 4 ≤ k)
 instance squaredToLinearTransition_refl (k : ℕ) (hk : 4 ≤ k) (x : ℝ) :
     SquaredToLinearTransition k hk x x := ⟨rfl⟩
 
-end QOU.Descartes.SkewSYT
+end QOU.Archimedean.SkewSYT

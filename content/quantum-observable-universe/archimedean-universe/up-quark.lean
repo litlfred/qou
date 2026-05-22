@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.UpQuark — Unknot in Borromean link with positive crossing
+# QOU.Archimedean.UpQuark — Unknot in Borromean link with positive crossing
 
 The up quark is an unknot (neutrino) localized in a color tube of the
 Bring surface with positive crossing orientation within the Borromean
@@ -21,10 +21,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -71,4 +71,4 @@ theorem up_quark_positive_orientation :
 -- Ref: [manuscript] Ch. 5, §up-quark
 theorem up_quark_confined : UpQuark.mk.confined = true := rfl
 
-end QOU.Descartes
+end QOU.Archimedean

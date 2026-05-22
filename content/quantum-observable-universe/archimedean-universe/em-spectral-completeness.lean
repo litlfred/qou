@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.em_spectral_completeness
+# QOU.Archimedean.em_spectral_completeness
 
 Two-strand spectral completeness over a commutative ring `R`.
 
@@ -21,9 +21,9 @@ LaTeX label: `thm:em-spectral-completeness`
 -/
 
 import Mathlib.Algebra.Polynomial.Laurent
-import QOU.Descartes.EmCouplingProjection
+import QOU.Archimedean.EmCouplingProjection
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open LaurentPolynomial
 
@@ -110,4 +110,4 @@ theorem em_spectral_completeness (S : SpectralRing) :
       p_plus ≠ 0 ∧ p_minus ≠ 0 :=
   em_spectral_completeness_axiom S
 
-end QOU.Descartes
+end QOU.Archimedean

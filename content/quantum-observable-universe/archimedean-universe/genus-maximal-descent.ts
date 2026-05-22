@@ -8,7 +8,7 @@ export default proposition({
   title: "Genus of the one-complex-dimensional descent",
   tags: ["descartes-universe", "genus", "riemann-roch"],
   uses: [
-    "def:descartes-condition",
+    "def:archimedean-condition",
   ],
   proofs: ["prf:genus-maximal-descent"],
 });

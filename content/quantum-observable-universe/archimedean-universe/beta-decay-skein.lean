@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BetaDecaySkein — Beta decay as T_{3,5}-mediated crossing operation
+# QOU.Archimedean.BetaDecaySkein — Beta decay as T_{3,5}-mediated crossing operation
 
 Beta decay is mediated by the torus knot T_{3,5} with 10 crossings.
 The T_{3,5} braid (σ₁σ₂)⁵ is inserted at the converting quark, and
@@ -27,7 +27,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 -- ═══════════════════════════════════════════════════════════════════
 -- T_{3,5} weak vertex
@@ -244,4 +244,4 @@ theorem beta_decay_locality (d : BetaMinusDecay) :
     d.daughter.A = d.parent.A :=
   ⟨d.p_inc, d.n_dec, d.A_preserved⟩
 
-end QOU.Descartes
+end QOU.Archimedean

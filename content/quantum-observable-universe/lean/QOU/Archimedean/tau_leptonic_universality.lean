@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.tau_leptonic_universality — tau leptonic universality
+# QOU.Archimedean.tau_leptonic_universality — tau leptonic universality
 
 **Proposition** ([`prop:tau-leptonic-universality`](../../../quantum-observable-universe/descartes-universe/tau-leptonic-universality.md)).
 
@@ -28,7 +28,7 @@ universality claim as an equality of branching-ratio quotients.
 
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The leptonic-decay phase-space factor `f(x) = 1 − 8x + 8x³ − x⁴
     − 12 x² ln x`, defined for `x > 0` (the `ln x` is `Real.log`). -/
@@ -96,4 +96,4 @@ theorem tau_leptonic_universality [ctx : TauLeptonicContext] :
   -- Ref: [manuscript] quantum-observable-universe/descartes-universe/tau-leptonic-universality.md
   sorry
 
-end QOU.Descartes
+end QOU.Archimedean

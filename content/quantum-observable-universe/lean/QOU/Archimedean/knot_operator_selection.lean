@@ -1,18 +1,18 @@
 import Mathlib.Algebra.BigOperators.Basic
 
 /-!
-# QOU.Descartes.knot_operator_selection — placeholder stub
+# QOU.Archimedean.knot_operator_selection — placeholder stub
 
 **Placeholder canonical** for content block
 [`prop:knot-operator-selection`](../../../quantum-observable-universe/descartes-universe/knot-operator-selection.md): *Knot operator selection via Frobenius dual*.
 
 The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Descartes.knot_operator_selection` resolves to a real declaration in
+the `lean.ref` URI `qou:QOU.Archimedean.knot_operator_selection` resolves to a real declaration in
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `knot_operator_selection` claim — manuscript-themed
@@ -92,4 +92,4 @@ theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
    ctx.claim_iii_frobenius_demand_supply,
    ctx.claim_iv_minimum_action_selection⟩
 
-end QOU.Descartes
+end QOU.Archimedean

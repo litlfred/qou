@@ -1,5 +1,5 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TorusKnot
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TorusKnot
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Tactic.Ring
 
@@ -19,7 +19,7 @@ Transfer matrices live in `M₂(ℤ[q, q⁻¹])` (not over ℝ).
 - [shell-closure-normal-form] Prop: palindromic Poincaré distribution.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Matrix
 
@@ -211,4 +211,4 @@ noncomputable def skeinPolynomialCleared (config : NuclearConfig) : R_t :=
   let chains := buildChains config
   chains.foldl (fun acc M => acc * tracedVolCleared M) 1
 
-end QOU.Descartes
+end QOU.Archimedean

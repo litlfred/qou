@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.rj_canonical_inner_product — Rosso–Jones canonical inner product
+# QOU.Archimedean.rj_canonical_inner_product — Rosso–Jones canonical inner product
 
 **Proposition** ([`prop:rj-canonical-inner-product`](../../../quantum-observable-universe/descartes-universe/rj-canonical-inner-product.md)).
 
@@ -33,7 +33,7 @@ is downstream work.
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/rj-canonical-inner-product.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract context for the Rosso–Jones canonical inner product on
     the representation ring `R(H_r(q))` of the Iwahori–Hecke algebra. -/
@@ -123,4 +123,4 @@ theorem rj_canonical_inner_product
   ⟨fun lam mu => rj_canonical_inner_product_diagonal lam mu,
    rj_canonical_inner_product_torus_knot s partitions_of_r⟩
 
-end QOU.Descartes
+end QOU.Archimedean

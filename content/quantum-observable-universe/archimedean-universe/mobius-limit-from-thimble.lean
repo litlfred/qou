@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.mobiusLimitFromThimble — Steepest-descent derivation of `a = (4-q)/(4q+3)`
+# QOU.Archimedean.mobiusLimitFromThimble — Steepest-descent derivation of `a = (4-q)/(4q+3)`
 
 The integration limit `a(q) = (4 - q)/(4q + 3)` is the leading-order
 asymptotic re-entry point on `ℝ` of the Picard–Lefschetz thimble
@@ -29,7 +29,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The Möbius transformation `q ↦ (4 - q)/(4q + 3)` defining the
     baryon integration limit.  Output is in the categorical base ring
@@ -77,4 +77,4 @@ theorem mobiusLimitFromThimble :
   intro q hq
   exact mobius_denom_ne_zero hq
 
-end QOU.Descartes
+end QOU.Archimedean

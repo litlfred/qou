@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.torus_knot_shell_binding
+# QOU.Archimedean.torus_knot_shell_binding
 
 Shell binding from the torus knot hierarchy T_{2,3} → T_{2,5} → T_{2,7} → T_{2,9}.
 
@@ -25,13 +25,13 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 -- When built as part of the QOU Lean project, uncomment:
--- import QOU.Descartes.shell_closure_normal_form
+-- import QOU.Archimedean.shell_closure_normal_form
 -- which provides IsNormalForm and division_terminates_unique.
 --
 -- Content-object .lean files are not yet wired into lakefile.toml,
 -- so we forward-declare the shared axiom for standalone checking.
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Forward declaration — see shell-closure-normal-form.lean for the
     full structure definition with no_squares, no_far_comm, no_yang_baxter. -/
@@ -167,4 +167,4 @@ noncomputable def first_shell_gap : ℝ := 1.4093 / 0.0951
 theorem first_shell_gap_large : first_shell_gap > 14 := by
   unfold first_shell_gap; norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

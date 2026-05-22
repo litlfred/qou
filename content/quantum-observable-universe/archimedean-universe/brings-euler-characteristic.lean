@@ -1,5 +1,5 @@
 /-!
-# QOU.DescartesUniverse.brings_euler_characteristic — sibling stub
+# QOU.ArchimedeanUniverse.brings_euler_characteristic — sibling stub
 
 **Sibling-resolution stub** for content block
 [`lem:brings-euler-characteristic`](brings-euler-characteristic.md): *Categorical Euler characteristic of $\\mathcal{O}_q(\\mathrm{SU}(2))$ on Bring's surface*.

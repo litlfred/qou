@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.genus_filtration_ideal — placeholder stub
+# QOU.Archimedean.genus_filtration_ideal — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/genus-filtration-ideal.ts`](quantum-observable-universe/descartes-universe/genus-filtration-ideal.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.genus_filtration_ideal` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.genus_filtration_ideal` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `genus_filtration_ideal` claim — manuscript-themed
@@ -111,4 +111,4 @@ theorem genus_filtration_ideal [ctx : GenusFiltrationIdealContext] :
   ⟨ctx.claim_i_genus_eq_four, ctx.claim_i_completeness_rank_five,
    ctx.claim_ii_ideal_eq_u5, ctx.claim_iii_kills_higher_torus_knots⟩
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -47,8 +47,8 @@ $\mathrm{SU}_q(2)$ gauge flow
   (Def.~\ref{def:quantum-gauge-group})
   & Pronilpotent deformation of the coordinate algebra
   & \cite[\S2]{yekutieli2008} \\[6pt]
-Descartes condition $\chi(\mathcal{S}) = -6$
-  (\hyperref[def:descartes-condition]{Def.~\ref*{def:descartes-condition}};
+Archimedean condition $\chi(\mathcal{S}) = -6$
+  (\hyperref[def:archimedean-condition]{Def.~\ref*{def:archimedean-condition}};
   authoritative statement and proof in
   \hyperref[chap:descartes-universe]{Chapter~\ref*{chap:descartes-universe}})
   & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)

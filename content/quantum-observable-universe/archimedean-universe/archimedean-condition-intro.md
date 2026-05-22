@@ -1,12 +1,12 @@
 _[draft]_ The Descartes elliptic curve $\mathcal{E}_q$ of the previous
-section names a structure; the Descartes condition is what selects
+section names a structure; the Archimedean condition is what selects
 its Euler characteristic. **Descent to dimension zero** (rem)
 explains the descent of the spectral data to a zero-dimensional
-locus, **Descartes condition** (def) states the condition $\chi(A) =
+locus, **Archimedean condition** (def) states the condition $\chi(A) =
 -6$ on the algebraic substrate, and **Why $\chi(A) = -6$: the
 complete derivation chain** (ex) walks through the chain of
 constraints — three colors, Reeb flow, Calabi–Yau compatibility —
-that force this single value. **The Descartes condition on
+that force this single value. **The Archimedean condition on
 examples** (rem) and **Descent to one complex dimension** (rem)
 record concrete instances and the one-dimensional descent, and
 **Genus of the one-complex-dimensional descent** (prop) computes the

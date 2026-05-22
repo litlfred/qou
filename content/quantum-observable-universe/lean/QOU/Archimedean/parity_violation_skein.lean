@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.parity_violation_skein — placeholder stub
+# QOU.Archimedean.parity_violation_skein — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/parity-violation-skein.ts`](quantum-observable-universe/descartes-universe/parity-violation-skein.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.parity_violation_skein` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.parity_violation_skein` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `parity_violation_skein` claim — manuscript-themed
@@ -121,4 +121,4 @@ theorem parity_violation_skein [ctx : ParityViolationSkeinContext] :
    ctx.claim_ii_skein_mirror_iff_eigenvalue_eq,
    ctx.claim_iii_q_ne_one_on_substrate⟩
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -69,7 +69,7 @@ Yekutieli lifting condition makes this precise: an object admits
 a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$
 vanishes.  The :refterm[descent]{#descent} involution $\hat{\tau}$ then decomposes the
 algebra at each level into descended (observable) and transient
-(pre-observable) modes.  A key result is the Descartes condition
+(pre-observable) modes.  A key result is the Archimedean condition
 $\chi(A) = -6$, forced by the lifting obstructions and the
 Archimedean constraint.  The Kummer exact sequence
 $1 \to \mu_n \to \mathbb{G}_m \to \mathbb{G}_m \to 1$

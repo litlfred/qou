@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.moduli_symmetry_d4 — Dihedral D₄-action on ℂ×
+# QOU.Archimedean.moduli_symmetry_d4 — Dihedral D₄-action on ℂ×
 
 The two natural involutions σ : q ↦ iq (complex rotation by π/2)
 and τ : q ↦ q⁻¹ (Hecke bar involution) generate a faithful action
@@ -22,7 +22,7 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 
-namespace QOU.Descartes.ModuliSymmetryD4
+namespace QOU.Archimedean.ModuliSymmetryD4
 
 open Complex
 
@@ -107,4 +107,4 @@ theorem moduli_symmetry_d4 :
    tau_pow_two,
    sigma_tau_involution⟩
 
-end QOU.Descartes.ModuliSymmetryD4
+end QOU.Archimedean.ModuliSymmetryD4

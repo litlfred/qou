@@ -1,16 +1,16 @@
 /-!
-# QOU.DescartesUniverse.mi_sw_cartan_reduction — placeholder stub
+# QOU.ArchimedeanUniverse.mi_sw_cartan_reduction — placeholder stub
 
 **Placeholder canonical** for content block
 [`lem:mi-sw-abelianisation-cartan`](../../../quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.md): *Cartan reduction recovers the Seiberg--Witten differential*.
 
 The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.DescartesUniverse.mi_sw_cartan_reduction` resolves to a real declaration in
+the `lean.ref` URI `qou:QOU.ArchimedeanUniverse.mi_sw_cartan_reduction` resolves to a real declaration in
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
-namespace QOU.DescartesUniverse
+namespace QOU.ArchimedeanUniverse
 
 
 /-- Abstract context for the `mi_sw_cartan_reduction` claim — manuscript-themed
@@ -48,4 +48,4 @@ theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] :
     ctx.A_0 = ctx.X_dz ∧ ctx.X_dz = ctx.lambda_SW :=
   ctx.claim_mi_sw_cartan_reduction
 
-end QOU.DescartesUniverse
+end QOU.ArchimedeanUniverse

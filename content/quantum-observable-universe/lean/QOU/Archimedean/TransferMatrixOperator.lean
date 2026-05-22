@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.TransferMatrixOperator — placeholder stub
+# QOU.Archimedean.TransferMatrixOperator — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/transfer-matrix-operator.ts`](quantum-observable-universe/descartes-universe/transfer-matrix-operator.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.TransferMatrixOperator` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.TransferMatrixOperator` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- TransferMatrixOperator
 
@@ -18,4 +18,4 @@ namespace QOU.Descartes
 -- Placeholder structure; full data to be specified.
 structure TransferMatrixOperator where
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -44,7 +44,7 @@ import QOU.PathIntegrals
 import QOU.MobiusEnergy
 import QOU.Torsion
 import QOU.BringsSurface
-import QOU.DescartesUniverse
+import QOU.ArchimedeanUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
 import QOU.InformationTheory
@@ -52,7 +52,7 @@ import QOU.LightningPath
 import QOU.RepresentationTheory
 import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
-import QOU.Descartes
+import QOU.Archimedean
 import QOU.Interactions
 import QOU.Encounter
 import QOU.BraidKnot

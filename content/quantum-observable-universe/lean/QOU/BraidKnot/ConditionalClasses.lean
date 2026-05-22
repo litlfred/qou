@@ -3,8 +3,8 @@
   conditional theorems in `braids-and-knots/`.
 
   Re-declares the upstream conjecture classes
-  (`QOU.Descartes.SingleVolumeIrrational`,
-   `QOU.Descartes.PLCorrectnessHypotheses`) as local Lean classes
+  (`QOU.Archimedean.SingleVolumeIrrational`,
+   `QOU.Archimedean.PLCorrectnessHypotheses`) as local Lean classes
   in the `QOU.BraidKnot` namespace, so chapter-local conditional
   theorems can take them as explicit `[Instance]` hypotheses
   without depending on the cross-chapter sibling-style modules
@@ -26,7 +26,7 @@ namespace QOU.BraidKnot
 /-- **§3b-cond hypothesis class** for `conj:hyperbolic-volume-transcendence`.
 
     Local re-declaration of the upstream
-    `QOU.Descartes.SingleVolumeIrrational` class, packaging the
+    `QOU.Archimedean.SingleVolumeIrrational` class, packaging the
     irrationality-of-single-knot-volume hypothesis as a Lean
     instance.  Concrete content: the rigid-dualizing pairing's
     Frobenius self-pairing is unitary on every nuclear knot type
@@ -44,7 +44,7 @@ class SingleVolumeIrrational : Prop where
 /-- **§3b-cond hypothesis class** for `rem:baryon-period-ratio`.
 
     Local re-declaration of the upstream
-    `QOU.Descartes.PLCorrectnessHypotheses` class.  Concrete
+    `QOU.Archimedean.PLCorrectnessHypotheses` class.  Concrete
     content: at every substrate parameter `q > 1`, the baryon-
     period ratio is bounded between two non-negative real values
     (an existence statement for the Picard-Lefschetz decomposition

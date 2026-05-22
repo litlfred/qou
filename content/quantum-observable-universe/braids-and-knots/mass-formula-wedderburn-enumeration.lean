@@ -13,11 +13,11 @@ LaTeX label: `rem:mass-formula-wedderburn-enumeration`
 - [manuscript] Ch. Braids and Knots, §Mass formula
 -/
 
-import QOU.Descartes.SkewSYT
+import QOU.Archimedean.SkewSYT
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes.SkewSYT
+open QOU.Archimedean.SkewSYT
 
 /-- Curvature-rank depth of a partition: number of parts minus one. -/
 def depth (μ : Partition) : ℕ := μ.length - 1

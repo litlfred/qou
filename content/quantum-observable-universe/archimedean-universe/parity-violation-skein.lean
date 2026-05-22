@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.parity_violation_skein — Parity non-conservation from q ≠ 1
+# QOU.Archimedean.parity_violation_skein — Parity non-conservation from q ≠ 1
 
 The Skein relation q[L₊] - q⁻¹[L₋] = (q^½ - q^⁻½)[L₀] is invariant
 under parity (L₊ ↔ L₋) if and only if q = 1.  For any q ≠ 1, the weak
@@ -21,10 +21,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -95,4 +95,4 @@ theorem parityViolationStrength_classical :
   · field_simp
   · field_simp
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.genus_filtration_ideal
+# QOU.Archimedean.genus_filtration_ideal
 
 Genus-filtration ideal: the genus g = 4 is DERIVED from Hecke
 completeness (not assumed), and the Chebyshev degree of the
@@ -31,10 +31,10 @@ import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -174,4 +174,4 @@ theorem all_large_primes_obstructed (p : ℕ) (hp : 11 ≤ p) :
 example : ¬ ((11 - 1) / 2 ≤ 4) := all_large_primes_obstructed 11 (by omega)
 example : ¬ ((13 - 1) / 2 ≤ 4) := all_large_primes_obstructed 13 (by omega)
 
-end QOU.Descartes
+end QOU.Archimedean

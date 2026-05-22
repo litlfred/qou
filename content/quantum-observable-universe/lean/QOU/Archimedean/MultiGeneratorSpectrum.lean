@@ -1,7 +1,7 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.YoungIdempotent
-import QOU.Descartes.MassGapGm
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TransferMatrix
+import QOU.Archimedean.YoungIdempotent
+import QOU.Archimedean.MassGapGm
 import Mathlib.Tactic.Ring
 
 /-!
@@ -33,7 +33,7 @@ is what produces the axial coupling suppression `g_A < 5/3`.
 - [mathas1999] A. Mathas, *Iwahori--Hecke Algebras and Schur Algebras*, AMS 1999.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Matrix
 
@@ -218,4 +218,4 @@ class ChannelRatioDeterminesGA (stdEig symEig gA : ℝ) : Prop where
 instance channelRatioDeterminesGA_def (stdEig symEig : ℝ) :
     ChannelRatioDeterminesGA stdEig symEig (stdEig / symEig) := ⟨rfl⟩
 
-end QOU.Descartes
+end QOU.Archimedean

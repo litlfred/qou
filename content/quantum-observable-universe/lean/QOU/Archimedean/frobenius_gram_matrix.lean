@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.frobenius_gram_matrix — explicit Markov-Frobenius Gram matrix
+# QOU.Archimedean.frobenius_gram_matrix — explicit Markov-Frobenius Gram matrix
 
 **Proposition** ([`prop:frobenius-gram-matrix`](../../../quantum-observable-universe/descartes-universe/frobenius-gram-matrix.md)).
 
@@ -45,7 +45,7 @@ the matrix entries.
 import Mathlib.LinearAlgebra.Matrix.Symmetric
 import Mathlib.Data.Matrix.Notation
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Matrix
 
@@ -100,4 +100,4 @@ theorem frobenius_gram_matrix :
     (frobeniusGramMatrix h z : Matrix (Fin 6) (Fin 6) R) 0 0 = 1 :=
   frobeniusGramMatrix_zero_zero h z
 
-end QOU.Descartes
+end QOU.Archimedean

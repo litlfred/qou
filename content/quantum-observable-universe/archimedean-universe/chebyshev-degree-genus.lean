@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.chebyshev_degree_genus — sibling stub
+# QOU.Archimedean.chebyshev_degree_genus — sibling stub
 
 **Sibling-resolution stub** for content block
 [`lem:chebyshev-degree-genus`](chebyshev-degree-genus.md): *Chebyshev degree equals Seifert genus for $T_{2,p}$*.

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.Positron — Mirror trefoil σ(T_{2,3}) (antiparticle of electron)
+# QOU.Archimedean.Positron — Mirror trefoil σ(T_{2,3}) (antiparticle of electron)
 
 The positron is the mirror trefoil σ(T_{2,3}) — the antiparticle of the
 electron.  It carries reversed crossing chirality (Q = +1) and corresponds
@@ -20,10 +20,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -67,4 +67,4 @@ theorem positron_charge_opposite_electron :
 theorem positron_reversed_orientation :
     Positron.mk.orientation = -Electron.mk.orientation := by decide
 
-end QOU.Descartes
+end QOU.Archimedean

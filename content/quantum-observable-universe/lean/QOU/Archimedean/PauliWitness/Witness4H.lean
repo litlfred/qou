@@ -1,7 +1,7 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 set_option maxHeartbeats 4000000
-namespace QOU.Descartes.PauliWitness
+namespace QOU.Archimedean.PauliWitness
 
 /-- F_Pauli for 4H (Z=1, N=3, A=4), exact in t = q^{1/2}.
     Computed by hecke-engine 0.8.0, 0ms.
@@ -27,4 +27,4 @@ noncomputable def observable_4h : LaurentPolynomial ℤ :=
 noncomputable def coral_4h : LaurentPolynomial ℤ :=
   2 • LaurentPolynomial.T 2 - 5 • LaurentPolynomial.T 4 - 5 • LaurentPolynomial.T 5 + 10 • LaurentPolynomial.T 6 + 18 • LaurentPolynomial.T 7 - 11 • LaurentPolynomial.T 8 - 27 • LaurentPolynomial.T 9 - 2 • LaurentPolynomial.T 10 + 35 • LaurentPolynomial.T 11 + 25 • LaurentPolynomial.T 12 - 39 • LaurentPolynomial.T 13 - 31 • LaurentPolynomial.T 14 + 22 • LaurentPolynomial.T 15 + 32 • LaurentPolynomial.T 16 + LaurentPolynomial.T 17 - 22 • LaurentPolynomial.T 18 - 6 • LaurentPolynomial.T 19 - 3 • LaurentPolynomial.T 20 + 18 • LaurentPolynomial.T 21 + 3 • LaurentPolynomial.T 22 - 10 • LaurentPolynomial.T 23 + 5 • LaurentPolynomial.T 24 - 4 • LaurentPolynomial.T 25 + 4 • LaurentPolynomial.T 26 - 3 • LaurentPolynomial.T 27 + LaurentPolynomial.T 28
 
-end QOU.Descartes.PauliWitness
+end QOU.Archimedean.PauliWitness

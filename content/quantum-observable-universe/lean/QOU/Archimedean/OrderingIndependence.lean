@@ -1,7 +1,7 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.BetaDecay
-import QOU.Descartes.YoungIdempotent
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TransferMatrix
+import QOU.Archimedean.BetaDecay
+import QOU.Archimedean.YoungIdempotent
 import Mathlib.Tactic.Ring
 
 /-!
@@ -46,7 +46,7 @@ For tritium `(Z=1, N=2)`: all 9 parent × daughter ordering combinations
 give `Q_sym = 0.01943` (identical to 10 decimal places).
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **Skein-multiset invariance — typeclass (Pattern 4).**
 
@@ -168,4 +168,4 @@ noncomputable def Q_sym (op : BetaDecayOp) : FractionRing R_t :=
   -- The full Q involves: |log_q(this ratio)| · ℏ_q · m_e/3 × F(τ,N)
   -- but log_q and absolute value require ordered fields (ℝ specialisation)
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.metallic_character_knot — metallic atom iff 3 incompleteness conditions
+# QOU.Archimedean.metallic_character_knot — metallic atom iff 3 incompleteness conditions
 
 **Proposition** ([`prop:metallic-character-knot`](../../../quantum-observable-universe/descartes-universe/metallic-character-knot.md)).
 
@@ -16,7 +16,7 @@ metallic character iff:*
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/metallic-character-knot.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract context for the metallic-atom characterisation. -/
 class MetallicCharacterContext where
@@ -46,4 +46,4 @@ theorem metallic_character_knot
        ctx.HasOpenSite a) :=
   ctx.claim_metallic_iff a
 
-end QOU.Descartes
+end QOU.Archimedean

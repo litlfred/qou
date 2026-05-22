@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.gauge_coupling_uniqueness
+# QOU.Archimedean.gauge_coupling_uniqueness
 
 Up to the global normalisation `λ ∈ R`, there is exactly one
 non-trivial scalar coupling `A ⊗ A → 𝟙` on the two-strand sector
@@ -12,9 +12,9 @@ LaTeX label: `cor:gauge-coupling-uniqueness`
 - [manuscript] §5/gauge-coupling-uniqueness
 -/
 
-import QOU.Descartes.EmSpectralCompleteness
+import QOU.Archimedean.EmSpectralCompleteness
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **Corollary (gauge coupling uniqueness)**.
 
@@ -43,4 +43,4 @@ theorem gauge_coupling_uniqueness (S : SpectralRing) :
       ∃ λ : S.R, ∀ r : S.R, φ r = λ * ψ r :=
   gauge_coupling_uniqueness_axiom S
 
-end QOU.Descartes
+end QOU.Archimedean

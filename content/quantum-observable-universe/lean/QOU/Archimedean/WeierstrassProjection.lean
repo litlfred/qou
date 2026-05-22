@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.weierstrassProjection — Weierstrass projection ℘_q(z)
+# QOU.Archimedean.weierstrassProjection — Weierstrass projection ℘_q(z)
 
 The Weierstrass elliptic function associated to the Descartes elliptic
 curve E_q, defined via the classical Laurent series on ℂ/Λ_q.
@@ -19,10 +19,10 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -61,4 +61,4 @@ theorem weierstrass_diff_eq (g2 g3 : R_q) (z : ℂ)
       wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3 :=
   weierstrass_diff_eq_axiom g2 g3 z hz
 
-end QOU.Descartes
+end QOU.Archimedean

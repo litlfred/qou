@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.HopfDiquark — Hopf-linked quark pair
+# QOU.Archimedean.HopfDiquark — Hopf-linked quark pair
 
 A diquark is two quarks in distinct color tubes joined by the
 Hopf link.  The antisymmetric color structure (color antitriplet)
@@ -21,7 +21,7 @@ import Mathlib.Data.Finset.Basic
 
 noncomputable section
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Color index: one of three color tubes (r, g, b). -/
 abbrev ColorIndex := Fin 3
@@ -112,6 +112,6 @@ theorem borromean_dominates_diquark :
   unfold diquark_binding_per_baryon
   norm_num
 
-end QOU.Descartes
+end QOU.Archimedean
 
 end

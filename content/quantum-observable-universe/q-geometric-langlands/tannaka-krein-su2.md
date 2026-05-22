@@ -70,7 +70,7 @@ coend, read off generators from the fundamental representation, and
 extract relations from the $R$-matrix.
 
 **Bring's surface specialisation.** On Bring's QOU, $q$ takes the
-value determined by the Descartes condition
+value determined by the Archimedean condition
 ([constructive extraction of $q$](#ex\:substrate-parameter-brings)),
 and the reconstruction yields
 $\mathcal{O}_{q_{\mathrm{Bring}}}(\mathrm{SU}(2))$ equipped with

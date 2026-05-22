@@ -10,4 +10,4 @@ Bring's surface equations take the following form:
   Minkowski-like balance between the space-like and time-like modes.
 - *Cubic (phase locking):* a quintic resonance condition that
   locks the expansion of $\ln_q$ to $\exp_q$, preserving the $C_5$
-  symmetry and the Descartes condition $\chi=-6$.
+  symmetry and the Archimedean condition $\chi=-6$.

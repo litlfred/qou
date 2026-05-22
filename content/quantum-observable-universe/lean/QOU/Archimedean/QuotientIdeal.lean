@@ -20,7 +20,7 @@
     prop:beta-decay-transfer-matrix, rem:hydrogen-knot-structure
 -/
 
-import QOU.Descartes.TransferMatrix
+import QOU.Archimedean.TransferMatrix
 
 namespace QOU.QuotientIdeal
 

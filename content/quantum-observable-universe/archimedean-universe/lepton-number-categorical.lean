@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.LeptonNumber — Lepton number as Skein smoothing count
+# QOU.Archimedean.LeptonNumber — Lepton number as Skein smoothing count
 
 Lepton number is the number of Skein smoothings applied to a nuclear
 normal form.  Each smoothing produces exactly one lepton-antilepton
@@ -13,7 +13,7 @@ LaTeX label: `def:lepton-number-categorical`
 
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The lepton number of a particle.
 
@@ -63,4 +63,4 @@ theorem lepton_number_conservation (smoothings : List SkeinSmoothing) :
   | cons s rest ih =>
     simp [List.map_cons, List.sum_cons, s.pair_conservation, ih]
 
-end QOU.Descartes
+end QOU.Archimedean

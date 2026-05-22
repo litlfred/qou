@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.generator_volume_decomposition — Nuclear energy as sum of generator volumes
+# QOU.Archimedean.generator_volume_decomposition — Nuclear energy as sum of generator volumes
 
 E = Σ_i V_i where V_i = |a_i| + |b_i| is the Hecke-reduced weight
 at generator σ_i. The (a_i, b_i) follow a 2×2 transfer matrix
@@ -21,10 +21,10 @@ import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -133,4 +133,4 @@ noncomputable def generator_volume_decomposition (q : R_q)
     generatorVolume a b
   nuclearEnergy volumes
 
-end QOU.Descartes
+end QOU.Archimedean

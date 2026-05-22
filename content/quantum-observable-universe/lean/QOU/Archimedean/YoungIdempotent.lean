@@ -1,4 +1,4 @@
-import QOU.Descartes.HeckeRep
+import QOU.Archimedean.HeckeRep
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.GroupTheory.Perm.Fin
 import Mathlib.Tactic
@@ -35,7 +35,7 @@ The Young symmetric idempotent satisfies:
 
 namespace QOU.YoungIdempotent
 
-open QOU.Descartes Matrix
+open QOU.Archimedean Matrix
 
 /-! ## §1  Coxeter length (inversion count) -/
 

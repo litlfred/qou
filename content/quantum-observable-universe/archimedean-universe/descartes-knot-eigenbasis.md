@@ -1,11 +1,11 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
-([Descartes condition](#def:descartes-condition)) with
+([Archimedean condition](#def:archimedean-condition)) with
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Then the knot-type eigenbasis is complete:
 
-1. **(Iwahori--Hecke algebra instantiation.)**  The Descartes condition forces
+1. **(Iwahori--Hecke algebra instantiation.)**  The Archimedean condition forces
    $\chi(A) = -6$, giving genus $g = 4$ and gauge group
    $\mathrm{SU}_q(2)$ of rank $2$.  The $R$-matrix of
    $\mathcal{U}_q(\mathfrak{su}(2))$
@@ -15,7 +15,7 @@ representation.  Then the knot-type eigenbasis is complete:
    $(c_{V,V} - q)(c_{V,V} + q^{-1}) = 0$ yields the Iwahori--Hecke algebra
    $H_n(q)$ acting on $V^{\otimes n}$.
 
-2. **(Schur--Weyl decomposition.)**  Since the Descartes condition
+2. **(Schur--Weyl decomposition.)**  Since the Archimedean condition
    requires $q$ not a root of unity (via $6 \in R^{\times}$ and the
    non-degeneracy of the Frobenius form), $H_n(q)$ is semisimple
    (Jimbo's theorem), and the $q$-Schur--Weyl decomposition

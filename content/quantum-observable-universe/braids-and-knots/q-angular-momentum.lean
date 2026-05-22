@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.QAngularMomentum — q-Angular momentum from SU_q(2) Casimir
+# QOU.Archimedean.QAngularMomentum — q-Angular momentum from SU_q(2) Casimir
 
 The q-angular momentum is the q-Casimir eigenvalue [j]_q[j+1]_q
 of the SU_q(2) representation carried by the particle knot.
@@ -20,10 +20,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -73,4 +73,4 @@ structure QAngularMomentum where
   m : R_q
   m_bound : -j ≤ m ∧ m ≤ j
 
-end QOU.Descartes
+end QOU.Archimedean

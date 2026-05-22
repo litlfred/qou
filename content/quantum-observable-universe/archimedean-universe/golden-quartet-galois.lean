@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.golden_quartet_galois — Golden quartet as G-orbit
+# QOU.Archimedean.golden_quartet_galois — Golden quartet as G-orbit
 
 The four golden values {1/φ, -φ, φ, -1/φ} are the roots of
 P(x) = x⁴ − 3x² + 1 = (x² − x − 1)(x² + x − 1) over ℚ. Under the
@@ -19,7 +19,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
-namespace QOU.Descartes.GoldenQuartetGalois
+namespace QOU.Archimedean.GoldenQuartetGalois
 
 /-- φ = (1 + √5)/2. -/
 noncomputable def phi : ℝ := (1 + Real.sqrt 5) / 2
@@ -137,4 +137,4 @@ theorem golden_quartet_galois :
   ⟨phi_quartic, phiInv_quartic, neg_phi_quartic, neg_phiInv_quartic,
    phi_mul_phiInv⟩
 
-end QOU.Descartes.GoldenQuartetGalois
+end QOU.Archimedean.GoldenQuartetGalois

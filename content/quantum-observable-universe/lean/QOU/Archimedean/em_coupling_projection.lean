@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.em_coupling_projection — placeholder stub
+# QOU.Archimedean.em_coupling_projection — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/em-coupling-projection.ts`](quantum-observable-universe/descartes-universe/em-coupling-projection.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.em_coupling_projection` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.em_coupling_projection` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `em_coupling_projection` claim —
@@ -104,4 +104,4 @@ theorem em_coupling_projection [ctx : EmCouplingProjectionContext] :
    ctx.claim_ii_gauge_coupling_uniqueness,
    ctx.claim_iii_bring_uniqueness⟩
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.DescartesUniverse.brings_riemann_hurwitz — sibling stub
+# QOU.ArchimedeanUniverse.brings_riemann_hurwitz — sibling stub
 
 **Sibling-resolution stub** for content block
 [`lem:brings-riemann-hurwitz`](brings-riemann-hurwitz.md): *Riemann--Hurwitz count for the canonical map $\\Sigma_4 \\to \\mathbb{P}(V)$*.

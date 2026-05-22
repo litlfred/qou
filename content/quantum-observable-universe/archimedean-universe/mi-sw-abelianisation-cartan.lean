@@ -1,5 +1,5 @@
 /-!
-# QOU.DescartesUniverse.mi_sw_cartan_reduction — sibling stub
+# QOU.ArchimedeanUniverse.mi_sw_cartan_reduction — sibling stub
 
 **Sibling-resolution stub** for content block
 [`lem:mi-sw-abelianisation-cartan`](mi-sw-abelianisation-cartan.md): *Cartan reduction recovers the Seiberg--Witten differential*.

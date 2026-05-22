@@ -25,10 +25,10 @@ requiring upstream Mathlib contributions.
 -/
 
 import Mathlib.Tactic
-import QOU.Descartes.ClausenFunctionMathlibFiller
-import QOU.Descartes.ThreeSubstantiveMathlibFillers
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.ThreeSubstantiveMathlibFillers
 
-namespace QOU.Descartes.PartialClosures
+namespace QOU.Archimedean.PartialClosures
 
 open SubstantiveFillers
 
@@ -117,4 +117,4 @@ theorem partial_closures_at_boundary :
   unfold LiTwo
   simp
 
-end QOU.Descartes.PartialClosures
+end QOU.Archimedean.PartialClosures

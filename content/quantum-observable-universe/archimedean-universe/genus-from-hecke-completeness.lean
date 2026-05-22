@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.genus_from_hecke_completeness — sibling stub
+# QOU.Archimedean.genus_from_hecke_completeness — sibling stub
 
 **Sibling-resolution stub** for content block
 [`lem:genus-from-hecke-completeness`](genus-from-hecke-completeness.md): *Genus from Hecke completeness for torus knots*.

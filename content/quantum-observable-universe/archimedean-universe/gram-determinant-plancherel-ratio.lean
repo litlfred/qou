@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.gram_determinant_plancherel_ratio
+# QOU.Archimedean.gram_determinant_plancherel_ratio
 
 The Chern-Simons Gram-determinant ratio `κ` appearing in the EM
 coupling correction has a closed-form Plancherel-weighted character
@@ -20,10 +20,10 @@ LaTeX label: `prop:gram-determinant-plancherel-ratio`
 -/
 
 import Mathlib.Algebra.Polynomial.Laurent
-import QOU.Descartes.EmSpectralCompleteness
-import QOU.Descartes.ForceCarrierBringUniqueness
+import QOU.Archimedean.EmSpectralCompleteness
+import QOU.Archimedean.ForceCarrierBringUniqueness
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A formal placeholder for the central-idempotent character
     coefficients of a braid `β` in `H_n(q)`. -/
@@ -77,4 +77,4 @@ theorem gram_kappa_numerical_value :
     ∃ (κ : ℝ), |κ - 1.722| < 0.001 :=
   gram_kappa_numerical_value_axiom
 
-end QOU.Descartes
+end QOU.Archimedean

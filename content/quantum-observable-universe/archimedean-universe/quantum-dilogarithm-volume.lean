@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.quantum_dilogarithm_volume — Nuclear energy from the quantum dilogarithm
+# QOU.Archimedean.quantum_dilogarithm_volume — Nuclear energy from the quantum dilogarithm
 
 The nuclear binding energy is the quantum dilogarithm volume of the
 Markov trace, normalised by ℏ_q²:
@@ -25,7 +25,7 @@ See `GroundRingAnnotations.lean`.
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The quantum Planck constant ℏ_q = (q - 1)/q. -/
 noncomputable def hbar_q (q : ℝ) : ℝ := (q - 1) / q
@@ -86,4 +86,4 @@ theorem classical_limit_no_binding : hbar_q 1 = 0 := by
   unfold hbar_q
   norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

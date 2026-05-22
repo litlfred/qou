@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.skein_polynomial_transfer_matrix
+# QOU.Archimedean.skein_polynomial_transfer_matrix
 
 The nuclear Skein polynomial P_N(q) = Π_i V̂_i(q) is computed by
 C(A,2) transfer matrix multiplications.  Each V̂_i(q) is a polynomial
@@ -18,7 +18,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 import Mathlib.Data.Nat.Choose.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Transfer matrix (entries are polynomials in q)
@@ -128,7 +128,7 @@ theorem transfer_matrix_steps (A : ℕ) :
 
     1. Algebraic: σ² = (q - q⁻¹)σ + 1 (Hecke deformation)
     2. Topological: variable of P_N(q) (Skein polynomial)
-    3. Physical: q = 1.1097 (Descartes condition χ = -6)
+    3. Physical: q = 1.1097 (Archimedean condition χ = -6)
 
     This structure bundles all three roles. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
@@ -186,4 +186,4 @@ structure DoubleBetaCrossTerm where
   cross_term : ℝ :=
     (P_2beta - P_par) - (P_beta1 - P_par) - (P_beta2 - P_par)
 
-end QOU.Descartes
+end QOU.Archimedean

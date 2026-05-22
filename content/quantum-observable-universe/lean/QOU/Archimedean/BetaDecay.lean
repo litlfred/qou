@@ -1,5 +1,5 @@
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.TorusKnot
+import QOU.Archimedean.TransferMatrix
+import QOU.Archimedean.TorusKnot
 import Mathlib.RingTheory.Localization.FractionRing
 import Mathlib.Data.Nat.GCD.Basic
 
@@ -20,7 +20,7 @@ decomposition theorem (as corollary of cohomological embedding).
 - [rosso-jones1993] Completeness of torus knot invariants.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-! ## §1  Beta decay operator -/
 
@@ -335,4 +335,4 @@ theorem jet_levels_sigma4 :
     simp [sigma4_knots, e_label, gen2_label, c_label, t_label, weak_label,
           strong_label, TorusKnotLabel.degree]
 
-end QOU.Descartes
+end QOU.Archimedean

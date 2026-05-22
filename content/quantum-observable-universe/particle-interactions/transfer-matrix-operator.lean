@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.TransferMatrixOperator
+# QOU.Archimedean.TransferMatrixOperator
 
 The transfer matrix T_{K₁,K₂}(q) is the universal operator encoding
 particle interactions.  Its entries are polynomials in q, determined
@@ -18,7 +18,7 @@ LaTeX label: `def:transfer-matrix-operator`
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Crossing coefficients (c, d) determined by knot types. -/
 -- Ref: [manuscript] §6/transfer-matrix-operator
@@ -123,4 +123,4 @@ theorem T_pp_det (q : ℝ) :
   simp [TransferMatrixOp.mk, ppCoeffs, CrossingCoeffs.mk]
   ring
 
-end QOU.Descartes
+end QOU.Archimedean

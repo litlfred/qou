@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.SingleVolumeIrrationality — conjectural sibling stub
+# QOU.Archimedean.SingleVolumeIrrationality — conjectural sibling stub
 
 **Sibling-resolution stub** for content block
 [`conj:single-volume-irrationality`](single-volume-irrationality.md): *Irrationality of a single hyperbolic knot volume*.

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.groebner_shirshov_energy — Energy as a Gröbner-Shirshov invariant
+# QOU.Archimedean.groebner_shirshov_energy — Energy as a Gröbner-Shirshov invariant
 
 Only the Hecke relation σ² = (q-q⁻¹)σ + 1 changes energy.
 Yang-Baxter and far commutativity preserve energy.
@@ -19,10 +19,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -118,4 +118,4 @@ noncomputable def totalEnergyChange (q : R_q) (hecke_coeffs : List R_q) : R_q :=
 noncomputable def groebner_shirshov_energy (q : R_q) (coeffs : List R_q) : R_q :=
   totalEnergyChange q coeffs
 
-end QOU.Descartes
+end QOU.Archimedean

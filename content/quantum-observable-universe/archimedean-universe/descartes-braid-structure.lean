@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.descartes_braid_structure
+# QOU.Archimedean.descartes_braid_structure
 
 The Descartes braid structure: the braiding of Rep(SU_q(2)) induces a
 faithful representation ρ₃ : B₃ → Aut(V^⊗3) whose image in SU(2) is
@@ -13,7 +13,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **Descartes braid structure**: packages the algebraic data arising from
     the braiding on a Descartes universe.
@@ -76,4 +76,4 @@ theorem thirty_factorization : (30 : ℕ) = 2 * 3 * 5 := by norm_num
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem dic3_divides_s5 : 12 ∣ (120 : ℕ) := ⟨10, by norm_num⟩
 
-end QOU.Descartes
+end QOU.Archimedean

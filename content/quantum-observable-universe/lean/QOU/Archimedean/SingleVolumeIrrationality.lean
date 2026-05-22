@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.SingleVolumeIrrationality — conjectural class (placeholder)
+# QOU.Archimedean.SingleVolumeIrrationality — conjectural class (placeholder)
 
 **§3b-cond class axiomatisation** for content block
 [`conj:single-volume-irrationality`](../../../quantum-observable-universe/descartes-universe/single-volume-irrationality.md): *Irrationality of a single hyperbolic knot volume*.
@@ -17,7 +17,7 @@ fields to match the conjecture's actual content as the
 formalisation matures.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Irrationality of a single hyperbolic knot volume
 
@@ -47,4 +47,4 @@ $$
 noncomputable instance : SingleVolumeIrrationality := by
   sorry
 
-end QOU.Descartes
+end QOU.Archimedean

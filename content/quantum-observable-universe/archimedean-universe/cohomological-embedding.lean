@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.cohomological_embedding
+# QOU.Archimedean.cohomological_embedding
 
 Cohomological embedding: torus knot representations exhaust H¹(Σ_g).
 
@@ -22,7 +22,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Data.Finset.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-! ## Seifert rank of a torus knot -/
 
@@ -125,4 +125,4 @@ theorem t211_not_embeddable : ¬ embeddable 2 11 4 := by
 /-- The Euler characteristic of Σ₄ is −6. -/
 theorem euler_char_genus_4 : (2 : ℤ) - 2 * 4 = -6 := by norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

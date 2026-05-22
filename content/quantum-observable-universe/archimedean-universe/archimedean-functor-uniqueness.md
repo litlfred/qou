@@ -118,7 +118,7 @@ the absolute logarithm of the algebraic quantum volume
 This functor converts the discrete, combinatorial Hecke algebra
 states into continuous, transcendental observables.
 
-To satisfy the Descartes condition $\chi = -6$, the physical
+To satisfy the Archimedean condition $\chi = -6$, the physical
 state space is restricted to Bring's surface, a genus-$4$ curve
 with maximal $S_5$ automorphism. The observable particle spectrum
 consists entirely of knots that embed within this genus-$4$

@@ -47,9 +47,9 @@ Mathlib gaps still open after this filler:
 -/
 
 import Mathlib.Tactic
-import QOU.Descartes.ClausenFunctionMathlibFiller
+import QOU.Archimedean.ClausenFunctionMathlibFiller
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The **Bloch-Wigner dilogarithm restricted to the unit circle**:
     for `z = e^{iθ}` with `|z| = 1`, the boundary correction
@@ -104,4 +104,4 @@ theorem Vol_Borromean_eq_two_BW_octahedron :
         BlochWigner_unit_circle
   ring
 
-end QOU.Descartes
+end QOU.Archimedean

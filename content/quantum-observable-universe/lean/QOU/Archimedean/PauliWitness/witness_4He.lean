@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.PauliWitness.witness_4He — placeholder stub
+# QOU.Archimedean.PauliWitness.witness_4He — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/appendix-nf-witnesses/witness-4he.ts`](quantum-observable-universe/appendix-nf-witnesses/witness-4he.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.PauliWitness.witness_4He` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.PauliWitness.witness_4He` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes.PauliWitness
+namespace QOU.Archimedean.PauliWitness
 
 
 /-- Abstract context for the `witness_4He` claim — manuscript-themed
@@ -56,4 +56,4 @@ theorem witness_4He [ctx : Witness4HeContext] :
     |ctx.F_Pauli - 0.812| < 0.005 :=
   ctx.claim_witness_4He
 
-end QOU.Descartes.PauliWitness
+end QOU.Archimedean.PauliWitness

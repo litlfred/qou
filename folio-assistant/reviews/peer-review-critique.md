@@ -133,7 +133,7 @@ first hyperbolic knot ($4_1$, crossing number 4). Generation number
 tracks crossing complexity of the braid closure, which is a
 consequence of the Hecke algebra structure, not a fitting choice.
 
-**Remaining question (retained):** The Descartes condition
+**Remaining question (retained):** The Archimedean condition
 $\chi(A) = -6$ and the claim that Bring's surface is terminal in
 $\mathcal{C}_{-6}$ still needs a more explicit proof of (a)
 existence of morphisms from every object to Bring's surface and (b)
@@ -170,7 +170,7 @@ parametrizing the family $d_q = q^{-1}d + (1-q^{-1})\pi_V \circ d$. But:
 - The experimental value $q \approx 1.1097$ is obtained by fitting the
   muon/electron mass ratio. If $q$ is a free parameter, the framework has
   reduced predictive power.
-- The paper should clarify: does the Descartes condition or any other axiom
+- The paper should clarify: does the Archimedean condition or any other axiom
   constrain $q$? If so, what is the theoretical prediction for $q$?
 
 ### 8. Recursive brane tower stabilization

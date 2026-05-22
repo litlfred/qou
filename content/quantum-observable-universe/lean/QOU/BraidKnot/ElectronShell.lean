@@ -18,7 +18,7 @@ multi-operator regime.
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-- **Electron shell.** Cabled-strand representation: `Z` electrons
     added as extra strands in `H_{A+Z}(q)` with binding subword

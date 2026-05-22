@@ -20,7 +20,7 @@ are NOT part of the formal chain.
 - [lusztig1993] G. Lusztig, *Introduction to quantum groups*, 1993.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-! ## §1  The Laurent polynomial ring -/
 
@@ -90,4 +90,4 @@ noncomputable def two_E_cross : R_q := HA
 /-- `2 · E_cross = q − q⁻¹ = HA`. -/
 theorem two_E_cross_eq_HA : two_E_cross = HA := rfl
 
-end QOU.Descartes
+end QOU.Archimedean

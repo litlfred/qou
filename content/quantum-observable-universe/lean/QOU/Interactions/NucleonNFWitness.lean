@@ -1,4 +1,4 @@
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.HeckeH3
 import QOU.Interactions.BorromeanUnique
 import QOU.Interactions.HeckeEngine
 
@@ -24,7 +24,7 @@ Since ½ is not in ℤ[t,t⁻¹], we work with 4× the nucleon matrix
 
 namespace QOU.Interactions
 
-open QOU.Descartes Matrix
+open QOU.Archimedean Matrix
 
 /-! ## §1  Proton and neutron matrix definitions -/
 

@@ -34,7 +34,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /--
 A real-valued function `f : ℝ → ℝ` is **pentagon-coherent** if it
@@ -144,4 +144,4 @@ theorem figure8_calibration
     τ_arch z₀ = c * D z₀ :=
   h_realisation z₀ h_dom h_dom₁
 
-end QOU.Descartes
+end QOU.Archimedean

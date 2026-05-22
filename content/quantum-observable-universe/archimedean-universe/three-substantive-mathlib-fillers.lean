@@ -35,10 +35,10 @@ import Mathlib.GroupTheory.FreeAbelianGroup
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
-import QOU.Descartes.ClausenFunctionMathlibFiller
-import QOU.Descartes.BlochWignerMathlibFiller
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.BlochWignerMathlibFiller
 
-namespace QOU.Descartes.SubstantiveFillers
+namespace QOU.Archimedean.SubstantiveFillers
 
 /-! ## (1) BlochGroup F quotient -/
 
@@ -178,4 +178,4 @@ theorem three_substantive_fillers_synthesis_consistent
     [HasAllSubstantiveFillers F] :
     True := trivial
 
-end QOU.Descartes.SubstantiveFillers
+end QOU.Archimedean.SubstantiveFillers

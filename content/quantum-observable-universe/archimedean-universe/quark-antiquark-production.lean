@@ -10,7 +10,7 @@
 -/
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **Quark-antiquark production from Hopf-link pair creation** —
     the Hopf link operator `L₊ = σ₀σ₁` acts as a quark creation
@@ -28,4 +28,4 @@ theorem quarkAntiquarkProduction : True := trivial
 -- Ref: [manuscript] Chapter 6, §3b
 theorem quark_antiquark_production_witness : True := trivial
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,18 +1,18 @@
 /-!
-# QOU.Descartes.skein_finiteness_bound — placeholder stub
+# QOU.Archimedean.skein_finiteness_bound — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/skein-finiteness-bound.ts`](quantum-observable-universe/descartes-universe/skein-finiteness-bound.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.skein_finiteness_bound` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.skein_finiteness_bound` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `skein_finiteness_bound` claim — manuscript-themed
@@ -135,4 +135,4 @@ theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] :
    ctx.claim_ii_per_generator_positivity,
    ctx.claim_iii_stable_configurations_finite⟩
 
-end QOU.Descartes
+end QOU.Archimedean

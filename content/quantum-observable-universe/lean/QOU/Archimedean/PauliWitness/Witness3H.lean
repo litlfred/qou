@@ -1,6 +1,6 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
-namespace QOU.Descartes.PauliWitness
+namespace QOU.Archimedean.PauliWitness
 
 /-- F_Pauli for 3H (Z=1, N=2, A=3), exact in t = q^{1/2}.
     Computed by hecke-engine 0.8.0, 0ms.
@@ -26,4 +26,4 @@ noncomputable def observable_3h : LaurentPolynomial ℤ :=
 noncomputable def coral_3h : LaurentPolynomial ℤ :=
   -LaurentPolynomial.T 2 + 2 • LaurentPolynomial.T 5 - LaurentPolynomial.T 6 - 2 • LaurentPolynomial.T 7 + 2 • LaurentPolynomial.T 9 + LaurentPolynomial.T 10 - 2 • LaurentPolynomial.T 11 + LaurentPolynomial.T 14
 
-end QOU.Descartes.PauliWitness
+end QOU.Archimedean.PauliWitness

@@ -1,5 +1,5 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.HeckeH3
 import Mathlib.Tactic
 
 /-!
@@ -26,9 +26,9 @@ All proofs are over ℤ[q, q⁻¹], symbolic in q.
 - [prop:three-parameters-wedderburn]
 -/
 
-namespace QOU.Descartes.ConfinedKnotBinding
+namespace QOU.Archimedean.ConfinedKnotBinding
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  Wedderburn weights of H₃(q) -/
 
@@ -348,4 +348,4 @@ theorem unified_iterative_telescope
     Δ22 * w22 * (LA - L0) =
     Δ22 * w22 * LA - Δ22 * w22 * L0 := by ring
 
-end QOU.Descartes.ConfinedKnotBinding
+end QOU.Archimedean.ConfinedKnotBinding

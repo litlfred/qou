@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.stable_neutron_max_error
+# QOU.Archimedean.stable_neutron_max_error
 
 Comparison of predicted and observed stable neutron numbers for p ≤ 103.
 The beta-stability formula n*(p) = A/(2 + c·A^{2/3}) with c = a_C/(2·a_A)
@@ -21,7 +21,7 @@ See `GroundRingAnnotations.lean`.
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The asymmetry coefficient c = a_C / (2 · a_A) ≈ 0.01497. -/
 -- Ref: [manuscript] Ch. 7, §neutron-prediction-comparison
@@ -67,4 +67,4 @@ theorem stable_neutron_mean_discrepancy :
   -- Ref: [manuscript] Ch. 7, §neutron-prediction-comparison
   exact ⟨1.7, by norm_num, by norm_num⟩
 
-end QOU.Descartes
+end QOU.Archimedean

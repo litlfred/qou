@@ -23,7 +23,7 @@ a generic q-integer / q-power presentation.
 import Mathlib.Data.Nat.Basic
 import QOU.BraidKnot.AlphaShiftTorus.AlphaShiftTorusKnot
 
-namespace QOU.Descartes.AlphaEmShiftChain
+namespace QOU.Archimedean.AlphaEmShiftChain
 
 open QOU.BraidKnot.AlphaShiftTorus
 
@@ -71,4 +71,4 @@ theorem alpha_em_shift_chain
   rw [alpha_shift_torus_knot 2 9, alpha_shift_torus_knot 3 5]
   rfl
 
-end QOU.Descartes.AlphaEmShiftChain
+end QOU.Archimedean.AlphaEmShiftChain

@@ -11,7 +11,7 @@
 {\shortstack{Ch2: QOU axioms\\observability, measurability,\\volume $\Rightarrow$ $\mathrm{SU}(2)$ emergence,\\Dirac operator}}
   \arrow[d]
 \\
-{\shortstack{Ch3: Lifting obstructions\\Descartes condition $\chi=-6$\\brane tower, mass identity}}
+{\shortstack{Ch3: Lifting obstructions\\Archimedean condition $\chi=-6$\\brane tower, mass identity}}
   \arrow[d]
 \\
 {\shortstack{Ch4: Braids \& knots\\particles as knots,\\topological mass}}

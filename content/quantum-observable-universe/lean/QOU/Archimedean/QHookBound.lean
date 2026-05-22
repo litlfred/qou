@@ -1,4 +1,4 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
 
@@ -33,9 +33,9 @@ dim(λ)²/k! by a factor of (1 + O(h²/k))².
 - [mathas1999] §3.3: q-Schur algebras and q-hook formula
 -/
 
-namespace QOU.Descartes.QHookBound
+namespace QOU.Archimedean.QHookBound
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  q-integer perturbation -/
 
@@ -809,4 +809,4 @@ theorem convergence_constant_H3 (q : ℝ) (hq : q > 1) :
   have h2 : q + q⁻¹ > 0 := by positivity
   positivity
 
-end QOU.Descartes.QHookBound
+end QOU.Archimedean.QHookBound

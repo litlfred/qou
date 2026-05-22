@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.chebyshev_degree_genus — Chebyshev degree equals Seifert genus
+# QOU.Archimedean.chebyshev_degree_genus — Chebyshev degree equals Seifert genus
 
 **Lemma** ([`lem:chebyshev-degree-genus`](../../../quantum-observable-universe/descartes-universe/chebyshev-degree-genus.md)).
 
@@ -26,7 +26,7 @@ argument on the recurrence depth (see manuscript).
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Data.Nat.Prime.Defs
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Polynomial
 
@@ -67,4 +67,4 @@ theorem chebyshev_degree_genus [ax : ChebyshevDegreeGenusAxiom]
     (heckeRecurrence p).leadingCoeff = 1 :=
   ax.claim_degree_genus p hp_odd hp_pos
 
-end QOU.Descartes
+end QOU.Archimedean

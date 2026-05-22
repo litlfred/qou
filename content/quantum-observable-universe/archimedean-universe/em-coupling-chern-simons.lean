@@ -28,9 +28,9 @@
   derivation roadmap.
 -/
 
-import QOU.DescartesUniverse.EmCouplingProjection
+import QOU.ArchimedeanUniverse.EmCouplingProjection
 
-namespace QOU.DescartesUniverse
+namespace QOU.ArchimedeanUniverse
 
 /-- Chern-Simons invariant of a torus knot T_{m,n}. -/
 noncomputable def chernSimons (m n : ℕ) : ℝ :=
@@ -87,4 +87,4 @@ instance chern_simons_correction_conjecture (q : ℝ) (hq : q > 1) :
     ChernSimonsCorrectionConjecture q hq where
   identity_holds := sorry
 
-end QOU.DescartesUniverse
+end QOU.ArchimedeanUniverse

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.HyperbolicVolumeIndependence — conjectural class (placeholder)
+# QOU.Archimedean.HyperbolicVolumeIndependence — conjectural class (placeholder)
 
 **§3b-cond class axiomatisation** for content block
 [`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.md): *Algebraic independence of QOU hyperbolic volumes*.
@@ -17,7 +17,7 @@ fields to match the conjecture's actual content as the
 formalisation matures.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Algebraic independence of QOU hyperbolic volumes
 
@@ -36,4 +36,4 @@ class HyperbolicVolumeIndependence where
 noncomputable instance : HyperbolicVolumeIndependence := by
   sorry
 
-end QOU.Descartes
+end QOU.Archimedean

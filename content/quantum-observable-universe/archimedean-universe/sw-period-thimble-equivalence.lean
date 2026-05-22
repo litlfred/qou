@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.swPeriodThimbleEquivalence — Categorical = analytic mass
+# QOU.Archimedean.swPeriodThimbleEquivalence — Categorical = analytic mass
 
 For each vertical degree `k ∈ {0,1,2,3}`, the categorical Markov–
 Frobenius pairing `⟨tr_M, E_∞^{k,*}(T_w)⟩ ∈ R` agrees, after the
@@ -34,7 +34,7 @@ remains a `conjecture` per CLAUDE.md §3b.
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Vertical degree of the SW prolongation: `0` (electron, baseline),
     `1` (muon, 1-jet), `2` (intermediate), `3` (baryon). -/
@@ -106,4 +106,4 @@ theorem swPeriodThimbleEquivalence
     -- τ(m^(k)_alg) = m^(k)_an, schematically:
     True := trivial
 
-end QOU.Descartes
+end QOU.Archimedean

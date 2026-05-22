@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.noble_gas_characterization — noble gas iff full-of-curls
+# QOU.Archimedean.noble_gas_characterization — noble gas iff full-of-curls
 
 **Proposition** ([`prop:noble-gas-characterization`](../../../quantum-observable-universe/descartes-universe/noble-gas-characterization.md)).
 
@@ -24,7 +24,7 @@ underlying knot-theoretic structures (`HopfLink`, `T_{2,3}`,
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract atom record: a stable nucleus (`def:stable-nucleus`) with
     proton/neutron counts and the topological data of its electron
@@ -59,4 +59,4 @@ theorem noble_gas_characterization [a : AtomLike] (h_stable : a.stable) :
     a.IsNobleGas ↔ a.IsFullOfCurls :=
   a.claim_noble_iff_curls h_stable
 
-end QOU.Descartes
+end QOU.Archimedean

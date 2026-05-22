@@ -33,7 +33,7 @@ unpack the existential, conclude.
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
-namespace QOU.Descartes.OpenProblems
+namespace QOU.Archimedean.OpenProblems
 
 /-! ## Term 7 shell correction -/
 
@@ -276,4 +276,4 @@ theorem alpha_over_4pi_unconditional (alpha : ℝ) :
     ∃ z : ℝ, z = alpha_over_4pi_target alpha :=
   alpha_over_4pi_structural alpha
 
-end QOU.Descartes.OpenProblems
+end QOU.Archimedean.OpenProblems

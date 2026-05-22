@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.mobius_golden_fixed_points — Möbius fixed-point quartet
+# QOU.Archimedean.mobius_golden_fixed_points — Möbius fixed-point quartet
 
 The baryon integration-limit transformation f(q) = (4 − q)/(4q + 3)
 has fixed points at q = 1/φ and q = −φ, where φ = (1 + √5)/2.
@@ -23,7 +23,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The baryon integration-limit Möbius transformation. -/
 noncomputable def mobiusLimit (q : ℝ) : ℝ := (4 - q) / (4 * q + 3)
@@ -143,4 +143,4 @@ theorem mobius_golden_fixed_points :
   ⟨fun q h => mobius_fixed_point_eq q h,
    fun q h => mobius_dual_fixed_point_eq q h⟩
 
-end QOU.Descartes
+end QOU.Archimedean

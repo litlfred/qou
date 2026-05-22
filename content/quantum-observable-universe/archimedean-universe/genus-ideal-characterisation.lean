@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.genus_ideal_characterisation — sibling stub
+# QOU.Archimedean.genus_ideal_characterisation — sibling stub
 
 **Sibling-resolution stub** for content block
 [`lem:genus-ideal-characterisation`](genus-ideal-characterisation.md): *Genus-filtration ideal in Hecke coordinates*.

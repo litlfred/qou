@@ -1,5 +1,5 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TransferMatrix
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TransferMatrix
 import QOU.ClassicalLimitObstruction
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Real.Basic
@@ -47,7 +47,7 @@ For `q > 1` (the physical range), the gap is strictly positive.
 -/
 
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-! ## §1  Mass gap as a Laurent polynomial -/
 
@@ -309,4 +309,4 @@ theorem descartes_massGap_and_kummer_5
     ¬ (5 : ℤ) ∣ QOU.descartesObstruction.eulerChar :=
   ⟨massGapReal_pos hq, QOU.descartes_kummer_5_persists⟩
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -29,4 +29,4 @@ constraint: the Euler characteristic $\chi(A) = -6$.  The Bring
 surface, with genus $g = 4$ and $\chi = 2 - 2g = -6$, is the
 unique algebraic surface that realises all three simultaneously.
 This chapter develops the geometry of this surface and derives the
-Descartes condition that forces $\chi = -6$.
+Archimedean condition that forces $\chi = -6$.

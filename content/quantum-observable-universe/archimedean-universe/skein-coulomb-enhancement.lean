@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.skein_coulomb_enhancement — Coulomb enhancement from electron-proton Skein crossings
+# QOU.Archimedean.skein_coulomb_enhancement — Coulomb enhancement from electron-proton Skein crossings
 
 The Fermi function F_q(Z,E) = 2πη_q / (1 - e^{-2πη_q}) arises from
 evaluating the Skein polynomial on the full outgoing link (electron ∪
@@ -22,7 +22,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Exp
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The q-deformed Sommerfeld parameter: η_q = α_q · Z / β_e
     where α_q = (q - q⁻¹) · λ_α is the fine structure constant
@@ -238,4 +238,4 @@ noncomputable def skein_coulomb_enhancement (q : ℝ) (lambda_alpha : ℝ)
     (Z : ℕ) (beta_e : ℝ) : ℝ :=
   skeinCoulombFactor (sommerfeldParam q lambda_alpha Z beta_e)
 
-end QOU.Descartes
+end QOU.Archimedean

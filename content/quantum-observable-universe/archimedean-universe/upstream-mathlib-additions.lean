@@ -26,9 +26,9 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
-import QOU.Descartes.ClausenFunctionMathlibFiller
+import QOU.Archimedean.ClausenFunctionMathlibFiller
 
-namespace QOU.Descartes.UpstreamAdditions
+namespace QOU.Archimedean.UpstreamAdditions
 
 open Complex
 
@@ -320,4 +320,4 @@ theorem Cl_2_double_angle_at_pi_half_unconditional :
   rw [show (Real.pi - Real.pi / 2 : ℝ) = Real.pi / 2 by ring]
   ring
 
-end QOU.Descartes.UpstreamAdditions
+end QOU.Archimedean.UpstreamAdditions

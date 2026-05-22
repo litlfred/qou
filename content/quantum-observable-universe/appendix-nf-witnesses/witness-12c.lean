@@ -6,5 +6,5 @@
 -- Gröbner NF: 479.6M terms collapsing to 12 after I₈ + I₉ quotient
 -- Computed by hecke-engine 0.8.0
 
--- See QOU.Descartes.PauliWitness.tr_alt_12c for the exact Laurent polynomial.
--- See QOU.Descartes.PauliWitness.net_12c for the net polynomial.
+-- See QOU.Archimedean.PauliWitness.tr_alt_12c for the exact Laurent polynomial.
+-- See QOU.Archimedean.PauliWitness.net_12c for the net polynomial.

@@ -1,24 +1,24 @@
-import QOU.Descartes.PauliWitness.Witness2H
-import QOU.Descartes.PauliWitness.Witness3H
-import QOU.Descartes.PauliWitness.Witness3He
-import QOU.Descartes.PauliWitness.Witness4H
-import QOU.Descartes.PauliWitness.Witness4He
-import QOU.Descartes.PauliWitness.Witness5He
-import QOU.Descartes.PauliWitness.Witness5Li
-import QOU.Descartes.PauliWitness.Witness6He
-import QOU.Descartes.PauliWitness.Witness6Li
-import QOU.Descartes.PauliWitness.Witness7Be
-import QOU.Descartes.PauliWitness.Witness7Li
-import QOU.Descartes.PauliWitness.Witness8Be
-import QOU.Descartes.PauliWitness.Witness8Li
-import QOU.Descartes.PauliWitness.Witness9B
-import QOU.Descartes.PauliWitness.Witness9Be
-import QOU.Descartes.PauliWitness.Witness10B
-import QOU.Descartes.PauliWitness.Witness10Be
-import QOU.Descartes.PauliWitness.Witness11B
-import QOU.Descartes.PauliWitness.Witness11C
-import QOU.Descartes.PauliWitness.Witness12B
-import QOU.Descartes.PauliWitness.Witness12C
+import QOU.Archimedean.PauliWitness.Witness2H
+import QOU.Archimedean.PauliWitness.Witness3H
+import QOU.Archimedean.PauliWitness.Witness3He
+import QOU.Archimedean.PauliWitness.Witness4H
+import QOU.Archimedean.PauliWitness.Witness4He
+import QOU.Archimedean.PauliWitness.Witness5He
+import QOU.Archimedean.PauliWitness.Witness5Li
+import QOU.Archimedean.PauliWitness.Witness6He
+import QOU.Archimedean.PauliWitness.Witness6Li
+import QOU.Archimedean.PauliWitness.Witness7Be
+import QOU.Archimedean.PauliWitness.Witness7Li
+import QOU.Archimedean.PauliWitness.Witness8Be
+import QOU.Archimedean.PauliWitness.Witness8Li
+import QOU.Archimedean.PauliWitness.Witness9B
+import QOU.Archimedean.PauliWitness.Witness9Be
+import QOU.Archimedean.PauliWitness.Witness10B
+import QOU.Archimedean.PauliWitness.Witness10Be
+import QOU.Archimedean.PauliWitness.Witness11B
+import QOU.Archimedean.PauliWitness.Witness11C
+import QOU.Archimedean.PauliWitness.Witness12B
+import QOU.Archimedean.PauliWitness.Witness12C
 
 /-!
 # Pauli Witness Computations

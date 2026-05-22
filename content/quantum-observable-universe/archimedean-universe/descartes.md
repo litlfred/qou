@@ -1,8 +1,8 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Let $\mathbf{C}_{-6}$ denote the category of quantum observable universes
-over $R$ satisfying the Descartes condition $\chi(A) = -6$
-([Descartes condition](#def:descartes-condition)), with morphisms given by QOU maps
+over $R$ satisfying the Archimedean condition $\chi(A) = -6$
+([Archimedean condition](#def:archimedean-condition)), with morphisms given by QOU maps
 that preserve the Euler characteristic.  Then Bring's surface $\Sigma_4$
 ([Bring's surface](#def:brings-surface),
 [Bring's surface is QOU](#prop:brings-is-qou)) is a terminal object in

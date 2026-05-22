@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.morse_wall_q_moduli — Morse wall of the integration-limit pencil
+# QOU.Archimedean.morse_wall_q_moduli — Morse wall of the integration-limit pencil
 
 The baryon integration-limit Möbius transformation
 `a(q) = (4 - q) / (4*q + 3)` has fixed points at `q^2 + q - 1 = 0` —
@@ -28,7 +28,7 @@ points `{1/φ, -φ}` after adjoining `√5 ∈ ℤ[ζ_5]`.
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **Morse-wall identity.**
     Over any commutative ring `R` with element `q : R` and a
@@ -63,4 +63,4 @@ theorem morse_wall_q_moduli
       rw [h2]; ring
     rw [step, mul_comm (4 * q + 3) u, hu, mul_one]
 
-end QOU.Descartes
+end QOU.Archimedean

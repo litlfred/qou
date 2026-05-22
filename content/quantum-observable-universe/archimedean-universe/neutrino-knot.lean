@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.Neutrino — Unknot K_{0₁} (trivial knot)
+# QOU.Archimedean.Neutrino — Unknot K_{0₁} (trivial knot)
 
 The neutrino is the unknot K_{0₁} with zero crossings, Seifert genus 0,
 and trivial Jones polynomial J_ν(q) = 1.  It carries no topological mass;
@@ -20,10 +20,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -65,4 +65,4 @@ theorem neutrino_genus_zero : Neutrino.mk.genus = 0 := rfl
 --      published version.
 theorem neutrino_crossing_zero : Neutrino.mk.crossing_number = 0 := rfl
 
-end QOU.Descartes
+end QOU.Archimedean

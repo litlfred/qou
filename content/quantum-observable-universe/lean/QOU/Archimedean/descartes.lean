@@ -1,10 +1,10 @@
 /-!
-# QOU.Descartes.descartes — Bring's surface is terminal in `𝐂_{−6}`
+# QOU.Archimedean.descartes — Bring's surface is terminal in `𝐂_{−6}`
 
 **Proposition** ([`prop:descartes`](../../../quantum-observable-universe/descartes-universe/descartes.md)).
 
 *Let `𝐂_{−6}` denote the category of quantum observable universes
-over `R` satisfying the Descartes condition `χ(A) = −6`, with
+over `R` satisfying the Archimedean condition `χ(A) = −6`, with
 morphisms given by QOU maps that preserve the Euler characteristic.
 Then Bring's surface `Σ₄` is a terminal object in `𝐂_{−6}`: for
 every Descartes universe `(𝐂, A, τ)` in `𝐂_{−6}`, there exists a
@@ -17,7 +17,7 @@ a singleton.
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/descartes.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract context for the `Bring's-Σ₄ is terminal in 𝐂_{−6}` claim. -/
 class DescartesTerminalContext where
@@ -42,4 +42,4 @@ theorem descartes
     Nonempty (Unique (ctx.Mor X ctx.BringQOU)) :=
   ctx.claim_descartes_terminal X
 
-end QOU.Descartes
+end QOU.Archimedean

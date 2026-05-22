@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.bar_apply_transfer — Bar-transfer principle
+# QOU.Archimedean.bar_apply_transfer — Bar-transfer principle
 
 Generic transfer lemma: a property P bar-invariant on ℝ_{>0}
 (P(q) ↔ P(q⁻¹)) satisfies the equivalence
@@ -18,7 +18,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 
-namespace QOU.Descartes.BarApplyTransfer
+namespace QOU.Archimedean.BarApplyTransfer
 
 /-- A property is **bar-invariant** if P(q) ↔ P(q⁻¹) for every q > 0. -/
 def BarInvariant (P : ℝ → Prop) : Prop :=
@@ -86,4 +86,4 @@ theorem bar_apply_transfer
     (∀ q : ℝ, a < q → P q) ↔ (∀ q : ℝ, 0 < q → q < a⁻¹ → P q) :=
   lower_bound_transfer hP ha
 
-end QOU.Descartes.BarApplyTransfer
+end QOU.Archimedean.BarApplyTransfer

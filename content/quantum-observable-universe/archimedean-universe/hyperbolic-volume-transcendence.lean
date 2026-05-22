@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.HyperbolicVolumeIndependence — conjectural sibling stub
+# QOU.Archimedean.HyperbolicVolumeIndependence — conjectural sibling stub
 
 **Sibling-resolution stub** for content block
 [`conj:hyperbolic-volume-transcendence`](hyperbolic-volume-transcendence.md): *Algebraic independence of QOU hyperbolic volumes*.

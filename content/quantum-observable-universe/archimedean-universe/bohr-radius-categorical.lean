@@ -1,8 +1,8 @@
 /-!
-# QOU.Descartes.bohr_radius_categorical — sibling stub
+# QOU.Archimedean.bohr_radius_categorical — sibling stub
 
 **Sibling-resolution stub** for content block
-[`prop:bohr-radius-categorical`](bohr-radius-categorical.md): *QOU.Descartes.bohr_radius_categorical*.
+[`prop:bohr-radius-categorical`](bohr-radius-categorical.md): *QOU.Archimedean.bohr_radius_categorical*.
 
 The (placeholder) canonical lives at
 [`../lean/QOU/Descartes/bohr_radius_categorical.lean`](../lean/QOU/Descartes/bohr_radius_categorical.lean) under the `qou` Lake package.

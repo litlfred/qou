@@ -15,7 +15,7 @@ same shape λ ⊢ k. Implies Burnside's identity k! = Σ dim(λ)².
 - [sagan2001] B. Sagan, *The Symmetric Group*, §3.1–3.3.
 -/
 
-namespace QOU.Descartes.RSK
+namespace QOU.Archimedean.RSK
 
 /-! ## §1  Row insertion (inductive definition) -/
 
@@ -265,4 +265,4 @@ class RSKBurnside (k : ℕ) (sumDimSq factorial : ℕ) : Prop where
     `factorial` are syntactically the same value, the class holds. -/
 instance rskBurnside_refl (k m : ℕ) : RSKBurnside k m m := ⟨rfl⟩
 
-end QOU.Descartes.RSK
+end QOU.Archimedean.RSK

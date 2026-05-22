@@ -43,7 +43,7 @@ to algebraic independence of hyperbolic volumes:
 
 open QOU.KnotTheory QOU.KnotRegistry
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-! ## §1  Volume extraction -/
 
@@ -533,4 +533,4 @@ theorem tower_noncollapse_implies_independence
     HyperbolicVolumeIndependence :=
   hi.independence
 
-end QOU.Descartes
+end QOU.Archimedean

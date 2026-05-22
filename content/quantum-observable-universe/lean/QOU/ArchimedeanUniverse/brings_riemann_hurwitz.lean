@@ -1,16 +1,16 @@
 /-!
-# QOU.DescartesUniverse.brings_riemann_hurwitz — placeholder stub
+# QOU.ArchimedeanUniverse.brings_riemann_hurwitz — placeholder stub
 
 **Placeholder canonical** for content block
 [`lem:brings-riemann-hurwitz`](../../../quantum-observable-universe/descartes-universe/brings-riemann-hurwitz.md): *Riemann--Hurwitz count for the canonical map $\\Sigma_4 \\to \\mathbb{P}(V)$*.
 
 The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.DescartesUniverse.brings_riemann_hurwitz` resolves to a real declaration in
+the `lean.ref` URI `qou:QOU.ArchimedeanUniverse.brings_riemann_hurwitz` resolves to a real declaration in
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
-namespace QOU.DescartesUniverse
+namespace QOU.ArchimedeanUniverse
 
 
 /-- Abstract context for the `brings_riemann_hurwitz` claim — manuscript-themed
@@ -52,4 +52,4 @@ theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :
     ctx.deg = 4 ∧ ctx.R_tot = 14 ∧ ctx.n_branch = 6 :=
   ctx.claim_brings_riemann_hurwitz
 
-end QOU.DescartesUniverse
+end QOU.ArchimedeanUniverse

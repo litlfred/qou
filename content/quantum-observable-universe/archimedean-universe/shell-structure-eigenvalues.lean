@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.shell_structure_eigenvalues
+# QOU.Archimedean.shell_structure_eigenvalues
 
 Orbital shells from eigenvalues of the photon-electron transfer matrix.
 
@@ -25,7 +25,7 @@ See `GroundRingAnnotations.lean`.
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The Hecke coefficient h = q - q⁻¹. -/
 -- Ref: [manuscript] §6/shell-structure-eigenvalues
@@ -125,4 +125,4 @@ theorem shell_capacity (n : ℕ) :
 theorem hecke_classical : hecke 1 = 0 := by
   unfold hecke; norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

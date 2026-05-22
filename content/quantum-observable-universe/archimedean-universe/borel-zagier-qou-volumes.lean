@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BorelZagierQouVolumes — conjectural sibling stub
+# QOU.Archimedean.BorelZagierQouVolumes — conjectural sibling stub
 
 **Sibling-resolution stub** for content block
 [`conj:borel-zagier-qou-volumes`](borel-zagier-qou-volumes.md): *Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)*.

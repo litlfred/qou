@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.groebner_shirshov_energy — Energy as a Gröbner-Shirshov invariant
+# QOU.Archimedean.groebner_shirshov_energy — Energy as a Gröbner-Shirshov invariant
 
 Only the Hecke relation σ² = (q-q⁻¹)σ + 1 changes energy.
 Yang-Baxter and far commutativity preserve energy.
@@ -14,7 +14,7 @@ LaTeX label: `thm:groebner-shirshov-energy`
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A single division step in the Gröbner reduction. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
@@ -106,4 +106,4 @@ axiom beta_decay_energy_negative (q : ℝ) (hq : 1 < q)
 noncomputable def groebner_shirshov_energy (q : ℝ) (coeffs : List ℝ) : ℝ :=
   totalEnergyChange q coeffs
 
-end QOU.Descartes
+end QOU.Archimedean

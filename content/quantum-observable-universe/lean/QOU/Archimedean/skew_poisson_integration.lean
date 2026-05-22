@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.skew_poisson_integration — placeholder stub
+# QOU.Archimedean.skew_poisson_integration — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/models-of-qous/skew-poisson-integration.ts`](quantum-observable-universe/models-of-qous/skew-poisson-integration.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.skew_poisson_integration` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.skew_poisson_integration` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `skew_poisson_integration` claim — manuscript-themed
@@ -75,4 +75,4 @@ theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
    ctx.claim_ii_distribution_deformation,
    ctx.claim_iii_frobenius_preserved⟩
 
-end QOU.Descartes
+end QOU.Archimedean

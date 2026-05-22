@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.EHartreeCategoricalDerivation
+# QOU.Archimedean.EHartreeCategoricalDerivation
 
 Conjectural categorical derivation of the Hartree energy unit
 `E_h = m_e · c_q² · α_EM²` via `J^1`-vanishing in the molecular
@@ -34,7 +34,7 @@ not missing proof.
 
 import Mathlib.Algebra.Polynomial.Laurent
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Polynomial
 
@@ -83,4 +83,4 @@ class EHartreeCategoricalDerivation where
       equals `c₂ · m_e · c_q² · α_EM²`. -/
   hartree_identity : E_h_cat = c_2 * m_e_cat * c_q_sq * alpha_sq
 
-end QOU.Descartes
+end QOU.Archimedean

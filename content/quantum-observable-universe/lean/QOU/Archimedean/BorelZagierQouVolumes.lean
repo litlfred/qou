@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BorelZagierQouVolumes — conjectural class (placeholder)
+# QOU.Archimedean.BorelZagierQouVolumes — conjectural class (placeholder)
 
 **§3b-cond class axiomatisation** for content block
 [`conj:borel-zagier-qou-volumes`](../../../quantum-observable-universe/descartes-universe/borel-zagier-qou-volumes.md): *Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)*.
@@ -17,7 +17,7 @@ fields to match the conjecture's actual content as the
 formalisation matures.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)
 
@@ -42,4 +42,4 @@ The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent:
 noncomputable instance : BorelZagierQouVolumes := by
   sorry
 
-end QOU.Descartes
+end QOU.Archimedean

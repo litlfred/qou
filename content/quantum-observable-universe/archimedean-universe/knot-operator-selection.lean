@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.knot_operator_selection — sibling stub
+# QOU.Archimedean.knot_operator_selection — sibling stub
 
 **Sibling-resolution stub** for content block
 [`prop:knot-operator-selection`](knot-operator-selection.md): *Knot operator selection via Frobenius dual*.

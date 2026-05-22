@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.descartes_knot_eigenbasis
+# QOU.Archimedean.descartes_knot_eigenbasis
 
 Instantiation theorem: a Descartes universe (χ(A) = -6) provides all the
 data needed for `KnotEigenbasisData`, establishing that knot types form a
@@ -7,7 +7,7 @@ complete eigenbasis for the algebraic direct limit V_phys = colim V^⊗n
 (no metric completion is used).
 
 The chain of reasoning:
-1. Descartes condition forces genus 4, hence C = Rep(SU_q(2))
+1. Archimedean condition forces genus 4, hence C = Rep(SU_q(2))
 2. The R-matrix of U_q(su(2)) gives a braided monoidal structure on C
 3. The quadratic relation of c_{V,V} yields the Hecke algebra H_n(q)
 4. q not a root of unity → H_n(q) semisimple → Schur-Weyl decomposition
@@ -34,10 +34,10 @@ import Mathlib.Data.Int.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -45,7 +45,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Descartes Universe Data (from descartes-condition.lean) -/
 
-/-- Descartes condition: χ(A) = -6 with 6 invertible. -/
+/-- Archimedean condition: χ(A) = -6 with 6 invertible. -/
 structure DescartesData where
   /-- Deformation parameter q from U_q(su(2)). -/
   q : R_q
@@ -230,7 +230,7 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
     ∀ (i : Fin sw.numSummands),
     ∃ (jonesVal : R_q), jonesVal ≠ 0
 
-/-- The Descartes condition (q > 0, q ≠ 1, q not a root of unity)
+/-- The Archimedean condition (q > 0, q ≠ 1, q not a root of unity)
     is sufficient to construct the full knot eigenbasis data.
 
     The key inputs:
@@ -310,4 +310,4 @@ theorem descartes_eigenvalues_distinct (D : DescartesData) :
 theorem descartes_particle_count (n : ℕ) :
     n / 2 + 1 ≥ 1 := by omega
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -1,7 +1,7 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 set_option maxHeartbeats 4000000
-namespace QOU.Descartes.PauliWitness
+namespace QOU.Archimedean.PauliWitness
 
 /-- F_Pauli for 4He (Z=2, N=2, A=4), exact in t = q^{1/2}.
     ★★ DOUBLY MAGIC.
@@ -28,4 +28,4 @@ noncomputable def observable_4he : LaurentPolynomial ℤ :=
 noncomputable def coral_4he : LaurentPolynomial ℤ :=
   LaurentPolynomial.T (-3) + 2 • LaurentPolynomial.T (-2) - 2 • LaurentPolynomial.T (-1) - 5 + 2 • LaurentPolynomial.T 1 + 11 • LaurentPolynomial.T 2 - 17 • LaurentPolynomial.T 4 - 5 • LaurentPolynomial.T 5 + 22 • LaurentPolynomial.T 6 + 9 • LaurentPolynomial.T 7 - 16 • LaurentPolynomial.T 8 - 8 • LaurentPolynomial.T 9 + 12 • LaurentPolynomial.T 10 + 4 • LaurentPolynomial.T 11 - 4 • LaurentPolynomial.T 12 + 11 • LaurentPolynomial.T 13 - 8 • LaurentPolynomial.T 15 - 2 • LaurentPolynomial.T 16 + 10 • LaurentPolynomial.T 17 + 5 • LaurentPolynomial.T 18 - 8 • LaurentPolynomial.T 19 + 3 • LaurentPolynomial.T 20 - 3 • LaurentPolynomial.T 21 + 4 • LaurentPolynomial.T 22 - 3 • LaurentPolynomial.T 23 + LaurentPolynomial.T 24
 
-end QOU.Descartes.PauliWitness
+end QOU.Archimedean.PauliWitness

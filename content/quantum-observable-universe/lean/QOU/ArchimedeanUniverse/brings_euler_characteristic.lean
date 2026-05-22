@@ -1,16 +1,16 @@
 /-!
-# QOU.DescartesUniverse.brings_euler_characteristic — placeholder stub
+# QOU.ArchimedeanUniverse.brings_euler_characteristic — placeholder stub
 
 **Placeholder canonical** for content block
 [`lem:brings-euler-characteristic`](../../../quantum-observable-universe/descartes-universe/brings-euler-characteristic.md): *Categorical Euler characteristic of $\\mathcal{O}_q(\\mathrm{SU}(2))$ on Bring's surface*.
 
 The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.DescartesUniverse.brings_euler_characteristic` resolves to a real declaration in
+the `lean.ref` URI `qou:QOU.ArchimedeanUniverse.brings_euler_characteristic` resolves to a real declaration in
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
-namespace QOU.DescartesUniverse
+namespace QOU.ArchimedeanUniverse
 
 
 /-- Abstract context for the `brings_euler_characteristic` claim — manuscript-named
@@ -50,4 +50,4 @@ theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] :
     ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6 :=
   ctx.claim_brings_euler_characteristic
 
-end QOU.DescartesUniverse
+end QOU.ArchimedeanUniverse

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.EWMassEigenstateCount — `conj:electroweak-mass-eigenstate-count`
+# QOU.Archimedean.EWMassEigenstateCount — `conj:electroweak-mass-eigenstate-count`
 
 Conjectural content: **after EWSB the post-Higgs Wedderburn block
 decomposition of $\mathrm{End}(A)$ carries exactly three distinct
@@ -44,7 +44,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Matrix.Notation
 import Mathlib.Tactic.FinCases
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **`conj:electroweak-mass-eigenstate-count` (axiomatised).**
 
@@ -85,4 +85,4 @@ instance standardModel : EWMassEigenstateCount where
   massEigenvalue_nonneg := by intro i; fin_cases i <;> norm_num
   ew_mass_count_holds := by refine ⟨rfl, ?_⟩; rfl
 
-end QOU.Descartes
+end QOU.Archimedean

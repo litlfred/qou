@@ -2,17 +2,17 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 /-!
-# QOU.Descartes.eos_borromean_cfl — placeholder stub
+# QOU.Archimedean.eos_borromean_cfl — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/observations/eos-borromean-cfl.ts`](quantum-observable-universe/observations/eos-borromean-cfl.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.eos_borromean_cfl` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.eos_borromean_cfl` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `eos_borromean_cfl` claim — manuscript-themed
@@ -176,4 +176,4 @@ theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] :
   ⟨ctx.claim_i_borromean_eos, ctx.claim_ii_cfl_eos,
    ctx.claim_iii_stiffness_ratio⟩
 
-end QOU.Descartes
+end QOU.Archimedean

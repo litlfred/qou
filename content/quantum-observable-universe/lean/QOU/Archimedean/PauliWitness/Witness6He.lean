@@ -1,7 +1,7 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 set_option maxHeartbeats 4000000
-namespace QOU.Descartes.PauliWitness
+namespace QOU.Archimedean.PauliWitness
 
 /-- F_Pauli for 6He (Z=2, N=4, A=6), exact in t = q^{1/2}.
     Computed by hecke-engine 0.8.0, 4ms.
@@ -27,4 +27,4 @@ noncomputable def observable_6he : LaurentPolynomial ℤ :=
 noncomputable def coral_6he : LaurentPolynomial ℤ :=
   LaurentPolynomial.T (-6) - 8 • LaurentPolynomial.T (-4) - 4 • LaurentPolynomial.T (-3) + 32 • LaurentPolynomial.T (-2) + 43 • LaurentPolynomial.T (-1) - 90 - 188 • LaurentPolynomial.T 1 + 159 • LaurentPolynomial.T 2 + 529 • LaurentPolynomial.T 3 - 108 • LaurentPolynomial.T 4 - 1171 • LaurentPolynomial.T 5 - 221 • LaurentPolynomial.T 6 + 2208 • LaurentPolynomial.T 7 + 972 • LaurentPolynomial.T 8 - 3797 • LaurentPolynomial.T 9 - 2624 • LaurentPolynomial.T 10 + 6451 • LaurentPolynomial.T 11 + 6127 • LaurentPolynomial.T 12 - 10473 • LaurentPolynomial.T 13 - 13060 • LaurentPolynomial.T 14 + 14821 • LaurentPolynomial.T 15 + 25531 • LaurentPolynomial.T 16 - 17357 • LaurentPolynomial.T 17 - 43634 • LaurentPolynomial.T 18 + 14578 • LaurentPolynomial.T 19 + 63817 • LaurentPolynomial.T 20 - 2691 • LaurentPolynomial.T 21 - 80700 • LaurentPolynomial.T 22 - 16568 • LaurentPolynomial.T 23 + 86651 • LaurentPolynomial.T 24 + 36055 • LaurentPolynomial.T 25 - 75625 • LaurentPolynomial.T 26 - 49049 • LaurentPolynomial.T 27 + 52795 • LaurentPolynomial.T 28 + 48808 • LaurentPolynomial.T 29 - 28782 • LaurentPolynomial.T 30 - 34227 • LaurentPolynomial.T 31 + 9981 • LaurentPolynomial.T 32 + 17340 • LaurentPolynomial.T 33 - 2108 • LaurentPolynomial.T 34 - 6779 • LaurentPolynomial.T 35 + 3228 • LaurentPolynomial.T 36 + 1882 • LaurentPolynomial.T 37 - 1410 • LaurentPolynomial.T 38 - 4734 • LaurentPolynomial.T 39 - 1870 • LaurentPolynomial.T 40 + 8589 • LaurentPolynomial.T 41 + 2510 • LaurentPolynomial.T 42 - 4393 • LaurentPolynomial.T 43 - 6153 • LaurentPolynomial.T 44 + 1931 • LaurentPolynomial.T 45 + 5832 • LaurentPolynomial.T 46 - 802 • LaurentPolynomial.T 47 - 1230 • LaurentPolynomial.T 48 - 3496 • LaurentPolynomial.T 49 + 2569 • LaurentPolynomial.T 50 + 1331 • LaurentPolynomial.T 51 - 1277 • LaurentPolynomial.T 52 + 778 • LaurentPolynomial.T 53 - 1855 • LaurentPolynomial.T 54 + 1576 • LaurentPolynomial.T 55 - 299 • LaurentPolynomial.T 56 - 61 • LaurentPolynomial.T 57 + 192 • LaurentPolynomial.T 58 - 583 • LaurentPolynomial.T 59 + 579 • LaurentPolynomial.T 60 - 340 • LaurentPolynomial.T 61 + 244 • LaurentPolynomial.T 62 - 173 • LaurentPolynomial.T 63 + 74 • LaurentPolynomial.T 64 - 29 • LaurentPolynomial.T 65 + 16 • LaurentPolynomial.T 66 - 5 • LaurentPolynomial.T 67
 
-end QOU.Descartes.PauliWitness
+end QOU.Archimedean.PauliWitness

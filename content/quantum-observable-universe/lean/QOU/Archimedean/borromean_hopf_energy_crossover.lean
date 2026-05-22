@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.borromean_hopf_energy_crossover — placeholder stub
+# QOU.Archimedean.borromean_hopf_energy_crossover — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts`](quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.borromean_hopf_energy_crossover` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.borromean_hopf_energy_crossover` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `borromean_hopf_energy_crossover` claim —
@@ -134,4 +134,4 @@ theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverConte
   ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass,
    ctx.claim_iii_crossover⟩
 
-end QOU.Descartes
+end QOU.Archimedean

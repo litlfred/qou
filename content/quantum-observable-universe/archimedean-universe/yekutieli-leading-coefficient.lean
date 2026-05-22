@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.yekutieli_leading_coefficient — sibling stub
+# QOU.Archimedean.yekutieli_leading_coefficient — sibling stub
 
 **Sibling-resolution stub** for content block
 [`lem:yekutieli-leading-coefficient`](yekutieli-leading-coefficient.md): *Yekutieli obstruction equals the leading Chebyshev coefficient*.

@@ -28,7 +28,7 @@
 
 import Mathlib.Algebra.Algebra.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /--
   Categorical-type tag for a closed-braid object in `C`:
@@ -142,4 +142,4 @@ instance canonical
   higgsAsLinking := trivial
   hoefsmitCellContent := trivial
 
-end QOU.Descartes
+end QOU.Archimedean

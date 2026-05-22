@@ -1,6 +1,6 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TransferMatrix
+import QOU.Archimedean.HeckeH3
 
 /-!
 # QOU.Mathlib.SymmetricIdempotent
@@ -9,7 +9,7 @@ Mathlib-shaped upstream for the Murphy/Mathas **symmetric Young
 idempotent** factorisation predicate on `TMatrix` (= 2×2 matrices
 over `ℤ[t,t⁻¹]` carrying the `H_3(q)` standard representation).
 
-Used by `QOU.Descartes.AxialCoupling.sym_trace_ordering_independent`
+Used by `QOU.Archimedean.AxialCoupling.sym_trace_ordering_independent`
 to make the universal-quantifier defect of the earlier "symmetric
 trace depends only on linking number" axiom explicit: a caller must
 supply a witness that `x` factors through `e_{(n)}`.
@@ -45,7 +45,7 @@ factorisation witness via `b ≠ x`).
 
 namespace QOU.Mathlib
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-- **Murphy/Mathas symmetric-idempotent factorisation predicate.**
 

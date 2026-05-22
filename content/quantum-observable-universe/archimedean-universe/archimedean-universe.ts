@@ -5,7 +5,7 @@ import { chapter, section } from "../../schema/builders";
  *
  * The concrete archimedean realisation with χ(A) = −6.  Sections:
  * (1) Bring's surface geometry and coordinates,
- * (2) spectral and gauge structures, (3) the Descartes condition,
+ * (2) spectral and gauge structures, (3) the Archimedean condition,
  * particles, and the Descartes theorem, (4) topological mass and the
  * knot-particle spectrum.
  *
@@ -152,16 +152,16 @@ export default chapter({
       ],
     }),
 
-    // ── §3a. The Descartes condition and lepton spectrum ─────────────
+    // ── §3a. The Archimedean condition and lepton spectrum ─────────────
     // Was: one 84-block section.  Split (R4) for navigability.
     section({
-      title: "The Descartes condition and lepton spectrum",
-      label: "sec:descartes-condition",
+      title: "The Archimedean condition and lepton spectrum",
+      label: "sec:archimedean-condition",
       blocks: [
-        "descartes-condition-intro",
-        // The Descartes condition (χ = −6)
+        "archimedean-condition-intro",
+        // The Archimedean condition (χ = −6)
         "descent-to-zero",
-        "descartes-condition",
+        "archimedean-condition",
         "chi-minus-six-chain",
         "descartes-calabi-yau",
         "descent-one-dim",

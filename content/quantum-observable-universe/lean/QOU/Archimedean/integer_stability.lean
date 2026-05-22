@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.integer_stability — convex-quadratic binding `E(p, A)`
+# QOU.Archimedean.integer_stability — convex-quadratic binding `E(p, A)`
 
 **Proposition** ([`prop:integer-stability`](../../../quantum-observable-universe/descartes-universe/integer-stability.md)).
 
@@ -25,7 +25,7 @@ to the substrate-derived Coulomb/Pauli scales is downstream work.
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/integer-stability.md
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Abstract nuclear-binding-energy context. -/
 class IntegerStabilityContext where
@@ -90,4 +90,4 @@ theorem integer_stability (ctx : IntegerStabilityContext) :
     div_pos ctx.a_A_pos h_A_pos
   linarith
 
-end QOU.Descartes
+end QOU.Archimedean

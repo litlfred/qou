@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.jetGBPLCorrespondence — GB stratum = categorical jet = geometric jet = PL period
+# QOU.Archimedean.jetGBPLCorrespondence — GB stratum = categorical jet = geometric jet = PL period
 
 The Gröbner–Shirshov filtration stratum `E_0^p(q) = J^p(q)/J^{p+1}(q)`
 of the Hecke algebra `H_n(R, q)`, the categorical jet object `J^p(A)`
@@ -31,7 +31,7 @@ LaTeX label: `prop:jet-gb-pl-correspondence`
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Stratum index `p` of the GB filtration / jet order / PL degree.
     Used uniformly across the four columns of the correspondence. -/
@@ -56,4 +56,4 @@ theorem jetGBPLCorrespondence
     -- and Π^(p) computes ⟨tr_M, E_∞^{p,*}⟩ after τ.
     True := trivial
 
-end QOU.Descartes
+end QOU.Archimedean

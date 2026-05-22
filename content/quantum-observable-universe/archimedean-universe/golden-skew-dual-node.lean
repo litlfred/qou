@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.golden_skew_dual_node — Skew-dual golden node at q = φ²
+# QOU.Archimedean.golden_skew_dual_node — Skew-dual golden node at q = φ²
 
 The bar involution q ↔ q⁻¹ on the substrate parameter pairs the
 golden-ratio node q_gold = 1/φ² with the skew-dual node q* = φ².
@@ -19,7 +19,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The golden ratio φ = (1 + √5)/2. -/
 noncomputable def phi : ℝ := (1 + Real.sqrt 5) / 2
@@ -101,4 +101,4 @@ theorem q_in_classical_band {q0 : ℝ} (hlo : 1 < q0) (hhi : q0 < qGoldDual) :
     1 < q0 ∧ q0 < phi ^ 2 :=
   ⟨hlo, by unfold qGoldDual at hhi; exact hhi⟩
 
-end QOU.Descartes
+end QOU.Archimedean

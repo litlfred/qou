@@ -103,7 +103,7 @@ $$
 ## Step 4 — Bring surface / Weierstrass and particle content
 
 The Bring surface $\Sigma_4$ (genus 4, automorphism group $S_5$) has
-Euler characteristic $\chi(\Sigma_4) = -6$.  The Descartes condition
+Euler characteristic $\chi(\Sigma_4) = -6$.  The Archimedean condition
 $\chi(A) = -6$ on the Frobenius--Hopf algebra $A$
 ([def:frobenius-hopf-substrate](#def\:frobenius-hopf-substrate))
 identifies $H_3(R, q)$ as the relevant Hecke algebra:

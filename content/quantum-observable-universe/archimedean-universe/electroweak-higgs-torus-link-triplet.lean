@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.EWHiggsTorusLinkTriplet — `conj:electroweak-higgs-torus-link-triplet` axiomatised
+# QOU.Archimedean.EWHiggsTorusLinkTriplet — `conj:electroweak-higgs-torus-link-triplet` axiomatised
 
 Conjectural content: **the EW/Higgs sector is realised as a torus-link
 triplet $T(2, 4), T(2, 6), T(2, 8)$ in the Descartes substrate**, with
@@ -31,7 +31,7 @@ explicit `[Instance]` hypothesis to retain
 - [manuscript] §(W±, Z, H) ↔ (T(2,4), T(2,6), T(2,8)) non-Bring even-twist torus-link triplet, `conj:electroweak-higgs-torus-link-triplet`
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **`conj:electroweak-higgs-torus-link-triplet` (axiomatised).**
 
@@ -76,4 +76,4 @@ instance instEWHiggsTorusLinkTripletCanonical
     intro i j hij
     fin_cases i <;> fin_cases j <;> simp_all
 
-end QOU.Descartes
+end QOU.Archimedean

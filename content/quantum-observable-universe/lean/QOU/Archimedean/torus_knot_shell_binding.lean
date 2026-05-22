@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.torus_knot_shell_binding — placeholder stub
+# QOU.Archimedean.torus_knot_shell_binding — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/torus-knot-shell-binding.ts`](quantum-observable-universe/descartes-universe/torus-knot-shell-binding.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.torus_knot_shell_binding` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.torus_knot_shell_binding` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `torus_knot_shell_binding` claim —
@@ -130,4 +130,4 @@ theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] :
   ⟨ctx.claim_i_intershell_operator, ctx.claim_ii_chebyshev_recurrence,
    ctx.claim_iii_magic_numbers⟩
 
-end QOU.Descartes
+end QOU.Archimedean

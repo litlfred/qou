@@ -1,30 +1,30 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TorusKnot
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.BetaDecay
-import QOU.Descartes.AxialCoupling
-import QOU.Descartes.OrderingIndependence
-import QOU.Descartes.OptimalNF
-import QOU.Descartes.TMCorrespondence
-import QOU.Descartes.MassGapGm
-import QOU.Descartes.YoungIdempotent
-import QOU.Descartes.MultiGeneratorSpectrum
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.QuotientIdeal
-import QOU.Descartes.NuclearNormalForms
-import QOU.Descartes.HyperbolicVolumeTranscendence
-import QOU.Descartes.PauliWitness
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TorusKnot
+import QOU.Archimedean.TransferMatrix
+import QOU.Archimedean.BetaDecay
+import QOU.Archimedean.AxialCoupling
+import QOU.Archimedean.OrderingIndependence
+import QOU.Archimedean.OptimalNF
+import QOU.Archimedean.TMCorrespondence
+import QOU.Archimedean.MassGapGm
+import QOU.Archimedean.YoungIdempotent
+import QOU.Archimedean.MultiGeneratorSpectrum
+import QOU.Archimedean.HeckeRep
+import QOU.Archimedean.HeckeH3
+import QOU.Archimedean.QuotientIdeal
+import QOU.Archimedean.NuclearNormalForms
+import QOU.Archimedean.HyperbolicVolumeTranscendence
+import QOU.Archimedean.PauliWitness
 -- Migrated from content-tree extracts (I12 cluster B Lake migrate).
 -- NOTE: `NuclearGroebnerReduction` is currently typed over `ℝ`,
 -- violating this module's stated `R_q = ℤ[q,q⁻¹]` invariant; refactor
 -- to the generic ground ring is open work (see the file's authoring
 -- note).
-import QOU.Descartes.NuclearGroebnerReduction
-import QOU.Descartes.WeierstrassProjection
-import QOU.Descartes.metallic_character_knot
-import QOU.Descartes.descartes
-import QOU.Descartes.noble_gas_characterization
+import QOU.Archimedean.NuclearGroebnerReduction
+import QOU.Archimedean.WeierstrassProjection
+import QOU.Archimedean.metallic_character_knot
+import QOU.Archimedean.descartes
+import QOU.Archimedean.noble_gas_characterization
 
 /-!
 # Descartes Universe — Module Index

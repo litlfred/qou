@@ -42,7 +42,7 @@ as k → ∞, shifting the limit from dim/Σdim to d_q/Σd_q.
 - [fomin1994] S. Fomin, Dual graphs and Schensted correspondences.
 -/
 
-namespace QOU.Descartes.BranchingConvergence
+namespace QOU.Archimedean.BranchingConvergence
 
 /-! ## §1  Abstract ratio perturbation lemma -/
 
@@ -393,4 +393,4 @@ instance finiteKWitness_refl (k k' : ℕ) (hk : 4 ≤ k) (hk' : 4 ≤ k')
   refine ⟨?_⟩
   simp [htol]
 
-end QOU.Descartes.BranchingConvergence
+end QOU.Archimedean.BranchingConvergence

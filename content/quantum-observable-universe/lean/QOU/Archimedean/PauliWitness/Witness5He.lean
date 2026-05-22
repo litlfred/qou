@@ -1,7 +1,7 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 set_option maxHeartbeats 4000000
-namespace QOU.Descartes.PauliWitness
+namespace QOU.Archimedean.PauliWitness
 
 /-- F_Pauli for 5He (Z=2, N=3, A=5), exact in t = q^{1/2}.
     Computed by hecke-engine 0.8.0, 0ms.
@@ -27,4 +27,4 @@ noncomputable def observable_5he : LaurentPolynomial ℤ :=
 noncomputable def coral_5he : LaurentPolynomial ℤ :=
   LaurentPolynomial.T (-5) - 5 • LaurentPolynomial.T (-3) - 4 • LaurentPolynomial.T (-2) + 10 • LaurentPolynomial.T (-1) + 25 - 11 • LaurentPolynomial.T 1 - 67 • LaurentPolynomial.T 2 - 13 • LaurentPolynomial.T 3 + 138 • LaurentPolynomial.T 4 + 92 • LaurentPolynomial.T 5 - 239 • LaurentPolynomial.T 6 - 240 • LaurentPolynomial.T 7 + 327 • LaurentPolynomial.T 8 + 480 • LaurentPolynomial.T 9 - 362 • LaurentPolynomial.T 10 - 776 • LaurentPolynomial.T 11 + 336 • LaurentPolynomial.T 12 + 1007 • LaurentPolynomial.T 13 - 178 • LaurentPolynomial.T 14 - 1163 • LaurentPolynomial.T 15 - 25 • LaurentPolynomial.T 16 + 1211 • LaurentPolynomial.T 17 + 195 • LaurentPolynomial.T 18 - 1026 • LaurentPolynomial.T 19 - 404 • LaurentPolynomial.T 20 + 779 • LaurentPolynomial.T 21 + 511 • LaurentPolynomial.T 22 - 433 • LaurentPolynomial.T 23 - 449 • LaurentPolynomial.T 24 + 31 • LaurentPolynomial.T 25 + 416 • LaurentPolynomial.T 26 + 119 • LaurentPolynomial.T 27 - 209 • LaurentPolynomial.T 28 - 143 • LaurentPolynomial.T 29 + 21 • LaurentPolynomial.T 30 + 170 • LaurentPolynomial.T 31 - 48 • LaurentPolynomial.T 32 + 13 • LaurentPolynomial.T 33 - 51 • LaurentPolynomial.T 34 + 2 • LaurentPolynomial.T 35 + 54 • LaurentPolynomial.T 36 - 50 • LaurentPolynomial.T 37 + 41 • LaurentPolynomial.T 38 - 40 • LaurentPolynomial.T 39 + 30 • LaurentPolynomial.T 40 - 12 • LaurentPolynomial.T 41 + 5 • LaurentPolynomial.T 42 - 3 • LaurentPolynomial.T 43 + LaurentPolynomial.T 44
 
-end QOU.Descartes.PauliWitness
+end QOU.Archimedean.PauliWitness

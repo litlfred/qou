@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.descartes_elliptic_curve — The Descartes elliptic curve E_q
+# QOU.Archimedean.descartes_elliptic_curve — The Descartes elliptic curve E_q
 
 The coral elliptic fiber of Bring's surface at spacetime ratio
 z = s - s⁻¹ (s = √q) is the elliptic curve
@@ -25,7 +25,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The first Weierstrass coefficient p(q) of the Descartes elliptic curve.
 
@@ -108,4 +108,4 @@ theorem golden_ratio_degeneration :
     weierstrass_r q_golden = 0 :=
   golden_ratio_degeneration_axiom
 
-end QOU.Descartes
+end QOU.Archimedean

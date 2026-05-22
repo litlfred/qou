@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.DownQuark — Unknot in Borromean link with negative crossing
+# QOU.Archimedean.DownQuark — Unknot in Borromean link with negative crossing
 
 The down quark is an unknot (neutrino) localized in a color tube with
 negative crossing orientation within the Borromean link B₃.  It differs
@@ -22,10 +22,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -78,4 +78,4 @@ theorem quark_crossing_asymmetry :
 -- Ref: [manuscript] Ch. 5, §down-quark
 theorem down_quark_confined : DownQuark.mk.confined = true := rfl
 
-end QOU.Descartes
+end QOU.Archimedean

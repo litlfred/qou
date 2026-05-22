@@ -1,4 +1,4 @@
-import QOU.Descartes.HeckeRep
+import QOU.Archimedean.HeckeRep
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
 
@@ -34,7 +34,7 @@ These satisfy:
 - [wenzl1988] H. Wenzl, Hecke algebras of type A_n and subfactors.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 open Matrix
 
@@ -231,4 +231,4 @@ noncomputable def axialCouplingAlgebraic : FractionRing R_t :=
   algebraMap R_t (FractionRing R_t) borromeanColorSum_stdTrace /
     algebraMap R_t (FractionRing R_t) borromeanColorSum_trivTrace
 
-end QOU.Descartes
+end QOU.Archimedean

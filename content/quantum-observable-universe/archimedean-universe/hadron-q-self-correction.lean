@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.hadron_q_self_correction — Hadron self-deformation of q
+# QOU.Archimedean.hadron_q_self_correction — Hadron self-deformation of q
 
 A multi-nucleon Hopf link with net signed crossing number ℓ_net(p,n)
 shifts the local substrate parameter from q₀ to q_eff = q₀ + δq,
@@ -27,10 +27,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -130,4 +130,4 @@ theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
 noncomputable def hadron_q_self_correction (q₀ : R_q) (p n : ℕ) : R_q :=
   qEff q₀ p n
 
-end QOU.Descartes
+end QOU.Archimedean

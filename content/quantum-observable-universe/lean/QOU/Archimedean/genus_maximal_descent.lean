@@ -1,15 +1,15 @@
 /-!
-# QOU.Descartes.genus_maximal_descent — placeholder stub
+# QOU.Archimedean.genus_maximal_descent — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/descartes-universe/genus-maximal-descent.ts`](quantum-observable-universe/descartes-universe/genus-maximal-descent.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.genus_maximal_descent` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.genus_maximal_descent` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `genus_maximal_descent` claim — manuscript-themed
@@ -34,8 +34,8 @@ class GenusMaximalDescentContext where
 /-- **Manuscript statement** (full body):
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe satisfying the
-Descartes condition $\chi(A) = -6$
-([Descartes condition](#def\:descartes-condition)).  If the geometric descent
+Archimedean condition $\chi(A) = -6$
+([Archimedean condition](#def\:descartes-condition)).  If the geometric descent
 produces a compact one-complex-dimensional base $M_0$, then $M_0$ is a
 Riemann surface of genus $g = 4$.
 
@@ -54,4 +54,4 @@ theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :
     ctx.genus = 4 ∧ ctx.aut_order ≤ 84 * (ctx.genus - 1) :=
   ⟨ctx.claim_i_genus_eq_four, ctx.claim_ii_hurwitz_bound⟩
 
-end QOU.Descartes
+end QOU.Archimedean

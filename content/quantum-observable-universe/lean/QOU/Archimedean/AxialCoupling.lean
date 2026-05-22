@@ -1,8 +1,8 @@
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TorusKnot
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.BetaDecay
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.GroundRing
+import QOU.Archimedean.TorusKnot
+import QOU.Archimedean.TransferMatrix
+import QOU.Archimedean.BetaDecay
+import QOU.Archimedean.HeckeH3
 import QOU.Mathlib.SymmetricIdempotent
 
 /-!
@@ -42,7 +42,7 @@ of the quark colors `(r,g,b)`.
 - [PDG2024] g_A = 1.2754 ± 0.0013
 -/
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-! ## §1  The half-Borromean braid -/
 
@@ -218,4 +218,4 @@ theorem color_avg_essential :
   -- different traced volumes witness the claim.
   exact std_trace_braid_dependent
 
-end QOU.Descartes
+end QOU.Archimedean

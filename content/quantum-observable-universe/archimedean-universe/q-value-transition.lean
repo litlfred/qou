@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.QValueTransition — 𝒬_q as categorical action difference
+# QOU.Archimedean.QValueTransition — 𝒬_q as categorical action difference
 
 The 𝒬_q-value is defined as the categorical action difference
 between parent and daughter, NOT by classical energy conservation.
@@ -24,7 +24,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PRIMARY DEFINITION: 𝒬_q from categorical action (no conservation)
@@ -207,4 +207,4 @@ theorem generator_fractions_sum :
   unfold sigma0_fraction sigma1_fraction
   ring
 
-end QOU.Descartes
+end QOU.Archimedean

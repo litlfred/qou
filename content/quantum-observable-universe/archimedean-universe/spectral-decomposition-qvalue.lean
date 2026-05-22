@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.spectral_decomposition_qvalue — Spectral decomposition of the Q_q-value
+# QOU.Archimedean.spectral_decomposition_qvalue — Spectral decomposition of the Q_q-value
 
 The torus knots embeddable on Σ₄ form a complete, self-dual basis
 for the regular representation of the Hecke algebra H_n(q).  The Q_q-value of
@@ -24,7 +24,7 @@ See `GroundRingAnnotations.lean`.
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A torus knot label τ(r, s) with coprimality and embeddability data. -/
 structure TorusKnotLabel where
@@ -113,4 +113,4 @@ theorem torus_knot_self_duality (r s : ℕ) :
     (r - 1) * (s - 1) = (s - 1) * (r - 1) := by
   ring
 
-end QOU.Descartes
+end QOU.Archimedean

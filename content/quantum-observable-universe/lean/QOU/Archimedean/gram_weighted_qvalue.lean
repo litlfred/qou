@@ -1,18 +1,18 @@
 /-!
-# QOU.Descartes.gram_weighted_qvalue — placeholder stub
+# QOU.Archimedean.gram_weighted_qvalue — placeholder stub
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts`](quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts).
 
 The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Descartes.gram_weighted_qvalue` resolves to a real declaration in the `qou`
+`lean.ref` URI `qou:QOU.Archimedean.gram_weighted_qvalue` resolves to a real declaration in the `qou`
 Lake package.
 -/
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 
 /-- Abstract context for the `gram_weighted_qvalue` claim — manuscript-themed
@@ -140,4 +140,4 @@ theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] :
       = (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k * ctx.Δ k))
         * (ctx.N : ℝ) * ctx.m_e := ctx.claim_i_qvalue_formula
 
-end QOU.Descartes
+end QOU.Archimedean

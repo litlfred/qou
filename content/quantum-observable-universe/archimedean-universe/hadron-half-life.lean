@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.hadron_half_life — Beta-decay half-life from the categorical action
+# QOU.Archimedean.hadron_half_life — Beta-decay half-life from the categorical action
 
 The decay rate Γ_β is determined by the Markov trace ratio between
 parent and daughter Gröbner normal forms, the pair Skein mass formula
@@ -23,7 +23,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Data for a beta-decay calculation in a Descartes universe.
     All quantities derived from q — no fitted parameters. -/
@@ -153,4 +153,4 @@ noncomputable def hadron_half_life (d : BetaDecayData) : ℝ := d.halfLife
 theorem hadron_half_life_pos (d : BetaDecayData) : 0 < hadron_half_life d :=
   d.halfLife_pos
 
-end QOU.Descartes
+end QOU.Archimedean

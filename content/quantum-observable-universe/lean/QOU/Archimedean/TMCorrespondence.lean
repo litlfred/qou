@@ -1,6 +1,6 @@
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.OptimalNF
-import QOU.Descartes.HeckeRep
+import QOU.Archimedean.TransferMatrix
+import QOU.Archimedean.OptimalNF
+import QOU.Archimedean.HeckeRep
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Tactic.Ring
 
@@ -28,7 +28,7 @@ This file proves:
 
 namespace QOU.TMCorrespondence
 
-open QOU.Descartes
+open QOU.Archimedean
 open QOU.OptimalNF
 open Matrix
 

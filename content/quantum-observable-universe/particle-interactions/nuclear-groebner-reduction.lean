@@ -5,10 +5,10 @@ The canonical Lean source for `prop:nuclear-groebner-reduction` lives
 at
 `content/quantum-observable-universe/lean/QOU/Descartes/NuclearGroebnerReduction.lean`,
 which is Lake-built under the `qou` package and declares
-`QOU.Descartes.nuclear_groebner_reduction`.
+`QOU.Archimedean.nuclear_groebner_reduction`.
 
 This sibling stub satisfies the sibling lookup so the content-block
-manifest's `lean.ref` (`qou:QOU.Descartes.nuclear_groebner_reduction`)
+manifest's `lean.ref` (`qou:QOU.Archimedean.nuclear_groebner_reduction`)
 resolves cleanly via the Lake tree.
 
 **Authoring note (open):** the canonical Lean file is currently typed
@@ -25,4 +25,4 @@ R_q form remains open work.
 Ref: [manuscript] §particle-interactions
 -/
 
-import QOU.Descartes.NuclearGroebnerReduction
+import QOU.Archimedean.NuclearGroebnerReduction

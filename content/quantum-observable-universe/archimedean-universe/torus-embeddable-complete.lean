@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.torus_embeddable_complete — Completeness of embeddable torus knots
+# QOU.Archimedean.torus_embeddable_complete — Completeness of embeddable torus knots
 
 The generator set G is the *complete* list of torus knots embeddable in
 the genus-4 fiber of the Bring's surface.  T_{m,n} embeds in Σ₄ iff
@@ -14,7 +14,7 @@ LaTeX label: `prop:torus-embeddable-complete`
 
 import Mathlib.Data.Nat.GCD.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The genus of the Bring's surface Σ₄. -/
 def bringsGenus : ℕ := 4
@@ -73,4 +73,4 @@ theorem three_lepton_generations :
     torusKnotGenus 2 7 = 3 := by
   simp [torusKnotGenus]
 
-end QOU.Descartes
+end QOU.Archimedean

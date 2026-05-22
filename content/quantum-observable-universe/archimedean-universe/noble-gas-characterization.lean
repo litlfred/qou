@@ -1,8 +1,8 @@
 /-!
-# QOU.Descartes.noble_gas_characterization — sibling stub
+# QOU.Archimedean.noble_gas_characterization — sibling stub
 
 **Sibling-resolution stub** for content block
-[`prop:noble-gas-characterization`](noble-gas-characterization.md): *QOU.Descartes.noble_gas_characterization*.
+[`prop:noble-gas-characterization`](noble-gas-characterization.md): *QOU.Archimedean.noble_gas_characterization*.
 
 The (placeholder) canonical lives at
 [`../lean/QOU/Descartes/noble_gas_characterization.lean`](../lean/QOU/Descartes/noble_gas_characterization.lean) under the `qou` Lake package.

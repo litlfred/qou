@@ -1,7 +1,7 @@
 /-!
-# QOU.Descartes.genus_maximal_descent — Genus-maximal descent
+# QOU.Archimedean.genus_maximal_descent — Genus-maximal descent
 
-The Descartes condition χ(A) = -6 forces the base Riemann surface
+The Archimedean condition χ(A) = -6 forces the base Riemann surface
 to have genus g = 4, which is the maximal genus consistent with the
 Hurwitz bound |Aut(Σ)| ≤ 84(g - 1) = 252.
 
@@ -15,9 +15,9 @@ LaTeX label: `prop:genus-maximal-descent`
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
-/-- **Genus-maximal descent**: from the Descartes condition χ = -6 and
+/-- **Genus-maximal descent**: from the Archimedean condition χ = -6 and
     the Gauss-Bonnet / Riemann-Roch formula 2(1 - g) = χ, the genus of
     the base curve is g = 4.
 
@@ -30,7 +30,7 @@ structure GenusMaximalDescent where
   eulerChar : ℤ
   /-- The genus of the base Riemann surface. -/
   genus : ℤ
-  /-- Descartes condition: χ = -6. -/
+  /-- Archimedean condition: χ = -6. -/
   euler_eq : eulerChar = -6
   /-- Gauss-Bonnet / Riemann-Roch: 2(1 - g) = χ. -/
   gauss_bonnet : 2 * (1 - genus) = eulerChar
@@ -54,10 +54,10 @@ theorem s5_within_hurwitz : (120 : ℤ) ≤ 84 * (4 - 1) := by
   norm_num
 
 /-- The genus 4 is maximal: for genus 5, the Hurwitz bound would be
-    84 × 4 = 336, but the Descartes condition forces exactly g = 4,
+    84 × 4 = 336, but the Archimedean condition forces exactly g = 4,
     not any higher value. We verify that χ = -6 uniquely determines g = 4. -/
 -- Ref: [manuscript] Chapter 6, §Genus-maximal descent
 theorem genus_unique (g : ℤ) (hgb : 2 * (1 - g) = -6) : g = 4 := by
   linarith
 
-end QOU.Descartes
+end QOU.Archimedean
