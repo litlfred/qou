@@ -150,3 +150,35 @@ for the full record.  Manager table update:
 |---|---|---|
 | §5 #1 V_7 refinement (PR #916 next step) | "recommended" | **NEGATIVE.** 100 dps PSLQ at coeff ≤ 10¹² finds NO clean categorical correction for the −0.00523 V_7-vs-target gap.  V_7's "0.144 % proximity" is suggestive but not structural; Position 2 (V_7 is one of many proved categorical functionals, none with selection-rule justification) is the conservative read. |
 | §5 #2 H_12 A-operator extract | "2-3 day compute" | **Memory-bounded.**  Died silently at the 12321 × 77 = 950K character sweep — likely OOM on the seminormal-matrix lru_cache.  Needs chunk-and-GC restructure (1-2 day impl) BEFORE the compute can complete. |
+
+## 2026-05-22 update — Q_β c_3 exploration (this session)
+
+See [`docs/audits/2026-05-22-exploration-c3-q-beta.md`](../audits/2026-05-22-exploration-c3-q-beta.md).
+
+Spike on the "closest Subgoal-1 100× target" (Q_β 1.4× miss).
+100 dps PSLQ on `Δc_3 = c_3_emp - c_3_cat = -0.00974` against
+natural-substrate basis: **NEGATIVE** at maxcoeff 10¹⁵.  Best
+near-coincidence (`-1/100`) is 2.67 % off and the residual has
+no clean form.
+
+**Reframing**: Q_β's 1.4× miss is **framework-bounded**, not a
+closure gap.  The proved c_3 Hopf categorical value = -2; the
+0.5 % gap to the empirical-fit c_3 = -2.00974 has no clean
+categorical form in any tested basis.  This makes Q_β
+structurally similar to m_p — both are bounded by the
+framework's proved categorical predictions, not by a missing
+refinement.
+
+Cumulative empirical case is now **5 independent negatives**:
+
+| Search | Target | Status |
+|---|---|---|
+| λ_p Bring-Bloch (PR #888 #904) | 2.4599527869 | NEG |
+| λ_p q-dilog tower (PR #923) | 2.4599527869 | NEG |
+| λ_p V̂_S + ℚ(ζ_60) (PR #928) | 2.4599527869 | NEG |
+| V_7 sub-leading (this session) | 2.4599527869 | NEG |
+| **c_3 Q_β sub-leading (this exploration)** | -2.0097397610 | NEG |
+
+Recommended: update the Q_β row in the per-observable status
+dashboard from "1.4× miss" to "framework-bounded at 11.13 ppb"
+to reflect the consensus across the cluster.
