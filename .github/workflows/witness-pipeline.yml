@@ -255,6 +255,25 @@ jobs:
           python3 folio-assistant/computations/compute_audit_scan.py
           python3 -c "import json; d=json.load(open('folio-assistant/computations/compute-audit-scan.witness.json')); print('compute-audit-scan:', d['data']['by_pattern_count'])"
 
+      - name: Fitted-labelled-canonical audit (CAL-4 discipline, warn-only)
+        # Per CAL-4 audit 2026-05-22: catches the
+        # "fitted literal disguised as substrate-canonical derivation"
+        # pattern (e.g. m_p_borromean_verification_50dps.py before the
+        # truth-in-naming cleanup).  Scans every production .py under
+        # folio-assistant/computations/ for module-level hardcoded
+        # high-precision literals combined with a substrate /
+        # canonical / derived claim in the docstring, where neither
+        # the variable name nor the surrounding 1000-char context
+        # tags the literal as validation/CODATA/acknowledged/audit-
+        # only/drift-risk.  Warn-only at the current 0-issue baseline
+        # so future regressions are visible without breaking CI;
+        # promote to --strict when the discipline is stable.
+        # See docs/canonical-derivation-cheat-sheet.md §5 fix #1 for
+        # the originating LAMBDA_PROTON_DOC case.
+        run: |
+          python3 folio-assistant/computations/fitted_labelled_canonical_audit.py || true
+          python3 -c "import json; d=json.load(open('folio-assistant/computations/fitted-labelled-canonical-audit.witness.json')); print(f'fitted-labelled-canonical-audit: flagged={d[\"data\"][\"flagged_script_count\"]} issues={d[\"data\"][\"total_issues\"]} (baseline 0)')"
+
       - name: I14 witness-provenance audit (warn-only)
         # Every *.witness.json under folio-assistant/computations/
         # must declare engine, scriptFile, commitSha (the

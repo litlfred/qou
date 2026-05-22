@@ -79,7 +79,23 @@ from witness_base import WitnessBuilder
 from q_parameter import Q_MP
 
 
-# Closed-form atomic Markov trace at q_0 (per the audit + canonical bridge)
+# Closed-form atomic Markov trace at q_0 — CACHED VALUES (audit, comparison only).
+#
+# ⚠️ DRIFT-RISK NOTE (CAL-4 audit, 2026-05-22): these are cached
+# from the categorical chain audit
+# `docs/audits/2026-05-05-categorical-chain-gamma-to-six-term.md §5`
+# and predate the standardised `atomic-tr-m-mpfr-50dps.witness.json`
+# canonical bridge.  The normalisation here (|tr_M(β_p)| in the
+# H_{3A=3} disjoint-product setup, |tr_M(p)| ≈ 1.633) differs from
+# the canonical witness's H_3 signed `tr_M_at_q0_50dps` (≈ 1.065)
+# by a basis factor — the two numbers describe related but distinct
+# quantities.
+#
+# TODO: reconcile the two normalisations and either (a) replace
+# these with a runtime load from the canonical witness, or
+# (b) document the basis-factor relationship explicitly in the
+# witness emission.  Until then, treat these as audit-only
+# cached constants — NOT a substrate derivation in this script.
 TR_M_PROTON_AT_Q0   = mp.mpf("1.6331535640480814257473330892701240938276544598183")
 TR_M_NEUTRON_AT_Q0  = mp.mpf("1.2482482717548397202242497985371807788067261625718")
 TR_M_DEUTERON_AT_Q0 = mp.mpf("0.3882864715477131")  # from categorical chain audit

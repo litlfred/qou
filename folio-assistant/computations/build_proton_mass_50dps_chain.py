@@ -101,8 +101,13 @@ from q_parameter import Q_50_DIGIT_STR
 _Q_0 = mp.mpf(Q_50_DIGIT_STR)
 _HBAR_Q = (_Q_0 - mp.mpf(1)) / _Q_0
 _H = _Q_0 - mp.mpf(1) / _Q_0
-_VOL_B3_LIT = mp.mpf("7.32772290646480718089411881580875")  # Adams 1985
-_CATALAN_G = mp.mpf("0.9159655941772190150546035149323841")  # Catalan's constant
+# Closed-form exact: Vol(𝓑₃) = 8·G where G = Catalan's constant
+# (Adams 1985 + Lobachevsky/Catalan identity, PR #843).  Using
+# mpmath's built-in `mp.catalan` here keeps both constants at full
+# working precision and removes hardcoded-literal discipline risk
+# (CAL-4 audit, 2026-05-22).
+_CATALAN_G = mp.catalan
+_VOL_B3_LIT = 8 * _CATALAN_G
 
 # Substrate-form λ_scale (CONJECTURAL — see conj:lambda-scale-substrate-form)
 LAMBDA_SCALE_SUBSTRATE_FORM = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
