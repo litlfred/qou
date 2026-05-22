@@ -110,7 +110,7 @@ substrate-derived $n_\star$ truncation rule (open per
 **Implication for binding energies at $A \geq 2$.**
 
 *With $\beta$-calibration fixing $p$ and $n$ absolute masses, the
-binding-energy question becomes "how well does the unified
+binding-energy question becomes "how accurately does the unified
 formula predict $m(\text{atom}) - m(\text{free})$?"  Current
 results (script `light_isotope_sweep.py`):*
 
