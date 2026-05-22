@@ -17,7 +17,7 @@ with an explicit CAL-4 VIOLATION banner. See PR #879 audit
 graph-stability**; readers should interpret it as
 "$\lambda_{\mathrm{scale}}$ empirical fit form (substrate-source
 open)". The named candidate
-[`prop:lambda-scale-bring-bloch-identity`](#prop:lambda-scale-bring-bloch-identity)
+[`conj:lambda-scale-bring-bloch-identity`](#conj:lambda-scale-bring-bloch-identity)
 PSLQ-failed at tier 5 (see
 [`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)
 conclusion), so a derivation route through it is **not currently
