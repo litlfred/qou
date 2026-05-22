@@ -349,16 +349,55 @@ def tr_M_via_wenzl_bridge_mpfr(
 
         total = mp.mpf(0)
         breakdown = []
+
+        # Fast path: Rust hecke-engine rayon-parallel MPFR
+        # χ_λ-over-all-partitions. Falls back to pure Python below if
+        # pyhecke_native is unavailable (no native wheel built) or
+        # raises during the call.
+        rust_chi_by_partition: dict[tuple[int, ...], mp.mpf] | None = None
+        try:
+            from pyhecke_native import (
+                chi_lambda_all_partitions_mpfr as _rust_chi_all,
+            )
+            # Rust takes signed (sign, gen) — averaged crossings (sign=0)
+            # are handled natively via the (σ + σ⁻¹)/2 = σ − h/2·I path.
+            word_signed = [(int(c), int(g)) for (c, _d, g) in word]
+            rust_results = _rust_chi_all(n, word_signed, q_str, dps)
+            rust_chi_by_partition = {
+                tuple(lam): mp.mpf(chi_str)
+                for lam, chi_str in rust_results
+            }
+        except (ImportError, Exception):  # noqa: BLE001
+            rust_chi_by_partition = None
+
         for shape in partitions_of(n):
             shape_t = tuple(shape)
             y_lam = y_table.get(shape_t)
             if y_lam is None:
                 # Should never happen for a complete witness, but guard.
                 continue
-            sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
-            if dim == 0:
-                continue
-            chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
+            if rust_chi_by_partition is not None:
+                # Fast path: Rust already computed χ_λ for every partition.
+                chi = rust_chi_by_partition.get(shape_t)
+                if chi is None:
+                    # Partition skipped on the Rust side (e.g. dim 0);
+                    # fall back to Python for this single λ.
+                    sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
+                    if dim == 0:
+                        continue
+                    chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
+                else:
+                    # Need `dim` for the breakdown payload only; cheap
+                    # lookup via the cached seminormal builder when
+                    # asked, else 0 as sentinel.
+                    dim = 0
+                    if return_breakdown:
+                        _, dim = _build_seminormal_matrices_mpf(shape_t, q)
+            else:
+                sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
+                if dim == 0:
+                    continue
+                chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
             contrib = y_lam * chi
             total += contrib
             if return_breakdown:
