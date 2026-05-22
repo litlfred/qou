@@ -73,7 +73,7 @@ The duality $\mathrm{Vol}/\hbar_q^2 \leftrightarrow
 \mathrm{CS} \cdot \hbar_q^2$ follows from the self-duality of the
 rigid dualizing complex: $\omega_A^\bullet \simeq
 R\mathrm{Hom}_{A^e}(A, A^e)$ provides two evaluation maps (left and
-right), and the scale factor $\hbar_q^2$ exchanges them.
+The right), and the scale factor $\hbar_q^2$ exchanges them.
 
 Additivity (property 1) follows from the fact that connected sum
 $K_1 \# K_2$ corresponds to tensor product in the Frobenius--Hopf

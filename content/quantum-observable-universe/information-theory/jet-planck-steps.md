@@ -194,7 +194,7 @@ $R$-matrix evaluations. It cannot exist before the cubic jet.
 
 Step 3 is where **chirality appears** for the first time. The
 trefoil is **not** amphichiral: the left trefoil $T_{2,3}$ and the
-right trefoil $T_{2,3}^{\sigma}$ are distinct knots
+The right trefoil $T_{2,3}^{\sigma}$ are distinct knots
 ([chirality: electron and positron](#rem:chirality-trefoil-electron-positron)).
 The mirror operation $\sigma$ (reversing all crossings) produces
 a genuinely different topological object. This is the origin of

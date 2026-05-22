@@ -5,7 +5,7 @@ following conditions.
 
 **Finite injective dimension.** The complex $\omega_A^\bullet$ has
 finite injective dimension on both sides: as a left $A$-module and as a
-right $A$-module.
+A right $A$-module.
 
 **Rigidifying isomorphism.** There exists a canonical isomorphism
 
