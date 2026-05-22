@@ -593,18 +593,19 @@
           "ts": "08e135d64dad",
           "lean": "f1ab2f05e57e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be",
+          "deps_hash": "1d2ec2486be6"
         },
-        "reviewed_at": "2026-05-20T17:52:35.574Z",
-        "reviewed_sha": "2d61d7fc2f7b5ff821866258990ca3670d40b9fc",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-link-types.lean:66: trivial-skeleton pattern 'one_def' at line 66: def Braid2.σ : Braid2 := 1"
+        "reviewed_at": "2026-05-22T21:40:21.874Z",
+        "reviewed_sha": "34d3b28a1844e4aa9ebd066aad9967f1d1910d04"
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T21:40:21.874Z"
 }
