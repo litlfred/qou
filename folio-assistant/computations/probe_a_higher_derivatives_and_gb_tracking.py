@@ -2,6 +2,11 @@
 probe_a_higher_derivatives_and_gb_tracking.py — investigate
 higher-order features of m_p_pred(a) and track GB/jet grades.
 
+CAL-4 caveat (2026-05-22): this probe compares against the
+post-hoc-fitted Möbius pencil (4-q)/(4q+3) (conj:mobius-limit-from-
+thimble, PR #892). The comparison is documented for audit purposes;
+no substrate derivation of the pencil is claimed.
+
 Per owner: "you said it was monotonic on interval... what about
 higher order derivatives? change in convexity? in the PL can we
 keep track of GB/jet orders? maybe it is at z_markov, but there
