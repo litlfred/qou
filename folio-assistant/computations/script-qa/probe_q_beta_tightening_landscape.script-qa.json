@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_q_beta_tightening_landscape.py",
+  "language": "python",
+  "source_hash": "bf49f631bba9",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "bf49f631bba9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_q_beta_tightening_landscape.py:148: bare `float(eps_A_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_tightening_landscape.py:153: bare `float(eps_abs / eps_A_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_tightening_landscape.py:162: bare `float(eps * 1e6)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_tightening_landscape.py:213: bare `float(eps_A * 1e6)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_tightening_landscape.py:216: bare `float(best_eps * 1e6)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      }
+    ]
+  }
+}

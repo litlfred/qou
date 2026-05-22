@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py",
+  "language": "python",
+  "source_hash": "83e0233b7e1a",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "83e0233b7e1a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py:73: bare `float(Q_0)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py:87: bare `float(v[\"V1\"].get(\"a_K_value\", \"nan\"))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py:123: bare float literal `1e-12` — wrap in `mpmath.mpf(\"1e-12\")` / `Decimal(\"1e-12\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py:124: bare float literal `100.0` — wrap in `mpmath.mpf(\"100.0\")` / `Decimal(\"100.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py:134: bare float literal `1e-12` — wrap in `mpmath.mpf(\"1e-12\")` / `Decimal(\"1e-12\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

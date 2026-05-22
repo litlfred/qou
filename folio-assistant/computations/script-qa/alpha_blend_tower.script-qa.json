@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/alpha_blend_tower.py",
+  "language": "python",
+  "source_hash": "2409f4f62c59",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "2409f4f62c59"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/alpha_blend_tower.py:291: bare `float(W_SYM)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/alpha_blend_tower.py:292: bare `float(W_STD)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/alpha_blend_tower.py:293: bare `float(W_ALT)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/alpha_blend_tower.py:294: bare `float(W_SYM + W_STD + W_ALT)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/alpha_blend_tower.py:312: bare `float(p_g0[k])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      }
+    ]
+  }
+}

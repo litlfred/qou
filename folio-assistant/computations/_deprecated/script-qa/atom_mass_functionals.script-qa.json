@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/atom_mass_functionals.py",
+  "language": "python",
+  "source_hash": "6dbf65fb1ee7",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "6dbf65fb1ee7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/atom_mass_functionals.py:143: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/atom_mass_functionals.py:143: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/atom_mass_functionals.py:156: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/atom_mass_functionals.py:160: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/atom_mass_functionals.py:187: bare float literal `938.783` — wrap in `mpmath.mpf(\"938.783\")` / `Decimal(\"938.783\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

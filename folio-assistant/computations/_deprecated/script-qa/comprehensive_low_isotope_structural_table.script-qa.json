@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/comprehensive_low_isotope_structural_table.py",
+  "language": "python",
+  "source_hash": "5efdf39a82ca",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "5efdf39a82ca"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/comprehensive_low_isotope_structural_table.py:93: bare `float(structural_sum)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/comprehensive_low_isotope_structural_table.py:119: bare `float(structural_sum := predict_mass_binding(i…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/comprehensive_low_isotope_structural_table.py:182: bare `float(m_e)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/comprehensive_low_isotope_structural_table.py:183: bare `float(m_e)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/comprehensive_low_isotope_structural_table.py:220: bare `float(z_mark**2)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      }
+    ]
+  }
+}

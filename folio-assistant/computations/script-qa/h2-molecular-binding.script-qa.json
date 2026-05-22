@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/h2-molecular-binding.py",
+  "language": "python",
+  "source_hash": "defe9155d9a9",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "defe9155d9a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/h2-molecular-binding.py:34: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/h2-molecular-binding.py:34: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/h2-molecular-binding.py:34: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/h2-molecular-binding.py:35: bare float literal `0.51100` — wrap in `mpmath.mpf(\"0.51100\")` / `Decimal(\"0.51100\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/h2-molecular-binding.py:36: bare float literal `8.0` — wrap in `mpmath.mpf(\"8.0\")` / `Decimal(\"8.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

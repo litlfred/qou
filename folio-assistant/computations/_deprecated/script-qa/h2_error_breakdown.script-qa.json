@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/h2_error_breakdown.py",
+  "language": "python",
+  "source_hash": "dfb8e8428a9e",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "dfb8e8428a9e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/h2_error_breakdown.py:70: bare `float(snappy.Manifold(\"6_2\").volume())` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/h2_error_breakdown.py:52: bare float literal `0.51099895000` — wrap in `mpmath.mpf(\"0.51099895000\")` / `Decimal(\"0.51099895000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/h2_error_breakdown.py:53: bare float literal `3.0e-10` — wrap in `mpmath.mpf(\"3.0e-10\")` / `Decimal(\"3.0e-10\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/h2_error_breakdown.py:54: bare float literal `938.27208816` — wrap in `mpmath.mpf(\"938.27208816\")` / `Decimal(\"938.27208816\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/h2_error_breakdown.py:55: bare float literal `939.56542052` — wrap in `mpmath.mpf(\"939.56542052\")` / `Decimal(\"939.56542052\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/path_b_evacuation.py",
+  "language": "python",
+  "source_hash": "87032e93a7da",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "87032e93a7da"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/path_b_evacuation.py:103: bare `float(Q_50_DIGIT_STR[:20])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/path_b_evacuation.py:552: bare `float(np.corrcoef(cs_vals, diag_vals)[0, 1])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/path_b_evacuation.py:646: bare `float(M_diag[p[\"i\"]])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/path_b_evacuation.py:647: bare `float(M_diag[p[\"j\"]])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/path_b_evacuation.py:104: bare float literal `1.8230678710486174` — wrap in `mpmath.mpf(\"1.8230678710486174\")` / `Decimal(\"1.8230678710486174\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/alpha_cluster_recursion.py",
+  "language": "python",
+  "source_hash": "8202abc2d6d0",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "8202abc2d6d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/alpha_cluster_recursion.py:45: bare float literal `56.49951` — wrap in `mpmath.mpf(\"56.49951\")` / `Decimal(\"56.49951\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha_cluster_recursion.py:46: bare float literal `92.16175` — wrap in `mpmath.mpf(\"92.16175\")` / `Decimal(\"92.16175\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha_cluster_recursion.py:47: bare float literal `127.61929` — wrap in `mpmath.mpf(\"127.61929\")` / `Decimal(\"127.61929\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha_cluster_recursion.py:48: bare float literal `160.64486` — wrap in `mpmath.mpf(\"160.64486\")` / `Decimal(\"160.64486\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha_cluster_recursion.py:49: bare float literal `198.2569` — wrap in `mpmath.mpf(\"198.2569\")` / `Decimal(\"198.2569\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

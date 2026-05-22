@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/probe_canonical_multi_term_D.py",
+  "language": "python",
+  "source_hash": "9b3f1c976eff",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "9b3f1c976eff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/probe_canonical_multi_term_D.py:163: bare `float(B)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/probe_canonical_multi_term_D.py:170: bare `float(variants[best_label])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/probe_canonical_multi_term_D.py:171: bare `float(variants[best_label])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/probe_canonical_multi_term_D.py:133: bare float literal `0.99` — wrap in `mpmath.mpf(\"0.99\")` / `Decimal(\"0.99\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/probe_canonical_multi_term_D.py:163: bare float literal `15.6` — wrap in `mpmath.mpf(\"15.6\")` / `Decimal(\"15.6\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

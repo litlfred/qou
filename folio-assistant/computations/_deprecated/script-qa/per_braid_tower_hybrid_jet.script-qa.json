@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/per_braid_tower_hybrid_jet.py",
+  "language": "python",
+  "source_hash": "36e8864e3738",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "36e8864e3738"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/per_braid_tower_hybrid_jet.py:64: bare float literal `0.51099895000` — wrap in `mpmath.mpf(\"0.51099895000\")` / `Decimal(\"0.51099895000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/per_braid_tower_hybrid_jet.py:390: bare float literal `12.4` — wrap in `mpmath.mpf(\"12.4\")` / `Decimal(\"12.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/per_braid_tower_hybrid_jet.py:407: bare float literal `0.` — wrap in `mpmath.mpf(\"0.\")` / `Decimal(\"0.\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

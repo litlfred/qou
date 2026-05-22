@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/adjacent_vs_full_probe.py",
+  "language": "python",
+  "source_hash": "4ddf24057195",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "4ddf24057195"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/adjacent_vs_full_probe.py:96: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/adjacent_vs_full_probe.py:98: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/adjacent_vs_full_probe.py:99: bare float literal `1e-300` — wrap in `mpmath.mpf(\"1e-300\")` / `Decimal(\"1e-300\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/adjacent_vs_full_probe.py:103: bare float literal `1e-14` — wrap in `mpmath.mpf(\"1e-14\")` / `Decimal(\"1e-14\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/adjacent_vs_full_probe.py:120: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

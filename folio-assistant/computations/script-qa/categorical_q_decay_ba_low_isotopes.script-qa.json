@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py",
+  "language": "python",
+  "source_hash": "752d2c89dfbd",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "752d2c89dfbd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py:142: bare float literal `5.889176e-3` — wrap in `mpmath.mpf(\"5.889176e-3\")` / `Decimal(\"5.889176e-3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py:143: bare float literal `7.524648e-26` — wrap in `mpmath.mpf(\"7.524648e-26\")` / `Decimal(\"7.524648e-26\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py:144: bare float literal `8.949636e-117` — wrap in `mpmath.mpf(\"8.949636e-117\")` / `Decimal(\"8.949636e-117\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py:145: bare float literal `6.573605e-210` — wrap in `mpmath.mpf(\"6.573605e-210\")` / `Decimal(\"6.573605e-210\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py:150: bare float literal `3.131194` — wrap in `mpmath.mpf(\"3.131194\")` / `Decimal(\"3.131194\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

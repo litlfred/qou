@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/predictive_binding_from_braid.py",
+  "language": "python",
+  "source_hash": "bb07616f2c14",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "bb07616f2c14"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/predictive_binding_from_braid.py:43: bare float literal `938.78307` — wrap in `mpmath.mpf(\"938.78307\")` / `Decimal(\"938.78307\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/predictive_binding_from_braid.py:43: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/predictive_binding_from_braid.py:44: bare float literal `1876.12393` — wrap in `mpmath.mpf(\"1876.12393\")` / `Decimal(\"1876.12393\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/predictive_binding_from_braid.py:44: bare float literal `2.22458` — wrap in `mpmath.mpf(\"2.22458\")` / `Decimal(\"2.22458\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/predictive_binding_from_braid.py:45: bare float literal `2809.43210` — wrap in `mpmath.mpf(\"2809.43210\")` / `Decimal(\"2809.43210\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

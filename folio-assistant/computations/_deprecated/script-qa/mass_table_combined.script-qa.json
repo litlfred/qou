@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/mass_table_combined.py",
+  "language": "python",
+  "source_hash": "1968d9379a20",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "1968d9379a20"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/mass_table_combined.py:48: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/mass_table_combined.py:49: bare float literal `8.0` — wrap in `mpmath.mpf(\"8.0\")` / `Decimal(\"8.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/mass_table_combined.py:50: bare float literal `4.7494999818744385084980865556375718851941577840553` — wrap in `mpmath.mpf(\"4.7494999818744385084980865556375718851941577840553\")` / `Decimal(\"4.7494999818744385084980865556375718851941577840553\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/mass_table_combined.py:55: bare float literal `4.4008325161230461014412038656409280339834854185165` — wrap in `mpmath.mpf(\"4.4008325161230461014412038656409280339834854185165\")` / `Decimal(\"4.4008325161230461014412038656409280339834854185165\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/mass_table_combined.py:56: bare float literal `8.2863168178065925881` — wrap in `mpmath.mpf(\"8.2863168178065925881\")` / `Decimal(\"8.2863168178065925881\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

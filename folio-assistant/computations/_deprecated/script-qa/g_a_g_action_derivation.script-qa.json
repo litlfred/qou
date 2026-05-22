@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/g_a_g_action_derivation.py",
+  "language": "python",
+  "source_hash": "4a16afcbefda",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "4a16afcbefda"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/g_a_g_action_derivation.py:401: bare float literal `0.40` — wrap in `mpmath.mpf(\"0.40\")` / `Decimal(\"0.40\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/g_a_g_action_derivation.py:408: bare float literal `0.40` — wrap in `mpmath.mpf(\"0.40\")` / `Decimal(\"0.40\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/g_a_g_action_derivation.py:409: bare float literal `1.81` — wrap in `mpmath.mpf(\"1.81\")` / `Decimal(\"1.81\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/g_a_g_action_derivation.py:410: bare float literal `4.13` — wrap in `mpmath.mpf(\"4.13\")` / `Decimal(\"4.13\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/g_a_g_action_derivation.py:412: bare float literal `0.` — wrap in `mpmath.mpf(\"0.\")` / `Decimal(\"0.\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

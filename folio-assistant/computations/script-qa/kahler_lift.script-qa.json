@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/kahler_lift.py",
+  "language": "python",
+  "source_hash": "d8ddefa76469",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "d8ddefa76469"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/kahler_lift.py:253: bare `float(V_i.subs(q, Q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/kahler_lift.py:267: bare `float((V_i + V1_add).subs(q, Q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/kahler_lift.py:276: bare `float((V_i + V1_add + V2_add).subs(q, Q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/kahler_lift.py:181: bare float literal `1e-12` — wrap in `mpmath.mpf(\"1e-12\")` / `Decimal(\"1e-12\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/kahler_lift.py:183: bare float literal `1e-12` — wrap in `mpmath.mpf(\"1e-12\")` / `Decimal(\"1e-12\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

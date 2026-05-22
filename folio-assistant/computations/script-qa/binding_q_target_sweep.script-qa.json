@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/binding_q_target_sweep.py",
+  "language": "python",
+  "source_hash": "c321c10926f4",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "c321c10926f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/binding_q_target_sweep.py:236: bare float literal `1e9` — wrap in `mpmath.mpf(\"1e9\")` / `Decimal(\"1e9\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/binding_q_target_sweep.py:238: bare float literal `13.` — wrap in `mpmath.mpf(\"13.\")` / `Decimal(\"13.\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/binding_q_target_sweep.py:251: bare float literal `1e9` — wrap in `mpmath.mpf(\"1e9\")` / `Decimal(\"1e9\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/binding_q_target_sweep.py:255: bare float literal `0.0013` — wrap in `mpmath.mpf(\"0.0013\")` / `Decimal(\"0.0013\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/binding_q_target_sweep.py:256: bare float literal `0.0002` — wrap in `mpmath.mpf(\"0.0002\")` / `Decimal(\"0.0002\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

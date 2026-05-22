@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_term4_conventions.py",
+  "language": "python",
+  "source_hash": "c598660f9a40",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "c598660f9a40"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_term4_conventions.py:97: bare float literal `2.22457` — wrap in `mpmath.mpf(\"2.22457\")` / `Decimal(\"2.22457\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_term4_conventions.py:98: bare float literal `8.48180` — wrap in `mpmath.mpf(\"8.48180\")` / `Decimal(\"8.48180\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_term4_conventions.py:99: bare float literal `7.71806` — wrap in `mpmath.mpf(\"7.71806\")` / `Decimal(\"7.71806\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_term4_conventions.py:100: bare float literal `28.29569` — wrap in `mpmath.mpf(\"28.29569\")` / `Decimal(\"28.29569\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

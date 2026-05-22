@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/rho_k_scaling_structure_probe.py",
+  "language": "python",
+  "source_hash": "8bfc8bad4676",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "8bfc8bad4676"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/rho_k_scaling_structure_probe.py:39: bare float literal `0.51099895` — wrap in `mpmath.mpf(\"0.51099895\")` / `Decimal(\"0.51099895\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/rho_k_scaling_structure_probe.py:40: bare float literal `938.27208816` — wrap in `mpmath.mpf(\"938.27208816\")` / `Decimal(\"938.27208816\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/rho_k_scaling_structure_probe.py:41: bare float literal `939.56542052` — wrap in `mpmath.mpf(\"939.56542052\")` / `Decimal(\"939.56542052\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

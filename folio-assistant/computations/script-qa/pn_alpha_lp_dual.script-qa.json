@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/pn_alpha_lp_dual.py",
+  "language": "python",
+  "source_hash": "baf672f14c93",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "baf672f14c93"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/pn_alpha_lp_dual.py:354: bare `float(prob.value)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/pn_alpha_lp_dual.py:368: bare `float(pn_vec.sum())` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/pn_alpha_lp_dual.py:385: bare `float(res.fun)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/pn_alpha_lp_dual.py:64: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/pn_alpha_lp_dual.py:64: bare float literal `1178995.5254` — wrap in `mpmath.mpf(\"1178995.5254\")` / `Decimal(\"1178995.5254\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

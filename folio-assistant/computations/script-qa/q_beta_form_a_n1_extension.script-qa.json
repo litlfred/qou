@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/q_beta_form_a_n1_extension.py",
+  "language": "python",
+  "source_hash": "a266bff6a46d",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "a266bff6a46d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/q_beta_form_a_n1_extension.py:193: bare `float(abs(delta_N0_pct) / abs(delta_N1_pct))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/q_beta_form_a_n1_extension.py:196: bare `float(abs(delta_N1_pct) / abs(delta_N0_pct))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/q_beta_form_a_n1_extension.py:236: bare `float((E0_full_num - E0_cal_num) / E0_cal_num …)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/q_beta_form_a_n1_extension.py:237: bare `float((E0_full_li2q_num - E0_cal_num) / E0_cal…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/q_beta_form_a_n1_extension.py:238: bare `float((E0_N0_num - E0_cal_num) / E0_cal_num * …)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      }
+    ]
+  }
+}

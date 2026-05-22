@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/rho_f_volume_binding_gap.py",
+  "language": "python",
+  "source_hash": "18cdf03bb57b",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "18cdf03bb57b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/rho_f_volume_binding_gap.py:122: bare float literal `12.3` — wrap in `mpmath.mpf(\"12.3\")` / `Decimal(\"12.3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/rho_f_volume_binding_gap.py:123: bare float literal `18.3` — wrap in `mpmath.mpf(\"18.3\")` / `Decimal(\"18.3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/rho_f_volume_binding_gap.py:155: bare float literal `.2` — wrap in `mpmath.mpf(\".2\")` / `Decimal(\".2\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

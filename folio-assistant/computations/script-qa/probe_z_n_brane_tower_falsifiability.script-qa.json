@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_z_n_brane_tower_falsifiability.py",
+  "language": "python",
+  "source_hash": "97ea5e0cc954",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "97ea5e0cc954"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_z_n_brane_tower_falsifiability.py:44: bare float literal `8.481798` — wrap in `mpmath.mpf(\"8.481798\")` / `Decimal(\"8.481798\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_z_n_brane_tower_falsifiability.py:44: bare float literal `7.71806` — wrap in `mpmath.mpf(\"7.71806\")` / `Decimal(\"7.71806\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_z_n_brane_tower_falsifiability.py:45: bare float literal `0.7` — wrap in `mpmath.mpf(\"0.7\")` / `Decimal(\"0.7\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_z_n_brane_tower_falsifiability.py:195: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_z_n_brane_tower_falsifiability.py:234: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

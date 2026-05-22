@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/rho_census_wedderburn_experiment.py",
+  "language": "python",
+  "source_hash": "6c4b8b226bdf",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "6c4b8b226bdf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/rho_census_wedderburn_experiment.py:46: bare `float(mp.catalan)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/rho_census_wedderburn_experiment.py:136: bare `float(np.trace(M))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/rho_census_wedderburn_experiment.py:215: bare `float(v)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/rho_census_wedderburn_experiment.py:44: bare float literal `1.1099785955541805` — wrap in `mpmath.mpf(\"1.1099785955541805\")` / `Decimal(\"1.1099785955541805\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/rho_census_wedderburn_experiment.py:45: bare float literal `0.51099895` — wrap in `mpmath.mpf(\"0.51099895\")` / `Decimal(\"0.51099895\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

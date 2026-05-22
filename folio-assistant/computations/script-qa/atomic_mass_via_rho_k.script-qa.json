@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/atomic_mass_via_rho_k.py",
+  "language": "python",
+  "source_hash": "56604ccf1475",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "56604ccf1475"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/atomic_mass_via_rho_k.py:474: bare float literal `9.4` — wrap in `mpmath.mpf(\"9.4\")` / `Decimal(\"9.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atomic_mass_via_rho_k.py:474: bare float literal `13.4` — wrap in `mpmath.mpf(\"13.4\")` / `Decimal(\"13.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atomic_mass_via_rho_k.py:475: bare float literal `9.1` — wrap in `mpmath.mpf(\"9.1\")` / `Decimal(\"9.1\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atomic_mass_via_rho_k.py:488: bare float literal `05.` — wrap in `mpmath.mpf(\"05.\")` / `Decimal(\"05.\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/atomic_mass_via_rho_k.py:517: bare float literal `05.` — wrap in `mpmath.mpf(\"05.\")` / `Decimal(\"05.\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

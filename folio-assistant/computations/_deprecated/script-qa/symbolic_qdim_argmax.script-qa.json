@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/symbolic_qdim_argmax.py",
+  "language": "python",
+  "source_hash": "f1102f2fb273",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "f1102f2fb273"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/symbolic_qdim_argmax.py:110: bare `float(expr.subs(q, q_value))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/symbolic_qdim_argmax.py:134: bare `float(r)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/symbolic_qdim_argmax.py:125: bare float literal `0.001` — wrap in `mpmath.mpf(\"0.001\")` / `Decimal(\"0.001\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/symbolic_qdim_argmax.py:125: bare float literal `10.0` — wrap in `mpmath.mpf(\"10.0\")` / `Decimal(\"10.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/symbolic_qdim_argmax.py:193: bare float literal `1.001` — wrap in `mpmath.mpf(\"1.001\")` / `Decimal(\"1.001\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

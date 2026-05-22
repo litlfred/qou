@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/nv1_candidate_a_doubleprime.py",
+  "language": "python",
+  "source_hash": "b4f8514d8143",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "b4f8514d8143"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/nv1_candidate_a_doubleprime.py:213: bare float literal `1e-2` — wrap in `mpmath.mpf(\"1e-2\")` / `Decimal(\"1e-2\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/nv1_candidate_a_doubleprime.py:217: bare float literal `0.4` — wrap in `mpmath.mpf(\"0.4\")` / `Decimal(\"0.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/nv1_candidate_a_doubleprime.py:246: bare float literal `519.` — wrap in `mpmath.mpf(\"519.\")` / `Decimal(\"519.\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/nv1_candidate_a_doubleprime.py:248: bare float literal `159.` — wrap in `mpmath.mpf(\"159.\")` / `Decimal(\"159.\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

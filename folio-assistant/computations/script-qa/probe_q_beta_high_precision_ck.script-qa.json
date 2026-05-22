@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_q_beta_high_precision_ck.py",
+  "language": "python",
+  "source_hash": "fd7f49b06379",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "fd7f49b06379"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_q_beta_high_precision_ck.py:147: bare `float(eps_N3_B)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_high_precision_ck.py:149: bare float literal `3.` — wrap in `mpmath.mpf(\"3.\")` / `Decimal(\"3.\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_q_beta_high_precision_ck.py:162: bare float literal `200.` — wrap in `mpmath.mpf(\"200.\")` / `Decimal(\"200.\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_q_beta_high_precision_ck.py:168: bare float literal `0.4` — wrap in `mpmath.mpf(\"0.4\")` / `Decimal(\"0.4\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}

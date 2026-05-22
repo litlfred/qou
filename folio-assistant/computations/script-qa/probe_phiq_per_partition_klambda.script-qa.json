@@ -1,0 +1,28 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probe_phiq_per_partition_klambda.py",
+  "language": "python",
+  "source_hash": "cbe4051ede3d",
+  "updated_at": "2026-05-22T18:27:38.070Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "cbe4051ede3d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probe_phiq_per_partition_klambda.py:96: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_phiq_per_partition_klambda.py:97: bare float literal `6.2203` — wrap in `mpmath.mpf(\"6.2203\")` / `Decimal(\"6.2203\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_phiq_per_partition_klambda.py:98: bare float literal `65.0` — wrap in `mpmath.mpf(\"65.0\")` / `Decimal(\"65.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_phiq_per_partition_klambda.py:103: bare float literal `0.05` — wrap in `mpmath.mpf(\"0.05\")` / `Decimal(\"0.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probe_phiq_per_partition_klambda.py:104: bare float literal `3.0006` — wrap in `mpmath.mpf(\"3.0006\")` / `Decimal(\"3.0006\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ]
+  }
+}
