@@ -15,10 +15,19 @@
  */
 
 import { describe, test, expect } from "bun:test";
-import { mkdtempSync, writeFileSync, rmSync } from "fs";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
-import { checkDoesNotDefaultToFloat } from "../../content/pipeline/qa-checkers-python";
+import {
+  checkDoesNotDefaultToFloat,
+  checkRespectsArchimedeanWall,
+  checkCodeIsCommented,
+  checkVariablesTyped,
+  checkHasReferencesToPaper,
+  checkConnectedToCiPipeline,
+  checkDeprecated,
+  checkUsesLibraryFrameworkAppropriately,
+} from "../../content/pipeline/qa-checkers-python";
 
 function runChecker(source: string): {
   bare_literals: number;
@@ -236,5 +245,397 @@ describe("checkDoesNotDefaultToFloat — f-string limitations (documented)", () 
     // text portion of an f-string.
     const r = runChecker('ae = f"value is 1.0 by default"\n');
     expect(r.bare_literals).toBe(0);
+  });
+});
+
+// ─── helpers for the per-checker test suites below ─────────────
+
+function withFixtureFile<T>(
+  source: string,
+  fn: (path: string) => T,
+): T {
+  const dir = mkdtempSync(join(tmpdir(), "qa-checkers-fixture-"));
+  try {
+    const file = join(dir, "fixture.py");
+    writeFileSync(file, source);
+    return fn(file);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+// ─── respects_archimedean_wall ─────────────────────────────────
+
+describe("checkRespectsArchimedeanWall", () => {
+  test("flags math.sqrt(x)", () => {
+    const r = withFixtureFile(
+      "import math\ny = math.sqrt(x)\n",
+      checkRespectsArchimedeanWall,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits.some((h) => h.text.includes("math.sqrt"))).toBe(true);
+  });
+
+  test("flags numpy.cos and np.exp", () => {
+    const r = withFixtureFile(
+      "import numpy as np\nimport numpy\na = np.exp(x)\nb = numpy.cos(y)\n",
+      checkRespectsArchimedeanWall,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits.length).toBeGreaterThanOrEqual(2);
+  });
+
+  test("flags numpy.float64 type usage", () => {
+    const r = withFixtureFile(
+      "import numpy\nx: numpy.float64 = 1\n",
+      checkRespectsArchimedeanWall,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits.some((h) => h.text.includes("numpy.float64"))).toBe(true);
+  });
+
+  test("passes when only mpmath is used", () => {
+    const r = withFixtureFile(
+      "from mpmath import mp\ny = mp.sqrt(x)\n",
+      checkRespectsArchimedeanWall,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("comments mentioning math.sqrt do not trigger", () => {
+    const r = withFixtureFile(
+      "# we deliberately do not use math.sqrt here\ny = mp.sqrt(x)\n",
+      checkRespectsArchimedeanWall,
+    );
+    expect(r.result).toBe("pass");
+  });
+});
+
+// ─── code_is_commented ─────────────────────────────────────────
+
+describe("checkCodeIsCommented", () => {
+  test("passes with a top-of-file docstring", () => {
+    const r = withFixtureFile(
+      '"""Module docstring."""\nx = 1\ny = 2\n',
+      checkCodeIsCommented,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("passes with docstring after `from __future__`", () => {
+    const r = withFixtureFile(
+      'from __future__ import annotations\n"""Doc."""\nx=1\n',
+      checkCodeIsCommented,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("fails with no docstring and < 10% comments", () => {
+    const lines = Array.from({ length: 20 }, (_, i) => `x${i} = ${i}`).join("\n");
+    const r = withFixtureFile(lines + "\n", checkCodeIsCommented);
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("0/20");
+  });
+
+  test("passes with ≥ 10% comment density", () => {
+    const code = ["# comment 1", "# comment 2"].concat(
+      Array.from({ length: 15 }, (_, i) => `x${i} = ${i}`),
+    ).join("\n") + "\n";
+    const r = withFixtureFile(code, checkCodeIsCommented);
+    expect(r.result).toBe("pass");
+  });
+
+  test("passes for empty file (n/a)", () => {
+    const r = withFixtureFile("", checkCodeIsCommented);
+    expect(r.result).toBe("n/a");
+  });
+});
+
+// ─── variables_typed ───────────────────────────────────────────
+
+describe("checkVariablesTyped", () => {
+  test("flags def foo(x):", () => {
+    const r = withFixtureFile(
+      "def foo(x):\n    return x + 1\n",
+      checkVariablesTyped,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("def foo");
+  });
+
+  test("passes def foo(x: int) -> int:", () => {
+    const r = withFixtureFile(
+      "def foo(x: int) -> int:\n    return x\n",
+      checkVariablesTyped,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("self / cls / *args / **kwargs are exempt", () => {
+    const r = withFixtureFile(
+      "class C:\n    def m(self, x: int, *args, **kwargs):\n        pass\n",
+      checkVariablesTyped,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("partial typing — flags only the untyped params", () => {
+    const r = withFixtureFile(
+      "def foo(x: int, y):\n    pass\n",
+      checkVariablesTyped,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("y");
+  });
+
+  test("no-arg function is trivially typed", () => {
+    const r = withFixtureFile(
+      "def foo():\n    pass\n",
+      checkVariablesTyped,
+    );
+    expect(r.result).toBe("pass");
+  });
+});
+
+// ─── has_references_to_paper ───────────────────────────────────
+
+describe("checkHasReferencesToPaper", () => {
+  test("passes with a `# Ref: [key]` citation", () => {
+    const r = withFixtureFile(
+      "# Ref: [kassel1995] Quantum Groups\nx = 1\n",
+      checkHasReferencesToPaper,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("passes with an indented Ref comment", () => {
+    const r = withFixtureFile(
+      "def f():\n    # Ref: [jones1985] doi:10.1090\n    pass\n",
+      checkHasReferencesToPaper,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("fails with no Ref citation", () => {
+    const r = withFixtureFile(
+      "# normal comment\nx = 1\n",
+      checkHasReferencesToPaper,
+    );
+    expect(r.result).toBe("fail");
+  });
+
+  test("does not match `Ref:` mid-line (must be a comment)", () => {
+    const r = withFixtureFile(
+      'doc = "see Ref: [key]"\nx = 1\n',
+      checkHasReferencesToPaper,
+    );
+    expect(r.result).toBe("fail");
+  });
+});
+
+// ─── connected_to_ci_pipeline ──────────────────────────────────
+
+describe("checkConnectedToCiPipeline", () => {
+  function withRepoFixture(
+    files: Record<string, string>,
+  ): { repoRoot: string; cleanup: () => void } {
+    const repoRoot = mkdtempSync(join(tmpdir(), "qa-ci-fixture-"));
+    for (const [rel, content] of Object.entries(files)) {
+      const abs = join(repoRoot, rel);
+      mkdirSync(join(abs, ".."), { recursive: true });
+      writeFileSync(abs, content);
+    }
+    return {
+      repoRoot,
+      cleanup: () => rmSync(repoRoot, { recursive: true, force: true }),
+    };
+  }
+
+  test("passes when basename appears in a workflow file", () => {
+    const { repoRoot, cleanup } = withRepoFixture({
+      "scripts/foo.py": "x = 1\n",
+      ".github/workflows/run.yml":
+        "jobs:\n  test:\n    steps:\n      - run: python scripts/foo.py\n",
+    });
+    try {
+      const r = checkConnectedToCiPipeline(
+        join(repoRoot, "scripts/foo.py"),
+        repoRoot,
+      );
+      expect(r.result).toBe("pass");
+    } finally {
+      cleanup();
+    }
+  });
+
+  test("fails when not referenced anywhere", () => {
+    const { repoRoot, cleanup } = withRepoFixture({
+      "scripts/orphan.py": "x = 1\n",
+      ".github/workflows/run.yml": "jobs:\n  test:\n    steps: []\n",
+    });
+    try {
+      const r = checkConnectedToCiPipeline(
+        join(repoRoot, "scripts/orphan.py"),
+        repoRoot,
+      );
+      expect(r.result).toBe("fail");
+    } finally {
+      cleanup();
+    }
+  });
+
+  test("passes when imported by a sibling script", () => {
+    const { repoRoot, cleanup } = withRepoFixture({
+      "scripts/helper.py": "def h(): pass\n",
+      "scripts/main.py": "from helper import h\nh()\n",
+      ".github/workflows/run.yml": "jobs:\n  test:\n    steps:\n      - run: python scripts/main.py\n",
+    });
+    try {
+      const r = checkConnectedToCiPipeline(
+        join(repoRoot, "scripts/helper.py"),
+        repoRoot,
+      );
+      expect(r.result).toBe("pass");
+    } finally {
+      cleanup();
+    }
+  });
+
+  test("__init__.py is n/a", () => {
+    const { repoRoot, cleanup } = withRepoFixture({
+      "scripts/__init__.py": "",
+    });
+    try {
+      const r = checkConnectedToCiPipeline(
+        join(repoRoot, "scripts/__init__.py"),
+        repoRoot,
+      );
+      expect(r.result).toBe("n/a");
+    } finally {
+      cleanup();
+    }
+  });
+
+  test("scripts under _deprecated/ are n/a", () => {
+    const { repoRoot, cleanup } = withRepoFixture({
+      "scripts/_deprecated/old.py": "x = 1\n",
+    });
+    try {
+      const r = checkConnectedToCiPipeline(
+        join(repoRoot, "scripts/_deprecated/old.py"),
+        repoRoot,
+      );
+      expect(r.result).toBe("n/a");
+    } finally {
+      cleanup();
+    }
+  });
+});
+
+// ─── deprecated ────────────────────────────────────────────────
+
+describe("checkDeprecated", () => {
+  test("flags scripts under /_deprecated/", () => {
+    const dir = mkdtempSync(join(tmpdir(), "qa-deprecated-"));
+    try {
+      const sub = join(dir, "_deprecated");
+      mkdirSync(sub);
+      const file = join(sub, "old.py");
+      writeFileSync(file, "x = 1\n");
+      const r = checkDeprecated(file);
+      expect(r.result).toBe("fail");
+      expect(r.hits[0].text).toContain("_deprecated/");
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  test("flags `# DEPRECATED` marker", () => {
+    const r = withFixtureFile(
+      "# DEPRECATED — use foo.py instead\nx = 1\n",
+      checkDeprecated,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("# DEPRECATED");
+  });
+
+  test("flags DEPRECATED in module docstring", () => {
+    const r = withFixtureFile(
+      '"""DEPRECATED — use foo instead."""\nx = 1\n',
+      checkDeprecated,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("docstring");
+  });
+
+  test("passes for normal scripts", () => {
+    const r = withFixtureFile(
+      '"""Normal module."""\nx = 1\n',
+      checkDeprecated,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("does not match `deprecated` lowercase in prose", () => {
+    const r = withFixtureFile(
+      '"""This module is not deprecated."""\nx = 1\n',
+      checkDeprecated,
+    );
+    expect(r.result).toBe("pass");
+  });
+});
+
+// ─── uses_library_framework_appropriately ─────────────────────
+
+describe("checkUsesLibraryFrameworkAppropriately", () => {
+  test("flags witness-write without WitnessBuilder import", () => {
+    const r = withFixtureFile(
+      'out = "foo.witness.json"\nopen(out, "w").write("{}")\n',
+      checkUsesLibraryFrameworkAppropriately,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("WitnessBuilder");
+  });
+
+  test("passes witness-write WITH WitnessBuilder import", () => {
+    const r = withFixtureFile(
+      'from witness_base import WitnessBuilder\nout = "foo.witness.json"\n',
+      checkUsesLibraryFrameworkAppropriately,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("flags hardcoded `pi = 3.14…` constant", () => {
+    const r = withFixtureFile(
+      "pi = 3.14159265\nx = 1\n",
+      checkUsesLibraryFrameworkAppropriately,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("pi = 3.14");
+  });
+
+  test("flags hardcoded `e = 2.71…` constant", () => {
+    const r = withFixtureFile(
+      "e = 2.71828\nx = 1\n",
+      checkUsesLibraryFrameworkAppropriately,
+    );
+    expect(r.result).toBe("fail");
+    expect(r.hits[0].text).toContain("e = 2.71");
+  });
+
+  test("passes script with no witness-write and no hardcoded constants", () => {
+    const r = withFixtureFile(
+      "x = mp.pi + mp.e\n",
+      checkUsesLibraryFrameworkAppropriately,
+    );
+    expect(r.result).toBe("pass");
+  });
+
+  test("comment mentioning `.witness.json` does not require WitnessBuilder", () => {
+    const r = withFixtureFile(
+      "# we generate foo.witness.json\nx = 1\n",
+      checkUsesLibraryFrameworkAppropriately,
+    );
+    expect(r.result).toBe("pass");
   });
 });

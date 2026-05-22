@@ -41,7 +41,16 @@ import {
   type CriterionScriptHashes,
 } from "./qa-utils";
 import { walkScripts, type ScriptTarget } from "./script-walker";
-import { checkDoesNotDefaultToFloat } from "./qa-checkers-python";
+import {
+  checkDoesNotDefaultToFloat,
+  checkRespectsArchimedeanWall,
+  checkCodeIsCommented,
+  checkVariablesTyped,
+  checkHasReferencesToPaper,
+  checkConnectedToCiPipeline,
+  checkDeprecated,
+  checkUsesLibraryFrameworkAppropriately,
+} from "./qa-checkers-python";
 import type { CheckerResult } from "./qa-checkers-voice";
 import type {
   ScriptQaReport,
@@ -66,6 +75,34 @@ const SCRIPT_CHECKERS: Record<
   does_not_default_to_float: (t) => {
     if (t.language !== "python") return { result: "n/a", hits: [] };
     return checkDoesNotDefaultToFloat(t.abs);
+  },
+  respects_archimedean_wall: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkRespectsArchimedeanWall(t.abs);
+  },
+  code_is_commented: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkCodeIsCommented(t.abs);
+  },
+  variables_typed: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkVariablesTyped(t.abs);
+  },
+  has_references_to_paper: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkHasReferencesToPaper(t.abs);
+  },
+  connected_to_ci_pipeline: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkConnectedToCiPipeline(t.abs, REPO_ROOT);
+  },
+  deprecated: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkDeprecated(t.abs);
+  },
+  uses_library_framework_appropriately: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkUsesLibraryFrameworkAppropriately(t.abs);
   },
 };
 

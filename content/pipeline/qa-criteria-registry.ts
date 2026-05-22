@@ -655,6 +655,131 @@ const SCRIPT_QUALITY: QaCriterionDefinition[] = [
     automated: true,
     source_file: "content/pipeline/qa-checkers-python.ts",
   },
+  {
+    id: "respects_archimedean_wall",
+    domain: "script-quality",
+    description:
+      "Python script does not call archimedean-realization " +
+      "functions (`math.sqrt`, `math.log`, `math.exp`, `math.cos`, " +
+      "`numpy.float64`, …) for substrate-precision values. Per " +
+      "CLAUDE.md §7c, archimedean constructs belong in " +
+      "`descartes-universe/` / `observations/` specialised modules; " +
+      "the generic algebraic / categorical layer should use the " +
+      "mpmath equivalents (`mp.sqrt`, `mp.log`, `mp.exp`, …) which " +
+      "preserve the 50-digit working precision. Heuristic scan of " +
+      "function names; strings and comments are stripped before " +
+      "matching so narrative references do not produce false " +
+      "positives. Authors of legitimate archimedean modules " +
+      "override with a `human` reviewer `result: \"n/a\"` entry.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+  {
+    id: "code_is_commented",
+    domain: "script-quality",
+    description:
+      "Python script has either a module-top docstring " +
+      "(`\"\"\"…\"\"\"` immediately after any `from __future__` " +
+      "imports) or comment-line density ≥ 10% of non-blank lines. " +
+      "A bare script with no docstring and no inline commentary " +
+      "becomes opaque to future readers; this criterion encodes " +
+      "the minimum-documentation contract. Severity is `minor` — " +
+      "an undocumented script is still functionally correct.",
+    default_severity: "minor",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+  {
+    id: "variables_typed",
+    domain: "script-quality",
+    description:
+      "Python function definitions carry type annotations on " +
+      "every parameter (excluding `self`, `cls`, `*args`, " +
+      "`**kwargs`, `_`). Untyped parameters are flagged with the " +
+      "function name + offending parameter list. Heuristic — " +
+      "regex-based scan of `def NAME(args)` patterns; multi-line " +
+      "signatures with line breaks inside the parameter list are " +
+      "a known false-negative case. Authors add `: Any` where the " +
+      "type genuinely is untyped.",
+    default_severity: "minor",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+  {
+    id: "has_references_to_paper",
+    domain: "script-quality",
+    description:
+      "Python script contains at least one `# Ref: [key] …` " +
+      "comment citing a bibliography entry (matching the Lean " +
+      "convention from CLAUDE.md §1 — every `sorry` requires a " +
+      "bibliographic citation; the same discipline applies to " +
+      "compute scripts that derive content from the paper). The " +
+      "citation lets a reviewer trace the script back to the " +
+      "proposition / theorem it computes. Pure-infrastructure " +
+      "scripts (no paper-derived content) override with a `human` " +
+      "reviewer `result: \"n/a\"` entry.",
+    default_severity: "minor",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+  {
+    id: "connected_to_ci_pipeline",
+    domain: "script-quality",
+    description:
+      "Python script is exercised by CI — its basename appears in " +
+      "at least one `.github/workflows/*.yml` file, OR it is " +
+      "imported (as a library / helper module) by a sibling script. " +
+      "Scripts not connected to CI accumulate silent regressions; " +
+      "this criterion flags them as candidates for either CI " +
+      "wiring or `_deprecated/`. `__init__.py`, `conftest.py`, and " +
+      "scripts under `_deprecated/` get an `n/a` result. Note: " +
+      "this checker reads workflow files outside the audited " +
+      "script — cached per sweep run for performance.",
+    default_severity: "minor",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+  {
+    id: "deprecated",
+    domain: "script-quality",
+    description:
+      "Python script is flagged as deprecated when ANY of: path " +
+      "contains `/_deprecated/`, file contains a `# DEPRECATED` " +
+      "comment line, or the module docstring contains the word " +
+      "\"DEPRECATED\" verbatim. Severity `minor` — deprecation is " +
+      "a status flag, not a correctness bug. A `human` reviewer " +
+      "entry can move an intentionally-retained deprecated script " +
+      "to `pass`. Cross-axis to content blocks: a sibling " +
+      "criterion in the block-QA axis flags deprecated `.md` / " +
+      "`.ts` content the same way.",
+    default_severity: "minor",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+  {
+    id: "uses_library_framework_appropriately",
+    domain: "script-quality",
+    description:
+      "Python script consumes the standard library framework " +
+      "appropriately: (1) scripts that write `.witness.json` " +
+      "must import `WitnessBuilder` from `witness_base` so the " +
+      "payload is stamped with provenance + script-hash metadata; " +
+      "(2) no hardcoded math constants (`pi = 3.14…`, `e = 2.71…`) " +
+      "— use `mpmath.mp.pi` / `mpmath.mp.e` for 50-digit substrate " +
+      "precision. Strings and `#` comments are stripped before " +
+      "scanning to avoid false positives on narrative references.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
 ];
 
 // ── Exported registry ───────────────────────────────────────────
