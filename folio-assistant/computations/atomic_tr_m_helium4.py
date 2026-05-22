@@ -160,11 +160,18 @@ def _helium4_word_to_factors() -> list[tuple[float, float, int]]:
 
     `g` is 0-based (σ_0 = sigmas[0]); the Rust fast path inside
     `tr_M_via_wenzl_bridge_mpfr` shifts g back to 1-based at the
-    FFI boundary (PR #901). `d` is rounded against the global h
-    snap-map (`{0.0, -h, -h/2}`), so we pass the f64 `-h_val`
-    matching `_chi_lambda_of_word_mpf`'s `round(d, 9)` key.
+    FFI boundary. `d` is rounded against the in-bridge h snap-map
+    (`{0.0, -h, -h/2}`) keyed on `round(d, 9)` inside
+    `_chi_lambda_of_word_mpf`. The h-value MUST be computed from
+    the same q that the bridge evaluates at — we derive h from
+    `Q_50_DIGIT_STR` (the canonical 50-dps substrate string) so the
+    snap-map lookup hits; if we used `Q_MP` (a different float
+    roundtrip) the keys could miss and the bridge would fall back
+    to `mp.mpf(str(d))`, reintroducing the f64 floor.
     """
-    h_val = float(Q0_MP - 1 / Q0_MP)
+    from q_parameter import Q_50_DIGIT_STR
+    q_mpf = mp.mpf(Q_50_DIGIT_STR)
+    h_val = float(q_mpf - 1 / q_mpf)
     factors: list[tuple[float, float, int]] = []
     for i in HELIUM4_WORD:
         if i > 0:
@@ -181,12 +188,12 @@ def direct_h12_recursion(
 ) -> tuple[mp.mpf | None, float, str | None]:
     """Compute |tr_M(⁴He)| at H_12 with a soft time budget.
 
-    Default path (PR #921+) is the Wenzl bridge
-    `Σ_λ y_λ · χ_λ(W)` via `tr_M_via_wenzl_bridge_mpfr`, which
-    benefits from the Rust hecke-engine fast path (rayon-parallel
-    χ_λ over all 77 partitions of 12) wired in PR #901 — expected
-    sub-second wall time when `pyhecke_native` is built, with a
-    Python-mpmath fallback otherwise.
+    Default path is the Wenzl bridge `Σ_λ y_λ · χ_λ(W)` via
+    `tr_M_via_wenzl_bridge_mpfr`, which benefits from the Rust
+    hecke-engine fast path (rayon-parallel χ_λ over all 77
+    partitions of 12) when `pyhecke_native` is built — expected
+    sub-second wall time — with a Python-mpmath fallback that
+    remains mathematically exact at 50 dps.
 
     `use_wenzl_bridge=False` reverts to the legacy
     `markov_trace_of_word` markov-peel ascent, kept for
@@ -194,6 +201,12 @@ def direct_h12_recursion(
     at H_12).
 
     Returns (|tr_M|, elapsed, error_or_None).
+
+    See `docs/coordination/1ppb-compute-tranche-queue.md` for the
+    broader compute/speed tranche this fits into; the Wenzl-bridge
+    Rust-adapter wiring lives in `tr_m_wenzl_bridge_mpfr.py` and
+    is documented in
+    `docs/audits/2026-05-22-1ppb-speed-wireups-tranche.md`.
     """
     t0 = time.time()
     have_alarm = hasattr(signal, "SIGALRM")
@@ -212,13 +225,20 @@ def direct_h12_recursion(
             return abs(mp.mpf(tr_mpf)), time.time() - t0, None
         else:
             # Legacy markov-peel ascent — sympy expression, then
-            # numerical substitution at q_0.
+            # numerical substitution at q_0. Use the canonical
+            # Q_50_DIGIT_STR for the substitution so both paths
+            # evaluate at exactly the same q value (avoids the
+            # f64 precision floor that `str(Q_MP)` would introduce
+            # via Python float formatting).
             import sympy as sp
             from markov_trace_recursive import markov_trace_of_word
+            from q_parameter import Q_50_DIGIT_STR
 
             tr_sym = markov_trace_of_word(HELIUM4_N, HELIUM4_WORD)
             q_sym = sp.symbols("q", positive=True)
-            val_sym = tr_sym.subs(q_sym, sp.sympify(str(Q_MP))).evalf(mp.mp.dps)
+            val_sym = tr_sym.subs(
+                q_sym, sp.sympify(Q_50_DIGIT_STR)
+            ).evalf(mp.mp.dps)
             return abs(mp.mpf(str(val_sym))), time.time() - t0, None
     except _Timeout:
         return None, time.time() - t0, f"timeout_after_{int(budget_sec)}s"
