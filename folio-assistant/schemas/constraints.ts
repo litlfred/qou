@@ -313,6 +313,7 @@ export const ChapterSchema = z.object({
 export const ChapterRefSchema = z.object({
   uri: z.string().optional(),
   dir: z.string().min(1),
+  partTitle: z.string().optional(),
 });
 
 const PaperMacroSchema = z.object({

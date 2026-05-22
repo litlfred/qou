@@ -51,7 +51,14 @@ export default paper({
     chapterRef({ dir: "lifting-and-descent" }),                // Yekutieli tower
 
     // ── Part II: Structure (physics narrative — bk, particles, obs) ──
-    chapterRef({ dir: "braids-and-knots" }),                  // Braids, knots, Hecke, classical-limit machinery
+    // The `partTitle` field renders as a \part{...} banner before this
+    // chapter in the PDF — groups knots/braids/models/descartes/particle
+    // chapters under one narrative heading without merging them into
+    // one directory. Per chapter-reorg proposal §6 (E3 banner approach).
+    chapterRef({
+      dir: "braids-and-knots",
+      partTitle: "Knots, Braids, and Particles",
+    }),                                                       // Braids, knots, Hecke, classical-limit machinery
     chapterRef({ dir: "models-of-qous" }),                    // Models of QOUs — the archimedean wall (Calabi-Yau, ALE, SW)
     chapterRef({ dir: "descartes-universe" }),                // Bring's surface, χ = −6, fundamental particles (incl. cohomological defect)
     chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble

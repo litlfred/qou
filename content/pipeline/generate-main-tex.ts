@@ -186,10 +186,17 @@ export function generateMainTex(
   lines.push("");
 
   // 4. Chapter includes (excluding standalone appendices)
+  // Emits an optional `\part{...}` banner before any chapter whose
+  // ChapterRef carries a `partTitle` (groups subsequent chapters
+  // visually until the next `partTitle` or end-of-paper).
   lines.push("% ── Chapters (generated from manifest) ────────────────────────────────────");
   for (const [num, slug] of sortedEntries) {
     if (opts.excludeChapterIndices?.has(num)) continue;
     if (introEntry && num === introEntry[0]) continue; // already emitted pre-TOC
+    const partTitle = paper.chapters[num]?.partTitle;
+    if (partTitle) {
+      lines.push(`\\part{${escapeLatexMeta(partTitle)}}`);
+    }
     lines.push(`\\input{${opts.chaptersDir}${slug}}`);
   }
   lines.push("");
