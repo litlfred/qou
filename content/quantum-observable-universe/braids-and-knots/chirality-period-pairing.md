@@ -23,7 +23,7 @@ volumes:
 
 $4_1$ is amphichiral: $4_1 \cong \overline{4_1}$. Its dominant cell
 in $H_4(q)$ is $\lambda = (2, 2)$, the unique self-conjugate
-4-partition. Bar-fixed projection $e_{(2,2)}$ → real period
+4-partition. Bar-fixed projection $e_{(2,2)}$ $\to$ real period
 $2\,\mathrm{Cl}_2(\pi/3) \in \mathbb{R}$, no twist.
 
 ### A chiral example: trefoil

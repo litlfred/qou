@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.lean"
   },
   "source_hashes": {
-    "md": "9270ea69918f",
+    "md": "8a650f33c461",
     "ts": "2f91d92483c3",
     "lean": "4a94af070c7e"
   },
@@ -444,20 +444,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "9270ea69918f",
+          "md": "8a650f33c461",
           "ts": "2f91d92483c3",
           "lean": "4a94af070c7e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/categorical-mass-markov.md:30: **Step 1 (Categorical trace → Frobenius integral).**"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -682,5 +682,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

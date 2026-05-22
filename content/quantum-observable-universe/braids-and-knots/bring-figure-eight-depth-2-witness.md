@@ -93,7 +93,7 @@ The keystone predicts analogous numerical witnesses at every depth:
 
 **Depth-2 ceiling for hyperbolic 3-manifold volumes.** *All* hyperbolic
 3-manifold volumes (figure-8, Borromean rings = $8G$, Whitehead link,
-…) are depth-2 periods — one $\mathrm{Li}_2$ factor in their
+$\ldots$) are depth-2 periods — one $\mathrm{Li}_2$ factor in their
 Bloch–Wigner formula. Different knots correspond to different shape
 parameters at the same depth. A genuine depth-3 witness therefore
 requires either (a) a trilog $\mathrm{Li}_3$ at an algebraic argument,

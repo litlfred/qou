@@ -19,9 +19,9 @@ via the Lean class `QBetaPrecisionLadderCoefficients`).
 
 | Rung | Conjectured closed form | Empirical match | Categorical interpretation |
 |:----:|:-----------------------:|:---------------:|----------------------------|
-| $c_4$ | $c_3 \cdot b^4 = -2 \cdot b^4$ | **0.9%** residual | Hopf Jones × Kashiwara $b^4$ correction (multiplicative mixing) |
+| $c_4$ | $c_3 \cdot b^4 = -2 \cdot b^4$ | **0.9%** residual | Hopf Jones $\times$ Kashiwara $b^4$ correction (multiplicative mixing) |
 | $c_5$ | $-(b^2 + 1/2)$ | **2.4%** residual | Kashiwara $b^2$ + half-Hopf integer offset (mixed) |
-| $c_6$ | $c_3^2 \cdot b^2 = 4 \cdot b^2$ | **14%** residual | Hopf Jones squared × Kashiwara $b^2$ |
+| $c_6$ | $c_3^2 \cdot b^2 = 4 \cdot b^2$ | **14%** residual | Hopf Jones squared $\times$ Kashiwara $b^2$ |
 | $c_7$ | $c_3^3 = -8$ | **signed error $+114\%$** (magnitude error $86\%$, opposite sign) | Hopf Jones cubed (pattern guess; leverage limit at $N=7$ means almost any value closes) |
 
 The match quality degrades with $k$. The $c_7$ closed form has
@@ -54,7 +54,7 @@ Three concrete routes (from
 The current $Q_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ $\prod$ rungs)
 already meets the 7.8 ppb L2 target at $N=3$ (residual +6.02 ppb,
 within target). The c_4..c_7 corrections push residual to sub-ppb,
-which is **research-grade precision beyond the 100×-experimental
+which is **research-grade precision beyond the 100$\times$-experimental
 target**. So these conjectures aren't blockers for the framework's
 core deliverables — they're optional precision-deepening for
 research-grade results.

@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/block-multiplicativity-v-free.md"
   },
   "source_hashes": {
-    "md": "f216412eb515",
+    "md": "4dc1ce253ce0",
     "ts": "f86413811453"
   },
   "criteria": {
@@ -343,19 +343,19 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "f216412eb515",
+          "md": "4dc1ce253ce0",
           "ts": "f86413811453"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/block-multiplicativity-v-free.md:28: on D, T, ³He at $H_6, H_9, H_9$ respectively (50 dps), as recorded in | quantum-observable-universe/braids-and-knots/block-multiplicativity-v-free.md:35: | ³He (A=3) | same | same | ✓ | | quantum-observable-universe/braids-and-knots/block-multiplicativity-v-free.md:136: applies this to 16 atoms (D → ⁵⁶Fe) in $< 1$ s total, all signs correct; | quantum-observable-universe/braids-and-knots/block-multiplicativity-v-free.md:155: Falsifiability: a single H_12 (⁴He) computation showing $V^{(12)}_g$ on | quantum-observable-universe/braids-and-knots/block-multiplicativity-v-free.md:157: more than $10^{-3}$ at $q_0$ refutes the conjecture. The ⁴He H_12"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -492,5 +492,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

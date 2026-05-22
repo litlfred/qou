@@ -64,5 +64,5 @@ this closes **both 1-d irreps** of $H_3(q)$ from first principles.
 The remaining V_(2,1) case (item 1) is partially closed at the
 rational-identity level in
 [`rem:chi-v21-hoefsmit-matrix-derivation`](#rem:chi-v21-hoefsmit-matrix-derivation);
-full matrix-product trace requires the 2×2 Hoefsmit machinery from
+full matrix-product trace requires the 2$\times$2 Hoefsmit machinery from
 `hoefsmit-V21-cos-symmetrization.lean` (currently chapter-isolated).

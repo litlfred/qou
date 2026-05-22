@@ -78,7 +78,7 @@ This matches the probe output `+1/4, -1/4, +1/4, ...` for $k = 6, 7, 8, ...$ exa
 | theorem | content |
 |---|---|
 | `chi_V3_difference_eq_factored` | $\chi_n - \chi_p = -(q^2+1)^2 (q^2-1) / (4q)$ |
-| `chi_V3_difference_factored_eq_polynomial` | factored ↔ polynomial form |
+| `chi_V3_difference_factored_eq_polynomial` | factored $\leftrightarrow$ polynomial form |
 | `chi_V3_difference_eq_polynomial` | $\chi_n - \chi_p = -(q^5 + q^3 - q - q^{-1})/4$ |
 | `chi_V3_difference_decomposition` | split into polynomial part + geometric part |
 | `chi_V3_polynomial_part_at_one` | polynomial part vanishes at $q = 1$ |
@@ -95,7 +95,7 @@ unfolding.
 V_(2,1) and V_(1,1,1) await analogous formal closed forms:
 
 - **V_(1,1,1)** is the **q $\leftrightarrow$ $-q^{-1}$ mirror** of V_(3) (antisymmetric irrep where each $\sigma_i$ acts as $-q^{-1}$). The proof should mirror this module's structure exactly with $q \mapsto -q^{-1}$.
-- **V_(2,1)** requires the 2×2 Hoefsmit matrix expansion (more involved — needs the $\sigma_0$, $\sigma_1$ matrix products).
+- **V_(2,1)** requires the 2$\times$2 Hoefsmit matrix expansion (more involved — needs the $\sigma_0$, $\sigma_1$ matrix products).
 
 Following the user direction "first prove formally V", this block
 closes V_(3) and provides the template for V_(1,1,1). V_(2,1) is

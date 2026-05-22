@@ -109,14 +109,14 @@ place (step 1 of the algorithm).  Within the present implementation:
   the explicit $\sigma$-words are direct (electron $\sigma_1^3$ in
   $H_2$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ in $B_3$); steps
   2–6 of the algorithm run end-to-end.  $\nu_{\mathrm{SDP}} = 1$ trivially.
-- For `manual-historical` entries (${}^2$H, ³H, ³He) step 1 is pending;
+- For `manual-historical` entries (${}^2$H, ${}^{3}$H, ${}^{3}$He) step 1 is pending;
   the post-Archimedean naming (volume from SnapPy) is substituted
   for the categorical Markov trace, justified by the volume
   conjecture.  Re-running step 1 with the joint-tower SDP would
   replace this substitution with a principled derivation.
-- For `recursive-on-⁴He` (⁸Be–⁴⁰Ca) the recursion factors through
-  the ⁴He magic-A formula and inherits its methodology.
-- For ⁶Li, ⁷Li the deprecated volume-match search runs *backwards*
+- For `recursive-on-⁴He` (${}^{8}$Be–${}^{40}$Ca) the recursion factors through
+  the ${}^{4}$He magic-A formula and inherits its methodology.
+- For ${}^{6}$Li, ${}^{7}$Li the deprecated volume-match search runs *backwards*
   from step 6 to a candidate knot, bypassing step 1 entirely.
   Quarantined by [prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
   §"Provisional / deprecated methodology".  The principled atlas

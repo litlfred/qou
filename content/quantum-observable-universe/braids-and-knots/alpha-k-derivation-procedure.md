@@ -65,7 +65,7 @@ this paper.*
 3. *Compute character matrix:* for each $(\mu, \lambda)$, evaluate
    $\chi_\lambda(w_\mu)$ via Hoefsmit seminormal form
    ([Hoefsmit](#prop:hoefsmit-seminormal-form)).  Cost dominated by
-   $O(p(n))$ partitions × Hoefsmit-matrix size $d_\lambda \leq
+   $O(p(n))$ partitions $\times$ Hoefsmit-matrix size $d_\lambda \leq
    |\lambda|!/\!\prod h_x$.
 4. *Solve linear system:* $A \cdot \mathbf{y} = \mathbf{b}$ with
    $A_{\mu, \lambda} = \chi_\lambda(w_\mu)$ and $b_\mu = z^{n -

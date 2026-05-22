@@ -73,7 +73,7 @@ binding energy via $\alpha = m_e \cdot 8G$ is:*
 
 | Isotope | $\alpha\,\mathfrak{m}^{\mathrm{chir}}$ (MeV) | $B_\mathrm{nucl}$ (MeV) | Ratio |
 |---|---|---|---|
-| ${}^{2}\mathrm{H}$ | ≈ 0.000 | 2.225 | < 0.01% |
+| ${}^{2}\mathrm{H}$ | $\approx$ 0.000 | 2.225 | < 0.01% |
 | ${}^{3}\mathrm{H}$ (T) | +0.072 | 8.482 | 0.85% |
 | ${}^{3}\mathrm{He}$ | +0.067 | 8.597 | 0.78% |
 | ${}^{4}\mathrm{He}$ | +0.872 | 29.327 | **2.97%** |

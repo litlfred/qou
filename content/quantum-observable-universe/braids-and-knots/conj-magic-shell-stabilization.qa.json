@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.lean"
   },
   "source_hashes": {
-    "md": "35a5cb326a2c",
+    "md": "4a78dcdeb561",
     "ts": "7c971d06f0b8",
     "lean": "c609c57a0f54"
   },
@@ -410,20 +410,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "35a5cb326a2c",
+          "md": "4a78dcdeb561",
           "ts": "7c971d06f0b8",
           "lean": "c609c57a0f54"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:17: N=2 activates $\\sigma_{nn}$, doubly magic ⁴He activates both), | quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:81: | Convention | $\\Delta_{\\mathrm{shell}}(Z=2)$ from ³He | $\\Delta_{\\mathrm{shell}}(Z=N=2)$ from ⁴He | Z↔N consistent? | | quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:87: The Z↔N inconsistency under product-volume is a known artifact | quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:91: $\\Delta_{\\mathrm{shell}}$ is well-defined and Z↔N-symmetric is | quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:116: | ³He | $0.206540859\\ldots$ | $0.211$ | $7.718$ | $+7.507$ |"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -563,5 +563,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

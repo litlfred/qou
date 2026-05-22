@@ -77,7 +77,7 @@ the framework-derived value overshoots the calibrated value by
 geometric series direction therefore does *not* close the
 CAL-3 residual — it widens it. This is recorded as an open
 finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)
-(which independently flags $\Phi_q$ → $\mathrm{Li}_2^q$ as the
+(which independently flags $\Phi_q$ $\to$ $\mathrm{Li}_2^q$ as the
 likely correct tower function). CAL-3 thereby ceases to be a
 silent absorber of the tower correction; the residual is
 explicit and the direction puzzle is on the books for the

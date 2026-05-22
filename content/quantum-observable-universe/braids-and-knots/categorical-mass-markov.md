@@ -27,7 +27,7 @@ Frobenius integral on $A$.*
 
 The chain has three steps:
 
-**Step 1 (Categorical trace → Frobenius integral).**
+**Step 1 (Categorical trace $\to$ Frobenius integral).**
 The categorical trace
 $\mathrm{tr}(f) = \mathrm{ev}_A \circ (f \otimes \mathrm{id}_{A^\vee}) \circ \mathrm{coev}_A$
 descends under the fibre functor $\tau$ to the Frobenius integral

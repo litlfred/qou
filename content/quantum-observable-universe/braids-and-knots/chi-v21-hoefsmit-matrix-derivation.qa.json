@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.lean"
   },
   "source_hashes": {
-    "md": "c6cc6c670cdf",
+    "md": "8603e4934e51",
     "ts": "074e93034678",
     "lean": "33735ff57a23"
   },
@@ -410,20 +410,39 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "b173be58d07a",
+          "md": "c2a057cac911",
           "ts": "074e93034678",
           "lean": "33735ff57a23"
         },
         "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md:3: **V_(2,1) Hoefsmit 2×2 matrix derivation — partial closure (item 1 of PR #672).** | quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md:7: full 2×2 matrix representation: | quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md:32: | `chi_V21_difference_factored_eq_polynomial` | factored ↔ polynomial form | `field_simp + ring` | | quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md:58: $\\mathrm{tr}\\bigl(\\prod_{c \\in \\beta} M_c\\bigr)$ from the 2×2 | quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md:78: Now formalised explicitly with the Hoefsmit 2×2 matrices:"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md:108: × (Fin 2) → ℝ` matrices with `Real.sqrt` entries; tractable but"
+      },
+      {
+        "field_hash": {
+          "md": "8603e4934e51",
+          "ts": "074e93034678",
+          "lean": "33735ff57a23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-22T19:01:28.990Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -546,5 +565,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T15:34:59.203Z"
+  "updated_at": "2026-05-22T19:01:28.990Z"
 }

@@ -40,12 +40,12 @@ $$
 | ${}^6\mathrm{Be}$ | $(4, 2)$ | 6 | 3 | 1 | 1 | 5 |
 | ${}^{16}\mathrm{O}$ | $(8, 8)$ | 16 | 7 | 1 | 7 | 15 |
 
-### Z↔N asymmetry and ordering dependence
+### Z$\leftrightarrow$N asymmetry and ordering dependence
 
 Under the pppnnn ordering the asymmetric counts $(n_{pp}, n_{nn})$
-encode Z↔N asymmetry directly. **Alternative orderings** (e.g.\
+encode Z$\leftrightarrow$N asymmetry directly. **Alternative orderings** (e.g.\
 alternating pnpnpn) would produce different interface compositions
-for the same atom — at $(Z=2, N=2)$ ⁴He:
+for the same atom — at $(Z=2, N=2)$ ${}^{4}$He:
 
 | ordering | $n_{pp}$ | $n_{pn}$ | $n_{nn}$ |
 |---|---:|---:|---:|
@@ -63,8 +63,8 @@ utility module's `interface_composition(ordering)` function.
 
 ### Role in substrate derivation
 
-The Δ_coupling residual fit (PR #656 v6) localised the ³He
-proton-heavy anomaly to the **pp interface asymmetry**: ³He has
+The Δ_coupling residual fit (PR #656 v6) localised the ${}^{3}$He
+proton-heavy anomaly to the **pp interface asymmetry**: ${}^{3}$He has
 $n_{pp} = 1$ (excess $\sigma$) while T has $n_{nn} = 1$ (excess $\sigma^{-1}$), and
 the pp/nn interfaces contribute non-equivalently through the
 hook's antisymmetric column. A linear fit
@@ -82,6 +82,6 @@ with $\alpha \approx +0.224$ MeV, $\beta \approx +1.093$ MeV,
 $\gamma \approx -1.295$ MeV closes the 4-atom probe set trivially
 (3 free parameters, 3 non-trivial equations). The fit is **not
 predictive** until extended to atoms with distinct $(n_{pp}, n_{nn})$
-combinations beyond the $\{$D, T, ³He, ⁴He$\}$ set. See
+combinations beyond the $\{$D, T, ${}^{3}$He, ${}^{4}$He$\}$ set. See
 [`docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md`](../../docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md)
 §v6 for the open-question framing.

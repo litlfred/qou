@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean"
   },
   "source_hashes": {
-    "md": "62b8b70757ba",
+    "md": "45b888774961",
     "ts": "ca0afc6dee24",
     "lean": "81a3cb7d2b49"
   },
@@ -540,20 +540,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "62b8b70757ba",
+          "md": "45b888774961",
           "ts": "ca0afc6dee24",
           "lean": "81a3cb7d2b49"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.md:210: | Series (Li_2^q) | sign-correct binding energies on D, T, ³He; variance $1.82\\times$ | `folio-assistant/computations/binding_depth_stratified_rust.py` | | quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.md:254: 1. **Series-layer proof from category alone**. Li_2^q ↔ Φ_q ↔ | quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.md:297: - `square`: $F(h) = h^2$ (anti × anti → sym; canonical kernel-squaring) | quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.md:350: ## Proofs (Lean ↔ paper bridge) | quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.md:401: *Proof.* Same as `evenPoly2` extended by one term: $h^4 = (h^2)^2$, bar-sym × bar-sym = bar-sym. $\\square$"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -782,5 +782,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/conj-chirality-ribbon-frobenius.lean"
   },
   "source_hashes": {
-    "md": "7b168a5c6229",
+    "md": "1d7b2fcf5a7d",
     "ts": "80feee469727",
     "lean": "1444797514e0"
   },
@@ -408,20 +408,20 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "7b168a5c6229",
+          "md": "1d7b2fcf5a7d",
           "ts": "80feee469727",
           "lean": "1444797514e0"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-chirality-ribbon-frobenius.md:58: > (T) and $\\sim 10^4$ (³He) from the empirical $(1+h)(1-h) \\approx"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -561,5 +561,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

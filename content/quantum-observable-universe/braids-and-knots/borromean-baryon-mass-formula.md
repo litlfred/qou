@@ -27,7 +27,7 @@ $$
   bracket evaluated at $q_0$ ([def:hadron](#def:hadron) tower),*
 - $\lambda_{\mathrm{scale}} \in \mathbb{Q}(q_0)$ *is the* **common
   Borromean scale** *— a single $q$-rational that is shared between
-  every Borromean baryon and absorbs the topology→energy normalisation
+  every Borromean baryon and absorbs the topology$\to$energy normalisation
   of the Borromean linking quantum.*
 
 **The common-scale hypothesis.** The conjecture asserts that

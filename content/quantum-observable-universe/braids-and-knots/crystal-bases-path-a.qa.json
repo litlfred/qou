@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md"
   },
   "source_hashes": {
-    "md": "969f749e1bc8",
+    "md": "349f9e25e0ac",
     "ts": "098ef4747242"
   },
   "criteria": {
@@ -343,19 +343,19 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "969f749e1bc8",
+          "md": "349f9e25e0ac",
           "ts": "098ef4747242"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md:10: becomes prohibitive: 26 partitions at $H_9$ × ~30s of sympy | quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md:34: contributions over the entire 47-letter ($A=4$ ⁴He) canonical | quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md:154: (B) ⁴He Path A consistency check **CLOSED**: | quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md:162: with the $y_\\lambda$ pole-order cache pre-built is **40000×"
+        "reviewed_at": "2026-05-22T18:57:18.801Z",
+        "reviewed_sha": "2caf283e8feb23728a8a46c16349da404ec6dc30"
       }
     ],
     "voice-editorializing": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T18:57:18.801Z"
 }

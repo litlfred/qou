@@ -9,7 +9,7 @@ $$
 where each $(p_i, H_i)$ is a localized hadron
 ([Definition](#def:localized-hadron)) or a photon
 ($H_i = \mathbf{1}_{B_4}$, 4-strand identity in $B_4$ — knot-trivial
-under Markov closure but carries 4 internal polarisation×chirality
+under Markov closure but carries 4 internal polarisation$\times$chirality
 components on the exceptional divisor; see
 [confined-particle](#def:confined-particle) registry).
 The index set $I$ may be infinite, and multiple constituents may share

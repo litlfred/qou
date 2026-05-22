@@ -34,12 +34,12 @@ $$
 | $^3\mathrm{H}$ | $8_{11}$ | $9$ ($A=3$) | $2$ | $8.4820$ |
 | $^3\mathrm{He}$ | $L_{6a4}$ | $9$ ($A=3$) | $2$ | $7.7181$ |
 
-(Earlier drafts of this table listed $n_0 = 6$ for ³H/³He.  Reconciled
+(Earlier drafts of this table listed $n_0 = 6$ for ${}^{3}$H/${}^{3}$He.  Reconciled
 with the joint-tower SDP convention $n_0 = 3 \cdot A$ used in
 [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
 and in
 [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
-— `atomic_n_0 = 9` for ³H/³He.  See "Structural decomposition" below
+— `atomic_n_0 = 9` for ${}^{3}$H/${}^{3}$He.  See "Structural decomposition" below
 for the binding-K factorisation that motivates the $n_0 = 3 \cdot A$
 convention.)
 
@@ -131,7 +131,7 @@ canonical $T_w$.
 
 The Lean theorem currently carries a `sorry` for the convex-
 optimization step (Boyd–Vandenberghe-style strict-complementarity
-⇒ uniqueness in SDP).  Closing the `sorry` requires either
+$\Rightarrow$ uniqueness in SDP).  Closing the `sorry` requires either
 upstream Mathlib convex-optimization infrastructure or a
 self-contained constructive argument from the active-set + dual
 variables recorded in
@@ -162,7 +162,7 @@ The numerical evidence from
 [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-prefactor-structural-verifier.witness.json)
 (deliverable 4) shows that the canonical $T_w$ at the **braid strand
 count** alone does *not* uniquely identify the bound state — proton
-and ³He have Markov-equivalent braid words in $H_3(q_0)$ (mutual
+and ${}^{3}$He have Markov-equivalent braid words in $H_3(q_0)$ (mutual
 inverses), yet they are distinct bound states with distinct $\rho$.
 
 The structural fix is to factor:
@@ -201,8 +201,8 @@ SDP solver mode lands and discharges (b) per-particle.
 | Nucleus | $A$ | $n_0 = 3A$ | binding $K$ | constituents | $\rho$ |
 |---------|-----|-----------|-------------|--------------|--------|
 | ${}^2$H | 2 | 6 | $L_H$ (Hopf) | $\{p, n\}$ | 1 |
-| ³H | 3 | 9 | 8₁₁-class link | $\{p, n, n\}$ | 2 |
-| ³He | 3 | 9 | $L_{6a4}$ | $\{p, p, n\}$ | 2 |
+| ${}^{3}$H | 3 | 9 | $8_{11}$-class link | $\{p, n, n\}$ | 2 |
+| ${}^{3}$He | 3 | 9 | $L_{6a4}$ | $\{p, p, n\}$ | 2 |
 
 ## Relationship to GAP-A-1
 

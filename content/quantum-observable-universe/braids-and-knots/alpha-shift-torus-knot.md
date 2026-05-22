@@ -62,7 +62,7 @@ for $(p, k) \in \{(2, 3), (2, 5), (2, 9), (3, 4), (3, 5),
 (3, 7)\}$: in every case the trivial-channel $V_{(p)}$ gives
 pole order $0$ (it acts by the eigenvalue $q$, contributing
 $q^{k(p-1)}$, no pole), and the mixed $V_{(p-1, 1)}$, $V_{(p-2,
-2)}$, … channels give pole order $\leq 0$ as well, so the
+2)}$, $\ldots$ channels give pole order $\leq 0$ as well, so the
 maximum is realised uniquely at $V_{(1^p)}$.
 
 A general proof would establish that for the cyclic torus braid
