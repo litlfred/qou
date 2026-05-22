@@ -1,6 +1,6 @@
 **Proposition.**
 *Let $G$ be a compact, connected, semisimple Lie group with complexified
-Lie algebra $\mathfrak{g}$.  Let $M$ be a compact oriented manifold
+Lie algebra $\mathfrak{g}$. Let $M$ be a compact oriented manifold
 admitting a principal $G$-bundle $P \to M$ whose adjoint bundle
 $\mathrm{Ad}(P) = P \times_{G} \mathfrak{g}$ satisfies the measurability
 condition*
@@ -37,13 +37,13 @@ Haar state on $\mathcal{O}_{q}(G)$
 
 The measurability hypothesis on $P$ is not vacuous but admits common
 realisations: for $G = \mathrm{SU}(2)$ and $M$ a contact CR 3-manifold,
-$c_{1}(\mathrm{Ad}(P)) = 0$ is automatic ($G$ is simply connected)
+$c_{1}(\mathrm{Ad}(P)) = 0$ is automatic ($G$ is connected)
 while $c_{2}(\mathrm{Ad}(P)) = 0$ selects the topologically trivial
-sector.  Non-vanishing $c_{2}$ is also admissible with $q = e^{\pi i/(k +
+sector. Non-vanishing $c_{2}$ is also admissible with $q = e^{\pi i/(k +
 h^{\vee})}$ a root of unity, replacing $\mathbf{C}$ by the modular
 tensor category $\mathbf{Rep}_{k}(\widehat{\mathfrak{g}})$ at level
-$k = \langle c_{2}, [M] \rangle$ (Reshetikhin--Turaev).  Both regimes
-establish existence.  No universal-property uniqueness holds: a QOU is
+$k = \langle c_{2}, [M] \rangle$ (Reshetikhin--Turaev). Both regimes
+establish existence. No universal-property uniqueness holds: a QOU is
 a *structure*, not a universal object.
 
 The proof is constructive: we exhibit $(\mathbf{C}, A, \tau)$ and

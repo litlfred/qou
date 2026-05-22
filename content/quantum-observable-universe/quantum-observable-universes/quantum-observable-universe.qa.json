@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean"
   },
   "source_hashes": {
-    "md": "7f27dbae38d6",
+    "md": "64fbd18be237",
     "ts": "1925177ebb74",
     "lean": "ce6070ac3a74"
   },
@@ -423,20 +423,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "7f27dbae38d6",
+          "md": "64fbd18be237",
           "ts": "1925177ebb74",
           "lean": "ce6070ac3a74"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.md:18: gauge transformation acts trivially on all observables. The"
+        "reviewed_at": "2026-05-22T20:29:01.274Z",
+        "reviewed_sha": "b9ed8b786e361210b7e9a2e678eb0cdc177dab8d"
       }
     ],
     "voice-scholarly-default": [
@@ -576,5 +576,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T18:28:17.139Z"
+  "updated_at": "2026-05-22T20:29:01.274Z"
 }

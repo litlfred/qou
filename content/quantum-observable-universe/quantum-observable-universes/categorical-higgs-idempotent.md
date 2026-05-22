@@ -39,7 +39,7 @@ the direction $T_3 + Y$. The **categorical Higgs idempotent** $e_H$
 is the projector onto this unbroken direction:
 
 - $e_H \cdot \mathrm{End}(A)|_{T^3 + Y} = \mathrm{End}(A)|_{T^3 + Y}$
-  (eigenvalue $1$);
+ (eigenvalue $1$);
 - $e_H \cdot \mathrm{End}(A)|_{T^a} = 0$ for $a \in \{1, 2,
   T^3 - Y\}$ (eigenvalue $0$).
 
@@ -53,42 +53,42 @@ $W^\pm, Z$ longitudinal modes
 This single artifact unlocks **four** downstream open problems:
 
 1. **NV-1 closed form via candidate (b)**:
-   $\mathcal{N}_{\rm sym}(q)$
-   (N_sym [planned, not yet authored]) is
-   computed as the Frobenius trace of the symmetric-channel
-   projector
-   $$
+ $\mathcal{N}_{\rm sym}(q)$
+ (N_sym [planned, not yet authored]) is
+ computed as the Frobenius trace of the symmetric-channel
+ projector
+ $$
      \mathcal{N}_{\rm sym}(q) \;=\;
      \mathrm{tr}_F\bigl( e_{\rm sym}^{\rm EW} \cdot e_H \bigr),
    $$
-   where $e_{\rm sym}^{\rm EW} = \bigotimes_{k=2,3,4} e_{\rm sym}^{(T(2,2k))}$
-   is the EW symmetric-channel projector
-   (weak spectral completeness [planned, not yet authored]).
-   The closed form falls out of the categorical Higgs idempotent
-   composition without ansatz-fitting.
+ where $e_{\rm sym}^{\rm EW} = \bigotimes_{k=2,3,4} e_{\rm sym}^{(T(2,2k))}$
+ is the EW symmetric-channel projector
+ (weak spectral completeness [planned, not yet authored]).
+ The closed form falls out of the categorical Higgs idempotent
+ composition without ansatz-fitting.
 
 2. **U2 (force-carrier knot/link dichotomy)**: the broken-direction
-   subspace $(1 - e_H) \cdot \mathrm{End}(A) \cdot (1 - e_H)$ is
-   3-dimensional, matching the 3 broken gauge generators that
-   couple to 2-component links. The 1-dimensional unbroken
-   direction $e_H \cdot \mathrm{End}(A) \cdot e_H$ couples to the
-   1-component knot (the photon in the EM sector)
-   (force-carrier knot/link dichotomy [planned, not yet authored]).
+ subspace $(1 - e_H) \cdot \mathrm{End}(A) \cdot (1 - e_H)$ is
+ 3-dimensional, matching the 3 broken gauge generators that
+ couple to 2-component links. The 1-dimensional unbroken
+ direction $e_H \cdot \mathrm{End}(A) \cdot e_H$ couples to the
+ 1-component knot (the photon in the EM sector)
+ (force-carrier knot/link dichotomy [planned, not yet authored]).
 
 3. **U4 (electroweak mass-eigenstate count)**: the 3 distinct
-   masses $\{m_W, m_Z, m_H\}$ are the 3 distinct eigenvalues of
-   the mass operator on $(1 - e_H) \cdot \mathrm{End}(A) \cdot
+ masses $\{m_W, m_Z, m_H\}$ are the 3 distinct eigenvalues of
+ the mass operator on $(1 - e_H) \cdot \mathrm{End}(A) \cdot
    (1 - e_H)$
-   (EW mass eigenstate count [planned, not yet authored]).
+ (EW mass eigenstate count [planned, not yet authored]).
 
 4. **HIGGS-SLOT** (PR #513/#514): the Higgs scalar lives on the
-   single residual direction in $(1 - e_H) \cdot \mathrm{End}(A) \cdot
+ single residual direction in $(1 - e_H) \cdot \mathrm{End}(A) \cdot
    (1 - e_H)$ orthogonal to the 3 broken-gauge directions — a
-   **scalar slot** distinct from the W$\pm$, Z vector slots. This
-   resolves the −11.4% deficit found by PR #513 testing
-   $m_H \propto \mathrm{tr}_M(T(2,8))$: the Higgs scalar is NOT
-   a torus link in the same family as W$\pm$, Z; its categorical
-   slot is the residual scalar of the symmetry-broken doublet.
+ **scalar slot** distinct from the W$\pm$, Z vector slots. This
+ resolves the −11.4% deficit found by PR #513 testing
+ $m_H \propto \mathrm{tr}_M(T(2,8))$: the Higgs scalar is NOT
+ a torus link in the same family as W$\pm$, Z; its categorical
+ slot is the residual scalar of the symmetry-broken doublet.
 
 ### Construction sketch
 
@@ -102,7 +102,7 @@ $$
 where the first summand has $Q = +1$ (charged Higgs) and the
 second has $Q = 0$ (neutral Higgs). The vacuum value
 $\langle\Phi\rangle$ singles out the neutral $Q = 0$ direction.
-The unbroken $\mathrm{U}(1)_{em}$ acts trivially on
+The unbroken $\mathrm{U}(1)_{em}$ acts as the identity on
 $\langle\Phi\rangle$, so the projector
 
 $$
@@ -126,13 +126,13 @@ a derivation rigorous enough to *compute*
 $\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ at $q_0$ requires:
 
 1. Explicit construction of $G$-action on the
-   [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) at
-   the categorical level (currently axiomatic).
+ [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) at
+ the categorical level (currently axiomatic).
 2. Concrete identification of $\langle\Phi\rangle$ as a specific
-   morphism $\mathbf{1} \to A$ (vortex morphism per
-   [mass identity](#def:mass-identity)).
+ morphism $\mathbf{1} \to A$ (vortex morphism per
+ [mass identity](#def:mass-identity)).
 3. Composition with the EW symmetric-channel projector
-   $e_{\rm sym}^{\rm EW}$ + Frobenius trace evaluation.
+ $e_{\rm sym}^{\rm EW}$ + Frobenius trace evaluation.
 
 **Empirical anchor for verification**: when the derivation is
 complete, $\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$

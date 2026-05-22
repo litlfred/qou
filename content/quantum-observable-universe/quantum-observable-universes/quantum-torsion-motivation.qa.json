@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/quantum-observable-universes/quantum-torsion-motivation.md"
   },
   "source_hashes": {
-    "md": "c8d65d165652",
+    "md": "5767b530e876",
     "ts": "d2fb13a5bba6"
   },
   "criteria": {
@@ -359,19 +359,19 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "c8d65d165652",
+          "md": "5767b530e876",
           "ts": "d2fb13a5bba6"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "minor",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/quantum-torsion-motivation.md:38: cover $\\mathrm{SU}(2) \\to \\mathrm{SO}(3)$ is thus not merely a"
+        "reviewed_at": "2026-05-22T20:29:01.274Z",
+        "reviewed_sha": "b9ed8b786e361210b7e9a2e678eb0cdc177dab8d"
       }
     ],
     "voice-scholarly-default": [
@@ -473,5 +473,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-20T17:52:35.574Z"
+  "updated_at": "2026-05-22T20:29:01.274Z"
 }

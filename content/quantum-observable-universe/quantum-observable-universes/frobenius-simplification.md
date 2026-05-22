@@ -55,12 +55,12 @@ conditions of [$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observabl
 reduce to a triple:
 
 1. a CR manifold $(M, \varTheta)$ of hypersurface type with
-   non-degenerate Levi form;
+ non-degenerate Levi form;
 2. a non-degenerate Frobenius--Hopf object $A$ in the monoidal
-   category of vector bundles over $M$, playing the role of
-   $(G, \mathcal{S})$; and
+ category of vector bundles over $M$, playing the role of
+ $(G, \mathcal{S})$; and
 3. an instanton connection on the underlying $A$-bundle
-   ([instanton](#def:categorical-instanton)).
+ ([instanton](#def:categorical-instanton)).
 
 The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
 the non-degeneracy of the Frobenius form $\int_A$ via the diagram
@@ -85,7 +85,7 @@ the non-degeneracy of the Frobenius form $\int_A$ via the diagram
 
 The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
 [Frobenius pairing](#def:frobenius-pairing) from $\int_A$; any global parallel section would
-pair non-trivially with itself, contradicting the irreducibility of
+pair non-by definition with itself, contradicting the irreducibility of
 the instanton connection
 ([irreducible connection](#ex:irreducible-connection)). Hence the Frobenius
 non-degeneracy, combined with irreducibility, forces
