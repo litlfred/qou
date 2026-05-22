@@ -93,7 +93,7 @@ theorem fullTwist_iter_neutral
       rw [pow_succ, mul_assoc, c.neutrality_left]
       exact ih
 
-/-- Right-iteration analogue of `fullTwist_iter_neutral`:
+/-- The right-iteration analogue of `fullTwist_iter_neutral`:
     `Φ_n · fullTwist^k = Φ_n` for any `k : ℕ`. Proves directly by
     induction using `neutrality_right`, mirroring the left-side
     proof. -/

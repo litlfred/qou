@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "2a1927800384",
     "ts": "7b5db92f2a09",
-    "lean": "1e02c55be29d"
+    "lean": "9ccc4ddf8f36"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -444,9 +444,9 @@
         "field_hash": {
           "md": "2a1927800384",
           "ts": "7b5db92f2a09",
-          "lean": "1e02c55be29d"
+          "lean": "9ccc4ddf8f36"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -454,10 +454,8 @@
           "script_hash": "5650958b9f3a",
           "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-22T20:59:31.864Z",
-        "reviewed_sha": "2cdada401e638187079cdcb5539602d280eaac65",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/confinement-category.lean:77: Right-identity law: `ConfComp f (ConfId P) = f` for every `f`."
+        "reviewed_at": "2026-05-22T21:33:59.692Z",
+        "reviewed_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
       }
     ],
     "voice-ai-slop": [
@@ -580,5 +578,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-22T20:59:31.864Z"
+  "updated_at": "2026-05-22T21:33:59.692Z"
 }

@@ -354,8 +354,8 @@ canonical-atom Markov trace to a single closed form:
    from the Markov axiom + Hecke skein
    ([`prop:interface-knot-markov-z`](#prop\:interface-knot-markov-z)).
 2. **Vacuum factor (exact)**, $\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) = \mathrm{tr}_M^3(\mathcal{B}_p)^Z \cdot \mathrm{tr}_M^3(\mathcal{B}_n)^N$,
-   from Wenzl's disjoint Markov-trace multiplicativity ([wenzl1988] §1.7),
-   so the per-Z step on the constit side reduces to
+   from Wenzl's disjoint Markov-trace multiplicativity ([wenzl1988] §1.7);
+   the per-Z step on the constit side then reduces to
    $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$
    ([`prop:constit-factor-tau-M-proton-identity`](#prop\:constit-factor-tau-M-proton-identity)).
 

@@ -64,7 +64,7 @@ structure MainCommutativeDiagram where
   parallel_transport : sectionValue = schrodingerValue
   /-- Left arrow: q-linearisation of jet data gives sections. -/
   q_linearisation : sectionValue = (1 - q⁻¹) * jetValue
-  /-- Right arrow: classical limit q → 1 recovers Einstein. -/
+  /-- The right arrow: classical limit q → 1 recovers Einstein. -/
   /-- The diagram commutes: all four paths give the same result. -/
   commutativity :
     (1 - q⁻¹) * einsteinValue = schrodingerValue
