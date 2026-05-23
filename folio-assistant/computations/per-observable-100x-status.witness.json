@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T21:21:14.645324+00:00",
-  "commitSha": "66bdbb15380ed69c9e20d8d58fc5b6c8078ddf96",
+  "computedAt": "2026-05-23T21:28:28.202175+00:00",
+  "commitSha": "69ee3f4da14ce0e3a45d0f65123c036162a3bc25",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "492e5fc8aecd",
+  "scriptHash": "38cec3e2ec12",
   "scriptCommitSha": "acffed9479dd85c87ebf8276041d48aae13086ce",
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
@@ -85,16 +85,16 @@
       {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
-        "pred_MeV": "0.782333418708",
+        "pred_MeV": "0.782333414043",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "11.13",
+        "err_ppb": "5.168",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "1.428",
+        "miss_factor": "0.6628",
         "beats_1x_experimental": true,
-        "beats_100x_experimental": false,
-        "source_witness": "q-beta-operator-valued-N3.witness.json (N=3 categorical, c_3 = -2 = J_Hopf(q=1))",
+        "beats_100x_experimental": true,
+        "source_witness": "q-beta-operator-valued-N3.witness.json (N=4 categorical, c_3 = -2, c_4 = c_3·b⁴ per precision-ladder.md)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)"
       },
       {
@@ -117,7 +117,7 @@
     "summary": {
       "total": 6,
       "beats_1x_count": 3,
-      "beats_100x_count": 1
+      "beats_100x_count": 2
     },
     "upstream_witness_hashes": [
       {
