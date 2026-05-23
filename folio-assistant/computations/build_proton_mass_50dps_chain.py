@@ -137,7 +137,10 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # did, but it is the categorical truth as established to date.
 # The Bring–Bloch path (`conj:lambda-scale-bring-bloch-identity`)
 # remains the open R&D direction for closing m_p to ppb.
-LAMBDA_SCALE_SUBSTRATE_FORM = mp.mpf(5) / 2 + mp.mpf(3) * _H**2 / 4
+# Single source of truth: `_li_2_q_util.lambda_scale_family_a`
+# (Gemini PR #942 review — centralize the Family A formula).
+from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
+LAMBDA_SCALE_SUBSTRATE_FORM = _lambda_scale_family_a(_Q_0)
 
 # Empirical legacy (falsified, retained for the comparison column
 # in the audit witness).  Removing it in a follow-up commit once
