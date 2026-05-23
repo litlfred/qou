@@ -37,9 +37,12 @@ Faddeev's Φ_q acts on a matrix `M` by spectral functional calculus:
   Φ_q(M) = ∑_i Φ_q(λ_i) · |i⟩⟨i|         (M diagonalisable)
 
 For finite N and |q| > 1, Φ_q(λ) = ∏_{j=1..K} (1 - q^(-j) λ)^(-1)
-converges fast (K = 200 plenty at q_0 ≈ 1.11). V is nilpotent,
-spectrum {0}, so Φ_q(V) = (I - q^(-1) V)^(-1) · (I - q^(-2) V)^(-1) · …
-which truncates exactly at K = N (nilpotency).
+converges fast (K = 200 plenty at q_0 ≈ 1.11). V is nilpotent
+(spectrum {0}, V^N = 0), so each *factor* (I − q^(-j) V)^(-1)
+truncates exactly: the geometric series I + (q^(-j) V) + … has at
+most N nonzero terms by V's nilpotency. The *outer* product over
+j ≥ 1 is still infinite, and the K = 200 cutoff is justified by
+|q^(-K)| ≪ 10^(-50) (convergence-based, not algebraic).
 
 We probe:
 
@@ -190,7 +193,11 @@ def phi_q_general(M, qi, K=200):
         if matnorm(M_pow) < mp.mpf(10) ** (-mp.mp.dps - 5):
             break
         M_powers.append(M_pow)
-    is_nilpotent = (len(M_powers) <= n)  # always true here since loop bound = n
+    # `is_nilpotent` is True iff some power M^p (p ≤ n) had norm below
+    # the precision threshold, terminating the loop early. If the loop
+    # ran to completion without M^p vanishing, len(M_powers) == n+1
+    # and `is_nilpotent` is False, triggering the general inverse path.
+    is_nilpotent = (len(M_powers) <= n)
     if is_nilpotent:
         # (I - α M)^(-1) = ∑_{p=0}^{len(M_powers)-1} α^p M^p
         result = I.copy()
@@ -226,7 +233,10 @@ def main():
 
     Q0 = mp.mpf(Q_50_DIGIT_STR)
     Qi = 1 / Q0
-    lambda_p = mp.mpf("2.4599527869")
+    # CODATA-implied λ_p target — matches the value used in
+    # bring_bloch_tier{0..5}_search scripts (single source of truth).
+    # Has ~31 significant digits, well above the 1e-9 ppb cutoff.
+    lambda_p = mp.mpf("2.4599527843613182892482457339493")
 
     N = 16  # Hilbert-space dim
     K_phi = 200  # Φ_q truncation
@@ -277,9 +287,14 @@ def main():
     RHS_inner = matmul(PhiUV, PhiU)
     RHS = matmul(PhiV, RHS_inner)
     pent_diff_full = matnorm(LHS - RHS)
+    # Open block = exclude the truncation boundary column (k = N-1),
+    # matching the q-Heisenberg open-block convention above. Note this
+    # is an absolute-norm check; entries grow with k since Φ_q(h_q·q^(2k))
+    # is large at high k, so this norm is dominated by row N-2 / col N-2
+    # entries — see audit doc § Known issues for the limitation.
     pent_diff_open = mp.mpf(0)
-    for i in range(N - 2):
-        for j in range(N - 2):
+    for i in range(N):
+        for j in range(N - 1):
             d = LHS[i, j] - RHS[i, j]
             pent_diff_open += abs(d) ** 2
     pent_diff_open = mp.sqrt(pent_diff_open)
@@ -401,13 +416,15 @@ def main():
     w.set_description(
         "Spike: operator-theoretic Faddeev pentagon route to "
         f"λ_scale. N={N}-dim truncated Heisenberg rep with "
-        "U = diag(q^(2k)), V = strict upper-shift; satisfies "
-        "U·V = q²·V·U on the open block. Computes Φ_q(U), Φ_q(V), "
-        "Φ_q(U·V) via spectral / nilpotent calculus, verifies the "
-        "pentagon identity Φ_q(U)Φ_q(V) = Φ_q(V)Φ_q(U·V)Φ_q(U) on "
-        "the open block, then probes a substrate-natural family of "
-        "scalar invariants (diagonal matrix elements, traces, "
-        "ratios) for ppb-precision matches to λ_p ≈ 2.4599527869. "
+        "U = h_q · diag(q^(2k)), V = strict upper-shift; satisfies "
+        "U·V = q²·V·U on the open block (verified to ~10⁻⁵⁰). "
+        "Computes Φ_q(U), Φ_q(V), Φ_q(U·V) via spectral / nilpotent "
+        "calculus, records the pentagon-identity matrix-norm residual "
+        "(reported absolute; large due to high-eigenvalue entries — "
+        "the (0,0) entries agree to 10 digits, see audit doc § Known "
+        "issues), then probes a substrate-natural family of scalar "
+        "invariants (diagonal matrix elements, traces, ratios) for "
+        "ppb-precision matches to λ_p = 2.4599527843613… (CODATA). "
         "Companion to PR #923/#928/#941 cumulative CAL-4 audit — "
         "operator-theoretic route is the hardest of the four "
         "structurally-distinct paths."
