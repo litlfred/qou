@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T21:31:57.068085+00:00",
-  "commitSha": "2e774c84e56131bf9828fabd49436b75c7fc49b5",
+  "computedAt": "2026-05-23T12:10:47.136416+00:00",
+  "commitSha": "deeded5c1211190c4233a4745b8522ae6c6bc3ac",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "a15808a316f9",
@@ -23,7 +23,7 @@
   "data": {
     "total_issues": 0,
     "flagged_script_count": 0,
-    "scripts_scanned": 677,
+    "scripts_scanned": 714,
     "rows": []
   }
 }
