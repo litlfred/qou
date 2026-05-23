@@ -554,11 +554,45 @@ from F/G/H/I/K.
   Strategy G).
 - **Markov-trace identity on β_Bor:** CLOSED-NEGATIVE (this
   PR's Strategy F).
+- **q-locality test on all four prior near-matches**
+  (commit `c18e562b9` on main, 2026-05-23): **0 / 4 survive.**
+  Slope of residual vs q at substrate-window q_0 ± ε:
+
+  | candidate | slope (ppm/q) | smooth? | substrate-q_0 coincidence? |
+  |---|---:|---|---|
+  | `1/(1 − h_q · q_0^{10})` (PR #943) | −1.5×10⁷ | no | YES |
+  | `5/2 − h_q²·G` (numerology) | −1.7×10⁷ | no | YES |
+  | **V_7 = (Σ dim_q V_λ) / [4]_q** (this PR Strategy H) | **−1.86×10⁷** | **no** | **YES** |
+  | **5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})** (this PR Strategy G) | **−1.69×10⁷** | **no** | **YES** |
+
+  All four are zero-crossings of curves with slopes ~10⁷ ppm/q
+  across the substrate window. Per the standing discipline that
+  "q_0 is not special, just where we happen to be", **none is a
+  categorical identity** — all four are substrate-q_0 coincidences.
+  The cluster has added an "Empirical-exhaustion update 2026-05-23"
+  banner to
+  [`prop:lambda-scale-bring-bloch-identity`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md)
+  documenting six independent searches all returning negative.
+- **Updated reclassification for this PR's findings:**
+  - Strategy G's `5/2 − ℏ_q² · ⟨𝓑_3⟩(q_0^{1/2})` at 165 ppm:
+    confirmed coincidence-basin (slope test fails).
+  - Strategy H V_7 = Σ dim_q V_λ / [4]_q at 0.144 %: confirmed
+    coincidence-basin (slope test fails).
+  - The d348ad8c "Bring color-tube backing for n=10" elevation
+    (earlier sections of this brief, commit `dccf0f75`): the
+    q^10 selectivity has been re-verified as a substrate-q_0
+    coincidence by commit `c1dca4d73` (q-locality slope
+    −1.5×10⁷ ppm/q). The Bring-color-tube-categorical-backing
+    framing has been retired by the cluster; the n=10 specific
+    power is now a zero-crossing structural artifact.
 
 **Implication.** The 3 % CODATA gap on m_p is **not** closeable
-by any substrate-natural basis tested through 2026-05-22. The
-remaining open directions all require ENLARGING the search
-basis beyond what's been tried:
+by any substrate-natural basis tested through 2026-05-23. **All
+four known near-matches fail the q-locality discipline.** The
+remaining open directions all require ENLARGING the search basis
+beyond what's been tried — AND the candidates must pass q-locality
+(smooth slope across q_0 ± ε), not just match at the substrate
+point:
 
   1. **q-dilog Tier 1+ extensions** (per `af2d27ee` audit
      §Recommendation): the operator-valued spectral coordinates

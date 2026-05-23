@@ -50,6 +50,21 @@ $\hat{\mathcal{O}}(q_0) \in \mathbb{Z}[q_0^{\pm 1/2}]$ per
 Anything else is a discipline violation — either a hidden fourth
 calibration, a numerology, or a fit dressed as a derivation.
 
+### Sibling skill: `production-vs-exploratory-discipline`
+
+When this watcher flags a CAL-4 candidate, the resolution path is
+through
+[`local/production-vs-exploratory-discipline`](production-vs-exploratory-discipline.md):
+- 3-category classification (production / exploratory / numerology)
+- 13-driver canonical menu for production coefficients
+- Rule 14 (off-menu coefficients escalate to author)
+- q-locality gate (mandatory pre-flight: slope < 10² ppm/q vs
+  q_0 ± 0.05 substrate window)
+- Pre-promotion 7-step checklist before any production adoption
+
+This watcher catches violations post-hoc; the discipline skill
+defines the rule it enforces.
+
 ### Three categorically allowed calibrations
 
 | ID | Quantity | (Co)homology | Wedderburn block | What it fixes |
