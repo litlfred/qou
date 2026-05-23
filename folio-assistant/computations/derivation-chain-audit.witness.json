@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T20:09:05.928728+00:00",
-  "commitSha": "56f9e606ef3715f8e087067019d5f8e8ab559772",
+  "computedAt": "2026-05-23T20:09:11.009167+00:00",
+  "commitSha": "a7cecfc2febbb0c218e9457c22cbc7c5c5a34856",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2341,6 +2341,7 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
+        "e0-calibration-audit.witness.json",
         "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",

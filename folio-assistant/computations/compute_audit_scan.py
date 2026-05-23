@@ -87,6 +87,7 @@ P31_ALLOWLIST = {
     "build_codata_2022_validation_masses_witness.py",
     "build_cal_3_q_beta_witness.py",
     # Other registry / re-export sources of truth.
+    "codata_2022_source.py",             # vendored CODATA registry module
     "codata_masses.py",                  # re-exports CODATA → witness
     "q_parameter.py",                    # CAL-2 substrate-parameter source
     "q_pinning_50_digit.py",             # CAL-2 50-dps substrate source

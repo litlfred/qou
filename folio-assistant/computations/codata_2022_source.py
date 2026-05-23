@@ -24,8 +24,8 @@ Per CLAUDE.md §"Precision goals" and `codata_constants.py`'s
 documentation: only `m_e`, `m_μ/m_e`, `Q_β` are LEGITIMATE
 calibration inputs (CAL-1, CAL-2, CAL-3).  All other CODATA
 constants are VALIDATION-ONLY (used to compare against framework
-predictions).  This module preserves that distinction via the
-`role` field on each constant.
+predictions).  This module preserves that distinction in each
+constant's docstring and export naming.
 
 ## Two-value subtleties
 
@@ -36,7 +36,7 @@ within their mutual uncertainties.  The most important:
   1. CODATA-2022 direct measurement: **939.56542194(48) MeV**
   2. AME-2020 derived from `m_p + m_e + Q_β`: **939.56542052(60) MeV**
 
-  These differ by 1.4 × 10⁻⁷ MeV (151 ppb), within mutual σ.  The
+  These differ by 1.42 × 10⁻⁶ MeV (~1.5 ppb), within mutual σ.  The
   repo's existing `codata_constants.M_N_MEV` is option (2) (AME-
   derived).  This module exposes BOTH and the caller picks.
 """
@@ -59,9 +59,17 @@ VENDORED_SNAPSHOT_DATE = "2026-05-23"
 """When this module's literals were verified against the NIST source."""
 
 
+# ── Precision-safe literal loader ───────────────────────────────────
+
+def _load_mpf(literal: str) -> _mp.mpf:
+    """Parse a decimal literal at ≥50 dps regardless of caller state."""
+    with _mp.workdps(max(50, _mp.mp.dps)):
+        return +_mp.mpf(literal)
+
+
 # ── Electron mass ───────────────────────────────────────────────────
 
-M_E_MEV = _mp.mpf("0.51099895069")
+M_E_MEV = _load_mpf("0.51099895069")
 """Electron mass · c² (MeV).
 
 CODATA-2022: 0.51099895069(15) MeV — σ ≈ 0.29 ppb.
@@ -75,13 +83,13 @@ Note: existing `codata_constants.M_E_MEV` truncates this to
 redefine M_E_MEV at the full 11 sig figs.  This module is the
 single source of truth.
 """
-M_E_MEV_ERR = _mp.mpf("0.00000000015")
+M_E_MEV_ERR = _load_mpf("0.00000000015")
 """1σ uncertainty on M_E_MEV.  σ ≈ 0.29 ppb."""
 
 
 # ── Proton mass ─────────────────────────────────────────────────────
 
-M_P_MEV = _mp.mpf("938.27208816")
+M_P_MEV = _load_mpf("938.27208816")
 """Proton mass · c² (MeV).
 
 CODATA-2022: 938.27208816(29) MeV — σ ≈ 0.31 ppb.
@@ -89,13 +97,13 @@ CODATA-2022: 938.27208816(29) MeV — σ ≈ 0.31 ppb.
 Role: **VALIDATION** anchor (not a calibration input to the
 framework; framework predicts m_p categorically).
 """
-M_P_MEV_ERR = _mp.mpf("0.00000029")
+M_P_MEV_ERR = _load_mpf("0.00000029")
 """1σ uncertainty on M_P_MEV.  σ ≈ 0.31 ppb."""
 
 
 # ── Neutron mass — two competing authoritative values ──────────────
 
-M_N_MEV_CODATA_DIRECT = _mp.mpf("939.56542194")
+M_N_MEV_CODATA_DIRECT = _load_mpf("939.56542194")
 """Neutron mass · c² (MeV) — **CODATA-2022 direct measurement**.
 
 939.56542194(48) MeV — σ ≈ 0.51 ppb.
@@ -103,9 +111,9 @@ M_N_MEV_CODATA_DIRECT = _mp.mpf("939.56542194")
 This is the CODATA recommended value, derived from a global
 adjustment of fundamental constants.
 """
-M_N_MEV_CODATA_DIRECT_ERR = _mp.mpf("0.00000048")
+M_N_MEV_CODATA_DIRECT_ERR = _load_mpf("0.00000048")
 
-M_N_MEV_AME_DERIVED = _mp.mpf("939.56542052")
+M_N_MEV_AME_DERIVED = _load_mpf("939.56542052")
 """Neutron mass · c² (MeV) — **AME-2020 derived from m_p + m_e + Q_β**.
 
 939.56542052(60) MeV — σ ≈ 0.64 ppb.
@@ -114,12 +122,12 @@ This is what `codata_constants.M_N_MEV` currently stores.  It is
 algebraically `M_P_MEV + M_E_MEV + Q_BETA_MEV` (where Q_β is the
 AME-2020 neutron decay Q-value).
 
-**The two values disagree by ~151 ppb**, within their mutual
+**The two values disagree by ~1.5 ppb**, within their mutual
 uncertainties.  Choosing one over the other affects:
 - Q_β consistency (AME-derived path is consistent by construction)
 - Direct comparison against absolute m_n measurements
 """
-M_N_MEV_AME_DERIVED_ERR = _mp.mpf("0.00000060")
+M_N_MEV_AME_DERIVED_ERR = _load_mpf("0.00000060")
 
 M_N_MEV = M_N_MEV_AME_DERIVED
 """Repo's de facto choice for m_n (back-compat with codata_constants).
@@ -129,23 +137,23 @@ M_N_MEV_ERR = M_N_MEV_AME_DERIVED_ERR
 
 # ── Muon mass + ratio ──────────────────────────────────────────────
 
-M_MU_MEV = _mp.mpf("105.6583755")
+M_MU_MEV = _load_mpf("105.6583755")
 """Muon mass · c² (MeV).  CODATA-2022: 105.6583755(23) MeV.
 σ ≈ 22 ppb."""
-M_MU_MEV_ERR = _mp.mpf("0.0000023")
+M_MU_MEV_ERR = _load_mpf("0.0000023")
 
-M_MU_OVER_M_E = _mp.mpf("206.7682830")
+M_MU_OVER_M_E = _load_mpf("206.7682830")
 """Muon-to-electron mass ratio.  CODATA-2022: 206.7682830(46).
 σ ≈ 22 ppb.
 
 Role: **CAL-2 anchor** — second framework calibration input.
 """
-M_MU_OVER_M_E_ERR = _mp.mpf("0.0000046")
+M_MU_OVER_M_E_ERR = _load_mpf("0.0000046")
 
 
 # ── Neutron decay Q-value ──────────────────────────────────────────
 
-Q_BETA_MEV_AME = _mp.mpf("0.78233341")
+Q_BETA_MEV_AME = _load_mpf("0.78233341")
 """Neutron β-decay Q-value (MeV) — **AME-2020 direct measurement**.
 
 0.78233341(61) MeV — σ ≈ 779.7 ppb (large because of mass-difference
@@ -156,7 +164,7 @@ Role: **CAL-3 anchor** — third framework calibration input.
 This is what `cal-3-q-beta.witness.json` carries.  Stored at the
 σ-limited precision (8 sig figs after decimal).
 """
-Q_BETA_MEV_AME_ERR = _mp.mpf("0.00000061")
+Q_BETA_MEV_AME_ERR = _load_mpf("0.00000061")
 
 Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = (
     M_N_MEV_CODATA_DIRECT - M_P_MEV - M_E_MEV
@@ -212,14 +220,14 @@ def summary() -> dict:
                 str(M_N_MEV_CODATA_DIRECT - M_N_MEV_AME_DERIVED),
             "m_n_CODATA_vs_AME_diff_ppb": str(
                 (M_N_MEV_CODATA_DIRECT - M_N_MEV_AME_DERIVED)
-                / M_N_MEV_AME_DERIVED * _mp.mpf("1e9")
+                / M_N_MEV_AME_DERIVED * _load_mpf("1e9")
             ),
             "Q_beta_AME_vs_derived_from_AME_diff_MeV": str(
                 Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_AME
             ),
             "Q_beta_AME_vs_derived_from_AME_diff_ppb": str(
                 (Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_AME)
-                / Q_BETA_MEV_AME * _mp.mpf("1e9")
+                / Q_BETA_MEV_AME * _load_mpf("1e9")
             ),
             "Q_beta_AME_vs_derived_from_CODATA_direct_diff_MeV": str(
                 Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT
@@ -243,4 +251,3 @@ __all__ = [
     "Q_BETA_MEV_DERIVED_FROM_AME",
     "summary",
 ]
-
