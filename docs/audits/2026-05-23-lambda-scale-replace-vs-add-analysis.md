@@ -46,7 +46,7 @@ Two reconciliations are possible:
 
 | reconciliation | implication |
 |---|---|
-| **(a) The 1.7 ppt match between residual and `+3/4·h²` is itself coincidental.** Strategy I's bijection, if proved, gives 2.22× closure; the remaining 1.33 % requires a *third*, independent correction whose value happens to be near `+3/4·h²`. | Strategy I bijection + a yet-unidentified third correction (Strategy K, deeper Yekutieli, or other). |
+| **(a) The ~316 ppm match between residual and `+3/4·h²` is itself coincidental.** Strategy I's bijection, if proved, gives 2.22× closure; the remaining 1.33 % requires a *third*, independent correction whose value happens to be near `+3/4·h²`. | Strategy I bijection + a yet-unidentified third correction (Strategy K, deeper Yekutieli, or other). |
 | **(b) Family A's contribution to the m_p formula is structurally absent — the Yekutieli correction is the *whole* λ_scale, not an addition.** The 1.33 % "residual" is the wedge between an ADD reading that incorrectly includes Family A and a REPLACE reading that doesn't. | The falsified `5/2 − G·h²` form is *empirically* closer because the m_p formula's λ_scale was never `(1/4)·Σ dim_q V_λ` to begin with. The Family A object is mathematically valid but answers a different question. |
 
 The 2026-05-18 falsification ruled out (b) on **structural** grounds (no categorical derivation gives `−G·h²` directly from H_4 Wedderburn data). But it did not test (a) — whether some *other* substrate term gives the `+3/4·h²` residual after Strategy I lands. This is a fresh subquestion.
@@ -55,7 +55,7 @@ The 2026-05-18 falsification ruled out (b) on **structural** grounds (no categor
 
 | tier | basis size | hyperbolic knots in basis | relation_found | witness |
 |---:|---:|---|:-:|---|
-| 0 | small | — | False | `bring-bloch-tier0-search.witness.json` |
+| 0 | small | — | False | `bring-bloch-tier0-search-m-p.witness.json` |
 | 1 | small | hyperbolic knots ≤ 8 cr. | False | |
 | 2 | 33 | + 9-crossing prime hyperbolic | False | |
 | 3 | 33 | + targeted entries | False | |
