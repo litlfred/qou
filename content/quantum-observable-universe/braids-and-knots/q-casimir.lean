@@ -487,7 +487,7 @@ theorem q_cubed_minus_q (qs : QuantumSu2) (d : QCasimirData qs) :
         = qs.q * (qs.q * d.qInv) := by rw [mul_assoc]
       _ = qs.q * 1 := by rw [d.qInv_right]
       _ = qs.q := mul_one _
-  linarith [h.symm, mul_sub (qs.q * qs.q) qs.q d.qInv]
+  linear_combination -h
 
 /-- `q⁻³ - q⁻¹ = -(q⁻² · (q - q⁻¹))`: mirror of `q_cubed_minus_q`. -/
 -- Ref: [kassel1995]
@@ -498,7 +498,7 @@ theorem qInv_cubed_minus_qInv (qs : QuantumSu2) (d : QCasimirData qs) :
         = d.qInv * (d.qInv * qs.q) := by rw [mul_assoc]
       _ = d.qInv * 1 := by rw [d.qInv_left]
       _ = d.qInv := mul_one _
-  linarith [h.symm, mul_sub (d.qInv * d.qInv) qs.q d.qInv]
+  linear_combination h
 
 /-! ### E-centrality -/
 

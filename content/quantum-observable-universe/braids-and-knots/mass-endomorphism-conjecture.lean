@@ -124,8 +124,9 @@ theorem transient_nonneg {R : Type*} [OrderedRing R] (β : Type*)
     [M : MassEndomorphism R β]
     (h : M.tr_descended ≤ M.vol_identity) :
     0 ≤ M.tr_transient := by
-  have := M.vol_eq
-  linarith
+  have hrw : M.tr_transient = M.vol_identity - M.tr_descended := by
+    linear_combination -M.vol_eq
+  rw [hrw]; exact sub_nonneg.mpr h
 
 /-- **In the flat case (tr_transient = 0), fullMass equals the descended part.**
 
@@ -155,8 +156,7 @@ theorem mass_decomposition {R : Type*} [CommRing R] (β : Type*)
 theorem descended_eq_vol_minus_transient {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] :
     M.tr_descended = M.vol_identity - M.tr_transient := by
-  have := M.vol_eq
-  linarith
+  linear_combination M.vol_eq
 
 /-- **Mass is positive when vol_identity > 0 and tr_descended ≥ 0.**
 
