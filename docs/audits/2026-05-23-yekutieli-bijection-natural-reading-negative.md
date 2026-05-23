@@ -135,3 +135,172 @@ framing this audit warns against.
 
 - [`folio-assistant/computations/yekutieli_bijection_construction_h4.py`](../../folio-assistant/computations/yekutieli_bijection_construction_h4.py) — bijection construction attempt
 - [`folio-assistant/computations/yekutieli-bijection-construction-h4.witness.json`](../../folio-assistant/computations/yekutieli-bijection-construction-h4.witness.json) — emitted witness
+
+## Addendum: Yekutieli under the upstream q-locality gate
+
+The upstream q-locality discipline (commit `1a29b209b` on main, 2026-05-23,
+[`docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md`](../agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md))
+retired 4 of 4 near-match λ candidates by measuring the slope of
+`(λ_candidate(q) − λ_p_codata(q)) / λ_p_codata(q)` (ppm) across
+`q ∈ [q_0 − 0.01, q_0 + 0.01]`. Candidates with slope > 10⁵ ppm/q
+are classified as substrate-q_0 coincidences.
+
+Applied to my Yekutieli prediction:
+
+| Candidate                  | λ at q_0    | err at q_0 (ppm) | slope (ppm/q) |
+|----------------------------|------------:|-----------------:|--------------:|
+| Family A (production)      | 2.532779663 |        +29 604.99|      −1.69×10⁷|
+| Yekutieli (PR #976)        | 2.492746271 |        +13 330.94|      −1.69×10⁷|
+| closure-target λ_p_codata  | 2.459952788 |               0  |             0 |
+
+**Both Family A AND Yekutieli have identical slopes of ≈ −1.69×10⁷
+ppm/q** — and so do the 4 already-retired candidates.
+
+Investigation: the slope is dominated by `d(λ_p_codata)/dq` =
+`M_p/m_e · 2ℏ_q · (1/q²) / (8G)` ≈ 40 per unit q (in λ units),
+which translates to ~1.6×10⁷ ppm/q via the `1e6 / λ_p_codata`
+normalisation. ANY substrate-natural λ_scale with bounded
+h-expansion has this slope — because λ_p_codata itself changes
+rapidly via the ℏ_q² prefactor.
+
+The only way to get slope = 0 is to set
+`λ_candidate(q) = M_p/m_e · ℏ_q²(q) / (8G)` exactly — which is
+the trivial-tautology choice (CODATA-implied function-form λ).
+
+**Implication for the q-locality discipline:** the threshold of
+10⁵ ppm/q would retire EVERY non-trivial λ candidate including
+Family A. Either the discipline only applies to "candidates"
+(not to PROVED structural identities) — in which case it doesn't
+discriminate Yekutieli from Family A here — or it needs a
+different metric (e.g. curvature instead of slope; or slope of
+the m_p PREDICTION relative to some other anchor).
+
+**Net effect on Yekutieli's status:** unchanged by the q-locality
+gate. The natural-reading partition-combinatorics NEGATIVE finding
+(above) remains the primary reason to reclassify the 950 MeV
+prediction as "empirical match awaiting categorical backing".
+
+The q-locality discipline as currently formulated is symmetric on
+Family A vs Yekutieli — both are equally "non-q-local" in the
+upstream slope metric. So either:
+
+1. The discipline's threshold should be raised to >10⁷ ppm/q
+   (which would mean ALL structural candidates pass, the test
+   doesn't discriminate);
+2. The discipline should be reformulated (e.g. slope of *residual
+   in m_p prediction* normalised against the prefactor's natural
+   slope, isolating the λ-curvature contribution);
+3. The discipline should be applied only to "near-match" candidates
+   (low err at q_0, like the 4 retired ones with ~5-1000 ppm err)
+   — in which case Family A (29605 ppm err) and Yekutieli (13330
+   ppm err) are not in the test population at all.
+
+Reading (3) is the most consistent with the upstream commit's tally:
+the 4 retired candidates all had small q_0 errors and were elevated
+as "near-matches"; Family A and Yekutieli have order-of-magnitude
+larger errors and are framework predictions (categorical identity
++ proposed substrate extension), not "near-match curve-fits".
+
+Under reading (3), Yekutieli is **not** subject to the q-locality
+retirement — but the natural-reading bijection NEGATIVE remains.
+
+## Addendum 2: Reading A vs Reading B — which one matches CODATA?
+
+The audit `2026-05-22-yekutieli-percell-conjecture-formalized.md`
+identifies two readings of "Yekutieli per-cell curvature contributes
+to λ_scale":
+
+- **Reading A:** `λ = 5/2 − G·h²` (Yekutieli REPLACES Family A's
+  `+(3/4)·h²` term)
+- **Reading B:** `λ = 5/2 + (3/4 − G)·h²` (Yekutieli ADDED to
+  Family A's structural h²)
+
+The audit explicitly chose Reading B per "2026-05-23 user direction:
+add, not replace". PR #976 implements Reading B.
+
+**Empirical comparison against the closure-target:**
+
+Compute what h² coefficient `κ` makes `5/2 + κ·h²` reproduce CODATA
+m_p exactly at q_0:
+
+```
+λ_required = M_p / (m_e · Vol(𝓑_3) / ℏ_q²(q_0))
+           = M_PE · ℏ_q²(q_0) / (8G)
+           = 2.45995278…
+           = 5/2 + κ · h²(q_0)
+           ⇒ κ = (2.45995 − 2.5) / 0.04373…
+           ⇒ κ ≈ −0.9166
+```
+
+This is `≈ −G` (off by 0.07 %). So **Reading A's `5/2 − G·h²`
+matches CODATA almost exactly** at h² truncation; Reading B's
+`5/2 + (3/4 − G)·h² = 5/2 − 0.166·h²` leaves the 1.26 % gap
+because the +3/4 contribution pulls λ above the required value.
+
+| Reading | total h² coeff | λ at q_0 | m_p pred | m_p err |
+|---------|---------------:|---------:|---------:|--------:|
+| Family A only (PROVED)  | +0.75       | 2.5328   | 966.05 MeV | +2.89 % |
+| Reading B (PR #976)     | +(0.75 − G) | 2.4927   | 950.78 MeV | +1.26 % |
+| Reading A (audit-rejected) | −G       | 2.4599   | 938.27 MeV |    0 % |
+| Closure-target          | varies      | 2.45995  | 938.27 MeV |   ≡ 0 |
+
+**Reading A gives exact CODATA match at h² truncation.** The user
+direction "add, not replace" is therefore in tension with the
+numerics. Three possibilities:
+
+1. **Reading A is the correct framing**: a single Yekutieli per-cell
+   curvature contribution `−G·h²` IS the categorical truth at h²
+   order, replacing (not extending) Family A's `+3/4·h²`. The
+   audit's "add, not replace" direction is empirically refuted.
+
+2. **Reading B is correct + another mechanism cancels Family A's
+   `+3/4·h²`**: there's a third categorical contribution `−3/4·h²`
+   that exactly cancels Family A's structural h² term. The
+   framework would then be Family A + this-mystery-term + Yekutieli
+   = 0 + (−G·h²) = −G·h². Same numerical result as Reading A but
+   structurally different.
+
+3. **The numerical match is coincidental** at h² truncation, and
+   the h⁴ and higher corrections (which Family A doesn't have but
+   the closure-target does) distinguish Reading A from the closure-
+   target at higher precision. This would mean Reading A only
+   matches CODATA at h² order, not at h⁴ and beyond.
+
+**Sanity check on possibility (3):** the closure-target's Taylor
+coefficients grow rapidly: c_2 ≈ 62.6, c_4 ≈ −5057, c_6 ≈ 2.9×10⁷.
+But these are coefficients of `λ_p_codata = M_PE·ℏ_q²/(8G)`, which
+has c_2 = M_PE/(32G), NOT the same `c_2 = κ ≈ −0.9166` we'd get
+from `5/2 + κ·h²` matching at q_0. The two "c_2" are different
+expansions:
+
+- closure-target's c_2 of `λ_p_codata(h) = c_0 + c_2·h² + …`:
+  comes from Taylor at h=0 with `c_0 = 0` (since ℏ_q²(0) = 0).
+- κ of `5/2 + κ·h²` matching at q_0: comes from imposing a
+  CONSTANT `c_0 = 5/2`, which is structurally rigid (Family A
+  proves this from S_4 dimension).
+
+So the two "c_2" measure different things. Reading A's κ ≈ −G
+is the local-match coefficient AT q_0 given a fixed c_0 = 5/2.
+Whether κ ≈ −G holds at all orders (i.e. whether `5/2 − G·h²`
+matches the full closure-target curve, not just at q_0) is an
+open question — likely **no**, because closure-target has h⁴
+corrections that pure `5/2 − G·h²` lacks.
+
+**Implication for PR #976:** the choice of Reading B over Reading A
+appears to be a STRUCTURAL choice (canonical Wedderburn theorem
+must contribute) at the expense of NUMERICAL fit (Reading A
+matches CODATA exactly at h² order). The 1.26 % gap in PR #976
+is the price paid for structural orthodoxy.
+
+If one trusts the user direction "add, not replace", PR #976 is
+the right form and the residual 1.26 % gap reflects unmodelled
+higher-order terms (Yekutieli per-cell + further curvature).
+If one trusts the numerics, Reading A (rejected by the audit) is
+the better match — but lacks structural justification.
+
+Either way, the open question is **what categorical mechanism
+produces κ ≈ −G** at h² order without invoking the
+combinatorially-unsupported bijection. The closure-target's
+algebraic form `M_PE · ℏ_q² / (8G)` suggests the answer involves
+m_p/m_e directly (an empirical anchor), not a substrate-pure
+derivation.
