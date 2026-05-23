@@ -136,6 +136,10 @@ export default chapter({
         "nitrogen-14-threading",
         "trace-ratio-observable",
         "trace-ratio-interpretation",
+        // Detangler R3 (2026-05-23): 6-row verification-nuclei
+        // trace-ratio table extracted from
+        // trace-ratio-interpretation.md.
+        "trace-ratio-interpretation-table",
         "diagrammatic-double-magic-lr-fusion",
         "double-magic-Ca40-diagram",
         "double-magic-delta-i-bound",
