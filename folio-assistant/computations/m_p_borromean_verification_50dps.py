@@ -181,8 +181,10 @@ M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-regis
 # at this layer.  The Bring-Bloch identity
 # (`conj:lambda-scale-bring-bloch-identity`) remains the open R&D
 # direction for any ppb-level closure.
-_H_VAL = Q - mp.mpf(1) / Q  # h = q - q⁻¹ at substrate q₀
-LAMBDA_PROTON_FAMILY_A = mp.mpf(5) / 2 + mp.mpf(3) * _H_VAL ** 2 / 4
+# Single source of truth: `_li_2_q_util.lambda_scale_family_a`
+# (Gemini PR #942 review — centralize the Family A formula).
+from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
+LAMBDA_PROTON_FAMILY_A = _lambda_scale_family_a(Q)
 LAMBDA_NEUTRON_FAMILY_A = LAMBDA_PROTON_FAMILY_A  # same categorical λ
 
 # Production aliases — point at the PROVED categorical λ.

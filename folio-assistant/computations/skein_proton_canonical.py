@@ -198,8 +198,10 @@ def main() -> int:
     # PR #895 / PR #942).  The fitted literal is retained as
     # `LAMBDA_FITTED_AUDIT_ONLY` for the historical comparison
     # column only; it is NOT consumed in any S(p)-hypothesis cell.
-    _H_VAL = Q - mp.mpf(1) / Q  # h = q - q⁻¹ at substrate q₀
-    LAMBDA_CURRENT = mp.mpf(5) / 2 + mp.mpf(3) * _H_VAL ** 2 / 4  # Family A
+    # Single source of truth: `_li_2_q_util.lambda_scale_family_a`
+    # (Gemini PR #942 review — centralize the Family A formula).
+    from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
+    LAMBDA_CURRENT = _lambda_scale_family_a(Q)
     LAMBDA_FITTED_AUDIT_ONLY = mp.mpf("2.4599527869")
 
     # Under "S(p) = 0" — current production assumption

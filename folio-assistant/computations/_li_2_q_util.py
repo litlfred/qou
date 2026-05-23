@@ -167,3 +167,32 @@ def flavor_split_subleading(q: mpf, q_inv: mpf | None = None) -> mpf:
     leading = flavor_split_leading(q, qi)
     hbar = (q - 1) / q
     return leading * (1 + hbar ** 3)
+
+
+def lambda_scale_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """PROVED Family A categorical λ_scale (single source of truth).
+
+    Closed-form identity proved in
+    `lambda_scale_all_c_i_family_a.py` and
+    `lambda-scale-substrate-form.lean`:
+
+        λ_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ
+               = (3q² + 4 + 3q⁻²) / 4
+               = 5/2 + (3/4) h²
+
+    where h = q − q⁻¹. The h-series TERMINATES exactly at h²:
+    all higher h^{2k} coefficients are identically zero.
+
+    Replaces three independent inline copies of the same algebraic
+    expression in production scripts:
+
+      - `m_p_borromean_verification_50dps.py:LAMBDA_PROTON_FAMILY_A`
+      - `build_proton_mass_50dps_chain.py:LAMBDA_SCALE_SUBSTRATE_FORM`
+      - `skein_proton_canonical.py:LAMBDA_CURRENT`
+
+    Per Gemini PR #942 review (2026-05-23): centralizing avoids
+    drift and ensures a single source of truth.
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    h = q - qi
+    return mpf(5) / 2 + mpf(3) * h ** 2 / 4

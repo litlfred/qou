@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-23T09:54:37.155264+00:00",
-  "commitSha": "9965c1216cf1a34eafcbe96b96b618e987d9ca1a",
+  "computedAt": "2026-05-23T10:32:56.869572+00:00",
+  "commitSha": "d0ef9f4b2d474ba90707eafd3e09d9ef035f2ead",
   "assertions": [
     {
       "name": "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 790,
+  "durationMs": 363,
   "computation": "skein-proton-canonical",
   "scriptFile": "skein_proton_canonical.py",
-  "scriptHash": "b0238f98db35",
-  "scriptCommitSha": "d47d1fa6e8f095fd659e13fed0b36b3146cf0b51",
+  "scriptHash": "9dcbf55b7f2e",
+  "scriptCommitSha": "2532fa4b10173101ed398b61f72fee86458eb6d2",
   "description": "Skein evaluator for the proton's canonical 11-crossing flavored braid. Computes three independent Skein values: (1) V(𝓑₃, t) closed-form Jones polynomial at t = q_0² / q_0 / -q_0⁻¹ conventions; (2) |tr_M(β_p, q_0)| from markov_peel.tr_M_atomic (existing canonical infrastructure); (3) cross-check vs the canonical Layer-1 |tr_M| atlas value 1.0653062286. Closes the S(p) ≈ 0 assumed-zero gap in conj:borromean-baryon-mass-formula.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
@@ -52,7 +52,7 @@
       "tr_M_q_0_canonical": "1.06530622859238925515327756997",
       "abs_tr_M": "1.06530622859238925515327756997",
       "compute_path": "markov_peel.tr_M_atomic(1, 0) symbolic, evaluated at q_0",
-      "wall_sec": "0.12"
+      "wall_sec": "0.08"
     },
     "atlas_cross_check": {
       "atlas_layer_1_value": "1.0653062285923887",
