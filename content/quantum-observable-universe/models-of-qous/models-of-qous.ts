@@ -44,7 +44,7 @@ export default chapter({
       ],
     }),
 
-    // ── Archimedean witnesses (R1: split from sec:archimedean-models) ───
+    // ── Archimedean witnesses (R1: split from the former Archimedean specialisations section) ───
     // The catalogue of archimedean realisations — explicit examples,
     // not bridge/wall material.  After Rec 2 (4 Descartes-coded blocks
     // moved out), this section holds: the intro + 6 explicit witnesses
@@ -65,7 +65,7 @@ export default chapter({
       ],
     }),
 
-    // ── Categorical-differential bridge (R1: split from sec:archimedean-models) ──
+    // ── Categorical-differential bridge (R1: split from the former Archimedean specialisations section) ──
     // The "bridge" sub-section: how the categorical machinery (Levi
     // substrate, Webster inner product, Heisenberg commutator, spatial-
     // realisation functor, categorical-archimedean bridge) connects to
@@ -128,7 +128,7 @@ export default chapter({
 
     // ── Mostow confinement and the Archimedean wall (narrative bridge) ─
     // Absorbed from former Ch `encounter` (now dissolved). These blocks
-    // narrate the archimedean wall that `sec:archimedean-models` above
+    // narrate the archimedean wall that the Archimedean-witnesses + bridge sections above
     // specifies formally: Mostow confinement, the algebraic↔geometric
     // rigidity pairing, and the literature bridge.
     section({
