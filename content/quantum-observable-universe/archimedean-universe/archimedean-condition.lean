@@ -15,8 +15,6 @@ import Mathlib.Algebra.Order.Ring.Lemmas
 
 namespace QOU
 
-variable {R : Type*} [CommRing R]
-
 /-- **Descartes condition**: a quantum observable universe over `R` satisfies
     the Descartes condition when the categorical Euler characteristic
     χ(A) = tr(id_A) = -6 and 6 is invertible in R.
@@ -41,7 +39,7 @@ structure ArchimedeanCondition (R : Type*) [CommRing R] where
 -- Ref: [manuscript] Chapter 6, §Descartes condition
 theorem descartes_genus_is_four (χ : ℤ) (g : ℤ)
     (hchi : χ = -6) (hgb : 2 - 2 * g = χ) : g = 4 := by
-  linarith
+  omega
 
 /-- The total ramification R_tot = 2d + 6 for a degree-d covering. -/
 -- Ref: [manuscript] Chapter 6, §Descartes condition
@@ -53,6 +51,6 @@ def totalRamification (d : ℤ) : ℤ := 2 * d + 6
 -- Ref: [manuscript] Chapter 6, §Descartes condition
 theorem branch_points_eq_six (χ : ℤ) (hchi : χ = -6) :
     |χ| = 6 := by
-  rw [hchi]; norm_num
+  subst hchi; decide
 
 end QOU

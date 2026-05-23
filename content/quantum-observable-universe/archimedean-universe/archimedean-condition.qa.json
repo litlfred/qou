@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "1fa2ccfc18c4",
-    "ts": "d51d1eb82cc2",
-    "lean": "567991fbd01f"
+    "ts": "76aa55a0a35b",
+    "lean": "19bd1e37133d"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -308,19 +308,19 @@
       {
         "field_hash": {
           "md": "1fa2ccfc18c4",
-          "ts": "d51d1eb82cc2",
-          "lean": "567991fbd01f"
+          "ts": "76aa55a0a35b",
+          "lean": "19bd1e37133d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/archimedean-universe/archimedean-condition.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "reviewed_at": "2026-05-23T10:54:47.596Z",
+        "reviewed_sha": "5ef05585062461ec6592001f97647c1bb4f5f03b"
       }
     ],
     "voice-title-scholarly": [
@@ -449,5 +449,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T10:54:47.596Z"
 }
