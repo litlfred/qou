@@ -1,0 +1,61 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-23T14:52:34.978872+00:00",
+  "commitSha": "062f03d6bcff93c3cf48cc9891917b2f647da778",
+  "assertions": [
+    {
+      "name": "Multi-knot HOMFLYPT PSLQ — no closure relation expected for either target",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "boolean",
+      "source": "mpmath.pslq at max_coef=10^5, tol=1e-12 on a 12-element basis of HOMFLYPT polynomial values for {3_1, 4_1, 5_2, 𝓑_3} × α ∈ {q_0, q_0⁻¹, q_0^{1/2}}. A negative result complements Tier 6 by closing off the 'deep HOMFLYPT recursion COULD produce' caveat in 3a1b11069's Strategy J scalar-ratio probe. Combined with the 8-search cumulative case in 00083b94e, the Bring-Bloch + HOMFLYPT axes are now both retired as λ_scale closure candidates."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "lambda-scale-homflypt-skein-recursion-probe",
+  "scriptFile": "lambda_scale_homflypt_skein_recursion_probe.py",
+  "scriptHash": "ee4acbd22e53",
+  "scriptCommitSha": "unknown",
+  "description": "Strategy J deep dive: PSLQ search across a 12-element basis of HOMFLYPT polynomial values for {3_1, 4_1, 5_2, 𝓑_3} evaluated at α ∈ {q_0, q_0⁻¹, q_0^{1/2}}, z = q_0 − q_0⁻¹. Two targets: (T1) post-Yekutieli residual (3/4)·h², (T2) λ_p_codata directly. Formally tests Strategy J's 'deep recursion COULD produce' caveat. Expected confirmatory negative per 8-search cumulative case (00083b94e).",
+  "auditOnly": "docs/audits/2026-05-23-lambda-scale-replace-vs-add-analysis.md",
+  "parameters": {
+    "compute_dps": "80",
+    "max_coef_exponent": "5",
+    "homflypt_knots": "{3_1, 4_1, 5_2, B_3}",
+    "substitutions": "α ∈ {q_0, q_0⁻¹, q_0^{1/2}}; z = q_0 − q_0⁻¹"
+  },
+  "data": {
+    "substrate": {
+      "q_0": "1.1099785955541805752815940796095",
+      "hbar_q": "0.099081726435698885820014342688413",
+      "h": "0.20906032198987946110160842229792",
+      "G_catalan": "0.91596559417721901505460351493238"
+    },
+    "targets": {
+      "T1_residual_coef_3_4": "0.75031628195005586545",
+      "T2_lambda_p_codata": "2.4599527843613182892482457339493",
+      "post_yekutieli_residual": "0.032793487160815571896"
+    },
+    "basis": {
+      "P_3_1@α=q_0": "1.0",
+      "P_3_1@α=q_0_inv": "1.0",
+      "P_3_1@α=q_0_sqrt": "1.036417675248418291964395",
+      "P_4_1@α=q_0": "1.0",
+      "P_4_1@α=q_0_inv": "1.0",
+      "P_4_1@α=q_0_sqrt": "0.9671906508879696117032998",
+      "P_5_2@α=q_0": "0.03547431529758314680326562",
+      "P_5_2@α=q_0_inv": "0.05384835467545415501070264",
+      "P_5_2@α=q_0_sqrt": "0.06600556144302217913780818",
+      "P_B_3@α=q_0": "14.39720139479315697567675",
+      "P_B_3@α=q_0_inv": "14.39720139479315697567675",
+      "P_B_3@α=q_0_sqrt": "13.70257882308358113321887"
+    },
+    "basis_size": 12,
+    "pslq_target_1_relation_found": false,
+    "pslq_target_2_relation_found": false
+  }
+}
