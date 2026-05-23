@@ -106,7 +106,7 @@ def vol_b3(q: mp.mpf = None) -> mp.mpf:
 
 
 def borromean_m_predicted(q: mp.mpf, lambda_scale: mp.mpf,
-                          m_e_mev: mp.mpf = mp.mpf("0.51099895069")) -> mp.mpf:
+                          m_e_mev: mp.mpf = mp.M_E_MEV) -> mp.mpf:
     """m_p_pred = m_e · (Vol(𝓑_3)/ℏ_q²) · λ_scale.
 
     This is the Family A class-uniform prediction (m_p == m_n);

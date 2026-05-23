@@ -63,6 +63,7 @@ set_compute_dps()
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 
 def q_bracket(n: int, q: mp.mpf) -> mp.mpf:
@@ -78,7 +79,7 @@ def main() -> int:
     print()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    m_e = mp.mpf("0.51099895069")
+    m_e = M_E_MEV  # from codata_constants
     E_0 = m_e / (q0 * (q0 - 1))
     h = q0 - 1/q0
     hbar = (q0 - 1) / q0

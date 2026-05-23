@@ -64,6 +64,7 @@ set_compute_dps()
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 
 def evaluate_habiro_sum(p_in_u_str: str, denom_in_u_str: str,
@@ -90,7 +91,7 @@ def main() -> int:
     print()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    m_e = mp.mpf("0.51099895069")
+    m_e = M_E_MEV  # from codata_constants
     print(f"  q_0  = {mp.nstr(q0, 16)}")
     print(f"  m_e  = {mp.nstr(m_e, 14)} MeV")
     print()

@@ -60,6 +60,7 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 mp.mp.dps = 80
 
@@ -77,7 +78,7 @@ def main() -> int:
     INV_HBAR2 = 1 / (HBAR_Q ** 2)
 
     # CODATA values (for comparison only — never injected as substrate)
-    M_E_CODATA = mp.mpf("0.51099895069")  # CAL-1; only true calibration input here
+    M_E_CODATA = M_E_MEV  # CAL-1; only true calibration input here  # from codata_constants
     M_P_CODATA = mp.mpf("938.27208816")
     M_N_CODATA = mp.mpf("939.56542052")
     M_AVG_CODATA = (M_P_CODATA + M_N_CODATA) / 2

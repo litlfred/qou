@@ -65,7 +65,7 @@ q = mpf(json.load(Q_WIT.open())["derived_50_digit"]["q"])
 q_inv = mpf(1) / q
 h_q = q - q_inv
 
-M_E_MEV = mpf("0.51099895069")
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 # Class-A audit-only: hardcoded CODATA comparison anchors, not prediction inputs.
 M_P_MEV = mpf("938.272")  # noqa: P31 — comparison anchor per docstring banner
 M_N_MEV = mpf("939.565")  # noqa: P31 — comparison anchor per docstring banner

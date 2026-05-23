@@ -75,6 +75,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 set_compute_dps()
 
@@ -86,7 +87,7 @@ ATOMS = {
     "T":   {"M_CODATA": mpf("2808.921"), "tr_M": mpf("0.1041"), "rho_K": mpf("52828.5")},
     "He3": {"M_CODATA": mpf("2808.392"), "tr_M": mpf("0.2065"), "rho_K": mpf("26609.2")},
 }
-M_E = mpf("0.51099895069")
+M_E = M_E_MEV  # from codata_constants
 
 
 def main() -> int:

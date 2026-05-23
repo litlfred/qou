@@ -80,6 +80,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # ── 50 dps for consistency with magic-shell-empirical-instantiation ──
 from _precision import set_compute_dps, fmt  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 set_compute_dps()
 
 
@@ -143,7 +144,7 @@ def main() -> None:
     q0 = mp.mpf(Q_50_DIGIT_STR)
     # m_e from CODATA 2022 (codata_constants is the SoT, but we re-state
     # the literal so the witness is self-contained and re-runnable).
-    m_e = mpf("0.51099895069")
+    m_e = M_E_MEV  # from codata_constants
     E0 = m_e / (q0 * (q0 - 1))
     t_h = q0 - 1 / q0  # Hecke deformation parameter
     t_qm1 = q0 - 1  # β-decay-energy normalisation

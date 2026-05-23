@@ -88,10 +88,13 @@ def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
 
 
 # ── CAL-1: electron mass (legitimate calibration input) ─────────
-# Hardcoded — the framework's sole direct mass-scale anchor (CAL-1).
-# 0.5109989500(15) MeV/c² (CODATA 2022)
-M_E_MEV = mp.mpf("0.51099895")
-M_E_MEV_ERR = mp.mpf("0.00000000015")
+# Source of truth: codata_2022_source.M_E_MEV (full 11-sig-fig
+# CODATA-2022 value 0.51099895069(15) MeV).  Prior hardcoded
+# literal was 0.51099895 (8 sig figs, truncated by 3).  Per the
+# 2026-05-23 precision-pipeline audit (docs/audits/2026-05-23-
+# codata-precision-audit.md), 4+ scripts were already redefining
+# M_E_MEV at the full precision — this import unifies them.
+from codata_2022_source import M_E_MEV, M_E_MEV_ERR  # noqa: E402
 
 # ── CAL-3: free-neutron β-decay Q-value (legitimate calibration) ─
 # Loaded from cal-3-q-beta.witness.json. Fixes hadronic energy scale

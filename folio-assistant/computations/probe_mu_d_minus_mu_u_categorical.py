@@ -63,7 +63,7 @@ q_inv = mpf(1) / q
 h_q = q - q_inv
 z_mark = mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
 
-M_E_MEV = mpf("0.51099895069")
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 DELTA_M_CODATA_MEV = mpf("1.293332")  # m_n - m_p (CODATA 2018)
 
 # V_(2,1) Hoefsmit substrate

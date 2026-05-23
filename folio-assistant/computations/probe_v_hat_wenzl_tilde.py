@@ -55,7 +55,7 @@ from derive_m_p_hecke_full_tower_50dps import _t5_cat_units_for  # noqa: E402
 
 set_compute_dps()
 
-M_E_MEV = mpf("0.51099895069")
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 M_P_CODATA = mpf("938.27208816")
 RHO_K_CODATA_P = mpf("1723.6")  # from atomic-mass-gb-nf.md line 62
 

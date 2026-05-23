@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T15:05:25.048803+00:00",
-  "commitSha": "75754d73c19a13911aa981d762bec2c25566b900",
+  "computedAt": "2026-05-23T20:59:16.085887+00:00",
+  "commitSha": "1a80d26e9e5940370cce7f3360ec10181913978a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
-  "scriptHash": "8d9eed8d9be8",
-  "scriptCommitSha": "acffed9479dd85c87ebf8276041d48aae13086ce",
+  "scriptHash": "98670ef3a577",
+  "scriptCommitSha": "17b500529abcb7ea71ccc52761828810556e9b50",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 725,
+    "files_scanned": 732,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 165,
       "P21": 32,
       "P30": 93,
-      "P31": 29
+      "P31": 30
     },
     "top_files": [
       {
@@ -1607,14 +1607,14 @@
       {
         "pattern": "P31",
         "file": "lambda_scale_refinement_h4_correction_bring.py",
-        "line": 104,
+        "line": 105,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P31",
         "file": "lambda_scale_refinements_composed_predictions.py",
-        "line": 81,
+        "line": 82,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },

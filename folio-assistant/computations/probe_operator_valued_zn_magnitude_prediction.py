@@ -79,6 +79,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 
 def main() -> int:
@@ -113,7 +114,7 @@ def main() -> int:
     print()
 
     # Categorical mass formula prefactor
-    m_e = mp.mpf("0.51099895069")  # MeV (CAL-1)
+    m_e = M_E_MEV  # MeV (CAL-1)  # from codata_constants
     rho_eff = m_e
     print(f"  Prefactor ρ_eff = m_e = {float(rho_eff):.6f} MeV (CAL-1)")
     print()
@@ -225,7 +226,7 @@ def main() -> int:
                        "operator-valued-ansatze-from-mass-endo.witness.json")
         .add_parameter("y_lambda_witness", "y-lambda-mpfr-witness.json")
         .add_parameter("rho_eff_MeV", float(rho_eff))
-        .add_parameter("rho_eff_source", "m_e = 0.51099895069 MeV (CAL-1)")
+        .add_parameter("rho_eff_source", "m_e = float(M_E_MEV) MeV (CAL-1)")
         .add_data("per_block_MeV", per_block_meV)
         .add_data("aggregate_op_meV", total_float)
         .add_data(
