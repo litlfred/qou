@@ -368,17 +368,33 @@ export function checkComputeLpDualPresent(
   } catch {
     return { result: "pass", hits: [] };
   }
-  // LP fields may live at the top level OR nested under `data.*`
-  // (the conventional location for WitnessBuilder.add_data outputs
-  // from `solve_operator_selection_lp` / `solve_psd_operator_selection_sdp`).
-  const nested =
-    body.data && typeof body.data === "object" && body.data !== null
-      ? (body.data as Record<string, unknown>)
-      : {};
-  const hasField = (f: string) => f in body || f in nested;
-  const hasActive = LP_DUAL_ACTIVE_ALIASES.some(
-    (a) => a in body || a in nested,
-  );
+  // LP fields may live at the top level OR nested anywhere reachable
+  // by a shallow walk (the conventional layout for WitnessBuilder
+  // outputs from `solve_operator_selection_lp` /
+  // `solve_psd_operator_selection_sdp` is `data.<field>`, but some
+  // producers wrap the solver result one level deeper at
+  // `data.sdp_full.<field>` / `data.lp_full.<field>` /
+  // `data.solver_result.<field>`).
+  //
+  // Walk up to 3 levels deep. The required fields (`y0_star`,
+  // `y_star`, `primal_obj`, `dual_obj`, `duality_gap`) are
+  // highly specific to the LP-dual convention, so false positives
+  // from arbitrary keys are unlikely.
+  const containsField = (
+    obj: unknown,
+    field: string,
+    depth = 0,
+  ): boolean => {
+    if (depth > 3 || obj === null || typeof obj !== "object") return false;
+    const rec = obj as Record<string, unknown>;
+    if (field in rec) return true;
+    for (const v of Object.values(rec)) {
+      if (containsField(v, field, depth + 1)) return true;
+    }
+    return false;
+  };
+  const hasField = (f: string) => containsField(body, f);
+  const hasActive = LP_DUAL_ACTIVE_ALIASES.some((a) => containsField(body, a));
   const missing: string[] = [];
   for (const f of LP_DUAL_REQUIRED_FIELDS) {
     if (!hasField(f)) missing.push(f);
