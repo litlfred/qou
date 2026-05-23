@@ -125,7 +125,7 @@ private theorem one_sub_inv_ne_zero
   intro h
   apply hy1
   -- h : 1 - y⁻¹ = 0  ⇒  y⁻¹ = 1  ⇒  y = 1
-  have h_eq : y⁻¹ = 1 := by linarith [sub_eq_zero.mp h]
+  have h_eq : y⁻¹ = 1 := (sub_eq_zero.mp h).symm
   -- From y⁻¹ = 1 and y ≠ 0, deduce y = 1
   have : y = (y⁻¹)⁻¹ := (inv_inv y).symm
   rw [h_eq, inv_one] at this
@@ -159,15 +159,15 @@ noncomputable def RogersPair.shape₄
     -- div = 1 ⇒ numerator = denominator
     have hnd : (1 - r.y⁻¹) = (1 - r.x⁻¹) := by
       field_simp [hd] at h
-      linarith
+      linear_combination h
     -- 1 - y⁻¹ = 1 - x⁻¹ ⇒ y⁻¹ = x⁻¹ ⇒ y = x ⇒ x = y
-    have hinv : r.y⁻¹ = r.x⁻¹ := by linarith
-    have : r.y = r.x := by
+    have hinv : r.y⁻¹ = r.x⁻¹ := by linear_combination -hnd
+    have hyx : r.y = r.x := by
       have hyy : (r.y⁻¹)⁻¹ = r.y := inv_inv r.y
       have hxx : (r.x⁻¹)⁻¹ = r.x := inv_inv r.x
       rw [hinv] at hyy
-      linarith [hyy.symm.trans hxx]
-    exact this.symm
+      exact hyy.symm.trans hxx
+    exact hyx.symm
 
 /-- The fifth derived shape parameter `(1 - y)/(1 - x)`:
     well-defined and `≠ 0, ≠ 1` from the Rogers conditions. -/
@@ -188,9 +188,9 @@ noncomputable def RogersPair.shape₅
       one_sub_ne_zero_of_ne_one r.hx_ne_one
     have hnd : (1 - r.y) = (1 - r.x) := by
       field_simp [hd] at h
-      linarith
+      linear_combination h
     -- 1 - y = 1 - x ⇒ y = x ⇒ x = y
-    linarith
+    linear_combination -hnd
 
 /-- The pentagon-relation generator at a Rogers pair, using only
     its `e₁ = x`, `e₂ = y`, `e₃ = y/x` shape parameters and
