@@ -119,6 +119,13 @@ def compute_tr_m_canonical(
     """Compute |tr_M(β_atom, q_0)| via the requested fast path.
 
     Methods (ranked by speed at H_n):
+      - "laurent_q_rust" — **Tier 1.A** full Rust + MPFR pipeline
+                          (pyhecke_native.tr_m_atomic_mpfr, v0.6.0+).
+                          R1+R2+R3 reduce in Rust BigRational; trace
+                          recursion in Rust; MPFR substitution at q₀
+                          in Rust; one PyO3 call, one decimal string
+                          back.  Cross-checked bit-identical to
+                          laurent_q at 1e-50 relative.
       - "laurent_q"    — LaurentQ-direct Markov-axiom recursive ascent
                           (laurent_q_trace.tr_M_atomic_lq).
                           ⁴He: 4s; ⁵Li: 22s; ⁶Li: ~4 min; ⁷Li: ~1.1 hr.
@@ -134,6 +141,43 @@ def compute_tr_m_canonical(
 
     Returns (|tr_M|, wall_seconds, error_str, method_used).
     """
+    if method == "laurent_q_rust":
+        try:
+            from markov_peel_rust_bridge import tr_M_atomic_rust_full
+            # Honor caller-provided dps when it exceeds the 50-dps
+            # production floor; never go below 50 (CLAUDE.md §L1
+            # mandates ≥ 50 dps for the production trace).  The
+            # `dps=0` default from the function signature collapses
+            # to 50, matching the implicit policy used in the
+            # sibling `laurent_q` / `markov_peel` branches below.
+            effective_dps = max(int(dps), 50)
+            t0 = time.time()
+            tr_mp = tr_M_atomic_rust_full(Z, N, dps=effective_dps)
+            wall = time.time() - t0
+            return abs(tr_mp), wall, None, "laurent_q_rust"
+        except NotImplementedError as e:
+            # Case C — return an error tuple; the outer caller
+            # (`main()`) currently SKIPS atoms with a non-empty `err`
+            # rather than chaining into `laurent_q` / `markov_peel`.
+            # Re-running the script with `--method laurent_q` (or
+            # `markov_peel`) handles the same atom via the sympy
+            # ocneanu path.  Manual chain — no automatic fallback
+            # here, see PR #886 review thread r3289356832.
+            return None, 0.0, (
+                f"laurent_q_rust: Case C — re-run with --method "
+                f"laurent_q or markov_peel: {e}"
+            ), "laurent_q_rust"
+        except ImportError as e:
+            return None, 0.0, (
+                f"laurent_q_rust: pyhecke_native missing; "
+                f"build via `cd tools/pyhecke-native && maturin build "
+                f"--release` and pip install the wheel. {e}"
+            ), "laurent_q_rust"
+        except Exception as e:  # noqa: BLE001
+            return None, 0.0, (
+                f"laurent_q_rust: {type(e).__name__}: {e}"
+            ), "laurent_q_rust"
+
     if method == "laurent_q":
         try:
             from laurent_q_trace import tr_M_atomic_lq
@@ -311,15 +355,18 @@ def main() -> int:
     )
     parser.add_argument(
         "--method",
-        choices=["markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
-        default="markov_peel",
+        choices=["laurent_q_rust", "markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
+        default="laurent_q_rust",
         help=(
-            "Computation method. `laurent_q` (PR #859) is the fastest "
-            "production path: LaurentQ-direct Markov-axiom recursive "
-            "ascent with MPFR-50dps output. ~3-5× over `markov_peel` "
-            "at A ≥ 5. `markov_peel` is the prior production path "
-            "(sympy-heavy trace assembly). `rust_f64`/`rust_mpfr` use "
-            "the legacy direct-Hoefsmit path (don't scale past H_15)."
+            "Computation method. `laurent_q_rust` (Tier 1.A, **default**) "
+            "is the fastest production path: full reduce + trace + MPFR in "
+            "Rust via pyhecke_native.tr_m_atomic_mpfr (v0.6.0+). "
+            "`laurent_q` (PR #859) is the prior fast path: Python "
+            "LaurentQ-direct Markov-axiom recursive ascent with "
+            "MPFR-50dps output, ~3-5× over `markov_peel` at A ≥ 5. "
+            "`markov_peel` is the original sympy fast path "
+            "(sympy-heavy trace assembly). `rust_f64`/`rust_mpfr` "
+            "use the legacy direct-Hoefsmit path (don't scale past H_15)."
         ),
     )
     parser.add_argument(

@@ -183,21 +183,17 @@ def main():
         print(f"=== {atom} (Z={atom_data['Z']}, N={atom_data['N']}, n_strands={n}, "
               f"writhe={w}, |partitions|={len(parts)}) ===")
 
-        # Compute χ^λ(β) for each partition λ ⊢ n.  We use the f64
-        # kernel (53-bit precision, ~16 dps) — this is the available
-        # kernel in CI without the optional pyhecke_native Rust
-        # build.  The witness records `kernel_precision: "f64"`
-        # honestly (per the precision-tag review on PR #607).
+        # Compute χ^λ(β) for each partition λ ⊢ n via the batch
+        # Rust kernel (F-A of ffi-roundtrip-audit): one PyO3
+        # crossing + rayon-parallel inside, vs the p(n) per-shape
+        # FFI calls the loop used to make.  53-bit precision still;
+        # see kernel_precision tag.
+        from hecke_characters import chi_lambdas_braid
         chi_dict = {}
-        for shape in parts:
-            chi_val_f64 = chi_lambda_braid(shape, word, float(Q0),
+        chi_values_f64 = chi_lambdas_braid(parts, word, float(Q0),
                                             precision="f64")
-            # Promote to mpf for downstream arithmetic at mp.dps=50
-            # (the dilution is the f64 value, but downstream sums are
-            # done at full mp.dps so per-partition cancellations hold).
-            # Pass the numeric .real attribute directly to mpf — going
-            # through `str(complex(x).real)` is unnecessarily lossy and
-            # slow (Gemini review #r3213424369).
+        for shape, chi_val_f64 in zip(parts, chi_values_f64):
+            # Promote to mpf for downstream arithmetic at mp.dps=50.
             if isinstance(chi_val_f64, complex):
                 chi_dict[tuple(shape)] = mpf(chi_val_f64.real)
             else:

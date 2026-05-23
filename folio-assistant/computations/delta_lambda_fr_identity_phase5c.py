@@ -106,10 +106,14 @@ def compute_tr_M_decomposition(Z: int, N: int, include_inter: bool,
             word_marshalled.append((1, g + 1))
 
     parts = list(partitions_of(n))
+    # Batch character evaluation across partitions — single PyO3
+    # call instead of N per-shape FFI crossings (ffi-roundtrip-audit
+    # F-A: `chi_lambdas_braid` is rayon-parallel on the Rust side).
+    from hecke_characters import chi_lambdas_braid
+    chi_values = chi_lambdas_braid(parts, word_marshalled, q_value=float(Q0))
     rows = []
     total = mp.mpf(0)
-    for lam in parts:
-        chi = chi_lambda_braid(lam, word_marshalled, q_value=float(Q0))
+    for lam, chi in zip(parts, chi_values):
         y = y_at_q0.get(n, {}).get(lam, mp.mpf(0))
         if y == 0:
             # try without the trailing zero entries

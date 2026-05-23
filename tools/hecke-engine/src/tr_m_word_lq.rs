@@ -105,10 +105,47 @@ impl ZHLaurent {
 // Recursive Markov-axiom ascent
 // ──────────────────────────────────────────────────────────────────
 
-/// Cache key: (word, n_strands, max_depth). Result depends only on
-/// these — depth is excluded (a recursion-guard parameter, not part
-/// of the function's semantic identity).
+/// Cache key: (cyclic-canonical word, n_strands, max_depth).
+///
+/// **Tier 1.C — cyclic canonicalisation (2026-05-21).**  The
+/// Markov trace satisfies `tr_M(αβ) = tr_M(βα)`, so any two words
+/// that are cyclic rotations of each other have the same `tr_M`.
+/// The cache key uses the *lexicographically smallest* cyclic
+/// rotation so that all `n` rotations of an `n`-long word share
+/// one cache entry.  The recursion body still operates on the
+/// **original** word (the rotations in the algorithm body are
+/// semantic, not just cache canonicalisation) — only the cache
+/// key is canonicalised.  See the brief in
+/// `docs/audits/2026-05-20-compute-optimization-roadmap.md` §Tier 1.C.
+///
+/// `depth` is excluded — it is a recursion-guard parameter, not
+/// part of the function's semantic identity.
 type CacheKey = (Vec<u32>, usize, u32);
+
+/// Lexicographically smallest cyclic rotation of `word`.
+///
+/// `O(n²)` — adequate at typical atomic-braid word lengths
+/// (≤ a few hundred); could be tightened to `O(n log n)` via
+/// Booth's algorithm if a profile ever flags this.  See
+/// `docs/audits/2026-05-20-compute-optimization-roadmap.md`
+/// §Tier 1.C for the optimisation rationale.
+pub(crate) fn canonical_cyclic(word: &[u32]) -> Vec<u32> {
+    let n = word.len();
+    if n <= 1 {
+        return word.to_vec();
+    }
+    let mut best: Vec<u32> = word.to_vec();
+    let mut rot: Vec<u32> = Vec::with_capacity(n);
+    for i in 1..n {
+        rot.clear();
+        rot.extend_from_slice(&word[i..]);
+        rot.extend_from_slice(&word[..i]);
+        if rot < best {
+            best.clone_from(&rot);
+        }
+    }
+    best
+}
 
 /// Global cache (HashMap-bounded by maxsize). `Mutex<HashMap>`
 /// rather than a proper LRU for simplicity; at ~100K entries max
@@ -161,7 +198,11 @@ fn tr_m_word_lq_impl(
             word, n_strands
         ));
     }
-    let key: CacheKey = (word.to_vec(), n_strands, max_depth);
+    // Tier 1.C: cache key is the cyclic-canonical rotation, but the
+    // recursion body uses the original `word` (the algorithmic
+    // rotations inside `tr_m_word_lq_body` carry semantic meaning,
+    // not just cache canonicalisation).
+    let key: CacheKey = (canonical_cyclic(word), n_strands, max_depth);
     if let Some(cached) = cache().lock().unwrap().get(&key) {
         return Ok(cached.clone());
     }
@@ -330,5 +371,65 @@ mod tests {
                 "expected h·z term");
         assert!(result.terms.contains_key(&key_const),
                 "expected constant 1 term");
+    }
+
+    // ── Tier 1.C: cyclic-canonical-form cache key ──────────────
+
+    #[test]
+    fn canonical_cyclic_smoke() {
+        // Length 0 / 1 — passthrough.
+        let v0: Vec<u32> = vec![];
+        assert_eq!(canonical_cyclic(&v0), v0);
+        let v1 = vec![7u32];
+        assert_eq!(canonical_cyclic(&v1), v1);
+
+        // (0, 1, 2) and (1, 2, 0) and (2, 0, 1) all canonicalise to (0, 1, 2).
+        let canon = vec![0u32, 1, 2];
+        assert_eq!(canonical_cyclic(&[0, 1, 2]), canon);
+        assert_eq!(canonical_cyclic(&[1, 2, 0]), canon);
+        assert_eq!(canonical_cyclic(&[2, 0, 1]), canon);
+
+        // (2, 1, 0), (1, 0, 2), (0, 2, 1) — pick (0, 2, 1).
+        let canon2 = vec![0u32, 2, 1];
+        assert_eq!(canonical_cyclic(&[2, 1, 0]), canon2);
+        assert_eq!(canonical_cyclic(&[1, 0, 2]), canon2);
+        assert_eq!(canonical_cyclic(&[0, 2, 1]), canon2);
+    }
+
+    #[test]
+    fn cache_hits_on_cyclic_rotation() {
+        // Two words that are cyclic rotations of each other should
+        // share a cache entry.  Verifies via cache-size increment.
+        clear_cache();
+        let _ = tr_m_word_lq(&[0, 1], 3, 200).unwrap();
+        let size1 = cache().lock().unwrap().len();
+        // Rotation [1, 0] = σ_1 σ_0.  tr_M is cyclic-invariant so
+        // tr_M(σ_0 σ_1) = tr_M(σ_1 σ_0); the cache canonicalises
+        // both to the same key.
+        let _ = tr_m_word_lq(&[1, 0], 3, 200).unwrap();
+        let size2 = cache().lock().unwrap().len();
+        // Without cyclic canonicalisation the second call would
+        // add a new entry; with canonicalisation it must hit the
+        // existing one.  (The body may add intermediate entries
+        // for recursive sub-calls — we only check that the *top-
+        // level* cyclic-rotation call did not increment.)
+        // The two calls share the same recursion tree, so size
+        // should stay equal at the top-level invocation count.
+        assert_eq!(size1, size2,
+                   "cyclic rotation should hit existing cache entry; \
+                    size before {} != after {}",
+                   size1, size2);
+    }
+
+    #[test]
+    fn cyclic_rotations_yield_equal_traces() {
+        // σ_0 σ_1 and σ_1 σ_0 are cyclic rotations; their traces
+        // must be bit-identical via the canonical-key cache.
+        clear_cache();
+        let r1 = tr_m_word_lq(&[0, 1], 3, 200).unwrap();
+        let r2 = tr_m_word_lq(&[1, 0], 3, 200).unwrap();
+        assert_eq!(r1.terms, r2.terms,
+                   "tr_M cyclic-invariance violated: {:?} vs {:?}",
+                   r1.terms, r2.terms);
     }
 }

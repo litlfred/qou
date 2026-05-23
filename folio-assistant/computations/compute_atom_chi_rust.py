@@ -69,14 +69,22 @@ def compute_atom_chi(Z: int, N: int, *, include_inter: bool = True) -> dict:
     n_partitions = len(partitions)
 
     t0 = time.time()
-    by_partition = []
-    for shape in partitions:
-        chi = pyhecke_native.chi_q_atomic(shape, factors, Q0_F64)
-        by_partition.append({
+    # F-B fix of ffi-roundtrip-audit (pyhecke-native v0.7.0+): the
+    # `chi_q_atomic_all_partitions` batch entry-point evaluates every
+    # partition in one PyO3 crossing, rayon-parallel on the Rust side.
+    # Previously: `for shape in partitions: pyhecke_native.chi_q_atomic(...)`
+    # — p(n) FFI crossings + zero CPU-level parallelism.
+    chi_pairs = pyhecke_native.chi_q_atomic_all_partitions(
+        n_strands, factors, Q0_F64
+    )
+    by_partition = [
+        {
             "partition": list(shape),
             "dim": -1,  # not tracked by chi_q_atomic
             "chi_lambda": chi,
-        })
+        }
+        for (shape, chi) in chi_pairs
+    ]
     elapsed = time.time() - t0
 
     return {

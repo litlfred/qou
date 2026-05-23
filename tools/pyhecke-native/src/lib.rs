@@ -6,7 +6,9 @@
 //! the wheel small and the build simple.
 
 use hecke_engine::{
-    geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
+    geck_pfeiffer, gram, littlewood_richardson,
+    reduce_laurent as rust_reduce_laurent, seminormal, seminormal_mn, seminormal_mpfr,
+    tr_m_atomic_mpfr as rust_tr_m_atomic_mpfr,
     tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
 };
 use pyo3::prelude::*;
@@ -182,6 +184,24 @@ fn chi_q_atomic(shape: Vec<usize>, factors: Vec<(f64, f64, u32)>, q: f64) -> f64
 #[pyfunction]
 fn partitions_of(n: usize) -> Vec<Vec<usize>> {
     seminormal::partitions_of(n)
+}
+
+/// **Batch `chi_q_atomic`** — f64 character of `c·σ + d·I` Hecke
+/// factors evaluated across every partition of `n_strands`.  Returns
+/// `Vec<(partition, chi_value)>`.  Rayon-parallel on the Rust side.
+///
+/// F-B of the `ffi-roundtrip-audit` skill: replaces Python
+/// `for shape in partitions_of(n): chi_q_atomic(shape, factors, q)`
+/// per-shape loops (saved one PyO3 crossing per partition + gained
+/// work-stealing parallelism).  See
+/// `.claude/skills/local/ffi-roundtrip-audit.md` §F-B.
+#[pyfunction]
+fn chi_q_atomic_all_partitions(
+    n_strands: usize,
+    factors: Vec<(f64, f64, u32)>,
+    q: f64,
+) -> Vec<(Vec<usize>, f64)> {
+    seminormal::chi_q_atomic_all_partitions(n_strands, &factors, q)
 }
 
 /// **Classical Murnaghan-Nakayama character** `χ^λ(μ)`.
@@ -513,6 +533,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;
@@ -524,6 +545,12 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq, m)?)?;
     m.add_function(wrap_pyfunction!(tr_m_word_lq_clear_cache, m)?)?;
+    m.add_function(wrap_pyfunction!(incremental_reduce_rust, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_with_state, m)?)?;
+    m.add_function(wrap_pyfunction!(tr_m_atomic_mpfr_cached, m)?)?;
+    m.add_function(wrap_pyfunction!(atomic_reduce_cache_clear, m)?)?;
+    m.add_function(wrap_pyfunction!(atomic_reduce_cache_size, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
@@ -663,4 +690,168 @@ fn tr_m_word_lq(
 #[pyfunction]
 fn tr_m_word_lq_clear_cache() {
     rust_tr_m_word_lq::clear_cache();
+}
+
+/// **Tier 1.A entry point — Rust `incremental_reduced_element_fast`.**
+///
+/// Runs the Markov-peel reduce loop (R1 Hecke quadratic, R2 far-comm,
+/// R3 Yang-Baxter braid — see `hecke_engine::reduce_laurent`) on an
+/// atomic-braid signed word.  Returns the fully-reduced
+/// `LaurentHeckeElement` as a flat FFI vector.
+///
+/// Tier 1.A of the compute-optimisation roadmap
+/// (`docs/audits/2026-05-20-compute-optimization-roadmap.md`): port
+/// of `folio-assistant/computations/hecke_laurent_fast.py`'s
+/// `incremental_reduced_element_fast` driver, addressing the 60-70%
+/// of wall on ⁶Li `tr_M_atomic` that the cProfile attributed to
+/// sympy `Rational` arithmetic inside the Python LaurentQ `__mul__`.
+///
+/// `signed_word`: `[(sign, gen_0based), ...]` where `sign ∈ {-1, 0, +1}`
+///   (the same encoding used by `chi_lambda_all_partitions_*`, but with
+///   0-based generator indices to match the Python reduce convention).
+/// `max_iterations_per_step`: per-step fixpoint cap (production: 10000).
+///
+/// Returns `Vec<(Vec<i32>, Vec<(q_exp, num_str, den_str)>)>` — each
+/// element is `(σ-word, list of (q-exponent, BigInt-numerator decimal,
+/// BigInt-denominator decimal))`.  The Python bridge reconstructs
+/// `dict[tuple, sympy.Rational]` or evaluates directly to `mpmath.mpf`
+/// at `q₀`.
+///
+/// **R4 is not implemented** — see the module-level docstring on
+/// `hecke_engine::reduce_laurent` for the rationale (R4 sympy
+/// round-trip was empirically slower than the unfolded LaurentQ
+/// reduce).  Words containing negative entries (formal-variable
+/// markers) round-trip unchanged so a future R4 port can slot in.
+#[pyfunction]
+#[pyo3(signature = (signed_word, max_iterations_per_step=10_000))]
+fn incremental_reduce_rust(
+    signed_word: Vec<(i8, i32)>,
+    max_iterations_per_step: u32,
+) -> Vec<(Vec<i32>, Vec<(i32, String, String)>)> {
+    let elem = rust_reduce_laurent::incremental_reduce(
+        &signed_word,
+        max_iterations_per_step,
+    );
+    elem.to_ffi()
+}
+
+/// **Tier 1.A — full pipeline in Rust + MPFR, single decimal string out.**
+///
+/// End-to-end equivalent of:
+///   `tr_M(β_atomic, q₀) @ dps`
+/// implemented entirely in Rust (R1+R2+R3 reduce → tr_M_word_lq
+/// per reduced word → MPFR substitution at `q₀`).  No per-word
+/// PyO3 calls; no Python mpmath combine loop; no Python ↔ Rust
+/// shuttling of BigInt decimal strings per coefficient.
+///
+/// `signed_word`: `[(sign, gen_0based), ...]` — same shape as
+/// `incremental_reduce_rust`.
+/// `n_strands`: `3·A` (where `A = Z + N`).
+/// `q_str`: substrate parameter as a decimal string.
+/// `dps`: working precision in decimal places (default 50,
+/// CLAUDE.md §Precision goals L1 floor).
+///
+/// Returns: one decimal-string-encoded MPFR value at full precision.
+/// Python caller does `mpmath.mpf(result_str)`.
+///
+/// Raises `RuntimeError` if the trace recursion hits Case C —
+/// caller routes to the sympy ocneanu fallback (same contract as
+/// `tr_m_word_lq`).
+#[pyfunction]
+#[pyo3(signature = (signed_word, n_strands, q_str, dps=50))]
+fn tr_m_atomic_mpfr(
+    signed_word: Vec<(i8, i32)>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+) -> PyResult<String> {
+    rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr(&signed_word, n_strands, &q_str, dps)
+        .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// **Rust-side cached variant of [`tr_m_atomic_mpfr`].**
+///
+/// Looks up the longest cached prefix of `signed_word` in the
+/// in-process `hecke_engine::atomic_reduce_cache`, resumes the
+/// reduce from that state, applies the suffix, and caches the
+/// final state under the full signed-word's hash.
+///
+/// **Zero FFI marshalling on cache hit.**  The cached
+/// `LaurentHeckeElement` never crosses the Python ↔ Rust boundary —
+/// Python passes only the signed word, hash + lookup happen
+/// entirely in Rust.  Productive variant of the prefix-cache
+/// pattern (the disk-resident JSON `_prefix_cache.py` path is a
+/// net loss per `docs/audits/2026-05-22-prefix-cache-negative-bench.md`).
+///
+/// Cache lifetime: process-bound.  Use `atomic_reduce_cache_clear()`
+/// to drop state between independent sessions.
+#[pyfunction]
+#[pyo3(signature = (signed_word, n_strands, q_str, dps=50))]
+fn tr_m_atomic_mpfr_cached(
+    signed_word: Vec<(i8, i32)>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+) -> PyResult<String> {
+    rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_cached(&signed_word, n_strands, &q_str, dps)
+        .map_err(pyo3::exceptions::PyRuntimeError::new_err)
+}
+
+/// Empty the Rust-side atomic-reduce cache.  Call between
+/// independent sessions / benchmarks to avoid warm-cache bias.
+#[pyfunction]
+fn atomic_reduce_cache_clear() {
+    hecke_engine::atomic_reduce_cache::clear_cache();
+}
+
+/// Number of cached reduced-state entries in the Rust-side cache.
+#[pyfunction]
+fn atomic_reduce_cache_size() -> usize {
+    hecke_engine::atomic_reduce_cache::cache_size()
+}
+
+/// **Resume-from-state variant of [`tr_m_atomic_mpfr`].**
+///
+/// Returns `(mpf_decimal_string, final_reduced_state_ffi)`.  The
+/// `final_reduced_state_ffi` can be persisted via
+/// `_prefix_cache.save_prefix_state(...)` and replayed later via
+/// `initial_state_ffi`.
+///
+/// `initial_state_ffi=None` (or `[]`) → start from identity (same
+/// as `tr_m_atomic_mpfr`).
+///
+/// Per PR #886 prefix-cache infra: when computing `tr_M(β_K)` for
+/// atom K whose signed word starts with a cached prefix `P`, pass
+/// the cached state as `initial_state_ffi` and the SUFFIX
+/// `signed_word[len(P):]` as `signed_word_suffix`.  Result is
+/// numerically identical to the from-scratch path but skips the
+/// already-reduced work.
+#[pyfunction]
+#[pyo3(signature = (signed_word_suffix, n_strands, q_str, dps=50, initial_state_ffi=None))]
+fn tr_m_atomic_mpfr_with_state(
+    signed_word_suffix: Vec<(i8, i32)>,
+    n_strands: usize,
+    q_str: String,
+    dps: u32,
+    initial_state_ffi: Option<Vec<(Vec<i32>, Vec<(i32, String, String)>)>>,
+) -> PyResult<(String, Vec<(Vec<i32>, Vec<(i32, String, String)>)>)> {
+    let initial = match initial_state_ffi {
+        None => hecke_engine::laurent_hecke_element::LaurentHeckeElement::identity(),
+        Some(data) if data.is_empty() => {
+            hecke_engine::laurent_hecke_element::LaurentHeckeElement::identity()
+        }
+        Some(data) => {
+            hecke_engine::laurent_hecke_element::LaurentHeckeElement::from_ffi(&data)
+                .map_err(pyo3::exceptions::PyValueError::new_err)?
+        }
+    };
+    let (val, final_state) = rust_tr_m_atomic_mpfr::tr_m_atomic_mpfr_with_state(
+        &signed_word_suffix,
+        n_strands,
+        &q_str,
+        dps,
+        initial,
+    )
+    .map_err(pyo3::exceptions::PyRuntimeError::new_err)?;
+    Ok((val, final_state.to_ffi()))
 }
