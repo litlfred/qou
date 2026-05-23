@@ -115,6 +115,41 @@ After Slot F batch ask (2026-05-22), all 7 risky cluster-1 moves executed with t
 
 ---
 
+## Section splits (R6 — 2026-05-23, detangler cluster-4 closure)
+
+After Slot F batch approval (2026-05-23), the 13 remaining cluster-4 dense sections were split (12 executed here + P12 sec:archimedean-models already done on main via ch5/audit Rec 1-3 commits `2c722cae0` + `737deea6f` + `b2dea4d5b` + `4829571fc`). Each split adds 1-2 new opening prose blocks per Slot F template and replaces the dense section with K new sections each in the 3-18 block band.
+
+| PID | Original section | Chapter | Split | New sections |
+|---|---|---|---|---|
+| P1 | sec:differential-structures (20) | quantum-observable-universes | 2-way | -reeb (11) + -fiber-adjoint (10) |
+| P2 | sec:q-special-functions (19) | quantum-observable-universes | 2-way | -exp-log (13) + -dilog (7) |
+| P3 | sec:yekutieli-lifting (22) | lifting-and-descent | 2-way | -construction (14) + -kummer-motivic (9) |
+| P4 | sec:archimedean-lifting (25) | lifting-and-descent | 3-way | -foundations (10) + -topological-mass-formula (5) + -topological-mass-variants (12) |
+| P5 | sec:categorical-braiding (19) | braids-and-knots | 2-way | -action (8) + -hecke-eigenbasis (12) |
+| P6 | sec:vertex-factorisation (23) | braids-and-knots | 2-way | -markov (12) + -feynman (13) |
+| P7 | sec:categorical-mass-foundations (22) | braids-and-knots | 2-way | -eigenspaces (14) + -markov-trace-endomorphism (9) |
+| P8 | sec:hoefsmit-convergence-atomic (21) | braids-and-knots | 2-way | -construction (11) + -magic-shells (11) |
+| P9 | sec:phi-q-markov-schur-weyl-tower (20) | braids-and-knots | 2-way | -foundations (11) + -residue-habiro (10) |
+| P10 | sec:plancherel-alpha-ribbon (19) | braids-and-knots | 2-way | -spectral (10) + -knot-factor-mass-tower (10) |
+| P14 | sec:atomic-shells (22) | descartes-universe | 2-way | -foundations (14) + -element-instances (9) |
+| P16 | sec:atomic-braid-mass (21) | particle-interactions | 2-way | -foundations (13) + -crossing-locality-cpt (10) |
+| P12 | sec:archimedean-models (22) | models-of-qous | **done on main** (ch5/audit Rec 1-3, 2026-05-22) — split into 8 sub-sections (sec:physical-interpretation, sec:headline-conjectures, sec:archimedean-witnesses, sec:categorical-differential-bridge, sec:non-archimedean-models, sec:witt-vector-lifting, sec:finite-fields, sec:archimedean-encounter) + 4 blocks moved to descartes-universe/sec:physical-regimes | — |
+
+**Cross-ref fix:** `exceptional-divisor-reeb-intro.md` updated `#sec:vertex-factorisation` → `#sec:vertex-factorisation-markov` after P6 split renamed the target.
+
+**Naming convention:** all 24 new section labels above use descriptive suffixes (`-foundations`, `-construction`, `-implications`, `-curvature`, `-spectral`, `-magic-shells`, `-eigenspaces`, `-element-instances`, `-crossing-locality-cpt`, etc.), satisfying the Slot I "No new `generic-section-name`" invariant.
+
+**Graph delta vs the pre-PR-#948 baseline (post-rebase onto current main):**
+- H5 dense sections: 12 → 0 (**↓12** — full cluster-4 closure across this PR + PR #884's 5 splits + ch5/audit's P12)
+- H7 remark-ratio: 45 → 50 (↑5 from 13 new opening prose blocks; within ±20% Slot E defer band)
+- H1 / H2 / H3 / H4 / H6: unchanged (splits are intra-chapter manifest restructures only)
+
+**Watcher:** detangler-integration-watcher, branch `claude/detangler-cluster4-remaining-2026-05-23`, PR #948.
+
+**Cluster-4 closure:** 18 of 18 cluster-4 H5 dense findings now resolved.
+
+---
+
 ## Section splits (proposals from content-graph analysis — 2026-04)
 
 ### P5 — `sec:brings-geometry` → 4 sections (descartes-universe)

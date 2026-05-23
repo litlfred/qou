@@ -26,9 +26,11 @@ export default chapter({
       ],
     }),
 
+    // Detangler P5 split (2026-05-23): 19-block sec:categorical-braiding
+    // split into braid-action + Hecke-eigenbasis.
     section({
-      title: "Categorical origin of braiding",
-      label: "sec:categorical-braiding",
+      title: "Categorical origin of braiding: the braid action",
+      label: "sec:categorical-braiding-action",
       blocks: [
         "categorical-braiding-intro",
         "braid-action-tensor",
@@ -38,6 +40,13 @@ export default chapter({
         "symmetric-quotient-colour",
         "braid-base-field",
         "braid-lifting-compatibility",
+      ],
+    }),
+    section({
+      title: "Categorical braiding: Hecke quotient and knot eigenbasis",
+      label: "sec:categorical-braiding-hecke-eigenbasis",
+      blocks: [
+        "categorical-braiding-hecke-eigenbasis-intro",
         "jones-markov-trace",
         "trm-hopf-sigma1-sq-closed-form",
         "hecke-log-decomposition",
@@ -207,9 +216,11 @@ export default chapter({
     }),
 
     // ── Vertex factorisation through E_p ──────────────────────────────
+    // Detangler P6 split (2026-05-23): 23-block sec:vertex-factorisation
+    // split into vertex/Markov + Feynman identifications.
     section({
-      title: "Vertex Factorisation and the Markov Trace",
-      label: "sec:vertex-factorisation",
+      title: "Vertex factorisation: exceptional divisor + Markov trace",
+      label: "sec:vertex-factorisation-markov",
       blocks: [
         "vertex-factorisation-intro",
         "vertex-is-exceptional-divisor",
@@ -230,6 +241,13 @@ export default chapter({
         "hecke-markov-interpretation",
         "markov-lambda-knot-operations",
         "markov-chain-fluctuations",
+      ],
+    }),
+    section({
+      title: "Vertex factorisation: Feynman identifications",
+      label: "sec:vertex-factorisation-feynman",
+      blocks: [
+        "vertex-factorisation-feynman-intro",
         // Feynman path integrals as categorical traces
         "feynman-eigenbasis-decomposition",
         "feynman-eigenbasis-decomposition-proof",
@@ -363,15 +381,16 @@ export default chapter({
     }),
 
     // ── Categorical mass foundations ────────────────────────────────────
+    // Detangler P7 split (2026-05-23): 22-block
+    // sec:categorical-mass-foundations split into eigenspaces +
+    // Markov-trace + endomorphism enrichment.
     section({
-      title: "Categorical Mass Foundations",
-      label: "sec:categorical-mass-foundations",
+      title: "Categorical mass foundations: eigenspace decompositions",
+      label: "sec:categorical-mass-eigenspaces",
       blocks: [
         "categorical-mass-foundations-intro",
         // thm:topological-mass moved earlier to
-        // lifting-and-descent/sec:archimedean-lifting (alongside its
-        // proof + conjecture-extension + eigenspace/holonomy/transient/
-        // dilogarithm variants that already live there). Detangler
+        // lifting-and-descent/sec:archimedean-lifting per detangler
         // P30 (2026-05-22). Files moved: topological-mass.{ts,md,lean,qa.json}.
         "topological-mass-cat-eigenspace",
         "topological-mass-cat-eigenspace-proof",
@@ -386,6 +405,13 @@ export default chapter({
         "hecke-branching-trace-decomposition",
         "operator-valued-magnitude-budget",
         "q-hecke-seminormal-character-closure",
+      ],
+    }),
+    section({
+      title: "Categorical mass foundations: Markov trace and endomorphism",
+      label: "sec:categorical-mass-markov-trace-endomorphism",
+      blocks: [
+        "categorical-mass-markov-trace-endomorphism-intro",
         "recomputed-low-isotope-mass-table",
         "markov-trace-antipode-polynomial-symmetry",
         "markov-trace-axiomatic-closed-form",
@@ -434,16 +460,17 @@ export default chapter({
     }),
 
     // §B — Hoefsmit, convergence, and atomic-shell evidence
+    // Detangler P8 split (2026-05-23): 21-block
+    // sec:hoefsmit-convergence-atomic split into convergence +
+    // magic-shell consequences.
     section({
-      title: "Hoefsmit, convergence, and atomic-shell evidence",
-      label: "sec:hoefsmit-convergence-atomic",
+      title: "Hoefsmit convergence: construction",
+      label: "sec:hoefsmit-convergence-construction",
       blocks: [
         "intro-hoefsmit-convergence-atomic",
         // prop:operator-selection-lp moved here from
         // particle-interactions/sec:confinement-selection per
-        // detangler P28 (2026-05-22). 14 H1 fwd-refs cleared.
-        // Emits new H2 to prop:confinement-lp @ particle-interactions
-        // (accepted §5).
+        // detangler P28 (2026-05-22).
         "operator-selection-lp",
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
@@ -454,6 +481,13 @@ export default chapter({
         "z-habiro-ring",
         "brane-tower-z-habiro",
         "per-partition-k-lambda-rule",
+      ],
+    }),
+    section({
+      title: "Hoefsmit convergence: magic-shell consequences",
+      label: "sec:hoefsmit-convergence-magic-shells",
+      blocks: [
+        "hoefsmit-convergence-magic-shells-intro",
         "conj-magic-shell-stabilization",
         "two-row-stratum",
         "he4-channel-active-set",
@@ -816,15 +850,17 @@ export default chapter({
     }),
 
     // §C — phi_q resummation, Markov trace, Schur-Weyl tower
+    // Detangler P9 split (2026-05-23): 20-block
+    // sec:phi-q-markov-schur-weyl-tower split into foundations +
+    // residue/Habiro.
     section({
-      title: "$\\varphi_q$ resummation, Markov trace, and Schur-Weyl tower",
-      label: "sec:phi-q-markov-schur-weyl-tower",
+      title: "$\\varphi_q$ resummation, Markov trace, Schur-Weyl: foundations",
+      label: "sec:phi-q-markov-schur-weyl-foundations",
       blocks: [
         "intro-phi-q-markov-schur-weyl-tower",
         // thm:markov-trace-factorization moved here from
         // particle-interactions/sec:groebner-engine per detangler
-        // P31 (2026-05-22). 8 H1 fwd-refs cleared. New H2 to
-        // prop:generator-volume-decomposition (accepted §5).
+        // P31 (2026-05-22).
         "markov-trace-factorization",
         "phi-q-resums-trace-series",
         "markov-axiom-recursive-ascent",
@@ -835,6 +871,13 @@ export default chapter({
         "mass-spectrum-generating-function",
         "graded-markov-trace-from-gs-filtration",
         "residue-at-root",
+      ],
+    }),
+    section({
+      title: "$\\varphi_q$ resummation: residue and Habiro identifications",
+      label: "sec:phi-q-markov-residue-habiro",
+      blocks: [
+        "phi-q-markov-residue-habiro-intro",
         "vhat-pair-commutation-trace",
         "tower-pair-equality-fixed-level",
         "jet-tower-uniform-delta-max",
@@ -913,9 +956,11 @@ export default chapter({
     }),
 
     // §F — Plancherel, alpha, ribbon, knot-factor
+    // Detangler P10 split (2026-05-23): 19-block
+    // sec:plancherel-alpha-ribbon split into spectral + knot-factor.
     section({
-      title: "Plancherel, $\\alpha$, ribbon, and knot-factor",
-      label: "sec:plancherel-alpha-ribbon",
+      title: "Plancherel-$\\alpha$ spectral foundations",
+      label: "sec:plancherel-alpha-spectral",
       blocks: [
         "intro-plancherel-alpha-ribbon",
         "alpha-em-categorical-trace",
@@ -927,6 +972,13 @@ export default chapter({
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
         "gram-matrix-spectral-connection",
+      ],
+    }),
+    section({
+      title: "Plancherel: knot-factor and mass-tower closure",
+      label: "sec:plancherel-knot-factor-mass-tower",
+      blocks: [
+        "plancherel-knot-factor-mass-tower-intro",
         "knot-factor-spectral-derivation",
         "knot-factor-amphicheiral",
         "knot-factor-borromean-composite",

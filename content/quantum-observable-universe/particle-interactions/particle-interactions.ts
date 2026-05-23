@@ -146,20 +146,19 @@ export default chapter({
       ],
     }),
     // ── §8. Atomic braid and Wedderburn mass formula ───────────
+    // Detangler P16 split (2026-05-23): 21-block sec:atomic-braid-mass
+    // split into LP/mass-formula foundations + crossing-locality-CPT.
     section({
-      title: "Atomic braid and Wedderburn mass formula",
-      label: "sec:atomic-braid-mass",
+      title: "Atomic braid and Wedderburn mass formula: foundations",
+      label: "sec:atomic-braid-mass-foundations",
       blocks: [
         "atomic-braid-mass-intro",
         // def:atomic-braid moved earlier to
         // braids-and-knots/sec:skein-particle-generation per
-        // detangler P32. New H2 → def:transfer-matrix-operator +
-        // def:derived-atom accepted §5.
+        // detangler P32.
         "atomic-lp-stability",
         // wedderburn-mass-formula is referenced from braids-and-knots.ts
-        // (its canonical home as thm:wedderburn-mass-formula). Listing
-        // it here too caused a multiply-defined label because the
-        // pipeline keys block records by rootName.
+        // (its canonical home as thm:wedderburn-mass-formula).
         "q-integer-mass-formula",
         "universal-ilp-algorithm",
         "neutron-proton-splitting",
@@ -170,6 +169,13 @@ export default chapter({
         "groebner-reduction-methods",
         "tower-binding-energy",
         "mass-categorical-descent",
+      ],
+    }),
+    section({
+      title: "Atomic braid mass: crossing-graded, locality, CPT",
+      label: "sec:atomic-braid-mass-crossing-locality-cpt",
+      blocks: [
+        "atomic-braid-mass-crossing-locality-cpt-intro",
         "thurston-volume-additivity",
         "mass-volume-factorization",
         "crossing-graded-mass-expansion",
