@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T10:45:09.897337+00:00",
-  "commitSha": "290bb1afc91e088d622f8bf906856fe979263264",
+  "computedAt": "2026-05-23T11:09:11.800154+00:00",
+  "commitSha": "7c4ca0a7d7c906daf4c79494e1ef1fe95131fe19",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "50f22c2d8cdca1c283333c9c1576621005a43021",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2336,6 +2336,7 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
+        "e0-calibration-audit.witness.json",
         "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
@@ -2344,6 +2345,7 @@
         "faddeev-pentagon-operator-spike.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2687,6 +2689,7 @@
         "staircase-ew-predictions.witness.json",
         "staircase-ew-residual-conjecture.witness.json",
         "stale-probe-audit.witness.json",
+        "strategy-d-lambda-scale-exploration.witness.json",
         "sublemma-2-1-A-operator-extract-h9-nn.witness.json",
         "sublemma-2-1-A-operator-extract.witness.json",
         "sublemma-2-1-alpha-shift-extract.witness.json",
