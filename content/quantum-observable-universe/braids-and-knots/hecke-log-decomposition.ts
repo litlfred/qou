@@ -9,4 +9,10 @@ export default proposition({
   title: "Decomposition of log(1/h) into thermal + skein normalisation",
   tags: ["hecke-deformation", "boltzmann", "skein", "log-identity"],
   uses: ["rem:beta-decay-energy-scale", "prop:boltzmann-constant"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/hecke_log_decomposition_probe.py",
+    witness: "folio-assistant/computations/hecke-log-decomposition-probe.witness.json",
+    status: "verified",
+  },
 });

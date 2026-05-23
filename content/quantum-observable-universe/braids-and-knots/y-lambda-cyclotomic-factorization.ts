@@ -24,4 +24,10 @@ export default proposition({
     "q-rational",
     "principal-specialization",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/y_lambda_cyclotomic_factorization_probe.py",
+    witness: "folio-assistant/computations/y-lambda-cyclotomic-factorization-probe.witness.json",
+    status: "verified",
+  },
 });

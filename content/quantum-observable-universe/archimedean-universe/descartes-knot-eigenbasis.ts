@@ -12,4 +12,10 @@ export default corollary({
     "thm:jones-markov-trace",
     "prop:knot-eigenbasis-complete",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/descartes_knot_eigenbasis_probe.py",
+    witness: "folio-assistant/computations/descartes-knot-eigenbasis-probe.witness.json",
+    status: "verified",
+  },
 });

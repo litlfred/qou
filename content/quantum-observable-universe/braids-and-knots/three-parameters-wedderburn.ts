@@ -13,4 +13,10 @@ export default proposition({
     "young-symmetrizer",
     "on-shell",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/three_parameters_wedderburn_probe.py",
+    witness: "folio-assistant/computations/three-parameters-wedderburn-probe.witness.json",
+    status: "verified",
+  },
 });
