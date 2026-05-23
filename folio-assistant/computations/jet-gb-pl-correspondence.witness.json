@@ -1,8 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
+<<<<<<< HEAD
   "computedAt": "2026-05-23T22:26:04.063286+00:00",
   "commitSha": "96b17f36a2e3047cfef5800a70f285d815ffcf4d",
+=======
+  "computedAt": "2026-05-23T21:17:05.566883+00:00",
+  "commitSha": "8f951717bb379889c54ca6f872bee55fd602249d",
+>>>>>>> 09cef0e97 (fix(witness-pipeline): refresh PL-thimble + jet-gb-pl witnesses (metadata drift))
   "assertions": [
     {
       "name": "rank chain: E_0^p = J^p(A) = J^p𝓢 = p + 1 for all p ∈ {0,1,2,3}",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T21:09:51.851044+00:00",
-  "commitSha": "2e067a49f4e7f44237cdd1f273d3e5cdfe3a4c95",
+  "computedAt": "2026-05-24T00:19:20.480415+00:00",
+  "commitSha": "18850dad93a28fbbbcf71cef6a851166c338dbb9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2419,7 +2419,6 @@
         "isotope-mass-table.witness.json",
         "iterative-lp-dual-h6-deuteron.witness.json",
         "iterative-lp-dual-levels.witness.json",
-        "jet-gb-pl-correspondence.witness.json",
         "jet-knot-invariants.witness.json",
         "jet-tower-delta-max.witness.json",
         "joint-tower-sdp-h3.witness.json",
@@ -2791,6 +2790,7 @@
         "y_lambda_equivalence_proof.witness.json",
         "yekutieli-bijection-construction-h4.witness.json",
         "yekutieli-bijection-probe.witness.json",
+        "yekutieli-borromean-h2-extraction.witness.json",
         "z-n-brane-tower-falsifiability.witness.json"
       ]
     }
