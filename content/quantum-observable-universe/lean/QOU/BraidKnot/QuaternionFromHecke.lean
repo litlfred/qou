@@ -109,9 +109,13 @@ theorem hecke_eigenvalues_forced {R : Type*} [Field R] (q : R)
     (hq : q ≠ 0) (λ : R) (hλ : λ ^ 2 = (q - q⁻¹) * λ + 1) :
     λ = q ∨ λ = -(q⁻¹) := by
   -- The Hecke relation λ² - (q - q⁻¹)λ - 1 = 0 factors as
-  -- (λ - q)(λ + q⁻¹) = 0.
-  -- Expanding: λ² - qλ + q⁻¹λ - q·q⁻¹ = λ² - (q - q⁻¹)λ - 1 ✓
-  sorry -- standard quadratic factorisation; needs ring_nf + field_simp
+  -- (λ - q)(λ + q⁻¹) = 0. Clear denominators, factor, split.
+  -- Ref: [kassel1995] §III.1, Proposition III.1.1
+  field_simp at hλ ⊢
+  have h1 : (λ * q - q ^ 2) * (λ * q + 1) = 0 := by nlinarith
+  rcases mul_eq_zero.mp h1 with h | h
+  · left; nlinarith
+  · right; nlinarith
 
 /-- The quaternion algebra ℍ is the V ⊗ V of the fundamental
     representation of SU(2), with algebra structure induced by the
