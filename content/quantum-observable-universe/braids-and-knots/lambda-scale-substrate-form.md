@@ -67,11 +67,51 @@ $$
    hyperbolic 3-manifold has $\mathrm{Vol} = 18.03$ within 0.28%
    (closest: $9 \cdot \mathrm{Vol}(4_1)$ at $+1.35\%$).
 
-**Therefore:** the original conjecture's specific form is a
-**PSLQ-style numerical coincidence**, not a categorical identity.
-The proton's mass-formula derivation requires either (a) a
-fundamentally different categorical construction, or (b) revision
-of the Borromean baryon mass formula itself.
+6. **Q-locality (PR #951, 2026-05-23):** at the substrate window
+   $q \in [q_0 - 0.05, q_0 + 0.05]$, the residual
+   $(\frac{5}{2} - h^2 \cdot G) - \lambda_p(q)$ has slope
+   $\sim -1.7 \times 10^7$ ppm/q and curvature $\sim 4.4 \times 10^4$
+   ppm. Per the standing discipline that $q_0$ is "not special,
+   just where we happen to be," the form is **non-smooth in $q$** —
+   the 5.6 ppm match at $q_0$ is a residual zero-crossing, not a
+   structural identity. The same diagnostic refutes all four
+   known $h_q$-axis near-matches ($\frac{5}{2}-h^2 G$,
+   $1/(1 - h_q \cdot q_0^{10})$, V$_7$, Strategy G).
+
+7. **Reframing (PR #957, 2026-05-23):** $\lambda_p(q) = (m_p/m_e)
+   \cdot \hbar_q^2 / (8 G) = C \cdot \hbar_q^2$ exactly, with
+   $\hbar_q := (q - 1) / q$ and $C = (m_p/m_e) / (8 G) \approx
+   250.576$. This is a degree-0 polynomial in $q$ over
+   $\mathbb{R}[\hbar_q]$ — a constant times $\hbar_q^2$, with no
+   leading $h^2$ coefficient when expressed in $\hbar_q$. All
+   prior $h_q$-axis candidates (including the present $5/2 - h^2 G$
+   form) use $h_q = q - 1/q = (q+1) \cdot \hbar_q$, which has
+   varying coefficients when viewed as a function of $q$ — the
+   **wrong q-parametrization** for $\lambda_p$. The structural
+   question becomes "derive the *constant* $C \approx 250.576$
+   from substrate," not "find $F(q) \approx \lambda_p(q)$." Tier 5's
+   search for $T = \lambda_p \cdot 8G \approx 18.03$ as a
+   $\mathbb{Z}$-combination of knot volumes was equivalent to
+   searching for $C$ (since $C = T / (8G)^2$), and was negative.
+
+8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of
+   $\{\tr_M(\beta_p), \tr_M(\beta_n), \hbar_q, h_q, q_0, G\}$
+   structurally predicts $m_n / m_p$ either. Best pure-substrate
+   match at 0.45% — 4,500× worse than 1 ppb.
+
+**Therefore (post-2026-05-23 acknowledged-CAL-4 status):** after
+**eight independent structural searches** across every tested axis
+(Tier 5 PSLQ; q-dilog substrate-natural; V̂$_S$ + $\mathbb{Q}(\zeta_{60})$;
+commutative + operator-theoretic Φ$_q$; q-locality; reframing;
+Strategy J), the original conjecture's specific form is recorded
+as **PSLQ-style numerical coincidence**, the conjecture
+$\lambda_{\mathrm{scale}}$ is recorded as an
+**acknowledged-CAL-4** empirically falsifiable prediction (see
+[`conj:lambda-scale-bring-bloch-identity`](#conj:lambda-scale-bring-bloch-identity)
+for the formal statement), and the proton's mass-formula
+derivation continues to be sourced through the 3-calibration
+chain at the precision-dashboard level rather than from a closed
+form for $\lambda_{\mathrm{scale}}$.
 
 ## Family A theorem (what IS proved)
 
