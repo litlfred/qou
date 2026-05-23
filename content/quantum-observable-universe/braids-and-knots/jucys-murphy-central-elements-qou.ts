@@ -50,4 +50,10 @@ export default proposition({
     "elementary-symmetric-polynomial",
     "derived-coefficient",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/jucys_murphy_central_elements_qou_probe.py",
+    witness: "folio-assistant/computations/jucys-murphy-central-elements-qou-probe.witness.json",
+    status: "verified",
+  },
 });

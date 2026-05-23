@@ -25,4 +25,10 @@ export default proposition({
     "explicit-formula",
     "computability",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/explicit_central_idempotent_probe.py",
+    witness: "folio-assistant/computations/explicit-central-idempotent-probe.witness.json",
+    status: "verified",
+  },
 });

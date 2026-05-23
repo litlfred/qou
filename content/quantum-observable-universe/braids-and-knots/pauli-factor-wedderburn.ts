@@ -20,4 +20,10 @@ export default proposition({
     "trace-ratio",
     "fermion-statistics",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/pauli_factor_wedderburn_probe.py",
+    witness: "folio-assistant/computations/pauli-factor-wedderburn-probe.witness.json",
+    status: "verified",
+  },
 });

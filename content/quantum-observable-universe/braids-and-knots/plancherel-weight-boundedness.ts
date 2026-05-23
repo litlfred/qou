@@ -17,4 +17,10 @@ export default proposition({
     "convergence",
     "mass-tower",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/plancherel_weight_boundedness_probe.py",
+    witness: "folio-assistant/computations/plancherel-weight-boundedness-probe.witness.json",
+    status: "verified",
+  },
 });

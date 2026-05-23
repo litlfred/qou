@@ -14,4 +14,10 @@ export default proposition({
     "pair-production",
     "annihilation",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/frobenius_gram_matrix_probe.py",
+    witness: "folio-assistant/computations/frobenius-gram-matrix-probe.witness.json",
+    status: "verified",
+  },
 });

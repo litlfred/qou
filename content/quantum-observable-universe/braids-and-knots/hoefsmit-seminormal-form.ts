@@ -21,4 +21,10 @@ export default proposition({
     "young-tableaux",
     "representation-theory",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/hoefsmit_seminormal_form_probe.py",
+    witness: "folio-assistant/computations/hoefsmit-seminormal-form-probe.witness.json",
+    status: "verified",
+  },
 });
