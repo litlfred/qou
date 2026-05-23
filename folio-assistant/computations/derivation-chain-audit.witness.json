@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T15:03:12.194350+00:00",
-  "commitSha": "75754d73c19a13911aa981d762bec2c25566b900",
+  "computedAt": "2026-05-23T20:58:21.193545+00:00",
+  "commitSha": "4264e744c84dbf2b1ac2513e35f6f40ecb2722cc",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "acffed9479dd85c87ebf8276041d48aae13086ce",
+  "scriptCommitSha": "50f22c2d8cdca1c283333c9c1576621005a43021",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2353,7 +2353,6 @@
         "faddeev-pentagon-operator-spike.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2787,6 +2786,7 @@
         "y-lambda-cyclotomic-factorization-probe.witness.json",
         "y-lambda-macdonald-telescope.witness.json",
         "y_lambda_equivalence_proof.witness.json",
+        "yekutieli-bijection-construction-h4.witness.json",
         "yekutieli-bijection-probe.witness.json",
         "z-n-brane-tower-falsifiability.witness.json"
       ]
