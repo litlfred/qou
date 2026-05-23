@@ -228,7 +228,7 @@ as the $H^2$ calibration — not an additional fit.
 7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
    mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
    (vacuum drag, not knot topology — see
-   `content/.../descartes-universe/neutrino-knot.md`). The earlier
+   `content/.../archimedean-universe/neutrino-knot.md`). The earlier
    "wrong by 10⁶" claim was a neutron/neutrino confusion (comparing
    neutrino against neutron mass) and is **withdrawn**.
 

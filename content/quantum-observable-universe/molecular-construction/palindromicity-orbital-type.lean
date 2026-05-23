@@ -14,11 +14,11 @@ palindromic.
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 namespace QOU.Molecular
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  Palindromicity predicate -/
 

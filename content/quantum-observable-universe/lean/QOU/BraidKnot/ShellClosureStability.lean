@@ -32,7 +32,7 @@ principal-submatrix relationship.
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-- Frobenius stability data — class-supplied evaluation of
     `σ_F(D, q) = n_target · y₀*(D, q)` (the optimal dual objective

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.color_superconductivity_borromean
+# QOU.Archimedean.color_superconductivity_borromean
 
 Color superconductivity as Borromean-to-Hopf topological
 reconfiguration.  The key categorical content:
@@ -29,7 +29,7 @@ import Mathlib.Data.Int.Basic
 
 noncomputable section
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A linking phase: either Borromean (confined) or Hopf (CFL). -/
 inductive LinkingPhase where
@@ -145,6 +145,6 @@ theorem binding_ratio_gt_100 :
   unfold cfl_condensate_energy
   norm_num
 
-end QOU.Descartes
+end QOU.Archimedean
 
 end

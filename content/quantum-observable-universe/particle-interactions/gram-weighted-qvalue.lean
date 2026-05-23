@@ -12,7 +12,7 @@
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.BilinearForm.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The Gram matrix G_{ij} = tr_M(b_i · b_j) of the Iwahori-Hecke
     algebra restricted to a finite-dimensional NF subspace. -/
@@ -120,4 +120,4 @@ theorem gramWeight_uniform_when_equal {n N : ℕ} (hN : 0 < N)
     rw [if_neg h_total_nz]
     field_simp
 
-end QOU.Descartes
+end QOU.Archimedean

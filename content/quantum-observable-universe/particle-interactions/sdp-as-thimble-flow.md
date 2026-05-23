@@ -46,5 +46,5 @@ later by Mostow rigidity
 This remark is exposition: it does not prove anything new.  Its
 purpose is to make the geometric content of the SDP visible to a
 reader who has internalised
-[Chapter 9](#chap:descartes-universe) but is meeting the
+[Chapter 9](#chap:archimedean-universe) but is meeting the
 operator-selection LP for the first time.

@@ -1,4 +1,4 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 /-!
 # Proton e⁻ coefficient is negative for 1 < q < q*
@@ -24,7 +24,7 @@ categorical origin of beta decay.
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  The sign polynomial -/
 

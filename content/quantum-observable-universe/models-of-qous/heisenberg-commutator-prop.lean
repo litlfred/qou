@@ -1,5 +1,5 @@
 /-!
-# QOU.DescartesUniverse.heisenberg_commutator — q-deformed Heisenberg commutator
+# QOU.ArchimedeanUniverse.heisenberg_commutator — q-deformed Heisenberg commutator
 
 The q-deformed commutator [X, P]_q = J · ℏ_q where ℏ_q = 1 - q⁻¹.
 Classical limit q → 1 gives commutativity; q → ∞ gives maximal uncertainty.
@@ -19,10 +19,10 @@ numerical evaluation.
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
-namespace QOU.DescartesUniverse
+namespace QOU.ArchimedeanUniverse
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -54,4 +54,4 @@ theorem hbar_q_classical_limit : hbar_q 1 one_ne_zero = 0 := by
 --   unfold hbar_q
 -- (archimedean ordering; requires specialisation ι : R_q → ℝ)
 
-end QOU.DescartesUniverse
+end QOU.ArchimedeanUniverse

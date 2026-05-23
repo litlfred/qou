@@ -1,4 +1,4 @@
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.HeckeH3
 import QOU.Interactions.BorromeanUnique
 
 /-!
@@ -41,7 +41,7 @@ computation, so `ring` works.
 
 namespace QOU.Interactions
 
-open QOU.Descartes Matrix
+open QOU.Archimedean Matrix
 
 /-! ## §1  What B₃ IS in the standard rep -/
 

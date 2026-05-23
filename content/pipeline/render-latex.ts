@@ -18,7 +18,7 @@ import { remark } from "remark";
 import remarkMath from "remark-math";
 import remarkDirective from "remark-directive";
 // Selective GFM: exclude gfm-autolink-literal which causes OOM on
-// dotted Lean identifiers (e.g. "QOU.Descartes.Foo.bar").
+// dotted Lean identifiers (e.g. "QOU.Archimedean.Foo.bar").
 // Tables and strikethrough are loaded individually from the transitive
 // deps of remark-gfm.
 import { gfmTable } from "micromark-extension-gfm-table";

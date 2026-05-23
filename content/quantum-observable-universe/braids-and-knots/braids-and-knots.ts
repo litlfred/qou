@@ -70,7 +70,7 @@ export default chapter({
         "su2-so3-intro",
         "su2-basis",
         "first-order-taylor",
-        // su2-generators relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
+        // su2-generators relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "so3-generators",
         "quaternion-so3-motivation",
       ],
@@ -82,9 +82,9 @@ export default chapter({
       blocks: [
         "braid-involutions-intro",
         // prop:lagrange-resolvent-transform moved here from
-        // descartes-universe/sec:bring-algebraic-substructure per
+        // archimedean-universe/sec:bring-algebraic-substructure per
         // detangler P37 (2026-05-22). 6 H1 fwd-refs cleared.
-        // Emits new H2 to def:brings-surface @ descartes-universe
+        // Emits new H2 to def:brings-surface @ archimedean-universe
         // (accepted §5).
         "lagrange-resolvent-transform",
         "braid-twist-flip",
@@ -170,7 +170,7 @@ export default chapter({
       blocks: [
         "lagrange-q-kinematics-intro",
         // DFT decomposition of cyclic representations
-        // lagrange-resolvent-transform relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
+        // lagrange-resolvent-transform relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "lagrange-resolvents",
         // q-deformed physical quantities (general QOU)
         "q-momentum",
@@ -531,10 +531,10 @@ export default chapter({
       blocks: [
         "intro-kashiwara-jones-quantum-dilog",
         // prop:sw-period-thimble-equivalence moved here from
-        // descartes-universe/sec:topological-mass-spectrum per
+        // archimedean-universe/sec:topological-mass-spectrum per
         // detangler P36 (2026-05-22). 6 H1 fwd-refs cleared.
         // New H2 to rem:picard-lefschetz-thimble,
-        // prop:baryon-product-from-alt + 1 more @ descartes-universe
+        // prop:baryon-product-from-alt + 1 more @ archimedean-universe
         // (accepted §5).
         "sw-period-thimble-equivalence",
         "kashiwara-jones-alternation-interpretation",
@@ -1057,11 +1057,11 @@ export default chapter({
         "genus-2-intro",
         // ── Commutative-limit / genus-2 Track A ─────────────────────
         "commutative-qou",
-        // hyperelliptic-quintic relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
+        // hyperelliptic-quintic relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "hyperelliptic-z5-classification",
-        // x5-z5-automorphism relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
+        // x5-z5-automorphism relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "bring-z5-descent",
-        // x5-bring-weight-identification relocated to descartes-universe/ (PR #823 fit-section-chapter audit)
+        // x5-bring-weight-identification relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "x5-bring-prym-jacobian",
         "weight-identification-consequences",
         // u1-equivariant-reduction relocated to quantum-observable-universes/ (PR #823 fit-section-chapter audit)

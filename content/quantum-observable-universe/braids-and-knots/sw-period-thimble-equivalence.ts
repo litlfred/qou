@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:sw-period-thimble-equivalence",
   title:
     "Equivalence of categorical Markov–Frobenius pairing and SW thimble periods on $\\mathcal{E}_q$",
-  chapter: "descartes-universe",
+  chapter: "archimedean-universe",
   cites: ["witten2011", "yekutieli2015", "grothendieck1966", "hartshorne1966", "pham1965"],
   uses: [
     "rem:picard-lefschetz-thimble",
@@ -30,7 +30,7 @@ export default proposition({
     "equivalence",
   ],
   lean: {
-    ref: "qou:QOU.Descartes.swPeriodThimbleEquivalence",
+    ref: "qou:QOU.Archimedean.swPeriodThimbleEquivalence",
     validation: "not_checked",
   },
   computation: {

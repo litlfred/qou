@@ -1,4 +1,4 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 import QOU.Interactions.TrefoilVanishing
 
 /-!
@@ -27,7 +27,7 @@ To verify an NF computation:
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  NF element type -/
 

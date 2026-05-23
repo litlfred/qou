@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BuildingBlockKnots — Polynomial and volume data for all building blocks
+# QOU.Archimedean.BuildingBlockKnots — Polynomial and volume data for all building blocks
 
 Formal statements of Jones polynomial values, hyperbolic volumes,
 and crossing numbers for each building block knot in the Descartes
@@ -21,7 +21,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes.BuildingBlockKnots
+namespace QOU.Archimedean.BuildingBlockKnots
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Hyperbolic volumes (exact values where known)
@@ -211,4 +211,4 @@ theorem crossing_energy_at_substrate :
   simp only [crossing_energy, q₀, abs_lt]
   constructor <;> { field_simp; norm_num }
 
-end QOU.Descartes.BuildingBlockKnots
+end QOU.Archimedean.BuildingBlockKnots

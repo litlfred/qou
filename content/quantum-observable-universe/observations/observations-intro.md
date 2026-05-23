@@ -1,7 +1,7 @@
 This chapter collects the physical predictions of the Descartes
 universe and compares them with experimental data.  The knot-to-particle
 mapping and Skein decomposition
-([Chapter 9](#chap:descartes-universe)) and the Gröbner--Shirshov
+([Chapter 9](#chap:archimedean-universe)) and the Gröbner--Shirshov
 reduction engine and Wedderburn mass formula
 ([Chapter 10](#chap:particle-interactions)) have already been
 developed; the present chapter is purely observational, calibrating

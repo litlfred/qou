@@ -539,7 +539,7 @@ const DETANGLER: QaCriterionDefinition[] = [
     domain: "detangler",
     description:
       "Chapter-level archimedean wall placement: blocks whose .lean is " +
-      "purely archimedean live in `descartes-universe/` / `observations/` / " +
+      "purely archimedean live in `archimedean-universe/` / `observations/` / " +
       "`fluid-dynamics/`. Generic-R blocks live in `braids-and-knots/` / " +
       "`quantum-observable-universes/` / `quantum-universes/`. " +
       "Companion to `wall-side-correct` (per-block) — this one is " +
@@ -663,7 +663,7 @@ const SCRIPT_QUALITY: QaCriterionDefinition[] = [
       "functions (`math.sqrt`, `math.log`, `math.exp`, `math.cos`, " +
       "`numpy.float64`, …) for substrate-precision values. Per " +
       "CLAUDE.md §7c, archimedean constructs belong in " +
-      "`descartes-universe/` / `observations/` specialised modules; " +
+      "`archimedean-universe/` / `observations/` specialised modules; " +
       "the generic algebraic / categorical layer should use the " +
       "mpmath equivalents (`mp.sqrt`, `mp.log`, `mp.exp`, …) which " +
       "preserve the 50-digit working precision. Heuristic scan of " +

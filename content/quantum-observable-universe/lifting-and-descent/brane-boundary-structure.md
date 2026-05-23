@@ -19,4 +19,4 @@ The defining boundary $\partial A_n$
    coordinates from the internal chiral modes: it is the geometric
    boundary between the base manifold $M$ and the gauge fibre, across
    which the Reeb involution $\xi \mapsto -\xi$
-   ([Descartes chirality](#rem\:descartes-chirality)) reverses orientation.
+   ([Descartes chirality](#rem\:archimedean-chirality)) reverses orientation.

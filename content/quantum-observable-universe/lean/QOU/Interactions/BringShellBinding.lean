@@ -4,7 +4,7 @@ import QOU.LiftingDescent.HomologicalCondensation
 /-!
 # QOU.Interactions.BringShellBinding — Bring's surface, six torus knots, and the magic ladder
 
-The descartes-universe chapter (`prop:torus-knot-shell-binding`)
+The archimedean-universe chapter (`prop:torus-knot-shell-binding`)
 derives the empirical magic ladder `{2, 8, 20, 28, 50, 82, 126}`
 from the six torus knots that embed on Bring's surface
 (`def:brings-surface`):
@@ -25,9 +25,9 @@ LaTeX label: cross-cutting; cross-references
 
 ## References
 
-- [manuscript] descartes-universe / torus-knot-shell-binding
-- [manuscript] descartes-universe / brings-surface
-- [manuscript] descartes-universe / torus-knot-generators
+- [manuscript] archimedean-universe / torus-knot-shell-binding
+- [manuscript] archimedean-universe / brings-surface
+- [manuscript] archimedean-universe / torus-knot-generators
 - [manuscript] conj:magic-requires-higher-cohomology
 -/
 

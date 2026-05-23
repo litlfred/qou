@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.markov_trace_factorization — Exact factorization of the nuclear Markov trace
+# QOU.Archimedean.markov_trace_factorization — Exact factorization of the nuclear Markov trace
 
 The Markov trace of the nuclear braid word factors as a product
 of Markov-traced generator volumes:
@@ -20,7 +20,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The Markov trace parameter z = 1/(q^{1/2} + q^{-1/2}). -/
 -- Ref: [manuscript] §6/markov-trace-factorization
@@ -161,4 +161,4 @@ noncomputable def markov_trace_factorization (q : ℝ) (hq : 1 < q)
   let z := markovZ q (by linarith)
   chains.foldl (fun acc ab => acc * (z * ab.1 + ab.2)) 1
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -70,7 +70,7 @@ async function isClassAxiomatised(conjBlock: Block): Promise<boolean> {
     const refMatch = tsText.match(/ref:\s*"([^:"]+):([^"]+)"/);
     if (!refMatch) return false;
     const pkgName = refMatch[1];
-    const declPath = refMatch[2];           // e.g. "QOU.Descartes.Foo"
+    const declPath = refMatch[2];           // e.g. "QOU.Archimedean.Foo"
     const pkg = leanPackageByName(pkgName);
     if (!pkg) return false;
     const leanFile = join(

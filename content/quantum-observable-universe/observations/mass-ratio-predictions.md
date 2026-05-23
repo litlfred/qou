@@ -5,7 +5,7 @@ filament. For the Descartes universe with $\chi(\mathcal{S}) = -6$, the
 topological data of the bundle constrain the allowed vortex configurations and
 hence the mass spectrum. The electron--muon mass ratio, for instance, is
 governed by the ratio of vertical degrees in the Reeb decomposition
-([Descartes leptons](#rem:descartes-leptons)). Evaluating the mass identity at
+([Descartes leptons](#rem:archimedean-leptons)). Evaluating the mass identity at
 successive levels of the brane tower
 ([recursive brane tower](#def:recursive-brane-tower)) may yield theoretical predictions
 for lepton and hadron mass ratios.

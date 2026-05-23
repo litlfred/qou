@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BorromeanBaryon — Borromean quark structure
+# QOU.Archimedean.BorromeanBaryon — Borromean quark structure
 
 Quarks as Borromean-linked unknots in three color tubes.
 The Borromean link B_3 has the property that no two components
@@ -22,7 +22,7 @@ import Mathlib.Data.Finset.Basic
 
 noncomputable section
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The Borromean link of three unknots in color tubes. -/
 structure BorromeanBaryon where
@@ -124,6 +124,6 @@ instance canonical : BorromeanQuark where
   is_baryon_realisation_holds :=
     ⟨proton_partition, neutron_partition, rfl, rfl, rfl, rfl⟩
 
-end QOU.Descartes
+end QOU.Archimedean
 
 end

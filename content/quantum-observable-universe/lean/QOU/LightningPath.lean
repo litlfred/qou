@@ -2,7 +2,7 @@ import QOU.QuantumObservableUniverse
 import QOU.Torsion
 import QOU.CODATAChain
 import QOU.HadronicMass
-import QOU.DescartesUniverse
+import QOU.ArchimedeanUniverse
 import QOU.MassDerivation
 
 /-!
@@ -91,7 +91,7 @@ theorem lightning_path_synthesis :
        |deuteron_topological - deuteron_mass_MeV| < 1e-3 ∧
        |binding_energy_QOU - binding_energy_CODATA| < 0.001)
     -- Pillar 5: Descartes terminality
-    ∧ (∀ (dc : DescartesCondition) (tk : TannakaKreinRigidity),
+    ∧ (∀ (dc : ArchimedeanCondition) (tk : TannakaKreinRigidity),
         dc.eulerChar = -6 ∧ tk.iso_count = 1) :=
   ⟨trivial,
    fun _ inst => categorical_self_duality _ inst,

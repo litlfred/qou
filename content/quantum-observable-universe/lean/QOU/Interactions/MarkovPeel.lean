@@ -1,4 +1,4 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 /-!
 # Markov-axiom recursive ascent for the Jones–Markov trace
@@ -49,7 +49,7 @@ Python implementation, both verified against
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  Abstract Markov trace -/
 

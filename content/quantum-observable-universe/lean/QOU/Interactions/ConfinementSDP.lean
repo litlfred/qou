@@ -1,6 +1,6 @@
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.HeckeH3
+import QOU.Archimedean.HeckeRep
+import QOU.Archimedean.GroundRing
 import QOU.Interactions.ConfinementLP
 import QOU.Interactions.BorromeanUnique
 import QOU.Interactions.GramIndefinite
@@ -29,7 +29,7 @@ is structural, not exceptional.
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  SDP data on `H_n(q)` (typeclass-supplied per `n`)
 

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.borromean_hopf_energy_crossover
+# QOU.Archimedean.borromean_hopf_energy_crossover
 
 Energy comparison between Borromean (confined) and Hopf-diquark
 (CFL) phases.  The Borromean phase dominates at q = 1.1097 by
@@ -21,7 +21,7 @@ import Mathlib.Data.Real.Basic
 
 noncomputable section
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Borromean volume (Catalan's constant × 8). -/
 -- Ref: [thurston1978]
@@ -61,6 +61,6 @@ theorem milnor_discontinuity :
   unfold milnor_mu_borromean milnor_mu_cfl
   decide
 
-end QOU.Descartes
+end QOU.Archimedean
 
 end

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.QMomentum — q-Momentum from braid writhe
+# QOU.Archimedean.QMomentum — q-Momentum from braid writhe
 
 The q-momentum of a particle is the Hecke-weighted writhe of its
 braid representative.  At q=1 this reduces to the classical writhe.
@@ -26,10 +26,10 @@ import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.GeomSum
 import Mathlib.Analysis.SpecificLimits.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -233,4 +233,4 @@ theorem writhe_mirror (signs : List ℤ) :
       rw [ih]
       ring_nf
 
-end QOU.Descartes
+end QOU.Archimedean

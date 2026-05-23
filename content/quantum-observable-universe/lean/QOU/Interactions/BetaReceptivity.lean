@@ -1,4 +1,4 @@
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.HeckeH3
 import QOU.Interactions.BorromeanUnique
 
 /-!
@@ -20,7 +20,7 @@ not 2×2 matrix computations.
 
 namespace QOU.Interactions
 
-open QOU.Descartes Matrix
+open QOU.Archimedean Matrix
 
 /-! ## §1  Typed crossing matrices -/
 

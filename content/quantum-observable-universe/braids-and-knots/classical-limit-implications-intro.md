@@ -12,4 +12,4 @@ consumed by the appendix-surreal Millennium bounds.
 
 The sub-section ends with the chapter outro, gesturing forward to
 `models-of-qous` (next chapter), which makes the archimedean wall
-explicit and prepares the descartes-universe specialisation.
+explicit and prepares the archimedean-universe specialisation.

@@ -26,7 +26,7 @@ deconfinement or regime switches.
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ### Real-axis stratification data (typeclass-supplied)
 

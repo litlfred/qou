@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Color superconductivity as Borromean-to-Hopf topological reconfiguration",
   lean: {
-    ref: "qou:QOU.Descartes.first_order_transition",
+    ref: "qou:QOU.Archimedean.first_order_transition",
     validation: "not_checked",
   },
   tags: [

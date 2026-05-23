@@ -59,7 +59,7 @@ requires a generic family `HeckeNF (n : Nat) := Fin (Nat.factorial n) → R`
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  H₃-specialised Markov trace -/
 

@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.swPeriodThimbleEquivalence — Categorical = analytic mass
+# QOU.Archimedean.swPeriodThimbleEquivalence — Categorical = analytic mass
 
 For each vertical degree `k ∈ {0,1,2,3}`, the categorical Markov–
 Frobenius pairing `⟨tr_M, E_∞^{k,*}(T_w)⟩ ∈ R` agrees, after the
@@ -34,7 +34,7 @@ remains a `conjecture` per CLAUDE.md §3b.
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Vertical degree of the SW prolongation: `0` (electron, baseline),
     `1` (muon, 1-jet), `2` (intermediate), `3` (baryon). -/
@@ -59,7 +59,7 @@ inductive VerticalDegree
     archimedean split documented in the `.md` sibling. -/
 -- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 -- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
--- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md
+-- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/archimedean-universe/sw-period-thimble-equivalence.md
 class PLCorrectnessHypotheses where
   /-- A2.1: critical points of `S` equal the discriminant locus (R-side). -/
   critical_points_eq_discriminant : True
@@ -99,11 +99,11 @@ instance plCorrectnessHypotheses_placeholder : PLCorrectnessHypotheses where
     formalisations can take this as a hypothesis. -/
 -- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933
 -- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
--- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md
+-- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/archimedean-universe/sw-period-thimble-equivalence.md
 theorem swPeriodThimbleEquivalence
     [PLCorrectnessHypotheses]
     (_k : VerticalDegree) :
     -- τ(m^(k)_alg) = m^(k)_an, schematically:
     True := trivial
 
-end QOU.Descartes
+end QOU.Archimedean

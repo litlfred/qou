@@ -345,7 +345,7 @@ for the SDP / LR-fusion verifier:
 ### 1. Bring 6-knot basis (genus-4 bound)
 
 The Bring-shell-binding picture
-([prop:torus-knot-shell-binding](../../content/quantum-observable-universe/descartes-universe/torus-knot-shell-binding.md))
+([prop:torus-knot-shell-binding](../../content/quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.md))
 restricts the active operator basis to combinations of **6**
 specific torus knots ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$,
 $T_{2,9}$, $T_{3,5}$). The genus-4 bound is structural, not a
