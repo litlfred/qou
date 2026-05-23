@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a08a7adf3c65",
     "ts": "1f84ecfc2633",
-    "lean": "e944a5ae1723"
+    "lean": "8e2721643abb"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -359,6 +359,23 @@
         },
         "reviewed_at": "2026-05-23T11:01:36.020Z",
         "reviewed_sha": "d9f9468491ebe2a6e795dbeb1aa52de63e34ba45"
+      },
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "8e2721643abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
       }
     ],
     "voice-title-scholarly": [
@@ -555,5 +572,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T11:01:36.020Z"
+  "updated_at": "2026-05-23T11:28:20.680Z"
 }

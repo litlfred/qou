@@ -3,7 +3,7 @@ elements ($Z = 93$ to $118$). All entries in
 [`tbl:amc-synthetic-elements-table-data`](#tbl:amc-synthetic-elements-table-data)
 are marked with a dagger ($\dagger$) to indicate reactor- or
 accelerator-produced isotopes without natural occurrence; the QOU
-formula treats them on the same footing as naturally occurring
+formula treats them on the same footing as the stable + long-lived
 elements once $(Z, N, B/A)$ is supplied by AME2020.
 
 ## Synthetic Elements ($Z = 93$--$118$)

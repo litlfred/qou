@@ -323,6 +323,25 @@
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/q-casimir.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "3ff3f89e791a",
+          "ts": "7e71ae2f47e6",
+          "lean": "16c7f0ecf847"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/braids-and-knots/q-casimir.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
       }
     ],
     "voice-title-scholarly": [
@@ -451,5 +470,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T11:28:20.680Z"
 }
