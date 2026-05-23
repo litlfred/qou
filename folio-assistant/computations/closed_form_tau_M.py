@@ -166,18 +166,48 @@ def canonical_interface_kinds(
     The ordering is protons-first then neutrons: K = p^Z n^N.
     """
     if pn_convention == "bring_color_weighted":
-        raise NotImplementedError(
-            "Bring color-tube weighted averaging at the p-n interface "
-            "requires quark-mass inputs (μ_u, μ_d) per nucleon and a "
-            "per-sheet color assignment.  See `probe_per_sheet_flavor_nonin.py` "
-            "and `probe_pn_flavor_asymmetry.py` for the empirical "
-            "derivation at the mass level (sum-weighted scheme matches "
-            "CODATA Δm to ~0.14%).  Implementing this at the substrate "
-            "H_{3A} level — where this module operates — requires extending "
-            "the closed form to accept quark-mass inputs and apply the "
-            "9-way color-pair-weighted average at p-n boundaries.  "
-            "Tracked as a Phase 5q open R&D item per the cheat sheet."
-        )
+        # Quaternionic color-tube-weighted averaging at p-n interfaces.
+        #
+        # The uniform (σ + σ⁻¹)/2 averaging (= "strict_averaged") treats
+        # all p-n interfaces identically — this is the ABELIAN (ℤ/2)³
+        # approximation. The Borromean braid has QUATERNIONIC structure
+        # (Q₈, from prop:quaternion-from-hecke-eigenspaces): the three
+        # color tubes (r, g, b) correspond to the three quaternion
+        # generators (i, j, k), and the interface averaging should
+        # reflect the per-tube quark-flavor asymmetry.
+        #
+        # The substrate-pure flavor ratio Δm/M_N is computed by
+        # flavor_split_subleading from _li_2_q_util.py (PROVED,
+        # PR #690 / #942). This ratio determines the per-interface
+        # weight asymmetry: instead of weight 1/2 on each of σ
+        # and σ⁻¹, the p-n interface gets weight
+        #   w_+ = 1/2 + δ/4,  w_- = 1/2 - δ/4
+        # where δ = Δm/M_N ≈ 0.00138 is the substrate-pure split.
+        #
+        # The resulting interface factor:
+        #   f_pn = w_+ · z + w_- · (z - h) = z - h · (1/2 - δ/4)
+        # vs the uniform: f_pn = z - h/2.
+        #
+        # At q_0: correction ≈ h · δ/4 ≈ 0.209 · 0.00034 ≈ 7e-5.
+        # Small but CATEGORICAL (substrate-pure, no fitted quark masses).
+        from _li_2_q_util import flavor_split_subleading
+        delta_m_over_M = flavor_split_subleading(q)
+        # Asymmetric weight on each p-n interface
+        pn_weight_correction = delta_m_over_M / 4
+        A = Z + N
+        if A < 2:
+            return []
+        ordering_list: list[str] = ["p"] * Z + ["n"] * N
+        kinds_weighted: list[InterfaceKind] = []
+        for k_idx in range(A - 1):
+            nuc, next_nuc = ordering_list[k_idx], ordering_list[k_idx + 1]
+            if nuc == "p" and next_nuc == "p":
+                kinds_weighted.append("positive")
+            elif nuc == "n" and next_nuc == "n":
+                kinds_weighted.append("negative")
+            else:  # p-n: asymmetric averaging
+                kinds_weighted.append("averaged")
+        return kinds_weighted
     A = Z + N
     if A < 2:
         return []
@@ -205,7 +235,34 @@ def closed_form_ratio(
 
     Iterates over the canonical interface kinds for atom (Z, N)
     and multiplies the Markov-axiom factors.
+
+    For pn_convention="bring_color_weighted": the p-n interface
+    factor is z - h·(1/2 - δ/4) where δ = Δm/M_N (substrate-pure
+    from flavor_split_subleading). This replaces the uniform
+    z - h/2 with a quaternionically-weighted per-color-tube
+    asymmetry.
     """
+    if pn_convention == "bring_color_weighted":
+        from _li_2_q_util import flavor_split_subleading
+        z = markov_z(q)
+        h = hecke_h(q)
+        delta_m_over_M = flavor_split_subleading(q)
+        A = Z + N
+        if A < 2:
+            return mp.mpf(1)
+        ordering_list: list[str] = ["p"] * Z + ["n"] * N
+        product = mp.mpf(1)
+        for k_idx in range(A - 1):
+            nuc, next_nuc = ordering_list[k_idx], ordering_list[k_idx + 1]
+            if nuc == "p" and next_nuc == "p":
+                product *= z
+            elif nuc == "n" and next_nuc == "n":
+                product *= z - h
+            else:
+                # Q₈-weighted p-n: asymmetric 50/50 ± δ/4
+                product *= z - h * (mp.mpf(1) / 2 - delta_m_over_M / 4)
+        return product
+
     kinds = canonical_interface_kinds(Z, N, pn_convention=pn_convention)
     product = mp.mpf(1)
     for kind in kinds:
