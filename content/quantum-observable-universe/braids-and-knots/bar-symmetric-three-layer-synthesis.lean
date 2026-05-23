@@ -105,24 +105,6 @@ theorem barSymmetricProjection_idempotent {R : Type*} [Field R]
   -- Ref: [manuscript] prop:bar-symmetric-three-layer-synthesis
   sorry
 
-/-- **`cos` is bar-symmetric on bar-anti-symmetric arguments.**
-    If `x` flips sign under bar, then `cos x` is invariant under bar
-    (since `cos` is an even function). This is the **phase-layer**
-    bar-symmetric projection of the cos(α − bℏ_q²/2) factor in the
-    master Q_β formula. -/
-theorem cos_isBarSymmetric_of_antisym {x : ℝ}
-    (hx : x = -x → True := fun _ ↦ trivial) :
-    Real.cos x = Real.cos (-x) := by
-  exact (Real.cos_neg x).symm
-
-/-- **`cosh` is bar-symmetric on bar-anti-symmetric arguments.**
-    If `h` flips sign under bar, `cosh h` is invariant. This is the
-    **gain-layer** bar-symmetric projection that produces the per-Z
-    step factor α_Z ≈ [3]_q² · cosh(h) empirically matched to 0.022%
-    (PR #819 Phase 5b). -/
-theorem cosh_isBarSymmetric_of_antisym (h : ℝ) :
-    Real.cosh h = Real.cosh (-h) := by
-  exact (Real.cosh_neg h).symm
 
 /-- **Open conjecture (three-layer synthesis as one universal
     operator).** The series-layer symmetric Li_2^q, the
@@ -435,7 +417,7 @@ def BarHeckeFunctor.evenPoly3 (c0 c1 c2 : R)
       rw [sq, BarInvolution.bar_mul, (hh : BarInvolution.bar h = -h)]; ring
     have hh4 : BarInvolution.bar (h ^ 4) = h ^ 4 := by
       have hrew : (h : R) ^ 4 = (h ^ 2) ^ 2 := by
-        have : (4 : ℕ) = 2 * 2 := by norm_num
+        have : (4 : ℕ) = 2 * 2 := by decide
         rw [this, pow_mul]
       rw [hrew, sq, BarInvolution.bar_mul, hh2]
     rw [BarInvolution.bar_add, BarInvolution.bar_add,
@@ -458,16 +440,16 @@ def BarHeckeFunctor.evenPoly4 (c0 c1 c2 c3 : R)
       rw [sq, BarInvolution.bar_mul, (hh : BarInvolution.bar h = -h)]; ring
     have hh4 : BarInvolution.bar (h ^ 4) = h ^ 4 := by
       have hrew : (h : R) ^ 4 = (h ^ 2) ^ 2 := by
-        have : (4 : ℕ) = 2 * 2 := by norm_num
+        have : (4 : ℕ) = 2 * 2 := by decide
         rw [this, pow_mul]
       rw [hrew, sq, BarInvolution.bar_mul, hh2]
     have hh6 : BarInvolution.bar (h ^ 6) = h ^ 6 := by
       have hrew : (h : R) ^ 6 = (h ^ 2) ^ 3 := by
-        have : (6 : ℕ) = 2 * 3 := by norm_num
+        have : (6 : ℕ) = 2 * 3 := by decide
         rw [this, pow_mul]
       rw [hrew]
       have hstep : ((h : R) ^ 2) ^ 3 = h ^ 2 * ((h ^ 2) ^ 2) := by
-        have : (3 : ℕ) = 2 + 1 := by norm_num
+        have : (3 : ℕ) = 2 + 1 := by decide
         rw [this, pow_add, pow_one, mul_comm]
       rw [hstep, BarInvolution.bar_mul, hh2, sq, BarInvolution.bar_mul, hh2]
     rw [BarInvolution.bar_add, BarInvolution.bar_add, BarInvolution.bar_add,
@@ -570,73 +552,5 @@ instance trivialBarSymmetricThreeLayerSynthesisFunctorial :
 
 end StrengthenedSynthesis
 
-/-! # ═════════════════════════════════════════════════════════════
-    Concrete archimedean instances over ℝ
-    ═════════════════════════════════════════════════════════════
-
-    **CLAUDE.md §7c boundary.** Everything above this line is
-    generic-`R` over `Field R` / `CommRing R` with `[BarInvolution R]`
-    — no `ℝ`, no `norm_num`, no archimedean structure. The remainder
-    of the file specialises to `R := ℝ` for the trivial `id` bar-
-    involution on `ℝ`, the `c5BarHeckeFunctor` over that bar, and
-    its concrete numerical evaluations.
-
-    A future refactor may move this section to a sibling block
-    under `observations/` (per the §7c soft preference for hard
-    file splits); the cut here is the structural mark.
-
-    ## Concrete instances over ℝ (trivial bar)
-
-The minimal bar-involution on ℝ is the identity (`bar = id`),
-under which everything is trivially bar-symmetric. This gives a
-concrete domain for instantiating `BarHeckeFunctor` examples
-referring to actual analytic functions on ℝ. The bar-symmetry
-proofs become trivial; the categorical content is in the TYPE-
-LEVEL connection between functor instances and the c_5 rational
-map (etc.).
--/
-
-section TrivialRealBar
-
-/-- **Trivial bar-involution on ℝ** (`bar = id`). All ℝ elements
-    are bar-symmetric trivially. Degenerate but provides a
-    concrete `[BarInvolution ℝ]` instance for the synthesis class. -/
-noncomputable instance BarInvolution.idReal : BarInvolution ℝ where
-  bar x := x
-  bar_involutive _ := rfl
-  bar_add _ _ := rfl
-  bar_mul _ _ := rfl
-  bar_one := rfl
-  bar_zero := rfl
-
-/-- **`c5BarHeckeFunctor`** — the c_5 rational map cast as a
-    `BarHeckeFunctor ℝ` over the trivial bar. Concretely realizes
-    the categorical Markov-trace-functor shape for c_5; the bar-
-    symmetry is trivial (under id bar) but the type-level
-    instantiation is meaningful: any future non-trivial bar
-    instance on ℝ-like rings can plug this functor in.
-
-    The functor `apply` matches `c5RationalMap`'s definition:
-    `F(h) = -3/2 + 1/(h² + 4)`. -/
-noncomputable def c5BarHeckeFunctor : BarHeckeFunctor ℝ where
-  apply h := -3/2 + 1 / (h^2 + 4)
-  apply_bar_symmetric _ _ := rfl
-
-/-- The c_5 functor evaluated at 0 gives -5/4 (commutative-QOU limit). -/
-theorem c5BarHeckeFunctor_zero : c5BarHeckeFunctor.apply 0 = -5/4 := by
-  show (-3/2 : ℝ) + 1 / ((0:ℝ)^2 + 4) = -5/4
-  norm_num
-
-/-- The c_5 functor evaluated at 2 gives -11/8 (silver-ratio value). -/
-theorem c5BarHeckeFunctor_two : c5BarHeckeFunctor.apply 2 = -11/8 := by
-  show (-3/2 : ℝ) + 1 / ((2:ℝ)^2 + 4) = -11/8
-  norm_num
-
-/-- The c_5 functor evaluated at 1 gives -13/10 (golden-ratio value). -/
-theorem c5BarHeckeFunctor_one : c5BarHeckeFunctor.apply 1 = -13/10 := by
-  show (-3/2 : ℝ) + 1 / ((1:ℝ)^2 + 4) = -13/10
-  norm_num
-
-end TrivialRealBar
 
 end QOU.BraidKnot
