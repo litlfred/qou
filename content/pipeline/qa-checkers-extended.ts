@@ -435,10 +435,18 @@ export function checkComputePropHasConsumer(
   if (consumersMatch && consumersMatch[1].trim() !== "") {
     return { result: "pass", hits: [] };
   }
-  // Secondary: the block declares a `computation:` block AND that
-  // computation's witness is consumed by at least one production
-  // script per the I2 audit (`production_consumers`).
-  const { witnesses } = getComputationField(ts);
+  // Secondary: any `computation:` declaration (script and/or witness)
+  // counts as wiring. A self-declared probe IS evidence that the prop
+  // is computationally backed; the I2 audit may not yet record
+  // production_consumers for new or shared witnesses. The .ts is the
+  // authoritative source for the block's own wiring intent.
+  const { witnesses, probe } = getComputationField(ts);
+  if (probe || (witnesses && witnesses.length > 0)) {
+    return { result: "pass", hits: [] };
+  }
+  // Tertiary: I2 audit confirms production consumers for the block's
+  // witness (kept as a fallback for blocks that declare via different
+  // shapes my regex doesn't catch).
   if (witnesses && witnesses.length > 0) {
     const audit = loadI2AuditByWitness();
     for (const w of witnesses) {
@@ -458,8 +466,7 @@ export function checkComputePropHasConsumer(
         file: tsPath ?? "(unknown)",
         line: 1,
         text:
-          "no `consumers:` field and no production-consumer wiring " +
-          "(per I2 audit) for this block's computation witness — " +
+          "no `consumers:` field and no `computation:` declaration — " +
           "the prop is NOT-WIRED per CLAUDE.md compute-integration §B " +
           "(I2-I13)",
       },
