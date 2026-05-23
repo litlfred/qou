@@ -343,6 +343,9 @@ export default chapter({
         "alpha-em-derivation-open-problems",
         "em-coupling-bring-zero-mode",
         "alpha-em-derivation-exploration-options",
+        // Detangler R3 (2026-05-23): 7-row ingredient-source map
+        // extracted from alpha-em-derivation-exploration-options.md.
+        "alpha-em-derivation-exploration-options-table-data",
         "e-hartree-categorical-derivation",
         "bohr-radius-categorical",
       ],
