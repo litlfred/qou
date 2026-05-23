@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T20:04:00.599025+00:00",
-  "commitSha": "312007fd45067ab916a5e0e88c4ce49a645e2dd3",
+  "computedAt": "2026-05-23T11:45:24.275216+00:00",
+  "commitSha": "be4141fb531e34c2272c497da73db7f9b26548a9",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "492e5fc8aecd",
@@ -25,13 +25,13 @@
       {
         "obs": "m_p",
         "role": "validation",
-        "pred_MeV": "966.049623303",
+        "pred_MeV": "965.384474271",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
-        "err_ppb": "2.960e+7",
+        "err_ppb": "2.890e+7",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
-        "miss_factor": "9.578e+9",
+        "miss_factor": "9.349e+9",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
@@ -40,13 +40,13 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "966.049623303",
+        "pred_MeV": "966.714772334",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "2.819e+7",
+        "err_ppb": "2.890e+7",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "4.904e+9",
+        "miss_factor": "5.028e+9",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
@@ -70,13 +70,13 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "0.0",
+        "pred_MeV": "1.33029806350",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "1.000e+9",
+        "err_ppb": "2.858e+7",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "2.110e+8",
+        "miss_factor": "6.031e+6",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
@@ -122,11 +122,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "a1e7885e892b79bfe5f23ee25f12a509c23554f86250b356485512ab4829ddf4",
-        "size_bytes": 5456,
-        "commitSha": "63cccc576a7357b5b597cd04b44e85589dd8fc3d",
-        "scriptCommitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
-        "computedAt": "2026-05-22T19:42:51.144307+00:00"
+        "sha256": "6b1675c6d67d4f2c0cad53761df604c5f0724afcd8bd3bcf15424aea65fb062f",
+        "size_bytes": 7217,
+        "commitSha": "d0ef9f4b2d474ba90707eafd3e09d9ef035f2ead",
+        "scriptCommitSha": "e13059e3e28fa5d75ca97ba1e2f3a03c00e7d528",
+        "computedAt": "2026-05-23T10:32:56.421310+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
