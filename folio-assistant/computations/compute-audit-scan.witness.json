@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T12:19:33.378969+00:00",
-  "commitSha": "f3d1299062e0dc93205b93d3621d47add3e85cf2",
+  "computedAt": "2026-05-23T19:37:32.560644+00:00",
+  "commitSha": "59488b58fd9fdeed18c8d84b4020de845906e58d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
-  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 721,
+    "files_scanned": 724,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 165,
       "P21": 32,
       "P30": 93,
-      "P31": 28
+      "P31": 29
     },
     "top_files": [
       {
@@ -1615,6 +1615,13 @@
         "pattern": "P31",
         "file": "lambda_scale_refinements_composed_predictions.py",
         "line": 81,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "lambda_scale_strategy_i_yekutieli_probe.py",
+        "line": 204,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },

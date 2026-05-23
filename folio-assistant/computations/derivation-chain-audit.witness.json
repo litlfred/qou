@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T12:20:04.637127+00:00",
-  "commitSha": "f439be5aa404e55ff77769f255b09c99481d01a7",
+  "computedAt": "2026-05-23T19:37:34.486177+00:00",
+  "commitSha": "59488b58fd9fdeed18c8d84b4020de845906e58d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2352,7 +2352,6 @@
         "faddeev-pentagon-operator-spike.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2465,6 +2464,7 @@
         "lambda-scale-rd4-k-p-search.witness.json",
         "lambda-scale-refinement-h4-correction-bring.witness.json",
         "lambda-scale-refinements-composed-predictions.witness.json",
+        "lambda-scale-strategy-i-yekutieli-probe.witness.json",
         "lambda-scale-substrate-probe.witness.json",
         "lambda-yekutieli-extended-borromean.witness.json",
         "laurentq-a5-ceiling-measure.witness.json",
@@ -2781,6 +2781,8 @@
         "y-lambda-cyclotomic-factorization-probe.witness.json",
         "y-lambda-macdonald-telescope.witness.json",
         "y_lambda_equivalence_proof.witness.json",
+        "yekutieli-bijection-construction-h4.witness.json",
+        "yekutieli-bijection-probe.witness.json",
         "z-n-brane-tower-falsifiability.witness.json"
       ]
     }

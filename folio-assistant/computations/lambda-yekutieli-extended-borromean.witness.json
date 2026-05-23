@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-23T12:00:49.375505+00:00",
-  "commitSha": "38f445ad0988a3b2da534147a9f47990360571ce",
+  "computedAt": "2026-05-23T12:28:48.372927+00:00",
+  "commitSha": "5c6ebccb3e24c35ed551dad5cd896c7c3832d809",
   "assertions": [
     {
       "name": "yekutieli_extension_halves_m_avg_gap",
@@ -18,12 +18,13 @@
   "durationMs": 9,
   "computation": "lambda-yekutieli-extended-borromean",
   "scriptFile": "lambda_yekutieli_extended_borromean.py",
-  "scriptHash": "22175628e151",
-  "scriptCommitSha": "unknown",
-  "description": "Borromean baryon mass prediction under the Yekutieli-extended λ_scale = 5/2 + (3/4 − G)·h².  Categorically-conditional (load-bearing cell-↔-half-sym-projection bijection at H_4).  Composed with PR #942's substrate flavor split, predicts m_p ≈ 950 MeV, m_n ≈ 952 MeV — ~1.3 % vs CODATA, gap halved from the canonical-only (Family A) ~2.9 %.  Probe / comparison column only — NOT a production replacement; the production prediction in `m_p_borromean_verification_50dps.py` uses the PROVED canonical λ_A only.",
+  "scriptHash": "a3e0b23e22c4",
+  "scriptCommitSha": "16ecd0e0a56c980e4da63ce68c850745601d518b",
+  "description": "Borromean baryon mass prediction under the Yekutieli-extended λ_scale = 5/2 + (3/4 − G)·h².  EMPIRICAL MATCH AWAITING CATEGORICAL BACKING (reclassified 2026-05-23 per audit `docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md`): the load-bearing cell-↔-half-sym-projection bijection at H_4 is NOT supported by natural-reading partition combinatorics (κ-half-sym sum is +0.5·h², not the claimed −G·h² ≈ −0.916·h² — different sign AND magnitude).  Composed with PR #942's substrate flavor split, the script predicts m_p ≈ 950 MeV, m_n ≈ 952 MeV — ~1.3 % vs CODATA, gap halved from the canonical-only (Family A) ~2.9 %, but the categorical justification gap means this 950 MeV match is currently a numerical curiosity (or possibly a coincidence) pending either (a) precise definition of Π_HS differing from conjugation-averaging, (b) direct Yekutieli 2015 non-abelian Stokes evaluation, or (c) sign-convention reconciliation.  Probe / comparison column ONLY — NOT a production replacement; the production prediction in `m_p_borromean_verification_50dps.py` uses the PROVED canonical λ_A only.",
   "contentBlock": "conj:lambda-scale-bring-bloch-identity",
   "parameters": {
-    "derivation_status": "CATEGORICALLY_CONDITIONAL_YEKUTIELI",
+    "derivation_status": "EMPIRICAL_MATCH_AWAITING_CATEGORICAL_BACKING",
+    "reclassification_audit": "docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md",
     "cal_class": "CAL-1 m_e only",
     "lambda_scale_form": "λ_canonical + λ_Yekutieli = 5/2 + (3/4 − G)·h²",
     "gating_conjecture": "cell-↔-half-sym-projection bijection at H_4 (docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md §Conjecture)",
@@ -64,6 +65,6 @@
     }
   },
   "caveats": [
-    "Yekutieli per-cell curvature term `−G·h²` is categorically-conditional on the load-bearing cell-↔-half-sym-projection bijection at H_4 (see `docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md` §Conjecture).  The bijection sketch in the audit (vertex / edge / center octahedra ↔ conjugate-pair / self-conjugate partitions at H_4) is structurally natural but lacks an explicit construction + sign-convention verification.  Production `m_p_borromean_verification_50dps.py` uses ONLY the PROVED canonical λ_A; this script's Yekutieli-extended predictions are research-grade comparison data, not production claims."
+    "RECLASSIFIED 2026-05-23: the load-bearing cell-↔-half-sym-projection bijection at H_4 (audit `docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md` §Conjecture) is NOT supported by natural-reading partition combinatorics, per `docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md`.  Empirical κ_λ findings (Richardson-extrapolated 50 dps): κ_(4) = κ_(1^4) = 0, κ_(3,1) = κ_(2,1,1) = κ_(2,2) = 1.  Sum is 3 (consistent with Family A's 3/4·h² theorem) but is SYMMETRIC under conjugation involution, so the natural-reading half-sym projection (conjugation averaging) gives +0.5·h², NOT the audit's −G·h² ≈ −0.916·h² (different sign and magnitude).  The 950 MeV prediction therefore stands as a numerical match WITHOUT the substrate-pure categorical backing the brief claimed.  Closing the gap requires either: (1) a different operator definition for Π_HS; (2) Yekutieli 2015's non-abelian Stokes machinery applied beyond partition combinatorics; or (3) sign-convention reconciliation.  Until one of these closes, treat the Yekutieli-extended prediction as empirical-only (NOT a substrate-pure framework prediction).  Production `m_p_borromean_verification_50dps.py` continues to use ONLY the PROVED canonical λ_A."
   ]
 }
