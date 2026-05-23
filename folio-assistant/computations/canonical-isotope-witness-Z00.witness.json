@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T19:42:51.750337+00:00",
-  "commitSha": "63cccc576a7357b5b597cd04b44e85589dd8fc3d",
+  "computedAt": "2026-05-23T10:02:21.579166+00:00",
+  "commitSha": "e0c66aa0ca3ec900cd37d2946d4fa31ee15bc41e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 62,
+  "durationMs": 40,
   "computation": "canonical-isotope-witness-Z00",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "8741bbbd4e0b",
@@ -29,10 +29,10 @@
         "prediction_type": "mass",
         "layer": "L1-borromean-via-canonical",
         "canonical_status": "borromean-tower-via-fitted-lambda",
-        "prediction_MeV_50dps": "939.5654202164673",
+        "prediction_MeV_50dps": "966.714772334434",
         "reference_MeV_50dps": 939.56542052,
-        "err_MeV": -3.035327154066181e-07,
-        "err_ppm": -0.000323056499076593,
+        "err_MeV": 27.149351814434,
+        "err_ppm": 28895.64815977185,
         "ame_reference": {
           "B_AME_keV": 0.0,
           "mass_excess_keV": 8071.31806,
@@ -44,11 +44,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "a7307e9f097d257d0a81dc81a452f447aba46368282efbc28b76e2e5673031f1",
-        "size_bytes": 40250,
-        "commitSha": "07d90411dc8d042529bf1c39dfcf852f3eba6ca3",
+        "sha256": "14ed6d3e3c9edf43095d3a43ef49e609325893c68914dcc42d9afde1643fd8b2",
+        "size_bytes": 31093,
+        "commitSha": "e0c66aa0ca3ec900cd37d2946d4fa31ee15bc41e",
         "scriptCommitSha": "5471828e36481fd7f3e16af4d14c25a33d34cf5d",
-        "computedAt": "2026-05-22T18:57:00.515960+00:00"
+        "computedAt": "2026-05-23T10:01:15.897918+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
@@ -68,11 +68,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "a1e7885e892b79bfe5f23ee25f12a509c23554f86250b356485512ab4829ddf4",
-        "size_bytes": 5456,
-        "commitSha": "63cccc576a7357b5b597cd04b44e85589dd8fc3d",
-        "scriptCommitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
-        "computedAt": "2026-05-22T19:42:51.144307+00:00"
+        "sha256": "5c005f8b545238b59e025fb547675091b8695c6703a1a127220d6be10e488ee1",
+        "size_bytes": 7217,
+        "commitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
+        "scriptCommitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
+        "computedAt": "2026-05-23T01:36:23.630206+00:00"
       },
       {
         "path": "ame2020.json",

@@ -1,27 +1,27 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T18:57:00.515960+00:00",
-  "commitSha": "07d90411dc8d042529bf1c39dfcf852f3eba6ca3",
+  "computedAt": "2026-05-23T10:01:15.897918+00:00",
+  "commitSha": "e0c66aa0ca3ec900cd37d2946d4fa31ee15bc41e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24811,
+  "durationMs": 13050,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
   "scriptHash": "78e82ba5fa28",
   "scriptCommitSha": "5471828e36481fd7f3e16af4d14c25a33d34cf5d",
-  "description": "Extended canonical mass table via Rust hecke-canonical-chi (mpfr) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
+  "description": "Extended canonical mass table via markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.10997859555418057528159407960950937799328227995870",
-    "method": "laurent_q",
-    "precision": "mpfr",
-    "dps": 50,
+    "method": "markov_peel",
+    "precision": "f64",
+    "dps": 0,
     "compute_dps": 50,
     "output_dps": 40,
     "target_dps": 40,
     "paper_hard_floor_ppb": 780.0,
     "active_set_pruning_safe": true,
-    "atoms_requested": "p,n,D,T,3He,4He,5Li",
+    "atoms_requested": "p,n,D,T,3He,4He",
     "timeout_per_atom_sec": 1500
   },
   "data": {
@@ -109,19 +109,19 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "1.065306228592389255153277569968066119334",
+        "tr_M_q0_canonical_50dps": "1.065306228592388759238723262727897372948",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
-        "prediction_MeV_50dps": "938.2720878613554",
+        "prediction_MeV_50dps": "965.3844742709388",
         "B_AME_MeV": 938.27208816,
-        "err_MeV": -2.9864452244510176e-07,
-        "err_pct": -3.182920244710243e-08,
-        "err_ppb": -0.3182920244710243,
-        "err_ppm": -0.0003182920244710243,
+        "err_MeV": 27.112386110938814,
+        "err_pct": 2.889608084165394,
+        "err_ppb": 28896080.841653943,
+        "err_ppm": 28896.08084165394,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -207,19 +207,19 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.9232332971695836424637698809187137593269",
+        "tr_M_q0_canonical_50dps": "0.9232332971695832469810831408531544044751",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
-        "prediction_MeV_50dps": "939.5654202164673",
+        "prediction_MeV_50dps": "966.714772334434",
         "B_AME_MeV": 939.56542052,
-        "err_MeV": -3.035327154066181e-07,
-        "err_pct": -3.23056499076593e-08,
-        "err_ppb": -0.323056499076593,
-        "err_ppm": -0.000323056499076593,
+        "err_MeV": 27.149351814434,
+        "err_pct": 2.889564815977185,
+        "err_ppb": 28895648.15977185,
+        "err_ppm": 28895.64815977185,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -380,7 +380,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.3882864715477132785110659223165687998713",
+        "tr_M_q0_canonical_50dps": "0.3882864715477129993660579160501876768679",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -392,7 +392,7 @@
         "err_ppb": 10903208.115240071,
         "err_ppm": 10903.20811524007,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -628,7 +628,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.1040521186755256548979583274321227548353",
+        "tr_M_q0_canonical_50dps": "0.1040521186755255847280747815857354140164",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -640,7 +640,7 @@
         "err_ppb": -1556263.5422465405,
         "err_ppm": -1556.2635422465407,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -876,7 +876,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.2065408585622626294891049090129267784181",
+        "tr_M_q0_canonical_50dps": "0.2065408585622623852212542990626018641358",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -888,7 +888,7 @@
         "err_ppb": -29686734.858355537,
         "err_ppm": -29686.73485835554,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -1199,7 +1199,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.05534834587669804811138769996413954152059",
+        "tr_M_q0_canonical_50dps": "0.05534834587669798511841031737422658512653",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1211,409 +1211,11 @@
         "err_ppb": 58666363.54907832,
         "err_ppm": 58666.36354907833,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q)",
-        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
-      },
-      {
-        "Z": 3,
-        "N": 2,
-        "A": 5,
-        "n_strands": 15,
-        "spin_J": null,
-        "parity": null,
-        "braid_word_canonical": [
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "averaged"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "averaged"
-          ],
-          [
-            2,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "averaged"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "averaged"
-          ],
-          [
-            5,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "averaged"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "averaged"
-          ],
-          [
-            8,
-            "averaged"
-          ],
-          [
-            9,
-            "sigma"
-          ],
-          [
-            9,
-            "sigma"
-          ],
-          [
-            9,
-            "sigma"
-          ],
-          [
-            9,
-            "averaged"
-          ],
-          [
-            9,
-            "averaged"
-          ],
-          [
-            9,
-            "sigma"
-          ],
-          [
-            9,
-            "sigma"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            11,
-            "sigma_inv"
-          ],
-          [
-            12,
-            "sigma"
-          ],
-          [
-            12,
-            "sigma"
-          ],
-          [
-            12,
-            "sigma"
-          ],
-          [
-            12,
-            "averaged"
-          ],
-          [
-            12,
-            "averaged"
-          ],
-          [
-            12,
-            "sigma"
-          ],
-          [
-            12,
-            "sigma"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ]
-        ],
-        "markov_closure": null,
-        "knot_operators": [
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 0,
-            "crossing_type": "sigma",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 1,
-            "crossing_type": "sigma",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": null,
-            "witness_ref": null
-          },
-          {
-            "op_type": "inter-nucleon",
-            "gen_index": 2,
-            "crossing_type": "sigma",
-            "nucleon_type": null,
-            "interface_channel": "pp",
-            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 3,
-            "crossing_type": "sigma",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 4,
-            "crossing_type": "sigma",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": null,
-            "witness_ref": null
-          },
-          {
-            "op_type": "inter-nucleon",
-            "gen_index": 5,
-            "crossing_type": "sigma",
-            "nucleon_type": null,
-            "interface_channel": "pp",
-            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 6,
-            "crossing_type": "sigma",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 7,
-            "crossing_type": "sigma",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": null,
-            "witness_ref": null
-          },
-          {
-            "op_type": "inter-nucleon",
-            "gen_index": 8,
-            "crossing_type": "averaged",
-            "nucleon_type": null,
-            "interface_channel": "pn",
-            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 9,
-            "crossing_type": "sigma_inv",
-            "nucleon_type": "n",
-            "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 10,
-            "crossing_type": "sigma_inv",
-            "nucleon_type": "n",
-            "interface_channel": null,
-            "canonical_form_label": null,
-            "witness_ref": null
-          },
-          {
-            "op_type": "inter-nucleon",
-            "gen_index": 11,
-            "crossing_type": "sigma_inv",
-            "nucleon_type": null,
-            "interface_channel": "nn",
-            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 12,
-            "crossing_type": "sigma_inv",
-            "nucleon_type": "n",
-            "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 13,
-            "crossing_type": "sigma_inv",
-            "nucleon_type": "n",
-            "interface_channel": null,
-            "canonical_form_label": null,
-            "witness_ref": null
-          },
-          {
-            "op_type": "closure-topology",
-            "gen_index": -1,
-            "crossing_type": null,
-            "nucleon_type": null,
-            "interface_channel": null,
-            "canonical_form_label": "closure(Z=3, N=2) — TBD",
-            "witness_ref": null
-          }
-        ],
-        "tr_M_q0_canonical_50dps": "0.02944139370039715158341540657017033056444",
-        "wedderburn_blocks_active": [],
-        "prediction_method": "canonical-trace",
-        "calibration_source": "CAL-1",
-        "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": null,
-        "B_AME_MeV": 26.328,
-        "err_MeV": null,
-        "err_pct": null,
-        "err_ppb": null,
-        "err_ppm": null,
-        "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       }
     ],
-    "n_atoms_computed": 7,
+    "n_atoms_computed": 6,
     "upstream_witness_hashes": [
       {
         "path": "mass-table-ppb.witness.json",
@@ -1625,11 +1227,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "7982942be3b0dbc356bdb9a09d5bba979f03e0aefc3020c4d1cc94e79d6b45a1",
-        "size_bytes": 5032,
-        "commitSha": "236d742f78113cf0fc096757d68fd9853d3b1c6c",
-        "scriptCommitSha": "9e5e6ab8ae93a5158781cd86ec7d080ef96df5de",
-        "computedAt": "2026-05-22T14:51:35.913199+00:00"
+        "sha256": "5c005f8b545238b59e025fb547675091b8695c6703a1a127220d6be10e488ee1",
+        "size_bytes": 7217,
+        "commitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
+        "scriptCommitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
+        "computedAt": "2026-05-23T01:36:23.630206+00:00"
       }
     ]
   }

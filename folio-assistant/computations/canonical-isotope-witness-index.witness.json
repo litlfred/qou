@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T19:42:51.765834+00:00",
-  "commitSha": "63cccc576a7357b5b597cd04b44e85589dd8fc3d",
+  "computedAt": "2026-05-23T10:02:21.657297+00:00",
+  "commitSha": "e0c66aa0ca3ec900cd37d2946d4fa31ee15bc41e",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
@@ -12,9 +12,9 @@
   "scriptCommitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
   "description": "Cross-shard index for the per-Z canonical-isotope witness family. Each shard (canonical-isotope-witness-Z<NN>.witness.json) covers one element's isotope chain; this index aggregates the coverage map.",
   "parameters": {
-    "n_shards": 1,
+    "n_shards": 2,
     "z_min": 0,
-    "z_max": 0,
+    "z_max": 1,
     "ame_source": "uploads/mass_1.mas20.txt (AME2020 mass.mas20 from W.J.Huang, M.Wang, F.G.Kondev, G.Audi, S.Naimi, Chinese Physics C45, 030002, March 2021)",
     "ame_entries": 3558
   },
@@ -26,6 +26,13 @@
         "rows_total": 1,
         "rows_with_prediction": 1,
         "rows_with_composite_mass": 0
+      },
+      "1": {
+        "shard_filename": "canonical-isotope-witness-Z01.witness.json",
+        "element": "H",
+        "rows_total": 7,
+        "rows_with_prediction": 3,
+        "rows_with_composite_mass": 2
       }
     }
   }
