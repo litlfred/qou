@@ -4322,6 +4322,51 @@ export const references: CSLData[] = [
     URL: "https://www.sciencedirect.com/book/9780444005502/polylogarithms-and-associated-functions",
   }),
 
+  // ── Markov 1936 (Markov's braid-closure theorem) ──────────────
+  ref({
+    id: "markov1936",
+    type: "article-journal",
+    title:
+      "Über die freie Äquivalenz der geschlossenen Zöpfe",
+    author: [{ family: "Markov", given: "Andrey A." }],
+    "container-title": "Recueil Mathématique (Matematicheskii Sbornik)",
+    issued: { "date-parts": [[1936]] },
+    volume: "1(43)",
+    issue: "1",
+    page: "73-78",
+    note: "Establishes the Markov braid-closure theorem: braid closures are equivalent under conjugation and (de)stabilisation. Standard reference for the Markov trace.",
+  }),
+
+  // ── Kac 1966 (asymptotic spectra of the Laplacian) ────────────
+  ref({
+    id: "kac1966",
+    type: "article-journal",
+    title: "Can one hear the shape of a drum?",
+    author: [{ family: "Kac", given: "Mark" }],
+    "container-title": "The American Mathematical Monthly",
+    issued: { "date-parts": [[1966]] },
+    volume: "73",
+    issue: "4 (Part 2)",
+    page: "1-23",
+    DOI: "10.2307/2313748",
+    URL: "https://doi.org/10.2307/2313748",
+  }),
+
+  // ── Sunada 1985 (isospectral non-isometric manifolds) ─────────
+  ref({
+    id: "sunada1985",
+    type: "article-journal",
+    title: "Riemannian coverings and isospectral manifolds",
+    author: [{ family: "Sunada", given: "Toshikazu" }],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1985]] },
+    volume: "121",
+    issue: "1",
+    page: "169-186",
+    DOI: "10.2307/1971195",
+    URL: "https://doi.org/10.2307/1971195",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

@@ -124,7 +124,7 @@ theorem alpha_Z_step_closed_form
     identity as a §3b-cond hypothesis; downstream theorems
     consuming `[HeckeSymmetricChannelCoshH q]` derive unconditional
     Lean theorems modulo this single conjectural input. -/
--- Ref: [brundan-kleshchev2008] Graded decomposition numbers...
+-- Ref: [brundankleshchev2009] Graded decomposition numbers...
 -- Ref: [kassel2008] Braids and Hecke algebras
 -- Ref: [manuscript] conj:alpha-cosh-h-z-step-correction §"Operator-level"
 class HeckeSymmetricChannelCoshH (q : ℝ) where
