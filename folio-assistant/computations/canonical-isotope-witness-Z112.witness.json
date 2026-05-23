@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T05:32:33.231668+00:00",
-  "commitSha": "2b8d065db24f65a30c93808827059b0a09d75413",
+  "computedAt": "2026-05-23T11:49:42.784376+00:00",
+  "commitSha": "38f445ad0988a3b2da534147a9f47990360571ce",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 27,
   "computation": "canonical-isotope-witness-Z112",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "47ef4dceb05e",
-  "scriptCommitSha": "befa7a1642b80f9a56cf48bc40b664254566a77e",
+  "scriptHash": "8741bbbd4e0b",
+  "scriptCommitSha": "760078d0e992f9d3cfe881d2b77b48be1dfa8919",
   "description": "Per-Z=112 shard of the recursive atom-knot atlas. Element: Cn. Covers every (Z=112, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
     "Z": 112,
@@ -428,11 +428,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "dfe598c57f241559378fef2d96c95013ec074ed2127a867a795202cbd714d30d",
-        "size_bytes": 51154,
-        "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
-        "scriptCommitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
-        "computedAt": "2026-05-19T03:04:06.897651+00:00"
+        "sha256": "14ed6d3e3c9edf43095d3a43ef49e609325893c68914dcc42d9afde1643fd8b2",
+        "size_bytes": 31093,
+        "commitSha": "e0c66aa0ca3ec900cd37d2946d4fa31ee15bc41e",
+        "scriptCommitSha": "5471828e36481fd7f3e16af4d14c25a33d34cf5d",
+        "computedAt": "2026-05-23T10:01:15.897918+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
@@ -452,11 +452,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "cd305db00f5a7393f74ec4fdbe1762c28bdf80028494dff59765d688711ec85e",
-        "size_bytes": 4632,
-        "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
-        "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
-        "computedAt": "2026-05-20T03:15:55.773785+00:00"
+        "sha256": "6b1675c6d67d4f2c0cad53761df604c5f0724afcd8bd3bcf15424aea65fb062f",
+        "size_bytes": 7217,
+        "commitSha": "d0ef9f4b2d474ba90707eafd3e09d9ef035f2ead",
+        "scriptCommitSha": "e13059e3e28fa5d75ca97ba1e2f3a03c00e7d528",
+        "computedAt": "2026-05-23T10:32:56.421310+00:00"
       },
       {
         "path": "ame2020.json",

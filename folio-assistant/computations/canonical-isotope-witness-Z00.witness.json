@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T10:02:21.579166+00:00",
-  "commitSha": "e0c66aa0ca3ec900cd37d2946d4fa31ee15bc41e",
+  "computedAt": "2026-05-23T11:49:35.655692+00:00",
+  "commitSha": "38f445ad0988a3b2da534147a9f47990360571ce",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 40,
+  "durationMs": 43,
   "computation": "canonical-isotope-witness-Z00",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "8741bbbd4e0b",
@@ -68,11 +68,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "5c005f8b545238b59e025fb547675091b8695c6703a1a127220d6be10e488ee1",
+        "sha256": "6b1675c6d67d4f2c0cad53761df604c5f0724afcd8bd3bcf15424aea65fb062f",
         "size_bytes": 7217,
-        "commitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
-        "scriptCommitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
-        "computedAt": "2026-05-23T01:36:23.630206+00:00"
+        "commitSha": "d0ef9f4b2d474ba90707eafd3e09d9ef035f2ead",
+        "scriptCommitSha": "e13059e3e28fa5d75ca97ba1e2f3a03c00e7d528",
+        "computedAt": "2026-05-23T10:32:56.421310+00:00"
       },
       {
         "path": "ame2020.json",
