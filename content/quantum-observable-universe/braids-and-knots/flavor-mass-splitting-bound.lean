@@ -43,8 +43,8 @@ open Flavor
     `1/3` itself is undefined; in `ℝ`, `ℚ`, or any char-0 field this
     is automatic. -/
 -- Ref: [manuscript] braids-and-knots/flavor-mass-splitting-bound
-theorem substrate_to_bound_ratio {R : Type*} [Field R]
-    (q : R) (hq : q ≠ 0) (hq4 : q^4 ≠ 1) (h3 : (3 : R) ≠ 0) :
+theorem substrate_to_bound_ratio
+    (q : ℝ) (hq : q ≠ 0) (hq4 : q^4 ≠ 1) (h3 : (3 : ℝ) ≠ 0) :
     ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3)
     / (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹))
       = 1 / 3 := by

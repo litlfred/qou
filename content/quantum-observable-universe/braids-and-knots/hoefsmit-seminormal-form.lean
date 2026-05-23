@@ -29,9 +29,9 @@ namespace QOU.BraidKnot
 universe u
 
 /-- The diagonal entry in the Hoefsmit seminormal form
-    (axial-distance `ρ`).  Polymorphic in the ground field `R`. -/
-noncomputable def hoefsmitEntry {R : Type u} [Field R]
-    (q : R) (rho : ℤ) : R :=
+    (axial-distance `ρ`).  Specialised to `ℝ` per §7c. -/
+noncomputable def hoefsmitEntry
+    (q : ℝ) (rho : ℤ) : ℝ :=
   let h := q - q⁻¹
   h / (1 - q ^ (-2 * rho))
 
@@ -40,8 +40,8 @@ noncomputable def hoefsmitEntry {R : Type u} [Field R]
     introducing `Real.sqrt`, we supply `b` as data and require
     the algebraic identity `b² = a·a' + 1` as a hypothesis on the
     caller's side. -/
-structure HoefsmitOffDiag {R : Type u} [Field R] (q : R) (rho : ℤ) where
-  b : R
+structure HoefsmitOffDiag (q : ℝ) (rho : ℤ) where
+  b : ℝ
   b_sq : b ^ 2 = hoefsmitEntry q rho * hoefsmitEntry q (-rho) + 1
 
 /-- Helper: q^n ≠ 1 for q > 1 and n : ℤ with n ≠ 0. -/
@@ -267,7 +267,7 @@ theorem hoefsmit_product_rho2 (q : ℝ) (hq : q > 1) :
 /-- The figure-eight trace via Hoefsmit matrices:
     `tr(ρ_{[2,1]}(T₁ T₂⁻¹ T₁⁻¹ T₂)) = 2 - [3]_q`.  Proved
     symbolically (SymPy, exact cancellation). -/
-theorem figure_eight_hoefsmit_trace {R : Type u} [Field R] (q : R) :
+theorem figure_eight_hoefsmit_trace (q : ℝ) (hq : 1 < q) :
     let h := q - q⁻¹
     let n3 := (q ^ 3 - q⁻¹ ^ 3) / h
     2 - n3 = -1 - h ^ 2 := by
