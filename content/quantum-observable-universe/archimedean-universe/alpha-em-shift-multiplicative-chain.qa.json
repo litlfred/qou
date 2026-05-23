@@ -3,9 +3,9 @@
   "label": "prop:alpha-em-shift-multiplicative-chain",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/alpha-em-shift-multiplicative-chain.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/alpha-em-shift-multiplicative-chain.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/alpha-em-shift-multiplicative-chain.lean"
+    "ts": "content/quantum-observable-universe/archimedean-universe/alpha-em-shift-multiplicative-chain.ts",
+    "md": "content/quantum-observable-universe/archimedean-universe/alpha-em-shift-multiplicative-chain.md",
+    "lean": "content/quantum-observable-universe/archimedean-universe/alpha-em-shift-multiplicative-chain.lean"
   },
   "source_hashes": {
     "md": "50e359c3d92f",
@@ -63,7 +63,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/alpha-em-shift-multiplicative-chain.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/archimedean-universe/alpha-em-shift-multiplicative-chain.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -82,7 +82,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/alpha-em-shift-multiplicative-chain.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/archimedean-universe/alpha-em-shift-multiplicative-chain.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [

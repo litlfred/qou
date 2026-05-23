@@ -3,9 +3,9 @@
   "label": "prop:bohr-radius-categorical",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/bohr-radius-categorical.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/bohr-radius-categorical.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/bohr-radius-categorical.lean"
+    "ts": "content/quantum-observable-universe/archimedean-universe/bohr-radius-categorical.ts",
+    "md": "content/quantum-observable-universe/archimedean-universe/bohr-radius-categorical.md",
+    "lean": "content/quantum-observable-universe/archimedean-universe/bohr-radius-categorical.lean"
   },
   "source_hashes": {
     "md": "b0aa9451c1c5",
@@ -63,7 +63,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/bohr-radius-categorical.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/archimedean-universe/bohr-radius-categorical.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -82,7 +82,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/bohr-radius-categorical.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/archimedean-universe/bohr-radius-categorical.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -321,7 +321,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/bohr-radius-categorical.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
+        "evidence": "quantum-observable-universe/archimedean-universe/bohr-radius-categorical.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [

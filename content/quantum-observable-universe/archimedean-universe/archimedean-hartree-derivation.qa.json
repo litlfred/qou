@@ -3,9 +3,9 @@
   "label": "prop:archimedean-hartree-derivation",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.lean"
+    "ts": "content/quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts",
+    "md": "content/quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md",
+    "lean": "content/quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.lean"
   },
   "source_hashes": {
     "md": "ee39ec885320",
@@ -63,7 +63,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -82,7 +82,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -118,7 +118,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.ts:1: LP/SDP witness 'folio-assistant/computations/hecke-core-symbolic-migration.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+        "evidence": "quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts:1: LP/SDP witness 'folio-assistant/computations/hecke-core-symbolic-migration.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
       }
     ],
     "detangler-section-band": [
@@ -323,7 +323,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
+        "evidence": "quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -463,7 +463,7 @@
         "reviewed_at": "2026-05-22T18:29:51.882Z",
         "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:234: | H$_{2}$ molecule | 2 (one per atom) | 4 (per pair) | $\\alpha^2$ × shell-factor ✓ | | content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.md:235: | He atom | 1 (proton + 2 e) | $\\geq 2$ | $\\alpha^2$ × shell-factor ✓ |"
+        "evidence": "content/quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md:234: | H$_{2}$ molecule | 2 (one per atom) | 4 (per pair) | $\\alpha^2$ × shell-factor ✓ | | content/quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md:235: | He atom | 1 (proton + 2 e) | $\\geq 2$ | $\\alpha^2$ × shell-factor ✓ |"
       },
       {
         "field_hash": {

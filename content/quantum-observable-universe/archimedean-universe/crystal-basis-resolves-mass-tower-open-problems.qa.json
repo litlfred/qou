@@ -3,9 +3,9 @@
   "label": "prop:crystal-basis-resolves-mass-tower-open-problems",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.lean"
+    "ts": "content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.ts",
+    "md": "content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md",
+    "lean": "content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.lean"
   },
   "source_hashes": {
     "md": "75b9630f85f5",
@@ -63,7 +63,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -82,7 +82,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -321,7 +321,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts | quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{brundankleshchev2009} or -- Ref: [brundankleshchev2009] does not resolve in references.ts | quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{kashiwara1991} or -- Ref: [kashiwara1991] does not resolve in references.ts | quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{khovanovlauda2009} or -- Ref: [khovanovlauda2009] does not resolve in references.ts | quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{lecouvey2007} or -- Ref: [lecouvey2007] does not resolve in references.ts"
+        "evidence": "quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{brundankleshchev2009} or -- Ref: [brundankleshchev2009] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{kashiwara1991} or -- Ref: [kashiwara1991] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{khovanovlauda2009} or -- Ref: [khovanovlauda2009] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md:1: \\cite{lecouvey2007} or -- Ref: [lecouvey2007] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -461,7 +461,7 @@
         "reviewed_at": "2026-05-22T18:29:51.882Z",
         "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.md:91: $A = 5$ ($^5$Li, $^5$He), …, multiply by the Wedderburn weight"
+        "evidence": "content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md:91: $A = 5$ ($^5$Li, $^5$He), …, multiply by the Wedderburn weight"
       },
       {
         "field_hash": {

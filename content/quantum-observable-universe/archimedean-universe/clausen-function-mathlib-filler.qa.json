@@ -3,9 +3,9 @@
   "label": "rem:clausen-function-mathlib-filler",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.lean"
+    "ts": "content/quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.ts",
+    "md": "content/quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.md",
+    "lean": "content/quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.lean"
   },
   "source_hashes": {
     "md": "c2b5592e6aef",
@@ -283,7 +283,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts | quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.md:1: \\cite{thurston1978} or -- Ref: [thurston1978] does not resolve in references.ts | quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.md:1: \\cite{zagier1986} or -- Ref: [zagier1986] does not resolve in references.ts"
+        "evidence": "quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.md:1: \\cite{thurston1978} or -- Ref: [thurston1978] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.md:1: \\cite{zagier1986} or -- Ref: [zagier1986] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -457,7 +457,7 @@
         "reviewed_at": "2026-05-20T16:40:02.947Z",
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
         "severity": "major",
-        "evidence": "quantum-observable-universe/descartes-universe/clausen-function-mathlib-filler.lean:64: so the `tsum` is well-defined and continuous. Outside the"
+        "evidence": "quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.lean:64: so the `tsum` is well-defined and continuous. Outside the"
       }
     ],
     "voice-ai-slop": [

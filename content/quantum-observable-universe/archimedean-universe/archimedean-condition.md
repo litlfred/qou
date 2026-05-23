@@ -14,4 +14,4 @@ class $[A] \in K_0(\mathbf{C})$ has rank $-6$, which by
 [QU-to-QOU lifting](#thm\:qu-to-qou)(3--4) forces $\kappa_n \neq 0$ for all $n$ and
 produces $6$ branch points in the geometric :refterm[descent]{#descent} (with total ramification
 $R_{\mathrm{tot}} = 2d + 6$).  A quantum observable universe satisfying the
-Archimedean condition is called a *Archimedean universe*.
+Archimedean condition is called an *Archimedean universe*.

@@ -3,9 +3,9 @@
   "label": "conj:e-hartree-categorical-derivation",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.ts",
-    "md": "content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md",
-    "lean": "content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.lean"
+    "ts": "content/quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.ts",
+    "md": "content/quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.md",
+    "lean": "content/quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.lean"
   },
   "source_hashes": {
     "md": "dda1b0e16467",
@@ -80,7 +80,7 @@
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.ts:1: LP/SDP witness 'folio-assistant/computations/hecke-core-symbolic-migration.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+        "evidence": "quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.ts:1: LP/SDP witness 'folio-assistant/computations/hecke-core-symbolic-migration.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
       }
     ],
     "detangler-section-band": [
@@ -425,7 +425,7 @@
         "reviewed_at": "2026-05-22T18:29:51.882Z",
         "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:1373: Parity-based mechanisms (A, C, C′, σε, …) are **structurally | content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:1480: diagnosed as misdirected: parity-based mechanisms (A, C, C′, | content/quantum-observable-universe/descartes-universe/e-hartree-categorical-derivation.md:1546: action × inverse-length gives energy. The natural categorical"
+        "evidence": "content/quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.md:1373: Parity-based mechanisms (A, C, C′, σε, …) are **structurally | content/quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.md:1480: diagnosed as misdirected: parity-based mechanisms (A, C, C′, | content/quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.md:1546: action × inverse-length gives energy. The natural categorical"
       },
       {
         "field_hash": {
