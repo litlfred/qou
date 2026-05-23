@@ -1,0 +1,108 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-23T10:37:45.536319+00:00",
+  "commitSha": "3dbc89ac918724ecf9e3a78152db2d92cfca0ffa",
+  "assertions": [
+    {
+      "name": "unit_circle_canonical_basis_hypothesis_falsified",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "PSLQ search at maxcoeff=50 over 16 canonical Bring-symmetric Cl_2 values finds NO integer relation with 2/(3π). The single-point inversion gives θ_*/π = 0.9019897... which is not a simple rational. The canonical-unit-circle-Bloch-class hypothesis is refuted at this basis."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 142,
+  "computation": "bring-zero-mode-bloch-hunt",
+  "scriptFile": "bring_zero_mode_bloch_hunt.py",
+  "scriptHash": "133ec64c1a34",
+  "scriptCommitSha": "unknown",
+  "description": "Canonical search for [Z] ∈ B(ℂ) with D[Z] = 2/(3π) (the open sub-problem of prop:em-coupling-bring-zero-mode). Tests the unit-circle hypothesis: D(e^(iθ)) = Cl_2(θ) at canonical Bring-symmetric angles kπ/n for n ∈ {3..30}. PSLQ search for integer combinations hitting the target at maxcoeff ≤ 50. NEGATIVE result reported honestly.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "target_value": "0.212206590789193781025178351163",
+    "target_formula": "2 / (3π)",
+    "candidate_basis": [
+      {
+        "angle": "π/3",
+        "cl2_value": "1.01494160640965362502120255427"
+      },
+      {
+        "angle": "π/4",
+        "cl2_value": "0.98187215105020335671792454306"
+      },
+      {
+        "angle": "π/5",
+        "cl2_value": "0.923755168100535308711986029793"
+      },
+      {
+        "angle": "2π/5",
+        "cl2_value": "0.997354691398414778667283575321"
+      },
+      {
+        "angle": "π/6",
+        "cl2_value": "0.86437913105389274962503631519"
+      },
+      {
+        "angle": "π/9",
+        "cl2_value": "0.71704689608531124974802487941"
+      },
+      {
+        "angle": "2π/9",
+        "cl2_value": "0.953741016638851317066518223059"
+      },
+      {
+        "angle": "4π/9",
+        "cl2_value": "0.968374825202591658276572312212"
+      },
+      {
+        "angle": "π/10",
+        "cl2_value": "0.678341062111097024431254192413"
+      },
+      {
+        "angle": "3π/10",
+        "cl2_value": "1.0099924528062885080196269545"
+      },
+      {
+        "angle": "π/15",
+        "cl2_value": "0.536988177258733923355076449023"
+      },
+      {
+        "angle": "2π/15",
+        "cl2_value": "0.784397970873922811944291084381"
+      },
+      {
+        "angle": "4π/15",
+        "cl2_value": "0.9942581070437515677438007492"
+      },
+      {
+        "angle": "7π/15",
+        "cl2_value": "0.949418825386665397125006254822"
+      },
+      {
+        "angle": "π/30",
+        "cl2_value": "0.341032429322096644682333108406"
+      },
+      {
+        "angle": "7π/30",
+        "cl2_value": "0.966174257305116854765404424756"
+      }
+    ],
+    "single_point_inversion": {
+      "theta_star": "2.83368427860792845806827324652",
+      "theta_star_over_pi": "0.901989720204486682675233340628",
+      "is_simple_rational_approx": "no — closest p/q with q≤30 differs by > 1e-4"
+    },
+    "pslq_result": {
+      "maxcoeff": 50,
+      "tol": "1e-25",
+      "found_relation": false,
+      "raw_relation": null
+    }
+  },
+  "caveats": [
+    "NEGATIVE result. Three follow-up directions: (i) extend to z off the unit circle (D = Im(Li_2) + arg(1-z)·log|z|; candidate algebraic numbers from Bring's resolvent quintic); (ii) extend basis to higher denominators n ∈ {60, 90, 120, ...} or to algebraic combinations beyond integer coefficients; (iii) accept that the canonical identification requires a non-standard Bloch group (relative / motivic), as the em-coupling-bring-zero-mode.md docstring suggests with 'cosimplicial/Yekutieli triple structure'."
+  ]
+}
