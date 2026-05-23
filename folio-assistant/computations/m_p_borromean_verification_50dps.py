@@ -310,17 +310,17 @@ def main() -> int:
     Q_INV = mp.mpf(1) / Q
     dm_over_Mn = _flavor_split(Q, Q_INV)
 
-    # Class-uniform Family A m_avg (Borromean tower without split).
-    m_avg_factor = (VOL_B3 / HBAR_Q ** 2) * LAMBDA_PROTON_FAMILY_A
+    # Yekutieli-extended m_avg (Borromean tower without split).
+    m_avg_factor = (VOL_B3 / HBAR_Q ** 2) * LAMBDA_PROTON_YEKUTIELI
     m_avg_pred = m_avg_factor * M_E_CODATA_MEV
     M_AVG_CODATA = (M_P_CODATA_MEV + M_N_CODATA_MEV) / 2
     m_avg_rel_diff = (m_avg_pred - M_AVG_CODATA) / M_AVG_CODATA
     w.add_data("class_uniform_m_avg", {
-        "formula": "m_avg = m_e · Vol(B_3)/ℏ_q² · λ_A  (Family A, before split)",
+        "formula": "m_avg = m_e · Vol(B_3)/ℏ_q² · λ_Y  (Yekutieli-extended, before split)",
         "m_avg_pred_MeV": mp.nstr(m_avg_pred, 20),
         "m_avg_codata_MeV": mp.nstr(M_AVG_CODATA, 12),
         "rel_diff_ppm": mp.nstr(m_avg_rel_diff * mp.mpf("1e6"), 8),
-        "lambda_A_form": "5/2 + (3/4) h²",
+        "lambda_Y_form": "5/2 + (3/4 − G) h²  (Yekutieli per-cell curvature)",
     })
     dm_codata_ratio = (M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA
     dm_ratio_ppm = (dm_over_Mn / dm_codata_ratio - 1) * mp.mpf("1e6")
@@ -354,7 +354,7 @@ def main() -> int:
     proton_ppm = proton_rel_diff * mp.mpf("1e6")
     w.add_data("proton", {
         "formula": "m_p = m_avg_pred · (1 − Δm/M_N / 2), with "
-                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
+                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_Y and "
                    "Δm/M_N from flavor_split_subleading",
         "vol_B3_over_hbar_q_squared": mp.nstr(VOL_B3 / HBAR_Q**2, 20),
         "tower_factor": mp.nstr(proton_factor, 20),
@@ -384,7 +384,7 @@ def main() -> int:
     neutron_ppm = neutron_rel_diff * mp.mpf("1e6")
     w.add_data("neutron", {
         "formula": "m_n = m_avg_pred · (1 + Δm/M_N / 2), with "
-                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
+                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_Y and "
                    "Δm/M_N from flavor_split_subleading",
         "tower_factor": mp.nstr(neutron_factor, 20),
         "m_n_pred_MeV": mp.nstr(neutron_pred, 20),
