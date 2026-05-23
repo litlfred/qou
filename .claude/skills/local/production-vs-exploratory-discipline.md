@@ -372,6 +372,161 @@ Fix: per `prepare-merge.md` §1.a, the witness-regen loop
 auto-resolves drift by re-running the 5 self-emitting
 validators. THIS IS NOT OPTIONAL — CI will fail without it.
 
+## Pre-promotion checklist (run before adopting any candidate in production)
+
+If you are about to:
+- modify `m_p_borromean_verification_50dps.py` or any `*_50dps.py`
+  production script,
+- add or change a `LAMBDA_*`, `ALPHA_*`, `Q_*` named constant,
+- mark a cheat-sheet §5 Migration Backlog item as "closed",
+- update `per-observable-100x-status.witness.json` or
+  `onepb-status-dashboard.witness.json`,
+
+then run this 7-step pre-promotion checklist BEFORE the commit.
+Skipping any step has caused review-cycle churn in the cluster's
+history — every cluster CAL-4 PR that needed multiple Gemini
+review rounds skipped at least one of these.
+
+### Step 1 — categorize the candidate (production / exploratory / numerology)
+
+```bash
+# Where is the proposed code going?
+git diff --cached --name-only | grep -E '_50dps\.py|LAMBDA_|ALPHA_|Q_50_DIGIT|onepb-status|per-observable-100x'
+```
+
+If any output, it's a PRODUCTION change. Continue checklist. If
+nothing, it's exploratory — label the docstring `EXPLORATORY
+shape-probe` and commit without further gate.
+
+### Step 2 — q-locality gate (mandatory for any "structural" claim)
+
+Sweep `q ∈ [q_0 − 0.05, q_0 + 0.05]` and compute the residual
+slope. Reference implementation in
+[`q_dilog_tower_q_locality_spike.py`](../../folio-assistant/computations/q_dilog_tower_q_locality_spike.py)
+(or the equivalent on `claude/iw-explore-q10-2026-05-23`).
+
+| slope range | classification | action |
+|---|---|---|
+| `< 10² ppm/q` | smooth (passes q-locality) | proceed to step 3 |
+| `10² – 10⁴ ppm/q` | marginal | escalate to author (Rule 14) before production |
+| `> 10⁵ ppm/q` | coincidence-basin | RETIRE; do not promote |
+
+The 4 known cluster near-matches all fail this gate (slopes
+~10⁷ ppm/q). Run the gate; report the slope in the commit message.
+
+### Step 3 — 13-driver categorical menu check
+
+Which of the 13 drivers (this skill §"13-driver canonical menu")
+does the candidate coefficient come from? Cite by number:
+
+```
+λ_scale = canonical + Yekutieli additive at h²
+  - canonical:       Driver 10 (MacMahon partition-algebra)
+  - Yekutieli per-cell:  Driver 11 (Lobachevsky-Catalan: G = Vol(𝓑_3)/8)
+```
+
+If the candidate cannot be traced to ≥ 1 driver, **invoke Rule 14**:
+escalate to author via `AskUserQuestion`. Do not commit production.
+
+### Step 4 — q-locality on the FULL CANDIDATE, not just the leading term
+
+A common slip: agents q-locality-gate the LEADING term (passes)
+and skip the gate on the SUBLEADING correction (which fails).
+Per the cluster: V_7's leading 5/2 passes; the h² coefficient
+−13/16 fails q-locality. Check EVERY h^k coefficient up to the
+order you claim.
+
+### Step 5 — naming discipline
+
+Production constants must be named:
+
+| pattern | meaning | example |
+|---|---|---|
+| `*_CANONICAL` or unsuffixed | proved theorem | `LAMBDA_PROTON_FAMILY_A` |
+| `*_FITTED_FROM_CODATA` | empirical fit (NEVER imported as λ_scale) | `LAMBDA_PROTON_FITTED_FROM_CODATA` |
+| `*_CODATA_VALIDATION` | standard-physics anchor (CAL-1/2/3) | `M_P_MEV_VALIDATION` |
+| `*_EXPLORATORY` | shape-probe result | `LAMBDA_PROTON_EXPLORATORY` |
+
+Mislabeling has been the most common review-thread cause —
+the literal `LAMBDA_PROTON_DOC = 2.4599527869` looked production-
+ready but was fitted. PR #888 fix: rename to
+`LAMBDA_PROTON_FITTED_FROM_CODATA` (truth-in-naming). DO this
+proactively in your own PR.
+
+### Step 6 — register the witness assertion correctly
+
+Falsification probes (expected-negative outcomes) MUST assert
+the refutation so `allPassed: true`:
+
+```python
+# Wrong — witness allPassed: false on the expected-negative outcome
+w.add_assertion("strategy_g_skein_yields_lambda_scale",
+                computed=val, expected=target, tolerance=1e-6)
+
+# Right — witness allPassed: true; CI / audit dashboards stay green
+identity_falsified = int(not (abs(val - target) < target * 1e-6))
+w.add_assertion("strategy_g_single_polynomial_identity_falsified_at_1ppm",
+                computed=identity_falsified, expected=1, tolerance=None,
+                source="...")
+```
+
+Reference: `probe_phiq_n_star_rule.py` for the canonical pattern.
+Get this wrong and `validate` CI fails on every PR that registers
+an honest-negative probe. The h^4 refinement probe in PR #916
+hit this; commit `d89dc364` was the fix.
+
+### Step 7 — banner the script (mandatory for exploratory probes)
+
+Top of every `probe_*.py` / `*_alt_*.py` / `*_refinement_*.py`:
+
+```python
+"""EXPLORATORY shape-probe (per .claude/skills/local/production-vs-exploratory-discipline.md).
+
+This script is exploratory hypothesis-generation; the finding it
+surfaces is NOT for production without:
+  - passing the q-locality gate (step 2 of pre-promotion checklist)
+  - tracing to one of the 13 canonical drivers
+  - explicit owner authorisation if off-menu (Rule 14)
+"""
+```
+
+The banner is the bright line the post-hoc audit (compute-audit
+skill) looks for. Without it, the script will be flagged as a
+production candidate and trigger CAL-4 review threads.
+
+### One-line gate summary
+
+```
+production change?  → Step 1 yes  → Step 2 q-locality < 10² ppm/q  → Step 3 13-driver cite  → Step 4 every h^k  → Step 5 naming  → Step 6 witness  → Step 7 banner
+                                                                      (any "no" → Rule 14 escalation)
+```
+
+## How to recognize what category an EXISTING script is in
+
+Grep / file-pattern heuristics for retrospective audit:
+
+```bash
+# Production scripts — strict no-fits required
+grep -rln '_50dps\b' folio-assistant/computations/*.py | wc -l
+grep -rln 'def main' folio-assistant/computations/canonical_*.py | wc -l
+grep -rln '^LAMBDA_\|^ALPHA_\|^Q_50_DIGIT_STR\b' folio-assistant/computations/*.py | wc -l
+
+# Exploratory scripts — empirical fits OK
+ls folio-assistant/computations/probe_*.py 2>/dev/null | wc -l
+ls folio-assistant/computations/*_alt_*.py 2>/dev/null | wc -l
+ls folio-assistant/computations/*_refinement_*.py 2>/dev/null | wc -l
+ls folio-assistant/computations/*_spike_*.py 2>/dev/null | wc -l
+
+# Numerology / coincidence-basin documented in audits
+grep -rln 'PSLQ coincidence\|substrate-q_0 coincidence\|coincidence basin\|FITTED_FROM_CODATA' folio-assistant/computations/ docs/audits/ 2>/dev/null
+```
+
+The naming convention is the first-line signal. A file named
+`canonical_*.py` in `m_p_borromean_verification_50dps.py`'s import
+graph is production; a file named `probe_*.py` is exploratory.
+Cross-reference the docstring banner (Step 7 above) for
+confirmation. Mismatched name vs banner is a review red flag.
+
 ## Where this skill connects
 
 - **`compute-author.md`** (pre-work briefing for compute) —

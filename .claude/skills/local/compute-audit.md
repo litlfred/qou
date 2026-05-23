@@ -303,6 +303,19 @@ numerical equivalence at q₀ before/after.
    exact algebraic outputs.
 5. **Run `bun run validate`** for any content-block touch.
 
+## Sibling skill: `production-vs-exploratory-discipline` (CAL-4 / empirical-fit / numerology classification)
+
+Before flagging a script as a CAL-4 violation, consult
+[`local/production-vs-exploratory-discipline`](production-vs-exploratory-discipline.md).
+It defines the 3-category framework (production / exploratory /
+numerology), the 13-driver canonical menu for production
+coefficients, the Rule 14 escalation path for off-menu candidates,
+and the q-locality gate (commit `c18e562b9` on main 2026-05-23,
+0/4 near-matches survive). The compute-audit P14 (CAL-4 hidden
+constants) and P16 (production-vs-probe naming) checks should
+both route through that skill's pre-promotion checklist before
+flagging.
+
 ## Sibling skill: `compute-author` (pre-work)
 
 For agents about to **write or modify** compute (not audit an
