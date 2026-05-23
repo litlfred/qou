@@ -173,23 +173,33 @@ M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-regis
 #   - Single-knot Vol fit → no manifold has Vol = 18.03 within 0.28 %
 # Ref: docs/audits/2026-05-18-conjecture-falsification.md.
 #
-# Honest predictions:
-#   m_p^pred = m_e · Vol(𝓑₃)/ℏ_q² · λ_A ≈ 966 MeV  (vs CODATA 938.27)
+# Honest predictions (post-bijection-resolution, PR #989):
+#   m_p^pred = m_e · Vol(𝓑₃)/ℏ_q² · λ_Yekutieli ≈ 951 MeV  (vs CODATA 938.27)
 #   m_n^pred = same algebraic form (Δ_{n−p} = 0 in this chain;
 #              n−p split is the upstream flavor_split layer's job).
-# err ≈ +2.96 % vs CODATA — the framework's actual provable accuracy
-# at this layer.  The Bring-Bloch identity
-# (`conj:lambda-scale-bring-bloch-identity`) remains the open R&D
-# direction for any ppb-level closure.
-# Single source of truth: `_li_2_q_util.lambda_scale_family_a`
-# (Gemini PR #942 review — centralize the Family A formula).
+# err ≈ +1.33 % vs CODATA — halved from the canonical-only ~3 % (PR #895).
+#
+# The Yekutieli per-cell curvature adds −G·h² to canonical Wedderburn
+# via the S_4 ↓ S_3 branching factor = 2/5 (standard representation
+# theory; effective cell count = (5/2)×(2/5) = 1 of 8 ideal octahedra).
+# Both terms are substrate-derived, no fits. See
+# `strategy_i_bijection_closure_s4_s3_quotient.py` for the derivation.
+# Single source of truth: `_li_2_q_util.lambda_scale_yekutieli_extended`
+# (canonical Wedderburn + Yekutieli per-cell curvature, bijection
+# resolved via S_4 ↓ S_3 branching factor 2/5 in PR #989).
+# Supersedes Family A alone (PR #895) — the bijection step is now
+# categorically closed (standard representation-theory branching rule),
+# making the Yekutieli additive h² term (−G · h²) fully substrate-derived.
+from _li_2_q_util import lambda_scale_yekutieli_extended as _lambda_scale_yekutieli
 from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
+LAMBDA_PROTON_YEKUTIELI = _lambda_scale_yekutieli(Q)
+LAMBDA_NEUTRON_YEKUTIELI = LAMBDA_PROTON_YEKUTIELI  # same categorical λ
+# Keep Family A reference for comparison column in witness
 LAMBDA_PROTON_FAMILY_A = _lambda_scale_family_a(Q)
-LAMBDA_NEUTRON_FAMILY_A = LAMBDA_PROTON_FAMILY_A  # same categorical λ
 
 # Production aliases — point at the PROVED categorical λ.
-LAMBDA_PROTON_DOC = LAMBDA_PROTON_FAMILY_A
-LAMBDA_NEUTRON_DOC = LAMBDA_NEUTRON_FAMILY_A
+LAMBDA_PROTON_DOC = LAMBDA_PROTON_YEKUTIELI
+LAMBDA_NEUTRON_DOC = LAMBDA_NEUTRON_YEKUTIELI
 
 # Falsified-fit literals retained as audit-only references for the
 # Phase 5q ppm-coincidence comparison column in the witness.
