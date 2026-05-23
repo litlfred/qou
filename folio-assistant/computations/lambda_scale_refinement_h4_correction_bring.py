@@ -1,27 +1,45 @@
 #!/usr/bin/env python3
-"""RETIRED (2026-05-23, user direction "no empirical fitting, canonical only").
+"""EXPLORATORY shape-probe (per user direction 2026-05-23 clarification:
+"suggestions of empirical fits are OK for exploratory - what is the
+shape type of questions. but never for PROD pipeline").
 
-This probe is preserved as a documented dead-end. The α = (3/4 + 1 − G)
-h^4 coefficient it surfaces gives m_p to 22 ppm, but the "+1" leading
-h^4 coefficient is an EMPIRICAL FIT — no categorical derivation
-identifies "+1" as the natural partition-algebra h^4 weight at H_4.
-Per the CLAUDE.md three-calibration discipline + user direction "no
-empirical fitting, canonical only", this candidate is retired.
+This probe is **exploratory shape-probing**, NOT for production. The
+α = (3/4 + 1 − G) ≈ 0.834 h^4 coefficient it surfaces gives m_p to
+22 ppm — a SHAPE HINT that the partition-algebra h^4 weight at H_4
+might contain a "+1" leading term combined with canonical (+3/4) and
+Yekutieli (−G) at h². But the "+1" lacks categorical derivation; it
+cannot be promoted to production without one.
 
-CANONICAL-ONLY refinement direction (open R&D, audit Step 4):
-  Derive the second-order Yekutieli per-cell h^4 coefficient FROM the
-  partition algebra at H_4 — not by fitting against CODATA. Until
-  that derivation lands, the framework's canonical predictions are:
-    (a) canonical Wedderburn alone:         m_p ≈ 965 MeV  (+2.89%)
-    (b) canonical + Yekutieli additive:     m_p ≈ 950 MeV  (+1.26%)
-    (c) Bring color-tube (n=10 substrate):  m_p ≈ 938 MeV  (−670 ppm)
+Status:
+  - EXPLORATORY: yes — useful for hypothesis-generation about the
+    h^4 categorical structure (is the leading +1 from second-order
+    Yekutieli per-cell? from Φ_q pentagon h^4 remainder? from a
+    crystal-graph contribution? — RULE 14 candidates).
+  - PRODUCTION: no — the "+1" is fit, not derived. Production
+    remains option (a) canonical alone (PR #895) until either the
+    cell-↔-projection bijection (option b's load-bearing step) or
+    the color-sheet ↔ flavor mapping (option c's load-bearing step)
+    or a categorical derivation of the +1 coefficient closes.
 
-All three are conjecture-conditional but FITTING-FREE. The probe
-below documents what an α·h^4 refinement WOULD look like, but the
-α value emerges from numerical fitting, not derivation, and is
-therefore not framework-acceptable per user direction.
+Per RULE 14 (canonical-unification audit
+docs/audits/2026-05-23-lambda-scale-canonical-unification.md
+§"Rule 14"): if the "+1" coefficient can be derived from one of the
+13 categorical drivers (Φ_q recursion, Rogers pentagon, Yang-Baxter,
+hexagon, Frobenius reciprocity, 6j, modular dual, KLR, MacMahon,
+Lobachevsky-Catalan, Chern-Simons-Ohtsuki, crystal-graph), then this
+probe's shape-hint translates into a canonical refinement. If NOT,
+the candidate must be escalated to the author for explicit
+authorisation before production adoption.
 
-Refinement probe — h^4 correction to Bring color-tube (RETIRED).
+Until that closure: framework canonical predictions are
+  (a) canonical Wedderburn alone:         m_p ≈ 965 MeV  (+2.89%)
+  (b) canonical + Yekutieli additive:     m_p ≈ 950 MeV  (+1.26%)
+  (c) Bring color-tube (n=10 substrate):  m_p ≈ 938 MeV  (−670 ppm)
+
+Each is conjecture-conditional but FITTING-FREE. This exploratory
+probe sits above (c) as a shape-hint for future canonical derivation.
+
+Refinement probe — h^4 correction to Bring color-tube (EXPLORATORY).
 
 Observation (lambda_scale_refinements_composed_predictions.py):
 Option (c) `λ = 1/(1 − h_q · q_0^10)` gives m_p = 937.6 MeV vs
