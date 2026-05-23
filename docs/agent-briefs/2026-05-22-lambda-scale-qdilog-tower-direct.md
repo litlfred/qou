@@ -709,64 +709,81 @@ basis beyond what's been tried:
     [`docs/audits/2026-05-22-faddeev-pentagon-operator-spike.md`](../audits/2026-05-22-faddeev-pentagon-operator-spike.md).
     5th independent negative search in the cluster — but with
     structurally-elevated near-match.
-  - **Strategy I (Yekutieli per-cell curvature) — framework's
-    substrate-pure prediction.** Per the formalised audit
-    [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
-    (revised 2026-05-22 evening per user direction "framework B
-    only, remove A"), the framework's honest substrate-pure
-    Yekutieli-extended λ_scale is the CATEGORICAL SUM of two
-    independently-derived contributions:
+  - **Strategy I (Yekutieli per-cell curvature) — Yekutieli
+    quadratic added to canonical Wedderburn.** Per 2026-05-23
+    user direction "we need yekutieli quadratic as added", the
+    framework's substrate-pure prediction is the **CATEGORICAL
+    SUM** of the canonical Wedderburn theorem and the Yekutieli
+    per-cell curvature contribution:
 
     ```
-    λ_scale^Yekutieli = Family A + Yekutieli per-cell curvature
-                      = (5/2 + (3/4)·h²) + (−G · h²)
-                      = 5/2 + (3/4 − G) · h²  +  O(h⁴)
+    λ_scale^framework  =  λ_canonical  +  λ_Yekutieli quadratic
+                       =  (5/2 + (3/4)·h²)  +  (−G · h²)
+                       =  5/2 + (3/4 − G) · h²    +  O(h⁴)
+                       ≈  2.49266                  at q_0
+                       →  1.4 % framework gap from CODATA
     ```
 
-    At q_0: `λ ≈ 2.49266`; m_p prediction ≈ **951 MeV** vs
-    CODATA 938.27 MeV → **framework gap halves from ~3 %
-    (Family A alone) to ~1.4 %**. Both contributing terms are
-    derived from independent substrate-natural principles:
-    Family A is a proved theorem (PR #701 + Lean, on production
-    via #895); the Yekutieli per-cell `−G = −Vol(𝓑_3)/8` is
-    the non-abelian-Stokes curvature contribution per ideal
-    octahedral cell. Neither is fit against CODATA.
+    Both contributing terms are derived from independent
+    substrate-natural principles:
+    - **Canonical Wedderburn:** `(1/4) · Σ_{λ ⊢ 4} dim_q V_λ =
+      5/2 + (3/4)h²`. Proved theorem in
+      [`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py)
+      + Lean; on production via PR #895.
+    - **Yekutieli quadratic:** `−G = −Vol(𝓑_3)/8 =
+      −(per-cell hyperbolic volume)`. Comes from non-abelian-Stokes
+      curvature integration over 𝓑_3's 8-fold ideal-octahedral
+      tessellation; per the audit
+      [`docs/audits/2026-05-18-conjecture-proof-step3-yekutieli.md`](../audits/2026-05-18-conjecture-proof-step3-yekutieli.md),
+      the load-bearing step is the cell-↔-half-sym-projection
+      bijection at H_4.
 
-    **Load-bearing conjecture** (audit's own flagging): the
-    explicit cell-↔-half-sym-projection bijection at H_4 (audit
-    §"Concrete next R&D" item 1). The Yekutieli per-cell `−G`
-    contribution requires that the half-symmetric Wedderburn
-    projection extract exactly ONE of 8 ideal octahedral cells
-    from 𝓑_3's tessellation; the audit gives the bijection
-    sketch (vertex / edge / center octahedra ↔ conjugate-pair /
-    self-conj partitions) but the explicit construction +
-    sign-convention verification is the gate.
+    The framework's m_p prediction under this formula is
+    **~951 MeV** vs CODATA 938.27 MeV — gap **halved** from the
+    canonical-Wedderburn-alone ~3 % to ~1.4 %.
 
-    The "Reading A" alternative `5/2 − G·h²` (Yekutieli REPLACES
-    Wedderburn h² rather than adding to it) was **removed as a
-    framework candidate** because: (1) it lands at +5.6 ppm from
-    CODATA — same coincidence basin as PR #701's falsified
-    Wedderburn-sum candidates; (2) it would conflict with
-    Family A's proved theorem at h² order. Treating it as the
-    framework's prediction would re-enter the CAL-4 antipattern
-    PR #895 escaped.
+    **The audit's "Reading A" formula `5/2 − G·h²` (Yekutieli
+    REPLACING the canonical Wedderburn h²) is NOT the framework's
+    prediction.** Per the 2026-05-23 user direction, the Yekutieli
+    quadratic is ADDED to the canonical Wedderburn theorem, not a
+    substitute for it. The two mechanisms contribute INDEPENDENTLY
+    at h² order:
+    - canonical Wedderburn = (1/4) Σ dim_q V_λ enumerated sum over
+      H_4 partitions
+    - Yekutieli per-cell = curvature 2-form integrated over the
+      ribbon surface
 
-    **Next R&D** (audit §"Concrete next R&D"):
-    1. Construct cell-↔-half-sym-projection bijection at H_4
-       (categorical theory work, not compute).
-    2. Derive h⁴ corrections from the per-cell tessellation to
-       close the residual 1.4 % gap.
-    3. Lean formalisation pending Mathlib's non-abelian
-       multiplicative integral primitive (long-term).
+    These are different categorical objects measuring different
+    things; both contribute. The earlier "Reading A" framing (one
+    REPLACES the other) was incorrect per the additive direction.
+
+    **Load-bearing conjecture** (audit's own flagging,
+    §"Concrete next R&D" item 1): the explicit
+    cell-↔-half-sym-projection bijection at H_4. The audit
+    sketches the bijection (vertex / edge / center octahedra ↔
+    conjugate-pair / self-conjugate partitions) but the explicit
+    construction + sign-convention verification is open. With the
+    proof, the additive Yekutieli quadratic above becomes the
+    framework's substrate-pure theorem.
+
+    > **Terminology (per 2026-05-23 user direction).** Going forward
+    > the brief refers to the proved Wedderburn-sum λ_scale as the
+    > **canonical λ_scale** (not "Family A"). Where "Family A"
+    > appears in cross-references to prior PRs / audits / scripts
+    > (e.g. `LAMBDA_PROTON_FAMILY_A` constant,
+    > `lambda_scale_all_c_i_family_a.py`), the name is retained for
+    > traceability, but the content concept is "canonical".
+
+    Production-update options:
+
+    | option | dependency | m_p pred | CODATA gap |
+    |---|---|---:|---:|
+    | hold canonical Wedderburn | none (proved theorem) | 966 MeV | ~3 % |
+    | adopt canonical + Yekutieli quadratic added | cell-↔-projection bijection at H_4 | 951 MeV | ~1.4 % |
+    | adopt canonical + Yekutieli + Bring color-tube (d348ad8c) | color-sheet ↔ quark-flavor mapping (Phase 5q) | 938.3 MeV | ~19 ppm |
 
     Witness:
     [`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../folio-assistant/computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json).
-    Production-update path: a follow-up PR could swap Family A →
-    Yekutieli (5/2 + (3/4)h² → 5/2 + (3/4−G)h²) in
-    `m_p_borromean_verification_50dps.py`, contingent on either
-    the bijection proof or explicit owner authorisation
-    (analogous to Family A's status pre-#895 — conjecture-
-    conditional but the framework's honest derivation).
 
 ## Verification criteria
 
