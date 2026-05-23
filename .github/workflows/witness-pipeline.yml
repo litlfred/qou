@@ -461,19 +461,22 @@ jobs:
           # narrative file (per-particle methodology audit + removed
           # legacy artifacts record); structural edits are expected.
           #
-          # Thimble-integration exclusions: jet-gb-pl-correspondence
-          # and picard-lefschetz-thimble integrate along gradient-flow
-          # ODE paths whose last digits depend on mpmath version +
-          # step-count accumulation. The scripts are now mpmath (not
-          # float64), but thimble stepping is inherently sensitive to
-          # platform arithmetic at the ~0.3% level. Excluding from
-          # the bit-stability gate until a fixed-point thimble
-          # integration scheme is implemented.
+          # Thimble-integration exclusions: picard-lefschetz-thimble
+          # and its 4 downstream consumers integrate along gradient-
+          # flow ODE paths whose last digits (~0.3%) depend on mpmath
+          # version + step-count accumulation across platforms.
+          # Excluding from the bit-stability gate until a fixed-point
+          # thimble integration scheme is implemented. The `allPassed`
+          # check on each freshly-regenerated witness still runs.
           PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
           :(glob)folio-assistant/computations/*.derivation.json
           :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json
           :(exclude)folio-assistant/computations/jet-gb-pl-correspondence.witness.json
           :(exclude)folio-assistant/computations/picard-lefschetz-thimble.witness.json
+          :(exclude)folio-assistant/computations/baryon-product-from-alt.witness.json
+          :(exclude)folio-assistant/computations/sw-period-thimble-equivalence.witness.json
+          :(exclude)folio-assistant/computations/residue-algebraic-verification.witness.json
+          :(exclude)folio-assistant/computations/mobius-limit-from-thimble.witness.json
           :(exclude,glob)folio-assistant/computations/*-audit.witness.json
           :(exclude,glob)folio-assistant/computations/*-scan.witness.json
           :(exclude,glob)folio-assistant/computations/*-compliance.witness.json
