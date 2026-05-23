@@ -49,9 +49,18 @@ def _np_conj(z):
 
 
 def _scipy_quad(f, a, b, **kw):
-    """Drop-in for scipy.integrate.quad using mpmath.quad."""
+    """Drop-in for scipy.integrate.quad using mpmath.quad.
+
+    Handles both real- and complex-valued integrands: integrates
+    real and imaginary parts separately, returns the real part
+    (matching scipy.integrate.quad's behavior on real integrands).
+    """
+    a_f, b_f = float(a), float(b)
     try:
-        result = float(mp.quad(lambda x: float(f(float(x))), [float(a), float(b)]))
+        def _real_part(x):
+            v = f(float(x))
+            return float(v.real if isinstance(v, complex) else v)
+        result = float(mp.quad(_real_part, [a_f, b_f]))
         return result, 0.0
     except Exception:
         return 0.0, float("inf")
