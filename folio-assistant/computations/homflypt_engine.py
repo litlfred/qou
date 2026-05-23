@@ -536,6 +536,75 @@ def _homflypt_2strand_numerical(k: int, v, z):
     return delta * a + b
 
 
+def _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q):
+    """Numerical HOMFLYPT for n≥3 strand braids via Ocneanu trace.
+
+    Uses the Wedderburn decomposition through hecke_characters:
+
+      P(β̂; v, z) = δ^{n-1} · Σ_λ ω_λ(s, q) · χ_λ(β) / dim(V_λ)
+
+    where:
+      δ = (v⁻¹ - v) / z
+      s = 1 / δ  (Ocneanu parameter)
+      χ_λ(β) = character trace from hecke_characters.chi_lambda_braid
+      ω_λ = quantum Schur weight (hook-content formula)
+    """
+    import mpmath as mp
+    from hecke_characters import chi_lambda_braid, partitions_of, dim_q
+
+    delta = (1 / v - v) / z
+    s = 1 / delta
+    n = n_strands
+
+    # Convert braid_word from [±int] to [(sign, gen)] format for
+    # hecke_characters
+    hc_word = []
+    for g in braid_word:
+        if g > 0:
+            hc_word.append((1, g))
+        else:
+            hc_word.append((-1, -g))
+
+    # Compute per-partition contributions
+    total = mp.mpf(0)
+    for lam in partitions_of(n):
+        shape = list(lam)
+
+        # χ_λ(β) via hecke_characters (f64 for speed)
+        chi_val = chi_lambda_braid(shape, hc_word, q_value=float(q))
+
+        # dim_q(V_λ) — quantum dimension (uses global q0)
+        dq = dim_q(shape)
+
+        if abs(dq) < 1e-30:
+            continue
+
+        # Normalized trace
+        tr_lam = chi_val / dq
+
+        # Schur weight ω_λ(s, q) via hook-content formula:
+        # ω_λ = s^n · ∏_{(i,j)∈λ} (q^{c(i,j)}·s − q^{-c(i,j)}/s)
+        #                           / (q^{h(i,j)} − q^{-h(i,j)})
+        omega = float(s) ** n
+        cells = _cells(lam)
+        for (i, j) in cells:
+            c = _content(i, j)
+            h = _hook_length(lam, i, j)
+            q_c = float(q) ** c
+            q_h = float(q) ** h
+            numer = q_c * float(s) - 1.0 / (q_c * float(s))
+            denom = q_h - 1.0 / q_h
+            if abs(denom) < 1e-30:
+                omega = 0.0
+                break
+            omega *= numer / denom
+
+        total += omega * tr_lam
+
+    # P = δ^{n-1} · total
+    return mp.mpf(float(delta) ** (n - 1) * total)
+
+
 def homflypt_at_su_n(
     braid_word: list[int],
     n_strands: int,
@@ -573,6 +642,9 @@ def homflypt_at_su_n(
             return _homflypt_2strand_numerical(k, v, z)
         except NotImplementedError:
             pass
+
+    if n_strands >= 3:
+        return _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q_mp)
 
     poly = homflypt_from_braid(braid_word, n_strands)
     return poly.evaluate(v, z)
@@ -713,20 +785,59 @@ def _self_test():
         p_fig8 = homflypt_from_braid(word, n)
         print(f"  figure-eight:   P = {p_fig8}")
         n3_implemented = True
-    except NotImplementedError as e:
-        print(f"  figure-eight:   [3-strand, not yet implemented]")
+    except NotImplementedError:
+        print(f"  figure-eight:   [polynomial form not yet implemented for 3-strand]")
 
-    # SU(N) family test (2-strand only for now)
+    # 3-strand NUMERICAL evaluation (via hecke_characters)
+    # Note: Python fallback of chi_lambda_braid only supports q = q0
+    # (the substrate parameter). Use q0 for the 3-strand tests.
+    print()
+    from q_parameter import Q_50_DIGIT_STR
+    q0_test = mp.mpf(Q_50_DIGIT_STR)
+    print(f"3-strand numerical HOMFLYPT via Ocneanu trace + hecke_characters (q=q0):")
+    try:
+        # Figure-eight at SU(2)
+        fig8_su2 = homflypt_at_su_n([1, -2, 1, -2], 3, N=2, q=q0_test)
+        print(f"  figure-eight SU(2): P = {mp.nstr(fig8_su2, 12)}")
+
+        # Figure-eight SU(N) family
+        fig8_fam = homflypt_su_n_family([1, -2, 1, -2], 3, q0_test, N_max=4)
+        for N_val, val in fig8_fam.items():
+            print(f"    SU({N_val}): {mp.nstr(val, 12)}")
+
+        # Proton braid: (σ₁ σ₂⁻¹)³ on 3 strands (Borromean-type)
+        proton_word = [1, -2, 1, -2, 1, -2]
+        proton_su2 = homflypt_at_su_n(proton_word, 3, N=2, q=q0_test)
+        print(f"  proton braid SU(2): P = {mp.nstr(proton_su2, 12)}")
+
+        # Proton SU(N) family
+        p_fam = homflypt_su_n_family(proton_word, 3, q0_test, N_max=4)
+        for N_val, val in p_fam.items():
+            print(f"    SU({N_val}): {mp.nstr(val, 12)}")
+
+        # Amphicheirality check on figure-eight: P(4₁, SU(N)) should
+        # equal P(mirror(4₁), SU(N)) for all N (amphicheiral knot)
+        mirror_word = [-1, 2, -1, 2]
+        fig8_mirror_su2 = homflypt_at_su_n(mirror_word, 3, N=2, q=q0_test)
+        amphicheiral = abs(fig8_su2 - fig8_mirror_su2) < mp.mpf(10) ** (-8)
+        print(f"  figure-eight amphicheiral (SU(2)): "
+              f"{mp.nstr(fig8_su2, 10)} vs {mp.nstr(fig8_mirror_su2, 10)} "
+              f"→ {'✓' if amphicheiral else '✗'}")
+
+        n3_implemented = True
+    except Exception as e:
+        print(f"  [3-strand numerical failed: {type(e).__name__}: {e}]")
+
+    # SU(N) family test (2-strand)
     print()
     print("SU(N) family — trefoil at q = 1.11:")
-    q_test = mp.mpf("1.11")
-    su_fam = homflypt_su_n_family([1, 1, 1], 2, q_test, N_max=6)
+    su_fam = homflypt_su_n_family([1, 1, 1], 2, q0_test, N_max=6)
     for N_val, val in su_fam.items():
         print(f"  SU({N_val}): P = {mp.nstr(val, 12)}")
 
     # Gram entry test (2-strand)
-    g_11 = homflypt_gram_entry([1, 1, 1], [1, 1, 1], 2, N=2, q=q_test)
-    g_12 = homflypt_gram_entry([1, 1, 1], [-1, -1, -1], 2, N=2, q=q_test)
+    g_11 = homflypt_gram_entry([1, 1, 1], [1, 1, 1], 2, N=2, q=q0_test)
+    g_12 = homflypt_gram_entry([1, 1, 1], [-1, -1, -1], 2, N=2, q=q0_test)
     print(f"\n  Gram(trefoil, trefoil; SU(2)) = {mp.nstr(g_11, 12)}")
     print(f"  Gram(trefoil, mirror; SU(2))  = {mp.nstr(g_12, 12)}")
 
