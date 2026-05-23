@@ -62,8 +62,8 @@ theorem SCBraidingEigenvalueData.anti_eq_neg_inv
     bed.λ_anti = -(bed.λ_sym)⁻¹ := by
   have h := bed.det_constraint
   have hne := bed.λ_sym_ne_zero
-  field_simp at h
-  linarith
+  field_simp
+  linear_combination h
 
 /-- Algebraic identity: $\lambda_{\mathrm{sym}}^{-1} = -\lambda_{\mathrm{anti}}$.
     This is the Hecke determinant constraint rewritten as the
