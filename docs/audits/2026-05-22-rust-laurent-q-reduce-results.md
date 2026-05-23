@@ -26,7 +26,13 @@ under `cargo build --release`; no new warnings beyond the
 pre-existing `seminormal.rs` / `seminormal_mn.rs` dead-code
 warnings that are not on this PR's blast radius.
 
-`pyhecke-native` bumped 0.4.0 → 0.6.0 (two new public bindings).
+`pyhecke-native` was bumped 0.4.0 → 0.6.0 by the initial Tier 1.A
+work; subsequent PR commits bumped further to 0.7.0
+(`chi_q_atomic_all_partitions` F-B fix), 0.8.0 (prefix-cache
+`tr_m_atomic_mpfr_with_state`), and 0.9.0 (Rust-side
+`tr_m_atomic_mpfr_cached` + `atomic_reduce_cache` infra).  Current
+crate / package version: **0.9.0** (per `tools/pyhecke-native/Cargo.toml`
+and `pyproject.toml`).
 
 ## Cross-check (Tier 1.A acceptance — STRICT)
 

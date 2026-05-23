@@ -53,7 +53,10 @@ pub fn hash_prefix(signed_word_prefix: &[(i8, i32)]) -> u64 {
     h.finish()
 }
 
-/// Find the longest cached strict prefix of `signed_word`.
+/// Find the longest cached prefix of `signed_word` (possibly the
+/// full word — exact-match cache hits return `prefix_len ==
+/// signed_word.len()` with an empty suffix, which is the
+/// expected behavior when the same atom is recomputed).
 ///
 /// Returns `(prefix_len, Option<state_clone>)`.  The state is
 /// cloned out of the cache because the caller will mutate it
@@ -66,7 +69,10 @@ pub fn find_longest_cached_prefix(
         Err(_) => return (0, None),  // poisoned mutex: degrade gracefully
     };
     // Try prefix lengths in decreasing order so we find the LONGEST
-    // matching prefix first.
+    // matching prefix first.  Range is `1..=len` (inclusive) so the
+    // full-word cache hit is returned when the same atom is
+    // recomputed in the same process — the resume-from-state path
+    // then runs zero crossings and just re-evaluates MPFR.
     for prefix_len in (1..=signed_word.len()).rev() {
         let h = hash_prefix(&signed_word[..prefix_len]);
         if let Some(state) = g.get(&h) {

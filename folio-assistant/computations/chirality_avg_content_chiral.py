@@ -165,6 +165,11 @@ def main():
         else PRECISION_F64_FALLBACK
     )
     chi_kwargs = {"precision": "mpfr_50dps"} if _RUST_CHI_AVAILABLE else {}
+    # When the MPFR kernel is selected, `chi_lambdas_braid` needs the
+    # substrate parameter as a decimal string — float(Q0) would
+    # truncate to ~16 digits and defeat the mpfr_50dps fidelity
+    # (Copilot review r3291263540).
+    q_value_for_chi = Q_50_DIGIT_STR if _RUST_CHI_AVAILABLE else Q0
     # Batch character evaluation across partitions per case — F-A
     # of ffi-roundtrip-audit (single PyO3 crossing, rayon-parallel
     # on the Rust side).  Import here to avoid module-load reorder.
@@ -175,7 +180,7 @@ def main():
         num = mpf(0)
         den = mpf(0)
         per_lam = []
-        chi_raw_values = chi_lambdas_braid(parts, word, Q0, **chi_kwargs)
+        chi_raw_values = chi_lambdas_braid(parts, word, q_value_for_chi, **chi_kwargs)
         for shape, chi_raw in zip(parts, chi_raw_values):
             c_lam = content_sum(shape)
             w_lam = dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q

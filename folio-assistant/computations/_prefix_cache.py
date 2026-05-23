@@ -30,7 +30,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -54,7 +53,10 @@ def _hash_prefix(signed_word_prefix: list[tuple[int, int]]) -> str:
 
 
 def _cache_path(prefix_hash: str) -> Path:
-    return CACHE_DIR / f"{prefix_hash}.prefix.witness.json"
+    # `.prefix.cache.json` (not `.witness.json`) — the witness
+    # naming is reserved for WitnessBuilder-emitted JSON tracked by
+    # the compute-audit P30 check (Copilot review r3291263635).
+    return CACHE_DIR / f"{prefix_hash}.prefix.cache.json"
 
 
 def save_prefix_state(
@@ -145,7 +147,7 @@ def find_longest_cached_prefix(
     best_len = 0
     best_state = None
     sw_lists = [list(t) for t in signed_word]
-    for path in CACHE_DIR.glob("*.prefix.witness.json"):
+    for path in CACHE_DIR.glob("*.prefix.cache.json"):
         try:
             data = json.loads(path.read_text())
         except (json.JSONDecodeError, OSError):
@@ -177,7 +179,7 @@ def clear_cache() -> int:
     if not CACHE_DIR.exists():
         return 0
     count = 0
-    for path in CACHE_DIR.glob("*.prefix.witness.json"):
+    for path in CACHE_DIR.glob("*.prefix.cache.json"):
         try:
             path.unlink()
             count += 1
@@ -192,7 +194,7 @@ def stats() -> dict:
         return {"entries": 0, "total_bytes": 0, "dir": str(CACHE_DIR)}
     entries = []
     total_bytes = 0
-    for path in CACHE_DIR.glob("*.prefix.witness.json"):
+    for path in CACHE_DIR.glob("*.prefix.cache.json"):
         size = path.stat().st_size
         total_bytes += size
         try:

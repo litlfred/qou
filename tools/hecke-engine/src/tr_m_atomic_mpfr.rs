@@ -138,17 +138,10 @@ pub fn tr_m_atomic_mpfr_cached(
     q_str: &str,
     dps: u32,
 ) -> Result<String, String> {
-    let (_prefix_len, initial_state_opt) =
+    let (prefix_len, initial_state_opt) =
         atomic_reduce_cache::find_longest_cached_prefix(signed_word);
     let initial = initial_state_opt.unwrap_or_else(LaurentHeckeElement::identity);
-    let suffix_start = signed_word.len().saturating_sub(
-        signed_word.len() - _prefix_len,
-    );
-    // The find_longest_cached_prefix returned `prefix_len` such
-    // that `signed_word[..prefix_len]` was cached.  Suffix starts
-    // at `prefix_len`.
-    let _ = suffix_start;  // suppress unused-binding warning
-    let suffix = &signed_word[_prefix_len..];
+    let suffix = &signed_word[prefix_len..];
     let reduced =
         reduce_laurent::incremental_reduce_from_state(initial, suffix, 10_000);
     atomic_reduce_cache::save_prefix_state(signed_word, &reduced);

@@ -62,12 +62,20 @@ pub fn reduce_laurent_rules(
     // Copy the input BTreeMap into a FxHashMap for fast inner-loop
     // access.  Convert back to BTreeMap at the function boundary.
     //
-    // GCD-deferral optimisation: per-add BigRational normalisation
-    // is ~30-50% of inner-loop wall on ⁶Li.  Use *_unreduced ops
-    // during the pass, then `reduce_in_place` once per coef at
-    // end-of-pass to canonicalise.  Denominators grow within one
-    // pass (modest: typically 2 → 4 → 8 for atomic-braid coefs)
-    // but are bounded by the end-of-pass reduce.
+    // GCD-deferral *hypothesis*: per-add BigRational normalisation
+    // would be a meaningful fraction of inner-loop wall on ⁶Li,
+    // recoverable by using *_unreduced ops during the pass and
+    // `reduce_in_place` once per coef at end-of-pass.
+    //
+    // Bench result (commit b8dfee21, audit doc
+    // `2026-05-22-rust-laurent-q-reduce-results.md`): flat /
+    // slightly negative on ⁶Li (79.85 s vs 79.17 s baseline).
+    // Denominator growth in unreduced intermediates offsets the
+    // saved GCD work.  The *_unreduced path is kept for the
+    // smaller-atom win (⁵Li: 7.31 → 6.74 s, -8%) and as
+    // scaffolding for future BigInt-arena optimisation.
+    // Per CLAUDE.md §Precision goals L1, correctness is preserved
+    // bit-for-bit (1e-49 cross-check vs Python LaurentQ).
     let mut terms: FxHashMap<Vec<i32>, LaurentRationalQ> = elem
         .terms
         .iter()
