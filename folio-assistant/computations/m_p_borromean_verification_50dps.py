@@ -27,7 +27,7 @@ m_avg = m_e · Vol(B_3)/ℏ_q² · λ_A and then splits with
 
 Honest predictions at q_0:
     m_avg^pred ≈ 966 MeV       (vs CODATA 938.92, ~2.9 % off)
-    Δm/M_N^pred ≈ 0.001377     (vs CODATA 0.001382, ~0.4 % off)
+    Δm/M_N^pred ≈ 0.001377     (vs CODATA 0.001377, ~305 ppm = 0.030 % off)
     m_p^pred ≈ 965.38 MeV      (vs CODATA 938.27, ~2.9 % off)
     m_n^pred ≈ 966.71 MeV      (vs CODATA 939.57, ~2.9 % off)
     Δ m_pn^pred ≈ 1.330 MeV    (vs CODATA 1.293, ~2.9 % off)
@@ -201,21 +201,28 @@ def main() -> int:
     w.set_description(
         "Numerical verification at MPFR 50 dps of "
         "`conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. "
-        "λ_scale now uses the PROVED Family A categorical identity "
+        "λ_scale uses the PROVED Family A categorical identity "
         "(λ_A = 5/2 + 3h²/4, terminates exactly at h²) — see "
         "`lambda-scale-substrate-form.lean` and "
         "`lambda_scale_all_c_i_family_a.py`.  Family A applies to "
-        "the baryon class uniformly, giving m_p^pred = m_n^pred ≈ "
-        "966 MeV at q_0 — about 2.96 % above CODATA.  The honest "
-        "framework prediction at this layer (the n−p split comes "
-        "downstream via flavor_split_subleading, NOT through λ).  "
-        "The prior CAL-4 fit (λ_p = 2.4599527869, λ_n = 2.4633436333, "
-        "5.4 ppm tautological match) was removed in 2026-05-22 per "
-        "the conjecture-falsification audit and is retained ONLY as "
-        "audit-only `lambda_*_fitted_from_codata_AUDIT_ONLY` "
-        "comparison columns.  Bring-Bloch identity "
-        "(`conj:lambda-scale-bring-bloch-identity`) remains the open "
-        "R&D direction for closing the ~3 % residual."
+        "the baryon class uniformly, giving "
+        "m_avg^pred = m_e · Vol(B_3)/ℏ_q² · λ_A ≈ 966 MeV at q_0 — "
+        "about 2.89 % above the CODATA mean (m_p + m_n)/2 ≈ 938.92 MeV. "
+        "The proton-neutron mass difference is then supplied "
+        "categorically by the substrate flavor-split closed form "
+        "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
+        "(`prop:flavor-split-substrate`, PR #690), giving "
+        "m_p^pred ≈ 965.38 MeV (vs CODATA 938.27, ~2.9 % off) and "
+        "m_n^pred ≈ 966.71 MeV (vs CODATA 939.57, ~2.9 % off).  The "
+        "substrate Δm/M_N ratio itself matches CODATA to ~305 ppm "
+        "(0.030 %) — framework-proved, no fit.  The prior CAL-4 fit "
+        "(λ_p = 2.4599527869, λ_n = 2.4633436333, 5.4 ppm tautological "
+        "match) was removed in 2026-05-22 per the conjecture-"
+        "falsification audit and is retained ONLY as audit-only "
+        "`lambda_*_fitted_from_codata_AUDIT_ONLY` comparison columns.  "
+        "Bring-Bloch identity (`conj:lambda-scale-bring-bloch-identity`) "
+        "remains the open R&D direction for closing the ~3 % m_avg "
+        "residual."
     )
     w.set_content_block("conj:borromean-baryon-mass-formula")
     # Discipline markers — λ_scale now PROVED via Family A theorem.
@@ -303,18 +310,30 @@ def main() -> int:
         "rel_diff_ppm": mp.nstr(m_avg_rel_diff * mp.mpf("1e6"), 8),
         "lambda_A_form": "5/2 + (3/4) h²",
     })
+    dm_codata_ratio = (M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA
+    dm_ratio_ppm = (dm_over_Mn / dm_codata_ratio - 1) * mp.mpf("1e6")
     w.add_data("substrate_flavor_split", {
         "formula": "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
                    "(prop:flavor-split-substrate, PR #690)",
         "delta_m_over_M_N": mp.nstr(dm_over_Mn, 25),
-        "delta_m_over_M_N_codata": mp.nstr(
-            (M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA, 15
-        ),
-        "ratio_ppm_vs_codata": mp.nstr(
-            (dm_over_Mn / ((M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA) - 1)
-            * mp.mpf("1e6"), 8
-        ),
+        "delta_m_over_M_N_codata": mp.nstr(dm_codata_ratio, 15),
+        "ratio_ppm_vs_codata": mp.nstr(dm_ratio_ppm, 8),
     })
+    # Gate the substrate flavor split — if `flavor_split_subleading`
+    # regresses to zero / the wrong ratio, the proton/neutron 5 %
+    # ceiling above would still pass tautologically.  This assertion
+    # is the actual regression guard for the PR's central wire-up.
+    w.add_assertion(
+        "substrate_flavor_split_ratio_within_1000ppm_of_codata",
+        computed=float(abs(dm_ratio_ppm)),
+        expected=0.0,
+        tolerance=1000.0,  # 0.1 % ceiling — current value ~305 ppm
+        unit="ppm",
+        source=(
+            "prop:flavor-split-substrate / flavor_split_subleading "
+            "vs CODATA (M_N − M_P)/M_avg at MPFR 50 dps"
+        ),
+    )
 
     # ── Proton (with substrate flavor split) ──────────────────────
     proton_pred = m_avg_pred * (mp.mpf(1) - dm_over_Mn / 2)
@@ -387,7 +406,8 @@ def main() -> int:
             "via prop:flavor-split-substrate / flavor_split_subleading. "
             "The rel_diff vs CODATA inherits the Family A m_avg gap "
             "(~3 %); the substrate flavor-ratio Δm/M_N is matched to "
-            "~0.5 % independently (see substrate_flavor_split.ratio_ppm_vs_codata)."
+            "~305 ppm (~0.030 %) independently — see "
+            "substrate_flavor_split.ratio_ppm_vs_codata."
         ),
     })
 
@@ -418,9 +438,9 @@ def main() -> int:
         "ratio Δm/M_N is the substrate-pure closed form from "
         "`prop:flavor-split-substrate` (PR #690): "
         "ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA "
-        "to ~0.5 %.  The remaining ~3 % gap in the absolute m_avg "
-        "scale is the open R&D direction (Bring-Bloch identity / "
-        "categorical q-dilog tower)."
+        "to ~305 ppm (~0.030 %).  The remaining ~3 % gap in the "
+        "absolute m_avg scale is the open R&D direction (Bring-Bloch "
+        "identity / categorical q-dilog tower)."
     )
 
     out = w.save()
@@ -442,7 +462,7 @@ def main() -> int:
     print(f"  CODATA / single-level:   {gap_factor:.4f}")
     print(f"  → Borromean factor with PROVED Family A λ closes to ~3 % vs CODATA")
     print(f"    on m_avg; substrate flavor split (PR #690) supplies Δm/M_N to")
-    print(f"    ~0.5 % giving a categorical (non-fit) p/n split.")
+    print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")
     print(f"    Open R&D: ~3 % m_avg gap (Bring-Bloch / categorical q-dilog tower).")
     return 0
 
