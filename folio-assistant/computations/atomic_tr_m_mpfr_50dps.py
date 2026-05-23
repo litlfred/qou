@@ -163,7 +163,7 @@ def _rust_canonical_tr_M(Z: int, N: int, label: str):
             dt)
 
 
-def main(also_symbolic: bool = False, method: str = "hoefsmit-python") -> int:
+def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
     q_str = json.load(open(Q0))["derived_50_digit"]["q"]
     q_0 = mpf(q_str)
     q_sym = sp.Symbol("q")  # match sympify default
@@ -446,13 +446,17 @@ if __name__ == "__main__":
     parser.add_argument(
         "--method", choices=("hoefsmit-python", "canonical-rust",
                              "rust-with-python-crosscheck"),
-        default="hoefsmit-python",
-        help="tr_M kernel selector (cheat sheet §5 fix #3, 2026-05-22). "
-             "`hoefsmit-python` (default, back-compat): the Hoefsmit + "
-             "Wenzl-bridge mpf @ 50 dps kernel.  "
-             "`canonical-rust`: the Rust `hecke-canonical-chi` binary "
-             "(~500× faster at ⁴He, ~10⁶× at ¹⁰B) via "
-             "`canonical_tr_m_via_rust.compute_tr_m`.  "
+        default="canonical-rust",
+        help="tr_M kernel selector (cheat sheet §5 fix #3 — Rust "
+             "now default per 2026-05-23).  "
+             "`canonical-rust` (default): the Rust `hecke-canonical-chi` "
+             "binary via `canonical_tr_m_via_rust.compute_tr_m` — "
+             "~500× faster at ⁴He, ~10⁶× at ¹⁰B vs the Python kernel.  "
+             "Falls back to `hoefsmit-python` automatically if the "
+             "Rust binary is not built (graceful, no error).  "
+             "`hoefsmit-python` (legacy back-compat): the Hoefsmit + "
+             "Wenzl-bridge mpf @ 50 dps kernel.  Useful for cross-check "
+             "or when the Rust kernel is unavailable.  "
              "`rust-with-python-crosscheck`: run both kernels and "
              "assert agreement at 25 dps (uses Python wall time + "
              "Rust speedup gain).")
