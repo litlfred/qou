@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T20:09:10.546264+00:00",
-  "commitSha": "a7cecfc2febbb0c218e9457c22cbc7c5c5a34856",
+  "computedAt": "2026-05-23T20:16:06.553470+00:00",
+  "commitSha": "c49eeb1519ece36f86fc359c20c8ad73cc85e0e2",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "50f22c2d8cdca1c283333c9c1576621005a43021",
+  "scriptCommitSha": "17b500529abcb7ea71ccc52761828810556e9b50",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 727,
+    "files_scanned": 728,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 165,
       "P21": 32,
       "P30": 93,
-      "P31": 29
+      "P31": 30
     },
     "top_files": [
       {
@@ -3381,6 +3381,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "strategy_i_bijection_closure_s4_s3_quotient.py",
+        "line": 184,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P31",

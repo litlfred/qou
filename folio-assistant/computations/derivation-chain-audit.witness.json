@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T20:09:11.009167+00:00",
-  "commitSha": "a7cecfc2febbb0c218e9457c22cbc7c5c5a34856",
+  "computedAt": "2026-05-23T20:16:06.915978+00:00",
+  "commitSha": "c49eeb1519ece36f86fc359c20c8ad73cc85e0e2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "50f22c2d8cdca1c283333c9c1576621005a43021",
+  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2352,7 +2352,6 @@
         "faddeev-pentagon-operator-spike.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2721,6 +2720,7 @@
         "staircase-ew-residual-conjecture.witness.json",
         "stale-probe-audit.witness.json",
         "strategy-d-lambda-scale-exploration.witness.json",
+        "strategy-i-bijection-closure-s4-s3-quotient.witness.json",
         "strategy-i-yekutieli-locality-probe.witness.json",
         "strategy-j-tr-m-ratio-probe.witness.json",
         "sublemma-2-1-A-operator-extract-h12-nn.witness.json",
