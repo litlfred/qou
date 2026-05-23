@@ -20,18 +20,9 @@ $$
   g(T_{m,n}) =  \frac{(m-1)(n-1)}{2}  \leq  g(A) =  4.
 $$
 
-The constraint $(m-1)(n-1) \leq 8$ admits exactly the following
-coprime pairs with $m \geq 2$:
-
-| $(m,n)$ | $g(T_{m,n})$ | Knot | Crossing \# |
-|---------|-------------|------|-------------|
-| $(2,3)$ | $1$ | Trefoil $3_1$ | $3$ |
-| $(2,5)$ | $2$ | Cinquefoil $5_1$ | $5$ |
-| $(2,7)$ | $3$ | $7_1$ | $7$ |
-| $(2,9)$ | $4$ | $9_1$ | $9$ |
-| $(3,4)$ | $3$ | $8_{19}$ | $8$ |
-| $(3,5)$ | $4$ | $10_{124}$ | $10$ |
-
+The constraint $(m-1)(n-1) \leq 8$ admits exactly six coprime pairs
+with $m \geq 2$, tabulated in
+[Table: Torus-knot generators](#tbl:torus-knot-generators-data).
 Together with the unknot $T_{1,0} = 0_1$ (genus $0$), the generator
 set has $|\mathcal{G}| = 7$.
 
