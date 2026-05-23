@@ -1,5 +1,5 @@
-The QOU mass formula's predictions for all 92 naturally
-occurring elements ($Z = 1$ to $92$). Each row of
+The QOU mass formula's predictions for all 92 stable and long-lived
+elements ($Z = 1$ to $92$). Each row of
 [`tbl:amc-natural-elements-table-data`](#tbl:amc-natural-elements-table-data)
 gives the QOU prediction $M_q$, the observed mass $M_o$
 (CODATA 2022 + AME2020), the absolute deviation $|\Delta|$, and

@@ -100,7 +100,7 @@ $$
 8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of
    $\{\operatorname{tr}_M(\beta_p), \operatorname{tr}_M(\beta_n), \hbar_q, h_q, q_0, G\}$
    structurally predicts $m_n / m_p$ either. Best pure-substrate
-   match at 0.45% — 4,500× worse than 1 ppb.
+   match at 0.45% --- 4,500 times worse than 1 ppb.
 
 **Therefore (post-2026-05-23 acknowledged-CAL-4 status):** after
 **eight independent structural searches** across every tested axis

@@ -69,7 +69,7 @@ $\lambda_K^{\mathrm{scale}}$, status revised 2026-05-22).**
 >    $\mathbb{Z}$-combination of knot volumes was equivalent to
 >    searching for $C$ (since $C = T / (8G)^2$), and was negative.
 >
-> **Acknowledged-CAL-4 status (as of 2026-05-23).** This conjecture
+> **Acknowledged-CAL-4 status.** This conjecture
 > is recorded as an **empirically falsifiable prediction**: the
 > numerical agreement of $\lambda_p^{\mathrm{scale}}(q_0) \approx
 > 2.45995$ with CODATA is well-documented (1 ppb at 50 dps via the
