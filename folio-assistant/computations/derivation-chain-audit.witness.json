@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T19:37:34.486177+00:00",
-  "commitSha": "59488b58fd9fdeed18c8d84b4020de845906e58d",
+  "computedAt": "2026-05-23T19:37:43.033999+00:00",
+  "commitSha": "faf2428017c13e31baf501b216f66034c6ffe970",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2444,6 +2444,7 @@
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
         "kummer-reflection-zeta5.witness.json",
+        "lambda-reading-a-vs-b-comparison.witness.json",
         "lambda-scale-all-c-i-family-a.witness.json",
         "lambda-scale-alt-f-markov-trace-beta-bor.witness.json",
         "lambda-scale-alt-g-skein-polynomial-direct.witness.json",
