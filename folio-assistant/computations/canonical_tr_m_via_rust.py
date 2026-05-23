@@ -104,12 +104,11 @@ def canonical_word_for(Z: int, N: int) -> tuple[int, list[list[int]]]:
 def compute_tr_m(Z: int, N: int, label: str,
                  *, q_val: float | None = None,
                  timeout_sec: int = 3600) -> dict:
-    # Ensure working precision is at least 50 dps for the y_λ ·
-    # chi combiner (Copilot PR #895 review).  Never lower the
-    # caller's precision (the prior module-level `mp.mp.dps = 30`
-    # is removed).
-    if mp.mp.dps < 50:
-        mp.mp.dps = 50
+    # Caller's mp.mp.dps is left untouched until we actually need
+    # to run the y_λ × χ combiner; then `mp.workdps(target_dps)`
+    # wraps the compute so the caller's precision is restored on
+    # exit (Copilot PR #895 review r3290942363).  Earlier code
+    # raised mp.mp.dps without restoring — silent caller mutation.
     bin_path = find_binary()
     if bin_path is None:
         return {
@@ -150,69 +149,76 @@ def compute_tr_m(Z: int, N: int, label: str,
     rust_out = json.loads(result.stdout)
     averaging_denom = int(rust_out["averaging_denominator"])
 
-    # Combine χ^λ × y_λ(q_0).
-    from wedderburn_jones_markov import y_lambda_at
-    y_table = y_lambda_at(n_strands, q_val)
-
-    # Match Rust output precision; default ≥50 dps per user
-    # direction "only do arbitrary precision w/ >= 50 dps".
+    # Determine target working precision: ≥ 50 dps (Tier 1.A floor)
+    # and matched to the Rust kernel's output precision if it's
+    # higher.  `mp.workdps(target_dps)` wraps the y_λ × χ combiner
+    # so the caller's previous mp.mp.dps is restored on exit.
     rust_dps = int(rust_out["chi_lambda_terms"][0]["precision_dps"]) \
         if rust_out["chi_lambda_terms"] else 50
-    if rust_dps > mp.mp.dps:
-        mp.mp.dps = rust_dps
-    tr_m_sum = mp.mpf(0)
-    contributions = []
-    for term in rust_out["chi_lambda_terms"]:
-        lam = tuple(term["lambda"])
-        # Rust now returns chi as a decimal string at `precision_dps`
-        # precision (MPFR path).  Parse directly into mpmath at
-        # mp.mp.dps for end-to-end ≥50 dps precision.
-        chi_str = term.get("chi_q_normalised") \
-            or term.get("chi_q_f64_normalised")  # legacy field
-        chi_at_q0 = mp.mpf(str(chi_str))
-        y_lam = y_table.get(lam)
-        if y_lam is None:
-            return {
-                "atom": label, "Z": Z, "N": N,
-                "tr_M_q0_unavail_reason": (
-                    f"y_λ table at H_{n_strands} missing λ={lam}"
-                ),
-            }
-        # y_lam is typically a sympy.Float at 30+ dps; `mp.mpf(str(y_lam))`
-        # preserves that precision (per Gemini review on PR #683).
-        # chi_at_q0 is already set above from the Rust MPFR output.
-        y_at_q0 = mp.mpf(str(y_lam))
-        c = y_at_q0 * chi_at_q0
-        tr_m_sum += c
-        contributions.append({
-            "lambda": list(lam),
-            "chi_normalised": mp.nstr(chi_at_q0, 30),
-            "y_q0": mp.nstr(y_at_q0, 30),
-            "contribution": mp.nstr(c, 30),
-        })
-    return {
-        "atom": label, "Z": Z, "N": N,
-        "n_strands": n_strands,
-        "n_crossings": rust_out["n_crossings"],
-        "n_averaged_crossings": rust_out["n_averaged_crossings"],
-        "averaging_denominator": averaging_denom,
-        "rust_duration_ms": rust_out["duration_ms"],
-        # Signed Markov trace at 50 dps (the precision the Rust kernel
-        # + y_λ combiner actually computes at — per Copilot/Gemini
-        # PR #895 review which flagged that the prior `mp30dps` output
-        # truncated a 50-dps internal compute).
-        "tr_M_q0_mp50dps": mp.nstr(tr_m_sum, 50),
-        "abs_tr_M_q0_mp50dps": mp.nstr(abs(tr_m_sum), 50),
-        # 30-dps back-compat aliases — to be removed after consumers
-        # are migrated to the 50-dps field names.
-        "tr_M_q0_mp30dps": mp.nstr(tr_m_sum, 30),
-        "abs_tr_M_q0_mp30dps": mp.nstr(abs(tr_m_sum), 30),
-        "top5_contributions": sorted(
-            contributions,
-            key=lambda d: abs(mp.mpf(d["contribution"])),
-            reverse=True,
-        )[:5],
-    }
+    target_dps = max(50, rust_dps)
+
+    # Combine χ^λ × y_λ(q_0) inside an isolated precision scope —
+    # no caller-visible side effect.  All mp.mpf parses + nstr
+    # emissions happen at `target_dps` precision.
+    with mp.workdps(target_dps):
+        from wedderburn_jones_markov import y_lambda_at
+        y_table = y_lambda_at(n_strands, q_val)
+        tr_m_sum = mp.mpf(0)
+        contributions = []
+        for term in rust_out["chi_lambda_terms"]:
+            lam = tuple(term["lambda"])
+            # Rust now returns chi as a decimal string at `precision_dps`
+            # precision (MPFR path).  Parse directly into mpmath at
+            # `target_dps` for end-to-end ≥50 dps precision.
+            chi_str = term.get("chi_q_normalised") \
+                or term.get("chi_q_f64_normalised")  # legacy field
+            chi_at_q0 = mp.mpf(str(chi_str))
+            y_lam = y_table.get(lam)
+            if y_lam is None:
+                return {
+                    "atom": label, "Z": Z, "N": N,
+                    "tr_M_q0_unavail_reason": (
+                        f"y_λ table at H_{n_strands} missing λ={lam}"
+                    ),
+                }
+            # y_lam is typically a sympy.Float at 30+ dps; `mp.mpf(str(y_lam))`
+            # preserves that precision (per Gemini review on PR #683).
+            # chi_at_q0 is already set above from the Rust MPFR output.
+            y_at_q0 = mp.mpf(str(y_lam))
+            c = y_at_q0 * chi_at_q0
+            tr_m_sum += c
+            contributions.append({
+                "lambda": list(lam),
+                "chi_normalised": mp.nstr(chi_at_q0, 30),
+                "y_q0": mp.nstr(y_at_q0, 30),
+                "contribution": mp.nstr(c, 30),
+            })
+
+        # Format outputs inside the workdps scope so `mp.nstr` uses
+        # `target_dps`, not the caller's restored precision.
+        return {
+            "atom": label, "Z": Z, "N": N,
+            "n_strands": n_strands,
+            "n_crossings": rust_out["n_crossings"],
+            "n_averaged_crossings": rust_out["n_averaged_crossings"],
+            "averaging_denominator": averaging_denom,
+            "rust_duration_ms": rust_out["duration_ms"],
+            # Signed Markov trace at 50 dps (the precision the Rust kernel
+            # + y_λ combiner actually computes at — per Copilot/Gemini
+            # PR #895 review which flagged that the prior `mp30dps` output
+            # truncated a 50-dps internal compute).
+            "tr_M_q0_mp50dps": mp.nstr(tr_m_sum, 50),
+            "abs_tr_M_q0_mp50dps": mp.nstr(abs(tr_m_sum), 50),
+            # 30-dps back-compat aliases — to be removed after consumers
+            # are migrated to the 50-dps field names.
+            "tr_M_q0_mp30dps": mp.nstr(tr_m_sum, 30),
+            "abs_tr_M_q0_mp30dps": mp.nstr(abs(tr_m_sum), 30),
+            "top5_contributions": sorted(
+                contributions,
+                key=lambda d: abs(mp.mpf(d["contribution"])),
+                reverse=True,
+            )[:5],
+        }
 
 
 def main() -> int:
