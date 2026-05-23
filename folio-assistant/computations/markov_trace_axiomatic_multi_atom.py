@@ -202,7 +202,7 @@ def main() -> int:
         print(f"    multi-atom recursive:  {mp.nstr(cur_tr, 12)}")
         print(f"    relative |Δ|:          {mp.nstr(diff, 6)}")
         if diff < mp.mpf("1e-12"):
-            print(f"    ✅ Recursive matches Hecke-power expansion at float64 precision.")
+            print(f"    ✅ Recursive matches Hecke-power expansion at 50-dps precision.")
             cross_check_ok = True
         else:
             print(f"    ⚠ discrepancy — recursive vs Hecke-power expansion diverged.")
@@ -211,7 +211,7 @@ def main() -> int:
             "prior_tr_M": fmt(prior_tr),
             "current_tr_M": fmt(cur_tr),
             "relative_error": fmt(diff),
-            "matches_float64_precision": bool(diff < mp.mpf("1e-12")),
+            "matches_50dps_precision": bool(diff < mp.mpf("1e-12")),
         }
     else:
         print(f"    (witness not found or proton not computed)")

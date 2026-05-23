@@ -54,7 +54,8 @@ import math
 import sys
 from pathlib import Path
 
-import numpy as np
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
