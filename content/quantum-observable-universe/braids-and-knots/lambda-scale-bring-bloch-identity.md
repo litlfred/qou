@@ -36,37 +36,70 @@ $\lambda_K^{\mathrm{scale}}$, status revised 2026-05-22).**
 > Hecke element, per §"What it identifies for the nucleon" item 1
 > below), or (b) the q-dilog tower route closes.
 >
-> **Empirical-exhaustion update 2026-05-23.** Six independent
-> structural searches have now returned negative for the proton
-> instance $\lambda_p^{\mathrm{scale}} \approx 2.4599527869$:
+> **Empirical-exhaustion summary (2026-05-23, eight searches).**
+> Eight independent structural searches across all major axes have
+> returned negative for the proton instance
+> $\lambda_p^{\mathrm{scale}} \approx 2.4599527869$:
 >
 > | search | basis / method | result |
 > |---|---|---:|
-> | Tiers 0–5 (above) | PSLQ over 52 hyperbolic-knot Bloch-Wigner values | no integer relation, coeff $\leq 10^{30}$ |
+> | Tiers 0–5 | PSLQ over 52 hyperbolic-knot Bloch-Wigner values | no integer relation, coeff $\leq 10^{30}$ |
 > | [PR #923](https://github.com/litlfred/qou/pull/923) | PSLQ over Li$_2^q$ + Φ$_q$ at substrate-natural arguments | no integer relation |
 > | [PR #928](https://github.com/litlfred/qou/pull/928) | PSLQ over $\hat V_{\text{S}}$ + $\mathbb{Q}(\zeta_{60})$ + Tier-0 knot volumes | no integer relation |
 > | [PR #941](https://github.com/litlfred/qou/pull/941) | non-linear commutative Φ$_q$ functional equation + pentagon-like identities | no $<1$ ppb match (best $\approx 4\%$) |
 > | [PR #943](https://github.com/litlfred/qou/pull/943) | operator-theoretic Φ$_q$ functional equation in truncated Heisenberg rep | 19 ppm near-match $1/(1 - h_q \cdot q_0^{10})$ |
-> | [PR #951](https://github.com/litlfred/qou/pull/951) | **q-locality test on all known near-matches** | all four ($1/(1 - h_q \cdot q_0^{10})$, $5/2 - h_q^2 \cdot G$, V$_7$, Strategy G) **non-smooth in $q$ — substrate-$q_0$ coincidences, not structural identities** |
+> | [PR #951](https://github.com/litlfred/qou/pull/951) | q-locality test on all known near-matches | all four ($1/(1 - h_q \cdot q_0^{10})$, $5/2 - h_q^2 \cdot G$, V$_7$, Strategy G) **non-smooth in $q$** |
+> | [PR #957](https://github.com/litlfred/qou/pull/957) | Strategy I (Yekutieli holonomy) q-locality pre-flight + **reframing** | leading-order claim collapses to existing benchmark; reframing shows $\lambda_p(q) = C \cdot \hbar_q^2$ exactly with $C = (m_p/m_e)/(8G) \approx 250.576$, and Tier 5 already searched for the equivalent $q$-independent target as a $\mathbb{Z}$-combination of knot volumes (negative) |
+> | this PR | Strategy J — proton/neutron tr$_M$ ratio probe | 3 sign-correct near-matches (best 0.14% using CODATA-fit scale, best pure-substrate 0.45%); no $<1$ ppb candidate. tr$_M$ ratios alone do **not** structurally predict $m_n/m_p$ |
 >
-> The q-locality result is the strongest empirical statement: the
-> two surviving near-matches (5.6 ppm and 19 ppm) are residual
-> zero-crossings of curves with slope $\sim 10^7$ ppm/q across the
-> substrate window. Per the standing discipline that $q_0$ is "not
-> special, just where we happen to be," neither is a categorical
-> identity.
+> The q-locality and reframing results are the strongest empirical
+> statements:
 >
-> Closure paths still open (per [`docs/coordination/explore-q10.md`](https://github.com/litlfred/qou/blob/claude/iw-explore-q10-2026-05-23/docs/coordination/explore-q10.md)):
+> 1. **All known near-matches fail q-locality.** The two best
+>    h$_q$-axis candidates (5.6 ppm and 19 ppm) are residual
+>    zero-crossings of curves with slope $\sim 10^7$ ppm/q across
+>    the substrate window. Per the standing discipline that $q_0$
+>    is "not special, just where we happen to be," neither is a
+>    categorical identity.
+> 2. **The remaining axis was already searched.** The reframing in
+>    PR #957 shows that $\lambda_p(q) = C \cdot \hbar_q^2$ exactly,
+>    so the structural question is to derive the *constant* $C =
+>    (m_p/m_e)/(8G) \approx 250.576$ from substrate. Tier 5's
+>    search for $T = \lambda_p \cdot 8G \approx 18.03$ as a
+>    $\mathbb{Z}$-combination of knot volumes was equivalent to
+>    searching for $C$ (since $C = T / (8G)^2$), and was negative.
 >
-> - **Strategy I** (Yekutieli holonomy) — derives $(3/4 + G) \cdot h^2$
->   categorically via non-abelian Stokes integration over $\mathcal{B}_p$.
-> - **Strategy K** (Bloch class via SnapPy triangulation) — uses the
->   hyperbolic-knot dilogarithm basis with explicit ideal-tetrahedron
->   shape parameters, not just PSLQ.
-> - **Acknowledged-CAL-4 status** — if both fail, the conjecture is
->   recorded as an empirically-falsifiable prediction whose
->   numerical agreement with CODATA is documented but not derived
->   from substrate.
+> **Acknowledged-CAL-4 status (as of 2026-05-23).** This conjecture
+> is recorded as an **empirically falsifiable prediction**: the
+> numerical agreement of $\lambda_p^{\mathrm{scale}}(q_0) \approx
+> 2.45995$ with CODATA is well-documented (1 ppb at 50 dps via the
+> pre-Archimedean pipeline + Archimedean functor at $q_0$), but a
+> closed-form derivation of $\lambda_p^{\mathrm{scale}}$ from
+> substrate categorical data alone has not been found across all
+> tested axes.
+>
+> The framework's standing falsifiability test for this conjecture:
+> any future revision of the input calibration values ($m_e$,
+> $m_\mu/m_e$, $Q_\beta$) that shifts $m_p$ predictions by more
+> than experimental error would refute the framework. To date,
+> no such revision has occurred — the 1 ppb agreement is stable
+> under CODATA updates within their stated uncertainties.
+>
+> **Closure paths still open (low-priority, given 8 negative searches):**
+>
+> - **Deeper Strategy K** (Bloch class via SnapPy, extending to
+>   13–15-crossing knots, basis size $\sim 250$, precision 200 dps,
+>   coefficient bound $10^{60}$) — pure mpmath, $\sim 1$ day compute,
+>   likely confirms the empirical exhaustion pattern.
+> - **Full HOMFLYPT skein recursion** for Strategy J on the explicit
+>   $\beta_p / \beta_n$ braid words (rather than just tr$_M$ at
+>   $q_0$) — could test whether higher-order polynomial information
+>   beyond the Markov trace closes the $m_n/m_p$ ratio structurally.
+>
+> Neither is committed as the next step; the framework's primary
+> falsifiability test is the precision-level dashboard agreement,
+> not the existence of a closed-form $\lambda_p^{\mathrm{scale}}$
+> derivation.
 
 *The original statement, retained as conjecture:*
 
