@@ -272,6 +272,47 @@ open step (cell-↔-projection bijection, color-sheet ↔ flavor
 mapping, second-order Yekutieli per-cell h^4) and identify which
 of the thirteen sources gives its categorical derivation.
 
+### Rule 14 — Author-escalation for off-menu coefficients
+
+Per user direction 2026-05-23: **if a candidate h^k coefficient
+cannot be derived from any of the 13 categorical drivers above,
+the agent MUST escalate to the author/owner explicitly via
+`AskUserQuestion` (or equivalent surfaced query). Do NOT silently
+fit it empirically.**
+
+The escalation should include:
+- The exact coefficient value (numerical, MPFR-50dps).
+- The candidate categorical mechanism (if any partial hint exists).
+- The structural meaning the agent has tried to assign (and why
+  it failed to land in one of the 13 sources).
+- A short statement of what closure of this open coefficient would
+  unlock (1.4 % gap to ppm? Phase 5q? Bring-Bloch?).
+
+The author may then either:
+- Identify a 14th categorical driver the agent missed
+  (in which case this audit is extended).
+- Confirm the coefficient is genuinely outside the canonical
+  menu, and decide whether to accept it as a conjecture-conditional
+  refinement WITH explicit owner authorisation (analogous to PR
+  #895's adoption of canonical Wedderburn as production with
+  conjecture-conditional dependency).
+- Direct the agent to wait until the underlying categorical
+  derivation lands.
+
+This rule supplements the existing CLAUDE.md three-calibration
+discipline (no CAL-4 fits) and the `Δ_λ gate` anti-pattern. It
+makes the escalation step explicit and traceable: every h^k
+coefficient in the framework is either (a) derivable from a named
+categorical driver, or (b) explicitly owner-authorised under
+conjecture-conditional status.
+
+This is the structural protection against the "seventh ansatz"
+problem (per `docs/audits/2026-05-18-delta-lambda-gating-context.md`):
+without rule 14, an agent could keep probing higher-order fits
+indefinitely; with it, the search space is bounded by the 13-source
+categorical menu, and excursions outside the menu require explicit
+author input.
+
 ## Concrete test (canonical, fitting-free)
 
 **Numerically check** whether the h² coefficient of `1/(1 − h_q · q_0^{10})`
