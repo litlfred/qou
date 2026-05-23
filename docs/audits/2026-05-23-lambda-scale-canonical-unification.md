@@ -272,13 +272,38 @@ open step (cell-↔-projection bijection, color-sheet ↔ flavor
 mapping, second-order Yekutieli per-cell h^4) and identify which
 of the thirteen sources gives its categorical derivation.
 
-### Rule 14 — Author-escalation for off-menu coefficients
+### Rule 14 — Author-escalation for off-menu coefficients (exploratory vs production)
 
 Per user direction 2026-05-23: **if a candidate h^k coefficient
 cannot be derived from any of the 13 categorical drivers above,
 the agent MUST escalate to the author/owner explicitly via
-`AskUserQuestion` (or equivalent surfaced query). Do NOT silently
-fit it empirically.**
+`AskUserQuestion` (or equivalent surfaced query) BEFORE adopting
+it in production. Empirical-fit candidates may be used for
+EXPLORATORY shape-probing without escalation, but never for
+production.**
+
+**Exploratory shape-probing is permitted.** Per user clarification
+2026-05-23: "suggestions of empirical fits are OK for exploratory
+— what is the shape type of questions. but never for PROD pipeline".
+An exploratory probe that surfaces an empirical-fit coefficient is
+useful when it generates a STRUCTURAL HYPOTHESIS the author or
+future agent can then attempt to derive categorically. The shape
+hint is the value; the empirical fit is the scaffold.
+
+**Production pipeline is the strict line.** No empirical-fit
+coefficient may enter:
+- `m_p_borromean_verification_50dps.py` (or any production mass-
+  chain script)
+- `LAMBDA_PROTON_*` / `LAMBDA_NEUTRON_*` / equivalent named
+  constants
+- The cheat-sheet §5 Migration Backlog "closed" status
+- The framework's per-observable 100× dashboard
+
+Without first either:
+1. Identifying a 14th categorical driver this audit missed (which
+   would extend the audit), OR
+2. Owner authorisation of the conjecture-conditional adoption
+   (analogous to PR #895's canonical Wedderburn move).
 
 The escalation should include:
 - The exact coefficient value (numerical, MPFR-50dps).
