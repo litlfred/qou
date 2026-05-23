@@ -158,6 +158,120 @@ the pentagon gives ADDITIONAL constraints that pin h^4 corrections.
 are bar-conjugate q-dilogarithms (per `prop:li2q-phiq-bar-symmetrization`
 on main); their h^k corrections must agree under bar-symmetrization.
 
+### (iv) Yang-Baxter equation (braid-group relations)
+
+The R-matrix satisfies the Yang-Baxter equation:
+
+```
+R_{12} · R_{13} · R_{23}  =  R_{23} · R_{13} · R_{12}
+```
+
+This is a CUBIC consistency on the braiding morphism. Its
+h-expansion at the universal level (`R = 1 + h · r + h² · r⁽²⁾ + ...`)
+yields the classical Yang-Baxter equation for the classical r-matrix
+at leading order, and ITERATED Yang-Baxter constraints at higher
+h^k orders. These constrain how the Hecke quadratic
+`σ_i² = (q − q⁻¹)·σ_i + 1` propagates through h-expansion — and
+hence constrain higher-order Yekutieli per-cell coefficients.
+
+### (v) Hexagon equations (braiding ↔ fusion compatibility)
+
+In a braided monoidal category, the hexagon equations relate
+braiding to fusion (tensor product) at next-to-leading order. For
+Rep(U_q(sl_2)) restricted to the H_4 sector, the hexagon equations
+give explicit polynomial relations between h^k coefficients of
+braided morphisms and fusion coefficients. These constrain how
+canonical Wedderburn (which is fusion-based) and Yekutieli
+categorical Stokes (which is braiding/curvature-based) MUST agree
+at every h^k order.
+
+### (vi) Frobenius reciprocity / pairing constraints
+
+The Frobenius pairing `⟨a, b⟩_F = ∫_A (a · b)` is non-degenerate on
+the half-symmetric H_4 sub-algebra. Frobenius reciprocity gives a
+duality between h^k coefficients of the Markov trace and h^k
+coefficients of the dual Frobenius form. This is a categorical
+consistency that forces specific relations between Yekutieli and
+canonical Wedderburn h^k contributions at every order — no
+independent choice.
+
+### (vii) Quantum 6j-symbol identities (Racah-Wigner)
+
+For Rep(U_q(sl_2)) the quantum 6j-symbols satisfy explicit
+recursions (Biedenharn-Elliott and orthogonality). At the H_4
+partition level these give CLOSED FORMS for how partition-character
+products decompose, with explicit h^k expansions. The h^4
+coefficient of any natural Hecke-character functional on H_4 is
+ALGEBRAICALLY DERIVABLE from the 6j data — not a fit.
+
+### (viii) Modular dual / S-transformation
+
+For modular tensor categories (Reshetikhin-Turaev TQFT), the
+S-transformation `q ↔ q̃ = exp(2πi · 1/τ)` is a categorical
+symmetry. For real q > 1 (our substrate), the dual q̃ is a small
+COMPLEX root of unity; the q ↔ q̃ symmetry constrains the
+asymptotic behavior of Φ_q and Li_2^q at large h. h^k corrections
+that VIOLATE this symmetry are non-categorical.
+
+### (ix) KLR positivity (Khovanov-Lauda-Rouquier)
+
+KLR canonical bases for U_q(sl_n) have non-negative integer
+coefficients. Per user direction "KLR only non-negative observables"
+(2026-05-23), h^k coefficients of OBSERVABLES (vs corrections like
+Yekutieli's `−G`) must be expressible as non-negative integer
+combinations of KLR basis elements. This is a STRONG categorical
+constraint: it filters which h^k corrections can be λ_scale
+contributions vs subleading corrections to the categorical action.
+
+### (x) MacMahon-style partition-algebra identities
+
+For the partition algebra at H_4 (5 partitions of 4), MacMahon's
+master theorem and related symmetric-function identities give
+explicit h-expansions of dim_q V_λ and Σ_λ dim_q V_λ. These are
+the source of canonical Wedderburn's `+3/4` h² coefficient (Family
+A theorem). Higher-order h^k contributions to other partition-
+algebra weighted sums are similarly derivable — the audit Step 4
+"h^4 coefficient should be derivable from the partition algebra
+at level n=4" cites exactly this.
+
+### (xi) Lobachevsky / Catalan-G identities
+
+`Vol(𝓑_3) = 8G` via the Adams 1985 octahedron decomposition is the
+source of the per-cell `G = Vol(𝓑_3)/8` constant entering
+Yekutieli. The Lobachevsky function `Λ(π/4) = G/2` and related
+Cl_2 (Clausen) identities tie G to other transcendentals; if h^4
+or higher coefficients involve G²/2, G·ζ(3), or Cl_2(π/3) factors,
+these traceable transcendental identities pin them.
+
+### (xii) Chern-Simons perturbative expansion (Ohtsuki series)
+
+For Witten-Reshetikhin-Turaev TQFT at level k → ∞ with q =
+exp(2πi/(k+2)), the Chern-Simons partition function admits a
+perturbative expansion (Ohtsuki series) in 1/k = log(q)/2π. h^k
+corrections to the Borromean WRT invariant at substrate q_0 are
+derivable from this asymptotic series — yet another canonical
+source of higher-order coefficients.
+
+### (xiii) Crystal-graph / Kashiwara q → 0 limit
+
+Per CLAUDE.md §7b, KLR canonical bases at q → 0 reduce to crystal
+graphs (Kashiwara). The crystal structure is fully combinatorial
+(no q dependence), and the q-deformation back from q → 0 to
+q = q_0 gives explicit h^k expansions of crystal-basis matrix
+elements. Higher-order corrections to half-symmetric H_4 sums are
+derivable from the crystal graph's structure constants.
+
+### Summary: the categorical-drivers menu
+
+Every h^k coefficient in `λ_scale^canonical` should come from ONE
+or MORE of these thirteen sources. Choosing a coefficient that
+ISN'T derivable from any is the empirical-fitting antipattern the
+user's "no empirical fitting" rule excludes. The framework's
+canonical-only refinement direction is to take each load-bearing
+open step (cell-↔-projection bijection, color-sheet ↔ flavor
+mapping, second-order Yekutieli per-cell h^4) and identify which
+of the thirteen sources gives its categorical derivation.
+
 ## Concrete test (canonical, fitting-free)
 
 **Numerically check** whether the h² coefficient of `1/(1 − h_q · q_0^{10})`
