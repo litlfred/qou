@@ -189,7 +189,18 @@ def main() -> int:
     from codata_constants import M_E_MEV as M_E, M_P_MEV_VALIDATION as M_P_CODATA
     M_P_ANCHOR = M_P_CODATA / M_E  # m_p / m_e = 1836.1527
     VOL_OVER_HBAR_SQ = VOL_B3 / HBAR_Q ** 2
-    LAMBDA_CURRENT = mp.mpf("2.4599527869")
+    # λ_scale categorical identity — PROVED Family A theorem in
+    # `lambda_scale_all_c_i_family_a.py` + Lean
+    # `lambda-scale-substrate-form.lean`:
+    #     λ_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ = 5/2 + (3/4) h²
+    # Replaces the prior fitted literal `2.4599527869` (removed
+    # from production per the CAL-4 audit, 2026-05-22 / PR #888 /
+    # PR #895 / PR #942).  The fitted literal is retained as
+    # `LAMBDA_FITTED_AUDIT_ONLY` for the historical comparison
+    # column only; it is NOT consumed in any S(p)-hypothesis cell.
+    _H_VAL = Q - mp.mpf(1) / Q  # h = q - q⁻¹ at substrate q₀
+    LAMBDA_CURRENT = mp.mpf(5) / 2 + mp.mpf(3) * _H_VAL ** 2 / 4  # Family A
+    LAMBDA_FITTED_AUDIT_ONLY = mp.mpf("2.4599527869")
 
     # Under "S(p) = 0" — current production assumption
     m_p_pred_S0 = M_E * (VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + 0)
@@ -202,47 +213,63 @@ def main() -> int:
 
     w.add_data("skein_hypothesis_panel", {
         "Vol(𝓑₃)/ℏ_q²": mp.nstr(VOL_OVER_HBAR_SQ, 25),
-        "λ_p_scale (hardcoded)": mp.nstr(LAMBDA_CURRENT, 25),
+        "λ_p_scale (Family A: 5/2 + 3h²/4)": mp.nstr(LAMBDA_CURRENT, 25),
+        "λ_fitted_AUDIT_ONLY (removed from production)":
+            mp.nstr(LAMBDA_FITTED_AUDIT_ONLY, 25),
         "m_p_CODATA / m_e (anchor)": mp.nstr(M_P_ANCHOR, 25),
         "S(p) = 0 hypothesis": {
             "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LAMBDA_CURRENT, 20),
             "m_p_pred": mp.nstr(m_p_pred_S0, 20),
-            "delta_ppb": mp.nstr(
-                (m_p_pred_S0 - M_P_CODATA) / M_P_CODATA * mp.mpf("1e9"), 8,
+            "delta_ppm": mp.nstr(
+                (m_p_pred_S0 - M_P_CODATA) / M_P_CODATA * mp.mpf("1e6"), 8,
+            ),
+            "verdict": (
+                "Family A m_avg layer: ~29 000 ppm above CODATA m_p — "
+                "this gap is in λ_scale, NOT in S(p).  S(p) ≈ 0 "
+                "remains the production assumption (flavor split "
+                "supplies the m_n − m_p split downstream)."
             ),
         },
         "S(p) = |tr_M(β_p, q_0)| hypothesis": {
             "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + abs_tr, 20),
             "m_p_pred": mp.nstr(m_p_pred_S_tr, 20),
-            "delta_ppb": mp.nstr(
-                (m_p_pred_S_tr - M_P_CODATA) / M_P_CODATA * mp.mpf("1e9"), 8,
+            "delta_ppm": mp.nstr(
+                (m_p_pred_S_tr - M_P_CODATA) / M_P_CODATA * mp.mpf("1e6"), 8,
             ),
-            "verdict": "Inconsistent with CODATA (~1000+ ppm); refutes Markov-trace = S(p)",
+            "verdict": (
+                "Adds |tr_M(β_p)| ≈ 1.07 to the tower; m_p_pred "
+                "shifts by ~580 ppm.  Negligible compared to the "
+                "29 000 ppm m_avg gap.  Does not discriminate "
+                "between S(p) hypotheses at this layer."
+            ),
         },
         "S(p) = V(𝓑₃, q²) hypothesis": {
             "V_value": mp.nstr(v_t_q_sq, 20),
             "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + v_t_q_sq, 20),
             "m_p_pred": mp.nstr(m_p_pred_S_Vt2, 20),
-            "delta_ppb": mp.nstr(
-                (m_p_pred_S_Vt2 - M_P_CODATA) / M_P_CODATA * mp.mpf("1e9"), 8,
+            "delta_ppm": mp.nstr(
+                (m_p_pred_S_Vt2 - M_P_CODATA) / M_P_CODATA * mp.mpf("1e6"), 8,
             ),
-            "verdict": "Inconsistent (~2 MeV regression); refutes Jones-poly = S(p)",
+            "verdict": (
+                "Adds V(𝓑₃, q²) ≈ 4.04 to the tower; ~2 200 ppm "
+                "shift.  Still small vs the 29 000 ppm Family A "
+                "gap — does not discriminate."
+            ),
         },
         "interpretation": (
-            "Numerically, S(p) ≈ 0 is the ONLY hypothesis consistent "
-            "with the 1 ppb m_p closure. The candidates |tr_M(β_p)| "
-            "(~1.07) and V(𝓑₃, q²) (~4.04) would each regress m_p "
-            "by ~1000 ppm and ~2000 ppm respectively. Therefore the "
-            "production formula's 'S(p) := 0' is structurally forced "
-            "by the calibration, not an independent choice. The "
-            "interpretive question becomes: WHY is the categorical "
-            "Skein contribution effectively zero in this formula? "
-            "Plausible answer: λ_p_scale already absorbs the Skein-"
-            "tower correction, so 'S(p)' as a separate additive "
-            "term is double-counting. The conjecture should be "
-            "revised: drop S(p) from the formula entirely, OR "
-            "re-derive λ_p_scale = (Vol(K_p^eff) - S(p)) / Vol(𝓑₃) "
-            "with both pieces explicit."
+            "Under the PROVED Family A λ_scale (replacing the prior "
+            "fitted 2.4599527869, removed 2026-05-22), the bare "
+            "Vol·λ_A/ℏ_q² tower lands m_p_pred ≈ 966 MeV — about "
+            "2.9 % above CODATA.  All three S(p) hypotheses produce "
+            "shifts of <0.3 % vs that gap, so the m_avg residual is "
+            "dominated by the λ_scale layer, NOT by S(p).  S(p) ≈ 0 "
+            "remains the production assumption; the proton-neutron "
+            "split is supplied separately by the substrate flavor-"
+            "split formula (`prop:flavor-split-substrate`, PR #690 "
+            "/ #942).  The original 'S(p) = 0 forced by 1 ppb "
+            "closure' argument was an artifact of the CAL-4 fitted "
+            "λ_p; under Family A the S(p) discriminator becomes "
+            "structural rather than 1-ppb-numerical."
         ),
     })
 
@@ -255,16 +282,25 @@ def main() -> int:
         unit="relative",
         source="markov_peel.tr_M_atomic vs canonical-mass-table-extended.witness.json",
     )
+    # Under Family A λ_scale (PROVED, no fit), the bare Vol·λ_A/ℏ_q²
+    # tower lands ~2.9 % above CODATA m_p — that gap is in λ_scale,
+    # not in S(p).  All three S(p) hypotheses produce <0.3 % shifts
+    # relative to the 29 000 ppm Family A gap.  The S(p) ≈ 0
+    # production assumption remains the most natural; the assertion
+    # is loosened to "S(p) hypotheses don't dominate the m_avg gap"
+    # rather than the prior "S(p) = 0 closes m_p to 1 ppb"
+    # (which was a CAL-4 tautology).
     w.add_assertion(
-        "S(p) ≈ 0 is the only hypothesis consistent with 1 ppb m_p closure",
+        "Family_A_m_p_gap_within_5pct_of_CODATA",
         computed=float(abs((m_p_pred_S0 - M_P_CODATA) / M_P_CODATA)),
         expected=0.0,
-        tolerance=1e-6,
+        tolerance=5e-2,  # 5 % ceiling, matches m_p_borromean_verification
         unit="relative",
         source=(
-            "Of {S=0, S=|tr_M|, S=V(𝓑₃,q²)}, only S=0 closes "
-            "m_p_CODATA to better than 1 ppm; non-zero hypotheses "
-            "regress by 1000+ ppm. S(p)=0 is calibration-forced."
+            "Family A m_avg layer (S(p) = 0) vs CODATA m_p; the "
+            "29 000 ppm Family A residual is the m_avg gap that "
+            "Bring-Bloch / categorical q-dilog tower closes "
+            "(open R&D)."
         ),
     )
 

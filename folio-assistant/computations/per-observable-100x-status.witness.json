@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T04:47:25.574683+00:00",
-  "commitSha": "60882ea0ab37ece3eac2f57e2c423351e6828890",
+  "computedAt": "2026-05-23T02:59:03.152677+00:00",
+  "commitSha": "9965c1216cf1a34eafcbe96b96b618e987d9ca1a",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "492e5fc8aecd",
@@ -25,13 +25,13 @@
       {
         "obs": "m_p",
         "role": "validation",
-        "pred_MeV": "938.272089128",
+        "pred_MeV": "965.384474271",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
-        "err_ppb": "1.032",
+        "err_ppb": "2.890e+7",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
-        "miss_factor": "333.9",
+        "miss_factor": "9.349e+9",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
@@ -40,13 +40,13 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565421485",
+        "pred_MeV": "966.714772334",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "1.027",
+        "err_ppb": "2.890e+7",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "178.7",
+        "miss_factor": "5.028e+9",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
@@ -55,30 +55,30 @@
       {
         "obs": "m_mu",
         "role": "validation",
-        "pred_MeV": "105.658375649",
+        "pred_MeV": "105.658375506",
         "codata_MeV": "105.658375500",
         "sigma_exp_MeV": "2.30000e-6",
-        "err_ppb": "1.410",
+        "err_ppb": "0.05965",
         "sigma_exp_ppb": "21.77",
         "target_100x_ppb": "0.2177",
-        "miss_factor": "6.477",
+        "miss_factor": "0.2740",
         "beats_1x_experimental": true,
-        "beats_100x_experimental": false,
+        "beats_100x_experimental": true,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
         "sigma_source": "105.6583755(23) MeV/c² (PDG 2024 / CODATA 2022)"
       },
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333235686",
+        "pred_MeV": "1.33029806350",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "2.428",
+        "err_ppb": "2.858e+7",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "0.5123",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "6.031e+6",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature"
       },
@@ -116,17 +116,17 @@
     ],
     "summary": {
       "total": 6,
-      "beats_1x_count": 4,
+      "beats_1x_count": 3,
       "beats_100x_count": 2
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "cd305db00f5a7393f74ec4fdbe1762c28bdf80028494dff59765d688711ec85e",
-        "size_bytes": 4632,
-        "commitSha": "4d864976cc260013b2138b7178a4959925cdd166",
-        "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
-        "computedAt": "2026-05-20T03:15:55.773785+00:00"
+        "sha256": "5c005f8b545238b59e025fb547675091b8695c6703a1a127220d6be10e488ee1",
+        "size_bytes": 7217,
+        "commitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
+        "scriptCommitSha": "94f1793489a4ee34c6e3c086866799fcd4d25977",
+        "computedAt": "2026-05-23T01:36:23.630206+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
