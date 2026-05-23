@@ -664,6 +664,19 @@ basis beyond what's been tried:
     in its tested form. 4th independent negative search in the
     cluster (Bring-Bloch tier 0-5 + q-dilog Tier 0 + q-dilog Tier
     1+ + Φ_q functional-equation).
+  - **Faddeev-pentagon operator-theoretic route.** Refuted by
+    commit [`d348ad8c`](https://github.com/litlfred/qou/commit/d348ad8c)
+    on main: tested operator-theoretic Φ_q pentagon `Φ_q(U)·Φ_q(V)
+    = Φ_q(V)·Φ_q(U·V)·Φ_q(U)` on a truncated 16-dim Heisenberg
+    representation. Negative on ppb criterion; surfaces a 19 ppm
+    near-match `1/(1 − h_q · q_0^10) ≈ λ_p` with explicit Φ_q
+    functional-equation interpretation `λ_p ≈ Φ_q(h_q·q_0^11) /
+    Φ_q(h_q·q_0^10)`. The integer power n=10 is selective (n=8,9,
+    11,12 give 13–51 % error) but **categorically unexplained**;
+    sits in the same coincidence basin as `5/2 − h²·G` (5.6 ppm)
+    and `5/2 − ℏ_q²·⟨𝓑_3⟩(q_0^{1/2})` (165 ppm). Audit:
+    [`docs/audits/2026-05-22-faddeev-pentagon-operator-spike.md`](../audits/2026-05-22-faddeev-pentagon-operator-spike.md).
+    5th independent negative search in the cluster.
   - **Strategy I (Yekutieli per-cell curvature) — framework's
     substrate-pure prediction.** Per the formalised audit
     [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
