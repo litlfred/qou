@@ -642,6 +642,23 @@
         },
         "reviewed_at": "2026-05-23T11:28:20.680Z",
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      },
+      {
+        "field_hash": {
+          "md": "2754f9c6f695",
+          "ts": "ae2da18ccfac",
+          "lean": "8dedb1b4c1b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:48:57.565Z",
+        "reviewed_sha": "41e6257d634a5973477c9e78b97fdb564106bc5b"
       }
     ],
     "voice-title-scholarly": [
@@ -855,5 +872,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T11:36:35.811Z"
+  "updated_at": "2026-05-23T11:48:57.565Z"
 }
