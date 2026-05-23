@@ -26,4 +26,10 @@ export default proposition({
     "witness-test",
     "crystal-basis-shortcut",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/brundan_kleshchev_audit.py",
+    witness: "folio-assistant/computations/brundan-kleshchev-audit.witness.json",
+    status: "verified",
+  },
 });

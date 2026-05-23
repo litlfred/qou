@@ -18,4 +18,10 @@ export default proposition({
     "prop:flavor-split-substrate",
     "lem:pair-skein-mass-formula",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/probe_flavor_dressed_mass_split.py",
+    witness: "folio-assistant/computations/flavor-dressed-mass-from-substrate-split.witness.json",
+    status: "verified",
+  },
 });

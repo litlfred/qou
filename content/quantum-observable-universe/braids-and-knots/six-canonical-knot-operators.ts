@@ -23,4 +23,10 @@ export default proposition({
     "prop:lagrange-resolvent-transform",
     "prop:vertex-is-exceptional-divisor",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/reeb_flow_garside_closed_form_verification.py",
+    witness: "folio-assistant/computations/reeb-flow-garside-closed-form-verification.witness.json",
+    status: "verified",
+  },
 });

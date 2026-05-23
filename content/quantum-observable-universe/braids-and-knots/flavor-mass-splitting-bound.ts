@@ -18,4 +18,10 @@ export default theorem({
     "prop:flavor-dressed-mass-from-substrate-split",
     "prop:flavor-split-substrate",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/probe_flavor_dressed_mass_split.py",
+    witness: "folio-assistant/computations/flavor-dressed-mass-from-substrate-split.witness.json",
+    status: "verified",
+  },
 });

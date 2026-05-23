@@ -22,4 +22,10 @@ export default proposition({
     "prop:lp-dual-stability",
     "def:hecke-mass-element",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/toffoli-lp-stability.py",
+    witness: "folio-assistant/computations/toffoli-lp-stability.witness.json",
+    status: "verified",
+  },
 });
