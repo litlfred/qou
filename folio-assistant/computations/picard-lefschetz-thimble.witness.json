@@ -1,25 +1,25 @@
 {
-  "engine": "scipy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T15:15:48.749470+00:00",
-  "commitSha": "75754d73c19a13911aa981d762bec2c25566b900",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-23T21:38:06.382147+00:00",
+  "commitSha": "15ef67c8f30d544038f5f92eb8035d31b1ec9b2a",
   "assertions": [
     {
       "name": "m_p from ∏ dc_k/dz (best-fit limit; NOT pure substrate)",
-      "computed": 938.267,
+      "computed": 0.0,
       "expected": 938.272,
-      "passed": true,
+      "passed": false,
       "tolerance": 1.0,
       "unit": "MeV",
       "source": "CODATA 2018 proton mass.  AUDIT 2026-05-17: assertion uses post-hoc best-fit integration limit (4-q)/(4q+3) — NOT a substrate-only prediction.  Substrate-only limits z_0 / ℏ_q give 0.84 % residual."
     }
   ],
-  "allPassed": true,
-  "durationMs": 27,
+  "allPassed": false,
+  "durationMs": 13,
   "computation": "picard-lefschetz-thimble",
   "scriptFile": "picard_lefschetz_thimble.py",
-  "scriptHash": "c47a577b4cc8",
-  "scriptCommitSha": "eed8e42d3e2fcdcdddc61aed85c31452ad9b0b0e",
+  "scriptHash": "f6b7e5b48c01",
+  "scriptCommitSha": "999ec28c874a53a3c4f64ac096a8bf9273865897",
   "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, SW period integrals (single-root and simultaneous 3-root prescriptions).",
   "contentBlock": "rem:picard-lefschetz-thimble",
   "parameters": {
@@ -30,132 +30,132 @@
   "data": {
     "critical_points": [
       {
-        "z_c_real": 0.1058295861882663,
-        "z_c_imag": 0.9371389378389038,
-        "hessian_abs": 3.2858982328915155e+17,
-        "hessian_arg_deg": 14.001958689163045,
+        "z_c_real": 0.10582958618826802,
+        "z_c_imag": -0.9371389378389035,
+        "hessian_abs": 9.205600473482158e+17,
+        "hessian_arg_deg": 37.52243471393744,
         "intersection_number": 0,
-        "period_0_abs": 11.14825581185299,
-        "period_1_abs": 5.768631578358104,
-        "period_2_abs": 102.17694388294683
+        "period_0_abs": 11.029997868179523,
+        "period_1_abs": 5.72244932932376,
+        "period_2_abs": 101.9264068893661
       },
       {
-        "z_c_real": 0.1058295861882663,
-        "z_c_imag": -0.9371389378389038,
-        "hessian_abs": 3.2858982328915155e+17,
-        "hessian_arg_deg": -14.001958689163045,
+        "z_c_real": 0.10582958618826802,
+        "z_c_imag": 0.9371389378389035,
+        "hessian_abs": 9.205600473482158e+17,
+        "hessian_arg_deg": -37.52243471393744,
         "intersection_number": 0,
-        "period_0_abs": 11.14825581185299,
-        "period_1_abs": 5.768631578358104,
-        "period_2_abs": 102.17694388294683
+        "period_0_abs": 11.029997868179523,
+        "period_1_abs": 5.72244932932376,
+        "period_2_abs": 101.9264068893661
       },
       {
-        "z_c_real": 0.11898594678977274,
-        "z_c_imag": 1.0536407427121088,
-        "hessian_abs": 99.41739860177732,
-        "hessian_arg_deg": -110.82587603040827,
+        "z_c_real": 0.11898594678977058,
+        "z_c_imag": -1.053640742712109,
+        "hessian_abs": 99.41747779850992,
+        "hessian_arg_deg": 110.8259312327402,
         "intersection_number": 0,
-        "period_0_abs": 11.125307081678223,
-        "period_1_abs": 5.481941217950447,
-        "period_2_abs": 0.9384355880540486
+        "period_0_abs": 11.12530708153838,
+        "period_1_abs": 5.4819412179014995,
+        "period_2_abs": 0.9384355880675778
       },
       {
-        "z_c_real": 0.11898594678977274,
-        "z_c_imag": -1.0536407427121088,
-        "hessian_abs": 99.41739860177732,
-        "hessian_arg_deg": 110.82587603040827,
+        "z_c_real": 0.11898594678977058,
+        "z_c_imag": 1.053640742712109,
+        "hessian_abs": 99.41747779850992,
+        "hessian_arg_deg": -110.8259312327402,
         "intersection_number": 0,
-        "period_0_abs": 11.125307081678223,
-        "period_1_abs": 5.481941217950447,
-        "period_2_abs": 0.9384355880540486
+        "period_0_abs": 11.12530708153838,
+        "period_1_abs": 5.4819412179014995,
+        "period_2_abs": 0.9384355880675778
       },
       {
-        "z_c_real": -0.9748155329780397,
-        "z_c_imag": -0.22301272758464225,
-        "hessian_abs": 2.884299332574446,
-        "hessian_arg_deg": -177.766374073126,
+        "z_c_real": -0.9748155329780386,
+        "z_c_imag": -0.22301272758464377,
+        "hessian_abs": 2.884329431441664,
+        "hessian_arg_deg": -177.7657573401558,
         "intersection_number": 0,
-        "period_0_abs": 8.619257094339261,
-        "period_1_abs": 8.242690623876683,
-        "period_2_abs": 14.237237196845584
+        "period_0_abs": 8.619257084936537,
+        "period_1_abs": 8.242690612794894,
+        "period_2_abs": 14.237234933898472
       },
       {
-        "z_c_real": -0.9748155329780397,
-        "z_c_imag": 0.22301272758464225,
-        "hessian_abs": 2.884299332574446,
-        "hessian_arg_deg": 177.766374073126,
+        "z_c_real": -0.9748155329780386,
+        "z_c_imag": 0.22301272758464377,
+        "hessian_abs": 2.884329431441664,
+        "hessian_arg_deg": 177.7657573401558,
         "intersection_number": 0,
-        "period_0_abs": 8.619257094339261,
-        "period_1_abs": 8.242690623876683,
-        "period_2_abs": 14.237237196845584
+        "period_0_abs": 8.619257084936537,
+        "period_1_abs": 8.242690612794894,
+        "period_2_abs": 14.237234933898472
       }
     ],
     "amplification_factor_needed": 2.459952787539128,
     "simultaneous_3root": {
       "Σ(c_k+z)": {
-        "abs_plus": 26.020814044682815,
-        "abs_minus": 26.020814044682815,
-        "ratio_to_pi0_plus": 1.0905754135141568,
-        "ratio_to_pi0_minus": 1.0905754135141568
+        "abs_plus": 25.82732915303208,
+        "abs_minus": 25.82732915303208,
+        "ratio_to_pi0_plus": 1.0903364226055712,
+        "ratio_to_pi0_minus": 1.0903364226055712
       },
       "∏(c_k+z)": {
-        "abs_plus": 561.8862670343954,
-        "abs_minus": 561.8862670343954,
-        "ratio_to_pi0_plus": 23.54958407399169,
-        "ratio_to_pi0_minus": 23.54958407399169
+        "abs_plus": 553.7638217439834,
+        "abs_minus": 553.7638217439834,
+        "ratio_to_pi0_plus": 23.37790565920133,
+        "ratio_to_pi0_minus": 23.37790565920133
       },
       "Σ dc_k/dz": {
-        "abs_plus": 23.65432452976868,
-        "abs_minus": 23.65432452976868,
-        "ratio_to_pi0_plus": 0.9913919184523727,
-        "ratio_to_pi0_minus": 0.9913919184523727
+        "abs_plus": 23.55083846332075,
+        "abs_minus": 23.55083846332075,
+        "ratio_to_pi0_plus": 0.9942312194694839,
+        "ratio_to_pi0_minus": 0.9942312194694839
       },
       "∏ dc_k/dz": {
-        "abs_plus": 23.247553941996443,
-        "abs_minus": 23.247553941996443,
-        "ratio_to_pi0_plus": 0.9743434894061742,
-        "ratio_to_pi0_minus": 0.9743434894061742
+        "abs_plus": 26.503542940133325,
+        "abs_minus": 26.503542940133325,
+        "ratio_to_pi0_plus": 1.11888372291587,
+        "ratio_to_pi0_minus": 1.11888372291587
       },
       "Σ|dc_k/dz|": {
-        "abs_plus": 30.001889344126035,
-        "abs_minus": 30.001889344126035,
-        "ratio_to_pi0_plus": 1.2574288729588077,
-        "ratio_to_pi0_minus": 1.2574288729588077
+        "abs_plus": 29.942373401353187,
+        "abs_minus": 29.942373401353187,
+        "ratio_to_pi0_plus": 1.2640587071667424,
+        "ratio_to_pi0_minus": 1.2640587071667424
       },
       "Σ_{k≠l} dc_k/dz·(c_l+z)": {
-        "abs_plus": 99.9586255721578,
-        "abs_minus": 99.9586255721578,
-        "ratio_to_pi0_plus": 4.189431553927067,
-        "ratio_to_pi0_minus": 4.189431553927067
+        "abs_plus": 99.21810413168258,
+        "abs_minus": 99.21810413168258,
+        "ratio_to_pi0_plus": 4.188629496904273,
+        "ratio_to_pi0_minus": 4.188629496904273
       },
       "d/dz[Σ c_k²]": {
-        "abs_plus": 184.58986641903587,
-        "abs_minus": 184.58986641903587,
-        "ratio_to_pi0_plus": 7.736467028078979,
-        "ratio_to_pi0_minus": 7.736467028078979
+        "abs_plus": 183.24909289650668,
+        "abs_minus": 183.24909289650668,
+        "ratio_to_pi0_plus": 7.736113912926091,
+        "ratio_to_pi0_minus": 7.736113912926091
       },
       "Vander×∏dc/dz": {
-        "abs_plus": 8745.09748012886,
-        "abs_minus": 8745.09748012886,
-        "ratio_to_pi0_plus": 366.52151943578434,
-        "ratio_to_pi0_minus": 366.52151943578434
+        "abs_plus": 8624.49291143492,
+        "abs_minus": 8624.49291143492,
+        "ratio_to_pi0_plus": 364.0948970032038,
+        "ratio_to_pi0_minus": 364.0948970032038
       },
       "Σ 1/∂F_c": {
-        "abs_plus": 2.241900715778503e-15,
-        "abs_minus": 2.241900715778503e-15,
-        "ratio_to_pi0_plus": 9.396177214015475e-17,
-        "ratio_to_pi0_minus": 9.396177214015475e-17
+        "abs_plus": 4.960584821516096e-16,
+        "abs_minus": 4.960584821516096e-16,
+        "ratio_to_pi0_plus": 2.0941794934643424e-17,
+        "ratio_to_pi0_minus": 2.0941794934643424e-17
       }
     },
     "key_result": {
       "prescription": "product_of_3_prolongations",
       "formula": "A(q₀) = |∫_{-a}^{a} ∏_k dc_k/dz dz| / |∫_{-a}^{a} (c₀+z) dz|",
-      "best_limit_name": "(4-q)/(4q+3) (post-hoc-fitted, conj:mobius-limit)",
-      "best_limit_value": 0.38844820732799046,
-      "amplification_factor": 2.459938770426328,
-      "m_p_predicted_MeV": 938.266741770523,
+      "best_limit_name": "z₀",
+      "best_limit_value": 0.10438806980915827,
+      "amplification_factor": 0.0,
+      "m_p_predicted_MeV": 0.0,
       "m_p_CODATA_MeV": 938.27208816,
-      "error_percent": 0.0005698122692119198,
+      "error_percent": 100.0,
       "derivation_status": "substrate_plus_best_fit_integration_limit",
       "honest_substrate_only_residual_pct_using_z0": "0.836",
       "honest_substrate_only_residual_pct_using_hbar_q": "0.843",
