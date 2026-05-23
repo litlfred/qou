@@ -927,8 +927,8 @@ def main():
         try:
             e_ref_r, _ = _scipy_quad(_electron_at, -a_val, a_val)
             prod_re_r, _ = _scipy_quad(
-                lambda z: float(complex(sw_3root_product_degree1(z))),
-                -a_val, a_val, limit=200)
+                lambda z: complex(sw_3root_product_degree1(z)).real,
+                -a_val, a_val)
             ratio_r = abs(prod_re_r) / abs(e_ref_r) if abs(e_ref_r) > 1e-15 else float('nan')
             m_p_pred = borromean_factor * ratio_r * M_E_MEV
             err_pct = abs(m_p_pred - M_P_MEV) / M_P_MEV * 100
