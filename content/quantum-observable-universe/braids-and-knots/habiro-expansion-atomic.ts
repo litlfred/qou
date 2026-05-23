@@ -17,4 +17,10 @@ export default corollary({
     ref: "qou:QOU.BraidKnot.habiro_expansion_atomic",
     validation: "not_checked",
   },
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/habiro_expansion_atomic_probe.py",
+    witness: "folio-assistant/computations/habiro-expansion-atomic-probe.witness.json",
+    status: "verified",
+  },
 });

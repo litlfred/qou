@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "744c75e7f9bf",
-    "ts": "7cc4bae8235d",
+    "ts": "fb76a32691d1",
     "lean": "781f33b61f9e"
   },
   "criteria": {
@@ -54,35 +54,52 @@
           "ts": "7cc4bae8235d",
           "lean": "781f33b61f9e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "787a76dad8ea",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
         },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "reviewed_at": "2026-05-23T11:36:21.990Z",
+        "reviewed_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+      },
+      {
+        "field_hash": {
+          "md": "744c75e7f9bf",
+          "ts": "fb76a32691d1",
+          "lean": "781f33b61f9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "787a76dad8ea",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T11:38:27.562Z",
+        "reviewed_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
       }
     ],
     "compute-prop-has-consumer": [
       {
         "field_hash": {
           "md": "744c75e7f9bf",
-          "ts": "7cc4bae8235d",
+          "ts": "fb76a32691d1",
           "lean": "781f33b61f9e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "787a76dad8ea",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
         },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "reviewed_at": "2026-05-23T11:38:27.562Z",
+        "reviewed_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
       }
     ],
     "compute-witness-exists": [
@@ -553,5 +570,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T11:38:27.562Z"
 }
