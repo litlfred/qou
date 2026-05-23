@@ -674,6 +674,200 @@ export function checkCanonicalWitnessPinned(
   return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
 
+// ─── Canonical axis (new criteria) ──────────────────────────────
+
+const NUMEROLOGY_PHRASES = [
+  /\bmiraculous(?:ly)?\b/i,
+  /\bsurprising(?:ly)?\s+agree(?:ment|s)?\b/i,
+  /\bnumerical\s+coincidence\b/i,
+  /\bremarkably\s+close\b/i,
+  /\bhappens\s+to\s+equal\b/i,
+  /\bempirically\s+match(?:es)?\b/i,
+  /\bstrik(?:ing|ingly)\s+close\b/i,
+  /\baccidental(?:ly)?\s+match/i,
+];
+
+export function checkCanonicalNoNumerology(
+  mdPath: string | undefined,
+): CheckerResult {
+  const md = readMaybe(mdPath);
+  if (!md) return { result: "pass", hits: [] };
+  const hits: CheckerHit[] = [];
+  let lineNo = 0;
+  for (const line of md.split("\n")) {
+    lineNo++;
+    for (const re of NUMEROLOGY_PHRASES) {
+      const m = line.match(re);
+      if (m) {
+        hits.push({
+          file: mdPath ?? "(unknown)",
+          line: lineNo,
+          text: `numerology signal phrase: "${m[0]}"`,
+        });
+        break;
+      }
+    }
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+const DEPRECATED_MODULES = [
+  "mass_endomorphism",
+  "LAMBDA_PROTON_DOC",
+  "LAMBDA_NEUTRON_DOC",
+  "LAMBDA_PROTON_FITTED",
+  "LAMBDA_NEUTRON_FITTED",
+];
+
+export function checkCanonicalScriptNotDeprecated(
+  tsPath: string | undefined,
+): CheckerResult {
+  const ts = readMaybe(tsPath);
+  if (!ts) return { result: "pass", hits: [] };
+  const { probe } = getComputationField(ts);
+  const witness = getComputationField(ts).witness;
+  const scriptMatch = ts.match(/script:\s*["']([^"']+)["']/);
+  if (!scriptMatch) return { result: "pass", hits: [] };
+  const scriptRelPath = scriptMatch[1];
+  const scriptAbsPath = resolve(REPO_ROOT, scriptRelPath);
+  if (!existsSync(scriptAbsPath)) return { result: "pass", hits: [] };
+  const scriptSrc = readFileSync(scriptAbsPath, "utf-8");
+  const hits: CheckerHit[] = [];
+  if (/\bSUPERSEDED\b/i.test(scriptSrc) || /\bDEPRECATED\b/i.test(scriptSrc)) {
+    hits.push({
+      file: scriptRelPath,
+      line: 1,
+      text: "computation script contains SUPERSEDED/DEPRECATED marker",
+    });
+  }
+  for (const mod of DEPRECATED_MODULES) {
+    if (scriptSrc.includes(mod)) {
+      hits.push({
+        file: scriptRelPath,
+        line: 1,
+        text: `computation script imports deprecated module: ${mod}`,
+      });
+    }
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+const BINDING_TAGS = new Set([
+  "binding", "binding-energy", "binding-block", "interface-knot",
+  "borromean", "borromean-tower", "bar-symmetric", "li2q",
+]);
+const MASS_ANCHOR_TAGS = new Set([
+  "mass-anchor", "mass-derivation", "proton-mass", "neutron-mass",
+  "mass-formula", "hadron-mass", "nuclear-mass",
+]);
+
+export function checkCanonicalDilogarithmContext(
+  mdPath: string | undefined,
+  tsPath: string | undefined,
+): CheckerResult {
+  const md = readMaybe(mdPath);
+  const ts = readMaybe(tsPath);
+  if (!md || !ts) return { result: "pass", hits: [] };
+
+  const tagsMatch = ts.match(/tags:\s*\[([\s\S]*?)\]/);
+  const tags = tagsMatch
+    ? tagsMatch[1].match(/"([^"]+)"/g)?.map((t) => t.replace(/"/g, "")) ?? []
+    : [];
+
+  const isBinding = tags.some((t) => BINDING_TAGS.has(t));
+  const isMassAnchor = tags.some((t) => MASS_ANCHOR_TAGS.has(t));
+  if (!isBinding && !isMassAnchor) return { result: "pass", hits: [] };
+
+  const hits: CheckerHit[] = [];
+  let lineNo = 0;
+  for (const line of md.split("\n")) {
+    lineNo++;
+    if (isBinding && /\\?Phi_q|faddeev_dilogarithm|\\Phi_q/i.test(line)) {
+      hits.push({
+        file: mdPath ?? "(unknown)",
+        line: lineNo,
+        text: "Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q)",
+      });
+    }
+    if (isMassAnchor && /Li_2\^q|rogers_dilogarithm|\\mathrm\{Li\}_2\^q/i.test(line)) {
+      hits.push({
+        file: mdPath ?? "(unknown)",
+        line: lineNo,
+        text: "Li_2^q (Rogers) in mass-anchor block — context violation (use Φ_q)",
+      });
+    }
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+const HARDCODED_OBSERVABLE_RE =
+  /[^≈≃~∼\\](?:=\s*)\$?\s*(\d{2,}(?:\.\d+)?)\s*(?:\\[,;]?\s*)?\\?(?:text|mathrm)\{(?:MeV|keV|eV)\}/g;
+
+export function checkCanonicalNoHardcodedObservable(
+  mdPath: string | undefined,
+): CheckerResult {
+  const md = readMaybe(mdPath);
+  if (!md) return { result: "pass", hits: [] };
+  const hits: CheckerHit[] = [];
+  let lineNo = 0;
+  for (const line of md.split("\n")) {
+    lineNo++;
+    if (/\\approx|\\simeq|≈|≃|O\(10\^/.test(line)) continue;
+    const re = new RegExp(HARDCODED_OBSERVABLE_RE.source, "g");
+    for (const m of line.matchAll(re)) {
+      hits.push({
+        file: mdPath ?? "(unknown)",
+        line: lineNo,
+        text: `hardcoded observable "${m[0].trim()}" without ≈ — use $\\approx$ per §7ab`,
+      });
+    }
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+const CAL4_PATTERNS = [
+  /\bCAL-4\b/,
+  /4th\s+calibration/i,
+  /demoted\s+prop\s*→?\s*conj/i,
+  /fourth.calibration/i,
+];
+
+export function checkCanonicalCal4Acknowledged(
+  mdPath: string | undefined,
+  tsPath: string | undefined,
+): CheckerResult {
+  const md = readMaybe(mdPath);
+  const ts = readMaybe(tsPath);
+  const combined = (md ?? "") + "\n" + (ts ?? "");
+  const hasCal4 = CAL4_PATTERNS.some((re) => re.test(combined));
+  if (!hasCal4) return { result: "pass", hits: [] };
+
+  const kindMatch = (ts ?? "").match(
+    /export\s+default\s+(conjecture|theorem|proposition|lemma|corollary)\(/,
+  );
+  const kind = kindMatch?.[1];
+  if (kind === "conjecture") return { result: "pass", hits: [] };
+
+  const hasBanner =
+    /CAL-4\s+caveat/i.test(md ?? "") ||
+    /q-source\s+open/i.test(md ?? "") ||
+    /acknowledged.*CAL-4/i.test(md ?? "");
+  if (hasBanner) return { result: "pass", hits: [] };
+
+  return {
+    result: "fail",
+    hits: [
+      {
+        file: tsPath ?? mdPath ?? "(unknown)",
+        line: 1,
+        text:
+          `block has CAL-4 caveat but is kind=${kind ?? "unknown"} without ` +
+          `acknowledgment banner — demote to conjecture or add CAL-4 banner`,
+      },
+    ],
+  };
+}
+
 // ─── Detangler axis ─────────────────────────────────────────────
 
 export function checkDetanglerSectionBand(
@@ -1233,7 +1427,16 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   // canonical
   "canonical-calibration-count": (p) =>
     checkCanonicalCalibrationCount(p.md, p.ts),
+  "canonical-no-numerology": (p) => checkCanonicalNoNumerology(p.md),
   "canonical-witness-pinned": (p) => checkCanonicalWitnessPinned(p.md, p.ts),
+  "canonical-script-not-deprecated": (p) =>
+    checkCanonicalScriptNotDeprecated(p.ts),
+  "canonical-dilogarithm-context": (p) =>
+    checkCanonicalDilogarithmContext(p.md, p.ts),
+  "canonical-no-hardcoded-observable": (p) =>
+    checkCanonicalNoHardcodedObservable(p.md),
+  "canonical-cal4-acknowledged": (p) =>
+    checkCanonicalCal4Acknowledged(p.md, p.ts),
   // detangler
   "detangler-section-band": (p) => checkDetanglerSectionBand(p.ts),
   "detangler-no-forward-ref": (p) => checkDetanglerNoForwardRef(p.ts),

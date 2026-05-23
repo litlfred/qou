@@ -413,14 +413,16 @@ const CANONICAL: QaCriterionDefinition[] = [
     domain: "canonical",
     description:
       "Block does not claim numerical coincidence without a categorical " +
-      "derivation chain (`derivation:` / `derived_from:` / `uses:`). " +
-      "Numerology = a number is asserted to match an observable without " +
-      "naming the structural reason. Agent reviewer — script only " +
-      "flags candidate phrasings (`miraculous`, `surprising agreement`, " +
-      "`numerical coincidence`).",
+      "derivation chain. Scans .md for signal phrases: `miraculous`, " +
+      "`surprising agreement`, `numerical coincidence`, `remarkably " +
+      "close`, `happens to equal`, `empirically matches`. Provable " +
+      "blocks (thm/prop/lem/cor) fail on any hit; remarks/conjectures " +
+      "get severity=minor (numerology in context is expected there).",
     default_severity: "critical",
     depends_on: ["md"],
-    automated: false,
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary",
+      "conjecture", "remark"],
   },
   {
     id: "canonical-witness-pinned",
@@ -433,6 +435,61 @@ const CANONICAL: QaCriterionDefinition[] = [
     default_severity: "major",
     depends_on: ["md", "ts"],
     automated: true,
+  },
+  {
+    id: "canonical-script-not-deprecated",
+    domain: "canonical",
+    description:
+      "The block's `computation.script` does not reference a deprecated " +
+      "or SUPERSEDED module. Checks the script file (if it exists) for " +
+      "`SUPERSEDED`, `DEPRECATED`, or imports of known retired modules " +
+      "(`mass_endomorphism`, `LAMBDA_PROTON_DOC`, `LAMBDA_NEUTRON_DOC`). " +
+      "Routes to compute-audit for migration.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+  },
+  {
+    id: "canonical-dilogarithm-context",
+    domain: "canonical",
+    description:
+      "Φ_q (Faddeev) appears only in mass-anchor blocks; Li_2^q " +
+      "(Rogers) appears only in binding-context blocks. Mixing the " +
+      "two q-dilogarithms violates bar-symmetry discipline (cheat-" +
+      "sheet §4). Scans .md for `Phi_q` / `\\Phi_q` / `faddeev` in " +
+      "binding-tagged blocks and `Li_2\\^q` / `rogers` / `li2q` in " +
+      "mass-anchor-tagged blocks.",
+    default_severity: "major",
+    depends_on: ["md", "ts"],
+    automated: true,
+  },
+  {
+    id: "canonical-no-hardcoded-observable",
+    domain: "canonical",
+    description:
+      "Block .md does not use exact-equality (`=`) with hardcoded " +
+      "MeV/keV/eV values for derived observables. Derived values " +
+      "must use `≈` / `\\approx` / `\\simeq` or carry an explicit " +
+      "error term (CLAUDE.md §7ab). Catches CODATA literals used as " +
+      "production inputs.",
+    default_severity: "major",
+    depends_on: ["md"],
+    automated: true,
+  },
+  {
+    id: "canonical-cal4-acknowledged",
+    domain: "canonical",
+    description:
+      "Blocks whose .ts or .md contains a CAL-4 caveat comment " +
+      "(`CAL-4`, `4th calibration`, `demoted prop → conj`) must be " +
+      "kind=conjecture OR carry an explicit acknowledgment banner " +
+      "in the .md (`CAL-4 caveat`, `q-source open`). Provable blocks " +
+      "with unacknowledged CAL-4 caveats are discipline violations.",
+    default_severity: "critical",
+    depends_on: ["md", "ts"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary",
+      "conjecture"],
   },
 ];
 
