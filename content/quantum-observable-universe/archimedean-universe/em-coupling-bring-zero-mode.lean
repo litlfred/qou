@@ -70,14 +70,44 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
     `bringZeroModeValue = 2/(3π)`. The K-theoretic identification of
     `[Z]` from the cosimplicial / Yekutieli triple structure on the
     genus-4 force-carrier pair `{T(2,9), T(3,5)}` is the open
-    computational sub-problem; closure of any concrete instance
-    requires Mathlib infrastructure for `Real.dilog` and `BlochGroup`,
-    plus the QOU-specific factoring proof. -/
+    computational sub-problem.
+
+    **Status (2026-05-23):** the current field signature is the
+    placeholder `∃ z : ℝ, z = bringZeroModeValue`, which is
+    trivially provable (literal-rfl loophole). Closure of the field
+    to a content-bearing signature requires three pieces of work:
+
+    1. Wire `QOU.Archimedean.BlochWigner_unit_circle` (already
+       defined in `archimedean-universe/bloch-wigner-mathlib-filler.lean`)
+       into the Lake-built module tree under
+       `content/quantum-observable-universe/lean/QOU/Archimedean/`.
+    2. Strengthen the field to
+       `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`
+       (forces an actual angle witness; no literal-rfl works).
+    3. Identify the explicit `[Z] ∈ B(ℂ)` from the Yekutieli
+       triple on `{T(2,9), T(3,5)}` — research-grade, estimated
+       2–4 weeks. Per PR #952 the cheapest canonical hypothesis
+       (unit-circle basis at S_5-symmetric angles `kπ/n, n ≤ 30`)
+       is REFUTED by PSLQ at maxcoeff ≤ 50; single-point inversion
+       gives `θ_*/π = 0.9019897...` (not a simple rational). The
+       witness `[Z]` therefore lives off-canonical-angle or
+       off-unit-circle, or requires a non-standard relative
+       Bloch group.
+
+    See `em-coupling-bring-zero-mode.md` §"open computational
+    sub-problem" for the 3-phase roadmap.
+-/
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: PR #952 (PSLQ negative on canonical unit-circle basis)
+-- Ref: [suslin1991], [bloch2000] (full BlochGroup framework)
 class BringZeroModeBlochClass : Prop where
   /-- The τ_arch-image of the Bring-surface Bloch class equals
       the genus-Hodge ratio `2g/(4π(g-1))` at `g = 4`. We state
-      the equation in the canonical form used downstream. -/
+      the equation in the canonical form used downstream.
+
+      **Placeholder field**: trivially provable via `⟨bringZeroModeValue, rfl⟩`.
+      Strengthening to the BlochWigner-image equality is the
+      Phase-1 follow-up (see class docstring §1–§2). -/
   -- Ref: [manuscript] prop:archimedean-functor-uniqueness
   bring_zero_mode_realised : ∃ z : ℝ, z = bringZeroModeValue
 
