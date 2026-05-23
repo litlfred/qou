@@ -1,5 +1,46 @@
 #!/usr/bin/env python3
 """
+═══════════════════════════════════════════════════════════════════
+PARALLEL CHAIN (2026-05-23): not a consumer of the substrate
+flavor-split.
+
+This script predicts m_p and m_n INDEPENDENTLY via per-particle
+Hecke tower derivations (`derive_full_tower("proton")` and
+`derive_full_tower("neutron")`), with each particle's m getting
+its own categorical chain (T1..T4 + Frobenius).  The
+proton-neutron mass difference falls out as a *side-effect* of
+the independent towers, NOT from a substrate flavor-split
+mechanism.
+
+The substrate-pure flavor-split production chain lives at:
+
+  - `m_p_borromean_verification_50dps.py`   (PR #942, production)
+  - `_li_2_q_util.flavor_split_subleading`  (PR #690 / #942)
+  - `atomic_mass_via_rho_k.py`              (PR #690)
+
+which derives m_p / m_n from a class-uniform m_avg (Family A
+or Yekutieli-extended) plus the categorical substrate ratio
+`Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3`.
+
+The two approaches are STRUCTURALLY DIFFERENT categorical
+derivations and complementary:
+
+  - This script's per-particle Hecke tower: m_n derived from
+    *its own* GS normal-form chain at q_0.  Tests whether the
+    Hecke-tower mechanism alone reproduces the empirical
+    proton-neutron split.
+  - The borromean-tower + flavor-split: m_n derived from a
+    *shared* baryon-class m_avg plus a separately-computed
+    Δm/M_N ratio.  Tests the class-uniform + ratio
+    factorisation.
+
+Cross-comparison between the two chains is a research-grade
+audit (does the per-particle tower's implicit Δm match
+flavor_split_subleading?); it is not a wire-in for this
+script.
+
+═══════════════════════════════════════════════════════════════════
+
 CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
 This script imports M_*_MEV_VALIDATION constants from
 `codata_constants.py` as production inputs (not just as

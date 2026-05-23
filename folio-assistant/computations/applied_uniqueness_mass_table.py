@@ -1,6 +1,27 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: numerical-only Phase 1 mass-table wiring.
 """
+═══════════════════════════════════════════════════════════════════
+PARALLEL CHAIN (2026-05-23): not a consumer of the substrate
+flavor-split.
+
+This script predicts m_p AND m_n INDEPENDENTLY via the per-particle
+`categoricalMass` formula `M(K) = ρ(K) · m_e · |tr_M(T_w(K))|`,
+with each particle's prediction from its OWN ρ and |tr_M(β)|.
+The proton-neutron mass difference falls out as a *side-effect*
+of the independent ρ values + per-particle Markov traces; it is
+NOT derived from a substrate flavor-split.
+
+The substrate-pure flavor-split production chain (PR #942) uses:
+  - `m_p_borromean_verification_50dps.py`   (production)
+  - `_li_2_q_util.flavor_split_subleading`  (PR #690 / #942)
+
+Cross-comparison between the two chains is a research-grade audit;
+this script's per-particle approach is complementary to (not
+replaced by) the borromean-tower + flavor-split production
+prediction.
+═══════════════════════════════════════════════════════════════════
+
 Phase 1 of the 1 ppb workplan
 ([`docs/audits/2026-05-10-1ppb-workplan-update.md §Phase 1`](../../docs/audits/2026-05-10-1ppb-workplan-update.md))
 — **wire `AppliedDeuteron/Tritium/Helium3Uniqueness` into mass-table
