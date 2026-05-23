@@ -45,6 +45,9 @@ export default chapter({
       label: "sec:hadron-level-knot-table",
       blocks: [
         "hadron-level-knot-table",
+        // Detangler R3 (2026-05-23): 15-row hadron-level knot
+        // decomposition data extracted from the remark.
+        "hadron-level-knot-table-data",
       ],
     }),
   ],

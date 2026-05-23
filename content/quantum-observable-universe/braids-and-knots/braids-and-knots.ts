@@ -202,6 +202,9 @@ export default chapter({
         "reeb-exceptional-divisor",
         "vertex-operator",
         "vertex-operator-dictionary",
+        // Detangler R3 (2026-05-23): 13-row VOA-to-QOU dictionary
+        // extracted from vertex-operator-dictionary.md.
+        "vertex-operator-dictionary-table",
         // ── Reeb-flow dynamics + six S₃ operators (Commit 1) ───────
         "q-reeb-flow-on-coral-coords",
         "six-canonical-knot-operators",
