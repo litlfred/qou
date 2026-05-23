@@ -42,24 +42,26 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-import numpy as np
-from scipy import integrate
-from q_parameter import Q as q0, HBAR_Q
-from experimental_constants import M_E_MEV, M_P_MEV, VOL_BORROMEAN
-from witness_base import WitnessBuilder
+import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+from q_parameter import Q as q0, HBAR_Q  # noqa: E402
+from experimental_constants import M_E_MEV, M_P_MEV, VOL_BORROMEAN  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 # ── Color-tube cubic + helpers ──────────────────────────────────────
 
-def cubic_roots(z: complex) -> np.ndarray:
-    """Three color roots of F(z, c) = 0 at given z."""
+def cubic_roots(z):
+    """Three color roots of F(z, c) = 0 at given z (mpmath polyroots)."""
+    z = mp.mpc(z)
     coeffs = [
-        1.0 + 0.0j,
+        mp.mpc(1),
         4 * z + 1,
         6 * z**2 + 3 * z + 1,
         4 * z**3 + 3 * z**2 + 2 * z + 1,
     ]
-    return np.roots(coeffs)
+    return mp.polyroots(coeffs)
 
 
 def dF_dc(z: complex, c: complex) -> complex:
@@ -89,18 +91,18 @@ def prod_dc_dz(z: complex) -> complex:
 def electron_integrand(z: complex) -> complex:
     """Electron integrand: c_0 + z, where c_0 is the closest-to-real root at z."""
     cs = cubic_roots(z)
-    c0 = cs[np.argmin(np.abs(cs.imag))]
+    c0 = min(cs, key=lambda c: abs(mp.im(c)))
     return c0 + z
 
 
 # ── Discriminant roots + principal Galois orbit selection ───────────
 
-def find_discriminant_roots() -> np.ndarray:
+def find_discriminant_roots():
     """Six complex roots of Δ(z) = -(16z⁶ + 24z⁵ + 35z⁴ + 50z³ + 35z² + 24z + 16)."""
-    return np.roots([16, 24, 35, 50, 35, 24, 16])
+    return mp.polyroots([16, 24, 35, 50, 35, 24, 16])
 
 
-def select_principal_orbit(roots: np.ndarray) -> list[complex]:
+def select_principal_orbit(roots) -> list:
     """Principal Galois orbit O_prin = innermost conjugate pair (by |z|)."""
     sorted_by_modulus = sorted(roots, key=lambda z: abs(z))
     return [complex(sorted_by_modulus[0]), complex(sorted_by_modulus[1])]
@@ -115,26 +117,27 @@ def residue_via_circle(f, z_c: complex, eps: float = 1e-3, n: int = 400) -> comp
 
     Discrete approximation: sum over n equispaced points, dz = i·ε·e^{iθ} dθ.
     """
-    thetas = np.linspace(0.0, 2.0 * np.pi, n, endpoint=False)
-    dtheta = 2.0 * np.pi / n
-    integral = 0.0 + 0.0j
-    for theta in thetas:
-        z = z_c + eps * np.exp(1j * theta)
-        dz = 1j * eps * np.exp(1j * theta) * dtheta
-        integral += f(z) * dz
-    return integral / (2j * np.pi)
+    dtheta = 2 * mp.pi / n
+    integral = mp.mpc(0)
+    for k in range(n):
+        theta = k * dtheta
+        z = mp.mpc(z_c) + eps * mp.exp(mp.mpc(0, 1) * theta)
+        dz = mp.mpc(0, 1) * eps * mp.exp(mp.mpc(0, 1) * theta) * dtheta
+        integral += mp.mpc(f(complex(z))) * dz
+    return complex(integral / (2 * mp.mpc(0, 1) * mp.pi))
 
 
 # ── Real-axis interval integral (matches picard_lefschetz_thimble.py) ──
 
 def interval_integral(f, a: float, n: int = 5000) -> complex:
-    """∫_{-a}^{a} f(z) dz over real axis via Simpson's rule (complex-valued)."""
-    xs = np.linspace(-a, a, n)
-    fs_re = np.array([f(x).real for x in xs])
-    fs_im = np.array([f(x).imag for x in xs])
-    re = integrate.simpson(fs_re, x=xs)
-    im = integrate.simpson(fs_im, x=xs)
-    return complex(re, im)
+    """∫_{-a}^{a} f(z) dz over real axis via mpmath trapezoidal (complex-valued)."""
+    a_mp = mp.mpf(a)
+    dx = 2 * a_mp / (n - 1)
+    total = mp.mpc(0)
+    for i in range(n):
+        x = -a_mp + i * dx
+        total += mp.mpc(f(complex(x)))
+    return complex(total * dx)
 
 
 # ── Main verification ──────────────────────────────────────────────
@@ -198,7 +201,7 @@ def main() -> int:
             if abs(rhs_num) > 1e-14 else None
         ),
         "lhs_over_rhs_ratio_2pi_norm": (
-            float(abs(lhs_num) / abs(rhs_num) / (2 * np.pi))
+            float(abs(lhs_num) / abs(rhs_num) / (2 * float(mp.pi)))
             if abs(rhs_num) > 1e-14 else None
         ),
     })
@@ -279,7 +282,7 @@ def main() -> int:
     print(f"    RHS Σ_{{z_c}} Res:           |{rhs_num:.6f}| = {abs(rhs_num):.6f}")
     if abs(rhs_num) > 1e-14:
         print(f"    LHS / RHS                 = {abs(lhs_num)/abs(rhs_num):.6f}")
-        print(f"    LHS / (2π·RHS)            = {abs(lhs_num)/(2*np.pi*abs(rhs_num)):.6f}")
+        print(f"    LHS / (2π·RHS)            = {abs(lhs_num)/(2*float(mp.pi)*abs(rhs_num)):.6f}")
     print()
     print("  Denominator (electron c_0 + z):")
     print(f"    LHS real-axis ∫_{{-a}}^{{a}}: |{lhs_denom:.6f}| = {abs(lhs_denom):.6f}")

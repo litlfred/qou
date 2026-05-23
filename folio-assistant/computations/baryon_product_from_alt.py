@@ -50,11 +50,11 @@ import math
 import sys
 from pathlib import Path
 
-import numpy as np
-
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as q0
-from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+from q_parameter import Q as q0  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # Reuse the audited cubic + thimble machinery.
 from picard_lefschetz_thimble import (

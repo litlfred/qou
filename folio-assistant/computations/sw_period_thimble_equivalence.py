@@ -50,11 +50,13 @@ import math
 import sys
 from pathlib import Path
 
-import numpy as np
+import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as q0
-from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+from q_parameter import Q as q0  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 from picard_lefschetz_thimble import (
     cubic_roots,
@@ -76,18 +78,19 @@ from sw_period_baryon import (
 
 def _real_axis_period(integrand_fn, x_min: float, x_max: float, n: int = 4001) -> complex:
     """Real-axis (GB/jet) period: trapezoidal ∫_{x_min}^{x_max} f(x) dx."""
-    xs = np.linspace(x_min, x_max, n)
-    vals = []
-    for x in xs:
+    dx = mp.mpf(x_max - x_min) / (n - 1)
+    total = mp.mpc(0)
+    for i in range(n):
+        x = mp.mpf(x_min) + i * dx
         try:
-            vals.append(complex(integrand_fn(complex(x, 0))))
+            total += mp.mpc(integrand_fn(complex(x, 0)))
         except (ZeroDivisionError, FloatingPointError):
-            vals.append(complex(0))
-    return complex(np.trapezoid(vals, xs))
+            pass
+    return complex(total * dx)
 
 
 def main() -> int:
-    w = WitnessBuilder("sw-period-thimble-equivalence", engine="scipy")
+    w = WitnessBuilder("sw-period-thimble-equivalence", engine="mpmath")
     w.set_description(
         "Cross-validation of SW thimble periods Π^(k) (PLT path) "
         "against GB/jet real-axis closed-form integrands for "
@@ -160,7 +163,9 @@ def main() -> int:
     if not abs_ratios:
         global_norm = 1.0
     else:
-        global_norm = float(np.median(abs_ratios))
+        sorted_ratios = sorted(abs_ratios)
+        mid = len(sorted_ratios) // 2
+        global_norm = float(sorted_ratios[mid])
     w.add_data("global_hessian_norm_factor", global_norm)
 
     deviations = {}

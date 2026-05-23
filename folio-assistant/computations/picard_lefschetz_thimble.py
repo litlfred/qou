@@ -25,17 +25,36 @@ Usage:
 import sys
 import math
 import cmath
-import numpy as np
-from scipy import integrate
-from scipy.optimize import fsolve
 from pathlib import Path
 
+import mpmath as mp
+
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as q0, HBAR_Q, HBAR_Q_SQ
-from experimental_constants import M_E_MEV, M_P_MEV, VOL_BORROMEAN
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+from q_parameter import Q as q0, HBAR_Q, HBAR_Q_SQ  # noqa: E402
+from experimental_constants import M_E_MEV, M_P_MEV, VOL_BORROMEAN  # noqa: E402
 
 s0 = math.sqrt(q0)
 z0 = s0 - 1.0 / s0   # physical spacetime ratio
+
+
+def _np_roots(coeffs):
+    """Drop-in replacement for np.roots using mpmath.polyroots."""
+    return [complex(r) for r in mp.polyroots(coeffs, maxsteps=500, extraprec=100)]
+
+
+def _np_conj(z):
+    return complex(z).conjugate()
+
+
+def _scipy_quad(f, a, b, **kw):
+    """Drop-in for scipy.integrate.quad using mpmath.quad."""
+    try:
+        result = float(mp.quad(lambda x: float(f(float(x))), [float(a), float(b)]))
+        return result, 0.0
+    except Exception:
+        return 0.0, float("inf")
 
 
 # ══════════════════════════════════════════════════════════════
@@ -45,6 +64,13 @@ z0 = s0 - 1.0 / s0   # physical spacetime ratio
 def F_cubic(z, c):
     """Color-tube cubic F(z, c)."""
     return c**3 + (4*z+1)*c**2 + (6*z**2+3*z+1)*c + (4*z**3+3*z**2+2*z+1)
+
+def _electron_at(z):
+    """Electron integrand: Re(c_0 + z) where c_0 = closest-to-real root."""
+    rs = cubic_roots(z)
+    idx = min(range(len(rs)), key=lambda i: abs(complex(rs[i]).imag))
+    return float(complex(rs[idx] + z).real)
+
 
 def dF_dc(z, c):
     """∂F/∂c — vanishes at discriminant locus (repeated root)."""
@@ -57,7 +83,7 @@ def dF_dz(z, c):
 def cubic_roots(z):
     """Roots of the color-tube cubic at complex z."""
     coeffs = [1, 4*z+1, 6*z**2+3*z+1, 4*z**3+3*z**2+2*z+1]
-    return np.roots(coeffs)
+    return _np_roots(coeffs)
 
 def cubic_discriminant_complex(z):
     """Discriminant Δ(z) of the color-tube cubic at complex z."""
@@ -77,47 +103,43 @@ def find_discriminant_roots():
     Find all 6 complex roots of Δ(z) = 0.
 
     The discriminant is a degree-6 polynomial in z. We construct it
-    explicitly and find roots via numpy.
+    explicitly and find roots via mpmath.polyroots.
     """
     # Δ(z) = 18abcd - 4b³d + b²c² - 4ac³ - 27a²d²
     # with a=1, b=4z+1, c=6z²+3z+1, d=4z³+3z²+2z+1
-    #
-    # Build as numpy polynomial coefficients.
-    # We use a dense grid + Newton polishing approach.
-    from numpy.polynomial import polynomial as P
+    def _polymul(a, b):
+        """Multiply two coefficient lists (ascending power)."""
+        result = [mp.mpf(0)] * (len(a) + len(b) - 1)
+        for i, ai in enumerate(a):
+            for j, bj in enumerate(b):
+                result[i + j] += ai * bj
+        return result
 
-    # Represent a, b, c, d as polynomial coefficients (ascending powers)
-    a_p = np.array([1.0])                    # 1
-    b_p = np.array([1.0, 4.0])              # 1 + 4z
-    c_p = np.array([1.0, 3.0, 6.0])         # 1 + 3z + 6z²
-    d_p = np.array([1.0, 2.0, 3.0, 4.0])    # 1 + 2z + 3z² + 4z³
+    a_p = [mp.mpf(1)]
+    b_p = [mp.mpf(1), mp.mpf(4)]
+    c_p = [mp.mpf(1), mp.mpf(3), mp.mpf(6)]
+    d_p = [mp.mpf(1), mp.mpf(2), mp.mpf(3), mp.mpf(4)]
 
-    # Compute each term of Δ using polynomial multiplication
-    # Term 1: 18*a*b*c*d
-    t1 = 18 * P.polymul(P.polymul(P.polymul(a_p, b_p), c_p), d_p)
-    # Term 2: -4*b³*d
-    b3 = P.polymul(P.polymul(b_p, b_p), b_p)
-    t2 = -4 * P.polymul(b3, d_p)
-    # Term 3: +b²*c²
-    b2 = P.polymul(b_p, b_p)
-    c2 = P.polymul(c_p, c_p)
-    t3 = P.polymul(b2, c2)
-    # Term 4: -4*a*c³
-    c3 = P.polymul(P.polymul(c_p, c_p), c_p)
-    t4 = -4 * P.polymul(a_p, c3)
-    # Term 5: -27*a²*d²
-    d2 = P.polymul(d_p, d_p)
-    t5 = -27 * P.polymul(P.polymul(a_p, a_p), d2)
+    t1 = [18 * x for x in _polymul(_polymul(_polymul(a_p, b_p), c_p), d_p)]
+    b3 = _polymul(_polymul(b_p, b_p), b_p)
+    t2 = [-4 * x for x in _polymul(b3, d_p)]
+    b2 = _polymul(b_p, b_p)
+    c2 = _polymul(c_p, c_p)
+    t3 = _polymul(b2, c2)
+    c3 = _polymul(_polymul(c_p, c_p), c_p)
+    t4 = [-4 * x for x in _polymul(a_p, c3)]
+    d2 = _polymul(d_p, d_p)
+    t5 = [-27 * x for x in _polymul(_polymul(a_p, a_p), d2)]
 
-    # Sum all terms — pad to same length
     max_len = max(len(t) for t in [t1, t2, t3, t4, t5])
-    delta_coeffs = np.zeros(max_len)
+    delta_coeffs = [mp.mpf(0)] * max_len
     for t in [t1, t2, t3, t4, t5]:
-        delta_coeffs[:len(t)] += t
+        for i, v in enumerate(t):
+            delta_coeffs[i] += v
 
-    # Find roots (ascending power convention for numpy.polynomial)
-    roots = P.polyroots(delta_coeffs)
-    return roots, delta_coeffs
+    # mpmath.polyroots expects descending powers; our list is ascending
+    roots = mp.polyroots(list(reversed(delta_coeffs)))
+    return [complex(r) for r in roots], [float(c) for c in delta_coeffs]
 
 
 # ══════════════════════════════════════════════════════════════
@@ -133,7 +155,7 @@ def sw_integrand_degree1(z):
     """
     roots = cubic_roots(z)
     # Select the root with smallest imaginary part
-    idx = np.argmin(np.abs(roots.imag))
+    idx = min(range(len(roots)), key=lambda i: abs(complex(roots[i]).imag))
     c = roots[idx]
 
     denom = dF_dc(z, c)
@@ -163,8 +185,8 @@ def sw_action(z, z_ref=0.0):
     def imag_part(t):
         return integrand_real(t).imag
 
-    re_val, _ = integrate.quad(real_part, 0, 1, limit=200)
-    im_val, _ = integrate.quad(imag_part, 0, 1, limit=200)
+    re_val, _ = _scipy_quad(real_part, 0, 1, limit=200)
+    im_val, _ = _scipy_quad(imag_part, 0, 1, limit=200)
     return complex(re_val, im_val)
 
 
@@ -229,7 +251,7 @@ def trace_thimble(z_c, direction, n_steps=500, dt=0.005):
         if abs(grad_S) < 1e-30:
             break
 
-        dz = -np.conj(grad_S) * dt
+        dz = -_np_conj(grad_S) * dt
 
         # Adaptive step size: reduce if gradient is large
         if abs(dz) > 0.1:
@@ -244,7 +266,7 @@ def trace_thimble(z_c, direction, n_steps=500, dt=0.005):
         path.append(z_new)
         z = z_new
 
-    return np.array(path)
+    return path
 
 
 def trace_anti_thimble(z_c, direction, n_steps=500, dt=0.005):
@@ -268,7 +290,7 @@ def trace_anti_thimble(z_c, direction, n_steps=500, dt=0.005):
         if abs(grad_S) < 1e-30:
             break
 
-        dz = np.conj(complex(grad_S)) * dt  # note: +conj, not -conj
+        dz = _np_conj(complex(grad_S)) * dt  # note: +conj, not -conj
 
         if abs(dz) > 0.1:
             dz = dz * 0.1 / abs(dz)
@@ -280,7 +302,7 @@ def trace_anti_thimble(z_c, direction, n_steps=500, dt=0.005):
         path.append(z_new)
         z = z_new
 
-    return np.array(path)
+    return path
 
 
 # ══════════════════════════════════════════════════════════════
@@ -326,7 +348,7 @@ def integrate_along_thimble(thimble_path, degree=0):
         dz = thimble_path[i+1] - thimble_path[i]
 
         roots = cubic_roots(z)
-        idx = np.argmin(np.abs(roots.imag))
+        idx = min(range(len(roots)), key=lambda i: abs(complex(roots[i]).imag))
         c = roots[idx]
 
         if degree == 0:
@@ -554,7 +576,7 @@ def main():
 
     # Sort by distance to z₀
     distances = [abs(r - z0) for r in disc_roots]
-    sorted_idx = np.argsort(distances)
+    sorted_idx = sorted(range(len(distances)), key=lambda i: distances[i])
 
     print(f"  {'Root':>5}  {'z_c':>35}  {'|z_c - z₀|':>12}  {'Δ(z_c)':>15}")
     print(f"  {'─'*5}  {'─'*35}  {'─'*12}  {'─'*15}")
@@ -568,8 +590,8 @@ def main():
     # Focus on the closest conjugate pair
     zc_nearest = disc_roots[sorted_idx[0]]
     if zc_nearest.imag < 0:
-        zc_nearest = np.conj(zc_nearest)
-    zc_conj = np.conj(zc_nearest)
+        zc_nearest = _np_conj(zc_nearest)
+    zc_conj = _np_conj(zc_nearest)
 
     print(f"  Closest pair to z₀:")
     print(f"    z_c⁺ = {zc_nearest.real:.10f} + {zc_nearest.imag:.10f}i")
@@ -778,20 +800,19 @@ def main():
 
         try:
             if is_real_valued:
-                result, err = integrate.quad(lambda z: float(fn(z).real) if isinstance(fn(z), complex) else float(fn(z)),
+                result, err = _scipy_quad(lambda z: float(fn(z).real) if isinstance(fn(z), complex) else float(fn(z)),
                                              0, z0, limit=200)
                 result = complex(result, 0)
             else:
-                re_val, _ = integrate.quad(lambda z: complex(fn(z)).real, 0, z0, limit=200)
-                im_val, _ = integrate.quad(lambda z: complex(fn(z)).imag, 0, z0, limit=200)
+                re_val, _ = _scipy_quad(lambda z: complex(fn(z)).real, 0, z0, limit=200)
+                im_val, _ = _scipy_quad(lambda z: complex(fn(z)).imag, 0, z0, limit=200)
                 result = complex(re_val, im_val)
         except Exception as e:
             result = complex(float('nan'), float('nan'))
 
         # Electron reference on real axis
         try:
-            e_ref, _ = integrate.quad(lambda z: float(np.real(cubic_roots(z)[np.argmin(np.abs(cubic_roots(z).imag))] + z)),
-                                      0, z0, limit=200)
+            e_ref, _ = _scipy_quad(_electron_at, 0, z0)
         except Exception:
             e_ref = 1.0
 
@@ -895,11 +916,9 @@ def main():
 
     for lname, a_val in limits_to_test:
         try:
-            e_ref_r, _ = integrate.quad(
-                lambda z: float(np.real(cubic_roots(z)[np.argmin(np.abs(cubic_roots(z).imag))] + z)),
-                -a_val, a_val, limit=200)
-            prod_re_r, _ = integrate.quad(
-                lambda z: float(np.real(sw_3root_product_degree1(z))),
+            e_ref_r, _ = _scipy_quad(_electron_at, -a_val, a_val)
+            prod_re_r, _ = _scipy_quad(
+                lambda z: float(complex(sw_3root_product_degree1(z))),
                 -a_val, a_val, limit=200)
             ratio_r = abs(prod_re_r) / abs(e_ref_r) if abs(e_ref_r) > 1e-15 else float('nan')
             m_p_pred = borromean_factor * ratio_r * M_E_MEV
@@ -967,7 +986,7 @@ def main():
 
     # ── Write witness ─────────────────────────────────────────
     from witness_base import WitnessBuilder
-    w = WitnessBuilder("picard-lefschetz-thimble", engine="scipy")
+    w = WitnessBuilder("picard-lefschetz-thimble", engine="mpmath")
     w.set_description(
         "Picard-Lefschetz thimble decomposition for the color-tube cubic. "
         "Computes critical points, Hessians, thimble directions, "
