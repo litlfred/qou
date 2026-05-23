@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T21:20:15.794062+00:00",
-  "commitSha": "2df424611e37770dfcc2ef13324ddcca7bf8bea8",
+  "computedAt": "2026-05-23T21:31:08.602981+00:00",
+  "commitSha": "430a55e8b2bd5aca02b75a39a76f6333a7afe33c",
   "assertions": [
     {
       "name": "unknot_is_1",
@@ -30,25 +30,25 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 13,
   "computation": "homflypt-engine-selftest",
   "scriptFile": "homflypt_engine.py",
-  "scriptHash": "d9255d23a2a7",
-  "scriptCommitSha": "2df424611e37770dfcc2ef13324ddcca7bf8bea8",
+  "scriptHash": "ed054d1edbd5",
+  "scriptCommitSha": "430a55e8b2bd5aca02b75a39a76f6333a7afe33c",
   "description": "HOMFLYPT engine self-test witness. Validates the Hecke-algebra Ocneanu-trace engine against known polynomial values (unknot, Hopf link, trefoil ±). Records SU(N) family evaluations and Gram-matrix entries for the 2-strand basis. CI gate: any regression in the known polynomial tests fails the assertion.",
   "contentBlock": "rem:archimedean-image-table",
   "data": {
     "convention": "v⁻¹P(L+) − vP(L−) = zP(L0) (Lickorish)",
     "n2_implemented": true,
-    "n3_implemented": false,
+    "n3_implemented": true,
     "trefoil_polynomial": "-v^-4 + 2*v^-2 + v^-2z^2",
     "hopf_polynomial": "v^-3z^-1 - v^-1z^-1 - v^-1z",
     "su_n_family_trefoil_q1_11": {
       "2": "1.0",
-      "3": "0.8775674763962879",
-      "4": "0.754469",
-      "5": "0.6303693279857246",
-      "6": "0.5049304909009009"
+      "3": "0.8775937833538816",
+      "4": "0.7545220027617022",
+      "5": "0.6304496119816347",
+      "6": "0.5050388407462352"
     },
     "gram_trefoil_trefoil_su2": "-1.0",
     "gram_trefoil_mirror_su2": "-1.0"
