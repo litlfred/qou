@@ -774,13 +774,24 @@ basis beyond what's been tried:
     > `lambda_scale_all_c_i_family_a.py`), the name is retained for
     > traceability, but the content concept is "canonical".
 
-    Production-update options:
+    Production-update options (canonical-only per 2026-05-23
+    user direction "no empirical fitting, canonical only"):
 
     | option | dependency | m_p pred | CODATA gap |
     |---|---|---:|---:|
     | hold canonical Wedderburn | none (proved theorem) | 966 MeV | ~3 % |
     | adopt canonical + Yekutieli quadratic added | cell-↔-projection bijection at H_4 | 951 MeV | ~1.4 % |
-    | adopt canonical + Yekutieli + Bring color-tube (d348ad8c) | color-sheet ↔ quark-flavor mapping (Phase 5q) | 938.3 MeV | ~19 ppm |
+    | adopt Bring color-tube `1/(1−h·q₀¹⁰)` | color-sheet ↔ quark-flavor mapping (Phase 5q) | 938 MeV | **−670 ppm** |
+
+    All three are conjecture-conditional but FITTING-FREE. The +α·h⁴
+    refinement probe (`lambda_scale_refinement_h4_correction_bring.py`)
+    surfaced an empirical α = (3/4 + 1 − G) ≈ 0.834 that gives m_p
+    to 22 ppm, but the "+1" leading h⁴ coefficient lacks categorical
+    derivation. **RETIRED** per user direction "no empirical fitting,
+    canonical only". The canonical refinement direction is the audit
+    Step 4 R&D: derive the second-order Yekutieli per-cell h⁴
+    coefficient FROM the partition algebra at H_4 — not by fitting
+    against CODATA.
 
     Witness:
     [`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../folio-assistant/computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json).
