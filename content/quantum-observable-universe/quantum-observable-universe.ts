@@ -46,15 +46,20 @@ export default paper({
     chapterRef({ dir: "notation" }),                          // Symbol register; forward refs from notation are ignored by the detangler (preview chapter).
 
     // ── Part I: Foundations ──────────────────────────────────────────
-    chapterRef({ dir: "quantum-universes" }),                 // QU axioms
+    // The `partTitle` field renders as a \part{...} banner before this
+    // chapter; LaTeX supplies the "Part N" prefix automatically, so
+    // the value here is the bare title (no "Part I:" repetition).
+    // Subsequent chapters belong to the same Part until the next
+    // `partTitle` is set. Per chapter-reorg proposal §6 (E3 banner
+    // approach).
+    chapterRef({
+      dir: "quantum-universes",
+      partTitle: "Foundations",
+    }),                                                       // QU axioms
     chapterRef({ dir: "quantum-observable-universes" }),       // QOU axioms, q-operators, substrate parameter, Reeb derivation
     chapterRef({ dir: "lifting-and-descent" }),                // Yekutieli tower
 
     // ── Part II: Structure (physics narrative — bk, particles, obs) ──
-    // The `partTitle` field renders as a \part{...} banner before this
-    // chapter in the PDF — groups knots/braids/models/descartes/particle
-    // chapters under one narrative heading without merging them into
-    // one directory. Per chapter-reorg proposal §6 (E3 banner approach).
     chapterRef({
       dir: "braids-and-knots",
       partTitle: "Knots, Braids, and Particles",
@@ -67,7 +72,10 @@ export default paper({
     chapterRef({ dir: "organic-chemistry" }),                  // Organic chemistry (covalent / Hopf-ring)
 
     // ── Part III: Further machinery (deeper algebraic / dynamical) ───
-    chapterRef({ dir: "fluid-dynamics" }),                     // Fluid dynamics of the brane
+    chapterRef({
+      dir: "fluid-dynamics",
+      partTitle: "Further Machinery",
+    }),                                                       // Fluid dynamics of the brane
     chapterRef({ dir: "information-theory" }),                 // Information-theoretic perspectives
     chapterRef({ dir: "q-geometric-langlands" }),              // q-Geometric Langlands (incl. Tannaka–Krein, Hasse–Weil)
 
