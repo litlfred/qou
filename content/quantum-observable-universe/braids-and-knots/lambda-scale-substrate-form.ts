@@ -6,7 +6,7 @@ import { conjecture } from "../../schema/builders";
  *   λ_scale ≈ 5/2 − h² · G + O(h^4)    [acknowledged-CAL-4 as of 2026-05-23]
  *
  * where h = q − q^{-1} is the Hecke deformation and G = Catalan's
- * constant. The form matches CODATA m_p / m_e to 5.4 ppm at q_0 but
+ * constant. The form matches CODATA m_p / m_e to 5.6 ppm at q_0 but
  * is NOT a structural identity — see the .md for the full eight-search
  * exhaustion record (Tier 5, PR #923, #928, #941, #943, #951, #957,
  * #969).
@@ -43,7 +43,7 @@ import { conjecture } from "../../schema/builders";
  *
  * NOT used as input to any production compute. The 3-calibration chain
  * (m_e, m_μ/m_e, Q_β) is the authoritative path; this block is a
- * historical record of the empirical 5.4 ppm near-form.
+ * historical record of the empirical 5.6 ppm near-form.
  */
 export default conjecture({
   label: "conj:lambda-scale-substrate-form",
@@ -65,7 +65,7 @@ export default conjecture({
     "catalan-constant",
     "h-squared-expansion",
     "conjecture",
-    "5.4ppm",
+    "5.6ppm",
     "acknowledged-cal-4",
     "non-smooth-in-q",
   ],

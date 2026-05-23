@@ -3,7 +3,7 @@
 **Status (revised 2026-05-22 — explicit CAL-4 banner):**
 *The original substrate-form claim*
 $\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$
-*matches CODATA $m_p$ to 5.4 ppm but is* **NOT structurally derived**
+*matches CODATA $m_p$ to 5.6 ppm but is* **NOT structurally derived**
 *— it is a PSLQ-style numerical near-coincidence
 ([2026-05-18 falsification audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md)).
 Empirical only; treated as a* **4th calibration anchor** *in the
@@ -47,7 +47,7 @@ empirical match is recorded for historical reference:*
 
 $$
   \lambda_{\mathrm{scale}}^{(u, d)} \stackrel{?}{=} \frac{5}{2} - h^2 \cdot G + O(h^4)
-  \qquad (\text{5.4 ppm match to CODATA $m_p$, NO categorical derivation})
+  \qquad (\text{5.6 ppm match to CODATA $m_p$, NO categorical derivation})
 $$
 
 **Why the original form is NOT derived (cumulative falsification):**
@@ -92,10 +92,13 @@ $$
    from substrate," not "find $F(q) \approx \lambda_p(q)$." Tier 5's
    search for $T = \lambda_p \cdot 8G \approx 18.03$ as a
    $\mathbb{Z}$-combination of knot volumes was equivalent to
-   searching for $C$ (since $C = T / (8G)^2$), and was negative.
+   searching for $C$ (the two targets are related by a single
+   multiplicative substrate factor: $T = C \cdot \hbar_q^2 \cdot 8G$,
+   so a $\mathbb{Z}$-relation expressing one as a knot-volume sum
+   immediately gives the other), and was negative.
 
 8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of
-   $\{\tr_M(\beta_p), \tr_M(\beta_n), \hbar_q, h_q, q_0, G\}$
+   $\{\operatorname{tr}_M(\beta_p), \operatorname{tr}_M(\beta_n), \hbar_q, h_q, q_0, G\}$
    structurally predicts $m_n / m_p$ either. Best pure-substrate
    match at 0.45% — 4,500× worse than 1 ppb.
 
@@ -219,7 +222,7 @@ Per the audit
 ([2026-05-18 λ-scale derivation search §13](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-lambda-scale-derivation-search.md)):
 
 - $\mathrm{Vol}(\mathcal{B}_3) = 8G$ is **derived** (standard topology).
-- The numerical match $\lambda_p = 5/2 - h^2 G$ at 5.4 ppm is **justified**
+- The numerical match $\lambda_p = 5/2 - h^2 G$ at 5.6 ppm is **justified**
   (PSLQ-style ansatz with plausible categorical interpretation).
 - The structural link between $\lambda_{\mathrm{scale}}$ and the
   H_4 partition count is **conjectural**.
@@ -266,7 +269,7 @@ To upgrade from justification to derivation, the proof must establish:
 ## Verifiable predictions if proved
 
 1. The neutron $\lambda_n$ equals the same $5/2 - h^2 G + O(h^4)$
-   (already empirically consistent at 5.4 ppm given the Skein split).
+   (already empirically consistent at 5.6 ppm given the Skein split).
 2. The h^4 coefficient $c$ in the next-order expansion is a rational
    function of $q_0$ derivable from $H_4$ block characters.
 3. Higher-A nuclei have their own $\lambda$ values determined by
