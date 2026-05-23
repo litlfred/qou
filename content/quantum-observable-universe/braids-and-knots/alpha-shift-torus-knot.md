@@ -78,17 +78,9 @@ but defer the categorical argument to a separate proposition.
 The numerical evidence
 ([`alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha-shift-torus.witness.json))
 records the full per-irrep symbolic $\chi_\lambda \in \mathbb{Q}(q)$
-together with the pole order at $q = 0$ for every test pair:
-
-| $(p, k)$ | Maximizer $\lambda$ | $\alpha_{\mathrm{shift}}(T_{p,k})$ | $k(p - 1)$ |
-|----------|---------------------|------------------------------------|-------------|
-| $(2, 3)$ | $(1, 1)$            | $3$                                | $3$         |
-| $(2, 5)$ | $(1, 1)$            | $5$                                | $5$         |
-| $(2, 9)$ | $(1, 1)$            | $9$                                | $9$         |
-| $(3, 4)$ | $(1, 1, 1)$         | $8$                                | $8$         |
-| $(3, 5)$ | $(1, 1, 1)$         | $10$                               | $10$        |
-| $(3, 7)$ | $(1, 1, 1)$         | $14$                               | $14$        |
-
+together with the pole order at $q = 0$ for every test pair, summarised
+in
+[Table: $\alpha_{\mathrm{shift}}(T_{p,k})$ for 6 test pairs](#tbl:alpha-shift-torus-knot-data).
 All $14$ assertions in the witness pass.
 
 ### Cross-link

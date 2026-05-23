@@ -948,6 +948,9 @@ export default chapter({
         "delta-q-decoration",
         "force-carrier-intertwining-correspondence",
         "alpha-shift-torus-knot",
+        // Detangler R3 (2026-05-23): 6-row witness summary extracted
+        // from alpha-shift-torus-knot.md.
+        "alpha-shift-torus-knot-table",
         "per-nucleon-shift-additive-linearity",
         "confinement-nf-structure-forcing",
         "lp-duality-hypothesis-class",
