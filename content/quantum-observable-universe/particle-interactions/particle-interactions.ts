@@ -168,6 +168,9 @@ export default chapter({
         "step-lp-verification",
         "groebner-reduction-methods",
         "tower-binding-energy",
+        // Detangler R3 (2026-05-23): 7-row Z=1-20 binding-energy
+        // predictions extracted from tower-binding-energy.md.
+        "tower-binding-energy-table",
         "mass-categorical-descent",
       ],
     }),

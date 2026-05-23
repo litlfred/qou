@@ -110,17 +110,8 @@ dimensionless partition function to physical energy.
 
 ## Numerical results
 
-At $q_0 \approx 1.110$:
-
-| Atom | $Z$ | $N$ | $B_{\mathrm{pred}}$ (MeV) | $B_{\mathrm{obs}}$ (MeV) | Mass error |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| ${}^1\mathrm{H}$ | 1 | 0 | $0.00$ | $0.00$ | $0.000\%$ |
-| ${}^2\mathrm{D}$ | 1 | 1 | $4.92$ | $2.22$ | $-0.144\%$ |
-| ${}^4\mathrm{He}$ | 2 | 2 | $19.41$ | $28.30$ | $+0.238\%$ |
-| ${}^7\mathrm{Li}$ | 3 | 4 | $42.24$ | $39.24$ | $-0.046\%$ |
-| ${}^{12}\mathrm{C}$ | 6 | 6 | $82.89$ | $92.16$ | $+0.083\%$ |
-| ${}^{16}\mathrm{O}$ | 8 | 8 | $117.12$ | $127.62$ | $+0.070\%$ |
-| ${}^{40}\mathrm{Ca}$ | 20 | 20 | $317.38$ | $342.05$ | $+0.066\%$ |
+At $q_0 \approx 1.110$, see
+[Table: Predicted vs observed binding energies for $Z = 1$ to $20$](#tbl:tower-binding-energy-data).
 
 Zero fitted parameters.  Mean mass error: $0.071\%$ across
 $Z = 1$ to $Z = 20$.  All coefficients derived from $q_0$
