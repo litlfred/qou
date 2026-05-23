@@ -94,7 +94,7 @@ if str(HERE) not in sys.path:
 from q_parameter import Q as Q0  # noqa: E402
 
 # --- Physical constants --------------------------------------------
-M_E_MEV = 0.51099895069  # CODATA 2022 electron mass in MeV
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 ALPHA_EM = 1.0 / 137.035999084  # CODATA 2022 fine-structure constant
 HBARC_MEV_FM = 197.3269804  # ℏc in MeV·fm (CODATA 2022)
 R_0_FM = 1.2  # nuclear radius constant: R = r_0 · A^{1/3}

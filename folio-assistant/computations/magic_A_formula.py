@@ -43,7 +43,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # CODATA 2022
-M_E_MEV: float = 0.51099895069
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 # Catalan's constant + Vol(L6a4) = Vol(Borromean rings) = 8G now
 # imported from the canonical knot_volumes module (mpmath 50dps source).

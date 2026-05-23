@@ -70,6 +70,7 @@ sys.path.insert(0, str(HERE))
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 
 def _mpf_from_str(s: str) -> mp.mpf:
@@ -97,7 +98,7 @@ def main() -> int:
     # ── Substrate at 50 dps ──────────────────────────────────────────
     # Canonical 50-dps q_0 (CAL-2) from q_parameter.Q_50_DIGIT_STR.
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    m_e = mp.mpf("0.51099895069")
+    m_e = M_E_MEV  # from codata_constants
     e0 = m_e / (q0 * (q0 - 1))
     t_h = q0 - 1 / q0  # Hecke deformation h
     f_h = mp.log(1 / t_h)

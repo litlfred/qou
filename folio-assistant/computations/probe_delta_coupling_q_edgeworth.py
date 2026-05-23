@@ -78,6 +78,7 @@ set_compute_dps()
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 
 def main() -> int:
@@ -88,7 +89,7 @@ def main() -> int:
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
     h_q0 = q0 - 1 / q0
-    m_e = mp.mpf("0.51099895069")
+    m_e = M_E_MEV  # from codata_constants
     E_0 = m_e / (q0 * (q0 - 1))
     z_mark = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
 

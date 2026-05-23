@@ -48,6 +48,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # CODATA-2022 full precision
 
 set_compute_dps()
 
@@ -159,7 +160,7 @@ def C6_telescope_hat_V(atom: dict) -> mpf:
 def C7_M_e_factor(atom: dict) -> mpf:
     """C7: ρ_K = (m_p/m_e) · |tr_M(p)|/|tr_M(K)|   (anchored to proton)"""
     # = 1836.15 · 1.0653 / atom["tr_M"]   constant for proton, varies for others
-    m_p_over_m_e = mpf("938.272") / mpf("0.51099895069")
+    m_p_over_m_e = mpf("938.272") / M_E_MEV
     tr_M_p = ATOMS["p"]["tr_M"]
     return m_p_over_m_e * tr_M_p / atom["tr_M"]
 
@@ -168,7 +169,7 @@ def C8_constituent_M_over_trM(atom: dict) -> mpf:
     """C8: ρ_K = (Z·m_p + N·m_n + Z·m_e)/(m_e · |tr_M|)   — LO constituent
        This is m_e · ρ_K = LO sum / |tr_M|, so ρ_K = (LO sum / m_e) / |tr_M|.
        BY DEFINITION matches CODATA for proton; uses m_p_CODATA as input."""
-    m_e = mpf("0.51099895069")
+    m_e = M_E_MEV  # from codata_constants
     m_p = mpf("938.272")
     m_n = mpf("939.565")
     Z, N = atom["Z"], atom["N"]
@@ -181,7 +182,7 @@ def C9_qcd_lattice(atom: dict) -> mpf:
        where Λ_QCD ≈ 250 MeV, n_q = 3A (quarks)"""
     Lambda_QCD = mpf("250.0")  # MeV, lattice-QCD scale
     n_q = 3 * atom["A"]
-    return Lambda_QCD ** n_q / (mpf("0.51099895069") * atom["tr_M"])
+    return Lambda_QCD ** n_q / (M_E_MEV * atom["tr_M"])
 
 
 def C10_nucleon_only_LO(atom: dict) -> mpf:
@@ -197,7 +198,7 @@ def C10_nucleon_only_LO(atom: dict) -> mpf:
                                      ≈ -2.8 MeV / 938 MeV — exactly
                                      the binding-energy contribution.
     """
-    m_e = mpf("0.51099895069")
+    m_e = M_E_MEV  # from codata_constants
     m_p = mpf("938.272")
     m_n = mpf("939.565")
     Z, N = atom["Z"], atom["N"]
