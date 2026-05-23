@@ -1,25 +1,15 @@
 {
   "engine": "sympy.div over ZZ[u]",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T19:06:48.225227+00:00",
-  "commitSha": "1fb4c623ea594ce58c7bc522982110cb63672419",
-  "assertions": [
-    {
-      "name": "all_atoms_divisible",
-      "computed": 1.0,
-      "expected": 1.0,
-      "passed": true,
-      "tolerance": 0.0,
-      "unit": "(u;u)_N | residual_N for every atom and every N",
-      "source": "prop:full-pole-structure-mass-trace + def:habiro-ring"
-    }
-  ],
+  "computedAt": "2026-05-23T19:45:59.043253+00:00",
+  "commitSha": "6dbe3b67325942c05375a98132857d6c9d800a51",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 431,
+  "durationMs": 0,
   "computation": "habiro-tail-in-ideal-validation",
   "scriptFile": "habiro_witness_validator.py",
-  "scriptHash": "0a748a32136c",
-  "scriptCommitSha": "130c5b253b26729c2ee891b9b129195a8b21f160",
+  "scriptHash": "1806168ee926",
+  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
   "description": "Certifies the Lean axiom HabiroCompletion.tail_in_ideal on the witnesses produced by habiro_coefficients_atomic.py: for every atom and every truncation order N, the residual p(u) − Σ_{m<N} a_m(u) · (u;u)_m is exactly divisible by (u;u)_N in ℤ[u].",
   "reference_blocks": [
     "prop:full-pole-structure-mass-trace",
