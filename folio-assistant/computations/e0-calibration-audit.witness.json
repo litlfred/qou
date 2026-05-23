@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-23T12:11:53.240771+00:00",
+  "computedAt": "2026-05-23T20:09:03.233913+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -104,6 +104,38 @@
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"this module does NOT use the β-decay Q-value 0.78233341 \"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 148,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_BETA_MEV_AME = _mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 151,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "0.78233341(61) MeV — σ ≈ 779.7 ppb (large because of mass-difference",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 168,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "**Differs from AME's 0.78233341 by ~1.8 × 10⁻⁶ MeV (1810 ppb)**",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 181,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "**Within 1 ppb of the AME direct measurement** (0.78233341 vs",
         "kind": "doc"
       },
       {
@@ -687,6 +719,182 @@
         "match": "Q_BETA_MEV",
         "context": "r\"M_P_MEV|M_N_MEV|M_E_MEV|Q_BETA_MEV|m_p_codata|m_n_codata|\"",
         "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 114,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "algebraically `M_P_MEV + M_E_MEV + Q_BETA_MEV` (where Q_β is the",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 148,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_AME = _mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 159,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_AME_ERR = _mp.mpf(\"0.00000061\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 161,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = (",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 174,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_DERIVED_FROM_AME = (",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 204,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_AME\": str(Q_BETA_MEV_AME),",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 204,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_AME\": str(Q_BETA_MEV_AME),",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 205,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT\":",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 206,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "str(Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT),",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 207,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_DERIVED_FROM_AME\":",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 208,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "str(Q_BETA_MEV_DERIVED_FROM_AME),",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 218,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_AME",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 218,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_AME",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 221,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "(Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_AME)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 221,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "(Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_AME)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 222,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "/ Q_BETA_MEV_AME * _mp.mpf(\"1e9\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 225,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 225,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_AME - Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 241,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_AME\", \"Q_BETA_MEV_AME_ERR\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 241,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_AME\", \"Q_BETA_MEV_AME_ERR\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 242,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_2022_source.py",
+        "line": 243,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV_DERIVED_FROM_AME\",",
+        "kind": "doc"
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
