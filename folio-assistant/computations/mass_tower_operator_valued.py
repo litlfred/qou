@@ -80,6 +80,33 @@ INTERFACE_C = 1.0
 INTERFACE_D = -H / 2
 
 
+# ── Canonical API surface for downstream consumers ───────────────
+# Per the post-PR-#944 cheat-sheet §5 #2 close-out audit, callers
+# that previously imported `mass_from_tower` from `mass_endomorphism`
+# should now import from `mass_tower_operator_valued` — the canonical
+# block whose Lean realisation is `prop:mass-tower-operator-valued`.
+# The implementation is re-exported from `mass_endomorphism.py`
+# (which retains the computational kernel + utility helpers): the
+# operator-valued tower (this module) and the Φ_q tower (in
+# `mass_endomorphism`) are EQUIVALENT expressions of the same
+# Markov-trace mass formula at the H_{3A} layer (verified to
+# machine-ε in the per-λ A-operator extraction witnesses at
+# H_6 / H_9 / H_12 — see PR #944 for H_12 Phase-1).
+from mass_endomorphism import (  # noqa: E402
+    mass_from_tower,
+    additive_wedderburn_volumes,
+)
+
+__all__ = [
+    # Verification-script entry points (the original surface):
+    "load_A_per_pair",
+    "operator_trace_rhs",
+    # Canonical API re-exports (the close-out surface):
+    "mass_from_tower",
+    "additive_wedderburn_volumes",
+]
+
+
 def load_A_per_pair(witness_path: Path) -> dict:
     """Load A^λ_{μν}(I) matrices from prior extraction witness."""
     w = json.loads(witness_path.read_text())

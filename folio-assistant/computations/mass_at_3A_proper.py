@@ -601,7 +601,10 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     Replaces the H_3 per-generator weighting used in
     tower_binding_full.  E_0 = 0.78233341 MeV (β-decay Q), no Catalan.
     """
-    from mass_endomorphism import mass_from_tower
+    # Canonical API: prop:mass-tower-operator-valued
+    # (the Φ_q tower implementation is re-exported from
+    # mass_endomorphism; both expressions are equivalent at H_{3A}).
+    from mass_tower_operator_valued import mass_from_tower
     vols_atom = per_generator_V_hat_3A(
         Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         include_inter=True, weight_scheme=weight_scheme, verbose=verbose)
