@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a08a7adf3c65",
     "ts": "1f84ecfc2633",
-    "lean": "752e60ddc1ff"
+    "lean": "e944a5ae1723"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -347,18 +347,18 @@
         "field_hash": {
           "md": "a08a7adf3c65",
           "ts": "1f84ecfc2633",
-          "lean": "752e60ddc1ff"
+          "lean": "e944a5ae1723"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "reviewed_at": "2026-05-23T11:01:36.020Z",
+        "reviewed_sha": "d9f9468491ebe2a6e795dbeb1aa52de63e34ba45"
       }
     ],
     "voice-title-scholarly": [
@@ -555,5 +555,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T11:01:36.020Z"
 }
