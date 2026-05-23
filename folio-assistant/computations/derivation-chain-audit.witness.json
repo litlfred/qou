@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T19:37:43.033999+00:00",
-  "commitSha": "faf2428017c13e31baf501b216f66034c6ffe970",
+  "computedAt": "2026-05-23T19:38:17.218572+00:00",
+  "commitSha": "8dc8b9580584287449d057ca0836967505e5055b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2352,6 +2352,7 @@
         "faddeev-pentagon-operator-spike.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2444,6 +2445,7 @@
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
         "kummer-reflection-zeta5.witness.json",
+        "lambda-reading-a-h4-sweep-test.witness.json",
         "lambda-reading-a-vs-b-comparison.witness.json",
         "lambda-scale-all-c-i-family-a.witness.json",
         "lambda-scale-alt-f-markov-trace-beta-bor.witness.json",
