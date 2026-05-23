@@ -183,7 +183,7 @@ the open conjectural content.
 |----------|-------|
 | $\lambda_p$ from CODATA $m_p/m_e$, $S(p) = 0$ | $2.4599534044$ |
 | $5/2 - h^2 \cdot G$ predicted | $2.4599666078$ |
-| Relative residual | $+5.4$ ppm |
+| Relative residual | $+5.6$ ppm |
 
 The neutron is **structurally consistent** under the same
 common-substrate hypothesis: $\lambda_n = \lambda_p$ shared, with
