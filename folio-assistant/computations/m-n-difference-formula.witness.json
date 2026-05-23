@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T18:07:30.576828+00:00",
-  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
+  "computedAt": "2026-05-23T10:08:56.315630+00:00",
+  "commitSha": "fc37c85bc5c757cdab0470d701459be11d4fd6eb",
   "assertions": [
     {
       "name": "m_n_predicted_within_1_ppb_of_codata",
@@ -25,14 +25,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "m-n-difference-formula",
   "scriptFile": "m_n_difference_formula.py",
-  "scriptHash": "e69b7d320e89",
+  "scriptHash": "0c9ffa792951",
   "scriptCommitSha": "9c2308ee25805253a3654503ec42d5e8716d8637",
-  "description": "Item 2 from Phase 1.8 actionable path: derive m_n via the difference formula m_n − m_p = ((q+q⁻¹)/(q^{1/2}+q^{−1/2})) · (μ_d − μ_u) per fresh_derivation_pn_true_sdp.py:1-26.  Calibrates μ_d − μ_u against CODATA Δm; predicts m_n via difference at <1 ppb (by construction). Replaces Strategy-3's bare-|tr_M(n)| approach which violates 'only differences are observables' and produces 8.325% error.  Both paths are 1-parameter calibrations; the difference path is framework-consistent.",
+  "description": "DEPRECATED (2026-05-23) — superseded by the substrate-pure `flavor_split_subleading` in `_li_2_q_util` (PR #690 / #942). This 1-param-calibrated formula m_n − m_p = ((q+q⁻¹)/(q^{1/2}+q^{−1/2})) · (μ_d − μ_u) gives a <1 ppb 'match' to CODATA tautologically (μ_d − μ_u is FITTED from CODATA Δm).  The substrate-pure replacement Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 (no fit) matches CODATA to 305 ppm without any free parameter.  Kept here for historical comparison and probe-docstring references only; no production consumer.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
+    "deprecated": true,
+    "deprecated_at": "2026-05-23",
+    "superseded_by": "_li_2_q_util.flavor_split_subleading (consumed by m_p_borromean_verification_50dps.py, atomic_mass_via_rho_k.py)",
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "q_0_inv": "0.90091827356430111417998565731158747153152597604223",
     "M_p_codata": 938.27208816,

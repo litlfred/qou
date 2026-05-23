@@ -1,6 +1,59 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: numerical-only output.
 """
+═══════════════════════════════════════════════════════════════════
+DEPRECATED (2026-05-23): SUPERSEDED BY substrate-pure
+`flavor_split_subleading` IN `_li_2_q_util`.
+
+This script implements a 1-param-calibrated Δm formula:
+
+    Δm = ((q + q⁻¹) / (q^{1/2} + q^{−1/2})) · (μ_d − μ_u)
+
+where `(μ_d − μ_u)` is FITTED from CODATA Δm. This gives a
+tautological < 1 ppm "match" to CODATA because the same value
+is used as both input and reference. It does NOT supply a
+substrate prediction.
+
+A substrate-PURE replacement now exists:
+
+    Δm / M_N  =  ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3
+                                                  (no fit)
+
+implemented as `flavor_split_subleading(q, q_inv)` in
+[`_li_2_q_util.py`](_li_2_q_util.py) and consumed by the
+production prediction chain:
+
+    `m_p_borromean_verification_50dps.py`  (PR #942)
+    `atomic_mass_via_rho_k.py`             (PR #690)
+
+This substrate-pure form matches CODATA Δm/M_N to ~305 ppm
+without any free parameter (the residual is the framework's
+honest gap, not a fit artifact).
+
+WHY KEEP THIS SCRIPT:
+  - **Comparison column**: shows what the 1-param fit would
+    give vs the substrate-pure prediction.
+  - **Historical audit**: the formula
+    `Δm = ((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d−μ_u)` was the
+    Phase 1.8 path before the substrate-pure derivation
+    landed (PR #690).
+  - **Probe consumer**: `probe_pn_flavor_asymmetry.py` and
+    `probe_mu_d_minus_mu_u_categorical.py` still reference
+    this formulation in their docstrings; deletion would
+    orphan those references.
+
+WHAT NEW CODE SHOULD DO:
+  - Predict m_n from m_p via the substrate-pure split:
+        m_n = m_avg_pred · (1 + Δm/M_N / 2),
+        m_p = m_avg_pred · (1 − Δm/M_N / 2)
+    where Δm/M_N = `flavor_split_subleading(q, 1/q)`.
+  - Do **not** introduce a new `(μ_d − μ_u)` calibration.
+
+This script will emit a `DeprecationWarning` at runtime and
+mark its witness as `deprecated: true` so downstream consumers
+can detect the demotion.
+═══════════════════════════════════════════════════════════════════
+
 Item 2 from the Phase 1.8 actionable path: derive m_n via the
 difference formula
 
@@ -25,18 +78,20 @@ This script:
      residual: < 1 ppm by construction.
   4. Compares to Strategy-3's M_pred[n] = 861.345 MeV (−8.325% error).
 
-The result demonstrates that the difference formula is the
-framework-consistent path for predicting m_n, with a single
-calibration parameter (μ_d − μ_u) replacing Strategy-3's E_0
-calibration.  Per the framework's stated semantics, this is the
-right path — Strategy-3's bare-|tr_M(n)| approach violates "only
-differences are observable" and produces an 8.3% structural error.
+Historical interpretation (kept for audit reference; SUPERSEDED
+by substrate-pure flavor_split above):
+The result demonstrates the difference formula was the
+framework-consistent path for predicting m_n at the time,
+with a single calibration parameter (μ_d − μ_u) replacing
+Strategy-3's E_0 calibration.
 
-Output: m-n-difference-formula.witness.json
+Output: m-n-difference-formula.witness.json (now flagged
+        `deprecated: true`).
 """
 from __future__ import annotations
 
 import sys
+import warnings
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -49,6 +104,17 @@ set_compute_dps()
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+
+warnings.warn(
+    "m_n_difference_formula.py is DEPRECATED (2026-05-23). The 1-param "
+    "(μ_d − μ_u) calibration is tautological vs CODATA Δm. Use the "
+    "substrate-pure `flavor_split_subleading(q, q_inv)` from `_li_2_q_util` "
+    "instead — see `m_p_borromean_verification_50dps.py` (PR #942) for the "
+    "production wire-up. This script is kept only for historical "
+    "comparison and probe-docstring references.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 
 def algebraic_prefactor(q: mp.mpf, q_inv: mp.mpf) -> mp.mpf:
@@ -137,14 +203,24 @@ def main() -> int:
     # Witness emission
     w = WitnessBuilder("m-n-difference-formula", engine="mpmath")
     w.set_description(
-        "Item 2 from Phase 1.8 actionable path: derive m_n via the difference "
-        "formula m_n − m_p = ((q+q⁻¹)/(q^{1/2}+q^{−1/2})) · (μ_d − μ_u) per "
-        "fresh_derivation_pn_true_sdp.py:1-26.  Calibrates μ_d − μ_u against "
-        "CODATA Δm; predicts m_n via difference at <1 ppb (by construction). "
-        "Replaces Strategy-3's bare-|tr_M(n)| approach which violates 'only "
-        "differences are observables' and produces 8.325% error.  Both paths "
-        "are 1-parameter calibrations; the difference path is "
-        "framework-consistent."
+        "DEPRECATED (2026-05-23) — superseded by the substrate-pure "
+        "`flavor_split_subleading` in `_li_2_q_util` (PR #690 / #942). "
+        "This 1-param-calibrated formula "
+        "m_n − m_p = ((q+q⁻¹)/(q^{1/2}+q^{−1/2})) · (μ_d − μ_u) gives a "
+        "<1 ppb 'match' to CODATA tautologically (μ_d − μ_u is FITTED "
+        "from CODATA Δm).  The substrate-pure replacement "
+        "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 (no fit) matches "
+        "CODATA to 305 ppm without any free parameter.  Kept here for "
+        "historical comparison and probe-docstring references only; "
+        "no production consumer."
+    )
+    w.add_parameter("deprecated", True)
+    w.add_parameter("deprecated_at", "2026-05-23")
+    w.add_parameter(
+        "superseded_by",
+        "_li_2_q_util.flavor_split_subleading "
+        "(consumed by m_p_borromean_verification_50dps.py, "
+        "atomic_mass_via_rho_k.py)"
     )
     w.set_content_block("prop:atomic-mass-gb-nf")
     w.add_parameter("q_0", str(Q0))
