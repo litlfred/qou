@@ -271,6 +271,35 @@ coincidences. The structural test is q-locality: does the form
 match across the substrate window `q_0 ± ε`? AND is the form
 derivable from the 13-driver menu?
 
+**The q-locality gate (mandatory pre-flight, per commit
+`c18e562b9` on main 2026-05-23).** Sweep q ∈ [q_0 − 0.05,
+q_0 + 0.05] and plot `residual = target − candidate` vs q.
+
+- **Genuine structural identity** → smooth residual (slope ≈ 0
+  across the window).
+- **Substrate-q_0 coincidence** → zero-crossing with slope
+  ~10⁷ ppm/q (matches at q_0, diverges rapidly away).
+
+The empirical-exhaustion tally on 2026-05-23 ran q-locality on
+four known λ_scale near-matches. **0 / 4 surviving:**
+
+  | candidate | slope (ppm/q) |
+  |---|---:|
+  | `1/(1 − h_q · q_0^{10})` (Faddeev × Bring) | −1.5×10⁷ |
+  | `5/2 − h_q²·G` (numerology) | −1.7×10⁷ |
+  | V_7 = Σ dim_q V_λ / [4]_q (PR #916 Strategy H) | −1.86×10⁷ |
+  | `5/2 − ℏ_q²·⟨𝓑_3⟩(q_0^{1/2})` (PR #916 Strategy G) | −1.69×10⁷ |
+
+The q-locality gate is now a first-class pre-flight filter. Any
+near-match candidate that fails it is automatically
+coincidence-basin, regardless of how close the ppm value at q_0.
+
+**Mandatory pre-flight before any "structural" claim.** Apply
+the q-locality gate. If slope is < ~10² ppm/q across the
+substrate window, the candidate has earned the right to be
+analyzed for the 13-driver menu. If slope is > ~10⁵ ppm/q,
+it's coincidence-basin — stop.
+
 Fix: PR #701 falsified `5/2 − h²·G` across 5 routes:
 - 32 sign-flipped Wedderburn sums at H_4 all give positive h²
 - Hecke level scan H_2 through H_7 all give positive h²
