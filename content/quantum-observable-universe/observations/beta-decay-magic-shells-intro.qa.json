@@ -65,7 +65,206 @@
         "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "1543a07e9199",
+          "script_commit_sha": "331dcca678494ce1b43527a33898351bb5a169b2"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "22a4f92a5c18",
+          "ts": "d0e6bd72ba95"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T11:28:20.680Z",
+        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T11:28:20.680Z"
 }

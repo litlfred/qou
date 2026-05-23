@@ -26,15 +26,15 @@ $$
   \boxed{\;
     e_\lambda \;=\; \sum_{T \in \mathrm{SYT}(\lambda)}
     \prod_{k=1}^{n}
-    \prod_{\substack{c \in \mathcal{C}(n) \\ c \neq c(T(k); q)}}
+    \prod_{\substack{c \in \mathrm{C}(n) \\ c \neq c(T(k); q)}}
     \frac{J_k - c}{c(T(k); q) - c},
   \;}
 $$
 
-*where $\mathcal{C}(n) := \{c(\square; q) : \square \in \mu,\; \mu \vdash n\}$
+*where $\mathrm{C}(n) := \{c(\square; q) : \square \in \mu,\; \mu \vdash n\}$
 is the set of distinct $q$-contents arising across **every** partition
-$\mu \vdash n$ (not just the cells of $\lambda$).  The product over $c$
-ranges over $\mathcal{C}(n)$ excluding the eigenvalue $c(T(k); q)$
+$\mu \vdash n$ (not only the cells of $\lambda$).  The product over $c$
+ranges over $\mathrm{C}(n)$ excluding the eigenvalue $c(T(k); q)$
 assigned by tableau $T$. Each factor is
 a Lagrange-interpolation projector onto the eigenspace where $J_k$
 has eigenvalue $c(T(k); q)$. Together with
@@ -48,7 +48,7 @@ this gives a complete explicit construction of $Z(H_n(q))$.*
 > $T' \in \mathrm{SYT}(\mu \neq \lambda)$ may not lie in
 > $\{c(\square; q) : \square \in \lambda\}$, so the Lagrange factor
 > fails to kill that direction.  The corrected scope above ranges
-> over $\mathcal{C}(n)$ (the union of contents across every $\mu$),
+> over $\mathrm{C}(n)$ (the union of contents across every $\mu$),
 > which is exactly the candidate set of joint JM eigenvalues across
 > all Wedderburn blocks.  Numerically verified to $\sim 10^{-50}$ in
 > [`explicit-central-idempotent-probe.witness.json`](../../../folio-assistant/computations/explicit-central-idempotent-probe.witness.json):

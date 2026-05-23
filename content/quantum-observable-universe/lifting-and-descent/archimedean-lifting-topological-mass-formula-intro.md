@@ -1,6 +1,6 @@
 The preceding foundations sub-section established the
 jet-prolongation $\mathbb{C}$, the Yekutieli archimedean band,
-the QU→QOU specialisation, mass-identity $\mathbb{C}$, and the
+the QU $\to$ QOU specialisation, mass-identity $\mathbb{C}$, and the
 brane-boundary structure that the archimedean lifting consumes.
 This sub-section narrows to the formula's central object: the
 quantum dilogarithm (the archimedean specialisation of the

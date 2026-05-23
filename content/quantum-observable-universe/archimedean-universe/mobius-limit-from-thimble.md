@@ -7,7 +7,7 @@
 > numerically $\sim z \approx 3.86$, an order of magnitude larger
 > than $a(q_0) \approx 0.388$ — witness
 > [`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derive-a-thimble-intersection.witness.json)
-> labels the $(4-q)/(4q+3)$ entry **"← post-hoc"** in its own
+> labels the $(4-q)/(4q+3)$ entry **"post-hoc"** in its own
 > output). The replacement "algebraic Galois data" framing below
 > sources the **constants** $\{4, 3\}$ in the Möbius matrix from
 > the cubic's $c^2$-coefficient and degree, but does **not** source

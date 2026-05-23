@@ -1,6 +1,6 @@
 The preceding sub-section developed the Yekutieli lifting
 construction (lifting condition + quantum characteristic classes +
-the QU→QOU functor). This sub-section pulls in the motivic
+the QU $\to$ QOU functor). This sub-section pulls in the motivic
 enrichment that the lifting condition admits: the Kummer-
 filtration obstruction that pins down which lifts are
 *fermionic-twisted*, the Kummer tower that organises the
