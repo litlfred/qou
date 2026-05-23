@@ -371,6 +371,9 @@ export default chapter({
         "cl2-pentagon-and-faddeev-partial",
         "upstream-mathlib-additions",
         "alpha-em-categorical-trace-ratio",
+        // Detangler R3 (2026-05-23): 6-row numerical-verification
+        // table extracted from alpha-em-categorical-trace-ratio.md.
+        "alpha-em-categorical-trace-ratio-table-data",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
         "schrodinger-color-falsifiability",
