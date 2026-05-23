@@ -567,6 +567,23 @@
         },
         "reviewed_at": "2026-05-23T11:28:20.680Z",
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
+      },
+      {
+        "field_hash": {
+          "md": "75b9630f85f5",
+          "ts": "d163db807a43",
+          "lean": "17955dcba5b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "787a76dad8ea",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:08:14.038Z",
+        "reviewed_sha": "04de23e407a60f13ad362d886429ec054506686b"
       }
     ],
     "proof-no-axiom-growth": [
@@ -746,5 +763,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T11:28:20.680Z"
+  "updated_at": "2026-05-23T20:08:14.038Z"
 }
