@@ -445,6 +445,7 @@ When a user request arrives, route to the right skill(s):
 | "glossary / terminology / naming" | `local/ontologist` + `local/content-validation` | collaborator |
 | "witnessed value / drift / numerical literal / :val / hardcoded number / pin to witness" | `local/witnessed-values` + `local/content-validation` | collaborator |
 | "audit compute / compute audit / what can be sped up / find slow scripts / where is sympy.simplify / LaurentQ wiring / BlockCache wiring" | `local/compute-audit` | collaborator |
+| "production vs exploratory / empirical fit vs canonical / numerology vs derivation / CAL-4 / 13-driver menu / Rule 14 / which file is production / can I empirically fit this / what counts as canonical / shape-probing / where does this h^k come from" | `local/production-vs-exploratory-discipline` | reader |
 | "audit ffi / ffi roundtrip / rust-python ping-pong / back-and-forth / 20% wall opportunity / find boundary-crossings in a loop / consolidate compute to rust" | `local/ffi-roundtrip-audit` | collaborator |
 | "write new compute / port to Rust / before optimization / precision / 1 ppb / 1ppb / precision discipline / error / python / rust / py / optimize / optimise / memory / storage / speed / fast / symbolic / float / float64 / f64 / mpf / mpmath / mpfr / witness / BigRational vs sympy.Rational / what type to use / Python-Rust boundary / pyo3 / maturin / cargo / BigInt / orbit-sum identity / algebraic preflight / cross-check / tolerance / read before coding compute" | `local/compute-author` | collaborator |
 | "audit math compute integration / is X wired in / where is prop:foo consumed / props not in compute / validate mass-table sweep" | `local/compute-integration-watcher` | collaborator |
@@ -528,7 +529,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values, proof-integration-watcher, canonical-watcher, detangler-integration-watcher |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values, proof-integration-watcher, canonical-watcher, detangler-integration-watcher, production-vs-exploratory-discipline |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, lean-substantive-pass, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit, compute-audit, compute-author, coordinate, compute-integration-watcher, ffi-roundtrip-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
