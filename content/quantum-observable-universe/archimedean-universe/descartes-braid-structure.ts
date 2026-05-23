@@ -16,4 +16,10 @@ export default corollary({
     "ex:p-adic-realisation",
   ],
   proofs: ["prf:descartes-braid-structure"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/descartes_knot_eigenbasis_probe.py",
+    witness: "folio-assistant/computations/descartes-knot-eigenbasis-probe.witness.json",
+    status: "verified",
+  },
 });
