@@ -11,4 +11,10 @@ export default corollary({
     "prop:frobenius-s-classification",
     "rem:commutative-crossing-energy",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/commutative_chirality_vanishes_probe.py",
+    witness: "folio-assistant/computations/commutative-chirality-vanishes-probe.witness.json",
+    status: "verified",
+  },
 });

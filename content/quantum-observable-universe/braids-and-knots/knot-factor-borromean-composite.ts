@@ -17,4 +17,10 @@ export default corollary({
     "composite",
     "tensor-product",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/knot_factor_borromean_composite_probe.py",
+    witness: "folio-assistant/computations/knot-factor-borromean-composite-probe.witness.json",
+    status: "verified",
+  },
 });
