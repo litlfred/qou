@@ -196,3 +196,45 @@ def lambda_scale_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
     qi = mpf(1) / q if q_inv is None else q_inv
     h = q - qi
     return mpf(5) / 2 + mpf(3) * h ** 2 / 4
+
+
+def lambda_scale_yekutieli_extended(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """λ_scale extended with the Yekutieli per-cell curvature h² term.
+
+    Per the framework's substrate-pure prediction direction
+    (`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`
+    + `docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md`
+    §Strategy I), the categorical SUM of:
+
+      - the PROVED canonical Wedderburn identity
+        `λ_A = (1/4) · Σ_{λ⊢4} dim_q V_λ = 5/2 + (3/4) h²`, and
+      - the Yekutieli per-cell curvature contribution
+        `−G · h²` (G = Catalan constant; G = Vol(𝓑_3) / 8)
+
+    yields the framework's substrate-pure λ_scale prediction:
+
+        λ_Yekutieli(q) := λ_A(q) + (−G · h²)
+                       =  5/2 + (3/4 − G) · h²
+                       ≈  2.49266 at q_0
+
+    This is **categorically-conditional** on the load-bearing
+    cell-↔-half-symmetric-projection bijection at H_4 (see the
+    audit's "Concrete next R&D" item 1).  No fit; both terms
+    derive from independent substrate-natural principles
+    (Wedderburn sum + non-abelian Stokes curvature integration).
+
+    Composed with the substrate flavor split
+    (`flavor_split_subleading`), gives m_p / m_n at ~1.3 % vs
+    CODATA — gap halved from the canonical-only ~3 %.
+
+    NOT a drop-in production replacement for `lambda_scale_family_a`:
+    the canonical Family A is PROVED, while this extension carries
+    a load-bearing conjecture.  Use only via opt-in (e.g. a
+    comparison column in a witness, a conditional-class Lean
+    block, or a research script).
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    h = q - qi
+    canonical = mpf(5) / 2 + mpf(3) * h ** 2 / 4
+    yekutieli_curvature = -mp.catalan * h ** 2
+    return canonical + yekutieli_curvature
