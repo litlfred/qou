@@ -5,4 +5,10 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.symbolic_character_table", validation: "not_checked" },
   uses: ["rem:hecke-algebra-from-braiding", "prop:wedderburn-trace-identity"],
   tags: ["character", "seminormal", "symbolic", "partition", "self-conjugate"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/symbolic_character_table_probe.py",
+    witness: "folio-assistant/computations/symbolic-character-table-probe.witness.json",
+    status: "verified",
+  },
 });

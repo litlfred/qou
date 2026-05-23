@@ -15,4 +15,10 @@ export default proposition({
   },
   cites: ["diaconis-ram2000", "bufetov2020"],
   uses: ["prop:feynman-categorical-trace"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/hecke_markov_transition_probe.py",
+    witness: "folio-assistant/computations/hecke-markov-transition-probe.witness.json",
+    status: "verified",
+  },
 });
