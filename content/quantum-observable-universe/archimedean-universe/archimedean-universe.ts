@@ -199,6 +199,9 @@ export default chapter({
       blocks: [
         "archimedean-condition-genus-intro",
         "torus-knot-generators",
+        // Detangler R3 (2026-05-23): 6-row admissible-torus-knot-
+        // generators table extracted from torus-knot-generators.md.
+        "torus-knot-generators-table-data",
         "embeddability-closure",
         "genus-from-hecke-completeness",
         "genus-from-hecke-completeness-proof",
@@ -340,6 +343,9 @@ export default chapter({
         "alpha-em-derivation-open-problems",
         "em-coupling-bring-zero-mode",
         "alpha-em-derivation-exploration-options",
+        // Detangler R3 (2026-05-23): 7-row ingredient-source map
+        // extracted from alpha-em-derivation-exploration-options.md.
+        "alpha-em-derivation-exploration-options-table-data",
         "e-hartree-categorical-derivation",
         "bohr-radius-categorical",
       ],
@@ -365,6 +371,9 @@ export default chapter({
         "cl2-pentagon-and-faddeev-partial",
         "upstream-mathlib-additions",
         "alpha-em-categorical-trace-ratio",
+        // Detangler R3 (2026-05-23): 6-row numerical-verification
+        // table extracted from alpha-em-categorical-trace-ratio.md.
+        "alpha-em-categorical-trace-ratio-table-data",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
         "schrodinger-color-falsifiability",

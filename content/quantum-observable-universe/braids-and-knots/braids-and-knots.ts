@@ -202,6 +202,9 @@ export default chapter({
         "reeb-exceptional-divisor",
         "vertex-operator",
         "vertex-operator-dictionary",
+        // Detangler R3 (2026-05-23): 13-row VOA-to-QOU dictionary
+        // extracted from vertex-operator-dictionary.md.
+        "vertex-operator-dictionary-table-data",
         // ── Reeb-flow dynamics + six S₃ operators (Commit 1) ───────
         "q-reeb-flow-on-coral-coords",
         "six-canonical-knot-operators",
@@ -945,6 +948,9 @@ export default chapter({
         "delta-q-decoration",
         "force-carrier-intertwining-correspondence",
         "alpha-shift-torus-knot",
+        // Detangler R3 (2026-05-23): 6-row witness summary extracted
+        // from alpha-shift-torus-knot.md.
+        "alpha-shift-torus-knot-table-data",
         "per-nucleon-shift-additive-linearity",
         "confinement-nf-structure-forcing",
         "lp-duality-hypothesis-class",

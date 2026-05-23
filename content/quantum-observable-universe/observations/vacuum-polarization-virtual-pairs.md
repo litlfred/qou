@@ -23,16 +23,8 @@ changing the knot type.  This is precisely a virtual exchange: the
 topology is unchanged, but the energy receives a perturbative
 correction from the transient crossing pair.
 
-**Summary.**
-
-| QFT concept | QOU realisation |
-|-------------|----------------|
-| On-shell particle | Knot configuration at level $A_0$ |
-| Virtual particle | Excitation at level $A_n$ ($n \geq 1$) in brane tower |
-| Propagator | Projection $A_n \to A_0$ (collapses virtual structure) |
-| Vacuum polarisation | Virtual pair within exceptional divisor $\mathcal{S}_p$ |
-| Loop correction | Skein resolution of transient R-II crossing pair |
-| Off-shell lifetime | Bounded by $\hbar_{q_n} / (2\Delta E)$ at tower level $n$ |
+**Summary.** The QOU realisation of each QFT concept is summarised
+in [Table: QFT concepts and their QOU brane-tower realisations](#tbl:vacuum-polarization-virtual-pairs-table-data).
 
 Virtual particles are not ghostly approximations --- they are genuine
 excitations of the brane tower that happen to be invisible at the

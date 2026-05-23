@@ -23,6 +23,9 @@ export default chapter({
       blocks: [
         "amc-method",
         "amc-wedderburn-method",
+        // Detangler R3 (2026-05-23): 7-row input-parameters table
+        // extracted from amc-wedderburn-method.md.
+        "amc-wedderburn-method-table-data",
       ],
     }),
     section({
