@@ -255,13 +255,13 @@ def main() -> int:
     w.add_parameter("lambda_proton_family_a",
                     mp.nstr(LAMBDA_PROTON_FAMILY_A, 15))
     w.add_parameter("lambda_neutron_family_a",
-                    mp.nstr(LAMBDA_NEUTRON_FAMILY_A, 15))
+                    mp.nstr(LAMBDA_NEUTRON_YEKUTIELI, 15))
     # Back-compat aliases now point at the proved Family A values
     # (consumers reading `lambda_scale_*_doc` get the honest value).
     w.add_parameter("lambda_scale_proton_doc",
                     mp.nstr(LAMBDA_PROTON_FAMILY_A, 15))
     w.add_parameter("lambda_scale_neutron_doc",
-                    mp.nstr(LAMBDA_NEUTRON_FAMILY_A, 15))
+                    mp.nstr(LAMBDA_NEUTRON_YEKUTIELI, 15))
     # Audit-only comparison column — the falsified-fit literals
     # whose 5.4 ppm "match" prompted the 2026-05-18 audit.  These
     # are NOT consumed by the production prediction below; they
