@@ -149,6 +149,9 @@ export default chapter({
         "shell-threading-conjecture",
         "single-magic-O18-diagram",
         "bw-mass-decomposition-dictionary",
+        // Detangler R3 (2026-05-23): 7-row BW-to-Schur-Weyl
+        // dictionary extracted from bw-mass-decomposition-dictionary.md.
+        "bw-mass-decomposition-dictionary-table-data",
         "strutinsky-from-graded-trace",
       ],
     }),
