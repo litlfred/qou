@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 
 export default table({
-  label: "tbl:vertex-operator-dictionary-data",
+  label: "tbl:vertex-operator-dictionary-table-data",
   title: "Vertex operator algebra (VOA) to QOU dictionary",
   caption:
     "Per-concept translation between the standard vertex-operator-algebra " +

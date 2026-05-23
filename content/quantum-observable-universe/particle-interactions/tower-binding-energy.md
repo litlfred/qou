@@ -111,7 +111,7 @@ dimensionless partition function to physical energy.
 ## Numerical results
 
 At $q_0 \approx 1.110$, see
-[Table: Predicted vs observed binding energies for $Z = 1$ to $20$](#tbl:tower-binding-energy-data).
+[Table: Predicted vs observed binding energies for $Z = 1$ to $20$](#tbl:tower-binding-energy-table-data).
 
 Zero fitted parameters.  Mean mass error: $0.071\%$ across
 $Z = 1$ to $Z = 20$.  All coefficients derived from $q_0$

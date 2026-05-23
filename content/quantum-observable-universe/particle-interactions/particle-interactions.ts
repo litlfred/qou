@@ -170,7 +170,7 @@ export default chapter({
         "tower-binding-energy",
         // Detangler R3 (2026-05-23): 7-row Z=1-20 binding-energy
         // predictions extracted from tower-binding-energy.md.
-        "tower-binding-energy-table",
+        "tower-binding-energy-table-data",
         "mass-categorical-descent",
       ],
     }),

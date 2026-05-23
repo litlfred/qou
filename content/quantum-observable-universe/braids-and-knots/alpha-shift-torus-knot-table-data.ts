@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 
 export default table({
-  label: "tbl:alpha-shift-torus-knot-data",
+  label: "tbl:alpha-shift-torus-knot-table-data",
   title:
     "$\\alpha_{\\mathrm{shift}}(T_{p,k})$ per-irrep symbolic evidence (6 test pairs)",
   caption:

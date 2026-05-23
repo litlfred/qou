@@ -43,7 +43,7 @@ export default chapter({
         "vortex-intensity-modes",
         // Detangler R3 (2026-05-23): 6-row classical-vs-q-deformed
         // correspondence table extracted from vortex-intensity-modes.md.
-        "vortex-intensity-modes-table",
+        "vortex-intensity-modes-table-data",
         "discrete-vortex-spectrum",
         "discrete-vortex-physical",
         "helicity-conservation",

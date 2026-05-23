@@ -139,7 +139,7 @@ export default chapter({
         // Detangler R3 (2026-05-23): 6-row verification-nuclei
         // trace-ratio table extracted from
         // trace-ratio-interpretation.md.
-        "trace-ratio-interpretation-table",
+        "trace-ratio-interpretation-table-data",
         "diagrammatic-double-magic-lr-fusion",
         "double-magic-Ca40-diagram",
         "double-magic-delta-i-bound",
@@ -292,7 +292,7 @@ export default chapter({
         "vacuum-polarization-virtual-pairs",
         // Detangler R3 (2026-05-23): 6-row QFT-to-QOU dictionary
         // extracted from vacuum-polarization-virtual-pairs.md.
-        "vacuum-polarization-virtual-pairs-table",
+        "vacuum-polarization-virtual-pairs-table-data",
         "cp-violation-evidence",
         "cp-violation-spectral-form",
         "cosmological-chirality-flip",

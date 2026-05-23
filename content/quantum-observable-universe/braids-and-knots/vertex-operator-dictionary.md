@@ -4,7 +4,7 @@ dictionary between the standard vertex operator algebra (VOA)
 formalism \cite{frenkel2004} and QOU structures.
 
 **Full translation table.** See
-[Table: VOA → QOU dictionary](#tbl:vertex-operator-dictionary-data)
+[Table: VOA → QOU dictionary](#tbl:vertex-operator-dictionary-table-data)
 for the 13-concept correspondence.
 
 **Why the dictionary works.**

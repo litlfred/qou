@@ -24,7 +24,7 @@ topology is unchanged, but the energy receives a perturbative
 correction from the transient crossing pair.
 
 **Summary.** The QOU realisation of each QFT concept is summarised
-in [Table: QFT concepts and their QOU brane-tower realisations](#tbl:vacuum-polarization-virtual-pairs-data).
+in [Table: QFT concepts and their QOU brane-tower realisations](#tbl:vacuum-polarization-virtual-pairs-table-data).
 
 Virtual particles are not ghostly approximations --- they are genuine
 excitations of the brane tower that happen to be invisible at the

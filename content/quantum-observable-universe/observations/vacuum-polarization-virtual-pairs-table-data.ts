@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 
 export default table({
-  label: "tbl:vacuum-polarization-virtual-pairs-data",
+  label: "tbl:vacuum-polarization-virtual-pairs-table-data",
   title: "QFT concepts and their QOU brane-tower realisations",
   caption:
     "Six standard quantum-field-theory concepts (on-shell particle, " +

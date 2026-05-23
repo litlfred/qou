@@ -80,7 +80,7 @@ The numerical evidence
 records the full per-irrep symbolic $\chi_\lambda \in \mathbb{Q}(q)$
 together with the pole order at $q = 0$ for every test pair, summarised
 in
-[Table: $\alpha_{\mathrm{shift}}(T_{p,k})$ for 6 test pairs](#tbl:alpha-shift-torus-knot-data).
+[Table: $\alpha_{\mathrm{shift}}(T_{p,k})$ for 6 test pairs](#tbl:alpha-shift-torus-knot-table-data).
 All $14$ assertions in the witness pass.
 
 ### Cross-link

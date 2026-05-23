@@ -2,7 +2,7 @@
 The trace ratio $\hat{V}^{\mathrm{par}} / \hat{V}^{\mathrm{dau}}$
 at each affected generator is tabulated for all six verification
 nuclei in
-[Table: Trace ratio per affected generator](#tbl:trace-ratio-interpretation-data).
+[Table: Trace ratio per affected generator](#tbl:trace-ratio-interpretation-table-data).
 
 The trace ratio grows with $p$ (the number of affected generators),
 reflecting the increasing number of crossings that change type.

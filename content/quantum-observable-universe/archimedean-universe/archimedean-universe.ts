@@ -201,7 +201,7 @@ export default chapter({
         "torus-knot-generators",
         // Detangler R3 (2026-05-23): 6-row admissible-torus-knot-
         // generators table extracted from torus-knot-generators.md.
-        "torus-knot-generators-table",
+        "torus-knot-generators-table-data",
         "embeddability-closure",
         "genus-from-hecke-completeness",
         "genus-from-hecke-completeness-proof",

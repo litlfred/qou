@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 
 export default table({
-  label: "tbl:torus-knot-generators-data",
+  label: "tbl:torus-knot-generators-table-data",
   title: "Torus-knot generators admitted by the $\\chi(A) = -6$ constraint",
   caption:
     "Six coprime pairs $(m, n)$ with $m \\geq 2$ satisfying the genus " +

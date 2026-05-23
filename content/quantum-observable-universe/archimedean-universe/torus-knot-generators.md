@@ -22,7 +22,7 @@ $$
 
 The constraint $(m-1)(n-1) \leq 8$ admits exactly six coprime pairs
 with $m \geq 2$, tabulated in
-[Table: Torus-knot generators](#tbl:torus-knot-generators-data).
+[Table: Torus-knot generators](#tbl:torus-knot-generators-table-data).
 Together with the unknot $T_{1,0} = 0_1$ (genus $0$), the generator
 set has $|\mathcal{G}| = 7$.
 

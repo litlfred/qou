@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 
 export default table({
-  label: "tbl:tower-binding-energy-data",
+  label: "tbl:tower-binding-energy-table-data",
   title:
     "Predicted vs observed binding energies (Z = 1 to 20) from the 3-channel brane tower",
   caption:
