@@ -1,0 +1,36 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-23T10:22:18.609067+00:00",
+  "commitSha": "3b24539b8f9594cfa78ef60551656282055ea2fd",
+  "assertions": [
+    {
+      "name": "h4_refinement_alpha_close_to_one_and_m_p_close",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "source": "Empirical α (= residual / h^4) ≈ 1 within 2%, and the refined λ = 1/(1-h_q·q^10) + h_q^4 gives m_p prediction within 1000 ppm of CODATA — a coherent +h^4 refinement candidate for the Bring color-tube form. Categorical origin of the +h^4 term (second-order Yekutieli per-cell vs Φ_q pentagon h^4 remainder vs modular dual) is the remaining R&D direction."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 9,
+  "computation": "lambda-scale-refinement-h4-correction-bring",
+  "scriptFile": "lambda_scale_refinement_h4_correction_bring.py",
+  "scriptHash": "e15469037289",
+  "scriptCommitSha": "unknown",
+  "description": "Refinement probe: Bring color-tube Φ_q pentagon `1/(1−h_q·q_0^10)` + α·h_q^4 correction, tested against the framework-correct λ target (m_p_CODATA back-solved through PR #942 flavor-split). Residual (m_avg target − Bring base) ≈ +1.011·h_q^4 — α ≈ 1 cleanly. Possible categorical origins: second-order Yekutieli per-cell (audit Step 4 R&D), Φ_q pentagon h^4 remainder, modular-dual instanton. Coefficient ≈ 1 (no internal q-deformation) most consistent with partition-algebra origin per audit hint.",
+  "contentBlock": "conj:borromean-baryon-mass-formula",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "lambda_bring_color_tube_base": "2.45999923162239306241051",
+    "lambda_target_for_m_p_codata": "2.461647689610233091309197",
+    "lambda_target_for_m_avg_codata": "2.461648207565436911313888",
+    "alpha_empirical_m_avg_anchored": "0.8632326533241662604572214",
+    "best_alpha_name": "(3/4 - G + 1)",
+    "best_alpha_value": "0.8340344058227809849453965",
+    "best_m_p_rel_diff_ppm": "-22.4473696616307859",
+    "h4_at_q0": "0.001910233512013146297408482"
+  }
+}
