@@ -52,7 +52,17 @@ sys.path.insert(0, str(HERE))
 
 from char_fast import _compiled_sigmas, chi_lambda_fast  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
+from murnaghan_nakayama import dim_specht  # noqa: E402  # combinatorial d_λ
 from q_parameter import Q as Q0  # noqa: E402
+
+# Re-use the EXACT test-word sets + interface helper from the
+# non-streamed sibling so checkpoint / witness comparisons are valid
+# (Copilot review #944 r3292557282 + r3292557286: ad-hoc copies
+# omitted the empty / identity word and changed the equation system).
+from sublemma_2_1_A_operator_extract_h12_nn import (  # noqa: E402
+    make_h9_test_words as _make_h9_test_words_orig,
+    make_h3_test_words as _make_h3_test_words_orig,
+)
 
 
 H = float(Q0 - 1 / Q0)
@@ -88,60 +98,82 @@ def with_interface_h12(word_9: list, word_3: list, interface: str,
                        n1: int = 9) -> list:
     """Concatenate a H_9 word + interface generator + H_3 word into H_12.
 
-    The H_3 word's generators (0..1) are shifted to (n1+1..n1+2) =
-    (10..11), and an interface generator at position n1-1 = 8 connects
-    the two sub-algebras.
+    The H_3 word's generators (0..1) are shifted to (n1..n1+1) =
+    (9..10) — i.e., σ_{n1+1} and σ_{n1+2} in 1-indexed terms — and
+    an interface generator at position n1-1 = 8 connects the two
+    sub-algebras. H_12 has generators σ_1..σ_11 (0-indexed: 0..10);
+    the shift `+ n1` lands them at indices 9 and 10 (in-range),
+    whereas the earlier `+ n1 + 1` shifted to 10 and 11 — and 11
+    is out-of-bounds, silently zeroing the matrix (PR #944 r3292555464,
+    r3292557276).
     """
     c_iface, d_iface = INTERFACE_COEFS[interface]
     return (
         list(word_9)
         + [(c_iface, d_iface, n1 - 1)]
-        + [(c, d, g + n1 + 1) for c, d, g in word_3]
+        + [(c, d, g + n1) for c, d, g in word_3]
     )
 
 
 def make_h9_test_words() -> list[list]:
-    """24 H_9 test words spanning a variety of generator patterns."""
-    return [
-        [(1.0, 0.0, g)] for g in range(8)
-    ] + [
-        [(1.0, 0.0, g), (1.0, 0.0, (g + 1) % 8)] for g in range(8)
-    ] + [
-        [(1.0, 0.0, 0), (1.0, 0.0, 1), (1.0, 0.0, 2)],
-        [(1.0, 0.0, 0), (1.0, 0.0, 2), (1.0, 0.0, 1)],
-        [(1.0, 0.0, 7), (1.0, 0.0, 6), (1.0, 0.0, 5)],
-        [(1.0, 0.0, 0), (1.0, 0.0, 3), (1.0, 0.0, 6)],
-        [(1.0, 0.0, 1), (1.0, 0.0, 4), (1.0, 0.0, 7)],
-        [(1.0, 0.0, 2), (1.0, 0.0, 5), (1.0, -H, 0)],
-        [(1.0, -H, 1), (1.0, 0.0, 4), (1.0, 0.0, 7)],
-        [(1.0, 0.0, 0), (1.0, -H / 2, 3), (1.0, 0.0, 6)],
-    ]
+    """Re-export of the canonical H_9 test-word set from the sibling
+    non-streamed script, so checkpoints + witnesses are comparable."""
+    return _make_h9_test_words_orig()
 
 
 def make_h3_test_words() -> list[list]:
-    """12 H_3 test words."""
-    return [
-        [(1.0, 0.0, 0)], [(1.0, 0.0, 1)],
-        [(1.0, 0.0, 0), (1.0, 0.0, 1)],
-        [(1.0, 0.0, 1), (1.0, 0.0, 0)],
-        [(1.0, 0.0, 0), (1.0, 0.0, 1), (1.0, 0.0, 0)],
-        [(1.0, -H, 0)], [(1.0, -H, 1)],
-        [(1.0, 0.0, 0), (1.0, -H, 1)],
-        [(1.0, -H, 0), (1.0, 0.0, 1)],
-        [(1.0, -H / 2, 0)], [(1.0, -H / 2, 1)],
-        [(1.0, -H / 2, 0), (1.0, -H / 2, 1)],
-    ]
+    """Re-export of the canonical H_3 test-word set from the sibling
+    non-streamed script."""
+    return _make_h3_test_words_orig()
 
 
-def _load_checkpoint(path: Path | None) -> dict:
+def _load_checkpoint(path: Path | None, expected_config: dict) -> dict:
+    """Load checkpoint; validate `run_config` matches `expected_config`.
+
+    A mismatch on interface / K_9 / K_3 / rank_tol / max_lambda_dim /
+    test-word hash means the partial results are NOT comparable —
+    discard them rather than silently mixing into a hybrid witness
+    (PR #944 r3292557290).
+    """
     if path is None or not path.exists():
-        return {"results_per_lambda": {}, "version": 1}
+        return {
+            "version": 2,
+            "run_config": expected_config,
+            "results_per_lambda": {},
+        }
     try:
-        return json.loads(path.read_text())
+        ckpt = json.loads(path.read_text())
     except Exception as e:
         print(f"  WARN: checkpoint load failed ({e}); starting fresh",
               flush=True)
-        return {"results_per_lambda": {}, "version": 1}
+        return {
+            "version": 2,
+            "run_config": expected_config,
+            "results_per_lambda": {},
+        }
+    rc = ckpt.get("run_config") or {}
+    mismatched = [
+        k for k in expected_config
+        if rc.get(k) != expected_config[k]
+    ]
+    if mismatched:
+        print(
+            f"  WARN: checkpoint run_config mismatch on {mismatched}; "
+            f"expected={[expected_config[k] for k in mismatched]} "
+            f"got={[rc.get(k) for k in mismatched]}; "
+            f"starting fresh to avoid hybrid witness",
+            flush=True,
+        )
+        return {
+            "version": 2,
+            "run_config": expected_config,
+            "results_per_lambda": {},
+        }
+    # Compatible — keep partial results, update run_config to current.
+    ckpt["run_config"] = expected_config
+    ckpt.setdefault("version", 2)
+    ckpt.setdefault("results_per_lambda", {})
+    return ckpt
 
 
 def _save_checkpoint(path: Path | None, ckpt: dict) -> None:
@@ -166,9 +198,13 @@ def process_one_lambda(
 
     Status: 'skipped' | 'no_support' | 'solved' | 'error'.
     """
-    d_lam = shape_dim(lam)
+    # Use combinatorial Specht dimension (hook-length formula) for the
+    # dim filter, NOT shape_dim() — the latter calls _compiled_sigmas
+    # which BUILDS the full Hoefsmit matrices (~minutes per high-dim λ)
+    # just to read the dim. dim_specht is O(|λ|²).
+    d_lam = dim_specht(list(lam))
     if max_lambda_dim and d_lam > max_lambda_dim:
-        return "skipped", {"d_lam": d_lam}
+        return "skipped", {"d_lam": int(d_lam)}
 
     # Identify the (ξ, ν) support for this λ
     pairs = []
@@ -296,6 +332,11 @@ def main() -> int:
           flush=True)
     print(f"  Checkpoint: {args.checkpoint or '(disabled)'}", flush=True)
 
+    # Pre-stamp the WitnessBuilder start_time so durationMs reflects
+    # the FULL wall-clock from script start, not just the post-loop
+    # builder construction (PR #944 r3292557294).
+    t_script_start = time.monotonic()
+
     t_setup = time.monotonic()
     print(f"  [setup] loading partitions + LR table...", flush=True)
     parts_9 = partitions_of(9)
@@ -342,8 +383,19 @@ def main() -> int:
     ]
     print(f"      done ({time.monotonic() - t0:.1f}s)", flush=True)
 
-    # Resume from checkpoint if present
-    ckpt = _load_checkpoint(args.checkpoint)
+    # Resume from checkpoint if present (with run_config validation)
+    run_config = {
+        "interface": interface,
+        "K_9": K_9,
+        "K_3": K_3,
+        "rank_tol": args.rank_tol,
+        "max_lambda_dim": args.max_lambda_dim,
+        # Coarse fingerprint of the test-word definitions so a change
+        # to the H_9 / H_3 word lists invalidates the checkpoint.
+        "test_word_h9_count": len(test_words_9),
+        "test_word_h3_count": len(test_words_3),
+    }
+    ckpt = _load_checkpoint(args.checkpoint, run_config)
     done_lams = set(ckpt.get("results_per_lambda", {}).keys())
     if done_lams:
         print(f"  [resume] {len(done_lams)} λ found in checkpoint; "
@@ -364,6 +416,23 @@ def main() -> int:
         if lam_key in done_lams:
             r = ckpt["results_per_lambda"][lam_key]
             status_str = "resumed"
+            # Update counters from the resumed result so the final
+            # summary + witness reflect the full run (PR #944
+            # r3292555471).
+            st = r.get("status")
+            if st == "skipped_dim_filter":
+                n_skipped += 1
+            elif st == "no_support":
+                n_no_support += 1
+            elif st == "error":
+                n_error += 1
+            elif st == "solved":
+                if r.get("underdetermined"):
+                    n_underdet += 1
+                else:
+                    n_overdet += 1
+                    if r.get("consistent"):
+                        n_consistent += 1
         else:
             status, result = process_one_lambda(
                 lam, parts_9, parts_3,
@@ -402,13 +471,16 @@ def main() -> int:
 
         elapsed = time.monotonic() - t_loop
         eta_s = elapsed * (len(parts_12) - lam_idx) / max(lam_idx, 1)
+        rate = lam_idx / max(elapsed, 1e-9)
         d_lam = r.get("d_lam", "?")
         max_rel = r.get("max_relative_residual")
         max_rel_str = f"{max_rel:.2e}" if max_rel is not None else "—"
+        # units/sec rate per CLAUDE.md long-compute logging discipline
+        # (PR #944 r3292555475).
         print(f"  λ={lam_key:<22} d={d_lam:>4}  status={status_str:<14} "
               f"rel_res={max_rel_str:<9}  "
               f"[{lam_idx}/{len(parts_12)}] wall={elapsed:.1f}s "
-              f"ETA={eta_s:.0f}s", flush=True)
+              f"rate={rate:.2f}λ/s ETA={eta_s:.0f}s", flush=True)
 
     total_wall = time.monotonic() - t_loop
     print(flush=True)
@@ -428,6 +500,7 @@ def main() -> int:
         WitnessBuilder(
             f"sublemma-2-1-A-operator-extract-h12-{interface}",
             engine="numpy",
+            start_time=t_script_start,
         )
         .set_description(
             f"Phase-1 operator-valued A^λ_{{ξν''}}(I_2={interface}) "
