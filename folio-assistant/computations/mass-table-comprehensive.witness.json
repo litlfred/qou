@@ -1,0 +1,253 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-23T20:19:37.475649+00:00",
+  "commitSha": "0002cfbd28fe0a3d8abcb603072557887d544572",
+  "assertions": [
+    {
+      "name": "all_A_leq_4_masses_computed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "All A ≤ 4 isotopes have absolute mass predictions"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 60820,
+  "computation": "mass-table-comprehensive",
+  "scriptFile": "mass_table_comprehensive.py",
+  "scriptHash": "d6151c0cc591",
+  "scriptCommitSha": "0002cfbd28fe0a3d8abcb603072557887d544572",
+  "description": "Comprehensive mass/binding table for all nuclei from proton (A=1) through ¹²C (A=12) at the current production tier: Family A λ_A = 5/2 + (3/4)h² (PROVED) + substrate-pure flavor-split Δm/M_N (PROVED, PR #942). Binding energies via binding_canonical with use_closed_form=True for A ≤ 3 (PR #921). A = 4 uses symbolic path. A ≥ 5 flagged as 'not yet computed'. Each entry cross-references the recursive atom knot atlas methodology tag.",
+  "contentBlock": "prop:recursive-atom-knot-atlas",
+  "parameters": {
+    "q_str": "1.10997859555418057528159407960950937799328227995870",
+    "dps": 50
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "m_pred_MeV": 965.384474,
+        "m_codata_MeV": 938.272088,
+        "m_err_pct": 2.8896,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 0.0,
+        "B_err_pct": null,
+        "binding_method": "no binding (single nucleon)",
+        "atlas_methodology_tag": "principled-derivation",
+        "caveats": [
+          "Family A λ_A (PROVED)"
+        ]
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "m_pred_MeV": 966.714772,
+        "m_codata_MeV": 939.565421,
+        "m_err_pct": 2.8896,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 0.0,
+        "B_err_pct": null,
+        "binding_method": "no binding (single nucleon)",
+        "atlas_methodology_tag": "principled-derivation",
+        "caveats": [
+          "Family A λ_A (PROVED)"
+        ]
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "m_pred_MeV": 1931.633571,
+        "m_codata_MeV": 1875.612943,
+        "m_err_pct": 2.9868,
+        "B_pred_MeV": 0.465676,
+        "B_AME_MeV": 2.22452,
+        "B_err_pct": -79.0662,
+        "binding_method": "binding_canonical (closed-form)",
+        "atlas_methodology_tag": "manual-historical-volume-match",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)"
+        ]
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "m_pred_MeV": 2898.185045,
+        "m_codata_MeV": 2808.921133,
+        "m_err_pct": 3.1779,
+        "B_pred_MeV": 0.628974,
+        "B_AME_MeV": 8.481821,
+        "B_err_pct": -92.5844,
+        "binding_method": "binding_canonical (closed-form)",
+        "atlas_methodology_tag": "manual-historical-volume-match",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)"
+        ]
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "m_pred_MeV": 2896.82561,
+        "m_codata_MeV": 2808.391557,
+        "m_err_pct": 3.1489,
+        "B_pred_MeV": 0.658111,
+        "B_AME_MeV": 7.71804,
+        "B_err_pct": -91.4731,
+        "binding_method": "binding_canonical (closed-form)",
+        "atlas_methodology_tag": "manual-historical-volume-match",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)"
+        ]
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "m_pred_MeV": 3863.485024,
+        "m_codata_MeV": 3727.379407,
+        "m_err_pct": 3.6515,
+        "B_pred_MeV": 0.713469,
+        "B_AME_MeV": 28.295674,
+        "B_err_pct": -97.4785,
+        "binding_method": "binding_canonical (symbolic)",
+        "atlas_methodology_tag": "magic-A-formula",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)"
+        ]
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "m_pred_MeV": 5796.29774,
+        "m_codata_MeV": 5601.512526,
+        "m_err_pct": 3.4774,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 32.0,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "deprecated-volume-match",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "m_pred_MeV": 6763.012512,
+        "m_codata_MeV": 6533.833418,
+        "m_err_pct": 3.5076,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 39.244529,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "deprecated-volume-match",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "9Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "m_pred_MeV": 8695.111759,
+        "m_codata_MeV": 8392.750455,
+        "m_err_pct": 3.6026,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 58.165,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "recursive-on-4He",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "10B",
+        "Z": 5,
+        "N": 5,
+        "A": 10,
+        "m_pred_MeV": 9660.496233,
+        "m_codata_MeV": 9324.437543,
+        "m_err_pct": 3.6041,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 64.75,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "recursive-on-4He",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "12C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "m_pred_MeV": 11592.59548,
+        "m_codata_MeV": 11174.863324,
+        "m_err_pct": 3.7381,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 92.161728,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "recursive-on-4He",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      }
+    ],
+    "summary": {
+      "total_isotopes": 11,
+      "masses_computed": 11,
+      "binding_computed": 4,
+      "gated_on_phase2": 5,
+      "lambda_A_value": 2.532779663672884,
+      "delta_m_over_M_N": 0.0013770494096847516,
+      "m_p_pred_MeV": 965.3844742709388,
+      "m_n_pred_MeV": 966.714772334434,
+      "production_tier": "Family A (PROVED) + flavor-split (PROVED)",
+      "research_tier_not_used": "Strategy I λ_Y = λ_A - G·h² (conjectural bijection)"
+    }
+  },
+  "caveats": [
+    "Production tier uses Family A λ_A = 5/2 + (3/4)h² (PROVED, +2.89% from CODATA on m_p) + substrate-pure flavor-split (PROVED, 0.03% ratio match). Strategy I (λ_Y = λ_A − G·h², +1.33%) is NOT used in this mass table — it requires the Yekutieli bijection proof (research-grade; PR #978 / #991). Binding energies for A ≥ 5 are NOT computed — gated on H_12 Phase-2 (≥3500 test words; PR #944 delivered Phase-1 for A ≤ 4). Atlas methodology tags from prop:recursive-atom-knot-atlas."
+  ]
+}
