@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T20:58:19.241373+00:00",
-  "commitSha": "4264e744c84dbf2b1ac2513e35f6f40ecb2722cc",
+  "computedAt": "2026-05-23T20:59:16.085887+00:00",
+  "commitSha": "1a80d26e9e5940370cce7f3360ec10181913978a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -1607,14 +1607,14 @@
       {
         "pattern": "P31",
         "file": "lambda_scale_refinement_h4_correction_bring.py",
-        "line": 104,
+        "line": 105,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P31",
         "file": "lambda_scale_refinements_composed_predictions.py",
-        "line": 81,
+        "line": 82,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },

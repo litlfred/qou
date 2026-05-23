@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T20:58:21.193545+00:00",
-  "commitSha": "4264e744c84dbf2b1ac2513e35f6f40ecb2722cc",
+  "computedAt": "2026-05-23T20:59:16.565740+00:00",
+  "commitSha": "1a80d26e9e5940370cce7f3360ec10181913978a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2353,6 +2353,7 @@
         "faddeev-pentagon-operator-spike.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
