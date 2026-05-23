@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T20:43:40.880531+00:00",
-  "commitSha": "59c9e4700112b1eacbb900c53ec6894aa426b680",
+  "computedAt": "2026-05-23T00:04:39.106106+00:00",
+  "commitSha": "6b319b5f6b1414c1c50b4180ec538da53b37249a",
   "assertions": [
     {
       "name": "vieta_sum_check",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 9,
   "computation": "probe-per-sheet-flavor-nonin",
   "scriptFile": "probe_per_sheet_flavor_nonin.py",
-  "scriptHash": "68c19e68870f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e175b72dcaba",
+  "scriptCommitSha": "935861a897d30ccb42e9905ffa57c263d4d1a2f1",
   "description": "Per-sheet PL integration showing flavor non-invariance",
   "data": {
     "q_0": 1.1099785955541805,
