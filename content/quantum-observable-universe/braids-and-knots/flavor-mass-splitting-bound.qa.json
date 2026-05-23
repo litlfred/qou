@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "4706f57b7469",
     "ts": "f0b70cbe6491",
-    "lean": "2c64b7776d53"
+    "lean": "0ab19a6997a6"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -518,6 +518,23 @@
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/flavor-mass-splitting-bound.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "4706f57b7469",
+          "ts": "f0b70cbe6491",
+          "lean": "0ab19a6997a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T20:02:54.191Z",
+        "reviewed_sha": "204e1d71ef1dfd0a63725175b5242f0d75781971"
       }
     ],
     "voice-title-scholarly": [
@@ -714,5 +731,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T11:28:20.680Z"
+  "updated_at": "2026-05-23T20:02:54.191Z"
 }

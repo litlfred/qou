@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "6c6d57254240",
     "ts": "fcb7dd4131b2",
-    "lean": "112b9e0d1380"
+    "lean": "edf83b5cda17"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -520,6 +520,23 @@
         "reviewed_sha": "02e2114e5d591cb8ba17551db24f71cd36cec478",
         "severity": "critical",
         "evidence": "quantum-observable-universe/archimedean-universe/bloch-group-quotient-construction.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "6c6d57254240",
+          "ts": "fcb7dd4131b2",
+          "lean": "edf83b5cda17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-23T19:51:54.813Z",
+        "reviewed_sha": "204e1d71ef1dfd0a63725175b5242f0d75781971"
       }
     ],
     "voice-title-scholarly": [
@@ -733,5 +750,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T12:03:13.794Z"
+  "updated_at": "2026-05-23T19:51:54.813Z"
 }
