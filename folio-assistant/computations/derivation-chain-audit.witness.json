@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T21:08:26.401470+00:00",
-  "commitSha": "f0a323f31ca86f3bb8cda3a65778deacc29ebdda",
+  "computedAt": "2026-05-23T10:15:23.017878+00:00",
+  "commitSha": "ce4e4f7334beb1198b2db879971f39c6e183fb33",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "50f22c2d8cdca1c283333c9c1576621005a43021",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2120,6 +2120,7 @@
         "c3-categorical-consistency-check.witness.json",
         "c3-taylor-extraction.witness.json",
         "cal-3-q-beta.witness.json",
+        "cal4-disguise-hunt.witness.json",
         "canonical-a-k-magnitude-audit.witness.json",
         "canonical-braid-interface-composition.witness.json",
         "canonical-chi-rust-vs-sympy.witness.json",
@@ -2341,6 +2342,7 @@
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
         "factor-2-normalization-trace.witness.json",
+        "faddeev-pentagon-operator-spike.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
         "fitted-labelled-canonical-audit.witness.json",
@@ -2533,6 +2535,7 @@
         "per-wedderburn-block-ck.witness.json",
         "phase2-m-e-hecke-diagnostic.witness.json",
         "phase3-triton-binding-convention-b.witness.json",
+        "phi-q-functional-eq-spike.witness.json",
         "photon-operator-table.witness.json",
         "picard-lefschetz-standard-practice-refactor.witness.json",
         "picard-lefschetz-thimble.witness.json",
@@ -2632,6 +2635,7 @@
         "q-beta-two-wrap-nf.witness.json",
         "q-beta-v2-cos-compose.witness.json",
         "q-dilog-tower-spike-lambda-scale.witness.json",
+        "q-dilog-vhat-spike-lambda-scale.witness.json",
         "q-edgeworth-delta-coupling-probe.witness.json",
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",

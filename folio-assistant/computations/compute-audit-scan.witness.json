@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-22T21:08:25.007965+00:00",
-  "commitSha": "f0a323f31ca86f3bb8cda3a65778deacc29ebdda",
+  "computedAt": "2026-05-23T10:15:22.416719+00:00",
+  "commitSha": "ce4e4f7334beb1198b2db879971f39c6e183fb33",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
-  "scriptCommitSha": "50f22c2d8cdca1c283333c9c1576621005a43021",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 681,
+    "files_scanned": 685,
     "patterns": [
       "P15",
       "P16",
@@ -27,7 +27,7 @@
       "P15": 174,
       "P16": 164,
       "P21": 32,
-      "P30": 94,
+      "P30": 93,
       "P31": 24
     },
     "top_files": [
@@ -155,13 +155,6 @@
       }
     ],
     "findings": [
-      {
-        "pattern": "P30",
-        "file": "_prefix_cache.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
       {
         "pattern": "P30",
         "file": "adjacent_vs_full_probe.py",
