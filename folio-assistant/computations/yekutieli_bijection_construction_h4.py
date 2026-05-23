@@ -25,8 +25,8 @@ Refs:
 """
 from __future__ import annotations
 
-import json
 import sys
+import time
 from pathlib import Path
 
 import mpmath as mp
@@ -127,6 +127,7 @@ def evaluate_partition_h2_numerical(partition: str) -> mp.mpf:
 
 
 def main() -> int:
+    t_start = time.monotonic()
     print("=" * 90)
     print("Yekutieli per-cell bijection construction at H_4")
     print("=" * 90)
@@ -255,9 +256,12 @@ def main() -> int:
     print("step; the audit needs to clarify Π_HS precisely OR derive the")
     print("curvature-2-form integration step.")
 
-    # Emit witness with the empirical numerics + verdict
     w = WitnessBuilder(
-        "yekutieli-bijection-construction-h4", engine="mpmath"
+        "yekutieli-bijection-construction-h4", engine="mpmath",
+        start_time=t_start,
+    )
+    w.set_audit_only(
+        "docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md"
     )
     w.set_description(
         "NEGATIVE RESULT — explicit cell↔partition bijection construction "

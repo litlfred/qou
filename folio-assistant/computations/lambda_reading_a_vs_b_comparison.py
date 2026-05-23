@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from pathlib import Path
 
 import mpmath as mp
@@ -65,6 +66,7 @@ M_AVG_CODATA = (M_P_CODATA + M_N_CODATA) / 2
 
 
 def main() -> int:
+    t_start = time.monotonic()
     # Three λ readings + closure-target
     lam_family_a = mp.mpf(5) / 2 + mp.mpf(3) * H ** 2 / 4
     lam_reading_a = mp.mpf(5) / 2 - G * H ** 2
@@ -151,9 +153,9 @@ def main() -> int:
     print("  So Reading A's κ = -G matches the required value to within ~0.07 %.")
     print("  Reading B's κ = 3/4 − G ≈ −0.166 is 5.5x off in magnitude.")
 
-    # Witness emission
     w = WitnessBuilder(
-        "lambda-reading-a-vs-b-comparison", engine="mpmath"
+        "lambda-reading-a-vs-b-comparison", engine="mpmath",
+        start_time=t_start,
     )
     w.set_description(
         "Empirical h²-truncated comparison of Yekutieli Reading A "
@@ -167,7 +169,7 @@ def main() -> int:
         "the audit's choice of Reading B over Reading A (per "
         "2026-05-23 user direction 'add not replace') is a structural "
         "preference (canonical Wedderburn theorem must contribute) "
-        "at the cost of numerical fit (Reading A is ~16x better).  "
+        "at the cost of numerical fit (Reading A is ~2400x better).  "
         "Research-grade comparison only — NOT a production replacement."
     )
     w.set_content_block("conj:lambda-scale-bring-bloch-identity")

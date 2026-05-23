@@ -1,25 +1,25 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-23T19:33:33.721414+00:00",
-  "commitSha": "05771b5a7e63e4903ac71ac6ebd6630b0fd2c781",
+  "computedAt": "2026-05-23T19:53:18.846765+00:00",
+  "commitSha": "7be72f023f35949a559c10e6168fe48f5656d7ac",
   "assertions": [
     {
       "name": "reading_a_c2_disagrees_with_closure_c2",
       "computed": 6936.695090935392,
-      "expected": 100.0,
+      "expected": 6900.0,
       "passed": true,
-      "tolerance": 10000.0,
+      "tolerance": 1000.0,
       "unit": "percent disagreement",
-      "source": "closure c_2 vs Reading A c_2 = -G"
+      "source": "closure c_2 vs Reading A c_2 = -G; must be > 1000% to confirm structural mismatch"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 15,
   "computation": "lambda-reading-a-h4-sweep-test",
   "scriptFile": "lambda_reading_a_h4_sweep_test.py",
-  "scriptHash": "dc8fa6629555",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2bb6baa85ee2",
+  "scriptCommitSha": "8dc8b9580584287449d057ca0836967505e5055b",
   "description": "Tests whether Reading A (λ = 5/2 − G·h²) matches the closure-target (M_PE·ℏ_q²/(8G)) across a q sweep, or only at q_0. Result: Reading A and closure-target DIFFER STRUCTURALLY — closure has c_0=0 and c_2 = M_PE/(32G) ≈ 62.6; Reading A has c_0=5/2 and c_2 = −G ≈ −0.916. They intersect near q_0 by happy coincidence, NOT because Reading A is the categorical h² truncation of the closure-target. The 5.6 ppm match at q_0 is a substrate-q_0 coincidence; Reading A is not a categorical identity.",
   "contentBlock": "conj:lambda-scale-bring-bloch-identity",
   "parameters": {

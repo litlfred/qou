@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-23T13:22:25.797678+00:00",
-  "commitSha": "6735a4d8c811bffa5cc687838e86e51942bce074",
+  "computedAt": "2026-05-23T19:53:18.741699+00:00",
+  "commitSha": "7be72f023f35949a559c10e6168fe48f5656d7ac",
   "assertions": [
     {
       "name": "reading_a_dramatically_better_than_reading_b",
@@ -24,12 +24,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 15,
   "computation": "lambda-reading-a-vs-b-comparison",
   "scriptFile": "lambda_reading_a_vs_b_comparison.py",
-  "scriptHash": "4138919f2e87",
-  "scriptCommitSha": "unknown",
-  "description": "Empirical h²-truncated comparison of Yekutieli Reading A (λ = 5/2 − G·h², 'replace') vs Reading B (λ = 5/2 + (3/4 − G)·h², 'add') vs Family A canonical (λ = 5/2 + (3/4)·h²) vs the closure-target (λ_p_codata = M_PE·ℏ_q²/(8G)).  Finding: Reading A matches CODATA to ~0.07 % at q_0; Reading B leaves the 1.26 % gap; Family A leaves the 2.89 % gap.  Per docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md §Addendum 2: the audit's choice of Reading B over Reading A (per 2026-05-23 user direction 'add not replace') is a structural preference (canonical Wedderburn theorem must contribute) at the cost of numerical fit (Reading A is ~16x better).  Research-grade comparison only — NOT a production replacement.",
+  "scriptHash": "c1b90093a8c7",
+  "scriptCommitSha": "18331a54a1c6db2df02f465d3cb0b3bf8164757c",
+  "description": "Empirical h²-truncated comparison of Yekutieli Reading A (λ = 5/2 − G·h², 'replace') vs Reading B (λ = 5/2 + (3/4 − G)·h², 'add') vs Family A canonical (λ = 5/2 + (3/4)·h²) vs the closure-target (λ_p_codata = M_PE·ℏ_q²/(8G)).  Finding: Reading A matches CODATA to ~0.07 % at q_0; Reading B leaves the 1.26 % gap; Family A leaves the 2.89 % gap.  Per docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md §Addendum 2: the audit's choice of Reading B over Reading A (per 2026-05-23 user direction 'add not replace') is a structural preference (canonical Wedderburn theorem must contribute) at the cost of numerical fit (Reading A is ~2400x better).  Research-grade comparison only — NOT a production replacement.",
   "contentBlock": "conj:lambda-scale-bring-bloch-identity",
   "parameters": {
     "derivation_status": "RESEARCH_COMPARISON_READING_A_VS_B",
