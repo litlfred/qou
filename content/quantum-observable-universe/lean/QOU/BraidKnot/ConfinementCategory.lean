@@ -30,7 +30,7 @@ need for them.
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-- **Atomic confinement move.** A single generator of the
     confinement category — unfolding, folding, or dressing. The

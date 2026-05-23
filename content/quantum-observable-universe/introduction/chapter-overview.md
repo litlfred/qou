@@ -154,7 +154,7 @@ where $c_q$ is the information speed of light — $E = mc^2$
 derived from the categorical structure.
 
 **Part III: The Descartes Universe and Observations.**
-[Chapter 9](#chap\:descartes-universe) maps the genus-$4$ constraint
+[Chapter 9](#chap\:archimedean-universe) maps the genus-$4$ constraint
 to Bring's surface $\Sigma_4$, a complex curve with Euler
 characteristic $-6$ and maximal automorphisms ($S_5$).  This
 surface serves as the foundational state space: its coral tubes —

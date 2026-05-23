@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.HalfLifeVerification — Observed vs predicted beta-decay half-lives
+# QOU.Archimedean.HalfLifeVerification — Observed vs predicted beta-decay half-lives
 
 Six representative beta emitters compared against QOU predictions derived
 from the q-deformed Fermi golden rule (prop:hadron-half-life) with
@@ -31,7 +31,7 @@ See `GroundRingAnnotations.lean`.
 
 import Mathlib.Data.Real.Basic
 
-namespace QOU.Descartes.HalfLifeVerification
+namespace QOU.Archimedean.HalfLifeVerification
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Unit conversions
@@ -550,4 +550,4 @@ noncomputable def sensitivity : ℝ := 48.2
 theorem sensitivity_large : 40 < sensitivity := by
   unfold sensitivity; norm_num
 
-end QOU.Descartes.HalfLifeVerification
+end QOU.Archimedean.HalfLifeVerification

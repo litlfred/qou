@@ -1,4 +1,4 @@
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.GroundRing
 
 /-!
 # The e⁻ (trefoil) NF coefficient of B₃ is exactly zero
@@ -37,7 +37,7 @@ eliminate e⁻:
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  The NF of σ₀σ₁⁻¹ -/
 

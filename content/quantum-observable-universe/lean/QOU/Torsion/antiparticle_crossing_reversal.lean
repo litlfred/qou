@@ -62,7 +62,7 @@ $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts
+-- Ref: [manuscript] quantum-observable-universe/archimedean-universe/antiparticle-crossing-reversal.ts
 theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] :
     (ctx.β_anti = ctx.mirror ctx.β_hadron ∧
      ∀ b : ctx.Braid, ctx.mirror (ctx.mirror b) = b) ∧

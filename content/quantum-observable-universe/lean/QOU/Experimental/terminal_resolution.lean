@@ -41,7 +41,7 @@ Using the derived $q_0$, the hadronic mass collapses into a linear combination o
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/terminal-resolution.ts
+-- Ref: [manuscript] quantum-observable-universe/archimedean-universe/terminal-resolution.ts
 theorem terminal_resolution [ctx : TerminalResolutionContext] :
     ctx.mass = ctx.m_nu_drag + ctx.E_strong ∧
     |ctx.mass - ctx.mass_codata| ≤ ctx.tol :=

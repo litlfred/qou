@@ -13,7 +13,7 @@ export default definition({
     "normal-form",
     "staircase",
   ],
-  lean: { ref: "qou:QOU.Descartes.TypedGarsideElement",
+  lean: { ref: "qou:QOU.Archimedean.TypedGarsideElement",
     validation: "not_checked",
   },
   uses: [

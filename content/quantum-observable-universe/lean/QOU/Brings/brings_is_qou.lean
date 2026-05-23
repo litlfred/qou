@@ -61,7 +61,7 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-is-qou.ts
+-- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-is-qou.ts
 theorem brings_is_qou [ctx : BringsIsQouContext] :
     ctx.quantum_group_arity = 2 ∧
     ctx.hom_one_to_ad_A_dim = 0 ∧

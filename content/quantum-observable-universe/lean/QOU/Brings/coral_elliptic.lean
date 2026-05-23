@@ -44,7 +44,7 @@ each fixed $z$ to the cubic
     upgrading requires choosing the appropriate Lean types (Polynomial /
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/coral-elliptic.ts
+-- Ref: [manuscript] quantum-observable-universe/archimedean-universe/coral-elliptic.ts
 theorem coral_elliptic [ctx : CoralEllipticContext] :
     ctx.X ^ 3 + (ctx.z + 1) * ctx.X ^ 2 +
       (ctx.z ^ 2 + ctx.z + 1) * ctx.X +

@@ -12,7 +12,7 @@ export default proposition({
     "generator-volume",
     "ratio",
   ],
-  lean: { ref: "qou:QOU.Descartes.trace_ratio_observable",
+  lean: { ref: "qou:QOU.Archimedean.trace_ratio_observable",
     validation: "not_checked",
   },
   uses: ["thm:markov-trace-factorization"],

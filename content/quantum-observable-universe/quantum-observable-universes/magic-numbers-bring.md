@@ -75,7 +75,7 @@ Bring's curve is the unique (up to isomorphism) genus-$4$ curve
 with $S_5 \cong \mathrm{Aut}(\mathcal{B})$ acting maximally
 \cite{klein1888}. The QOU substrate identifies Bring's surface
 as the $\chi = -6$ profile of the brane base
-([`prop:brings-is-qou`](../descartes-universe/brings-is-qou.md));
+([`prop:brings-is-qou`](../archimedean-universe/brings-is-qou.md));
 $S_5$ is therefore the **categorical symmetry group** of the
 substrate. Magic numbers as $S_5$-stable lattice ranks is the
 algebraic statement that nuclear shell closure is an

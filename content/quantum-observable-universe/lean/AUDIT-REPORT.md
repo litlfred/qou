@@ -109,7 +109,7 @@ fail content validation:
 | particle-interactions | 26 | HIGH -- 1 def + 24 props |
 | molecular-construction | 14 | HIGH -- entirely unformalised |
 | braids-and-knots | 12 | MEDIUM -- 4 defs |
-| descartes-universe | 9 | MEDIUM |
+| archimedean-universe | 9 | MEDIUM |
 | information-theory | 6 | LOW |
 | appendix-nf-witnesses | 3 | LOW -- 3 defs |
 | algebraic-substrate | 3 | LOW |

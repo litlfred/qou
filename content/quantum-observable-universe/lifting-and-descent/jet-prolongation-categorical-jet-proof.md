@@ -30,4 +30,4 @@ main theorem of [fred2005], which constructs $\mathrm{Dist}(G)$
 as a Gröbner--Shirshov deformation of the commutative
 $\mathrm{Dist}(H)$ and verifies the Frobenius relation at each stage
 (see also [skew poisson integration](#prop:skew-poisson-integration) in
-[Chapter](#chap:descartes-universe)).  $\square$
+[Chapter](#chap:archimedean-universe)).  $\square$

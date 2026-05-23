@@ -9,7 +9,7 @@
   ⚠ [braiding-induced-ordering]: Undefined cross-reference(s) in .md: def:admissible-system
   ⚠ [frobenius-integration]: Undefined cross-reference(s) in .md: eq:categorical-volume-constraint
   ⚠ [yekutieli-stokes-remark]: Undefined cross-reference(s) in .md: eq:categorical-volume-constraint
-  ⚠ [base-field-independence]: Undefined cross-reference(s) in .md: chap:descartes-universe
+  ⚠ [base-field-independence]: Undefined cross-reference(s) in .md: chap:archimedean-universe
   ⚠ [pawlowski-leitner-basis]: Undefined cross-reference(s) in .md: cor:pbw
   ⚠ [projective-line-object]: Undefined cross-reference(s) in .md: rem:scheme-notation
   ⚠ [fibre-functor-atlas]: prop:fibre-functor-atlas: no Lean declaration yet
@@ -27,13 +27,13 @@
   ⚠ [j1e-local-states]: Undefined cross-reference(s) in .md: lem:irreducible-connection
   ⚠ [schrodinger-jet-coaction]: Undefined cross-reference(s) in .md: rem:linearisation-convention
   ⚠ [reeb-primes-as-orbits]: Undefined cross-reference(s) in .md: chap:algebraic-substrate
-  ⚠ [direct-limit-lusztig]: Undefined cross-reference(s) in .md: eq:q-exp, chap:descartes-universe
+  ⚠ [direct-limit-lusztig]: Undefined cross-reference(s) in .md: eq:q-exp, chap:archimedean-universe
   ⚠ [ordering-jet-compatibility]: prop:ordering-jet-compatibility: no Lean declaration yet
   ⚠ [ordering-jet-compatibility]: Undefined cross-reference(s) in .md: def:admissible-system
   ⚠ [categorical-braiding-intro]: Undefined cross-reference(s) in .md: chap:models-qou
-  ⚠ [braid-base-field]: Undefined cross-reference(s) in .md: chap:descartes-universe, chap:descartes-universe
+  ⚠ [braid-base-field]: Undefined cross-reference(s) in .md: chap:archimedean-universe, chap:archimedean-universe
   ✗ [hecke-normal-form]: Definition "def:hecke-normal-form" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/braids-and-knots/hecke-normal-form.lean or lean.file
-  ⚠ [feynman-eigenbasis]: Undefined cross-reference(s) in .md: chap:descartes-universe
+  ⚠ [feynman-eigenbasis]: Undefined cross-reference(s) in .md: chap:archimedean-universe
   ⚠ [enveloping-algebra]: Undefined cross-reference(s) in .md: chap:torsion
   ⚠ [hecke-markov-transition]: Undefined cross-reference(s) in .md: chap:physical-observations
   ⚠ [topological-mass-formula]: Undefined cross-reference(s) in .md: sec:small-scale
@@ -50,7 +50,7 @@
   ✗ [algebraic-quantum-volume]: Definition "def:algebraic-quantum-volume" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.lean or lean.file
   ⚠ [algebraic-quantum-volume-specialization]: prop:algebraic-volume-specialization: no Lean declaration yet
   ⚠ [mass-endomorphism-tower]: Undefined cross-reference(s) in .md: def:quantum-bloch-group, prop:atomic-braid-mass
-  ⚠ [c-substrate-via-levi]: Undefined cross-reference(s) in .md: def:instanton, chap:descartes-universe
+  ⚠ [c-substrate-via-levi]: Undefined cross-reference(s) in .md: def:instanton, chap:archimedean-universe
   ⚠ [categorical-reformulation]: Undefined cross-reference(s) in .md: chap:qou
   ⚠ [p-adic-realisation]: Undefined cross-reference(s) in .md: lem:irreducible-connection
   ⚠ [jones-polynomials]: Undefined cross-reference(s) in .md: chap:path-integrals-braiding
@@ -101,10 +101,10 @@
   ⚠ [photon-threading-mass]: Undefined cross-reference(s) in .md: ex:mass-identity-C, rem:groebner-shirshov-energy
   ⚠ [toffoli-transfer-matrix]: prop:toffoli-transfer-matrix: no Lean declaration yet
   ⚠ [p-bandwidth-bound]: prop:p-bandwidth-bound: no Lean declaration yet
-  ⚠ [brings-physics-interpretations]: Undefined cross-reference(s) in .md: chap:descartes-universe
+  ⚠ [brings-physics-interpretations]: Undefined cross-reference(s) in .md: chap:archimedean-universe
   ⚠ [color-tube-constraints]: Undefined cross-reference(s) in .md: eq:z-from-SD
-  ⚠ [descartes-leptons]: Undefined cross-reference(s) in .md: def:fermion
-  ⚠ [descartes-chirality]: Undefined cross-reference(s) in .md: def:fermion, def:boson
+  ⚠ [archimedean-leptons]: Undefined cross-reference(s) in .md: def:fermion
+  ⚠ [archimedean-chirality]: Undefined cross-reference(s) in .md: def:fermion, def:boson
   ⚠ [breit-wheeler-pair-production]: Undefined cross-reference(s) in .md: rem:photon-knot-operations, rem:photon-knot-operations
   ⚠ [knot-operator-selection]: prop:knot-operator-selection: no Lean declaration yet
   ⚠ [frobenius-gram-matrix]: prop:frobenius-gram-matrix: no Lean declaration yet

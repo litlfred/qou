@@ -65,7 +65,7 @@ export default paper({
       partTitle: "Knots, Braids, and Particles",
     }),                                                       // Braids, knots, Hecke, classical-limit machinery
     chapterRef({ dir: "models-of-qous" }),                    // Models of QOUs — the archimedean wall (Calabi-Yau, ALE, SW)
-    chapterRef({ dir: "descartes-universe" }),                // Bring's surface, χ = −6, fundamental particles (incl. cohomological defect)
+    chapterRef({ dir: "archimedean-universe" }),                // Bring's surface, χ = −6, fundamental particles (incl. cohomological defect)
     chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
     chapterRef({ dir: "observations" }),                      // Physical observations / CODATA
     chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂ → benzene

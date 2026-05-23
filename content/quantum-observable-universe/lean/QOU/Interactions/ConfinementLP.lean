@@ -1,5 +1,5 @@
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.HeckeH3
+import QOU.Archimedean.GroundRing
 import QOU.Interactions.BorromeanUnique
 import QOU.Interactions.GramIndefinite
 
@@ -20,7 +20,7 @@ for confinement. The topological (Borromean) constraint is independent.
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  Markov trace on the NF basis -/
 

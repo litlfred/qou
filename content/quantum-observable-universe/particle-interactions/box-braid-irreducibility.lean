@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.BoxBraidIrreducibility — The γγ → νν̄ box braid is irreducible
+# QOU.Archimedean.BoxBraidIrreducibility — The γγ → νν̄ box braid is irreducible
 
 The process γγ → νν̄ requires the T_{3,5} torus knot topology
 (weak mediator). The crossing number c(T_{3,5}) = 10 is a
@@ -17,7 +17,7 @@ import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A torus knot T(m,n) with coprime winding numbers. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
@@ -123,4 +123,4 @@ theorem neutrino_energy_barrier (q : ℝ) (hq : 1 < q)
 noncomputable def BoxBraidIrreducibility : Prop :=
   T35.crossingNumber = 10
 
-end QOU.Descartes
+end QOU.Archimedean

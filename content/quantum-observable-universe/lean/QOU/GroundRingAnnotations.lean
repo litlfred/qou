@@ -90,7 +90,7 @@ are commented out — they are archimedean and not meaningful over `R_q`.
 
 Directories: `quantum-observable-universes/`, `quantum-universes/`,
 `models-of-qous/`, `lifting-and-descent/`, `braids-and-knots/`,
-`descartes-universe/` (algebraic stubs), `algebraic-substrate/`,
+`archimedean-universe/` (algebraic stubs), `algebraic-substrate/`,
 `information-theory/` (bounds).
 
 ### Archimedean stubs (ℝ)
@@ -99,7 +99,7 @@ Stubs that evaluate formal results at `q₀ ≈ 1.1098` for comparison
 with experimental data.  These use `ℝ` and are NOT part of the
 formal proof chain.
 
-Directories: `observations/`, `glossary/`, `descartes-universe/`
+Directories: `observations/`, `glossary/`, `archimedean-universe/`
 (mass predictions), some `information-theory/` files.
 
 ### Geometric/analytic stubs (ℝ)
@@ -118,7 +118,7 @@ Includes: `exceptional-divisor`, `descartes-elliptic-curve`,
 | `quantum-universes/` | `R_q` | Foundational structures (Ch 1) |
 | `models-of-qous/` | `R_q` or `ℝ` | Categorical models (Ch 3) |
 | `braids-and-knots/` | `R_q` or `ℝ` | Braid/knot algebra (Ch 4) |
-| `descartes-universe/` | `R_q` or `ℝ` | Particles (R_q), mass predictions (ℝ) |
+| `archimedean-universe/` | `R_q` or `ℝ` | Particles (R_q), mass predictions (ℝ) |
 | `lifting-and-descent/` | `R_q` or `ℝ` | Categorical lifting (Ch 6) |
 | `algebraic-substrate/` | `R_q` or `ℝ` | q-analytic number theory |
 | `observations/` | `ℝ` | Archimedean realisation (Ch 7) |

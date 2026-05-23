@@ -1,5 +1,5 @@
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.HeckeH3
+import QOU.Archimedean.GroundRing
 import QOU.Interactions.BorromeanUnique
 
 /-!
@@ -127,7 +127,7 @@ All variables are symbolic: q appears only through z and HA.
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  Product reductions for Hopf links -/
 

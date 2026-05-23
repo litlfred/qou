@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.eos_borromean_cfl
+# QOU.Archimedean.eos_borromean_cfl
 
 Equation of state for Borromean (confined) and CFL (superconducting)
 phases.  The key result: the CFL phase is ~2300× stiffer because
@@ -21,7 +21,7 @@ import Mathlib.Data.Real.Basic
 
 noncomputable section
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Borromean volume (8 × Catalan's constant). -/
 -- Ref: [thurston1978]
@@ -114,6 +114,6 @@ theorem cs_borromean_nonrelativistic (q : ℝ) (E_F : ℝ)
 -- The physical content is that M_D is small enough to reach
 -- the conformal limit at achievable densities.
 
-end QOU.Descartes
+end QOU.Archimedean
 
 end

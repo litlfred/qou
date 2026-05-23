@@ -4229,7 +4229,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1999]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/9911033",
-    note: "arXiv:math/9911033. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (descartes-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.",
+    note: "arXiv:math/9911033. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (archimedean-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.",
   }),
 
   // ── Thurston — Princeton notes on 3-manifold geometry/topology ─

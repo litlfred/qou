@@ -1,4 +1,4 @@
--- Ref: [leitner2026] §7/descartes-universe (Pauli witness computation)
+-- Ref: [leitner2026] §7/archimedean-universe (Pauli witness computation)
 -- Pauli witness for ¹²C (Z=6, N=6, A=12), exact in q
 -- Full formalization: QOU/Descartes/PauliWitness/witness-12c.lean
 
@@ -6,5 +6,5 @@
 -- Gröbner NF: 479.6M terms collapsing to 12 after I₈ + I₉ quotient
 -- Computed by hecke-engine 0.8.0
 
--- See QOU.Descartes.PauliWitness.tr_alt_12c for the exact Laurent polynomial.
--- See QOU.Descartes.PauliWitness.net_12c for the net polynomial.
+-- See QOU.Archimedean.PauliWitness.tr_alt_12c for the exact Laurent polynomial.
+-- See QOU.Archimedean.PauliWitness.net_12c for the net polynomial.

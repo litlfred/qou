@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.beta_decay_transfer_matrix
+# QOU.Archimedean.beta_decay_transfer_matrix
 
 Beta decay is a universal 2×2 matrix-valued polynomial in q.
 The two elementary decay matrices (nn→mix and mix→pp) are IDENTICAL:
@@ -20,7 +20,7 @@ LaTeX label: `prop:beta-decay-transfer-matrix`
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- A 2×2 transfer matrix (entries are polynomials in q). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
@@ -189,4 +189,4 @@ theorem daughter_volumes_smaller :
   unfold V_par_sigma0 V_dau_sigma0 V_par_sigma1 V_dau_sigma1
   constructor <;> norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

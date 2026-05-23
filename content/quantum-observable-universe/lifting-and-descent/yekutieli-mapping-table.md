@@ -48,11 +48,11 @@ $\mathrm{SU}_q(2)$ gauge flow
   & Pronilpotent deformation of the coordinate algebra
   & \cite[\S2]{yekutieli2008} \\[6pt]
 Descartes condition $\chi(\mathcal{S}) = -6$
-  (\hyperref[def:descartes-condition]{Def.~\ref*{def:descartes-condition}};
+  (\hyperref[def:archimedean-condition]{Def.~\ref*{def:archimedean-condition}};
   authoritative statement and proof in
-  \hyperref[chap:descartes-universe]{Chapter~\ref*{chap:descartes-universe}})
+  \hyperref[chap:archimedean-universe]{Chapter~\ref*{chap:archimedean-universe}})
   & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)
-  & \cite{yekutieli2010}; Ex.~\ref{ex:descartes-yekutieli} \\[6pt]
+  & \cite{yekutieli2010}; Ex.~\ref{ex:archimedean-yekutieli} \\[6pt]
 Cosimplicial crossed groupoid
   (Prop.~\ref{prop:cosimplicial-crossed-groupoid})
   & Cosimplicial object in crossed groupoids; \v{C}ech nerve of a gerbe

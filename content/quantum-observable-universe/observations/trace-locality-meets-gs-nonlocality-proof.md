@@ -14,7 +14,7 @@ The Markov property *is* the locality statement. $\square$ for (1).
 **(2) GS non-locality.** Part (2) is a structural observation about
 the Gröbner–Shirshov reduction algorithm on the Hecke algebra
 (established QOU infrastructure, e.g.
-`QOU.Hecke.MarkovTrace`, `QOU.Descartes.HeckeRep`). The algorithm
+`QOU.Hecke.MarkovTrace`, `QOU.Archimedean.HeckeRep`). The algorithm
 applies three rewriting rules:
 
 - *Hecke quadratic relation:*

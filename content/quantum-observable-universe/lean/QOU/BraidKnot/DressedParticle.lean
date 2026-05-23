@@ -19,7 +19,7 @@ general invertible.
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-- **Dressed particle.** Codomain of a dressing morphism; carries
     a bare-particle core, an electron shell, and the composite

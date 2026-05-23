@@ -1,5 +1,5 @@
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.HeckeRep
+import QOU.Archimedean.GroundRing
 import QOU.Interactions.ConfinementSDP
 
 /-!
@@ -18,7 +18,7 @@ separate SDP-feasibility predicate tied to `QOU.Interactions.ConfinementSDP`.
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-- **Markov class.** Equivalence class of closed braids under
     Markov moves, represented canonically by its Gröbner–Shirshov

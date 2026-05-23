@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.strangelet_double_beta
+# QOU.Archimedean.strangelet_double_beta
 
 Strangelet interactions descend from the degree-2 fiber via double beta
 decay.  The Skein crossing-change amplitude s = q^{1/2} − q^{−1/2}
@@ -20,7 +20,7 @@ See `GroundRingAnnotations.lean`.
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The Skein amplitude for a single crossing change:
     s(q) = q^{1/2} − q^{−1/2}. -/
@@ -74,4 +74,4 @@ theorem descent_path :
   unfold cinquefoil_crossings figure_eight_crossings trefoil_crossings
   omega
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -12,7 +12,7 @@
 import Mathlib.GroupTheory.PresentedGroup
 import Mathlib.RingTheory.HeckeAlgebra
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- Nucleon type: proton or neutron. -/
 inductive NucleonType where
@@ -72,4 +72,4 @@ theorem pure_proton_garside_is_standard
   -- Ref: [manuscript] Definition def:typed-garside-element
   trivial
 
-end QOU.Descartes
+end QOU.Archimedean

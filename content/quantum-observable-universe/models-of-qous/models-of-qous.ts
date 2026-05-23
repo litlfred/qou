@@ -148,7 +148,7 @@ export default chapter({
     // and the NS obstruction lives in fluid-dynamics/.
 
     // ═══════════════════════════════════════════════════════════════════
-    // PART B lives in descartes-universe/ (same chapter number 5).
+    // PART B lives in archimedean-universe/ (same chapter number 5).
     // The pipeline resolves blocks from that directory's own manifest.
     // ═══════════════════════════════════════════════════════════════════
   ],

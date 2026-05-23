@@ -1,7 +1,7 @@
 import QOU.BraidKnot.ConfinedParticle
 import QOU.BraidKnot.ConfinementCategory
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.HeckeRep
+import QOU.Archimedean.HeckeH3
 import QOU.Interactions.ConfinementLP
 
 /-!
@@ -26,7 +26,7 @@ deeper level (quark-level) only when `k_max > n` forces it
 
 namespace QOU.BraidKnot
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-- Witnessed partition truncation `k_max(P, q)` of the confinement
     SDP at `(P, q)` — the largest Wedderburn block `λ ⊢ k` with

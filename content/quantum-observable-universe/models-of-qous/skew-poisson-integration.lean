@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.skew_poisson_integration
+# QOU.Archimedean.skew_poisson_integration
 
 Integration of skewed-Poisson structures: given a smooth commutative
 formal group H/𝔽_p with skewed-Poisson structure π_<, there exists a
@@ -16,7 +16,7 @@ import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 import Mathlib.RingTheory.Ideal.Basic
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- **Skew-Poisson integration data**: the algebraic structure encoding
     the deformation of a commutative formal group H over 𝔽_p to a
@@ -95,4 +95,4 @@ theorem formal_group_dim_from_genus (g : ℕ) (hg : g = 4) :
     2 * g = 8 := by
   subst hg; norm_num
 
-end QOU.Descartes
+end QOU.Archimedean

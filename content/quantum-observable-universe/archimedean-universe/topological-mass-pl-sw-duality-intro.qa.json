@@ -1,0 +1,71 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "sec:topological-mass-pl-sw-duality-preamble",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/archimedean-universe/topological-mass-pl-sw-duality-intro.ts",
+    "md": "content/quantum-observable-universe/archimedean-universe/topological-mass-pl-sw-duality-intro.md"
+  },
+  "source_hashes": {
+    "md": "8f31ceea5539",
+    "ts": "da6af3b38cec"
+  },
+  "criteria": {
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "8f31ceea5539",
+          "ts": "da6af3b38cec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
+        },
+        "reviewed_at": "2026-05-23T10:04:52.664Z",
+        "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "8f31ceea5539",
+          "ts": "da6af3b38cec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
+        },
+        "reviewed_at": "2026-05-23T10:04:52.664Z",
+        "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "8f31ceea5539",
+          "ts": "da6af3b38cec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
+        },
+        "reviewed_at": "2026-05-23T10:04:52.664Z",
+        "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-05-23T10:04:52.664Z"
+}

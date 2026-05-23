@@ -2,7 +2,7 @@
 # QOU.orbital_fourier_decomposition — placeholder stub
 
 **Placeholder canonical** for content block at
-[`quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts`](quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts).
+[`quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts`](quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts).
 
 The full Lean statement is pending; this stub exists so the
 `lean.ref` URI `qou:QOU.orbital_fourier_decomposition` resolves to a real declaration in the `qou`
@@ -115,7 +115,7 @@ $$
     The Lean encoding below is a `theorem foo [ctx] : ctx.claim_orbital_fourier_decomposition := by sorry`
     placeholder; the `ctx.claim_orbital_fourier_decomposition : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts
+-- Ref: [manuscript] quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts
 theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] :
     ctx.k = 2 * (ctx.n - 1 : ℤ) ∧ ctx.ℓ < ctx.n ∧
     -(ctx.ℓ : ℤ) ≤ ctx.m ∧ ctx.m ≤ (ctx.ℓ : ℤ) ∧

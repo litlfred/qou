@@ -1,5 +1,5 @@
 /-!
-# QOU.Descartes.trace_ratio_observable
+# QOU.Archimedean.trace_ratio_observable
 
 The physical observable: ratio of Markov-traced generator volumes.
 The beta-decay matrix element squared is proportional to the product
@@ -19,7 +19,7 @@ See `GroundRingAnnotations.lean`.
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset
 
-namespace QOU.Descartes
+namespace QOU.Archimedean
 
 /-- The Markov-traced generator volume at generator σ_i:
     V̂_i = z · a_i + b_i, where z is the Markov parameter and
@@ -78,4 +78,4 @@ theorem trace_ratio_observable (q : ℝ) (hq : 1 < q)
   apply this
   exact Nat.lt_of_lt_of_le (by omega : p < p + 1) (Finset.mem_Ico.mp hi).1
 
-end QOU.Descartes
+end QOU.Archimedean

@@ -207,7 +207,7 @@ export function checkDoesNotDefaultToFloat(
 /**
  * Archimedean-realization functions that should NOT appear in
  * categorical / algebraic / substrate-precision code paths.
- * Per CLAUDE.md §7c, these belong in `descartes-universe/` or
+ * Per CLAUDE.md §7c, these belong in `archimedean-universe/` or
  * `observations/` archimedean-specialised modules, not in the
  * generic-R compute layer.
  *
@@ -248,7 +248,7 @@ export function checkRespectsArchimedeanWall(
           `archimedean call \`${m[0]}\` — use the mpmath equivalent ` +
           `(\`mp.${m[0].split(".")[1]}\`) for substrate-precision ` +
           `values, or move this code to an archimedean-realization ` +
-          `module under \`descartes-universe/\` / \`observations/\``,
+          `module under \`archimedean-universe/\` / \`observations/\``,
       });
     }
     for (const m of lines[i].matchAll(NUMPY_FLOAT64_RE)) {

@@ -1,4 +1,4 @@
--- Ref: [leitner2026] §7/descartes-universe (Pauli witness computation)
+-- Ref: [leitner2026] §7/archimedean-universe (Pauli witness computation)
 -- Pauli witness for ⁴He (Z=2, N=2, A=4), exact in q
 -- Full formalization: QOU/Descartes/PauliWitness/witness-4he.lean
 
@@ -8,5 +8,5 @@
 -- Denominator: 2⁴ = 16
 -- Computed by hecke-engine 0.8.0
 
--- See QOU.Descartes.PauliWitness.tr_alt_4he for the exact Laurent polynomial.
--- See QOU.Descartes.PauliWitness.net_4he for the net polynomial.
+-- See QOU.Archimedean.PauliWitness.tr_alt_4he for the exact Laurent polynomial.
+-- See QOU.Archimedean.PauliWitness.net_4he for the net polynomial.

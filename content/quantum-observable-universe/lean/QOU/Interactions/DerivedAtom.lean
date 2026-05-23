@@ -1,5 +1,5 @@
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
+import QOU.Archimedean.HeckeRep
+import QOU.Archimedean.GroundRing
 
 /-!
 # Derived atom construction A(Z, N)
@@ -19,7 +19,7 @@ is independent of photon polarization parameters.
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  Nucleon and crossing types -/
 

@@ -1,5 +1,5 @@
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.HeckeH3
+import QOU.Archimedean.HeckeRep
+import QOU.Archimedean.HeckeH3
 import QOU.Interactions.BorromeanUnique
 
 /-!
@@ -20,7 +20,7 @@ distinct regimes. L₊ ≠ L₋ is proved symbolically.
 
 namespace QOU.Interactions
 
-open QOU.Descartes
+open QOU.Archimedean
 
 /-! ## §1  The three binding regimes -/
 
