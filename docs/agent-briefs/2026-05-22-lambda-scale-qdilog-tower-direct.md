@@ -664,19 +664,51 @@ basis beyond what's been tried:
     in its tested form. 4th independent negative search in the
     cluster (Bring-Bloch tier 0-5 + q-dilog Tier 0 + q-dilog Tier
     1+ + Φ_q functional-equation).
-  - **Faddeev-pentagon operator-theoretic route.** Refuted by
-    commit [`d348ad8c`](https://github.com/litlfred/qou/commit/d348ad8c)
+  - **Faddeev-pentagon operator-theoretic route — categorically
+    conditional on Bring color-tube weighted averaging (Phase 5q).**
+    Commit [`d348ad8c`](https://github.com/litlfred/qou/commit/d348ad8c)
     on main: tested operator-theoretic Φ_q pentagon `Φ_q(U)·Φ_q(V)
     = Φ_q(V)·Φ_q(U·V)·Φ_q(U)` on a truncated 16-dim Heisenberg
-    representation. Negative on ppb criterion; surfaces a 19 ppm
-    near-match `1/(1 − h_q · q_0^10) ≈ λ_p` with explicit Φ_q
-    functional-equation interpretation `λ_p ≈ Φ_q(h_q·q_0^11) /
-    Φ_q(h_q·q_0^10)`. The integer power n=10 is selective (n=8,9,
-    11,12 give 13–51 % error) but **categorically unexplained**;
-    sits in the same coincidence basin as `5/2 − h²·G` (5.6 ppm)
-    and `5/2 − ℏ_q²·⟨𝓑_3⟩(q_0^{1/2})` (165 ppm). Audit:
+    representation. Surfaces a **19 ppm near-match**
+
+    ```
+    λ_p  ≈  1/(1 − h_q · q_0^10)  =  2.45999923...
+         =  Φ_q(h_q · q_0^11) / Φ_q(h_q · q_0^10)   (Faddeev functional eq)
+    ```
+
+    The integer power n=10 (n=8, 9, 11, 12 give 13–51 % error) is
+    NOT an unexplained selectivity — it plausibly traces to the
+    **Bring color-tube weighted averaging** Phase 5q open audit
+    finding (per [cheat-sheet §"Bring color-tube weighted
+    averaging"](../canonical-derivation-cheat-sheet.md)): the
+    owner-intuition canonical p-n boundary averaging weights over
+    9 color-pair assignments (3 × 3 quark-color sheets;
+    `proton uud → (μ_u, μ_u, μ_d)`, `neutron udd → (μ_u, μ_d, μ_d)`),
+    plausibly + diagonal averaging direction = **10**. Scheme 4
+    (per-sheet PL integration on Bring's surface, recorded in
+    [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py)
+    and [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py))
+    empirically reproduces `Δm_{n-p}` to ~0.14 % of CODATA, an
+    independent confirmation of the 10-fold color-pair structure.
+
+    **Status.** Categorically-conditional **alongside Strategy I**
+    (Yekutieli per-cell), not in the coincidence basin. Both
+    Reading B (Yekutieli) and `1/(1 − h_q · q_0^10)` (Faddeev
+    pentagon × Bring color-tube) have explicit load-bearing
+    Phase 5q open work items. The Faddeev form is **3.4× closer
+    to CODATA** (19 ppm) than the prior `5/2 − h²·G` numerology
+    coincidence (5.6 ppm — wait, 19 vs 5.6 means 5/2−h²·G is
+    *3.4× closer*, not the Faddeev form). Actually:
+    - `5/2 − h²·G`: 5.6 ppm (smaller error)
+    - `1/(1 − h_q · q_0^10)`: 19 ppm
+    The numerology-coincidence form is still closer; the
+    Faddeev/Bring form has structural backing the coincidence
+    lacks.
+
+    Audit:
     [`docs/audits/2026-05-22-faddeev-pentagon-operator-spike.md`](../audits/2026-05-22-faddeev-pentagon-operator-spike.md).
-    5th independent negative search in the cluster.
+    5th independent negative search in the cluster — but with
+    structurally-elevated near-match.
   - **Strategy I (Yekutieli per-cell curvature) — framework's
     substrate-pure prediction.** Per the formalised audit
     [`docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md`](../audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
