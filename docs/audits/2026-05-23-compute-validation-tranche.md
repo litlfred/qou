@@ -5,22 +5,32 @@ directive *"do so! good initiative"* + *"make sure there is audit"*.
 
 ## Item 1: ⁷Li wall validation
 
-**Status: IN PROGRESS** (launched background bench).
+**Status: ✅ PASS — 15.2 min (913 s), well under the 60 min gate.**
 
-At 13 minutes: 11.6 GB RAM on a 15 GB machine, 100% CPU.
-Memory growth rate ~1 GB/min suggests OOM risk within 2-3 min.
+```
+|tr_M(⁷Li, q₀)| = 0.00211424689422129485
+wall: 912.8 s (15.2 min)
+peak RAM: ~11.6 GB (on a 15 GB machine; settled to 9.5 GB post-run)
+```
 
-If ⁷Li OOMs at 15 GB: validates that **Tier 1.A alone is
-insufficient for ⁷Li on desktop** — confirms Tier 1.B (orbit
-reduction) or algorithm change (crystal basis) is needed before
-the heavy-atom unlock claim holds.
+**Tier 1.A heavy-atom unlock claim: VALIDATED.** The Rust port
+(`tr_M_atomic_rust_full` via `pyhecke_native.tr_m_atomic_mpfr`)
+computes ⁷Li (n_strands=21, A=7) in ~15 min on a single-core
+15 GB desktop instance. This was projected as "~17-20 min" in
+the compute-optimisation roadmap — the actual result matches.
 
-**Expected outcome** (from the Tier 1.A roadmap):
-- ⁷Li projected wall with Rust reduce: ~17-20 min
-- ⁸Be projected: infeasible without orbit reduction
-- ¹²C: infeasible without orbit reduction
+**Progression** (Tier 1.A speedups on the canonical atom set):
 
-*Result will be appended when the bench completes.*
+| atom | A | n | Rust wall | Python LaurentQ wall | speedup |
+|------|--:|--:|----------:|---------------------:|--------:|
+| ⁴He  | 4 | 12 | 1.3 s    | 3.9 s                | 3.0×    |
+| ⁵Li  | 5 | 15 | 7.3 s    | 20.6 s               | 2.8×    |
+| ⁶Li  | 6 | 18 | 63.0 s   | 225 s                | 3.6×    |
+| **⁷Li** | **7** | **21** | **912.8 s** | **(projected ~5 hr)** | **~20×** |
+
+**Next atoms** (projected from the scaling):
+- ⁸Be (A=8, n=24): projected ~4-8 hr → may need Tier 1.B
+- ¹²C (A=12, n=36): infeasible without orbit reduction
 
 ## Item 2+5: M_E_MEV inline-literal cleanup
 
@@ -84,7 +94,7 @@ the m_p / m_n closure (at +0.144% vs Strategy-I's +1.33%).
 
 | item | description | status | deliverable |
 |------|-------------|--------|-------------|
-| 1 | ⁷Li wall validation | in progress (bench running) | audit + result doc |
+| 1 | ⁷Li wall validation | ✅ PASS (15.2 min) | bench result in this doc |
 | 2+5 | M_E_MEV cleanup (20 scripts) | ✅ done | commit `f91b4c25a` on PR #996 |
 | 3 | Tier 1.B orbit-trace ⁴He | prediction recorded | orbit-rep builder needed |
 | 4 | Strategy-I Yekutieli | NEGATIVE confirmed | this audit doc |
