@@ -63,9 +63,12 @@ export default chapter({
     }),
 
     // ── Mass predictions vs CODATA ───────────────────────────────────
+    // Detangler P17 split (2026-05-22): the 24-block
+    // sec:mass-predictions was split into method + per-particle
+    // outputs (12 blocks) and specific derivations (12 blocks).
     section({
-      title: "Mass Predictions and CODATA Comparison",
-      label: "sec:mass-predictions",
+      title: "Mass predictions: methodology and validation",
+      label: "sec:mass-predictions-method",
       blocks: [
         "mass-predictions-intro",
         "stability-cubic-plot",
@@ -79,6 +82,13 @@ export default chapter({
         "neutron-proton-mass-splitting",
         "photon-channel-wedderburn-chain",
         "mass-formula-validation",
+      ],
+    }),
+    section({
+      title: "Mass predictions: per-particle derivations",
+      label: "sec:mass-predictions-derivations",
+      blocks: [
+        "mass-predictions-derivations-intro",
         "nucleon-borromean-topology",
         "nucleon-borromean-topology-proof",
         "pair-skein-mass-formula",
@@ -95,9 +105,14 @@ export default chapter({
     }),
 
     // ── Beta decay: half-lives and nuclear data ─────────────────────────
+    // Detangler P18 split (2026-05-22): the 25-block
+    // sec:beta-decay-observations was split into the categorical
+    // β-decay mechanism (Q-value + half-life + tritium worked
+    // example) and the magic-shell consequences (trace ratio,
+    // double-magic LR-fusion, magic-numbers-from-q, Strutinsky).
     section({
-      title: "Beta Decay",
-      label: "sec:beta-decay-observations",
+      title: "Beta decay: mechanism, half-life, and tritium",
+      label: "sec:beta-decay-mechanism",
       blocks: [
         "beta-decay-observations-intro",
         "qvalue-observation",
@@ -111,6 +126,13 @@ export default chapter({
         "finiteness-bound-interpretation",
         "tritium-decay-knot-equation",
         "tritium-qvalue-audit",
+      ],
+    }),
+    section({
+      title: "Beta decay: magic-shell consequences",
+      label: "sec:beta-decay-magic-shells",
+      blocks: [
+        "beta-decay-magic-shells-intro",
         "nitrogen-14-threading",
         "trace-ratio-observable",
         "trace-ratio-interpretation",

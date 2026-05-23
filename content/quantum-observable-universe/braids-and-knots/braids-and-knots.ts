@@ -81,6 +81,12 @@ export default chapter({
       label: "sec:braid-involutions",
       blocks: [
         "braid-involutions-intro",
+        // prop:lagrange-resolvent-transform moved here from
+        // descartes-universe/sec:bring-algebraic-substructure per
+        // detangler P37 (2026-05-22). 6 H1 fwd-refs cleared.
+        // Emits new H2 to def:brings-surface @ descartes-universe
+        // (accepted §5).
+        "lagrange-resolvent-transform",
         "braid-twist-flip",
         "holonomy-trefoil",
         "rho-s3-holonomy-exposition",
@@ -300,6 +306,12 @@ export default chapter({
       label: "sec:skein-particle-generation",
       blocks: [
         "skein-particle-generation-intro",
+        // def:atomic-braid moved here from
+        // particle-interactions/sec:atomic-braid-mass per detangler
+        // P32 (2026-05-22). 8 H1 fwd-refs cleared. Emits new H2 to
+        // def:transfer-matrix-operator + def:derived-atom @
+        // particle-interactions (accepted §5).
+        "atomic-braid",
         "skein-generation",
         "skein-mass-from-linking",
         "skein-mass-from-linking-proof",
@@ -356,7 +368,11 @@ export default chapter({
       label: "sec:categorical-mass-foundations",
       blocks: [
         "categorical-mass-foundations-intro",
-        "topological-mass",
+        // thm:topological-mass moved earlier to
+        // lifting-and-descent/sec:archimedean-lifting (alongside its
+        // proof + conjecture-extension + eigenspace/holonomy/transient/
+        // dilogarithm variants that already live there). Detangler
+        // P30 (2026-05-22). Files moved: topological-mass.{ts,md,lean,qa.json}.
         "topological-mass-cat-eigenspace",
         "topological-mass-cat-eigenspace-proof",
         "topological-mass-cat-descended",
@@ -423,6 +439,12 @@ export default chapter({
       label: "sec:hoefsmit-convergence-atomic",
       blocks: [
         "intro-hoefsmit-convergence-atomic",
+        // prop:operator-selection-lp moved here from
+        // particle-interactions/sec:confinement-selection per
+        // detangler P28 (2026-05-22). 14 H1 fwd-refs cleared.
+        // Emits new H2 to prop:confinement-lp @ particle-interactions
+        // (accepted §5).
+        "operator-selection-lp",
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
         "hecke-convergence-bound",
@@ -508,6 +530,13 @@ export default chapter({
       label: "sec:kashiwara-jones-quantum-dilog",
       blocks: [
         "intro-kashiwara-jones-quantum-dilog",
+        // prop:sw-period-thimble-equivalence moved here from
+        // descartes-universe/sec:topological-mass-spectrum per
+        // detangler P36 (2026-05-22). 6 H1 fwd-refs cleared.
+        // New H2 to rem:picard-lefschetz-thimble,
+        // prop:baryon-product-from-alt + 1 more @ descartes-universe
+        // (accepted §5).
+        "sw-period-thimble-equivalence",
         "kashiwara-jones-alternation-interpretation",
         "hopf-jones-c3-categorical",
         "kashiwara-jones-c4-categorical",
@@ -543,6 +572,14 @@ export default chapter({
         "phi-q-tower-algebraic-stratification",
         "kashaev-volume-conjecture",
         "figure-8-archimedean-illustration",
+        // Graded-Mikusiński depth-period correspondence: keystone
+        // conjecture relating GS-depth filtration to Goncharov
+        // periods. Moved here (was sec:classical-limit) so its
+        // downstream consumers (vc-as-depth-2-instance,
+        // bring-figure-eight-depth-2-witness, and the rest of the
+        // graded-Mikusiński machinery in this chapter) sit AFTER
+        // the conjecture they reference. Detangler P35 (2026-05-22).
+        "gb-depth-period-correspondence",
         // Graded-Mikusiński depth-2 instance: VC = depth-2 case of
         // conj:gb-depth-period-correspondence.
         "vc-as-depth-2-instance",
@@ -784,6 +821,11 @@ export default chapter({
       label: "sec:phi-q-markov-schur-weyl-tower",
       blocks: [
         "intro-phi-q-markov-schur-weyl-tower",
+        // thm:markov-trace-factorization moved here from
+        // particle-interactions/sec:groebner-engine per detangler
+        // P31 (2026-05-22). 8 H1 fwd-refs cleared. New H2 to
+        // prop:generator-volume-decomposition (accepted §5).
+        "markov-trace-factorization",
         "phi-q-resums-trace-series",
         "markov-axiom-recursive-ascent",
         "per-braid-mass-tower",
@@ -855,7 +897,6 @@ export default chapter({
         "intro-spectral-sequence-chirality-confinement",
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
-        "gb-spectral-sequence",
         "curvature-rank-gb-stratification",
         "spectral-sequence-collapse",
         "delta-q-decoration",
@@ -911,6 +952,11 @@ export default chapter({
       label: "sec:alpha-k-procedure",
       blocks: [
         "intro-alpha-k-procedure",
+        // prop:confinement-sdp moved here from
+        // particle-interactions/sec:confinement-selection per
+        // detangler P33 (2026-05-22). 7 H1 fwd-refs cleared.
+        // New H2 to prop:confinement-lp (accepted §5).
+        "confinement-sdp",
         "flavor-dressed-mass-from-substrate-split",
         "flavor-mass-splitting-bound",
         "alpha-k-derivation-procedure",
@@ -1041,12 +1087,17 @@ export default chapter({
     // the rest of the surreal-formalism story. Cheat-sheet remark for
     // first-time surreal notation should sit at the head of this
     // section's surreal-flavored sub-block (reeb-epsilon / q-from-epsilon).
+    // Detangler P11 split (2026-05-22): the 23-block
+    // sec:classical-limit was split into construction (the
+    // functor + obstruction + joint-Galois-braid machinery) and
+    // implications (graded Baer-star + two-filtration bridge +
+    // classical zeta/RH + adelic squeeze + chapter outro). Each
+    // new section sits in the 3-18 block band.
     section({
-      title: "Classical limit and the macroscopic continuum",
-      label: "sec:classical-limit",
+      title: "Classical limit: construction",
+      label: "sec:classical-limit-construction",
       blocks: [
         "classical-limit-intro",
-        "motivic-substrate",
         "adelic-substrate",
         "classical-limit-functor",
         "quantum-gap-collapse",
@@ -1062,11 +1113,20 @@ export default chapter({
         "reeb-epsilon",
         "q-from-epsilon",
         // Graded-Mikusiński / joint-Galois-braid machinery.
-        "gb-depth-period-correspondence",
+        // (conj:gb-depth-period-correspondence moved earlier to
+        // sec:archimedean-realization-kashaev per detangler P35;
+        // its downstream consumers here now reference it backward.)
         "hq-bi-filtration",
         "joint-galois-braid-action",
         "joint-galois-braid-figure-8-verified",
         "joint-galois-braid-discharged",
+      ],
+    }),
+    section({
+      title: "Classical limit: implications",
+      label: "sec:classical-limit-implications",
+      blocks: [
+        "classical-limit-implications-intro",
         "graded-baer-star-Hq",
         "two-filtration-bridge",
         "two-filtration-bridge-small-cases",

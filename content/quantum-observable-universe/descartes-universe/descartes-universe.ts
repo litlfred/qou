@@ -35,7 +35,6 @@ export default chapter({
         "su2-generators",
         "hyperelliptic-quintic",
         "x5-z5-automorphism",
-        "lagrange-resolvent-transform",
         "x5-bring-weight-identification",
       ],
     }),
@@ -146,10 +145,12 @@ export default chapter({
     }),
 
     // ── §3a. The Descartes condition and lepton spectrum ─────────────
-    // Was: one 84-block section.  Split (R4) for navigability.
+    // Was: one 84-block section. Split R4 (navigability) reduced to
+    // 28 blocks; further split R6/P13 (2026-05-22) below produces
+    // 3 sub-sections each in the 3-18 band.
     section({
-      title: "The Descartes condition and lepton spectrum",
-      label: "sec:descartes-condition",
+      title: "The Descartes condition $\\chi = -6$",
+      label: "sec:descartes-condition-statement",
       blocks: [
         "descartes-condition-intro",
         // The Descartes condition (χ = −6)
@@ -160,13 +161,25 @@ export default chapter({
         "descent-one-dim",
         "genus-maximal-descent",
         "genus-maximal-descent-proof",
-        // Leptons, chirality, trefoil subgroups
+      ],
+    }),
+    section({
+      title: "Descartes condition: leptons and chirality",
+      label: "sec:descartes-condition-leptons",
+      blocks: [
+        "descartes-condition-leptons-intro",
         "descartes-leptons",
         "descartes-chirality",
         "light-cone-affine",
         "chirality-trefoil",
         "brings-curve",
-        // Torus knot generators from χ = -6
+      ],
+    }),
+    section({
+      title: "Descartes condition: torus-knot generators and genus completeness",
+      label: "sec:descartes-condition-genus-completeness",
+      blocks: [
+        "descartes-condition-genus-intro",
         "torus-knot-generators",
         "embeddability-closure",
         "genus-from-hecke-completeness",
@@ -436,9 +449,13 @@ export default chapter({
     }),
 
     // ── §4. Topological mass and the knot-particle spectrum ──────────
+    // Detangler P15 split (2026-05-22): the 32-block
+    // sec:topological-mass-spectrum was split into 3 sub-sections,
+    // each in the 3-18 block band: formula+transcendence (11),
+    // Galois-baryon-periods (10), PL-SW-duality (11).
     section({
-      title: "Topological mass and the knot-particle spectrum",
-      label: "sec:topological-mass-spectrum",
+      title: "Topological mass and volume-tower transcendence",
+      label: "sec:topological-mass-formula-transcendence",
       blocks: [
         // Topological mass (Descartes-specific applications)
         "hyperbolic-volumes-prose",
@@ -456,6 +473,13 @@ export default chapter({
         "hyperbolic-volume-transcendence",
         "single-volume-irrationality",
         "borel-zagier-qou-volumes",
+      ],
+    }),
+    section({
+      title: "Topological mass: Galois orbit and baryon periods",
+      label: "sec:topological-mass-galois-baryons",
+      blocks: [
+        "topological-mass-galois-baryons-intro",
         "formal-chain-transcendence-remark",
         "yekutieli-transcendence-shadow",
         "implications-algebraic-independence",
@@ -466,6 +490,13 @@ export default chapter({
         "baryon-integration-limit",
         "mobius-golden-fixed-points",
         "golden-skew-dual-node",
+      ],
+    }),
+    section({
+      title: "Topological mass: PL-SW algebraic-geometric duality",
+      label: "sec:topological-mass-pl-sw-duality",
+      blocks: [
+        "topological-mass-pl-sw-duality-intro",
         "bar-self-dual-confinement-band",
         "bar-t-duality-substrate",
         "bar-apply-transfer",
@@ -475,7 +506,6 @@ export default chapter({
         "morse-wall-q-moduli",
         "delta-lambda-categorical-closure",
         // Categorical Markov-Frobenius ≡ algebraic residue (PL = archimedean shadow)
-        "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
         // Algebraic-geometric duality with SW theory
         "gb-reduction-pl-thimble-bijection",

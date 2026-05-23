@@ -13,25 +13,63 @@
     "lean": "7b2dfe4dde7c"
   },
   "criteria": {
-    "voice-first-person-work": [
+    "detangler-section-band": [
       {
         "field_hash": {
           "md": "451d1df4499f",
           "ts": "ed4c3271a277",
           "lean": "7b2dfe4dde7c"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
         },
-        "reviewed_at": "2026-05-22T15:40:56.603Z",
-        "reviewed_sha": "236d742f78113cf0fc096757d68fd9853d3b1c6c"
+        "reviewed_at": "2026-05-23T10:04:52.664Z",
+        "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "451d1df4499f",
+          "ts": "ed4c3271a277",
+          "lean": "7b2dfe4dde7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
+        },
+        "reviewed_at": "2026-05-23T10:04:52.664Z",
+        "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "451d1df4499f",
+          "ts": "ed4c3271a277",
+          "lean": "7b2dfe4dde7c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "40e346a177fd",
+          "script_commit_sha": "bdd752bed4d05773abb3a81bb43a9fdc97c9d6be"
+        },
+        "reviewed_at": "2026-05-23T10:04:52.664Z",
+        "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50"
       }
     ]
   },
-  "updated_at": "2026-05-22T15:40:56.603Z"
+  "updated_at": "2026-05-23T10:04:52.664Z"
 }

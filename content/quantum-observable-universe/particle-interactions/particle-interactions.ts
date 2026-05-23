@@ -28,7 +28,13 @@ export default chapter({
         "nucleon-ordering-factorization",
         "box-braid-irreducibility",
         "generator-volume-decomposition",
-        "markov-trace-factorization",
+        // thm:markov-trace-factorization moved earlier to
+        // braids-and-knots/sec:phi-q-markov-schur-weyl-tower per
+        // detangler P31 (2026-05-22). Acceptance note: the move
+        // emits 1 new H2 forward edge back to
+        // prop:generator-volume-decomposition (this section),
+        // accepted as wontfix:architectural per
+        // docs/coordination/2026-05-19-detangler-architectural-acceptances.md §5.
       ],
     }),
 
@@ -44,7 +50,9 @@ export default chapter({
         "confinement-nucleon-unit",
         "confinement-operator-selection",
         "confinement-frobenius-reciprocity",
-        "confinement-sdp",
+        // prop:confinement-sdp moved earlier to
+        // braids-and-knots/sec:alpha-k-procedure per detangler P33.
+        // New H2 → confinement-lp accepted §5.
         "confinement-sdp-spectral-gap",
         "confinement-sdp-multi-operator",
         "confinement-sdp-vs-lp",
@@ -52,9 +60,12 @@ export default chapter({
         "confinement-topological",
         "lp-dual-stability",
         "n-equals-1-vacuous-magic",
-        "operator-selection-lp",
+        // prop:operator-selection-lp moved earlier to
+        // braids-and-knots/sec:hoefsmit-convergence-atomic per
+        // detangler P28. New H2 → confinement-lp accepted §5.
         // Absorbed from former Ch `encounter`: SDP-as-thimble-flow
-        // interprets `prop:operator-selection-lp` directly above.
+        // interprets `prop:operator-selection-lp` (now in
+        // braids-and-knots).
         "sdp-as-thimble-flow",
         "q-beta-cos-resummation",
       ],
@@ -140,7 +151,10 @@ export default chapter({
       label: "sec:atomic-braid-mass",
       blocks: [
         "atomic-braid-mass-intro",
-        "atomic-braid",
+        // def:atomic-braid moved earlier to
+        // braids-and-knots/sec:skein-particle-generation per
+        // detangler P32. New H2 → def:transfer-matrix-operator +
+        // def:derived-atom accepted §5.
         "atomic-lp-stability",
         // wedderburn-mass-formula is referenced from braids-and-knots.ts
         // (its canonical home as thm:wedderburn-mass-formula). Listing
