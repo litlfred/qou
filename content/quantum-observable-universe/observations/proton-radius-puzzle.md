@@ -2,7 +2,7 @@ The "Proton Radius Puzzle" --- the discrepancy between the proton charge
 radius measured in muonic hydrogen and in electronic hydrogen --- remains a
 key area of study. In the QOU framework, lepton generations are distinguished
 by the vertical degree of the Reeb decomposition
-([Descartes leptons](#rem:archimedean-leptons)); each generation couples to the substrate
+([Archimedean leptons](#rem:archimedean-leptons)); each generation couples to the substrate
 parameter $q$ ([substrate parameter](#def:substrate-parameter)) through a different
 vertical harmonic form. If this generation-dependent coupling is physical, the
 effective electromagnetic interaction between the proton and the orbiting lepton
