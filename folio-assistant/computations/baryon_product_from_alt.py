@@ -117,7 +117,7 @@ def lambda_alt(z: complex) -> complex:
 # ── Witness builder ────────────────────────────────────────────
 
 def main() -> int:
-    w = WitnessBuilder("baryon-product-from-alt", engine="scipy")
+    w = WitnessBuilder("baryon-product-from-alt", engine="mpmath")
     w.set_description(
         "Numerical archimedean witness for prop:baryon-product-from-alt: "
         "the simultaneous 3-root product ∏ dc_k/dz equals the "
