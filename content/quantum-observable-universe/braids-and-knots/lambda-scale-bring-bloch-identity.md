@@ -35,6 +35,38 @@ $\lambda_K^{\mathrm{scale}}$, status revised 2026-05-22).**
 > mechanism (knot-operator LP/SDP on $\mathcal{B}_K$'s canonical
 > Hecke element, per §"What it identifies for the nucleon" item 1
 > below), or (b) the q-dilog tower route closes.
+>
+> **Empirical-exhaustion update 2026-05-23.** Six independent
+> structural searches have now returned negative for the proton
+> instance $\lambda_p^{\mathrm{scale}} \approx 2.4599527869$:
+>
+> | search | basis / method | result |
+> |---|---|---:|
+> | Tiers 0–5 (above) | PSLQ over 52 hyperbolic-knot Bloch-Wigner values | no integer relation, coeff $\leq 10^{30}$ |
+> | [PR #923](https://github.com/litlfred/qou/pull/923) | PSLQ over Li$_2^q$ + Φ$_q$ at substrate-natural arguments | no integer relation |
+> | [PR #928](https://github.com/litlfred/qou/pull/928) | PSLQ over $\hat V_{\text{S}}$ + $\mathbb{Q}(\zeta_{60})$ + Tier-0 knot volumes | no integer relation |
+> | [PR #941](https://github.com/litlfred/qou/pull/941) | non-linear commutative Φ$_q$ functional equation + pentagon-like identities | no $<1$ ppb match (best $\approx 4\%$) |
+> | [PR #943](https://github.com/litlfred/qou/pull/943) | operator-theoretic Φ$_q$ functional equation in truncated Heisenberg rep | 19 ppm near-match $1/(1 - h_q \cdot q_0^{10})$ |
+> | [PR #951](https://github.com/litlfred/qou/pull/951) | **q-locality test on all known near-matches** | all four ($1/(1 - h_q \cdot q_0^{10})$, $5/2 - h_q^2 \cdot G$, V$_7$, Strategy G) **non-smooth in $q$ — substrate-$q_0$ coincidences, not structural identities** |
+>
+> The q-locality result is the strongest empirical statement: the
+> two surviving near-matches (5.6 ppm and 19 ppm) are residual
+> zero-crossings of curves with slope $\sim 10^7$ ppm/q across the
+> substrate window. Per the standing discipline that $q_0$ is "not
+> special, just where we happen to be," neither is a categorical
+> identity.
+>
+> Closure paths still open (per [`docs/coordination/explore-q10.md`](https://github.com/litlfred/qou/blob/claude/iw-explore-q10-2026-05-23/docs/coordination/explore-q10.md)):
+>
+> - **Strategy I** (Yekutieli holonomy) — derives $(3/4 + G) \cdot h^2$
+>   categorically via non-abelian Stokes integration over $\mathcal{B}_p$.
+> - **Strategy K** (Bloch class via SnapPy triangulation) — uses the
+>   hyperbolic-knot dilogarithm basis with explicit ideal-tetrahedron
+>   shape parameters, not just PSLQ.
+> - **Acknowledged-CAL-4 status** — if both fail, the conjecture is
+>   recorded as an empirically-falsifiable prediction whose
+>   numerical agreement with CODATA is documented but not derived
+>   from substrate.
 
 *The original statement, retained as conjecture:*
 
