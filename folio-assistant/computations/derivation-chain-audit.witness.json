@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-23T20:59:16.565740+00:00",
-  "commitSha": "1a80d26e9e5940370cce7f3360ec10181913978a",
+  "computedAt": "2026-05-23T21:09:51.851044+00:00",
+  "commitSha": "2e067a49f4e7f44237cdd1f273d3e5cdfe3a4c95",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "50f22c2d8cdca1c283333c9c1576621005a43021",
+  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2507,6 +2507,7 @@
         "markov_weights_symbolic.witness.json",
         "mass-formula-6term.witness.json",
         "mass-from-q-symbolic.witness.json",
+        "mass-table-comprehensive.witness.json",
         "mass-table-ppb.witness.json",
         "mass-tower-operator-valued-chain.witness.json",
         "mass-tower-operator-valued.witness.json",
@@ -2657,6 +2658,7 @@
         "q-beta-operator-valued-N1.witness.json",
         "q-beta-operator-valued-N2.witness.json",
         "q-beta-operator-valued-N3.witness.json",
+        "q-beta-operator-valued-N4-probe.witness.json",
         "q-beta-per-irrep-cos.witness.json",
         "q-beta-predicted.witness.json",
         "q-beta-residue-per-nucleon-probe.witness.json",
