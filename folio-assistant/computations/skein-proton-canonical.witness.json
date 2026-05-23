@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-20T15:59:44.536897+00:00",
-  "commitSha": "b547ff7992e1e7dce96040ee5625fefea4a37fb1",
+  "computedAt": "2026-05-23T09:54:37.155264+00:00",
+  "commitSha": "9965c1216cf1a34eafcbe96b96b618e987d9ca1a",
   "assertions": [
     {
       "name": "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
@@ -14,21 +14,21 @@
       "source": "markov_peel.tr_M_atomic vs canonical-mass-table-extended.witness.json"
     },
     {
-      "name": "S(p) ≈ 0 is the only hypothesis consistent with 1 ppb m_p closure",
-      "computed": 3.182920733434446e-10,
+      "name": "Family_A_m_p_gap_within_5pct_of_CODATA",
+      "computed": 0.02960498931302492,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": 0.05,
       "unit": "relative",
-      "source": "Of {S=0, S=|tr_M|, S=V(𝓑₃,q²)}, only S=0 closes m_p_CODATA to better than 1 ppm; non-zero hypotheses regress by 1000+ ppm. S(p)=0 is calibration-forced."
+      "source": "Family A m_avg layer (S(p) = 0) vs CODATA m_p; the 29 000 ppm Family A residual is the m_avg gap that Bring-Bloch / categorical q-dilog tower closes (open R&D)."
     }
   ],
   "allPassed": true,
-  "durationMs": 303,
+  "durationMs": 790,
   "computation": "skein-proton-canonical",
   "scriptFile": "skein_proton_canonical.py",
-  "scriptHash": "a0b6dc813580",
-  "scriptCommitSha": "0805d6816aa6ce8ab289ffe159fe50a79575d59b",
+  "scriptHash": "b0238f98db35",
+  "scriptCommitSha": "d47d1fa6e8f095fd659e13fed0b36b3146cf0b51",
   "description": "Skein evaluator for the proton's canonical 11-crossing flavored braid. Computes three independent Skein values: (1) V(𝓑₃, t) closed-form Jones polynomial at t = q_0² / q_0 / -q_0⁻¹ conventions; (2) |tr_M(β_p, q_0)| from markov_peel.tr_M_atomic (existing canonical infrastructure); (3) cross-check vs the canonical Layer-1 |tr_M| atlas value 1.0653062286. Closes the S(p) ≈ 0 assumed-zero gap in conj:borromean-baryon-mass-formula.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
@@ -52,7 +52,7 @@
       "tr_M_q_0_canonical": "1.06530622859238925515327756997",
       "abs_tr_M": "1.06530622859238925515327756997",
       "compute_path": "markov_peel.tr_M_atomic(1, 0) symbolic, evaluated at q_0",
-      "wall_sec": "0.07"
+      "wall_sec": "0.12"
     },
     "atlas_cross_check": {
       "atlas_layer_1_value": "1.0653062285923887",
@@ -62,27 +62,29 @@
     },
     "skein_hypothesis_panel": {
       "Vol(𝓑₃)/ℏ_q²": "746.4178510331171854382662",
-      "λ_p_scale (hardcoded)": "2.4599527869",
+      "λ_p_scale (Family A: 5/2 + 3h²/4)": "2.53277966367288405831871",
+      "λ_fitted_AUDIT_ONLY (removed from production)": "2.4599527869",
       "m_p_CODATA / m_e (anchor)": "1836.152673425258505912781",
       "S(p) = 0 hypothesis": {
-        "tower_factor": "1836.1526728408256645",
-        "m_p_pred": "938.2720878613554317",
-        "delta_ppb": "-0.31829207"
+        "tower_factor": "1890.5119536990954196",
+        "m_p_pred": "966.04962330268637535",
+        "delta_ppm": "29604.989",
+        "verdict": "Family A m_avg layer: ~29 000 ppm above CODATA m_p — this gap is in λ_scale, NOT in S(p).  S(p) ≈ 0 remains the production assumption (flavor split supplies the m_n − m_p split downstream)."
       },
       "S(p) = |tr_M(β_p, q_0)| hypothesis": {
-        "tower_factor": "1837.2179790694180538",
-        "m_p_pred": "938.81645822559460259",
-        "delta_ppb": "580183.59",
-        "verdict": "Inconsistent with CODATA (~1000+ ppm); refutes Markov-trace = S(p)"
+        "tower_factor": "1891.5772599276878088",
+        "m_p_pred": "966.59399366692554624",
+        "delta_ppm": "30185.173",
+        "verdict": "Adds |tr_M(β_p)| ≈ 1.07 to the tower; m_p_pred shifts by ~580 ppm.  Negligible compared to the 29 000 ppm m_avg gap.  Does not discriminate between S(p) hypotheses at this layer."
       },
       "S(p) = V(𝓑₃, q²) hypothesis": {
         "V_value": "4.0378920286117253548",
-        "tower_factor": "1840.1905648694373899",
-        "m_p_pred": "940.33544644818939331",
-        "delta_ppb": "2199104.4",
-        "verdict": "Inconsistent (~2 MeV regression); refutes Jones-poly = S(p)"
+        "tower_factor": "1894.5498457277071449",
+        "m_p_pred": "968.11298188952033697",
+        "delta_ppm": "31804.094",
+        "verdict": "Adds V(𝓑₃, q²) ≈ 4.04 to the tower; ~2 200 ppm shift.  Still small vs the 29 000 ppm Family A gap — does not discriminate."
       },
-      "interpretation": "Numerically, S(p) ≈ 0 is the ONLY hypothesis consistent with the 1 ppb m_p closure. The candidates |tr_M(β_p)| (~1.07) and V(𝓑₃, q²) (~4.04) would each regress m_p by ~1000 ppm and ~2000 ppm respectively. Therefore the production formula's 'S(p) := 0' is structurally forced by the calibration, not an independent choice. The interpretive question becomes: WHY is the categorical Skein contribution effectively zero in this formula? Plausible answer: λ_p_scale already absorbs the Skein-tower correction, so 'S(p)' as a separate additive term is double-counting. The conjecture should be revised: drop S(p) from the formula entirely, OR re-derive λ_p_scale = (Vol(K_p^eff) - S(p)) / Vol(𝓑₃) with both pieces explicit."
+      "interpretation": "Under the PROVED Family A λ_scale (replacing the prior fitted 2.4599527869, removed 2026-05-22), the bare Vol·λ_A/ℏ_q² tower lands m_p_pred ≈ 966 MeV — about 2.9 % above CODATA.  All three S(p) hypotheses produce shifts of <0.3 % vs that gap, so the m_avg residual is dominated by the λ_scale layer, NOT by S(p).  S(p) ≈ 0 remains the production assumption; the proton-neutron split is supplied separately by the substrate flavor-split formula (`prop:flavor-split-substrate`, PR #690 / #942).  The original 'S(p) = 0 forced by 1 ppb closure' argument was an artifact of the CAL-4 fitted λ_p; under Family A the S(p) discriminator becomes structural rather than 1-ppb-numerical."
     }
   }
 }
