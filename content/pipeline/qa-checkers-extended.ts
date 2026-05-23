@@ -326,11 +326,20 @@ export function checkComputePropHasProbe(
 ): CheckerResult {
   const ts = readTs(tsPath);
   if (!ts) return { result: "n/a", hits: [] };
-  // Primary source: the i1-no-probe audit. Block is wired iff its
-  // result is `wired`, `conditional_class`, or `i1_lean_with_sorry`.
-  // The fallback (no audit available, e.g. on a fresh checkout) is
-  // to look for either a `probe:` string field OR a `computation:`
-  // block with at least one `script` / `witness`.
+  // **First-class direct evidence**: if the block's own `.ts` declares
+  // a `computation:` block (with `script` and/or `witness`) or a
+  // legacy `probe:` field, that IS the probe declaration. The
+  // i1-no-probe audit reports `i1_no_probe` when no *upstream* witness
+  // has `contentBlock` matching this block's label — but the block's
+  // own self-declared computation pointer is the more authoritative
+  // signal and shouldn't be overridden by the upstream-side audit.
+  const { probe, witnesses } = getComputationField(ts);
+  if (probe || (witnesses && witnesses.length > 0)) {
+    return { result: "pass", hits: [] };
+  }
+  // No direct evidence in .ts — consult the i1-no-probe audit, which
+  // looks for any witness in the corpus whose `contentBlock` field
+  // matches this block's label.
   if (tsPath) {
     const audit = loadI1Audit();
     const tsRel = relative(REPO_ROOT, tsPath);
@@ -356,11 +365,6 @@ export function checkComputePropHasProbe(
         ],
       };
     }
-  }
-  // Fallback: legacy probe: / computation: detection.
-  const { probe, witnesses } = getComputationField(ts);
-  if (probe || (witnesses && witnesses.length > 0)) {
-    return { result: "pass", hits: [] };
   }
   return {
     result: "fail",
