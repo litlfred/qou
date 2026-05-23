@@ -597,6 +597,7 @@ export default chapter({
       blocks: [
         "intro-archimedean-realization-kashaev",
         "archimedean-realization-functor",
+        "archimedean-image-table",
         // Absorbed from former Ch `encounter`: pre-tau-vs-post-tau
         // interprets `def:archimedean-realization-functor` directly
         // above and explains the τ-wall semantically.
