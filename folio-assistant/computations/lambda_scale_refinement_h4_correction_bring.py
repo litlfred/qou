@@ -1,5 +1,27 @@
 #!/usr/bin/env python3
-"""Refinement probe — h^4 correction to Bring color-tube.
+"""RETIRED (2026-05-23, user direction "no empirical fitting, canonical only").
+
+This probe is preserved as a documented dead-end. The α = (3/4 + 1 − G)
+h^4 coefficient it surfaces gives m_p to 22 ppm, but the "+1" leading
+h^4 coefficient is an EMPIRICAL FIT — no categorical derivation
+identifies "+1" as the natural partition-algebra h^4 weight at H_4.
+Per the CLAUDE.md three-calibration discipline + user direction "no
+empirical fitting, canonical only", this candidate is retired.
+
+CANONICAL-ONLY refinement direction (open R&D, audit Step 4):
+  Derive the second-order Yekutieli per-cell h^4 coefficient FROM the
+  partition algebra at H_4 — not by fitting against CODATA. Until
+  that derivation lands, the framework's canonical predictions are:
+    (a) canonical Wedderburn alone:         m_p ≈ 965 MeV  (+2.89%)
+    (b) canonical + Yekutieli additive:     m_p ≈ 950 MeV  (+1.26%)
+    (c) Bring color-tube (n=10 substrate):  m_p ≈ 938 MeV  (−670 ppm)
+
+All three are conjecture-conditional but FITTING-FREE. The probe
+below documents what an α·h^4 refinement WOULD look like, but the
+α value emerges from numerical fitting, not derivation, and is
+therefore not framework-acceptable per user direction.
+
+Refinement probe — h^4 correction to Bring color-tube (RETIRED).
 
 Observation (lambda_scale_refinements_composed_predictions.py):
 Option (c) `λ = 1/(1 − h_q · q_0^10)` gives m_p = 937.6 MeV vs
