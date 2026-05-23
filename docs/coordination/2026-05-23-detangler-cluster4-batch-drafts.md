@@ -81,13 +81,9 @@ PR #884 closed clusters 1 + 3 + (5 of 18) of cluster-4 splits. The 13 remaining 
 | `sec:plancherel-alpha-spectral` | $\alpha_{\mathrm{em}}$ categorical trace + Plancherel term-7 formulation + Plancherel weight boundedness + unified curvature-rank-mass formula + chirality residue mass term + $E_\infty$-page identifications + spectral-sequence $H^3$ explicit + chirality writhe ribbon derivation + Gram-matrix spectral connection — the spectral $\alpha$/ribbon foundations. | 10 |
 | `sec:plancherel-knot-factor-mass-tower` | Knot-factor spectral derivation + knot-factor amphicheiral + Borromean-composite knot-factor + shell-closed knot-factor + knot-factor spectral summary + Pauli-factor Wedderburn + mass-formula Wedderburn enumeration + mass-tower coefficient stratification + flavor-dressing functor — the knot-factor + Wedderburn enumeration that closes the mass-tower arc. | 9 |
 
-### P12 — `sec:archimedean-models` (22 blocks → 3-way) — models-of-qous
+### P12 — `sec:archimedean-models` — **DONE ON MAIN** (ch5/audit Rec 1-3)
 
-| New section | Story | Blocks |
-|---|---|---:|
-| `sec:archimedean-models-spaces` | Calabi-Yau, ALE, Brings-surface unit-circle, cosmological limits, instanton, irreducible connection, Seiberg-Witten, primordial vortex — the catalogue of archimedean model spaces underlying the QOU specialisation. | 9 |
-| `sec:archimedean-models-curvature` | Geometric drag + self-dual curvature + $\mathbb{C}$-substrate via Levi + Webster inner product — the geometric/curvature structure that the models inherit. | 4 |
-| `sec:archimedean-models-bridge` | Heisenberg commutator (proposition + proof) + Reeb decomposition + observation-archimedean + spatial-realization functor + categorical-archimedean bridge (statement + proof) + physicist translation + categorical-action vs Chern-Simons — the bridge constructions that connect the categorical substrate to the archimedean models, including the canonical bridge between categorical action and Chern-Simons theory. | 9 |
+Already split on main in commits `2c722cae0` + `737deea6f` + `b2dea4d5b` + `4829571fc` (2026-05-22 ch5/audit). The single 22-block sec:archimedean-models was decomposed into 8 sub-sections (sec:physical-interpretation, sec:headline-conjectures, sec:archimedean-witnesses, sec:categorical-differential-bridge, sec:non-archimedean-models, sec:witt-vector-lifting, sec:finite-fields, sec:archimedean-encounter) plus 4 blocks moved to descartes-universe/sec:physical-regimes. This batch's P12 draft is superseded; not re-executed.
 
 ### P14 — `sec:atomic-shells` (22 blocks → 2-way) — descartes-universe
 

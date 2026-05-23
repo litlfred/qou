@@ -96,9 +96,12 @@ export default chapter({
     }),
 
     // ── Differential structures ───────────────────────────────────────
+    // Detangler P1 split (2026-05-23): the 20-block
+    // sec:differential-structures was split into the categorical
+    // Reeb construction + fibre-adjoint involution machinery.
     section({
-      title: "Differential structures and gauge actions",
-      label: "sec:differential-structures",
+      title: "Differential structures: categorical Reeb",
+      label: "sec:differential-structures-reeb",
       blocks: [
         "differential-structures-intro",
         "categorical-reeb",
@@ -111,6 +114,13 @@ export default chapter({
         "projective-line-object",
         "projective-line-su2",
         "contact-affine-chart",
+      ],
+    }),
+    section({
+      title: "Differential structures: fibre-adjoint involution",
+      label: "sec:differential-structures-fiber-adjoint",
+      blocks: [
+        "differential-structures-fiber-adjoint-intro",
         "fibre-functor-atlas",
         "substrate-radial-coordinate",
         "substrate-radial-coordinate-proof",
@@ -396,9 +406,11 @@ export default chapter({
     }),
 
     // ── q-Exponential, logarithm, and dilogarithm ────────────────────
+    // Detangler P2 split (2026-05-23): the 19-block
+    // sec:q-special-functions was split into exp+log + dilog.
     section({
-      title: "$q$-Exponential, logarithm, and dilogarithm",
-      label: "sec:q-special-functions",
+      title: "$q$-Exponential and $q$-logarithm",
+      label: "sec:q-special-functions-exp-log",
       blocks: [
         "intro-q-special-functions",
         "q-exponential",
@@ -413,6 +425,13 @@ export default chapter({
         "q-logarithm-exists-proof",
         "q-logarithm-unique",
         "q-logarithm-unique-proof",
+      ],
+    }),
+    section({
+      title: "$q$-Dilogarithm",
+      label: "sec:q-special-functions-dilog",
+      blocks: [
+        "q-special-functions-dilog-intro",
         "q-dilogarithm",
         "q-dilogarithm-exists",
         "q-dilogarithm-exists-proof",

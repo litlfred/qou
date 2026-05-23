@@ -64,7 +64,7 @@ Heegaard tori, producing a hyperbolic complement with strictly
 positive volume.
 
 The next section,
-[Vertex Factorisation and the Markov Trace](#sec:vertex-factorisation),
+[Vertex Factorisation and the Markov Trace](#sec:vertex-factorisation-markov),
 takes the vertex operator and the six trajectory dictionary as
 given and shows that every operator acting on the categorical
 state space factors through the exceptional divisor.

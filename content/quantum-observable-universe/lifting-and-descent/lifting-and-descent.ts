@@ -63,9 +63,12 @@ export default chapter({
     }),
 
     // ── Yekutieli lifting (needed by cosimplicial + descent) ───────────
+    // Detangler P3 split (2026-05-23): 22-block sec:yekutieli-lifting
+    // split into construction (lifting + QCC) and kummer-motivic
+    // (Kummer filtration + motivic substrate / Galois).
     section({
-      title: "Categorical Lifting and Quantum Characteristic Classes",
-      label: "sec:yekutieli-lifting",
+      title: "Categorical lifting and quantum characteristic classes",
+      label: "sec:yekutieli-lifting-construction",
       blocks: [
         "yekutieli-lifting-intro",
         "yekutieli-lifting-condition",
@@ -81,6 +84,13 @@ export default chapter({
         "yekutieli-lifting-proof",
         "qu-to-qou",
         "qu-to-qou-su2",
+      ],
+    }),
+    section({
+      title: "Yekutieli lifting: Kummer-motivic enrichment",
+      label: "sec:yekutieli-lifting-kummer-motivic",
+      blocks: [
+        "yekutieli-lifting-kummer-motivic-intro",
         "fermionic-twisted-sectors",
         "kummer-filtration-obstruction",
         "kummer-tower",
@@ -211,9 +221,12 @@ export default chapter({
     }),
 
     // ── Archimedean specialisations ──────────────────────────────────
+    // Detangler P4 split (2026-05-23): 25-block sec:archimedean-lifting
+    // split 3-way into foundations + topological-mass-formula +
+    // topological-mass-variants.
     section({
-      title: "Archimedean Specialisations",
-      label: "sec:archimedean-lifting",
+      title: "Archimedean specialisations: foundations",
+      label: "sec:archimedean-lifting-foundations",
       blocks: [
         "archimedean-lifting-intro",
         "jet-prolongation-C",
@@ -225,15 +238,27 @@ export default chapter({
         "mass-geometric-drag",
         "euler-char-stability-C",
         "brane-boundary-structure-proof",
+      ],
+    }),
+    section({
+      title: "Archimedean specialisations: topological-mass formula",
+      label: "sec:archimedean-lifting-topological-mass-formula",
+      blocks: [
+        "archimedean-lifting-topological-mass-formula-intro",
         "quantum-dilogarithm",
         "quantum-dilogarithm-proof",
         // thm:topological-mass — the theorem statement, moved here
         // from braids-and-knots/sec:categorical-mass-foundations
-        // alongside its proof + conjecture-extension + eigenspace/
-        // holonomy/transient/dilogarithm variants. Detangler P30
-        // (2026-05-22).
+        // per detangler P30 (2026-05-22).
         "topological-mass",
         "topological-mass-conjecture",
+      ],
+    }),
+    section({
+      title: "Archimedean specialisations: topological-mass variants",
+      label: "sec:archimedean-lifting-topological-mass-variants",
+      blocks: [
+        "archimedean-lifting-topological-mass-variants-intro",
         "topological-mass-eigenspace-decomp",
         "topological-mass-eigenspace-decomp-proof",
         "topological-mass-holonomy",

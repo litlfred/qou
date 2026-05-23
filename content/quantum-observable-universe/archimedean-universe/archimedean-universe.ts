@@ -421,9 +421,11 @@ export default chapter({
     }),
 
     // ── §3d. Atomic shells and the periodic table ─────────────────────
+    // Detangler P14 split (2026-05-23): 22-block sec:atomic-shells
+    // split into shell-construction foundations + per-element instances.
     section({
-      title: "Atomic shells and the periodic table",
-      label: "sec:atomic-shells",
+      title: "Atomic shells: construction foundations",
+      label: "sec:atomic-shells-foundations",
       blocks: [
         "atomic-shells-intro",
         "shell-structure-eigenvalues",
@@ -440,6 +442,13 @@ export default chapter({
         "rj-inner-product-interpretation",
         "spectral-decomposition-qvalue",
         "shell-construction-rules",
+      ],
+    }),
+    section({
+      title: "Atomic shells: per-element instances",
+      label: "sec:atomic-shells-element-instances",
+      blocks: [
+        "atomic-shells-element-instances-intro",
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "noble-gas-characterization",
