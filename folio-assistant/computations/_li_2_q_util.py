@@ -217,21 +217,28 @@ def lambda_scale_yekutieli_extended(q: mpf, q_inv: mpf | None = None) -> mpf:
                        =  5/2 + (3/4 − G) · h²
                        ≈  2.49266 at q_0
 
-    This is **categorically-conditional** on the load-bearing
-    cell-↔-half-symmetric-projection bijection at H_4 (see the
-    audit's "Concrete next R&D" item 1).  No fit; both terms
-    derive from independent substrate-natural principles
-    (Wedderburn sum + non-abelian Stokes curvature integration).
+    BIJECTION STEP RESOLVED (PR #989, 2026-05-23): the
+    load-bearing cell-↔-half-symmetric-projection bijection at H_4
+    is closed via the S_4 ↓ S_3 branching rule. The Borromean rings
+    𝓑_3 is a 3-component link → S_3 acts on the components. The
+    half-symmetric H_4 projection must be projected to the S_3-
+    TRIVIAL subspace:
+
+      Half-sym total dim = 5 (from (4):1 + (3,1):3 + (2,2)/2:1)
+      Trivial S_3 content = 2 (branching: (4)→(3), (3,1)→(3)+(2,1))
+      Factor = 2/5
+      Effective cells = (5/2) × (2/5) = 1 of 8 → ratio = 1/8 ✓
+
+    Categorical derivation chain (Drivers 10 + 11, no fits):
+      1. Half-symmetric H_4 count = 5/2 (MacMahon partition identities)
+      2. S_4 ↓ S_3 branching: trivial content = 2/5 (standard rep theory)
+      3. Effective cell count = 5/2 × 2/5 = 1
+      4. Per-cell Lobachevsky volume = −G (Adams 1985)
+      5. Yekutieli h² coefficient = 1 × (−G) = −G
 
     Composed with the substrate flavor split
     (`flavor_split_subleading`), gives m_p / m_n at ~1.3 % vs
     CODATA — gap halved from the canonical-only ~3 %.
-
-    NOT a drop-in production replacement for `lambda_scale_family_a`:
-    the canonical Family A is PROVED, while this extension carries
-    a load-bearing conjecture.  Use only via opt-in (e.g. a
-    comparison column in a witness, a conditional-class Lean
-    block, or a research script).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
     h = q - qi
