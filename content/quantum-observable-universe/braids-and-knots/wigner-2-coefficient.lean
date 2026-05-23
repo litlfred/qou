@@ -16,10 +16,10 @@ The proof has two parts:
 
 namespace QOU.BraidKnot
 
-variable {F : Type*} [Field F]
-
-/-- Seminormal diagonal entry: a_ρ = h/(1 - q^{-2ρ}) -/
-noncomputable def a_rho (q : F) (h : F) (ρ : ℤ) : F :=
+/-- Seminormal diagonal entry: a_ρ = h/(1 - q^{-2ρ}).
+    Archimedean specialisation per CLAUDE.md §7c — q : ℝ throughout
+    this block (sibling .md narrative carries the §7c banner). -/
+noncomputable def a_rho (q : ℝ) (h : ℝ) (ρ : ℤ) : ℝ :=
   h / (1 - q ^ (-2 * ρ))
 
 /-- **Paired sum identity**: a_ρ + a_{-ρ} = h.

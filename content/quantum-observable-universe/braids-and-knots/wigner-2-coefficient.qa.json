@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "273bd3faf34e",
     "ts": "db8adeaf0d05",
-    "lean": "ed2635e5b0b2"
+    "lean": "2b2432758c1c"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -347,18 +347,18 @@
         "field_hash": {
           "md": "273bd3faf34e",
           "ts": "db8adeaf0d05",
-          "lean": "ed2635e5b0b2"
+          "lean": "2b2432758c1c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
         },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/wigner-2-coefficient.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "reviewed_at": "2026-05-23T10:49:00.806Z",
+        "reviewed_sha": "bd0383dcb082afed8ea1568f98174fb97cfeb53e"
       }
     ],
     "voice-title-scholarly": [
@@ -555,5 +555,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T10:49:00.806Z"
 }
