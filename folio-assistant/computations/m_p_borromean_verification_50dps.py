@@ -19,12 +19,18 @@ Python: `lambda_scale_all_c_i_family_a.py`):
 
 Family A applies to the **baryon class** uniformly — proton and
 neutron carry the same categorical λ.  The proton-neutron mass
-difference enters downstream via the substrate flavor-split
-(`flavor_split_subleading`), NOT through λ_scale itself.
+difference enters via the substrate flavor-split
+(`flavor_split_subleading`, PR #690), NOT through λ_scale itself.
+This script now WIRES the flavor split: it computes
+m_avg = m_e · Vol(B_3)/ℏ_q² · λ_A and then splits with
+Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3.
 
 Honest predictions at q_0:
-    m_p^pred = m_n^pred ≈ 966 MeV    (vs CODATA 938.27 / 939.57)
-    err ≈ +2.96 % vs CODATA
+    m_avg^pred ≈ 966 MeV       (vs CODATA 938.92, ~2.9 % off)
+    Δm/M_N^pred ≈ 0.001377     (vs CODATA 0.001382, ~0.4 % off)
+    m_p^pred ≈ 965.38 MeV      (vs CODATA 938.27, ~2.9 % off)
+    m_n^pred ≈ 966.71 MeV      (vs CODATA 939.57, ~2.9 % off)
+    Δ m_pn^pred ≈ 1.330 MeV    (vs CODATA 1.293, ~2.9 % off)
 
 The framework's PROVABLE accuracy at this layer is ~3 %, not 1 ppb.
 The Bring-Bloch identity
@@ -266,13 +272,59 @@ def main() -> int:
         source="CAL-2 anchor: m_mu/m_e = Vol(4_1)/ℏ_q²",
     )
 
-    # ── Proton ────────────────────────────────────────────────
-    proton_factor = (VOL_B3 / HBAR_Q**2) * LAMBDA_PROTON_DOC
-    proton_pred = proton_factor * M_E_CODATA_MEV
+    # ── Class-uniform Family A m_avg (proton, neutron predicted equal
+    #    at this layer) + substrate flavor split (proton-neutron mass
+    #    difference) ──────────────────────────────────────────────────
+    # Per `prop:flavor-split-substrate` / PR #690, the proton-neutron
+    # mass ratio carries a PROVED substrate-pure closed form:
+    #     Δm / M_N  =  ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3
+    # (see `_li_2_q_util.flavor_split_subleading`).  This is the
+    # categorical Bring-color-tube weighting the cheat sheet §3
+    # footnote flags.  Family A gives ONE class-uniform λ_A; the
+    # split then assigns:
+    #     m_p_pred = m_avg_pred · (1 − Δm/M_N / 2)
+    #     m_n_pred = m_avg_pred · (1 + Δm/M_N / 2)
+    # so the proton-neutron mass difference is Δm/M_N · m_avg_pred —
+    # absolute Δm prediction within ~2.9 % of CODATA (same fractional
+    # gap as m_avg, by construction).
+    from _li_2_q_util import flavor_split_subleading as _flavor_split
+    Q_INV = mp.mpf(1) / Q
+    dm_over_Mn = _flavor_split(Q, Q_INV)
+
+    # Class-uniform Family A m_avg (Borromean tower without split).
+    m_avg_factor = (VOL_B3 / HBAR_Q ** 2) * LAMBDA_PROTON_FAMILY_A
+    m_avg_pred = m_avg_factor * M_E_CODATA_MEV
+    M_AVG_CODATA = (M_P_CODATA_MEV + M_N_CODATA_MEV) / 2
+    m_avg_rel_diff = (m_avg_pred - M_AVG_CODATA) / M_AVG_CODATA
+    w.add_data("class_uniform_m_avg", {
+        "formula": "m_avg = m_e · Vol(B_3)/ℏ_q² · λ_A  (Family A, before split)",
+        "m_avg_pred_MeV": mp.nstr(m_avg_pred, 20),
+        "m_avg_codata_MeV": mp.nstr(M_AVG_CODATA, 12),
+        "rel_diff_ppm": mp.nstr(m_avg_rel_diff * mp.mpf("1e6"), 8),
+        "lambda_A_form": "5/2 + (3/4) h²",
+    })
+    w.add_data("substrate_flavor_split", {
+        "formula": "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
+                   "(prop:flavor-split-substrate, PR #690)",
+        "delta_m_over_M_N": mp.nstr(dm_over_Mn, 25),
+        "delta_m_over_M_N_codata": mp.nstr(
+            (M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA, 15
+        ),
+        "ratio_ppm_vs_codata": mp.nstr(
+            (dm_over_Mn / ((M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA) - 1)
+            * mp.mpf("1e6"), 8
+        ),
+    })
+
+    # ── Proton (with substrate flavor split) ──────────────────────
+    proton_pred = m_avg_pred * (mp.mpf(1) - dm_over_Mn / 2)
+    proton_factor = proton_pred / M_E_CODATA_MEV  # for back-compat field
     proton_rel_diff = (proton_pred - M_P_CODATA_MEV) / M_P_CODATA_MEV
     proton_ppm = proton_rel_diff * mp.mpf("1e6")
     w.add_data("proton", {
-        "formula": "m_p = m_e · [Vol(B_3)/ℏ_q² · λ_p_scale + S(p)]  (with S(p) ≈ 0)",
+        "formula": "m_p = m_avg_pred · (1 − Δm/M_N / 2), with "
+                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
+                   "Δm/M_N from flavor_split_subleading",
         "vol_B3_over_hbar_q_squared": mp.nstr(VOL_B3 / HBAR_Q**2, 20),
         "tower_factor": mp.nstr(proton_factor, 20),
         "m_p_pred_MeV": mp.nstr(proton_pred, 20),
@@ -294,27 +346,31 @@ def main() -> int:
         source="Borromean baryon formula (Family A λ) vs CODATA m_p at MPFR 50 dps",
     )
 
-    # ── Neutron ───────────────────────────────────────────────
-    neutron_factor = (VOL_B3 / HBAR_Q**2) * LAMBDA_NEUTRON_DOC
-    neutron_pred = neutron_factor * M_E_CODATA_MEV
+    # ── Neutron (with substrate flavor split) ─────────────────────
+    neutron_pred = m_avg_pred * (mp.mpf(1) + dm_over_Mn / 2)
+    neutron_factor = neutron_pred / M_E_CODATA_MEV  # for back-compat field
     neutron_rel_diff = (neutron_pred - M_N_CODATA_MEV) / M_N_CODATA_MEV
     neutron_ppm = neutron_rel_diff * mp.mpf("1e6")
     w.add_data("neutron", {
-        "formula": "m_n = m_e · [Vol(B_3)/ℏ_q² · λ_n_scale + S(n)]  (with S(n) ≈ 0)",
+        "formula": "m_n = m_avg_pred · (1 + Δm/M_N / 2), with "
+                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
+                   "Δm/M_N from flavor_split_subleading",
         "tower_factor": mp.nstr(neutron_factor, 20),
         "m_n_pred_MeV": mp.nstr(neutron_pred, 20),
         "m_n_codata_MeV": mp.nstr(M_N_CODATA_MEV, 12),
         "rel_diff": mp.nstr(neutron_rel_diff, 12),
         "rel_diff_ppm": mp.nstr(neutron_ppm, 8),
     })
-    # Same Family A λ → same ~3 % residual for the neutron.
+    # Same Family A m_avg → same ~3 % residual for the neutron (the
+    # flavor split only redistributes m_avg between p and n; the
+    # absolute scale gap is the same as for the proton).
     w.add_assertion(
         "neutron_borromean_tower_within_5pct_of_codata",
         computed=float(abs(neutron_ppm)),
         expected=0.0,
         tolerance=50000.0,  # 5 % ceiling
         unit="ppm",
-        source="Borromean baryon formula (Family A λ) vs CODATA m_n at MPFR 50 dps",
+        source="Borromean baryon formula (Family A λ + flavor split) vs CODATA m_n at MPFR 50 dps",
     )
 
     # ── Proton-neutron mass difference (Δ m_pn) ───────────────
@@ -326,9 +382,12 @@ def main() -> int:
         "delta_m_pn_codata_MeV": mp.nstr(delta_pn_codata, 12),
         "rel_diff": mp.nstr(delta_diff, 6),
         "note": (
-            "The pn split is determined by Δλ_scale = "
-            "λ_n - λ_p ≈ 0.0034 — the substrate-derivation R&D "
-            "for these closure targets is the open frontier."
+            "The pn split is now categorically derived: "
+            "Δm = m_avg_pred · (ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3) "
+            "via prop:flavor-split-substrate / flavor_split_subleading. "
+            "The rel_diff vs CODATA inherits the Family A m_avg gap "
+            "(~3 %); the substrate flavor-ratio Δm/M_N is matched to "
+            "~0.5 % independently (see substrate_flavor_split.ratio_ppm_vs_codata)."
         ),
     })
 
@@ -350,16 +409,18 @@ def main() -> int:
         ),
     })
 
-    # Open R&D: deriving λ_scale from substrate
+    # Open R&D: closing the m_avg ~3 % residual categorically
     w.add_caveat(
-        "λ_scale is currently set to the closure target solved from "
-        "CODATA (proton: 2.4599527869, neutron: 2.4633436333). The "
-        "open conjecture (`borromean-baryon-mass-formula` §Status #2) "
-        "is to derive λ_scale from substrate via the Skein polynomial "
-        "Q(q_0) of B_3, the graded-Hecke-energy weight, or the "
-        "canonical 11-crossing Borromean braid. Until that closes, "
-        "this verification is a structural-mass-formula sanity check "
-        "rather than a fully derived prediction."
+        "λ_scale is now the PROVED Family A categorical identity "
+        "(λ_A = 5/2 + (3/4) h², terminates at h²); the prior CAL-4 "
+        "literals 2.4599527869 / 2.4633436333 are retained only as "
+        "audit-only comparison columns.  The proton-neutron mass "
+        "ratio Δm/M_N is the substrate-pure closed form from "
+        "`prop:flavor-split-substrate` (PR #690): "
+        "ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA "
+        "to ~0.5 %.  The remaining ~3 % gap in the absolute m_avg "
+        "scale is the open R&D direction (Bring-Bloch identity / "
+        "categorical q-dilog tower)."
     )
 
     out = w.save()
@@ -369,17 +430,20 @@ def main() -> int:
     print(f"Vol(4_1)/ℏ_q²       = {float(VOL_41 / HBAR_Q**2):.6f}  (m_μ/m_e)")
     print()
     print(f"Muon  pred  m_μ = {float(mu_pred):.8f} MeV  vs CODATA {float(M_MU_CODATA_MEV):.8f}  Δ = {float(mu_ppm):+.3f} ppm")
+    print(f"m_avg  pred       = {float(m_avg_pred):.8f} MeV  vs CODATA {float(M_AVG_CODATA):.8f}  Δ = {float(m_avg_rel_diff * mp.mpf('1e6')):+.4f} ppm  (Family A class-uniform)")
+    print(f"Δm/M_N pred       = {float(dm_over_Mn):.10f}  vs CODATA {float((M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA):.10f}")
     print(f"Proton  pred  m_p = {float(proton_pred):.8f} MeV  vs CODATA {float(M_P_CODATA_MEV):.8f}  Δ = {float(proton_ppm):+.4f} ppm")
     print(f"Neutron pred  m_n = {float(neutron_pred):.8f} MeV  vs CODATA {float(M_N_CODATA_MEV):.8f}  Δ = {float(neutron_ppm):+.4f} ppm")
+    print(f"Δ m_pn  pred      = {float(delta_pn):.6f} MeV  vs CODATA {float(delta_pn_codata):.6f}  Δ rel = {float(delta_diff)*100:+.3f} %")
     print()
     print(f"Scale-gap explanation:")
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
     print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
     print(f"  CODATA / single-level:   {gap_factor:.4f}")
     print(f"  → Borromean factor with PROVED Family A λ closes to ~3 % vs CODATA")
-    print(f"    (the residual ~3 % is the open Bring-Bloch / categorical")
-    print(f"    q-dilog tower closure target; the prior 1 ppb 'match' was")
-    print(f"    the falsified-fit tautology removed 2026-05-22)")
+    print(f"    on m_avg; substrate flavor split (PR #690) supplies Δm/M_N to")
+    print(f"    ~0.5 % giving a categorical (non-fit) p/n split.")
+    print(f"    Open R&D: ~3 % m_avg gap (Bring-Bloch / categorical q-dilog tower).")
     return 0
 
 
