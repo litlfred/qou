@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from pathlib import Path
 
 import mpmath as mp
@@ -77,6 +78,7 @@ def lambda_reading_b(q):
 
 
 def main() -> int:
+    t_start = time.monotonic()
     print("=" * 95)
     print("Reading A vs closure-target across a q sweep — h⁴ structure test")
     print("=" * 95)
@@ -168,16 +170,9 @@ def main() -> int:
     # So closure-target really IS approximately c_0 + (-G)·h² + (h^4 terms)
     # where the leading is −G·h² (matches Reading A)
     # But the c_0 is NOT 5/2; it's ZERO (since λ_closure(q=1) = 0 because ℏ_q² = 0).
-    # So Reading A's c_0 = 5/2 + c_2·h² + ... and closure-target's c_0 = 0 + c_2·h² + ...
-    # differ in the CONSTANT term but agree at q_0 by coincidence.
-
-    # The point: Reading A is NOT the closure-target. Reading A has c_0 = 5/2;
-    # closure-target has c_0 = 0.  They only agree at q_0 where the relation
-    # 5/2 + (-G)·h²(q_0) = M_PE·ℏ_q²(q_0)/(8G) happens to hold.
-
     print("  KEY INSIGHT:")
-    print(f"    closure-target c_0 (i.e. λ_closure at q=1) = {mp.nstr(lambda_closure(mp.mpf(1) + mp.mpf('1e-20')) - mp.mpf(5)/2, 10)} - 5/2 ≈ 0")
-    print(f"    Reading A      c_0                          = 5/2 ≈ 2.5")
+    print(f"    closure-target λ(q=1) = {mp.nstr(lambda_closure(mp.mpf(1) + mp.mpf('1e-20')), 10)} ≈ 0")
+    print(f"    Reading A      λ(q=1) = 5/2 ≈ 2.5")
     print(f"    => Reading A and closure-target DISAGREE at h=0 (q=1):")
     print(f"       Reading A says λ(1) = 5/2")
     print(f"       closure says λ(1) = 0")
@@ -194,7 +189,8 @@ def main() -> int:
 
     # Witness
     w = WitnessBuilder(
-        "lambda-reading-a-h4-sweep-test", engine="mpmath"
+        "lambda-reading-a-h4-sweep-test", engine="mpmath",
+        start_time=t_start,
     )
     w.set_description(
         "Tests whether Reading A (λ = 5/2 − G·h²) matches the closure-"
@@ -254,13 +250,16 @@ def main() -> int:
         "Reading A's near-perfect match at q_0 should be filed under "
         "'compelling coincidences' not 'evidence for categorical truth'."
     )
+    # Closure c_2 ≈ 62.6 vs Reading A c_2 = -G ≈ -0.916.
+    # Assert the disagreement is > 1000% (actual is ~6900%).
+    c2_disagreement_pct = float(abs(c[0] - (-G)) / abs(G) * 100)
     w.add_assertion(
         "reading_a_c2_disagrees_with_closure_c2",
-        computed=float(abs(c[0] - (-G)) / G * 100),
-        expected=100.0,  # closure c_2 ≈ 62.6, Reading A c_2 = -0.916; %-difference is huge
-        tolerance=10000.0,  # accept any large discrepancy as confirmation
+        computed=c2_disagreement_pct,
+        expected=6900.0,
+        tolerance=1000.0,  # 5900-7900 % band
         unit="percent disagreement",
-        source="closure c_2 vs Reading A c_2 = -G",
+        source="closure c_2 vs Reading A c_2 = -G; must be > 1000% to confirm structural mismatch",
     )
 
     out = w.save()
