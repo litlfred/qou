@@ -872,9 +872,11 @@ export interface ChapterRef {
    * with subsequent chapters until the next chapterRef with its own
    * `partTitle` (or end of paper).
    *
-   * Use this for narrative section banners like
-   * "Part II: Knots, braids, and particles" without splitting the
-   * chapters into separate sub-directories.
+   * LaTeX supplies the "Part N" prefix automatically — `partTitle`
+   * should contain only the title text (e.g. "Knots, Braids, and
+   * Particles"), not "Part II: ...". The renderer escapes the value
+   * via `escapeLatex()`, so inline `$...$` math is preserved but
+   * raw control characters (`\`, `{`, `}`, `^`, `~`) are escaped.
    */
   partTitle?: string;
 }

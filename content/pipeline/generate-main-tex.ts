@@ -23,6 +23,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { join, resolve } from "path";
 import type { Paper } from "../schema/types";
+import { escapeLatex } from "./render-latex";
 
 /**
  * Escape text for use in LaTeX metadata fields (title, author, etc.).
@@ -195,7 +196,7 @@ export function generateMainTex(
     if (introEntry && num === introEntry[0]) continue; // already emitted pre-TOC
     const partTitle = paper.chapters[num]?.partTitle;
     if (partTitle) {
-      lines.push(`\\part{${escapeLatexMeta(partTitle)}}`);
+      lines.push(`\\part{${escapeLatex(partTitle)}}`);
     }
     lines.push(`\\input{${opts.chaptersDir}${slug}}`);
   }
