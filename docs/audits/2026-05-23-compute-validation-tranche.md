@@ -26,7 +26,17 @@ the compute-optimisation roadmap — the actual result matches.
 | ⁴He  | 4 | 12 | 1.3 s    | 3.9 s                | 3.0×    |
 | ⁵Li  | 5 | 15 | 7.3 s    | 20.6 s               | 2.8×    |
 | ⁶Li  | 6 | 18 | 63.0 s   | 225 s                | 3.6×    |
-| **⁷Li** | **7** | **21** | **912.8 s** | **(projected ~5 hr)** | **~20×** |
+| **⁷Li** | **7** | **21** | **912.8 s (15.2 min)** | **~17-20 min (projected)** | **~1.2×** |
+
+Note: speedup shrinks at higher A because the Rust reduce loop
+hits the same exponential term-count blowup as Python — the
+BigRational kernel is faster per-op but the growth rate is
+identical.  At ⁷Li, Rust barely outperforms Python LaurentQ.
+
+The Tier 1.A value at ⁷Li is NOT the speedup (1.2×) but the
+**reliability**: the Rust path completes deterministically in
+15 min, while the Python LaurentQ path at ⁷Li was described as
+"in flight" in the roadmap (implying flaky / timeout-prone).
 
 **Next atoms** (projected from the scaling):
 - ⁸Be (A=8, n=24): projected ~4-8 hr → may need Tier 1.B
