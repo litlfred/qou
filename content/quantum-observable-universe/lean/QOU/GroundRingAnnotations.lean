@@ -22,7 +22,7 @@ to numerical computations but are NOT part of the formal chain.
 | **VolumeForm** | generic `k` | ✓ | Volume from rigidity |
 | **PathIntegrals** | generic `k` | ✓ | Braid group, quantum SU(2) |
 | **Torsion/** | generic `k` | ✓ | Jet prolongation, brane tower, descent |
-| **KnotTheory** | `ℤ` | ✓ | Crossing sign, planar diagram |
+| **KnotTheory** | `ℤ` | ✓ | Crossing sign, braid word |
 | **KnotRegistry** | `ℤ` | ✓ | Knot data (integer invariants) |
 | **BringsSurface** | `ℂ` | — | Archimedean realisation |
 | **CRRealisation** | `ℂ` | — | ℂ quantum observable universe |

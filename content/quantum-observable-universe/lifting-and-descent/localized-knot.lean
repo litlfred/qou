@@ -36,8 +36,8 @@ structure LocalizedKnot where
   theta : R_q
   /-- Spherical coordinate φ ∈ [0, 2π) on CP¹ ≅ S². -/
   phi : R_q
-  /-- The knot type at this point (given by its planar diagram). -/
-  knot : KnotTheory.PlanarDiagram
+  /-- The knot type at this point (given by its braid word). -/
+  knot : KnotTheory.BraidWord
   /-- θ is in valid range. -/
   -- theta_range : 0 ≤ theta ∧ theta ≤ Real.pi  -- (archimedean; not meaningful over R_q)
   /-- φ is in valid range. -/
@@ -51,7 +51,7 @@ def LocalizedKnot.basePoint (k : LocalizedKnot) : R_q × R_q :=
   (k.theta, k.phi)
 
 /-- The crossing number of a localized knot is the crossing count of
-    its underlying planar diagram. -/
+    its underlying braid word. -/
 def LocalizedKnot.crossingNumber (k : LocalizedKnot) : ℕ :=
   k.knot.crossingCount
 
@@ -62,10 +62,10 @@ def LocalizedKnot.writhe (k : LocalizedKnot) : ℤ :=
 /-! ## Knot-type equivalence
 
 Two localized knots are *knot-equivalent* when they carry the same knot type
-(identified by planar diagram name), regardless of base point.  This is the
+(identified by braid word name), regardless of base point.  This is the
 combinatorial proxy for ambient isotopy equivalence of knot types. -/
 
-/-- Two localized knots carry the same knot type (same PD name). -/
+/-- Two localized knots carry the same knot type (same braid name). -/
 def LocalizedKnot.sameKnotType (k₁ k₂ : LocalizedKnot) : Prop :=
   k₁.knot.name = k₂.knot.name
 
@@ -127,7 +127,7 @@ theorem trefoil_spin_three_halves (k : LocalizedKnot)
     k.intrinsicAngularMomentum = 3 / 2 := by
   unfold LocalizedKnot.intrinsicAngularMomentum LocalizedKnot.crossingNumber
   rw [hk]
-  simp [KnotTheory.PlanarDiagram.crossingCount, KnotTheory.trefoil]
+  simp [KnotTheory.BraidWord.crossingCount, KnotTheory.trefoil]
   ring
 
 /-- The unknot (0 crossings) has spin 0 — a scalar. -/
@@ -137,7 +137,7 @@ theorem unknot_spin_zero (k : LocalizedKnot)
     k.intrinsicAngularMomentum = 0 := by
   unfold LocalizedKnot.intrinsicAngularMomentum LocalizedKnot.crossingNumber
   rw [hk]
-  simp [KnotTheory.PlanarDiagram.crossingCount, KnotTheory.unknot]
+  simp [KnotTheory.BraidWord.crossingCount, KnotTheory.unknot]
 
 /-- Angular momentum is non-negative. -/
 -- Ref: [manuscript] §3

@@ -9,14 +9,14 @@ A structured registry of all knots relevant to the Quantum Observable Universe
 and Bring's Surface.  Each entry carries:
 
   1. **Alexander-Briggs index** (primary key, e.g. `"4_1"`)
-  2. **Planar Diagram code** (from `QOU.KnotTheory`)
+  2. **Braid word** (from `QOU.KnotTheory`, Markov closure to recover the link)
   3. **Hyperbolic volume** with SnapPy-grade precision
   4. **QOU physical identity** (the particle the knot encodes)
   5. **Knot Atlas URL** for machine-readable external linkage
 
 ## Data Sources
 
-- Planar diagram codes: The Knot Atlas / KnotInfo
+- Braid words: The Knot Atlas / KnotInfo (converted from PD / Gauss code)
 - Hyperbolic volumes: SnapPy census (Culler et al.)
 - QOU identities: Manuscript Conjecture 4.25 and §5
 
@@ -58,13 +58,13 @@ inductive QOUIdentity where
 /-- A fully-specified knot registry entry.
 
     Each entry is the "settled type" for one knot in the QOU formalization:
-    it pins the Alexander-Briggs name, combinatorial PD code, computed
-    volume, physical identity, and external reference URL. -/
+    it pins the Alexander-Briggs name, braid word, computed volume,
+    physical identity, and external reference URL. -/
 structure KnotEntry where
   /-- Alexander-Briggs index, e.g. `"4_1"`. Primary key. -/
   ab_index : String
-  /-- Planar diagram (PD code) from `QOU.KnotTheory`. -/
-  diagram : PlanarDiagram
+  /-- Braid word (Markov-closure encoding) from `QOU.KnotTheory`. -/
+  braid : BraidWord
   /-- Hyperbolic volume of the knot complement (SnapPy). -/
   volume : HyperbolicVolume
   /-- The QOU particle this knot represents. -/
@@ -82,7 +82,7 @@ structure KnotEntry where
     Hyperbolic volume: 0  (non-hyperbolic) -/
 noncomputable def unknotEntry : KnotEntry where
   ab_index := "0_1"
-  diagram := unknot
+  braid := unknot
   volume := {
     value := 0
     error_bound := 0
@@ -100,7 +100,7 @@ noncomputable def unknotEntry : KnotEntry where
     Jones polynomial: −t⁻⁴ + t⁻³ + t⁻¹ -/
 noncomputable def trefoilEntry : KnotEntry where
   ab_index := "3_1"
-  diagram := trefoil
+  braid := trefoil
   volume := vol_trefoil
   identity := .electron
   atlas_url := "http://katlas.org/wiki/3_1"
@@ -117,7 +117,7 @@ noncomputable def trefoilEntry : KnotEntry where
     Ref: [turaev2010] https://doi.org/10.1515/9783110221831 -/
 noncomputable def figureEightEntry : KnotEntry where
   ab_index := "4_1"
-  diagram := figureEight
+  braid := figureEight
   volume := vol_figure_eight
   identity := .higgsField
   atlas_url := "http://katlas.org/wiki/4_1"
@@ -138,12 +138,12 @@ noncomputable def figureEightEntry : KnotEntry where
 noncomputable def photonEntry : KnotEntry where
   -- Unique key (not "0_1") so `lookup` can distinguish the photon
   -- (empty knot ∅, identity braid) from the neutrino (unknot 0_1).
-  -- Both have Jones polynomial 1 and zero volume; the entry below
-  -- reuses the `unknot` diagram as a single-component placeholder
-  -- because `PlanarDiagram` does not yet model a genuinely empty
-  -- braid closure.
+  -- Both have Jones polynomial 1 and zero volume; the entry reuses
+  -- the `unknot` braid word as a single-component placeholder
+  -- because `BraidWord` does not yet model a genuinely empty
+  -- Markov closure (zero components).
   ab_index := "empty"
-  diagram := unknot
+  braid := unknot
   volume := {
     value := 0
     error_bound := 0
@@ -161,14 +161,7 @@ noncomputable def photonEntry : KnotEntry where
     Components: 2 -/
 noncomputable def hopfLinkEntry : KnotEntry where
   ab_index := "L2a1"
-  diagram := {
-    name := "L2a1"
-    crossings := [
-      ⟨![1, 4, 2, 3], .positive⟩,
-      ⟨![3, 2, 4, 1], .positive⟩,
-    ]
-    components := 2
-  }
+  braid := hopfLink
   volume := {
     value := 0
     error_bound := 0
@@ -188,18 +181,7 @@ noncomputable def hopfLinkEntry : KnotEntry where
     Components: 3 -/
 noncomputable def borromeanRingsEntry : KnotEntry where
   ab_index := "L6a4"
-  diagram := {
-    name := "L6a4"
-    crossings := [
-      ⟨![1, 8, 2, 9], .positive⟩,
-      ⟨![3, 10, 4, 11], .positive⟩,
-      ⟨![5, 12, 6, 7], .positive⟩,
-      ⟨![7, 2, 8, 3], .negative⟩,
-      ⟨![9, 4, 10, 5], .negative⟩,
-      ⟨![11, 6, 12, 1], .negative⟩,
-    ]
-    components := 3
-  }
+  braid := borromeanRings
   volume := {
     value := 7.32772475341775
     error_bound := 1e-14
@@ -253,17 +235,17 @@ theorem unknot_volume_zero :
 
 /-- The unknot has 0 crossings. -/
 theorem unknot_crossing_count :
-    unknotEntry.diagram.crossingCount = 0 := by
+    unknotEntry.braid.crossingCount = 0 := by
   rfl
 
 /-- The trefoil has 3 crossings. -/
 theorem trefoil_crossing_count :
-    trefoilEntry.diagram.crossingCount = 3 := by
+    trefoilEntry.braid.crossingCount = 3 := by
   rfl
 
 /-- The figure-eight knot has 4 crossings. -/
 theorem figureEight_crossing_count :
-    figureEightEntry.diagram.crossingCount = 4 := by
+    figureEightEntry.braid.crossingCount = 4 := by
   rfl
 
 end QOU.KnotRegistry
