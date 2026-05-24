@@ -83,16 +83,7 @@ mass-tower computations would be unjustified.
 
 **Plancherel distribution at $q_0 = 1.109978595554181\ldots$ (50 dps) (small $n$).**
 
-| $n$ | $\lambda$ | $\dim V_\lambda$ | $w_\lambda$ | depth |
-|---|---|---|---|---|
-| $3$ | $(3)$ | $1$ | $1/6$ | $0$ |
-| $3$ | $(2,1)$ | $2$ | $4/6 = 2/3$ | $1$ |
-| $3$ | $(1^3)$ | $1$ | $1/6$ | $2$ |
-| $4$ | $(4)$ | $1$ | $1/24$ | $0$ |
-| $4$ | $(3,1)$ | $3$ | $9/24$ | $1$ |
-| $4$ | $(2,2)$ | $2$ | $4/24$ | $1$ |
-| $4$ | $(2,1,1)$ | $3$ | $9/24$ | $2$ |
-| $4$ | $(1^4)$ | $1$ | $1/24$ | $3$ |
+See [Table](#tbl:plancherel-weight-boundedness-table-data).
 
 Full tables for $n \in \{3, 4, 5, 6, 9, 12\}$ — including q-deformed
 dimensions, signed content (chirality marker $= 0$), and

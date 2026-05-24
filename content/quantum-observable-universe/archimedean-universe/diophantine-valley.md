@@ -54,15 +54,7 @@ where $A^*(p)$ is the mass number solving $p = A/(2 + cA^{2/3})$.
 The ratio $n/p$ is a slowly growing function of $p$ whose
 integer-part transitions occur at specific elements:
 
-| $n/p$ crosses | Element | $p$ | $n$ |
-|---------------|---------|----:|----:|
-| $1.00$ | Calcium | 20 | 20 |
-| $1.10$ | Bromine | 35 | 44 |
-| $1.20$ | Zirconium | 40 | 50 |
-| $1.30$ | Tin | 50 | 70 |
-| $1.40$ | Tungsten | 74 | 110 |
-| $1.54$ | Lead | 82 | 126 |
-| $1.59$ | Uranium | 92 | 146 |
+See [Table](#tbl:diophantine-valley-table-data).
 
 **Stable hadrons as integer points on an algebraic curve.**
 The central observation is that every stable nucleus in nature

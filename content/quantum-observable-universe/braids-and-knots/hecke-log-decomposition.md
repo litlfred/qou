@@ -45,15 +45,7 @@ $$
 
 At the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps):
 
-| Quantity | Value (50 dps) |
-|---|---|
-| $h(q_0)$ | $0.20906032199\ldots$ |
-| $\hbar_q(q_0) = (q_0 - 1)/q_0$ | $0.09908172644\ldots$ |
-| $1 + q_0$ | $2.10997859556\ldots$ |
-| $\log(1/h(q_0))$ | $1.56513244670\ldots$ |
-| $\log(1/\hbar_q(q_0))$ | $2.31181024982\ldots$ |
-| $\log(1 + q_0)$ | $0.74667780313\ldots$ |
-| $\log(1/\hbar_q) - \log(1 + q_0)$ | $1.56513244670\ldots$ (matches) |
+See [Table](#tbl:hecke-log-decomposition-table-data).
 
 The decomposition is verified to $10^{-50}$ via
 [`probe_delta_coupling_q_edgeworth.py`](folio-assistant/computations/probe_delta_coupling_q_edgeworth.py)
