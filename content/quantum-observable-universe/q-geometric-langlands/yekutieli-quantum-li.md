@@ -6,9 +6,9 @@ scalar arithmetic to matrix-valued geometry.
 
 **The classical picture.** In ordinary analytic number theory, the
 prime counting function $\pi(x)$ is approximated by $\mathrm{Li}(x)$.
-The mechanism is essentially additive: one integrates the scalar
-fractional probability $1/\ln t$ of finding a prime near $t$, and the
-result is a single real number. All structure is abelian --- the
+The mechanism is additive: one integrates the scalar fractional
+probability $1/\ln t$ of finding a prime near $t$, and the result
+is a single real number. All structure is abelian --- the
 logarithm converts multiplication to addition, and the integral sums
 independent contributions.
 

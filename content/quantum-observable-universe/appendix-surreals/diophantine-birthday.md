@@ -172,8 +172,8 @@ theorem, which is deep but classical.
 ## Status
 
 **Open**, but the reduction to continued fractions is
-classical. The conjecture essentially restates Roth / Liouville
-in surreal-combinatorial language.
+classical. The conjecture restates Roth / Liouville in
+surreal-combinatorial language.
 
 The specific application to $q_0$ in QOU is the novel part — if
 $q_0$ has a computable closed-form birthday, the conjecture
