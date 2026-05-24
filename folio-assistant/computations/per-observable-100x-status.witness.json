@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T03:11:32.606444+00:00",
-  "commitSha": "ab60115acbebcf0d675c0bb5f7268af81ac1e823",
+  "computedAt": "2026-05-24T11:20:47.882837+00:00",
+  "commitSha": "d2db82b79f4911674d13eb65d9b6722aaaa6b2da",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "d757612eddd8",
-  "scriptCommitSha": "bd5b885883b24aab8ae89db5439974cc2982b27d",
+  "scriptHash": "a874b9eb2aca",
+  "scriptCommitSha": "b78e99390cace493187890ef6c58e399a14cf3b6",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
     "rows": [
@@ -35,7 +41,9 @@
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
-        "sigma_source": "codata_constants.M_P_MEV_VALIDATION"
+        "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
+        "compute_truncation_ppb": "1.036e-34",
+        "compute_output_dps": 40
       },
       {
         "obs": "m_n",
@@ -50,7 +58,9 @@
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
-        "sigma_source": "codata_constants.M_N_MEV_VALIDATION"
+        "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
+        "compute_truncation_ppb": "1.034e-34",
+        "compute_output_dps": 40
       },
       {
         "obs": "m_mu",
@@ -65,7 +75,9 @@
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
-        "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069 × 206.768283 (ratio-derived; independently-quoted 105.6583755(23) MeV)"
+        "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069 × 206.768283 (ratio-derived; independently-quoted 105.6583755(23) MeV)",
+        "compute_truncation_ppb": "9.464e-34",
+        "compute_output_dps": 40
       },
       {
         "obs": "Delta_pn",
@@ -80,7 +92,9 @@
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
-        "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature"
+        "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
+        "compute_truncation_ppb": "7.517e-32",
+        "compute_output_dps": 40
       },
       {
         "obs": "Q_beta",
@@ -95,7 +109,9 @@
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
         "source_witness": "q-beta-operator-valued-N3.witness.json (N=5 categorical, c_5 = c_3²·3 + b per precision-ladder.md mixing pattern)",
-        "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)"
+        "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
+        "compute_truncation_ppb": "1.278e-31",
+        "compute_output_dps": 40
       },
       {
         "obs": "m_e",
@@ -122,11 +138,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "0fec3b0cc4d31a8b114604afacd60dbfca8bef142fc640e82a4e65a7c3903a4f",
+        "sha256": "56447ba64167a4664d623f596f61ae9160c4fb286119dd35d0389c9ff9f5e7f5",
         "size_bytes": 7252,
-        "commitSha": "e1f027f34dd7fe93691725cba3e99182ecf6208f",
-        "scriptCommitSha": "9fb3f17f3efac91f78d72d06a1b60fa9dac0ba1f",
-        "computedAt": "2026-05-24T02:09:26.518655+00:00"
+        "commitSha": "b7cb3790d33935014ec267ac7f141bd17920e44f",
+        "scriptCommitSha": "005d535c1122ef20427bed4e2feb13f6db8bb1cd",
+        "computedAt": "2026-05-24T06:54:24.228675+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",

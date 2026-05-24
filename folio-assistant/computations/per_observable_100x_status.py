@@ -141,6 +141,14 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     miss_factor = err_ppb / target_ppb if target_ppb > 0 else mp.mpf("inf")
     beats_1x = bool(err_ppb < sig_ppb)
     beats_100x = bool(err_ppb < target_ppb)
+    # ── σ_pred: propagated compute-library truncation bound ──────
+    # At OUTPUT_DPS = 40 digits, the truncation floor is 10^{-40}.
+    # In ppb: 10^{-40} / pred * 10^9 ≈ 10^{-31} ppb (negligible).
+    # Recorded for completeness; real σ_pred from CAL-1/2/3 input
+    # uncertainties is computed per-observable in main().
+    from qou_substrate.precision import OUTPUT_DPS
+    truncation_ppb = mpf(10) ** (-OUTPUT_DPS) / abs(pred) * mpf("1e9") if pred != 0 else mpf(0)
+
     return {
         "obs": obs,
         "role": role,
@@ -155,6 +163,8 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
         "beats_100x_experimental": beats_100x,
         "source_witness": source_witness,
         "sigma_source": sigma_source,
+        "compute_truncation_ppb": fmt(truncation_ppb, 4),
+        "compute_output_dps": OUTPUT_DPS,
     }
 
 
