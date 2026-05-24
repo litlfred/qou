@@ -33,10 +33,20 @@ Honest predictions at q_0:
     Δ m_pn^pred ≈ 1.330 MeV    (vs CODATA 1.293, ~2.9 % off)
 
 The framework's PROVABLE accuracy at this layer is ~3 %, not 1 ppb.
-The Bring-Bloch identity
-(`conj:lambda-scale-bring-bloch-identity`) is the open R&D path
-for closing the residual gap categorically (Tier0-5 PSLQ negative
-to date).
+
+Per the 2026-05-23 absorption coord
+(`docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md`):
+there is **no separate `λ_scale` to derive** — the numerical factor
+that the legacy framing called `λ_scale` is what `Geom_full(K)`
+produces per knot/link. The current categorical derivation evaluates
+to ~2.46 (= 1836/746) for the Borromean braid, giving the ~3% offset
+above. Refining `Geom_full(𝓑₃)` is the open R&D path. All
+alternative derivations of the linking-weight tested so far were
+refuted or purged: Bring-Bloch Tier 0-5 PSLQ (negative); V_7 + q^10
+pentagon (PR #951); unit-circle Bloch class (PR #952); Yekutieli
+per-cell curvature (briefly in production a1f68d5e5; PURGED
+2026-05-24 71d674da1 as non-canonical, bijection NEGATIVE per
+PR #985).
 
 The falsified literals `2.4599527869` / `2.4633436333` are
 retained as audit-only references (`*_AUDIT_ONLY`) so the
@@ -69,33 +79,46 @@ against CODATA proton + neutron masses at MPFR 50 dps.
 
 ## The formula
 
-  m(B) = m_e · [Vol(B_3)/ℏ_q² · λ_scale + S(B)]
+  m(B) = m_e · Geom_full(B, q₀)
+
+where `Geom_full(K)` is the canonical per-knot Geom evaluation
+(per `prop:geom-universality`). For knots, Geom_full = Vol(K)/ℏ_q²;
+for links like the Borromean braid 𝓑₃, Geom_full additionally
+includes the linking weight that the Geom functor produces for
+multi-component links (it is NOT a separate calibration constant —
+see the absorption coord referenced above).
+
+Decomposition:
+
+  Geom_full(𝓑₃, q₀) = (Vol(B_3)/ℏ_q²) · linking_weight(q₀)
+                    ≈ 746.42 · 2.46
+                    ≈ 1836
 
 where:
-- Vol(B_3) = 7.32772... = Borromean rings hyperbolic volume (topological invariant)
+- Vol(B_3) = 8·G ≈ 7.32772... (Borromean rings hyperbolic volume;
+  Adams 1985)
 - ℏ_q = (q-1)/q
-- λ_scale ∈ ℚ(q_0) = common Borromean scale (open R&D — derivable from substrate?)
-- S(B) = Skein contribution (Kauffman-bracket evaluation)
+- linking_weight = what `Geom_full` produces for the 3-component
+  Borromean link — currently best categorical derivation is via
+  Family A (5/2 + (3/4)h² from H_4 Wedderburn). This is not a
+  separate constant; it is the per-link value of the Geom functor.
 
 ## Result
 
-With λ_scale fixed at the CODATA closure target 2.4599527869 (and
-S(proton) ≈ 0), the formula reproduces m_p to **~1 ppb** (verified
-2026-05-20 with Vol(𝓑₃) = 8·G exact; the prior 0.25 ppm residual
-was a stale-Vol(𝓑₃) propagation bug — see
-`borromean-volume-propagation-to-m-p.witness.json`). This
-**explains the 1700× scale gap** in the previous single-level
-Markov-trace m_p chain:
+The current `Geom_full(𝓑₃, q₀)` evaluation gives m_p ≈ 965 MeV
+(+2.89% vs CODATA 938.27). This **explains the 1700× scale gap**
+in the previous single-level Markov-trace m_p chain:
 - Single-level: m_p_pred ≈ 0.597 MeV (off by 99.94%)
-- Borromean tower (with Vol = 8·G exact): m_p_pred ≈ 938.272 MeV
-  (off by ~1 ppb, well under CAL-2 floor)
+- With `Geom_full` tower (Vol = 8·G exact + linking weight): m_p_pred ≈ 965 MeV
+  (+2.89% vs CODATA — the residual reflects the gap between the
+  framework's current categorical `Geom_full` computation and its
+  categorically-exact value, not a missing calibration)
 
-The factor `Vol(B_3)/ℏ_q² × λ_scale ≈ 746.42 × 2.46 ≈ 1836` IS
-the missing tower contribution.
-
-The remaining R&D is to derive λ_scale from substrate (currently
-closed numerically against CODATA — the open part of the
-conjecture).
+The remaining R&D is to refine `Geom_full(𝓑₃)` so it lands closer
+to its categorically-exact value. The CAL-4 fit literals
+(2.4599527869 = 1836/746) are PURGED from production and retained
+only as audit-only references; their tautological match against
+CODATA was the framing error that the absorption coord corrects.
 """
 from __future__ import annotations
 
@@ -462,10 +485,11 @@ def main() -> int:
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
     print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
     print(f"  CODATA / single-level:   {gap_factor:.4f}")
-    print(f"  → Borromean factor with PROVED Family A λ closes to ~3 % vs CODATA")
-    print(f"    on m_avg; substrate flavor split (PR #690) supplies Δm/M_N to")
-    print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")
-    print(f"    Open R&D: ~3 % m_avg gap (Bring-Bloch / categorical q-dilog tower).")
+    print(f"  → Geom_full(𝓑₃) with current Family A linking-weight closes to ~3 %")
+    print(f"    vs CODATA on m_avg; substrate flavor split (PR #690) supplies")
+    print(f"    Δm/M_N to ~305 ppm (~0.030 %) giving a categorical (non-fit)")
+    print(f"    p/n split. Open R&D: refining Geom_full(𝓑₃) so the per-link")
+    print(f"    Geom evaluation closes the ~3 % gap (NOT a separate λ_scale).")
     return 0
 
 

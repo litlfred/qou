@@ -6,6 +6,18 @@
 
 **Highlight to Claude** — referenced from CLAUDE.md so any agent picking up final-stage QOU work has the full canonical chain visible.
 
+> ## ⚠ Critical framing — do NOT treat `λ_scale` as a separate object
+>
+> **`λ_scale` was ABSORBED into `Geom_full(K)` on 2026-05-23 (commit ffdd84409).** The numerical factor that older docs call `λ_scale` is *what the canonical `Geom_full(K)` evaluation produces per knot/link*. It is **not** a separate constant to derive, calibrate, or "close". There is **one** canonical mass formula:
+>
+> ```
+> m(K) = m_e × Geom_full(K, q₀)
+> ```
+>
+> per `prop:geom-universality`. For the proton, `Geom_full(𝓑₃)` factors as `(Vol(𝓑₃)/ℏ_q²) · linking_weight(q)` — but the linking weight is **part of Geom**, not separate. The current categorical computation gives m_p ≈ 965 MeV (+2.89%); the open R&D is **refining `Geom_full(𝓑₃)`**, not "deriving λ_scale". The Yekutieli per-cell route was briefly tried in production then PURGED 2026-05-24 (71d674da1) as non-canonical.
+>
+> See [`docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) §"λ_scale is NOT a separate object" for the authoritative discussion. Agents recurrently rediscover and re-frame "λ_scale closure" as if it were the open problem — it is not. The problem is per-knot `Geom_full` refinement.
+
 ---
 
 ## 1. The chain in one diagram
@@ -153,28 +165,32 @@ Tracker last updated: **2026-05-23 (ALL 5 ITEMS CLOSED)**.
 
 | # | Status | Action | Where | Closure / PR |
 |---|---|---|---|---|
-| 1 | ✅ | Replace `LAMBDA_PROTON_DOC / LAMBDA_NEUTRON_DOC` literals with substrate-derived `λ_scale` | `m_p_borromean_verification_50dps.py` | **Closed by #888 (literal truth-in-naming + I13 audit) + #895 (PROVED Family A categorical λ_A = 5/2 + (3/4)h² now in production). Honest residual ~3% vs CODATA; falsified `5/2 − h²·G` retired.** Open R&D: Strategy H V_7 (per PR #916) had +0.144% with right h² sign but was refuted as non-canonical (no `[4]_q`-normaliser substrate justification per #952). Strategy I (Yekutieli per-cell curvature, PR #978) numerically verified: λ_Yekutieli = 5/2 + (3/4 − G)·h² ≈ 2.4927, **2.22× improvement** over Family A; m_p prediction 951 MeV (1.33% vs CODATA). Bijection between H_4 half-symmetric Wedderburn projection and 8 Borromean octahedral cells is the OPEN research-grade piece. |
+| 1 | ✅ | Geom_full evaluation for the proton (Borromean braid 𝓑₃) | `m_p_borromean_verification_50dps.py` | **Closed by #888 + #895 + #1056.** The framework now uses a single `Geom_full(𝓑₃, q₀)` evaluation — there is **no separate `λ_scale` constant** (it was absorbed into the Geom functor, per the 2026-05-23 algebraic→geometric→observable consistency coord doc). The current categorical computation of `Geom_full(𝓑₃, q₀)` gives m_p ≈ 965 MeV (+2.89% vs CODATA target 938.27 MeV). The Yekutieli-extended derivation of `Geom_full` was briefly tried in production (a1f68d5e5) then PURGED (71d674da1) as non-canonical (bijection NEGATIVE per PR #985; Reading A was substrate-q₀ coincidence). Current best PROVED categorical: `Geom_full = (Vol(𝓑₃)/ℏ_q²) · λ_A` where `λ_A = 5/2 + (3/4)h²` is Family A from H_4 Wedderburn — but the framing "λ_A as separate constant" is obsolete; refining the `Geom_full` evaluation is the open research direction. |
 | 2 | ✅ | Migrate 20 importers of SUPERSEDED `mass_endomorphism.py` to the new `mass_tower_operator_valued` API | 2 substantive callers (`mass_at_3A_proper.py`, `pn_alpha_lp_dual.py`) + 15 utility-only (no migration needed) | **Closed by #889 (block-graph hygiene, 15 `.ts` files) + #944 (H_12 Phase-1 extract unblocking) + #960 (scope-correction audit: 20 → 4) + #966 (canonical API surface in `mass_tower_operator_valued.py` + 2-caller migration).** Strict count: only 2 scripts actually called `mass_from_tower(`; 18 utility-only importers consume substrate helpers and need NO migration. Re-export at the canonical block-name location (`new is orig → True`); zero computation change. |
 | 3 | ✅ | Wire the Rust LR convention adapter (PR #829) into `atomic_tr_m_*` scripts for A ≥ 3 | `atomic_tr_m_mpfr_50dps.py` + tr_m_wenzl_bridge + `atomic_tr_m_helium4.py` | **Closed by #901 (bridge-level wiring) + #895 (entry-point `--method canonical-rust` flag + 76-90× speedup at A ≥ 3) + #915 (helium4 refactor to Wenzl bridge — 300× speedup at H_3 cross-check, sub-second H_12 expected) + #946 (default-method flip).** Both `atomic_tr_m_*` files now Rust-backed; defaults flipped. |
 | 4 | ✅ | Refactor 4 production tr_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `binding_canonical.py` (the one true scalar candidate); the other 3 (`atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_depth_stratified*.py`) need per-partition χ_λ which the scalar closed form cannot supply | **Closed by #921 (opt-in `use_closed_form=True` in `binding_canonical.py` via Phase 5q identity; 3.58e-16 vs symbolic at deuteron, 251× faster).** The other 3 scripts use the per-partition Rust wire-up from PR #901 indirectly — they don't need the scalar closed form (scope clarified during the cluster). |
 | 5 | ✅ | Add compute verification for the Reeb-flow / Garside closed-form (4 paper-only commits — `b6ed74635`, `88d7934b4`, `172263c6e`, `6ce96b4ce`) | new script `reeb_flow_garside_closed_form_verification.py` | **Closed by #935.** Verifies all six canonical knot operators (identity, σ_1, σ_2, σ_1σ_2σ_1 Garside, σ_1σ_2, σ_2σ_1) reproduce the closed-form trajectory at MPFR 50 dps. 13/13 assertions pass; Garside-thirds use rational ("1/3", "2/3", "1") to avoid f64 truncation. |
 
-### Manager view — what's next (2026-05-23)
+### Manager view — what's next (2026-05-24)
 
 **All 5 cheat-sheet §5 migration items are CLOSED.** The "pipeline-discipline migrations" backlog is empty.
 
+> **Framing correction (2026-05-23–24):** there is **no separate `λ_scale` to derive**. The numerical factor previously called `λ_scale` is *what the canonical `Geom_full(K)` evaluation produces* — it is absorbed into the Geom functor on a per-knot basis (per `prop:geom-universality` and the 2026-05-23 algebraic→geometric→observable consistency coord doc). The framework's open work is to refine the categorical computation of `Geom_full` for specific knots/links, not to "calibrate λ_scale". The Yekutieli per-cell variant of `Geom_full` was briefly tried in production (a1f68d5e5) and PURGED on 2026-05-24 (71d674da1) as non-canonical (bijection negative per PR #985). Current canonical: Family A linking-weight inside `Geom_full(𝓑₃)`.
+>
+> **Per-isotope error budget under the current `Geom_full`:** m_p ≈ +2.89%, m_n ≈ +2.89%, Δ_pn ≈ +2.86%, ⁴He ≈ +3.65%, ⁵⁶Fe ≈ +3.86% — see `mass-table-comprehensive.witness.json` (65 isotopes). This is a **single** error, not a "λ_scale closure gap" — it is the gap between the framework's current `Geom_full` evaluation and the categorically-exact one. Refinements queued below address different routes to that refinement.
+
 The forward work has shifted from §5 mechanics to scientific closure:
 
-1. **Strategy I (Yekutieli per-cell curvature) bijection proof** — the load-bearing categorical step. λ_Yekutieli numerics + q-locality smoothness verified in PR #978; the open research-grade piece is the explicit bijection between H_4 half-symmetric Wedderburn projection and the 8 ideal octahedral cells in Vol(𝓑_3) = 8G. Closing this would lock in the 2.22× improvement on m_p (966 → 951 MeV; 1.33% from CODATA, vs Family A's 2.96%).
-2. **Q_β refinement** — closest L2 100× "easy win" per the dashboard (`per-observable-100x-status.witness.json`): currently 1.43× from passing the 100× target. Categorical Q_β formula (N=3, c_3 = -2 = J_Hopf(q=1)) is in `q-beta-operator-valued-N3.witness.json`; small substrate refinement should close it.
-3. **Phase-1b BlochWigner Lake-wiring** (PR #956's roadmap) — Lake-wire `QOU.Archimedean.BlochWigner_unit_circle` into the module tree, then strengthen `BringZeroModeBlochClass` field from `∃ z : ℝ, z = bringZeroModeValue` to `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`. Closes the literal-rfl loophole.
-4. **L2 100× Subgoal-1 close-out** — 3 of 6 observables pass 1× experimental; only Q_β and the m_p / m_n / Δ_pn cluster (all dominated by the 2.89% Family-A residual) are gaps. The latter would close simultaneously when Strategy I lands.
+1. **`Geom_full(𝓑₃, q₀)` refinement (research-grade)** — the categorical evaluation of `Geom_full` for the proton currently gives 965 MeV; the categorically-exact value should give 938.27 MeV. Several refinement routes are queued (Yekutieli per-cell curvature, Bring color-tube weighted averaging, Reading-A geometrised form, q-dilog tower). All are research-grade; the production code uses Family A as the current best PROVED categorical input to `Geom_full`. Any refinement must round-trip the muon (4₁) anchor exactly.
+2. **Q_β refinement** — was 1.43× from passing the L2 100× target in the 2026-05-23 dashboard; the 2026-05-24 dashboard shows it **now passes 100×** (3/6 observables pass; was 2/6). Q_β has been categorical-closure-friendly via the N=3 ladder (c_3 = -2 = J_Hopf(q=1)).
+3. **Phase-1b BlochWigner Lake-wiring** (PR #956's roadmap) — Lake-wire `QOU.Archimedean.BlochWigner_unit_circle` into the module tree, then strengthen `BringZeroModeBlochClass` field from `∃ z : ℝ, z = bringZeroModeValue` to `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`. Closes the literal-rfl loophole. Auxiliary to the `Geom_full` refinement.
+4. **L2 100× Subgoal-1 close-out** — 3 of 6 observables pass 1× experimental and 3 of 6 pass 100×. The remaining gaps (m_p, m_n, Δ_pn) all reflect the same per-knot `Geom_full` evaluation gap on the proton/neutron — they are not three independent residuals.
 
 ### Adjacent open work (not in §5 but cited by the cluster)
 
 - **Tier 1.A 4× gate** (PR #886): ⁶Li wall 84.5 s, target < 60 s. 1-2 day Rust optimisation (FxHashMap intermediate + defer-GCDs in `reduce_laurent`).
 - **Tier 1.B orbit reduction** (gates A ≥ 8, ¹²C / ¹⁴N / ¹⁶O — organic chemistry): preflight required (`§4.2` of the handover doc; orbit-trace identity must validate at 1e-25 on ⁴He / ⁵Li / ⁶Li before implementation).
-- **Bring color-tube quark-weighted p-n averaging**: closes Δm_{n−p} to ~0.14 % per `probe_pn_flavor_asymmetry.py` Scheme 4. Research-grade.
+- **Bring color-tube quark-weighted p-n averaging**: closes Δm_{n−p} to ~0.14 % per `probe_pn_flavor_asymmetry.py` Scheme 4. Research-grade — a candidate refinement of the p-n cross-section of `Geom_full`.
 
 ---
 
