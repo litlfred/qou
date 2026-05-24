@@ -90,6 +90,106 @@ end
 """Gram determinant."""
 gram_det(q::Float64)::Float64 = ccall((:qou_hecke_gram_det, _LIB), Float64, (Float64,), q)
 
-export version, markov_z, hecke_h, trace_weights, gram_matrix, gram_det
+# ── Phase B — full surface ──
+
+"""
+    chi_lambda_braid(shape, word, q) -> Float64
+
+Hecke character χ_λ(β) of partition `shape` on braid word `word`
+at substrate `q`.
+
+* `shape` — `Vector{Int}` (weakly decreasing, non-negative).
+  Empty vector returns 1.0 (trivial-character convention).
+* `word`  — `Vector{Tuple{Int32, UInt32}}`, each pair `(gen, exp)`
+  encoding a braid letter `σ_gen ^ exp`.
+* `q`     — substrate parameter.
+"""
+function chi_lambda_braid(shape::AbstractVector{<:Integer},
+                          word::AbstractVector{<:Tuple{<:Integer, <:Integer}},
+                          q::Float64)::Float64
+    shape_u = Csize_t.(shape)
+    word_gens = Int32[Int32(w[1]) for w in word]
+    word_exps = UInt32[UInt32(w[2]) for w in word]
+    ccall((:qou_hecke_chi_lambda_braid, _LIB), Float64,
+          (Ptr{Csize_t}, Csize_t,
+           Ptr{Int32}, Ptr{UInt32}, Csize_t,
+           Float64),
+          shape_u, length(shape_u),
+          word_gens, word_exps, length(word_gens),
+          q)
+end
+
+"""
+    lr_coefficient(lambda, mu, nu) -> Int64
+
+Littlewood–Richardson coefficient `c^λ_{μν}`. Returns 0 when
+`|λ| ≠ |μ| + |ν|` or `μ ⊄ λ`.
+"""
+function lr_coefficient(lambda::AbstractVector{<:Integer},
+                        mu::AbstractVector{<:Integer},
+                        nu::AbstractVector{<:Integer})::Int64
+    lam_u = Csize_t.(lambda)
+    mu_u  = Csize_t.(mu)
+    nu_u  = Csize_t.(nu)
+    ccall((:qou_hecke_lr_coefficient, _LIB), Int64,
+          (Ptr{Csize_t}, Csize_t,
+           Ptr{Csize_t}, Csize_t,
+           Ptr{Csize_t}, Csize_t),
+          lam_u, length(lam_u),
+          mu_u,  length(mu_u),
+          nu_u,  length(nu_u))
+end
+
+"""
+    tr_m_atomic_mpfr(word, n_strands, q_str, dps) -> String
+
+Arbitrary-precision Markov trace `tr_M(β)` at q (passed as decimal
+string for parser-level precision). Returns the decimal-string
+representation of the value at `dps` digits of precision.
+
+* `word`      — `Vector{Tuple{Int8, Int32}}`, each pair `(sign, gen)`
+  with `sign ∈ {-1, +1}` and `gen` a 1-based generator index.
+* `n_strands` — `n` in `B_n`.
+* `q_str`     — `String` decimal representation of `q`.
+* `dps`       — `Integer` number of decimal digits of precision.
+
+Throws `ErrorException` if the underlying engine reports an error.
+"""
+function tr_m_atomic_mpfr(word::AbstractVector{<:Tuple{<:Integer, <:Integer}},
+                          n_strands::Integer,
+                          q_str::AbstractString,
+                          dps::Integer)::String
+    word_signs = Int8[Int8(w[1]) for w in word]
+    word_gens  = Int32[Int32(w[2]) for w in word]
+    # Buffer sized for dps digits + sign + exponent + NUL; grow on
+    # truncation (status == 2).
+    buf_len = Int(dps) + 64
+    buf = Vector{Cchar}(undef, buf_len)
+    function call_engine(b)
+        ccall((:qou_hecke_tr_m_atomic_mpfr, _LIB), Cint,
+              (Ptr{Int8}, Ptr{Int32}, Csize_t,
+               Csize_t,
+               Cstring, UInt32,
+               Ptr{Cchar}, Csize_t),
+              word_signs, word_gens, length(word_signs),
+              Csize_t(n_strands),
+              q_str, UInt32(dps),
+              b, length(b))
+    end
+    status = call_engine(buf)
+    if status == 2
+        # Truncated; retry with 4x buffer.
+        buf = Vector{Cchar}(undef, buf_len * 4)
+        status = call_engine(buf)
+    end
+    s = unsafe_string(Ptr{Cchar}(pointer(buf)))
+    if status == 0
+        return s
+    end
+    error("tr_m_atomic_mpfr: status=$status — $s")
+end
+
+export version, markov_z, hecke_h, trace_weights, gram_matrix, gram_det,
+       chi_lambda_braid, lr_coefficient, tr_m_atomic_mpfr
 
 end # module

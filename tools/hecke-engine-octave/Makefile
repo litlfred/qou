@@ -15,12 +15,15 @@ CFLAGS := -I$(C_INC_DIR) -L$(C_LIB_DIR) \
           -lhecke_engine_c -lgmp -lmpfr -lpthread -ldl -lm \
           -Wl,-rpath,'$$ORIGIN/$(C_LIB_DIR)'
 
-MEX_FILES := qou_hecke_version.mex          \
-             qou_hecke_markov_z.mex         \
-             qou_hecke_h.mex                \
-             qou_hecke_trace_weights.mex    \
-             qou_hecke_gram_matrix.mex      \
-             qou_hecke_gram_det.mex
+MEX_FILES := qou_hecke_version.mex            \
+             qou_hecke_markov_z.mex           \
+             qou_hecke_h.mex                  \
+             qou_hecke_trace_weights.mex      \
+             qou_hecke_gram_matrix.mex        \
+             qou_hecke_gram_det.mex           \
+             qou_hecke_chi_lambda_braid.mex   \
+             qou_hecke_lr_coefficient.mex     \
+             qou_hecke_tr_m_atomic_mpfr.mex
 
 all: $(MEX_FILES)
 
