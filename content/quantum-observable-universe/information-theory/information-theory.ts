@@ -97,6 +97,7 @@ section({
         "q-exponential-taylor",
         "q-gaussian-solves-q-heat",
         "q-heat-kernel-peter-weyl",
+        "q-heat-kernel-peter-weyl-table-data",
         "q-heat-kernel-computational-fallback",
       ],
     }),

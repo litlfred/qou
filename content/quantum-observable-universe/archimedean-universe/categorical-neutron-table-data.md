@@ -1,5 +1,8 @@
-| Pair | Type | Crossing element |
-|:---|:---|:---|
-| $(1,2)$ | $\mathfrak{d}$-$\mathfrak{d}$ | $\sigma_0 - H_A \mathbf{1}$ |
-| $(0,1)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A \mathbf{1}$ |
-| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_1 - \tfrac{1}{2}H_A \mathbf{1}$ |
+| Basis | Particle | Coefficient |
+|:---:|:---:|---:|
+| $\mathbf{1}$ | $\gamma$ | $-0.0096$ |
+| $\sigma_0$ | $\sigma_0$ | $-0.0481$ |
+| $\sigma_1$ | $\sigma_1$ | $+0.0461$ |
+| $\sigma_0\sigma_1$ | $L_+$ | $-0.2206$ |
+| $\sigma_1\sigma_0$ | $L_-$ | $+0.0189$ |
+| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $+1.0109$ |

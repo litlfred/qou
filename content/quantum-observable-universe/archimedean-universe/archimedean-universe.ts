@@ -203,6 +203,7 @@ export default chapter({
         // generators table extracted from torus-knot-generators.md.
         "torus-knot-generators-table-data",
         "embeddability-closure",
+        "embeddability-closure-table-data",
         "genus-from-hecke-completeness",
         "genus-from-hecke-completeness-proof",
         "chebyshev-degree-genus",
@@ -301,6 +302,7 @@ export default chapter({
         "categorical-proton-unique-proof",
         "meson-to-proton-via-borromean",
         "categorical-neutron",
+        "categorical-neutron-table-data",
         "categorical-neutron-table-data",
         "categorical-neutron-exists",
         "categorical-neutron-exists-proof",
@@ -413,6 +415,7 @@ export default chapter({
         "tau-branching-ratio-witness",
         "parity-violation-skein",
         "nuclear-spin-parity",
+        "nuclear-spin-parity-table-data",
         // Half-life calculations via Gröbner reductions
         "hadron-half-life",
         "hadron-q-self-correction",

@@ -57,14 +57,7 @@ $\qed$
 **Small-$\lambda$ table** (at physical substrate $q_0 \approx 1.11$,
 $\hbar_{q_0}^2 \approx 0.00976$):
 
-| $\lambda$ | $\sum [c]_q[c+1]_q$ | $\mu_\lambda(q_0) = \hbar_q^2 \cdot \sum$ |
-|-----------|----------------------|--------------------------------------------|
-| $(1)$     | $0$                  | $0$                                        |
-| $(2)$     | $[1]_q[2]_q \approx 2.11$    | $\approx 0.0206$                   |
-| $(1,1)$   | $[-1]_q[0]_q = 0$   | $0$                                        |
-| $(3)$     | $[1]_q[2]_q + [2]_q[3]_q \approx 8.84$ | $\approx 0.0863$           |
-| $(2,1)$   | $[1]_q[2]_q + [-1]_q[0]_q \approx 2.11$ | $\approx 0.0206$          |
-| $(1^3)$   | $[-1]_q[0]_q + [-2]_q[-1]_q \approx 2.82$ | $\approx 0.0275$        |
+See [Table](#tbl:q-heat-kernel-peter-weyl-table-data).
 
 The content-Casimir sum is *explicit from partition data* — no
 diagonalisation is required for the spectrum.

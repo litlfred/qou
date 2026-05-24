@@ -140,6 +140,7 @@ export default chapter({
         "neutron-qvalue-symbolic",
         "q-beta-spectral-bridge",
         "q-beta-form-a-n1-symbolic",
+        "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",
         "beta-decay-interpretation",
         "nucleon-nf-observability",
