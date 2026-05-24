@@ -25,6 +25,7 @@ export default chapter({
         "molecular-hecke-algebra-intro",
         "molecular-braid",
         "molecular-crossing-table",
+        "molecular-crossing-table-table-data",
         "covalent-bond-shared-trefoil",
         "ilp-covalent-bond",
       ],

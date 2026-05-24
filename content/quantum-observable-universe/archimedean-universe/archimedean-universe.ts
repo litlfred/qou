@@ -444,6 +444,7 @@ export default chapter({
         "quantum-dilogarithm-volume",
         "reidemeister-action-table",
         "topology-geometry-boundary",
+        "topology-geometry-boundary-table-data",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "shell-closure-normal-form",

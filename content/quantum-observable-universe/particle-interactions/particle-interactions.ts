@@ -164,6 +164,7 @@ export default chapter({
         "neutron-proton-splitting",
         "color-pairing-binding",
         "mass-table-z1-20",
+        "mass-table-z1-20-table-data",
         "atomic-nf-witness",
         "step-lp-verification",
         "groebner-reduction-methods",

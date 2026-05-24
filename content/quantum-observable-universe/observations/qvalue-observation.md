@@ -5,14 +5,7 @@ nuclei.
 
 **Predicted vs observed Q-values.**
 
-| Decay | $\mathcal{Q}_{\mathrm{exp}}$ (MeV) | $Q$ (MeV) | $\delta$ | $F_{\mathrm{shell}}$ |
-|:---:|:---:|:---:|:---:|:---:|
-| ${}^3\mathrm{H} \to {}^3\mathrm{He}$ | $0.01861 \pm 0.00001$ | $\approx 0.01849$ | $-0.6\%$ | $1.000$ |
-| ${}^{14}\mathrm{C} \to {}^{14}\mathrm{N}$ | $0.15648 \pm 0.00004$ | $\approx 0.15300$ | $-2.2\%$ | $1.000$ |
-| ${}^{60}\mathrm{Co} \to {}^{60}\mathrm{Ni}$ | $0.31817 \pm 0.00013$ | $\approx 0.33856$ | $+6.4\%$ | $0.590$ |
-| ${}^{90}\mathrm{Sr} \to {}^{90}\mathrm{Y}$ | $0.54590 \pm 0.00007$ | $\approx 0.55740$ | $+2.1\%$ | $0.590$ |
-| ${}^{137}\mathrm{Cs} \to {}^{137}\mathrm{Ba}$ | $0.51400 \pm 0.00021$ | $\approx 0.53750$ | $+4.6\%$ | $0.377$ |
-| ${}^{210}\mathrm{Bi} \to {}^{210}\mathrm{Po}$ | $1.16270 \pm 0.00006$ | $\approx 1.28191$ | $+10.3\%$ | $0.590$ |
+See [Table](#tbl:qvalue-observation-table-data).
 
 MAE $\approx 4.4\%$, RMS $\approx 5.4\%$.  Light nuclei ($A \leq 14$)
 need no shell corrections and achieve $\leq 2.2\%$.  Heavy nuclei
