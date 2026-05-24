@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Workplan / status snapshot / investigation result / closure-attempt that has been integrated into main or superseded by a later resolution. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) for the tranche rationale.
+
 # Three-pieces investigation: Piece 1 (dimensional bridge), Piece 2 (linked-cluster), Piece 3 (interface/intra split)
 
 **Date:** 2026-05-05

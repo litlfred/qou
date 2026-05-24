@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Workplan / status snapshot / investigation result / closure-attempt that has been integrated into main or superseded by a later resolution. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) for the tranche rationale.
+
 # A.3 v2 result — shell-aware level-1 (Manhattan distance to magic) FAILED to close spread
 
 **Pair:** [`per_braid_tower_shell_aware.py`](../../folio-assistant/computations/per_braid_tower_shell_aware.py)

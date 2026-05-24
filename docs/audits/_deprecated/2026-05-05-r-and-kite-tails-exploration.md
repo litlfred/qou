@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Workplan / status snapshot / investigation result / closure-attempt that has been integrated into main or superseded by a later resolution. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) for the tranche rationale.
+
 # Notation exploration: `r = q^{1/2}` and kite tails
 
 **Status.** Exploration / brainstorm. Not committed to a notation choice.
