@@ -24,6 +24,7 @@ import json
 import math
 import os
 from datetime import datetime, timezone
+from mpmath import mp
 
 from q_parameter import Q, Q_INV, HA, E_CROSS, S_SKEIN, HBAR_Q, LN_Q
 from experimental_constants import (
@@ -78,9 +79,9 @@ delta_virt = virt_n - virt_p  # Δ(ℓ<2)
 
 # ── Observed decay energy ────────────────────────────────────────
 Q_decay = M_N_MEV - M_P_MEV - M_E_MEV
-Q_decay_err = math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
+Q_decay_err = mp.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 delta_m = M_N_MEV - M_P_MEV
-delta_m_err = math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2)
+delta_m_err = mp.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2)
 
 # ── Energy scales (all positive by using |Δ|) ────────────────────
 E0_net  = Q_decay / abs(delta_net)      # from all 6 terms
@@ -155,8 +156,8 @@ print(f"  Δ(obs) + Δ(virt) = {delta_obs + delta_virt:+.10f}  (= Δnet ✓)")
 
 # ── Observed values ──────────────────────────────────────────────
 print(f"\n── Observed (CODATA 2022) ──")
-print(f"  m_n − m_p      = {delta_m:.6f} ± {delta_m_err:.8f} MeV")
-print(f"  Q = m_n−m_p−m_e = {Q_decay:.6f} ± {Q_decay_err:.8f} MeV")
+print(f"  m_n − m_p      = {delta_m:.6f} ± {float(delta_m_err):.8f} MeV")
+print(f"  Q = m_n−m_p−m_e = {Q_decay:.6f} ± {float(Q_decay_err):.8f} MeV")
 
 # ── Energy scale scenarios ───────────────────────────────────────
 print(f"\n{'='*70}")
@@ -257,7 +258,7 @@ output = {
         "m_e_MeV": M_E_MEV,
         "delta_m_MeV": delta_m,
         "Q_decay_MeV": Q_decay,
-        "Q_decay_MeV_err": Q_decay_err,
+        "Q_decay_MeV_err": float(Q_decay_err),
     },
     "nucleon_nf": {
         "neutron": {p: neutron_nf[p] for p in PARTICLES},
