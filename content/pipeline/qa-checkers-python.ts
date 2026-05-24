@@ -384,10 +384,27 @@ export function checkRespectsArchimedeanWall(
   }
   const masked = maskStringsAndComments(src);
   const lines = masked.split("\n");
+  // Comments-only mask so f-string markers remain visible (the
+  // full maskStringsAndComments blanks quotes too, hiding `f"`).
+  // Same approach as `checkDoesNotDefaultToFloat` (per PR #1093).
+  const srcCommentsOnly = src.replace(PY_COMMENT_RE, blankNonNewline);
+  const ctxLines = srcCommentsOnly.split("\n");
   const hits: CheckerHit[] = [];
 
   for (let i = 0; i < lines.length; i++) {
     if (!lines[i].trim()) continue;
+    // Display-context exemption (mirrors PR #1093): `math.log(x)`
+    // inside `print(f"…{math.log(x):.4f}")` or `assert math.log(x)
+    // < 1e-6` is a presentation / comparison conversion, not a
+    // substrate-precision compute path. The math.X call returns a
+    // Python float, which the format spec `:.Nf` consumes natively
+    // (mpmath 1.3.0's mpf.__format__ doesn't support all format
+    // codes, so swapping to mp.X here CAUSES runtime regressions).
+    //
+    // Same display-intent variables — `_pct` / `_ppb` / `_ppm` /
+    // `_print` / `_display` / `_str` / `_repr` suffix assignments
+    // — are also exempt: they're explicit display-only variables.
+    if (isDisplayContextLine(ctxLines[i] ?? "")) continue;
     for (const m of lines[i].matchAll(ARCHIMEDEAN_FUNCTION_RE)) {
       hits.push({
         file: scriptPath,
