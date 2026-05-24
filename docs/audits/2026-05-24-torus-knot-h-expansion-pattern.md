@@ -177,6 +177,30 @@ This is exactly the unified binomial pattern, and it holds for **all `m ≥ 0`**
 
 **Corollary (termination).** Since `C(m+j, 2j) = 0` for `j > m`, the expansion has degree exactly `2m` in `h`; equivalently, `T(2, 2m)` has a finite even-h Markov trace expansion of degree `2m`.
 
+**Algebraic-side identities (pre-Archimedean, `ℚ(q)`).**
+The proof above lives entirely on the **algebraic side**: every step works over `ℤ[q, q^{-1}]` or `ℚ(q)`, no `Real.log` / `Real.exp` / `Real.cos` invoked. The two q-brackets standard in the q-deformation literature give the cleanest statement (per CLAUDE.md §7c base-ring discipline):
+
+- **Bar-symmetric q-bracket:** `<n>_q := q^n + q^{-n}` (sometimes called the "second-kind" or "Chebyshev" q-integer; characterised by `<n>_{q^{-1}} = <n>_q`)
+- **Standard q-integer (Gauss bracket):** `[n]_q := (q^n − q^{-n}) / (q − q^{-1})` (bar-anti-symmetric: `[n]_{q^{-1}} = −[n]_q`)
+
+Then the two trace polynomials of this audit have the compact algebraic forms
+
+```
+P_m(h)  =  <2m+1>_q  /  (2 · <1>_q)                          (bar-SYMMETRIC, in ℚ(q))     (6)
+Q_m(h)  =  h · [2m+1]_q  /  (2 · [2]_q)                       (bar-ANTI-symmetric, in ℚ(q)) (7)
+```
+
+with the per-knot EM/strong ratio (the q-tanh)
+
+```
+Q_m / P_m  =  (q^{2m+1} − q^{-(2m+1)}) / (q^{2m+1} + q^{-(2m+1)})
+            =  (q^{4m+2} − 1) / (q^{4m+2} + 1).                                          (8)
+```
+
+(All three forms sympy-verified for `m = 0..5`.) Identity (5) of Step 2 is just `2 · P_m · <1>_q = <2m+1>_q`; identity (8) is the algebraic q-tanh, lifting trivially to `tanh((2m+1) η)` at substrate and `i tan((2m+1) θ)` at root-of-unity.
+
+The cosh / sinh / tanh forms that follow are the **Archimedean realizations** of (6)-(8) under the functor `q ↦ e^η` for `η ∈ ℝ`. At a root-of-unity `q = e^{iθ}`, the same algebraic identities specialize to trigonometric Chebyshev-T / Chebyshev-U ratios. The Phase 5b three-avatars synthesis `Li_2^q ↔ cos_q ↔ cosh` corresponds exactly to the **algebraic / trigonometric / hyperbolic** triple here.
+
 **Corollary (substrate / root-of-unity forms).** Setting `q = e^η` (substrate, `η ∈ ℝ`):
 
 ```
