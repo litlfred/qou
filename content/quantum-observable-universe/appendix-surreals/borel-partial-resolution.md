@@ -109,11 +109,10 @@ field; Beilinson asserts that nothing else is needed.
 
 ### Significance for B1's status
 
-- **Depth 2** is essentially a theorem (Borel + Bloch–Suslin
-  injectivity). The keystone is *no longer conjectural at depth 2
-  for every individual Bring-embeddable knot* — only the
-  unification across the family requires a small generation
-  argument.
+- **Depth 2** is a theorem (Borel + Bloch–Suslin injectivity).
+  The keystone is *no longer conjectural at depth 2 for every
+  individual Bring-embeddable knot* — only the unification
+  across the family requires a small generation argument.
 - **Depth 3** has Borel-rank lower bounds (theorem-level) plus
   Beilinson's conjecture as the remaining piece (open, but
   reduces B1 to a *standard external conjecture* rather than a

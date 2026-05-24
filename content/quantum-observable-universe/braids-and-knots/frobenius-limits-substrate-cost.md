@@ -140,12 +140,11 @@ $$
   m_e \cdot \left(2 + \frac{1}{[2]_q}\right) \approx 1.276\;\mathrm{MeV},
 $$
 
-*essentially the classical $5/2 m_e$ reduced by $\sim 0.1\%$.
+*the classical $5/2 m_e$ reduced by $\sim 0.1\%$.
 Interpretation: the substrate is "almost classical" at
 $q_0 \approx 1.11$ — the quantum deformation accounts for only
-a 0.1% reduction in the vacuum info-exchange cost, but this
-small reduction is structurally dictated by the $q$-hook-length
-formula $\dim_q((2,1)) = [2]_q \neq 2$.*
+a 0.1% reduction in the vacuum info-exchange cost, dictated by
+the $q$-hook-length formula $\dim_q((2,1)) = [2]_q \neq 2$.*
 
 **As $q$ moves:**
 

@@ -84,11 +84,10 @@ Frobenius-paired categorical mass.
 
 The proposition is asserted, not yet fully proved at the level of the
 curvature-rank stratification. The proof
-([proof block](#prf:quantum-dilogarithm-stratified)) gives the
-structural argument: existence of $\phi_q^{(k)}(z_i)$ follows from
-applying the Frobenius dual to the depth-graded centre decomposition,
-and the truncation identity follows from $T_w$-orthogonality at depths
-$> k_\star(T_w)$. The remaining gap is a **uniform bound on the
+([proof block](#prf:quantum-dilogarithm-stratified)) derives existence
+of $\phi_q^{(k)}(z_i)$ by applying the Frobenius dual to the depth-
+graded centre decomposition; the truncation identity follows from
+$T_w$-orthogonality at depths $> k_\star(T_w)$. The remaining gap is a **uniform bound on the
 $\phi_q^{(k)}(z_i)$ at $|z_i| \to q$**: the proposition asserts the
 truncation identity as a Frobenius-paired equality, but to conclude
 that *replacing* $\Phi_q$ with $\Phi_q^{[\leq k_\star(T_w)]}$ in the

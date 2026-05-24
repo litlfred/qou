@@ -22,7 +22,7 @@ The dominant source is the $L_+$ sign flip: the $d$--$d$ typed
 crossing makes the Hopf-link coefficient negative in the neutron
 ($-0.010$) while it is positive in the proton ($+0.099$).  This
 single channel contributes $|\Delta(L_+)|/\mathrm{net}(\mathfrak{p})
-\approx 10.9\%$ --- essentially the entire excess debt.
+\approx 10.9\%$ --- approximately the entire excess debt.
 
 ## Confinement interpretation
 

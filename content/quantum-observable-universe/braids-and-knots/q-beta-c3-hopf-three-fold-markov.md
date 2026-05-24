@@ -115,10 +115,9 @@ class rule for results downstream of an unproved structural input.
 
 The classical-limit Jones evaluation $J_{\text{Hopf}}(1) = -2$ is
 elementary; the 2-strand sub-braid extraction at order 3 is the
-substantive open step. Empirical observation (112$\times$ tightening) and
-two convergent structural arguments (Markov cyclicity + KL
-decategorification) give strong support, but a fully-formalised proof
-requires:
+substantive open step. Empirical observation (112$\times$ tightening),
+Markov cyclicity, and KL decategorification give strong support, but a
+fully-formalised proof requires:
 
 - Per-crossing Hecke-quadratic expansion in $\hbar_q$ (mechanizable
   via existing symbolic-computation infrastructure).

@@ -63,8 +63,8 @@ At depth 2 ($\mathrm{Li}_2^q$ adjoined): reduces to the Hecke
 algebra Baer-* result
 ([`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic))
 since the depth-2 grouplikes pair with $H_n(q)$-cells via the
-Markov trace. The projections are essentially the Hoefsmit
-$e_\lambda$, lifted to $\mathcal{H}_q$ via Schur–Weyl duality.
+Markov trace. The projections are the Hoefsmit $e_\lambda$,
+lifted to $\mathcal{H}_q$ via Schur–Weyl duality.
 
 At depth $\geq 3$: open. The depth-3 case requires identifying
 projections compatible with the trilog grouplike $\mathrm{Li}_3^q$
@@ -75,9 +75,9 @@ projections compatible with the trilog grouplike $\mathrm{Li}_3^q$
 
 **Open at depth $\geq 3$**, conditional on
 [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
-The depth-2 case is essentially a corollary of
+The depth-2 case follows from
 [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic)
-plus the Schur–Weyl identification of $\mathrm{Li}_2^q$ values
+and the Schur–Weyl identification of $\mathrm{Li}_2^q$ values
 with Markov-trace cell pairings.
 
 **Discharge target.** Construct an explicit projection-generation
