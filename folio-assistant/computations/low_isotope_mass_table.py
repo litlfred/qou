@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-Low-isotope mass table (A ≤ 6) via the canonical pipeline.
+Low-isotope mass table (A ≤ 3) via the canonical pipeline.
 
 Thin wrapper that runs `canonical_mass_table_extended.py` restricted
-to the low-isotope subset (proton through ⁶Li) and writes the result
-under the dedicated witness filename
+to the paper-canonical low-isotope subset — the 5 atoms
+{p, n, D, T, ³He} across which the three independent production
+paths for tr_M(𝓑_K) at q = q_0 agree to machine epsilon, per
+content block `rem:recomputed-low-isotope-mass-table` — and writes
+the result under the dedicated witness filename
 `low-isotope-mass-table.witness.json` so downstream consumers that
 resolve the table by its historical name continue to work.
 
@@ -32,8 +35,10 @@ relies on the canonical witness already being fresh).
 `canonical-mass-table-extended.witness.json` covers atoms up to
 ⁷Li. Consumers (paper renderers, audit scripts, the staleness
 detector) that historically resolved `low-isotope-mass-table.witness.json`
-need a stable artifact at that path. Projecting to A ≤ 6 here keeps
-the canonical witness intact while supplying the low-isotope view.
+need a stable artifact at that path. Projecting to A ≤ 3 here keeps
+the canonical witness intact while supplying the paper-canonical
+low-isotope view (5 atoms — see content block citation in the
+top-of-module docstring).
 
 ## History
 
