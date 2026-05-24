@@ -285,8 +285,18 @@ export function checkRespectsArchimedeanWall(
 
 // ─── code_is_commented ─────────────────────────────────────────
 
+// Module docstring at the top of a Python file. Tolerates the
+// common preamble patterns: shebang (`#!/usr/bin/env python3`),
+// `# ...` line comments (encoding declarations, mode markers,
+// per-script audit tags like `# polynomial_q_not_applicable`),
+// blank lines, and `from __future__ import` lines — any
+// combination of these may precede the triple-quoted docstring.
+// Empirically: ~360 of the 363 baseline `code_is_commented`
+// fails on quantum-observable-universe were scripts that DO have
+// a docstring but ship a shebang + audit-tag comment block
+// above it.
 const MODULE_DOCSTRING_RE =
-  /^(?:\s*\n)*\s*(?:from\s+__future__\s+import[^\n]*\n\s*)*("""[\s\S]*?"""|'''[\s\S]*?''')/;
+  /^(?:\s*\n|#![^\n]*\n|#[^\n]*\n|from\s+__future__\s+import[^\n]*\n)*\s*("""[\s\S]*?"""|'''[\s\S]*?''')/;
 
 /**
  * Pass if either:
