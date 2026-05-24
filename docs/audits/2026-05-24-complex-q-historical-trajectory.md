@@ -171,6 +171,38 @@ similar here" directive.
 - M.V. Berry (1984), "Quantal phase factors accompanying adiabatic changes", *Proc. Roy. Soc.* A 392, 45 — geometric phase
 - M.-O. Renou et al. (2021), "Quantum theory based on real numbers can be experimentally falsified", *Nature* 600, 625 — final experimental forcing of ℂ in QM
 
+## Coordination update (2026-05-24)
+
+Sibling PR [#1153](https://github.com/litlfred/qou/pull/1153) (sinh-bar-antisymmetric-partner-probe) shows the framework
+**already has** the structural answer to "what is the canonical
+projection" — it's the `P_avg` (bar-symmetric) projection per
+[`bar-involution.md`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md), keeping `cos, cosh, Li_2^q` and
+discarding `sin, sinh, Φ_q`. This refines the stage-3 (Born modulus)
+classification in the table above:
+
+- **QOU stage 3 (Born modulus)** = `m = |tr_M|` per `prop:categorical-mass-markov`.
+- **QOU stage 3.5 (P_avg projection)** = explicit bar-symmetric retention.
+  The framework's "real-q" convention is **derivable** from this projection
+  rule: P_avg of real-q observables is real; Im(`tr_M`) is in P_skew and
+  discarded. This is **stronger** than generic modulus projection.
+
+The +0.17% Q_β residual at stage 4 (forced by formula) now has a
+concrete **structural** mechanism, not just an empirical fit-direction:
+the per-braid mass tower uses **Φ_q** (which is in P_skew per
+`bar-involution.md` line 35), but the canonical P_avg tower function
+is **Li_2^q**. The wrong-direction tower correction (+1.75% per
+`calibration-inputs.md:72-84`) is the signature of using the wrong
+projection. **Replacing Φ_q with Li_2^q is therefore structurally
+motivated, not a hand-tuned closure ansatz.**
+
+This is the QOU framework's existing Born/P_avg infrastructure — we
+are at stage 3.5, with stage 4 (forced by formula) within reach IF
+the Li_2^q replacement closes the Q_β residual exactly. PR #1153's
+`Q_m / P_m = tanh((2m+1) η_0)` torus-knot identity gives the
+EXPLICIT P_skew structure that's being discarded, parallel to the
+Borromean (𝓑₃) side analysis that would close the Q_β derivation
+fully (Path A in the [net-ansatz audit](2026-05-24-q-beta-net-ansatz-fitting-finding.md)).
+
 ## TL;DR
 
 - ℂ in physics emerged over 400 years: tool → bookkeeping → required by wave equation → Born modulus projection → experimentally forced (2021).
