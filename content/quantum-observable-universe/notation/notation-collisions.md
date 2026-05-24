@@ -138,6 +138,24 @@ under discussion. See
 for the typeclass cheat-sheet and the archimedean-wall membership
 list.
 
+**Non-degeneracy of $q$: $\lvert q \rvert > 1$ (substrate) vs $q > 1$ (real specialization).**
+The pre-Archimedean substrate's non-degeneracy condition on the
+parameter is $\lvert q \rvert > 1$ — sufficient to make $q$ a unit
+on any commutative ring with a norm, in particular $R = \mathbb{C}$
+(see [`prop:q-zero-complex-extension`](../braids-and-knots/q-zero-complex-extension.md)).
+The narrative and Lean infrastructure has historically used the
+strict ordering $q > 1$ because the framework specializes to
+$R = \mathbb{R}$ at the archimedean wall, where the two conditions
+coincide. When writing **substrate-level** statements (pre-$\tau$,
+categorical / algebraic content), prefer $\lvert q \rvert > 1$;
+reserve $q > 1$ for **post-$\tau$** content that genuinely needs
+the real ordering (Hoefsmit seminormal orthogonality,
+`Real.sqrt`-bearing identities, CODATA comparisons). The real-axis
+specialization $\mathrm{Im}(q_0) = 0$ is one valid choice; complex
+$q_0$ with $\lvert q_0 \rvert > 1$ and $\mathrm{Im}(q_0) \neq 0$ is
+structurally admissible but currently uninstantiated
+(audit: [`2026-05-24-q-zero-reality-audit.md`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md)).
+
 **Archimedean / fibre / forgetful functors (Phase 5o disambiguation).**
 Three nominally similar functors appear in the QOU framework and must
 not be conflated:
