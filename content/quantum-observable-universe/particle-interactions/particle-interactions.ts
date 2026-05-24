@@ -141,6 +141,7 @@ export default chapter({
         "transfer-matrix-identities",
         "neutron-qvalue-symbolic",
         "q-beta-spectral-bridge",
+        "q-beta-spectral-bridge-table-data",
         "q-beta-form-a-n1-symbolic",
         "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",

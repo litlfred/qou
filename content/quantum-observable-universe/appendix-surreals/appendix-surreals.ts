@@ -112,6 +112,7 @@ export default chapter({
       label: "sec:nimber-surreals",
       blocks: [
         "on-p-modular-hecke",
+        "on-p-modular-hecke-table-data",
       ],
     },
     {

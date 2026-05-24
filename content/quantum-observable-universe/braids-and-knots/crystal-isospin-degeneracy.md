@@ -263,14 +263,7 @@ The empirical 2-row Wedderburn dominance fractions tabulated in
 [`delta-lambda-2row-stratum.witness.json`](../../../folio-assistant/computations/delta-lambda-2row-stratum.witness.json)
 decay non-monotonically with mass number $A$:
 
-| atom | $A$ | 2-row mass fraction |
-|:---:|:---:|:---:|
-| $\mathfrak{p}$ | $1$ | $98.47\%$ |
-| $\mathfrak{n}$ | $1$ | $97.85\%$ |
-| $D$ | $2$ | $94.74\%$ |
-| $T$ | $3$ | $84.04\%$ |
-| ${}^3\mathrm{He}$ | $3$ | $89.34\%$ |
-| ${}^4\mathrm{He}$ | $4$ | $83.09\%$ |
+See [Table](#tbl:crystal-isospin-degeneracy-table-data).
 
 The $5.3$-percentage-point gap between $T$ and ${}^3\mathrm{He}$ —
 two isobars with the *same* mass number $A = 3$ — is structurally

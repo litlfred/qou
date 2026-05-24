@@ -245,6 +245,7 @@ export default chapter({
         // Markov chain interpretation of the algebraic framework
         "hecke-markov-transition",
         "hecke-markov-interpretation",
+        "hecke-markov-interpretation-table-data",
         "markov-lambda-knot-operations",
         "markov-chain-fluctuations",
       ],
@@ -1001,6 +1002,7 @@ export default chapter({
         "unified-curvature-rank-mass-formula-table-data",
         "chirality-residue-mass-term",
         "e-infinity-page-identifications",
+        "e-infinity-page-identifications-table-data",
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
         "gram-matrix-spectral-connection",
@@ -1087,9 +1089,11 @@ export default chapter({
       blocks: [
         "intro-six-term-crystal-isospin-chirality",
         "six-term-mass-formula-complete",
+        "six-term-mass-formula-complete-table-data",
         "six-term-per-derivation-weights",
         "shell-correction-term-seven",
         "crystal-isospin-degeneracy",
+        "crystal-isospin-degeneracy-table-data",
         "isospin-mass-split-em-localisation",
         "option-e-isospin-test",
         "crystal-bases-path-a",
