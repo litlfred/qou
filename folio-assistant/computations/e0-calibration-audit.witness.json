@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-23T21:09:56.676300+00:00",
+  "computedAt": "2026-05-24T01:43:00.606723+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -329,14 +329,6 @@
         "match": "0.78233341",
         "context": "#   T1 (descended Markov):  E_0_β = 0.78233341 MeV per cat unit",
         "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/probe_neutron_gap_round3.py",
-        "line": 17,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "(μ_d − μ_u, equivalently Q_β(n) = m_n − m_p − m_e ≈ 0.78233341 MeV)",
-        "kind": "doc"
       }
     ],
     "literal_0_78233": [
@@ -370,14 +362,6 @@
         "pattern": "literal_0_78233",
         "match": "0.78233",
         "context": "\"Q_observed_MeV\": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/probe_q_beta_operator_valued_N4.py",
-        "line": 9,
-        "pattern": "literal_0_78233",
-        "match": "0.78233",
-        "context": "Q_N2  = 0.78233 MeV  (N=2, 1.24 ppm)",
         "kind": "doc"
       }
     ],
@@ -1066,7 +1050,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_table_comprehensive.py",
-        "line": 163,
+        "line": 203,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "Q_beta_n_mev=float(Q_BETA_MEV),",
@@ -1111,94 +1095,6 @@
         "match": "Q_BETA_MEV",
         "context": "\"codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)\"),",
         "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/probe_beta_decay_n1_brane_tower.py",
-        "line": 133,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "from codata_constants import Q_BETA_MEV",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_beta_decay_n1_brane_tower.py",
-        "line": 134,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_beta_decay_residue_sum_h3.py",
-        "line": 121,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_beta_decay_residue_sum_h3.py",
-        "line": 198,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_neutron_gap_round2.py",
-        "line": 58,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "Q_BETA_MEV,",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_neutron_gap_round2.py",
-        "line": 100,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "print(f\"  Q_beta (CAL-3)       = {mp.nstr(Q_BETA_MEV, 10)} MeV\")",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/probe_neutron_gap_round2.py",
-        "line": 124,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "mn_pred_mp = mp_pred_mp + Q_BETA_MEV + M_E_MEV",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_neutron_gap_round2.py",
-        "line": 221,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": ".add_parameter(\"Q_beta_MeV_CAL3\", float(Q_BETA_MEV))",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_neutron_gap_round2.py",
-        "line": 235,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "\"CAL-3\": \"Q_beta (Q_BETA_MEV)\",",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/probe_q_beta_residue_per_nucleon.py",
-        "line": 41,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/probe_q_beta_residue_per_nucleon.py",
-        "line": 116,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
-        "kind": "active"
       },
       {
         "file": "folio-assistant/computations/q_beta_form_a_n1_extension.py",
@@ -1287,38 +1183,6 @@
         "match": "Q_BETA_MEV",
         "context": "Q_beta = mpf(str(Q_BETA_MEV))",
         "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/strategy_j_tr_m_ratio_probe.py",
-        "line": 102,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "Q_BETA_MEV = M_N_MEV - M_P_MEV - M_E_MEV  # = 0.7824 MeV",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/strategy_j_tr_m_ratio_probe.py",
-        "line": 107,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "\"Q_β / m_e\":            Q_BETA_MEV / M_E_MEV,          # 1.531",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/strategy_j_tr_m_ratio_probe.py",
-        "line": 108,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "\"Q_β / (m_e + Q_β)\":    Q_BETA_MEV / (M_E_MEV + Q_BETA_MEV),  # 0.605",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/strategy_j_tr_m_ratio_probe.py",
-        "line": 108,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "\"Q_β / (m_e + Q_β)\":    Q_BETA_MEV / (M_E_MEV + Q_BETA_MEV),  # 0.605",
-        "kind": "doc"
       }
     ],
     "proton_mass_anchor": [
