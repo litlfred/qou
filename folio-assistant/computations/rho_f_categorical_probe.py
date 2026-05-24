@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """W-1 — Categorical probe for ρ_F substrate correction.
 
+> SUPERSEDED-ρ_q purge marker (2026-05-24, PR #1127):
+> This script is EXPLORATORY (testing alternative `ρ_F`-type candidates).
+> Function names `rho_q_integer` and `rho_q_trm_combined` refer to
+> CANDIDATE Frobenius packing factors being probed, NOT to the
+> SUPERSEDED scalar `ρ_q = 1/ℏ_q²` from
+> [`q_pinning_50_digit.py`](q_pinning_50_digit.py) (which is
+> deprecated per [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../docs/audits/2026-05-24-superseded-rho-q-purge.md)).
+> The categorical replacement target is
+> [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md);
+> this probe's candidates are direct competitors.
+
 Goal: find a PURELY categorical formula for ρ_F(Z,N) that improves on
 the integer rule ρ_F = ⌈A/2⌉ without using any AME binding-energy input.
 
