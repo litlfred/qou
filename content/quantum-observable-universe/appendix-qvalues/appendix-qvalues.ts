@@ -9,6 +9,7 @@ export default chapter({
       blocks: [
         "qvalue-derivation-chain",
         "qvalue-benchmark-table",
+        "qvalue-benchmark-table-table-data",
       ],
     },
   ],

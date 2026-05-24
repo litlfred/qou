@@ -406,6 +406,7 @@ export default chapter({
         // Lepton tower NF and tau decay universality
         "lepton-continuant-recurrence",
         "lepton-tower-witness",
+        "lepton-tower-witness-table-data",
         "tau-leptonic-universality",
         "tau-branching-ratio-witness",
         "parity-violation-skein",

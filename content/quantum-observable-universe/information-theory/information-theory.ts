@@ -135,6 +135,7 @@ section({
         "composite-crossing-parity",
         "phase-transition-interpretation",
         "crossing-parity-test",
+        "crossing-parity-test-table-data",
       ],
     }),
     section({
@@ -166,6 +167,7 @@ section({
         "horizon-conformal-invariance",
         "qou-is-ccc",
         "penrose-ccc",
+        "penrose-ccc-table-data",
       ],
     }),
     section({

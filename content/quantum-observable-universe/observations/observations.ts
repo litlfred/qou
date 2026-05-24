@@ -76,6 +76,7 @@ export default chapter({
         "stability-cubic-plot",
         "stability-cubic-plot-table-data",
         "neutron-prediction-comparison",
+        "neutron-prediction-comparison-table-data",
         "q-stability-ranges",
         "q-stability-ranges-table-data",
         "mass-ratio-predictions",
@@ -317,6 +318,7 @@ export default chapter({
       blocks: [
         "non-comm-probability-intro",
         "non-commutative-probability-dictionary",
+        "non-commutative-probability-dictionary-table-data",
         "algebraic-gns-embedding",
         "algebraic-gns-embedding-proof",
         "q-plancherel-asymptotic-skeleton",
