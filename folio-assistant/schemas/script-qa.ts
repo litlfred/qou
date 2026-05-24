@@ -64,6 +64,31 @@ export interface ScriptQaReport {
   /** ISO-8601 UTC timestamp of last write. */
   updated_at: string;
   /**
+   * **Proper-metadata references** the script declares to
+   * propositions, definitions, theorems, glossary entries, or
+   * bibliographic keys. Mirrors the content-block convention of
+   * `uses: [...]` / `meta.cites: [...]` arrays in `.ts` manifests.
+   *
+   * Each entry is one of:
+   *   - content-block label: `"prop:foo-bar"`, `"def:carbon-valence"`,
+   *     `"thm:lifting-exists"`, `"conj:foo"`, `"rem:foo"`, `"cor:foo"`,
+   *     `"ex:foo"`, `"sim:foo"`, `"sec:foo"`, `"tbl:foo"`, `"fig:foo"`
+   *   - bibliographic key matching an entry in
+   *     `content/schema/references.ts` (e.g. `"wenzl1988"`,
+   *     `"kashaev1997"`)
+   *
+   * This field is the **canonical metadata** that the
+   * `has_references_to_paper` criterion checks (replacing the prior
+   * regex-on-comments approach). It is auto-populated on first sweep
+   * via extraction over the script source, then human-overrideable
+   * via direct edits to the sidecar.
+   *
+   * Empty array means the script genuinely has no paper references
+   * (e.g. pure infrastructure / utility code) — distinct from
+   * `undefined`, which means the field has never been populated.
+   */
+  references?: string[];
+  /**
    * Per-criterion reviewer entries. Reuses the block-QA
    * `QaCriterionEntry` shape (script_hash / script_commit_sha /
    * deps_hash on the reviewer apply identically here).

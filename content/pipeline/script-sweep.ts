@@ -68,10 +68,19 @@ import type {
  * Each criterion knows which languages it supports; out-of-band
  * combinations return `n/a`.
  */
-const SCRIPT_CHECKERS: Record<
-  string,
-  (target: ScriptTarget) => CheckerResult
-> = {
+/**
+ * Dispatcher signature. The optional second argument is the
+ * (partially-) loaded sidecar report — checkers that consume
+ * structured metadata (currently `has_references_to_paper`,
+ * which reads `references: string[]`) read from this; others
+ * ignore it.
+ */
+type ScriptCheckerFn = (
+  target: ScriptTarget,
+  sidecar: ScriptQaReport | undefined,
+) => CheckerResult;
+
+const SCRIPT_CHECKERS: Record<string, ScriptCheckerFn> = {
   does_not_default_to_float: (t) => {
     if (t.language !== "python") return { result: "n/a", hits: [] };
     return checkDoesNotDefaultToFloat(t.abs);
@@ -88,9 +97,13 @@ const SCRIPT_CHECKERS: Record<
     if (t.language !== "python") return { result: "n/a", hits: [] };
     return checkVariablesTyped(t.abs);
   },
-  has_references_to_paper: (t) => {
+  has_references_to_paper: (t, sidecar) => {
     if (t.language !== "python") return { result: "n/a", hits: [] };
-    return checkHasReferencesToPaper(t.abs);
+    // Pass the sidecar's structured `references` array to the
+    // checker. The checker fails only when the field is undefined
+    // AND no references can be extracted from source as a
+    // bootstrap fallback.
+    return checkHasReferencesToPaper(t.abs, sidecar?.references);
   },
   connected_to_ci_pipeline: (t) => {
     if (t.language !== "python") return { result: "n/a", hits: [] };
@@ -227,6 +240,13 @@ async function run(): Promise<void> {
         existing.source_hash !== target.source_hash);
     report.script_path = target.rel;
     report.language = target.language;
+
+    // The `references` field is human-authored metadata only —
+    // never auto-extracted from script source. The sweep neither
+    // reads script comments / docstrings to populate this field
+    // nor modifies a value a human has set. Per author direction
+    // (2026-05-24): "needs to be only proper metadata like
+    // `references: []` for a script sidecar".
     report.source_hash = target.source_hash;
 
     // Per-target field hash. `"ts"` is the QaFieldHash convention
@@ -265,7 +285,7 @@ async function run(): Promise<void> {
         continue;
       }
 
-      const checkRes = checker(target);
+      const checkRes = checker(target, report);
       const entry: QaCriterionEntry = {
         field_hash: currentHashes,
         result: checkRes.result,

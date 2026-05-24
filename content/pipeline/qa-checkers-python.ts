@@ -428,22 +428,34 @@ export function checkVariablesTyped(scriptPath: string): CheckerResult {
 
 // ─── has_references_to_paper ───────────────────────────────────
 
-const PAPER_REF_RE = /^\s*#\s*Ref:\s*\[[^\]]+\]/m;
-
 /**
- * Pass if the script contains at least one `# Ref: [key] …`
- * comment line citing a bibliography key. Mirrors the Lean
- * convention from CLAUDE.md §1 ("Every `sorry` requires a
- * bibliographic citation").
+ * Pass if the script has a `references: string[]` field declared
+ * in its sidecar (per `ScriptQaReport.references`). Each entry is
+ * a content-block label (`prop:foo`, `def:bar`, …) or a
+ * bibliographic key matching an entry in
+ * `content/schema/references.ts`.
  *
- * Fails for scripts that derive content from the paper but cite
- * nothing — the citation should let a reviewer trace the script
- * back to the proposition / theorem it computes. Authors who
- * deliberately ship an uncited utility (e.g. pure infrastructure)
- * override with a `human` reviewer `result: "n/a"` entry.
+ * The checker reads **proper metadata only** — the sidecar JSON
+ * field. There is no source-side grep / extraction at any point:
+ * citation patterns embedded in script comments / docstrings are
+ * NOT discovered by this criterion. References live as structured
+ * metadata on the sidecar, mirroring how content blocks declare
+ * `uses: [...]` / `meta.cites: [...]` arrays in their `.ts`
+ * manifests.
+ *
+ * Pass / fail rules:
+ *   - `sidecarReferences` is any defined array (including `[]`)
+ *     → pass. An empty array `[]` is a deliberate "no references
+ *     intended" declaration (e.g. pure infrastructure) and counts
+ *     as explicit metadata.
+ *   - `sidecarReferences` is `undefined` → fail. The script's
+ *     sidecar has no `references` field; the human must add one
+ *     (either listing the genuine citations or `[]` to declare
+ *     "deliberately no refs").
  */
 export function checkHasReferencesToPaper(
   scriptPath: string,
+  sidecarReferences?: string[] | undefined,
 ): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
   // Scripts under `_deprecated/` are already flagged by the
@@ -451,8 +463,13 @@ export function checkHasReferencesToPaper(
   if (scriptPath.includes("/_deprecated/")) {
     return { result: "n/a", hits: [] };
   }
-  const src = readFileSync(scriptPath, "utf-8");
-  if (PAPER_REF_RE.test(src)) return { result: "pass", hits: [] };
+  // Sole check: sidecar metadata. An explicit empty array
+  // (`[]`) is a deliberate "no references" declaration and passes;
+  // `undefined` means the field has never been populated and the
+  // script has no metadata-declared citation.
+  if (sidecarReferences !== undefined) {
+    return { result: "pass", hits: [] };
+  }
   return {
     result: "fail",
     hits: [
@@ -460,12 +477,13 @@ export function checkHasReferencesToPaper(
         file: scriptPath,
         line: 1,
         text:
-          `script contains no \`# Ref: [key] …\` citation. Add a ` +
-          `bibliographic citation pointing to the proposition / ` +
-          `theorem / paper section this script computes (matching ` +
-          `the entries in \`content/schema/references.ts\`), or ` +
-          `override with a \`human\` reviewer \`result: "n/a"\` entry ` +
-          `if the script is pure infrastructure`,
+          `script's sidecar has no \`references\` field — the ` +
+          `criterion reads metadata only and does not grep source ` +
+          `for citations. Add an explicit \`references: [...]\` ` +
+          `entry to the script's \`.script-qa.json\` (content-block ` +
+          `labels like \`prop:foo\`, bibliography keys like ` +
+          `\`wenzl1988\`), or set \`references: []\` if the script ` +
+          `is pure infrastructure with no paper backing`,
       },
     ],
   };
