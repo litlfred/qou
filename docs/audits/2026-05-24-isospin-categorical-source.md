@@ -4,6 +4,21 @@
 **Branch:** `claude/duality-tracker-magic-shell-isospin-2026-05-24`
 **Status:** Audit. Identifies the existing partial isospin formalisation in `crystal-isospin-degeneracy.md` (D9 ⏳ in [`docs/duality-tracker.md`](../duality-tracker.md)) and proposes the **operator-valued extension** that unlocks the full categorical source.
 
+> **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**
+> The "bar-anti-symmetric residue" framing used throughout this doc
+> below should read **"isospin-Z/2-anti-symmetric residue"**.  The
+> two involutions are distinct: bar acts on `q ↔ q⁻¹` AND
+> `σᵢ ↔ σᵢ⁻¹`; isospin Z/2 acts on `σᵢ ↔ σᵢ⁻¹` with q FIXED.  The
+> 305 ppm flavor-split residue is isospin-Z/2-anti-symmetric
+> (correct categorical claim) but NOT bar-anti-symmetric (because
+> `ℏ_q = (q-1)/q` is "mixed" under bar — not cleanly classifiable).
+> The empirical 305 ppm match to CODATA holds at 0.03% rel diff
+> (verified at q₀); only the involution-naming was off-target.
+> See [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](2026-05-24-d9-bar-parity-correction.md)
+> for the full correction. Read every "bar-anti-symmetric" below
+> as "isospin-Z/2-anti-symmetric"; the conclusions about the q₀-
+> anomaly structure remain valid.
+
 ## §1. What's the user-level question?
 
 *"Where does isospin come from? Categorically?"*
