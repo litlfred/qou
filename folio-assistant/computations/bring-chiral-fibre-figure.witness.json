@@ -1,54 +1,62 @@
 {
   "type": "figure-generation",
   "version": "1",
+  "engine": "python",
+  "engineVersion": "numpy-2.4.6 matplotlib-3.10.9",
   "scriptFile": "folio-assistant/computations/bring_chiral_fibre_figure.py",
   "scriptHash": null,
   "scriptCommitSha": null,
-  "computedAt": "2026-05-24T14:23:28Z",
-  "engineVersion": "numpy-2.4.6 matplotlib-3.10.9",
-  "description": "Bring chiral fibre figures F3 (q\u21920, branch-point neighbourhood) and F4 (q=\u00bd, real-segment) per PR #1075 workplan Phase 1. Cubic X\u00b3+(z+1)X\u00b2+(z\u00b2+z+1)X+(z\u00b3+z\u00b2+z+1)=0 from Bring's invariant ring; sheets via numpy.roots; branch points via Newton-Raphson on the discriminant \u0394(z).",
+  "commitSha": null,
+  "computedAt": "2026-05-24T14:48:26Z",
+  "description": "Bring chiral fibre figures F3 (q\u21920, branch-point neighbourhood) and F4 (q=\u00bd, real-segment) per PR #1075 workplan Phase 1. Cubic X\u00b3+(z+1)X\u00b2+(z\u00b2+z+1)X+(z\u00b3+z\u00b2+z+1)=0 from Bring's invariant ring; sheets via numpy.roots; branch points via Newton-Raphson on the discriminant \u0394(z) using the analytical derivative.",
   "parameters": {
     "cubic": "X^3 + (z+1)*X^2 + (z^2+z+1)*X + (z^3+z^2+z+1)",
-    "branch_point_search_radius": 3.0,
-    "branch_point_grid_size": 200
+    "bp_search_radius": 3.0,
+    "bp_grid_size": 200,
+    "bp_newton_iters": 50,
+    "f3_circle_radius": 0.15,
+    "f3_n_samples": 200,
+    "f4_z_min": -0.5,
+    "f4_z_max": 1.5,
+    "f4_n_samples": 200
   },
   "data": {
     "branch_points": [
       {
-        "re": 0.11898594678977047,
+        "re": 0.1189859467897705,
         "im": -1.053640742712109,
         "discriminant_residual": 2.9790409838967277e-15
       },
       {
-        "re": 0.10582958618826804,
-        "im": -0.9371389378389033,
-        "discriminant_residual": 2.1556631856153973e-15
+        "re": 0.10582958618826814,
+        "im": -0.9371389378389036,
+        "discriminant_residual": 3.5405497909262118e-15
       },
       {
         "re": -0.9748155329780386,
-        "im": -0.2230127275846438,
-        "discriminant_residual": 2.220446049250313e-15
+        "im": -0.22301272758464372,
+        "discriminant_residual": 4.440892098500626e-16
       },
       {
         "re": -0.9748155329780386,
-        "im": 0.2230127275846438,
-        "discriminant_residual": 2.220446049250313e-15
+        "im": 0.22301272758464372,
+        "discriminant_residual": 4.440892098500626e-16
       },
       {
-        "re": 0.10582958618826804,
-        "im": 0.9371389378389033,
-        "discriminant_residual": 2.1556631856153973e-15
+        "re": 0.10582958618826814,
+        "im": 0.9371389378389036,
+        "discriminant_residual": 3.5405497909262118e-15
       },
       {
-        "re": 0.11898594678977047,
+        "re": 0.1189859467897705,
         "im": 1.053640742712109,
         "discriminant_residual": 2.9790409838967277e-15
       }
     ],
     "f3_q_zero": {
       "branch_point_chosen": [
-        0.10582958618826804,
-        -0.9371389378389033
+        0.10582958618826814,
+        -0.9371389378389036
       ],
       "circle_radius": 0.15,
       "merging_pair": [
@@ -56,10 +64,10 @@
         2
       ],
       "isolated_sheet": 1,
-      "min_separation": 0.48880064169399884,
+      "min_separation": 0.4888006416939999,
       "n_samples": 200,
-      "svg_path": "/home/user/qou/figures/bring-fibre-q0.svg",
-      "pdf_path": "/home/user/qou/figures/bring-fibre-q0.pdf"
+      "svg_path": "figures/bring-fibre-q0.svg",
+      "pdf_path": "figures/bring-fibre-q0.pdf"
     },
     "f4_q_half": {
       "z_min": -0.5,
@@ -84,9 +92,9 @@
           "im": -0.9999999999999997
         }
       ],
-      "svg_path": "/home/user/qou/figures/bring-fibre-qhalf.svg",
-      "pdf_path": "/home/user/qou/figures/bring-fibre-qhalf.pdf"
+      "svg_path": "figures/bring-fibre-qhalf.svg",
+      "pdf_path": "figures/bring-fibre-qhalf.pdf"
     },
-    "wall_seconds": 1.6934740543365479
+    "wall_seconds": 1.6951284408569336
   }
 }
