@@ -43,3 +43,34 @@ InstallGlobalFunction( QOU_GramDet,
 function( q )
     return _QOU_HECKE_C_GRAM_DET( q );
 end );
+
+# ── Phase B ──
+
+InstallGlobalFunction( QOU_ChiLambdaBraid,
+function( shape, word, q )
+    local gens, exps, pair;
+    gens := [];
+    exps := [];
+    for pair in word do
+        Add( gens, pair[1] );
+        Add( exps, pair[2] );
+    od;
+    return _QOU_HECKE_C_CHI_LAMBDA_BRAID( shape, gens, exps, q );
+end );
+
+InstallGlobalFunction( QOU_LRCoefficient,
+function( lambda, mu, nu )
+    return _QOU_HECKE_C_LR_COEFFICIENT( lambda, mu, nu );
+end );
+
+InstallGlobalFunction( QOU_TraceMpfr,
+function( word, n_strands, q_str, dps )
+    local signs, gens, pair;
+    signs := [];
+    gens  := [];
+    for pair in word do
+        Add( signs, pair[1] );
+        Add( gens,  pair[2] );
+    od;
+    return _QOU_HECKE_C_TR_M_ATOMIC_MPFR( signs, gens, n_strands, q_str, dps );
+end );

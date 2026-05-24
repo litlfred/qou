@@ -81,3 +81,58 @@ DeclareGlobalFunction( "QOU_GramMatrix" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 DeclareGlobalFunction( "QOU_GramDet" );
+
+#############################################################################
+##  Phase B — full surface.
+##  CHEVIE adjacency: these three are the natural symbolic-q analogues
+##  CHEVIE exposes as `CharTable(HeckeAlg)`, `LRCoefficient`, and the
+##  arbitrary-precision Markov-trace evaluator.
+
+#############################################################################
+##  <#GAPDoc Label="QOU_ChiLambdaBraid">
+##  <ManSection>
+##  <Func Name="QOU_ChiLambdaBraid" Arg="shape, word, q"/>
+##  <Returns>a double</Returns>
+##  <Description>
+##  Hecke character <M>\chi_\lambda(\beta)</M> at the substrate
+##  parameter <M>q</M>. The partition <A>shape</A> is a list of positive
+##  integers in weakly-decreasing order; an empty list returns 1.0.
+##  The braid word <A>word</A> is a list of two-element lists
+##  <C>[ [ gen, exp ], ... ]</C>, each encoding the braid letter
+##  <M>\sigma_{gen}^{exp}</M>.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "QOU_ChiLambdaBraid" );
+
+#############################################################################
+##  <#GAPDoc Label="QOU_LRCoefficient">
+##  <ManSection>
+##  <Func Name="QOU_LRCoefficient" Arg="lambda, mu, nu"/>
+##  <Returns>an integer</Returns>
+##  <Description>
+##  Littlewood--Richardson coefficient <M>c^\lambda_{\mu\nu}</M>.
+##  Returns <C>0</C> when <M>|\lambda| \neq |\mu| + |\nu|</M> or
+##  <M>\mu \not\subseteq \lambda</M>.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "QOU_LRCoefficient" );
+
+#############################################################################
+##  <#GAPDoc Label="QOU_TraceMpfr">
+##  <ManSection>
+##  <Func Name="QOU_TraceMpfr" Arg="word, n_strands, q_str, dps"/>
+##  <Returns>a string</Returns>
+##  <Description>
+##  Arbitrary-precision Markov trace <M>\mathrm{tr}_M(\beta)</M> at
+##  <M>q</M>. <A>word</A> is a list of two-element lists
+##  <C>[ [ sign, gen ], ... ]</C> with sign in <M>\{-1, +1\}</M>;
+##  <A>n_strands</A> is <M>n</M> in <M>B_n</M>; <A>q_str</A> is the
+##  decimal-string representation of <M>q</M> for parser-level
+##  precision; <A>dps</A> is the number of decimal digits of precision.
+##  Returns the trace value as a decimal string.
+##  </Description>
+##  </ManSection>
+##  <#/GAPDoc>
+DeclareGlobalFunction( "QOU_TraceMpfr" );
