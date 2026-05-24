@@ -25,6 +25,9 @@ import { z } from "zod";
 
 export const ComputationEngine = z.enum([
   "snappea",
+  // `snappy` is the legacy name for `snappea`; accepted for back-compat.
+  // New witnesses should prefer `snappea`.
+  "snappy",
   "sympy",
   "mpmath",
   "sage",
@@ -52,18 +55,25 @@ export const ComputationAssertion = z
   .passthrough();
 export type ComputationAssertion = z.infer<typeof ComputationAssertion>;
 
+// Real witnesses carry `null` for unknown optional fields (e.g.
+// `scriptCommitSha: null`, `computedAt: null` in
+// canonical-isotope-witness-*.witness.json), so optional string
+// fields are `nullable().optional()` — accepts string | null | missing.
 export const UpstreamWitnessHash = z
   .object({
     path: z.string(),
     sha256: z.string(),
-    size_bytes: z.number().int().optional(),
-    commitSha: z.string().optional(),
-    scriptCommitSha: z.string().optional(),
-    computedAt: z.string().optional(),
+    size_bytes: z.number().int().nullable().optional(),
+    commitSha: z.string().nullable().optional(),
+    scriptCommitSha: z.string().nullable().optional(),
+    computedAt: z.string().nullable().optional(),
   })
   .passthrough();
 export type UpstreamWitnessHash = z.infer<typeof UpstreamWitnessHash>;
 
+// `upstream_witness_hashes` lives under `data` (per the in-repo
+// convention), not at the top level. Callers reach it via
+// `witness.data?.upstream_witness_hashes`.
 export const ComputationWitness = z
   .object({
     engine: ComputationEngine,
@@ -84,7 +94,6 @@ export const ComputationWitness = z
     parameters: z.record(z.string(), z.unknown()).optional(),
     data: z.record(z.string(), z.unknown()).optional(),
     caveats: z.array(z.string()).optional(),
-    upstream_witness_hashes: z.array(UpstreamWitnessHash).optional(),
   })
   .passthrough();
 export type ComputationWitness = z.infer<typeof ComputationWitness>;

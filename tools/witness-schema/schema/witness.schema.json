@@ -11,6 +11,7 @@
       "type": "string",
       "enum": [
         "snappea",
+        "snappy",
         "sympy",
         "mpmath",
         "sage",
@@ -21,7 +22,7 @@
         "python+mpmath",
         "python+numpy+cvxpy"
       ],
-      "description": "Computation engine that produced this witness."
+      "description": "Computation engine that produced this witness. (`snappy` is the legacy name for `snappea` — both are accepted; new witnesses should prefer `snappea`.)"
     },
     "engineVersion": {
       "type": "string",
@@ -85,18 +86,20 @@
     },
     "data": {
       "type": "object",
-      "description": "Caller-supplied free-form output data; not validated.",
-      "additionalProperties": true
+      "description": "Caller-supplied output data. The key `upstream_witness_hashes` (when present) carries per-upstream-witness hash records used by the stale-witness validator to detect drift from an upstream's regeneration; everything else is free-form.",
+      "additionalProperties": true,
+      "properties": {
+        "upstream_witness_hashes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/UpstreamWitnessHash" },
+          "description": "Per-upstream-witness hash records for stale-witness detection."
+        }
+      }
     },
     "caveats": {
       "type": "array",
       "items": { "type": "string" },
       "description": "Free-text caveats / known limitations of the computation."
-    },
-    "upstream_witness_hashes": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/UpstreamWitnessHash" },
-      "description": "Per-upstream-witness hash records, recorded so a stale-witness validator can detect drift from an upstream's regeneration."
     }
   },
   "$defs": {
@@ -153,16 +156,16 @@
           "description": "SHA-256 hex digest of the upstream witness file's raw bytes."
         },
         "size_bytes": {
-          "type": "integer"
+          "type": ["integer", "null"]
         },
         "commitSha": {
-          "type": "string"
+          "type": ["string", "null"]
         },
         "scriptCommitSha": {
-          "type": "string"
+          "type": ["string", "null"]
         },
         "computedAt": {
-          "type": "string"
+          "type": ["string", "null"]
         }
       }
     }

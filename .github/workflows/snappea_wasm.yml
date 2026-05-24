@@ -121,7 +121,11 @@ jobs:
   publish:
     name: Publish to npm
     runs-on: ubuntu-latest
-    needs: [build, test-node]
+    # test-browser is `continue-on-error: true` (browser setup is best-
+    # effort), so listing it in `needs` waits for it to finish without
+    # treating a browser failure as a publish blocker. test-node is
+    # the gating signal.
+    needs: [build, test-node, test-browser]
     if: ${{ github.event.inputs.publish == 'true' }}
     defaults:
       run:
