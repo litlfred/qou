@@ -1,8 +1,8 @@
 # Rule 14 escalation — Kashaev density rule `ρ_F ∈ {m_e, 2m_e}`
 
 **Date:** 2026-05-24
-**Branch:** TBD (Rule-14 escalation tranche)
-**Status:** Escalation; no proof. Owner authorisation requested.
+**Branch:** `claude/post-1089-followups-2026-05-24` → PR [#1111](https://github.com/litlfred/qou/pull/1111)
+**Status:** ✅ **RESOLVED 2026-05-24** — owner authorised the conjecture-conditional adoption. New content block authored: [`conj:kashaev-density-equals-sdp-multiplicity`](../../content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md). Compute field `rho_factor` renamed to `nu_sdp` in `mass_table_ppb.py`. R&D follow-up to confirm $\nu_{\mathrm{SDP}}(⁴\mathrm{He}) = 2$ via R5-full SDP solver still open.
 
 ## Statement of the rule under escalation
 

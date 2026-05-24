@@ -20,10 +20,18 @@ search in jsj_verification.py — that IS a form of AME-driven
 fitting (we picked the knot whose volume is closest to B_AME/ρ).
 Flagged here as "hyp: by-census" so the reader can distinguish.
 
-Truly derived pieces: (1) the density rule ρ_F ∈ {m_e, 2m_e} —
-pending formal justification; (2) the α-coupling
-c_αα = m_e · Vol(7²_1) — derived from the topology of two linked
-Borromean rings.  No AME input.
+Truly derived pieces: (1) the density rule ρ_F ∈ {m_e, 2m_e} now
+identified as ρ_F = ν_SDP per `conj:kashaev-density-equals-sdp-
+multiplicity` (Rule-14 conditional adoption owner-authorised 2026-05-24
+per `docs/audits/2026-05-24-rule14-kashaev-density.md`); (2) the
+α-coupling c_αα = m_e · Vol(7²_1) — derived from the topology of two
+linked Borromean rings.  No AME input.
+
+The atom→knot assignments for D, T, ³He are deferred to R5-full SDP
+solver per owner-decided 2026-05-24 (`docs/audits/2026-05-24-rule14-
+atom-knot-census.md` §5 option 3 — wait for R5-full to supersede
+census assignments).  Current census-derived assignments are retained
+as EXPLORATORY scaffolding until R5-full lands.
 """
 from __future__ import annotations
 
@@ -78,21 +86,27 @@ AME_TABLE = [
     ("40Ca",  20, 20, 342.05212),
 ]
 
-# Atom → (knot, density, source-label) hypothesis table.
+# Atom → (knot, nu_sdp, source-label) hypothesis table.
 # ZERO-PARAMETER = the pairing is stated in the framework; the
-# predicted binding follows mechanically from Vol and ρ.  We mark
+# predicted binding follows mechanically from Vol and ν_SDP.  We mark
 # WHERE the pairing comes from (derived-from-framework vs census-
 # assigned-from-B_AME).
+#
+# Field rename 2026-05-24 per `conj:kashaev-density-equals-sdp-
+# multiplicity`: what was previously called `rho_factor` is the
+# joint-tower SDP Wedderburn multiplicity ν_SDP of the canonical
+# Hecke element T_w; see the conj block for the categorical hook
+# onto driver (x) MacMahon partition algebra.
 ATOM_ASSIGN = {
-    "2H":   {"rule": "kashaev",  "knot": "6_2",  "rho_factor": 1,
-             "origin": "hyp: census-assigned"},
-    "3H":   {"rule": "kashaev",  "knot": "8_11", "rho_factor": 2,
-             "origin": "hyp: census-assigned"},
-    "3He":  {"rule": "kashaev",  "knot": "L6a4", "rho_factor": 2,
-             "origin": "hyp: census-assigned"},
-    # 4He = A·8G magic-atom rule, density 2m_e, A=4.
-    "4He":  {"rule": "magic",    "A_units": 4, "rho_factor": 2,
-             "origin": "framework: A·8G magic rule"},
+    "2H":   {"rule": "kashaev",  "knot": "6_2",  "nu_sdp": 1,
+             "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)"},
+    "3H":   {"rule": "kashaev",  "knot": "8_11", "nu_sdp": 2,
+             "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)"},
+    "3He":  {"rule": "kashaev",  "knot": "L6a4", "nu_sdp": 2,
+             "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)"},
+    # 4He = A·8G magic-atom rule, ν_SDP=2 extrapolated, A=4.
+    "4He":  {"rule": "magic",    "A_units": 4, "nu_sdp": 2,
+             "origin": "framework: A·8G magic rule (ν_SDP=2 extrapolated, pending R5-full)"},
     # A ∈ {5, 6, 7} gap.  ⁵Li is an unbound resonance; ⁶Li and ⁷Li
     # are bound but neither the Kashaev volume-law assignment (no
     # census knot/link with Vol ≈ B_AME/m_e in the {51.5, 62.6, 76.8}
@@ -160,25 +174,28 @@ def predict(sym: str) -> dict | None:
         }
 
     if info["rule"] == "kashaev":
-        knot, rho_f = info["knot"], info["rho_factor"]
+        knot, nu = info["knot"], info["nu_sdp"]
         vol = KNOT_VOL[knot]
-        B = rho_f * M_E_MEV * vol
+        # B = ν_SDP · m_e · Vol(K) per conj:kashaev-density-equals-
+        # sdp-multiplicity (Rule-14 conditional, owner-authorised
+        # 2026-05-24).
+        B = nu * M_E_MEV * vol
         return {
             "B_pred": B,
-            "formula": f"{rho_f}·m_e · Vol({knot})",
+            "formula": f"{nu}·m_e · Vol({knot})",
             "origin": info["origin"],
-            "inputs": {"knot": knot, "Vol": vol, "rho_factor": rho_f},
+            "inputs": {"knot": knot, "Vol": vol, "nu_sdp": nu},
         }
 
     if info["rule"] == "magic":
-        A, rho_f = info["A_units"], info["rho_factor"]
-        # B = ρ · A · 8G (A independent Borromean nucleons)
-        B = rho_f * M_E_MEV * A * VOL_BORROMEAN
+        A, nu = info["A_units"], info["nu_sdp"]
+        # B = ν_SDP · A · 8G (A independent Borromean nucleons)
+        B = nu * M_E_MEV * A * VOL_BORROMEAN
         return {
             "B_pred": B,
-            "formula": f"{rho_f}·m_e · {A}·8G",
+            "formula": f"{nu}·m_e · {A}·8G",
             "origin": info["origin"],
-            "inputs": {"A": A, "8G": VOL_BORROMEAN, "rho_factor": rho_f},
+            "inputs": {"A": A, "8G": VOL_BORROMEAN, "nu_sdp": nu},
         }
 
     if info["rule"] == "alpha":

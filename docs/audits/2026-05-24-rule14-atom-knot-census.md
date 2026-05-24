@@ -1,8 +1,10 @@
 # Rule-14 escalation — atom → knot census assignments (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4)
 
 **Date:** 2026-05-24
-**Branch:** `claude/post-1089-followups-2026-05-24`
-**Status:** 🟡 Awaiting owner decision. Rule-14 escalation per [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md §"Rule 14 — Author-escalation for off-menu coefficients"`](2026-05-23-lambda-scale-canonical-unification.md).
+**Branch:** `claude/post-1089-followups-2026-05-24` → PR [#1111](https://github.com/litlfred/qou/pull/1111)
+**Status:** ⏸️ **DEFERRED 2026-05-24** — owner decision: **wait for R5-full SDP solver** (option 3 of the §5 menu). The current census-derived assignments (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4) are retained as **EXPLORATORY scaffolding** in [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) ATOM_ASSIGN; origin tags now carry the explicit `"hyp: census-assigned (EXPLORATORY pending R5-full SDP)"` marker. No `prop:` block authored — categorical derivation of the canonical (Z, N) → K functor deferred to the R5-full SDP solver landing.
+
+Rule-14 escalation per [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md §"Rule 14 — Author-escalation for off-menu coefficients"`](2026-05-23-lambda-scale-canonical-unification.md).
 **Parent audit:** [`docs/audits/2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md) (item #1, 🔴 HIGH risk).
 
 ## §1. The issue
