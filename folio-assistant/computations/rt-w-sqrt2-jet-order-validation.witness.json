@@ -1,0 +1,116 @@
+{
+  "compute": "rt_w_sqrt2_jet_order_validation",
+  "description": "Rigorous jet-order validation of the W = \u221a[2]_q correction claim from PR #1122. Extracts h-expansion coefficients (jet orders h\u2070, h\u00b2, h\u2074, h\u2076) for |J_N(T(2,k))| at N=2, k=4 (W), 6 (Z), 8 (H), and checks whether the \u221a[2]_q correction on W gives ratios matching SM at EVERY jet order. Tests user challenge: 'Are you sure you have a hold of the factors? you check the complete GB filtration and jet order'.",
+  "h_expansion_coefficients": {
+    "H_T28": [
+      0.010926462775824975,
+      84.50891436000678,
+      -35345.426663976374,
+      6698438.651789402
+    ],
+    "W_T24": [
+      0.005463757108511371,
+      41.741605085324395,
+      -17690.33321412395,
+      3351020.7554279673
+    ],
+    "Z_T26": [
+      0.008195307032613978,
+      62.995440952133364,
+      -26524.582246075493,
+      5025404.198643919
+    ]
+  },
+  "parameters": {
+    "N_color": 2,
+    "Q_0": "1.1097",
+    "dps": 80,
+    "n_orders": 4,
+    "precision": "mpfr",
+    "sqrt_bracket_2_q0": 1.415171112733977
+  },
+  "per_jet_results": [
+    {
+      "coeff_H": 0.010926462775824975,
+      "coeff_W": 0.005463757108511371,
+      "coeff_W_with_sqrt2q_correction": 0.007732151226960214,
+      "coeff_Z": 0.008195307032613978,
+      "deviation_W_over_H_pct": 10.137562274472259,
+      "deviation_W_over_Z_pct": 7.035612187527312,
+      "deviation_Z_over_H_pct": 2.8980542303156898,
+      "jet_order": 0,
+      "ratio_W_over_H": 0.7076536465275624,
+      "ratio_W_over_Z": 0.9434852405394218,
+      "ratio_Z_over_H": 0.750042095118492,
+      "skipped_div_by_zero": false,
+      "total_abs_deviation_pct": 20.07122869231526
+    },
+    {
+      "coeff_H": 84.50891436000678,
+      "coeff_W": 41.741605085324395,
+      "coeff_W_with_sqrt2q_correction": 59.071513715900764,
+      "coeff_Z": 62.995440952133364,
+      "deviation_W_over_H_pct": 8.790328502284673,
+      "deviation_W_over_Z_pct": 6.380534073095869,
+      "deviation_Z_over_H_pct": 2.2652588184347757,
+      "jet_order": 2,
+      "ratio_W_over_H": 0.6989974272330247,
+      "ratio_W_over_Z": 0.9377109330941239,
+      "ratio_Z_over_H": 0.7454295375724942,
+      "skipped_div_by_zero": false,
+      "total_abs_deviation_pct": 17.43612139381532
+    },
+    {
+      "coeff_H": -35345.426663976374,
+      "coeff_W": -17690.33321412395,
+      "coeff_W_with_sqrt2q_correction": -25034.848539266623,
+      "coeff_Z": -26524.582246075493,
+      "deviation_W_over_H_pct": 10.236762629685655,
+      "deviation_W_over_Z_pct": 7.075374574905913,
+      "deviation_Z_over_H_pct": 2.9524884384767183,
+      "jet_order": 4,
+      "ratio_W_over_H": 0.7082910266515989,
+      "ratio_W_over_Z": 0.9438357334721347,
+      "ratio_Z_over_H": 0.7504388756780527,
+      "skipped_div_by_zero": false,
+      "total_abs_deviation_pct": 20.264625643068285
+    },
+    {
+      "coeff_H": 6698438.651789402,
+      "coeff_W": 3351020.7554279673,
+      "coeff_W_with_sqrt2q_correction": 4742267.771253649,
+      "coeff_Z": 5025404.198643919,
+      "deviation_W_over_H_pct": 10.186198375989415,
+      "deviation_W_over_Z_pct": 7.055321762859984,
+      "deviation_Z_over_H_pct": 2.9245408463342804,
+      "jet_order": 6,
+      "ratio_W_over_H": 0.7079661422273104,
+      "ratio_W_over_Z": 0.9436589742439677,
+      "ratio_Z_over_H": 0.7502351607417419,
+      "skipped_div_by_zero": false,
+      "total_abs_deviation_pct": 20.166060985183677
+    }
+  ],
+  "scriptCommitSha": "fcbe24c3a60c461633dfd242f529282dabe4a569",
+  "status": "exploratory",
+  "tags": [
+    "rt-route",
+    "jet-order-validation",
+    "w-correction",
+    "structural-vs-empirical",
+    "user-challenge-response"
+  ],
+  "user_challenge_response": "User asked: 'Is this proved formally?' Answer: NO \u2014 PR #1122 was an empirical scalar fit, not a formal proof. User asked: 'you check the complete GB filtration and jet order' \u2014 Answer: NO previously, this probe IS that check. The verdict above settles whether the \u221a[2]_q claim holds across jet orders or is a coincidence at jet 0.",
+  "verdict": {
+    "all_jet_orders_strong": false,
+    "h0_strong": false,
+    "h0_strong_only": false,
+    "interpretation": "FAILS at all orders",
+    "total_deviations_per_jet": {
+      "0": 20.07122869231526,
+      "2": 17.43612139381532,
+      "4": 20.264625643068285,
+      "6": 20.166060985183677
+    }
+  }
+}
