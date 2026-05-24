@@ -3,7 +3,7 @@
   "script_path": "folio-assistant/computations/level1-qvalues.py",
   "language": "python",
   "source_hash": "db14a74c659c",
-  "updated_at": "2026-05-22T19:00:32.111Z",
+  "updated_at": "2026-05-24T05:15:37.031Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -39,6 +39,23 @@
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
         "evidence": "folio-assistant/computations/level1-qvalues.py:146: bare `float(qr.traced_volume(i, quark_par))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:147: bare `float(qr.traced_volume(i, quark_dau_trial))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:175: bare `float(qr.traced_volume(i, quark_par))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:176: bare `float(qr.traced_volume(i, quark_dau_trial))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:232: bare `float(qr.q)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/level1-qvalues.py:146: bare `float(qr.traced_volume(i, quark_par))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:147: bare `float(qr.traced_volume(i, quark_dau_trial))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:175: bare `float(qr.traced_volume(i, quark_par))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:176: bare `float(qr.traced_volume(i, quark_dau_trial))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/level1-qvalues.py:232: bare `float(qr.q)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -58,6 +75,23 @@
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
         "evidence": "folio-assistant/computations/level1-qvalues.py:149: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/level1-qvalues.py:149: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/level1-qvalues.py:178: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/level1-qvalues.py:178: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/level1-qvalues.py:149: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/level1-qvalues.py:149: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/level1-qvalues.py:178: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/level1-qvalues.py:178: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -75,6 +109,23 @@
         },
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/level1-qvalues.py:1: script lacks both a module docstring and ≥10% comment density (got 17/207 = 8.2%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
         "evidence": "folio-assistant/computations/level1-qvalues.py:1: script lacks both a module docstring and ≥10% comment density (got 17/207 = 8.2%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
@@ -96,6 +147,23 @@
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
         "evidence": "folio-assistant/computations/level1-qvalues.py:34: `def expand_to_quarks(…)` has 1 parameter without type annotation: nucleon_ordering — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/level1-qvalues.py:50: `def find_converting_quarks(…)` has 2 parameters without type annotation: ord_par_quarks, ord_dau_quarks — add `: type` (or `: Any` if the type genuinely is untyped)"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/level1-qvalues.py:34: `def expand_to_quarks(…)` has 1 parameter without type annotation: nucleon_ordering — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/level1-qvalues.py:50: `def find_converting_quarks(…)` has 2 parameters without type annotation: ord_par_quarks, ord_dau_quarks — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -113,6 +181,23 @@
         },
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/level1-qvalues.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
         "evidence": "folio-assistant/computations/level1-qvalues.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
@@ -134,6 +219,23 @@
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
         "evidence": "folio-assistant/computations/level1-qvalues.py:1: script `level1-qvalues.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/level1-qvalues.py:1: script `level1-qvalues.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -151,6 +253,21 @@
         },
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
       }
     ],
     "uses_library_framework_appropriately": [
@@ -168,6 +285,23 @@
         },
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/level1-qvalues.py:244: script writes `.witness.json` (\"level1-qvalues.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+      },
+      {
+        "field_hash": {
+          "ts": "db14a74c659c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
         "evidence": "folio-assistant/computations/level1-qvalues.py:244: script writes `.witness.json` (\"level1-qvalues.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
