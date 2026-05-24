@@ -26,6 +26,7 @@ export default chapter({
       title: "Time and Computation",
       label: "sec:info-time-computation",
       blocks: [
+        "info-time-computation-intro",
         "time-info",
         "planck-time",
         "reeb-operations-per-planck",
@@ -71,6 +72,7 @@ section({
       title: "Computation at Planck Time Lengths",
       label: "sec:planck-scale-computation",
       blocks: [
+        "planck-scale-computation-intro",
         "planck-scale-computation",
         "toffoli-transfer-matrix",
         "toffoli-q-and",

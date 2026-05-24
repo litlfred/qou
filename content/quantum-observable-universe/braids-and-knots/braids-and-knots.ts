@@ -1336,6 +1336,7 @@ export default chapter({
       title: "Pre-Archimedean Derivation Chain and Audit",
       label: "sec:derivation-audit",
       blocks: [
+        "derivation-audit-intro",
         "pre-archimedean-derivation-chain",
         "pre-archimedean-derivation-chain-table2-data",
         "pre-archimedean-derivation-chain-table1-data",
