@@ -75,10 +75,17 @@ No SnapPy single-knot candidate cleanly matches the target volumes 51.5 / 62.6 /
 - Did NOT touch script names (item #4) inline with this PR — file-rename PRs are best handled standalone for clean review
 - Did NOT split inconsistencies between sign-flip and PR #1063's framing silently — sign-flip audit explicitly **falsifies** the single-Geom_full framing for A ≥ 3 and recommends amendment
 
+## Owner decisions 2026-05-24 (Rule-14 items)
+
+| Item | Owner decision | Status |
+|------|----------------|--------|
+| #5 (atom→knot census) | **Wait for R5-full SDP** (option 3 of §5 menu) | ⏸️ Deferred. Current census assignments tagged EXPLORATORY in `mass_table_ppb.py`; no `prop:` block. |
+| #6 (Kashaev density ρ_F = ν_SDP) | **Promote to `prop:` block** | ✅ Authored as `conj:kashaev-density-equals-sdp-multiplicity` (`.md` + `.ts`) with conditional-on-class Lean axiomatisation. Compute field `rho_factor` renamed to `nu_sdp`. |
+
 ## Open work after this branch
 
 - **PR #1081 Task 3** lands → revisit items #2 and #7; promote channel-assignment block to `proposition` with conditional-on-class banner
-- **Owner Rule-14 decision** on items #5 and #6 → either accept conjecture-conditional or wait for canonical derivation
+- **R5-full SDP solver** lands → revisit item #5 (atom→knot census derivation supersedes the EXPLORATORY assignments); also confirm `ν_SDP(⁴He) = 2` extrapolation per `conj:kashaev-density-equals-sdp-multiplicity` open R&D
 - **Color-tube weighting implementation** in `closed_form_tau_M.py` `pn_convention="bring_color_weighted"` — currently raises `NotImplementedError`
 - **Sign-flip diagnostic** re-run with ⁴He included + color-tube prediction column — quantitative test of the saturation hypothesis
 - **Script rename PR** for `lambda_scale_*.py` files — separate branch when owner is ready
