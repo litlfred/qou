@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Workplan / status snapshot / investigation result / closure-attempt that has been integrated into main or superseded by a later resolution. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) for the tranche rationale.
+
 # Z=N ρ-correction finding — path to 1 ppb (W-1 first concrete result)
 
 **Compiled** 2026-05-03 on `claude/path-to-1ppb-w1-rho-substrate`.
