@@ -35,6 +35,8 @@ as EXPLORATORY scaffolding until R5-full lands.
 """
 from __future__ import annotations
 
+import argparse
+import json
 import sys
 import warnings
 from pathlib import Path
@@ -231,7 +233,63 @@ def fmt_ppb(err_abs: float, b_ame: float) -> str:
     return f"{ppb:+.3f}"
 
 
+def load_shell_correction() -> dict[str, float]:
+    """Load the L3 shell-correction ε_shell values from the prototype
+    witness, if it exists.  Returns a dict atom_sym → ε_shell (MeV).
+
+    The prototype is `folio-assistant/computations/prototype_gs_nf_shell_binding.py`
+    (PR #1162) which emits per-atom shell-binding corrections derived from
+    the Gröbner-Shirshov normal-form shell-closure signature.  See
+    `docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`
+    §4 for the L3 wiring proposal.
+
+    PROTOTYPE-ONLY: the ε_shell values are derived from AME residuals,
+    NOT from the full sequential-Hopf-linking GS-NF reduction.  Loading
+    them is opt-in via `--shell-correction`.  Production-grade ε_shell
+    extraction awaits the pyhecke GS-NF reduction-energy infrastructure
+    + R5-full SDP solver landing.
+    """
+    witness_path = Path(__file__).parent / "prototype-gs-nf-shell-binding.witness.json"
+    if not witness_path.exists():
+        return {}
+    try:
+        d = json.loads(witness_path.read_text())
+        rows = d["data"]["per_atom_l3_correction"]
+        return {
+            r["atom"]: r["epsilon_shell_MeV"]
+            for r in rows
+            if r["epsilon_shell_MeV"] is not None
+        }
+    except (KeyError, json.JSONDecodeError, ValueError):
+        return {}
+
+
 def main() -> int:
+    ap = argparse.ArgumentParser(
+        description="Mass table — AME2020 vs zero-free-parameter predictions",
+    )
+    ap.add_argument(
+        "--shell-correction",
+        action="store_true",
+        help="(PROTOTYPE / opt-in) Apply the L3 shell-binding correction "
+             "ε_shell from prototype-gs-nf-shell-binding.witness.json.  "
+             "Default off.  Values are derived from AME residuals (not "
+             "categorical GS-NF reduction) — for L3 wiring path demonstration "
+             "ONLY, not production headline numerics.",
+    )
+    args = ap.parse_args()
+
+    shell_correction = load_shell_correction() if args.shell_correction else {}
+    if args.shell_correction:
+        print(
+            "[mass_table_ppb] L3 shell-correction ENABLED — "
+            f"ε_shell loaded for {len(shell_correction)} atoms from "
+            "prototype-gs-nf-shell-binding.witness.json.  PROTOTYPE-ONLY: "
+            "values are derived from AME residuals, NOT categorical "
+            "GS-NF reduction.  Awaiting R5-full SDP solver for production-"
+            "grade extraction (see docs/audits/2026-05-24-magic-shell-"
+            "gs-filtration-exploitation.md §4)."
+        )
     print("=" * 130)
     print("MASS TABLE — AME2020 vs ZERO-FREE-PARAMETER predictions")
     print(f"  q₀ = {Q0:.10f}   m_e = {M_E_MEV} MeV")
@@ -241,6 +299,9 @@ def main() -> int:
           f"{2*M_E_MEV*4*VOL_BORROMEAN:.6f} MeV   "
           f"(AME 4He: {28.2957} MeV)")
     print(f"  NO AME VALUES USED AS INPUTS.")
+    if args.shell_correction:
+        print(f"  L3 shell-correction APPLIED (--shell-correction flag, "
+              f"PROTOTYPE-only — see witness for ε_shell values).")
     print("=" * 130)
     print(f"  {'atom':>5} {'Z':>3} {'N':>3} {'A':>3}  "
           f"{'B_AME':>10}  {'B_pred':>11}  {'err (MeV)':>11}  "
@@ -257,18 +318,35 @@ def main() -> int:
                   f"{B_ame:>10.4f}   "
                   f"[no zero-parameter rule assigned]")
             continue
-        B_pred = pred["B_pred"]
-        err = B_pred - B_ame
-        pct = err / B_ame * 100 if B_ame else 0.0
-        ppb = err / B_ame * 1e9 if B_ame else 0.0
-        print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
-              f"{B_ame:>10.4f}  {B_pred:>+11.4f}  {err:>+11.6f}  "
-              f"{pct:>+8.3f}%  {fmt_ppb(err, B_ame):>12}  "
-              f"{pred['formula']}  [{pred['origin']}]")
+        B_pred_kashaev = pred["B_pred"]
+        eps_shell = shell_correction.get(sym, 0.0) if args.shell_correction else 0.0
+        # Apply L3 correction additively (opt-in via --shell-correction).
+        # When the flag is off (default), eps_shell = 0.0 and B_pred is
+        # the unmodified Kashaev value.
+        B_pred = (
+            B_pred_kashaev + eps_shell
+            if B_pred_kashaev is not None
+            else None
+        )
+        err = (B_pred - B_ame) if B_pred is not None else None
+        pct = (err / B_ame * 100) if (err is not None and B_ame) else 0.0
+        ppb = (err / B_ame * 1e9) if (err is not None and B_ame) else 0.0
+        l3_marker = f"  [+ε_shell={eps_shell:+.3f}]" if eps_shell != 0.0 else ""
+        if B_pred is None:
+            print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
+                  f"{B_ame:>10.4f}   "
+                  f"[GAP — {pred['formula']}]")
+        else:
+            print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
+                  f"{B_ame:>10.4f}  {B_pred:>+11.4f}  {err:>+11.6f}  "
+                  f"{pct:>+8.3f}%  {fmt_ppb(err, B_ame):>12}  "
+                  f"{pred['formula']}{l3_marker}  [{pred['origin']}]")
         rows.append({
             "sym": sym, "Z": Z, "N": N, "A": A,
             "B_AME_MeV": B_ame,
             "B_pred_MeV": B_pred,
+            "B_pred_kashaev_only_MeV": B_pred_kashaev,
+            "epsilon_shell_MeV": eps_shell if args.shell_correction else None,
             "err_MeV": err,
             "err_pct": pct,
             "err_ppb": ppb,

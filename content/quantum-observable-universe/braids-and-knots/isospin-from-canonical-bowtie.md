@@ -1,12 +1,15 @@
 > **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**
-> The "bar-anti-symmetric residue" framing used throughout this block
-> should read **"isospin-Z/2-anti-symmetric residue"**.  Bar involution
-> (q ↔ q⁻¹ AND σᵢ ↔ σᵢ⁻¹) is **distinct** from isospin Z/2 swap
-> (σᵢ ↔ σᵢ⁻¹ with q FIXED).  The 305 ppm flavor split is correct
-> empirically (0.03% rel diff at q₀); ℏ_q = (q-1)/q is "mixed" under
-> bar, so the formula is NOT bar-classifiable factor-by-factor.
-> See [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md).
-> Read "bar-anti-symmetric" → "isospin-Z/2-anti-symmetric" below.
+> The original draft classified the 305 ppm residue as "bar-anti-symmetric."
+> **That was wrong.** Bar involution (q ↔ q⁻¹ AND σᵢ ↔ σᵢ⁻¹) is
+> **distinct** from the isospin Z/2 swap (σᵢ ↔ σᵢ⁻¹ with q FIXED).
+> The 305 ppm residue is **isospin-Z/2-anti-symmetric** (correct); it
+> is NOT bar-anti-symmetric because `ℏ_q = (q-1)/q` is "mixed" under bar.
+> The 305 ppm match to CODATA holds at 0.03% rel diff. Body text below
+> has been rewritten to use "isospin-Z/2-anti-symmetric" wherever the
+> original meant the canonical isospin swap; references to specific
+> quantities like `h = q − q⁻¹` that ARE bar-anti-symmetric retain
+> that label. Full correction:
+> [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md).
 
 **Conjecture (D9 isospin closure, conditional on
 [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
@@ -24,7 +27,7 @@ $S^{\mathrm{reg}}_{\mathrm{crystal}}(\beta_A)$ such that the action
 of the canonical $\mathrm{SU}(2)_I$ isospin symmetry (the $u
 \leftrightarrow d$ flavor swap on color-sheet flavor triples) leaves
 $S^{\mathrm{reg}}_{\mathrm{crystal}}(\beta_A)$ invariant up to a
-**bar-anti-symmetric residue** carrying an overall factor of
+**isospin-Z/2-anti-symmetric residue** carrying an overall factor of
 $h = q - q^{-1}$.  The leading-order residue at $q = q_0$ matches
 the substrate flavor split*
 
@@ -38,7 +41,7 @@ $$
 *per [`prop:flavor-split-substrate`](#prop:flavor-split-substrate)
 and the closed form computed in
 [`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py).
-The 305 ppm match is the bar-anti-symmetric leading residue of the
+The 305 ppm match is the isospin-Z/2-anti-symmetric leading residue of the
 $\mathrm{SU}(2)_I$ Z/2 swap on the operator-valued interface — i.e.,
 it IS the canonical-isospin $q_0$-anomaly.*
 
@@ -111,7 +114,7 @@ which [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
 applies directly) and the sum runs over the $A - 1$ inter-nucleon
 interfaces.
 
-## The bar-anti-symmetric residue and the 305 ppm match
+## The isospin-Z/2-anti-symmetric residue and the 305 ppm match
 
 Under the $\mathrm{SU}(2)_I$ Z/2 swap, $S^{\mathrm{reg}}_{\mathrm{crystal}}$
 transforms as:
@@ -129,7 +132,7 @@ $$
 
 where $n_{pp/nn}$ counts the pp–nn pair swaps and $\omega(q)$ is the
 common bar-symmetric Markov-trace factor.  The residue is
-**bar-anti-symmetric** (carries an overall $h = q - q^{-1}$, which is
+**isospin-Z/2-anti-symmetric** (carries an overall $h = q - q^{-1}$, which is
 bar-odd per [`bar-involution-table3-data`](bar-involution.md#tbl:bar-involution-table3-data)).
 
 **Headline match.**  Evaluated at $q = q_0$, the leading-order residue
@@ -162,16 +165,26 @@ $\Delta m / M_N$ classify as:
 
 | Factor | Under $q \mapsto q^{-1}$ | Bar parity |
 |--------|---------------------------|------------|
-| $\hbar_q^2 = (q-1)^2/q^2$ | $(q-1)^2/q^2 \cdot q^2 = (q-1)^2$ — invariant up to sign² | bar-symmetric |
+| $\hbar_q = (q-1)/q$ | $\hbar_{q^{-1}} = 1 - q \neq \pm \hbar_q$ | **mixed** (not bar-classifiable) |
+| $\hbar_q^2$ | inherits mixed status from $\hbar_q$ | **mixed** |
 | $h = q - q^{-1}$ | $q^{-1} - q = -h$ | bar-**anti-symmetric** |
 | $[2]_q = q + q^{-1}$ | invariant | bar-symmetric |
-| $1 + \hbar_q^3$ | mixed (1 bar-sym, $\hbar_q^3$ bar-anti-sym) | mixed |
+| $1 + \hbar_q^3$ | mixed (1 bar-sym, $\hbar_q^3$ inherits mixed) | mixed |
 
-Net leading term $\hbar_q^2 \cdot h \cdot [2]_q \cdot 1$ is
-(sym)·(anti-sym)·(sym)·(sym) = **bar-anti-symmetric**, exactly as
-required for the isospin Z/2 swap residue (which must transform
-non-trivially under the swap since it measures the
-$m_n - m_p$ difference).
+Net product $\hbar_q^2 \cdot h \cdot [2]_q \cdot (1 + \hbar_q^3) / 3$
+is **mixed** under bar (verified at q₀ by
+[`verify_isospin_bar_anomaly.py`](../../folio-assistant/computations/verify_isospin_bar_anomaly.py)).
+The product carries the bar-odd $h$ factor as a coefficient, but
+the $\hbar_q$ factors don't bar-classify cleanly.
+
+**Under the isospin Z/2 swap** (σᵢ ↔ σᵢ⁻¹ at q FIXED), the
+residue IS anti-symmetric (the swap exchanges proton ↔ neutron,
+giving $m_n - m_p \neq 0$).  At the specific evaluation point
+$q = q_0$, the formula's value is bar-odd in a sign-of-$h$ sense
+(scales with the bar-odd $h$), but the formula AS A FUNCTION OF $q$
+is not cleanly bar-classifiable.  This is the audit-correction
+finding from
+[`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md).
 
 The bar-symmetric subleading contribution
 $\hbar_q^2 \cdot h \cdot [2]_q \cdot \hbar_q^3$
@@ -186,9 +199,9 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 - **GB filtration level**: ℓ varies — per-atom; the residue
   identification holds at every $\ell$ for which both the plain
   skeleton ($\ell_{\mathrm{plain}}$) and the canonical word ($\ell_{\mathrm{canonical}}$) are defined.
-- **Jet order**: $h^1$ (leading anomaly is bar-anti-symmetric linear
+- **Jet order**: $h^1$ (leading anomaly is isospin-Z/2-anti-symmetric linear
   in $h$; bar-symmetric subleading at $h^4$ via $\hbar_q^3$ multiplier).
-- **Bar-symmetry status**: **bar-anti-symmetric** at leading order
+- **Bar-symmetry status**: **isospin-Z/2-anti-symmetric** at leading order
   (the isospin residue lives in $P_{\mathrm{skew}}$ image of
   [`bar-involution.md`](bar-involution.md), correctly classified in
   [`bar-involution-table3-data`](bar-involution.md#tbl:bar-involution-table3-data)
@@ -204,13 +217,13 @@ once:
 1. This block lands (provides the categorical statement)
 2. Lean class `IsospinFromCanonicalBowtie` is inhabited (depends on
    the regularised crystal functional class instance)
-3. The bar-anti-symmetric residue verification numerical witness
+3. The isospin-Z/2-anti-symmetric residue verification numerical witness
    ships (see §"Open R&D" below)
 
 The Lean class follows the conditional-class exception of CLAUDE.md
 §3b-cond: the upstream conjecture `crystal-isospin-degeneracy`
 provides the plain-generator base; the regularised-functional
-extension is an `Instance` parameter; the bar-anti-symmetric residue
+extension is an `Instance` parameter; the isospin-Z/2-anti-symmetric residue
 is then provable from the four-factor parity decomposition above.
 
 ## Lean axiomatisation (sketch)
@@ -234,7 +247,7 @@ class IsospinFromCanonicalBowtie
         = S_crystal A (plain_skeleton β)
           + sum_bowtie_tr_M_reg β
   /-- SU(2)_I swap (u ↔ d) on color-sheet flavors leaves the
-      regularised functional invariant up to a bar-anti-symmetric
+      regularised functional invariant up to a isospin-Z/2-anti-symmetric
       residue carrying an overall factor of h. -/
   swap_residue_bar_anti_symmetric :
     ∀ (A : ℕ) (β : AtomicBraidCanonical A),
@@ -268,7 +281,7 @@ ultimately lives in the upstream-conjecture class instances.
    and explicitly compute:
    - The plain-skeleton crystal-corrected shell sum
    - The regularised contributions from the one inter-nucleon arc
-   - The bar-anti-symmetric residue
+   - The isospin-Z/2-anti-symmetric residue
    - Cross-check against
      `_li_2_q_util.flavor_split_subleading(q_0)` to 1 ppb.
 2. **Construct the explicit regulator**: identify the canonical
@@ -278,7 +291,7 @@ ultimately lives in the upstream-conjecture class instances.
 3. **Promote to a `proposition`** with §3b-cond banner once the
    regulator-consistent statement is fully Lean-proved (modulo
    class instances).
-4. **Extend to higher A**: verify the bar-anti-symmetric residue
+4. **Extend to higher A**: verify the isospin-Z/2-anti-symmetric residue
    identification holds for T, ³He, ⁴He — these have multiple
    inter-nucleon arcs and the residue is a sum over arcs.  The
    ⁴He magic-shell case (per
