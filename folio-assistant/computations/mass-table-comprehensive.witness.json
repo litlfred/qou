@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-24T01:36:43.541112+00:00",
-  "commitSha": "03c95096e7447355247da5df57999798a055b66a",
+  "computedAt": "2026-05-24T01:40:56.765493+00:00",
+  "commitSha": "42145fcec01543b28e3e7118dfa1c40ef1a6e181",
   "assertions": [
     {
       "name": "all_A_leq_4_masses_computed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 288,
+  "durationMs": 356,
   "computation": "mass-table-comprehensive",
   "scriptFile": "mass_table_comprehensive.py",
-  "scriptHash": "bdcdd927022f",
-  "scriptCommitSha": "899cd2f93587f09501bfd38186eca2076948b8c7",
+  "scriptHash": "69f9f0ca8935",
+  "scriptCommitSha": "42145fcec01543b28e3e7118dfa1c40ef1a6e181",
   "description": "Comprehensive mass/binding table for all nuclei from proton (A=1) through ¹²C (A=12) at the current production tier: Family A λ_A = 5/2 + (3/4)h² (PROVED) + substrate-pure flavor-split Δm/M_N (PROVED, PR #942). Binding energies via binding_canonical with use_closed_form=True for A ≤ 3 (PR #921). A = 4 uses symbolic path. A ≥ 5 flagged as 'not yet computed'. Each entry cross-references the recursive atom knot atlas methodology tag.",
   "contentBlock": "prop:recursive-atom-knot-atlas",
   "parameters": {
@@ -139,11 +139,11 @@
         "N": 3,
         "A": 6,
         "m_pred_MeV": 5795.559617,
-        "m_codata_MeV": 5601.512526,
-        "m_err_pct": 3.4642,
+        "m_codata_MeV": 5601.518526,
+        "m_err_pct": 3.4641,
         "B_pred_MeV": 0.73813,
-        "B_AME_MeV": 32.0,
-        "B_err_pct": -97.6933,
+        "B_AME_MeV": 31.994,
+        "B_err_pct": -97.6929,
         "binding_method": "binding_canonical (symbolic)",
         "atlas_methodology_tag": "deprecated-volume-match",
         "caveats": [
@@ -196,13 +196,32 @@
         "N": 5,
         "A": 10,
         "m_pred_MeV": 9659.77639,
-        "m_codata_MeV": 9324.437543,
-        "m_err_pct": 3.5963,
+        "m_codata_MeV": 9324.436843,
+        "m_err_pct": 3.5964,
         "B_pred_MeV": 0.719856,
-        "B_AME_MeV": 64.75,
+        "B_AME_MeV": 64.7507,
         "B_err_pct": -98.8883,
         "binding_method": "binding_canonical (symbolic)",
         "atlas_methodology_tag": "recursive-on-4He",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "11B",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "m_pred_MeV": 10626.546342,
+        "m_codata_MeV": 10252.547564,
+        "m_err_pct": 3.6479,
+        "B_pred_MeV": 0.664678,
+        "B_AME_MeV": 76.2054,
+        "B_err_pct": -99.1278,
+        "binding_method": "binding_canonical (symbolic)",
+        "atlas_methodology_tag": "not-in-atlas",
         "caveats": [
           "Family A λ_A (PROVED)",
           "flavor-split (PROVED)",
@@ -215,10 +234,10 @@
         "N": 6,
         "A": 12,
         "m_pred_MeV": 11591.887392,
-        "m_codata_MeV": 11174.863324,
+        "m_codata_MeV": 11174.863352,
         "m_err_pct": 3.7318,
         "B_pred_MeV": 0.708103,
-        "B_AME_MeV": 92.161728,
+        "B_AME_MeV": 92.1617,
         "B_err_pct": -99.2317,
         "binding_method": "binding_canonical (symbolic)",
         "atlas_methodology_tag": "recursive-on-4He",
@@ -227,13 +246,393 @@
           "flavor-split (PROVED)",
           "H_{3A} kernel not available (Phase-2 gated)"
         ]
+      },
+      {
+        "atom": "13C",
+        "Z": 6,
+        "N": 7,
+        "A": 13,
+        "m_pred_MeV": 12559.310269,
+        "m_codata_MeV": 12109.482373,
+        "m_err_pct": 3.7147,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 97.1081,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "14N",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "m_pred_MeV": 13524.694744,
+        "m_codata_MeV": 13040.203861,
+        "m_err_pct": 3.7154,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 104.6587,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "15N",
+        "Z": 7,
+        "N": 8,
+        "A": 15,
+        "m_pred_MeV": 14491.409518,
+        "m_codata_MeV": 13968.936081,
+        "m_err_pct": 3.7403,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 115.4919,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "16O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "m_pred_MeV": 15456.793994,
+        "m_codata_MeV": 14895.080769,
+        "m_err_pct": 3.7711,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 127.6193,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "17O",
+        "Z": 8,
+        "N": 9,
+        "A": 17,
+        "m_pred_MeV": 16423.508767,
+        "m_codata_MeV": 15830.50279,
+        "m_err_pct": 3.746,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 131.7627,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "18O",
+        "Z": 8,
+        "N": 10,
+        "A": 18,
+        "m_pred_MeV": 17390.223541,
+        "m_codata_MeV": 16762.02311,
+        "m_err_pct": 3.7478,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 139.8078,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "19F",
+        "Z": 9,
+        "N": 10,
+        "A": 19,
+        "m_pred_MeV": 18355.608017,
+        "m_codata_MeV": 17692.301699,
+        "m_err_pct": 3.7491,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 147.8013,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "20Ne",
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "m_pred_MeV": 19320.992492,
+        "m_codata_MeV": 18617.730187,
+        "m_err_pct": 3.7774,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 160.6449,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "23Na",
+        "Z": 11,
+        "N": 12,
+        "A": 23,
+        "m_pred_MeV": 22219.806515,
+        "m_codata_MeV": 21409.214316,
+        "m_err_pct": 3.7862,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 186.5637,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "24Mg",
+        "Z": 12,
+        "N": 12,
+        "A": 24,
+        "m_pred_MeV": 23185.190991,
+        "m_codata_MeV": 22335.793304,
+        "m_err_pct": 3.8029,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 198.2568,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "27Al",
+        "Z": 13,
+        "N": 14,
+        "A": 27,
+        "m_pred_MeV": 26084.005013,
+        "m_codata_MeV": 25126.501433,
+        "m_err_pct": 3.8107,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 224.9516,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "28Si",
+        "Z": 14,
+        "N": 14,
+        "A": 28,
+        "m_pred_MeV": 27049.389489,
+        "m_codata_MeV": 26053.188322,
+        "m_err_pct": 3.8237,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 236.5368,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "31P",
+        "Z": 15,
+        "N": 16,
+        "A": 31,
+        "m_pred_MeV": 29948.203512,
+        "m_codata_MeV": 28844.211251,
+        "m_err_pct": 3.8274,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 262.9168,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "32S",
+        "Z": 16,
+        "N": 16,
+        "A": 32,
+        "m_pred_MeV": 30913.587987,
+        "m_codata_MeV": 29773.619539,
+        "m_err_pct": 3.8288,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 271.7806,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "35Cl",
+        "Z": 17,
+        "N": 18,
+        "A": 35,
+        "m_pred_MeV": 33812.40201,
+        "m_codata_MeV": 32564.593268,
+        "m_err_pct": 3.8318,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 298.2098,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "40Ar",
+        "Z": 18,
+        "N": 22,
+        "A": 40,
+        "m_pred_MeV": 38644.64558,
+        "m_codata_MeV": 37215.526738,
+        "m_err_pct": 3.8401,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 343.8101,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "39K",
+        "Z": 19,
+        "N": 20,
+        "A": 39,
+        "m_pred_MeV": 37676.600509,
+        "m_codata_MeV": 36284.754785,
+        "m_err_pct": 3.8359,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 333.7233,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "40Ca",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "m_pred_MeV": 38641.984984,
+        "m_codata_MeV": 37214.698074,
+        "m_err_pct": 3.8353,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 342.0521,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
+      },
+      {
+        "atom": "56Fe",
+        "Z": 26,
+        "N": 30,
+        "A": 56,
+        "m_pred_MeV": 54101.439574,
+        "m_codata_MeV": 52089.783108,
+        "m_err_pct": 3.8619,
+        "B_pred_MeV": null,
+        "B_AME_MeV": 492.2538,
+        "B_err_pct": -100.0,
+        "binding_method": "n/a",
+        "atlas_methodology_tag": "not-in-atlas",
+        "caveats": [
+          "Family A λ_A (PROVED)",
+          "flavor-split (PROVED)",
+          "B NOT COMPUTED (gated on H_{3A} kernel)",
+          "H_{3A} kernel not available (Phase-2 gated)"
+        ]
       }
     ],
     "summary": {
-      "total_isotopes": 11,
-      "masses_computed": 11,
-      "binding_computed": 9,
-      "gated_on_phase2": 5,
+      "total_isotopes": 31,
+      "masses_computed": 31,
+      "binding_computed": 10,
+      "gated_on_phase2": 25,
       "lambda_A_value": 2.532779663672884,
       "delta_m_over_M_N": 0.0013770494096847516,
       "m_p_pred_MeV": 965.3844755744939,
