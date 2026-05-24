@@ -908,19 +908,17 @@ Per prepared PR:
    CI run. Before each fix-push, run `git fetch origin main` and
    check the delta per coordinate §8c. If main moved ≥ 3 commits
    and any touch your PR's diff scope, rebase first (per §5f).
-5. **Done check + merge prompt.** When (a) every open review
-   thread is resolved or replied to AND one-voice has been
-   applied or noted n/a (§5h), (b) every CI check is green OR
-   documented as a flake (§5f), (c) the diff still reflects the
-   original intent, **ask the author**:
-
-   > PR #N is ready for merge — N comments addressed, CI green
-   > (or: documented as §5f drift/billing flake). Link: <PR URL>.
-   > Merge to main?
-
-   Use `AskUserQuestion` (foreground) or post the merge-prompt on
-   the PR (PR-driven). Do **not** auto-merge.
-6. **Stop on merge.** Once the author merges (or closes), call
+5. **Done check + merge via `/prepare-merge-auto`.** When (a)
+   every open review thread is resolved or replied to AND one-voice
+   has been applied or noted n/a (§5h), (b) every CI check is
+   green OR documented as a flake (§5f), (c) the diff still
+   reflects the original intent — invoke `/prepare-merge-auto`.
+   The skill handles sibling coordination, final rebase, review-
+   comment resolution, structured user questions (if blocked), and
+   merge. See
+   [`.claude/skills/local/prepare-merge-auto.md`](prepare-merge-auto.md)
+   for the full workflow.
+6. **Stop on merge.** Once merged (or closed), call
    `mcp__github__unsubscribe_pr_activity`. Record outcome in
    ledger.
 
