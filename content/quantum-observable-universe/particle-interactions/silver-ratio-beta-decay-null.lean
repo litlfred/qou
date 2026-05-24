@@ -80,12 +80,39 @@ theorem hecke_quadratic_silver_ratio_self_referential :
 theorem hoefsmit_b_squared_at_silver_ratio :
     let q : ℝ := 1 + Real.sqrt 2
     (q^4 + q^2 + 1) / (q^2 + 1)^2 = 7/8 := by
-  have hsqrt2 : Real.sqrt 2 * Real.sqrt 2 = 2 := Real.mul_self_sqrt (by norm_num)
-  simp only [add_pow, pow_succ, pow_zero]
-  ring_nf
-  -- The algebraic manipulation: ratio of (21 + 14√2) / (24 + 16√2)
-  -- equals 7(3+2√2) / (8(3+2√2)) = 7/8
-  -- Lean needs help with the conjugate simplification:
-  sorry  -- Ref: [manuscript] direct algebraic identity at silver-ratio q
+  -- Strategy: substitute q^2 = 3 + 2√2 and q^4 = 17 + 12√2; both
+  -- numerator and denominator share the conjugate factor (3 + 2√2):
+  --   numerator   = 21 + 14√2 = 7 · (3 + 2√2)
+  --   denominator = (4 + 2√2)^2 = 24 + 16√2 = 8 · (3 + 2√2)
+  -- so the ratio cancels to 7/8.
+  have hs : Real.sqrt 2 * Real.sqrt 2 = 2 :=
+    Real.mul_self_sqrt (by norm_num : (0 : ℝ) ≤ 2)
+  show ((1 + Real.sqrt 2)^4 + (1 + Real.sqrt 2)^2 + 1)
+        / ((1 + Real.sqrt 2)^2 + 1)^2 = 7/8
+  -- q^2 = 3 + 2 · √2
+  have hq2 : (1 + Real.sqrt 2)^2 = 3 + 2 * Real.sqrt 2 := by
+    have h : (1 + Real.sqrt 2)^2
+              = 1 + 2 * Real.sqrt 2 + Real.sqrt 2 * Real.sqrt 2 := by ring
+    rw [h, hs]; ring
+  -- q^4 = (q^2)^2 = (3 + 2√2)^2 = 17 + 12 · √2
+  have hq4 : (1 + Real.sqrt 2)^4 = 17 + 12 * Real.sqrt 2 := by
+    have h1 : (1 + Real.sqrt 2)^4 = ((1 + Real.sqrt 2)^2)^2 := by ring
+    rw [h1, hq2]
+    have h2 : (3 + 2 * Real.sqrt 2 : ℝ)^2
+              = 9 + 12 * Real.sqrt 2 + 4 * (Real.sqrt 2 * Real.sqrt 2) := by ring
+    rw [h2, hs]; ring
+  rw [hq2, hq4]
+  -- Denominator: ((3 + 2√2) + 1)^2 = (4 + 2√2)^2 = 24 + 16 · √2
+  have hden : ((3 + 2 * Real.sqrt 2 : ℝ) + 1)^2 = 24 + 16 * Real.sqrt 2 := by
+    have h : ((3 + 2 * Real.sqrt 2 : ℝ) + 1)^2
+              = 16 + 16 * Real.sqrt 2 + 4 * (Real.sqrt 2 * Real.sqrt 2) := by ring
+    rw [h, hs]; ring
+  rw [hden]
+  -- Goal: (17 + 12√2 + (3 + 2√2) + 1) / (24 + 16√2) = 7/8.
+  -- Numerator simplifies to 21 + 14√2; cross-multiply gives
+  --   8 · (21 + 14√2) = 168 + 112√2 = 7 · (24 + 16√2). ✓
+  have hden_pos : (24 + 16 * Real.sqrt 2 : ℝ) > 0 := by positivity
+  rw [div_eq_div_iff (ne_of_gt hden_pos) (by norm_num : (8 : ℝ) ≠ 0)]
+  ring
 
 end QOU.ParticleInteractions
