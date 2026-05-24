@@ -120,7 +120,7 @@ the small-cases bridge verification
 ([`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases))
 and the depth-2 / torus-knot / hyperbolic-row B1 discharges, the
 **graded-Mikusiński bi-filtration framework's structural theorems
-are essentially complete**:
+are complete**:
 
 | Bi-filtration claim | Status |
 |---|---|

@@ -2,8 +2,8 @@
 *The two seemingly contradictory operational stances in the QOU
 manuscript — that single Hecke crossings obey a Markov locality
 property (memoryless of upstream history) while composite braid
-evaluation is essentially non-local (Gröbner–Shirshov reduction
-sweeps the whole braid word) — are not contradictory but
+evaluation is non-local (Gröbner–Shirshov reduction sweeps the
+whole braid word) — are not contradictory but
 complementary statements about different operations on the same
 object. They are reconciled by Wenzl's product factorisation of
 the Markov trace.*
