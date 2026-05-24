@@ -288,6 +288,7 @@ Combining the per-step analysis with the empirical h⁴ probe results
 
 ## §5. Cross-references
 
+- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — **canonical framing reference** (post-PR #1080); explains why λ_scale ≠ separate object (now in main)
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — the canonical chain (this audit traces through it)
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — Yekutieli MI tessellation, jet grades
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md) — h⁴ source trace + SO(3) gap
