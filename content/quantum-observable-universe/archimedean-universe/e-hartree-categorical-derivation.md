@@ -1389,8 +1389,8 @@ upgrades to a proposition with explicit $c_2$.
 **Empirical check from the H_2 witness**
 ([`folio-assistant/computations/h2-molecular-binding.witness.json`](folio-assistant/computations/h2-molecular-binding.witness.json)):
 - $y_{\mathrm{cov}}^{*} = 0.687$ (in $\Phi_1$ units)
-- $E_{\mathrm{bind}}^{\mathrm{predicted}} = 4.638\,\mathrm{eV}$
-- $E_{\mathrm{Hartree}} = 27.296\,\mathrm{eV}$
+- $E_{\mathrm{bind}}^{\mathrm{predicted}} \approx 4.638\,\mathrm{eV}$
+- $E_{\mathrm{Hartree}} \approx 27.296\,\mathrm{eV}$
 - Ratio: $E_{\mathrm{bind}}/E_{\mathrm{Hartree}} \approx 0.170$
 
 The dimensionless ratio $0.170$ is the conjectured $c_2$. It is

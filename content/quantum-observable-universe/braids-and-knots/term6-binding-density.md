@@ -90,9 +90,9 @@ Fit on the 16-atom panel D, 3He, 3H, 4He, 6Li, 7Li, 9Be, 12C,
 2020 binding energies:
 
 $$
-  \alpha = 339.4 \;\mathrm{MeV},
+  \alpha \approx 339.4 \;\mathrm{MeV},
   \quad
-  \beta = 1.14 \;\mathrm{MeV},
+  \beta \approx 1.14 \;\mathrm{MeV},
   \quad
   R^2 = 0.84,
   \quad
