@@ -92,25 +92,6 @@
         "evidence": "unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:101: $\\mathcal{C}$ from level $n$.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:113: a. **If** $\\mathrm{NF}(m) \\in \\mathcal{C}$: replace $m$ by  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:114: $\\mathcal{C}[m]$.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:118: store result in $\\mathcal{C}$.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:124: 4. **Combine.**  Set $h := \\mathcal{C}[f^{\\mathrm{desc}}] +  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
     ],
-    "canonical-script-not-deprecated": [
-      {
-        "field_hash": {
-          "md": "aeb89201e2c4",
-          "ts": "86ae1a6f4719",
-          "lean": "b890aeb3b08a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "dade4dbccd86",
-          "script_commit_sha": "b1c68b51c25830f97394a032704091624fd39a68"
-        },
-        "reviewed_at": "2026-05-24T01:54:37.804Z",
-        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
-      }
-    ],
     "voice-unicode-crash": [
       {
         "field_hash": {
@@ -167,7 +148,26 @@
         "reviewed_at": "2026-05-24T02:06:46.438Z",
         "reviewed_sha": "e1f027f34dd7fe93691725cba3e99182ecf6208f"
       }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "aeb89201e2c4",
+          "ts": "86ae1a6f4719",
+          "lean": "b890aeb3b08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "518bf838ed47",
+          "script_commit_sha": "a57e52a0b4f2f41a6fe5083e7fe11c9985dd7d3f"
+        },
+        "reviewed_at": "2026-05-24T02:16:54.399Z",
+        "reviewed_sha": "40ddd3dcef7b172ac79032fc464acff7b56c3357"
+      }
     ]
   },
-  "updated_at": "2026-05-24T02:06:46.438Z"
+  "updated_at": "2026-05-24T02:16:54.399Z"
 }
