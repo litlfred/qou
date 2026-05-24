@@ -154,18 +154,40 @@ export function checkDoesNotDefaultToFloat(
   // copy has string contents blanked), test the sentinel allow-list,
   // and blank the matched region in a working copy so the literal
   // scan below does not double-flag arguments like `float(1.0)`.
+  //
+  // Display-context exemption: `float(...)` casts on a line that
+  // also contains an f-string (`f"`), `print(`, `.format(`, or
+  // `assert ` are presentation / comparison conversions, not
+  // substrate-precision compute paths. The conversion is the
+  // INTENT — we want a regular Python float for `:.6f` formatting,
+  // human-readable print output, or tolerance comparison.
+  // Same intent applies to lines that ASSIGN to a name ending in
+  // `_pct`, `_ppb`, `_ppm`, `_print`, `_display`, `_str` — those
+  // are explicit display-only variables. Restricting the float-
+  // cast flag to substrate code paths matches the criterion's
+  // own description ("in substrate-precision code paths").
   let workingSource = masked;
+  // Pre-split for per-line context lookup. masked preserves line
+  // breaks so workingLines indexing matches lineForOffset() values.
+  const maskedLines = masked.split("\n");
   for (const m of masked.matchAll(FLOAT_CALL_RE)) {
     const startOfArg = m.index! + m[0].indexOf("(") + 1;
     const endOfArg = m.index! + m[0].lastIndexOf(")");
     const rawArg = src.slice(startOfArg, endOfArg);
     const isSentinel = FLOAT_CALL_SENTINEL_RE.test(rawArg.trim());
 
-    if (!isSentinel) {
+    // Display-context check on the line containing the cast.
+    const lineNum = lineForOffset(m.index!);
+    const lineCtx = maskedLines[lineNum - 1] ?? "";
+    const isDisplayContext =
+      /\bprint\(|f["']|\.format\(|\bassert\s|>>>/.test(lineCtx) ||
+      /\b\w+_(?:pct|ppb|ppm|print|display|str|repr)\b\s*=/.test(lineCtx);
+
+    if (!isSentinel && !isDisplayContext) {
       const display = rawArg.trim().replace(/\s+/g, " ");
       hits.push({
         file: scriptPath,
-        line: lineForOffset(m.index!),
+        line: lineNum,
         text:
           `bare \`float(${display.slice(0, 40)}${
             display.length > 40 ? "…" : ""
@@ -184,11 +206,18 @@ export function checkDoesNotDefaultToFloat(
 
   // Phase 2 — bare float literals in regions not consumed by a
   // `float(...)` cast. Per-line scan is fine here; literals do not
-  // span lines.
+  // span lines. Same display-context exemption as Phase 1 — a
+  // literal like `1e-6` inside `assert x < 1e-6` is the tolerance
+  // for a comparison, not a substrate-precision value.
   const workingLines = workingSource.split("\n");
   for (let i = 0; i < workingLines.length; i++) {
-    if (!workingLines[i].trim()) continue;
-    for (const m of workingLines[i].matchAll(BARE_FLOAT_LITERAL_RE)) {
+    const line = workingLines[i];
+    if (!line.trim()) continue;
+    const isDisplayContext =
+      /\bprint\(|f["']|\.format\(|\bassert\s|>>>/.test(line) ||
+      /\b\w+_(?:pct|ppb|ppm|print|display|str|repr)\b\s*=/.test(line);
+    if (isDisplayContext) continue;
+    for (const m of line.matchAll(BARE_FLOAT_LITERAL_RE)) {
       hits.push({
         file: scriptPath,
         line: i + 1,
