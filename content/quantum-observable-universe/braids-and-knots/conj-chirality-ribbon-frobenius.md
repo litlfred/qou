@@ -9,14 +9,6 @@ confined knots in the model.
 
 ## Statement
 
-**Status:** Refuted at the audited atomic braids.  The conjecture
-*as originally stated* (below) has been falsified for $D, T, {}^3\mathrm{He}$ —
-see the *refutation status note* and
-"Generalisation" subsection.  The statement is preserved here as the
-historical conjecture text; the empirical $(1+h)(1-h) \approx 0.956$
-pattern that motivated it requires a different construction
-(see the *Residual* paragraph below).
-
 **Conjecture (historical, refuted at $A \geq 2$).**
 *Let $K$ be a confined knot with writhe $w(K)$ and canonical Hecke
 braid element $T_w \in H_{n_0}(R, q)$.  The chirality factor of $K$
