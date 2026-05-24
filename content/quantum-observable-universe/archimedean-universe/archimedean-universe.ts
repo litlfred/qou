@@ -212,10 +212,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Descartes condition: torus-knot generators and genus completeness (continued)",
-      label: "sec:archimedean-condition-genus-completeness-continued",
+      title: "Descartes condition: torus-knot generators and genus completeness : characterisation",
+      label: "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation",
       blocks: [
-        "archimedean-condition-genus-completeness-continued-intro",
+        "archimedean-condition-genus-completeness-genus-ideal-characterisation-intro",
         "genus-ideal-characterisation-proof",
         "yekutieli-leading-coefficient",
         "yekutieli-leading-coefficient-proof",
@@ -323,10 +323,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Mesons and nucleons (continued)",
-      label: "sec:mesons-nucleons-continued",
+      title: "Mesons and nucleons : characterisation",
+      label: "sec:mesons-nucleons-categorical-proton-unique",
       blocks: [
-        "mesons-nucleons-continued-intro",
+        "mesons-nucleons-categorical-proton-unique-intro",
         "categorical-proton-unique-proof",
         "meson-to-proton-via-borromean",
         "categorical-neutron",
@@ -383,10 +383,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "EM completeness and gauge coupling (continued)",
-      label: "sec:em-completeness-gauge-coupling-continued",
+      title: "EM completeness and gauge coupling : characterisation",
+      label: "sec:em-completeness-gauge-coupling-e-hartree-categorical",
       blocks: [
-        "em-completeness-gauge-coupling-continued-intro",
+        "em-completeness-gauge-coupling-e-hartree-categorical-intro",
         "e-hartree-categorical-derivation",
 
         "e-hartree-categorical-derivation-table1-data",
@@ -429,10 +429,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Archimedean Hartree, crystal basis, and Mathlib bridge (continued)",
-      label: "sec:archimedean-hartree-crystal-continued",
+      title: "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
+      label: "sec:archimedean-hartree-crystal-mass-tower-deeper",
       blocks: [
-        "archimedean-hartree-crystal-continued-intro",
+        "archimedean-hartree-crystal-mass-tower-deeper-intro",
         "mass-tower-deeper-fillers",
         "three-substantive-mathlib-fillers",
         "bloch-group-quotient-construction",
@@ -445,10 +445,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) (continued)",
-      label: "sec:archimedean-hartree-crystal-continued-continued",
+      title: "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
+      label: "sec:archimedean-hartree-crystal-alpha-em-categorical",
       blocks: [
-        "archimedean-hartree-crystal-continued-continued-intro",
+        "archimedean-hartree-crystal-alpha-em-categorical-intro",
         "upstream-mathlib-additions-table2-data",
         "upstream-mathlib-additions-table1-data",
         "alpha-em-categorical-trace-ratio",
@@ -502,10 +502,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Nuclear stability and decay (continued)",
-      label: "sec:nuclear-stability-decay-continued",
+      title: "Nuclear stability and decay : characterisation",
+      label: "sec:nuclear-stability-decay-hadron-half-life",
       blocks: [
-        "nuclear-stability-decay-continued-intro",
+        "nuclear-stability-decay-hadron-half-life-intro",
         "hadron-half-life",
         "hadron-q-self-correction",
         "hadron-q-self-correction-table-data",
@@ -560,10 +560,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Atomic shells: construction foundations (continued)",
-      label: "sec:atomic-shells-foundations-continued",
+      title: "Atomic shells: construction foundations : characterisation",
+      label: "sec:atomic-shells-foundations-skein-finiteness-bound",
       blocks: [
-        "atomic-shells-foundations-continued-intro",
+        "atomic-shells-foundations-skein-finiteness-bound-intro",
         "torus-knot-shell-binding-table1-data",
         "torus-knot-shell-binding-table2-data",
         "torus-knot-shell-binding-table3-data",

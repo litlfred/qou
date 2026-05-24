@@ -60,10 +60,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Confinement operator selection (continued)",
-      label: "sec:confinement-selection-continued",
+      title: "Confinement operator selection : vs",
+      label: "sec:confinement-selection-confinement-sdp-vs",
       blocks: [
-        "confinement-selection-continued-intro",
+        "confinement-selection-confinement-sdp-vs-intro",
         "confinement-sdp-vs-lp",
         "confinement-misdp",
         "confinement-topological",
@@ -161,10 +161,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Transfer matrices and beta decay (continued)",
-      label: "sec:transfer-beta-decay-continued",
+      title: "Transfer matrices and beta decay : vs",
+      label: "sec:transfer-beta-decay-q-beta-spectral",
       blocks: [
-        "transfer-beta-decay-continued-intro",
+        "transfer-beta-decay-q-beta-spectral-intro",
         "q-beta-spectral-bridge",
         "q-beta-spectral-bridge-table-data",
         "q-beta-form-a-n1-symbolic",

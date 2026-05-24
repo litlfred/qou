@@ -363,10 +363,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Skein Generation and Particle Correspondence (continued)",
-      label: "sec:skein-particle-generation-continued",
+      title: "Skein Generation and Particle Correspondence : generation",
+      label: "sec:skein-particle-generation-knot-particle-generation",
       blocks: [
-        "skein-particle-generation-continued-intro",
+        "skein-particle-generation-knot-particle-generation-intro",
         "knot-particle-generation-interpretation",
         "knot-particle-correspondence",
         "knot-particle-dictionary",
@@ -509,10 +509,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Mass-formula derivation (continued)",
-      label: "sec:mass-formula-derivation-continued",
+      title: "Mass-formula derivation : generation",
+      label: "sec:mass-formula-derivation-commutative-chirality-vanishes",
       blocks: [
-        "mass-formula-derivation-continued-intro",
+        "mass-formula-derivation-commutative-chirality-vanishes-intro",
         "frobenius-s-classification-table2-data",
         "frobenius-s-classification-table1-data",
         "commutative-chirality-vanishes",
@@ -555,10 +555,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Hoefsmit convergence: construction (continued)",
-      label: "sec:hoefsmit-convergence-construction-continued",
+      title: "Hoefsmit convergence: construction : generation",
+      label: "sec:hoefsmit-convergence-construction-per-partition-k",
       blocks: [
-        "hoefsmit-convergence-construction-continued-intro",
+        "hoefsmit-convergence-construction-per-partition-k-intro",
         "brane-tower-z-habiro-table2-data",
         "brane-tower-z-habiro-table3-data",
         "brane-tower-z-habiro-table4-data",
@@ -623,10 +623,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Markov axioms and braid-link enumeration (continued)",
-      label: "sec:markov-axioms-braid-link-continued",
+      title: "Markov axioms and braid-link enumeration : generation",
+      label: "sec:markov-axioms-braid-link-li2q-phiq-bar",
       blocks: [
-        "markov-axioms-braid-link-continued-intro",
+        "markov-axioms-braid-link-li2q-phiq-bar-intro",
         "polynomial-bar-involution-table-data",
         "li2q-phiq-bar-symmetrization",
         "c5-involution-leibniz-decomposition",
@@ -639,10 +639,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Markov axioms and braid-link enumeration (continued) (continued)",
-      label: "sec:markov-axioms-braid-link-continued-continued",
+      title: "Markov axioms and braid-link enumeration (continued) : generation",
+      label: "sec:markov-axioms-braid-link-markov-closure-map",
       blocks: [
-        "markov-axioms-braid-link-continued-continued-intro",
+        "markov-axioms-braid-link-markov-closure-map-intro",
         "braid-group-n-strand-table2-data",
         "braid-group-n-strand-table1-data",
         "markov-closure-map-axiomatic",
@@ -674,10 +674,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Hecke $u$-coordinate, $\\chi$-character closed-forms (continued)",
-      label: "sec:hecke-chi-closed-forms-continued",
+      title: "Hecke $u$-coordinate, $\\chi$-character closed-forms : generation",
+      label: "sec:hecke-chi-closed-forms-chi-per-irrep",
       blocks: [
-        "hecke-chi-closed-forms-continued-intro",
+        "hecke-chi-closed-forms-chi-per-irrep-intro",
         "chi-v3-closed-form-proof-table-data",
         "chi-per-irrep-cyclotomic-closed-forms",
         "chi-per-irrep-cyclotomic-closed-forms-table2-data",
@@ -1090,10 +1090,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Parity classification, atomic atlas, and discrepancy resolution (continued)",
-      label: "sec:parity-classification-discrepancy-continued",
+      title: "Parity classification, atomic atlas, and discrepancy resolution : generation",
+      label: "sec:parity-classification-discrepancy-partition-sum-proton",
       blocks: [
-        "parity-classification-discrepancy-continued-intro",
+        "parity-classification-discrepancy-partition-sum-proton-intro",
         "partition-sum-proton-residual",
         "partition-sum-proton-residual-table5-data",
         "partition-sum-proton-residual-table4-data",
@@ -1127,10 +1127,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Spectral sequence, chirality, and confinement-NF structure (continued)",
-      label: "sec:spectral-sequence-chirality-confinement-continued",
+      title: "Spectral sequence, chirality, and confinement-NF structure : generation",
+      label: "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
       blocks: [
-        "spectral-sequence-chirality-confinement-continued-intro",
+        "spectral-sequence-chirality-confinement-per-nucleon-shift-intro",
         "per-nucleon-shift-additive-linearity",
         "per-nucleon-shift-additive-linearity-table2-data",
         "per-nucleon-shift-additive-linearity-table1-data",
@@ -1216,10 +1216,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "$\\alpha_k$ derivation procedure (continued)",
-      label: "sec:alpha-k-procedure-continued",
+      title: "$\\alpha_k$ derivation procedure : generation",
+      label: "sec:alpha-k-procedure-atom-knot-mass",
       blocks: [
-        "alpha-k-procedure-continued-intro",
+        "alpha-k-procedure-atom-knot-mass-intro",
         "atom-knot-mass-derivation-table2-data",
         "atom-knot-mass-derivation-table3-data",
         "atom-knot-mass-derivation-proof",
@@ -1252,10 +1252,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\alpha_k$ (continued)",
-      label: "sec:wenzl-bridge-cyclotomic-continued",
+      title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\alpha_k$ : generation",
+      label: "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
       blocks: [
-        "wenzl-bridge-cyclotomic-continued-intro",
+        "wenzl-bridge-cyclotomic-lr-tensor-character-intro",
         "lr-tensor-character-bridge",
         "lambda-scale-bring-bloch-identity",
         "wenzl-qmn-synergy",
@@ -1288,10 +1288,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Six-term mass formula, crystal, isospin, and chirality (continued)",
-      label: "sec:six-term-crystal-isospin-chirality-continued",
+      title: "Six-term mass formula, crystal, isospin, and chirality : generation",
+      label: "sec:six-term-crystal-isospin-chirality-option-e-isospin",
       blocks: [
-        "six-term-crystal-isospin-chirality-continued-intro",
+        "six-term-crystal-isospin-chirality-option-e-isospin-intro",
         "option-e-isospin-test",
         "crystal-bases-path-a",
         "crystal-bases-path-a-table3-data",
