@@ -1021,6 +1021,7 @@ export default chapter({
         "markov-trace-ratio-exact",
         "vassiliev-filtration-mass-tower",
         "hecke-quandle",
+        "knot-operator-bring-action",
         "phi-q-resums-trace-series",
         "phi-q-resums-trace-series-table-data",
         "markov-axiom-recursive-ascent",
