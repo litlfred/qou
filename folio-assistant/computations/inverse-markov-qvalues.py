@@ -35,6 +35,7 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from mpmath import mp
 from itertools import combinations
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -256,13 +257,13 @@ for level, results_list, typed_d_fn, gs_fn, label in [
         gs_par, tr_par = gs_fn(Z_par, N_par)
         gs_dau, tr_dau = gs_fn(Z_dau, N_dau)
 
-        F_par = -math.log(abs(tr_par)) if abs(tr_par) > 1e-300 else float('inf')
-        F_dau = -math.log(abs(tr_dau)) if abs(tr_dau) > 1e-300 else float('inf')
+        F_par = -mp.log(abs(tr_par)) if abs(tr_par) > 1e-300 else float('inf')
+        F_dau = -mp.log(abs(tr_dau)) if abs(tr_dau) > 1e-300 else float('inf')
         dF = F_par - F_dau
 
         results_list.append({
-            'name': name, 'A': A, 'F_par': F_par, 'F_dau': F_dau,
-            'dF': dF, 'Q_exp': Q_exp,
+            'name': name, 'A': A, 'F_par': float(F_par), 'F_dau': float(F_dau),
+            'dF': float(dF), 'Q_exp': Q_exp,
         })
 
     print(f"\n  {label} level:")
@@ -326,8 +327,8 @@ for Z_par, N_par, Z_dau, N_dau, Q_exp, name in decays:
     if A <= 14:
         _, tr_par = find_gs_nucleon(Z_par, N_par)
         _, tr_dau = find_gs_nucleon(Z_dau, N_dau)
-        dF = (-math.log(abs(tr_par))) - (-math.log(abs(tr_dau)))
-        Q_fe = abs(dF) * ln_q * M_E_MEV
+        dF = (-mp.log(abs(tr_par))) - (-mp.log(abs(tr_dau)))
+        Q_fe = float(abs(dF) * ln_q * M_E_MEV)
     else:
         Q_fe = float('nan')
 
