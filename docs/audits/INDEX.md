@@ -55,9 +55,9 @@ historically-valuable content without per-doc judgment.
 Bulk-grep for `^DEPRECATED|^SUPERSEDED|^RETRACTED|deprecated by PR` in
 body content found only 3 files:
 
-- `docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`
-- `docs/audits/2026-05-19-delta-lambda-phase4-z4N-closure.md`
-- `docs/audits/2026-05-19-stale-witness-survey-results.md`
+- [`2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`](2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md)
+- [`2026-05-19-delta-lambda-phase4-z4N-closure.md`](2026-05-19-delta-lambda-phase4-z4N-closure.md)
+- [`2026-05-19-stale-witness-survey-results.md`](2026-05-19-stale-witness-survey-results.md)
 
 These three are immediate candidates for `_deprecated/` (verify per-file
 that the explicit marker is genuine deprecation, not a phrase inside a
@@ -99,7 +99,7 @@ future tranches.
 
 ## Sibling work
 
-- `derivation-audit-report.md` (in `content/.../braids-and-knots/`):
+- [`derivation-audit-report.md`](../../content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md) (in `content/.../braids-and-knots/`):
   refreshed in PR #1075 (GAP-B-1 + GAP-B-2 closed) and PR #1082
   (GAP-A-2 refined, GAP-B-3 closed, GAP-C-1 detailed). Different
   concern from `docs/audits/`: that doc tracks the **physics** gaps
