@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T14:09:24.606539+00:00",
-  "commitSha": "3af08b4a9aa4b5849faaa4400765e6a65c93048e",
+  "computedAt": "2026-05-24T14:15:15.539353+00:00",
+  "commitSha": "43be540fdf82e2e4c552b0375947ec68caaf89ab",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,13 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "60d34fc28faafa9395c037ac62d69ebe8c3575d1",
+  "scriptCommitSha": "71d674da186600ad04a5754792acbf59838f4dad",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2499,6 +2505,7 @@
         "methodology-deprecation.witness.json",
         "molecular-frobenius-lp.witness.json",
         "molecular-trefoil-scan.witness.json",
+        "multi-layer-gap-decomposition.witness.json",
         "multi-level-jet-sum.witness.json",
         "n-sym-goldstone-phase-space-probe.witness.json",
         "n-sym-gram-determinant-probe.witness.json",

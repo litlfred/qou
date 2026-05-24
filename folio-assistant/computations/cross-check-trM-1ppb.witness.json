@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-22T18:51:39.349683+00:00",
-  "commitSha": "3ee249f510da13790a1a0d7d245aa900a3713c3d",
+  "computedAt": "2026-05-24T14:15:16.443005+00:00",
+  "commitSha": "43be540fdf82e2e4c552b0375947ec68caaf89ab",
   "assertions": [
     {
       "name": "all_atoms_within_1ppb",
@@ -17,7 +17,13 @@
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
   "scriptHash": "2288ab7c0115",
-  "scriptCommitSha": "e949aee4cb4eecd16a9cf809dc4fbfb398c1195a",
+  "scriptCommitSha": "71d674da186600ad04a5754792acbf59838f4dad",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {
     "description": "Pairwise comparison of tr_M(β_atom) @ q_0 between the Hoefsmit/mpfr 50-dps brute-force path and the Markov-axiom recursive ascent (markov_peel, production witness from PR #520). Tolerance is 1 ppb (1e-9 relative).",
