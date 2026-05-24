@@ -1,0 +1,92 @@
+{
+  "type": "figure-generation",
+  "version": "1",
+  "scriptFile": "folio-assistant/computations/bring_chiral_fibre_figure.py",
+  "scriptHash": null,
+  "scriptCommitSha": null,
+  "computedAt": "2026-05-24T14:23:28Z",
+  "engineVersion": "numpy-2.4.6 matplotlib-3.10.9",
+  "description": "Bring chiral fibre figures F3 (q\u21920, branch-point neighbourhood) and F4 (q=\u00bd, real-segment) per PR #1075 workplan Phase 1. Cubic X\u00b3+(z+1)X\u00b2+(z\u00b2+z+1)X+(z\u00b3+z\u00b2+z+1)=0 from Bring's invariant ring; sheets via numpy.roots; branch points via Newton-Raphson on the discriminant \u0394(z).",
+  "parameters": {
+    "cubic": "X^3 + (z+1)*X^2 + (z^2+z+1)*X + (z^3+z^2+z+1)",
+    "branch_point_search_radius": 3.0,
+    "branch_point_grid_size": 200
+  },
+  "data": {
+    "branch_points": [
+      {
+        "re": 0.11898594678977047,
+        "im": -1.053640742712109,
+        "discriminant_residual": 2.9790409838967277e-15
+      },
+      {
+        "re": 0.10582958618826804,
+        "im": -0.9371389378389033,
+        "discriminant_residual": 2.1556631856153973e-15
+      },
+      {
+        "re": -0.9748155329780386,
+        "im": -0.2230127275846438,
+        "discriminant_residual": 2.220446049250313e-15
+      },
+      {
+        "re": -0.9748155329780386,
+        "im": 0.2230127275846438,
+        "discriminant_residual": 2.220446049250313e-15
+      },
+      {
+        "re": 0.10582958618826804,
+        "im": 0.9371389378389033,
+        "discriminant_residual": 2.1556631856153973e-15
+      },
+      {
+        "re": 0.11898594678977047,
+        "im": 1.053640742712109,
+        "discriminant_residual": 2.9790409838967277e-15
+      }
+    ],
+    "f3_q_zero": {
+      "branch_point_chosen": [
+        0.10582958618826804,
+        -0.9371389378389033
+      ],
+      "circle_radius": 0.15,
+      "merging_pair": [
+        0,
+        2
+      ],
+      "isolated_sheet": 1,
+      "min_separation": 0.48880064169399884,
+      "n_samples": 200,
+      "svg_path": "/home/user/qou/figures/bring-fibre-q0.svg",
+      "pdf_path": "/home/user/qou/figures/bring-fibre-q0.pdf"
+    },
+    "f4_q_half": {
+      "z_min": -0.5,
+      "z_max": 1.5,
+      "n_samples": 200,
+      "real_sheet_index": 0,
+      "complex_pair_indices": [
+        1,
+        2
+      ],
+      "sheets_at_z_eq_zero": [
+        {
+          "re": -1.0000000000000004,
+          "im": 1.6306400674181987e-16
+        },
+        {
+          "re": -3.3306690738754696e-16,
+          "im": 1.0000000000000004
+        },
+        {
+          "re": -1.4070018909088979e-16,
+          "im": -0.9999999999999997
+        }
+      ],
+      "svg_path": "/home/user/qou/figures/bring-fibre-qhalf.svg",
+      "pdf_path": "/home/user/qou/figures/bring-fibre-qhalf.pdf"
+    },
+    "wall_seconds": 1.6934740543365479
+  }
+}
