@@ -63,13 +63,29 @@ This **generalizes** the existing framework identity `EM/strong ratio = tanh(ln 
 
 So the **EM-channel fraction grows with knot complexity**, asymptotically saturating at 1 as `(2m+1) η_0` becomes large.
 
+## Pythagorean identity (PROVED by sibling commit `596b500f5`)
+
+After this probe landed, a sibling derivation on `main` (commit `596b500f5` — [`p_q_pythagorean_identity.py`](../../folio-assistant/computations/p_q_pythagorean_identity.py)) proved a clean **m-INDEPENDENT** structural identity relating `P_m` and `Q_m`:
+
+```
+P_m(h)² − Q_m(h)²  =  1 / [2]_q²            (PROVED for all m via sympy trigsimp).
+```
+
+(Equivalently `cosh²((2m+1)η)/(2 cosh η)² − sinh²((2m+1)η)/(2 cosh η)² = (cosh² − sinh²)/(4 cosh² η) = 1/(2 cosh η)² = 1/[2]_q²`.)
+
+This says the bar-symmetric and bar-anti-symmetric projections are **categorically orthogonal in the `cosh² − sinh² = 1` sense, scaled by `1/[2]_q²`** — every torus knot `T(2, 2m)` satisfies the same constraint independent of `m`. At substrate `q_0`, `1/[2]_q² ≈ 0.2257` for all `m`.
+
+The sibling also derived a clean closed form for the per-knot EM/strong ratio `Q_m / P_m = tanh((2m+1) η)` from the sinh/cosh definitions, and a one-sided decomposition `P_m − Q_m = q^{-(2m+1)} / [2]_q` (for `m ≥ 1`).
+
 ## Why this matters — what the canonical chain throws away
 
 Per [`bar-involution.md`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md), the `P_avg` projection on the canonical chain **keeps** the bar-symmetric kernel (`cos, cosh, Li_2^q`) and **discards** the bar-anti-symmetric companion (`sin, sinh, Φ_q`). For neutral, isospin-symmetric observables (`m_p` alone, `m_n` alone in the symmetric limit), this is correct — those are bar-symmetric by construction.
 
-For **charge-distinguishing observables** (`Δm_{n-p}`, EM self-energy, isospin-breaking widths), the Q-channel is the natural carrier. The bar-anti-symmetric channel is identified by [`crossing-energy-interpretation.md`](../../content/quantum-observable-universe/observations/crossing-energy-interpretation.md) as Coulomb / electromagnetic; for `Δm_{n-p}` ≈ 1.293 MeV, the EM Cottingham contribution sits exactly here.
+For **charge-distinguishing observables** (`Δm_{n-p}`, EM self-energy, isospin-breaking widths), the Q-channel is in principle a natural carrier on a `T(2, 2m)` knot: per [`crossing-energy-interpretation.md`](../../content/quantum-observable-universe/observations/crossing-energy-interpretation.md), `sinh(ln q)` is the Coulomb / electromagnetic channel; the EM Cottingham contribution to `Δm_{n-p}` ≈ 1.293 MeV sits here in spirit.
 
-Sibling PR #1139's [`isospin-categorical-source.md`](2026-05-24-isospin-categorical-source.md) audit flagged that "the 305 ppm substrate flavor split `Δm/M_N` is conjectured to BE the canonical-isospin q_0-anomaly" — that 305 ppm IS structurally a Q-channel residual, not lost noise.
+> **Refined-framing note (added 2026-05-24, post-commit `596b500f5`).** An earlier version of this section claimed that sibling PR #1139's "305 ppm substrate flavor split `Δm/M_N`" IS structurally the Q-channel residual on the Borromean braid `𝓑₃`. The sibling commit `596b500f5` proves `Q_Borromean = 0` (the Borromean Markov trace is purely even in `h`, so its bar-anti-symmetric projection vanishes identically). The bare-Q hypothesis on `𝓑₃` is therefore **falsified**: the 305 ppm split is NOT a `Q_{𝓑₃}` residual.
+>
+> What survives: the **operator-valued `⋈_K` extension** to unlike-isospin `pn` pairs flagged in PR #1139 introduces a bar-anti-symmetric piece **at the operator level** (not the bare-braid level). The Q-channel framework here characterizes the *kinematic* structure of bar-anti-symmetric residuals; the *carrier* for `Δm_{n-p}` is whatever operator the `⋈_K` extension lifts the projection onto, not the bare `𝓑₃` trace.
 
 ## What this probe IS
 
