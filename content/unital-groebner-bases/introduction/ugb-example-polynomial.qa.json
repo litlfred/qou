@@ -66,7 +66,79 @@
         "reviewed_at": "2026-05-24T01:41:10.877Z",
         "reviewed_sha": "da8d8b83d46e620e19d6edb8fdc56d52d1a29368"
       }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "9bd97568746e",
+          "ts": "13aa4ce67a65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "282bfc50e8db",
+          "script_commit_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+        },
+        "reviewed_at": "2026-05-24T01:50:59.948Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "9bd97568746e",
+          "ts": "13aa4ce67a65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-24T01:50:59.948Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "9bd97568746e",
+          "ts": "13aa4ce67a65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "24f364cafe65",
+          "script_commit_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+        },
+        "reviewed_at": "2026-05-24T01:53:39.773Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "9bd97568746e",
+          "ts": "13aa4ce67a65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dade4dbccd86",
+          "script_commit_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+        },
+        "reviewed_at": "2026-05-24T01:54:37.804Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:41:10.877Z"
+  "updated_at": "2026-05-24T01:54:37.804Z"
 }

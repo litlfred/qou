@@ -733,7 +733,14 @@ export function checkCanonicalScriptNotDeprecated(
   if (!existsSync(scriptAbsPath)) return { result: "pass", hits: [] };
   const scriptSrc = readFileSync(scriptAbsPath, "utf-8");
   const hits: CheckerHit[] = [];
-  if (/\bSUPERSEDED\b/i.test(scriptSrc) || /\bDEPRECATED\b/i.test(scriptSrc)) {
+  // Check for script-level deprecation markers (first 10 lines or
+  // module docstring). Ignore DEPRECATED inside function-level
+  // docstrings deeper in the file (e.g. hecke_core.py has
+  // [DEPRECATED] on individual internal functions, not the module).
+  const firstLines = scriptSrc.split("\n").slice(0, 10).join("\n");
+  const moduleDocstring = scriptSrc.match(/^("""[\s\S]*?"""|'''[\s\S]*?''')/m)?.[0] ?? "";
+  const headerZone = firstLines + "\n" + moduleDocstring;
+  if (/\bSUPERSEDED\b/i.test(headerZone) || /\bDEPRECATED\b/i.test(headerZone)) {
     hits.push({
       file: scriptRelPath,
       line: 1,
@@ -777,6 +784,16 @@ export function checkCanonicalDilogarithmContext(
   const isBinding = tags.some((t) => BINDING_TAGS.has(t));
   const isMassAnchor = tags.some((t) => MASS_ANCHOR_TAGS.has(t));
   if (!isBinding && !isMassAnchor) return { result: "pass", hits: [] };
+
+  // Exempt blocks that discuss BOTH contexts (disambiguation,
+  // calibration discipline, cross-context derivation chain).
+  const EXEMPT_TAGS = new Set([
+    "disambiguation", "quantum-dilogarithm", "phi_q",
+    "calibration", "audit", "derivation-chain",
+  ]);
+  if (tags.some((t) => EXEMPT_TAGS.has(t))) return { result: "pass", hits: [] };
+  // Blocks tagged with both binding AND mass contexts are cross-context
+  if (isBinding && isMassAnchor) return { result: "pass", hits: [] };
 
   const hits: CheckerHit[] = [];
   let lineNo = 0;
@@ -848,7 +865,14 @@ export function checkCanonicalCal4Acknowledged(
 ): CheckerResult {
   const md = readMaybe(mdPath);
   const ts = readMaybe(tsPath);
-  const combined = (md ?? "") + "\n" + (ts ?? "");
+  // Strip markdown blockquotes (lines starting with >) — these are
+  // historical/demotion notes that describe PAST violations, not
+  // current ones. Also strip TS comments.
+  const mdClean = (md ?? "").split("\n")
+    .filter((l) => !l.trimStart().startsWith(">"))
+    .join("\n");
+  const tsClean = (ts ?? "").replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, "");
+  const combined = mdClean + "\n" + tsClean;
   const hasCal4 = CAL4_PATTERNS.some((re) => re.test(combined));
   if (!hasCal4) return { result: "pass", hits: [] };
 

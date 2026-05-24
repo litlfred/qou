@@ -70,7 +70,85 @@
         "reviewed_at": "2026-05-24T01:41:10.877Z",
         "reviewed_sha": "da8d8b83d46e620e19d6edb8fdc56d52d1a29368"
       }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "aeb89201e2c4",
+          "ts": "86ae1a6f4719",
+          "lean": "b890aeb3b08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "282bfc50e8db",
+          "script_commit_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+        },
+        "reviewed_at": "2026-05-24T01:50:59.948Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "aeb89201e2c4",
+          "ts": "86ae1a6f4719",
+          "lean": "b890aeb3b08a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5650958b9f3a",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-24T01:50:59.948Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68",
+        "severity": "major",
+        "evidence": "unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:101: $\\mathcal{C}$ from level $n$.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:113: a. **If** $\\mathrm{NF}(m) \\in \\mathcal{C}$: replace $m$ by  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:114: $\\mathcal{C}[m]$.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:118: store result in $\\mathcal{C}$.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md:124: 4. **Combine.**  Set $h := \\mathcal{C}[f^{\\mathrm{desc}}] +  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "aeb89201e2c4",
+          "ts": "86ae1a6f4719",
+          "lean": "b890aeb3b08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "24f364cafe65",
+          "script_commit_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+        },
+        "reviewed_at": "2026-05-24T01:53:39.773Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "aeb89201e2c4",
+          "ts": "86ae1a6f4719",
+          "lean": "b890aeb3b08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dade4dbccd86",
+          "script_commit_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+        },
+        "reviewed_at": "2026-05-24T01:54:37.804Z",
+        "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:41:10.877Z"
+  "updated_at": "2026-05-24T01:54:37.804Z"
 }
