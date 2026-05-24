@@ -1,15 +1,21 @@
 {
   "engine": "python+snappy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T04:33:27.554825+00:00",
-  "commitSha": "1442cca11bed94486d08b1798623ce360c8103bc",
+  "computedAt": "2026-05-24T23:29:33.643635+00:00",
+  "commitSha": "d59ecece5e2e96d3637f66930ac3ebfe3866f87a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "mass-table-ppb",
   "scriptFile": "mass_table_ppb.py",
-  "scriptHash": "ea2011f7be27",
-  "scriptCommitSha": "4f442633b5ba118b90e57483ef4bc92191fbc54b",
+  "scriptHash": "f1da509b71b8",
+  "scriptCommitSha": "4b6d8432eb1856cf2a15e1818605dc99eb24f6ab",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
   "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = ρ_F · Vol_hyp(K) with ρ_F ∈ {m_e, 2m_e}; atom→knot assignments from framework rules (magic A·8G, α-cluster with c_αα = m_e·Vol(7²_1)) or census search (flagged 'hyp: census-assigned'). NO AME-derived calibrations or fits.",
   "auditOnly": "docs/audits/2026-05-03-next-session-plan-to-1ppb.md",
   "parameters": {
@@ -28,15 +34,17 @@
         "A": 2,
         "B_AME_MeV": 2.22456612,
         "B_pred_MeV": 2.2488207948647343,
+        "B_pred_kashaev_only_MeV": 2.2488207948647343,
+        "epsilon_shell_MeV": null,
         "err_MeV": 0.024254674864734316,
         "err_pct": 1.0903103596999093,
         "err_ppb": 10903103.596999094,
         "formula": "1·m_e · Vol(6_2)",
-        "origin": "hyp: census-assigned",
+        "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)",
         "inputs": {
           "knot": "6_2",
           "Vol": 4.400832516123046,
-          "rho_factor": 1
+          "nu_sdp": 1
         }
       },
       {
@@ -46,15 +54,17 @@
         "A": 3,
         "B_AME_MeV": 8.4817984,
         "B_pred_MeV": 8.46859838653302,
+        "B_pred_kashaev_only_MeV": 8.46859838653302,
+        "epsilon_shell_MeV": null,
         "err_MeV": -0.013200013466979854,
         "err_pct": -0.15562753138508753,
         "err_ppb": -1556275.3138508755,
         "formula": "2·m_e · Vol(8_11)",
-        "origin": "hyp: census-assigned",
+        "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)",
         "inputs": {
           "knot": "8_11",
           "Vol": 8.286316817806593,
-          "rho_factor": 2
+          "nu_sdp": 2
         }
       },
       {
@@ -64,15 +74,17 @@
         "A": 3,
         "B_AME_MeV": 7.7180375,
         "B_pred_MeV": 7.48891930977096,
+        "B_pred_kashaev_only_MeV": 7.48891930977096,
+        "epsilon_shell_MeV": null,
         "err_MeV": -0.22911819022904023,
         "err_pct": -2.968606854126327,
         "err_ppb": -29686068.54126327,
         "formula": "2·m_e · Vol(L6a4)",
-        "origin": "hyp: census-assigned",
+        "origin": "hyp: census-assigned (EXPLORATORY pending R5-full SDP)",
         "inputs": {
           "knot": "L6a4",
           "Vol": 7.327724753417752,
-          "rho_factor": 2
+          "nu_sdp": 2
         }
       },
       {
@@ -82,15 +94,59 @@
         "A": 4,
         "B_AME_MeV": 28.2956912,
         "B_pred_MeV": 29.95567723908384,
+        "B_pred_kashaev_only_MeV": 29.95567723908384,
+        "epsilon_shell_MeV": null,
         "err_MeV": 1.6599860390838401,
         "err_pct": 5.866568260696314,
         "err_ppb": 58665682.60696314,
         "formula": "2·m_e · 4·8G",
-        "origin": "framework: A·8G magic rule",
+        "origin": "framework: A·8G magic rule (ν_SDP=2 extrapolated, pending R5-full)",
         "inputs": {
           "A": 4,
           "8G": 7.327724753417752,
-          "rho_factor": 2
+          "nu_sdp": 2
+        }
+      },
+      {
+        "sym": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "B_AME_MeV": 31.99405,
+        "B_pred_MeV": null,
+        "B_pred_kashaev_only_MeV": null,
+        "epsilon_shell_MeV": null,
+        "err_MeV": null,
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "formula": "GAP — no atom→knot rule",
+        "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet",
+        "inputs": {
+          "B_AME_MeV_target": 31.99405,
+          "vol_kashaev_target_m_e_units": 62.610794014351704,
+          "vol_kashaev_target_2m_e_units": 31.305397007175852,
+          "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
+        }
+      },
+      {
+        "sym": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "B_AME_MeV": 39.24453,
+        "B_pred_MeV": null,
+        "B_pred_kashaev_only_MeV": null,
+        "epsilon_shell_MeV": null,
+        "err_MeV": null,
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "formula": "GAP — no atom→knot rule",
+        "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet",
+        "inputs": {
+          "B_AME_MeV_target": 39.24453,
+          "vol_kashaev_target_m_e_units": 76.79962943172389,
+          "vol_kashaev_target_2m_e_units": 38.39981471586194,
+          "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
         }
       },
       {
@@ -100,6 +156,8 @@
         "A": 8,
         "B_AME_MeV": 56.49951,
         "B_pred_MeV": 62.338343981930535,
+        "B_pred_kashaev_only_MeV": 62.338343981930535,
+        "epsilon_shell_MeV": null,
         "err_MeV": 5.838833981930534,
         "err_pct": 10.33430906202644,
         "err_ppb": 103343090.6202644,
@@ -119,6 +177,8 @@
         "A": 12,
         "B_AME_MeV": 92.16175,
         "B_pred_MeV": 97.1480002285401,
+        "B_pred_kashaev_only_MeV": 97.1480002285401,
+        "epsilon_shell_MeV": null,
         "err_MeV": 4.986250228540101,
         "err_pct": 5.410325030221432,
         "err_ppb": 54103250.302214324,
@@ -138,6 +198,8 @@
         "A": 16,
         "B_AME_MeV": 127.61929,
         "B_pred_MeV": 134.38464597891252,
+        "B_pred_kashaev_only_MeV": 134.38464597891252,
+        "epsilon_shell_MeV": null,
         "err_MeV": 6.76535597891251,
         "err_pct": 5.301201706193875,
         "err_ppb": 53012017.06193875,
@@ -157,6 +219,8 @@
         "A": 20,
         "B_AME_MeV": 160.64486,
         "B_pred_MeV": 174.0482812330478,
+        "B_pred_kashaev_only_MeV": 174.0482812330478,
+        "epsilon_shell_MeV": null,
         "err_MeV": 13.403421233047794,
         "err_pct": 8.34351079334116,
         "err_ppb": 83435107.9334116,
@@ -176,6 +240,8 @@
         "A": 24,
         "B_AME_MeV": 198.2569,
         "B_pred_MeV": 216.1389059909459,
+        "B_pred_kashaev_only_MeV": 216.1389059909459,
+        "epsilon_shell_MeV": null,
         "err_MeV": 17.882005990945885,
         "err_pct": 9.019613436377693,
         "err_ppb": 90196134.36377692,
@@ -195,6 +261,8 @@
         "A": 40,
         "B_AME_MeV": 342.05212,
         "B_pred_MeV": 408.771300060167,
+        "B_pred_kashaev_only_MeV": 408.771300060167,
+        "epsilon_shell_MeV": null,
         "err_MeV": 66.71918006016699,
         "err_pct": 19.505559579682476,
         "err_ppb": 195055595.79682475,
@@ -209,20 +277,6 @@
       }
     ],
     "atoms_no_assignment": [
-      [
-        "6Li",
-        3,
-        3,
-        6,
-        31.99405
-      ],
-      [
-        "7Li",
-        3,
-        4,
-        7,
-        39.24453
-      ],
       [
         "9Be",
         4,
@@ -253,12 +307,12 @@
       ]
     ],
     "within": {
-      "1": 0,
-      "1000.0": 0,
-      "1000000.0": 0,
-      "1000000000.0": 10
+      "1": 2,
+      "1000.0": 2,
+      "1000000.0": 2,
+      "1000000000.0": 12
     },
-    "mean_abs_pct": 6.799563261375073,
-    "mean_abs_ppb": 67995632.61375073
+    "mean_abs_pct": 5.6663027178125605,
+    "mean_abs_ppb": 56663027.1781256
   }
 }
