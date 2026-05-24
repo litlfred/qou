@@ -31,13 +31,7 @@ where:
 
 ## Per-rung categorical sources
 
-| order | coefficient | categorical source | empirical match |
-|------:|:---:|---|:---:|
-| $c_1$ | $b$ | Kashiwara $\tilde f_1$ matrix element on $V_{(2,1)}$ crystal | exact (definition) |
-| $c_2$ | $-1$ | factor convention: $(1 - b^2\hbar_q^4)$, pure Kashiwara intra-block | exact (definition) |
-| $c_3$ | $-2$ | $J_{\text{Hopf}}(q{=}1)$ — classical-limit Jones of Hopf-link substructure at 3-fold Markov closure (cross-Wedderburn-block) | **exact** |
-| $c_4$ | $c_3 \cdot b^4 = -2\, b^4$ | Hopf Jones $\times$ Kashiwara $b^4$ correction (multiplicative mixing). Closed form derived in [`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md). | $99.1\%$ |
-| $c_5$ | $-(b^2 + 1/2)$ | Kashiwara $b^2$ + Hopf-half offset (mixed intra/inter); previously misattributed as $c_4$ in earlier draft. Closed form derived in [`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md). | $99.9\%$ |
+See [Table 1](#tbl:q-beta-categorical-precision-ladder-table1-data).
 
 The categorical primitives are **two**:
 
@@ -62,14 +56,7 @@ Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
 
 Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/computations/binding_q_target_sweep.py) at 50 dps:
 
-| level | factor | residual vs CODATA $Q_\beta$ |
-|:---:|:---|---:|
-| $N=0$ (Form A bare) | $Q_\beta^A$ | $+1677.5$ ppm |
-| $N=1$ (Kashiwara $b$) | $\cos(\alpha - b\hbar_q^2/2)$ | $+73.79$ ppm |
-| $N=2$ (pure Kashiwara) | $1 - b^2 \hbar_q^4$ | $+1.24$ ppm |
-| $N=3$ (Hopf at $q{=}1$) | $1 - 2 b^3 \hbar_q^6$ | $\mathbf{+6.02}$ ppb |
-| $N=4$ ($c_3 \cdot b^4$) | $1 - 2 b^4 \cdot b^4 \hbar_q^8$ | $\mathbf{-0.57}$ ppb |
-| $N=5$ ($-(b^2 + 1/2)$) | $1 - (b^2 + 1/2) b^5 \hbar_q^{10}$ | $\mathbf{\sim 0}$ ppb (sub-ppt) |
+See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 
 The N=3 rung is the first to beat the **7.80 ppb 100$\times$ experimental
 target** (CAL-3 σ = 0.78 ppm). N=4, N=5 further reduce by $\sim$10$\times$
@@ -91,14 +78,7 @@ $$
   \;\approx\; 0.605 \, \varepsilon_Q.
 $$
 
-| $\varepsilon_Q$ at $q_0$ | $\varepsilon_{\Delta S}$ implied |
-|---:|---:|
-| 1678 ppm (Form A bare) | 1015 ppm |
-| 74 ppm ($N=1$) | 45 ppm |
-| 1.24 ppm ($N=2$) | 0.75 ppm |
-| **+6.02 ppb** ($N=3$, Hopf at $q{=}1$) | **+3.64 ppb** (beats 1 ppb) |
-| $-0.57$ ppb ($N=4$, $c_3 \cdot b^4$) | $-0.34$ ppb |
-| $+0.04$ ppb ($N=5$, $c_3^2 \cdot 3 + b$) | $+0.02$ ppb |
+See [Table 3](#tbl:q-beta-categorical-precision-ladder-table3-data).
 
 At $N=3$, the n−p mass-split residual is **3.6 ppb** — already
 below the 4.74 ppb 100$\times$-experimental Δm_pn target. At $N=4$ and

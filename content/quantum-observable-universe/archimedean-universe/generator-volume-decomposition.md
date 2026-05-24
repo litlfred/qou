@@ -70,13 +70,7 @@ deviation from the identity.
 
 **The color degree at generator $\sigma_i$ is exactly $k_i = A - i - 1$.**
 
-| Jet order $r$ | Color degree | Physical content | Multiplicity |
-|:---:|:---:|---|:---:|
-| $0$ | $0$ | Free nucleon (identity) | $1$ |
-| $1$ | $1$ | Pair interactions ($i$-$j$ crossings) | $k_i$ |
-| $2$ | $2$ | Triple correlations ($i$-$j$-$k$) | $\binom{k_i}{2}$ |
-| $r$ | $r$ | $(r+1)$-body correlations | $\binom{k_i}{r}$ |
-| $k_i$ | $k_i$ | Full product (exact) | $1$ |
+See [Table 1](#tbl:generator-volume-decomposition-table1-data).
 
 The total number of terms across all jets and all generators is:
 
@@ -181,14 +175,7 @@ $\tau : \{0, \ldots, A-1\} \to \{\mathfrak{p}, \mathfrak{n}\}$,
 and the fibre at each assignment is the vector of generator
 volumes $(V_0, \ldots, V_{A-2})$.
 
-| Object | Jet bundle interpretation |
-|--------|-------------------------|
-| Nucleon-type assignment $\tau$ | Point in the base |
-| Generator volumes $(V_0, \ldots, V_{A-2})$ | Section of the fibre |
-| Single beta decay $\delta\tau_{p}$ | 1-jet (first derivative) |
-| Double beta decay $\delta\tau_{p_1} \delta\tau_{p_2}$ | 2-jet (second derivative) |
-| $r$-fold decay | $r$-jet ($r$-th derivative) |
-| Full transfer matrix product | $\infty$-jet (exact) |
+See [Table 2](#tbl:generator-volume-decomposition-table2-data).
 
 The color degree of the $r$-jet at generator $\sigma_i$ is
 $\min(r, k_i)$, bounded by the number of crossings at that
@@ -232,15 +219,7 @@ resolutions.
 
 ## Computational verification
 
-| Nucleus | $A$ | $\binom{A}{2}$ | $E(\mathrm{parent})$ | $E(\mathrm{daughter})$ | $\Delta E$ |
-|---------|-----|:-:|---------------------|----------------------|-----------|
-| ${}^{2}\mathrm{H}$ | 2 | 1 | $1.174$ | $1.000$ | $-0.174$ |
-| ${}^{3}\mathrm{H}$ | 3 | 3 | $2.728$ | $2.466$ | $-0.263$ |
-| ${}^{4}\mathrm{He}$ | 4 | 6 | $4.136$ | $3.794$ | $-0.342$ |
-| ${}^{6}\mathrm{Li}$ | 6 | 15 | $8.054$ | $7.567$ | $-0.486$ |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | $47.171$ | $43.810$ | $-3.361$ |
-| ${}^{60}\mathrm{Co}$ | 60 | 1770 | $38{,}863$ | $35{,}813$ | $-3{,}050$ |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $8.25 \times 10^{13}$ | $7.62 \times 10^{13}$ | $-6.24 \times 10^{12}$ |
+See [Table 3](#tbl:generator-volume-decomposition-table3-data).
 
 All $\Delta E$ are negative — the daughter has lower energy.
 The computation requires exactly $\binom{A}{2}$ transfer matrix
@@ -253,16 +232,7 @@ Generators $\sigma_7$ through $\sigma_{12}$ have **identical
 volumes** in both nuclei — only generators $\sigma_0$ through
 $\sigma_6$ differ (the 1-jet support of the single beta decay).
 
-| Generator | $k_i$ | $V_i({}^{14}\mathrm{C})$ | $V_i({}^{14}\mathrm{N})$ | $\Delta V_i$ |
-|:---------:|:---:|:-----------------------:|:-----------------------:|:------------:|
-| $\sigma_0$ | 13 | $5.970$ | $5.616$ | $-0.354$ |
-| $\sigma_1$ | 12 | $5.485$ | $5.150$ | $-0.335$ |
-| $\sigma_2$ | 11 | $4.823$ | $4.540$ | $-0.283$ |
-| $\sigma_3$ | 10 | $4.476$ | $4.201$ | $-0.275$ |
-| $\sigma_4$ | 9 | $3.887$ | $3.661$ | $-0.226$ |
-| $\sigma_5$ | 8 | $3.664$ | $3.436$ | $-0.228$ |
-| $\sigma_6$ | 7 | $4.603$ | $2.943$ | $-\mathbf{1.660}$ |
-| $\sigma_7$--$\sigma_{12}$ | 6--1 | identical | identical | $0$ |
+See [Table 4](#tbl:generator-volume-decomposition-table4-data).
 
 Generator $\sigma_6$ — the converting neutron's own generator —
 has the **largest volume change** ($-1.660$, nearly half the total

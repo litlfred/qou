@@ -61,14 +61,7 @@ For $g = 4$, the embeddability constraint $(r-1)(s-1) \leq 8$
 with $\gcd(r, s) = 1$ and $2 \leq r < s$ yields exactly $6$
 torus knots:
 
-| Knot | $r$ | $s$ | Seifert rank | Degree $k$ | Genus needed |
-|:----:|:---:|:---:|:---:|:---:|:---:|
-| $T_{2,3}$ | $2$ | $3 = 3^1$ | $1$ | $1$ | $1$ |
-| $T_{2,5}$ | $2$ | $5 = 5^1$ | $2$ | $1$ | $2$ |
-| $T_{2,7}$ | $2$ | $7 = 7^1$ | $3$ | $1$ | $3$ |
-| $T_{2,9}$ | $2$ | $9 = 3^2$ | $4$ | $2$ | $4$ |
-| $T_{3,4}$ | $3$ | $4 = 2^2$ | $3$ | $2$ | $3$ |
-| $T_{3,5}$ | $3$ | $5 = 5^1$ | $4$ | $1$ | $4$ |
+See [Table 1](#tbl:cohomological-embedding-table1-data).
 
 The total Seifert rank used: $1 + 2 + 3 + 4 + 3 + 4 = 17$.
 The available rank: $2g = 8$ (from $H^1(\Sigma_4) = \mathbb{Z}^8$).
@@ -94,18 +87,7 @@ $$
   \underbrace{H^{0,1}}_{\dim 4}
 $$
 
-| Cohomology | dim | Degree | Knot basis element | Knot-particle / force |
-|:---:|:---:|:---:|:---|:---|
-| $H^0$ | $1$ | $0$ | Point (trivial knot) | $\gamma$ (photon) |
-| $H^2$ | $1$ | $0$ | $\tau(1,0)$ (unknot) | $\nu / \nu^{\sigma}$ (neutrino) |
-| $H^{1,0}$ | $1$ | $1$ | $\tau(2,3)$ (trefoil) | $e^- / e^+$; on divisor: $\mathfrak{u}/\mathfrak{d}$ |
-| $H^{1,0}$ | $1$ | $1$ | $\tau(2,5)$ (cinquefoil) | $\mu$; on divisor: gen-$2$ quarks |
-| $H^{1,0}$ | $1$ | $1$ | $\tau(2,7)$ (septafoil) | $\tau$-lepton; on divisor: gen-$3$ quarks |
-| $H^{1,0}$ | $1$ | $1$ | $\tau(3,5)$ | Weak force ($\beta$-decay vertex) |
-| $H^{0,1}$ | $1$ | $2$ | $\tau(2,9) = \tau(2,3^2)$ | Strong binding (gluon) |
-| $H^{0,1}$ | $1$ | $2$ | $\tau(3,4) = \tau(3,2^2)$ | Hopf${}^2$ binding (color) |
-| $H^{0,1}$ | $1$ | $2$ | $4_1$ (figure-eight) | Higgs field (mass mechanism) |
-| $H^{0,1}$ | $1$ | $2$ | $4_1^{-1} = 4_1$ (amphichiral) | Higgs field $=$ own antiparticle |
+See [Table 2](#tbl:cohomological-embedding-table2-data).
 
 **Dimension count**: $\dim H^0 + \dim H^1 + \dim H^2 = 1 + 8 + 1 = 10$.  Euler characteristic: $\chi = 1 - 8 + 1 = -6$.  The $8$
 generators of $H^1$ comprise $4$ holomorphic ($H^{1,0}$, degree-$1$

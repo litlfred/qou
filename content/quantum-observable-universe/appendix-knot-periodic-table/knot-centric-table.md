@@ -35,15 +35,7 @@ trefoil resonance modes.
 
 **Row structure (nuclear side).**
 
-| Row | Magic $Z$ | $N$ | Magic type | Elements |
-|----:|----------:|----:|:----------:|----------|
-| 1 | 2 | 0 | HO closure | H, He |
-| 2 | 8 | 1 | HO closure | Li $\to$ Ne |
-| 3 | 20 | 2 | HO closure | Na $\to$ Ca |
-| 4 | 28 | 3 | spin-orbit (magic-receptive) | Sc $\to$ Ni |
-| 5 | 50 | 4 | spin-orbit (magic-receptive) | Cu $\to$ Sn |
-| 6 | 82 | 5 | spin-orbit (magic-receptive) | Sb $\to$ Pb |
-| 7 | 126 | 6 | spin-orbit (magic-receptive) | Bi $\to$ U+ |
+See [Table 1](#tbl:knot-centric-table-table1-data).
 
 Rows 1--3 close at pure HO shell boundaries.  Rows 4--7
 are magic shells created by spin-orbit coupling
@@ -59,15 +51,7 @@ Within each row, elements fill left to right through the
 Mayer--Jensen sub-shells.  The sub-shell sequence for
 each row is:
 
-| Row | Sub-shells (capacity) | Total |
-|----:|----------------------|------:|
-| 1 | $1s_{1/2}$(2) | 2 |
-| 2 | $1p_{3/2}$(4) $\mid$ $1p_{1/2}$(2) $\mid$ $1d_{5/2}$(2) | 8 |
-| 3 | $1d_{5/2}$(4) $\mid$ $2s_{1/2}$(2) $\mid$ $1d_{3/2}$(4) | 10 |
-| 4 | $1f_{7/2}$(8) | 8 |
-| 5 | $2p_{3/2}$(4) $\mid$ $1f_{5/2}$(6) $\mid$ $2p_{1/2}$(2) $\mid$ $1g_{9/2}$(10) | 22 |
-| 6 | $1g_{7/2}$(8) $\mid$ $2d_{5/2}$(6) $\mid$ $2d_{3/2}$(4) $\mid$ $3s_{1/2}$(2) $\mid$ $1h_{11/2}$(12) | 32 |
-| 7 | $2f_{7/2}$(8) $\mid$ $1h_{9/2}$(2) | 10 |
+See [Table 2](#tbl:knot-centric-table-table2-data).
 
 Each sub-shell group is separated by a gap in the grid.
 The first element in a row (far left) is the
@@ -82,11 +66,7 @@ product ([transfer matrix operator](#def:transfer-matrix-operator)).
 Each nucleon pair contributes a $2 \times 2$ matrix $T_{ij}(q)$
 with three crossing types:
 
-| Crossing | $c$ | $d$ | Physical |
-|----------|-----|-----|----------|
-| $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ | repulsive (EM) |
-| $\mathfrak{n}$-$\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ | attractive (strong) |
-| mixed | $1$ | $-\frac{q - q^{-1}}{2}$ | intermediate |
+See [Table 3](#tbl:knot-centric-table-table3-data).
 
 The nuclear Skein polynomial
 $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$

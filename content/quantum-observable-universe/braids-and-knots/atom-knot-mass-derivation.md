@@ -144,18 +144,7 @@ integration on surfaces) at finite slice depth gives the following
 correspondence between 2-categorical / surface-integration data and
 the Iwahori–Hecke structure on $H_{n_0}(q_0)$:
 
-| 2-categorical | finite-slice avatar in $H_{n_0}(q)$ |
-|---|---|
-| 1-cells (paths) | braid generators $\sigma_i$ |
-| 2-cells (squares) | Hecke quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ |
-| multiplicative line integral | finite product $\prod_k \rho(\sigma_{i_k})$ |
-| multiplicative trace on closed surface | Markov trace $\mathrm{tr}_M(T_w) = \sum_\lambda y_\lambda(q) \chi_\lambda(T_w)$ |
-| slicing depth | GB filtration grade $\ell(w)$ (Coxeter length) |
-| slice traversal order | jet order |
-| non-abelian Stokes identity at adjacent slices | braid relations + Hecke quadratic |
-| associated graded $\mathrm{gr}_\bullet H_{n_0}(q)$ | $E_1$-page of the GB spectral sequence |
-| differentials $d_r$ vanishing past $E_\infty$ | **collapse** at $E_2$ for semisimple $H_n(q)$ at generic $q$ |
-| $E_\infty$-page identification | $\bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q))$ (Wedderburn) |
+See [Table 1](#tbl:atom-knot-mass-derivation-table1-data).
 
 **Collapsing spectral sequence.** The GB filtration on $H_{n_0}(q)$
 gives rise to a multiplicative spectral sequence
@@ -334,21 +323,7 @@ implementations:
  See [RUST_INTEGRATION.md](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/RUST_INTEGRATION.md)
  for the implementation plan.
 
-| Step | Implementation | Status |
-|---|---|---|
-| 1a (canonical $T_w$ — joint-tower SDP for *unknown* $T_w$) | R5-full pending — research-grade | ✗ |
-| 1b (GB-filtration certificate) | Python `gb_filtration_jet_tracker.py` (PoC) + Rust `gb_nf_reducer.rs` (R2; 6 unit tests; bit-for-bit match) | ✓ |
-| 1c (jet-order log) | same modules | ✓ |
-| 1d (Wedderburn-block PSD evaluator) | Python cvxpy at $H_3$ + Rust `wedderburn_psd.rs` (R3; 2 unit tests; scales to $H_5+$) | ✓ |
-| 1e (cross-level embedding LR) | Rust `cross_level_embedding.rs` (R4; multi-LR; 2 unit tests including 77-partition $H_{12}$ identity) | ✓ |
-| 1f (PSD-cone $\alpha^*$ verifier) | Rust `sdp_verifier.rs` (R5-minimal; bisection equivalent to SDP value function; 2 unit tests) | ✓ |
-| 2 (Markov trace symbolic) | [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py) + [`q_mn_recursive_memoized.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/q_mn_recursive_memoized.py) | ✓ for $n \leq 12$ |
-| 3 ($\nu_{\mathrm{SDP}}(Z, N)$ rule from Wedderburn multiplicity) | downstream of 1a — read off SDP solution multiplicity | ✗ |
-| 4 ($M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \in \mathbb{Q}(q)$) | algebraically trivial once 2 + 3 are in | partial |
-| 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/mpmath | ✓ |
-| 6 (AME comparison) | mass-table-ppb witness + [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/recursive_atom_knot_atlas_render.py) | ✓ |
-| 7 (methodology tag) | [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) | ✓ |
-| 8 (post-Archimedean naming via volume conjecture) | borrowed; not in QOU derivation | ✓ as theorem |
+See [Table 2](#tbl:atom-knot-mass-derivation-table2-data).
 
 ### PSD-cone $\alpha^*$ ranking (Rust R5-minimal, $q_0 = 1.109978595554181\ldots$, 50 dps)
 
@@ -358,14 +333,7 @@ $\alpha^*(\mathfrak{H}) := \max\{\alpha \in [0,1] :
 \text{ for all } \lambda\}$. $\alpha^* = 1$ $\Rightarrow$ all blocks PSD;
 $\alpha^* < 1$ quantifies the gap.
 
-| atom | knot ID | $\alpha^*$ | gap $1-\alpha^*$ | diagnostic |
-|---|---|---|---|---|
-| proton | $\mathcal{B}_3$ Borromean | **1.000** | 0 | all 3 blocks PSD ✓ |
-| neutron | $\mathcal{B}_3$ Borromean | **1.000** | 0 | all 3 blocks PSD ✓ |
-| $^3\mathrm{He}$ | $L_{6a4}$ | **1.000** | 0 | all 3 blocks PSD ✓ |
-| electron | $\sigma_1^3 = T_{2,3}$ | 0.577 | 0.423 | sign block $\rho_{(1,1)} = -q^{-3}$ negative (algebraic, expected for fermionic odd permutations) |
-| $^2\mathrm{H}$ | $6_2$ | 0.546 | 0.454 | standard $(2,1)$ block NOT PSD |
-| $^3\mathrm{H}$ | $8_{11}$ | **0.424** | 0.576 | 5 of 7 blocks NOT PSD — *largest gap* in registry |
+See [Table 3](#tbl:atom-knot-mass-derivation-table3-data).
 
 Steps 5–8 currently substitute $\mathrm{Vol}_{\mathrm{hyp}}(K)$ from
 SnapPy for $\mathrm{tr}_M(T_w)|_{q=q_0}$ on entries flagged

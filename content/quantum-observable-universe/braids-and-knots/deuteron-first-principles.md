@@ -26,37 +26,17 @@ No BW parameters.*
 
 **A = 1 calibration.**
 
-| quantity | value |
-|---|---|
-| $\|\mathrm{tr}_M(\mathfrak{p})\|_{q_0}$ | $0.70225$ |
-| $\|\mathrm{tr}_M(\mathfrak{n})\|_{q_0}$ | $0.45251$ |
-| $Q_{\mathrm{cat}} = \mathrm{tr}_M(\mathfrak{n}) - \mathrm{tr}_M(\mathfrak{p})$ | $-0.24975$ |
-| $E_0$ | $3.1312\;\mathrm{MeV}/\text{cat.unit}$ |
+See [Table 1](#tbl:deuteron-first-principles-table1-data).
 
 **A = 2 deuteron, $H_6(R, q)$ partition sum.**
 *All $11$ partitions of $6$ contribute to the $q$-character sum.
 Top six by magnitude for the atomic (with one pn inter-crossing):*
 
-| $\lambda$ | $\dim S^\lambda$ | $w_\lambda(q_0)$ | $\chi^\lambda_q(T_w)$ | contribution |
-|---|---|---|---|---|
-| $(3,2,1)$ | $16$ | $0.3586$ | $-1.885$ | $-0.0422$ |
-| $(3,3)$ | $5$ | $0.0354$ | $+3.208$ | $+0.0227$ |
-| $(2,2,2)$ | $5$ | $0.0354$ | $-2.907$ | $-0.0206$ |
-| $(4,2)$ | $9$ | $0.1114$ | $+1.584$ | $+0.0196$ |
-| $(5,1)$ | $5$ | $0.0325$ | $+2.674$ | $+0.0174$ |
-| $(2,1^4)$ | $5$ | $0.0325$ | $+2.011$ | $+0.0131$ |
+See [Table 2](#tbl:deuteron-first-principles-table2-data).
 
 **Result.**
 
-| quantity | value |
-|---|---|
-| $\|\mathrm{tr}_M(\text{free } \mathfrak{p}+\mathfrak{n})\|_{q_0}$ | $0.32298$ |
-| $\|\mathrm{tr}_M(^2\mathrm{H})\|_{q_0}$ | $0.00513$ |
-| $\|\Delta \mathrm{tr}_M\|$ | $0.31785$ |
-| $B_{\mathrm{pred}} = E_0 \cdot \|\Delta \mathrm{tr}_M\|$ | $\mathbf{0.9953\;\mathrm{MeV}}$ |
-| $B_{\mathrm{AME}}({}^2\mathrm{H})$ | $2.2246\;\mathrm{MeV}$ |
-| relative error | $-55.3\%$ |
-| $\|\Delta m / m\|$ | $\mathbf{0.066\%}$ |
+See [Table 3](#tbl:deuteron-first-principles-table3-data).
 
 **Interpretation.**
 
@@ -137,11 +117,7 @@ neutron contribution, not the partition sum.  Paths forward:*
    gives $T$ at $0.505\%$ and $^3\mathrm{He}$ at $0.856\%$
    agreement with AME.  Chirality factors per knot type:*
 
-| isotope | chirality | factor |
-|---|---|---|
-| D | chiral+ | $1 + h = 1.209$ |
-| T, $^3$He | amphichiral | $1 - h^2 = 0.956$ |
-| $^4$He | Borromean${}^2$ | $(1 - h^2)^2 = 0.914$ |
+See [Table 4](#tbl:deuteron-first-principles-table4-data).
 
 *with $h = q - q^{-1}$.  These factors modify the BW bulk term
 $B_{\mathrm{bulk}}$ per isotope, giving an $A$-dependent

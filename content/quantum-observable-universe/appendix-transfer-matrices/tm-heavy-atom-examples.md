@@ -22,11 +22,7 @@ $$
 
 For nucleon count $X$, define:
 
-| Quantity | Definition |
-|----------|-----------|
-| $m_{\leq}(X)$ | Largest magic number $\leq X$ |
-| $n_{\mathrm{out}}(X)$ | $X - m_{\leq}(X)$ (outer shell occupancy; $= 0$ if magic) |
-| $n_{\mathrm{shell}}(X)$ | Size of the shell containing $X$ |
+See [Table 1](#tbl:tm-heavy-atom-examples-table1-data).
 
 When $X$ is magic ($n_{\mathrm{out}} = 0$), the outermost
 shell is **closed** and the relevant shell size is
@@ -65,12 +61,7 @@ tritium.  The shell structure explains why.
 
 ### Step 0: Magic number lookup
 
-| Nucleon count | $m_{\leq}$ | $n_{\mathrm{out}}$ | Shell size |
-|:---:|:---:|:---:|:---:|
-| $Z = 6$ | $2$ | $4$ | $8 - 2 = 6$ |
-| $N = 8$ | $8$ | **$0$ (magic!)** | $8 - 2 = 6$ |
-| $Z' = 7$ | $2$ | $5$ | $6$ |
-| $N' = 7$ | $2$ | $5$ | $6$ |
+See [Table 2](#tbl:tm-heavy-atom-examples-table2-data).
 
 The parent has a **closed neutron shell** at $n = 8$.  The
 daughter breaks it: $N = 8 \to N' = 7$.
@@ -90,16 +81,7 @@ affects generators $\sigma_0$ through $\sigma_6$.
 **Generator volume profile** (${}^{14}\mathrm{C}$ vs
 ${}^{14}\mathrm{N}$):
 
-| Generator | $k_i$ | $V_i({}^{14}\mathrm{C})$ | $V_i({}^{14}\mathrm{N})$ | $\Delta V_i$ |
-|:---------:|:---:|:-:|:-:|:-:|
-| $\sigma_0$ | 13 | $5.970$ | $5.616$ | $-0.354$ |
-| $\sigma_1$ | 12 | $5.485$ | $5.150$ | $-0.335$ |
-| $\sigma_2$ | 11 | $4.823$ | $4.540$ | $-0.283$ |
-| $\sigma_3$ | 10 | $4.476$ | $4.201$ | $-0.275$ |
-| $\sigma_4$ | 9 | $3.887$ | $3.661$ | $-0.226$ |
-| $\sigma_5$ | 8 | $3.664$ | $3.436$ | $-0.228$ |
-| $\sigma_6$ | 7 | $4.603$ | $2.943$ | $\mathbf{-1.660}$ |
-| $\sigma_7$--$\sigma_{12}$ | 6--1 | identical | identical | $0$ |
+See [Table 3](#tbl:tm-heavy-atom-examples-table3-data).
 
 Generator $\sigma_6$ — the converting nucleon's own
 generator — carries nearly **half** the total energy change
@@ -160,24 +142,14 @@ An allowed Gamow--Teller transition where the daughter
 
 ### Step 0: Magic number lookup
 
-| Nucleon count | $m_{\leq}$ | $n_{\mathrm{out}}$ | Shell size |
-|:---:|:---:|:---:|:---:|
-| $Z = 27$ | $20$ | $7$ | $28 - 20 = 8$ |
-| $N = 33$ | $28$ | $5$ | $50 - 28 = 22$ |
-| $Z' = 28$ | $28$ | **$0$ (magic!)** | $8$ |
-| $N' = 32$ | $28$ | $4$ | $22$ |
+See [Table 4](#tbl:tm-heavy-atom-examples-table4-data).
 
 The daughter has $Z' = 28$ — a **closed proton shell**.  This
 transition creates a shell closure.
 
 ### Step 1: Torus knot traces
 
-| Occupancy $n$ | $\tau(n)$ | $\log_q \tau(n)$ |
-|:---:|:---:|:---:|
-| $7$ (parent proton) | $\approx 1.299$ | $+2.51$ |
-| $5$ (parent neutron) | $\approx 0.993$ | $-0.07$ |
-| $8$ (daughter proton, closed shell) | $\approx 1.736$ | $+5.29$ |
-| $4$ (daughter neutron) | $\approx 1.257$ | $+2.19$ |
+See [Table 5](#tbl:tm-heavy-atom-examples-table5-data).
 
 ### Step 2: Bare ratio
 
@@ -232,12 +204,7 @@ $\binom{210}{2} = 21{,}945$ transfer matrix multiplications
 
 ### Step 0: Magic number lookup
 
-| Nucleon count | $m_{\leq}$ | $n_{\mathrm{out}}$ | Shell size |
-|:---:|:---:|:---:|:---:|
-| $Z = 83$ | $82$ | $1$ | $126 - 82 = 44$ |
-| $N = 127$ | $126$ | $1$ | $126 - 82 = 44$ |
-| $Z' = 84$ | $82$ | $2$ | $44$ |
-| $N' = 126$ | $126$ | **$0$ (magic!)** | $44$ |
+See [Table 6](#tbl:tm-heavy-atom-examples-table6-data).
 
 Both parent nucleon counts sit **one above** a magic number.
 The daughter's neutron count $N' = 126$ hits a magic closure —
@@ -266,12 +233,7 @@ $n_{\mathrm{out}} = 2$, a modest open-shell change.
 
 ### Step 3: Computation count
 
-| Quantity | Value |
-|----------|:-----:|
-| Generators | $209$ |
-| Transfer matrix multiplications | $21{,}945$ |
-| Max polynomial degree | $\leq 44{,}099$ |
-| Wall-clock time (modern hardware) | $< 1$ ms |
+See [Table 7](#tbl:tm-heavy-atom-examples-table7-data).
 
 The computation is **exact** — no approximations, no
 truncations.  Every jet order through the $209$-jet is
@@ -281,14 +243,7 @@ included in the transfer matrix product.
 
 ## Summary: shell structure across the periodic table
 
-| Nucleus | $A$ | Transition type | Magic feature | Residual |
-|---------|:---:|----------------|---------------|:--------:|
-| ${}^{3}\mathrm{H}$ | $3$ | Mirror (superallowed) | No sub-links | **1%** |
-| ${}^{14}\mathrm{C}$ | $14$ | Shell-blocked | Breaks $n = 8$ | **17%** |
-| ${}^{60}\mathrm{Co}$ | $60$ | Allowed GT | Creates $Z = 28$ | **17%** |
-| ${}^{90}\mathrm{Sr}$ | $90$ | Allowed GT | No magic broken | **11%** |
-| ${}^{137}\mathrm{Cs}$ | $137$ | Allowed GT | Daughter near $n = 82$ | **9%** |
-| ${}^{210}\mathrm{Bi}$ | $210$ | Allowed GT | Creates $N = 126$ | **16%** |
+See [Table 8](#tbl:tm-heavy-atom-examples-table8-data).
 
 **Pattern:** Transitions that create or destroy a closed
 sub-link at a magic number have the largest matrix-element

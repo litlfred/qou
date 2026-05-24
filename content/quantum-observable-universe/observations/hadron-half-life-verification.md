@@ -13,14 +13,7 @@ to physical units).  Every physical constant appearing in the
 standard Fermi theory is decomposed into its $q$-dependent parts
 ([hadron half-life](#prop:hadron-half-life)):
 
-| Standard constant | $q$-decomposition | Source |
-|-------------------|-------------------|--------|
-| $m_e$ (electron mass) | $3m_e/3$ | 3 crossings of trefoil $T_{2,3}$ |
-| $s$ (weak coupling) | $q^{1/2} - q^{-1/2}$ | Skein amplitude (no W boson) |
-| $[2]_q$ (vertex factor) | $q + q^{-1}$ | Categorical dim of $\mathrm{SU}_q(2)$ fund. rep. |
-| $v$ (weak scale) | $N_v \cdot m_e/3$ | Topological invariant $N_v$ (open) |
-| $G_F$ (Fermi constant) | $1/(\sqrt{2}v^2)$ | Derived from weak scale |
-| $G_F^2 m_e^5$ (rate scale) | $243m_e/3/(2N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
+See [Table 1](#tbl:hadron-half-life-verification-table1-data).
 
 From $q$ and $\mu_0$ alone:
 
@@ -92,14 +85,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 
 ## Observed half-lives (NNDC/ENSDF)
 
-| Nucleus | $A$ | $\binom{A}{2}$ | $Q^{\mathrm{exp}}$ (MeV) | $t_{1/2}^{\mathrm{obs}}$ |
-|---------|-----|:-:|------|------|
-| ${}^{3}\mathrm{H}$ | 3 | 3 | $0.01861 \pm 0.00001$ | $12.32 \pm 0.02$ yr |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | $0.15648 \pm 0.00004$ | $5730 \pm 40$ yr |
-| ${}^{60}\mathrm{Co}$ | 60 | 1770 | $0.31817 \pm 0.00013$ | $5.2714 \pm 0.0006$ yr |
-| ${}^{90}\mathrm{Sr}$ | 90 | 4005 | $0.54590 \pm 0.00007$ | $28.79 \pm 0.06$ yr |
-| ${}^{137}\mathrm{Cs}$ | 137 | 9316 | $0.51400 \pm 0.00021$ | $30.17 \pm 0.16$ yr |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $1.16270 \pm 0.00006$ | $5.012 \pm 0.005$ d |
+See [Table 2](#tbl:hadron-half-life-verification-table2-data).
 
 The $\binom{A}{2}$ column shows the exact number of transfer
 matrix steps needed to compute each nucleus's Skein polynomial.
@@ -126,14 +112,7 @@ $$
 
 The corrected half-life prediction:
 
-| Nucleus | $t_{1/2}^{\mathrm{pred}}$ | $t_{1/2}^{\mathrm{corr}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio (corr/obs) |
-|---------|:-:|:-:|:-:|:-:|
-| ${}^{3}\mathrm{H}$ | 13.0 yr | 12.4 yr | $12.32 \pm 0.02$ yr | 1.01 |
-| ${}^{14}\mathrm{C}$ | 6800 yr | 6690 yr | $5730 \pm 40$ yr | 1.17 |
-| ${}^{60}\mathrm{Co}$ | 6.2 yr | 6.17 yr | $5.2714 \pm 0.0006$ yr | 1.17 |
-| ${}^{90}\mathrm{Sr}$ | 32 yr | 31.9 yr | $28.79 \pm 0.06$ yr | 1.11 |
-| ${}^{137}\mathrm{Cs}$ | 33 yr | 32.9 yr | $30.17 \pm 0.16$ yr | 1.09 |
-| ${}^{210}\mathrm{Bi}$ | 5.8 d | 5.79 d | $5.012 \pm 0.005$ d | 1.16 |
+See [Table 3](#tbl:hadron-half-life-verification-table3-data).
 
 ## Full computation with Skein-Coulomb enhancement
 
@@ -144,14 +123,7 @@ $\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$
 ([EM coupling](#prop:em-coupling-projection)), all six
 half-lives agree with observation to better than $3\%$:
 
-| Nucleus | $t_{1/2}^{\mathrm{pred}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio | Error |
-|---------|:-:|:-:|:-:|:-:|
-| ${}^{3}\mathrm{H}$ | $12.28$ yr | $12.32 \pm 0.02$ yr | $0.997$ | $-0.3\%$ |
-| ${}^{14}\mathrm{C}$ | $5896$ yr | $5730 \pm 40$ yr | $1.029$ | $+2.9\%$ |
-| ${}^{60}\mathrm{Co}$ | $5.308$ yr | $5.2714 \pm 0.0006$ yr | $1.007$ | $+0.7\%$ |
-| ${}^{90}\mathrm{Sr}$ | $28.92$ yr | $28.79 \pm 0.06$ yr | $1.005$ | $+0.5\%$ |
-| ${}^{137}\mathrm{Cs}$ | $30.26$ yr | $30.17 \pm 0.16$ yr | $1.003$ | $+0.3\%$ |
-| ${}^{210}\mathrm{Bi}$ | $5.022$ d | $5.012 \pm 0.005$ d | $1.002$ | $+0.2\%$ |
+See [Table 4](#tbl:hadron-half-life-verification-table4-data).
 
 These predictions use:
 - **From $q$**: $\alpha_{\mathrm{EM}}(q)$ in the Fermi function
@@ -192,14 +164,7 @@ Shells unchanged by the decay contribute $F = 1$ (cancel in the
 $\mathcal{Q}$ ratio).  The product collapses to a single active
 term — the converting neutron's shell knot $T_{k^*}$.
 
-| Nucleus | $\mathcal{Q}_{\mathrm{bare}}$ | $T_{k^*}$ | $F(T_{k^*}, N)$ | $Q^{\mathrm{pred}}$ | $Q^{\mathrm{exp}}$ | Error |
-|---------|:-:|:-:|:-:|:-:|:-:|:-:|
-| ${}^{3}\mathrm{H}$ | $0.01739$ | $T_{2,3}$ | $1$ | $0.01739$ | $0.01861 \pm 0.00001$ | $-6.5\%$ |
-| ${}^{14}\mathrm{C}$ | $0.14936$ | $T_{2,5}$ | $1$ | $0.14936$ | $0.15648 \pm 0.00004$ | $-4.6\%$ |
-| ${}^{60}\mathrm{Co}$ | $0.57028$ | $T_{2,9}$ | $0.5904$ | $0.33672$ | $0.31817 \pm 0.00013$ | $+5.8\%$ |
-| ${}^{90}\mathrm{Sr}$ | $0.92604$ | $T_{3,4}$ | $0.5904$ | $0.54674$ | $0.54590 \pm 0.00007$ | $+0.2\%$ |
-| ${}^{137}\mathrm{Cs}$ | $1.39442$ | $T_{3,4}$ | $0.3768$ | $0.52536$ | $0.51400 \pm 0.00021$ | $+2.2\%$ |
-| ${}^{210}\mathrm{Bi}$ | $2.12100$ | $T_{2,9}$ | $0.5904$ | $1.25224$ | $1.16270 \pm 0.00006$ | $+7.7\%$ |
+See [Table 5](#tbl:hadron-half-life-verification-table5-data).
 
 All six nuclei within $\pm 8\%$.  Mean absolute error: $4.5\%$;
 RMS: $5.2\%$.
@@ -275,13 +240,7 @@ $$
   48 \frac{\delta q}{q}
 $$
 
-| Source | Value $\pm$ error | $\delta x / x$ | $\to \delta t/t$ |
-|--------|:-:|:-:|:-:|
-| $Q_{\mathrm{exp}}({}^3\mathrm{H})$ | $0.01861 \pm 0.00001$ MeV | $0.054\%$ | $5 \times 0.054\% \approx 0.27\%$ |
-| $g_A$ (PDG) | $1.2754 \pm 0.0013$ | $0.10\%$ | $2 \times 0.10\% \approx 0.20\%$ |
-| $G_F$ (CODATA) | $(1.16638 \pm 0.00001) \times 10^{-11}$ | $0.0009\%$ | $0.002\%$ |
-| $\alpha_{\mathrm{EM}}(q)$ | $1/137.036$ (CS-corrected) | $2.1\;\mathrm{ppm}$ | $\sim 0.0001\%$ (via $F_q$) |
-| $q$ (CODATA) | $1.10998 \pm 1.3 \times 10^{-8}$ | $1.2 \times 10^{-6}\%$ | $48 \times 10^{-6}\% \approx 0\%$ |
+See [Table 6](#tbl:hadron-half-life-verification-table6-data).
 
 **Combined** (quadrature): $\sqrt{0.27^2 + 0.20^2 + 0.1^2} \approx 0.36\%$ for tritium.  The observed $0.3\%$ deviation
 is **within** this error budget.
@@ -297,11 +256,7 @@ With the representation-theoretic $Q$ formula, the
 $Q$-value error is $2$–$10\%$ for all six nuclei.  This propagates
 to the half-life via $t_{1/2} \propto Q^{-5}$:
 
-| Source | $\delta x / x$ | $\to \delta t/t$ |
-|--------|:-:|:-:|
-| $Q_{\mathrm{pred}}({}^3\mathrm{H})$: $6.5\%$ from exp | $6.5\%$ | $5 \times 6.5\% = 33\%$ |
-| $Q_{\mathrm{pred}}({}^{137}\mathrm{Cs})$: $2.2\%$ from exp | $2.2\%$ | $5 \times 2.2\% = 11\%$ |
-| $g_A$: $5/3$ (Hecke naive) vs $1.2754$ | $30.7\%$ | $2 \times 30.7\% = 61\%$ |
+See [Table 7](#tbl:hadron-half-life-verification-table7-data).
 
 For tritium: combined $\sim 69\%$ rate error from $g_A$
 approximation, giving a factor $\sim 1.7$ in the half-life.

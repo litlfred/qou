@@ -53,11 +53,7 @@ keep $\mathfrak{E}_0 > 0$.
 Each nucleon's NF splits into positive and negative coefficient
 sums:
 
-| | NF$_+$ | NF$_-$ | Net |
-|:---:|---:|---:|---:|
-| **Neutron** | $+1.0664$ ($\sigma_0, \sigma_1, L_-$) | $-0.2555$ ($\gamma, L_+, e^-$) | $+0.8108$ |
-| **Proton** | $+1.1420$ ($\sigma_0, \sigma_1, L_+, L_-$) | $-0.1429$ ($\gamma, e^-$) | $+0.9991$ |
-| **$\Delta$** | $-0.0756$ | $-0.1127$ | $-0.1883$ |
+See [Table 1](#tbl:beta-decay-energy-scale-table1-data).
 
 The neutron has **three** negative terms ($\gamma, L_+, e^-$) while
 the proton has only **two** ($\gamma, e^-$).  The $L_+$ sign flip is
@@ -71,11 +67,7 @@ Terms of word length $\ell \geq 2$ (Hopf links $L_\pm$ and trefoil
 $e^-$) are topologically non-trivial and therefore **observable**.
 Terms $\ell < 2$ ($\gamma, \sigma_0, \sigma_1$) are virtual.
 
-| | Observable ($\ell \geq 2$) | Virtual ($\ell < 2$) |
-|:---:|---:|---:|
-| **Neutron** | $-0.0446$ | $+0.8554$ |
-| **Proton** | $+0.0655$ | $+0.9336$ |
-| **$\Delta$** | $-0.1101$ | $-0.0782$ |
+See [Table 2](#tbl:beta-decay-energy-scale-table2-data).
 
 The observable-only $Q$-value, using $\mathfrak{E}_0(\mathrm{net})$:
 
@@ -88,12 +80,7 @@ $$
 
 ## Energy scale scenarios
 
-| Scenario | $|\Delta|$ | $\mathfrak{E}_0$ (MeV) | $\mathfrak{E}_0 / \mathfrak{m}_e$ |
-|:---|---:|---:|---:|
-| All terms $|\Delta\mathrm{net}|$ | $0.18829$ | $4.155$ | $8.131$ |
-| Observable $|\Delta(\ell \geq 2)|$ | $0.11007$ | $7.108$ | $13.909$ |
-| Positive $|\Delta\mathrm{NF}_+|$ | $0.07563$ | $10.345$ | $20.244$ |
-| Leptonic $|\Delta\nu| + |\Delta e^-|$ | $0.10302$ | $7.594$ | $14.861$ |
+See [Table 3](#tbl:beta-decay-energy-scale-table3-data).
 
 ## Full energy budget
 
@@ -101,15 +88,7 @@ Each of the six NF terms contributes
 $\Delta_i \times \mathfrak{E}_0$ to the total decay energy.
 The budget is:
 
-| Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathfrak{E}_0$ (MeV) |
-|:---:|:---:|:---:|:---:|---:|---:|
-| $\gamma$ | $\mathbf{1}$ | photon | $0$ | $-0.10205$ | $+0.4240$ |
-| $\sigma_0$ | $\sigma_0$ | virtual | $1$ | $+0.01240$ | $-0.0515$ |
-| $\sigma_1$ | $\sigma_1$ | virtual | $1$ | $+0.01143$ | $-0.0475$ |
-| $L_+$ | $\sigma_0\sigma_1$ | Hopf link | $2$ | $-0.10899$ | $+0.4529$ |
-| $L_-$ | $\sigma_1\sigma_0$ | Hopf link | $2$ | $-0.00010$ | $+0.0004$ |
-| $e^-$ | $\sigma_0\sigma_1\sigma_0$ | trefoil ($3_1$) | $3$ | $-0.00098$ | $+0.0041$ |
-|  |  |  |  | **Sum** | **$+0.782$ MeV** |
+See [Table 4](#tbl:beta-decay-energy-scale-table4-data).
 
 (Signs: $\Delta(\mathrm{net}) < 0$ with typed crossings, so the
 $\mathfrak{E}_0$ budget uses the sign convention

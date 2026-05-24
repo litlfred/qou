@@ -457,42 +457,15 @@ element of the direct limit.
 
 **Structural (level-$n$ lifts of QU/QUO)**:
 
-| Label | Relation at level $n$                                                                                 | Source              |
-| ----- | ----------------------------------------------------------------------------------------------------- | ------------------- |
-| J-1a  | $\sigma_i^{(n)2} = (q-q^{-1})\sigma_i^{(n)} + 1$                                                      | QU-1a               |
-| J-1b  | $\sigma_i^{(n)}\sigma_{i+1}^{(n)}\sigma_i^{(n)} = \sigma_{i+1}^{(n)}\sigma_i^{(n)}\sigma_{i+1}^{(n)}$ | QU-1b               |
-| J-1c  | $\sigma_i^{(n)}\sigma_j^{(n)} = \sigma_j^{(n)}\sigma_i^{(n)}$                                         | QU-1c               |
-| J-2a  | $\Delta_n \circ \mu_n = (\mu_n \otimes 1)(1 \otimes \Delta_n)$                                        | QU-2b               |
-| J-2b  | $S_n(\sigma_i^{(n)}) = \sigma_i^{(n)} - (q-q^{-1})$                                                   | QU-2d               |
-| J-3a  | $\mathrm{tr}_M^{(n)}(\sigma_i^{(n)}w) = \mathrm{tr}_M^{(n)}(w\sigma_i^{(n)})$                         | QU-3a               |
-| J-3b  | $\mathrm{tr}_M^{(n)}(w\sigma_m^{(n)\pm 1}) = \delta^{-1}\mathrm{tr}_M^{(n)}(w)$                       | QU-3b               |
-| J-3c  | $\mathrm{tr}_M^{(n+1)}(\ell_n(w)) = \mathrm{tr}_M^{(n)}(w)$                                           | New (inter-level)   |
-| J-4a  | $[L_{-1}, a_m^{(n)}] = -ma_{m-1}^{(n+1)}$                                                             | QU-4a (inter-level) |
-| J-5   | $\sigma_i^{(n)}w\sigma_i^{(n)-1}=w\forall i \Rightarrow w \in R$                                      | QUO-2               |
-| J-6   | $\epsilon_n \circ \mathrm{Alt}_2^{(n)} = \epsilon_n$                                                  | QUO-4               |
+See [Table 1](#tbl:vertex-algebra-jet-relations-table1-data).
 
 **:refterm[Descent]{#descent} decomposition**:
 
-| Label | Relation                                                                         | Content                                     |
-| ----- | -------------------------------------------------------------------------------- | ------------------------------------------- |
-| D-1   | $\hat{\tau}_n(\sigma_i^{(n+1)}) = \sigma_i^{(n+1)}$ for $i \leq n-1$             | Base generators descended                   |
-| D-2   | $\hat{\tau}_n(\sigma^{(n+1)}_{\mathrm{new}}) = 0$                                | Transient generators                        |
-| D-3   | $\Delta_n\mu_n = \hat{\tau}_n(\Delta_{n+1}\mu_{n+1}) + (1-\hat{\tau}_n)(\cdots)$ | Frobenius :refterm[descent]{#descent}       |
-| D-4   | $\hat{\tau}_n(w) = w$ (bosonic) vs $\hat{\tau}_n(w) = 0$ (fermionic)             | Statistics from :refterm[descent]{#descent} |
+See [Table 2](#tbl:vertex-algebra-jet-relations-table2-data).
 
 **Cohomological (level-$n$ lifts)**:
 
-| Label | Relation at level $n$                                                                                         | Source        |
-| ----- | ------------------------------------------------------------------------------------------------------------- | ------------- |
-| JC-1  | $d_n^2 = 0$ on $\Omega^k_H(A_n)$                                                                              | C-1           |
-| JC-2  | $d_{q,n}^2\alpha = q^{-1}(1-q^{-1})\omega_V^{(n)}\wedge_q[\xi_n,\alpha]$                                      | C-2           |
-| JC-3  | $\mathrm{tr}_M^{(n)}(\mathrm{id}) = -6$ for all $n$                                                           | C-4           |
-| JC-4  | $\kappa_n = \mathrm{tr}_M^{(n+1)}((1-\hat{\tau}_n)\check{R}^{(n+1)}) \neq 0$                                  | C-5           |
-| JC-5  | $b_k(A_{n+1}) = b_k(A_n) + b_k^{\mathrm{trans}}$                                                              | C-6           |
-| JC-6  | $S_n([\sigma_i^{(n)},\sigma_j^{(n)}])^* = [\sigma_i^{(n)},\sigma_j^{(n)}]$                                    | C-7           |
-| JC-7  | $\ker\Delta_{q,n+1} = \ell_n(\ker\Delta_{q,n}) \oplus (\ker\Delta_{q,n+1} \cap \mathcal{A}^{\mathrm{trans}})$ | C-8           |
-| JC-8  | $T_{g^{(n)}_{ijk}}T_{g^{(n)}_{jkl}} = T_{a^{(n)}_{ij}}T_{g^{(n)}_{ikl}}T_{a^{(n)}_{kl}}^{-1}$                 | C-10          |
-| JC-9  | $\mathrm{tr}_M^{(\infty)}(w_\infty) = \mathrm{tr}_M^{(0)}(w^{(0)})$                                           | Global gluing |
+See [Table 3](#tbl:vertex-algebra-jet-relations-table3-data).
 
 The total presentation on $J^n(A)$ comprises **34 relations**:
 11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, 9 cohomological,

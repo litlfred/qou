@@ -39,6 +39,11 @@ export default chapter({
       label: "sec:knot-operator-basis-table",
       blocks: [
         "knot-operator-basis-table",
+
+        "knot-operator-basis-table-table1-data",
+        "knot-operator-basis-table-table2-data",
+        "knot-operator-basis-table-table3-data",
+        "knot-operator-basis-table-table4-data",
       ],
     }),
     section({

@@ -63,22 +63,13 @@ $$
 
 Every quantity on the right is determined:
 
-| Symbol | Value | Source |
-|--------|:-----:|--------|
-| $q_0$ | $1.10998$ | CODATA $m_\mu/m_e$ ([local substrate](#prop:local-substrate-q)) |
-| $q_0 - 1$ | $0.10998$ | Derived |
-| $\alpha$ | $\alpha_s \approx 0.118$ or $\alpha_W \approx 0.034$ | Coupling at vertex |
-| $\lvert\chi(\Sigma_4)\rvert$ | $6$ | Bring surface, genus $4$, $\chi = 2 - 2g$ |
+See [Table 1](#tbl:w-boson-mass-discrepancy-table1-data).
 
 ## Predictions for each production channel
 
 **Table 1: Forward-predicted $\delta q$ and mass shifts.**
 
-| Production | $\alpha$ | $\delta q$ | $\delta m$ | Observed shift | Agreement |
-|------------|:--------:|:----------:|:----------:|:--------------:|:---------:|
-| $gg \to H$ (top loop) | $\alpha_s \approx 0.118$ | $3.4 \times 10^{-4}$ | $370$ MeV | $\sim 300$ MeV spread | $\sim 1.2\times$ |
-| $qq^{\sigma} \to W$ (CDF, $pp^{\sigma}$) | $\alpha_W \approx 0.034$ | $9.9 \times 10^{-5}$ | $69$ MeV | $77 \pm 9$ MeV | $\mathbf{0.9\sigma}$ |
-| $qq' \to W$ (LHC, $pp$ sea) | $\alpha_W x^2$ | $\lesssim 10^{-6}$ | $\lesssim 1$ MeV | $\sim 3$ MeV | Consistent |
+See [Table 2](#tbl:w-boson-mass-discrepancy-table2-data).
 
 The mass shift is computed from the sensitivity
 $\partial \ln m / \partial \ln q = (q_0^2 + 1)/(q_0^2 - 1) \approx 9.62$:
@@ -141,26 +132,11 @@ $\alpha_s / \alpha_W \approx 3.5$.
 
 **Table 2: Higgs boson mass measurements.**
 
-| Experiment | $\sqrt{s}$ (TeV) | Channel | $m_H$ (GeV) | $B$ (T) | Year |
-|---|:-:|---|:-:|:-:|:-:|
-| ATLAS Run~1 | $7$--$8$ | $H \to \gamma\gamma$ | $126.02 \pm 0.51$ | $2.0$ | 2014 |
-| ATLAS Run~1 | $7$--$8$ | $H \to ZZ^* \to 4\ell$ | $124.51 \pm 0.52$ | $2.0$ | 2014 |
-| CMS Run~1 | $7$--$8$ | $H \to \gamma\gamma$ | $124.70 \pm 0.34$ | $3.8$ | 2014 |
-| CMS Run~1 | $7$--$8$ | $H \to ZZ^* \to 4\ell$ | $125.59 \pm 0.45$ | $3.8$ | 2014 |
-| **LHC Run~1 combined** | $7$--$8$ | All | $\mathbf{125.09 \pm 0.24}$ | — | 2015 |
-| ATLAS Run~2 | $13$ | $\gamma\gamma + 4\ell$ | $124.97 \pm 0.24$ | $2.0$ | 2018 |
-| CMS Run~2 | $13$ | $H \to \gamma\gamma$ | $125.78 \pm 0.26$ | $3.8$ | 2020 |
-| CMS Run~2 | $13$ | $H \to ZZ^* \to 4\ell$ | $125.08 \pm 0.12$ | $3.8$ | 2024 |
-| **PDG~2024 average** | — | All | $\mathbf{125.20 \pm 0.11}$ | — | 2024 |
+See [Table 3](#tbl:w-boson-mass-discrepancy-table3-data).
 
 **Table 3: $W$ boson mass measurements.**
 
-| Experiment | $\sqrt{s}$ (TeV) | $m_W$ (GeV) | $\delta m$ (MeV) | $B$ (T) | Collision |
-|---|:-:|:-:|:-:|:-:|:-:|
-| **CDF~II** | $1.96$ | $80.434 \pm 0.009$ | $+77$ | $1.4$ | $pp^{\sigma}$ |
-| ATLAS | $7$ | $80.360 \pm 0.016$ | $+3$ | $2.0$ | $pp$ |
-| CMS | $13$ | $80.360 \pm 0.010$ | $+3$ | $3.8$ | $pp$ |
-| LHCb | $13$ | $80.354 \pm 0.032$ | $-3$ | $\sim 0$ | $pp$ |
+See [Table 4](#tbl:w-boson-mass-discrepancy-table4-data).
 
 ## Inferred $\delta q$ per experiment
 
@@ -173,25 +149,12 @@ comparing the *pattern* against the forward prediction.
 **Table 4: Higgs $\delta q$ by experiment and channel**
 **(ref: PDG 2024 avg $\approx 125.20$ GeV).**
 
-| Experiment | Channel | $\delta m$ (GeV) | $\delta q$ (inferred) |
-|---|---|:-:|:-:|
-| ATLAS Run~1 | $\gamma\gamma$ | $+0.82$ | $+7.6 \times 10^{-4}$ |
-| ATLAS Run~1 | $4\ell$ | $-0.69$ | $-6.4 \times 10^{-4}$ |
-| CMS Run~1 | $\gamma\gamma$ | $-0.50$ | $-4.6 \times 10^{-4}$ |
-| CMS Run~1 | $4\ell$ | $+0.39$ | $+3.6 \times 10^{-4}$ |
-| ATLAS Run~2 | $\gamma\gamma + 4\ell$ | $-0.23$ | $-2.1 \times 10^{-4}$ |
-| CMS Run~2 | $\gamma\gamma$ | $+0.58$ | $+5.4 \times 10^{-4}$ |
-| CMS Run~2 | $4\ell$ | $-0.12$ | $-1.1 \times 10^{-4}$ |
+See [Table 5](#tbl:w-boson-mass-discrepancy-table5-data).
 
 **Table 5: $W$ $\delta q$ by experiment**
 **(ref: SM $\approx 80357$ MeV).**
 
-| Experiment | $\delta m$ (MeV) | $\delta q$ (inferred) | Collision |
-|---|:-:|:-:|:-:|
-| CDF~II | $+77$ | $+1.1 \times 10^{-4}$ | $pp^{\sigma}$ |
-| ATLAS | $+3$ | $+4 \times 10^{-6}$ | $pp$ |
-| CMS | $+3$ | $+4 \times 10^{-6}$ | $pp$ |
-| LHCb | $-3$ | $-4 \times 10^{-6}$ | $pp$ |
+See [Table 6](#tbl:w-boson-mass-discrepancy-table6-data).
 
 ## Correlation analysis
 
@@ -228,17 +191,7 @@ being independent of beam energy.
 
 **Table 6: QOU predictions at the CODATA substrate $q_0$.**
 
-| Quantity | QOU value | Experiment | Status |
-|---|:-:|:-:|:-:|
-| $q_0$ (CODATA) | $1.10998$ | $m_\mu/m_e \approx 206.768$ | Input |
-| $\lvert\chi(\Sigma_4)\rvert$ | $6$ | Bring surface | Derived |
-| $\kappa_{\mathrm{geom}}$ | $1/6$ | Gauss--Bonnet | **Derived** |
-| $\delta q$ CDF $W$ (forward) | $9.9 \times 10^{-5}$ | — | **Predicted** |
-| $\delta m_W$ CDF (forward) | $69$ MeV | $77 \pm 9$ MeV | $0.9\sigma$ |
-| $\delta q$ Higgs (forward) | $3.4 \times 10^{-4}$ | — | **Predicted** |
-| $\delta q$ LHC $W$ (forward) | $\lesssim 10^{-6}$ | $\lesssim 5 \times 10^{-6}$ | Consistent |
-| $m_W / m_Z$ (Markov trace) | $0.863$ | $0.8815$ | $-2.1\%$ |
-| $\partial \ln m / \partial \ln q$ | $9.62$ | — | Derived |
+See [Table 7](#tbl:w-boson-mass-discrepancy-table7-data).
 
 ## Experimental tests
 

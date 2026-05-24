@@ -3,15 +3,7 @@ introduce the following shorthand.
 
 **Compact notation.**
 
-| Symbol | Meaning |
-|--------|---------|
-| $T_{m,n}$ | Torus knot generator (winding numbers $m, n$) |
-| $T(2,n)$ | Torus link ($n$ even) or knot ($n$ odd) |
-| $\oplus$ | Hopf linking on exceptional divisor $\mathcal{S}_c$ |
-| $[\cdot,\cdot,\cdot]_p$ | Color-tube linking through $(r,g,b)$ fibers |
-| $\sigma$ | Skein crossing change (transmutation) |
-| $K^{\sigma}$ | Mirror (antiparticle) of knot $K$ |
-| $N \cdot K$ | $N$ copies of knot $K$ in a multi-component link |
+See [Table 1](#tbl:knot-formula-table-table1-data).
 
 **Derived shorthand for quarks.** The up and down quarks are not
 independent generators but are expressed in terms of $T_{2,3}$:
@@ -67,31 +59,14 @@ to the base manifold.
 
 *Fundamental fermions* (knots, 1 component).
 
-| Particle | Symbol | Knot formula | $g$ | Crossings |
-|----------|--------|-------------|:---:|:---------:|
-| Photon | $\gamma$ | $\mathbf{1}_{B_4}$ (4-strand id; closure $= 4 \cdot 0_1$) | $0$ | $0$ |
-| Neutrino | $\nu$ | $T_{1,0} = 0_1$ (1-strand) | $0$ | $0$ |
-| Electron | $e^-$ | $T_{2,3}$ | $1$ | $3$ |
-| Muon | $\mu^-$ | $T_{2,5}$ | $2$ | $5$ |
-| Tau | $\tau^-$ | $T_{2,7}$ | $3$ | $7$ |
-| Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ | $3$ |
-| Down quark | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $1$ | $3$ |
-| Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $2$ | $5$ |
-| Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ | $7$ |
-| Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ | $5$ |
-| Hopf${}^2$ color binding | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | $8$ | *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* |
+See [Table 2](#tbl:knot-formula-table-table2-data).
 
 *Fundamental bosons* (links, 2 components).
 The fermion--boson decomposition
 ([fermions are knots, bosons are links](#prop:fermion-boson-knot-link))
 assigns bosons to the even-$n$ members of the $T(2,n)$ family:
 
-| Particle | Symbol | Link formula | Components | Crossings |
-|----------|--------|-------------|:----------:|:---------:|
-| Gluon | $g$ | $T(2,2)$ (Hopf link) | $2$ | $2$ |
-| $W$ boson | $W^{\pm}$ | $T(2,4)$ | $2$ | $4$ |
-| $Z$ boson | $Z^0$ | $T(2,6)$ | $2$ | $6$ |
-| Higgs boson | $H$ | $T(2,8)$ | $2$ | $8$ |
+See [Table 3](#tbl:knot-formula-table-table3-data).
 
 The Higgs *field* (mass mechanism) is the figure-eight knot
 $4_1$ ($\mathrm{Vol} = 2.0299$, amphichiral: $H = H^{\sigma}$).
@@ -102,28 +77,11 @@ exceptional divisors on Bring's surface
 
 *Hadrons.*
 
-| Particle | Symbol | Knot formula |
-|----------|--------|-------------|
-| Proton | $\mathfrak{p}$ | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ |
-| Neutron | $\mathfrak{n}$ | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ |
-| $\pi^+$ | | $\mathfrak{u} \oplus \mathfrak{d}^{\sigma}$ |
-| $\pi^0$ | | $(\mathfrak{u} \oplus \mathfrak{u}^{\sigma} + \mathfrak{d} \oplus \mathfrak{d}^{\sigma})/\!\sqrt{2}$ |
-| $K^+$ | | $\mathfrak{u} \oplus \mathfrak{s}^{\sigma}$ |
-| $\Lambda$ | | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{s}]_p \oplus \mathcal{L}_H$ |
-| $\Sigma^+$ | | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{s}]_p \oplus \mathcal{L}_H$ |
+See [Table 4](#tbl:knot-formula-table-table4-data).
 
 *Light nuclei and atoms.*
 
-| Nucleus | $A$ | $Z$ | Knot formula |
-|---------|-----|-----|-------------|
-| Hydrogen | $1$ | $1$ | $\mathfrak{p} \oplus T_{2,3}$ |
-| Deuterium | $2$ | $1$ | $\mathfrak{p} \oplus \mathfrak{n} \oplus T_{2,3}$ |
-| Helium-3 | $3$ | $2$ | $2\mathfrak{p} \oplus \mathfrak{n} \oplus 2T_{2,3}$ |
-| Helium-4 | $4$ | $2$ | $2\mathfrak{p} \oplus 2\mathfrak{n} \oplus 2T_{2,3}$ |
-| Lithium-7 | $7$ | $3$ | $3\mathfrak{p} \oplus 4\mathfrak{n} \oplus 3T_{2,3}$ |
-| Carbon-12 | $12$ | $6$ | $6\mathfrak{p} \oplus 6\mathfrak{n} \oplus 6T_{2,3}$ |
-| Oxygen-16 | $16$ | $8$ | $8\mathfrak{p} \oplus 8\mathfrak{n} \oplus 8T_{2,3}$ |
-| Iron-56 | $56$ | $26$ | $26\mathfrak{p} \oplus 30\mathfrak{n} \oplus 26T_{2,3}$ |
+See [Table 5](#tbl:knot-formula-table-table5-data).
 
 For heavier nuclei the formula $Z\mathfrak{p} \oplus N\mathfrak{n} \oplus ZT_{2,3}$ remains valid, but the Skein polynomial $Q(q)$
 of the multi-body link grows combinatorially in $A$.  The binding

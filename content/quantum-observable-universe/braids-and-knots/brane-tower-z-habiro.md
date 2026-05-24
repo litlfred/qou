@@ -106,12 +106,7 @@ If true, the conjecture:
 The level-selection rule $n_\star$ is **the open part**. Candidate
 structural inputs:
 
-| Candidate | Source | Match for $D$ ($k_{\max}=2$) | Match for $T$ ($k_{\max}=9$) |
-|:---|:---|:---:|:---:|
-| GB max grade | $H_{n_0}$ filtration | works (input by construction) | overshoots |
-| confinement level $\ell$ | [confinement level](#def:confinement-level) | — | — |
-| $\dim H_{n_0}(q)$ | strand count $n_0 = 3A$ | — | — |
-| Coxeter length $\ell(w)$ | NF word length | — | — |
+See [Table 1](#tbl:brane-tower-z-habiro-table1-data).
 
 A correct $n_\star$ must (i) be a structural invariant of
 $\mathfrak{H}$, (ii) reproduce the empirical $B(\mathfrak{H})$ across
@@ -157,10 +152,7 @@ multiplicity into $n_\star$.
 
 The two completions are **independent**:
 
-| Direction | Cyclotomic ideal | What it unifies |
-|:---|:---|:---|
-| in $q$ ([Habiro ring](#def:habiro-ring)) | $((q;q)_n)$ | colored Jones $J_N$ for all $N$ |
-| in $z$ ([$z$-Habiro ring](#def:z-habiro-ring)) | $(P_n(q, z))$ | brane-tower partial sums for all $N$ |
+See [Table 2](#tbl:brane-tower-z-habiro-table2-data).
 
 The full picture would be a **bicompletion**
 $\widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z}$ at the bigraded ideal
@@ -207,11 +199,7 @@ per-atom retuning. Every scalar candidate in the table above has now
 been probed against the AME light-isotope sample, and **all fail by
 the conjecture's own falsifiability criterion**:
 
-| Candidate rule | Probe | Witness | Outcome |
-|:---|:---|:---|:---:|
-| Uniform $k$ (GB depth, atom-independent) | `probe_phiq_uniform_k.py` | [`probe-phiq-uniform-k.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-uniform-k.witness.json) | best $k=2$ subtractive: errors $\{-22\%, -39\%, +134\%\}$ |
-| Per-atom GB grade $k_{\max}$ | mass-endomorphism witness | [`mass-endomorphism-conjecture`](#conj:mass-endomorphism) | $T$ overshoot $\sim 17{,}000\%$ |
-| $n_\star = \ell \cdot n_0 + k$ (proposed in [`conj:brane-level-selection`](#conj:brane-level-selection)) | `probe_phiq_n_star_rule.py` | [`probe-phiq-n-star-rule.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-n-star-rule.witness.json) | errors $\sim 10^5$–$10^7\,\%$ at $(n_\star^D, n_\star^T, n_\star^{{}^3\mathrm{He}}) = (14, 27, 20)$ |
+See [Table 3](#tbl:brane-tower-z-habiro-table3-data).
 
 These three witnesses together cover every scalar invariant in the
 candidate table (GB max grade, confinement level $\ell$, strand count
@@ -301,16 +289,7 @@ variant, which used approximations on all three):
 
 ### Result — per-eigenvalue operator form is also refuted
 
-| $k$ | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
-|:-:|---:|---:|---:|---:|
-| **1** | $\mathbf{-6.87\%}$ ✓ | $-64.75\%$ | $-55.97\%$ | $64.75\%$ |
-| 2 | $+105.23\%$ | $\mathbf{-8.00\%}$ ✓ | $+76.75\%$ | $105.23\%$ |
-| 3 | $+863\%$ | $+482\%$ | $+1375\%$ | $1375\%$ |
-| 4 | $+314\%$ | $+1472\%$ | $+7903\%$ | $7903\%$ |
-| 5 | $+34{,}886\%$ | $+2598\%$ | $+31{,}678\%$ | $34{,}886\%$ |
-| 6 | $+243{,}060\%$ | $+37{,}784\%$ | $+100{,}585\%$ | $243{,}060\%$ |
-| 8 | $+3.50\times 10^6\%$ | $+507{,}892\%$ | $+624{,}118\%$ | $3.50\times 10^6\%$ |
-| 10 | $+2.34\times 10^7\%$ | $+2.14\times 10^6\%$ | $+2.46\times 10^6\%$ | $2.34\times 10^7\%$ |
+See [Table 4](#tbl:brane-tower-z-habiro-table4-data).
 
 **Notable structural finding.** Two of three atoms find their
 *own* near-AME uniform $k$ under the per-eigenvalue form —
@@ -393,12 +372,7 @@ tests four substrate-derived per-atom rules built from the
 per-generator near-pole multiplicity $m_{\max}(\mathfrak{H})$ and the
 Type-B-folded-crystal structure of $H_{3A}(q_0)$ (CLAUDE.md §7b):
 
-| Rule | Formula | $n_\star^D, n_\star^T, n_\star^{{}^3\mathrm{He}}$ |
-|:---|:---|:---:|
-| R1 mult-shifted | $\max(1, k_{\mathrm{Hecke}} - m_{\max} + 1)$ | $1, 6, 1$ |
-| R2 mult-truncated | $\max(1, \lfloor k_{\mathrm{Hecke}} / m_{\max} \rfloor)$ | $1, 2, 1$ |
-| R3 Type-B depth | $\mathrm{depth}(\lambda_\star = \mathrm{argmax}_{\lambda=\lambda^T} \lvert y_\lambda \chi^\lambda_q\rvert)$ | $2, 3, 3$ |
-| R4 combined | $\max(1, \mathrm{depth}(\lambda_\star) - m_{\max} + 1)$ | $1, 1, 1$ |
+See [Table 5](#tbl:brane-tower-z-habiro-table5-data).
 
 with $\lambda_\star^D = (3,2,1)$, $\lambda_\star^T = \lambda_\star^{{}^3\mathrm{He}} = (3,3,3)$;
 near-pole multiplicities (band $\varepsilon = 0.15$) $m_{\max}^D = 3$,
@@ -410,13 +384,7 @@ per-eigenvalue operator-valued tower (using the spectra persisted in
 
 ### Result — refuted, but with structural finding worth recording
 
-| Rule $\times$ form | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
-|:---|---:|---:|---:|---:|
-| R1 mult-shifted, op | $-6.87\%$ | $+37{,}784\%$ | $-55.97\%$ | $37{,}784\%$ |
-| **R2 mult-truncated, op** | $\mathbf{-6.87\%}$ ✓ | $\mathbf{-8.00\%}$ ✓ | $-55.97\%$ | $56.0\%$ |
-| R3 Type-B depth, op | $+105\%$ | $+482\%$ | $+1375\%$ | $1375\%$ |
-| R4 combined, op | $-6.87\%$ | $-64.75\%$ | $-55.97\%$ | $64.8\%$ |
-| (scalar forms, all rules) | $+472\%$–$+696\%$ | $+472\%$–$+105{,}278\%$ | $+595\%$–$+10{,}229\%$ | $\geq 472\%$ |
+See [Table 6](#tbl:brane-tower-z-habiro-table6-data).
 
 **No rule closes uniformly** — the conjecture's $n_\star$ existence
 claim is refuted across every probed family.
@@ -468,15 +436,7 @@ $\Phi_q(|\hat V_i|)$ contributions.
 
 The per-generator magnitudes make the structure visible:
 
-| pos | type | D | T | ${}^{3}$He | ${}^{4}$He |
-|:-:|:-:|:-:|:-:|:-:|:-:|
-| 0 | intra-p | $0.989$ | $0.989$ | $0.989$ | $0.989$ |
-| 1 | intra-p | $0.971$ | $0.971$ | $0.971$ | $0.971$ |
-| 2 | inter | p-n $0.264$ | p-n $0.264$ | **p-p $0.369$** | **p-p $0.369$** |
-| 3 | intra | n $0.854$ | n $0.854$ | **p $0.989$** ⟵ | **p $0.989$** ⟵ |
-| 4 | intra | n $0.976$ | n $0.976$ | **p $0.971$** ⟵ | **p $0.971$** ⟵ |
-| 5 | inter | — | n-n $0.160$ | p-n $0.264$ | p-n $0.264$ |
-| 6+ | intra-n | — | n $0.854, 0.976$ | n $0.854, 0.976$ | n $\times$ 5 |
+See [Table 7](#tbl:brane-tower-z-habiro-table7-data).
 
 ${}^{3}$He has Z=2 magic $\to$ **duplicated intra-p block** at positions
 {0,1} and {3,4}; ${}^{4}$He is doubly magic (Z=N=2) $\to$ both intra-p and
@@ -506,12 +466,7 @@ CLAUDE.md "LP / SDP duals — first-class infra":
 
 ### LP-dual structural result: pair-knot operators ARE selected at closed shells
 
-| Atom | Magic shells | Active set (dual $y_\lambda > 0$) | Pair-knot active? |
-|:-:|:-:|:-:|:-:|
-| D | none | $\{\sigma_0, \sigma_1, \sigma_3, \sigma_4\}$ | $\sigma_{pp}, \sigma_{nn}$ absent (no shell) |
-| T | $N{=}2$ | $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_6, \sigma_7, \sigma_{nn}\}$ | **$\sigma_{nn}$ active** |
-| ${}^{3}$He | $Z{=}2$ | $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_6, \sigma_7, \sigma_{pp}\}$ | **$\sigma_{pp}$ active** |
-| ${}^{4}$He | $Z{=}2$ + $N{=}2$ | $\{\sigma_0, \ldots, \sigma_{10}, \sigma_{pp}, \sigma_{nn}\}$ | **both active** |
+See [Table 8](#tbl:brane-tower-z-habiro-table8-data).
 
 The LP dual confirms the pair-knot composites $\sigma_{pp}, \sigma_{nn}$
 are **structurally distinguishable from per-generator operators at
@@ -521,12 +476,7 @@ $Z=2$ / $N=2$ shell closure showing up in the substrate algebra.
 
 ### Empirical closure result: partial — pair-knot collapse alone doesn't suffice
 
-| Atom | $B_{\text{naive}}$ MeV | $B_{\text{paired}}$ MeV | $B_{\text{AME}}$ MeV | err naive | err paired |
-|:-:|---:|---:|---:|---:|---:|
-| D | $17.71$ | $17.71$ | $2.225$ | $+696\%$ | $+696\%$ |
-| T | $201.83$ | $98.13$ | $8.482$ | $+2280\%$ | $+1057\%$ |
-| ${}^{3}$He | $53.64$ | $24.60$ | $7.718$ | $+595\%$ | $+219\%$ |
-| **${}^{4}$He** | $100.88$ | $\mathbf{22.80}$ | $\mathbf{28.296}$ | $+257\%$ | $\mathbf{-19.4\%}$ |
+See [Table 9](#tbl:brane-tower-z-habiro-table9-data).
 
 ${}^{4}$He at $-19.4\%$ is the closest any probed form has come to a uniform
 closure (any atom, any rule). But pair-knot collapse alone does not
@@ -592,11 +542,7 @@ seminormal compute ~10 min, deferred).
 
 ### Result — refined pair-knot Markov-trace form also refuted
 
-| Atom | $n_\star$ | $|\hat{V}_{\text{shell}}|$ Markov | tower | $B_{\text{pred}}$ | $B_{\text{AME}}$ | err |
-|:-:|:-:|---:|---:|---:|---:|---:|
-| D | 1 | n/a (no shell) | $31.07$ | $17.71$ | $2.225$ | $+696\%$ |
-| T | 2 | $\mathrm{tr}_M(\sigma_{nn}) = 0.0622$ | $88.36$ | $93.01$ | $8.482$ | $+997\%$ |
-| ${}^{3}$He | 1 | $\mathrm{tr}_M(\sigma_{pp}) = 0.0622$ | $16.46$ | $19.64$ | $7.718$ | $+154\%$ |
+See [Table 10](#tbl:brane-tower-z-habiro-table10-data).
 
 LP+SDP both confirm strong duality (LP gap $< 10^{-15}$, SDP gap
 $< 10^{-6}$ via cvxpy/SCS) at the full Frobenius Gram.  Refined
@@ -686,11 +632,7 @@ sharpens the closure direction beyond the multiplicity-refined
 scalar form: the failure of uniform-$k$ in the per-eigenvalue
 operator form is dominated by **one specific partition per atom**:
 
-| Atom | dominant $\lambda$ | $\dim V_\lambda$ | contrib at $k = 2$ | contrib at $k = 1$ |
-|:-:|---:|---:|---:|---:|
-| $D$ | $[2, 2, 1, 1]$ | $9$ | $-6.220$ | $\approx 0$ |
-| $T$ | $[6, 3]$ | $48$ | $-3.001$ | $+0.050$ |
-| ${}^3\mathrm{He}$ | $[5, 4]$ | $42$ | $-11.692$ | $-0.028$ |
+See [Table 11](#tbl:brane-tower-z-habiro-table11-data).
 
 Re-assigning $k_\lambda = 1$ for the dominant partition while
 keeping $k_\lambda = 2$ elsewhere collapses each atom's tower

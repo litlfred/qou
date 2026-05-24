@@ -19,19 +19,7 @@ produces a distinct knot type; for amphichiral knots
 
 ## Table 1: Fundamental knots (single-component, torus-embeddable)
 
-| Knot | $T_{m,n}$ | AB index | Genus | Crossings | Visual | Particle | Jones $J(q)$ | Vol |
-|------|-----------|----------|:-----:|:---------:|:------:|----------|-------------|:---:|
-| Unknot | $T_{1,0}$ | $0_1$ | $0$ | $0$ | ○ | $\nu$ (neutrino) | $1$ | $0$ |
-| Mirror unknot | $T_{1,0}^{\sigma}$ | $0_1$ | $0$ | $0$ | ⊙ | $\nu^{\sigma}$ (antineutrino) | $1$ | $0$ |
-| Left trefoil | $T_{2,3}$ | $3_1$ | $1$ | $3$ | ● | $e^-$ (electron) / $u$ (up quark) | $-q^{-4} + q^{-3} + q^{-1}$ | $0$ |
-| Right trefoil | $T_{2,3}^{\sigma}$ | $3_1^{\sigma}$ | $1$ | $3$ | ○ | $e^+$ (positron) / $d$ (down quark) | $-q^{4} + q^{3} + q$ | $0$ |
-| Cinquefoil | $T_{2,5}$ | $5_1$ | $2$ | $5$ | ● | $\mu^-$ (muon); on divisor: $\mathfrak{b}$ / $\mathfrak{s}$ | $-q^{-10} + q^{-9} - q^{-8} + q^{-7} + q^{-5}$ | $0$ |
-| Mirror cinquefoil | $T_{2,5}^{\sigma}$ | $5_1^{\sigma}$ | $2$ | $5$ | ○ | $\mu^+$ (antimuon); on divisor: $\mathfrak{s}$ / $\mathfrak{b}^{\sigma}$ | $-q^{10} + q^{9} - q^{8} + q^{7} + q^{5}$ | $0$ |
-| Septafoil | $T_{2,7}$ | $7_1$ | $3$ | $7$ | ● | $\tau^-$ (tau); on divisor: $\mathfrak{c}$ | $-q^{-18} + q^{-17} - q^{-16} + q^{-15} - q^{-14} + q^{-13} + q^{-11}$ | $0$ |
-| Mirror septafoil | $T_{2,7}^{\sigma}$ | $7_1^{\sigma}$ | $3$ | $7$ | ○ | $\tau^+$ (antitau); on divisor: $\mathfrak{c}^{\sigma}$ | mirror of above | $0$ |
-| $T_{2,9}$ | $T_{2,9}$ | $9_1$ | $4$ | $9$ | ● | Strong binding (gluon) | $-q^{-28} + \cdots + q^{-19}$ | $0$ |
-| $T_{3,4}$ | $T_{3,4}$ | $8_{19}$ | $3$ | $8$ | ● | Hopf${}^2$ color binding | $q^{-7} - q^{-6} + q^{-5} - 2q^{-4} + q^{-3} + q^{-1}$ | $0$ |
-| $T_{3,5}$ | $T_{3,5}$ | $10_{124}$ | $4$ | $10$ | ● | Weak force ($\beta$-decay) | (10-term polynomial) | $0$ |
+See [Table 1](#tbl:building-block-knots-table1-data).
 
 **Key observation**: All torus knots have $\mathrm{Vol} = 0$.
 They contribute no bare mass from hyperbolic volume.  Their
@@ -39,10 +27,7 @@ mass arises entirely from **crossing energy** at $q \neq 1$.
 
 ## Table 2: Derived knots (from Skein operations on generators)
 
-| Knot | AB index | Source | Genus | Crossings | Visual | Particle | Vol |
-|------|----------|--------|:-----:|:---------:|:------:|----------|:---:|
-| Figure-eight | $4_1$ | $(T_{2,3} \oplus T_{2,3})^{\sigma}$ | $1$ | $4$ | ●=○ | Higgs field (mass mechanism) | $2.0299$ |
-| Three-twist | $5_2$ | $T_{2,3}^{\sigma}$ variant | $1$ | $5$ | ● | — | $2.8281$ |
+See [Table 2](#tbl:building-block-knots-table2-data).
 
 The figure-eight knot $4_1$ is **amphichiral** (self-mirror),
 The Higgs field is its own antiparticle ($H = H^{\sigma}$).
@@ -53,29 +38,14 @@ it couples to every knot-particle with crossings $> 0$.
 
 ## Table 3: Links (multi-component, for force carriers and composites)
 
-| Link | AB index | Components | Visual | Role | Jones $J(q)$ | Vol |
-|------|----------|:----------:|:------:|------|-------------|:---:|
-| Hopf link | $L2a1$ | $2$ | ●●  | Strong force / boson | $-(q^{1/2} + q^{5/2})$ | $0$ |
-| Borromean rings | $L6a4$ | $3$ | ●●● | Nucleon (baryon) | (6-term) | $7.3277$ |
-| Solomon link | $L4a1$ | $2$ | ●● | (doubly-linked pair) | — | $\approx 6.45$ |
-| Whitehead link | $L5a1$ | $2$ | ●● | — | — | $3.6639$ |
+See [Table 3](#tbl:building-block-knots-table3-data).
 
 ## Table 4: Antiparticle completion
 
 Every particle has an antiparticle obtained by the mirror
 operation $\sigma$.  For completeness:
 
-| Particle | Knot | Antiparticle | Knot | Same type? |
-|----------|------|-------------|------|:----------:|
-| $\nu$ | $T_{1,0}$ | $\nu^{\sigma}$ | $T_{1,0}^{\sigma}$ | Yes (amphichiral) |
-| $e^-$ | $T_{2,3}$ | $e^+$ | $T_{2,3}^{\sigma}$ | No (chiral) |
-| $\mu^-$ | $T_{2,5}$ | $\mu^+$ | $T_{2,5}^{\sigma}$ | No (chiral) |
-| $\tau^-$ | $T_{2,7}$ | $\tau^+$ | $T_{2,7}^{\sigma}$ | No (chiral) |
-| $H$ | $4_1$ | $H^{\sigma}$ | $4_1^{\sigma}$ | Yes (amphichiral) |
-| $u$ | $T_{2,3}$ | $u^{\sigma}$ | $T_{2,3}^{\sigma}$ | No (chiral) |
-| $d$ | $T_{2,3}^{\sigma}$ | $d^{\sigma}$ | $T_{2,3}$ | No (chiral) |
-| $p$ | $\mathcal{B}_3(u,u,d)$ | $p^{\sigma}$ | $\mathcal{B}_3(u,u,d)^{\sigma}$ | No |
-| $n$ | $\mathcal{B}_3(u,d,d)$ | $n^{\sigma}$ | $\mathcal{B}_3(u,d,d)^{\sigma}$ | No |
+See [Table 4](#tbl:building-block-knots-table4-data).
 
 ## Mass from knot energy
 
@@ -104,14 +74,7 @@ energy at each self-crossing.
 
 ## Jones polynomial at $q = q_0$
 
-| Knot | $J(q_0)$ |
-|------|:----------:|
-| $0_1$ (unknot) | $1.0000$ |
-| $3_1$ (trefoil) | $0.8168$ |
-| $3_1^{\sigma}$ (mirror trefoil) | $3.5832$ |
-| $4_1$ (figure-eight) | $0.7854$ |
-| $5_1$ (cinquefoil) | $0.4854$ |
-| $L2a1$ (Hopf link) | $-2.2662$ |
+See [Table 5](#tbl:building-block-knots-table5-data).
 
 The Jones polynomial at $q = 1$ gives the number of
 components: $J(1) = (-2)^{c-1}$ where $c$ is the
@@ -129,27 +92,11 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 
 **Fundamental constants from $q$:**
 
-| Symbol | Formula | Value at $q = q_0$ |
-|--------|---------|:--------------------:|
-| $\hbar_q$ | $1 - q^{-1}$ | $0.09910$ |
-| $\mathfrak{E}_{\times}$ | $\tfrac{1}{2}(q - q^{-1})$ | $0.10450$ |
-| $s$ (Skein amplitude) | $q^{1/2} - q^{-1/2}$ | $0.05049$ |
-| $[2]_q$ | $q + q^{-1}$ | $2.01099$ |
+See [Table 6](#tbl:building-block-knots-table6-data).
 
 **Categorical action per building block:**
 
-| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $\mathfrak{E}_{\mathrm{cross}}(q)$ | $S_q(K)$ | Mass ($\mu_0$ units) |
-|----------|------|:-----:|:---------------:|:-----------------------:|:---------:|:--------------------:|
-| $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
-| $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\mathfrak{E}_{\times}$ | $3\mathfrak{E}_{\times}\mu_0$ |
-| $e^+$ | $T_{2,3}^{\sigma}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\mathfrak{E}_{\times}$ | $3\mathfrak{E}_{\times}\mu_0$ |
-| $\mu^-$ | $T_{2,5}$ | $5$ | $0$ | $5\mathfrak{E}_{\times}$ | via Higgs mechanism | $207.1\mu_0$ |
-| $\tau^-$ | $T_{2,7}$ | $7$ | $0$ | $7\mathfrak{E}_{\times}$ | via Higgs mechanism | (gen-$3$ mass) |
-| $u,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\mathfrak{E}_{\times}$ | (bound; see below) |
-| $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\mathfrak{E}_{\times}$ | $5\mathfrak{E}_{\times}\mu_0$ |
-| $H$ (Higgs) | $4_1$ | $4$ | $2.0299$ | $4\mathfrak{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\mathfrak{E}_{\times}$ | mass mechanism |
-| Proton $\mathfrak{p}$ | $\mathcal{B}_3(u,u,d) \oplus \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | $746\mu_0$ |
-| Neutron $\mathfrak{n}$ | $\mathcal{B}_3(u,d,d) \oplus \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 + \delta_{\mathrm{Skein}}$ | $747\mu_0$ |
+See [Table 7](#tbl:building-block-knots-table7-data).
 
 The neutron--proton mass difference $\delta_{\mathrm{Skein}} = \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) \approx 1.293$ MeV
 arises from the pair Skein asymmetry between $\mathfrak{d}\mathfrak{d}$ and $\mathfrak{u}\mathfrak{u}$

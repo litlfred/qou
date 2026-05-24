@@ -6,16 +6,7 @@ $H_{A+Z}(q)$ obtained by assembling $Z$ protons, $N$ neutrons,
 and $Z$ electrons into a single Hecke algebra with $A + Z$ strands,
 where $A = Z + N$.  The crossing coefficients are:*
 
-| Pair | Crossing | $c$ | $d$ | Origin |
-|:-----|:---------|:----|:----|:-------|
-| $\mathfrak{p}\mathfrak{p}$ | $\sigma$ | $1$ | $0$ | strong repulsion |
-| $\mathfrak{n}\mathfrak{n}$ | $\sigma^{-1}$ | $1$ | $-(q - q^{-1})$ | strong inverse |
-| $\mathfrak{p}\mathfrak{n}$ | $\sigma - \tfrac{1}{2}(q - q^{-1})$ | $1$ | $-\tfrac{1}{2}(q - q^{-1})$ | strong mixed |
-| $\mathfrak{p}e$ | $\sigma^{-1}$ | $1$ | $-(q - q^{-1})$ | EM attraction |
-| $\mathfrak{n}e$ | $\mathrm{id}$ | $0$ | $1$ | no interaction |
-| $ee$ | $\sigma$ | $1$ | $0$ | EM repulsion |
-| $\mathfrak{p}_{\mathrm{gluon}}$ | $\sigma^2$ | | | $2\sigma_0$ internal (LP-derived) |
-| $\mathfrak{n}_{\mathrm{gluon}}$ | $L_+L_-$ | | | $4\sigma$ internal (LP-derived) |
+See [Table 1](#tbl:atomic-braid-mass-table1-data).
 
 *Each nucleon also carries **internal gluon crossings** from LP
 stability ([integer LP gluon](#prop:mass-endomorphism-tower)):
@@ -165,10 +156,7 @@ the two functions disagree (one $\to 0$, the other bounded
 $\to -\mathrm{Li}_2^q(-1)$).  Empirical comparison
 (`li2q-six-term-probe.witness.json`):*
 
-| atom | $\alpha\sum\ln\|V\|$ | $-\alpha\sum\mathrm{Li}_2^q(-\|V\|)$ |
-|---|---|---|
-| H ($Z=1$) | $-0.016\%$ | $-0.645\%$ |
-| ⁴He | $+0.296\%$ | $+0.053\%$ |
+See [Table 2](#tbl:atomic-braid-mass-table2-data).
 
 *The additive formula above is the **leading-order** of the
 proper $\mathrm{Li}_2^q$ form for $V$ in a specific range, with
@@ -239,12 +227,7 @@ four terms corresponding to four photon channels in
 $\gamma\gamma \to \mathfrak{q}\mathfrak{q}\mathfrak{q}$
 production:*
 
-| Degree | Symmetric function | Integral | Physical role |
-|:-------|:-------------------|:---------|:-------------|
-| 3 | $\prod \mathrm{d}c_k/\mathrm{d}z$ | $I_3$ | confinement $\to m_{\mathfrak{p}}$ |
-| 2 | $\sum_{i<j} \mathrm{d}c_i \cdot \mathrm{d}c_j$ | $I_2$ | color pairing $\to$ binding |
-| 1 | $\sum \mathrm{d}c_k/\mathrm{d}z$ | $I_1$ | quark sum |
-| 0 | $c_0 + z$ | $I_0$ | electron period |
+See [Table 3](#tbl:atomic-braid-mass-table3-data).
 
 *The degree-2 amplification ratio $A_2/A_3$ determines the weight
 $\beta_2 = -2[3]_q$ in the mass formula.  The quantum 3-integer
@@ -255,28 +238,7 @@ $\binom{3}{2} = 3$, deformed to $[3]_q$ at finite $q$.*
 
 ## Predicted vs observed masses
 
-| $Z$ | Element | $A$ | $\mathcal{M}_{\mathrm{pred}}$ (MeV) | $\mathcal{M}_{\mathrm{obs}}$ (MeV) | $\Delta$ (MeV) | $\Delta/\mathcal{M}$ |
-|:----|:--------|:----|:-------------------------------------|:------------------------------------|:----------------|:---------------------|
-| 1 | H | 1 | 938.910 | 938.783 | $+0.127$ | $+0.014\%$ |
-| 2 | He | 4 | 3734.624 | 3728.401 | $+6.223$ | $+0.167\%$ |
-| 3 | Li | 7 | 6534.188 | 6535.367 | $-1.179$ | $-0.018\%$ |
-| 4 | Be | 9 | 8378.704 | 8394.794 | $-16.090$ | $-0.192\%$ |
-| 5 | B | 11 | 10237.301 | 10255.103 | $-17.802$ | $-0.174\%$ |
-| 6 | C | 12 | 11168.874 | 11177.929 | $-9.056$ | $-0.081\%$ |
-| 7 | N | 14 | 13029.983 | 13043.782 | $-13.799$ | $-0.106\%$ |
-| 8 | O | 16 | 14890.701 | 14899.169 | $-8.468$ | $-0.057\%$ |
-| 9 | F | 19 | 17690.792 | 17696.901 | $-6.109$ | $-0.035\%$ |
-| 10 | Ne | 20 | 18615.219 | 18622.835 | $-7.617$ | $-0.041\%$ |
-| 11 | Na | 23 | 21418.256 | 21414.830 | $+3.425$ | $+0.016\%$ |
-| 12 | Mg | 24 | 22342.658 | 22341.908 | $+0.750$ | $+0.003\%$ |
-| 13 | Al | 27 | 25143.149 | 25133.143 | $+10.005$ | $+0.040\%$ |
-| 14 | Si | 28 | 26067.918 | 26060.344 | $+7.574$ | $+0.029\%$ |
-| 15 | P | 31 | 28872.696 | 28851.873 | $+20.823$ | $+0.072\%$ |
-| 16 | S | 32 | 29797.187 | 29781.800 | $+15.387$ | $+0.052\%$ |
-| 17 | Cl | 35 | 32597.913 | 32573.283 | $+24.630$ | $+0.076\%$ |
-| 18 | Ar | 40 | 37273.796 | 37224.719 | $+49.077$ | $+0.132\%$ |
-| 19 | K | 39 | 36324.625 | 36294.464 | $+30.161$ | $+0.083\%$ |
-| 20 | Ca | 40 | 37248.739 | 37213.777 | $+34.962$ | $+0.094\%$ |
+See [Table 4](#tbl:atomic-braid-mass-table4-data).
 
 Mean: $0.074\%$.  Maximum: $0.192\%$.  Zero fitted parameters.
 

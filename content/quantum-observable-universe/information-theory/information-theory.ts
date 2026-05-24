@@ -46,6 +46,9 @@ export default chapter({
         "operational-entropy",
         "discrete-planck-step",
         "jet-planck-steps",
+
+        "jet-planck-steps-table1-data",
+        "jet-planck-steps-table2-data",
       ],
     }),
 section({

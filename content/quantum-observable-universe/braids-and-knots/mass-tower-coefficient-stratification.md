@@ -11,15 +11,7 @@ its Bethe--Weizsäcker counterpart.*
 
 **Coefficient-to-stratum mapping.**
 
-| Bethe--Weizsäcker term | Stratum $\Lambda_k$ | Forced prefactor $\alpha_k$ | Reference |
-|---|---|---|---|
-| $\lambda_V$ (volume) | $\Lambda_0 = \{(n)\}$ | trivial-block Markov trace | [Term 1 / descended](#prop:unified-curvature-rank-mass-formula) |
-| $\lambda_S$ (surface) | $\Lambda_1 = \{(n{-}1, 1)\}$ | hook-stratum log-character | [Term 2 / single-gen tower](#prop:unified-curvature-rank-mass-formula) |
-| $\lambda_{\mathrm{pair}}$ (pairing) | $\Lambda_2 \ni (n{-}2, 2), (n{-}2, 1, 1)$ | pair-stratum Plancherel sum | [Term 3 / pair-gen tower](#prop:unified-curvature-rank-mass-formula) |
-| $\lambda_{\mathrm{Wigner}}$ ($Z = N$ pairing) | $\Lambda_3$ chirality-cell sub-stratum | self-conjugate restricted weight | [Wigner $np$ pairing](#prop:wigner-np-pairing) |
-| $\lambda_{\mathrm{shell}}$ (shell correction) | $\Lambda_{\geq 4}$ universal tail | $m_e \cdot 8 G$ from gravity prefactor | [gravity prefactor](#prop:gravity-spectral-prefactor), [Term 7](#prop:plancherel-term-7-formulation) |
-| $a_\mathcal{K}$ (knot factor) | $\Lambda_2$ chirality projection | normalised Gram pairing $G_{\beta, \beta^*} / G_{\mathbf{1}, \mathbf{1}}$ | [knot factor spectral form](#prop:knot-factor-spectral-form) |
-| $F_{\mathrm{Pauli}}$ (Pauli weight) | $\Lambda_0$ vs $\Lambda_{n-1}$ | sym/alt block trace ratio | [Pauli factor Wedderburn](#prop:pauli-factor-wedderburn) |
+See [Table 1](#tbl:mass-tower-coefficient-stratification-table1-data).
 
 *Each row reads: the Bethe--Weizsäcker coefficient is the
 Plancherel-weighted Frobenius integral over partitions $\lambda$
@@ -65,15 +57,7 @@ For each partition $\lambda$ the witness records:
 
 **Coefficient summary.**
 
-| Coefficient | Spectral derivation | Empirical verification |
-|---|---|---|
-| $\lambda_V$ | $w_{(n)} \cdot \log\bigl\lvert\!\int_{A_{(n)}}\!\rho(\beta_\mathcal{K})\bigr\rvert$ | open: ${}^4\mathrm{He}$ test in `verify-mass-computation` |
-| $\lambda_S$ | $w_{(n-1,1)} \cdot \log\bigl\lvert\!\int_{A_{(n-1,1)}}\!\cdot\bigr\rvert$ | open |
-| $\lambda_{\mathrm{pair}}$ | $\sum_{\lambda \in \Lambda_2} w_\lambda \cdot \log\bigl\lvert\!\int_{A_\lambda}\!\cdot\bigr\rvert$ | open |
-| $\lambda_{\mathrm{Wigner}}$ | restricted to self-conjugate $\lambda$ | open: $Z = N$ odd-odd |
-| $m_e \cdot 8G$ (Term 7) | $\Phi^{\geq 4}$ universal residue | done: see [gravity prefactor](#prop:gravity-spectral-prefactor) |
-| $a_\mathcal{K}$ | done: see [knot factor](#prop:knot-factor-spectral-form) | done for $A \leq 12$ |
-| $F_{\mathrm{Pauli}}$ | done: see [Pauli factor](#prop:pauli-factor-wedderburn) | done |
+See [Table 2](#tbl:mass-tower-coefficient-stratification-table2-data).
 
 **Coordinating note for sibling computations.**
 

@@ -17,6 +17,11 @@ export default chapter({
       label: "sec:tm-notation",
       blocks: [
         "tm-notation",
+
+        "tm-notation-table1-data",
+        "tm-notation-table2-data",
+        "tm-notation-table3-data",
+        "tm-notation-table4-data",
       ],
     }),
     section({
@@ -31,6 +36,11 @@ export default chapter({
       label: "sec:tm-knot-pairs",
       blocks: [
         "tm-knot-pairs",
+
+        "tm-knot-pairs-table1-data",
+        "tm-knot-pairs-table2-data",
+        "tm-knot-pairs-table3-data",
+        "tm-knot-pairs-table4-data",
       ],
     }),
     section({
@@ -61,6 +71,15 @@ export default chapter({
       label: "sec:tm-heavy-atom-examples",
       blocks: [
         "tm-heavy-atom-examples",
+
+        "tm-heavy-atom-examples-table1-data",
+        "tm-heavy-atom-examples-table2-data",
+        "tm-heavy-atom-examples-table3-data",
+        "tm-heavy-atom-examples-table4-data",
+        "tm-heavy-atom-examples-table5-data",
+        "tm-heavy-atom-examples-table6-data",
+        "tm-heavy-atom-examples-table7-data",
+        "tm-heavy-atom-examples-table8-data",
       ],
     }),
   ],
