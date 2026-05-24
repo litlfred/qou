@@ -76,16 +76,25 @@ export interface ScriptQaReport {
    *   - bibliographic key matching an entry in
    *     `content/schema/references.ts` (e.g. `"wenzl1988"`,
    *     `"kashaev1997"`)
+   *   - the literal sentinel `"manuscript"` — internal-manuscript
+   *     reference (per CLAUDE.md §1 Lean-side convention) for
+   *     citations whose target is the current paper itself rather
+   *     than an external bibliography entry. Recognised as valid
+   *     by the criterion; does NOT need a matching entry in
+   *     `content/schema/references.ts`.
    *
    * This field is the **canonical metadata** that the
-   * `has_references_to_paper` criterion checks (replacing the prior
-   * regex-on-comments approach). It is auto-populated on first sweep
-   * via extraction over the script source, then human-overrideable
-   * via direct edits to the sidecar.
+   * `has_references_to_paper` criterion checks. It is
+   * **human-authored only** — the sweep does not auto-populate
+   * this field from script source (per author direction
+   * 2026-05-24: "no citation grepped from content; only proper
+   * metadata"). Authors edit the sidecar directly to add,
+   * remove, or override entries.
    *
    * Empty array means the script genuinely has no paper references
    * (e.g. pure infrastructure / utility code) — distinct from
-   * `undefined`, which means the field has never been populated.
+   * `undefined`, which means the field has never been populated
+   * and the script will fail the criterion.
    */
   references?: string[];
   /**
