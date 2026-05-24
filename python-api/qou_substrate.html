@@ -1,0 +1,1628 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="pdoc 16.0.0"/>
+    <title>qou_substrate API documentation</title>
+
+    <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
+    <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#ffffcc}.pdoc-code{background:#f8f8f8;}.pdoc-code .c{color:#3D7B7B; font-style:italic}.pdoc-code .err{border:1px solid #FF0000}.pdoc-code .k{color:#008000; font-weight:bold}.pdoc-code .o{color:#666666}.pdoc-code .ch{color:#3D7B7B; font-style:italic}.pdoc-code .cm{color:#3D7B7B; font-style:italic}.pdoc-code .cp{color:#9C6500}.pdoc-code .cpf{color:#3D7B7B; font-style:italic}.pdoc-code .c1{color:#3D7B7B; font-style:italic}.pdoc-code .cs{color:#3D7B7B; font-style:italic}.pdoc-code .gd{color:#A00000}.pdoc-code .ge{font-style:italic}.pdoc-code .gr{color:#E40000}.pdoc-code .gh{color:#000080; font-weight:bold}.pdoc-code .gi{color:#008400}.pdoc-code .go{color:#717171}.pdoc-code .gp{color:#000080; font-weight:bold}.pdoc-code .gs{font-weight:bold}.pdoc-code .gu{color:#800080; font-weight:bold}.pdoc-code .gt{color:#0044DD}.pdoc-code .kc{color:#008000; font-weight:bold}.pdoc-code .kd{color:#008000; font-weight:bold}.pdoc-code .kn{color:#008000; font-weight:bold}.pdoc-code .kp{color:#008000}.pdoc-code .kr{color:#008000; font-weight:bold}.pdoc-code .kt{color:#B00040}.pdoc-code .m{color:#666666}.pdoc-code .s{color:#BA2121}.pdoc-code .na{color:#687822}.pdoc-code .nb{color:#008000}.pdoc-code .nc{color:#0000FF; font-weight:bold}.pdoc-code .no{color:#880000}.pdoc-code .nd{color:#AA22FF}.pdoc-code .ni{color:#717171; font-weight:bold}.pdoc-code .ne{color:#CB3F38; font-weight:bold}.pdoc-code .nf{color:#0000FF}.pdoc-code .nl{color:#767600}.pdoc-code .nn{color:#0000FF; font-weight:bold}.pdoc-code .nt{color:#008000; font-weight:bold}.pdoc-code .nv{color:#19177C}.pdoc-code .ow{color:#AA22FF; font-weight:bold}.pdoc-code .w{color:#bbbbbb}.pdoc-code .mb{color:#666666}.pdoc-code .mf{color:#666666}.pdoc-code .mh{color:#666666}.pdoc-code .mi{color:#666666}.pdoc-code .mo{color:#666666}.pdoc-code .sa{color:#BA2121}.pdoc-code .sb{color:#BA2121}.pdoc-code .sc{color:#BA2121}.pdoc-code .dl{color:#BA2121}.pdoc-code .sd{color:#BA2121; font-style:italic}.pdoc-code .s2{color:#BA2121}.pdoc-code .se{color:#AA5D1F; font-weight:bold}.pdoc-code .sh{color:#BA2121}.pdoc-code .si{color:#A45A77; font-weight:bold}.pdoc-code .sx{color:#008000}.pdoc-code .sr{color:#A45A77}.pdoc-code .s1{color:#BA2121}.pdoc-code .ss{color:#19177C}.pdoc-code .bp{color:#008000}.pdoc-code .fm{color:#0000FF}.pdoc-code .vc{color:#19177C}.pdoc-code .vg{color:#19177C}.pdoc-code .vi{color:#19177C}.pdoc-code .vm{color:#19177C}.pdoc-code .il{color:#666666}</style>
+    <style>/*! theme.css */:root{--pdoc-background:#fff;}.pdoc{--text:#212529;--muted:#6c757d;--link:#3660a5;--link-hover:#1659c5;--code:#f8f8f8;--active:#fff598;--accent:#eee;--accent2:#c1c1c1;--nav-hover:rgba(255, 255, 255, 0.5);--name:#0066BB;--def:#008800;--annotation:#007020;}</style>
+    <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
+    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note{color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.tip{color:#0a3622;background-color:#d1e7dd;border-color:#a3cfbb;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%230a3622%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%206a6%206%200%201%201%2010.174%204.31c-.203.196-.359.4-.453.619l-.762%201.769A.5.5%200%200%201%2010.5%2013a.5.5%200%200%201%200%201%20.5.5%200%200%201%200%201l-.224.447a1%201%200%200%201-.894.553H6.618a1%201%200%200%201-.894-.553L5.5%2015a.5.5%200%200%201%200-1%20.5.5%200%200%201%200-1%20.5.5%200%200%201-.46-.302l-.761-1.77a2%202%200%200%200-.453-.618A5.98%205.98%200%200%201%202%206m6-5a5%205%200%200%200-3.479%208.592c.263.254.514.564.676.941L5.83%2012h4.342l.632-1.467c.162-.377.413-.687.676-.941A5%205%200%200%200%208%201%22/%3E%3C/svg%3E");}.pdoc .alert.important{color:#055160;background-color:#cff4fc;border-color:#9eeaf9;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23055160%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%200a2%202%200%200%200-2%202v12a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V2a2%202%200%200%200-2-2zm6%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.caution{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M11.46.146A.5.5%200%200%200%2011.107%200H4.893a.5.5%200%200%200-.353.146L.146%204.54A.5.5%200%200%200%200%204.893v6.214a.5.5%200%200%200%20.146.353l4.394%204.394a.5.5%200%200%200%20.353.146h6.214a.5.5%200%200%200%20.353-.146l4.394-4.394a.5.5%200%200%200%20.146-.353V4.893a.5.5%200%200%200-.146-.353zM8%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:27px;vertical-align:bottom;width:50px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
+    <style>/*! custom.css */</style></head>
+<body>
+    <nav class="pdoc">
+        <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
+        <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
+        <div>            <a class="pdoc-button module-list-button" href="index.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+  <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>                &nbsp;
+                Module Index
+            </a>
+
+            <img src="https://github.com/litlfred/qou/raw/main/assets/qou-logo.png" class="logo" alt="project logo"/>
+
+            <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
+                   pattern=".+" required>
+
+
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="variable" href="#__version__">__version__</a>
+            </li>
+            <li>
+                    <a class="variable" href="#VOL_FIGURE_EIGHT">VOL_FIGURE_EIGHT</a>
+            </li>
+            <li>
+                    <a class="variable" href="#VOL_FIGURE_EIGHT_ERR">VOL_FIGURE_EIGHT_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#MASS_RATIO_MU_E">MASS_RATIO_MU_E</a>
+            </li>
+            <li>
+                    <a class="variable" href="#MASS_RATIO_MU_E_ERR">MASS_RATIO_MU_E_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#HBAR_Q">HBAR_Q</a>
+            </li>
+            <li>
+                    <a class="variable" href="#HBAR_Q_SQ">HBAR_Q_SQ</a>
+            </li>
+            <li>
+                    <a class="variable" href="#Q">Q</a>
+            </li>
+            <li>
+                    <a class="variable" href="#Q_ERR">Q_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#Q_INV">Q_INV</a>
+            </li>
+            <li>
+                    <a class="variable" href="#Q_INV_ERR">Q_INV_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#HA">HA</a>
+            </li>
+            <li>
+                    <a class="variable" href="#HA_ERR">HA_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#E_CROSS">E_CROSS</a>
+            </li>
+            <li>
+                    <a class="variable" href="#E_CROSS_ERR">E_CROSS_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#S_SKEIN">S_SKEIN</a>
+            </li>
+            <li>
+                    <a class="variable" href="#S_SKEIN_ERR">S_SKEIN_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#TWO_Q">TWO_Q</a>
+            </li>
+            <li>
+                    <a class="variable" href="#TWO_Q_ERR">TWO_Q_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#TANH_LN_Q">TANH_LN_Q</a>
+            </li>
+            <li>
+                    <a class="variable" href="#TANH_LN_Q_ERR">TANH_LN_Q_ERR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#LN_Q">LN_Q</a>
+            </li>
+            <li>
+                    <a class="function" href="#log_q">log_q</a>
+            </li>
+            <li>
+                    <a class="function" href="#q_int">q_int</a>
+            </li>
+            <li>
+                    <a class="function" href="#q_int_err">q_int_err</a>
+            </li>
+            <li>
+                    <a class="variable" href="#Q_RAT_NUM">Q_RAT_NUM</a>
+            </li>
+            <li>
+                    <a class="variable" href="#Q_RAT_DEN">Q_RAT_DEN</a>
+            </li>
+            <li>
+                    <a class="variable" href="#Q_50_DIGIT_STR">Q_50_DIGIT_STR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#MASS_RATIO_MU_E_STR">MASS_RATIO_MU_E_STR</a>
+            </li>
+            <li>
+                    <a class="variable" href="#HAS_MPMATH">HAS_MPMATH</a>
+            </li>
+            <li>
+                    <a class="function" href="#set_compute_dps">set_compute_dps</a>
+            </li>
+            <li>
+                    <a class="function" href="#fmt">fmt</a>
+            </li>
+            <li>
+                    <a class="variable" href="#COMPUTE_DPS">COMPUTE_DPS</a>
+            </li>
+            <li>
+                    <a class="variable" href="#OUTPUT_DPS">OUTPUT_DPS</a>
+            </li>
+            <li>
+                    <a class="variable" href="#PRECISION_GUARD">PRECISION_GUARD</a>
+            </li>
+            <li>
+                    <a class="variable" href="#COMPUTE_DPS_DEFAULT">COMPUTE_DPS_DEFAULT</a>
+            </li>
+            <li>
+                    <a class="variable" href="#OUTPUT_DPS_DEFAULT">OUTPUT_DPS_DEFAULT</a>
+            </li>
+            <li>
+                    <a class="variable" href="#PRECISION_GUARD_DEFAULT">PRECISION_GUARD_DEFAULT</a>
+            </li>
+            <li>
+                    <a class="class" href="#WitnessBuilder">WitnessBuilder</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#WitnessBuilder.__init__">WitnessBuilder</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.engine">engine</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.engine_version">engine_version</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.description">description</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.content_block">content_block</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.audit_only">audit_only</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.assertions">assertions</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.parameters">parameters</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.data">data</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#WitnessBuilder.caveats">caveats</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.set_description">set_description</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.set_content_block">set_content_block</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.set_audit_only">set_audit_only</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.add_assertion">add_assertion</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.add_parameter">add_parameter</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.add_data">add_data</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.add_caveat">add_caveat</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.add_upstream">add_upstream</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.wrap_legacy">wrap_legacy</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.stamp_staleness_metadata">stamp_staleness_metadata</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.is_fresh">is_fresh</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.build">build</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#WitnessBuilder.save">save</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Assertion">Assertion</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Assertion.__init__">Assertion</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Assertion.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Assertion.computed">computed</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Assertion.expected">expected</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Assertion.tolerance">tolerance</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Assertion.unit">unit</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Assertion.source">source</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Assertion.passed">passed</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Assertion.to_dict">to_dict</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="function" href="#file_content_hash">file_content_hash</a>
+            </li>
+            <li>
+                    <a class="function" href="#load_and_hash_upstream">load_and_hash_upstream</a>
+            </li>
+            <li>
+                    <a class="function" href="#check_witness_staleness">check_witness_staleness</a>
+            </li>
+    </ul>
+
+
+
+        <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
+            built with <span class="visually-hidden">pdoc</span><img
+                alt="pdoc logo"
+                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22pdoc%20logo%22%20width%3D%22300%22%20height%3D%22160%22%20viewBox%3D%220%200%20150%2080%22%3E%3Ctitle%3Epdoc%3C/title%3E%3Cpath%20d%3D%22M132.316%2048.886c.276-4.679%202.342-6.698%204.409-7.982s4.27-1.165%206.751-1.055c1.586.07%203.044.156%204.222-.482%201.142-.619%202.026-1.932%202.162-3.739.268-3.576-1.929-5.368-5.006-5.551s-7.599.524-10.517%201.606c-4.455%201.652-8.588%206.606-9.552%208.992s-2.342%206.193-1.745%2010.873%202.664%209.221%205.878%2011.79%205.878%203.808%2010.103%204.312%203.444.229%206.062.229%205.006-2.202%204.914-4.909-2.296-5.001-4.501-4.863-3.077.505-5.281.229-7.715-2.064-7.899-9.451z%22%20fill%3D%22%23198754%22/%3E%3Ccircle%20cx%3D%22101.504%22%20cy%3D%2248.943%22%20r%3D%2214.208%22%20fill%3D%22none%22%20stroke%3D%22%23198754%22%20stroke-width%3D%229.354%22/%3E%3Cpath%20d%3D%22M87.81.002c-3.637.065-5.001.454-7.014%201.232s-3.443%201.363-6.3%204.282c-1.723%201.76-3.148%205.019-3.776%207.329-.413%201.521-.316%202.63-.316%202.63l-.195%2034.612c.065%205.774-6.755%208.305-9.612%208.37s-9.678-1.038-9.743-9.408%207.128-9.521%208.362-9.521c1.413-.13%202.526-.021%203.718-.016%202.071.009%204.157-.778%204.092-4.671s-4.157-4.736-4.157-4.736c-6.3-.843-11.43%202.206-11.43%202.206S40.917%2038.15%2041.372%2049.634%2051.568%2068.19%2061.311%2068.125s18.316-7.007%2018.445-17.193l.13-22.772c.046-2.291%202.683-3.644%204.476-4.203.745-.232%201.694-.274%201.694-.274l10.457-.13s4.871-.324%207.729-3.114%204.352-6.294%204.352-6.294.974-3.049.13-4.606-.195-1.233-2.792-3.309-8.573-4.477-8.573-4.477S91.447-.063%2087.81.002zM0%2047.169l.065%2028.417S0%2080.127%204.481%2079.997s5.072-3.866%205.049-4.152l-.113-28.482s1.624-7.656%209.937-7.721%2010.002%206.942%2010.002%208.499-.909%2010.51-9.093%2010.51c-.948%200-2.99-.567-4.145-.272-3.919%201-3.194%204.554-3.194%204.554s.065%205.061%207.404%204.996%2018.575-6.034%2018.575-19.074S26.953%2030.04%2019.549%2029.91%201.234%2035.296%200%2047.169z%22%20fill%3D%22%23198754%22/%3E%3Cg%20transform%3D%22matrix%28.325601%200%200%20.325256%20-10.32669%20-45.802786%29%22%3E%3Ccircle%20cx%3D%22297.554%22%20cy%3D%22172.286%22%20r%3D%2216.5%22%20fill%3D%22%23fff%22/%3E%3Cellipse%20cx%3D%22297.709%22%20cy%3D%22172.642%22%20rx%3D%2211.071%22%20ry%3D%2210.871%22%20fill%3D%22%23105a48%22/%3E%3Ccircle%20cx%3D%22304.104%22%20cy%3D%22167.667%22%20r%3D%224.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Cpath%20d%3D%22M94.661%2017.032l.893-1.476s.99.714%201.916.925%201.575.114%202.955.114l14.565-.162c1.283-.032%203.085-.762%203.02-3.293s-.373-3.503-.373-3.503l1.283-.487s.52.503.877%201.573.309%201.995.292%202.66-.227%201.541-.227%201.541%201.564-.308%202.359-1.038.823-.779%201.489-1.508.812-.86.812-.86.552-.13.877.26.341.957.065%201.46-1.672%202.206-3.247%203.066-2.76%201.427-3.929%201.768-3.848.73-7.063.714l-10.944-.114s-2.143-.081-3.02-.373-2.241-.973-2.598-1.265z%22%20fill%3D%22%23d36d49%22/%3E%3Cg%20fill%3D%22%23105a48%22%3E%3Cellipse%20cx%3D%2293.052%22%20cy%3D%2243.567%22%20rx%3D%22.869%22%20ry%3D%221.014%22%20transform%3D%22rotate%28341.022%29%22/%3E%3Cellipse%20cx%3D%22104.3%22%20cy%3D%22-16.184%22%20rx%3D%22.865%22%20ry%3D%221.009%22%20transform%3D%22rotate%2814.786%29%22/%3E%3C/g%3E%3C/svg%3E"/>
+        </a>
+</div>
+    </nav>
+    <main class="pdoc">
+            <section class="module-info">
+                    <h1 class="modulename">
+qou_substrate    </h1>
+
+                        <div class="docstring"><p>qou-substrate — pure-Python substrate infrastructure for the Quantum Observable Universe.</p>
+
+<p>Three modules, no Rust dependency, ~1,100 LOC total:</p>
+
+<ul>
+<li><p><code>qou_substrate.constants</code>  — the substrate parameter <code>q_0</code> and its
+derived constants (<code>HA = q - q^-1</code>, <code><a href="#E_CROSS">E_CROSS</a></code>, <code><a href="#TWO_Q">TWO_Q</a></code>, <code><a href="#LN_Q">LN_Q</a></code>,
+<code><a href="#S_SKEIN">S_SKEIN</a></code>, <code>q_int(n)</code>, …) plus uncertainty propagation. Single
+source of truth: re-run all witnesses if Vol(4_1) or m_μ/m_e changes.</p></li>
+<li><p><code>qou_substrate.precision</code> — <code>set_compute_dps(50)</code> + <code><a href="#fmt">fmt()</a></code>, the
+mpmath precision discipline (compute at OUTPUT_DPS+GUARD, serialise at
+OUTPUT_DPS) every witness script uses.</p></li>
+<li><p><code>qou_substrate.witness</code>   — <code><a href="#WitnessBuilder">WitnessBuilder</a></code>, the schema-shaped
+JSON emitter with git provenance, per-file content-hash staleness, and
+upstream-witness drift detection. Used by 67% of QOU compute scripts.</p></li>
+</ul>
+
+<p>Stable re-exports below; the submodules are also importable directly if
+the caller needs a symbol not flattened here.</p>
+</div>
+
+                
+                
+                
+            </section>
+                <section id="__version__">
+                    <div class="attr variable">
+            <span class="name">__version__</span>        =
+<span class="default_value">&#39;0.1.0&#39;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#__version__"></a>
+    
+    
+
+                </section>
+                <section id="VOL_FIGURE_EIGHT">
+                    <div class="attr variable">
+            <span class="name">VOL_FIGURE_EIGHT</span>        =
+<span class="default_value">2.029883212819307</span>
+
+        
+    </div>
+    <a class="headerlink" href="#VOL_FIGURE_EIGHT"></a>
+    
+    
+
+                </section>
+                <section id="VOL_FIGURE_EIGHT_ERR">
+                    <div class="attr variable">
+            <span class="name">VOL_FIGURE_EIGHT_ERR</span>        =
+<span class="default_value">1e-12</span>
+
+        
+    </div>
+    <a class="headerlink" href="#VOL_FIGURE_EIGHT_ERR"></a>
+    
+    
+
+                </section>
+                <section id="MASS_RATIO_MU_E">
+                    <div class="attr variable">
+            <span class="name">MASS_RATIO_MU_E</span>        =
+<span class="default_value">206.768283</span>
+
+        
+    </div>
+    <a class="headerlink" href="#MASS_RATIO_MU_E"></a>
+    
+    
+
+                </section>
+                <section id="MASS_RATIO_MU_E_ERR">
+                    <div class="attr variable">
+            <span class="name">MASS_RATIO_MU_E_ERR</span>        =
+<span class="default_value">4.6e-06</span>
+
+        
+    </div>
+    <a class="headerlink" href="#MASS_RATIO_MU_E_ERR"></a>
+    
+    
+
+                </section>
+                <section id="HBAR_Q">
+                    <div class="attr variable">
+            <span class="name">HBAR_Q</span>        =
+<span class="default_value">0.09908172643569887</span>
+
+        
+    </div>
+    <a class="headerlink" href="#HBAR_Q"></a>
+    
+    
+
+                </section>
+                <section id="HBAR_Q_SQ">
+                    <div class="attr variable">
+            <span class="name">HBAR_Q_SQ</span>        =
+<span class="default_value">0.00981718851347867</span>
+
+        
+    </div>
+    <a class="headerlink" href="#HBAR_Q_SQ"></a>
+    
+    
+
+                </section>
+                <section id="Q">
+                    <div class="attr variable">
+            <span class="name">Q</span>        =
+<span class="default_value">1.1099785955541805</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Q"></a>
+    
+    
+
+                </section>
+                <section id="Q_ERR">
+                    <div class="attr variable">
+            <span class="name">Q_ERR</span>        =
+<span class="default_value">1.3578965598837824e-09</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Q_ERR"></a>
+    
+    
+
+                </section>
+                <section id="Q_INV">
+                    <div class="attr variable">
+            <span class="name">Q_INV</span>        =
+<span class="default_value">0.9009182735643011</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Q_INV"></a>
+    
+    
+
+                </section>
+                <section id="Q_INV_ERR">
+                    <div class="attr variable">
+            <span class="name">Q_INV_ERR</span>        =
+<span class="default_value">1.1021418154452027e-09</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Q_INV_ERR"></a>
+    
+    
+
+                </section>
+                <section id="HA">
+                    <div class="attr variable">
+            <span class="name">HA</span>        =
+<span class="default_value">0.20906032198987945</span>
+
+        
+    </div>
+    <a class="headerlink" href="#HA"></a>
+    
+    
+
+                </section>
+                <section id="HA_ERR">
+                    <div class="attr variable">
+            <span class="name">HA_ERR</span>        =
+<span class="default_value">2.4600383753289846e-09</span>
+
+        
+    </div>
+    <a class="headerlink" href="#HA_ERR"></a>
+    
+    
+
+                </section>
+                <section id="E_CROSS">
+                    <div class="attr variable">
+            <span class="name">E_CROSS</span>        =
+<span class="default_value">0.10453016099493972</span>
+
+        
+    </div>
+    <a class="headerlink" href="#E_CROSS"></a>
+    
+    
+
+                </section>
+                <section id="E_CROSS_ERR">
+                    <div class="attr variable">
+            <span class="name">E_CROSS_ERR</span>        =
+<span class="default_value">1.2300191876644923e-09</span>
+
+        
+    </div>
+    <a class="headerlink" href="#E_CROSS_ERR"></a>
+    
+    
+
+                </section>
+                <section id="S_SKEIN">
+                    <div class="attr variable">
+            <span class="name">S_SKEIN</span>        =
+<span class="default_value">0.10438806980915827</span>
+
+        
+    </div>
+    <a class="headerlink" href="#S_SKEIN"></a>
+    
+    
+
+                </section>
+                <section id="S_SKEIN_ERR">
+                    <div class="attr variable">
+            <span class="name">S_SKEIN_ERR</span>        =
+<span class="default_value">1.2250190318977517e-09</span>
+
+        
+    </div>
+    <a class="headerlink" href="#S_SKEIN_ERR"></a>
+    
+    
+
+                </section>
+                <section id="TWO_Q">
+                    <div class="attr variable">
+            <span class="name">TWO_Q</span>        =
+<span class="default_value">2.010896869118482</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TWO_Q"></a>
+    
+    
+
+                </section>
+                <section id="TWO_Q_ERR">
+                    <div class="attr variable">
+            <span class="name">TWO_Q_ERR</span>        =
+<span class="default_value">2.557547444385798e-10</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TWO_Q_ERR"></a>
+    
+    
+
+                </section>
+                <section id="TANH_LN_Q">
+                    <div class="attr variable">
+            <span class="name">TANH_LN_Q</span>        =
+<span class="default_value">0.10396372146201877</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TANH_LN_Q"></a>
+    
+    
+
+                </section>
+                <section id="TANH_LN_Q_ERR">
+                    <div class="attr variable">
+            <span class="name">TANH_LN_Q_ERR</span>        =
+<span class="default_value">6.716098977526537e-10</span>
+
+        
+    </div>
+    <a class="headerlink" href="#TANH_LN_Q_ERR"></a>
+    
+    
+
+                </section>
+                <section id="LN_Q">
+                    <div class="attr variable">
+            <span class="name">LN_Q</span>        =
+<span class="default_value">0.10434073185379582</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LN_Q"></a>
+    
+    
+
+                </section>
+                <section id="log_q">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">log_q</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">x</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#log_q"></a>
+    
+            <div class="docstring"><p>Base-q logarithm: log_q(x) = ln(x) / ln(q).
+Maps Skein polynomial ratios to q-integers: log_q(q^n) = n.</p>
+</div>
+
+
+                </section>
+                <section id="q_int">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">q_int</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">n</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#q_int"></a>
+    
+            <div class="docstring"><p>Quantum integer [n]_q = (q^n - q^{-n}) / (q - q^{-1}).</p>
+</div>
+
+
+                </section>
+                <section id="q_int_err">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">q_int_err</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">n</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#q_int_err"></a>
+    
+            <div class="docstring"><p>Uncertainty in [n]_q from Q_ERR.</p>
+</div>
+
+
+                </section>
+                <section id="Q_RAT_NUM">
+                    <div class="attr variable">
+            <span class="name">Q_RAT_NUM</span>        =
+<span class="default_value">11099786</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Q_RAT_NUM"></a>
+    
+    
+
+                </section>
+                <section id="Q_RAT_DEN">
+                    <div class="attr variable">
+            <span class="name">Q_RAT_DEN</span>        =
+<span class="default_value">10000000</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Q_RAT_DEN"></a>
+    
+    
+
+                </section>
+                <section id="Q_50_DIGIT_STR">
+                    <div class="attr variable">
+            <span class="name">Q_50_DIGIT_STR</span>        =
+<span class="default_value">&#39;1.10997859555418057528159407960950937799328227995870&#39;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Q_50_DIGIT_STR"></a>
+    
+    
+
+                </section>
+                <section id="MASS_RATIO_MU_E_STR">
+                    <div class="attr variable">
+            <span class="name">MASS_RATIO_MU_E_STR</span>        =
+<span class="default_value">&#39;206.7682830&#39;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#MASS_RATIO_MU_E_STR"></a>
+    
+    
+
+                </section>
+                <section id="HAS_MPMATH">
+                    <div class="attr variable">
+            <span class="name">HAS_MPMATH</span>        =
+<span class="default_value">True</span>
+
+        
+    </div>
+    <a class="headerlink" href="#HAS_MPMATH"></a>
+    
+    
+
+                </section>
+                <section id="set_compute_dps">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">set_compute_dps</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">dps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#set_compute_dps"></a>
+    
+            <div class="docstring"><p>Set <code>mp.mp.dps</code> to <code>dps</code> (or <code><a href="#COMPUTE_DPS">COMPUTE_DPS</a></code> if <code>None</code>).</p>
+
+<p>Returns the actual value of <code>mp.mp.dps</code> after the set.
+Idempotent.</p>
+</div>
+
+
+                </section>
+                <section id="fmt">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">fmt</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span>, </span><span class="param"><span class="n">dps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>, </span><span class="param"><span class="n">strip_zeros</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span><span class="return-annotation">) -> <span class="nb">str</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#fmt"></a>
+    
+            <div class="docstring"><p>Serialize an mpmath value to its output-precision string form.</p>
+
+<p>Uses <code>mp.nstr</code> with <code><a href="#OUTPUT_DPS">OUTPUT_DPS</a></code> (default) or an explicit per-
+call override.  <code>strip_zeros=False</code> keeps trailing zeros so
+JSON byte-stability is preserved across runs.</p>
+
+<p>Routing:</p>
+
+<ul>
+<li><code>mpf</code> (real) and <code>mpc</code> (complex): formatted via <code>mp.nstr</code>
+at the requested precision — the canonical numeric path.</li>
+<li>Everything else (<code>int</code>, <code>float</code>, <code>str</code>, <code>Path</code>, lists,
+dicts, <code>None</code>, …): short-circuited to <code>str(value)</code> without
+touching <code>mp.nstr</code>.  <code>int</code> and <code>float</code> get their natural
+Python repr (no spurious mpf-promotion noise on a 0.1-style
+float).  Use <code>str(...)</code> directly for non-numeric witness
+fields; <code><a href="#fmt">fmt</a></code> tolerates them only as a safety net.</li>
+</ul>
+</div>
+
+
+                </section>
+                <section id="COMPUTE_DPS">
+                    <div class="attr variable">
+            <span class="name">COMPUTE_DPS</span>        =
+<span class="default_value">50</span>
+
+        
+    </div>
+    <a class="headerlink" href="#COMPUTE_DPS"></a>
+    
+    
+
+                </section>
+                <section id="OUTPUT_DPS">
+                    <div class="attr variable">
+            <span class="name">OUTPUT_DPS</span>        =
+<span class="default_value">40</span>
+
+        
+    </div>
+    <a class="headerlink" href="#OUTPUT_DPS"></a>
+    
+    
+
+                </section>
+                <section id="PRECISION_GUARD">
+                    <div class="attr variable">
+            <span class="name">PRECISION_GUARD</span>        =
+<span class="default_value">10</span>
+
+        
+    </div>
+    <a class="headerlink" href="#PRECISION_GUARD"></a>
+    
+    
+
+                </section>
+                <section id="COMPUTE_DPS_DEFAULT">
+                    <div class="attr variable">
+            <span class="name">COMPUTE_DPS_DEFAULT</span>        =
+<span class="default_value">50</span>
+
+        
+    </div>
+    <a class="headerlink" href="#COMPUTE_DPS_DEFAULT"></a>
+    
+    
+
+                </section>
+                <section id="OUTPUT_DPS_DEFAULT">
+                    <div class="attr variable">
+            <span class="name">OUTPUT_DPS_DEFAULT</span>        =
+<span class="default_value">40</span>
+
+        
+    </div>
+    <a class="headerlink" href="#OUTPUT_DPS_DEFAULT"></a>
+    
+    
+
+                </section>
+                <section id="PRECISION_GUARD_DEFAULT">
+                    <div class="attr variable">
+            <span class="name">PRECISION_GUARD_DEFAULT</span>        =
+<span class="default_value">10</span>
+
+        
+    </div>
+    <a class="headerlink" href="#PRECISION_GUARD_DEFAULT"></a>
+    
+    
+
+                </section>
+                <section id="WitnessBuilder">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">WitnessBuilder</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder"></a>
+    
+            <div class="docstring"><p>Build a structured witness JSON conforming to ComputationWitness.</p>
+
+<p>Automatically captures:</p>
+
+<ul>
+<li>Git commit SHA (HEAD and script file)</li>
+<li>Script content hash (for staleness detection)</li>
+<li>Timestamp</li>
+<li>Engine and version</li>
+<li>Execution duration</li>
+</ul>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>name : str
+    Computation name (becomes the filename: <code>&lt;name&gt;.witness.json</code>).
+engine : str
+    One of: "sympy", "mpmath", "snappea", "sage", "numpy", "python".
+engine_version : str, optional
+    Explicit version string. Auto-detected if omitted.
+output_dir : str or Path, optional
+    Directory for the witness file. Defaults to the directory of
+    the calling script.</p>
+</div>
+
+
+                            <div id="WitnessBuilder.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">WitnessBuilder</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>,</span><span class="param">	<span class="n">engine_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">output_dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">NoneType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">start_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">_script_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">NoneType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.name"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.engine" class="classattr">
+                                <div class="attr variable">
+            <span class="name">engine</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.engine"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.engine_version" class="classattr">
+                                <div class="attr variable">
+            <span class="name">engine_version</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.engine_version"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.description" class="classattr">
+                                <div class="attr variable">
+            <span class="name">description</span><span class="annotation">: Optional[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.description"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.content_block" class="classattr">
+                                <div class="attr variable">
+            <span class="name">content_block</span><span class="annotation">: Optional[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.content_block"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.audit_only" class="classattr">
+                                <div class="attr variable">
+            <span class="name">audit_only</span><span class="annotation">: Optional[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.audit_only"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.assertions" class="classattr">
+                                <div class="attr variable">
+            <span class="name">assertions</span><span class="annotation">: list[<a href="#Assertion">Assertion</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.assertions"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.parameters" class="classattr">
+                                <div class="attr variable">
+            <span class="name">parameters</span><span class="annotation">: dict[str, typing.Any]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.parameters"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.data" class="classattr">
+                                <div class="attr variable">
+            <span class="name">data</span><span class="annotation">: dict[str, typing.Any]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.data"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.caveats" class="classattr">
+                                <div class="attr variable">
+            <span class="name">caveats</span><span class="annotation">: list[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.caveats"></a>
+    
+    
+
+                            </div>
+                            <div id="WitnessBuilder.set_description" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">set_description</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">desc</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.set_description"></a>
+    
+            <div class="docstring"><p>Set the human-readable description.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.set_content_block" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">set_content_block</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">label</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.set_content_block"></a>
+    
+            <div class="docstring"><p>Link this witness to a content block label (e.g. 'prop:foo').</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.set_audit_only" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">set_audit_only</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">report_path</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.set_audit_only"></a>
+    
+            <div class="docstring"><p>Mark this witness as audit-only — produced by an audit/probe whose
+report lives in <code>docs/audits/*.md</code> and which is <strong>not expected</strong> to
+wire to a content block via <code>computation.witness</code>.</p>
+
+<p>Setting this field excludes the witness from the orphan tally
+computed by <code>scripts/audit-wiring.ts</code>.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>report_path : str
+    Path to the audit report (typically
+    <code>docs/audits/YYYY-MM-DD-&lt;slug&gt;.md</code>), relative to repo root.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>::</p>
+
+<pre><code>w = WitnessBuilder("path-b-evacuation", engine="numpy")
+w.set_audit_only("docs/audits/2026-05-06-path-b-evacuation.md")
+... # compute
+w.save()
+</code></pre>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.add_assertion" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_assertion</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">computed</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">expected</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">tolerance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">unit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">source</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.add_assertion"></a>
+    
+            <div class="docstring"><p>Add a named assertion.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.add_parameter" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_parameter</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">key</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.add_parameter"></a>
+    
+            <div class="docstring"><p>Record an input parameter.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.add_data" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_data</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">key</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.add_data"></a>
+    
+            <div class="docstring"><p>Attach arbitrary computation data.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.add_caveat" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_caveat</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">text</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.add_caveat"></a>
+    
+            <div class="docstring"><p>Add a caveat or limitation note.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.add_upstream" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_upstream</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.add_upstream"></a>
+    
+            <div class="docstring"><p>Load an upstream witness file, record its hash, return body.</p>
+
+<p>Replaces <code>json.loads(path.read_text())</code> at the call site
+while accumulating the sha256 + commit-SHA + computedAt of
+every upstream consumed.  The accumulated list is emitted by
+<code><a href="#WitnessBuilder.build">build()</a></code> under <code>data.upstream_witness_hashes</code> for the
+drift validator <code>witness_dependency_drift.py</code> to walk.</p>
+
+<p>See <code>docs/audits/2026-05-16-stale-witness-infra-gap.md</code> for
+the rationale.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.wrap_legacy" class="classattr">
+                                <div class="attr function">
+                    <div class="decorator decorator-classmethod">@classmethod</div>
+
+        <span class="def">def</span>
+        <span class="name">wrap_legacy</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">cls</span>,</span><span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">payload</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>,</span><span class="param">	<span class="o">*</span>,</span><span class="param">	<span class="n">script_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span>,</span><span class="param">	<span class="n">engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>,</span><span class="param">	<span class="n">engine_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">output_dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">NoneType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">start_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n"><a href="#WitnessBuilder">WitnessBuilder</a></span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.wrap_legacy"></a>
+    
+            <div class="docstring"><p>Wrap a legacy hand-written witness payload.</p>
+
+<p>Migrates a pre-existing <code>json.dump(out_dict, f)</code> writer to
+the <code><a href="#WitnessBuilder">WitnessBuilder</a></code> API <strong>without</strong> changing the on-disk
+layout: every original top-level key is preserved verbatim,
+and the structured fields <code>scriptHash</code>, <code>scriptCommitSha</code>,
+<code><a href="#WitnessBuilder.engine">engine</a></code>, <code>engineVersion</code>, <code>computedAt</code>, and
+<code>durationMs</code> are added so that <code>run_pipeline.py</code> can
+detect staleness (P30 in the compute-audit catalogue).</p>
+
+<p>Reserved keys (<code><a href="#WitnessBuilder.description">description</a></code>, <code>auditOnly</code>, etc.) are
+routed to their structured slots; everything else is held in
+<code>_extra_top_level</code> and emitted verbatim by <code><a href="#WitnessBuilder.build">build()</a></code>.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>name : str
+    Witness filename stem (becomes <code>&lt;name&gt;.witness.json</code>).
+payload : Mapping[str, Any]
+    The dict the legacy script was dumping with <code>json.dump</code>.
+script_path : str or Path
+    Absolute path to the calling script. Required because
+    <code><a href="#WitnessBuilder.wrap_legacy">wrap_legacy</a></code> is a classmethod and cannot reliably
+    inspect the caller frame.
+engine, engine_version, output_dir
+    Same as the constructor.</p>
+
+<h2 id="returns">Returns</h2>
+
+<p>WitnessBuilder
+    A builder whose <code><a href="#WitnessBuilder.save">save()</a></code> will produce a witness JSON
+    that contains every original key plus the staleness
+    metadata. Bit-equivalence on the original keys is
+    preserved.</p>
+
+<h2 id="example">Example</h2>
+
+<p>::</p>
+
+<pre><code>out = {"computation": "my-thing", "description": "...", ...}
+(<a href="#WitnessBuilder.wrap_legacy">WitnessBuilder.wrap_legacy</a>(
+    "my-thing", out, script_path=__file__,
+    engine="mpmath",
+)
+    .set_audit_only("docs/audits/2026-05-08-compute-audit-workplan.md")
+    .save())
+</code></pre>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.stamp_staleness_metadata" class="classattr">
+                                <div class="attr function">
+                    <div class="decorator decorator-staticmethod">@staticmethod</div>
+
+        <span class="def">def</span>
+        <span class="name">stamp_staleness_metadata</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="o">*</span>,</span><span class="param">	<span class="n">script_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span>,</span><span class="param">	<span class="n">engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>,</span><span class="param">	<span class="n">engine_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.stamp_staleness_metadata"></a>
+    
+            <div class="docstring"><p>Public helper: stamp the WitnessBuilder staleness fields onto
+an existing dict in place (used when the legacy filename is
+non-standard and <code>wrap_legacy().save()</code> cannot be applied
+without breaking consumers).</p>
+
+<p>Mutates and returns <code>payload</code> with <code>scriptHash</code>,
+<code>scriptCommitSha</code>, <code>commitSha</code>, <code><a href="#WitnessBuilder.engine">engine</a></code>, <code>engineVersion</code>,
+<code>computedAt</code>, and <code>durationMs</code> set. Avoids the need to
+import the underscore-prefixed <code>_git_head_sha</code> /
+<code>_git_file_sha</code> helpers from outside this module.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.is_fresh" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">is_fresh</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.is_fresh"></a>
+    
+            <div class="docstring"><p>Return True if an existing witness JSON on disk records the
+same script content hash as the current source.</p>
+
+<p>Use this to short-circuit expensive recomputations::</p>
+
+<pre><code>w = WitnessBuilder("my-computation", engine="sympy")
+if w.is_fresh():
+    print(f"✓ {w.name}.witness.json fresh; skipping")
+    return
+... # expensive compute
+w.add_assertion(...)
+w.save()
+</code></pre>
+
+<p>Returns False if the witness file does not exist, is malformed,
+or records a different <code>scriptHash</code>.</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.build" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">build</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.build"></a>
+    
+            <div class="docstring"><p>Build the witness dictionary (without writing to disk).</p>
+</div>
+
+
+                            </div>
+                            <div id="WitnessBuilder.save" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">save</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">extra</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#WitnessBuilder.save"></a>
+    
+            <div class="docstring"><p>Build and write the witness JSON file. Returns the path.</p>
+
+<p><strong>Content-diff-aware:</strong> if the on-disk witness already exists and
+differs from the new one ONLY in ephemeral meta fields (commitSha,
+scriptCommitSha, computedAt, durationMs), the on-disk file is
+PRESERVED unchanged. This breaks the CI drift loop (each commit
+embeds a fresh commitSha, but CI's strict-diff check would always
+fail) while keeping commitSha as a staleness audit-trail: it
+records the LAST commit that substantively changed the witness
+content, not the most recent commit that ran the validator.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="Assertion">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Assertion</span>:
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion"></a>
+    
+            <div class="docstring"><p>A single named claim with computed vs expected values.</p>
+</div>
+
+
+                            <div id="Assertion.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">Assertion</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">computed</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">expected</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">tolerance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">unit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">source</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.name"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.computed" class="classattr">
+                                <div class="attr variable">
+            <span class="name">computed</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.computed"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.expected" class="classattr">
+                                <div class="attr variable">
+            <span class="name">expected</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.expected"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.tolerance" class="classattr">
+                                <div class="attr variable">
+            <span class="name">tolerance</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.tolerance"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.unit" class="classattr">
+                                <div class="attr variable">
+            <span class="name">unit</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.unit"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.source" class="classattr">
+                                <div class="attr variable">
+            <span class="name">source</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.source"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.passed" class="classattr">
+                                <div class="attr variable">
+            <span class="name">passed</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.passed"></a>
+    
+    
+
+                            </div>
+                            <div id="Assertion.to_dict" class="classattr">
+                                <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">to_dict</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#Assertion.to_dict"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="file_content_hash">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">file_content_hash</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">path</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span></span><span class="return-annotation">) -> <span class="nb">str</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#file_content_hash"></a>
+    
+            <div class="docstring"><p>SHA-256 content hash (hex prefix) of a file, matching lean-witness.ts.</p>
+</div>
+
+
+                </section>
+                <section id="load_and_hash_upstream">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">load_and_hash_upstream</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span></span><span class="return-annotation">) -> <span class="nb">tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#load_and_hash_upstream"></a>
+    
+            <div class="docstring"><p>Load an upstream witness file and return (body, hash_record).</p>
+
+<p>The hash_record is the data a downstream consumer needs to verify
+it has the same upstream as when its own witness was last
+regenerated: file sha256, commitSha, scriptCommitSha, computedAt.</p>
+
+<p>See <code>witness_dependency_drift.py</code> for the validator that walks
+<code>upstream_witness_hashes</code> arrays and reports staleness.
+See <code>docs/audits/2026-05-16-stale-witness-infra-gap.md</code> for
+the adoption pattern.</p>
+</div>
+
+
+                </section>
+                <section id="check_witness_staleness">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">check_witness_staleness</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">witness_path</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#check_witness_staleness"></a>
+    
+            <div class="docstring"><p>Check if a witness JSON is stale relative to its script.</p>
+
+<p>Returns dict with:
+  stale: bool
+  reason: str (if stale)
+  scriptHash: current vs recorded
+  commitSha: current vs recorded</p>
+</div>
+
+
+                </section>
+    </main>
+<script>
+    function escapeHTML(html) {
+        return document.createElement('div').appendChild(document.createTextNode(html)).parentNode.innerHTML;
+    }
+
+    const originalContent = document.querySelector("main.pdoc");
+    let currentContent = originalContent;
+
+    function setContent(innerHTML) {
+        let elem;
+        if (innerHTML) {
+            elem = document.createElement("main");
+            elem.classList.add("pdoc");
+            elem.innerHTML = innerHTML;
+        } else {
+            elem = originalContent;
+        }
+        if (currentContent !== elem) {
+            currentContent.replaceWith(elem);
+            currentContent = elem;
+        }
+    }
+
+    function getSearchTerm() {
+        return (new URL(window.location)).searchParams.get("search");
+    }
+
+    const searchBox = document.querySelector(".pdoc input[type=search]");
+    searchBox.addEventListener("input", function () {
+        let url = new URL(window.location);
+        if (searchBox.value.trim()) {
+            url.hash = "";
+            url.searchParams.set("search", searchBox.value);
+        } else {
+            url.searchParams.delete("search");
+        }
+        history.replaceState("", "", url.toString());
+        onInput();
+    });
+    window.addEventListener("popstate", onInput);
+
+
+    let search, searchErr;
+
+    async function initialize() {
+        try {
+            search = await new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.type = "text/javascript";
+                script.async = true;
+                script.onload = () => resolve(window.pdocSearch);
+                script.onerror = (e) => reject(e);
+                script.src = "search.js";
+                document.getElementsByTagName("head")[0].appendChild(script);
+            });
+        } catch (e) {
+            console.error("Cannot fetch pdoc search index");
+            searchErr = "Cannot fetch search index.";
+        }
+        onInput();
+
+        document.querySelector("nav.pdoc").addEventListener("click", e => {
+            if (e.target.hash) {
+                searchBox.value = "";
+                searchBox.dispatchEvent(new Event("input"));
+            }
+        });
+    }
+
+    function onInput() {
+        setContent((() => {
+            const term = getSearchTerm();
+            if (!term) {
+                return null
+            }
+            if (searchErr) {
+                return `<h3>Error: ${searchErr}</h3>`
+            }
+            if (!search) {
+                return "<h3>Searching...</h3>"
+            }
+
+            window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+
+            const results = search(term);
+
+            let html;
+            if (results.length === 0) {
+                html = `No search results for '${escapeHTML(term)}'.`
+            } else {
+                html = `<h4>${results.length} search result${results.length > 1 ? "s" : ""} for '${escapeHTML(term)}'.</h4>`;
+            }
+            for (let result of results.slice(0, 10)) {
+                let doc = result.doc;
+                let url = `${doc.modulename.replaceAll(".", "/")}.html`;
+                if (doc.qualname) {
+                    url += `#${doc.qualname}`;
+                }
+
+                let heading;
+                switch (result.doc.kind) {
+                    case "function":
+                        if (doc.fullname.endsWith(".__init__")) {
+                            heading = `<span class="name">${doc.fullname.replace(/\.__init__$/, "")}</span>${doc.signature}`;
+                        } else {
+                            heading = `<span class="def">${doc.funcdef}</span> <span class="name">${doc.fullname}</span>${doc.signature}`;
+                        }
+                        break;
+                    case "class":
+                        heading = `<span class="def">class</span> <span class="name">${doc.fullname}</span>`;
+                        if (doc.bases)
+                            heading += `<wbr>(<span class="base">${doc.bases}</span>)`;
+                        heading += `:`;
+                        break;
+                    case "variable":
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        if (doc.annotation)
+                            heading += `<span class="annotation">${doc.annotation}</span>`;
+                        if (doc.default_value)
+                            heading += `<span class="default_value"> = ${doc.default_value}</span>`;
+                        break;
+                    default:
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        break;
+                }
+                html += `
+                        <section class="search-result">
+                        <a href="${url}" class="attr ${doc.kind}">${heading}</a>
+                        <div class="docstring">${doc.doc}</div>
+                        </section>
+                    `;
+
+            }
+            return html;
+        })());
+    }
+
+    if (getSearchTerm()) {
+        initialize();
+        searchBox.value = getSearchTerm();
+        onInput();
+    } else {
+        searchBox.addEventListener("focus", initialize, {once: true});
+    }
+
+    searchBox.addEventListener("keydown", e => {
+        if (["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) {
+            let focused = currentContent.querySelector(".search-result.focused");
+            if (!focused) {
+                currentContent.querySelector(".search-result").classList.add("focused");
+            } else if (
+                e.key === "ArrowDown"
+                && focused.nextElementSibling
+                && focused.nextElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.nextElementSibling.classList.add("focused");
+                focused.nextElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "ArrowUp"
+                && focused.previousElementSibling
+                && focused.previousElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.previousElementSibling.classList.add("focused");
+                focused.previousElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "Enter"
+            ) {
+                focused.querySelector("a").click();
+            }
+        }
+    });
+</script></body>
+</html>
