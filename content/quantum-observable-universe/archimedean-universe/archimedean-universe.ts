@@ -209,6 +209,13 @@ export default chapter({
         "chebyshev-degree-genus",
         "chebyshev-degree-genus-proof",
         "genus-ideal-characterisation",
+      ]),
+    }),
+    section({
+      title: "Descartes condition: torus-knot generators and genus completeness (continued)",
+      label: "sec:archimedean-condition-genus-completeness-continued",
+      blocks: [
+        "archimedean-condition-genus-completeness-continued-intro",
         "genus-ideal-characterisation-proof",
         "yekutieli-leading-coefficient",
         "yekutieli-leading-coefficient-proof",
@@ -313,6 +320,13 @@ export default chapter({
         "categorical-proton-exists",
         "categorical-proton-exists-proof",
         "categorical-proton-unique",
+      ]),
+    }),
+    section({
+      title: "Mesons and nucleons (continued)",
+      label: "sec:mesons-nucleons-continued",
+      blocks: [
+        "mesons-nucleons-continued-intro",
         "categorical-proton-unique-proof",
         "meson-to-proton-via-borromean",
         "categorical-neutron",
@@ -428,6 +442,13 @@ export default chapter({
         "cl2-pentagon-and-faddeev-partial-table2-data",
         "cl2-pentagon-and-faddeev-partial-table1-data",
         "upstream-mathlib-additions",
+      ]),
+    }),
+    section({
+      title: "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) (continued)",
+      label: "sec:archimedean-hartree-crystal-continued-continued",
+      blocks: [
+        "archimedean-hartree-crystal-continued-continued-intro",
         "upstream-mathlib-additions-table2-data",
         "upstream-mathlib-additions-table1-data",
         "alpha-em-categorical-trace-ratio",
@@ -536,6 +557,13 @@ export default chapter({
         "shell-closure-normal-form-table1-data",
         "torus-knot-shell-binding",
 
+      ]),
+    }),
+    section({
+      title: "Atomic shells: construction foundations (continued)",
+      label: "sec:atomic-shells-foundations-continued",
+      blocks: [
+        "atomic-shells-foundations-continued-intro",
         "torus-knot-shell-binding-table1-data",
         "torus-knot-shell-binding-table2-data",
         "torus-knot-shell-binding-table3-data",

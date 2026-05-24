@@ -220,6 +220,13 @@ export default chapter({
         "double-magic-Ca40-diagram",
         "double-magic-Ca40-diagram-table-data",
         "double-magic-delta-i-bound",
+      ]),
+    }),
+    section({
+      title: "Beta decay: magic-shell consequences (continued)",
+      label: "sec:beta-decay-magic-shells-continued",
+      blocks: [
+        "beta-decay-magic-shells-continued-intro",
         "double-magic-delta-i-bound-table2-data",
         "double-magic-delta-i-bound-table1-data",
         "k12-barrier-bypass",

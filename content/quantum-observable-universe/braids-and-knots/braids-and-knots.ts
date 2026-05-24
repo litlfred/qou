@@ -360,6 +360,13 @@ export default chapter({
         "skein-generation-proof",
         "knot-particle-generation",
         "knot-particle-generation-table-data",
+      ]),
+    }),
+    section({
+      title: "Skein Generation and Particle Correspondence (continued)",
+      label: "sec:skein-particle-generation-continued",
+      blocks: [
+        "skein-particle-generation-continued-intro",
         "knot-particle-generation-interpretation",
         "knot-particle-correspondence",
         "knot-particle-dictionary",
@@ -499,6 +506,13 @@ export default chapter({
         "wedderburn-mass-formula",
         "frobenius-s-classification",
         "frobenius-s-classification-table3-data",
+      ]),
+    }),
+    section({
+      title: "Mass-formula derivation (continued)",
+      label: "sec:mass-formula-derivation-continued",
+      blocks: [
+        "mass-formula-derivation-continued-intro",
         "frobenius-s-classification-table2-data",
         "frobenius-s-classification-table1-data",
         "commutative-chirality-vanishes",
@@ -622,6 +636,13 @@ export default chapter({
         "braid-link-types",
         "braid-group-n-strand",
         "braid-group-n-strand-table3-data",
+      ]),
+    }),
+    section({
+      title: "Markov axioms and braid-link enumeration (continued) (continued)",
+      label: "sec:markov-axioms-braid-link-continued-continued",
+      blocks: [
+        "markov-axioms-braid-link-continued-continued-intro",
         "braid-group-n-strand-table2-data",
         "braid-group-n-strand-table1-data",
         "markov-closure-map-axiomatic",
@@ -1066,6 +1087,13 @@ export default chapter({
         "nuclear-knot-classification",
         "geom-yekutieli-alignment",
         "content-scaling-correspondence",
+      ]),
+    }),
+    section({
+      title: "Parity classification, atomic atlas, and discrepancy resolution (continued)",
+      label: "sec:parity-classification-discrepancy-continued",
+      blocks: [
+        "parity-classification-discrepancy-continued-intro",
         "partition-sum-proton-residual",
         "partition-sum-proton-residual-table5-data",
         "partition-sum-proton-residual-table4-data",
@@ -1096,6 +1124,13 @@ export default chapter({
         // Detangler R3 (2026-05-23): 6-row witness summary extracted
         // from alpha-shift-torus-knot.md.
         "alpha-shift-torus-knot-table-data",
+      ]),
+    }),
+    section({
+      title: "Spectral sequence, chirality, and confinement-NF structure (continued)",
+      label: "sec:spectral-sequence-chirality-confinement-continued",
+      blocks: [
+        "spectral-sequence-chirality-confinement-continued-intro",
         "per-nucleon-shift-additive-linearity",
         "per-nucleon-shift-additive-linearity-table2-data",
         "per-nucleon-shift-additive-linearity-table1-data",
@@ -1178,6 +1213,13 @@ export default chapter({
         "atom-knot-mass-derivation",
 
         "atom-knot-mass-derivation-table1-data",
+      ]),
+    }),
+    section({
+      title: "$\\alpha_k$ derivation procedure (continued)",
+      label: "sec:alpha-k-procedure-continued",
+      blocks: [
+        "alpha-k-procedure-continued-intro",
         "atom-knot-mass-derivation-table2-data",
         "atom-knot-mass-derivation-table3-data",
         "atom-knot-mass-derivation-proof",
@@ -1207,6 +1249,13 @@ export default chapter({
         "macdonald-hook-telescope",
         "demazure-fiber-markov-trace",
         "wenzl-bridge-applicability-qou",
+      ]),
+    }),
+    section({
+      title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\alpha_k$ (continued)",
+      label: "sec:wenzl-bridge-cyclotomic-continued",
+      blocks: [
+        "wenzl-bridge-cyclotomic-continued-intro",
         "lr-tensor-character-bridge",
         "lambda-scale-bring-bloch-identity",
         "wenzl-qmn-synergy",
@@ -1235,6 +1284,13 @@ export default chapter({
         "crystal-isospin-degeneracy",
         "crystal-isospin-degeneracy-table-data",
         "isospin-mass-split-em-localisation",
+      ]),
+    }),
+    section({
+      title: "Six-term mass formula, crystal, isospin, and chirality (continued)",
+      label: "sec:six-term-crystal-isospin-chirality-continued",
+      blocks: [
+        "six-term-crystal-isospin-chirality-continued-intro",
         "option-e-isospin-test",
         "crystal-bases-path-a",
         "crystal-bases-path-a-table3-data",

@@ -158,6 +158,13 @@ export default chapter({
         "ground-state-ordering-table1-data",
         "transfer-matrix-identities",
         "neutron-qvalue-symbolic",
+      ]),
+    }),
+    section({
+      title: "Transfer matrices and beta decay (continued)",
+      label: "sec:transfer-beta-decay-continued",
+      blocks: [
+        "transfer-beta-decay-continued-intro",
         "q-beta-spectral-bridge",
         "q-beta-spectral-bridge-table-data",
         "q-beta-form-a-n1-symbolic",
