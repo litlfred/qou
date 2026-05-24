@@ -225,6 +225,54 @@ These are the **hyperbolic** and **trigonometric** avatars of the same algebraic
 
 The identity (6) is itself a folklore result; the Chebyshev / Fibonacci-polynomial connection is implicit in Lucas (1878) and standard in any modern treatment of Fibonacci polynomials.
 
+## Chebyshev / Fibonacci-polynomial duality with sibling derivation
+
+A sibling derivation landed on `main` shortly after this PR opened: [`binomial_pattern_chebyshev_derivation.py`](../../folio-assistant/computations/binomial_pattern_chebyshev_derivation.py) (commit `07ccc8e94`). It derives the same `c_{2j}(T(2,2m)) = C(m+j, 2j)/2` pattern via the **trigonometric** Chebyshev `T`-polynomial form
+
+```
+T_{2m+1}(x) / x  =  Σ_{j=0}^m  C(m+j, 2j) · (4(x² − 1))^j        (Chebyshev form, x = cosh φ ∈ ℝ).
+```
+
+This is **literally the same identity** as eq (6) of Step 4 above, via the Chebyshev defining relation `2 T_n(cosh φ) = e^{n φ} + e^{-n φ}`:
+
+- Set `q = e^φ`. Then `<n>_q = q^n + q^{-n} = 2 cosh(nφ) = 2 T_n(cosh φ)`.
+- In particular `<1>_q = 2 cosh φ = 2x`, and `h² = (q − q^{-1})² = 4 sinh²(φ) = 4(x² − 1)`.
+- Substituting into the sibling form and multiplying by `2x = <1>_q`:
+  ```
+  2 T_{2m+1}(x)  =  2x · Σ C(m+j, 2j) · (4(x²−1))^j
+  ⇔   <2m+1>_q  =  <1>_q · Σ C(m+j, 2j) · h^{2j}                  (= eq (6) of this audit).
+  ```
+
+So the **algebraic** form (6) — over `ℚ(q)`, parameter-free, the form proved here — and the **trigonometric** form (Chebyshev `T_{2m+1}/x`, over `ℝ`, the form in the sibling derivation) are dual statements of one identity. The sibling commit flags **"rigorous proof of step 6 for all m"** as the remaining research-grade work (citation not located); the bibliographic references above (Graham-Knuth-Patashnik §6.6, Riordan Ch 4 Eq 41a, Vajda §III.16) close that gap on the Fibonacci-polynomial side — and the Chebyshev side then follows by the trivial substitution.
+
+In the three-avatars language: the algebraic form (6) is the `ℤ[q, q^{-1}]` / `ℚ(q)` form; the sibling Chebyshev form is its **trigonometric** (root-of-unity / Archimedean unit-circle) image; the substrate cosh form `cosh((2m+1) η_0) / (2 cosh η_0)` is its **hyperbolic** (Archimedean real-line) image.
+
+## Pre-Archimedean / Archimedean counting (CAL-1 / CAL-2 / CAL-3 layering)
+
+The fact that the structural identity (6) and its derived forms (P_m, Q_m, the q-tanh) live in `ℤ[q, q^{-1}]` and `ℚ(q)` — entirely PARAMETER-FREE — has a clean implication for the framework's 3-calibration discipline (per CLAUDE.md `prop:three-calibration-discipline`):
+
+| layer | object | calibration inputs |
+|---|---|---|
+| **Pre-Archimedean** (`ℤ[q, q^{-1}]` / `ℚ(q)`) | every algebraic identity above: `<n>_q`, `[n]_q`, `c_{2j}` formula, `P_m + Q_m = q^{2m+1}/[2]_q`, q-tanh, etc. | **0 calibrations** — parameter-free |
+| **Archimedean point selection** (`q ↦ q_0 ∈ ℝ_{>0}`) | the substrate point at which to evaluate | **1 calibration: CAL-2** (`m_μ/m_e` dimensionless ratio → pins `q_0 ≈ 1.1097`) |
+| **Archimedean scale-1** (leptonic) | absolute leptonic energy scale | **1 calibration: CAL-1** (`m_e` MeV) |
+| **Archimedean scale-2** (hadronic) | absolute hadronic energy scale | **1 calibration: CAL-3** (`Q_β` MeV or `𝔈₀`) |
+
+Totals: `0 + 1 + 1 + 1 = 3` calibrations. This **is** the CAL-1/2/3 budget.
+
+**Consequence for prediction types:**
+
+| prediction | calibrations consumed | example from this audit |
+|---|---|---|
+| pure algebraic identity | 0 | `<2m+1>_q = <1>_q · Σ C(m+j, 2j) h^{2j}` (always true) |
+| dimensionless ratio at substrate | 1 (CAL-2) | `P_W / P_Z ≈ cos θ_W` within 1 % — depends only on `q_0` |
+| absolute mass | 3 (all) | `m_p` ≈ 938 MeV |
+| isospin mass difference | 3 (all, plus the bar-anti-symmetric Q-channel structurally) | `Δm_{n-p}` ≈ 1.293 MeV (see PR #1153) |
+
+**Substrate-derivation status (CAL-2 → 0?):** If a categorical first-principles argument could pick `q_0` from the algebraic side alone (e.g., as a unique real fixed point of some structural endomorphism), then CAL-2 would collapse to 0, leaving only the 2 dimensional scales (CAL-1, CAL-3) as irreducible. The owner declined this direction on 2026-05-08 (per CLAUDE.md). The 3-2-1-0 layering above stands as the current canonical statement.
+
+This recasts the 3-calibration discipline as a **counting theorem**: pre-Archimedean has 0 free parameters; the Archimedean specialization has 3 (= 1 point in q-space + 2 dimensional scales). The pre-Archimedean identities of this audit therefore do not consume any calibration; only their evaluation at `q = q_0` and conversion to MeV does.
+
 ## What this finding IS
 
 A unified closed-form characterization of the **entire T(2, 2m) torus-link family** in H_2(q). Every even-h coefficient is a single binomial `C(m+j, 2j)/2`; the triangular and tetrahedral patterns are the `j = 1, 2` slices of one identity. Sympy verifies it exactly across `m = 1..9, j = 0..5` (54 cells); the algebraic proof above (Steps 1-4, via the Fibonacci-polynomial identity) elevates this from finite verification to a theorem for all `m ≥ 0`.
