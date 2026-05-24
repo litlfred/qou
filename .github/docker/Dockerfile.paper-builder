@@ -3,7 +3,7 @@
 # Bakes in TeX Live + bun + Python scientific stack + auxiliary tools
 # that publish.yml currently apt-installs on every run (~5-10 min per
 # job). Pre-pulled, the same install reduces to a ~2-3 min image pull,
-# net savings of ~5 min per job — and a precondition for the 5-job
+# net savings of ~5 min per job — and a precondition for the 8-job
 # parallel DAG (without pre-baked tools, each parallel job would
 # duplicate the install).
 #
@@ -17,15 +17,20 @@ FROM ubuntu:24.04
 
 LABEL org.opencontainers.image.source="https://github.com/litlfred/qou"
 LABEL org.opencontainers.image.description="Pre-baked builder image for the QOU folio publish pipeline (TeX Live + bun + Python scientific stack)."
-LABEL org.opencontainers.image.licenses="MIT"
+# Match the QOU repo LICENSE (Creative Commons Attribution 4.0).
+# Per PR #1104 review (Copilot) — earlier MIT label was incorrect.
+LABEL org.opencontainers.image.licenses="CC-BY-4.0"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
 
 # ── System deps + TeX Live ──
 # Mirrors publish.yml's "Install TeX Live, latexdiff, latexmk, latexpand"
-# step verbatim. `--no-install-recommends` keeps the image lean
-# (texlive-full is already huge; recommended drags in everything).
+# step verbatim. `texlive-full` is a meta-package that already includes
+# `texlive-extra-utils`, `latexdiff`, and `latexmk` — the explicit
+# listing is retained as documentation of intent (and to make the
+# `apt show texlive-full | grep -i depends` audit chain obvious),
+# but is technically redundant per PR #1104 review (Gemini).
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
         ca-certificates curl unzip git \
@@ -37,34 +42,49 @@ RUN apt-get update -qq && \
 
 # ── Python scientific stack ──
 # Mirrors publish.yml's "Install Python scientific dependencies" +
-# "Install pypdf" steps. Pinned via `pip install` rather than
-# requirements.txt so the image is self-contained.
+# "Install pypdf" steps. **Pinned to specific versions** for build
+# reproducibility (per PR #1104 review, Gemini). Floating versions
+# would let different image rebuilds pick up different numpy/sympy
+# minor versions and re-introduce non-determinism into the publish
+# pipeline. Bump these pins in lockstep with the publish.yml /
+# witness-pipeline matrix when the scientific-stack baseline rolls.
 RUN pip3 install --break-system-packages --no-cache-dir \
-        'pypdf>=4,<6' \
-        numpy sympy scipy mpmath
+        'pypdf==5.1.0' \
+        'numpy==2.1.3' \
+        'sympy==1.13.3' \
+        'scipy==1.14.1' \
+        'mpmath==1.3.0'
 
 # ── bun (content pipeline) ──
-# bun is the JS runtime that drives content/pipeline/. Install to
-# /opt/bun so it's accessible to any UID; symlink into /usr/local/bin
-# for PATH discoverability.
+# bun is the JS runtime that drives content/pipeline/. Pin to a
+# specific version (per PR #1104 review, Gemini) to keep the image
+# reproducible. publish.yml currently uses `oven-sh/setup-bun@v2`
+# with `bun-version: latest` — a follow-up will align both to the
+# same pinned version.
 ENV BUN_INSTALL=/opt/bun
 ENV PATH=$BUN_INSTALL/bin:$PATH
-RUN curl -fsSL https://bun.sh/install | bash && \
-    ln -sf $BUN_INSTALL/bin/bun /usr/local/bin/bun
+ENV BUN_VERSION=1.1.34
+RUN curl -fsSL https://bun.sh/install | bash -s "bun-v${BUN_VERSION}"
 
-# ── Sanity check: surface every binary version into the image log ──
-# Fail-fast if any required tool is missing. If this step succeeds,
-# downstream `publish.yml` jobs that use this image can skip ALL of
-# the apt-get + pip + bun-install steps.
-RUN echo "=== Image tool versions ===" && \
-    pdflatex --version | head -1 && \
-    latexmk --version | head -1 && \
-    (latexdiff --version 2>&1 || true) | head -1 && \
-    (latexpand --version 2>&1 || true) | head -1 && \
-    bun --version && \
-    python3 --version && \
-    pip3 show numpy sympy scipy mpmath pypdf | grep -E '^Name|^Version' && \
-    git --version
+# ── Sanity check: surface every baked tool's version into the image log ──
+# Strict fail-fast — no `|| true` masks. If any binary is missing or
+# version-broken, the image build fails here rather than silently
+# producing a broken image (per PR #1104 review, Gemini + Copilot).
+# Each tool is verified with `command -v` (presence) + a `--version`
+# call (functional), then the surfaced versions become the build log.
+RUN set -eux && \
+    echo "=== Image tool versions ===" && \
+    command -v pdflatex && pdflatex --version | head -1 && \
+    command -v latexmk && latexmk --version | head -1 && \
+    command -v latexdiff && latexdiff --version | head -1 && \
+    command -v latexpand && \
+    command -v dot && dot -V && \
+    command -v rg && rg --version | head -1 && \
+    command -v jq && jq --version && \
+    command -v bun && bun --version && \
+    command -v python3 && python3 --version && \
+    command -v git && git --version && \
+    pip3 show numpy sympy scipy mpmath pypdf | grep -E '^Name|^Version'
 
 # Default working directory mirrors the GH Actions runner's checkout
 # path; consumers override via `workdir:`.
