@@ -233,6 +233,15 @@ export function checkRespectsArchimedeanWall(
   scriptPath: string,
 ): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging the same scripts here
+  // (since deprecated code commonly used the older math.*/np.* APIs)
+  // is noise. The `deprecated` finding is the canonical signal;
+  // archimedean violations don't need to pile on. Return n/a so the
+  // sweep records the criterion was considered but didn't apply.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
   const lines = masked.split("\n");
