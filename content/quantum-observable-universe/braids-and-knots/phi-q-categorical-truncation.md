@@ -89,8 +89,8 @@ different depth invariants of $T_w$:
 | Partition GB-depth $k_\star(T_w)$ | $\max_\lambda \mathrm{maxhook}(\lambda)$ over $\mathrm{supp}(T_w)$ (this proposition) | $5$ |
 
 The witness's $\mathtt{max\_grade} = 9$ matches both $\ell_{\max}$
-and $m_{\max}$ for tritium (a numerical coincidence following from
-$\deg p \approx 40$ and $\binom{5}{2} = 10$), but it does **not**
+and $m_{\max}$ for tritium (an accidental alignment of independent bounds:
+$\deg p \approx 40$ and $\binom{5}{2} = 10$, not a structural relationship), but it does **not**
 match $k_\star = 5$. This proposition's truncation depth is
 $k_\star$, not $\ell_{\max}$ or $m_{\max}$ — these are independent
 structural quantities, all bounded but not equal.

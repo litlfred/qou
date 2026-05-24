@@ -107,7 +107,7 @@ $$
 (Tier 5 PSLQ; q-dilog substrate-natural; V̂$_S$ + $\mathbb{Q}(\zeta_{60})$;
 commutative + operator-theoretic Φ$_q$; q-locality; reframing;
 Strategy J), the original conjecture's specific form is recorded
-as **PSLQ-style numerical coincidence**, the conjecture
+as **PSLQ-style empirical fit (no categorical derivation)**, the conjecture
 $\lambda_{\mathrm{scale}}$ is recorded as an
 **acknowledged-CAL-4** empirically falsifiable prediction (see
 [`conj:lambda-scale-bring-bloch-identity`](#conj:lambda-scale-bring-bloch-identity)

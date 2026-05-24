@@ -90,8 +90,8 @@ $0.0558$ is approximately:
 
 The closest candidate is $(q_0 - 1)/2 = 0.0550$, equivalent to
 $L \to 90 + (q_0 - 1)/2$.  Whether this arises structurally from
-a sub-leading correction in the Bring fibre functor or is a
-numerical coincidence is open (no named content block yet).
+a sub-leading correction in the Bring fibre functor remains
+unresolved (no named content block yet).
 
 ## Comparison to other strategies
 

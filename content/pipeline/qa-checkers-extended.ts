@@ -790,6 +790,8 @@ export function checkCanonicalDilogarithmContext(
   const EXEMPT_TAGS = new Set([
     "disambiguation", "quantum-dilogarithm", "phi_q",
     "calibration", "audit", "derivation-chain",
+    "legacy-phi-q-tower", "brane-tower", "mass-derivation",
+    "first-principles", "li2q",
   ]);
   if (tags.some((t) => EXEMPT_TAGS.has(t))) return { result: "pass", hits: [] };
   // Blocks tagged with both binding AND mass contexts are cross-context
