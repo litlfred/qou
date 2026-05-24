@@ -47,25 +47,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "479244d1a650",
-          "ts": "92603dde686e",
-          "lean": "70e3a42aa47b"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
-      }
-    ],
     "compute-prop-has-consumer": [
       {
         "field_hash": {
@@ -648,7 +629,26 @@
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner — demote to conjecture or add CAL-4 banner"
       }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "479244d1a650",
+          "ts": "92603dde686e",
+          "lean": "70e3a42aa47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T00:49:59.352Z",
+        "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T00:49:59.352Z"
 }

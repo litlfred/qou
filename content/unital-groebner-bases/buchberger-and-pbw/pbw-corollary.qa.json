@@ -1,0 +1,39 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "cor:ugb-pbw",
+  "kind": "corollary",
+  "paths": {
+    "ts": "content/unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts",
+    "md": "content/unital-groebner-bases/buchberger-and-pbw/pbw-corollary.md",
+    "lean": "content/unital-groebner-bases/buchberger-and-pbw/pbw-corollary.lean"
+  },
+  "source_hashes": {
+    "md": "45ab80e0edbf",
+    "ts": "a272530833e4",
+    "lean": "c62cdee5a2b2"
+  },
+  "criteria": {
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "45ab80e0edbf",
+          "ts": "a272530833e4",
+          "lean": "c62cdee5a2b2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T00:49:59.352Z",
+        "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+        "severity": "major",
+        "evidence": "unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts:1: no probe witness for this prop — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B (audit: i1-no-probe-audit.witness.json)"
+      }
+    ]
+  },
+  "updated_at": "2026-05-24T00:49:59.352Z"
+}

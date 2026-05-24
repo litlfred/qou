@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.lean"
   },
   "source_hashes": {
-    "md": "c7dc79f916f9",
+    "md": "adc95a764952",
     "ts": "67838ac0381a",
     "lean": "9978ab57fe46"
   },
@@ -45,25 +45,6 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      }
-    ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "f46ae66d2f9d",
-          "ts": "7c9b3934ba0c",
-          "lean": "4c0c1426400f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -837,5 +818,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T00:43:32.943Z"
 }

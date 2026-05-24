@@ -1,0 +1,17 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:unital-groebner-basis",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.ts",
+    "md": "content/unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.md",
+    "lean": "content/unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.lean"
+  },
+  "source_hashes": {
+    "md": "fb0ef239eaaf",
+    "ts": "e9b03b254b8c",
+    "lean": "7a494c806045"
+  },
+  "criteria": {},
+  "updated_at": "2026-05-24T00:49:59.352Z"
+}
