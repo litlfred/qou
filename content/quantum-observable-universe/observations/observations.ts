@@ -106,10 +106,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Mass predictions: methodology and validation (continued)",
-      label: "sec:mass-predictions-method-continued",
+      title: "Mass predictions: methodology and validation : comparison",
+      label: "sec:mass-predictions-method-feynman-qou-comparison",
       blocks: [
-        "mass-predictions-method-continued-intro",
+        "mass-predictions-method-feynman-qou-comparison-intro",
         "feynman-qou-comparison",
         "feynman-qou-comparison-table2-data",
         "feynman-qou-comparison-table1-data",
@@ -145,10 +145,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Mass predictions: per-particle derivations (continued)",
-      label: "sec:mass-predictions-derivations-continued",
+      title: "Mass predictions: per-particle derivations : comparison",
+      label: "sec:mass-predictions-derivations-terminal-resolution-proof",
       blocks: [
-        "mass-predictions-derivations-continued-intro",
+        "mass-predictions-derivations-terminal-resolution-proof-intro",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
@@ -187,10 +187,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Beta decay: mechanism, half-life, and tritium (continued)",
-      label: "sec:beta-decay-mechanism-continued",
+      title: "Beta decay: mechanism, half-life, and tritium : comparison",
+      label: "sec:beta-decay-mechanism-hadron-half-life",
       blocks: [
-        "beta-decay-mechanism-continued-intro",
+        "beta-decay-mechanism-hadron-half-life-intro",
         "hadron-half-life-verification-table7-data",
         "hadron-half-life-regimes",
         "n-v-bring-action",
@@ -223,10 +223,10 @@ export default chapter({
       ]),
     }),
     section({
-      title: "Beta decay: magic-shell consequences (continued)",
-      label: "sec:beta-decay-magic-shells-continued",
+      title: "Beta decay: magic-shell consequences : comparison",
+      label: "sec:beta-decay-magic-shells-k12-barrier-bypass",
       blocks: [
-        "beta-decay-magic-shells-continued-intro",
+        "beta-decay-magic-shells-k12-barrier-bypass-intro",
         "double-magic-delta-i-bound-table2-data",
         "double-magic-delta-i-bound-table1-data",
         "k12-barrier-bypass",
