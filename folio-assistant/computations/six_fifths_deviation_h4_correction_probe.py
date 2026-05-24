@@ -27,11 +27,12 @@ from fractions import Fraction
 from pathlib import Path
 
 import mpmath as mp
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpf
 
 mp.mp.dps = 50
 
-Q_0 = mpf("1.10970000000")
+Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 H_0 = Q_0 - mpf(1) / Q_0          # ≈ 0.20856
 HBAR_Q = (Q_0 - 1) / Q_0           # ≈ 0.0989
 VOL_B3 = 8 * mp.catalan            # ≈ 7.328

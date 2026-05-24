@@ -55,11 +55,12 @@ mp.mp.dps = 50
 # Import canonical infrastructure
 sys.path.insert(0, str(Path(__file__).parent))
 from _li_2_q_util import geom_full_borromean  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Constants — anchored on the registry / CODATA values
 M_E_MEV = mpf("0.510998950")  # CAL-1
 M_P_CODATA_MEV = mpf("938.27208816")
-Q_0 = mpf("1.10970000000")  # substrate parameter (40-dps locked)
+Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 
 # q-locality discipline: tolerance and sweep window
 SWEEP_DELTAS = [mpf("0.001"), mpf("0.01"), mpf("0.05")]
