@@ -157,7 +157,7 @@ $$
 cubic is 3-strand) reduces to identifying the partition-indexed
 pieces $g_\lambda(a)$.
 
-**Scope caveat.** This proposition computes the **integrand** of
+**Scope caveat (CAL-4 caveat).** This proposition computes the **integrand** of
 $A(a)$ in exact rational form. It does **not** derive the
 **integration limit** $a$ at which $A(a)$ matches CODATA $m_p$. The
 integration-limit question is conjectural (see

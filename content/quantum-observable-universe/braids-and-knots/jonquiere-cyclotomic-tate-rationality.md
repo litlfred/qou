@@ -135,7 +135,7 @@ Verified at $n \in \{2, 3, 4, 5\}$ and $K \in \{3, 4, 5, 6, 7\}$ —
 $n = 3$ to all $n \geq 2$. The depth-3 closed form
 $(n - 1)(n - 2)\pi^3 / (3 n^3)$ becomes a Bernoulli-polynomial
 specialisation of the general inversion formula at $z = \zeta_K$, with
-the Bernoulli argument reducing miraculously to $1/K$.
+the Bernoulli argument reducing to the clean specialisation $1/K$ (from Steps 1--2 above).
 
 ### Structural consequences for B1
 
