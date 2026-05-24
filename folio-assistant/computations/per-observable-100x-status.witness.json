@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T02:16:26.641615+00:00",
-  "commitSha": "a787791a7a41d92e6579ba8ef13289b323e9f5a6",
+  "computedAt": "2026-05-24T02:44:44.740643+00:00",
+  "commitSha": "06dfcb64d37c2461cb5da650a224ab9e7d14895f",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "e15fa5273f6d",
-  "scriptCommitSha": "a787791a7a41d92e6579ba8ef13289b323e9f5a6",
+  "scriptCommitSha": "bd5b885883b24aab8ae89db5439974cc2982b27d",
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
     "rows": [
