@@ -120,17 +120,22 @@ The Q_m/P_m = tanh((2m+1)η) identity at substrate η_0 gives:
 
 These are claimed to be EM-channel/total ratios per particle. -/
 
-/-- The substrate-evaluation η₀ corresponding to q_0 ≈ 1.1097.
-    Defined as log(q_0); approximately 0.1040. -/
-noncomputable def η_substrate : ℝ := Real.log 1.10970000000
+/-- The substrate-evaluation η₀ corresponding to q_0 ≈ 1.10998.
+    Defined as log(q_0) where q_0 is the canonical 50-digit pin
+    `qou_substrate.constants.Q_50_DIGIT_STR`
+    (`1.10997859555418057528159407960950937799328227995870`,
+    derived from CODATA m_μ/m_e + SnapPy Vol(4_1)).
+    Approximately 0.10434. -/
+noncomputable def η_substrate : ℝ := Real.log 1.10997859555418057528159407960950937799328227995870
 
 /-- The EM-channel ratio for particle T(2, 2m) at substrate.
 
-    Per PR #1153: this equals tanh((2m+1)·η_substrate).
-    Empirical values at substrate (witness JSON for PR #1153):
-      W (m=2): 0.4780
-      Z (m=3): 0.6222
-      H (m=4): 0.7337 -/
+    Per PR #1153 (merged commit 26e57945e): this equals
+    tanh((2m+1)·η_substrate). Empirical values at substrate
+    (50-dps mpmath, canonical pin):
+      W (m=2): 0.4790
+      Z (m=3): 0.6233
+      H (m=4): 0.7348 -/
 noncomputable def EM_channel_ratio (m : ℕ) : ℝ :=
   Real.tanh ((2 * m + 1) * η_substrate)
 
