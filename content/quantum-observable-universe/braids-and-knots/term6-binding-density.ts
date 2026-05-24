@@ -6,6 +6,7 @@ export default proposition({
     "Term 6 binding density: $B(Z,N)/A \\approx \\alpha \\cdot T_6(Z,N)/A^3 + \\beta + \\delta_M(Z,N)$",
   tags: [
     "binding-energy",
+    "derivation-chain",
     "gs-filtration",
     "spectral-sequence",
     "term-6",

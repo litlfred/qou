@@ -561,8 +561,25 @@ export function checkComputeLpDualPresent(
   // OUTSIDE the `uses: [...]` array. References inside `uses:` are
   // downstream dependencies (the block consumes an LP result) — they
   // do not imply the block's OWN witness must carry LP dual fields.
-  const tsWithoutUses = ts.replace(/\buses\s*:\s*\[[\s\S]*?\]/g, "");
-  if (!LP_DUAL_HINT_RE.test(tsWithoutUses)) {
+  // Strip uses: array + cites: array + interprets: field — these are
+  // downstream references, not evidence the block computes LP duals.
+  const tsStripped = ts
+    .replace(/\buses\s*:\s*\[[\s\S]*?\]/g, "")
+    .replace(/\bcites\s*:\s*\[[\s\S]*?\]/g, "")
+    .replace(/\binterprets\s*:\s*"[^"]*"/g, "");
+  if (!LP_DUAL_HINT_RE.test(tsStripped)) {
+    return { result: "pass", hits: [] };
+  }
+  // Require the LP hint to appear in title, tags, or label — not just
+  // in comments or narrative. Contextual mentions of "duality" or
+  // "self-duality" in Frobenius/representation-theoretic contexts
+  // should not trigger this criterion.
+  const titleTagLabel = [
+    ts.match(/title:\s*(?:"([^"]+)"|`([^`]+)`)/)?.[1] ?? "",
+    ts.match(/label:\s*"([^"]+)"/)?.[1] ?? "",
+    ts.match(/tags:\s*\[([\s\S]*?)\]/)?.[1] ?? "",
+  ].join(" ");
+  if (!LP_DUAL_HINT_RE.test(titleTagLabel)) {
     return { result: "pass", hits: [] };
   }
   const absPath = witness.startsWith("/")
