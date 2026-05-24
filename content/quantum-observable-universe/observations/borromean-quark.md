@@ -78,14 +78,17 @@ The neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p$ has th
 partition.
 
 **Crossing orientation is not writhe.**
-The $\pm$ labels are the sign of the braid generator
-($\sigma_0$ vs $\sigma_1^{-1}$) at each crossing of $\mathcal{B}_3$
-— the strand's *crossings with the other two strands*, not
-self-crossings.  Each strand remains an unknot with writhe $0$;
-the free neutrino is the same unknot outside any Borromean
-context.  All three pairwise linking numbers vanish (Brunnian
-property); the triple Milnor invariant $\bar{\mu}_{123} = \pm 1$
-encodes confinement.
+The $\pm$ labels are the **exponent sign** of the braid generator
+at each crossing of $\mathcal{B}_3$: each crossing is
+$\sigma_i^{\varepsilon}$ with $\varepsilon \in \{+1, -1\}$, while
+the index $i \in \{0, 1\}$ identifies *which* adjacent pair of
+strands crosses (not the sign).  These are crossings *between
+distinct strands*, not self-crossings of any one strand: in the
+standard braid projection each strand has **self-writhe zero**
+(no self-crossings appear), and the free neutrino is the same
+unknot drawn outside any Borromean context.  All three pairwise
+linking numbers vanish (Brunnian property); the triple Milnor
+invariant $\bar{\mu}_{123} = \pm 1$ encodes confinement.
 
 **The exceptional divisor as quark habitat.**
 
