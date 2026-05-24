@@ -28,6 +28,7 @@ Output:
 
 import json
 import math
+from mpmath import mp  # noqa: F401
 import sys
 import time
 
@@ -245,9 +246,9 @@ class HeckeEngine:
             # Log trace (sum of log|V̂_i|) to avoid overflow
             tr_par_str = "overflow:use_log"
             tr_dau_str = "overflow:use_log"
-            log_par = sum(math.log(abs(float(self.qr.traced_volume(i, ord_par))))
+            log_par = sum(mp.log(abs(float(self.qr.traced_volume(i, ord_par))))
                          for i in range(A - 1))
-            log_dau = sum(math.log(abs(float(self.qr.traced_volume(i, ord_dau))))
+            log_dau = sum(mp.log(abs(float(self.qr.traced_volume(i, ord_dau))))
                          for i in range(A - 1))
             tr_par_f = log_par  # store log instead of value
             tr_dau_f = log_dau
