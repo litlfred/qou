@@ -5,21 +5,35 @@ Carved out per the canonical-vs-exploratory audit
 
 Symbols here are NOT on the canonical derivation chain
 (docs/canonical-derivation-cheat-sheet.md). They are kept for
-reproducibility of historical Phase-5 results and for the small
-number of probe scripts that still import them:
+reproducibility of historical Phase-5 results and for the
+in-repo consumers that still import them.
 
-  - sdp_cross_channel.py             (_partition_table, _standard_tableaux,
-                                      _swap_tab, _crossing_in_partition)
-  - atomic_chirality_residue.py      (_step_chain_generic)
-  - alpha_blend_tower.py             (probe — Phase-5 LP-dual)
-  - rho_k_h3a_gg_trajectory.py       (probe — Phase-5 LP-dual)
-  - magic_proximity_probe.py         (magic_proximity)
+**Direct importers** (folio-assistant/computations/):
 
-For new code, use the canonical surface in `hecke_core.py` instead.
+  - sdp_cross_channel.py                  (_PARTITION_TABLE, _build_ysn_matrices,
+                                            _content_at, _crossing_in_partition,
+                                            _identity, _matmul_dim, _standard_tableaux,
+                                            _step_chain_generic, _swap_tab,
+                                            _trace_dim, atom_character_raw,
+                                            lp_shadow_price, partition_jet_depth)
+  - atomic_chirality_residue.py           (_step_chain_generic)
+  - hadron_knot_table.py                  (binding_energy, classify_nuclear_knot)
+  - phase3_triton_binding_convention_b.py (binding_from_frobenius_pairing)
+  - alpha_blend_tower.py                  (probe — Phase-5 LP-dual)
+  - rho_k_h3a_gg_trajectory.py            (probe — Phase-5 LP-dual)
+  - magic_proximity_probe.py              (magic_proximity)
 
-Back-compat re-exports happen at the bottom of `hecke_core.py` —
-existing `from hecke_core import X` for any symbol in this file
-continues to work because `hecke_core` re-exports everything here.
+**pyhecke delegation modules** (tools/pyhecke/python/pyhecke/, via the
+sys.path bridge in `_legacy.py`):
+
+  - pyhecke/partition.py  (lp_shadow_price, q_laplacian_eigenvalue,
+                           q_resolvent_weight, partition_character_sigma1,
+                           partition_spectral_log_rate)
+  - pyhecke/trace.py      (atom_character_raw)
+  - pyhecke/tower.py      (knot_factor)
+
+For new code, use the canonical surface in `hecke_core.py` or the
+matching pyhecke modules (gram, wedderburn, atom, molecular) instead.
 """
 
 # ── Stdlib imports the moved code uses ──

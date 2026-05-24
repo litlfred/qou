@@ -1,6 +1,7 @@
 """Φ_q tower and symbolic V̂ infrastructure.
 
-Re-exports from hecke_core and tower_binding_symbolic.
+Re-exports from hecke_core (canonical) + _deprecated/hecke_core_legacy
+(exploratory `knot_factor`) + tower_binding_symbolic (optional).
 """
 
 from __future__ import annotations
@@ -10,11 +11,13 @@ from . import _legacy  # noqa: F401
 from hecke_core import (  # type: ignore[import-not-found]
     build_atom_nf,
     build_atom_nf_exact,
-    knot_factor,
     vertex_volume,
     nucleon_gen_chains,
     atom_gen_chains,
     atom_V_full,
+)
+from _deprecated.hecke_core_legacy import (  # type: ignore[import-not-found]
+    knot_factor,
 )
 
 try:

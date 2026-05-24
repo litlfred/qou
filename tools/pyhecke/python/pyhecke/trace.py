@@ -1,6 +1,7 @@
 """Markov trace — numeric and arbitrary-precision (mpmath) variants.
 
-Re-exports from hecke_core and crt_markov.
+Re-exports from hecke_core (canonical) + _deprecated/hecke_core_legacy
+(exploratory `atom_character_raw`) + crt_markov (optional CRT backend).
 """
 
 from __future__ import annotations
@@ -10,8 +11,10 @@ from . import _legacy  # noqa: F401
 from hecke_core import (  # type: ignore[import-not-found]
     nf_tr,
     nf_net,
-    atom_character_raw,
     TR_M,
+)
+from _deprecated.hecke_core_legacy import (  # type: ignore[import-not-found]
+    atom_character_raw,
 )
 
 try:
