@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T00:24:00.104863+00:00",
-  "commitSha": "e824ac90895beadc35e868df07147a882a00e0d2",
+  "computedAt": "2026-05-24T00:43:25.295865+00:00",
+  "commitSha": "48494062b0b090c4484ee6c0920fb6fcd86199e0",
   "assertions": [
     {
       "name": "unknot_is_1",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 26,
   "computation": "homflypt-engine-selftest",
   "scriptFile": "homflypt_engine.py",
-  "scriptHash": "4e654c11fc7e",
-  "scriptCommitSha": "e824ac90895beadc35e868df07147a882a00e0d2",
+  "scriptHash": "75ea0070387a",
+  "scriptCommitSha": "cbaeb25c7d0a97fbfdd48510e40d124245e3933b",
   "description": "HOMFLYPT engine self-test witness. Validates the Hecke-algebra Ocneanu-trace engine against known polynomial values (unknot, Hopf link, trefoil ±). Records SU(N) family evaluations and Gram-matrix entries for the 2-strand basis. CI gate: any regression in the known polynomial tests fails the assertion.",
   "contentBlock": "rem:archimedean-image-table",
   "data": {
