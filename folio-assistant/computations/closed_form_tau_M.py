@@ -292,6 +292,64 @@ def closed_form_tau_M(
     return constit_part * interface_part
 
 
+def compute_tau_M_nucleon_H3(
+    nucleon: Literal["p", "n"],
+    q_val: mp.mpf,
+    dps: int = 50,
+) -> mp.mpf:
+    """tr_M^3(𝓑_nucleon, q) — H_3 Markov trace of the canonical
+    proton or neutron braid via the y_λ · χ_λ pipeline.
+
+    Centralised helper for the H_3 building blocks consumed by
+    `closed_form_tau_M(Z, N, q, tau_p, tau_n)`.  Replaces three
+    near-identical inline definitions across
+      - `closed_form_tau_M_verification_phase5q.py`
+      - `rho_constit_equals_tau_M_proton_phase5l.py`
+      - `tau_M_proton_closed_form_phase5l1.py`
+    (last two via thin wrappers; the verification script now imports).
+
+    Compute path:
+      1. Marshal _PROTON_G0/G1 (or _NEUTRON_G0/G1) chain to (sign, gen)
+         via the standard `canonical_braid_marshalling` helper.
+      2. Sum y_λ(q) · χ_λ(word) over partitions of 3 (= 3 partitions).
+
+    At mpfr-50-dps this is cheap (sub-second per nucleon, no H_n>3
+    machinery involved).
+    """
+    import mpmath as mp_local  # noqa: F401 (already imported above)
+    # Imports kept local to avoid top-level cycle if a consumer of
+    # closed_form_tau_M is itself imported by hecke_characters.
+    from hecke_characters import chi_lambda_braid, partitions_of
+    from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
+    from canonical_braid_marshalling import marshal_to_chi_lambda_braid
+    from hecke_core import (
+        _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
+    )
+    from q_parameter import Q as Q0
+
+    if nucleon == "p":
+        g0, g1 = _PROTON_G0, _PROTON_G1
+    elif nucleon == "n":
+        g0, g1 = _NEUTRON_G0, _NEUTRON_G1
+    else:
+        raise ValueError(f"nucleon must be 'p' or 'n', got {nucleon!r}")
+
+    h_val = float(Q0 - 1 / Q0)
+    chain_with_gens = (
+        [(c, d, 0) for c, d in g0]
+        + [(c, d, 1) for c, d in g1]
+    )
+    word = marshal_to_chi_lambda_braid(chain_with_gens, h_val)
+    q_str = mp.nstr(q_val, dps, strip_zeros=False)
+    total = mp.mpf(0)
+    for lam in partitions_of(3):
+        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
+        chi = chi_lambda_braid(lam, word, q_value=q_str,
+                                precision="mpfr_50dps")
+        total += y * mp.mpf(str(chi))
+    return total
+
+
 def interface_census(
     Z: int, N: int,
     pn_convention: PnConvention = "chi_lambda_braid",
