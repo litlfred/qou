@@ -55,6 +55,71 @@ void qou_hecke_gram_matrix_flat(double q, double *out);
  */
 double qou_hecke_gram_det(double q);
 
+/**
+ * Hecke character χ_λ(β) of partition λ on braid word β at q.
+ *
+ * `shape`: pointer to `shape_len` `size_t` entries describing the
+ * partition λ in weakly-decreasing order. Empty (`shape_len == 0`)
+ * returns 1.0 (the trivial-character convention from the Rust API).
+ *
+ * `word_gens`, `word_exps`: parallel arrays of length `word_len`.
+ * Entry `i` is the braid letter `(word_gens[i], word_exps[i])`,
+ * matching the Rust `&[(i32, u32)]` tuple shape.
+ *
+ * Returns 0.0 if any input pointer is null with non-zero length.
+ */
+double qou_hecke_chi_lambda_braid(const uintptr_t *shape,
+                                  uintptr_t shape_len,
+                                  const int32_t *word_gens,
+                                  const uint32_t *word_exps,
+                                  uintptr_t word_len,
+                                  double q);
+
+/**
+ * Littlewood–Richardson coefficient c^λ_{μν}.
+ *
+ * All three partitions are pointer + length pairs. Returns 0 if
+ * `|λ| ≠ |μ| + |ν|` or if `μ ⊄ λ` (consistent with the Rust API).
+ * Returns 0 if any non-empty input pointer is null.
+ */
+int64_t qou_hecke_lr_coefficient(const uintptr_t *lambda,
+                                 uintptr_t lambda_len,
+                                 const uintptr_t *mu,
+                                 uintptr_t mu_len,
+                                 const uintptr_t *nu,
+                                 uintptr_t nu_len);
+
+/**
+ * Arbitrary-precision Markov trace tr_M(β) at q via atomic mpfr.
+ *
+ * Input braid word as parallel arrays of length `word_len`:
+ *   `word_signs[i]` ∈ {−1, +1} sign of letter i
+ *   `word_gens[i]`  generator index (1-based, matching the Rust API)
+ *
+ * `n_strands`: braid strand count (n in B_n).
+ * `q_str`: q as a null-terminated decimal string (e.g. "1.10998")
+ *          for arbitrary-precision parsing.
+ * `dps`: decimal digits of precision (e.g. 50).
+ *
+ * On success: returns 0, writes a null-terminated decimal string
+ * representation of the trace into `out_buf[0..out_buf_len]`.
+ * On error: returns non-zero, writes the error message (truncated
+ * if needed) into `out_buf`.
+ * Truncation: if `out_buf_len` is too small for the full string
+ * plus the terminating NUL, returns 2 and writes `out_buf_len - 1`
+ * bytes plus a NUL.
+ *
+ * Returns 3 if any required pointer is null or `out_buf_len == 0`.
+ */
+int qou_hecke_tr_m_atomic_mpfr(const int8_t *word_signs,
+                               const int32_t *word_gens,
+                               uintptr_t word_len,
+                               uintptr_t n_strands,
+                               const char *q_str,
+                               uint32_t dps,
+                               char *out_buf,
+                               uintptr_t out_buf_len);
+
 #ifdef __cplusplus
 }  // extern "C"
 #endif  // __cplusplus
