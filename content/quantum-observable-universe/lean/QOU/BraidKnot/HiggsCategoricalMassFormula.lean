@@ -46,11 +46,22 @@ open QOU.BraidKnot.SubstrateEWHypotheses
 
 /-- The trace polynomial $P_m(h)$ for $T(2, 2m)$ torus link.
 
-    Per sibling PR #1125 (sympy-proved 54 cells), the closed form is:
-      P_m(h) = Σ_{j=0}^m C(m+j, 2j) / 2 · h^{2j}
+    Closed form: $P_m(h) = \sum_{j=0}^m \binom{m+j}{2j} / 2 \cdot h^{2j}$.
+
+    **Provenance (cited):**
+    - Sibling PR #1125 — sympy-verified the pattern for 54 cells (m=1..9, j=0..5)
+    - Sibling PR #1165 — PROVED IN GENERAL via the Fibonacci-polynomial /
+      Chebyshev-of-second-kind identity (Graham–Knuth–Patashnik *Concrete
+      Mathematics* §6.6, Riordan *Combinatorial Identities* Ch 4 Eq 41a,
+      Vajda *Fibonacci and Lucas Numbers* §III.16)
+    - PR #1174 (mine, merged, SUPERSEDED by #1165) — verified the
+      load-bearing Chebyshev identity $T_{2m+1}(x)/x = \sum C(m+j, 2j) (4(x^2-1))^j$
+      symbolically for m = 0..6; that's now subsumed by #1165's general proof
+    - PR #1185 — Lean encoding of the bar-symmetric/anti-symmetric structure
 
     This noncomputable definition encodes the closed-form sum; actual
-    evaluation requires the Real-arithmetic chain. -/
+    evaluation requires the Real-arithmetic chain. The general-m proof
+    lives in PR #1165's audit; this file consumes the closed form. -/
 noncomputable def tracePolynomial (m : ℕ) (h : ℝ) : ℝ :=
   (Finset.range (m + 1)).sum fun j =>
     (Nat.choose (m + j) (2 * j) : ℝ) / 2 * h ^ (2 * j)
