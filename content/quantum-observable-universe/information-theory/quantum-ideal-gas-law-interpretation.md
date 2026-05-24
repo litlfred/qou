@@ -24,14 +24,7 @@ relation $E = TS - PV + \mu N$.
 
 **Comparison with the classical derivation.**
 
-| Classical | QOU |
-|-----------|-----|
-| Point particles in a box | Knot configurations in $S^3$ fibres |
-| Elastic wall collisions | Frobenius pairing at $\partial U$ |
-| Passive boundary | Active boundary with $q$-anomaly $\propto \hbar_q^2$ |
-| Temperature by fiat ($\frac{3}{2}k_BT = \langle E_{\mathrm{kin}}\rangle$) | Temperature = Reeb tick rate $\hbar_q$ |
-| $1/N!$ (Gibbs *ad hoc*) | $1/N!$ from braid group indistinguishability |
-| No phase transitions | Phase transitions from $S^3$ boundary action |
+See [Table](#tbl:quantum-ideal-gas-law-interpretation-table-data).
 
 **Classical limit.**
 As $q \to 1$: $T_q = \hbar_q \to 0$, but

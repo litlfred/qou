@@ -112,6 +112,7 @@ section({
         "quantum-volume-interpretation",
         "quantum-ideal-gas-law",
         "quantum-ideal-gas-law-interpretation",
+        "quantum-ideal-gas-law-interpretation-table-data",
         "boltzmann-constant",
         "gas-constant-derivation",
         "hydrogen-partition-function",

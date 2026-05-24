@@ -33,6 +33,7 @@ export default chapter({
         "borromean-quark-table-data",
         "higgs-t28",
         "s5-equivariant-torus-knots",
+        "s5-equivariant-torus-knots-table-data",
         "symmetry-preserving-leptons",
       ],
     }),
@@ -73,8 +74,10 @@ export default chapter({
       blocks: [
         "mass-predictions-intro",
         "stability-cubic-plot",
+        "stability-cubic-plot-table-data",
         "neutron-prediction-comparison",
         "q-stability-ranges",
+        "q-stability-ranges-table-data",
         "mass-ratio-predictions",
         "mass-predictions-data",
         "mass-comparison-table",
@@ -118,6 +121,7 @@ export default chapter({
       blocks: [
         "beta-decay-observations-intro",
         "qvalue-observation",
+        "qvalue-observation-table-data",
         "hadron-half-life-verification",
         "hadron-half-life-regimes",
         "n-v-bring-action",

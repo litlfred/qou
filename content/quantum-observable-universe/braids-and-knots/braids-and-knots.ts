@@ -232,6 +232,7 @@ export default chapter({
         // (sec:exceptional-divisor-reeb) into the vertex-
         // factorisation specialisation.
         "six-operators-via-vertex-factorisation",
+        "six-operators-via-vertex-factorisation-table-data",
         // Photon polarisation states as Hecke generators on the exceptional divisor
         "breit-wheeler-vertex",
         // Literature alignment: Bilson--Thompson preons, Hecke parity, photonic hopfions
@@ -261,6 +262,7 @@ export default chapter({
         "feynman-categorical-trace",
         "feynman-categorical-trace-proof",
         "feynman-qou-dictionary",
+        "feynman-qou-dictionary-table-data",
         "feynman-classical-limit",
         "feynman-classical-limit-interpretation",
       ],
@@ -284,6 +286,7 @@ export default chapter({
         "hecke-charge-mass-duality",
         "skein-decomposition",
         "topological-field-ansatz",
+        "topological-field-ansatz-table-data",
       ],
     }),
 
@@ -1171,6 +1174,7 @@ export default chapter({
         // for the Conway construction, sign sequences, standard-part
         // functor, etc.
         "surreal-notation-cheat-sheet",
+        "surreal-notation-cheat-sheet-table-data",
         "reeb-epsilon",
         "q-from-epsilon",
         // Graded-Mikusiński / joint-Galois-braid machinery.

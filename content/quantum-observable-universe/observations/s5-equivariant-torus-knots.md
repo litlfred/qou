@@ -21,15 +21,7 @@ permutation in $S_5$.  The orders of elements of $S_5$ are the
 least common multiples of the parts of the five-element
 partitions:
 
-| Cycle type | Order |
-|------------|:-----:|
-| $(1)^5$ | $1$ |
-| $(2)(1)^3$ | $2$ |
-| $(2)^2(1)$ | $2$ |
-| $(3)(1)^2$ | $3$ |
-| $(3)(2)$ | $6$ |
-| $(4)(1)$ | $4$ |
-| $(5)$ | $5$ |
+See [Table](#tbl:s5-equivariant-torus-knots-table-data).
 
 The orders realised in $S_5$ are $\{1, 2, 3, 4, 5, 6\}$.
 Restricting to odd $s \geq 3$ (forced by $\gcd(2, s) = 1$)

@@ -8,16 +8,7 @@ against local variations in $q$.
 
 **$q$-Stability ranges for light elements.**
 
-| $p$ | Element | $n_{\mathrm{pred}}$ | $q_{\min}$ | $q_{\max}$ | Width |
-|----:|---------|----:|-------:|-------:|------:|
-| 2 | He | 2 | 1.001 | 1.828 | 0.827 |
-| 3 | Li | 3 | 1.001 | 1.389 | 0.388 |
-| 6 | C | 6 | 1.001 | 1.114 | 0.113 |
-| 8 | O | 9 | 1.070 | 1.213 | 0.143 |
-| 10 | Ne | 11 | 1.048 | 1.145 | 0.097 |
-| 14 | Si | 16 | 1.082 | 1.136 | 0.054 |
-| 20 | Ca | 24 | 1.104 | 1.133 | 0.029 |
-| 26 | Fe | 32 | 1.100 | 1.120 | 0.020 |
+See [Table](#tbl:q-stability-ranges-table-data).
 
 **Observations.**
 
