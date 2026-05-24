@@ -18,7 +18,7 @@ top-level `docs/audits/` list.
 |-----------|--------|
 | The audit explicitly says `DEPRECATED` / `SUPERSEDED` / `RETRACTED` in its title or top line | Move with original filename |
 | The audit's findings have been integrated into main and the audit no longer drives action | Move with original filename, add deprecation header (see below) |
-| The audit is a planning doc (`workplan-vN`) whose plan has been executed | Move and rename to `<original>.executed.md` (so date-stamped iterations remain comparable) |
+| The audit is a planning doc (`workplan-vN`) whose plan has been executed | Move and rename to `<original>.executed.md` (and rename any companion `<original>.witness.json` sidecar to `<original>.executed.witness.json` to preserve pairing — see "Companion witness JSONs" below) |
 | The audit is a WIP scratch doc whose conclusions live elsewhere | Move; add header pointing to the canonical block / PR |
 
 **Do NOT move**:
