@@ -68,6 +68,14 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402
+# NOTE: `binding_from_frobenius_pairing` is the Phase-5 EXPLORATORY
+# binding entry point (line 2991-2992 of the original hecke_core.py
+# self-documented it as "Legacy Plancherel path (default)"). It lives
+# in _deprecated/hecke_core_legacy.py per the canonical-vs-exploratory
+# carve-out (docs/audits/2026-05-24-hecke-core-canonical-audit.md).
+# Canonical binding entries are `binding_canonical.binding_canonical`
+# or `mass_formula_6term_mpfr_50dps.py`.  This convention-B comparison
+# script intentionally probes the legacy path; do not promote.
 from _deprecated.hecke_core_legacy import (  # noqa: E402
     binding_from_frobenius_pairing,
 )
