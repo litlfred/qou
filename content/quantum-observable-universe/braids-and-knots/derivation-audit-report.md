@@ -35,25 +35,37 @@ has been created:
 
 ---
 
-## GAP-A-2 — Chirality formula $a_K = 1 + w \cdot h$ (chiral case)
+## GAP-A-2 — Chirality formula $a_K = 1 + w \cdot h$ (chiral case) *(refined 2026-05-09)*
 
-**Source:** `chirality-writhe-ribbon-derivation.md` §Caveat.
+**Source:** [`chirality-writhe-ribbon-derivation.md`](chirality-writhe-ribbon-derivation.md) §Caveat
+and §Numerical test at $H_6(R, q)$ (satellite $D$).
 
-**Description.**  The proposition
-([prop:chirality-writhe-ribbon-derivation](#prop:chirality-writhe-ribbon-derivation))
-derives $a_K = 1 + w(K) \cdot h + O(h^2)$ to first order in $h$
-from the Kauffman framing formula applied to the ribbon twist $\varTheta$
-on $H_n(R, q)$.  However, the remark at line 150 of the source notes
-this is described as "paper-empirical" in upstream commits.  The
-derivation is partially complete (first-order term is categorical) but
-the exactness beyond first order — and the claim that this particular
-first-order expansion is *the* chirality factor for all chiral knots
-in the model — is not fully justified.
+**Status:** **Refined.** The structural form
+$a_K = 1 + w(\beta) \cdot X \cdot h + O(h^2)$ is retained (linear
+in $h$ and writhe), but the specific coefficient
+$X = \langle c \rangle_\beta$ (Wedderburn-averaged content) is now
+**numerically falsified** on the deuteron. The script
+`ribbon_content_average.py` computes $\langle c \rangle_\beta$ and
+the predicted $a_D$, giving values that vary $-2.16$ to $+3.10$
+depending on whether inter-nucleon crossings are included, against
+paper's assignment $a_D = 1 + h \approx 1.21$. The single-nucleon
+neutron case happens to land within $2.5\%$ "coincidentally close
+but without deeper structural justification at $A = 1$"
+(quoting [`chirality-writhe-ribbon-derivation.md`](chirality-writhe-ribbon-derivation.md)).
+The Wedderburn-averaged coefficient is therefore **not** the
+correct $X$; possible refinements (weighting by $\dim_q(\lambda)$
+instead of $\dim_q(\lambda)^2$, topological vs. algebraic writhe,
+true Hecke ribbon element) are listed in the source block.
 
-Additionally, the mean content $\langle c(\lambda) \rangle_\beta$
-appearing in the derivation needs explicit evaluation for all
-nucleon/nuclear braids; a weighted Plancherel argument is present but
-not closed for general $w$.
+The structural form (linear-in-$h$, conditional on chirality of
+the underlying braid) has been **reduced** to a finite crystal-graph
+computation via Type-B folding (Brundan-Kleshchev cyclotomic KLR +
+Lecouvey GS / crystal-highest-weight bijection); see
+[`../archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md`](../archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.md)
+§"Reduction 1: chirality $\langle c \rangle_\beta$ via Type-B folding".
+The reduction is *sorry-free conditional* on
+[`brundankleshchev2009`] + [`lecouvey2007`]; the residual open
+content is the explicit crystal-graph computation.
 
 **Resolution path.**  [conj:chirality-ribbon-frobenius](#conj:chirality-ribbon-frobenius)
 states the complete form and flags the proof obligations.
@@ -162,35 +174,62 @@ masses rather than derived from the Hecke algebra structure.
 
 ---
 
-## GAP-B-3 — Compound $\beta$-decay shell calibration ($y_{\mathrm{target}}$ values)
+## GAP-B-3 — Compound $\beta$-decay shell calibration ($y_{\mathrm{target}}$ values) *(closed)*
 
-**Source:** `prop:compound-beta-shell-calibration`.
+**Source:** [`compound-beta-shell-calibration.md`](compound-beta-shell-calibration.md).
 
-**Description.**  The compound $\beta$-decay shell calibration uses
-target $y$ values for the Markov-trace expansion that are calibrated
-to reproduce a set of measured $Q$-values, rather than predicted from
-the categorical derivation chain.  The framework in principle gives
-these from the Markov weights $y_\lambda$
-([prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure)),
-but the connection from the abstract $y_\lambda$ to the shell-model
-$y_{\mathrm{target}}$ values used in practice has not been derived.
+**Status:** **Closed.** The block is now a proposition
+(`prop:compound-beta-shell-calibration`) explicitly stating that
+$y_{\mathrm{target}}(A_{\mathrm{magic}})$ is **derivable**, not
+independently calibrated, from the cumulative $\beta$-decay chain
+reaching the magic anchor. The derivation routes through a chain of
+$\beta$-decays along the $\beta$-stability valley, summing $Q_\beta$
+values, and yields the magic-shell binding contribution as the
+"difference of shell-operator contributions between parent and
+daughter, not the shell magnitude itself." Only $E_0 = Q_\beta$
+(CAL-3) is consumed as input — no separate $y_{\mathrm{target}}$
+calibration. See [`compound-beta-shell-calibration.md`](compound-beta-shell-calibration.md)
+§"Compound β-decay principle" for the chain-summing formula.
+
+**Description (historical).**  The compound $\beta$-decay shell
+calibration originally used target $y$ values for the Markov-trace
+expansion that were calibrated to reproduce a set of measured
+$Q$-values, rather than predicted from the categorical derivation
+chain. The connection from the abstract $y_\lambda$
+([prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure))
+to the shell-model $y_{\mathrm{target}}$ values used in practice
+was the open piece; it is now bridged by the chain-summing
+derivation described above.
 
 ---
 
 ## GAP-C-1 — $q$-integer BW coefficients (pattern match)
 
-**Source:** `q-integer-mass-formula.md`.
+**Source:** [`../particle-interactions/q-integer-mass-formula.md`](../particle-interactions/q-integer-mass-formula.md)
+(block moved from `braids-and-knots/`).
 
-**Description.**  The extended Bethe--Weizsäcker coefficients are
-expressed as products of $q$-integers $[n]_q$ evaluated at $q_0$.
-The proposition notes "derivation of the five standard terms" from
-Wedderburn and crossing counts, but the specific $q$-integer factors
-(e.g.\ $[7]_q$ from "7 crossings on generator 0: 3 B$_{3}$ + 1 uu +
-2 gluon + 1 ud") rest on counting arguments that have not been
-derived from first principles within the Hecke algebra framework.
-The crossing counts themselves are empirically motivated (they
-reproduce known BW values to $< 2\%$) rather than derived from the
-confinement SDP.
+**Status:** **Partially derived.** Five standard liquid-drop
+coefficients (volume, surface, Coulomb, asymmetry, pairing) and
+two extended terms (exchange Coulomb, shell correction) are now
+expressed as products of $q$-integers $[n]_q$ evaluated at $q_0$,
+times $m_e$, with **0.2–2.1% agreement** to empirical fitted values
+(see the per-coefficient table in
+[`../particle-interactions/q-integer-mass-formula.md`](../particle-interactions/q-integer-mass-formula.md)).
+The block is itself a **Conjecture (BW-emergence)** conditional on
+`conj:palindromicity-orbital-type` + `conj:shell-closure-nf-term-count`,
+so the closure is *partial-with-conditional-uplift*, not fully derived.
+
+**Description (historical).**  The extended Bethe--Weizsäcker
+coefficients are expressed as products of $q$-integers $[n]_q$
+evaluated at $q_0$. The proposition notes "derivation of the five
+standard terms" from Wedderburn and crossing counts, but the
+specific $q$-integer factors (e.g.\ $[7]_q$ from "7 crossings on
+generator 0: 3 B$_{3}$ + 1 uu + 2 gluon + 1 ud") rest on counting
+arguments whose first-principles derivation within the Hecke
+algebra framework lives in the upstream palindromicity and
+shell-closure conjectures.  The crossing counts themselves
+reproduce known BW values to $< 2\%$ but the categorical-substrate
+derivation is conditional on those upstream conjectures.
 
 ---
 
