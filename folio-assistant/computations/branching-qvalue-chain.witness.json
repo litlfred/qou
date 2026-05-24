@@ -1,9 +1,8 @@
 {
-  "computedAt": "2026-04-15T13:14:01.202898+00:00",
   "computation": "branching-qvalue-chain",
-  "description": "Full chain: γγ → e⁻ → quarks → nucleon → Q-values via S₃ᴬ branching",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "git_sha": "c7f24117de39ad9f39b27c9d354b276d05c12b65",
+  "description": "Full chain: \u03b3\u03b3 \u2192 e\u207b \u2192 quarks \u2192 nucleon \u2192 Q-values via S\u2083\u1d2c branching",
+  "timestamp": "2026-05-24T17:13:11.131472+00:00",
+  "git_sha": "b7bfd3ebe703d038aebd2853bea5f88af957a7fd",
   "q0": 1.1099785955541805,
   "q0_err": 1.3578965598837824e-09,
   "symbolic": {
@@ -20,13 +19,13 @@
     "delta_err": 7.720643203508e-09
   },
   "results": {
-    "n→p": {
+    "n\u2192p": {
       "Z": 0,
       "N": 1,
       "A": 1,
       "regime": "odd",
-      "formula": "(SΔ + 1) × m_e",
-      "S": 1,
+      "formula": "(S\u0394 + 1) \u00d7 m_e",
+      "S": 1.0,
       "S_delta": 0.5295037320168717,
       "Q_me": 1.5295037320168716,
       "Q_MeV": 0.7815748010817027,
@@ -36,12 +35,12 @@
       "error_pct": -0.09696747047009642,
       "sigma": 1237.6284113149366
     },
-    "³H→³He": {
+    "\u00b3H\u2192\u00b3He": {
       "Z": 1,
       "N": 2,
       "A": 3,
       "regime": "odd",
-      "formula": "|SΔ| × m_e",
+      "formula": "|S\u0394| \u00d7 m_e",
       "S": 0.06627566491277304,
       "S_delta": 0.03509321191321296,
       "Q_me": 0.03509321191321296,
@@ -52,17 +51,12 @@
       "error_pct": -3.6400083837758634,
       "sigma": 67.74055587970017
     },
-    "⁶He→⁶Li": {
+    "\u2076He\u2192\u2076Li": {
       "Q_MeV": 3.637,
       "Q_obs_MeV": 3.508,
       "error_pct": 3.6773090079817563,
       "regime": "even",
       "source": "handover"
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0,
-  "engine": "python",
-  "scriptFile": "comparison-table.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  }
 }
