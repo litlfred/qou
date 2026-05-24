@@ -1,4 +1,4 @@
-**Proposition (bar-involution invariance).**
+**Proposition (conditional on [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production) and [`conj:crystal-graph-realization`](#conj:crystal-graph-realization)).**
 *Let $\bar\cdot \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{Z}[q, q^{-1}]$
 be the bar-involution sending $q \mapsto q^{-1}$ (the Dynkin-fold
 involution on the $A_{n-1}$ Hecke algebra after Type-B folding;
