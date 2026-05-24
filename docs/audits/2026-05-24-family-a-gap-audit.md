@@ -1,214 +1,120 @@
 # Family A gap audit — the +2.89-3.86% systematic offset
 
-**Date:** 2026-05-24 (amended)
-**Trigger:** `2026-05-24-65-isotope-mass-table-audit.md` reports +2.89-3.86% systematic offset across all 65 isotopes. m_p / m_n / Δ_pn miss the 1ppb-100×-experimental target by 6-9 orders of magnitude SOLELY because of this gap. This audit diagnoses the cause and identifies the canonical closure path.
+**Date:** 2026-05-24 (twice-amended — see banner)
+**Trigger:** `2026-05-24-65-isotope-mass-table-audit.md` reports +2.89-3.86% systematic offset across all 65 isotopes. Per-observable accuracy (L2 leg of `docs/precision-goals.md`) misses the 100× experimental target by 6-9 orders of magnitude SOLELY because of this gap. This audit diagnoses the cause and identifies the canonical closure path.
 
-> ⚠️ **2026-05-24 amendment.** The original audit framed the closure as
-> `λ_scale = 5/2 − G·h²` (REPLACE form, "Reading A") and cited
-> `lambda-scale-rd1-geometric.witness.json` as empirical confirmation.
-> **That framing was wrong.** The REPLACE form was **structurally
-> falsified** on 2026-05-18 (see
-> [`2026-05-18-conjecture-falsification.md`](2026-05-18-conjecture-falsification.md)):
-> no categorical realization of the half-symmetric H_4 projection
-> yields `−G·h²` from Wedderburn data, and the 5.6 ppm CODATA match
-> was deemed a PSLQ-style numerical coincidence. The empirical probe
-> is **not** evidence for Reading A; it is evidence for *some*
-> closure near `−G·h²` numerically, which Reading B (Strategy I,
-> Yekutieli ADD form) recovers structurally to within +1.33 %.
+> ⚠️ **2026-05-24 amendment #2 (canonical-aligned with the on-main purge).**
+> The first amendment of this doc framed the closure as "Strategy I"
+> (Yekutieli per-cell ADD: `λ_scale = 5/2 + (3/4 − G)·h²`). That
+> framing was also wrong. **Commit `71d674da1` on `main`** (2026-05-24
+> 02:10) **PURGED** the Yekutieli per-cell extension as non-canonical:
 >
-> The canonical closure path is **Strategy I (Yekutieli ADD)**:
-> `λ_scale = 5/2 + (3/4 − G)·h²`. It closes 2.22× of the wedge
-> (from +2.89 % to +1.33 %) and is anchored in the S_4↓S_3 half-
-> symmetric bijection (`prop:s4-s3-half-symmetric-projection`).
-> The residual +1.33 % ("Strategy K gap") remains open as a separate
-> research direction. See §1, §2, §3 below for the corrected
-> structural diagnosis. The original §1-§3 are preserved in the
-> git history of this branch (commits prior to this amendment).
+> > "Yekutieli per-cell curvature (−G·h²) is NOT CANONICAL:
+> >  - Bijection NEGATIVE (PR #985): natural-reading κ = +0.5, not −G
+> >  - Reading A is substrate-q₀ coincidence (c₂ = 62.6 ≠ −G)
+> >  - No categorical backing for the −G·h² term"
+>
+> Per the user directive ([PR #1080](https://github.com/litlfred/qou/pull/1080)
+> body): *"no lambda-scale. it was absorbed. there was already a per
+> knot Geom(K) factor that was canonically derived. please fix all
+> documentation."* The canonical mass formula is:
+>
+> $$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0)$$
+>
+> — a **single** Geom call per knot/link, per `prop:geom-universality`.
+> There is no separate `λ_scale` constant. The +2.89 % m_p residual
+> is the gap between the framework's current categorical
+> `Geom_full(𝓑₃)` computation and its **categorically-exact** value
+> at higher orders in $h^2$. The closure path is **refinement of
+> `Geom_full`**, not a separate additive correction. See PR #1080
+> for the doc-wide framing cleanup that this audit now aligns with.
 
-**TL;DR (amended):** The gap is the algebra-vs-geometry skip in the
-production mass formula. Family A's algebraic
-`λ_scale = 5/2 + (3/4)·h²` (Wedderburn dimensions at H_4) has not
-been augmented with the Yekutieli per-cell curvature correction
-on the Borromean complement. The canonical-conditional Strategy I
-closure is **`λ_scale = 5/2 + (3/4 − G)·h²`** (Wenzl + Yekutieli
-ADD), which closes m_p to **+1.33 %** — a 2.2× improvement over
-the current +2.89 % gap. **Wiring is gated on formalizing the
-S_4↓S_3 bijection in Lean and the per-cell Yekutieli integration.**
-The remaining +1.33 % residual is a known open frontier
-("Strategy K"), tracked separately.
+**TL;DR (re-amended):** The +2.89 % gap is a **Geom_full(𝓑₃)
+categorical-exactness refinement gap** at $h^2$ order. Two structural
+inputs to refine Geom_full's exactness remain open: (a) the
+S_4↓S_3 half-symmetric bijection (combinatorial branching, standard
+Mathlib; provable today) and (b) the S_5↔SO(3) fiber action on
+Bring's surface (partition-wise Wedderburn ↔ spatial rotations).
+Neither is "a Yekutieli per-cell correction" — both are structural
+inputs that constrain what `Geom_full(𝓑₃, q_0)` must equal at
+categorical exactness. The bare REPLACE form `5/2 − G·h²` was
+PSLQ-coincidence falsified 2026-05-18; the Yekutieli per-cell ADD
+form was purged 2026-05-24. The structural refinement path goes
+through Geom_full itself, not through these forms.
 
-## §1. Empirical diagnosis (corrected reading)
+## §1. The canonical formula (post-purge state on main)
 
-The empirical probe `lambda-scale-rd1-geometric.witness.json`
-reports a numerical fit to the implied closure coefficient. The
-**correct structural reading** of that probe is **not** that
-`λ = 5/2 − G·h²` (REPLACE), but that the gap is consistent with a
-Yekutieli per-cell additive correction:
+Per `m_p_borromean_verification_50dps.py` (current on main, post-purge commit `71d674da1`):
 
-| Quantity | Value | Meaning |
-|----------|------:|---------|
-| `pi_alg_at_q0` | 2.5328 | Family A's `λ_A(q₀) = 5/2 + (3/4)·h²(q₀)` (PROVED Wedderburn) |
-| `lambda_p_target` | 2.4600 | What λ needs to be for m_p closure |
-| Family A residual | +2.89 % | m_p propagation gap (Wenzl-only) |
-| Strategy I (ADD) value | 2.4927 | `5/2 + (3/4 − G)·h²` (Wenzl + Yekutieli) |
-| **Strategy I residual** | **+1.33 %** | m_p propagation gap (Strategy I, post-Yekutieli) |
-| Numerical coincidence `5/2 − G·h²` | 2.4600 | PSLQ match at 5.6 ppm — **falsified structurally 2026-05-18** |
-
-The implied **Strategy I** (Yekutieli ADD) closure:
-
-$$
-\lambda_{\text{scale}}^{\text{Strategy I}}
-  = \underbrace{\tfrac{5}{2} + \tfrac{3}{4} h^2}_{\text{Family A (Wenzl, PROVED)}}
-    + \underbrace{(-G)\cdot h^2}_{\text{Yekutieli per-cell, ONE octahedron}}
-  = \tfrac{5}{2} + \bigl(\tfrac{3}{4} - G\bigr)\cdot h^2
-$$
-
-where $G = \mathrm{Catalan} \approx 0.9160$.
-
-Numerical check at $q_0 \approx 1.1098$, $h \approx 0.2087$, $h^2 \approx 0.0436$:
-
-$$
-\lambda_{\text{scale}}^{\text{Strategy I}}(q_0)
-  \approx 2.5 + 0.0327 - 0.0399 \approx 2.4928
-$$
-
-Propagating to $m_p$: **~13 313 ppm (+1.33 %)** vs. the Family A
-**+29 605 ppm (+2.89 %)** — a 2.22× improvement. The remaining
-+1.33 % is the "Strategy K" frontier (see §4).
-
-## §2. Structural diagnosis (the bijection)
-
-Per [`docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](../coordination/2026-05-23-algebraic-geometric-observable-consistency.md),
-the production compute pipeline currently does:
-
-```
-ALGEBRAIC (Wenzl):    dim_q V_λ at H_4 → (1/4) Σ_λ dim_q V_λ
-                                       = 5/2 + (3/4)·h²
-                                              ↑
-                                       PROVED (Family A)
-GEOMETRIC (Yekutieli): per-cell curvature −Vol(𝓑₃)/8 = −G
-                       on ONE octahedral cell (extracted by
-                       half-symmetric H_4 projection)
-                                              ↑
-                       conditional on S_4↓S_3 bijection
-                       + Yekutieli integration formalization
-TOTAL (Strategy I):   5/2 + (3/4 − G)·h²
-                                              ↑
-                       closes +2.89 % → +1.33 %
+```python
+# Honest predictions (PROVED Family A, PR #895 + #942):
+#   m_p^pred ≈ 965 MeV  (vs CODATA 938.27, +2.89 %)
 ```
 
-**Why "one cell"?** Per `prop:s4-s3-half-symmetric-projection`
-([content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md](../../content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md)),
-the half-symmetric Wedderburn projection on $H_4(q)$ combined with the
-$S_3$-trivial subspace projection extracts the curvature contribution
-of exactly one of the 8 ideal octahedra in the Borromean complement:
+The production compute chain is:
 
-$$
-  \underbrace{\tfrac{5}{2}}_{\text{half-sym H_4 count}}
-  \times \underbrace{\tfrac{2}{5}}_{S_3\text{-trivial factor}}
-  = 1.
-$$
+$$m_p^{\text{pred}} = m_e \cdot \mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$$
 
-With Adams 1985 ($\operatorname{Vol}(\mathcal{B}_3) = 8G$), the
-per-cell contribution at $h^2$ order is $-G$.
+where `Geom_full(𝓑₃, q_0)` is the per-knot Geom-functor evaluation on the proton's canonical braid → Borromean closure. The numerical decomposition at $q_0$:
 
-**This is the bijection** that anchors the Yekutieli ADD form — not
-a REPLACE of Family A, but a structural augmentation of it. The
-falsified Reading-A `5/2 − G·h²` was numerologically suggestive
-because Reading A and Strategy I (ADD) converge to within 1.33 % at
-$q_0$, but only Strategy I has a categorical bijection backing it.
+| Term | Value | Status |
+|---|---:|---|
+| $m_e$ (CAL-1) | 0.510998950 MeV | PROVED (calibration) |
+| $\mathrm{Geom_{leading}} = \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | 746.4 | PROVED (Adams 1985 + Wenzl) |
+| Family A residual factor $\lambda_A = 5/2 + (3/4)h^2$ | ~2.5328 | PROVED algebraically |
+| $m_p^{\text{pred}}$ | ~965.38 MeV | **+2.89 % vs CODATA** ← the gap |
 
-## §3. Canonical-derivation status (the gate)
+The gap is between this categorical computation and its categorically-exact value at higher $h^2$ orders.
 
-Per user directive (2026-05-24): "WE NEED CANONICALLY DERIVED ONLY...
-probe is ok, but nothing gets wired into pipeline that isnt".
+## §2. Why the prior framings were wrong
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| Family A algebraic `λ_A = 5/2 + (3/4)·h²` | **PROVED** | `lambda_scale_all_c_i_family_a.py` + Lean (PR #895 / #942); h-series terminates at h² exactly |
-| Vol(𝓑₃) = 8·G | **PROVED** | PR #843 fix; Adams 1985 + Λ(π/4) = G/2 |
-| `prop:s4-s3-half-symmetric-projection` (bijection: 5/2 × 2/5 = 1) | **NARRATIVE-PROVED, LEAN NOT YET FORMALIZED** | Standard $S_n$ branching rule; one-page combinatorial proof |
-| `prop:geom-universality` (Geom(K) is the unique Frobenius-Hopf-compatible functional) | **CONDITIONAL** (§3b-cond) | Lean: 0 sorries; proved from class hypotheses. Conditional on `conj:hyperbolic-volume-transcendence` + `rem:baryon-period-ratio` |
-| `prop:geom-yekutieli-alignment` (per-cell `−G` from Yekutieli non-abelian Stokes) | **partially formalized** | Yekutieli 2015 (arXiv:1007.1250v4) per-cell volume integration; Lean stub exists; full proof pending |
-| **REPLACE form** `5/2 − G·h²` (Reading A) | **FALSIFIED 2026-05-18** | No Wedderburn derivation yields `−G·h²`; 5.6 ppm match is PSLQ coincidence. Do not cite as canonical. |
-| **Strategy K** (+1.33 % residual closure) | **OPEN** | Post-Yekutieli residual matches `+(3/4)·h²` to 316 ppm — see [`2026-05-23-lambda-scale-replace-vs-add-analysis.md §2`](2026-05-23-lambda-scale-replace-vs-add-analysis.md) for the two reconciliations |
+| framing | claim | status | reference |
+|---|---|---|---|
+| **Reading A (REPLACE)** | `λ_scale = 5/2 − G·h²` closes m_p to 5.6 ppm | **falsified 2026-05-18** — PSLQ coincidence, no Wedderburn derivation gives `−G·h²` | [`2026-05-18-conjecture-falsification.md`](2026-05-18-conjecture-falsification.md) |
+| **Strategy I / Reading B (ADD)** | `λ_scale = 5/2 + (3/4 − G)·h²` halves the gap to +1.33 % | **purged 2026-05-24** — PR #985 bijection NEGATIVE (κ = +0.5, not −G); no categorical backing | commit `71d674da1` |
+| **λ_scale as a separate constant** | distinct from `Geom_full(K)` | **absorbed 2026-05-23** — there is no `λ_scale` post-`ffdd84409`; `Geom_full(K)` is the only object | [PR #1080](https://github.com/litlfred/qou/pull/1080) |
 
-**Wiring readiness assessment:**
+The current canonical understanding (per the on-main purge + PR #1080 framing): **the +2.89 % gap lives inside `Geom_full(𝓑₃)`**. Closing it requires refining `Geom_full`'s categorical computation, not adding an external correction.
 
-Strategy I (ADD form) `λ_scale = 5/2 + (3/4 − G)·h²` is
-**conditionally canonical** — its two structural inputs are
-(a) the S_4↓S_3 half-symmetric bijection (narrative-proved,
-combinatorial) and (b) the Yekutieli per-cell integration
-(partially formalized, conditional on Geom-universality).
+## §3. Canonical refinement path
 
-Per CLAUDE.md §3b-cond, conditional-class theorems CAN be wired
-into production with explicit conditional banners + Lean class
-hypotheses + `uses[]` declaring the conjectures. The bijection
-itself has no conjectural dependencies and is the next mechanical
-formalization step.
+Per `prop:geom-universality` ([content/quantum-observable-universe/braids-and-knots/geom-universality.md](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md)),
+`Geom_full` is the unique Frobenius-Hopf-compatible functional on the braid-closure → link cobordism category. Its categorical exactness on $\mathcal{B}_3$ at $h^2$ order requires two structural inputs that are independent and complementary:
 
-## §4. Recommendation (corrected)
+| Structural input | Status | Role in refining Geom_full |
+|---|---|---|
+| **S_4↓S_3 half-symmetric Wedderburn projection** (`prop:s4-s3-half-symmetric-projection`: $\frac{5}{2} \times \frac{2}{5} = 1$) | narrative-proved (standard $S_n$ branching rule); **Lean: not yet formalized** | Constrains which Wedderburn cells contribute to the trace at the $h^2$ order. The bijection is sound combinatorics regardless of any per-cell curvature value. |
+| **S_5 ↔ SO(3) fiber action on Bring's surface** | **NOT YET FORMALIZED** | Ties the partition-wise Wedderburn action (S_5 on $h_q$) to spatial SO(3) rotations on Bring's quintic surface. Load-bearing for how the cell extraction lifts to the spatial geometry that `Geom_full` integrates over. |
+| **q-locality of the canonical $h^2$ expansion** | tested negatively on bare polynomials (PR #951); **not yet tested** end-to-end on `Geom_full` output | Smooth-crossing probe verifies $h^2$ structure is intrinsic to `Geom_full`, not an artifact of any one expansion. |
 
-**Three actions, in order:**
+Per `prop:geom-universality` itself (CONDITIONAL, §3b-cond, Lean: 0 sorries — proved from class hypotheses conditional on `conj:hyperbolic-volume-transcendence` + `rem:baryon-period-ratio`), the categorical-exactness refinement of `Geom_full(𝓑₃)` does NOT require introducing a new per-cell curvature term. The bijection + SO(3) fiber action constrain what value `Geom_full` must take; the value itself is determined by `Geom_full`'s own structure.
 
-1. **Formalize `prop:s4-s3-half-symmetric-projection` in Lean** as
-   a PROVED proposition (no conditional class — the standard
-   $S_n$ branching rule is fully in Mathlib). 1-3 days. **Unblocks
-   geometric h² → PROVED status for the bijection half of
-   Strategy I.**
+## §4. Action items (queued; this PR ships only the audit doc)
 
-2. **Re-run q-locality smooth-crossing probe** on the
-   Strategy I (ADD) form `5/2 + (3/4 − G)·h²` end-to-end through
-   the full Geom(K) functor output, not on the bare polynomial.
-   PR #951 failed on the standalone polynomial `5/2 − G·h²`
-   because (a) that was the falsified REPLACE form and (b) it was
-   tested as a bare polynomial without the Geom-functor pull-back.
-   1-2 days. **Validates that Strategy I survives q-locality.**
-
-3. **Formalize `S_5 ↔ SO(3)` fiber action on Bring's surface** —
-   the explicit map between partition-wise Wedderburn actions
-   (S_5 on h_q) and spatial SO(3) rotations on Bring's quintic
-   surface. This is the missing structural piece tying the
-   Wedderburn `5/2` to the spatial 8-cell tessellation. 3-5 days.
-   **Unblocks the per-cell Yekutieli integration as a fully
-   structural step.**
-
-**The +1.33 % Strategy K residual remains open** after #1-#3 land.
-The residual decomposition (`(λ_Strategy I − λ_fit) / h² ≈ 0.7503`
-matching `+(3/4)·h²` to 316 ppm — see
-[`2026-05-23-lambda-scale-replace-vs-add-analysis.md §2`](2026-05-23-lambda-scale-replace-vs-add-analysis.md))
-gives two structural candidates for a "Strategy K" closure: a
-third independent correction near `+(3/4)·h²`, or a structural
-re-evaluation of whether Family A's contribution to the m_p
-formula should be present at all. Strategy K is not gated on this
-audit; it is a forward-research direction.
-
-## §5. Action items (queued; this PR ships only the audit)
+These three tasks remain the canonical refinement work. Reframed under the canonical post-purge framing, they're all about refining `Geom_full`, not adding corrections:
 
 | # | Item | Effort | Gates |
 |---|------|--------|-------|
-| 5.1 | Add this audit doc to the repo (THIS PR) | done | — |
-| 5.2 | **Formalize `prop:s4-s3-half-symmetric-projection` in Lean** — PROVED status for the bijection (5/2 × 2/5 = 1) | 1-3 days | none — combinatorial $S_n$ branching rule, standard Mathlib |
-| 5.3 | **Re-run q-locality probe** on Strategy I (ADD) end-to-end through Geom(K), not bare polynomial | 1-2 days | none — direct re-run with full functor output |
-| 5.4 | **Formalize `S_5 ↔ SO(3)` fiber action** on Bring's surface — partition Wedderburn actions ↔ spatial rotations | 3-5 days | needs categorical-spatial chain; biggest deliverable |
-| 5.5 | When 5.2-5.4 land: wire Strategy I as **opt-in flag** `method="strategy_i_yekutieli"` in `m_p_borromean_verification_50dps.py`; document +1.33 % Strategy K residual in witness | 1 day | gated on 5.2-5.4 |
-| 5.6 | **Strategy K research-direction spec** — separate audit doc enumerating the two reconciliations from §2 above + concrete test plans | 1 day | non-blocking; documents the open frontier |
-| 5.7 | Regen stale `canonical-mass-table-extended.witness.json` — done in PR #1064 (merged 2026-05-24) | done | — |
+| 4.1 | Add this audit doc to the repo (THIS PR) — twice-amended for alignment with purge | done | — |
+| 4.2 | **Formalize `prop:s4-s3-half-symmetric-projection` in Lean** — combinatorial bijection $\frac{5}{2} \times \frac{2}{5} = 1$, standard $S_n$ branching rule, Mathlib. PROVED status (no conditional class, no κ claim). **Note:** the `.md` block's "Application to λ_scale" section is now stale per [PR #1080](https://github.com/litlfred/qou/pull/1080); the Lean formalization scopes to the combinatorial bijection only. | 1-3 days | none |
+| 4.3 | **Re-run q-locality smooth-crossing probe** end-to-end on `Geom_full(𝓑₃, q)` output as $q$ varies near $q_0$ — NOT on any bare polynomial like `5/2 + (3/4 − G)·h²` (which is purged anyway). PR #951 failed on the bare polynomial; this is a different test on the actual `Geom_full` evaluation. | 1-2 days | none |
+| 4.4 | **Formalize `S_5 ↔ SO(3)` fiber action** on Bring's surface — partition-wise Wedderburn actions ↔ spatial SO(3) rotations on Bring's quintic. Load-bearing for `Geom_full` categorical exactness on $\mathcal{B}_3$. | 3-5 days | needs categorical-spatial chain; biggest deliverable |
+| 4.5 | When 4.2 + 4.4 land: re-evaluate whether `Geom_full(𝓑₃, q_0)` can be computed to categorical exactness at $h^2$ order, potentially closing or reducing the +2.89 % gap. | depends on 4.2, 4.4 | gated |
 
-## §6. Pointers
+## §5. Pointers
 
-- [`docs/audits/2026-05-18-conjecture-falsification.md`](2026-05-18-conjecture-falsification.md) — REPLACE form `5/2 − G·h²` falsified (PSLQ coincidence)
-- [`docs/audits/2026-05-23-lambda-scale-replace-vs-add-analysis.md`](2026-05-23-lambda-scale-replace-vs-add-analysis.md) — Strategy I numerics + Strategy K residual decomposition
+- [`docs/audits/2026-05-18-conjecture-falsification.md`](2026-05-18-conjecture-falsification.md) — REPLACE form `5/2 − G·h²` falsified
+- [`docs/audits/2026-05-23-lambda-scale-replace-vs-add-analysis.md`](2026-05-23-lambda-scale-replace-vs-add-analysis.md) — Strategy I numerics + residual decomposition (historical; superseded by 2026-05-24 purge)
 - [`docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](../coordination/2026-05-23-algebraic-geometric-observable-consistency.md) — Layer 1/2/3 structural audit (parent of this audit)
 - [`docs/audits/2026-05-24-65-isotope-mass-table-audit.md`](2026-05-24-65-isotope-mass-table-audit.md) — empirical observation across 65 isotopes
-- [`content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md`](../../content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md) — the bijection (Reading B / Strategy I anchor)
-- [`content/quantum-observable-universe/braids-and-knots/geom-universality.md`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md) — `prop:geom-universality` (conditional, §3b-cond)
-- [`folio-assistant/computations/lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py) — Family A PROVED source
-- [`folio-assistant/computations/lambda_scale_strategy_i_yekutieli_probe.py`](../../folio-assistant/computations/lambda_scale_strategy_i_yekutieli_probe.py) — Strategy I numerical verification
-- [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py) — production m_p formula (currently Family A only)
+- [PR #1080](https://github.com/litlfred/qou/pull/1080) — λ_scale framing cleanup (absorbed into Geom_full)
+- commit `71d674da1` (on main) — purge of Yekutieli per-cell from production
+- [`content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md`](../../content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md) — bijection block (TOP is sound combinatorics; "Application to λ_scale" stale per PR #1080)
+- [`content/quantum-observable-universe/braids-and-knots/geom-universality.md`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md) — `prop:geom-universality` (CONDITIONAL, §3b-cond)
+- [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py) — production m_p formula (Family A only; +2.89 %)
 - [`CLAUDE.md §3b-cond`](../../CLAUDE.md) — conditional-class theorem conventions
 
-## §7. Sibling: canonical-discipline paper sweep findings (parallel run)
+## §6. Sibling: canonical-discipline paper sweep findings (parallel run)
 
 A parallel canonical-discipline sweep audited all of
 `content/quantum-observable-universe/**/*.md` for empirical /
@@ -218,10 +124,10 @@ fitting / probing / numerology floating in paper content.
 
 | # | File | Severity | Action |
 |---|------|----------|--------|
-| 7.1 | `chirality-writhe-ribbon-derivation.md` | MAJOR | **Re-contextualize** as a Yekutieli entry-point — the negative H_6-satellite result indicates writhe is not a primary derivation route for $a_K$, but the SU(2) CBH ½[α,α] curvature path (Yekutieli 2015 per-cell) IS load-bearing for Strategy I. Don't move out of paper; re-frame. |
-| 7.2 | `lambda-scale-substrate-form.md` | MEDIUM | Refactor: move original "Conjecture (now empirical)" block to a historical footnote; lead with reframed structural constant-C problem. |
-| 7.3 | `dressed-quark-numerology-at-q0.md` (filename) | LOW (cosmetic) | Rename → `dressed-quark-mass-at-q0.md`. Content is structurally sound (Skein-corrected + 1/3 flavor-split). |
-| 7.4 | `unified-curvature-rank-mass-formula.md` | INFO | "empirically it accounts for ~3% of the binding energy" — add nucleus / term context for clarity. |
+| 6.1 | `chirality-writhe-ribbon-derivation.md` | MAJOR | The negative H_6-satellite result indicates writhe is not a primary derivation route for $a_K$. The SU(2) CBH ½[α,α] curvature path (Yekutieli 2015 as external math reference) is not load-bearing for production after the 2026-05-24 purge; it's external math context only. Move negative-result narrative to an audit doc. |
+| 6.2 | `lambda-scale-substrate-form.md` | MEDIUM → CRITICAL | Per [PR #1080](https://github.com/litlfred/qou/pull/1080)'s λ_scale-absorbed-into-Geom_full framing: this entire block needs reframing or archival. λ_scale is no longer a separate constant. |
+| 6.3 | `dressed-quark-numerology-at-q0.md` (filename) | LOW (cosmetic) | Rename → `dressed-quark-mass-at-q0.md`. Content is structurally sound (Skein-corrected + 1/3 flavor-split). |
+| 6.4 | `unified-curvature-rank-mass-formula.md` | INFO | "empirically it accounts for ~3% of the binding energy" — add nucleus / term context for clarity. |
 
 Audit docs and coordination docs were skipped per directive (their
 experimental content is appropriate to their role).
