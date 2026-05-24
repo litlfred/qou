@@ -340,6 +340,23 @@
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "c3aabb117d60",
+          "ts": "2dc33456752b",
+          "lean": "8721a857cf8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "70427efb260c079890272431e4b1c77812542f34"
+        },
+        "reviewed_at": "2026-05-24T02:04:38.867Z",
+        "reviewed_sha": "e1f027f34dd7fe93691725cba3e99182ecf6208f"
       }
     ],
     "voice-title-scholarly": [
@@ -767,5 +784,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-24T01:58:50.338Z"
+  "updated_at": "2026-05-24T02:04:38.867Z"
 }

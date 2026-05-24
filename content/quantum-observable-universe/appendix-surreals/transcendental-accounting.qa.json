@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/appendix-surreals/transcendental-accounting.md"
   },
   "source_hashes": {
-    "md": "64d4d0a61a4e",
+    "md": "5bf9ca6f75d5",
     "ts": "bf7fa3fdbecd"
   },
   "criteria": {
@@ -320,6 +320,23 @@
         "reviewed_at": "2026-05-23T11:28:20.680Z",
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "5bf9ca6f75d5",
+          "ts": "bf7fa3fdbecd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "70427efb260c079890272431e4b1c77812542f34"
+        },
+        "reviewed_at": "2026-05-24T02:04:38.867Z",
+        "reviewed_sha": "e1f027f34dd7fe93691725cba3e99182ecf6208f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-title-scholarly": [
@@ -575,5 +592,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-24T01:58:50.338Z"
+  "updated_at": "2026-05-24T02:04:38.867Z"
 }
