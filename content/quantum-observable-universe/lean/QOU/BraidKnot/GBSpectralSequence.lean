@@ -77,4 +77,34 @@ theorem gb_spectral_sequence
       s.differential ℓ (s.differential ℓ x) = 0 :=
   s.d_squared_zero ℓ
 
+/-- **T4 scaffold: E_2 spectral-sequence collapse extension class.**
+
+    Per `prop:spectral-sequence-collapse` and the audit
+    `docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`
+    §2 (Step 7 — GB filtration / spectral sequence): the GB
+    spectral sequence collapses at $E_2$ because Pentagon
+    coherence forces the higher differentials $d_k$ for $k \geq 2$
+    to vanish.
+
+    Extends `GBSpectralSequence` with the explicit collapse-at-E_2
+    condition: the convergence map is iso (not just surjective) at
+    every filtration level. Under this strengthening, every higher
+    jet $h^{2k}$ for $k \geq 2$ is *determined* by the $E_2$ data
+    (the $\ell = 0, 1, 2$ pieces). -/
+class GBSpectralSequenceCollapsesAtE2 (R : Type u) [CommRing R]
+    extends GBSpectralSequence R where
+  /-- The convergence map is injective (combined with surjectivity
+      from the parent class, this gives iso at E_2). -/
+  convergeTo_injective : ∀ ℓ, Function.Injective (convergeTo ℓ)
+
+/-- **E_2 collapse theorem.** Under the E_2 collapse extension,
+    the convergence map is bijective at every filtration level —
+    i.e., the spectral sequence's $E_2$ page IS the $E_\infty$ page
+    up to the iso. This is the formal statement of "no free
+    parameters beyond E_2". -/
+theorem gb_spectral_sequence_e2_iso
+    {R : Type u} [CommRing R] [s : GBSpectralSequenceCollapsesAtE2 R] (ℓ : ℕ) :
+    Function.Bijective (s.convergeTo ℓ) :=
+  ⟨s.convergeTo_injective ℓ, s.e_infty_converges ℓ⟩
+
 end QOU.BraidKnot
