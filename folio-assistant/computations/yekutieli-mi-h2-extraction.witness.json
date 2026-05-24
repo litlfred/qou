@@ -1,0 +1,44 @@
+{
+  "engine": "numpy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-24T03:19:23.623235+00:00",
+  "commitSha": "edc438d698314cce7488ddb97f0eaecd9fc67f14",
+  "assertions": [
+    {
+      "name": "h2_coefficient_computed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "CBH expansion of Borromean Markov trace at H_3"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "yekutieli-mi-h2-extraction",
+  "scriptFile": "yekutieli_mi_h2_extraction.py",
+  "scriptHash": "befcd2fd27ed",
+  "scriptCommitSha": "unknown",
+  "description": "Yekutieli MI h² extraction: 6-step categorical derivation of the linking weight's h² coefficient from the CBH expansion of Riemann products on the Borromean surface's ideal-octahedral tessellation.",
+  "contentBlock": "conj:borromean-baryon-mass-formula",
+  "parameters": {
+    "dps": 50
+  },
+  "data": {
+    "q0": 1.1099785955541805,
+    "h": 0.20906032198987945,
+    "tr_M_borromean": 0.998366621838506,
+    "weighted_c2": -0.037371756871741366,
+    "c2_by_partition": {
+      "(3,)": 6.09646720072481e-14,
+      "(2, 1)": -0.13302888820353267,
+      "(1, 1, 1)": 0.0
+    },
+    "y_weights": {
+      "(3,)": 0.41539578633456653,
+      "(2, 1)": 0.2809296339798641,
+      "(1, 1, 1)": 0.02274494570570528
+    },
+    "catalan_G": 0.915965594177219,
+    "three_sixteenths": 0.1875
+  }
+}
