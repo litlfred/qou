@@ -46,23 +46,24 @@ Do NOT skip ahead — the reviews are the input to Phase 2.
 
 **Wait protocol (5-minute window):**
 
-1. After requesting reviews in Phase 1, check whether reviewers
-   have acknowledged the PR:
+1. After requesting reviews in Phase 1, poll for Copilot's
+   check-run status every 30 seconds (up to 5 minutes):
    ```
-   mcp__github__pull_request_read get_check_runs  → look for
-     copilot-pull-request-reviewer: status=in_progress or completed
+   mcp__github__pull_request_read(method="get_check_runs", ...)
    ```
-   - `status: queued` or `in_progress` → reviewer has noticed,
-     wait for completion (poll every 30 sec via Monitor, up to
-     5 minutes)
-   - `status: completed` → reviews are in, proceed immediately
-   - No check run after 2 minutes → reviewer may not trigger for
+   Look for the `copilot-pull-request-reviewer` check run:
+   - `"status": "queued"` or `"status": "in_progress"` → reviewer
+     has noticed the PR; keep polling every 30s
+   - `"status": "completed"` → reviews are in, proceed immediately
+   - No check run after 2 minutes → reviewer did not trigger for
      this file type (e.g. skill-only PRs with no code); proceed
      with 0 comments
 
-2. For Gemini: check the PR comments for a Gemini-code-assist
-   bot comment. If the comment is a quota warning, note "Gemini:
-   quota exhausted" and proceed without waiting further.
+2. For Gemini: check PR issue comments via
+   `mcp__github__pull_request_read(method="get_comments", ...)`.
+   If a `gemini-code-assist[bot]` comment contains "daily quota
+   limit", note "Gemini: quota exhausted" and proceed without
+   waiting further.
 
 3. **5-minute hard cap**: if neither reviewer has completed after
    5 minutes, proceed with whatever comments have landed. Note
