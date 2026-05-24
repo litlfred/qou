@@ -7,7 +7,6 @@ export default proposition({
     "Noble gas characterization: full shell as full curls",
   tags: [
     "noble-gas",
-    "electron-shell",
     "hopf-link",
     "sub-link",
     "trefoil",

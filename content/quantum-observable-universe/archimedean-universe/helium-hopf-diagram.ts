@@ -9,7 +9,6 @@ export default remark({
     "helium",
     "hopf-link",
     "trefoil",
-    "electron-shell",
     "diagram",
   ],
   uses: [],

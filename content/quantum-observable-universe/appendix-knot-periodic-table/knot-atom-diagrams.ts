@@ -9,7 +9,6 @@ export default remark({
     "knot-diagram",
     "trefoil",
     "hopf-link",
-    "electron-shell",
     "sub-link",
     "atom",
     "transfer-matrix",

@@ -13,7 +13,6 @@ export default simulator({
     "periodic-table",
     "knot-centric",
     "nuclear-shell",
-    "electron-shell",
     "borromean",
     "transfer-matrix",
     "skein-polynomial",

@@ -8,7 +8,6 @@ export default proposition({
   tags: [
     "metal",
     "metallic-bonding",
-    "electron-shell",
     "hopf-link",
     "sub-link",
     "trefoil",

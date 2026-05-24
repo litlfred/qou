@@ -10,7 +10,6 @@ export default remark({
     "knot-centric",
     "visualization",
     "nuclear-shell",
-    "electron-shell",
     "borromean",
     "magic-receptive",
     "transfer-matrix",
