@@ -100,6 +100,7 @@ export default chapter({
         "ns-obstruction-intro",
         "observability-in-fluid-context",
         "observability-independent-motivation",
+        "observability-independent-motivation-table-data",
         "substrate-line-bundle",
         "substrate-gm-torsion",
         "observability-q-independent",
@@ -137,6 +138,7 @@ export default chapter({
       blocks: [
         "ns-approaches-intro",
         "regularity-breakdown",
+        "regularity-breakdown-table-data",
         "p2-critical-exponent",
         "p3-blowup-yekutieli",
         "ns-surreal-bound",

@@ -83,14 +83,7 @@ Define a **quantum pre-universe** (QPU) as a quantum universe
 $(\mathbf{C}, A, \tau)$ satisfying all QOU axioms **except**
 observability. In a QPU:
 
-| Property | With observability (QOU) | Without (QPU) |
-|---|---|---|
-| Gauge connection | Irreducible | May be reducible |
-| Contact structure | Non-degenerate | May degenerate |
-| Adjoint rep | Simple ($V_1$) | Contains $\mathbf{1}$ summand |
-| Mass identity | Nonzero (particles have mass) | May vanish (massless ghosts) |
-| SU(2) emergence | Full SU(2) | Reduced to subgroup |
-| NS status | **Singular** (blowup) | **Unknown** |
+See [Table](#tbl:observability-independent-motivation-table-data).
 
 The QPU is a weaker framework. It does not force NS blowup
 because the contact structure can degenerate at collision

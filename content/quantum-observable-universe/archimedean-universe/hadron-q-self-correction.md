@@ -71,14 +71,7 @@ $\ell_{\mathrm{net}} / A^2$.
 At the substrate $q_0$: $\hbar_q \approx 0.0991$ and
 $\hbar_q^2 \approx 0.00982$.  For representative nuclei:
 
-| Nucleus | $(p, n)$ | $A$ | $\ell_{\mathrm{net}}$ | $\delta q$ | $\delta q / q_0$ |
-|---------|----------|-----|----------------------|-----------|-----------------|
-| ${}^{3}\mathrm{H}$ | $(1, 2)$ | 3 | $-1$ | $-0.0011$ | $-0.10\%$ |
-| ${}^{14}\mathrm{C}$ | $(6, 8)$ | 14 | $-13$ | $-0.0007$ | $-0.06\%$ |
-| ${}^{60}\mathrm{Co}$ | $(27, 33)$ | 60 | $-177$ | $-0.0005$ | $-0.04\%$ |
-| ${}^{90}\mathrm{Sr}$ | $(38, 52)$ | 90 | $-623$ | $-0.0008$ | $-0.07\%$ |
-| ${}^{137}\mathrm{Cs}$ | $(55, 82)$ | 137 | $-1836$ | $-0.0010$ | $-0.09\%$ |
-| ${}^{210}\mathrm{Bi}$ | $(83, 127)$ | 210 | $-4598$ | $-0.0010$ | $-0.09\%$ |
+See [Table](#tbl:hadron-q-self-correction-table-data).
 
 The self-deformation is genuinely small ($|\delta q / q_0| < 0.1\%$
 for all nuclei).

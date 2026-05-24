@@ -40,6 +40,7 @@ export default chapter({
       label: "sec:headline-conjectures",
       blocks: [
         "yang-mills-mass-gap",
+        "yang-mills-mass-gap-table-data",
         "gr-substrate-geometry",
       ],
     }),

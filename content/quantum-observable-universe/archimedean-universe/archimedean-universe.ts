@@ -373,6 +373,7 @@ export default chapter({
         "mass-tower-deeper-fillers",
         "three-substantive-mathlib-fillers",
         "bloch-group-quotient-construction",
+        "bloch-group-quotient-construction-table-data",
         "cl2-pentagon-and-faddeev-partial",
         "upstream-mathlib-additions",
         "alpha-em-categorical-trace-ratio",
@@ -419,6 +420,7 @@ export default chapter({
         // Half-life calculations via Gröbner reductions
         "hadron-half-life",
         "hadron-q-self-correction",
+        "hadron-q-self-correction-table-data",
         "skein-coulomb-enhancement",
         // NOTE: nuclear-groebner-reduction, groebner-shirshov-energy,
         // box-braid-irreducibility, generator-volume-decomposition,
@@ -434,6 +436,7 @@ export default chapter({
         "nf-computation-strategy",
         "kummer-shell-closure",
         "skein-shell-correction",
+        "skein-shell-correction-table-data",
       ],
     }),
 

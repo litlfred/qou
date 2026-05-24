@@ -70,6 +70,7 @@ export default chapter({
         "sdp-as-thimble-flow",
         "sdp-as-thimble-flow-table-data",
         "q-beta-cos-resummation",
+        "q-beta-cos-resummation-table-data",
       ],
     }),
 
@@ -107,6 +108,7 @@ export default chapter({
         "hydrogen-derived-nf",
         "deuterium-derived-nf",
         "deuterium-derived-binding",
+        "deuterium-derived-binding-table-data",
         "helium4-derived-nf",
         "li6-derived-nf",
         "li6-derived-nf-table-data",

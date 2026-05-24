@@ -420,6 +420,7 @@ export default chapter({
         "q-exponential-unique-proof",
         "q-exp-finite-field-obstruction",
         "q-exp-p-adic",
+        "q-exp-p-adic-table-data",
         "q-logarithm",
         "q-logarithm-exists",
         "q-logarithm-exists-proof",
