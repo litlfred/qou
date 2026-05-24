@@ -83,6 +83,22 @@ silent absorber of the tower correction; the residual is
 explicit and the direction puzzle is on the books for the
 categorical-derivation review (Workplan 2 Phase 2).
 
+**Deeper fitting concern (2026-05-24, PR #1127).** Above the
+tower-direction puzzle sits a more fundamental gap: the relation
+$Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
+derive the framework's $Q_\beta$ prediction is itself an **ansatz**,
+not derived from the canonical per-braid mass formula
+[`prop:per-braid-mass-tower`](#prop\:per-braid-mass-tower).
+The unweighted $\mathrm{net}$ sum is structurally different
+from the Markov-trace weighted sums of the mass tower. The +0.17%
+match (single-tick form) could be (a) genuine truncation residual
+or (b) a numerical coincidence at $q_0 \approx 1.110$ from a
+wrong leading-order operator. Until this is resolved by direct
+per-braid computation or a theoretical derivation, **CAL-3 must
+remain an input** and claims of "Q_β derivable from CAL-1 + CAL-2"
+are conditional on the unproved ansatz. Full audit:
+[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md).
+
 ## Why exactly three
 
 The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$

@@ -1,5 +1,19 @@
 # Audit — Q_β droppability and the cohomological origin of CAL 1-3
 
+> **⚠️ Critical update (2026-05-24, same day).** This audit
+> originally framed Q_β as "operationally blocked on tower closure"
+> with the implication that closure would deliver a 2-CAL framework.
+> The PR review by the repo owner identified a deeper issue: the
+> relation $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$
+> used here is an **ansatz**, not derived from the per-braid mass
+> formula. The +0.17% match could be **numerical coincidence**, not
+> truncation. **Read first**:
+> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](2026-05-24-q-beta-net-ansatz-fitting-finding.md).
+> This audit's cohomological observations (3 CAL ↔ 3 Wedderburn
+> channels) remain valid; the implication "Q_β is derivable from
+> CAL-1+CAL-2 alone" is **suspended** pending Path A (theoretical
+> derivation) or Path B (direct per-braid compute).
+
 **Branch**: `claude/gifted-feynman-U7ckD` (PR #1127).
 **Date**: 2026-05-24.
 **Companion**: triggered by the 1ppb / L2 precision discussion; the
