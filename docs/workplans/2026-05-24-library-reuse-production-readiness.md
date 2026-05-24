@@ -42,16 +42,19 @@ Counts are measured from the current `claude/stoic-einstein-IhoId` working tree.
 │                                     │    │   ← M1 carve-out target     │
 │  Blockers (per v1):                 │    │  laurent_q.py, BlockCache,  │
 │   • Clarabel fork → no crates.io    │    │   lp_dual_solver.py         │
-│   • GMP/rug C dep → no WASM target  │    │  ─ 91 scripts import this ─ │
+│   • GMP/rug C dep → no WASM target  │    │  pyhecke: 21 importers      │
+│                                     │    │  hecke_core: 52 importers   │
 └─────────────────────────────────────┘    └─────────────────────────────┘
         │                                                       │
         ▼                                                       │
 ┌─────────────────────────────────────┐                         │
 │ LAYER 2 — FFI WRAPPERS              │                         │
 │  pyhecke-native (PyO3, ~20 pyfns)   │                         │
-│   used by 22/539 scripts (~4%)      │                         │
+│   used by 10/539 scripts (~2%)      │                         │
 │  snappea-wasm (Emscripten C→WASM)   │                         │
-│   used by 2/539 scripts (~0.4%)     │                         │
+│   0 in-repo consumers — standalone  │                         │
+│   npm-publishable artefact, tests   │                         │
+│   in folio-assistant/snappea-wasm/  │                         │
 └─────────────────────────────────────┘                         │
         │                                                       │
         └──────────────────────┬────────────────────────────────┘
@@ -74,19 +77,34 @@ Counts are measured from the current `claude/stoic-einstein-IhoId` working tree.
                       paper PDF / HTML viewer
 ```
 
-### Import-count receipts
+### Import-count receipts (re-measured 2026-05-24; supersedes earlier draft figures)
+
+All counts are *distinct `.py` files in `folio-assistant/computations/`*
+whose body contains a matching `from X import …` or `import X` line.
 
 ```
-209  from witness_base import WitnessBuilder        ← LAYER-0 #1
- 89  from _precision import set_compute_dps, fmt    ← LAYER-0 #2
- 34+ from q_parameter import Q, Q_INV, HA, …        ← LAYER-0 #3
- 67  scripts still import hecke_core.py directly     ← LAYER-1b legacy
- 22  scripts use pyhecke_native (Rust core)          ← LAYER-2 (~4%)
- 14  from lp_dual_solver import solve_operator…      ← LAYER-1b dual solver
-  6  from syt_prefix_cache import BlockCache         ← LAYER-1b cache
-  4  from laurent_q import LaurentQ                  ← LAYER-1b poly
-  2  scripts use snappea-wasm                        ← LAYER-2 (~0.4%)
+362  files import from witness_base (any symbol)      ← LAYER-0 #1
+265  files import from q_parameter                    ← LAYER-0 #3
+121  files import from _precision                     ← LAYER-0 #2
+ 52  files import hecke_core directly                 ← LAYER-1b legacy
+ 21  files import pyhecke (pure-Py)                   ← LAYER-1b
+ 14  files import lp_dual_solver                      ← LAYER-1b dual solver
+ 10  files import pyhecke_native (Rust core)          ← LAYER-2 (~2%)
+  6  files import syt_prefix_cache (BlockCache)       ← LAYER-1b cache
+  4  files import laurent_q (LaurentQ)                ← LAYER-1b poly
+  0  files import snappea-wasm                        ← LAYER-2 (TS-only)
+539  total .py files in computations/
 ```
+
+> **About the `snappea-wasm` row.** An earlier draft cited "2 scripts
+> use snappea-wasm". That was a measurement error: those two scripts
+> (`knot-volumes.py`, `witness_base.py`) contain string literals like
+> `engine="snappea"` — they are not imports of the WASM kernel. The
+> kernel lives in `folio-assistant/snappea-wasm/` with its own
+> `package.json` + Vitest suite, and currently has **zero in-repo
+> consumers**. Publishing it to npm is still useful (it's a reusable
+> knot-canonization kernel), but the rationale is *enabling future
+> external consumers*, not unlocking current users.
 
 ---
 
@@ -98,12 +116,21 @@ Three categories of pure-Python compute that the Rust core does **not** cover:
 
 | Module | LOC | Used by | What it owns |
 |--------|-----|---------|--------------|
-| `witness_base.py` | 761 | 306 scripts | `WitnessBuilder`: schema-validated JSON, git provenance, file-hash staleness, upstream dep tracking, sidecar emission |
-| `q_parameter.py` | 220 | 300+ scripts | The substrate constant `q_0 = 1/(1 − √(V(4_1)/(m_μ/m_e)))`, derived constants (`HA`, `E_CROSS`, `TWO_Q`, `LN_Q`), error propagation |
-| `_precision.py` | 136 | 107 scripts | `set_compute_dps(50)`, `fmt()` — mpmath dps discipline (compute 50, output 40) |
+| `witness_base.py` | 761 | **362 scripts** | `WitnessBuilder`: schema-*shaped* JSON (no runtime JSON-schema validation today — just dict construction + write), git provenance (HEAD + per-file SHA), file-hash staleness, upstream dep tracking, sidecar emission. Pure stdlib (`hashlib`, `json`, `subprocess`); no Rust dep. |
+| `q_parameter.py` | 220 | **265 scripts** | The substrate constant `q_0 = 1/(1 − √(V(4_1)/(m_μ/m_e)))`, derived constants (`HA`, `E_CROSS`, `TWO_Q`, `LN_Q`), error propagation |
+| `_precision.py` | 136 | **121 scripts** | `set_compute_dps(50)`, `fmt()` — mpmath dps discipline (compute 50, output 40) |
 
 **This trio is the single highest-leverage layer in the entire stack.**
 None of it has any dependency on the Rust core. None of it is currently published.
+
+> *Note on "schema-validated".* An earlier draft described
+> `WitnessBuilder` output as "schema-validated JSON". That is incorrect
+> in the current code: the builder constructs a Python `dict` matching
+> the witness shape and writes it; no `jsonschema`/`pydantic` validation
+> runs at write time. Tier-1 item **1d** (publish witness JSON schema)
+> + Tier-2 item **2a** (promote to `qou-substrate`) together would add
+> proper validation. Until then, "schema-shaped" is the accurate
+> description.
 
 ### B. Pure-Python math layer (`pyhecke`, 1,839 LOC)
 
@@ -137,21 +164,21 @@ These are **library-quality candidates that currently live in scripts/** — the
 
 | Metric | Value |
 |--------|-------|
-| Scripts that import it directly | **306 / 539** (57%) |
+| Scripts that import it directly | **362 / 539** (67%) |
 | Witness JSON files it produces | **858** |
 | Content blocks that reference those witnesses | **450** |
 | TS pipeline modules that consume the JSON shape | All of `content/pipeline/` |
-| Dependencies it has on Rust core | **0** |
+| Dependencies it has on Rust core | **0** (stdlib only) |
 
 **Comparison to the Rust core:**
 
 | Path | Direct script consumers |
 |------|------------------------|
-| `pyhecke-native` (Rust→Py via PyO3) | 22 scripts (~4%) |
-| `snappea-wasm` (C→WASM)             | 2 scripts (~0.4%) |
-| `WitnessBuilder` (pure Py)          | 306 scripts (~57%) |
+| `pyhecke-native` (Rust→Py via PyO3) | 10 scripts (~2%) |
+| `snappea-wasm` (C→WASM)             | 0 in-repo consumers (standalone npm artefact) |
+| `WitnessBuilder` (pure Py)          | 362 scripts (~67%) |
 
-**Implication.** Publishing only the Rust core reaches ~4% of the compute layer. Publishing the substrate trio (`WitnessBuilder` + `_precision` + `q_parameter`) reaches **all 539 scripts and the entire 450-block narrative layer**. This is the leverage point that v1 missed.
+**Implication.** Publishing only the Rust core reaches ~2% of the compute layer. Publishing the substrate trio (`WitnessBuilder` + `_precision` + `q_parameter`) reaches **all 539 scripts and the entire 450-block narrative layer**. This is the leverage point that v1 missed.
 
 ### Secondary upstream nodes (lower leverage, still worth packaging)
 
