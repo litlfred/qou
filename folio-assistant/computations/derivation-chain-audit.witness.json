@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T07:33:45.787507+00:00",
-  "commitSha": "f109549bd43345891aed90bea1a57acc19e9b349",
+  "computedAt": "2026-05-24T08:23:42.968875+00:00",
+  "commitSha": "d3892ce5e6b7be2beafe8c2dbaa98dc434751783",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "342ce62e42540ac00e235ff1da6fc2cef0b1ca24",
+  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2361,6 +2361,9 @@
         "gb-filtration-jet-order-reader.witness.json",
         "gb-filtration-jet-order.witness.json",
         "gb-nf-event-count-universality.witness.json",
+        "geom-full-borromean-h4-probe.witness.json",
+        "geom-full-borromean-q-locality-probe.witness.json",
+        "geom-leading-alt-q-locality-probe.witness.json",
         "graded-hecke-energy-probe.witness.json",
         "gram-matrix-dual.witness.json",
         "gt-matrix-pslq-probe.witness.json",
@@ -2536,6 +2539,7 @@
         "path4-rho-K-at-h3A.witness.json",
         "pauli-factor-wedderburn-probe.witness.json",
         "pentagon-reduction-li2q.witness.json",
+        "pentagon-to-borromean-h4-probe.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",
         "per-irrep-pole-atom-crystal.witness.json",
