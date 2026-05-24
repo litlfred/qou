@@ -772,8 +772,24 @@
         "reviewed_sha": "e5a290f958be3eba74fe827660a084a486621fa9",
         "severity": "critical",
         "evidence": "quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.ts:1: LP/SDP witness 'folio-assistant/computations/hecke-core-symbolic-migration.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+      },
+      {
+        "field_hash": {
+          "md": "ee9dba3c32c9",
+          "ts": "72f0a1a1d9d9",
+          "lean": "9c5e81ae9ac0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "claude-code",
+          "version": "opus-4.7"
+        },
+        "reviewed_at": "2026-05-24T03:13:21.244Z",
+        "reviewed_sha": "ab60115acbebcf0d675c0bb5f7268af81ac1e823",
+        "notes": "False positive: hecke-core-symbolic-migration.witness.json: symbolic migration tracker, not an LP solve. No scipy.optimize.linprog / cvxpy / solve_operator_selection_lp call in the script. LP-dual fields are inapplicable."
       }
     ]
   },
-  "updated_at": "2026-05-24T02:46:38.092Z"
+  "updated_at": "2026-05-24T03:13:21.244Z"
 }

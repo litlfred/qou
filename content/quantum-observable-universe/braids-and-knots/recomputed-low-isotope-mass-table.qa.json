@@ -575,8 +575,23 @@
         "reviewed_sha": "e5a290f958be3eba74fe827660a084a486621fa9",
         "severity": "critical",
         "evidence": "quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.ts:1: LP/SDP witness 'folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+      },
+      {
+        "field_hash": {
+          "md": "1839c1e846f7",
+          "ts": "3638dff6c944"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "claude-code",
+          "version": "opus-4.7"
+        },
+        "reviewed_at": "2026-05-24T03:13:21.244Z",
+        "reviewed_sha": "ab60115acbebcf0d675c0bb5f7268af81ac1e823",
+        "notes": "False positive: tr-m-q-hecke-seminormal.witness.json: character-sum Markov trace, not an LP solve. No scipy.optimize.linprog / cvxpy / solve_operator_selection_lp call in the script. LP-dual fields are inapplicable."
       }
     ]
   },
-  "updated_at": "2026-05-24T02:46:38.092Z"
+  "updated_at": "2026-05-24T03:13:21.244Z"
 }
