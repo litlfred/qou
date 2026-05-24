@@ -73,11 +73,11 @@ MISDP via enumeration works for small n_vars.
 - **Justification:** `prop:categorical-mass-markov` —
   "determined by matching one experimental value"
 
-### 2b. CODATA $m_p = 938.272$ MeV
+### 2b. CODATA $m_p = :val[m_p_MeV]{precision=6}$ MeV
 - Used to convert ratios to absolute MeV
 - Equivalent to $E_0$ by scaling
 
-### 2c. Substrate parameter $q_0 \approx 1.1099785955541805$
+### 2c. Substrate parameter $q_0 \approx :val[q_0]{precision=6}$
 - Categorical — comes from `prop:local-substrate-q` in Ch 7
 - Not a fit; derived from CODATA $m_\mu / m_e$ ratio
 

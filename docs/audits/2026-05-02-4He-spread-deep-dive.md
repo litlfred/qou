@@ -55,7 +55,7 @@ Per-nucleon AME mass (the binding-energy curve):
 | 16O | 931.20 | 0.76% |
 | 40Ca | 930.62 | 0.82% |
 
-(reference $m_p = 938.272$ MeV)
+(reference $m_p = :val[m_p_MeV]{precision=6}$ MeV)
 
 These are exactly the **per-nucleon binding fractions from the
 SEMF curve**. 4He has the largest binding-per-nucleon among

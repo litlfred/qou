@@ -157,7 +157,7 @@ $S_{\mathfrak{n}} = \{9, 7, 5, 1\}$. $\qquad\square$
 
 ## Verification
 
-Numerical check at $q_0 = 1.1099785955541805$:
+Numerical check at $q_0 = :val[q_0]{precision=6}$:
 
 | nucleon | closed form (H·Σ/4) | direct 2×2 trace | agreement |
 |---|---|---|---|

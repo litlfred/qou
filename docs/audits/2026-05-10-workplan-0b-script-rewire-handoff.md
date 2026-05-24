@@ -66,7 +66,7 @@ $m_{^3\mathrm{He}}$, $m_{^4\mathrm{He}}$ from $\{m_e, q_0, Q_\beta\}$.
 Why risky:
 
 1. **Predicted values will shift substantially.** The current
-   tautological pipeline reports $m_p = 938.272$ MeV and the deuteron
+   tautological pipeline reports $m_p = :val[m_p_MeV]{precision=6}$ MeV and the deuteron
    binding $\Delta = +2.225$ MeV at $0.119\%$ relative error. After
    rewire, $m_p$ becomes a genuine prediction with a ~$1.8\%$ residual
    from the $\Phi_q$-tower truncation

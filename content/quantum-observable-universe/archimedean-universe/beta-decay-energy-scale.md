@@ -23,7 +23,7 @@ vector space $H_3(q)$.
 
 From the witness (`free-neutron-decay.witness.json`, typed crossings):
 
-- $\mathrm{net}(\mathfrak{n}) = +0.810835$, $\mathrm{net}(\mathfrak{p}) = +0.999125$
+- $\mathrm{net}(\mathfrak{n}) = +0.810835$, $\mathrm{net}(\mathfrak{p}) = +:val[confinement_B3_net_proton]{precision=6}$
 - $\Delta(\mathrm{net}) = -0.188291$
 
 From CODATA 2022:

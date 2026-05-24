@@ -106,7 +106,7 @@ If Family A is the right form (and the Borromean formula needs
 refinement), the corrected proton mass prediction is:
 
 $$
-  m_p^{\mathrm{Family\ A}} = m_e \cdot \frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2} \cdot \pi_{\mathrm{HS}}(\mathrm{id}, q_0) \approx 938.272 \cdot \frac{2.5328}{2.4599} \approx 966 \text{ MeV}.
+  m_p^{\mathrm{Family\ A}} = m_e \cdot \frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2} \cdot \pi_{\mathrm{HS}}(\mathrm{id}, q_0) \approx :val[m_p_MeV]{precision=6} \cdot \frac{2.5328}{2.4599} \approx 966 \text{ MeV}.
 $$
 
 This is **3% off from CODATA**. The 3% gap must come from one of:

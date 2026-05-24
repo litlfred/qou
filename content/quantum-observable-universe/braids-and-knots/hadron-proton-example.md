@@ -64,7 +64,7 @@ $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.  At the substrate
 parameter $q \approx 1.110$, the full computation yields
 
 $$
-  \mathfrak{m}_{\mathfrak{p}}(q)  \approx  938.272  \text{MeV},
+  \mathfrak{m}_{\mathfrak{p}}(q)  \approx  :val[m_p_MeV]{precision=6}  \text{MeV},
 $$
 
 matching the experimental proton mass to high precision.
