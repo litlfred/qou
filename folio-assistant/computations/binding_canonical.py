@@ -49,7 +49,7 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
-from q_parameter import Q as Q0_NUM, HA as H0_NUM  # central source of truth
+from q_parameter import Q as q0, HA as h_q  # canonical aliases per CLAUDE.md §7
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -93,9 +93,9 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
             d = sp.Integer(0)
         elif abs(d_f - 1.0) < 1e-12:
             d = sp.Integer(1)
-        elif abs(d_f + H0_NUM) < 1e-6:
+        elif abs(d_f + h_q) < 1e-6:
             d = -H_SYMB
-        elif abs(d_f + H0_NUM / 2) < 1e-6:
+        elif abs(d_f + h_q / 2) < 1e-6:
             d = -H_SYMB / 2
         else:
             d = sp.nsimplify(d_f)
@@ -263,8 +263,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         free_n_terms = free_elem.n_terms()
 
         try:
-            tr_atom = complex(sp.N(tr_atom_sym.subs(q_sym, Q0_NUM)))
-            tr_free = complex(sp.N(tr_free_sym.subs(q_sym, Q0_NUM)))
+            tr_atom = complex(sp.N(tr_atom_sym.subs(q_sym, q0)))
+            tr_free = complex(sp.N(tr_free_sym.subs(q_sym, q0)))
         except Exception as e:
             return {"status": "eval_error", "error": str(e)}
 
@@ -294,7 +294,7 @@ if __name__ == "__main__":
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
-    print(f"q₀ = {Q0_NUM}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
+    print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
     print("=" * 100)
     results = []
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'B_AME':>8} "
@@ -332,7 +332,7 @@ if __name__ == "__main__":
             "tr_M(σ_0σ_1σ_0)=hz²+z. Replaces the Plancherel-"
             "weighted trace used in binding_3A and "
             "atom_markov_trace. Binding = Q_β(n)·(|tr_M_free| − "
-            "|tr_M_atom|) with Q_β(n) = 0.78233341 MeV (free-"
+            f"|tr_M_atom|) with Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
             "neutron β-decay Q-value, CAL-3 calibration input — "
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
             "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
@@ -343,7 +343,7 @@ if __name__ == "__main__":
             "audit of the Jones-Markov trace itself."
         )
         .set_audit_only("docs/audits/categorical-vs-fitted-q-decay-ba.md")
-        .add_parameter("q0", Q0_NUM)
+        .add_parameter("q0", q0)
         .add_parameter("Q_beta_n_MeV", float(_Q_BETA_N))
         .add_data("results", safe_results)
     )
