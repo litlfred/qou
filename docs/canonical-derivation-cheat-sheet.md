@@ -220,6 +220,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 - **Tier 1.A 4× gate** (PR #886): ⁶Li wall 84.5 s, target < 60 s. 1-2 day Rust optimisation (FxHashMap intermediate + defer-GCDs in `reduce_laurent`).
 - **Tier 1.B orbit reduction** (gates A ≥ 8, ¹²C / ¹⁴N / ¹⁶O — organic chemistry): preflight required (`§4.2` of the handover doc; orbit-trace identity must validate at 1e-25 on ⁴He / ⁵Li / ⁶Li before implementation).
 - **Bring color-tube quark-weighted p-n averaging**: closes Δm_{n−p} to ~0.14 % per `probe_pn_flavor_asymmetry.py` Scheme 4. Research-grade — a candidate refinement of the p-n cross-section of `Geom_full`.
+- **Complex-$q_0$ categorical lift** (research-grade — PR #1127): the pre-Archimedean substrate is already generic over `{R : Type*} [CommRing R]`; $q_0 \in \mathbb{R}$ is an *engineering / empirical* commitment, not a theorem (audit: [`2026-05-24-q-zero-reality-audit.md`](audits/2026-05-24-q-zero-reality-audit.md)). On $|q| > 1$ with $\mathrm{Im}(q) \neq 0$ the **Lusztig bar** ($q \mapsto q^{-1}$) and the **Hermitian $\ast$** ($q \mapsto \bar q^{-1}$) involutions *split*; the split is the categorical home for any future $\mathrm{Im}(q_0)$ contribution. Note: the dominant 2.89 % L2 gap is **bar-symmetric** (m_p, m_n shift together), so complex $q_0$ is *not* a candidate fix for that gap — Geom_full refinement is. Complex lift is independently valuable infrastructure.
 
 ---
 
