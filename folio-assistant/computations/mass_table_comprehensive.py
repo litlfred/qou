@@ -161,7 +161,7 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
         r = binding_canonical(
             Z, N,
             Q_beta_n_mev=float(Q_BETA_MEV),
-            use_closed_form=(A <= 3),  # closed-form verified at A ≤ 3
+            use_closed_form=(A <= 4),  # closed-form verified at A ≤ 4 (Wenzl LR bridge; 3000× vs direct Hoefsmit)
             verbose=False,
         )
         if r.get("status") != "solved":

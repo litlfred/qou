@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-24T00:36:48.278063+00:00",
-  "commitSha": "d835da21833cb4b22f140f7a9bf50a720842b567",
+  "computedAt": "2026-05-24T01:15:16.373156+00:00",
+  "commitSha": "1bf55e48d5ab084d95f3f99a1771a2b0a0e7f283",
   "assertions": [
     {
       "name": "all_A_leq_4_masses_computed",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 71037,
+  "durationMs": 289,
   "computation": "mass-table-comprehensive",
   "scriptFile": "mass_table_comprehensive.py",
-  "scriptHash": "d6151c0cc591",
+  "scriptHash": "8c9c01d2b7d9",
   "scriptCommitSha": "93ead0dfa865be62b8e30a06cec88e1f49c560ed",
   "description": "Comprehensive mass/binding table for all nuclei from proton (A=1) through ¹²C (A=12) at the current production tier: Family A λ_A = 5/2 + (3/4)h² (PROVED) + substrate-pure flavor-split Δm/M_N (PROVED, PR #942). Binding energies via binding_canonical with use_closed_form=True for A ≤ 3 (PR #921). A = 4 uses symbolic path. A ≥ 5 flagged as 'not yet computed'. Each entry cross-references the recursive atom knot atlas methodology tag.",
   "contentBlock": "prop:recursive-atom-knot-atlas",
