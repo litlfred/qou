@@ -55,14 +55,8 @@ by $\sim 50\%$.
 
 ## Benchmark nuclei
 
-| Nucleus | $A$ | $\mathcal{Q}_{\mathrm{exp}}$ (MeV) | $t_{1/2}^{\mathrm{obs}}$ |
-|---------|-----|------|------|
-| ${}^{3}\mathrm{H}$ | 3 | $0.01861$ | $12.32$ yr |
-| ${}^{14}\mathrm{C}$ | 14 | $0.15648$ | $5730$ yr |
-| ${}^{60}\mathrm{Co}$ | 60 | $0.31817$ | $5.271$ yr |
-| ${}^{90}\mathrm{Sr}$ | 90 | $0.54590$ | $28.79$ yr |
-| ${}^{137}\mathrm{Cs}$ | 137 | $0.51400$ | $30.17$ yr |
-| ${}^{210}\mathrm{Bi}$ | 210 | $1.16270$ | $5.012$ d |
+The verification nuclei and their experimental data are tabulated in
+[Table: Verification nuclei](#tbl:beta-decay-simulator-table-data).
 
 Witness data from
 `folio-assistant/computations/all-nuclei-transfer-matrix.py`.
