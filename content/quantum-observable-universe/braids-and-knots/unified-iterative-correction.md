@@ -141,15 +141,7 @@ $(A, Z_k, N_k, \{\ln|\mathrm{tr}|_\lambda\}, \mathrm{cumulative})$.
 
 **Comparison snapshot** (binding energy at $k = 5$, MeV):
 
-| Atom | $B_{\mathrm{dedi}}$ | $B_{\mathrm{unif}}$ | $B_{\mathrm{AME}}$ | $\sum_\lambda B_\lambda$ |
-|:-----|--------------------:|--------------------:|-------------------:|-------------------------:|
-| D    | $2.224$ | $-16.45$ | $2.224$ | $-16.45$ |
-| ${}^{4}\mathrm{He}$  | $28.19$ | $16.67$ | $28.30$ | $-13.67$ |
-| ${}^{14}\mathrm{C}$  | $102.0$ | $108.1$ | $105.7$ | $-3.50$ |
-| ${}^{20}\mathrm{Ne}$ | $162.6$ | $163.0$ | $160.7$ | $+0.43$ |
-| ${}^{28}\mathrm{Si}$ | $234.9$ | $244.8$ | $236.5$ | $+9.94$ |
-| ${}^{40}\mathrm{Ca}$ | $341.3$ | $366.7$ | $342.1$ | $+25.4$ |
-| ${}^{208}\mathrm{Pb}$| $1631$ | $2592$ | $1636$ | $+798$ |
+See [Table](#tbl:unified-iterative-correction-table-data).
 
 The unified path uses **one** symbolic algorithm with **zero**
 fitted parameters and **no special-case branches**.  The

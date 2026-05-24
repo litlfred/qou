@@ -87,16 +87,7 @@ $-\frac{3}{4}\zeta(3)$ directly).  $\square$
 
 ### Verifications at small $N$
 
-| $N$ | $-\frac{N^2 - 1}{N^2}\zeta(3)$ | $\approx$ |
-|---|---|---|
-| 2 | $-\frac{3}{4}\zeta(3)$ | $-0.90154\ldots$ |
-| 3 | $-\frac{8}{9}\zeta(3)$ | $-1.06849\ldots$ |
-| 4 | $-\frac{15}{16}\zeta(3)$ | $-1.12693\ldots$ |
-| **5** | $-\frac{24}{25}\zeta(3)$ | $-1.15397\ldots$ |
-| 6 | $-\frac{35}{36}\zeta(3)$ | $-1.16867\ldots$ |
-| 7 | $-\frac{48}{49}\zeta(3)$ | $-1.17751\ldots$ |
-| 11 | $-\frac{120}{121}\zeta(3)$ | $-1.19212\ldots$ |
-| $\infty$ | $-\zeta(3)$ | $-1.20206\ldots$ |
+See [Table](#tbl:cyclotomic-cl3-orbit-sum-general-table-data).
 
 The $N = 5$ row recovers $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5)
 = -\frac{12}{25}\zeta(3)$ as $2 \times -\frac{12}{25} = -\frac{24}{25}$.
