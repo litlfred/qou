@@ -138,6 +138,7 @@ export default chapter({
         // thm:knot-mass-formula-unified @ braids-and-knots
         // (accepted §5).
         "gb-spectral-sequence",
+        "gb-spectral-sequence-table-data",
         "mass-noncommutative-drag",
         "euler-char-stability",
         "euler-char-stability-proof",

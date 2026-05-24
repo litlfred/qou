@@ -103,16 +103,7 @@ at $\zeta_5$, and Hecke fusion becomes 5-ary.
 Compared to the char-0 surreal lift
 ([algebraic core survives](#rem:algebraic-core-survives)):
 
-| Structure | Char 0 ($\mathbf{No}$) | Char $p$ ($\mathbf{On}_p$) |
-|---|---|---|
-| Algebraic Hecke / quantum group | survives | survives (Lusztig restricted form) |
-| Frobenius / Hopf | survives | survives + Frobenius twist $a^p = a$ for nilpotents |
-| Markov trace / Jones polynomial | survives | survives (modular Jones) |
-| Wedderburn semisimplicity | survives | **fails** at $q = \zeta_p$ (cells, not blocks) |
-| Tannaka reconstruction | survives | survives in modular Tannakian form |
-| Standard part to $\mathbb{R}$ | survives | **none** — no archimedean reduction |
-| Brauer characters | not needed | needed (replace ordinary characters) |
-| Birthday grading | ordinal-valued | $p$-adic-ordinal-valued |
+See [Table](#tbl:on-p-modular-hecke-table-data).
 
 The crucial *break* is **Wedderburn semisimplicity**: at $q = \zeta_p$
 the Hecke algebra is not semisimple, so the Hoefsmit-style
