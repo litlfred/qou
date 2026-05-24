@@ -12,8 +12,8 @@ PR #31 was authored 2026-03-13 against a substantially different math + repo sta
 | Blocker | Detail |
 |---------|--------|
 | **B1. Target chapter is gone** | PR #31 modifies `chapters/descartes-universe.tex`. No `content/quantum-observable-universe/descartes-universe/` directory exists today; Ch 3 was reorganized. Reeb work lives in `quantum-observable-universes/` (Ch 4); Bring's surface work lives in `braids-and-knots/` + `archimedean-universe/` (Chs 6, 8). |
-| **B2. Architecture mismatch** | Direct edits to `chapters/*.tex` get **overwritten on the next build** — per CLAUDE.md, `chapters/` is a *rendering target* generated from `content/.../*.md` blocks. Figures must be expressed as `figure` / `diagram` content blocks. |
-| **B3. Math framework drift** | PR #31 uses old notation: `(M, Θ, G, P, E)` 5-tuple (deprecated; current archimedean tuple is `(C, Θ, G, S)` per CLAUDE.md §7); `q_p → 0/1` "big bang / heat death" framing (current framework: substrate `q_0 ≈ 1.1097`, not `q_p`); ‖L ∧ F⁺‖ as visible annotation (gauge-field conventions have shifted). |
+| **B2. Architecture mismatch** | Direct edits to `chapters/*.tex` get **overwritten on the next build** — per CLAUDE.md, `chapters/` is a *rendering target* generated from `content/.../*.md` blocks. Figures must be expressed as `diagram` content blocks (the schema defines `diagram` for figures/diagrams; there is no `figure` kind) — optionally paired with a `remark` block for interpretation. |
+| **B3. Math framework drift** | PR #31 uses old notation: `(M, Θ, G, P, E)` 5-tuple (deprecated; current archimedean tuple is `(C, Θ, G, S)` per CLAUDE.md §7); `q_p → 0/1` "big bang / heat death" framing (current framework: derived substrate `q_0` from `q_parameter.py`, not `q_p`); ‖L ∧ F⁺‖ as visible annotation (gauge-field conventions have shifted). |
 | **B4. Visual style misaligned** | PR #31's SVGs use artistic gradients (brown viscosity gradient, two-step "you are here → Milky Way spiral" pointer, decorative effects). Author directive 2026-05-24: **formal math-book style; no color/gradients unless carrying meaning; natural Bring coordinates only**. |
 
 **Decision:** Close PR #31 with this workplan as the salvage path. The four figure SUBJECTS are valuable; the SVG files themselves are not cherry-pickable.
@@ -33,21 +33,21 @@ All four are useful pedagogy. None contradict the current math framework when re
 
 | Figure | Today's host chapter | Existing content block(s) to attach to |
 |--------|----------------------|----------------------------------------|
-| Affine light cone | **`quantum-observable-universes/`** (Ch 4) | candidates: `reeb-bundle.md`, or a new `affine-light-cone-figure.{ts,md}` block following an existing remark on the brane geometry |
-| Reeb dimension thickness | **`quantum-observable-universes/`** (Ch 4) — alongside the affine light cone | same — new `reeb-dimension-figure.{ts,md}` block as companion |
-| Bring chiral fibre at $q \to 0$ | **`braids-and-knots/`** (Ch 6) or **`archimedean-universe/`** (Ch 8) | candidates: `bring-z5-descent.md`, `bring-figure-eight-depth-2-witness.md`, `x5-bring-prym-jacobian.md`; new figure block reads naturally as a remark on the cubic's discriminant locus |
-| Bring chiral fibre at $q = \tfrac{1}{2}$ | same as above (paired with the $q \to 0$ figure) | same — paired figure block |
+| Affine light cone | **`quantum-observable-universes/`** (Ch 4) | candidates: a Reeb / brane anchor block already in `quantum-observable-universes/` (e.g. `categorical-reeb.md`, `categorical-reeb-brings.md`, or `reeb-contact-universal-computer.md`), or a new `affine-light-cone-figure.{ts,md}` `diagram` block following an existing remark on the brane geometry. Note: the live `reeb-bundle.md` lives under `braids-and-knots/`, not `quantum-observable-universes/` — choose the Ch 4 Reeb-anchor that best matches the figure's narrative role. |
+| Reeb dimension thickness | **`quantum-observable-universes/`** (Ch 4) — alongside the affine light cone | same anchor as above; new `reeb-dimension-figure.{ts,md}` `diagram` block as companion |
+| Bring chiral fibre at $q \to 0$ | **`braids-and-knots/`** (Ch 6) or **`archimedean-universe/`** (Ch 8) | candidates: `bring-z5-descent.md`, `bring-figure-eight-depth-2-witness.md`, `x5-bring-prym-jacobian.md`; new `diagram` block (optionally paired with a `remark` for interpretation) reads naturally near the cubic's discriminant locus |
+| Bring chiral fibre at $q = \tfrac{1}{2}$ | same as above (paired with the $q \to 0$ figure) | same — paired `diagram` block |
 
-Per CLAUDE.md §4c (remark authoring): figure blocks attach to a parent definition/proposition via `interprets:` and contribute no new mathematical content (so they don't trip propagation rules even if they sit downstream of a conjecture).
+Per CLAUDE.md §3a (remark authoring convention): the figure itself is a `diagram` block (the only figure-bearing kind in the schema). When an interpretive note is needed, pair it with a sibling `remark` block whose `interprets:` field points at the parent definition/proposition. The `remark` carries no new mathematical content, so it does not trip propagation rules even if it sits downstream of a conjecture.
 
 ## Per-figure recipe
 
 ### F1 — Affine light cone
 
-- **Intent:** show the affine light-cone wedge on the brane surface, with the brane as a 2D surface in 3D ambient space, the wedge opening from a vertex at one end and broadening toward the other. Demonstrate the χ(Bring) = −6 topology constraint.
+- **Intent:** show the affine light-cone wedge on the brane surface, with the brane as a 2D surface in 3D ambient space, the wedge opening from a vertex at one end and broadening toward the other. Demonstrate the $\chi(A) = -6$ topology constraint (equivalently $\chi(\Sigma_4) = -6$ for Bring's surface).
 - **Natural Bring coordinates:** use the spacetime affine chart $z = x_0/x_1 \in \mathbb{CP}^1$ from Bring's surface, restricted to a real curve $z \in [z_{\text{vertex}}, z_{\text{horizon}}]$. The brane is the locus of the chiral cubic in this chart. No "exponential profile" or invented surface.
-- **Style:** formal math-book; black ink line drawing on white. Bring curve as a single thick line. Light cone as two thin straight lines bounding the wedge. χ(E) = −6 label as a plain marginal note. NO gradient, NO color-decoration. Observer location: small filled dot, label "observer" (no "Milky Way" / "you are here" graphics).
-- **Annotation:** $q_0$ at the substrate point, two endpoint labels with their actual $z$ values, χ(Bring) = −6 in a corner box.
+- **Style:** formal math-book; black ink line drawing on white. Bring curve as a single thick line. Light cone as two thin straight lines bounding the wedge. $\chi(A) = -6$ label as a plain marginal note. NO gradient, NO color-decoration. Observer location: small filled dot, label "observer" (no "Milky Way" / "you are here" graphics).
+- **Annotation:** $q_0$ at the substrate point, two endpoint labels with their actual $z$ values, $\chi(A) = -6$ in a corner box.
 - **Compute:** Python + matplotlib. Parameterize by $z_{\text{vertex}}, z_{\text{horizon}}$. Cubic-solve via `numpy.roots`. Output: `figures/affine-light-cone.svg` + `.pdf` via cairosvg.
 
 ### F2 — Reeb dimension as physical thickness
@@ -55,8 +55,8 @@ Per CLAUDE.md §4c (remark authoring): figure blocks attach to a parent definiti
 - **Intent:** companion to F1 showing the Reeb-fibre extent $\xi_q$ transverse to the brane at multiple points along the brane curve.
 - **Natural coordinates:** the Reeb 1-form direction is the kernel of the contact structure derived from $\mathcal{S} \to M$ in the current archimedean tuple `(C, Θ, G, S)`. The thickness $\xi_q$ at each point is the actual derived value, NOT an artistic "viscosity" gradient.
 - **Style:** formal math-book; brane curve as in F1; transverse arrows of variable length showing $\xi_q$ at sample points. Length encodes the actual Reeb-fibre extent (a meaningful variable), NOT decorative color. NO "swirl indicators", NO "mud-like viscosity" graphics.
-- **Annotation:** $\xi_q$ symbol with units, χ(E) = −6 marker.
-- **Compute:** same Python toolchain. Reeb extent computed from the actual derived structure (consult `content/.../reeb-bundle.md` + sibling blocks for the formula).
+- **Annotation:** $\xi_q$ symbol with units, $\chi(A) = -6$ marker.
+- **Compute:** same Python toolchain. Reeb extent computed from the actual derived structure (consult the Reeb-anchor block chosen in the chapter-mapping table above + sibling blocks for the formula).
 
 ### F3 — Bring chiral fibre at $q \to 0$
 
@@ -78,7 +78,7 @@ Per CLAUDE.md §4c (remark authoring): figure blocks attach to a parent definiti
 - **Python**: `folio-assistant/computations/` is the conventional location for figure-generation scripts. New scripts go alongside (`bring_chiral_fibre_figure.py`, `affine_light_cone_figure.py`).
 - **Parameter source**: `q_parameter.py` provides $q_0$, $h$, derived constants. Import from there; never hardcode.
 - **Witness emission**: each figure-generator emits a `.witness.json` with the parameters used (q value, branch point coordinates, sheet values at sample points) for reproducibility. This makes the figures auditable by `compute-integration-watcher`.
-- **CODATA constants**: if any figure references mass values or experimental data, import from `codata_constants.py` (do NOT hardcode).
+- **CODATA / experimental constants**: for calibration inputs (e.g. $m_e$, $m_\mu/m_e$, $Q_\beta$), import from `experimental_constants.py` (the canonical module for upstream calibration inputs). `codata_constants.py` re-exports these and additionally provides `*_VALIDATION` names (e.g. `M_P_MEV_VALIDATION`) for **comparison only** — its module docstring explicitly warns against using its non-`*_VALIDATION` exports as upstream inputs to mass / binding predictions.
 
 ## File plan
 
