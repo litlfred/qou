@@ -1,0 +1,39 @@
+import { conjecture } from "../../schema/builders";
+
+export default conjecture({
+  label: "conj:wigner-su4-from-spin-isospin",
+  title:
+    "Wigner $\\mathrm{SU}(4) = \\mathrm{SU}(2)_S \\times \\mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3)",
+  lean: {
+    ref: "qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin",
+    validation: "not_checked",
+  },
+  uses: [
+    "conj:isospin-from-canonical-bowtie",
+    "conj:spin-from-so3-fiber",
+    "conj:inter-nucleon-channel-color-tube",
+    "prop:atom-knot-mass-derivation",
+    "def:categorical-proton",
+    "def:categorical-neutron",
+    "rem:remark-nuclear-shell-magic-numbers",
+  ],
+  cites: [
+    "wigner1937",
+    "elliott1958",
+    "kashiwara1991",
+    "khovanov-lauda2009",
+  ],
+  tags: [
+    "wigner-su4",
+    "duality-d11",
+    "spin-isospin",
+    "nuclear-shell",
+    "l3-binding",
+    "magic-shell",
+    "cluster-b-closure",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class",
+    "non-scholarly-voice-exception",
+  ],
+});
