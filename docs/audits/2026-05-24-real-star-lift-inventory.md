@@ -57,41 +57,83 @@ involution, Frobenius pairing, Markov trace symbolically) lifts to
 **ALL** of these realizations. Hoefsmit and q-series lift with
 typeclass conditions. CODATA stays in ℝ.
 
-## 3. Recommended substrate lift targets
+## 3. Substrate lift candidate inventory (concrete)
 
-Files already generic over `{R : Type*}` (§7c-honored, 67 files):
+A mechanical scan
+([`real_star_lift_candidate_scanner.py`](../../folio-assistant/computations/real_star_lift_candidate_scanner.py))
+across `content/quantum-observable-universe/` classifies every
+`.lean` file by lift eligibility. Witness:
+[`real-star-lift-candidates.witness.json`](../../folio-assistant/computations/real-star-lift-candidates.witness.json).
 
-```
-braids-and-knots/hq-bi-filtration.lean
-braids-and-knots/explicit-central-idempotent.lean
-braids-and-knots/bar-involution.lean
-braids-and-knots/q-zero-complex-extension.lean    ← new (PR #1127)
-braids-and-knots/lusztig-vs-hermitian-bar.lean    ← new (PR #1127)
-quantum-observable-universes/categorical-q-lie-bracket.lean
-... (62 more)
-```
+| Bucket | Count | Definition |
+|---|---:|---|
+| **CANDIDATE** (lift-eligible) | **124** | `(q : ℝ)` signature present; no archimedean tactic in file (no `Real.sqrt`, `Real.rpow`, `Real.cos/sin/cosh/exp/log/pi`, no CODATA literal) |
+| ALREADY_GENERIC (§7c-compliant) | 65 | uses `{R : Type*}`, no ℝ-specialization |
+| ARCHIMEDEAN (genuinely needs ℝ) | 144 | at least one archimedean tactic; evidence recorded per file |
+| OTHER (no q-parameter) | 1266 | Mathlib glue / non-q-bearing utility |
+| **TOTAL** | 1599 | |
 
-Files specialized to `(q : ℝ) (hq : 1 < q)` that **could** lift to
-`(q : R) (hq : IsUnit q)` (no archimedean tactics in proof body —
-candidate list, requires per-file verification):
+**Headline**: 124 / (124 + 65) = **66 % of q-bearing Lean files
+are lift-eligible**, against the current 65 / 189 = 34 %
+§7c-compliant baseline. Substantial room.
 
-```
-braids-and-knots/hecke-quadratic.lean           — pure algebraic
-braids-and-knots/markov-trace-symbolic.lean     — symbolic ℤ[q^±]
-braids-and-knots/bar-involution-c5-via-q2.lean  — algebraic identity
-braids-and-knots/wenzl-hook-content.lean        — combinatorial
-... (~15-20 more candidates pending audit)
-```
-
-Files **genuinely archimedean** (do not lift):
+### Sample CANDIDATE files (first 10 alphabetical)
 
 ```
-archimedean-universe/*.lean                     — by construction
-observations/*-numerology.lean                  — CODATA comparisons
-descartes-universe/q-zero-pin.lean              — q_0 ≈ 1.1098 ℝ pin
-braids-and-knots/hoefsmit-V21-cos-symmetrization.lean
-braids-and-knots/markov-trace-factorization.lean  — uses linarith on q > 1
+appendix-surreals/collatz-contact-boundary.lean
+appendix-surreals/collatz-no-cycles.lean
+archimedean-universe/bar-t-duality-substrate.lean
+archimedean-universe/beta-decay-transfer-matrix.lean
+archimedean-universe/breit-wheeler-pair-production.lean
+archimedean-universe/markov-trace-factorization.lean
+archimedean-universe/q-value-transition.lean
+archimedean-universe/shell-closure-normal-form.lean
+archimedean-universe/torus-knot-shell-binding.lean
+braids-and-knots/alpha-k-categorical-closure.lean
 ```
+
+(See witness for the full 124-file list.)
+
+### Scanner caveats
+
+- Pattern-based: matches Real.* even in comments / docstrings. A
+  small number of false positives may exist (file uses the symbol in
+  a comment but not in tactics). Per-file inspection still required
+  before refactor.
+- A few CANDIDATE files may use `linarith` / `nlinarith` in proofs
+  that secretly need the ordering on $q$; the scanner does not yet
+  AST-parse the proof body. Manual verification: open each file,
+  check tactics. (TODO for the scanner: extend to AST-level check.)
+- 0 MIXED files is suspicious — likely the regex
+  `\{\s*R\s*:\s*Type\*?\s*\}` misses some generic forms
+  (`{R : Type _}`, `{R : Type 0}`, alternate variable names like
+  `S`, `T`). Refine for a v2 scan.
+
+## 4. Follow-up workplan for A2 (substrate-lift refactor)
+
+This audit's deliverable is the **inventory + classification**. The
+actual Lean refactor of the 124 candidates is **out of scope for this
+PR** because (a) the Lean toolchain is not available in this CI
+container — I cannot verify refactored files still compile — and
+(b) 124 files is large enough that breaking it into a series of
+small, reviewable PRs is preferable to one mega-refactor.
+
+**Recommended next branch**: `claude/substrate-lift-rR-batch-A-<date>`
+(or similar), with Lean toolchain installed via `lean_setup` MCP,
+working through batches of ~5-10 files per commit:
+
+1. Open each CANDIDATE file; identify the `(q : ℝ) (hq : ...)` declarations.
+2. Replace with `{R : Type*} [Field R] (q : R) (hq : IsUnit q)` —
+   or weaker / stronger per the typeclass cheat-sheet (CLAUDE.md §7c).
+3. Run `lake build` on the affected paper package to verify no regressions.
+4. If proof body uses ordering tactic on $q$: STOP, this is a false-positive
+   CANDIDATE — promote to MIXED and skip.
+5. Commit per batch; rebase on main between batches.
+
+**Verification gate per file**: `lean_diagnostic_messages` shows
+no new errors after refactor; downstream consumers (which reference
+the same declaration name via `qou:QOU.X.Y`) need no change because
+the type signature widens.
 
 ## 4. q-deformed special functions — explicit classification
 
