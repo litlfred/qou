@@ -18,6 +18,7 @@ import math
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, S_SKEIN as S
@@ -246,24 +247,24 @@ print(f"P_³He(q) = V̂₀^dau · V̂₁^dau = {V0_dau:.10f} × {V1_dau:.10f} = 
 print()
 ratio = P_dau / P_par
 print(f"P_³He / P_³H = {ratio:.10f}")
-print(f"ln(P_³He / P_³H) = {math.log(abs(ratio)):+.10f}")
+print(f"ln(P_³He / P_³H) = {float(mp.log(abs(ratio))):+.10f}")
 print()
 
 # Q_q from the polynomial ratio
 HBAR_Q2 = (1 - Q_INV)**2
-Q_q = math.log(abs(P_dau / P_par)) / HBAR_Q2
+Q_q = mp.log(abs(P_dau / P_par)) / HBAR_Q2
 print(f"ℏ_q² = {HBAR_Q2:.10f}")
-print(f"𝒬_q = ln|P_dau/P_par| / ℏ_q² = {Q_q:+.6f}  (Hecke units)")
+print(f"𝒬_q = ln|P_dau/P_par| / ℏ_q² = {float(Q_q):+.6f}  (Hecke units)")
 print(f"𝒬_q^exp = 0.01861 MeV")
 print()
 
 # Per-generator contribution
 print("Per-generator log-ratio:")
-lr0 = math.log(abs(V0_dau / V0_par))
-lr1 = math.log(abs(V1_dau / V1_par))
-print(f"  σ_0: ln(V̂₀^dau/V̂₀^par) = {lr0:+.10f}")
-print(f"  σ_1: ln(V̂₁^dau/V̂₁^par) = {lr1:+.10f}")
-print(f"  sum: {lr0 + lr1:+.10f}")
+lr0 = mp.log(abs(V0_dau / V0_par))
+lr1 = mp.log(abs(V1_dau / V1_par))
+print(f"  σ_0: ln(V̂₀^dau/V̂₀^par) = {float(lr0):+.10f}")
+print(f"  σ_1: ln(V̂₁^dau/V̂₁^par) = {float(lr1):+.10f}")
+print(f"  sum: {float(lr0 + lr1):+.10f}")
 print()
 
 # ── Write witness ────────────────────────────────────────────────
@@ -303,7 +304,7 @@ witness = {
             "daughter_type": "pp × mix",
             "V_par": V0_par,
             "V_dau": V0_dau,
-            "log_ratio": lr0,
+            "log_ratio": float(lr0),
         },
         "sigma_1": {
             "crossings": 1,
@@ -311,13 +312,13 @@ witness = {
             "daughter_type": "mix",
             "V_par": V1_par,
             "V_dau": V1_dau,
-            "log_ratio": lr1,
+            "log_ratio": float(lr1),
         },
         "P_par": P_par,
         "P_dau": P_dau,
         "ratio": ratio,
-        "ln_ratio": math.log(abs(ratio)),
-        "Q_q_hecke_units": Q_q,
+        "ln_ratio": float(mp.log(abs(ratio))),
+        "Q_q_hecke_units": float(Q_q),
     },
 }
 
