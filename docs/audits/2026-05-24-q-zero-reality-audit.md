@@ -19,7 +19,7 @@ This audit answers two questions:
 | Question | Answer |
 |---|---|
 | Does anything *force* $q_0 \in \mathbb{R}$? | **No.** Pre-Archimedean substrate is generic `{R : Type*}`. Reality is implicit engineering + empirical, not a theorem. |
-| Is $q_0 \leftrightarrow m_p - m_n$ tautological? | **No.** Substrate-derived $\Delta_{pn}$ at real $q_0$ matches CODATA to **−0.53 %** — non-trivial structural content. |
+| Is $q_0 \leftrightarrow m_n - m_p$ tautological? | **No.** Substrate-derived $\Delta_{pn}$ at real $q_0$ matches CODATA to **−0.53 %** — non-trivial structural content. |
 | Does the L2 residual look "imaginary-shaped"? | **No.** The 2.89 % gap is **bar-symmetric** ($m_p$, $m_n$ shift together); the bar-asymmetric channel $\Delta_{pn}$-via-flavor-split is already correct at 305 ppm. The natural complex-$q_0$ signature points the opposite way. |
 | Does the codebase already discuss complex $q$? | **Yes, but only $|q|=1$.** Existing content treats $q = e^{i\Theta}$; $|q|>1$ with $\mathrm{Im}(q) \neq 0$ is uncharted. |
 
@@ -56,7 +56,7 @@ Conversely, the pre-Archimedean substrate is **already** generic:
 **honored** in the substrate. Reality enters only at the Archimedean
 realization step, by *definitional choice* of the codomain.
 
-## 2. The $q_0 \leftrightarrow m_p - m_n$ relationship is structural, not tautological
+## 2. The $q_0 \leftrightarrow m_n - m_p$ relationship is structural, not tautological
 
 Counter to the owner's worry that the relationship might be a mere
 validation check, the substrate-derived identity at *real* $q_0$ is
