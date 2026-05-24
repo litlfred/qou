@@ -123,8 +123,9 @@ def main():
         print("mass components: they're 'orthogonal' in the cosh²-sinh² sense.")
         print("Numerically at q_0:")
         from mpmath import mpf, mp
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
         mp.mp.dps = 30
-        q_0 = mpf("1.10970000000")
+        q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
         bracket_inv = 1 / (q_0 + 1 / q_0) ** 2
         print(f"  1/[2]_q² at q_0 = 1/(q_0 + q_0⁻¹)² = {float(bracket_inv):.10f}")
         print()

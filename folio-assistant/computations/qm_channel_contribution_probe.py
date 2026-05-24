@@ -54,6 +54,11 @@ from pathlib import Path
 import sympy as sp
 from mpmath import mp, mpf, log as mplog, tanh as mptanh, cosh as mpcosh, sinh as mpsinh, sqrt as mpsqrt
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 mp.dps = 50
 
 
@@ -63,8 +68,8 @@ def main():
     print("=" * 80)
     print()
 
-    # Substrate parameters (50-dps)
-    q_0 = mpf("1.10970000000")
+    # Substrate parameters (50-dps, canonical pin)
+    q_0 = mpf(Q_50_DIGIT_STR)
     eta_0 = mplog(q_0)
     h_0 = q_0 - 1 / q_0
     cosh_eta = mpcosh(eta_0)

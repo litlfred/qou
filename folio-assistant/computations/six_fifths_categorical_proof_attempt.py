@@ -36,12 +36,13 @@ from fractions import Fraction
 from itertools import combinations
 
 import mpmath as mp
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpf
 
 mp.mp.dps = 50
 
 # Substrate
-Q_0 = mpf("1.10970000000")
+Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 H_0 = Q_0 - mpf(1) / Q_0
 
 # Target: empirical 171/143 from PR #1128

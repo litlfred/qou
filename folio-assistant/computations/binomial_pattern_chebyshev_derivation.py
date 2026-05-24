@@ -153,8 +153,9 @@ def main():
     print("Substrate evaluation at q_0 ≈ 1.1097, h_0 ≈ 0.2086")
     print("=" * 80)
     import mpmath as mp
-    mp.mp.dps = 30
-    q_0 = mp.mpf("1.10970000000")
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    mp.mp.dps = 50
+    q_0 = mp.mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
     h_0 = q_0 - 1 / q_0
     print(f"h_0 = {float(h_0):.10f}, h_0² = {float(h_0**2):.10f}")
     print()
