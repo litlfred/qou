@@ -183,3 +183,22 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+# ── Bring bridge factor ──────────────────────────────────────────
+# The fibre functor τ converts algebraic per-cell (-3/2) to
+# geometric per-cell (-G) via the "Bring bridge factor":
+#
+#   -G = (-3/2) × (2G/3)
+#
+# where 2G/3 = (4/3)·Λ(π/4) (Lobachevsky function at π/4).
+#
+# This factor IS the value of τ restricted to one ideal octahedron
+# at h² Taylor order: it converts the combinatorial multiplicity
+# (3/2 from 6 crossings / 8 cells) to the hyperbolic volume
+# (G = Catalan from the octahedral tessellation).
+#
+# The full chain:
+#   Q₈ algebraic:  -3/2 per cell  ──×(2G/3)──→  -G per cell  (geometric)
+#   8 cells total:  -12 total      ──×(2G/3)──→  -8G total    (= Vol(𝓑₃))
+#   Φ₀ (÷ -64):    -12 / -64      =            3/16           (Markov trace κ)
