@@ -135,12 +135,18 @@ RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
 # ── AME 2020 atomic binding energies (validation-only) ──────────
 # Added 2026-05-24 per the canonical-iw P31 follow-up: scripts like
 # `binding_canonical.py` previously hardcoded these AME values
-# (2.22452, 8.481821, 7.71804, 28.295674) inline in their __main__
+# (2.22452, 8.481798, 7.71804, 28.295674) inline in their __main__
 # print loops. The values are AME 2020 binding energies, used ONLY
 # for comparison against framework predictions (`err = pred - AME_B_*`).
 # Per CLAUDE.md three-calibration discipline, importing these as
 # upstream inputs to mass / binding compute is an opt-out from CAL
 # (and is flagged by canonical-iw + production-vs-exploratory-discipline).
+#
+# Naming convention: `_VALIDATION` suffix marks these as
+# comparison-only (mirrors `M_P_MEV_VALIDATION`, `M_H1_MEV_VALIDATION`,
+# `RYDBERG_eV_VALIDATION` above). Importing without the suffix would
+# be unambiguous since these are AME constants, but the suffix makes
+# the validation-only role explicit at every call site.
 #
 # Source witness:
 # `ame-2020-binding-energies.witness.json` (committed alongside).
@@ -148,13 +154,13 @@ RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
 # evaluation", Chinese Physics C 45.3 (2021) 030003.
 _AME_BINDING_WITNESS = _WITNESS_DIR / "ame-2020-binding-energies.witness.json"
 
-AME_B_DEUTERON_MEV = _load_mpf(_AME_BINDING_WITNESS, "data.B_deuteron_MeV")
-AME_B_TRITIUM_MEV = _load_mpf(_AME_BINDING_WITNESS, "data.B_tritium_MeV")
-AME_B_HE3_MEV = _load_mpf(_AME_BINDING_WITNESS, "data.B_he3_MeV")
-AME_B_HE4_MEV = _load_mpf(_AME_BINDING_WITNESS, "data.B_he4_MeV")
-AME_B_LI5_MEV = _load_mpf(_AME_BINDING_WITNESS, "data.B_li5_MeV")
-AME_B_LI6_MEV = _load_mpf(_AME_BINDING_WITNESS, "data.B_li6_MeV")
-AME_B_LI7_MEV = _load_mpf(_AME_BINDING_WITNESS, "data.B_li7_MeV")
+AME_B_DEUTERON_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_deuteron_MeV")
+AME_B_TRITIUM_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_tritium_MeV")
+AME_B_HE3_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_he3_MeV")
+AME_B_HE4_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_he4_MeV")
+AME_B_LI5_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li5_MeV")
+AME_B_LI6_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li6_MeV")
+AME_B_LI7_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li7_MeV")
 
 # ── Internal consistency check (CAL-3 vs CODATA m_n − m_p − m_e) ─
 # Q_β must agree with (m_n − m_p − m_e) within combined CODATA σ.
