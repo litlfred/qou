@@ -13,13 +13,35 @@ constants are predictions.
 | $Q_\beta(n) = 0.78233341 \pm 0.00000061$ MeV | Hadronic energy scale $E_0$ | Free neutron decay | $7.8 \times 10^{-7}$ |
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
-via the relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$
+via the **leading-order substrate-truncation** of the canonical
+operator-valued mass formula (see SUPERSEDED-$\rho_q$ note below):
+
+$$
+\frac{m_\mu}{m_e} \;\stackrel{\text{LO}}{=}\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
+$$
+
 ([Skein mass relation](#rem:skein-mass-relation)), where
 $\mathrm{Vol}(4_1) \approx 2.0299$ is the topological constant
 (hyperbolic volume of the figure-eight knot) and
 $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
+
+> **⚠️ SUPERSEDED-$\rho_q$ caveat (2026-05-24, PR #1127).**
+> The dimensional factor $1/\hbar_q^2$ in the formula above is the
+> SUPERSEDED scalar substrate density (see
+> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md)
+> and [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)).
+> The canonical operator-valued form replaces it with the
+> Wedderburn-graded expansion (LO + single-gen + pair-gen + ...).
+> Numerically the Skein formula closes $m_\mu/m_e = 206.77$ at
+> lepton level because operator-valued corrections are small for
+> leptons; the +0.17% Q_β residual flagged in
+> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)
+> is consistent with operator corrections becoming non-negligible
+> for hadronic observables. Re-derivation of $m_\mu/m_e$ from
+> the canonical (graded-expansion) form is queued in
+> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
 
 The second input sets the **leptonic mass scale** — the
 conversion from dimensionless natural units to MeV.  The

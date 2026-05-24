@@ -69,16 +69,29 @@ None this cycle. The reconciliation with PR #1153 / `bar-involution.md` is a str
 |---|---|---|
 | 3f653ce8 | duality-closure(D11): Wigner SU(4) from D9 + D10 — Cluster B completion scaffold | No (different domain — duality closures, not Q_β / bar-projection). |
 
-## Next concrete task on the queue
+## Phase A v2 — DONE — Outcome (d)
 
-Per the PR conversation, the next user-prioritized item is **Test 1** (simultaneous CAL-2 + CAL-3 fit for complex `q = u + iv ∈ ℂ`). With the reconciliation update folded in, the structurally-cleaner version of Test 1 is:
+`q_beta_complex_q_test1_phaseA_v2.py` (1D Apollonius parametrization, 360-sample θ scan + sign-change refinement) returned **outcome (d)**: **NO joint solution exists anywhere on the Apollonius circle** under the Q_β ansatz. Residual is positive everywhere (min +1.31 keV at θ=0 real axis; max +508 keV at θ=180°). Im(q) does NOT close the residual.
 
-1. **Phase A (cheap; current session)** — use the existing closed-form ansatz `Q_β = m_e · |q²−2q−1|·(q+1)/(2q³)` extended to complex `q`; solve `|Q_β(u+iv)| = 0.78233` ∧ `Vol(4_1)·(u²+v²)/((u−1)²+v²) = 206.768` with mpmath. ~30 min.
-2. **Phase B (heavier; queued)** — wire the canonical P_avg per-braid tower (with Li_2^q replacing Φ_q, per the reconciliation finding) for proton + neutron + electron; compute Q_β directly; compare to CODATA. ~1-2 hours.
+This **rules out** the simple "Im(q_0) absorbs the residual" hypothesis under the ansatz; combined with Path D's finding that the canonical mass formula uses SUPERSEDED `ρ_q = 1/ℏ_q²`, the next decisive step is the **purge** of the SUPERSEDED ρ_q and re-derivation in canonical form.
 
-Phase A's outcome:
-- If a complex (u, v) with v ≠ 0 closes both CAL fits with the ANSATZ form, that motivates Phase B.
-- If only the real solution closes the ansatz, the +0.17% residual is intrinsic to the ansatz (not Im(q)) and we need Phase B to disambiguate ansatz-vs-tower-function-choice.
+## SUPERSEDED-ρ_q purge (in progress)
+
+Per owner directive ("aggressive removal. update coord docs. rederive mass ratio, q relationships etc."):
+
+- Audit doc: [`2026-05-24-superseded-rho-q-purge.md`](../audits/2026-05-24-superseded-rho-q-purge.md)
+- Survey: 13 content files + 2 compute scripts + 3 implicit-usage key files
+- Phase 1 (banner pass): in progress this commit
+- Phase 2 (compute scripts): queued
+- Phase 3 (re-derivation of m_μ/m_e + Q_β in canonical form): queued analytical work
+
+## Next concrete tasks on the queue
+
+1. Continue SUPERSEDED-ρ_q banner pass across the remaining 11 content files
+2. Audit `q_pinning_50_digit.py` and `rho_f_categorical_probe.py` for ρ_q dependence
+3. Re-derive m_μ/m_e at the operator (per-braid mass tower) level — lepton variant of `prop:rho-k-graded-expansion`
+4. Re-run Phase A v2 with the canonical (non-ρ_q) form
+5. Reassess error attribution after re-derivation
 
 ## Anti-patterns avoided (skill §11 review)
 
