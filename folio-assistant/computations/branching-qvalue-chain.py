@@ -13,6 +13,7 @@ CRT: for A > 10, delegates to hecke-crt Rust engine.
 
 import json
 import math
+from mpmath import mp
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -92,10 +93,10 @@ print("\n─── Level 2: Branching factorization ───")
 delta_sym = a_sym - b_sym
 delta_sym_simplified = sp.simplify(delta_sym)
 delta_num = a_num - b_num
-delta_err = math.sqrt(a_err**2 + b_err**2)
+delta_err = mp.sqrt(a_err**2 + b_err**2)
 
 print(f"  Δ = a - b = {delta_sym_simplified}")
-print(f"    at q₀: {delta_num:.15f} ± {delta_err:.2e}")
+print(f"    at q₀: {delta_num:.15f} ± {float(delta_err):.2e}")
 
 # Full factorization: Σ_{4^A configs} Δme = a^Z × b^{N-1} × (a-b)
 print("\n  Parity regime: sign(a^Z · b^{N-1}) = (-1)^{A-1}")
@@ -150,7 +151,7 @@ def qvalue_odd(Z, N, name, Q_obs, Q_obs_err):
     Q_MeV_err = abs(dQ_dq) * Q_ERR + Q_me * M_E_MEV_ERR
 
     error_pct = (Q_MeV - Q_obs) / Q_obs * 100
-    sigma = abs(Q_MeV - Q_obs) / math.sqrt(Q_MeV_err**2 + Q_obs_err**2) if (Q_MeV_err + Q_obs_err) > 0 else float('inf')
+    sigma = abs(Q_MeV - Q_obs) / mp.sqrt(Q_MeV_err**2 + Q_obs_err**2) if (Q_MeV_err + Q_obs_err) > 0 else float('inf')
 
     print(f"\n  {name} (Z={Z}, N={N}, A={A}, odd)")
     print(f"    Formula: {formula}")
@@ -159,7 +160,7 @@ def qvalue_odd(Z, N, name, Q_obs, Q_obs_err):
     print(f"    Q/m_e = {Q_me:.10f}")
     print(f"    Q = {Q_MeV:.6f} ± {Q_MeV_err:.2e} MeV")
     print(f"    Q_obs = {Q_obs:.6f} ± {Q_obs_err:.2e} MeV")
-    print(f"    Error: {error_pct:+.2f}%  ({sigma:.1f}σ)")
+    print(f"    Error: {error_pct:+.2f}%  ({float(sigma):.1f}σ)")
 
     results[name] = {
         "Z": Z, "N": N, "A": A, "regime": "odd",
@@ -167,7 +168,7 @@ def qvalue_odd(Z, N, name, Q_obs, Q_obs_err):
         "S": S_num, "S_delta": raw, "Q_me": Q_me,
         "Q_MeV": Q_MeV, "Q_MeV_err": Q_MeV_err,
         "Q_obs_MeV": Q_obs, "Q_obs_MeV_err": Q_obs_err,
-        "error_pct": error_pct, "sigma": sigma,
+        "error_pct": error_pct, "sigma": float(sigma),
     }
     return Q_MeV
 
@@ -348,7 +349,7 @@ witness = {
     "numeric": {
         "a": a_num, "a_err": a_err,
         "b": b_num, "b_err": b_err,
-        "delta": delta_num, "delta_err": delta_err,
+        "delta": delta_num, "delta_err": float(delta_err),
     },
     "results": results,
 }
