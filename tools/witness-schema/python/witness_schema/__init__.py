@@ -23,12 +23,13 @@ from __future__ import annotations
 
 from typing import Any, Literal, Optional, Union
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict
 
 __version__ = "0.1.0"
 
 ComputationEngine = Literal[
     "snappea",
+    "snappy",  # legacy name for `snappea`; new witnesses should prefer `snappea`
     "sympy",
     "mpmath",
     "sage",
@@ -71,10 +72,14 @@ class UpstreamWitnessHash(BaseModel):
 class ComputationWitness(BaseModel):
     """Top-level shape of a `*.witness.json` file.
 
-    Field names match the JSON keys (camelCase for git/timestamp fields,
-    snake_case for the legacy `upstream_witness_hashes` field) so
-    `model_validate_json(raw_bytes)` round-trips byte-identical with
-    files produced by `qou_substrate.witness.WitnessBuilder.save()`.
+    Field names match the JSON keys (camelCase for git / timestamp
+    fields). `model_validate_json(raw_bytes)` performs a *validation*
+    round-trip — the parsed object can be re-serialised but Pydantic
+    does not guarantee byte-identical JSON output (key ordering,
+    whitespace and float formatting may differ from the source file).
+
+    `upstream_witness_hashes` lives under `data` per the in-repo
+    convention; access via `witness.data["upstream_witness_hashes"]`.
     """
 
     model_config = ConfigDict(extra="allow")
@@ -98,10 +103,6 @@ class ComputationWitness(BaseModel):
     parameters: Optional[dict[str, Any]] = None
     data: Optional[dict[str, Any]] = None
     caveats: Optional[list[str]] = None
-    upstream_witness_hashes: Optional[list[UpstreamWitnessHash]] = Field(
-        default=None,
-        description="Per-upstream-witness hash records.",
-    )
 
 
 __all__ = [

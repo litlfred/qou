@@ -32,8 +32,9 @@ def test_minimal_witness():
     assert w.commitSha is None
 
 
-def test_full_witness_round_trip():
-    """A maximal witness JSON round-trips byte-identical."""
+def test_full_witness_validates():
+    """A maximal witness JSON shape parses and is semantically
+    re-serialisable (no byte-identical guarantee from Pydantic)."""
     raw = {
         "engine": "mpmath",
         "engineVersion": "1.3.0",
@@ -59,15 +60,52 @@ def test_full_witness_round_trip():
             }
         ],
         "parameters": {"dps": 50},
-        "data": {"vol_5_2": "2.828122088334"},
+        # In real witnesses, upstream_witness_hashes lives under data
+        # (per `binding-K-direct.witness.json`,
+        #  `canonical-isotope-witness-Z00.witness.json`, …), not at
+        # the top level.
+        "data": {
+            "vol_5_2": "2.828122088334",
+            "upstream_witness_hashes": [
+                {
+                    "path": "alpha-cluster-recursion.witness.json",
+                    "sha256": "c7cd6663195d43322c4476db00e2228e636506104e46d3d038c3deedb7ebcd77",
+                    "size_bytes": 3747,
+                    "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+                    # Real witnesses can carry `null` for absent fields:
+                    "scriptCommitSha": None,
+                    "computedAt": "2026-05-19T03:17:28.931573+00:00",
+                },
+            ],
+        },
         "caveats": ["Bounded by SnapPy 3.3.2's 15-digit Vol precision."],
-        "upstream_witness_hashes": [],
     }
     w = ComputationWitness.model_validate(raw)
     assert w.allPassed
     assert len(w.assertions) == 1
     assert w.assertions[0].name == "Vol(4_1)"
     assert w.parameters == {"dps": 50}
+    # Round-trip is semantic (object-equal), not byte-identical:
+    parsed_again = ComputationWitness.model_validate(w.model_dump(mode="json"))
+    assert parsed_again.assertions[0].name == w.assertions[0].name
+    # upstream_witness_hashes is accessed via data:
+    uwh = (w.data or {}).get("upstream_witness_hashes", [])
+    assert len(uwh) == 1
+    assert uwh[0]["scriptCommitSha"] is None
+    assert uwh[0]["commitSha"] == "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+
+
+def test_engine_snappy_accepted():
+    """Legacy `snappy` engine value is accepted (real in-repo witnesses use it)."""
+    w = ComputationWitness.model_validate(
+        {
+            "engine": "snappy",
+            "engineVersion": "snappy 3.3.2",
+            "computedAt": "2026-05-24T00:00:00+00:00",
+            "assertions": [],
+        }
+    )
+    assert w.engine == "snappy"
 
 
 def test_assertion_with_numeric_values():
@@ -85,7 +123,9 @@ def test_assertion_with_numeric_values():
 
 
 def test_upstream_witness_hash():
-    """UpstreamWitnessHash validates with required fields only."""
+    """UpstreamWitnessHash validates with required fields only and
+    accepts explicit `null` for the optional ones (which real
+    witnesses carry — see canonical-isotope-witness-Z00.witness.json)."""
     h = UpstreamWitnessHash.model_validate(
         {
             "path": "hyperbolic-volumes.witness.json",
@@ -94,6 +134,19 @@ def test_upstream_witness_hash():
     )
     assert h.path == "hyperbolic-volumes.witness.json"
     assert h.size_bytes is None
+
+    h_with_nulls = UpstreamWitnessHash.model_validate(
+        {
+            "path": "low-isotope-binding-sweep.witness.json",
+            "sha256": "7917dee289469c3747e4cd19f634c01891534ee0236b942b4acbf07a60cf9433",
+            "size_bytes": 7924,
+            "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
+            "scriptCommitSha": None,
+            "computedAt": None,
+        }
+    )
+    assert h_with_nulls.scriptCommitSha is None
+    assert h_with_nulls.computedAt is None
 
 
 def test_extra_fields_allowed():
