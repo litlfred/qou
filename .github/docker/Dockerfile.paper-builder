@@ -1,0 +1,73 @@
+# Dockerfile.paper-builder — prebuilt image for the publish.yml pipeline.
+#
+# Bakes in TeX Live + bun + Python scientific stack + auxiliary tools
+# that publish.yml currently apt-installs on every run (~5-10 min per
+# job). Pre-pulled, the same install reduces to a ~2-3 min image pull,
+# net savings of ~5 min per job — and a precondition for the 5-job
+# parallel DAG (without pre-baked tools, each parallel job would
+# duplicate the install).
+#
+# See: docs/workplans/2026-05-24-publish-yml-parallelization-plan.md
+# (PR #1099 — Phase A doc) for the rationale.
+
+# Pin to a specific Ubuntu LTS for reproducibility. 24.04 matches
+# the `runs-on: ubuntu-latest` baseline GH Actions uses today
+# (LTS rotation Apr 2024).
+FROM ubuntu:24.04
+
+LABEL org.opencontainers.image.source="https://github.com/litlfred/qou"
+LABEL org.opencontainers.image.description="Pre-baked builder image for the QOU folio publish pipeline (TeX Live + bun + Python scientific stack)."
+LABEL org.opencontainers.image.licenses="MIT"
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
+# ── System deps + TeX Live ──
+# Mirrors publish.yml's "Install TeX Live, latexdiff, latexmk, latexpand"
+# step verbatim. `--no-install-recommends` keeps the image lean
+# (texlive-full is already huge; recommended drags in everything).
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+        ca-certificates curl unzip git \
+        texlive-full texlive-extra-utils latexdiff latexmk \
+        graphviz ripgrep jq \
+        python3 python3-pip python3-venv \
+        build-essential pkg-config \
+        && rm -rf /var/lib/apt/lists/*
+
+# ── Python scientific stack ──
+# Mirrors publish.yml's "Install Python scientific dependencies" +
+# "Install pypdf" steps. Pinned via `pip install` rather than
+# requirements.txt so the image is self-contained.
+RUN pip3 install --break-system-packages --no-cache-dir \
+        'pypdf>=4,<6' \
+        numpy sympy scipy mpmath
+
+# ── bun (content pipeline) ──
+# bun is the JS runtime that drives content/pipeline/. Install to
+# /opt/bun so it's accessible to any UID; symlink into /usr/local/bin
+# for PATH discoverability.
+ENV BUN_INSTALL=/opt/bun
+ENV PATH=$BUN_INSTALL/bin:$PATH
+RUN curl -fsSL https://bun.sh/install | bash && \
+    ln -sf $BUN_INSTALL/bin/bun /usr/local/bin/bun
+
+# ── Sanity check: surface every binary version into the image log ──
+# Fail-fast if any required tool is missing. If this step succeeds,
+# downstream `publish.yml` jobs that use this image can skip ALL of
+# the apt-get + pip + bun-install steps.
+RUN echo "=== Image tool versions ===" && \
+    pdflatex --version | head -1 && \
+    latexmk --version | head -1 && \
+    (latexdiff --version 2>&1 || true) | head -1 && \
+    (latexpand --version 2>&1 || true) | head -1 && \
+    bun --version && \
+    python3 --version && \
+    pip3 show numpy sympy scipy mpmath pypdf | grep -E '^Name|^Version' && \
+    git --version
+
+# Default working directory mirrors the GH Actions runner's checkout
+# path; consumers override via `workdir:`.
+WORKDIR /workspace
+
+CMD ["/bin/bash"]
