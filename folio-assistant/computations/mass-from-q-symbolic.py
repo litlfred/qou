@@ -49,6 +49,7 @@ References:
 import math
 import sys
 import os
+from mpmath import mp
 
 import sympy as sp
 from sympy import sqrt, Rational, simplify, expand, factor, Matrix, latex
@@ -243,29 +244,29 @@ borromean_mass_MeV = borromean_mass_ratio * M_E_MEV
 # Error: δ(V/h²) = V/h² × sqrt((δV/V)² + (2δh/h)²)
 # where h = ℏ_q, δh/h = ½ δ(ℏ_q²)/ℏ_q²
 # δ(ℏ_q²)/ℏ_q² = sqrt((δV/V)² + (δR/R)²) from V/R
-_rel_hbar_sq = math.sqrt(
+_rel_hbar_sq = float(mp.sqrt(
     (VOL_FIGURE_EIGHT_ERR / VOL_FIGURE_EIGHT)**2
     + (MASS_RATIO_MU_E_ERR / MASS_RATIO_MU_E)**2
-)
-_rel_borromean = math.sqrt(
+))
+_rel_borromean = float(mp.sqrt(
     (VOL_BORROMEAN_ERR / VOL_BORROMEAN)**2
     + _rel_hbar_sq**2
-)
+))
 borromean_mass_ratio_err = borromean_mass_ratio * _rel_borromean
-borromean_mass_MeV_err = math.sqrt(
+borromean_mass_MeV_err = float(mp.sqrt(
     (borromean_mass_ratio_err * M_E_MEV)**2
     + (borromean_mass_ratio * M_E_MEV_ERR)**2
-)
+))
 
 # ── Skein polynomial ratio (for Q-value usage) ──────────────────
 skein_ratio_n_p = abs(P_n_num) / abs(P_p_num)
 # Error: δ(n/p) = (n/p) × sqrt((δn/n)² + (δp/p)²)
-skein_ratio_err = skein_ratio_n_p * math.sqrt(
+skein_ratio_err = skein_ratio_n_p * float(mp.sqrt(
     (P_n_err / abs(P_n_num))**2 + (P_p_err / abs(P_p_num))**2
-)
+))
 
 # Log ratio (used in Q-value spectral decomposition)
-log_q_ratio = math.log(skein_ratio_n_p) / math.log(Q0)
+log_q_ratio = float(mp.log(skein_ratio_n_p) / mp.log(Q0))
 
 # CODATA mass ratio
 codata_ratio_n_p = M_N_MEV_VALIDATION / M_P_MEV_VALIDATION
