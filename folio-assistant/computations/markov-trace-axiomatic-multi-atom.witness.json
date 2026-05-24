@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-23T21:20:36.187637+00:00",
-  "commitSha": "83b01a15bf6b6ceb8a5883817348c4a459ef5e7e",
+  "computedAt": "2026-05-24T07:41:06.638954+00:00",
+  "commitSha": "db1658a5482b22723639aa1ba04dfc5b0ff5a98f",
   "assertions": [
     {
       "name": "disjoint_product_ok",
@@ -26,7 +26,7 @@
   "computation": "markov-trace-axiomatic-multi-atom",
   "scriptFile": "markov_trace_axiomatic_multi_atom.py",
   "scriptHash": "215cd2b37526",
-  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "scriptCommitSha": "342ce62e42540ac00e235ff1da6fc2cef0b1ca24",
   "description": "Multi-atom Markov-trace anchor using the axiomatic recursive reducer (markov_trace_recursive). Computes tr_M(β_K) for K ∈ {proton, neutron} via Hecke quadratic + Markov axioms + cyclicity, no representation theory. The disjoint-product check on the deuteron has been removed (see convention_status above).",
   "convention_status": "DEPRECATED_NON_CANONICAL — the proton word σ₁⁷σ₂⁴ and neutron word σ₁⁶σ₂⁴σ₁⁻¹ used here do NOT match the canonical convention from mass_at_3A_proper.atom_braid_word_3A (which has 2 averaged crossings per nucleon). Computed values 1.6332 (proton) and 1.2482 (neutron) disagree with canonical 1.0653 / 0.9232 in atomic-tr-m-mpfr-50dps.witness.json. DO NOT use for mass predictions. Use atomic_tr_m_mpfr_50dps.py for canonical |tr_M| values. Deuteron entry removed entirely (disjoint convention empirically wrong; recursive reducer does not support averaged crossings).",
   "reference_blocks": [
@@ -40,7 +40,7 @@
     "folio-assistant/computations/markov_trace_axiomatic_proton.py"
   ],
   "q0": "1.109978595554180575281594079609509377993",
-  "m_e_MeV": "0.5109989500000000000000000000000000000000",
+  "m_e_MeV": "0.5109989506900000000000000000000000000000",
   "atoms": {
     "proton": {
       "Z": 1,
@@ -64,8 +64,8 @@
       "tr_M_symbolic": "(q**(67/2) + 2*q**(65/2) + q**(63/2) - q**(61/2) - 2*q**(59/2) + 3*q**(55/2) + 2*q**(53/2) - 2*q**(51/2) - 2*q**(49/2) + 2*q**(47/2) + 2*q**(45/2) - 2*q**(43/2) - 3*q**(41/2) + 2*q**(37/2) + q**(35/2) - q**(33/2) - 2*q**(31/2) - q**(29/2) + 2*q**33 + 4*q**32 - 2*q**31 - 8*q**30 + 2*q**29 + 12*q**28 - q**27 - 14*q**26 + 14*q**24 - 14*q**22 - q**21 + 12*q**20 + 2*q**19 - 8*q**18 - 2*q**17 + 4*q**16 + 2*q**15)/(q**(51/2) + 3*q**(49/2) + 3*q**(47/2) + q**(45/2))",
       "tr_M_at_q0_50dps": "1.633153564048081425747333089270124093828",
       "abs_tr_M_at_q0_50dps": "1.633153564048081425747333089270124093828",
-      "m_over_m_e_codata": "1836.152673425258505912781229785305821078",
-      "rho_K_codata": "1124.298849689312262526240034787022311461"
+      "m_over_m_e_codata": "1836.152670945908317516744918778103176226",
+      "rho_K_codata": "1124.298848171175669020301888291793108111"
     },
     "neutron": {
       "Z": 0,
@@ -89,8 +89,8 @@
       "tr_M_symbolic": "(q**(109/2) + 7*q**(107/2) + 21*q**(105/2) + 34*q**(103/2) + 28*q**(101/2) + q**(99/2) - 20*q**(97/2) - 7*q**(95/2) + 27*q**(93/2) + 35*q**(91/2) - 35*q**(87/2) - 27*q**(85/2) + 7*q**(83/2) + 20*q**(81/2) - q**(79/2) - 28*q**(77/2) - 34*q**(75/2) - 21*q**(73/2) - 7*q**(71/2) - q**(69/2) + 2*q**54 + 14*q**53 + 38*q**52 + 42*q**51 - 8*q**50 - 56*q**49 - 7*q**48 + 79*q**47 + 41*q**46 - 81*q**45 - 81*q**44 + 41*q**43 + 79*q**42 - 7*q**41 - 56*q**40 - 8*q**39 + 42*q**38 + 38*q**37 + 14*q**36 + 2*q**35)/(q**(97/2) + 8*q**(95/2) + 28*q**(93/2) + 56*q**(91/2) + 70*q**(89/2) + 56*q**(87/2) + 28*q**(85/2) + 8*q**(83/2) + q**(81/2))",
       "tr_M_at_q0_50dps": "1.248248271754839720224249798537180778807",
       "abs_tr_M_at_q0_50dps": "1.248248271754839720224249798537180778807",
-      "m_over_m_e_codata": "1838.683661717895897829144267321880015605",
-      "rho_K_codata": "1473.011181608124614511783988571661718152"
+      "m_over_m_e_codata": "1838.683659235128125268675392707977147568",
+      "rho_K_codata": "1473.011179619123044279213255201941200939"
     }
   },
   "checks": {
