@@ -220,12 +220,20 @@ def build_knot_operator_catalogue(Z: int, N: int) -> list[KnotOperatorCatalogue]
     for k, nuc in enumerate(ordering):
         base_g0 = 3 * k
         base_g1 = 3 * k + 1
+        # Per-generator crossing types derived from
+        # `hecke_core.nucleon_gen_chains` structure:
+        #   B₃ confinement (σ₀ σ₁⁻¹)³ seeds g0 with σ, g1 with σ⁻¹.
+        # Both proton and neutron share this g0=σ / g1=σ⁻¹ pattern;
+        # the nucleon distinction lives in the AVERAGED counts (from
+        # mixed-quark pairs) + the canonical_form_label, not in the
+        # dominant sigma sign.
+        # (Fixes Gemini review on PR #1064 — knot_operators was
+        # asserting SIGMA for both g0 and g1 of protons, but
+        # braid_word_canonical correctly records σ⁻¹ at g1.)
         ops.append(KnotOperatorCatalogue(
             op_type=KnotOperatorType.INTRA_NUCLEON,
             gen_index=base_g0,
-            crossing_type=(
-                CrossingType.SIGMA if nuc == "p" else CrossingType.SIGMA_INV
-            ),
+            crossing_type=CrossingType.SIGMA,
             nucleon_type=nuc,
             canonical_form_label=(
                 CANONICAL_INTRA_PROTON if nuc == "p" else CANONICAL_INTRA_NEUTRON
@@ -234,9 +242,7 @@ def build_knot_operator_catalogue(Z: int, N: int) -> list[KnotOperatorCatalogue]
         ops.append(KnotOperatorCatalogue(
             op_type=KnotOperatorType.INTRA_NUCLEON,
             gen_index=base_g1,
-            crossing_type=(
-                CrossingType.SIGMA if nuc == "p" else CrossingType.SIGMA_INV
-            ),
+            crossing_type=CrossingType.SIGMA_INV,
             nucleon_type=nuc,
         ))
         if k < A - 1:
