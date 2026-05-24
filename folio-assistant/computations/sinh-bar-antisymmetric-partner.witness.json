@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T20:19:29.366587+00:00",
-  "commitSha": "f16adbb177926ba737884d5104038da2f7afee0b",
+  "computedAt": "2026-05-24T21:28:52.448996+00:00",
+  "commitSha": "45d888906451874da0889a3b84c941f0b248263e",
   "assertions": [
     {
       "name": "sinh_bar_antisymmetric_partner_verified",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1461,
+  "durationMs": 1611,
   "computation": "sinh-bar-antisymmetric-partner",
   "scriptFile": "sinh_bar_antisymmetric_partner.py",
-  "scriptHash": "1951c749b673",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4860161db4ed",
+  "scriptCommitSha": "45d888906451874da0889a3b84c941f0b248263e",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -30,7 +30,8 @@
   "auditOnly": "docs/audits/2026-05-24-sinh-bar-antisymmetric-partner-probe.md",
   "parameters": {
     "dps": 50,
-    "Q_0": "1.1097",
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_source": "qou_substrate.constants.Q_50_DIGIT_STR",
     "m_range_sympy": [
       1,
       9
@@ -232,65 +233,65 @@
       {
         "m": 0,
         "k_torus": 0,
-        "Q_m_at_q0_sinh_form": 0.05185770241593826,
-        "Q_m_at_q0_direct": 0.05185770241593826,
+        "Q_m_at_q0_sinh_form": 0.05198186073100939,
+        "Q_m_at_q0_direct": 0.05198186073100939,
         "agreement_delta": 1.6704779438076223e-52,
         "P_m_at_q0_for_comparison": 0.5,
-        "Q_over_P_ratio": 0.10371540483187652
+        "Q_over_P_ratio": 0.10396372146201878
       },
       {
         "m": 1,
         "k_torus": 2,
-        "Q_m_at_q0_sinh_form": 0.1578286795869053,
-        "Q_m_at_q0_direct": 0.1578286795869053,
+        "Q_m_at_q0_sinh_form": 0.15821751274216575,
+        "Q_m_at_q0_direct": 0.15821751274216575,
         "agreement_delta": 0.0,
-        "P_m_at_q0_for_comparison": 0.5217477079971564,
-        "Q_over_P_ratio": 0.30249999600911615
+        "P_m_at_q0_for_comparison": 0.5218531091152561,
+        "Q_over_P_ratio": 0.3031839994407736
       },
       {
         "m": 2,
         "k_torus": 4,
-        "Q_m_at_q0_sinh_form": 0.2706644808323379,
-        "Q_m_at_q0_direct": 0.2706644808323379,
-        "agreement_delta": 0.0,
-        "P_m_at_q0_for_comparison": 0.5661890495977284,
-        "Q_over_P_ratio": 0.4780461243901525
+        "Q_m_at_q0_sinh_form": 0.27136825389312,
+        "Q_m_at_q0_direct": 0.27136825389312,
+        "agreement_delta": 6.681911775230489e-52,
+        "P_m_at_q0_for_comparison": 0.5665144441017747,
+        "Q_over_P_ratio": 0.4790138304829674
       },
       {
         "m": 3,
         "k_torus": 6,
-        "Q_m_at_q0_sinh_form": 0.39527294626645776,
-        "Q_m_at_q0_direct": 0.39527294626645776,
-        "agreement_delta": 6.681911775230489e-52,
-        "P_m_at_q0_for_comparison": 0.6352570194419783,
-        "Q_over_P_ratio": 0.6222252319441869
+        "Q_m_at_q0_sinh_form": 0.39637947516956,
+        "Q_m_at_q0_direct": 0.39637947516956,
+        "agreement_delta": 1.3363823550460978e-51,
+        "P_m_at_q0_for_comparison": 0.6359359830129427,
+        "Q_over_P_ratio": 0.623300907257347
       },
       {
         "m": 4,
         "k_torus": 8,
-        "Q_m_at_q0_sinh_form": 0.5370739729297349,
-        "Q_m_at_q0_direct": 0.5370739729297349,
+        "Q_m_at_q0_sinh_form": 0.5387149442898567,
+        "Q_m_at_q0_direct": 0.5387149442898567,
         "agreement_delta": 0.0,
-        "P_m_at_q0_for_comparison": 0.7319557576101643,
-        "Q_over_P_ratio": 0.7337519615711222
+        "P_m_at_q0_for_comparison": 0.7331518787783097,
+        "Q_over_P_ratio": 0.7347931034256453
       },
       {
         "m": 5,
         "k_torus": 10,
-        "Q_m_at_q0_sinh_form": 0.7022352554653092,
-        "Q_m_at_q0_direct": 0.7022352554653092,
-        "agreement_delta": 0.0,
-        "P_m_at_q0_for_comparison": 0.8604912159450369,
-        "Q_over_P_ratio": 0.8160864892665725
+        "Q_m_at_q0_sinh_form": 0.7045956063293239,
+        "Q_m_at_q0_direct": 0.7045956063293239,
+        "agreement_delta": 1.3363823550460978e-51,
+        "P_m_at_q0_for_comparison": 0.8624110705536714,
+        "Q_over_P_ratio": 0.8170066809056274
       },
       {
         "m": 6,
         "k_torus": 12,
-        "Q_m_at_q0_sinh_form": 0.8979405525632196,
-        "Q_m_at_q0_direct": 0.8979405525632196,
-        "agreement_delta": 1.3363823550460978e-51,
-        "P_m_at_q0_for_comparison": 1.0264540976768908,
-        "Q_over_P_ratio": 0.8747985463699469
+        "Q_m_at_q0_sinh_form": 0.9012714777032805,
+        "Q_m_at_q0_direct": 0.9012714777032805,
+        "agreement_delta": 0.0,
+        "P_m_at_q0_for_comparison": 1.0293629887830613,
+        "Q_over_P_ratio": 0.8755623502344748
       }
     ],
     "ew_triplet_Q_values": [
@@ -298,35 +299,35 @@
         "particle": "W± (T(2,4))",
         "m": 2,
         "two_m_plus_1": 5,
-        "P_m_at_q0": 0.5661890495977284,
-        "Q_m_at_q0": 0.2706644808323379,
-        "tanh_argument_2mp1_eta_0": 0.5204485426219048,
-        "Q_over_P_tanh_form": 0.4780461243901525
+        "P_m_at_q0": 0.5665144441017747,
+        "Q_m_at_q0": 0.27136825389312,
+        "tanh_argument_2mp1_eta_0": 0.5217036592689792,
+        "Q_over_P_tanh_form": 0.4790138304829674
       },
       {
         "particle": "Z (T(2,6))",
         "m": 3,
         "two_m_plus_1": 7,
-        "P_m_at_q0": 0.6352570194419783,
-        "Q_m_at_q0": 0.39527294626645776,
-        "tanh_argument_2mp1_eta_0": 0.7286279596706666,
-        "Q_over_P_tanh_form": 0.6222252319441869
+        "P_m_at_q0": 0.6359359830129427,
+        "Q_m_at_q0": 0.39637947516956,
+        "tanh_argument_2mp1_eta_0": 0.7303851229765709,
+        "Q_over_P_tanh_form": 0.623300907257347
       },
       {
         "particle": "H (T(2,8))",
         "m": 4,
         "two_m_plus_1": 9,
-        "P_m_at_q0": 0.7319557576101643,
-        "Q_m_at_q0": 0.5370739729297349,
-        "tanh_argument_2mp1_eta_0": 0.9368073767194285,
-        "Q_over_P_tanh_form": 0.7337519615711222
+        "P_m_at_q0": 0.7331518787783097,
+        "Q_m_at_q0": 0.5387149442898567,
+        "tanh_argument_2mp1_eta_0": 0.9390665866841625,
+        "Q_over_P_tanh_form": 0.7347931034256453
       }
     ],
     "Q_ratios_vs_cosh_ratios": {
-      "Q_W_over_Q_Z": 0.6847533669806991,
-      "Q_Z_over_Q_H": 0.7359748678757351,
-      "Q_W_over_Q_H": 0.5039612687910847,
-      "comparison_P_W_over_P_Z": 0.8912755503198997,
+      "Q_W_over_Q_Z": 0.6846173197465291,
+      "Q_Z_over_Q_H": 0.7357870416831934,
+      "Q_W_over_Q_H": 0.5037325523813755,
+      "comparison_P_W_over_P_Z": 0.8908356489245,
       "comparison_SM_cos_theta_W": 0.8814646664034742
     },
     "verdict": "Q-as-sinh-partner-verified"

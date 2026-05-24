@@ -27,8 +27,10 @@ and DISCARDS the bar-anti-symmetric companion (sinh, sin_q, Φ_q).
        Q_m(h) := (q^{2m+1} - q^{-(2m+1)}) / (2 [2]_q)        (bar-ANTI-symmetric)
               = sinh((2m+1) η_0) / (2 cosh η_0)               at substrate
 
-2. Verifies symbolically (sympy-exact across m=1..9) that Q_m(h)
-   equals the odd-h projection of an extended trace.
+2. Verifies symbolically (sympy-exact across m=1..9):
+   - bar-symmetry of P_m and bar-anti-symmetry of Q_m under q ↦ q^{-1}
+   - the decomposition identity P_m ± Q_m = q^{±(2m+1)} / [2]_q
+   - Q_m h-expansion has only odd-h coefficients (bar-anti-symmetric ⇒ h-odd)
 
 3. Computes Q_m(h_0) numerically at substrate for m = 0..6.
 
@@ -78,10 +80,15 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+# Per qou_substrate.precision convention: respects QOU_COMPUTE_DPS env.
+set_compute_dps()
 
-Q_0 = mp.mpf("1.10970000000")
+# Canonical 50-digit substrate pin (derived from CODATA m_μ/m_e +
+# SnapPy Vol(4_1); see qou_substrate.constants).
+Q_0 = mp.mpf(Q_50_DIGIT_STR)
 
 
 def P_m_symbolic(m: int):
@@ -305,8 +312,9 @@ def main() -> int:
         "crossing-energy-interpretation.md).  EXPLORATORY: structural "
         "characterization, NOT a derivation of Δm_{n-p}."
     )
-    builder.add_parameter("dps", 50)
-    builder.add_parameter("Q_0", str(Q_0))
+    builder.add_parameter("dps", mp.mp.dps)
+    builder.add_parameter("q_0_50dps", Q_50_DIGIT_STR)
+    builder.add_parameter("q_0_source", "qou_substrate.constants.Q_50_DIGIT_STR")
     builder.add_parameter("m_range_sympy", [1, 9])
     builder.add_parameter("m_range_substrate", [0, 6])
     builder.add_data("bar_involution_check", bar_results)
