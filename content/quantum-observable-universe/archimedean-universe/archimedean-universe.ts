@@ -33,6 +33,7 @@ export default chapter({
       title: "Physical regimes and limiting context",
       label: "sec:physical-regimes",
       blocks: [
+        "physical-regimes-intro",
         "brings-surface-unit-circle",
         "seiberg-witten",
         "primordial-vortex",
@@ -50,6 +51,7 @@ export default chapter({
       title: "Bring's surface algebraic substructure",
       label: "sec:bring-algebraic-substructure",
       blocks: [
+        "bring-algebraic-substructure-intro",
         "su2-generators",
         "hyperelliptic-quintic",
         "x5-z5-automorphism",
@@ -624,6 +626,7 @@ export default chapter({
       label: "sec:topological-mass-formula-transcendence",
       blocks: [
         // Topological mass (Descartes-specific applications)
+        "topological-mass-formula-transcendence-intro",
         "hyperbolic-volumes-prose",
         // Skein decomposition and hadronic mass
         "intro",

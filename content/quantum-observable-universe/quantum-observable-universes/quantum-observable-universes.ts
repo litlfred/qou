@@ -138,6 +138,7 @@ export default chapter({
       title: "Substrate parameter and deformation",
       label: "sec:substrate-parameter",
       blocks: [
+        "substrate-parameter-intro",
         "quantum-universe-explication",
         "braiding-eigenvalue-extraction",
         "spectral-chart-correspondence",

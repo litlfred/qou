@@ -39,6 +39,7 @@ export default chapter({
       title: "Headline conjectures",
       label: "sec:headline-conjectures",
       blocks: [
+        "headline-conjectures-intro",
         "yang-mills-mass-gap",
         "yang-mills-mass-gap-table-data",
         "gr-substrate-geometry",
@@ -75,6 +76,7 @@ export default chapter({
       title: "Categorical-differential bridge",
       label: "sec:categorical-differential-bridge",
       blocks: [
+        "categorical-differential-bridge-intro",
         "c-substrate-via-levi",
         "webster-inner-product",
         "heisenberg-commutator-prop",
@@ -98,6 +100,7 @@ export default chapter({
       title: "Non-Archimedean models",
       label: "sec:non-archimedean-models",
       blocks: [
+        "non-archimedean-models-intro",
         "enveloping-algebras",
         "p-adic-realisation",
       ],
