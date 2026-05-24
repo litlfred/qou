@@ -1,7 +1,7 @@
 {
   "computation": "q-pinning-50-digit",
   "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath, derived from Vol(4_1) and m_\u03bc/m_e (CODATA 2022).  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 1.22e-9 (see physical_anchoring_bound).  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, \u03c1_q, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Bring-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_bring_q0.py to 50 digits and re-emit.",
-  "timestamp": "2026-05-24T22:15:56.783400+00:00",
+  "timestamp": "2026-05-24T23:35:41.487587+00:00",
   "precision_decimal_digits": 50,
   "calibration_inputs": {
     "Vol_4_1_str": "2.0298832128193072500424051085490405718833786150606",
@@ -18,8 +18,6 @@
     "H_A": "0.20906032198987946110160842229792190646175630391646",
     "two_q": "2.0108968691184816894615797369210968495248082560009",
     "z_markov": "0.49932033403359825002066908467672150636931636263446",
-    "rho_q_DEPRECATED_substrate_truncation": "101.86215723850402289525127569408975305091246640503",
-    "_rho_q_deprecation_note": "rho_q = 1/hbar_q^2 is the SUPERSEDED scalar substrate density (structurally wrong: braid-class-independent while categorical density rho_K varies ~30x across atoms). Canonical replacement: operator-valued A^lambda_{mu,nu}(I) per prop:hecke-branching-trace-decomposition; graded expansion per prop:rho-k-graded-expansion. See docs/audits/2026-05-24-superseded-rho-q-purge.md (PR #1127). q value above is unaffected (Skein formula is accurate to ppb at lepton level).",
     "s_skein": "0.10438806980915821810461267846072001076530149097117"
   },
   "quantum_integers": {
