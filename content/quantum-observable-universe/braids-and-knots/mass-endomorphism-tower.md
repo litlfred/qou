@@ -1,3 +1,18 @@
+> **⚠️ TOP-OF-FILE SUPERSEDED-$\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**
+> The substrate density $\rho_q = 1/\hbar_q^2$ used in the algebraic
+> form below is **STRUCTURALLY WRONG** per the inline SUPERSEDED
+> note (lines 28-51). The correct dimensional factor is the
+> operator-valued $A^\lambda_{\mu, \nu}(I)$ from
+> [`prop:hecke-branching-trace-decomposition`](#prop\:hecke-branching-trace-decomposition);
+> the corrected graded expansion is [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
+> The corrected canonical form of the mass tower uses
+> $-\mathrm{Li}_2^q(-|\hat V_i|)$ in place of $\Phi_q(|\hat V_i|)$
+> (resolution 2026-05-17, lines 133-150). Full purge tracking:
+> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+> The substrate-density $\rho_q$ display in this file is retained
+> for historical readability of the brane-tower spectral structure
+> only; do **NOT** use it for production computations.
+
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$
 ([quantum observable universe](#def\:quantum-observable-universe)).
