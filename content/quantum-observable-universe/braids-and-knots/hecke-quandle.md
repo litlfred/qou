@@ -23,13 +23,13 @@ powerful than any polynomial invariant (HOMFLYPT, Jones, Alexander).
 ## The Hecke quandle $Q_H(q)$
 
 The Hecke algebra's quadratic relation
-$\sigma_i^2 = (q - 1) \sigma_i + q$ defines a natural quandle
+$\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$) defines a natural quandle
 structure on the set of Hecke elements:
 
 $$
   a \triangleright_H b
   \;:=\;
-  (q - 1) \cdot b + q \cdot \sigma_i^{-1} a \sigma_i
+  h \cdot b + \sigma_i^{-1} a \sigma_i
 $$
 
 where $\sigma_i$ is the Hecke generator at the crossing where $a$
@@ -47,7 +47,7 @@ $q = -1$ (roots of unity).
 The QOU mass formula uses **averaged crossings**
 $I = \sigma - (h/2) \cdot 1$ whose coefficient $h/2$ depends on
 the quark flavour at the crossing
-([`rem:operator-valued-mass-split`](#rem:operator-valued-mass-split)).
+([`rem:operator-valued-magnitude-budget`](#rem:operator-valued-magnitude-budget)).
 In the quandle language, this means the crossing operation
 $\triangleright$ is not fixed — it varies per crossing depending
 on the strand labels:
@@ -55,12 +55,12 @@ on the strand labels:
 $$
   a \triangleright_f b
   \;=\;
-  (q_f - 1) \cdot b + q_f \cdot \sigma_i^{-1} a \sigma_i
+  h_f \cdot b + \sigma_i^{-1} a \sigma_i
 $$
 
-where $q_f$ is a flavour-dependent deformation of the Hecke
-parameter. The proton uses $q_f = q_0$ for $u$-$u$ crossings and
-$q_f' = q_0 - h/2$ for $u$-$d$ crossings. The neutron uses the
+where $h_f$ is a flavour-dependent crossing coefficient. The proton uses
+$h_f = h_0$ for $u$-$u$ crossings and $h_f' = h_0 - h/2$ for $u$-$d$
+crossings. The neutron uses the
 complementary assignment.
 
 This is a **parameterised quandle** — the crossing rule varies

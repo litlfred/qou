@@ -18,17 +18,12 @@ import sys
 import time
 from pathlib import Path
 
-import numpy as np
-
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from q_parameter import Q, Q_INV, HA
+from q_parameter import Q, HA
 from hecke_characters import (
-    nuclear_braid_character,
-    build_seminormal_matrices,
     partitions_of,
-    standard_young_tableaux,
 )
 from wedderburn_jones_markov import y_lambda_at
 from witness_base import WitnessBuilder
@@ -61,20 +56,25 @@ def main():
     n_crossings = atom_canonical_crossings(0, 1, include_inter=True)
 
     # Convert to chi_lambda_braid word format: [(sign, gen_1indexed), ...]
-    # 'sigma' → (+1, gen+1), 'sigma_inv' → (-1, gen+1), 'averaged' → special
+    # 'sigma' → (+1, gen+1), 'sigma_inv' → (-1, gen+1)
     def to_hc_word(crossings):
         word = []
+        has_averaged = False
         for gen, typ in crossings:
             if typ == 'sigma':
                 word.append((1, gen + 1))
             elif typ == 'sigma_inv':
                 word.append((-1, gen + 1))
             elif typ == 'averaged':
-                word.append((1, gen + 1))  # approximate as σ for now
+                has_averaged = True
+            else:
+                raise ValueError(f"unknown crossing type: {typ!r}")
+        if has_averaged:
+            raise ValueError(
+                "averaged crossings are not representable in chi_lambda_braid "
+                "word form; per-partition character traces are omitted"
+            )
         return word
-
-    p_word = to_hc_word(p_crossings)
-    n_word = to_hc_word(n_crossings)
 
     n_strands = 3
     y_vals = y_lambda_at(n_strands, q_val=float(q0))
@@ -86,23 +86,37 @@ def main():
 
     per_part_p = {}
     per_part_n = {}
-
-    print(f"\nPer-partition character traces (pure σ/σ⁻¹ approximation):")
-    print(f"  {'λ':15s} {'y_λ':>12s} {'χ_λ(p)':>14s} {'χ_λ(n)':>14s}")
+    per_partition_precision = None
+    per_partition_note = None
 
     from hecke_characters import chi_lambda_braid
-    for lam in partitions_of(n_strands):
-        shape = list(lam)
-        chi_p = chi_lambda_braid(shape, p_word)
-        chi_n = chi_lambda_braid(shape, n_word)
+    try:
+        p_word = to_hc_word(p_crossings)
+        n_word = to_hc_word(n_crossings)
+        print(f"\nPer-partition character traces:")
+        print(f"  {'λ':15s} {'y_λ':>12s} {'χ_λ(p)':>14s} {'χ_λ(n)':>14s}")
+        for lam in partitions_of(n_strands):
+            shape = list(lam)
+            chi_p, precision_tag = chi_lambda_braid(shape, p_word, return_precision=True)
+            chi_n, precision_tag_n = chi_lambda_braid(shape, n_word, return_precision=True)
 
-        y_raw = y_vals.get(lam, y_vals.get(tuple(shape), 0))
-        y = float(y_raw) if y_raw else 0.0
+            y_raw = y_vals.get(lam, y_vals.get(tuple(shape), 0))
+            y = float(y_raw) if y_raw else 0.0
+            chi_p_f = float(chi_p)
+            chi_n_f = float(chi_n)
+            per_part_p[lam] = chi_p_f
+            per_part_n[lam] = chi_n_f
+            per_partition_precision = precision_tag
 
-        per_part_p[lam] = chi_p
-        per_part_n[lam] = chi_n
-
-        print(f"  {str(lam):15s} {y:12.8f} {chi_p:14.8f} {chi_n:14.8f}")
+            print(f"  {str(lam):15s} {y:12.8f} {chi_p_f:14.8f} {chi_n_f:14.8f}")
+            if precision_tag_n != precision_tag:
+                per_partition_note = (
+                    f"mixed precision tags in chi_lambda_braid: "
+                    f"{precision_tag} vs {precision_tag_n}"
+                )
+    except ValueError as exc:
+        per_partition_note = str(exc)
+        print(f"\nPer-partition character traces skipped: {per_partition_note}")
 
     print(f"\n  tr_M(proton)  = {tr_M_p:.12f}")
     print(f"  tr_M(neutron) = {tr_M_n:.12f}")
@@ -135,12 +149,14 @@ def main():
         "per-partition character traces, Markov-trace split, and "
         "implied E₀ calibration."
     )
-    w.set_content_block("rem:operator-valued-mass-split")
+    w.set_content_block("rem:operator-valued-magnitude-budget")
     w.add_data("tr_M_proton", tr_M_p)
     w.add_data("tr_M_neutron", tr_M_n)
     w.add_data("delta_tr_M", tr_M_n - tr_M_p)
     w.add_data("ratio_p_over_n", tr_M_p / tr_M_n)
     w.add_data("E0_implied_MeV", E0)
+    w.add_data("per_partition_precision", per_partition_precision)
+    w.add_data("per_partition_note", per_partition_note)
     w.add_data("per_partition_proton", {str(k): v for k, v in per_part_p.items()})
     w.add_data("per_partition_neutron", {str(k): v for k, v in per_part_n.items()})
     w.add_assertion(

@@ -17,8 +17,8 @@ $$
 
 Each coefficient $c_k(\beta)$ is a **Vassiliev invariant of type
 $k$** (also called a finite-type invariant of order $k$). This is
-a theorem of Birman-Lin (1993): the coefficients of the power
-series expansion of any quantum knot invariant at $q = 1$ are
+a theorem of Birman-Lin (1993) \cite{birmanlin1993}: the coefficients of
+the power series expansion of any quantum knot invariant at $q = 1$ are
 finite-type invariants, with the order matching the power of the
 deformation parameter.
 
@@ -34,7 +34,7 @@ by type gives a **canonical filtration by complexity**:
 | 1 | Linking number | — (vanishes for knots) | $c_1 = 0$ for any knot |
 | 2 | Framing / writhe | Leading mass correction | $c_2 \propto$ the $h^2$ term in $\lambda_{\mathrm{scale}}$ |
 | 3 | Crossing-change sensitivity | Sub-leading mass | $c_3$ distinguishes trefoil from unknot |
-| $k$ | $k$-fold crossing relations | Order-$k$ mass correction | $c_k$ gives the $h^{2k}$ mass term |
+| $k$ | $k$-fold crossing relations | Order-$k$ mass correction | $c_k$ gives the $h^k$ mass term |
 
 **For the mass formula**, the Vassiliev filtration means:
 
@@ -48,11 +48,11 @@ by type gives a **canonical filtration by complexity**:
    CAL-4 $\lambda_{\mathrm{scale}}$ investigation (PRs #888–#969)
    was trying to derive — it is a **type-2 Vassiliev invariant**.
 
-3. **Higher corrections** $c_k \cdot h^{2k}$ for $k \geq 2$
+3. **Higher corrections** $c_k \cdot h^k$ for $k \geq 3$
    give the precision refinements. The mass tower's convergence
-   rate is controlled by $|h|^{2k} = |q - q^{-1}|^{2k} \approx
-   (0.209)^{2k}$ at substrate $q_0 \approx 1.110$ — each order
-   suppresses by a factor of $\sim 0.044$, giving roughly one
+   rate is controlled by $|h|^k = |q - q^{-1}|^k \approx
+   (0.209)^k$ at substrate $q_0 \approx 1.110$ — each order
+   suppresses by a factor of $\sim 0.209$, giving roughly one
    additional decimal digit of precision per Vassiliev order.
 
 ## Simplification for exposition
@@ -63,7 +63,7 @@ ways:
 **Truncation is justified.** The mass formula's $h$-expansion
 terminates at $h^2$ for the leading-order Family A theorem
 ($\lambda_A = 5/2 + (3/4) h^2$, proved). Higher-order terms are
-suppressed by $|h|^4 \approx 0.002$ — the Vassiliev filtration
+suppressed by $|h|^3 \approx 0.009$ — the Vassiliev filtration
 provides the mathematical framework for this truncation. Each
 Vassiliev type is an independent invariant; dropping type-$k$
 terms for $k > K$ has a controlled error bounded by the

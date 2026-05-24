@@ -8,9 +8,10 @@ export default remark({
   uses: [
     "prop:markov-trace-axiomatic-closed-form",
     "rem:archimedean-image-table",
-    "rem:operator-valued-mass-split",
+    "rem:operator-valued-magnitude-budget",
   ],
   cites: [
+    "birmanlin1993",
     "jones1987",
     "reshetikhin1991",
   ],

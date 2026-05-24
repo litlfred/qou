@@ -4,10 +4,10 @@ export default remark({
   label: "rem:hecke-quandle",
   title:
     "The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules",
-  interprets: "def:hecke-quadratic-relation",
+  interprets: "prop:markov-trace-axiomatic-closed-form",
   uses: [
-    "def:hecke-quadratic-relation",
-    "rem:operator-valued-mass-split",
+    "prop:markov-trace-axiomatic-closed-form",
+    "rem:operator-valued-magnitude-budget",
     "rem:archimedean-image-table",
   ],
   cites: [
