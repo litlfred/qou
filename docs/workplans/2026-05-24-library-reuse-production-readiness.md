@@ -161,6 +161,110 @@ These are **library-quality candidates that currently live in scripts/** — the
 
 ---
 
+## 3.5 Cleanup gating (NEW — owner directive 2026-05-24)
+
+> *"Simplify cleanup so ONLY what is on canonical derivation or is
+> actively being probed/special EXPLICIT exception."*
+
+**No registry publish ships legacy.** Before any Tier-1 / Tier-2 work
+that creates a public artefact, the existing
+[`docs/workplans/2026-05-24-aggressive-cleanup.md`](2026-05-24-aggressive-cleanup.md)
+must land its Batch 1 + Batch 2 (compute side):
+
+| Bucket | Count | Action | Why legacy |
+|---|---:|---|---|
+| `probe_*.py` | **158** | → `_deprecated/probes/` | Exploratory shape-probing, off-chain |
+| Thimble / PL / SW | **29** | delete (blocks CI) | Picard-Lefschetz / Seiberg-Witten — abandoned |
+| `DEPRECATED` / `SUPERSEDED` | **63** | → `_deprecated/` | Already self-tagged |
+| `spike_*` / `explore_*` | **5** | → `_deprecated/` | One-off |
+| **Total** | **255 / 539 (47 %)** | | |
+
+That leaves **~284 surviving scripts.** The
+[canonical-derivation cheat-sheet](../canonical-derivation-cheat-sheet.md)
+names ~20 of them as the chain bedrock (`hecke_core.py`,
+`mass_table_ppb.py`, `lp_dual_solver.py`, `derivation_chain.py`,
+`chi_lambda_braid`, `qbeta_*.py`, …); the rest are per-isotope
+mass-table sweeps and witness regeneration (canonical-consuming).
+
+**`hecke_core.py` (3,183 LOC, 67 importers) is mixed.** Canonical
+chunks: `build_atom_nf`, `_PROTON_G0/G1`, `valence_Z`,
+`partition_dimension`, `q_dimension`, `wedderburn_weight`,
+`atom_gen_chains`, `nucleon_gen_chains`. Exploratory residue:
+`_chebyshev_magic`, `_phi1_full`, `compute_phi1_full`, `_phi1_nuclear`,
+`_alternating_ordering`. **Per-function audit required** before the
+`pyhecke` carve-out (item 2b); keep canonical, move exploratory.
+
+**Rule (matches the aggressive-cleanup workplan):**
+
+> Default = `_deprecated/`. Surviving in `computations/` requires
+> either (a) being named in the canonical cheat-sheet, (b) consuming
+> a canonical script (witness regeneration, mass-table sweeps), or
+> (c) an EXPLICIT exemption entry naming the active probe and why.
+
+The exemption list lives in the aggressive-cleanup workplan, not here.
+
+### Cleanup-gated dependency graph
+
+```
+Aggressive-cleanup Batch 1 (thimble + CI)  ─┐
+Aggressive-cleanup Batch 2 (probes + dep)  ─┼─→ qou-substrate (2a) ─→ 1c/1d ─→ pyhecke carve-out (2b/2c) ─→ 1a/1b ─→ 2d
+hecke_core.py per-function audit           ─┘
+```
+
+Item **2a** can technically ship without the cleanup (the substrate
+trio is already pure-canonical, zero legacy entanglement). But items
+**2b/2c** (`pyhecke` carve-out, lp_dual_solver/laurent_q migration)
+must wait for cleanup so the published `pyhecke` package doesn't ship
+exploratory code.
+
+---
+
+## 3.6 Where do Node.js / Kotlin / R / C come in? (NEW)
+
+Two distinct insertion points — **path B unlocks them without any FFI work**:
+
+```
+                  ┌─────────────────────────────────────┐
+                  │ LAYER 0  qou-substrate              │
+                  │   witness JSON schema is the        │
+                  │   universal cross-language contract │
+                  └────────────┬────────────────────────┘
+                               │
+   ┌───────────────────────────┼───────────────────────────┐
+   ▼                           ▼                           ▼
+┌────────────────┐    ┌────────────────┐         ┌─────────────────┐
+│ LAYER 2  FFI   │    │ LAYER 1a  Rust │         │ LAYER 4         │
+│ (live compute) │    │ hecke-engine   │         │ WITNESS READERS │
+│  pyhecke-      │    │ (no language   │         │ (analysis/viz)  │
+│   native (Py)  │    │  binding here) │         │  R reads JSON   │
+│  snappea-wasm  │    └────────┬───────┘         │  Kotlin viewer  │
+│  napi-rs ──────┼────┐        │                 │  Node analytics │
+│   (Node.js)    │    │        │                 │  R-shiny dash   │
+│  UniFFI ───────┼────┤────────┘                 │   (no Rust)     │
+│   (Kotlin/Swift)    │                          └────────▲────────┘
+│  extendr ──────┼────┘                                   │
+│   (R)          │                                        │
+│  cbindgen      │                                        │
+│   (C ABI)      │     ───── 1d witness-schema ──────────┘
+└────────────────┘             (npm + PyPI)
+   Tier-3 today                  ← Tier-1: unlocks the
+   (path A)                        whole right side for free
+                                   (path B)
+```
+
+| Path | What you get | Effort | Use case |
+|---|---|---|---|
+| **A. Layer-2 FFI binding** (napi-rs / UniFFI / extendr / cbindgen) | Live Hecke compute in Node/Kotlin/R/C | 3 days – 1 wk each | Server compute, mobile apps, R notebooks doing actual math |
+| **B. Layer-4 witness reader** (parse published JSON schema) | Read precomputed observables, dashboards/viz | hours | R-shiny, Kotlin mobile viewer, Node analytics — no compute needed |
+
+**Insight.** Tier-1 item **1d** (publish witness-schema) already gives
+Node / R / Kotlin / C consumers path B. Path A (Tier-3 FFI bindings)
+is only needed when callers want to *re-run* the compute, not just
+consume results. This re-justifies why Tier-3 stays deferred: most
+foreseeable non-Python use cases are read-only.
+
+---
+
 ## 4. Re-tiered action plan
 
 ### Tier 1 — Quick wins (1–2 days each, do now)
