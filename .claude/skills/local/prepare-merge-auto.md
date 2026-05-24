@@ -39,9 +39,45 @@ Execute the full `/prepare-merge` skill (rebase, integrate, one-voice,
 Lean build, final rebase, request reviews). All steps must succeed
 before proceeding.
 
+### Phase 1b: Wait for reviews + status briefing
+
+**Wait for Copilot and Gemini reviews to land** before proceeding.
+Do NOT skip ahead — the reviews are the input to Phase 2. Monitor
+via `mcp__github__pull_request_read get_review_comments` and
+`get_check_runs`; use `subscribe_pr_activity` to receive events
+without polling.
+
+Once reviews arrive (or Gemini quota is exhausted), give the user
+a concise **status briefing**:
+
+1. **PR identity**: "#N — title" with clickable URL
+2. **Branch**: `branch-name` → `main`
+3. **Scope**: files changed, additions/deletions, commits
+4. **Review comments received**: total count, by reviewer, with
+   1-line summary of each thread:
+   ```
+   Review comments (5 total — Copilot: 3, Gemini: 2):
+     1. [Copilot] line 42 engine.py — threshold mismatch
+     2. [Copilot] line 98 engine.py — unused variable
+     3. [Copilot] line 173 engine.py — spelling fix
+     4. [Gemini] line 15 table.md — missing citation
+     5. [Gemini] line 88 table.md — ambiguous wording
+   ```
+5. **Disposition plan**: for each comment, state the planned
+   action (accept / modify / reject / escalate) BEFORE making
+   changes — so the user can redirect:
+   ```
+   Plan: accept 1,2,3; accept-with-modification 4; reject 5
+   (reason: "classical limit" is the standard term per §7a)
+   ```
+6. **CI status**: green / failing / pending
+
+The user can reply with overrides (e.g. "reject 4", "skip 2,3").
+If no override within ~30 seconds, proceed with the stated plan.
+
 ### Phase 2: Resolve review comments
 
-After Copilot and/or Gemini reviews land, triage each comment thread:
+After the briefing (and any user overrides), triage each thread:
 
 | Classification | Action |
 |---|---|
