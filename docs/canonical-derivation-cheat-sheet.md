@@ -272,4 +272,8 @@ The forward work has shifted from §5 mechanics to scientific closure:
 - [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) — paper-side rendering of this chain
 - [`DERIVATION-CHAIN-METHODOLOGY.md`](../folio-assistant/computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
 - [`docs/precision-goals.md`](precision-goals.md) — L1 vs L2 precision targets
+- [`docs/duality-tracker.md`](duality-tracker.md) — coordinate-side classifier of every duality the framework uses or could use (D1-D24); status flags + closure paths; sibling-coordination index
+- [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](audits/2026-05-24-magic-shell-gs-filtration-exploitation.md) — magic-shell + GS-NF wiring gap (L3 closure path)
+- [`docs/audits/2026-05-24-isospin-categorical-source.md`](audits/2026-05-24-isospin-categorical-source.md) — D9 isospin closure path (operator-valued bowtie extension)
+- [`.claude/skills/local/canonical-watcher.md`](../.claude/skills/local/canonical-watcher.md) §Slot J — probe follow-up discipline (GB filtration + jet order + bar-symmetry triple-check)
 - [`CLAUDE.md`](../CLAUDE.md) — repo-wide agent discipline (§3b-cond, §7c, §7aa)
