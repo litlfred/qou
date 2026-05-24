@@ -295,19 +295,27 @@ def main() -> int:
           f"({mp.nstr(residual_pct, 5)} %)")
     print(f"    closure gap (LHS-RHS) = {mp.nstr(closure_gap, 8)}")
 
-    # ── Step 5: diagnostic — what scalar λ_scale would close the gap? ─
+    # ── Step 5: diagnostic — what global rescale scalar would close
+    #            the equation?  This is a DIAGNOSTIC quantity (how
+    #            far co-Casimir restriction is from satisfying the
+    #            constraint), NOT a production scaling factor.
     # Tolerance dynamically tied to mp.dps (Gemini PR #613 review):
     # at mp.dps = 50, this gives 10^-40 (matching the prior literal).
+    # Variable renamed from `lambda_scale` per owner directive
+    # 2026-05-24: "no lambda-scale ANYWHERE in production".
     _eps = mp.mpf(10) ** -(mp.mp.dps - 10)
     if abs(sum_contributions) > _eps:
-        lambda_scale = target / sum_contributions
+        diagnostic_closure_rescaler = target / sum_contributions
     else:
-        lambda_scale = mp.mpf("inf")
+        diagnostic_closure_rescaler = mp.mpf("inf")
 
     print(f"\n  Diagnostic — global rescale scalar that would close the equation:")
-    print(f"    λ_scale = target / Σ y_λ χ^λ Δ_λ^B = {mp.nstr(lambda_scale, 16)}")
+    print(f"    rescaler = target / Σ y_λ χ^λ Δ_λ^B = "
+          f"{mp.nstr(diagnostic_closure_rescaler, 16)}")
     print(f"    (Δ_λ^B is theorem-fixed; this scalar is reported to quantify")
-    print(f"     how far co-Casimir restriction is from satisfying the constraint.)")
+    print(f"     how far co-Casimir restriction is from satisfying the constraint.")
+    print(f"     It is NOT a production scaling factor and must not be consumed")
+    print(f"     as one — per PR #1080, there is no separate λ_scale.)")
 
     # ── Step 6: comparison against Occam ────────────────────────────
     # Occam puts ALL the binding correction on a single partition;
@@ -403,7 +411,7 @@ def main() -> int:
                 "residual_MeV": str(residual_MeV),
                 "residual_pct_of_M_codata": str(residual_pct),
                 "closure_gap_LHS_minus_RHS": str(closure_gap),
-                "diagnostic_lambda_scale": str(lambda_scale),
+                "diagnostic_closure_rescaler": str(diagnostic_closure_rescaler),
             },
             "occam_comparison": {
                 "occam_partition": list(occam_partition),
@@ -441,10 +449,13 @@ def main() -> int:
         ),
         "honest_reporting_note": (
             "Δ_λ^B is fixed at 1/dim_q(λ) by theorem — NOT rescaled to "
-            "match M(D).  The diagnostic_lambda_scale field reports what "
-            "uniform rescaling would close the equation, but that rescaling "
-            "is NOT applied to Δ_λ in the reported per_lambda table. The "
-            "reported residual is the un-tuned, theorem-only result."
+            "match M(D).  The diagnostic_closure_rescaler field reports "
+            "what uniform rescaling would close the equation, but that "
+            "rescaling is NOT applied to Δ_λ in the reported per_lambda "
+            "table.  The reported residual is the un-tuned, theorem-only "
+            "result.  Field renamed from `diagnostic_lambda_scale` per "
+            "PR #1080 framing (no λ_scale; the framework's per-knot "
+            "factor is Geom_full)."
         ),
         "follow_up": (
             "If Option B residual is small for D, extend to (T, ³He) at "

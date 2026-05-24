@@ -52,8 +52,9 @@ from codata_constants import (  # noqa: E402
     Q_BETA_MEV,
 )
 from _li_2_q_util import (  # noqa: E402
-    lambda_scale_family_a,
+    linking_weight_family_a,
     flavor_split_subleading,
+    geom_full_borromean,
 )
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -184,14 +185,16 @@ def borromean_mass_prediction(
     Returns dict with prediction details.
     """
     m_e = mp.mpf(str(M_E_MEV))
-    vol_b3 = 8 * mp.catalan
-    hbar_q = (q - mp.mpf(1)) / q
-    hbar_q_sq = hbar_q ** 2
 
-    lam_A = lambda_scale_family_a(q)
+    # Canonical Geom_full(𝓑₃, q) per PR #1080 — single per-knot Geom
+    # call replacing the manually expanded (Vol/ℏ_q²) × linking_weight
+    # form.  linking_weight is the PROVED Family A categorical identity
+    # (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h².
+    geom_full = geom_full_borromean(q)
+    linking_weight = linking_weight_family_a(q)  # for diagnostic output below
     delta_m_over_M = flavor_split_subleading(q)
 
-    m_avg = m_e * (vol_b3 / hbar_q_sq) * lam_A
+    m_avg = m_e * geom_full
     m_p_pred = m_avg * (1 - delta_m_over_M / 2)
     m_n_pred = m_avg * (1 + delta_m_over_M / 2)
 
@@ -199,7 +202,8 @@ def borromean_mass_prediction(
     m_nucleus_unbound = Z * m_p_pred + N * m_n_pred
 
     return {
-        "lambda_A": float(lam_A),
+        "linking_weight_family_a": float(linking_weight),
+        "geom_full_borromean_q": float(geom_full),
         "delta_m_over_M_N": float(delta_m_over_M),
         "m_avg_MeV": float(m_avg),
         "m_p_pred_MeV": float(m_p_pred),
@@ -269,7 +273,8 @@ def main() -> int:
     print("=" * 120)
     print("COMPREHENSIVE MASS TABLE — QOU framework at current production tier")
     print(f"  q₀ = {Q_50_DIGIT_STR[:25]}...")
-    print(f"  λ_A (Family A, PROVED) = {nucleon['lambda_A']:.10f}")
+    print(f"  linking_weight (Family A, PROVED) = {nucleon['linking_weight_family_a']:.10f}")
+    print(f"  Geom_full(𝓑₃, q₀) (PR #1080) = {nucleon['geom_full_borromean_q']:.10f}")
     print(f"  Δm/M_N (substrate-pure, PROVED) = {nucleon['delta_m_over_M_N']:.8f}")
     print(f"  m_p^pred = {m_p_pred:.6f} MeV   (CODATA: {float(M_P_MEV_VALIDATION):.6f})")
     print(f"  m_n^pred = {m_n_pred:.6f} MeV   (CODATA: {float(M_N_MEV_VALIDATION):.6f})")
@@ -375,12 +380,19 @@ def main() -> int:
         "masses_computed": n_computed,
         "binding_computed": n_binding,
         "gated_on_phase2": n_gated,
-        "lambda_A_value": nucleon["lambda_A"],
+        "linking_weight_family_a": nucleon["linking_weight_family_a"],
+        "geom_full_borromean_q": nucleon["geom_full_borromean_q"],
         "delta_m_over_M_N": nucleon["delta_m_over_M_N"],
         "m_p_pred_MeV": m_p_pred,
         "m_n_pred_MeV": m_n_pred,
-        "production_tier": "Family A (PROVED) + flavor-split (PROVED)",
-        "research_tier_not_used": "Strategy I λ_Y = λ_A - G·h² (conjectural bijection)",
+        "production_tier": (
+            "Geom_full(𝓑₃, q) via PROVED Family A linking_weight "
+            "+ flavor-split (PROVED) — PR #1080 canonical framing"
+        ),
+        "research_tier_not_used": (
+            "Strategy I linking_weight = Family A − G·h² "
+            "(conjectural bijection, PURGED 2026-05-24 per PR #985)"
+        ),
     })
 
     builder.add_assertion(
