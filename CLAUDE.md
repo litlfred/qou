@@ -979,6 +979,78 @@ permitted for defined terms. See
   emits `glossary.json` (committed) + `chapters/glossary.tex`
   (gitignored). `--check` mode is the CI gate.
 
+### 4d. Author notes vs. scholarly prose — `authorNotes` field (STRICT)
+
+Author-tracking notes (status, caveats, refined-framing comments,
+deprecation pointers) belong in the **`authorNotes`** metadata field
+on the block's `.ts` manifest — NOT in the scholarly prose of the
+`.md`. Per CLAUDE.md "User accessibility" + `local/one-voice-audit`
+Category H ("Banner-in-prose"): status leaks in prose are a one-voice
+violation.
+
+Schema (in `folio-assistant/schemas/types.ts`):
+
+```ts
+export interface AuthorNote {
+  kind: "status" | "caveat" | "note" | "refined-framing" | "deprecated";
+  date?: string;  // ISO YYYY-MM-DD recommended
+  body: string;   // markdown, treated as block prose
+  see?: string;   // optional link to follow-up
+}
+```
+
+`BlockBase.authorNotes?: AuthorNote[]` — every block kind accepts it
+(builders pass through via `Omit<XBlock, "kind">`).
+
+**Render behavior**: SKIPPED by default in the LaTeX render
+(clean publication voice). Set environment variable
+`WITH_AUTHOR_NOTES=1` to include them as a small
+`\begin{quote}\small\textit{Author notes (working draft):}...\end{quote}`
+appendix at the end of each block. Useful for working drafts.
+
+**When to migrate vs. keep in prose**:
+
+| In prose looks like | Action |
+|---------------------|--------|
+| `> **Status: theorem (sorry-free)...**` | **Migrate** to `authorNotes: [{ kind: "status", body }]` |
+| `> **Caveat (over-permissive pentagon)...**` | **Migrate** to `authorNotes: [{ kind: "caveat", body }]` |
+| `> **Refined-framing note (added when promoting...)**` | **Migrate** to `authorNotes: [{ kind: "refined-framing", body }]` |
+| `> **Status (May 2026):** ...` (dated) | **Migrate** with `date: "2026-05"` |
+| `> **Status: DEPRECATED — superseded by ...**` | **Migrate** to `authorNotes: [{ kind: "deprecated", body, see: "..." }]` |
+| `> **Theorem (conditional on [conj:X]).**` | **KEEP IN PROSE** — §3b-cond structural banner, part of the theorem statement, not an author note. |
+| `**Note:** <technical clarification of scope/applicability>` | **KEEP IN PROSE** if it's scholarly content (a real mathematical caveat about applicability); **MIGRATE** if it's author-tracking. |
+
+**Example migration**:
+
+`.md` before:
+```markdown
+**Proposition.** *X holds.*
+
+> **Status: theorem (sorry-free, modulo gap Y).** Lean file
+> [`x.lean`] proves the main statement; the residual gap Y is
+> documented in `conj:y`.
+
+## Lean structure
+```
+
+`.ts` after (banner gone from .md; metadata added):
+```ts
+authorNotes: [
+  {
+    kind: "status",
+    body: "**theorem (sorry-free, modulo gap Y).** Lean file `x.lean` proves the main statement; the residual gap Y is documented in `conj:y`.",
+  },
+],
+```
+
+**Audit/enforcement**: `local/one-voice-audit` Category H
+auto-discharges this migration (mechanical fix authorised without
+author approval per the skill's §3 "Apply mechanical fixes").
+
+**History**: this convention was established 2026-05-24 (PR #1098).
+Prior to that, banners lived in prose; the migration is gradual —
+new authoring should use `authorNotes` from the start.
+
 ### 5. Tactic strategy (try in order)
 
 | Goal pattern | Try first | Then try |
