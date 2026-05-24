@@ -16,6 +16,7 @@ Usage:
 
 import math, sys
 from pathlib import Path
+from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 from witness_base import WitnessBuilder
@@ -74,11 +75,11 @@ def nf_tr(nf): return sum(nf[i]*TR_M[i] for i in range(6))
 
 def show(label, nf):
     t = nf_tr(nf)
-    Phi = math.log(abs(t)) if abs(t) > 1e-300 else float('inf')
+    Phi = mp.log(abs(t)) if abs(t) > 1e-300 else float('inf')
     nf_str = ", ".join("{:+.6f}".format(v) for v in nf)
     print("  " + label)
     print("    NF = [" + nf_str + "]")
-    print("    net={:.6f}, tr_M={:.6e}, Phi_1={:.6f}".format(sum(nf), t, Phi))
+    print("    net={:.6f}, tr_M={:.6e}, Phi_1={:.6f}".format(sum(nf), t, float(Phi)))
     return t, Phi
 
 # ── Build corrected proton ────────────────────────────────────
@@ -176,13 +177,13 @@ for label, ops in operators:
     nf = apply_H(nf)
 
     t = nf_tr(nf)
-    Phi = math.log(abs(t)) if abs(t) > 1e-300 else float('inf')
+    Phi = mp.log(abs(t)) if abs(t) > 1e-300 else float('inf')
     bind = Phi_ub - Phi
     E = bind * E_mol
     writhe = sum(-1 if d < 0 else +1 for _, _, d in ops)
 
     show(label, nf)
-    print("    writhe={:+d}, binding={:.6f}, E={:.4f} eV".format(writhe, bind, E))
+    print("    writhe={:+d}, binding={:.6f}, E={:.4f} eV".format(writhe, float(bind), float(E)))
     print()
     results.append((label, writhe, bind, E))
 
@@ -200,7 +201,7 @@ print("  {:>40s} {:>6s} {:>10s} {:>10s}".format("unbonded", "0", "0", "0"))
 for label, w, bind, E in results:
     marker = " <--" if 3.5 < E < 5.5 else ""
     print("  {:>40s} {:>+6d} {:>10.6f} {:>10.4f}{}".format(
-        label[:40], w, bind, E, marker))
+        label[:40], w, float(bind), float(E), marker))
 
 print()
 print("  Observed D_0(H2) = 4.478 eV")
@@ -221,7 +222,7 @@ w.add_parameter("w_alt", w_alt)
 w.add_parameter("E_mol_eV", E_mol)
 
 for label, wr, bind, E in results:
-    w.add_data(label[:30], {"writhe": wr, "binding": bind, "E_eV": E})
+    w.add_data(label[:30], {"writhe": wr, "binding": float(bind), "E_eV": float(E)})
 
 w.save()
 print("Done.")
