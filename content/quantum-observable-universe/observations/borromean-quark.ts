@@ -21,15 +21,6 @@ export default conjecture({
     "def:neutrino-knot",
     "def:observable-mtc",
     "prop:bn-mtc-action",
-    // NOTE: `prop:ns-obstruction-tower` is INTENTIONALLY OMITTED here.
-    // PR #1076 added it to document the narrative bridge to the
-    // fluid-dynamics NS-obstruction tower, but it cascaded the 5-
-    // conjecture NS web into every quark/electron-using block's
-    // transitive cone, bloating §3b-cond audit gaps 9 → 22. The
-    // bridge is preserved as a markdown cross-reference in
-    // intro-ns-obstruction-tower-mtc.md (text-level, not in the
-    // manifest dependency graph). Adding it back here requires
-    // either teaching the audit not to propagate via conjectures,
-    // or banner+class-hyp on the ~13 affected props.
+    "prop:ns-obstruction-tower",
   ],
 });

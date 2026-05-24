@@ -1,5 +1,7 @@
-**Proposition (half-symmetric $H_4$ projection extracts one octahedral
-cell via $S_4 \downarrow S_3$ branching).**
+**Proposition (conditional on
+[`conj:borromean-baryon-mass-formula`](#conj:borromean-baryon-mass-formula)
+— half-symmetric $H_4$ projection extracts one octahedral cell via
+$S_4 \downarrow S_3$ branching).**
 *The half-symmetric Wedderburn projection on $H_4(q)$, further
 restricted to the $S_3$-trivial subspace (where $S_3$ acts by permuting
 the three components of the Borromean rings $\mathcal{B}_3$), extracts

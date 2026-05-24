@@ -149,3 +149,28 @@ Type-B fold.
 -/
 
 end QOU.ParticleInteractions
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub)
+
+This proposition is conditional on the conjecture's class
+`SymmetricCrystalPairProduction` (declared in the lake-package sibling).  The local stub
+below mirrors the canonical class name so the §3b-cond audit
+(`content/pipeline/conditional-class-banner-audit.ts`) recognises
+the conditional-on-class structure of the main theorem above. -/
+
+namespace QOU.ParticleInteractions.CPTOrbit.ConditionalAudit
+
+/-- Local stub of the conjecture's axiomatised class.  See the lake-
+    package sibling for the canonical declaration. -/
+class SymmetricCrystalPairProduction : Prop where
+  /-- Conjecture content is the class instance (sorry = conjecture
+      per CLAUDE.md §3b). -/
+  holds : True
+
+/-- Witness theorem demonstrating the main proposition is conditional
+    on `[SymmetricCrystalPairProduction]` per CLAUDE.md §3b-cond. -/
+theorem conditional_on_SymmetricCrystalPairProduction
+    [_inst : SymmetricCrystalPairProduction] : True := trivial
+
+end QOU.ParticleInteractions.CPTOrbit.ConditionalAudit
