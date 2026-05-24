@@ -666,6 +666,7 @@ export default chapter({
         "chirality-period-pairing",
         // Bring-embeddable knots: genus-bounded falsifiability targets.
         "bring-embeddable-knots",
+        "bring-embeddable-knots-table-data",
       ],
     }),
 
