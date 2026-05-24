@@ -51,21 +51,37 @@ The per-cell ratio is $1/8$, confirming that the half-symmetric
 projection extracts the curvature contribution of exactly **one**
 ideal octahedral cell. $\square$
 
-## Application to $\lambda_{\text{scale}}$
+## Structural role in `Geom_full($\mathcal{B}_3$)` refinement
 
-Combined with the Yekutieli per-cell curvature $-G$ (non-abelian
-Stokes integration, one cell contributing
-$-\operatorname{Vol}(\mathcal{B}_3)/8 = -G$ at $h^2$ order), the
-framework's substrate-pure $\lambda_{\text{scale}}$ is:
+> **2026-05-24 reframing.** This section originally proposed a
+> Yekutieli per-cell additive form
+> $\lambda_{\text{scale}}^{\text{Yekutieli}} = \tfrac{5}{2} + (\tfrac{3}{4} - G)\,h^2$.
+> That form was **purged from production** on 2026-05-24 (commit
+> `71d674da1`) as non-canonical: PR #985 found the natural-reading
+> bijection gives the per-cell curvature $\kappa = +0.5$, not $-G$,
+> and no categorical derivation supplies a $-G \cdot h^2$ term.
+> Per [PR #1080](https://github.com/litlfred/qou/pull/1080), the
+> canonical mass formula is
+> $$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0),$$
+> with no separate $\lambda_{\text{scale}}$ constant.
 
-$$
-  \lambda_{\text{scale}}^{\text{Yekutieli}}
-  = \underbrace{\tfrac{5}{2} + \tfrac{3}{4} h^2}_{\text{canonical Wedderburn (proved)}}
-    + \underbrace{(-G) \cdot h^2}_{\text{Yekutieli per-cell}}
-  = \tfrac{5}{2} + \bigl(\tfrac{3}{4} - G\bigr) h^2
-  \approx 2.4927 \text{ at } q_0.
-$$
+The bijection $\tfrac{5}{2} \times \tfrac{2}{5} = 1$ established
+above is a **structural input** that constrains how
+$\mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$ should evaluate at $h^2$
+order on the half-symmetric Wedderburn subspace: exactly one of the
+eight ideal octahedra of $S^3 \setminus \mathcal{B}_3$ is selected
+by the combined H_4 half-symmetric projection and $S_3$-trivial
+restriction. The bijection is sound combinatorics regardless of
+any per-cell curvature value; it speaks to *which* cell contributes,
+not *how much* it contributes.
 
-This gives $\mathfrak{m}_{\mathfrak{p}} \approx 951\;\text{MeV}$,
-halving the framework-vs-CODATA gap from $\sim 3\%$ (canonical
-Wedderburn alone) to $\sim 1.33\%$.
+The "how much" question — the per-cell curvature value — remains
+open. The framework's current production prediction
+$m_p \approx 965\;\text{MeV}$ ($+2.89\%$ vs CODATA) is the
+$\mathrm{Geom_{full}}(\mathcal{B}_3)$ value at the framework's
+current categorical-exactness order; refining that exactness at
+higher $h^2$ orders is the open frontier (see
+[`docs/audits/2026-05-24-family-a-gap-audit.md`](../../../docs/audits/2026-05-24-family-a-gap-audit.md)).
+This bijection is one of two structural inputs needed for the
+refinement (the other being the $S_5 \leftrightarrow SO(3)$ fiber
+action on Bring's surface).

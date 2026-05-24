@@ -21,7 +21,6 @@ export default proposition({
     "bijection",
     "octahedral-cell",
     "borromean",
-    "yekutieli",
-    "lambda-scale",
+    "geom-full-refinement",
   ],
 });

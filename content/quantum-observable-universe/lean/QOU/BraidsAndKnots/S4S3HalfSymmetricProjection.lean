@@ -83,9 +83,20 @@ theorem perCellRatio_eq : effectiveCellCount / 8 = 1 / 8 := by
     the S_3-trivial subspace, extracts exactly ONE of the 8 ideal
     octahedral cells in the Borromean complement tessellation.
 
-    This resolves the 5/16 vs 1/8 discrepancy surfaced in PR #978
-    and closes the load-bearing bijection step for the Yekutieli
-    per-cell curvature contribution to λ_scale. -/
+    Scope (2026-05-24, post-purge): combinatorial bijection only.
+    The proof states the standard S_n branching arithmetic; it
+    makes NO claim about per-cell curvature κ. The earlier
+    `Yekutieli per-cell` reading (κ = −G) was purged from
+    production on 2026-05-24 (commit 71d674da1) as non-canonical:
+    PR #985 found the natural-reading bijection gives κ = +0.5,
+    not −G, and no categorical derivation supplies −G·h².
+
+    Per the absorbed-into-Geom_full framing (PR #1080), the
+    canonical mass formula is m(K) = m_e · Geom_full(K, q_0)
+    with no separate λ_scale constant. This bijection is a
+    structural input that constrains Geom_full(𝓑₃)'s categorical
+    refinement at h² order; it is NOT a per-cell additive
+    correction. -/
 -- Ref: [adams1985hyperbolic] https://doi.org/10.1007/978-1-4684-9458-7
 -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
 theorem s4_s3_half_symmetric_projection :
