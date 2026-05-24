@@ -38,6 +38,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from mpmath import mp
 
 import numpy as np
 
@@ -159,7 +160,7 @@ def term5_bw_chirality(Z, N):
         pairing = 0
     A_third = A**(1.0/3.0)
     B_bulk = lam_V*A - lam_S*A**(2.0/3.0) - lam_C*Z*(Z-1)/A_third \
-             - a_asym*(N-Z)**2/(4*A) + pairing*delta_P/np.sqrt(A)
+             - a_asym*(N-Z)**2/(4*A) + pairing*delta_P/mp.sqrt(A)
     # Derivable chirality factor
     # a_K = ∏_{pn}(1 + sign·h) — per chirality-dual-space-derivation
     # For atoms with Z, N ≥ 1, m_pn = 1 (single pn boundary in
@@ -307,9 +308,9 @@ def main():
         B_pred = T1 + T4 + T5 + T6 + Tk3 + DmSh
         err_pct = (B_pred - B_AME) / B_AME * 100 if B_AME else None
         print(f"  {sym:<5} {Z+N:>3} "
-              f"{T1:>9.4f} {T4:>9.4f} {T5:>9.4f} "
-              f"{T6:>5.2f} {Tk3:>9.4f} {DmSh:>7.4f} "
-              f"{B_pred:>9.4f} {B_AME:>9.4f} {err_pct:>+7.2f}")
+              f"{float(T1):>9.4f} {float(T4):>9.4f} {float(T5):>9.4f} "
+              f"{float(T6):>5.2f} {float(Tk3):>9.4f} {float(DmSh):>7.4f} "
+              f"{float(B_pred):>9.4f} {float(B_AME):>9.4f} {float(err_pct):>+7.2f}")
         rows.append({
             "sym": sym, "Z": Z, "N": N, "A": Z+N,
             "T1_descended": T1, "T4_frobenius": T4,
@@ -328,7 +329,7 @@ def main():
 
     # Stats
     errs = [abs(r["err_pct"]) for r in rows if r["err_pct"] is not None]
-    print(f"\n  mean |err| = {sum(errs)/len(errs):.2f}%")
+    print(f"\n  mean |err| = {float(sum(errs)/len(errs)):.2f}%")
     print(f"  max  |err| = {max(errs):.2f}%")
 
     # Build witness

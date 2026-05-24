@@ -68,6 +68,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from mpmath import mp
+
 HERE = Path(__file__).parent
 
 
@@ -151,12 +153,11 @@ def main() -> int:
     for r in rows:
         ratio = r["pyhecke_vs_bridge_ratio"]
         if ratio and ratio > 0:
-            import math
-            orders = math.log10(ratio)
+            orders = mp.log10(ratio)
         else:
             orders = None
         print(f"    {r['atom']:<10}  ratio = {ratio}  "
-              f"(log10 ≈ {orders:+.2f})" if orders is not None else
+              f"(log10 ≈ {float(orders):+.2f})" if orders is not None else
               f"    {r['atom']:<10}  ratio = {ratio}")
 
     print("\n  T vs ³He on each path:")

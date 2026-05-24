@@ -17,14 +17,15 @@ import numpy as np
 from datetime import datetime, timezone
 from pathlib import Path
 
+from mpmath import mp
+
 # ── q parameter (canonical source) ───────────────────────────
 try:
     from q_parameter import Q as q0, Q_INV as qi0, HA
 except ImportError:
-    import math
-    _V = 2.029883212819307; _R = 206.768283  # noqa: P31 — display-only q_0 reconstruction in __main__ block; live value from q_parameter.Q
-    _h = math.sqrt(_V / _R); q0 = 1.0 / (1.0 - _h)
-    qi0 = 1.0 / q0; HA = q0 - qi0
+    _V = mp.mpf("2.029883212819307"); _R = mp.mpf("206.768283")  # noqa: P31 — display-only q_0 reconstruction in __main__ block; live value from q_parameter.Q
+    _h = mp.sqrt(_V / _R); q0 = mp.mpf(1) / (mp.mpf(1) - _h)
+    qi0 = mp.mpf(1) / q0; HA = q0 - qi0
 # z, NF_BASIS, NF_NAMES, TR_M moved to pyhecke.gram via M2b inversion.
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
