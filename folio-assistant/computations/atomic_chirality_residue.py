@@ -105,7 +105,7 @@ def _process(args):
         return None
     dq = float(dim_q(lam_t))
     w_lam = dq * dq / nfac
-    log_abs_chi = float(np.log(abs(chi)))
+    log_abs_chi = float(mp.log(abs(chi)))
     sign_chi = 1 if chi > 0 else -1
     return (lam_t, depth, w_lam, chi, log_abs_chi, sign_chi, is_chir)
 
