@@ -114,27 +114,48 @@ this is flagged as an open sub-problem (see `recursive-atom-knot-atlas` block).
 
 ---
 
-## GAP-B-1 — Per-nucleon scaling between $A = 2$ and $A = 3$
+## GAP-B-1 — Per-nucleon scaling between $A = 2$ and $A = 3$ *(closed 2026-05-09)*
 
 **Source:** `commutative-crossing-energy.md` §Caveat.
 
-**Description.**  The proposition derives the binding scale from
-Hecke-algebra structure, but explicitly notes (line 211): "the
+**Status:** **Closed** by the Path A pipeline (commits `f9f25b5f`,
+`23e447dc`, `per_irrep_pole_atom.py`).  The structural form of the
+per-nucleon scaling between $A = 2$ and $A = 3$ is now categorically
+derived: symbolic Hoefsmit pole-order analysis verifies
+$\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta)) = 18Z + 21N + 1$ for proton
+($Z=1, N=0$) and deuteron ($Z=N=1$); predictions then agree with
+experimental atomic masses to $\leq 0.30\%$ across $Z = 1\ldots 20$
+via the single-generator $\rho_K$ formula (witness:
+`rho-k-pair-gen-v2-wedderburn.witness.json`).  See the explicit
+"Caveat (updated 2026-05-09)" paragraph in
+`commutative-crossing-energy.md`.
+
+**Description (historical).**  The proposition originally derived the
+binding scale from Hecke-algebra structure but explicitly noted: "the
 per-nucleon scaling between $A = 2$ and $A = 3$ remains underived."
 The numerical coefficient relating deuterium binding to tritium/helium-3
-binding is an empirical fit at this stage.
+binding was an empirical fit at that stage.
 
 ---
 
-## GAP-B-2 — Fitted $\beta_3$ in atomic braid mass
+## GAP-B-2 — Fitted $\beta_3$ in atomic braid mass *(closed)*
 
-**Source:** `atomic-braid-mass.md` §Definition.
+**Source:** `atomic-braid-mass.md` §Definition (now lives in
+`particle-interactions/`).
 
-**Description.**  The atomic braid mass formula uses an internal
-parameter $\beta_3 \approx 0.050$ for the gluon-contribution weight
-of the third-generator crossing in nucleon internal structure.  This
-value is fitted to reproduce proton/neutron masses rather than derived
-from the Hecke algebra structure.
+**Status:** **Closed.**  The coefficient is now derived in closed form
+as $\beta_3 = (q - q^{-1})^2 \approx 0.0437$ at the substrate value
+(see `atomic-braid-mass.md:184`).  On the Lean side this is the
+`WedderburnMassFormula.β₃ := HA^2` field
+(`atomic-braid-mass.lean:77`).  The current numerical value
+$\approx 0.0437$ differs slightly from the historical fit "$\approx 0.050$"
+and is now a derived q-integer-like quantity, not a fit input.
+
+**Description (historical).**  The atomic braid mass formula originally
+used an internal parameter $\beta_3 \approx 0.050$ for the
+gluon-contribution weight of the third-generator crossing in nucleon
+internal structure.  That value was fitted to reproduce proton/neutron
+masses rather than derived from the Hecke algebra structure.
 
 ---
 
