@@ -464,3 +464,43 @@ jobs:
           echo "Substantive witness drift detected:"
           echo "$drift"
           exit 1
+
+      # ───────────────────────────────────────────────────────────────
+      # Diagnostic probe (always runs, including on failure of any
+      # prior step).  Prints which witness/derivation files differ from
+      # HEAD AT TIME OF JOB COMPLETION, plus a full per-file diff.  This
+      # is a temporary diagnostic added 2026-05-24 to identify why
+      # `validate` has been red across recent PRs (#1076, #1095, #1096,
+      # #1147, #1159 etc.) without log access.  Revert after diagnosis.
+      # ───────────────────────────────────────────────────────────────
+      - name: PROBE — post-job diff diagnostic
+        if: always()
+        run: |
+          echo "=== PROBE: git status --short ==="
+          git status --short || true
+          echo ""
+          echo "=== PROBE: per-file diff stat (drift filter pathspecs) ==="
+          PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
+          :(glob)folio-assistant/computations/*.derivation.json
+          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json
+          :(exclude,glob)folio-assistant/computations/*-audit.witness.json
+          :(exclude,glob)folio-assistant/computations/*-scan.witness.json
+          :(exclude,glob)folio-assistant/computations/*-compliance.witness.json
+          :(exclude)folio-assistant/computations/methodology-deprecation.witness.json'
+          git diff --stat -- $PATHSPECS || true
+          echo ""
+          echo "=== PROBE: full diff first 300 lines (drift filter pathspecs) ==="
+          git diff --diff-filter=ACMR -- $PATHSPECS | head -300 || true
+          echo ""
+          echo "=== PROBE: substantive drift (post-metadata-filter) ==="
+          drift=$(git diff --diff-filter=ACMR -- $PATHSPECS | \
+                  grep -E "^[+-]" | \
+                  grep -vE "^\+\+\+|^---" | \
+                  grep -vE '"([a-zA-Z_]*_)?(computedAt|timestamp|durationMs|trace_time_sec|time_sec|elapsed_sec|elapsed_ms|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version|description|sha256|size_bytes|q_0|chi_cache_witness|timeout_per_atom_sec|method|precision|dps)":' || true)
+          if [ -z "$drift" ]; then
+            echo "(no substantive drift — would pass the gate)"
+          else
+            echo "$drift" | head -100
+          fi
+          echo ""
+          echo "=== PROBE: end ==="
