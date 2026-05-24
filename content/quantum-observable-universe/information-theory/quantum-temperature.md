@@ -1,3 +1,11 @@
+> **⚠️ SUPERSEDED-$\rho_q$ note (2026-05-24, PR #1127).** Any use of the
+> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
+> structurally-wrong leading-order ansatz per
+> [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md);
+> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
+> graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md).
+> Full purge tracking: [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
