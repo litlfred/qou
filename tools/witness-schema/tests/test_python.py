@@ -14,7 +14,8 @@ from witness_schema import (
 
 
 def test_version():
-    assert __version__ == "0.1.0"
+    # Bump in lockstep with pyproject.toml + package.json + js/index.ts VERSION
+    assert __version__ == "0.1.1"
 
 
 def test_minimal_witness():
@@ -184,3 +185,45 @@ def test_json_schema_file_present():
     assert schema["title"] == "ComputationWitness"
     assert "engine" in schema["properties"]
     assert schema["properties"]["engine"]["enum"][0] == "snappea"
+
+
+def test_precision_metadata_parses():
+    """`precisionMetadata` field is recognised; the live in-repo witnesses
+    on main started emitting it on 2026-05-24 (commit 146f3aeac)."""
+    from witness_schema import PrecisionMetadata
+
+    pm = PrecisionMetadata.model_validate({
+        "compute_dps": 50,
+        "output_dps": 40,
+        "guard_digits": 10,
+        "truncation_bound": "1e-40",
+    })
+    assert pm.compute_dps == 50
+    assert pm.truncation_bound == "1e-40"  # string, not float
+
+    # Top-level field on ComputationWitness
+    w = ComputationWitness.model_validate({
+        "engine": "mpmath",
+        "engineVersion": "1.3.0",
+        "computedAt": "2026-05-24T00:00:00+00:00",
+        "assertions": [],
+        "precisionMetadata": {
+            "compute_dps": 50,
+            "output_dps": 40,
+            "guard_digits": 10,
+            "truncation_bound": "1e-40",
+        },
+    })
+    assert w.precisionMetadata is not None
+    assert w.precisionMetadata.compute_dps == 50
+
+
+def test_precision_metadata_optional():
+    """Witnesses without precisionMetadata still validate."""
+    w = ComputationWitness.model_validate({
+        "engine": "mpmath",
+        "engineVersion": "1.3.0",
+        "computedAt": "2026-05-24T00:00:00+00:00",
+        "assertions": [],
+    })
+    assert w.precisionMetadata is None

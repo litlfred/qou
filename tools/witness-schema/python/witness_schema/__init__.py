@@ -25,7 +25,7 @@ from typing import Any, Literal, Optional, Union
 
 from pydantic import BaseModel, ConfigDict
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 ComputationEngine = Literal[
     "snappea",
@@ -69,6 +69,35 @@ class UpstreamWitnessHash(BaseModel):
     computedAt: Optional[str] = None
 
 
+class PrecisionMetadata(BaseModel):
+    """Substrate-precision parameters used to produce this witness.
+
+    Added to the in-repo witness format on 2026-05-24 (commit
+    `146f3aeac`). Optional but recommended on every witness whose
+    compute path is substrate-precision (mpmath / Decimal / rug);
+    enables downstream consumers to cross-check that they're
+    interpreting the witness at the same precision the producer used.
+
+    Fields:
+      compute_dps      — mpmath / rug working-precision decimal places
+                         (e.g. 50 for substrate computation).
+      output_dps       — formatting precision for emitted assertion
+                         values (e.g. 40; ≤ compute_dps by guard_digits).
+      guard_digits     — compute_dps − output_dps; safety margin.
+      truncation_bound — string form of the maximum acceptable
+                         truncation error (e.g. "1e-40" — exact
+                         rational kept as string to avoid float
+                         round-trip loss).
+    """
+
+    model_config = ConfigDict(extra="allow")
+
+    compute_dps: Optional[int] = None
+    output_dps: Optional[int] = None
+    guard_digits: Optional[int] = None
+    truncation_bound: Optional[str] = None
+
+
 class ComputationWitness(BaseModel):
     """Top-level shape of a `*.witness.json` file.
 
@@ -103,6 +132,9 @@ class ComputationWitness(BaseModel):
     parameters: Optional[dict[str, Any]] = None
     data: Optional[dict[str, Any]] = None
     caveats: Optional[list[str]] = None
+    # Added 2026-05-24 (in-repo commit 146f3aeac). Substrate-precision
+    # parameters used to produce this witness. Optional but recommended.
+    precisionMetadata: Optional[PrecisionMetadata] = None
 
 
 __all__ = [
@@ -110,5 +142,6 @@ __all__ = [
     "ComputationEngine",
     "ComputationAssertion",
     "UpstreamWitnessHash",
+    "PrecisionMetadata",
     "ComputationWitness",
 ]
