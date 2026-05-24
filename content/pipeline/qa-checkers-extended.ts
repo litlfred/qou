@@ -748,7 +748,12 @@ export function checkCanonicalScriptNotDeprecated(
     });
   }
   for (const mod of DEPRECATED_MODULES) {
-    if (scriptSrc.includes(mod)) {
+    // Only match actual imports, not comment mentions.
+    // Python: `from mass_endomorphism import ...` or `import mass_endomorphism`
+    const importRe = new RegExp(
+      `^\\s*(?:from\\s+${mod}\\s+import|import\\s+${mod})`, "m",
+    );
+    if (importRe.test(scriptSrc)) {
       hits.push({
         file: scriptRelPath,
         line: 1,
