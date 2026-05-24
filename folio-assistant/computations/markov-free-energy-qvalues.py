@@ -37,6 +37,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from itertools import combinations
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, LN_Q
@@ -122,7 +123,7 @@ def free_energy(quark_ordering):
     for V in vols:
         if abs(V) < 1e-300:
             return float('inf')  # degenerate configuration
-        F -= math.log(abs(V))
+        F -= mp.log(abs(V))
     return F
 
 
@@ -272,7 +273,7 @@ def nucleon_chain_V(ordering, gen):
 def nucleon_free_energy(ordering):
     A = len(ordering)
     vols = [nucleon_chain_V(ordering, i) for i in range(A - 1)]
-    return -sum(math.log(abs(V)) for V in vols if abs(V) > 1e-300), vols
+    return -sum(mp.log(abs(V)) for V in vols if abs(V) > 1e-300), vols
 
 
 def find_nucleon_gs(Z, N):
@@ -321,11 +322,11 @@ for Z_par, N_par, Z_dau, N_dau, Q_exp, name in decays:
     nuc_par, nuc_F_par = find_nucleon_gs(Z_par, N_par)
     nuc_dau, nuc_F_dau = find_nucleon_gs(Z_dau, N_dau)
     nuc_dF = nuc_F_par - nuc_F_dau
-    nuc_Q = abs(nuc_dF) * ln_q * M_E_MEV
+    nuc_Q = float(abs(nuc_dF) * ln_q * M_E_MEV)
     print(f"\n  Nucleon level (A={A} strands):")
-    print(f"    Parent:   {''.join(nuc_par)}, F = {nuc_F_par:+.8f}")
-    print(f"    Daughter: {''.join(nuc_dau)}, F = {nuc_F_dau:+.8f}")
-    print(f"    ΔF = {nuc_dF:+.8f}")
+    print(f"    Parent:   {''.join(nuc_par)}, F = {float(nuc_F_par):+.8f}")
+    print(f"    Daughter: {''.join(nuc_dau)}, F = {float(nuc_F_dau):+.8f}")
+    print(f"    ΔF = {float(nuc_dF):+.8f}")
     print(f"    Q_nuc = |ΔF|×ln(q)×m_e = {nuc_Q:.6f} MeV")
     nuc_err = (nuc_Q / Q_exp - 1) * 100 if Q_exp > 0 else float('nan')
     print(f"    vs exp {Q_exp:.6f} MeV → {nuc_err:+.1f}%")
@@ -348,29 +349,29 @@ for Z_par, N_par, Z_dau, N_dau, Q_exp, name in decays:
     print(f"\n    {'Gen':>5s} | {'V̂_par':>12s} | {'V̂_dau':>12s} | {'log|V̂_p|':>10s} | {'log|V̂_d|':>10s}")
     print(f"    {'':->60s}")
     for i in range(n_show):
-        lp = math.log(abs(r['V_par'][i])) if abs(r['V_par'][i]) > 1e-300 else float('-inf')
-        ld = math.log(abs(r['V_dau'][i])) if abs(r['V_dau'][i]) > 1e-300 else float('-inf')
-        print(f"    {i:>5d} | {r['V_par'][i]:>+12.6f} | {r['V_dau'][i]:>+12.6f} | {lp:>+10.4f} | {ld:>+10.4f}")
+        lp = mp.log(abs(r['V_par'][i])) if abs(r['V_par'][i]) > 1e-300 else float('-inf')
+        ld = mp.log(abs(r['V_dau'][i])) if abs(r['V_dau'][i]) > 1e-300 else float('-inf')
+        print(f"    {i:>5d} | {r['V_par'][i]:>+12.6f} | {r['V_dau'][i]:>+12.6f} | {float(lp):>+10.4f} | {float(ld):>+10.4f}")
     if len(r['V_par']) > n_show:
         print(f"    ... ({len(r['V_par']) - n_show} more crossings)")
 
-    print(f"\n    Φ_par = Σ log|V̂_i| = {r['Phi_par']:+.8f}")
-    print(f"    Φ_dau = Σ log|V̂_i| = {r['Phi_dau']:+.8f}")
-    print(f"    F_par = -Φ_par     = {r['F_par']:+.8f}")
-    print(f"    F_dau = -Φ_dau     = {r['F_dau']:+.8f}")
-    print(f"    ΔF = F_par - F_dau = {r['dF']:+.8f}")
+    print(f"\n    Φ_par = Σ log|V̂_i| = {float(r['Phi_par']):+.8f}")
+    print(f"    Φ_dau = Σ log|V̂_i| = {float(r['Phi_dau']):+.8f}")
+    print(f"    F_par = -Φ_par     = {float(r['F_par']):+.8f}")
+    print(f"    F_dau = -Φ_dau     = {float(r['F_dau']):+.8f}")
+    print(f"    ΔF = F_par - F_dau = {float(r['dF']):+.8f}")
 
-    Q = r['Q_free_energy']
+    Q = float(r['Q_free_energy'])
     err = (Q / Q_exp - 1) * 100 if Q_exp > 0 else float('nan')
     print(f"\n    *** Q = |ΔF| × ln(q) × m_e = {Q:.6f} MeV")
     print(f"    *** Q_exp                   = {Q_exp:.6f} MeV")
     print(f"    *** Error                   = {err:+.2f}%")
 
     # Also test alternative scales
-    Q_alt1 = abs(r['dF']) * h * M_E_MEV       # scale = h = q - q⁻¹
-    Q_alt2 = abs(r['dF']) * z**2 * M_E_MEV    # scale = z²
-    Q_alt3 = abs(r['dF']) * M_E_MEV            # scale = 1
-    Q_alt4 = abs(r['dF']) * (1 - qi) * M_E_MEV  # scale = ℏ_q
+    Q_alt1 = float(abs(r['dF']) * h * M_E_MEV)       # scale = h = q - q⁻¹
+    Q_alt2 = float(abs(r['dF']) * z**2 * M_E_MEV)    # scale = z²
+    Q_alt3 = float(abs(r['dF']) * M_E_MEV)            # scale = 1
+    Q_alt4 = float(abs(r['dF']) * (1 - qi) * M_E_MEV)  # scale = ℏ_q
 
     print(f"\n    Alternative scales:")
     print(f"      Q(h)    = |ΔF|×h×m_e      = {Q_alt1:.6f} MeV ({(Q_alt1/Q_exp-1)*100:+.1f}%)")
@@ -410,7 +411,7 @@ print(f"\n  {'Decay':>20s} | {'A':>3s} | {'nq':>4s} | {'n_x':>5s} | {'|ΔF|':>10
 print(f"  {'':->90s}")
 for r in results:
     print(f"  {r['name']:>20s} | {r['A']:>3d} | {r['n_quarks']:>4d} | {r['n_crossings']:>5d} | "
-          f"{abs(r['dF']):>10.4f} | {r['Q_free_energy']:>10.6f} | {r['Q_exp']:>10.6f} | {r['error_pct']:>+7.1f}%")
+          f"{float(abs(r['dF'])):>10.4f} | {float(r['Q_free_energy']):>10.6f} | {r['Q_exp']:>10.6f} | {float(r['error_pct']):>+7.1f}%")
 
 
 # ══════════════════════════════════════════════════════════════
