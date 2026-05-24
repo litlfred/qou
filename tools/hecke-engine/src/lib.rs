@@ -30,19 +30,45 @@ compile_error!(
      `T` parameter — pick one backend."
 );
 
+// The mpfr feature (default on) controls the transitive rug-dependent
+// surface. Two tiers:
+//
+//   Tier A — `use rug` at module top: dense_la_mpfr, seminormal_mpfr,
+//            tr_m_atomic_mpfr, sdp_clarabel_mpfr_prep.
+//   Tier B — `use rug` in inner functions: laurent_poly_q,
+//            laurent_rational_q, precision_scalar, geck_pfeiffer.
+//   Tier C — transitive via Tier A/B imports: laurent_hecke_element
+//            (←laurent_rational_q), reduce_laurent (←laurent_rational_q),
+//            seminormal_mn (←laurent_poly_q), tr_m_word_lq
+//            (←laurent_poly_q), wenzl_lr (←laurent_poly_q +
+//            seminormal_mpfr), atomic_reduce_cache (←laurent_hecke_element).
+//
+// Together this is the "mpfr cone". Disabling `mpfr` carves out the
+// pure-Rust canonical surface for WASM: certificate, cross_level_embedding,
+// gb_nf_reducer, gram, joint_tower_sdp_certificate, littlewood_richardson,
+// rational_round, sdp_verifier, seminormal, sturm_psd, wedderburn_psd
+// — ~3 500 LOC of WASM-targetable compute.
+
 pub mod certificate;
 pub mod cross_level_embedding;
+#[cfg(feature = "mpfr")]
 pub mod dense_la_mpfr;
 pub mod gb_nf_reducer;
+#[cfg(feature = "mpfr")]
 pub mod geck_pfeiffer;
 pub mod gram;
 pub mod joint_tower_sdp_certificate;
+#[cfg(feature = "mpfr")]
 pub mod laurent_hecke_element;
+#[cfg(feature = "mpfr")]
 pub mod laurent_poly_q;
+#[cfg(feature = "mpfr")]
 pub mod laurent_rational_q;
 pub mod littlewood_richardson;
+#[cfg(feature = "mpfr")]
 pub mod precision_scalar;
 pub mod rational_round;
+#[cfg(feature = "mpfr")]
 pub mod reduce_laurent;
 // Clarabel-rs SDP backends are opt-in behind the `clarabel-sdp` feature.
 // Default builds use only the bisection-based α* verifier (sdp_verifier),
@@ -61,11 +87,17 @@ pub mod sdp_solve_canonical_t_w;
 pub mod sdp_solver_clarabel;
 pub mod sdp_verifier;
 pub mod seminormal;
+#[cfg(feature = "mpfr")]
 pub mod seminormal_mn;
+#[cfg(feature = "mpfr")]
 pub mod seminormal_mpfr;
+#[cfg(feature = "mpfr")]
 pub mod atomic_reduce_cache;
 pub mod sturm_psd;
+#[cfg(feature = "mpfr")]
 pub mod tr_m_atomic_mpfr;
+#[cfg(feature = "mpfr")]
 pub mod tr_m_word_lq;
 pub mod wedderburn_psd;
+#[cfg(feature = "mpfr")]
 pub mod wenzl_lr;
