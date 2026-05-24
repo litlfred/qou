@@ -122,10 +122,24 @@ function maskStringsAndComments(src: string): string {
  *     ending in `f` like `stuff["…"]` from matching)
  *   - `.format(` (method) or `\bformat(` (builtin) — string format
  *   - `\bassert ` — tolerance comparison
+ *   - `\blogging?\.|\blog\.` — logging.info / logger.debug etc.
+ *     (formatted messages, never substrate-precision compute)
  *   - assignment to a name with a display-intent suffix
  *     (`_pct`, `_ppb`, `_ppm`, `_print`, `_display`, `_str`,
  *     `_repr`) — convention for variables that are *only* used
  *     for human-readable output
+ *   - assignment to a name with a time-budget / wall-clock suffix
+ *     (`_sec`, `_seconds`, `_ms`, `_us`, `_ns`, `_timeout`,
+ *     `_budget`, `_deadline`, `_interval`, `_delay`, `_elapsed`,
+ *     `_wall`, `_duration`) — these are operational time values,
+ *     not substrate-precision math. Per PR-batch (drain pivot):
+ *     dozens of false positives across the corpus were
+ *     `*_BUDGET_SEC = 480.0`, `wall_seconds_to_reach`, etc.
+ *   - prefix-style time names: `wall_`, `elapsed_`, `t_start`,
+ *     `t_end`, `start_time`, `end_time`
+ *   - dict-key string for the same time/display set
+ *     (e.g. `"wall_seconds": float(...)` — the cast is to make
+ *     the value JSON-serialisable, not for compute)
  *
  * **The caller must pass a comments-only-masked source line**
  * (strings intact). Calling this on a `maskStringsAndComments`-
@@ -134,8 +148,23 @@ function maskStringsAndComments(src: string): string {
  */
 function isDisplayContextLine(line: string): boolean {
   return (
-    /\bprint\(|\bf["']|\.format\(|\bformat\(|\bassert\s|>>>/.test(line) ||
-    /\b\w+_(?:pct|ppb|ppm|print|display|str|repr)\b\s*=/.test(line)
+    /\bprint\(|\bf["']|\.format\(|\bformat\(|\bassert\s|>>>|\blog(?:ging|ger)?\./.test(line) ||
+    /\b\w+_(?:pct|ppb|ppm|print|display|str|repr)\b\s*=/.test(line) ||
+    /\b\w*_(?:sec|seconds|ms|us|ns|timeout|budget|deadline|interval|delay|elapsed|wall|duration)\b\s*=/i.test(line) ||
+    /\b(?:wall|elapsed)_\w+\s*=/.test(line) ||
+    /\b(?:t_start|t_end|start_time|end_time)\b\s*=/.test(line) ||
+    // Dict / kwarg form: "wall_seconds_to_reach": float(...), "elapsed_ms": ..., etc.
+    // Matches the time-context substring ANYWHERE in the key, not
+    // only at the suffix (`wall_seconds_to_reach` is `_seconds_`-in-middle).
+    /["']\w*(?:_sec|_seconds|_ms\b|_us\b|_ns\b|_wall|wall_|_elapsed|elapsed_|_duration|_timeout|_budget|_deadline|_pct|_ppb|_ppm)\w*["']\s*:/.test(line) ||
+    /\b\w*(?:_sec|_seconds|_ms|_us|_ns|_wall|_elapsed|_duration|_timeout|_budget|_deadline|_pct|_ppb|_ppm)\w*\s*=\s*float\(/.test(line) ||
+    // `float(wall_seconds)` / `float(elapsed_ms)` — argument is a
+    // time-context variable, so the cast is JSON-serialisation
+    // / display, not substrate compute.
+    /\bfloat\(\s*\w*(?:wall_|elapsed_|t_start|t_end|start_time|end_time|_sec|_seconds|_ms|_us|_ns|_elapsed|_duration|_timeout|_budget|_deadline|_pct|_ppb|_ppm)\w*\s*\)/.test(line) ||
+    // try/except float() pattern — graceful fallback for malformed
+    // input, not a substrate-precision compute path.
+    /^\s*(?:try|except|return)\b.*\bfloat\(/.test(line)
   );
 }
 
