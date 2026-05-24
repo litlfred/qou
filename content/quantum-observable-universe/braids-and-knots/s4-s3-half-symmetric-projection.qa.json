@@ -232,7 +232,26 @@
         "reviewed_at": "2026-05-24T01:58:50.338Z",
         "reviewed_sha": "6e9c36c04b60ff0c07888499d6e9e4ab89160cbe"
       }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "07d9675e09d5",
+          "ts": "816606309698"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "70427efb260c079890272431e4b1c77812542f34"
+        },
+        "reviewed_at": "2026-05-24T02:04:38.867Z",
+        "reviewed_sha": "e1f027f34dd7fe93691725cba3e99182ecf6208f",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:58:50.338Z"
+  "updated_at": "2026-05-24T02:04:38.867Z"
 }
