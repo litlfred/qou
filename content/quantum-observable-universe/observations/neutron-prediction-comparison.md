@@ -13,14 +13,7 @@ predicts a stable neutron number $n_{\mathrm{pred}}(p)$ for
 each proton number $p$.  Comparing with the observed most
 stable isotope (AME2020/NUBASE2020) for all $103$ elements:
 
-| Discrepancy $\lvert\Delta n\rvert$ | Elements | Count |
-|:------------------------:|:---------|------:|
-| $0$ | He, C, F, Na, Ti, V, Mn, As, Rb, Ru, In, Sb, Eu, Lu, Ta, W, Re, Pt, ... | 18 |
-| $1$ | H, Li, Be, B, N, O, Ne, Al, P, Ar, Sc, Co, ... | 42 |
-| $2$ | Mg, Si, Cl, K, Fe, Cu, Kr, Zr, ... | 24 |
-| $3$ | S, Zn, Xe, Dy, Np, Am, Bk, ... | 10 |
-| $4$ | Ca, Ba, Po, Cf, Fm | 5 |
-| $5$--$8$ | Ni, At, Te, Es, Md, No, Lr | 4 |
+See [Table](#tbl:neutron-prediction-comparison-table-data).
 
 The mean discrepancy is $\overline{|\Delta n|} = 1.7$ neutrons
 across all $103$ elements.  The maximum discrepancy

@@ -30,14 +30,7 @@ $B_3 \cdot \Phi_{\mathrm{quarks}}$). Then:*
 
 **Verified values at $q_0 \approx 1.110$:**
 
-| Element | $Gx$ components | LP-stable? | Min$(Gx)$ |
-|---------|----------------|:----------:|----------:|
-| Proton $(B_3 \cdot uud)$ | $(+0.44, +0.24, +1.10, +0.62, +0.13, +0.28)$ | **Yes** | $+0.13$ |
-| Neutron $(B_3 \cdot udd)$ | $(+0.32, +0.20, +1.01, +0.48, +0.08, +0.21)$ | **Yes** | $+0.08$ |
-| Up quark $\sigma_0$ | $(+0.50, +1.10, +0.25, +0.12, +0.55, +0.28)$ | **Yes** | $+0.12$ |
-| Down quark $\sigma_0^{-1}$ | $(+0.29, +1.00, +0.14, +0.07, +0.50, +0.25)$ | **Yes** | $+0.07$ |
-| $B_3$ sub-unit $\sigma_0\sigma_1^{-1}$ | $(+0.14, \mathbf{-0.11}, +0.50, +1.10, +0.16, +0.55)$ | **No** | $-0.11$ |
-| $\sigma_0^2$ (Hopf) | $(+1.10, +0.73, +0.55, +0.28, +0.36, +0.18)$ | **Yes** | $+0.18$ |
+See [Table](#tbl:lp-dual-stability-table-data).
 
 **Key finding: individual quarks are LP-stable, but the $B_3$
 sub-unit is not.**  This is the precise algebraic statement of

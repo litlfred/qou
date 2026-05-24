@@ -547,6 +547,7 @@ export default chapter({
       blocks: [
         "intro-hecke-chi-closed-forms",
         "u-coordinate-discharges",
+        "u-coordinate-discharges-table-data",
         "multi-link-jones-q1-extension",
         "per-wedderburn-block-c5-c6",
         "post-pr665-open-rd-inventory",

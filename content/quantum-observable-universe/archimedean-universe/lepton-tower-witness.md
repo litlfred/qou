@@ -7,18 +7,7 @@ $< 10^{-12}$.
 
 ## Full NF table
 
-| $n$ | $a_n$ | $b_n$ | $\mathrm{net}$ | Particle |
-|:---:|:-----:|:-----:|:--------:|:--------:|
-| $0$ | $1.000$ | $0.000$ | $1.000$ | $\gamma$ (photon) |
-| $1$ | $0.000$ | $1.000$ | $1.000$ | $\sigma_0$ (virtual) |
-| $2$ | $1.000$ | $0.209$ | $1.209$ | — |
-| $3$ | $0.209$ | $1.044$ | $\mathbf{1.253}$ | $e^-$ (trefoil) |
-| $4$ | $1.044$ | $0.427$ | $1.471$ | — |
-| $5$ | $0.427$ | $1.133$ | $\mathbf{1.560}$ | $\mu^-$ (cinquefoil) |
-| $6$ | $1.133$ | $0.664$ | $1.797$ | — |
-| $7$ | $0.664$ | $1.272$ | $\mathbf{1.936}$ | $\tau^-$ (septafoil) |
-| $8$ | $1.272$ | $0.930$ | $2.202$ | — |
-| $9$ | $0.930$ | $1.466$ | $2.396$ | — |
+See [Table](#tbl:lepton-tower-witness-table-data).
 
 Odd-$n$ torus knots $T_{2,n}$ with $n \leq 7$ exhaust the
 embeddable fermion spectrum on the Bring surface

@@ -11,14 +11,7 @@ $$
 Q = |q \cdot \Sigma_u + q^{-1} \cdot \Sigma_r + \Sigma_{uc}| \times \kappa_q \times F_{\mathrm{shell}}(q) \times F_{I_{10}}(Z,N;q)
 $$
 
-| Nucleus | Transition | $\mathcal{Q}_{\mathrm{exp}}$ (MeV) | $\delta\mathcal{Q}_{\mathrm{exp}}$ | $Q$ (MeV) | $\delta$ | $F$ | Note |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ${}^3\mathrm{H}$ | $\to {}^3\mathrm{He}$ | $0.01861$ | $\pm 0.00001$ | $0.01849$ | $-0.6\%$ | $1.000$ | excellent |
-| ${}^{14}\mathrm{C}$ | $\to {}^{14}\mathrm{N}$ | $0.15648$ | $\pm 0.00004$ | $0.15300$ | $-2.2\%$ | $1.000$ | good |
-| ${}^{60}\mathrm{Co}$ | $\to {}^{60}\mathrm{Ni}$ | $0.31817$ | $\pm 0.00013$ | $0.33856$ | $+6.4\%$ | $0.590$ | fair |
-| ${}^{90}\mathrm{Sr}$ | $\to {}^{90}\mathrm{Y}$ | $0.54590$ | $\pm 0.00007$ | $0.55740$ | $+2.1\%$ | $0.590$ | good |
-| ${}^{137}\mathrm{Cs}$ | $\to {}^{137}\mathrm{Ba}$ | $0.51400$ | $\pm 0.00021$ | $0.53750$ | $+4.6\%$ | $0.377$ | good |
-| ${}^{210}\mathrm{Bi}$ | $\to {}^{210}\mathrm{Po}$ | $1.16270$ | $\pm 0.00006$ | $1.28191$ | $+10.3\%$ | $0.590$ | fair |
+See [Table](#tbl:qvalue-benchmark-table-table-data).
 
 **MAE $\approx 4.4\%$, RMS $\approx 5.4\%$, max $|\delta| \approx 10.3\%$.**
 

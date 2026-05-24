@@ -39,6 +39,7 @@ export default chapter({
       blocks: [
         "tm-interactions",
         "tm-interaction-completeness",
+        "tm-interaction-completeness-table-data",
       ],
     }),
     section({

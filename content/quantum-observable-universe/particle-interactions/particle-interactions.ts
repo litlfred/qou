@@ -59,6 +59,7 @@ export default chapter({
         "confinement-misdp",
         "confinement-topological",
         "lp-dual-stability",
+        "lp-dual-stability-table-data",
         "n-equals-1-vacuous-magic",
         // prop:operator-selection-lp moved earlier to
         // braids-and-knots/sec:hoefsmit-convergence-atomic per
@@ -67,6 +68,7 @@ export default chapter({
         // interprets `prop:operator-selection-lp` (now in
         // braids-and-knots).
         "sdp-as-thimble-flow",
+        "sdp-as-thimble-flow-table-data",
         "q-beta-cos-resummation",
       ],
     }),
@@ -107,6 +109,7 @@ export default chapter({
         "deuterium-derived-binding",
         "helium4-derived-nf",
         "li6-derived-nf",
+        "li6-derived-nf-table-data",
         "o16-derived-nf",
       ],
     }),
