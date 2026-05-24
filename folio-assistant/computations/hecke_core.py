@@ -702,11 +702,14 @@ def _chebyshev_magic(max_z=150):
     return sorted(magic)
 
 
-# Derive magic numbers from q (symbolic, not empirical)
+# Chebyshev recurrence at k=2 derives {2, 8} from substrate q_0 alone.
 _CHEBYSHEV_MAGIC = _chebyshev_magic()
-# Chebyshev at k=2 gives {2, 8} (confirmed by LP constraint deactivation).
-# Higher magic numbers (20, 28, 50, 82, 126) confirmed at k=7 by
-# binding trend break. Use full known set for practical accuracy.
+# EMPIRICAL: {20, 28, 50, 82, 126} are the standard nuclear shell
+# closures [mayer1949, satula1997]. They are NOT derived from the
+# Chebyshev recurrence — they are imported from experimental nuclear
+# data. The k=7 "binding trend break" confirmation is a consistency
+# check, not a derivation. Per CAL-4 discipline: these values are
+# CODATA-class inputs, not canonical predictions.
 MAGIC_NUMBERS = [2, 8, 20, 28, 50, 82, 126]
 
 
@@ -1468,9 +1471,10 @@ def magic_proximity(x, sigma=None):
 #
 # • Energy scale.  The (2,2) ⊢ 4 q-hook product is
 #       H_q((2,2)) = ∏_{x∈(2,2)} [h_x]_q = [3]·[2]·[2]·[1] = [3]·[2]²,
-#   giving DELTA_22 = m_e · H_q((2,2)) ≈ 6.29 MeV — the categorical
-#   Wigner / shell scale matched against the empirical Δ_W ≈ 6.3 MeV
-#   [satula1997].
+#   giving DELTA_22 = m_e · H_q((2,2)) ≈ 6.29 MeV.
+#   EMPIRICAL COMPARISON (not a prediction): the experimental Wigner
+#   shell-pairing scale is Δ_W ≈ 6.3 MeV [satula1997]. The ~0.2%
+#   proximity is noted but not claimed as a structural derivation.
 #
 # • YSN matrices.  In the Young seminormal form of (2,2) (a 2-dim irrep
 #   of H_4(q)) every Hecke generator σ_j has the same trace χ_{(2,2)}(σ)

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-MASS ENDOMORPHISM: proton-electron mass ratio from Φ_q tower.
+MASS ENDOMORPHISM: proton-electron mass ratio from Li_2^q tower.
 
-    𝔪(β) = |∏ V̂_i| + Σ_i Φ_q(|V̂_i|) + Σ_{i<j} z² · Φ_q(|V̂_i V̂_j|)
+    𝔪(β) = |∏ V̂_i| + Σ_i Li_2^q(|V̂_i|) + Σ_{i<j} z² · Li_2^q(|V̂_i V̂_j|)
 
-where Φ_q(z) = ∏_{k≥1} (1 - q⁻ᵏz)⁻¹ is the non-perturbative
-quantum dilogarithm.  The pair weight z² = tr_M(σ_i σ_j) holds
+where Li_2^q(z) = ∏_{k≥1} (1 - q⁻ᵏz)⁻¹ is the Rogers quantum
+dilogarithm (per canonical cheat-sheet: Li_2^q for binding context,
+Φ_q for convergence/analytic continuation).  The pair weight z² = tr_M(σ_i σ_j) holds
 for every pair i<j by the Markov-trace factorization theorem
 (thm:markov-trace-factorization): adjacent pairs reduce via the
 Hecke braid relation + one Markov-property peel; non-adjacent

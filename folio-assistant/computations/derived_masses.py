@@ -31,7 +31,7 @@ sector.
 
 Predictions come from the **FULL** chain per
 [`prop:beta-decay-energy-scale`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
-and [`prop:meson-to-proton-via-borromean`](../../content/quantum-observable-universe/descartes-universe/meson-to-proton-via-borromean.md),
+and [`prop:meson-to-proton-via-borromean`](../../content/quantum-observable-universe/archimedean-universe/meson-to-proton-via-borromean.md),
 NOT from the LO simplification (where |tr_M| cancels exactly between
 numerator and denominator of ρ_K^LO and the prediction reduces to
 the constituent sum Z·m_p + N·m_n; cf.
