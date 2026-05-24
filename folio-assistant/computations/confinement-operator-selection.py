@@ -587,3 +587,27 @@ with open(out_path, 'w') as f:
 
 print(f"\n\nWitness written to: {out_path.name}")
 print("Done.")
+
+
+# ══════════════════════════════════════════════════════════════
+#  HOMFLYPT SU(N) COST VECTORS (multi-channel operator selection)
+# ══════════════════════════════════════════════════════════════
+# The operator-selection LP above uses SU(2) cost vectors (Markov
+# trace values). For SU(N>2), different cost vectors give different
+# optimal operators — different binding-energy predictions per
+# representation-theoretic channel.
+#
+# Usage (when homflypt_engine is available):
+#   from homflypt_engine import homflypt_operator_cost_vector
+#   costs_su3 = homflypt_operator_cost_vector(
+#       basis_braids=[(name, word) for name, word in ...],
+#       target_braid=proton_word,
+#       n_strands=3, N=3, q=q0
+#   )
+#
+# Per prop:markov-trace-ratio-exact, cost-vector RATIOS are exact
+# regardless of normalisation — the LP optimal solution x* and
+# shadow prices y* are normalisation-independent.
+#
+# See rem:archimedean-image-table row 9 for the LP duality
+# interpretation across SU(N) channels.

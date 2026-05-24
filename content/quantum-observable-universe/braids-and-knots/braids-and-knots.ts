@@ -881,6 +881,7 @@ export default chapter({
         // particle-interactions/sec:groebner-engine per detangler
         // P31 (2026-05-22).
         "markov-trace-factorization",
+        "markov-trace-ratio-exact",
         "phi-q-resums-trace-series",
         "phi-q-resums-trace-series-table-data",
         "markov-axiom-recursive-ascent",
