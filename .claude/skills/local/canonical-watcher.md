@@ -213,6 +213,80 @@ find content -type f -name '*.ts' -print0 \
 | No new naked numerology | Any new numerical literal in proposition/theorem bodies uses `:val[…]` directive |
 | Derivation chain unbroken | `derivation_chain_validator.py` all-passed remains true |
 
+## Slot J — Probe follow-up discipline (mandatory for every probe / audit)
+
+Every probe / audit / structural claim in a witness JSON, an audit
+doc, or a content block **must** explicitly report (or note as N/A
+with reason) the following three diagnostics. This is the
+**noise-reduction discipline** — most "interesting" probe findings
+turn out to be either bar-symmetry artifacts, GB-filtration boundary
+effects, or jet-order mis-attributions, and the only way to keep them
+straight is to label them at authoring time.
+
+### The three required diagnostics
+
+1. **GB filtration level.** Where does the claim sit in the
+   Gröbner-Shirshov filtration of `H_n(q)`? Report the Coxeter length
+   `ℓ(w)` of the largest braid word the claim involves, OR `N/A` if
+   the claim is not about a Hecke element. Example:
+
+   > "GB filtration: ℓ ≤ 11 (atomic proton braid at H_3)"
+   > "GB filtration: N/A — claim is about content-block dependency graph"
+
+2. **Jet order.** Which power of `h = q − q⁻¹` (or `q − 1`) does the
+   claim live at? This is the **load-bearing question** for h^{2k}
+   probes — getting it wrong is the #1 source of noise (e.g., a probe
+   reporting an h⁴ closure that's actually h² mis-labelled).
+
+   > "Jet order: h⁴ (k=2 in Yekutieli tessellation refinement)"
+   > "Jet order: leading-h^0 + h^2 correction (Family A)"
+   > "Jet order: all-orders resummation (Φ_q-pentagon)"
+
+3. **Bar-symmetry status.** Per the duality tracker
+   [`docs/duality-tracker.md`](../../../docs/duality-tracker.md) D1,
+   classify the claim as bar-symmetric (retained), bar-anti-symmetric
+   (discarded), or trivial. This catches "phantom" claims that come
+   from un-canceled bar-anti-symmetric residuals.
+
+   > "Bar-symmetry: bar-symmetric (P_avg image)"
+   > "Bar-symmetry: bar-anti-symmetric — should cancel, residual = 305 ppm flavor split"
+
+### When to apply
+
+- **Probes**: every script under `folio-assistant/computations/`
+  that emits a witness with a structural claim (not just numerical
+  data) must include these in the witness `description` or a new
+  `probe_diagnostics` field.
+- **Audit docs**: every `docs/audits/*.md` with a "headline finding"
+  table must include a row per diagnostic for each headline claim.
+- **Content blocks**: every new `prop:` / `conj:` / `thm:` block
+  that makes a structural claim must include `**Diagnostics:**`
+  with the three lines in the .md narrative (just above
+  `## Cross-references`).
+
+### What this discipline prevents
+
+- ❌ **Jet-order mis-attribution** — Phase 5g (constituent step
+  factor `(2q-1)`) was falsely-globally identified as canonical at h^0
+  before being downgraded to "h^5 numerical accident at q_0" per
+  the 2026-05-23 audit. A `Jet order: h^5` label at probe authoring
+  time would have caught this.
+- ❌ **GB-filtration boundary effects** — claims at ℓ = 11 (atomic
+  proton) often don't extend to ℓ ≥ 14 (atomic D); per-script
+  ℓ-labels help reviewers see this.
+- ❌ **Bar-anti-symmetric leakage** — most "anomaly" findings are
+  bar-anti-symmetric residuals that should cancel; classifying at
+  authoring time makes them visible.
+
+### Cross-reference
+
+- [`docs/duality-tracker.md`](../../../docs/duality-tracker.md)
+  — coordinate-side duality classifier and probe-status tracking
+- [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)
+  §"13-driver menu" — the canonical mechanism catalogue
+- [`bar-involution.md`](../../../content/quantum-observable-universe/braids-and-knots/bar-involution.md)
+  + Tables 1-4 — bar-symmetry classification reference
+
 ## Domain-specific anti-patterns (extends parent)
 
 - ❌ Auto-fix a `coefficient-fit` or `numerology` finding. Those
@@ -226,3 +300,7 @@ find content -type f -name '*.ts' -print0 \
   because…". The discipline is not negotiable per-PR — if you
   think a violation is acceptable, escalate per §4e and let the
   author make that call.
+- ❌ Emit a probe witness without the §Slot J diagnostics. A claim
+  without (GB filtration, jet order, bar-symmetry) is unauditable
+  — it cannot be cross-referenced against the duality tracker or
+  the 13-driver menu without these labels.
