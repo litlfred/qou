@@ -25,6 +25,7 @@ import itertools
 import math
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi, HA, E_CROSS, TWO_Q
@@ -123,7 +124,7 @@ def compute_Phi1(ordering, strand_labels):
         volumes.append(V)
         if abs(V) < 1e-300:
             return float('inf'), volumes
-        Phi += math.log(abs(V))
+        Phi += mp.log(abs(V))
 
     return Phi, volumes
 
@@ -146,7 +147,7 @@ def compute_Phi1_H_atom():
     c, d = 1.0, -(HA_d - HA)
     a, b = c, d  # After one crossing: a=c, b=d (starting from a=0, b=1)
     V = z * a + b
-    return math.log(abs(V)), V
+    return mp.log(abs(V)), V
 
 
 Phi1_H, V_H = compute_Phi1_H_atom()
@@ -163,8 +164,8 @@ print()
 print(f"--- Isolated H atom ---")
 print(f"  Dressed HA: q⁵ - q⁻⁵ = {q0**5 - qi**5:.10f}")
 print(f"  V_H = {V_H:.10f}")
-print(f"  Φ₁(H) = ln|V_H| = {Phi1_H:.10f}")
-print(f"  Φ₁(2 separate H) = {Phi1_sep:.10f}")
+print(f"  Φ₁(H) = ln|V_H| = {float(Phi1_H):.10f}")
+print(f"  Φ₁(2 separate H) = {float(Phi1_sep):.10f}")
 print()
 
 # ── Enumerate all orderings and compute Φ₁ ──────────────────────
@@ -195,7 +196,7 @@ print("-" * 60)
 for i, r in enumerate(results):
     label_str = "[" + ", ".join(r['labels']) + "]"
     bound = "YES" if r['binding'] > 0 else "no"
-    print(f"{i+1:>4} {label_str:>20} {r['Phi1']:>12.6f} {r['binding']:>12.6f} {bound:>6}")
+    print(f"{i+1:>4} {label_str:>20} {float(r['Phi1']):>12.6f} {float(r['binding']):>12.6f} {bound:>6}")
 
 # ── Ground state (optimal binding) ──────────────────────────────
 
@@ -205,13 +206,13 @@ worst = results[-1]
 print()
 print(f"--- Optimal binding ---")
 print(f"  Ground state: [{', '.join(best['labels'])}]")
-print(f"  Φ₁(H₂) = {best['Phi1']:.10f}")
-print(f"  Φ₁(2H)  = {Phi1_sep:.10f}")
-print(f"  Binding: Φ₁(2H) - Φ₁(H₂) = {best['binding']:.10f}")
+print(f"  Φ₁(H₂) = {float(best['Phi1']):.10f}")
+print(f"  Φ₁(2H)  = {float(Phi1_sep):.10f}")
+print(f"  Binding: Φ₁(2H) - Φ₁(H₂) = {float(best['binding']):.10f}")
 print()
 print(f"  Per-generator volumes:")
 for j, V in enumerate(best['volumes']):
-    print(f"    σ_{j}: V̂ = {V:.10f}, ln|V̂| = {math.log(abs(V)):.10f}")
+    print(f"    σ_{j}: V̂ = {V:.10f}, ln|V̂| = {float(mp.log(abs(V))):.10f}")
 print()
 
 # ── Convert to physical units ───────────────────────────────────
@@ -275,9 +276,9 @@ print(f"  E_hartree = m_e × α² = {E_hartree_eV:.4f} eV")
 print(f"  [2]_q = q + q⁻¹ = {TWO_Q:.10f}")
 print(f"  [2]_q² = {TWO_Q**2:.10f}")
 print(f"  E_mol = E_hartree / [2]_q² = {E_mol_scale:.4f} eV")
-print(f"  E_bind(H₂) = ΔΦ₁ × E_mol = {best['binding']:.6f} × {E_mol_scale:.4f} = {E_bind_eV:.4f} eV")
+print(f"  E_bind(H₂) = ΔΦ₁ × E_mol = {float(best['binding']):.6f} × {E_mol_scale:.4f} = {float(E_bind_eV):.4f} eV")
 print(f"  Observed D₀(H₂) = 4.478 eV")
-print(f"  Ratio pred/obs = {E_bind_eV / 4.478:.4f}")
+print(f"  Ratio pred/obs = {float(E_bind_eV / 4.478):.4f}")
 print()
 
 def compute_Phi1_without(ordering, strand_labels, skip):
@@ -308,7 +309,7 @@ def compute_Phi1_without(ordering, strand_labels, skip):
         V = z * a + b
         if abs(V) < 1e-300:
             return float('inf')
-        Phi += math.log(abs(V))
+        Phi += mp.log(abs(V))
 
     return Phi
 
@@ -323,7 +324,7 @@ best_ordering = list(best['perm'])
 Phi_full = best['Phi1']
 
 print(f"  Ground state ordering: [{', '.join(best['labels'])}]")
-print(f"  Φ₁(full) = {Phi_full:.10f}")
+print(f"  Φ₁(full) = {float(Phi_full):.10f}")
 print()
 print(f"  {'Pair':>15} {'Type':>12} {'Φ₁(without)':>12} {'δΦ₁':>12} {'% of Φ₁':>10}")
 print("  " + "-" * 65)
@@ -347,10 +348,10 @@ for i in range(4):
         pair_label = f"{ti}↔{tk}"
         crossing_sensitivities.append({
             'pair': pair_label, 'type': label,
-            'delta': delta, 'pct': pct,
+            'delta': float(delta), 'pct': float(pct),
         })
 
-        print(f"  {pair_label:>15} {label:>12} {Phi_without:>12.6f} {delta:>12.6f} {pct:>9.2f}%")
+        print(f"  {pair_label:>15} {label:>12} {float(Phi_without):>12.6f} {float(delta):>12.6f} {float(pct):>9.2f}%")
 
 
 # ── Summary comparison ──────────────────────────────────────────
@@ -358,13 +359,13 @@ for i in range(4):
 print()
 print(f"--- Summary ---")
 print(f"  Ground state: [{', '.join(best['labels'])}]")
-print(f"  Φ₁(2 isolated H) = {Phi1_sep:.10f}")
-print(f"  Φ₁(H₂ molecule)  = {best['Phi1']:.10f}")
-print(f"  Φ₁ difference     = {best['binding']:.10f}")
-print(f"  Predicted D₀(H₂) = {E_bind_eV:.4f} eV")
+print(f"  Φ₁(2 isolated H) = {float(Phi1_sep):.10f}")
+print(f"  Φ₁(H₂ molecule)  = {float(best['Phi1']):.10f}")
+print(f"  Φ₁ difference     = {float(best['binding']):.10f}")
+print(f"  Predicted D₀(H₂) = {float(E_bind_eV):.4f} eV")
 print(f"  Observed  D₀(H₂) = 4.478 eV")
-print(f"  Ratio pred/obs = {E_bind_eV / 4.478:.4f}")
-print(f"  Error = {(E_bind_eV / 4.478 - 1) * 100:.1f}%")
+print(f"  Ratio pred/obs = {float(E_bind_eV / 4.478):.4f}")
+print(f"  Error = {float((E_bind_eV / 4.478 - 1) * 100):.1f}%")
 print()
 
 # ── Build witness ───────────────────────────────────────────────
@@ -386,16 +387,16 @@ w.add_parameter("TWO_Q", TWO_Q)
 w.add_parameter("E_mol_scale_eV", E_mol_scale)
 w.add_parameter("strand_labels", ["p1", "e1", "p2", "e2"])
 
-w.add_data("Phi1_H_isolated", Phi1_H)
-w.add_data("Phi1_2H_separated", Phi1_sep)
+w.add_data("Phi1_H_isolated", float(Phi1_H))
+w.add_data("Phi1_2H_separated", float(Phi1_sep))
 w.add_data("V_H_isolated", V_H)
-w.add_data("Phi1_H2_optimal", best['Phi1'])
+w.add_data("Phi1_H2_optimal", float(best['Phi1']))
 w.add_data("optimal_ordering", list(best['labels']))
-w.add_data("binding_Phi_diff", best['binding'])
-w.add_data("E_bind_eV_predicted", E_bind_eV)
+w.add_data("binding_Phi_diff", float(best['binding']))
+w.add_data("E_bind_eV_predicted", float(E_bind_eV))
 w.add_data("generator_volumes", best['volumes'])
 w.add_data("all_orderings_ranked", [
-    {"ordering": list(r['labels']), "Phi1": r['Phi1'], "binding": r['binding']}
+    {"ordering": list(r['labels']), "Phi1": float(r['Phi1']), "binding": float(r['binding'])}
     for r in results[:6]  # top 6
 ])
 
