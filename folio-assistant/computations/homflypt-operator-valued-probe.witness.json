@@ -1,0 +1,41 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-24T03:23:33.073150+00:00",
+  "commitSha": "2fd15f2f5a48a6458632cca0ec18c929eb163019",
+  "assertions": [
+    {
+      "name": "proton_neq_neutron",
+      "computed": 0.10585427826335092,
+      "expected": 0.1,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "Markov-trace difference"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3035,
+  "computation": "homflypt-operator-valued-probe",
+  "scriptFile": "homflypt_operator_valued_probe.py",
+  "scriptHash": "3192df63c4a7",
+  "scriptCommitSha": "unknown",
+  "description": "First operator-valued HOMFLYPT probe: per-partition Markov trace of the canonical pipeline proton/neutron braids (WITH averaged crossings I = σ − (h/2)·1). These break the amphicheirality found in the pure-braid HOMFLYPT (PR #1043) and give P(proton) ≠ P(neutron). Records per-partition character traces, Markov-trace split, and implied E₀ calibration.",
+  "contentBlock": "rem:operator-valued-mass-split",
+  "data": {
+    "tr_M_proton": 0.7022507726245328,
+    "tr_M_neutron": 0.5963964943611819,
+    "delta_tr_M": -0.10585427826335092,
+    "ratio_p_over_n": 1.1774897727672504,
+    "E0_implied_MeV": 7.390664060395216,
+    "per_partition_proton": {
+      "(3,)": 1.6848956940864874,
+      "(2, 1)": 1.900702426892353,
+      "(1, 1, 1)": -0.5935085498228321
+    },
+    "per_partition_neutron": {
+      "(3,)": 1.3675518842725545,
+      "(2, 1)": 2.2903208776431314,
+      "(1, 1, 1)": -0.7312336822466797
+    }
+  }
+}
