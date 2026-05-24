@@ -498,6 +498,7 @@ When a user request arrives, route to the right skill(s):
 | "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
 | "session todos / work plan / what's left / track progress" | `local/todo-manager` (session work-plan, TodoWrite) | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
+| "prepare merge auto / auto merge / resolve and merge / ship it" | `local/prepare-merge-auto` (full autonomous merge pipeline: coordinate siblings → prepare-merge → resolve comments → merge) | collaborator |
 
 ### External skill packages
 
