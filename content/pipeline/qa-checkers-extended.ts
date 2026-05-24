@@ -333,9 +333,14 @@ export function checkComputePropHasProbe(
   // :val[] directives or computation: fields) still need probes.
   if (leanPath && existsSync(resolve(REPO_ROOT, leanPath))) {
     const lean = readFileSync(resolve(REPO_ROOT, leanPath), "utf-8");
-    // Strip Lean single-line comments before checking for sorry —
-    // `-- Ref: ... sorry` is a bibliographic citation, not a proof gap.
-    const leanCode = lean.split("\n").map((l) => l.split("--")[0]).join("\n");
+    // Strip Lean comments before checking for sorry:
+    //   /-! ... -/ and /- ... -/ (block/doc comments)
+    //   -- ...  (line comments)
+    // "sorry" in a docstring ("currently a sorry placeholder") or
+    // bibliographic citation ("-- Ref: ... sorry") is not a proof gap.
+    const leanCode = lean
+      .replace(/\/\-[\!]?[\s\S]*?\-\//g, "")
+      .split("\n").map((l) => l.split("--")[0]).join("\n");
     if (!leanCode.includes("sorry")) {
       return { result: "pass", hits: [] };
     }
@@ -449,7 +454,9 @@ export function checkComputePropHasConsumer(
   // proofs are formally verified — no compute consumer needed.
   if (leanPath && existsSync(resolve(REPO_ROOT, leanPath))) {
     const lean = readFileSync(resolve(REPO_ROOT, leanPath), "utf-8");
-    const leanCode2 = lean.split("\n").map((l) => l.split("--")[0]).join("\n");
+    const leanCode2 = lean
+      .replace(/\/\-[\!]?[\s\S]*?\-\//g, "")
+      .split("\n").map((l) => l.split("--")[0]).join("\n");
     if (!leanCode2.includes("sorry")) {
       return { result: "pass", hits: [] };
     }
