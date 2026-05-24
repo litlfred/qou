@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Point-in-time status, intermediate workplan iteration, dead-end exploration, or earlier sublemma version superseded by a later "refined" iteration. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T2 for the deprecation rationale.
+
 # Next-session plan — survey of main + workplan to 1 ppb
 
 **Compiled** 2026-05-03 on `claude/4-parallel-followup-tests` (PR #515).

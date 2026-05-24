@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Workplan executed / point-in-time status snapshot / PR-specific note that has been superseded by subsequent integration into main. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T1 for the deprecation rationale.
+
 # PR #499 integration — review + consistency + simplification
 
 **Pair:** [`2026-05-02-queued-research.md`](2026-05-02-queued-research.md)

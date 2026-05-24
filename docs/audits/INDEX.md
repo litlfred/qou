@@ -67,9 +67,9 @@ broader discussion).
 
 | Tranche | Scope | Effort | Risk |
 |---------|-------|-------:|------|
-| **T1** | 2026-05-01 + 2026-05-02 clusters (57 files) — early phase-5 churn; sample-review each, deprecate the obviously-stale | ~2-3 hrs | Medium (per-file judgement needed) |
-| **T2** | 2026-05-03 .. 2026-05-06 clusters (52 files) — derivation-chain + α-shift + Weinberg work, much integrated since | ~1.5-2 hrs | Medium |
-| **T3** | 2026-05-07 .. 2026-05-09 clusters (39 files) — Borromean / compute-audit / May-9 closure-wave docs; selectively deprecate | ~1.5 hrs | Medium-Low |
+| **T1** | 2026-05-01 + 2026-05-02 clusters (57 files) — early phase-5 churn; sample-review each, deprecate the obviously-stale | ~2-3 hrs | Medium (per-file judgement needed) — **PARTIAL 2026-05-24** (10 of 57 clearly-stale workplan/status snapshots moved; ~47 remaining for follow-up) |
+| **T2** | 2026-05-03 .. 2026-05-06 clusters (52 files) — derivation-chain + α-shift + Weinberg work, much integrated since | ~1.5-2 hrs | Medium — **PARTIAL 2026-05-24** (11 of 52 clearly-stale sublemma-iterations + dead-ends + workplans moved; ~41 remaining) |
+| **T3** | 2026-05-07 .. 2026-05-09 clusters (39 files) — Borromean / compute-audit / May-9 closure-wave docs; selectively deprecate | ~1.5 hrs | Medium-Low — **PARTIAL 2026-05-24** (10 of 39 clearly-stale workplan/batch-status snapshots moved; ~29 remaining; `per-irrep-pole-18-21-research-note` retained per active GAP-B-1 Lean citation) |
 | **T4** | 1ppb-workplan chain (2026-05-10..12, 2026-05-16..18) — keep only the latest version per workplan family, deprecate earlier vN iterations | ~1 hr | Low (mechanical: keep latest `vN`) — **DONE 2026-05-24** (10 files moved to `_deprecated/`; v7 retained) |
 | **T5** | UNDATED cluster (26 files) — pre-date-prefix convention; needs the most individual judgement | ~1.5 hrs | High (no date signal) |
 

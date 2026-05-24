@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Point-in-time status / workplan snapshot; the plan has been executed or the status superseded by later audits + integrated into main. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T3 for the deprecation rationale.
+
 # Item-3 + Tier-A batch status (2026-05-09)
 
 Batch on `claude/item3-mathlib-tier-a-batch`. The user's ask was:

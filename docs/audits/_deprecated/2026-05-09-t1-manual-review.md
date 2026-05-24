@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Point-in-time status / workplan snapshot; the plan has been executed or the status superseded by later audits + integrated into main. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T3 for the deprecation rationale.
+
 # T1 (n=6, n=7 Frobenius codim closure) — manual build review
 
 **Status:** **build-pending.** Local `lake build` not run (sandbox has no

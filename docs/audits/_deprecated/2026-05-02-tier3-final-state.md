@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Workplan executed / point-in-time status snapshot / PR-specific note that has been superseded by subsequent integration into main. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T1 for the deprecation rationale.
+
 # Tier 3 — final state
 
 **Branch**: `claude/tier3-math-audit-B0wyO`
