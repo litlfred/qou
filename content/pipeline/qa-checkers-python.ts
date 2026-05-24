@@ -117,6 +117,11 @@ export function checkDoesNotDefaultToFloat(
   scriptPath: string,
 ): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging is noise.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
   // `maskStringsAndComments` blanks string/comment regions in place
