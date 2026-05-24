@@ -73,7 +73,12 @@ pub mod reduce_laurent;
 // Clarabel-rs SDP backends are opt-in behind the `clarabel-sdp` feature.
 // Default builds use only the bisection-based α* verifier (sdp_verifier),
 // which works at any d without an external SDP solver.
-#[cfg(feature = "clarabel-sdp")]
+//
+// sdp_clarabel_mpfr_prep additionally requires `mpfr` because it uses
+// `rug::Float` at module top — gating it on `clarabel-sdp` alone would
+// fail to compile under `--features clarabel-sdp --no-default-features`.
+// Per PR #1094 review (Copilot).
+#[cfg(all(feature = "clarabel-sdp", feature = "mpfr"))]
 pub mod sdp_clarabel_mpfr_prep;
 #[cfg(feature = "clarabel-sdp")]
 pub mod sdp_dual_certificate;
