@@ -49,6 +49,11 @@ concurrency:
 permissions:
   contents: read
   pull-requests: write
+  packages: read   # required to pull ghcr.io/litlfred/qou-paper-builder
+                   # (jobs use `container: image: ghcr.io/...`; without
+                   # this scope the GHCR pull fails ~13s after job start
+                   # and every PR touching folio-assistant/** / content/**
+                   # / etc. shows a Content-pipeline check failure.)
 
 env:
   PAPER_BUILDER_IMAGE: ghcr.io/litlfred/qou-paper-builder:latest
