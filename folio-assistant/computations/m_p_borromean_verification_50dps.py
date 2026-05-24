@@ -173,33 +173,23 @@ M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-regis
 #   - Single-knot Vol fit → no manifold has Vol = 18.03 within 0.28 %
 # Ref: docs/audits/2026-05-18-conjecture-falsification.md.
 #
-# Honest predictions (post-bijection-resolution, PR #989):
-#   m_p^pred = m_e · Vol(𝓑₃)/ℏ_q² · λ_Yekutieli ≈ 951 MeV  (vs CODATA 938.27)
-#   m_n^pred = same algebraic form (Δ_{n−p} = 0 in this chain;
-#              n−p split is the upstream flavor_split layer's job).
-# err ≈ +1.33 % vs CODATA — halved from the canonical-only ~3 % (PR #895).
-#
-# The Yekutieli per-cell curvature adds −G·h² to canonical Wedderburn
-# via the S_4 ↓ S_3 branching factor = 2/5 (standard representation
-# theory; effective cell count = (5/2)×(2/5) = 1 of 8 ideal octahedra).
-# Both terms are substrate-derived, no fits. See
-# `strategy_i_bijection_closure_s4_s3_quotient.py` for the derivation.
-# Single source of truth: `_li_2_q_util.lambda_scale_yekutieli_extended`
-# (canonical Wedderburn + Yekutieli per-cell curvature, bijection
-# resolved via S_4 ↓ S_3 branching factor 2/5 in PR #989).
-# Supersedes Family A alone (PR #895) — the bijection step is now
-# categorically closed (standard representation-theory branching rule),
-# making the Yekutieli additive h² term (−G · h²) fully substrate-derived.
-from _li_2_q_util import lambda_scale_yekutieli_extended as _lambda_scale_yekutieli
+# Honest predictions (PROVED Family A, PR #895 + #942):
+#   m_p^pred ≈ 965 MeV  (vs CODATA 938.27, +2.89 %)
+#   m_n^pred ≈ 967 MeV  (vs CODATA 939.57, +2.89 %)
+#   Δm/M_N = substrate flavor split (0.03 % match)
+# err ≈ +2.89 % vs CODATA — the framework's honest provable accuracy.
+# Single source of truth: `_li_2_q_util.lambda_scale_family_a`
+# (PROVED canonical Wedderburn identity, PR #895 + #942).
+# The Yekutieli per-cell curvature (−G·h²) was PURGED (2026-05-24)
+# as NOT CANONICAL — bijection NEGATIVE per PR #985, Reading A is
+# substrate-q₀ coincidence, no categorical backing.
 from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
-LAMBDA_PROTON_YEKUTIELI = _lambda_scale_yekutieli(Q)
-LAMBDA_NEUTRON_YEKUTIELI = LAMBDA_PROTON_YEKUTIELI  # same categorical λ
-# Keep Family A reference for comparison column in witness
 LAMBDA_PROTON_FAMILY_A = _lambda_scale_family_a(Q)
+LAMBDA_NEUTRON_FAMILY_A = LAMBDA_PROTON_FAMILY_A  # same categorical λ
 
-# Production aliases — point at the PROVED categorical λ.
-LAMBDA_PROTON_DOC = LAMBDA_PROTON_YEKUTIELI
-LAMBDA_NEUTRON_DOC = LAMBDA_NEUTRON_YEKUTIELI
+# Production aliases — point at the PROVED canonical λ.
+LAMBDA_PROTON_DOC = LAMBDA_PROTON_FAMILY_A
+LAMBDA_NEUTRON_DOC = LAMBDA_NEUTRON_FAMILY_A
 
 # Falsified-fit literals retained as audit-only references for the
 # Phase 5q ppm-coincidence comparison column in the witness.
@@ -255,13 +245,13 @@ def main() -> int:
     w.add_parameter("lambda_proton_family_a",
                     mp.nstr(LAMBDA_PROTON_FAMILY_A, 15))
     w.add_parameter("lambda_neutron_family_a",
-                    mp.nstr(LAMBDA_NEUTRON_YEKUTIELI, 15))
+                    mp.nstr(LAMBDA_NEUTRON_FAMILY_A, 15))
     # Back-compat aliases now point at the proved Family A values
     # (consumers reading `lambda_scale_*_doc` get the honest value).
     w.add_parameter("lambda_scale_proton_doc",
                     mp.nstr(LAMBDA_PROTON_FAMILY_A, 15))
     w.add_parameter("lambda_scale_neutron_doc",
-                    mp.nstr(LAMBDA_NEUTRON_YEKUTIELI, 15))
+                    mp.nstr(LAMBDA_NEUTRON_FAMILY_A, 15))
     # Audit-only comparison column — the falsified-fit literals
     # whose 5.4 ppm "match" prompted the 2026-05-18 audit.  These
     # are NOT consumed by the production prediction below; they
@@ -310,17 +300,17 @@ def main() -> int:
     Q_INV = mp.mpf(1) / Q
     dm_over_Mn = _flavor_split(Q, Q_INV)
 
-    # Yekutieli-extended m_avg (Borromean tower without split).
-    m_avg_factor = (VOL_B3 / HBAR_Q ** 2) * LAMBDA_PROTON_YEKUTIELI
+    # Class-uniform Family A m_avg (Borromean tower without split).
+    m_avg_factor = (VOL_B3 / HBAR_Q ** 2) * LAMBDA_PROTON_FAMILY_A
     m_avg_pred = m_avg_factor * M_E_CODATA_MEV
     M_AVG_CODATA = (M_P_CODATA_MEV + M_N_CODATA_MEV) / 2
     m_avg_rel_diff = (m_avg_pred - M_AVG_CODATA) / M_AVG_CODATA
     w.add_data("class_uniform_m_avg", {
-        "formula": "m_avg = m_e · Vol(B_3)/ℏ_q² · λ_Y  (Yekutieli-extended, before split)",
+        "formula": "m_avg = m_e · Vol(B_3)/ℏ_q² · λ_A  (Family A, before split)",
         "m_avg_pred_MeV": mp.nstr(m_avg_pred, 20),
         "m_avg_codata_MeV": mp.nstr(M_AVG_CODATA, 12),
         "rel_diff_ppm": mp.nstr(m_avg_rel_diff * mp.mpf("1e6"), 8),
-        "lambda_Y_form": "5/2 + (3/4 − G) h²  (Yekutieli per-cell curvature)",
+        "lambda_A_form": "5/2 + (3/4) h²  (PROVED canonical Wedderburn)",
     })
     dm_codata_ratio = (M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA
     dm_ratio_ppm = (dm_over_Mn / dm_codata_ratio - 1) * mp.mpf("1e6")
