@@ -277,6 +277,7 @@ export default chapter({
         "q-value-transition",
         // Pair production and quark-antiquark creation
         "breit-wheeler-pair-production",
+        "breit-wheeler-pair-production-table-data",
         "quark-antiquark-production",
         // Knot operator selection and Frobenius Gram matrix
         "knot-operator-selection",

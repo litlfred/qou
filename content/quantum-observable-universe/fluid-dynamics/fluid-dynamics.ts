@@ -30,6 +30,7 @@ export default chapter({
         "q-metric-contact-deformation",
         "geodesic-vortices",
         "braid-fluid",
+        "braid-fluid-table-data",
         "planck-reynolds",
       ],
     }),
