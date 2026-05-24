@@ -203,103 +203,25 @@ KAPPA = M_E_MEV                    # nuclear binding scale (MeV)
 # w_λ = d_q(λ)² / [n]_q!  with d_q(λ) = [n]_q! / H_q(λ), so
 # w_λ × H_q(λ)² = [n]_q!.
 
-def q_hook_product(partition):
-    """q-hook product H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q, evaluated numerically
-    at the global substrate q = q0 (from q_parameter).
-
-    For symbolic evaluation in q, use a sympy wrapper or the CRT
-    reconstruction in crt_markov.py.
-
-    Hook length h_x = arm_x + leg_x + 1 where arm = #boxes to the right
-    in the same row, leg = #boxes below in the same column.
-    """
-    lam = list(partition)
-    if not lam:
-        return 1.0
-    width = lam[0]
-    conj = [sum(1 for p in lam if p > j) for j in range(width)]
-    H = 1.0
-    for i, li in enumerate(lam):
-        for j in range(li):
-            arm = li - j - 1
-            leg = conj[j] - i - 1
-            H *= q_int(arm + leg + 1)
-    return H
-
-
-def q_factorial(n):
-    """[n]_q! = [1]_q · [2]_q · ... · [n]_q (symbolic in q)."""
-    f = 1.0
-    for i in range(1, n + 1):
-        f *= q_int(i)
-    return f
-
-
-def partitions_of(n):
-    """Enumerate partitions of n as decreasing tuples."""
-    if n == 0:
-        yield ()
-        return
-    def gen(rem, mx):
-        if rem == 0:
-            yield ()
-            return
-        for k in range(min(rem, mx), 0, -1):
-            for r in gen(rem - k, k):
-                yield (k,) + r
-    yield from gen(n, n)
-
-
-def partition_dimension(partition):
-    """Dimension d(λ) = number of standard Young tableaux of shape λ
-    (computed by the hook-length formula: d = n! / ∏ h_x)."""
-    n = sum(partition)
-    if n == 0:
-        return 1
-    fact_n = math.factorial(n)
-    lam = list(partition)
-    width = lam[0]
-    conj = [sum(1 for p in lam if p > j) for j in range(width)]
-    prod = 1
-    for i, li in enumerate(lam):
-        for j in range(li):
-            arm = li - j - 1
-            leg = conj[j] - i - 1
-            prod *= (arm + leg + 1)
-    return fact_n // prod
-
-
-def partition_conjugate(partition):
-    """Conjugate partition λ' = transpose of the Young diagram of λ.
-
-    λ'_j = #{i : λ_i ≥ j}.  λ' is also a partition, and (λ')' = λ.
-    λ is SELF-CONJUGATE iff λ = λ' (e.g. (3,2,1), (4,2,1,1)).
-    """
-    if not partition:
-        return tuple()
-    width = partition[0]
-    return tuple(sum(1 for p in partition if p >= j + 1)
-                 for j in range(width))
-
-
-def partition_is_self_conjugate(partition):
-    return tuple(partition) == partition_conjugate(partition)
-
-
-def q_dimension(partition):
-    """Quantum dimension d_q(λ) = [n]_q! / H_q(λ) (symbolic in q)."""
-    n = sum(partition)
-    if n == 0:
-        return 1.0
-    return q_factorial(n) / q_hook_product(partition)
-
-
-def wedderburn_weight(partition):
-    """Wedderburn-Artin weight w_λ = d_q(λ)² / [n]_q! (symbolic in q)."""
-    n = sum(partition)
-    if n == 0:
-        return 1.0
-    return q_dimension(partition)**2 / q_factorial(n)
+# ── q-combinatorics primitives (M2-inverted to pyhecke.wedderburn) ──
+# Per PR #1085 carve-out + this PR (2b Phase B "M2 inversion"), the
+# 8 canonical q-combinatorics functions now live in
+# `tools/pyhecke/python/pyhecke/wedderburn.py`. Re-export them here so
+# every existing `from hecke_core import partition_dimension` (etc.)
+# in the 22+ external consumer scripts continues to work unchanged.
+#
+# pyhecke is on sys.path via the bootstrap block at lines 38-47
+# (same path used for `from pyhecke.gram import ...` above).
+from pyhecke.wedderburn import (  # noqa: E402
+    q_hook_product,
+    q_factorial,
+    partitions_of,
+    partition_dimension,
+    partition_conjugate,
+    partition_is_self_conjugate,
+    q_dimension,
+    wedderburn_weight,
+)
 
 # Lazy partition table — eager compute takes ~30 s (~20,000 partitions
 # up to K_GAUSSIAN_MAX=15 with q_hook_product, wedderburn_weight, etc.
