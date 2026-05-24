@@ -24,6 +24,8 @@
 ## Run via:   sage sage_partition_q_dim.sage
 ##
 
+import sys
+
 from pyhecke import q_dimension, partitions_of
 
 try:

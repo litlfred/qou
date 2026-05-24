@@ -62,14 +62,20 @@ basis_words = [
 
 print("== Markov-trace comparison (Sage Lusztig → rescaled to QOU symmetric) ==")
 print()
-print(f"  {'word':<14} {'ℓ(w)':>5} {'QOU TR_M':>16} {'rescale factor':>20}")
-print("  " + "-" * 60)
+print(f"  {'word':<14} {'ℓ(w)':>5} {'QOU TR_M':>16} {'symbolic rescale':>20}  (numeric @ q_0)")
+print("  " + "-" * 80)
+# Rescaling factor q^{-ℓ(w)/2} has half-integer exponents which the
+# Laurent polynomial ring Z[q, q^{-1}] does NOT support. We use Sage's
+# symbolic ring (SR) for display so half-integer powers print cleanly,
+# and compute the numerical factor in plain Python.
+qSR = SR.var('q')
 for (w, length, label), tr_qou in zip(basis_words, TR_M):
     # Rescaling factor from Lusztig T_w to symmetric σ_w:
     #   σ_w = q^{-ℓ(w)/2} T_w
     # so tr applied to σ_w picks up q^{-ℓ(w)/2}.
-    rescale = q_sym^(-length / 2)
-    print(f"  {label:<14} {length:>5} {float(tr_qou):>16.9f} {str(rescale):>20}")
+    rescale_symbolic = qSR ** (Rational(-length, 2))
+    rescale_at_q0 = float(Q0) ** (-length / 2.0)
+    print(f"  {label:<14} {length:>5} {float(tr_qou):>16.9f} {str(rescale_symbolic):>20}  ({rescale_at_q0:.9f})")
 
 print()
 print("Note. A tight numerical assertion requires choosing Sage's Markov")
