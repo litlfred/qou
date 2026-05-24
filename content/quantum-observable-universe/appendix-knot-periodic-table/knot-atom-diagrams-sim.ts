@@ -9,7 +9,6 @@ export default simulator({
     "knot-diagram",
     "trefoil",
     "hopf-link",
-    "electron-shell",
     "sub-link",
     "atom",
     "interactive",

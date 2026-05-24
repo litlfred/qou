@@ -11,7 +11,6 @@ export default definition({
   },
   uses: ["def:atomic-braid"],
   tags: [
-    "electron-shell",
     "bonding-capacity",
     "valence",
     "trefoil",

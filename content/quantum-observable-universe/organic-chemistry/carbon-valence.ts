@@ -7,7 +7,6 @@ export default remark({
   tags: [
     "carbon",
     "valence",
-    "electron-shell",
     "hopf-link",
     "half-filled",
     "tetravalent",
