@@ -219,14 +219,7 @@ the same machinery gives Term 2's Cauchy kernel.*
 
 *Corrected option list for Term 2's source:*
 
-| candidate | status | reason |
-|---|---|---|
-| $HH^*$ cup-product tower | **CLOSED** | $HH^1 = 0$ for semisimple $H_3$ |
-| Deformation cohomology | **CLOSED** | $HH^2(\mathbb{R}[S_3]) = 0$ |
-| Finite-dim $U_q(\mathfrak{sl}_2)$ | **CLOSED** | $\Phi_q \neq$ finite-dim character |
-| **Colored Jones + Habiro unified invariant** | **DERIVED** | already in paper; $\Phi_q$ is Habiro-dual |
-| Cyclic cohomology $HC^*$ | unnecessary | colored-Jones route suffices |
-| q-Heisenberg Fock (candidate 3) | unnecessary | colored-Jones route suffices |
+See [Table 1](#tbl:terms-2-6-higher-operations-table1-data).
 
 ---
 
@@ -329,13 +322,7 @@ compute $\mathrm{tr}_M(\sigma_0^k)$ (algebra power) symbolically in
 $H_3(R, q)$ and compare to $\Phi_q$ Cauchy Taylor coefficients
 $1/(q; q)_k$.*
 
-| $k$ | $\mathrm{tr}_M(\sigma_0^k) @ q_0$ | $1/(q;q)_k @ q_0$ | ratio |
-|---|---|---|---|
-| 1 | $+0.499$ | $-9.09$ | $-0.055$ |
-| 2 | $+1.104$ | $+39.18$ | $+0.028$ |
-| 3 | $+0.730$ | $-106.61$ | $-0.007$ |
-| 4 | $+1.257$ | $+205.82$ | $+0.006$ |
-| 5 | $+0.993$ | $-300.52$ | $-0.003$ |
+See [Table 2](#tbl:terms-2-6-higher-operations-table2-data).
 
 *Ratios vary wildly (sign flips, non-monotone), and
 $\mathrm{tr}_M(\sigma_0^k)$ **oscillates** rather than matching

@@ -30,11 +30,7 @@ $$
 2. **(Three operator thresholds.)** *Each zero corresponds to a
    different Hecke amplitude vanishing:*
 
-| $q$ | Operator | Zero mechanism |
-|:--:|:--|:--|
-| $q_\star = 1/\varphi^2$ | $P_{7,7}(q) = (q + q^{1/2} - 1)/(q + 1)$ | Golden-ratio zero of the Toffoli diagonal |
-| $q_\Phi \approx 0.466$ | $\Phi(q) = (q-1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1) / 2(q+1)^2$ | Cubic root of $(q^{3/2} + q^{1/2} - 1)$ |
-| $q = 1$ | $\Phi(q)$ factor $(q - 1)$ | Classical limit (q-AND trivialises) |
+See [Table 1](#tbl:toffoli-lp-stability-table1-data).
 
    *At $q_\star$ the diagonal amplitude $P_{7,7}$ vanishes; at
    $q_\Phi$ the q-AND amplitude $\Phi$ reverses sign; at $q = 1$
@@ -72,16 +68,7 @@ $$
 **Substrate stability table** (verified numerically by
 `toffoli-lp-stability.witness.json`):
 
-| $q$ regime | $P_{7,7}(q)$ | $\Phi(q)$ | Physical? |
-|:--:|:--:|:--:|:--:|
-| $q < q_\star$ | negative | positive | **No** (diagonal wrong sign) |
-| $q = q_\star \approx 0.382$ | $0$ | positive | **Degenerate** (diagonal zero) |
-| $q_\star < q < q_\Phi$ | positive | positive | No (sub-physical) |
-| $q = q_\Phi \approx 0.466$ | positive | $0$ | **Degenerate** (q-AND zero) |
-| $q_\Phi < q < 1$ | positive | negative | No (q-AND wrong sign) |
-| $q = 1$ | $1/2$ | $0$ | Classical (trivial) |
-| $q > 1$ | positive | positive | **Yes (physical)** |
-| $q = q_0 \approx 1.110$ | $\approx 0.5514$ | $\approx 0.0495$ | **Yes (substrate)** |
+See [Table 2](#tbl:toffoli-lp-stability-table2-data).
 
 *Proof.*
 The Gram matrix $G$ over $H_3(q)$ has characteristic polynomial

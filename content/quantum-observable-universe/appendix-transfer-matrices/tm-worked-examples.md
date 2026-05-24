@@ -81,10 +81,7 @@ Two protons, one neutron.
 
 Two crossings: $(0, 1)$ and $(0, 2)$.
 
-| Crossing | Pair | Type | Transfer matrix |
-|----------|------|------|-----------------|
-| $(0, 1)$ | $\mathfrak{p}_0$-$\mathfrak{p}_1$ | pp | $T_{pp}$ |
-| $(0, 2)$ | $\mathfrak{p}_0$-$\mathfrak{n}_2$ | mix | $T_{\mathrm{mix}}$ |
+See [Table 1](#tbl:tm-worked-examples-table1-data).
 
 Product (decreasing $j$, per notation convention):
 
@@ -142,9 +139,7 @@ $$
 
 One crossing: $(1, 2)$.
 
-| Crossing | Pair | Type | Transfer matrix |
-|----------|------|------|-----------------|
-| $(1, 2)$ | $\mathfrak{p}_1$-$\mathfrak{n}_2$ | mix | $T_{\mathrm{mix}}$ |
+See [Table 2](#tbl:tm-worked-examples-table2-data).
 
 $$
   M_1(q) =  T_{\mathrm{mix}}(q)
@@ -177,11 +172,7 @@ Two protons, two neutrons.
 
 ### Generator $\sigma_0$ (3 crossings)
 
-| Crossing | Pair | Type | Matrix |
-|----------|------|------|--------|
-| $(0, 1)$ | $\mathfrak{p}$-$\mathfrak{p}$ | pp | $T_{pp}$ |
-| $(0, 2)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |
-| $(0, 3)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |
+See [Table 3](#tbl:tm-worked-examples-table3-data).
 
 $$
   M_0(q) =  T_{pp} \cdot T_{\mathrm{mix}} \cdot T_{\mathrm{mix}}
@@ -189,10 +180,7 @@ $$
 
 ### Generator $\sigma_1$ (2 crossings)
 
-| Crossing | Pair | Type | Matrix |
-|----------|------|------|--------|
-| $(1, 2)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |
-| $(1, 3)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |
+See [Table 4](#tbl:tm-worked-examples-table4-data).
 
 $$
   M_1(q) =  T_{\mathrm{mix}} \cdot T_{\mathrm{mix}} =  T_{\mathrm{mix}}^2
@@ -200,9 +188,7 @@ $$
 
 ### Generator $\sigma_2$ (1 crossing)
 
-| Crossing | Pair | Type | Matrix |
-|----------|------|------|--------|
-| $(2, 3)$ | $\mathfrak{n}$-$\mathfrak{n}$ | nn | $T_{nn}$ |
+See [Table 5](#tbl:tm-worked-examples-table5-data).
 
 $$
   M_2(q) =  T_{nn}
@@ -229,18 +215,13 @@ Converting nucleon: position 1 ($\mathfrak{n} \to \mathfrak{p}$).
 
 **Generator $\sigma_0$** (crossings with nucleons 1 and 2):
 
-| Crossing | Parent type | Matrix |
-|----------|------------|--------|
-| $(0, 1)$ | $\mathfrak{p}$-$\mathfrak{n}$ = mix | $T_{\mathrm{mix}}$ |
-| $(0, 2)$ | $\mathfrak{p}$-$\mathfrak{n}$ = mix | $T_{\mathrm{mix}}$ |
+See [Table 6](#tbl:tm-worked-examples-table6-data).
 
 $M_0^{\mathrm{par}} = T_{\mathrm{mix}} \cdot T_{\mathrm{mix}}$
 
 **Generator $\sigma_1$** (crossing with nucleon 2):
 
-| Crossing | Parent type | Matrix |
-|----------|------------|--------|
-| $(1, 2)$ | $\mathfrak{n}$-$\mathfrak{n}$ = nn | $T_{nn}$ |
+See [Table 7](#tbl:tm-worked-examples-table7-data).
 
 $M_1^{\mathrm{par}} = T_{nn}$
 
@@ -248,18 +229,13 @@ $M_1^{\mathrm{par}} = T_{nn}$
 
 **Generator $\sigma_0$:**
 
-| Crossing | Daughter type | Matrix |
-|----------|-------------|--------|
-| $(0, 1)$ | $\mathfrak{p}$-$\mathfrak{p}$ = pp | $T_{pp}$ |
-| $(0, 2)$ | $\mathfrak{p}$-$\mathfrak{n}$ = mix | $T_{\mathrm{mix}}$ |
+See [Table 8](#tbl:tm-worked-examples-table8-data).
 
 $M_0^{\mathrm{dau}} = T_{pp} \cdot T_{\mathrm{mix}}$
 
 **Generator $\sigma_1$:**
 
-| Crossing | Daughter type | Matrix |
-|----------|-------------|--------|
-| $(1, 2)$ | $\mathfrak{p}$-$\mathfrak{n}$ = mix | $T_{\mathrm{mix}}$ |
+See [Table 9](#tbl:tm-worked-examples-table9-data).
 
 $M_1^{\mathrm{dau}} = T_{\mathrm{mix}}$
 
@@ -296,15 +272,6 @@ the universal $\Delta_\beta$.
 
 ## Quick-reference: computation count
 
-| Nucleus | $A$ | $Z$ | $N$ | Generators | $\binom{A}{2}$ multiplications | $\deg P \leq$ |
-|---------|-----|-----|-----|:----------:|:------------------------------:|:-------------:|
-| ${}^1\mathrm{H}$ | $1$ | $1$ | $0$ | $0$ | $0$ | — |
-| ${}^2\mathrm{H}$ | $2$ | $1$ | $1$ | $1$ | $1$ | $3$ |
-| ${}^3\mathrm{H}$, ${}^3\mathrm{He}$ | $3$ | — | — | $2$ | $3$ | $8$ |
-| ${}^4\mathrm{He}$ | $4$ | $2$ | $2$ | $3$ | $6$ | $15$ |
-| ${}^{12}\mathrm{C}$ | $12$ | $6$ | $6$ | $11$ | $66$ | $143$ |
-| ${}^{14}\mathrm{C}$ | $14$ | $6$ | $8$ | $13$ | $91$ | $195$ |
-| ${}^{56}\mathrm{Fe}$ | $56$ | $26$ | $30$ | $55$ | $1540$ | $3135$ |
-| ${}^{210}\mathrm{Bi}$ | $210$ | $83$ | $127$ | $209$ | $21945$ | $44099$ |
+See [Table 10](#tbl:tm-worked-examples-table10-data).
 
 All computable in milliseconds on modern hardware.

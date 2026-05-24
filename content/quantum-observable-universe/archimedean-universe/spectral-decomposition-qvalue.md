@@ -146,14 +146,7 @@ degree $\lfloor 2g/(g-1) \rfloor$.*
 
 ### The six embeddable torus knots on $\Sigma_4$
 
-| Knot $\tau(r,s)$ | $r$ | $s$ | Degree | Shell | $\mathrm{tr}_M(\tau \!\cdot\! T_\beta)$ | Pauli |
-|:----:|:---:|:---:|:------:|:-----:|:---:|:---:|
-| $\tau(2,3) = e$ | $2$ | $3$ | $1$ | $1$ | $0.3649$ | $0.4667$ |
-| $\tau(2,5)$ | $2$ | $5$ | $1$ | $2$ | $0.4251$ | $0.3788$ |
-| $\tau(2,7) = c$ | $2$ | $7$ | $1$ | $3$ | $0.5040$ | $0.3075$ |
-| $\tau(3,5)$ | $3$ | $5$ | $1$ | $4$ | $1.5586$ | $0.2248$ |
-| $\tau(2,9) = \tau(2,3^2)$ | $2$ | $9$ | $2$ | $5$ | $0.6048$ | $0.2495$ |
-| $\tau(3,4) = t = \tau(3,2^2)$ | $3$ | $4$ | $2$ | $6$ | $0.5850$ | $0.2770$ |
+See [Table 1](#tbl:spectral-decomposition-qvalue-table1-data).
 
 Degree-$1$ knots are already encoded in $\mathcal{Q}_{\mathrm{bare}}$
 through distinct vertex weights ($\mathfrak{p} {}^i\!\oplus_j \mathfrak{p}$, $\mathfrak{n} {}^i\!\oplus_j \mathfrak{n}$, $\mathfrak{p} {}^i\!\oplus_j \mathfrak{n}$ — inter-particle Hopf links with crossing indices $i, j$), so $F = 1$ for shells $1$–$4$.
@@ -165,12 +158,7 @@ The knot operators form a **jet bundle over the exceptional
 divisor chain** of $\Sigma_g$, with jet index given by the
 Gröbner--Shirshov class (= degree in the degree tower) of each torus knot.
 
-| Jet order $k$ | Torus knot basis | Representation content |
-|:---:|---|---|
-| $0$ | Identity | Ground state ($q = 1$: all crossings equal, $\mathcal{Q} = 0$) |
-| $1$ | $\tau(2,3), \tau(2,5), \tau(2,7), \tau(3,5)$ | Complete degree-$1$ irreps |
-| $2$ | $\tau(2,9), \tau(3,4)$ | Complete degree-$2$ irreps |
-| $\geq 3$ | $\emptyset$ on $\Sigma_4$ | Tower terminates (null jet) |
+See [Table 2](#tbl:spectral-decomposition-qvalue-table2-data).
 
 The jet decomposition is **exact and finite** — not by truncation
 but by the finite dimensionality of the regular representation of
@@ -183,12 +171,7 @@ complete orthogonal basis under the Markov trace inner product.
 
 Each factor in $Q$ reads geometrically:
 
-| Factor | Geometry |
-|--------|----------|
-| $\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})$ | Exceptional divisor levels traversed (coral tube degrees) |
-| $\hbar_q = (q-1)/q$ | Action quantum per divisor step (discrete fiber spacing) |
-| $m_e / 3$ | Mass per trefoil crossing ($\mathcal{K}_e = \tau(2,3)$ has $3$ crossings) |
-| $F(\tau(k^*), N)$ | Spectral projection onto the active divisor |
+See [Table 3](#tbl:spectral-decomposition-qvalue-table3-data).
 
 The ratio $\hbar_q / \ln q = 0.9496$ is the **discretisation
 correction**: the exceptional divisors are $q$-spaced (discrete),

@@ -34,14 +34,7 @@ $$
 
 **Contrast with a general QU.**
 
-| | QU (no observability) | QOU (observability) |
-|--|--|--|
-| $HH^0(\mathrm{Ad})$ | $\dim \geq 0$ (hidden symmetries) | $= 0$ |
-| $HH^1(\mathrm{Ad})$ | $\dim \geq 1$ (deformation params) | $= 1$ (just $q$) |
-| $HH^2(\mathrm{Ad})$ | $\dim \geq 1$ (multiple obstructions) | $= 1$ (single scalar) |
-| $HH^3(\mathrm{Ad})$ | $\dim \geq 0$ (secondary obstructions) | $= 0$ |
-| Obstruction | multi-dimensional | single integer $\chi(A)$ |
-| Classical limit | may fail in independent ways | controlled by Kummer divisibility |
+See [Table 1](#tbl:qou-obstruction-reduction-table1-data).
 
 *Proof of (a).* Three ingredients combine:
 
@@ -77,12 +70,7 @@ $\lambda : A \to \mathbf{1}$.
 **Step 3: Dimension count for $G = \mathrm{SU}(2)$.**
 With $d = \dim \mathrm{SU}(2) = 3$:
 
-| $n$ | $HH^n$ | Dimension | Source |
-|-----|--------|-----------|--------|
-| $0$ | $\mathrm{Ad}^G$ | $0$ | QOU observability |
-| $1$ | Outer derivations | $1$ | Single parameter $q$ |
-| $2$ | Obstructions | $1$ | Dual to $HH^1$ ($d - 2 = 1$) |
-| $3$ | Secondary | $0$ | Dual to $HH^0$ ($d - 3 = 0$) |
+See [Table 2](#tbl:qou-obstruction-reduction-table2-data).
 
 The key: $HH^2 \cong (HH^{d-2})^\vee = (HH^1)^\vee$. The
 outer derivation space is one-dimensional because the Lusztig
@@ -128,16 +116,7 @@ $$
 
 For the Descartes universe with $\chi(A) = -6$:
 
-| Kummer level $n$ | $\mathrm{obs}(n)$ | Obstruction? |
-|---|---|---|
-| $1$ | $0$ | vanishes (by definition) |
-| $2$ | $0$ | vanishes ($2 \mid 6$) |
-| $3$ | $0$ | vanishes ($3 \mid 6$) |
-| $4$ | $-6 \bmod 4 = 2$ | **persists** |
-| $5$ | $-6 \bmod 5 = 4$ | **persists** |
-| $6$ | $0$ | vanishes ($6 \mid 6$) |
-| $7$ | $-6 \bmod 7 = 1$ | **persists** |
-| $p > 3$ prime | $\neq 0$ | **persists** |
+See [Table 3](#tbl:qou-obstruction-reduction-table3-data).
 
 The obstruction **vanishes at only finitely many levels**
 (the divisors of $|\chi(A)| = 6$, namely $\{1, 2, 3, 6\}$)
@@ -164,11 +143,7 @@ unconditionally at the $q$-scale, with obstruction class
 $[\mathcal{P}] \in \mathrm{Obs}(\mathbf{C}, q \to 1) \cong k$.
 In the QOU, the single obstruction scalar controls all three:
 
-| Problem | Property $\mathcal{P}(q)$ | $q$-scale status | Classical obstruction |
-|---------|--------------------------|-----------------|---------------------|
-| RH | $\mathrm{Re}(\rho) = 1/2$ (spectral half-line) | **Proved** (Hasse--Weil) | Phase coherence of adelic assembly |
-| NS | $q$-NS global regularity | **Proved** (exp. damping) | Levi non-degeneracy at collision |
-| BSD | $L(\mathcal{E}_q, 1) \neq 0$ ($r_q = 0$) | **Proved** (Tannaka--Krein) | $L$-value non-vanishing through assembly |
+See [Table 4](#tbl:qou-obstruction-reduction-table4-data).
 
 All three obstructions are **images of the same class**
 $\chi(A) \in HH^2 \cong k$ under different evaluation maps:

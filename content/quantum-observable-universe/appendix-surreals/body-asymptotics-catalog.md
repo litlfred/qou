@@ -10,28 +10,15 @@ the formal anchor that body propositions point to.
 
 ### Chapter: Braids and Knots
 
-| Body block | Bound (as written) | $\ordw$-form |
-|---|---|---|
-| [Hecke convergence bound](#prop:hecke-convergence-bound) | $\mathrm{MAE}(k) \leq C \cdot r^{-(k-3)}$, $r \approx 4$ | $\ordw\bigl(\mathrm{MAE}(k)\bigr) = -(k-3)\,\ordw(r)$ |
-| [Hoefsmit scattering pipeline](#prop:hoefsmit-scattering-pipeline) | $\mathrm{MAE}(k) \leq C_0 [2]_q^{-2(k-3)}$ | $\ordw\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\ordw([2]_q)$ |
-| [Jet-tower convergence](#prop:jet-tower-convergence) | tail $\leq \Delta_{\max} \cdot \dfrac{\hbar_q^{2(N+1)}}{1 - \hbar_q^2}$ | $\ordw(\text{tail}) = 2(N+1)\,\ordw(\hbar_q)$ |
-| [Universal braid branching](#prop:universal-braid-branching) | per-level Plancherel weight $O([2]_q^{-2})$ | $\ordw(\text{per-level weight}) = -2\,\ordw([2]_q)$ |
-| [Unified iterative correction](#prop:unified-iterative-correction) | Féray–Méliot $O(1/\sqrt{A})$ | $\ordw\bigl(\text{accumulator}\bigr) = -\tfrac{1}{2}\,\ordw(A)$ |
-| [Möbius energy proof](#prf:mobius-energy) | regularised $\int_{S^1 \times S^1} d\ell(x)\,d\ell(y)/|x-y|^2$ (Lebesgue on $S^1$) | surreal Loeb-measure replacement per [calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon) §5; $\ordw(\text{regulariser}) = \ordw(\varepsilon)$ |
-| [Mass-endomorphism jet tower](#rem:mass-endomorphism-jet-tower) | open: uniform boundedness $\lvert \Delta^{(n)} \rvert \leq \Delta_{\max}$ | [surreal blow-up calculus](#def:surreal-blowup-calculus) at each jet level; $\ordw(\Delta^{(n)}) \geq 0$ conjectured |
+See [Table 1](#tbl:body-asymptotics-catalog-table1-data).
 
 ### Chapter: Fluid Dynamics
 
-| Body block | Bound (as written) | $\ordw$-form |
-|---|---|---|
-| [NS obstruction computation](#prop:ns-obstruction-computation) | $|j^n v|_\Sigma \sim \Gamma/d^{n+1}$, $\sim 1/(T^*-t)^{(n+1)/2}$ | $\ordw\bigl(\lvert j^n v\rvert_\Sigma\bigr) = -(n+1)\,\ordw(d) = -\tfrac{n+1}{2}\,\ordw(T^*-t)$ |
+See [Table 2](#tbl:body-asymptotics-catalog-table2-data).
 
 ### Classical-limit blocks
 
-| Body block | Classical limit | Surreal replacement |
-|---|---|---|
-| [Feynman classical limit](#prop:feynman-classical-limit) | $q \to 1$ degeneration of $H_n(q) \to k[S_n]$ | [standard-part functor](#def:standard-part-functor) at $q = 1 + \varepsilon$ (cf.\ [classical-limit standard-part](#conj:classical-limit-stpart)) |
-| [Kashaev volume--density](#rem:kashaev-volume-density) | $\mathrm{Vol}(K) = 2\pi \lim_{N \to \infty} \log\lvert J_N \rvert / N$ | $\mathrm{Vol}(K) = \mathrm{st}\bigl(\text{coloured trace at } q = e^{2\pi i/N}\bigr)$ (cf.\ [Kashaev as standard-part](#conj:kashaev-surreal)) |
+See [Table 3](#tbl:body-asymptotics-catalog-table3-data).
 
 ## Reading conventions
 

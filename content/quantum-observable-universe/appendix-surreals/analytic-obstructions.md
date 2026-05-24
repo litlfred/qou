@@ -13,13 +13,7 @@ the content objects returns only a handful of matches, almost
 all of which turn out to be *categorical* or *algebraic* by
 closer inspection:
 
-| Reference | What is actually used |
-|---|---|
-| `frobenius-integration.md` | Calls $\int_A$ a "categorical Haar measure" *by analogy*. The actual object is the Frobenius counit $A \to \mathbf{1}$, purely categorical — survives over any field. |
-| `categorical-laplace-transform.md` | Compares to Haar on $\mathbb{R}_{\geq 0}$ as motivation; the categorical Laplace transform is defined over any ground ring. |
-| `julia-set-reeb.md` | Mentions the Julia measure $\mu_J$ and Hausdorff dimension $d_H(q)$. The dimension is given by the **rational formula** $d_H(q) = (2q-1)^2/q^3$ (see [birthday grading](#def:birthday-grading)), so it lifts to $\mathbf{No}$ exactly. The measure itself is used only for intuitive language. |
-| `statistical-mechanical-time.md`, `double-slit-two-modes.md` | Interpretive prose; no measure-theoretic computation is performed. |
-| `mobius-energy-proof.md` | **Genuine use.** The Möbius energy integral $\int_{S^1 \times S^1} d\ell(x) d\ell(y) / |x - y|^2$ uses the Lebesgue measure on $S^1$, with diagonal regularisation. |
+See [Table 1](#tbl:analytic-obstructions-table1-data).
 
 **Net effect.** The Möbius energy proof is the only block whose
 argument genuinely depends on Lebesgue measure, and it is used
@@ -118,17 +112,7 @@ obstructions after audit:
 
 ## 5. Revised summary
 
-| Apparent obstruction | Actually bites? |
-|---|---|
-| Lebesgue measure | Only in Möbius energy proof (1 block) |
-| Haar measure | No — "categorical Haar" is Frobenius counit |
-| Hausdorff measure | No — dimension is a rational function of $q$ |
-| Hilbert completion | No — stylistic in 1 block, not load-bearing |
-| Spectral theorems / unitarity | No — Hoefsmit is algebraic |
-| Smooth-manifold structure | No — algebraic substitutes throughout |
-| $\mathrm{PSL}(2, \mathbb{C})$ | Only in Möbius/knot-complement setup |
-| Hyperbolic volume | Yes — for Kashaev cross-check |
-| $q \to 1$ as topological limit | Replaced exactly by standard-part |
+See [Table 2](#tbl:analytic-obstructions-table2-data).
 
 **Upshot.** The surreal lift is dramatically less lossy than a
 first-pass survey suggests. With two narrow exceptions — the

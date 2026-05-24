@@ -10,14 +10,7 @@ Palindromicity breaks at the first electron with $\ell \geq 1$
 From the [quotient atom model](#conj:shell-closure-nf-term-count),
 the palindromicity status at each $Z$:
 
-| $Z$ | Config | Histogram | Palindromic |
-|:----|:-------|:----------|:------------|
-| 1 | $1s^1$ | $\{0{:}1,\; 1{:}1\}$ | $\star$ |
-| 2 | $1s^2$ | $\{1{:}1,\; 2{:}1\}$ | $\star$ |
-| 3 | $[He]\,2s^1$ | $\{1{:}1,\; 2{:}2,\; 3{:}2,\; 4{:}1\}$ | $\star$ |
-| 4 | $[He]\,2s^2$ | $\{3{:}1,\; 4{:}2,\; 5{:}2,\; 6{:}1\}$ | $\star$ |
-| 5 | $[He]\,2s^2 2p^1$ | $\{3{:}1,\; 4{:}3,\; 5{:}5,\; \ldots\}$ | **no** |
-| 6 | $[He]\,2s^2 2p^2$ | $\{7{:}1,\; 8{:}3,\; 9{:}5,\; \ldots\}$ | **no** |
+See [Table 1](#tbl:palindromicity-orbital-type-table1-data).
 
 **Transition at $Z = 5$**: the first $p$-electron breaks
 palindromicity.  Through $Z = 4$ (pure $s$-shells), the
@@ -44,12 +37,7 @@ histogram entries that must be removed to restore palindromicity
 — should equal $2\ell$, where $\ell$ is the angular momentum
 quantum number of the outermost occupied sub-shell:
 
-| Sub-shell | $\ell$ | Defect |
-|:----------|:-------|:-------|
-| $s$ | 0 | 0 (palindromic) |
-| $p$ | 1 | 2 |
-| $d$ | 2 | 4 |
-| $f$ | 3 | 6 |
+See [Table 2](#tbl:palindromicity-orbital-type-table2-data).
 
 This would give a purely algebraic definition of orbital
 angular momentum: $\ell$ is half the palindromic defect of the

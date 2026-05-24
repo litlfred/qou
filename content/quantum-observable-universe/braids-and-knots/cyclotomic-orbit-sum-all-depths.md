@@ -53,14 +53,7 @@ Verified at 50 dps for $n \in \{2, 3, 4, 5\}$, $N \in \{3, 4, 5, 6, 7\}$
 
 Sample values:
 
-| $n$ | $N$ | $\sum_k \mathrm{Cl}_n(2\pi k/N)$ | parity |
-|---|---|---|---|
-| 2 | 5 | $0$ | even (trivial) |
-| 3 | 5 | $-\frac{24}{25}\,\zeta(3) \approx -1.15397$ | odd |
-| 4 | 5 | $0$ | even |
-| 5 | 5 | $-\frac{624}{625}\,\zeta(5) \approx -1.03527$ | odd |
-| 3 | 7 | $-\frac{48}{49}\,\zeta(3) \approx -1.17753$ | odd |
-| 5 | 7 | $-\frac{16806}{16807}\,\zeta(5) \approx -1.03650$ | odd |
+See [Table 1](#tbl:cyclotomic-orbit-sum-all-depths-table1-data).
 
 ### Significance
 
@@ -85,10 +78,7 @@ with a single proof.
 Combined with
 [`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality):
 
-| $n$ parity | Tate part collapses | Orbit sum | Genuinely-new dim per prime $K$ |
-|---|---|---|---|
-| odd | Im part | 1 dim $\to$ $\zeta(n)$-line (non-Tate) | $(K - 1)/2 - 1 = (K - 3)/2$ |
-| even | Re part | 0 dim (trivial sum) | $(K - 1)/2$ |
+See [Table 2](#tbl:cyclotomic-orbit-sum-all-depths-table2-data).
 
 The depth-3 case (round 3 + round 4 of PR #635) gave $(K - 3)/2$.
 The general formula here is parity-dependent: $(K - 3)/2$ for $n$

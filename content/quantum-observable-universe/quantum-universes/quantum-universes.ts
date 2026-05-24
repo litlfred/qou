@@ -54,6 +54,7 @@ export default chapter({
         "frobenius-pairing-su2",
         "frobenius-geometric-role",
         "quantum-universe-su2",
+        "quantum-universe-su2-table1-data",
         "higher-forms",
         "higher-forms-su2",
         "fundamental-object-explication",

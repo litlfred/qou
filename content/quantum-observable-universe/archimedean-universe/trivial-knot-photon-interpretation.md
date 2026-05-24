@@ -19,12 +19,7 @@ $\sigma_1\sigma_0\sigma_1 = \sigma_0\sigma_1\sigma_0 = e^-$.
 
 ### Block I: the photon core ($\mathbf{1}$) meets everything
 
-| Term | Product | NF | Interpretation |
-|:---:|:---|:---|:---|
-| (1) | $\mathbf{1} \cdot \mathbf{1}$ | $\gamma$ | Two bare photon cores pass through each other. Light through light. |
-| (2) | $\mathbf{1} \cdot \psi_0\sigma_0$ | $\psi_0\sigma_0$ | Core meets horizontal polarization; polarization passes through unchanged. |
-| (3) | $\mathbf{1} \cdot \psi_1\sigma_1$ | $\psi_1\sigma_1$ | Core meets vertical polarization; unchanged. |
-| (4) | $\mathbf{1} \cdot \psi_{01}L_+$ | $\psi_{01}L_+$ | Core meets Hopf dressing; the twist passes through unchanged. |
+See [Table 1](#tbl:trivial-knot-photon-interpretation-table1-data).
 
 The photon identity $\mathbf{1}$ is the unit of the algebra:
 it transmits everything it encounters without modification.
@@ -33,44 +28,22 @@ transparent to the other.
 
 ### Block II: horizontal polarization ($\varphi_0\sigma_0$) meets everything
 
-| Term | Product | NF | Interpretation |
-|:---:|:---|:---|:---|
-| (5) | $\varphi_0\sigma_0 \cdot \mathbf{1}$ | $\varphi_0\sigma_0$ | Horizontal passes through the bare core; unchanged. |
-| (6) | $\varphi_0\sigma_0 \cdot \psi_0\sigma_0$ | $\varphi_0\psi_0\gamma + \varphi_0\psi_0 h\,\sigma_0$ | **Same-axis collision.** The Hecke relation fires: $\sigma_0^2 = h\sigma_0 + \mathbf{1}$. Two horizontal polarizations partially annihilate back to vacuum ($\gamma$) and leave a residual polarization reduced by $h$. |
-| (7) | $\varphi_0\sigma_0 \cdot \psi_1\sigma_1$ | $\varphi_0\psi_1 L_+$ | **Cross-polarization linking.** Horizontal meets vertical and they link into a positive Hopf link $L_+ = \sigma_0\sigma_1$. No annihilation, no residual: the two polarizations combine into topology. |
-| (8) | $\varphi_0\sigma_0 \cdot \psi_{01}L_+$ | $\varphi_0\psi_{01}\sigma_1 + \varphi_0\psi_{01}h\,L_+$ | **Polarization meets twist.** Via $\sigma_0 \cdot \sigma_0\sigma_1 = \sigma_0^2\sigma_1 = (h\sigma_0 + \mathbf{1})\sigma_1$: the Hecke relation absorbs the $\sigma_0$ crossing, leaving the orthogonal polarization $\sigma_1$ plus a residual twist $hL_+$. The twist *rotates* the polarization axis. |
+See [Table 2](#tbl:trivial-knot-photon-interpretation-table2-data).
 
 ### Block III: vertical polarization ($\varphi_1\sigma_1$) meets everything
 
-| Term | Product | NF | Interpretation |
-|:---:|:---|:---|:---|
-| (9) | $\varphi_1\sigma_1 \cdot \mathbf{1}$ | $\varphi_1\sigma_1$ | Vertical passes through core; unchanged. |
-| (10) | $\varphi_1\sigma_1 \cdot \psi_0\sigma_0$ | $\varphi_1\psi_0 L_-$ | **Cross-polarization linking (reversed).** Vertical meets horizontal and they link into $L_- = \sigma_1\sigma_0$. Compare term (7): the ordering of which photon contributes which polarization determines the **chirality** of the link ($L_+$ vs $L_-$). |
-| (11) | $\varphi_1\sigma_1 \cdot \psi_1\sigma_1$ | $\varphi_1\psi_1\gamma + \varphi_1\psi_1 h\,\sigma_1$ | **Same-axis collision** (vertical). Identical structure to term (6): partial annihilation to vacuum plus residual polarization. |
-| (12) | $\varphi_1\sigma_1 \cdot \psi_{01}L_+$ | $\varphi_1\psi_{01} e^-$ | **Vertical polarization meets Hopf dressing: electron production.** Via Yang--Baxter: $\sigma_1 \cdot \sigma_0\sigma_1 = \sigma_1\sigma_0\sigma_1 = e^-$. The vertical crossing of one photon completes the Hopf dressing of the other into a trefoil. This is one of three mechanisms by which $T_{1,0}$ opens the electron channel. |
+See [Table 3](#tbl:trivial-knot-photon-interpretation-table3-data).
 
 ### Block IV: Hopf dressing ($\varphi_{01}\sigma_0\sigma_1$) meets everything
 
-| Term | Product | NF | Interpretation |
-|:---:|:---|:---|:---|
-| (13) | $\varphi_{01}L_+ \cdot \mathbf{1}$ | $\varphi_{01}L_+$ | Hopf dressing passes through core; unchanged. |
-| (14) | $\varphi_{01}L_+ \cdot \psi_0\sigma_0$ | $\varphi_{01}\psi_0 e^-$ | **Hopf dressing meets horizontal polarization: electron production.** Via $\sigma_0\sigma_1 \cdot \sigma_0 = \sigma_0\sigma_1\sigma_0 = e^-$. The Hopf content of one photon combines with the horizontal crossing of the other to form a trefoil. This is the second of three mechanisms for electron production under $T_{1,0}$. |
-| (15) | $\varphi_{01}L_+ \cdot \psi_1\sigma_1$ | $\varphi_{01}\psi_1\sigma_0 + \varphi_{01}\psi_1 h\,L_+$ | **Twist meets vertical polarization.** Via $\sigma_0\sigma_1 \cdot \sigma_1 = \sigma_0\sigma_1^2 = \sigma_0(h\sigma_1 + \mathbf{1}) = h L_+ + \sigma_0$: the twist absorbs the vertical crossing (Hecke relation on $\sigma_1^2$) and emits the orthogonal polarization $\sigma_0$. Compare term (8) --- the twist acts as a **polarization rotator** in both directions. |
-| (16) | $\varphi_{01}L_+ \cdot \psi_{01}L_+$ | $\varphi_{01}\psi_{01} L_- + \varphi_{01}\psi_{01} h\,e^-$ | **Two Hopf dressings collide.** Via $(\sigma_0\sigma_1)^2 = L_- + he^-$: the self-product of the Hopf link produces the reversed link $L_-$ plus an electron channel weighted by $h$. Two pre-twisted photons interacting through their twist content alone generate both chirality reversal and pair production. |
+See [Table 4](#tbl:trivial-knot-photon-interpretation-table4-data).
 
 ## Collecting by output channel
 
 Summing all 16 terms by NF basis element recovers the full
 $T_{1,0}$ formula:
 
-| Channel | Coefficient | Contributing terms |
-|:---:|:---|:---|
-| $\gamma$ | $1 + \varphi_0\psi_0 + \varphi_1\psi_1$ | (1), (6), (11) |
-| $\sigma_0$ | $\varphi_0 + \psi_0 + \varphi_0\psi_0 h + \varphi_{01}\psi_1$ | (2), (5), (6), (15) |
-| $\sigma_1$ | $\varphi_1 + \psi_1 + \varphi_1\psi_1 h + \varphi_0\psi_{01}$ | (3), (9), (11), (8) |
-| $L_+$ | $\varphi_{01} + \psi_{01} + \varphi_0\psi_1 + h(\varphi_0\psi_{01} + \varphi_{01}\psi_1)$ | (4), (7), (8), (13), (15) |
-| $L_-$ | $\varphi_1\psi_0 + \varphi_{01}\psi_{01}$ | (10), (16) |
-| $e^-$ | $\varphi_{01}\psi_0 + \varphi_1\psi_{01} + \varphi_{01}\psi_{01} h$ | (12), (14), (16) |
+See [Table 5](#tbl:trivial-knot-photon-interpretation-table5-data).
 
 ## Physical interpretation of each channel
 

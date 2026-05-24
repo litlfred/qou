@@ -29,15 +29,7 @@ restricted to $\zeta_5$-arguments.
 
 ### QOU's tools available
 
-| Tool | Role in attacking Goncharov at $\mathbb{Q}(\zeta_5)$ |
-|---|---|
-| Recursive atom-knot atlas | explicit braid words for $g \leq 4$ knots over Bring-natural shape parameters |
-| Hecke normal form (Gröbner–Shirshov) | canonical reduction; equality of NF $\Leftrightarrow$ equality in $H_n(q)$ |
-| Markov trace pinning | unique trace; equality of Markov traces $\Leftrightarrow$ Jones-coincident pair |
-| GB stratification (depth grading) | filters Hecke centre by max-hook; depth-$k$ projector $\mathrm{proj}_{Z^{(k)}(A)}$ extracts depth-$k$ component |
-| JM-element + Lagrange-interpolation $e_\lambda$ | explicit central idempotents — concrete generators of period classes per [`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent) |
-| Bring's $S_5$-cyclotomic structure | natural action on $\{\zeta_5^k : k \in (\mathbb{Z}/5)^\times\}$ |
-| Joint Galois $\times$ braid action ([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)) | structures the period-class permutations |
+See [Table 1](#tbl:qou-infra-discharges-goncharov-zeta5-table1-data).
 
 ### Avenue A — Jones-coincident pair generation
 
@@ -99,12 +91,7 @@ trace of a *specific* Hecke element. This is doable:
 
 If Avenue A or B succeeds:
 
-| Discharged | Not discharged |
-|---|---|
-| Goncharov's conjecture at $F = \mathbb{Q}(\zeta_5)$, depth 3 | Goncharov over arbitrary $F$ |
-| Image identification $G^{(3)}\rvert_{\mathbb{Q}(\zeta_5)} \cong K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q}$ | Same identification for non-Bring-natural fields |
-| Depth-3 case of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) at one specific cyclotomic field | Beilinson's full conjecture at depths $\geq 4$ |
-| Goncharov's motivic conjecture at $\mathbb{Q}(\zeta_5)$ | Same conjecture at $\mathbb{Q}(\zeta_n)$ for $n \neq 5, 6, 4$ |
+See [Table 2](#tbl:qou-infra-discharges-goncharov-zeta5-table2-data).
 
 This is **a substantive but partial result**: it would close one
 specific cyclotomic case, not the general statement.

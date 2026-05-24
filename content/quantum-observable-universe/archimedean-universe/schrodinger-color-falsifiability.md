@@ -51,11 +51,7 @@ $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ to a metric on the projective
 chromaticity 2-simplex, with $\eta \to 0$ recovering the Riemannian
 limit $\Delta E_{\mathrm{perc}} = d$.
 
-| Regime | $\Delta E_{\mathrm{perc}}$ | Comment |
-|---|---|---|
-| $\eta d \ll 1$ | $d - \tfrac{\eta^2}{6} d^3 + O(\eta^4 d^5)$ | Riemannian + cubic sub-additive correction |
-| $\eta d \sim 1$ | $\operatorname{arsinh}(\eta d)/\eta$ | Crossover regime |
-| $\eta d \gg 1$ | $\log(2\eta d)/\eta + O(1/d^2)$ | **Second-order Weber–Fechner** |
+See [Table 1](#tbl:schrodinger-color-falsifiability-table1-data).
 
 The large-$d$ logarithmic asymptote is *exactly* the second-order
 Weber–Fechner law that \cite{bujack2022} hint at. The Cannon
@@ -95,11 +91,7 @@ campaign with $\Delta d \in \{1, 2, 5, 10, 20, 50\}$ — can fit a
 single $\eta$ and yield a confidence interval $[\eta_-, \eta_+]$.
 The QOU framework then admits three distinct outcomes:
 
-| Fitted $\eta$ | Verdict on the direct $q_0$ $\leftrightarrow$ color identification |
-|---|---|
-| $\eta \in [0.08, 0.13]$ | **Confirmation.** The substrate parameter $q_0$ predicts macroscopic color perception with no rescaling. |
-| $\eta \in [0.02, 0.50]$ but outside $[0.08, 0.13]$ | **Refinement.** A scale renormalization $q_{\mathrm{color}} = q_0^{\,\alpha}$ between substrate and retinal cone-cell physics is required; $\alpha$ is then a derived quantity from the cone-spectral-response cascade. |
-| $\eta \notin [0.02, 0.50]$ or the $\operatorname{arsinh}$ form is rejected at $p < 0.001$ | **Falsification of the direct identification.** Either the chromaticity-projection step decouples retinal perception from the Skein metric, or the $q$-chromaticity construction does not lift to macroscopic color perception by the obvious functor. |
+See [Table 2](#tbl:schrodinger-color-falsifiability-table2-data).
 
 The third outcome would not falsify QOU as a whole — color
 perception is several decoherence layers above the substrate — but
@@ -113,11 +105,7 @@ Independently of any numerical fit, the QOU framework predicts
 three qualitative features that \cite{bujack2022} have already
 confirmed:
 
-| Prediction | QOU origin | Empirical status |
-|---|---|---|
-| Non-Riemannian metric | $q \neq q^{-1}$ in the Skein relation | ✓ confirmed by \cite{bujack2022} |
-| Sub-additive (concave) scaling $f$ | $\operatorname{arsinh}(x)$ is concave for $x \geq 0$ | ✓ confirmed (diminishing returns) |
-| Second-order Weber–Fechner asymptote | large-$d$ limit of $\operatorname{arsinh}(\eta d)/\eta$ is logarithmic | ✓ matches the explicit conjecture of \cite{bujack2022} |
+See [Table 3](#tbl:schrodinger-color-falsifiability-table3-data).
 
 The remaining empirical lever is the *magnitude* of $\eta$, which
 the falsifiability protocol above turns into a single-number test.
@@ -132,14 +120,7 @@ $\Delta E_{\mathrm{perc}}(d) = \operatorname{arsinh}(\eta d)/\eta$,
 paired with a Thurstonian probit choice rule with observer noise
 $\sigma$, was fitted by maximum likelihood (two free parameters):
 
-| Quantity | Value |
-|---|---|
-| $\hat{\eta}$ | $0.1256$ |
-| Parametric-bootstrap $95\%$ CI on $\eta$ | $[0.1167,\;0.1366]$ |
-| $\hat{\sigma}$ | $9.16$ on the $L^{*}$ scale |
-| Likelihood-ratio test, QOU vs. Riemannian ($\eta = 0$) | $\chi^{2}_{1} = 888.9$, $p \approx 2.6 \times 10^{-195}$ |
-| QOU prediction $\eta = (q_{0} - q_{0}^{-1})/2$ at $q_{0} \approx 1.1097$ | $0.1043$ |
-| Verdict on the protocol's three-way decision tree | **Confirmation** (CI overlaps the confirmation band $[0.08, 0.13]$) |
+See [Table 4](#tbl:schrodinger-color-falsifiability-table4-data).
 
 The non-Riemannian alternative beats the Riemannian null by $200\sigma$ —
 the single-parameter $\operatorname{arsinh}$ form captures variance

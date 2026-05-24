@@ -16,11 +16,7 @@ across the shell boundary.*
 
 *A β-decay $(Z, N) \to (Z+1, N-1)$ in the Hecke algebra corresponds to:*
 
-| Decay type | Hecke-algebra change | Level |
-|:---|:---|:---:|
-| Non-magic β-decay | One neutron-word $\to$ proton-word (level-3 swap) | 3 |
-| Magic-crossing β-decay | Neutron-word $\to$ proton-word **AND** $\sigma_{\mathrm{shell}}$ transition | 4 |
-| Double-magic anchor decay | Full shell operator change on both $Z$ and $N$ sides | 4–5 |
+See [Table 1](#tbl:compound-beta-shell-calibration-table1-data).
 
 *The simple formula $y_{\mathrm{target}} = Q_\beta / (E_0 \cdot A \cdot m_p)$
 applies only for non-magic decays.  For magic-crossing decays, the
@@ -59,14 +55,7 @@ pure shell contribution.*
 
 **Numerical β-decay table (reference data, AME 2020):**
 
-| $A_{\mathrm{magic}}$ | representative β-decay | Q (MeV) | Shell crossed |
-|:---:|:---:|:---:|:---:|
-| 2 | $^{3}\mathrm{H} \to {}^{3}\mathrm{He}$ | 0.01859 | N=2 |
-| 8 | $^{14}\mathrm{C} \to {}^{14}\mathrm{N}$ | 0.15648 | N=8 |
-| 20 | $^{40}\mathrm{K} \to {}^{40}\mathrm{Ca}$ | 1.311 | Z=20, N=20 |
-| 28 | $^{56}\mathrm{Mn} \to {}^{56}\mathrm{Fe}$ | 3.695 | near Z=N=28 |
-| 50 | $^{120}\mathrm{Ag} \to {}^{120}\mathrm{Cd}$ | 8.0 | Z=50 |
-| 82 | $^{210}\mathrm{Bi} \to {}^{210}\mathrm{Po}$ | 1.163 | Z=82 |
+See [Table 2](#tbl:compound-beta-shell-calibration-table2-data).
 
 **First-cut naïve formula (for comparison only).**
 
@@ -80,12 +69,7 @@ $$
 
 *Numerical check at $q_0$:*
 
-| $A_{\mathrm{magic}}$ | $y^{\mathrm{naïve}}$ | $B/(A \cdot m_p)$ (target) | ratio |
-|:---:|:---:|:---:|:---:|
-| 2 | $1.27 \times 10^{-5}$ | $7.54 \times 10^{-3}$ (${}^{4}\mathrm{He}$) | $1.7 \times 10^{-3}$ |
-| 8 | $2.67 \times 10^{-5}$ | $8.50 \times 10^{-3}$ (${}^{16}\mathrm{O}$) | $3.1 \times 10^{-3}$ |
-| 20 | $8.93 \times 10^{-5}$ | $9.11 \times 10^{-3}$ (${}^{40}\mathrm{Ca}$) | $9.8 \times 10^{-3}$ |
-| 28 | $1.80 \times 10^{-4}$ | $9.21 \times 10^{-3}$ (${}^{56}\mathrm{Ni}$) | $1.95 \times 10^{-2}$ |
+See [Table 3](#tbl:compound-beta-shell-calibration-table3-data).
 
 *The naïve ratios are all $\ll 1$, confirming that $Q_\beta$ directly
 **does not give** $y_{\mathrm{target}}$ — the missing piece is the

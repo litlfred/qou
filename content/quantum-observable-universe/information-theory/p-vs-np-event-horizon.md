@@ -19,16 +19,7 @@ non-trivial and the Frobenius pairing is non-degenerate.
 The complement ($A_0 = 0$) is the jet horizon.  The
 computational analog is:
 
-| QOU jet horizon | Computational boundary |
-|----------------|----------------------|
-| Observable subcategory $\mathrm{Bun}^{\circ}$ ($A_0 \neq 0$) | Polynomial observable subcategory $\mathcal{R}^{\circ}$ |
-| Jet horizon $\mathcal{H} = V(\mathfrak{h})$ ($A_0 = 0$) | Computational boundary $\mathcal{H}_c = V(\mathfrak{h}_c)$ |
-| Observer: object of $\mathrm{Bun}^{\circ}$ | Observer: poly-time algorithm (object of $\mathcal{R}^{\circ}$) |
-| Aeon: connected component of $\mathrm{Bun}^{\circ}$ | Complexity class: connected component of $\mathcal{R}^{\circ}$ |
-| Degree-$0$ opacity: no fibre value crosses $\mathcal{H}$ | Degree-$0$ opacity: no answer crosses $\mathcal{H}_c$ in poly time |
-| Degree $\geq 1$ leakage: winding, curvature cross | Degree $\geq 1$ leakage: witnesses verifiable in poly time |
-| Bekenstein bound: $\eta_q$ per operation | Bandwidth bound: $I(t) \leq t \cdot \mathfrak{B}(q)$ |
-| Big Bang state: $A_0\rvert_{\mathcal{S}_0} = 0$ | Unsolved NP instance: degree-$0$ answer not yet extracted |
+See [Table 1](#tbl:p-vs-np-event-horizon-table1-data).
 
 **The observer in $\mathrm{Bun}^{\circ}$ versus the
 observer in $\mathcal{R}^{\circ}$.**
@@ -59,12 +50,7 @@ the answer.
 The jet horizon leakage table
 ([jet horizon](#def:jet-horizon)) transfers directly:
 
-| Jet degree | Physical (jet horizon) | Computational ($\mathcal{H}_c$) |
-|:---:|---|---|
-| $0$ | Fibre value — **Open** | Answer $P_L(q_0)$ — **Open** |
-| $1$ | Winding number — leaks | Single witness — verifiable in $O(c)$ |
-| $2$ | Curvature/linking — leaks | Pairwise path correlations — heuristically exploitable |
-| $\geq 3$ | Higher topology — leaks | Higher structural data — diminishing returns |
+See [Table 2](#tbl:p-vs-np-event-horizon-table2-data).
 
 The degree-$1$ leakage is **NP verification**: given a
 resolution path (a witness), one traverses it in $O(c)$

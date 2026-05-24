@@ -102,14 +102,7 @@ subsequent level.
 
 The empirical verification on stable atoms $A \geq 6$:
 
-| Atom | adjacent-only error | all-pairs error |
-| :--- | :------------------ | :-------------- |
-| 6Li | 2.00% | 0.57% |
-| 9Be | 1.91% | 0.70% |
-| 10B | 2.35% | 0.70% |
-| 12C | 2.34% | 0.83% |
-| 14N | 2.44% | 0.81% |
-| 16O | 2.45% | 0.86% |
+See [Table 1](#tbl:mass-endomorphism-jet-tower-table1-data).
 
 Including all pair centres closes the 2–3% heavy-atom bias to
 under 1%, consistent with the categorical derivation.

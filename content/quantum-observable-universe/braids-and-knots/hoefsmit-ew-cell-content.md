@@ -50,16 +50,7 @@ three of these generators act diagonally (no mixing). The
 enumeration shows there are exactly **20 such pure tableaux**,
 distributed across the **eight** sym/alt eigenvalue patterns:
 
-| Pattern $(\sigma_1, \sigma_3, \sigma_5)$ | Multiplicity | Candidate physical meaning |
-|------------------------------------------|-------------:|----------------------------|
-| (sym, sym, sym) | 4 | unbroken EW vacuum (photon-like, $U(1)_{\rm em}$ survivor) |
-| (alt, sym, sym) | 2 | $W^-$ excited (single-flip in W-channel) |
-| (sym, alt, sym) | 1 | $Z^-$ excited |
-| (sym, sym, alt) | 3 | $H^-$ excited |
-| (alt, alt, sym) | 3 | $W^- + Z^-$ (double-flip) |
-| (alt, sym, alt) | 1 | $W^- + H^-$ (double-flip) |
-| (sym, alt, alt) | 2 | $Z^- + H^-$ (double-flip) |
-| (alt, alt, alt) | 4 | fully-broken (all three flipped) |
+See [Table 1](#tbl:hoefsmit-ew-cell-content-table1-data).
 
 (The "$+$"/"$-$" labels mark the sym/alt eigenchannel of each
 $\sigma_i^{2k_i}$. The multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$
@@ -242,10 +233,7 @@ that enforces bar-self-duality.
 
 Numerical comparison at $q_0 = 1.109978595554181\ldots$ (50 dps):
 
-| Quantity | Value at $q_0$ |
-|----------|---------------:|
-| $\mathrm{tr}_{\rm pure}(\sigma_1^4 \sigma_3^6 \sigma_5^8)$ | $\approx 41.69$ |
-| Plancherel-weighted (degenerate) $\mathcal{N}_{\rm sym}$ | $\approx 1.90$ |
+See [Table 2](#tbl:hoefsmit-ew-cell-content-table2-data).
 
 The two differ by a factor of $\sim 22$ at $q_0$ and are
 **inequivalent** as $R$-elements.

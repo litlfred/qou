@@ -26,6 +26,8 @@ export default chapter({
         // Borel's theorem partial-discharges the keystone's
         // sharpness target with explicit Borel-rank dimensions.
         "borel-partial-resolution",
+        "borel-partial-resolution-table2-data",
+        "borel-partial-resolution-table1-data",
         // Depth-2 identification of G^(2) with K_3^ind ⊗ Q via
         // Bloch–Suslin — theorem-level discharge of the keystone
         // at depth 2 over every Bring-natural number field.
@@ -33,6 +35,8 @@ export default chapter({
         // QOU infra (Hecke NF + Bring S_5) potentially discharges
         // Goncharov's conjecture at F = Q(ζ_5) for depth 3.
         "qou-infra-discharges-goncharov-zeta5",
+        "qou-infra-discharges-goncharov-zeta5-table2-data",
+        "qou-infra-discharges-goncharov-zeta5-table1-data",
         // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
         "b1-soft-sharpness-theorem",
         // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
@@ -42,6 +46,8 @@ export default chapter({
         "b1-torus-knot-rows-theorem-table-data",
         // B1 at additional hyperbolic-knot rows (Borromean, Whitehead).
         "b1-hyperbolic-rows-theorem",
+        "b1-hyperbolic-rows-theorem-table2-data",
+        "b1-hyperbolic-rows-theorem-table1-data",
         // Canonical B1 current-status synthesis (rounds 1-11).
         "b1-current-status",
 
@@ -49,6 +55,8 @@ export default chapter({
         "b1-current-status-table2-data",
         "b1-current-status-table3-data",
         "analytic-obstructions",
+        "analytic-obstructions-table2-data",
+        "analytic-obstructions-table1-data",
         "calculus-up-to-epsilon",
         "calculus-up-to-epsilon-table-data",
       ],
@@ -80,6 +88,9 @@ export default chapter({
       blocks: [
         "conway-normal-form",
         "body-asymptotics-catalog",
+        "body-asymptotics-catalog-table3-data",
+        "body-asymptotics-catalog-table2-data",
+        "body-asymptotics-catalog-table1-data",
       ],
     },
     {
@@ -153,6 +164,7 @@ export default chapter({
         // Graded-Mikusiński unification of the bounds.
         "surreal-bounds-graded-mikusinski",
         "millennium-unification",
+        "millennium-unification-table1-data",
       ],
     },
     {

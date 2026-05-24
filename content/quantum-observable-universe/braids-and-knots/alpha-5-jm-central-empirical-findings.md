@@ -17,11 +17,7 @@ $c_5(\lambda) = e_5(\{q_0^{2c(\square)} : \square \in \lambda\})$.
 
 **Numerical results (mpmath, 50-digit precision):**
 
-| $A$ | # ht-6 partitions of $3A$ | $\alpha_5(A)$ raw | $\alpha_5(A)/[3A]_{q_0}!$ |
-|----:|--------------------------:|------------------:|--------------------------:|
-|  2  |  1   | $+5.61 \times 10^{-4}$ | $+6.69 \times 10^{-7}$ |
-|  3  |  3   | $+1.98 \times 10^{0}$  | $+3.34 \times 10^{-6}$ |
-|  4  | 11   | $+1.65 \times 10^{2}$  | $+1.12 \times 10^{-7}$ |
+See [Table 1](#tbl:alpha-5-jm-central-empirical-findings-table1-data).
 
 **Relative spread (normalised):** $\approx 482\%$.
 
@@ -100,16 +96,7 @@ $[3A]_q!$ guess). The relative spread of
 $\langle c_5 \rangle_{\mathrm{ht}=6}(A, q)$ across
 $A \in \{2,3,4\}$ is:
 
-| $q$ | rel spread (partial-Plancherel-avg) |
-|----:|------------------------------------:|
-| $1.001$            |    628% |
-| $q_0 - 0.01$       |   1327% |
-| $q_0$              |   1446% |
-| $q_0 + 0.01$       |   1578% |
-| $1.20$             |   3339% |
-| $1.40$             |  27846% |
-| $1.60$             | 256221% |
-| $\varphi - \epsilon$ | 279730% |
+See [Table 2](#tbl:alpha-5-jm-central-empirical-findings-table2-data).
 
 The spread is **uniformly bad** across the full $|q| \in (1, \varphi)$
 range. There is no $q$ in the physical regime at which the

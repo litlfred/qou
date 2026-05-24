@@ -24,11 +24,7 @@ and per the column-rich SYT analysis of
 [`crystal_pole_order.py`](../../../folio-assistant/computations/crystal_pole_order.py)),
 yielding the lookup table:
 
-| letter `(c, d, gen)` | sym ($\rho_T(\mathrm{gen}) > 0$) | anti ($\rho_T(\mathrm{gen}) < 0$) |
-|---|--:|--:|
-| $\sigma$ (`d = 0`)        | $+2$ | $-2$ |
-| $\sigma^{-1}$ (`d = -h`)  | $-2$ | $+2$ |
-| $\bowtie_K$ (`d = -h/2`)   | $-2$ | $-2$ (leading $u^{-2}$ from $\pm \tfrac{1}{2}(u^2 + u^{-2})$) |
+See [Table 1](#tbl:crystal-bases-path-a-table1-data).
 
 Per-SYT $\mathrm{ord}_{u=0}$ is the *sum* of these per-letter
 contributions over the entire 47-letter ($A=4$ ${}^{4}$He) canonical
@@ -66,15 +62,7 @@ on the SYT basis.
 
 ## Verification
 
-| atom | $(Z, N)$ | $n$ | predicted shift | crystal-Path-A | match |
-|------|--------|-----|---:|---:|:---:|
-| proton    | $(1, 0)$ | 3  | $19$  | $19$  | ✓ |
-| deuteron  | $(1, 1)$ | 6  | $40$  | $40$  | ✓ |
-| tritium   | $(1, 2)$ | 9  | $61$  | $61$  | ✓ |
-| ${}^3\mathrm{He}$ | $(2, 1)$ | 9  | $58$  | $58$  | ✓ |
-| ${}^4\mathrm{He}$ | $(2, 2)$ | 12 | $79$  | $79$  | ✓ |
-| ${}^5\mathrm{Li}$ | $(3, 2)$ | 15 | $97$  | _(deferred to Phase 3)_ | _pending_ |
-| ${}^6\mathrm{Li}$ | $(3, 3)$ | 18 | $118$ | _(deferred to Phase 3)_ | _pending_ |
+See [Table 2](#tbl:crystal-bases-path-a-table2-data).
 
 Witness:
 [`per-irrep-pole-atom-crystal.witness.json`](../../../folio-assistant/computations/per-irrep-pole-atom-crystal.witness.json).
@@ -92,13 +80,7 @@ Per-atom timing (with $y_\lambda$ pole-order cache **already
 built**; per-atom cost is then pure integer arithmetic on the SYT
 basis):
 
-| atom | $n$ | symbolic Path A (existing) | crystal Path A (cache hit) | speedup |
-|------|----:|---------------------------:|---------------------------:|--------:|
-| proton    | 3  | $\sim 1\;\mathrm{s}$              | $0.00\;\mathrm{s}$  | $\gg 100\times$ |
-| deuteron  | 6  | $\sim 5\;\mathrm{min}$             | $0.00\;\mathrm{s}$  | $\gg 30000\times$ |
-| tritium   | 9  | $441\;\mathrm{s}$ (own measurement) | $0.20\;\mathrm{s}$  | $\sim 2200\times$ |
-| ${}^3\mathrm{He}$ | 9 | $\gtrsim 441\;\mathrm{s}$ (n=9 same scale) | $0.18\;\mathrm{s}$ | $\sim 2400\times$ |
-| ${}^4\mathrm{He}$ | 12 | timed out at $> 600\;\mathrm{s}$ via `tr_M_atomic_fast`; per-irrep symbolic projected $\gg 1\;\mathrm{h}$ | $13.7\;\mathrm{s}$ | $> 200\times$ (lower bound) |
+See [Table 3](#tbl:crystal-bases-path-a-table3-data).
 
 The $y_\lambda$ pole-order cache itself takes **~40 minutes** to
 build at $n = 12$ (multi-process across 4 cores; sympy.simplify on

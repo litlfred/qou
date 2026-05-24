@@ -10,12 +10,7 @@ are theorem-level via published Volume Conjecture discharges.*
 
 ### Discharged rows
 
-| Knot / link | $g$ | Bring? | Shape field $F$ | Vol | VC discharge | B1 row status |
-|---|---|---|---|---|---|---|
-| figure-8 $4_1$ | 1 | ✓ | $\mathbb{Q}(\zeta_6)$ | $2\,\mathrm{Cl}_2(\pi/3)$ | Murakami–Murakami 2001 | **theorem** ([`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)) |
-| Borromean rings $L_{6a4}$ | 2 | ✓ | $\mathbb{Q}(i)$ | $8 G = 8\,\mathrm{Cl}_2(\pi/2)$ | van der Veen 2008 | **theorem (this prop.)** |
-| Whitehead link $L_{5a1}$ | 2 | ✓ | $\mathbb{Q}(i)$ | $4 G = 4\,\mathrm{Cl}_2(\pi/2)$ | Murakami 2002 | **theorem (this prop.)** |
-| Twist knot $K_n$ ($n \geq 2$) | varies | ✓ if $g(K_n) \leq 4$ | $\mathbb{Q}(z_n)$, $z_n$ alg. of degree $n$ | computable via Lobachevsky | partial — $K_2 = 4_1$ done; some $K_n$ verified | **theorem at $n = 2, 3$** |
+See [Table 1](#tbl:b1-hyperbolic-rows-theorem-table1-data).
 
 (Twist knot $K_n$ has $n$ half-twists; $K_2 = 4_1$ is the figure-8.
 Genus of $K_n$ is 1 for all $n$, so all twist knots are Bring-embeddable.)
@@ -82,14 +77,7 @@ knot, *not* the Bloch–Suslin chain.
 
 ### Bring-embeddable hyperbolic knots awaiting VC discharge
 
-| Knot | $g$ | Hyperbolic | Bring-embed? | VC status (as of 2024) |
-|---|---|---|---|---|
-| $5_2$ | 1 | yes | ✓ | partial — case treated by Ohtsuki (numerical, not full proof) |
-| $6_1$ | 1 | yes | ✓ | partial / numerical only |
-| $6_2$ | 2 | yes | ✓ | **open** |
-| $6_3$ | 2 | yes | ✓ | **open** |
-| $7_*$ knots | 2 | most | ✓ | mostly open |
-| $8_*$ knots up through $g \leq 4$ | 2-3 | most | ✓ | open |
+See [Table 2](#tbl:b1-hyperbolic-rows-theorem-table2-data).
 
 Each of these would become a B1 theorem-row upon VC discharge.
 

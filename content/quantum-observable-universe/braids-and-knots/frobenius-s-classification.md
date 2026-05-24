@@ -5,25 +5,12 @@ in the Wedderburn mass formula
 ([Wedderburn mass formula](#thm:wedderburn-mass-formula)) carry
 exactly the following $S$-eigenvalues:*
 
-| Functional | Definition | $S$-eigenvalue |
-|:---:|:---:|:---:|
-| $\Phi_1 = \sum_i \log\lvert z\,a_i + b_i\rvert$ | Markov-weighted std-trace | $+1$ (after Frobenius averaging) |
-| $\Phi_2 = \sum_i \log\lvert\det M_i\rvert$ | sym$\times$alt determinant | $+1$ |
-| $\Phi_3 = \sum_i \log\lvert\chi^{\mathrm{sym}}_i / \chi^{\mathrm{alt}}_i\rvert$ | chirality | $-1$ |
+See [Table 1](#tbl:frobenius-s-classification-table1-data).
 
 *Together with the $S$-classification of every coefficient in the
 formula:*
 
-| Symbol | Definition | $S$-eigenvalue |
-|:---:|:---:|:---:|
-| $W_{\mathrm{sym}} = W_{\mathrm{alt}} = q^2/D$ | Wedderburn weight | $+1$ |
-| $W_{\mathrm{std}} = (q^2{+}1)^2/D$ | Wedderburn weight | $+1$ |
-| $D = q^4 + 4q^2 + 1$ | denominator (palindromic in $q^2$) | $+1$ |
-| $[3]_q = q^2 + 1 + q^{-2}$ | quantum 3-integer | $+1$ |
-| $H_A = q - q^{-1}$ | Hecke parameter | $-1$ |
-| $H_A^2$ | even power | $+1$ |
-| $z = (q^{1/2} + q^{-1/2})^{-1}$ | std normalisation | $+1$ |
-| $G$, $\mathrm{Vol}(\mathcal{B}_3) = 8G$, $m_e$, $\alpha = m_e \cdot 8G$ | scalars and volumes | $+1$ |
+See [Table 2](#tbl:frobenius-s-classification-table2-data).
 
 *Term by term, the binding correction
 $\alpha\bigl(\Phi_1 - 2[3]_q\,\Phi_2 + H_A^2\,\Phi_3\bigr)$
@@ -71,11 +58,7 @@ with $\det T = d(cH_A + d) - c^2$.  The Frobenius antipode
 maps the primitive factor $(c, d)$ to $(c, d - cH_A)$ (this swaps
 $\sigma \leftrightarrow \sigma^{-1}$).  Direct computation:
 
-| primitive | $(c, d)$ | $S(c, d)$ | $\det T(c, d)$ | $\det T(S(c, d))$ |
-|:---:|:---:|:---:|:---:|:---:|
-| uu | $(1, 0)$ | $(1, -H_A)$ | $-1$ | $-1$ |
-| dd | $(1, -H_A)$ | $(1, 0)$ | $-1$ | $-1$ |
-| ud | $(1, -H_A/2)$ | $(1, -H_A/2)$ | $-(H_A^2/4 + 1)$ | $-(H_A^2/4 + 1)$ |
+See [Table 3](#tbl:frobenius-s-classification-table3-data).
 
 For each primitive the determinant is $S$-invariant.  Since
 $\det$ is multiplicative on chain products, $\Phi_2 = \sum_i

@@ -11,16 +11,7 @@ image = charge conjugation.
 
 **Fundamental particles.**
 
-| $\mathfrak{K}$ | Knot | Alexander–Briggs | Particle ($+$) | Antiparticle ($-$) |
-|:-:|------|:-:|:-:|:-:|
-| $\mathfrak{K}_\gamma$ | $\varnothing$ (empty) | — | photon $\gamma$ | (self) |
-| $\mathfrak{K}_\nu$ | unknot $0_1$ | $0_1$ | neutrino $\nu$ | $\nu^{\sigma}$ |
-| $\mathfrak{K}_g$ | Hopf link | $L2a1$ | gluon | (self) |
-| $\mathfrak{K}_e$ | trefoil | $3_1$ | $e^-$ | $e^+$ |
-| $\mathfrak{K}_\mu$ | cinquefoil | $5_1$ | $\mu^-$ | $\mu^+$ |
-| $\mathfrak{K}_\tau$ | septafoil | $7_1$ | $\tau^-$ | $\tau^+$ |
-| $\mathfrak{K}_c$ | $(2,7)$-torus knot | $7_1$ | charm $c$ | $c^{\sigma}$ |
-| $\mathfrak{K}_H$ | figure-eight | $4_1$ | Higgs $H$ | (self) |
+See [Table 1](#tbl:knot-notation-convention-table1-data).
 
 The sign convention: $\mathfrak{K}_e^- = T_{2,3}$ (left trefoil =
 electron), $\mathfrak{K}_e^+ = T_{2,3}^{\sigma}$ (right trefoil =
@@ -41,10 +32,7 @@ T_{m,-n}$.
 
 **Links.**
 
-| Symbol | Link |
-|--------|------|
-| $\mathcal{L}_H$ | Hopf link |
-| $\mathcal{B}_n$ | Borromean $n$-component link |
+See [Table 2](#tbl:knot-notation-convention-table2-data).
 
 **Composites.**
 The connected sum of knots is $\mathfrak{K}_1 \mathbin{\#} \mathfrak{K}_2$.  A hadron ([hadron](#def:hadron)) is written

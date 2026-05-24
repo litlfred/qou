@@ -71,10 +71,7 @@ $$
   1.2779\;\mathrm{MeV}.
 $$
 
-| form | expression | value (MeV) | vs $\Delta m_{\mathfrak{p}}$ |
-|---|---|---|---|
-| $q$-deformed (Frobenius) | $m_e \cdot \mathrm{tr}_M(C_{\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$ | $1.2761$ | $-0.14\%$ |
-| classical ($q \to 1$ limit) | $m_e \cdot \sum 1/d_\lambda = (5/2) m_e$ | $1.2775$ | $-0.03\%$ |
+See [Table 1](#tbl:partition-sum-proton-residual-table1-data).
 
 *Both match to $< 0.15\%$.  The $q$-deformed form is the
 **structural** answer (derived above); classical is its $q=1$
@@ -92,11 +89,7 @@ $1.2761$ MeV and the observed $1.2779$ MeV may come from:*
 decomposes $\sum_\lambda 1/\dim_q(\lambda)$ by confinement
 filtration level $\ell(\lambda) = \mathrm{height}(\lambda) - 1$:*
 
-| $\ell$ | partitions | conjugate pair? | contribution |
-|---|---|---|---|
-| $0$ | $(3)$ | $\leftrightarrow (1,1,1)$ | $1$ |
-| $1$ | $(2,1)$ | self-conjugate | $1/[2]_q$ |
-| $2$ | $(1,1,1)$ | $\leftrightarrow (3)$ | $1$ |
+See [Table 2](#tbl:partition-sum-proton-residual-table2-data).
 
 *The **self-dual structure** is explicit: levels $\ell = 0$ and
 $\ell = n-1$ are conjugate via Young-diagram transpose; their
@@ -114,12 +107,7 @@ $q$-dependence.  For general $n$ the pattern generalises:*
 
 **Higher-$n$ values (witness).**
 
-| $n$ | $\sum 1/\dim_q(\lambda)$ at $q_0$ | classical $\sum 1/d_\lambda$ |
-|---|---|---|
-| $3$ | $2.4973$ | $5/2 = 2.5$ |
-| $4$ | $3.1464$ | $19/6 \approx 3.167$ |
-| $5$ | $3.0305$ | $46/15 \approx 3.067$ |
-| $6$ | $3.2021$ | $473/144 \approx 3.285$ |
+See [Table 3](#tbl:partition-sum-proton-residual-table3-data).
 
 *These are tracked by the GB-filtration decomposition; the
 self-dual pattern (top+bottom levels = $1 + 1$, plus middle
@@ -127,15 +115,7 @@ $q$-dependent) holds for all $n$.*
 
 **Numerical witness at $q_0 \approx 1.11$.**
 
-| quantity | value |
-|---|---|
-| $\mathfrak{m}^{\mathrm{tower, raw}}_{\mathfrak{p}}$ | $955.49\;\mathrm{MeV}$ |
-| $/(1 + [2]_q \hbar_q^2)$ corrected | $936.994\;\mathrm{MeV}$ |
-| $m_{\mathfrak{p}}^{\mathrm{CODATA}}$ | $938.272\;\mathrm{MeV}$ |
-| residual $\Delta m_{\mathfrak{p}}$ | $+1.278\;\mathrm{MeV}$ |
-| $\Delta m_{\mathfrak{p}} / m_e$ | $+2.5009$ |
-| $\frac{5}{2}$ (predicted) | $+2.5000$ |
-| ratio | $1.00036$ (sub-0.04%) |
+See [Table 4](#tbl:partition-sum-proton-residual-table4-data).
 
 **Algebraic origin hypothesis.**
 *The quantity $\sum_\lambda 1/d_\lambda$ is the
@@ -189,10 +169,7 @@ $\sim 2.3$.*
 $^2$H binding gap $B_{\mathrm{AME}} - B_{\mathrm{pred}} = 1.2293\;\mathrm{MeV}$
 and asked whether the $5/2$ admits a meaningful $q$-deformation:*
 
-| probe | best candidate | residual vs gap |
-|---|---|---|
-| Deuteron gap (`deuteron_residual_probe.py`) | $(5/2) \cdot m_e$ at $n = 3$ | $+3.92\%$ |
-| $q$-variants (`q-variant-partition-sum`) | classical $5/2$ vs $q$-analogue $2 + 1/[2]_q$ | within $0.1\%$ of each other |
+See [Table 5](#tbl:partition-sum-proton-residual-table5-data).
 
 *Two structural readings emerge:*
 

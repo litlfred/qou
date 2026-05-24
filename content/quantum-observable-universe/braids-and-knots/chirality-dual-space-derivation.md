@@ -27,11 +27,7 @@ $$
 ([three-parameters Wedderburn](#prop:three-parameters-wedderburn)).
 Its trace on each Wedderburn block is:*
 
-| channel | $\dim$ | $\tau(\sigma)$ | $\tau(\sigma^{-1})$ |
-|---|---|---|---|
-| $V_{(3)}$ symmetric | $1$ | $q$ | $q^{-1}$ |
-| $V_{(2,1)}$ standard | $2$ | $q - q^{-1} = h$ | $-h$ |
-| $V_{(1,1,1)}$ alternating | $1$ | $-q^{-1}$ | $-q$ |
+See [Table 1](#tbl:chirality-dual-space-derivation-table1-data).
 
 *The "chirality content" of a single positive crossing $\sigma$ is
 the symmetric-channel deviation*
@@ -60,11 +56,7 @@ formula.*
 
 *All three paper values follow directly from the per-crossing rule:*
 
-| isotope | pn crossing pattern | $a_K$ derivation | result |
-|---|---|---|---|
-| D | $1$ positive | $(1 + h)^1$ | $1 + h \approx 1.209$ (best) |
-| T, $^3$He | $1+, 1-$ (amphichiral) | $(1+h)(1-h)$ | $1 - h^2 \approx 0.956$ (best) |
-| $^4$He | $2+, 2-$ (Borromean${}^2$) | $(1+h)^2(1-h)^2$ | $(1 - h^2)^2 \approx 0.914$ (best) |
+See [Table 2](#tbl:chirality-dual-space-derivation-table2-data).
 
 *Symbolic verification: the per-crossing product $\prod_{pn}(1 + \mathrm{sign}\cdot h)$
 **exactly equals** paper's
@@ -131,14 +123,7 @@ channel is sufficient.*
 
 **Coverage.** With Term 5 derived, all six terms of the unified mass formula are algebraically derived using the existing machinery:
 
-| term | derivation source |
-|---|---|
-| 1 | descended Markov trace ([categorical-mass-markov](#prop:categorical-mass-markov)) |
-| 2 | Wedderburn-weighted brane tower ([mass-endomorphism-tower](#prop:mass-endomorphism-tower)) |
-| 3 | same + Markov factorisation |
-| 4 | Frobenius co-Casimir ([Frobenius universal](#thm:frobenius-codim-universal), Lean-proved) |
-| 5 | per-crossing $(1 \pm h)$ via symmetric-channel duality (this proposition) |
-| 6 | cyclotomic residue sum ([GB residue spectral sum](#prop:gb-residue-spectral-sum)) |
+See [Table 3](#tbl:chirality-dual-space-derivation-table3-data).
 
 *Six of six. Computation infrastructure complete (scripts +
 witness files for all terms in `folio-assistant/computations/`).

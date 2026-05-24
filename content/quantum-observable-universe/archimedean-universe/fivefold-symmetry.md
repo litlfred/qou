@@ -25,13 +25,7 @@ cannot have $5$-fold rotational symmetry.  This is why:
 The forces compatible with periodic structure are exactly those
 with symmetry orders in $\{1, 2, 3, 4, 6\}$:
 
-| Order | Compatible with lattice? | QOU structure |
-|:-----:|:---:|:---:|
-| $2$ | Yes | $\mathbb{Z}/2$ crossing sign ($q \leftrightarrow q^{-1}$) |
-| $3$ | Yes | Borromean $\mathcal{B}_3$ (color $\mathrm{SU}(3)$) |
-| $4$ | Yes | Genus $g = 4$ of the Bring surface |
-| $5$ | **No** | $S_5$ automorphism, $T_{3,5}$ weak vertex |
-| $6$ | Yes | $\chi = -6$ (Euler characteristic) |
+See [Table 1](#tbl:fivefold-symmetry-table1-data).
 
 The $5$-fold symmetry of the Bring surface is **the unique
 symmetry that breaks periodicity**.  It is carried by $T_{3,5}$,
@@ -151,15 +145,7 @@ This means:
 
 The $5$-fold symmetry appears at every scale:
 
-| Scale | $5$-fold manifestation | Mathematical home |
-|:---:|:---:|:---:|
-| Substrate | $5$ sheets of $\Sigma_4$ | Bring curve $S_5$ |
-| Particles | $6$ embeddable torus knots | Genus $4$ embedding |
-| Quarks $\to$ leptons | $T_{3,5}$ weak vertex | Cross-family mediator |
-| Nuclear shells | $5$ orbital channels ($\ell = 0$–$4$) | Standard rep of $H_3(q)$, phase $153.6°$ |
-| Shell dynamics | $[A\!-\!1]_q! > [2]_q^{A-1}$ at $A = 5$ | Finiteness bound |
-| Information | $P_{7,6}(q)$ zero at $q = 1/\varphi^2$ | Golden ratio phase transition |
-| Macroscopic | Quasicrystals, icosahedral viruses | Crystallographic obstruction |
+See [Table 2](#tbl:fivefold-symmetry-table2-data).
 
 The $3$-fold symmetry (Borromean, color, lattice-compatible)
 and $5$-fold symmetry (aperiodic, weak, parity-violating) are

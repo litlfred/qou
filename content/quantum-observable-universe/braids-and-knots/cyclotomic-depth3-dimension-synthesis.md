@@ -150,25 +150,14 @@ $$
 [`cyclotomic_depth3_dimension_pslq.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cyclotomic_depth3_dimension_pslq.py),
 [witness](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cyclotomic-depth3-dimension-pslq.witness.json):
 
-| $K$ | predicted $(K - 3)/2$ | PSLQ-certified saturated? | Coefficient norm bound |
-|---|---|---|---|
-| 5 | 1 | ✓ (reproduces PR #634 round 12 result) | $10^8$ |
-| 7 | 2 | ✓ (two antisymmetric generators $Y_1$, $Y_2$ mutually independent and independent of $\{\zeta(3), \pi^3\}$) | $10^8$ |
+See [Table 1](#tbl:cyclotomic-depth3-dimension-synthesis-table1-data).
 
 The $K = 7$ certificate verifies the dimension prediction one prime
 beyond the Bring-natural $K = 5$ case.
 
 ### Predictions at higher primes
 
-| Prime $K$ | $(K - 3)/2$ | Conditional dimension |
-|---|---|---|
-| 5 | 1 | ✓ |
-| 7 | 2 | ✓ (PSLQ) |
-| 11 | 4 | (untested) |
-| 13 | 5 | (untested) |
-| 17 | 7 | (untested) |
-| 19 | 8 | (untested) |
-| 23 | 10 | (untested) |
+See [Table 2](#tbl:cyclotomic-depth3-dimension-synthesis-table2-data).
 
 Extending the PSLQ certificate to $K \geq 11$ is straightforward (the
 same script works); each test takes ~30 seconds at 50 dps.

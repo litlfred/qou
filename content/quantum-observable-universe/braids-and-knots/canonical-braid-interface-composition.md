@@ -6,11 +6,7 @@ The* $A - 1$ *inter-nucleon interface generators
 $\sigma_{3k + 2}$ ($k = 0, \ldots, A - 2$) are classified by the
 flavour pair $(\text{nuc}_k, \text{nuc}_{k+1})$ they bridge:*
 
-| pair $(\mathrm{nuc}_k, \mathrm{nuc}_{k+1})$ | Hecke generator | content $(c, d)$ |
-|---|---|---|
-| $(\mathfrak{p}, \mathfrak{p})$ | $\sigma$ | $(1, 0)$ |
-| $(\mathfrak{p}, \mathfrak{n})$ or $(\mathfrak{n}, \mathfrak{p})$ | $\bowtie_K = \sigma - h/2$ | $(1, -h/2)$ |
-| $(\mathfrak{n}, \mathfrak{n})$ | $\sigma^{-1}$ | $(1, -h)$ |
+See [Table 1](#tbl:canonical-braid-interface-composition-table1-data).
 
 *The interface composition $(n_{pp}(Z, N), n_{pn}(Z, N), n_{nn}(Z, N))$
 counts these three types. Under canonical pppnnn ordering, closed
@@ -28,17 +24,7 @@ $$
 
 ### Empirical table
 
-| atom | $(Z, N)$ | $A$ | $n_{pp}$ | $n_{pn}$ | $n_{nn}$ | total |
-|---|---|---:|---:|---:|---:|---:|
-| D | $(1, 1)$ | 2 | 0 | 1 | 0 | 1 |
-| T | $(1, 2)$ | 3 | 0 | 1 | 1 | 2 |
-| ${}^3\mathrm{He}$ | $(2, 1)$ | 3 | 1 | 1 | 0 | 2 |
-| ${}^4\mathrm{He}$ | $(2, 2)$ | 4 | 1 | 2 | 1 | 4 |
-| ${}^5\mathrm{Li}$ | $(3, 2)$ | 5 | 2 | 1 | 1 | 4 |
-| ${}^6\mathrm{He}$ | $(2, 4)$ | 6 | 1 | 1 | 3 | 5 |
-| ${}^6\mathrm{Li}$ | $(3, 3)$ | 6 | 2 | 1 | 2 | 5 |
-| ${}^6\mathrm{Be}$ | $(4, 2)$ | 6 | 3 | 1 | 1 | 5 |
-| ${}^{16}\mathrm{O}$ | $(8, 8)$ | 16 | 7 | 1 | 7 | 15 |
+See [Table 2](#tbl:canonical-braid-interface-composition-table2-data).
 
 ### Z$\leftrightarrow$N asymmetry and ordering dependence
 
@@ -47,11 +33,7 @@ encode Z$\leftrightarrow$N asymmetry directly. **Alternative orderings** (e.g.\
 alternating pnpnpn) would produce different interface compositions
 for the same atom — at $(Z=2, N=2)$ ${}^{4}$He:
 
-| ordering | $n_{pp}$ | $n_{pn}$ | $n_{nn}$ |
-|---|---:|---:|---:|
-| pppnnn (canonical) | 1 | 2 | 1 |
-| pnpn (alternating) | 0 | 3 | 0 |
-| ppnn (paired) | 1 | 1 | 1 |
+See [Table 3](#tbl:canonical-braid-interface-composition-table3-data).
 
 The canonical pppnnn ordering is fixed by
 [`atom_braid_word_3A`](../../folio-assistant/computations/mass_at_3A_proper.py);

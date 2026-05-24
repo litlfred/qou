@@ -48,6 +48,9 @@ export default chapter({
       label: "sec:tm-interactions",
       blocks: [
         "tm-interactions",
+        "tm-interactions-table3-data",
+        "tm-interactions-table2-data",
+        "tm-interactions-table1-data",
         "tm-interaction-completeness",
         "tm-interaction-completeness-table-data",
       ],
@@ -57,6 +60,16 @@ export default chapter({
       label: "sec:tm-worked-examples",
       blocks: [
         "tm-worked-examples",
+        "tm-worked-examples-table10-data",
+        "tm-worked-examples-table9-data",
+        "tm-worked-examples-table8-data",
+        "tm-worked-examples-table7-data",
+        "tm-worked-examples-table6-data",
+        "tm-worked-examples-table5-data",
+        "tm-worked-examples-table4-data",
+        "tm-worked-examples-table3-data",
+        "tm-worked-examples-table2-data",
+        "tm-worked-examples-table1-data",
       ],
     }),
     section({

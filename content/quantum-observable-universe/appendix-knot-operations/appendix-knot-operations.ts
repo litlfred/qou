@@ -25,6 +25,8 @@ export default chapter({
       label: "sec:hecke-operations",
       blocks: [
         "hecke-operations",
+        "hecke-operations-table2-data",
+        "hecke-operations-table1-data",
       ],
     }),
     section({

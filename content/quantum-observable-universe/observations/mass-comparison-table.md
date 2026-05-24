@@ -17,11 +17,7 @@ $$
 
 *Leptons (from Skein volume).*
 
-| Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
-|----------|-------------|-------------|-----------|----------------|--------|
-| $\nu$ | $T_{1,0}$ | $\mathrm{Vol}(0_1)/\hbar_q^2 = 0$ | $0$ | $< 0.8 \times 10^{-6}$ | KATRIN |
-| $e^-$ | $T_{2,3}$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) / 3$ (input) | $0.511$ | $0.51100$ | CODATA |
-| $\mu^-$ | $(T_{2,3} \oplus T_{2,3})^{\sigma}$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
+See [Table 1](#tbl:mass-comparison-table-table1-data).
 
 The electron mass is an input (it fixes $\mu_{\mathfrak{u}}$ through the pair
 Skein mass).  The muon mass is the first *prediction* — it equals
@@ -47,13 +43,7 @@ The $n$–$p$ splitting is a *consequence* of the FULL Q_β chain
 ($Q_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
 panel after this table.
 
-| Particle | Knot formula | LO output (MeV) | Observed (MeV) | Source |
-|----------|-------------|---:|---:|--------|
-| Proton | $[u,u,d]_p \oplus \mathcal{L}_H$ | $938.272$ † | $938.272$ | CODATA |
-| Neutron | $[u,d,d]_p \oplus \mathcal{L}_H$ | $939.565$ † | $939.565$ | CODATA |
-| $n$-$p$ split | | $1.293$ † | $1.293$ | CODATA |
-| $\pi^{\pm}$ | $u \oplus d^{\sigma}$ | $139.570$ | $139.570$ | PDG |
-| $K^{\pm}$ | $u \oplus s^{\sigma}$ | $493.677$ | $493.677$ | PDG |
+See [Table 2](#tbl:mass-comparison-table-table2-data).
 
 † **Tautological under the LO chain.** The proton, neutron, and
 $n$-$p$ split rows read back the CODATA inputs because the LO
@@ -101,12 +91,7 @@ prediction wired today; binding-energy predictions await closure
 of the open Δ_λ research question per
 [recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).
 
-| Nucleus | Knot formula | LO output (MeV) | Observed (MeV) | $\Delta$ = CODATA binding | Source |
-|---------|-------------|---:|---:|---:|--------|
-| Deuteron | $\mathfrak{p} \oplus \mathfrak{n}$ | $1877.838$ † | $1875.613$ | $-2.225$ MeV | CODATA |
-| Tritium | $\mathfrak{p} \oplus 2\mathfrak{n}$ | $2817.403$ † | $2808.921$ | $-8.482$ MeV | AME2020 |
-| ${}^3\mathrm{He}$ | $2\mathfrak{p} \oplus \mathfrak{n}$ | $2816.110$ † | $2808.392$ | $-7.718$ MeV | AME2020 |
-| ${}^4\mathrm{He}$ | $2\mathfrak{p} \oplus 2\mathfrak{n}$ | $3755.675$ † | $3727.379$ | $-28.296$ MeV | AME2020 |
+See [Table 3](#tbl:mass-comparison-table-table3-data).
 
 † **LO output is constituent sum only.** Genuine FULL prediction
 not yet wired (see Workplan 0b §FULL chain status). Witness:
@@ -144,15 +129,7 @@ available ("matched" = lookup succeeded, NOT a prediction test).
 The certificate fields encode crossing structure (combinatorial
 data), not mass directly:
 
-| Isotope | $Z$ | $N$ | $A$ | $B/A$ (AME2020) | $F_{\mathrm{Pauli}}$ | $\ln\lvert P\rvert$ |
-|:--------|----:|----:|----:|----------------:|---------------------:|--------------------:|
-| ${}^2\mathrm{H}$ | 1 | 1 | 2 | 1.1121 | 1.005 | 0.051 |
-| ${}^3\mathrm{H}$ | 1 | 2 | 3 | 2.8273 | 0.900 | $-0.684$ |
-| ${}^3\mathrm{He}$ | 2 | 1 | 3 | 2.5727 | 0.746 | $-0.436$ |
-| ${}^4\mathrm{He}$ | 2 | 2 | 4 | 7.0739 | 1.114 | $-0.574$ |
-| ${}^{12}\mathrm{C}$ | 6 | 6 | 12 | 7.6801 | 1.496 | $-3.860$ |
-| ${}^{14}\mathrm{N}$ | 7 | 7 | 14 | 7.4756 | 0.849 | $-5.343$ |
-| ${}^{16}\mathrm{O}$ | 8 | 8 | 16 | 7.9762 | 2.639 | $-5.275$ |
+See [Table 4](#tbl:mass-comparison-table-table4-data).
 
 The $F_{\mathrm{Pauli}}$ factor is $O(1)$ for all isotopes and
 encodes the Pauli exclusion statistical weight. The $\ln|P|$ column

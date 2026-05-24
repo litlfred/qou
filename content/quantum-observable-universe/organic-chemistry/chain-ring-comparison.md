@@ -61,23 +61,11 @@ $$
 
 **Experimental data.**
 
-| Quantity | Experimental value | Source |
-|----------|-------------------:|--------|
-| C–C single bond energy | $346 \mathrm{kJ/mol}$ | Standard thermochemistry |
-| Benzene resonance stabilisation | $150 \mathrm{kJ/mol}$ | Hydrogenation calorimetry |
-| $\mathrm{C}_6$ chain $\to$ ring barrier (gas phase) | $\sim 200\text{--}400 \mathrm{kJ/mol}$ | Ab initio (CCSD(T)) |
-| Bergman cyclisation (enediyne $\to$ ring) | $\sim 120\text{--}170 \mathrm{kJ/mol}$ | Experimental kinetics |
+See [Table 1](#tbl:chain-ring-comparison-table1-data).
 
 **Comparison.**
 
-| Prediction | QOU (threading) | Experiment | Match |
-|------------|---:|---:|:---:|
-| Ring-closure barrier | 193–386 kJ/mol | 200–400 kJ/mol | yes |
-| Barrier origin | topological (Alexander weight) | kinetic | yes |
-| Ring super-stability | threading lock | observed | yes |
-| Bond order equalisation | automatic ($T(2,6)$ symmetry) | equal C–C bonds | yes |
-| $\pi$ electrons = 2 | $\gcd(2,6) = 2$ components | 2 delocalised $\pi$ $e^-$ | yes |
-| Resonance energy | $\propto 6 - \Delta_{T(2,6)} \approx 3$ units | 150 kJ/mol | yes (order) |
+See [Table 2](#tbl:chain-ring-comparison-table2-data).
 
 **The factor of $1/2$.**
 The pairwise Hopf link picture
@@ -95,12 +83,7 @@ barriers for even-$N$ cyclic molecules (where $T(2,N)$ is a
 2-component link and the Alexander formula
 $\Delta_{T(2,2m)}(q) = (q^m - q^{-m})/(q - q^{-1})$ applies):
 
-| Ring | $N$ | $\Delta_{T(2,N)}(q \approx 1)$ | Chain weight | $\Delta E / \lvert q+q^{-1}\rvert_{\mathrm{mol}}$ |
-|------|:---:|---:|:---:|---:|
-| Cyclobutadiene | 4 | 2 | 3 | 1 |
-| **Benzene** | **6** | **3** | **5** | **2** |
-| Cyclooctatetraene | 8 | 4 | 7 | 3 |
-| Cyclodecane | 10 | 5 | 9 | 4 |
+See [Table 3](#tbl:chain-ring-comparison-table3-data).
 
 For odd $N$, the threading link $T(2,N)$ is a knot (1 component),
 and the Alexander polynomial takes a different form — the

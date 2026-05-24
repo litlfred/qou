@@ -39,14 +39,7 @@ shape parameter $z_K \in \overline{\mathbb{Q}}^\times$ generating
 a number field $F_K = \mathbb{Q}(z_K)$. The Borel rank gives the
 *minimum* dimension of the Beilinson regulator image at depth $n$.
 
-| $K$ | $z_K$ | $F_K$ | $[F_K : \mathbb{Q}]$ | $(r_1, r_2)$ | $\dim K_3^{\mathrm{ind}}\otimes\mathbb{Q}$ (depth 2) | $\dim K_5^{\mathrm{ind}}\otimes\mathbb{Q}$ (depth 3) |
-|---|---|---|---|---|---|---|
-| $4_1$ (figure-8) | $\zeta_6 = e^{i\pi/3}$ | $\mathbb{Q}(\zeta_6) = \mathbb{Q}(\sqrt{-3})$ | 2 | $(0, 1)$ | $0 + 1 = 1$ | $1$ |
-| Bring trilog | $\zeta_5$ | $\mathbb{Q}(\zeta_5)$ | 4 | $(0, 2)$ | $0 + 2 = 2$ | $2$ |
-| Borromean $L_{6a4}$ | $\zeta_4 = i$ | $\mathbb{Q}(i)$ | 2 | $(0, 1)$ | $1$ | $1$ |
-| Whitehead | $\zeta_4 = i$ | $\mathbb{Q}(i)$ | 2 | $(0, 1)$ | $1$ | $1$ |
-| trefoil $3_1 = T(2,3)$ | (degenerate, not hyperbolic) | $\mathbb{Q}(\zeta_6)$ ambient | 2 | $(0, 1)$ | $1$ | $1$ (CS-class) |
-| Bring quintic root | root of $x^5 - 5x - 1$ | totally real degree-5 | 5 | $(5, 0)$ | $5 + 0 = 5$ | $0$ |
+See [Table 1](#tbl:borel-partial-resolution-table1-data).
 
 (The last row uses the *totally real* Bring-radical field rather
 than $\mathbb{Q}(\zeta_5)$; Borel ranks differ since the signature
@@ -97,13 +90,7 @@ over $\mathbb{Q}(\zeta_5)$ is generated is **Beilinson's conjecture**
 
 ### Status of B1 by row
 
-| Row | Inclusion | Sharpness ($\dim$ achieves Borel) | Generation ($\mathcal{P}_n/\mathcal{P}_{n-1}$) |
-|---|---|---|---|
-| Depth 1 (any $F$) | ✓ theorem | ✓ Borel | ✓ Baker–Wüstholz |
-| Depth 2, $\mathbb{Q}(\zeta_6)$ | ✓ theorem (Bloch–Suslin) | ✓ Borel + Suslin injectivity | ✓ |
-| Depth 2, generic $F$ | ✓ theorem | ✓ Borel | conjecturally (open in some cases) |
-| Depth 3, $\mathbb{Q}(\zeta_5)$ | conjectural | ✓ Borel (rank $\ge$ 2) | **Beilinson conjecture** |
-| Depth $\geq 4$ | conjectural | ✓ Borel | Beilinson conjecture |
+See [Table 2](#tbl:borel-partial-resolution-table2-data).
 
 ### Honest summary
 

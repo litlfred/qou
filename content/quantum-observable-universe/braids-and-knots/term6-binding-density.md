@@ -39,12 +39,7 @@ $(i, j, k)$, and $z$ is the Markov parameter
 By [thm:markov-trace-factorization](#thm:markov-trace-factorization),
 the $9$-strand Markov trace decomposes by triple-type:
 
-| triple type | multiplicity | sub-braid trace |
-|---|---|---|
-| ppp | $\binom{Z}{3}$ | $\mathrm{tr}_M(\xi_{\mathrm{ppp}})$ |
-| ppn | $\binom{Z}{2} N$ | $\mathrm{tr}_M(\xi_{\mathrm{ppn}})$ |
-| pnn | $Z\binom{N}{2}$ | $\mathrm{tr}_M(\xi_{\mathrm{pnn}})$ |
-| nnn | $\binom{N}{3}$ | $\mathrm{tr}_M(\xi_{\mathrm{nnn}})$ |
+See [Table 1](#tbl:term6-binding-density-table1-data).
 
 so $T_6$ is computed with four atom-independent traces
 (one per triple-type) plus the four binomial coefficients.
@@ -101,15 +96,7 @@ $$
 
 Per-atom residuals (B/A AME minus prediction):
 
-| atom | residual (MeV) | comment |
-|------|---------------:|---------|
-| 4He | $+2.62$ | magic outlier |
-| 3He | $-0.58$ | small atom |
-| 3H | $-0.76$ | small atom |
-| 16O | $+0.11$ | doubly-magic, on trend |
-| 32S | $+0.005$ | near-exact |
-| 40Ca | $-0.07$ | doubly-magic, on trend |
-| 56Ni | $-0.12$ | doubly-magic, on trend |
+See [Table 2](#tbl:term6-binding-density-table2-data).
 
 Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Term6-scaling-heavy.witness.json).
 

@@ -23,14 +23,7 @@ $$
 
 ### Verified atoms
 
-| (Z, N) | atom | shift (closed form) | shift (markov_peel) |
-|---|---|---:|---:|
-| (1, 1) | D | 40 | 40 ✓ |
-| (1, 2) | T | 61 | 61 ✓ |
-| (2, 1) | ${}^{3}$He | 58 | 58 ✓ |
-| (2, 2) | ${}^{4}$He | 79 | 79 ✓ |
-| (3, 2) | ${}^{5}$Li | 97 | 97 ✓ |
-| (3, 3) | ${}^{6}$Li | 118 | 118 ✓ |
+See [Table 1](#tbl:per-nucleon-shift-additive-linearity-table1-data).
 
 (Witness: [`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json),
 5/5 assertions pass.  Cross-validated against
@@ -41,10 +34,7 @@ $$
 The additive linearity is structural: each new nucleon adds exactly
 12 generators to the canonical-ordered braid in $H_{3A}(q)$:
 
-| | $\Delta\sigma$ | $\Delta\sigma^{-1}$ | $\Delta\mathrm{avg}$ | $\Delta\mathrm{total}$ | $\Delta\mathrm{shift}$ |
-|---|---:|---:|---:|---:|---:|
-| +proton | $+7$ | $+3$ | $+2$ | $+12$ | $+18$ |
-| +neutron | $+5$ | $+5$ | $+2$ | $+12$ | $+21$ |
+See [Table 2](#tbl:per-nucleon-shift-additive-linearity-table2-data).
 
 (11 from the nucleon's intrinsic structure
 + 1 from its incoming interface generator

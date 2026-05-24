@@ -59,15 +59,7 @@ $$
 The $\varepsilon^k$ coefficients $\binom{-1/2}{k-1}$ for $k \geq 1$
 are:
 
-| $k$ | coefficient | $\binom{-1/2}{k-1}$ |
-|---:|---:|---|
-| 1 | $1$ | $\binom{-1/2}{0}$ |
-| 2 | $-1/2$ | $\binom{-1/2}{1}$ |
-| 3 | $3/8$ | $\binom{-1/2}{2}$ |
-| 4 | $-5/16$ | $\binom{-1/2}{3}$ |
-| 5 | $35/128$ | $\binom{-1/2}{4}$ |
-| 6 | $-63/256$ | $\binom{-1/2}{5}$ |
-| 7 | $231/1024$ | $\binom{-1/2}{6}$ |
+See [Table 1](#tbl:trm-hopf-sigma1-sq-closed-form-table1-data).
 
 verified numerically via
 [`probe_F_n_categorical_derivation.py`](folio-assistant/computations/probe_F_n_categorical_derivation.py)
@@ -87,11 +79,7 @@ with claimed coefficients $c_2 = b^2$ (PR #661, derived), $c_3 = -2 b^3$
 The bare-Markov $\varepsilon^{2n}$ coefficients of
 $\mathrm{tr}_M(\sigma_1^2) - 1$ above are NOT equal to these:
 
-| $n$ | framework $c_n$ at $q=1$ | bare-Markov $\varepsilon^{2n}$ |
-|---:|---:|---:|
-| 2 | $b^2(1) = 3/4 = 0.7500$ | $-5/16 \approx -0.3125$ |
-| 3 | $-2 b^3(1) = -3\sqrt{3}/4 \approx -1.2990$ | $-63/256 \approx -0.2461$ |
-| 4 | $b^2(1) + 1/2 = 5/4 = 1.2500$ | $-429/2048 \approx -0.2095$ |
+See [Table 2](#tbl:trm-hopf-sigma1-sq-closed-form-table2-data).
 
 The mismatch proves the $F_n := 1 + c_n \hbar_q^{2n}$ are NOT
 extracted from the bare Markov trace of $\sigma_1^2$. They are a
