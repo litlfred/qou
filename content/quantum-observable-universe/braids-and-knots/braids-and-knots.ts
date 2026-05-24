@@ -518,6 +518,13 @@ export default chapter({
         "brane-tower-z-habiro",
 
         "brane-tower-z-habiro-table1-data",
+      ]),
+    }),
+    section({
+      title: "Hoefsmit convergence: construction (continued)",
+      label: "sec:hoefsmit-convergence-construction-continued",
+      blocks: [
+        "hoefsmit-convergence-construction-continued-intro",
         "brane-tower-z-habiro-table2-data",
         "brane-tower-z-habiro-table3-data",
         "brane-tower-z-habiro-table4-data",
@@ -579,6 +586,13 @@ export default chapter({
         "bar-involution-table7-data",
         "bar-involution-table8-data",
         "polynomial-bar-involution",
+      ]),
+    }),
+    section({
+      title: "Markov axioms and braid-link enumeration (continued)",
+      label: "sec:markov-axioms-braid-link-continued",
+      blocks: [
+        "markov-axioms-braid-link-continued-intro",
         "polynomial-bar-involution-table-data",
         "li2q-phiq-bar-symmetrization",
         "c5-involution-leibniz-decomposition",
@@ -611,6 +625,13 @@ export default chapter({
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
+      ]),
+    }),
+    section({
+      title: "Hecke $u$-coordinate, $\\chi$-character closed-forms (continued)",
+      label: "sec:hecke-chi-closed-forms-continued",
+      blocks: [
+        "hecke-chi-closed-forms-continued-intro",
         "chi-v3-closed-form-proof-table-data",
         "chi-per-irrep-cyclotomic-closed-forms",
         "per-block-hopf-jones-absorption-pattern",

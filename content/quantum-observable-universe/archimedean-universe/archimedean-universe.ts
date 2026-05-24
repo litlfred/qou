@@ -359,6 +359,13 @@ export default chapter({
         // Detangler R3 (2026-05-23): 7-row ingredient-source map
         // extracted from alpha-em-derivation-exploration-options.md.
         "alpha-em-derivation-exploration-options-table-data",
+      ]),
+    }),
+    section({
+      title: "EM completeness and gauge coupling (continued)",
+      label: "sec:em-completeness-gauge-coupling-continued",
+      blocks: [
+        "em-completeness-gauge-coupling-continued-intro",
         "e-hartree-categorical-derivation",
 
         "e-hartree-categorical-derivation-table1-data",
@@ -393,6 +400,13 @@ export default chapter({
         "type-b-folded-crystal-combinatorics-table-data",
         "clausen-function-mathlib-filler",
         "bloch-wigner-mathlib-filler",
+      ]),
+    }),
+    section({
+      title: "Archimedean Hartree, crystal basis, and Mathlib bridge (continued)",
+      label: "sec:archimedean-hartree-crystal-continued",
+      blocks: [
+        "archimedean-hartree-crystal-continued-intro",
         "mass-tower-deeper-fillers",
         "three-substantive-mathlib-fillers",
         "bloch-group-quotient-construction",
@@ -441,6 +455,13 @@ export default chapter({
         "nuclear-spin-parity",
         "nuclear-spin-parity-table-data",
         // Half-life calculations via Gröbner reductions
+      ]),
+    }),
+    section({
+      title: "Nuclear stability and decay (continued)",
+      label: "sec:nuclear-stability-decay-continued",
+      blocks: [
+        "nuclear-stability-decay-continued-intro",
         "hadron-half-life",
         "hadron-q-self-correction",
         "hadron-q-self-correction-table-data",

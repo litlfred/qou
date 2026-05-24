@@ -93,6 +93,13 @@ export default chapter({
         "atom-mass-full-hecke",
         "atom-mass-full-hecke-table-data",
         "atom-mass-full-hecke-table-data",
+      ]),
+    }),
+    section({
+      title: "Mass predictions: methodology and validation (continued)",
+      label: "sec:mass-predictions-method-continued",
+      blocks: [
+        "mass-predictions-method-continued-intro",
         "feynman-qou-comparison",
         "neutron-proton-mass-splitting",
         "photon-channel-wedderburn-chain",
@@ -123,6 +130,13 @@ export default chapter({
         "dressed-quark-numerology-at-q0",
         "deuteron-binding-energy",
         "deuteron-binding-energy-proof",
+      ]),
+    }),
+    section({
+      title: "Mass predictions: per-particle derivations (continued)",
+      label: "sec:mass-predictions-derivations-continued",
+      blocks: [
+        "mass-predictions-derivations-continued-intro",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
@@ -158,6 +172,13 @@ export default chapter({
         "hadron-half-life-verification-table4-data",
         "hadron-half-life-verification-table5-data",
         "hadron-half-life-verification-table6-data",
+      ]),
+    }),
+    section({
+      title: "Beta decay: mechanism, half-life, and tritium (continued)",
+      label: "sec:beta-decay-mechanism-continued",
+      blocks: [
+        "beta-decay-mechanism-continued-intro",
         "hadron-half-life-verification-table7-data",
         "hadron-half-life-regimes",
         "n-v-bring-action",
