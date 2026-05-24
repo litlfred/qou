@@ -629,18 +629,16 @@
           "ts": "cd37dd04cc57",
           "lean": "ff4338df5846"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "426d89a993f3",
-          "script_commit_sha": "e8b12347a5d055075a3c66b2383986eefa4571c3"
+          "script_hash": "8b80e3302a39",
+          "script_commit_sha": "8cf6883fca01acb77da1493aab5a7aba3ce92691"
         },
-        "reviewed_at": "2026-05-24T03:08:23.793Z",
-        "reviewed_sha": "ab60115acbebcf0d675c0bb5f7268af81ac1e823",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/observations/substrate-consistency-window.ts:1: no probe witness for this prop — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B (audit: i1-no-probe-audit.witness.json)"
+        "reviewed_at": "2026-05-24T03:13:33.311Z",
+        "reviewed_sha": "8cf6883fca01acb77da1493aab5a7aba3ce92691"
       }
     ],
     "compute-prop-has-consumer": [
@@ -650,20 +648,18 @@
           "ts": "cd37dd04cc57",
           "lean": "ff4338df5846"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "426d89a993f3",
-          "script_commit_sha": "e8b12347a5d055075a3c66b2383986eefa4571c3"
+          "script_hash": "8b80e3302a39",
+          "script_commit_sha": "8cf6883fca01acb77da1493aab5a7aba3ce92691"
         },
-        "reviewed_at": "2026-05-24T03:08:23.793Z",
-        "reviewed_sha": "ab60115acbebcf0d675c0bb5f7268af81ac1e823",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/observations/substrate-consistency-window.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "reviewed_at": "2026-05-24T03:13:33.311Z",
+        "reviewed_sha": "8cf6883fca01acb77da1493aab5a7aba3ce92691"
       }
     ]
   },
-  "updated_at": "2026-05-24T03:08:23.793Z"
+  "updated_at": "2026-05-24T03:13:33.311Z"
 }
