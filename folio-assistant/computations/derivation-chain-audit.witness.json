@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T14:16:02.174458+00:00",
-  "commitSha": "be3cbd1cf0a247f7ed6e5f10097e8f1c698cd5d5",
+  "computedAt": "2026-05-24T14:43:35.126991+00:00",
+  "commitSha": "f7d6bc8a3aa77f4082585e7065083c662e43acc3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "71d674da186600ad04a5754792acbf59838f4dad",
+  "scriptCommitSha": "342ce62e42540ac00e235ff1da6fc2cef0b1ca24",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -2350,7 +2350,6 @@
         "factor-2-normalization-trace.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
