@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T04:07:15.786785+00:00",
-  "commitSha": "ca6999b1763fb89d8eedfb9fdde21c5072e9722c",
+  "computedAt": "2026-05-24T06:29:48.507878+00:00",
+  "commitSha": "ef944de91c5855fbf17a94379a592bf54e897d9c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+  "scriptCommitSha": "60d34fc28faafa9395c037ac62d69ebe8c3575d1",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2396,6 +2396,7 @@
         "hh-vertex-volume.witness.json",
         "hoefsmit-seminormal-form-probe.witness.json",
         "homflypt-engine-selftest.witness.json",
+        "homflypt-operator-valued-probe.witness.json",
         "homflypt-su-n-mass-tower.witness.json",
         "hopf-jones-c3-categorical.witness.json",
         "hopf-markov-trace-genuine.witness.json",
@@ -2410,7 +2411,6 @@
         "intermediate-knot-detection.witness.json",
         "inverse-markov-qvalues.witness.json",
         "isospin-mass-tower-collapse.witness.json",
-        "isotope-mass-table.witness.json",
         "iterative-lp-dual-h6-deuteron.witness.json",
         "iterative-lp-dual-levels.witness.json",
         "jet-knot-invariants.witness.json",

@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:04:37.135899+00:00",
-  "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
+  "computedAt": "2026-05-24T05:34:01.366365+00:00",
+  "commitSha": "fbc40b43ec7e583dcaac3eebb919224e8855b1b3",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
   "scriptHash": "b856bad69b60",
-  "scriptCommitSha": "0f9a88df1128107eb3b8e0b40d47af4c2fc33662",
+  "scriptCommitSha": "1032f09b11e2fa0ba02bb7c871966c9dc2c93fb6",
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
@@ -26,17 +26,24 @@
     "source_summaries": {
       "compute_audit_scan": {
         "status": "loaded",
-        "computedAt": "2026-05-19T01:20:49.585354+00:00",
-        "files_scanned": 585,
+        "computedAt": "2026-05-24T04:07:13.530575+00:00",
+        "files_scanned": 538,
         "by_pattern_count": {
-          "P15": 173,
-          "P16": 122,
-          "P21": 32,
-          "P30": 97,
-          "P31": 25
+          "P15": 113,
+          "P16": 127,
+          "P21": 19,
+          "P30": 89,
+          "P31": 12
         },
-        "total_findings": 449,
+        "total_findings": 360,
         "top_files": [
+          {
+            "file": "gauge_coupling_uniqueness_probe.py",
+            "count": 20,
+            "patterns": [
+              "P16"
+            ]
+          },
           {
             "file": "markov_weights_symbolic.py",
             "count": 14,
@@ -48,28 +55,12 @@
             ]
           },
           {
-            "file": "probe_beta_decay_residue_sum_h3.py",
-            "count": 13,
-            "patterns": [
-              "P15",
-              "P16",
-              "P30"
-            ]
-          },
-          {
             "file": "schur_weyl_symbolic.py",
             "count": 12,
             "patterns": [
               "P15",
               "P16",
               "P30"
-            ]
-          },
-          {
-            "file": "probe_symbolic_sdp_derivation_breakout.py",
-            "count": 11,
-            "patterns": [
-              "P16"
             ]
           },
           {
@@ -95,14 +86,6 @@
             ]
           },
           {
-            "file": "probe_term4_conventions.py",
-            "count": 8,
-            "patterns": [
-              "P16",
-              "P30"
-            ]
-          },
-          {
             "file": "atom_nf_symbolic_D.py",
             "count": 7,
             "patterns": [
@@ -117,31 +100,49 @@
               "P16",
               "P30"
             ]
+          },
+          {
+            "file": "hecke_character_symbolic.py",
+            "count": 7,
+            "patterns": [
+              "P15",
+              "P16",
+              "P21",
+              "P30"
+            ]
+          },
+          {
+            "file": "hoefsmit_symbolic.py",
+            "count": 7,
+            "patterns": [
+              "P15",
+              "P21"
+            ]
           }
         ]
       },
       "canonical_script_input_audit": {
         "status": "loaded",
-        "computedAt": "2026-05-18T17:38:36.938270+00:00",
+        "computedAt": "2026-05-22T15:17:03.467702+00:00",
         "by_scheme": {
-          "no-hadronic-input (substrate-only or pure dimensionless)": 429,
-          "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 55,
-          "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 34,
-          "Q_β-only-hadronic": 15,
+          "no-hadronic-input (substrate-only or pure dimensionless)": 515,
+          "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 49,
+          "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 55,
+          "Q_β-only-hadronic": 18,
           "3-input-canonical-with-substrate-splitting (m_n − m_p derived from prop:flavor-dressed-mass-from-substrate-split; m_p + m_n used only for M_N anchor — CLASS-A pending Workplan-0b)": 1,
-          "m_p-only (no Q_β; m_n derivation TBD)": 24,
-          "3-input-canonical (m_p + Q_β; per calibration-inputs.md)": 4,
+          "m_p-only (no Q_β; m_n derivation TBD)": 26,
+          "3-input-canonical (m_p + Q_β; per calibration-inputs.md)": 10,
           "3-input-canonical-with-substrate-splitting-pure (consumes substrate-splitting witness; no CODATA nucleon masses — post-Workplan-0b target form)": 2
         },
-        "canonical_3input_count": 22,
-        "over_count_count": 55,
-        "vol_hyp_fitted_count": 34,
-        "total_classified": 564,
-        "canonical_ratio": 0.03900709219858156
+        "canonical_3input_count": 31,
+        "over_count_count": 49,
+        "vol_hyp_fitted_count": 55,
+        "total_classified": 676,
+        "canonical_ratio": 0.04585798816568047
       },
       "derivation_chain_audit": {
         "status": "loaded",
-        "computedAt": "2026-05-19T01:17:31.503113+00:00",
+        "computedAt": "2026-05-24T04:07:15.786785+00:00",
         "chain_count": 70,
         "assertion_count": 89,
         "all_passed": true,
@@ -166,21 +167,21 @@
       {
         "name": "WitnessBuilder usage (P30)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "97 of 585 files write witnesses without WitnessBuilder",
+        "metric": "89 of 538 files write witnesses without WitnessBuilder",
         "status": "fail",
         "remediation": "Batch-port hand-written .witness.json writers to witness_base.WitnessBuilder. Reference: docs/audits/2026-05-08-compute-audit-workplan.md §Tier 2."
       },
       {
         "name": "CODATA constants from registry only (P31)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "25 hardcoded CODATA literals outside the allowlist",
+        "metric": "12 hardcoded CODATA literals outside the allowlist",
         "status": "warn",
         "remediation": "Replace each hit with import from codata_constants (_VALIDATION aliases) or experimental_constants. Tag audit-only consumers with `# noqa: P31` and a justifying comment."
       },
       {
         "name": "3-input canonical scheme (CAL-1/2/3)",
         "source": "canonical-script-input-audit.witness.json",
-        "metric": "22 canonical / 55 over-count / 564 classified",
+        "metric": "31 canonical / 49 over-count / 676 classified",
         "status": "warn",
         "remediation": "Migrate over-count scripts (consume both m_p and m_n) to the 3-input scheme: m_n = m_p + Q_β + m_e, with m_p derived from |tr_M(p, q_0)| · E_0. Reference: docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md."
       },
@@ -208,12 +209,12 @@
       {
         "name": "Witness provenance completeness (I14)",
         "source": "witness-provenance-audit.witness.json",
-        "metric": "113 of 518 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.782)",
-        "status": "fail",
+        "metric": "0 of 700 witnesses missing engine/scriptFile/commitSha (completeness ratio 1.000)",
+        "status": "pass",
         "remediation": "Wrap hand-written .witness.json writers in witness_base.WitnessBuilder. See PR #781 fixups for the pattern (mass_table_ppb.py, binding_canonical.py)."
       }
     ],
-    "infra_score": 0.5714285714285714,
+    "infra_score": 0.7142857142857143,
     "known_open_conflicts": [
       {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",
