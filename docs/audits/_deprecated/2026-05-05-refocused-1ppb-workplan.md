@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Superseded by [`2026-05-18-1ppb-workplan-v7-100x-experimental.md`](../2026-05-18-1ppb-workplan-v7-100x-experimental.md) (the latest in the 1ppb-workplan chain). Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T4 for the deprecation rationale.
+
 # Refocused 1-ppb Workplan — 2026-05-05
 
 **Status of W-3 (D(u) closed form):** ✅ 3/3 categorical proof landed in main (PR #539, PR #543).

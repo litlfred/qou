@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Superseded by [`2026-05-18-1ppb-workplan-v7-100x-experimental.md`](../2026-05-18-1ppb-workplan-v7-100x-experimental.md) (the latest in the 1ppb-workplan chain). Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T4 for the deprecation rationale.
+
 # Refocused 1-ppb workplan v5 — post Wenzl LR + chi-cache (2026-05-17)
 
 > **Predecessor:** [`2026-05-17-1ppb-workplan-v4.md`](2026-05-17-1ppb-workplan-v4.md)

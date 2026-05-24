@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Superseded by [`2026-05-18-1ppb-workplan-v7-100x-experimental.md`](../2026-05-18-1ppb-workplan-v7-100x-experimental.md) (the latest in the 1ppb-workplan chain). Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T4 for the deprecation rationale.
+
 # 1ppb workplan v6 — refreshed (post-PR#708 + Borromean tower landing)
 
 **Date:** 2026-05-18
