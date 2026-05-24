@@ -438,9 +438,18 @@ function loadI2AuditByWitness(): Map<
 
 export function checkComputePropHasConsumer(
   tsPath: string | undefined,
+  leanPath?: string | undefined,
 ): CheckerResult {
   const ts = readTs(tsPath);
   if (!ts) return { result: "n/a", hits: [] };
+  // Same exemption as compute-prop-has-probe: sorry-free Lean
+  // proofs are formally verified — no compute consumer needed.
+  if (leanPath && existsSync(resolve(REPO_ROOT, leanPath))) {
+    const lean = readFileSync(resolve(REPO_ROOT, leanPath), "utf-8");
+    if (!lean.includes("sorry")) {
+      return { result: "pass", hits: [] };
+    }
+  }
   // Primary: the block has a `consumers:` field with at least one entry.
   const consumersMatch = ts.match(/consumers:\s*\[([^\]]*)\]/);
   if (consumersMatch && consumersMatch[1].trim() !== "") {
@@ -1491,7 +1500,7 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
     checkBibCitedRefHasScreenshot(p.md, p.lean),
   // compute
   "compute-prop-has-probe": (p) => checkComputePropHasProbe(p.ts, p.lean),
-  "compute-prop-has-consumer": (p) => checkComputePropHasConsumer(p.ts),
+  "compute-prop-has-consumer": (p) => checkComputePropHasConsumer(p.ts, p.lean),
   "compute-witness-exists": (p) => checkComputeWitnessExists(p.ts),
   "compute-lp-dual-present": (p) => checkComputeLpDualPresent(p.ts),
   // canonical

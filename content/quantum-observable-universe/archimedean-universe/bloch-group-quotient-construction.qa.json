@@ -557,27 +557,6 @@
         "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
       }
     ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "6c6d57254240",
-          "ts": "fcb7dd4131b2",
-          "lean": "edf83b5cda17"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "978cc87d00ca",
-          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
-        },
-        "reviewed_at": "2026-05-24T01:26:29.756Z",
-        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/archimedean-universe/bloch-group-quotient-construction.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
-      }
-    ],
     "voice-editorializing": [
       {
         "field_hash": {
@@ -769,7 +748,28 @@
         "severity": "major",
         "evidence": "quantum-observable-universe/archimedean-universe/bloch-group-quotient-construction.ts:1: no probe witness for this prop — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B (audit: i1-no-probe-audit.witness.json)"
       }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "b013f7b0774d",
+          "ts": "fcb7dd4131b2",
+          "lean": "edf83b5cda17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "4185f0bf2c76e3a1cac9c948bd2fcbce1f5718ad"
+        },
+        "reviewed_at": "2026-05-24T02:29:02.877Z",
+        "reviewed_sha": "4185f0bf2c76e3a1cac9c948bd2fcbce1f5718ad",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/archimedean-universe/bloch-group-quotient-construction.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+      }
     ]
   },
-  "updated_at": "2026-05-24T02:24:03.196Z"
+  "updated_at": "2026-05-24T02:29:02.877Z"
 }
