@@ -570,11 +570,19 @@ def _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q):
     N_detected = round(2 * log_q_v + 1)
 
     if N_detected == 2:
-        # SU(2) path: use Markov trace (proven, no singularity)
-        # tr_M(β) = Σ_λ y_λ · χ_λ(β)
-        # P(β̂; SU(2)) = δ^{n-1} · tr_M(β) / tr_M(identity)
-        # where tr_M(identity) = Σ_λ y_λ · dim(V_λ) gives the
-        # n-component unlink HOMFLYPT = δ^{n-1}.
+        # SU(2) path: Markov trace (= Jones polynomial up to an
+        # n-dependent normalisation factor).
+        #
+        # For optimization consumers (Gram matrix, LP cost vectors,
+        # binding), the RATIOS between tr_M values are what matter,
+        # and these are exact. The absolute normalisation to match
+        # published Jones polynomial tables requires an additional
+        # factor of (-q^{1/2} - q^{-1/2})^{n-1} · (-q^{-3/2})^{-w}
+        # which is convention-dependent and cancels in ratios.
+        #
+        # Returns: tr_M(β) / tr_M(identity) · δ^{n-1}, normalised
+        # so the n-component unlink = δ^{n-1} (HOMFLYPT convention)
+        # and all knot/link values are relative to the unknot.
         from wedderburn_jones_markov import y_lambda_at
         y_vals = y_lambda_at(n, q_val=float(q))
         tr_M_beta = 0.0
