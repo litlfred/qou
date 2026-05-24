@@ -1,0 +1,31 @@
+// UniFFI interface definition for hecke-engine consumed from JVM /
+// Swift / etc. languages.
+//
+// Surface mirrors pyhecke-native + hecke-engine-node Phase A
+// intentionally — a consumer can switch runtimes (Python / Node /
+// Kotlin / Swift) without API changes.
+//
+// Phase A scope: 5 gram-matrix primitives + version.
+// Phase B will add chi_lambda_braid + lr_coefficient + tr_m_atomic_mpfr.
+
+namespace hecke_engine_jvm {
+    // Engine version (matches Cargo.toml + package metadata).
+    string version();
+
+    // Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
+    f64 markov_z(f64 q);
+
+    // Hecke relation coefficient h = q − q⁻¹.
+    f64 hecke_h(f64 q);
+
+    // Markov-trace weights on the NF basis (6 elements).
+    sequence<f64> trace_weights(f64 q);
+
+    // Gram matrix G_ij = tr_M(b_i · b_j) — flattened 36-element vector
+    // (row-major). UniFFI doesn't support 2D arrays natively; consumers
+    // reshape on their side.
+    sequence<f64> gram_matrix_flat(f64 q);
+
+    // Gram determinant.
+    f64 gram_det(f64 q);
+};
