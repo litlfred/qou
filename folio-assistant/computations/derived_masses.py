@@ -59,7 +59,7 @@ LEGACY typed-crossings form (kept for cross-check only):
 
     E_0 = m_e / (q_0 · (q_0 - 1)) = m_e · c_q² · ℏ_q   ≈ 4.186 MeV
     Q_β = |Δ(net)| · E_0                              ≈ 0.788 MeV
-                                                  (vs CODATA 0.782; 0.75% err)
+                                                  (vs CODATA 0.78233341; 0.75% err)
 
 with Δ(net) = net(n) - net(p) the difference of GS-NF coefficient
 sums between the canonical neutron and proton braids
@@ -470,7 +470,7 @@ def neutron_mass_mev() -> mp.mpf:
         "Neutron-specific blocker: same as proton, plus the n/p "
         "split should reproduce Q_β + m_e to <1 ppb under the "
         "FULL chain (currently checked only via |Δ(net)| · E_0 = "
-        "0.788 MeV vs CODATA 0.782 MeV at 0.75%).",
+        "0.788 MeV vs CODATA 0.78233341 MeV at 0.75%).",
     )
 
 
