@@ -67,8 +67,8 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from hecke_core import (  # noqa: E402
-    E_0_CALIBRATION_MEV,
+from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402
+from _deprecated.hecke_core_legacy import (  # noqa: E402
     binding_from_frobenius_pairing,
 )
 from derivation_chain import E_0_CONVENTIONS  # noqa: E402

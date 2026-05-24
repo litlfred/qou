@@ -76,27 +76,27 @@ _PARTITION_TABLE_CACHE: list[dict] | None = None
 # `H_Q_22 = q_hook_product((2, 2))` line below). Moving the import to
 # the bottom would NameError at module load.
 #
-# This is a circular import that resolves cleanly only via the
-# canonical entry point `import hecke_core`:
+# Phase B cycle break (2026-05-24): the back-compat re-export block
+# at the bottom of `hecke_core.py` has been REMOVED. The four downstream
+# consumers that previously imported legacy symbols via `hecke_core`
+# (sdp_cross_channel.py, atomic_chirality_residue.py, hadron_knot_table.py,
+# phase3_triton_binding_convention_b.py) now import directly from
+# `_deprecated.hecke_core_legacy`.
 #
-#   1. `import hecke_core`
-#   2. hecke_core defines canonical_stuff, then hits the back-compat
-#      `from _deprecated.hecke_core_legacy import (...)` at its bottom
-#   3. Python imports this legacy module
-#   4. This module hits `from hecke_core import (canonical_stuff)`
-#      and finds hecke_core in sys.modules with canonical_stuff already
-#      defined → succeeds
-#   5. This module's body finishes; hecke_core's bottom re-export succeeds
+# Import direction is now one-way only:
+#   `_deprecated.hecke_core_legacy` → `hecke_core` (canonical primitives)
+#   `hecke_core` does NOT import from `_deprecated`.
 #
-# A DIRECT `import _deprecated.hecke_core_legacy` (bypassing hecke_core)
-# is the fragile case Copilot flagged on PR #1085: it would trigger
-# hecke_core import, which tries to re-import this module from a partial
-# init → ImportError. **No code today does this**; all consumers use
-# `from hecke_core import X` (which works). Phase B follow-up will
-# refactor the canonical surface into a third module that both files
-# can import without cycles, eliminating the fragility entirely.
-# **Until then: always import legacy symbols via `hecke_core`, never
-# from `_deprecated.hecke_core_legacy` directly.**
+# Direct imports `from _deprecated.hecke_core_legacy import X` are now
+# safe — hecke_core is imported fresh, completes its initialisation
+# (no recursion back into legacy), and legacy's `from hecke_core import
+# (...)` block finds the canonical surface fully populated.
+#
+# **Recommendation for new code**: do NOT import from this module.
+# The exploratory surface is being deprecated in favour of the
+# canonical chain in `hecke_core.py` + `pyhecke/`. See
+# `docs/audits/2026-05-24-hecke-core-canonical-audit.md` for the
+# canonical/exploratory classification.
 from hecke_core import (  # noqa: E402
     # q-combinatorics seed
     q_factorial, q_hook_product, partitions_of, partition_dimension,
