@@ -42,6 +42,12 @@ sys.path.insert(0, str(HERE))
 
 from rho_k_h3a_refinement import standard_young_tableaux  # noqa: E402
 
+# Module-level cache for Hoefsmit matrices — same partition + q gives
+# identical matrices regardless of which atom is being computed.
+# Key: (shape_tuple, round(q_value, 15)); Value: (matrices, dim).
+# Per compute-pipeline-audit §Optimization #3 (2026-05-23).
+_HOEFSMIT_NUMPY_CACHE: dict[tuple, tuple[list[np.ndarray], int]] = {}
+
 
 def hoefsmit_matrices_numpy(
     shape: tuple[int, ...], q_value: float
@@ -53,9 +59,17 @@ def hoefsmit_matrices_numpy(
     C-level BLAS, orders of magnitude faster than mp.matrix's Python
     loop.
 
+    Results are cached by (shape, q) so repeated calls for the same
+    partition (e.g., across different atoms at the same H_n level)
+    return instantly.
+
     Returns (matrices, dim) where matrices is a list of (dim, dim)
     f64 arrays — one per generator σ_k for k=1..n-1.
     """
+    cache_key = (tuple(shape), round(q_value, 15))
+    if cache_key in _HOEFSMIT_NUMPY_CACHE:
+        return _HOEFSMIT_NUMPY_CACHE[cache_key]
+
     n = sum(shape)
     syts, cells, contents = standard_young_tableaux(shape)
     dim = len(syts)
@@ -101,6 +115,8 @@ def hoefsmit_matrices_numpy(
                 processed.add(i)
                 processed.add(j)
         matrices.append(M)
+
+    _HOEFSMIT_NUMPY_CACHE[cache_key] = (matrices, dim)
     return matrices, dim
 
 

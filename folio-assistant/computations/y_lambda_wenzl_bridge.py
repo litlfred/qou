@@ -125,7 +125,15 @@ def _wenzl_norm_numeric_cached(n: int, q_str: str, dps: int):
     return sum(classical_dim(mu) * schur_principal(mu, X, Q) for mu in parts)
 
 
+@functools.lru_cache(maxsize=None)
 def _y_lambda_wenzl_bridge_numeric_impl(partition: tuple, q_str: str, dps: int):
+    """Per-partition y_λ at numerical q, cached by (partition, q, dps).
+
+    Per compute-pipeline-audit §Optimization #2: y_λ depends only on
+    the partition shape and q — it is the SAME for every atom at the
+    same H_n level. Caching avoids recomputing schur_principal + the
+    norm division for each atom.
+    """
     mp.mp.dps = dps
     q = mp.mpf(q_str)
     z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
