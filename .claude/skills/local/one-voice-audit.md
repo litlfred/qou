@@ -151,6 +151,7 @@ grep -rEni \
 | **E. Unicode crash** | `↦`, `⁻`, `√`, `─`, `✅`, `·`, `²` | Replace with LaTeX command in math (`\mapsto`, `^{-1}`, `\sqrt{}`, `\cdot`, `^{2}`) or strip box-drawing comments. Add to preamble's `\newunicodechar` list only if widely used. |
 | **F. First-person work tone** | "we'll add", "I'll fix" | **Rewrite in passive/scholarly voice.** Often a sign the sentence shouldn't exist at all. |
 | **G. Structural-argument hedging** | "structural argument", "morally correct", "essentially the X", "heuristically", "simplification for exposition", "provides the mathematical framework", "amounts to" | **Strip** if the canonical derivation IS in the paper (most cases — paper is already too long). **Demote** to `remark` with `interprets:` if the block is asserting an unsupported analogy. **Keep** only if (i) the phrase is a category-theory term of art (e.g. `essentially surjective`) or (ii) the block has `tags: ["non-scholarly-voice-exception"]`. |
+| **H. Banner-in-prose** | `> **Status: theorem (sorry-free)...**`, `> **Caveat (over-permissive...)...**`, `> **Status (May 2026):...**`, `> **Refined-framing note (added when promoting...)...**` | **Migrate to `authorNotes` field** on the block's `.ts` manifest. Per CLAUDE.md `BlockBase.authorNotes` (the schema field added 2026-05-24), author-tracking notes belong as metadata, not in scholarly prose. Render pipeline skips them by default; `WITH_AUTHOR_NOTES=1` env var exposes them in working drafts. **EXCEPTION:** `**Theorem (conditional on [conj:X])**` banners required by CLAUDE.md §3b-cond are STRUCTURAL parts of the theorem statement, not author notes — keep in prose. |
 
 ### 3. Apply mechanical fixes
 
@@ -163,6 +164,10 @@ These are safe to do without author approval:
   box-drawing).
 - Replace clear-cut Category B/D markers in **body prose** (not
   tables) with words.
+- Migrate Category H banners to `authorNotes` field (extract banner
+  text → push as `{ kind, date?, body }` entry on the block's `.ts`
+  manifest; remove blockquote from `.md`). Skip the `**Theorem
+  (conditional on conj:X)**` §3b-cond banners — those are structural.
 
 ### 4. Kick back to author for items where:
 

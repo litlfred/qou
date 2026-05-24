@@ -409,6 +409,35 @@ export type ObjectKind =
   | "proof"
   | "simulator";
 
+/**
+ * Author-tracking note attached to a content block. See the
+ * `authorNotes?` field on `BlockBase` for the full rationale.
+ *
+ * Default render behavior: SKIP. Pipeline flag (`--with-author-notes`)
+ * exposes these for working drafts.
+ */
+export interface AuthorNote {
+  /** Note kind for filtering / styling. See BlockBase.authorNotes docs. */
+  kind: "status" | "caveat" | "note" | "refined-framing" | "deprecated";
+  /**
+   * Human-readable date when the note was authored. Free-form string;
+   * recommended ISO YYYY-MM-DD.
+   */
+  date?: string;
+  /**
+   * The note body, in markdown. Treat the same way as block prose
+   * (math, links, lists supported). KEEP IT SHORT — author notes that
+   * exceed ~5 lines should probably be a `remark` block instead.
+   */
+  body: string;
+  /**
+   * Optional cross-link to a follow-up: an audit doc, a successor
+   * block, a PR, etc. Rendered as a clickable link when notes are
+   * surfaced.
+   */
+  see?: string;
+}
+
 // ── Block types (discriminated union on `kind`) ──────────────────
 
 /** Base fields shared by all environment blocks. */
@@ -451,6 +480,36 @@ interface BlockBase {
   rendered?: RenderedAsset[];
   /** Freeform metadata (chapter assignment, tags, etc.). */
   meta?: Record<string, unknown>;
+  /**
+   * Author-tracking notes attached to this block — status snapshots,
+   * caveats, refinement-framing comments, and other meta-commentary
+   * that should NOT appear in the scholarly prose body of the block.
+   *
+   * Per CLAUDE.md §"User accessibility" + `local/one-voice-audit`
+   * conventions: status leaks (TODO, WIP, "added 2026-05-09",
+   * "refined-framing", "status: open / closed / theorem", etc.) in
+   * prose are a one-voice violation. Migrate them to this field
+   * instead.
+   *
+   * Default render behavior: SKIP author notes from the final paper
+   * (clean publication voice). The render pipeline (`render-latex.ts`)
+   * accepts a `--with-author-notes` flag for working drafts that
+   * exposes them as marginal notes or appendix sections.
+   *
+   * `kind` taxonomy (extend as needed):
+   *   - "status"           — current state of work on this block
+   *   - "caveat"           — author's caveat about scope / overshoot
+   *   - "note"             — generic author note
+   *   - "refined-framing"  — note added when the block was promoted
+   *                          from one kind to another (remark → prop,
+   *                          falsified → reduced, etc.)
+   *   - "deprecated"       — block superseded by another (with link)
+   *
+   * EXCEPTION: `**Theorem (conditional on conj:X)**` banners required
+   * by CLAUDE.md §3b-cond are STRUCTURAL parts of the theorem
+   * statement, NOT author notes. They stay in the `.md` prose.
+   */
+  authorNotes?: AuthorNote[];
   /** Reference to an interactive simulator (opens overlay with [simulate] button). */
   simulator?: SimulatorRef;
   /**

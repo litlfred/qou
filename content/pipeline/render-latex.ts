@@ -703,6 +703,34 @@ export function renderBlock(
     }
   }
 
+  // Author notes (kind: "status" | "caveat" | "note" | "refined-framing"
+  // | "deprecated") are skipped from the default render and only emitted
+  // when the WITH_AUTHOR_NOTES environment variable is set. This is the
+  // post-migration replacement for `> **Status: …**` / `> **Caveat …**`
+  // blockquote-banner-in-prose patterns (one-voice-audit Category G).
+  // See BlockBase.authorNotes in folio-assistant/schemas/types.ts.
+  if (process.env.WITH_AUTHOR_NOTES === "1" && "authorNotes" in block) {
+    const notes = (block as any).authorNotes as Array<{
+      kind: string;
+      date?: string;
+      body: string;
+      see?: string;
+    }> | undefined;
+    if (notes && notes.length > 0) {
+      lines.push("");
+      lines.push("\\begin{quote}\\small\\textit{Author notes (working draft):}");
+      for (const n of notes) {
+        const dateStr = n.date ? ` (${escapeLatex(n.date)})` : "";
+        lines.push("");
+        lines.push(
+          `\\textbf{${escapeLatex(n.kind)}${dateStr}.} ${markdownToLatex(n.body)}` +
+          (n.see ? ` \\textit{See:} \\url{${n.see}}.` : ""),
+        );
+      }
+      lines.push("\\end{quote}");
+    }
+  }
+
   return lines.join("\n");
 }
 
