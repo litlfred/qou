@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-24T02:21:02.348084+00:00",
+  "computedAt": "2026-05-24T03:48:53.087610+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -39,6 +39,14 @@
         "match": "0.782",
         "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
         "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/homflypt_su_n_mass_tower.py",
+        "line": 107,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "Q_beta_target = Q_NEUTRON_MEV  # 0.782 MeV",
+        "kind": "active"
       }
     ],
     "literal_0_78233341": [
@@ -1074,7 +1082,7 @@
       },
       {
         "file": "folio-assistant/computations/per_observable_100x_status.py",
-        "line": 81,
+        "line": 90,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_beta\":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         \"CAL-3 anchor\",",
@@ -1082,7 +1090,7 @@
       },
       {
         "file": "folio-assistant/computations/per_observable_100x_status.py",
-        "line": 81,
+        "line": 90,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_beta\":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         \"CAL-3 anchor\",",
@@ -1090,7 +1098,7 @@
       },
       {
         "file": "folio-assistant/computations/per_observable_100x_status.py",
-        "line": 82,
+        "line": 91,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)\"),",
@@ -1204,6 +1212,8 @@
       }
     ]
   },
-  "inconsistencies": [],
+  "inconsistencies": [
+    "Mixed precision: same codebase uses both 0.782 (3 sig figs, ~4e-4 relative) and 0.78233341 (8 sig figs, ~10⁻⁸ relative) for E_0 / Q_β(n)."
+  ],
   "achievable_precision_floor_ppb": "783.481476501084768226993197913"
 }
