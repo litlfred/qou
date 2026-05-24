@@ -183,23 +183,6 @@
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
       }
     ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "bd1f2c11302d",
-          "ts": "d50d6ec3d927",
-          "lean": "adfcd13ffd1d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:40:02.947Z",
-        "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -655,7 +638,26 @@
         "severity": "major",
         "evidence": "folio-assistant/computations/mass_tower_operator_valued.py:1: computation script imports deprecated module: mass_endomorphism"
       }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "bd1f2c11302d",
+          "ts": "d50d6ec3d927",
+          "lean": "adfcd13ffd1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-24T01:58:50.338Z",
+        "reviewed_sha": "6e9c36c04b60ff0c07888499d6e9e4ab89160cbe"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:54:37.804Z"
+  "updated_at": "2026-05-24T01:58:50.338Z"
 }

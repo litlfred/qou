@@ -238,58 +238,6 @@
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
       }
     ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "9f8cfa5cb636",
-          "ts": "29873eef2e26"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T19:05:44.405Z",
-        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md:52: (green has cycled back to its starting position after the σ₂ sub-flow on $I_2$) | content/quantum-observable-universe/braids-and-knots/garside-flow-explicit-closed-form.md:53: and then decreases at rate $-q$ on the second σ₁ sub-flow, giving"
-      },
-      {
-        "field_hash": {
-          "md": "d71baaf59d2b",
-          "ts": "29873eef2e26"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T19:06:55.468Z",
-        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1"
-      },
-      {
-        "field_hash": {
-          "md": "830e055ac210",
-          "ts": "29873eef2e26"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-23T11:28:20.680Z",
-        "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -607,7 +555,25 @@
         "reviewed_at": "2026-05-24T01:54:37.804Z",
         "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
       }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "830e055ac210",
+          "ts": "29873eef2e26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-24T01:58:50.338Z",
+        "reviewed_sha": "6e9c36c04b60ff0c07888499d6e9e4ab89160cbe"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:54:37.804Z"
+  "updated_at": "2026-05-24T01:58:50.338Z"
 }

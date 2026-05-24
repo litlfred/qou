@@ -253,44 +253,6 @@
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
       }
     ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "851f037a7a95",
-          "ts": "4254eed105f4",
-          "lean": "5cab846ca5a1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T18:29:51.882Z",
-        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md:234: | H$_{2}$ molecule | 2 (one per atom) | 4 (per pair) | $\\alpha^2$ × shell-factor ✓ | | content/quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md:235: | He atom | 1 (proton + 2 e) | $\\geq 2$ | $\\alpha^2$ × shell-factor ✓ |"
-      },
-      {
-        "field_hash": {
-          "md": "ee39ec885320",
-          "ts": "4254eed105f4",
-          "lean": "5cab846ca5a1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T18:34:07.964Z",
-        "reviewed_sha": "0ef343432ec01a2637cad38ccedadbc12e411523"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -814,7 +776,26 @@
         "severity": "major",
         "evidence": "folio-assistant/computations/hecke_core.py:1: computation script imports deprecated module: mass_endomorphism"
       }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "ee39ec885320",
+          "ts": "f8457643e68e",
+          "lean": "b88759f83a26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-24T01:58:50.338Z",
+        "reviewed_sha": "6e9c36c04b60ff0c07888499d6e9e4ab89160cbe"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:54:37.804Z"
+  "updated_at": "2026-05-24T01:58:50.338Z"
 }

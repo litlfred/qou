@@ -297,24 +297,6 @@
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
       }
     ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "facf67ff0e23",
-          "ts": "480ceec3c6cb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T19:05:44.405Z",
-        "reviewed_sha": "c4ef7fe03aa066bde92ca3d3a307b12d3c0b5ab1"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -803,7 +785,25 @@
         "severity": "major",
         "evidence": "folio-assistant/computations/m_p_m_e_li2q.py:1: computation script contains SUPERSEDED/DEPRECATED marker | folio-assistant/computations/m_p_m_e_li2q.py:1: computation script imports deprecated module: mass_endomorphism"
       }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "facf67ff0e23",
+          "ts": "480ceec3c6cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-24T01:58:50.338Z",
+        "reviewed_sha": "6e9c36c04b60ff0c07888499d6e9e4ab89160cbe"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:54:37.804Z"
+  "updated_at": "2026-05-24T01:58:50.338Z"
 }

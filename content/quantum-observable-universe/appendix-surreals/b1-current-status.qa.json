@@ -238,60 +238,6 @@
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143"
       }
     ],
-    "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "9282f02b9dd4",
-          "ts": "933260575fb1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T18:46:57.612Z",
-        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/b1-current-status.md:32: | **Im Li_3(ζ_5) = 4π³/125** | **theorem** | [`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational) (round 10) | | content/quantum-observable-universe/appendix-surreals/b1-current-status.md:95: | 10 | `710039e7` | Substantive Lean for Hecke-Baer-*; Im Li_3(ζ_5) = 4π³/125 closed form |"
-      },
-      {
-        "field_hash": {
-          "md": "48702f4c77c6",
-          "ts": "933260575fb1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T18:49:12.358Z",
-        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/b1-current-status.md:95: | 10 | `710039e7` | Substantive Lean for Hecke-Baer-*; Im Li_3(ζ_5) = 4π³/125 closed form |"
-      },
-      {
-        "field_hash": {
-          "md": "294e2c790216",
-          "ts": "933260575fb1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5650958b9f3a",
-          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
-        },
-        "reviewed_at": "2026-05-22T18:50:24.322Z",
-        "reviewed_sha": "26c9ab6686ac939b85cf3b1ed0101c6308f36846"
-      }
-    ],
     "voice-scholarly-default": [
       {
         "field_hash": {
@@ -623,7 +569,25 @@
         "reviewed_at": "2026-05-24T01:54:37.804Z",
         "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68"
       }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "294e2c790216",
+          "ts": "933260575fb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "ee2291234de0",
+          "script_commit_sha": "4da9bb5f3c1ec8dd33395586e40bbd676d009d8c"
+        },
+        "reviewed_at": "2026-05-24T01:58:50.338Z",
+        "reviewed_sha": "6e9c36c04b60ff0c07888499d6e9e4ab89160cbe"
+      }
     ]
   },
-  "updated_at": "2026-05-24T01:54:37.804Z"
+  "updated_at": "2026-05-24T01:58:50.338Z"
 }
