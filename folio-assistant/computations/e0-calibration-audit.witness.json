@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-25T05:15:23.513684+00:00",
+  "computedAt": "2026-05-25T05:53:26.113787+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -320,6 +320,38 @@
         "match": "0.78233341",
         "context": "#   T1 (descended Markov):  E_0_β = 0.78233341 MeV per cat unit",
         "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA.py",
+        "line": 8,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "CAL-3: |Q_β(q)|        =  m_e · |(q² − 2q − 1)(q+1) / (2q³)|  =  0.78233341 MeV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA.py",
+        "line": 45,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "cal3_target = mp.mpf(\"0.78233341\")            # Q_β(n) MeV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA_v2.py",
+        "line": 16,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "g(θ) := |Q_β(q(θ))| - 0.78233341 MeV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA_v2.py",
+        "line": 41,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "cal3_target = mp.mpf(\"0.78233341\")",
+        "kind": "active"
       }
     ],
     "literal_0_78233": [
@@ -353,6 +385,14 @@
         "pattern": "literal_0_78233",
         "match": "0.78233",
         "context": "\"Q_observed_MeV\": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA.py",
+        "line": 59,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "sign-fixed real value 0.7836 MeV (+0.17% vs CODATA 0.78233).",
         "kind": "doc"
       }
     ],
@@ -1101,6 +1141,22 @@
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_substrate_prediction.py",
+        "line": 35,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_substrate_prediction.py",
+        "line": 50,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "q_beta_codata = float(Q_BETA_MEV)",
         "kind": "active"
       },
       {
