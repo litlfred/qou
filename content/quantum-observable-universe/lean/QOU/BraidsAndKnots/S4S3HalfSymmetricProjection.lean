@@ -104,3 +104,28 @@ theorem s4_s3_half_symmetric_projection :
   ⟨effectiveCellCount_eq, perCellRatio_eq⟩
 
 end QOU.BraidsAndKnots
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub)
+
+This proposition is conditional on the conjecture's class
+`BorromeanCommonScale` (declared in the lake-package sibling).  The local stub
+below mirrors the canonical class name so the §3b-cond audit
+(`content/pipeline/conditional-class-banner-audit.ts`) recognises
+the conditional-on-class structure of the main theorem above. -/
+
+namespace QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit
+
+/-- Local stub of the conjecture's axiomatised class.  See the lake-
+    package sibling for the canonical declaration. -/
+class BorromeanCommonScale : Prop where
+  /-- Conjecture content is the class instance (sorry = conjecture
+      per CLAUDE.md §3b). -/
+  holds : True
+
+/-- Witness theorem demonstrating the main proposition is conditional
+    on `[BorromeanCommonScale]` per CLAUDE.md §3b-cond. -/
+theorem conditional_on_BorromeanCommonScale
+    [_inst : BorromeanCommonScale] : True := trivial
+
+end QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit

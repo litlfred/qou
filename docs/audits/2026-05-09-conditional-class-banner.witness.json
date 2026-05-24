@@ -1,9 +1,9 @@
 {
   "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
-  "generated": "2026-05-24T22:14:42.443Z",
+  "generated": "2026-05-24T23:53:19.866Z",
   "total_blocks": 1784,
-  "conditional_on_class": 9,
-  "fully_compliant": 9,
+  "conditional_on_class": 21,
+  "fully_compliant": 21,
   "missing_lean_class_hypothesis": 0,
   "missing_md_conditional_banner": 0,
   "findings": [
@@ -11,11 +11,7 @@
       "label": "lem:surreal-squeeze",
       "kind": "lemma",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:q-aubin-lions"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
@@ -23,14 +19,21 @@
       "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.md"
     },
     {
+      "label": "prop:bar-involution-invariance",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:symmetric-crystal-pair-production"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean",
+      "md_file": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.md"
+    },
+    {
       "label": "prop:collatz-contact-boundary",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:q-aubin-lions"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
@@ -41,11 +44,7 @@
       "label": "prop:collatz-no-cycles",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:q-aubin-lions"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
@@ -56,11 +55,7 @@
       "label": "prop:core-levi-form",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:q-aubin-lions"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
@@ -68,14 +63,65 @@
       "md_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.md"
     },
     {
+      "label": "prop:cpt-orbit-closure-density",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:symmetric-crystal-pair-production"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean",
+      "md_file": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md"
+    },
+    {
+      "label": "prop:geom-universality",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:hyperbolic-volume-transcendence"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.md"
+    },
+    {
+      "label": "prop:geom-yekutieli-alignment",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:hyperbolic-volume-transcendence"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md"
+    },
+    {
+      "label": "prop:hoefsmit-scattering-pipeline",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:hyperbolic-volume-transcendence"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md"
+    },
+    {
+      "label": "prop:hydrogen-shell-writhe",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:borromean-quark"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/archimedean-universe/hydrogen-shell-writhe.lean",
+      "md_file": "content/quantum-observable-universe/archimedean-universe/hydrogen-shell-writhe.md"
+    },
+    {
       "label": "prop:ns-obstruction-tower",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:q-aubin-lions"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
@@ -83,14 +129,43 @@
       "md_file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md"
     },
     {
+      "label": "prop:orbital-fourier-decomposition",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:borromean-quark"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.lean",
+      "md_file": "content/quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.md"
+    },
+    {
+      "label": "prop:orbital-space-normal-bundle",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:borromean-quark"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/archimedean-universe/orbital-space-normal-bundle.lean",
+      "md_file": "content/quantum-observable-universe/archimedean-universe/orbital-space-normal-bundle.md"
+    },
+    {
+      "label": "prop:reidemeister-mass-invariance",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:borromean-quark"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.md"
+    },
+    {
       "label": "prop:root-of-unity-truncation",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:q-aubin-lions"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
@@ -98,18 +173,36 @@
       "md_file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md"
     },
     {
-      "label": "prop:surreal-rate-calculus",
+      "label": "prop:s4-s3-half-symmetric-projection",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:borromean-baryon-mass-formula"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.lean",
+      "lean_file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md"
+    },
+    {
+      "label": "prop:shell-transition-knot",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:borromean-quark"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/shell-transition-knot.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/shell-transition-knot.md"
+    },
+    {
+      "label": "prop:surreal-rate-calculus",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
       "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.md"
     },
     {
@@ -117,8 +210,7 @@
       "kind": "proposition",
       "conj_cone": [
         "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:blowup-yekutieli"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
@@ -129,16 +221,24 @@
       "label": "prop:vorticity-lower-bound",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
+        "conj:q-aubin-lions"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
       "lean_file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean",
       "md_file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md"
+    },
+    {
+      "label": "thm:confinement-grading-correspondence-conditional",
+      "kind": "theorem",
+      "conj_cone": [
+        "conj:crystal-graph-realization",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": true,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md"
     }
   ]
 }

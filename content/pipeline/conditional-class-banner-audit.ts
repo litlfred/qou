@@ -84,23 +84,66 @@ async function loadAll(): Promise<Map<string, Block>> {
   return blocks;
 }
 
-/** Find the `.lean` file backing a block via lean.ref. */
+/** Strip Lean comments (`/-! … -/`, `/- … -/`, `-- …`) from text. */
+function stripLeanComments(s: string): string {
+  return s
+    .replace(/\/-[\s\S]*?-\//g, "")
+    .replace(/--[^\n]*/g, "");
+}
+
+/** Find the `.lean` file backing a block.
+ *
+ * Resolution order:
+ *   1. Sibling `.lean` next to the `.ts` — but only if it has any
+ *      real Lean code (declarations after stripping comments).  A
+ *      sibling that is entirely a doc-comment stub (pointing at the
+ *      lake-package implementation) falls through to step 2.
+ *   2. The lean.ref's lake-package path.
+ *   3. The lean.ref's lake-package path with the leaf component
+ *      heuristically CamelCase-d (since the QOU convention is
+ *      CamelCase filenames for the lake side but content blocks
+ *      sometimes register lowercase / snake_case refs).
+ */
 async function leanFileFor(block: Block): Promise<string | null> {
-  // Sibling first.
+  // Step 1 — sibling, but only if it has real code.
   const sibling = block.file.replace(/\.ts$/, ".lean");
-  try { await readFile(sibling, "utf8"); return sibling; } catch {}
-  // Then lean.ref.
+  try {
+    const raw = await readFile(sibling, "utf8");
+    const code = stripLeanComments(raw).trim();
+    if (code.length > 0) return sibling;
+  } catch {}
+  // Step 2 — lean.ref literal path.
+  let refTail: string | null = null;
+  let lakeRoot: string | null = null;
   try {
     const tsText = await readFile(block.file, "utf8");
     const refMatch = tsText.match(/ref:\s*"([^:"]+):([^"]+)"/);
     if (!refMatch) return null;
     const pkg = leanPackageByName(refMatch[1]);
     if (!pkg) return null;
-    const leanPath = join(REPO_ROOT, pkg.lakeRoot,
-      refMatch[2].replace(/\./g, "/") + ".lean");
+    lakeRoot = pkg.lakeRoot;
+    refTail = refMatch[2];
+    const leanPath = join(REPO_ROOT, lakeRoot,
+      refTail.replace(/\./g, "/") + ".lean");
     await readFile(leanPath, "utf8");
     return leanPath;
-  } catch { return null; }
+  } catch {}
+  // Step 3 — CamelCase the leaf component (a common naming-convention
+  // mismatch in `lean.ref`s).
+  if (refTail && lakeRoot) {
+    const parts = refTail.split(".");
+    const leaf = parts[parts.length - 1];
+    const camel = leaf
+      .split(/[_-]/)
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+      .join("");
+    if (camel !== leaf) {
+      const camelPath = join(REPO_ROOT, lakeRoot,
+        [...parts.slice(0, -1), camel].join("/") + ".lean");
+      try { await readFile(camelPath, "utf8"); return camelPath; } catch {}
+    }
+  }
+  return null;
 }
 
 /** Extract the class-name registered by a `class C` declaration.
@@ -118,7 +161,27 @@ async function classNameOf(conjBlock: Block): Promise<string | null> {
   return m ? m[1] : null;
 }
 
-/** Transitive-conjecture cone, identical to conjectural-propagation-audit. */
+/** Transitive-conjecture cone.
+ *
+ * Walks `uses[]` from `start` and collects every `conj:` ancestor in the
+ * dependency graph.  **Stops at every `conj:` boundary** — a downstream
+ * block is conditional on the conjectures it directly transitively
+ * reaches through definitions / propositions / theorems / remarks, but
+ * NOT on those conjectures' own transitive conjectural ancestors. Per
+ * CLAUDE.md §3b-cond, the class-hypothesis encoding makes each conjecture
+ * a leaf of the conditional structure: a downstream theorem with
+ * `[C]` as an instance hypothesis trusts the class as input; whatever
+ * `C` itself depends on conjecturally is `C`'s own conditional structure,
+ * not the consumer's.
+ *
+ * Historical note: an earlier version of this walk crossed `conj:`
+ * boundaries, bloating the cone of every block that touched a quark
+ * or electron with the entire NS-conjecture web via the
+ * `conj:borromean-quark → prop:ns-obstruction-tower → conj:q-aubin-lions`
+ * chain.  See PR #1197 for the fix-by-workaround (removed the manifest
+ * edge); this commit restores correct cone semantics, letting the edge
+ * be re-added.
+ */
 function transitivelyTouchesConjecture(
   start: string,
   blocks: Map<string, Block>,
@@ -139,7 +202,12 @@ function transitivelyTouchesConjecture(
           "cor:", "rem:", "ex:", "sim:", "eq:"].some((p) => u.startsWith(p))) {
         continue;
       }
-      if (u.startsWith("conj:")) conjAncestors.add(u);
+      if (u.startsWith("conj:")) {
+        // Reached a conjecture: record it as a cone leaf and STOP
+        // descending into its own uses[]. (See header comment above.)
+        conjAncestors.add(u);
+        continue;
+      }
       if (!visited.has(u)) stack.push(u);
     }
   }
@@ -182,11 +250,17 @@ for (const [label, block] of blocks) {
   if (!allAxiomatised) continue; // not §3b-cond eligible — separate concern
 
   // Look up the Lean file and check for an `[Inst : C ...]` hypothesis
-  // matching one of the conjectures' class names.
+  // matching one of the conjectures' class names.  Strip Lean comments
+  // first (consistent with classNameOf above) so narrative phrases like
+  // "see [BorromeanQuark] for the class" inside a `/-! … -/` doc don't
+  // count as a real hypothesis.
   const leanPath = await leanFileFor(block);
   let hasClass = false;
   if (leanPath) {
-    const text = await readFile(leanPath, "utf8");
+    const raw = await readFile(leanPath, "utf8");
+    const text = raw
+      .replace(/\/-[\s\S]*?-\//g, "")
+      .replace(/--[^\n]*/g, "");
     for (const c of cone) {
       const cls = classNames.get(c);
       if (!cls) continue;
