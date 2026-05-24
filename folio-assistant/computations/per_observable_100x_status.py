@@ -199,10 +199,13 @@ def main() -> dict:
         # N=4: c_4 = c_3 · b⁴ (multiplicative Jones × Kashiwara mixing)
         c4_categorical = c3_categorical * b_hoef ** 4
         Q_N4 = Q_N3 * (1 + c4_categorical * (b_hoef ** 4) * (hbar_sq ** 4))
+        # N=5: c_5 = c_3² · 3 + b (additive Jones² · integer + Kashiwara)
+        c5_categorical = c3_categorical ** 2 * 3 + b_hoef
+        Q_N5 = Q_N4 * (1 + c5_categorical * (b_hoef ** 5) * (hbar_sq ** 5))
         rows.append(_row_for(
-            "Q_beta", Q_N4,
-            "q-beta-operator-valued-N3.witness.json (N=4 categorical, "
-            "c_3 = -2, c_4 = c_3·b⁴ per precision-ladder.md)",
+            "Q_beta", Q_N5,
+            "q-beta-operator-valued-N3.witness.json (N=5 categorical, "
+            "c_5 = c_3²·3 + b per precision-ladder.md mixing pattern)",
         ))
     else:
         # Fallback to the legacy N=0 bare prediction if N=3 cache absent
