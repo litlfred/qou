@@ -137,22 +137,26 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # did, but it is the categorical truth as established to date.
 # The Bring–Bloch path (`conj:lambda-scale-bring-bloch-identity`)
 # remains the open R&D direction for closing m_p to ppb.
-# Single source of truth: `_li_2_q_util.lambda_scale_family_a`
-# (Gemini PR #942 review — centralize the Family A formula).
-from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
-LAMBDA_SCALE_SUBSTRATE_FORM = _lambda_scale_family_a(_Q_0)
+# Single source of truth: `_li_2_q_util.geom_full_borromean` (canonical
+# post-PR #1080, 2026-05-23): a single per-knot Geom call replaces the
+# manually expanded (Vol/ℏ_q²) × linking_weight form.  See
+# `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
+from _li_2_q_util import (
+    geom_full_borromean as _geom_full_borromean,
+    linking_weight_family_a as _linking_weight_family_a,
+)
+LINKING_WEIGHT_SUBSTRATE_FORM = _linking_weight_family_a(_Q_0)
+GEOM_FULL_BORROMEAN_Q0 = _geom_full_borromean(_Q_0)
 
 # Empirical legacy (falsified, retained for the comparison column
 # in the audit witness).  Removing it in a follow-up commit once
 # downstream consumers stop reading the legacy form.
-LAMBDA_SCALE_FALSIFIED_FIT = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
+LINKING_WEIGHT_FALSIFIED_FIT = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
 
-# Borromean tower prediction (now using the PROVED Family A λ).
-M_P_PRED_BORROMEAN_MEV = (
-    _VOL_B3_LIT / _HBAR_Q**2 * LAMBDA_SCALE_SUBSTRATE_FORM * M_E_MEV_CODATA
-)
+# Borromean tower prediction (now via canonical Geom_full per PR #1080).
+M_P_PRED_BORROMEAN_MEV = GEOM_FULL_BORROMEAN_Q0 * M_E_MEV_CODATA
 M_P_PRED_BORROMEAN_FALSIFIED_FIT_MEV = (
-    _VOL_B3_LIT / _HBAR_Q**2 * LAMBDA_SCALE_FALSIFIED_FIT * M_E_MEV_CODATA
+    _VOL_B3_LIT / _HBAR_Q**2 * LINKING_WEIGHT_FALSIFIED_FIT * M_E_MEV_CODATA
 )
 
 # Production chain prediction:
