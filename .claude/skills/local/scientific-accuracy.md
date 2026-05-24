@@ -32,6 +32,51 @@ peer-review practices and the methodology of
 - Claims are supported by evidence or sound reasoning.
 - Scientific terminology is used correctly.
 - Referenced constants, data, or facts are accurate.
+
+### 2a. Proof vs claim distinction (STRICT)
+
+**This is a MATHEMATICS paper that happens to have physical
+applications.** The standard of truth is MATHEMATICAL PROOF
+(rigorous, Lean-formalizable), NOT physical-science conventions
+(6σ fits, numerical agreement, empirical validation).
+
+| Term | Meaning in THIS paper | NOT this |
+|---|---|---|
+| **Theorem / Proposition / Lemma** | Rigorous mathematical proof exists (or is Lean-verified) | Empirical observation, numerical fit, physical-model output |
+| **Proof** | Deductive chain from axioms/definitions, formalizable in Lean | "We verified numerically to 50 dps", "consistent with CODATA" |
+| **Conjecture** | Precise mathematical statement believed true, not yet proved | Vague physical intuition, hand-waving, "it should work because..." |
+| **Remark** | Interpretation of a proved result — NO new logical claims | Physics narrative dressed as math, "it is well known that..." |
+| **Derives / follows from** | Logical deduction | Numerical coincidence, fit, ansatz |
+
+**When citing physics papers (ANY physics paper, including
+foundational ones):**
+- **DO cite** as *prior work*, *precedent*, *analogy*, *motivation*
+- **DO NOT cite** as *proof* of a mathematical claim
+- **DO NOT use** "X proved that..." for a physics paper unless
+  the paper contains an actual mathematical proof (rare; verify
+  by checking whether the claim is stated as a theorem with a
+  deductive proof, not as a calculation/simulation)
+- **DO distinguish** between the mathematical content of a paper
+  (e.g. Reshetikhin-Turaev's construction of link invariants IS
+  rigorous mathematics) and the physical interpretation (e.g.
+  "these invariants describe particle masses" is a conjecture)
+
+**When the paper's own claims are empirical (e.g. "matches CODATA
+to 5.6 ppm"):**
+- Frame as *numerical evidence*, not proof
+- Use `≈` not `=` (per CLAUDE.md §7ab)
+- Block kind must be `conjecture` or `remark`, not `theorem`
+- The empirical claim belongs in the `.md` narrative, not in the
+  Lean statement (Lean carries only the algebraic identity)
+
+**When a physics paper's mathematical content is rigorous:**
+- Cite the specific theorem/construction, not the paper's
+  physical claims
+- Example: "Reshetikhin-Turaev \cite{reshetikhin1991}
+  construct link invariants from $U_q(\mathfrak{g})$
+  representations" (mathematical, citable as theorem) vs
+  "these invariants describe particle masses" (physical,
+  citable only as motivation)
 - **PREFER $q$-DEFORMED FUNCTIONS over classical counterparts.**
   Use $\exp_q$, $\ln_q$, $\cos_q$, $\sin_q$, $[n]_q$, $[n]_q!$
   in all formulas unless explicitly working in the classical

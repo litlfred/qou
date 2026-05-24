@@ -27,16 +27,20 @@ channel) that is identical for proton and neutron.
 
 ## Precedents in the literature
 
-Three independent lines of work have explored operator-valued
-decorations on braids as a source of particle-level structure:
+Three independent lines of work provide relevant precedent.
+**Note on proof status**: this paper distinguishes sharply between
+*mathematical theorems* (rigorous, Lean-formalizable) and
+*physical proposals* (models, analogies, numerical fits). The
+precedents below are classified accordingly.
 
-### 1. Bilson-Thompson helon model \cite{bilsonthompson2005}
+### 1. Bilson-Thompson helon model \cite{bilsonthompson2005} — *physical proposal, not a proof*
 
-Bilson-Thompson proposed that Standard Model fermions are braided
-ribbons in which the **twist** on each strand (not the braid
-topology) encodes electric charge. In this model, proton and
-neutron share the same 3-strand braid topology but differ by the
-twist assignment on individual strands. The extension to loop
+Bilson-Thompson proposed (without rigorous proof) that Standard
+Model fermions are braided ribbons in which the **twist** on each
+strand (not the braid topology) encodes electric charge. In this
+model, proton and neutron share the same 3-strand braid topology
+but differ by the twist assignment on individual strands. The
+extension to loop
 quantum gravity \cite{bilsonthompson2007} showed that these braids
 can be embedded as spin-network edges, with twist corresponding
 to a local holonomy.
@@ -64,10 +68,11 @@ this is the content of
 SDP uniqueness conjecture). Closing this conjecture would promote
 the averaged-crossing convention from empirical to derived.
 
-### 2. Reshetikhin-Turaev colored invariants \cite{reshetikhin1991}
+### 2. Reshetikhin-Turaev colored invariants \cite{reshetikhin1991} — *rigorous mathematics*
 
-Reshetikhin and Turaev constructed link invariants from
-representations of quantum groups $U_q(\mathfrak{g})$. In the
+Reshetikhin and Turaev gave a mathematically rigorous construction
+of link invariants from representations of quantum groups
+$U_q(\mathfrak{g})$ (this IS a theorem, not a physical claim). In the
 colored Jones polynomial, each strand carries a *representation*
 (color) $V_i$, and the invariant $J_K^{(V_1, \ldots, V_n)}(q)$
 depends on the color assignment. Different colors on different
@@ -108,10 +113,12 @@ Both require implementing the operator-valued HOMFLYPT (averaged
 crossings in the Hecke algebra engine) — a follow-up to the
 pure-braid engine built in PR #999.
 
-### 3. Quandle invariants \cite{joyce1982}, \cite{matveev1982}
+### 3. Quandle invariants \cite{joyce1982}, \cite{matveev1982} — *rigorous mathematics*
 
 A **quandle** $(Q, \triangleright)$ is a set $Q$ with a binary
-operation $\triangleright$ satisfying three axioms:
+operation $\triangleright$ satisfying three axioms (Joyce's theorem
+that the knot quandle is a complete invariant of oriented prime knots
+IS a mathematical theorem with a rigorous proof):
 
 1. $a \triangleright a = a$ for all $a \in Q$ (idempotency).
 2. For each $a, b \in Q$ there is a unique $c$ with
