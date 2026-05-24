@@ -27,6 +27,7 @@ import math
 import numpy as np
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, q_int
@@ -197,7 +198,7 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
                 a_prime = h_local / (1.0 - q_local**(2 * rho))  # = a_{-ρ}
                 # b² = a·a' + 1 (from det = -1)
                 b_sq = a * a_prime + 1.0
-                b = math.sqrt(abs(b_sq))
+                b = float(mp.sqrt(abs(b_sq)))
 
                 rows.extend([i, j, i, j])
                 cols.extend([i, j, j, i])
