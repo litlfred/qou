@@ -150,24 +150,24 @@ P_m(h)  =  [2]_q · (q^{2m+1} + q^{-(2m+1)}) / (2 · [2]_q²)
 This is the right-hand side of the unified identity. `P_m` is now in its clean bar-symmetric form.
 
 **Step 3 — Series expansion of `P_m(h)` around `h = 0`.**
-Substitute `q = (h + √(h²+4))/2` (the solution to `q − q⁻¹ = h`). At `h = 0`, `q = 1`, and `P_m(0) = (1 + 1) / 4 = 1/2`. The Taylor expansion of `q^{2m+1} + q^{-(2m+1)}` in `h` is even (the function is invariant under `q → q⁻¹` which is `h → −h`), so only even powers of `h` appear.
+Substitute `q = (h + √(h²+4))/2` (the solution to `q − q^{-1} = h`). At `h = 0`, `q = 1`, and `P_m(0) = (1 + 1) / 4 = 1/2`. The Taylor expansion of `q^{2m+1} + q^{-(2m+1)}` in `h` is even (the function is invariant under `q → q^{-1}` which is `h → −h`), so only even powers of `h` appear.
 
-**Step 4 — Even-coefficient extraction via the Chebyshev-of-the-second-kind identity.**
+**Step 4 — Even-coefficient extraction via the Chebyshev / Fibonacci-polynomial identity.**
 A standard Fibonacci/Chebyshev identity ([Graham-Knuth-Patashnik, *Concrete Mathematics* (2nd ed., 1994), Exercise 6.41 + §6.6 Fibonacci-polynomial identity; also Riordan, *Combinatorial Identities* (1968), Ch 4 Eq 41a]) states:
 
 ```
 q^{2m+1} + q^{-(2m+1)}
-   =  (q + q^{-1}) · Σ_{j=0}^m  C(m+j, 2j) · (q − q^{-1})^{2j}                    (4)
+   =  (q + q^{-1}) · Σ_{j=0}^m  C(m+j, 2j) · (q − q^{-1})^{2j}                    (6)
 ```
 
 This is the inversion of the standard recurrence `q^{n+1} + q^{-(n+1)} = (q + q^{-1})(q^n + q^{-n}) − (q^{n-1} + q^{-(n-1)})` applied to the odd-index sequence; the coefficients `C(m+j, 2j)` are the standard Fibonacci-polynomial coefficients (cf. Vajda, *Fibonacci and Lucas Numbers* (1989), §III.16). Dividing both sides by `2 [2]_q = 2(q + q^{-1})`:
 
 ```
 (q^{2m+1} + q^{-(2m+1)}) / (2 [2]_q)
-   =  Σ_{j=0}^m  C(m+j, 2j) / 2  ·  h^{2j}                                       (5)
+   =  Σ_{j=0}^m  C(m+j, 2j) / 2  ·  h^{2j}                                       (7)
 ```
 
-Combining (5) of Step 2 and the divided form just above:
+Combining (5) of Step 2 with (7):
 
 ```
 P_m(h)  =  Σ_{j=0}^m  C(m+j, 2j) / 2  ·  h^{2j}
@@ -186,20 +186,20 @@ The proof above lives entirely on the **algebraic side**: every step works over 
 Then the two trace polynomials of this audit have the compact algebraic forms
 
 ```
-P_m(h)  =  <2m+1>_q  /  (2 · <1>_q)                          (bar-SYMMETRIC, in ℚ(q))     (6)
-Q_m(h)  =  h · [2m+1]_q  /  (2 · [2]_q)                       (bar-ANTI-symmetric, in ℚ(q)) (7)
+P_m(h)  =  <2m+1>_q  /  (2 · <1>_q)                          (bar-SYMMETRIC, in ℚ(q))     (8)
+Q_m(h)  =  h · [2m+1]_q  /  (2 · [2]_q)                       (bar-ANTI-symmetric, in ℚ(q)) (9)
 ```
 
 with the per-knot EM/strong ratio (the q-tanh)
 
 ```
 Q_m / P_m  =  (q^{2m+1} − q^{-(2m+1)}) / (q^{2m+1} + q^{-(2m+1)})
-            =  (q^{4m+2} − 1) / (q^{4m+2} + 1).                                          (8)
+            =  (q^{4m+2} − 1) / (q^{4m+2} + 1).                                          (10)
 ```
 
-(All three forms sympy-verified for `m = 0..5`.) Identity (5) of Step 2 is just `2 · P_m · <1>_q = <2m+1>_q`; identity (8) is the algebraic q-tanh, lifting trivially to `tanh((2m+1) η)` at substrate and `i tan((2m+1) θ)` at root-of-unity.
+(All three forms sympy-verified for `m = 0..5`.) Identity (5) of Step 2 is just `2 · P_m · <1>_q = <2m+1>_q`; identity (10) is the algebraic q-tanh, lifting trivially to `tanh((2m+1) η)` at substrate and `i tan((2m+1) θ)` at root-of-unity.
 
-The cosh / sinh / tanh forms that follow are the **Archimedean realizations** of (6)-(8) under the functor `q ↦ e^η` for `η ∈ ℝ`. At a root-of-unity `q = e^{iθ}`, the same algebraic identities specialize to trigonometric Chebyshev-T / Chebyshev-U ratios. The Phase 5b three-avatars synthesis `Li_2^q ↔ cos_q ↔ cosh` corresponds exactly to the **algebraic / trigonometric / hyperbolic** triple here.
+The cosh / sinh / tanh forms that follow are the **Archimedean realizations** of (8)-(10) under the functor `q ↦ e^η` for `η ∈ ℝ`. At a root-of-unity `q = e^{iθ}`, the same algebraic identities specialize to trigonometric Chebyshev-T / Chebyshev-U ratios. The Phase 5b three-avatars synthesis `Li_2^q ↔ cos_q ↔ cosh` corresponds exactly to the **algebraic / trigonometric / hyperbolic** triple here.
 
 **Corollary (substrate / root-of-unity forms).** Setting `q = e^η` (substrate, `η ∈ ℝ`):
 
@@ -211,21 +211,23 @@ P_m(h) = (e^{(2m+1) η} + e^{-(2m+1) η}) / (2 · (e^η + e^{-η}))
 Setting `q = e^{iθ}` (root-of-unity):
 
 ```
-P_m(h) = cos((2m+1) θ) / (2 cos θ)         (the Chebyshev-of-the-second-kind form U_{2m}((q+q⁻¹)/2)/something — equivalently, the (2m+1)-th Chebyshev `T` ratio).
+P_m(h) = cos((2m+1) θ) / (2 cos θ) = T_{2m+1}(cos θ) / (2 cos θ)
 ```
 
-These are the **hyperbolic** and **trigonometric** avatars of the same algebraic identity (5); the bar-symmetric kernel in Phase 5b's three-avatars synthesis (`Li_2^q ↔ cos_q ↔ cosh`) is realized concretely by the trace polynomial `P_m`.
+where `T_n` is the n-th Chebyshev polynomial of the first kind (since `T_n(cos θ) = cos(nθ)`).
 
-**Reference for the binomial identity (4):**
+These are the **hyperbolic** and **trigonometric** avatars of the same algebraic identity (8); the bar-symmetric kernel in Phase 5b's three-avatars synthesis (`Li_2^q ↔ cos_q ↔ cosh`) is realized concretely by the trace polynomial `P_m`.
+
+**Reference for the binomial identity (6):**
 - Graham, R. L., Knuth, D. E., Patashnik, O. *Concrete Mathematics: A Foundation for Computer Science* (2nd ed.). Addison-Wesley, 1994. §6.6 (Fibonacci numbers), Eqs (6.119)-(6.121) and Exercise 6.41.
 - Riordan, J. *Combinatorial Identities*. Wiley, 1968. Chapter 4, Eq. (41a).
 - Vajda, S. *Fibonacci and Lucas Numbers, and the Golden Section: Theory and Applications*. Halsted Press, 1989. §III.16 (Fibonacci polynomials).
 
-The identity (4) is itself a folklore result; the Chebyshev-of-the-second-kind connection is implicit in Lucas (1878) and standard in any modern treatment of Fibonacci polynomials.
+The identity (6) is itself a folklore result; the Chebyshev / Fibonacci-polynomial connection is implicit in Lucas (1878) and standard in any modern treatment of Fibonacci polynomials.
 
 ## What this finding IS
 
-A unified closed-form characterization of the **entire T(2, 2m) torus-link family** in H_2(q). Every even-h coefficient is a single binomial `C(m+j, 2j)/2`; the triangular and tetrahedral patterns are the `j = 1, 2` slices of one identity. Sympy verifies it exactly across `m = 1..9, j = 0..5` (54 cells); the algebraic proof above (Steps 1-3, via the Fibonacci-polynomial identity) elevates this from finite verification to a theorem for all `m ≥ 0`.
+A unified closed-form characterization of the **entire T(2, 2m) torus-link family** in H_2(q). Every even-h coefficient is a single binomial `C(m+j, 2j)/2`; the triangular and tetrahedral patterns are the `j = 1, 2` slices of one identity. Sympy verifies it exactly across `m = 1..9, j = 0..5` (54 cells); the algebraic proof above (Steps 1-4, via the Fibonacci-polynomial identity) elevates this from finite verification to a theorem for all `m ≥ 0`.
 
 ## What this finding is NOT
 
