@@ -100,6 +100,10 @@
       "type": "array",
       "items": { "type": "string" },
       "description": "Free-text caveats / known limitations of the computation."
+    },
+    "precisionMetadata": {
+      "$ref": "#/$defs/PrecisionMetadata",
+      "description": "Substrate-precision parameters used to produce this witness. Optional but recommended on substrate-precision compute paths (mpmath / Decimal / rug). Added 2026-05-24."
     }
   },
   "$defs": {
@@ -140,6 +144,29 @@
         "source": {
           "type": "string",
           "description": "Source of the expected value, e.g. 'CODATA 2022', 'OEIS A091518'."
+        }
+      }
+    },
+    "PrecisionMetadata": {
+      "type": "object",
+      "description": "Substrate-precision parameters. All fields optional; producers should emit whichever are meaningful for their compute path.",
+      "additionalProperties": true,
+      "properties": {
+        "compute_dps": {
+          "type": "integer",
+          "description": "mpmath / rug working-precision decimal places (e.g. 50)."
+        },
+        "output_dps": {
+          "type": "integer",
+          "description": "Formatting precision for emitted assertion values (≤ compute_dps − guard_digits)."
+        },
+        "guard_digits": {
+          "type": "integer",
+          "description": "compute_dps − output_dps; safety margin."
+        },
+        "truncation_bound": {
+          "type": "string",
+          "description": "String form of the maximum acceptable truncation error (e.g. \"1e-40\"). Kept as a string to avoid float round-trip loss."
         }
       }
     },

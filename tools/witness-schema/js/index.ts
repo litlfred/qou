@@ -71,6 +71,21 @@ export const UpstreamWitnessHash = z
   .passthrough();
 export type UpstreamWitnessHash = z.infer<typeof UpstreamWitnessHash>;
 
+// Added 2026-05-24 (in-repo commit 146f3aeac). Substrate-precision
+// parameters used to produce the witness. Optional but recommended
+// on substrate-precision compute paths (mpmath / Decimal / rug).
+// `truncation_bound` is intentionally a string (e.g. "1e-40") to
+// avoid float round-trip loss for the bound itself.
+export const PrecisionMetadata = z
+  .object({
+    compute_dps: z.number().int().optional(),
+    output_dps: z.number().int().optional(),
+    guard_digits: z.number().int().optional(),
+    truncation_bound: z.string().optional(),
+  })
+  .passthrough();
+export type PrecisionMetadata = z.infer<typeof PrecisionMetadata>;
+
 // `upstream_witness_hashes` lives under `data` (per the in-repo
 // convention), not at the top level. Callers reach it via
 // `witness.data?.upstream_witness_hashes`.
@@ -94,8 +109,9 @@ export const ComputationWitness = z
     parameters: z.record(z.string(), z.unknown()).optional(),
     data: z.record(z.string(), z.unknown()).optional(),
     caveats: z.array(z.string()).optional(),
+    precisionMetadata: PrecisionMetadata.optional(),
   })
   .passthrough();
 export type ComputationWitness = z.infer<typeof ComputationWitness>;
 
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
