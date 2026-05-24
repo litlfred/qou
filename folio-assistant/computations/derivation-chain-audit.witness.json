@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T02:19:51.286551+00:00",
-  "commitSha": "ec9091b8a4d575b4f2eddc3cec03208e9a61c702",
+  "computedAt": "2026-05-24T03:49:04.244878+00:00",
+  "commitSha": "cb1ebd3121427dc82fdac0f6db31868344fb9642",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2389,12 +2389,14 @@
         "hecke-1d-irrep-closed-form-character-probe.witness.json",
         "hecke-branching-trace-decomposition-probe.witness.json",
         "hecke-core-symbolic-migration.witness.json",
+        "hecke-crossed-module-q8.witness.json",
         "hecke-log-decomposition-probe.witness.json",
         "hecke-markov-transition-probe.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
         "hoefsmit-seminormal-form-probe.witness.json",
         "homflypt-engine-selftest.witness.json",
+        "homflypt-su-n-mass-tower.witness.json",
         "hopf-jones-c3-categorical.witness.json",
         "hopf-markov-trace-genuine.witness.json",
         "hydrogen-qshuffle-compound.witness.json",
