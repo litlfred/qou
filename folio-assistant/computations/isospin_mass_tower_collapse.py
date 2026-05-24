@@ -22,6 +22,7 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -66,30 +67,30 @@ def main() -> None:
     }
 
     # ── Branch-phase predictions ──────────────────────────────────
-    sin72 = 2 * abs(math.sin(2 * math.pi / 5))
-    sin144 = 2 * abs(math.sin(4 * math.pi / 5))
-    phi = (1 + math.sqrt(5)) / 2
+    sin72 = 2 * abs(mp.sin(2 * mp.pi / 5))
+    sin144 = 2 * abs(mp.sin(4 * mp.pi / 5))
+    phi = (1 + mp.sqrt(5)) / 2
 
     D_pred_value = sin72 + sin144           # 2|sin72| + 2|sin144|
     T_3He_pred_value = 3 * sin144           # 3 * 2|sin144|
     A3_value = (raw["T"] + corrected_3He) / 2
 
     branch_phase = {
-        "sin72_2x": sin72,
-        "sin144_2x": sin144,
-        "sin72_over_sin144": sin72 / sin144,
-        "phi": phi,
+        "sin72_2x": float(sin72),
+        "sin144_2x": float(sin144),
+        "sin72_over_sin144": float(sin72 / sin144),
+        "phi": float(phi),
         "D_pred": {
             "formula": "2|sin72| + 2|sin144|",
-            "value":   D_pred_value,
+            "value":   float(D_pred_value),
             "obs":     raw["D"],
-            "err_pct": (D_pred_value - raw["D"]) / raw["D"] * 100,
+            "err_pct": float((D_pred_value - raw["D"]) / raw["D"] * 100),
         },
         "T_3He_pred": {
             "formula": "3 * 2|sin144|",
-            "value":   T_3He_pred_value,
+            "value":   float(T_3He_pred_value),
             "obs":     A3_value,
-            "err_pct": (T_3He_pred_value - A3_value) / A3_value * 100,
+            "err_pct": float((T_3He_pred_value - A3_value) / A3_value * 100),
         },
     }
 
@@ -148,10 +149,10 @@ def main() -> None:
            f"{isospin['T_minus_3He_corr_pct']:.4f}%")
     print(f"\nBranch-phase fits:")
     print(f"  D   (A=2):           obs={raw['D']:.4f}  "
-           f"pred={D_pred_value:.4f}  "
+           f"pred={float(D_pred_value):.4f}  "
            f"err={branch_phase['D_pred']['err_pct']:+.2f}%")
     print(f"  T=3He_corr (A=3):    obs={A3_value:.4f}  "
-           f"pred={T_3He_pred_value:.4f}  "
+           f"pred={float(T_3He_pred_value):.4f}  "
            f"err={branch_phase['T_3He_pred']['err_pct']:+.2f}%")
 
 
