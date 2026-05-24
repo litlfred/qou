@@ -202,3 +202,21 @@ if __name__ == "__main__":
 #   Q₈ algebraic:  -3/2 per cell  ──×(2G/3)──→  -G per cell  (geometric)
 #   8 cells total:  -12 total      ──×(2G/3)──→  -8G total    (= Vol(𝓑₃))
 #   Φ₀ (÷ -64):    -12 / -64      =            3/16           (Markov trace κ)
+
+# ── Bring's surface connection (genus 4, χ = −6) ────────────────
+#
+# THE CONNECTION:
+#   tr(h² curvature) / dim(V) = −12 / 2 = −6 = χ(Σ₄)
+#
+# where Σ₄ is Bring's surface (genus 4, Euler characteristic −6)
+# and dim(V) = 2 is the spin-½ fundamental representation.
+#
+# This means: the Q₈ crossed module h² trace CAPTURES the Euler
+# characteristic of Bring's surface, scaled by the representation
+# dimension. The bridge factor 2G/3 = Vol(𝓑₃) / (dim(V)·|χ|)
+# is the per-unit-χ hyperbolic volume.
+#
+# Complete chain:
+#   dim(V)·χ(Bring) = −12     ← ALGEBRAIC (Q₈ crossed module)
+#   × (2G/3)        = −8G     ← BRING BRIDGE (per-unit-χ volume)
+#   ÷ Φ₀(−64)      = 3/16    ← BOUNDARY (Markov trace κ)
