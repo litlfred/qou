@@ -382,7 +382,15 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=1500)
     args = parser.parse_args()
 
-    dps = 50 if args.precision == "mpfr" else 0
+    # dps policy:
+    #   - markov_peel: f64-substrate via sp.Float(str(Q_FLOAT), 50)
+    #   - laurent_q / laurent_q_rust: enforced MPFR-50dps via dispatcher
+    #     (see compute_tr_m_canonical:147 — effective_dps=max(dps, 50))
+    #   - rust_f64: f64 dps=0; rust_mpfr: MPFR dps=50
+    if args.method in ("laurent_q", "laurent_q_rust"):
+        dps = 50
+    else:
+        dps = 50 if args.precision == "mpfr" else 0
 
     label_to_ZN = {label: (Z, N) for Z, N, label in DEFAULT_ATOMS}
     label_to_ZN.update({"proton": (1, 0), "neutron": (0, 1)})
@@ -413,11 +421,13 @@ def main() -> int:
 
     # Engine + descriptor strings (used both in print headers and below).
     engine_str = "python+mpmath"
-    method_desc = (
-        "markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ"
-        if args.method == "markov_peel"
-        else f"Rust hecke-canonical-chi ({args.precision}) + mpmath y_λ"
-    )
+    method_desc = {
+        "markov_peel": "markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ",
+        "laurent_q":   "laurent_q_trace.tr_M_atomic_lq (Python LaurentQ + evaluate_mpf) + mpmath y_λ (MPFR-50dps)",
+        "laurent_q_rust": "pyhecke-native v0.9.0 tr_m_atomic_mpfr (Tier 1.A Rust + MPFR) + mpmath y_λ (MPFR-50dps)",
+        "rust_f64":  f"Rust hecke-canonical-chi (f64) + mpmath y_λ",
+        "rust_mpfr": f"Rust hecke-canonical-chi (MPFR-50dps) + mpmath y_λ",
+    }.get(args.method, f"unknown method '{args.method}'")
 
     # Pre-load upstream witnesses through the builder so their
     # sha256 hashes land in data.upstream_witness_hashes. The two
@@ -563,7 +573,14 @@ def main() -> int:
         )
         .add_parameter("q_0", Q_50_DIGIT_STR)
         .add_parameter("method", args.method)
-        .add_parameter("precision", args.precision)
+        # `precision` reflects what the dispatcher actually does, not
+        # the raw CLI flag (which only governs the rust_f64/rust_mpfr
+        # branches). For laurent_q / laurent_q_rust / markov_peel the
+        # effective precision is MPFR-50dps regardless of args.precision.
+        .add_parameter("precision", (
+            "mpfr" if args.method in ("laurent_q", "laurent_q_rust", "markov_peel")
+            else args.precision
+        ))
         .add_parameter("dps", dps)
         .add_parameter("compute_dps", COMPUTE_DPS)
         .add_parameter("output_dps", OUTPUT_DPS)
