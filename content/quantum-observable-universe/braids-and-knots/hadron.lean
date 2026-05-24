@@ -37,7 +37,7 @@ structure Hadron where
   /-- Spherical coordinate φ of the common base point. -/
   phi : R_q
   /-- The constituent knot types (valence quarks in the knot picture). -/
-  constituents : List KnotTheory.PlanarDiagram
+  constituents : List KnotTheory.BraidWord
   /-- A hadron must have at least 2 constituents. -/
   -- Ref: [manuscript] §3, Definition: Hadron
   constituents_nonempty : constituents.length ≥ 2
@@ -81,8 +81,8 @@ where Q(q) encodes the q-deformed Skein polynomial of the binding link. -/
 structure HadronBinding where
   /-- The q-deformation parameter. -/
   q : R_q
-  /-- The binding link (Hopf link PD code). -/
-  bindingLink : KnotTheory.PlanarDiagram
+  /-- The binding link (Hopf link braid word). -/
+  bindingLink : KnotTheory.BraidWord
   /-- The Skein polynomial evaluation Q(q) · M(L_Hopf). -/
   bindingMass : R_q
   /-- Binding mass is non-negative. -/
@@ -91,7 +91,7 @@ structure HadronBinding where
 
 /-- Mass of a single constituent knot, given by its hyperbolic volume
     in the QOU framework.  Returns the volume value. -/
-noncomputable def constituentMass (k : KnotTheory.PlanarDiagram)
+noncomputable def constituentMass (k : KnotTheory.BraidWord)
     (vol : KnotTheory.HyperbolicVolume) : R_q :=
   vol.value
 
