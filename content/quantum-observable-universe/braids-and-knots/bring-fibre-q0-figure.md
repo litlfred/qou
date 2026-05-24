@@ -16,11 +16,15 @@ $z \approx (0.119, \pm 1.054)$, $(0.106, \pm 0.937)$,
 $(-0.975, \pm 0.223)$.
 
 The chosen branch point for the right panel is the one of smallest
-$|z|$ ($z_c \approx -0.975 + 0.223i$). As $z$ circles $z_c$ at radius
-$0.15$, exactly two of the three sheets merge — the $B_3$-monodromy
-fingerprint — while the third remains well-separated. The merging
-sheets are drawn in matched line styles (solid + dashed), the
-isolated sheet in dotted.
+$|z|$. Among the six discriminant zeros, the pair
+$z \approx (0.106, \pm 0.937i)$ have $|z| \approx 0.943$ — smaller
+than $|-0.975 + 0.223i| \approx 1.000$ — and the script selects
+$z_c \approx 0.106 - 0.937i$ (the negative-imaginary representative;
+see the `branch_point_chosen` field in the witness). As $z$ circles
+$z_c$ at radius $0.15$, exactly two of the three sheets merge — the
+$B_3$-monodromy fingerprint — while the third remains well-separated.
+The merging sheets are drawn in matched line styles (solid + dashed),
+the isolated sheet in dotted.
 
 This figure is generated programmatically by
 [`bring_chiral_fibre_figure.py`](../../../folio-assistant/computations/bring_chiral_fibre_figure.py),

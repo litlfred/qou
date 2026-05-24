@@ -44,21 +44,49 @@ OUTPUT
         — parameters + branch-point coordinates + sample sheet values
 
 WIRING
-    Pure-Python, depends on numpy + matplotlib only. Imports
-    `WitnessBuilder` if available; otherwise writes JSON directly.
-    No q_parameter dependency since the cubic itself is
+    Pure-Python, depends on numpy + matplotlib only. Witness JSON is
+    written directly (not via `WitnessBuilder`) because this is a
+    figure-generation script, not a numerical-result compute — the
+    witness fields are figure parameters + sample sheet values, not
+    `assertions` in the WitnessBuilder sense. Schema is the
+    `validation-input`-flavoured `type: figure-generation` shape with
+    the standard provenance keys (`engine`, `engineVersion`,
+    `computedAt`, `scriptFile`); `scriptHash` + `commitSha` are
+    populated post-build by `run_pipeline.py` / `witness-audit.ts`.
+    No `q_parameter` dependency since the cubic itself is
     q-independent (the q labels in F3 / F4 are framing / scale labels
     for the paper, NOT computational parameters).
+
+CONSTANTS
+    All magic values (search radius, grid size, circle radius, real
+    segment endpoints) are hoisted to module-level constants below to
+    avoid duplication between the rendering functions and their
+    plot-title strings.
 """
 
 from __future__ import annotations
 
 import json
-import os
 import sys
 import time
 from pathlib import Path
 from typing import Tuple
+
+
+# ── Module constants (hoisted to avoid magic-value duplication) ──
+
+BP_SEARCH_RADIUS: float = 3.0
+BP_GRID_SIZE: int = 200
+BP_NEWTON_ITERS: int = 50
+
+# F3 (q→0) parameters
+F3_CIRCLE_RADIUS: float = 0.15
+F3_N_SAMPLES: int = 200
+
+# F4 (q=1/2) parameters
+F4_Z_MIN: float = -0.5
+F4_Z_MAX: float = 1.5
+F4_N_SAMPLES: int = 200
 
 import numpy as np
 import matplotlib
@@ -103,8 +131,32 @@ def bring_discriminant(z: complex) -> complex:
     return 18 * b * c * d - 4 * b**3 * d + b**2 * c**2 - 4 * c**3 - 27 * d**2
 
 
-def find_branch_points(grid_size: int = 200, search_radius: float = 3.0,
-                       newton_iters: int = 50) -> np.ndarray:
+def bring_discriminant_derivative(z: complex) -> complex:
+    """Analytical derivative dΔ/dz of the Bring chiral cubic's
+    discriminant. Avoids finite-difference precision loss in
+    Newton-Raphson polishing.
+
+    Using b = z+1, c = z²+z+1, d = z³+z²+z+1; b' = 1, c' = 2z+1,
+    d' = 3z²+2z+1, and Δ = 18bcd - 4b³d + b²c² - 4c³ - 27d² gives
+    Δ' via product rule term-by-term."""
+    b = z + 1
+    c = z**2 + z + 1
+    d = z**3 + z**2 + z + 1
+    bp = 1.0 + 0j
+    cp = 2 * z + 1
+    dp = 3 * z**2 + 2 * z + 1
+    return (
+        18 * (bp * c * d + b * cp * d + b * c * dp)
+        - 4 * (3 * b**2 * bp * d + b**3 * dp)
+        + (2 * b * bp * c**2 + 2 * b**2 * c * cp)
+        - 12 * c**2 * cp
+        - 54 * d * dp
+    )
+
+
+def find_branch_points(grid_size: int = BP_GRID_SIZE,
+                       search_radius: float = BP_SEARCH_RADIUS,
+                       newton_iters: int = BP_NEWTON_ITERS) -> np.ndarray:
     """Locate roots of the discriminant Δ(z) in the disc |z| ≤ search_radius
     by sampling a grid + Newton-Raphson polish on local minima of |Δ|."""
     re_grid = np.linspace(-search_radius, search_radius, grid_size)
@@ -124,17 +176,17 @@ def find_branch_points(grid_size: int = 200, search_radius: float = 3.0,
             if v == neighborhood.min():
                 candidates.append(Z[i, j])
 
-    # Polish each candidate via Newton-Raphson on Δ(z)
+    # Polish each candidate via Newton-Raphson on Δ(z) using the
+    # analytical derivative (more robust than finite-difference,
+    # per PR #1108 review).
     polished = []
-    eps = 1e-7
     for z0 in candidates:
         z = z0
         for _ in range(newton_iters):
             d = bring_discriminant(z)
             if abs(d) < 1e-14:
                 break
-            # Numerical derivative (finite difference)
-            d_prime = (bring_discriminant(z + eps) - bring_discriminant(z - eps)) / (2 * eps)
+            d_prime = bring_discriminant_derivative(z)
             if abs(d_prime) < 1e-20:
                 break
             z = z - d / d_prime
@@ -157,12 +209,13 @@ def find_branch_points(grid_size: int = 200, search_radius: float = 3.0,
 def render_f3_q_zero(branch_points: np.ndarray, output_dir: Path) -> dict:
     """Two-panel: CP^1 base with branch points + chosen circle, and
     three sheets evaluated around the chosen branch point."""
-    # Pick the branch point with smallest |z| (most central)
+    # Pick the branch point with smallest |z| (most central);
+    # parameters from the module-level F3_* constants.
     z_c = min(branch_points, key=lambda z: abs(z))
-    circle_radius = 0.15
+    circle_radius = F3_CIRCLE_RADIUS
+    n_samples = F3_N_SAMPLES
 
     # Sample sheets around the circle
-    n_samples = 200
     theta = np.linspace(0, 2 * np.pi, n_samples)
     z_path = z_c + circle_radius * np.exp(1j * theta)
 
@@ -277,9 +330,11 @@ def render_f3_q_zero(branch_points: np.ndarray, output_dir: Path) -> dict:
 
 def render_f4_q_half(output_dir: Path) -> dict:
     """Two-panel: CP^1 base with highlighted real segment, and
-    stacked Re(X), Im(X) sub-plots of the three sheets along the segment."""
-    z_min, z_max = -0.5, 1.5
-    n_samples = 200
+    stacked Re(X), Im(X) sub-plots of the three sheets along the segment.
+
+    Parameters come from the module-level F4_* constants."""
+    z_min, z_max = F4_Z_MIN, F4_Z_MAX
+    n_samples = F4_N_SAMPLES
     z_real = np.linspace(z_min, z_max, n_samples)
 
     # Compute sheets at each real z
@@ -389,30 +444,62 @@ def render_f4_q_half(output_dir: Path) -> dict:
 # ── Witness emission ─────────────────────────────────────────────
 
 
+def _to_repo_relative(p: str, repo_root: Path) -> str:
+    """Convert an absolute path under repo_root to a repo-relative
+    string. Per PR #1108 review: absolute /home/user/... paths
+    aren't reproducible across machines."""
+    try:
+        return str(Path(p).resolve().relative_to(repo_root.resolve()))
+    except ValueError:
+        # Path is outside repo_root — keep as-is (shouldn't happen
+        # for our output files but defensive).
+        return p
+
+
 def emit_witness(f3_data: dict, f4_data: dict, branch_points: np.ndarray,
-                 witness_path: Path, wall_seconds: float) -> None:
+                 witness_path: Path, repo_root: Path, wall_seconds: float) -> None:
     """Emit a witness JSON capturing the figure parameters + verified
     sample values. This makes the figures auditable by
-    compute-integration-watcher."""
+    compute-integration-watcher.
+
+    Schema = `type: figure-generation` with standard provenance keys
+    (`engine`, `engineVersion`, `computedAt`, `scriptFile`); `scriptHash`
+    + `commitSha` are filled post-build by `run_pipeline.py` /
+    `witness-audit.ts`. All paths are repo-relative for reproducibility.
+    """
+    f3_rel = {**f3_data,
+              "svg_path": _to_repo_relative(f3_data["svg_path"], repo_root),
+              "pdf_path": _to_repo_relative(f3_data["pdf_path"], repo_root)}
+    f4_rel = {**f4_data,
+              "svg_path": _to_repo_relative(f4_data["svg_path"], repo_root),
+              "pdf_path": _to_repo_relative(f4_data["pdf_path"], repo_root)}
     witness = {
         "type": "figure-generation",
         "version": "1",
-        "scriptFile": "folio-assistant/computations/bring_chiral_fibre_figure.py",
-        "scriptHash": None,  # filled by witness-pipeline post-build
-        "scriptCommitSha": None,  # filled by witness-pipeline post-commit
-        "computedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "engine": "python",
         "engineVersion": f"numpy-{np.__version__} matplotlib-{matplotlib.__version__}",
+        "scriptFile": "folio-assistant/computations/bring_chiral_fibre_figure.py",
+        "scriptHash": None,  # filled by run_pipeline.py post-build
+        "scriptCommitSha": None,  # filled post-commit
+        "commitSha": None,  # filled post-commit
+        "computedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "description": (
             "Bring chiral fibre figures F3 (q→0, branch-point neighbourhood) "
             "and F4 (q=½, real-segment) per PR #1075 workplan Phase 1. "
             "Cubic X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0 from Bring's invariant "
             "ring; sheets via numpy.roots; branch points via Newton-Raphson "
-            "on the discriminant Δ(z)."
+            "on the discriminant Δ(z) using the analytical derivative."
         ),
         "parameters": {
             "cubic": "X^3 + (z+1)*X^2 + (z^2+z+1)*X + (z^3+z^2+z+1)",
-            "branch_point_search_radius": 3.0,
-            "branch_point_grid_size": 200,
+            "bp_search_radius": BP_SEARCH_RADIUS,
+            "bp_grid_size": BP_GRID_SIZE,
+            "bp_newton_iters": BP_NEWTON_ITERS,
+            "f3_circle_radius": F3_CIRCLE_RADIUS,
+            "f3_n_samples": F3_N_SAMPLES,
+            "f4_z_min": F4_Z_MIN,
+            "f4_z_max": F4_Z_MAX,
+            "f4_n_samples": F4_N_SAMPLES,
         },
         "data": {
             "branch_points": [
@@ -420,8 +507,8 @@ def emit_witness(f3_data: dict, f4_data: dict, branch_points: np.ndarray,
                  "discriminant_residual": float(abs(bring_discriminant(z)))}
                 for z in branch_points
             ],
-            "f3_q_zero": f3_data,
-            "f4_q_half": f4_data,
+            "f3_q_zero": f3_rel,
+            "f4_q_half": f4_rel,
             "wall_seconds": wall_seconds,
         },
     }
@@ -455,7 +542,7 @@ def main() -> int:
     print(f"  → {f4['pdf_path']}")
 
     wall = time.time() - t0
-    emit_witness(f3, f4, branch_points, witness_path, wall)
+    emit_witness(f3, f4, branch_points, witness_path, repo_root, wall)
     print(f"Witness emitted: {witness_path}  (wall: {wall:.1f}s)")
     return 0
 
