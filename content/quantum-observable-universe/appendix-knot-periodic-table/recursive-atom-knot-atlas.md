@@ -227,7 +227,7 @@ obtained.
 |--:|---|
 | Methodology | `deprecated-volume-match` *(deprecated)* — no GB-NF derivation in $H_{21}(q_0)$). |
 | Braid (NF) | *Not derived.* Volume-match search at $\rho = 5$ returned closure $= L_{11a62}$ (HT-table 11-crossing link, $\mathrm{Vol} = 15.3600$). No explicit $\sigma$-word in $H_{21}$ available. |
-| Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 15.3600 = 39.245$ MeV vs $B_\mathrm{AME} = 39.245$. err $= +4{,}009$ ppb. **Striking precision but cannot be distinguished from numerical coincidence in a $\sim 2400$-knot search absent an independent $\sigma$-word derivation.** |
+| Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 15.3600 = 39.245$ MeV vs $B_\mathrm{AME} = 39.245$. err $= +4{,}009$ ppb. **The small residual (4,009 ppb) arises from a search over $\sim 2400$ knots and lacks independent structural justification; the closing $\sigma$-word in $H_{21}(q_0)$ remains unidentified.** |
 
 ### $\ell = 2$ — α-cluster atoms (recursive: ref to ${}^{4}$He)
 
