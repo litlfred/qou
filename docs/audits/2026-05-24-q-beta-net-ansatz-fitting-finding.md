@@ -89,6 +89,7 @@ The framework currently assumes (a) implicitly. The +0.17% match is taken as evi
 - Canonical mass formula (the right formalism): [`per-braid-mass-tower.md`](../../content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md)
 - The current "prediction" block (will be updated): [`neutron-qvalue-symbolic.md`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)
 - Owner directive flagging this: PR #1127 chat (2026-05-24): *"I think only 2 CAL is numerical coincidence, but I don't know what you are doing exactly. please justify every step. no fitting PLEASE"*
+- **Companion**: [`2026-05-24-complex-q-historical-trajectory.md`](2026-05-24-complex-q-historical-trajectory.md) — historical emergence of ℂ in physics (Cardano → Schrödinger → Born → Renou) and the parallel trajectory for `q ∈ ℂ` in QOU; identifies the framework as currently at stage 3 of the trajectory (Born modulus projection) with +0.17% Q_β as the candidate for stage 4 (forced by formula). Empirical test (simultaneous CAL-2 + CAL-3 fit for complex q_0) ~2 hours of work; queued as Path B-extended.
 
 ## Path D execution — Hermiticity audit of the categorical mass formula
 
