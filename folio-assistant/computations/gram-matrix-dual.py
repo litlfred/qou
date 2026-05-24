@@ -466,3 +466,25 @@ witness = {
 out_path = Path(__file__).with_suffix(".witness.json")
 out_path.write_text(json.dumps(witness, indent=2, default=float))
 print(f"\n  Witness written to {out_path.name}")
+
+
+# ══════════════════════════════════════════════════════════════
+#  HOMFLYPT SU(N) GRAM MATRIX (multi-channel extension)
+# ══════════════════════════════════════════════════════════════
+# The SU(2) Gram matrix above uses the Markov trace (∝ Jones).
+# For SU(N>2), the HOMFLYPT engine provides multi-channel Gram
+# entries via the quantum Schur function weights.
+#
+# Usage (when homflypt_engine is available):
+#   from homflypt_engine import homflypt_gram_entry
+#   G_su3[i][j] = homflypt_gram_entry(basis_braid_i, basis_braid_j,
+#                                      n_strands=3, N=3, q=q0)
+#
+# Per prop:markov-trace-ratio-exact, the RATIOS between Gram
+# entries are exact regardless of the Markov/Jones normalisation
+# convention. The Gram matrix determinant, eigenvalues, and inverse
+# are therefore correct up to a global scalar (C^{2·dim}) which
+# cancels in the Frobenius dual and LP shadow prices.
+#
+# See rem:archimedean-image-table row 5 for the SU(N) family
+# interpretation and row 9 for the LP duality structure.
