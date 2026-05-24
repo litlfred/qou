@@ -47,25 +47,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "77b3c75b4485",
-          "ts": "c2f5d05c44d2",
-          "lean": "7d286b2d7a68"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/archimedean-universe/mobius-limit-from-thimble.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
-      }
-    ],
     "compute-prop-has-consumer": [
       {
         "field_hash": {

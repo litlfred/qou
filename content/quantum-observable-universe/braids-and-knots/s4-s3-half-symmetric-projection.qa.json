@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:s4-s3-half-symmetric-projection",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md"
+  },
+  "source_hashes": {
+    "md": "07d9675e09d5",
+    "ts": "816606309698"
+  },
+  "criteria": {
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "07d9675e09d5",
+          "ts": "816606309698"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T00:49:59.352Z",
+        "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+      }
+    ]
+  },
+  "updated_at": "2026-05-24T00:49:59.352Z"
+}

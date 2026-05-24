@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/archimedean-universe/markov-trace-factorization.lean"
   },
   "source_hashes": {
-    "md": "d97f2b588910",
+    "md": "3f6b201f5d0e",
     "ts": "2d53baaf25fa",
     "lean": "d574211b455f"
   },
@@ -83,25 +83,6 @@
         },
         "reviewed_at": "2026-05-22T15:26:12.474Z",
         "reviewed_sha": "068fcd3c1d4fa13f2780f9c360e1b7feec1c3e88"
-      }
-    ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "63aa18ec5b60",
-          "ts": "7117ae69fca0",
-          "lean": "f526596e9778"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/archimedean-universe/markov-trace-factorization.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -735,7 +716,26 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "3f6b201f5d0e",
+          "ts": "2d53baaf25fa",
+          "lean": "d574211b455f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T00:49:59.352Z",
+        "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T00:49:59.352Z"
 }

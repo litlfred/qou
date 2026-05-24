@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "982cb8a631ac",
     "ts": "ca0afc6dee24",
-    "lean": "81a3cb7d2b49"
+    "lean": "f3d0e9229bef"
   },
   "criteria": {
     "canonical-calibration-count": [
@@ -75,25 +75,6 @@
         },
         "reviewed_at": "2026-05-20T16:28:23.168Z",
         "reviewed_sha": "c660365141492e87e258a2cf65117e9dd35f091f"
-      }
-    ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "2781ea39df00",
-          "ts": "ca0afc6dee24",
-          "lean": "81a3cb7d2b49"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -885,7 +866,28 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "982cb8a631ac",
+          "ts": "ca0afc6dee24",
+          "lean": "f3d0e9229bef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T00:49:59.352Z",
+        "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T00:49:59.352Z"
 }

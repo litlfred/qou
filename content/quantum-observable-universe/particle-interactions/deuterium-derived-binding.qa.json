@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/particle-interactions/deuterium-derived-binding.lean"
   },
   "source_hashes": {
-    "md": "f5731a9e9393",
+    "md": "b4737192c699",
     "ts": "de2ebd22f7fa",
     "lean": "f23cb9c9d8e9"
   },
@@ -64,25 +64,6 @@
         },
         "reviewed_at": "2026-05-22T15:26:12.474Z",
         "reviewed_sha": "068fcd3c1d4fa13f2780f9c360e1b7feec1c3e88"
-      }
-    ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "a84db87c8c7e",
-          "ts": "de2ebd22f7fa",
-          "lean": "f23cb9c9d8e9"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts:1: no `probe:` field declared on the block — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -820,7 +801,26 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "b4737192c699",
+          "ts": "de2ebd22f7fa",
+          "lean": "f23cb9c9d8e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T00:49:59.352Z",
+        "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T00:49:59.352Z"
 }
