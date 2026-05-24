@@ -114,9 +114,17 @@ $E_0 = m_e/(q(q-1))$ is the single-level (Planck-tick)
 approximation, while the exact tower-summed $E_0$ would
 absorb the $0.17\%$ residual.
 
-**This is a genuine prediction from two leptonic inputs only.**
-No hadronic calibration (neutron mass, proton mass, or
-$Q_\beta$ itself) is used.
+**This is a 2-input closed form *conditional on the ansatz*
+$Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$** (stated
+"by construction" in
+[`pre-archimedean-derivation-chain.md`](../braids-and-knots/pre-archimedean-derivation-chain.md):391,
+not derived from the canonical per-braid mass formula). No
+hadronic calibration (neutron mass, proton mass, or $Q_\beta$
+itself) is used in the closed form *given the ansatz*; the
++0.17% match is empirical evidence for the ansatz but does
+not derive it. See
+[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)
+for the audit and resolution paths.
 
 **Witness**: symbolic derivation verified at
 $q_0 = 1.109978595554181$ from `q_parameter.py`.

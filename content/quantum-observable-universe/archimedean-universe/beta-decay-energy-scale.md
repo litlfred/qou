@@ -11,6 +11,22 @@ $$
    \approx  0.7823 \text{MeV}.
 $$
 
+**Ansatz disclaimer (2026-05-24, PR #1127).** The first equality
+$|\Delta(\mathrm{net})| \times \mathfrak{E}_0 = Q_\beta$ is an
+**ansatz**: it asserts that the unweighted sum of NF coefficients
+(the "net") of the proton/neutron braid words gives the leading-
+order mass difference when multiplied by the single-tick energy
+scale $\mathfrak{E}_0$. It has **not** been derived from the
+canonical per-braid mass formula
+[`prop:per-braid-mass-tower`](../braids-and-knots/per-braid-mass-tower.md),
+which uses Markov-trace **weighted** sums ($\mathrm{tr}_M(\gamma) = z$,
+$\mathrm{tr}_M(\sigma_i) = z^2$, $\mathrm{tr}_M(L_+) = z^3$, …) —
+a different quantity. The +0.17% match to CODATA is empirical
+evidence for the ansatz but does not derive it; the gap could
+equally be a numerical coincidence. Full audit:
+[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md).
+The second equality is energy conservation in $\beta$-decay (rigorous).
+
 ## Linearity
 
 The transition $\Delta = \mathrm{NF}(\mathfrak{n}) -
