@@ -7,6 +7,6 @@ export default definition({
   lean: { ref: "qou:QOU.Torsion.CategoricalProton",
     validation: "not_checked",
   },
-  uses: ["def:down-quark"],
+  uses: ["def:down-quark", "def:knot-operator-energy"],
   cites: ["manuscript"],
 });

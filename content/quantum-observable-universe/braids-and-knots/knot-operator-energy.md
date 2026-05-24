@@ -52,3 +52,9 @@ $w_\lambda/d_\lambda = 1/[k]_q!$, so $E(\lambda, q) = 0$
 identically — these operators carry no shadow-price weight and
 are always available.  Only mixing partitions ($d_\lambda \geq 2$)
 have nonzero $E$ and contribute to the confinement filtration.*
+
+**Consumers.**
+*The [proton](#def:categorical-proton) and
+[neutron](#def:categorical-neutron) select gluon-stabilisation
+channels by minimising $E(\lambda, q)$ across partitions of
+$H_3(q)$.*

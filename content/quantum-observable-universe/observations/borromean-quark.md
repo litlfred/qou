@@ -77,6 +77,16 @@ partition: two positive-orientation unknots and one negative.
 The neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p$ has the $1 + 2$
 partition.
 
+**Crossing orientation is not writhe.**
+The $\pm$ labels are the sign of the braid generator
+($\sigma_0$ vs $\sigma_1^{-1}$) at each crossing of $\mathcal{B}_3$
+— the strand's *crossings with the other two strands*, not
+self-crossings.  Each strand remains an unknot with writhe $0$;
+the free neutrino is the same unknot outside any Borromean
+context.  All three pairwise linking numbers vanish (Brunnian
+property); the triple Milnor invariant $\bar{\mu}_{123} = \pm 1$
+encodes confinement.
+
 **The exceptional divisor as quark habitat.**
 
 The Borromean linking happens in the **exceptional divisor**
