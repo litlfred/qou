@@ -18,7 +18,6 @@ export default proposition({
     "def:categorical-action",
     "def:frobenius-pairing",
     "def:mass-identity",
-    "prop:mass-tower-operator-valued",
     "thm:jones-markov-trace",
     "prop:substrate-consistency-window",
   ],

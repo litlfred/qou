@@ -50,7 +50,7 @@ export default chapter({
         "frobenius-pairing-exists",
         "frobenius-pairing-exists-proof",
         "frobenius-pairing-unique",
-      ]),
+      ],
     }),
     section({
       title: "The Quantum Universe : unique",

@@ -9,7 +9,6 @@ export default remark({
     "prop:crystal-isospin-degeneracy",
     "prop:spin-involution-lp-dual-invariance",
     "rem:isospin-mass-split-em-localisation",
-    "rem:lp-dual-isospin-invariance",
   ],
   tags: [
     "kashiwara-crystal",

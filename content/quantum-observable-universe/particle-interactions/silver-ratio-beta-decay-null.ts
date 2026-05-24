@@ -10,7 +10,6 @@ export default proposition({
     "**Silver-ratio $\\beta$-decay null**: at $q = 1 \\pm \\sqrt{2}$, the categorical $\\beta$-decay $Q$-value vanishes; the Hecke generator $\\sigma$ has eigenvalues = $1 \\pm \\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable",
   uses: [
     "prop:neutron-qvalue-symbolic",
-    "prop:q-beta-form-a-n1-symbolic",
     "rem:per-block-hopf-jones-absorption-pattern",
   ],
   cites: [

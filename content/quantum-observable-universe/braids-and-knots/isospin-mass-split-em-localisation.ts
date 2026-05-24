@@ -7,7 +7,6 @@ export default remark({
   uses: [
     "prop:crystal-isospin-degeneracy",
     "prop:spin-involution-lp-dual-invariance",
-    "rem:lp-dual-isospin-invariance",
     "def:coulomb-charge",
   ],
   tags: [

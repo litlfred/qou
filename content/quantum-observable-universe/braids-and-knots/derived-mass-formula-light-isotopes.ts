@@ -9,6 +9,5 @@ export default proposition({
   },
   uses: [
     "prop:frobenius-s-classification",
-    "conj:shell-correction-term-seven",
   ],
 });

@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T08:23:42.572800+00:00",
-  "commitSha": "d3892ce5e6b7be2beafe8c2dbaa98dc434751783",
+  "computedAt": "2026-05-24T14:09:21.687214+00:00",
+  "commitSha": "3af08b4a9aa4b5849faaa4400765e6a65c93048e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 12,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 542,
+    "files_scanned": 543,
     "patterns": [
       "P15",
       "P16",
@@ -27,7 +27,7 @@
       "P15": 113,
       "P16": 127,
       "P21": 19,
-      "P30": 92,
+      "P30": 93,
       "P31": 15
     },
     "top_files": [
@@ -2081,6 +2081,13 @@
       {
         "pattern": "P30",
         "file": "path_b_defect_binding_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "pentagon_multipair_borromean_h4_probe.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."

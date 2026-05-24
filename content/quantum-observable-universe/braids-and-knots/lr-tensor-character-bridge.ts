@@ -16,7 +16,6 @@ export default proposition({
   // validation error). Phase 5n preserves the .md narrative refs
   // and accepts the warning-level cross-ref notice.
   uses: [
-    "prop:hecke-branching-trace-decomposition",
     "rem:hecke-algebra-from-braiding",
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:wenzl-bridge-applicability-qou",

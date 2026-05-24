@@ -42,7 +42,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:hecke-branching-trace-decomposition",
     "prop:per-nucleon-shift-additive-linearity",
   ],
   cites: [

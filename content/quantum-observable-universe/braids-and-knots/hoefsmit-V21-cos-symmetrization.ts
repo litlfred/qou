@@ -12,7 +12,6 @@ export default proposition({
     "prop:hecke-1d-irrep-closed-form-character",
     "prop:q-beta-cos-resummation",
     "prop:beta-decay-transfer-matrix",
-    "prop:hecke-branching-trace-decomposition",
   ],
   cites: [
     "hoefsmit1974",

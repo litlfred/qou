@@ -8,7 +8,6 @@ export default definition({
   },
   uses: [
     "def:atom-knot",
-    "prop:mass-tower-operator-valued",
   ],
   cites: [],
   tags: [

@@ -140,9 +140,6 @@ export default chapter({
       label: "sec:archimedean-encounter",
       blocks: [
         "archimedean-encounter-intro",
-        "mostow-confinement",
-        "algebraic-geometric-rigidity-pairing",
-        "encounter-literature-bridge",
         "outro-models-of-qous",
       ],
     }),

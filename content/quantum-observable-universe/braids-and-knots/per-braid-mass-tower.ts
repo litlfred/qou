@@ -15,7 +15,6 @@ export default proposition({
     "wedderburn",
   ],
   uses: [
-    "prop:mass-tower-operator-valued",
     "rem:mass-endomorphism-jet-tower",
     "prop:graded-trace-residue-split",
     "prop:wedderburn-weight-canonical",
@@ -29,7 +28,6 @@ export default proposition({
     "thm:markov-trace-factorization",
     "rem:markov-moves-brane-tower",
     "prop:pieri-photon-shift",
-    "conj:archimedean-remainder-exponential-decay",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995"],
   computation: {

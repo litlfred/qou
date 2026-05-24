@@ -16,7 +16,6 @@ export default conjecture({
   ],
   uses: [
     "rem:valuation-ring-finite-surreals",
-    "conj:hahn-substrate",
   ],
   cites: [
     "conway1976",

@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "rem:chi-per-irrep-cyclotomic-closed-forms",
     "rem:chi-v3-closed-form-proof",
-    "rem:post-pr665-open-rd-inventory",
   ],
   cites: [
     "jones1985",

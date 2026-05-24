@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "rem:chi-per-irrep-cyclotomic-closed-forms",
     "prop:hoefsmit-V21-cos-symmetrization",
-    "rem:post-pr665-open-rd-inventory",
   ],
   cites: ["hoefsmit1974", "jones1985", "wenzl1988"],
   tags: [

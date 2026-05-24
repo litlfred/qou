@@ -14,7 +14,6 @@ export default remark({
     "non-archimedean",
   ],
   uses: [
-    "prop:algebraic-volume-specialization",
     "rem:body-asymptotics-catalog",
   ],
   cites: ["kashaev1997", "murakami-murakami2001"],
