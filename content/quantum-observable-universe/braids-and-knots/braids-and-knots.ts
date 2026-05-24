@@ -209,6 +209,7 @@ export default chapter({
         // ── Reeb-flow dynamics + six S₃ operators (Commit 1) ───────
         "q-reeb-flow-on-coral-coords",
         "six-canonical-knot-operators",
+        "six-canonical-knot-operators-table-data",
         "garside-as-compound-flow",
         "garside-flow-explicit-closed-form",
         // ── Boundary disc fusion + complement=volume (Commit 2) ─────
@@ -568,6 +569,7 @@ export default chapter({
         "chi-v21-hoefsmit-matrix-derivation",
         "phi-d-syt-count-conjecture",
         "categorical-chain-convergence-mechanisms",
+        "categorical-chain-convergence-mechanisms-table-data",
         "tau-M-asymptotic-rep-theory",
       ],
     }),
@@ -1209,6 +1211,7 @@ export default chapter({
         "graded-baer-star-Hq",
         "two-filtration-bridge",
         "two-filtration-bridge-small-cases",
+        "two-filtration-bridge-small-cases-table-data",
         "two-filtration-bridge-general",
         "cl3-zeta5-geometric-realization",
         // Classical (q = 1) zeta + RH statement.

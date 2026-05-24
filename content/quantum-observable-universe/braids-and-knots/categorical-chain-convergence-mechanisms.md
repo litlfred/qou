@@ -21,14 +21,7 @@ with $\hbar_q = (q-1)/q$. At the substrate $q_0 \approx 1.110$,
 $\hbar_q^2 \approx 9.8 \times 10^{-3}$ — **each new rung tightens the
 prediction by ${\sim}100\times$**:
 
-| $N$ | c(K) ceiling at $q_0$ | physical interpretation |
-|---:|---:|:---|
-| 0 | 9914 ppm | bare Form A (NF counit) |
-| 1 | 97 ppm | Kashiwara $b$ rung |
-| 2 | 0.96 ppm | Kashiwara $b^2$ rung |
-| 3 | **0.0094 ppm** | **Hopf-Jones rung — clears 1 ppb on $Q_\beta$** |
-| 4 | $9.2 \times 10^{-5}$ ppm | mixed rung — sub-ppb on n-p split |
-| 5 | $9 \times 10^{-7}$ ppm | already below 1 ppt |
+See [Table](#tbl:categorical-chain-convergence-mechanisms-table-data).
 
 For free-neutron $\beta$-decay, **truncation at $N = 3$ suffices** for
 the 1 ppb roadmap — the infinite product is a formal device, but the

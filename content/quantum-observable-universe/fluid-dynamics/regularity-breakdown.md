@@ -115,15 +115,7 @@ $q$-deformed dynamics.
 The regularity phase transition at $q = 1$ is analogous to the
 Ising model at the critical temperature $T_c$:
 
-| Statistical mechanics | $q$-Navier--Stokes |
-|---|---|
-| Temperature $T$ | Substrate parameter $q$ |
-| Critical point $T_c$ | $q = 1$ |
-| Order parameter (magnetisation) | Enstrophy $\Omega(q)$ |
-| Correlation length $\xi \to \infty$ | Cascade depth $N_{\mathrm{eff}} \to \infty$ |
-| $T > T_c$: disordered (no magnet) | $q > 1$: regular (finite enstrophy) |
-| $T < T_c$: ordered (spontaneous magnet) | $q < 1$: non-physical (no contact structure) |
-| Critical exponents | $\alpha$, to be computed from $q$-integer asymptotics |
+See [Table](#tbl:regularity-breakdown-table-data).
 
 Just as the Ising model is exactly solvable away from $T_c$ but
 exhibits critical phenomena at $T_c$, the $q$-Navier--Stokes
