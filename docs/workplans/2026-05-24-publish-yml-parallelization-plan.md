@@ -26,44 +26,73 @@ flowchart TD
 
 **Bottleneck**: the TeX Live install alone is ~5-10 minutes. The rest is mostly sequential by historical accident, not by data dependency.
 
-## Proposed 5-job DAG
+## Proposed DAG (8 GH-Actions jobs, 5 logical stages)
+
+**Naming note**: the original "5-job DAG" framing referred to 5 logical
+stages (setup, content, parallel-LaTeX, assemble, deploy). The concrete
+GH-Actions implementation has **8 jobs** because the parallel-LaTeX
+stage splits 4 ways (paper / appendix / diff / per-chapter). Both
+counts are correct; reviewers should sign off on the 8-job shape.
 
 ```mermaid
 flowchart TD
-  S[setup / cache TeX] --> P[content-pipeline]
-  S --> R[content-pipeline]
-  P --> M[paper-pdf]
+  P[content-pipeline] --> M[paper-pdf]
   P --> A[appendix-pdfs]
+  P --> SD[schema-docs]
   M --> D[diff-pdf]
   M --> C[per-chapter-split]
-  P --> SD[schema-docs]
   M & A & D & C & SD --> AS[assemble + upload]
   AS --> DP[deploy]
 ```
+
+**No standalone `setup` job.** Each job declares
+`container: ghcr.io/litlfred/qou-paper-builder:<sha>` directly —
+GH-Actions jobs run on separate runners and can't share a pulled
+image from an upstream `setup` job (per PR #1099 review, Copilot).
+Per-job container pull is amortised to ~2-3 min by GH-Actions'
+local image cache when jobs run on the same runner.
 
 ### Jobs
 
 | # | Job | Wall time | What | Depends on |
 |---|---|---:|---|---|
-| 1 | **setup** | ~3-5 min (one-time per run, then cached) | Install TeX Live + bun + Python via prebuilt Docker image; build cache for the image | — |
-| 2 | **content-pipeline** | ~5-8 min | `bun run validate` + `bun run build` for all papers; regenerate witnesses; build schema-docs | setup |
-| 3a | **paper-pdf** | ~3-5 min | `latexmk` compile main paper PDF + per-paper PDFs | content-pipeline |
-| 3b | **appendix-pdfs** | ~2-3 min | Compile standalone appendix PDFs in parallel | content-pipeline |
-| 3c | **diff-pdf** | ~3-4 min | `latexdiff` vs `main` branch | paper-pdf |
-| 3d | **per-chapter-split** | ~1-2 min | Split main PDF into per-chapter PDFs via pypdf | paper-pdf |
-| 4 | **assemble + upload** | ~2-3 min | Combine artefacts, build site/, builds.json, upload | all of 3a-d |
+| 1 | **content-pipeline** | ~5-8 min | `bun run validate` + `bun run build` for all papers; regenerate witnesses | — (uses prebuilt container) |
+| 2a | **paper-pdf** | ~3-5 min | `latexmk` compile main paper PDF + per-paper PDFs | content-pipeline |
+| 2b | **appendix-pdfs** | ~2-3 min | Compile standalone appendix PDFs in parallel | content-pipeline |
+| 2c | **schema-docs** | ~2 min | TypeDoc / schema-docs HTML | content-pipeline |
+| 3a | **diff-pdf** | ~3-4 min | `latexdiff` vs `main` branch | paper-pdf |
+| 3b | **per-chapter-split** | ~1-2 min | Split main PDF into per-chapter PDFs via pypdf | paper-pdf |
+| 4 | **assemble + upload** | ~2-3 min | Combine artefacts, build site/, builds.json, upload | all of 2a, 2b, 2c, 3a, 3b |
 | 5 | **deploy** | ~1 min | Push to gh-pages | assemble |
 
-**Theoretical wall-clock**: max(3a, 3b) + max(3c, 3d) + 4 + 5 ≈ 5 + 4 + 3 + 1 = **13 min** (vs current ~25-30 min). **2-3× faster** matching the workplan estimate.
+**Theoretical wall-clock (critical path)**:
+content-pipeline (8) + paper-pdf (5) + max(diff-pdf, per-chapter-split) (4) + assemble (3) + deploy (1)
+= **21 min**
+
+vs current ~25-30 min monolith = **~25-35 % faster**, not the
+previously-stated 2-3×. The earlier 13-min estimate omitted the
+sequential content-pipeline + paper-pdf phases (caught by both
+reviewers); the real critical path is set by those two sequential
+stages. Speedups beyond ~25 % require deeper parallelization —
+e.g. splitting `content-pipeline` per-paper (Phase D) and
+overlapping witness regeneration with bun-build.
+
+Per the repo's [Long-compute logging discipline](../../CLAUDE.md#agent-work-plan-policy-strict),
+any job expected to run > 5 minutes (notably `content-pipeline` at
+5-8 min) must emit periodic progress lines (units/sec + elapsed +
+ETA) so cold-start bottlenecks remain inspectable in the workflow log.
 
 ## Implementation path (NOT in this PR)
 
 ### Phase A (this PR, doc only)
 
 - [x] Design doc (this file)
-- [x] Job DAG with wall-time estimates
+- [x] Job DAG with wall-time estimates (revised after PR #1099 review:
+      8 jobs, ~21 min critical path, ~25-35 % faster than current
+      monolith — not the previously-stated 2-3× which omitted
+      sequential content-pipeline + paper-pdf)
 - [x] Cost analysis + bottleneck identification
-- [ ] Owner sign-off on the 5-job split + Docker-image-vs-actions/cache approach
+- [ ] Owner sign-off on the 8-job DAG + per-job-`container:` approach
 
 ### Phase B (separate PR after sign-off): Docker image baseline
 
