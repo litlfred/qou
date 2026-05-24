@@ -122,7 +122,7 @@ function maskStringsAndComments(src: string): string {
  *     ending in `f` like `stuff["…"]` from matching)
  *   - `.format(` (method) or `\bformat(` (builtin) — string format
  *   - `\bassert ` — tolerance comparison
- *   - `\blogging?\.|\blog\.` — logging.info / logger.debug etc.
+ *   - `\blog(?:ging|ger)?\.` — `logging.info` / `logger.debug` / `log.info` etc.
  *     (formatted messages, never substrate-precision compute)
  *   - assignment to a name with a display-intent suffix
  *     (`_pct`, `_ppb`, `_ppm`, `_print`, `_display`, `_str`,
@@ -154,17 +154,24 @@ function isDisplayContextLine(line: string): boolean {
     /\b(?:wall|elapsed)_\w+\s*=/.test(line) ||
     /\b(?:t_start|t_end|start_time|end_time)\b\s*=/.test(line) ||
     // Dict / kwarg form: "wall_seconds_to_reach": float(...), "elapsed_ms": ..., etc.
-    // Matches the time-context substring ANYWHERE in the key, not
-    // only at the suffix (`wall_seconds_to_reach` is `_seconds_`-in-middle).
-    /["']\w*(?:_sec|_seconds|_ms\b|_us\b|_ns\b|_wall|wall_|_elapsed|elapsed_|_duration|_timeout|_budget|_deadline|_pct|_ppb|_ppm)\w*["']\s*:/.test(line) ||
+    // Matches the time-context substring ANYWHERE in the key (per the
+    // comment intent) — drop `\b` boundaries from `_ms` / `_us` / `_ns`
+    // since "elapsed_ms_to_reach" should match (the unit appears
+    // mid-key followed by another underscore). Per PR #1109 review (Copilot).
+    /["']\w*(?:_sec|_seconds|_ms|_us|_ns|_wall|wall_|_elapsed|elapsed_|_duration|_timeout|_budget|_deadline|_pct|_ppb|_ppm)\w*["']\s*:/.test(line) ||
     /\b\w*(?:_sec|_seconds|_ms|_us|_ns|_wall|_elapsed|_duration|_timeout|_budget|_deadline|_pct|_ppb|_ppm)\w*\s*=\s*float\(/.test(line) ||
     // `float(wall_seconds)` / `float(elapsed_ms)` — argument is a
     // time-context variable, so the cast is JSON-serialisation
     // / display, not substrate compute.
     /\bfloat\(\s*\w*(?:wall_|elapsed_|t_start|t_end|start_time|end_time|_sec|_seconds|_ms|_us|_ns|_elapsed|_duration|_timeout|_budget|_deadline|_pct|_ppb|_ppm)\w*\s*\)/.test(line) ||
     // try/except float() pattern — graceful fallback for malformed
-    // input, not a substrate-precision compute path.
-    /^\s*(?:try|except|return)\b.*\bfloat\(/.test(line)
+    // input, not a substrate-precision compute path. NOTE: removed
+    // `return` from this alternation per PR #1109 review — it was too
+    // broad and masked legitimate findings like
+    // `return float(mp.mpf(...))` in active compute scripts. A
+    // narrow `return float(x)` cast in compute code IS a real
+    // substrate concern; leave it flagged.
+    /^\s*(?:try|except)\b.*\bfloat\(/.test(line)
   );
 }
 
