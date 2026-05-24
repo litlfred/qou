@@ -117,6 +117,11 @@ export function checkDoesNotDefaultToFloat(
   scriptPath: string,
 ): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging is noise.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
   // `maskStringsAndComments` blanks string/comment regions in place
@@ -233,6 +238,15 @@ export function checkRespectsArchimedeanWall(
   scriptPath: string,
 ): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging the same scripts here
+  // (since deprecated code commonly used the older math.*/np.* APIs)
+  // is noise. The `deprecated` finding is the canonical signal;
+  // archimedean violations don't need to pile on. Return n/a so the
+  // sweep records the criterion was considered but didn't apply.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
   const lines = masked.split("\n");
@@ -285,6 +299,11 @@ const MODULE_DOCSTRING_RE =
  */
 export function checkCodeIsCommented(scriptPath: string): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging is noise.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   if (MODULE_DOCSTRING_RE.test(src)) return { result: "pass", hits: [] };
   const lines = src.split("\n");
@@ -333,6 +352,11 @@ const FUNCTION_DEF_RE = /^\s*(?:async\s+)?def\s+(\w+)\s*\(([^)]*)\)/gm;
  */
 export function checkVariablesTyped(scriptPath: string): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging is noise.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
   const hits: CheckerHit[] = [];
@@ -406,6 +430,11 @@ export function checkHasReferencesToPaper(
   scriptPath: string,
 ): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging is noise.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   if (PAPER_REF_RE.test(src)) return { result: "pass", hits: [] };
   return {
@@ -649,6 +678,11 @@ export function checkUsesLibraryFrameworkAppropriately(
   scriptPath: string,
 ): CheckerResult {
   if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  // Scripts under `_deprecated/` are already flagged by the
+  // `deprecated` criterion — double-flagging is noise.
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
   const hits: CheckerHit[] = [];
