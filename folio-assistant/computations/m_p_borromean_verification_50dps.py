@@ -344,7 +344,7 @@ def main() -> int:
     proton_ppm = proton_rel_diff * mp.mpf("1e6")
     w.add_data("proton", {
         "formula": "m_p = m_avg_pred · (1 − Δm/M_N / 2), with "
-                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_Y and "
+                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
                    "Δm/M_N from flavor_split_subleading",
         "vol_B3_over_hbar_q_squared": mp.nstr(VOL_B3 / HBAR_Q**2, 20),
         "tower_factor": mp.nstr(proton_factor, 20),
@@ -374,7 +374,7 @@ def main() -> int:
     neutron_ppm = neutron_rel_diff * mp.mpf("1e6")
     w.add_data("neutron", {
         "formula": "m_n = m_avg_pred · (1 + Δm/M_N / 2), with "
-                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_Y and "
+                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
                    "Δm/M_N from flavor_split_subleading",
         "tower_factor": mp.nstr(neutron_factor, 20),
         "m_n_pred_MeV": mp.nstr(neutron_pred, 20),
