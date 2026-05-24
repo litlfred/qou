@@ -169,7 +169,11 @@ export function checkUnicodeCrash(mdPath: string): CheckerResult {
       return;
     }
     if (inFence) return;
-    const cleanedLine = stripInlineCode(l);
+    let cleanedLine = stripInlineCode(l);
+    // Strip inline math ($...$) and display math ($$...$$) — Unicode
+    // inside math mode is handled by the pipeline's LaTeX wrapper.
+    cleanedLine = cleanedLine.replace(/\$\$[^$]*\$\$/g, "");
+    cleanedLine = cleanedLine.replace(/\$[^$]*\$/g, "");
     if (UNICODE_CRASH_RE.test(cleanedLine)) {
       hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
     }
