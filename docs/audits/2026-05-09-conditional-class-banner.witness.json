@@ -1,11 +1,11 @@
 {
   "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
-  "generated": "2026-05-24T07:43:11.235Z",
+  "generated": "2026-05-24T14:58:16.717Z",
   "total_blocks": 1762,
-  "conditional_on_class": 15,
+  "conditional_on_class": 9,
   "fully_compliant": 9,
-  "missing_lean_class_hypothesis": 6,
-  "missing_md_conditional_banner": 2,
+  "missing_lean_class_hypothesis": 0,
+  "missing_md_conditional_banner": 0,
   "findings": [
     {
       "label": "lem:surreal-squeeze",
@@ -21,18 +21,6 @@
       "has_md_conditional_banner": true,
       "lean_file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
       "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.md"
-    },
-    {
-      "label": "prop:bar-involution-invariance",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:symmetric-crystal-pair-production",
-        "conj:crystal-graph-realization"
-      ],
-      "has_lean_class_hypothesis": false,
-      "has_md_conditional_banner": false,
-      "lean_file": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean",
-      "md_file": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.md"
     },
     {
       "label": "prop:collatz-contact-boundary",
@@ -78,51 +66,6 @@
       "has_md_conditional_banner": true,
       "lean_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
       "md_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.md"
-    },
-    {
-      "label": "prop:cpt-orbit-closure-density",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:symmetric-crystal-pair-production",
-        "conj:crystal-graph-realization"
-      ],
-      "has_lean_class_hypothesis": false,
-      "has_md_conditional_banner": false,
-      "lean_file": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean",
-      "md_file": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md"
-    },
-    {
-      "label": "prop:geom-universality",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:hyperbolic-volume-transcendence"
-      ],
-      "has_lean_class_hypothesis": false,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.md"
-    },
-    {
-      "label": "prop:geom-yekutieli-alignment",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:hyperbolic-volume-transcendence"
-      ],
-      "has_lean_class_hypothesis": false,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md"
-    },
-    {
-      "label": "prop:hoefsmit-scattering-pipeline",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:hyperbolic-volume-transcendence"
-      ],
-      "has_lean_class_hypothesis": false,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md"
     },
     {
       "label": "prop:ns-obstruction-tower",
@@ -196,18 +139,6 @@
       "has_md_conditional_banner": true,
       "lean_file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean",
       "md_file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md"
-    },
-    {
-      "label": "thm:confinement-grading-correspondence-conditional",
-      "kind": "theorem",
-      "conj_cone": [
-        "conj:crystal-graph-realization",
-        "conj:confinement-grading-correspondence"
-      ],
-      "has_lean_class_hypothesis": false,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md"
     }
   ]
 }

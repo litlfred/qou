@@ -1,4 +1,6 @@
-**Proposition (CPT-saturation = Type-B fold-orbit closure).**
+**Proposition (conditional on [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production) and [`conj:crystal-graph-realization`](#conj:crystal-graph-realization)).**
+
+*CPT-saturation = Type-B fold-orbit closure.*
 *Let $\sigma \colon \mathrm{Part}(n) \to \mathrm{Part}(n)$ be the
 transpose involution $\lambda \mapsto \lambda^{T}$ — the Dynkin
 involution on the $A_{n-1}$ crystal that, after folding to type

@@ -103,12 +103,18 @@ async function leanFileFor(block: Block): Promise<string | null> {
   } catch { return null; }
 }
 
-/** Extract the class-name registered by a `class C` declaration. */
+/** Extract the class-name registered by a `class C` declaration.
+ *  Lean comments are stripped before the regex runs so narrative
+ *  phrases like "the class instance is …" inside a `/-! … -/` doc
+ *  comment don't get matched as `class instance`. */
 async function classNameOf(conjBlock: Block): Promise<string | null> {
   const leanPath = await leanFileFor(conjBlock);
   if (!leanPath) return null;
-  const text = await readFile(leanPath, "utf8");
-  const m = text.match(/^class\s+(\w+)/m);
+  const raw = await readFile(leanPath, "utf8");
+  const stripped = raw
+    .replace(/\/-[\s\S]*?-\//g, "")
+    .replace(/--[^\n]*/g, "");
+  const m = stripped.match(/^class\s+(\w+)/m);
   return m ? m[1] : null;
 }
 
