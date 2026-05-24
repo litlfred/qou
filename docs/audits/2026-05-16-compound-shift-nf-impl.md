@@ -164,7 +164,7 @@ $$
 
 Numerical value at 50 dps:
 
-- $q_0 = 1.1099785955541805752815940796095093779932822799587$
+- $q_0 = :val[q_0]{precision=6}$
 - $\alpha_{\mathrm{EM}}^{-1}|_{\mathrm{chain}} = 136.82321965456120961044280371018929349341458097588$
 - $\alpha_{\mathrm{EM}}^{-1}|_{\mathrm{CODATA}} = 137.035999084$
 - relative error: $1.55 \times 10^{-3}$

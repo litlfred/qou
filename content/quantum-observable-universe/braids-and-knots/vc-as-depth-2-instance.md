@@ -76,5 +76,5 @@ Garoufalidis–Lê for torus knots; many others).
 For an explicit depth-2 numerical witness on the figure-8 knot
 embedded in Bring's genus-4 surface, see
 [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
-The 50-digit value $2\,\mathrm{Cl}_2(\pi/3) \approx 2.0298832128\ldots$
+The 50-digit value $2\,\mathrm{Cl}_2(\pi/3) \approx :val[Vol_4_1]{precision=6}\ldots$
 is the Bloch regulator class incarnated as a hyperbolic volume.

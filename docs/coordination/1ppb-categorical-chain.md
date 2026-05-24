@@ -242,7 +242,7 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
    - CONSTIT ratio (no interface) = **1.220358** for both
 
 2. **Interface-knot contribution at every Z-step = z (Markov parameter) EXACTLY** (rel.err 0.0001%):
-   $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{\text{FULL}})}{\mathrm{tr}_M(\mathcal{B}_K^{\text{CONSTIT}})}\bigg|_{Z\text{-step}} \;=\; \frac{0.609346}{1.220358} \;=\; 0.499320\;=\;z(q_0)$$
+   $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{\text{FULL}})}{\mathrm{tr}_M(\mathcal{B}_K^{\text{CONSTIT}})}\bigg|_{Z\text{-step}} \;=\; \frac{0.609346}{1.220358} \;=\; :val[z_markov]{precision=6}\;=\;z(q_0)$$
    This **is** the Markov axiom $\mathrm{tr}_M(\alpha \cdot \sigma_g) = z \cdot \mathrm{tr}_M(\alpha)$ for the interface generator. **The interface knot ⋈_K from PR #801 has derivation-grade categorical reading: each interface = one z factor**, no longer empirical-fit.
 
 3. **The FR identity proposed in the previous ledger row** ($\mathrm{tr}_M(\beta^{Z=2}) / \mathrm{tr}_M(\beta^{Z=1}) \stackrel{?}{=} [3]_q^2 \cosh(h)$) **DOES NOT hold for the full Markov trace**. Empirical tr_M ratio is 0.609 (94% off from the predicted 9.47). The Phase 5b α ≈ [3]_q²·cosh(h) match (0.022%) applies ONLY to the single-block dominant $|\Delta_\lambda^*|$ extraction (Phase 4 quantity), NOT to the full Markov trace. The bar-symmetric synthesis is correct, but the FR identity I wrote conflated best-block vs total sum. Phase 5d will reformulate.

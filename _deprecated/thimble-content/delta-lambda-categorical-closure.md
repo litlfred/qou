@@ -114,7 +114,7 @@ $\mathcal{O}_{\mathrm{prin}} = \{z_c^\pm\}$ for all $\lambda$, i.e.
 ignoring the per-$\lambda$ projection of $\Delta(z)$) with five
 candidate $k(\lambda)$ mappings: by rows, by first row, by distinct
 rows, by isotype channel, by hook length. None reproduce the AME 2020
-deuteron binding $B(D) = 2.22456$ MeV at the required precision:
+deuteron binding $B(D) = :val[B_2H_AME_MeV]{precision=6}$ MeV at the required precision:
 
 | Mapping | $B(D)$ predicted | Error |
 |---|---:|---:|

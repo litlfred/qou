@@ -12,7 +12,7 @@ interpretation but left $\lambda_{\text{scale}}$ undefined.
 1. [`topological-mass-trefoil.md`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-trefoil.md)
    — the canonical mass formula $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$
    for single-knot leptons. Confirmed: $\mathrm{Vol}(4_1)/\hbar_q^2 =
-   206.7682830 = m_\mu/m_e$ (CAL-2 anchor, exact).
+   :val[m_mu_over_e]{precision=6} = m_\mu/m_e$ (CAL-2 anchor, exact).
 2. [`borromean-baryon-interpretation.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-interpretation.md)
    (introduced by PR #487) — the multi-component formula:
    $$
@@ -85,7 +85,7 @@ identifications. If you can't derive it from category, mark it open.
 
 $\lambda_{\text{scale}}$ should be a function of $q_0$, $\hbar_q$,
 $[n]_q$ values, and possibly topological invariants of $\mathcal{B}_3$.
-The closure target is **2.4599527869** at $q_0 = 1.10997859...$.
+The closure target is **2.4599527869** at $q_0 = :val[q_0]{precision=6}...$.
 
 Initial candidate sweep (from this branch's prior probe) — none
 matched to better than 0.06%:
@@ -144,7 +144,7 @@ A correct $\lambda_{\text{scale}}$ closure must satisfy three tests:
 1. **Substrate-only** — uses only $m_e$, $q_0$, $\mathrm{Vol}(\mathcal{B}_3)$
    (or other named topological constants), and standard substrate algebra
    (no $\pi$ outside Clausen-function arguments, no PSLQ fits).
-2. **Numerical match** — reproduces 2.4599527869 at $q_0 = 1.10997859...$
+2. **Numerical match** — reproduces 2.4599527869 at $q_0 = :val[q_0]{precision=6}...$
    to at least 4 significant figures (0.01% level), preferably to the
    precision of the framework's $Q_\beta$ closed form (~0.17%).
 3. **Universality at A=1** — the same $\lambda_{\text{scale}}$ must
@@ -251,7 +251,7 @@ correspond to **different braid representatives** than the canonical
 11-crossing $\tau_M$-based pipeline.
 
 The two formalisms must agree on observable mass values
-($m_p = 938.272\;\text{MeV}$ regardless of which braid you use to
+($m_p = :val[m_p_MeV]{precision=6}\;\text{MeV}$ regardless of which braid you use to
 compute it) — but $\lambda_{\text{scale}}$ in the Vol formalism may
 NOT have a substrate derivation independent of the bridging map to
 the $\tau_M$ formalism.
