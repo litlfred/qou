@@ -78,15 +78,28 @@ permissions:
 
 jobs:
   build-and-publish:
-    # Standard GitHub-hosted runner. The previous `paper-assistant` Docker
-    # container baked Mathlib oleans (~20 GB extracted) for three papers,
-    # which exceeded the runner's free disk; the larger-runner attempt
-    # (`ubuntu-latest-l`) wasn't configured for this account, leaving
-    # dispatched jobs stuck in "Waiting for a runner". The simplest path
-    # is to drop the container and install TeX Live + bun on the host
-    # directly. Slower per-build (~3-4 min apt) but always picks up
-    # a runner.
+    # Standard GitHub-hosted runner with a prebuilt `paper-builder`
+    # container (Phase C of the publish.yml parallelization plan;
+    # docs/workplans/2026-05-24-publish-yml-parallelization-plan.md).
+    #
+    # The container bakes TeX Live + bun + Python scientific stack +
+    # latexdiff + latexpand + graphviz + jq + ripgrep, replacing
+    # ~5-10 min of per-run apt-get + pip + bun install with a ~2-3 min
+    # image pull. Subtractive change — same single-job DAG; just
+    # skip the install steps the container already provides.
+    #
+    # If the container is unavailable or broken, this build fails
+    # fast on the first step that needs a tool. Revert by removing
+    # the `container:` directive and restoring the install steps.
+    # (Earlier reasoning re a `paper-assistant` container that baked
+    # Mathlib oleans does not apply — the new image is install-only,
+    # no precomputed artefacts.)
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/litlfred/qou-paper-builder:latest
+      # Run as root inside the container so the existing `sudo apt-get`
+      # invocations in conditional fallback steps still work if needed.
+      options: --user 0:0
     outputs:
       head_ref: ${{ steps.deploy-vars.outputs.head_ref }}
       head_sha: ${{ steps.deploy-vars.outputs.head_sha }}
@@ -174,44 +187,28 @@ jobs:
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
           git config --global --add safe.directory '*'
 
-      # ── 0b1. Install LaTeX + latexdiff + latexpand on the host ──
-      # Replaces the pre-baked tools that used to come from the
-      # `paper-assistant` Docker image. apt's `texlive-full` covers the long
-      # tail of style files our chapters use; ~3 min cold install.
-      - name: Install TeX Live, latexdiff, latexmk, latexpand
+      # ── 0b. Verify the prebuilt container tooling ──
+      # The `paper-builder` container (Phase B of the parallelization
+      # plan) bakes TeX Live + bun + Python scientific stack + graphviz +
+      # ripgrep + jq + latexdiff + latexpand, replacing the previous
+      # ~5-10 min of apt-get + pip + bun install. Surface every baked
+      # tool's version into the build log so failures are diagnosable
+      # without re-running.
+      - name: Verify tooling (from prebuilt container)
         run: |
-          sudo apt-get update -qq
-          # texlive-extra-utils provides latexpand explicitly — texlive-full
-          # bundles it on most distros but --no-install-recommends can drop
-          # it, so install the providing package directly to be safe.
-          sudo apt-get install -y --no-install-recommends \
-              texlive-full texlive-extra-utils latexdiff latexmk \
-              graphviz ripgrep jq python3-pip
-          # Surface versions for the build log; fail-fast if any tool we
-          # need later is missing.
+          set -eux
+          echo "=== paper-builder image: $(cat /etc/os-release | grep PRETTY_NAME) ==="
           pdflatex --version | head -1
           latexmk --version | head -1
-          latexdiff --version 2>&1 | head -1
-          latexpand --version 2>&1 | head -1
-
-      # ── 0a2. Install Python deps for PDF post-processing ─────────────
-      # pypdf drives scripts/split-pdf-by-chapter.py (per-chapter PDF
-      # outputs).  Pinned to a stable major to keep CI deterministic.
-      - name: Install pypdf
-        run: pip3 install --quiet 'pypdf>=4,<6'
-
-      # ── 0b2. Install bun (content pipeline) ─────────────────────────────
-      - name: Install bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Verify tooling
-        run: |
-          echo "bun       $(bun --version)"
-          echo "pdflatex  $(pdflatex --version | head -1)"
-          echo "node      $(node --version 2>/dev/null || echo 'not installed')"
-          echo "python3   $(python3 --version)"
+          latexdiff --version | head -1
+          command -v latexpand
+          dot -V
+          rg --version | head -1
+          jq --version
+          bun --version
+          python3 --version
+          python3 -c "import numpy, sympy, scipy, mpmath, pypdf; print('py-sci + pypdf ok')"
+          git --version
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Cache bun dependencies
@@ -236,15 +233,8 @@ jobs:
           # Store as output for downstream steps
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
-      # ── 0d¼. Install Python scientific stack for witness computations ──
-      - name: Install Python scientific dependencies
-        run: |
-          # The witness scripts under folio-assistant/computations/ depend
-          # on the standard scientific Python stack. Install at minimum
-          # the packages imported by the content-linked scripts that
-          # run in CI (numpy, sympy, scipy, mpmath).
-          pip3 install --break-system-packages --no-cache-dir \
-              numpy sympy scipy mpmath
+      # Python scientific stack is baked into the paper-builder
+      # container (Phase B). No install step needed.
 
       # ── 0d½. Regenerate stale computation witnesses (appendix tables, etc.) ─
       - name: Regenerate stale witnesses
