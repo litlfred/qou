@@ -341,11 +341,22 @@ def compute_tau_M_nucleon_H3(
     )
     word = marshal_to_chi_lambda_braid(chain_with_gens, h_val)
     q_str = mp.nstr(q_val, dps, strip_zeros=False)
+    # Per Copilot PR #1080 review: dps is authoritative — derive the
+    # chi_lambda_braid precision tag from it instead of hardcoding
+    # "mpfr_50dps", so a caller requesting (say) dps=100 gets a fully
+    # 100-dps pipeline.  chi_lambda_braid requires dps >= 50 in mpfr
+    # mode; enforce that bound here.
+    if dps < 50:
+        raise ValueError(
+            f"compute_tau_M_nucleon_H3 requires dps >= 50 (got {dps}); "
+            f"chi_lambda_braid mpfr mode is calibrated at 50+ dps."
+        )
+    precision_tag = f"mpfr_{dps}dps"
     total = mp.mpf(0)
     for lam in partitions_of(3):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
         chi = chi_lambda_braid(lam, word, q_value=q_str,
-                                precision="mpfr_50dps")
+                                precision=precision_tag)
         total += y * mp.mpf(str(chi))
     return total
 

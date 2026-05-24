@@ -88,11 +88,11 @@ includes the linking weight that the Geom functor produces for
 multi-component links (it is NOT a separate calibration constant —
 see the absorption coord referenced above).
 
-Decomposition:
+Decomposition (current Family A production path):
 
   Geom_full(𝓑₃, q₀) = (Vol(B_3)/ℏ_q²) · linking_weight(q₀)
-                    ≈ 746.42 · 2.46
-                    ≈ 1836
+                    ≈ 746.42 · 2.533     [linking_weight = λ_A(q₀) Family A]
+                    ≈ 1890.5             [tower factor in this script's output]
 
 where:
 - Vol(B_3) = 8·G ≈ 7.32772... (Borromean rings hyperbolic volume;
@@ -100,25 +100,31 @@ where:
 - ℏ_q = (q-1)/q
 - linking_weight = what `Geom_full` produces for the 3-component
   Borromean link — currently best categorical derivation is via
-  Family A (5/2 + (3/4)h² from H_4 Wedderburn). This is not a
-  separate constant; it is the per-link value of the Geom functor.
+  Family A `λ_A(q) = 5/2 + (3/4)h²` (from H_4 Wedderburn, PROVED).
+  This is not a separate constant; it is the per-link value of the
+  Geom functor.
+
+(The audit-only `LAMBDA_*_FITTED_FROM_CODATA = 2.45995...` literals
+that match the CODATA target tautologically — corresponding to
+1836/746 — are NOT used in production.  They are retained only as
+*_AUDIT_ONLY comparison columns in the witness JSON.  Per the
+absorption coord, that fit was the framing error.)
 
 ## Result
 
-The current `Geom_full(𝓑₃, q₀)` evaluation gives m_p ≈ 965 MeV
-(+2.89% vs CODATA 938.27). This **explains the 1700× scale gap**
-in the previous single-level Markov-trace m_p chain:
+The current `Geom_full(𝓑₃, q₀)` evaluation gives m_avg ≈ 966 MeV,
+m_p ≈ 965 MeV, m_n ≈ 967 MeV (all +2.89% vs CODATA 938.27 / 939.57).
+This **explains the 1700× scale gap** in the previous single-level
+Markov-trace m_p chain:
 - Single-level: m_p_pred ≈ 0.597 MeV (off by 99.94%)
-- With `Geom_full` tower (Vol = 8·G exact + linking weight): m_p_pred ≈ 965 MeV
-  (+2.89% vs CODATA — the residual reflects the gap between the
-  framework's current categorical `Geom_full` computation and its
-  categorically-exact value, not a missing calibration)
+- With `Geom_full` tower (Vol = 8·G exact + Family A linking weight):
+  m_p_pred ≈ 965 MeV (+2.89% vs CODATA — the residual reflects the
+  gap between the framework's current categorical `Geom_full`
+  computation and its categorically-exact value, not a missing
+  calibration)
 
 The remaining R&D is to refine `Geom_full(𝓑₃)` so it lands closer
-to its categorically-exact value. The CAL-4 fit literals
-(2.4599527869 = 1836/746) are PURGED from production and retained
-only as audit-only references; their tautological match against
-CODATA was the framing error that the absorption coord corrects.
+to its categorically-exact value.
 """
 from __future__ import annotations
 

@@ -2,14 +2,14 @@
 
 **Date opened:** 2026-05-24
 **Branch:** `claude/yekutieli-mass-table-gap4-2026-05-24`
-**PR:** _none yet_ (doc + framing cleanup; no production code changes substantive enough to require a PR before the broader consolidation lands)
+**PR:** [#1080](https://github.com/litlfred/qou/pull/1080) (opened 2026-05-24)
 **Goal:** Propagate the 2026-05-23 absorption finding (`λ_scale` absorbed into `Geom_full(K)`) into every doc / audit / coord / cheat-sheet that still uses the obsolete "λ_scale closure" framing; clean up stale top-level orphan docs; do a parallel review of Gap #4 closed-form tr_M migration scope.
 
 ## Scope map (at /coordinate run, 2026-05-24 evening)
 
 | PR | State | Classification | Relationship |
 |---|---|---|---|
-| **this branch** | open (no PR) | **own** | Framing fix + docs cleanup + Gap #4 finding |
+| **[#1080](https://github.com/litlfred/qou/pull/1080)** (this) | open | **own** | Framing fix + docs cleanup + Gap #4 finding |
 | [#1063](https://github.com/litlfred/qou/pull/1063) | open | **direct overlap** | Family A gap audit + Strategy I (Yekutieli) closure path — Strategy I was PURGED 2026-05-24; absorption framing applies |
 | [#1065](https://github.com/litlfred/qou/pull/1065) | open | adjacent | low_isotope mass-table wrapper; uses "Family-A gap" wording |
 | [#1072](https://github.com/litlfred/qou/pull/1072) | open | parallel finding | hecke_core canonical-vs-exploratory audit; corroborates my Gap #4 finding |
@@ -54,9 +54,10 @@ None planned.  All sibling work either runs independently or is too WIP for cher
 
 ## Next concrete task
 
-Open the PR for this branch (6 commits cleanly stacked; framing fix is the highest-value piece for sibling authors to see at PR-review time) and `/prepare-merge` it.
+PR [#1080](https://github.com/litlfred/qou/pull/1080) opened 2026-05-24; `/prepare-merge` ran (rebase clean, witness-pipeline refresh committed, validate has 330 pre-existing main-side issues unrelated to this branch); Gemini + Copilot review requested.  Address review comments as they arrive.
 
-If owner prefers no PR open until the consolidation is more complete, the alternative is to keep iterating on this branch (e.g. extend the audit-doc reframing into the ~10 remaining stale-framing audit docs in `docs/audits/` flagged by the earlier grep) and PR later.
+Follow-up after merge (not in scope here):
+- Extend the audit-doc reframing into the ~10 remaining stale-framing audit docs in `docs/audits/` (flagged by `grep -rln "Family A gap\|λ_scale closure"`); none are blocking.
 
 ## Watch main
 
