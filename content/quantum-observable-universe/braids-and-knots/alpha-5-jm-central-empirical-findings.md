@@ -58,11 +58,10 @@ form correctly extracts the AME-fitted shell correction.
    claim should then apply to the refined level, not to
    $\mathrm{ht}(\lambda) = \ell + 1$ taken as a coarse proxy.
 
-3. **Solve the LP, do not just evaluate $P_\ell$.** The
-   structural argument says shadow prices are dual variables of
-   the operator-selection LP; "shadow price = central scalar"
-   is a leading-order *guess* at how the LP solves. A genuine
-   LP-dual computation per
+3. **Solve the LP, do not just evaluate $P_\ell$.** Shadow
+   prices are the dual variables of the operator-selection LP;
+   "shadow price = central scalar" is a leading-order *guess* at
+   how the LP solves. A genuine LP-dual computation per
    [`prop:mass-coefficient-shadow-price`](#prop:mass-coefficient-shadow-price)
    that uses $P_\ell$-mediated cost (rather than dim-blind cost)
    would derive the correct atom-dependence — the

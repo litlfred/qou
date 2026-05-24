@@ -20,8 +20,8 @@ cycles of this genus-$4$ curve determine the fundamental modes of the
 Reeb spectrum.
 
 Self-duality is the conceptual keystone. The rigid dualizing
-complex $\omega_A^\bullet$ \cite{yekutieli2010} provides a canonical duality theory for the
-non-commutative algebra $A$. The Frobenius form induces a
+complex $\omega_A^\bullet$ \cite{yekutieli2010} is the duality
+theory for the non-commutative algebra $A$. The Frobenius form induces a
 quasi-isomorphism $A \xrightarrow{\sim} \omega_A^\bullet$, establishing
 that the observer trace $\Phi = \lambda \circ \mu$ and the observed
 state space are intrinsically paired. This self-duality ensures that

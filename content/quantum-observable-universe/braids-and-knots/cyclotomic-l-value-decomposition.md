@@ -102,9 +102,9 @@ $\mathbb{Q}(\zeta_K)$-linear combinations.  This means:
    structure (e.g., Theorem D dimension) gives a corresponding
    statement about Dirichlet L-values.
 3. **Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$ depth $n$** is
-   essentially the Beilinson conjecture on $L$-values of Dirichlet
-   characters — a classical open problem now reframed as part of B1's
-   discharge surface.
+   the Beilinson conjecture on $L$-values of Dirichlet characters —
+   a classical open problem now reframed as part of B1's discharge
+   surface.
 
 ### Catalan's constant ($n = 2$ instance)
 

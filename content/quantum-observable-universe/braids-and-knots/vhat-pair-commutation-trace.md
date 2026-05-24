@@ -96,9 +96,10 @@ identity does *not* apply to scalar $\hat V$'s.
 
 This means the pentagon ascension argument as stated in
 [`rem:mass-endomorphism-jet-tower`](#rem\:mass-endomorphism-jet-tower)
-is **morally correct** (singletons + pairs at level $n$, defects
-of order $\geq 3$ ascending to level $n+1$) but **not derived
-from the operator pentagon**. The actual derivation goes through
+**describes the correct structure** (singletons + pairs at level $n$,
+defects of order $\geq 3$ ascending to level $n+1$) but is **not
+derived from the operator pentagon**. The actual derivation goes
+through
 Markov-trace factorization
 ([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization)):
 

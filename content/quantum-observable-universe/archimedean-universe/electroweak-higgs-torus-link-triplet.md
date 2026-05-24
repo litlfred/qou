@@ -50,7 +50,7 @@ established that:
    Higgs, $5_2$ for $Z$, $3_1$ for $W$) — all failed PSD on the
    standard $(2,1)$ representation.
 
-**Decisive structural argument: even-twist parity.**
+**Even-twist parity argument.**
 
 *The argument is stated over the categorical coefficient ring $R$
 (typically $R = \mathbb{Z}[q, q^{-1}]$ or its localization $\mathbb{Q}(q)$),

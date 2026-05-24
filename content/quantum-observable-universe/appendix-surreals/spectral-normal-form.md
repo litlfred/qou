@@ -151,8 +151,7 @@ multi-scale behaviour that the surreal lift does not capture.
 **Provability assessment**: algebraic case mostly tractable with
 current Lean + surreal infrastructure. Transcendental case
 requires Berarducci–Mantova in Lean. The overall conjecture is
-essentially a *dictionary*, making it more testable than
-deep-research-open.
+a *dictionary*, more testable than deep-research-open.
 
 ## Open problem
 
