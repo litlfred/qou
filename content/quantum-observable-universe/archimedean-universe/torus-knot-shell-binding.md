@@ -78,13 +78,7 @@ $$
 
 The first few values at $q \approx 1.110$:
 
-| $n$ | $c_n$ | $d_n$ | Torus knot | Shell size |
-|:---:|:------:|:------:|:----------:|:----------:|
-| $1$ | $1.000$ | $0$ | (bare) | — |
-| $2$ | $1.209$ | $1.000$ | $T_{2,2}$ (Hopf) | $2$ |
-| $3$ | $1.463$ | $1.209$ | $T_{2,3}$ (trefoil) | — |
-| $6$ | $4.42$ | $3.65$ | $T_{2,6}$ | $6$ |
-| $8$ | $9.71$ | $8.03$ | $T_{2,8}$ | $8$ |
+See [Table 1](#tbl:torus-knot-shell-binding-table1-data).
 
 ## Proposition: magic numbers from torus knot shell sizes
 
@@ -116,14 +110,7 @@ The embeddable torus knots on the Bring surface
 shell sizes via their $r \times s$ products. The six
 nontrivial torus knots and their shell assignments:
 
-| Torus knot | $(r, s)$ | Seifert genus | Degree | $r \times s$ | Shell |
-|:----------:|:--------:|:------------:|:------:|:------------:|:-----:|
-| $T_{2,3}$ | $(2, 3)$ | $1$ | $1$ | $6$ | $1$ |
-| $T_{2,5}$ | $(2, 5)$ | $2$ | $1$ | $10$ | $2$ |
-| $T_{2,7}$ | $(2, 7)$ | $3$ | $1$ | $14$ | $3$ |
-| $T_{2,9}$ | $(2, 9)$ | $4$ | $2$ | $18$ | $4$ |
-| $T_{3,4}$ | $(3, 4)$ | $3$ | $2$ | $12$ | $3'$ |
-| $T_{3,5}$ | $(3, 5)$ | $4$ | $2$ | $15$ | $4'$ |
+See [Table 2](#tbl:torus-knot-shell-binding-table2-data).
 
 The **shell capacity** is the number of nucleon pairs that
 the torus knot can bind. Each torus knot $T_{r,s}$ mediates
@@ -141,15 +128,7 @@ The magic numbers are the cumulative sums of shell occupancies,
 where each shell closes when same-type nucleons fill all
 available crossings:
 
-| Shell | Binding knot | Shell size | Cumulative | Magic \# |
-|:-----:|:-----------:|:----------:|:----------:|:--------:|
-| $1s$ | $T_{2,3}$ | $2$ | $2$ | $\mathbf{2}$ |
-| $1p$ | $T_{2,3}$ | $6$ | $8$ | $\mathbf{8}$ |
-| $1d$ | $T_{2,5}$ | $12$ | $20$ | $\mathbf{20}$ |
-| $1f$ | $T_{2,5} + T_{3,4}$ | $8$ | $28$ | $\mathbf{28}$ |
-| $2s\text{-}2d$ | $T_{2,7}$ | $22$ | $50$ | $\mathbf{50}$ |
-| $2f\text{-}3p$ | $T_{2,9} + T_{3,4}$ | $32$ | $82$ | $\mathbf{82}$ |
-| $3d\text{-}4s$ | $T_{2,9} + T_{3,5}$ | $44$ | $126$ | $\mathbf{126}$ |
+See [Table 3](#tbl:torus-knot-shell-binding-table3-data).
 
 reproducing the experimental magic numbers
 $\{2, 8, 20, 28, 50, 82, 126\}$.

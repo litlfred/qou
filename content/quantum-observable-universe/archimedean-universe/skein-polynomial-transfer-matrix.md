@@ -37,11 +37,7 @@ $\mathbb{Z}[q^{\pm 1}]$.  Each crossing factor
 $C_{ij} = c_j \sigma_i + d_j$ has coefficients $(c_j, d_j)$
 in $\mathbb{Z}[q^{\pm 1}]$:
 
-| Pair type | $c_j$ | $d_j$ | Hecke element |
-|-----------|-------|-------|---------------|
-| $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ | $\sigma$ |
-| $\mathfrak{n}$-$\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ | $\sigma^{-1} = \sigma - (q - q^{-1})$ |
-| mixed | $1$ | $-\frac{1}{2}(q - q^{-1})$ | $\frac{1}{2}(\sigma + \sigma^{-1})$ |
+See [Table 1](#tbl:skein-polynomial-transfer-matrix-table1-data).
 
 The $(1, -(q - q^{-1}))$ convention for nn crossings is the unique
 convention consistent with the Hecke inverse relation
@@ -105,11 +101,7 @@ factored form is never unfolded.  $\square$
 
 The parameter $q$ plays three roles simultaneously:
 
-| Role | Description |
-|------|-------------|
-| Algebraic | Deformation parameter of $H_A(q)$: $T^2 = (q - q^{-1})T + 1$ |
-| Topological | Variable of the Skein polynomial $P_{\mathcal{N}}(q)$ |
-| Physical | Substrate parameter $q$ from $\chi(A) = -6$ |
+See [Table 2](#tbl:skein-polynomial-transfer-matrix-table2-data).
 
 These are not three different objects — they are the **same $q$**.
 The Hecke relation generates the polynomial; the Markov trace
@@ -118,14 +110,7 @@ topological invariant to the physical energy.
 
 **Degree bounds for specific nuclei.**
 
-| Nucleus | $A$ | $\binom{A}{2}$ steps | $\deg P_{\mathcal{N}} \leq$ |
-|---------|-----|:---:|:---:|
-| ${}^{2}\mathrm{H}$ | 2 | 1 | 3 |
-| ${}^{3}\mathrm{H}$ | 3 | 3 | 8 |
-| ${}^{4}\mathrm{He}$ | 4 | 6 | 15 |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | 195 |
-| ${}^{56}\mathrm{Fe}$ | 56 | 1540 | 3135 |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | 44099 |
+See [Table 3](#tbl:skein-polynomial-transfer-matrix-table3-data).
 
 All evaluated in milliseconds.
 

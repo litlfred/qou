@@ -92,14 +92,7 @@ truncating at the weak vertex.
 The integrated Coulomb enhancement (averaged over the electron
 energy spectrum) is a large, $Z$-dependent factor:
 
-| Nucleus | $Z_d$ | $\langle F_q \rangle$ | Effect on $\Gamma_\beta$ |
-|---------|-------|----------------------|--------------------------|
-| ${}^{3}\mathrm{H}$ | 2 | $1.4$ | $+40\%$ |
-| ${}^{14}\mathrm{C}$ | 7 | $1.5$ | $+50\%$ |
-| ${}^{60}\mathrm{Co}$ | 28 | $2.9$ | $+190\%$ |
-| ${}^{90}\mathrm{Sr}$ | 39 | $3.2$ | $+220\%$ |
-| ${}^{137}\mathrm{Cs}$ | 56 | $4.5$ | $+350\%$ |
-| ${}^{210}\mathrm{Bi}$ | 84 | $5.0$ | $+400\%$ |
+See [Table: Skein-Coulomb enhancement factors](#tbl:skein-coulomb-enhancement-table1-data).
 
 These are **not** small corrections — they change decay rates by
 factors of 1.4 to 5.  The leading-order predictions
@@ -116,14 +109,7 @@ The nuclear matrix element $|\mathcal{M}_q|^2$ varies by six orders
 of magnitude across the verification set.  Measured $\log ft$ values
 (NNDC/ENSDF) classify the transitions:
 
-| Nucleus | $\log ft$ | Classification | $\lvert\mathcal{M}\rvert^2$ |
-|---------|-----------|----------------|-------------------|
-| ${}^{3}\mathrm{H}$ | 3.05 | Superallowed | $\sim 6$ |
-| ${}^{14}\mathrm{C}$ | 9.04 | Hindered allowed | $\sim 10^{-6}$ |
-| ${}^{60}\mathrm{Co}$ | 7.50 | Allowed GT | $\sim 10^{-4}$ |
-| ${}^{90}\mathrm{Sr}$ | 7.63 | Allowed GT | $\sim 10^{-4}$ |
-| ${}^{137}\mathrm{Cs}$ | 7.49 | Allowed GT | $\sim 10^{-4}$ |
-| ${}^{210}\mathrm{Bi}$ | 7.10 | Allowed GT | $\sim 10^{-3}$ |
+See [Table: Beta-decay classification](#tbl:skein-coulomb-enhancement-table2-data).
 
 The QOU framework determines the $q$-dependent modulation of each
 transition class (via $[2]_q$, $\tanh(\ln q)$, and $\sigma_{\mathrm{GT}}$)

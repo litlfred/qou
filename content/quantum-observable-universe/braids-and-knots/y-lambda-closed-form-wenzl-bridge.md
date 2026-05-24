@@ -54,11 +54,7 @@ proven in
 The Hecke algebra of type $A_{n-1}$ has two standard
 parameterizations:
 
-| | $\sigma$-convention (this paper) | $g$-convention (Wenzl-Orellana) |
-|--|--|--|
-| Quadratic | $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ | $g_i^2 = (Q - 1)g_i + Q$ |
-| Eigenvalues | $q, -q^{-1}$ | $Q, -1$ |
-| Markov param | $z = 1/(q^{1/2} + q^{-1/2})$ | $z_{\mathrm{GL}}$ |
+See [Table 1](#tbl:y-lambda-closed-form-wenzl-bridge-table1-data).
 
 The map $g_i := q \, \sigma_i$ realises an algebra isomorphism with
 $Q = q^2$, and the Markov parameters are related by
@@ -99,18 +95,7 @@ $\square$
 
 Per-partition agreement at H_3, H_4, H_5 (representative entries):
 
-| $n$ | $\lambda$ | $y_\lambda$ (witness) | $y_\lambda$ (Wenzl bridge) | $\Delta$ |
-|--|--|--:|--:|--:|
-| 3 | $(3)$ | $+0.41539579$ | $+0.41539579$ | $\sim 10^{-16}$ |
-| 3 | $(2,1)$ | $+0.28092963$ | $+0.28092963$ | $\sim 10^{-17}$ |
-| 3 | $(1^3)$ | $+0.02274495$ | $+0.02274495$ | $\sim 10^{-17}$ |
-| 4 | $(4)$ | $+0.22752693$ | $+0.22752693$ | $\sim 10^{-16}$ |
-| 4 | $(3,1)$ | $+0.18786886$ | $+0.18786886$ | $\sim 10^{-17}$ |
-| 4 | $(2,2)$ | $+0.06947330$ | $+0.06947330$ | $\sim 10^{-17}$ |
-| 4 | $(2,1,1)$ | $+0.02358747$ | $+0.02358747$ | $\sim 10^{-17}$ |
-| 4 | $(1^4)$ | $-0.00084253$ | $-0.00084253$ | $\sim 10^{-17}$ |
-| 5 | $(5)$ | $+0.11814840$ | $+0.11814840$ | $\sim 10^{-16}$ |
-| ... | ... | ... | ... | ... |
+See [Table 2](#tbl:y-lambda-closed-form-wenzl-bridge-table2-data).
 
 All differences are at numerical precision ($10^{-16}$), confirming the
 identity exactly.
@@ -160,20 +145,7 @@ extends symbolic $y_\lambda$ to **all 270 partitions across $n = 2, \ldots, 12$
 in $45$ seconds total** via direct sympy substitution into the
 principal-specialization formula:
 
-| $n$ | $p(n)$ | symbolic compute time |
-|--:|--:|--:|
-| 2 | 2 | 0.03 s |
-| 3 | 3 | 0.02 s |
-| 4 | 5 | 0.05 s |
-| 5 | 7 | 0.12 s |
-| 6 | 11 | 0.30 s |
-| 7 | 15 | 0.63 s |
-| 8 | 22 | 1.41 s |
-| 9 | 30 | 2.89 s |
-| 10 | 42 | 5.82 s |
-| 11 | 56 | 11.27 s |
-| 12 | 77 | 22.77 s |
-| **total** | **270** | **45.31 s** |
+See [Table 3](#tbl:y-lambda-closed-form-wenzl-bridge-table3-data).
 
 Compare to:
 - Sympy linear-system $y_\lambda$ solve at $n=4$: $\sim 30$ s,

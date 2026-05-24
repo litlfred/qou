@@ -1054,6 +1054,10 @@ export default chapter({
         "atom-knot-mass-derivation-proof",
         "joint-tower-sdp-confinement",
         "y-lambda-closed-form-wenzl-bridge",
+
+        "y-lambda-closed-form-wenzl-bridge-table1-data",
+        "y-lambda-closed-form-wenzl-bridge-table2-data",
+        "y-lambda-closed-form-wenzl-bridge-table3-data",
       ],
     }),
 
@@ -1092,6 +1096,8 @@ export default chapter({
         "six-term-mass-formula-complete",
         "six-term-mass-formula-complete-table-data",
         "six-term-per-derivation-weights",
+        "six-term-per-derivation-weights-table1-data",
+        "six-term-per-derivation-weights-table2-data",
         "shell-correction-term-seven",
         "crystal-isospin-degeneracy",
         "crystal-isospin-degeneracy-table-data",
