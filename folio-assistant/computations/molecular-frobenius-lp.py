@@ -31,6 +31,7 @@ import itertools
 import numpy as np
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
@@ -241,10 +242,10 @@ def scan_bond_frobenius(nf_A, Z_B, N_B, obs_E, bond_name, max_n=4):
     x_ub = np.array(nf_ub)
     passes_ub, Gx_ub, n_viol_ub = frobenius_check(nf_ub)
     tr_ub = nf_trace(nf_ub)
-    Phi_ub = math.log(abs(tr_ub)) if abs(tr_ub) > 1e-300 else float('inf')
+    Phi_ub = mp.log(abs(tr_ub)) if abs(tr_ub) > 1e-300 else float('inf')
 
     print(f"\n--- {bond_name} bond ---")
-    print(f"  Unbonded: tr_M = {tr_ub:.6e}, Phi_1 = {Phi_ub:.6f}")
+    print(f"  Unbonded: tr_M = {tr_ub:.6e}, Phi_1 = {float(Phi_ub):.6f}")
     print(f"  Frobenius: {'PASS' if passes_ub else 'FAIL'} ({n_viol_ub} violations)")
     if not passes_ub:
         for i in range(6):
@@ -269,7 +270,7 @@ def scan_bond_frobenius(nf_A, Z_B, N_B, obs_E, bond_name, max_n=4):
             tr = nf_trace(nf)
             if abs(tr) < 1e-300:
                 continue
-            Phi = math.log(abs(tr))
+            Phi = mp.log(abs(tr))
             bind = Phi_ub - Phi
             E = bind * E_mol
             label = ",".join(o[0] for o in ops)
@@ -288,8 +289,8 @@ def scan_bond_frobenius(nf_A, Z_B, N_B, obs_E, bond_name, max_n=4):
             best = feasible[0]
             frob_str = "PASS" if best['passes'] else f"FAIL({best['n_viol']})"
             print(f"  {n:>3} {n_pass:>4}/{len(feasible):>3} {best['ops']:>28} "
-                  f"{best['tr']:>12.6e} {best['bind']:>10.6f} "
-                  f"{best['E']:>10.4f} {frob_str:>5}")
+                  f"{best['tr']:>12.6e} {float(best['bind']):>10.6f} "
+                  f"{float(best['E']):>10.4f} {frob_str:>5}")
 
             if best['passes'] and (best_overall is None or abs(best['tr']) < abs(best_overall['tr'])):
                 best_overall = best
@@ -297,8 +298,8 @@ def scan_bond_frobenius(nf_A, Z_B, N_B, obs_E, bond_name, max_n=4):
     if best_overall:
         print(f"\n  LP-OPTIMAL: {best_overall['ops']} ({best_overall['n']} crossings)")
         print(f"    tr_M = {best_overall['tr']:.6e}")
-        print(f"    E = {best_overall['E']:.4f} eV (obs: {obs_E:.2f} eV, "
-              f"err: {(best_overall['E']/obs_E - 1)*100:+.1f}%)")
+        print(f"    E = {float(best_overall['E']):.4f} eV (obs: {obs_E:.2f} eV, "
+              f"err: {float(best_overall['E']/obs_E - 1)*100:+.1f}%)")
         print(f"    Frobenius: ALL constraints satisfied")
     else:
         print(f"\n  NO feasible solution found up to {max_n} crossings")
@@ -337,8 +338,8 @@ print("  " + "-" * 68)
 for name in ["H-H", "C-H", "C-O", "C-C", "O-H"]:
     r = results.get(name)
     if r:
-        err = (r['E']/bond_types[[b[0] for b in bond_types].index(name)][5] - 1)*100
-        print(f"  {name:>6} {r['n']:>3} {r['ops']:>28} {r['E']:>10.4f} "
+        err = float(r['E']/bond_types[[b[0] for b in bond_types].index(name)][5] - 1)*100
+        print(f"  {name:>6} {r['n']:>3} {r['ops']:>28} {float(r['E']):>10.4f} "
               f"{bond_types[[b[0] for b in bond_types].index(name)][5]:>10.2f} {err:>+7.1f}%")
     else:
         print(f"  {name:>6}   — no feasible solution —")
@@ -361,8 +362,8 @@ molecules = [
 print(f"  {'Molecule':>8} {'Predicted':>12} {'Observed':>12} {'Error':>8}")
 print("  " + "-" * 44)
 for name, pred, obs in molecules:
-    err = (pred/obs - 1)*100 if obs > 0 and pred != 0 else float('nan')
-    print(f"  {name:>8} {pred:>10.2f} eV {obs:>10.2f} eV {err:>+7.1f}%")
+    err = float((pred/obs - 1)*100) if obs > 0 and pred != 0 else float('nan')
+    print(f"  {name:>8} {float(pred):>10.2f} eV {obs:>10.2f} eV {err:>+7.1f}%")
 
 print()
 
@@ -388,7 +389,7 @@ for name in ["H-H", "C-H", "C-O", "C-C", "O-H"]:
     if r:
         w.add_data(f"bond_{name}", {
             "ops": r['ops'], "n_crossings": r['n'],
-            "E_eV": r['E'], "tr_M": r['tr'],
+            "E_eV": float(r['E']), "tr_M": float(r['tr']),
             "frobenius_passes": True,
         })
 
