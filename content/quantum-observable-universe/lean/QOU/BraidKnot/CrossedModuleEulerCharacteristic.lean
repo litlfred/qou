@@ -17,25 +17,70 @@ import Mathlib.Data.Complex.Basic
 
 open Matrix Complex
 
-/-- Quaternion unit i as a 2×2 complex matrix. -/
-noncomputable def qi : Matrix (Fin 2) (Fin 2) ℂ :=
-  !![I, 0; 0, -I]
+-- ── Pure ℤ computation (avoids noncomputable ℂ) ──────────────────
+-- The Q₈ 2×2 matrices over ℤ[i] have entries in {0, ±1, ±i}.
+-- We work over ℤ × ℤ (representing a + bi) to keep everything
+-- computable / decidable.
 
-/-- Quaternion unit j as a 2×2 complex matrix. -/
-noncomputable def qj : Matrix (Fin 2) (Fin 2) ℂ :=
-  !![0, 1; -1, 0]
+/-- Gaussian integer a + bi as (a, b). -/
+abbrev GaussInt := ℤ × ℤ
 
-/-- The 6 Borromean crossing images in Q₈: [i, −j, i, −j, i, −j]. -/
-noncomputable def borromeanCrossings : Fin 6 → Matrix (Fin 2) (Fin 2) ℂ
-  | 0 => qi
-  | 1 => -qj
-  | 2 => qi
-  | 3 => -qj
-  | 4 => qi
-  | 5 => -qj
+instance : Add GaussInt := ⟨fun ⟨a, b⟩ ⟨c, d⟩ => (a + c, b + d)⟩
+instance : Neg GaussInt := ⟨fun ⟨a, b⟩ => (-a, -b)⟩
+instance : Mul GaussInt := ⟨fun ⟨a, b⟩ ⟨c, d⟩ => (a*c - b*d, a*d + b*c)⟩
+instance : Zero GaussInt := ⟨(0, 0)⟩
+instance : One GaussInt := ⟨(1, 0)⟩
+
+/-- The imaginary unit i = (0, 1). -/
+def gi : GaussInt := (0, 1)
+
+/-- 2×2 matrix over Gaussian integers. -/
+abbrev M2 := Fin 2 → Fin 2 → GaussInt
+
+def m2_mul (A B : M2) : M2 := fun i j =>
+  A i 0 * B 0 j + A i 1 * B 1 j
+
+def m2_add (A B : M2) : M2 := fun i j =>
+  A i j + B i j
+
+def m2_neg (A : M2) : M2 := fun i j =>
+  -A i j
+
+def m2_zero : M2 := fun _ _ => (0, 0)
+
+def m2_smul (s : ℤ) (A : M2) : M2 := fun i j =>
+  ((s, 0) : GaussInt) * A i j
+
+def m2_trace (A : M2) : GaussInt :=
+  A 0 0 + A 1 1
+
+-- ── Q₈ matrices ──────────────────────────────────────────────────
+
+/-- Quaternion i = [[i, 0], [0, -i]]. -/
+def qi_m : M2 := fun
+  | 0, 0 => gi
+  | 0, 1 => (0, 0)
+  | 1, 0 => (0, 0)
+  | 1, 1 => -gi
+
+/-- Quaternion j = [[0, 1], [-1, 0]]. -/
+def qj_m : M2 := fun
+  | 0, 0 => (0, 0)
+  | 0, 1 => (1, 0)
+  | 1, 0 => (-1, 0)
+  | 1, 1 => (0, 0)
+
+/-- The 6 Borromean crossing Q₈ images: [i, −j, i, −j, i, −j]. -/
+def crossings : Fin 6 → M2
+  | 0 => qi_m
+  | 1 => m2_neg qj_m
+  | 2 => qi_m
+  | 3 => m2_neg qj_m
+  | 4 => qi_m
+  | 5 => m2_neg qj_m
 
 /-- Crossing signs: [+1, −1, +1, −1, +1, −1]. -/
-def borromeanSigns : Fin 6 → ℤ
+def signs : Fin 6 → ℤ
   | 0 => 1
   | 1 => -1
   | 2 => 1
@@ -43,38 +88,32 @@ def borromeanSigns : Fin 6 → ℤ
   | 4 => 1
   | 5 => -1
 
-/-- The h² coefficient of the multiplicative surface integral:
-    Σ_{k<l} s_k s_l c_k c_l, where s_k are signs and c_k are
-    Q₈ images of the 6 Borromean crossings.
-
-    This evaluates to the matrix [[-6, 3i], [3i, -6]] whose
-    trace is −12 = dim(V) · χ(Σ₄). -/
-noncomputable def h2CurvatureSum : Matrix (Fin 2) (Fin 2) ℂ :=
-  ∑ k : Fin 6, ∑ l : Fin 6,
-    if k < l then
-      (borromeanSigns k : ℂ) • (borromeanSigns l : ℂ) •
-        borromeanCrossings k * borromeanCrossings l
-    else 0
-
-/-- The trace of the h² curvature sum equals −12. -/
-theorem h2_curvature_trace :
-    (h2CurvatureSum).trace = -12 := by
-  -- Finite enumeration: 15 pairwise products of 2×2 matrices.
-  -- Each product is computed via matrix multiplication, then summed.
-  -- The diagonal entries are both −6, giving trace −12.
-  -- Ref: [yekutieli2015] §6, Theorem 6.2.1
-  sorry
+/-- Compute the h² curvature sum: Σ_{k<l} s_k s_l c_k c_l. -/
+def h2Sum : M2 :=
+  let pairs : List (Fin 6 × Fin 6) :=
+    List.join (List.ofFn fun k =>
+      List.ofFn fun l =>
+        (k, l))
+  pairs.foldl (fun acc ⟨k, l⟩ =>
+    if k.val < l.val then
+      m2_add acc (m2_smul (signs k * signs l) (m2_mul (crossings k) (crossings l)))
+    else acc
+  ) m2_zero
 
 /-- The Euler characteristic of Bring's surface (genus 4). -/
 def euler_bring : ℤ := 2 - 2 * 4  -- = −6
 
 /-- The dimension of the fundamental representation V = ℂ². -/
-def dim_V : ℕ := 2
+def dim_V : ℤ := 2
 
-/-- The main identity: tr(h² curvature) = dim(V) · χ(Σ₄). -/
+-- ── The theorems ─────────────────────────────────────────────────
+
+/-- The trace of the h² curvature sum equals (−12, 0) as a
+    Gaussian integer, i.e. −12 ∈ ℤ ⊂ ℤ[i]. -/
+theorem h2_curvature_trace :
+    m2_trace h2Sum = ((-12 : ℤ), (0 : ℤ)) := by native_decide
+
+/-- The main identity: tr(h² curvature) = dim(V) · χ(Σ₄).
+    Both sides are −12 (as a real integer, imaginary part 0). -/
 theorem crossed_module_euler_characteristic :
-    (h2CurvatureSum).trace = (dim_V : ℂ) * (euler_bring : ℂ) := by
-  -- dim_V = 2, euler_bring = −6, so RHS = 2 · (−6) = −12
-  -- LHS = −12 by h2_curvature_trace
-  -- Ref: [yekutieli2015] §6 + [kassel1995] §VIII.2
-  sorry
+    m2_trace h2Sum = ((dim_V * euler_bring : ℤ), (0 : ℤ)) := by native_decide
