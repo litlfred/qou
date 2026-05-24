@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T14:15:19.001445+00:00",
-  "commitSha": "2d9fca106dc1a0c2cbb65972417ae72da072e2d0",
+  "computedAt": "2026-05-24T14:16:02.174458+00:00",
+  "commitSha": "be3cbd1cf0a247f7ed6e5f10097e8f1c698cd5d5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2350,6 +2350,7 @@
         "factor-2-normalization-trace.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
