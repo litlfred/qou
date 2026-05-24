@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T01:42:58.809498+00:00",
-  "commitSha": "8bc78aaf204107ed29ff3142ba4d14fcb1bedf28",
+  "computedAt": "2026-05-24T02:19:51.286551+00:00",
+  "commitSha": "ec9091b8a4d575b4f2eddc3cec03208e9a61c702",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2394,6 +2394,7 @@
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
         "hoefsmit-seminormal-form-probe.witness.json",
+        "homflypt-engine-selftest.witness.json",
         "hopf-jones-c3-categorical.witness.json",
         "hopf-markov-trace-genuine.witness.json",
         "hydrogen-qshuffle-compound.witness.json",
