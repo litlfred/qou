@@ -141,11 +141,7 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # post-PR #1080, 2026-05-23): a single per-knot Geom call replaces the
 # manually expanded (Vol/ℏ_q²) × linking_weight form.  See
 # `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
-from _li_2_q_util import (
-    geom_full_borromean as _geom_full_borromean,
-    linking_weight_family_a as _linking_weight_family_a,
-)
-LINKING_WEIGHT_SUBSTRATE_FORM = _linking_weight_family_a(_Q_0)
+from _li_2_q_util import geom_full_borromean as _geom_full_borromean
 GEOM_FULL_BORROMEAN_Q0 = _geom_full_borromean(_Q_0)
 
 # Empirical legacy (falsified, retained for the comparison column

@@ -199,8 +199,8 @@ def main() -> int:
     # `LINKING_WEIGHT_FITTED_AUDIT_ONLY` for the historical comparison
     # column only; it is NOT consumed in any S(p)-hypothesis cell.
     # Single source of truth: `_li_2_q_util.linking_weight_family_a`
-    # (canonical naming post-PR #1080; replaces the deprecated
-    # `lambda_scale_family_a` alias kept only for back-compat).
+    # (canonical naming post-PR #1080; legacy `lambda_scale_family_a`
+    # alias was removed 2026-05-24 per Copilot review on PR #1089).
     from _li_2_q_util import linking_weight_family_a as _linking_weight_family_a
     LINKING_WEIGHT_CURRENT = _linking_weight_family_a(Q)
     LINKING_WEIGHT_FITTED_AUDIT_ONLY = mp.mpf("2.4599527869")

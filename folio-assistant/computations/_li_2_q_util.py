@@ -197,13 +197,14 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
     return mpf(5) / 2 + mpf(3) * h ** 2 / 4
 
 
-# Deprecated alias retained for back-compat during the PR #1080 cleanup.
-# New callers should use `linking_weight_family_a` (or `geom_full_borromean`
-# when the full Geom_full evaluation is wanted).  Per owner directive
-# 2026-05-24: "no lambda-scale ANYWHERE".  This alias exists ONLY to
-# absorb back-compat callers during migration and will be removed once
-# every caller has been updated.
-lambda_scale_family_a = linking_weight_family_a
+# NOTE: the legacy alias `lambda_scale_family_a = linking_weight_family_a`
+# was REMOVED on 2026-05-24 (PR #1089 review-cycle, Copilot finding).
+# Per owner directive: "no lambda-scale ANYWHERE in production".  All
+# call sites now import `linking_weight_family_a` (or use the
+# `geom_full_borromean` wrapper when the full Geom_full evaluation is
+# wanted).  Any future caller attempting `from _li_2_q_util import
+# lambda_scale_family_a` will raise ImportError — by design, to force
+# migration.
 
 
 def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
@@ -238,7 +239,7 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     Returns Geom_full = Vol(𝓑₃)/ℏ_q² × linking_weight(q).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
-    hbar_q = (q - 1) / q
+    hbar_q = 1 - qi  # ℏ_q = (q - 1)/q = 1 - q⁻¹; reuse qi (Gemini PR #1089)
     vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
     geom_leading = vol_b3 / hbar_q ** 2
     linking_weight = linking_weight_family_a(q, qi)
