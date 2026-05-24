@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T03:49:04.244878+00:00",
-  "commitSha": "cb1ebd3121427dc82fdac0f6db31868344fb9642",
+  "computedAt": "2026-05-24T04:07:15.786785+00:00",
+  "commitSha": "ca6999b1763fb89d8eedfb9fdde21c5072e9722c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
+  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2053,6 +2053,7 @@
         "alpha-k-macdonald-closed-form.witness.json",
         "alpha-shift-torus.witness.json",
         "applied-uniqueness-mass-table.witness.json",
+        "archimedean-knot-eigenbasis-probe.witness.json",
         "atom-chi-rust-3he.witness.json",
         "atom-chi-rust-4he.witness.json",
         "atom-chi-rust-d.witness.json",
@@ -2330,7 +2331,6 @@
         "delta-n2-placeholder-audit.witness.json",
         "delta-q-decoration.witness.json",
         "demazure-markov-trace.witness.json",
-        "descartes-knot-eigenbasis-probe.witness.json",
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
@@ -2696,6 +2696,7 @@
         "y-lambda-macdonald-telescope.witness.json",
         "y_lambda_equivalence_proof.witness.json",
         "yekutieli-borromean-h2-extraction.witness.json",
+        "yekutieli-mi-h2-extraction.witness.json",
         "z-n-brane-tower-falsifiability.witness.json"
       ]
     }
