@@ -1,3 +1,9 @@
+# archimedean_by_design: scipy LP/SDP solver wrapper + numpy
+#   float64 Hoefsmit matrices (the `_hoefsmit_f64_matrices` helper
+#   makes this explicit in its name). Substrate precision is the
+#   input q-arithmetic; the LP/SDP solve and the Gram matrix
+#   assembly are float64 by necessity (scipy.optimize.linprog +
+#   numpy.linalg).
 """Wedderburn pair-volume LP/SDP wiring for the EW-sector + alt-Δ_I
 Weinberg-angle probe.
 
