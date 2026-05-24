@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T08:23:42.968875+00:00",
-  "commitSha": "d3892ce5e6b7be2beafe8c2dbaa98dc434751783",
+  "computedAt": "2026-05-24T14:09:24.606539+00:00",
+  "commitSha": "3af08b4a9aa4b5849faaa4400765e6a65c93048e",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+  "scriptCommitSha": "60d34fc28faafa9395c037ac62d69ebe8c3575d1",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2538,6 +2538,7 @@
         "path-b-open-questions.witness.json",
         "path4-rho-K-at-h3A.witness.json",
         "pauli-factor-wedderburn-probe.witness.json",
+        "pentagon-multipair-borromean-h4-probe.witness.json",
         "pentagon-reduction-li2q.witness.json",
         "pentagon-to-borromean-h4-probe.witness.json",
         "per-atom-grading-bound.witness.json",
