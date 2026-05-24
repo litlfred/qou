@@ -426,7 +426,104 @@
         "reviewed_at": "2026-05-23T10:04:52.664Z",
         "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50"
       }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "ecb5799b432a",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e",
+        "severity": "critical",
+        "evidence": "quantum-observable-universe/observations/n-v-leading-order-derivation.md:94: numerology signal phrase: \"numerical coincidence\""
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "ecb5799b432a",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "ecb5799b432a",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "ecb5799b432a",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "ecb5799b432a",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
+      }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T20:16:40.535Z"
 }

@@ -551,7 +551,106 @@
         "reviewed_at": "2026-05-23T10:04:52.664Z",
         "reviewed_sha": "67791039f468922b7fa80646eb0d3e8786f14c50"
       }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "f61550b353e5",
+          "ts": "04f6666b8286",
+          "lean": "4a52fb6d8ff7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "f61550b353e5",
+          "ts": "04f6666b8286",
+          "lean": "4a52fb6d8ff7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "f61550b353e5",
+          "ts": "04f6666b8286",
+          "lean": "4a52fb6d8ff7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/term6-binding-density.md:30: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q)"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "f61550b353e5",
+          "ts": "04f6666b8286",
+          "lean": "4a52fb6d8ff7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/term6-binding-density.md:93: hardcoded observable \"= 339.4 \\;\\mathrm{MeV}\" without ≈ — use $\\approx$ per §7ab"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "f61550b353e5",
+          "ts": "04f6666b8286",
+          "lean": "4a52fb6d8ff7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "38f445ad0988a3b2da534147a9f47990360571ce"
+        },
+        "reviewed_at": "2026-05-23T20:16:40.535Z",
+        "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
+      }
     ]
   },
-  "updated_at": "2026-05-23T10:04:52.664Z"
+  "updated_at": "2026-05-23T20:16:40.535Z"
 }
