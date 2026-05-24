@@ -1,5 +1,6 @@
 """
-_precision.py — shared precision infrastructure for QOU compute scripts.
+qou_substrate.precision — shared precision infrastructure for QOU
+compute scripts.
 
 Centralizes the COMPUTE precision (mp.mp.dps) and the SERIALIZATION
 precision used when emitting mpmath values into witness JSON.
@@ -9,7 +10,8 @@ USAGE
 
 At the top of any mpmath-based script::
 
-    from _precision import set_compute_dps, fmt
+    from qou_substrate import set_compute_dps, fmt
+    # equivalently: from qou_substrate.precision import set_compute_dps, fmt
 
     set_compute_dps()           # set mp.mp.dps to COMPUTE_DPS (default 50)
     ...

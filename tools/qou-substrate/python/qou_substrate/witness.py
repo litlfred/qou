@@ -7,7 +7,8 @@ this module to ensure consistent structure, commit SHA tracking, and
 content-block integration.
 
 Usage:
-    from witness_base import WitnessBuilder
+    from qou_substrate.witness import WitnessBuilder
+    # equivalently: from qou_substrate import WitnessBuilder
 
     w = WitnessBuilder("my-computation", engine="sympy")
     w.set_description("Computes foo from bar")
@@ -20,7 +21,7 @@ Usage:
 The output conforms to the ComputationWitness interface in
 folio-assistant/schemas/types.ts.
 
-@module folio-assistant/computations/witness_base
+@module qou_substrate.witness
 """
 
 import hashlib
