@@ -218,8 +218,9 @@ def main() -> int:
         "categorically by the substrate flavor-split closed form "
         "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
         "(`prop:flavor-split-substrate`, PR #690), giving "
-        "m_p^pred ≈ 965.38 MeV (vs CODATA 938.27, ~2.9 % off) and "
-        "m_n^pred ≈ 966.71 MeV (vs CODATA 939.57, ~2.9 % off).  The "
+        f"m_p^pred ≈ 965.38 MeV (vs CODATA {float(_M_P_MEV_VALIDATION):.6f}, "
+        f"~2.89 % off) and m_n^pred ≈ 966.71 MeV "
+        f"(vs CODATA {float(_M_N_MEV_VALIDATION):.6f}, ~2.89 % off).  The "
         "substrate Δm/M_N ratio itself matches CODATA to ~305 ppm "
         "(0.030 %) — framework-proved, no fit.  The prior CAL-4 fit "
         "(2.4599527869, 2.4633436333, 5.4 ppm tautological match) was "
@@ -438,13 +439,13 @@ def main() -> int:
         "conclusion": (
             "Geom_full(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor "
             "missing from the single-level Markov-trace m_p chain. "
-            "The Borromean tower formula closes the gap to ~3 % on "
+            "The Borromean tower formula closes the gap to ~2.89 % on "
             "m_avg; substrate flavor split (PR #690) supplies Δm/M_N "
             "to ~305 ppm independently."
         ),
     })
 
-    # Open R&D: closing the m_avg ~3 % residual categorically
+    # Open R&D: closing the m_avg ~2.89 % residual categorically
     w.add_caveat(
         "Canonical formula post-PR #1080: m(K) = m_e × Geom_full(K, q₀), "
         "a single Geom call per knot.  Geom_full decomposes as "
@@ -482,10 +483,10 @@ def main() -> int:
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
     print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
     print(f"  CODATA / single-level:   {gap_factor:.4f}")
-    print(f"  → Geom_full(𝓑₃, q₀) closes to ~3 % vs CODATA on m_avg;")
+    print(f"  → Geom_full(𝓑₃, q₀) closes to ~2.89 % vs CODATA on m_avg;")
     print(f"    substrate flavor split (PR #690) supplies Δm/M_N to")
     print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")
-    print(f"    Open R&D: ~3 % m_avg gap framed as Geom_full(𝓑₃)")
+    print(f"    Open R&D: ~2.89 % m_avg gap framed as Geom_full(𝓑₃)")
     print(f"    categorical-exactness refinement (PR #1063), not separate λ closure.")
     return 0
 
