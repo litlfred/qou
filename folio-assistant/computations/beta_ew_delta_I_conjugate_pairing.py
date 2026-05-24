@@ -48,6 +48,7 @@ from pathlib import Path
 
 import numpy as np
 import sympy as sp
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -380,10 +381,10 @@ def main() -> int:
         if i > len(gen_dets):
             continue
         d = gen_dets[i - 1][1]
-        log_det_k += float(np.log(abs(d))) if abs(d) > 0 else 0.0
+        log_det_k += float(mp.log(abs(d))) if abs(d) > 0 else 0.0
         if d < 0:
             sign_k *= -1
-    det_k_reconstructed = sign_k * float(np.exp(log_det_k))
+    det_k_reconstructed = sign_k * float(mp.exp(log_det_k))
     print(f"    det(M_ρ_4) reconstructed from per-generator dets: "
           f"{det_k_reconstructed:+.6f}")
     staircase_results.append({
