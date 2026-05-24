@@ -48,10 +48,11 @@ $$
 $$
 
 The per-cell ratio is $1/8$, confirming that the half-symmetric
-projection extracts the curvature contribution of exactly **one**
-ideal octahedral cell. $\square$
+projection selects exactly **one** of the eight ideal octahedral
+cells. The reading is purely structural — *which* cell is
+identified, not *how much* per-cell curvature it carries. $\square$
 
-## Structural role in `Geom_full($\mathcal{B}_3$)` refinement
+## Structural role in $\mathrm{Geom_{full}}(\mathcal{B}_3)$ refinement
 
 > **2026-05-24 reframing.** This section originally proposed a
 > Yekutieli per-cell additive form
@@ -80,8 +81,10 @@ open. The framework's current production prediction
 $m_p \approx 965\;\text{MeV}$ ($+2.89\%$ vs CODATA) is the
 $\mathrm{Geom_{full}}(\mathcal{B}_3)$ value at the framework's
 current categorical-exactness order; refining that exactness at
-higher $h^2$ orders is the open frontier (see
-[`docs/audits/2026-05-24-family-a-gap-audit.md`](../../../docs/audits/2026-05-24-family-a-gap-audit.md)).
+higher $h^2$ orders is the open frontier (see the Family A gap
+audit [`docs/audits/2026-05-24-family-a-gap-audit.md`](https://github.com/litlfred/qou/blob/claude/family-a-gap-audit-2026-05-24/docs/audits/2026-05-24-family-a-gap-audit.md),
+currently in [PR #1063](https://github.com/litlfred/qou/pull/1063);
+relative path resolves once that PR merges).
 This bijection is one of two structural inputs needed for the
 refinement (the other being the $S_5 \leftrightarrow SO(3)$ fiber
 action on Bring's surface).
