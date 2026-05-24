@@ -81,25 +81,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "0765c5cdd381",
-          "ts": "c28123687dad",
-          "lean": "b963df8300e4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/archimedean-universe/delta-lambda-categorical-closure.md:1: \\cite{grothendieck1966} or -- Ref: [grothendieck1966] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/delta-lambda-categorical-closure.md:1: \\cite{hartshorne1966} or -- Ref: [hartshorne1966] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/delta-lambda-categorical-closure.md:1: \\cite{pham1965} or -- Ref: [pham1965] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/delta-lambda-categorical-closure.md:1: \\cite{seidel2008} or -- Ref: [seidel2008] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/delta-lambda-categorical-closure.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -716,7 +697,27 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "8cc92cd4183b",
+          "ts": "27f9210b4d8e",
+          "lean": "df8274ff91f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }

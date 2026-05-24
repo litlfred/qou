@@ -47,25 +47,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "f46ae66d2f9d",
-          "ts": "7c9b3934ba0c",
-          "lean": "4c0c1426400f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
-      }
-    ],
     "compute-witness-exists": [
       {
         "field_hash": {
@@ -98,25 +79,6 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "f46ae66d2f9d",
-          "ts": "7c9b3934ba0c",
-          "lean": "4c0c1426400f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md:1: \\cite{borel1974} or -- Ref: [borel1974] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/lambda-scale-bring-bloch-identity.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -816,7 +778,27 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "adc95a764952",
+          "ts": "67838ac0381a",
+          "lean": "9978ab57fe46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
     ]
   },
-  "updated_at": "2026-05-24T00:43:32.943Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }

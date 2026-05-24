@@ -33,7 +33,48 @@
         "severity": "major",
         "evidence": "unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.ts:1: no probe witness for this prop — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B (audit: i1-no-probe-audit.witness.json)"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "b9d6ea02fc71",
+          "ts": "4109678f0439",
+          "lean": "2ee3de14ca1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "b9d6ea02fc71",
+          "ts": "4109678f0439",
+          "lean": "2ee3de14ca1c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de",
+        "severity": "major",
+        "evidence": "unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+      }
     ]
   },
-  "updated_at": "2026-05-24T00:49:59.352Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }

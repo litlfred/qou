@@ -81,25 +81,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "8b45a0d18265",
-          "ts": "e943c0523fae",
-          "lean": "8c45ce1524e3"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -680,7 +661,27 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "a4b541644061",
+          "ts": "e943c0523fae",
+          "lean": "8c45ce1524e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }
