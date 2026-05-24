@@ -60,8 +60,16 @@ if str(HERE) not in sys.path:
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-LOW_ISOTOPE_ATOMS = ["p", "n", "D", "T", "3He", "4He", "5Li", "6Li"]
-LOW_ISOTOPE_A_MAX = 6
+# Paper-canonical "low-isotope" set per content block
+#   `rem:recomputed-low-isotope-mass-table`
+#   (content/quantum-observable-universe/braids-and-knots/
+#    recomputed-low-isotope-mass-table.md):
+# the 5 atoms across which the three independent production paths
+# for tr_M(B_K) at q = q_0 agree to machine epsilon. A ≤ 3 cleanly
+# selects this set from the canonical witness rows.
+# Ref: [manuscript] rem:recomputed-low-isotope-mass-table
+LOW_ISOTOPE_ATOMS = ["p", "n", "D", "T", "3He"]
+LOW_ISOTOPE_A_MAX = 3
 CANONICAL_WITNESS = HERE / "canonical-mass-table-extended.witness.json"
 
 
