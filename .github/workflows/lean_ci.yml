@@ -115,17 +115,23 @@ jobs:
         continue-on-error: true
         run: python3 .github/scripts/generate_lean_stubs.py
 
-      - name: Cache Lean build artifacts
-        uses: actions/cache@v4
+      # Tier-1 (actions/cache) + Tier-2 (lake-cache/mathlib-* orphan
+      # branch) + Tier-3 (Mathlib upstream Reservoir) fallback. The
+      # `mathlib` package name selects the workspace-root cache that
+      # covers all paper packages in one shot (`.lake/`, plus the
+      # per-paper `.lake/` directories that workspace-build produces).
+      # See docs/workplans/2026-05-24-lean-cache-strategy.md.
+      - name: Cache Lean build artifacts (hybrid 3-tier)
+        uses: ./.github/actions/lake-cache-restore
         with:
-          path: |
-            .lake
-            content/quantum-observable-universe/lean/.lake
-            content/unital-groebner-bases/lean/.lake
-            content/fred2005-formal-groups/lean/.lake
-          key: lean-ci-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/unital-groebner-bases/lean/lakefile.toml', 'content/fred2005-formal-groups/lean/lakefile.toml') }}
-          restore-keys: |
-            lean-ci-${{ runner.os }}-
+          package: mathlib
+          lake-root: .
+          manifest-files: |
+            lean-toolchain
+            lakefile.toml
+            content/quantum-observable-universe/lean/lakefile.toml
+            content/unital-groebner-bases/lean/lakefile.toml
+            content/fred2005-formal-groups/lean/lakefile.toml
 
       # ── Build ──────────────────────────────────────────────────────
       # Runs from the repo-root Lake workspace, which aggregates every
@@ -204,15 +210,17 @@ jobs:
         with:
           name: lean-build
 
-      - name: Restore Lean cache
-        uses: actions/cache@v4
+      - name: Restore Lean cache (hybrid 3-tier)
+        uses: ./.github/actions/lake-cache-restore
         with:
-          path: |
-            .lake
-            content/quantum-observable-universe/lean/.lake
-            content/unital-groebner-bases/lean/.lake
-            content/fred2005-formal-groups/lean/.lake
-          key: lean-ci-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/unital-groebner-bases/lean/lakefile.toml', 'content/fred2005-formal-groups/lean/lakefile.toml') }}
+          package: mathlib
+          lake-root: .
+          manifest-files: |
+            lean-toolchain
+            lakefile.toml
+            content/quantum-observable-universe/lean/lakefile.toml
+            content/unital-groebner-bases/lean/lakefile.toml
+            content/fred2005-formal-groups/lean/lakefile.toml
 
       # ── Generate axiom report ──────────────────────────────────────
       - name: Generate axiom report
@@ -270,16 +278,18 @@ jobs:
           curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
-      - name: Restore Lean cache
+      - name: Restore Lean cache (hybrid 3-tier)
         id: lean-cache-docs
-        uses: actions/cache@v4
+        uses: ./.github/actions/lake-cache-restore
         with:
-          path: |
-            .lake
-            content/quantum-observable-universe/lean/.lake
-            content/unital-groebner-bases/lean/.lake
-            content/fred2005-formal-groups/lean/.lake
-          key: lean-ci-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/unital-groebner-bases/lean/lakefile.toml', 'content/fred2005-formal-groups/lean/lakefile.toml') }}
+          package: mathlib
+          lake-root: .
+          manifest-files: |
+            lean-toolchain
+            lakefile.toml
+            content/quantum-observable-universe/lean/lakefile.toml
+            content/unital-groebner-bases/lean/lakefile.toml
+            content/fred2005-formal-groups/lean/lakefile.toml
 
       - name: Build Lean workspace (ensure .olean files exist)
         env:
