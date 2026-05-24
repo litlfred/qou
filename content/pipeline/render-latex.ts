@@ -707,28 +707,40 @@ export function renderBlock(
   // | "deprecated") are skipped from the default render and only emitted
   // when the WITH_AUTHOR_NOTES environment variable is set. This is the
   // post-migration replacement for `> **Status: …**` / `> **Caveat …**`
-  // blockquote-banner-in-prose patterns (one-voice-audit Category G).
+  // blockquote-banner-in-prose patterns (one-voice-audit Category H).
   // See BlockBase.authorNotes in folio-assistant/schemas/types.ts.
-  if (process.env.WITH_AUTHOR_NOTES === "1" && "authorNotes" in block) {
-    const notes = (block as any).authorNotes as Array<{
-      kind: string;
-      date?: string;
-      body: string;
-      see?: string;
-    }> | undefined;
-    if (notes && notes.length > 0) {
+  //
+  // `block.authorNotes` is typed on BlockBase, so direct access (no
+  // `any` cast) is type-safe. The `?? []` defends against the
+  // narrow case where TypeScript narrows the discriminated union
+  // to a member that doesn't widen authorNotes back to the BlockBase
+  // optional.
+  if (process.env.WITH_AUTHOR_NOTES === "1"
+      && "authorNotes" in block
+      && block.authorNotes?.length) {
+    const notes = block.authorNotes;
+    lines.push("");
+    lines.push("\\begin{quote}\\small\\textit{Author notes (working draft):}");
+    for (const n of notes) {
+      const dateStr = n.date ? ` (${escapeLatex(n.date)})` : "";
+      // For `see`: if it looks like an internal block label
+      // (matches `^(def|prop|thm|lem|cor|rem|conj|ex|sim|fig|tbl):`),
+      // render as a hyperref cross-reference; otherwise treat as a
+      // URL (or external link) via \url{}. Internal refs render
+      // clickably in the PDF.
+      const isInternalRef = (s: string) =>
+        /^(def|prop|thm|lem|cor|rem|conj|ex|sim|fig|tbl):/.test(s);
+      const seeRendered = n.see
+        ? (isInternalRef(n.see)
+            ? ` \\textit{See:} \\hyperref[${n.see}]{\\nameref{${n.see}}}.`
+            : ` \\textit{See:} \\url{${n.see}}.`)
+        : "";
       lines.push("");
-      lines.push("\\begin{quote}\\small\\textit{Author notes (working draft):}");
-      for (const n of notes) {
-        const dateStr = n.date ? ` (${escapeLatex(n.date)})` : "";
-        lines.push("");
-        lines.push(
-          `\\textbf{${escapeLatex(n.kind)}${dateStr}.} ${markdownToLatex(n.body)}` +
-          (n.see ? ` \\textit{See:} \\url{${n.see}}.` : ""),
-        );
-      }
-      lines.push("\\end{quote}");
+      lines.push(
+        `\\textbf{${escapeLatex(n.kind)}${dateStr}.} ${markdownToLatex(n.body)}${seeRendered}`,
+      );
     }
+    lines.push("\\end{quote}");
   }
 
   return lines.join("\n");

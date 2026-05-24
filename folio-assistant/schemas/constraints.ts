@@ -116,6 +116,19 @@ const SimulatorViewSchema = z.object({
   params: z.record(z.string(), z.union([z.number(), z.string(), z.boolean()])),
 });
 
+/**
+ * Author-tracking notes attached to a content block (see
+ * `BlockBase.authorNotes` in folio-assistant/schemas/types.ts +
+ * CLAUDE.md §4d). Validates the shape of `authorNotes` entries
+ * with the 5 allowed `kind` values.
+ */
+export const AuthorNoteSchema = z.object({
+  kind: z.enum(["status", "caveat", "note", "refined-framing", "deprecated"]),
+  date: z.string().optional(),
+  body: z.string(),
+  see: z.string().optional(),
+});
+
 const BlockBaseSchema = z.object({
   title: z.string().optional(),
   uses: z.array(z.string()).optional(),
@@ -125,6 +138,7 @@ const BlockBaseSchema = z.object({
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),
   simulator: SimulatorRefSchema.optional(),
+  authorNotes: z.array(AuthorNoteSchema).optional(),
   /**
    * Glossary term slugs introduced by this block. See `BlockBase.defines`
    * in folio-assistant/schemas/types.ts for the authoring contract. Slugs
