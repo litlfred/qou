@@ -20,14 +20,7 @@ is the q-bracket.*
 
 Evaluating at the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps):
 
-| Symbol | Value at $q_0$ |
-|---|---|
-| $E_0 = m_e/(q(q-1))$ | $4.1859808\,$MeV |
-| $h = q - q^{-1}$ | $0.2090603$ |
-| $\log(1/h)$ | $1.5651324$ |
-| $[2]_q = q + q^{-1}$ | $2.0108969$ |
-| $[3]_q = q^2 + 1 + q^{-2}$ | $3.0437062$ |
-| $[2]_q \cdot [3]_q$ | $6.1205793$ |
+See [Table](#tbl:magic-shell-coupling-kappa-table-data).
 
 $$
   \kappa_{\mathrm{categorical}} = -\frac{4.1860 \cdot 1.5651}{6.1206}

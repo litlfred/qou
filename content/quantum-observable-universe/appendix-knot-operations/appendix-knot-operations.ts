@@ -17,6 +17,7 @@ export default chapter({
       label: "sec:particle-nf-table",
       blocks: [
         "particle-nf-table",
+        "particle-nf-table-table-data",
       ],
     }),
     section({

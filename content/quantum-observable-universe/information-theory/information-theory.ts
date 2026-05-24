@@ -31,6 +31,7 @@ export default chapter({
         "reeb-operations-per-planck",
         "information-theoretic-time",
         "statistical-mechanical-time",
+        "statistical-mechanical-time-table-data",
         "big-bang-info",
         "planck-computation",
       ],

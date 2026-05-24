@@ -31,6 +31,7 @@ export default chapter({
         "geodesic-vortices",
         "braid-fluid",
         "braid-fluid-table-data",
+        "braid-fluid-table-data",
         "planck-reynolds",
       ],
     }),
@@ -121,6 +122,7 @@ export default chapter({
         "ns-kummer-specialisation",
         "ns-singularity-descartes",
         "torus-ns-regular",
+        "torus-ns-regular-table-data",
         "root-of-unity-truncation",
         // ── Observable MTC / anyons (Track B) ──────────────────────
         "observable-mtc",
