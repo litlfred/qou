@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-24T08:14:24.729750+00:00",
+  "computedAt": "2026-05-24T16:43:07.133391+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -211,7 +211,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2928,
+        "line": 986,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "#   Q_β(n) = m_n - m_p - m_e = 0.78233341 ± 6.1×10⁻⁷ MeV",
@@ -511,7 +511,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2932,
+        "line": 990,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0_CALIBRATION_MEV     = _Q_NEUTRON_MEV",
@@ -519,34 +519,10 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2933,
+        "line": 991,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0_CALIBRATION_MEV_ERR = _Q_NEUTRON_MEV_ERR",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2983,
-        "pattern": "E_0_CALIBRATION_MEV",
-        "match": "E_0_CALIBRATION_MEV",
-        "context": "r = _canon(Z, N, E_0=E_0_CALIBRATION_MEV)",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2989,
-        "pattern": "E_0_CALIBRATION_MEV",
-        "match": "E_0_CALIBRATION_MEV",
-        "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2994,
-        "pattern": "E_0_CALIBRATION_MEV",
-        "match": "E_0_CALIBRATION_MEV",
-        "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",
         "kind": "active"
       },
       {
@@ -985,7 +961,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 142,
+        "line": 172,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "_q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)",
@@ -993,7 +969,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 147,
+        "line": 177,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "+ Q_BETA_MEV_ERR ** 2",
@@ -1001,7 +977,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 201,
+        "line": 231,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
@@ -1009,7 +985,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 201,
+        "line": 231,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",

@@ -1,24 +1,30 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T07:41:57.664271+00:00",
-  "commitSha": "db1658a5482b22723639aa1ba04dfc5b0ff5a98f",
+  "computedAt": "2026-05-24T16:43:07.721701+00:00",
+  "commitSha": "8ff79c4f925e9ded0bfdc3d34140d338d55474ef",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 0,
+      "computed": 10,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "every witness must declare engine/scriptFile/commitSha"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 9,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "77d54f1cc990",
   "scriptCommitSha": "342ce62e42540ac00e235ff1da6fc2cef0b1ca24",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
     "required_fields": [
@@ -35,12 +41,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 674,
-      "prov_ok": 644,
-      "prov_audit_exempt": 30,
-      "prov_missing": 0,
+      "total_scanned": 686,
+      "prov_ok": 645,
+      "prov_audit_exempt": 31,
+      "prov_missing": 10,
       "prov_parse_error": 0,
-      "completeness_ratio": 1.0
+      "completeness_ratio": 0.9854227405247813
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1737,6 +1743,10 @@
           "missing_fields": []
         },
         {
+          "witness": "low-isotope-sign-flip-diagnostic.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "lp-confinement-nf-forcing.witness.json",
           "missing_fields": []
         },
@@ -2621,7 +2631,87 @@
           "missing_fields": []
         }
       ],
-      "PROV_MISSING": [],
+      "PROV_MISSING": [
+        {
+          "witness": "ame-2020-binding-energies.witness.json",
+          "missing_fields": [
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "geom-full-borromean-h4-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "geom-full-borromean-q-locality-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "geom-leading-alt-q-locality-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "multi-layer-gap-decomposition.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "pentagon-multipair-borromean-h4-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "pentagon-rt-torus-knot-higgs-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "pentagon-to-borromean-h4-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "rt-route-cross-particle-ratio-quantum-dim.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "torus-knot-markov-trace-closed-form.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        }
+      ],
       "PROV_AUDIT_EXEMPT": [
         {
           "witness": "braid-encoding-audit.witness.json",
@@ -2717,6 +2807,10 @@
         },
         {
           "witness": "proton-m_e-anomaly-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rt-route-root-of-unity-level-scan.witness.json",
           "missing_fields": []
         },
         {
