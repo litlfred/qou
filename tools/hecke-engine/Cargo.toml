@@ -86,6 +86,8 @@ path = "src/bin/hecke_gram.rs"
 [[bin]]
 name = "hecke-tr-m-wenzl-lr"
 path = "src/bin/hecke_tr_m_wenzl_lr.rs"
+# Imports laurent_poly_q (rug-backed).
+required-features = ["mpfr"]
 
 # Canonical χ^λ for atomic braids — direct f64 Hoefsmit at H_n
 # (with averaged-crossing expansion). Primitive for the canonical
@@ -96,6 +98,17 @@ path = "src/bin/hecke_tr_m_wenzl_lr.rs"
 [[bin]]
 name = "hecke-canonical-chi"
 path = "src/bin/hecke_canonical_chi.rs"
+# Uses rug directly for MPFR-precision Hoefsmit.
+required-features = ["mpfr"]
+
+# Geck-Pfeiffer cross-validator (gp_cross_validate.rs). Explicitly
+# registered with `required-features = ["mpfr"]` so it is skipped
+# under `--no-default-features` (would otherwise be auto-detected by
+# Cargo from `src/bin/`, breaking WASM-targetable builds).
+[[bin]]
+name = "gp-cross-validate"
+path = "src/bin/gp_cross_validate.rs"
+required-features = ["mpfr"]
 
 # Unified CLI — M2e — dispatches to subcommands (native Gram, exec for legacy).
 [[bin]]
@@ -111,6 +124,8 @@ path = "src/bin/v6.rs"
 [[bin]]
 name = "hecke-bigint"
 path = "src/bin/v9.rs"
+# Uses rug directly.
+required-features = ["mpfr"]
 
 # CRT modular engine — u64 arithmetic, no BigInt (v10)
 [[bin]]
@@ -126,7 +141,12 @@ path = "src/main.rs"
 rustc-hash = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-rug = "1.26"  # mpfr bindings for multi-precision float
+# rug = mpfr bindings (system GMP + MPFR + libc). Optional behind the
+# `mpfr` feature, which is on by default — `cargo build` keeps full
+# functionality. Disable for WASM-targetable builds: `cargo build
+# --lib --no-default-features`. See tools/hecke-engine-wasm/ for
+# the canonical WASM consumer of the rug-free surface.
+rug = { version = "1.26", optional = true }
 num-bigint = "0.4"
 num-rational = "0.4"
 num-traits = "0.2"
@@ -143,7 +163,26 @@ chrono = { version = "0.4", default-features = false, features = ["clock", "serd
 clarabel = { version = "0.11", default-features = false, optional = true }
 
 [features]
-default = []
+# Default = mpfr only. Preserves the pre-carve-out behavior where
+# `rug` was a non-optional dependency (so `cargo build` always pulled
+# it in). Clarabel-sdp stays opt-in — bins that need it carry
+# `required-features = ["clarabel-sdp"]` and are skipped under
+# default builds (the prior contract). This keeps pyhecke-native +
+# all default `cargo build` users at byte-identical behavior; only
+# new users opting into `--no-default-features` see the carve-out.
+default = ["mpfr"]
+# mpfr: enables `rug` (system GMP + MPFR). 8 source modules depend
+# on this (precision_scalar, dense_la_mpfr, laurent_poly_q,
+# sdp_clarabel_mpfr_prep, seminormal_mpfr, laurent_rational_q,
+# tr_m_atomic_mpfr, geck_pfeiffer). Disabling carves out the
+# WASM-targetable canonical surface (gram, gb_nf_reducer, seminormal,
+# seminormal_mn, wedderburn_psd, wenzl_lr, etc.).
+mpfr = ["dep:rug"]
+# wasm-core: explicit signal that an intentional WASM-targetable build
+# is in progress. No-op flag — the actual exclusion is done via
+# `--no-default-features`. Used by tools/hecke-engine-wasm/ for intent
+# clarity in build scripts.
+wasm-core = []
 # Opt-in: enables the Clarabel-rs SDP-as-solver code path. Requires system
 # OpenBLAS + LAPACK + gfortran. Use `cargo build --features clarabel-sdp`.
 clarabel-sdp = ["dep:clarabel", "clarabel?/sdp-netlib", "clarabel?/serde"]
