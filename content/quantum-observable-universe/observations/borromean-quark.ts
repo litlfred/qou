@@ -17,5 +17,10 @@ export default conjecture({
     "exceptional-divisor",
     "hyperbolic-volume",
   ],
-  uses: ["def:neutrino-knot"],
+  uses: [
+    "def:neutrino-knot",
+    "def:observable-mtc",
+    "prop:bn-mtc-action",
+    "prop:ns-obstruction-tower",
+  ],
 });
