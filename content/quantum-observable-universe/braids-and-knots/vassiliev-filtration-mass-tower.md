@@ -55,38 +55,6 @@ by type gives a **canonical filtration by complexity**:
    suppresses by a factor of $\sim 0.209$, giving roughly one
    additional decimal digit of precision per Vassiliev order.
 
-## Simplification for exposition
-
-The Vassiliev grading simplifies the paper's exposition in three
-ways:
-
-**Truncation is justified.** The mass formula's $h$-expansion
-terminates at $h^2$ for the leading-order Family A theorem
-($\lambda_A = 5/2 + (3/4) h^2$, proved). Higher-order terms are
-suppressed by $|h|^3 \approx 0.009$ — the Vassiliev filtration
-provides the mathematical framework for this truncation. Each
-Vassiliev type is an independent invariant; dropping type-$k$
-terms for $k > K$ has a controlled error bounded by the
-$(K+1)$-th type's magnitude.
-
-**Canonical basis for optimisation.** The Vassiliev invariants of
-type $\leq k$ form a finite-dimensional vector space $V_k$ with
-a known basis (chord diagrams modulo 4T/1T relations). The LP/SDP
-optimisation over Hecke elements can be reformulated as
-optimisation over $V_k$ — the Gram matrix of chord-diagram inner
-products is the natural metric. This gives a
-**representation-theoretic LP** whose dimension grows
-polynomially in $k$ (unlike the Hecke algebra itself, which
-grows factorially in $n$).
-
-**Canonical ordering of the mass tower.** The Vassiliev type
-provides a *canonical* ordering of the terms in the mass tower:
-type 0 (baseline), type 2 (leading mass), type 3 (sub-leading),
-etc. This is independent of any braid-word convention — it is a
-knot-theoretic grading, not an algebraic one. Different braid
-words for the same knot give the same Vassiliev invariants at each
-type (by definition of finite-type invariants).
-
 ## Connection to the Archimedean-image table
 
 In the Archimedean-image table
@@ -131,6 +99,5 @@ decomposes the mass-formula optimisation into a **graded hierarchy**
 of independent LPs — one per Vassiliev type — whose solutions
 can be composed to give the full mass prediction.
 
-This decomposition is new (not in the prior LP/SDP literature
-on knot invariants) and follows directly from the Vassiliev
+This decomposition follows directly from the Vassiliev
 filtration's compatibility with the Markov trace.
