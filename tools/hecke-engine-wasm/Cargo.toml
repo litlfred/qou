@@ -23,7 +23,10 @@ num-traits = "0.2"
 wasm-bindgen = "0.2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-serde-wasm-bindgen = "0.6"
+# Note: serde-wasm-bindgen will be added in Phase B when the API
+# starts accepting JS arrays / objects directly (for qou_lr_coefficient
+# and the future Gram matrix surface). Not used in Phase A — current
+# wrappers pass JSON-encoded strings. Per PR #1094 review.
 console_error_panic_hook = { version = "0.1", optional = true }
 
 [features]

@@ -16,7 +16,12 @@
 //! Phase A scope: scaffolding + proof of concept. Phase B will add
 //! the Gram matrix construction (`gram::canonical_gram_h3`), Wenzl
 //! LR decomposition (after it migrates off `laurent_poly_q`), and
-//! the canonical normal-form reduction (`gb_nf_reducer`).
+//! the canonical normal-form reduction (`gb_nf_reducer`). Phase B
+//! will also centralise `partitions_of` (currently duplicated here
+//! from `hecke_engine::seminormal_mn::partitions_of` because that
+//! module is gated behind the `mpfr` feature and unavailable in
+//! `--no-default-features` WASM builds) into a shared rug-free
+//! utility module in `hecke-engine`.
 //!
 //! Build: `wasm-pack build --release` (see ../README.md for npm
 //! consumer setup).
@@ -41,28 +46,37 @@ pub fn qou_engine_version() -> String {
 /// in the form `"numerator/denominator"`. Use this to verify
 /// substrate-discipline `q_int` values from the browser.
 ///
-/// Panics if `q_den == 0` or `q_num == q_den` (would divide by zero).
+/// Panics if `q_den == 0` or `q = ±1` (i.e. `q_num == q_den` or
+/// `q_num == -q_den`) — at those values `q − q⁻¹ = 0` so the
+/// quantum-integer formula has a removable singularity that the
+/// rational-arithmetic path can't evaluate.
 #[wasm_bindgen]
 pub fn qou_quantum_integer(n: i32, q_num: i64, q_den: i64) -> String {
     use num_bigint::BigInt;
     use num_rational::BigRational;
-    use num_traits::Zero;
 
     assert!(q_den != 0, "q_den must be nonzero");
+    // q = ±1 ⇔ |q_num| == |q_den| (after reduction). Reject explicitly:
+    // q − q⁻¹ = 0 at q = ±1, so [n]_q is undefined here.
+    assert!(
+        q_num.unsigned_abs() != q_den.unsigned_abs(),
+        "q must not be ±1 (q − q⁻¹ = 0 at q = ±1; [n]_q is undefined)"
+    );
     let q = BigRational::new(BigInt::from(q_num), BigInt::from(q_den));
     let q_inv = q.recip();
     let qmqi = &q - &q_inv;
-    assert!(!qmqi.is_zero(), "q - q^-1 must be nonzero (q != 1)");
 
-    // q^n - q^{-n}
-    let q_n = pow_rational(&q, n.abs());
-    let q_n_inv = pow_rational(&q_inv, n.abs());
+    // Use `unsigned_abs()` to safely handle `i32::MIN` (whose `abs()`
+    // would panic in debug mode and wrap in release).
+    let n_abs = n.unsigned_abs();
+    let q_n = pow_rational(&q, n_abs);
+    let q_n_inv = pow_rational(&q_inv, n_abs);
     let numer = if n >= 0 { q_n - q_n_inv } else { q_n_inv - q_n };
     let result = numer / qmqi;
     format!("{}", result)
 }
 
-fn pow_rational(q: &num_rational::BigRational, n: i32) -> num_rational::BigRational {
+fn pow_rational(q: &num_rational::BigRational, n: u32) -> num_rational::BigRational {
     use num_traits::One;
     let mut acc = num_rational::BigRational::one();
     for _ in 0..n {
@@ -76,10 +90,17 @@ fn pow_rational(q: &num_rational::BigRational, n: i32) -> num_rational::BigRatio
 ///
 /// Used as a sanity check that the WASM surface can produce the
 /// canonical partition enumeration QOU's Wedderburn step depends on.
+///
+/// Phase B will pull this from a centralised rug-free utility in
+/// `hecke-engine` (the existing `partitions_of` lives in
+/// `seminormal_mn`, which is in the mpfr cone).
 #[wasm_bindgen]
 pub fn qou_partitions_of(n: usize) -> String {
     let parts = partitions_of(n);
-    serde_json::to_string(&parts).unwrap_or_else(|_| "[]".to_string())
+    // `Vec<Vec<usize>>` serialisation is infallible; `expect` here would
+    // only fire on a `Vec`-level allocator failure, which we'd want to
+    // see surfaced rather than silently masked as `[]`.
+    serde_json::to_string(&parts).expect("infallible serialisation of Vec<Vec<usize>>")
 }
 
 fn partitions_of(n: usize) -> Vec<Vec<usize>> {
@@ -125,17 +146,32 @@ mod tests {
     use super::*;
 
     #[test]
-    fn version_is_set() {
-        assert_eq!(qou_engine_version(), "0.1.0");
+    fn version_matches_cargo_package() {
+        // Compare against env!() rather than a hard-coded literal so
+        // version bumps don't break the test (per PR #1094 review).
+        assert_eq!(qou_engine_version(), env!("CARGO_PKG_VERSION"));
+        assert!(!qou_engine_version().is_empty());
     }
 
     #[test]
     fn quantum_integer_basic() {
-        // [1]_q = 1 for any q
+        // [1]_q = 1 for any q ≠ ±1
         assert_eq!(qou_quantum_integer(1, 3, 2), "1");
         // [2]_q = q + q^-1
         // At q = 2/1: q + 1/q = 2 + 1/2 = 5/2
         assert_eq!(qou_quantum_integer(2, 2, 1), "5/2");
+    }
+
+    #[test]
+    #[should_panic(expected = "q must not be ±1")]
+    fn quantum_integer_q_eq_minus_one_rejected() {
+        let _ = qou_quantum_integer(2, -1, 1);
+    }
+
+    #[test]
+    #[should_panic(expected = "q must not be ±1")]
+    fn quantum_integer_q_eq_one_rejected() {
+        let _ = qou_quantum_integer(2, 1, 1);
     }
 
     #[test]

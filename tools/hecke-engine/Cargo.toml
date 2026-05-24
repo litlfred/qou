@@ -171,12 +171,17 @@ clarabel = { version = "0.11", default-features = false, optional = true }
 # all default `cargo build` users at byte-identical behavior; only
 # new users opting into `--no-default-features` see the carve-out.
 default = ["mpfr"]
-# mpfr: enables `rug` (system GMP + MPFR). 8 source modules depend
-# on this (precision_scalar, dense_la_mpfr, laurent_poly_q,
+# mpfr: enables `rug` (system GMP + MPFR). 13 source modules in the
+# transitive cone: precision_scalar, dense_la_mpfr, laurent_poly_q,
 # sdp_clarabel_mpfr_prep, seminormal_mpfr, laurent_rational_q,
-# tr_m_atomic_mpfr, geck_pfeiffer). Disabling carves out the
-# WASM-targetable canonical surface (gram, gb_nf_reducer, seminormal,
-# seminormal_mn, wedderburn_psd, wenzl_lr, etc.).
+# tr_m_atomic_mpfr, geck_pfeiffer (Tier A/B: `use rug` direct), plus
+# laurent_hecke_element, reduce_laurent, seminormal_mn, tr_m_word_lq,
+# wenzl_lr, atomic_reduce_cache (Tier C: transitive importers).
+# Disabling carves out the WASM-targetable canonical surface
+# (certificate, cross_level_embedding, gb_nf_reducer, gram,
+# joint_tower_sdp_certificate, littlewood_richardson, rational_round,
+# sdp_verifier, seminormal, sturm_psd, wedderburn_psd — 11 modules,
+# ~3 500 LOC of pure-Rust compute).
 mpfr = ["dep:rug"]
 # wasm-core: explicit signal that an intentional WASM-targetable build
 # is in progress. No-op flag — the actual exclusion is done via

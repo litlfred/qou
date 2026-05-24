@@ -31,9 +31,10 @@ Anything that requires MPFR multi-precision floats (system GMP/MPFR), Clarabel S
 
 ```toml
 [features]
-default = ["mpfr", "clarabel-sdp"]
+default = ["mpfr"]                # rug stays on by default
 mpfr = ["dep:rug"]                # gates the 13-module rug cone
 wasm-core = []                    # no-op flag for build-intent clarity
+clarabel-sdp = ["dep:clarabel", ...] # opt-in; needs OpenBLAS/LAPACK
 ```
 
 `hecke-engine`'s `lib.rs` gates the rug cone:
@@ -71,7 +72,7 @@ Verify default `hecke-engine` build still works (no caller breakage):
 
 ```bash
 cd tools/hecke-engine
-cargo check                      # default features: mpfr + clarabel-sdp
+cargo check                      # default features: mpfr only (clarabel-sdp opt-in)
 cargo check --no-default-features --lib  # WASM-targetable surface only
 ```
 
