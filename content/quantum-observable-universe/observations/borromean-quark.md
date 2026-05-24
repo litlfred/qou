@@ -79,10 +79,10 @@ partition.
 
 **Crossing orientation is not writhe.**
 The $\pm$ labels are the **exponent sign** of the braid generator
-at each crossing of $\mathcal{B}_3$: each crossing is
-$\sigma_i^{\varepsilon}$ with $\varepsilon \in \{+1, -1\}$, while
-the index $i \in \{0, 1\}$ identifies *which* adjacent pair of
-strands crosses (not the sign).  These are crossings *between
+at each crossing of $\mathcal{B}_3$ — explicitly, $\sigma_i$ for
+positive and $\sigma_i^{-1}$ for negative — while the generator
+index $i \in \{0, 1\}$ identifies *which* adjacent pair of strands
+crosses (independently of the sign).  These are crossings *between
 distinct strands*, not self-crossings of any one strand: in the
 standard braid projection each strand has **self-writhe zero**
 (no self-crossings appear), and the free neutrino is the same
