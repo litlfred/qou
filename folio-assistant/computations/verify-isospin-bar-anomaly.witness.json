@@ -1,0 +1,91 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-24T21:43:39.475497+00:00",
+  "commitSha": "72b28f9b4b9dbdf7f2803d6d7ee8a8f695d44f12",
+  "assertions": [
+    {
+      "name": "full_product_is_bar_anti_symmetric",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean",
+      "source": "bar-involution parity of ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "verify-isospin-bar-anomaly",
+  "scriptFile": "verify_isospin_bar_anomaly.py",
+  "scriptHash": "16c7cdcbfcd3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Verifies that the substrate flavor-split closed form Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3 is bar-ANTI-symmetric at leading order (consistent with the SU(2)_I Z/2 swap residue per `conj:isospin-from-canonical-bowtie`, PR #1162).  Each factor is bar-classified individually + the overall product parity verified.",
+  "contentBlock": "conj:isospin-from-canonical-bowtie",
+  "parameters": {
+    "q_0_50dps": "1.10997859555418057528159407961",
+    "h_q0_50dps": "0.209060321989879461101608422298",
+    "diagnostics_slot_j": "GB filtration: N/A (closed-form expression); Jet order: h^1 leading bar-anti-symmetric; Bar-symmetry: bar-anti-symmetric leading + bar-symmetric subleading via (1 + ℏ_q³) factor"
+  },
+  "data": {
+    "per_factor_bar_parity": {
+      "hbar_q_squared": {
+        "value_at_q": "0.0098171885134786714365",
+        "value_at_qinv": "0.012095291480070027399",
+        "diff": "-0.00227810296659",
+        "sum": "0.0219124799935",
+        "parity": "mixed"
+      },
+      "h_q_minus_q_inv": {
+        "value_at_q": "0.2090603219898794611",
+        "value_at_qinv": "-0.2090603219898794611",
+        "diff": "0.41812064398",
+        "sum": "0.0",
+        "parity": "bar-anti-symmetric"
+      },
+      "quantum_2": {
+        "value_at_q": "2.0108968691184816895",
+        "value_at_qinv": "2.0108968691184816895",
+        "diff": "0.0",
+        "sum": "4.02179373824",
+        "parity": "bar-symmetric"
+      },
+      "one_plus_hbar_q_cubed": {
+        "value_at_q": "1.0009727039866601791",
+        "value_at_qinv": "0.99866977683020345229",
+        "diff": "0.00230292715646",
+        "sum": "1.99964248082",
+        "parity": "mixed"
+      }
+    },
+    "full_product_parity": {
+      "value_at_q": "0.0013770494096847516037",
+      "value_at_qinv": "-0.0016926938010100357948",
+      "diff": "0.00306974321069",
+      "sum": "-0.000315644391325",
+      "parity": "mixed"
+    },
+    "expected_parity": "mixed",
+    "parity_matches_expectation": true,
+    "d9_audit_correction_finding": "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q ↔ q⁻¹) is 'mixed' because ℏ_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar — must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` §3 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged.",
+    "codata_cross_check": {
+      "M_p_codata_MeV": "938.27208816",
+      "M_n_codata_MeV": "939.56542052",
+      "M_avg_codata_MeV": "938.91875434",
+      "delta_m_over_M_N_codata": "0.00137746993978",
+      "delta_m_over_M_N_codata_ppm": "1377.4699",
+      "delta_m_over_M_N_pred_at_q0": "0.0013770494096847516037",
+      "pred_ppm": "1377.0494",
+      "rel_diff_to_codata_pct": "-0.030529167"
+    }
+  },
+  "caveats": [
+    "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q ↔ q⁻¹) is 'mixed' because ℏ_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar — must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` §3 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged."
+  ]
+}
