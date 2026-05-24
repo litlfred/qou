@@ -156,58 +156,31 @@ For each authorized batch:
      `/integration-backlog <axis>` campaign, so sibling sessions
      can deduplicate.
 
-### §4. /prepare-merge integration
+### §4. /prepare-merge-auto integration
 
-Invoke `Skill prepare-merge once review comments resolved merge`
-(or equivalent) **on the PR just opened**. The prepare-merge
-skill handles:
+Invoke `/prepare-merge-auto` on the PR just opened. This skill
+handles the FULL autonomous merge pipeline:
 
-- Rebase onto current `origin/main`
-- `lean-ref` migration check
-- Content validation
-- `/gemini review` request
-- `request_copilot_review`
-- PR-activity subscription
+- **Phase 0**: Sibling coordination (notify overlapping PRs)
+- **Phase 1**: `/prepare-merge` (rebase, integrate, one-voice, Lean,
+  request reviews)
+- **Phase 2**: Resolve review comments automatically:
+  - Mechanical fixes → commit directly
+  - Architectural questions → structured `AskUserQuestion` (🟡,
+    multi-select, with file + line + reviewer text quoted)
+  - False-positive review comments → polite one-line counter-comment
+- **Phase 3**: Structured user questions (only when genuinely blocked)
+- **Phase 4**: Merge (after all comments resolved + CI green) via
+  `merge_method: "rebase"` per CLAUDE.md §Branch + PR workflow rule 7
+- **Phase 5**: Post-merge sibling notification
 
-When review comments arrive (via the subscribed webhook),
-investigate each one:
+See [`.claude/skills/local/prepare-merge-auto.md`](prepare-merge-auto.md)
+for the full workflow specification.
 
-- **Mechanical** (line-X uses wrong glyph, missing import, regex
-  typo, etc.): fix directly, commit, push, reply on the thread.
-- **Architectural** (rename strategy, file split needed, scope
-  expansion): surface to user via AskUserQuestion (🟡, multi-
-  select, with the offending file + line + reviewer text quoted).
-- **Duplicate / outdated**: skip silently.
-- **Wrong** (false-positive review comment): post a polite
-  one-line counter-comment with the verifying grep/test.
-
-### §5. Pre-merge confirmation
-
-After all review comments are disposed of and the PR is
-mergeable_state: `clean`:
-
-1. Compute the before/after metric one more time
-   (`qa-sweep --only <criterion>` against current HEAD).
-2. Surface an `AskUserQuestion` (single-select OK here —
-   merging is mutually exclusive with not-merging):
-   - 🟡 prefix
-   - Evidence: PR number + URL + clean state + before/after
-     count + reviewer disposition (Gemini OK? Copilot OK?)
-   - Options:
-     - `merge` (default) — merge via `mcp__github__merge_pull_request`
-       with `merge_method: "rebase"` per CLAUDE.md §Branch + PR
-       workflow rule 7. Both multi-axis omnibus PRs and single-axis
-       cleanups use rebase-merge — preserves per-cluster commits
-       for cherry-pick / bisect. Override to `"squash"` only if the
-       branch history is noisy (`wip` / `oops` commits) or to
-       `"merge"` only for sub-merges of already-landed siblings —
-       both require explicit user instruction at this step.
-     - `defer` — leave PR open; resume on next invocation
-     - `close` — close without merging (rare; only if
-       review surfaced fatal scope issue)
-3. Execute the chosen action. On `merge`, follow CLAUDE.md owner-
-   only convention: the agent invokes `merge_pull_request`
-   ONLY because the user just confirmed.
+**Note**: the previous §4 + §5 logic (manual review-comment triage +
+separate pre-merge confirmation) is now subsumed by `/prepare-merge-auto`
+phases 2–4. The merge-method default (rebase) and the owner-confirmation
+requirement are preserved in the skill's Phase 4.
 
 ### §6. Loop control
 
