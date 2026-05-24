@@ -31,7 +31,7 @@ Substrate definitions (from `q_parameter.py` + `codata_constants.py`):
 - $E_0 = m_e / (q_0 (q_0 - 1)) \approx 4.186$ MeV (single-generator Hecke energy)
 - $h = h(q_0) = q_0 - q_0^{-1} \approx 0.18800$
 - $[k]_q := (q^k - q^{-k}) / (q - q^{-1})$ (symmetric q-integer)
-- $[A - 2]_q$ at $A = 4$: $[2]_q = q_0 + q_0^{-1} \approx 2.01089$
+- $[A - 2]_q$ at $A = 4$: $[2]_q = q_0 + q_0^{-1} \approx :val[two_q]{precision=6}$
 
 Empirical $\Delta_{\mathrm{coupling}}(Z, N)$ extracted from
 `magic-shell-empirical-instantiation.witness.json` (4-atom $\Delta_{\mathrm{cat}}$

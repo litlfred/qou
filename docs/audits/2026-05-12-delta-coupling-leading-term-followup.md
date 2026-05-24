@@ -50,7 +50,7 @@ gap; this probe confirms it is not a precision artefact.
 
 ## Numerical context
 
-At $q_0 = 1.10997859555418\ldots$ and $m_e = 0.51099895069$ MeV:
+At $q_0 = :val[q_0]{precision=6}\ldots$ and $m_e = :val[m_e_MeV]{precision=6}$ MeV:
 
 | Quantity | Value (50 dps) |
 |---|---|

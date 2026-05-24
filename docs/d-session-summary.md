@@ -7,7 +7,7 @@ Everything tried, everything that matters, honestly.*
 ## Starting point
 
 $$
-  B_\text{pred}(D) = m_e \cdot V_\text{hyp}(6_2) = 0.51099895 \cdot 4.4008325161\ldots = 2.2488208 \text{ MeV}
+  B_\text{pred}(D) = m_e \cdot V_\text{hyp}(6_2) = :val[m_e_MeV]{precision=6} \cdot 4.4008325161\ldots = 2.2488208 \text{ MeV}
 $$
 
 $$

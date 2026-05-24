@@ -94,7 +94,7 @@ $$\mathfrak{m}(\varrho) = \underbrace{\bigl|\prod_i \hat{V}_i^{(0)}\bigr|}_\text
 ## Ingredients
 
 - **Constants**: $q_0 = 1.10998$, $\hbar_q = 0.0998$, $z = 0.49932$, $H_A = q - q^{-1} = 0.20906$
-- **Physical**: $m_e = 0.5110$ MeV (CODATA), $m_p = 938.272$, $m_n = 939.565$, Catalan $G = 0.9160$, $\alpha = m_e \cdot 8G = 3.7445$ MeV
+- **Physical**: $m_e = 0.5110$ MeV (CODATA), $m_p = :val[m_p_MeV]{precision=6}$, $m_n = :val[m_n_MeV]{precision=6}$, Catalan $G = 0.9160$, $\alpha = m_e \cdot 8G = 3.7445$ MeV
 - **Weights at n=3**: $w_\text{sym} = w_\text{alt} = 1/[3]_q! \approx 0.165$, $w_\text{std} = [2]_q^2/[3]_q! \approx 0.669$
 - **Algebras**: rigid monoidal $\mathbf{C}$, Frobenius-Hopf $A$, fibre functor $\tau$, Hecke $H_n(q)$
 - **Tower**: $A_{n+1} = A_n \otimes \Omega^1(A_n)$ with descent involution $\hat\tau_n$

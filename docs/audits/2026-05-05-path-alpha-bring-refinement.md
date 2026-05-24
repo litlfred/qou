@@ -69,7 +69,7 @@ weights) are stated **over generic $q \in R$, not a root of
 unity**. Positivity / PSD claims (e.g. "both eigenvalues
 positive") require an *additional* assumption — a specialization
 to a real-closed field $F$ with $q \mapsto q^* > 1$ in $F$. The
-numerical evaluation $q \mapsto q_0 = 1.10997859\ldots$ is one
+numerical evaluation $q \mapsto q_0 = :val[q_0]{precision=6}\ldots$ is one
 such specialization (with $F = \mathbb{R}$); $q_0$ should appear
 **only** in numerical-evaluation remarks, never in the
 proposition body.

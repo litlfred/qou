@@ -19,7 +19,7 @@ $$
 $$
 
 This matches the experimental ordering
-$m_n \approx 939.565$ MeV $> m_p \approx 938.272$ MeV.
+$m_n \approx :val[m_n_MeV]{precision=6}$ MeV $> m_p \approx :val[m_p_MeV]{precision=6}$ MeV.
 
 The **negative signs** of both traces reflect the
 fermionic (antisymmetric) character of the nucleon — the

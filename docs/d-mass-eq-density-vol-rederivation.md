@@ -113,7 +113,7 @@ So D ↔ 6_2 is stated as a TWO-BODY LINK, implying ρ_F = m_e. Not a derivation
 
 Under the asserted rules:
 $$
-  B_\text{pred}(D) = m_e \cdot V_\text{hyp}(6_2) = 0.51099895 \cdot 4.4008325161\ldots = 2.2488208\ldots \text{ MeV}
+  B_\text{pred}(D) = m_e \cdot V_\text{hyp}(6_2) = :val[m_e_MeV]{precision=6} \cdot 4.4008325161\ldots = 2.2488208\ldots \text{ MeV}
 $$
 
 $$
