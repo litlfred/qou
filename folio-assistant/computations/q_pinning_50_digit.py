@@ -23,7 +23,7 @@ DERIVATION:
   [n]_q =  (q^n - q^{-n}) / (q - q⁻¹)
 
 ξ(q₀) = D(z_q) / ℏ_q², where:
-  z_q    = Legendre λ-invariant of Descartes elliptic curve at q₀
+  z_q    = Legendre λ-invariant of Bring elliptic curve at q₀
   D(z)   = Bloch-Wigner dilogarithm
 
 This module computes ALL of the above to 50 decimal places via mpmath.
@@ -124,33 +124,33 @@ def bloch_wigner(z: mpc) -> mpf:
     return im(li2) + arg(mpf(1) - z) * log(abs(z))
 
 
-# ── Descartes elliptic curve λ-invariant at q₀ ────────────
-def descartes_lambda(q: mpf) -> mpc:
+# ── Bring elliptic curve λ-invariant at q₀ ────────────
+def bring_lambda(q: mpf) -> mpc:
     """Legendre λ-invariant of E_q — DISABLED pending verified coefficients.
 
     The previous implementation used placeholder Weierstrass coefficients
-    p(q), r(q) that did NOT come from the paper's Descartes-curve
+    p(q), r(q) that did NOT come from the paper's Bring-curve
     derivation.  To compute ξ(q) at 50 digits, import the verified
-    Weierstrass form from ``lambda_descartes_q0.py`` (on main) and
+    Weierstrass form from ``lambda_bring_q0.py`` (on main) and
     rewrite this routine.  Until then, this function raises to prevent
     downstream consumers from using unreliable numeric values.
     """
     raise NotImplementedError(
-        "descartes_lambda() placeholder disabled.  Wire in the verified "
-        "Descartes-curve coefficients from lambda_descartes_q0.py before "
+        "bring_lambda() placeholder disabled.  Wire in the verified "
+        "Bring-curve coefficients from lambda_bring_q0.py before "
         "computing λ or ξ(q) at 50 digits."
     )
 
 
 def xi_q(q: mpf) -> mpf:
-    """ξ(q) = D(λ_Descartes(q)) / ℏ_q² — universal shape coupling.
+    """ξ(q) = D(λ_Bring(q)) / ℏ_q² — universal shape coupling.
 
-    DISABLED: depends on ``descartes_lambda`` which is currently pinned
-    to placeholder coefficients.  See ``lambda_descartes_q0.py`` for
+    DISABLED: depends on ``bring_lambda`` which is currently pinned
+    to placeholder coefficients.  See ``lambda_bring_q0.py`` for
     the verified 15-digit path; a 50-digit port is pending.
     """
     raise NotImplementedError(
-        "xi_q(q) disabled pending verified Descartes-curve coefficients."
+        "xi_q(q) disabled pending verified Bring-curve coefficients."
     )
 
 
@@ -193,14 +193,14 @@ if __name__ == "__main__":
     print(f"\nξ(q₀) — universal shape coupling:")
     try:
         xi = xi_q(Q)
-        lam = descartes_lambda(Q)
+        lam = bring_lambda(Q)
         D_lam = bloch_wigner(lam)
-        print(f"  λ_Descartes(q₀) = {lam}")
+        print(f"  λ_Bring(q₀) = {lam}")
         print(f"  D(λ)            = {D_lam}")
         print(f"  ξ(q₀) = D/ℏ_q² = {xi}")
     except NotImplementedError as e:
-        print(f"  DISABLED — placeholder Descartes coefficients removed.")
-        print(f"  See lambda_descartes_q0.py (15-digit verified) on main.")
+        print(f"  DISABLED — placeholder Bring coefficients removed.")
+        print(f"  See lambda_bring_q0.py (15-digit verified) on main.")
         print(f"  TODO: port that routine to 50-digit mpmath.")
 
     print(f"\nUncertainty propagation:")
@@ -223,18 +223,18 @@ if __name__ == "__main__":
                       f"1 ppb (σ/q = {rel_prec:.2e}).")
     print(f"  → 1 ppb = 1e-9.  {bound_msg}")
 
-    # ξ(q₀) is DISABLED pending verified Descartes-curve derivation at
+    # ξ(q₀) is DISABLED pending verified Bring-curve derivation at
     # 50-digit mpmath precision; a 15-digit path exists in
-    # lambda_descartes_q0.py (on main) and must be ported.
+    # lambda_bring_q0.py (on main) and must be ported.
     universal_shape_coupling = {
         "status": "disabled",
         "reason": (
-            "descartes_lambda() placeholder disabled to prevent "
+            "bring_lambda() placeholder disabled to prevent "
             "unreliable xi(q₀) values.  Port the verified "
-            "lambda_descartes_q0.py derivation to 50-digit mpmath "
+            "lambda_bring_q0.py derivation to 50-digit mpmath "
             "before re-enabling."
         ),
-        "formula": "xi(q) = D(lambda_descartes(q)) / hbar_q^2",
+        "formula": "xi(q) = D(lambda_bring(q)) / hbar_q^2",
     }
 
     # Witness output
@@ -249,8 +249,8 @@ if __name__ == "__main__":
             "Recorded 50-digit outputs: q, q^{-1}, ℏ_q², ℏ_q, H_A, "
             "[2]_q, z_markov, ρ_q, s_skein; plus quantum integers/"
             "factorials and n=3 Plancherel weights.  ξ(q₀) via "
-            "Descartes-curve λ is NOT yet recorded — the current "
-            "placeholder has been disabled; port lambda_descartes_q0.py "
+            "Bring-curve λ is NOT yet recorded — the current "
+            "placeholder has been disabled; port lambda_bring_q0.py "
             "to 50 digits and re-emit."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),

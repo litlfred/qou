@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Probe: descartes-knot-eigenbasis (cor:descartes-knot-eigenbasis).
+"""Probe: archimedean-knot-eigenbasis (cor:archimedean-knot-eigenbasis).
 
 The corollary asserts a 4-part completeness statement.  This
 probe verifies the two concretely-checkable algebraic claims:
@@ -18,7 +18,7 @@ The Markov-trace detection (claim 3) and the combining theorem
 are out of scope for a concrete numerical probe; recorded in the
 witness as `structural_claims_not_probed`.
 
-Emits `descartes-knot-eigenbasis-probe.witness.json`.
+Emits `archimedean-knot-eigenbasis-probe.witness.json`.
 """
 from __future__ import annotations
 
@@ -90,9 +90,9 @@ def main() -> int:
     )
 
     b = (
-        WitnessBuilder("descartes-knot-eigenbasis-probe", engine="sympy")
+        WitnessBuilder("archimedean-knot-eigenbasis-probe", engine="sympy")
         .set_description(
-            "I1 probe for cor:descartes-knot-eigenbasis.  Verifies "
+            "I1 probe for cor:archimedean-knot-eigenbasis.  Verifies "
             "the two concrete algebraic claims of the corollary: "
             "(1) the R-matrix braiding eigenvalues `q` and `-q⁻¹` "
             "satisfy the quadratic `(c − q)(c + q⁻¹) = 0`, "
@@ -104,7 +104,7 @@ def main() -> int:
             "assertions about an infinite limit and require Lean "
             "formalisation — not a concrete probe."
         )
-        .set_content_block("cor:descartes-knot-eigenbasis")
+        .set_content_block("cor:archimedean-knot-eigenbasis")
         .add_parameter("q_0_50dps", str(q_0))
         .add_parameter("eigenvalue_plus_at_q_0", lam_plus_q0)
         .add_parameter("eigenvalue_minus_at_q_0", lam_minus_q0)
