@@ -15,8 +15,9 @@
 //! Build:
 //!   cd tools/hecke-engine-node
 //!   npm install
-//!   npm run build      # napi build → index.node + index.d.ts
-//!   npm test           # runs the smoke tests in test/
+//!   npm run build      # napi build → hecke-engine-node.<platform>.node
+//!                      #              + index.js (loader) + index.d.ts
+//!   npm test           # `pretest` rebuilds, then `node --test test/`
 
 use hecke_engine::gram;
 use napi_derive::napi;
