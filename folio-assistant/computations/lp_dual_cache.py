@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# archimedean_by_design: thin LRU wrapper around scipy's LP/SDP
+#   solver. Scipy uses float64 internally; this module's float type
+#   signatures reflect that boundary. Substrate-precision callers
+#   convert to mp.mpf at the boundary.
 """
 LRU cache for the operator-selection LP / SDP solver.
 

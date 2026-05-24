@@ -1,3 +1,9 @@
+# archimedean_by_design: numpy float64 matmul for BLAS-accelerated
+#   Hoefsmit χ^λ — substrate precision is restored only at the final
+#   mpmath trace sum (per the docstring below). The math.* / np.* calls
+#   in this file are the archimedean-realization layer; substrate
+#   compute lives in the original mpmath Hoefsmit path.
+# Ref: docs/audits/2026-05-19-cocasimir-compute-bottleneck.md
 """Numpy-backed Hoefsmit χ^λ — 10-50× faster than mpmath path.
 
 Per docs/audits/2026-05-19-cocasimir-compute-bottleneck.md: the

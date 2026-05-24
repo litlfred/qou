@@ -1,3 +1,7 @@
+# archimedean_by_design: numpy.linalg float64 eigenvalue
+#   decomposition of the 6×6 H_3 transfer matrix. Numerical
+#   eigen-extraction at 6×6 is float64 territory; substrate
+#   precision is the q-arithmetic input, not the eigensolve.
 """
 Numerical evaluator for B/A from the spectral decomposition of the
 6×6 transfer matrix of H_3(R, q).
