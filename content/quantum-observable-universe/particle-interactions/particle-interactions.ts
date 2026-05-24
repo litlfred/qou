@@ -55,6 +55,13 @@ export default chapter({
         // New H2 → confinement-lp accepted §5.
         "confinement-sdp-spectral-gap",
         "confinement-sdp-multi-operator",
+      ]),
+    }),
+    section({
+      title: "Confinement operator selection (continued)",
+      label: "sec:confinement-selection-continued",
+      blocks: [
+        "confinement-selection-continued-intro",
         "confinement-sdp-vs-lp",
         "confinement-misdp",
         "confinement-topological",
