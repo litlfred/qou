@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-24T04:07:20.382688+00:00",
+  "computedAt": "2026-05-24T07:39:03.047724+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -23,32 +23,7 @@
   },
   "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.83e-7 (~783.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
   "findings_by_pattern": {
-    "literal_0_782": [
-      {
-        "file": "folio-assistant/computations/derived_masses.py",
-        "line": 62,
-        "pattern": "literal_0_782",
-        "match": "0.782",
-        "context": "(vs CODATA 0.782; 0.75% err)",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/derived_masses.py",
-        "line": 473,
-        "pattern": "literal_0_782",
-        "match": "0.782",
-        "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/homflypt_su_n_mass_tower.py",
-        "line": 107,
-        "pattern": "literal_0_782",
-        "match": "0.782",
-        "context": "Q_beta_target = Q_NEUTRON_MEV  # 0.782 MeV",
-        "kind": "active"
-      }
-    ],
+    "literal_0_782": [],
     "literal_0_78233341": [
       {
         "file": "folio-assistant/computations/binding_canonical.py",
@@ -187,6 +162,22 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/derived_masses.py",
+        "line": 62,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "(vs CODATA 0.78233341; 0.75% err)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/derived_masses.py",
+        "line": 473,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"0.788 MeV vs CODATA 0.78233341 MeV at 0.75%).\",",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/experimental_constants.py",
         "line": 53,
         "pattern": "literal_0_78233341",
@@ -225,6 +216,14 @@
         "match": "0.78233341",
         "context": "#   Q_β(n) = m_n - m_p - m_e = 0.78233341 ± 6.1×10⁻⁷ MeV",
         "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/homflypt_su_n_mass_tower.py",
+        "line": 107,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_beta_target = Q_NEUTRON_MEV  # 0.78233341 MeV",
+        "kind": "active"
       },
       {
         "file": "folio-assistant/computations/inverse-markov-qvalues.py",
@@ -1212,8 +1211,6 @@
       }
     ]
   },
-  "inconsistencies": [
-    "Mixed precision: same codebase uses both 0.782 (3 sig figs, ~4e-4 relative) and 0.78233341 (8 sig figs, ~10⁻⁸ relative) for E_0 / Q_β(n)."
-  ],
+  "inconsistencies": [],
   "achievable_precision_floor_ppb": "783.481476501084768226993197913"
 }

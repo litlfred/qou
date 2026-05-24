@@ -104,7 +104,7 @@ def main():
     # ── Q_β predictor candidates ─────────────────────────────────
     print("\nQ_β predictor candidates (ΔP normalized):")
     from experimental_constants import Q_NEUTRON_MEV, M_E_MEV
-    Q_beta_target = Q_NEUTRON_MEV  # 0.782 MeV
+    Q_beta_target = Q_NEUTRON_MEV  # 0.78233341 MeV
     for N in range(2, N_max + 1):
         dp = mirror_diffs[N]
         if abs(dp) > 1e-30:
