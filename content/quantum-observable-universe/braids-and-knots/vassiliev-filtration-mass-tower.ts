@@ -9,6 +9,7 @@ export default remark({
     "prop:markov-trace-axiomatic-closed-form",
     "rem:archimedean-image-table",
     "rem:operator-valued-magnitude-budget",
+    "def:knot-operator-energy",
   ],
   cites: [
     "birmanlin1993",

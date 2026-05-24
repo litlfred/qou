@@ -112,8 +112,11 @@ filtration:
 
 ## Connection to optimisation
 
-For the LP/SDP operator-selection framework, the Vassiliev
-filtration provides a **canonical cost-vector basis** at each type:
+For the LP/SDP operator-selection framework — concretely the
+[knot operator energy](#def:knot-operator-energy)
+$E(\lambda, q) = |w_\lambda/d_\lambda - 1/[k]_q!|$ — the
+Vassiliev filtration provides a **canonical cost-vector basis**
+at each type:
 
 $$
   t_k^{(\mathrm{type}\,m)}
