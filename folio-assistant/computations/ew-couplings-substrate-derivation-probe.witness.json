@@ -1,0 +1,390 @@
+{
+  "best_matches": {
+    "g (0.6535)": {
+      "deviation_pct": -0.10307635470469968,
+      "label": "\u221a(2h_0(1+h_0\u00b2/2))",
+      "target": 0.6535,
+      "value": 0.6528263960220048
+    },
+    "g' (0.3504)": {
+      "deviation_pct": -1.1719382025888514,
+      "label": "\u221a(2h_0) \u00b7 tan(\u03b8_W)",
+      "target": 0.3504,
+      "value": 0.34629352853812867
+    },
+    "g/g' (1.865)": {
+      "deviation_pct": 1.433109035067032e-49,
+      "label": "1/\u221a(1-cos\u00b2\u03b8_W)/cos \u03b8_W = sec(\u03b8_W)/tan(\u03b8_W) - 1 + 1",
+      "target": 1.865011415525114,
+      "value": 1.865011415525114
+    },
+    "scalar/gauge (1.196)": {
+      "deviation_pct": 0.3508771929824561,
+      "label": "6/5",
+      "target": 1.1958041958041958,
+      "value": 1.2
+    },
+    "v_ratio (1.78)": {
+      "deviation_pct": -0.5027473069748238,
+      "label": "log(6)",
+      "target": 1.8008130081300813,
+      "value": 1.791759469228055
+    }
+  },
+  "compute": "ew_couplings_substrate_derivation_probe",
+  "description": "Systematic candidate-formula search for SM EW parameters (g, g', g/g', v_ratio, scalar/gauge) from substrate (q_0, h_0, \u210f_q, Vol(B_3), Catalan, \u03c0, e, \u03c6). Identifies cleanest empirical matches; generates hypotheses for categorical investigation. NOT a derivation.",
+  "interpretation": "These empirical matches are HYPOTHESES \u2014 clean numerical relations between substrate quantities and SM EW parameters that suggest possible categorical derivations. NONE of these constitute a proof; they generate candidate categorical structures for future investigation. Be cautious of numerology \u2014 many 'clean' matches at the few-% level are coincidental given the small number of substrate quantities and the many ways to combine them.",
+  "parameters": {
+    "GOLDEN_PHI": "1.6180339887498948482045868343656381177203091798058",
+    "G_CATALAN": "0.91596559417721901505460351493238411077414937428167",
+    "HBAR_Q": "0.098855546544111020996665765522213210777687663332433",
+    "H_0": "0.20855554654411102099666576552221321077768766333243",
+    "Q_0": "1.1097",
+    "SCALAR_GAUGE_RATIO": 1.1958041958041958,
+    "SM_g": 0.6535,
+    "SM_g_prime": 0.3504,
+    "SM_v_ratio": 1.8008130081300813,
+    "VOL_B3": "7.3277247534177521204368281194590728861931949942534",
+    "dps": 50,
+    "precision": "mpfr"
+  },
+  "results": {
+    "g_candidates": [
+      {
+        "deviation_pct": -1.1719382025888514,
+        "label": "\u221a(2h_0)",
+        "target": 0.6535,
+        "value": 0.6458413838460818
+      },
+      {
+        "deviation_pct": -31.959119247417142,
+        "label": "\u221a(2\u210f_q)",
+        "target": 0.6535,
+        "value": 0.44464715571812896
+      },
+      {
+        "deviation_pct": -5.415524792039684,
+        "label": "\u221a(h_0 \u00b7 2 \u00b7 G)",
+        "target": 0.6535,
+        "value": 0.6181095454840206
+      },
+      {
+        "deviation_pct": 0.25961329585055476,
+        "label": "h_0 \u00b7 \u03c0",
+        "target": 0.6535,
+        "value": 0.6551965728883834
+      },
+      {
+        "deviation_pct": 23.8626070141853,
+        "label": "\u221ah_0 \u00b7 \u221a\u03c0",
+        "target": 0.6535,
+        "value": 0.8094421368377009
+      },
+      {
+        "deviation_pct": -16.44904217371181,
+        "label": "h_0 \u00b7 \u03c6\u00b2",
+        "target": 0.6535,
+        "value": 0.5460055093947933
+      },
+      {
+        "deviation_pct": -5.415524792039684,
+        "label": "\u221a(2 G \u00b7 h_0)",
+        "target": 0.6535,
+        "value": 0.6181095454840206
+      },
+      {
+        "deviation_pct": -25.61006607384926,
+        "label": "\u221a(Vol/\u03c0\u00b2)/\u221a\u03c0",
+        "target": 0.6535,
+        "value": 0.48613821820739506
+      },
+      {
+        "deviation_pct": 10.639510937035313,
+        "label": "\u221a(h_0 \u00b7 \u221a(2\u03c0))",
+        "target": 0.6535,
+        "value": 0.7230292039735258
+      },
+      {
+        "deviation_pct": 27.384916542611524,
+        "label": "2\u00b7sin(\u03b8_W)\u00b7cos(\u03b8_W) = sin(2\u03b8_W)",
+        "target": 0.6535,
+        "value": 0.8324604296059663
+      },
+      {
+        "deviation_pct": -0.10307635470469968,
+        "label": "\u221a(2h_0(1+h_0\u00b2/2))",
+        "target": 0.6535,
+        "value": 0.6528263960220048
+      }
+    ],
+    "g_over_g_prime_candidates": [
+      {
+        "deviation_pct": -13.242676410411146,
+        "label": "\u03c6 (golden ratio)",
+        "target": 1.865011415525114,
+        "value": 1.618033988749895
+      },
+      {
+        "deviation_pct": -9.043650379786714,
+        "label": "\u221a(\u03c0\u00b7G)/\u221a(2-1)",
+        "target": 1.865011415525114,
+        "value": 1.6963463035619115
+      },
+      {
+        "deviation_pct": 1.433109035067032e-49,
+        "label": "1/\u221a(1-cos\u00b2\u03b8_W)/cos \u03b8_W = sec(\u03b8_W)/tan(\u03b8_W) - 1 + 1",
+        "target": 1.865011415525114,
+        "value": 1.865011415525114
+      },
+      {
+        "deviation_pct": -3.9445850817224946,
+        "label": "2 - h_0",
+        "target": 1.865011415525114,
+        "value": 1.7914444534558889
+      },
+      {
+        "deviation_pct": -21.894375017628256,
+        "label": "1 + \u221ah_0",
+        "target": 1.865011415525114,
+        "value": 1.4566788220884686
+      },
+      {
+        "deviation_pct": -2.8542844074273477,
+        "label": "\u221a(\u03c0/\u221aG)",
+        "target": 1.865011415525114,
+        "value": 1.8117786854950408
+      },
+      {
+        "deviation_pct": -2.060141826010764,
+        "label": "\u03c6 + h_0",
+        "target": 1.865011415525114,
+        "value": 1.8265895352940058
+      },
+      {
+        "deviation_pct": -54.95228787049517,
+        "label": "1/h_0 \u00b7 \u210f_q \u00b7 \u221a\u03c0",
+        "target": 1.865011415525114,
+        "value": 0.8401449736481567
+      }
+    ],
+    "g_prime_candidates": [
+      {
+        "deviation_pct": 30.330714066343738,
+        "label": "\u221ah_0",
+        "target": 0.3504,
+        "value": 0.45667882208846844
+      },
+      {
+        "deviation_pct": 5.495171689444682,
+        "label": "h_0 \u00b7 \u221a\u03c0",
+        "target": 0.3504,
+        "value": 0.36965508159981414
+      },
+      {
+        "deviation_pct": -3.6957868576819912,
+        "label": "h_0 \u00b7 \u03c6",
+        "target": 0.3504,
+        "value": 0.3374499628506823
+      },
+      {
+        "deviation_pct": 24.734432399510773,
+        "label": "\u221a(h_0 \u00b7 G)",
+        "target": 0.3504,
+        "value": 0.43706945112788576
+      },
+      {
+        "deviation_pct": 59.04182830441145,
+        "label": "\u221a(\u210f_q \u00b7 \u03c0)",
+        "target": 0.3504,
+        "value": 0.5572825663786577
+      },
+      {
+        "deviation_pct": -1.1719382025888514,
+        "label": "\u221a(2h_0) \u00b7 tan(\u03b8_W)",
+        "target": 0.3504,
+        "value": 0.34629352853812867
+      },
+      {
+        "deviation_pct": 93.61460376670847,
+        "label": "h_0 / (h_0 + \u210f_q)",
+        "target": 0.3504,
+        "value": 0.6784255715985464
+      },
+      {
+        "deviation_pct": 13.913221049699166,
+        "label": "\u221a(2h_0)/\u03c6",
+        "target": 0.3504,
+        "value": 0.39915192655814585
+      },
+      {
+        "deviation_pct": -1.1719382025888514,
+        "label": "(g_predicted)\u00b7tan(\u03b8_W) [where g=\u221a(2h_0)]",
+        "target": 0.3504,
+        "value": 0.34629352853812867
+      }
+    ],
+    "scalar_gauge_ratio_candidates": [
+      {
+        "deviation_pct": 0.3508771929824561,
+        "label": "6/5",
+        "target": 1.1958041958041958,
+        "value": 1.2
+      },
+      {
+        "deviation_pct": -1.478832743989093,
+        "label": "Vol/(h_0\u00b2 \u00b7 gauge)",
+        "target": 1.1958041958041958,
+        "value": 1.178120251802648
+      },
+      {
+        "deviation_pct": 4.375221288212346,
+        "label": "1 + \u221ah_0 - h_0",
+        "target": 1.1958041958041958,
+        "value": 1.2481232755443574
+      },
+      {
+        "deviation_pct": 6.3735730295391,
+        "label": "\u221a(\u03c6)",
+        "target": 1.1958041958041958,
+        "value": 1.272019649514069
+      },
+      {
+        "deviation_pct": -0.5516857044508113,
+        "label": "\u221a(\u221a2)",
+        "target": 1.1958041958041958,
+        "value": 1.189207115002721
+      },
+      {
+        "deviation_pct": 16.099375989581855,
+        "label": "(1+h_0)^\u221a3",
+        "target": 1.1958041958041958,
+        "value": 1.388321209385909
+      },
+      {
+        "deviation_pct": -3.6373347378286667,
+        "label": "(1 + h_0/2)\u00b7(1 + h_0\u00b2)",
+        "target": 1.1958041958041958,
+        "value": 1.152308794393797
+      },
+      {
+        "deviation_pct": 14.53840740863943,
+        "label": "1 + h_0 \u00b7 \u221a\u03c0",
+        "target": 1.1958041958041958,
+        "value": 1.369655081599814
+      },
+      {
+        "deviation_pct": -8.843308096018786,
+        "label": "cos(\u03b8_W) + h_0",
+        "target": 1.1958041958041958,
+        "value": 1.090055546544111
+      },
+      {
+        "deviation_pct": -12.908446289946127,
+        "label": "5/4 - h_0",
+        "target": 1.1958041958041958,
+        "value": 1.0414444534558889
+      },
+      {
+        "deviation_pct": -30.068344045305864,
+        "label": "tanh(1+h_0)",
+        "target": 1.1958041958041958,
+        "value": 0.8362456761015873
+      },
+      {
+        "deviation_pct": 3.0183168886493847,
+        "label": "e^h_0 ",
+        "target": 1.1958041958041958,
+        "value": 1.2318973558013318
+      }
+    ],
+    "v_ratio_candidates": [
+      {
+        "deviation_pct": -1.5747974440729249,
+        "label": "\u221a\u03c0",
+        "target": 1.8008130081300813,
+        "value": 1.772453850905516
+      },
+      {
+        "deviation_pct": -3.818397593240674,
+        "label": "\u221a3",
+        "target": 1.8008130081300813,
+        "value": 1.7320508075688772
+      },
+      {
+        "deviation_pct": -0.5027473069748238,
+        "label": "log(6)",
+        "target": 1.8008130081300813,
+        "value": 1.791759469228055
+      },
+      {
+        "deviation_pct": -0.6640681778874464,
+        "label": "4/\u221a5",
+        "target": 1.8008130081300813,
+        "value": 1.7888543819998317
+      },
+      {
+        "deviation_pct": 0.7211385105231582,
+        "label": "\u03c0/\u221a3",
+        "target": 1.8008130081300813,
+        "value": 1.8137993642342178
+      },
+      {
+        "deviation_pct": 11.857153246631233,
+        "label": "\u221a(\u03c0+G)",
+        "target": 1.8008130081300813,
+        "value": 2.0143381661893347
+      },
+      {
+        "deviation_pct": -9.853181064257235,
+        "label": "2\u00b7G - 1\u00b7h_0",
+        "target": 1.8008130081300813,
+        "value": 1.6233756418103271
+      },
+      {
+        "deviation_pct": 7.8185813829491595,
+        "label": "(\u03c6-1)\u00b7\u03c0",
+        "target": 1.8008130081300813,
+        "value": 1.9416110387254666
+      },
+      {
+        "deviation_pct": -27.334016460420703,
+        "label": "exp(1/(1+e))",
+        "target": 1.8008130081300813,
+        "value": 1.3085784840664076
+      },
+      {
+        "deviation_pct": 6.944718508354211,
+        "label": "1 + 1/cos \u03b8_W - h_0",
+        "target": 1.8008130081300813,
+        "value": 1.9258744024065413
+      },
+      {
+        "deviation_pct": -7.590318044365591,
+        "label": "\u221a(\u03c0 \u00b7 cos \u03b8_W)",
+        "target": 1.8008130081300813,
+        "value": 1.664125573428701
+      },
+      {
+        "deviation_pct": -9.886862123333477,
+        "label": "2\u00b7sin(45\u00b0) + h_0",
+        "target": 1.8008130081300813,
+        "value": 1.622769108917206
+      },
+      {
+        "deviation_pct": -1.1557562076749435,
+        "label": "1.78 (exact)",
+        "target": 1.8008130081300813,
+        "value": 1.78
+      }
+    ]
+  },
+  "scriptCommitSha": "55558768564952ba285303f1216f7640907f918f",
+  "status": "exploratory",
+  "tags": [
+    "ew-substrate-derivation",
+    "g-g-prime",
+    "v-framework-ratio",
+    "scalar-gauge-ratio",
+    "hypothesis-generation"
+  ]
+}
