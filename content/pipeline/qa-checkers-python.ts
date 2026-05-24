@@ -528,16 +528,30 @@ export function checkConnectedToCiPipeline(
 
 // ─── deprecated ────────────────────────────────────────────────
 
+// `# DEPRECATED` line comment. Restricted to the first 10 lines of
+// the file so that module-level deprecation banners are flagged
+// while in-file section headers like `# DEPRECATED ALIASES` (lines
+// of code that document internal symbol aliases) are not.
 const DEPRECATED_MARKER_RE = /^\s*#\s*DEPRECATED\b/m;
+
+// `DEPRECATED` mention inside the module docstring. We strip
+// backtick-quoted code spans before matching so a docstring that
+// describes its subject (e.g. `legacy_formula_audit.py`'s "flags
+// banner-marked defs (\`# LEGACY\`, \`# DEPRECATED\`, …)") doesn't
+// self-flag.
 const DEPRECATED_DOCSTRING_RE = /\bDEPRECATED\b/;
+
+const DEPRECATED_MARKER_HEAD_LINES = 10;
 
 /**
  * Flag the script as deprecated when ANY of:
  *   - Path contains `/_deprecated/`
- *   - File contains a `# DEPRECATED` comment line
- *   - Module docstring (first triple-quoted block) contains the
- *     word "DEPRECATED" verbatim (case-sensitive — narrative use
- *     of "deprecated" in prose doesn't trigger)
+ *   - First 10 lines contain a `# DEPRECATED` comment line at
+ *     module top (script-level deprecation banner)
+ *   - Module docstring (first triple-quoted block, minus inline
+ *     code spans) contains the word "DEPRECATED" verbatim
+ *     (case-sensitive — narrative use of "deprecated" in prose
+ *     doesn't trigger)
  *
  * Severity is `minor` — deprecation is a status flag, not a
  * correctness bug. A `human` reviewer entry can move a deprecated
@@ -561,7 +575,13 @@ export function checkDeprecated(scriptPath: string): CheckerResult {
     };
   }
   const src = readFileSync(scriptPath, "utf-8");
-  if (DEPRECATED_MARKER_RE.test(src)) {
+  // Module-top check: only look at first 10 lines, so in-file
+  // section headers (`# DEPRECATED ALIASES`, `# DEPRECATED PATHS`,
+  // …) don't fire.
+  const head = src
+    .split("\n", DEPRECATED_MARKER_HEAD_LINES)
+    .join("\n");
+  if (DEPRECATED_MARKER_RE.test(head)) {
     return {
       result: "fail",
       hits: [
@@ -569,34 +589,36 @@ export function checkDeprecated(scriptPath: string): CheckerResult {
           file: scriptPath,
           line: 1,
           text:
-            `\`# DEPRECATED\` marker present — move script to ` +
-            `\`_deprecated/\` to align path and content, or remove ` +
-            `the marker if no longer deprecated`,
+            `\`# DEPRECATED\` marker in module preamble — move ` +
+            `script to \`_deprecated/\` to align path and content, ` +
+            `or remove the marker if no longer deprecated`,
         },
       ],
     };
   }
   // Check just the first triple-quoted block (module docstring) for
   // a verbatim "DEPRECATED" — avoids matching prose use further
-  // down.
+  // down. Strip backtick-quoted code spans so a docstring
+  // describing patterns it audits FOR doesn't self-flag.
   const docstringMatch = src.match(MODULE_DOCSTRING_RE);
-  if (
-    docstringMatch &&
-    DEPRECATED_DOCSTRING_RE.test(docstringMatch[1])
-  ) {
-    return {
-      result: "fail",
-      hits: [
-        {
-          file: scriptPath,
-          line: 1,
-          text:
-            `module docstring contains "DEPRECATED" — move script ` +
-            `to \`_deprecated/\` to align path and content, or ` +
-            `rephrase the docstring if no longer deprecated`,
-        },
-      ],
-    };
+  if (docstringMatch) {
+    const docstrProse = docstringMatch[1].replace(/`[^`]*`/g, "");
+    if (DEPRECATED_DOCSTRING_RE.test(docstrProse)) {
+      return {
+        result: "fail",
+        hits: [
+          {
+            file: scriptPath,
+            line: 1,
+            text:
+              `module docstring contains "DEPRECATED" outside an ` +
+              `inline code span — move script to \`_deprecated/\` ` +
+              `to align path and content, or rephrase if no longer ` +
+              `deprecated`,
+          },
+        ],
+      };
+    }
   }
   return { result: "pass", hits: [] };
 }
