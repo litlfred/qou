@@ -66,11 +66,18 @@ CONSTANTS
 
 from __future__ import annotations
 
-import json
 import sys
 import time
 from pathlib import Path
 from typing import Tuple
+
+# Add this directory to sys.path so the witness_base shim can be imported
+# (it bootstraps qou_substrate from tools/qou-substrate/python/).
+_THIS_DIR = Path(__file__).resolve().parent
+if str(_THIS_DIR) not in sys.path:
+    sys.path.insert(0, str(_THIS_DIR))
+
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 # ── Module constants (hoisted to avoid magic-value duplication) ──
@@ -457,15 +464,20 @@ def _to_repo_relative(p: str, repo_root: Path) -> str:
 
 
 def emit_witness(f3_data: dict, f4_data: dict, branch_points: np.ndarray,
-                 witness_path: Path, repo_root: Path, wall_seconds: float) -> None:
-    """Emit a witness JSON capturing the figure parameters + verified
-    sample values. This makes the figures auditable by
-    compute-integration-watcher.
+                 output_dir: Path, repo_root: Path,
+                 start_monotonic: float) -> Path:
+    """Emit a standard ComputationWitness via `WitnessBuilder`.
 
-    Schema = `type: figure-generation` with standard provenance keys
-    (`engine`, `engineVersion`, `computedAt`, `scriptFile`); `scriptHash`
-    + `commitSha` are filled post-build by `run_pipeline.py` /
-    `witness-audit.ts`. All paths are repo-relative for reproducibility.
+    Standard `WitnessBuilder` populates engine / engineVersion /
+    computedAt / commitSha / scriptFile / scriptHash / scriptCommitSha
+    / durationMs automatically (PR #1108 review: avoid ad-hoc JSON
+    emission so the witness pipeline can validate + track staleness).
+
+    Parameters live under `.parameters`; per-figure render data lives
+    under `.data.{f3_q_zero, f4_q_half, branch_points}`. All paths in
+    the data block are repo-relative for reproducibility.
+
+    Returns the path of the emitted witness file.
     """
     f3_rel = {**f3_data,
               "svg_path": _to_repo_relative(f3_data["svg_path"], repo_root),
@@ -473,46 +485,45 @@ def emit_witness(f3_data: dict, f4_data: dict, branch_points: np.ndarray,
     f4_rel = {**f4_data,
               "svg_path": _to_repo_relative(f4_data["svg_path"], repo_root),
               "pdf_path": _to_repo_relative(f4_data["pdf_path"], repo_root)}
-    witness = {
-        "type": "figure-generation",
-        "version": "1",
-        "engine": "python",
-        "engineVersion": f"numpy-{np.__version__} matplotlib-{matplotlib.__version__}",
-        "scriptFile": "folio-assistant/computations/bring_chiral_fibre_figure.py",
-        "scriptHash": None,  # filled by run_pipeline.py post-build
-        "scriptCommitSha": None,  # filled post-commit
-        "commitSha": None,  # filled post-commit
-        "computedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "description": (
+    wb = (
+        WitnessBuilder(
+            "bring-chiral-fibre-figure",
+            engine="python",
+            engine_version=(
+                f"numpy-{np.__version__} matplotlib-{matplotlib.__version__}"
+            ),
+            output_dir=output_dir,
+            start_time=start_monotonic,
+            _script_path=Path(__file__).resolve(),
+        )
+        .set_description(
             "Bring chiral fibre figures F3 (q→0, branch-point neighbourhood) "
             "and F4 (q=½, real-segment) per PR #1075 workplan Phase 1. "
             "Cubic X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0 from Bring's invariant "
             "ring; sheets via numpy.roots; branch points via Newton-Raphson "
             "on the discriminant Δ(z) using the analytical derivative."
-        ),
-        "parameters": {
-            "cubic": "X^3 + (z+1)*X^2 + (z^2+z+1)*X + (z^3+z^2+z+1)",
-            "bp_search_radius": BP_SEARCH_RADIUS,
-            "bp_grid_size": BP_GRID_SIZE,
-            "bp_newton_iters": BP_NEWTON_ITERS,
-            "f3_circle_radius": F3_CIRCLE_RADIUS,
-            "f3_n_samples": F3_N_SAMPLES,
-            "f4_z_min": F4_Z_MIN,
-            "f4_z_max": F4_Z_MAX,
-            "f4_n_samples": F4_N_SAMPLES,
-        },
-        "data": {
-            "branch_points": [
+        )
+        .add_parameter("cubic", "X^3 + (z+1)*X^2 + (z^2+z+1)*X + (z^3+z^2+z+1)")
+        .add_parameter("bp_search_radius", BP_SEARCH_RADIUS)
+        .add_parameter("bp_grid_size", BP_GRID_SIZE)
+        .add_parameter("bp_newton_iters", BP_NEWTON_ITERS)
+        .add_parameter("f3_circle_radius", F3_CIRCLE_RADIUS)
+        .add_parameter("f3_n_samples", F3_N_SAMPLES)
+        .add_parameter("f4_z_min", F4_Z_MIN)
+        .add_parameter("f4_z_max", F4_Z_MAX)
+        .add_parameter("f4_n_samples", F4_N_SAMPLES)
+        .add_data(
+            "branch_points",
+            [
                 {"re": float(z.real), "im": float(z.imag),
                  "discriminant_residual": float(abs(bring_discriminant(z)))}
                 for z in branch_points
             ],
-            "f3_q_zero": f3_rel,
-            "f4_q_half": f4_rel,
-            "wall_seconds": wall_seconds,
-        },
-    }
-    witness_path.write_text(json.dumps(witness, indent=2) + "\n")
+        )
+        .add_data("f3_q_zero", f3_rel)
+        .add_data("f4_q_half", f4_rel)
+    )
+    return wb.save()
 
 
 # ── Main ─────────────────────────────────────────────────────────
@@ -522,10 +533,12 @@ def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent.parent
     figures_dir = repo_root / "figures"
     figures_dir.mkdir(exist_ok=True)
-    witness_path = (repo_root / "folio-assistant" / "computations"
-                    / "bring-chiral-fibre-figure.witness.json")
+    output_dir = repo_root / "folio-assistant" / "computations"
 
-    t0 = time.time()
+    # `time.monotonic()` for WitnessBuilder's `durationMs` computation
+    # (WitnessBuilder uses monotonic delta, not wall-clock difference).
+    start_monotonic = time.monotonic()
+    t0_wall = time.time()
     print("Finding discriminant branch points (Newton-Raphson on |Δ(z)|)...")
     branch_points = find_branch_points()
     print(f"  Found {len(branch_points)} branch points: "
@@ -541,8 +554,9 @@ def main() -> int:
     print(f"  → {f4['svg_path']}")
     print(f"  → {f4['pdf_path']}")
 
-    wall = time.time() - t0
-    emit_witness(f3, f4, branch_points, witness_path, repo_root, wall)
+    wall = time.time() - t0_wall
+    witness_path = emit_witness(f3, f4, branch_points, output_dir,
+                                repo_root, start_monotonic)
     print(f"Witness emitted: {witness_path}  (wall: {wall:.1f}s)")
     return 0
 
