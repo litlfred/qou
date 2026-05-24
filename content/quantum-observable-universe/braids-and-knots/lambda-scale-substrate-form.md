@@ -1,28 +1,66 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-**Status (revised 2026-05-22 — explicit CAL-4 banner):**
-*The original substrate-form claim*
-$\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$
-*matches CODATA $m_p$ to 5.6 ppm but is* **NOT structurally derived**
-*— it is a PSLQ-style numerical near-coincidence
-([2026-05-18 falsification audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md)).
-Empirical only; treated as a* **4th calibration anchor** *in the
-production chain. The truth-in-naming pass (PR #888) renamed the
-literal twin to* `LAMBDA_PROTON_FITTED_FROM_CODATA` *in
-[`m_p_borromean_verification_50dps.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m_p_borromean_verification_50dps.py),
-with an explicit CAL-4 VIOLATION banner. See PR #879 audit
-[`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md)
-§"Sneak CAL-4 confirmed" and the cheat-sheet Migration Backlog
-\#1.* **The label `conj:lambda-scale-substrate-form` is retained for
-graph-stability**; readers should interpret it as
-"$\lambda_{\mathrm{scale}}$ empirical fit form (substrate-source
-open)". The named candidate
-[`conj:lambda-scale-bring-bloch-identity`](#conj:lambda-scale-bring-bloch-identity)
-PSLQ-failed at tier 5 (see
-[`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)
-conclusion), so a derivation route through it is **not currently
-expected to close**; the remaining research direction per PR #888
-is the q-dilog tower.
+> ⚠️ **Status (revised 2026-05-24 — λ_scale ABSORBED INTO `Geom_full`).**
+>
+> Per [`docs/lambda-scale-absorbed-into-geom-full.md`](../../../docs/lambda-scale-absorbed-into-geom-full.md)
+> (canonical framing, settled 2026-05-23 in PR #1080),
+> **`λ_scale` is no longer a separate object** in the framework.
+> The canonical mass formula is
+>
+> $$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0)$$
+>
+> — a single Geom-functor evaluation per knot. What older docs
+> called `λ_scale(K, q)` is the **ratio**
+> $\mathrm{Geom_{full}}(K, q) / \mathrm{Geom_{leading}}(K, q)$,
+> i.e., what Geom assigns to multi-component links above their
+> bare hyperbolic volume. There is nothing to "derive from
+> substrate" — the value is *output* of Geom, not input.
+>
+> **What remains canonical in this block:**
+> - The Family A theorem
+>   $\lambda_A(q) = (1/4) \sum_{\lambda \vdash 4} \dim_q V_\lambda
+>     = 5/2 + (3/4) h^2$
+>   IS the current production value of `linking_weight(𝓑_3, q)`
+>   inside `Geom_full(𝓑_3, q)`. It is PROVED (Wenzl bridge,
+>   PR #895/#942).
+>
+> **What is OBSOLETE in this block:**
+> - The original substrate-form claim
+>   $\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$
+>   was **structurally falsified** 2026-05-18 (PSLQ coincidence;
+>   no Wedderburn derivation gives $-G \cdot h^2$). See
+>   [`docs/audits/2026-05-18-conjecture-falsification.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md).
+> - The CAL-4 framing ($\lambda_{\mathrm{scale}}$ as a "4th
+>   calibration anchor") is **purged 2026-05-24** (commit
+>   `71d674da1`). The production literal
+>   `LAMBDA_PROTON_FITTED_FROM_CODATA` was removed from
+>   `m_p_borromean_verification_50dps.py`; production now uses
+>   Family A directly.
+> - The "Bring-Bloch identity" research direction was closed at
+>   PSLQ tier 5 (see
+>   [`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)).
+> - The Yekutieli per-cell ADD form
+>   $5/2 + (3/4 - G) h^2$ was also purged 2026-05-24 as
+>   non-canonical (PR #985 bijection NEGATIVE).
+>
+> **Current research direction**: refine `Geom_full(𝓑_3)`'s
+> categorical exactness at higher $h^2$ orders, NOT derive
+> $\lambda_{\mathrm{scale}}$ from substrate. The +2.89 % gap is
+> a `Geom_full` refinement question; the structural Markov-trace
+> finding (`tr_M(\beta_{\mathrm{Bor}}) = 1 + 0 \cdot h^2 - (3/4)h^4 + \cdots`)
+> brings it to +1.948 % with zero free parameters
+> (see [`folio-assistant/computations/geom_full_borromean_h4_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/geom_full_borromean_h4_probe.py)).
+>
+> **Block-conservation rationale**: the label
+> `conj:lambda-scale-substrate-form` is retained for graph-stability
+> across already-cited references; the §Family A theorem section
+> below is canonical-preserving content. Sections covering the
+> falsified / purged forms are kept as **historical record** so
+> future agents see what was tried, why it was rejected, and where
+> to find the post-purge canonical framing. Do not propose
+> reviving the falsified $5/2 - h^2 \cdot G$ form, the Yekutieli
+> ADD form, or the Bring-Bloch identity as production candidates.
+
 What IS proved (Family A theorem):*
 
 $$
