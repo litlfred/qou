@@ -113,6 +113,32 @@ function maskStringsAndComments(src: string): string {
  * are safe). Authors override with a `human` reviewer entry in the
  * script's sidecar.
  */
+/**
+ * Predicate: is this Python source line a "display context" where
+ * `float(...)` casts and bare float literals are legitimately
+ * NOT substrate-precision operations? Triggers:
+ *   - `print(` / `>>>` REPL prompt — explicit display output
+ *   - `\bf['"]` — f-string marker (word boundary prevents words
+ *     ending in `f` like `stuff["…"]` from matching)
+ *   - `.format(` (method) or `\bformat(` (builtin) — string format
+ *   - `\bassert ` — tolerance comparison
+ *   - assignment to a name with a display-intent suffix
+ *     (`_pct`, `_ppb`, `_ppm`, `_print`, `_display`, `_str`,
+ *     `_repr`) — convention for variables that are *only* used
+ *     for human-readable output
+ *
+ * **The caller must pass a comments-only-masked source line**
+ * (strings intact). Calling this on a `maskStringsAndComments`-
+ * blanked line silently breaks the f-string check (the quotes are
+ * gone in that representation).
+ */
+function isDisplayContextLine(line: string): boolean {
+  return (
+    /\bprint\(|\bf["']|\.format\(|\bformat\(|\bassert\s|>>>/.test(line) ||
+    /\b\w+_(?:pct|ppb|ppm|print|display|str|repr)\b\s*=/.test(line)
+  );
+}
+
 export function checkDoesNotDefaultToFloat(
   scriptPath: string,
 ): CheckerResult {
@@ -124,6 +150,14 @@ export function checkDoesNotDefaultToFloat(
   }
   const src = readFileSync(scriptPath, "utf-8");
   const masked = maskStringsAndComments(src);
+  // For display-context detection we need a version of the source
+  // that masks COMMENTS but keeps STRING QUOTES intact — otherwise
+  // the f-string marker (`f"…"`) is invisible (its quote was
+  // blanked by maskStringsAndComments). Comments-only mask lets
+  // us see `f"`, `print(`, `.format(`, `assert ` while still
+  // ignoring patterns that happen to appear inside `# ...` lines.
+  const srcCommentsOnly = src.replace(PY_COMMENT_RE, blankNonNewline);
+  const ctxLines = srcCommentsOnly.split("\n");
   // `maskStringsAndComments` blanks string/comment regions in place
   // (same length, same line breaks), so offsets in the masked text
   // align with the original text — we can recover sentinel
@@ -177,11 +211,13 @@ export function checkDoesNotDefaultToFloat(
     const isSentinel = FLOAT_CALL_SENTINEL_RE.test(rawArg.trim());
 
     // Display-context check on the line containing the cast.
+    // Use the comments-only-masked source so f-string markers
+    // (`f"`) are visible — `maskedLines` (from full
+    // maskStringsAndComments) has quotes blanked and would miss
+    // them.
     const lineNum = lineForOffset(m.index!);
-    const lineCtx = maskedLines[lineNum - 1] ?? "";
-    const isDisplayContext =
-      /\bprint\(|f["']|\.format\(|\bassert\s|>>>/.test(lineCtx) ||
-      /\b\w+_(?:pct|ppb|ppm|print|display|str|repr)\b\s*=/.test(lineCtx);
+    const lineCtx = ctxLines[lineNum - 1] ?? "";
+    const isDisplayContext = isDisplayContextLine(lineCtx);
 
     if (!isSentinel && !isDisplayContext) {
       const display = rawArg.trim().replace(/\s+/g, " ");
@@ -208,15 +244,14 @@ export function checkDoesNotDefaultToFloat(
   // `float(...)` cast. Per-line scan is fine here; literals do not
   // span lines. Same display-context exemption as Phase 1 — a
   // literal like `1e-6` inside `assert x < 1e-6` is the tolerance
-  // for a comparison, not a substrate-precision value.
+  // for a comparison, not a substrate-precision value. The display
+  // check runs on `ctxLines` (comments-only mask, strings intact)
+  // so f-string markers are visible.
   const workingLines = workingSource.split("\n");
   for (let i = 0; i < workingLines.length; i++) {
     const line = workingLines[i];
     if (!line.trim()) continue;
-    const isDisplayContext =
-      /\bprint\(|f["']|\.format\(|\bassert\s|>>>/.test(line) ||
-      /\b\w+_(?:pct|ppb|ppm|print|display|str|repr)\b\s*=/.test(line);
-    if (isDisplayContext) continue;
+    if (isDisplayContextLine(ctxLines[i] ?? "")) continue;
     for (const m of line.matchAll(BARE_FLOAT_LITERAL_RE)) {
       hits.push({
         file: scriptPath,
