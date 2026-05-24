@@ -93,10 +93,35 @@ The framework currently assumes (a) implicitly. The +0.17% match is taken as evi
 
 ## Path D execution — Hermiticity audit of the categorical mass formula
 
-**Headline**: the framework's mass formula is **already modulus
-projection** (option iv). Complex `q` is structurally admissible
-without modifying anything; the real-`q` convention is fixed only
-by an unstated additional constraint, not by the mass formula itself.
+> **🔄 Reconciliation update (2026-05-24, via PR #1127 coordinate sweep).**
+> The structural answer to "what forces real q" is **already in the
+> framework** as the `P_avg` / `P_skew` projection in
+> [`bar-involution.md`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md). The framework canonically projects to the
+> **bar-symmetric** part (P_avg → `cos, cosh, Li_2^q`) and discards
+> the bar-anti-symmetric part (P_skew → `sin, sinh, Φ_q` alone).
+> Sibling **PR [#1153](https://github.com/litlfred/qou/pull/1153)** (sinh-bar-antisymmetric-partner-probe) makes the P_skew
+> channel EXPLICIT for torus knots: `Q_m / P_m = tanh((2m+1) η_0)`.
+>
+> What this means for this audit: the "real q" convention is forced
+> by the P_avg projection rule (P_avg of real-q observables is real;
+> Im(`tr_M`) is in P_skew, discarded). The modulus projection
+> finding below is still correct but **subordinate** to the P_avg /
+> P_skew framework. The likely closure path for the +0.17% Q_β
+> residual is now sharper:
+> - Per-braid mass tower uses **Φ_q** which is in **P_skew** (discarded).
+> - Canonical P_avg tower function is **Li_2^q** per `bar-involution.md`.
+> - Replacing Φ_q with Li_2^q (already conjectured in `calibration-inputs.md:72-84`)
+>   gives the proper bar-symmetric tower; the +1.75% wrong-direction
+>   tower correction is the signature of using the wrong projection.
+> - This makes the closure conjecture **structurally motivated**,
+>   not a hand-tuned ansatz — and the framework's "real q" choice IS
+>   derivable from the P_avg projection rule.
+
+**Headline (original, retained)**: the framework's mass formula is
+**already modulus projection** (option iv). Complex `q` is structurally
+admissible without modifying anything; the real-`q` convention is fixed
+**by the P_avg projection** (per the reconciliation update above), not by
+the modulus alone.
 
 ### Evidence
 
