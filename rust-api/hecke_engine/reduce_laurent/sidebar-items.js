@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["incremental_reduce","incremental_reduce_from_state","reduce_laurent_rules"]};

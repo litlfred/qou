@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `src/precision_scalar.rs`."><title>precision_scalar.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="hecke_engine" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../static.files/storage-41dd4d93.js"></script><script defer src="../../static.files/src-script-813739b1.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><h1><div class="sub-heading">hecke_engine/</div>precision_scalar.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="doccomment">//! §S7 — `PrecisionScalar` envelope for round-tripping high-precision
+<a href=#2 id=2 data-nosnippet>2</a>//! values through witness JSON without going through `f64`.
+<a href=#3 id=3 data-nosnippet>3</a>//!
+<a href=#4 id=4 data-nosnippet>4</a>//! The Clarabel-rs MPFR / bigrational backends produce values with
+<a href=#5 id=5 data-nosnippet>5</a>//! more precision than IEEE `f64` can carry — typically 50 dps from
+<a href=#6 id=6 data-nosnippet>6</a>//! `MpfrFloat` at 167-bit precision, or arbitrary from `RationalReal`
+<a href=#7 id=7 data-nosnippet>7</a>//! under `set_max_arena_bits`.  Witness JSON files have historically
+<a href=#8 id=8 data-nosnippet>8</a>//! used `number` (f64) for these values, capping every consumer at
+<a href=#9 id=9 data-nosnippet>9</a>//! ~16 dps regardless of how the producer ran.
+<a href=#10 id=10 data-nosnippet>10</a>//!
+<a href=#11 id=11 data-nosnippet>11</a>//! `PrecisionScalar` round-trips a value through a decimal-string
+<a href=#12 id=12 data-nosnippet>12</a>//! representation with an explicit `dps` tag.  The wire format is
+<a href=#13 id=13 data-nosnippet>13</a>//! recognised by:
+<a href=#14 id=14 data-nosnippet>14</a>//!  - the TypeScript Zod schema in
+<a href=#15 id=15 data-nosnippet>15</a>//!    [`folio-assistant/schemas/precision-scalar.ts`](../../folio-assistant/schemas/precision-scalar.ts);
+<a href=#16 id=16 data-nosnippet>16</a>//!  - the Python consumer
+<a href=#17 id=17 data-nosnippet>17</a>//!    [`folio-assistant/computations/precision_scalar.py`](../../folio-assistant/computations/precision_scalar.py).
+<a href=#18 id=18 data-nosnippet>18</a>//!
+<a href=#19 id=19 data-nosnippet>19</a>//! Per workplan
+<a href=#20 id=20 data-nosnippet>20</a>//! [`CLARABEL_PRECISION_PLAN.md`](../CLARABEL_PRECISION_PLAN.md) §S7.1.
+<a href=#21 id=21 data-nosnippet>21</a>
+<a href=#22 id=22 data-nosnippet>22</a></span><span class="kw">use </span>serde::{Deserialize, Serialize};
+<a href=#23 id=23 data-nosnippet>23</a>
+<a href=#24 id=24 data-nosnippet>24</a><span class="doccomment">/// A scalar value carried as a decimal string with explicit
+<a href=#25 id=25 data-nosnippet>25</a>/// significant-decimal-digits (`dps`) precision.  Avoids the
+<a href=#26 id=26 data-nosnippet>26</a>/// f64 round-trip when serialising MPFR / BigRational values
+<a href=#27 id=27 data-nosnippet>27</a>/// to JSON.
+<a href=#28 id=28 data-nosnippet>28</a></span><span class="attr">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq)]
+<a href=#29 id=29 data-nosnippet>29</a></span><span class="kw">pub struct </span>PrecisionScalar {
+<a href=#30 id=30 data-nosnippet>30</a>    <span class="doccomment">/// Canonical decimal representation: signed, with optional
+<a href=#31 id=31 data-nosnippet>31</a>    /// fractional part and optional `e&lt;int&gt;` / `E&lt;int&gt;` exponent.
+<a href=#32 id=32 data-nosnippet>32</a>    /// Regex: `^-?\d+(\.\d+)?([eE][+-]?\d+)?$`.
+<a href=#33 id=33 data-nosnippet>33</a>    </span><span class="kw">pub </span>value: String,
+<a href=#34 id=34 data-nosnippet>34</a>    <span class="doccomment">/// Significant decimal digits encoded in `value`.  Callers
+<a href=#35 id=35 data-nosnippet>35</a>    /// consuming `value` should treat it as accurate to this many
+<a href=#36 id=36 data-nosnippet>36</a>    /// digits and not extrapolate past.
+<a href=#37 id=37 data-nosnippet>37</a>    </span><span class="kw">pub </span>dps: u32,
+<a href=#38 id=38 data-nosnippet>38</a>}
+<a href=#39 id=39 data-nosnippet>39</a>
+<a href=#40 id=40 data-nosnippet>40</a><span class="kw">impl </span>PrecisionScalar {
+<a href=#41 id=41 data-nosnippet>41</a>    <span class="doccomment">/// Build from a `rug::Float` at the given decimal precision.
+<a href=#42 id=42 data-nosnippet>42</a>    /// Reuses the same string conversion as `seminormal_mpfr.rs` —
+<a href=#43 id=43 data-nosnippet>43</a>    /// `Float::to_string_radix(10, Some(dps))`.
+<a href=#44 id=44 data-nosnippet>44</a>    </span><span class="kw">pub fn </span>from_rug(f: <span class="kw-2">&amp;</span>rug::Float, dps: u32) -&gt; <span class="self">Self </span>{
+<a href=#45 id=45 data-nosnippet>45</a>        <span class="self">Self </span>{
+<a href=#46 id=46 data-nosnippet>46</a>            value: f.to_string_radix(<span class="number">10</span>, <span class="prelude-val">Some</span>(dps <span class="kw">as </span>usize)),
+<a href=#47 id=47 data-nosnippet>47</a>            dps,
+<a href=#48 id=48 data-nosnippet>48</a>        }
+<a href=#49 id=49 data-nosnippet>49</a>    }
+<a href=#50 id=50 data-nosnippet>50</a>
+<a href=#51 id=51 data-nosnippet>51</a>    <span class="doccomment">/// Parse the decimal string back to a `rug::Float` at the
+<a href=#52 id=52 data-nosnippet>52</a>    /// requested precision (≥ this scalar's source precision).
+<a href=#53 id=53 data-nosnippet>53</a>    /// Adds 8 buffer bits for safe rounding.
+<a href=#54 id=54 data-nosnippet>54</a>    </span><span class="kw">pub fn </span>to_rug(<span class="kw-2">&amp;</span><span class="self">self</span>, dps: u32) -&gt; rug::Float {
+<a href=#55 id=55 data-nosnippet>55</a>        <span class="comment">// bits = ceil(dps · log₂(10)) + 8 buffer
+<a href=#56 id=56 data-nosnippet>56</a>        </span><span class="kw">let </span>bits = (dps <span class="kw">as </span>f64 * std::f64::consts::LOG2_10 + <span class="number">8.0</span>).ceil() <span class="kw">as </span>u32;
+<a href=#57 id=57 data-nosnippet>57</a>        rug::Float::parse(<span class="kw-2">&amp;</span><span class="self">self</span>.value)
+<a href=#58 id=58 data-nosnippet>58</a>            .map(|p| rug::Float::with_val(bits, p))
+<a href=#59 id=59 data-nosnippet>59</a>            .unwrap_or_else(|e| {
+<a href=#60 id=60 data-nosnippet>60</a>                <span class="macro">panic!</span>(
+<a href=#61 id=61 data-nosnippet>61</a>                    <span class="string">"PrecisionScalar::to_rug: invalid decimal {:?}: {}"</span>,
+<a href=#62 id=62 data-nosnippet>62</a>                    <span class="self">self</span>.value, e
+<a href=#63 id=63 data-nosnippet>63</a>                )
+<a href=#64 id=64 data-nosnippet>64</a>            })
+<a href=#65 id=65 data-nosnippet>65</a>    }
+<a href=#66 id=66 data-nosnippet>66</a>
+<a href=#67 id=67 data-nosnippet>67</a>    <span class="doccomment">/// Lossy projection to `f64`.  Only call from a code site that
+<a href=#68 id=68 data-nosnippet>68</a>    /// explicitly accepts the precision drop (logging, charts,
+<a href=#69 id=69 data-nosnippet>69</a>    /// sanity checks).  For witness JSON or downstream HP
+<a href=#70 id=70 data-nosnippet>70</a>    /// computations, prefer [`Self::to_rug`].
+<a href=#71 id=71 data-nosnippet>71</a>    </span><span class="kw">pub fn </span>to_f64_lossy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
+<a href=#72 id=72 data-nosnippet>72</a>        <span class="self">self</span>.value.parse().unwrap_or_else(|e| {
+<a href=#73 id=73 data-nosnippet>73</a>            <span class="macro">panic!</span>(
+<a href=#74 id=74 data-nosnippet>74</a>                <span class="string">"PrecisionScalar::to_f64_lossy: invalid decimal {:?}: {}"</span>,
+<a href=#75 id=75 data-nosnippet>75</a>                <span class="self">self</span>.value, e
+<a href=#76 id=76 data-nosnippet>76</a>            )
+<a href=#77 id=77 data-nosnippet>77</a>        })
+<a href=#78 id=78 data-nosnippet>78</a>    }
+<a href=#79 id=79 data-nosnippet>79</a>
+<a href=#80 id=80 data-nosnippet>80</a>    <span class="doccomment">/// Build directly from an `f64`, recording the source precision
+<a href=#81 id=81 data-nosnippet>81</a>    /// as 16 dps (IEEE double's full envelope).  Useful when the
+<a href=#82 id=82 data-nosnippet>82</a>    /// producer is an existing `f64` solver but the consumer wants
+<a href=#83 id=83 data-nosnippet>83</a>    /// the wire-level uniformity of the `PrecisionScalar` envelope.
+<a href=#84 id=84 data-nosnippet>84</a>    </span><span class="kw">pub fn </span>from_f64(v: f64) -&gt; <span class="self">Self </span>{
+<a href=#85 id=85 data-nosnippet>85</a>        <span class="self">Self </span>{
+<a href=#86 id=86 data-nosnippet>86</a>            value: <span class="macro">format!</span>(<span class="string">"{:.16e}"</span>, v),
+<a href=#87 id=87 data-nosnippet>87</a>            dps: <span class="number">16</span>,
+<a href=#88 id=88 data-nosnippet>88</a>        }
+<a href=#89 id=89 data-nosnippet>89</a>    }
+<a href=#90 id=90 data-nosnippet>90</a>}
+<a href=#91 id=91 data-nosnippet>91</a>
+<a href=#92 id=92 data-nosnippet>92</a><span class="attr">#[cfg(test)]
+<a href=#93 id=93 data-nosnippet>93</a></span><span class="kw">mod </span>tests {
+<a href=#94 id=94 data-nosnippet>94</a>    <span class="kw">use </span>super::<span class="kw-2">*</span>;
+<a href=#95 id=95 data-nosnippet>95</a>    <span class="kw">use </span>rug::ops::Pow;
+<a href=#96 id=96 data-nosnippet>96</a>    <span class="kw">use </span>rug::Float;
+<a href=#97 id=97 data-nosnippet>97</a>
+<a href=#98 id=98 data-nosnippet>98</a>    <span class="attr">#[test]
+<a href=#99 id=99 data-nosnippet>99</a>    </span><span class="kw">fn </span>round_trip_50_dps() {
+<a href=#100 id=100 data-nosnippet>100</a>        <span class="comment">// 50-dps PI via mpfr, round-trip through PrecisionScalar.
+<a href=#101 id=101 data-nosnippet>101</a>        </span><span class="kw">let </span>prec = <span class="number">167</span>; <span class="comment">// 50 dps + buffer
+<a href=#102 id=102 data-nosnippet>102</a>        </span><span class="kw">let </span>pi = rug::float::Constant::Pi;
+<a href=#103 id=103 data-nosnippet>103</a>        <span class="kw">let </span>pi_50 = Float::with_val(prec, pi);
+<a href=#104 id=104 data-nosnippet>104</a>        <span class="kw">let </span>ps = PrecisionScalar::from_rug(<span class="kw-2">&amp;</span>pi_50, <span class="number">50</span>);
+<a href=#105 id=105 data-nosnippet>105</a>        <span class="macro">assert_eq!</span>(ps.dps, <span class="number">50</span>);
+<a href=#106 id=106 data-nosnippet>106</a>        <span class="comment">// First digits should match canonical π
+<a href=#107 id=107 data-nosnippet>107</a>        </span><span class="macro">assert!</span>(
+<a href=#108 id=108 data-nosnippet>108</a>            ps.value.starts_with(<span class="string">"3.14159265358979323846264338327950288"</span>)
+<a href=#109 id=109 data-nosnippet>109</a>                || ps.value.starts_with(<span class="string">"3.1415926535897932384626433832795028"</span>),
+<a href=#110 id=110 data-nosnippet>110</a>            <span class="string">"wrong π prefix: {}"</span>,
+<a href=#111 id=111 data-nosnippet>111</a>            ps.value
+<a href=#112 id=112 data-nosnippet>112</a>        );
+<a href=#113 id=113 data-nosnippet>113</a>        <span class="comment">// Round trip back to rug::Float
+<a href=#114 id=114 data-nosnippet>114</a>        </span><span class="kw">let </span>back = ps.to_rug(<span class="number">50</span>);
+<a href=#115 id=115 data-nosnippet>115</a>        <span class="kw">let </span>diff = (Float::with_val(prec, <span class="kw-2">&amp;</span>pi_50) - back).abs();
+<a href=#116 id=116 data-nosnippet>116</a>        <span class="kw">let </span>tol = Float::with_val(prec, <span class="number">10</span>).pow(-<span class="number">48</span>); <span class="comment">// 1e-48 — within 50 dps
+<a href=#117 id=117 data-nosnippet>117</a>        </span><span class="macro">assert!</span>(diff &lt; tol, <span class="string">"round-trip drift exceeded 1e-48"</span>);
+<a href=#118 id=118 data-nosnippet>118</a>    }
+<a href=#119 id=119 data-nosnippet>119</a>
+<a href=#120 id=120 data-nosnippet>120</a>    <span class="attr">#[test]
+<a href=#121 id=121 data-nosnippet>121</a>    </span><span class="kw">fn </span>from_f64_records_16_dps() {
+<a href=#122 id=122 data-nosnippet>122</a>        <span class="kw">let </span>ps = PrecisionScalar::from_f64(<span class="number">1.10997859555418057</span>);
+<a href=#123 id=123 data-nosnippet>123</a>        <span class="macro">assert_eq!</span>(ps.dps, <span class="number">16</span>);
+<a href=#124 id=124 data-nosnippet>124</a>        <span class="macro">assert!</span>(ps.value.starts_with(<span class="string">"1.1099785955541805"</span>));
+<a href=#125 id=125 data-nosnippet>125</a>    }
+<a href=#126 id=126 data-nosnippet>126</a>
+<a href=#127 id=127 data-nosnippet>127</a>    <span class="attr">#[test]
+<a href=#128 id=128 data-nosnippet>128</a>    </span><span class="kw">fn </span>lossy_f64_is_an_escape_hatch() {
+<a href=#129 id=129 data-nosnippet>129</a>        <span class="kw">let </span>ps = PrecisionScalar {
+<a href=#130 id=130 data-nosnippet>130</a>            value: <span class="string">"1.10997859555418057"</span>.to_string(),
+<a href=#131 id=131 data-nosnippet>131</a>            dps: <span class="number">50</span>,
+<a href=#132 id=132 data-nosnippet>132</a>        };
+<a href=#133 id=133 data-nosnippet>133</a>        <span class="kw">let </span>f = ps.to_f64_lossy();
+<a href=#134 id=134 data-nosnippet>134</a>        <span class="comment">// f64 can carry ~16 sig figs, dps=50 gets truncated
+<a href=#135 id=135 data-nosnippet>135</a>        </span><span class="macro">assert!</span>((f - <span class="number">1.10997859555418057f64</span>).abs() &lt; <span class="number">1e-15</span>);
+<a href=#136 id=136 data-nosnippet>136</a>    }
+<a href=#137 id=137 data-nosnippet>137</a>
+<a href=#138 id=138 data-nosnippet>138</a>    <span class="attr">#[test]
+<a href=#139 id=139 data-nosnippet>139</a>    </span><span class="kw">fn </span>serde_round_trip() {
+<a href=#140 id=140 data-nosnippet>140</a>        <span class="kw">let </span>ps = PrecisionScalar {
+<a href=#141 id=141 data-nosnippet>141</a>            value: <span class="string">"1.10997859555418057528"</span>.to_string(),
+<a href=#142 id=142 data-nosnippet>142</a>            dps: <span class="number">20</span>,
+<a href=#143 id=143 data-nosnippet>143</a>        };
+<a href=#144 id=144 data-nosnippet>144</a>        <span class="kw">let </span>json = serde_json::to_string(<span class="kw-2">&amp;</span>ps).unwrap();
+<a href=#145 id=145 data-nosnippet>145</a>        <span class="macro">assert!</span>(json.contains(<span class="string">"\"value\""</span>));
+<a href=#146 id=146 data-nosnippet>146</a>        <span class="macro">assert!</span>(json.contains(<span class="string">"\"dps\""</span>));
+<a href=#147 id=147 data-nosnippet>147</a>        <span class="macro">assert!</span>(json.contains(<span class="string">"20"</span>));
+<a href=#148 id=148 data-nosnippet>148</a>        <span class="kw">let </span>back: PrecisionScalar = serde_json::from_str(<span class="kw-2">&amp;</span>json).unwrap();
+<a href=#149 id=149 data-nosnippet>149</a>        <span class="macro">assert_eq!</span>(back, ps);
+<a href=#150 id=150 data-nosnippet>150</a>    }
+<a href=#151 id=151 data-nosnippet>151</a>}
+</code></pre></div></section></main></body></html>

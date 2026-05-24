@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Rule-loop reducer for `LaurentHeckeElement` — port of `reduce_laurent_rules` (`folio-assistant/computations/hecke_laurent_fast.py:119`)."><title>hecke_engine::reduce_laurent - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="hecke_engine" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../static.files/storage-41dd4d93.js"></script><script defer src="../sidebar-items.js"></script><script defer src="../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc mod"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">Module reduce_laurent</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../hecke_engine/index.html">hecke_<wbr>engine</a><span class="version">0.8.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Module reduce_<wbr>laurent</a></h2><h3><a href="#functions">Module Items</a></h3><ul class="block"><li><a href="#functions" title="Functions">Functions</a></li></ul></section><div id="rustdoc-modnav"><h2 class="in-crate"><a href="../index.html">In crate hecke_<wbr>engine</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">hecke_engine</a></div><h1>Module <span>reduce_<wbr>laurent</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/hecke_engine/reduce_laurent.rs.html#1-535">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Rule-loop reducer for <code>LaurentHeckeElement</code> — port of
+<code>reduce_laurent_rules</code>
+(<code>folio-assistant/computations/hecke_laurent_fast.py:119</code>).</p>
+<p>Applies three rewriting rules to fixpoint:</p>
+<ul>
+<li>
+<p><strong>R1 (Hecke quadratic)</strong>:
+<code>σ_i² → h·σ_i + 1</code>,  with <code>h = q − q⁻¹</code>.
+Splits one term into two.</p>
+</li>
+<li>
+<p><strong>R2 (far-comm)</strong>:
+<code>σ_i σ_j → σ_j σ_i</code>  when <code>|i − j| ≥ 2</code> and <code>i &gt; j</code>
+(canonicalise to ascending-where-far-apart order).
+Plus the “formal variable” rule: a negative-index generator
+<code>j &lt; 0</code> bubbles left past any non-negative <code>i ≥ 0</code> it follows.</p>
+</li>
+<li>
+<p><strong>R3 (Yang-Baxter braid)</strong>:
+<code>σ_i σ_{i±1} σ_i → σ_{i±1} σ_i σ_{i±1}</code>,
+applied only when the new triple is lex-smaller than the old
+(this guard guarantees fixpoint termination).</p>
+</li>
+</ul>
+<p>R4 (quotient ideal / whole-atom folding) is intentionally <strong>not</strong>
+implemented — see <code>hecke_laurent_fast.py:230-246</code> for the reason:
+at LaurentQ-arithmetic speeds, the unfolded reduce is fast enough
+and the R4-via-sympy round-trip was empirically 0.36-0.80× slower
+than the unfolded path on every atom up to ⁴He.  Revisit only if
+Tier 1.A benches show the rule loop is no longer the bottleneck.</p>
+<p>Per CLAUDE.md §Precision goals L1 (50-dps compute floor): every
+coefficient is exact <code>BigRational</code> throughout the reduce loop.</p>
+</div></details><h2 id="functions" class="section-header">Functions<a href="#functions" class="anchor">§</a></h2><dl class="item-table"><dt><a class="fn" href="fn.incremental_reduce.html" title="fn hecke_engine::reduce_laurent::incremental_reduce">incremental_<wbr>reduce</a></dt><dd>Incremental reduce — mirror of <code>incremental_reduced_element_fast</code>
+from <code>folio-assistant/computations/hecke_laurent_fast.py:219</code>.</dd><dt><a class="fn" href="fn.incremental_reduce_from_state.html" title="fn hecke_engine::reduce_laurent::incremental_reduce_from_state">incremental_<wbr>reduce_<wbr>from_<wbr>state</a></dt><dd>Incremental reduce — <strong>resume-from-state variant</strong>.</dd><dt><a class="fn" href="fn.reduce_laurent_rules.html" title="fn hecke_engine::reduce_laurent::reduce_laurent_rules">reduce_<wbr>laurent_<wbr>rules</a></dt><dd>Reduce <code>elem</code> to fixpoint under R1 / R2 / R3.</dd></dl></section></div></main></body></html>

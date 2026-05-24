@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Tier 1.A entry point — full pipeline in Rust + MPFR."><title>tr_m_atomic_mpfr in hecke_engine::tr_m_atomic_mpfr - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="hecke_engine" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../static.files/storage-41dd4d93.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">tr_m_atomic_mpfr</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../hecke_engine/index.html">hecke_<wbr>engine</a><span class="version">0.8.0</span></h2></div><div class="sidebar-elems"><div id="rustdoc-modnav"><h2><a href="index.html">In hecke_<wbr>engine::<wbr>tr_<wbr>m_<wbr>atomic_<wbr>mpfr</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">hecke_engine</a>::<wbr><a href="index.html">tr_m_atomic_mpfr</a></div><h1>Function <span class="fn">tr_<wbr>m_<wbr>atomic_<wbr>mpfr</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/hecke_engine/tr_m_atomic_mpfr.rs.html#72-86">Source</a> </span></div><pre class="rust item-decl"><code>pub fn tr_m_atomic_mpfr(
+    signed_word: &amp;[(<a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.i8.html">i8</a>, <a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.i32.html">i32</a>)],
+    n_strands: <a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.usize.html">usize</a>,
+    q_str: &amp;<a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.str.html">str</a>,
+    dps: <a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.u32.html">u32</a>,
+) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.95.0/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/1.95.0/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="struct" href="https://doc.rust-lang.org/1.95.0/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p><strong>Tier 1.A entry point — full pipeline in Rust + MPFR.</strong></p>
+<p>Pipeline (all Rust, no Python crossings between stages):</p>
+<ol>
+<li>Reduce (<a href="../reduce_laurent/fn.incremental_reduce.html" title="fn hecke_engine::reduce_laurent::incremental_reduce"><code>reduce_laurent::incremental_reduce</code></a>) — R1+R2+R3
+fixpoint with exact BigRational coefficients.</li>
+<li>For each reduced σ-word:
+a. Evaluate the BigRational coefficient at <code>q</code> via MPFR
+string round-trip (preserves precision past f64 cap).
+b. Compute <code>tr_M(word)</code> ZHLaurent via
+<a href="../tr_m_word_lq/fn.tr_m_word_lq.html" title="fn hecke_engine::tr_m_word_lq::tr_m_word_lq"><code>tr_m_word_lq::tr_m_word_lq</code></a> (already Rust-native).
+c. Evaluate the ZHLaurent at <code>(q, z, h)</code> via MPFR, where
+<code>z = 1/(q^{1/2}+q^{-1/2})</code>, <code>h = q − q^{-1}</code>.
+d. Accumulate into the running total.</li>
+<li>Return <code>total.to_string_radix(10, Some(dps + 5))</code> so the
+Python caller can parse a single decimal string via
+<code>mpmath.mpf(result_str)</code>.</li>
+</ol>
+<p><code>q_str</code>: substrate parameter as a decimal string (avoids f64
+lossy conversion at the boundary; matches the existing
+<code>chi_lambda_*_mpfr</code> API convention).</p>
+<p><code>dps</code>: working precision in decimal places.  Production floor
+is 50 (CLAUDE.md §Precision goals L1); use 100+ for substrate-
+derivation cross-checks.</p>
+<p>Returns <code>Err(message)</code> if the trace recursion hits Case C
+(multiple top-1 in segment) on any reduced word — caller routes
+to the sympy ocneanu fallback, same contract as
+<code>tr_m_word_lq::tr_m_word_lq</code>.</p>
+</div></details></section></div></main></body></html>

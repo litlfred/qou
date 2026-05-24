@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="q-deformed Murnaghan-Nakayama (Ram 1991, Wenzl 1988)."><title>chi_lambda_mn_qdef in hecke_engine::seminormal_mn - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="hecke_engine" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../static.files/storage-41dd4d93.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">chi_lambda_mn_qdef</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../hecke_engine/index.html">hecke_<wbr>engine</a><span class="version">0.8.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">chi_<wbr>lambda_<wbr>mn_<wbr>qdef</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#formula-ram-1991-theorem-41-simplified" title="Formula (Ram 1991 Theorem 4.1, simplified)">Formula (Ram 1991 Theorem 4.1, simplified)</a></li><li><a href="#status" title="Status">Status</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In hecke_<wbr>engine::<wbr>seminormal_<wbr>mn</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">hecke_engine</a>::<wbr><a href="index.html">seminormal_mn</a></div><h1>Function <span class="fn">chi_<wbr>lambda_<wbr>mn_<wbr>qdef</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/hecke_engine/seminormal_mn.rs.html#393-411">Source</a> </span></div><pre class="rust item-decl"><code>pub fn chi_lambda_mn_qdef(lambda: &amp;[<a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.usize.html">usize</a>], mu: &amp;[<a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.usize.html">usize</a>]) -&gt; <a class="struct" href="../laurent_poly_q/struct.LaurentPolyQ.html" title="struct hecke_engine::laurent_poly_q::LaurentPolyQ">LaurentPolyQ</a></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p><strong>q-deformed Murnaghan-Nakayama</strong> (Ram 1991, Wenzl 1988).</p>
+<p>Computes the Hecke character <code>χ^λ(T_w; q)</code> where <code>T_w ∈ H_n(q)</code> is
+the Hecke generator corresponding to the <strong>canonical
+minimal-length permutation</strong> of cycle type <code>μ</code>, returning the
+result as a <a href="../laurent_poly_q/struct.LaurentPolyQ.html" title="struct hecke_engine::laurent_poly_q::LaurentPolyQ"><code>crate::laurent_poly_q::LaurentPolyQ</code></a>.</p>
+<p><strong>Note on scope.</strong> This implementation handles only the case where
+the input is a permutation specified by cycle type — exactly the
+case needed to cross-validate against classical MN at <code>q = 1</code> and
+against Hoefsmit at <code>q = q₀</code> for permutation-form atomic braids.
+Extension to arbitrary braid words (mixed-sign generator products
+not in canonical permutation form) requires the Hecke relation
+<code>σ⁻¹ = σ − h</code> to expand inverses; that’s the F3.2 next milestone.</p>
+<h3 id="formula-ram-1991-theorem-41-simplified"><a class="doc-anchor" href="#formula-ram-1991-theorem-41-simplified">§</a>Formula (Ram 1991 Theorem 4.1, simplified)</h3>
+<p><code>χ^λ(T_w; q) = Σ over q-border-strip-tableaux T = (∅ ⊂ μ¹ ⊂ … ⊂ μʳ = λ)                 of weight w_q(T)</code></p>
+<p>where each step μᵢ \ μᵢ₋₁ is a border strip of size = i-th cycle
+length, and the q-weight factorizes:</p>
+<p><code>w_q(T) = ∏ᵢ q-weight-of-strip(μᵢ \ μᵢ₋₁)</code>.</p>
+<p>For a single border-strip step with height <code>h</code>, the q-weight is:</p>
+<p><code>(q − q⁻¹)^{leg} · (−1)^{height} · q^{(arm)}</code>,</p>
+<p>summed over admissible arm-leg fillings.  The simplest case (used
+here, which is exact for cycle types μ where |μ_i| = 1):</p>
+<p><code>weight = (−q⁻¹)^{height}</code>     when |μ_i| = 1, height = leg = number of rows below</p>
+<p>For longer cycles we use the standard Ram formula
+<code>weight = q^{height} · (−q⁻¹)^{leg}</code>.  At q = 1 this collapses to
+<code>(−1)^{height}</code>, recovering classical MN.</p>
+<h3 id="status"><a class="doc-anchor" href="#status">§</a>Status</h3>
+<ul>
+<li>q = 1 collapse to classical MN: tested.</li>
+<li>General q for permutations of cycle type μ: implemented.</li>
+<li>Inverse-generator handling: TODO (F3.2 next milestone).</li>
+</ul>
+</div></details></section></div></main></body></html>

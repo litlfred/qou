@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="F3.2.γ wiring: compute `χ_λ(T_β; q)` for an arbitrary braid word by expanding `T_β = Σ c_w · T_w` in the Hecke basis and applying q-MN on each `T_w`."><title>chi_lambda_via_geck_pfeiffer in hecke_engine::geck_pfeiffer - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="hecke_engine" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../static.files/storage-41dd4d93.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">chi_lambda_via_geck_pfeiffer</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../hecke_engine/index.html">hecke_<wbr>engine</a><span class="version">0.8.0</span></h2></div><div class="sidebar-elems"><div id="rustdoc-modnav"><h2><a href="index.html">In hecke_<wbr>engine::<wbr>geck_<wbr>pfeiffer</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">hecke_engine</a>::<wbr><a href="index.html">geck_pfeiffer</a></div><h1>Function <span class="fn">chi_<wbr>lambda_<wbr>via_<wbr>geck_<wbr>pfeiffer</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/hecke_engine/geck_pfeiffer.rs.html#819-842">Source</a> </span></div><pre class="rust item-decl"><code>pub fn chi_lambda_via_geck_pfeiffer(
+    lambda: &amp;[<a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.usize.html">usize</a>],
+    n: <a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.usize.html">usize</a>,
+    word: &amp;[(<a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.i32.html">i32</a>, <a class="primitive" href="https://doc.rust-lang.org/1.95.0/std/primitive.u32.html">u32</a>)],
+) -&gt; <a class="struct" href="../laurent_poly_q/struct.LaurentPolyQ.html" title="struct hecke_engine::laurent_poly_q::LaurentPolyQ">LaurentPolyQ</a></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p><strong>F3.2.γ wiring</strong>: compute <code>χ_λ(T_β; q)</code> for an arbitrary braid
+word by expanding <code>T_β = Σ c_w · T_w</code> in the Hecke basis and
+applying q-MN on each <code>T_w</code>.</p>
+<p>χ_λ(T_β; q) = Σ_w c_w(q) · χ_λ(T_w; q)</p>
+<p><strong>CRITICAL CORRECTNESS NOTE — F3.2.γ is structurally incomplete.</strong></p>
+<p>At q ≠ 1, two basis elements <code>T_w</code> and <code>T_{w'}</code> with the SAME
+cycle type but DIFFERENT lengths give DIFFERENT Hecke characters.
+This is NOT a class function on cycle type — it’s a class
+function on <code>H_n(q)</code> (invariant under Hecke conjugation), which
+for symmetric-group permutations means: invariant ONLY among
+MINIMAL-LENGTH representatives of each conjugacy class.</p>
+<p>Empirical verification (see q_mn_canonical.py cross-check):
+χ^(2,1)(T_{s_1};       q₀) ≈ +0.209  (length 1, minimal)
+χ^(2,1)(T_{s_1 s_2 s_1}; q₀) ≈ -0.000  (length 3, NOT minimal)
+Both have cycle type (2, 1).</p>
+<p>The simplified q-MN treats both as the canonical-cycle-type
+character of the minimal-length representative — incorrect for
+non-minimal w.</p>
+<p><strong>Two paths to a correct implementation (F3.2.δ):</strong></p>
+<ol>
+<li>
+<p><strong>Geck-Pfeiffer cuspidal reduction</strong>: for each <code>T_w</code> in the
+expansion, reduce w to its minimal-length representative
+<code>w_min</code> within its conjugacy class via “good conjugations”
+(s w s = w’ with ℓ(w’) ≤ ℓ(w) - 2), then apply q-MN to
+<code>cycle_type(w_min)</code>.  Reference: Geck-Pfeiffer 2000 §3.</p>
+</li>
+<li>
+<p><strong>Hoefsmit per T_w</strong>: for each basis element, build the
+canonical reduced word <code>w_min</code> and evaluate via Hoefsmit
+seminormal.  Correct but no MN speedup.</p>
+</li>
+</ol>
+<p>At q = 1 the simplified path is correct (Hecke ↦ S_n; characters
+ARE class functions on cycle type alone).</p>
+</div></details></section></div></main></body></html>

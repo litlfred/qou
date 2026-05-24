@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["coxeter_length","perm_apply_s","perm_identity","perm_to_canonical_word"],"struct":["HeckeElement","LaurentQ"]};

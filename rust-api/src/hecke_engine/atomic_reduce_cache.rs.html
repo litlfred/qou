@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `src/atomic_reduce_cache.rs`."><title>atomic_reduce_cache.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-b7b9f40b.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="hecke_engine" data-themes="" data-resource-suffix="" data-rustdoc-version="1.95.0 (59807616e 2026-04-14)" data-channel="1.95.0" data-search-js="search-63369b7b.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-170eb4bf.js" ><script src="../../static.files/storage-41dd4d93.js"></script><script defer src="../../static.files/src-script-813739b1.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-5013f961.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-f7c3ffd8.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><a class="skip-main-content" href="#main-content">Skip to main content</a><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><section id="main-content" class="content" tabindex="-1"><div class="main-heading"><h1><div class="sub-heading">hecke_engine/</div>atomic_reduce_cache.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="doccomment">//! Rust-side cache of reduced [`LaurentHeckeElement`]s keyed by
+<a href=#2 id=2 data-nosnippet>2</a>//! signed-word-prefix hash.  **Zero FFI marshalling on hit.**
+<a href=#3 id=3 data-nosnippet>3</a>//!
+<a href=#4 id=4 data-nosnippet>4</a>//! The disk-resident JSON cache landed in
+<a href=#5 id=5 data-nosnippet>5</a>//! `_prefix_cache.py` was empirically a net loss on the canonical
+<a href=#6 id=6 data-nosnippet>6</a>//! sweep (12% slower at ⁶Li) because shipping the cached state
+<a href=#7 id=7 data-nosnippet>7</a>//! Python → Rust through decimal-string FFI exceeded the saving
+<a href=#8 id=8 data-nosnippet>8</a>//! from skipping the prefix's reduce work.  See
+<a href=#9 id=9 data-nosnippet>9</a>//! [`docs/audits/2026-05-22-prefix-cache-negative-bench.md`].
+<a href=#10 id=10 data-nosnippet>10</a>//!
+<a href=#11 id=11 data-nosnippet>11</a>//! This in-process cache fixes that: when a Python caller invokes
+<a href=#12 id=12 data-nosnippet>12</a>//! [`crate::tr_m_atomic_mpfr::tr_m_atomic_mpfr_cached`], the
+<a href=#13 id=13 data-nosnippet>13</a>//! signed-word prefix is hashed *inside Rust*, the cached
+<a href=#14 id=14 data-nosnippet>14</a>//! `LaurentHeckeElement` is fetched by hash (no marshalling), the
+<a href=#15 id=15 data-nosnippet>15</a>//! suffix is reduced from that state, and the final state is
+<a href=#16 id=16 data-nosnippet>16</a>//! re-cached under the full signed-word's hash.
+<a href=#17 id=17 data-nosnippet>17</a>//!
+<a href=#18 id=18 data-nosnippet>18</a>//! Cache lifetime: process-bound (no persistence across `python3`
+<a href=#19 id=19 data-nosnippet>19</a>//! invocations).  For mass-table sweeps that compute many atoms in
+<a href=#20 id=20 data-nosnippet>20</a>//! one process, the cumulative wall is essentially the wall of the
+<a href=#21 id=21 data-nosnippet>21</a>//! largest atom (suffix-only reduce on each).
+<a href=#22 id=22 data-nosnippet>22</a>
+<a href=#23 id=23 data-nosnippet>23</a></span><span class="kw">use </span><span class="kw">crate</span>::laurent_hecke_element::LaurentHeckeElement;
+<a href=#24 id=24 data-nosnippet>24</a><span class="kw">use </span>rustc_hash::FxHasher;
+<a href=#25 id=25 data-nosnippet>25</a><span class="kw">use </span>std::collections::HashMap;
+<a href=#26 id=26 data-nosnippet>26</a><span class="kw">use </span>std::hash::Hasher;
+<a href=#27 id=27 data-nosnippet>27</a><span class="kw">use </span>std::sync::{Mutex, OnceLock};
+<a href=#28 id=28 data-nosnippet>28</a>
+<a href=#29 id=29 data-nosnippet>29</a><span class="doccomment">/// Per-entry memory is dominated by `LaurentHeckeElement` size,
+<a href=#30 id=30 data-nosnippet>30</a>/// which scales as `terms × coefs_per_term`.  ⁶Li alone is ~50 MB.
+<a href=#31 id=31 data-nosnippet>31</a>/// Cap on entry count: 64 — comfortably covers a full mass-table
+<a href=#32 id=32 data-nosnippet>32</a>/// sweep (8 atoms × small variants) without thrashing.
+<a href=#33 id=33 data-nosnippet>33</a></span><span class="kw">const </span>MAX_ENTRIES: usize = <span class="number">64</span>;
+<a href=#34 id=34 data-nosnippet>34</a>
+<a href=#35 id=35 data-nosnippet>35</a><span class="kw">static </span>REDUCE_CACHE: OnceLock&lt;Mutex&lt;HashMap&lt;u64, LaurentHeckeElement&gt;&gt;&gt; = OnceLock::new();
+<a href=#36 id=36 data-nosnippet>36</a>
+<a href=#37 id=37 data-nosnippet>37</a><span class="kw">fn </span>cache() -&gt; <span class="kw-2">&amp;</span><span class="lifetime">'static </span>Mutex&lt;HashMap&lt;u64, LaurentHeckeElement&gt;&gt; {
+<a href=#38 id=38 data-nosnippet>38</a>    REDUCE_CACHE.get_or_init(|| Mutex::new(HashMap::new()))
+<a href=#39 id=39 data-nosnippet>39</a>}
+<a href=#40 id=40 data-nosnippet>40</a>
+<a href=#41 id=41 data-nosnippet>41</a><span class="doccomment">/// FxHash of a signed-word prefix.  `FxHasher` is non-cryptographic
+<a href=#42 id=42 data-nosnippet>42</a>/// but fast and well-distributed at our scale (≤ thousands of
+<a href=#43 id=43 data-nosnippet>43</a>/// prefixes per session); 64-bit space makes collisions astronomically
+<a href=#44 id=44 data-nosnippet>44</a>/// unlikely for the kinds of prefix sets atomic-braid sweeps produce.
+<a href=#45 id=45 data-nosnippet>45</a></span><span class="kw">pub fn </span>hash_prefix(signed_word_prefix: <span class="kw-2">&amp;</span>[(i8, i32)]) -&gt; u64 {
+<a href=#46 id=46 data-nosnippet>46</a>    <span class="kw">let </span><span class="kw-2">mut </span>h = FxHasher::default();
+<a href=#47 id=47 data-nosnippet>47</a>    <span class="comment">// Manually feed each (sign, gen) pair so the hash depends on the
+<a href=#48 id=48 data-nosnippet>48</a>    // full content, not just the slice length / address.
+<a href=#49 id=49 data-nosnippet>49</a>    </span><span class="kw">for </span><span class="kw-2">&amp;</span>(sign, <span class="kw">gen</span>) <span class="kw">in </span>signed_word_prefix {
+<a href=#50 id=50 data-nosnippet>50</a>        h.write_i8(sign);
+<a href=#51 id=51 data-nosnippet>51</a>        h.write_i32(<span class="kw">gen</span>);
+<a href=#52 id=52 data-nosnippet>52</a>    }
+<a href=#53 id=53 data-nosnippet>53</a>    h.finish()
+<a href=#54 id=54 data-nosnippet>54</a>}
+<a href=#55 id=55 data-nosnippet>55</a>
+<a href=#56 id=56 data-nosnippet>56</a><span class="doccomment">/// Find the longest cached prefix of `signed_word` (possibly the
+<a href=#57 id=57 data-nosnippet>57</a>/// full word — exact-match cache hits return `prefix_len ==
+<a href=#58 id=58 data-nosnippet>58</a>/// signed_word.len()` with an empty suffix, which is the
+<a href=#59 id=59 data-nosnippet>59</a>/// expected behavior when the same atom is recomputed).
+<a href=#60 id=60 data-nosnippet>60</a>///
+<a href=#61 id=61 data-nosnippet>61</a>/// Returns `(prefix_len, Option&lt;state_clone&gt;)`.  The state is
+<a href=#62 id=62 data-nosnippet>62</a>/// cloned out of the cache because the caller will mutate it
+<a href=#63 id=63 data-nosnippet>63</a>/// (apply the suffix); the cache itself stays warm.
+<a href=#64 id=64 data-nosnippet>64</a></span><span class="kw">pub fn </span>find_longest_cached_prefix(
+<a href=#65 id=65 data-nosnippet>65</a>    signed_word: <span class="kw-2">&amp;</span>[(i8, i32)],
+<a href=#66 id=66 data-nosnippet>66</a>) -&gt; (usize, <span class="prelude-ty">Option</span>&lt;LaurentHeckeElement&gt;) {
+<a href=#67 id=67 data-nosnippet>67</a>    <span class="kw">let </span>g = <span class="kw">match </span>cache().lock() {
+<a href=#68 id=68 data-nosnippet>68</a>        <span class="prelude-val">Ok</span>(g) =&gt; g,
+<a href=#69 id=69 data-nosnippet>69</a>        <span class="prelude-val">Err</span>(<span class="kw">_</span>) =&gt; <span class="kw">return </span>(<span class="number">0</span>, <span class="prelude-val">None</span>),  <span class="comment">// poisoned mutex: degrade gracefully
+<a href=#70 id=70 data-nosnippet>70</a>    </span>};
+<a href=#71 id=71 data-nosnippet>71</a>    <span class="comment">// Try prefix lengths in decreasing order so we find the LONGEST
+<a href=#72 id=72 data-nosnippet>72</a>    // matching prefix first.  Range is `1..=len` (inclusive) so the
+<a href=#73 id=73 data-nosnippet>73</a>    // full-word cache hit is returned when the same atom is
+<a href=#74 id=74 data-nosnippet>74</a>    // recomputed in the same process — the resume-from-state path
+<a href=#75 id=75 data-nosnippet>75</a>    // then runs zero crossings and just re-evaluates MPFR.
+<a href=#76 id=76 data-nosnippet>76</a>    </span><span class="kw">for </span>prefix_len <span class="kw">in </span>(<span class="number">1</span>..=signed_word.len()).rev() {
+<a href=#77 id=77 data-nosnippet>77</a>        <span class="kw">let </span>h = hash_prefix(<span class="kw-2">&amp;</span>signed_word[..prefix_len]);
+<a href=#78 id=78 data-nosnippet>78</a>        <span class="kw">if let </span><span class="prelude-val">Some</span>(state) = g.get(<span class="kw-2">&amp;</span>h) {
+<a href=#79 id=79 data-nosnippet>79</a>            <span class="kw">return </span>(prefix_len, <span class="prelude-val">Some</span>(state.clone()));
+<a href=#80 id=80 data-nosnippet>80</a>        }
+<a href=#81 id=81 data-nosnippet>81</a>    }
+<a href=#82 id=82 data-nosnippet>82</a>    (<span class="number">0</span>, <span class="prelude-val">None</span>)
+<a href=#83 id=83 data-nosnippet>83</a>}
+<a href=#84 id=84 data-nosnippet>84</a>
+<a href=#85 id=85 data-nosnippet>85</a><span class="doccomment">/// Insert or update the cache entry for `signed_word` with the
+<a href=#86 id=86 data-nosnippet>86</a>/// reduced `state`.  Cache entries are bounded by [`MAX_ENTRIES`];
+<a href=#87 id=87 data-nosnippet>87</a>/// when the cap is hit, the cache is fully cleared (simple, fast,
+<a href=#88 id=88 data-nosnippet>88</a>/// adequate for the mass-table-sweep workload).
+<a href=#89 id=89 data-nosnippet>89</a></span><span class="kw">pub fn </span>save_prefix_state(signed_word: <span class="kw-2">&amp;</span>[(i8, i32)], state: <span class="kw-2">&amp;</span>LaurentHeckeElement) {
+<a href=#90 id=90 data-nosnippet>90</a>    <span class="kw">let </span>h = hash_prefix(signed_word);
+<a href=#91 id=91 data-nosnippet>91</a>    <span class="kw">if let </span><span class="prelude-val">Ok</span>(<span class="kw-2">mut </span>g) = cache().lock() {
+<a href=#92 id=92 data-nosnippet>92</a>        <span class="kw">if </span>g.len() &gt;= MAX_ENTRIES &amp;&amp; !g.contains_key(<span class="kw-2">&amp;</span>h) {
+<a href=#93 id=93 data-nosnippet>93</a>            <span class="comment">// Drop everything when we hit the cap.  Matches the
+<a href=#94 id=94 data-nosnippet>94</a>            // pattern in `tr_m_word_lq::cache()` and avoids the
+<a href=#95 id=95 data-nosnippet>95</a>            // complexity of an LRU at our scale.
+<a href=#96 id=96 data-nosnippet>96</a>            </span>g.clear();
+<a href=#97 id=97 data-nosnippet>97</a>        }
+<a href=#98 id=98 data-nosnippet>98</a>        g.insert(h, state.clone());
+<a href=#99 id=99 data-nosnippet>99</a>    }
+<a href=#100 id=100 data-nosnippet>100</a>}
+<a href=#101 id=101 data-nosnippet>101</a>
+<a href=#102 id=102 data-nosnippet>102</a><span class="doccomment">/// Empty the cache.  Call between independent sessions (or between
+<a href=#103 id=103 data-nosnippet>103</a>/// runs that should not share state) to avoid unbounded growth.
+<a href=#104 id=104 data-nosnippet>104</a></span><span class="kw">pub fn </span>clear_cache() {
+<a href=#105 id=105 data-nosnippet>105</a>    <span class="kw">if let </span><span class="prelude-val">Ok</span>(<span class="kw-2">mut </span>g) = cache().lock() {
+<a href=#106 id=106 data-nosnippet>106</a>        g.clear();
+<a href=#107 id=107 data-nosnippet>107</a>    }
+<a href=#108 id=108 data-nosnippet>108</a>}
+<a href=#109 id=109 data-nosnippet>109</a>
+<a href=#110 id=110 data-nosnippet>110</a><span class="doccomment">/// Number of cached entries (for stats / debug).
+<a href=#111 id=111 data-nosnippet>111</a></span><span class="kw">pub fn </span>cache_size() -&gt; usize {
+<a href=#112 id=112 data-nosnippet>112</a>    cache().lock().map(|g| g.len()).unwrap_or(<span class="number">0</span>)
+<a href=#113 id=113 data-nosnippet>113</a>}
+</code></pre></div></section></main></body></html>

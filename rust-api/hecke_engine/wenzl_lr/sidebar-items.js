@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Crossing"],"fn":["averaging_denominator","chi_factor","chi_lambda_canonical_all_partitions_f64","chi_lambda_canonical_all_partitions_mpfr","chi_lambda_canonical_h_n_f64","chi_lambda_canonical_h_n_mpfr","chi_via_lr_2way","chi_via_lr_kway","tr_m_via_lr"],"struct":["WenzlFactor"],"type":["CrossingPair"]};

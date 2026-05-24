@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["cache_size","clear_cache","find_longest_cached_prefix","hash_prefix","save_prefix_state"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["lr_coefficient"]};

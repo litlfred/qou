@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["NF_BASIS","NF_NAMES","Q_0"],"fn":["atom_per_generator_volumes","build_atom_nf","certificate_at","det_6x6","gram_inverse","gram_matrix","hecke_h","hm","markov_z","nf_net","nf_tr","trace_weights"],"struct":["GramCertificate","VolumeEntry"]};

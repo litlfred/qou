@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["chi_lambda_braid_mpfr","chi_lambdas_braid_mpfr","dps_to_bits","seminormal_matrices_mpfr"],"type":["SparseMatrixMpfr"]};
