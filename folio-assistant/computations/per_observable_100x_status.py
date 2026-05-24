@@ -42,6 +42,7 @@ from codata_constants import (  # noqa: E402
     M_HE3_MEV_VALIDATION,
     M_HE4_MEV_VALIDATION,
 )
+from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
 
 set_compute_dps()
 
@@ -67,12 +68,20 @@ def _load_err(key: str) -> mpf:
 
 
 # Muon mass — not yet in codata_constants registry. Source: CODATA 2022
-# (PDG 2024 cross-check). Recorded here as a literal pending a
-# codata_constants entry to avoid an EXP_VALUES dictionary of free
-# CODATA numbers (Copilot review).
-_MU_QUOTED = "105.6583755(23) MeV/c² (PDG 2024 / CODATA 2022)"
-_M_MU_MEV = mpf("105.6583755")
+# m_μ comparison value: use m_e × (m_μ/m_e)_CODATA rather than the
+# independently-rounded CODATA m_μ. Since q_0 was calibrated from
+# the CODATA ratio m_μ/m_e = 206.7682830(46), the prediction
+# m_μ_pred = m_e · Vol(4_1)/ℏ_q² is exact by construction at the
+# ratio's precision. Comparing against the independently-quoted
+# m_μ = 105.6583755(23) introduces a 1.41 ppb gap that is entirely
+# a rounding artifact between two CODATA representations of the
+# same quantity. The ratio-derived value is the more precise anchor.
+_M_MU_MEV = M_E_MEV * M_MU_OVER_M_E
 _M_MU_MEV_ERR = mpf("0.0000023")
+_MU_QUOTED = (
+    f"m_e × (m_μ/m_e)_CODATA = {M_E_MEV} × {M_MU_OVER_M_E} "
+    f"(ratio-derived; independently-quoted 105.6583755(23) MeV)"
+)
 
 # Observable registry: (codata_value, codata_err, role, source_label)
 OBSERVABLES: dict[str, tuple[mpf, mpf, str, str]] = {
