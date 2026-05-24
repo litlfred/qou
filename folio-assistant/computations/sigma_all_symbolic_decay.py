@@ -31,6 +31,7 @@ from datetime import datetime, timezone
 from itertools import product as cartesian
 from pathlib import Path
 import math
+from mpmath import mp
 import sympy as sp
 import time
 
@@ -87,10 +88,10 @@ def main():
             "elapsed_s": elapsed,
             "factored_str": str(f),
             "value_at_q0": val,
-            "abs_log10": math.log10(abs(val)),
+            "abs_log10": float(mp.log10(abs(val))),
         })
         print(f"A={A}: {elapsed:.2f}s — {f}")
-        print(f"   |Σ_all|(q0) = {abs(val):.6e}, log10 = {math.log10(abs(val)):.4f}")
+        print(f"   |Σ_all|(q0) = {abs(val):.6e}, log10 = {float(mp.log10(abs(val))):.4f}")
 
     # Two-step ratio (exact symbolic): Σ(A+2)/Σ(A) should be (q^4-1)^2 · 3 / (8 q^4)
     print()
@@ -112,11 +113,11 @@ def main():
               f"predicted = {asym_ratio_q0:.8e}, rel err = {rel_err:.2e}")
 
     # Per-A asymptotic
-    per_A_decay = math.sqrt(asym_ratio_q0)
-    log10_decay = math.log10(per_A_decay)
+    per_A_decay = mp.sqrt(asym_ratio_q0)
+    log10_decay = mp.log10(per_A_decay)
     print()
-    print(f"Per-A geometric mean decay rate: {per_A_decay:.6f}")
-    print(f"log10 per-A: {log10_decay:.4f}")
+    print(f"Per-A geometric mean decay rate: {float(per_A_decay):.6f}")
+    print(f"log10 per-A: {float(log10_decay):.4f}")
 
     # Precision schedule
     print()
@@ -125,7 +126,7 @@ def main():
     for dps_label, log10_floor in [('f64', -16), ('25 dps', -25), ('50 dps', -50), ('100 dps', -100), ('200 dps', -200)]:
         # log10|Σ(A)| ≈ log10(c0) + A·log10_decay
         # crossover when |Σ| < 10^floor:
-        c0_log10 = math.log10(abs(rows[0]['value_at_q0']))
+        c0_log10 = mp.log10(abs(rows[0]['value_at_q0']))
         # actually fit
         import numpy as np
         As = np.array([r['A'] for r in rows])
@@ -147,8 +148,8 @@ def main():
         ),
         "two_step_ratio_symbolic": str(sp.factor(asym_ratio_sym)),
         "two_step_ratio_at_q0": asym_ratio_q0,
-        "per_A_decay_rate": per_A_decay,
-        "log10_per_A_decay": log10_decay,
+        "per_A_decay_rate": float(per_A_decay),
+        "log10_per_A_decay": float(log10_decay),
         "rows": rows,
         "precision_schedule": {
             "f64": 27,
