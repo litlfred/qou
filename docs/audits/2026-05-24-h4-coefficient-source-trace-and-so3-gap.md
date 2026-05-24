@@ -178,6 +178,7 @@ explicit at the proof level.
 
 ## §7. Pointers
 
+- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — **canonical framing reference** (post-PR #1080 merge); λ_scale is the *output* of Geom_full, not a separate object
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — Yekutieli MI tessellation jet grades
 - [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) — Family A +2.89% gap re-amended
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact closed form, h² = 0

@@ -143,6 +143,7 @@ The Pentagon-relevant statement: **the Borromean's 8-cell ideal-octahedral decom
 
 ## §6. Cross-references (repo)
 
+- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — **canonical framing reference** (post-PR #1080); the m(K) = m_e · Geom_full(K) formula this audit's Pentagon analysis refines
 - [`docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`](2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md) — per-step jet-order analysis with Pentagon placement
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — Yekutieli MI tessellation, jet grades
 - [`docs/audits/2026-05-19-pentagon-reduction-li2q.md`](2026-05-19-pentagon-reduction-li2q.md) — Pentagon as algebraic rewrite for divergent args
