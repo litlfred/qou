@@ -291,12 +291,18 @@ export function checkRespectsArchimedeanWall(
 // per-script audit tags like `# polynomial_q_not_applicable`),
 // blank lines, and `from __future__ import` lines — any
 // combination of these may precede the triple-quoted docstring.
-// Empirically: ~360 of the 363 baseline `code_is_commented`
-// fails on quantum-observable-universe were scripts that DO have
-// a docstring but ship a shebang + audit-tag comment block
-// above it.
+// Many baseline `code_is_commented` fails were scripts that DO
+// have a docstring but ship a shebang + audit-tag comment block
+// above it; tolerating these patterns eliminates the false
+// positives without weakening the actual "module has a
+// docstring or rich comments" check.
+//
+// Leading whitespace `\s*` is allowed at the start of each
+// preamble line so an indented `from __future__ import …` or an
+// indented `# comment` (rare but legal Python) doesn't fail the
+// match.
 const MODULE_DOCSTRING_RE =
-  /^(?:\s*\n|#![^\n]*\n|#[^\n]*\n|from\s+__future__\s+import[^\n]*\n)*\s*("""[\s\S]*?"""|'''[\s\S]*?''')/;
+  /^(?:\s*\n|\s*#![^\n]*\n|\s*#[^\n]*\n|\s*from\s+__future__\s+import[^\n]*\n)*\s*("""[\s\S]*?"""|'''[\s\S]*?''')/;
 
 /**
  * Pass if either:
