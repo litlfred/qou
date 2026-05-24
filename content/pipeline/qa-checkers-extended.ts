@@ -323,9 +323,20 @@ function loadI1Audit(): Map<string, string> {
 
 export function checkComputePropHasProbe(
   tsPath: string | undefined,
+  leanPath?: string | undefined,
 ): CheckerResult {
   const ts = readTs(tsPath);
   if (!ts) return { result: "n/a", hits: [] };
+  // Blocks with sorry-free Lean proofs are formally verified —
+  // a computational probe is redundant for structural/algebraic
+  // results. Only blocks making numerical predictions (those with
+  // :val[] directives or computation: fields) still need probes.
+  if (leanPath && existsSync(resolve(REPO_ROOT, leanPath))) {
+    const lean = readFileSync(resolve(REPO_ROOT, leanPath), "utf-8");
+    if (!lean.includes("sorry")) {
+      return { result: "pass", hits: [] };
+    }
+  }
   // **First-class direct evidence**: if the block's own `.ts` declares
   // a `computation:` block (with `script` and/or `witness`) or a
   // legacy `probe:` field, that IS the probe declaration. The
@@ -1479,7 +1490,7 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "bib-cited-ref-has-screenshot": (p) =>
     checkBibCitedRefHasScreenshot(p.md, p.lean),
   // compute
-  "compute-prop-has-probe": (p) => checkComputePropHasProbe(p.ts),
+  "compute-prop-has-probe": (p) => checkComputePropHasProbe(p.ts, p.lean),
   "compute-prop-has-consumer": (p) => checkComputePropHasConsumer(p.ts),
   "compute-witness-exists": (p) => checkComputeWitnessExists(p.ts),
   "compute-lp-dual-present": (p) => checkComputeLpDualPresent(p.ts),

@@ -505,7 +505,8 @@ const COMPUTE: QaCriterionDefinition[] = [
     domain: "compute",
     description:
       "Every `prop:`/`theorem:` block has a corresponding probe witness " +
-      "under `folio-assistant/computations/`. The probe is the I1 of the " +
+      "under `folio-assistant/computations/`, OR a sorry-free Lean proof " +
+      "(which is a stronger guarantee). The probe is the I1 of the " +
       "13-pattern audit: a numerical check that the proposition's claim " +
       "holds at a representative parameter point.",
     default_severity: "major",
