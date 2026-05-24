@@ -1,0 +1,50 @@
+name: release-please
+
+# Tier-2 item 2f from workplan v2. Automates semver + CHANGELOG +
+# release-PR creation for the 7 published packages under tools/.
+#
+# How it works:
+#   1. On every push to main, `googleapis/release-please-action`
+#      walks the commit history since the last release tag for each
+#      configured package.
+#   2. It groups commits by conventional-commit type
+#      (feat/fix/docs/...) and computes the next semver bump:
+#        - feat:        minor bump (or patch with bump-patch-for-minor-pre-major)
+#        - fix:         patch bump
+#        - feat!:       major bump
+#        - chore/test/build: hidden by default; no release
+#   3. If there are releasable commits since the last tag, it
+#      opens (or updates) a "release-pr" with:
+#        - CHANGELOG.md updated
+#        - version bumped in pyproject.toml / Cargo.toml / package.json
+#          (per the package's `extra-files` config)
+#   4. Merging the release-PR triggers the second pass which CREATES
+#      the GitHub release + tag (e.g. `pyhecke-v0.2.0`).
+#   5. Downstream publish workflows (pyhecke-pypi-publish.yml,
+#      pyhecke-native-wheels.yml, etc.) are still triggered manually
+#      via workflow_dispatch — release-please does NOT auto-publish.
+#      Owner reviews the cut release on GitHub, then triggers the
+#      publish workflow with `target=pypi`.
+#
+# Config:
+#   .github/release-please-config.json   — per-package rules
+#   .github/release-please-manifest.json — current released versions
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write       # create release PRs + tags + releases
+  pull-requests: write  # open / update the release PR
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: .github/release-please-config.json
+          manifest-file: .github/release-please-manifest.json
