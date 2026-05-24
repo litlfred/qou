@@ -123,6 +123,13 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    # Stamp start time BEFORE the canonical subprocess so `durationMs`
+    # in the emitted witness reflects true end-to-end wall time
+    # (canonical run + projection + write), not just the projection
+    # step. Without this the canonical's ~245s would be invisible and
+    # the wrapper would self-report ~9ms total — misleading for audit.
+    t0 = time.monotonic()
+
     if not args.no_rerun_canonical:
         run_canonical(args.method, args.target_dps)
     else:
@@ -135,7 +142,11 @@ def main() -> int:
     projected = project_to_low_isotope()
     src = projected["src"]
 
-    builder = WitnessBuilder("low-isotope-mass-table", engine="python+mpmath")
+    builder = WitnessBuilder(
+        "low-isotope-mass-table",
+        engine="python+mpmath",
+        start_time=t0,
+    )
     (
         builder
         .set_description(
