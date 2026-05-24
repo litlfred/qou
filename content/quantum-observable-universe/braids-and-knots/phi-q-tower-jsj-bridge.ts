@@ -12,7 +12,6 @@ export default conjecture({
     "def:phi-q-piece",
     "prop:phi-q-tower-algebraic-stratification",
     "conj:kashaev-volume-conjecture",
-    "prop:mass-tower-operator-valued",
     "prop:topological-mass-formula",
     "rem:kashaev-as-archimedean-realization",
     "cor:quantum-dilogarithm",

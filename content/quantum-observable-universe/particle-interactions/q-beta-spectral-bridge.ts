@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "prop:neutron-qvalue-symbolic",
     "prop:beta-decay-transfer-matrix",
-    "conj:archimedean-remainder-exponential-decay",
   ],
   cites: [
     "wenzl1988",

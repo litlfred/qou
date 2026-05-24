@@ -47,7 +47,6 @@ export default conjecture({
     "prop:curvature-rank-gb-stratification",
     "cor:commutative-chirality-vanishes",
     "prop:bohr-radius-categorical",
-    "prop:archimedean-hartree-derivation",
     "prop:force-carrier-bring-uniqueness",
     "prop:phi-q-tower-algebraic-stratification",
     "conj:phi-q-tower-jsj-bridge",

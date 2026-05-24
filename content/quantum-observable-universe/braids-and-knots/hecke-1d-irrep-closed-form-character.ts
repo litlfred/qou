@@ -9,7 +9,6 @@ export default proposition({
   title:
     "Universal closed form for 1-d Hecke irrep characters: $\\chi^{(n)}_q(\\beta) = q^w \\cdot ([2]_q/2)^m$ and $\\chi^{(1^n)}_q(\\beta) = (-q^{-1})^w \\cdot (-[2]_q/2)^m$ for typed braids of any $n$",
   uses: [
-    "prop:hecke-branching-trace-decomposition",
     "prop:q-beta-cos-resummation",
   ],
   cites: [

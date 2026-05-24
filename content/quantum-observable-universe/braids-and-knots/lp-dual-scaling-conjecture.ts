@@ -77,11 +77,8 @@ export default remark({
   label: "rem:lp-dual-scaling-conjecture",
   title:
     "Candidate closed forms for $y_0^*(A, |T_3|)$ — A-scaling research notes",
-  interprets: "rem:lp-dual-isospin-invariance",
   uses: [
-    "rem:lp-dual-isospin-invariance",
     "prop:spin-involution-lp-dual-invariance",
-    "prop:mass-formula-iterative-lp-dual",
   ],
   tags: [
     "lp-duality",

@@ -103,7 +103,7 @@ export default chapter({
         "atom-mass-full-hecke",
         "atom-mass-full-hecke-table-data",
         "atom-mass-full-hecke-table-data",
-      ]),
+      ],
     }),
     section({
       title: "Mass predictions: methodology and validation : comparison",
@@ -142,7 +142,7 @@ export default chapter({
         "dressed-quark-numerology-at-q0",
         "deuteron-binding-energy",
         "deuteron-binding-energy-proof",
-      ]),
+      ],
     }),
     section({
       title: "Mass predictions: per-particle derivations : comparison",
@@ -184,7 +184,7 @@ export default chapter({
         "hadron-half-life-verification-table4-data",
         "hadron-half-life-verification-table5-data",
         "hadron-half-life-verification-table6-data",
-      ]),
+      ],
     }),
     section({
       title: "Beta decay: mechanism, half-life, and tritium : comparison",
@@ -220,7 +220,7 @@ export default chapter({
         "double-magic-Ca40-diagram",
         "double-magic-Ca40-diagram-table-data",
         "double-magic-delta-i-bound",
-      ]),
+      ],
     }),
     section({
       title: "Beta decay: magic-shell consequences : comparison",
@@ -416,7 +416,6 @@ export default chapter({
         "centered-hecke-variance-positive",
         "centered-hecke-variance-positive-table-data",
         "centered-hecke-variance-positive-proof",
-        "q-clt-non-commutative",
         "archimedean-macroscopic-washout",
         "trace-locality-meets-gs-nonlocality",
         "trace-locality-meets-gs-nonlocality-proof",
@@ -433,7 +432,6 @@ export default chapter({
       blocks: [
         "transcendence-signatures-intro",
         "observables-algebraic-independence",
-        "observables-algebraic-dependence",
       ],
     }),
 

@@ -8,7 +8,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:algebraic-primality",
   ],
   tags: [
     "magic-numbers",

@@ -24,7 +24,6 @@ export default proposition({
     "prop:atomic-mass-gb-nf",
     "thm:wedderburn-mass-formula",
     "thm:knot-mass-formula-unified",
-    "prop:hecke-branching-trace-decomposition",
     "prop:categorical-mass-markov",
     "prop:binding-scale-catalan",
   ],

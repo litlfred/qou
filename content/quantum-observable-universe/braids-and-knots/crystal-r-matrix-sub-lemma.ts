@@ -30,7 +30,6 @@ export default proposition({
     "$\\mathrm{pole}(A^\\lambda_{\\mu\\nu}(\\sigma_i), T) = \\mathbf{1}[\\rho_T(i) \\le -1]$",
   uses: [
     "conj:crystal-graph-realization",
-    "prop:hecke-branching-trace-decomposition",
     "prop:alpha-shift-torus-knot",
   ],
   cites: [

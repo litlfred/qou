@@ -27,7 +27,6 @@ export default proposition({
     "Antipode-induced polynomial symmetry $q^{20} p(1/q) = -p(q)$ of the proton Markov trace closed form",
   uses: [
     "prop:atomic-mass-gb-nf",
-    "prop:hecke-branching-trace-decomposition",
   ],
   cites: ["wenzl1988", "hoefsmit1974", "kassel1995"],
   computation: {

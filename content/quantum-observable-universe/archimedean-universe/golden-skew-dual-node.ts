@@ -19,6 +19,5 @@ export default proposition({
   uses: [
     "rem:golden-ratio-degeneration",
     "prop:descartes-elliptic-curve",
-    "prop:mobius-golden-fixed-points",
   ],
 });

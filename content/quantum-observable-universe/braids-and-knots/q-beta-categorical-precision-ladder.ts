@@ -15,7 +15,6 @@ export default proposition({
     "prop:hoefsmit-V21-cos-symmetrization",
     "prop:hecke-1d-irrep-closed-form-character",
     "prop:tau-M-asymptotic-rep-theory",
-    "conj:archimedean-remainder-exponential-decay",
   ],
   cites: [
     "jones1985",

@@ -9,7 +9,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "prop:mass-tower-operator-valued",
   ],
   cites: [],
   tags: [

@@ -28,7 +28,6 @@ export default remark({
   uses: [
     "prop:q-hecke-seminormal-character-closure",
     "prop:markov-trace-recursive-reducer",
-    "prop:hecke-branching-trace-decomposition",
   ],
   cites: [
     "wenzl1988",

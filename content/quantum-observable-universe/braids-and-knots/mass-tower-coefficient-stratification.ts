@@ -10,7 +10,6 @@ export default proposition({
   },
   uses: [
     "prop:plancherel-weight-boundedness",
-    "rem:mass-formula-wedderburn-enumeration",
     "prop:gravity-spectral-prefactor",
     "prop:knot-factor-spectral-form",
   ],

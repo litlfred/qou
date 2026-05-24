@@ -10,7 +10,6 @@ export default conjecture({
     "def:rigid-monoidal-category",
     "def:categorical-action",
     "rem:hecke-algebra-from-braiding",
-    "conj:categorical-higgs-idempotent",
   ],
   tags: [
     "g-action",

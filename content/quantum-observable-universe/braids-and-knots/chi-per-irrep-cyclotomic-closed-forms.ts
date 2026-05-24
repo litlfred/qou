@@ -7,7 +7,6 @@ export default remark({
     "All three $V_\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ → $\\Phi_4^2$; $V_{(2,1)}$ → $\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum",
   uses: [
     "rem:chi-v3-closed-form-proof",
-    "rem:post-pr665-open-rd-inventory",
     "prop:hoefsmit-V21-cos-symmetrization",
     "rem:typed-b3-sub-braid-extraction",
   ],

@@ -31,7 +31,6 @@ export default proposition({
   uses: [
     "prop:operator-selection-lp",
     "prop:alpha-shift-torus-knot",
-    "prop:hecke-branching-trace-decomposition",
     "conj:crystal-graph-realization",
     "def:lp-duality-hypothesis-class",
   ],

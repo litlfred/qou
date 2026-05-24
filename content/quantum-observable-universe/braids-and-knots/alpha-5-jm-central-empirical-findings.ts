@@ -41,11 +41,8 @@ export default remark({
   label: "rem:alpha-5-jm-central-empirical-findings",
   title:
     "Empirical refutation of the simplest JM-central closed form for $\\alpha_5$",
-  interprets: "prop:mass-formula-iterative-lp-dual",
   uses: [
-    "prop:mass-formula-iterative-lp-dual",
     "prop:jucys-murphy-central-elements-qou",
-    "conj:shell-correction-term-seven",
   ],
   tags: [
     "empirical-finding",

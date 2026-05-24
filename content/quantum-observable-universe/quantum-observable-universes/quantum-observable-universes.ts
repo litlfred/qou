@@ -192,7 +192,6 @@ export default chapter({
         // targets — the broader electroweak cluster (forward refs to
         // `conj:electroweak-mass-eigenstate-count` etc.) remains
         // orphan and is a separate cleanup.
-        "categorical-higgs-idempotent",
         "g-action-on-substrate",
 
         "g-action-on-substrate-table1-data",

@@ -18,6 +18,5 @@ export default proposition({
   },
   uses: [
     "prop:golden-skew-dual-node",
-    "prop:mobius-golden-fixed-points",
   ],
 });

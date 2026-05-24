@@ -115,7 +115,6 @@ export default chapter({
       title: "Speculative reformulations",
       label: "sec:surreal-speculative",
       blocks: [
-        "hahn-substrate",
         "local-infinitesimal-field",
         "spectral-normal-form",
         "diophantine-birthday",

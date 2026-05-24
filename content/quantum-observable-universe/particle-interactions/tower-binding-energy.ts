@@ -17,7 +17,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:mass-tower-operator-valued",
         "rem:hecke-charge-mass-duality",
   ],
 });

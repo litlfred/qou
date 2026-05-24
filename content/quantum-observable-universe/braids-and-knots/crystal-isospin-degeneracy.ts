@@ -9,11 +9,9 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:shell-correction-term-seven",
     "conj:crystal-graph-realization",
     "prop:content-scaling-correspondence",
     "prop:spin-involution-lp-dual-invariance",
-    "rem:lp-dual-isospin-invariance",
   ],
   tags: [
     "crystal-limit",

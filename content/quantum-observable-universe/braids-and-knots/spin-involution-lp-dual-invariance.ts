@@ -79,9 +79,7 @@ export default proposition({
   uses: [
     "prop:frobenius-self-duality-forces-lp-dual-extraction",
     "prop:jucys-murphy-central-elements-qou",
-    "prop:mass-formula-iterative-lp-dual",
     "prop:antiparticle-crossing-reversal",
-    "rem:lp-dual-isospin-invariance",
   ],
   cites: ["kassel1995", "murphy1992"],
   tags: [

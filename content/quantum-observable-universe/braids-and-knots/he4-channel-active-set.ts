@@ -73,7 +73,6 @@ export default proposition({
     "$^4\\mathrm{He}$ operator-selection LP: primal $\\mathrm{T} \\oplus p$, active set $\\{\\mathrm{D} \\oplus \\mathrm{D},\\,{}^3\\mathrm{He} \\oplus n\\}$",
   uses: [
     "prop:operator-selection-lp",
-    "conj:magic-shell-stabilization",
   ],
   computation: {
     engine: "scipy",

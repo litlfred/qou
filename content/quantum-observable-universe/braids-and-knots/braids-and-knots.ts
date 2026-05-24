@@ -51,7 +51,6 @@ export default chapter({
         "trm-hopf-sigma1-sq-closed-form",
         "trm-hopf-sigma1-sq-closed-form-table2-data",
         "trm-hopf-sigma1-sq-closed-form-table1-data",
-        "hecke-log-decomposition",
         "hecke-log-decomposition-table-data",
         "hecke-algebra-from-braiding",
         "hecke-normal-form",
@@ -360,7 +359,7 @@ export default chapter({
         "skein-generation-proof",
         "knot-particle-generation",
         "knot-particle-generation-table-data",
-      ]),
+      ],
     }),
     section({
       title: "Skein Generation and Particle Correspondence : generation",
@@ -449,7 +448,6 @@ export default chapter({
         "rho-k-graded-expansion",
         "rho-k-graded-expansion-table2-data",
         "rho-k-graded-expansion-table1-data",
-        "hecke-branching-trace-decomposition",
         "operator-valued-magnitude-budget",
         "q-hecke-seminormal-character-closure",
       ],
@@ -506,7 +504,7 @@ export default chapter({
         "wedderburn-mass-formula",
         "frobenius-s-classification",
         "frobenius-s-classification-table3-data",
-      ]),
+      ],
     }),
     section({
       title: "Mass-formula derivation : generation",
@@ -552,7 +550,7 @@ export default chapter({
         "brane-tower-z-habiro",
 
         "brane-tower-z-habiro-table1-data",
-      ]),
+      ],
     }),
     section({
       title: "Hoefsmit convergence: construction : generation",
@@ -577,14 +575,11 @@ export default chapter({
       label: "sec:hoefsmit-convergence-magic-shells",
       blocks: [
         "hoefsmit-convergence-magic-shells-intro",
-        "conj-magic-shell-stabilization",
         "two-row-stratum",
         "he4-channel-active-set",
         "he4-two-row-dominance",
-        "he4-magic-shell-fingerprint",
         "schur-weyl-vanishing",
         "schur-weyl-vanishing-table-data",
-        "sw-3root-rational-integrand",
         "markov-trace-frobenius-selection",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
@@ -620,7 +615,7 @@ export default chapter({
         "bar-involution-table7-data",
         "bar-involution-table8-data",
         "polynomial-bar-involution",
-      ]),
+      ],
     }),
     section({
       title: "Markov axioms and braid-link enumeration : generation",
@@ -628,15 +623,13 @@ export default chapter({
       blocks: [
         "markov-axioms-braid-link-li2q-phiq-bar-intro",
         "polynomial-bar-involution-table-data",
-        "li2q-phiq-bar-symmetrization",
         "c5-involution-leibniz-decomposition",
-        "bar-symmetric-three-layer-synthesis",
         "markov-axioms-primitive",
         "markov-trace-inductive-limit",
         "braid-link-types",
         "braid-group-n-strand",
         "braid-group-n-strand-table3-data",
-      ]),
+      ],
     }),
     section({
       title: "Markov axioms and braid-link enumeration (continued) : generation",
@@ -667,11 +660,10 @@ export default chapter({
         "u-coordinate-discharges-table-data",
         "multi-link-jones-q1-extension",
         "per-wedderburn-block-c5-c6",
-        "post-pr665-open-rd-inventory",
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
-      ]),
+      ],
     }),
     section({
       title: "Hecke $u$-coordinate, $\\chi$-character closed-forms : generation",
@@ -705,7 +697,6 @@ export default chapter({
         // New H2 to rem:picard-lefschetz-thimble,
         // prop:baryon-product-from-alt + 1 more @ archimedean-universe
         // (accepted §5).
-        "sw-period-thimble-equivalence",
         "kashiwara-jones-alternation-interpretation",
         "hopf-jones-c3-categorical",
         "kashiwara-jones-c4-categorical",
@@ -721,7 +712,6 @@ export default chapter({
         "q-pochhammer-partial-product",
         "phi-q-categorical-truncation",
         "phi-q-categorical-truncation-proof",
-        "algebraic-quantum-volume-specialization",
       ],
     }),
 
@@ -828,7 +818,6 @@ export default chapter({
         "conway-kt-vol-injectivity-test",
         // Tightening of Q3: Jones-faithfulness theorem at crossing ≤ 10.
         "jones-faithfulness-crossing-8",
-        "archimedean-remainder-exponential-decay",
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",
         "pieri-photon-shift",
@@ -903,7 +892,6 @@ export default chapter({
         "intro-confined-particles-shells",
         "confined-particle",
         "confinement-category",
-        "electron-shell",
         "dressed-particle",
         "shell-closure-stability",
         "shell-closure-stability-interprets",
@@ -992,14 +980,11 @@ export default chapter({
       blocks: [
         "intro-lp-dual-jucys-murphy",
         "jucys-murphy-central-elements-qou",
-        "mass-formula-iterative-lp-dual",
         "alpha-5-jm-central-empirical-findings",
-        "lp-dual-isospin-invariance",
         "spin-involution-lp-dual-invariance",
         "lp-dual-scaling-conjecture",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
-        "mass-tower-operator-valued",
         "mass-endomorphism-jet-tower",
         "mass-endomorphism-jet-tower-table1-data",
       ],
@@ -1090,7 +1075,7 @@ export default chapter({
         "nuclear-knot-classification",
         "geom-yekutieli-alignment",
         "content-scaling-correspondence",
-      ]),
+      ],
     }),
     section({
       title: "Parity classification, atomic atlas, and discrepancy resolution : generation",
@@ -1127,7 +1112,7 @@ export default chapter({
         // Detangler R3 (2026-05-23): 6-row witness summary extracted
         // from alpha-shift-torus-knot.md.
         "alpha-shift-torus-knot-table-data",
-      ]),
+      ],
     }),
     section({
       title: "Spectral sequence, chirality, and confinement-NF structure : generation",
@@ -1180,7 +1165,6 @@ export default chapter({
         "knot-factor-shell-closed",
         "knot-factor-spectral-summary",
         "pauli-factor-wedderburn",
-        "mass-formula-wedderburn-enumeration",
         "mass-tower-coefficient-stratification",
 
         "mass-tower-coefficient-stratification-table1-data",
@@ -1212,11 +1196,10 @@ export default chapter({
         "alpha-k-derivation-procedure",
         "alpha-k-categorical-closure",
         "chi-lambda-w0-sign-weighting",
-        "averaging-resonance-rule",
         "atom-knot-mass-derivation",
 
         "atom-knot-mass-derivation-table1-data",
-      ]),
+      ],
     }),
     section({
       title: "$\\alpha_k$ derivation procedure : generation",
@@ -1252,7 +1235,7 @@ export default chapter({
         "macdonald-hook-telescope",
         "demazure-fiber-markov-trace",
         "wenzl-bridge-applicability-qou",
-      ]),
+      ],
     }),
     section({
       title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\alpha_k$ : generation",
@@ -1260,7 +1243,6 @@ export default chapter({
       blocks: [
         "wenzl-bridge-cyclotomic-lr-tensor-character-intro",
         "lr-tensor-character-bridge",
-        "lambda-scale-bring-bloch-identity",
         "wenzl-qmn-synergy",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
@@ -1284,11 +1266,10 @@ export default chapter({
         "six-term-per-derivation-weights-table1-data",
         "six-term-per-derivation-weights-table2-data",
         "six-term-per-derivation-weights-table3-data",
-        "shell-correction-term-seven",
         "crystal-isospin-degeneracy",
         "crystal-isospin-degeneracy-table-data",
         "isospin-mass-split-em-localisation",
-      ]),
+      ],
     }),
     section({
       title: "Six-term mass formula, crystal, isospin, and chirality : generation",
@@ -1348,7 +1329,6 @@ export default chapter({
         "derivation-audit-report-table1-data",
         "conj-canonical-knot-id-sdp",
         "conj-chirality-ribbon-frobenius",
-        "conj-brane-level-selection",
         "conj-rho-prefactor-structural",
       ],
     }),

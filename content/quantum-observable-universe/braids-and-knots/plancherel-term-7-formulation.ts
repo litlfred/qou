@@ -10,6 +10,5 @@ export default proposition({
   },
   uses: [
     "prop:spectral-sequence-collapse",
-    "conj:shell-correction-term-seven",
   ],
 });

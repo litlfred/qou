@@ -35,7 +35,6 @@ export default chapter({
       blocks: [
         "physical-regimes-intro",
         "brings-surface-unit-circle",
-        "seiberg-witten",
         "primordial-vortex",
         "geometric-drag",
       ],
@@ -148,10 +147,7 @@ export default chapter({
         "omega-constraints",
         "spectral-dynamics",
         // Seiberg--Witten on Bring's
-        "generation-dependent-sw",
-        "lepton-mass-integrals",
         "mi-sw-abelianisation",
-        "mi-sw-abelianisation-cartan",
         "mi-sw-abelianisation-cartan-proof",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
@@ -211,7 +207,7 @@ export default chapter({
         "chebyshev-degree-genus",
         "chebyshev-degree-genus-proof",
         "genus-ideal-characterisation",
-      ]),
+      ],
     }),
     section({
       title: "Descartes condition: torus-knot generators and genus completeness : characterisation",
@@ -322,7 +318,7 @@ export default chapter({
         "categorical-proton-exists",
         "categorical-proton-exists-proof",
         "categorical-proton-unique",
-      ]),
+      ],
     }),
     section({
       title: "Mesons and nucleons : characterisation",
@@ -382,7 +378,7 @@ export default chapter({
         // Detangler R3 (2026-05-23): 7-row ingredient-source map
         // extracted from alpha-em-derivation-exploration-options.md.
         "alpha-em-derivation-exploration-options-table-data",
-      ]),
+      ],
     }),
     section({
       title: "EM completeness and gauge coupling : characterisation",
@@ -414,7 +410,6 @@ export default chapter({
       label: "sec:archimedean-hartree-crystal",
       blocks: [
 "intro-archimedean-hartree-crystal",
-                "archimedean-hartree-derivation",
         "archimedean-functor-uniqueness",
         "bring-hyperbolic-knot-bloch-decomposition",
         "mass-tower-open-problems-classes",
@@ -428,7 +423,7 @@ export default chapter({
         "bloch-wigner-mathlib-filler-table3-data",
         "bloch-wigner-mathlib-filler-table2-data",
         "bloch-wigner-mathlib-filler-table1-data",
-      ]),
+      ],
     }),
     section({
       title: "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
@@ -444,7 +439,7 @@ export default chapter({
         "cl2-pentagon-and-faddeev-partial-table2-data",
         "cl2-pentagon-and-faddeev-partial-table1-data",
         "upstream-mathlib-additions",
-      ]),
+      ],
     }),
     section({
       title: "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
@@ -501,7 +496,7 @@ export default chapter({
         "nuclear-spin-parity",
         "nuclear-spin-parity-table-data",
         // Half-life calculations via Gröbner reductions
-      ]),
+      ],
     }),
     section({
       title: "Nuclear stability and decay : characterisation",
@@ -559,7 +554,7 @@ export default chapter({
         "shell-closure-normal-form-table1-data",
         "torus-knot-shell-binding",
 
-      ]),
+      ],
     }),
     section({
       title: "Atomic shells: construction foundations : characterisation",
@@ -641,7 +636,6 @@ export default chapter({
         "knot-formula-table-table5-data",
         "mass-from-generators",
         // Volume tower and Picard-Lefschetz decomposition (archimedean shadow only)
-        "picard-lefschetz-thimble",
         "volume-tower-decomposition",
         "cs-evaluation-faithfulness",
         // Transcendence and algebraic independence
@@ -661,9 +655,6 @@ export default chapter({
         "implications-algebraic-dependence",
         // Baryon periods and integration limits
         "baryon-product-from-alt",
-        "baryon-period-conjecture",
-        "baryon-integration-limit",
-        "mobius-golden-fixed-points",
         "golden-skew-dual-node",
         "golden-skew-dual-node-table-data",
       ],
@@ -678,15 +669,8 @@ export default chapter({
         "bar-apply-transfer",
         "golden-quartet-galois",
         "moduli-symmetry-d4",
-        "mobius-limit-from-thimble",
-        "morse-wall-q-moduli",
-        "delta-lambda-categorical-closure",
         // Categorical Markov-Frobenius ≡ algebraic residue (PL = archimedean shadow)
-        "jet-gb-pl-correspondence",
         // Algebraic-geometric duality with SW theory
-        "gb-reduction-pl-thimble-bijection",
-        "denominator-zeros-as-sw-critical-points",
-        "abelianisation-at-algebraic-poles",
       ],
     }),
     // ── §5. Orbital symmetry and cohomological embedding ────────────

@@ -10,7 +10,6 @@ export default proposition({
     "Convergence of $Q_\\beta^{\\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation)",
   uses: [
     "prop:q-beta-categorical-precision-ladder",
-    "conj:archimedean-remainder-exponential-decay",
     "prop:markov-trace-frobenius-selection",
   ],
   cites: [

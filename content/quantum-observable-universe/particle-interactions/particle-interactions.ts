@@ -44,8 +44,6 @@ export default chapter({
       label: "sec:confinement-selection",
       blocks: [
         "confinement-selection-intro",
-        "algebraic-primality",
-        "algebraic-primality-equals-empirical-at-q0",
         "confinement-lp",
         "confinement-nucleon-unit",
         "confinement-operator-selection",
@@ -57,7 +55,7 @@ export default chapter({
         // New H2 → confinement-lp accepted §5.
         "confinement-sdp-spectral-gap",
         "confinement-sdp-multi-operator",
-      ]),
+      ],
     }),
     section({
       title: "Confinement operator selection : vs",
@@ -76,8 +74,6 @@ export default chapter({
         // Absorbed from former Ch `encounter`: SDP-as-thimble-flow
         // interprets `prop:operator-selection-lp` (now in
         // braids-and-knots).
-        "sdp-as-thimble-flow",
-        "sdp-as-thimble-flow-table-data",
         "q-beta-cos-resummation",
         "q-beta-cos-resummation-table-data",
       ],
@@ -158,7 +154,7 @@ export default chapter({
         "ground-state-ordering-table1-data",
         "transfer-matrix-identities",
         "neutron-qvalue-symbolic",
-      ]),
+      ],
     }),
     section({
       title: "Transfer matrices and beta decay : vs",
@@ -167,7 +163,6 @@ export default chapter({
         "transfer-beta-decay-q-beta-spectral-intro",
         "q-beta-spectral-bridge",
         "q-beta-spectral-bridge-table-data",
-        "q-beta-form-a-n1-symbolic",
         "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",
         "beta-decay-interpretation",
