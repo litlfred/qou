@@ -177,6 +177,20 @@ CANONICAL_INTERFACE_PP = "pp coupling: σ at gen 3k+2 (positive)"
 CANONICAL_INTERFACE_NN = "nn coupling: σ + (-h)·𝟙 at gen 3k+2"
 CANONICAL_INTERFACE_PN = "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)"
 
+# NOTE (PR #1089 follow-up, 2026-05-24): the three labels above realise
+# the *uniform-flavor* channel assignment (one Hecke generator per
+# inter-nucleon arc, indexed only by the pair of nucleon types).  Per
+# `conj:inter-nucleon-channel-color-tube`
+# (`content/quantum-observable-universe/braids-and-knots/`),
+# this is the **flavor-only projection** of a categorically-refined
+# Bring color-tube weighted assignment that averages over the 9 color-
+# pair couplings (3 colors per nucleon × 3 colors per nucleon) on each
+# inter-nucleon arc.  The refinement is conjectural pending PR #1081
+# Task 3 (`conj:s5-so3-fiber-action`); see also
+# `docs/audits/2026-05-24-sign-flip-interpretation.md` for the
+# diagnostic evidence (R² = 0.83 linear-in-arc-count) that argues the
+# color-pair structure is the load-bearing missing detail.
+
 CANONICAL_CLOSURES = {
     (1, 0): "trefoil 3_1 = T(2,3)",                      # proton/electron
     (0, 1): "trefoil 3_1 = T(2,3)",                      # neutron
