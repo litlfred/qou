@@ -93,8 +93,26 @@ ATOM_ASSIGN = {
     # 4He = A·8G magic-atom rule, density 2m_e, A=4.
     "4He":  {"rule": "magic",    "A_units": 4, "rho_factor": 2,
              "origin": "framework: A·8G magic rule"},
-    # 6Li: no standard assignment — leave as no-prediction for now.
-    # 7Li: same.
+    # A ∈ {5, 6, 7} gap.  ⁵Li is an unbound resonance; ⁶Li and ⁷Li
+    # are bound but neither the Kashaev volume-law assignment (no
+    # census knot/link with Vol ≈ B_AME/m_e in the {51.5, 62.6, 76.8}
+    # range yet found) nor the α-cluster rule (defined only for
+    # A ≥ 8 via n_α ≥ 2) covers them.  Documented as an explicit
+    # gap row so the witness output makes the missing prediction
+    # visible.  See docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md
+    # for the knot-census target volumes and candidate paths.
+    "5Li":  {"rule": "gap",      "B_AME_MeV_target": 26.328,
+             "vol_kashaev_target_m_e_units": 26.328 / 0.51099895,
+             "vol_kashaev_target_2m_e_units": 26.328 / (2 * 0.51099895),
+             "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
+    "6Li":  {"rule": "gap",      "B_AME_MeV_target": 31.99405,
+             "vol_kashaev_target_m_e_units": 31.99405 / 0.51099895,
+             "vol_kashaev_target_2m_e_units": 31.99405 / (2 * 0.51099895),
+             "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
+    "7Li":  {"rule": "gap",      "B_AME_MeV_target": 39.24453,
+             "vol_kashaev_target_m_e_units": 39.24453 / 0.51099895,
+             "vol_kashaev_target_2m_e_units": 39.24453 / (2 * 0.51099895),
+             "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     # 8Be: α-cluster (n_α=2, n_pairs=1)
     "8Be":  {"rule": "alpha",    "n_alpha": 2, "n_pairs": 1,
              "origin": "framework: α-cluster n_α=2"},
@@ -115,10 +133,31 @@ ATOM_ASSIGN = {
 
 
 def predict(sym: str) -> dict | None:
-    """Return {B_pred, formula, origin, notes} or None if no rule."""
+    """Return {B_pred, formula, origin, notes} or None if no rule.
+
+    Returns a `rule == "gap"` record with `B_pred = None` for atoms
+    that are explicitly known-to-be-missing (A ∈ {5, 6, 7}) so the
+    witness output surfaces the gap instead of silently omitting
+    the row.  Truly unknown atoms (not in ATOM_ASSIGN at all) still
+    return None.
+    """
     info = ATOM_ASSIGN.get(sym)
     if not info:
         return None
+
+    if info["rule"] == "gap":
+        # Explicit known gap — emit a structured "no prediction" row.
+        return {
+            "B_pred": None,
+            "formula": "GAP — no atom→knot rule",
+            "origin": info["origin"],
+            "inputs": {
+                "B_AME_MeV_target": info["B_AME_MeV_target"],
+                "vol_kashaev_target_m_e_units": info["vol_kashaev_target_m_e_units"],
+                "vol_kashaev_target_2m_e_units": info["vol_kashaev_target_2m_e_units"],
+                "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md",
+            },
+        }
 
     if info["rule"] == "kashaev":
         knot, rho_f = info["knot"], info["rho_factor"]
