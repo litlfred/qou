@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Borromean baryon mass prediction under Yekutieli-extended λ_scale.
+"""EXPLORATORY (canonical infrastructure, unproved −G·h² numerical claim).
+
+Borromean baryon mass prediction under Yekutieli-extended λ_scale.
 
 Companion to `m_p_borromean_verification_50dps.py` (production:
 PROVED canonical Family A `λ_A = 5/2 + (3/4) h²`).  Here we wire
