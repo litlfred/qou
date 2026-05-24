@@ -103,9 +103,105 @@ Per [`content/quantum-observable-universe/archimedean-universe/electroweak-higgs
 
 The c_2 ratio does **not** reproduce CODATA — confirming q3's finding that torus-knot mass formulae cannot be the canonical `m(K) = m_e · Geom_full(K, q₀)` evaluated at h-order 2 alone (since the c_2 slice ignores higher h-orders, and since Vol(T(2,k)) = 0 for Seifert-fibered knots/links). The `c_{2j}` coefficients describe **h-curvature of the Markov trace**, not the physical mass directly. The mass for H/W/Z must derive via the Reshetikhin–Turaev chain (q2 probe, [`pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/pentagon_rt_torus_knot_higgs_probe.py)) or another route.
 
+## Algebraic proof (closes the sympy-verified identity to a theorem)
+
+The closed form `P_m(h) = (q^{2m+1} + q^{-(2m+1)}) / (2 [2]_q)` was stated and sympy-verified for `m = 1..6` in PR #1129; here is the algebraic chain that elevates "empirically verified for finitely many m" to "proved for all m ≥ 0".
+
+**Step 1 — Markov trace closed form for `T(2, 2m)`.**
+From the q3 audit ([`torus_knot_markov_trace_closed_form.py`](../../folio-assistant/computations/torus_knot_markov_trace_closed_form.py), commit `5418678c8`) via the Wedderburn decomposition `H_2(q) ≅ M_1 ⊕ M_1` with Schur elements `y_{(2)} = q² / [2]_q²`, `y_{(1,1)} = 1 / [2]_q²`:
+
+```
+tr_M(σ_1^k)  =  y_{(2)} · q^k  +  y_{(1,1)} · (-q^{-1})^k
+             =  (q^{k+2} + (-q^{-1})^k) / [2]_q²                  (1)
+```
+
+For even `k = 2m`, `(-q^{-1})^{2m} = q^{-2m}`, so
+
+```
+tr_M(σ_1^{2m})  =  (q^{2m+2} + q^{-2m}) / [2]_q²                  (2)
+```
+
+**Step 2 — Bar-symmetric projection of the trace.**
+The trace `tr_M(σ_1^{2m})` is NOT bar-symmetric (because `y_{(2)}/y_{(1,1)} = q²` is asymmetric in `q ↔ q^{-1}`). Decompose it into bar-symmetric (P) + bar-anti-symmetric (Q) parts via the symmetrization
+
+```
+P_m(h)  :=  (1/2) · [ tr_M(σ_1^{2m})|_q  +  tr_M(σ_1^{2m})|_{q^{-1}} ]
+         =  (q^{2m+2} + q^{-2m-2} + q^{2m} + q^{-2m}) / (2 · [2]_q²).      (3)
+```
+
+(The companion `Q_m := (1/2)[tr_M|_q − tr_M|_{q^{-1}}]` is the bar-anti-symmetric piece — see the sinh-partner probe, PR #1153.) Now group the four numerator terms:
+
+```
+q^{2m+2} + q^{-2m-2} + q^{2m} + q^{-2m}
+   = q · (q^{2m+1} + q^{-(2m+1)})  +  q^{-1} · (q^{2m+1} + q^{-(2m+1)})
+   = (q + q^{-1}) · (q^{2m+1} + q^{-(2m+1)})
+   = [2]_q · (q^{2m+1} + q^{-(2m+1)}).                                    (4)
+```
+
+(Verify: `q · q^{2m+1} = q^{2m+2}`, `q · q^{-(2m+1)} = q^{-2m}`, `q^{-1} · q^{2m+1} = q^{2m}`, `q^{-1} · q^{-(2m+1)} = q^{-2m-2}`. ✓)
+
+Substituting (4) into (3):
+
+```
+P_m(h)  =  [2]_q · (q^{2m+1} + q^{-(2m+1)}) / (2 · [2]_q²)
+        =  (q^{2m+1} + q^{-(2m+1)}) / (2 · [2]_q).                        (5)
+```
+
+This is the right-hand side of the unified identity. `P_m` is now in its clean bar-symmetric form.
+
+**Step 3 — Series expansion of `P_m(h)` around `h = 0`.**
+Substitute `q = (h + √(h²+4))/2` (the solution to `q − q⁻¹ = h`). At `h = 0`, `q = 1`, and `P_m(0) = (1 + 1) / 4 = 1/2`. The Taylor expansion of `q^{2m+1} + q^{-(2m+1)}` in `h` is even (the function is invariant under `q → q⁻¹` which is `h → −h`), so only even powers of `h` appear.
+
+**Step 4 — Even-coefficient extraction via the Chebyshev-of-the-second-kind identity.**
+A standard Fibonacci/Chebyshev identity ([Graham-Knuth-Patashnik, *Concrete Mathematics* (2nd ed., 1994), Exercise 6.41 + §6.6 Fibonacci-polynomial identity; also Riordan, *Combinatorial Identities* (1968), Ch 4 Eq 41a]) states:
+
+```
+q^{2m+1} + q^{-(2m+1)}
+   =  (q + q^{-1}) · Σ_{j=0}^m  C(m+j, 2j) · (q − q^{-1})^{2j}                    (4)
+```
+
+This is the inversion of the standard recurrence `q^{n+1} + q^{-(n+1)} = (q + q^{-1})(q^n + q^{-n}) − (q^{n-1} + q^{-(n-1)})` applied to the odd-index sequence; the coefficients `C(m+j, 2j)` are the standard Fibonacci-polynomial coefficients (cf. Vajda, *Fibonacci and Lucas Numbers* (1989), §III.16). Dividing both sides by `2 [2]_q = 2(q + q^{-1})`:
+
+```
+(q^{2m+1} + q^{-(2m+1)}) / (2 [2]_q)
+   =  Σ_{j=0}^m  C(m+j, 2j) / 2  ·  h^{2j}                                       (5)
+```
+
+Combining (5) of Step 2 and the divided form just above:
+
+```
+P_m(h)  =  Σ_{j=0}^m  C(m+j, 2j) / 2  ·  h^{2j}
+```
+
+This is exactly the unified binomial pattern, and it holds for **all `m ≥ 0`** algebraically — the sympy grid (m = 1..9, j = 0..5, 54 cells) is now redundant verification. **QED.**
+
+**Corollary (termination).** Since `C(m+j, 2j) = 0` for `j > m`, the expansion has degree exactly `2m` in `h`; equivalently, `T(2, 2m)` has a finite even-h Markov trace expansion of degree `2m`.
+
+**Corollary (substrate / root-of-unity forms).** Setting `q = e^η` (substrate, `η ∈ ℝ`):
+
+```
+P_m(h) = (e^{(2m+1) η} + e^{-(2m+1) η}) / (2 · (e^η + e^{-η}))
+       = cosh((2m+1) η) / (2 cosh η)
+```
+
+Setting `q = e^{iθ}` (root-of-unity):
+
+```
+P_m(h) = cos((2m+1) θ) / (2 cos θ)         (the Chebyshev-of-the-second-kind form U_{2m}((q+q⁻¹)/2)/something — equivalently, the (2m+1)-th Chebyshev `T` ratio).
+```
+
+These are the **hyperbolic** and **trigonometric** avatars of the same algebraic identity (5); the bar-symmetric kernel in Phase 5b's three-avatars synthesis (`Li_2^q ↔ cos_q ↔ cosh`) is realized concretely by the trace polynomial `P_m`.
+
+**Reference for the binomial identity (4):**
+- Graham, R. L., Knuth, D. E., Patashnik, O. *Concrete Mathematics: A Foundation for Computer Science* (2nd ed.). Addison-Wesley, 1994. §6.6 (Fibonacci numbers), Eqs (6.119)-(6.121) and Exercise 6.41.
+- Riordan, J. *Combinatorial Identities*. Wiley, 1968. Chapter 4, Eq. (41a).
+- Vajda, S. *Fibonacci and Lucas Numbers, and the Golden Section: Theory and Applications*. Halsted Press, 1989. §III.16 (Fibonacci polynomials).
+
+The identity (4) is itself a folklore result; the Chebyshev-of-the-second-kind connection is implicit in Lucas (1878) and standard in any modern treatment of Fibonacci polynomials.
+
 ## What this finding IS
 
-A unified closed-form characterization of the **entire T(2, 2m) torus-link family** in H_2(q). Every even-h coefficient is a single binomial `C(m+j, 2j)/2`; the triangular and tetrahedral patterns are the `j = 1, 2` slices of one identity. Sympy verifies it exactly across `m = 1..9, j = 0..5` (54 cells), and by mathematical induction on the binomial identity, it holds for all m, j.
+A unified closed-form characterization of the **entire T(2, 2m) torus-link family** in H_2(q). Every even-h coefficient is a single binomial `C(m+j, 2j)/2`; the triangular and tetrahedral patterns are the `j = 1, 2` slices of one identity. Sympy verifies it exactly across `m = 1..9, j = 0..5` (54 cells); the algebraic proof above (Steps 1-3, via the Fibonacci-polynomial identity) elevates this from finite verification to a theorem for all `m ≥ 0`.
 
 ## What this finding is NOT
 
