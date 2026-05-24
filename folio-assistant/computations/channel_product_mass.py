@@ -39,6 +39,7 @@ Usage:
 import math
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, q_int, HBAR_Q, Q_ERR
@@ -78,8 +79,8 @@ print(f"  α  = m_e × 8G = {ALPHA:.6f} MeV")
 print()
 print(f"  Proton channel sum:   a = -HA/2 = {a_proton:.10f}")
 print(f"  Neutron channel sum:  b = -3(q²-1)(q²+1)²/(4q³) = {b_neutron:.10f}")
-print(f"  ln|a| = {math.log(abs(a_proton)):.10f}")
-print(f"  ln|b| = {math.log(abs(b_neutron)):.10f}")
+print(f"  ln|a| = {float(mp.log(abs(a_proton))):.10f}")
+print(f"  ln|b| = {float(mp.log(abs(b_neutron))):.10f}")
 print(f"  Ratio b/a = {b_neutron/a_proton:.6f}")
 print()
 
@@ -103,14 +104,14 @@ def channel_product_mass(Z, N):
 
     if A == 1:
         if Z == 1:  # hydrogen: single proton
-            B = -ALPHA * math.log(abs(a_proton))
+            B = float(-ALPHA * mp.log(abs(a_proton)))
         else:  # free neutron
-            B = -ALPHA * math.log(abs(b_neutron))
+            B = float(-ALPHA * mp.log(abs(b_neutron)))
         return M_free - B
 
     # Exact channel product: Σ_configs Π G_{n_m}(c_m) = a^Z · b^N
     # Binding = -α · ln|a^Z · b^N| = -α · (Z·ln|a| + N·ln|b|)
-    ln_product = Z * math.log(abs(a_proton)) + N * math.log(abs(b_neutron))
+    ln_product = float(Z * mp.log(abs(a_proton)) + N * mp.log(abs(b_neutron)))
     B = -ALPHA * ln_product
 
     return M_free - B
@@ -237,9 +238,9 @@ print()
 
 # B/A analysis
 print("Per-nucleon binding B/A from channel product:")
-print(f"  B/A_proton  = -α·ln|a| = {-ALPHA * math.log(abs(a_proton)):.4f} MeV")
-print(f"  B/A_neutron = -α·ln|b| = {-ALPHA * math.log(abs(b_neutron)):.4f} MeV")
-print(f"  B/A(56,56)  = {-ALPHA * (math.log(abs(a_proton)) + math.log(abs(b_neutron))) / 2:.4f} MeV")
+print(f"  B/A_proton  = -α·ln|a| = {float(-ALPHA * mp.log(abs(a_proton))):.4f} MeV")
+print(f"  B/A_neutron = -α·ln|b| = {float(-ALPHA * mp.log(abs(b_neutron))):.4f} MeV")
+print(f"  B/A(56,56)  = {float(-ALPHA * (mp.log(abs(a_proton)) + mp.log(abs(b_neutron))) / 2):.4f} MeV")
 print(f"  B/A observed (Fe-56): 8.7904 MeV")
 
 # ══════════════════════════════════════════════════════════════
@@ -260,8 +261,8 @@ w.add_parameter("q₀", Q)
 w.add_parameter("α (MeV)", ALPHA)
 w.add_parameter("a (proton sum)", a_proton)
 w.add_parameter("b (neutron sum)", b_neutron)
-w.add_parameter("ln|a|", math.log(abs(a_proton)))
-w.add_parameter("ln|b|", math.log(abs(b_neutron)))
+w.add_parameter("ln|a|", float(mp.log(abs(a_proton))))
+w.add_parameter("ln|b|", float(mp.log(abs(b_neutron))))
 
 for r in results:
     if r["A"] < 2:
