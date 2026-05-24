@@ -23,7 +23,7 @@ Neutron braid    →  (u, d, d) at three color sheets
                 = SU(2)_I action
 ```
 
-In the q → 0 crystal limit, every plain Hecke generator is bar-invariant (σᵢ = σᵢ⁻¹ at q = 0 since `h = q − q⁻¹` diverges). So the **crystal isospin** is exact and `crystal-isospin-degeneracy.md` covers it.
+In the q → 0 crystal limit, the plain Hecke generator becomes its own inverse via the **0-Hecke quotient relation** — at q = 0 the Hecke quadratic `σᵢ² = (q − q⁻¹)σᵢ + 1` degenerates such that `σᵢ` becomes idempotent on the crystal sub-quotient, giving `σᵢ⁻¹ = σᵢ` on the canonical basis (per `crystal-isospin-degeneracy.md`'s scope). The operator-valued averaged crossing `⋈_K = σ_g − (h/2)·𝟙` does **not** have a naive crystal limit precisely because `h = q − q⁻¹` diverges at q = 0 — that's the open extension. So crystal-isospin-degeneracy applies cleanly to plain generators on the 0-Hecke quotient, and the `⋈_K` operator-valued interfaces need a regularised functional to extend.
 
 In the canonical Hecke regime (q = q₀ ≈ 1.11), the inter-nucleon `⋈_K` interfaces have **operator-valued bar-anti-symmetric residue**:
 
@@ -31,9 +31,18 @@ In the canonical Hecke regime (q = q₀ ≈ 1.11), the inter-nucleon `⋈_K` int
 - `nn`: σ_g⁻¹ (negative, −h on bar-anti-sym side)
 - `pn`: σ_g − h/2 · 𝟙 (averaged, "neutral" projection)
 
-The exponent-inversion symmetry of `crystal-isospin-degeneracy.md` swaps `pp ↔ nn` (σ ↔ σ⁻¹) and **fixes pn** (since σ_avg is bar-symmetric). At q = 0 the h-residues vanish and `pp ↔ nn` is exact; at q = q₀ the h-residue introduces a small anomaly proportional to `h(q₀) ≈ 0.209`.
+The exponent-inversion symmetry of `crystal-isospin-degeneracy.md` swaps `pp ↔ nn` (σ ↔ σ⁻¹) and **fixes pn** (since σ_avg is bar-symmetric). At q = 0 (0-Hecke quotient) the swap is exact via the idempotent relation; at q = q₀ ≈ 1.11 the operator-valued residue introduces a **bar-anti-symmetric anomaly** carrying a factor `h(q₀) ≈ 0.209` (since `h = q − q⁻¹` is bar-anti-symmetric).
 
-**This is the source of the +0.030% (305 ppm) substrate flavor split** `Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³)/3` (per [`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py)): the small q₀-anomaly in the isospin Z/2 symmetry.
+**This is the source of the +0.030% (305 ppm) substrate flavor split** `Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³)/3` (per [`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py)). Bar-symmetry parity of the leading term:
+
+- `ℏ_q² = (q-1)²/q²` → bar-symmetric (anti-sym squared)
+- `h = q − q⁻¹` → bar-**anti-symmetric**
+- `[2]_q = q + q⁻¹` → bar-symmetric
+- `(1 + ℏ_q³)` → mixed (1 is bar-sym, ℏ_q³ is bar-anti-sym)
+
+Leading term `ℏ_q² · h · [2]_q · 1` is (sym)·(anti-sym)·(sym)·(sym) = **bar-anti-symmetric**, as expected for a quantity (`m_n − m_p`) that itself transforms under the isospin Z/2 swap. The bar-symmetric subleading contribution `ℏ_q² · h · [2]_q · ℏ_q³` (bar-anti-sym × bar-anti-sym = bar-sym) is the next-order canonical correction.
+
+So the 305 ppm IS the **bar-anti-symmetric leading-order canonical-isospin q₀-anomaly** — exactly what the Z/2 swap predicts.
 
 ## §3. Why this matters for L3 / Wigner SU(4)
 
@@ -51,11 +60,11 @@ The existing `crystal-isospin-degeneracy.md` proves the proposition for the plai
 
 The crystal limit `q → 0` makes `h = q − q⁻¹ → −∞`. The `−h/2` shift in `σ_avg = σ − h/2` diverges. A regularised functional `S_crystal^reg` is needed, replacing `−h/2` with a finite limit (e.g., the leading-order `q⁻¹/2` term or a regulated Cesàro limit).
 
-### Step 2: Bar-symmetric inversion invariance
+### Step 2: Bar-anti-symmetric inversion residue
 
-At canonical q = q₀, the natural isospin Z/2 action is `σ_g ↔ σ_g⁻¹` on `pp / nn` and identity on `pn`. The shell-correction sum should be invariant under this action **up to bar-symmetric residue terms** proportional to `h²` or `h_q² · [2]_q`.
+At canonical q = q₀, the natural isospin Z/2 action is `σ_g ↔ σ_g⁻¹` on `pp / nn` and identity on `pn`. The shell-correction sum should be invariant under this action **up to bar-anti-symmetric residue terms** carrying a factor of `h = q − q⁻¹`.
 
-The 305 ppm flavor split `Δm/M_N` is precisely this bar-symmetric residue. It IS the "anomaly" in canonical isospin.
+The 305 ppm flavor split `Δm/M_N` is precisely this **bar-anti-symmetric leading residue** (carrying an overall factor of `h`; see §3 above for the four-factor parity decomposition). It IS the canonical-isospin q_0-anomaly.
 
 ### Step 3: Lift to SU(2)_I
 
