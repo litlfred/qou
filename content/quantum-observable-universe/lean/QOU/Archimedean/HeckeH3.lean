@@ -111,6 +111,44 @@ theorem stdRep3_braid :
           Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
     ring
 
+/-! ## §3a  T(3, n) center: (σ₀ σ₁)^3 = I in (2,1) — q-independent -/
+
+/-- **Structural identity** (PR derivation 2026-05-24): in the standard
+    (2,1) representation of H₃(q), the cube of σ₀σ₁ is the identity
+    matrix, exactly, for all q.
+
+    Direct consequence: the matrix M = σ₀σ₁ has minimal polynomial
+    X² + X + 1, whose roots are the primitive cube roots of unity
+    e^{±2πi/3} = −1/2 ± i√3/2.  These eigenvalues are q-independent.
+
+    **Corollary for T(3, n) torus knots.**  The braid word for the
+    T(3, n) torus knot family is (σ₀σ₁)^n in B₃.  The (2,1) character
+    is therefore
+        χ^{(2,1)}((σ₀σ₁)^n)  =  2 cos(2πn/3)  ∈  {−1, −1, +2}
+    cyclically with n mod 3 — **q-independent**.
+
+    This means the Fibonacci/Chebyshev-of-second-kind h-polynomial
+    pattern proved for T(2, 2m) in H₂(q) (PR #1165) does NOT extend
+    to T(3, n) via the (2,1) channel of H₃(q): the (2,1) contribution
+    is a pure 3-cycle character with no h-dependence.
+
+    The non-trivial q-dependence of J_{T(3, n)}(q) lives entirely in
+    the trivial (q^{2n}) and sign (q^{-2n}) Wedderburn channels.
+
+    **Computational provenance**: sympy-verified at q symbolic in
+    [`folio-assistant/computations/t3n_binomial_pattern_probe.py`]. -/
+-- Ref: [jones1987]
+theorem stdRep3_M_cubed_eq_one :
+    (stdRep3_gen0 * stdRep3_gen1) ^ 3 = (1 : TMatrix) := by
+  -- Unfold M^3 into an explicit triple product so `simp` can chew it
+  -- with `Matrix.mul_apply` + `Fin.sum_univ_two`.
+  rw [show (3 : ℕ) = 2 + 1 from rfl, pow_succ, sq]
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [stdRep3_gen0, stdRep3_gen1, q_from_t, q_inv_from_t,
+          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
+    ring
+
 /-! ## §4  HeckeRep instance -/
 
 /-- The standard (2,1) representation of H₃(q) as a `HeckeRep` instance. -/
