@@ -34,6 +34,8 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from hecke_core import (
     build_nucleon_nf,
     check_frobenius,
+)
+from _deprecated.hecke_core_legacy import (
     binding_energy,
     classify_nuclear_knot,
 )

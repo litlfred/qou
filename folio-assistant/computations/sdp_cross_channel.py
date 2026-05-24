@@ -185,7 +185,7 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
     Returns a dict with
       y0, y_lambda, cross_blocks, chi_lambda, objective_value, status.
     """
-    from hecke_core import atom_character_raw
+    from _deprecated.hecke_core_legacy import atom_character_raw
     import math as _math
 
     if not _HAVE_CVXPY:
@@ -422,10 +422,12 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
     sys.path.insert(0, '.')
     from hecke_core import (partitions_of, partition_dimension,
                              partition_conjugate, q_hook_product,
-                             _build_ysn_matrices, atom_character_raw,
-                             M_E_MEV, _step_chain_generic,
-                             _identity, _matmul_dim, _trace_dim,
-                             _crossing_in_partition)
+                             M_E_MEV)
+    from _deprecated.hecke_core_legacy import (
+        _build_ysn_matrices, atom_character_raw,
+        _step_chain_generic, _identity, _matmul_dim,
+        _trace_dim, _crossing_in_partition,
+    )
 
     # Closure: μ_λ(q), chi_λ(W_atom at q)
     def partition_entries_at_q(q):
@@ -472,8 +474,9 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
         import math as _math
         h_q = q - 1.0 / q
         # Build YSN matrices at this q (NOT the globally-precomputed ones)
-        from hecke_core import (_standard_tableaux, _swap_tab,
-                                 _content_at)
+        from _deprecated.hecke_core_legacy import (
+            _standard_tableaux, _swap_tab, _content_at,
+        )
         n = sum(partition)
         if n < 2:
             return 1.0
@@ -636,8 +639,10 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
     sys.path.insert(0, '.')
     from hecke_core import (partitions_of, q_hook_product,
                              wedderburn_weight, partition_dimension,
-                             lp_shadow_price, partition_jet_depth,
                              M_E_MEV, partition_conjugate)
+    from _deprecated.hecke_core_legacy import (
+        lp_shadow_price, partition_jet_depth,
+    )
     # Override q for this sweep by monkey-patching Q temporarily?
     # Too invasive.  Instead: reuse existing partitions, just recompute μ_λ
     # using q_int(c, q) · q_int(c+1, q) as a function of q.
@@ -702,7 +707,7 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
 
 if __name__ == '__main__':
     # Smoke test: solve for a small set of partitions
-    from hecke_core import _PARTITION_TABLE
+    from _deprecated.hecke_core_legacy import _PARTITION_TABLE
     import sys
 
     # Small subset: k=2..4 with dim >= 2

@@ -191,88 +191,21 @@ from pyhecke.constants import (  # noqa: E402
 
 
 # ════════════════════════════════════════════════════════════════════
-# Back-compat re-exports for the Phase-5 EXPLORATORY surface.
-# Per docs/audits/2026-05-24-hecke-core-canonical-audit.md, these
-# symbols have been carved out into `_deprecated/hecke_core_legacy.py`.
-# This block keeps `from hecke_core import X` working for every X that
-# was historically defined in this file, so the carve-out is a no-op
-# for external importers.
+# Phase-B cycle break (2026-05-24).
 #
-# New code should `from _deprecated.hecke_core_legacy import X` (or
-# better: not use these symbols at all — they are not on the canonical
-# derivation chain). Removing this block is a Phase-B follow-up that
-# requires updating the ~5 external importers listed in the legacy
-# file's docstring.
+# The Phase-5 EXPLORATORY surface (was the `from _deprecated.hecke_core_legacy
+# import (...)` re-export block here) has been removed.  External
+# consumers that still use the exploratory symbols import them
+# directly from `_deprecated.hecke_core_legacy` now — see the
+# legacy module's top docstring for the full list and `docs/audits/
+# 2026-05-24-hecke-core-canonical-audit.md` for the canonical-vs-
+# exploratory classification.
+#
+# This module imports nothing from `_deprecated/` — the import cycle
+# documented in the legacy file's top docstring is fully broken.
+# `_deprecated/hecke_core_legacy.py` still imports canonical symbols
+# from `hecke_core` (one-way), which is safe because `hecke_core` is
+# fully initialised by the time any consumer imports the legacy
+# module.
 # ════════════════════════════════════════════════════════════════════
-from _deprecated.hecke_core_legacy import (  # noqa: E402, F401
-    DELTA_22,
-    D_Q_22,
-    H_Q_22,
-    K_GAUSSIAN_MAX,
-    K_PARTITION_MAX,
-    MAGIC_NUMBERS,
-    S_REEB_PLANCK,
-    W_22,
-    Y_22,
-    _CATEGORICAL_SHELL,
-    _CHEBYSHEV_MAGIC,
-    _LazyPartitionTable,
-    _M22_S1,
-    _M22_S2,
-    _M22_S3,
-    _PARTITION_TABLE,
-    _YSN_ATTACHED,
-    _alternating_ordering,
-    _bc_22,
-    _build_ysn_matrices,
-    _chain_M22,
-    _chebyshev_magic,
-    _content_at,
-    _contrib_single_partition,
-    _count_syts_by_12_relation,
-    _crossing_M22,
-    _crossing_coeff,
-    _crossing_in_partition,
-    _diag_T1,
-    _diag_T2,
-    _ensure_ysn_attached,
-    _identity,
-    _jet_witness_path,
-    _load_categorical_shell,
-    _matmul2,
-    _matmul_dim,
-    _n4_fac_22,
-    _off_22,
-    _partition_table,
-    _phi1_from_ordering,
-    _phi1_nuclear,
-    _q_exp,
-    _q_gaussian_character_approx,
-    _standard_tableaux,
-    _step_chain_22,
-    _step_chain_generic,
-    _swap_tab,
-    _trace_dim,
-    atom_character_raw,
-    atom_frobenius_norm_sq,
-    atom_markov_trace,
-    atom_mass,
-    binding_energy,
-    binding_from_frobenius_pairing,
-    classify_nuclear_knot,
-    compute_phi1_full,
-    conjugate_pair_cross_term,
-    free_nucleon_frobenius_norm_sq,
-    knot_factor,
-    lp_shadow_price,
-    magic_proximity,
-    partition_character_sigma1,
-    partition_jet_depth,
-    partition_spectral_log_rate,
-    q_laplacian_eigenvalue,
-    q_resolvent_weight,
-    q_value_beta,
-    sdp_cross_channel_contribution,
-    unified_iterative_correction,
-    unified_iterative_correction_jet,
-)
+

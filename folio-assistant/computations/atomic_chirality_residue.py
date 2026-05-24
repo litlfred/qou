@@ -42,7 +42,7 @@ from hecke_characters import (
     chi_lambda_braid as _shared_chi_lambda_braid,
     _RUST_CHI_AVAILABLE as _RUST_AVAILABLE,
 )
-from hecke_core import _step_chain_generic
+from _deprecated.hecke_core_legacy import _step_chain_generic
 from q_mpmath import set_q, qfac
 from witness_base import WitnessBuilder
 
