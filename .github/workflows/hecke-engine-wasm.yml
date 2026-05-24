@@ -73,22 +73,38 @@ jobs:
           workspaces: 'tools/hecke-engine-wasm -> target'
 
       # Use jetli/wasm-pack-action over `curl | sh` — the upstream
-      # installer script has been flaky on PR #1094 build-wasm runs
-      # (intermittent install failures). The action caches the binary
-      # across runs and is the canonical wasm-pack installer for GH
-      # Actions.
+      # installer script has been flaky on PR #1094 build-wasm runs.
+      # Pin to v0.13.0 (latest stable as of 2026-05) to avoid the
+      # wasm-bindgen-cli version drift that the "latest" tag pulls in.
+      # The pinned version matches the wasm-bindgen 0.2.* family the
+      # crate uses, preventing the silent crate-vs-CLI mismatch that
+      # has been the most likely culprit for the prior CI failures.
       - name: Install wasm-pack
         uses: jetli/wasm-pack-action@v0.4.0
         with:
-          version: 'latest'
+          version: 'v0.13.0'
+
+      - name: Print toolchain versions (diagnostic for CI failures)
+        run: |
+          echo "--- rust ---"
+          rustc --version
+          cargo --version
+          echo "--- wasm-pack ---"
+          wasm-pack --version
+          echo "--- wasm32 target ---"
+          rustup target list --installed | grep wasm
 
       - name: Native cargo test (pure-Rust correctness)
         working-directory: tools/hecke-engine-wasm
-        run: cargo test --lib
+        run: cargo test --lib --verbose
 
       - name: wasm-pack build --release --target web
         working-directory: tools/hecke-engine-wasm
-        run: wasm-pack build --release --target web
+        # --mode no-install: don't try to download wasm-bindgen-cli at
+        # build time (we trust wasm-pack's bundled version for the
+        # pinned 0.13.0).  Verbose so any failure surfaces the actual
+        # cargo / wasm-bindgen step that errored.
+        run: wasm-pack build --release --target web --mode no-install -- --verbose
 
       - name: Verify WASM artifact size + presence
         working-directory: tools/hecke-engine-wasm
