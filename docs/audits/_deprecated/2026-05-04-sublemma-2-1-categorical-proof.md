@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Point-in-time status, intermediate workplan iteration, dead-end exploration, or earlier sublemma version superseded by a later "refined" iteration. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T2 for the deprecation rationale.
+
 # Sub-lemma 2.1 — categorical proof of the refined statement
 
 **Date:** 2026-05-04

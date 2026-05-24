@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Point-in-time status / workplan snapshot; the plan has been executed or the status superseded by later audits + integrated into main. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T3 for the deprecation rationale.
+
 # Mass-Table 1ppb Audit — 2026-05-09
 
 **Goal:** 1 ppb computational accuracy on derived nucleon / light-isotope
