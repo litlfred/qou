@@ -8,14 +8,7 @@ The $T_{3,5} = (\sigma_0 \sigma_1)^5$ weak vertex in $H_3(q)$
 reduces (38 Hecke + 18 Yang–Baxter steps) to **6 NF terms**
 in the standard basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$:
 
-| Basis element | Word | Coefficient | Fraction |
-|:---:|:---:|:---:|:---:|
-| $\gamma$ ($\mathbf{1}$) | $()$ | $+0.0893$ | $3.9\%$ |
-| $\sigma_0$ | $(0)$ | $+0.2369$ | $10.2\%$ |
-| $\sigma_1$ | $(1)$ | $+0.2369$ | $10.2\%$ |
-| $L_+$ ($\sigma_0\sigma_1$) | $(0,1)$ | $+0.1388$ | $6.0\%$ |
-| $L_-$ ($\sigma_1\sigma_0$) | $(1,0)$ | $+1.1388$ | $49.2\%$ |
-| $e^-$ ($\sigma_0\sigma_1\sigma_0$) | $(0,1,0)$ | $+0.4750$ | $20.5\%$ |
+See [Table 1](#tbl:tau-branching-ratio-witness-table1-data).
 
 $$
   \mathrm{net}(T_{3,5}) = 2.316,
@@ -68,11 +61,7 @@ $$
 
 ## Result
 
-| Model | $\mathrm{BR}(\tau \to e) / \mathrm{BR}(\tau \to \mu)$ | Deviation from PDG |
-|:---:|:---:|:---:|
-| **Factorized** ($|\mathcal{W}|^2$ universal) | $1.028$ | $0.34\%$ |
-| Product ($T_{2,n} \cdot T_{3,5} \cdot T_{2,7}$) | $0.709$ | $31\%$ |
-| PDG experiment | $1.025$ | — |
+See [Table 2](#tbl:tau-branching-ratio-witness-table2-data).
 
 The factorized model, in which the Markov trace of $T_{3,5}$
 is the universal matrix element, reproduces the PDG ratio to

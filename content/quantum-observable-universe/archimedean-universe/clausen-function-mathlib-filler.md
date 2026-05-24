@@ -21,15 +21,7 @@ $$
 The Lean file [`clausen-function-mathlib-filler.lean`](clausen-function-mathlib-filler.lean)
 provides:
 
-| Definition | Content | Status |
-|---|---|---|
-| `Cl_2 : ℝ → ℝ` | $\sum_{k\geq 1}\sin(k\theta)/k^2$ via `tsum` | unconditional, no longer opaque |
-| `Cl_2_zero` | $\mathrm{Cl}_2(0) = 0$ | proved by `simp` |
-| `Catalan_constant` | $G = \mathrm{Cl}_2(\pi/2)$ carrier | unconditional def |
-| `Vol_figure_8` | $2\,\mathrm{Cl}_2(\pi/3)$ carrier | unconditional def |
-| `Vol_Borromean` | $8\,\mathrm{Cl}_2(\pi/4)$ carrier | unconditional def |
-| `Cl_2_reflection_2pi_open` | sketch ansatz | open (Fourier-series infra) |
-| `Cl_2_pi_third_positive_open` | sketch ansatz | open (tail bounds) |
+See [Table 1](#tbl:clausen-function-mathlib-filler-table1-data).
 
 This unconditionalises the BW values used throughout the α_EM
 chain, replacing the previous opaque-or-cited references with
@@ -44,12 +36,7 @@ $\mathrm{Vol}(\mathcal{B}_3)$ via the Lean carriers in this file.
 
 ## Mathlib gaps still open after this filler
 
-| Missing piece | Used by | Substantive work needed |
-|---|---|---|
-| `Real.dilog` / `Complex.dilog` | Bloch-Wigner $D$ on $\mathbb{C}\setminus\{0,1\}$ | partial (`LiTwo` in dilogarithm-archimedean-limit.lean) |
-| `BlochGroup F` for number field $F$ | Suslin map, `BlochSuslinUniqueness` | substantial — quotient of free abelian group on $F^\times \times F^\times$ by 5-term pentagon |
-| Suslin map $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$ | `BlochSuslinUniqueness` | depends on `BlochGroup` |
-| Fourier-series identities for $\mathrm{Cl}_2$ | reflection / functional equation | depends on Mathlib's Fourier-series infra (in progress upstream) |
+See [Table 2](#tbl:clausen-function-mathlib-filler-table2-data).
 
 The four §3b-cond classes (BlochSuslinUniqueness, ArchimedeanLimit,
 BringZeroModeBlochClass, BringHyperbolicDecomposition,

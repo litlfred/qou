@@ -20,13 +20,7 @@ The coefficient $c_w$ is the amplitude of that configuration.
 
 The word length $\ell$ has a direct physical interpretation:
 
-| Length $\ell$ | Physical meaning | Role in the nucleus |
-|:---:|---|---|
-| $0$ | Identity $\mathbf{1}$ — no crossings active | The bare, unperturbed configuration |
-| $1$ | Single $\sigma_i$ — one crossing active | A single nucleon-pair interaction |
-| $2$ | Two crossings — a correlated pair | Two-body correlation |
-| $\ell$ | $\ell$ crossings active simultaneously | $\ell$-body correlation |
-| $L_{\max}$ | All crossings in the chain active | The fully correlated state (dominant term) |
+See [Table 1](#tbl:groebner-nf-computation-table1-data).
 
 The **weight distribution** $W(\ell) = \sum_{|w| = \ell} |c_w|$
 gives the total amplitude at each correlation level. For all
@@ -103,13 +97,7 @@ ${}^8\mathrm{Li}(3,5)$ have identical histograms).
 The histogram depends only on the Iwahori--Hecke algebra $H_A(q)$, not on
 the crossing coefficients. It factors as a product of $q$-integers:
 
-| $A$ | Histogram polynomial $\sum_\ell h(\ell)  r^\ell$ |
-|:---:|---|
-| $2$ | $[2]_r = 1 + r$ |
-| $3$ | $[2]_r^2 = (1+r)^2$ |
-| $4$ | $[2]_r^2 \cdot [3]_r = (1+r)^2(1+r+r^2)$ |
-| $5$ | $[2]_r^2 \cdot [3]_r^2$ |
-| $6$ | $[2]_r^2 \cdot [3]_r^2 \cdot [5]_r$ |
+See [Table 2](#tbl:groebner-nf-computation-table2-data).
 
 These are $q$-multinomial coefficients — the $q$-analogue of
 Pascal's triangle. The palindromicity of the histogram polynomial
@@ -204,18 +192,7 @@ inter-quark correlation that the Pauli principle creates.
 Computed witnesses (exact in $\mathbb{Z}[r, r^{-1}]$ for $A \leq 12$,
 $f_{64}$ at $q_0$ for display):
 
-| Nucleus | $A$ | $F_{\mathrm{Pauli}}^{(A)}$ | Magic? |
-|:---:|:---:|:---:|:---:|
-| ${}^4\mathrm{He}$ | $4$ | $0.812$ | $\star\star$ doubly magic |
-| ${}^5\mathrm{He}$ | $5$ | $0.638$ | |
-| ${}^6\mathrm{Li}$ | $6$ | $0.472$ | |
-| ${}^7\mathrm{Li}$ | $7$ | $0.438$ | |
-| ${}^8\mathrm{Be}$ | $8$ | $0.368$ | |
-| ${}^{9}\mathrm{Be}$ | $9$ | $0.843$ | |
-| ${}^{10}\mathrm{B}$ | $10$ | $0.295$ | |
-| ${}^{11}\mathrm{B}$ | $11$ | $0.296$ | |
-| ${}^{12}\mathrm{C}$ | $12$ | $0.129$ | |
-| ${}^{16}\mathrm{O}$ | $16$ | $\approx 0.059$ | $\star\star$ doubly magic (float) |
+See [Table 3](#tbl:groebner-nf-computation-table3-data).
 
 For each nucleus through $A = 12$, the symbolic witnesses are
 **exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(r)$,

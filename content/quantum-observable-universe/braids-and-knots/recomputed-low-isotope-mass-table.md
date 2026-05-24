@@ -21,13 +21,7 @@ PR #564, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K
 
 ## Cross-check (machine epsilon for all 5 atoms)
 
-| Atom | $Z$ | $N$ | $n = 3A$ | canonical $|\mathrm{tr}_M|$ | hybrid partition-sum | rel err |
-|---|:-:|:-:|:-:|---:|---:|---:|
-| $p$ | 1 | 0 | 3 | 1.0653062286 | 1.0653062286 | $3.96 \times 10^{-15}$ |
-| $n$ | 0 | 1 | 3 | 0.9232332972 | 0.9232332972 | $4.21 \times 10^{-15}$ |
-| $D$ | 1 | 1 | 6 | 0.3882864715 | 0.3882864715 | $7.01 \times 10^{-15}$ |
-| $T$ | 1 | 2 | 9 | 0.1040521187 | 0.1040521187 | $1.07 \times 10^{-14}$ |
-| $^{3}\mathrm{He}$ | 2 | 1 | 9 | 0.2065408586 | 0.2065408586 | $1.03 \times 10^{-14}$ |
+See [Table 1](#tbl:recomputed-low-isotope-mass-table-table1-data).
 
 ## Mass-table predictions (direct binding formulation)
 
@@ -78,14 +72,7 @@ The proton and neutron rows are **tautological** by construction.
 Witness:
 [`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
 
-| Atom | $\mathcal{M}_{\text{pred}}^{\mathrm{LO}}$ (MeV) | $\mathcal{M}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err | binding (CODATA) |
-|---|---:|---:|---:|---:|---:|
-| $p$ † | 938.272088 | 938.272088 | 0.0000 | 0.000 % | (anchor) |
-| $n$ † | 939.565421 | 939.565421 | 0.0000 | 0.000 % | (anchor) |
-| $D$ | 1877.837509 | 1875.612943 | $+2.2246$ | $+0.119$ % | 2.225 MeV |
-| $T$ | 2817.402929 | 2808.921133 | $+8.4818$ | $+0.302$ % | 8.482 MeV |
-| $^{3}\mathrm{He}$ | 2816.109597 | 2808.391607 | $+7.7180$ | $+0.275$ % | 7.718 MeV |
-| $^{4}\mathrm{He}$ | 3755.675017 | 3727.379378 | $+28.2956$ | $+0.759$ % | 28.295 MeV |
+See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
 † Proton and neutron predictions equal CODATA exactly because $m_p$
 and $m_n$ are upstream inputs in this LO form; $0.000\%$ is a
@@ -119,13 +106,7 @@ $L_+$, $L_-$, and $e^-$ contributions cancel exactly between
 proton and neutron, so the $Q$-value is carried entirely by the
 $\gamma + \sigma_0 + \sigma_1$ channels:
 
-| Channel | $\ell$ | $\Delta_i$ | $\Delta_i \cdot E_0$ (MeV) |
-|---|:-:|:-:|---:|
-| $\gamma$ (identity) | 0 | $h^2/2 \approx +0.02185$ | $+0.0915$ |
-| $\sigma_0$ | 1 | $-h/2 \approx -0.10453$ | $-0.4376$ |
-| $\sigma_1$ | 1 | $-h/2 \approx -0.10453$ | $-0.4376$ |
-| $L_+, L_-, e^-$ | $\ge 2$ | $0$ (single-wrap cancellation) | $0$ |
-| **Net** | | $h(h-2)/2 \approx -0.18722$ | **$+0.7836$** |
+See [Table 3](#tbl:recomputed-low-isotope-mass-table-table3-data).
 
 The $+0.168\%$ / $+1.31$ keV residual is the **brane-tower
 truncation correction** ([`neutron-qvalue-symbolic.md:110-114`](../../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)):
@@ -233,13 +214,7 @@ from CODATA) is the territory of:
 
 ## Performance summary
 
-| Path | Time (5 atoms) | Precision floor |
-|---|---:|---:|
-| Canonical reducer (`markov_trace_recursive`, 50 dps mpmath) | ~30 s | $10^{-50}$ |
-| Hybrid partition-sum (30-dps $y_\lambda$ + float64 $\chi^\lambda_q$) | ~66 s | $10^{-14}$ (machine $\varepsilon$) |
-| Full mpmath partition-sum (PR #564) | ~5–10 min | $10^{-50}$ |
-| Pure float64 partition-sum (legacy) | ~1 s | $10^{-5}$ at $n = 9$ |
-| Pure symbolic Wenzl + symbolic χ^λ | timeout (>4 min) | exact |
+See [Table 4](#tbl:recomputed-low-isotope-mass-table-table4-data).
 
 The hybrid technique (30-dps $y_\lambda$ + float64 $\chi^\lambda_q$,
 with per-`n` cache) is the **recommended default** for

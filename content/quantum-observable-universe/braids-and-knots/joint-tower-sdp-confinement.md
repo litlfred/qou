@@ -108,14 +108,7 @@ The set of tower edges is determined by the recursive structure of
 $\mathcal{R}$ ([def:confined-particle](#def:confined-particle)). At
 $\ell \leq 2$ the explicit edges are:
 
-| from | to | embedding |
-|---|---|---|
-| ${}^{8}$Be | 2 ⊗ ${}^{4}$He | $H_{24} \hookleftarrow H_{12}^{\otimes 2}$ |
-| ${}^{12}$C | 3 ⊗ ${}^4$He | $H_{36} \hookleftarrow H_{12}^{\otimes 3}$ |
-| ${}^{4}$He | 4 ⊗ nucleon | $H_{12} \hookleftarrow H_3^{\otimes 4}$ |
-| nucleon | 3 ⊗ quark | $H_3 \hookleftarrow H_1^{\otimes 3}$ |
-| ${}^2$H | nucleon ⊗ nucleon (Hopf-link binding) | $H_6 \hookleftarrow H_3^{\otimes 2}$ |
-| ${}^{3}$H, ${}^{3}$He | 3 ⊗ nucleon | $H_9 \hookleftarrow H_3^{\otimes 3}$ |
+See [Table 1](#tbl:joint-tower-sdp-confinement-table1-data).
 
 For ${}^{6}$Li, ${}^{7}$Li the embedding is open: $\mathfrak{H} \to \{\alpha, p, n\}$
 or $\mathfrak{H} \to \{\alpha, p, 2n\}$ respectively, with explicit
@@ -153,13 +146,7 @@ for the atom-knot mass derivation
 
 ## Implementation roadmap
 
-| step | task | scale |
-|---|---|---|
-| 1 | Validate solver design on $H_3$ ground truth | known answer; unit test |
-| 2 | Run on tower $\{H_1, H_2, H_3\}$ jointly (electron, quark, nucleon) | small; known answers |
-| 3 | Extend to $H_6, H_9, H_{12}$ (${}^2$H, ${}^3$H, ${}^3$He, ${}^4$He) | medium; verify against `mass-table-ppb` |
-| 4 | Extend to $H_{18}, H_{21}$ (${}^{6}$Li, ${}^{7}$Li) — replaces deprecated volume-match | research-grade |
-| 5 | Scale to $\ell = 2$ α-cluster atoms ${}^{8}$Be$\to$${}^{40}$Ca | large; needs SDP-decomposition tricks |
+See [Table 2](#tbl:joint-tower-sdp-confinement-table2-data).
 
 The certificate format (Wedderburn block $\times$ filtration grade $\times$ jet
 position $\to$ coefficient) is identical at every scale; only the variable

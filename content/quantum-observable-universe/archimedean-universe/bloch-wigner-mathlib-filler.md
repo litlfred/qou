@@ -17,21 +17,11 @@ $$
 This is the case relevant to QOU's hyperbolic-knot contributions,
 where shape parameters are unit-circle roots:
 
-| Knot / link | Shape parameter | BW value |
-|---|---|---|
-| Figure-8 $4_1$ (per ideal regular tetrahedron) | $e^{i\pi/3}$ | $\mathrm{Cl}_2(\pi/3) \approx 1.0149$ |
-| Borromean rings $\mathcal{B}_3$ (per ideal regular octahedron $= 4$ tetrahedra of shape $i$) | $e^{i\pi/2} = i$ | $4\,\mathrm{Cl}_2(\pi/2) = 4G \approx 3.664$ |
+See [Table 1](#tbl:bloch-wigner-mathlib-filler-table1-data).
 
 ## Lean carriers added
 
-| Definition / theorem | Content | Status |
-|---|---|---|
-| `BlochWigner_unit_circle θ` | `Cl_2 θ` | unconditional def |
-| `BlochWigner_unit_circle_zero` | `D(1) = 0` | proved by `Cl_2_zero` |
-| `BlochWigner_figure_8_per_tetrahedron` | `Cl_2(π/3)` | unconditional def |
-| `BlochWigner_Borromean_per_octahedron` | $4 \cdot \mathrm{Cl}_2(\pi/2) = 4G$ | unconditional def |
-| `Vol_figure_8_eq_two_BW_tetrahedron` | $\mathrm{Vol}(4_1) = 2 \cdot D(e^{i\pi/3})$ | proved by `rfl` |
-| `Vol_Borromean_eq_two_BW_octahedron` | $\mathrm{Vol}(B_3) = 2 \cdot 4G$ | proved by `ring` |
+See [Table 2](#tbl:bloch-wigner-mathlib-filler-table2-data).
 
 ## Mathlib gaps remaining
 
@@ -45,11 +35,7 @@ remaining open, but it is **not blocking** the QOU chain.
 
 What is still blocked:
 
-| Missing piece | Used by | Substantive work needed |
-|---|---|---|
-| Pentagon identity for $D$ on $\mathbb{C}$ | `BlochSuslinUniqueness` | proof needs full BlochGroup setup |
-| `BlochGroup F` quotient | Suslin map | substantial — free abelian group / 5-term relations |
-| Suslin map $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$ | uniqueness up to scalar | depends on `BlochGroup` + Borel regulator |
+See [Table 3](#tbl:bloch-wigner-mathlib-filler-table3-data).
 
 ## Significance
 

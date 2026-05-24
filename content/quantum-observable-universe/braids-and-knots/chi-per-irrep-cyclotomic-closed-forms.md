@@ -32,11 +32,7 @@ where the denominator power is $1, 3, 5$ for $\lambda = (3), (2,1), (1,1,1)$.
 
 ## Cyclotomic factorisation
 
-| irrep | numerator | denominator | cyclotomic factor in numerator |
-|---|---|---|---|
-| $V_{(3)}$ | $-(q^2-1)(q^2+1)^2$ | $4q$ | $\Phi_4(q)^2 \cdot \Phi_2(q) \cdot \Phi_1(q)$ |
-| $V_{(2,1)}$ | $-(q^2-1)(q^4+1)$ | $4q^3$ | $\Phi_8(q) \cdot \Phi_2(q) \cdot \Phi_1(q)$ |
-| $V_{(1,1,1)}$ | $-(q^2-1)(q^2+1)^2$ | $4q^5$ | $\Phi_4(q)^2 \cdot \Phi_2(q) \cdot \Phi_1(q)$ |
+See [Table 1](#tbl:chi-per-irrep-cyclotomic-closed-forms-table1-data).
 
 Recall: $\Phi_1(q) = q-1$, $\Phi_2(q) = q+1$, $\Phi_4(q) = q^2+1$,
 $\Phi_8(q) = q^4+1$.
@@ -97,14 +93,7 @@ computation; the witness file records the result bit-exactly.
 
 All proved by `field_simp + ring` after unfolding (sorry-free):
 
-| theorem | content |
-|---|---|
-| `chi_V3_diff_polynomial_form` | $V_{(3)}$ factored $\leftrightarrow$ polynomial form |
-| `chi_V21_diff_polynomial_form` | $V_{(2,1)}$ factored $\leftrightarrow$ polynomial form |
-| `chi_V111_diff_polynomial_form` | $V_{(1,1,1)}$ factored $\leftrightarrow$ polynomial form |
-| `chi_V111_eq_V3_div_q4` | conjugate-partition symmetry: $V_{(1,1,1)} = V_{(3)} / q^4$ |
-| `chi_V3_diff_at_one`, `chi_V21_diff_at_one`, `chi_V111_diff_at_one` | all vanish at $q = 1$ (isospin invariance) |
-| `chi_V3_diff_via_cyclotomic`, `chi_V21_diff_via_cyclotomic`, `chi_V111_diff_via_cyclotomic` | re-expression via $\Phi_d(q)$ cyclotomic factors |
+See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).
 
 ## Compute wiring
 

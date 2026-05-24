@@ -41,12 +41,7 @@ $$
   \end{pmatrix}
 $$
 
-| Entry | Formula |
-|:-----:|---------|
-| $(1,1)$ | $\frac{q - q^{-1}}{2}$ |
-| $(1,2)$ | $0$ |
-| $(2,1)$ | $0$ |
-| $(2,2)$ | $\frac{q - q^{-1}}{2}$ |
+See [Table 1](#tbl:tm-interactions-table1-data).
 
 **Properties:**
 
@@ -161,12 +156,7 @@ $$
 
 The full $2 \times 2$ Toffoli transfer matrix $\mathbf{M}(q)$:
 
-| Entry | Formula |
-|:-----:|---------|
-| $P_{6,6}$ (no flip, even) | $\dfrac{q^4 + q^{7/2} + 2q^{3/2} + q^{1/2} - 1}{2(q+1)^2}$ |
-| $P_{7,6}$ (flip, q-AND) | $\Phi(q)$ |
-| $P_{6,7}$ (reverse flip) | $-\Phi(q)$ |
-| $P_{7,7}$ (no flip, odd) | $\dfrac{q + q^{1/2} - 1}{q + 1}$ |
+See [Table 2](#tbl:tm-interactions-table2-data).
 
 **Single-crossing type-blindness:** at generator $\sigma_1$
 (one crossing), $\hat{V}_1 = z$ regardless of crossing
@@ -174,12 +164,4 @@ type. A single crossing carries no type information.
 
 ## 7. Catalogue of all $\Delta$ operators
 
-| Process | $\Delta$ operator | Explicit matrix |
-|---------|-------------------|-----------------|
-| $\beta^-$ decay ($\mathfrak{d} \to \mathfrak{u}$) | $\Delta_\beta$ | $\frac{q - q^{-1}}{2}\mathbb{I}$ |
-| $\beta^+$ decay ($\mathfrak{u} \to \mathfrak{d}$) | $-\Delta_\beta$ | $-\frac{q - q^{-1}}{2}\mathbb{I}$ |
-| Photon absorption | $T_{pp}$ (appended) | $\begin{pmatrix} q-q^{-1} & 1 \\ 1 & 0 \end{pmatrix}$ (new factor) |
-| Photon emission | $T_{pp}^{-1}$ (removed) | Remove one factor from chain |
-| Pair creation $\gamma\gamma \to e^- e^+$ | $-\Delta_\beta$ | Same as $\beta^+$ |
-| Pair annihilation $e^- e^+ \to \gamma\gamma$ | $\Delta_\beta$ | Same as $\beta^-$ |
-| $2\beta$ (quadratic term) | $\Delta_\beta \cdot C \cdot \Delta_\beta$ | Depends on intervening matrices $C$ |
+See [Table 3](#tbl:tm-interactions-table3-data).

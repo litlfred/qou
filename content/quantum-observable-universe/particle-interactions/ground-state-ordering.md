@@ -10,11 +10,7 @@ The three transfer matrices
 eigenvalues determined by the typed crossing operators
 ([typed crossings](#def:typed-crossing-operator)):
 
-| Matrix | Eigenvalues | det | tr |
-|:---:|:---:|:---:|:---:|
-| $T_{pp}$ | $+q, \; -q^{-1}$ | $-1$ | $+h$ |
-| $T_{pn}$ | $+\sqrt{1 + h^2/4}, \; -\sqrt{1 + h^2/4}$ | $-(1 + h^2/4)$ | $0$ |
-| $T_{nn}$ | $+q^{-1}, \; -q$ | $-1$ | $-h$ |
+See [Table 1](#tbl:ground-state-ordering-table1-data).
 
 where $h = q - q^{-1}$.
 
@@ -92,17 +88,7 @@ and anti-binding $T_{pp}$ contributions.
 Exhaustive search over all $\binom{A}{Z}$ orderings confirms
 the derived rule for $A \leq 14$:
 
-| Nucleus | $Z$ | $N$ | $A$ | Ground state | Rule |
-|:---:|:---:|:---:|:---:|:---|:---|
-| ${}^2$H | $1$ | $1$ | $2$ | $[1, 0]$ | Sorted (A $\leq$ 3) |
-| ${}^3$H | $1$ | $2$ | $3$ | $[1, 0, 0]$ | Sorted (A $\leq$ 3) |
-| ${}^3$He | $2$ | $1$ | $3$ | $[1, 1, 0]$ | Sorted (A $\leq$ 3) |
-| ${}^4$He | $2$ | $2$ | $4$ | $[0, 1, 1, 0]$ | Interleaved |
-| ${}^6$Li | $3$ | $3$ | $6$ | $[0, 1, 0, 1, 1, 0]$ | Interleaved |
-| ${}^7$Li | $3$ | $4$ | $7$ | $[1, 0, 1, 0, 1, 0, 0]$ | Interleaved + tail |
-| ${}^9$Be | $4$ | $5$ | $9$ | $[1, 0, 1, 0, 1, 0, 1, 0, 0]$ | Interleaved + tail |
-| ${}^{12}$C | $6$ | $6$ | $12$ | $[0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0]$ | Interleaved |
-| ${}^{14}$C | $6$ | $8$ | $14$ | $[0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0]$ | Interleaved + tail |
+See [Table 2](#tbl:ground-state-ordering-table2-data).
 
 The sorted ordering (protons first) is optimal only for
 $A \leq 3$, where the chain is too short for eigenvalue

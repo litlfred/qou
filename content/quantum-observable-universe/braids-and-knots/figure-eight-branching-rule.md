@@ -45,11 +45,7 @@ saturated chain in Young's lattice to arrive at $\mu$.
 
 The three partitions of $3$ contribute:
 
-| $\mu$ | $\chi(4_1, \mu)$ | Channel |
-|-------|:---------:|---------|
-| $[3]$ | $1$ | symmetric (eigenvalue product $q^0 = 1$) |
-| $[2{,}1]$ | $-1 - h^2$ | standard (Hoefsmit trace, [seminormal form](#prop:hoefsmit-seminormal-form)) |
-| $[1^3]$ | $1$ | alternating (eigenvalue product $(-1)^4 = 1$) |
+See [Table 1](#tbl:figure-eight-branching-rule-table1-data).
 
 Substituting:
 
@@ -71,15 +67,7 @@ precisely for the trivial and sign representations.
 
 For the dominant partitions at each level:
 
-| $k$ | Dominant $\lambda$ | $f^{\lambda/[2{,}1]}$ | BW term |
-|-----|-----------------|:---:|---------|
-| $3$ | $[2{,}1]$ | $1$ | Volume, Surface, Coulomb, Asymmetry, Exchange |
-| $4$ | $[3{,}1]$ | $1$ | Shell (H$_3 \hookrightarrow$ H$_4$ branching) |
-| $4$ | $[2{,}2]$ | $1$ | Hook (self-conjugate baryon) |
-| $5$ | $[3{,}1{,}1]$ | $2$ | Wigner (Frobenius reciprocity, isospin Casimir) |
-| $5$ | $[3{,}2]$ | $2$ | Form factor (conjugate pair with $[2{,}2{,}1]$) |
-| $6$ | $[3{,}2{,}1]$ | $6$ | 6-body isospin (self-conjugate, largest $w_\lambda$) |
-| $7$ | $[4{,}2{,}1]$ | $12$ | 7-body correlation |
+See [Table 2](#tbl:figure-eight-branching-rule-table2-data).
 
 The BW scaling of each partition is determined by:
 

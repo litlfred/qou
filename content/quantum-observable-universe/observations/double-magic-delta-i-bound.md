@@ -15,17 +15,7 @@ doubly-magic.*
 
 ## Empirical data
 
-| Isotope | $Z$ | $N$ | $(i_Z, i_N)$ | $\Delta i$ |
-|---|:-:|:-:|:-:|:-:|
-| ${}^{4}\mathrm{He}$ | 2 | 2 | $(1, 1)$ | $0$ |
-| ${}^{16}\mathrm{O}$ | 8 | 8 | $(2, 2)$ | $0$ |
-| ${}^{40}\mathrm{Ca}$ | 20 | 20 | $(3, 3)$ | $0$ |
-| ${}^{48}\mathrm{Ca}$ | 20 | 28 | $(3, 4)$ | $1$ |
-| ${}^{56}\mathrm{Ni}$ | 28 | 28 | $(4, 4)$ | $0$ |
-| ${}^{78}\mathrm{Ni}$ | 28 | 50 | $(4, 5)$ | $1$ |
-| ${}^{100}\mathrm{Sn}$ | 50 | 50 | $(5, 5)$ | $0$ |
-| ${}^{132}\mathrm{Sn}$ | 50 | 82 | $(5, 6)$ | $1$ |
-| ${}^{208}\mathrm{Pb}$ | 82 | 126 | $(6, 7)$ | $1$ |
+See [Table 1](#tbl:double-magic-delta-i-bound-table1-data).
 
 **All 9 observed doubly-magic isotopes have $\Delta i \in \{0, 1\}$.**
 No empirical isotope with $\Delta i \geq 2$ is doubly-magic.
@@ -45,11 +35,7 @@ to have a dominant rank-1 component $V_{\lambda_A}$ that is
 self-conjugate and gapless. Combined with the Bring-shell-binding
 picture ([`prop:torus-knot-shell-binding`](#prop:torus-knot-shell-binding)):
 
-| LR-fusion structure | Empirical | Categorical compatibility |
-|---|:-:|:-:|
-| Same shell ($\Delta i = 0$, $\lambda_Z = \lambda_N$) | observed (5 cases) | yes — symmetric LR-tensor |
-| Adjacent shells ($\Delta i = 1$) | observed (4 cases) | yes — one-step braid extension |
-| Skip-shell ($\Delta i \geq 2$) | **never** | no — LR-fusion shattered |
+See [Table 2](#tbl:double-magic-delta-i-bound-table2-data).
 
 **Conjectural mechanism:** when $\lambda_Z$ is a Bring shell-$i$
 diagram and $\lambda_N$ is a Bring shell-$j$ diagram, the

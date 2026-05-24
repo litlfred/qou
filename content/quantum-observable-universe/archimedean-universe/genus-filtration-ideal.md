@@ -38,12 +38,7 @@ algebra of the QOU.*
 
 **The genus scan.**
 
-| $g$ | Embeddable torus knots | Count | Rank of $M$ | Complete? |
-|:---:|:---|:---:|:---:|:---:|
-| $2$ | $T_{2,3}$, $T_{2,5}$ | $2$ | $\leq 2$ | No |
-| $3$ | $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$ | $4$ | $\leq 4$ | **No** |
-| $4$ | $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{2,9}$, $T_{3,4}$, $T_{3,5}$ | $6$ | $5$ | **Yes** |
-| $5$ | $+ T_{2,11}$ | $7$ | $5$ | Yes (redundant) |
+See [Table 1](#tbl:genus-filtration-ideal-table1-data).
 
 *At $g = 3$: only $4$ knots are available, but $5$ irreps
 must be spanned.  Rank $\leq 4 < 5$ --- incomplete.
@@ -124,14 +119,7 @@ The Hecke recurrence $a_{n+1} = s \cdot a_n + a_{n-1}$ with
 $a_0 = 0$, $a_1 = 1$ gives, for odd $p$, the following
 polynomials in $u = s^2 = (q - q^{-1})^2$:
 
-| $p$ | $a_p(u)$ | $\deg_u$ | genus | status at $g = 4$ |
-|:---:|:---------|:---:|:---:|:---:|
-| $3$ | $u + 1$ | $1$ | $1$ | embeds |
-| $5$ | $u^2 + 3u + 1$ | $2$ | $2$ | embeds |
-| $7$ | $u^3 + 5u^2 + 6u + 1$ | $3$ | $3$ | embeds |
-| $9^*$ | $u^4 + 7u^3 + 15u^2 + 10u + 1$ | $4$ | $4$ | saturates |
-| $11$ | $u^5 + 9u^4 + 28u^3 + 35u^2 + 15u + 1$ | $5$ | $5$ | **overflow** |
-| $13$ | $u^6 + 11u^5 + 45u^4 + 84u^3 + 70u^2 + 21u + 1$ | $6$ | $6$ | **overflow** |
+See [Table 2](#tbl:genus-filtration-ideal-table2-data).
 
 ($*$: $9 = 3^2$ is not prime but $T_{2,9}$ is the degree-$2$
 tower of the trefoil.)

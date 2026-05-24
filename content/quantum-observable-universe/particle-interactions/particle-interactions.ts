@@ -49,6 +49,8 @@ export default chapter({
         "confinement-lp",
         "confinement-nucleon-unit",
         "confinement-operator-selection",
+        "confinement-operator-selection-table2-data",
+        "confinement-operator-selection-table1-data",
         "confinement-frobenius-reciprocity",
         // prop:confinement-sdp moved earlier to
         // braids-and-knots/sec:alpha-k-procedure per detangler P33.
@@ -152,6 +154,8 @@ export default chapter({
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
         "ground-state-ordering",
+        "ground-state-ordering-table2-data",
+        "ground-state-ordering-table1-data",
         "transfer-matrix-identities",
         "neutron-qvalue-symbolic",
         "q-beta-spectral-bridge",

@@ -43,15 +43,7 @@ $$
 each BW coefficient has an exact $q$-integer expression derived
 from the Hecke algebra $H_3(R, q)$:*
 
-| coefficient | $q$-integer form | crossing interpretation |
-|---|---|---|
-| $\lambda_V$ (volume) | $2[2]_q[7]_q \cdot m_e$ | $[7]_q$ = 7 crossings on gen 0 per proton |
-| $\lambda_S$ (surface) | $2[4]_q^2 \cdot m_e$ | $[4]_q$ = 4 crossings on gen 1 per proton |
-| $\lambda_C$ (Coulomb) | $h[6]_q \cdot m_e$ | $[6]_q$ = 6 crossings in Borromean link $B_3$ |
-| $a_{\mathrm{asym}}$ | $3[2]_q[7]_q \cdot m_e$ | same as $\lambda_V$ with prefactor $3$ |
-| $\delta_P$ (pairing) | $[3]_q[7]_q \cdot m_e$ | $[3]_q$ = 3-strand nucleon structure |
-| $\lambda_{\mathrm{ex}}$ | $[3]_q/[2]_q \cdot m_e$ | nucleon screening ratio |
-| $\delta_S$ (shell) | $[2]_q^2[3]_q \cdot m_e$ | torus-knot coherence |
+See [Table 1](#tbl:mass-formula-regime-switching-table1-data).
 
 *The exact relation $a_{\mathrm{asym}} = \frac{3}{2} \lambda_V$ is
 **forced** by the $q$-integer form (both involve $[2]_q[7]_q$,
@@ -207,12 +199,7 @@ categorical derivation of $w_A$ is open.*
 
 **Integrated witness table (from `mass_formula_6term.py`).**
 
-| $A$ | isotope | SW+Frob err | BW+$\chi$ err | regime-selected |
-|---|---|---|---|---|
-| $2$ | D | **$+2.1\%$** (best) | $-353\%$ (fail) | SW+Frob: $+2.1\%$ |
-| $3$ | T | $-79\%$ | **$+0.51\%$** (best) | BW+$\chi$: $+0.51\%$ |
-| $3$ | $^3$He | $-73\%$ | **$+0.86\%$** (best) | BW+$\chi$: $+0.86\%$ |
-| $4$ | $^4$He | $-94\%$ | **$-4.07\%$** | BW+$\chi$: $-4.07\%$ |
+See [Table 2](#tbl:mass-formula-regime-switching-table2-data).
 
 *All predictions use **zero** fitted constants beyond $q_0$ and
 $m_e$ (equivalently $E_0 = 0.782\;\mathrm{MeV}$).*

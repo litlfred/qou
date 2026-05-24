@@ -43,14 +43,7 @@ each to the typed crossings and measuring three quantities:
 2. **Markov trace**: $\mathrm{tr}_M(\Phi \cdot \mathrm{crossings})$ (categorical action)
 3. **Demand channels**: number of negative NF coefficients in the confined state
 
-| Candidate $\Phi$ | $\mathrm{net}(\mathfrak{p})$ | $|\Delta\mathrm{net}|$ | $\mathrm{tr}_M$ | Demand |
-|:---|---:|---:|---:|:---:|
-| $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ | $:val[confinement_B3_net_proton]{precision=4}$ | $0.000$ | $0.420$ | $2$ |
-| $L_+ = \sigma_0\sigma_1$ | $:val[confinement_Lplus_net_proton]{precision=4}$ | $0.221$ | $0.558$ | $0$ |
-| $e^- = \sigma_0\sigma_1\sigma_0$ | $+1.244$ | $0.245$ | $0.369$ | $0$ |
-| $\mathbf{1}$ (identity) | $:val[confinement_id_net_proton]{precision=4}$ | $0.010$ | $0.415$ | $2$ |
-| $(\sigma_0\sigma_1)^2$ | $+1.291$ | $0.292$ | $0.724$ | $0$ |
-| $\sigma_0\sigma_1^{-1}$ | $+1.009$ | $0.010$ | $0.507$ | $2$ |
+See [Table 1](#tbl:confinement-operator-selection-table1-data).
 
 **Naive ranking** (minimise demand channels, then $\mathfrak{E}_\times$) selects
 $L_+$ — but $L_+$ gives $\mathrm{net} \approx 1.22$, far from the
@@ -60,11 +53,7 @@ not confine three quarks.
 **Net-constrained ranking** ($|\Delta\mathrm{net}|$ closest to target
 $\approx :val[confinement_B3_net_proton]{precision=4}$) uniquely selects $\mathcal{B}_3$:
 
-| Rank | Operator | $|\Delta\mathrm{net}|$ | $\mathrm{tr}_M$ |
-|:---:|:---|---:|---:|
-| 1 | $\mathcal{B}_3$ | $0.000$ | $0.420$ |
-| 2 | $\mathbf{1}$ (identity) | $0.010$ | $0.415$ |
-| 3 | $\sigma_0\sigma_1^{-1}$ | $0.010$ | $0.507$ |
+See [Table 2](#tbl:confinement-operator-selection-table2-data).
 
 The identity has slightly lower trace ($0.415$ vs $0.420$) but
 fails to confine: unconfined quarks retain their demand profile

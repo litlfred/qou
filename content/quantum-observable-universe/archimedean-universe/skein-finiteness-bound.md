@@ -24,11 +24,7 @@ $$
 which are **real and opposite in sign** (since $\det T < 0$ for
 all three crossing types):
 
-| Crossing type | $\lambda_+$ | $\lambda_-$ | $\lvert\lambda_+/\lambda_-\rvert$ |
-|:---:|:---:|:---:|:---:|
-| pp | $q$ | $-q^{-1}$ | $q^2$ |
-| nn | $q^3$ | $-q^{-1}$ | $q^4$ |
-| mix | $\approx q^{3/2}$ | $\approx -q^{-1/2}$ | $\approx q^2$ |
+See [Table 1](#tbl:skein-finiteness-bound-table1-data).
 
 The chain of $k$ crossings at generator $\sigma_i$ gives
 
@@ -102,14 +98,7 @@ even though each $\hat{V}_i > 0$, if the **number of
 negative-$\hat{V}_i$ generators** is odd.  From the sequential
 build data:
 
-| $A$ | $\hat{V}$ signs | $P$ sign | Stable? |
-|:---:|:---:|:---:|:---:|
-| $1$ | $(+)$ | $+$ | Yes |
-| $2$ | $(+)$ | $+$ | Yes |
-| $3$ | $(+, +)$ | $+$ | Yes |
-| $4$ | $(+, +, +)$ | $+$ | Yes (shell-closure) |
-| $5$ | $(+, +, +, +)$ | $+$ | Yes |
-| $6$ | All $+$ but product $< 0$ | $-$ | **No** |
+See [Table 2](#tbl:skein-finiteness-bound-table2-data).
 
 At $A = 6$, the product becomes negative ($P = -0.0053$) even
 though individual volumes are positive.  This occurs because the
@@ -142,13 +131,7 @@ while the dominant contribution (without cross-term cancellation)
 scales as $q^{\binom{A}{2}} \cdot z^{A-1}$.  The cancellation
 ratio $1 - |P|/\Sigma|c_w|$ measures destructive interference:
 
-| $A$ | $\lvert P\rvert$ | $\Sigma\lvert c_w\rvert$ | Cancellation |
-|:---:|:-----:|:-------------:|:------------:|
-| $1$ | $1.000$ | $1.00$ | $0\%$ |
-| $3$ | $0.601$ | $1.52$ | $60\%$ |
-| $4$ | $0.060$ | $2.42$ | $97.5\%$ |
-| $5$ | $0.141$ | $4.00$ | $96.5\%$ |
-| $6$ | $0.005$ | $11.4$ | $99.95\%$ $\leftarrow$ **sign flip** |
+See [Table 3](#tbl:skein-finiteness-bound-table3-data).
 
 The sign flips when $(A-1)!$ cross-terms overwhelm the dominant
 term.  The critical condition is:
@@ -184,13 +167,7 @@ Since $[k]_q$ is strictly increasing in $k$ (for $q > 1$) and
 $[1]_q = 1 < [2]_q$, the average starts below $\ln [2]_q$ and
 grows monotonically.  The crossover:
 
-| $A$ | $[A\!-\!1]_q!$ | $[2]_q^{A-1}$ | Exceeds? |
-|:---:|:---:|:---:|:---:|
-| $2$ | $1.0$ | $2.01$ | No |
-| $3$ | $2.01$ | $4.04$ | No |
-| $4$ | $6.12$ | $8.13$ | No |
-| $5$ | $25.15$ | $16.35$ | **Yes** |
-| $6$ | $131.3$ | $32.88$ | **Yes** |
+See [Table 4](#tbl:skein-finiteness-bound-table4-data).
 
 The crossover occurs at $A = 5$ for all $q > 1$ (the
 $q$-correction is $O(\varepsilon^2)$ where $\varepsilon = \ln q$,

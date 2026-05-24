@@ -92,10 +92,7 @@ where $L$ is the maximum word length in the support.
 
 Verified for:
 
-| $A$ | $(p, n)$ | Histogram $h(\ell)$ | Palindrome? |
-|-----|----------|---------------------|:-----------:|
-| $4$ | $(2, 2)$ | $\{1, 3, 4, 3, 1\}$ | **Yes** |
-| $6$ | $(3, 3)$ | $\{1, 5, 13, 23, 31, 34, 31, 23, 13, 5, 1\}$ | **Yes** |
+See [Table 1](#tbl:shell-closure-normal-form-table1-data).
 
 These are the **Poincaré polynomials** of the symmetric groups
 $S_4$ and $S_6$: the rank-generating functions of the Bruhat
@@ -108,15 +105,7 @@ is **not** a palindrome.
 The coefficient of the dominant term (largest $|c_w|$) **jumps
 discontinuously** at shell closures:
 
-| $A$ | $(p,n)$ | Dominant $\lvert c_w\rvert$ | Word length | Ratio to $A-1$ |
-|-----|---------|:----------------:|:-----------:|:---------------:|
-| $3$ | $(2,1)$ | $1.246$ | $1$ | — |
-| $4$ | $(2,2)$ | $1.946$ | $4$ | $\times 1.56$ (best) |
-| $5$ | $(3,2)$ | $2.424$ | $4$ | $\times 1.25$ |
-| $6$ | $(3,3)$ | $5.084$ | $7$ | $\times 2.10$ (best) |
-| $7$ | $(4,3)$ | $7.193$ | $9$ | $\times 1.41$ |
-| $8$ | $(4,4)$ | $21.248$ | $16$ | $\times 2.95$ (best) |
-| $9$ | $(5,4)$ | $32.962$ | $22$ | $\times 1.55$ |
+See [Table 2](#tbl:shell-closure-normal-form-table2-data).
 
 The ratio to the previous step is **larger at shell closures**
 ($\times 1.56, \times 2.10, \times 2.95$) than at non-closures
@@ -126,12 +115,7 @@ The ratio to the previous step is **larger at shell closures**
 The Hecke reduction energy $\Delta E_k$ at step $k$ (adding
 the $k$-th nucleon) exhibits a **gap** at shell breaks:
 
-| Step | $\to (p,n)$ | $\Delta E$ | Hecke steps | |
-|:----:|:-----------:|:----------:|:-----------:|:---:|
-| $2$ | $(2,1)$ | $0.274$ | $2$ | closure |
-| $3$ | $(2,2)$ | $0.095$ | $10$ | closure |
-| $4$ | $(3,2)$ | $1.409$ | $58$ | shell break |
-| $5$ | $(3,3)$ | $2.174$ | $790$ | |
+See [Table 3](#tbl:shell-closure-normal-form-table3-data).
 
 The energy drops at the closure ($0.274 \to 0.095$: the last
 nucleon fits into the existing shell) and then **jumps** at the
@@ -201,13 +185,7 @@ crossings are pp type ($d = 0$), the identity term vanishes: multiplying
 by $(c \cdot \sigma_k + 0)$ does not preserve the identity. Without
 $\mathbf{1}$ in the support, I$_{9}$ chain-stripping has no root.
 
-| $Z \backslash N$ | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| $1$ | yes | yes | yes | yes | yes | yes |
-| $2$ | no | yes | yes | yes | yes | yes |
-| $3$ | no | yes | yes | yes | yes | yes |
-| $4$ | no | no | yes | yes | yes | |
-| $5$ | no | no | no | no | | |
+See [Table 4](#tbl:shell-closure-normal-form-table4-data).
 
 The boundary $N \geq Z - 1$ matches the nuclear valley of stability.
 
@@ -230,11 +208,7 @@ intertwining of all nucleons within the closed shell.
 
 The dominant words at shell closures are:
 
-| $(p,n)$ | Dominant word | Length |
-|---------|--------------|:------:|
-| $(2,2)$ | $\sigma_0\sigma_1\sigma_0\sigma_2$ | $4$ |
-| $(3,3)$ | $\sigma_2\sigma_1\sigma_0\sigma_2\sigma_3\sigma_2\sigma_4$ | $7$ |
-| $(4,4)$ | $\sigma_1\sigma_0\sigma_2\sigma_3\sigma_2\sigma_1\sigma_0\sigma_3\sigma_2\sigma_4\sigma_3\sigma_2\sigma_4\sigma_5\sigma_4\sigma_6$ | $16$ |
+See [Table 5](#tbl:shell-closure-normal-form-table5-data).
 
 These are specific reduced words in $S_{2p}$ — the
 **shell closure permutations** that maximally intertwine the

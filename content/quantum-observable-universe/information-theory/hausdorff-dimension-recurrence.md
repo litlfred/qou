@@ -55,16 +55,7 @@ Bang ($q \to \infty$, no fractal, $d_{H,q} = 0$).
 
 **Regime table.**
 
-| $q$ | $d_{H,q}$ | Regime |
-|-----|----------|-------|
-| $1$ | $1.000$ | Classical limit (unit circle) |
-| $1.01$ | $1.010$ | Near-classical |
-| $q_0$ | $1.088$ | Our universe |
-| $1.5$ | $1.185$ | Basilica ($c = -3/4$) |
-| $2.0$ | $1.125$ | Deep quantum |
-| $\varphi^2$ | $1.000$ | Golden crossover |
-| $3.0$ | $0.926$ | Beyond golden |
-| $10$ | $0.361$ | Near Big Bang |
+See [Table 1](#tbl:hausdorff-dimension-recurrence-table1-data).
 
 **$d_{H,q}$ vs. $d_H$: comparison with classical Hausdorff dimension.**
 
@@ -87,11 +78,7 @@ Hausdorff dimension $d_H$ satisfies:
 The gap $d_{H,q} - d_H \approx 0.041$ is explained by the
 different Manning–McCluskey inputs:
 
-| | Classical $d_H$ | $q$-deformed $d_{H,q}$ |
-|---|---|---|
-| Topological entropy | $\ln 2 = 0.693$ | $\eta_q = 0.892$ |
-| Lyapunov exponent | $\chi(c) \approx 0.662$ | $\chi_q = 0.820$ |
-| Dimension | $0.693/0.662 = 1.047$ | $0.892/0.820 = 1.088$ |
+See [Table 2](#tbl:hausdorff-dimension-recurrence-table2-data).
 
 The classical $d_H$ is a property of conformal dynamics over
 $\mathbb{C}$.  The $q$-deformed $d_{H,q}$ replaces the
@@ -120,12 +107,7 @@ $q = 1$, which is a **superattracting fixed point** (the derivative
 $|1 - 1/q^2|$ vanishes at $q = 1$).  Starting from our local
 $q_0$:
 
-| Step | $q_n$ | $\hbar_{q_n}$ | $d_{H,q}$ | $\eta_q$ |
-|:----:|--------|---------------|-----------|----------|
-| 0 | $q_0$ | $0.0989$ | $1.088$ | $0.892$ |
-| 1 | $1.0108$ | $0.0107$ | $1.010$ | $0.991$ |
-| 2 | $1.0001$ | $0.0001$ | $1.000$ | $1.000$ |
-| 3 | $1.0000$ | $0$ | $1.000$ | $1.000$ |
+See [Table 3](#tbl:hausdorff-dimension-recurrence-table3-data).
 
 Three Planck steps from our universe to the classical limit.
 The convergence is superlinear: each step squares the distance to

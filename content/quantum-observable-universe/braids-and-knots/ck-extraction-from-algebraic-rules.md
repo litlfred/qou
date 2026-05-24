@@ -28,12 +28,7 @@ phenomenological identifications.
 
 ## The four reduction rules
 
-| # | Rule | Lean class | Substantive content |
-|---:|---|---|---|
-| 1 | Braid (Yang-Baxter) cubic | `YangBaxterRule n q` | $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ — at $n=3$ on $V_{(2,1)}$, follows from `hoefsmit_sigma{0,1}` matrix identities |
-| 2 | $q$-Young symmetrizers | `QYoungSymmetrizers n q` | Hecke idempotents $e_\lambda \in H_n(q)$ projecting onto Wedderburn blocks $V_\lambda$, with $\sum_{\lambda \vdash n} e_\lambda = 1$ |
-| 3 | Hecke quadratic at every generator | `HeckeQuadraticAllGenerators n q` | $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ for every $i$ — at $V_{(2,1)}$ discharged by `hoefsmit_sigma{0,1}_hecke_quadratic` |
-| 4 | Gröbner-Shirshov / jet reduction | `GBJetReduction k` | Unique normal form for the typed-$\mathbf{B}_3$ character at order $(q-1)^{2k}$ in the jet polynomial ring |
+See [Table 1](#tbl:ck-extraction-from-algebraic-rules-table1-data).
 
 ## The extraction function
 
@@ -45,15 +40,7 @@ returning the closed-form scalar value that Rules 1-4 jointly
 determine at order $\varepsilon^{2k}$ on the canonical typed-$\mathbf{B}_3$
 word:
 
-| $k$ | $\mathtt{ckFromReduction}\ q\ k$ | source of closed form |
-|---:|---|---|
-| 0 | $0$ | baseline |
-| 1 | $b$ | Kashiwara $\tilde f_1$ matrix element on $V_{(2,1)}$ (Rules 1+2+3) |
-| 2 | $b^2$ | $\tilde f_1^\dagger \tilde f_1$ return amplitude (Rules 1+2+3) |
-| 3 | $-2 = J_{\mathrm{Hopf}}(q=1)$ | 3-fold Markov closure $\to$ Hopf substructure $\to$ KL classical limit (Rules 1+4) |
-| 4 | $c_3 \cdot b^4 = -2 b^4$ | Jones $\times$ Kashiwara multiplicative mixing — Rules 1+3+4 (the old $b^2 + 1/2$ value belongs at $k = 5$ with a sign flip; superseded per 2026-05-19 audit) |
-| 5 | $-(b^2 + 1/2)$ | Kashiwara $b^2$ + Hopf-half offset (mixed intra/inter) — the form originally attributed to $k = 4$ |
-| $\geq 5$ | $0$ | open R&D (see [`prop:categorical-chain-convergence-mechanisms`](#prop:categorical-chain-convergence-mechanisms)) |
+See [Table 2](#tbl:ck-extraction-from-algebraic-rules-table2-data).
 
 ## Per-order agreement
 

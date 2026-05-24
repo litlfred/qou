@@ -7,11 +7,7 @@ enter until the Archimedean realization functor is applied at the very end.
 The three pre-approved calibration inputs are
 ([rem:calibration-inputs](#rem\:calibration-inputs)):
 
-| Input       | Role                                                |
-| ----------- | --------------------------------------------------- |
-| $m_e$       | Leptonic mass scale (converts natural units to MeV) |
-| $m_\mu/m_e$ | Fixes the substrate parameter $q_0$                 |
-| $Q_\beta$   | Fixes the hadronic energy scale $\mathfrak{E}_0$      |
+See [Table 1](#tbl:pre-archimedean-derivation-chain-table1-data).
 
 > **Audience reading note.** This is the paper-side rendering of the canonical
 > derivation chain.  The **compute-pipeline mapping** (which script implements
@@ -58,15 +54,7 @@ Yekutieli's multiplicative integration on surfaces
 provides the bridge from the 2-categorical action to the
 Iwahori--Hecke algebra.  At finite slice depth $k$:
 
-| 2-categorical datum                            | Finite-slice avatar in $H_{n_0}(q)$                            |
-| ---------------------------------------------- | -------------------------------------------------------------- |
-| 1-cells (paths)                                | Braid generators $\sigma_i$                                    |
-| 2-cells (squares)                              | Hecke quadratic relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ |
-| Multiplicative line integral                   | Finite product $\prod_k \rho(\sigma_{i_k})$                    |
-| Multiplicative trace on closed surface         | Markov trace $\mathrm{tr}_M(T_w)$                              |
-| Slicing depth                                  | GB filtration grade $\ell(w)$ (Coxeter length)                 |
-| Slice traversal order                          | Jet order                                                      |
-| Non-abelian Stokes identity at adjacent slices | Braid relations + Hecke quadratic                              |
+See [Table 2](#tbl:pre-archimedean-derivation-chain-table2-data).
 
 **Key point.** The Hecke quadratic relation
 $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ *is* the curvature 2-form of

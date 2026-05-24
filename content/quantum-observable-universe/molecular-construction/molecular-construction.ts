@@ -42,7 +42,11 @@ export default chapter({
         "shell-filling-rule-table-data",
         "valence-from-braid",
         "shell-closure-nf-term-count",
+        "shell-closure-nf-term-count-table2-data",
+        "shell-closure-nf-term-count-table1-data",
         "palindromicity-orbital-type",
+        "palindromicity-orbital-type-table2-data",
+        "palindromicity-orbital-type-table1-data",
       ],
     }),
 

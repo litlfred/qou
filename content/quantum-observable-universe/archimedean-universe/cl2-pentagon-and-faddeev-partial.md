@@ -23,15 +23,7 @@ theorems:*
 
 ## Lean theorems (sorry-free)
 
-| Theorem | Closes |
-|---|---|
-| `Cl_2_pentagon_at_zero_unconditional` | (2) at all-zero arguments — pentagon holds by definition |
-| `Cl_2_pentagon_zero_substitution` | (2) function-level zero substitution |
-| `Cl_2_pentagon_consistent_with_zero` | (2) consistency between pentagon class and `Cl_2_zero` |
-| `faddeev_kashaev_at_zero_unconditional` | (3) at `x = 0` — both sides identically zero |
-| `faddeev_kashaev_consistency_at_zero` | (3) class consistency check |
-| `faddeev_kashaev_at_zero_exact` | (3) exact equality (stronger than convergence) |
-| `partial_closures_at_boundary` | joint statement: `Cl_2(0) = 0 ∧ Li_2(0) = 0` |
+See [Table 1](#tbl:cl2-pentagon-and-faddeev-partial-table1-data).
 
 All proofs are by direct rewriting + `simp` / `ring` / `linarith`
 on the unconditional building blocks `Cl_2_zero` and
@@ -51,10 +43,7 @@ two Mathlib-pending classes `Cl_2_PentagonHolds` and
 **The general (non-boundary) cases.** These are the substantive
 mathematical content:
 
-| Open content | Substantive work needed |
-|---|---|
-| 5-argument pentagon for $\mathrm{Cl}_2$ on $(0, 2\pi)$ | Mathlib Fourier-series infrastructure (sine-series rearrangements) |
-| Faddeev-Kashaev for $x \in (0, 1)$ | Mathlib uniform Tauberian theorem for q-series |
+See [Table 2](#tbl:cl2-pentagon-and-faddeev-partial-table2-data).
 
 Both are well-isolated as Mathlib-contribution-sized future tasks.
 The §3b-cond scaffolding is now structurally complete and the
@@ -69,11 +58,7 @@ Combined with
 (item 1 closure), the three substantive Mathlib gaps now have
 the following status:
 
-| Gap | Carrier | Boundary case | Full statement |
-|---|---|---|---|
-| (1) `BlochGroup F` quotient | (done) concrete construction | n/a | (pending) pentagon generators wiring |
-| (2) $\mathrm{Cl}_2$ pentagon | (done) class hook | (done) all-zero unconditional | (pending) Mathlib Fourier infra |
-| (3) Faddeev-Kashaev | (done) class hook | (done) `x = 0` unconditional | (pending) Mathlib uniform Tauberian |
+See [Table 3](#tbl:cl2-pentagon-and-faddeev-partial-table3-data).
 
 This represents the maximum advance achievable without upstream
 Mathlib contributions or ~hundreds of lines of additional Lean

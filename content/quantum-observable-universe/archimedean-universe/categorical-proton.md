@@ -33,13 +33,7 @@ where $H_A = q - q^{-1}$) gives
 $\mathcal{B}_3 = (\sigma_0(\sigma_1 - H_A))^3$.
 Expanding and reducing in $H_3(q)$ at $q_0 \approx 1.1100$:
 
-| Basis | Particle | Coefficient |
-|:---:|:---:|---:|
-| $\mathbf{1}$ | $\gamma$ | $+0.9981$ |
-| $\sigma_0$ | $\sigma_0$ | $-0.0095$ |
-| $\sigma_1$ | $\sigma_1$ | $+0.0091$ |
-| $\sigma_0\sigma_1$ | $L_+$ | $+0.0456$ |
-| $\sigma_1\sigma_0$ | $L_-$ | $-0.0437$ |
+See [Table 1](#tbl:categorical-proton-table1-data).
 
 $$
   \mathrm{net}(\mathcal{B}_3) = +1.0000
@@ -55,11 +49,7 @@ The quark flavor determines the crossing eigenvalue in $H_3(q)$.
 Each pair of quarks contributes a crossing on the generator
 connecting their strands:
 
-| Pair | Type | Crossing element |
-|:---|:---|:---|
-| $(0,1)$ | $\mathfrak{u}$-$\mathfrak{u}$ | $\sigma_0$ |
-| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A \mathbf{1}$ |
-| $(1,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_1 - \tfrac{1}{2}H_A \mathbf{1}$ |
+See [Table 2](#tbl:categorical-proton-table2-data).
 
 The $\mathfrak{u}$-$\mathfrak{u}$ crossing keeps eigenvalue $+q$;
 $\mathfrak{d}$-type crossings carry a $-H_A$ shift
@@ -94,14 +84,7 @@ $|\mathrm{tr}_M| = 0.027$.
 After typed crossings and Hopf link stabilisation at
 $q_0 \approx 1.1100$:
 
-| Basis | Particle | Coefficient |
-|:---:|:---:|---:|
-| $\mathbf{1}$ | $\gamma$ | $-0.0095$ |
-| $\sigma_0$ | $\sigma_0$ | $-0.0472$ |
-| $\sigma_1$ | $\sigma_1$ | $+0.0337$ |
-| $\sigma_0\sigma_1$ | $L_+$ | $-0.1114$ |
-| $\sigma_1\sigma_0$ | $L_-$ | $+0.1185$ |
-| $\sigma_0\sigma_1\sigma_0$ | $e^-$ | $+1.0224$ |
+See [Table 3](#tbl:categorical-proton-table3-data).
 
 $$
   \mathrm{net}(\mathfrak{p}) = +1.0065

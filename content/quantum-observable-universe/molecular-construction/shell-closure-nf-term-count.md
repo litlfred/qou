@@ -26,10 +26,7 @@ protons, $N$ neutrons, and $Z$ electrons, quotient the nuclear
 core $\mathcal{N}(Z, N)$ to a single formal variable.  The
 resulting element lives in $H_{Z+1}(q)$ with crossing types:
 
-| Pair | Element | Coefficients |
-|:-----|:--------|:-------------|
-| $\mathcal{N}\text{-}e$ | $(\sigma^{-1})^Z$ | Chebyshev (see below) |
-| $e\text{-}e$ | $\sigma$ | $(1,\; 0)$ |
+See [Table 1](#tbl:shell-closure-nf-term-count-table1-data).
 
 The nucleus–electron crossing is the $Z$-fold composition
 $(\sigma^{-1})^Z$, not the scalar multiple $Z \cdot \sigma^{-1}$.
@@ -59,16 +56,7 @@ a time, reducing via Gröbner–Shirshov at each step.
 The quotient NF term count for $Z = 1$ through $8$
 (corrected $(\sigma^{-1})^Z$ crossing):
 
-| $Z$ | Atom | $n(Z)$ | $\gamma$ | $|c_Z|$ | PAL | Regime |
-|:----|:-----|:-------|:---------|:---------|:----|:-------|
-| 1 | H | 2 | — | $1.000$ | $\star$ | |
-| 2 | He | 2 | $1.00$ | $0.209$ | $\star$ | s-pair close |
-| 3 | Li | 6 | $3.00$ | $1.044$ | $\star$ | sub-shell open |
-| 4 | Be | 6 | $1.00$ | $0.427$ | $\star$ | s-pair close |
-| 5 | B | 24 | $4.00$ | $1.133$ | — | sub-shell open |
-| 6 | C | 30 | $1.25$ | $0.664$ | — | p-pair close |
-| 7 | N | 120 | $4.00$ | $1.272$ | — | sub-shell open |
-| 8 | O | 156 | $1.30$ | $0.930$ | — | p-pair close |
+See [Table 2](#tbl:shell-closure-nf-term-count-table2-data).
 
 **The algebraic shell gap.**  The growth ratio $\gamma$ falls
 into two bands separated by the gap $(1.4, 3.0)$:
