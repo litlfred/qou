@@ -110,4 +110,32 @@ theorem borromean_markov_trace_closed_form (h : ℚ) (hne : trM_borromean_den h 
   field_simp
   ring
 
+/-- **Structural h² = 0 and h⁴ leading-order corollary.**
+    The Borromean Markov trace minus its h=0 value (which is 1)
+    factors through h⁴ — i.e. there is no h⁰, h¹, h², h³ correction:
+    $$\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q) - 1
+       = h^4 \cdot \frac{-3 - h^2}{h^2 + 4}.$$
+    The leading h⁴ coefficient is therefore the value of the right
+    factor at h = 0, which is $-3/4$.
+
+    This makes the h² = 0 structural fact explicit (no Taylor-series
+    machinery needed; it follows by algebraic division of the
+    rational expression).
+
+    Audit chain: `docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`
+    (T1 closure). -/
+theorem trM_minus_one_factors_through_h_to_the_fourth
+    (h : ℚ) (hne : trM_borromean_den h ≠ 0) :
+    trM_borromean h - 1 = h^4 * (-3 - h^2) / trM_borromean_den h := by
+  rw [borromean_markov_trace_closed_form h hne]
+  field_simp
+  ring
+
+/-- The leading h⁴ coefficient of (tr_M − 1) is exactly −3/4,
+    obtained by evaluating the right factor at h = 0. -/
+theorem h4_leading_coefficient_eq_neg_three_quarters :
+    (-3 - (0 : ℚ)^2) / trM_borromean_den 0 = -3 / 4 := by
+  unfold trM_borromean_den
+  norm_num
+
 end QOU.BraidsAndKnots
