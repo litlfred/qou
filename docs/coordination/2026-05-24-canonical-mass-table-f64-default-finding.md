@@ -1,58 +1,60 @@
-# Coordination — canonical_mass_table_extended.py default uses f64 (negative finding)
+# Coordination — canonical_mass_table_extended.py default precision (RETRACTED)
 
 **Date:** 2026-05-24
-**Status:** NEGATIVE FINDING — `laurent_q_rust` default in `canonical_mass_table_extended.py` operates at f64 precision, regressing the L1 50-dps floor (per `docs/precision-goals.md` + CLAUDE.md §Precision goals).
-**Trigger:** PR #1064 (mass-table regen via pyhecke-native v0.9.0) tripped the witness-pipeline drift detector. Investigation revealed the precision regression below.
+**Status:** ⚠️ **RETRACTED** — initial claim that `laurent_q_rust` default uses f64 was incorrect. The actual dispatcher path enforces MPFR-50dps. See §Correction below.
+**Original trigger:** PR #1064 (mass-table regen via pyhecke-native v0.9.0) tripped the witness-pipeline drift detector.
 
-## TL;DR
+## ⚠️ Correction (2026-05-24, post Copilot review on #1064)
 
-Regenerating `canonical-mass-table-extended.witness.json` via the **default** method `laurent_q_rust` (the Tier 1.A path landed in PR #859 / refined through v0.9.0) produces `tr_M(β_p, q_0)` agreeing with the prior `markov_peel` (MPFR) baseline **only to digit 17** — i.e. at native f64 precision, not the 50-dps the field name claims.
+The original doc claimed the `laurent_q_rust` default in `compute_tr_m_canonical()` dispatches through the f64 pyhecke-native surface and regresses the L1 50-dps floor. **This is wrong.**
 
+The actual code at `folio-assistant/computations/canonical_mass_table_extended.py:147`:
+
+```python
+if method == "laurent_q_rust":
+    from markov_peel_rust_bridge import tr_M_atomic_rust_full
+    effective_dps = max(int(dps), 50)  # ← enforces 50-dps floor
+    tr_mp = tr_M_atomic_rust_full(Z, N, dps=effective_dps)
 ```
-field: tr_M_q0_canonical_50dps
-  markov_peel (prior baseline, MPFR): 1.065306228592388759238723262727897372948
-  laurent_q_rust  (new default,  f64): 1.065306228592389255153277569968066119334
-                                                     ^─ diverges at 10^-17
-```
 
-`pyhecke_native` v0.9.0 exposes both `tr_m_atomic_mpfr` (`tr_m_atomic_mpfr_cached`) and the f64 surface. The dispatcher in `canonical_mass_table_extended.py compute_tr_m_canonical()` currently selects the f64 path; the witness `parameters` field correctly logs `"precision": "f64"`, but the data field naming (`tr_M_q0_canonical_50dps`) is misleading.
+`tr_M_atomic_rust_full` routes through pyhecke-native's `tr_m_atomic_mpfr` (MPFR surface), not the f64 surface. The compute IS at 50 dps.
 
-## What this PR does NOT do
+### What actually caused the "drift" the detector caught
 
-- **Does not fix the script.** No production-pipeline change is being made here, per "WE NEED CANONICALLY DERIVED ONLY" + L1 50-dps floor. The fix is a separate canonical task.
-- **Does not invalidate PR #1064.** That PR's empirical Tier 1.A speedup data (⁴He 1s, ⁵Li 6.2s, ⁶Li 68s, ⁷Li 693s) is real and reproducible; the data field naming + dispatch surface are the issue, not the Rust kernel.
+The drift the witness-pipeline detector flagged was a **precision improvement, not a regression**:
 
-## What this PR DOES
+- **Prior `markov_peel` baseline** (the value the detector compared against): used `sp.Float(str(Q_FLOAT), 50)` where `Q_FLOAT` is a Python float (f64) — so `str(Q_FLOAT)` is ~17 digits. The sympy `Float` got created with 50 dps allocation but f64-precision INPUT. Effective substrate precision: ~17 dps.
 
-Records the finding in a stable coordination doc so the next agent can:
-1. Switch the default in `compute_tr_m_canonical()` from the f64 `laurent_q_rust` path to `tr_m_atomic_mpfr` (or `tr_m_atomic_mpfr_cached`)
-2. Re-run the full mass table; cross-check `tr_M(β_p, q_0)` matches the prior `markov_peel` baseline bit-for-bit at 50 dps
-3. Either rename the witness field to reflect actual precision (if f64 is intentional for a non-canonical fast-path) or restore 50-dps and keep the existing field name
+- **New `laurent_q_rust` path**: uses `Q_50_DIGIT_STR` directly (a 50-digit string literal). Effective substrate precision: 50 dps.
 
-## Why this is a coordination doc, not an audit doc
+`tr_M(β_p, q_0)` differs at digit 17 because the OLD path was f64-substrate-precision; the NEW path is genuine 50-dps. The new value is MORE accurate.
 
-Per CLAUDE.md §canonical-derivation discipline:
-- Probes / explorations / spikes → `docs/audits/`
-- Cross-PR / process / queue items → `docs/coordination/`
+### Misleading witness metadata (the REAL bug)
 
-This is a **process** finding: the regen attempt's failure surfaced a script-level canonical-compliance gap. The fix lives in a separate focused PR; this doc just queues the work.
+What IS broken: the witness emitter's metadata fields don't reflect the dispatched path:
+- `parameters.precision: "f64"` (should be `"mpfr"`)
+- `parameters.dps: 0` (should be `50`)
+- `description` field still says "Rust hecke-canonical-chi (f64)" (should say pyhecke-native v0.9.0 tr_m_atomic_mpfr)
 
-## Acceptance criteria for the follow-up fix
+These are stale script-header strings, not compute regressions.
 
-The follow-up PR must:
-- [ ] Change `canonical_mass_table_extended.py compute_tr_m_canonical()` default for `--method laurent_q_rust` to dispatch through `tr_m_atomic_mpfr` (or its cached variant)
-- [ ] `tr_M(β_p, q_0)` matches `1.065306228592388759238723262727897372948` to all 40 dps emitted in the witness (no f64 truncation at digit 17)
-- [ ] Witness-pipeline drift detector passes (or: explicit field rename if the f64 path is retained as an opt-in alternative)
-- [ ] Cross-check holds on the full p..⁷Li atom set
+### Genuine open finding (separate from this retraction)
+
+`knot_operators` metadata in the witness drops the `sigma_inv` sign marker for indices 1, 4, 7, 9, 12 in ⁵Li/⁶Li/⁷Li records (per Gemini review on #1064). The `braid_word_canonical` field has the correct signs; `knot_operators` was built from a separate codepath that strips the sign. This is a data-integrity bug worth a focused fix. **Not the f64 regression originally claimed in this doc.**
+
+## What this retraction does
+
+1. Marks the original claim wrong + explains why
+2. Identifies the actual bug class (witness metadata staleness, not precision regression)
+3. Points to the active follow-up PR fixing the metadata fields and the knot_operators sign
 
 ## Related work
 
-- PR #859 (merged 2026-05-20) — landed Phase-2 Rust port (`tr_m_word_lq` recursion + MPFR path)
-- PR #1064 (open, drift-detector RED) — the regen attempt that surfaced this finding
-- PR #1063 (open) — Family A +2.89-3.86% gap audit (separate canonical-derivation issue)
-- `docs/coordination/2026-05-22-tier-1a-rust-laurent-q.md` — original Tier 1.A coordination
-- `docs/audits/2026-05-22-rust-laurent-q-reduce-results.md` — original Tier 1.A results
+- PR #1064 (merged) — the regen that surfaced this; sound numerical data
+- PR #1069 — original (incorrect) coord doc — superseded by this retraction
+- Follow-up fix PR — `canonical_mass_table_extended.py` metadata fields + `knot_operators` sign restoration
+- `docs/audits/2026-05-22-rust-laurent-q-reduce-results.md` — original Tier 1.A results (confirms MPFR cross-check at 1e-50)
 
-## Disposition of PR #1064
+## Lesson
 
-Per author direction (2026-05-24): **/prepare-merge auto**. The PR will run through the standard prepare-merge automation. If the drift detector continues to red-flag, that's expected — the finding (this doc) is the deliverable, and PR #1064 may be closed in favor of the follow-up fix PR.
+When a drift detector fires on a witness regen, FIRST verify which path actually computes the value (via the dispatcher logic), not just the metadata field labels. The witness's `parameters.precision` field is built by the script's header, not introspected from the runtime dispatch — it can lie.
