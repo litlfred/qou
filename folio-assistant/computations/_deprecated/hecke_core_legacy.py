@@ -22,19 +22,30 @@ existing `from hecke_core import X` for any symbol in this file
 continues to work because `hecke_core` re-exports everything here.
 """
 
-# Re-import the imports the legacy code uses. Most of these mirror
-# hecke_core.py's import block; pyhecke.gram is imported via the same
-# bootstrap pattern.
+# ── Stdlib imports the moved code uses ──
+# These were originally at hecke_core.py module-top (lines 1420-1421,
+# 2233-2234). When the carve-out split the file, the moved functions
+# (`unified_iterative_correction*`, `_jet_witness_path`,
+# `_load_categorical_shell`) still reference them — so they live here
+# now. All unconditional — function-call-time NameError if a function
+# is called without the import being available (caught by PR #1085
+# review).
 import math
-import numpy as np
+import json as _json
+import os as _os
+import sys as _sys
+from pathlib import Path as _Path
 from fractions import Fraction
+import numpy as np
+
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 
+# pyhecke bootstrap (mirrors hecke_core.py) — note `_os` and `_sys`
+# are already imported above unconditionally; this block only fixes
+# sys.path if pyhecke isn't installed.
 try:
     import pyhecke.gram as _probe  # noqa: F401
 except ImportError:
-    import os as _os
-    import sys as _sys
     _PYHECKE_PATH = _os.path.normpath(
         _os.path.join(_os.path.dirname(__file__), "..", "..", "..", "tools", "pyhecke", "python")
     )
@@ -52,10 +63,41 @@ from pyhecke.gram import (  # noqa: E402
 )
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
-# Pull in the CANONICAL infrastructure from hecke_core (defined ABOVE
-# the back-compat re-export at the bottom of hecke_core.py, so this
-# circular-looking import resolves cleanly).
-from hecke_core import (
+# Module-level cache for `_partition_table` — was at hecke_core.py
+# line 560 in the original; the carve-out missed it because the
+# AST-driven script's LEGACY_CONSTANTS set listed only `_PARTITION_TABLE`
+# (the lazy proxy), not its underlying cache. NameError on the first
+# call to `_partition_table()` without this. Caught by PR #1085 review.
+_PARTITION_TABLE_CACHE: list[dict] | None = None
+
+# ── Canonical-surface imports ──
+# This block MUST stay near the top of the file, before any module-level
+# statement that evaluates a canonical function (e.g. the
+# `H_Q_22 = q_hook_product((2, 2))` line below). Moving the import to
+# the bottom would NameError at module load.
+#
+# This is a circular import that resolves cleanly only via the
+# canonical entry point `import hecke_core`:
+#
+#   1. `import hecke_core`
+#   2. hecke_core defines canonical_stuff, then hits the back-compat
+#      `from _deprecated.hecke_core_legacy import (...)` at its bottom
+#   3. Python imports this legacy module
+#   4. This module hits `from hecke_core import (canonical_stuff)`
+#      and finds hecke_core in sys.modules with canonical_stuff already
+#      defined → succeeds
+#   5. This module's body finishes; hecke_core's bottom re-export succeeds
+#
+# A DIRECT `import _deprecated.hecke_core_legacy` (bypassing hecke_core)
+# is the fragile case Copilot flagged on PR #1085: it would trigger
+# hecke_core import, which tries to re-import this module from a partial
+# init → ImportError. **No code today does this**; all consumers use
+# `from hecke_core import X` (which works). Phase B follow-up will
+# refactor the canonical surface into a third module that both files
+# can import without cycles, eliminating the fragility entirely.
+# **Until then: always import legacy symbols via `hecke_core`, never
+# from `_deprecated.hecke_core_legacy` directly.**
+from hecke_core import (  # noqa: E402
     # q-combinatorics seed
     q_factorial, q_hook_product, partitions_of, partition_dimension,
     partition_conjugate, partition_is_self_conjugate, q_dimension,
@@ -2239,3 +2281,4 @@ def atom_mass(Z, N):
     M_const = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
     phi = compute_phi1_full(Z, N)
     return M_const + KAPPA * phi, phi
+
