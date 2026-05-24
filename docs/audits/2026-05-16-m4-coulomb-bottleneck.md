@@ -99,6 +99,12 @@ this becomes a categorical correction.
 
 ## Witness
 
-[`folio-assistant/computations/m4-magic-shell-correction-mass-table.witness.json`](../../folio-assistant/computations/m4-magic-shell-correction-mass-table.witness.json)
-records all 6 atoms × both Q_β modes × magic-shell correction
-with full per-term breakdown.
+`folio-assistant/computations/m4-magic-shell-correction-mass-table.witness.json`
+**(deleted as orphan in PR #1077 — producer script
+`probe_m4_magic_shell_correction.py` was removed in `aac4f0050`
+"cleanup(batch2): move 148 probes + 2 deprecated to `_deprecated/`").**
+At its 2026-05-16 commit, the witness recorded all 6 atoms × both
+Q_β modes × magic-shell correction with full per-term breakdown.
+The data was a snapshot of the categorical-Coulomb bottleneck
+diagnosis at the time of this audit; the analysis above stands
+on its own without the JSON.
