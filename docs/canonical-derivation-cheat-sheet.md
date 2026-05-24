@@ -16,7 +16,11 @@
 >
 > per `prop:geom-universality`. For the proton, `Geom_full(𝓑₃)` factors as `(Vol(𝓑₃)/ℏ_q²) · linking_weight(q)` — but the linking weight is **part of Geom**, not separate. The current categorical computation gives m_p ≈ 965 MeV (+2.89%); the open R&D is **refining `Geom_full(𝓑₃)`**, not "deriving λ_scale". The Yekutieli per-cell route was briefly tried in production then PURGED 2026-05-24 (71d674da1) as non-canonical.
 >
-> See [`docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) §"λ_scale is NOT a separate object" for the authoritative discussion. Agents recurrently rediscover and re-frame "λ_scale closure" as if it were the open problem — it is not. The problem is per-knot `Geom_full` refinement.
+> See [`lambda-scale-absorbed-into-geom-full.md`](lambda-scale-absorbed-into-geom-full.md) for the canonical reference, including the numerical demonstration that no standard invariant produces 2.46 directly and the full list of refuted alternative derivations.
+>
+> Original numerical discussion: [`coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) §"λ_scale is NOT a separate object — it's what Geom_full produces".
+>
+> Agents recurrently rediscover and re-frame "λ_scale closure" as if it were the open problem — it is not. The problem is per-knot `Geom_full` refinement.
 
 ---
 

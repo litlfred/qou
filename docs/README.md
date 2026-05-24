@@ -18,7 +18,7 @@ m(K) = m_e × Geom_full(K, q₀)
 
 — a **single** Geom call per knot/link, per `prop:geom-universality`. The numerical factor that older docs call `λ_scale` is *what `Geom_full(K)` produces for that K*. There is no separate constant to derive, calibrate, or "close". The ~2.89% m_p residual is the gap between the framework's current categorical `Geom_full(𝓑₃)` computation and its categorically-exact value — open R&D for **refining `Geom_full`**, NOT for "deriving λ_scale".
 
-Authoritative reference: [`coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) §"λ_scale is NOT a separate object".
+Canonical reference (cite this in any audit/coord that touches λ_scale): [`lambda-scale-absorbed-into-geom-full.md`](lambda-scale-absorbed-into-geom-full.md). The original numerical demonstration is in [`coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) §"λ_scale is NOT a separate object".
 
 ---
 
