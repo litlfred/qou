@@ -30,17 +30,6 @@ $$
 $\mathbb{Q}(\zeta_3, \zeta_5)$, has Bloch-Wigner image
 $D([Z]_{\mathrm{Bring}}) = 2/(3\pi)$.*
 
-> **Status: open structural sub-conjecture.** This is the K-theoretic
-> identification required to inhabit the typeclass
-> [`QOU.Archimedean.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean)
-> from
-> [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).
-> The statement is a concrete, falsifiable prediction once the
-> "$S_5$-equivariantly embeddable" condition is made precise. The
-> proof attempt below establishes (i) the relevant field structure
-> unconditionally, (ii) the figure-8 contribution as a worked
-> classical sub-piece, and (iii) the irreducible open problem.
-
 ## Why this conjecture is the right framing
 
 The mass / hyperbolic sector of the QOU framework

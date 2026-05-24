@@ -22,4 +22,11 @@ export default proposition({
     ref: "qou:QOU.Archimedean.PartialClosures.partial_closures_at_boundary",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body:
+        "**theorem (boundary cases, sorry-free).** This proposition closes a non-trivial portion of substantive Mathlib gaps (2) and (3) from [rem:three-substantive-mathlib-fillers](#rem:three-substantive-mathlib-fillers) without requiring upstream Mathlib contributions. The full identities (general 5-argument pentagon, $x \\in (0,1)$ Faddeev-Kashaev) remain open and require Fourier-series or Tauberian infrastructure not yet in Mathlib.",
+    },
+  ],
 });

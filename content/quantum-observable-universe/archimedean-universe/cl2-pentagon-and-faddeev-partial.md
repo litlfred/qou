@@ -12,15 +12,6 @@ theorems:*
   \mathrm{Li}_2(0) = 0$, the boundary case of the Faddeev-Kashaev limit
  at $x = 0$.*
 
-> **Status: theorem (boundary cases, sorry-free).** This proposition
-> closes a non-trivial portion of substantive Mathlib gaps (2)
-> and (3) from
-> [`rem:three-substantive-mathlib-fillers`](#rem:three-substantive-mathlib-fillers)
-> without requiring upstream Mathlib contributions. The full
-> identities (general 5-argument pentagon, $x \in (0,1)$
-> Faddeev-Kashaev) remain open and require Fourier-series or
-> Tauberian infrastructure not yet in Mathlib.
-
 ## Lean theorems (sorry-free)
 
 See [Table 1](#tbl:cl2-pentagon-and-faddeev-partial-table1-data).

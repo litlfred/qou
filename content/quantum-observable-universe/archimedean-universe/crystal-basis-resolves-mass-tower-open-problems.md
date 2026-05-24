@@ -18,15 +18,6 @@ $\mathrm{Cryst}(\mathfrak{sl}_n)$ [`kashiwara1991`]:*
  whose action collapses $H_n(R, q)$ to $\mathbb{Z}[S_n]$ via
  integer KL coefficients.*
 
-> **Status: structural reduction (sorry-free conditional).**
-> This proposition does *not* close the four open problems. It
-> reduces three of them — chirality, Term 7, z-Habiro — to
-> finite-graph computations on Kashiwara crystals already
-> documented in the repository. Each reduction is sorry-free
-> conditional on the upstream Brundan-Kleshchev / Lecouvey
-> conjectures; the residual open content is the explicit
-> crystal-graph computation per problem.
-
 ## The three reductions
 
 ### Reduction 1: chirality $\langle c \rangle_\beta$ via Type-B folding
