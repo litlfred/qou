@@ -37,21 +37,22 @@ has been created:
 
 ## GAP-A-2 — Chirality formula $a_K = 1 + w \cdot h$ (chiral case) *(refined 2026-05-09)*
 
-**Source:** [`chirality-writhe-ribbon-derivation.md`](chirality-writhe-ribbon-derivation.md) §Caveat
-and §Numerical test at $H_6(R, q)$ (satellite $D$).
+**Source:** [`chirality-writhe-ribbon-derivation.md`](chirality-writhe-ribbon-derivation.md) §Caveat and §Numerical test at $H_6(R, q)$ (satellite $D$).
 
 **Status:** **Refined.** The structural form
 $a_K = 1 + w(\beta) \cdot X \cdot h + O(h^2)$ is retained (linear
 in $h$ and writhe), but the specific coefficient
 $X = \langle c \rangle_\beta$ (Wedderburn-averaged content) is now
 **numerically falsified** on the deuteron. The script
-`ribbon_content_average.py` computes $\langle c \rangle_\beta$ and
-the predicted $a_D$, giving values that vary $-2.16$ to $+3.10$
-depending on whether inter-nucleon crossings are included, against
-paper's assignment $a_D = 1 + h \approx 1.21$. The single-nucleon
-neutron case happens to land within $2.5\%$ "coincidentally close
-but without deeper structural justification at $A = 1$"
-(quoting [`chirality-writhe-ribbon-derivation.md`](chirality-writhe-ribbon-derivation.md)).
+[`folio-assistant/computations/_deprecated/ribbon_content_average.py`](../../../folio-assistant/computations/_deprecated/ribbon_content_average.py)
+computes $\langle c \rangle_\beta$ and the predicted $a_D$, giving
+values that vary from $-2.16$ to $+3.10$ depending on whether
+inter-nucleon crossings are included, against paper's assignment
+$a_D = 1 + h \approx 1.21$. (Witness:
+[`_deprecated/ribbon-content-average.witness.json`](../../../folio-assistant/computations/_deprecated/ribbon-content-average.witness.json).)
+The single-nucleon neutron case happens to land within $2.5\%$
+"coincidentally close but without deeper structural justification at
+$A = 1$" (quoting [`chirality-writhe-ribbon-derivation.md`](chirality-writhe-ribbon-derivation.md)).
 The Wedderburn-averaged coefficient is therefore **not** the
 correct $X$; possible refinements (weighting by $\dim_q(\lambda)$
 instead of $\dim_q(\lambda)^2$, topological vs. algebraic writhe,
@@ -205,8 +206,7 @@ derivation described above.
 
 ## GAP-C-1 — $q$-integer BW coefficients (pattern match)
 
-**Source:** [`../particle-interactions/q-integer-mass-formula.md`](../particle-interactions/q-integer-mass-formula.md)
-(block moved from `braids-and-knots/`).
+**Source:** [`../particle-interactions/q-integer-mass-formula.md`](../particle-interactions/q-integer-mass-formula.md) (block moved from `braids-and-knots/`).
 
 **Status:** **Partially derived.** Five standard liquid-drop
 coefficients (volume, surface, Coulomb, asymmetry, pairing) and
