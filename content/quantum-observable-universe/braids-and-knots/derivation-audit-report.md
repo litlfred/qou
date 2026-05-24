@@ -140,14 +140,17 @@ binding was an empirical fit at that stage.
 
 ## GAP-B-2 — Fitted $\beta_3$ in atomic braid mass *(closed)*
 
-**Source:** `atomic-braid-mass.md` §Definition (now lives in
-`particle-interactions/`).
+**Source:** `content/quantum-observable-universe/particle-interactions/atomic-braid-mass.md`
+§Definition (block moved from `braids-and-knots/`).
 
 **Status:** **Closed.**  The coefficient is now derived in closed form
 as $\beta_3 = (q - q^{-1})^2 \approx 0.0437$ at the substrate value
-(see `atomic-braid-mass.md:184`).  On the Lean side this is the
+(see
+[`particle-interactions/atomic-braid-mass.md`](../particle-interactions/atomic-braid-mass.md)
+around line 184).  On the Lean side this is the
 `WedderburnMassFormula.β₃ := HA^2` field
-(`atomic-braid-mass.lean:77`).  The current numerical value
+([`particle-interactions/atomic-braid-mass.lean`](../particle-interactions/atomic-braid-mass.lean)
+around line 77).  The current numerical value
 $\approx 0.0437$ differs slightly from the historical fit "$\approx 0.050$"
 and is now a derived q-integer-like quantity, not a fit input.
 
