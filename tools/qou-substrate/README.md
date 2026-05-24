@@ -36,12 +36,17 @@ print(fmt(x))           # "1.4142135623..." trimmed to 40 dps for witness JSON
 
 # Witness emission with git provenance + staleness tracking
 w = WitnessBuilder(
-    block_id="my-computation",
-    description="What this witness records",
+    name="my-computation",        # → my-computation.witness.json
     engine="mpmath",
+    output_dir="computations/",   # defaults to the caller-script's dir
 )
+w.set_description("What this witness records")
+w.set_content_block("prop:my-proposition")
 w.add_data("answer", fmt(x))
-w.write("computations/my-witness.witness.json")
+w.add_assertion("sqrt(2)", computed=fmt(x), expected="1.4142135624",
+                tolerance=1e-9, source="exact")
+out_path = w.save()               # writes the witness JSON; returns Path
+print(f"wrote {out_path}")
 ```
 
 ## Where this fits in the QOU framework

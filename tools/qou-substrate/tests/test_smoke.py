@@ -1,10 +1,6 @@
 """Smoke tests — package imports, substrate constants compute, witness round-trips."""
 
 import json
-import tempfile
-from pathlib import Path
-
-import pytest
 
 
 def test_package_importable():
