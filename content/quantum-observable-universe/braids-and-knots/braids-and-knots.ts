@@ -499,6 +499,7 @@ export default chapter({
         "two-tier-scaling-pq",
         "three-calibration-inputs",
         "three-parameters-wedderburn",
+        "q-beta-substrate-prediction",
         "wedderburn-trace-identity",
         "binding-scale-catalan",
         "wedderburn-mass-formula",
