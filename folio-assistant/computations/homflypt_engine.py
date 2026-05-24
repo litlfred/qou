@@ -539,25 +539,24 @@ def _homflypt_2strand_numerical(k: int, v, z):
 def _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q):
     """Numerical HOMFLYPT for n≥3 strand braids via Ocneanu trace.
 
-    Uses the Wedderburn decomposition through hecke_characters:
+    Two paths depending on N:
 
-      P(β̂; v, z) = δ^{n-1} · Σ_λ ω_λ(s, q) · χ_λ(β) / dim(V_λ)
+    **SU(2) (N=2):** Uses the existing Markov trace (y_λ weights)
+    which IS the SU(2) HOMFLYPT. The Schur weight formula has a
+    removable singularity at the SU(2) point (s = -1 makes the
+    c=0 cell factor vanish); the Markov trace bypasses this.
 
-    where:
-      δ = (v⁻¹ - v) / z
-      s = 1 / δ  (Ocneanu parameter)
-      χ_λ(β) = character trace from hecke_characters.chi_lambda_braid
-      ω_λ = quantum Schur weight (hook-content formula)
+    **SU(N>2):** Uses the quantum Schur function formula:
+      s_λ(SU(N)) = ∏_{(i,j)∈λ} [N + c(i,j)]_q / [h(i,j)]_q
+    where [m]_q = (q^m − q^{-m})/(q − q^{-1}) is the q-integer.
     """
     import mpmath as mp
     from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 
-    delta = (1 / v - v) / z
-    s = 1 / delta
     n = n_strands
+    delta = (1 / v - v) / z
 
-    # Convert braid_word from [±int] to [(sign, gen)] format for
-    # hecke_characters
+    # Convert braid_word from [±int] to [(sign, gen)] format
     hc_word = []
     for g in braid_word:
         if g > 0:
@@ -565,44 +564,78 @@ def _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q):
         else:
             hc_word.append((-1, -g))
 
-    # Compute per-partition contributions
-    total = mp.mpf(0)
+    # Detect N from v and q: v = q^{(N-1)/2}
+    # log_q(v) = (N-1)/2 → N = 2 log_q(v) + 1
+    log_q_v = float(mp.log(v) / mp.log(q))
+    N_detected = round(2 * log_q_v + 1)
+
+    if N_detected == 2:
+        # SU(2) path: use Markov trace (proven, no singularity)
+        # tr_M(β) = Σ_λ y_λ · χ_λ(β)
+        # P(β̂; SU(2)) = δ^{n-1} · tr_M(β) / tr_M(identity)
+        # where tr_M(identity) = Σ_λ y_λ · dim(V_λ) gives the
+        # n-component unlink HOMFLYPT = δ^{n-1}.
+        from wedderburn_jones_markov import y_lambda_at
+        y_vals = y_lambda_at(n, q_val=float(q))
+        tr_M_beta = 0.0
+        tr_M_id = 0.0
+        for lam in partitions_of(n):
+            shape = list(lam)
+            chi_val = chi_lambda_braid(shape, hc_word)
+            # Identity braid: trace = classical dimension f^λ
+            chi_id_val = chi_lambda_braid(shape, [])
+            y_raw = y_vals.get(lam, y_vals.get(tuple(shape), 0))
+            y = float(y_raw) if y_raw else 0.0
+            tr_M_beta += y * chi_val
+            tr_M_id += y * chi_id_val
+
+        if abs(tr_M_id) < 1e-30:
+            return mp.mpf(1)
+
+        # P = tr_M(β) / tr_M(identity) · δ^{n-1}
+        # Note: tr_M(identity on n strands) = Markov trace of
+        # n-component unlink, which by construction equals
+        # (const)^{n-1} · 1. The ratio gives the correct
+        # normalisation.
+        return mp.mpf(float(delta) ** (n - 1) * tr_M_beta / tr_M_id)
+
+    # SU(N>2) path: quantum Schur function formula
+    # s_λ(SU(N)) = ∏_{(i,j)∈λ} [N + c(i,j)]_q / [h(i,j)]_q
+    q_float = float(q)
+    h_q = q_float - 1.0 / q_float  # q − q⁻¹
+
+    def q_int(m):
+        if abs(h_q) < 1e-30:
+            return float(m)
+        return (q_float ** m - q_float ** (-m)) / h_q
+
+    total = 0.0
+    total_id = 0.0
     for lam in partitions_of(n):
         shape = list(lam)
-
-        # χ_λ(β) via hecke_characters (f64 for speed)
         chi_val = chi_lambda_braid(shape, hc_word, q_value=float(q))
+        chi_id = dim_q(shape)
 
-        # dim_q(V_λ) — quantum dimension (uses global q0)
-        dq = dim_q(shape)
-
-        if abs(dq) < 1e-30:
-            continue
-
-        # Normalized trace
-        tr_lam = chi_val / dq
-
-        # Schur weight ω_λ(s, q) via hook-content formula:
-        # ω_λ = s^n · ∏_{(i,j)∈λ} (q^{c(i,j)}·s − q^{-c(i,j)}/s)
-        #                           / (q^{h(i,j)} − q^{-h(i,j)})
-        omega = float(s) ** n
+        # Quantum Schur function at SU(N)
+        schur = 1.0
         cells = _cells(lam)
         for (i, j) in cells:
             c = _content(i, j)
             h = _hook_length(lam, i, j)
-            q_c = float(q) ** c
-            q_h = float(q) ** h
-            numer = q_c * float(s) - 1.0 / (q_c * float(s))
-            denom = q_h - 1.0 / q_h
+            numer = q_int(N_detected + c)
+            denom = q_int(h)
             if abs(denom) < 1e-30:
-                omega = 0.0
+                schur = 0.0
                 break
-            omega *= numer / denom
+            schur *= numer / denom
 
-        total += omega * tr_lam
+        total += schur * chi_val / chi_id if abs(chi_id) > 1e-30 else 0
+        total_id += schur
 
-    # P = δ^{n-1} · total
-    return mp.mpf(float(delta) ** (n - 1) * total)
+    if abs(total_id) < 1e-30:
+        return mp.mpf(0)
+
+    return mp.mpf(float(delta) ** (n - 1) * total / total_id)
 
 
 def homflypt_at_su_n(
