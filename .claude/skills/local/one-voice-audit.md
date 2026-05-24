@@ -55,6 +55,44 @@ violation. Common breakages:
     `linarith`, `0 < q`, or `ℝ` without declaring archimedean
     specialisation; archimedean blocks must declare their `ℝ`
     types explicitly.
+11. **Structural-argument hedging / "exposition simplifies"
+    framing** — the paper derives its results from a canonical
+    derivation chain (CLAUDE.md *Canonical derivation chain*
+    cheat sheet). It does not need "structural argument" /
+    "morally correct" / "essentially the X" / "heuristically" /
+    "simplification for exposition" / "provides the mathematical
+    framework" / "broadly speaking" / "loosely speaking" /
+    "for context" / "by way of background" / "in some sense" /
+    "conceptually analogous" patches as a substitute for the
+    derivation. These are signs that either (a) the canonical
+    derivation IS in the paper and the hedge is paper-length
+    cruft, or (b) the block is asserting an unsupported analogy
+    and should be demoted to a remark with `interprets:` (per
+    §3a) or removed. Paper-too-long policy: prefer (a) — strip
+    the hedge — unless the block author flags a real gap.
+    Common phrases (case-insensitive, multi-word):
+    - `structural argument`
+    - `morally correct`, `morally a`, `morally`
+    - `essentially the`, `essentially a`, `essentially zero`,
+      `essentially complete`
+    - `heuristically (replaced|exploitable|the)`
+    - `simplification for exposition`,
+      `simplifies (the )?exposition`,
+      `simplifies the paper`
+    - `provides the (mathematical framework|natural setting|
+      canonical duality)`, `provides a canonical (framework|
+      duality|basis)`, `gives a canonical (functor|grading|
+      ordering)`
+    - `for context`, `by way of background`,
+      `broadly speaking`, `loosely speaking`, `in some sense`,
+      `conceptually analogous`
+    - `amounts to`, `amount(s|ed) to`,
+      `(reformulated|reformulation) as`
+    Exceptions: (i) the phrase IS the canonical mathematical term
+    of art and removing it changes the claim (e.g. "essentially
+    surjective" as a category-theory term, "essentially zero"
+    inside a results table); (ii) the block has an explicit
+    `tags: ["non-scholarly-voice-exception"]` opt-out.
 
 ## When to use
 
@@ -94,6 +132,12 @@ grep -rEn "\b(we'll add|I'll add|let me|needs more work|note to self|we should f
 
 # Unicode chars that crash pdflatex (or render unreliably)
 grep -rEn "↦|⁻|√|─|✅|·|²" "$CONTENT" --include="*.md"
+
+# Structural-argument hedging / "essentially" / "morally" / "heuristically"
+# (criterion 11 — paper-too-long policy: prefer to strip)
+grep -rEni \
+  "structural argument|morally (correct|a |)|essentially (the |a |zero|complete|surjective|non-local)|heuristically (replaced|exploitable|the)|simplification for exposition|simplifies (the )?exposition|simplifies the paper|provides (the |a )(mathematical framework|natural setting|canonical (duality|basis|framework))|gives a canonical (functor|grading|ordering)|for context|by way of background|broadly speaking|loosely speaking|in some sense|conceptually analogous|amount(s|ed) to|(reformulated|reformulation) as" \
+  "$CONTENT" --include="*.md"
 ```
 
 ### 2. Triage by category
@@ -106,6 +150,7 @@ grep -rEn "↦|⁻|√|─|✅|·|²" "$CONTENT" --include="*.md"
 | **D. Star marker** `★` | "best fit", "magic-receptive", "shell closure" | **Keep in tables when meaning is column-scoped.** In body prose → replace with explicit word. |
 | **E. Unicode crash** | `↦`, `⁻`, `√`, `─`, `✅`, `·`, `²` | Replace with LaTeX command in math (`\mapsto`, `^{-1}`, `\sqrt{}`, `\cdot`, `^{2}`) or strip box-drawing comments. Add to preamble's `\newunicodechar` list only if widely used. |
 | **F. First-person work tone** | "we'll add", "I'll fix" | **Rewrite in passive/scholarly voice.** Often a sign the sentence shouldn't exist at all. |
+| **G. Structural-argument hedging** | "structural argument", "morally correct", "essentially the X", "heuristically", "simplification for exposition", "provides the mathematical framework", "amounts to" | **Strip** if the canonical derivation IS in the paper (most cases — paper is already too long). **Demote** to `remark` with `interprets:` if the block is asserting an unsupported analogy. **Keep** only if (i) the phrase is a category-theory term of art (e.g. `essentially surjective`) or (ii) the block has `tags: ["non-scholarly-voice-exception"]`. |
 
 ### 3. Apply mechanical fixes
 
