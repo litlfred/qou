@@ -34,6 +34,7 @@ import sys
 import json
 import math
 from pathlib import Path
+from mpmath import mp
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -76,7 +77,7 @@ def phi_atom_wedderburn(Z: int, N: int, include_inter: bool = True) -> float:
         Vf = v["full"]
         if abs(Vf) < 1e-30:
             return float("-inf")
-        total += math.log(abs(Vf))
+        total += mp.log(abs(Vf))
     return total
 
 
@@ -94,7 +95,7 @@ def phi_atom_tower_per_block(Z: int, N: int,
             p = Phi_q(a)
             if p <= 0 or not math.isfinite(p):
                 return 0.0
-            return math.log(p)
+            return mp.log(p)
         except Exception:
             return 0.0
     sym_sum = sum(_log_phi(v["sym"]) for v in vols)
@@ -173,16 +174,16 @@ if __name__ == "__main__":
         try:
             pa = phi_atom_tower_per_block(Z, N, include_inter=True)
             B_pred = M_E_MEV * pa["total"]
-            err = ((B_pred - B_AME) / B_AME * 100
+            err = float(((B_pred - B_AME) / B_AME * 100)
                     if B_AME else float("nan"))
             print(f"  {name:>6} {B_AME:>10.4f} "
-                  f"{pa['sym']:>+12.4f} {pa['std']:>+12.4f} "
-                  f"{pa['alt']:>+12.4f} {pa['total']:>+12.4f} "
-                  f"{B_pred:>+10.4f} {err:>+9.3f}%")
+                  f"{float(pa['sym']):>+12.4f} {float(pa['std']):>+12.4f} "
+                  f"{float(pa['alt']):>+12.4f} {float(pa['total']):>+12.4f} "
+                  f"{float(B_pred):>+10.4f} {err:>+9.3f}%")
             results_f2b.append({"atom": name, "Z": Z, "N": N,
                                   "A": Z + N, "B_AME": B_AME,
-                                  "phi_atom_total": pa["total"],
-                                  "B_pred_MeV": B_pred,
+                                  "phi_atom_total": float(pa["total"]),
+                                  "B_pred_MeV": float(B_pred),
                                   "err_pct": err})
         except Exception as e:
             print(f"  {name:>6}: ERR {type(e).__name__}: {str(e)[:60]}")
