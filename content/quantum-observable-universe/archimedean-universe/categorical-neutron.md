@@ -17,11 +17,8 @@ content (no separate $\mathcal{L}_H$ factor).
 The two down quarks introduce stronger $-H_A$ shifts than
 the proton's single down quark:
 
-| Pair | Type | Crossing element |
-|:---|:---|:---|
-| $(1,2)$ | $\mathfrak{d}$-$\mathfrak{d}$ | $\sigma_0 - H_A \mathbf{1}$ |
-| $(0,1)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_0 - \tfrac{1}{2}H_A \mathbf{1}$ |
-| $(0,2)$ | $\mathfrak{u}$-$\mathfrak{d}$ | $\sigma_1 - \tfrac{1}{2}H_A \mathbf{1}$ |
+The crossing pairs are tabulated in
+[Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data).
 
 As with the proton, the 9-crossing element
 $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$

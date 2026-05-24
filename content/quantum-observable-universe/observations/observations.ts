@@ -30,6 +30,7 @@ export default chapter({
       blocks: [
         "particle-conjectures-intro",
         "borromean-quark",
+        "borromean-quark-table-data",
         "higgs-t28",
         "s5-equivariant-torus-knots",
         "symmetry-preserving-leptons",
@@ -78,6 +79,7 @@ export default chapter({
         "mass-predictions-data",
         "mass-comparison-table",
         "atom-mass-full-hecke",
+        "atom-mass-full-hecke-table-data",
         "feynman-qou-comparison",
         "neutron-proton-mass-splitting",
         "photon-channel-wedderburn-chain",
@@ -149,6 +151,9 @@ export default chapter({
         "shell-threading-conjecture",
         "single-magic-O18-diagram",
         "bw-mass-decomposition-dictionary",
+        // Detangler R3 (2026-05-23): 7-row BW-to-Schur-Weyl
+        // dictionary extracted from bw-mass-decomposition-dictionary.md.
+        "bw-mass-decomposition-dictionary-table-data",
         "strutinsky-from-graded-trace",
       ],
     }),
@@ -314,6 +319,7 @@ export default chapter({
         "hecke-satisfies-blitvic-hypothesis",
         "hecke-satisfies-blitvic-hypothesis-proof",
         "centered-hecke-variance-positive",
+        "centered-hecke-variance-positive-table-data",
         "centered-hecke-variance-positive-proof",
         "q-clt-non-commutative",
         "archimedean-macroscopic-washout",
@@ -347,6 +353,7 @@ export default chapter({
         "brings-surface-simulator",
         "quantum-brings-surface",
         "beta-decay-simulator",
+        "beta-decay-simulator-table-data",
         "outro-observations",
       ],
     }),

@@ -277,6 +277,7 @@ export default chapter({
         "q-value-transition",
         // Pair production and quark-antiquark creation
         "breit-wheeler-pair-production",
+        "breit-wheeler-pair-production-table-data",
         "quark-antiquark-production",
         // Knot operator selection and Frobenius Gram matrix
         "knot-operator-selection",
@@ -300,6 +301,7 @@ export default chapter({
         "categorical-proton-unique-proof",
         "meson-to-proton-via-borromean",
         "categorical-neutron",
+        "categorical-neutron-table-data",
         "categorical-neutron-exists",
         "categorical-neutron-exists-proof",
         "categorical-neutron-unique",
@@ -526,6 +528,7 @@ export default chapter({
         "baryon-integration-limit",
         "mobius-golden-fixed-points",
         "golden-skew-dual-node",
+        "golden-skew-dual-node-table-data",
       ],
     }),
     section({

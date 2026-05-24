@@ -15,24 +15,7 @@ with all three irreducible channels tracked independently.
 
 ## Three-channel decomposition
 
-The Wedderburn-Artin decomposition of $H_3(q)$ gives
-
-$$
-  H_3(q) \;\cong\;
-  V_{\mathrm{sym}} \oplus V_{\mathrm{std}}^{\oplus 2}
-  \oplus V_{\mathrm{alt}},
-  \qquad
-  \dim = 1 + 2 + 2 + 1 = 6 = |S_3|.
-$$
-
-Each crossing $(c, d)$ acts on the three channels via its
-eigenvalues:
-
-| Channel | Dimension | $\sigma \mapsto$ | $(c\sigma + d) \mapsto$ | Weight $w_\lambda$ |
-|---------|-----------|-------------------|-------------------------|--------------------|
-| Symmetric | 1 | $q$ | $cq + d$ | $1/6$ |
-| Standard | 2 | $2{\times}2$ matrix | $\hat{V}_i = z a_i + b_i$ | $4/6$ |
-| Alternating | 1 | $-q^{-1}$ | $-cq^{-1} + d$ | $1/6$ |
+See [Table: Three-channel $H_3(q)$ decomposition](#tbl:atom-mass-full-hecke-table-data).
 
 The full Markov trace on the regular representation is
 

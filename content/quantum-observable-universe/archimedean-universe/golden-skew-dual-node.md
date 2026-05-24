@@ -43,10 +43,7 @@ Our universe sits at $q_0 = 1.109978595554181\ldots$ (50 dps), in the open inter
 $(1, \varphi^2)$.  The two golden nodes bracket the physical regime,
 giving a **two-sided stability margin**:
 
-| Side | Node | Distance from $q_0$ |
-|------|------|---------------------|
-| sub-classical | $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$ | $q_0 - 1/\varphi^2 \approx 0.728$ |
-| super-classical | $q^{*}_{\mathrm{gold}} = \varphi^2 \approx 2.618$ | $\varphi^2 - q_0 \approx 1.508$ |
+See [Table: Golden-ratio dual nodes](#tbl:golden-skew-dual-node-table-data).
 
 The asymmetry — roughly $0.728 : 1.508 \approx 1 : 2.07$ — places
 $q_0$ closer to the sub-classical node than to the super-classical

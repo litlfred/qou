@@ -550,6 +550,7 @@ export default chapter({
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
+        "chi-v3-closed-form-proof-table-data",
         "chi-per-irrep-cyclotomic-closed-forms",
         "per-block-hopf-jones-absorption-pattern",
         "conj-qbeta-c-k-closed-forms",
@@ -666,6 +667,7 @@ export default chapter({
         "chirality-period-pairing",
         // Bring-embeddable knots: genus-bounded falsifiability targets.
         "bring-embeddable-knots",
+        "bring-embeddable-knots-table-data",
       ],
     }),
 
