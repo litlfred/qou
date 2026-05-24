@@ -19,6 +19,7 @@ import math
 import itertools
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
@@ -94,8 +95,8 @@ print()
 nf_C = build_atom(6, 6)
 nf_ub = apply_atom(list(nf_C), 1, 0)
 tr_ub = tr(nf_ub)
-Phi_ub = math.log(abs(tr_ub))
-print(f"Unbonded C×H: tr_M = {tr_ub:.6e}, Phi_1 = {Phi_ub:.6f}")
+Phi_ub = mp.log(abs(tr_ub))
+print(f"Unbonded C×H: tr_M = {tr_ub:.6e}, Phi_1 = {float(Phi_ub):.6f}")
 print()
 
 # ══════════════════════════════════════════════════════════════
@@ -128,7 +129,7 @@ for n in range(1, 5):
         t = tr(nf)
         if abs(t) < 1e-300:
             continue
-        Phi = math.log(abs(t))
+        Phi = mp.log(abs(t))
         bind = Phi_ub - Phi
         E = bind * E_mol
         label = ",".join(o[0] for o in ops)
@@ -147,7 +148,7 @@ for n in range(1, 5):
         if 3.5 < best['E'] < 5.5:
             marker = " ←←←"
         print(f"{n:>3} {w:>+4} {best['ops']:>28} {best['abs_tr']:>12.4e} "
-              f"{best['Phi']:>10.4f} {best['bind']:>10.6f} {best['E']:>10.4f}{marker}")
+              f"{float(best['Phi']):>10.4f} {float(best['bind']):>10.6f} {float(best['E']):>10.4f}{marker}")
 
         all_data.append({
             'n': n, 'w': w, 'ops': best['ops'],
@@ -184,10 +185,10 @@ for n in range(1, 5):
 
     print(f"  n={n}:")
     print(f"    Min writhe with binding > 0: w={best_w['w']}, "
-          f"ops={best_w['ops']}, E={best_w['E']:.4f} eV")
+          f"ops={best_w['ops']}, E={float(best_w['E']):.4f} eV")
     print(f"    Closest to {obs_E} eV:       w={closest['w']}, "
-          f"ops={closest['ops']}, E={closest['E']:.4f} eV "
-          f"(err: {(closest['E']/obs_E - 1)*100:+.1f}%)")
+          f"ops={closest['ops']}, E={float(closest['E']):.4f} eV "
+          f"(err: {float((closest['E']/obs_E - 1)*100):+.1f}%)")
     print()
 
 # ══════════════════════════════════════════════════════════════
@@ -213,7 +214,7 @@ for bname, ZA, NA, ZB, NB, obs in bond_types:
     nfA = build_atom(ZA, NA)
     nf_u = apply_atom(list(nfA), ZB, NB)
     tr_u = tr(nf_u)
-    Phi_u = math.log(abs(tr_u)) if abs(tr_u) > 1e-300 else float('inf')
+    Phi_u = mp.log(abs(tr_u)) if abs(tr_u) > 1e-300 else float('inf')
 
     print(f"--- {bname} ---")
 
@@ -228,7 +229,7 @@ for bname, ZA, NA, ZB, NB, obs in bond_types:
             nf = apply_atom(nf, ZB, NB)
             t = tr(nf)
             if abs(t) < 1e-300: continue
-            Phi = math.log(abs(t))
+            Phi = mp.log(abs(t))
             bind = Phi_u - Phi
             E = bind * E_mol
             label = ",".join(o[0] for o in ops)
@@ -251,7 +252,7 @@ for bname, ZA, NA, ZB, NB, obs in bond_types:
         sel = best_at_n[first_n]
         bond_results[bname] = sel
         print(f"  LP selects: n={first_n}, w={sel['w']}, ops={sel['ops']}")
-        print(f"    E = {sel['E']:.4f} eV (obs: {obs:.2f}, err: {(sel['E']/obs-1)*100:+.1f}%)")
+        print(f"    E = {float(sel['E']):.4f} eV (obs: {obs:.2f}, err: {float((sel['E']/obs-1)*100):+.1f}%)")
     else:
         print(f"  No positive binding found")
     print()
@@ -281,8 +282,8 @@ molecules = [
 print(f"  {'Mol':>6} {'Predicted':>10} {'Observed':>10} {'Error':>8}")
 print("  " + "-" * 38)
 for name, pred, obs in molecules:
-    err = (pred/obs - 1)*100 if pred > 0 and obs > 0 else float('nan')
-    print(f"  {name:>6} {pred:>8.2f} eV {obs:>8.2f} eV {err:>+7.1f}%")
+    err = float((pred/obs - 1)*100) if pred > 0 and obs > 0 else float('nan')
+    print(f"  {name:>6} {float(pred):>8.2f} eV {obs:>8.2f} eV {err:>+7.1f}%")
 
 print()
 
@@ -305,7 +306,7 @@ for bname, data in bond_results.items():
         "n": len(data['ops'].split(',')),
         "writhe": data['w'],
         "ops": data['ops'],
-        "E_eV": data['E'],
+        "E_eV": float(data['E']),
     })
 
 w.add_data("molecules", [{"name": n, "pred_eV": p, "obs_eV": o}
