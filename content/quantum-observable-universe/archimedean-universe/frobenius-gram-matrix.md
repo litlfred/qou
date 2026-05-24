@@ -9,14 +9,7 @@ $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 
 Write $h = q - q^{-1}$ and $z = 1/(q^{1/2} + q^{-1/2})$.
 
-| Basis element $b_k$ | $\mathrm{tr}_M(b_k)$ |
-|:---:|:---:|
-| $\gamma = \mathbf{1}$ | $1$ |
-| $\sigma_0$ | $z$ |
-| $\sigma_1$ | $z$ |
-| $L_+ = \sigma_0\sigma_1$ | $z^2$ |
-| $L_- = \sigma_1\sigma_0$ | $z^2$ |
-| $e^- = \sigma_0\sigma_1\sigma_0$ | $hz^2 + z$ |
+See [Table 1](#tbl:frobenius-gram-matrix-table1-data).
 
 > **Errata (2026-05-19).** Earlier versions of this block asserted
 > $\mathrm{tr}_M(e^-) = z^3$ and offered a "peel-from-the-right"
@@ -122,14 +115,7 @@ its corresponding knot operator.
 *For each NF basis element $b_k$, the pairing of $b_k^\vee$
 with the knot operators $\beta(T_{m,n})$ satisfies:*
 
-| $K$ | $\langle K^\vee, T_{1,0} \rangle$ | $\langle K^\vee, T_{2,1} \rangle$ | $\langle K^\vee, T_{2,2} \rangle$ | $\langle K^\vee, T_{2,3} \rangle$ | $\langle K^\vee, T_{2,5} \rangle$ |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| $\gamma$ | $1$ | $0$ | $1$ | $0$ | $0$ |
-| $\sigma_0$ | $0$ | $1$ | $h$ | $0$ | $0$ |
-| $\sigma_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
-| $L_+$ | $0$ | $0$ | $0$ | $0$ | $h$ |
-| $L_-$ | $0$ | $0$ | $0$ | $0$ | $0$ |
-| $e^-$ | $0$ | $0$ | $0$ | $1$ | $h^2$ |
+See [Table 2](#tbl:frobenius-gram-matrix-table2-data).
 
 *Each basis element pairs maximally with exactly one knot
 operator (the operator whose braid word contains that element).

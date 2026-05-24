@@ -717,12 +717,7 @@ braid word $\sigma^{(m,n)} \in B_m$.
 
 **Hodge decomposition in Hecke generators**:
 
-| $H^p(\Sigma_4)$ | dim | Hecke generators |
-| :-------------: | :-: | :-------------------------------------------------------- |
-| $H^0$ | $1$ | $1$ (empty braid = photon) |
-| $H^{1,0}$ | $4$ | $T_{(2,3)}, T_{(2,5)}, T_{(2,7)}, T_{(3,5)}$ |
-| $H^{0,1}$ | $4$ | $T_{(2,9)}, T_{(3,4)}, T_{(4_1)}, T_{(4_1)}^*$ |
-| $H^2$ | $1$ | $\mathrm{vol} = \epsilon \circ \mathrm{Alt}_2$ (neutrino) |
+See [Table 1](#tbl:vertex-algebra-relations-table1-data).
 
 **Completeness**: the $6 \times 5$ character matrix
 $M_{ij} = \chi_{\lambda_j}(T_{(r_i, s_i)})$
@@ -768,39 +763,11 @@ algebra on generators $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \s
 
 **Structural relations (QU/QUO axioms)**:
 
-| Label | Relation | Axiom |
-| ------ | -------------------------------------------------------------------------------- | ---------------- |
-| QU-1a | $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ | Hecke (braiding) |
-| QU-1b | $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ | Yang--Baxter |
-| QU-1c | $\sigma_i \sigma_j = \sigma_j \sigma_i$ ($\lvert i-j\rvert \geq 2$) | Locality |
-| QU-1d | $(\cap \otimes 1)(1 \otimes \cup) = \mathrm{id}$ | Rigidity |
-| QU-2b | $(\mu \otimes 1)(1 \otimes \Delta) = \Delta \circ \mu$ | Frobenius |
-| QU-2d | $\mu(S \otimes 1)\Delta = \eta\varepsilon$ | Antipode |
-| QU-3a | $\mathrm{tr}_M(\sigma_i w) = \mathrm{tr}_M(w \sigma_i)$ | Markov I |
-| QU-3b | $\mathrm{tr}_M(w \sigma_n^{\pm 1}) = \delta^{-1}\mathrm{tr}_M(w)$ | Markov II |
-| QU-4a | $[L_{-1}, a_m] = -ma_{m-1}$ | Translation |
-| QUO-1 | $\det G_{ij} \neq 0$ | Non-degeneracy |
-| QUO-2 | $\sigma_i w \sigma_i^{-1} = w\forall i \Rightarrow w \in R$ | Observability |
-| QUO-3a | $\sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$ | $c_1 = 0$ |
-| QUO-3b | $\sum_{i<j} \mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^{\dagger}) = 0$ | $c_2 = 0$ |
-| QUO-4 | $\epsilon \circ \Lambda^2 g_V = \epsilon$ | Volume |
+See [Table 2](#tbl:vertex-algebra-relations-table2-data).
 
 **Cohomological relations**:
 
-| Label | Relation | Constraint |
-| ----- | ---------------------------------------------------------------------------------------- | --------------------- |
-| C-1 | $d^2 = 0$ on $\ker[\xi, \cdot]$ | De Rham nilpotence |
-| C-2 | $d_q^2\alpha = q^{-1}(1-q^{-1})\omega_V\wedge_q[\xi,\alpha]$ | $q$-obstruction |
-| C-3 | $\mathrm{tr}_M(\rho(\beta)\cdot S(\rho(\beta'))^*) = \delta_{\beta\beta'}$ | Poincar'e duality |
-| C-4a | $\chi(A_{n+1}) = \chi(A_n)$ | Euler stability |
-| C-4b | $\mathrm{tr}_M(\mathrm{id}) = -6$ | Descartes |
-| C-5 | $\kappa_n = \mathrm{tr}_M(\check{R}_{(n+1)} - L_{-1}\check{R}_{(n)}) \neq 0$ | Perpetual obstruction |
-| C-6 | $b_k = \dim(\ker d / \mathrm{im} d)$ on $\mathrm{Alt}_k \cdot H_n(R, q)$ | Betti numbers |
-| C-7 | $S([\sigma_i,\sigma_j])^* = [\sigma_i,\sigma_j]$ | Self-dual curvature |
-| C-7a | $\sum_{i<j}\mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^\dagger) = c_2(A)$ | Bogomolny bound |
-| C-8 | $\Delta_q \sigma_\beta = 0 \Leftrightarrow d_q \sigma_\beta = \delta_q \sigma_\beta = 0$ | Harmonic braids |
-| C-9 | $\mathrm{rank} M_{ij} = 5$ on $\Sigma_4$ | Completeness |
-| C-10 | $T_{g_{ijk}}T_{g_{jkl}} = T_{a_{ij}}T_{g_{ikl}}T_{a_{kl}}^{-1}$ | \v{C}ech cocycle |
+See [Table 3](#tbl:vertex-algebra-relations-table3-data).
 
 These **26 relations** (14 structural + 12 cohomological),
 together with the Hecke--Skein dictionary

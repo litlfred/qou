@@ -16,6 +16,16 @@ export default chapter({
       label: "sec:notation-register-section",
       blocks: [
         "notation-register",
+
+        "notation-register-table1-data",
+        "notation-register-table2-data",
+        "notation-register-table3-data",
+        "notation-register-table4-data",
+        "notation-register-table5-data",
+        "notation-register-table6-data",
+        "notation-register-table7-data",
+        "notation-register-table8-data",
+        "notation-register-table9-data",
       ],
     }),
     section({

@@ -265,6 +265,12 @@ export default chapter({
         "antineutrino-knot",
         // Building block reference table
         "linking-relations-table",
+
+        "linking-relations-table-table1-data",
+        "linking-relations-table-table2-data",
+        "linking-relations-table-table3-data",
+        "linking-relations-table-table4-data",
+        "linking-relations-table-table5-data",
       ],
     }),
 
@@ -283,6 +289,9 @@ export default chapter({
         // Knot operator selection and Frobenius Gram matrix
         "knot-operator-selection",
         "frobenius-gram-matrix",
+
+        "frobenius-gram-matrix-table1-data",
+        "frobenius-gram-matrix-table2-data",
       ],
     }),
 
@@ -351,6 +360,20 @@ export default chapter({
         // extracted from alpha-em-derivation-exploration-options.md.
         "alpha-em-derivation-exploration-options-table-data",
         "e-hartree-categorical-derivation",
+
+        "e-hartree-categorical-derivation-table1-data",
+        "e-hartree-categorical-derivation-table2-data",
+        "e-hartree-categorical-derivation-table3-data",
+        "e-hartree-categorical-derivation-table4-data",
+        "e-hartree-categorical-derivation-table5-data",
+        "e-hartree-categorical-derivation-table6-data",
+        "e-hartree-categorical-derivation-table7-data",
+        "e-hartree-categorical-derivation-table8-data",
+        "e-hartree-categorical-derivation-table9-data",
+        "e-hartree-categorical-derivation-table10-data",
+        "e-hartree-categorical-derivation-table11-data",
+        "e-hartree-categorical-derivation-table12-data",
+        "e-hartree-categorical-derivation-table13-data",
         "bohr-radius-categorical",
       ],
     }),
@@ -520,6 +543,12 @@ export default chapter({
         "terminal-resolution",
         // Knot-to-particle mass spectrum
         "knot-formula-table",
+
+        "knot-formula-table-table1-data",
+        "knot-formula-table-table2-data",
+        "knot-formula-table-table3-data",
+        "knot-formula-table-table4-data",
+        "knot-formula-table-table5-data",
         "mass-from-generators",
         // Volume tower and Picard-Lefschetz decomposition (archimedean shadow only)
         "picard-lefschetz-thimble",
@@ -583,6 +612,9 @@ export default chapter({
         "orbital-fourier-decomposition",
         "fivefold-symmetry",
         "cohomological-embedding",
+
+        "cohomological-embedding-table1-data",
+        "cohomological-embedding-table2-data",
         "knot-basis-color-content",
         "trivial-knot-photon-interpretation",
         "outro-archimedean-universe",

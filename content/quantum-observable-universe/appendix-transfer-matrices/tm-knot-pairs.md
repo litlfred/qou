@@ -75,14 +75,7 @@ $$
 
 **Explicit entries:**
 
-| Entry | Formula |
-|:-----:|---------|
-| $(1,1)$ | $q - q^{-1}$ |
-| $(1,2)$ | $1$ |
-| $(2,1)$ | $1$ |
-| $(2,2)$ | $0$ |
-| $\det$ | $-1$ |
-| $\mathrm{tr}$ | $q - q^{-1}$ |
+See [Table 1](#tbl:tm-knot-pairs-table1-data).
 
 **Eigenvalues:**
 
@@ -110,14 +103,7 @@ $$
 
 **Explicit entries:**
 
-| Entry | Formula |
-|:-----:|---------|
-| $(1,1)$ | $0$ |
-| $(1,2)$ | $1$ |
-| $(2,1)$ | $1$ |
-| $(2,2)$ | $-(q - q^{-1})$ |
-| $\det$ | $-1$ |
-| $\mathrm{tr}$ | $-(q - q^{-1})$ |
+See [Table 2](#tbl:tm-knot-pairs-table2-data).
 
 **Relation to $T_{pp}$:**
 
@@ -144,13 +130,7 @@ $$
 
 **Explicit entries:**
 
-| Entry | Formula |
-|:-----:|---------|
-| $(1,1)$ | $\dfrac{q - q^{-1}}{2}$ |
-| $(1,2)$ | $1$ |
-| $(2,1)$ | $1$ |
-| $(2,2)$ | $-\dfrac{q - q^{-1}}{2}$ |
-| $\mathrm{tr}$ | $0$ |
+See [Table 3](#tbl:tm-knot-pairs-table3-data).
 
 **Midpoint property:**
 
@@ -353,11 +333,7 @@ $T_{\mathrm{mix}}$ matrices.
 Every transfer matrix in the paper falls into one of three
 classes:
 
-| Class | $c$ | $d$ | Matrix | Occurs when |
-|-------|-----|-----|--------|-------------|
-| **Type I** (fundamental) | $1$ | $0$ | $T_{pp}$ | Same-chirality pair, or unknot with anything |
-| **Type II** (heavy) | $1$ | $-(q - q^{-1})$ | $T_{nn}$ | Mirror-chirality pair (down--down type) |
-| **Type III** (mixed) | $1$ | $-\frac{q - q^{-1}}{2}$ | $T_{\mathrm{mix}}$ | Cross-chirality pair (up--down type) |
+See [Table 4](#tbl:tm-knot-pairs-table4-data).
 
 The identity matrix $\mathbb{I}$ (no crossing) is the
 degenerate $c = 0$, $d = 1$ case.

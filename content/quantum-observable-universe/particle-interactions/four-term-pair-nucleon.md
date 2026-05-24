@@ -40,14 +40,7 @@ $$
 
 Each collision NF has six terms (at $\varphi_{01} = 0.02$):
 
-| Basis | Coefficient | Role |
-|:---:|---:|:---|
-| $\gamma$ | $+1.005$ | Photon identity (vacuum) |
-| $\sigma_0$ | $+0.099$ | Horizontal polarization |
-| $\sigma_1$ | $+0.099$ | Vertical polarization |
-| $L_+$ | $+0.043$ | Hopf link dressing |
-| $L_-$ | $+0.003$ | Cross-color Hopf |
-| $e^-$ | $+0.002$ | Trefoil channel (4-term only) |
+See [Table 1](#tbl:four-term-pair-nucleon-table1-data).
 
 The quark is the crossing content ($\sigma_0$ or $\sigma_1$); the
 antiquark is the mirror crossing ($\sigma_0^{-1}$ or $\sigma_1^{-1}$).
@@ -79,14 +72,7 @@ where $C(f_i, f_j; \sigma_k)$ is the typed crossing
 
 After Gröbner--Shirshov reduction at $q_0 \approx 1.1100$:
 
-| Basis | Coefficient | Physical role |
-|:---:|---:|:---|
-| $\gamma$ | $-0.100$ | Vacuum deficit (mass source) |
-| $\sigma_0$ | $+0.036$ | Residual crossing |
-| $\sigma_1$ | $+0.998$ | Dominant up-quark channel |
-| $L_+$ | $+0.099$ | Gluon field (Hopf) |
-| $L_-$ | $+0.009$ | Mirror gluon |
-| $e^-$ | $-0.043$ | Beta decay channel |
+See [Table 2](#tbl:four-term-pair-nucleon-table2-data).
 
 $$
   \mathrm{net}(\mathfrak{p}) \approx +0.999
@@ -96,14 +82,7 @@ $$
 
 For quarks $(\mathfrak{u}_1, \mathfrak{d}_2, \mathfrak{d}_3)$:
 
-| Basis | Coefficient | Physical role |
-|:---:|---:|:---|
-| $\gamma$ | $-0.202$ | Larger vacuum deficit |
-| $\sigma_0$ | $+0.048$ | Residual crossing |
-| $\sigma_1$ | $+1.009$ | Dominant channel |
-| $L_+$ | $-0.010$ | Gluon deficit (Hopf demand) |
-| $L_-$ | $+0.009$ | Mirror gluon |
-| $e^-$ | $-0.044$ | Larger beta decay channel |
+See [Table 3](#tbl:four-term-pair-nucleon-table3-data).
 
 $$
   \mathrm{net}(\mathfrak{n}) \approx +0.811

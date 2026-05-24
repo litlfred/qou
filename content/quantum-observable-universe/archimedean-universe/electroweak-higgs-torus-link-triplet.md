@@ -118,14 +118,7 @@ of the $1/\alpha_{EM}$ derivation
 ([`rem:alpha-em-categorical-trace`](#rem:alpha-em-categorical-trace))
 becomes available for $G_F$:
 
-| Step in the parallel pipeline | EM analog | EW/Higgs analog |
-|---|---|---|
-| Strand count | 10 (Bring exterior square $\Lambda^2 V^{10}$) | 2 (each $T(2, 2k)$ is in $B_2$) |
-| Force-carrier sector | $\{T_{2,9}, T_{3,5}\}$ | $\{T(2,4), T(2,6), T(2,8)\}$ |
-| Categorical complexity | $[9]_q \cdot [10]_q$ | $[4]_q \cdot [6]_q \cdot [8]_q$ |
-| Spectral completeness | `thm:em-spectral-completeness` | open: `prop:weak-spectral-completeness` |
-| Plancherel weight | gram-determinant ratio | open |
-| Closed form | $1/\alpha = 45[3]_q(1 + \delta_{CS} + 8q\delta_{CS}^2)$ | open: $N_v = ?$ |
+See [Table 1](#tbl:electroweak-higgs-torus-link-triplet-table1-data).
 
 Closing the open rows above is the explicit research program
 unlocked by this conjecture.
@@ -138,13 +131,7 @@ T(2,8)\}$ from the infinite family. **Full uniqueness factorises
 into five sub-arguments**, only some of which are derivable
 from the existing framework:
 
-| # | Sub-argument | Derivability | Status |
-|---|--------------|-------------:|--------|
-| **U1** | Even-twist parity (forces $\sigma_1^{2k}$ over $\sigma_1^{2k+1}$) | derivable from Hecke positivity | ✓ proven below as the proposition |
-| **U2** | Force-carriers are 2-component **links**, not knots | structural premise (matter = knots, force = links) — purely categorical (no host-surface dependence) | needs content support — currently a structural choice |
-| **U3** | Bring-internal genus $\leq 3$ for the EW complement | corollary of `prop:torus-embeddable-complete` and `prop:force-carrier-bring-uniqueness`: Bring's genus-$4$ fiber accommodates all $T(2, 2k)$ with $k \leq 4$, so the EW carriers $T(2,4), T(2,6), T(2,8)$ fit alongside saturating $\{T_{2,9}, T_{3,5}\}$ in **the same host**. | ✓ derivable |
-| **U4** | Exactly **three** force-carrier slots in the EW/Higgs sector | from representation theory of broken $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (3 mass eigenstates after Higgs eating Goldstones) | needs content block — open |
-| **U5** | Mass ordering $m_W < m_Z < m_H$ matches crossing ordering $4 < 6 < 8$ | empirical / consistency | ✓ matches PDG |
+See [Table 2](#tbl:electroweak-higgs-torus-link-triplet-table2-data).
 
 The conjecture as stated **rides on U2 + U4**. Closing each:
 
@@ -168,15 +155,7 @@ The conjecture as stated **rides on U2 + U4**. Closing each:
 **Uniqueness analysis at $q_0$ (probe table for $T(2, 2k)$,
 $k = 1..7$):**
 
-| $k$ | link | genus | crossings | sym = $q^{2k}$ | alt = $q^{-2k}$ | PSD? | role |
-|----:|-----:|------:|----------:|---------------:|----------------:|:---:|-----|
-| 1 | $T(2,2)$ | 0 | 2 | 1.231 | 0.812 | ✓ | **Hopf link** $L_H$ (binding link, *not* a force-carrier) |
-| 2 | $T(2,4)$ | 1 | 4 | 1.516 | 0.659 | ✓ | $W^\pm$ |
-| 3 | $T(2,6)$ | 2 | 6 | 1.867 | 0.535 | ✓ | $Z$ |
-| 4 | $T(2,8)$ | 3 | 8 | 2.300 | 0.435 | ✓ | $H$ |
-| 5 | $T(2,10)$ | 4 | 10 | 2.832 | 0.353 | ✓ | (no SM particle) |
-| 6 | $T(2,12)$ | 5 | 12 | 3.487 | 0.287 | ✓ | (no SM particle) |
-| 7 | $T(2,14)$ | 6 | 14 | 4.294 | 0.233 | ✓ | (no SM particle) |
+See [Table 3](#tbl:electroweak-higgs-torus-link-triplet-table3-data).
 
 *Every* row PSD-passes. The selection of rows 2–4 over rows 1, 5, 6, 7
 comes from U2–U5, **not** from PSD.

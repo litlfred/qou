@@ -45,27 +45,13 @@ The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 **Mass predictions** ($k = 12$, zero fitted parameters, gluon-dressed
 nucleons, categorical Chebyshev shell, knot factors from Frobenius norm):
 
-| Atom | $A$ | Method | $\Delta/M$ |
-|:-----|----:|:-------|----------:|
-| ${}^1\mathrm{H}$ | 1 | free nucleon | $0.000001\%$ |
-| ${}^2\mathrm{H}$ | 2 | $B = \alpha \times \hat{V}_e$ (mass tower) | $0.00005\%$ |
-| ${}^3\mathrm{H}$ | 3 | BW, $a = 1-h^2$ (figure-eight) | $0.00002\%$ |
-| ${}^3\mathrm{He}$ | 3 | BW, $a = 1-h^2$ (figure-eight) | $0.000004\%$ |
-| ${}^4\mathrm{He}$ | 4 | BW, $a = (1-h^2)^2$ (Borromean-4) | $0.002\%$ |
-| ${}^{12}\mathrm{C}$ | 12 | BW, $a = 1$ | $0.010\%$ |
-| ${}^{40}\mathrm{Ca}$ | 40 | BW, $a = 1$ | $0.002\%$ |
-| ${}^{56}\mathrm{Fe}$ | 56 | BW, $a = 1$ | $0.005\%$ |
-| ${}^{208}\mathrm{Pb}$ | 208 | BW, $a = 1$ | $0.003\%$ |
+See [Table 1](#tbl:mass-formula-validation-table1-data).
 
 Mean $|\Delta/M| = 0.010\%$ across 15 isotopes.
 
 **Operator dressing** (LP-derived gluon budget per nucleus):
 
-| $A$ range | Gluon budget | LP status |
-|:----------|:-------------|:----------|
-| $A \leq 12$ | $2\sigma_0$ per nucleon | all stable |
-| ${}^{16}\mathrm{O}$ | $2\sigma_0$/nucleon + $1\sigma_1$ | stable (1 extra $\sigma_1$) |
-| ${}^{14}\mathrm{C}$, $A \geq 20$ | needs multi-word ILP | unstable (single-operator insufficient) |
+See [Table 2](#tbl:mass-formula-validation-table2-data).
 
 The gluon count is $A$-dependent. The proton ILP gives $2\sigma_0$
 (minimum-action stabiliser); this suffices for $A \leq 12$.
@@ -78,20 +64,11 @@ the braid — the full multi-word ILP
 **$Q$-values** from mass difference $Q = M_{\mathrm{par}} - M_{\mathrm{dau}}$
 (neutral atoms, consistent $k = 11$):
 
-| Decay | $Q_{\mathrm{QOU}}$ (MeV) | $Q_{\mathrm{exp}}$ (MeV) | $\delta$ |
-|:------|----------:|----------:|---------:|
-| $n \to {}^1\mathrm{H}$ | $0.78233$ | $0.78233$ | $0.00\%$ |
-| ${}^3\mathrm{H} \to {}^3\mathrm{He}$ | $0.01823$ | $0.01861$ | $-2.1\%$ |
+See [Table 3](#tbl:mass-formula-validation-table3-data).
 
 **Genuine predictions summary** (observed vs predicted with %):
 
-| Quantity | Predicted | Observed | $\delta$ | Method |
-|:---------|----------:|---------:|---------:|:-------|
-| $m_\mu/m_e$ | $206.768$ | $206.768$ | $<0.001\%$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ (by construction) |
-| $B({}^2\mathrm{H})$ | $2.240$ MeV | $2.225$ MeV | $+0.7\%$ | BW $k{=}11$ with satellite factor $1{+}h$ |
-| $Q({}^3\mathrm{H})$ | $0.01823$ MeV | $0.01861$ MeV | $-2.1\%$ | Mass difference at $k{=}11$ |
-| $Q({}^{137}\mathrm{Cs})$ | $0.53750$ MeV | $0.51400$ MeV | $+4.6\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{Pauli}$ |
-| $Q({}^{210}\mathrm{Bi})$ | $1.28191$ MeV | $1.16270$ MeV | $+10.3\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
+See [Table 4](#tbl:mass-formula-validation-table4-data).
 
 MAE $\approx 4.4\%$ across all six $\beta^-$ benchmarks. Light
 nuclei ($A \leq 14$) achieve $\leq 2.2\%$ with no shell corrections.
@@ -106,23 +83,7 @@ and knot factors from the Frobenius norm
 ([nuclear knot classification](#prop:nuclear-knot-classification),
 [confined knot binding](#prop:confined-knot-binding)):
 
-| Atom | $Z$ | $N$ | $M_{\mathrm{obs}}$ (MeV) | $M_{\mathrm{QOU}}$ (MeV) | $\Delta$ (MeV) | $\Delta/M$ |
-|:-----|----:|----:|-------------------------:|-------------------------:|---------------:|-----------:|
-| ${}^1$H | 1 | 0 | 938.783 | 938.783 | $-0.000$ | $-0.000001\%$ |
-| ${}^2$H | 1 | 1 | 1876.124 | 1876.125 | $+0.001$ | $+0.000051\%$ |
-| ${}^3$H | 1 | 2 | 2809.432 | 2809.432 | $-0.001$ | $-0.000017\%$ |
-| ${}^3$He | 2 | 1 | 2809.414 | 2809.413 | $-0.000$ | $-0.000004\%$ |
-| ${}^4$He | 2 | 2 | 3728.401 | 3728.480 | $+0.079$ | $+0.002\%$ |
-| ${}^6$Li | 3 | 3 | 5603.051 | 5605.242 | $+2.191$ | $+0.039\%$ |
-| ${}^7$Li | 3 | 4 | 6535.367 | 6537.107 | $+1.740$ | $+0.027\%$ |
-| ${}^9$Be | 4 | 5 | 8394.794 | 8396.028 | $+1.234$ | $+0.015\%$ |
-| ${}^{10}$B | 5 | 5 | 9325.513 | 9326.161 | $+0.648$ | $+0.007\%$ |
-| ${}^{12}$C | 6 | 6 | 11177.929 | 11178.548 | $+0.618$ | $+0.006\%$ |
-| ${}^{16}$O | 8 | 8 | 14899.169 | 14899.717 | $+0.548$ | $+0.004\%$ |
-| ${}^{40}$Ca | 20 | 20 | 37224.920 | 37225.150 | $+0.230$ | $+0.001\%$ |
-| ${}^{56}$Fe | 26 | 30 | 52103.063 | 52105.668 | $+2.605$ | $+0.005\%$ |
-| ${}^{208}$Pb | 82 | 126 | 193729.0 | 193734.6 | $+5.641$ | $+0.003\%$ |
-| ${}^{238}$U | 92 | 146 | 221742.9 | 221729.8 | $-13.097$ | $-0.006\%$ |
+See [Table 5](#tbl:mass-formula-validation-table5-data).
 
 All $\beta$-stable nuclei have $|\Delta/M| < 0.04\%$.
 Best: ${}^3$He ($0.000004\%$).
@@ -149,13 +110,7 @@ entanglement path to the $q$-Plancherel average
 
 ## Q-value table (atomic mass differences)
 
-| Reaction | $Q_{\mathrm{obs}}$ (MeV) | $Q_{\mathrm{QOU}}$ (MeV) | $\Delta/Q$ |
-|:---------|-------------------------:|-------------------------:|----------:|
-| $n \to {}^1\mathrm{H} + \bar\nu$ | 0.782 | 0.782 | $0.01\%$ |
-| ${}^3\mathrm{H} \to {}^3\mathrm{He} + \bar\nu$ | 0.019 | 0.018 | $-2.1\%$ |
-| ${}^2\mathrm{H} + {}^2\mathrm{H} \to {}^4\mathrm{He}$ | 23.85 | 23.77 | $-0.3\%$ |
-| ${}^2\mathrm{H} + {}^3\mathrm{H} \to {}^4\mathrm{He} + n$ | 17.59 | 17.51 | $-0.4\%$ |
-| ${}^4\mathrm{He} + {}^{12}\mathrm{C} \to {}^{16}\mathrm{O}$ | 7.16 | 7.31 | $+2.1\%$ |
+See [Table 6](#tbl:mass-formula-validation-table6-data).
 
 Witness: `hadron-knot-table.witness.json`, `transition-nf.witness.json`.
 
@@ -235,17 +190,11 @@ nucleon has a *deficit* --- these are the channels it is receptive to
 
 **Proton** (uud, typed crossings):
 
-| Term | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
-|:-----|-------:|--------:|--------:|------:|------:|------:|
-| Coeff | $-0.100$ | $+0.036$ | $+0.998$ | $+0.099$ | $+0.009$ | $-0.043$ |
-| Sign | $-$ | $+$ | $+$ | $+$ | $+$ | $-$ |
+See [Table 7](#tbl:mass-formula-validation-table7-data).
 
 **Neutron** (udd, typed crossings):
 
-| Term | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
-|:-----|-------:|--------:|--------:|------:|------:|------:|
-| Coeff | $-0.202$ | $+0.048$ | $+1.009$ | $-0.010$ | $+0.009$ | $-0.044$ |
-| Sign | $-$ | $+$ | $+$ | $-$ | $+$ | $-$ |
+See [Table 8](#tbl:mass-formula-validation-table8-data).
 
 **Key observations:**
 
@@ -349,12 +298,7 @@ level repulsion.
 
 ## Isotope coverage
 
-| $Z$ range | Stable isotopes | With certificate | Coverage |
-|:----------|----------------:|-----------------:|---------:|
-| 1--5 | 7 | 7 | 100% |
-| 6--10 | 10 | 7 | 70% |
-| 11--20 | 25 | 2 | 8% |
-| 21--30 | 45 | 0 | 0% |
+See [Table 9](#tbl:mass-formula-validation-table9-data).
 
 The hecke-engine computations scale as $O(A^2)$ in crossing pairs.
 For $A \leq 14$ the symbolic engine completes in seconds; for

@@ -44,6 +44,10 @@ export default chapter({
         "b1-hyperbolic-rows-theorem",
         // Canonical B1 current-status synthesis (rounds 1-11).
         "b1-current-status",
+
+        "b1-current-status-table1-data",
+        "b1-current-status-table2-data",
+        "b1-current-status-table3-data",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
         "calculus-up-to-epsilon-table-data",

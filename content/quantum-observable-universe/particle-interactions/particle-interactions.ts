@@ -81,6 +81,10 @@ export default chapter({
       blocks: [
         "nucleon-derivation-intro",
         "four-term-pair-nucleon",
+
+        "four-term-pair-nucleon-table1-data",
+        "four-term-pair-nucleon-table2-data",
+        "four-term-pair-nucleon-table3-data",
         "confinement-universality",
         "derived-atom",
         "nucleon-from-photons-summary",
@@ -106,6 +110,9 @@ export default chapter({
       blocks: [
         "derived-atoms-intro",
         "hydrogen-derived-nf",
+
+        "hydrogen-derived-nf-table1-data",
+        "hydrogen-derived-nf-table2-data",
         "deuterium-derived-nf",
         "deuterium-derived-binding",
         "deuterium-derived-binding-table-data",

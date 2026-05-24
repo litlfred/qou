@@ -25,15 +25,7 @@ $$
   =  \frac{(N+1)(N+2)(N+3)}{3}.
 $$
 
-| $N$ | Size $s_N$ | Cumulative $C_N$ |
-|----:|-----------:|-----------------:|
-| 0 | 2 | 2 |
-| 1 | 6 | 8 |
-| 2 | 12 | 20 |
-| 3 | 20 | 40 |
-| 4 | 30 | 70 |
-| 5 | 42 | 112 |
-| 6 | 56 | 168 |
+See [Table 1](#tbl:shell-transition-knot-table1-data).
 
 Without spin-orbit coupling, the shell closures would be
 $\{2, 8, 20, 40, 70, 112, 168\}$ — which does not match
@@ -95,30 +87,11 @@ closure**. This is the **shell-transition level**.
 
 **Step 4: The stability pairs.**
 
-| $K$ | HO $C_K$ | Shell-transition | States | Stability pair |
-|----:|----------:|----------|-------:|:---:|
-| 0 | 2 | — | — | **2** (magic) |
-| 1 | 8 | — | — | **8** (magic) |
-| 2 | 20 | — | — | **20** (magic) |
-| — | 20 | $1f_{7/2}$ from $N=3$ | $+8$ | **28** (magic) |
-| — | 28 | $1g_{9/2}$ from $N=4$ | $+10$ | — |
-| 3 | 40 | accumulated | — | — |
-| — | 40 | $1g_{9/2}$ (arrives) | $+10$ | **50** (magic) |
-| — | 50 | $1h_{11/2}$ from $N=5$ | $+12$ | — |
-| 4 | 70 | accumulated | — | — |
-| — | 70 | $1h_{11/2}$ (arrives) | $+12$ | **82** (magic) |
-| — | 82 | $1i_{13/2}$ from $N=6$ | $+14$ | — |
-| 5 | 112 | accumulated | — | — |
-| — | 112 | $1i_{13/2}$ (arrives) | $+14$ | **126** (magic) |
+See [Table 2](#tbl:shell-transition-knot-table2-data).
 
 The shell-transition levels with their state counts $2(N+1)$:
 
-| From $N$ | Level | $j$ | States $2(N+1)$ | Creates |
-|---------:|-------|----:|----------------:|--------:|
-| 3 | $1f_{7/2}$ | $7/2$ | 8 | **28** |
-| 4 | $1g_{9/2}$ | $9/2$ | 10 | **50** |
-| 5 | $1h_{11/2}$ | $11/2$ | 12 | **82** |
-| 6 | $1i_{13/2}$ | $13/2$ | 14 | **126** |
+See [Table 3](#tbl:shell-transition-knot-table3-data).
 
 **All 7 stability pairs are reproduced exactly.**
 

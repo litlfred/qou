@@ -120,19 +120,7 @@ A particle with crossing number $c$ cannot exist before step $c$:
 the $c$-th jet is the first Taylor order that has enough polynomial
 degree to encode $c$ crossings of the braid closure.
 
-| Step | Jet | $c$ | Knot | Particles | Mirror | Why |
-|:----:|-----|:---:|------|-----------|--------|-----|
-| 0 | value | — | $\varnothing$ | **Photon** | (self) | No knot, no transport — fiber value only |
-| 1 | linear | 0 | $0_1$ | **Neutrino** $\nu$ | $\nu^{\sigma}$ (orientation) | Unknot; amphichiral — $\nu/\nu^{\sigma}$ distinguished by framing, not knot type |
-| 2 | quadratic | 0 | $L2a1$ | **Gluon** | (self) | Hopf link; linking number requires curvature |
-| 3 | cubic | 3 | $3_1$ | **Electron** $e^-$, **up** $u$ | **Positron** $e^+$, **down** $u^{\sigma}$ | Trefoil is *chiral*: $T_{2,3} \neq T_{2,3}^{\sigma}$; mirror = antiparticle |
-| 3 | cubic | 3 | $3_1^{\sigma}$ | **Positron** $e^+$, **down** $d$ | **Electron** $e^-$, $d^{\sigma}$ | Right trefoil; same crossing number, opposite chirality |
-| 4 | quartic | 4 | $4_1$ | **Higgs** $H$ (mass mechanism) | (self) | Figure-eight is *amphichiral*: $H = H^{\sigma}$; Higgs is its own antiparticle |
-| 4 | quartic | 0+0+0 | $\mathcal{B}_3$ | **Proton** $p$, **neutron** $n$ | $p^{\sigma}$, $n^{\sigma}$ | Borromean link of 3 quarks; linking structure needs quartic |
-| 5 | quintic | 5 | $5_1$ | **Muon** $\mu^-$, **bottom** $b$ | $\mu^+$, $b^{\sigma}$ | Cinquefoil; chiral; genus 2 |
-| 5 | quintic | 5 | $5_1^{\sigma}$ | **Antimuon** $\mu^+$, **strange** $s$ | $\mu^-$, $s^{\sigma}$ | Mirror cinquefoil |
-| 7 | septic | 7 | $7_1$ | **Tau** $\tau^-$, **charm** $c$ | $\tau^+$, $c^{\sigma}$ | Third-generation torus knot |
-| 8 | octic | 8 | $8_{19}$ | Hopf${}^2$ **color binding** | — | $T_{3,4}$; force carrier in $H^{0,1}$ |
+See [Table 1](#tbl:jet-planck-steps-table1-data).
 
 **Step 0: only the photon.**
 Before any transport, only the fiber value exists. The photon is
@@ -250,16 +238,7 @@ distinct charges.)
 
 **Summary: the unfolding.**
 
-| Step | Jet | New particles | Antiparticles | Chirality | New structure |
-|:----:|-----|--------------|---------------|:---------:|---------------|
-| 0 | value $a_0$ | photon $\gamma$ | (self) | — | fiber value |
-| 1 | linear | $\nu$ | $\nu^{\sigma}$ (orientation only) | no | transport, winding |
-| 2 | quadratic | gluon $g$ | (self) | no | curvature, linking |
-| 3 | **cubic** | $e^-$, $u$, $d$ | $e^+$, $u^{\sigma}$, $d^{\sigma}$ | **yes** | chirality, $\varphi$, $B_3$ |
-| 4 | quartic | $H$ (Higgs), $p$, $n$ | (amphi), $p^{\sigma}$, $n^{\sigma}$ | mixed | hyperbolic volume, mass mechanism, baryons |
-| 5 | quintic | $\mu^-$, $b$, $s$ | $\mu^+$, $b^{\sigma}$, $s^{\sigma}$ | yes | genus 2 |
-| 7 | septic | $\tau^-$, $c$ | $\tau^+$, $c^{\sigma}$ | yes | genus 3 |
-| 8 | octic | color binding | — | — | $T_{3,4}$ force carrier in $H^{0,1}$ |
+See [Table 2](#tbl:jet-planck-steps-table2-data).
 
 Each row is one Planck step, one tick of discrete time at the
 Big Bang. The universe does not spring into existence fully

@@ -29,16 +29,7 @@ through $^7$Li to sub-percent accuracy.*
 
 **Empirical scorecard at $q_0 = 1.109978595554181\ldots$ (50 dps):**
 
-| Isotope | $M_{\text{pred}}$ (MeV) | CODATA (MeV) | Atomic mass error |
-|---|---|---|---|
-| $^1$H | 938.78 | 938.78 | 0.000% (exact, $\Phi = 0$) |
-| n | 939.57 | 939.57 | 0.000% (exact, $\Phi = 0$) |
-| D | 1875.20 | 1876.12 | $-$0.049% |
-| T | 2812.62 | 2809.43 | +0.114% |
-| $^3$He | 2811.85 | 2809.41 | +0.087% |
-| $^4$He | 3749.88 | 3728.40 | +0.576% |
-| $^6$Li | 5625.69 | 5603.05 | +0.404% |
-| $^7$Li | 6552.03 | 6535.37 | +0.255% |
+See [Table 1](#tbl:derived-mass-formula-light-isotopes-table1-data).
 
 **Proton-neutron mass splitting:**
 $\Delta\mathfrak{m}_{\mathfrak{n}-\mathfrak{p}} = 1.293332$ MeV
@@ -49,14 +40,7 @@ since free nucleons have $\Phi = 0$).
 *The same formula systematically under-predicts nuclear binding
 energies by $30\%$ to $76\%$ across light isotopes:*
 
-| Isotope | $B_{\text{pred}}$ (MeV) | AME (MeV) | Binding error |
-|---|---|---|---|
-| D | +3.14 | +2.22 | +41% |
-| T | +5.29 | +8.48 | $-$38% |
-| $^3$He | +5.28 | +7.72 | $-$32% |
-| $^4$He | +6.82 | +28.30 | $-$76% |
-| $^6$Li | +9.36 | +31.99 | $-$71% |
-| $^7$Li | +22.58 | +39.24 | $-$42% |
+See [Table 2](#tbl:derived-mass-formula-light-isotopes-table2-data).
 
 *The under-binding pattern is structural: the formula misses an
 intra-shell binding mechanism present in nature. Closing the gap

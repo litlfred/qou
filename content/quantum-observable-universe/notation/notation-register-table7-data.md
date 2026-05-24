@@ -1,0 +1,8 @@
+| Concept | Font | Symbols |
+|---------|------|---------|
+| $C_5$ invariants | functional | $p_1(c)$ (power sum), $h_2(c)$, $h_3(c)$ (Hermitian), $\chi_\zeta(c)$ (character) |
+| Color | plain italic | $c$ (color vector), $c_r$, $c_g$, $c_b$ (tube coords), $\hat{c}$, $\hat{c}_r$ (chromaticity) |
+| Energy | fraktur | $\mathfrak{E}_q$ ($q$-energy), $\mathfrak{E}_\times$ (crossing), $\mathfrak{E}_{\mathrm{bind}}$ (binding), $\mathfrak{E}_0$ (hadronic energy scale, single-Planck-tick form $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV; tower-summed form $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2)$; truncations $\mathfrak{E}_0^{(N)}$ for depth $N$). Relocated from bold $\mathbf{E}$ to fraktur in Phase 5n — matches the fraktur "physical observable" convention. **Never confuse $\mathfrak{E}_0$ with $Q_\beta(n)$** — see [collisions](./notation-collisions.md). |
+| Mass (categorical) | fraktur | $\mathfrak{m}$, $\mathfrak{m}_{\mathfrak{H}}$ (hadron). Never plain $m$ for categorical mass. |
+| Photon | Greek | $\gamma$ — photon (standard physics convention). Used in pair-production / Breit–Wheeler vertices ($\gamma\gamma \to e^+ e^-$) and photonic channels. Distinct from the Euler–Mascheroni constant $\gamma$ (only ever appears inside zeta-value identities) and from Dirac matrices $\gamma^\mu$ (always with a Lorentz index). **Never** use $\gamma$ for a vortex morphism — the vortex is $\varrho$ (see [the Frobenius--Hopf substrate definition](#def:frobenius-hopf-substrate)). |
+| $q$-Hamiltonian | hat | $\hat{H}_q$ — operator hat, Dirac convention. Distinct from $\mathcal{H}_q$ and $H_n(q)$. |

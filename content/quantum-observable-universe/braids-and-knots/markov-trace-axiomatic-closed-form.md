@@ -61,16 +61,7 @@ $$
 so $a_{k+1} = h a_k + b_k$ and $b_{k+1} = a_k$, with $a_0 = 0$,
 $b_0 = 1$. Direct enumeration:
 
-| $k$ | $a_k(h)$            | $b_k(h)$           |
-|----:|---------------------|--------------------|
-| $0$ | $0$                 | $1$                |
-| $1$ | $1$                 | $0$                |
-| $2$ | $h$                 | $1$                |
-| $3$ | $h^2 + 1$           | $h$                |
-| $4$ | $h^3 + 2h$          | $h^2 + 1$          |
-| $5$ | $h^4 + 3h^2 + 1$    | $h^3 + 2h$         |
-| $6$ | $h^5 + 4h^3 + 3h$   | $h^4 + 3h^2 + 1$   |
-| $7$ | $h^6 + 5h^4 + 6h^2 + 1$ | $h^5 + 4h^3 + 3h$ |
+See [Table 1](#tbl:markov-trace-axiomatic-closed-form-table1-data).
 
 **Step 2: Expansion of the proton word.** Using the recurrence,
 
@@ -88,14 +79,7 @@ cyclicity uniquely fix the trace on the canonical reduced-word
 basis $\{1, \sigma_1, \sigma_2, \sigma_1\sigma_2, \sigma_2\sigma_1, \sigma_1\sigma_2\sigma_1\}$
 of $H_3(q)$:
 
-| reduced word    | $\operatorname{tr}_M$ value           | derivation              |
-|-----------------|-------------------------------------|-------------------------|
-| $1$             | $1$                                 | normalisation           |
-| $\sigma_1$       | $z$                                 | Markov axiom (2-strand) |
-| $\sigma_2$       | $z$                                 | Markov axiom (3-strand) |
-| $\sigma_1\sigma_2$ | $z^2$                               | Markov on $\alpha = \sigma_1$ |
-| $\sigma_2\sigma_1$ | $z^2$                               | cyclic of above           |
-| $\sigma_1\sigma_2\sigma_1$ | $z + h z^2 = z(1 + h z)$    | Markov + Hecke quadratic on inner $\sigma_1$ |
+See [Table 2](#tbl:markov-trace-axiomatic-closed-form-table2-data).
 
 The last entry follows from
 $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ (braid

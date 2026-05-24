@@ -14,29 +14,14 @@ $$
 
 **Knot inventory.**
 
-| Component | Knot type | Count | Role |
-|-----------|-----------|------:|------|
-| $\nu_r$ | Unknot $K_{0_1}$ | 1 | Up quark (color $r$) |
-| $\nu_g$ | Unknot $K_{0_1}$ | 1 | Up quark (color $g$) |
-| $\nu_b$ | Unknot $K_{0_1}$ | 1 | Down quark (color $b$) |
-| $\mathcal{B}_3$ | Borromean link | 1 | Color confinement |
-| $\mathcal{L}_H$ | Hopf link $T(2,2)$ | 1 | Baryon binding |
-| $e^-$ | Trefoil $T_{2,3}$ | 1 | Electron |
-| $\oplus$ | Hopf link | 1 | Electron--proton binding |
+See [Table 1](#tbl:hydrogen-knot-structure-table1-data).
 
 Total: **3 unknots** + **1 trefoil**, linked by **1 Borromean**
 + **2 Hopf** links.
 
 **Mass budget.**
 
-| Source | Mechanism | Mass |
-|--------|-----------|-----:|
-| $\mathrm{Vol}(\mathcal{B}_3) \approx 7.328$ | Borromean volume | $\sim 938$ MeV |
-| $\mathrm{Vol}(T_{2,3}) = 0$ | Trefoil (torus knot) | $0$ |
-| $\mathrm{Vol}(\mathcal{L}_H) = 0$ | Hopf link (torus link) | $0$ |
-| Skein correction | Crossing asymmetry | $\sim 0.3$ MeV |
-| Vacuum drag | Electron mass | $0.511$ MeV |
-| **Total** | | **$938.783$ MeV** |
+See [Table 2](#tbl:hydrogen-knot-structure-table2-data).
 
 The proton's $938$ MeV comes entirely from the Borromean
 linking of three massless unknots.  The electron's $0.511$ MeV
@@ -122,9 +107,4 @@ of the Hopf link at linking level $n$: the crossing energy
 of a level-$n$ Hopf link scales as $1/n^2$ because the
 Seifert surface area grows as $n^2$.
 
-| Transition | $\Delta E$ | Photon $\lambda$ | Series |
-|------------|-----------|-----------------|--------|
-| $1 \to 2$ | $10.2$ eV | $121.6$ nm | Lyman-$\alpha$ |
-| $1 \to 3$ | $12.1$ eV | $102.6$ nm | Lyman-$\beta$ |
-| $2 \to 3$ | $1.89$ eV | $656.3$ nm | Balmer-$\alpha$ |
-| $3 \to 4$ | $0.66$ eV | $1875$ nm | Paschen-$\alpha$ |
+See [Table 3](#tbl:hydrogen-knot-structure-table3-data).

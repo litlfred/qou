@@ -23,14 +23,7 @@ $$
 
 where each $A^{(X)}$ carries a unique irrep of $G$:
 
-| component | $G$-irrep $(j, y)$ | post-EWSB role |
-|-----------|------------------:|----------------|
-| $A^{(\gamma)}$ | $(0, 0)$ | unbroken photon |
-| $A^{(W^+)}$ | $(1, 0)\rvert_{T^+}$ | $W^+$ vector boson |
-| $A^{(W^-)}$ | $(1, 0)\rvert_{T^-}$ | $W^-$ vector boson |
-| $A^{(Z)}$ | $(1, 0)\rvert_{(T^3,\,Y)}$ | $Z$ vector boson (mixed $T^3$/$Y$ component) |
-| $A^{(H)}$ | $(1/2, 1/2)\rvert_{\langle\Phi\rangle\text{-fixed}}$ | Higgs scalar (residual) |
-| $A^{(\rm matter)}$ | residual matter sector | leptons + quarks (orthogonal) |
+See [Table 1](#tbl:g-action-on-substrate-table1-data).
 
 **Axiom (G-2) — Per-host q-dim assignment.**
 The categorical q-dimension of each component is determined by its
@@ -118,12 +111,7 @@ This is **Anchor II** of the prior structural analysis — but now
 **derived**, not guessed. Each factor is forced by an explicit
 axiom:
 
-| factor | source axiom | meaning |
-|--------|-------------|---------|
-| $[2]_q$ | (G-2) + (G-4) | Higgs scalar (residual neutral component) |
-| $[4]_q$ | (G-2) | $W^+$ Goldstone at W-host |
-| $[4]_q$ | (G-2) | $W^-$ Goldstone at W-host |
-| $[6]_q$ | (G-2) | $Z$ Goldstone at Z-host |
+See [Table 2](#tbl:g-action-on-substrate-table2-data).
 
 ### Verification against numerical anchor
 
@@ -185,13 +173,6 @@ flag NV-1 entirely.
 
 If discharged:
 
-| flag | current | post-discharge |
-|------|---------|----------------|
-| NV-1 | inconclusive | closed via this trace formula + corrected residual |
-| HIGGS-SLOT (PR #513) | retraction | Higgs scalar slot identified as residual of $A^{(H)}$ |
-| U2 (force-carrier dichotomy) | premise | derived from G-1 |
-| U4 (EW mass eigenstate count) | premise | derived from G-1 (3 broken + 1 scalar) |
-| categorical Higgs idempotent | sketch | explicit construction (G-4) |
-| §3.A v4 calibration | wrong direction | calibrated via Higgs trace |
+See [Table 3](#tbl:g-action-on-substrate-table3-data).
 
 **Six audit flags closed by a single residual-resolution.**

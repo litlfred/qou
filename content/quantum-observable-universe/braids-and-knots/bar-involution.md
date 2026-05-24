@@ -22,10 +22,7 @@ $$x \;=\; P_{\mathrm{avg}}(x) + P_{\mathrm{skew}}(x),$$
 
 where
 
-| Projection | Formula | Image | Idempotent? |
-|---|---|---|---|
-| $P_{\mathrm{avg}}$ | $\frac{1}{2}(1 + \overline{(\cdot)})$ | **bar-symmetric** ($\overline x = x$) | yes ($P_{\mathrm{avg}}^2 = P_{\mathrm{avg}}$) |
-| $P_{\mathrm{skew}}$ | $\frac{1}{2}(1 - \overline{(\cdot)})$ | **bar-anti-symmetric** ($\overline x = -x$) | yes ($P_{\mathrm{skew}}^2 = P_{\mathrm{skew}}$) |
+See [Table 1](#tbl:bar-involution-table1-data).
 
 The framework's empirical content is that **$P_{\mathrm{avg}}$ is
 the canonical projection** — the bar-symmetric part of every
@@ -46,50 +43,15 @@ well-defined bar-action falls in one of these rows:
 
 ### Bar-symmetric (bar-even, $P_{\mathrm{avg}}$ image, retained)
 
-| Symbol | Reads | Where it appears |
-|---|---|---|
-| $q + q^{-1} = [2]_q$ | quantum-2 | Hecke skein / Markov parameter |
-| $[n]_q$ (any $n$) | q-integer | Hecke characters everywhere |
-| $b^2 = 1 - 1/[2]_q^2$ | Hoefsmit coupling squared | $V_{(2,1)}$ off-diagonal |
-| $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ | averaged crossing | typed-$\mathbf{B}_n$ recipe |
-| $\sigma + \sigma^{-1}$ | symmetric crossing pair | self-conjugate Wedderburn |
-| $\mathrm{Li}_2^q(z) = \frac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}})$ | symmetric q-dilog | T2, T3 binding tower |
-| $\cos(\alpha - b\hbar_q^2/2)$ | phase factor at $N{=}1$ | master $Q_\beta$ formula |
-| $\cosh(h)$ | hyperbolic-cosine of skein | per-Z gain $\alpha_Z \approx [3]_q^2 \cdot \cosh(h)$ |
-| Volume forms $\alpha \wedge d\alpha$ | contact volume | Reeb dynamics |
-| Unsigned linking $\lvert\mathrm{lk}\rvert$ | absolute linking | knot multiplicity |
-| Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ | Markov-axiom factor | interface knot $\bowtie_K = z$ |
-| All $c_k(q)$ in the precision ladder | classical rationals in $q$ | $\tau_M$ expansion about $q=1$ |
+See [Table 2](#tbl:bar-involution-table2-data).
 
 ### Bar-anti-symmetric (bar-odd, $P_{\mathrm{skew}}$ image, discarded)
 
-| Symbol | Reads | Where it appears |
-|---|---|---|
-| $h = q - q^{-1} = h_{1/2}/z$ | Hecke skein parameter | every Hecke skein relation |
-| $h_{1/2} = q^{1/2} - q^{-1/2}$ | half-step Hecke skein | quantum group $\mathrm{SU}_q(2)$ |
-| $\sigma - \sigma^{-1}$ | anti-symmetric crossing pair | skein difference |
-| $q^n - q^{-n}$ | anti-symmetric q-monomial | $[n]_q$'s anti-sym numerator |
-| $\Phi_q(z)$ alone (Faddeev) | Faddeev q-dilog | $-737$ MeV mirror-nucleus pathology if used alone |
-| $\sin(\alpha)$ alone | phase odd-component | discarded at $N{=}1$ |
-| $\sinh(h)$ | hyperbolic-sine of skein | discarded at per-Z gain |
-| Writhe $w(K) = \sum_c \mathrm{sign}(c)$ | signed crossing sum | chirality / orientation |
-| Signed linking $\mathrm{lk}(K_1, K_2)$ | signed Hopf-link invariant | knot factor |
-| Self-linking $\mathrm{SL}(K)$ | framed self-linking | ribbon structure |
-| Reeb field $R$ (vector) | contact flow direction | `def:categorical-q-reeb-flow` |
-| Reeb 1-form $\alpha$ | contact 1-form | (orientation 1-form) |
-| Curvature 2-form $d\alpha$ | contact curvature | Reeb-bundle |
-| Chern–Simons 3-form $\mathrm{CS}(A)$ (mod $\mathbb{Z}$) | CS Lagrangian | topological mass |
-| Instanton number $n = \tfrac{1}{8\pi^2}\int \mathrm{tr}(F\wedge F)$ | second Pontryagin | topological charge |
-| Hopf invariant | $S^3 \to S^2$ winding | bundle classification |
-| Helicity (right- vs left-handed) | chirality direction | parity-violating amplitudes |
-| Chirality residue | residue at chirality pole | `prop:chirality-residue-mass-term` |
+See [Table 3](#tbl:bar-involution-table3-data).
 
 ### Trivial under bar (rational scalars)
 
-| Symbol | Reads | Where it appears |
-|---|---|---|
-| Any $r \in \mathbb{Q}$ (constant) | rational constant | structure constants like $-1/2$, $-3/2$ |
-| Any $r \in \mathbb{Q}(\sqrt 2)$ at silver (computed) | rational at silver | $-11/8$, $-49/32$, $7/2$,... |
+See [Table 4](#tbl:bar-involution-table4-data).
 
 ## Key algebraic identities
 
@@ -181,18 +143,7 @@ the underlying ring. The bar-symmetric subspace is a **subring**;
 the bar-anti-symmetric subspace is an $R^+$-module that satisfies
 the natural sign rules:
 
-| Combination | Result | Lean theorem |
-|---|---|---|
-| sym + sym | sym | `IsBarSymmetric.add` |
-| sym $\times$ sym | sym | `IsBarSymmetric.mul` |
-| anti + anti | anti | `IsBarAntiSymmetric.add` |
-| **anti $\times$ anti** | **sym** | `IsBarSymmetric.of_mul_antisym` |
-| sym $\times$ anti | anti | `IsBarAntiSymmetric.of_sym_mul` |
-| $-$sym | sym | `IsBarSymmetric.neg` |
-| $-$anti | anti | `IsBarAntiSymmetric.neg` |
-| $h^{2n}$ (h anti) | sym | `IsBarAntiSymmetric.pow_two_mul` |
-| $h^{2n+1}$ (h anti) | anti | `IsBarAntiSymmetric.pow_two_mul_add_one` |
-| $\mathrm{bar}(-x) = -\mathrm{bar}(x)$ | identity | `bar_neg` |
+See [Table 5](#tbl:bar-involution-table5-data).
 
 These are **fully proved** from the four ring-involution axioms
 alone — no `sorry`, no auxiliary `Field` instance needed (only
@@ -218,10 +169,7 @@ computes $c_k(q)$ for $k = 3..10$ at golden ratio $q = \varphi$
 ($b^2 = 4/5$ exact) and tests Fibonacci-Lucas-cleanness vs the
 silver-ratio Pell-Lucas test. Result (witness confirmed):
 
-| $k$ | Silver | Golden |
-|:---:|:---:|:---:|
-| 5 | $-11/8$, **inert** (11) | $-13/10$, **clean** ($13 = F_7$) |
-| all other $k \in \{3,4,6,7,8,9,10\}$ | clean | clean |
+See [Table 6](#tbl:bar-involution-table6-data).
 
 **Silver outliers: $\{5\}$. Golden outliers: $\emptyset$.**
 
@@ -235,13 +183,7 @@ unique null point in the proton/neutron kinematic window.
 
 The bar-involution corresponds at three different geometric levels:
 
-| Level | Bar action |
-|---|---|
-| **Knot diagram** | Mirror reflection (over- $\leftrightarrow$ under-crossing swap) |
-| **Color tube** | Orientation reversal of winding around the chromaticity axis |
-| **Exceptional divisor (Bring blowup)** | Orientation reversal of ED components |
-| **Contact 3-manifold** | $\alpha \to -\alpha$, $R \to -R$ (Reeb flow reversal) |
-| **Wilson loop** | $W(\gamma) \to W(\bar\gamma)$ (path reversal) |
+See [Table 7](#tbl:bar-involution-table7-data).
 
 The bar-symmetric projection at each level is the **orientation-
 averaged** quantity: averaged crossings (knot), unsigned winding
@@ -276,14 +218,7 @@ blocks that consume it (with their primary bar-classification):
 
 ## Notation summary
 
-| Notation | Meaning |
-|---|---|
-| $\overline{x}$ | bar-involution of $x$ |
-| $P_{\mathrm{avg}}(x) = (x + \overline x)/2$ | bar-symmetric projection of $x$ |
-| $P_{\mathrm{skew}}(x) = (x - \overline x)/2$ | bar-anti-symmetric projection of $x$ |
-| $\sigma_{\mathrm{avg}} = P_{\mathrm{avg}}(\sigma) = \sigma - h/2$ | averaged crossing operator |
-| `IsBarSymmetric x` | Lean predicate $\overline x = x$ |
-| `IsBarAntiSymmetric x` | Lean predicate $\overline x = -x$ |
+See [Table 8](#tbl:bar-involution-table8-data).
 
 ## Proofs (Lean $\leftrightarrow$ paper bridge)
 
