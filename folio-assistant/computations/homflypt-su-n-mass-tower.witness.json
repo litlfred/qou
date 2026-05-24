@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-24T02:35:55.121465+00:00",
+  "commitSha": "64b03fd6f6f06bbc8f9a7e70b274f758b9bff773",
+  "assertions": [
+    {
+      "name": "spike_completed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5607,
+  "computation": "homflypt-su-n-mass-tower",
+  "scriptFile": "homflypt_su_n_mass_tower.py",
+  "scriptHash": "c023fce86257",
+  "scriptCommitSha": "unknown",
+  "description": "First multi-channel HOMFLYPT evaluation of the mass tower at substrate q₀. Computes P(β̂; SU(N), q₀) for N=2..6 across proton, neutron, figure-eight, and trefoil braids. Records per-N proton/neutron ratios, mirror differences (CPT structure), and Q_β predictor candidates. Per rem:archimedean-image-table row 5: this is the first data from the SU(N>2) channels.",
+  "contentBlock": "rem:archimedean-image-table",
+  "parameters": {
+    "dps": 50,
+    "N_max": 6,
+    "q_0": "1.1099785955541805753"
+  },
+  "data": {
+    "su_n_family_proton": {
+      "2": 0.998366621838506,
+      "3": 3.9970778636274176,
+      "4": 9.031796246746044,
+      "5": 16.15647875690215,
+      "6": 25.44886989900023
+    },
+    "su_n_family_neutron": {
+      "2": 0.998366621838506,
+      "3": 3.9970778636274176,
+      "4": 9.031796246746044,
+      "5": 16.15647875690215,
+      "6": 25.44886989900023
+    },
+    "su_n_family_figure-eight": {
+      "2": 0.18230448304203806,
+      "3": 1.594936843167583,
+      "4": 3.173121126031242,
+      "5": 5.3078493739450865,
+      "6": 8.041225103807168
+    },
+    "su_n_family_trefoil": {
+      "2": 1.0,
+      "3": 0.8775937833538816,
+      "4": 0.7545220027617022,
+      "5": 0.6304496119816347,
+      "6": 0.5050388407462352
+    },
+    "proton_neutron_ratios": {
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0,
+      "6": 1.0
+    },
+    "mirror_differences": {
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0
+    }
+  }
+}
