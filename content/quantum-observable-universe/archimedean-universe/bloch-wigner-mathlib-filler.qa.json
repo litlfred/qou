@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/archimedean-universe/bloch-wigner-mathlib-filler.lean"
   },
   "source_hashes": {
-    "md": "df9f20543538",
+    "md": "c30fffea882d",
     "ts": "2346b5783531",
     "lean": "0764d0afd90e"
   },
@@ -508,45 +508,7 @@
         "reviewed_sha": "6e9c36c04b60ff0c07888499d6e9e4ab89160cbe"
       }
     ],
-    "canonical-no-numerology": [
-      {
-        "field_hash": {
-          "md": "df9f20543538",
-          "ts": "2346b5783531",
-          "lean": "0764d0afd90e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
     "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {
-          "md": "df9f20543538",
-          "ts": "2346b5783531",
-          "lean": "0764d0afd90e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
-    "canonical-dilogarithm-context": [
       {
         "field_hash": {
           "md": "df9f20543538",
@@ -602,7 +564,45 @@
         "reviewed_at": "2026-05-24T02:33:40.513Z",
         "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
       }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "c30fffea882d",
+          "ts": "2346b5783531",
+          "lean": "0764d0afd90e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "c30fffea882d",
+          "ts": "2346b5783531",
+          "lean": "0764d0afd90e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
     ]
   },
-  "updated_at": "2026-05-24T02:33:40.513Z"
+  "updated_at": "2026-05-24T02:42:03.327Z"
 }

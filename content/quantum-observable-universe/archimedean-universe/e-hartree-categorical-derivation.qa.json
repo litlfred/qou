@@ -677,45 +677,7 @@
         "reviewed_sha": "40ddd3dcef7b172ac79032fc464acff7b56c3357"
       }
     ],
-    "canonical-no-numerology": [
-      {
-        "field_hash": {
-          "md": "ee9dba3c32c9",
-          "ts": "72f0a1a1d9d9",
-          "lean": "9c5e81ae9ac0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
     "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {
-          "md": "ee9dba3c32c9",
-          "ts": "72f0a1a1d9d9",
-          "lean": "9c5e81ae9ac0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
-    "canonical-dilogarithm-context": [
       {
         "field_hash": {
           "md": "ee9dba3c32c9",
@@ -773,7 +735,45 @@
         "severity": "critical",
         "evidence": "quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.ts:1: LP/SDP witness 'folio-assistant/computations/hecke-core-symbolic-migration.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
       }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "ee9dba3c32c9",
+          "ts": "72f0a1a1d9d9",
+          "lean": "9c5e81ae9ac0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "ee9dba3c32c9",
+          "ts": "72f0a1a1d9d9",
+          "lean": "9c5e81ae9ac0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
     ]
   },
-  "updated_at": "2026-05-24T02:33:40.513Z"
+  "updated_at": "2026-05-24T02:42:03.327Z"
 }

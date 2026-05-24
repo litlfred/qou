@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.lean"
   },
   "source_hashes": {
-    "md": "76936aec6234",
+    "md": "f1eba38f7195",
     "ts": "ec8301fb8dfb",
     "lean": "7ff592a5f7ed"
   },
@@ -656,45 +656,7 @@
         "evidence": "quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
-    "canonical-no-numerology": [
-      {
-        "field_hash": {
-          "md": "76936aec6234",
-          "ts": "ec8301fb8dfb",
-          "lean": "7ff592a5f7ed"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
     "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {
-          "md": "76936aec6234",
-          "ts": "ec8301fb8dfb",
-          "lean": "7ff592a5f7ed"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
-    "canonical-dilogarithm-context": [
       {
         "field_hash": {
           "md": "76936aec6234",
@@ -750,7 +712,45 @@
         "reviewed_at": "2026-05-24T02:33:40.513Z",
         "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
       }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "f1eba38f7195",
+          "ts": "ec8301fb8dfb",
+          "lean": "7ff592a5f7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "f1eba38f7195",
+          "ts": "ec8301fb8dfb",
+          "lean": "7ff592a5f7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
     ]
   },
-  "updated_at": "2026-05-24T02:33:40.513Z"
+  "updated_at": "2026-05-24T02:42:03.327Z"
 }

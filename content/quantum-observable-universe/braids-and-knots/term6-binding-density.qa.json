@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/term6-binding-density.lean"
   },
   "source_hashes": {
-    "md": "867e53e252b6",
-    "ts": "04f6666b8286",
+    "md": "349e855eebd5",
+    "ts": "0183e612334b",
     "lean": "4a52fb6d8ff7"
   },
   "criteria": {
@@ -565,25 +565,6 @@
         "reviewed_sha": "4185f0bf2c76e3a1cac9c948bd2fcbce1f5718ad"
       }
     ],
-    "canonical-no-numerology": [
-      {
-        "field_hash": {
-          "md": "867e53e252b6",
-          "ts": "04f6666b8286",
-          "lean": "4a52fb6d8ff7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
@@ -601,27 +582,6 @@
         },
         "reviewed_at": "2026-05-24T02:33:40.513Z",
         "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
-    "canonical-dilogarithm-context": [
-      {
-        "field_hash": {
-          "md": "867e53e252b6",
-          "ts": "04f6666b8286",
-          "lean": "4a52fb6d8ff7"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/term6-binding-density.md:30: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q)"
       }
     ],
     "wall-side-correct": [
@@ -661,7 +621,45 @@
         "reviewed_at": "2026-05-24T02:33:40.513Z",
         "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
       }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "349e855eebd5",
+          "ts": "0183e612334b",
+          "lean": "4a52fb6d8ff7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "349e855eebd5",
+          "ts": "0183e612334b",
+          "lean": "4a52fb6d8ff7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
     ]
   },
-  "updated_at": "2026-05-24T02:33:40.513Z"
+  "updated_at": "2026-05-24T02:42:03.327Z"
 }

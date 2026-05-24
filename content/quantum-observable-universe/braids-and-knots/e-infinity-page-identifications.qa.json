@@ -629,22 +629,6 @@
         "reviewed_sha": "40ddd3dcef7b172ac79032fc464acff7b56c3357",
         "severity": "major",
         "evidence": "folio-assistant/computations/atom_level_wedderburn_tower.py:1: computation script imports deprecated module: mass_endomorphism"
-      },
-      {
-        "field_hash": {
-          "md": "e1c50b910eb3",
-          "ts": "677ce1a32c89",
-          "lean": "61bd72f64c2d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "claude-code",
-          "version": "opus-4.7"
-        },
-        "reviewed_at": "2026-05-24T02:38:22.085Z",
-        "reviewed_sha": "8901c3aebc47e00c833e2e7e0cd88d0e3b551881",
-        "notes": "Utility-only import via atom_level_wedderburn_tower.py; 0 deprecated API calls. Per PR #960 audit."
       }
     ],
     "compute-prop-has-probe": [
@@ -685,45 +669,7 @@
         "reviewed_sha": "4185f0bf2c76e3a1cac9c948bd2fcbce1f5718ad"
       }
     ],
-    "canonical-no-numerology": [
-      {
-        "field_hash": {
-          "md": "e1c50b910eb3",
-          "ts": "677ce1a32c89",
-          "lean": "61bd72f64c2d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
     "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {
-          "md": "e1c50b910eb3",
-          "ts": "677ce1a32c89",
-          "lean": "61bd72f64c2d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2af7772fec45",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:33:40.513Z",
-        "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-      }
-    ],
-    "canonical-dilogarithm-context": [
       {
         "field_hash": {
           "md": "e1c50b910eb3",
@@ -779,7 +725,45 @@
         "reviewed_at": "2026-05-24T02:33:40.513Z",
         "reviewed_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
       }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "e1c50b910eb3",
+          "ts": "677ce1a32c89",
+          "lean": "61bd72f64c2d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "e1c50b910eb3",
+          "ts": "677ce1a32c89",
+          "lean": "61bd72f64c2d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2af7772fec45",
+          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
+        },
+        "reviewed_at": "2026-05-24T02:42:03.327Z",
+        "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
+      }
     ]
   },
-  "updated_at": "2026-05-24T02:38:22.085Z"
+  "updated_at": "2026-05-24T02:42:03.327Z"
 }
