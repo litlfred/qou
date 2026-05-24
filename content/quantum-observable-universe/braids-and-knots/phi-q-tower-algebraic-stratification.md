@@ -1,3 +1,11 @@
+> **⚠️ SUPERSEDED-$\rho_q$ note (2026-05-24, PR #1127).** Any use of the
+> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
+> structurally-wrong leading-order ansatz per
+> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
+> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
+> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
+> Full purge tracking: [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+
 **Proposition (algebraic stratification of the Φ$_q$ tower).**
 *Let $\beta \in B_n$ be a braid with crossings indexed by
 $\{0, \ldots, n-2\}$. Let $H_n(R, q)$ be the Iwahori-Hecke algebra
