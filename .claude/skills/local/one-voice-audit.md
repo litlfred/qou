@@ -136,7 +136,7 @@ grep -rEn "↦|⁻|√|─|✅|·|²" "$CONTENT" --include="*.md"
 # Structural-argument hedging / "essentially" / "morally" / "heuristically"
 # (criterion 11 — paper-too-long policy: prefer to strip)
 grep -rEni \
-  "structural argument|morally (correct|a |)|essentially (the |a |zero|complete|surjective|non-local)|heuristically (replaced|exploitable|the)|simplification for exposition|simplifies (the )?exposition|simplifies the paper|provides (the |a )(mathematical framework|natural setting|canonical (duality|basis|framework))|gives a canonical (functor|grading|ordering)|for context|by way of background|broadly speaking|loosely speaking|in some sense|conceptually analogous|amount(s|ed) to|(reformulated|reformulation) as" \
+  "structural argument|\bmorally\b|essentially (the |a |zero|complete|surjective|non-local)|heuristically (replaced|exploitable|the)|simplification for exposition|simplifies (the )?exposition|simplifies the paper|provides (the |a )(mathematical framework|natural setting|canonical (duality|basis|framework))|gives a canonical (functor|grading|ordering)|for context|by way of background|broadly speaking|loosely speaking|in some sense|conceptually analogous|amount(s|ed) to|(reformulated|reformulation) as" \
   "$CONTENT" --include="*.md"
 ```
 
