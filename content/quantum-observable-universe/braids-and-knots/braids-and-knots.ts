@@ -614,6 +614,8 @@ export default chapter({
         "bar-involution-table6-data",
         "bar-involution-table7-data",
         "bar-involution-table8-data",
+        "q-zero-complex-extension",
+        "lusztig-vs-hermitian-bar",
         "polynomial-bar-involution",
       ],
     }),
