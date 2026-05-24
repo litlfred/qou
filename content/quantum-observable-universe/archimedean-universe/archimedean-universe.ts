@@ -528,6 +528,7 @@ export default chapter({
         "baryon-integration-limit",
         "mobius-golden-fixed-points",
         "golden-skew-dual-node",
+        "golden-skew-dual-node-table-data",
       ],
     }),
     section({

@@ -550,6 +550,7 @@ export default chapter({
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
+        "chi-v3-closed-form-proof-table-data",
         "chi-per-irrep-cyclotomic-closed-forms",
         "per-block-hopf-jones-absorption-pattern",
         "conj-qbeta-c-k-closed-forms",

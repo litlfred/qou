@@ -75,11 +75,7 @@ This matches the probe output `+1/4, -1/4, +1/4, ...` for $k = 6, 7, 8, ...$ exa
 
 ## Lean theorems exported
 
-| theorem | content |
-|---|---|
-| `chi_V3_difference_eq_factored` | $\chi_n - \chi_p = -(q^2+1)^2 (q^2-1) / (4q)$ |
-| `chi_V3_difference_factored_eq_polynomial` | factored $\leftrightarrow$ polynomial form |
-| `chi_V3_difference_eq_polynomial` | $\chi_n - \chi_p = -(q^5 + q^3 - q - q^{-1})/4$ |
+See [Table: Lean theorems for $\chi_{V_3}$](#tbl:chi-v3-closed-form-proof-table-data).
 | `chi_V3_difference_decomposition` | split into polynomial part + geometric part |
 | `chi_V3_polynomial_part_at_one` | polynomial part vanishes at $q = 1$ |
 | `chi_V3_geom_part_at_one` | geometric part equals $1/4$ at $q = 1$ |

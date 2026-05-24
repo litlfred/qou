@@ -319,6 +319,7 @@ export default chapter({
         "hecke-satisfies-blitvic-hypothesis",
         "hecke-satisfies-blitvic-hypothesis-proof",
         "centered-hecke-variance-positive",
+        "centered-hecke-variance-positive-table-data",
         "centered-hecke-variance-positive-proof",
         "q-clt-non-commutative",
         "archimedean-macroscopic-washout",

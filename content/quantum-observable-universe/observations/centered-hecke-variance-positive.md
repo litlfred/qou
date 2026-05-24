@@ -23,15 +23,7 @@ including the QOU substrate.
 
 **Numerical check at $q_0$.** With $q_0 \approx 1.110$:
 
-| Quantity | Value |
-|---|---|
-| $q_0^{1/2}$ | $\approx 1.0535$ |
-| $q_0^{-1/2}$ | $\approx 0.9492$ |
-| $z = 1/(q^{1/2}+q^{-1/2})$ | $\approx 0.4993$ |
-| $z^2$ | $\approx 0.2493$ |
-| $q_0 - q_0^{-1}$ | $\approx 0.2091$ |
-| $(q - q^{-1}) z$ | $\approx 0.1044$ |
-| $\mathrm{Var}(\sigma_i) = (q-q^{-1})z + 1 - z^2$ | $\approx 0.855$ |
+See [Table: Centred Hecke variance at $q_0$](#tbl:centered-hecke-variance-positive-table-data).
 
 The variance is well-separated from zero, confirming the q-CLT limit
 is non-degenerate at the substrate value.

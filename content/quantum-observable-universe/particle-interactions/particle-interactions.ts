@@ -182,6 +182,7 @@ export default chapter({
         "thurston-volume-additivity",
         "mass-volume-factorization",
         "crossing-graded-mass-expansion",
+        "crossing-graded-mass-expansion-table-data",
         "lifted-crossing-locality",
         "q-holonomy-locality-derivation",
         "frobenius-packing-density",
