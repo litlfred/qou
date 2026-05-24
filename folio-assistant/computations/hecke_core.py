@@ -600,140 +600,25 @@ def _chain_V_full(chain):
 # Molecular binding
 # ══════════════════════════════════════════════════════════════
 
-NOBLE_GAS_Z = [2, 10, 18, 36, 54, 86]
-
-
-def valence_Z(Z):
-    """Number of valence electrons (Z minus largest noble gas core).
-
-    Noble gas cores have saturated Frobenius channels (Gx >> 0,
-    LP dual shadow price = 0). Only valence electrons participate
-    in molecular binding.
-    """
-    core = 0
-    for z_ng in NOBLE_GAS_Z:
-        if z_ng < Z:
-            core = z_ng
-    return Z - core
-
-
-def _vertex_channels(chain):
-    """Return (λ_sym, V_std, λ_alt) for a crossing chain.
-
-    Evaluates each Wedderburn-Artin irrep channel separately:
-      symmetric: ∏(c·q + d)      (1-dim, eigenvalue q per positive crossing)
-      standard:  z·M₀₀ + M₁₀    (2-dim, transfer matrix product)
-      alternating: ∏(-c·q⁻¹ + d) (1-dim, eigenvalue -q⁻¹ per positive crossing)
-    """
-    a, b = 0.0, 1.0
-    sp, ap = 1.0, 1.0
-    for c, d in chain:
-        a, b = a * c * h + a * d + b * c, a * c + b * d
-        sp *= c * q0 + d
-        ap *= -c * qi + d
-    V_std = z * a + b
-    return sp, V_std, ap
-
-
-def molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
-    """Molecular binding via full Wedderburn-Artin decomposition.
-
-    Evaluates each irrep's Skein polynomial separately, then weights:
-      Φ_λ = Σᵢ |Δln|P_λ,i||    (per-irrep, per-generator binding)
-      E = (W_sym·Φ_sym + W_std·Φ_std + W_alt·Φ_alt) × E_MOL
-
-    This is the correct representation-theoretic approach: the Hecke
-    algebra decomposes as a direct sum H₃(q) ≅ V_sym ⊕ V_std² ⊕ V_alt,
-    and the binding acts independently on each block. The Wedderburn
-    weights w_λ = dim_q(λ)²/[3]_q! are the LP shadow prices from
-    the Frobenius positivity constraint (PR #360).
-
-    For H-H: 4.55 eV (exp 4.478, 1.7% error).
-    Bond ratios correct: double = 2×single, triple = 3×single.
-
-    Returns (E_eV, binding_phi, phi_ub, phi_bond).
-    """
-    g0A, g1A = atom_gen_chains(Z_A, N_A)
-    g0B, g1B = atom_gen_chains(Z_B, N_B)
-
-    bond_g0 = INV_TREFOIL_G0 * n_inv_trefoils
-    bond_g1 = INV_TREFOIL_G1 * n_inv_trefoils
-
-    total_bind = 0.0
-    phi_ub = 0.0
-    phi_bond = 0.0
-
-    for gA, gB, bg in [(g0A, g0B, bond_g0), (g1A, g1B, bond_g1)]:
-        s_ub, v_ub, a_ub = _vertex_channels(gA + gB)
-        s_bd, v_bd, a_bd = _vertex_channels(gA + bg + gB)
-
-        # Per-irrep absolute binding
-        bind_s = abs(math.log(abs(s_ub)) - math.log(abs(s_bd))) if abs(s_ub * s_bd) > 1e-300 else 0
-        bind_v = abs(math.log(abs(v_ub)) - math.log(abs(v_bd))) if abs(v_ub * v_bd) > 1e-300 else 0
-        bind_a = abs(math.log(abs(a_ub)) - math.log(abs(a_bd))) if abs(a_ub * a_bd) > 1e-300 else 0
-
-        total_bind += W_SYM * bind_s + W_STD * bind_v + W_ALT * bind_a
-
-        # Track phi for diagnostics
-        V_ub = W_SYM * s_ub + W_STD * v_ub + W_ALT * a_ub
-        V_bd = W_SYM * s_bd + W_STD * v_bd + W_ALT * a_bd
-        if abs(V_ub) > 1e-300:
-            phi_ub += math.log(abs(V_ub))
-        if abs(V_bd) > 1e-300:
-            phi_bond += math.log(abs(V_bd))
-
-    E_eV = total_bind * E_MOL
-
-    return E_eV, total_bind, phi_ub, phi_bond
-
-
-def molecular_binding_frobenius(Z_A, N_A, Z_B, N_B, n_inv_trefoils=1):
-    """Molecular binding from the Frobenius bilinear form.
-
-    E_bond = ½ |x_A^T · G · Δ · x_B| × E_MOL
-
-    where Δ = (T⁻¹)^n - I is the bond operator perturbation,
-    and the ½ comes from Δ being symmetric (the bilinear form
-    counts each bond from both A and B perspectives).
-
-    For H-H: E = 4.295 eV (exp 4.478, 4.1% error).
-
-    This is mathematically equivalent to the vertex volume approach
-    for the standard representation channel. For atoms where the
-    full NF is Frobenius-unstable (A > 3 generally), this falls
-    back to molecular_binding_nf which uses per-generator vertex
-    volumes (the standard representation, avoiding the indefinite
-    Gram matrix).
-
-    Returns (E_eV, raw_pairing).
-    """
-    nf_A = build_atom_nf(Z_A, N_A)
-    nf_B = build_atom_nf(Z_B, N_B)
-
-    stable_A, _, _ = check_frobenius(nf_A)
-    stable_B, _, _ = check_frobenius(nf_B)
-
-    if not (stable_A and stable_B):
-        E, bind, _, _ = molecular_binding_nf(Z_A, N_A, Z_B, N_B, n_inv_trefoils)
-        return E, bind
-
-    import numpy as np
-    M_Tinv = np.zeros((6, 6))
-    for j in range(6):
-        ej = [0.0] * 6
-        ej[j] = 1.0
-        result = list(ej)
-        for _ in range(n_inv_trefoils):
-            result = hm(result, 1, -h, 0)
-            result = hm(result, 1, -h, 1)
-            result = hm(result, 1, -h, 0)
-        M_Tinv[:, j] = result
-    Delta = M_Tinv - np.eye(6)
-
-    pairing = float(np.array(nf_A) @ G @ Delta @ np.array(nf_B))
-    E_eV = abs(pairing) * E_MOL / 2  # ½ from symmetric Δ
-
-    return E_eV, pairing / 2
+# ── Molecular binding primitives (M2-inverted to pyhecke.molecular) ──
+# Per this PR (2b Phase B "M2 inversion"), the 4 molecular binding
+# functions + NOBLE_GAS_Z constant now live in
+# `tools/pyhecke/python/pyhecke/molecular.py`. Re-export them here so
+# every existing `from hecke_core import molecular_binding_nf` (etc.)
+# in external consumer scripts continues to work unchanged. Same
+# bootstrap path as wedderburn (pyhecke is on sys.path via the block
+# at lines 38-47).
+#
+# Note: pyhecke.molecular still imports atom_gen_chains + build_atom_nf
+# + check_frobenius from hecke_core (those atom-builder symbols are
+# the next M2 inversion target).
+from pyhecke.molecular import (  # noqa: E402
+    NOBLE_GAS_Z,
+    valence_Z,
+    _vertex_channels,
+    molecular_binding_nf,
+    molecular_binding_frobenius,
+)
 
 
 # ══════════════════════════════════════════════════════════════
