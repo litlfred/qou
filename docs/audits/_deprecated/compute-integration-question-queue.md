@@ -1,3 +1,5 @@
+> **DEPRECATED on 2026-05-24.** Undated audit document classified as workplan / status snapshot / migration-handoff / one-off investigation whose findings have been integrated into main or whose plan has been executed. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T5 for the deprecation rationale.
+
 # Author-question queue (compute-integration-watcher)
 
 Tracks open questions waiting on owner sign-off.  Pulled in priority
