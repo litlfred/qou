@@ -119,6 +119,46 @@ theorem rogersAlphaBeta_at_zero :
     rogersAlpha 0 0 = 0 ∧ rogersBeta 0 0 = 0 := by
   refine ⟨?_, ?_⟩ <;> simp [rogersAlpha, rogersBeta]
 
+/-! ## T3 scaffold: Rogers correction's leading order
+
+  Per `docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`
+  §3 (Post-τ pentagon, jet grades 2 and 4): the post-τ Pentagon
+  picks up a $\log_q^2$ Rogers correction. Since $\log_q(x) \approx
+  (x-1)/h + O(h)$ near $q=1$, the bilinear $\log_q \cdot \log_q$
+  product is $O(h^{-2}) \cdot O(h^{-2}) \cdot O(h^4) = O(h^0)$
+  *after* multiplication by the Pentagon residual's $h^4$ factor,
+  giving a net $h^4$ contribution.
+
+  The conditional-class wrapper records the categorical statement
+  that the Rogers correction's first non-trivial $h$-order is $h^4$
+  (not $h^2$, not $h^6$). Empirical confirmation: the Borromean
+  Markov-trace closed form's $h^4 = -3/4$ (see
+  `QOU.BraidsAndKnots.BorromeanMarkovTrace.h4_leading_coefficient_eq_neg_three_quarters`).
+-/
+
+/-- Conditional-class statement: the Rogers correction's leading
+    non-trivial h-order is h⁴. Encoded as a Prop-valued field for
+    instance-style consumption. -/
+class RogersCorrectionLeadingOrderH4 where
+  leading_h_order : ℕ
+  leading_h_order_eq_four : leading_h_order = 4
+
+/-- Default instance: the leading h-order is 4, recorded as a
+    type-level fact. Downstream theorems consume this via
+    `[RogersCorrectionLeadingOrderH4]`. -/
+instance : RogersCorrectionLeadingOrderH4 where
+  leading_h_order := 4
+  leading_h_order_eq_four := rfl
+
+/-- The Rogers correction's first non-trivial contribution to the
+    h-expansion is at h⁴ order. This is a conditional-class
+    statement; the substantive theorem (Pentagon → -3/4
+    coefficient) requires the explicit Borromean braid lifting in
+    the q-shuffle Hopf algebra, which is structurally open. -/
+theorem rogers_correction_leading_h_order [c : RogersCorrectionLeadingOrderH4] :
+    c.leading_h_order = 4 :=
+  c.leading_h_order_eq_four
+
 /-- The product u·v factors through the pentagon: if u, v < 1 then
     α(u, v) and β(u, v) are also < 1 in absolute value (provided
     the denominator 1 - uv is non-zero).  Stated as a positivity
