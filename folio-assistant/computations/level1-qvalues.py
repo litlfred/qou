@@ -28,6 +28,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from computations.hecke_engine import HeckeRational
@@ -146,7 +147,7 @@ for nuc in nuclei:
             vp = float(qr.traced_volume(i, quark_par))
             vd = float(qr.traced_volume(i, quark_dau_trial))
             if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
-                lr_sum += math.log(abs(vp)) - math.log(abs(vd))
+                lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
                 aff += 1
 
         Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
@@ -175,7 +176,7 @@ for nuc in nuclei:
                 vp = float(qr.traced_volume(i, quark_par))
                 vd = float(qr.traced_volume(i, quark_dau_trial))
                 if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
-                    lr_sum += math.log(abs(vp)) - math.log(abs(vd))
+                    lr_sum += mp.log(abs(vp)) - mp.log(abs(vd))
                     aff += 1
 
             Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
@@ -197,8 +198,8 @@ for nuc in nuclei:
     print(f"  Conversion site: nucleon {best_site} (of {n} neutrons tested)")
     print(f"  Converting positions: {converting}")
     print(f"  Affected generators: {affected_count} / {strands_L1 - 1}")
-    print(f"  Σ log|V_par/V_dau| = {log_ratio_sum:.6f}")
-    print(f"  Q_q (Skein units) = {Q_q:.4f}")
+    print(f"  Σ log|V_par/V_dau| = {float(log_ratio_sum):.6f}")
+    print(f"  Q_q (Skein units) = {float(Q_q):.4f}")
     print(f"  Q_exp (MeV) = {nuc['Q_exp_MeV']}")
     print(f"  Time: {elapsed:.2f}s")
 
@@ -208,8 +209,8 @@ for nuc in nuclei:
         "ordering_method": method,
         "converting_positions": converting,
         "affected_generators": affected_count,
-        "log_ratio_sum": log_ratio_sum,
-        "Q_q_skein_units": Q_q,
+        "log_ratio_sum": float(log_ratio_sum),
+        "Q_q_skein_units": float(Q_q),
         "Q_exp_MeV": nuc["Q_exp_MeV"],
         "elapsed_s": elapsed,
         "status": "computed",
