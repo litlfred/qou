@@ -5,9 +5,9 @@
 > This script is EXPLORATORY (testing alternative `ρ_F`-type candidates).
 > Function names `rho_q_integer` and `rho_q_trm_combined` refer to
 > CANDIDATE Frobenius packing factors being probed, NOT to the
-> SUPERSEDED scalar `ρ_q = 1/ℏ_q²` from
-> [`q_pinning_50_digit.py`](q_pinning_50_digit.py) (which is
-> deprecated per [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../docs/audits/2026-05-24-superseded-rho-q-purge.md)).
+> SUPERSEDED scalar `ρ_q = 1/ℏ_q²` (which was purged from
+> [`q_pinning_50_digit.py`](q_pinning_50_digit.py) per
+> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../docs/audits/2026-05-24-superseded-rho-q-purge.md)).
 > The categorical replacement target is
 > [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md);
 > this probe's candidates are direct competitors.

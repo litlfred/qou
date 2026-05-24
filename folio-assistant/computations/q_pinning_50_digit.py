@@ -2,18 +2,15 @@
 """
 High-precision substrate parameter pinning at 50 decimal digits.
 
-> SUPERSEDED-ρ_q purge marker (2026-05-24, PR #1127):
-> The derivation `ℏ_q² = Vol(4_1) / (m_μ/m_e)` and `ρ_q = 1/ℏ_q²`
-> below uses the leading-order **substrate-truncation** of the
-> canonical operator-valued mass formula. The scalar `ρ_q` is
-> structurally wrong as a dimensional factor (`mass-endomorphism-
-> tower.md` §SUPERSEDED). The q₀ value derived below is unchanged
-> (the Skein formula is accurate to ~ppb at lepton level where
-> operator-valued corrections are small); the `rho_q` field in the
-> emitted witness is DEPRECATED and should not be consumed as a
-> "Frobenius packing density" — see `docs/audits/2026-05-24-
-> superseded-rho-q-purge.md` for canonical replacement
-> (`prop:rho-k-graded-expansion`).
+> SUPERSEDED-ρ_q purge applied (2026-05-24, PR #1127):
+> Per [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../docs/audits/2026-05-24-superseded-rho-q-purge.md),
+> the scalar `ρ_q = 1/ℏ_q²` was structurally wrong as a dimensional
+> factor and has been removed from this script's outputs. The q₀
+> derivation below is unchanged (Skein formula is accurate to ~ppb
+> at lepton level where operator-valued corrections are small);
+> only the `ρ_q` quantity is gone. Canonical replacement for the
+> dimensional factor: `prop:rho-k-graded-expansion` (operator-valued
+> graded expansion).
 
 CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
 
@@ -25,12 +22,11 @@ CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
              — propagates to σ(q₀)/q₀ ≈ 1.22e-9 relative, computed
              below from dq/dR
 
-DERIVATION (leading-order substrate-truncation; see SUPERSEDED-ρ_q note above):
+DERIVATION (leading-order substrate-truncation; see purge audit above):
 
   ℏ_q²  =  Vol(4_1) / (m_μ/m_e)     (LO Skein, lepton sector)
   ℏ_q   =  +√(ℏ_q²)
   q     =  1 / (1 - ℏ_q)
-  ρ_q   =  1 / ℏ_q²              (Frobenius packing density — DEPRECATED, see note above)
   H_A   =  q - q⁻¹
   z     =  1 / (q^{1/2} + q^{-1/2})  (Markov parameter)
   [n]_q =  (q^n - q^{-n}) / (q - q⁻¹)
@@ -82,8 +78,6 @@ Q         = mpf(1) / (mpf(1) - HBAR_Q)
 Q_INV     = mpf(1) / Q
 H_A       = Q - Q_INV
 TWO_Q     = Q + Q_INV       # [2]_q
-RHO_Q     = mpf(1) / HBAR_Q_SQ      # SUPERSEDED scalar substrate density (see top-of-file note + audit doc)
-
 # Markov / Skein parameters
 Z_MARKOV  = mpf(1) / (sqrt(Q) + sqrt(Q_INV))
 S_SKEIN   = sqrt(Q) - sqrt(Q_INV)
@@ -184,7 +178,6 @@ if __name__ == "__main__":
     print(f"  H_A = q - q⁻¹    = {H_A}")
     print(f"  [2]_q = q + q⁻¹  = {TWO_Q}")
     print(f"  z (Markov)       = {Z_MARKOV}")
-    print(f"  ρ_q = 1/ℏ_q²     = {RHO_Q}")
     print(f"  S = √q - 1/√q    = {S_SKEIN}")
 
     print(f"\nQuantum integers / factorials at 50 digits:")
@@ -283,18 +276,6 @@ if __name__ == "__main__":
             "H_A":       str(H_A),
             "two_q":     str(TWO_Q),
             "z_markov":  str(Z_MARKOV),
-            "rho_q_DEPRECATED_substrate_truncation": str(RHO_Q),
-            "_rho_q_deprecation_note": (
-                "rho_q = 1/hbar_q^2 is the SUPERSEDED scalar substrate density "
-                "(structurally wrong: braid-class-independent while categorical "
-                "density rho_K varies ~30x across atoms). Canonical replacement: "
-                "operator-valued A^lambda_{mu,nu}(I) per "
-                "prop:hecke-branching-trace-decomposition; graded expansion "
-                "per prop:rho-k-graded-expansion. See "
-                "docs/audits/2026-05-24-superseded-rho-q-purge.md (PR #1127). "
-                "q value above is unaffected (Skein formula is accurate to "
-                "ppb at lepton level)."
-            ),
             "s_skein":   str(S_SKEIN),
         },
         "quantum_integers": {
