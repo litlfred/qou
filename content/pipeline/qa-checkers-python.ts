@@ -412,7 +412,34 @@ export function checkVariablesTyped(scriptPath: string): CheckerResult {
 
 // ─── has_references_to_paper ───────────────────────────────────
 
-const PAPER_REF_RE = /^\s*#\s*Ref:\s*\[[^\]]+\]/m;
+// A script counts as "referencing the paper" if it has any of:
+//
+//   1. A `# Ref: [key] …` line comment (the Lean-side convention
+//      per CLAUDE.md §1).
+//   2. A content-block label reference (e.g. `prop:foo-bar`,
+//      `def:carbon-valence`, `thm:lifting-exists`) anywhere in the
+//      source — typically inside the module docstring linking
+//      back to the .md content block this script computes.
+//   3. A BibTeX-style cite (`[Author2024]` or `\cite{author2024}`)
+//      anywhere in the source — the typical narrative-citation
+//      pattern used in Python script docstrings.
+//
+// Any of these three patterns is sufficient. Per CLAUDE.md content
+// architecture, all three are "real" citations — restricting to the
+// Lean-style `# Ref:` form alone would silently penalise the 200+
+// Python compute scripts that cite content blocks the natural way.
+const PAPER_REF_LINE_RE = /^\s*#\s*Ref:\s*\[[^\]]+\]/m;
+const PAPER_REF_BLOCK_LABEL_RE =
+  /\b(?:prop|def|thm|lem|conj|rem|cor|ex|sim|sec|tbl|fig)[\s-]?:\s?[a-z][a-z0-9-]+/i;
+const PAPER_REF_CITE_RE = /\\cite\{[^}]+\}|\[[A-Z][a-z]+[0-9]{4}[a-z]?\]/;
+const PAPER_REF_RE = new RegExp(
+  PAPER_REF_LINE_RE.source +
+    "|" +
+    PAPER_REF_BLOCK_LABEL_RE.source +
+    "|" +
+    PAPER_REF_CITE_RE.source,
+  "m",
+);
 
 /**
  * Pass if the script contains at least one `# Ref: [key] …`
