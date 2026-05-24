@@ -47,25 +47,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "0b124aff998c",
-          "ts": "d6c99adf43bc",
-          "lean": "d43579af2af8"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
-      }
-    ],
     "compute-witness-exists": [
       {
         "field_hash": {
@@ -84,23 +65,6 @@
       }
     ],
     "compute-lp-dual-present": [
-      {
-        "field_hash": {
-          "md": "0b124aff998c",
-          "ts": "d6c99adf43bc",
-          "lean": "d43579af2af8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      }
-    ],
-    "bib-cite-resolves": [
       {
         "field_hash": {
           "md": "0b124aff998c",
@@ -646,7 +610,48 @@
         "severity": "major",
         "evidence": "quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1: no probe witness for this prop — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B (audit: i1-no-probe-audit.witness.json)"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "0b124aff998c",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "0b124aff998c",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+      }
     ]
   },
-  "updated_at": "2026-05-24T00:49:59.352Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }

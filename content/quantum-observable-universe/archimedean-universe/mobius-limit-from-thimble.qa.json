@@ -47,25 +47,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "77b3c75b4485",
-          "ts": "c2f5d05c44d2",
-          "lean": "7d286b2d7a68"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/archimedean-universe/mobius-limit-from-thimble.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
-      }
-    ],
     "compute-witness-exists": [
       {
         "field_hash": {
@@ -98,42 +79,6 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "77b3c75b4485",
-          "ts": "c2f5d05c44d2",
-          "lean": "7d286b2d7a68"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/archimedean-universe/mobius-limit-from-thimble.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/mobius-limit-from-thimble.md:1: \\cite{witten2011} or -- Ref: [witten2011] does not resolve in references.ts"
-      },
-      {
-        "field_hash": {
-          "md": "77b3c75b4485",
-          "ts": "c2f5d05c44d2",
-          "lean": "8de4c395fedd"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:15:32.063Z",
-        "reviewed_sha": "7dddea7ef86af9d5fd12c1974a0579a668dd21cc",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/archimedean-universe/mobius-limit-from-thimble.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/mobius-limit-from-thimble.md:1: \\cite{witten2011} or -- Ref: [witten2011] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -948,7 +893,27 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "2754f9c6f695",
+          "ts": "ae2da18ccfac",
+          "lean": "8dedb1b4c1b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }

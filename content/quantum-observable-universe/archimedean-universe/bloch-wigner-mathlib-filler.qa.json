@@ -81,25 +81,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "086f76e0d092",
-          "ts": "2346b5783531",
-          "lean": "68619376ce52"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/archimedean-universe/bloch-wigner-mathlib-filler.md:1: \\cite{manuscript} or -- Ref: [manuscript] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/bloch-wigner-mathlib-filler.md:1: \\cite{bloch2000} or -- Ref: [bloch2000] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/bloch-wigner-mathlib-filler.md:1: \\cite{zagier1986} or -- Ref: [zagier1986] does not resolve in references.ts | quantum-observable-universe/archimedean-universe/bloch-wigner-mathlib-filler.md:1: \\cite{thurston1978} or -- Ref: [thurston1978] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -642,7 +623,27 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "df9f20543538",
+          "ts": "2346b5783531",
+          "lean": "0764d0afd90e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
     ]
   },
-  "updated_at": "2026-05-23T20:16:40.535Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }

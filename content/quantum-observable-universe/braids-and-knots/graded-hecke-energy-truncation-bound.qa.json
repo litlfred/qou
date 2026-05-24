@@ -47,25 +47,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "e9b82aedfaa2",
-          "ts": "8edba8002b96",
-          "lean": "f8abc4f2c7b6"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
-      }
-    ],
     "compute-witness-exists": [
       {
         "field_hash": {
@@ -98,25 +79,6 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "e9b82aedfaa2",
-          "ts": "8edba8002b96",
-          "lean": "f8abc4f2c7b6"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md:1: \\cite{khovanovlauda2009} or -- Ref: [khovanovlauda2009] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md:1: \\cite{brundankleshchev2009} or -- Ref: [brundankleshchev2009] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -786,7 +748,48 @@
         "reviewed_at": "2026-05-24T00:49:59.352Z",
         "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "de892b7fdd3d",
+          "ts": "8edba8002b96",
+          "lean": "f5d36b5a9439"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "de892b7fdd3d",
+          "ts": "8edba8002b96",
+          "lean": "f5d36b5a9439"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de",
+        "severity": "major",
+        "evidence": "quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+      }
     ]
   },
-  "updated_at": "2026-05-24T00:49:59.352Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }

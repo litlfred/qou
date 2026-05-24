@@ -47,25 +47,6 @@
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
       }
     ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "b14cd58f1e3b",
-          "ts": "4599a9862e00",
-          "lean": "96544b218e86"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/bar-involution-invariance.ts:1: no `consumers:` field with at least one production script — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
-      }
-    ],
     "compute-witness-exists": [
       {
         "field_hash": {
@@ -98,25 +79,6 @@
         },
         "reviewed_at": "2026-05-20T16:00:31.287Z",
         "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "b14cd58f1e3b",
-          "ts": "4599a9862e00",
-          "lean": "96544b218e86"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-sweep.ts",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-20T16:00:31.287Z",
-        "reviewed_sha": "578a7347b066840bc5088920c7e537d8739fa9c9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/bar-involution-invariance.md:1: \\cite{kashiwara1991} or -- Ref: [kashiwara1991] does not resolve in references.ts | quantum-observable-universe/particle-interactions/bar-involution-invariance.md:1: \\cite{khovanovlauda2009} or -- Ref: [khovanovlauda2009] does not resolve in references.ts | quantum-observable-universe/particle-interactions/bar-involution-invariance.md:1: \\cite{brundankleshchev2009} or -- Ref: [brundankleshchev2009] does not resolve in references.ts | quantum-observable-universe/particle-interactions/bar-involution-invariance.md:1: \\cite{kassel1995} or -- Ref: [kassel1995] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -803,7 +765,46 @@
         "reviewed_at": "2026-05-24T00:49:59.352Z",
         "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "93ec157d974b",
+          "ts": "ca0ad5dbed4f",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
+          "deps_hash": "6a2373527ee4"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "93ec157d974b",
+          "ts": "ca0ad5dbed4f",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "978cc87d00ca",
+          "script_commit_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24"
+        },
+        "reviewed_at": "2026-05-24T01:26:29.756Z",
+        "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de"
+      }
     ]
   },
-  "updated_at": "2026-05-24T00:49:59.352Z"
+  "updated_at": "2026-05-24T01:26:29.756Z"
 }
