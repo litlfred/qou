@@ -127,6 +127,40 @@ Concrete locations:
   about the next-order term)
 - Visualisation / sweeps over q-window
 
+### CANONICAL INFRASTRUCTURE (distinct from both PRODUCTION and EXPLORATORY)
+
+What it is — structural pipeline components that are
+mathematically valid and part of the canonical derivation chain,
+but whose specific NUMERICAL OUTPUT at q₀ is not yet proved.
+The INFRASTRUCTURE is canonical; the specific coefficient is
+exploratory.
+
+**The Yekutieli distinction (critical — 2026-05-24):**
+
+| Component | Status | Why |
+|---|---|---|
+| Yekutieli 2015 non-abelian Stokes theorem | **CANONICAL** | Valid external mathematics; published, peer-reviewed |
+| Geom(K) functor (prop:geom-universality) | **CANONICAL** | Unique functional satisfying additivity + functoriality + normalisation |
+| Three-layer chain (algebra → geometry → observable) | **CANONICAL** | Structural pipeline; Geom IS the geometrization step |
+| Linking weight concept (Geom_full / Geom_leading) | **CANONICAL** | What Geom assigns to multi-component links beyond bare volume |
+| Non-abelian Stokes applied to 𝓑₃'s 8 ideal octahedra | **CANONICAL INFRASTRUCTURE** | The APPLICATION of Yekutieli to the Borromean surface is structural |
+| S₄↓S₃ branching factor = 2/5 | **PROVED** (Lean) | Standard S_n representation theory |
+| The specific coefficient `−G·h²` at q₀ | **EXPLORATORY** | The numerical claim that the h² coefficient IS −G (Catalan) is not yet derived from the canonical infrastructure |
+
+**The user's position (2026-05-24):** "I do think we are missing
+a quadratic term. We just haven't properly derived it yet." The
+h² correction from Geom EXISTS (the canonical infrastructure
+demands it); the specific VALUE (−G? something else?) is what's
+unproved. Scripts implementing the Yekutieli infrastructure are
+CANONICAL INFRASTRUCTURE, not deprecated — only the specific
+−G·h² NUMERICAL CLAIM is exploratory.
+
+**Concrete rule:** a function like `geom_full_borromean()` that
+implements the Geom pipeline IS canonical infrastructure. A
+function like `yekutieli_correction_h2()` that returns the
+specific `−G·h²` value IS exploratory. Don't deprecate the
+infrastructure because the coefficient is unproved.
+
 ### NUMEROLOGY
 
 What it is — post-hoc fits to known constants (G, π, ζ-values,
