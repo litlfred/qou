@@ -119,12 +119,16 @@ def derive_m_baryon_volume_form() -> dict:
     # (b) Borromean common factor
     vol_borromean_over_hbar2 = VOL_BORROMEAN / hbar_q2
 
-    # (c) Empirical closure for λ_scale per particle (validation only —
-    # these are EMPIRICAL targets, NOT inputs to the derivation).
+    # (c) Empirical closure for the per-knot linking_weight (validation
+    # only — these are EMPIRICAL targets, NOT inputs to the derivation).
+    # Post-PR #1080 naming: what older docs called λ_scale is now the
+    # linking_weight component of Geom_full(K) and is PROVED via Family A.
+    # The "empirical target" here is the value the linking_weight would
+    # need to take to close the equation exactly; it is diagnostic only.
     m_p_over_m_e_codata = M_P_MEV_VALIDATION / M_E_MEV
     m_n_over_m_e_codata = M_N_MEV_VALIDATION / M_E_MEV
-    lambda_scale_p_target = m_p_over_m_e_codata / vol_borromean_over_hbar2
-    lambda_scale_n_target = m_n_over_m_e_codata / vol_borromean_over_hbar2
+    linking_weight_p_empirical_target = m_p_over_m_e_codata / vol_borromean_over_hbar2
+    linking_weight_n_empirical_target = m_n_over_m_e_codata / vol_borromean_over_hbar2
 
     # (d) Substrate-derivable Skein-correction difference:
     # ΔS(n − p) = (m_n − m_p)/m_e / (Vol(ℬ_3)/ℏ_q²)
@@ -137,7 +141,7 @@ def derive_m_baryon_volume_form() -> dict:
     )
 
     # Validation: ΔS_target = λ_scale(n) − λ_scale(p)
-    delta_skein_target = lambda_scale_n_target - lambda_scale_p_target
+    delta_skein_target = linking_weight_n_empirical_target - linking_weight_p_empirical_target
 
     return {
         "q_0_50dps": str(q),
@@ -162,17 +166,21 @@ def derive_m_baryon_volume_form() -> dict:
                 "value times the substrate λ_scale plus Skein correction."
             ),
         },
-        "lambda_scale_closure_targets": {
-            "proton_empirical_target": str(lambda_scale_p_target),
-            "neutron_empirical_target": str(lambda_scale_n_target),
+        "linking_weight_closure_targets": {
+            "proton_empirical_target": str(linking_weight_p_empirical_target),
+            "neutron_empirical_target": str(linking_weight_n_empirical_target),
             "interpretation": (
-                "Empirical λ_scale value required for the topological-mass "
+                "Empirical linking_weight value required for the topological-mass "
                 "formula to reproduce CODATA m_p / m_n.  THESE ARE "
                 "VALIDATION VALUES — NOT inputs to the substrate "
-                "derivation.  The substrate-derived λ_scale (from CAL-1 "
-                "+ CAL-2 alone) is OPEN; PR #487 introduced the formula "
-                "but never defined λ_scale.  Open R&D item — see "
-                "docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md."
+                "derivation.  Post-PR #1080 framing: the linking_weight "
+                "is the per-knot Geom_full(K)/Geom_leading(K) component, "
+                "PROVED via Family A canonical Wedderburn "
+                "(linking_weight_family_a in _li_2_q_util.py); these "
+                "empirical targets are diagnostic only (what value would "
+                "close the equation exactly).  Field renamed from "
+                "`lambda_scale_closure_targets` per owner directive "
+                "2026-05-24."
             ),
         },
         "skein_correction_n_minus_p": {
@@ -188,12 +196,18 @@ def derive_m_baryon_volume_form() -> dict:
             ),
         },
         "open_R_and_D": {
-            "substrate_lambda_scale": (
-                "Derive λ_scale from CAL-1 + CAL-2 + topological invariants "
-                "of ℬ_3 alone.  Empirical closure target ≈ 2.460.  "
-                "Candidates checked at q_0 (from the candidate sweep in "
-                "the linked audit) — none of [n]_q, q^k, m_μ/m_e/84, etc. "
-                "matches to better than 0.06%.  Open."
+            "substrate_linking_weight": (
+                "RESOLVED post-PR #1080: the linking_weight component of "
+                "Geom_full(K) for K = ℬ_3 is the PROVED Family A "
+                "categorical identity (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
+                "(see linking_weight_family_a in _li_2_q_util.py).  The "
+                "older 'open R&D: derive λ_scale from CAL-1 + CAL-2 + "
+                "topological invariants of ℬ_3' framing is closed by "
+                "this proof; only the ~2.89 % Geom_full(𝓑₃) categorical-"
+                "exactness refinement gap at h² order remains open (see "
+                "PR #1063 + audit 2026-05-24-low-isotope-mass-error-"
+                "anatomy.md).  Field renamed from `substrate_lambda_scale` "
+                "per owner directive 2026-05-24 (no λ_scale anywhere)."
             ),
             "substrate_skein_correction_per_orientation": (
                 "Derive S(p), S(n) (not just the difference) from the "
@@ -228,10 +242,10 @@ def main() -> int:
     print(f"\n  Borromean common factor:")
     print(f"    Vol(ℬ_3)/ℏ_q² = {mp.nstr(mp.mpf(b['Vol_Borromean_over_hbar_q_squared']), 14)}")
 
-    ls = d["lambda_scale_closure_targets"]
-    print(f"\n  λ_scale closure targets (empirical, NOT substrate input):")
-    print(f"    proton  λ_target = {mp.nstr(mp.mpf(ls['proton_empirical_target']), 14)}")
-    print(f"    neutron λ_target = {mp.nstr(mp.mpf(ls['neutron_empirical_target']), 14)}")
+    ls = d["linking_weight_closure_targets"]
+    print(f"\n  linking_weight closure targets (empirical, NOT substrate input):")
+    print(f"    proton  target = {mp.nstr(mp.mpf(ls['proton_empirical_target']), 14)}")
+    print(f"    neutron target = {mp.nstr(mp.mpf(ls['neutron_empirical_target']), 14)}")
 
     ss = d["skein_correction_n_minus_p"]
     print(f"\n  Skein-difference ΔS(n − p):")
