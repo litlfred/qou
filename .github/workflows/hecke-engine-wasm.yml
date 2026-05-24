@@ -72,8 +72,15 @@ jobs:
         with:
           workspaces: 'tools/hecke-engine-wasm -> target'
 
+      # Use jetli/wasm-pack-action over `curl | sh` — the upstream
+      # installer script has been flaky on PR #1094 build-wasm runs
+      # (intermittent install failures). The action caches the binary
+      # across runs and is the canonical wasm-pack installer for GH
+      # Actions.
       - name: Install wasm-pack
-        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+        uses: jetli/wasm-pack-action@v0.4.0
+        with:
+          version: 'latest'
 
       - name: Native cargo test (pure-Rust correctness)
         working-directory: tools/hecke-engine-wasm
