@@ -648,25 +648,6 @@
           "ts": "b1cd99b64b29",
           "lean": "c4900d1996d6"
         },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "ca38ad217904",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:46:38.092Z",
-        "reviewed_sha": "e5a290f958be3eba74fe827660a084a486621fa9",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/information-theory/toffoli-lp-stability.ts:1: LP/SDP witness 'folio-assistant/computations/toffoli-lp-stability.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
-      },
-      {
-        "field_hash": {
-          "md": "c53e7c97c6f4",
-          "ts": "b1cd99b64b29",
-          "lean": "c4900d1996d6"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",

@@ -581,16 +581,19 @@ export function checkComputeLpDualPresent(
   if (!LP_DUAL_HINT_RE.test(tsStripped)) {
     return { result: "pass", hits: [] };
   }
-  // Require the LP hint to appear in title, tags, or label — not just
-  // in comments or narrative. Contextual mentions of "duality" or
-  // "self-duality" in Frobenius/representation-theoretic contexts
-  // should not trigger this criterion.
-  const titleTagLabel = [
-    ts.match(/title:\s*(?:"([^"]+)"|`([^`]+)`)/)?.[1] ?? "",
-    ts.match(/label:\s*"([^"]+)"/)?.[1] ?? "",
-    ts.match(/tags:\s*\[([\s\S]*?)\]/)?.[1] ?? "",
-  ].join(" ");
-  if (!LP_DUAL_HINT_RE.test(titleTagLabel)) {
+  // Require the LP hint to appear in the computation SCRIPT or
+  // WITNESS filename — not just in tags/title. Tags describe the
+  // block's theoretical context; the script/witness filename
+  // indicates what the computation actually produces.
+  // Require LP evidence in compute artifacts (script/witness name)
+  // OR in the block label. Tags alone are too loose (a block can
+  // be ABOUT LP duality without its own script computing LP duals).
+  const scriptName = (ts.match(/script:\s*"([^"]+)"/)?.[1] ?? "").toLowerCase();
+  const witnessName = (witness ?? "").toLowerCase();
+  const label = (ts.match(/label:\s*"([^"]+)"/)?.[1] ?? "").toLowerCase();
+  const LP_COMPUTE_RE = /\blp[-_]|[-_]lp\b|sdp[-_]|[-_]sdp\b|operator[-_]selection|shadow[-_]price/;
+  const computeOrLabel = `${scriptName} ${witnessName} ${label}`;
+  if (!LP_COMPUTE_RE.test(computeOrLabel)) {
     return { result: "pass", hits: [] };
   }
   const absPath = witness.startsWith("/")

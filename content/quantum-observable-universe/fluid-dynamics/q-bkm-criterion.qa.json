@@ -603,25 +603,6 @@
         "reviewed_sha": "3c72cf1e32231d931399b9daf0d7712872bae8cb"
       }
     ],
-    "compute-lp-dual-present": [
-      {
-        "field_hash": {
-          "md": "b67063f87d56",
-          "ts": "f8eaa89a1ac4",
-          "lean": "e1e973b5dd4f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "ca38ad217904",
-          "script_commit_sha": "a4769ea341e01ffd14fccbcefa6813dc52c765a7"
-        },
-        "reviewed_at": "2026-05-24T02:46:38.092Z",
-        "reviewed_sha": "e5a290f958be3eba74fe827660a084a486621fa9"
-      }
-    ],
     "compute-prop-has-probe": [
       {
         "field_hash": {
@@ -659,7 +640,26 @@
         "reviewed_at": "2026-05-24T03:13:33.311Z",
         "reviewed_sha": "8cf6883fca01acb77da1493aab5a7aba3ce92691"
       }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "f8eaa89a1ac4",
+          "lean": "e1e973b5dd4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "570ccb51ec4d",
+          "script_commit_sha": "fa80d409ec20825019c6691abbf304044f10e50f"
+        },
+        "reviewed_at": "2026-05-24T03:30:06.337Z",
+        "reviewed_sha": "01095d5a616a7fbd050122017c9bccbe5c4e726a"
+      }
     ]
   },
-  "updated_at": "2026-05-24T03:13:33.311Z"
+  "updated_at": "2026-05-24T03:30:06.337Z"
 }
