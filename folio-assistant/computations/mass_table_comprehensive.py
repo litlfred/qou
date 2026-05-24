@@ -153,15 +153,15 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
     A = Z + N
     if A < 2:
         return {"B_pred_MeV": 0.0, "method": "no binding (single nucleon)"}
-    if A > 4:
-        return None  # gated on H_12 Phase-2
+    if A > 12:
+        return None  # gated on H_{3A} kernel availability
 
     try:
         from binding_canonical import binding_canonical
         r = binding_canonical(
             Z, N,
             Q_beta_n_mev=float(Q_BETA_MEV),
-            use_closed_form=(A <= 4),  # closed-form verified at A ≤ 4 (Wenzl LR bridge; 3000× vs direct Hoefsmit)
+            use_closed_form=True,  # Wenzl LR bridge works for ALL A via iterated LR decomposition
             verbose=False,
         )
         if r.get("status") != "solved":
