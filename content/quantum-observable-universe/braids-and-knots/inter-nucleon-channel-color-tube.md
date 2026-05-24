@@ -16,13 +16,18 @@ fixed by the nucleon type:
 - **proton** (uud): color sheets $(\mu_u, \mu_u, \mu_d)$
 - **neutron** (udd): color sheets $(\mu_u, \mu_d, \mu_d)$
 
-The atomic braid word (per [`def:atom-knot-exists`](#def:atom-knot-exists))
+The atomic braid word (per [`prop:atom-knot-exists`](#prop:atom-knot-exists))
 places one inter-nucleon Hecke generator at every position $3k + 2$
-($k = 0, \ldots, A - 1$). The current production assignment treats
-each such generator as a *single* element of the Hecke algebra
-$H_{3A}(q)$ — one $\sigma$ for pp, one $\sigma^{-1}$ for nn, one
-$\sigma_{\mathrm{avg}}$ for pn — regardless of which quark-color sheets
-are paired across the inter-nucleon arc.
+for each adjacent nucleon pair $k, k+1$ with $k = 0, \ldots, A - 2$
+(giving $A - 1$ inter-nucleon arcs total; matches
+[`isotope_record_schema.build_knot_operator_catalogue`](../../folio-assistant/computations/isotope_record_schema.py)
+lines 248-262 and
+[`def:canonical-braid-interface-composition`](canonical-braid-interface-composition.md)).
+The current production assignment treats each such generator as a
+*single* element of the Hecke algebra $H_{3A}(q)$ — one $\sigma$ for
+pp, one $\sigma^{-1}$ for nn, one $\sigma_{\mathrm{avg}}$ for pn —
+regardless of which flavor triple across the three color sheets is
+paired across the inter-nucleon arc.
 
 ## The conjectural refinement
 
@@ -38,31 +43,40 @@ $3 \times 3 = 9$-element matrix of color-pair couplings per
 inter-nucleon arc.
 
 **Conjectured refined assignment.** For each inter-nucleon arc with
-nucleon-pair colors $(C_1, C_2) \in \{u, d\}^3 \times \{u, d\}^3$,
-the canonical Hecke generator is the color-pair-weighted sum
+nucleon-pair flavor triples
+$(F_1, F_2) \in \{u, d\}^3 \times \{u, d\}^3$ across the three
+color sheets, the canonical Hecke generator is the
+color-sheet-weighted sum
 
 $$
-  \sigma^{(C_1, C_2)}_{\text{int}}
+  \sigma^{(F_1, F_2)}_{\text{int}}
   \;=\;
-  \sum_{(c_1, c_2) \in C_1 \times C_2}
-    W_{c_1 c_2} \cdot \sigma^{\epsilon(c_1, c_2)}
+  \sum_{(c_1, c_2) \in \{r, g, b\}^2}
+    W_{c_1 c_2}(F_1, F_2) \cdot \sigma^{\epsilon(c_1, c_2, F_1, F_2)}
 $$
 
 where:
 
-- $W_{c_1 c_2} \in \mathbb{Q}$ is the canonical color-pair weight from
-  the S₅/SO(3) fiber action (sum to 9 over each $(C_1, C_2)$ pair),
-- $\epsilon(c_1, c_2) \in \{+1, -1, 0\}$ is the chirality sign assigned
-  to the $(c_1, c_2)$ color pair: $+1$ for same-color (matter–matter),
-  $-1$ for opposite-color (matter–antimatter), $0$ for averaged
-  (mixed-flavor pn pairs).
+- $W_{c_1 c_2}(F_1, F_2) \in \mathbb{Q}_{\geq 0}$ is the canonical
+  color-sheet pair weight from the S₅/SO(3) fiber action, **normalised
+  to** $\sum_{c_1, c_2} W_{c_1 c_2} = 1$ for each $(F_1, F_2)$ flavor
+  pair (so the refined generator is a categorical average over the 9
+  color-sheet pairs),
+- $\epsilon(c_1, c_2, F_1, F_2) \in \{+1, -1, 0\}$ is the chirality
+  sign for the color-sheet pair $(c_1, c_2)$ given the flavor triples
+  $(F_1, F_2)$: $+1$ when the flavor at $c_1$ in $F_1$ equals the
+  flavor at $c_2$ in $F_2$ (matter–matter), $-1$ when they are
+  flavor-conjugate (matter–antimatter), $0$ for mixed-flavor pn
+  pairs that average to $\sigma_{\mathrm{avg}}$.
 
 **Uniform-flavor projection.** Setting $W_{c_1 c_2} = 1/9$ uniformly
-and collapsing $\epsilon$ to its flavor-only average reduces to the
+(the 9-color-sheet-pair average that sums to 1) and collapsing
+$\epsilon$ to its flavor-only majority sign reduces to the
 current production assignment
-($\mathrm{pp} \mapsto \sigma$ via 9 same-color pairs;
-$\mathrm{nn} \mapsto \sigma^{-1}$ via 9 opposite-color;
-$\mathrm{pn} \mapsto \sigma_{\mathrm{avg}}$ via 3 same + 6 different).
+($\mathrm{pp} \mapsto \sigma$ via majority same-flavor pairs;
+$\mathrm{nn} \mapsto \sigma^{-1}$ via majority opposite-flavor pairs;
+$\mathrm{pn} \mapsto \sigma_{\mathrm{avg}}$ via the bar-symmetric
+mixed-flavor average).
 
 ## Why color-tube weighting is the load-bearing missing structure
 

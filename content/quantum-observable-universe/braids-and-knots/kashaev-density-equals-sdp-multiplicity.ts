@@ -20,9 +20,9 @@ export default conjecture({
     "rem:kashaev-volume-density",
     "rem:kashaev-as-archimedean-realization",
     // The Wedderburn / joint-tower SDP infrastructure:
-    "def:hecke-algebra-h-n",
+    "def:hecke-normal-form",
     // Algorithm step 3 of atom-knot-mass-derivation supplies ν_SDP:
-    "def:atom-knot-mass-derivation",
+    "prop:atom-knot-mass-derivation",
     // The wider categorical menu under which this falls:
     "def:archimedean-realization-functor",
   ],

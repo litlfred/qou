@@ -11,17 +11,21 @@ export default conjecture({
     // Existing color-tube infrastructure (Bring's surface):
     "def:color-tube-coordinates",
     "def:color-tube-fibers",
-    "def:color-tube-cubic",
-    // Categorical class supplier (PR #1081 Task 3):
-    "conj:s5-so3-fiber-action",
+    "rem:color-tube-cubic",
     // Hecke quadratic relating sigma / sigma^-1 / averaged:
-    "def:hecke-algebra-h-n",
+    "def:hecke-normal-form",
     // Existing knot-operator catalogue this block refines:
     "def:knot-operator-energy",
-    "def:atom-knot-exists",
+    "prop:atom-knot-exists",
     // The proton/neutron quark-flavor sheets:
-    "rem:categorical-proton",
-    "rem:categorical-neutron",
+    "def:categorical-proton",
+    "def:categorical-neutron",
+    // The categorical class supplier `conj:s5-so3-fiber-action`
+    // (PR #1081 Task 3) is cited in the narrative cross-reference
+    // only — it has not yet landed as a content block, so it is
+    // not in `uses[]` (validation would fail).  Once PR #1081
+    // creates the block, add it here and promote this conjecture
+    // to a `proposition` with §3b-cond conditional-class banner.
   ],
   cites: [
     "kashaev1997",
