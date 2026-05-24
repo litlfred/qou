@@ -64,8 +64,9 @@ The framework currently assumes (a) implicitly. The +0.17% match is taken as evi
 | **A. Theoretical derivation** | Expand the per-braid mass tower $\mathfrak{m}(W) = \|\mathrm{tr}_M(W)\| + \sum \Phi_q + \dots$ at leading order in $h$. Show $\mathfrak{m}(n) - \mathfrak{m}(p) - m_e = \|\Delta(\mathrm{net})\| \cdot \mathfrak{E}_0 + O(h^3)$. | 1-2 days analytical work | If derivation succeeds: (a). If fails or finds discrepancy: (b). |
 | **B. Direct compute** | Compute $\mathfrak{m}(p)$ and $\mathfrak{m}(n)$ DIRECTLY via the per-braid mass tower (Markov-trace-weighted + Φ_q). Compare $\mathfrak{m}(n) - \mathfrak{m}(p) - m_e$ to CODATA. | 1-2 hours implementation + run | Whether canonical mass formula even produces correct $Q_\beta$ without the ansatz. |
 | **C. Cleanup** | Update all paper content blocks claiming Q_β derivation to honestly label the relation $Q_\beta = \|\Delta(\mathrm{net})\| \cdot \mathfrak{E}_0$ as an **ansatz** pending A or B. | ~1 hour mechanical edits | Honesty in present claims. |
+| **D. Hermiticity audit** *(added 2026-05-24 after PR follow-up)* | For each categorical observable ($m_\mu/m_e$, $m_e$, $Q_\beta$, $m_p$, $m_n$, …), classify whether it is structurally `tr_M(Hermitian op)` (forces real by QM), or `\|tr_M(op)\|` (modulus projection), or `Re tr_M(op)` (real-part projection), or unspecified. The "unspecified" rows are exactly where the framework's real-q assumption is unjustified and where Im(q_0) effects could be hiding. Sibling finding to the net-ansatz: addresses **why** the framework defaults to real q (because it never specified the projection rule). | 1 day documentation + analysis | Whether the framework has structurally forced its observables to be real, vs. silently assumed it. Disambiguates between Q3 options (i)-(v) listed below. |
 
-**This finding selects all three paths.** B + C are in scope for the current PR; A is queued for a follow-up branch.
+**This finding selects all four paths.** B + C + D are in scope for the current PR; A is queued for a follow-up branch.
 
 ## Action items (this branch)
 
@@ -89,10 +90,113 @@ The framework currently assumes (a) implicitly. The +0.17% match is taken as evi
 - The current "prediction" block (will be updated): [`neutron-qvalue-symbolic.md`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)
 - Owner directive flagging this: PR #1127 chat (2026-05-24): *"I think only 2 CAL is numerical coincidence, but I don't know what you are doing exactly. please justify every step. no fitting PLEASE"*
 
+## Path D execution — Hermiticity audit of the categorical mass formula
+
+**Headline**: the framework's mass formula is **already modulus
+projection** (option iv). Complex `q` is structurally admissible
+without modifying anything; the real-`q` convention is fixed only
+by an unstated additional constraint, not by the mass formula itself.
+
+### Evidence
+
+[`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md#L18-L21) states the categorical mass at single brane level:
+
+$$\mathfrak{m}_{q, \mathcal{K}}\big|_{\text{single level}} = \Big|\!\int_A\! \rho(\beta_\mathcal{K})\Big| = |\mathrm{tr}_M(\rho(\beta_\mathcal{K}))|$$
+
+The `|·|` is the modulus of the Markov trace. This is **option (iv)
+modulus-projection** in the Q3 framework above. The full per-braid
+mass formula [`prop:per-braid-mass-tower`](../../content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md) wraps `|tr_M|` in another `|·|`-stacked sum.
+
+`|·|` is well-defined for any normed field — including `ℂ`. The
+formula does NOT force `tr_M(ρ(β)) ∈ ℝ`; only the *measured* mass
+(the modulus) is forced real.
+
+### Per-observable classification
+
+| Observable | Formula | Projection | Complex-`q` behaviour |
+|---|---|---|---|
+| `m(K)` (any particle mass) | `|tr_M(ρ(β_K))|` | **(iv) modulus** | real-valued for any `q ∈ ℂ`; Im(`tr_M`) projected away |
+| `m_μ/m_e` (CAL-2 → q_0) | `|tr_M(μ)|/|tr_M(e)| = |Vol(4_1)/ℏ_q²|` | **(iv) modulus** | For `q = u + iv`: `Vol(4_1) · (u² + v²)/((u-1)² + v²)` — ONE real equation for TWO real unknowns |
+| `m_e` (CAL-1) | absolute calibration | **fitted to CODATA** | sets the scale (real positive) |
+| `Q_β = m_n − m_p − m_e` | difference of three moduli | **iv stacked** | real-valued for any complex `q`; depends nonlinearly on (u, v) |
+| Q-values in general | mass differences via `|·|` | **iv stacked** | same |
+| `α (fine structure)` | ? — needs separate audit | unspecified | open |
+| Other Q-values, half-lives, etc. | derived | inherits (iv) | inherits |
+
+### The 1-parameter family of admissible q_0
+
+`m_μ/m_e ≈ 206.768` gives ONE real equation:
+
+$$\mathrm{Vol}(4_1) \cdot \frac{u^2 + v^2}{(u-1)^2 + v^2} = 206.768$$
+
+This is **one constraint on two real unknowns** (u, v). The
+solution set is a curve in the q-plane. The framework's
+default choice u = 1.10998, v = 0 (the real-axis intercept) is
+**one point** on this curve, fixed by an unstated convention
+"`v = 0` unless required otherwise".
+
+**Without an independent measurement constraining `v`, the
+framework has one extra free parameter it has silently set to
+zero.**
+
+### Implication for Q_β residual
+
+Q_β is a function of `(u, v)` via the stacked modulus projection.
+At `v = 0`, Q_β(u=1.10998, 0) ≈ 0.7836 MeV (+0.17% vs CODATA
+0.7823 MeV). Solving simultaneously
+- m_μ/m_e(u, v) = 206.768
+- Q_β(u, v) = 0.7823
+
+gives **two equations for two unknowns (u, v)** — generically a
+discrete set of solutions including the real one but possibly
+also complex ones with `v ≠ 0` that match CODATA exactly. This
+**could resolve the +0.17% residual without invoking tower
+closure at all**: it might be an Im(q_0) effect projected away
+when we set `v = 0` by default.
+
+This is no longer speculation — given the modulus projection is
+the actual formula, the complex-q resolution is structurally
+admissible and the open empirical question is "is there a
+complex q_0 with Im ≠ 0 that hits both CAL-2 and CAL-3 exactly?"
+
+### What forces real q (currently unstated)
+
+Possibilities, in order of physical plausibility:
+
+1. **Bar-involution invariance**: the mass operator might be
+   self-conjugate under the Lusztig bar (`q ↦ q⁻¹`); for the bar
+   to be an involution on the OBSERVABLE level, need `q̄ = q⁻¹`,
+   i.e., `|q| = 1` — but this conflicts with `q ≈ 1.110`.
+2. **Hermitian involution invariance**: `q ↦ q̄⁻¹`; gives `q = q̄⁻¹`
+   iff `|q| = 1`. Same issue.
+3. **Real Hecke representation**: if all entries of `ρ(σ_i)` are
+   real (Hoefsmit basis with rational entries), then `tr_M` is
+   automatically real for real `q`, and the modulus is trivial.
+   For complex `q`, `tr_M` becomes complex but the operator
+   matrix entries are still real-valued functions of `q`. **This
+   is the most likely actual reason** the framework uses real `q`:
+   the seminormal/Hoefsmit basis gives real-coefficient
+   matrices, and complex `q` would require analytic continuation
+   of the basis itself.
+
+4. **No structural reason — pure convention.** Most likely
+   correct: nobody asked the question.
+
+### Open follow-on questions
+
+- Empirical: solve simultaneously for `(u, v)` from CAL-2 + CAL-3 exactly. ~2 hours implementation given existing per-braid mass infrastructure; queued for Path B.
+- Theoretical: are masses `|tr_M(Hermitian op)|` or `|tr_M(generic op)|`? If the former, the categorical observable is real by QM and modulus is degenerate. If the latter, Im(`tr_M`) is genuine info that the modulus projection discards. **The Hoefsmit seminormal basis suggests the matrices are real on the substrate; the operators ARE self-adjoint with real eigenvalues; the modulus is structurally degenerate at real `q` and only becomes a genuine projection at complex `q`.**
+- Notation: introduce explicit `q ∈ ℝ` vs `q ∈ ℂ` annotations on every observable formula in the paper, so the projection is unambiguous.
+
 ## Open structural questions raised by owner (same chat)
 
-1. **q_0 ∈ ℂ exploration**: if (b) holds, the +0.17% gap is NOT brane-tower truncation. Could it be Im(q_0) effects? Answered no in the current framework (q_0 fixed by real $m_\mu/m_e$ ratio per [`skein-mass-relation.md`](../../content/quantum-observable-universe/observations/skein-mass-relation.md): $\mathrm{Vol}(4_1)/\hbar_q^2$ where Vol is real). To make this question well-posed, would need an Im observable to constrain.
+1. **q_0 ∈ ℂ exploration**: if (b) holds, the +0.17% gap is NOT brane-tower truncation. Could it be Im(q_0) effects? **Updated**: my initial answer "no, q_0 real because m_μ/m_e equation is real" was circular — assumes `observable = literal categorical value`. The framework has never specified the projection rule (literal, Re, modulus, Hermitian eigenvalue). Per **Path D** above, the real-q choice is *convention*, not theorem. Five options remain open:
+   - (i) **Strict reality**: observables always real by structure; q ∈ ℝ only.
+   - (ii) **Hermitian extraction**: complex op, eigenvalues real on *-symmetric ops; q ∈ ℂ with * compatibility.
+   - (iii) **Re-projection**: complex observable; we measure `Re(observable)`; q ∈ ℂ.
+   - (iv) **Modulus-projection**: complex observable; we measure `|observable|`; q ∈ ℂ.
+   - (v) **Phase-pinned**: complex but phase aligned; we measure real component along chosen axis.
 2. **Φ_q under bar / star / skew involutions, pre vs post Archimedean**: if the per-braid mass formula has involutive structure that the unweighted `net` formula doesn't reproduce, that's evidence FOR (b). Open analytical work; not yet started.
-3. **q_0 = Re(complex observable)?**: in current framework, no. q_0 is the real solution to the real equation $\mathrm{Vol}(4_1)/\hbar_q^2 = 206.768$. Extending would require either a complex-valued $m_\mu/m_e$ observable (none in the current framework) or postulating that the categorical observable IS complex but only Re is measured.
+3. **q_0 = Re(complex observable)?**: see Q1 above. NOT currently formalized; would require either (iii)/(iv) projection rule OR a complex-valued `m_μ/m_e` observable (none in the current framework). Skein-mass-relation does NOT answer this — it states a real equation under the implicit (i) assumption.
 
-The fitting concern (b) is the dominant gap; the structural questions are secondary until A or B disambiguates.
+The fitting concern (b) is the dominant gap; the structural questions (Q1/Q3 fused) are now addressable via Path D.
