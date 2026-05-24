@@ -196,31 +196,32 @@ def main() -> int:
     # Replaces the prior fitted literal `2.4599527869` (removed
     # from production per the CAL-4 audit, 2026-05-22 / PR #888 /
     # PR #895 / PR #942).  The fitted literal is retained as
-    # `LAMBDA_FITTED_AUDIT_ONLY` for the historical comparison
+    # `LINKING_WEIGHT_FITTED_AUDIT_ONLY` for the historical comparison
     # column only; it is NOT consumed in any S(p)-hypothesis cell.
-    # Single source of truth: `_li_2_q_util.lambda_scale_family_a`
-    # (Gemini PR #942 review — centralize the Family A formula).
-    from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
-    LAMBDA_CURRENT = _lambda_scale_family_a(Q)
-    LAMBDA_FITTED_AUDIT_ONLY = mp.mpf("2.4599527869")
+    # Single source of truth: `_li_2_q_util.linking_weight_family_a`
+    # (canonical naming post-PR #1080; replaces the deprecated
+    # `lambda_scale_family_a` alias kept only for back-compat).
+    from _li_2_q_util import linking_weight_family_a as _linking_weight_family_a
+    LINKING_WEIGHT_CURRENT = _linking_weight_family_a(Q)
+    LINKING_WEIGHT_FITTED_AUDIT_ONLY = mp.mpf("2.4599527869")
 
     # Under "S(p) = 0" — current production assumption
-    m_p_pred_S0 = M_E * (VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + 0)
+    m_p_pred_S0 = M_E * (VOL_OVER_HBAR_SQ * LINKING_WEIGHT_CURRENT + 0)
 
     # Under "S(p) = |tr_M(β_p, q_0)|" — Markov-trace as Skein
-    m_p_pred_S_tr = M_E * (VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + abs_tr)
+    m_p_pred_S_tr = M_E * (VOL_OVER_HBAR_SQ * LINKING_WEIGHT_CURRENT + abs_tr)
 
     # Under "S(p) = V(𝓑₃, q²)" — pure Borromean Jones poly
-    m_p_pred_S_Vt2 = M_E * (VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + v_t_q_sq)
+    m_p_pred_S_Vt2 = M_E * (VOL_OVER_HBAR_SQ * LINKING_WEIGHT_CURRENT + v_t_q_sq)
 
     w.add_data("skein_hypothesis_panel", {
         "Vol(𝓑₃)/ℏ_q²": mp.nstr(VOL_OVER_HBAR_SQ, 25),
-        "λ_p_scale (Family A: 5/2 + 3h²/4)": mp.nstr(LAMBDA_CURRENT, 25),
+        "λ_p_scale (Family A: 5/2 + 3h²/4)": mp.nstr(LINKING_WEIGHT_CURRENT, 25),
         "λ_fitted_AUDIT_ONLY (removed from production)":
-            mp.nstr(LAMBDA_FITTED_AUDIT_ONLY, 25),
+            mp.nstr(LINKING_WEIGHT_FITTED_AUDIT_ONLY, 25),
         "m_p_CODATA / m_e (anchor)": mp.nstr(M_P_ANCHOR, 25),
         "S(p) = 0 hypothesis": {
-            "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LAMBDA_CURRENT, 20),
+            "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LINKING_WEIGHT_CURRENT, 20),
             "m_p_pred": mp.nstr(m_p_pred_S0, 20),
             "delta_ppm": mp.nstr(
                 (m_p_pred_S0 - M_P_CODATA) / M_P_CODATA * mp.mpf("1e6"), 8,
@@ -233,7 +234,7 @@ def main() -> int:
             ),
         },
         "S(p) = |tr_M(β_p, q_0)| hypothesis": {
-            "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + abs_tr, 20),
+            "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LINKING_WEIGHT_CURRENT + abs_tr, 20),
             "m_p_pred": mp.nstr(m_p_pred_S_tr, 20),
             "delta_ppm": mp.nstr(
                 (m_p_pred_S_tr - M_P_CODATA) / M_P_CODATA * mp.mpf("1e6"), 8,
@@ -247,7 +248,7 @@ def main() -> int:
         },
         "S(p) = V(𝓑₃, q²) hypothesis": {
             "V_value": mp.nstr(v_t_q_sq, 20),
-            "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LAMBDA_CURRENT + v_t_q_sq, 20),
+            "tower_factor": mp.nstr(VOL_OVER_HBAR_SQ * LINKING_WEIGHT_CURRENT + v_t_q_sq, 20),
             "m_p_pred": mp.nstr(m_p_pred_S_Vt2, 20),
             "delta_ppm": mp.nstr(
                 (m_p_pred_S_Vt2 - M_P_CODATA) / M_P_CODATA * mp.mpf("1e6"), 8,
