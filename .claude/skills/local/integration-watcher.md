@@ -360,7 +360,69 @@ for pr in prs:
 **Continuously:** at every `TICK` heartbeat, re-list open PRs and
 subscribe to any new ones. Subscription is idempotent.
 
-### 2c. Stop conditions
+### 2c. Continuous main-following for own PRs (MANDATORY)
+
+Every new commit landing on `origin/main` (detected via the §2a
+Monitor poll) **must** trigger an own-PR rebase walk via §5g step 7
+**unconditionally** — independent of whether the §3 trigger filter
+matches the commit's scope or §4 dispatch runs any specialists.
+
+The rationale: a watcher session that lets its own PRs accumulate
+"behind by N commits" against `origin/main` ships dirty work to
+reviewers and risks GitHub's "needs rebase" state silently when
+the user comes back to merge. Following main continuously is the
+default — the §3 / §4 pipeline is a separate concern that may or
+may not fire on the same commit.
+
+**Fire rule** (every Monitor commit line):
+
+```
+on new main commit SHA detected by Monitor:
+  1. Refresh local main tracking:
+     git fetch origin main 2>/dev/null
+  2. Walk every own PR (this watcher created in this session)
+     per §5g step 7 — worktree rebase + force-with-lease push.
+     Witness-drift conflicts auto-resolve via §5f.
+  3. THEN (independently) check §3 trigger filter and dispatch
+     §4 specialists if in-scope.
+```
+
+The walk in step 2 is **idempotent** (a no-op when no own PRs are
+behind), so applying it on every commit is cheap. The cost is one
+`git fetch` + one `git rev-list --count` per own PR per commit —
+seconds, not minutes.
+
+**Why "unconditionally"** (not gated on §3 / §4 outcome):
+
+- A doc-only main commit may not match the watcher's §3 trigger
+  filter, but it still moves main. Own PRs need to keep up.
+- A `§3 = out-of-scope` outcome correctly returns from per-event
+  triage — but step 2 above is OUTSIDE that gate.
+- Sibling agents review PRs based on `behind by N` state; a PR
+  that's been behind for 3 main commits looks abandoned even if
+  its scope didn't intersect any of those commits.
+
+**Cross-PR rebase caveat (per-session limitation):**
+
+The signing wrapper this repo uses (`/tmp/code-sign`) emits
+"missing source" errors when invoked from a worktree opened by
+a session that didn't author the commits being rebased. This
+means a watcher session can only auto-rebase PRs it OPENED IN
+THAT SAME SESSION — not sibling PRs from other Claude sessions.
+
+For sibling PRs, the §5g step 7 walker IS the right mechanism
+but only the sibling's owning session can execute it without
+hitting the signing block. Watcher sessions should NOT attempt
+to force-rebase sibling PRs — surface the "behind by N" finding
+to the user via §5e idle author-ask dispatcher instead.
+
+**Implementation pointer:** the §5g step 7 worktree-based code
+block is the canonical implementation. This §2c just elevates
+its fire-rule from "after per-event triage completes" to "every
+main commit, independent of triage outcome". Both the rebase
+walker (§5g step 7) and the fire-rule (§2c here) are mandatory.
+
+### 2d. Stop conditions
 
 - User says *"stop watching"*, *"unsubscribe"*, or `/unwatch`.
 - Branch merged or closed → unsubscribe own PR; keep sibling
@@ -648,11 +710,18 @@ echo "| $ts | <event> | <scope> | <N critical / N major / N minor> | <N auto / N
 Update `todos/${NAME}-queue.json` with new items + status changes
 via `Edit`.
 
-### 4g. Refresh spawned PRs against main
+### 4g. Refresh spawned PRs against main *(superseded by §2c)*
 
-If the event was a new commit on `origin/main` AND §3 / §4
-triage has completed (acted, deferred, or skipped — any
-outcome), invoke **§5g step 7 (rebase spawned PRs on main
+The continuous main-following rule is now §2c (mandatory,
+unconditional on every main commit, **before** §3 / §4 dispatch).
+§4g remains as a redundant safety net: if §2c somehow didn't fire
+(e.g. the Monitor crashed between detection and rebase walk), the
+§4 pipeline completion can also trigger §5g step 7 as a fallback.
+
+Original §4g rule (now superseded but retained for backward
+compatibility): if the event was a new commit on `origin/main`
+AND §3 / §4 triage has completed (acted, deferred, or skipped —
+any outcome), invoke **§5g step 7 (rebase spawned PRs on main
 movement)**.  This keeps every PR the watcher has opened
 current with main even when the per-event work itself was a
 no-op.
