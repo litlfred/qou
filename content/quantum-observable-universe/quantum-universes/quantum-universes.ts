@@ -50,6 +50,13 @@ export default chapter({
         "frobenius-pairing-exists",
         "frobenius-pairing-exists-proof",
         "frobenius-pairing-unique",
+      ]),
+    }),
+    section({
+      title: "The Quantum Universe (continued)",
+      label: "sec:quantum-universe-continued",
+      blocks: [
+        "quantum-universe-continued-intro",
         "frobenius-pairing-unique-proof",
         "frobenius-pairing-su2",
         "frobenius-geometric-role",
