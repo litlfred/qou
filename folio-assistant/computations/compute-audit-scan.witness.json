@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T04:07:13.530575+00:00",
-  "commitSha": "ca6999b1763fb89d8eedfb9fdde21c5072e9722c",
+  "computedAt": "2026-05-24T07:31:32.176649+00:00",
+  "commitSha": "f109549bd43345891aed90bea1a57acc19e9b349",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "17b500529abcb7ea71ccc52761828810556e9b50",
+  "scriptCommitSha": "342ce62e42540ac00e235ff1da6fc2cef0b1ca24",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
@@ -27,7 +27,7 @@
       "P15": 113,
       "P16": 127,
       "P21": 19,
-      "P30": 89,
+      "P30": 88,
       "P31": 12
     },
     "top_files": [
@@ -1584,13 +1584,6 @@
       {
         "pattern": "P30",
         "file": "low_isotope_binding_sweep.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
-        "file": "low_isotope_mass_table.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
