@@ -26,8 +26,19 @@
 //!     --language swift --out-dir bindings/swift/
 
 use hecke_engine::gram;
+use hecke_engine::seminormal;
+use hecke_engine::littlewood_richardson;
+use hecke_engine::tr_m_atomic_mpfr as trmpfr;
 
 uniffi::include_scaffolding!("hecke_engine_jvm");
+
+#[derive(Debug, thiserror::Error)]
+pub enum HeckeError {
+    #[error("engine error: {msg}")]
+    EngineError { msg: String },
+    #[error("invalid input: {msg}")]
+    InvalidInput { msg: String },
+}
 
 /// Engine version (matches `Cargo.toml`).
 pub fn version() -> String {
@@ -63,6 +74,63 @@ pub fn gram_matrix_flat(q: f64) -> Vec<f64> {
 /// Gram determinant — delegates to `hecke_engine::gram::det_6x6`.
 pub fn gram_det(q: f64) -> f64 {
     gram::det_6x6(&gram::gram_matrix(q))
+}
+
+// ── Phase B — full surface ──
+
+/// Hecke character `χ_λ(β)` of partition `shape` on braid word `word` at `q`.
+pub fn chi_lambda_braid(shape: Vec<u32>, word: Vec<Vec<i32>>, q: f64)
+    -> Result<f64, HeckeError>
+{
+    let shape_u: Vec<usize> = shape.into_iter().map(|x| x as usize).collect();
+    let mut word_pairs: Vec<(i32, u32)> = Vec::with_capacity(word.len());
+    for pair in word.iter() {
+        if pair.len() != 2 {
+            return Err(HeckeError::InvalidInput {
+                msg: "chi_lambda_braid: each word entry must be a 2-element [gen, exp]".into(),
+            });
+        }
+        if pair[1] < 0 {
+            return Err(HeckeError::InvalidInput {
+                msg: "chi_lambda_braid: exponent must be non-negative".into(),
+            });
+        }
+        word_pairs.push((pair[0], pair[1] as u32));
+    }
+    Ok(seminormal::chi_lambda_braid(&shape_u, &word_pairs, q))
+}
+
+/// Littlewood–Richardson coefficient `c^λ_{μν}`.
+pub fn lr_coefficient(lambda: Vec<u32>, mu: Vec<u32>, nu: Vec<u32>) -> i64 {
+    let lam: Vec<usize> = lambda.into_iter().map(|x| x as usize).collect();
+    let m:   Vec<usize> = mu.into_iter().map(|x| x as usize).collect();
+    let n:   Vec<usize> = nu.into_iter().map(|x| x as usize).collect();
+    littlewood_richardson::lr_coefficient(&lam, &m, &n)
+}
+
+/// Arbitrary-precision Markov trace `tr_M(β)` at `q` (string for precision).
+pub fn tr_m_atomic_mpfr(
+    word: Vec<Vec<i32>>,
+    n_strands: u32,
+    q_str: String,
+    dps: u32,
+) -> Result<String, HeckeError> {
+    let mut word_pairs: Vec<(i8, i32)> = Vec::with_capacity(word.len());
+    for pair in word.iter() {
+        if pair.len() != 2 {
+            return Err(HeckeError::InvalidInput {
+                msg: "tr_m_atomic_mpfr: each word entry must be a 2-element [sign, gen]".into(),
+            });
+        }
+        if pair[0] != -1 && pair[0] != 1 {
+            return Err(HeckeError::InvalidInput {
+                msg: "tr_m_atomic_mpfr: sign must be -1 or +1".into(),
+            });
+        }
+        word_pairs.push((pair[0] as i8, pair[1]));
+    }
+    trmpfr::tr_m_atomic_mpfr(&word_pairs, n_strands as usize, &q_str, dps)
+        .map_err(|e| HeckeError::EngineError { msg: e })
 }
 
 #[cfg(test)]

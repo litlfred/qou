@@ -20,6 +20,8 @@ uniffi = { version = "0.28", features = ["cli"] }
 # Default features = ["mpfr"] — JVM consumers run native, have system
 # GMP/MPFR available (Android also via NDK).
 hecke-engine = { path = "../hecke-engine" }
+# Phase B error-enum derivation for chi_lambda_braid + tr_m_atomic_mpfr.
+thiserror = "1"
 
 [build-dependencies]
 uniffi = { version = "0.28", features = ["build"] }
