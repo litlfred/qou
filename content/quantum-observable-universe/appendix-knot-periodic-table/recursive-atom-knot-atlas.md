@@ -206,7 +206,7 @@ obtained.
 > which picks the knot whose hyperbolic volume matches the AME
 > binding-energy target — i.e. it **reverse-engineers** the answer.
 > At $\sim 2400$ knots/links searched, residuals below $\sim 10$ ppb
-> are indistinguishable from numerical coincidence absent an independent
+> are indistinguishable from overfitting absent an independent
 > GB-NF derivation in $H_{18}(q_0)$ / $H_{21}(q_0)$. Listed here for
 > historical transparency only. **Do not cite these as evidence for
 > the mass-table-ppb framework.** See
