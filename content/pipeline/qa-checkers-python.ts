@@ -655,6 +655,13 @@ export function checkDeprecated(scriptPath: string): CheckerResult {
 // ─── uses_library_framework_appropriately ─────────────────────
 
 const WITNESS_WRITE_RE = /["']\S*\.witness\.json["']/;
+// Write-intent markers. A script counts as "writing" a witness
+// only when it ALSO contains a write-side API call — json.dump,
+// `.write_text(`, `.write(` on a file handle, or a direct
+// WitnessBuilder.save invocation. Pure consumers (json.load,
+// open(..., "r")) carry the string but don't produce a witness.
+const WITNESS_WRITE_INTENT_RE =
+  /\bjson\.dump\b|\.write_text\(|\.write\(|WitnessBuilder\b|builder\.save\(/;
 const WITNESS_BUILDER_IMPORT_RE =
   /from\s+witness_base\s+import[^\n]*\bWitnessBuilder\b|import\s+witness_base\b/;
 const HARDCODED_PI_RE = /\bpi\s*=\s*3\.14\d*/;
@@ -693,9 +700,18 @@ export function checkUsesLibraryFrameworkAppropriately(
   // regions we need a comment-only mask that keeps string contents
   // intact.
   const srcWithoutComments = src.replace(PY_COMMENT_RE, blankNonNewline);
+  // A script that only READS a `.witness.json` (e.g.
+  // `json.load(open("foo.witness.json"))`) is a CONSUMER, not a
+  // producer — it doesn't need WitnessBuilder. Only flag if the
+  // script actually WRITES a witness (json.dump / open(..., "w") /
+  // Path.write_text / WitnessBuilder.save itself absent). Detect
+  // write-intent by presence of a `json.dump|Path.write_text|
+  // \.write\(` call alongside the witness string. Without this,
+  // pure-consumer scripts surface as ~10% noise on this criterion.
   const writesWitness = WITNESS_WRITE_RE.test(srcWithoutComments);
+  const hasWriteIntent = WITNESS_WRITE_INTENT_RE.test(srcWithoutComments);
   const importsWitnessBuilder = WITNESS_BUILDER_IMPORT_RE.test(src);
-  if (writesWitness && !importsWitnessBuilder) {
+  if (writesWitness && hasWriteIntent && !importsWitnessBuilder) {
     const m = srcWithoutComments.match(WITNESS_WRITE_RE);
     const line =
       m?.index !== undefined
