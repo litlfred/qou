@@ -54,20 +54,28 @@ this audit.
 
 ## 2. Classification table
 
-72 rows = 65 `def`/`class` + 7 module-level cached constants whose
-construction body deserves a classification line (the partition table,
-the Chebyshev magic cache, the categorical-shell cache, the ID NF
-vector, the precomputed nucleon NFs, the precomputed nucleon
-generator chains, and the YSN-attached flag).  Non-callable scalar
-constants (`q2`, `K_PARTITION_MAX`, `K_GAUSSIAN_MAX`, `E_HARTREE_EV`,
-`E_MOL`, `KAPPA`, `TWO_Q`, `S_REEB_PLANCK`, `H_Q_22`, `DELTA_22`,
-`FIG8_*`, `ALPHA_*`, `V_HAT_ELECTRON`, `MAGIC_NUMBERS`,
-`NOBLE_GAS_Z`, `_bare_alpha_em`, `_bare_alpha_inv`, the four α-EM
-CS scratch variables, the `_M22_*` matrices) are not listed
-individually but their canonical/exploratory status is captured by
-the function that consumes them (notably `alpha_em` via the
-α-EM-derivation block at lines 63-126 is UTILITY-of-`vertex_volume`
-/ `molecular_binding_*`).
+The table below has 73 rows total: 72 top-level `def` / `class`
+declarations (matching
+`grep -cE '^(class |def )' folio-assistant/computations/hecke_core.py`)
+plus 1 inline tuple-assignment (row #28, `_PROTON_G0/G1`,
+`_NEUTRON_G0/G1`, emitted at module load by `nucleon_gen_chains`).
+A supplementary table at §C below covers 8 more module-level cached
+objects whose classification deserves its own line (the α-EM
+derivation block, the partition table cache, the Chebyshev magic
+cache, the ID NF vector, the categorical-shell cache, the
+YSN-attached flag, the precomputed nucleon NFs, and the E_0
+calibration constant). Non-callable scalar constants (`q2`,
+`K_PARTITION_MAX`, `K_GAUSSIAN_MAX`, `E_HARTREE_EV`, `E_MOL`,
+`KAPPA`, `TWO_Q`, `S_REEB_PLANCK`, `H_Q_22`, `DELTA_22`, `FIG8_*`,
+`ALPHA_*`, `V_HAT_ELECTRON`, `MAGIC_NUMBERS`, `NOBLE_GAS_Z`, the
+four α-EM CS scratch variables, the `_M22_*` matrices) are not
+listed individually but their canonical/exploratory status is
+captured by the function that consumes them.
+
+**Cross-reference convention.** Rationale entries below cite other
+symbols by name (e.g. "feeds `unified_iterative_correction_jet`")
+rather than by row number — the row-number indirection drifted
+once during drafting, and the name is stable across reorderings.
 
 | # | Function / class | Line | Classification | Rationale |
 |---|---|---|---|---|
@@ -78,40 +86,40 @@ the function that consumes them (notably `alpha_em` via the
 | 5 | `partition_dimension` | 269 | **CANONICAL** | Seed allowlist; classical dim d(λ). Imported by `sdp_cross_channel`, `mass_at_3A_proper`. |
 | 6 | `partition_conjugate` | 288 | **CANONICAL** | Seed allowlist; consumed by SDP cross-channel pair detection (line 2556 in this file + `sdp_cross_channel.py`). |
 | 7 | `partition_is_self_conjugate` | 301 | **CANONICAL** | Seed allowlist; small structural helper, conjugation-symmetric. |
-| 8 | `partition_jet_depth` | 305 | **EXPLORATORY** | Cheat-sheet §1 row I (Q_β refinement) — jet-prefix order is canonical concept but this helper only feeds `unified_iterative_correction_jet` (#42), itself EXPLORATORY. No canonical caller. |
+| 8 | `partition_jet_depth` | 305 | **EXPLORATORY** | Cheat-sheet §1 row I (Q_β refinement) — jet-prefix order is a canonical concept but this helper only feeds `unified_iterative_correction_jet`, itself EXPLORATORY. No canonical caller. |
 | 9 | `q_dimension` | 333 | **CANONICAL** | Seed allowlist; the d_q(λ) entering w_λ. |
 | 10 | `wedderburn_weight` | 341 | **CANONICAL** | Seed allowlist; w_λ = d_q(λ)²/[n]_q!. Imported by `proton_residual_rootcause`, `paper_six_term_isotope_sweep`. |
-| 11 | `q_laplacian_eigenvalue` | 349 | **EXPLORATORY** | Phase-5 q-heat-kernel probe (μ_λ via JM Casimir). Cited from `prop:q-heat-kernel-peter-weyl` but the substrate Wedderburn / Markov-trace chain in the cheat-sheet does NOT route through Laplacian eigenvalues; this is the "resolvent-damped" alternative ansatz consumed by `unified_iterative_correction` (#41). |
+| 11 | `q_laplacian_eigenvalue` | 349 | **EXPLORATORY** | Phase-5 q-heat-kernel probe (μ_λ via JM Casimir). Cited from `prop:q-heat-kernel-peter-weyl` but the substrate Wedderburn / Markov-trace chain in the cheat-sheet does NOT route through Laplacian eigenvalues; this is the "resolvent-damped" alternative ansatz consumed by `unified_iterative_correction`. |
 | 12 | `q_resolvent_weight` | 392 | **EXPLORATORY** | Consumes #11; "categorical Laplace transform" of the q-Laplacian. Replacement for the "ad-hoc Kerov Plancherel multiplier" — *another* Phase-5 ansatz, not a cheat-sheet step. |
 | 13 | `lp_shadow_price` | 420 | **EXPLORATORY** | "LP-dual shadow price" — note CLAUDE.md `## LP / SDP duals` mandates the canonical LP entry is [`lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py) (`solve_operator_selection_lp`), NOT this file. This is an internal per-partition shadow used by `unified_iterative_correction`. No production importer. |
-| 14 | `_count_syts_by_12_relation` | 471 | UTILITY-of-`partition_character_sigma1` (which is UTILITY-of-`_q_gaussian_character_approx` → EXPLORATORY) | Counts SYTs by (1,2)-relation; only consumed inside this file. |
-| 15 | `partition_character_sigma1` | 514 | **EXPLORATORY** | YSN-derived character of σ_1 in irrep λ. Only consumer is `partition_spectral_log_rate` (#16); used in the q-Gaussian fallback (#40), explicitly tagged as a Perron-Frobenius approximation that is "not Bozejko-Speicher". |
+| 14 | `_count_syts_by_12_relation` | 471 | UTILITY-of-`partition_character_sigma1` | Counts SYTs by (1,2)-relation; only consumed inside this file. The transitive parent `partition_character_sigma1` is EXPLORATORY (row 15), so this helper is UTILITY-of-EXPLORATORY. |
+| 15 | `partition_character_sigma1` | 514 | **EXPLORATORY** | YSN-derived character of σ_1 in irrep λ. Only consumer is `partition_spectral_log_rate`; used in the q-Gaussian fallback (`_q_gaussian_character_approx`), explicitly tagged as a Perron-Frobenius approximation that is "not Bozejko-Speicher". |
 | 16 | `partition_spectral_log_rate` | 525 | **EXPLORATORY** | Phase-5 spectral log-rate ρ_λ used only by the q-Gaussian fallback. |
 | 17 | `_partition_table` | 563 | UTILITY-of-`_LazyPartitionTable` (used by `unified_iterative_correction`, `_contrib_single_partition`, `atom_markov_trace`, `atom_frobenius_norm_sq`, `sdp_cross_channel_contribution`, `unified_iterative_correction_jet` — all EXPLORATORY) | The "pre-computed partition table" with 20 000 partitions; ~30 s cold build. The exported `_PARTITION_TABLE` (line 646) is its lazy proxy. Imported externally only by `sdp_cross_channel:705`. |
 | 18 | `_LazyPartitionTable` | 613 | UTILITY-of-`_partition_table` | Lazy proxy. |
 | 19 | `_q_exp` | 658 | **EXPLORATORY** | q-exponential series, no caller in this file or anywhere else; dead code (grep yields zero hits in `computations/`). |
 | 20 | `_chebyshev_magic` | 670 | **EXPLORATORY** | Cheat-sheet §1 magic-numbers note: "{2, 8, 20, 28, 50, 82, 126} are EMPIRICAL and not derived". This helper attempts a derivation from a Chebyshev recurrence in q; explicitly tagged as inadequate above `MAGIC_NUMBERS` (line 711-712: "These values are CODATA-class inputs, not canonical predictions"). Strong EXPLORATORY candidate per the workplan; confirmed. |
-| 21 | `build_atom_nf_exact` | 727 | **CANONICAL** | Sibling of `build_atom_nf` (#23): exact-Fraction version for verification (e.g. `pn_alpha_lp_dual.py`, `closed_form_tau_M_verification_phase5q.py`). Verified-precision path; canonical. |
+| 21 | `build_atom_nf_exact` | 727 | **CANONICAL** | Sibling of `build_atom_nf`: exact-Fraction version for verification (e.g. `pn_alpha_lp_dual.py`, `closed_form_tau_M_verification_phase5q.py`). Verified-precision path; canonical. |
 | 22 | `nf_channel_exact` | 799 | UTILITY-of-`build_atom_nf_exact` | Exact-Fraction Wedderburn channel decomposition. Used by the same verification pipeline. |
 | 23 | `knot_factor` | 819 | **EXPLORATORY** | Hard-coded `A=2/3/4` knot-classification factors with literal h-polynomial. Pre-Phase 5; superseded by [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py) (per cheat-sheet §5 closure #4). |
 | 24 | `check_frobenius` | 845 | UTILITY (general) | Frobenius positivity check on NF vectors. Used by `molecular_binding_frobenius`; canonical Frobenius pairing infra. |
 | 25 | `build_atom_nf` | 857 | **CANONICAL** | Seed allowlist; cheat-sheet step 4 (the canonical H_3 atomic-braid NF). Production consumers: `mass_at_3A_proper`, `binding_canonical`, etc. |
-| 26 | `vertex_volume` | 939 | **CANONICAL** | Cheat-sheet step 6 — Wedderburn-weighted traced volume per generator. Sibling of `atom_per_generator_volumes` (#56). |
+| 26 | `vertex_volume` | 939 | **CANONICAL** | Cheat-sheet step 6 — Wedderburn-weighted traced volume per generator. Sibling of `atom_per_generator_volumes`. |
 | 27 | `nucleon_gen_chains` | 959 | **CANONICAL** | Builds the per-generator quark/gluon chains; produces `_PROTON_G0/G1` and `_NEUTRON_G0/G1` (line 997-998). Seed allowlist. |
 | 28 | `_PROTON_G0/G1`, `_NEUTRON_G0/G1` | 997-998 | **CANONICAL** | Seed allowlist (cheat-sheet step 4 explicit). 6 external importers including `pn_alpha_lp_dual`, `alpha_blend_tower`, `mass_at_3A_proper`, `closed_form_tau_M_verification_phase5q`, `rho_k_h3a_gg_trajectory`, `braid_encoding_audit`, `alpha_high_precision`. |
 | 29 | `atom_gen_chains` | 1001 | **CANONICAL** | Cheat-sheet step 4; combines `_PROTON_G*` / `_NEUTRON_G*` into the full atomic braid. Used by `vertex_volume` and `atom_per_generator_volumes`. |
 | 30 | `atom_V_full` | 1061 | **CANONICAL** | Mass-tower formula entry (prop:mass-endomorphism-tower per docstring). |
 | 31 | `_chain_V_full` | 1080 | UTILITY-of-`atom_V_full` | Wedderburn-weighted traced volume from a crossing chain. |
 | 32 | `_crossing_coeff` | 1105 | UTILITY-of-`_phi1_from_ordering` (EXPLORATORY) | Crossing coefficient for strand pair, only used by Φ_1 family. |
-| 33 | `_phi1_from_ordering` | 1116 | **EXPLORATORY** | Φ_1 = Σ ln\|V̂_i\| — strong EXPLORATORY candidate confirmed. Sole caller is `_phi1_nuclear` (#35) and `compute_phi1_full` (#36), themselves EXPLORATORY. |
+| 33 | `_phi1_from_ordering` | 1116 | **EXPLORATORY** | Φ_1 = Σ ln\|V̂_i\| — strong EXPLORATORY candidate confirmed. Sole callers are `_phi1_nuclear` and `compute_phi1_full`, themselves EXPLORATORY. |
 | 34 | `_alternating_ordering` | 1151 | UTILITY-of-`_phi1_nuclear`/`compute_phi1_full` (EXPLORATORY) | Ground-state seed used by the Φ_1 fallback. |
-| 35 | `_phi1_nuclear` | 1169 | **EXPLORATORY** | Strong EXPLORATORY candidate confirmed. Sole canonical caller is `q_value_beta` (#43) which is itself EXPLORATORY (deprecated by `qbeta_*.py`). |
-| 36 | `compute_phi1_full` | 1223 | **EXPLORATORY** | Strong EXPLORATORY candidate confirmed. Pure Φ_1 transfer-matrix product; called only by `atom_mass` (#46, EXPLORATORY). |
+| 35 | `_phi1_nuclear` | 1169 | **EXPLORATORY** | Strong EXPLORATORY candidate confirmed. Sole canonical caller is `q_value_beta` (row 72), itself EXPLORATORY (deprecated by `qbeta_*.py`). |
+| 36 | `compute_phi1_full` | 1223 | **EXPLORATORY** | Strong EXPLORATORY candidate confirmed. Pure Φ_1 transfer-matrix product; called only by `atom_mass` (row 73, EXPLORATORY). |
 | 37 | `valence_Z` | 1276 | **CANONICAL** | Seed allowlist; small purely-structural helper (noble-gas valence count). Used by molecular-binding scripts (`molecular_binding_nf`). |
 | 38 | `_vertex_channels` | 1290 | UTILITY-of-`molecular_binding_nf` | Per-irrep channel decomposition for the molecular binding pipeline. |
 | 39 | `molecular_binding_nf` | 1308 | **CANONICAL** | Full Wedderburn decomposition for molecular binding; matches cheat-sheet step 6 pattern, just in the molecular (rather than nuclear) regime. Many importers (`h2-molecular-binding`, `hh-trefoil-corrected`, `h2-integer-lp`, `molecular-trefoil-scan`, `molecular-frobenius-lp`, `co2-molecular-binding`, etc.). |
 | 40 | `molecular_binding_frobenius` | 1360 | **CANONICAL** | Sibling of #39; Frobenius bilinear-form variant. Same canonical role. |
-| 41 | `_load_categorical_shell` | 1423 | **EXPLORATORY** | Chebyshev γ(Z) → "categorical shell" — adjacent to `_chebyshev_magic` (#20) and shares its non-canonical status. Only consumer is `magic_proximity` (#42). |
+| 41 | `_load_categorical_shell` | 1423 | **EXPLORATORY** | Chebyshev γ(Z) → "categorical shell" — adjacent to `_chebyshev_magic` and shares its non-canonical status. Only consumer is `magic_proximity`. |
 | 42 | `magic_proximity` | 1452 | **EXPLORATORY** | Shell proximity from `_CATEGORICAL_SHELL` cache; no canonical consumer. |
 | 43 | `_matmul2` | 1523 | UTILITY-of-`_chain_M22` (EXPLORATORY) | 2×2 matrix multiply. |
 | 44 | `_crossing_M22` | 1529 | UTILITY-of-`_chain_M22` | (2,2)-rep crossing matrix. |
@@ -128,7 +136,7 @@ the function that consumes them (notably `alpha_em` via the
 | 55 | `_ensure_ysn_attached` | 1810 | UTILITY-of-`_LazyPartitionTable` | Lazy YSN attachment to partition entries. |
 | 56 | `_step_chain_generic` | 1825 | UTILITY-of-`unified_iterative_correction*` and `atomic_chirality_residue` (line 45) | Generic-partition step chain. Has one external importer (`atomic_chirality_residue.py`) but that's a probe script. |
 | 57 | `_q_gaussian_character_approx` | 1857 | **EXPLORATORY** | The docstring warns: "Bozejko-Speicher q-Gaussian does NOT apply here … Attempting to use Bozejko-Speicher at q₀ would conceptually misapply the framework." Phase-5 ad-hoc Perron-Frobenius approximation. |
-| 58 | `unified_iterative_correction` | 1917 | **EXPLORATORY** | Whole-of-file flagship of the Phase-5 LP-dual approach; sums shadow prices y_λ across partition channels. Production consumer: `binding_energy` (#65) only. Not on the cheat-sheet chain. |
+| 58 | `unified_iterative_correction` | 1917 | **EXPLORATORY** | Whole-of-file flagship of the Phase-5 LP-dual approach; sums shadow prices y_λ across partition channels. Production consumer: `binding_energy` (row 70) only. Not on the cheat-sheet chain. |
 | 59 | `_jet_witness_path` | 2237 | UTILITY-of-`unified_iterative_correction_jet` | Witness path helper. |
 | 60 | `atom_character_raw` | 2243 | **EXPLORATORY** | Raw χ_λ via running YSN matrix product; superseded by `hecke_characters.chi_lambda_braid` (cheat-sheet step 6, plus the Rust kernel `pyhecke_native`). |
 | 61 | `_contrib_single_partition` | 2311 | UTILITY-of-`unified_iterative_correction_jet` (EXPLORATORY) | Single-partition LP-dual contribution. |
@@ -137,15 +145,15 @@ the function that consumes them (notably `alpha_em` via the
 | 64 | `atom_markov_trace` | 2631 | **EXPLORATORY** | Docstring opens with: `"[DEPRECATED — Plancherel-weighted]"` (line 2632). Explicit redirection: `"Use markov_trace_canonical.tr_M_element for the canonical axiomatic Markov trace"`. No production consumers. |
 | 65 | `atom_frobenius_norm_sq` | 2701 | **EXPLORATORY** | Companion to `atom_markov_trace`; same Plancherel-weighted construction. |
 | 66 | `atom_per_generator_volumes` | 2756 | **CANONICAL** | Per-generator V̂_i^full for the mass-tower formula (prop:mass-endomorphism-tower); cheat-sheet step 9 (mass identity). Production importers: `mass_formula_6term_mpfr_50dps.py:71`, `brane_tower_isospin_diagnosis.py:162`, `mass_formula_6term.py:117`, `entanglement_orders.py:33`, `mass_table_no_fit.py:43` (deprecated), `catalan_binding.py:42`, `unified-mass-molecular.py`. |
-| 67 | `free_nucleon_frobenius_norm_sq` | 2896 | **EXPLORATORY** | Single-line wrapper around `atom_frobenius_norm_sq` (#65); docstring acknowledges it's an "empirical simpler form" with TODO for proper decomposition. |
+| 67 | `free_nucleon_frobenius_norm_sq` | 2896 | **EXPLORATORY** | Single-line wrapper around `atom_frobenius_norm_sq`; docstring acknowledges it's an "empirical simpler form" with TODO for proper decomposition. |
 | 68 | `binding_from_frobenius_pairing` | 2941 | **EXPLORATORY** | Comment in body: `"Legacy Plancherel path (default)"` (line 2991-2992). Marked as fallback when `canonical=True` fails. Cheat-sheet step 9 canonical path is `binding_canonical.binding_canonical` (per the docstring's own redirection at line 2643). |
 | 69 | `sdp_cross_channel_contribution` | 2997 | **EXPLORATORY** | Phase-5 cross-channel SDP probe via `sdp_cross_channel.sdp_with_atom_observables`. Canonical SDP entry is `lp_dual_solver.solve_psd_operator_selection_sdp` (per CLAUDE.md `## LP / SDP duals`). |
-| 70 | `binding_energy` | 3087 | **EXPLORATORY** | "Replaces the retired 11-term Bethe-Weizsäcker formula path" — sums #58 + #69 + #68, all EXPLORATORY. Despite the canonical-sounding name, this is the Phase-5 unified aggregate, not on the cheat-sheet chain. Canonical binding entry is `binding_canonical.binding_canonical` or `mass_formula_6term_mpfr_50dps.py`. |
+| 70 | `binding_energy` | 3087 | **EXPLORATORY** | "Replaces the retired 11-term Bethe-Weizsäcker formula path" — sums `unified_iterative_correction` + `sdp_cross_channel_contribution` + `binding_from_frobenius_pairing`, all EXPLORATORY. Despite the canonical-sounding name, this is the Phase-5 unified aggregate, not on the cheat-sheet chain. Canonical binding entry is `binding_canonical.binding_canonical` or `mass_formula_6term_mpfr_50dps.py`. |
 | 71 | `build_nucleon_nf` | 3108 | **CANONICAL** | Builds the per-nucleon H_3 NF; consumed by `_PROTON_NF` / `_NEUTRON_NF` at lines 3145-3146. Cheat-sheet step 4. |
-| 72 | `q_value_beta` | 3149 | **EXPLORATORY** | Uses `_phi1_nuclear` (#35, EXPLORATORY) — superseded by `free-neutron-decay.py` + `qbeta_*.py` (cheat-sheet step 11). |
-| 73 | `atom_mass` | 3171 | **EXPLORATORY** | "M = Z·m_p + N·m_n + Z·m_e + κ·Φ₁" — uses `compute_phi1_full` (#36, EXPLORATORY). Pre-canonical mass formula; superseded by `mass_table_ppb.py` / `mass_formula_6term_mpfr_50dps.py` (cheat-sheet step 9). |
+| 72 | `q_value_beta` | 3149 | **EXPLORATORY** | Uses `_phi1_nuclear` (EXPLORATORY) — superseded by `free-neutron-decay.py` + `qbeta_*.py` (cheat-sheet step 11). |
+| 73 | `atom_mass` | 3171 | **EXPLORATORY** | "M = Z·m_p + N·m_n + Z·m_e + κ·Φ₁" — uses `compute_phi1_full` (EXPLORATORY). Pre-canonical mass formula; superseded by `mass_table_ppb.py` / `mass_formula_6term_mpfr_50dps.py` (cheat-sheet step 9). |
 
-**Plus six cached module-level objects with classification follow-on:**
+**Plus eight cached module-level objects with classification follow-on:**
 
 | # | Symbol | Line | Classification | Rationale |
 |---|---|---|---|---|
@@ -189,6 +197,10 @@ an inline tuple-assignment, not a `def`, so the tally is 72):
 - **UTILITY** : 72 − 19 − 29 = **24** (private `_underscore` helpers
   classified UTILITY-of-X in §2; see rows #14, #17, #18, #22, #24,
   #31-34, #38, #43, #44, #46-56, #59, #61).
+
+The 1 inline-tuple row (#28: `_PROTON_G0/G1`, `_NEUTRON_G0/G1`) and
+the 8 cached module-level objects in the §C table are classified
+separately and not counted toward the 72-`def`/`class` tally above.
 
 **Total = 19 + 29 + 24 = 72**, matching
 `grep -cE "^(class |def )" folio-assistant/computations/hecke_core.py` = 72.
@@ -308,7 +320,7 @@ Counting the line spans of CANONICAL functions + the structural
 imports / α-EM block / cached constants they need:
 
 - α-EM derivation block (63-126): ~64 lines
-- FIG8_*, ALPHA_*, V_HAT_ELECTRON, classify_nuclear_knot **stays-or-moves** decision: `classify_nuclear_knot` moves; the `FIG8_*` / `ALPHA_BORROMEAN` / `ALPHA_FIGURE8` / `V_HAT_ELECTRON` constants are only consumed by `classify_nuclear_knot` (#1), so they move too. Frees ~50 lines.
+- FIG8_*, ALPHA_*, V_HAT_ELECTRON, classify_nuclear_knot **stays-or-moves** decision: `classify_nuclear_knot` moves; the `FIG8_*` / `ALPHA_BORROMEAN` / `ALPHA_FIGURE8` / `V_HAT_ELECTRON` constants are only consumed by `classify_nuclear_knot`, so they move too. Frees ~50 lines.
 - `q_hook_product` (222-243), `q_factorial` (246-251), `partitions_of` (254-266), `partition_dimension` (269-285), `partition_conjugate` (288-298), `partition_is_self_conjugate` (301-302), `q_dimension` (333-338), `wedderburn_weight` (341-346): ~50 lines.
 - `valence_Z` (1276-1287): ~12 lines.
 - `nucleon_gen_chains` (959-993) + `_PROTON_G0/G1`, `_NEUTRON_G0/G1` (997-998): ~37 lines.
@@ -370,9 +382,9 @@ Compared to the workplan's "strong EXPLORATORY candidates" list:
    `binding_canonical.binding_canonical` or
    `mass_formula_6term_mpfr_50dps.py`. The name is misleading.
 
-5. **`atom_per_generator_volumes` (#66) is the most-imported
-   CANONICAL function** (7 external importers, all canonical mass
-   pipelines).  Right anchor for the surviving `hecke_core.py`.
+5. **`atom_per_generator_volumes` is the most-imported CANONICAL
+   function** (7 external importers, all canonical mass pipelines).
+   Right anchor for the surviving `hecke_core.py`.
 
 6. **Scope expansion vs the workplan shortlist.**  No symbol
    classification changed direction (every seeded CANONICAL was
