@@ -89,7 +89,7 @@ The mechanism: `y_(2) q^k + y_(1,1) (-q⁻¹)^k` with `q = (h + √(h²+4))/2` e
 
 ## Electroweak triplet (W, Z, H)
 
-Per [`content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md): Higgs = T(2,8), Z = T(2,6), W± = T(2,4).
+Per [`content/quantum-observable-universe/archimedean-universe/electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable-universe/archimedean-universe/electroweak-higgs-torus-link-triplet.md): Higgs = T(2,8), Z = T(2,6), W± = T(2,4).
 
 | particle | T(2,k) | k | m | c_2 = C(m+1,2)/2 |
 |---|---|---:|---:|---:|
@@ -120,7 +120,7 @@ Any future RT-chain compute that derives W/Z/H masses must round-trip through th
 - q3 (predecessor — established the Wedderburn closed form): [`torus_knot_markov_trace_closed_form.py`](../../folio-assistant/computations/torus_knot_markov_trace_closed_form.py), commit `5418678c8`
 - q2 (RT-chain probe — torus-knot mass route): [`pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/pentagon_rt_torus_knot_higgs_probe.py), commit `1e98c7391`
 - **W = √[2]_q probe (RETRACTED by jet-order check)** — downstream RT probe that used the `c_2` values from this audit as input to the RT-chain: [`rt_w_sqrt_quantum_two_probe.py`](../../folio-assistant/computations/rt_w_sqrt_quantum_two_probe.py), commit `fcbe24c3a`. The substrate-point match was a jet-mixing coincidence; jet-order validation ([`rt_w_sqrt2_jet_order_validation.py`](../../folio-assistant/computations/rt_w_sqrt2_jet_order_validation.py), commit `aa11d2f06`) shows W/Z and W/H need either a different RT chain or a non-multiplicative W correction. The Z/H twist-count ratio `6/8 = 0.75` (vs SM 0.729) IS structurally genuine.
-- Electroweak triplet content block: [`particle-interactions/electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md)
+- Electroweak triplet content block: [`archimedean-universe/electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable-universe/archimedean-universe/electroweak-higgs-torus-link-triplet.md)
 - Cheat sheet: [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
 - Absorption framing (for Geom_full — the canonical per-knot mass factor): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
 
