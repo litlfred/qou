@@ -530,6 +530,7 @@ export default chapter({
         "q-beta-categorical-precision-ladder",
         "bar-involution",
         "polynomial-bar-involution",
+        "polynomial-bar-involution-table-data",
         "li2q-phiq-bar-symmetrization",
         "c5-involution-leibniz-decomposition",
         "bar-symmetric-three-layer-synthesis",
@@ -655,7 +656,9 @@ export default chapter({
         "cl3-zeta5-pslq-independence",
         // General cyclotomic theorems generalising rounds 10-11.
         "cyclotomic-trilog-imaginary-closed-form",
+        "cyclotomic-trilog-imaginary-closed-form-table-data",
         "cyclotomic-cl3-orbit-sum-general",
+        "cyclotomic-cl3-orbit-sum-general-table-data",
         // Dimension synthesis: (K-3)/2 genuinely-new at each prime K.
         "cyclotomic-depth3-dimension-synthesis",
         // General-depth theorems: Jonquière Tate-rationality + orbit-sum + dim.
@@ -840,6 +843,7 @@ export default chapter({
         "jet-convergence-classical-limit",
         "wigner-np-pairing",
         "unified-iterative-correction",
+        "unified-iterative-correction-table-data",
         "knot-factor-frobenius-pairing",
         "wedderburn-weight-canonical",
         "hook-weight-derivation",
@@ -962,6 +966,7 @@ export default chapter({
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
         "curvature-rank-gb-stratification",
+        "curvature-rank-gb-stratification-table-data",
         "spectral-sequence-collapse",
         "delta-q-decoration",
         "force-carrier-intertwining-correspondence",
@@ -1213,6 +1218,7 @@ export default chapter({
         "two-filtration-bridge-small-cases",
         "two-filtration-bridge-small-cases-table-data",
         "two-filtration-bridge-general",
+        "two-filtration-bridge-general-table-data",
         "cl3-zeta5-geometric-realization",
         // Classical (q = 1) zeta + RH statement.
         "classical-riemann-zeta",

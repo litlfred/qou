@@ -19,6 +19,7 @@ export default chapter({
         // Dual ledger: every transcendental in the paper, indexed
         // by Goncharov period-depth.
         "transcendental-accounting",
+        "transcendental-accounting-table-data",
         // K-theory ↔ depth filtration Rosetta: Beilinson regulator
         // matches iterated-integral grading on H_q.
         "k-theory-period-rosetta",
@@ -45,6 +46,7 @@ export default chapter({
         "b1-current-status",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
+        "calculus-up-to-epsilon-table-data",
       ],
     },
     {
@@ -140,6 +142,7 @@ export default chapter({
         "collatz-no-cycles",
         "collatz-three-forms",
         "collatz-hausdorff-comparison",
+        "collatz-hausdorff-comparison-table-data",
         "q-collatz-interpretation",
         "collatz-surreal-bound",
         // Graded-Mikusiński unification of the bounds.

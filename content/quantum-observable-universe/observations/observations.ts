@@ -130,6 +130,7 @@ export default chapter({
         "n-v-tower-depth-ninety",
         "n-v-leading-order-derivation",
         "half-life-shell-worked",
+        "half-life-shell-worked-table-data",
         "half-life-as-q-probe",
         "finiteness-bound-interpretation",
         "tritium-decay-knot-equation",
@@ -219,6 +220,7 @@ export default chapter({
         "borromean-hopf-energy-crossover",
         "color-superconductivity-borromean",
         "eos-borromean-cfl",
+        "eos-borromean-cfl-table-data",
 
         // — Observable signatures
         "cfl-neutron-star-observables",
