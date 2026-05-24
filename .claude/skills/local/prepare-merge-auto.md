@@ -42,13 +42,34 @@ before proceeding.
 ### Phase 1b: Wait for reviews + status briefing
 
 **Wait for Copilot and Gemini reviews to land** before proceeding.
-Do NOT skip ahead — the reviews are the input to Phase 2. Monitor
-via `mcp__github__pull_request_read get_review_comments` and
-`get_check_runs`; use `subscribe_pr_activity` to receive events
-without polling.
+Do NOT skip ahead — the reviews are the input to Phase 2.
 
-Once reviews arrive (or Gemini quota is exhausted), give the user
-a concise **status briefing**:
+**Wait protocol (5-minute window):**
+
+1. After requesting reviews in Phase 1, check whether reviewers
+   have acknowledged the PR:
+   ```
+   mcp__github__pull_request_read get_check_runs  → look for
+     copilot-pull-request-reviewer: status=in_progress or completed
+   ```
+   - `status: queued` or `in_progress` → reviewer has noticed,
+     wait for completion (poll every 30 sec via Monitor, up to
+     5 minutes)
+   - `status: completed` → reviews are in, proceed immediately
+   - No check run after 2 minutes → reviewer may not trigger for
+     this file type (e.g. skill-only PRs with no code); proceed
+     with 0 comments
+
+2. For Gemini: check the PR comments for a Gemini-code-assist
+   bot comment. If the comment is a quota warning, note "Gemini:
+   quota exhausted" and proceed without waiting further.
+
+3. **5-minute hard cap**: if neither reviewer has completed after
+   5 minutes, proceed with whatever comments have landed. Note
+   "Copilot: timed out (5 min)" in the briefing.
+
+Once reviews arrive (or the 5-minute cap is reached), give the
+user a concise **status briefing**:
 
 1. **PR identity**: "#N — title" with clickable URL
 2. **Branch**: `branch-name` → `main`
