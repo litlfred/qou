@@ -3237,6 +3237,40 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1088/0264-9381/24/16/002",
   }),
 
+  // ── Joyce 1982: quandles ──────────────────────────────────────
+  ref({
+    id: "joyce1982",
+    type: "article-journal",
+    title: "A classifying invariant of knots, the knot quandle",
+    author: [
+      { family: "Joyce", given: "David" },
+    ],
+    "container-title": "Journal of Pure and Applied Algebra",
+    volume: "23",
+    issue: "1",
+    page: "37-65",
+    issued: { "date-parts": [[1982]] },
+    DOI: "10.1016/0022-4049(82)90077-9",
+    URL: "https://doi.org/10.1016/0022-4049(82)90077-9",
+  }),
+
+  // ── Matveev 1982: distributive groupoids in knot theory ───────
+  ref({
+    id: "matveev1982",
+    type: "article-journal",
+    title: "Distributive groupoids in knot theory",
+    author: [
+      { family: "Matveev", given: "Sergei V." },
+    ],
+    "container-title": "Mathematics of the USSR-Sbornik",
+    volume: "47",
+    issue: "1",
+    page: "73-83",
+    issued: { "date-parts": [[1982]] },
+    DOI: "10.1070/SM1984v047n01ABEH002630",
+    URL: "https://doi.org/10.1070/SM1984v047n01ABEH002630",
+  }),
+
   // ── Białynicki-Birula 1973 ────────────────────────────────────
   ref({
     id: "bialynicki1973",

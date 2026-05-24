@@ -956,6 +956,7 @@ export default chapter({
         // P31 (2026-05-22).
         "markov-trace-factorization",
         "markov-trace-ratio-exact",
+        "operator-valued-mass-split",
         "phi-q-resums-trace-series",
         "phi-q-resums-trace-series-table-data",
         "markov-axiom-recursive-ascent",
