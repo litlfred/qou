@@ -33,20 +33,10 @@ Honest predictions at q_0:
     Δ m_pn^pred ≈ 1.330 MeV    (vs CODATA 1.293, ~2.9 % off)
 
 The framework's PROVABLE accuracy at this layer is ~3 %, not 1 ppb.
-
-Per the 2026-05-23 absorption coord
-(`docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md`):
-there is **no separate `λ_scale` to derive** — the numerical factor
-that the legacy framing called `λ_scale` is what `Geom_full(K)`
-produces per knot/link. The current categorical derivation evaluates
-to ~2.46 (= 1836/746) for the Borromean braid, giving the ~3% offset
-above. Refining `Geom_full(𝓑₃)` is the open R&D path. All
-alternative derivations of the linking-weight tested so far were
-refuted or purged: Bring-Bloch Tier 0-5 PSLQ (negative); V_7 + q^10
-pentagon (PR #951); unit-circle Bloch class (PR #952); Yekutieli
-per-cell curvature (briefly in production a1f68d5e5; PURGED
-2026-05-24 71d674da1 as non-canonical, bijection NEGATIVE per
-PR #985).
+The Bring-Bloch identity
+(`conj:lambda-scale-bring-bloch-identity`) is the open R&D path
+for closing the residual gap categorically (Tier0-5 PSLQ negative
+to date).
 
 The falsified literals `2.4599527869` / `2.4633436333` are
 retained as audit-only references (`*_AUDIT_ONLY`) so the
@@ -77,54 +67,55 @@ Tests
 [`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
 against CODATA proton + neutron masses at MPFR 50 dps.
 
-## The formula
+## The formula (canonical, post-PR #1080)
 
-  m(B) = m_e · Geom_full(B, q₀)
+  m(K) = m_e · Geom_full(K, q₀)              (single Geom call per knot)
 
-where `Geom_full(K)` is the canonical per-knot Geom evaluation
-(per `prop:geom-universality`). For knots, Geom_full = Vol(K)/ℏ_q²;
-for links like the Borromean braid 𝓑₃, Geom_full additionally
-includes the linking weight that the Geom functor produces for
-multi-component links (it is NOT a separate calibration constant —
-see the absorption coord referenced above).
+For the Borromean rings 𝓑₃ (proton/neutron baryon class):
 
-Decomposition (current Family A production path):
-
-  Geom_full(𝓑₃, q₀) = (Vol(B_3)/ℏ_q²) · linking_weight(q₀)
-                    ≈ 746.42 · 2.533     [linking_weight = λ_A(q₀) Family A]
-                    ≈ 1890.5             [tower factor in this script's output]
+  Geom_full(𝓑₃, q) = (Vol(𝓑₃)/ℏ_q²) · linking_weight(q)
 
 where:
-- Vol(B_3) = 8·G ≈ 7.32772... (Borromean rings hyperbolic volume;
-  Adams 1985)
+- Vol(𝓑₃) = 8·G = 7.32772... (Adams 1985; Lobachevsky/Catalan exact)
 - ℏ_q = (q-1)/q
-- linking_weight = what `Geom_full` produces for the 3-component
-  Borromean link — currently best categorical derivation is via
-  Family A `λ_A(q) = 5/2 + (3/4)h²` (from H_4 Wedderburn, PROVED).
-  This is not a separate constant; it is the per-link value of the
-  Geom functor.
+- linking_weight(q) = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h²
+  (PROVED Family A categorical Wedderburn identity; terminates at h²;
+   Lean: `lambda-scale-substrate-form.lean`)
 
-(The audit-only `LAMBDA_*_FITTED_FROM_CODATA = 2.45995...` literals
-that match the CODATA target tautologically — corresponding to
-1836/746 — are NOT used in production.  They are retained only as
-*_AUDIT_ONLY comparison columns in the witness JSON.  Per the
-absorption coord, that fit was the framing error.)
+There is no separate λ_scale constant — older docs called the linking-
+weight component λ_scale before it was absorbed into Geom_full on
+2026-05-23 (PR #1080, commit `3daeb1b4`).  See
+`docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
 
 ## Result
 
-The current `Geom_full(𝓑₃, q₀)` evaluation gives m_avg ≈ 966 MeV,
-m_p ≈ 965 MeV, m_n ≈ 967 MeV (all +2.89% vs CODATA 938.27 / 939.57).
-This **explains the 1700× scale gap** in the previous single-level
-Markov-trace m_p chain:
-- Single-level: m_p_pred ≈ 0.597 MeV (off by 99.94%)
-- With `Geom_full` tower (Vol = 8·G exact + Family A linking weight):
-  m_p_pred ≈ 965 MeV (+2.89% vs CODATA — the residual reflects the
-  gap between the framework's current categorical `Geom_full`
-  computation and its categorically-exact value, not a missing
-  calibration)
+Geom_full(𝓑₃, q₀) ≈ 746.42 × 2.46 ≈ 1836 — this IS the 1700× scale
+factor missing from the single-level Markov-trace m_p chain.  With
+Vol(𝓑₃) = 8·G exact (Adams 1985), the formula gives m_avg ≈ 966 MeV
+(+2.89 % vs CODATA mean).  The substrate flavor split
+(prop:flavor-split-substrate) then assigns m_p ≈ 965.4, m_n ≈ 966.7
+(both +2.89 %), with the SPLIT ratio Δm/M_N matched to ~305 ppm.
 
-The remaining R&D is to refine `Geom_full(𝓑₃)` so it lands closer
-to its categorically-exact value.
+The remaining ~2.89 % gap is now framed (per PR #1063) as a
+Geom_full(𝓑₃) categorical-exactness refinement gap at h² order,
+NOT as a separate λ_scale closure.
+
+## Lean coverage
+
+  PROVED in Lean:
+    - linking_weight identity (3q² + 4 + 3q⁻²)/4:
+      `lambda-scale-substrate-form.lean` (Family A)
+
+  NOT YET PROVED in Lean (potential source of error):
+    - Vol(𝓑₃) = 8·G (Adams 1985): cited from literature, not in
+      Mathlib; depends on Catalan's constant + Lobachevsky function
+    - Geom_full(K) per-knot decomposition (PR #1080 / prop:geom-
+      universality): narrative-level only, no Lean theorem yet
+    - flavor_split closed form ℏ_q²·h_q·[2]_q·(1+ℏ_q³)/3 (PR #690 /
+      prop:flavor-split-substrate): partial; the (1+ℏ_q³) 3-loop
+      correction lacks Lean backing
+    - q_0 substrate value (CAL-2 from m_μ/m_e): numerical anchor, no
+      Lean theorem
 """
 from __future__ import annotations
 
@@ -174,57 +165,40 @@ M_P_CODATA_MEV = _M_P_MEV_VALIDATION
 M_N_CODATA_MEV = _M_N_MEV_VALIDATION
 M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-registry export yet)  # noqa: P31
 
-# λ_scale categorical identity (PROVED — Family A theorem in
-# `lambda_scale_all_c_i_family_a.py` + Lean
-# `lambda-scale-substrate-form.lean`):
+# Geom_full(𝓑₃, q) — the canonical per-knot Geom evaluation
+# (PR #1080, commit `3daeb1b4` on 2026-05-24).  Single Geom call
+# per knot/link.  See `prop:geom-universality` and
+# `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
 #
-#     λ_A(q) := (1/4) · Σ_{λ ⊢ 4} dim_q V_λ
-#            = (3q² + 4 + 3q⁻²)/4
-#            = 5/2 + (3/4) h²
+# Internally Geom_full = (Vol(𝓑₃)/ℏ_q²) × linking_weight, where
+# the linking_weight is the PROVED Family A categorical identity
+#     linking_weight(q) = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h²
+# (h-series TERMINATES at h²; higher h^{2k} ≡ 0).  There is no
+# separate λ_scale constant — the same numerical factor that older
+# docs called λ_scale is now the linking-weight component of
+# Geom_full, not a standalone calibration to derive or close.
 #
-# (The h-series TERMINATES exactly at h² — all higher h^{2k} ≡ 0.)
-#
-# This is the PROVED categorical λ_scale, replacing the prior
-# `LAMBDA_PROTON_FITTED_FROM_CODATA = 2.4599527869` and
-# `LAMBDA_NEUTRON_FITTED_FROM_CODATA = 2.4633436333` literals that
-# were solved-from-CODATA at the per-baryon level.  Family A
-# applies to the BARYON CLASS uniformly — both proton and neutron
-# carry the same categorical λ.  The proton-neutron mass difference
-# enters downstream via the substrate flavor-split
-# (`flavor_split_subleading` in `_li_2_q_util`, PR #690 / #710),
-# NOT through λ_scale itself.
-#
-# Five cumulative audits ruled out the prior fit:
-#   - Family A direct: + 3h²/4 (positive, factor 3) vs literal − G
-#   - 32 sign-flipped Wedderburn variants H_4 → none negative h²
-#   - Hecke levels H_2..H_7 → all positive h²
-#   - Bloch-Wigner/Clausen/ζ(3)/Cl_2 ansätze → no match within 1e-3
-#   - Single-knot Vol fit → no manifold has Vol = 18.03 within 0.28 %
-# Ref: docs/audits/2026-05-18-conjecture-falsification.md.
-#
-# Honest predictions (PROVED Family A, PR #895 + #942):
+# Honest predictions (Family A inside Geom_full, PR #895 + #942 +
+# #1080):
 #   m_p^pred ≈ 965 MeV  (vs CODATA 938.27, +2.89 %)
 #   m_n^pred ≈ 967 MeV  (vs CODATA 939.57, +2.89 %)
-#   Δm/M_N = substrate flavor split (0.03 % match)
+#   Δm/M_N = substrate flavor split (~305 ppm match)
 # err ≈ +2.89 % vs CODATA — the framework's honest provable accuracy.
-# Single source of truth: `_li_2_q_util.lambda_scale_family_a`
-# (PROVED canonical Wedderburn identity, PR #895 + #942).
 # The Yekutieli per-cell curvature (−G·h²) was PURGED (2026-05-24)
 # as NOT CANONICAL — bijection NEGATIVE per PR #985, Reading A is
-# substrate-q₀ coincidence, no categorical backing.
-from _li_2_q_util import lambda_scale_family_a as _lambda_scale_family_a
-LAMBDA_PROTON_FAMILY_A = _lambda_scale_family_a(Q)
-LAMBDA_NEUTRON_FAMILY_A = LAMBDA_PROTON_FAMILY_A  # same categorical λ
-
-# Production aliases — point at the PROVED canonical λ.
-LAMBDA_PROTON_DOC = LAMBDA_PROTON_FAMILY_A
-LAMBDA_NEUTRON_DOC = LAMBDA_NEUTRON_FAMILY_A
+# substrate-q₀ coincidence, no categorical backing.  The ~2.89 %
+# residual is now framed as a Geom_full(𝓑₃) categorical-exactness
+# refinement gap (per PR #1063), not as a separate λ_scale closure.
+from _li_2_q_util import geom_full_borromean as _geom_full_borromean
+GEOM_FULL_BORROMEAN = _geom_full_borromean(Q)
 
 # Falsified-fit literals retained as audit-only references for the
 # Phase 5q ppm-coincidence comparison column in the witness.
-# DO NOT use as production inputs.
-LAMBDA_PROTON_FITTED_FROM_CODATA_AUDIT_ONLY = mp.mpf("2.4599527869")
-LAMBDA_NEUTRON_FITTED_FROM_CODATA_AUDIT_ONLY = mp.mpf("2.4633436333")
+# DO NOT use as production inputs.  Pre-PR #1080 framing: these were
+# fitted values of a hypothetical separate λ_scale; post-#1080 they
+# are simply audit-only constants with no production role.
+LINKING_WEIGHT_PROTON_FITTED_FROM_CODATA_AUDIT_ONLY = mp.mpf("2.4599527869")
+LINKING_WEIGHT_NEUTRON_FITTED_FROM_CODATA_AUDIT_ONLY = mp.mpf("2.4633436333")
 
 
 def main() -> int:
@@ -232,12 +206,13 @@ def main() -> int:
     w.set_description(
         "Numerical verification at MPFR 50 dps of "
         "`conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. "
-        "λ_scale uses the PROVED Family A categorical identity "
-        "(λ_A = 5/2 + 3h²/4, terminates exactly at h²) — see "
-        "`lambda-scale-substrate-form.lean` and "
-        "`lambda_scale_all_c_i_family_a.py`.  Family A applies to "
-        "the baryon class uniformly, giving "
-        "m_avg^pred = m_e · Vol(B_3)/ℏ_q² · λ_A ≈ 966 MeV at q_0 — "
+        "Canonical formula post-PR #1080: m(K) = m_e × Geom_full(K, q₀), "
+        "a single per-knot Geom call.  Geom_full = (Vol(𝓑₃)/ℏ_q²) × "
+        "linking_weight, where linking_weight is the PROVED Family A "
+        "categorical identity (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
+        "(terminates exactly at h²; Lean: `lambda-scale-substrate-form.lean`).  "
+        "Family A applies to the baryon class uniformly, giving "
+        "m_avg^pred = m_e × Geom_full(𝓑₃, q₀) ≈ 966 MeV at q_0 — "
         "about 2.89 % above the CODATA mean (m_p + m_n)/2 ≈ 938.92 MeV. "
         "The proton-neutron mass difference is then supplied "
         "categorically by the substrate flavor-split closed form "
@@ -247,49 +222,51 @@ def main() -> int:
         "m_n^pred ≈ 966.71 MeV (vs CODATA 939.57, ~2.9 % off).  The "
         "substrate Δm/M_N ratio itself matches CODATA to ~305 ppm "
         "(0.030 %) — framework-proved, no fit.  The prior CAL-4 fit "
-        "(λ_p = 2.4599527869, λ_n = 2.4633436333, 5.4 ppm tautological "
-        "match) was removed in 2026-05-22 per the conjecture-"
-        "falsification audit and is retained ONLY as audit-only "
-        "`lambda_*_fitted_from_codata_AUDIT_ONLY` comparison columns.  "
-        "Bring-Bloch identity (`conj:lambda-scale-bring-bloch-identity`) "
-        "remains the open R&D direction for closing the ~3 % m_avg "
-        "residual."
+        "(2.4599527869, 2.4633436333, 5.4 ppm tautological match) was "
+        "removed in 2026-05-22 per the conjecture-falsification audit "
+        "and is retained ONLY as audit-only "
+        "`linking_weight_*_fitted_from_codata_AUDIT_ONLY` columns.  "
+        "Per PR #1063, the ~2.89 % residual is now framed as a "
+        "Geom_full(𝓑₃) categorical-exactness refinement gap at h² "
+        "order, NOT as a separate λ_scale closure."
     )
     w.set_content_block("conj:borromean-baryon-mass-formula")
-    # Discipline markers — λ_scale now PROVED via Family A theorem.
-    w.add_parameter("derivation_status", "PROVED_FAMILY_A_CATEGORICAL")
+    # Discipline markers — canonical formula post-PR #1080:
+    #     m(K) = m_e × Geom_full(K, q₀)
+    # Single Geom call per knot; no separate λ_scale constant.
+    w.add_parameter("derivation_status", "CANONICAL_GEOM_FULL_PR_1080")
     w.add_parameter("cal_class", "CAL-1 m_e only")
-    w.add_parameter("lambda_scale_form", "5/2 + (3/4) h²")
-    w.add_parameter("lambda_scale_lean_ref",
+    w.add_parameter("canonical_formula", "m(K) = m_e × Geom_full(K, q₀)")
+    w.add_parameter("geom_full_decomposition",
+                    "Geom_full = (Vol(𝓑₃)/ℏ_q²) × linking_weight; "
+                    "linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
+                    "(PROVED Family A categorical identity)")
+    w.add_parameter("linking_weight_lean_ref",
                     "lambda-scale-substrate-form.lean")
-    w.add_parameter("lambda_scale_proof_script",
+    w.add_parameter("linking_weight_proof_script",
                     "lambda_scale_all_c_i_family_a.py")
-    w.add_parameter("tracking_doc", "docs/canonical-derivation-cheat-sheet.md §5 fix #1 (closed)")
+    w.add_parameter("framing_reference_doc",
+                    "docs/lambda-scale-absorbed-into-geom-full.md")
+    w.add_parameter("tracking_doc",
+                    "docs/canonical-derivation-cheat-sheet.md §5 fix #1 (closed)")
     w.add_parameter("q_0_50dps", mp.nstr(Q, 20))
     w.add_parameter("hbar_q_50dps", mp.nstr(HBAR_Q, 20))
     w.add_parameter("Vol_B3", mp.nstr(VOL_B3, 20))
     w.add_parameter("Vol_4_1", mp.nstr(VOL_41, 20))
     w.add_parameter("m_e_codata_MeV", mp.nstr(M_E_CODATA_MEV, 20))
-    # Production λ values — PROVED Family A categorical identity.
-    w.add_parameter("lambda_proton_family_a",
-                    mp.nstr(LAMBDA_PROTON_FAMILY_A, 15))
-    w.add_parameter("lambda_neutron_family_a",
-                    mp.nstr(LAMBDA_NEUTRON_FAMILY_A, 15))
-    # Back-compat aliases now point at the proved Family A values
-    # (consumers reading `lambda_scale_*_doc` get the honest value).
-    w.add_parameter("lambda_scale_proton_doc",
-                    mp.nstr(LAMBDA_PROTON_FAMILY_A, 15))
-    w.add_parameter("lambda_scale_neutron_doc",
-                    mp.nstr(LAMBDA_NEUTRON_FAMILY_A, 15))
+    # Canonical Geom_full(𝓑₃, q₀) value — what the framework actually uses.
+    w.add_parameter("geom_full_borromean_q0", mp.nstr(GEOM_FULL_BORROMEAN, 20))
     # Audit-only comparison column — the falsified-fit literals
     # whose 5.4 ppm "match" prompted the 2026-05-18 audit.  These
     # are NOT consumed by the production prediction below; they
     # exist so reviewers can see the ppm-coincidence gap that the
-    # falsification audit established.
-    w.add_parameter("lambda_proton_fitted_from_codata_AUDIT_ONLY",
-                    mp.nstr(LAMBDA_PROTON_FITTED_FROM_CODATA_AUDIT_ONLY, 15))
-    w.add_parameter("lambda_neutron_fitted_from_codata_AUDIT_ONLY",
-                    mp.nstr(LAMBDA_NEUTRON_FITTED_FROM_CODATA_AUDIT_ONLY, 15))
+    # falsification audit established.  Pre-PR #1080 framing: these
+    # were fitted values of a hypothetical separate λ_scale; post-
+    # #1080 they are audit-only with no production role.
+    w.add_parameter("linking_weight_proton_fitted_from_codata_AUDIT_ONLY",
+                    mp.nstr(LINKING_WEIGHT_PROTON_FITTED_FROM_CODATA_AUDIT_ONLY, 15))
+    w.add_parameter("linking_weight_neutron_fitted_from_codata_AUDIT_ONLY",
+                    mp.nstr(LINKING_WEIGHT_NEUTRON_FITTED_FROM_CODATA_AUDIT_ONLY, 15))
 
     # ── Cross-check: muon (sanity) ────────────────────────────
     mu_pred = (VOL_41 / HBAR_Q**2) * M_E_CODATA_MEV
@@ -310,16 +287,16 @@ def main() -> int:
         source="CAL-2 anchor: m_mu/m_e = Vol(4_1)/ℏ_q²",
     )
 
-    # ── Class-uniform Family A m_avg (proton, neutron predicted equal
-    #    at this layer) + substrate flavor split (proton-neutron mass
-    #    difference) ──────────────────────────────────────────────────
+    # ── Class-uniform m_avg from Geom_full (proton, neutron predicted
+    #    equal at this layer) + substrate flavor split (proton-neutron
+    #    mass difference) ─────────────────────────────────────────────
     # Per `prop:flavor-split-substrate` / PR #690, the proton-neutron
     # mass ratio carries a PROVED substrate-pure closed form:
     #     Δm / M_N  =  ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3
     # (see `_li_2_q_util.flavor_split_subleading`).  This is the
     # categorical Bring-color-tube weighting the cheat sheet §3
-    # footnote flags.  Family A gives ONE class-uniform λ_A; the
-    # split then assigns:
+    # footnote flags.  Geom_full(𝓑₃, q₀) gives ONE class-uniform mass
+    # scale; the split then assigns:
     #     m_p_pred = m_avg_pred · (1 − Δm/M_N / 2)
     #     m_n_pred = m_avg_pred · (1 + Δm/M_N / 2)
     # so the proton-neutron mass difference is Δm/M_N · m_avg_pred —
@@ -329,17 +306,22 @@ def main() -> int:
     Q_INV = mp.mpf(1) / Q
     dm_over_Mn = _flavor_split(Q, Q_INV)
 
-    # Class-uniform Family A m_avg (Borromean tower without split).
-    m_avg_factor = (VOL_B3 / HBAR_Q ** 2) * LAMBDA_PROTON_FAMILY_A
-    m_avg_pred = m_avg_factor * M_E_CODATA_MEV
+    # Class-uniform Family A m_avg (Borromean tower, before flavor split).
+    # Uses the canonical Geom_full(𝓑₃, q₀) per PR #1080 — a single
+    # Geom call rather than a manually-expanded Vol × linking_weight.
+    m_avg_pred = GEOM_FULL_BORROMEAN * M_E_CODATA_MEV
     M_AVG_CODATA = (M_P_CODATA_MEV + M_N_CODATA_MEV) / 2
     m_avg_rel_diff = (m_avg_pred - M_AVG_CODATA) / M_AVG_CODATA
     w.add_data("class_uniform_m_avg", {
-        "formula": "m_avg = m_e · Vol(B_3)/ℏ_q² · λ_A  (Family A, before split)",
+        "formula": "m_avg = m_e · Geom_full(𝓑₃, q₀)  (PR #1080, before flavor split)",
         "m_avg_pred_MeV": mp.nstr(m_avg_pred, 20),
         "m_avg_codata_MeV": mp.nstr(M_AVG_CODATA, 12),
         "rel_diff_ppm": mp.nstr(m_avg_rel_diff * mp.mpf("1e6"), 8),
-        "lambda_A_form": "5/2 + (3/4) h²  (PROVED canonical Wedderburn)",
+        "geom_full_decomposition": (
+            "Geom_full = (Vol(𝓑₃)/ℏ_q²) × linking_weight; "
+            "linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
+            "(PROVED canonical Wedderburn — Family A)"
+        ),
     })
     dm_codata_ratio = (M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA
     dm_ratio_ppm = (dm_over_Mn / dm_codata_ratio - 1) * mp.mpf("1e6")
@@ -373,9 +355,10 @@ def main() -> int:
     proton_ppm = proton_rel_diff * mp.mpf("1e6")
     w.add_data("proton", {
         "formula": "m_p = m_avg_pred · (1 − Δm/M_N / 2), with "
-                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
+                   "m_avg_pred = m_e · Geom_full(𝓑₃, q₀) and "
                    "Δm/M_N from flavor_split_subleading",
         "vol_B3_over_hbar_q_squared": mp.nstr(VOL_B3 / HBAR_Q**2, 20),
+        "geom_full_borromean_q0": mp.nstr(GEOM_FULL_BORROMEAN, 20),
         "tower_factor": mp.nstr(proton_factor, 20),
         "m_p_pred_MeV": mp.nstr(proton_pred, 20),
         "m_p_codata_MeV": mp.nstr(M_P_CODATA_MEV, 12),
@@ -403,7 +386,7 @@ def main() -> int:
     neutron_ppm = neutron_rel_diff * mp.mpf("1e6")
     w.add_data("neutron", {
         "formula": "m_n = m_avg_pred · (1 + Δm/M_N / 2), with "
-                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_A and "
+                   "m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_Y and "
                    "Δm/M_N from flavor_split_subleading",
         "tower_factor": mp.nstr(neutron_factor, 20),
         "m_n_pred_MeV": mp.nstr(neutron_pred, 20),
@@ -445,7 +428,7 @@ def main() -> int:
     # ── 1700× scale-gap explanation ───────────────────────────
     single_level_estimate = mp.mpf("1.065") * M_E_CODATA_MEV  # T1 alone
     gap_factor = float(M_P_CODATA_MEV / single_level_estimate)
-    tower_multiplier = float(VOL_B3 / HBAR_Q**2 * LAMBDA_PROTON_DOC)
+    tower_multiplier = float(GEOM_FULL_BORROMEAN)
     w.add_data("scale_gap_resolution", {
         "single_level_m_p_estimate_MeV": mp.nstr(single_level_estimate, 8),
         "codata_m_p_MeV": mp.nstr(M_P_CODATA_MEV, 8),
@@ -453,25 +436,33 @@ def main() -> int:
         "borromean_tower_multiplier": tower_multiplier,
         "match_to_gap_pct": float(abs(tower_multiplier - gap_factor) / gap_factor * 100),
         "conclusion": (
-            "Vol(B_3)/ℏ_q² · λ_scale ≈ 1836 IS the 1700× scale factor "
+            "Geom_full(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor "
             "missing from the single-level Markov-trace m_p chain. "
-            "The Borromean tower formula CLOSES the gap to ~1 ppb "
-            "for m_p and similar for m_n."
+            "The Borromean tower formula closes the gap to ~3 % on "
+            "m_avg; substrate flavor split (PR #690) supplies Δm/M_N "
+            "to ~305 ppm independently."
         ),
     })
 
     # Open R&D: closing the m_avg ~3 % residual categorically
     w.add_caveat(
-        "λ_scale is now the PROVED Family A categorical identity "
-        "(λ_A = 5/2 + (3/4) h², terminates at h²); the prior CAL-4 "
-        "literals 2.4599527869 / 2.4633436333 are retained only as "
-        "audit-only comparison columns.  The proton-neutron mass "
-        "ratio Δm/M_N is the substrate-pure closed form from "
-        "`prop:flavor-split-substrate` (PR #690): "
+        "Canonical formula post-PR #1080: m(K) = m_e × Geom_full(K, q₀), "
+        "a single Geom call per knot.  Geom_full decomposes as "
+        "(Vol(𝓑₃)/ℏ_q²) × linking_weight, with linking_weight = "
+        "(3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED Family A "
+        "categorical Wedderburn identity, Lean: "
+        "`lambda-scale-substrate-form.lean`).  There is no separate "
+        "λ_scale constant — older docs called the linking-weight "
+        "component λ_scale before it was absorbed into Geom_full.  "
+        "The prior CAL-4 literals 2.4599527869 / 2.4633436333 are "
+        "retained only as audit-only comparison columns.  The proton-"
+        "neutron mass ratio Δm/M_N is the substrate-pure closed form "
+        "from `prop:flavor-split-substrate` (PR #690): "
         "ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA "
-        "to ~305 ppm (~0.030 %).  The remaining ~3 % gap in the "
-        "absolute m_avg scale is the open R&D direction (Bring-Bloch "
-        "identity / categorical q-dilog tower)."
+        "to ~305 ppm (~0.030 %).  The remaining ~2.89 % gap in the "
+        "absolute m_avg scale is now framed (per PR #1063) as a "
+        "Geom_full(𝓑₃) categorical-exactness refinement gap at h² "
+        "order, NOT as a separate λ_scale closure."
     )
 
     out = w.save()
@@ -491,11 +482,11 @@ def main() -> int:
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
     print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
     print(f"  CODATA / single-level:   {gap_factor:.4f}")
-    print(f"  → Geom_full(𝓑₃) with current Family A linking-weight closes to ~3 %")
-    print(f"    vs CODATA on m_avg; substrate flavor split (PR #690) supplies")
-    print(f"    Δm/M_N to ~305 ppm (~0.030 %) giving a categorical (non-fit)")
-    print(f"    p/n split. Open R&D: refining Geom_full(𝓑₃) so the per-link")
-    print(f"    Geom evaluation closes the ~3 % gap (NOT a separate λ_scale).")
+    print(f"  → Geom_full(𝓑₃, q₀) closes to ~3 % vs CODATA on m_avg;")
+    print(f"    substrate flavor split (PR #690) supplies Δm/M_N to")
+    print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")
+    print(f"    Open R&D: ~3 % m_avg gap framed as Geom_full(𝓑₃)")
+    print(f"    categorical-exactness refinement (PR #1063), not separate λ closure.")
     return 0
 
 

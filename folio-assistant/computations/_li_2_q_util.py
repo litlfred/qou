@@ -169,70 +169,79 @@ def flavor_split_subleading(q: mpf, q_inv: mpf | None = None) -> mpf:
     return leading * (1 + hbar ** 3)
 
 
-def lambda_scale_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """PROVED Family A categorical λ_scale (single source of truth).
+def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """PROVED Family A categorical linking weight (single source of truth).
+
+    This is the linking-weight component of Geom_full(𝓑₃, q) — older
+    docs called it `λ_scale` before PR #1080 absorbed it into the
+    per-knot Geom evaluation.  See
+    `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
 
     Closed-form identity proved in
-    `lambda_scale_all_c_i_family_a.py` and
-    `lambda-scale-substrate-form.lean`:
+    `lambda_scale_all_c_i_family_a.py` (Python) and
+    `lambda-scale-substrate-form.lean` (Lean):
 
-        λ_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ
-               = (3q² + 4 + 3q⁻²) / 4
-               = 5/2 + (3/4) h²
+        linking_weight_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ
+                            = (3q² + 4 + 3q⁻²) / 4
+                            = 5/2 + (3/4) h²
 
     where h = q − q⁻¹. The h-series TERMINATES exactly at h²:
     all higher h^{2k} coefficients are identically zero.
 
     Replaces three independent inline copies of the same algebraic
-    expression in production scripts:
-
-      - `m_p_borromean_verification_50dps.py:LAMBDA_PROTON_FAMILY_A`
-      - `build_proton_mass_50dps_chain.py:LAMBDA_SCALE_SUBSTRATE_FORM`
-      - `skein_proton_canonical.py:LAMBDA_CURRENT`
-
-    Per Gemini PR #942 review (2026-05-23): centralizing avoids
-    drift and ensures a single source of truth.
+    expression in production scripts (Gemini PR #942 review, 2026-05-23
+    — centralize to avoid drift).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
     h = q - qi
     return mpf(5) / 2 + mpf(3) * h ** 2 / 4
 
 
-def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Geom_full(𝓑₃, q) — the complete Geom evaluation for the
-    Borromean baryon mass formula.
+# Deprecated alias retained for back-compat during the PR #1080 cleanup.
+# New callers should use `linking_weight_family_a` (or `geom_full_borromean`
+# when the full Geom_full evaluation is wanted).  Per owner directive
+# 2026-05-24: "no lambda-scale ANYWHERE".  This alias exists ONLY to
+# absorb back-compat callers during migration and will be removed once
+# every caller has been updated.
+lambda_scale_family_a = linking_weight_family_a
 
-    CANONICAL INFRASTRUCTURE (this function is part of the structural
-    pipeline, NOT the purged −G·h² empirical claim):
+
+def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """Geom_full(𝓑₃, q) — the complete per-knot Geom evaluation for the
+    Borromean baryon mass formula (canonical post-PR #1080, 2026-05-23).
 
     The mass formula is:
-        m(B) = m_e × Geom_full(𝓑₃, q₀)
+        m(B) = m_e × Geom_full(𝓑₃, q₀)            (single Geom call)
 
     where Geom_full = Geom_leading × linking_weight:
-        Geom_leading = Vol(𝓑₃) / ℏ_q²  (the bare hyperbolic volume term)
+        Geom_leading = Vol(𝓑₃) / ℏ_q²           (bare hyperbolic volume)
         linking_weight = what Geom assigns to multi-component links
                          beyond bare volume (= 1 for knots, > 1 for links)
 
-    Currently: linking_weight = lambda_scale_family_a(q) (PROVED).
-    The −G·h² Yekutieli correction is NOT included here because it's
-    an UNPROVED framework claim (per production-vs-exploratory
-    discipline). When/if the Yekutieli per-cell curvature is proved
-    categorically, the linking weight would be updated.
+    Currently: linking_weight = linking_weight_family_a(q) (PROVED Family A
+    categorical Wedderburn identity).  The −G·h² Yekutieli correction
+    is NOT included — purged 2026-05-24 as non-canonical (PR #985
+    bijection NEGATIVE).
 
-    The distinction:
-        λ_scale (old name) = linking_weight (new name) = Geom_full / Geom_leading
-        This is NOT a separate calibration constant — it's what the
-        Geom functor produces for multi-component links.
-        For knots (muon = 4₁): linking_weight = 1 (Geom = Vol/ℏ_q²)
-        For links (proton = 𝓑₃): linking_weight ≈ 2.46
+    NAMING: older docs called the linking_weight component `λ_scale`
+    before it was absorbed into the per-knot Geom evaluation.  There is
+    no separate λ_scale constant.  For knots (muon = 4₁): linking_weight
+    = 1 (Geom = Vol/ℏ_q²).  For links (proton = 𝓑₃): linking_weight
+    ≈ 2.46.
+
+    LEAN COVERAGE:
+      - PROVED: linking_weight identity (`lambda-scale-substrate-form.lean`)
+      - NOT PROVED: Vol(𝓑₃) = 8·G (Adams 1985 cited from literature);
+        Geom_full per-knot decomposition (prop:geom-universality has
+        no Lean theorem yet) — flagged as potential source of error.
 
     Returns Geom_full = Vol(𝓑₃)/ℏ_q² × linking_weight(q).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
     hbar_q = (q - 1) / q
-    vol_b3 = 8 * mp.catalan  # Adams 1985
+    vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
     geom_leading = vol_b3 / hbar_q ** 2
-    linking_weight = lambda_scale_family_a(q, qi)
+    linking_weight = linking_weight_family_a(q, qi)
     return geom_leading * linking_weight
 
 
