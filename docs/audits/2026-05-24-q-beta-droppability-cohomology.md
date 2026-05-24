@@ -22,7 +22,7 @@ This audit answers two questions:
 | Cohomological origin of CAL 1-3? | **THEOREM.** `prop:three-parameters-wedderburn` proves on-shell + gauge-invariance + observability reduce the 6-dim End(H_3) to exactly 3 real parameters — bijectively the 3 Wedderburn blocks (alt / std / sym). |
 | Is Q_β substrate-derivable? | **Yes, partially.** `derived_masses.py:49–62` gives `Q_β = m_e · |q_0² − 2q_0 − 1| · (q_0+1)/(2q_0³) ≈ 0.7836 MeV`. Residual vs CODATA: **+0.18 %** (1.31 keV). |
 | Tighter than downstream consumers? | **Yes.** All Q_β consumers have ±4 % or wider MAE; +0.18 % is well within tolerance. |
-| Cohomological 3-channel structure if Q_β dropped? | **Preserved.** sym channel becomes a *prediction* instead of an *input*; the 3-block decomposition is unchanged. |
+| Cohomological 3-channel structure if Q_β dropped? | **Preserved.** alt channel becomes a *prediction* instead of an *input*; the 3-block decomposition is unchanged. |
 | Operationally droppable today? | **Not yet.** Blocked on Workplan 2 Phase 2 (tower-summation closure) to push +0.18 % to 1ppb. |
 
 ## 1. The cohomological theorem (rigorous)
@@ -47,13 +47,21 @@ Where:
 
 ## 2. The CAL ↔ Wedderburn alignment (rigorous)
 
-| CAL | Wedderburn block | Partition λ ⊢ 3 | Physical sector |
-|---|---|---|---|
-| **CAL-2** ($m_\mu/m_e \to q_0$) | **alt** | $(1,1,1)$ | crossing asymmetry $q/q^{-1}$; antimatter channel; $q_0 = 1$ collapses it |
-| **CAL-1** ($m_e$) | **std** | $(2,1)$ | 2-D matter channel; $\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$ bridges Hecke → MeV |
-| **CAL-3** ($Q_\beta(n)$) | **sym** | $(3)$ | all-positive-crossing channel; brane-tower correction $\Delta(\mathrm{net}) = h(h-2)/2$ converts Q-value → energy scale |
+| CAL | Wedderburn block | Partition λ ⊢ 3 | Eigenvalue of $\sigma_i$ | Physical sector |
+|---|---|---|---|---|
+| **CAL-2** ($m_\mu/m_e \to q_0$) | **sym** | $(3)$ | all $+q$ | Shape / deformation (how far $q$ is from 1); $q = 1$ collapses the symmetric channel |
+| **CAL-1** ($m_e$) | **std** | $(2,1)$ | $+q$ and $-q^{-1}$ mixed | Mass scale (Hecke units ↔ MeV bridge) |
+| **CAL-3** ($Q_\beta(n)$) | **alt** | $(1,1,1)$ | all $-q^{-1}$ | Interaction strength; antisymmetric channel driving $\beta$ decay; brane-tower correction $\Delta(\mathrm{net}) = h(h-2)/2$ converts Q-value → energy scale |
 
-Source: [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md):87–112.
+Source: [`prop:three-parameters-wedderburn`](../../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md) §"Physical identification" (lines 62–76).
+
+**Mnemonic**: the symmetric sector sees only $+q$ eigenvalues — it
+controls the *shape* of the deformation, hence the substrate
+parameter $q_0$. The alternating sector sees only $-q^{-1}$
+eigenvalues — it controls the antisymmetric / antimatter channel,
+hence the $\beta$-decay scale $Q_\beta$. The standard sector mixes
+both eigenvalues — it bridges dimensionless Hecke trace to
+dimensional MeV, hence $m_e$.
 
 This is the cohomological content of "exactly 3 calibrations". Adding
 a 4th calibration would require an additional independent parameter
@@ -122,7 +130,7 @@ Only the 1ppb audit (`e_0_calibration_audit.py`) would fail, but it
 ## 6. Verdict — Q_β-droppability
 
 **THEORETICALLY**: ✅ Yes. The cohomological 3-channel structure is
-preserved; the sym channel becomes a *prediction*. The substrate
+preserved; the alt channel becomes a *prediction*. The substrate
 gives Q_β to +0.18 % using CAL-1 + CAL-2 alone, tighter than every
 downstream production consumer's tolerance.
 
