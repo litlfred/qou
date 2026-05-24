@@ -563,6 +563,22 @@ class WitnessBuilder:
             "scriptCommitSha": script_sha,
         }
 
+        # ── Precision metadata (from qou_substrate.precision) ──────
+        # Records the compute library's error floor so downstream
+        # consumers know the truncation bound of every serialized value.
+        try:
+            from qou_substrate.precision import (
+                COMPUTE_DPS, OUTPUT_DPS, PRECISION_GUARD,
+            )
+            witness["precisionMetadata"] = {
+                "compute_dps": COMPUTE_DPS,
+                "output_dps": OUTPUT_DPS,
+                "guard_digits": PRECISION_GUARD,
+                "truncation_bound": f"1e-{OUTPUT_DPS}",
+            }
+        except ImportError:
+            pass
+
         if self.description:
             witness["description"] = self.description
         if self.content_block:
