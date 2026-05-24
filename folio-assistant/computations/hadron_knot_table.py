@@ -25,6 +25,7 @@ Content block: rem:hadron-level-knot-table
 import math
 import sys
 from pathlib import Path
+from mpmath import mp  # noqa: F401
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -105,7 +106,7 @@ def compute_per_generator_volumes(Z, N):
     for i in range(len(V_list) - 1):
         prod = abs(V_list[i] * V_list[i + 1])
         if prod > 1e-300:
-            cross_sum += math.log(prod)
+            cross_sum += mp.log(prod)
 
     delta_xchan = _Z2 * cross_sum * M_E_MEV
     return ordering, V_list, cross_sum, delta_xchan
@@ -144,7 +145,7 @@ def compute_atom(name, Z, N, quarks=None):
         "n_terms": len(nf_compact),
         "tr_M": round(float(tr), 12),
         "net": round(float(net), 12),
-        "ln_abs_tr": round(math.log(abs(tr)), 12) if abs(tr) > 1e-300 else None,
+        "ln_abs_tr": round(mp.log(abs(tr)), 12) if abs(tr) > 1e-300 else None,
         "frobenius_stable": stable,
         "knot_type": knot_name,
         "B_MeV": round(B, 4),
