@@ -55,14 +55,7 @@ Together these give francium:
 The alkali metals form a sequence of atoms with $|R| = 1$ at
 increasing shell depth:
 
-| Alkali | $p$ | Shell $n$ | $E_{\mathrm{ion}}$ (eV) | Curls in residual |
-|--------|----:|----------:|------------------------:|:-----------------:|
-| Li | 3 | 2 | 5.39 | 1 |
-| Na | 11 | 3 | 5.14 | 1 |
-| K | 19 | 4 | 4.34 | 1 |
-| Rb | 37 | 5 | 4.18 | 1 |
-| Cs | 55 | 6 | 3.89 | 1 |
-| Fr | 87 | 7 | 4.07 | 1 |
+See [Table](#tbl:francium-extremal-metal-table-data).
 
 Each has exactly one loose trefoil; the crossing energy
 decreases monotonically with $n$ (the slight uptick for

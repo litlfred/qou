@@ -147,6 +147,7 @@ section({
         "incompleteness-implies-horizon",
         "incompleteness-horizon",
         "stat-mech-computational-horizon",
+        "stat-mech-computational-horizon-table-data",
         "information-paradox-incompleteness",
       ],
     }),

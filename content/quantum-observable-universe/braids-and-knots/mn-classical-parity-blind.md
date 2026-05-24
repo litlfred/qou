@@ -10,14 +10,7 @@ have identical permutation images.*
 **Computational evidence.**
 *Using `folio-assistant/computations/schur_weyl_mn_witness.py`:*
 
-| Atom | Cycle type | Nonzero $\chi^\lambda$ partitions | $\sum_\lambda w_\lambda(q_0) \cdot \chi^\lambda$ |
-|---|---|---|---|
-| $\mathfrak{p}$ | $(2, 1)$ | $\{(3)\}$ | $6.7145 \times 10^{-1}$ |
-| $\mathfrak{n}$ | $(2, 1)$ | $\{(3)\}$ | $6.7145 \times 10^{-1}$ |
-| $^2$H | $(3, 2, 1)$ | $\{(6), (3,3)\}$ | $1.5586 \times 10^{-2}$ |
-| $^3$H | $(3, 3, 2, 1)$ | $\{(6,3), (9), (3,3,3)\}$ | $8.8287 \times 10^{-4}$ |
-| $^3$He | $(3, 3, 2, 1)$ | $\{(6,3), (9), (3,3,3)\}$ | $8.8287 \times 10^{-4}$ |
-| $^4$He | $(3, 3, 3, 2, 1)$ | $\{(9,3), (6,6), (12), (6,3,3), (3,3,3,3)\}$ | $4.4252 \times 10^{-6}$ |
+See [Table](#tbl:mn-classical-parity-blind-table-data).
 
 *Proton and neutron collapse onto the same cycle type $(2, 1)$
 because both atomic-braid words have an odd number of crossings at

@@ -53,6 +53,7 @@ export default chapter({
       blocks: [
         "h2-computation-intro",
         "h2-molecular-braid",
+        "h2-molecular-braid-table-data",
         "h2-lp-dual-binding",
         "h2-binding-energy",
         "h2-bond-length-interpretation",
