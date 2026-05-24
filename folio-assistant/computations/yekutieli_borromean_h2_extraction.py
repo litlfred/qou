@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Yekutieli finite-slice multiplicative integral for the Borromean braid.
+"""EXPLORATORY (canonical infrastructure, unproved numerical claim).
+
+Yekutieli finite-slice multiplicative integral for the Borromean braid.
 
 Implements the non-abelian Stokes curvature extraction directly from
 the Hecke algebra, following `atom-knot-mass-derivation.md`:

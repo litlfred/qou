@@ -198,6 +198,70 @@ def lambda_scale_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
     return mpf(5) / 2 + mpf(3) * h ** 2 / 4
 
 
+def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """Geom_full(𝓑₃, q) — the complete Geom evaluation for the
+    Borromean baryon mass formula.
+
+    CANONICAL INFRASTRUCTURE (this function is part of the structural
+    pipeline, NOT the purged −G·h² empirical claim):
+
+    The mass formula is:
+        m(B) = m_e × Geom_full(𝓑₃, q₀)
+
+    where Geom_full = Geom_leading × linking_weight:
+        Geom_leading = Vol(𝓑₃) / ℏ_q²  (the bare hyperbolic volume term)
+        linking_weight = what Geom assigns to multi-component links
+                         beyond bare volume (= 1 for knots, > 1 for links)
+
+    Currently: linking_weight = lambda_scale_family_a(q) (PROVED).
+    The −G·h² Yekutieli correction is NOT included here because it's
+    an UNPROVED framework claim (per production-vs-exploratory
+    discipline). When/if the Yekutieli per-cell curvature is proved
+    categorically, the linking weight would be updated.
+
+    The distinction:
+        λ_scale (old name) = linking_weight (new name) = Geom_full / Geom_leading
+        This is NOT a separate calibration constant — it's what the
+        Geom functor produces for multi-component links.
+        For knots (muon = 4₁): linking_weight = 1 (Geom = Vol/ℏ_q²)
+        For links (proton = 𝓑₃): linking_weight ≈ 2.46
+
+    Returns Geom_full = Vol(𝓑₃)/ℏ_q² × linking_weight(q).
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    hbar_q = (q - 1) / q
+    vol_b3 = 8 * mp.catalan  # Adams 1985
+    geom_leading = vol_b3 / hbar_q ** 2
+    linking_weight = lambda_scale_family_a(q, qi)
+    return geom_leading * linking_weight
+
+
+def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """EXPLORATORY: the unproved −G·h² Yekutieli per-cell curvature
+    correction to the linking weight.
+
+    Per production-vs-exploratory discipline: this is a FRAMEWORK
+    CLAIM, not a proved theorem. The specific value −G comes from
+    the Yekutieli non-abelian Stokes argument (per-cell curvature
+    on 𝓑₃'s 8 ideal octahedra), but:
+      - The S₄↓S₃ bijection step is structurally derived (factor 2/5,
+        proved in Lean) but the full Yekutieli categorical chain is
+        not Lean-proved end-to-end
+      - The standalone polynomial form 5/2 − G·h² fails q-locality
+        (substrate-q₀ coincidence per PR #951)
+      - PR #985 found κ = +0.5, not −G, in the natural-reading
+
+    The Yekutieli 2015 non-abelian Stokes theorem IS valid math.
+    What's unproved is our framework's claim that it yields −G·h²
+    for the linking weight correction.
+
+    Use ONLY for exploratory comparison columns, never in production.
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    h = q - qi
+    return -mp.catalan * h ** 2
+
+
 def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
     """Markov trace of the Borromean braid (σ₁σ₂⁻¹)³ on H₃(q).
 
