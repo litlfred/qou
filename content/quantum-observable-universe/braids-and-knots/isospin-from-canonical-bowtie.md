@@ -1,3 +1,13 @@
+> **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**
+> The "bar-anti-symmetric residue" framing used throughout this block
+> should read **"isospin-Z/2-anti-symmetric residue"**.  Bar involution
+> (q ↔ q⁻¹ AND σᵢ ↔ σᵢ⁻¹) is **distinct** from isospin Z/2 swap
+> (σᵢ ↔ σᵢ⁻¹ with q FIXED).  The 305 ppm flavor split is correct
+> empirically (0.03% rel diff at q₀); ℏ_q = (q-1)/q is "mixed" under
+> bar, so the formula is NOT bar-classifiable factor-by-factor.
+> See [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md).
+> Read "bar-anti-symmetric" → "isospin-Z/2-anti-symmetric" below.
+
 **Conjecture (D9 isospin closure, conditional on
 [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
 + [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)).**
