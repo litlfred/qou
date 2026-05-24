@@ -347,7 +347,41 @@ export function checkRespectsArchimedeanWall(
   if (scriptPath.includes("/_deprecated/")) {
     return { result: "n/a", hits: [] };
   }
+  // Probe / audit / experiment scripts are exploratory by design.
+  // Per the substrate-vs-archimedean wall (CLAUDE.md §7c), substrate
+  // code MUST use mpmath; archimedean / exploratory code MAY use
+  // float / math.* / np.*. Probe scripts ARE the archimedean
+  // realization layer — flagging math.log inside a script literally
+  // named `probe_*.py` is noise.
+  //
+  // Exemption pattern: basename matches `^(probe|audit|experiment|
+  // shape_audit|sanity_check|exploratory|diag(nose|nostic)?)_…` OR
+  // `…_probe.py` / `…_audit.py` / `…_experiment.py` suffix.
+  // These naming conventions are used pervasively in
+  // folio-assistant/computations/ for non-production exploratory
+  // compute.
+  const basename = scriptPath.split("/").pop() ?? "";
+  const EXPLORATORY_RE =
+    /^(?:probe|audit|experiment|shape_audit|sanity_check|exploratory|diag(?:nose|nostic)?)_/i;
+  const EXPLORATORY_SUFFIX_RE =
+    /_(?:probe|audit|experiment|exploratory)\.py$/i;
+  if (
+    EXPLORATORY_RE.test(basename) ||
+    EXPLORATORY_SUFFIX_RE.test(basename)
+  ) {
+    return { result: "n/a", hits: [] };
+  }
+  // Per-file opt-out via audit-tag comment. A file whose header
+  // declares `# archimedean_by_design:` is explicitly classified
+  // as archimedean-realization code; the criterion doesn't apply.
+  // Authors using this MUST also document the file in narrative
+  // (per CLAUDE.md §7c the proper home is a separate
+  // `archimedean-universe/` module, but tagging in place is the
+  // cheaper unblock during migration).
   const src = readFileSync(scriptPath, "utf-8");
+  if (/^\s*#\s*archimedean_by_design\s*:/m.test(src)) {
+    return { result: "n/a", hits: [] };
+  }
   const masked = maskStringsAndComments(src);
   const lines = masked.split("\n");
   const hits: CheckerHit[] = [];
