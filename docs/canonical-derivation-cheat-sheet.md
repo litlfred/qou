@@ -204,7 +204,16 @@ The forward work has shifted from §5 mechanics to scientific closure:
      - `QOU.QuantumObservableUniverses.CategoricalHiggsIdempotent` REFINED with explicit fields (`vev_v_GeV`, `vev_lower_component_GeV = vev_v_GeV / √2`, `gauge_coupling_g`, `gauge_coupling_g_prime`, `higgs_self_coupling`, `cos_theta_W`) and a PROVED theorem `m_W_over_m_Z_eq_cos_theta_W : m_W_GeV / m_Z_GeV = cos_theta_W` (via `field_simp + ring`, conditional on the class). The √2 is now explicit in `vev_lower_component_eq_v_over_sqrt2` — encoding the SM Higgs-doublet convention, NOT a deeper categorical fact (per PR #1126 retraction).
      - `QOU.BraidKnot.TorusKnotMass` (new): scaffolds RT-route mass-derivation with `poly_growth_degree`, `gauge_mass_factor`, `scalar_mass_factor`, `factors_distinct`, `WZ_mass_ratio`. Default instance carries `sorry` (open conjecture per §3b-cond).
      - `QOU.Kashaev.VolumeConjecture` (pre-existing, adaptable): encodes Vol=0 ⇒ sub-exponential `|J_N|`, already captures "torus knots need a different chain".
-   * Open: derive `v_VEV`, `g`, `g'`, `λ` from categorical chains so the absolute 143 / 171 split has a closed-form origin instead of an empirical-fit instance.
+   * **Three substrate→EW empirical-match hypotheses + scaffolded Lean theorems** (probe `ew_couplings_substrate_derivation_probe.py` + audit [`2026-05-24-ew-couplings-substrate-empirical-matches.md`](audits/2026-05-24-ew-couplings-substrate-empirical-matches.md) + Lean `QOU.BraidKnot.SubstrateEWHypotheses` from commit `f16adbb17`). Probe tested ~50 candidates; three pass the triple test (match < 1%, uses only substrate + universal constants, plausible categorical origin):
+
+     | hypothesis | predicted | dev | structural anchor |
+     |---|---:|---:|---|
+     | `g = π · h_0` | `π · 0.20856 = 0.6552` vs SM 0.6535 | **+0.26%** | π from connection 1-form integration on substrate (Yekutieli MI machinery; see [`yekutieli-mi-derivation-path.md`](audits/2026-05-24-yekutieli-mi-derivation-path.md)) |
+     | `v_framework / v_SM = log(6)` | `log(6) = 1.7918` vs measured 1.7853 | **−0.50%** | 6 = `gsNFBasisCardinalityB3` = `|S_3|` (PROVED) — order of the 6 GS-NF knot operators (γ, σ_0, σ_1, L_+, L_-, e^-); Chern-Simons-style `log |G|` |
+     | `scalar_mass_factor / gauge_mass_factor = 6/5` | `6/5 = 1.200` vs measured 1.196 | **+0.35%** | 6 = `|S_3|` (knot-operator basis); 5 = `partitionsOfFour` = Wedderburn-block count at H_4 ((4), (3,1), (2,2), (2,1,1), (1,1,1,1)) — both PROVED |
+
+     Each hypothesis is encoded in `SubstrateEWHypotheses.lean` as a `class`-conditional `theorem` with a `sorry` marker for the empirical-match step; the structural anchors (`gsNFBasisCardinalityB3 := 6`, `partitionsOfFour := 5`) are PROVED unconditionally. **Epistemic discipline (per `production-vs-exploratory-discipline`):** these are *structurally suggestive empirical matches*, not theorems. The conversion to rigorous identities requires: (a) connection 1-form integration over the substrate loop to derive `π · h_0`, (b) knot-operator partition-function evaluation to derive `log |S_3|`, (c) cross-Wedderburn-block normalization ratio to derive `|S_3| / |Part(4)|`. Research-grade, 1-2 weeks each.
+   * Open: prove the 3 structural→empirical hypotheses above (close the `sorry` markers in `SubstrateEWHypotheses.lean`) to upgrade them from "match within < 1%" to "categorical theorem".
 
 ### Adjacent open work (not in §5 but cited by the cluster)
 
