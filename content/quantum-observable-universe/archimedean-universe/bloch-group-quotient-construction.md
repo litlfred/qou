@@ -16,31 +16,6 @@ The quotient inherits an `AddCommGroup` structure from Mathlib's
 `quot : PreBlochGroup F →+ BlochGroup F` and the standard
 universal property.*
 
-> **Status: theorem (sorry-free, modulo over-permissive
-> pentagon-shape constraints).**
-> The Lean file
-> [`bloch-group-quotient-construction.lean`](bloch-group-quotient-construction.lean)
-> defines `BlochGroup F` concretely as a quotient `AddCommGroup`,
-> with the pentagon `AddSubgroup` parameterised by the generator
-> set `pentagonRelationGenerators := Set.range pentagonGenerator`
-> over `PentagonShape F`. The structural construction, universal
-> property, `pentagonGenerator_mem_pentagonSubgroup`,
-> `quot_pentagonGenerator_eq_zero`, and `HasBlochGroup ℝ` instance
-> are all sorry-free.
->
-> **Caveat (over-permissive pentagon shapes).** The current
-> `PentagonShape F` allows arbitrary 5-tuples of `PreBlochElement F`,
-> not the constrained 5-tuples derived from a valid Rogers pair
-> `(x, y) ∈ F^\times \times F^\times` via the maps
-> `(x, y, y/x, (1-y^{-1})/(1-x^{-1}), (1-y)/(1-x))`. This makes the
-> pentagon `AddSubgroup` *too large*: choosing a degenerate shape
-> with repeated entries (e.g. `e₂ = e₃ = e₄ = e₅`) collapses the
-> generator to `of(e₁)`, putting individual pre-Bloch elements
-> into the relation subgroup and trivialising the quotient. The
-> proper fix is a `ValidPentagonShape F` predicate enforcing the
-> Rogers-form constraints; the structural skeleton supports this
-> drop-in refinement without modification.
-
 ## Lean structure
 
 See [Table](#tbl:bloch-group-quotient-construction-table-data).
