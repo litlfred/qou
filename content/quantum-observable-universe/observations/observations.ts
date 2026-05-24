@@ -84,6 +84,7 @@ export default chapter({
         "mass-comparison-table",
         "atom-mass-full-hecke",
         "atom-mass-full-hecke-table-data",
+        "atom-mass-full-hecke-table-data",
         "feynman-qou-comparison",
         "neutron-proton-mass-splitting",
         "photon-channel-wedderburn-chain",
@@ -195,6 +196,7 @@ export default chapter({
         "golden-ratio-degeneration",
         "hydrogen-knot-structure",
         "sdp-regime-switch",
+        "sdp-regime-switch-table-data",
       ],
     }),
 

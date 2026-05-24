@@ -38,6 +38,7 @@ export default chapter({
         "b1-figure-8-row-theorem",
         // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
         "b1-torus-knot-rows-theorem",
+        "b1-torus-knot-rows-theorem-table-data",
         // B1 at additional hyperbolic-knot rows (Borromean, Whitehead).
         "b1-hyperbolic-rows-theorem",
         // Canonical B1 current-status synthesis (rounds 1-11).
@@ -80,6 +81,7 @@ export default chapter({
       label: "sec:named-surreals-singular",
       blocks: [
         "surreal-blowup-calculus",
+        "surreal-blowup-calculus-table-data",
         "bigbang-heatdeath",
       ],
     },

@@ -52,14 +52,7 @@ $w_\lambda = s_\lambda / H_q(\lambda) = 0$ *in* $\mathbb{Q}(q)$. $\square$
 the Wenzl Markov-trace contributions to* $\mathrm{tr}_M(T_w(D))$
 *split by partition height as:*
 
-| height | # partitions | contribution at $q_0$ |
-|---:|---:|---:|
-| 1 | 1 (= $(6)$) | +0.092319 |
-| 2 | 3 (= $(5,1), (4,2), (3,3)$) | +0.266726 |
-| 3 | 3 | −0.022608 |
-| 4 | 2 | +0.000177 |
-| 5 | 1 | +0.000198 |
-| 6 | 1 | +0.000008 |
+See [Table](#tbl:schur-weyl-vanishing-table-data).
 
 *Heights* $> 2$ *contribute negligibly under the Wenzl normalisation
 because* $w_\lambda = 0$ *exactly when height* $> 2$, *and the
