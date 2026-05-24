@@ -677,7 +677,7 @@ const WITNESS_WRITE_RE = /["']\S*\.witness\.json["']/;
 // WitnessBuilder.save invocation. Pure consumers (json.load,
 // open(..., "r")) carry the string but don't produce a witness.
 const WITNESS_WRITE_INTENT_RE =
-  /\bjson\.dump\b|\.write_text\(|\.write\(|WitnessBuilder\b|builder\.save\(/;
+  /\bjson\.dump\b|\.write_text\(|\.write_bytes\(|\.write\(|\bopen\s*\([^)]*['"][wax][b+]*['"]|WitnessBuilder\b|builder\.save\(/;
 const WITNESS_BUILDER_IMPORT_RE =
   /from\s+witness_base\s+import[^\n]*\bWitnessBuilder\b|import\s+witness_base\b/;
 const HARDCODED_PI_RE = /\bpi\s*=\s*3\.14\d*/;
