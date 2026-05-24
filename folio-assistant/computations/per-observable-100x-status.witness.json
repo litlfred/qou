@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T02:44:44.740643+00:00",
-  "commitSha": "06dfcb64d37c2461cb5da650a224ab9e7d14895f",
+  "computedAt": "2026-05-24T03:11:32.606444+00:00",
+  "commitSha": "ab60115acbebcf0d675c0bb5f7268af81ac1e823",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "e15fa5273f6d",
+  "scriptHash": "d757612eddd8",
   "scriptCommitSha": "bd5b885883b24aab8ae89db5439974cc2982b27d",
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
@@ -85,16 +85,16 @@
       {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
-        "pred_MeV": "0.782333414043",
+        "pred_MeV": "0.782333414494",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "5.168",
+        "err_ppb": "5.744",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "0.6628",
+        "miss_factor": "0.7367",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
-        "source_witness": "q-beta-operator-valued-N3.witness.json (N=4 categorical, c_3 = -2, c_4 = c_3·b⁴ per precision-ladder.md)",
+        "source_witness": "q-beta-operator-valued-N3.witness.json (N=5 categorical, c_5 = c_3²·3 + b per precision-ladder.md mixing pattern)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)"
       },
       {
