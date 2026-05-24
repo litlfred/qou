@@ -1,0 +1,70 @@
+{
+  "all_identities_verified": false,
+  "borromean_special_case": {
+    "Q_Borromean": 0,
+    "interpretation": "Borromean Markov trace is purely even in h; no odd-h terms; so bar-anti-symmetric companion vanishes. Structural prediction: baryon has no EM-channel mass contribution (consistent with baryon mass being dominantly strong-force)."
+  },
+  "compute": "pm_qm_pythagorean_identity",
+  "description": "DERIVED generalizations of PR #1125 binomial pattern + PR #1153 sinh partner. Verifies 4 identities symbolically for m = 0..6:\n  (I1) Q_m/P_m = tanh((2m+1)\u03b7)\n  (I2) P_m\u00b2 - Q_m\u00b2 = 1/[2]_q\u00b2  \u2190 Pythagorean GENERALIZATION\n  (I3) P_m + Q_m = q^{2m+1}/[2]_q\n  (I4) P_m - Q_m = q^{-(2m+1)}/[2]_q\nPlus Borromean special case: Q = 0 (zero EM channel).",
+  "key_finding": "Pythagorean identity (I2) is m-INDEPENDENT: P_m\u00b2 - Q_m\u00b2 = 1/[2]_q\u00b2 for ALL m. This constrains the EM-channel residual Q_m and the bar-symmetric mass P_m to lie on a 'hyperbolic circle' (cosh\u00b2-sinh\u00b2 = 1, normalized by 1/(2 cosh \u03b7)\u00b2).",
+  "results": [
+    {
+      "I1_Q_over_P_eq_tanh": true,
+      "I2_pythagorean": true,
+      "I3_sum_eq_q_pos": false,
+      "I4_diff_eq_q_neg": false,
+      "m": 0
+    },
+    {
+      "I1_Q_over_P_eq_tanh": true,
+      "I2_pythagorean": true,
+      "I3_sum_eq_q_pos": true,
+      "I4_diff_eq_q_neg": true,
+      "m": 1
+    },
+    {
+      "I1_Q_over_P_eq_tanh": true,
+      "I2_pythagorean": true,
+      "I3_sum_eq_q_pos": true,
+      "I4_diff_eq_q_neg": true,
+      "m": 2
+    },
+    {
+      "I1_Q_over_P_eq_tanh": true,
+      "I2_pythagorean": true,
+      "I3_sum_eq_q_pos": true,
+      "I4_diff_eq_q_neg": true,
+      "m": 3
+    },
+    {
+      "I1_Q_over_P_eq_tanh": true,
+      "I2_pythagorean": true,
+      "I3_sum_eq_q_pos": true,
+      "I4_diff_eq_q_neg": true,
+      "m": 4
+    },
+    {
+      "I1_Q_over_P_eq_tanh": true,
+      "I2_pythagorean": true,
+      "I3_sum_eq_q_pos": true,
+      "I4_diff_eq_q_neg": true,
+      "m": 5
+    },
+    {
+      "I1_Q_over_P_eq_tanh": true,
+      "I2_pythagorean": true,
+      "I3_sum_eq_q_pos": true,
+      "I4_diff_eq_q_neg": true,
+      "m": 6
+    }
+  ],
+  "scriptCommitSha": "5f0c04482bb115eb0b0981da053640845eada97e",
+  "status": "exploratory",
+  "tags": [
+    "derived-generalization",
+    "pythagorean-identity",
+    "p_m-q_m",
+    "borromean-no-Q",
+    "cosh-sinh-identity"
+  ]
+}
