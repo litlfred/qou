@@ -1,0 +1,418 @@
+{
+  "compute": "pentagon_to_borromean_h4_probe",
+  "description": "Tests whether the post-\u03c4 Pentagon archimedean refinement (Rogers log\u00b2 correction h\u00b2 \u2192 h\u2074 residual) at a natural Borromean (u, v) specialization gives the empirical h\u2074 = \u22123/4 coefficient of the Borromean Markov-trace closed form. Multiple specializations tested; matches indicate candidates for the categorical Pentagon \u2192 h\u2074 derivation.",
+  "parameters": {
+    "H_0": "0.20855554654411102099666576552221321077768766333243",
+    "Q_0": "1.1097",
+    "dps": 50,
+    "h_expansion_n_samples": 5,
+    "li2_q_n_terms": 80,
+    "precision": "mpfr",
+    "target_h4_borromean": "-0.75"
+  },
+  "scriptCommitSha": "227a113941f1d3cc1f33567cd8f8a52bd83d1ee4",
+  "specializations": [
+    {
+      "absolute_difference": 0.7607093848856132,
+      "alpha": 0.3333333333333333,
+      "beta": 0.3333333333333333,
+      "c4_residual": 0.010709384885613233,
+      "converges": true,
+      "h_expansion": {
+        "c2": -0.020927696327588664,
+        "c4": 0.010709384885613233,
+        "c6": -0.009745452081096827,
+        "classical_log_term": 0.16440195389316542,
+        "samples": [
+          [
+            0.01,
+            -2.092662551500912e-06
+          ],
+          [
+            0.02,
+            -8.369365656385622e-06
+          ],
+          [
+            0.03,
+            -1.8826259193267864e-05
+          ],
+          [
+            0.04,
+            -3.3456938018091294e-05
+          ],
+          [
+            0.05,
+            -5.225245943581564e-05
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.5,
+      "name": "diagonal_1_over_2",
+      "relative_difference_pct": 101.42791798474843,
+      "target_h4_borromean": -0.75,
+      "u": 0.5,
+      "uv": 0.25,
+      "v": 0.5
+    },
+    {
+      "absolute_difference": 0.7517492246859611,
+      "alpha": 0.25,
+      "beta": 0.25,
+      "c4_residual": 0.0017492246859610488,
+      "converges": true,
+      "h_expansion": {
+        "c2": -0.0052321816036254454,
+        "c4": 0.0017492246859610488,
+        "c6": -0.0008556042120341656,
+        "classical_log_term": 0.08276097481015172,
+        "samples": [
+          [
+            0.01,
+            -5.232006690842455e-07
+          ],
+          [
+            0.02,
+            -2.092592820387154e-06
+          ],
+          [
+            0.03,
+            -4.707547194834341e-06
+          ],
+          [
+            0.04,
+            -8.367016055234378e-06
+          ],
+          [
+            0.05,
+            -1.3069534723579866e-05
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.3333333333333333,
+      "name": "diagonal_1_over_3",
+      "relative_difference_pct": 100.23322995812813,
+      "target_h4_borromean": -0.75,
+      "u": 0.3333333333333333,
+      "uv": 0.1111111111111111,
+      "v": 0.3333333333333333
+    },
+    {
+      "absolute_difference": 0.7606346782587315,
+      "alpha": 0.33303257402281256,
+      "beta": 0.33303257402281256,
+      "c4_residual": 0.010634678258731507,
+      "converges": true,
+      "h_expansion": {
+        "c2": -0.020824156589923926,
+        "c4": 0.010634678258731507,
+        "c6": -0.009649298025486558,
+        "classical_log_term": 0.16403639760671565,
+        "samples": [
+          [
+            0.01,
+            -2.082309324666491e-06
+          ],
+          [
+            0.02,
+            -8.327961708183075e-06
+          ],
+          [
+            0.03,
+            -1.8733133871697753e-05
+          ],
+          [
+            0.04,
+            -3.3291465292920306e-05
+          ],
+          [
+            0.05,
+            -5.199407550566882e-05
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.49932359670321197,
+      "name": "markov_z_diagonal",
+      "relative_difference_pct": 101.4179571011642,
+      "target_h4_borromean": -0.75,
+      "u": 0.49932359670321197,
+      "uv": 0.24932405422463186,
+      "v": 0.49932359670321197
+    },
+    {
+      "absolute_difference": 0.750002057853311,
+      "alpha": 0.04168242172186975,
+      "beta": 0.04168242172186975,
+      "c4_residual": 2.0578533110196723e-06,
+      "converges": true,
+      "h_expansion": {
+        "c2": -1.0316763387127508e-05,
+        "c4": 2.0578533110196723e-06,
+        "c6": -4.6699479715388165e-07,
+        "classical_log_term": 0.0018127204262846982,
+        "samples": [
+          [
+            0.01,
+            -1.0316557606666882e-09
+          ],
+          [
+            0.02,
+            -4.126376128231653e-09
+          ],
+          [
+            0.03,
+            -9.28342052764213e-09
+          ],
+          [
+            0.04,
+            -1.650155522775179e-08
+          ],
+          [
+            0.05,
+            -2.5779054181416418e-08
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.04349541599431286,
+      "name": "h_squared",
+      "relative_difference_pct": 100.00027438044147,
+      "target_h4_borromean": -0.75,
+      "u": 0.04349541599431286,
+      "uv": 0.0018918512125183269,
+      "v": 0.04349541599431286
+    },
+    {
+      "absolute_difference": 6.376434295204739,
+      "alpha": 0.47400104280229416,
+      "beta": 0.47400104280229416,
+      "c4_residual": 5.626434295204739,
+      "converges": true,
+      "h_expansion": {
+        "c2": -0.48908381590070665,
+        "c4": 5.626434295204739,
+        "c6": -473.8705639754645,
+        "classical_log_term": 0.4127497745886451,
+        "samples": [
+          [
+            0.01,
+            -4.923159924272589e-05
+          ],
+          [
+            0.02,
+            -0.00019477798935999335
+          ],
+          [
+            0.03,
+            -0.00043581374935715094
+          ],
+          [
+            0.04,
+            -0.0007701495848204549
+          ],
+          [
+            0.05,
+            -0.0011949349617132957
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.901144453455889,
+      "name": "substrate_q_inv",
+      "relative_difference_pct": 850.1912393606318,
+      "target_h4_borromean": -0.75,
+      "u": 0.901144453455889,
+      "uv": 0.8120613259943129,
+      "v": 0.901144453455889
+    },
+    {
+      "absolute_difference": 0.7500002488024669,
+      "alpha": 0.021284812118430467,
+      "beta": 0.021284812118430467,
+      "c4_residual": 2.488024668336228e-07,
+      "converges": true,
+      "h_expansion": {
+        "c2": -1.2870844643292852e-06,
+        "c4": 2.488024668336228e-07,
+        "c6": -5.401535332509401e-08,
+        "classical_log_term": 0.0004628780237784008,
+        "samples": [
+          [
+            0.01,
+            -1.2870595846444893e-10
+          ],
+          [
+            0.02,
+            -5.147939807964686e-10
+          ],
+          [
+            0.03,
+            -1.1581745272721724e-09
+          ],
+          [
+            0.04,
+            -2.0586984298600904e-09
+          ],
+          [
+            0.05,
+            -3.2161569893951616e-09
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.02174770799715643,
+      "name": "half_h_squared",
+      "relative_difference_pct": 100.00003317366225,
+      "target_h4_borromean": -0.75,
+      "u": 0.02174770799715643,
+      "uv": 0.0004729628031295817,
+      "v": 0.02174770799715643
+    },
+    {
+      "absolute_difference": 0.7500275003896457,
+      "alpha": 0.09090909090909091,
+      "beta": 0.09090909090909091,
+      "c4_residual": 2.7500389645736755e-05,
+      "converges": true,
+      "h_expansion": {
+        "c2": -0.0001265492394484241,
+        "c4": 2.7500389645736755e-05,
+        "c6": -7.065853248611838e-06,
+        "classical_log_term": 0.009084030374332735,
+        "samples": [
+          [
+            0.01,
+            -1.2654648948377872e-08
+          ],
+          [
+            0.02,
+            -5.061529616965614e-08
+          ],
+          [
+            0.03,
+            -1.1387204533842972e-07
+          ],
+          [
+            0.04,
+            -2.024084110619631e-07
+          ],
+          [
+            0.05,
+            -3.162013315896915e-07
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.1,
+      "name": "small_uniform_0.1",
+      "relative_difference_pct": 100.00366671861943,
+      "target_h4_borromean": -0.75,
+      "u": 0.1,
+      "uv": 0.01,
+      "v": 0.1
+    },
+    {
+      "absolute_difference": 0.7502686796285026,
+      "alpha": 0.16666666666666666,
+      "beta": 0.16666666666666666,
+      "c4_residual": 0.00026867962850267435,
+      "converges": true,
+      "h_expansion": {
+        "c2": -0.0010455076358090321,
+        "c4": 0.00026867962850267435,
+        "c6": -8.86354665969975e-05,
+        "classical_log_term": 0.033241150071771225,
+        "samples": [
+          [
+            0.01,
+            -1.0454807687995376e-07
+          ],
+          [
+            0.02,
+            -4.1816007126332086e-07
+          ],
+          [
+            0.03,
+            -9.407393063343056e-07
+          ],
+          [
+            0.04,
+            -1.6721247605007981e-06
+          ],
+          [
+            0.05,
+            -2.6120912267728745e-06
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.2,
+      "name": "small_uniform_0.2",
+      "relative_difference_pct": 100.03582395046702,
+      "target_h4_borromean": -0.75,
+      "u": 0.2,
+      "uv": 0.04,
+      "v": 0.2
+    },
+    {
+      "absolute_difference": 0.7506987143820261,
+      "alpha": 0.4882083586688526,
+      "beta": 0.02226059034211042,
+      "c4_residual": 0.0006987143820260241,
+      "converges": true,
+      "h_expansion": {
+        "c2": -0.0012001620335923514,
+        "c4": 0.0006987143820260241,
+        "c6": -0.0007807825505763173,
+        "classical_log_term": 0.015079450819544588,
+        "samples": [
+          [
+            0.01,
+            -1.2000921728147238e-07
+          ],
+          [
+            0.02,
+            -4.799530694289065e-07
+          ],
+          [
+            0.03,
+            -1.0795804403492639e-06
+          ],
+          [
+            0.04,
+            -1.918473743204027e-06
+          ],
+          [
+            0.05,
+            -2.9960503187895257e-06
+          ]
+        ]
+      },
+      "matches_borromean_target_within_1pct": false,
+      "max_arg_abs": 0.49932359670321197,
+      "name": "asymmetric_z_h2",
+      "relative_difference_pct": 100.09316191760347,
+      "target_h4_borromean": -0.75,
+      "u": 0.49932359670321197,
+      "uv": 0.02171828755438271,
+      "v": 0.04349541599431286
+    }
+  ],
+  "status": "exploratory",
+  "summary": {
+    "best_match_name": "half_h_squared",
+    "interpretation": "T2 status: partial. Pentagon residual h\u2074 extracted empirically at multiple specializations. If a clean Borromean specialization matches \u22123/4, T2 is computationally complete (Lean formalization queued). If not, the categorical Pentagon \u2192 h\u2074 derivation requires the explicit Borromean q-shuffle lifting, which is itself an open structural step.",
+    "n_converging": 9,
+    "n_matches_within_1pct": 0,
+    "n_specializations_tested": 9
+  },
+  "tags": [
+    "pentagon-archimedean",
+    "q-rogers",
+    "h4-coefficient",
+    "borromean",
+    "li2-q"
+  ]
+}
