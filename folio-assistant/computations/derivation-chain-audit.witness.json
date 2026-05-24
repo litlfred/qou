@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T06:29:48.507878+00:00",
-  "commitSha": "ef944de91c5855fbf17a94379a592bf54e897d9c",
+  "computedAt": "2026-05-24T07:33:45.787507+00:00",
+  "commitSha": "f109549bd43345891aed90bea1a57acc19e9b349",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "60d34fc28faafa9395c037ac62d69ebe8c3575d1",
+  "scriptCommitSha": "342ce62e42540ac00e235ff1da6fc2cef0b1ca24",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2476,9 +2476,6 @@
         "m-p-borromean-verification-50dps.witness.json",
         "m-p-m-e-li2q.witness.json",
         "m2-codata-vs-cos-q-beta.witness.json",
-        "m3-full-chain-n4-mass-table.witness.json",
-        "m4-magic-shell-correction-mass-table.witness.json",
-        "m5-categorical-coulomb-mass-table.witness.json",
         "magic-shell-empirical-instantiation.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-peel-atomic-tr-m.witness.json",
