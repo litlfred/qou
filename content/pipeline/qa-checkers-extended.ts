@@ -333,7 +333,10 @@ export function checkComputePropHasProbe(
   // :val[] directives or computation: fields) still need probes.
   if (leanPath && existsSync(resolve(REPO_ROOT, leanPath))) {
     const lean = readFileSync(resolve(REPO_ROOT, leanPath), "utf-8");
-    if (!lean.includes("sorry")) {
+    // Strip Lean single-line comments before checking for sorry —
+    // `-- Ref: ... sorry` is a bibliographic citation, not a proof gap.
+    const leanCode = lean.split("\n").map((l) => l.split("--")[0]).join("\n");
+    if (!leanCode.includes("sorry")) {
       return { result: "pass", hits: [] };
     }
   }
@@ -446,7 +449,8 @@ export function checkComputePropHasConsumer(
   // proofs are formally verified — no compute consumer needed.
   if (leanPath && existsSync(resolve(REPO_ROOT, leanPath))) {
     const lean = readFileSync(resolve(REPO_ROOT, leanPath), "utf-8");
-    if (!lean.includes("sorry")) {
+    const leanCode2 = lean.split("\n").map((l) => l.split("--")[0]).join("\n");
+    if (!leanCode2.includes("sorry")) {
       return { result: "pass", hits: [] };
     }
   }
