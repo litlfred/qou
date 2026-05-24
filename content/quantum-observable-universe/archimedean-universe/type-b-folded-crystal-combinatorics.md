@@ -19,15 +19,6 @@ $$
 $(r, \mathrm{col})$ replaced by $(\mathrm{col}, r)$). Self-dual
 partitions $\lambda = \lambda^T$ have content sum zero.*
 
-> **Status: theorem (unconditional).** This is the combinatorial
-> primitive underlying the Type-B folding shortcut from
-> CLAUDE.md §7b: *"Fold the $\mathfrak{sl}_n$ Cartan datum into a
-> Type B datum; the resulting Kashiwara graph is a symmetric
-> crystal, and its GS normal forms are bar-involution
-> ($q \mapsto q^{-1}$) invariant by construction."* The proof is
-> direct integer arithmetic and is sorry-free in the Lean file
-> [`type-b-folded-crystal-combinatorics.lean`](type-b-folded-crystal-combinatorics.lean).
-
 ## Lean structure
 
 See [Table](#tbl:type-b-folded-crystal-combinatorics-table-data).

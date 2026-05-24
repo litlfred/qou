@@ -34,4 +34,11 @@ export default proposition({
     ref: "qou:QOU.Archimedean.crystal_basis_reduction",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body:
+        "**Structural reduction (sorry-free conditional).** This proposition does *not* close the four open problems. It reduces three of them — chirality, Term 7, z-Habiro — to finite-graph computations on Kashiwara crystals already documented in the repository. Each reduction is sorry-free conditional on the upstream Brundan-Kleshchev / Lecouvey conjectures; the residual open content is the explicit crystal-graph computation per problem.",
+    },
+  ],
 });
