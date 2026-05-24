@@ -1,9 +1,10 @@
 name: pyhecke-native wheels
 
 # Build pyhecke_native wheels for Linux/macOS × Python 3.10–3.12
-# using cibuildwheel.  On push to main, also publish to GitHub Releases
-# (PyPI publication is opt-in — flip `publish-pypi: true` and add the
-# PYPI_API_TOKEN secret to enable).
+# using cibuildwheel. On push to main, also publish to GitHub Releases
+# (draft). PyPI publication is opt-in via workflow_dispatch
+# (`publish: pypi` or `testpypi`) — uses Trusted Publishers (OIDC),
+# matching the pyhecke-pypi-publish.yml pattern (Tier-1 item 1b).
 #
 # Manual trigger: gh workflow run "pyhecke-native wheels"
 # Auto-trigger:   push to main that touches tools/pyhecke-native/
@@ -12,10 +13,15 @@ name: pyhecke-native wheels
 on:
   workflow_dispatch:
     inputs:
-      publish-pypi:
-        description: 'Publish to PyPI (requires PYPI_API_TOKEN secret)'
+      publish:
+        description: 'Publish target: none (build only), testpypi (dry-run), or pypi (production).'
         required: false
-        default: 'false'
+        default: 'none'
+        type: choice
+        options:
+          - 'none'
+          - 'testpypi'
+          - 'pypi'
   push:
     branches: [main]
     paths:
@@ -108,21 +114,48 @@ jobs:
           draft: true  # human review before publishing release
           prerelease: true
 
-  publish_pypi:
-    name: Publish to PyPI (manual / gated)
+  publish_testpypi:
+    name: Publish wheels to TestPyPI (dry-run)
     needs: build_wheels
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish-pypi == 'true'
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish == 'testpypi'
     runs-on: ubuntu-latest
-    environment: pypi  # requires PYPI_API_TOKEN secret in `pypi` env
+    permissions:
+      id-token: write  # required for Trusted Publishers (OIDC)
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/project/pyhecke-native/
     steps:
       - uses: actions/download-artifact@v4
         with:
           path: wheelhouse
           merge-multiple: true
 
-      - name: Publish wheels to PyPI
+      - name: Upload wheels to TestPyPI via Trusted Publishers (OIDC)
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
+          repository-url: https://test.pypi.org/legacy/
           packages-dir: wheelhouse
-          # PYPI_API_TOKEN bound from the `pypi` GitHub Environment
-          # (configure at Settings → Environments → pypi).
+          skip-existing: true  # lets repeated dry-runs overwrite
+
+  publish_pypi:
+    name: Publish wheels to PyPI (production)
+    needs: build_wheels
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish == 'pypi'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # required for Trusted Publishers (OIDC)
+    environment:
+      name: pypi
+      url: https://pypi.org/project/pyhecke-native/
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: wheelhouse
+          merge-multiple: true
+
+      - name: Upload wheels to PyPI via Trusted Publishers (OIDC)
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # repository-url defaults to https://upload.pypi.org/legacy/
+          packages-dir: wheelhouse
+          skip-existing: false  # production: refuse duplicate-version re-uploads
