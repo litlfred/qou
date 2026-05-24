@@ -51,6 +51,18 @@ from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
 from q_parameter import Q as q0, HA as h_q  # canonical aliases per CLAUDE.md §7
 from witness_base import WitnessBuilder  # noqa: E402
+# AME 2020 binding-energy comparison targets + proton mass (validation-only,
+# NOT calibration inputs — per CLAUDE.md §"Canonical derivation chain" the
+# 3 calibrations are CAL-1 m_e, CAL-2 m_µ/m_e, CAL-3 Q_β; these AME values
+# are used ONLY for the err = pred - AME_B_* comparison in the __main__
+# print loop below). Added via PR #1105 (codata_constants AME extension).
+from codata_constants import (
+    M_P_MEV_VALIDATION,
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 
 def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
@@ -285,11 +297,17 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
 
 if __name__ == "__main__":
+    # AME 2020 binding-energy comparison targets imported from the
+    # central codata_constants registry (validation-only; not CAL inputs).
+    # Previously hardcoded inline: (2.22452, 8.481821, 7.71804, 28.295674);
+    # the tritium value was a typo (correct AME 2020 = 8.481798). Now
+    # loaded from `ame-2020-binding-energies.witness.json` via the
+    # AME_B_*_MEV_VALIDATION constants (PR #1105).
     ATOMS = [
-        ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
+        ("D",    1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
+        ("T",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
+        ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
+        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
     ]
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
@@ -312,7 +330,9 @@ if __name__ == "__main__":
             continue
         tr_a = complex(r["tr_M_atom"].replace("(", "").replace(")", ""))
         tr_f = complex(r["tr_M_free"].replace("(", "").replace(")", ""))
-        M_total = A * 938.272
+        # Proton mass from codata_constants registry (CODATA 2022, full
+        # precision); was hardcoded inline as 938.272.
+        M_total = A * float(M_P_MEV_VALIDATION)
         dm = abs(r["B_MeV"] - B_AME) / M_total * 100
         print(f"  {name:>6} {A:>3} {3*A:>3} {B_AME:>8.3f} "
               f"{abs(tr_a):>12.6e} {abs(tr_f):>12.6e} "
