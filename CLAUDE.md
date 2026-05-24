@@ -981,6 +981,16 @@ permitted for defined terms. See
 
 ### 4d. Author notes vs. scholarly prose — `authorNotes` field (STRICT)
 
+> **Implementation tracking note.** The `authorNotes` schema field,
+> the `WITH_AUTHOR_NOTES=1` render flag, and the `one-voice-audit`
+> Category H "Banner-in-prose" rule described below are introduced
+> by **PR #1098** (banner-to-authorNotes migration). This §4d
+> document landed via PR #1105 alongside it. If the referenced infra
+> isn't yet on `main` (e.g., `AuthorNote` interface missing from
+> `folio-assistant/schemas/types.ts`), wait for PR #1098 to merge
+> before authoring against this convention. Once both PRs are on
+> main, this note can be removed in a follow-up.
+
 Author-tracking notes (status, caveats, refined-framing comments,
 deprecation pointers) belong in the **`authorNotes`** metadata field
 on the block's `.ts` manifest — NOT in the scholarly prose of the
@@ -1015,7 +1025,7 @@ appendix at the end of each block. Useful for working drafts.
 | `> **Status: theorem (sorry-free)...**` | **Migrate** to `authorNotes: [{ kind: "status", body }]` |
 | `> **Caveat (over-permissive pentagon)...**` | **Migrate** to `authorNotes: [{ kind: "caveat", body }]` |
 | `> **Refined-framing note (added when promoting...)**` | **Migrate** to `authorNotes: [{ kind: "refined-framing", body }]` |
-| `> **Status (May 2026):** ...` (dated) | **Migrate** with `date: "2026-05"` |
+| `> **Status (May 2026):** ...` (dated) | **Migrate** with ISO date e.g. `date: "2026-05-24"` (full YYYY-MM-DD preferred per `AuthorNote.date` schema doc) |
 | `> **Status: DEPRECATED — superseded by ...**` | **Migrate** to `authorNotes: [{ kind: "deprecated", body, see: "..." }]` |
 | `> **Theorem (conditional on [conj:X]).**` | **KEEP IN PROSE** — §3b-cond structural banner, part of the theorem statement, not an author note. |
 | `**Note:** <technical clarification of scope/applicability>` | **KEEP IN PROSE** if it's scholarly content (a real mathematical caveat about applicability); **MIGRATE** if it's author-tracking. |
