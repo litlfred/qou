@@ -780,6 +780,54 @@ export const references: CSLData[] = [
     DOI: "10.2307/1971403",
   }),
 
+  // ── Birman and Lin 1993 ───────────────────────────────────────
+  ref({
+    id: "birmanlin1993",
+    type: "article-journal",
+    title: "Knot polynomials and Vassiliev's invariants",
+    author: [
+      { family: "Birman", given: "Joan S." },
+      { family: "Lin", given: "Xiao-Song" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[1993]] },
+    volume: "111",
+    issue: "2",
+    page: "225-270",
+    DOI: "10.1007/BF01231296",
+  }),
+
+  // ── Joyce 1982 ─────────────────────────────────────────────────
+  ref({
+    id: "joyce1982",
+    type: "article-journal",
+    title: "A classifying invariant of knots, the knot quandle",
+    author: [
+      { family: "Joyce", given: "David" },
+    ],
+    "container-title": "Journal of Pure and Applied Algebra",
+    issued: { "date-parts": [[1982]] },
+    volume: "23",
+    issue: "1",
+    page: "37-65",
+    DOI: "10.1016/0022-4049(82)90077-9",
+  }),
+
+  // ── Matveev 1982 ───────────────────────────────────────────────
+  ref({
+    id: "matveev1982",
+    type: "article-journal",
+    title: "Distributive groupoids in knot theory",
+    author: [
+      { family: "Matveev", given: "S. V." },
+    ],
+    "container-title": "Matematicheskie Zametki",
+    issued: { "date-parts": [[1982]] },
+    volume: "31",
+    issue: "2",
+    page: "277-282",
+  }),
+
   // ── Leitner 2026 (this manuscript) ────────────────────────────
   ref({
     id: "leitner2026",

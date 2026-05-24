@@ -461,7 +461,23 @@ def crossing_coeffs(ti, tj):
 
 
 def nuclear_braid_character(Z, N, sigmas, dim, n_gens):
-    """Compute χ_λ(nuclear braid) for a partition with given sigmas.
+    """Compute χ_λ(INTER-nucleon braid) for a partition with given sigmas.
+
+    **IMPORTANT**: This function computes only the INTER-nucleon
+    crossings (pairs of nucleons crossing each other). For A=1
+    (single nucleon), there are no inter-nucleon crossings, so this
+    returns dim(V_λ) — the trace of the identity matrix.
+
+    The INTRA-nucleon crossings (quark-level structure within a
+    single nucleon, including averaged crossings I = σ − (h/2)·1
+    that encode quark flavour) are computed by the PIPELINE path:
+      atom_braid_word_3A → canonical_braid_crossings →
+      light_isotope_sweep.tr_M_at_q0
+
+    For the FULL character (intra + inter), use the pipeline path.
+    This function is a building block for A ≥ 2 computations where
+    the inter-nucleon crossings are multiplied AFTER the
+    intra-nucleon ones.
 
     The nuclear braid for A nucleons has crossings between all pairs.
     Each crossing at generator g with coefficients (c, d) gives
