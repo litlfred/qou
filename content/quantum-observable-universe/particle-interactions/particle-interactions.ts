@@ -193,6 +193,7 @@ export default chapter({
         "cpt-orbit-closure-density",
         "bar-involution-invariance",
         "soft-confinement-at-q0",
+        "soft-confinement-at-q0-table-data",
       ],
     }),
 

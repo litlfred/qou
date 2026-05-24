@@ -31,14 +31,7 @@ LP is solved via [`solve_operator_selection_lp`](../../folio-assistant/computati
 the active set $A$ is read off the dual vector $y_\lambda^*$, and
 the seminormal pole order of $T_\beta$ is computed independently.
 
-| compound                  | $n$ | $\ell(\beta)$ | $\mathrm{pole}(\beta)$ | $\lambda^\star$ | $\alpha_{\mathrm{shift}}(I)$ | $\Delta$ | $\lvert A \rvert / n!$ | conf.  | max $\in$ A | gap   |
-|---------------------------|----:|--------------:|-----------------------:|-----------------|-----------------------------:|---------:|-----------------------:|:------:|:-------:|------:|
-| `n3_id_cyc1_id`           | 3   | 2             | 2                      | (1,1,1)         | 2                            | 0        | 2/6                    | ✓      | ✓       | 0     |
-| `n3_s1_cyc1_s1`           | 3   | 4             | 4                      | (1,1,1)         | 2                            | 2        | 2/6                    | ✓      | ✓       | 0     |
-| `n3_s2_cyc2_s1`           | 3   | 6             | 6                      | (1,1,1)         | 4                            | 2        | 2/6                    | ✓      | ✓       | 0     |
-| `n4_id_cyc1_id`           | 4   | 3             | 3                      | (1,1,1,1)       | 3                            | 0        | 4/24                   | ✓      | ✓       | 0     |
-| `n4_s1_cyc1_s2`           | 4   | 5             | 5                      | (1,1,1,1)       | 3                            | 2        | 4/24                   | ✓      | ✓       | 0     |
-| `n4_s1s2_cyc1_s3`         | 4   | 6             | 6                      | (1,1,1,1)       | 3                            | 3        | 4/24                   | ✓      | ✓       | 0     |
+See [Table](#tbl:confinement-nf-structure-forcing-table-data).
 
 **Result:**
 - Confinement holds in 6/6 compounds (active set size $\leq n/(n-1)! \cdot n!$).
