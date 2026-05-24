@@ -1280,6 +1280,7 @@ export default chapter({
         "six-term-per-derivation-weights",
         "six-term-per-derivation-weights-table1-data",
         "six-term-per-derivation-weights-table2-data",
+        "six-term-per-derivation-weights-table3-data",
         "shell-correction-term-seven",
         "crystal-isospin-degeneracy",
         "crystal-isospin-degeneracy-table-data",
