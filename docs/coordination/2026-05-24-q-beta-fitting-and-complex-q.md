@@ -122,6 +122,25 @@ Per owner directive ("aggressive removal. update coord docs. rederive mass ratio
 - Structural derivation of the (3/2)·(1/ℏ_q²) factor from operator-level formula
 - OR explicit acknowledgement that framework's mass formula IS Skein (Vol/ℏ_q²) with SUPERSEDED ρ_q openly carried
 
+## 2026-05-25 evening sweep (post T6 closure) — new siblings + 3 coord posts
+
+**T6 muon side CLOSED** this cycle:
+- Lean: `three_halves_factor_eq_q_brackets` proves `(3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q` (`three-halves-structural-factor.lean`)
+- `conj:lepton-tower-h-n-plus-1-branching` content block: categorical conjecture `ξ_m = d_q((m+1,1))·[2]_q/[m+2]_q·(1/ℏ_q²)` matching muon to 0.034% CODATA
+- Tau case falsified for simple extension (predicts ξ_3 ≈ 161.7 vs required ~4968)
+
+**Three new siblings classified + coord intent posted**:
+
+| PR | Topic | Overlap | Coord comment |
+|---|---|---|---|
+| **#1250** (m_τ knot prediction) | Cohomological knot hierarchy test for tau | HIGH — independent tau falsification at +1.33% confirms PR #1127's T6 tau falsification at 30× | [posted](https://github.com/litlfred/qou/pull/1250#issuecomment-4531694642) — mutual cross-check + extensions mapping |
+| **#1251** (H_3-vs-H_n hardcode infra audit) | pyhecke-native Rust ABI H_3 lock | HIGH — same wall as T6 tau (needs H_5 embedding); my `per_generator_V_hat_general` is the Python-level workaround for what they identify as Layer B fix | [posted](https://github.com/litlfred/qou/pull/1251#issuecomment-4531695582) — complementary fixes |
+| **#1252** (Option E Kashiwara crystal Δ_λ) | Kazhdan-Lusztig classical limit for Δ_λ(K) | MEDIUM — provides Option (C) categorical interpretation for my muon ξ_2 = [3]_q·[2]_q/[4]_q factor (d_q((3,1)) = S_4 std rep) | [posted](https://github.com/litlfred/qou/pull/1252#issuecomment-4531696668) — Kazhdan-Lusztig route may close PR #1127's "categorical derivation" open work |
+
+**Owner action this cycle**: reversed the 2026-05-08 declination of substrate-q_0 derivation (now re-opened as in-scope research per PR #1249). PR #1127's `prop:q-zero-complex-extension` content block is now upstream-relevant to this re-opened research direction.
+
+**No escalations**: all sibling findings mutually reinforcing; no inconsistent framings.
+
 ## Anti-patterns avoided (skill §11 review)
 
 - ✗ Did not "split the difference" on the bar-involution reconciliation — explicitly updated the Path D audit to acknowledge P_avg/P_skew supersedes generic modulus projection.
