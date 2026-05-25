@@ -49,6 +49,6 @@ matrix algebra of [tm-interactions](#tm-interactions).  The global
 $\Sigma_4$-admissible interaction is a finite product of these
 seven) is the content of *interaction completeness*; the explicit
 proof tracks the embeddability bound on $\Sigma_4$ from
-[Chapter](#chap:archimedean-universe) §[force-knot-identification](#rem:force-knot-identification)
+[Chapter](#chap:brings-surface) §[force-knot-identification](#rem:force-knot-identification)
 and is left to the formalisation pass.  The seven operators are
 the alphabet; closure is the grammar.

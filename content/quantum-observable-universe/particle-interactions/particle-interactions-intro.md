@@ -21,7 +21,7 @@ The derivations are symbolic in the substrate parameter $q$; witness
 evaluations at $q_0$ provide numerical verification against
 experimental data.  The chapter separates the *how* of particle
 interactions from the *what* of particle definitions
-([Chapter 9](#chap:archimedean-universe)) and the *observed*
+([Chapter 9](#chap:brings-surface)) and the *observed*
 predictions ([Chapter 11](#chap:observations)).  Molecular
 extensions of this machinery are developed in
 [Chapter 12](#chap:molecular-construction).

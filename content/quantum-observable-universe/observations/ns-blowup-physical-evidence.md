@@ -75,7 +75,7 @@ carry topological defects as **scars of substrate reversion**:
   period.
 - **Quadrupole / octupole anomalies** matching the $\chi = -6$
   topology of Bring's curve
-  ([Descartes universe](#chap:archimedean-universe)).
+  ([Descartes universe](#chap:brings-surface)).
 - **Cross-correlation with $q$-torsion data** already recorded in
   [CMB $q$-torsion](#rem:cmb-q-torsion).
 

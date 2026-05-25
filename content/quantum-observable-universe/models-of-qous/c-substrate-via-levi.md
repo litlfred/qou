@@ -18,4 +18,4 @@ deep-quantum regime.  All downstream formulas ($\hbar_q$, commutators,
 Yang--Mills) are algebraic in $q$, so the formula $1 + x$ may equally be
 replaced by $\exp(x)$ without affecting the theory; the algebraic form is
 preferred because it is meaningful over every base ring $R$.
-Non-archimedean analogues appear in [Chapter](#chap:archimedean-universe).
+Non-archimedean analogues appear in [Chapter](#chap:brings-surface).

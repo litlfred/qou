@@ -74,22 +74,23 @@ export default paper({
       dir: "braids-and-knots",
       partTitle: "Structural Mechanics",
     }),                                                       // Braids, knots, Hecke, mass machinery (further split per remaining Phase 4 chunks)
-    chapterRef({ dir: "climax-volume-mass" }),                 // [NEW Ch 6 — Phase 4 chunk 1] q-Hyperbolic, Vol, Möbius/crossing energy, exceptional divisor, Reeb bundle — 41 blocks moved from braids-and-knots
-    chapterRef({ dir: "archimedean-universe" }),                // Bring's surface, fundamental particles (to be split into Bring's deep + Predicted spectra per Phase 5)
+    chapterRef({ dir: "climax-volume-mass" }),                 // [NEW Ch 6 — Phase 4] q-Hyperbolic, Vol, tangle energies, vertex factorisation, Kashaev — climax of Part II's first half
+    chapterRef({ dir: "brings-surface" }),                     // [NEW Ch 7 — Phase 5] Bring's surface (deep): χ = −6, S_5/A_5 action, cohomological defect — split from archimedean-universe
     chapterRef({ dir: "statistics-symmetrisation" }),          // [NEW Ch 8 — Phase 6 scaffold] Pauli, spin-statistics, fermion/boson derivation
-    chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
-    chapterRef({ dir: "mass-theory" }),                        // [NEW Ch 10 — Phase 4 chunk 2] Mass — Theory (light): Wedderburn statement, Frobenius pairing, transfer matrix, categorical mass foundations, Hecke χ closed-forms — 90 blocks moved from braids-and-knots
-    chapterRef({ dir: "mass-application" }),                   // [NEW Ch 11 — Phase 4 chunk 3] Mass — Application (heavy): Hoefsmit construction, Wenzl, Markov-peel, GS reductions, φ_q convergence — 73 blocks moved from braids-and-knots
+    chapterRef({ dir: "particle-interactions" }),              // Ch 9 Particles: GB, LP, nuclear structure, SDP-as-thimble + skein/hadron/atom-shell content migrated from braids-and-knots
+    chapterRef({ dir: "mass-theory" }),                        // [NEW Ch 10 — Phase 4] Mass — Theory (light): Wedderburn, Frobenius pairing, transfer matrix, categorical mass foundations
+    chapterRef({ dir: "mass-application" }),                   // [NEW Ch 11 — Phase 4] Mass — Application (heavy): Hoefsmit construction, Wenzl, Markov-peel, GS reductions, LP/SDP, φ_q convergence
     chapterRef({ dir: "gravity-spacetime" }),                  // [NEW Ch 12 — Phase 6 scaffold] Gravity emergence: contact geometry + geodesic Madelung
 
     // ── Part III: Physical Realization ────────────────────────────────
     // Predictions, comparisons to CODATA, and extension to atomic /
     // molecular / organic chemistry. New Part introduced 2026-05-25 per
-    // chapter-restructure plan (was nested inside Part II).
+    // chapter-restructure plan.
     chapterRef({
-      dir: "observations",
+      dir: "predicted-spectra",
       partTitle: "Physical Realization",
-    }),                                                       // Physical observations / CODATA
+    }),                                                       // [NEW Ch 13 — Phase 5] Predicted spectra: fundamental fermions, mesons/nucleons, atomic shells, EM coupling — split from archimedean-universe
+    chapterRef({ dir: "observations" }),                       // Ch 14 Physical observations / CODATA
     chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂ → benzene
     chapterRef({ dir: "organic-chemistry" }),                  // Organic chemistry (covalent / Hopf-ring)
 
