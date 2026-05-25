@@ -79,6 +79,7 @@ export default paper({
     chapterRef({ dir: "statistics-symmetrisation" }),          // [NEW Ch 8 — Phase 6 scaffold] Pauli, spin-statistics, fermion/boson derivation
     chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
     chapterRef({ dir: "mass-theory" }),                        // [NEW Ch 10 — Phase 4 chunk 2] Mass — Theory (light): Wedderburn statement, Frobenius pairing, transfer matrix, categorical mass foundations, Hecke χ closed-forms — 90 blocks moved from braids-and-knots
+    chapterRef({ dir: "mass-application" }),                   // [NEW Ch 11 — Phase 4 chunk 3] Mass — Application (heavy): Hoefsmit construction, Wenzl, Markov-peel, GS reductions, φ_q convergence — 73 blocks moved from braids-and-knots
     chapterRef({ dir: "gravity-spacetime" }),                  // [NEW Ch 12 — Phase 6 scaffold] Gravity emergence: contact geometry + geodesic Madelung
 
     // ── Part III: Physical Realization ────────────────────────────────
