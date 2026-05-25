@@ -159,4 +159,77 @@ weight: y_λ(1) = 1/[n]_1! = 1/n! (since q^c|_{q=1} = 1). -/
 lemma qPow_at_one (c : ℤ) : (1 : ℝ) ^ c = 1 := by
   rw [one_zpow]
 
+/-! ## Small q-integer identities -/
+
+/-- `[0]_q = 0`. -/
+theorem qInt_zero (q : ℝ) (h_neq : q - q⁻¹ ≠ 0) :
+    qInt q 0 = 0 := by
+  unfold qInt
+  simp
+
+/-- `[1]_q = 1`. -/
+theorem qInt_one (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+    qInt q 1 = 1 := by
+  unfold qInt
+  field_simp
+  ring
+
+/-- **q-integer anti-symmetry**: `[-n]_q = -[n]_q`. -/
+theorem qInt_neg (q : ℝ) (n : ℤ) :
+    qInt q (-n) = -qInt q n := by
+  unfold qInt
+  rw [neg_neg]
+  ring
+
+/-! ## qFactorial small values -/
+
+/-- `[0]_q! = 1`. -/
+theorem qFactorial_zero (q : ℝ) :
+    qFactorial q 0 = 1 := rfl
+
+/-- `[1]_q! = 1`. -/
+theorem qFactorial_one (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+    qFactorial q 1 = 1 := by
+  unfold qFactorial
+  rw [qInt_one q hq h_neq]
+  ring
+
+/-! ## Concrete value: [2]_q = q + q⁻¹
+
+This is the simplest non-trivial q-integer identity.  Its square
+`[2]_q² = (q + q⁻¹)² = q² + 2 + q⁻²` is the Markov-trace
+normalisation factor used in
+[`BorromeanMarkovTrace.lean`](BorromeanMarkovTrace.lean) — proving
+this identity narrows the unproven surface of that file too.
+
+The identity `[2]_q = q + q⁻¹` follows from the difference-of-squares
+factorisation
+`q² - q⁻² = (q - q⁻¹)(q + q⁻¹)`. -/
+
+/-- **`[2]_q = q + q⁻¹`** — the simplest non-trivial q-integer identity.
+
+    Proof: `(q² − q⁻²) / (q − q⁻¹) = (q − q⁻¹)(q + q⁻¹) / (q − q⁻¹)
+    = q + q⁻¹` by factoring the numerator as a difference of squares.
+
+    Requires `q ≠ 0` (for q⁻¹ well-defined) and `q − q⁻¹ ≠ 0` (for
+    the q-integer denominator non-zero — equivalent to `q ≠ ±1` at
+    the substrate range `q > 1`). -/
+theorem qInt_two_eq_q_plus_q_inv (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    qInt q 2 = q + q⁻¹ := by
+  unfold qInt
+  field_simp
+  ring
+
+/-- **Corollary: `[2]_q² = q² + 2 + q⁻²`** — the Kauffman–Jones
+    Markov-trace normalisation, matching the convention used in
+    `BorromeanMarkovTrace.lean` (where `tr_M(β_Bor) = V(q²)/[2]_q²`).
+
+    This is precisely the normalisation that gives the proved
+    `trM_borromean h = (4 + h² − 3h⁴ − h⁶)/(h² + 4)` closed form. -/
+theorem qInt_two_squared (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    (qInt q 2) ^ 2 = (q + q⁻¹) ^ 2 := by
+  rw [qInt_two_eq_q_plus_q_inv q hq h_neq]
+
 end QOU.BraidsAndKnots
