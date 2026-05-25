@@ -112,14 +112,50 @@ X(K)(Q-bar) ∋ ρ_DF                              MOSTOW-PRASAD POINT
 X(K)(C) ∋ ι(ρ_DF) ⇝ q_0 ∈ R                    OBSERVED SUBSTRATE
 ```
 
-## §5. Char-0 assumption — physical observables are algebraic
+## §5. Work over $\mathbb{Z}$ — all characteristics, all universes
 
-**Profound observation from the author:** If we assume our universe is char 0 (no observed Frobenius failure at any energy scale), then:
+**Author refinement (2026-05-25, post first draft):** *"I want to work over $\mathbb{Z}$ so we can do char p too."*
 
-1. The Hecke algebra $H_n(q)$ makes sense over **any commutative char-0 ring**
-2. Physical observables can in principle be **algebraic numbers**, not just transcendental
-3. The substrate $q_0$ is **an algebraic number** (specifically in $\mathbb{Q}(\zeta_6)$ or similar)
-4. **"Different universes" = different Galois embeddings** $\iota: \overline{\mathbb{Q}} \hookrightarrow \mathbb{C}$, all equally valid algebraically
+The cleanest framing is to make the framework **universal in characteristic**: state everything over $\mathbb{Z}$ (or $\mathbb{Z}[q^{\pm 1}]$ for q-deformed pieces), so any specific characteristic (char 0 = our universe; char p = other "universes") is recovered by base-change.
+
+1. The Hecke algebra $H_n(q)$ makes sense over **any commutative ring** $R$ where the quantum integer $[2]_q = q + q^{-1}$ is well-defined. This includes char-$p$ for $p$ not dividing the relevant denominators.
+2. Physical observables, stated as algebraic identities over $\mathbb{Z}[q^{\pm 1}]$, can in principle be **specialized to any characteristic** that admits the substrate. In our universe (presumed char 0), they specialize to algebraic numbers over $\mathbb{Q}$ via the archimedean embedding.
+3. The substrate $q_0$ lives in the **universal base** $\mathbb{Z}[q^{\pm 1}]$ as a formal variable $q$. Specializing to our universe (char 0, real archimedean) gives $q_0 \in \mathbb{Q}(\zeta_6) \subset \mathbb{R}$ (or possibly $\mathbb{C}$ per §10 below).
+4. **"Different universes" = different (characteristic, archimedean place) pairs**:
+   - $(\mathrm{char} = 0, \iota_{\mathbb{R}})$ — observed universe, real archimedean
+   - $(\mathrm{char} = 0, \iota_{\mathbb{C}})$ — hypothetical complex-q universe (per PR [#1127](https://github.com/litlfred/qou/pull/1127))
+   - $(\mathrm{char} = p, ?)$ — char-$p$ universes; observables live in $\overline{\mathbb{F}_p}$
+5. **No assumption of $\mathbb{R}$ or $\mathbb{C}$** in the structural derivation. Archimedean evaluation is a per-universe specialization, not a universal axiom.
+
+### §5a. Physical observables ARE over $\mathbb{R}$ (or categorically derived from $\mathbb{R}$)
+
+**Author follow-up correction (2026-05-25):** *"really m_p/m_e is should be over $\mathbb{R}$ or some categorically derived object from $\mathbb{R}$"*
+
+The distinction matters:
+
+- **Framework algebra**: char-independent over $\mathbb{Z}$ / $\mathbb{Z}[q^{\pm 1}]$. The structural identities (Markov-trace closed form, AJ recurrence, Wedderburn decomposition) hold universally.
+- **Our universe's observables**: $m_p / m_e$ is a RATIO of two $\mathbb{R}$-valued energies (each in MeV, an archimedean unit anchored to Planck's constant). The ratio lives in $\mathbb{R}$ — or in a **categorically-derived-from-$\mathbb{R}$** object like:
+  - $\mathbb{R}^{\times}$ (multiplicative group of positive reals — natural for energy ratios)
+  - $\mathbb{R} \otimes_{\mathbb{Z}} \mathbb{Z}[q^{\pm 1}]|_{q = q_0}$ (the framework's substrate specialization)
+  - The image of a $\mathrm{Hom}$-functor $\mathrm{Hom}(\text{categorical object}, \mathbb{R})$
+
+The framework's structural derivation produces an algebraic identity:
+
+$$m_p / m_e = f(q_0, \text{Wedderburn-data}) \;\in\; (\text{algebraic-over-}\mathbb{Z}[q^{\pm 1}])$$
+
+Specializing to our universe via the archimedean place gives:
+
+$$m_p / m_e \;\in\; \mathbb{R} \;\text{ (or }\mathbb{R}\text{-derived)}$$
+
+### §5b. The char-$p$ "other universes" caveat
+
+The framework's char-independence is a STRUCTURAL fact about the algebra, NOT a physical claim about other universes. Within OUR universe, observables are real (char 0, real archimedean). The char-$p$ specialization is a mathematical tool for:
+
+- Reduction mod $p$ verification of integer identities
+- Galois-theoretic structural arguments
+- Demonstrating the framework's universal-coefficient form
+
+It does NOT claim physically realizable char-$p$ universes exist.
 
 ### Mass-predictions as algebraic identities
 
@@ -277,7 +313,35 @@ Building on the §7 list, with AJ-specific steps:
 
 Step 3 is the **highest-value cheap test**: I already have $J_1$ and $J_2$ computable algebraically; verifying they satisfy the AJ recurrence symbolically would CONFIRM the algebraic statement crosses the wall correctly for 𝓑_3.
 
-## §10. Honest verdict
+## §10. q_0 may NOT be real — algebraic framing accommodates complex
+
+**Author correction during this audit:** *"don't assume q_0 real. see claude/gifted-feynman-U7ckD for example"*
+
+PR [#1127](https://github.com/litlfred/qou/pull/1127) (branch `claude/gifted-feynman-U7ckD`) introduces `prop:q-zero-complex-extension`: the pre-Archimedean substrate is **polymorphic in the base ring**, and $R = \mathbb{C}$ with $|q_0| > 1$ is admissible. Hermitian * vs Lusztig bar coincide IFF $q_0 \in \mathbb{R}$; for $q_0 \in \mathbb{C}$ with $\mathrm{Im}(q_0) \ne 0$ they're distinct (`prop:lusztig-vs-hermitian-bar`).
+
+**This audit's §1, §2 statements need correction:**
+
+- §1 said "Numerical sanity check: $q_0 + q_0^{-1} \approx 2.01086$" assuming $q_0 \in \mathbb{R}$. If $q_0 = a + bi \in \mathbb{C}$, the trace identity becomes $q_0 + \bar{q_0}^{-1} = \mathrm{tr}(\rho_{\mathrm{DF}}(\mu))$ only if Hermitian * is the operative involution. Under bar (Lusztig) involution, it's $q_0 + q_0^{-1}$ regardless.
+- §2 table row "$q_0 \in \mathbb{R}$ (the substrate value)" should be **"$q_0 \in$ (a specific archimedean place of $\overline{\mathbb{Q}}$); could be real OR complex depending on the framing"**.
+- §4: "$q_0 \in \mathbb{Q}(\zeta_6)$ — algebraic of degree ≤ 2 over $\mathbb{Q}$" → CORRECT but ambiguous: $\mathbb{Q}(\zeta_6) = \mathbb{Q}(i\sqrt{3})$ has 4 elements forming 2 complex-conjugate pairs. The "real value 1.1097" is ONE archimedean place; the conjugate complex pair is ALSO admissible.
+
+**The algebraic minimal-archimedean formulation handles this cleanly:**
+
+$$q_0 \in X(\mathcal{B}_3)(\overline{\mathbb{Q}}) \xrightarrow{\iota} q_0^{(\iota)} \in \mathbb{C}$$
+
+For different embeddings $\iota$, we get different complex values. Some are real (current framework choice via $\iota_\infty$); some are genuinely complex. **Both are mathematically admissible as substrates**; the framework currently selects the real one via CAL-2 matching, but the categorical structure doesn't require this.
+
+PR [#1127](https://github.com/litlfred/qou/pull/1127) §"Open structural questions" notes that the Im(q_0) ≠ 0 case is "not the dominant 2.89% gap mechanism" — but the polymorphism IS structurally admissible.
+
+**Updated framing of CAL-2:**
+
+> CAL-2 selects the **specific Galois orbit + archimedean embedding** $(\sigma \cdot q_0, \iota)$ whose archimedean image $\iota(\sigma \cdot q_0) \in \mathbb{C}$ matches the empirical $m_\mu / m_e$ ratio. The current framework's choice happens to be the real embedding $\iota_\infty: \mathbb{Q}(\zeta_6) \to \mathbb{R}$ via the value $\sigma \cdot q_0 \approx 1.1097$.
+
+**Cross-references:**
+- PR [#1127](https://github.com/litlfred/qou/pull/1127) `prop:q-zero-complex-extension` + `prop:lusztig-vs-hermitian-bar`
+- PR #1127 audit [`docs/audits/2026-05-24-q-zero-reality-audit.md`](2026-05-24-q-zero-reality-audit.md) — q_0 ∈ ℝ is empirical, not theorem
+
+## §11. Honest verdict
 
 This is a **potentially major architectural reframing** of QOU. The framework currently does mass-predictions as numerical evaluations in ℝ via mpmath; the algebraic-over-$\overline{\mathbb{Q}}$ formulation would replace these with exact symbolic identities.
 
