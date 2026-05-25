@@ -24,7 +24,8 @@
 //!
 //! See [RUST_INTEGRATION.md](../../RUST_INTEGRATION.md) §"Phase R5".
 
-use crate::wedderburn_psd::evaluate_all_blocks;
+use crate::gb_nf_reducer::BraidLetter;
+use crate::wedderburn_psd::{evaluate_all_blocks, evaluate_all_blocks_letters_capped};
 
 /// Result of the PSD-cone verifier.
 #[derive(Debug, Clone)]
@@ -137,6 +138,153 @@ pub fn solve_alpha_psd(n: usize, braid_word: &[i32], q: f64) -> SdpVerifierRepor
         alpha_star,
         solver_status: format!(
             "bisection converged in {} iters; gap (1 − α*) = {:.4e}",
+            iters,
+            1.0 - alpha_star
+        ),
+        n_blocks: parts.len(),
+        block_dims,
+        iterations: iters,
+        min_eigenvalue_at_alpha_star: min_at_star,
+    }
+}
+
+/// Minimum eigenvalue across all Wedderburn-block PSD cones at
+/// blending parameter α for a `BraidLetter` braid word.
+fn min_eig_at_alpha_letters(
+    n: usize,
+    braid_word: &[BraidLetter],
+    q: f64,
+    alpha: f64,
+    max_dim: usize,
+) -> f64 {
+    if n < 2 {
+        return 1.0;
+    }
+    let blocks = evaluate_all_blocks_letters_capped(n, braid_word, q, max_dim);
+    let mut global_min = f64::INFINITY;
+    for b in &blocks {
+        // Skip placeholder blocks (no eigvals — d_λ > max_dim)
+        if b.matrix_at_q_0_sym_eigvals.is_empty() {
+            continue;
+        }
+        let block_min = b
+            .matrix_at_q_0_sym_eigvals
+            .iter()
+            .map(|&e| alpha * e + (1.0 - alpha))
+            .fold(f64::INFINITY, f64::min);
+        if block_min < global_min {
+            global_min = block_min;
+        }
+    }
+    global_min
+}
+
+/// **BraidLetter variant of `solve_alpha_psd`** (R5.7 extension).
+///
+/// Evaluates the per-partition Wedderburn-block eigenvalues **ONCE**
+/// (via the expensive [`evaluate_all_blocks_letters_capped`] call),
+/// then bisects on α using only the cached eigvals. This is critical
+/// for ⁴He at H_12: the naive recompute-per-bisection-iter approach
+/// would require ~64 evaluations × ~30s each = ~32 minutes; with
+/// caching it's ~30s total.
+///
+/// Skips blocks with `d_λ > max_dim`.
+pub fn solve_alpha_psd_letters(
+    n: usize,
+    braid_word: &[BraidLetter],
+    q: f64,
+    max_dim: usize,
+) -> SdpVerifierReport {
+    let parts = crate::seminormal::partitions_of(n);
+    let block_dims: Vec<usize> = parts
+        .iter()
+        .map(|sh| {
+            let sg = crate::seminormal::seminormal_matrices(sh, q);
+            if sg.is_empty() {
+                1
+            } else {
+                sg[0].len()
+            }
+        })
+        .collect();
+
+    // EVALUATE ONCE — get all per-block eigenvalues for the braid.
+    let blocks = evaluate_all_blocks_letters_capped(n, braid_word, q, max_dim);
+
+    // Collect the per-block eigenvalue vectors (skip placeholder blocks
+    // where d_λ > max_dim → empty eigvals).
+    let eigval_vecs: Vec<Vec<f64>> = blocks
+        .iter()
+        .filter(|b| !b.matrix_at_q_0_sym_eigvals.is_empty())
+        .map(|b| b.matrix_at_q_0_sym_eigvals.clone())
+        .collect();
+
+    // Helper: min_eig at α from cached eigvals (O(sum of d_λ) per call).
+    let min_eig_at_alpha = |alpha: f64| -> f64 {
+        let mut global_min = f64::INFINITY;
+        for evs in &eigval_vecs {
+            for &e in evs {
+                let v = alpha * e + (1.0 - alpha);
+                if v < global_min {
+                    global_min = v;
+                }
+            }
+        }
+        global_min
+    };
+
+    let min_at_one = min_eig_at_alpha(1.0);
+    if min_at_one >= -1e-9 {
+        return SdpVerifierReport {
+            n,
+            q0: q,
+            alpha_star: 1.0,
+            solver_status: "feasible at α = 1 (BraidLetter, cached eigvals)".to_string(),
+            n_blocks: parts.len(),
+            block_dims,
+            iterations: 1,
+            min_eigenvalue_at_alpha_star: min_at_one,
+        };
+    }
+    let min_at_zero = min_eig_at_alpha(0.0);
+    if min_at_zero < -1e-9 {
+        return SdpVerifierReport {
+            n,
+            q0: q,
+            alpha_star: 0.0,
+            solver_status: format!(
+                "BUG: identity not PSD? min_eig at α=0 = {:.4e}",
+                min_at_zero
+            ),
+            n_blocks: parts.len(),
+            block_dims,
+            iterations: 1,
+            min_eigenvalue_at_alpha_star: min_at_zero,
+        };
+    }
+    let mut lo = 0.0f64;
+    let mut hi = 1.0f64;
+    let mut iters = 0u32;
+    let max_iters = 64u32;
+    while hi - lo > 1e-12 && iters < max_iters {
+        let mid = 0.5 * (lo + hi);
+        let m = min_eig_at_alpha(mid);
+        if m >= -1e-12 {
+            lo = mid;
+        } else {
+            hi = mid;
+        }
+        iters += 1;
+    }
+    let alpha_star = lo;
+    let min_at_star = min_eig_at_alpha(alpha_star);
+    SdpVerifierReport {
+        n,
+        q0: q,
+        alpha_star,
+        solver_status: format!(
+            "bisection cached (BraidLetter, max_dim={}) {} iters; gap = {:.4e}",
+            max_dim,
             iters,
             1.0 - alpha_star
         ),

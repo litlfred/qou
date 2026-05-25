@@ -17,7 +17,7 @@ use clap::Parser;
 use hecke_engine::cross_level_embedding::{verify_edge, TowerEdgeSpec};
 use hecke_engine::gb_nf_reducer::{BraidLetter, HeckeElement};
 use hecke_engine::joint_tower_sdp_certificate as cert;
-use hecke_engine::sdp_verifier::solve_alpha_psd;
+use hecke_engine::sdp_verifier::{solve_alpha_psd, solve_alpha_psd_letters};
 use hecke_engine::wedderburn_psd::{
     evaluate_all_blocks, evaluate_all_blocks_letters_capped,
 };
@@ -445,15 +445,15 @@ fn main() {
             if n < 2 {
                 continue;
             }
-            // PSD α-solver expects i32 letters; skip extended (σ_avg)
-            // braids here — they get filtration-only certification
-            // (the substantive ⁴He R5-full content). PSD on extended
-            // braids is R5.7 follow-up.
-            let psd_letters: Vec<i32> = match &entry.braid {
-                BraidRep::Letters(w) => w.clone(),
-                BraidRep::Extended(_) => continue,
+            // PSD α-solver: dispatch on braid representation.
+            // Letters → solve_alpha_psd (existing)
+            // Extended → solve_alpha_psd_letters (R5.7-α extension)
+            let report = match &entry.braid {
+                BraidRep::Letters(w) => solve_alpha_psd(n, w, args.q0),
+                BraidRep::Extended(w) => {
+                    solve_alpha_psd_letters(n, w, args.q0, args.max_dim_psd)
+                }
             };
-            let report = solve_alpha_psd(n, &psd_letters, args.q0);
             println!(
                 "  {}: α* = {:.10}, gap = {:.4e}, min_eig at α* = {:+.4e}, iters = {}",
                 entry.name,
