@@ -178,6 +178,82 @@ substrate quantity, with the bar-pair structure entering at q₀ via
 the realization functor rather than via `q ↔ q⁻¹` averaging of the
 pre-Archimedean form.
 
+## Q-locality dichotomy (session exploration, 2026-05-25 follow-up)
+
+Slope `d(linking_weight)/dq` at q₀ for each candidate form vs the
+target's own q-slope (≈ 40.25 from `m_p · ℏ_q²(q) / (8G · m_e)`):
+
+| Form | slope | ratio to target |
+|---|---:|---:|
+| target itself | 40.25 | 1.00 |
+| Family A (PROVED) | 0.57 | 0.014 |
+| Lean tr_M bridge | −0.20 | −0.005 |
+| Reading-A `5/2−G·h²` | ~0 | ~0 |
+| Sibling Bring+Faddeev | 62.74 | 1.56 |
+| `1/(1−h²·(q²⁵+q⁻²⁵))` (this session) | 140.99 | 3.50 |
+
+The **target's q-slope** (≈ 40) is much faster than the slow-q-varying
+structural forms (Family A, Lean tr_M, Reading-A — all have slope
+< 1, essentially independent of q at q₀). Conversely, the
+**fast-q-varying** forms (sibling 62.7, N=25 form 141.0) overshoot the
+target slope.
+
+**No candidate is both slow-q-varying AND bar-symmetric AND matches
+at q₀**:
+
+- The PROVED slow-q-varying forms (Family A, Lean tr_M) cannot track
+  the target's q-flow even in principle — they're approximately
+  q-invariant.
+- The fast-q-varying forms either fail q-locality (sibling Bring+Faddeev
+  at q = q₀ ± 1% deviates by 1.05% vs target 0.001% rel change; N=25
+  form by 4.2%) or contain bar-asymmetry.
+
+**Interpretation.** Either:
+
+1. The mass formula `m(K) = m_e · Vol(K)/ℏ_q² · linking_weight(q)`
+   needs linking_weight to absorb additional q-dependence beyond a
+   slow-varying polynomial — the `1/ℏ_q²` divergence as q → 1 makes
+   the formula formally degenerate, and a fast-varying linking_weight
+   compensates.
+
+2. The right substrate quantity isn't `linking_weight` directly but
+   the ρ_K factor that combines linking_weight with other structural
+   pieces (per `prop:rho-k-graded-expansion`). ρ_K's q-dependence
+   may need to track ℏ_q²-related fast-flow.
+
+3. The full Archimedean realization functor (`prop:li2q-phiq-bar-
+   symmetrization`) maps a slow-q-varying pre-Archimedean substrate
+   form to a fast-q-varying post-Archimedean (real-valued) form. The
+   apparent q-slope mismatch is the realization-functor jump, not
+   a categorical inconsistency.
+
+Interpretation (3) is consistent with the framework's own
+self-description (see `atom-knot-mass-derivation.md §Post-Archimedean
+interpretation`). The session's finding is: **slow-q-varying
+substrate forms (Family A, Lean tr_M) cannot match the post-functor
+target alone** — the Archimedean realization HAS to contribute
+non-trivial q-flow. This is the categorical content the framework
+calls the `Φ_q`-Archimedean side, NOT the `Li_2^q`-pre-Archimedean
+side.
+
+## Faddeev kernel hypothesis tested
+
+Tested whether `Φ_q(z) = ∏_{k≥1} 1/(1 − q^{-k}·z)` at the
+substrate-natural `z = h·q¹¹` gives a categorical form:
+
+- Full product `Φ_q(h·q¹¹)` at q₀ ≈ **1509.87** — way too big.
+- `Φ_{q⁻¹}(z)` and bar-conjugate `Φ_{q⁻¹}(z̄)` are astronomically small
+  (10⁻⁹⁰¹⁴²) — outside convergence radius.
+- Bar-symmetric pair `exp((log Φ_q(z) + log Φ_{q⁻¹}(z̄))/2)` is
+  effectively zero (asymmetric explosion of one factor).
+- **k=1 leading factor `1/(1−h·q¹⁰)` alone matches to 0.18%** —
+  this is the sibling's main term.
+
+So the Faddeev kernel is NOT the right post-Archimedean form for
+the FULL linking_weight (its product diverges away from the target).
+The k=1 leading factor coincidentally matches near q₀ but its
+q-locality fails (slope 1.56× target).
+
 ## Concrete next step
 
 Per the consolidated findings:
