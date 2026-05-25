@@ -73,7 +73,8 @@ export default paper({
     chapterRef({
       dir: "braids-and-knots",
       partTitle: "Structural Mechanics",
-    }),                                                       // Braids, knots, Hecke, climax, mass machinery (to be split per Phase 4)
+    }),                                                       // Braids, knots, Hecke, mass machinery (further split per remaining Phase 4 chunks)
+    chapterRef({ dir: "climax-volume-mass" }),                 // [NEW Ch 6 — Phase 4 chunk 1] q-Hyperbolic, Vol, Möbius/crossing energy, exceptional divisor, Reeb bundle — 41 blocks moved from braids-and-knots
     chapterRef({ dir: "archimedean-universe" }),                // Bring's surface, fundamental particles (to be split into Bring's deep + Predicted spectra per Phase 5)
     chapterRef({ dir: "statistics-symmetrisation" }),          // [NEW Ch 8 — Phase 6 scaffold] Pauli, spin-statistics, fermion/boson derivation
     chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
