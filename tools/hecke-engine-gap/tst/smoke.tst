@@ -32,4 +32,20 @@ gap> Length(G[1]);
 gap> d := QOU_GramDet(q0);;
 gap> d <> 0.0;
 true
+
+# ── Phase B ──
+gap> chi_id := QOU_ChiLambdaBraid([3], [], q0);;
+gap> AbsoluteValue(chi_id - 1.0) < 1e-12;
+true
+gap> chi_empty := QOU_ChiLambdaBraid([], [[1, 1]], q0);;
+gap> AbsoluteValue(chi_empty - 1.0) < 1e-12;
+true
+gap> QOU_LRCoefficient([2], [1], [1]);
+1
+gap> QOU_LRCoefficient([3], [2], [2]);
+0
+gap> trace_str := QOU_TraceMpfr([[1, 1]], 3, "1.10998", 20);;
+gap> IsString(trace_str) and Length(trace_str) > 0;
+true
+
 gap> STOP_TEST("smoke.tst");
