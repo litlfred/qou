@@ -124,6 +124,32 @@ Per [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/pro
 
 **Predicted α*_⁶Li = 0.01025 (if (3,3,3,3,3,3) is dominant)** — consistent with the trend D 0.193 → T/³He ~0.09 → ⁴He 0.048 → ⁶Li 0.010, showing a steeper-than-1/A scaling of the PSD-cone "compression" needed to admit T_w(Z,N) as quasi-PSD.
 
+## Gap-narrowing probe (4b) — ⁶Li non-rectangular falsification scan
+
+Per [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/probe_4b_li6_non_rectangular_scan.py), scanned 16 non-rectangular ⁶Li partitions via the same Lanczos LinearOperator approach. **NONE beats the rectangular pair's −96.52.**
+
+**Top 5 most-negative (sorted):**
+
+| λ | d_λ | min_eig | shape kind |
+|---|---:|---:|---|
+| **(3, 3, 3, 3, 3, 3)** ← RECT | 87,516 | **−96.52** | A×3 rectangle (= 6 nucleons × 3 strands) |
+| **(6, 6, 6)** ← RECT | 87,516 | **−95.72** | 3×A rectangle |
+| (8, 8, 2) | 136,136 | −88.95 | 3-row, near-rect (1 defect cell) |
+| (2,2,2,2,2,2,2,2,2) ← RECT | 4,862 | −78.70 | 9-row rectangle (different folding) |
+| (10, 8) | 11,934 | −64.65 | 2-row balanced |
+
+**Verdict:** Among scanned shapes, the **(A,A,A) / (3,3,...,3) pair specifically** has the deepest obstruction by a 7.5-unit margin. The hierarchy is:
+
+```
+(A,A,A)-style rectangle  ≫  (8,8,2)-style near-rectangle  >  other balanced
+```
+
+**Other rectangles ((9,9), 9-row (2,...,2)) are LESS deep** — so it's not "any rectangle", specifically the **3-row vs A-row** Schur-Weyl partner of the canonical 3-strand-per-nucleon decomposition.
+
+**Scan coverage:** 16/385 partitions, including the most natural "balanced" non-rectangulars. Uncovered tail: large-d_λ shapes like (5,5,5,3) (d=875k), (4,4,4,3,3) (d=875k), (6,5,4,3) (d=3.7M) — infeasible for Lanczos in <hours. The conjecture **could** still be falsified by an uncovered shape, but no scanned shape with d_λ ≤ 150k beats the rectangle.
+
+**Implication for Gap-narrowing:** The rectangular conjecture is now strongly supported empirically at A=4 AND A=6, with the (A,A,A)-shape uniquely identified. This is a real **categorical fingerprint of the nucleon decomposition** at the Wedderburn level — but per Probe (1), it does NOT close the binding-energy gap directly (the gap lives in trace-dominant low-row partitions; the rectangle has tiny y_λ).
+
 ## Next-probe predictions (updated after probes (3) + (1))
 
 - ~~Probe (1) — project mass on (4,4,4) alone~~ **DONE.** Contributes 0.030% of |tr_M|. PSD-dominance ≠ trace-dominance. Gap lives in trace-dominant low-row partitions.
@@ -143,6 +169,8 @@ Per [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/pro
 - [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/probe_4_li6_rectangular_python.py) — Probe (4): ⁶Li (6,6,6) / (3,3,3,3,3,3) via Lanczos LinearOperator
 - [`probe-4-li6-rectangular-python-targeted.witness.json`](../../folio-assistant/computations/probe-4-li6-rectangular-python-targeted.witness.json) — ⁶Li rectangular-pair min/max eigvals
 - [`probe_4_validate_lanczos_on_he4.py`](../../folio-assistant/computations/probe_4_validate_lanczos_on_he4.py) — validation: Python Lanczos vs Rust dense at (4,4,4)
+- [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/probe_4b_li6_non_rectangular_scan.py) — Probe (4b): 16-shape falsification scan; rectangle holds
+- [`probe-4b-li6-non-rectangular-scan.witness.json`](../../folio-assistant/computations/probe-4b-li6-non-rectangular-scan.witness.json) — per-shape min/max eigvals
 
 ## What this audit does NOT do
 
