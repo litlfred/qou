@@ -15,7 +15,7 @@
 use chrono::Utc;
 use clap::Parser;
 use hecke_engine::cross_level_embedding::{verify_edge, TowerEdgeSpec};
-use hecke_engine::gb_nf_reducer::HeckeElement;
+use hecke_engine::gb_nf_reducer::{BraidLetter, HeckeElement};
 use hecke_engine::joint_tower_sdp_certificate as cert;
 use hecke_engine::sdp_verifier::solve_alpha_psd;
 use hecke_engine::wedderburn_psd::evaluate_all_blocks;
@@ -41,25 +41,72 @@ struct Args {
     no_psd: bool,
 }
 
+/// Braid representation: either a simple integer letter sequence
+/// (legacy registry entries, σ_i^±1 only) or an extended BraidLetter
+/// sequence (atom-canonical: σ_i, σ_i^{-1}, σ_avg).
+#[derive(Clone, Debug)]
+enum BraidRep {
+    Letters(Vec<i32>),
+    Extended(Vec<BraidLetter>),
+}
+
+impl BraidRep {
+    /// Convert to BraidLetter for unified processing.
+    fn to_letters(&self) -> Vec<BraidLetter> {
+        match self {
+            BraidRep::Letters(w) => w
+                .iter()
+                .filter_map(|&i| {
+                    if i > 0 {
+                        Some(BraidLetter::Pos(i as usize))
+                    } else if i < 0 {
+                        Some(BraidLetter::Inv((-i) as usize))
+                    } else {
+                        None
+                    }
+                })
+                .collect(),
+            BraidRep::Extended(w) => w.clone(),
+        }
+    }
+
+    /// Serialize as i32-style for backward-compatible witness output.
+    /// Pos(i) → +i, Inv(i) → -i, Avg(i) → +1000+i (sentinel).
+    fn to_i32_for_serialize(&self) -> Vec<i32> {
+        match self {
+            BraidRep::Letters(w) => w.clone(),
+            BraidRep::Extended(w) => w
+                .iter()
+                .map(|&l| match l {
+                    BraidLetter::Pos(i) => i as i32,
+                    BraidLetter::Inv(i) => -(i as i32),
+                    BraidLetter::Avg(i) => 1000 + (i as i32),
+                })
+                .collect(),
+        }
+    }
+}
+
 #[derive(Clone, Debug)]
 struct RegistryEntry {
     name: &'static str,
     atomic_n_0: usize,
     native_strand_count: usize,
-    braid_word: Vec<i32>,
+    braid: BraidRep,
     rho_factor: u32,
     methodology: cert::Methodology,
     b_ame_mev: Option<f64>,
 }
 
 fn registry() -> Vec<RegistryEntry> {
+    use BraidLetter::*;
     vec![
         // ─── ℓ = 0  fundamental ────────────────────────────────
         RegistryEntry {
             name: "quark",
             atomic_n_0: 1,
             native_strand_count: 1,
-            braid_word: vec![],
+            braid: BraidRep::Letters(vec![]),
             rho_factor: 0,
             methodology: cert::Methodology::PrincipledGbNf,
             b_ame_mev: None,
@@ -68,7 +115,7 @@ fn registry() -> Vec<RegistryEntry> {
             name: "electron",
             atomic_n_0: 2,
             native_strand_count: 2,
-            braid_word: vec![1, 1, 1],
+            braid: BraidRep::Letters(vec![1, 1, 1]),
             rho_factor: 1,
             methodology: cert::Methodology::PrincipledDerivation,
             b_ame_mev: Some(0.51099895),
@@ -78,7 +125,7 @@ fn registry() -> Vec<RegistryEntry> {
             name: "proton",
             atomic_n_0: 3,
             native_strand_count: 3,
-            braid_word: vec![1, -2, 1, -2, 1, -2],
+            braid: BraidRep::Letters(vec![1, -2, 1, -2, 1, -2]),
             rho_factor: 1,
             methodology: cert::Methodology::PrincipledDerivation,
             b_ame_mev: Some(938.272),
@@ -87,7 +134,7 @@ fn registry() -> Vec<RegistryEntry> {
             name: "neutron",
             atomic_n_0: 3,
             native_strand_count: 3,
-            braid_word: vec![1, -2, 1, -2, 1, -2],
+            braid: BraidRep::Letters(vec![1, -2, 1, -2, 1, -2]),
             rho_factor: 1,
             methodology: cert::Methodology::PrincipledDerivation,
             b_ame_mev: Some(939.565),
@@ -97,7 +144,7 @@ fn registry() -> Vec<RegistryEntry> {
             name: "deuteron-2H",
             atomic_n_0: 6,
             native_strand_count: 3, // 6_2 in B_3
-            braid_word: vec![1, -2, 1, 1, 1, -2],
+            braid: BraidRep::Letters(vec![1, -2, 1, 1, 1, -2]),
             rho_factor: 1,
             methodology: cert::Methodology::ManualHistoricalVolumeMatch,
             b_ame_mev: Some(2.2246),
@@ -106,7 +153,9 @@ fn registry() -> Vec<RegistryEntry> {
             name: "tritium-3H",
             atomic_n_0: 9,
             native_strand_count: 5, // 8_11 in B_5
-            braid_word: vec![-1, 2, -3, 2, 1, -3, -3, 4, -3, -2, -3, -4, -3, 2],
+            braid: BraidRep::Letters(vec![
+                -1, 2, -3, 2, 1, -3, -3, 4, -3, -2, -3, -4, -3, 2,
+            ]),
             rho_factor: 2,
             methodology: cert::Methodology::ManualHistoricalVolumeMatch,
             b_ame_mev: Some(8.4818),
@@ -115,10 +164,44 @@ fn registry() -> Vec<RegistryEntry> {
             name: "helium3-3He",
             atomic_n_0: 9,
             native_strand_count: 3, // L6a4 in B_3
-            braid_word: vec![-1, 2, -1, 2, -1, 2],
+            braid: BraidRep::Letters(vec![-1, 2, -1, 2, -1, 2]),
             rho_factor: 2,
             methodology: cert::Methodology::ManualHistoricalVolumeMatch,
             b_ame_mev: Some(7.7180),
+        },
+        // ─── ℓ = 3  helium-4 (canonical atom_braid_word_3A(2,2)) ─
+        //
+        // 47-crossing braid on B_12 from
+        // `folio-assistant/computations/mass_at_3A_proper.py::atom_braid_word_3A(2, 2)`:
+        // 23 positive (σ_k), 9 averaged (σ_avg_k = σ_k − h/2),
+        // 15 negative (σ_k^{-1} = σ_k − h). Native strand count = 12
+        // (atomic n_0 = 3·A = 3·4 = 12).
+        //
+        // This is the FIRST registry entry using BraidRep::Extended
+        // to support σ_avg — without the BraidLetter::Avg infrastructure
+        // (added to gb_nf_reducer.rs alongside this entry), R5-full SDP
+        // certification of ⁴He was blocked because 9 of 47 crossings
+        // (19%) couldn't be represented as σ_k^±1 letters alone.
+        RegistryEntry {
+            name: "helium4-4He",
+            atomic_n_0: 12,
+            native_strand_count: 12, // B_12: σ_1..σ_11
+            braid: BraidRep::Extended(vec![
+                Pos(1), Pos(1), Pos(1), Pos(1), Avg(1), Pos(1), Pos(1),
+                Inv(2), Inv(2), Inv(2), Avg(2),
+                Pos(3),
+                Pos(4), Pos(4), Pos(4), Pos(4), Avg(4), Pos(4), Pos(4),
+                Inv(5), Inv(5), Inv(5), Avg(5),
+                Avg(6),
+                Pos(7), Pos(7), Pos(7), Avg(7), Avg(7), Pos(7), Pos(7),
+                Inv(8), Inv(8), Inv(8), Inv(8),
+                Inv(9),
+                Pos(10), Pos(10), Pos(10), Avg(10), Avg(10), Pos(10), Pos(10),
+                Inv(11), Inv(11), Inv(11), Inv(11),
+            ]),
+            rho_factor: 4,
+            methodology: cert::Methodology::PrincipledDerivation,
+            b_ame_mev: Some(28.2957),
         },
     ]
 }
@@ -129,7 +212,8 @@ fn solve_per_atom(
     do_psd: bool,
 ) -> cert::JointTowerSdpCertificate {
     let n = entry.native_strand_count.max(1);
-    let e = HeckeElement::reduce_braid(n, &entry.braid_word);
+    let letters = entry.braid.to_letters();
+    let e = HeckeElement::reduce_braid_letters(n, &letters);
     let filt = e.filtration_certificate();
     let n_steps = e.jet_log.len() as u64;
     let n_hecke = e
@@ -138,8 +222,19 @@ fn solve_per_atom(
         .filter(|ev| ev.relation == "hecke-quadratic")
         .count() as u64;
 
-    let wedderburn = if do_psd && n >= 2 {
-        evaluate_all_blocks(n, &entry.braid_word, q0)
+    // Wedderburn-block PSD evaluation operates on i32 letters; extended
+    // braids with σ_avg crossings are converted via the conventional
+    // sentinel encoding (+1000 + i for Avg(i)). For now, restrict to
+    // the legacy letter form for PSD — extending evaluate_all_blocks to
+    // BraidLetter is the natural next step (R5.7) but not blocking this
+    // R5-full ⁴He certificate, which produces the FILTRATION cert from
+    // the full 47-crossing weighted braid (the substantive new content).
+    let psd_letters: Vec<i32> = match &entry.braid {
+        BraidRep::Letters(w) => w.clone(),
+        BraidRep::Extended(_) => Vec::new(), // skip PSD on extended braids for now
+    };
+    let wedderburn = if do_psd && n >= 2 && !psd_letters.is_empty() {
+        evaluate_all_blocks(n, &psd_letters, q0)
     } else {
         Vec::new()
     };
@@ -148,7 +243,7 @@ fn solve_per_atom(
         name: entry.name.to_string(),
         atomic_n_0: entry.atomic_n_0,
         native_strand_count: entry.native_strand_count,
-        braid_word: entry.braid_word.clone(),
+        braid_word: entry.braid.to_i32_for_serialize(),
         filtration_certificate: filt,
         jet_log: e.jet_log,
         n_steps,
@@ -217,7 +312,7 @@ fn main() {
             "\n──── {} (atomic n_0 = {}, native B_{}) ────",
             entry.name, entry.atomic_n_0, entry.native_strand_count
         );
-        println!("  braid: {:?}", entry.braid_word);
+        println!("  braid: {:?}", entry.braid);
         let cert = solve_per_atom(entry, args.q0, !args.no_psd);
         println!("  filtration shape: {:?}", cert.filtration_certificate.shape);
         println!(
@@ -274,7 +369,15 @@ fn main() {
             if n < 2 {
                 continue;
             }
-            let report = solve_alpha_psd(n, &entry.braid_word, args.q0);
+            // PSD α-solver expects i32 letters; skip extended (σ_avg)
+            // braids here — they get filtration-only certification
+            // (the substantive ⁴He R5-full content). PSD on extended
+            // braids is R5.7 follow-up.
+            let psd_letters: Vec<i32> = match &entry.braid {
+                BraidRep::Letters(w) => w.clone(),
+                BraidRep::Extended(_) => continue,
+            };
+            let report = solve_alpha_psd(n, &psd_letters, args.q0);
             println!(
                 "  {}: α* = {:.10}, gap = {:.4e}, min_eig at α* = {:+.4e}, iters = {}",
                 entry.name,

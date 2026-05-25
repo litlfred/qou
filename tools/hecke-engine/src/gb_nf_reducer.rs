@@ -220,6 +220,20 @@ pub struct HeckeElement {
     pub step_counter: u64,
 }
 
+/// Symbolic braid letter for the canonical atom-braid alphabet.
+///
+/// Supports the 3 crossing types in `atom_braid_word_3A`:
+/// - `Pos(i)`: positive crossing σ_i
+/// - `Inv(i)`: negative crossing σ_i^{-1} = σ_i − h
+/// - `Avg(i)`: averaged crossing σ_avg_i = (σ_i + σ_i^{-1})/2 = σ_i − h/2
+///   (bar-invariant projection P_avg(σ_i))
+#[derive(Clone, Copy, Debug)]
+pub enum BraidLetter {
+    Pos(usize),
+    Inv(usize),
+    Avg(usize),
+}
+
 impl HeckeElement {
     /// Identity element T_e ∈ H_n(q).
     pub fn identity(n: usize) -> Self {
@@ -347,6 +361,51 @@ impl HeckeElement {
         let one = LaurentQ::one();
         out.add_scaled(&one, &e_minus_h);
         out
+    }
+
+    /// Right multiply by the averaged crossing
+    /// `σ_avg = (σ_i + σ_i^{-1})/2 = σ_i − h/2`.
+    ///
+    /// The averaged crossing is the bar-invariant projection
+    /// `P_avg(σ_i)`. It appears in the canonical atomic-braid recipe
+    /// `atom_braid_word_3A(Z, N)` for the QOU mass-formula at
+    /// `n_0 = 3·A`, where each nucleon's intra-G0 / intra-G1 pattern
+    /// includes σ_avg crossings at specific positions (see
+    /// `folio-assistant/computations/mass_at_3A_proper.py:_PROTON_G0`).
+    ///
+    /// Without this method, the Rust SDP solver couldn't represent
+    /// the canonical ⁴He braid (9 of its 47 crossings are σ_avg);
+    /// this opens R5-full certification at H_12.
+    pub fn right_mul_t_avg(&self, i: usize) -> Self {
+        // x · σ_avg = x · σ_i − (h/2) · x
+        let e_ti = self.right_mul_t(i);
+        let half = LaurentQ::monomial(
+            BigRational::new(1.into(), 2.into()),
+            0,
+        );
+        let neg_h_half = LaurentQ::h_param().neg().mul(&half);
+        let mut out = e_ti;
+        out.add_scaled(&neg_h_half, self);
+        out
+    }
+
+    /// Reduce a symbolic braid letter sequence supporting σ_i, σ_i^{-1},
+    /// AND the averaged crossing σ_avg = (σ_i + σ_i^{-1})/2 = σ_i − h/2.
+    ///
+    /// This is the canonical 3-letter alphabet of `atom_braid_word_3A`
+    /// (intra-nucleon G0/G1 patterns); the σ_avg letters carry the
+    /// bar-invariant content essential for ⁴He's R5-full SDP certificate
+    /// at H_12 (9 of 47 crossings in the canonical ⁴He braid).
+    pub fn reduce_braid_letters(n: usize, word: &[BraidLetter]) -> Self {
+        let mut e = Self::identity(n);
+        for &letter in word {
+            e = match letter {
+                BraidLetter::Pos(i) => e.right_mul_t(i),
+                BraidLetter::Inv(i) => e.right_mul_t_inv(i),
+                BraidLetter::Avg(i) => e.right_mul_t_avg(i),
+            };
+        }
+        e
     }
 
     /// Reduce a braid word [i_1, i_2, ...]: positive = T_i, negative = T_i^{-1}.
