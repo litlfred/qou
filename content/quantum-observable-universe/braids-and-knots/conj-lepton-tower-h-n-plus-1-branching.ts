@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:lepton-tower-h-n-plus-1-branching",
   lean: {
-    ref: "qou:QOU.BraidKnot.LeptonTowerHnPlus1.lepton_xi_branching",
+    ref: "qou:QOU.BraidKnot.LeptonTowerHnPlus1.lepton_xi",
     validation: "not_checked",
   },
   title:
@@ -72,7 +72,7 @@ export default conjecture({
         "m=3 → 2.487363 vs required 2.46776 (0.79 %); m=4 prediction " +
         "→ [7]·[4]/[8] = 3.503110 (no Standard Model lepton at m=4). " +
         "Algebraic cores Lean-proved in `three-halves-structural-factor.lean`: " +
-        "muon [4]_q = (2+h²) · [2]_q + tau [6]_q = [2]_q · [3]_q · (1+h²). " +
+        "muon [4]_q = (2+h²) · [2]_q AND tau [6]_q = [2]_q · [3]_q · (1+h²). " +
         "Empirical foundation at +0.79 %; categorical derivation (why this " +
         "specific q-bracket form arises, and how 10_43's amphichirality + " +
         "hook-length (3,2,1) pattern selects it) remains open work for " +

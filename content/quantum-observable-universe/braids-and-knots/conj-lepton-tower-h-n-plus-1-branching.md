@@ -1,23 +1,40 @@
-**Conjecture (lepton-tower H_{n+1} branching factor).** *Let
-$K_\ell = \sigma_1^{2m+1}$ be the canonical torus-knot braid for a
-lepton at tower-index $m$ (electron $m=1$, muon $m=2$, tau $m=3$).
-Let $n = 2m+1$ be the crossing count. The canonical
-operator-level mass-tower ξ_m correction factor is*
+**Conjecture (lepton-tower closure factor — unifying form, PR #1253).** *Let
+$K_\ell$ be the canonical knot for the lepton at tower-index $m$
+(electron $m=1$ trefoil / muon $m=2$ figure-eight / tau $m=3$
+amphichiral $10_{43}$ candidate). The canonical operator-level
+mass-tower $\xi_m$ correction factor is*
 
 $$
-\boxed{\;\xi_m \;=\; \frac{d_q((n, 1)) \cdot [2]_q}{[n+1]_q} \cdot \frac{1}{\hbar_q^2}\;}
+\boxed{\;\xi_m \;=\; \frac{[2m-1]_q \cdot [m]_q}{[2m]_q} \cdot \frac{1}{\hbar_q^2}\;}
 $$
 
-*where $d_q((n, 1))$ is the q-dimension of the standard
-representation of $S_{n+1}$ via the hook-length formula, and the
-formula couples the lepton's natural $H_2$ braid to the $S_{n+1}$
-standard rep one level up.*
+*where $[n]_q = q^{n-1} + q^{n-3} + \cdots + q^{-(n-1)}$ is the
+symmetric q-integer. The triple $(2m-1, m, 2m)$ is symmetric in
+$h = q - q^{-1}$ — bar-anti-symmetric upper jet, middle index,
+bar-symmetric closing trace.*
 
-> **⚠️ Status — open conjecture (2026-05-25, PR #1127 T6 rest).**
-> Numerical match for muon $m=2$: predicts $\xi_2 = [3]_q \cdot [2]_q / [4]_q \cdot (1/\hbar_q^2)$
-> which agrees with the empirical required factor to 0.034%.
-> Categorical derivation from `prop:per-braid-mass-tower` operator-valued
-> $A^\lambda_{\mu, \nu}$ branching coefficient is open work.
+> **Status — unifying formula (2026-05-25, PR #1253 amphichiral discharge).**
+> Numerical match: muon $m=2$ → $[3]_q \cdot [2]_q / [4]_q$ to +0.001 %;
+> tau $m=3$ → $[5]_q \cdot [3]_q / [6]_q$ to +0.79 % (via $\mathrm{Vol}(10_{43})/\hbar_q^2$);
+> see the **Resolution (PR #1253) — unifying formula** section below for the table.
+> Algebraic cores Lean-proved (`field_simp; ring`, generic `[Field R]`)
+> in [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
+> + [`conj-lepton-tower-h-n-plus-1-branching.lean`](conj-lepton-tower-h-n-plus-1-branching.lean).
+> Categorical derivation (why this specific $h$-graded triple arises
+> from the per-braid mass tower) remains open — see "Resolution" section
+> for the open work plan.
+
+### Earlier framing (superseded by PR #1253 unifying formula)
+
+> **⚠️ SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture
+> $\xi_m = d_q((n,1)) \cdot [2]_q / [n+1]_q$ (with $n = 2m+1$, then
+> revised to $n = m+1$) matched muon but **falsified at tau**
+> ($\xi_3 = [4]_q \cdot [2]_q / [5]_q$ predicted ≈ 1.59 vs required
+> ≈ 2.47, off by 35 %). The PR #1253 amphichiral filter identified
+> the actual closure $\xi_3 = [5]_q \cdot [3]_q / [6]_q$ and the
+> unifying form above. The earlier framing is preserved below for
+> pedagogical trajectory; the "Resolution (PR #1253)" section is
+> the current authoritative statement.
 
 ## Derivation sketch (open)
 
