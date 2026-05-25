@@ -9,6 +9,35 @@ Probe-2 tested a counter-framework hypothesis (Δ_λ atom-independent across D +
 
 This is a categorisation, not a finding — the per-atom analyses (probes 1, 3) were already operating in the canonical formulation; only probe-2's "global" hypothesis was off-framework.
 
+## ⛔ DO NOT pursue global Δ_λ again (anti-pattern gate)
+
+This audit closes the global-Δ_λ ansatz permanently. Any future probe,
+ansatz, audit, or compute that imposes:
+
+- "Δ_λ is the same for D and T and ³He and ⁴He"
+- "Δ_λ depends only on the partition λ, not on the atom K"
+- "Δ_λ is a universal per-partition function"
+
+**will be rejected on review.** Empirical falsification (probe-2,
+max |Δ_λ| = 431.7 ⇒ counter-framework) + categorical mismatch
+(canonical formula has Δ_λ(K) since [`rho-k-h3a-refinement.lean`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.lean) L49-66) together close
+this design space.
+
+Codified in [`docs/coordination/1ppb-compute-tranche-queue.md`](../coordination/1ppb-compute-tranche-queue.md) §Anti-patterns
+item 6.
+
+**The closure problem is**: categorically determine Δ_λ(K) per
+atom. Options:
+
+- **Option E** ([PR #1252](https://github.com/litlfred/qou/pull/1252)) — Δ_λ(K) = Σ_w n^w_λ · ρ_w(K) via
+  Kazhdan–Lusztig multiplicities × canonical-basis trace at
+  crystal vertices.
+- **Path B** (per [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md)) — Borromean tower extension; bypasses Δ_λ gate by
+  re-routing through different categorical machinery.
+
+Both Option E and Path B are K-dependent by construction —
+neither is a global ansatz.
+
 ## Canonical formula (the framework as-written)
 
 From [`rho-k-h3a-refinement.lean`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.lean) lines 49–66 + [`rho-k-h3a-refinement.md`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md):
