@@ -11,8 +11,9 @@ Earlier framing of Track C said the Phase 5q closed form
 `closed_form_tau_M(Z, N, q, tau_p, tau_n)` (in
 [`folio-assistant/computations/closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py))
 "disagrees with the production pipeline by ~21% relative for atoms
-with at least one p-n interface" (per the script's own docstring,
-line 156).
+with at least one p-n interface" — phrasing inherited from the
+script's own docstring on the `"strict_averaged"` pn_convention
+bullet (now reframed per this PR).
 
 Per
 [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json),
@@ -97,11 +98,16 @@ is the gap between production and the mathematically-strict form
    convention (queued research) reconciles this through quark-mass
    inputs. Out of scope for this audit.
 
-## Recommended action
+## Action taken in this PR
 
-Update the misleading docstring in `closed_form_tau_M.py` (the
-"21%" sentence implies the closed form disagrees with production
-when in fact only the alternative convention does).
+Updated the misleading docstring in `closed_form_tau_M.py` (the
+"21%" sentence implied the closed form disagrees with production
+when in fact only the alternative `strict_averaged` convention
+does). The DEFAULT `"chi_lambda_braid"` convention entry now
+explicitly notes Phase 5q validation at 1e-49; the
+`"strict_averaged"` entry now frames the 21% as the
+alternative-convention vs production gap, with a pointer back
+to this audit doc.
 
 ## Cross-references
 
