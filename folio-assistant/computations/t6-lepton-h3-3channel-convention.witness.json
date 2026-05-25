@@ -1,0 +1,57 @@
+{
+  "description": "T6 closure attempt \u2014 H_3 3-channel Wedderburn convention for leptons (lepton Bring-surface structure)",
+  "computation": "t6_lepton_h3_3channel_convention",
+  "audit_only": true,
+  "precision_dps": 50,
+  "context": {
+    "convention_source": "tools/pyhecke/python/pyhecke/constants.py:156 V_HAT_ELECTRON formula",
+    "lepton_bring_surface": "Per owner directive: leptons SHOULD have Bring surface representation. The framework uses H_3 Wedderburn (3 channels: sym + std + alt) for leptons even though their natural braid is in H_2 (single generator). The 3-channel structure is the lepton analog of 3-color-tube Bring weighting for nucleons; here 3 = 3 H_3 irreps = 3 Wedderburn sheets.",
+    "formula": "V\u0302_\u2113 = W_SYM\u00b7\u03c7_(3)(\u03c3^k) + W_STD\u00b7(z\u00b7a_k + b_k) + W_ALT\u00b7\u03c7_(1,1,1)(\u03c3^k); for torus knot \u03c3^k via Lean theorem torus_knot_odd_reduction_exists recursion \u03c3^k = a_k \u03c3 + b_k.",
+    "resolves": "T6 gap (a) V\u0302 convention mismatch \u2014 paper uses H_3 3-channel; mine was H_2 2-channel"
+  },
+  "constants": {
+    "q_0": "1.1099785955541805752806677289528087346650276795181",
+    "h": "0.20906032198987946109993019567019569113603901455859",
+    "z": "0.49932033403359825002067994493580750360052408362741",
+    "W_SYM": "0.16338322733975821192117692094798539423974574557139",
+    "W_STD": "0.66067377234834968736705126038994800133210012345105",
+    "W_ALT": "0.16338322733975821192117692094798539423974574557139"
+  },
+  "V_hats": {
+    "electron \u03c3_1^3 T(2,3)": "0.58639039204235943838246486601457362368215624913296",
+    "muon T(2,5) \u03c3_1^5": "0.83436489171598682955114465768039378705927650127087",
+    "muon T(2,7) \u03c3_1^7": "1.1188063254308307199747444801151153235669994617258",
+    "tau T(2,7) \u03c3_1^7": "1.1188063254308307199747444801151153235669994617258",
+    "tau T(2,9) \u03c3_1^9": "1.4521465525626318124500394160982097385547343224833"
+  },
+  "m_dims_li2q": {
+    "electron \u03c3_1^3 T(2,3)": "0.51768928283115347856784174852715602964795269955805",
+    "muon T(2,5) \u03c3_1^5": "0.70535249485826062331709446167804141123770539763124",
+    "muon T(2,7) \u03c3_1^7": "0.89316333661340233512161986125066518183365683664865",
+    "tau T(2,7) \u03c3_1^7": "0.89316333661340233512161986125066518183365683664865",
+    "tau T(2,9) \u03c3_1^9": "-5.2754218889589679296543613659507819976242585428802e+54"
+  },
+  "ratios_vs_codata": {
+    "muon T(2,5) \u03c3_1^5": {
+      "ratio": "1.3625016361181158255139359116012578818080639088312",
+      "codata": "206.768283",
+      "relative_error_percent": -99.34104901566643
+    },
+    "muon T(2,7) \u03c3_1^7": {
+      "ratio": "1.7252884427679204770211333135000098791551745272825",
+      "codata": "206.768283",
+      "relative_error_percent": -99.16559328261776
+    },
+    "tau T(2,7) \u03c3_1^7": {
+      "ratio": "1.7252884427679204770211333135000098791551745272825",
+      "codata": "3477.23",
+      "relative_error_percent": -99.95038325210676
+    },
+    "tau T(2,9) \u03c3_1^9": {
+      "ratio": "-1.0190324706180113851337064854974556394205956094161e+55",
+      "codata": "3477.23",
+      "relative_error_percent": -2.930586905720966e+53
+    }
+  },
+  "timestamp": "2026-05-25T03:35:59+00:00"
+}
