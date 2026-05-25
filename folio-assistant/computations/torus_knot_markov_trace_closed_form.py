@@ -34,6 +34,11 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpf
 
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+from markov_trace_for_knot import trM_torus_2_k_mpf  # noqa: E402
+
 mp.mp.dps = 50
 
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
@@ -48,21 +53,19 @@ def trM_sigma1_k_H2(k: int, q: mpf) -> mpf:
       λ = (2):   σ_1 acts as q
       λ = (1,1): σ_1 acts as −q⁻¹
 
-    Markov trace (standard normalization):
+    Markov trace (q-Schur Plancherel convention):
       tr_M(σ_1^k) = y_(2) · q^k + y_(1,1) · (-q⁻¹)^k
-
-    with Schur elements
       y_(2)   = q / (q + q⁻¹) = q² / [2]_q²
       y_(1,1) = q⁻¹ / (q + q⁻¹) = 1 / [2]_q²
 
-    (Standard convention; cf. Wenzl 1988, Jones 1987.)
+    Delegates to the common infra `trM_torus_2_k_mpf` (which calls
+    `y_lambda_h2_q_schur_mpf`) — keeps the H_2 closed form in one
+    place. Generic q ⇒ preserves mp.mpf 50-dps precision.
+
+    Cross-checked against `pn.trace_weights_n_q_schur(2, q)` (f64);
+    see `torus_knot_markov_trace_generalized.py` (sibling).
     """
-    qi = mpf(1) / q
-    sq_2_q = (q + qi)  # [2]_q
-    y_2 = q / sq_2_q
-    y_11 = qi / sq_2_q
-    sign = (-1) ** k
-    return y_2 * q ** k + y_11 * sign * qi ** k
+    return trM_torus_2_k_mpf(k, q)
 
 
 def trM_in_h(k: int, q: mpf) -> dict:
