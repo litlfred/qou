@@ -68,7 +68,7 @@ def main() -> int:
     # the full computation (per Copilot PR #1266 review discipline).
     w = WitnessBuilder(
         "atomic-tr-m-helium4-canonical",
-        engine="python+mpmath+pyhecke",
+        engine="python+mpmath",
     )
     w.set_description(
         "Canonical |tr_M(⁴He)| via Phase 5q closed form: "
@@ -95,7 +95,7 @@ def main() -> int:
     # that the Phase 5q witness validates against — matching the closed
     # form's `pn_convention="chi_lambda_braid"` default at machine
     # precision.
-    t0 = time.time()
+    t0 = time.perf_counter()
     print("\n[1/3] Computing tau_p via compute_tau_M_nucleon_H3 (50 dps)...")
     tau_p = compute_tau_M_nucleon_H3("p", q_val, dps=50)
     print(f"      tau_p = {tau_p}")
@@ -103,18 +103,18 @@ def main() -> int:
     print("\n[2/3] Computing tau_n via compute_tau_M_nucleon_H3 (50 dps)...")
     tau_n = compute_tau_M_nucleon_H3("n", q_val, dps=50)
     print(f"      tau_n = {tau_n}")
-    t_h3 = time.time() - t0
+    t_h3 = time.perf_counter() - t0
 
     # Apply the Phase 5q closed form for ⁴He (Z=2, N=2)
     print("\n[3/3] Applying closed form: tr_M(𝓑_⁴He) = "
           "tau_p² · tau_n² · ∏_i f_i(q)")
-    t1 = time.time()
+    t1 = time.perf_counter()
     tau_4he = closed_form_tau_M(
         Z=2, N=2, q=q_val,
         tau_M_proton_H3=tau_p, tau_M_neutron_H3=tau_n,
         pn_convention="chi_lambda_braid",
     )
-    t_closed = time.time() - t1
+    t_closed = time.perf_counter() - t1
 
     # |tr_M| is what downstream binding consumers want
     abs_tau_4he = mp.fabs(tau_4he)
@@ -131,7 +131,8 @@ def main() -> int:
     legacy_witness = HERE / "atomic-tr-m-helium4.witness.json"
     if legacy_witness.exists():
         import json
-        legacy = json.load(open(legacy_witness))
+        with open(legacy_witness, encoding="utf-8") as f:
+            legacy = json.load(f)
         if "data" in legacy:
             for k in ("abs_tr_m", "abs_tr_M_helium4", "trM_atom",
                       "tr_M_value"):
