@@ -5,6 +5,7 @@ deformation of the categorical action: $q = 1$ recovers the classical
 symmetric tensor category, while $q \neq 1$ resolves the action into a
 braided one. The Reeb derivation $\delta_q$ promotes $q$ to a connection
 on the categorical bundle; its curvature is the Yekutieli MI tower.
-Chapters 1--2 develop the axioms and derive the Reeb derivation. Chapter
-4 develops the brane tower (descent, jets, Gröbner--Shirshov filtration)
-that supplies the categorical infrastructure for everything downstream.
+The Quantum Universes and Quantum Observable Universes chapters develop
+the axioms and derive the Reeb derivation. The Brane Tower chapter
+develops descent, jets, and the Gröbner--Shirshov filtration --- the
+categorical infrastructure consumed throughout the paper.

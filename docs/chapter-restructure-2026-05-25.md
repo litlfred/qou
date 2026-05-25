@@ -1,6 +1,10 @@
 # Chapter Restructure — 2026-05-25
 
-**Branch:** `claude/magical-keller-fH4Or`
+**Branch:** `claude/restructure-framing-2026-05-25`
+**Source session branch (instructed via session start):**
+`claude/magical-keller-fH4Or` (in use by a parallel session for
+pyhecke-native work; this PR uses a themed branch name to avoid
+clobbering)
 **Status:** plan locked, migration in progress
 **Cross-link:** [`docs/reorganization-map.md`](reorganization-map.md) for the
 running block-move ledger.
@@ -45,7 +49,7 @@ PART II — STRUCTURAL MECHANICS                        (~1,295 blocks)
   6.  q-Hyp → Vol → Mass · tangle-E · E=m·c_q² [climax]
         (from braids-and-knots §E–F + scattered E=mc_q² blocks)
   7.  Bring's surface (deep)             (from archimedean-universe split A)
-  8.  Statistics & Symmetrization        [NEW]
+  8.  Statistics and Symmetrisation       [NEW]
         Pauli, spin-statistics, S_n irreps, fermion/boson derivation
   9.  Particles + CP + Higgs + Neutrino + charge
         (from braids-and-knots §G + particle-interactions + scattered)

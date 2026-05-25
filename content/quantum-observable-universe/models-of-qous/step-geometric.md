@@ -9,11 +9,12 @@ surface with $\chi = -6$, on which an $S_5$-action exchanges the five
 quark--lepton families --- this volume realises the topological mass of
 the knot.
 
-Chapter 6 derives the volume identity, the tangle-energy decomposition,
-and the mass-endomorphism statement (the climax of the first half of
-the paper). Chapter 7 develops Bring's surface in full depth, including
-the $S_5/A_5$ action, the cohomological defect (which yields the three
-quark colours), and the connection to the Klein quartic.
+The climax chapter (q-Hyperbolic $\to$ Volume $\to$ Mass) derives the
+volume identity, the tangle-energy decomposition, and the mass-
+endomorphism statement (the climax of the first half of the paper).
+The Bring's Surface chapter develops the surface in full depth,
+including the $S_5/A_5$ action, the cohomological defect (which yields
+the three quark colours), and the connection to the Klein quartic.
 
 > _Authoring note (this phase)._ Bring's basic categorical role (genus,
 > $\chi$, $S_5$ action, "canonical archimedean model") will be inlined
