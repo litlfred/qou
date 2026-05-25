@@ -56,7 +56,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
    the five Pentagons above.
 2. Verify numerically at $q_0$ that the DIM master Pentagon's
    restriction to Φ_q matches the Faddeev–Volkov–Kashaev identity.
-3. D17 → ✅ requires substantial Lean infrastructure for the DIM
+3. D17 to closed requires substantial Lean infrastructure for the DIM
    algebra (not currently in Mathlib).
 
 ## Cross-references

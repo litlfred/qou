@@ -30,7 +30,7 @@ $$
   trace of $\sigma_1^{2m+1}$ in the 2-dimensional standard
   representation of $H_3(q)$.*
 
-> **⚠️ T6 status — gap (a) RESOLVED; gap (c) IMPLICATED.** This
+> **T6 status — gap (a) RESOLVED; gap (c) IMPLICATED.** This
 > proposition closes the V̂-convention ambiguity (T6 gap (a)) by
 > documenting the H_3 3-channel formula. Applying the canonical Li_2^q
 > per-braid mass tower to the resulting V̂ values gives lepton mass

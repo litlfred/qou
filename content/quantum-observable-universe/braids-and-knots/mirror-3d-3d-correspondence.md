@@ -45,7 +45,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
    explicitly (Dimofte–Gaiotto–Gukov 2014 provides the construction).
 2. Cross-check the $h^4 = -3/4$ coefficient as a 4-loop contribution
    in $T[\mathcal{B}_3]$ partition function.
-3. D18 → ✅ is a very long horizon — requires significant
+3. D18 to closed is a very long horizon — requires significant
    QFT-side Lean infrastructure (none exists in Mathlib).
 
 ## Cross-references

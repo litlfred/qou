@@ -55,7 +55,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 2. Connect to D22 Type-B folding: for non-simply-laced extensions,
    the Langlands dual becomes a Type B ↔ Type C swap that may
    realise CPT structurally.
-3. D19 → ✅ requires Lean class instance for the Langlands functor
+3. D19 to closed requires Lean class instance for the Langlands functor
    (research-grade; not currently in Mathlib).
 
 ## Cross-references

@@ -157,7 +157,7 @@ class BorromeanBlochGroupElement
    extending the Bloch-Wigner regulator to order $h^2$ via the
    $\Phi_q$ formal expansion; the right side is already in
    [`borromean-markov-trace-closed-form.md`](#prop:borromean-markov-trace-closed-form).
-2. **D16 → ✅** requires the Lean class instance + the
+2. **D16 to closed** requires the Lean class instance + the
    `borromean_h4_coefficient_from_regulator` proof (which would
    import a Bloch-Suslin lemma from Mathlib once available; per
    `lean_loogle` search, $K_3$ formalisation is partial in Mathlib

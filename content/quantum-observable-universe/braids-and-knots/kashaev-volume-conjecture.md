@@ -1,4 +1,4 @@
-> **⚠️ SUPERSEDED-$\rho_q$ note (2026-05-24, PR #1127).** Any use of the
+> **SUPERSEDED-$\rho_q$ note (2026-05-24, PR #1127).** Any use of the
 > scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
 > structurally-wrong leading-order ansatz per
 > [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);

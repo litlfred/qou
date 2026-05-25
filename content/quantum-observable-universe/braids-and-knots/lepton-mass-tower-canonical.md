@@ -16,7 +16,7 @@ canonical [`per-braid mass tower`](per-braid-mass-tower.md), WITHOUT
 invoking the SUPERSEDED scalar substrate density $\rho_q = 1/\hbar_q^2$
 as a dimensional factor.*
 
-> **⚠️ Status — open conjecture (2026-05-24, PR #1127 Phase 3).**
+> **Status — open conjecture (2026-05-24, PR #1127 Phase 3).**
 > The explicit form of $\mathcal{F}_\ell(q)$ for leptons has **not been
 > derived** in the current framework. See the discussion below + the
 > companion audit

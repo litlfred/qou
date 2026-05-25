@@ -98,7 +98,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
    $K_3(\mathbb{C})$ regulator gives a natural framework-side
    handle on the analytic structure of the Bloch-Wigner
    dilogarithm.
-4. **D14 → ✅** requires Lean class `ModularSTransformQQTilde`
+4. **D14 to closed** requires Lean class `ModularSTransformQQTilde`
    inhabited + numerical witness verifying the volume-conjecture
    asymptotic on $\tilde q_0$.
 
