@@ -196,15 +196,184 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
     discharging it requires lifting the symbolic factorisation into
     Lean. Witness sidecar:
     `folio-assistant/computations/gram-h3-det-factorization.witness.json`. -/
-theorem gramMatrix_det_ne_zero (u : ℝ) (hu_gt_one : 1 < u) :
+/-! ## Symbolic factorization of det(gramMatrix u) — Phase 1b-2
+
+Per `gram-h3-det-factorization.witness.json` (sympy at 50-dps), the
+6×6 Hoefsmit Gram determinant factors as:
+
+```
+det(G(u)) = − [ (u−1)·(u+1)·(u³+u−1)⁵·(u³+u²+1)⁵·p(u)·r(u) ] / [ u¹⁰·(u²+1)¹² ]
+```
+where
+- `p(u) = u⁶ − u⁵ + u⁴ − u³ + 2u² − u + 1`
+- `r(u) = u⁶ + u⁵ + 2u⁴ + u³ + u² + u + 1`
+
+The numerator has degree 44 in u; the only positive real roots are
+`u = 1` (classical limit) and `u ≈ 0.6823` (root of u³+u−1). For
+the framework's substrate domain `u > 1`, all six factors are
+strictly positive, so the determinant is non-zero.
+
+This section proves the six positivity lemmas + the main theorem
+conditional on the symbolic factorization (which is recorded in the
+witness as a sympy-verified identity). -/
+
+/-- Factor 1: u − 1. -/
+noncomputable def detFactor1 (u : ℝ) : ℝ := u - 1
+
+/-- Factor 2: u + 1. -/
+noncomputable def detFactor2 (u : ℝ) : ℝ := u + 1
+
+/-- Factor 3: u³ + u − 1. -/
+noncomputable def detFactor3 (u : ℝ) : ℝ := u^3 + u - 1
+
+/-- Factor 4: u³ + u² + 1. -/
+noncomputable def detFactor4 (u : ℝ) : ℝ := u^3 + u^2 + 1
+
+/-- Factor 5: p(u) = u⁶ − u⁵ + u⁴ − u³ + 2u² − u + 1 (no real roots). -/
+noncomputable def detFactor5 (u : ℝ) : ℝ :=
+  u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1
+
+/-- Factor 6: r(u) = u⁶ + u⁵ + 2u⁴ + u³ + u² + u + 1
+    (all-positive coefficients). -/
+noncomputable def detFactor6 (u : ℝ) : ℝ :=
+  u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1
+
+/-- **POSITIVITY LEMMA 1.** `u − 1 > 0` for `u > 1`. -/
+theorem detFactor1_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor1 u := by
+  unfold detFactor1; linarith
+
+/-- **POSITIVITY LEMMA 2.** `u + 1 > 0` for `u > 1` (trivially `> 2`). -/
+theorem detFactor2_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor2 u := by
+  unfold detFactor2; linarith
+
+/-- **POSITIVITY LEMMA 3.** `u³ + u − 1 > 0` for `u > 1`. At `u = 1`:
+    `1 + 1 − 1 = 1 > 0`; for `u > 1`, `u³ > 1` so `u³ + u − 1 > u > 1`. -/
+theorem detFactor3_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor3 u := by
+  unfold detFactor3
+  have h1 : 1 < u^3 := by nlinarith
+  linarith
+
+/-- **POSITIVITY LEMMA 4.** `u³ + u² + 1 > 0` for `u > 1`
+    (every term `> 0` when `u > 0`; trivially `> 3` when `u > 1`). -/
+theorem detFactor4_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor4 u := by
+  unfold detFactor4
+  have h1 : 0 < u^3 := by positivity
+  have h2 : 0 < u^2 := by positivity
+  linarith
+
+/-- **POSITIVITY LEMMA 5.** `p(u) = u⁶ − u⁵ + u⁴ − u³ + 2u² − u + 1 > 0`
+    for `u > 1`. Strategy: group as `(u−1)(u⁵ + u³) + (2u² − u + 1)` where
+    the first part is positive (product of positives for `u > 1`) and the
+    second has discriminant `1 − 8 = −7 < 0`, so is always positive. -/
+theorem detFactor5_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor5 u := by
+  unfold detFactor5
+  -- p(u) = (u-1)(u^5 + u^3) + (2u^2 - u + 1)
+  -- (u-1) > 0 by hu; u^5 + u^3 > 0; 2u^2 - u + 1 > 0 always
+  have h_pos_u5_u3 : 0 < u^5 + u^3 := by positivity
+  have h_u_minus_1 : 0 < u - 1 := by linarith
+  -- 2u^2 - u + 1 > 0 for all real u (discriminant = 1 - 8 = -7 < 0)
+  -- proof: 2u^2 - u + 1 = 2(u - 1/4)^2 + 7/8 > 0
+  have h_quadratic : 0 < 2*u^2 - u + 1 := by nlinarith [sq_nonneg (4*u - 1)]
+  nlinarith [mul_pos h_u_minus_1 h_pos_u5_u3, h_quadratic]
+
+/-- **POSITIVITY LEMMA 6.** `r(u) = u⁶ + u⁵ + 2u⁴ + u³ + u² + u + 1 > 0`
+    for `u > 0` (all coefficients positive). Trivially `> 7` for `u > 1`. -/
+theorem detFactor6_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor6 u := by
+  unfold detFactor6
+  have h1 : 0 < u := by linarith
+  have h2 : 0 < u^6 := by positivity
+  have h3 : 0 < u^5 := by positivity
+  have h4 : 0 < u^4 := by positivity
+  have h5 : 0 < u^3 := by positivity
+  have h6 : 0 < u^2 := by positivity
+  linarith
+
+/-- **POSITIVITY LEMMA (denominator).** `u^10 · (u² + 1)^12 > 0` for `u > 0`. -/
+theorem gram_det_denominator_pos (u : ℝ) (hu_pos : 0 < u) :
+    0 < u^10 * (u^2 + 1)^12 := by
+  have h_u10 : 0 < u^10 := by positivity
+  have h_u2_1 : 0 < u^2 + 1 := by positivity
+  have h_pow : 0 < (u^2 + 1)^12 := by positivity
+  positivity
+
+/-- **THEOREM (det ≠ 0 conditional on symbolic factorization).** If the
+    symbolic Matrix.det of `gramMatrix u` equals the witness's
+    factorization, then it is non-zero for `u > 1`.
+
+    The factorization equality itself (`gramMatrix u . det = -(numerator)/(denominator)`)
+    is recorded in `gram-h3-det-factorization.witness.json` as a sympy-
+    verified identity; the full Lean expansion of `Matrix.det` for the
+    6×6 rational-function matrix is multi-thousand-line work scoped as
+    a separate follow-up. The conditional discharge below is the
+    substantive content: the 6 positivity lemmas + denominator
+    positivity give a complete categorical argument modulo the
+    sympy-witnessed factorization identity. -/
+theorem gramMatrix_det_ne_zero_conditional
+    (u : ℝ) (hu_gt_one : 1 < u)
+    (factorization_holds :
+      (gramMatrix u).det =
+        -(detFactor1 u * detFactor2 u
+          * (detFactor3 u)^5 * (detFactor4 u)^5
+          * detFactor5 u * detFactor6 u)
+        / (u^10 * (u^2 + 1)^12)) :
     (gramMatrix u).det ≠ 0 := by
-  -- See proof strategy in the docstring. The full Lean proof requires
-  -- expanding Matrix.det of the 6×6 rational-function matrix and showing
-  -- it equals the factorization above — substantial Mathlib symbolic
-  -- determinant work. Numerical witness:
-  -- `gram-h3-det-factorization.witness.json` asserts the factorization
-  -- and the two-positive-real-roots fact (`u=1` and `u≈0.6823`).
+  rw [factorization_holds]
+  have h_pos : 0 < u := by linarith
+  have h1 := detFactor1_pos u hu_gt_one
+  have h2 := detFactor2_pos u hu_gt_one
+  have h3 := detFactor3_pos u hu_gt_one
+  have h4 := detFactor4_pos u hu_gt_one
+  have h5 := detFactor5_pos u hu_gt_one
+  have h6 := detFactor6_pos u hu_gt_one
+  have h3_5 : 0 < (detFactor3 u)^5 := by positivity
+  have h4_5 : 0 < (detFactor4 u)^5 := by positivity
+  have h_num_pos :
+      0 < detFactor1 u * detFactor2 u
+          * (detFactor3 u)^5 * (detFactor4 u)^5
+          * detFactor5 u * detFactor6 u := by
+    positivity
+  have h_denom_pos := gram_det_denominator_pos u h_pos
+  have h_quot_neg :
+      -(detFactor1 u * detFactor2 u
+          * (detFactor3 u)^5 * (detFactor4 u)^5
+          * detFactor5 u * detFactor6 u)
+        / (u^10 * (u^2 + 1)^12) < 0 := by
+    have h_quot_pos :
+        0 < (detFactor1 u * detFactor2 u
+            * (detFactor3 u)^5 * (detFactor4 u)^5
+            * detFactor5 u * detFactor6 u)
+          / (u^10 * (u^2 + 1)^12) := div_pos h_num_pos h_denom_pos
+    linarith
+  exact ne_of_lt h_quot_neg
+
+/-- **THEOREM (DEFERRED — Phase 1b-3 follow-up).** The symbolic Matrix.det
+    of `gramMatrix u` equals the witness-derived factorization. Full
+    Lean proof requires expanding the 6×6 determinant (720-term
+    permutation sum); deferred but the witness records the symbolic
+    identity at 50-dps mpmath precision. -/
+theorem gramMatrix_det_eq_factorization (u : ℝ) :
+    (gramMatrix u).det =
+      -(detFactor1 u * detFactor2 u
+        * (detFactor3 u)^5 * (detFactor4 u)^5
+        * detFactor5 u * detFactor6 u)
+      / (u^10 * (u^2 + 1)^12) := by
+  -- Deferred: full Matrix.det expansion. Witness:
+  -- `gram-h3-det-factorization.witness.json` — sympy-verified identity.
   sorry
+
+/-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**
+    Combines the conditional discharge (above) with the symbolic
+    factorization theorem to give the unconditional result `u > 1
+    ⟹ det(G(u)) ≠ 0`.
+
+    Status: the conditional logic is FULLY PROVED here (6 positivity
+    lemmas + denominator positivity → product non-zero); the
+    remaining `sorry` lives in `gramMatrix_det_eq_factorization`
+    (the symbolic-determinant identity itself). -/
+theorem gramMatrix_det_ne_zero (u : ℝ) (hu_gt_one : 1 < u) :
+    (gramMatrix u).det ≠ 0 :=
+  gramMatrix_det_ne_zero_conditional u hu_gt_one
+    (gramMatrix_det_eq_factorization u)
 
 end QOU.Interactions.GramMatrixH3Symbolic
 
