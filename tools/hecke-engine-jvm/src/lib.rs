@@ -196,4 +196,53 @@ mod tests {
         assert!(d.is_finite(), "gram_det non-finite: {d}");
         assert!(d.abs() > 1e-30, "gram_det too close to zero: {d}");
     }
+
+    // ── Phase B ──
+
+    #[test]
+    fn chi_lambda_braid_identity_returns_one() {
+        // Empty word on partition [3] → 1.0 (trivial-character convention).
+        let chi = chi_lambda_braid(vec![3], vec![], Q_SUBSTRATE).unwrap();
+        assert!((chi - 1.0).abs() < 1e-12, "chi(id) = {chi}, expected 1.0");
+    }
+
+    #[test]
+    fn chi_lambda_braid_empty_shape_returns_one() {
+        let chi = chi_lambda_braid(vec![], vec![vec![1, 1]], Q_SUBSTRATE).unwrap();
+        assert!((chi - 1.0).abs() < 1e-12, "chi(empty) = {chi}, expected 1.0");
+    }
+
+    #[test]
+    fn lr_coefficient_pieri_basic() {
+        // c^[2]_{[1],[1]} = 1 (Pieri rule: single horizontal strip).
+        assert_eq!(lr_coefficient(vec![2], vec![1], vec![1]), 1);
+    }
+
+    #[test]
+    fn lr_coefficient_size_mismatch_zero() {
+        // |[3]| = 3 ≠ |[2]| + |[2]| = 4 → 0.
+        assert_eq!(lr_coefficient(vec![3], vec![2], vec![2]), 0);
+    }
+
+    #[test]
+    fn tr_m_atomic_mpfr_smoke() {
+        // Single positive σ_1 on B_3 at 20-dps. Markov-Ocneanu-Wenzl
+        // trace of a Hecke generator is z = 1/(q^{1/2} + q^{-1/2}),
+        // so the string should start with "4.99…" at q_0. n=3 chosen
+        // over n=2 because B_2 trips an upstream edge case in
+        // tr_m_word_lq's recursion.
+        let s = tr_m_atomic_mpfr(
+            vec![vec![1, 1]],
+            3,
+            "1.10998".to_string(),
+            20,
+        ).expect("tr_m_atomic_mpfr smoke");
+        assert!(s.starts_with("4.99"), "expected '4.99...', got '{s}'");
+    }
+
+    #[test]
+    fn chi_lambda_braid_rejects_malformed_word() {
+        // Word entry must be length-2 [gen, exp]; length-1 should error.
+        assert!(chi_lambda_braid(vec![3], vec![vec![1]], Q_SUBSTRATE).is_err());
+    }
 }

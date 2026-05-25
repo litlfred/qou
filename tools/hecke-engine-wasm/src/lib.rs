@@ -264,6 +264,59 @@ mod tests {
         assert_eq!(v, expected);
     }
 
+    // ── Phase B ──
+
+    #[test]
+    fn markov_z_positive() {
+        assert!(qou_markov_z(1.10998) > 0.0);
+    }
+
+    #[test]
+    fn hecke_h_formula() {
+        let q = 1.10998_f64;
+        let h = qou_hecke_h(q);
+        assert!((h - (q - 1.0 / q)).abs() < 1e-12);
+    }
+
+    #[test]
+    fn trace_weights_shape() {
+        let s = qou_trace_weights(1.10998);
+        let v: Vec<f64> = serde_json::from_str(&s).unwrap();
+        assert_eq!(v.len(), 6);
+        assert!((v[0] - 1.0).abs() < 1e-12);
+    }
+
+    #[test]
+    fn gram_matrix_shape() {
+        let s = qou_gram_matrix(1.10998);
+        let m: Vec<Vec<f64>> = serde_json::from_str(&s).unwrap();
+        assert_eq!(m.len(), 6);
+        for row in &m {
+            assert_eq!(row.len(), 6);
+            for &v in row { assert!(v.is_finite()); }
+        }
+    }
+
+    #[test]
+    fn gram_det_finite() {
+        let d = qou_gram_det(1.10998);
+        assert!(d.is_finite() && d.abs() > 1e-30);
+    }
+
+    #[test]
+    fn chi_lambda_braid_identity() {
+        // Empty word on partition [3] → 1.0.
+        let chi = qou_chi_lambda_braid("[3]", "[]", 1.10998).unwrap();
+        assert!((chi - 1.0).abs() < 1e-12);
+    }
+
+    #[test]
+    fn chi_lambda_braid_empty_shape() {
+        // Empty partition → 1.0 by convention.
+        let chi = qou_chi_lambda_braid("[]", "[[1, 1]]", 1.10998).unwrap();
+        assert!((chi - 1.0).abs() < 1e-12);
+    }
+
     #[test]
     fn partitions_of_0_is_empty_partition() {
         let p = qou_partitions_of(0);

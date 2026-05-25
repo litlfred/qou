@@ -43,4 +43,36 @@ const Q0 = 1.10998  # substrate q_0
         @test isfinite(d)
         @test abs(d) > 1e-30
     end
+
+    # ── Phase B ──
+
+    @testset "chi_lambda_braid: identity element on [3] returns 1.0" begin
+        @test isapprox(chi_lambda_braid([3], Tuple{Int, Int}[], Q0),
+                       1.0; atol = 1e-12)
+    end
+
+    @testset "chi_lambda_braid: empty partition returns 1.0" begin
+        @test isapprox(chi_lambda_braid(Int[], [(1, 1)], Q0),
+                       1.0; atol = 1e-12)
+    end
+
+    @testset "lr_coefficient: Pieri c^[2]_{[1],[1]} = 1" begin
+        @test lr_coefficient([2], [1], [1]) == 1
+    end
+
+    @testset "lr_coefficient: size mismatch returns 0" begin
+        @test lr_coefficient([3], [2], [2]) == 0
+    end
+
+    @testset "tr_m_atomic_mpfr: 3-strand single crossing returns z" begin
+        # Single positive σ_1 on 3 strands at 20-dps. Markov-Ocneanu-Wenzl
+        # trace of a single Hecke generator is z = 1/(q^{1/2}+q^{-1/2}),
+        # so the string should start with "4.99…" at q_0 ≈ 1.10998.
+        # n=3 chosen over n=2 because B_2 trips an upstream edge case
+        # in tr_m_word_lq's recursion.
+        s = tr_m_atomic_mpfr([(Int8(1), Int32(1))], 3, "1.10998", 20)
+        @test !isempty(s)
+        @test isa(s, String)
+        @test startswith(s, "4.99")
+    end
 end

@@ -1,0 +1,236 @@
+name: Wrapper tests (per-language smoke matrix)
+
+# Runs the per-wrapper smoke tests against the hecke-engine-c shared
+# library (and the Rust crate directly for jvm + wasm). Each toolchain
+# has its own job so a missing dependency on one runtime doesn't block
+# the others.
+#
+# Triggered on PRs that touch any wrapper or the engine itself; also
+# manually via workflow_dispatch.
+
+on:
+  pull_request:
+    paths:
+      - 'tools/hecke-engine/**'
+      - 'tools/hecke-engine-c/**'
+      - 'tools/hecke-engine-octave/**'
+      - 'tools/hecke-engine-julia/**'
+      - 'tools/hecke-engine-gap/**'
+      - 'tools/hecke-engine-node/**'
+      - 'tools/hecke-engine-jvm/**'
+      - 'tools/hecke-engine-wasm/**'
+      - 'tools/hecke-engine-r/**'
+      - '.github/workflows/wrapper-tests.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: wrapper-tests-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # ── 1. Build the shared C ABI ── publishes libhecke_engine_c.so as
+  # an artifact consumed by the C / octave / julia / gap / r jobs.
+  build-c-abi:
+    name: Build libhecke_engine_c.so
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/hecke-engine-c -> target
+      - name: Build hecke-engine-c
+        run: cd tools/hecke-engine-c && cargo build --release
+      - name: Upload artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: hecke-engine-c
+          path: |
+            tools/hecke-engine-c/target/release/libhecke_engine_c.so
+            tools/hecke-engine-c/include/hecke_engine.h
+          retention-days: 1
+
+  # ── 2. C smoke test ──
+  c-smoke:
+    name: C smoke
+    needs: build-c-abi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev
+      - uses: actions/download-artifact@v4
+        with:
+          name: hecke-engine-c
+          path: tools/hecke-engine-c/
+      - name: Restore artefact layout
+        run: |
+          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
+          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
+          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
+      - name: Build smoke binary
+        run: |
+          cd tools/hecke-engine-c
+          gcc -O2 -I include test/smoke.c \
+              -L target/release -lhecke_engine_c -lgmp -lmpfr \
+              -lpthread -ldl -lm \
+              -Wl,-rpath,'$ORIGIN/target/release' \
+              -o test/smoke
+      - name: Run smoke binary
+        run: |
+          cd tools/hecke-engine-c
+          LD_LIBRARY_PATH=target/release ./test/smoke
+
+  # ── 3. Octave MEX smoke ──
+  octave-smoke:
+    name: Octave MEX smoke
+    needs: build-c-abi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Octave + system deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y octave liboctave-dev libgmp-dev libmpfr-dev
+      - uses: actions/download-artifact@v4
+        with:
+          name: hecke-engine-c
+          path: tools/hecke-engine-c/
+      - name: Restore artefact layout
+        run: |
+          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
+          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
+          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
+      - name: Build MEX files
+        run: cd tools/hecke-engine-octave && make
+      - name: Run smoke
+        run: |
+          cd tools/hecke-engine-octave
+          LD_LIBRARY_PATH=../hecke-engine-c/target/release \
+            octave --no-gui --eval "addpath('.'); cd test; smoke"
+
+  # ── 4. Julia smoke ──
+  julia-smoke:
+    name: Julia ccall smoke
+    needs: build-c-abi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev
+      - uses: actions/download-artifact@v4
+        with:
+          name: hecke-engine-c
+          path: tools/hecke-engine-c/
+      - name: Restore artefact layout
+        run: |
+          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
+          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
+          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.11'
+      - name: Run Julia smoke
+        run: |
+          cd tools/hecke-engine-julia
+          export HECKE_ENGINE_C_LIB=$(pwd)/../hecke-engine-c/target/release/libhecke_engine_c.so
+          julia --project=. -e 'import Pkg; Pkg.instantiate(); include("test/runtests.jl")'
+
+  # ── 5. GAP kernel-extension smoke ──
+  #
+  # GAP is heavy (full TeX/LaTeX-style install ~600 MB) and the kernel-
+  # extension build needs `./configure --with-gaproot` which the package
+  # template doesn't ship yet. For now we stub the job with a Docker
+  # pull + manifest check; full smoke test will land once Phase C ships
+  # the `./configure` + `Makefile.in` per the GAP README.
+  gap-smoke:
+    name: GAP smoke (placeholder — Phase C)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sanity-check GAP package layout
+        run: |
+          test -f tools/hecke-engine-gap/PackageInfo.g
+          test -f tools/hecke-engine-gap/lib/HeckeEngine.gd
+          test -f tools/hecke-engine-gap/lib/HeckeEngine.gi
+          test -f tools/hecke-engine-gap/src/HeckeEngine.c
+          test -f tools/hecke-engine-gap/tst/smoke.tst
+          echo "GAP package files present; full kernel-extension smoke pending Phase C ./configure."
+
+  # ── 6. Node smoke ──
+  node-smoke:
+    name: Node napi-rs smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/hecke-engine-node -> target
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build native module + run tests
+        run: |
+          cd tools/hecke-engine-node
+          npm install --no-audit --no-fund
+          npm run build
+          npm test
+
+  # ── 7. JVM (Rust) tests — Kotlin/Swift bindings generation deferred ──
+  jvm-rust-tests:
+    name: JVM Rust unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/hecke-engine-jvm -> target
+      - name: cargo test
+        run: cd tools/hecke-engine-jvm && cargo test --release
+
+  # ── 8. WASM (Rust) tests — wasm-pack browser harness deferred ──
+  wasm-rust-tests:
+    name: WASM Rust unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/hecke-engine-wasm -> target
+      - name: cargo test
+        run: cd tools/hecke-engine-wasm && cargo test --release --lib
+
+  # ── 9. R extendr smoke ──
+  r-smoke:
+    name: R extendr smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4'
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/hecke-engine-r -> target
+      - name: Install rextendr
+        run: Rscript -e 'install.packages("rextendr", repos="https://cloud.r-project.org")'
+      - name: Build + load + smoke
+        run: |
+          cd tools/hecke-engine-r
+          Rscript -e 'rextendr::document(".")'
+          Rscript -e 'devtools::load_all("."); source("tests/smoke.R")'
