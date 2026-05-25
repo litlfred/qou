@@ -256,6 +256,99 @@ channels). This includes brane-tower contributions `Φ_q` or `Li_2^q`
 - **Reading-A geometrised form** of `Geom_full` (purged 2026-05-24
   as q₀ coincidence — not categorical)
 
+## §4a. Update 2026-05-25 — Bring + Faddeev h⁴ candidate identified (RULE 14 compliant)
+
+Follow-up probes on this branch (after the user picked Option A —
+derive h⁴ from the 13 categorical drivers + the h² concrete test):
+
+### Probe 1: h² concrete test
+[`lambda_scale_h2_concrete_test.py`](../../folio-assistant/computations/lambda_scale_h2_concrete_test.py)
+— symbolic h-expansion (sympy) of the three candidate forms around
+h = 0 via the substitution `q = (h + √(h²+4))/2`. **Result**: Bring
+color-tube and canonical + Yekutieli are **categorically distinct**
+at every h^k order:
+
+| h^k | Family A | + Yekutieli | Bring color-tube |
+|---|---|---|---|
+| h⁰ | 5/2 | 5/2 | **1** |
+| h¹ | 0 | 0 | **1** |
+| h² | **3/4** | **3/4 − G** | **6** |
+| h³ | 0 | 0 | 47/2 |
+| h⁴ | 0 | 0 | **693/8 ≈ 86.625** |
+
+The "Path C is the resummed Path B" hypothesis from
+[`2026-05-23-lambda-scale-canonical-unification.md
+§"Concrete test"`](2026-05-23-lambda-scale-canonical-unification.md)
+is **falsified**: the two are independent categorical mechanisms.
+The "+1·h⁴ residual" (α ≈ 1.011) sits **additively** on top of the
+Bring base, NOT inside Yekutieli.
+
+### Probe 2: h⁴ from 13 canonical drivers
+[`h4_categorical_drivers_probe.py`](../../folio-assistant/computations/h4_categorical_drivers_probe.py)
+— tests 7 of the 13 drivers for which produces α ≈ 1.011 cleanly.
+**Two drivers converge on +1·h⁴ at leading order**:
+
+| Driver | α_proxy | Off target | Categorical anchor |
+|---|---|---|---|
+| **(i) Faddeev iterated `1/(1−h⁴) − 1`** | **1.0019** | **0.90 %** | Φ_q functional equation Φ_q(qz)/Φ_q(z) = 1/(1−z) at z = h⁴ |
+| **(xiii) KLR positivity `+1·h⁴`** | **1.0** | 1.09 % | smallest non-trivial non-negative integer in canonical basis |
+| (vii) 6j Biedenharn-Elliott `G·h⁴` | 0.916 | 9.4 % | residual orthogonality at H_4 |
+| (xi) Lobachevsky `G²·h⁴` | 0.839 | 17.0 % | Clausen Cl_2 identity |
+| (ii) Φ_q log series at n=4 | -100.35 | huge | (sign/scale mismatch — not a candidate) |
+| (iii) Rogers Li_2^q at n=4 | 0.0113 | 99 % | not the right h⁴ source |
+| (x) MacMahon Σ dim_q²/4! at H_4 | 0.0 | 100 % | h⁴ coefficient vanishes |
+
+Drivers (i) and (xiii) **independently produce +1·h⁴ as the leading
+correction**. This is the strongest categorical signal observed for
+the empirical α — both KLR positivity (smallest positive integer) and
+Faddeev iteration (1/(1−h⁴) ≈ 1 + h⁴ at leading order) agree.
+
+### Probe 3: combined m_p, m_n prediction
+[`m_p_bring_plus_faddeev_h4_probe.py`](../../folio-assistant/computations/m_p_bring_plus_faddeev_h4_probe.py)
+— tests the combined form
+`linking_weight(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` at q₀:
+
+| Composition | m_p pred | err vs CODATA | improvement vs production |
+|---|---|---|---|
+| **Production (Family A)** | 965.4 MeV | **+28,890 ppm (+2.89 %)** | 1× (baseline) |
+| Bring color-tube only | 937.6 MeV | -670 ppm | 43× tighter |
+| **Bring + Faddeev h⁴ ADDITIVE** | **938.4 MeV** | **+108 ppm** | **267× tighter** |
+| Bring × Faddeev MULTIPLICATIVE | 939.4 MeV | +1,243 ppm | 23× tighter |
+
+The **additive composition** wins by an order of magnitude over
+multiplicative. Both factors are Φ_q functional-equation ratios at
+substrate-natural z values (z₁ = h·q^{10} for Bring color-tube;
+z₂ = h⁴ for KLR-canonical-basis), so **both factors live in the
+13-driver menu** — Rule-14 compliant.
+
+### Outstanding load-bearing step
+
+The **composition rule** (additive vs multiplicative) is the new
+load-bearing step. Both compositions are mathematically natural:
+- **additive** corresponds to a direct sum of two independent
+  categorical channels (e.g. partition Wedderburn structure where
+  the linking_weight is a sum over irreps)
+- **multiplicative** corresponds to a tensor product (e.g. two
+  independent Φ_q-tower contributions)
+
+The data picks additive (108 ppm vs 1243 ppm), strongly suggesting
+the additive composition is the canonical one — but a categorical
+proof is needed before this form can enter production.
+
+## §4b. Vol(𝓑₃) = 8·G Lean scaffold
+
+Per the second user-picked closure path: scaffolded
+[`BorromeanVolumeCatalan.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanVolumeCatalan.lean)
+with:
+- `catalan_G : ℝ` — series definition (not yet in Mathlib)
+- `lobachevsky : ℝ → ℝ` — definition (not yet in Mathlib)
+- `lobachevsky_pi_div_four_eq_half_catalan : Λ(π/4) = G/2` (Lewin 1981)
+- `vol_B3_eq_8_catalan : vol_B3 = 8 * catalan_G` (Adams 1985)
+
+All `sorry`s carry explicit bibliographic citations per CLAUDE.md §1.
+Closes the §3 audit entry "Vol(𝓑₃) Lean formalization — literature
+value cited, NOT in Lean".
+
 ## §5. The bottom line — three closure paths, ordered by closeness
 
 The user's question "what's missing? some scaling factor?" — answer
