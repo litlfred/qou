@@ -15,6 +15,7 @@
 //! d_{(9,9)} = 4862).  Eigenvalues via QR iteration on the symmetric
 //! part — sufficient for PSD diagnosis.
 
+use crate::gb_nf_reducer::BraidLetter;
 use crate::joint_tower_sdp_certificate::WedderburnBlockReport;
 use crate::seminormal::{partitions_of, seminormal_matrices};
 
@@ -150,6 +151,94 @@ fn symmetric_eigenvalues(m_in: &[Vec<f64>]) -> Vec<f64> {
     let mut eigs: Vec<f64> = (0..n).map(|i| a[i][i]).collect();
     eigs.sort_by(|x, y| x.partial_cmp(y).unwrap_or(std::cmp::Ordering::Equal));
     eigs
+}
+
+/// Compute `g - (h/2) · I` (the averaged-crossing matrix).
+/// This is the matrix-level analog of `right_mul_t_avg` in
+/// `gb_nf_reducer.rs`: x · σ_avg = x · σ_i - (h/2) · x.
+fn dense_avg_from(g: &[Vec<f64>], h_param: f64) -> Vec<Vec<f64>> {
+    let dim = g.len();
+    let half_h = h_param / 2.0;
+    let mut avg = vec![vec![0.0f64; dim]; dim];
+    for i in 0..dim {
+        for j in 0..dim {
+            avg[i][j] = g[i][j];
+        }
+        avg[i][i] -= half_h;
+    }
+    avg
+}
+
+/// Evaluate ρ_λ(β) for every partition λ ⊢ n, then emit per-block
+/// PSD reports — **extended-braid version** accepting σ_avg crossings.
+///
+/// R5.7 follow-up to PR #1271 (BraidLetter introduction). Without this,
+/// the canonical atom-braid for ⁴He (9/47 = 19% σ_avg crossings)
+/// couldn't be evaluated for per-partition Wedderburn-block PSD,
+/// blocking R5-full mass-table closure.
+pub fn evaluate_all_blocks_letters(
+    n: usize,
+    braid_word: &[BraidLetter],
+    q: f64,
+) -> Vec<WedderburnBlockReport> {
+    if n < 2 {
+        return Vec::new();
+    }
+    let h = q - 1.0 / q;
+    let parts = partitions_of(n);
+    let mut out: Vec<WedderburnBlockReport> = Vec::with_capacity(parts.len());
+    for shape in parts {
+        let sparse_gens = seminormal_matrices(&shape, q);
+        let dim = if sparse_gens.is_empty() {
+            1
+        } else {
+            sparse_gens[0].len()
+        };
+        let mut prod = vec![vec![0.0f64; dim]; dim];
+        for i in 0..dim {
+            prod[i][i] = 1.0;
+        }
+        let mut dense_gens: Vec<Vec<Vec<f64>>> = Vec::with_capacity(sparse_gens.len());
+        let mut dense_inv_gens: Vec<Vec<Vec<f64>>> = Vec::with_capacity(sparse_gens.len());
+        let mut dense_avg_gens: Vec<Vec<Vec<f64>>> = Vec::with_capacity(sparse_gens.len());
+        for sg in &sparse_gens {
+            let dg = sparse_to_dense(sg, dim);
+            let dg_inv = invert_matrix(&dg, h);
+            let dg_avg = dense_avg_from(&dg, h);
+            dense_gens.push(dg);
+            dense_inv_gens.push(dg_inv);
+            dense_avg_gens.push(dg_avg);
+        }
+        for &letter in braid_word {
+            let (idx, kind): (usize, u8) = match letter {
+                BraidLetter::Pos(i) => (i.saturating_sub(1), 0),
+                BraidLetter::Inv(i) => (i.saturating_sub(1), 1),
+                BraidLetter::Avg(i) => (i.saturating_sub(1), 2),
+            };
+            if idx >= dense_gens.len() {
+                continue;
+            }
+            let g = match kind {
+                0 => &dense_gens[idx],
+                1 => &dense_inv_gens[idx],
+                _ => &dense_avg_gens[idx],
+            };
+            prod = dense_dense_mul(&prod, g);
+        }
+        let sym = symmetrize(&prod);
+        let eigs = symmetric_eigenvalues(&sym);
+        let min_eig = eigs.first().copied().unwrap_or(0.0);
+        let max_eig = eigs.last().copied().unwrap_or(0.0);
+        out.push(WedderburnBlockReport {
+            partition: shape.clone(),
+            d_lambda: dim,
+            matrix_at_q_0_sym_eigvals: eigs.clone(),
+            min_eigenvalue: min_eig,
+            max_eigenvalue: max_eig,
+            psd_symmetric_part: min_eig >= -1e-9,
+        });
+    }
+    out
 }
 
 /// Evaluate ρ_λ(β) for every partition λ ⊢ n, then emit per-block
