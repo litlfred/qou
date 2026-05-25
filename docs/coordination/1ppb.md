@@ -483,3 +483,24 @@ The single-session probe sequence has shipped its full informational
 payload. Further closure attempts on the existing scaffolding
 (global Δ_λ + bar-invariance + dominant pin) are not productive
 without new structural input.
+
+### ⛔ Anti-pattern gate (codified — DO NOT pursue global Δ_λ again)
+
+The canonical framework formula ([`prop:rho-k-h3a-refinement`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md))
+has **Δ_λ(K)** as **K-dependent by construction** since the
+H_{3A} Wedderburn refinement landed. Probe-2's negative diagnostic
+(max |Δ_λ| = 431.7 vs 15.7 D-only) is **empirical confirmation
+of this existing K-dependence**, not a new finding against the
+framework.
+
+Codified anti-pattern (1ppb-compute-tranche-queue.md §Anti-patterns
+item 6): future agents **must not** pursue any ansatz / probe /
+audit that imposes Δ_λ as the same value across atoms. Closure
+must address Δ_λ(K)'s K-dependence via:
+
+- **Option E** ([PR #1252](https://github.com/litlfred/qou/pull/1252)) — categorical: Δ_λ(K) = Σ_w n^w_λ · ρ_w(K).
+- **Path B** (per `2026-05-18-delta-lambda-gating-context.md`) —
+  Borromean tower extension.
+
+Both are K-dependent by construction. See the full reframing in
+[`docs/audits/2026-05-25-delta-lambda-K-dependence-reframing.md`](../audits/2026-05-25-delta-lambda-K-dependence-reframing.md) §⛔ DO NOT.
