@@ -51,14 +51,14 @@ $$\mathrm{bar} = P \cdot C \cdot T.$$
 Type-B folding provides an **alternative categorical realisation**
 where the role of "P (braid mirror)" is replaced by "the Cartan-fold
 Z/2", and the bar-invariance emerges from the Type-B symmetric-crystal
-structure rather than from explicit σᵢ $\leftrightarrow$ σᵢ⁻¹ braid manipulation.
+structure rather than from explicit $\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$ braid manipulation.
 
 The two decompositions are not redundant — they are **two views**
 of the same CPT composite:
 
 | View | Realises bar via |
 |------|------------------|
-| D6/D7/D8 (combinatorial) | explicit σᵢ $\leftrightarrow$ σᵢ⁻¹ + q $\leftrightarrow$ q⁻¹ on Hecke generators |
+| D6/D7/D8 (combinatorial) | explicit $\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$ + q $\leftrightarrow$ $q^{-1}$ on Hecke generators |
 | **D22 Type-B folding** (categorical-symmetric-crystal) | structural fold automorphism $\iota: \alpha_i \leftrightarrow \alpha_{n-i}$ |
 
 The D22 view is **more compact** (no need to track three separate Z/2
@@ -104,7 +104,7 @@ class TypeBFoldingCPT (M : Type*) [BrCategory M] [Crystal M] where
 1. **Verify Type-B folding produces bar-invariant GS normal forms**
    numerically on the canonical atomic-braid catalogue
    ([`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py)).
-2. **Identify stable-matter crystal fixed points** for ²H, ⁴He
+2. **Identify stable-matter crystal fixed points** for ${}^{2}\mathrm{H}$, ${}^{4}\mathrm{He}$
    (Wigner SU(4) supermultiplet — see [D11](wigner-su4-from-spin-isospin.md))
    and verify the prediction that these atoms correspond to folded-
    crystal singlets.

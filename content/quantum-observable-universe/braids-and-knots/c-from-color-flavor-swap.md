@@ -132,7 +132,7 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
    decomposition.
 3. **Promote to proposition** once
    [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
-   and the S₅$\leftrightarrow$SO(3) fiber-action class (PR
+   and the $S_{5}$$\leftrightarrow$SO(3) fiber-action class (PR
    [#1081](https://github.com/litlfred/qou/pull/1081) supplier)
    are both proved.
 

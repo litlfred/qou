@@ -14,7 +14,7 @@ duality:*
 - *Coincides with the reverse-limit $q \to \infty$
   ([`conj:reverse-limit-q-to-infinity`](#conj:reverse-limit-q-to-infinity), D13)
   for non-classical specialisations.*
-- *For non-simply-laced types (Type B, C, D, G₂, F₄), gives a
+- *For non-simply-laced types (Type B, C, D, $G_{2}$, $F_{4}$), gives a
   genuinely-distinct dual algebra (Type B $\leftrightarrow$ Type C, etc.) — this
   is the quantum analogue of classical Langlands.*
 

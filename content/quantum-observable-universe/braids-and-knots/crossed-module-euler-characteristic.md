@@ -41,7 +41,7 @@ The complete non-abelian Stokes chain connecting the three layers:
 
 | Layer | Value | Source |
 |-------|------:|--------|
-| **Algebraic** (Q₈ crossed module) | $-12$ | $\dim(V) \cdot \chi(\Sigma_4)$ |
+| **Algebraic** ($Q_{8}$ crossed module) | $-12$ | $\dim(V) \cdot \chi(\Sigma_4)$ |
 | **Geometric** (hyperbolic volume) | $-8G$ | $-12 \times \tfrac{2G}{3}$ (Bring bridge) |
 | **Boundary** (Markov trace $\kappa$) | $\tfrac{3}{16}$ | $-12 \div (-64)$ via $\Phi_0$ |
 

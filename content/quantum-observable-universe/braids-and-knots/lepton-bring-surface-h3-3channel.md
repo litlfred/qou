@@ -35,7 +35,7 @@ $$
 > documenting the H_3 3-channel formula. Applying the canonical Li_2^q
 > per-braid mass tower to the resulting V̂ values gives lepton mass
 > ratios off CODATA by 99% — the missing factor `206.77 / 1.36 ≈ 152`
-> equals **(3/2) $\times$ (1/ℏ_q²)**, structurally identical to the
+> equals **(3/2) $\times$ (1/ℏ_$q^{2}$)**, structurally identical to the
 > SUPERSEDED scalar substrate density. Full diagnosis:
 > [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md).
 
@@ -160,7 +160,7 @@ A plausible elementary-particle count fitting the 6-dim NF diamond:
 
 Alternative count:
 - 3 leptons $\times$ 1D irrep each (e/μ/τ in sym/std/alt) = 3 dimensions
-- But std is 2D (d² = 4), so it contributes more — would give 1 + 4 + 1 = 6
+- But std is 2D ($d^{2}$ = 4), so it contributes more — would give 1 + 4 + 1 = 6
 - If electron occupies std (4 dim = electron-LH + electron-RH + electron-neutrino-LH + electron-neutrino-RH?), then muon + tau fill sym + alt (1 + 1)
 - **Total still = 6 dimensions**
 

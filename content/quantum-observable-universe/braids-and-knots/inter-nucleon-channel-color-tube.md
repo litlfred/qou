@@ -58,7 +58,7 @@ $$
 where:
 
 - $W_{c_1 c_2}(F_1, F_2) \in \mathbb{Q}_{\geq 0}$ is the canonical
-  color-sheet pair weight from the S₅/SO(3) fiber action, **normalised
+  color-sheet pair weight from the $S_{5}$/SO(3) fiber action, **normalised
   to** $\sum_{c_1, c_2} W_{c_1 c_2} = 1$ for each $(F_1, F_2)$ flavor
   pair (so the refined generator is a categorical average over the 9
   color-sheet pairs),
@@ -138,7 +138,7 @@ class InterNucleonChannelColorTube
         = flavor_only_hecke (flavor_of C₁) (flavor_of C₂)
 ```
 
-The class is *inhabited* by the S₅/SO(3) fiber data once
+The class is *inhabited* by the $S_{5}$/SO(3) fiber data once
 [`conj:s5-so3-fiber-action`](#conj:s5-so3-fiber-action) lands; until
 then the instance carries an explicit `sorry` per CLAUDE.md §3b
 ("class is inhabited") policy.
@@ -164,9 +164,9 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
    formalised class.
 2. **Color-pair $\to$ chirality sign $\epsilon$ rule.** Why is
    same-color $\mapsto +1$, opposite-color $\mapsto -1$? Is this from
-   CPT symmetry on the color sheets, or from a finer S₅ orbit
+   CPT symmetry on the color sheets, or from a finer $S_{5}$ orbit
    decomposition?
-3. **⁴He magic-shell saturation.** Does the color-tube weighting
+3. **${}^{4}\mathrm{He}$ magic-shell saturation.** Does the color-tube weighting
    saturate at $A = 4$ (filled-shell analogue), producing the
    $A \cdot 8G$ closure observed in
    [`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py)?
@@ -180,7 +180,7 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
 
 - Parent sign-flip audit:
   [`docs/audits/2026-05-24-sign-flip-interpretation.md`](../../docs/audits/2026-05-24-sign-flip-interpretation.md)
-- ⁴He magic-shell color-tube reading:
+- ${}^{4}\mathrm{He}$ magic-shell color-tube reading:
   [`docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md`](../../docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md)
 - Bring color-tube weighted averaging cheat-sheet entry:
   [`docs/canonical-derivation-cheat-sheet.md` §"Bring color-tube weighted averaging"](../../docs/canonical-derivation-cheat-sheet.md)

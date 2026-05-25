@@ -31,11 +31,11 @@ hyperbolic atoms (per
 
 | Atom | $K_w$ | $\rho_F$ (legacy) | $\nu_{\mathrm{SDP}}$ |
 |------|-------|-------------------|----------------------|
-| ²H (D)  | knot $6_2$        | 1 | 1 |
-| ³H (T)  | knot $8_{11}$     | 2 | 2 |
-| ³He     | link $L_{6a4}$    | 2 | 2 |
+| ${}^{2}\mathrm{H}$ (D)  | knot $6_2$        | 1 | 1 |
+| ${}^{3}\mathrm{H}$ (T)  | knot $8_{11}$     | 2 | 2 |
+| ${}^{3}\mathrm{He}$     | link $L_{6a4}$    | 2 | 2 |
 
-The ⁴He case uses the magic $A \cdot 8G$ closure rule rather than a
+The ${}^{4}\mathrm{He}$ case uses the magic $A \cdot 8G$ closure rule rather than a
 census knot, so its $\nu_{\mathrm{SDP}}$ value is **extrapolated**
 ($\rho_F = 2$ assumed); R&D follow-up is to extend the joint-tower
 SDP solver to confirm $\nu_{\mathrm{SDP}}(⁴\mathrm{He}) = 2$.
@@ -61,7 +61,7 @@ i.e. the joint-tower SDP solver in
 (when it lands; R&D in progress) gives a unique non-negative integer
 $\nu_{\mathrm{SDP}}(K_w)$ for every bound-state knot $K_w$. Until R5-full
 SDP ships, the identity is verified on three census atoms and
-extrapolated to ⁴He with explicit caveat. The Lean class axiomatises
+extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat. The Lean class axiomatises
 
 ```lean
 class KashaevDensityEqualsSDPMultiplicity
@@ -128,18 +128,18 @@ removing the third unnamed $\rho$.
 
 ## Open R&D
 
-1. **Extend joint-tower SDP to ⁴He** — confirm
+1. **Extend joint-tower SDP to ${}^{4}\mathrm{He}$** — confirm
    $\nu_{\mathrm{SDP}}(⁴\mathrm{He}) = 2$ explicitly (currently
-   extrapolated from D/T/³He pattern).
-2. **Extend joint-tower SDP to ⁵Li, ⁶Li, ⁷Li** — the A$\in${5,6,7} gap
+   extrapolated from D/T/${}^{3}\mathrm{He}$ pattern).
+2. **Extend joint-tower SDP to ${}^{5}\mathrm{Li}$, ${}^{6}\mathrm{Li}$, ${}^{7}\mathrm{Li}$** — the A$\in${5,6,7} gap
    per
    [`docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md`](../../docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md)
    needs $\nu_{\mathrm{SDP}}$ values; the wider atom$\to$knot census Rule-14
    escalation per
    [`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)
    recommends waiting for R5-full SDP (owner-decided 2026-05-24).
-3. **Extend joint-tower SDP to α-cluster atoms (⁸Be and up)** — the
-   α-cluster rule inherits $\rho_F = 2$ from ⁴He; verifying
+3. **Extend joint-tower SDP to α-cluster atoms (${}^{8}\mathrm{Be}$ and up)** — the
+   α-cluster rule inherits $\rho_F = 2$ from ${}^{4}\mathrm{He}$; verifying
    $\nu_{\mathrm{SDP}} = 2$ across the α-cluster recursion would close
    the inheritance step.
 
