@@ -188,6 +188,7 @@ export default chapter({
         // (its canonical home as thm:wedderburn-mass-formula).
         "q-integer-mass-formula",
         "universal-ilp-algorithm",
+        "gram-matrix-h3-symbolic",
         "neutron-proton-splitting",
         "color-pairing-binding",
         "mass-table-z1-20",
