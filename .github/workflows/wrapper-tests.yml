@@ -212,6 +212,32 @@ jobs:
       - name: cargo test
         run: cd tools/hecke-engine-wasm && cargo test --release --lib
 
+  # ── 8a. WASM bundle build verification ──
+  # Builds the ACTUAL .wasm bundle (not just the Rust source's host
+  # cargo test) to catch wasm-bindgen registration / serde-json /
+  # JsValue lowering errors that pure cargo test misses. A full
+  # browser test harness (wasm-pack test --node / --headless) needs
+  # the test functions rewritten with wasm_bindgen_test::wasm_bindgen_test
+  # — deferred to a follow-up; the build step alone catches link
+  # errors which is the most common breakage mode.
+  wasm-bundle-build:
+    name: WASM bundle build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/hecke-engine-wasm -> target
+      - name: Install wasm-pack
+        uses: jetli/wasm-pack-action@v0.4.0
+        with:
+          version: 'v0.13.0'
+      - name: wasm-pack build
+        run: cd tools/hecke-engine-wasm && wasm-pack build --target nodejs --release
+
   # ── 9. R extendr smoke ──
   r-smoke:
     name: R extendr smoke

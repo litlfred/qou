@@ -29,6 +29,32 @@ name: release-please
 # Config:
 #   .github/release-please-config.json   — per-package rules
 #   .github/release-please-manifest.json — current released versions
+#
+# KNOWN ISSUE — silent PR-creation failure
+# ─────────────────────────────────────────
+# Observed 2026-05-24/25: every push to main creates the
+# `release-please--branches--main--components--<pkg>` branch on origin
+# with a valid release commit, but the PR-open step silently no-ops.
+# Two release branches got stranded this way; manually opened as PR
+# #1234 (pyhecke 0.1.1) + PR #1235 (qou-substrate 0.1.1).
+#
+# Most likely cause: GitHub repo setting
+#   Settings → Actions → General → "Workflow permissions"
+#   → "Allow GitHub Actions to create and approve pull requests"
+# is OFF. Without it, `secrets.GITHUB_TOKEN` cannot open PRs even
+# with the explicit `pull-requests: write` permission below.
+#
+# Owner-side fix options (in order of preference):
+#   A. Flip the above setting ON (one click; persistent).
+#   B. Create a fine-grained PAT with `contents: write` +
+#      `pull-requests: write` scopes, store as RELEASE_PLEASE_TOKEN
+#      secret, then change the `token:` line below to use it. Bonus:
+#      PR-creation uses the PAT-owner's identity so the PR triggers
+#      downstream CI (GITHUB_TOKEN-created PRs do not, by design).
+#
+# Until either lands, every release lifecycle requires the manual
+# rescue path: `gh pr create --head release-please--...`. See
+# docs/release-process.md (once added) for the exact recipe.
 
 on:
   push:
@@ -37,7 +63,9 @@ on:
 
 permissions:
   contents: write       # create release PRs + tags + releases
-  pull-requests: write  # open / update the release PR
+  pull-requests: write  # open / update the release PR (also needs the
+                        # repo-level "Allow Actions to create PRs"
+                        # setting; see KNOWN ISSUE block above)
 
 jobs:
   release-please:
@@ -45,6 +73,12 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # Token: GITHUB_TOKEN is the conservative default but suffers
+          # from the silent-fail issue documented above. If a fine-
+          # grained PAT is available, prefer it via:
+          #   token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          # (Coalesce so the workflow still runs when the PAT secret is
+          # unset; it just falls back to the half-broken path.)
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
           config-file: .github/release-please-config.json
           manifest-file: .github/release-please-manifest.json
