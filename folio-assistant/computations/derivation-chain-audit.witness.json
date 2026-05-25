@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T05:53:27.916676+00:00",
-  "commitSha": "ac67b73e60459da4ffa998d53d9b7db7e6881d51",
+  "computedAt": "2026-05-25T05:53:31.606114+00:00",
+  "commitSha": "3c1ce0e1fbca2230fb84e1a94b95f25b2c2da42d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2355,7 +2355,6 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
-        "e0-calibration-audit.witness.json",
         "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-couplings-substrate-derivation-probe.witness.json",
@@ -2366,7 +2365,6 @@
         "factor-2-normalization-trace.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
