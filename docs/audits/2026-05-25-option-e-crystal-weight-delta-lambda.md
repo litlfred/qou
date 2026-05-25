@@ -19,7 +19,7 @@ This branch (`claude/kashiwara-crystal-option-e-scaffolding-2026-05-25`) is the 
 
 ## Why now
 
-Probes 1+3+4 (PR #1229) mapped the per-atom Δ_λ(K) landscape:
+Probes 1+3+4 ([PR #1229](https://github.com/litlfred/qou/pull/1229), **merged 2026-05-25**) mapped the per-atom Δ_λ(K) landscape:
 
 | atom | A | dominant λ*(K) | shape | max |Δ_λ(K)| |
 |------|---|---------------|-------|---:|
@@ -48,8 +48,13 @@ Probe-2 (joint multi-atom) falsified the counter-framework "global Δ_λ" hypoth
 | `gram_matrix(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 (6×6) | generalise to H_n |
 | `gram_inverse(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 | generalise to H_n |
 | `chi_lambda_braid(shape, word, q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ n-strand (f64) | mpfr variant for substrate precision |
-| Per-atom χ caches | `folio-assistant/computations/chi-{D,T,³He,⁴He}-h{n}-at-q0-50dps.witness.json` | ✓ D, T, ³He complete; ⁴He 24/77 | extend ⁴He to all 77 partitions |
-| Crystal vertex weights | (NOT EXIST) | ✗ no Lean / pyhecke implementation | **author this** |
+| Per-atom χ caches | `folio-assistant/computations/chi-{D,T,³He,⁴He}-h{n}-at-q0-50dps.witness.json` | ✓ D, T, ³He complete | use directly for Phase 2 |
+| ⁴He full 77-partition χ table | [`chi-lambda-he4-full-partition-table.witness.json`](../../folio-assistant/computations/chi-lambda-he4-full-partition-table.witness.json) | ✓ landed on main (`30d5f19a1`, 2026-05-25) | re-run probe-4 ⁴He with full table |
+| Jones-Markov atlas (general H_n y_λ) | [`jones-markov-atlas`](../../folio-assistant/computations/) | ✓ landed on main (`814a7545b`, 2026-05-25); generic H_n y_λ solver via cycle-type Schur-orthogonality; verified Σ y_λ · dim_λ = 1 for A ≤ 4 | reuse for Phase 2 Wedderburn projection |
+| H_4 Wedderburn atlas + H_3 vs H_{3A} legacy bug audit | [`c70707397`](https://github.com/litlfred/qou/commit/c70707397) (2026-05-24) | ✓ landed on main; bug is root cause of the 5.87% ⁴He gap | Phase 1 must NOT inherit the H_3-vs-H_{3A} legacy |
+| pyhecke-native multi-block χ_λ | [`8bb47b448`](https://github.com/litlfred/qou/commit/8bb47b448) (2026-05-25) | ✓ FIRST multi-block χ_λ measurement via tier-3 wiring | reuse for Phase 1 instead of authoring `chi_lambda_eval.py` from scratch |
+| pyhecke M3 public API | [`134c04fe5`](https://github.com/litlfred/qou/commit/134c04fe5) (2026-05-25) | ✓ atom/molecular/constants lazy-loaded | Phase 1 wrapper imports from public API |
+| Crystal vertex weights ρ_w | (NOT EXIST) | ✗ no Lean / pyhecke implementation | **author this in Phase 1** |
 
 ## Workplan (weeks-scale, NOT this session)
 
@@ -66,14 +71,17 @@ This branch ships ONLY the scaffolding + framing. Full Option E is multi-PR over
 - [ ] Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with computed Hoefsmit-seminormal 6×6 entries
 - [ ] Formalise the canonical-basis trace ρ_w in Lean (extend [`lusztig-canonical-basis-q-eq-1.lean`](../../content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.lean) to q ≠ 1)
 - [ ] Build a Lean enumerator for crystal vertices at level n=6 (deuteron weight)
-- [ ] Generalise `gram_matrix(q)` / `gram_inverse(q)` in pyhecke-native from hardwired H_3 to general H_n
+- [ ] **Reuse**: Jones-Markov atlas (`814a7545b`) provides generic H_n y_λ solver — extends pyhecke-native's hardwired H_3 case. **No need to author from scratch**; reuse + cite.
+- [ ] Generalise `gram_matrix(q)` / `gram_inverse(q)` in pyhecke-native from hardwired H_3 to general H_n (still open after `814a7545b`; atlas covers y_λ but not the basis matrix)
+- [ ] **Reuse**: pyhecke-native multi-block χ_λ tier-3 wiring (`8bb47b448`) supersedes the `chi_lambda_eval.py` wrapper plan — direct PyO3 import from the lazy-loaded M3 API (`134c04fe5`).
 
 ### Phase 2 — crystal-weight formula verification (research-grade)
 
 - [ ] Tabulate canonical-basis-trace ρ_w(K) for K ∈ {D, T, ³He, ⁴He}
 - [ ] Identify the Brundan–Kleshchev image of each crystal vertex w in the KLR algebra R^Λ_α
-- [ ] Verify Δ_λ(D) = Σ_w n^w_λ · ρ_w(D) against probe-1's empirical D solution
-- [ ] Extend to T, ³He, ⁴He; cross-check shape patterns
+- [ ] Verify Δ_λ(D) = Σ_w n^w_λ · ρ_w(D) against probe-1's empirical D solution from `delta-lambda-bar-invariance-probe.witness.json` (PR #1229 merged)
+- [ ] Extend to T, ³He, ⁴He using the full atomic χ caches; cross-check shape patterns
+- [ ] **⁴He upgrade**: re-run the per-atom sweep (probe-4 logic) with the full 77-partition `chi-lambda-he4-full-partition-table.witness.json` (now on main) — supersedes probe-4's provisional 24/77 truncation
 
 ### Phase 3 — closure proof (Lean, research-grade)
 
