@@ -232,6 +232,24 @@ fn tr_m_word_lq_body(
 
     let max_gen = *word.iter().max().unwrap() as usize;
 
+    // Generator validity guard. B_n has generators {0, 1, ..., n-2},
+    // i.e. max_gen <= n_strands - 2, equivalently max_gen + 2 <= n_strands.
+    // Without this, an out-of-range generator (e.g. gen=1 on B_2 where
+    // only gen=0 is valid) skipped case (3) and fell through to case
+    // (4)'s `top_positions.last().unwrap()`, which panicked on the
+    // empty Vec. Surfaced by the hecke-engine-c smoke test for
+    // tr_m_atomic_mpfr on n=2 with a single-letter word.
+    if max_gen + 2 > n_strands {
+        return Err(format!(
+            "tr_m_word_lq: generator index {} out of range for B_{} \
+             (valid range is [0, {}]; word = {:?})",
+            max_gen,
+            n_strands,
+            n_strands.saturating_sub(2),
+            word
+        ));
+    }
+
     // (2) Generator support below n - 2 — recurse at H_{max_gen + 2}
     if max_gen + 2 < n_strands {
         return tr_m_word_lq_impl(word, max_gen + 2, max_depth, depth + 1);
@@ -431,5 +449,19 @@ mod tests {
         assert_eq!(r1.terms, r2.terms,
                    "tr_M cyclic-invariance violated: {:?} vs {:?}",
                    r1.terms, r2.terms);
+    }
+
+    /// Out-of-range generator returns an Err rather than panicking.
+    /// Regression test for the n=2 / single-gen-1 panic surfaced by the
+    /// hecke-engine-c smoke test.
+    #[test]
+    fn test_out_of_range_generator_errors() {
+        clear_cache();
+        // B_2 has only generator 0; passing gen=1 must error, not panic.
+        let result = tr_m_word_lq(&[1], 2, 200);
+        assert!(result.is_err(), "expected Err for gen=1 in B_2, got {:?}", result);
+        let msg = result.unwrap_err();
+        assert!(msg.contains("out of range"),
+                "expected 'out of range' in error message, got: {msg}");
     }
 }
