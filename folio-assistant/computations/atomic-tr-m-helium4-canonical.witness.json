@@ -1,8 +1,8 @@
 {
-  "engine": "python+mpmath+pyhecke",
+  "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T17:49:09.647632+00:00",
-  "commitSha": "b7b412b371d445ea6664328929d28ffde4092976",
+  "computedAt": "2026-05-25T18:09:14.693061+00:00",
+  "commitSha": "782c44d57d37e40e1d5b18513ba77d1b100684d2",
   "assertions": [
     {
       "name": "abs_tau_4he_positive",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 330,
+  "durationMs": 324,
   "computation": "atomic-tr-m-helium4-canonical",
   "scriptFile": "atomic_tr_m_helium4_canonical.py",
-  "scriptHash": "8d5ca8415c8b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "22f4488cc097",
+  "scriptCommitSha": "782c44d57d37e40e1d5b18513ba77d1b100684d2",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -47,9 +47,9 @@
       "total": 3
     },
     "wall_seconds": {
-      "h3_baseline": 0.31763625144958496,
-      "closed_form_4he": 0.00010395050048828125,
-      "total": 0.31774020195007324
+      "h3_baseline": 0.31285336000019015,
+      "closed_form_4he": 0.00010015699990617577,
+      "total": 0.3129535170000963
     },
     "supersedes": {
       "witness": "atomic-tr-m-helium4.witness.json",
