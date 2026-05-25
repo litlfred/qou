@@ -186,6 +186,69 @@ fn partitions_of(n: usize) -> Vec<Vec<usize>> {
     seminormal::partitions_of(n)
 }
 
+/// Build the cycle-type representative braid for a partition.
+fn cycle_type_braid_rust(parts: &[usize]) -> Vec<(i32, u32)> {
+    let mut word = Vec::new();
+    let mut offset: u32 = 0;
+    for &c in parts {
+        for k in 0..c.saturating_sub(1) {
+            word.push((1_i32, offset + 1 + k as u32));
+        }
+        offset += c as u32;
+    }
+    word
+}
+
+/// Jones-Markov weights y_λ on H_n(q) for arbitrary n.
+///
+/// n-generic replacement for the n=3-hardcoded `trace_weights(q)`
+/// (which returns length-6 for H_3 NF basis only). Returns y_λ on the
+/// **partition basis** (one per λ ⊢ n), satisfying Markov normalization
+/// `Σ_λ y_λ · dim_q(λ) = 1`.
+///
+/// Method: cycle-type Schur orthogonality on the q-Hecke character matrix.
+/// p(n) cycle-type representatives × p(n) partitions = p(n)×p(n) linear
+/// system, solved via LU (with SVD pseudo-inverse fallback).
+///
+/// Per `docs/audits/2026-05-25-infra-audit-h3-vs-hn-hardcoded-api.md`:
+/// canonical upstream replacement for the 6×6-hardcoded
+/// `trace_weights(q)`. Use for any atom A ≥ 2 (H_{3A}, not H_3).
+///
+/// Cost: O(p(n)²) chi_lambda_braid + LU solve. Feasible n ≤ 24
+/// (p(24)=1575); for n ≥ 36 (4He α-cluster scale) needs closed-form
+/// q-Schur principal specialisation (future work).
+#[pyfunction]
+fn trace_weights_n(n: usize, q: f64) -> Vec<f64> {
+    use nalgebra::{DMatrix, DVector};
+
+    let shapes = seminormal::partitions_of(n);
+    let p = shapes.len();
+    let z = gram::markov_z(q);
+
+    let mut a = DMatrix::<f64>::zeros(p, p);
+    for i in 0..p {
+        let word = cycle_type_braid_rust(&shapes[i]);
+        for j in 0..p {
+            a[(i, j)] = seminormal::chi_lambda_braid(&shapes[j], &word, q);
+        }
+    }
+
+    let b: DVector<f64> = DVector::from_iterator(
+        p,
+        shapes.iter().map(|s| z.powi((n - s.len()) as i32)),
+    );
+
+    let decomp = a.clone().lu();
+    let y = decomp
+        .solve(&b)
+        .unwrap_or_else(|| {
+            let svd = a.svd(true, true);
+            svd.solve(&b, 1e-12).unwrap_or_else(|_| DVector::zeros(p))
+        });
+
+    y.iter().copied().collect()
+}
+
 /// **Batch `chi_q_atomic`** — f64 character of `c·σ + d·I` Hecke
 /// factors evaluated across every partition of `n_strands`.  Returns
 /// `Vec<(partition, chi_value)>`.  Rayon-parallel on the Rust side.
@@ -533,6 +596,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
+    m.add_function(wrap_pyfunction!(trace_weights_n, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
