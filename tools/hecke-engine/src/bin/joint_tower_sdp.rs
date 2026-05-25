@@ -18,7 +18,7 @@ use hecke_engine::cross_level_embedding::{verify_edge, TowerEdgeSpec};
 use hecke_engine::gb_nf_reducer::{BraidLetter, HeckeElement};
 use hecke_engine::joint_tower_sdp_certificate as cert;
 use hecke_engine::sdp_verifier::solve_alpha_psd;
-use hecke_engine::wedderburn_psd::evaluate_all_blocks;
+use hecke_engine::wedderburn_psd::{evaluate_all_blocks, evaluate_all_blocks_letters};
 use std::fs;
 use std::path::PathBuf;
 
@@ -283,19 +283,20 @@ fn solve_per_atom(
         .filter(|ev| ev.relation == "hecke-quadratic")
         .count() as u64;
 
-    // Wedderburn-block PSD evaluation operates on i32 letters; extended
-    // braids with σ_avg crossings are converted via the conventional
-    // sentinel encoding (+1000 + i for Avg(i)). For now, restrict to
-    // the legacy letter form for PSD — extending evaluate_all_blocks to
-    // BraidLetter is the natural next step (R5.7) but not blocking this
-    // R5-full ⁴He certificate, which produces the FILTRATION cert from
-    // the full 47-crossing weighted braid (the substantive new content).
-    let psd_letters: Vec<i32> = match &entry.braid {
-        BraidRep::Letters(w) => w.clone(),
-        BraidRep::Extended(_) => Vec::new(), // skip PSD on extended braids for now
-    };
-    let wedderburn = if do_psd && n >= 2 && !psd_letters.is_empty() {
-        evaluate_all_blocks(n, &psd_letters, q0)
+    // Wedderburn-block PSD evaluation: legacy i32 letters use
+    // evaluate_all_blocks; Extended (BraidLetter) braids use the
+    // new evaluate_all_blocks_letters (R5.7 — handles σ_avg by
+    // multiplying by `g - h/2 · I` instead of `g` or `g_inv`).
+    let wedderburn = if do_psd && n >= 2 {
+        match &entry.braid {
+            BraidRep::Letters(w) if !w.is_empty() => {
+                evaluate_all_blocks(n, w, q0)
+            }
+            BraidRep::Extended(w) if !w.is_empty() => {
+                evaluate_all_blocks_letters(n, w, q0)
+            }
+            _ => Vec::new(),
+        }
     } else {
         Vec::new()
     };
