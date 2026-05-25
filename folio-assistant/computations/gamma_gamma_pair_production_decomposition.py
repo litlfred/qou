@@ -46,25 +46,37 @@ directly from the Jones polynomial of 𝓑₃,
 
 which converts to a Markov-trace expansion of all orders in h.
 
-## Localising the 2.89% residual
+## Localising the 2.89% residual — CORRECTED FRAMING (2026-05-25)
 
 The framework's open question (per [the canonical doc]
 (../../docs/lambda-scale-absorbed-into-geom-full.md)) is **where
-inside Geom_full the gap enters**.  Two clean hypotheses:
+inside Geom_full the gap enters**.
 
-  H₁ (h² coefficient wrong):  Family A's +3/4 h² is structurally
-      correct from H_4 Wedderburn but should be replaced by the
-      Reading-A value −G h² (Yekutieli per-cell, 8 ideal octahedra).
-      In this case the entire residual is at h² order.
+**First-version (BUGGY) framing**: with the WRONG Markov-trace
+normalisation `(q^{1/2} + q^{-1/2})² = q + 2 + q⁻¹` inherited from
+`borromean_markov_trace_h2` in `_li_2_q_util.py`, the probe claimed
+"92% at h² coefficient, 8% at h⁴+ truncation" and pointed at Reading-A
+as the dominant fix.  This was wrong.
 
-  H₂ (h⁴⁺ truncation):  Family A's value 5/2 + (3/4) h² is exact
-      AS FAR AS IT GOES, but β_Bor's true linking_weight has h⁴, h⁶,
-      … corrections that the Wedderburn route doesn't see.  In this
-      case the residual is at h⁴ and beyond.
+**Corrected framing** (with the Lean-proved standard normalisation
+`[2]_q² = (q + q⁻¹)² = q² + 2 + q⁻²` from `BorromeanMarkovTrace.lean`):
+the h² coefficient of `tr_M(β_Bor)` is EXACTLY ZERO (Lean-proved), and
+the closed form is `(4 + h² − 3h⁴ − h⁶) / (h² + 4)`.
 
-This probe computes both Family A's value AND the Jones-polynomial-
-derived value at each h-order, exposing which hypothesis the
-empirical Markov trace supports.
+The interesting axis is now **Family A vs Jones**:
+
+  • Family A (Wedderburn dim sum on H_4): `5/2 + (3/4) h²`
+  • Jones (Lean-proved H_3 Markov trace via bridge):
+    `5/2 + 0·h² − 3·h⁴ − (1/4)·h⁶ + (1/16)·h⁸ + …`
+  • These are DIFFERENT theorems about DIFFERENT mathematical
+    objects — both Lean-proved, both correct.
+
+At q₀, Jones (Lean-correct) lands ~47% closer to the CODATA-anchor
+target than Family A.  Which is the categorically-correct
+`linking_weight` is the OPEN question — neither is fully right, and
+the simple bridge `linking_weight = 5/2 + 4·(tr_M − 1)` is itself a
+hack (it forces tr_M(q=1) = 1 to equal Family A's 5/2 by adding a
+constant — not derived).
 
 ## Audit-only — does NOT consume CODATA literals as predictions
 
@@ -142,19 +154,31 @@ def jones_borromean(q):
 def markov_trace_borromean_via_jones(q):
     """Markov trace of β_Bor via its Jones polynomial.
 
-    Convention matches
-    [`borromean_markov_trace_h2`](_li_2_q_util.py): normalize by
-    `(q^{1/2} + q^{-1/2})² = q + 2 + q⁻¹` (the Kauffman–Jones
-    bracket-to-trace normalisation for n=3 strands).  This makes
-    tr_M(β_Bor, 1) = 1 AND yields the correct h² coefficient
-    (3/16), which scales by 4 to Family A's (3/4) under the
-    H₃ → H₄ Wedderburn lift.
+    Convention matches the Lean-proved
+    [`QOU.BraidsAndKnots.trM_borromean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean):
+    normalize by `[2]_q² = (q + q⁻¹)² = q² + 2 + q⁻²`, which is the
+    Kauffman–Jones standard `(t^{1/2} + t^{-1/2})^(n-1)` for n=3
+    strands at t = q².
+
+    CORRECTION (2026-05-25): an earlier version of this function (and
+    the sibling `borromean_markov_trace_h2` in `_li_2_q_util.py`) used
+    `(q^{1/2} + q^{-1/2})² = q + 2 + q⁻¹` — a NON-standard
+    normalization that treats the substrate parameter `q` as the Jones
+    variable `t` (not as q with t = q²).  This gave the WRONG h²
+    coefficient (3/16 instead of the proved 0), inflating the apparent
+    gap between Markov trace and Family A and leading to the bogus
+    "92% at h²" gap localisation in the first version of this probe.
+
+    With the correct Lean-aligned normalisation, the h² coefficient of
+    tr_M(β_Bor) is EXACTLY ZERO (proved in
+    `BorromeanMarkovTrace.lean §h2_coefficient_cancellation`), and the
+    closed form is `(4 + h² − 3h⁴ − h⁶) / (h² + 4)`.
 
     Ref: [kassel2008] Kassel & Turaev, "Braid Groups" §4.5;
-         existing `borromean_markov_trace_h2` docstring.
+         Lean-proved `trM_borromean` closed form.
     """
     V_q = jones_borromean(q)
-    norm = q + 2 + mpf(1) / q  # = (q^{1/2} + q^{-1/2})²
+    norm = (q + mpf(1) / q) ** 2  # = [2]_q² (Kauffman-Jones standard)
     return V_q / norm
 
 
@@ -328,16 +352,24 @@ def main():
     w.add_data("h_order_decomposition", rows)
 
     # ─── Step 4: structural assertions ─────────────────────────────
-    # A1: Family A and Jones agree at h² order  (the proved identity).
-    delta_h2_jones_vs_fa = abs(coeffs_jn[1] - coeffs_fa[1])
+    # A1: Family A and Jones DISAGREE at h² order — they are different
+    # theorems about different objects (H_4 Wedderburn dim sum vs
+    # H_3 Markov trace).  This is the CORRECTED finding (the earlier
+    # version of this probe used a buggy Markov-trace normalisation
+    # that made them appear to agree at h² — see Edit comment in
+    # `markov_trace_borromean_via_jones`).
+    delta_h2_jones_vs_fa = coeffs_jn[1] - coeffs_fa[1]
     w.add_assertion(
-        name="family_a_matches_jones_at_h2",
+        name="family_a_disagrees_jones_at_h2_corrected",
         computed=mp.nstr(delta_h2_jones_vs_fa, 20),
-        expected="0",
+        expected="-0.75",  # Family A: +3/4; Jones: 0  →  delta = -3/4
         tolerance=1e-12,
-        source="Family A's +3/4 h² coefficient is derived from Wedderburn dim sum on H_4; "
-               "Jones polynomial's h² coefficient comes from the Markov trace of β_Bor scaled by 4. "
-               "Their equality is a non-trivial theorem (Yekutieli 2015 / Markov trace ↔ Wedderburn).",
+        source="With the CORRECT Kauffman-Jones normalisation [2]_q² = q² + 2 + q⁻² "
+               "(matching `BorromeanMarkovTrace.lean § h2_coefficient_cancellation`), the "
+               "h² coefficient of tr_M(β_Bor) is exactly ZERO.  Family A's +3/4 h² "
+               "coefficient is a SEPARATE Wedderburn sum on H_4, not derivable from the "
+               "H_3 Markov trace via the simple bridge linking_weight = 5/2 + 4·(tr_M − 1). "
+               "The two are different mathematical objects.",
     )
 
     # A2: Family A is zero at h⁴⁺ (terminates at h²).
@@ -367,57 +399,58 @@ def main():
                "coefficient).  Pass iff |c_{h⁴}| > 1.",
     )
 
-    # A4: Localisation — partition the family-A-to-exact gap into "h²
-    # coefficient" piece vs "h⁴+ truncation" piece using Jones as the
-    # all-orders surrogate.  Jones gives the same h² coefficient (3/4)
-    # as Family A by construction; their disagreement is purely h⁴+.
-    # The exact-anchor gap at q₀ minus the Jones-vs-A point disagreement
-    # is therefore the "h² coefficient is wrong" residual.
-    point_gap_exact_minus_fa = abs(ex_at_q0 - fa_at_q0)
-    point_gap_jones_minus_fa = abs(jn_at_q0 - fa_at_q0)
-    h2_piece_estimate = point_gap_exact_minus_fa - point_gap_jones_minus_fa
-    h4_plus_piece_estimate = point_gap_jones_minus_fa
-    h2_pct_of_gap = (
-        h2_piece_estimate / point_gap_exact_minus_fa
-        if point_gap_exact_minus_fa > 0
+    # A4: CORRECTED gap localisation — Family A vs Lean-correct Jones
+    # vs CODATA target.  With the right normalisation, the picture is
+    # FUNDAMENTALLY DIFFERENT than the buggy first version: Jones (Lean-
+    # correct) already lands closer to the target than Family A, so the
+    # interesting axis is "which route should be canonical", not "where
+    # in h does the gap concentrate".
+    point_gap_exact_minus_fa = ex_at_q0 - fa_at_q0       # signed
+    point_gap_exact_minus_jones = ex_at_q0 - jn_at_q0    # signed
+    fa_residual_abs = abs(point_gap_exact_minus_fa)
+    jones_residual_abs = abs(point_gap_exact_minus_jones)
+    fraction_of_fa_gap_closed_by_jones = (
+        (fa_residual_abs - jones_residual_abs) / fa_residual_abs
+        if fa_residual_abs > 0
         else mpf(0)
     )
 
     w.add_data("gap_localisation", {
-        "point_gap_exact_minus_fa_at_q0": mp.nstr(point_gap_exact_minus_fa, 20),
-        "point_gap_jones_minus_fa_at_q0": mp.nstr(point_gap_jones_minus_fa, 20),
-        "h2_coefficient_piece_estimate": mp.nstr(h2_piece_estimate, 20),
-        "h4_plus_truncation_piece_estimate": mp.nstr(h4_plus_piece_estimate, 20),
-        "h2_percentage_of_gap": mp.nstr(h2_pct_of_gap * 100, 8),
+        "family_a_at_q0": mp.nstr(fa_at_q0, 20),
+        "jones_at_q0_lean_correct": mp.nstr(jn_at_q0, 20),
+        "codata_anchor_target": mp.nstr(ex_at_q0, 20),
+        "family_a_residual_signed": mp.nstr(point_gap_exact_minus_fa, 20),
+        "jones_residual_signed": mp.nstr(point_gap_exact_minus_jones, 20),
+        "family_a_residual_abs": mp.nstr(fa_residual_abs, 20),
+        "jones_residual_abs": mp.nstr(jones_residual_abs, 20),
+        "fraction_of_fa_gap_closed_by_jones": mp.nstr(fraction_of_fa_gap_closed_by_jones * 100, 8),
         "interpretation": (
-            "Family A and Jones share the same h² coefficient (+3/4) by construction; "
-            "their numerical disagreement at q₀ is entirely from h⁴+ Jones corrections "
-            "Family A truncates.  If h2_percentage_of_gap >> 50%: hypothesis H₁ "
-            "(Reading-A) is favored — the gap is in the h² coefficient (Family A's "
-            "+3/4 should be the Reading-A value −G ≈ −0.916).  If h2_percentage_of_gap "
-            "<< 50%: hypothesis H₂ (q-dilog tower) is favored — the gap is in higher-"
-            "order corrections Family A truncates."
+            "Family A (Wedderburn dim sum on H_4) and Jones (H_3 Markov trace of "
+            "β_Bor, Lean-proved closed form via [2]_q² normalisation) DISAGREE at h² "
+            "coefficient: Family A's +3/4 vs Jones's 0.  Both are independently Lean-"
+            "proved theorems about DIFFERENT mathematical objects.  Numerically, the "
+            "Lean-correct Jones value lands ~47% closer to the CODATA-anchor target "
+            "than Family A — suggesting the actual `linking_weight` may be the H_3 "
+            "Markov trace, not the H_4 Wedderburn dim sum.  Open question: which is "
+            "the categorically-correct `linking_weight`?  The simple bridge "
+            "`linking_weight = 5/2 + 4·(tr_M − 1)` is itself a hack (forces tr_M(q=1)"
+            "=1 to equal Family A's 5/2 by adding a constant)."
         ),
     })
 
-    # Clean-localisation flag: 1 if h2_pct >= 80% OR h2_pct <= 20% (clear
-    # winner), 0 if in the ambiguous 20%-80% middle.  Empirical h2_pct ≈
-    # 92% so flag should be 1.
-    is_clean_localisation = float(
-        h2_pct_of_gap >= mpf("0.8") or h2_pct_of_gap <= mpf("0.2")
-    )
+    # Flag-style assertion: confirm Jones lands closer to target than Family A.
+    jones_beats_family_a = float(jones_residual_abs < fa_residual_abs)
     w.add_assertion(
-        name="gap_localisation_clean_winner",
-        computed=is_clean_localisation,
+        name="jones_closer_to_target_than_family_a",
+        computed=jones_beats_family_a,
         expected=1.0,
         tolerance=1e-12,
         source=(
-            f"Audit-internal localisation flag.  h₂-percentage of the exact-anchor "
-            f"gap = {mp.nstr(h2_pct_of_gap * 100, 6)}%.  A clean localisation "
-            f"(>80% in either bucket) cleanly identifies the right refinement "
-            f"direction (Reading-A vs q-dilog tower).  Empirical: Reading-A "
-            f"(h² coefficient) accounts for ≈92% of the gap; q-dilog tower (h⁴+) "
-            f"accounts for ≈8%."
+            f"Lean-correct Jones gives |residual| = {mp.nstr(jones_residual_abs, 6)}, "
+            f"Family A gives |residual| = {mp.nstr(fa_residual_abs, 6)}.  Jones closes "
+            f"{mp.nstr(fraction_of_fa_gap_closed_by_jones * 100, 4)}% of Family A's "
+            f"residual at q₀.  This re-opens the question of which "
+            f"linking_weight is categorically correct."
         ),
     )
 

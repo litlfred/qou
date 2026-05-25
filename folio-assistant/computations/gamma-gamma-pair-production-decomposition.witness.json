@@ -1,16 +1,16 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T18:18:42.578636+00:00",
-  "commitSha": "614d7b63982472f53348439714d31579848567a6",
+  "computedAt": "2026-05-25T18:33:29.747606+00:00",
+  "commitSha": "d4e52642cef43db0f3ac7363f55de4529a5aca12",
   "assertions": [
     {
-      "name": "family_a_matches_jones_at_h2",
-      "computed": "0.0",
-      "expected": "0",
+      "name": "family_a_disagrees_jones_at_h2_corrected",
+      "computed": "-0.75",
+      "expected": "-0.75",
       "passed": true,
       "tolerance": 1e-12,
-      "source": "Family A's +3/4 h² coefficient is derived from Wedderburn dim sum on H_4; Jones polynomial's h² coefficient comes from the Markov trace of β_Bor scaled by 4. Their equality is a non-trivial theorem (Yekutieli 2015 / Markov trace ↔ Wedderburn)."
+      "source": "With the CORRECT Kauffman-Jones normalisation [2]_q² = q² + 2 + q⁻² (matching `BorromeanMarkovTrace.lean § h2_coefficient_cancellation`), the h² coefficient of tr_M(β_Bor) is exactly ZERO.  Family A's +3/4 h² coefficient is a SEPARATE Wedderburn sum on H_4, not derivable from the H_3 Markov trace via the simple bridge linking_weight = 5/2 + 4·(tr_M − 1). The two are different mathematical objects."
     },
     {
       "name": "family_a_terminates_at_h2",
@@ -29,20 +29,20 @@
       "source": "Jones polynomial V(𝓑₃, q²) is degree-3 in q²; its expansion in h necessarily has terms beyond h².  Max |c_{2k>2}| ≈ 3.03 (the h⁴ coefficient).  Pass iff |c_{h⁴}| > 1."
     },
     {
-      "name": "gap_localisation_clean_winner",
+      "name": "jones_closer_to_target_than_family_a",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
       "tolerance": 1e-12,
-      "source": "Audit-internal localisation flag.  h₂-percentage of the exact-anchor gap = 91.9565%.  A clean localisation (>80% in either bucket) cleanly identifies the right refinement direction (Reading-A vs q-dilog tower).  Empirical: Reading-A (h² coefficient) accounts for ≈92% of the gap; q-dilog tower (h⁴+) accounts for ≈8%."
+      "source": "Lean-correct Jones gives |residual| = 0.0342959, Family A gives |residual| = 0.0728269.  Jones closes 52.91% of Family A's residual at q₀.  This re-opens the question of which linking_weight is categorically correct."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "gamma-gamma-pair-production-decomposition",
   "scriptFile": "gamma_gamma_pair_production_decomposition.py",
-  "scriptHash": "73f64b14a14f",
-  "scriptCommitSha": "176d228dba5e01c5904ae5a8d639f1f881c25312",
+  "scriptHash": "1b8b8b570c77",
+  "scriptCommitSha": "d4e52642cef43db0f3ac7363f55de4529a5aca12",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -60,11 +60,11 @@
   "data": {
     "point_eval_at_q0": {
       "family_a": "2.5327796636728840423",
-      "via_jones": "2.5269218186097884216",
+      "via_jones": "2.4942486527902805033",
       "exact_anchor": "2.4599527843613171539",
       "delta_exact_minus_family_a": "-0.072826879311566888401",
-      "delta_jones_minus_family_a": "-0.0058578450630956206798",
-      "delta_exact_minus_jones": "-0.066969034248471267721"
+      "delta_jones_minus_family_a": "-0.038531010882603538976",
+      "delta_exact_minus_jones": "-0.034295868428963349425"
     },
     "h_order_decomposition": [
       {
@@ -79,47 +79,50 @@
       {
         "h_order": 2,
         "family_a": "0.75",
-        "jones": "0.75",
+        "jones": "0.0",
         "exact_anchor": "nan",
-        "delta_jones_vs_fa": "0.0",
+        "delta_jones_vs_fa": "-0.75",
         "delta_exact_vs_fa": "nan",
         "delta_exact_vs_jones": "nan"
       },
       {
         "h_order": 4,
         "family_a": "0.0",
-        "jones": "-3.03125",
+        "jones": "-3.0",
         "exact_anchor": "nan",
-        "delta_jones_vs_fa": "-3.03125",
+        "delta_jones_vs_fa": "-3.0",
         "delta_exact_vs_fa": "nan",
         "delta_exact_vs_jones": "nan"
       },
       {
         "h_order": 6,
         "family_a": "0.0",
-        "jones": "-0.8095703125",
+        "jones": "-0.25",
         "exact_anchor": "nan",
-        "delta_jones_vs_fa": "-0.8095703125",
+        "delta_jones_vs_fa": "-0.25",
         "delta_exact_vs_fa": "nan",
         "delta_exact_vs_jones": "nan"
       },
       {
         "h_order": 8,
         "family_a": "0.0",
-        "jones": "0.0386962890625",
+        "jones": "0.0625",
         "exact_anchor": "nan",
-        "delta_jones_vs_fa": "0.0386962890625",
+        "delta_jones_vs_fa": "0.0625",
         "delta_exact_vs_fa": "nan",
         "delta_exact_vs_jones": "nan"
       }
     ],
     "gap_localisation": {
-      "point_gap_exact_minus_fa_at_q0": "0.072826879311566888401",
-      "point_gap_jones_minus_fa_at_q0": "0.0058578450630956206798",
-      "h2_coefficient_piece_estimate": "0.066969034248471267721",
-      "h4_plus_truncation_piece_estimate": "0.0058578450630956206798",
-      "h2_percentage_of_gap": "91.956479",
-      "interpretation": "Family A and Jones share the same h² coefficient (+3/4) by construction; their numerical disagreement at q₀ is entirely from h⁴+ Jones corrections Family A truncates.  If h2_percentage_of_gap >> 50%: hypothesis H₁ (Reading-A) is favored — the gap is in the h² coefficient (Family A's +3/4 should be the Reading-A value −G ≈ −0.916).  If h2_percentage_of_gap << 50%: hypothesis H₂ (q-dilog tower) is favored — the gap is in higher-order corrections Family A truncates."
+      "family_a_at_q0": "2.5327796636728840423",
+      "jones_at_q0_lean_correct": "2.4942486527902805033",
+      "codata_anchor_target": "2.4599527843613171539",
+      "family_a_residual_signed": "-0.072826879311566888401",
+      "jones_residual_signed": "-0.034295868428963349425",
+      "family_a_residual_abs": "0.072826879311566888401",
+      "jones_residual_abs": "0.034295868428963349425",
+      "fraction_of_fa_gap_closed_by_jones": "52.907678",
+      "interpretation": "Family A (Wedderburn dim sum on H_4) and Jones (H_3 Markov trace of β_Bor, Lean-proved closed form via [2]_q² normalisation) DISAGREE at h² coefficient: Family A's +3/4 vs Jones's 0.  Both are independently Lean-proved theorems about DIFFERENT mathematical objects.  Numerically, the Lean-correct Jones value lands ~47% closer to the CODATA-anchor target than Family A — suggesting the actual `linking_weight` may be the H_3 Markov trace, not the H_4 Wedderburn dim sum.  Open question: which is the categorically-correct `linking_weight`?  The simple bridge `linking_weight = 5/2 + 4·(tr_M − 1)` is itself a hack (forces tr_M(q=1)=1 to equal Family A's 5/2 by adding a constant)."
     }
   }
 }
