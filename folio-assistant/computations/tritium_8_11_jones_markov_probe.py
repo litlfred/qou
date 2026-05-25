@@ -68,10 +68,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+import mpmath as mp  # noqa: E402
+
+from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from knot_braid_database import braid_word_for_knot, n_strands_for_knot  # noqa: E402
 from markov_trace_for_knot import markov_trace_for_knot  # noqa: E402
-from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # AME 2020 reference
@@ -90,16 +93,13 @@ def main() -> int:
         "Phase B-2 probe (EXPLORATORY): corrects the B_5 → B_3 "
         "misframing of tritium's canonical knot (8_11 has braid index "
         "3, not 5). Computes |tr_M(8_11, q_0)| via common-infra "
-        "(markov_trace_for_knot, f64 evaluator) under both Wenzl JM "
-        "and q-Schur conventions and confirms the same bare-|tr_M| "
+        "(markov_trace_for_knot, mp.mpf at 50 dps) under both Wenzl "
+        "JM and q-Schur conventions and confirms the same bare-|tr_M| "
         "<< AME pattern documented at 7²_1 (PR #1274) and 𝓑₃ "
         "(proton-mass). The framework's Geom_full chain is the "
         "correct substrate-pure derivation; bare |tr_M| is not."
     )
-    # Note: markov_trace_for_knot is an f64 evaluator (q: float), so
-    # no high-precision (mpmath) plumbing is needed here. The 50-digit
-    # Q_50_DIGIT_STR is exposed in the witness as the canonical
-    # substrate pin only; the computation uses the f64-truncated value.
+    set_compute_dps(50)
 
     print("=" * 78)
     print("Tritium 8_11 Jones-Markov probe (Phase B-2)")
@@ -116,38 +116,39 @@ def main() -> int:
               f"(NOT B_5 as the original Track B design doc assumed)")
 
     q_str = Q_50_DIGIT_STR
-    q_f64 = float(Q_FLOAT)
-    print(f"\n  q_0 (canonical 50-digit pin) = {q_str}")
-    print(f"  q_0 (f64 used in this probe)  = {q_f64}")
-    print(f"  m_e = {float(M_E_MEV):.10f} MeV")
+    me_mpf = mp.mpf(str(M_E_MEV))
+    ame_mpf = mp.mpf(str(AME_BINDING_3H_MEV))
+    print(f"\n  q_0 (50 dps) = {q_str}")
+    print(f"  m_e = {mp.nstr(me_mpf, 25)} MeV")
     print(f"  AME B(³H) = {AME_BINDING_3H_MEV} MeV")
 
-    # Trace under both conventions
-    print(f"\n[1/2] |tr_M(8_11, q_0)| Wenzl JM (mass-formula convention)")
+    # Trace under both conventions — mp.mpf at 50 dps (L1 floor)
+    print(f"\n[1/2] |tr_M(8_11, q_0)| Wenzl JM (mass-formula, mpf 50 dps)")
     t0 = time.perf_counter()
-    trM_wenzl = markov_trace_for_knot("8_11", q_f64, "wenzl")
+    trM_wenzl = markov_trace_for_knot("8_11", q_str, "wenzl")
     t_wenzl = time.perf_counter() - t0
-    print(f"      tr_M = {trM_wenzl:.10f}, |.| = {abs(trM_wenzl):.10f}")
-    print(f"      m_e · |tr_M| = {float(M_E_MEV)*abs(trM_wenzl):.6f} MeV")
+    print(f"      tr_M = {mp.nstr(trM_wenzl, 25)}")
+    print(f"      |tr_M| = {mp.nstr(abs(trM_wenzl), 25)}")
+    print(f"      m_e · |tr_M| = {mp.nstr(me_mpf * abs(trM_wenzl), 12)} MeV")
     print(f"      wall: {t_wenzl*1000:.2f} ms")
 
-    print(f"\n[2/2] |tr_M(8_11, q_0)| q-Schur (torus-knot convention)")
+    print(f"\n[2/2] |tr_M(8_11, q_0)| q-Schur (torus-knot, mpf 50 dps)")
     t0 = time.perf_counter()
-    trM_qschur = markov_trace_for_knot("8_11", q_f64, "q_schur")
+    trM_qschur = markov_trace_for_knot("8_11", q_str, "q_schur")
     t_qschur = time.perf_counter() - t0
-    print(f"      tr_M = {trM_qschur:.10f}, |.| = {abs(trM_qschur):.10f}")
-    print(f"      m_e · |tr_M| = {float(M_E_MEV)*abs(trM_qschur):.6f} MeV")
+    print(f"      tr_M = {mp.nstr(trM_qschur, 25)}")
+    print(f"      |tr_M| = {mp.nstr(abs(trM_qschur), 25)}")
+    print(f"      m_e · |tr_M| = {mp.nstr(me_mpf * abs(trM_qschur), 12)} MeV")
     print(f"      wall: {t_qschur*1000:.2f} ms")
 
-    # Gap analysis vs AME
-    me = float(M_E_MEV)
-    pred_wenzl = me * abs(trM_wenzl)
-    pred_qschur = me * abs(trM_qschur)
-    ratio_wenzl = AME_BINDING_3H_MEV / pred_wenzl
-    ratio_qschur = AME_BINDING_3H_MEV / pred_qschur
+    # Gap analysis vs AME (mpf throughout)
+    pred_wenzl = me_mpf * abs(trM_wenzl)
+    pred_qschur = me_mpf * abs(trM_qschur)
+    ratio_wenzl = ame_mpf / pred_wenzl
+    ratio_qschur = ame_mpf / pred_qschur
 
-    print(f"\n  AME B(³H) / (m_e·|tr_M|_Wenzl)   = {ratio_wenzl:.2f}×")
-    print(f"  AME B(³H) / (m_e·|tr_M|_qSchur)  = {ratio_qschur:.2f}×")
+    print(f"\n  AME B(³H) / (m_e·|tr_M|_Wenzl)   = {mp.nstr(ratio_wenzl, 6)}×")
+    print(f"  AME B(³H) / (m_e·|tr_M|_qSchur)  = {mp.nstr(ratio_qschur, 6)}×")
     print(f"\n  Same pattern as PR #1274's c_αα probe on 7²_1:")
     print(f"  bare |tr_M| << binding-scale by ~88-90× factor.")
     print(f"  Geom_full chain (Vol/ℏ_q² × linking_weight) is the")
@@ -155,24 +156,20 @@ def main() -> int:
 
     # Witness
     w.add_parameter("q_0_50dps", q_str)
-    w.add_parameter("q_0_f64", q_f64)
     w.add_parameter("m_e_MeV", str(M_E_MEV))
     w.add_parameter("knot", "8_11 (tritium hyperbolic knot)")
     # JSON-friendly serialization: list of [sign, gen] pairs
     w.add_parameter("braid_word", [list(t) for t in braid])
     w.add_parameter("n_strands_catalogued", n_strands)
-    w.add_parameter("evaluator_precision", "f64 (markov_trace_for_knot is "
-                                          "an f64-only evaluator; high-"
-                                          "precision substrate pin "
-                                          "preserved in q_0_50dps for "
-                                          "provenance)")
-    w.add_data("tr_M_wenzl", float(trM_wenzl))
-    w.add_data("tr_M_qschur", float(trM_qschur))
-    w.add_data("m_e_times_abs_tr_M_wenzl_MeV", pred_wenzl)
-    w.add_data("m_e_times_abs_tr_M_qschur_MeV", pred_qschur)
+    w.add_parameter("evaluator_precision", "mp.mpf at 50 dps (L1 floor) via "
+                                          "markov_trace_for_knot mpf default")
+    w.add_data("tr_M_wenzl", mp.nstr(trM_wenzl, 25))
+    w.add_data("tr_M_qschur", mp.nstr(trM_qschur, 25))
+    w.add_data("m_e_times_abs_tr_M_wenzl_MeV", mp.nstr(pred_wenzl, 25))
+    w.add_data("m_e_times_abs_tr_M_qschur_MeV", mp.nstr(pred_qschur, 25))
     w.add_data("AME_binding_3H_MeV", AME_BINDING_3H_MEV)
-    w.add_data("ratio_AME_to_bare_wenzl", ratio_wenzl)
-    w.add_data("ratio_AME_to_bare_qschur", ratio_qschur)
+    w.add_data("ratio_AME_to_bare_wenzl", mp.nstr(ratio_wenzl, 25))
+    w.add_data("ratio_AME_to_bare_qschur", mp.nstr(ratio_qschur, 25))
     w.add_data("wall_seconds", {
         "wenzl_jm": t_wenzl,
         "q_schur": t_qschur,

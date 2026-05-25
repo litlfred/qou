@@ -82,11 +82,12 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
+from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from knot_braid_database import braid_word_for_knot  # noqa: E402
 from knot_volumes import VOL_7_SQ_1_F64, VOL_7_SQ_1_MPF  # noqa: E402
 from markov_trace_for_knot import markov_trace_for_knot  # noqa: E402
-from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -110,97 +111,90 @@ def main() -> int:
         "(Vol/ℏ_q² × linking_weight) is. This probe does NOT propose "
         "changing alpha_cluster_recursion.py."
     )
-    # Note: markov_trace_for_knot is an f64 evaluator (q: float).
-    # The 50-digit substrate pin is preserved in the witness for
-    # provenance only; the computation uses f64.
+    set_compute_dps(50)
 
     print("=" * 78)
     print("c_αα Markov-trace probe (Phase B-4 — NEGATIVE finding)")
     print("=" * 78)
 
     q_str = Q_50_DIGIT_STR
-    q_f64 = float(Q_FLOAT)
 
     # Build the 7²_1 braid via common infra
     braid = braid_word_for_knot("7^2_1")
     print(f"\n  7²_1 braid word (B_3): {braid}")
     print(f"  (length {len(braid)} crossings)")
-    print(f"\n  q_0 = {q_str}")
+    print(f"\n  q_0 (50 dps) = {q_str}")
     print(f"  m_e = {float(M_E_MEV):.10f} MeV")
 
-    # Markov trace under both conventions
+    # Markov trace under both conventions — mpf at 50 dps (L1 floor)
     print(f"\n[1/3] Markov trace under Wenzl Jones-Markov convention "
-          f"(mass formula)...")
+          f"(mass formula, mpf 50 dps)...")
     t0 = time.perf_counter()
-    trM_wenzl = markov_trace_for_knot("7^2_1", q_f64, "wenzl")
+    trM_wenzl = markov_trace_for_knot("7^2_1", q_str, "wenzl")
     t_wenzl = time.perf_counter() - t0
-    print(f"      tr_M(7²_1, q_0) (Wenzl JM) = {trM_wenzl:.10f}")
-    print(f"      |tr_M(7²_1, q_0)| (Wenzl JM) = {abs(trM_wenzl):.10f}")
+    print(f"      tr_M(7²_1, q_0) (Wenzl JM) = {mp.nstr(trM_wenzl, 25)}")
+    print(f"      |tr_M(7²_1, q_0)| (Wenzl JM) = {mp.nstr(abs(trM_wenzl), 25)}")
     print(f"      wall: {t_wenzl*1000:.2f} ms")
 
     print(f"\n[2/3] Markov trace under q-Schur Plancherel convention "
-          f"(torus knots, lepton tower)...")
+          f"(torus knots, lepton tower, mpf 50 dps)...")
     t0 = time.perf_counter()
-    trM_qschur = markov_trace_for_knot("7^2_1", q_f64, "q_schur")
+    trM_qschur = markov_trace_for_knot("7^2_1", q_str, "q_schur")
     t_qschur = time.perf_counter() - t0
-    print(f"      tr_M(7²_1, q_0) (q-Schur) = {trM_qschur:.10f}")
-    print(f"      |tr_M(7²_1, q_0)| (q-Schur) = {abs(trM_qschur):.10f}")
+    print(f"      tr_M(7²_1, q_0) (q-Schur) = {mp.nstr(trM_qschur, 25)}")
+    print(f"      |tr_M(7²_1, q_0)| (q-Schur) = {mp.nstr(abs(trM_qschur), 25)}")
     print(f"      wall: {t_qschur*1000:.2f} ms")
 
-    # Derived c_αα under each convention
-    print(f"\n[3/3] Derived c_αα values vs literature")
+    # Derived c_αα under each convention (mpf 50 dps throughout)
+    print(f"\n[3/3] Derived c_αα values vs literature (mpf 50 dps)")
     m_e_mpf = mp.mpf(str(M_E_MEV))
-    c_aa_derived_wenzl = m_e_mpf * mp.fabs(mp.mpf(trM_wenzl))
-    c_aa_derived_qschur = m_e_mpf * mp.fabs(mp.mpf(trM_qschur))
+    c_aa_derived_wenzl = m_e_mpf * mp.fabs(trM_wenzl)
+    c_aa_derived_qschur = m_e_mpf * mp.fabs(trM_qschur)
     c_aa_literature = m_e_mpf * VOL_7_SQ_1_MPF
 
     print(f"\n  c_αα (literature: m_e · Vol(7²_1))")
-    print(f"    = {float(M_E_MEV):.10f} × {VOL_7_SQ_1_F64:.10f}")
-    print(f"    = {float(c_aa_literature):.10f} MeV")
+    print(f"    = {mp.nstr(m_e_mpf, 25)} × {mp.nstr(VOL_7_SQ_1_MPF, 25)}")
+    print(f"    = {mp.nstr(c_aa_literature, 25)} MeV")
 
     print(f"\n  c_αα^derived (Wenzl JM: m_e · |tr_M(7²_1)|)")
-    print(f"    = {float(M_E_MEV):.10f} × {abs(trM_wenzl):.10f}")
-    print(f"    = {float(c_aa_derived_wenzl):.10f} MeV")
+    print(f"    = {mp.nstr(c_aa_derived_wenzl, 25)} MeV")
 
     print(f"\n  c_αα^derived (q-Schur: m_e · |tr_M(7²_1)|)")
-    print(f"    = {float(M_E_MEV):.10f} × {abs(trM_qschur):.10f}")
-    print(f"    = {float(c_aa_derived_qschur):.10f} MeV")
+    print(f"    = {mp.nstr(c_aa_derived_qschur, 25)} MeV")
 
-    # Gap analysis
-    delta_wenzl = float(c_aa_derived_wenzl - c_aa_literature)
-    delta_qschur = float(c_aa_derived_qschur - c_aa_literature)
-    rel_wenzl = delta_wenzl / float(c_aa_literature)
-    rel_qschur = delta_qschur / float(c_aa_literature)
+    # Gap analysis (mpf precision throughout)
+    delta_wenzl = c_aa_derived_wenzl - c_aa_literature
+    delta_qschur = c_aa_derived_qschur - c_aa_literature
+    rel_wenzl = delta_wenzl / c_aa_literature
+    rel_qschur = delta_qschur / c_aa_literature
 
     print(f"\n  Gap (Wenzl JM derived − literature): "
-          f"{delta_wenzl:+.6f} MeV ({rel_wenzl*100:+.2f}%)")
+          f"{mp.nstr(delta_wenzl, 8)} MeV ({mp.nstr(rel_wenzl * 100, 6)}%)")
     print(f"  Gap (q-Schur derived − literature): "
-          f"{delta_qschur:+.6f} MeV ({rel_qschur*100:+.2f}%)")
+          f"{mp.nstr(delta_qschur, 8)} MeV ({mp.nstr(rel_qschur * 100, 6)}%)")
 
     # Witness
     w.add_parameter("q_0_50dps", q_str)
-    w.add_parameter("q_0_f64", q_f64)
     w.add_parameter("m_e_MeV", str(M_E_MEV))
     w.add_parameter("knot", "7^2_1 (Whitehead-link-like 2-component)")
     # JSON-friendly: list of [sign, gen] pairs
     w.add_parameter("braid_word", [list(t) for t in braid])
-    w.add_parameter("evaluator_precision", "f64 (markov_trace_for_knot "
-                                          "is an f64 evaluator; mpmath "
-                                          "used downstream only for "
-                                          "c_αα arithmetic against the "
-                                          "mpf-precision Vol(7²_1))")
-    w.add_data("tr_M_wenzl", float(trM_wenzl))
-    w.add_data("tr_M_qschur", float(trM_qschur))
-    w.add_data("c_alpha_alpha_literature_MeV", float(c_aa_literature))
+    w.add_parameter("evaluator_precision", "mp.mpf at 50 dps (L1 floor) "
+                                          "via markov_trace_for_knot "
+                                          "mpf default; mpf used "
+                                          "throughout c_αα arithmetic")
+    w.add_data("tr_M_wenzl", mp.nstr(trM_wenzl, 25))
+    w.add_data("tr_M_qschur", mp.nstr(trM_qschur, 25))
+    w.add_data("c_alpha_alpha_literature_MeV", mp.nstr(c_aa_literature, 25))
     w.add_data("c_alpha_alpha_derived_wenzl_MeV",
-               float(c_aa_derived_wenzl))
+               mp.nstr(c_aa_derived_wenzl, 25))
     w.add_data("c_alpha_alpha_derived_qschur_MeV",
-               float(c_aa_derived_qschur))
-    w.add_data("delta_wenzl_vs_lit_MeV", delta_wenzl)
-    w.add_data("delta_qschur_vs_lit_MeV", delta_qschur)
-    w.add_data("rel_err_wenzl", rel_wenzl)
-    w.add_data("rel_err_qschur", rel_qschur)
-    w.add_data("vol_7_sq_1", VOL_7_SQ_1_F64)
+               mp.nstr(c_aa_derived_qschur, 25))
+    w.add_data("delta_wenzl_vs_lit_MeV", mp.nstr(delta_wenzl, 25))
+    w.add_data("delta_qschur_vs_lit_MeV", mp.nstr(delta_qschur, 25))
+    w.add_data("rel_err_wenzl", mp.nstr(rel_wenzl, 25))
+    w.add_data("rel_err_qschur", mp.nstr(rel_qschur, 25))
+    w.add_data("vol_7_sq_1", mp.nstr(VOL_7_SQ_1_MPF, 25))
     w.add_data("wall_seconds", {
         "wenzl_jm": t_wenzl,
         "q_schur": t_qschur,
@@ -210,9 +204,11 @@ def main() -> int:
     # Boolean predicate: |tr_M| must be finite AND strictly positive.
     # (Previous formulation with expected=1.0, tolerance=10.0 vacuously
     # passed even at computed=0.0; per Copilot PR #1274 review.)
-    import math
+    # trM_wenzl is mp.mpf at 50 dps — use mp.isnan / mp.isinf
     trM_wenzl_finite_nonzero = (
-        math.isfinite(trM_wenzl) and abs(trM_wenzl) > 1e-12
+        not mp.isnan(trM_wenzl)
+        and not mp.isinf(trM_wenzl)
+        and abs(trM_wenzl) > mp.mpf("1e-40")
     )
     w.add_assertion(
         name="tr_M_wenzl_finite_nonzero",
