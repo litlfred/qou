@@ -1,0 +1,185 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T23:45:32.113830+00:00",
+  "commitSha": "be0f420da2049854d884fa81becb2ab0c8ffdacd",
+  "assertions": [
+    {
+      "name": "prescreen_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Tested 11 H_4 braid words; 5 with negative a_2. Sanity: search completed without error."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 50,
+  "computation": "markov-trace-h4-natural-elements-50dps",
+  "scriptFile": "markov_trace_h4_natural_elements_prescreen.py",
+  "scriptHash": "7a4233ae624a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Pre-screens Markov traces of ~10 natural H_4 braid elements at mp.mpf 50 dps. Tests whether characters at non-identity elements (which can be negative) yield h² coefficient near -G (Reading-A target).",
+  "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
+  "parameters": {
+    "sample_q_strs": [
+      "1.05",
+      "1.08",
+      "1.11",
+      "1.14",
+      "1.17"
+    ],
+    "target_h2_minus_G": "-0.9159655941772190150546035"
+  },
+  "data": {
+    "per_braid_results": {
+      "identity": {
+        "a_0": "1.0",
+        "a_2": "0.0",
+        "a_4": "0.0",
+        "a_2_normalized_to_h0_5over2": "0.0",
+        "delta_vs_minus_G": "0.91596559"
+      },
+      "sigma_1": {
+        "a_0": "0.4999999827",
+        "a_2": "-0.0156232472536",
+        "a_4": "0.00166871095939",
+        "a_2_normalized_to_h0_5over2": "-0.078116238971",
+        "delta_vs_minus_G": "0.83784936"
+      },
+      "sigma_1_squared": {
+        "a_0": "1.03269755426",
+        "a_2": "1.92892991074",
+        "a_4": "-6.88272528392",
+        "a_2_normalized_to_h0_5over2": "4.66963900221",
+        "delta_vs_minus_G": "5.5856046"
+      },
+      "sigma_1_sigma_2": {
+        "a_0": "0.249999979051",
+        "a_2": "-0.0156228773939",
+        "a_4": "0.00190434252205",
+        "a_2_normalized_to_h0_5over2": "-0.15622878703",
+        "delta_vs_minus_G": "0.75973681"
+      },
+      "sigma_1_sigma_2_sigma_3": {
+        "a_0": "0.124999981297",
+        "a_2": "-0.011716854762",
+        "a_4": "0.00160438203126",
+        "a_2_normalized_to_h0_5over2": "-0.234337130302",
+        "delta_vs_minus_G": "0.68162846"
+      },
+      "coxeter_squared": {
+        "a_0": "0.266258774555",
+        "a_2": "1.21584748238",
+        "a_4": "-3.2722050233",
+        "a_2_normalized_to_h0_5over2": "11.4160320576",
+        "delta_vs_minus_G": "12.331998"
+      },
+      "sigma_1_sigma_2_inv": {
+        "a_0": "0.217302424791",
+        "a_2": "-1.94455278814",
+        "a_4": "6.88462962644",
+        "a_2_normalized_to_h0_5over2": "-22.3715035624",
+        "delta_vs_minus_G": "-21.455538"
+      },
+      "borromean_lift_stab": {
+        "a_0": "0.999942005478",
+        "a_2": "0.00639989516796",
+        "a_4": "-0.966557117754",
+        "a_2_normalized_to_h0_5over2": "0.0160006658709",
+        "delta_vs_minus_G": "0.93196626"
+      },
+      "garside_4": {
+        "a_0": "0.532710618459",
+        "a_2": "2.03585338402",
+        "a_4": "-6.91822794771",
+        "a_2_normalized_to_h0_5over2": "9.5542181509",
+        "delta_vs_minus_G": "10.470184"
+      },
+      "all_inverse": {
+        "a_0": "0.0767490808594",
+        "a_2": "-1.55604570448",
+        "a_4": "8.61322344943",
+        "a_2_normalized_to_h0_5over2": "-50.6861348389",
+        "delta_vs_minus_G": "-49.770169"
+      },
+      "pure_3_strand": {
+        "a_0": "1.06539524303",
+        "a_2": "4.10784619621",
+        "a_4": "-13.7807626513",
+        "a_2_normalized_to_h0_5over2": "9.63925412442",
+        "delta_vs_minus_G": "10.55522"
+      }
+    },
+    "braids_with_negative_a2": [
+      {
+        "name": "sigma_1",
+        "data": {
+          "a_0": "0.4999999827",
+          "a_2": "-0.0156232472536",
+          "a_4": "0.00166871095939",
+          "a_2_normalized_to_h0_5over2": "-0.078116238971",
+          "delta_vs_minus_G": "0.83784936"
+        }
+      },
+      {
+        "name": "sigma_1_sigma_2",
+        "data": {
+          "a_0": "0.249999979051",
+          "a_2": "-0.0156228773939",
+          "a_4": "0.00190434252205",
+          "a_2_normalized_to_h0_5over2": "-0.15622878703",
+          "delta_vs_minus_G": "0.75973681"
+        }
+      },
+      {
+        "name": "sigma_1_sigma_2_sigma_3",
+        "data": {
+          "a_0": "0.124999981297",
+          "a_2": "-0.011716854762",
+          "a_4": "0.00160438203126",
+          "a_2_normalized_to_h0_5over2": "-0.234337130302",
+          "delta_vs_minus_G": "0.68162846"
+        }
+      },
+      {
+        "name": "sigma_1_sigma_2_inv",
+        "data": {
+          "a_0": "0.217302424791",
+          "a_2": "-1.94455278814",
+          "a_4": "6.88462962644",
+          "a_2_normalized_to_h0_5over2": "-22.3715035624",
+          "delta_vs_minus_G": "-21.455538"
+        }
+      },
+      {
+        "name": "all_inverse",
+        "data": {
+          "a_0": "0.0767490808594",
+          "a_2": "-1.55604570448",
+          "a_4": "8.61322344943",
+          "a_2_normalized_to_h0_5over2": "-50.6861348389",
+          "delta_vs_minus_G": "-49.770169"
+        }
+      }
+    ],
+    "closest_braid_to_target": {
+      "name": "sigma_1_sigma_2_sigma_3",
+      "data": {
+        "a_0": "0.124999981297",
+        "a_2": "-0.011716854762",
+        "a_4": "0.00160438203126",
+        "a_2_normalized_to_h0_5over2": "-0.234337130302",
+        "delta_vs_minus_G": "0.68162846"
+      },
+      "absolute_delta": "0.681628463875"
+    },
+    "verdict": "Found braids with NEGATIVE h² coefficient, but none within 0.01 of target -G. The 'negative h²' is achievable structurally but not at -G specifically without further calibration."
+  }
+}
