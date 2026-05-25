@@ -1,36 +1,72 @@
 {
-  "engine": "python+mpmath",
+  "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T18:20:26.542832+00:00",
-  "commitSha": "5c8756d0146c788889f257d54bb96d412ee7e9d2",
+  "computedAt": "2026-05-25T19:05:53.193885+00:00",
+  "commitSha": "a13f647c2e384ee601b3e03fc193c67cbf61502a",
   "assertions": [
     {
       "name": "tr_M_wenzl_finite_nonzero",
-      "computed": 0.2086108940022843,
-      "expected": 1.0,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 10.0,
-      "source": "Markov trace of a 3-strand 8-crossing braid; rough magnitude check (any nonzero finite value)"
+      "tolerance": 0,
+      "source": "Boolean check: math.isfinite(trM_wenzl) AND |trM| > 1e-12 — guards against silent NaN/Inf or zero returns from the common-infra evaluator. Robust against the 'tolerance wider than |computed − expected|' vacuous-pass pitfall."
     }
   ],
   "allPassed": true,
   "durationMs": 13,
   "computation": "c-alpha-alpha-categorical-via-jones-markov",
   "scriptFile": "c_alpha_alpha_categorical_via_jones_markov.py",
-  "scriptHash": "fea6dd7fa8d1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7c376e12c756",
+  "scriptCommitSha": "a13f647c2e384ee601b3e03fc193c67cbf61502a",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "c_αα categorical derivation via Jones-Markov trace on 7²_1 (Whitehead-link-like 2-component, the α-α coupling knot per alpha_cluster_recursion.py). Phase B-4 of the Track B execution plan: replace the literature value c_αα = m_e·Vol(7²_1) with the substrate-canonical c_αα = m_e·|tr_M(T_w(7²_1), q_0)|, aligning the α-cluster recursion with prop:atom-knot-mass-derivation.",
+  "description": "Phase B-4 c_αα probe (EXPLORATORY — NEGATIVE result). Tests whether the substrate-canonical Markov-trace value m_e·|tr_M(T_w(7²_1), q_0)| could replace the literature c_αα = m_e·Vol(7²_1) ≈ 2.43 MeV in alpha_cluster_recursion.py. Result: bare Markov-trace value is ~22.7× smaller than the literature; the substitution does NOT work. Mirrors the proton-mass case (|tr_M(𝓑₃)| << m_p) — bare |tr_M| is not the substrate-pure binding-scale derivation; Geom_full chain (Vol/ℏ_q² × linking_weight) is. This probe does NOT propose changing alpha_cluster_recursion.py.",
+  "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
   "parameters": {
-    "q_0": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_f64": 1.1099785955541805,
     "m_e_MeV": "0.51099895069",
     "knot": "7^2_1 (Whitehead-link-like 2-component)",
-    "braid_word": "[(-1, 1), (1, 2), (-1, 1), (1, 2), (1, 2), (-1, 1), (1, 2), (1, 2)]"
+    "braid_word": [
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "evaluator_precision": "f64 (markov_trace_for_knot is an f64 evaluator; mpmath used downstream only for c_αα arithmetic against the mpf-precision Vol(7²_1))"
   },
   "data": {
     "tr_M_wenzl": 0.2086108940022843,
@@ -44,9 +80,9 @@
     "rel_err_qschur": -0.9610077434725,
     "vol_7_sq_1": 4.749499981874439,
     "wall_seconds": {
-      "wenzl_jm": 0.0005346670000108134,
-      "q_schur": 0.00017488899993622908,
-      "total": 0.0007095559999470424
+      "wenzl_jm": 0.0005988089999391377,
+      "q_schur": 8.783099997344834e-05,
+      "total": 0.0006866399999125861
     }
   }
 }
