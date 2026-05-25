@@ -440,6 +440,24 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
                                 m_pp=None, m_pn=None, m_nn=None):
     """Per-generator additive Wedderburn volumes V̂_i^full for the atom braid.
 
+    ⚠️  KNOWN BUG (audit 2026-05-25, PR #1238):
+    This function uses HARDCODED H_3 Wedderburn weights regardless of
+    atom size A. For A > 1 (deuteron, ⁴He, ⁶Li, ...), the braid lives
+    in H_{3A}(q), not H_3(q), and the H_3 weights are systematically
+    wrong. See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md.
+
+    The CANONICAL replacement is:
+        folio-assistant/computations/mass_at_3A_proper.py
+            per_generator_V_hat_3A(Z, N, weight_scheme="normalized_plancherel")
+    which sums over all partitions of 3A with proper Wedderburn weights.
+
+    Migration is NOT YET DONE for the 15+ callers (mass_formula_6term.py,
+    tower_isotope_absolute.py, paper_six_term_isotope_sweep.py, ...).
+    Per-call migration is required because the return shape differs:
+        legacy:  [{"std": Vs, "sym": sp, "alt": ap, "full": Vf}, ...]
+        proper:  [{"full": V̂_i, "gen_word": [...]}, ...]
+    A separate dedicated PR is queued for the migration sweep.
+
     If m_pp, m_pn, m_nn are given (ILP solution), use them per pair type.
     Otherwise fall back to uniform crossings_per_pair.
 
@@ -474,6 +492,20 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     A = Z + N
     if A < 1:
         return []
+
+    # H_3 vs H_{3A} legacy bug warning (audit 2026-05-25, PR #1238).
+    # For A > 1 the H_3 Wedderburn weights used below are systematically
+    # wrong. Callers should migrate to mass_at_3A_proper.per_generator_V_hat_3A.
+    if A > 1:
+        import warnings
+        warnings.warn(
+            f"atom_per_generator_volumes uses H_3 Wedderburn weights for "
+            f"A={A} atom (Z={Z}, N={N}); H_{{3A}}={3*A} weights are correct. "
+            "See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md. "
+            "Migrate to mass_at_3A_proper.per_generator_V_hat_3A.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
 
     # Nucleon ordering (Z protons then N neutrons) — matches
     # atom_character_raw convention.
