@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-24T16:43:07.133391+00:00",
+  "computedAt": "2026-05-25T05:15:23.513684+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -27,7 +27,7 @@
     "literal_0_78233341": [
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 132,
+        "line": 144,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3",
@@ -203,19 +203,11 @@
       },
       {
         "file": "folio-assistant/computations/hecke_characters.py",
-        "line": 45,
+        "line": 46,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "E_0_BETA_DECAY_Q_MEV = Q_NEUTRON_MEV  # CODATA: 0.78233341 ± 6.1e-7 MeV",
         "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/hecke_core.py",
-        "line": 986,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "#   Q_β(n) = m_n - m_p - m_e = 0.78233341 ± 6.1×10⁻⁷ MeV",
-        "kind": "doc"
       },
       {
         "file": "folio-assistant/computations/homflypt_su_n_mass_tower.py",
@@ -227,7 +219,7 @@
       },
       {
         "file": "folio-assistant/computations/inverse-markov-qvalues.py",
-        "line": 282,
+        "line": 283,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "print(\"  Q₀ = m_n - m_p - m_e = 0.78233341 MeV (free neutron Q-value)\")",
@@ -503,7 +495,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_characters.py",
-        "line": 39,
+        "line": 40,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "# prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.",
@@ -511,18 +503,18 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 990,
+        "line": 188,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
-        "context": "E_0_CALIBRATION_MEV     = _Q_NEUTRON_MEV",
+        "context": "E_0_CALIBRATION_MEV,",
         "kind": "active"
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 991,
+        "line": 189,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
-        "context": "E_0_CALIBRATION_MEV_ERR = _Q_NEUTRON_MEV_ERR",
+        "context": "E_0_CALIBRATION_MEV_ERR,",
         "kind": "active"
       },
       {
@@ -575,15 +567,15 @@
       },
       {
         "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
-        "line": 71,
+        "line": 70,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
-        "context": "E_0_CALIBRATION_MEV,",
+        "context": "from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402",
         "kind": "active"
       },
       {
         "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
-        "line": 91,
+        "line": 99,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "print(f\"\\n  E_0 (convention B) = {float(E_0_CALIBRATION_MEV):.6f} MeV\")",
@@ -591,7 +583,7 @@
       },
       {
         "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
-        "line": 126,
+        "line": 134,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "\"E_0_MeV\": float(E_0_CALIBRATION_MEV),",
@@ -599,7 +591,7 @@
       },
       {
         "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
-        "line": 166,
+        "line": 174,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "\"E_0_MeV\": float(E_0_CALIBRATION_MEV),",
@@ -607,7 +599,7 @@
       },
       {
         "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
-        "line": 167,
+        "line": 175,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "\"E_0_source\": \"hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA\",",
@@ -633,7 +625,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 124,
+        "line": 136,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
         "context": "Q_beta_n_mev: float = float(_Q_BETA_N),",
@@ -641,7 +633,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 297,
+        "line": 315,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
         "context": "print(f\"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)\")",
@@ -649,7 +641,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 335,
+        "line": 355,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
         "context": "f\"|tr_M_atom|) with Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-\"",
@@ -657,7 +649,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 347,
+        "line": 367,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
         "context": ".add_parameter(\"Q_beta_n_MeV\", float(_Q_BETA_N))",
