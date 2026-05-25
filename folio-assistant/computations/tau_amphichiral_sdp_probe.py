@@ -206,6 +206,7 @@ def main() -> int:
         "muon's ξ_2 = [3]_q · [2]_q / [4]_q."
     )
     w.set_audit_only("docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md")
+    w.set_content_block("conj:lepton-tower-h-n-plus-1-branching")
     w.add_parameter("precision_dps", 50)
     w.add_parameter("q_0_source", "Q_50_DIGIT_STR (canonical substrate pin)")
     w.add_parameter("q_0", str(q0))

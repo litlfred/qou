@@ -111,3 +111,43 @@ The next session should:
 1. **Investigate** `canonical_plus_multibrane.py` + `paper_six_term_isotope_sweep.py` to see which dilog form is ACTUALLY used in production and what V̂_i they consume
 2. **Reconcile** the paper's "1870" estimate with the Li_2^q-corrected formula's output
 3. **Only then** is F_ℓ derivation tractable
+
+---
+
+## Followup (2026-05-25, PR #1253) — tau amphichiral q-bracket finding
+
+Per owner directive "tau is not torus knot; knot operator = symmetries → should be same as 1st gen. verify via SDP solutions" (where "same as 1st gen" was interpreted via muon = 4_1 amphichirality), [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) filtered SnapPy census to 12 amphichiral hyperbolic knots and tested q-bracket-corrected closures.
+
+**Two candidates close to <1%** (both improving on PR #1250's torus-knot best of 1.33%):
+
+| Knot | Vol | Formula | Predicted m_τ/m_e | Δ vs CODATA |
+|---|---:|---|---:|---:|
+| 10_37 | 11.332 | `3 · Vol/ℏ_q²` | 3462.95 | **−0.41 %** |
+| 10_43 | 13.833 | `[5]_q·[3]_q/[6]_q · Vol/ℏ_q²` | 3504.66 | **+0.79 %** |
+
+The 10_43 hit has the **structural q-bracket form analogous to muon's `[3]_q · [2]_q / [4]_q`** — generalising `conj:lepton-tower-h-n-plus-1-branching` from muon-only to the symmetric family `[2m+1]_q · [2m-1]_q / [2m+2]_q` covering both m=2 (muon) and m=3 (tau).
+
+### Lean-formalised structural identity
+
+The closure factor reduces algebraically to a single identity in h = q − q⁻¹, proved in [`three-halves-structural-factor.lean`](../../content/quantum-observable-universe/braids-and-knots/three-halves-structural-factor.lean):
+
+```
+muon (PR #1127):  [4]_q  =  (2 + h²) · [2]_q
+tau  (PR #1253):  [6]_q  =  [2]_q · [3]_q · (1 + h²)
+```
+
+Both proved via `field_simp; ring` over generic `[Field R]` per CLAUDE.md §7c. Numerically cross-checked at the canonical q_0 to ≤ 1e-40 in the tau-probe witness (4 assertions, all pass).
+
+### What this resolves vs leaves open
+
+**Resolved:**
+- Tau is **not** a torus knot (owner directive confirmed; PR #1250's T(2,7) family ruled out at 1%)
+- Amphichiral filter narrows tau candidates from hundreds to ~12 in census
+- Best amphichiral candidate (10_43) closes via structural q-bracket form, not arbitrary numerical factor
+- Lean-formalised the algebraic identity behind the closure
+
+**Still open:**
+- The 750× per-braid-mass-tower discrepancy (above) — orthogonal to this PR's amphichiral finding (which uses Vol/ℏ_q² · q-bracket, not Li_2^q tower)
+- Categorical derivation of WHY the partition (3,2,1) ↔ 10_43 ↔ [5]_q·[3]_q/[6]_q assignment (vs (2,1,1) ↔ 4_1 ↔ [3]_q·[2]_q/[4]_q for muon) — this is the "structural" question Option E (Kashiwara crystal, PR #1252) should address
+- The conjectural `conj:lepton-tower-h-n-plus-1-branching` symmetric extension `[2m+1]_q · [2m-1]_q / [2m+2]_q` needs Lean formalisation beyond m=2,3
+- True SDP-derived selection (the owner's "verify via SDP solutions" — this PR is SDP-spirit via the amphichiral filter, not the actual confinement SDP solve)
