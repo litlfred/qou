@@ -15,7 +15,35 @@ export default chapter({
   label: "chap:models-qou",
   sections: [
     // ═══════════════════════════════════════════════════════════════════
-    // PART A: GENERAL MODELS
+    // FRAMING — the five-step arc (added 2026-05-25 per chapter-
+    // restructure-2026-05-25.md). This chapter is being repurposed as
+    // the roadmap chapter for the whole paper: every subsequent chapter
+    // sits at exactly one step of Categorical → Algebraic → Geometric →
+    // Archimedean → Physical. The §-summary blocks below establish the
+    // common language used throughout the paper.
+    //
+    // Forward refs from this section are narrative previews (preview
+    // chapter pattern, per notation chapter); the detangler should
+    // treat them accordingly. Subsequent phases will inline Bring's
+    // basics into sec:step-geometric and migrate the lower sections
+    // out to their destination chapters.
+    // ═══════════════════════════════════════════════════════════════════
+
+    section({
+      title: "The five-step arc",
+      label: "sec:five-step-arc",
+      blocks: [
+        "framing-arc-intro",
+        "step-categorical",
+        "step-algebraic",
+        "step-geometric",
+        "step-archimedean",
+        "step-physical",
+      ],
+    }),
+
+    // ═══════════════════════════════════════════════════════════════════
+    // PART A: GENERAL MODELS  (existing content, awaiting relocation)
     // ═══════════════════════════════════════════════════════════════════
 
     // ── Physical interpretation and main result ─────────────────────
