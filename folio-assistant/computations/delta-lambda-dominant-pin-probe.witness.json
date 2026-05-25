@@ -1,0 +1,93 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T02:52:51.220661+00:00",
+  "commitSha": "039fffdb741faa9f98f55a5e681482da4b7e0ea8",
+  "assertions": [
+    {
+      "name": "variant A (pin alone) satisfies target equation to mp 50-dps",
+      "computed": "2.45581366058690227618793614931e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25
+    },
+    {
+      "name": "variant B (pin + bar-invariance) satisfies target equation to mp 50-dps",
+      "computed": "7.36744098176070682856380844794e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "delta-lambda-dominant-pin-probe",
+  "scriptFile": "delta_lambda_dominant_pin_probe.py",
+  "scriptHash": "61bb88840271",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "parameters": {
+    "q0": "1.1099785955541805752815940796095093779932822799587",
+    "target_signed": "-4.35336728187014865686123229803",
+    "partition_count": 11
+  },
+  "data": {
+    "dominant_partition": {
+      "lambda_star": [
+        5,
+        1
+      ],
+      "lambda_star_transpose": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "c_lambda_star": "0.189611150258122937592609537057",
+      "dim_q_lambda_star": "5.22044132466457353508880792357",
+      "delta_pin": 5,
+      "bar_pin_consistent": true
+    },
+    "variant_a_pin_alone": {
+      "max_abs_delta": "28.946475694363371284007557853",
+      "norm_2": "41.0762791591094060153114360538",
+      "rel_err": "2.45581366058690227618793614931e-51"
+    },
+    "variant_b_pin_plus_bar_invariance": {
+      "max_abs_delta": "29.4573751605344782226218857101",
+      "nu_norm_2": "41.4340943012115731004648382257",
+      "rel_err": "7.36744098176070682856380844794e-51",
+      "pair_count": 6,
+      "free_dim_count": 5
+    },
+    "delta_by_lambda_variant_b": {
+      "[6]": "-29.4573751605344782226218857101",
+      "[5, 1]": "5.0",
+      "[4, 2]": "-21.6020277874925599314635412017",
+      "[4, 1, 1]": "1.41305427664377691084524562284",
+      "[3, 3]": "-18.2806704523027968900497338041",
+      "[3, 2, 1]": "4.60651496330807171498642704906",
+      "[3, 1, 1, 1]": "1.41305427664377691084524562284",
+      "[2, 2, 2]": "-18.2806704523027968900497338041",
+      "[2, 2, 1, 1]": "-21.6020277874925599314635412017",
+      "[2, 1, 1, 1, 1]": "5.0",
+      "[1, 1, 1, 1, 1, 1]": "-29.4573751605344782226218857101"
+    },
+    "scale_comparison_summary": {
+      "probe_1_bar_invariance_max": "15.694866",
+      "variant_a_pin_alone_max": "28.9464756944",
+      "variant_b_pin_plus_bar_max": "29.4573751605",
+      "a_single_block": "22.959",
+      "b_padded_staircase": "301.521",
+      "c_content_monotonic_norm_2": "31.968",
+      "d_isotypic_norm_2": "71.626",
+      "diagnostic": "pin + bar-invariance gives LARGER max |Δ_λ| than probe-1 alone — GAP-A-4 dominant pin may be inconsistent at q_0 or requires the non-dominant Δ_λ to compensate at the cost of larger norm"
+    }
+  }
+}
