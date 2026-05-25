@@ -159,6 +159,64 @@ weight: y_λ(1) = 1/[n]_1! = 1/n! (since q^c|_{q=1} = 1). -/
 lemma qPow_at_one (c : ℤ) : (1 : ℝ) ^ c = 1 := by
   rw [one_zpow]
 
+/-! ## Bar-involution and Mullineux symmetry
+
+The substrate has a bar-involution `q ↔ q⁻¹` which acts on
+partition combinatorics via the Mullineux involution (column-row
+swap / transpose `λ ↔ λᵀ`).  This section proves the bar-symmetry
+of q-integers and q-factorials, then lifts to y_λ.
+-/
+
+/-- **q-integer bar-symmetry**: `[n]_{q⁻¹} = [n]_q`.
+
+    Under bar (q ↔ q⁻¹), both numerator `q^n − q^{−n}` and denominator
+    `q − q⁻¹` flip sign in the same way, so the ratio is invariant.
+
+    This is the fundamental bar-symmetry that makes [n]_q a
+    "balanced" q-integer (vs the asymmetric `(q^n − 1)/(q − 1)`). -/
+theorem qInt_bar_inv (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0)
+    (n : ℤ) :
+    qInt q⁻¹ n = qInt q n := by
+  unfold qInt
+  have h1 : ((q⁻¹ : ℝ))^n = q^(-n) := by
+    rw [inv_zpow, ← zpow_neg]
+  have h2 : ((q⁻¹ : ℝ))^(-n) = q^n := by
+    rw [inv_zpow, ← zpow_neg, neg_neg]
+  have h3 : ((q⁻¹ : ℝ))⁻¹ = q := inv_inv q
+  rw [h1, h2, h3]
+  field_simp
+  ring
+
+/-- **q-factorial bar-symmetry**: `[n]_{q⁻¹}! = [n]_q!`.
+
+    Follows from `qInt_bar_inv` by induction on `n : ℕ`. -/
+theorem qFactorial_bar_inv (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0)
+    (n : ℕ) :
+    qFactorial q⁻¹ n = qFactorial q n := by
+  induction n with
+  | zero => rfl
+  | succ k ih =>
+    unfold qFactorial
+    rw [qInt_bar_inv q hq h_neq ((k : ℤ) + 1), ih]
+
+/-! ## y_λ bar-Mullineux involution
+
+The y_λ in q-Schur convention satisfies the **bar-Mullineux
+identity**: substituting q ↔ q⁻¹ on the substrate sends y_λ to
+y_{λᵀ} (the y_λ of the transpose partition).  Proof: q^c → q^{-c}
+under bar (negates content sum), and `[n]_q!` is bar-symmetric. -/
+
+/-- **Bar-Mullineux identity for y_λ**:  `y_λ(q⁻¹) = y_{λᵀ}(q)`
+    in the q-Schur convention. -/
+theorem yLambdaQSchur_bar_mullineux (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) (n : ℕ) (c : ℤ) :
+    yLambdaQSchur q⁻¹ n c = yLambdaQSchur q n (-c) := by
+  unfold yLambdaQSchur
+  rw [qFactorial_bar_inv q hq h_neq n]
+  -- Numerator: (q⁻¹)^c = q^(-c)
+  congr 1
+  rw [inv_zpow, ← zpow_neg]
+
 /-! ## Small q-integer identities -/
 
 /-- `[0]_q = 0`. -/
