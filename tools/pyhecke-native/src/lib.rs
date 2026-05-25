@@ -158,6 +158,21 @@ fn chi_lambda_braid(shape: Vec<usize>, word: Vec<(i32, u32)>, q: f64) -> f64 {
     seminormal::chi_lambda_braid(&shape, &word, q)
 }
 
+/// **Cached-seminormal batched chi matrix** — `χ_{λ_i}(w_j)` for all
+/// (shape, word) pairs, with seminormal blocks built once per shape.
+/// Order-`p(n)` speedup over `chi_lambdas_braid` for atlases where
+/// `len(words) ≈ p(n)`.
+///
+/// Returns Vec<Vec<f64>> with `result[i][j] = χ_{shapes[i]}(words[j])`.
+#[pyfunction]
+fn chi_lambda_matrix(
+    shapes: Vec<Vec<usize>>,
+    words: Vec<Vec<(i32, u32)>>,
+    q: f64,
+) -> Vec<Vec<f64>> {
+    seminormal::chi_lambda_matrix(&shapes, &words, q)
+}
+
 /// **F3.2.ζ — q-character on a sequence of Hecke factors `c·σ + d·I`.**
 ///
 /// `chi_q_atomic(shape, factors, q)` returns
@@ -200,8 +215,6 @@ fn cycle_type_braid_rust(parts: &[usize]) -> Vec<(i32, u32)> {
 }
 
 /// Jones-Markov weights y_λ on H_n(q) for arbitrary n.
-///
-/// n-generic replacement for the n=3-hardcoded `trace_weights(q)`
 /// (which returns length-6 for H_3 NF basis only). Returns y_λ on the
 /// **partition basis** (one per λ ⊢ n), satisfying Markov normalization
 /// `Σ_λ y_λ · dim_q(λ) = 1`.
@@ -225,11 +238,22 @@ fn trace_weights_n(n: usize, q: f64) -> Vec<f64> {
     let p = shapes.len();
     let z = gram::markov_z(q);
 
+    // Build cycle-type rep braids per partition
+    let words: Vec<Vec<(i32, u32)>> = shapes
+        .iter()
+        .map(|s| cycle_type_braid_rust(s))
+        .collect();
+
+    // SPEEDUP: use chi_lambda_matrix which builds seminormal blocks
+    // ONCE per shape (was p(n) times via repeated chi_lambda_braid calls).
+    // result[j][i] = χ_{shapes[j]}(words[i]) — note transposed indexing.
+    let chi_matrix = seminormal::chi_lambda_matrix(&shapes, &words, q);
+
     let mut a = DMatrix::<f64>::zeros(p, p);
     for i in 0..p {
-        let word = cycle_type_braid_rust(&shapes[i]);
         for j in 0..p {
-            a[(i, j)] = seminormal::chi_lambda_braid(&shapes[j], &word, q);
+            // A[i, j] = χ_{shapes[j]}(words[i]) = chi_matrix[j][i]
+            a[(i, j)] = chi_matrix[j][i];
         }
     }
 
@@ -698,6 +722,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_matrix, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;

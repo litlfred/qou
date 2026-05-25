@@ -421,6 +421,90 @@ pub fn chi_lambda_braid(shape: &[usize], word: &[(i32, u32)], q: f64) -> f64 {
     trace
 }
 
+/// **Cached-seminormal batched chi evaluator** — `χ_{λ_i}(w_j)` for all
+/// `(shape, word)` pairs, building `seminormal_block_generators(λ_i, q)`
+/// **once per shape** (then reusing across all words).
+///
+/// For atlases (e.g. cycle-type LP for Jones-Markov y_λ) that evaluate
+/// `p(n)` shapes × `p(n)` words at the same q, the naive
+/// `chi_lambdas_braid` rebuilds seminormal blocks `p(n)²` times. This
+/// function rebuilds them `p(n)` times — order-p(n) speedup for the
+/// seminormal-build cost.
+///
+/// Returns `Vec<Vec<f64>>` where `result[i][j] = χ_{shapes[i]}(words[j])`.
+/// Outer Vec is parallel-iter over shapes (rayon); inner is sequential
+/// per shape (since they share cached blocks).
+///
+/// Cost: `p(n)` seminormal builds + `p(n)·|words|·dim_max²` trace ops.
+pub fn chi_lambda_matrix(
+    shapes: &[Vec<usize>],
+    words: &[Vec<(i32, u32)>],
+    q: f64,
+) -> Vec<Vec<f64>> {
+    use rayon::prelude::*;
+
+    let h = q - 1.0 / q;
+
+    shapes
+        .par_iter()
+        .map(|shape| {
+            let n: usize = shape.iter().sum();
+            // Build seminormal blocks ONCE per shape — this is the cache.
+            let (dim, all_blocks) = seminormal_block_generators(shape, q);
+
+            words
+                .iter()
+                .map(|word| {
+                    // Handle edge cases that match chi_lambda_braid.
+                    if n == 0 {
+                        return 1.0;
+                    }
+                    if dim == 0 {
+                        return 0.0;
+                    }
+                    if all_blocks.is_empty() {
+                        return if word.is_empty() { 1.0 } else { 0.0 };
+                    }
+                    // Resolve word against cached blocks.
+                    let resolved: Vec<(i32, &[Block])> = word
+                        .iter()
+                        .map(|&(sign, gen)| {
+                            assert!(
+                                gen != 0 && (gen as usize) <= all_blocks.len(),
+                                "chi_lambda_matrix: invalid generator {} for n={} (valid 1..={})",
+                                gen, n, all_blocks.len()
+                            );
+                            let idx = gen as usize - 1;
+                            (sign, all_blocks[idx].as_slice())
+                        })
+                        .collect();
+                    // Trace via per-diagonal-vector application
+                    // (matches chi_lambda_braid inner loop exactly).
+                    let mut v = vec![0.0_f64; dim];
+                    let mut trace = 0.0;
+                    for i in 0..dim {
+                        for k in 0..dim {
+                            v[k] = 0.0;
+                        }
+                        v[i] = 1.0;
+                        for &(sign, blocks) in resolved.iter().rev() {
+                            if sign > 0 {
+                                apply_sigma_left(&mut v, blocks);
+                            } else if sign < 0 {
+                                apply_sigma_inv_left(&mut v, blocks, h);
+                            } else {
+                                apply_sigma_averaged_left(&mut v, blocks, h);
+                            }
+                        }
+                        trace += v[i];
+                    }
+                    trace
+                })
+                .collect()
+        })
+        .collect()
+}
+
 /// Apply `v ← (c · σ + d · I) · v` in-place.
 ///
 /// Equivalent to `c * apply_sigma_left(v) + d * v`, computed without
