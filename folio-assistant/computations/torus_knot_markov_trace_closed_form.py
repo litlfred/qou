@@ -55,8 +55,9 @@ def trM_sigma1_k_H2(k: int, q: mpf) -> mpf:
 
     Markov trace (q-Schur Plancherel convention):
       tr_M(σ_1^k) = y_(2) · q^k + y_(1,1) · (-q⁻¹)^k
-      y_(2)   = q / (q + q⁻¹) = q² / [2]_q²
-      y_(1,1) = q⁻¹ / (q + q⁻¹) = 1 / [2]_q²
+      y_(2)   = q   / [2]_q,  [2]_q = q + q⁻¹
+      y_(1,1) = q⁻¹ / [2]_q
+    so y_(2) + y_(1,1) = 1 (Plancherel normalization).
 
     Delegates to the common infra `trM_torus_2_k_mpf` (which calls
     `y_lambda_h2_q_schur_mpf`) — keeps the H_2 closed form in one
