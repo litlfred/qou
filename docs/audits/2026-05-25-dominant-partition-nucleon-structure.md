@@ -70,11 +70,41 @@ Per [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha_st
 
 **Interpretation:** The dominant-partition obstruction correlates with **gap magnitude** (ρ=0.8) but the bulk of (1−α*) is cancelled across other Wedderburn blocks; only ~6% leaks into the residual gap. The cancellation includes a sign flip — the *direction* of the gap is set by which non-dominant blocks contribute. So the dominant block is the **obstruction structure** but NOT the **gap carrier** in isolation. This narrows the Gap-narrowing problem to: which secondary blocks cancel `(1 − α*)` down to the observed residual?
 
-## Next-probe predictions
+## Gap-narrowing probe (1) — project ⁴He mass on PSD-dominant pair
 
-- **Probe (1) — project mass on (4,4,4) alone:** expected to give a value within `(1 − α*) · m_⁴He ≈ 27 MeV` of CODATA, NOT exactly closing the gap. If it does fall this far off, the cancellation hypothesis is confirmed and the Gap is a *cancellation-imbalance* problem, not a missing-block problem.
-- **Probe (2) — crystal weight Δ_(4,4,4):** the Type B folded crystal collapses sign-related pairs; a Δ derived from the folded crystal would carry only the *symmetric* part of the obstruction. If the symmetric-only Δ matches the ~6% leakage ratio, the crystal projection is the gap-narrowing functor.
-- **Probe (4) — ⁶Li dominant partition:** under the rectangular-form conjecture, λ*^T(⁶Li) = (3,3,3,3,3,3); this would predict α*(⁶Li) by the same algebra. Falsifies the conjecture if the actual dominant partition is non-rectangular.
+Per [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/probe_1_project_4he_on_dominant.py), computed `y_λ · χ^λ(T_w_⁴He)` for the PSD-dominant pair vs the trace-dominant blocks. **PSD-dominance ≠ trace-dominance** — they are orthogonal structural axes.
+
+**Top-10 trace contributors (by |y_λ · χ^λ|) — all low-row "long-string" partitions:**
+
+| rank | λ | d_λ | y_λ | χ^λ | y·χ | % of \|tr_M_partial\| |
+|---:|---|---:|---:|---:|---:|---:|
+| 1 | [9, 3] | 154 | 5.87×10⁻⁴ | 27.17 | 0.0159 | **32.0%** |
+| 2 | [8, 4] | 275 | 4.31×10⁻⁴ | 30.03 | 0.0129 | **26.0%** |
+| 3 | [10, 2] | 54 | 7.12×10⁻⁴ | 10.39 | 0.0074 | **14.9%** |
+| 4 | [7, 5] | 297 | 2.62×10⁻⁴ | 21.59 | 0.0057 | **11.4%** |
+| 5 | [11, 1] | 11 | 7.67×10⁻⁴ | 7.36 | 0.0056 | **11.3%** |
+
+**PSD-dominant pair (the Schur-Weyl rectangle):**
+
+| λ | d_λ | y_λ | χ^λ | y·χ | % \|tr_M\| | rank | min_eig |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **(4, 4, 4)** | 462 | 1.26×10⁻⁶ | −12.08 | −1.52×10⁻⁵ | **0.030%** | 12/26 | **−19.84** |
+| **(3, 3, 3, 3)** | 462 | −4.65×10⁻⁹ | 23.44 | −1.09×10⁻⁷ | **0.0002%** | 18/26 | **−15.51** |
+
+**Pair contribution to ⁴He mass:** `m_e · A · 8G · (y·χ)_pair = −2.3×10⁻⁴ MeV` — five orders of magnitude smaller than the 1.66 MeV gap.
+
+**Structural finding (orthogonal axes):**
+- **Trace-dominance** ⟹ **low-row "long-string" partitions** ([9,3], [8,4], [10,2], [11,1], [7,5]): large `y_λ` (10⁻⁴), moderate `χ`, big positive contributions
+- **PSD-dominance** ⟹ **balanced rectangular partitions** ((4,4,4), (3,3,3,3)): tiny `y_λ` (10⁻⁶ to 10⁻⁹), but the rep matrix is most non-PSD
+- `y_λ` varies by **5 orders of magnitude** across partitions; the rectangular Schur-Weyl block has the **smallest y_λ** in the witness
+
+**Implication for Gap-narrowing:** The mass deficit lives in the **trace-dominant** partitions (mostly 2-row [9,3] / [8,4]), NOT in the PSD-dominant blocks. The Schur-Weyl rectangle (4,4,4) is a structural fingerprint of the nucleon decomposition but is **negligible** in the Markov-trace mass formula. Probes (2) and (4) should therefore be re-scoped: the crystal-weight Δ_(4,4,4) is unlikely to close the Gap directly, but the *mechanism* by which a low-y/high-PSD-obstruction block exists alongside a high-y/low-PSD-obstruction set may itself be the Δ_λ-gating structure to model.
+
+## Next-probe predictions (updated after probes (3) + (1))
+
+- ~~Probe (1) — project mass on (4,4,4) alone~~ **DONE.** Contributes 0.030% of |tr_M|. PSD-dominance ≠ trace-dominance. Gap lives in trace-dominant low-row partitions.
+- **Probe (2) — crystal weight Δ_(4,4,4):** *Re-scoped.* The crystal weight of (4,4,4) won't close the Gap directly (per Probe (1)), but the Type B fold *pairing* between (4,4,4) and (3,3,3,3) — both at d_λ=462, both with comparable min_eig magnitudes (−19.8 vs −15.5), but with `y_λ` differing by 270× and opposite signs — is itself a structural feature worth deriving categorically. The crystal projection could explain why low-y "obstruction-bearing" blocks exist alongside high-y "mass-bearing" blocks.
+- **Probe (4) — ⁶Li dominant partition:** under the rectangular-form conjecture, λ*^T(⁶Li) = (3,3,3,3,3,3); this would predict α*(⁶Li) by the same algebra. Falsifies the conjecture if the actual dominant partition is non-rectangular. Still worth running to confirm/falsify the rectangular conjecture, but Gap-narrowing connection is now weaker.
 
 ## Cross-references
 
@@ -84,6 +114,8 @@ Per [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha_st
 - [`mass_at_3A_proper.py`](../../folio-assistant/computations/mass_at_3A_proper.py) — canonical atom-braid recipe
 - [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha_star_vs_binding_gap.py) — Probe (3): obstruction-vs-gap correlation (ρ=+0.80)
 - [`alpha-star-vs-binding-gap.witness.json`](../../folio-assistant/computations/alpha-star-vs-binding-gap.witness.json) — per-atom data + Spearman
+- [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/probe_1_project_4he_on_dominant.py) — Probe (1): y·χ projection on (4,4,4)/(3,3,3,3)
+- [`probe-1-project-4he-on-dominant.witness.json`](../../folio-assistant/computations/probe-1-project-4he-on-dominant.witness.json) — per-block contributions to tr_M_⁴He
 
 ## What this audit does NOT do
 
