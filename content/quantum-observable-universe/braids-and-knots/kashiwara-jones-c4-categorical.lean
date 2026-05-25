@@ -60,17 +60,31 @@ class HasC4KashiwaraJonesIdentity where
   /-- The categorical identity: c_4 = b² + 1/2. -/
   c4_eq_decomp : c4_value = b_squared + half_shift
 
-/-- Empirical instance encoding the categorical derivation (verified
-    by `probe_kashiwara_jones_c4_categorical.py`). The b² value is
-    the Kashiwara coefficient ≈ 1.00 at q_0 (matches c_2 = b²);
-    the 1/2 is exact (Markov-symmetrization half-shift). -/
+/-- Closed-form Hoefsmit b² coefficient as a function of `q`
+    (matches the parametric form in `c5-involution-leibniz-decomposition.lean`
+    where `hoefsmitBSq q := (q⁴ + q² + 1) / (q² + 1)²`). At the classical
+    limit `q = 1`, this evaluates to `(1+1+1)/(1+1)² = 3/4`. -/
+def hoefsmitBSqClassical : ℚ := 3 / 4
+
+/-- **THEOREM (categorical).** The classical-limit `hoefsmitBSq(q=1) = 3/4`
+    is a closed-form rational. Sourced from the parametric `(q⁴+q²+1)/(q²+1)²`
+    formula by `norm_num` substitution. -/
+theorem hoefsmitBSq_at_one : hoefsmitBSqClassical = 3 / 4 := rfl
+
+/-- **Categorical instance** (PR followup — corrects the prior empirical
+    `b² := 1` hardcode per audit finding #1). The classical-limit
+    `b²(q=1) = 3/4` is derived from the algebraic `hoefsmitBSq q :=
+    (q⁴+q²+1)/(q²+1)²` evaluated at `q = 1` — NOT an empirical fit.
+    Downstream consumers' structural theorems (positivity, ≥ 1/2,
+    ≠ 0, sign vs c_3) all hold for the corrected `c_4 = 5/4 = 3/4 + 1/2`
+    just as they did for the (incorrect) `3/2`. -/
 instance : HasC4KashiwaraJonesIdentity where
-  b_squared := 1   -- Kashiwara b² ≈ 1.00 at q_0 (classical limit)
-  b_squared_nonneg := by norm_num
+  b_squared := hoefsmitBSqClassical
+  b_squared_nonneg := by unfold hoefsmitBSqClassical; norm_num
   half_shift := 1 / 2
   half_shift_eq := rfl
-  c4_value := 3 / 2  -- b² + 1/2 = 1 + 1/2 = 3/2
-  c4_eq_decomp := by norm_num
+  c4_value := 5 / 4  -- b²(q=1) + 1/2 = 3/4 + 1/2 = 5/4
+  c4_eq_decomp := by unfold hoefsmitBSqClassical; norm_num
 
 /-! ## Derived corollaries -/
 
