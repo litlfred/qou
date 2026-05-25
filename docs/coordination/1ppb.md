@@ -390,3 +390,37 @@ binding accuracy?
   three-calibration framework, but different missing structural
   input. The headline 1ppb gap has two independent legs (L2 binding
   via Δ_λ, CAL-3 via Q_β); each can be addressed in parallel.
+
+### Probe-3 result (stacked on PR #1229) — NEGATIVE diagnostic
+
+Implements §3.3 of the synthesis doc: dominant Δ_{λ*} = round(dim_q(λ*))
+per GAP-A-4 (`conj:rho-prefactor-structural`), min-norm residual.
+
+| variant | constraint | max |Δ_λ| | rel_err |
+|---------|-----------|---------:|--------:|
+| A (pin alone) | Δ_{(5,1)} = 5 | **28.95** | 2.5e-51 |
+| B (pin + bar-invariance) | + Δ_λ = Δ_{λ^T} | **29.46** | 7.4e-51 |
+| probe-1 (reference) | bar-invariance only | 15.69 | 1.5e-30 |
+
+dim_q((5,1)) at q_0 = 5.22 → round = **5**. Pinning Δ_{(5,1)} = 5
+forces non-dominant Δ_λ to grow ~2× larger than probe-1.
+
+**Falsification of one form of GAP-A-4**: the dominant pin
+Δ_{λ*} = round(dim_q(λ*)) is inconsistent with the empirical
+deuteron target. The probe-1 min-norm solution had
+Δ_{(5,1)} ≈ -15.7 (negative, large magnitude); the pin proposes
++5 (positive, small). These are not reconcilable in the current
+formulation. Possible reinterpretations:
+
+- GAP-A-4's ρ is for the per-knot prefactor ρ_K, NOT for Δ_λ
+- The pin sign should be negative (round → -round)
+- A substrate-scale factor is missing
+
+Bar-pin consistency confirmed: dim_q((5,1)) = dim_q((2,1,1,1,1)) ✓.
+The pin failure is NOT a bar-asymmetry — it's an absolute
+inconsistency at the dominant-partition level.
+
+**Implication for the workplan**: probe-2 (multi-atom content-
+projection) and Option E (Kashiwara crystal) remain the open
+research directions. Probe-3's negative result removes one
+candidate closure form from the design space.
