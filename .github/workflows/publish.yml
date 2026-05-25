@@ -100,6 +100,19 @@ jobs:
         with:
           fetch-depth: 0  # need branches for diff PDF in Job 3a
 
+      - name: Container + tool diagnostics (debug pre-existing fast-fail)
+        run: |
+          echo "=== container image ==="
+          cat /etc/os-release 2>/dev/null | head -5 || true
+          echo "=== tool versions ==="
+          for t in git python3 bun npm node jq latexmk pdflatex; do
+            v=$(command -v "$t" 2>/dev/null && "$t" --version 2>&1 | head -1 || echo "(missing)")
+            printf "  %-12s %s\n" "$t" "$v"
+          done
+          echo "=== filesystem ==="
+          ls -la / 2>&1 | head -3
+          df -h / 2>&1 | tail -2
+
       - name: Configure git safe directory
         run: git config --global --add safe.directory '*'
 
@@ -107,7 +120,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.bun/install/cache
-          key: bun-${{ runner.os }}-${{ hashFiles('content/bun.lockb') }}
+          # Cache key references content/bun.lock (the JSON lockfile bun
+          # 1.3+ uses); the old content/bun.lockb binary form was never
+          # produced by this repo, so the previous key always missed.
+          key: bun-${{ runner.os }}-${{ hashFiles('content/bun.lock') }}
           restore-keys: |
             bun-${{ runner.os }}-
 
