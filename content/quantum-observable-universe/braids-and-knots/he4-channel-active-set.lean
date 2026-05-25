@@ -259,14 +259,15 @@ as a pure relation on rational data — provable from ANY feasible
 LP solution, not just the witness instance. -/
 
 /-- **Abstract LP-feasibility predicate** for the ⁴He channel-active-set
-    structure. A 7-tuple `(t, x, y, y0) ∈ ℚ⁷` is a feasible LP
-    solution iff it satisfies all 5 structural axioms (primal
-    saturation, active set, dual ordering, cost ordering, strong
-    duality). Categorical: no specific values mentioned.
+    structure. An 11-tuple `(t_DD, t_Tp, t_He3n, n_target, x_DD, x_Tp,
+    x_He3n, y0*, y_DD, y_Tp, y_He3n) ∈ ℚ¹¹` is a feasible LP solution
+    iff it satisfies all 5 structural axioms (primal saturation, active
+    set, dual ordering, cost ordering, strong duality). Categorical:
+    no specific values mentioned.
 
     The witness-encoded instance below provides ONE such solution
     (sourced from the SDP probe), but the predicate accepts any
-    rational tuple satisfying the same axioms. -/
+    rational 11-tuple satisfying the same axioms. -/
 def IsHe4LPFeasibleSolution
     (tDD tTp tHe3n n_target xDD xTp xHe3n
      y0_star yDD yTp yHe3n : ℚ) : Prop :=
@@ -293,16 +294,12 @@ def IsHe4LPFeasibleSolution
 theorem he4_lp_solution_exists :
     ∃ tDD tTp tHe3n n_target xDD xTp xHe3n y0_star yDD yTp yHe3n : ℚ,
       IsHe4LPFeasibleSolution tDD tTp tHe3n n_target xDD xTp xHe3n
-                              y0_star yDD yTp yHe3n := by
-  refine ⟨_, _, _, _, _, _, _, _, _, _, _, ?_⟩
-  -- Witness via the empirical instance; the existential closes via
-  -- the structural axioms, NOT the specific values themselves.
-  refine ⟨?_, ?_, ?_, ?_, ?_⟩
-  · exact (inferInstance : HasHe4ChannelActiveSet).primal_saturating_unique
-  · exact (inferInstance : HasHe4ChannelActiveSet).active_set_eq
-  · exact (inferInstance : HasHe4ChannelActiveSet).dual_ordering
-  · exact (inferInstance : HasHe4ChannelActiveSet).cost_ordering
-  · exact (inferInstance : HasHe4ChannelActiveSet).strong_duality
+                              y0_star yDD yTp yHe3n :=
+  let h := (inferInstance : HasHe4ChannelActiveSet)
+  ⟨h.tDD, h.tTp, h.tHe3n, h.n_target, h.xDD, h.xTp, h.xHe3n,
+   h.y0_star, h.yDD, h.yTp, h.yHe3n,
+   ⟨h.primal_saturating_unique, h.active_set_eq, h.dual_ordering,
+    h.cost_ordering, h.strong_duality⟩⟩
 
 /-- **Bridge theorem**: any `HasHe4ChannelActiveSet` instance yields
     an `IsHe4LPFeasibleSolution` witness for its tuple. Confirms the
@@ -319,16 +316,17 @@ theorem he4_class_is_feasible_solution [h : HasHe4ChannelActiveSet] :
     (with different witness values but the same structural axioms)
     would discharge all the downstream theorems identically. The
     conjunction below packages the 5 structural axioms without
-    reference to specific values. -/
+    reference to specific values.
+
+    Definitionally equal to `he4_class_is_feasible_solution` (since
+    `IsHe4LPFeasibleSolution` unfolds to this conjunction). Proof
+    delegates directly to that theorem to avoid duplication. -/
 theorem he4_downstream_uses_only_axioms_not_values [h : HasHe4ChannelActiveSet] :
-    -- The conjunction of all axioms that downstream theorems depend on
-    -- (none of the specific witness fields appear).
     (h.xDD = 0 ∧ 0 < h.xTp ∧ h.xHe3n = 0) ∧
     (0 < h.yDD ∧ h.yTp = 0 ∧ 0 < h.yHe3n) ∧
     (h.yHe3n < h.yDD ∧ h.yTp < h.yHe3n) ∧
     (h.tTp < h.tHe3n ∧ h.tHe3n < h.tDD) ∧
     (h.tDD * h.xDD + h.tTp * h.xTp + h.tHe3n * h.xHe3n = h.n_target * h.y0_star) :=
-  ⟨h.primal_saturating_unique, h.active_set_eq, h.dual_ordering,
-   h.cost_ordering, h.strong_duality⟩
+  he4_class_is_feasible_solution
 
 end QOU.BraidKnot.He4ChannelActiveSet
