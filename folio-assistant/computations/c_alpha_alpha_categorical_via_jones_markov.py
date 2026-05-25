@@ -82,7 +82,6 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from knot_braid_database import braid_word_for_knot  # noqa: E402
 from knot_volumes import VOL_7_SQ_1_F64, VOL_7_SQ_1_MPF  # noqa: E402
@@ -94,26 +93,33 @@ from witness_base import WitnessBuilder  # noqa: E402
 def main() -> int:
     w = WitnessBuilder(
         "c-alpha-alpha-categorical-via-jones-markov",
-        engine="python+mpmath",
+        engine="python",
+    )
+    w.set_audit_only(
+        "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
     )
     w.set_description(
-        "c_αα categorical derivation via Jones-Markov trace on 7²_1 "
-        "(Whitehead-link-like 2-component, the α-α coupling knot per "
-        "alpha_cluster_recursion.py). Phase B-4 of the Track B "
-        "execution plan: replace the literature value "
-        "c_αα = m_e·Vol(7²_1) with the substrate-canonical "
-        "c_αα = m_e·|tr_M(T_w(7²_1), q_0)|, aligning the α-cluster "
-        "recursion with prop:atom-knot-mass-derivation."
+        "Phase B-4 c_αα probe (EXPLORATORY — NEGATIVE result). Tests "
+        "whether the substrate-canonical Markov-trace value "
+        "m_e·|tr_M(T_w(7²_1), q_0)| could replace the literature "
+        "c_αα = m_e·Vol(7²_1) ≈ 2.43 MeV in alpha_cluster_recursion.py. "
+        "Result: bare Markov-trace value is ~22.7× smaller than "
+        "the literature; the substitution does NOT work. Mirrors the "
+        "proton-mass case (|tr_M(𝓑₃)| << m_p) — bare |tr_M| is not "
+        "the substrate-pure binding-scale derivation; Geom_full chain "
+        "(Vol/ℏ_q² × linking_weight) is. This probe does NOT propose "
+        "changing alpha_cluster_recursion.py."
     )
-    set_compute_dps(50)
+    # Note: markov_trace_for_knot is an f64 evaluator (q: float).
+    # The 50-digit substrate pin is preserved in the witness for
+    # provenance only; the computation uses f64.
 
     print("=" * 78)
-    print("c_αα categorical derivation via Jones-Markov trace")
+    print("c_αα Markov-trace probe (Phase B-4 — NEGATIVE finding)")
     print("=" * 78)
 
     q_str = Q_50_DIGIT_STR
     q_f64 = float(Q_FLOAT)
-    q_mpf = mp.mpf(q_str)
 
     # Build the 7²_1 braid via common infra
     braid = braid_word_for_knot("7^2_1")
@@ -172,10 +178,17 @@ def main() -> int:
           f"{delta_qschur:+.6f} MeV ({rel_qschur*100:+.2f}%)")
 
     # Witness
-    w.add_parameter("q_0", q_str)
+    w.add_parameter("q_0_50dps", q_str)
+    w.add_parameter("q_0_f64", q_f64)
     w.add_parameter("m_e_MeV", str(M_E_MEV))
     w.add_parameter("knot", "7^2_1 (Whitehead-link-like 2-component)")
-    w.add_parameter("braid_word", str(braid))
+    # JSON-friendly: list of [sign, gen] pairs
+    w.add_parameter("braid_word", [list(t) for t in braid])
+    w.add_parameter("evaluator_precision", "f64 (markov_trace_for_knot "
+                                          "is an f64 evaluator; mpmath "
+                                          "used downstream only for "
+                                          "c_αα arithmetic against the "
+                                          "mpf-precision Vol(7²_1))")
     w.add_data("tr_M_wenzl", float(trM_wenzl))
     w.add_data("tr_M_qschur", float(trM_qschur))
     w.add_data("c_alpha_alpha_literature_MeV", float(c_aa_literature))
@@ -194,14 +207,23 @@ def main() -> int:
         "total": t_wenzl + t_qschur,
     })
 
+    # Boolean predicate: |tr_M| must be finite AND strictly positive.
+    # (Previous formulation with expected=1.0, tolerance=10.0 vacuously
+    # passed even at computed=0.0; per Copilot PR #1274 review.)
+    import math
+    trM_wenzl_finite_nonzero = (
+        math.isfinite(trM_wenzl) and abs(trM_wenzl) > 1e-12
+    )
     w.add_assertion(
         name="tr_M_wenzl_finite_nonzero",
-        computed=abs(trM_wenzl),
-        expected=1.0,
-        tolerance=10.0,
+        computed=trM_wenzl_finite_nonzero,
+        expected=True,
+        tolerance=0,
         source=(
-            "Markov trace of a 3-strand 8-crossing braid; "
-            "rough magnitude check (any nonzero finite value)"
+            "Boolean check: math.isfinite(trM_wenzl) AND |trM| > 1e-12 "
+            "— guards against silent NaN/Inf or zero returns from the "
+            "common-infra evaluator. Robust against the 'tolerance "
+            "wider than |computed − expected|' vacuous-pass pitfall."
         ),
     )
 
