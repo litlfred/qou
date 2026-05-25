@@ -128,7 +128,11 @@ def main() -> int:
 
     # ── GAP-A-4 pin: ρ = round(dim_q(λ*)) ─────────────────────────
     dim_q_star = dim_q_num(lam_star, Q0)
-    delta_pin = int(round(float(dim_q_star)))
+    # mp.nint returns the nearest integer as an mpf — preserves
+    # substrate precision through the rounding, then a single int()
+    # cast at the boundary (int() is exact for mpf integers, not a
+    # float-precision boundary).
+    delta_pin = int(mp.nint(dim_q_star))
     print(f"  dim_q({lam_star}) at q_0 = {mp.nstr(dim_q_star, 12)}")
     print(f"  Δ_pin = round(dim_q) = {delta_pin}")
 
