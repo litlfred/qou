@@ -100,6 +100,30 @@ Per [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/pr
 
 **Implication for Gap-narrowing:** The mass deficit lives in the **trace-dominant** partitions (mostly 2-row [9,3] / [8,4]), NOT in the PSD-dominant blocks. The Schur-Weyl rectangle (4,4,4) is a structural fingerprint of the nucleon decomposition but is **negligible** in the Markov-trace mass formula. Probes (2) and (4) should therefore be re-scoped: the crystal-weight Δ_(4,4,4) is unlikely to close the Gap directly, but the *mechanism* by which a low-y/high-PSD-obstruction block exists alongside a high-y/low-PSD-obstruction set may itself be the Δ_λ-gating structure to model.
 
+## Gap-narrowing probe (4) — ⁶Li rectangular pair via Python Lanczos
+
+Per [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/probe_4_li6_rectangular_python.py), computed `min_eig` and `max_eig` of `(ρ + ρ^T)/2` for the conjectured rectangular pair at A=6, bypassing the full Rust solver (infeasible at `d_λ = 87,516` → 61 GB dense matrix). Uses scipy `LinearOperator` + Lanczos with on-the-fly sparse matvec.
+
+**Method validated at A=4:** Python Lanczos on (4,4,4) gives min=−20.017, max=+20.904 — matches Rust dense-LAPACK exactly (6+ digits) at d_λ=462.
+
+**Result at A=6 (d_λ = 87,516 each):**
+
+| λ | min_eig | max_eig | predicted α* if dominant |
+|---|---:|---:|---:|
+| ⁴He (4,4,4) reference | −20.017 | +20.904 | 0.0476 |
+| **⁶Li (6,6,6)** | **−95.72** | **+105.98** | **0.01034** |
+| **⁶Li (3,3,3,3,3,3)** (transpose) | **−96.52** | **+120.09** | **0.01025** |
+
+**Three structural findings:**
+
+1. **Both rectangular partitions are deeply non-PSD** — min_eig ≈ −96, the transpose pair is *nearly tied* (within 0.8% of each other). The bar-involution structure (CLAUDE.md §7b Type B folding) surfaces strongly: both rectangle shapes carry comparable PSD obstruction.
+
+2. **Obstruction depth scales steeply with A:** ⁴He (4,4,4) min_eig = −20 → ⁶Li (6,6,6) min_eig = −96. Roughly 4.8× deeper at A=6 vs A=4. If extrapolation holds, α*(¹²C) << α*(⁶Li).
+
+3. **Conjecture status: substantially supported but not yet confirmed.** The rectangular block IS very obstructive at ⁶Li (≥ 5× deeper than ⁴He's dominant). We have NOT scanned all 385 partitions of n=18 to confirm (6,6,6) is THE dominant. To falsify, one would need to find a non-rectangular partition with min_eig < −96.52 — which would require a scan beyond what the current Rust solver supports.
+
+**Predicted α*_⁶Li = 0.01025 (if (3,3,3,3,3,3) is dominant)** — consistent with the trend D 0.193 → T/³He ~0.09 → ⁴He 0.048 → ⁶Li 0.010, showing a steeper-than-1/A scaling of the PSD-cone "compression" needed to admit T_w(Z,N) as quasi-PSD.
+
 ## Next-probe predictions (updated after probes (3) + (1))
 
 - ~~Probe (1) — project mass on (4,4,4) alone~~ **DONE.** Contributes 0.030% of |tr_M|. PSD-dominance ≠ trace-dominance. Gap lives in trace-dominant low-row partitions.
@@ -116,6 +140,9 @@ Per [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/pr
 - [`alpha-star-vs-binding-gap.witness.json`](../../folio-assistant/computations/alpha-star-vs-binding-gap.witness.json) — per-atom data + Spearman
 - [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/probe_1_project_4he_on_dominant.py) — Probe (1): y·χ projection on (4,4,4)/(3,3,3,3)
 - [`probe-1-project-4he-on-dominant.witness.json`](../../folio-assistant/computations/probe-1-project-4he-on-dominant.witness.json) — per-block contributions to tr_M_⁴He
+- [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/probe_4_li6_rectangular_python.py) — Probe (4): ⁶Li (6,6,6) / (3,3,3,3,3,3) via Lanczos LinearOperator
+- [`probe-4-li6-rectangular-python-targeted.witness.json`](../../folio-assistant/computations/probe-4-li6-rectangular-python-targeted.witness.json) — ⁶Li rectangular-pair min/max eigvals
+- [`probe_4_validate_lanczos_on_he4.py`](../../folio-assistant/computations/probe_4_validate_lanczos_on_he4.py) — validation: Python Lanczos vs Rust dense at (4,4,4)
 
 ## What this audit does NOT do
 
