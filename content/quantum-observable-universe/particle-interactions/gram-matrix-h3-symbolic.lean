@@ -247,16 +247,22 @@ theorem detFactor2_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor2 u := by
   unfold detFactor2; linarith
 
 /-- **POSITIVITY LEMMA 3.** `u³ + u − 1 > 0` for `u > 1`. At `u = 1`:
-    `1 + 1 − 1 = 1 > 0`; for `u > 1`, `u³ > 1` so `u³ + u − 1 > u > 1`. -/
+    `1 + 1 − 1 = 1 > 0`; for `u > 1`, `u³ > 0` and `u − 1 > 0`. -/
 theorem detFactor3_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor3 u := by
   unfold detFactor3
-  have h1 : 1 < u^3 := by nlinarith
+  -- u^3 + u - 1 = u^3 + (u - 1), both positive for u > 1
+  have h_eq : u^3 + u - 1 = u^3 + (u - 1) := by ring
+  rw [h_eq]
+  have h_pos : 0 < u := by linarith
+  have h_u3 : 0 < u^3 := by positivity
+  have h_u1 : 0 < u - 1 := by linarith
   linarith
 
 /-- **POSITIVITY LEMMA 4.** `u³ + u² + 1 > 0` for `u > 1`
     (every term `> 0` when `u > 0`; trivially `> 3` when `u > 1`). -/
 theorem detFactor4_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor4 u := by
   unfold detFactor4
+  have h_pos : 0 < u := by linarith
   have h1 : 0 < u^3 := by positivity
   have h2 : 0 < u^2 := by positivity
   linarith
@@ -267,14 +273,20 @@ theorem detFactor4_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor4 u := by
     second has discriminant `1 − 8 = −7 < 0`, so is always positive. -/
 theorem detFactor5_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor5 u := by
   unfold detFactor5
-  -- p(u) = (u-1)(u^5 + u^3) + (2u^2 - u + 1)
-  -- (u-1) > 0 by hu; u^5 + u^3 > 0; 2u^2 - u + 1 > 0 always
   have h_pos_u5_u3 : 0 < u^5 + u^3 := by positivity
   have h_u_minus_1 : 0 < u - 1 := by linarith
-  -- 2u^2 - u + 1 > 0 for all real u (discriminant = 1 - 8 = -7 < 0)
-  -- proof: 2u^2 - u + 1 = 2(u - 1/4)^2 + 7/8 > 0
-  have h_quadratic : 0 < 2*u^2 - u + 1 := by nlinarith [sq_nonneg (4*u - 1)]
-  nlinarith [mul_pos h_u_minus_1 h_pos_u5_u3, h_quadratic]
+  -- 2u^2 - u + 1 = 2(u - 1/4)^2 + 7/8 > 0 (discriminant = 1 - 8 = -7 < 0)
+  have h_quadratic : 0 < 2*u^2 - u + 1 := by
+    have h_quad_eq : 2*u^2 - u + 1 = 2 * (u - 1/4)^2 + 7/8 := by ring
+    rw [h_quad_eq]
+    have h_sq : 0 ≤ (u - 1/4)^2 := sq_nonneg (u - 1/4)
+    linarith
+  -- p(u) = (u - 1)·(u⁵ + u³) + (2u² − u + 1)
+  have h_eq : u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1 =
+      (u - 1) * (u^5 + u^3) + (2*u^2 - u + 1) := by ring
+  rw [h_eq]
+  have h_prod : 0 < (u - 1) * (u^5 + u^3) := mul_pos h_u_minus_1 h_pos_u5_u3
+  linarith
 
 /-- **POSITIVITY LEMMA 6.** `r(u) = u⁶ + u⁵ + 2u⁴ + u³ + u² + u + 1 > 0`
     for `u > 0` (all coefficients positive). Trivially `> 7` for `u > 1`. -/
@@ -292,9 +304,8 @@ theorem detFactor6_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor6 u := by
 theorem gram_det_denominator_pos (u : ℝ) (hu_pos : 0 < u) :
     0 < u^10 * (u^2 + 1)^12 := by
   have h_u10 : 0 < u^10 := by positivity
-  have h_u2_1 : 0 < u^2 + 1 := by positivity
   have h_pow : 0 < (u^2 + 1)^12 := by positivity
-  positivity
+  exact mul_pos h_u10 h_pow
 
 /-- **THEOREM (det ≠ 0 conditional on symbolic factorization).** If the
     symbolic Matrix.det of `gramMatrix u` equals the witness's
@@ -338,12 +349,8 @@ theorem gramMatrix_det_ne_zero_conditional
           * (detFactor3 u)^5 * (detFactor4 u)^5
           * detFactor5 u * detFactor6 u)
         / (u^10 * (u^2 + 1)^12) < 0 := by
-    have h_quot_pos :
-        0 < (detFactor1 u * detFactor2 u
-            * (detFactor3 u)^5 * (detFactor4 u)^5
-            * detFactor5 u * detFactor6 u)
-          / (u^10 * (u^2 + 1)^12) := div_pos h_num_pos h_denom_pos
-    linarith
+    rw [neg_div]
+    exact neg_lt_zero.mpr (div_pos h_num_pos h_denom_pos)
   exact ne_of_lt h_quot_neg
 
 /-- **THEOREM (DEFERRED — Phase 1b-3 follow-up).** The symbolic Matrix.det
