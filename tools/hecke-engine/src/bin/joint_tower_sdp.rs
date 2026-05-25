@@ -18,7 +18,9 @@ use hecke_engine::cross_level_embedding::{verify_edge, TowerEdgeSpec};
 use hecke_engine::gb_nf_reducer::{BraidLetter, HeckeElement};
 use hecke_engine::joint_tower_sdp_certificate as cert;
 use hecke_engine::sdp_verifier::solve_alpha_psd;
-use hecke_engine::wedderburn_psd::{evaluate_all_blocks, evaluate_all_blocks_letters};
+use hecke_engine::wedderburn_psd::{
+    evaluate_all_blocks, evaluate_all_blocks_letters_capped,
+};
 use std::fs;
 use std::path::PathBuf;
 
@@ -39,6 +41,15 @@ struct Args {
     /// Skip Wedderburn-block PSD evaluation (faster).
     #[arg(long)]
     no_psd: bool,
+
+    /// Maximum partition dimension `d_λ` to include in Wedderburn-block
+    /// PSD evaluation. Partitions with `d_λ > max_dim_psd` are skipped
+    /// (cost is O(d_λ³ · |braid|); largest ⁴He block has d_(6,3,2,1) ≈ 5775,
+    /// making H_12 PSD intractable without this cap). Default 500 covers
+    /// all blocks through ³He and most of ⁴He's smaller blocks; raise
+    /// for full ⁴He coverage at significant compute cost.
+    #[arg(long, default_value_t = 500)]
+    max_dim_psd: usize,
 }
 
 /// Braid representation: either a simple integer letter sequence
@@ -271,6 +282,7 @@ fn solve_per_atom(
     entry: &RegistryEntry,
     q0: f64,
     do_psd: bool,
+    max_dim_psd: usize,
 ) -> cert::JointTowerSdpCertificate {
     let n = entry.native_strand_count.max(1);
     let letters = entry.braid.to_letters();
@@ -290,10 +302,12 @@ fn solve_per_atom(
     let wedderburn = if do_psd && n >= 2 {
         match &entry.braid {
             BraidRep::Letters(w) if !w.is_empty() => {
+                // Note: legacy evaluate_all_blocks doesn't yet support max_dim;
+                // small atoms (n ≤ 5) only — max-dim filtering not needed
                 evaluate_all_blocks(n, w, q0)
             }
             BraidRep::Extended(w) if !w.is_empty() => {
-                evaluate_all_blocks_letters(n, w, q0)
+                evaluate_all_blocks_letters_capped(n, w, q0, max_dim_psd)
             }
             _ => Vec::new(),
         }
@@ -375,7 +389,7 @@ fn main() {
             entry.name, entry.atomic_n_0, entry.native_strand_count
         );
         println!("  braid: {:?}", entry.braid);
-        let cert = solve_per_atom(entry, args.q0, !args.no_psd);
+        let cert = solve_per_atom(entry, args.q0, !args.no_psd, args.max_dim_psd);
         println!("  filtration shape: {:?}", cert.filtration_certificate.shape);
         println!(
             "  max grade: {}, jet steps: {}, Hecke fires: {}",
