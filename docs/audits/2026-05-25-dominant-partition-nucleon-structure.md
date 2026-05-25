@@ -173,6 +173,48 @@ The conjecture as stated is FALSIFIED at A=6. The pattern (a) clause needs revis
 
 **Implication for Gap-narrowing:** The rectangular conjecture is now strongly supported empirically at A=4 AND A=6, with the (A,A,A)-shape uniquely identified. This is a real **categorical fingerprint of the nucleon decomposition** at the Wedderburn level — but per Probe (1), it does NOT close the binding-energy gap directly (the gap lives in trace-dominant low-row partitions; the rectangle has tiny y_λ).
 
+## Gap-narrowing probe (1b) — orthogonality holds STRONGER at A=6
+
+Per [`probe_1b_li6_orthogonality.py`](../../folio-assistant/computations/probe_1b_li6_orthogonality.py), the PSD-vs-trace orthogonality is **even stronger** at A=6 than at A=4.
+
+**Trace-dominant family at n=18 (top |y_λ|)** — all 1- or 2-row "long-string" partitions:
+
+| λ | rows | y_λ |
+|---|---:|---:|
+| [17, 1] | 2 | +7.08×10⁻⁶ |
+| [16, 2] | 2 | +6.92×10⁻⁶ |
+| [15, 3] | 2 | +6.21×10⁻⁶ |
+| [18] | 1 | +5.86×10⁻⁶ |
+| [14, 4] | 2 | +5.27×10⁻⁶ |
+
+**PSD-dominant family at n=18** — all 3+ rows, narrow columns:
+
+| λ | rows | cols | min_eig | y_λ |
+|---|---:|---:|---:|---:|
+| (3,3,3,3,2,2,2) | 7 | 3 | **−116.71** | **−7.85×10⁻¹⁵** |
+| (5,5,5,3) | 4 | 5 | −110.31 | −2.84×10⁻¹¹ |
+| (4,4,4,3,3) | 5 | 4 | −109.81 | −4.75×10⁻¹⁴ |
+| (3,3,3,3,3,3) | 6 | 3 | −96.52 | +5.84×10⁻¹⁷ |
+| (6,6,6) | 3 | 6 | −95.72 | +2.45×10⁻⁹ |
+| (8,8,2) | 3 | 8 | −88.95 | +1.01×10⁻⁷ |
+
+**Magnitude ratio:** `max trace |y_λ| / deepest PSD |y_λ| ≈ 9 × 10⁸ ≈ 10⁹`. At A=4 the ratio was ~5×10⁵ (8 orders). At A=6 it's even larger.
+
+**Cleaner structural picture** (post-(4c) revision):
+
+- **Trace-dominance** ⟺ **1- or 2-row "long-string" partitions** ([17,1], [18], [16,2], ...)
+- **PSD-dominance** ⟺ **3+row multi-step "tall narrow" partitions** ((3,3,3,3,2,2,2), (5,5,5,3), ...)
+- The Schur-Weyl (A,A,A) rectangle is a **3-row local extremum** — neither trace- nor PSD-globally-dominant
+
+**Categorical implication:** The PSD-dominant shape criterion is the *number of rows × inverse max column length* — partitions are PSD-deepest when they have many rows of similar small length. This is consistent with a Type-B fold prediction *for fixed-row-count subcategories* but the (A,A,A) Schur-Weyl partner is not uniquely the fold's fixed point.
+
+**Sign pattern:** The 3 deepest PSD-dominant shapes have **NEGATIVE y_λ** at q₀:
+- (3,3,3,3,2,2,2): y = −7.85×10⁻¹⁵
+- (5,5,5,3): y = −2.84×10⁻¹¹
+- (4,4,4,3,3): y = −4.75×10⁻¹⁴
+
+This sign flip is structurally significant — it means these blocks would *subtract* from any positive χ contribution. The bar-anti-symmetric structure of σ_avg favours these subtractive partitions.
+
 ## Next-probe predictions (updated after probes (3) + (1))
 
 - ~~Probe (1) — project mass on (4,4,4) alone~~ **DONE.** Contributes 0.030% of |tr_M|. PSD-dominance ≠ trace-dominance. Gap lives in trace-dominant low-row partitions.
@@ -197,6 +239,8 @@ The conjecture as stated is FALSIFIED at A=6. The pattern (a) clause needs revis
 - [`probe_4c_li6_large_d_scan.py`](../../folio-assistant/computations/probe_4c_li6_large_d_scan.py) — Probe (4c): large-d_λ tail; **falsifies** rectangular conjecture
 - [`probe-4c-li6-large-d-scan.witness.json`](../../folio-assistant/computations/probe-4c-li6-large-d-scan.witness.json) — 4 large-d shapes, 3 falsify
 - [`2026-05-25-categorical-derivation-rectangular-conjecture.md`](2026-05-25-categorical-derivation-rectangular-conjecture.md) — categorical-derivation framing (predates falsification; needs revision)
+- [`probe_1b_li6_orthogonality.py`](../../folio-assistant/computations/probe_1b_li6_orthogonality.py) — Probe (1b): A=6 orthogonality with 10⁹ y_λ separation
+- [`probe-1b-li6-orthogonality.witness.json`](../../folio-assistant/computations/probe-1b-li6-orthogonality.witness.json) — trace vs PSD family y_λ comparison
 
 ## What this audit does NOT do
 
