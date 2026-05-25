@@ -93,6 +93,35 @@ Per owner directive ("aggressive removal. update coord docs. rederive mass ratio
 4. Re-run Phase A v2 with the canonical (non-ρ_q) form
 5. Reassess error attribution after re-derivation
 
+## 2026-05-25 sweep update — new siblings + T6 progress
+
+**New sibling: PR #1246** (cal-2 critique) — direct parallel to PR #1127's CAL-3 droppability audit:
+- Posts: https://github.com/litlfred/qou/pull/1246#issuecomment-from-this-sweep
+- Same author / Claude-Code session pattern
+- Cites PR #1127 explicitly in its summary
+- Status: classified HIGH-overlap upstream — both papers critique the calibration self-referentiality
+
+**Sibling PR #1228** (geom-derivation bug squash) — implicated downstream by T6 H_3 3-channel finding:
+- Their §10.1 action item (chi_lambda_braid Python wrapper) is closed by PR #1127's `per_generator_V_hat_general.py`
+- Coord comment already posted: https://github.com/litlfred/qou/pull/1228#issuecomment-4531215100
+
+**Sibling PR #1224 + #1229** (Δ_λ closure + bar-invariance probe) — related but DIFFERENT layer:
+- Δ_λ = partition-level closure; T6 = lepton-mass-level closure
+- Both implicate "additional structural constraint not currently in framework"
+
+**Main movement (last cycle)**: `88f06a42 Q3(lean wire-up): name χ^{(2,1)}(β_Bor) in HeckeH3.lean §3b` — Lean H_3 infrastructure for standard rep, directly adjacent to PR #1127's `lepton-bring-surface-h3-3channel.lean` Hoefsmit-traced std-channel formula.
+
+**T6 STATUS (after this sweep)**:
+- ✓ Compute infra closed (`per_generator_V_hat_general`)
+- ✓ V̂_e calibration matches paper (H_3 3-channel convention)
+- ✓ Gap (a) RESOLVED — convention documented
+- ⚠ Gap (c) STRONGLY IMPLICATED — factor 1.493 ≈ (3/2)/ℏ_q² is SUPERSEDED ρ_q reappearing
+- ⚠ Tau T(2,7) divergent under H_3 3-channel — canonical tau braid may need re-examination
+
+**Next analytical work** (multi-session):
+- Structural derivation of the (3/2)·(1/ℏ_q²) factor from operator-level formula
+- OR explicit acknowledgement that framework's mass formula IS Skein (Vol/ℏ_q²) with SUPERSEDED ρ_q openly carried
+
 ## Anti-patterns avoided (skill §11 review)
 
 - ✗ Did not "split the difference" on the bar-involution reconciliation — explicitly updated the Path D audit to acknowledge P_avg/P_skew supersedes generic modulus projection.
