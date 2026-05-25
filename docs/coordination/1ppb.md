@@ -504,3 +504,74 @@ must address Δ_λ(K)'s K-dependence via:
 
 Both are K-dependent by construction. See the full reframing in
 [`docs/audits/2026-05-25-delta-lambda-K-dependence-reframing.md`](../audits/2026-05-25-delta-lambda-K-dependence-reframing.md) §⛔ DO NOT.
+
+## 2026-05-25 (evening) — /coordinate sweep (PR #1276 — Bring + Faddeev h⁴ candidate; m_p Geom_full closure to +108 ppm)
+
+### Sibling-scope landscape (PR #1276 view)
+
+| PR | Phase | Status | Relation to #1276 |
+|----|-------|--------|-------------------|
+| [#1224](https://github.com/litlfred/qou/pull/1224) | Δ_λ closure synthesis (probes 1-4 done) | open; sibling moved to Option E | complementary axis — Δ_λ per-isotope, this PR per-knot Geom_full |
+| [#1269](https://github.com/litlfred/qou/pull/1269) | Track C: ⁴He tr_M canonical migration | open; gemini/copilot review fixed | independent — tr_M layer, this PR linking_weight layer |
+| [#1270](https://github.com/litlfred/qou/pull/1270) | Track B: R5-full SDP design | open; gemini/copilot review fixed | independent — α-cluster cascade design, this PR upstream m_p input |
+| [#1271](https://github.com/litlfred/qou/pull/1271) | R5 ⁴He + atom-braid exterior algebra | open; substantive | independent — H_12 Λ*(R^10) structure, this PR H_4 linking_weight |
+| [#1272](https://github.com/litlfred/qou/pull/1272) | γγ pair-production decomposition (Reading-A localisation) | open; opened 2026-05-25T18:13 | **HIGH OVERLAP** — same 2.89 % gap, different decomposition |
+| [#1268](https://github.com/litlfred/qou/pull/1268) | Chapter restructure Phase 1 framing | open; paper structure | independent domain |
+| [#1259](https://github.com/litlfred/qou/pull/1259) | Markov-trace convention audit (Wenzl vs q-Schur) | open | independent — convention layer |
+
+### PR #1276 headline
+
+Single-session audit + 5 probes + Lean scaffold landed the candidate
+
+```
+linking_weight(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1
+                  = Bring color-tube + Faddeev recursion at h⁴
+```
+
+closing the +2.89 % bar-symmetric m_p, m_n gap to **+108 ppm** (267× tighter than Family A production).
+
+| Composition | linking_weight | m_p err | RULE 14 |
+|---|---|---|---|
+| Production (Family A) | 5/2 + (3/4)h² | +28,890 ppm | PROVED |
+| **Bring + Faddeev h⁴ additive (mine)** | 1/(1−h·q^10) + 1/(1−h⁴) − 1 | **+108 ppm** | both factors in 13-driver menu |
+| Reading-A (sibling #1272) | 5/2 − G·h² | ~−670 ppm | Yekutieli per-cell (load-bearing bijection) |
+
+### Convergence + complementarity with PR #1272
+
+- PR #1272's Reading-A `5/2 − G·h²` ≈ **2.4600** at q₀
+- PR #1276's Bring color-tube `1/(1 − h·q^{10})` ≈ **2.4600** at q₀
+- Both agree to ~5 ppm; categorically distinct in h-expansion
+- PR #1276's Bring + Faddeev h⁴ adds the h⁴ tower → 108 ppm vs Reading-A's 670 ppm
+
+These are likely **two distinct categorical routes to the same numerical answer at the substrate**. The h-expansion test (#1276's `lambda_scale_h2_concrete_test.py`) shows Bring color-tube has h² coeff = 6, NOT 3/4 − G — so they're not algebraically equivalent forms.
+
+### Probe sequence + falsifications
+
+| probe | finding |
+|---|---|
+| `lambda_scale_h2_concrete_test.py` | Bring color-tube ≠ canonical+Yekutieli at every h^k order. Falsifies "Path C is resummed Path B" hypothesis from 2026-05-23 audit. |
+| `h4_categorical_drivers_probe.py` | TWO of 7 drivers (Faddeev iterated + KLR positivity) give α ≈ 1.0; remaining 5 (Φ_q log, Rogers Li_2^q, 6j, MacMahon, Lobachevsky G²) all miss by ≥9 % |
+| `m_p_bring_plus_faddeev_h4_probe.py` | Additive composition wins by 10× over multiplicative (108 vs 1243 ppm) |
+| `mass_table_bring_faddeev_h4_sweep.py` | 65-isotope sweep: uniform 4-269× improvement, avg 13× |
+| `additive_composition_categorical_probe.py` | 4 hypotheses (H_4 Wedderburn, S_4↓S_3, Frobenius reciprocity, KLR positivity) all support additive composition |
+
+### Outstanding load-bearing step
+
+Specific **partition-channel assignment** of Bring color-tube vs Faddeev h⁴ at H_4 — i.e. WHICH of the 5 H_4 Wedderburn blocks each factor occupies. This is the research-grade categorical proof gating production adoption.
+
+### Coordination comments posted
+
+- [#1224 — Bring + Faddeev candidate context for Δ_λ closure](https://github.com/litlfred/qou/pull/1224#issuecomment-4536268541)
+- [#1269 — implication for Track C tr_M migration](https://github.com/litlfred/qou/pull/1269#issuecomment-4536269566)
+- [#1270 — α-cluster cascade error-budget arithmetic](https://github.com/litlfred/qou/pull/1270#issuecomment-4536270885)
+- [#1272 — direct scope overlap, numerical convergence at q₀, complementary findings](https://github.com/litlfred/qou/pull/1272#issuecomment-4536367209)
+
+### Files delivered
+
+- Audit: `docs/audits/2026-05-25-m-p-m-n-full-chain-audit.md`
+- Probes: `folio-assistant/computations/{lambda_scale_h2_concrete_test, h4_categorical_drivers_probe, m_p_bring_plus_faddeev_h4_probe, mass_table_bring_faddeev_h4_sweep, additive_composition_categorical_probe}.py`
+- Lean scaffold: `content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanVolumeCatalan.lean` (4 documented sorrys)
+
+### Next concrete (non-overlapping) action
+
+**Test against PR #1272's Jones-route h⁴ = −3.03** — does the Bring color-tube series at h⁴ = +693/8 match or diverge from the Markov-trace Jones value? If they diverge significantly, Reading-A becomes the cleaner closure route; if not, both are equivalent. Requires extending `lambda_scale_h2_concrete_test.py` to compute via-Jones at h⁴ (or pulling the value from #1272's witness).
