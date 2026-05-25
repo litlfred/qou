@@ -84,12 +84,20 @@ noncomputable def lepton_xi
 
     The categorical derivation (why this form arises from the per-braid
     mass tower at the H_3 substrate via the conj's "(m+1, 1) std irrep
-    in S_{m+2}" identification) remains open. -/
+    in S_{m+2}" identification) remains open.
+
+    **Non-vanishing hypotheses:** `[4]_q ≠ 0` (LHS denominator) and
+    `2 + h² ≠ 0` (RHS denominator) ensure the equality is non-vacuous.
+    Both hold at the substrate `q_0 ≈ 1.110` and over any field of
+    characteristic zero where `q` is not a primitive 8th root of unity.
+    Per gemini-code-assist PR #1254 review. -/
 theorem lepton_xi_muon_eq_closed_form
-    {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (hbr4 : br4 q ≠ 0)
+    (h2plus : 2 + (heckeH q)^2 ≠ 0) :
     lepton_xi q LeptonIndex.muon
       = (3 + (heckeH q)^2) / (2 + (heckeH q)^2) := by
-  unfold lepton_xi heckeH br2 br3 br4
+  unfold lepton_xi heckeH br2 br3 br4 at *
   field_simp
   ring
 
@@ -98,12 +106,21 @@ theorem lepton_xi_muon_eq_closed_form
 
     The categorical derivation (why the symmetric q-bracket form
     appears, and how 10_43's amphichirality + hook-length pattern
-    selects it) is open work for Option E (Kashiwara crystal, PR #1252). -/
+    selects it) is open work for Option E (Kashiwara crystal, PR #1252).
+
+    **Non-vanishing hypotheses:** `[6]_q ≠ 0` (LHS denominator) plus
+    `[2]_q ≠ 0` and `1 + h² ≠ 0` (RHS denominator factors). All hold
+    at the substrate `q_0 ≈ 1.110` and over any field of characteristic
+    zero where `q` is not a primitive 12th root of unity.
+    Per gemini-code-assist PR #1254 review. -/
 theorem lepton_xi_tau_eq_reduced_form
-    {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (hbr6 : br6 q ≠ 0)
+    (hbr2 : br2 q ≠ 0)
+    (h1plus : 1 + (heckeH q)^2 ≠ 0) :
     lepton_xi q LeptonIndex.tau
       = br5 q / (br2 q * (1 + (heckeH q)^2)) := by
-  unfold lepton_xi heckeH br2 br3 br5 br6
+  unfold lepton_xi heckeH br2 br3 br5 br6 at *
   field_simp
   ring
 
