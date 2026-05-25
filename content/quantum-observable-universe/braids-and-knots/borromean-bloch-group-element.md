@@ -160,8 +160,8 @@ class BorromeanBlochGroupElement
 2. **D16 to closed** requires the Lean class instance + the
    `borromean_h4_coefficient_from_regulator` proof (which would
    import a Bloch-Suslin lemma from Mathlib once available; per
-   `lean_loogle` search, $K_3$ formalisation is partial in Mathlib
-   as of 2026-05).
+   `lean_loogle` search, $K_3$ formalisation is currently partial in
+   Mathlib).
 3. **Cross-validate against D15**: the Pachner-Pentagon state-sum
    and the K-theoretic regulator should both give $h^4 = -3/4$ —
    a triple cross-validation of the topological coefficient.
