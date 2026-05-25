@@ -1017,6 +1017,7 @@ export default chapter({
         "lepton-mass-tower-canonical",
         "lepton-bring-surface-h3-3channel",
         "conj-lepton-tower-h-n-plus-1-branching",
+        "three-halves-structural-factor",
         "rem-im-q-vs-p-skew",
         "conj-im-q-physical-role",
         "schur-weyl-mass-decomposition",
