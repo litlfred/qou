@@ -390,6 +390,66 @@ C is plausibly the all-orders resummed form of Path B; Path A is the
 mathematical underlay of either). Pursuing any one of them advances
 the framework's m_p / m_n closure.
 
+## §4c. Update 2026-05-25 (evening) — full Lean infrastructure delivered
+
+After "go" + "build more infra" + "please continue until it's completed" sequence, the Lean infrastructure for this audit's findings is **substantially complete**. Branch [`claude/gifted-wozniak-WQ42N`](https://github.com/litlfred/qou/tree/claude/gifted-wozniak-WQ42N), [PR #1276](https://github.com/litlfred/qou/pull/1276), 14 commits.
+
+### Final delivery — 9 Lean files, ~50 sorry-free theorems
+
+| File | LOC | Sorrys | Headline content |
+|---|---|---|---|
+| [`BorromeanVolumeCatalan.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanVolumeCatalan.lean) | 185 | 4 (with Refs) | `vol_B3 = 8·G` scaffold + corollaries; sorrys gated on Mathlib's missing `Real.Catalan` |
+| [`BringFaddeevH4LinkingWeight.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BringFaddeevH4LinkingWeight.lean) | 274 | 0 | Definitions + `categorically_distinct_from_familyA_at_q_one` + positivity bounds |
+| [`BringColorTubeQForm.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BringColorTubeQForm.lean) | 200 | 0 | Closed forms `1/(1+q⁹−q¹¹)` and Faddeev q-rational form |
+| [`LinkingWeightSubstrateBounds.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/LinkingWeightSubstrateBounds.lean) | 195 | 0 | Interval bounds at q₀ = `1109978596/10⁹`: linking_weight ∈ (2.46, 2.465); Family A ∈ (2.53, 2.54); categorical distinctness at q₀ |
+| [`AdditiveCompositionConjecture.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AdditiveCompositionConjecture.lean) | 195 | 0 | `class AdditiveCompositionRule` per CLAUDE.md §3b-cond + 3 conditional theorems + substrate instance |
+| [`HExpansionPolynomial.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionPolynomial.lean) | 260 | 0 | Degree-4 Taylor polynomials + 12+ coefficient theorems |
+| [`HExpansionDegree8.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8.lean) | 284 | 0 | Extended to degree 8 + via-Jones cross-PR comparison + 3-way distinctness |
+| [`HExpansionDegree8Combined.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8Combined.lean) | 188 | 0 | Combined Bring + Faddeev at degree 8 + polynomial-level distinctness |
+| [`TruncationErrorBound.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/TruncationErrorBound.lean) | 191 | 3 (with Refs) | Faddeev truncation PROVED (closed form); Bring + combined sorry'd |
+| [`AdditiveCompositionCategoricalProof.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AdditiveCompositionCategoricalProof.lean) | 247 | 0 | 4 categorical-hypothesis classes + multiplicative-falsification theorem |
+
+**Total**: 10 Lean files, ~2220 LOC, **7 sorrys** (all with explicit bibliographic `Ref` per CLAUDE.md §1), **~55 sorry-free theorems**.
+
+### Headline formal results
+
+1. **3 categorical-distinctness proofs**:
+   - At q=1: `categorically_distinct_from_familyA_at_q_one` (sorry-free)
+   - At q=q₀: `familyA_distinct_from_BringFaddeevH4_at_q_0` (sorry-free)
+   - At polynomial level: `three_way_polynomial_distinct` (Family A, via-Jones, Bring + Faddeev pairwise distinct as `Polynomial ℚ`)
+
+2. **3-way h^k coefficient comparison**:
+   - h⁰: Family A=5/2, via-Jones=5/2, Bring=1 (Bring NOT in linking_weight class)
+   - h²: Family A=3/4, via-Jones=0, Bring=6 (all different)
+   - h⁴: Family A=0, via-Jones=-3, Bring=693/8 (all different)
+   - All proved sorry-free via `simp [coeff_*]`.
+
+3. **Bring + Faddeev numerical bound at q₀**: linking_weight ∈ (2.46, 2.465) via rational q₀ literal + `norm_num` (sorry-free).
+
+4. **Faddeev truncation error**: closed-form identity `1/(1−h⁴) − (1 + h⁴ + h⁸) = h¹² / (1−h⁴)` proved by `field_simp + ring`.
+
+5. **Multiplicative composition falsified**: `multiplicative_gt_additive_when_both_above_one` proved pointwise via `nlinarith` — multiplicative form is strictly worse at substrate.
+
+6. **4 categorical hypotheses for additive composition**: scaffolded as Lean classes per CLAUDE.md §3b-cond. Each class carries the structural commitment (partition assignment, S_4 ↓ S_3 inheritance, Frobenius reciprocity, KLR positivity); conditional theorems consume the classes.
+
+### Remaining open work (research-grade, multi-session)
+
+1. **`catalan_G_numerical_bounds`** (sorry) — alternating-series partial-sum bound. Needs ≥ 22-term sum to nail `(0.915, 0.916)`; achievable in Mathlib but heavy `norm_num` evaluation.
+
+2. **Lobachevsky function** (2 sorrys: definition + `Λ(π/4) = G/2`) — needs Mathlib integration-theory extensions; one paper-page proof in Lewin 1981.
+
+3. **`vol_B3 = 8·G` proof** (sorry) — needs Adams 1985 octahedral decomposition + Lobachevsky-Catalan identity, or numerical-literal equivalence via the high-precision pin.
+
+4. **`bringColorTube_truncation_error_bound`** (sorry) — needs `Mathlib.Analysis.Calculus.Taylor.Lagrange` for analytic function on closed interval. Likely multi-session.
+
+5. **`linkingWeightBringFaddeevH4_truncation_error_bound`** (sorry) — composes (4) via triangle inequality once (4) is closed.
+
+6. **Categorical proof of additive composition** — the original research-grade load-bearing step. Now scaffolded as 4 classes (`H4WedderburnDirectSum`, `S4S3RestrictionInheritance`, `HalfSymmetricFrobeniusReciprocity`, `KLRPositivity`); closing any ONE class instance constructively proves additive composition.
+
+### Cross-PR Lean comparison achieved
+
+[`HExpansionDegree8.lean § viaJonesTaylor`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8.lean) captures PR #1272's **CORRECTED** via-Jones expansion as a `Polynomial ℚ` and formally proves disagreement at h² between Family A, via-Jones, and Bring color-tube. This is the first cross-PR Lean cherry-pick formalising the structural-distinctness finding from sibling PR coordination.
+
 ## §6. Cross-references
 
 - Production formula: [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
