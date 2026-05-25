@@ -149,18 +149,48 @@ jobs:
   # pull + manifest check; full smoke test will land once Phase C ships
   # the `./configure` + `Makefile.in` per the GAP README.
   gap-smoke:
-    name: GAP smoke (placeholder — Phase C)
+    name: GAP kernel-extension smoke
+    needs: build-c-abi
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Sanity-check GAP package layout
+      - name: Install GAP + system deps
         run: |
-          test -f tools/hecke-engine-gap/PackageInfo.g
-          test -f tools/hecke-engine-gap/lib/HeckeEngine.gd
-          test -f tools/hecke-engine-gap/lib/HeckeEngine.gi
-          test -f tools/hecke-engine-gap/src/HeckeEngine.c
-          test -f tools/hecke-engine-gap/tst/smoke.tst
-          echo "GAP package files present; full kernel-extension smoke pending Phase C ./configure."
+          sudo apt-get update
+          sudo apt-get install -y gap autoconf libtool libgmp-dev libmpfr-dev gcc make
+      - uses: actions/download-artifact@v4
+        with:
+          name: hecke-engine-c
+          path: tools/hecke-engine-c/
+      - name: Restore artefact layout
+        run: |
+          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
+          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
+          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
+      - name: Locate GAP root
+        id: gaproot
+        run: |
+          GAP_BIN=$(command -v gap)
+          GAPROOT=$(dirname $(dirname $(readlink -f "$GAP_BIN")))
+          # apt-installed GAP places sysinfo.gap under /usr/share/gap; honour that.
+          [ -f /usr/share/gap/sysinfo.gap ] && GAPROOT=/usr/share/gap
+          echo "gaproot=$GAPROOT" >> "$GITHUB_OUTPUT"
+          ls -la "$GAPROOT"
+      - name: Generate ./configure (autoreconf)
+        run: cd tools/hecke-engine-gap/src && autoreconf -fi
+      - name: Configure + build kernel extension
+        run: |
+          cd tools/hecke-engine-gap/src
+          ./configure \
+            --with-gaproot=${{ steps.gaproot.outputs.gaproot }} \
+            --with-hecke-engine-c=$GITHUB_WORKSPACE/tools/hecke-engine-c
+          make
+      - name: Run smoke.tst
+        run: |
+          cd tools/hecke-engine-gap
+          ln -sf "$PWD" "${{ steps.gaproot.outputs.gaproot }}/pkg/HeckeEngine" || \
+            sudo ln -sf "$PWD" "${{ steps.gaproot.outputs.gaproot }}/pkg/HeckeEngine"
+          gap -A --quitonbreak tst/smoke.tst
 
   # ── 6. Node smoke ──
   node-smoke:
@@ -184,9 +214,9 @@ jobs:
           npm run build
           npm test
 
-  # ── 7. JVM (Rust) tests — Kotlin/Swift bindings generation deferred ──
+  # ── 7. JVM Rust unit tests + UniFFI Kotlin binding generation ──
   jvm-rust-tests:
-    name: JVM Rust unit tests
+    name: JVM Rust unit tests + Kotlin bindings
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -198,6 +228,27 @@ jobs:
           workspaces: tools/hecke-engine-jvm -> target
       - name: cargo test
         run: cd tools/hecke-engine-jvm && cargo test --release
+      - name: Generate Kotlin bindings
+        run: |
+          cd tools/hecke-engine-jvm
+          cargo run --release --bin uniffi-bindgen generate \
+            --library target/release/libhecke_engine_jvm.so \
+            --language kotlin \
+            --out-dir bindings/kotlin/
+          # Verify Kotlin file produced + has the expected public surface.
+          test -f bindings/kotlin/uniffi/hecke_engine_jvm/hecke_engine_jvm.kt
+          for fn in version markovZ heckeH traceWeights gramMatrixFlat \
+                    gramDet chiLambdaBraid lrCoefficient trMAtomicMpfr; do
+            grep -q "fun $fn" bindings/kotlin/uniffi/hecke_engine_jvm/hecke_engine_jvm.kt \
+              || { echo "missing fun $fn in generated Kotlin"; exit 1; }
+          done
+          echo "Kotlin bindings generated with all 9 Phase A+B functions present."
+      - name: Upload Kotlin bindings
+        uses: actions/upload-artifact@v4
+        with:
+          name: kotlin-bindings
+          path: tools/hecke-engine-jvm/bindings/kotlin/
+          retention-days: 7
 
   # ── 8. WASM (Rust) tests — wasm-pack browser harness deferred ──
   wasm-rust-tests:
@@ -260,3 +311,32 @@ jobs:
           cd tools/hecke-engine-r
           Rscript -e 'rextendr::document(".")'
           Rscript -e 'devtools::load_all("."); source("tests/smoke.R")'
+
+  # ── 10. SageMath examples smoke ──
+  # Runs the vanilla-Python hecke_surface.py demo inside SageMath. The
+  # two .sage scripts (sage_iwahori_adjacency, sage_partition_q_dim)
+  # require pyhecke installed via sage -pip; we install from local
+  # source tree to avoid a PyPI dependency.
+  sage-smoke:
+    name: SageMath smoke
+    runs-on: ubuntu-latest
+    # Sage Docker image is ~3 GB; cap the job and skip on draft PRs.
+    if: github.event.pull_request.draft != true
+    container:
+      image: sagemath/sagemath:latest
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pyhecke + qou-substrate from local sources
+        run: |
+          sage -pip install --no-deps \
+            ./tools/qou-substrate/python \
+            ./tools/pyhecke/python \
+            ./tools/witness-schema/python
+          sage -pip install pydantic numpy mpmath
+      - name: Run hecke_surface.py (vanilla-Python smoke)
+        run: |
+          sage -python tools/sage-examples/scripts/hecke_surface.py
+      - name: Run sage_partition_q_dim.sage (Sage-native cross-check)
+        run: |
+          sage tools/sage-examples/scripts/sage_partition_q_dim.sage
