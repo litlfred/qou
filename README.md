@@ -286,6 +286,44 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | Glossary | [glossary.json](https://litlfred.github.io/qou/glossary.json) | CI-generated |
 | Feature branch drafts | [drafts/](https://litlfred.github.io/qou/drafts/) | CI-generated |
 
+## Reusable libraries (`tools/`)
+
+The `tools/` directory ships **8 cross-language wrappers** around QOU's canonical Iwahori-Hecke `H_3(q)` Gram + Markov-trace surface, plus 4 Python support packages. Every wrapper exposes the same Phase A surface (`markov_z`, `hecke_h`, `trace_weights`, `gram_matrix`, `gram_det`) plus the Phase B research surface (`chi_lambda_braid`, `lr_coefficient`, `tr_m_atomic_mpfr`).
+
+### Canonical compute core
+
+| Package | Path | Language | Purpose |
+|---|---|---|---|
+| `hecke-engine` | `tools/hecke-engine/` | Rust | Pure-Rust compute core. Source of truth. |
+| `hecke-engine-c` | `tools/hecke-engine-c/` | C ABI | cbindgen-generated header. Substrate for octave/julia/gap/r wrappers. |
+
+### Cross-language wrappers
+
+| Wrapper | Path | Mechanism | Phase A | Phase B |
+|---|---|---|---|---|
+| C ABI | `tools/hecke-engine-c/` | cbindgen | ✓ | ✓ |
+| Node.js | `tools/hecke-engine-node/` | napi-rs | ✓ | ✓ |
+| Browser (WASM) | `tools/hecke-engine-wasm/` | wasm-bindgen | ✓ | ✓ (no MPFR) |
+| Kotlin / Swift / Java | `tools/hecke-engine-jvm/` | UniFFI | ✓ | ✓ |
+| R | `tools/hecke-engine-r/` | extendr | ✓ | ✓ |
+| GNU Octave | `tools/hecke-engine-octave/` | MEX over C ABI | ✓ | ✓ |
+| Julia | `tools/hecke-engine-julia/` | ccall over C ABI | ✓ | ✓ |
+| GAP | `tools/hecke-engine-gap/` | kernel ext over C ABI | ✓ | ✓ |
+| SageMath examples | `tools/sage-examples/` | pure pyhecke (Sage uses CPython) | ✓ | ✓ |
+
+Each wrapper has its own `README.md` with install + build instructions. Smoke tests live under `tools/<wrapper>/test/` (or `tst/` for GAP) and run automatically via `.github/workflows/wrapper-tests.yml` on every PR touching `tools/**`.
+
+### Python packages (PyPI)
+
+| Package | Path | Purpose |
+|---|---|---|
+| `pyhecke` | `tools/pyhecke/` | Pure-Python Hecke / Gram / Wedderburn primitives |
+| `pyhecke-native` | `tools/pyhecke-native/` | PyO3 wheel — same surface, ~10× faster |
+| `qou-substrate` | `tools/qou-substrate/` | `q_parameter`, precision, `WitnessBuilder` |
+| `witness-schema` | `tools/witness-schema/` | Pydantic schema for witness JSON files |
+
+Version management is automated via `release-please` — every conventional-commit (`fix:`, `feat:`) touching a package's directory triggers a release PR. See `docs/release-process.md` for the lifecycle + manual rescue procedure.
+
 ## Project Structure
 
 | Path | Description |
@@ -295,13 +333,15 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | `content/pipeline/` | Validation, rendering, build pipelines |
 | `content/quantum-observable-universe/` | Main paper — chapters, appendices, Lean |
 | `content/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
+| `tools/` | **Reusable libraries + cross-language wrappers** (see section above) |
 | `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI, simulators |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
 | `folio-assistant/simulators/` | Interactive HTML/WebGL visualizations |
 | `blueprint/src/` | LeanBlueprint source (dependency graph) |
 | `deploy/` | Remote MCP deployment (Docker Compose, Caddy, auth) |
-| `.github/workflows/` | CI/CD: Lean build, publish, blueprint, deploy |
+| `.github/workflows/` | CI/CD: Lean build, publish, blueprint, deploy, wrapper-tests |
 | `.claude/skills/` | AI skill definitions (local + synced packages) |
+| `docs/` | Workplans, audits, `release-process.md`, `lambda-scale-absorbed-into-geom-full.md` |
 | `scripts/` | Build, setup, and utility scripts |
 | `main.tex` | LaTeX preamble (rendering target, not source of truth) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
