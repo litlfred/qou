@@ -1,0 +1,147 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T16:58:41.564492+00:00",
+  "commitSha": "de4151c3aebf9482e3b1a7852e4ab6c05a9b237c",
+  "assertions": [
+    {
+      "name": "numerator_has_exactly_two_positive_real_roots",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Sympy nroots on factor list; correctness fix evidence"
+    },
+    {
+      "name": "root_at_u_eq_one_present",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Classical-limit root; was correctly identified in original proof strategy"
+    },
+    {
+      "name": "second_root_at_u_approx_0_6823_present",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Newly-found second root; correctness finding for Lean theorem statement"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "gram-h3-det-factorization",
+  "scriptFile": "gram_h3_det_factorization.py",
+  "scriptHash": "36b1f4af753f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Symbolic factorization of det(gramMatrix u) for the H_3(q) Hoefsmit-seminormal Gram matrix. Identifies TWO positive real roots — u=1 (classical limit) and u≈0.6823 (root of u³+u-1=0) — forcing a correctness fix to the Lean theorem gramMatrix_det_ne_zero (hypothesis must be u > 1, not 0 < u ∧ u ≠ 1).",
+  "auditOnly": "docs/audits/2026-05-25-gram-h3-det-second-root-correctness-finding.md",
+  "data": {
+    "factorization": {
+      "compute_time_s": 2.195115804672241,
+      "det_full": "(-u**44 - 5*u**43 - 16*u**42 - 39*u**41 - 71*u**40 - 112*u**39 - 146*u**38 - 166*u**37 - 183*u**36 - 162*u**35 - 166*u**34 - 120*u**33 - 55*u**32 - 13*u**31 + 194*u**30 + 199*u**29 + 415*u**28 + 410*u**27 + 302*u**26 + 424*u**25 - 104*u**24 + 180*u**23 - 338*u**22 - 180*u**21 - 104*u**20 - 424*u**19 + 302*u**18 - 410*u**17 + 415*u**16 - 199*u**15 + 194*u**14 + 13*u**13 - 55*u**12 + 120*u**11 - 166*u**10 + 162*u**9 - 183*u**8 + 166*u**7 - 146*u**6 + 112*u**5 - 71*u**4 + 39*u**3 - 16*u**2 + 5*u - 1)/(u**34 + 12*u**32 + 66*u**30 + 220*u**28 + 495*u**26 + 792*u**24 + 924*u**22 + 792*u**20 + 495*u**18 + 220*u**16 + 66*u**14 + 12*u**12 + u**10)",
+      "numerator_factored": "-(u - 1)*(u + 1)*(u**3 + u - 1)**5*(u**3 + u**2 + 1)**5*(u**6 - u**5 + u**4 - u**3 + 2*u**2 - u + 1)*(u**6 + u**5 + 2*u**4 + u**3 + u**2 + u + 1)",
+      "denominator_factored": "u**10*(u**2 + 1)**12",
+      "numerator_degree_in_u": 44
+    },
+    "positive_real_roots": [
+      {
+        "factor": "u^3 + u - 1",
+        "root": 0.6823278038280193
+      },
+      {
+        "factor": "u - 1",
+        "root": 1.0
+      }
+    ],
+    "numerical_sign_table": [
+      {
+        "u": 0.5,
+        "det": -3.629729429964002,
+        "sign": "-"
+      },
+      {
+        "u": 0.6,
+        "det": -0.013910034758649964,
+        "sign": "-"
+      },
+      {
+        "u": 0.6823278,
+        "det": -1.0107770008341905e-39,
+        "sign": "0"
+      },
+      {
+        "u": 0.7,
+        "det": 1.7048297272058768e-06,
+        "sign": "+"
+      },
+      {
+        "u": 0.8,
+        "det": 0.006915192205559827,
+        "sign": "+"
+      },
+      {
+        "u": 0.9,
+        "det": 0.04270576178488842,
+        "sign": "+"
+      },
+      {
+        "u": 1.0,
+        "det": 0.0,
+        "sign": "0"
+      },
+      {
+        "u": 1.05,
+        "det": -0.16994014790447606,
+        "sign": "-"
+      },
+      {
+        "u": 1.054,
+        "det": -0.1916981663032957,
+        "sign": "-"
+      },
+      {
+        "u": 1.11,
+        "det": -0.6917409889920585,
+        "sign": "-"
+      },
+      {
+        "u": 1.2,
+        "det": -2.824024420425745,
+        "sign": "-"
+      },
+      {
+        "u": 1.5,
+        "det": -61.466406448410275,
+        "sign": "-"
+      },
+      {
+        "u": 2.0,
+        "det": -1768.2531897527629,
+        "sign": "-"
+      },
+      {
+        "u": 3.0,
+        "det": -125782.12806024004,
+        "sign": "-"
+      }
+    ],
+    "positivity_certificate_for_u_gt_one": {
+      "u_minus_1": "> 0 by hypothesis u > 1",
+      "u_plus_1": "> 2 by u > 1",
+      "u3_u_minus_1": "> 1 by u > 1 (u^3 > 1, u > 1 ⟹ u^3 + u - 1 > 1)",
+      "u3_u2_1": "> 3 by u > 1 (all positive monomials)",
+      "p_u": "> 0.86 on all of ℝ (no real roots; numerical lower bound)",
+      "r_u": "> 0 by all-positive-coefficient sum for u > 0",
+      "denominator": "u^10 (u² + 1)^12 > 0 by u > 0",
+      "conclusion": "det(G(u)) = -(positive) / (positive) ≠ 0 for u > 1"
+    }
+  }
+}
