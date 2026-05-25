@@ -78,6 +78,7 @@ export default paper({
     chapterRef({ dir: "archimedean-universe" }),                // Bring's surface, fundamental particles (to be split into Bring's deep + Predicted spectra per Phase 5)
     chapterRef({ dir: "statistics-symmetrisation" }),          // [NEW Ch 8 — Phase 6 scaffold] Pauli, spin-statistics, fermion/boson derivation
     chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
+    chapterRef({ dir: "mass-theory" }),                        // [NEW Ch 10 — Phase 4 chunk 2] Mass — Theory (light): Wedderburn statement, Frobenius pairing, transfer matrix, categorical mass foundations, Hecke χ closed-forms — 90 blocks moved from braids-and-knots
     chapterRef({ dir: "gravity-spacetime" }),                  // [NEW Ch 12 — Phase 6 scaffold] Gravity emergence: contact geometry + geodesic Madelung
 
     // ── Part III: Physical Realization ────────────────────────────────
