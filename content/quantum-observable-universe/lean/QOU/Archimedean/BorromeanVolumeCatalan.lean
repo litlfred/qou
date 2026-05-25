@@ -182,4 +182,57 @@ theorem vol_B3_numerical_bounds_via_catalan :
   · linarith
   · linarith
 
+/-! ## §5  Corollaries — categorical identities downstream of Vol(𝓑₃) = 8·G -/
+
+/-- The proton/neutron Geom_full base factor `Vol(𝓑₃)/ℏ_q²` at the
+    substrate is `8·G · q²/(q−1)²`, a rational function in (q, G).
+
+    This is the LEADING factor of the canonical mass formula
+    `m(𝓑₃) = m_e · Geom_full(𝓑₃) = m_e · (8G/ℏ_q²) · linking_weight(q)`.
+
+    -- Ref: see `folio-assistant/computations/_li_2_q_util.geom_full_borromean`
+            for the production implementation; this theorem is the
+            categorical statement of its first factor. -/
+theorem geom_leading_eq_8G_over_hbar_q_sq (q : ℝ) (hq : q > 1) :
+    vol_B3 / ((q - 1) / q) ^ 2 = 8 * catalan_G * q ^ 2 / (q - 1) ^ 2 := by
+  rw [vol_B3_eq_8_catalan]
+  field_simp
+  ring
+
+/-- `vol_B3 > 0` via the Catalan identity (alternative proof using §1
+    positivity of `catalan_G`). -/
+theorem vol_B3_pos_via_catalan : vol_B3 > 0 := by
+  rw [vol_B3_eq_8_catalan]
+  have : catalan_G > 0 := catalan_G_pos
+  linarith
+
+/-- `vol_B3 ≠ 0` via the Catalan identity. -/
+theorem vol_B3_ne_zero_via_catalan : vol_B3 ≠ 0 :=
+  ne_of_gt vol_B3_pos_via_catalan
+
+/-! ## §6  Open questions / TODO
+
+The Catalan-side sorry chain in this file totals 4 sorrys:
+  1. `catalan_G_numerical_bounds` (series partial-sum bound).
+     Closure: norm_num + Mathlib's `Real.summable_alternating_succ_atop`
+     applied to the Catalan series; partial-sum truncation at k = 5
+     gives the 0.915 < G < 0.916 bound.
+  2. `lobachevsky` definition.
+     Closure: requires Mathlib's Lebesgue integral over a closed
+     interval + `Real.log_abs` of `2 * Real.sin t`. Likely needs
+     a small library extension.
+  3. `lobachevsky_pi_div_four_eq_half_catalan`.
+     Closure: integration by parts + `Real.cos_sub` identity on `[0, π/4]`
+     + term-by-term integration against the Catalan series.
+     One paper-page proof; not yet in Mathlib.
+  4. `vol_B3_eq_8_catalan`.
+     Closure: either refactor `borromeanRingsEntry.volume.value` to
+     `8 * catalan_G` directly (low cost), or prove the numerical
+     equivalence `|7.32772475341775 - 8 * catalan_G| < 1e-14` using
+     a high-precision partial sum.
+
+Sorry #1 and #4 are closable WITHOUT additional Mathlib infrastructure.
+Sorrys #2 and #3 require integration-theoretic Mathlib extensions.
+-/
+
 end QOU.Archimedean
