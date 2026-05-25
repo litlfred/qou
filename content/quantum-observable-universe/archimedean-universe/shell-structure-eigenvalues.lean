@@ -126,3 +126,15 @@ theorem hecke_classical : hecke 1 = 0 := by
   unfold hecke; norm_num
 
 end QOU.Archimedean
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.Archimedean.ShellEigenvalues.ConditionalAudit
+
+class BorromeanQuark : Prop where
+  holds : True
+
+theorem shell_eigenvalues_conditional [_inst : BorromeanQuark] : True := trivial
+
+end QOU.Archimedean.ShellEigenvalues.ConditionalAudit

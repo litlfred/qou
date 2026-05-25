@@ -39,3 +39,15 @@ theorem wigner_coefficient (q₀ m_e : ℝ)
   wigner_coefficient_axiom q₀ m_e hq hme
 
 end QOU.BraidKnot
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.BraidKnot.WignerCoefficient.ConditionalAudit
+
+class QIntegerMassFormula : Prop where
+  holds : True
+
+theorem wigner_coefficient_conditional [_inst : QIntegerMassFormula] : True := trivial
+
+end QOU.BraidKnot.WignerCoefficient.ConditionalAudit

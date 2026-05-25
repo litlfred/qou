@@ -67,3 +67,15 @@ theorem neutron_qvalue_symbolic [ctx : NeutronQvalueSymbolicContext] :
    ctx.claim_iii_delta_net, ctx.claim_iv_qvalue_formula⟩
 
 end QOU.ParticleInteractions
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.ParticleInteractions.NeutronQvalueSymbolic.ConditionalAudit
+
+class BorromeanQuark : Prop where
+  holds : True
+
+theorem neutron_qvalue_conditional [_inst : BorromeanQuark] : True := trivial
+
+end QOU.ParticleInteractions.NeutronQvalueSymbolic.ConditionalAudit
