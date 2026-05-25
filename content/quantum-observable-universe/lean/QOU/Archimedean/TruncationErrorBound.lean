@@ -97,19 +97,18 @@ theorem faddeevH4_truncation_abs_bound (h : ℝ) (hlt : h ^ 4 < 1) :
   have div_nonneg : h ^ 12 / (1 - h ^ 4) ≥ 0 := div_nonneg h12_nonneg (le_of_lt hpos)
   rw [abs_of_nonneg div_nonneg]
 
-/-- **Cross-check (informal)**: at the substrate `q₀ ≈ 1.110`, we have
-    `h ≈ 0.21`, so `h⁴ ≈ 0.0019` and the Faddeev truncation bound
-    `h¹² / (1 − h⁴) ≈ 7e-9` is negligible compared to the production
-    probe's +108 ppm m_p prediction error.
-
-    The +108 ppm error is dominated by the Bring color-tube h⁹
-    truncation, NOT by the Faddeev h¹² tail. -/
-example (h : ℝ) (h_small : h = 21 / 100) (h_lt : h ^ 4 < 1) :
+/-- **Cross-check (numerical sanity check, PROVED)**: at h = 21/100 ≈
+    substrate q₀'s heckeH value, the Faddeev truncation bound
+    `h¹² / (1 − h⁴) ≤ 1 / 10⁷` holds. This corroborates the §4
+    discussion that the Faddeev h¹² tail is negligible vs the
+    Bring h⁹ tail at substrate. -/
+theorem faddeev_truncation_at_substrate_numerical_sanity
+    (h : ℝ) (h_small : h = 21 / 100) :
     h ^ 12 / (1 - h ^ 4) ≤ 1 / 10 ^ 7 := by
-  -- Numerical: at h = 0.21, h^12 ≈ 7e-9, 1-h^4 ≈ 0.998,
-  -- so h^12 / (1 - h^4) ≈ 7e-9 < 1e-7 ✓.
-  -- This is a numerical sanity check, not a load-bearing theorem.
-  sorry
+  subst h_small
+  have h_denom_pos : (1 : ℝ) - (21 / 100) ^ 4 > 0 := by norm_num
+  rw [div_le_iff h_denom_pos]
+  norm_num
 
 /-! ## §2  Bring color-tube truncation (sorry, with Ref) -/
 
@@ -211,7 +210,7 @@ To CLOSE the two remaining sorrys:
   ✓ faddeevH4Taylor8_realEval_at_zero (= 1)
   ✓ faddeevH4_truncation_eq (closed-form identity, field_simp + ring)
   ✓ faddeevH4_truncation_abs_bound (bound from identity)
-  ⏸️ informal substrate-domain example (1 sorry)
+  ✓ faddeev_truncation_at_substrate_numerical_sanity (norm_num)
   ⏸️ bringColorTube_truncation_error_bound (1 sorry, Ref)
   ⏸️ linkingWeightBringFaddeevH4_truncation_error_bound (1 sorry, Ref)
 -/
