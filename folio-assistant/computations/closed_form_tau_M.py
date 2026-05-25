@@ -148,15 +148,25 @@ def canonical_interface_kinds(
           (`canonical_braid_marshalling.marshal_to_chi_lambda_braid`,
           which maps `(c=1, d=-h/2)` → `(sign=+1, gen)` and silently
           drops the -h/2 coefficient).  This is what the 4 production
-          tr_M scripts compute.
+          tr_M scripts compute.  **Phase 5q witness validates the
+          closed form against the empirical slow path to 1e-49 at
+          all four anchor atoms (D, T, ³He, ⁴He) under this default
+          convention — `closed-form-tau-M-verification-phase5q.witness.json`.**
 
       - "strict_averaged" (math-correct, audit only):
           p-n uses (σ_g - (h/2)·I) which gives factor (z - h/2).
-          Phase 5q confirmed this convention disagrees with the
-          production pipeline by ~21% relative for atoms with at
-          least one p-n interface.  Use this only when probing the
-          marshalling-bug audit trail; do NOT use it for the closed
-          form that production scripts validate against.
+          Phase 5q confirmed this **alternative** convention
+          disagrees with the production pipeline (which uses
+          chi_lambda_braid-marshalled words) by ~21% relative for
+          atoms with at least one p-n interface — i.e. this is the
+          gap between the literal averaging generator and what
+          production marshalling actually computes, NOT a gap
+          between the closed form and production.  Use this only
+          when probing the marshalling-bug audit trail; do NOT use
+          it where production-matching tr_M is required.
+
+          See `docs/audits/2026-05-25-phase5q-closed-form-reconciliation.md`
+          for the full convention map.
 
     Mirrors `mass_at_3A_proper.atom_braid_word_3A` interface logic:
       - p-p boundary → positive (σ_g)
