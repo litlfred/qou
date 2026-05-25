@@ -93,7 +93,8 @@ Sympy regression script emits the full factorization as a witness:
 The witness asserts:
 
 - `det(G(q_0)) ≈ −0.189` (matches existing regression)
-- numerator polynomial degree = 94 in u
+- numerator polynomial degree = 44 in `u` (after rational-cancellation
+  against the denominator `u^10·(u²+1)^12`)
 - factor list matches above
 - positive-real root set = `{1, root(u³+u−1)}`
 
