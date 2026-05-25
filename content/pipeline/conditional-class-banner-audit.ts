@@ -305,21 +305,19 @@ console.log(`  ✗ missing .md conditional banner:         ${missingBanner.lengt
 
 if (missingLean.length > 0) {
   console.log(`\nMissing Lean [Class] hypothesis:`);
-  for (const f of missingLean.slice(0, 10)) {
+  for (const f of missingLean) {
     console.log(`  ${f.kind.padEnd(11)} ${f.label}`);
     console.log(`    cone: {${f.conj_cone.join(", ")}}`);
     console.log(`    lean: ${f.lean_file ?? "(not found)"}`);
   }
-  if (missingLean.length > 10) console.log(`  … (${missingLean.length - 10} more)`);
 }
 
 if (missingBanner.length > 0) {
   console.log(`\nMissing .md conditional banner:`);
-  for (const f of missingBanner.slice(0, 10)) {
+  for (const f of missingBanner) {
     console.log(`  ${f.kind.padEnd(11)} ${f.label}`);
     console.log(`    md: ${f.md_file}`);
   }
-  if (missingBanner.length > 10) console.log(`  … (${missingBanner.length - 10} more)`);
 }
 
 await Bun.write(

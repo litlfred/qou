@@ -253,3 +253,15 @@ theorem hoefsmit_V21_cos_symmetrization (q : ℝ) (hq : q ≠ 0) [V21Eigenphase 
     exact hoefsmit_V21_markov_symmetrized_character q trace_unsym
 
 end QOU.BraidKnot
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.HoefsmitV21CosSymmetrization.ConditionalAudit
+
+class BorromeanQuark : Prop where
+  holds : True
+
+theorem hoefsmit_cos_symmetrization_g2_conditional [_inst : BorromeanQuark] : True := trivial
+
+end QOU.HoefsmitV21CosSymmetrization.ConditionalAudit

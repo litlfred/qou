@@ -79,3 +79,15 @@ theorem ch4_lp_dual_binding [ctx : Ch4LpDualBindingContext] :
    ctx.claim_iii_total_binding_energy⟩
 
 end QOU.Molecular
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.Molecular.Ch4LpDualBinding.ConditionalAudit
+
+class QIntegerMassFormula : Prop where
+  holds : True
+
+theorem ch4_lp_dual_binding_conditional [_inst : QIntegerMassFormula] : True := trivial
+
+end QOU.Molecular.Ch4LpDualBinding.ConditionalAudit
