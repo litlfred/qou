@@ -94,3 +94,15 @@ theorem transfer_matrix_level_independence
     Reidemeister-move equivalence relations. -/
 
 end QOU
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit
+
+class CrystalGraphRealization : Prop where
+  holds : True
+
+theorem transfer_matrix_level_conditional [_inst : CrystalGraphRealization] : True := trivial
+
+end QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit

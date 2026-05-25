@@ -244,3 +244,15 @@ theorem q_beta_spectral_bridge :
   · exact fun h z hzh => bridge_first_order_remainder h z hzh
 
 end QOU.Interactions
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.ParticleInteractions.QBetaSpectral.ConditionalAudit
+
+class BorromeanQuark : Prop where
+  holds : True
+
+theorem q_beta_spectral_conditional [_inst : BorromeanQuark] : True := trivial
+
+end QOU.ParticleInteractions.QBetaSpectral.ConditionalAudit
