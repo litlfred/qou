@@ -22,6 +22,51 @@ multi-session work, it does NOT attempt the full derivation.
 > family_a_h_minus_bridge_explicit`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean)
 > for the Lean-proved explicit gap.
 
+## Deeper finding (2026-05-25 trace through the mass-endomorphism formulas)
+
+After the corrections above, walking the **canonical 6-term mass
+formula** of [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
+all the way down for the proton at q₀ reveals that `linking_weight`
+is **not** the actual gap — it is a re-parameterization of the
+**`ρ_K` closure problem** (categorical density of
+[`prop:atomic-mass-gb-nf`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md)),
+whose substrate-only derivation is explicitly **OPEN**.
+
+The 6-term canonical formula and the Borromean linking-weight form are
+two parameterisations of the same mass; equating them gives
+
+    linking_weight(q₀) = ρ_K · |tr_M(T_w, q₀)| / (Vol(𝓑₃) / ℏ_q²)
+
+For the proton: `|tr_M| ≈ 1.065`, `Vol/ℏ_q² ≈ 749`, target
+`linking_weight ≈ 2.4519`, hence `ρ_K^𝔭 ≈ 1724` — matching the value
+quoted in [`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
+line 7 (`ρ_K^𝔭 ≈ 1723.6`).
+
+**Implication.** Reading-A geometrised — the non-abelian Stokes
+machinery scaffolded below — is one candidate substrate-derivation
+route **for `ρ_K`**, not for an "h² coefficient swap" inside Family
+A. The 92% / 8% gap localisation framing has been retracted (see
+correction banner above); the actual gap is the multiplicative
+`ρ_K ≈ 1724` factor.
+
+Status of the 6-term structural terms at proton (q₀, from
+[`mass-formula-6term-mpfr-50dps.witness.json`](../../folio-assistant/computations/mass-formula-6term-mpfr-50dps.witness.json)
+and [`term6-full-pole-sum.witness.json`](../../folio-assistant/computations/term6-full-pole-sum.witness.json)):
+
+| Term | Value (dimensionless ÷ m_e) | Lean coverage |
+|---|---:|---|
+| T1 `|tr_M(T_w)|` | 1.0653 | **Lean-proved** for β_Bor (`BorromeanMarkovTrace.lean`) |
+| T2 single brane tower | 1.6183 | partial — `Li_2^q` defined but tower combination unproved |
+| T3 pair brane tower | 0.1983 | partial — same as T2 |
+| T4 `tr_M(C_{dim_q})` | 1.2761 | proved (`thm:frobenius-codim-universal`) |
+| T5 `a_K · B_bulk + …` | **−7.7918** | conjectural — `conj:knot-factor-frobenius-pairing` |
+| T6 Habiro residue | +1.4218 | exploratory — pole-by-pole compute |
+
+Sum (T1..T6) ≈ **−2.21**, so `m_e · |sum| ≈ 1.13 MeV` against CODATA
+m_p = 938.27 MeV. The negative sum is a sign anomaly in T5 (chirality
+factor); see PR #1272 follow-up. The ~830× multiplicative gap from
+|sum| → CODATA is captured by **ρ_K**.
+
 ## Premise
 
 The companion γγ-decomposition probe (PR #1272), after the
