@@ -16,7 +16,37 @@ The Bring's Surface chapter develops the surface in full depth,
 including the $S_5/A_5$ action, the cohomological defect (which yields
 the three quark colours), and the connection to the Klein quartic.
 
-> _Authoring note (this phase)._ Bring's basic categorical role (genus,
-> $\chi$, $S_5$ action, "canonical archimedean model") will be inlined
-> here in a follow-up PR, so this section becomes the authoritative
-> source for Bring's basics across the paper.
+**Bring's surface — common basics used throughout the paper.** The
+canonical geometric realisation is **Bring's surface** $\Sigma_4$, the
+smooth projective curve defined as the vanishing locus on $\mathbb{P}^4$
+of the first three power sums:
+
+$$
+  \Sigma_4 = \mathrm{Proj}\!\left(
+    R[x_0,\dots,x_4]\Big/\bigl(\textstyle\sum x_j,
+    \textstyle\sum x_j^2, \textstyle\sum x_j^3\bigr)
+  \right).
+$$
+
+The structural facts consumed throughout the paper are:
+
+- $\Sigma_4$ has **genus** $g = 4$ and **Euler characteristic**
+  $\chi(\Sigma_4) = 2 - 2g = -6$.
+- The **automorphism group** is $\mathrm{Aut}(\Sigma_4) \cong S_5$
+  (order 120), the largest for any genus-4 curve. The orientation-
+  preserving subgroup $A_5 \subset S_5$ acts faithfully and supplies
+  the symmetry group of the canonical particle assignment.
+- $\Sigma_4$ is the **canonical archimedean model**: the substrate
+  parameter $q_0$ is fixed by its $\chi = -6$ structure, and the
+  Reeb derivation produces a $q$-hyperbolic structure on $\Sigma_4$
+  with five $S_5$-equivalent fibres (one per particle family).
+- The **cohomological defect** of $\Sigma_4$ — the discrepancy
+  between its first Betti number and the rank of the natural
+  three-colour bundle — supplies the structural origin of the
+  three-colour SU(3) charge of QCD.
+
+These four facts (genus / $\chi$ / $S_5$ action / cohomological
+defect) are the common basics every downstream chapter cites. The
+formal definition with proofs of smoothness, the full $S_5$ action
+structure, and the cohomological-defect derivation live in the
+Bring's Surface chapter.
