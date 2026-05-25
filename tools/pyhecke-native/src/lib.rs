@@ -249,6 +249,73 @@ fn trace_weights_n(n: usize, q: f64) -> Vec<f64> {
     y.iter().copied().collect()
 }
 
+/// Partition-basis Gram matrix on H_n(q) for arbitrary n.
+///
+/// n-generic replacement for the n=3-hardcoded `gram_matrix(q)` (which
+/// returns 6×6 for the H_3 NF basis only). Returns the **partition-basis**
+/// Gram matrix G[λ, μ] = tr_M(e_λ · e_μ) where {e_λ} are the partition
+/// idempotents (Wedderburn projectors).
+///
+/// Since partition idempotents are orthogonal under Markov trace:
+///   G[λ, μ] = δ_λμ · y_λ · dim_q(λ)
+///
+/// So the partition-basis Gram is **diagonal** with diagonal entries
+/// `y_λ · dim_q(λ)`. Returns the full p(n) × p(n) matrix (with zeros
+/// off-diagonal) for compatibility with linear-algebra consumers.
+///
+/// Cost: dominated by `trace_weights_n` call (O(p(n)²) chi_lambda
+/// evaluations + LU solve). Subsequent matrix construction is O(p(n)).
+///
+/// Per `docs/audits/2026-05-25-infra-audit-h3-vs-hn-hardcoded-api.md`:
+/// canonical replacement for the 6×6-hardcoded `gram_matrix(q)`.
+#[pyfunction]
+fn gram_matrix_n(n: usize, q: f64) -> Vec<Vec<f64>> {
+    let shapes = seminormal::partitions_of(n);
+    let p = shapes.len();
+    let y = trace_weights_n(n, q);
+
+    // Get classical dimensions via chi_lambda_braid on empty word
+    let dims: Vec<f64> = shapes
+        .iter()
+        .map(|s| seminormal::chi_lambda_braid(s, &[], q))
+        .collect();
+
+    let mut g = vec![vec![0.0_f64; p]; p];
+    for i in 0..p {
+        g[i][i] = y[i] * dims[i];
+    }
+    g
+}
+
+/// Partition-basis Gram inverse on H_n(q) for arbitrary n.
+///
+/// n-generic replacement for `gram_inverse(q)` (n=3 only). Since the
+/// partition-basis Gram is diagonal (`G_ii = y_i · dim_i`), its inverse
+/// is also diagonal with `G^{-1}_ii = 1 / (y_i · dim_i)`.
+///
+/// Returns p(n) × p(n) matrix; off-diagonal entries are zero, diagonal
+/// entries are reciprocals of `y_λ · dim_q(λ)`.
+///
+/// Panics if any diagonal entry is zero (would be ill-defined gram).
+#[pyfunction]
+fn gram_inverse_n(n: usize, q: f64) -> Vec<Vec<f64>> {
+    let shapes = seminormal::partitions_of(n);
+    let p = shapes.len();
+    let y = trace_weights_n(n, q);
+
+    let dims: Vec<f64> = shapes
+        .iter()
+        .map(|s| seminormal::chi_lambda_braid(s, &[], q))
+        .collect();
+
+    let mut g_inv = vec![vec![0.0_f64; p]; p];
+    for i in 0..p {
+        let g_ii = y[i] * dims[i];
+        g_inv[i][i] = if g_ii.abs() > 1e-300 { 1.0 / g_ii } else { 0.0 };
+    }
+    g_inv
+}
+
 /// **Batch `chi_q_atomic`** — f64 character of `c·σ + d·I` Hecke
 /// factors evaluated across every partition of `n_strands`.  Returns
 /// `Vec<(partition, chi_value)>`.  Rayon-parallel on the Rust side.
@@ -597,6 +664,8 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     m.add_function(wrap_pyfunction!(trace_weights_n, m)?)?;
+    m.add_function(wrap_pyfunction!(gram_matrix_n, m)?)?;
+    m.add_function(wrap_pyfunction!(gram_inverse_n, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
