@@ -126,9 +126,10 @@ infra is also available — could be the unified entry point.
 
 ### Phase B-2 — R5-full for tritium (H_5)
 
-5 partitions of 5: (5), (4,1), (3,2), (3,1,1), (2,2,1), (2,1,1,1), (1⁵)
-— 7 blocks, max-d_λ = 5 (for partition (3,2)) — total dimension 16
-(Wedderburn = sum of d_λ²).
+7 partitions of 5: (5), (4,1), (3,2), (3,1,1), (2,2,1), (2,1,1,1), (1⁵)
+— 7 blocks. Hook-length dimensions: d_(5)=1, d_(4,1)=4, d_(3,2)=5,
+d_(3,1,1)=6, d_(2,2,1)=5, d_(2,1,1,1)=4, d_(1⁵)=1. Max d_λ = 6 (at
+partition (3,1,1)); total Wedderburn dimension Σ d_λ² = 120 = 5!.
 
 **Scope:** Tritium added to `R5_FULL_SUBSTRATE_REGISTRY`. Search over
 B_5 braid words length ≤ 8 (more candidates than B_3 — `4^L` vs `2^L`
@@ -142,18 +143,24 @@ on the back end.
 
 ### Phase B-3 — R5-full for ⁴He (H_12)
 
-77 partitions of 12. Max d_λ via hook-length formula:
+77 partitions of 12. Hook-length-formula dimensions (verified via
+sympy; the value `d_λ = n! / ∏ hooks(c)` over cells `c` of the
+Young diagram):
 
 ```
-d_(6,6) = 12! / (6·5·4·3·2·1)² = 132
-d_(7,5) = 132
-d_(8,4) = 297
-d_(6,3,3) = 462    ← representative max
-d_(4,4,4) = 462
+d_(6,6)       = 132
+d_(7,5)       = 297
+d_(8,4)       = 275
+d_(6,3,3)     = 1650
+d_(4,4,4)     = 462
+d_(5,3,2,1,1) = 7700    ← true max d_λ across all 77 partitions
 ```
 
-Total Wedderburn dimension = Σ d_λ² ≈ 12! = 479,001,600. Too big for
-inline numpy; must use the Rust kernel.
+Total Wedderburn dimension Σ d_λ² = 12! = 479,001,600 (Schur-Weyl
+identity for S_12). Too big for inline numpy; must use the Rust
+kernel (each block's chi_lambda_braid evaluation is O(d_λ² · word
+length) per call — at max d_λ = 7700, one call is ~10^8 mpfr-ops
+even before stacking 77 of them per candidate braid).
 
 **Bottleneck — closed_form_tau_M reuse.** PR #1269 just landed the
 `atomic_tr_m_helium4_canonical.py` path which gives ⁴He tr_M at
