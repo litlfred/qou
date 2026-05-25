@@ -68,9 +68,6 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-import mpmath as mp  # noqa: E402
-
-from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from knot_braid_database import braid_word_for_knot, n_strands_for_knot  # noqa: E402
 from markov_trace_for_knot import markov_trace_for_knot  # noqa: E402
@@ -84,18 +81,25 @@ AME_BINDING_3H_MEV = 8.481798
 def main() -> int:
     w = WitnessBuilder(
         "tritium-8-11-jones-markov-probe",
-        engine="python+mpmath",
+        engine="python",
+    )
+    w.set_audit_only(
+        "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
     )
     w.set_description(
-        "Phase B-2 probe: corrects the B_5 → B_3 misframing of "
-        "tritium's canonical knot (8_11 has braid index 3, not 5). "
-        "Computes |tr_M(8_11, q_0)| via common-infra under both "
-        "conventions and confirms the same bare-|tr_M| << AME pattern "
-        "documented at 7²_1 (PR #1274) and 𝓑₃ (proton-mass). The "
-        "framework's Geom_full chain is the correct substrate-pure "
-        "derivation; bare |tr_M| is not."
+        "Phase B-2 probe (EXPLORATORY): corrects the B_5 → B_3 "
+        "misframing of tritium's canonical knot (8_11 has braid index "
+        "3, not 5). Computes |tr_M(8_11, q_0)| via common-infra "
+        "(markov_trace_for_knot, f64 evaluator) under both Wenzl JM "
+        "and q-Schur conventions and confirms the same bare-|tr_M| "
+        "<< AME pattern documented at 7²_1 (PR #1274) and 𝓑₃ "
+        "(proton-mass). The framework's Geom_full chain is the "
+        "correct substrate-pure derivation; bare |tr_M| is not."
     )
-    set_compute_dps(50)
+    # Note: markov_trace_for_knot is an f64 evaluator (q: float), so
+    # no high-precision (mpmath) plumbing is needed here. The 50-digit
+    # Q_50_DIGIT_STR is exposed in the witness as the canonical
+    # substrate pin only; the computation uses the f64-truncated value.
 
     print("=" * 78)
     print("Tritium 8_11 Jones-Markov probe (Phase B-2)")
@@ -113,7 +117,8 @@ def main() -> int:
 
     q_str = Q_50_DIGIT_STR
     q_f64 = float(Q_FLOAT)
-    print(f"\n  q_0 = {q_str}")
+    print(f"\n  q_0 (canonical 50-digit pin) = {q_str}")
+    print(f"  q_0 (f64 used in this probe)  = {q_f64}")
     print(f"  m_e = {float(M_E_MEV):.10f} MeV")
     print(f"  AME B(³H) = {AME_BINDING_3H_MEV} MeV")
 
@@ -149,11 +154,18 @@ def main() -> int:
     print(f"  correct substrate-pure derivation.")
 
     # Witness
-    w.add_parameter("q_0", q_str)
+    w.add_parameter("q_0_50dps", q_str)
+    w.add_parameter("q_0_f64", q_f64)
     w.add_parameter("m_e_MeV", str(M_E_MEV))
     w.add_parameter("knot", "8_11 (tritium hyperbolic knot)")
-    w.add_parameter("braid_word", str(braid))
+    # JSON-friendly serialization: list of [sign, gen] pairs
+    w.add_parameter("braid_word", [list(t) for t in braid])
     w.add_parameter("n_strands_catalogued", n_strands)
+    w.add_parameter("evaluator_precision", "f64 (markov_trace_for_knot is "
+                                          "an f64-only evaluator; high-"
+                                          "precision substrate pin "
+                                          "preserved in q_0_50dps for "
+                                          "provenance)")
     w.add_data("tr_M_wenzl", float(trM_wenzl))
     w.add_data("tr_M_qschur", float(trM_qschur))
     w.add_data("m_e_times_abs_tr_M_wenzl_MeV", pred_wenzl)
