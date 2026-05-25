@@ -424,3 +424,62 @@ inconsistency at the dominant-partition level.
 projection) and Option E (Kashiwara crystal) remain the open
 research directions. Probe-3's negative result removes one
 candidate closure form from the design space.
+
+### Probe-2 result (stacked on PR #1229) — STRONG NEGATIVE diagnostic
+
+Implements §3.2 of the synthesis doc: joint min-||Δ||_2 over the
+D + T + ³He target equations under the canonical global-Δ_λ
+assumption (Δ_λ atom-independent). mpmath matrices throughout
+(substrate precision; rel_err < 5e-50 on both variants).
+
+| variant | constraint | max |Δ_λ| | rel_err |
+|---------|-----------|---------:|--------:|
+| A (joint, no bar) | 41 vars, 3 eqs | **431.73** | 7.5e-51 |
+| B (joint + bar-inv per n) | 22 ν, 3 eqs | **431.72** | 2.4e-50 |
+| (probe-1 reference, D only) | bar-inv only | 15.69 | 1.5e-30 |
+
+Adding T + ³He forces |Δ_λ| ~27× LARGER than D-only. The dominant
+entries (max 431.72) are at n=9 partitions; D's n=6 partitions
+retain small magnitudes.
+
+**Falsification of the global-Δ_λ assumption**: the canonical
+framework's claim that Δ_λ per partition is atom-independent is
+inconsistent with the empirical D + T + ³He triple. Either:
+
+- Δ_λ is atom-dependent: Δ_λ(K) — Path B in
+  `2026-05-18-delta-lambda-gating-context.md`.
+- χ × y_λ tabulations for T or ³He are wrong (cross-check against
+  an independent producer).
+- Framework mass formula has a missing structural correction at
+  n > 6 (level-dependent prefactor, higher-Hecke contribution not
+  captured by the y_λ × χ^λ expansion).
+
+**Bar-invariance does NOT rescue**: variant B (with bar-inv) gives
+essentially the same max as variant A (without). The cross-atom
+inconsistency is structural, not symmetry-related.
+
+### Probe sweep summary (probes 1+2+3, single session each)
+
+| probe | constraint | D max |Δ_λ| | joint max |Δ_λ| | verdict |
+|-------|------------|------------:|----------------:|---------|
+| 1 | bar-invariance only (D) | **15.7** | n/a | base reference |
+| 3 | + dominant pin Δ_{[5,1]} = round(dim_q) | 29.5 | n/a | falsifies pin form |
+| 2 | + multi-atom D+T+³He (no pin) | n/a | **431.7** | falsifies global Δ_λ |
+
+**Net**: three single-session probes collectively rule out:
+- A single dominant pin (Δ_{[5,1]} = round(dim_q))
+- Atom-independent Δ_λ
+
+Remaining viable directions to close Δ_λ:
+
+1. **Atom-dependent Δ_λ(K)** (Path B from gating-context doc) —
+   requires brane-tower level data (GAP-A-3) or per-isotope
+   canonical closure (R5-full SDP solver).
+2. **Option E (Kashiwara crystal)** — categorical structure for Δ_λ
+   via canonical-basis trace. More urgent given probes 1+2+3
+   falsify the global-pin closure attempts.
+
+The single-session probe sequence has shipped its full informational
+payload. Further closure attempts on the existing scaffolding
+(global Δ_λ + bar-invariance + dominant pin) are not productive
+without new structural input.
