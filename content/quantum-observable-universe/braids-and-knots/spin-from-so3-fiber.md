@@ -128,7 +128,7 @@ class SpinFromSO3Fiber
    from $S_3$-truncated PL integration to full $\mathrm{SO}(3)$
    spherical-harmonic decomposition on Bring's surface; verify
    $h^4 = -3/4$ at the $\ell = 2$ level.
-2. **D10 → ✅** requires the Lean class instance + the
+2. **D10 to closed** requires the Lean class instance + the
    `ell_two_yields_h4_coefficient` proof (with `sorry` for the
    regulator of the divergent series at higher $\ell$, per CLAUDE.md
    §3b "class is inhabited").

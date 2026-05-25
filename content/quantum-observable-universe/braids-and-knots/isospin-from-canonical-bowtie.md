@@ -211,7 +211,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 
 Per [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 row
 D9: this conjecture is the load-bearing closure path. The duality
-tracker will move D9 from ⏳ partial (crystal-only) to ✅ formalised
+tracker will move D9 from partial (crystal-only) to formalised
 once:
 
 1. This block lands (provides the categorical statement)

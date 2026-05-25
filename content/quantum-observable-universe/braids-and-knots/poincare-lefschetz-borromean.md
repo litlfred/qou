@@ -49,7 +49,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 2. Connect to D16 Bloch group: show the regulator $r_2$ and the
    Poincaré–Lefschetz pairing both produce $8G$ via the
    `vol-as-motivic-period` framing.
-3. D21 → ✅ requires Lean class for manifold-with-cusps Poincaré–
+3. D21 to closed requires Lean class for manifold-with-cusps Poincaré–
    Lefschetz (partial in Mathlib).
 
 ## Cross-references

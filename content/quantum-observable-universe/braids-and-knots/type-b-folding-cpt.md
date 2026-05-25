@@ -108,7 +108,7 @@ class TypeBFoldingCPT (M : Type*) [BrCategory M] [Crystal M] where
    (Wigner SU(4) supermultiplet — see [D11](wigner-su4-from-spin-isospin.md))
    and verify the prediction that these atoms correspond to folded-
    crystal singlets.
-3. **D22 → ✅** requires the Lean class `TypeBFoldingCPT` inhabited
+3. **D22 to closed** requires the Lean class `TypeBFoldingCPT` inhabited
    via the explicit $\iota$ map, plus the folded-GS-NF bar-invariance
    proof.
 

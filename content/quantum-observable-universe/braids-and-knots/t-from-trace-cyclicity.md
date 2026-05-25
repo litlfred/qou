@@ -96,7 +96,7 @@ class TFromTraceCyclicity (M : Type*) [BrCategory M] [Hecke M] where
    trace cyclicity (immediate from
    [`thm:jones-markov-trace`](#thm:jones-markov-trace) but worth
    a witness for the canonical atom catalogue).
-2. **D8 → ✅** requires Lean instance proving the trace-cyclicity
+2. **D8 to closed** requires Lean instance proving the trace-cyclicity
    compatibility + bar = P · C · T factorisation.
 
 ## Cross-references

@@ -110,7 +110,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
    because $(\sigma_i^{-1} - q)(\sigma_i^{-1} + q^{-1}) = 0$ also
    holds (multiply the original by $\sigma_i^{-2}$). Concrete probe
    in a follow-up.
-2. **D7 → ✅** requires the Lean class instance + a `prop:` block
+2. **D7 to closed** requires the Lean class instance + a `prop:` block
    stating bar = P · C · T as a derivable identity.
 
 ## Cross-references

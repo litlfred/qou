@@ -140,7 +140,7 @@ class PachnerPentagonBorromean
 1. **Compute prototype**: extend a Pachner-state-sum probe for
    $\mathcal{B}_3$ at $q = q_0$; cross-check $h^4$ coefficient via
    the Lobachevsky decomposition $8G = \sum \Lambda(\theta_i)$.
-2. **D15 → ✅** requires the Lean class + the
+2. **D15 to closed** requires the Lean class + the
    `borromean_h4_pachner_eq_markov_trace` proof (which would
    likely import a Lobachevsky-Pentagon lemma).
 3. **Connect to D16** (sibling): the Bloch-group element of

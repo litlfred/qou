@@ -150,14 +150,14 @@ Per [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §2
 Cluster B:
 
 ```
-D9  (isospin SU(2)_I)  ⏳ scaffold
-D10 (spin SU(2)_S)     ⏳ scaffold
-D11 (Wigner SU(4))     ⏳ scaffold  ← this conjecture
+D9  (isospin SU(2)_I)  scaffold
+D10 (spin SU(2)_S)     scaffold
+D11 (Wigner SU(4))     scaffold  -- this conjecture
 ```
 
-All three rows are now ⏳ scaffold.  Promoting any of them to ✅
-requires the underlying Lean class instance.  D11 ⏳ → ✅ requires
-BOTH D9 and D10 to be ✅ first.
+All three rows are now scaffold.  Promoting any of them to closed
+requires the underlying Lean class instance.  D11 scaffold to closed requires
+BOTH D9 and D10 to be closed first.
 
 ## Open R&D
 
@@ -174,7 +174,7 @@ BOTH D9 and D10 to be ✅ first.
    [`prototype_gs_nf_shell_binding.py`](../../folio-assistant/computations/prototype_gs_nf_shell_binding.py)
    with categorical SU(4)-singlet projection coefficients per
    shell.
-4. **D11 → ✅** once D9 and D10 are both ✅ AND the
+4. **D11 to closed** once D9 and D10 are both closed AND the
    `magic_a_eight_g_from_singlet_projection` formula is verified.
 
 ## Cross-references

@@ -49,7 +49,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 
 ## Open R&D
 
-D20 → ✅ would require formalising the abelianisation map and the
+D20 to closed would require formalising the abelianisation map and the
 trivial Pontryagin structure. Low priority because:
 
 1. No framework derivation depends on it.

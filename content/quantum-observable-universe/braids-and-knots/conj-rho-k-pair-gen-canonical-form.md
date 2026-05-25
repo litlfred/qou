@@ -23,7 +23,7 @@ $$
 are the Wedderburn-traced per-generator volumes and $z = 1/(q^{1/2} + q^{-1/2})$
 is the Markov parameter.*
 
-> **⚠️ Status — open conjecture (2026-05-25, PR #1127).**
+> **Status — open conjecture (2026-05-25, PR #1127).**
 > Promotes the "pair-gen piece (open)" section of
 > [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) to
 > an explicit conjecture block per CLAUDE.md §3b. The closed form

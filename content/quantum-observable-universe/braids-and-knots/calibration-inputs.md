@@ -27,7 +27,7 @@ $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
 
-> **⚠️ SUPERSEDED-$\rho_q$ caveat (2026-05-24, PR #1127).**
+> **SUPERSEDED-$\rho_q$ caveat (2026-05-24, PR #1127).**
 > The dimensional factor $1/\hbar_q^2$ in the formula above is the
 > SUPERSEDED scalar substrate density (see
 > [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md)

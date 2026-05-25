@@ -64,7 +64,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 1. Explicit Kashiwara → Lusztig decategorification functor in Lean.
 2. Verify the framework's canonical Wedderburn weights $y_\lambda$
    at $q = 1$ reduce to KL multiplicities.
-3. D24 → ✅ requires Lean class for the decategorification functor;
+3. D24 to closed requires Lean class for the decategorification functor;
    partial Mathlib infrastructure for Kazhdan–Lusztig theory exists.
 
 ## Cross-references

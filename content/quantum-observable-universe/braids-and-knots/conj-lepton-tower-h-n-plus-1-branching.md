@@ -26,7 +26,7 @@ bar-symmetric closing trace.*
 
 ### Earlier framing (superseded by PR #1253 unifying formula)
 
-> **⚠️ SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture
+> **SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture
 > $\xi_m = d_q((n,1)) \cdot [2]_q / [n+1]_q$ (with $n = 2m+1$, then
 > revised to $n = m+1$) matched muon but **falsified at tau**
 > ($\xi_3 = [4]_q \cdot [2]_q / [5]_q$ predicted ≈ 1.59 vs required

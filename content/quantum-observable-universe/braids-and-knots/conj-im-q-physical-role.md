@@ -15,7 +15,7 @@ testable against a specific observable class. Identifying
 which (if any) is the correct physical interpretation is open
 work.*
 
-> **⚠️ Status — open conjecture (2026-05-25, PR #1127).** Direct
+> **Status — open conjecture (2026-05-25, PR #1127).** Direct
 > answer to the question "what IS Im(q)?". The framework currently
 > gives Im(q) no physical interpretation; this conjecture is a
 > map of candidate roles.
