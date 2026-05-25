@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["evaluate_all_blocks","evaluate_all_blocks_letters"]};
+window.SIDEBAR_ITEMS = {"fn":["evaluate_all_blocks","evaluate_all_blocks_letters","evaluate_all_blocks_letters_capped"]};
