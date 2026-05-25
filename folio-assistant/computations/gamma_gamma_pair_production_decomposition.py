@@ -191,51 +191,30 @@ def linking_weight_exact_via_anchor(q):
     return mpf(M_P_MEV_VALIDATION) / (mpf(M_E_MEV) * geom_leading)
 
 
-def taylor_in_h(func, h_values):
-    """Tabulate func(q) on a grid of h values, then extract its
-    power-series coefficients in h via finite differences.
-
-    h = q − q⁻¹  ⇒  q = (h + √(h² + 4)) / 2
-
-    For each h in h_values, build q from h and evaluate func(q).
-    Then return [(h_i, func(q(h_i)))] and the fitted polynomial
-    coefficients up to highest order supported by the sample size.
-    """
-    samples = []
-    for h_val in h_values:
-        h_mp = mpf(h_val)
-        q_from_h = (h_mp + mp.sqrt(h_mp ** 2 + 4)) / 2
-        samples.append((h_mp, func(q_from_h)))
-    return samples
-
-
 def extract_h_polynomial_coefficients(func, max_order=10):
     """Extract the coefficients of func expanded in powers of h.
 
-    Strategy: sample func at h ∈ {0, ±ε, ±2ε, …} and solve the
-    Vandermonde system.  With max_order even-orders-only assumption
-    (β_Bor's tr_M is even in h by bar-symmetry), we sample at
-    h ∈ {0, ε, 2ε, …, kε} for k = max_order // 2.
+    Uses mpmath's `mp.taylor`, which is numerically stable and avoids
+    the ill-conditioned Vandermonde system the earlier finite-difference
+    sampling approach used (cond ≈ 10⁴⁸ for max_order=8 at eps=1e-6).
 
-    Returns [c_0, c_2, c_4, …] (only even orders).
+    h = q − q⁻¹  ⇒  q = (h + √(h² + 4)) / 2
+
+    By bar-symmetry of the linking_weight under q ↔ q⁻¹ (i.e. h ↔ −h),
+    only even-order coefficients are non-zero; we return just those.
+
+    Returns [c_0, c_2, c_4, …, c_max_order].
+
+    Ref: Gemini PR #1272 review (2026-05-25) — Vandermonde extraction
+    was numerically ill-conditioned; switched to `mp.taylor`.
     """
-    n = max_order // 2 + 1  # number of even-order coefficients
-    eps = mpf("1e-6")  # small h step
-    h_grid = [i * eps for i in range(n)]
-    samples = taylor_in_h(func, h_grid)
+    def g(h):
+        # h can be complex (mpc) when mp.taylor evaluates off-axis.
+        q_from_h = (h + mp.sqrt(h ** 2 + 4)) / 2
+        return func(q_from_h)
 
-    # Vandermonde-style: f(h) ≈ Σ c_{2k} h^{2k} for k = 0..n-1
-    # Build matrix M[i][j] = (h_i)^{2j}, then c = M⁻¹ · f
-    rows = []
-    rhs = []
-    for h_val, f_val in samples:
-        row = [h_val ** (2 * j) for j in range(n)]
-        rows.append(row)
-        rhs.append(f_val)
-    M = mp.matrix(rows)
-    b = mp.matrix(rhs)
-    c = mp.lu_solve(M, b)
-    return [c[i] for i in range(n)]
+    coeffs = mp.taylor(g, 0, max_order)
+    return [coeffs[2 * k] for k in range(max_order // 2 + 1)]
 
 
 def compare_at_h_order(coeffs_family_a, coeffs_jones, coeffs_exact, max_order=10):
