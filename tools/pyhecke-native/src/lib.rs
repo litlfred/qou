@@ -287,6 +287,46 @@ fn gram_matrix_n(n: usize, q: f64) -> Vec<Vec<f64>> {
     g
 }
 
+/// Partition-basis Markov trace on H_n(q) for arbitrary n.
+///
+/// n-generic replacement for the n=3-hardcoded `nf_tr(nf, q)` (which
+/// takes a 6-element NF vector). Takes a **partition-basis** vector
+/// v with p(n) entries (one per λ ⊢ n) and computes:
+///
+///   tr_M(v) = Σ_λ v_λ · y_λ · dim_q(λ)
+///
+/// Since partition idempotents are orthogonal under Markov trace
+/// (tr_M(e_λ) = y_λ · dim_q(λ)), this is just the dot product of v
+/// with the diagonal of `gram_matrix_n`.
+///
+/// Returns scalar.
+///
+/// Per `docs/audits/2026-05-25-infra-audit-h3-vs-hn-hardcoded-api.md`:
+/// canonical replacement for `nf_tr(nf, q)` (n=3 only) in production
+/// callers that want to compute Markov trace of partition-basis
+/// elements directly without going through chi_lambda_braid loops.
+#[pyfunction]
+fn nf_tr_n(v: Vec<f64>, n: usize, q: f64) -> PyResult<f64> {
+    let shapes = seminormal::partitions_of(n);
+    let p = shapes.len();
+    if v.len() != p {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "partition-basis vector length {} doesn't match p({}) = {}",
+            v.len(),
+            n,
+            p
+        )));
+    }
+    let y = trace_weights_n(n, q);
+    let dims: Vec<f64> = shapes
+        .iter()
+        .map(|s| seminormal::chi_lambda_braid(s, &[], q))
+        .collect();
+
+    let tr: f64 = (0..p).map(|i| v[i] * y[i] * dims[i]).sum();
+    Ok(tr)
+}
+
 /// Partition-basis Gram inverse on H_n(q) for arbitrary n.
 ///
 /// n-generic replacement for `gram_inverse(q)` (n=3 only). Since the
@@ -666,6 +706,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(trace_weights_n, m)?)?;
     m.add_function(wrap_pyfunction!(gram_matrix_n, m)?)?;
     m.add_function(wrap_pyfunction!(gram_inverse_n, m)?)?;
+    m.add_function(wrap_pyfunction!(nf_tr_n, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
