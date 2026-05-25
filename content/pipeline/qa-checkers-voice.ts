@@ -77,7 +77,23 @@ const STATUS_LEAK_RE =
   /(\*\*Done\*\*|\*\*Completed\*\*|\*\*Pending\*?\*?|\*\*Blocked\*?\*?|\*\*Deferred\*?\*?|\*\*In progress\*?\*?|\*\*Punted\*?\*?|\(TODO\)|\(TBD\)|\(TBA\)|\(WIP\)|\(stub\)|\(placeholder\)|\bTODO:|\bFIXME:|\bXXX:|\bHACK:|\bWIP\b|\bTO-DO\b|\bTBD\b|\bplaceholder\b|\b(?:stub(?:bed)?|punt(?:ed|ing)?)\s+(?:for\s+now|until|pending)|\bneeds\s+(?:work|fixing|attention|review|filling\s+in)|\bkick\s+the\s+can|\bnot\s+yet\s+(?:implemented|written|filled\s+in))/i;
 
 export function checkStatusLeak(mdPath: string): CheckerResult {
-  const hits = scan(mdPath, STATUS_LEAK_RE);
+  // Skip fenced code blocks (```...```) AND inline backtick spans —
+  // status-marker keywords like "placeholder" inside Lean code blocks
+  // (e.g. `True  -- placeholder`) are legitimate code, not prose
+  // status-leak.
+  const hits = scan(mdPath, STATUS_LEAK_RE, (l, i, lines) => {
+    // Detect whether this line is inside a fenced block by counting
+    // fence transitions up to this line. (Cheaper than threading
+    // state through scan().)
+    let inFence = false;
+    for (let j = 0; j < i; j++) {
+      if (/^```/.test(lines[j].trim())) inFence = !inFence;
+    }
+    if (inFence) return false;
+    // Strip inline backticks before re-testing.
+    const stripped = l.replace(/`[^`]+`/g, "");
+    return STATUS_LEAK_RE.test(stripped);
+  });
   return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
 

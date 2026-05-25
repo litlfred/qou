@@ -1,5 +1,5 @@
 The framework has **two distinct projection mechanisms** that each
-discard structural content. They are easily conflated but **must
+discard structural content. They are often conflated, yet **must
 be kept separate**:
 
 ## Two mechanisms

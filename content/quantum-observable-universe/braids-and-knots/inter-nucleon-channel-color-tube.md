@@ -151,10 +151,10 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
 - [`mass_table_comprehensive.py`](../../folio-assistant/computations/mass_table_comprehensive.py)
   — would replace per-channel canonical-form labels with color-tube-weighted forms
 - [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
-  — exposes `pn_convention="bring_color_weighted"` as a
-  `NotImplementedError` placeholder; this conjecture is the
-  categorical infrastructure that, once formalised, removes the
-  placeholder
+  — currently raises `NotImplementedError` when invoked with
+  `pn_convention="bring_color_weighted"`; this conjecture supplies
+  the categorical infrastructure that, once formalised, lets that
+  code path return a definite value
 
 ## Open questions
 
