@@ -72,9 +72,14 @@ def y_lambda_h2_q_schur_mpf(q: Any) -> tuple[Any, Any]:
     """Closed-form q-Schur Plancherel weights on H_2(q) — generic in q.
 
     Returns (y_(2), y_(1,1)) where:
-      y_(2)   = q   / [2]_q  =  q² / [2]_q²
-      y_(1,1) = q⁻¹ / [2]_q  =  1  / [2]_q²
-    with [2]_q = q + q⁻¹.
+      y_(2)   = q   / [2]_q
+      y_(1,1) = q⁻¹ / [2]_q
+    with [2]_q = q + q⁻¹. Sum y_(2) + y_(1,1) = 1 (Plancherel
+    normalization).
+
+    These are the principal specialization of the q-Schur weights
+      y_λ(q) = q^{content_sum(λ)} / [n]_q!
+    at n = 2, with content_sum((2)) = +1 and content_sum((1,1)) = −1.
 
     The function is parametric in `q` — works for `float`, `mp.mpf`,
     `sp.Symbol`. Use this in mp.mpf-precision scripts (50-dps pin)
