@@ -3,7 +3,7 @@
   "critical_finding": "Torus knots are NOT hyperbolic. Vol(T(2,k)) = 0 for all k. The canonical mass formula m = m_e \u00b7 Vol/\u210f_q\u00b2 \u00b7 LW gives ZERO for the Higgs/W/Z. These particles need a separate categorical mass-derivation chain \u2014 Reshetikhin-Turaev at root-of-unity q is the canonical candidate (Q2 probe).",
   "description": "Q3: Markov trace closed form for T(2, k) torus links in H_2(q), k = 2..9. Targets the Higgs T(2,8), Z T(2,6), W\u00b1 T(2,4) per electroweak-higgs-torus-link-triplet.md. Highlights: torus knots have ZERO hyperbolic volume \u2014 canonical mass formula gives zero \u2014 Higgs/W/Z mass prediction needs RT-at-root-of-unity chain (Q2).",
   "parameters": {
-    "Q_0": "1.1097",
+    "Q_0": "1.1099785955541805752815940796095093779932822799587",
     "dps": 50,
     "k_range": [
       2,
@@ -39,7 +39,7 @@
         "n_components": 2
       },
       "sm_particle": "(trivial \u2014 unknot, T(2,2) = Hopf link)",
-      "tr_M_at_q0": 1.0434954159943128
+      "tr_M_at_q0": 1.0437062182305121
     },
     {
       "h_expansion": {
@@ -62,7 +62,7 @@
         "n_components": 1
       },
       "sm_particle": "T(2,3) = trefoil \u2014 gluon / strong-force placeholder",
-      "tr_M_at_q0": 0.42618230334307944
+      "tr_M_at_q0": 0.4272578800359897
     },
     {
       "h_expansion": {
@@ -85,7 +85,7 @@
         "n_components": 2
       },
       "sm_particle": "T(2,4) = W\u00b1 (electroweak charged boson)",
-      "tr_M_at_q0": 1.1323780991954568
+      "tr_M_at_q0": 1.1330288882035493
     },
     {
       "h_expansion": {
@@ -108,7 +108,7 @@
         "n_components": 1
       },
       "sm_particle": "T(2,5) = Solomon's link",
-      "tr_M_at_q0": 0.6623460367153695
+      "tr_M_at_q0": 0.6641292642276589
     },
     {
       "h_expansion": {
@@ -131,7 +131,7 @@
         "n_components": 2
       },
       "sm_particle": "T(2,6) = Z (electroweak neutral boson)",
-      "tr_M_at_q0": 1.2705140388839566
+      "tr_M_at_q0": 1.2718719660258855
     },
     {
       "h_expansion": {
@@ -154,7 +154,7 @@
         "n_components": 1
       },
       "sm_particle": "T(2,7) = knot 7_1",
-      "tr_M_at_q0": 0.927318786486779
+      "tr_M_at_q0": 0.9300272269749316
     },
     {
       "h_expansion": {
@@ -177,7 +177,7 @@
         "n_components": 2
       },
       "sm_particle": "T(2,8) = H (Higgs boson)",
-      "tr_M_at_q0": 1.4639115152203286
+      "tr_M_at_q0": 1.4663037575566193
     },
     {
       "h_expansion": {
@@ -200,10 +200,10 @@
         "n_components": 1
       },
       "sm_particle": "T(2,9) \u2014 strong-force EM-side anchor (genus 4)",
-      "tr_M_at_q0": 1.2326256526357724
+      "tr_M_at_q0": 1.2365731626646885
     }
   ],
-  "scriptCommitSha": "a502beeb50902357ffbb387d509ed0361b275023",
+  "scriptCommitSha": "7398419d1a7d867fa4571e5a1dbfa2d1d22ddb04",
   "status": "exploratory",
   "structural_comparison_to_borromean": {
     "borromean_first_nontrivial_h_order": 4,
