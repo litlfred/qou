@@ -150,6 +150,98 @@ theorem yLambdaQSchur_selfconjugate_squared (q : ℝ) (hq : q ≠ 0)
   rw [sq]
   exact this
 
+/-! ## Combined bar + Mullineux identities
+
+These theorems combine the bar-involution `q ↔ q⁻¹` with the
+Mullineux involution `λ ↔ λᵀ` to produce structural identities
+that exploit BOTH symmetries simultaneously. -/
+
+/-- **Bar-self identity for y_λ**: y_λ(q) · y_λ(q⁻¹) = 1/[n]_q!².
+
+    Proof: by `yLambdaQSchur_bar_mullineux`, y_λ(q⁻¹) = y_{λᵀ}(q).
+    Multiplying both sides by y_λ(q): y_λ(q) · y_λ(q⁻¹) =
+    y_λ(q) · y_{λᵀ}(q) = 1/[n]_q!² by `yLambdaQSchur_transpose_pair`.
+
+    Structurally: pairing the same partition with itself under bar
+    yields the same product as pairing with its transpose under no
+    bar — the framework's bar-Mullineux duality made explicit. -/
+theorem yLambdaQSchur_bar_self (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) (n : ℕ) (c : ℤ) :
+    yLambdaQSchur q n c * yLambdaQSchur q⁻¹ n c =
+      1 / (qFactorial q n) ^ 2 := by
+  rw [yLambdaQSchur_bar_mullineux q hq h_neq n c]
+  exact yLambdaQSchur_transpose_pair q hq n c
+
+/-- **Self-conjugate partitions are bar-symmetric**: for `c = 0`,
+    `y_λ(q⁻¹) = y_λ(q)`.
+
+    Trivial corollary of `yLambdaQSchur_bar_mullineux` since
+    `-c = 0 = c` when `c = 0`. -/
+theorem yLambdaQSchur_selfconjugate_bar_sym (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) (n : ℕ) :
+    yLambdaQSchur q⁻¹ n 0 = yLambdaQSchur q n 0 := by
+  rw [yLambdaQSchur_bar_mullineux q hq h_neq n 0, neg_zero]
+
+/-! ## More small q-integer values -/
+
+/-- **`[3]_q = q² + 1 + q⁻²`** — the next non-trivial q-integer.
+
+    Used in `BorromeanMarkovTrace.lean` implicitly (the Borromean
+    `tr_M` closed form's denominator is `[2]_q² = q² + 2 + q⁻²`,
+    one more than `[3]_q`).
+
+    Proof: `(q³ − q⁻³) = (q − q⁻¹)(q² + 1 + q⁻²)` by
+    factoring as a difference of cubes. -/
+theorem qInt_three (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+    qInt q 3 = q ^ 2 + 1 + q ^ (-2 : ℤ) := by
+  unfold qInt
+  field_simp
+  ring
+
+/-! ## q-Factorial small-n closed forms -/
+
+/-- **`[2]_q! = q + q⁻¹`**. -/
+theorem qFactorial_two (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+    qFactorial q 2 = q + q⁻¹ := by
+  show qInt q (2 : ℕ) * qFactorial q 1 = q + q⁻¹
+  rw [qFactorial_one q hq h_neq]
+  rw [show ((2 : ℕ) : ℤ) = 2 from rfl]
+  rw [qInt_two_eq_q_plus_q_inv q hq h_neq]
+  ring
+
+/-- **`[3]_q! = (q + q⁻¹)(q² + 1 + q⁻²)`** — the explicit closed
+    form of the q-factorial at n = 3 used by the proton in H_3(q).
+
+    Proof: chain `[3]_q!= [3]_q · [2]_q · [1]_q` with the just-
+    proved `qInt_three` (gives `[3]_q`), `qFactorial_two` (gives
+    `[2]_q!`), and `qFactorial_one` (gives `[1]_q! = 1`). -/
+theorem qFactorial_three (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+    qFactorial q 3 = (q^2 + 1 + q^(-2 : ℤ)) * (q + q⁻¹) := by
+  show qInt q (3 : ℕ) * qFactorial q 2 = (q^2 + 1 + q^(-2 : ℤ)) * (q + q⁻¹)
+  rw [show ((3 : ℕ) : ℤ) = 3 from rfl]
+  rw [qInt_three q hq h_neq, qFactorial_two q hq h_neq]
+
+/-! ## y_λ structural identity for partitions of 3
+
+For the proton (`H_3(q)`), the three partitions (3), (2,1),
+(1,1,1) have content sums 3, 0, -3 respectively.  The transpose
+pair `(3) ↔ (1,1,1)` gives y_(3) · y_(1,1,1) = 1/[3]_q!² by
+`yLambdaQSchur_transpose_pair`; the self-conjugate `(2,1)` gives
+y_(2,1)² = 1/[3]_q!² by `yLambdaQSchur_selfconjugate_squared`.
+
+Combined, all three partitions of 3 satisfy
+`|y_λ| = 1/[3]_q!` in magnitude. -/
+
+/-- **`|y_λ| = 1/[3]_q!` for every partition of 3 in q-Schur.**
+
+    Squared form: `y_λ(q) · y_{λᵀ}(q) = 1/[3]_q!²` for the proton
+    in H_3.  Stated as an explicit corollary specialised to n = 3. -/
+theorem yLambdaQSchur_proton_magnitude (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) (c : ℤ) :
+    yLambdaQSchur q 3 c * yLambdaQSchur q 3 (-c) =
+      1 / (qFactorial q 3) ^ 2 :=
+  yLambdaQSchur_transpose_pair q hq 3 c
+
 /-! ## Numerical anchor: y_λ at q = 1
 
 At q = 1, the q-Schur formula reduces to the classical Markov
