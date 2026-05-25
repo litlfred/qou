@@ -135,6 +135,49 @@ isotope's local name.
 - PR #1269 — Track B Phase 1 R5-full Wenzl weights generic H_n (commit a7844326)
 - PR #1273 — Track B audit doc (R5-full SDP extension design, commit e6bf299d)
 
+## Numerical landscape of candidate `linking_weight` forms
+
+(Computed in this session, for the proton anchor; target = 2.4519
+from `m_p / (m_e · Vol(𝓑₃)/ℏ_q²)` inversion.)
+
+| Form | value @ q₀ | Δ vs target | match | bar-symmetric? | Lean? |
+|---|---:|---:|---:|---|---|
+| **Sibling Bring+Faddeev** `1/(1−h·q¹⁰)+1/(1−h⁴)−1` | 2.4493 | −0.0026 | **−0.106 %** | **NO** | — |
+| **Reading-A** `5/2 − G·h²` | 2.4601 | +0.0082 | +0.33 % | yes | — |
+| **Lean tr_M bridge** `5/2 + 4·(tr_M(β_Bor) − 1)` | 2.4943 | +0.0424 | +1.73 % | yes | bridge inconsistency theorems on this branch |
+| **Family A** `5/2 + (3/4)·h²` (PROVED) | 2.5327 | +0.0808 | +2.89 % | yes | `lambda-scale-substrate-form.lean` |
+
+The bar-asymmetric Bring+Faddeev form is the **closest match by an
+order of magnitude** but contradicts Family A's proved bar-symmetry.
+The bar-symmetric average `(1/(1−h·q¹⁰) + 1/(1+h·q⁻¹⁰))/2` lands at
+**1.691** (−31 % off target) — i.e. the bar-asymmetry is load-bearing
+for the sibling's accuracy.
+
+## Substrate-coincidence diagnostic
+
+Solving `1/(1 − h·q^n) = target_linking_weight` for n at q₀ gives
+**n = 10.012** — essentially integer 10. This is either:
+
+1. **Structurally exact** with n = 10 categorically determined
+   (sibling's interpretation: 10 = 9 color-pair assignments + 1
+   diagonal = 3 ⊗ 3̄ in SU(3)-color), and the residual 1060 ppm is
+   higher-Faddeev-kernel correction;
+2. **Substrate-q₀ coincidence** at integer n=10 (would fail q-locality
+   test under perturbation of q₀);
+3. The full `Φ_q(h·q¹¹) = ∏_{k≥1} 1/(1 − h·q^{11−k})` is the right
+   bar-asymmetric form, with `1/(1−h·q¹⁰)` only its k=1 factor.
+
+**Faddeev kernel interpretation.** `1/(1−h·q¹⁰)` is the k=1 factor of
+the symmetric q-dilogarithm `Φ_q(z) = ∏_{k≥1} 1/(1 − q^{-k}·z)` at
+`z = h·q¹¹`. Per `prop:li2q-phiq-bar-symmetrization`, the
+bar-symmetric pair of `log Φ_q(z)` is `(log Φ_q(z) + log Φ_{q⁻¹}(z))/2`,
+which is what the Archimedean realization functor maps `Li₂^q` to —
+NOT the naive numerical bar-average. The sibling's formula may be
+the leading Faddeev kernel of a bar-symmetric Archimedean-realized
+substrate quantity, with the bar-pair structure entering at q₀ via
+the realization functor rather than via `q ↔ q⁻¹` averaging of the
+pre-Archimedean form.
+
 ## Concrete next step
 
 Per the consolidated findings:
