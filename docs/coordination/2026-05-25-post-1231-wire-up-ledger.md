@@ -27,6 +27,8 @@
 | Q8 | Recursive knot atlas extension (H_4 ✓, H_5 next) | 1 | H_4 DONE | #1238 |
 | Q9 | Probe D redo with matching framing convention | 1 | TODO | |
 | Q10 | Wire all up — fill compute gaps | 1-2 | IN FLIGHT | this ledger |
+| Q11 | q_0 → X(K) explicit mapping + minimal-archimedean formulation (Q4 from new directives) | 1 | AUDIT DONE | this branch |
+| Q12 | AJ conjecture (Garoufalidis) crosses archimedean wall — algebraic Jones tower | 1 | AUDIT DONE | this branch |
 
 ## Deliverables shipped this session
 
@@ -39,6 +41,7 @@
 **Audits:**
 - [`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md`](../audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md) — Q2
 - [`docs/audits/2026-05-25-character-variety-a-polynomial-framework-roles.md`](../audits/2026-05-25-character-variety-a-polynomial-framework-roles.md) — Q7
+- [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) — Q11 + Q12 (q_0 explicit mapping, minimal-archimedean, AJ conjecture algebraic)
 
 **Workplan (NOW SUPERSEDED by THIS ledger):**
 - [`docs/workplans/2026-05-25-post-pr1231-followup-workplan.md`](../workplans/2026-05-25-post-pr1231-followup-workplan.md) — superseded; this ledger is the authoritative tracker
