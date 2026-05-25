@@ -60,7 +60,7 @@ research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$
 fixed-point, categorical endomorphism fixed-point).
 
-## CAL-3 ($Q_\beta$) — net-ansatz placeholder
+## CAL-3 ($Q_\beta$) — conditional net-ansatz
 
 CAL-3 fixes the hadronic energy scale $\mathfrak{E}_0$ via
 $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
