@@ -64,7 +64,7 @@ with regulator $r_2[\mathcal{B}_3] = 8 \cdot \Lambda(\pi/3) =
 8G$ (Catalan's constant; see
 [`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).
 
-## The conjectural content — h⁴ as the next-order regulator term
+## The conjectural content — $h^4$ as the next-order regulator term
 
 The Beilinson regulator extends to higher orders via the formal
 $q$-expansion of $\Phi_q$ around $q = 1$ (the archimedean limit per

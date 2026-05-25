@@ -248,6 +248,36 @@ content lives here), Ch 18 Stochastic (~14 stochastic-info overlap)
 - Whether Stochastic chapter splits into sub-themes (250 blocks may need internal structure)
 - Floater audit (brane tower / tessellation / Etc.) — not returned, lowering priority
 
+## Orphan blocks — content not rendered (101 total)
+
+Audit on 2026-05-25 found 101 block files that exist on disk but are
+not listed in any chapter manifest's `blocks: [...]` array, so they
+don't render in the paper output. Distribution:
+
+| Chapter dir | Orphan count | Action |
+|---|---:|---|
+| archimedean-universe | 33 | reconnect — all substantive (simulator + remark content) |
+| braids-and-knots | 60 | reconnect — research notes + remarks, 18-161 lines each |
+| observations | 2 | reconnect — substantive editorial remarks |
+| particle-interactions | 5 | **delete** — stale placeholder data tables |
+| quantum-observable-universes | 1 | reconnect — diagram block |
+| **total** | **101** | — |
+
+Most likely cause: chapters were refactored and blocks were created
+but never added to their manifest's `blocks: [...]` array. Resolution
+deferred to a dedicated follow-up PR — each orphan needs a section
+placement decision, so the work is per-block.
+
+Example particle-interactions orphans to delete:
+- `atomic-braid-mass-table1-data` through `table4-data` (placeholder
+  data blocks, 10-15 lines each)
+- `wedderburn-mass-formula` (incomplete)
+
+Example archimedean-universe orphans to reconnect:
+- `beta-decay-braid-visualizer`, `beta-decay-energy-scale`,
+  `beta-decay-interpretation`, `electroweak-higgs-torus-link-triplet`,
+  `nucleon-nf-observability`
+
 ## Sibling-PR coordination
 
 This is a big restructure. Active sibling branches to coordinate with:
