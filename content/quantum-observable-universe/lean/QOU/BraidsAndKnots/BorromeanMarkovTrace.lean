@@ -210,4 +210,133 @@ theorem Q_borromean_eq_zero (h : ℚ) : Q_borromean h = 0 := by
   rw [trM_borromean_bar_invariant]
   ring
 
+/-! ### Linking-weight bridge formula — explicit inconsistency with Family A
+
+PR #1272 audit (2026-05-25): the framework's `linking_weight(𝓑₃, q)`
+has been computed via two independent routes — both Lean-proved — that
+turn out to give different values. This section makes the
+inconsistency explicit at the Lean level so future work can address
+it categorically rather than by silent normalisation choices.
+
+**Route 1 — Family A (Wedderburn dim sum on H_4)**:
+  λ_A(q) := (1/4) · Σ_{λ ⊢ 4} dim_q V_λ = 5/2 + (3/4)·h²
+(Lean-proved in `lambda-scale-substrate-form.lean §lambdaA_qForm_eq_hForm`.)
+
+**Route 2 — Jones bridge (H_3 Markov trace of β_Bor, rescaled)**:
+  linking_weight_bridge(h) := 5/2 + 4·(trM_borromean(h) − 1)
+(The +5/2 leading and the factor 4 force `linking_weight(q=1) = 5/2`
+to match Family A's leading at h=0; the formula is a *bridge*
+between the H_3 Markov trace and Family A's H_4 Wedderburn count,
+not a derivation.)
+
+The two routes disagree by an explicit rational function in h, derived
+below.  Identifying which is the categorically-correct `linking_weight`
+is the open Reading-A research direction.
+
+Ref: PR #1272 — `gamma-gamma-pair-production-decomposition.witness.json`
+Ref: `docs/audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md`
+-/
+
+/-- The Jones-bridge form of `linking_weight(𝓑₃, q)`, written in h:
+
+    `linking_weight_bridge(h) := 5/2 + 4·(trM_borromean(h) − 1)`
+
+    The `+5/2` and the factor `4` are CHOSEN to align with Family A's
+    leading at h=0; they are not derived from the Markov trace itself.
+
+    See `family_a_h_minus_bridge_explicit` below for the explicit
+    rational-function disagreement with Family A. -/
+noncomputable def linking_weight_bridge (h : ℚ) : ℚ :=
+  5/2 + 4 * (trM_borromean h - 1)
+
+/-- **Bridge simplification theorem.**  The bridge formula, written
+    as a single rational function in h:
+
+    `linking_weight_bridge(h) = 5/2 − (12·h⁴ + 4·h⁶) / (h² + 4)`
+
+    Derivation: `4 · (trM − 1) = 4 · (num − den) / den
+    = 4 · (−3h⁴ − h⁶) / (h² + 4) = −(12h⁴ + 4h⁶) / (h² + 4)`. -/
+theorem linking_weight_bridge_simplified (h : ℚ)
+    (hne : trM_borromean_den h ≠ 0) :
+    linking_weight_bridge h =
+      5/2 - (12 * h^4 + 4 * h^6) / (h^2 + 4) := by
+  unfold linking_weight_bridge trM_borromean trM_borromean_num
+  -- trM_borromean_den h = h^2 + 4 by definition; unfold rewrites the
+  -- division denominator to that form so field_simp can clear it.
+  show 5/2 + 4 * ((4 + h^2 - 3 * h^4 - h^6) / trM_borromean_den h - 1)
+       = 5/2 - (12 * h^4 + 4 * h^6) / (h^2 + 4)
+  unfold trM_borromean_den
+  field_simp
+  ring
+
+/-- The Family-A linking-weight in h-form (mirror of
+    `lambdaA_hForm` from `lambda-scale-substrate-form.lean`, restated
+    here over ℚ for consistency with `trM_borromean`). -/
+def linking_weight_family_a_h (h : ℚ) : ℚ :=
+  5/2 + (3/4) * h^2
+
+/-- **The explicit Family-A-vs-Jones-bridge disagreement.**
+
+    For every h with `h² + 4 ≠ 0` (i.e. for all rational h, since
+    `h² + 4 > 0`):
+
+      `linking_weight_family_a_h(h) − linking_weight_bridge(h)
+        = (3/4)·h² + (12·h⁴ + 4·h⁶) / (h² + 4)`
+
+    Numerically at the substrate `h₀ ≈ 0.209` this gap is `≈ 0.0385`,
+    which matches the empirical residual reported in PR #1272's
+    γγ-decomposition probe witness.
+
+    **Categorical interpretation.**  Family A (Wedderburn dim sum on
+    H_4) and the Jones bridge (H_3 Markov trace of β_Bor, additively
+    rescaled to match Family A at h=0) are different theorems about
+    different objects — both correct, both Lean-proved.  The
+    docstring of Python's `borromean_markov_trace_h2` previously
+    claimed they agree at h² order via the bridge; this is FALSE
+    under the Kauffman-Jones standard normalisation `[2]_q² =
+    q² + 2 + q⁻²` (which IS the convention used here).  Under a
+    non-standard normalisation `(q^{1/2} + q^{-1/2})² = q + 2 + q⁻¹`
+    they appear to agree at h², but that is a normalisation
+    coincidence — see `docs/audits/2026-05-25-non-abelian-stokes-
+    reading-a-exploration.md` and PR #1272's correction commit.
+
+    The open question is which of the two objects is the
+    categorically-correct `linking_weight` for the mass formula
+    `m(𝓑₃) = m_e · Vol(𝓑₃)/ℏ_q² · linking_weight(q)`.  Neither
+    matches the CODATA-anchor target exactly; the Jones bridge is
+    ~47% closer than Family A. -/
+theorem family_a_h_minus_bridge_explicit (h : ℚ)
+    (hne : trM_borromean_den h ≠ 0) :
+    linking_weight_family_a_h h - linking_weight_bridge h =
+      (3/4) * h^2 + (12 * h^4 + 4 * h^6) / (h^2 + 4) := by
+  rw [linking_weight_bridge_simplified h hne]
+  unfold linking_weight_family_a_h
+  field_simp
+  ring
+
+/-- **Strict positivity of the Family-A-vs-Jones gap for non-zero h.**
+
+    For every non-zero rational h, the Family-A-minus-bridge
+    difference is strictly positive, confirming that Family A is
+    structurally HIGHER than the Jones bridge at every q ≠ 1.
+
+    This formalises the empirical observation in PR #1272's witness
+    that Family A's residual versus the CODATA target (+0.0808 at
+    q₀) exceeds the Jones bridge's residual (+0.0424) — the two
+    routes never coincide for h ≠ 0. -/
+theorem family_a_h_minus_bridge_pos (h : ℚ) (hne : h ≠ 0) :
+    linking_weight_family_a_h h - linking_weight_bridge h > 0 := by
+  rw [family_a_h_minus_bridge_explicit h (trM_borromean_den_ne_zero h)]
+  have h2_pos : h^2 > 0 := by positivity
+  have h2_plus_4_pos : h^2 + 4 > 0 := trM_borromean_den_pos h
+  -- (3/4)·h² > 0 (strictly, since h ≠ 0)
+  -- (12h⁴ + 4h⁶) / (h² + 4) ≥ 0
+  -- Sum > 0
+  have term1_pos : (3 : ℚ)/4 * h^2 > 0 := by positivity
+  have term2_nn : (12 * h^4 + 4 * h^6) / (h^2 + 4) ≥ 0 := by
+    apply div_nonneg
+    · positivity
+    · linarith
+  linarith
+
 end QOU.BraidsAndKnots

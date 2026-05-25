@@ -6,22 +6,55 @@
 **Status:** Research-grade exploration; this doc scaffolds the
 multi-session work, it does NOT attempt the full derivation.
 
+> **⚠ CORRECTION (2026-05-25, post-rebase).** The original "92% at
+> h² coefficient" finding driving this audit doc was based on a
+> NON-STANDARD Markov-trace normalisation in the Python probe (and
+> in `_li_2_q_util.py § borromean_markov_trace_h2`). With the
+> Kauffman-Jones standard normalisation `[2]_q² = (q + q⁻¹)² = q² +
+> 2 + q⁻²` (matching the Lean-proved `BorromeanMarkovTrace.lean §
+> h2_coefficient_cancellation`), the h² coefficient of `tr_M(β_Bor)`
+> is EXACTLY ZERO, and Jones lands ~47% closer to the CODATA target
+> than Family A. Reading-A's `−G·h²` is therefore no longer the
+> "dominant fix" — the new gap structure is: 53% closed by switching
+> from Family A (H_4 Wedderburn) to Jones (H_3 Markov trace), 47%
+> unexplained. See PR #1272 commit `f5c8f788` for the empirical
+> correction and [`BorromeanMarkovTrace.lean §
+> family_a_h_minus_bridge_explicit`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean)
+> for the Lean-proved explicit gap.
+
 ## Premise
 
-The companion γγ-decomposition probe (PR #1272) establishes that
-**92% of the 2.89% Geom_full residual lives in the h² coefficient
-of `linking_weight(𝓑₃, q)`**.  Family A's PROVED value `+3/4` and
-the categorically-exact target value `−G ≈ −0.916` differ by `−1.666`
-in the h² slot.  Closing this gap is "Reading-A" per the [bijection-
-negative audit](2026-05-23-yekutieli-bijection-natural-reading-negative.md).
+The companion γγ-decomposition probe (PR #1272), after the
+2026-05-25 correction, establishes that Family A and the Jones
+bridge are **two different Lean-proved theorems about different
+mathematical objects**:
+
+  • **Family A** (H_4 Wedderburn dim sum):
+    `λ_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ = 5/2 + (3/4)·h²`
+  • **Jones bridge** (H_3 Markov trace of β_Bor, rescaled):
+    `linking_weight_bridge(h) = 5/2 + 4·(tr_M(β_Bor, h) − 1)
+                              = 5/2 − (12h⁴ + 4h⁶) / (h² + 4)`
+
+The Lean-proved gap between them is
+`(3/4)·h² + (12h⁴ + 4h⁶) / (h² + 4)`, which is strictly positive for
+h ≠ 0 (Family A is always higher than the bridge for q ≠ 1).
+Neither matches the CODATA-anchor target exactly:
+
+  • Family A residual at q₀ ≈ +0.0808 (overshoots by 3.3%)
+  • Bridge residual at q₀ ≈ +0.0424 (overshoots by 1.7%)
+
+This doc continues to scaffold the **geometrised Reading-A** research
+direction — derive a categorically-correct `linking_weight` from
+**Yekutieli 2015's non-abelian multiplicative integration over the
+8 ideal-octahedron tessellation of the 𝓑₃-complement** — but now
+with the corrected understanding that "closing the gap" requires
+identifying the categorically-correct OBJECT (not just swapping a
+sign on Family A's h² coefficient).
 
 The audit's combinatorial extraction failed (PR #985: half-symmetric
 projection on conjugation-averaged partitions gives `+0.5·h²`, not
-`−G·h²`; wrong sign and wrong magnitude).  This doc explores the
-**geometrised** version: derive `−G·h²` directly from
-**Yekutieli 2015's non-abelian multiplicative integration over the
-8 ideal-octahedron tessellation of the 𝓑₃-complement**, bypassing
-the partition combinatorics entirely.
+`−G·h²`; wrong sign and wrong magnitude). The geometrised version
+proposed here bypasses the partition combinatorics entirely.
 
 ## Why this is "non-abelian Stokes"
 
