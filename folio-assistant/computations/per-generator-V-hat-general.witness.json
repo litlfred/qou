@@ -1,0 +1,193 @@
+{
+  "description": "per_generator_V_hat_general \u2014 Plancherel-weighted Wedderburn V\u0302_i for arbitrary H_n; applied to canonical lepton braids",
+  "computation": "per_generator_V_hat_general",
+  "audit_only": true,
+  "precision_dps": 50,
+  "context": {
+    "closes": "compute infra gap for individual leptons identified in docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md",
+    "method": "Plancherel-weighted character sum V\u0302_i = \u03a3_\u03bb (d_q(\u03bb)\u00b2/[n]_q!) \u00b7 \u03c7_\u03bb(W_i) / d_\u03bb",
+    "generalises": "mass_at_3A_proper.per_generator_V_hat_3A (was atomic-only)"
+  },
+  "constants": {
+    "q_0": "1.1099785955541805752806677289528087346650276795181",
+    "h": "0.20906032198987946109993019567019569113603901455859",
+    "z": "0.49932033403359825002067994493580750360052408362741"
+  },
+  "leptons": {
+    "electron \u03c3_1\u00b3 T(2,3) in H_2": {
+      "n_strands": 2,
+      "word": [
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ]
+      ],
+      "V_hat_per_generator": [
+        0.31643502548433217
+      ],
+      "max_abs_V": 0.31643502548433217,
+      "in_convergence_radius": true,
+      "mass_tower": {
+        "abs_V": [
+          0.31643502548433217
+        ],
+        "single_sum": "0.29449815487134439915567798133630021981195475346002",
+        "pair_sum": "0.0",
+        "total_mass_dim": "0.29449815487134439915567798133630021981195475346002"
+      }
+    },
+    "muon T(2,5) \u03c3_1\u2075 in H_2": {
+      "n_strands": 2,
+      "word": [
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ]
+      ],
+      "V_hat_per_generator": [
+        0.5427365077862414
+      ],
+      "max_abs_V": 0.5427365077862414,
+      "in_convergence_radius": true,
+      "mass_tower": {
+        "abs_V": [
+          0.5427365077862414
+        ],
+        "single_sum": "0.4830476335377178091779698529718368614444416406023",
+        "pair_sum": "0.0",
+        "total_mass_dim": "0.4830476335377178091779698529718368614444416406023"
+      }
+    },
+    "muon 4_1 (\u03c3_1\u03c3_2\u207b\u00b9)\u00b2 in H_3": {
+      "n_strands": 3,
+      "word": [
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          -0.20906032198987945,
+          1
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          -0.20906032198987945,
+          1
+        ]
+      ],
+      "V_hat_per_generator": [
+        1.0090188660539,
+        1.0090188660538995
+      ],
+      "max_abs_V": 1.0090188660539,
+      "in_convergence_radius": true,
+      "mass_tower": {
+        "abs_V": [
+          1.0090188660539,
+          1.0090188660538995
+        ],
+        "single_sum": "1.65860425982734548472136642065571140729181610109",
+        "pair_sum": "0.20833083800905618257782224163081670688565831065479",
+        "total_mass_dim": "1.8669350978364016672991886622865281141774744117448"
+      }
+    },
+    "tau T(2,7) \u03c3_1\u2077 in H_2": {
+      "n_strands": 2,
+      "word": [
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ],
+        [
+          1.0,
+          0.0,
+          0
+        ]
+      ],
+      "V_hat_per_generator": [
+        0.7927589503391225
+      ],
+      "max_abs_V": 0.7927589503391225,
+      "in_convergence_radius": true,
+      "mass_tower": {
+        "abs_V": [
+          0.7927589503391225
+        ],
+        "single_sum": "0.67487616627548952641508686967803194644019335738394",
+        "pair_sum": "0.0",
+        "total_mass_dim": "0.67487616627548952641508686967803194644019335738394"
+      }
+    }
+  },
+  "electron_V_hat_calibration_check": {
+    "paper_value": 0.594,
+    "computed_value": 0.31643502548433217,
+    "matches_within_001": false
+  },
+  "timestamp": "2026-05-25T03:16:00+00:00"
+}
