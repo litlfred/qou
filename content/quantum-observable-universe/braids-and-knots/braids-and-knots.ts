@@ -1015,6 +1015,7 @@ export default chapter({
         "markov-axiom-recursive-ascent",
         "per-braid-mass-tower",
         "lepton-mass-tower-canonical",
+        "lepton-bring-surface-h3-3channel",
         "rem-im-q-vs-p-skew",
         "conj-im-q-physical-role",
         "schur-weyl-mass-decomposition",
