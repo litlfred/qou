@@ -1,0 +1,114 @@
+# 2026-05-25 — Option E: Kashiwara crystal weight → Δ_λ(K) closure
+
+## TL;DR
+
+Single-session probes (1, 2, 3, 4) have mapped the Δ_λ(K) landscape but cannot close it without categorical input. **Option E** proposes that the framework's canonical Δ_λ(K) is determined by the **Kashiwara crystal weight** of the partition λ at the atomic braid word β_K:
+
+$$
+  \Delta_\lambda(K) \;=\; \sum_{w \in \mathcal{B}_\lambda(\mathcal{B}_K)} n^w_\lambda \cdot \rho_w(K)
+$$
+
+where:
+- $\mathcal{B}_\lambda(\mathcal{B}_K)$ — crystal vertices in the Wedderburn-$\lambda$ block reachable from $\mathcal{B}_K$ in the crystal graph;
+- $n^w_\lambda$ — Kazhdan–Lusztig multiplicities (integer);
+- $\rho_w(K)$ — canonical-basis trace at crystal vertex $w$, evaluated at q_0.
+
+The conjecture is open: `conj:crystal-graph-realization` + `conj:kazhdan-lusztig-classical-limit`.
+
+This branch (`claude/kashiwara-crystal-option-e-scaffolding-2026-05-25`) is the **scaffolding** — Lean stubs + audit framing + infrastructure planning. **Not** the closure proof; that's weeks-scale work.
+
+## Why now
+
+Probes 1+3+4 (PR #1229) mapped the per-atom Δ_λ(K) landscape:
+
+| atom | A | dominant λ*(K) | shape | max |Δ_λ(K)| |
+|------|---|---------------|-------|---:|
+| D    | 2 | (2,1,1,1,1)    | hook (transpose of (5,1)) | 15.7 |
+| T    | 3 | (2,2,2,1,1,1)  | (transpose of (6,3))      | 212.9 |
+| ³He  | 3 | (2,2,2,1,1,1)  | (transpose of (6,3))      | 104.6 |
+| ⁴He* | 4 | (9,3)          | two-row                   | 1573 (truncated) |
+
+**T and ³He share dominant λ*** = (2,2,2,1,1,1) — a structural fingerprint of the A=3 family. **D's dominant** = (2,1,1,1,1) is the hook. These are **categorical patterns** that the crystal-weight hypothesis must predict.
+
+Probe-2 (joint multi-atom) falsified the counter-framework "global Δ_λ" hypothesis (max |Δ| = 431.7 across atoms). The framework's K-dependence is canonical; Option E provides the categorical mechanism.
+
+## What exists (survey 2026-05-25)
+
+| Component | Location | State | Option E need |
+|---|---|---|---|
+| Δ_λ(K) formula | [`rho-k-h3a-refinement.lean`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.lean) L49-66 | ✓ defined as `class RhoKH3ARefinement` axiomatising identity | crystal-weight instantiation |
+| Crystal graph | [`crystal-graph-realization.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-graph-realization.md) | ✓ conjecture, empirically verified | Lean formalisation |
+| KL classical limit | [`kazhdan-lusztig-classical-limit.md`](../../content/quantum-observable-universe/archimedean-universe/kazhdan-lusztig-classical-limit.md) | ✓ conjecture, unproven | Lean classical limit theorem |
+| KL canonical basis at q=1 | [`lusztig-canonical-basis-q-eq-1.lean`](../../content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.lean) | ✓ Lean stub | extend to q ≠ 1 |
+| Kashiwara Jones c_4 | [`kashiwara-jones-c4-categorical.lean`](../../content/quantum-observable-universe/braids-and-knots/kashiwara-jones-c4-categorical.lean) | ✓ Lean stub | extend to general level |
+| Crystal-basis path | [`crystal-bases-path-a.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md) | ✓ computational path | tie to Δ_λ(K) extraction |
+| Crystal vertex enumeration | [`crystal-basis-resolves-mass-tower-open-problems.lean`](../../content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.lean) L70-94 | ✓ finite graph traversal stub | extend to per-atom Δ_λ |
+| Frobenius Gram matrix | [`gram-matrix-dual.py`](../../folio-assistant/computations/gram-matrix-dual.py) (pyhecke) | ✓ computed (numpy 6×6) | Lean formalisation |
+| Frobenius Gram matrix | [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) L28-29 | ✗ stub `= 0` | replace with Hoefsmit-seminormal 6×6 |
+| `gram_matrix(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 (6×6) | generalise to H_n |
+| `gram_inverse(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 | generalise to H_n |
+| `chi_lambda_braid(shape, word, q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ n-strand (f64) | mpfr variant for substrate precision |
+| Per-atom χ caches | `folio-assistant/computations/chi-{D,T,³He,⁴He}-h{n}-at-q0-50dps.witness.json` | ✓ D, T, ³He complete; ⁴He 24/77 | extend ⁴He to all 77 partitions |
+| Crystal vertex weights | (NOT EXIST) | ✗ no Lean / pyhecke implementation | **author this** |
+
+## Workplan (weeks-scale, NOT this session)
+
+This branch ships ONLY the scaffolding + framing. Full Option E is multi-PR over weeks.
+
+### Phase 0 — scaffolding (this session, this branch)
+
+- [x] Audit doc framing (this file)
+- [ ] `kashiwara-crystal-delta-lambda.ts/md/lean` — conjecture block stating the crystal-weight formula for Δ_λ(K)
+- [ ] PR opened for visibility + coordination
+
+### Phase 1 — categorical infrastructure (follow-on PRs)
+
+- [ ] Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with computed Hoefsmit-seminormal 6×6 entries
+- [ ] Formalise the canonical-basis trace ρ_w in Lean (extend [`lusztig-canonical-basis-q-eq-1.lean`](../../content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.lean) to q ≠ 1)
+- [ ] Build a Lean enumerator for crystal vertices at level n=6 (deuteron weight)
+- [ ] Generalise `gram_matrix(q)` / `gram_inverse(q)` in pyhecke-native from hardwired H_3 to general H_n
+
+### Phase 2 — crystal-weight formula verification (research-grade)
+
+- [ ] Tabulate canonical-basis-trace ρ_w(K) for K ∈ {D, T, ³He, ⁴He}
+- [ ] Identify the Brundan–Kleshchev image of each crystal vertex w in the KLR algebra R^Λ_α
+- [ ] Verify Δ_λ(D) = Σ_w n^w_λ · ρ_w(D) against probe-1's empirical D solution
+- [ ] Extend to T, ³He, ⁴He; cross-check shape patterns
+
+### Phase 3 — closure proof (Lean, research-grade)
+
+- [ ] Prove `theorem delta_lambda_crystal_realisation : Δ_λ(K) = Σ_w n^w_λ · ρ_w(K)` modulo `conj:crystal-graph-realization`
+- [ ] Discharge `conj:crystal-graph-realization` via Brundan–Kleshchev + Lecouvey bijection
+- [ ] Discharge `conj:kazhdan-lusztig-classical-limit` for the deuteron (and atom family)
+
+### Phase 4 — full per-atom closure
+
+- [ ] Re-run probe-4 with crystal-predicted Δ_λ(K); verify per-atom match to ≤ 1 ppb on target_signed
+- [ ] Extend to A=5,6,7 (⁵Li, ⁶Li, ⁷Li wiring GAP); verify B(K) prediction
+- [ ] Wire to `mass_table_ppb.py` production path (PR #1228 §10 action #4)
+
+## Coordination (siblings)
+
+| sibling | scope | overlap | action |
+|---|---|---|---|
+| **#1229** (probes 1-4, this session) | Δ_λ(K) empirical landscape | parent | reference data for Phase 2 |
+| **#1224** (synthesis doc) | 14-ansatz audit + 3 probes recommendation | parent | Option E sequence reactivated post-probe-4 |
+| **#1228** (geom-derivation audit) | §10 action #1 (chi_lambda_eval.py wrapper) + alpha-cluster recursion | dependency | Phase 1 `gram_matrix` generalisation converges with their wrapper |
+| **#1127** (Q_β fitting finding) | GAP-A-4 `conj:rho-prefactor-structural` | adjacent | Option E may provide the correct ρ_K form |
+| **#1246** (CAL-2 cohomological audit) | substrate q_0 framing | upstream | Phase 3's KL classical limit needs q_0 framing |
+
+Posted intent on all five branches (next commit on this branch).
+
+## Anti-patterns avoided
+
+- Not a 7th fit-based ansatz (per CLAUDE.md): the crystal-weight formula is a STRUCTURAL identity derivable from categorical primitives, not an optimisation criterion.
+- Not dropping CAL-3 (per `1ppb-compute-tranche-queue.md` invariant).
+- Not introducing free per-knot parameters: every quantity (n^w_λ, ρ_w) is derived from the framework's categorical structure.
+- Not assuming q_0 specific value: the crystal-weight formula holds over generic R (CLAUDE.md §7c); q_0 enters only at the archimedean evaluation step.
+
+## What this PR does NOT do
+
+- Does NOT close Δ_λ(K) — only scaffolds the categorical machinery.
+- Does NOT modify any production compute (`mass_table_ppb.py` untouched).
+- Does NOT replace `gram_matrix q = 0` stub in this commit — Phase 1 follow-up.
+- Does NOT introduce a numerical verification — Phase 2 follow-up.
