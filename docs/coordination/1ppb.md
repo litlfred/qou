@@ -319,3 +319,74 @@ Sibling 03:44 comment offered to take `pyhecke/chi_lambda_eval.py` wrapper on pr
 ### Bottom line
 
 The chi_lambda infrastructure for **all atoms A ≤ 4 is delivered and verified**. A=5-8 deferable via current cycle-type approach (40 min - 40 hours). A ≥ 8 needs closed-form. The 4He multi-block correction (~0.7%) confirms sibling PR #1220's finding that **multi-block alone doesn't close the 5.87% gap** — the H_3-vs-H_{3A} legacy bug (sibling commit `c70707397`) is the dominant structural cause.
+
+---
+
+## 2026-05-25 — /coordinate sweep (PR #1229 — Δ_λ bar-invariance probe-1)
+
+Author direction: "focus here — Δ_λ closure unlocks the per-isotope binding chain."
+
+### Sibling-scope landscape
+
+Open PRs in the Δ_λ / GAP-A-3 / GAP-A-4 / Kashiwara / per-isotope binding cluster:
+
+| Sibling | Title | Overlap | Classification | Action |
+|---------|-------|---------|----------------|--------|
+| [#1224](https://github.com/litlfred/qou/pull/1224) | audit(delta-lambda): closure-synthesis + 3 probes + Option E | **direct** — #1229 implements its probe-1 | **dependency satisfied** (synthesis doc cited by probe header) | post intent: probe-1 result |
+| [#1228](https://github.com/litlfred/qou/pull/1228) | audit(geom-derivation): error localization + KLR path | **adjacent** — same canonical-wiring gap, different vector (empirical h² coefficient variance) | **complementary** — joint root-cause: framework lacks per-isotope structural closure | post intent: probe-1 not a substitute for canonical 4He wiring |
+| [#1220](https://github.com/litlfred/qou/pull/1220) | diag(mass-sweep): α-cluster recursion bug at h² | adjacent — #1228 sibling | **complementary diagnostic** | none (subsumed by #1228 coordination) |
+| [#1214](https://github.com/litlfred/qou/pull/1214) | diag(mass-sweep): wiring-status taxonomy + KLR check | adjacent — predecessor of #1220 | **complementary diagnostic** | none |
+| [#1127](https://github.com/litlfred/qou/pull/1127) | Q_β net-ansatz fitting finding + complex-q substrate lift | orthogonal axis — CAL-3 fitting, not L2 binding | **distinct gap, shared framework** | post intent: Δ_λ closure independent of Q_β derivation; both block 1ppb on different legs |
+| [#1219](https://github.com/litlfred/qou/pull/1219) | fix(audit): §3b-cond cone stops at `conj:` boundaries | infrastructure | **bystander** | none |
+| [#1212](https://github.com/litlfred/qou/pull/1212) | fix(witness): mass-table-ppb refresh after #1199 | maintenance | **bystander** | none |
+
+### Probe-1 result (PR #1229)
+
+Bar-involution constraint Δ_λ = Δ_{λ^T} reduces 11 partition unknowns →
+6 effective ν-variables (5 paired + 1 self-conjugate [3,2,1]); min-||ν||₂
+LP picks a unique solution from the remaining 5-dim affine subspace:
+
+| closure | max ‖Δ_λ‖ |
+|---|---:|
+| **bar-invariance min-‖·‖₂ (this probe)** | **15.69** |
+| a_single_block | 22.96 |
+| b_padded_staircase | 301.52 |
+| c_content_monotonic (norm₂) | 31.97 |
+| d_isotypic (norm₂) | 71.63 |
+
+Bar-invariance min-||·||₂ ⇒ smaller |Δ_λ| than all 4 prior heuristic
+ansätze. Solution distributes weight across hook + principal +
+two-row strata (not concentrated in a single λ).
+
+### Next-step recommendation (single-session, highest ROI)
+
+**Probe-2: joint multi-atom content-projection LP** (per #1224 §3.2):
+- Impose: Δ_λ depends only on **content sequence** c(λ), NOT on the
+  partition shape directly.
+- Add T + ³He target equations (once χ^λ at H_9 is available via
+  tier-3 Phase B `chi_lambda_braid` wrapper).
+- Diagnostic: if multi-atom + content-only system is determinate,
+  probes 1+2 together close Δ_λ partially (sufficient for D+T+³He
+  binding; ⁴He blocked on R5-full SDP solver).
+
+**Blocker** (prerequisite for probes 2+3): canonical χ^λ(β_⁴He) at
+H_12 exposed as Python API. Tier-3 Phase B has the Rust wrapper
+(commit `82cba62a9`); Python binding pending.
+
+**Decision point** (after probe-2): do probes 1+2+3 together provide
+enough constraints to propose a closure candidate, or is Option E
+(Kashiwara crystal weeks-scale work) load-bearing for L2 deuteron
+binding accuracy?
+
+### Intent comments to post
+
+- #1224: probe-1 lands implementation; smallest |Δ_λ|_max of all
+  4 ansätze; 5 free dims remain → probes 2+3 are the natural next
+  experimental constraint.
+- #1228: probe-1 is **NOT** a substitute for canonical 4He wiring;
+  it constrains Δ_λ on the deuteron, doesn't fix the α-cluster
+  recursion. Both gaps must close for the per-isotope chain.
+- #1127: Δ_λ closure is orthogonal to Q_β derivation — same
+  three-calibration framework, but different missing structural
+  input. The headline 1ppb gap has two independent legs (L2 binding
+  via Δ_λ, CAL-3 via Q_β); each can be addressed in parallel.
