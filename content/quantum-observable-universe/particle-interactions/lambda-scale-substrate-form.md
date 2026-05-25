@@ -3,7 +3,7 @@
 > **Status — $\lambda_{\mathrm{scale}}$ ABSORBED INTO `Geom_full`.**
 >
 > Per [`docs/lambda-scale-absorbed-into-geom-full.md`](../../../docs/lambda-scale-absorbed-into-geom-full.md)
-> (canonical framing, settled 2026-05-23 in PR #1080),
+> (canonical framing, see PR #1080),
 > **`λ_scale` is no longer a separate object** in the framework.
 > The canonical mass formula is
 >

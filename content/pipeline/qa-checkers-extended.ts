@@ -1424,11 +1424,15 @@ const NON_SCHOLARLY_TITLE_PATTERNS: Array<{
     what: "starts with a question word",
   },
   {
-    re: /\b(?:I'?ll|we'?ll|let'?s|let\s+us|I'?m|we'?re|I\s+(?:will|am)|we\s+(?:will|are))\b/i,
+    // Note: apostrophe REQUIRED for contractions ("I'll", "we'll", "I'm") —
+    // the bare-letter forms (`Ill`, `well`, `Im`) trigger false positives on
+    // common math/text (e.g. "well-separated", "$\mathrm{Im}(q)$"). The
+    // multi-word phrasings ("let us", "I will", "we are") stay literal.
+    re: /\b(?:I['’]ll|we['’]ll|let['’]s|let\s+us|I['’]m|we['’]re|I\s+(?:will|am)|we\s+(?:will|are))\b/i,
     what: "first-person aside in the title",
   },
   {
-    re: /\b(?:you'?ll|you'?re|your|you\s+(?:can|will|might|should|may))\b/i,
+    re: /\b(?:you['’]ll|you['’]re|your|you\s+(?:can|will|might|should|may))\b/i,
     what: "second-person address in the title",
   },
   {

@@ -72,7 +72,7 @@ At q_0 $\approx$ 1.110:
 - $d_q((3, 1))$ at $q_0$ = $[3]_q$ $\approx$ 3.044
 - $[2]_q$ $\approx$ 2.011
 - $[4]_q$ $\approx$ 4.110
-- ξ_2 = 3.044 $\cdot$ 2.011 / 4.110 = 1.489 ✓ matches required 1.490
+- ξ_2 = 3.044 $\cdot$ 2.011 / 4.110 = 1.489 (matches required 1.490)
 
 ### Tau prediction (testable)
 

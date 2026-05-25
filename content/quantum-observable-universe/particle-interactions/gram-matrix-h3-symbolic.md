@@ -28,7 +28,7 @@ $$\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\
 |---|---|---|
 | **(1) Symmetry** | proved | [`gramMatrix_isSymm`](gram-matrix-h3-symbolic.lean) — 15-cell case analysis by `rfl` (entries encoded symmetrically by construction) |
 | **(2) Top-left = 1** | proved | [`gramMatrix_top_left`](gram-matrix-h3-symbolic.lean) — by definition |
-| **(3) Determinant ≠ 0** | deferred | [`gramMatrix_det_ne_zero`](gram-matrix-h3-symbolic.lean) — proof strategy documented; routine symbolic-determinant factorisation pending |
+| **(3) Determinant $\neq 0$** | deferred | [`gramMatrix_det_ne_zero`](gram-matrix-h3-symbolic.lean) — proof strategy documented; routine symbolic-determinant factorisation pending |
 
 ## Numerical verification at the substrate
 
