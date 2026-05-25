@@ -57,26 +57,50 @@ export default paper({
       partTitle: "Foundations",
     }),                                                       // QU axioms
     chapterRef({ dir: "quantum-observable-universes" }),       // QOU axioms, q-operators, substrate parameter, Reeb derivation
-    chapterRef({ dir: "lifting-and-descent" }),                // Yekutieli tower
+    chapterRef({ dir: "models-of-qous" }),                    // Models of QOUs — FRAMING CHAPTER: 5-step arc (Cat→Alg→Geom→Arch→Phys); also model gallery + Bring's basics. Forward refs allowed (preview chapter — see docs/chapter-restructure-2026-05-25.md). Moved from Part II 2026-05-25.
+    chapterRef({ dir: "lifting-and-descent" }),                // Yekutieli tower / brane tower (descent, jets, Gröbner-Shirshov filtration)
 
-    // ── Part II: Structure (physics narrative — bk, particles, obs) ──
+    // ── Part II: Structural Mechanics ─────────────────────────────────
+    // The structural mechanism: algebra → geometry → particles → mass →
+    // gravity. Closes with the non-abelian Stokes mass identity and its
+    // long-range gravitational consequence.
+    //
+    // Phase 6 (2026-05-25): inserted scaffolds for Statistics &
+    // Symmetrisation (Pauli, spin-statistics) between Bring's content
+    // and Particles; Gravity & Spacetime Emergence after Particle
+    // Interactions. Phase 4+5 (TBD) will split braids-and-knots and
+    // archimedean-universe into focused destination chapters.
     chapterRef({
       dir: "braids-and-knots",
-      partTitle: "Knots, Braids, and Particles",
-    }),                                                       // Braids, knots, Hecke, classical-limit machinery
-    chapterRef({ dir: "models-of-qous" }),                    // Models of QOUs — the archimedean wall (Calabi-Yau, ALE, SW)
-    chapterRef({ dir: "archimedean-universe" }),                // Bring's surface, χ = −6, fundamental particles (incl. cohomological defect)
+      partTitle: "Structural Mechanics",
+    }),                                                       // Braids, knots, Hecke, climax, mass machinery (to be split per Phase 4)
+    chapterRef({ dir: "archimedean-universe" }),                // Bring's surface, fundamental particles (to be split into Bring's deep + Predicted spectra per Phase 5)
+    chapterRef({ dir: "statistics-symmetrisation" }),          // [NEW Ch 8 — Phase 6 scaffold] Pauli, spin-statistics, fermion/boson derivation
     chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
-    chapterRef({ dir: "observations" }),                      // Physical observations / CODATA
+    chapterRef({ dir: "gravity-spacetime" }),                  // [NEW Ch 12 — Phase 6 scaffold] Gravity emergence: contact geometry + geodesic Madelung
+
+    // ── Part III: Physical Realization ────────────────────────────────
+    // Predictions, comparisons to CODATA, and extension to atomic /
+    // molecular / organic chemistry. New Part introduced 2026-05-25 per
+    // chapter-restructure plan (was nested inside Part II).
+    chapterRef({
+      dir: "observations",
+      partTitle: "Physical Realization",
+    }),                                                       // Physical observations / CODATA
     chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂ → benzene
     chapterRef({ dir: "organic-chemistry" }),                  // Organic chemistry (covalent / Hopf-ring)
 
-    // ── Part III: Further machinery (deeper algebraic / dynamical) ───
+    // ── Part IV: Dynamics, Information, Emergence ─────────────────────
+    // Dynamical and information-theoretic deepenings of the framework.
+    // Renamed 2026-05-25 from "Further Machinery". Adds Stochastic
+    // Mechanics + Measurement & Observation chapters as scaffolds.
     chapterRef({
       dir: "fluid-dynamics",
-      partTitle: "Further Machinery",
+      partTitle: "Dynamics, Information, Emergence",
     }),                                                       // Fluid dynamics of the brane
+    chapterRef({ dir: "stochastic-mechanics" }),               // [NEW Ch 18 — Phase 6 scaffold] Markov-trace stochastic dynamics, Nelson, Itô
     chapterRef({ dir: "information-theory" }),                 // Information-theoretic perspectives
+    chapterRef({ dir: "measurement-observation" }),            // [NEW Ch 20 — Phase 6 scaffold] Quantum measurement as fibre-functor behaviour
     chapterRef({ dir: "q-geometric-langlands" }),              // q-Geometric Langlands (incl. Tannaka–Krein, Hasse–Weil)
 
     // ── Back matter ─────────────────────────────────────────────────
