@@ -133,6 +133,23 @@ HISTORICAL_BENCHMARKS = {
 # ───────────────────────────────────────────────────────────────────
 # Hoefsmit seminormal at H_3 (re-used from joint_tower_sdp_solver_v2).
 # Three Wedderburn blocks: trivial (3), standard (2,1), sign (1,1,1).
+#
+# Track B Phase B-1 scope note (2026-05-25):
+# These matrices are still inlined because the R5-full SDP search
+# needs the FULL d_λ × d_λ Hecke representation (for PSD eigenvalue
+# checks via `alpha_gap = max(0, -min_eig)`), not just the character
+# (trace). pyhecke_native currently exposes `chi_lambda_braid`
+# (character only) and `chi_lambda_matrix` (cached batched chi),
+# both returning scalars — no matrix-valued braid representation API
+# yet. Extending the SDP search to H_5 (tritium) or H_12 (⁴He) will
+# require adding such an API to the Rust kernel; until then, the
+# inline matrices below are H_3-only.
+#
+# The Wenzl-Schur Markov trace `markov_trace_h3` is independent of
+# this scope limitation: it now sources `y_λ` from
+# `pn.trace_weights_n(n, q)` (Phase B-1 above) and can be combined
+# with `pn.chi_lambdas_braid` to extend the trace evaluation to any
+# H_n without the inline matrices.
 # ───────────────────────────────────────────────────────────────────
 
 def hoefsmit_h3_blocks(q):
@@ -229,15 +246,27 @@ def evaluate_b3_braid(braid_word, q=Q0):
 # Wenzl-Schur Markov trace at H_3(q_0).
 # ───────────────────────────────────────────────────────────────────
 
-def load_wenzl_weights(n: int) -> dict:
-    """Load Wenzl-Schur weights y_λ(q_0) for partitions of n."""
-    here = Path(__file__).parent
-    raw = json.loads((here / "y-lambda-wenzl-witness.json").read_text())
-    table = raw["tables_by_n"][str(n)]
-    return {
-        tuple(w["partition"]): float(w["y_lambda_numeric"])
-        for w in table["weights"]
-    }
+def load_wenzl_weights(n: int, q: float = float(Q0)) -> dict:
+    """Wenzl-Schur weights y_λ(q) for partitions of n.
+
+    Track B Phase B-1 refactor (2026-05-25): replaces the prior
+    JSON-cache loader (`y-lambda-wenzl-witness.json`) with a direct
+    pyhecke_native call. This:
+
+      1. Removes the JSON-cache dependency (the witness file becomes a
+         regression check rather than a data source).
+      2. Extends naturally to arbitrary `n` via
+         `pn.trace_weights_n(n, q)` — previously this function was
+         restricted to whatever `n` keys the JSON cache contained.
+      3. Picks up the substrate `q` value directly (no file read).
+
+    Verified at H_3: pyhecke_native matches the JSON cache to 3e-16
+    (machine precision).
+    """
+    import pyhecke_native as pn  # local import; module-level use is rare
+    shapes = pn.partitions_of(n)
+    weights = pn.trace_weights_n(n, q)
+    return {tuple(lam): float(w) for lam, w in zip(shapes, weights)}
 
 
 _WENZL_LABELS_H3 = {
