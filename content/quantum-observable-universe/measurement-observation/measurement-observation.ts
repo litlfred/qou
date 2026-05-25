@@ -27,5 +27,20 @@ export default chapter({
       label: "sec:measurement-observation-intro",
       blocks: ["intro"],
     }),
+    section({
+      title: "Bundle Structure and Observation",
+      label: "sec:bundle-observation",
+      blocks: [
+        "bundle-observation-intro",
+        "quarks-borromean-picture",
+        "bundle-initial-conditions",
+        "observation-braid",
+        "sorting-color-energy",
+        "sorting-color-energy-table-data",
+        "bundle-isotopy-equivalence",
+        "torsion-knot-flow",
+        "bundle-category",
+      ],
+    }),
   ],
 });

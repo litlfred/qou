@@ -92,5 +92,16 @@ export default chapter({
         "hyperbolic-knot-positive-volume-via-reeb",
       ],
     }),
+    section({
+      title: "Knot-operator energy",
+      label: "sec:knot-operator-energy",
+      blocks: [
+        "atom-isotope-confinement-intro",
+        "knot-operator-energy",
+        "knot-operator-energy-exists",
+        "knot-operator-energy-unique",
+        "local-shadow-ordering",
+      ],
+    }),
   ],
 });
