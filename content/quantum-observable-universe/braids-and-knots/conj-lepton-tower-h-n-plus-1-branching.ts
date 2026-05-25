@@ -65,15 +65,18 @@ export default conjecture({
         "amphichiral hyperbolic (not torus). Census filter (12 candidates) under " +
         "q-bracket closure found **10_43 × [5]_q·[3]_q/[6]_q → +0.79 %** of " +
         "CODATA m_τ/m_e. The closure form is [5]_q · [3]_q / [6]_q (NOT the " +
-        "originally-conjectured [4]_q · [2]_q / [5]_q), revealing the actual " +
-        "symmetric extension pattern: ξ_m = [2m+1]_q · [2m-1]_q / [2m+2]_q " +
-        "(m=2 muon, m=3 tau). Algebraic core proved in " +
-        "`three-halves-structural-factor.lean`: [6]_q = [2]_q · [3]_q · (1+h²) " +
-        "is the tau analog of muon's [4]_q = (2+h²) · [2]_q. Empirical " +
-        "foundation at +0.79 %; categorical derivation (why this specific " +
-        "q-bracket form arises, and how 10_43's amphichirality + hook-length " +
-        "(3,2,1) pattern selects it) remains open work for Option E " +
-        "(Kashiwara crystal, PR #1252). See " +
+        "originally-conjectured [4]_q · [2]_q / [5]_q). The unifying pattern " +
+        "is ξ_m = [2m-1]_q · [m]_q / [2m]_q — matches muon (m=2 → [3]·[2]/[4]) " +
+        "AND tau (m=3 → [5]·[3]/[6]) under one formula. Numerical verification " +
+        "at q_0 ≈ 1.110: m=2 → 1.489307 vs required 1.48929 (0.001 %); " +
+        "m=3 → 2.487363 vs required 2.46776 (0.79 %); m=4 prediction " +
+        "→ [7]·[4]/[8] = 3.503110 (no Standard Model lepton at m=4). " +
+        "Algebraic cores Lean-proved in `three-halves-structural-factor.lean`: " +
+        "muon [4]_q = (2+h²) · [2]_q + tau [6]_q = [2]_q · [3]_q · (1+h²). " +
+        "Empirical foundation at +0.79 %; categorical derivation (why this " +
+        "specific q-bracket form arises, and how 10_43's amphichirality + " +
+        "hook-length (3,2,1) pattern selects it) remains open work for " +
+        "Option E (Kashiwara crystal, PR #1252). See " +
         "`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md` followup section.",
     },
   ],

@@ -4,17 +4,25 @@
 Conjectural categorical interpretation of the T6 closure structural
 factor ξ_m for the lepton mass tower:
 
-  ξ_m = d_q((m+1, 1)) · [2]_q / [m+2]_q · (1/ℏ_q²)
+  ξ_m = [2m-1]_q · [m]_q / [2m]_q · (1/ℏ_q²)
 
-For muon m=2: d_q((3,1)) = [3]_q in S_4 standard rep; matches the
-PROVED identity (3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q in
-three-halves-structural-factor.lean to 0.034% of CODATA.
+This is the **revised unifying formula** (PR #1253), derived from
+the empirical matches:
+  - muon m=2: [3]_q · [2]_q / [4]_q (closes to 0.034 % of CODATA via PR #1127)
+  - tau  m=3: [5]_q · [3]_q / [6]_q (closes to +0.79 % of CODATA via PR #1253)
 
-For tau m=3: predicted ξ_3 = [4]_q·[2]_q/[5]_q does NOT close —
-the simple conjecture extends muon but not tau; falsifiable.
+The previous formulation `[m+1]_q · [2]_q / [m+2]_q` matched muon
+(at m=2 it reduces to `[3]_q · [2]_q / [4]_q`) but FALSIFIED at
+tau (predicted `[4]_q · [2]_q / [5]_q` does not close). The
+unifying formula above is symmetric in the q-integer triple
+(2m-1, m, 2m) and matches both data points.
+
+Algebraic cores proved in `three-halves-structural-factor.lean`:
+  - muon: [4]_q = (2+h²) · [2]_q  →  3-halves identity
+  - tau:  [6]_q = [2]_q · [3]_q · (1+h²)  →  symmetric extension
 
 Ref: [manuscript] conj:lepton-tower-h-n-plus-1-branching
-Ref: [manuscript] three-halves-structural-factor.lean (muon m=2 case proved)
+Ref: [manuscript] prop:three-halves-structural-factor
 -/
 
 import Mathlib.Algebra.Field.Defs
@@ -30,44 +38,89 @@ inductive LeptonIndex
   | tau       -- m=3
   deriving DecidableEq
 
-/-- Conjectural lepton-tower ξ_m structural factor:
-    ξ_m = d_q((m+1, 1)) · [2]_q / [m+2]_q · (1/ℏ_q²).
-    d_q((m+1, 1)) in S_{m+2} via hook-length = [m+1]_q. -/
+/-- Hecke amplitude h = q - q⁻¹ (mirrors definition in
+    `three-halves-structural-factor.lean`). -/
+noncomputable def heckeH {R : Type*} [Field R] (q : R) : R := q - q⁻¹
+
+/-- q-bracket [2]_q. -/
+noncomputable def br2 {R : Type*} [Field R] (q : R) : R := q + q⁻¹
+
+/-- q-bracket [3]_q. -/
+noncomputable def br3 {R : Type*} [Field R] (q : R) : R :=
+  q^2 + 1 + (q⁻¹)^2
+
+/-- q-bracket [4]_q. -/
+noncomputable def br4 {R : Type*} [Field R] (q : R) : R :=
+  q^3 + q + q⁻¹ + (q⁻¹)^3
+
+/-- q-bracket [5]_q. -/
+noncomputable def br5 {R : Type*} [Field R] (q : R) : R :=
+  q^4 + q^2 + 1 + (q⁻¹)^2 + (q⁻¹)^4
+
+/-- q-bracket [6]_q. -/
+noncomputable def br6 {R : Type*} [Field R] (q : R) : R :=
+  q^5 + q^3 + q + q⁻¹ + (q⁻¹)^3 + (q⁻¹)^5
+
+/-- Lepton-tower ξ_m structural factor (without the 1/ℏ_q² substrate
+    scalar; the full closure is `lepton_xi · (1/ℏ_q²)`).
+
+    The unifying formula is ξ_m = [2m-1]_q · [m]_q / [2m]_q:
+    - electron: degenerate calibration unit (ξ_1 = 1 by convention)
+    - muon: ξ_2 = [3]_q · [2]_q / [4]_q
+    - tau:  ξ_3 = [5]_q · [3]_q / [6]_q
+
+    Algebraic identity (closed h-form):
+    - muon: ξ_2 = (3+h²) / (2+h²)  — proved via three_halves_factor_eq_q_brackets
+    - tau:  ξ_3 = [5]_q / ([2]_q · (1+h²))  — proved via bracket5_bracket3_div_bracket6
+    -/
 noncomputable def lepton_xi
     {R : Type*} [Field R] (q : R) : LeptonIndex → R
-  | LeptonIndex.electron => 1  -- calibration unit
-  | LeptonIndex.muon     =>
-    -- m=2: [3]_q · [2]_q / [4]_q · (1/ℏ_q²)
-    sorry  -- needs q-bracket definitions + ℏ_q
-  | LeptonIndex.tau      =>
-    -- m=3: [4]_q · [2]_q / [5]_q · (1/ℏ_q²) (conjectural; numerically OFF)
-    sorry
+  | LeptonIndex.electron => 1  -- calibration unit (m=1 degenerate case)
+  | LeptonIndex.muon     => br3 q * br2 q / br4 q
+  | LeptonIndex.tau      => br5 q * br3 q / br6 q
 
-/-- The muon (m=2) case of the conjecture has its algebraic core
-    proved in `three-halves-structural-factor.lean`:
-    (3 + h²) / (2 + h²) = [3]_q · [2]_q / [4]_q.
+/-- **THEOREM (muon ξ_2 closed-form algebraic identity).**
+    `ξ_2 = [3]_q · [2]_q / [4]_q = (3+h²)/(2+h²)`.
 
-    This is the categorical identification at the muon-tower step.
-    Full T6 closure for muon: (m_μ_dim/m_e_dim) · this_factor · (1/ℏ_q²) = m_μ/m_e CODATA. -/
-theorem lepton_xi_muon_algebraic_core_proved : True :=
-  -- The actual identity (3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q is in
-  -- QOU.BraidKnot.ThreeHalvesStructuralFactor.three_halves_factor_eq_q_brackets.
-  -- This placeholder declares the muon ξ_2 closure as "algebraic core proved";
-  -- the categorical derivation (why this form arises from the per-braid mass
-  -- tower) is the open conjecture.
-  trivial
+    The categorical derivation (why this form arises from the per-braid
+    mass tower at the H_3 substrate via the conj's "(m+1, 1) std irrep
+    in S_{m+2}" identification) remains open. -/
+theorem lepton_xi_muon_eq_closed_form
+    {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    lepton_xi q LeptonIndex.muon
+      = (3 + (heckeH q)^2) / (2 + (heckeH q)^2) := by
+  unfold lepton_xi heckeH br2 br3 br4
+  field_simp
+  ring
 
-/-- The tau (m=3) case FALSIFIES the simple extension d_q((m+1,1))·[2]_q/[m+2]_q.
-    Empirical computation in t6_three_halves_factor_probes.py shows the simple
-    formula does NOT close tau's CODATA value at q_0 ≈ 1.110.
+/-- **THEOREM (tau ξ_3 closed-form reduction).**
+    `ξ_3 = [5]_q · [3]_q / [6]_q = [5]_q / ([2]_q · (1+h²))`.
 
-    This declares the falsification as a known structural defect of the
-    conjecture; resolution requires either (a) revised tower index for tau,
-    (b) different convention for V̂_τ, or (c) higher-tower terms beyond
-    single-gen Li_2^q. -/
-theorem lepton_xi_tau_simple_form_falsified : True :=
-  -- Empirical: required ξ_3 ≈ 4968 at q_0; simple-form prediction ≈ 161.7.
-  -- Discrepancy factor ~30x; tau case is open.
-  trivial
+    The categorical derivation (why the symmetric q-bracket form
+    appears, and how 10_43's amphichirality + hook-length pattern
+    selects it) is open work for Option E (Kashiwara crystal, PR #1252). -/
+theorem lepton_xi_tau_eq_reduced_form
+    {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    lepton_xi q LeptonIndex.tau
+      = br5 q / (br2 q * (1 + (heckeH q)^2)) := by
+  unfold lepton_xi heckeH br2 br3 br5 br6
+  field_simp
+  ring
+
+/-- **THEOREM (tau structural reduction).** `[6]_q = [2]_q · [3]_q · (1 + h²)`.
+    Mirrors `bracket6_eq_bracket2_bracket3_times_one_plus_h_sq` from
+    `three-halves-structural-factor.lean`. The fundamental identity
+    behind the tau amphichiral closure. -/
+theorem br6_eq_br2_br3_times_one_plus_h_sq
+    {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    br6 q = br2 q * br3 q * (1 + (heckeH q)^2) := by
+  unfold heckeH br2 br3 br6
+  field_simp
+  ring
+
+/-- **THEOREM (electron ξ_1 calibration convention).** `ξ_1 = 1`. -/
+theorem lepton_xi_electron_eq_one
+    {R : Type*} [Field R] (q : R) :
+    lepton_xi q LeptonIndex.electron = 1 := rfl
 
 end QOU.BraidKnot.LeptonTowerHnPlus1
