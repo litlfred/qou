@@ -72,7 +72,7 @@
     "symbolic_residual": "h**2*(-135*h**4 - 1528*h**2 + 384)/2048",
     "verdict": "INCONCLUSIVE \u2014 R1 (framework-cited closed form) \u2260 R3 (Jones polynomial / [2]_q\u00b2 with my normalization). Numerical diff at substrate \u2248 6.74e-3. Symbolic h-series residual: h\u00b2\u00b7(-135h\u2074 \u2212 1528h\u00b2 + 384)/2048, nonzero. This reflects normalization convention differences between the Markov trace and the Jones polynomial (writhe factors), NOT a failure of tessellation-coordinate-freedom. To properly test the audit \u00a711 claim, both routes need to be at matching framing. Probe D as written conflates normalization with tessellation choice; needs redo."
   },
-  "scriptCommitSha": "f608e065840db0268b4af8ec3e88eb07a24a96d5",
+  "scriptCommitSha": "b0abd866f9926c8c27dc2948ae049572da28c3db",
   "status": "exploratory",
   "tags": [
     "crystal-yekutieli-correspondence",
