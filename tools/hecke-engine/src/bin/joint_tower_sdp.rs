@@ -275,6 +275,45 @@ fn registry() -> Vec<RegistryEntry> {
             methodology: cert::Methodology::PrincipledDerivation,
             b_ame_mev: Some(28.2957),
         },
+        // ─── ℓ = 4  lithium-6 (canonical atom_braid_word_3A(3,3)) ─
+        //
+        // 71-crossing braid on B_18 from
+        // `atom_braid_word_3A(3, 3)`:  35 Pos + 23 Inv + 13 Avg
+        // crossings, native strand count = 18 (atomic n_0 = 3·A = 3·6).
+        //
+        // Tests the RECTANGULAR-FORM CONJECTURE from the dominant-
+        // partition audit (2026-05-25): if the conjecture holds, the
+        // dominant Wedderburn partition forcing α* for ⁶Li should be
+        // (6, 6, 6) with transpose (3, 3, 3, 3, 3, 3) = 6 nucleons × 3
+        // strands per nucleon (Schur-Weyl rectangular shape).
+        //
+        // p(18) = 385 partitions; with --max-dim-psd 500 the bulk of
+        // large-d_λ blocks are skipped, but the rectangular (6,6,6)
+        // has d_λ ~ small enough to be evaluated. If the rectangle
+        // conjecture holds the dominant partition (smallest α* / most-
+        // negative min_eig) should be the d=… (6,6,6) block.
+        RegistryEntry {
+            name: "lithium6-canonical-3A",
+            atomic_n_0: 18,
+            native_strand_count: 18, // B_18: σ_1..σ_17
+            braid: BraidRep::Extended(vec![
+                Pos(1), Pos(1), Pos(1), Pos(1), Avg(1), Pos(1),
+                Pos(1), Inv(2), Inv(2), Inv(2), Avg(2), Pos(3),
+                Pos(4), Pos(4), Pos(4), Pos(4), Avg(4), Pos(4),
+                Pos(4), Inv(5), Inv(5), Inv(5), Avg(5), Pos(6),
+                Pos(7), Pos(7), Pos(7), Pos(7), Avg(7), Pos(7),
+                Pos(7), Inv(8), Inv(8), Inv(8), Avg(8), Avg(9),
+                Pos(10), Pos(10), Pos(10), Avg(10), Avg(10), Pos(10),
+                Pos(10), Inv(11), Inv(11), Inv(11), Inv(11), Inv(12),
+                Pos(13), Pos(13), Pos(13), Avg(13), Avg(13), Pos(13),
+                Pos(13), Inv(14), Inv(14), Inv(14), Inv(14), Inv(15),
+                Pos(16), Pos(16), Pos(16), Avg(16), Avg(16), Pos(16),
+                Pos(16), Inv(17), Inv(17), Inv(17), Inv(17),
+            ]),
+            rho_factor: 6,
+            methodology: cert::Methodology::PrincipledDerivation,
+            b_ame_mev: Some(31.99405),
+        },
     ]
 }
 
