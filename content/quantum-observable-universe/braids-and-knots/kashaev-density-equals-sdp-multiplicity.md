@@ -111,7 +111,7 @@ in QOU compute and content (per
 - $\rho_K$ — CODATA-fit density per knot
 - $\rho_F$ — Kashaev prefactor in `mass_table_ppb.py` (unnamed, compute-only)
 
-The renamed compute field (`rho_factor` → `nu_sdp` in
+The renamed compute field (`rho_factor` $\to$ `nu_sdp` in
 [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
 ATOM_ASSIGN) consolidates around the canonical $\nu_{\mathrm{SDP}}$ name,
 removing the third unnamed $\rho$.
@@ -131,10 +131,10 @@ removing the third unnamed $\rho$.
 1. **Extend joint-tower SDP to ⁴He** — confirm
    $\nu_{\mathrm{SDP}}(⁴\mathrm{He}) = 2$ explicitly (currently
    extrapolated from D/T/³He pattern).
-2. **Extend joint-tower SDP to ⁵Li, ⁶Li, ⁷Li** — the A∈{5,6,7} gap
+2. **Extend joint-tower SDP to ⁵Li, ⁶Li, ⁷Li** — the A$\in${5,6,7} gap
    per
    [`docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md`](../../docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md)
-   needs $\nu_{\mathrm{SDP}}$ values; the wider atom→knot census Rule-14
+   needs $\nu_{\mathrm{SDP}}$ values; the wider atom$\to$knot census Rule-14
    escalation per
    [`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)
    recommends waiting for R5-full SDP (owner-decided 2026-05-24).

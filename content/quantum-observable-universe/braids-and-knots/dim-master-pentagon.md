@@ -36,7 +36,7 @@ single master Pentagon** in the DIM algebra. If true:
   [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md) §3
 - The "10" appearing in Bring color-tube weighted averaging (per
   cheat sheet §Bring) gets a DIM-algebra reading via the
-  5-vertex × 2-edge orientation of the master Pentagon
+  5-vertex $\times$ 2-edge orientation of the master Pentagon
 
 ## Diagnostics
 

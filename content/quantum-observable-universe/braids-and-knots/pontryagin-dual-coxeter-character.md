@@ -1,7 +1,7 @@
 **Conjecture (D20 Pontryagin closure — restricted, low priority).**
 *The abelianisation $S_n^{\mathrm{ab}} \cong \mathbb{Z}/2$ of the
 Coxeter group $S_n$ carries a Pontryagin duality on its character
-group $\widehat{\mathbb{Z}/2} \cong \mathbb{Z}/2$ — characters ↔
+group $\widehat{\mathbb{Z}/2} \cong \mathbb{Z}/2$ — characters $\leftrightarrow$
 measures on the dual group.  This is **degenerate** (Z/2 is self-
 Pontryagin-dual) but provides the framework with a low-information
 abelian-level duality structure paired with the bar involution
@@ -32,7 +32,7 @@ about.
 
 D20 is included in the duality tracker for **completeness**: the
 13-driver categorical menu mentions "Pontryagin / Cartier /
-Kashiwara crystal q → 0 / q → ∞" as a research direction. This
+Kashiwara crystal q $\to$ 0 / q $\to$ $\infty$" as a research direction. This
 block establishes that the Pontryagin part of that menu IS
 applicable but yields no new information beyond the sign-of-a-
 permutation observable — i.e., the same Z/2 that the bar involution

@@ -30,7 +30,7 @@ Faddeev–Volkov–Kashaev Pentagon
 in its archimedean realisation
 ([`prop:q-rogers-pentagon-archimedean`](#prop:q-rogers-pentagon-archimedean)).
 
-## Pachner ↔ Pentagon at the state-sum level
+## Pachner $\leftrightarrow$ Pentagon at the state-sum level
 
 For a Turaev–Viro / Reshetikhin–Turaev state sum $Z(M; q)$ on a
 3-manifold $M$ with ideal-tetrahedron triangulation $T$:
@@ -75,7 +75,7 @@ $$
 $$
 
 If true, $h^4 = -3/4$ is **identified categorically** with the
-8 octahedra × 5 Pentagon-vertices = 40 Pentagon-coherent state
+8 octahedra $\times$ 5 Pentagon-vertices = 40 Pentagon-coherent state
 contributions on the Borromean complement, of which 30 cancel by
 trace cyclicity and 10 sum to $-3/4$.  (The "10" matches the
 10-fold color-tube weighted averaging from

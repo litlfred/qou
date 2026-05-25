@@ -11,7 +11,7 @@ $$
 $q \mapsto q^{-1}$ (D1): bar acts on the real / parameter level,
 $S$-transform acts on the modular level.  Near roots of unity
 $q \to e^{2\pi i / k}$ (TQFT level-$k$ Chern-Simons evaluation),
-the $S$-transform realises the "small-$q$ ↔ large-$q$" duality of
+the $S$-transform realises the "small-$q$ $\leftrightarrow$ large-$q$" duality of
 the framework's $H_n(q)$ Hecke algebra.*
 
 ## The structural duality
@@ -44,7 +44,7 @@ $S$-transform sends $\tau_0 \mapsto -1/\tau_0$ which has large
 imaginary part — corresponding to a root-of-unity limit.
 
 This gives the framework an **explicit categorical handle** on the
-small-$q_0$ ↔ root-of-unity duality flagged in the 13-driver menu
+small-$q_0$ $\leftrightarrow$ root-of-unity duality flagged in the 13-driver menu
 under driver (viii) Modular $S$-transform.
 
 ## Relationship to PR #1127's complex-q lift

@@ -28,7 +28,7 @@ $$
 | Limit | Categorical structure | Tracker row |
 |-------|----------------------|-------------|
 | $q = 1$ (classical) | Lusztig canonical basis / KL polynomials | **D24** (this conjecture) |
-| $q = q_0$ (substrate ≈ 1.11) | full Hecke algebra | (production, all rows) |
+| $q = q_0$ (substrate $\approx$ 1.11) | full Hecke algebra | (production, all rows) |
 | $q \to 0$ (Kashiwara) | crystal basis / 0-Hecke | D12 |
 | $q \to \infty$ (reverse) | bar-image of Kashiwara | D13 |
 
@@ -61,7 +61,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 
 ## Open R&D
 
-1. Explicit Kashiwara → Lusztig decategorification functor in Lean.
+1. Explicit Kashiwara $\to$ Lusztig decategorification functor in Lean.
 2. Verify the framework's canonical Wedderburn weights $y_\lambda$
    at $q = 1$ reduce to KL multiplicities.
 3. D24 to closed requires Lean class for the decategorification functor;

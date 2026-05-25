@@ -81,7 +81,7 @@ PR #1127 and audit
   (audit
   [`2026-05-18-qbeta-n5-cohomological-breakdown`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)),
   with the $N=3$ rung $= J_{\mathrm{Hopf}}(q=1) = -2$ already
-  beating the L2 100× target by ~24%.
+  beating the L2 100$\times$ target by ~24%.
 
 ## Summary table
 

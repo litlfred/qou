@@ -129,7 +129,7 @@ CLAUDE.md "Δ_λ gate" anti-pattern guard).
 **Negative result.** Surfaces a falsifiable claim, tests it, and
 reports the falsification. Useful constraints on what
 cohomological-generation hierarchies are *compatible* with the
-m_μ ↔ $4_1$ pattern: any candidate must produce $m_\tau/m_e$ exactly,
+m_μ $\leftrightarrow$ $4_1$ pattern: any candidate must produce $m_\tau/m_e$ exactly,
 which the simplest single-knot form does not.
 
 This remark does **not** propose a new calibration input, a fit, or

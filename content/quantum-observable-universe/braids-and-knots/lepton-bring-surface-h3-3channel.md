@@ -35,7 +35,7 @@ $$
 > documenting the H_3 3-channel formula. Applying the canonical Li_2^q
 > per-braid mass tower to the resulting V̂ values gives lepton mass
 > ratios off CODATA by 99% — the missing factor `206.77 / 1.36 ≈ 152`
-> equals **(3/2) × (1/ℏ_q²)**, structurally identical to the
+> equals **(3/2) $\times$ (1/ℏ_q²)**, structurally identical to the
 > SUPERSEDED scalar substrate density. Full diagnosis:
 > [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md).
 
@@ -60,7 +60,7 @@ Bring surface: even though $\sigma_1^{2m+1}$ is naturally an $H_2$
 element (2 strands, 1 generator), the mass formula sits at $H_3$
 because that's where the cohomological discipline
 ([`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md))
-fixes the 3-CAL ↔ 3-channel mapping.
+fixes the 3-CAL $\leftrightarrow$ 3-channel mapping.
 
 ## Verification — calibration matches paper
 
@@ -128,13 +128,13 @@ the std midpoint**: 1-dim endpoints at lowest and highest weight, with
 the 4-dim std irrep filling the middle. This is the canonical $S_n$
 representation-theory structure.
 
-### Lepton ↔ channel mapping (conjectural)
+### Lepton $\leftrightarrow$ channel mapping (conjectural)
 
 Per [`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md):
 
-- sym (highest weight, $+q$ only) ↔ CAL-2 $q_0$ (substrate deformation)
-- std (mixed eigenvalues) ↔ CAL-1 $m_e$ (mass scale)
-- alt (lowest weight, $-q^{-1}$ only) ↔ CAL-3 $Q_\beta$ (interaction)
+- sym (highest weight, $+q$ only) $\leftrightarrow$ CAL-2 $q_0$ (substrate deformation)
+- std (mixed eigenvalues) $\leftrightarrow$ CAL-1 $m_e$ (mass scale)
+- alt (lowest weight, $-q^{-1}$ only) $\leftrightarrow$ CAL-3 $Q_\beta$ (interaction)
 
 A natural conjecture maps the 3 lepton generations to the 3 H_3 channels
 respecting this lowest/highest-weight structure:
@@ -153,18 +153,18 @@ representation capacity at high crossing count.
 
 A plausible elementary-particle count fitting the 6-dim NF diamond:
 
-- 2 lepton generations × 2 chiralities (L, R) = 4 dimensions
+- 2 lepton generations $\times$ 2 chiralities (L, R) = 4 dimensions
 - 1 Higgs (figure-eight $4_1$, "Higgs field / mass mechanism" per `knot-volumes.py:58`)
 - 1 photon ($\gamma$, identity element of $H_3$)
 - **Total = 6 dimensions = $\dim H_3(q)$**
 
 Alternative count:
-- 3 leptons × 1D irrep each (e/μ/τ in sym/std/alt) = 3 dimensions
+- 3 leptons $\times$ 1D irrep each (e/μ/τ in sym/std/alt) = 3 dimensions
 - But std is 2D (d² = 4), so it contributes more — would give 1 + 4 + 1 = 6
 - If electron occupies std (4 dim = electron-LH + electron-RH + electron-neutrino-LH + electron-neutrino-RH?), then muon + tau fill sym + alt (1 + 1)
 - **Total still = 6 dimensions**
 
-This is conjectural; explicit mapping NF-diamond ↔ elementary-particle
+This is conjectural; explicit mapping NF-diamond $\leftrightarrow$ elementary-particle
 content is open. If correct, the lowest/highest-weight 1-dim irreps
 are NATURALLY where the 2 "extreme" leptons (muon and tau) live, with
 electron in the 4-dim middle std channel hosting both chiralities
@@ -172,7 +172,7 @@ and possibly weak-isospin partner (neutrino).
 
 ## Cross-references
 
-- [`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md) — 3-CAL ↔ 3-channel cohomological discipline
+- [`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md) — 3-CAL $\leftrightarrow$ 3-channel cohomological discipline
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — Li_2^q canonical mass formula
 - [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
 - [`rem:bar-involution`](bar-involution.md) — P_avg / P_skew projection (real-q mechanism)

@@ -14,8 +14,8 @@ $h = q - q^{-1}$ — bar-anti-symmetric upper jet, middle index,
 bar-symmetric closing trace.*
 
 > **Status — unifying formula (2026-05-25, PR #1253 amphichiral discharge).**
-> Numerical match: muon $m=2$ → $[3]_q \cdot [2]_q / [4]_q$ to +0.001 %;
-> tau $m=3$ → $[5]_q \cdot [3]_q / [6]_q$ to +0.79 % (via $\mathrm{Vol}(10_{43})/\hbar_q^2$);
+> Numerical match: muon $m=2$ $\to$ $[3]_q \cdot [2]_q / [4]_q$ to +0.001 %;
+> tau $m=3$ $\to$ $[5]_q \cdot [3]_q / [6]_q$ to +0.79 % (via $\mathrm{Vol}(10_{43})/\hbar_q^2$);
 > see the **Resolution (PR #1253) — unifying formula** section below for the table.
 > Algebraic cores Lean-proved (`field_simp; ring`, generic `[Field R]`)
 > in [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
@@ -29,8 +29,8 @@ bar-symmetric closing trace.*
 > **SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture
 > $\xi_m = d_q((n,1)) \cdot [2]_q / [n+1]_q$ (with $n = 2m+1$, then
 > revised to $n = m+1$) matched muon but **falsified at tau**
-> ($\xi_3 = [4]_q \cdot [2]_q / [5]_q$ predicted ≈ 1.59 vs required
-> ≈ 2.47, off by 35 %). The PR #1253 amphichiral filter identified
+> ($\xi_3 = [4]_q \cdot [2]_q / [5]_q$ predicted $\approx$ 1.59 vs required
+> $\approx$ 2.47, off by 35 %). The PR #1253 amphichiral filter identified
 > the actual closure $\xi_3 = [5]_q \cdot [3]_q / [6]_q$ and the
 > unifying form above. The earlier framing is preserved below for
 > pedagogical trajectory; the "Resolution (PR #1253)" section is
@@ -42,7 +42,7 @@ The factor $[3]_q \cdot [2]_q / [4]_q$ was numerically identified
 in [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md)
 + [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py)
 as the closed-form fit (matching 28 candidate ratios to 0.034%, the
-best by 20× over the next best).
+best by 20$\times$ over the next best).
 
 The algebraic identity $\frac{[3]_q \cdot [2]_q}{[4]_q} = \frac{3 + h^2}{2 + h^2}$
 is Lean-proved in
@@ -58,7 +58,7 @@ The conjecture extends to all leptons by recognising:
 | 2 | Muon | 5 | $d_q((5,1)) = [5]_q$ in $S_6$ | $[5]_q \cdot [2]_q / [6]_q$ |
 | 3 | Tau | 7 | $d_q((7,1)) = [7]_q$ in $S_8$ | $[7]_q \cdot [2]_q / [8]_q$ |
 
-**Wait** — the empirical match is for muon at $\xi_2 = [3]_q \cdot [2]_q / [4]_q$, NOT $[5]_q \cdot [2]_q / [6]_q$. So the conjecture's "n = 2m+1" indexing is wrong; the actual indexing is "n = m+1" (matching m=2 → factor uses [3]_q/[4]_q):
+**Wait** — the empirical match is for muon at $\xi_2 = [3]_q \cdot [2]_q / [4]_q$, NOT $[5]_q \cdot [2]_q / [6]_q$. So the conjecture's "n = 2m+1" indexing is wrong; the actual indexing is "n = m+1" (matching m=2 $\to$ factor uses [3]_q/[4]_q):
 
 | m | Lepton | Predicted ξ_m (corrected indexing m+2) | Numerical at q_0 |
 |---|---|---|---:|
@@ -68,11 +68,11 @@ The conjecture extends to all leptons by recognising:
 
 This is the **conjecture as stated**: ξ_m uses the (m+1)-strand standard rep dimension d_q((m+1, 1)) of S_{m+2}.
 
-At q_0 ≈ 1.110:
-- $d_q((3, 1))$ at $q_0$ = $[3]_q$ ≈ 3.044
-- $[2]_q$ ≈ 2.011
-- $[4]_q$ ≈ 4.110
-- ξ_2 = 3.044 · 2.011 / 4.110 = 1.489 ✓ matches required 1.490
+At q_0 $\approx$ 1.110:
+- $d_q((3, 1))$ at $q_0$ = $[3]_q$ $\approx$ 3.044
+- $[2]_q$ $\approx$ 2.011
+- $[4]_q$ $\approx$ 4.110
+- ξ_2 = 3.044 $\cdot$ 2.011 / 4.110 = 1.489 ✓ matches required 1.490
 
 ### Tau prediction (testable)
 
@@ -85,10 +85,10 @@ At q_0:
 - $[4]_q \approx 4.110$
 - $[2]_q \approx 2.011$
 - $[5]_q \approx 5.205$
-- ξ_3 (predicted) = 4.110 · 2.011 / 5.205 · 101.86 ≈ 161.7
+- ξ_3 (predicted) = 4.110 $\cdot$ 2.011 / 5.205 $\cdot$ 101.86 $\approx$ 161.7
 
 vs required ξ_3 for tau = CODATA $m_τ/m_e$ / (m_τ_dim / m_e_dim) = 3477.23 / (something).
-If m_τ_dim is similar magnitude as m_μ_dim (~0.7), then required ξ ≈ 3477.23 / 0.7 = 4968 ≈ $H_5$-level adjustment.
+If m_τ_dim is similar magnitude as m_μ_dim (~0.7), then required ξ $\approx$ 3477.23 / 0.7 = 4968 $\approx$ $H_5$-level adjustment.
 
 The simple analog `d_q((4,1)) · [2]_q / [5]_q · (1/ℏ_q²)` does NOT close tau closing the gap by a factor of ~30. So either:
 (a) The conjecture's specific form needs revision for tau
@@ -130,7 +130,7 @@ currently open.
 
 ## Resolution (PR #1253) — unifying formula
 
-The "simple extension" pattern `[m+1]_q · [2]_q / [m+2]_q` is FALSIFIED for tau (predicted ξ_3 = `[4]_q · [2]_q / [5]_q` ≈ 1.59 vs required ≈ 2.47, off by 35 %).
+The "simple extension" pattern `[m+1]_q · [2]_q / [m+2]_q` is FALSIFIED for tau (predicted ξ_3 = `[4]_q · [2]_q / [5]_q` $\approx$ 1.59 vs required $\approx$ 2.47, off by 35 %).
 
 The **correct unifying formula** (PR #1253 amphichiral probe + Lean discharge):
 
@@ -148,9 +148,9 @@ Numerical verification at $q_0 \approx 1.110$ (`tau_amphichiral_sdp_probe.py` wi
 | 4 | (no SM lepton) | $[7]_q \cdot [4]_q / [8]_q$ | 3.50311 | — | — |
 
 The triple $(2m-1, m, 2m)$ is **symmetric in $h = q - q^{-1}$** at every step:
-- $2m-1$ odd → bar-anti-symmetric q-bracket contribution from the upper jet
-- $m$ → middle index (symmetric / anti-symmetric depending on parity)
-- $2m$ even → bar-symmetric q-bracket from the closing trace
+- $2m-1$ odd $\to$ bar-anti-symmetric q-bracket contribution from the upper jet
+- $m$ $\to$ middle index (symmetric / anti-symmetric depending on parity)
+- $2m$ even $\to$ bar-symmetric q-bracket from the closing trace
 
 This pattern is precisely what the lepton's amphichirality should produce — the upper and lower indices are reflections of each other across the middle, consistent with the **knot-operator = symmetry equivalence** in the owner's PR #1253 directive.
 

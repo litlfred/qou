@@ -55,7 +55,7 @@ $$
 ([Skein mass relation](../../observations/skein-mass-relation.md)),
 but this uses:
 
-1. **Hyperbolic volume Vol(4_1) ≈ 2.0299** — the **Kashaev $q \to 1$
+1. **Hyperbolic volume Vol(4_1) $\approx$ 2.0299** — the **Kashaev $q \to 1$
    limit** of $|\mathrm{tr}_M(4_1)|$, not the value at $q_0$.
 2. **Dimensional factor $1/\hbar_q^2$** — the **SUPERSEDED** scalar
    substrate density per
