@@ -32,7 +32,7 @@ $$\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\
 
 ## Numerical verification at the substrate
 
-Sympy-computed symbolic entries match `folio-assistant/computations/gram-matrix-dual.witness.json` at $q_0 \approx 1.110$ to max absolute difference $1.11 \times 10^{-16}$ across all 36 entries. The determinant at $u_0 = \sqrt{q_0}$ is $\det G(u_0) \approx -0.189205253071$ (one negative eigenvalue $\approx -0.855$ — Frobenius positivity is a genuine constraint, not an automatic property).
+Sympy-computed symbolic entries match `folio-assistant/computations/gram-matrix-dual.witness.json` at $q_0 \approx 1.110$ to max absolute difference $\approx 2.1 \times 10^{-16}$ across all 36 entries (see `gram-h3-symbolic-regression.witness.json` for the live value). The determinant at $u_0 = \sqrt{q_0}$ is $\det G(u_0) \approx -0.189205253071$ (one negative eigenvalue $\approx -0.855$ — Frobenius positivity is a genuine constraint, not an automatic property).
 
 ## Role in the framework
 
