@@ -11,12 +11,18 @@ report negative findings honestly).
 """
 import json
 import subprocess
+import sys
 from math import comb
 from pathlib import Path
 
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpc, mpf
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+from markov_trace_for_knot import trM_torus_2_k_mpf  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -41,14 +47,13 @@ def tr_M_sym(m: int, h: mpf) -> mpf:
 
 
 def tr_M_direct_hecke(n: int, q: mpf) -> mpf:
-    """Direct Hecke calc: tr_M(σ_1^n) = (y_(2)·q^n + y_(1,1)·(-q⁻¹)^n).
+    """Direct Hecke calc: tr_M(σ_1^n) for T(2, n) torus link.
 
-    Standard normalization (NOT sibling's /2)."""
-    qi = mpf(1) / q
-    y_2 = q / (q + qi)
-    y_11 = qi / (q + qi)
-    sign = (-1) ** n
-    return y_2 * q ** n + y_11 * sign * qi ** n
+    q-Schur Plancherel convention (sibling generic infra). Standard
+    normalization (NOT sibling's /2). Delegates to common infra
+    `trM_torus_2_k_mpf` — keeps the H_2 closed form in one place.
+    """
+    return trM_torus_2_k_mpf(n, q)
 
 
 def main():
