@@ -140,7 +140,7 @@ its honest outcome.
 
 - [`rem:calibration-inputs`](#rem:calibration-inputs) — canonical 3-CAL remark
 - [`rem:epistemic-status-of-calibrations`](#rem:epistemic-status-of-calibrations) — unified epistemic accounting
-- [`prop:three-calibration-discipline`](#prop:three-calibration-discipline) — H⁰/H¹/H² mapping
+- [`prop:three-calibration-discipline`](#prop:three-calibration-discipline) — $H^{0}$/$H^{1}$/$H^{2}$ mapping
 - Audit
   [`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)
   §F5 — driver question

@@ -95,7 +95,7 @@ The conjecture is exactly the gap at step A — promoting it from CONJECTURE to 
 
 [`q-zero-stokes-region-identification.lean`](q-zero-stokes-region-identification.lean) encodes this as a **conditional class structure** per CLAUDE.md §3b-cond:
 
-- Class `MostowPrasadDistinguished K` — axiomatizes Mostow-Prasad ∃!
+- Class `MostowPrasadDistinguished K` — axiomatizes Mostow-Prasad $\exists!$
 - Class `ReidTraceField K` — axiomatizes trace-field-in-number-field
 - Class `QZeroStokesIdentification K` — the CONDITIONAL identification (= the open gap)
 - Theorems consuming these classes give the chain of conditional results

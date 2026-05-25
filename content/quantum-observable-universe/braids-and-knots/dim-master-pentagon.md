@@ -29,7 +29,7 @@ The five Pentagon manifestations are currently treated separately
 in the framework. D17 conjectures they are **specialisations of a
 single master Pentagon** in the DIM algebra. If true:
 
-- The h⁴ = −3/4 Borromean coefficient (per
+- The $h^{4}$ = −3/4 Borromean coefficient (per
   [`borromean-markov-trace-closed-form`](#prop:borromean-markov-trace-closed-form))
   has a single categorical source rather than the four independent
   routes catalogued in

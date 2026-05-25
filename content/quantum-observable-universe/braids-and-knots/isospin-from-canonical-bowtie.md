@@ -1,7 +1,7 @@
 > **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**
 > The original draft classified the 305 ppm residue as "bar-anti-symmetric."
-> **That was wrong.** Bar involution (q $\leftrightarrow$ q⁻¹ AND σᵢ $\leftrightarrow$ σᵢ⁻¹) is
-> **distinct** from the isospin Z/2 swap (σᵢ $\leftrightarrow$ σᵢ⁻¹ with q FIXED).
+> **That was wrong.** Bar involution (q $\leftrightarrow$ $q^{-1}$ AND $\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$) is
+> **distinct** from the isospin Z/2 swap ($\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$ with q FIXED).
 > The 305 ppm residue is **isospin-Z/2-anti-symmetric** (correct); it
 > is NOT bar-anti-symmetric because `ℏ_q = (q-1)/q` is "mixed" under bar.
 > The 305 ppm match to CODATA holds at 0.03% rel diff. Body text below
@@ -172,12 +172,12 @@ $\Delta m / M_N$ classify as:
 | $1 + \hbar_q^3$ | mixed (1 bar-sym, $\hbar_q^3$ inherits mixed) | mixed |
 
 Net product $\hbar_q^2 \cdot h \cdot [2]_q \cdot (1 + \hbar_q^3) / 3$
-is **mixed** under bar (verified at q₀ by
+is **mixed** under bar (verified at $q_{0}$ by
 [`verify_isospin_bar_anomaly.py`](../../folio-assistant/computations/verify_isospin_bar_anomaly.py)).
 The product carries the bar-odd $h$ factor as a coefficient, but
 the $\hbar_q$ factors don't bar-classify cleanly.
 
-**Under the isospin Z/2 swap** (σᵢ $\leftrightarrow$ σᵢ⁻¹ at q FIXED), the
+**Under the isospin Z/2 swap** ($\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$ at q FIXED), the
 residue IS anti-symmetric (the swap exchanges proton $\leftrightarrow$ neutron,
 giving $m_n - m_p \neq 0$).  At the specific evaluation point
 $q = q_0$, the formula's value is bar-odd in a sign-of-$h$ sense
@@ -277,7 +277,7 @@ ultimately lives in the upstream-conjecture class instances.
 
 1. **Author the verification compute script**:
    `verify_isospin_bar_anomaly.py` — at $q = q_0$, evaluate the
-   canonical $\bowtie_K$-coupled atomic braid for ²H (Z=1, N=1)
+   canonical $\bowtie_K$-coupled atomic braid for ${}^{2}\mathrm{H}$ (Z=1, N=1)
    and explicitly compute:
    - The plain-skeleton crystal-corrected shell sum
    - The regularised contributions from the one inter-nucleon arc
@@ -292,9 +292,9 @@ ultimately lives in the upstream-conjecture class instances.
    regulator-consistent statement is fully Lean-proved (modulo
    class instances).
 4. **Extend to higher A**: verify the isospin-Z/2-anti-symmetric residue
-   identification holds for T, ³He, ⁴He — these have multiple
+   identification holds for T, ${}^{3}\mathrm{He}$, ${}^{4}\mathrm{He}$ — these have multiple
    inter-nucleon arcs and the residue is a sum over arcs.  The
-   ⁴He magic-shell case (per
+   ${}^{4}\mathrm{He}$ magic-shell case (per
    [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md))
    is where the Wigner SU(4) supermultiplet structure should
    manifest.
