@@ -245,6 +245,58 @@ Concretely: verify that DIFFERENT tessellations (any pair from the table above) 
 
 **Expected outcome**: positive consistency — confirms tessellation choice is a tool, not a structural commitment. Identifies which route is most COMPUTATIONALLY efficient for the framework's production pipeline.
 
+## §12. Can we relate the 4^k geometric cells to crystal bases easily?
+
+**Short answer**: NOT one-to-one cell ↔ cell, but YES through algebraic compression. The crystal basis (= Wedderburn block basis) is the "naturally pre-compressed" coordinate system for the per-braid evaluation.
+
+### Counting comparison (𝓑_3 / H_3(q))
+
+| Side | Object | Count |
+|---|---|---|
+| Geometric (Yekutieli 4^k) | quadrisection cells at level k | 1, 4, 16, 64, 256, ... |
+| Algebraic (CBH free Lie) | nested commutators at depth k, 2 generators | ~2^k/k |
+| Algebraic (Wedderburn) | irreps λ ⊢ 3 = {(3), (2,1), (1,1,1)} | **3 (fixed for all k)** |
+| Algebraic (SYT) | Standard Young Tableaux of S_3 | 4 (fixed for all k) |
+| Crystal basis vertices | = SYTs by Kashiwara construction | 4 (fixed for all k) |
+
+**4^k diverges; 3 is constant.** No bijection between the 4^k geometric cells and the 3 crystal-basis cells. The compression 4^k → 3 happens at the TRACE level: when you evaluate $\sum_{\text{cells}} (\text{contribution})$ on the geometric side, the result factors through the Wedderburn decomposition, with only 3 distinct block contributions surviving for any braid in H_3(q).
+
+### The compression mechanism
+
+For any braid word $w \in B_3$:
+
+$$\mathrm{tr}_M(w) = \sum_{\lambda \vdash 3} y_\lambda \cdot \chi^\lambda(w)$$
+
+The right-hand side has **3 terms** regardless of how complex $w$ is. The geometric Yekutieli MI computation of $\mathrm{tr}_M(w)$ would naively traverse all 4^k cells at level k, sum the cell contributions via CBH, then evaluate the trace. But the trace EVALUATES on the Wedderburn-block character, which is already encoded by 3 numbers per braid. So **the 4^k cells get summed up by the trace into 3 (in this case) block contributions** — automatically.
+
+This is why the framework's production path ([`alpha_k_jones_markov_h3.py`](../../folio-assistant/computations/alpha_k_jones_markov_h3.py)) doesn't need the geometric Yekutieli computation. It computes the 3 Wedderburn block characters directly and sums them — and gets the same answer.
+
+### "Easy relation" — crystal bases as the natural per-braid coordinate
+
+The crystal basis of H_3(q) at q→0 has 4 vertices (one per SYT). These correspond bijectively to the irreducible matrix elements that appear in any braid word's image. The trace formula evaluates a braid's matrix entries against the 4 crystal-basis labels and weights them appropriately. Every 4^k-cell contribution from the geometric side is captured exactly by these 4 evaluations.
+
+**So the easy relation is**:
+- 4^k geometric cells → traced → 3 Wedderburn block contributions ← evaluated on → 4 crystal-basis vertices
+
+The crystal basis is one row "above" the Wedderburn blocks (4 vertices distributed as 1 + 2 + 1 across the 3 blocks). The 4^k geometric cells live "many rows below" — they're the unit of the discretization scheme, not the unit of the algebraic data.
+
+### What this is NOT
+
+This compression doesn't give a CHEAP way to compute the geometric h-coefficient sum cell-by-cell. The compression only works once you ALREADY know the trace structure (which braid you're evaluating). For a general structural question like "what is the h⁶ coefficient of the Borromean Markov trace?", the algebraic side (Wedderburn + characters) gives you the answer in 3 evaluations — but you have to KNOW the trace formula a priori.
+
+For the framework's purposes, this is fine: the trace formula for $\mathrm{tr}_M(\beta_{Bor})$ IS known (closed form), so the algebraic compression is automatic. The "research-grade ~1 month" Path B work was scoped against a HYPOTHETICAL geometric route that the framework doesn't need to take.
+
+### Concrete recipe for using the crystal-Wedderburn shortcut
+
+1. Identify the braid $w$ in $B_n$ (for nucleon-nucleon: a multi-strand braid for the joint system)
+2. Compute $\chi^\lambda(w)$ for each $\lambda \vdash n$ using the SYT-labeled basis (Hoefsmit matrices)
+3. Sum $\sum_\lambda y_\lambda \chi^\lambda(w)$ with Jones-Markov weights $y_\lambda$
+4. Expand in $h = q - q^{-1}$ to extract h-coefficients
+
+This is the framework's existing path. The crystal basis enters at step 2 (SYT labeling of matrix entries). No 4^k geometric cell sum needed.
+
+**Implication for Path B closure**: the missing piece is NOT the geometric integration; it's the categorical derivation of WHY the Wedderburn weights $y_\lambda$ have their specific values for the Borromean. This connects back to D15 (Pachner-Pentagon), D16 (Bloch group), and the q-Langlands D19 — all of which provide independent algebraic routes to the same $y_\lambda$.
+
 ## §10. Cross-references
 
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — full chain
