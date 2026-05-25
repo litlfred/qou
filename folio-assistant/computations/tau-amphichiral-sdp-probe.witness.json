@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T07:00:08.371928+00:00",
-  "commitSha": "d3daca8833bdedeb2597897a43a0b79c69849cbf",
+  "computedAt": "2026-05-25T07:13:33.838675+00:00",
+  "commitSha": "c3d11be5bcc58da36972fd98dc0b986b651d5f16",
   "assertions": [
     {
       "name": "muon_canonical_pin_consistency",
@@ -41,8 +41,8 @@
   "durationMs": 10,
   "computation": "tau-amphichiral-sdp-probe",
   "scriptFile": "tau_amphichiral_sdp_probe.py",
-  "scriptHash": "2f9a1ab19999",
-  "scriptCommitSha": "d3daca8833bdedeb2597897a43a0b79c69849cbf",
+  "scriptHash": "96bfa119279f",
+  "scriptCommitSha": "c3d11be5bcc58da36972fd98dc0b986b651d5f16",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -50,6 +50,7 @@
     "truncation_bound": "1e-40"
   },
   "description": "Tau amphichiral-candidate SDP-spirit probe per owner directive 2026-05-25: 'tau is not torus knot; knot operator = symmetries → should be same as 1st gen. verify via SDP solutions.' (verbatim quote — original message had typo 'tau in not knot tauris' which was interpreted as 'tau is not torus knot' per context.) Filters 12 amphichiral hyperbolic knots from SnapPy census + tests under Vol/ℏ_q^k and q-bracket-corrected closure formulas analogous to muon's ξ_2 = [3]_q · [2]_q / [4]_q.",
+  "contentBlock": "conj:lepton-tower-h-n-plus-1-branching",
   "auditOnly": "docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md",
   "parameters": {
     "precision_dps": 50,
