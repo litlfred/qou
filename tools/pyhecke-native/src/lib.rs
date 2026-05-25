@@ -273,6 +273,52 @@ fn trace_weights_n(n: usize, q: f64) -> Vec<f64> {
     y.iter().copied().collect()
 }
 
+/// **q-Schur Plancherel weights y_λ on H_n(q) — CLOSED FORM, arbitrary n.**
+///
+/// Computes the q-Schur Plancherel measure on partitions λ ⊢ n:
+///   y_λ(q) = q^{content_sum(λ)} / [n]_q!
+/// where content_sum(λ) = Σ_{(i,j) ∈ λ} (j − i).
+///
+/// **DIFFERENT trace convention** from `trace_weights_n` (Wenzl JM):
+///
+/// | Convention | tr(σ_i) | Where used |
+/// |------------|---------|------------|
+/// | `trace_weights_n` (Wenzl JM) | `z = 1/(√q+1/√q)` | Borromean closed form, mass formula |
+/// | `trace_weights_n_q_schur` (this) | `h = q - q⁻¹` | T(2,k) torus knot closed forms (sibling 5418678c8), lepton tower h-expansion |
+///
+/// **Closed form: NO linear system, NO chi evaluations.** Works for
+/// arbitrary n instantly (O(p(n) · n²) total). Unblocks heavy atoms
+/// (12C n=36, 16O n=48, 40Ca n=120, ...) that the LP-based Wenzl path
+/// cannot reach.
+///
+/// Verified against sibling's H_2 closed form (commit `5418678c8`):
+///   y_(2)   = q / [2]_q     (matches)
+///   y_(1,1) = q⁻¹ / [2]_q   (matches)
+#[pyfunction]
+fn trace_weights_n_q_schur(n: usize, q: f64) -> Vec<f64> {
+    let shapes = seminormal::partitions_of(n);
+
+    // Compute [n]_q! = [1]_q · [2]_q · ... · [n]_q
+    let qint = |k: i32| -> f64 {
+        (q.powi(k) - q.powi(-k)) / (q - 1.0 / q)
+    };
+    let qfact_n: f64 = (1..=n as i32).map(|k| qint(k)).product();
+
+    shapes
+        .iter()
+        .map(|shape| {
+            // content_sum(λ) = Σ_{(i,j) ∈ λ} (j - i)
+            let mut content_sum: i32 = 0;
+            for (i, &row) in shape.iter().enumerate() {
+                for j in 0..row {
+                    content_sum += j as i32 - i as i32;
+                }
+            }
+            q.powi(content_sum) / qfact_n
+        })
+        .collect()
+}
+
 /// Partition-basis Gram matrix on H_n(q) for arbitrary n.
 ///
 /// n-generic replacement for the n=3-hardcoded `gram_matrix(q)` (which
@@ -729,6 +775,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     m.add_function(wrap_pyfunction!(trace_weights_n, m)?)?;
+    m.add_function(wrap_pyfunction!(trace_weights_n_q_schur, m)?)?;
     m.add_function(wrap_pyfunction!(gram_matrix_n, m)?)?;
     m.add_function(wrap_pyfunction!(gram_inverse_n, m)?)?;
     m.add_function(wrap_pyfunction!(nf_tr_n, m)?)?;
