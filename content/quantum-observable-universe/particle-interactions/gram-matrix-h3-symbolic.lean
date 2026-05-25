@@ -66,15 +66,16 @@ Ref: [manuscript] def:universal-ilp-algorithm
 Ref: [manuscript] prop:frobenius-gram-matrix
 Ref: [manuscript] docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md
 Ref: [halverson_ram_1998] Hoefsmit seminormal Gram on H_3(q)
-Ref: sympy-computed via `tools/compute_symbolic_gram.py` (PR #1256)
-Ref: numerical regression guard: `gram-matrix-dual.witness.json`
+Ref: sympy regression guard `folio-assistant/computations/gram_h3_symbolic_regression.py`
+     (transcribes the same closed-form entries; emits witness asserting
+     match-to-pyhecke and symmetry at 50 dps)
+Ref: numerical pyhecke source: `gram-matrix-dual.witness.json`
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.Matrix.Symmetric
 import Mathlib.Tactic
-import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
 
 namespace QOU.Interactions.GramMatrixH3Symbolic
 

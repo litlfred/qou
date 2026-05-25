@@ -75,14 +75,17 @@ theorem jHopf_at_one_eq_neg_two : jHopf 1 = -2 := by
 /-- **Categorical instance** (PR followup — drops the prior "empirical"
     framing per audit). The value `c_3 = J_Hopf(q=1) = -2` is a closed-
     form derivation from `jHopf 1` (above), NOT an empirical witness fit.
+    The `j_hopf_at_one` field is now bound directly to the closed-form
+    evaluation `jHopf 1` (rather than a duplicate `-2` literal), so the
+    instance is genuinely tied to the closed form — no shadow constant.
     Per CLAUDE.md §3b-cond, the residual conjectural input is the
     Q_β-precision-ladder ↔ J_Hopf identification (encoded structurally
     in the class field `c3_eq_j_hopf`); the numerical value `-2` is
     categorical. -/
 instance : HasC3HopfJonesIdentity where
   c3_value := -2
-  j_hopf_at_one := -2
-  c3_eq_j_hopf := rfl
+  j_hopf_at_one := jHopf 1
+  c3_eq_j_hopf := jHopf_at_one_eq_neg_two.symm
   c3_eq_neg_two := rfl
 
 /-- **THEOREM.** The class's `j_hopf_at_one` field agrees with the

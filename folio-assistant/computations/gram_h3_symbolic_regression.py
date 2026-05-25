@@ -25,7 +25,6 @@ from pathlib import Path
 
 import mpmath as mp
 
-from experimental_constants import MU_OVER_E
 from q_parameter import Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
 
@@ -76,11 +75,9 @@ def main() -> int:
     G_sym = [[gram_entry_symbolic(u, i, j) for j in range(6)] for i in range(6)]
 
     # Load production pyhecke Gram from witness
-    pyhecke_witness = json.load(
-        open(
-            Path(__file__).resolve().parent / "gram-matrix-dual.witness.json"
-        )
-    )
+    witness_path = Path(__file__).resolve().parent / "gram-matrix-dual.witness.json"
+    with open(witness_path) as f:
+        pyhecke_witness = json.load(f)
     G_pyhecke = pyhecke_witness["gram_matrix"]
 
     # Max absolute difference across all 36 entries
