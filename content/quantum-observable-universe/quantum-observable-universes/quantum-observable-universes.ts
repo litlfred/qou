@@ -163,6 +163,21 @@ export default chapter({
       ],
     }),
 
+    // ── Heisenberg commutator ────────────────────────────────────────
+    // Relocated from models-of-qous/sec:categorical-differential-bridge
+    // per Phase 3 of chapter-restructure-2026-05-25. The Heisenberg
+    // commutator emerges from QOU's fibre structure (uses
+    // def:quantum-planck-constant defined in this chapter); it's a
+    // QOU-level result, not a "model" of QOUs.
+    section({
+      title: "Heisenberg commutator",
+      label: "sec:heisenberg-commutator",
+      blocks: [
+        "heisenberg-commutator-prop",
+        "heisenberg-commutator",
+      ],
+    }),
+
     // ── Algebraic substrate and the Reeb derivation ──────────────────
     // Absorbed from former `algebraic-substrate / sec:algebraic-substrate-reeb`
     // (now dissolved). These 12 blocks deepen the substrate parameter

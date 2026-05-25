@@ -107,8 +107,12 @@ export default chapter({
         "categorical-differential-bridge-intro",
         "c-substrate-via-levi",
         "webster-inner-product",
-        "heisenberg-commutator-prop",
-        "heisenberg-commutator",
+        // heisenberg-commutator-prop + heisenberg-commutator relocated to
+        // quantum-observable-universes/ (Phase 3 of chapter-restructure-
+        // 2026-05-25). Heisenberg commutator emerges from QOU's fibre
+        // structure (uses def:quantum-planck-constant, also in QOU); the
+        // models-of-qous chapter is being repurposed as a short framing
+        // chapter and shouldn't host this depth of content.
         "observation-archimedean",
         "spatial-realization-functor",
         "categorical-archimedean-bridge",
