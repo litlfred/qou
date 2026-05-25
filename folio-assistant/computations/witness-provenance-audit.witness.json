@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T16:43:07.721701+00:00",
-  "commitSha": "8ff79c4f925e9ded0bfdc3d34140d338d55474ef",
+  "computedAt": "2026-05-25T00:00:08.462477+00:00",
+  "commitSha": "f5076763ea48a093ea8d37f03a8d873bbfa65251",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 10,
+      "computed": 26,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "77d54f1cc990",
@@ -41,12 +41,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 686,
-      "prov_ok": 645,
+      "total_scanned": 707,
+      "prov_ok": 650,
       "prov_audit_exempt": 31,
-      "prov_missing": 10,
+      "prov_missing": 26,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.9854227405247813
+      "completeness_ratio": 0.9632248939179632
     },
     "by_verdict": {
       "PROV_OK": [
@@ -116,6 +116,10 @@
         },
         {
           "witness": "adjacent-vs-full-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "affine-light-cone-figure.witness.json",
           "missing_fields": []
         },
         {
@@ -339,10 +343,6 @@
           "missing_fields": []
         },
         {
-          "witness": "branching-qvalue-chain.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "branching-qvalues.witness.json",
           "missing_fields": []
         },
@@ -364,6 +364,10 @@
         },
         {
           "witness": "bring-bloch-tier0-search-m-p.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bring-chiral-fibre-figure.witness.json",
           "missing_fields": []
         },
         {
@@ -2107,6 +2111,10 @@
           "missing_fields": []
         },
         {
+          "witness": "prototype-gs-nf-shell-binding.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "q-beta-1d-irrep-universal-closed-form.witness.json",
           "missing_fields": []
         },
@@ -2367,6 +2375,10 @@
           "missing_fields": []
         },
         {
+          "witness": "sinh-bar-antisymmetric-partner.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "skein-proton-canonical.witness.json",
           "missing_fields": []
         },
@@ -2523,6 +2535,10 @@
           "missing_fields": []
         },
         {
+          "witness": "torus-knot-h-expansion-pattern.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "tr-m-he4-canonical.witness.json",
           "missing_fields": []
         },
@@ -2556,6 +2572,10 @@
         },
         {
           "witness": "v-hat-z-transfer-phase5d-4.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "verify-isospin-bar-anomaly.witness.json",
           "missing_fields": []
         },
         {
@@ -2640,6 +2660,38 @@
           ]
         },
         {
+          "witness": "binomial-pattern-chebyshev-derivation.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "borromean-h3-2-1-irrep-derivation.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "branching-qvalue-chain.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "ew-couplings-substrate-derivation-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "geom-full-borromean-h4-probe.witness.json",
           "missing_fields": [
             "engine",
@@ -2657,6 +2709,30 @@
         },
         {
           "witness": "geom-leading-alt-q-locality-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "higgs-categorical-mass-formula-attempt.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "higgs-h6-correction-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -2696,7 +2772,79 @@
           ]
         },
         {
+          "witness": "qm-channel-contribution-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "rt-binomial-trace-evaluation-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "rt-habiro-borromean-cross-validation.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "rt-route-cross-particle-ratio-quantum-dim.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "rt-route-w-specific-correction-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "rt-w-sqrt-quantum-two-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "rt-w-sqrt2-jet-order-validation.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "six-fifths-categorical-proof-attempt.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "t3n-binomial-pattern-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
