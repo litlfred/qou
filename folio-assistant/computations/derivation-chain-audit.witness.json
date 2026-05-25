@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T14:26:12.833521+00:00",
-  "commitSha": "fe1c7622bc7b8cffd3ae6b4cc4a1d88a66ab783b",
+  "computedAt": "2026-05-25T15:34:20.114623+00:00",
+  "commitSha": "33f8f52e601aba0a31118045d9bf646875521eaf",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "8948cf14da37f8b87865ccd85007d308796d8201",
+  "scriptCommitSha": "71d674da186600ad04a5754792acbf59838f4dad",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -2371,6 +2371,7 @@
         "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
+        "four-unwired-theorems-regression.witness.json",
         "fr-pullback-cosh-h.witness.json",
         "fr-pullback-k1-k2.witness.json",
         "fr-pullback-k3-test.witness.json",
@@ -2578,6 +2579,7 @@
         "pentagon-reduction-li2q.witness.json",
         "pentagon-rt-torus-knot-higgs-probe.witness.json",
         "pentagon-to-borromean-h4-probe.witness.json",
+        "per-atom-audit-witnesses.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",
         "per-generator-V-hat-general.witness.json",
@@ -2730,6 +2732,7 @@
         "toffoli-lp-stability.witness.json",
         "torus-knot-h-expansion-pattern.witness.json",
         "torus-knot-markov-trace-closed-form.witness.json",
+        "torus-knot-markov-trace-generalized.witness.json",
         "tr-m-he3-audit.witness.json",
         "tr-m-he4-canonical.witness.json",
         "tr-m-jones-markov-cross-check.witness.json",

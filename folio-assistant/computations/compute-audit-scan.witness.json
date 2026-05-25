@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T05:53:38.448860+00:00",
-  "commitSha": "859d5f860462bdecb19c9d3e410668b77129fc20",
+  "computedAt": "2026-05-25T15:34:19.401675+00:00",
+  "commitSha": "33f8f52e601aba0a31118045d9bf646875521eaf",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 14,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "8948cf14da37f8b87865ccd85007d308796d8201",
+  "scriptCommitSha": "71d674da186600ad04a5754792acbf59838f4dad",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 601,
+    "files_scanned": 610,
     "patterns": [
       "P15",
       "P16",
@@ -33,8 +33,8 @@
       "P15": 113,
       "P16": 177,
       "P21": 19,
-      "P30": 130,
-      "P31": 29
+      "P30": 131,
+      "P31": 30
     },
     "top_files": [
       {
@@ -1910,6 +1910,20 @@
         "line": 91,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P30",
+        "file": "m_tau_knot_prediction.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "m_tau_knot_prediction.py",
+        "line": 67,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",
