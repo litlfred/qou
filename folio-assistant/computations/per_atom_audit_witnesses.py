@@ -124,10 +124,10 @@ def compute_canonical_candidate(A: int) -> dict | None:
     """Use the new Rust pn.trace_weights_n to compute canonical tr_M
     for atom of mass number A. Returns None if n_strands too large."""
     n = 3 * A
-    if n > 24:  # skip 12C onwards (too slow at H_36+)
+    if n > 12:  # skip A>4 atoms in this fast-pass script (they take >5 min each at H_15+)
         return {
             "skipped": True,
-            "reason": f"n={n} too large for cycle-type LP (use closed-form q-Schur instead)",
+            "reason": f"n={n} too slow for inline computation (use run_jones_markov_atlas_all_atoms.py --full witness when ready)",
         }
     try:
         t0 = time.time()
