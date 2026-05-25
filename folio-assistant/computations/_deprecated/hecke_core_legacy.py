@@ -19,9 +19,6 @@ in-repo consumers that still import them.
   - atomic_chirality_residue.py           (_step_chain_generic)
   - hadron_knot_table.py                  (binding_energy, classify_nuclear_knot)
   - phase3_triton_binding_convention_b.py (binding_from_frobenius_pairing)
-  - alpha_blend_tower.py                  (probe — Phase-5 LP-dual)
-  - rho_k_h3a_gg_trajectory.py            (probe — Phase-5 LP-dual)
-  - magic_proximity_probe.py              (magic_proximity)
 
 **pyhecke delegation modules** (tools/pyhecke/python/pyhecke/, via the
 sys.path bridge in `_legacy.py`):

@@ -33,6 +33,7 @@ import json
 import math
 from datetime import datetime, timezone
 from pathlib import Path
+from mpmath import mp
 
 # ── Substrate parameter (canonical, from q_parameter.py) ─────────
 from q_parameter import (Q as q, Q_INV as qi, HBAR_Q as hbar_q,
@@ -54,7 +55,7 @@ mu_0 = m_e_MeV / (n_c_electron * E_cross)         # MeV per Skein unit
 # In the QOU: v = N_v · E_cross · μ₀ where N_v is the effective
 # crossing count of the weak scale (OPEN COMPUTATION).
 G_F_standard = 1.1663788e-11  # ± 0.0000006e-11 MeV⁻² (CODATA 2022)
-v_weak = 1.0 / math.sqrt(math.sqrt(2) * G_F_standard)  # MeV
+v_weak = 1.0 / mp.sqrt(mp.sqrt(2) * G_F_standard)  # MeV
 N_v = v_weak / (E_cross * mu_0)  # effective crossing count
 
 # ── Rate scale verification ──────────────────────────────────────
@@ -112,8 +113,8 @@ witness = {
     },
     "G_F_decomposition": {
         "G_F_standard": G_F_standard,
-        "v_weak_MeV": v_weak,
-        "N_v_crossing_count": N_v,
+        "v_weak_MeV": float(v_weak),
+        "N_v_crossing_count": float(N_v),
         "note": (
             "G_F = 1/(√2 v²) where v = N_v · E_× · μ₀. "
             "N_v is the effective crossing count of the weak scale — "
@@ -123,8 +124,8 @@ witness = {
     },
     "rate_scale_check": {
         "G_F2_m_e5_standard": rate_scale_standard,
-        "243_Ecross_mu0_over_2Nv4": rate_scale_from_q,
-        "ratio": rate_scale_from_q / rate_scale_standard if rate_scale_standard != 0 else None,
+        "243_Ecross_mu0_over_2Nv4": float(rate_scale_from_q),
+        "ratio": float(rate_scale_from_q / rate_scale_standard) if rate_scale_standard != 0 else None,
         "note": "These should agree exactly (algebraic identity).",
     },
     "sensitivity": {
@@ -165,10 +166,10 @@ print(f"  E_× = {E_cross:.5f}")
 print(f"  s = {s:.5f}")
 print(f"  [2]_q = {two_q:.5f}")
 print(f"  μ₀ = {mu_0:.4f} MeV/Skein")
-print(f"  v (weak scale) = {v_weak:.0f} MeV = {v_weak/1000:.1f} GeV")
-print(f"  N_v (weak crossing count) = {N_v:.0f} (OPEN — to derive from topology)")
+print(f"  v (weak scale) = {float(v_weak):.0f} MeV = {float(v_weak/1000):.1f} GeV")
+print(f"  N_v (weak crossing count) = {float(N_v):.0f} (OPEN — to derive from topology)")
 print(f"  G_F(std) = {G_F_standard:.4e} MeV⁻²")
-print(f"  Rate scale ratio = {rate_scale_from_q / rate_scale_standard:.6f} (should be 1.0)")
+print(f"  Rate scale ratio = {float(rate_scale_from_q / rate_scale_standard):.6f} (should be 1.0)")
 print(f"  Sensitivity = {sensitivity:.1f}")
 print()
 for nuc in nuclei:

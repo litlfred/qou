@@ -138,4 +138,76 @@ theorem h4_leading_coefficient_eq_neg_three_quarters :
   unfold trM_borromean_den
   norm_num
 
+/-! ### Bar-(anti-)symmetric structure of the Borromean trace
+
+The bar-involution sends `q ↦ q^{-1}`, equivalently `h = q − q^{-1} ↦ −h`.
+
+The Borromean closed form is purely even in `h`:
+both numerator `4 + h² − 3h⁴ − h⁶` and denominator `h² + 4` involve
+only even powers of `h`. Therefore `trM_borromean` is invariant under
+`h ↦ −h` (bar-symmetric), and its bar-anti-symmetric companion
+`Q_borromean h := (trM_borromean h − trM_borromean (−h)) / 2` vanishes
+identically.
+
+Compare PR #1153 (`sinh_bar_antisymmetric_partner.py`) for the torus
+`T(2, 2m)` family: those `Q_m(h)` are non-zero (carry the Coulomb /
+EM channel via `sinh((2m+1) η)`). The Borromean braid `𝓑₃` is NOT
+in the torus family — it is hyperbolic (the 3-cusped Borromean rings
+have Vol ≈ 7.32) — and its bar-anti-symmetric companion is structurally
+zero, not merely "small at substrate".
+
+Audit chain: PR #1153 audit `docs/audits/2026-05-24-sinh-bar-anti-
+symmetric-partner-probe.md` §"Refined-framing note" cites this fact;
+PR #1196 audit `docs/audits/2026-05-24-sinh-cosh-lean-integration-
+audit.md` flags it as the next concrete Lean proof gap (this
+section closes it).
+-/
+
+/-- The numerator polynomial `4 + h² − 3h⁴ − h⁶` is even in `h`. -/
+theorem trM_borromean_num_even (h : ℚ) :
+    trM_borromean_num (-h) = trM_borromean_num h := by
+  unfold trM_borromean_num
+  ring
+
+/-- The denominator polynomial `h² + 4` is even in `h`. -/
+theorem trM_borromean_den_even (h : ℚ) :
+    trM_borromean_den (-h) = trM_borromean_den h := by
+  unfold trM_borromean_den
+  ring
+
+/-- The Borromean Markov trace is invariant under the bar-involution
+    `h ↦ −h` (equivalently `q ↦ q^{-1}`). -/
+theorem trM_borromean_bar_invariant (h : ℚ) :
+    trM_borromean (-h) = trM_borromean h := by
+  unfold trM_borromean
+  rw [trM_borromean_num_even, trM_borromean_den_even]
+
+/-- The bar-anti-symmetric companion of the Borromean Markov trace:
+    `Q_borromean(h) := (tr_M(h) − tr_M(−h)) / 2`.
+
+    Defined by analogy with `Q_m` from PR #1153 for the torus family
+    `T(2, 2m)`, where `Q_m(h) = (q^{2m+1} − q^{−(2m+1)}) / (2 [2]_q)`
+    is the odd-h projection of the full Markov trace. -/
+noncomputable def Q_borromean (h : ℚ) : ℚ :=
+  (trM_borromean h - trM_borromean (-h)) / 2
+
+/-- **The bar-anti-symmetric companion of the Borromean Markov trace
+    vanishes identically.** Direct consequence of
+    `trM_borromean_bar_invariant`.
+
+    Categorical interpretation: the Borromean braid 𝓑₃ carries no
+    bar-anti-symmetric (Coulomb / EM-channel) component in its
+    Markov trace. This contrasts with the torus family `T(2, 2m)`,
+    whose `Q_m` is non-zero and equals `sinh((2m+1) η) / (2 cosh η)`
+    at substrate (PR #1153).
+
+    Closes the `Q_borromean_eq_zero : True := trivial` placeholder
+    in `QOU.BraidKnot.BarSymmetricBarAntiSymmetricIdentities` (added
+    by commit `d4d640ce7`, flagged as the next concrete Lean gap by
+    PR #1196's audit). -/
+theorem Q_borromean_eq_zero (h : ℚ) : Q_borromean h = 0 := by
+  unfold Q_borromean
+  rw [trM_borromean_bar_invariant]
+  ring
+
 end QOU.BraidsAndKnots

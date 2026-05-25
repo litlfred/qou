@@ -28,4 +28,30 @@ namespace hecke_engine_jvm {
 
     // Gram determinant.
     f64 gram_det(f64 q);
+
+    // ── Phase B — full surface ──
+
+    // Hecke character chi_lambda(beta) of partition `shape` on braid word
+    // `word` at substrate `q`. Each entry of `word` is a 2-element sequence
+    // [gen, exp] encoding a braid letter sigma_gen ^ exp. Empty `shape`
+    // returns 1.0 (trivial-character convention).
+    [Throws=HeckeError]
+    f64 chi_lambda_braid(sequence<u32> shape, sequence<sequence<i32>> word, f64 q);
+
+    // Littlewood-Richardson coefficient c^lambda_{mu nu}. Returns 0 when
+    // |lambda| != |mu| + |nu| or mu is not contained in lambda.
+    i64 lr_coefficient(sequence<u32> lambda, sequence<u32> mu, sequence<u32> nu);
+
+    // Arbitrary-precision Markov trace tr_M(beta). `word` entries are
+    // 2-element sequences [sign, gen] with sign in {-1, +1}. Returns the
+    // decimal-string representation of the trace at `dps` digits.
+    [Throws=HeckeError]
+    string tr_m_atomic_mpfr(sequence<sequence<i32>> word, u32 n_strands,
+                             string q_str, u32 dps);
+};
+
+[Error]
+interface HeckeError {
+    EngineError(string msg);
+    InvalidInput(string msg);
 };

@@ -50,6 +50,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import (
@@ -466,7 +467,7 @@ def main():
     #   - μ_u is back-solved from m_p via Skein-pair (Skein resolution
     #     would derive it from q_0 alone)
     import math
-    q_half = math.sqrt(Q_0)
+    q_half = mp.sqrt(Q_0)
     q_inv_half = 1.0 / q_half
     Z_PAIR = q_half + q_inv_half        # q^{1/2} + q^{-1/2}
     SLOPE = (Q_0 + 1.0/Q_0) / Z_PAIR    # (q+q⁻¹)/(q^{1/2}+q^{-1/2})

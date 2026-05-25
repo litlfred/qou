@@ -27,6 +27,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import subprocess
 import math
+from mpmath import mp
 
 import numpy as np
 # NF_BASIS moved to pyhecke.gram (M2b inversion).
@@ -37,7 +38,7 @@ from pyhecke.gram import NF_BASIS as _PG_NF_BASIS  # noqa: E402
 
 
 # ── constants ─────────────────────────────────────────────────
-PHI = (1.0 + math.sqrt(5.0)) / 2.0          # golden ratio
+PHI = (1.0 + float(mp.sqrt(5))) / 2.0          # golden ratio (substrate-precision sqrt, coerced to float for downstream float math)
 Q_STAR = 1.0 / (PHI ** 2)                   # ≈ 0.38197
 Q0 = 1.1099785955541805                     # physical substrate q
 
@@ -55,12 +56,12 @@ def repo_sha():
 
 def toffoli_diagonal(q):
     """P_{7,7}(q) = (q + q^{1/2} - 1) / (q + 1)."""
-    return (q + math.sqrt(q) - 1.0) / (q + 1.0)
+    return (q + float(mp.sqrt(q)) - 1.0) / (q + 1.0)
 
 
 def q_and_amplitude(q):
     """Φ(q) = (q - 1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1) / (2(q+1)^2)."""
-    s = math.sqrt(q)
+    s = float(mp.sqrt(q))
     return (q - 1.0) * (q * s + s - 1.0) * (q * s + q + 1.0) / (2.0 * (q + 1.0) ** 2)
 
 
@@ -115,7 +116,7 @@ def reduce_nf(terms, ha):
 def gram_matrix(q):
     """6×6 Gram matrix G_{ij} = tr_M(b_i · b_j) on the NF basis."""
     ha = q - 1.0 / q
-    z = 1.0 / (math.sqrt(q) + 1.0 / math.sqrt(q))
+    z = 1.0 / (float(mp.sqrt(q)) + 1.0 / float(mp.sqrt(q)))
     # tr_M of each basis element: tr_M(σ_i₁ σ_i₂ ... σ_iₖ) = z^(k reduced)
     # Precompute tr_M for each NF basis element length
     tr_basis = np.array([1.0, z, z, z ** 2, z ** 2, z ** 3])

@@ -25,11 +25,12 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpc, mpf
 
 mp.mp.dps = 50
 
-Q_0 = mpf("1.10970000000")
+Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 M_E_MEV = mpf("0.510998950")
 M_W_MEV = mpf("80379.0")
 M_Z_MEV = mpf("91187.6")

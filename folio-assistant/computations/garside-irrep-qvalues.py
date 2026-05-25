@@ -32,6 +32,7 @@ import json
 import sys
 import time
 import numpy as np
+from mpmath import mp
 from datetime import datetime, timezone
 from pathlib import Path
 from itertools import combinations
@@ -142,9 +143,9 @@ def seminormal_generator_matrix(tableaux, tab_to_idx, gen_idx, q_val):
                     j = tab_to_idx[key]
                     off_diag_sq = 1.0 - diag**2
                     if off_diag_sq > 0:
-                        mat[i, j] = math.sqrt(off_diag_sq)
+                        mat[i, j] = float(mp.sqrt(off_diag_sq))
                     else:
-                        mat[i, j] = -math.sqrt(-off_diag_sq)
+                        mat[i, j] = float(-mp.sqrt(-off_diag_sq))
 
     return mat
 
@@ -293,7 +294,7 @@ def find_ground_state_fast(Z, N):
             V = vertex_vol(ordering, i)
             if abs(V) < 1e-300:
                 return float('-inf')
-            total += math.log(abs(V))
+            total += mp.log(abs(V))
         return total
 
     best_phi = float('-inf')

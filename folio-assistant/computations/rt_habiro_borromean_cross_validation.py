@@ -29,6 +29,9 @@ from pathlib import Path
 import mpmath as mp
 from mpmath import mpc, mpf
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 mp.mp.dps = 50
 
 
@@ -56,10 +59,10 @@ def main():
     print(f"\n{'N':<4} {'q = exp(2πi/N)':<20} {'|tr_M|':<14} {'arg(tr_M) [rad]':<18} {'tr_M (complex)':<35}")
     print("-" * 95)
 
-    # Also evaluate at q_0 (real) for comparison
-    Q_0 = mpf("1.10970000000")
+    # Also evaluate at q_0 (real) for comparison — canonical 50-digit pin
+    Q_0 = mpf(Q_50_DIGIT_STR)
     tr_at_q0 = tr_M_borromean_closed_form(Q_0)
-    print(f"q_0  q_0 ≈ 1.1097          {float(abs(tr_at_q0)):<14.6f} {0.0:<18.6f} {complex(tr_at_q0)}")
+    print(f"q_0  q_0 ≈ 1.10998        {float(abs(tr_at_q0)):<14.6f} {0.0:<18.6f} {complex(tr_at_q0)}")
 
     for N in N_values:
         q = mp.exp(mpc(0, 2 * mp.pi / N))

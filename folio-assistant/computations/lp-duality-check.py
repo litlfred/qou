@@ -17,6 +17,7 @@ import math
 import numpy as np
 from pathlib import Path
 from datetime import datetime, timezone
+from mpmath import mp
 
 DIR = Path(__file__).parent
 
@@ -38,21 +39,21 @@ print("=" * 70)
 
 # ── 1. Corrected Markov trace ───────────────────────────────────
 print("\n─── 1. Corrected Markov trace ───")
-z_val = 1.0 / (math.sqrt(q0) + 1.0 / math.sqrt(q0))
+z_val = 1.0 / (mp.sqrt(q0) + 1.0 / mp.sqrt(q0))
 tr_e_corrected = z_val ** 3
 tr_e_vertex_product = HA0 * z_val**2 + z_val  # WRONG (old)
 
-print(f"  z = 1/(√q + 1/√q) = {z_val:.15f}")
-print(f"  tr_M(e⁻) = z³     = {tr_e_corrected:.15f}  ← CORRECT")
-print(f"  hz² + z            = {tr_e_vertex_product:.15f}  ← WRONG (vertex product)")
-print(f"  Difference          = {abs(tr_e_corrected - tr_e_vertex_product):.6e}")
+print(f"  z = 1/(√q + 1/√q) = {float(z_val):.15f}")
+print(f"  tr_M(e⁻) = z³     = {float(tr_e_corrected):.15f}  ← CORRECT")
+print(f"  hz² + z            = {float(tr_e_vertex_product):.15f}  ← WRONG (vertex product)")
+print(f"  Difference          = {float(abs(tr_e_corrected - tr_e_vertex_product)):.6e}")
 print(f"  Witness G[5,5]      = {G[5,5]:.15f}")
 
 # Check: the witness Gram matrix uses WHICH trace?
 # G[5,5] = tr_M(e⁻ · e⁻) — this is tr_M((σ₀σ₁σ₀)²)
 # The diagonal should be tr_M(b_i²), and t[5] = tr_M(e⁻)
 print(f"  Witness t[5]        = {t[5]:.15f}")
-print(f"  Note: witness uses t[5] = {t[5]:.6f}, z³ = {tr_e_corrected:.6f}")
+print(f"  Note: witness uses t[5] = {t[5]:.6f}, z³ = {float(tr_e_corrected):.6f}")
 if abs(t[5] - tr_e_corrected) > 0.01:
     print(f"  ⚠ MISMATCH: witness t[5] ≠ z³. Witness may use old trace.")
 else:

@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+# archimedean_by_design: hypothesis-test script searching whether
+#   sums of 2|sin(2π·k/5)| at the five branch phases of X_5 match
+#   the missing prefactor in the mass-tower compute. The math.sin
+#   calls are scalar but the entire script is exploratory branch-
+#   phase fitting (matches the probe/audit/experiment exemption
+#   spirit per CLAUDE.md §7c). Tagging avoids per-site swap cascade
+#   for what is effectively a numerical-experiment script.
 """
 BRANCH-PHASE FIT TO MASS-TOWER MISSING PREFACTOR
 

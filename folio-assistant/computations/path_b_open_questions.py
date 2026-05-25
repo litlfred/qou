@@ -42,6 +42,7 @@ from pathlib import Path
 
 import numpy as np
 import sympy as sp
+from mpmath import mp
 
 COMP_DIR = Path(__file__).parent
 sys.path.insert(0, str(COMP_DIR))
@@ -411,9 +412,9 @@ def main() -> int:
     print(f"\n  Hypothesis tests (target residual = {residual:.8f}):\n")
 
     # H1: fractional power (e1/e2)^α for some α near 1
-    alpha = np.log(target) / np.log(raw_ratio)
-    print(f"  H1 (fractional power): (e1/e2)^α = target ⇒ α = {alpha:.10f}")
-    print(f"      α - 1 = {alpha-1:.6e}")
+    alpha = mp.log(target) / mp.log(raw_ratio)
+    print(f"  H1 (fractional power): (e1/e2)^α = target ⇒ α = {float(alpha):.10f}")
+    print(f"      α - 1 = {float(alpha-1):.6e}")
     # Check if α has a "nice" form like h/(h-1) for some hook
     candidates_alpha = []
     for h in [2, 3, 4, 5, 6, 7]:
@@ -426,7 +427,7 @@ def main() -> int:
     candidates_alpha.sort(key=lambda x: abs(x[1] - alpha))
     print(f"      closest rational forms for α:")
     for name, val in candidates_alpha[:3]:
-        print(f"        {name:<8} = {val:.6f}  Δ={abs(val-alpha):.4e}")
+        print(f"        {name:<8} = {val:.6f}  Δ={float(abs(val-alpha)):.4e}")
 
     # H2: q^{1/5} where 5 = corner hook
     h_corner = 5
@@ -484,7 +485,7 @@ def main() -> int:
     # Verdict: rank H1-H4 by quality
     print(f"\n  Hypothesis ranking (lower |Δ| = better):")
     h1_err = abs(target - raw_ratio ** alpha)
-    print(f"    H1 (fractional power): |Δ| = {h1_err:.4e}  (tautological)")
+    print(f"    H1 (fractional power): |Δ| = {float(h1_err):.4e}  (tautological)")
     print(f"    H2 (q^(1/5)):          |Δ| = {abs(q15 - residual):.4e}  ★")
     print(f"    H3 (best q^(c/h)):     |Δ| = {h3_best[2]:.4e}")
     print(f"    H4 (two-cell prod):    |Δ| = {h4_best[2]:.4e}")

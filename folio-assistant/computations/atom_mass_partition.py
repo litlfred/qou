@@ -23,6 +23,7 @@ import math
 import numpy as np
 from itertools import combinations
 from functools import lru_cache
+from mpmath import mp
 import sys
 from pathlib import Path
 
@@ -183,7 +184,7 @@ def hecke_generator_matrix(tableaux, k):
                     diag_i = HA / q_number(rho)
                     diag_j = HA - diag_i  # trace = HA
                     bc = diag_i * diag_j + 1  # det = -1
-                    off = math.sqrt(abs(bc))
+                    off = float(mp.sqrt(abs(bc)))
                     if bc < 0:
                         off = -off
 
@@ -259,7 +260,7 @@ def compute_partition_invariant(ordering, partition, cc_fn=crossing_coeff):
         tr_val = np.trace(M_chain).real
         if abs(tr_val) < 1e-300:
             return float('inf'), d
-        Phi += math.log(abs(tr_val))
+        Phi += mp.log(abs(tr_val))
 
     return Phi, d
 
@@ -312,10 +313,10 @@ if __name__ == "__main__":
     print("─" * 55)
     for lam, r in sorted(results.items()):
         total += r['contribution']
-        print(f"{str(lam):>12s} │ {r['dim']:>4d} │ {r['weight']:>8.4f} │ {r['Phi']:>+10.4f} │ {r['contribution']:>+10.4f}")
+        print(f"{str(lam):>12s} │ {r['dim']:>4d} │ {r['weight']:>8.4f} │ {float(r['Phi']):>+10.4f} │ {float(r['contribution']):>+10.4f}")
 
     print("─" * 55)
-    print(f"{'Total':>12s} │      │          │            │ {total:>+10.4f}")
+    print(f"{'Total':>12s} │      │          │            │ {float(total):>+10.4f}")
     print()
     print(f"Compare: Φ_std (transfer matrix) for ppnn = -1.9098")
-    print(f"Full Markov: {total:.4f}")
+    print(f"Full Markov: {float(total):.4f}")

@@ -17,6 +17,7 @@ Usage:
 
 import math, sys
 from pathlib import Path
+from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 from witness_base import WitnessBuilder
@@ -58,7 +59,7 @@ def vertex_volume(crossings):
 
 
 def Phi1(vols):
-    return sum(math.log(abs(v)) for v in vols if abs(v) > 1e-300)
+    return sum(mp.log(abs(v)) for v in vols if abs(v) > 1e-300)
 
 
 def atom_gens(Z, N):
@@ -90,7 +91,7 @@ def scan_trefoils(Z_A, N_A, Z_B, N_B, label, obs, max_k=30):
     V1_ub = vertex_volume(g1_A + g1_B)
     Phi_ub = Phi1([V0_ub, V1_ub])
 
-    print("  {:>12s}: unbonded Phi_1 = {:.4f}".format(label, Phi_ub))
+    print("  {:>12s}: unbonded Phi_1 = {:.4f}".format(label, float(Phi_ub)))
     print("  {:>4s} {:>12s} {:>12s} {:>10s} {:>10s} {:>10s}".format(
         "k", "Phi_bond", "binding", "E(eV)", "marginal", "total_E"))
     print("  " + "-" * 62)
@@ -118,7 +119,7 @@ def scan_trefoils(Z_A, N_A, Z_B, N_B, label, obs, max_k=30):
             marker = " ← exhausted"
 
         print("  {:>4d} {:>12.4f} {:>12.6f} {:>10.4f} {:>10.4f} {:>10.4f}{}".format(
-            k, Phi_bond, bind, E, marginal, E, marker))
+            k, float(Phi_bond), float(bind), float(E), float(marginal), float(E), marker))
 
         prev_E = E
 
@@ -152,7 +153,7 @@ for bname, ZA, NA, ZB, NB, obs in bond_types:
     print()
     results, closest = scan_trefoils(ZA, NA, ZB, NB, bname, obs)
     print("  → Closest to {:.2f} eV: k={}, E={:.4f} eV (err {:+.1f}%)".format(
-        obs, closest['k'], closest['E'], (closest['E']/obs - 1)*100))
+        obs, closest['k'], float(closest['E']), float((closest['E']/obs - 1)*100)))
     bond_results[bname] = closest
     print()
 
@@ -164,7 +165,7 @@ print("MOLECULES WITH LP-SELECTED TREFOIL COUNT PER BOND TYPE")
 print("=" * 70)
 print()
 for bname, data in bond_results.items():
-    print("  {}: k = {} trefoils/bond → {:.4f} eV".format(bname, data['k'], data['E']))
+    print("  {}: k = {} trefoils/bond → {:.4f} eV".format(bname, data['k'], float(data['E'])))
 print()
 
 hh_k = bond_results['H-H']['k']
@@ -232,7 +233,7 @@ print("  {:>8s} {:>10s} {:>10s} {:>8s}".format("Mol", "Predicted", "Observed", "
 print("  " + "-" * 40)
 for name, pred, obs in molecules:
     err = (pred/obs - 1)*100 if pred > 0 else float('nan')
-    print("  {:>8s} {:>8.2f} eV {:>8.2f} eV {:>+7.1f}%".format(name, pred, obs, err))
+    print("  {:>8s} {:>8.2f} eV {:>8.2f} eV {:>+7.1f}%".format(name, float(pred), obs, float(err)))
 
 # Witness
 w = WitnessBuilder("molecular-trefoil-scan", engine="python")
@@ -245,7 +246,7 @@ w.add_parameter("q", q0)
 w.add_parameter("E_mol_eV", E_mol)
 for bname, data in bond_results.items():
     w.add_data("bond_" + bname.replace("-",""), {
-        "k_trefoils": data['k'], "E_eV": data['E'],
+        "k_trefoils": data['k'], "E_eV": float(data['E']),
     })
 w.add_data("molecules", [{"name": n, "pred_eV": p, "obs_eV": o}
                           for n, p, o in molecules])

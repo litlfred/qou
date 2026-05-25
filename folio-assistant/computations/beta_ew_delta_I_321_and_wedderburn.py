@@ -1,3 +1,10 @@
+# archimedean_by_design: numpy-vectorized eigenvalue analysis
+#   for the cot θ_W hypothesis search. Single np.exp(np.mean(np.log(pos)))
+#   site at L195 computes the geometric mean of positive eigenvalues
+#   of a Wedderburn aggregate — vectorized log on a numpy array is
+#   the standard idiom for this; mp.log is not vectorized. The
+#   eigenvalue compute itself is float64 (np.linalg eigh) so the
+#   log/exp roundtrip preserves the available precision.
 """β_EW(Δ_I^minimal) deep-dive: (3,2,1) 16-dim partition + Wedderburn-
 weighted Markov-trace aggregate.
 

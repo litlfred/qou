@@ -32,6 +32,7 @@ Usage:
 
 import math, sys
 from pathlib import Path
+from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
@@ -118,7 +119,7 @@ def compute_phi1(ordering, gluon=True):
         v_full = w_s * lam_s + w_d * v_std + w_a * lam_a
 
         if abs(v_full) > 1e-300:
-            phi += math.log(abs(v_full))
+            phi += mp.log(abs(v_full))
 
     return phi
 
@@ -185,7 +186,7 @@ def molecular_phi1(ord_A, ord_B, n_bond_crossings=0, gluon=True):
         v_full = w_s * lam_s + w_d * v_std + w_a * lam_a
 
         if abs(v_full) > 1e-300:
-            phi += math.log(abs(v_full))
+            phi += mp.log(abs(v_full))
 
     return phi
 
@@ -244,11 +245,11 @@ for Z, N, sym, m_obs in isotopes:
     atom_phi[sym] = phi
 
     print("{:>4s} {:>3d} {:>3d} {:>5d} {:>10.4f} {:>10.3f} {:>10.3f} {:>+7.3f}%".format(
-        sym, Z, N, len(o), phi, m_pred, m_obs, err))
+        sym, Z, N, len(o), float(phi), float(m_pred), m_obs, float(err)))
 
 mae_mass = sum(mass_errors) / len(mass_errors)
 print()
-print("  Mass MAE: {:.4f}%".format(mae_mass))
+print("  Mass MAE: {:.4f}%".format(float(mae_mass)))
 
 # ══════════════════════════════════════════════════════════════
 # §2. MOLECULAR BINDING (same framework)
@@ -297,6 +298,8 @@ bond_results = {}
 for bname, ZA, NA, ZB, NB, obs in bond_types:
     k, E = scan_bond(ZA, NA, ZB, NB, bname, obs)
     err = (E/obs - 1)*100 if E > 0 else float('nan')
+    err = float(err) if not isinstance(err, float) else err
+    E = float(E) if not isinstance(E, float) else E
     print("{:>8s} {:>4d} {:>8.2f} eV {:>8.2f} eV {:>+7.1f}%".format(
         bname, k, E, obs, err))
     bond_results[bname] = {'k': k, 'E': E, 'obs': obs}
@@ -330,13 +333,13 @@ for name, bonds, obs in molecules:
     err = (E/obs - 1)*100 if E > 0 else float('nan')
     desc = " + ".join("{}×{}".format(n, b) for b, n in bonds)
     print("{:>10s} {:>30s} {:>8.2f} eV {:>8.2f} eV {:>+7.1f}%".format(
-        name, desc, E, obs, err))
+        name, desc, float(E), obs, float(err)))
     mol_results.append((name, E, obs, err))
 
 pos_mol = [r for r in mol_results if r[1] > 0]
 mae_mol = sum(abs(r[3]) for r in pos_mol) / len(pos_mol) if pos_mol else 0
 print()
-print("  Molecular MAE: {:.1f}%".format(mae_mol))
+print("  Molecular MAE: {:.1f}%".format(float(mae_mol)))
 
 # ══════════════════════════════════════════════════════════════
 # WITNESS
@@ -356,17 +359,17 @@ w.add_parameter("w_a", w_a)
 w.add_parameter("E_mol_eV", E_mol)
 w.add_parameter("kappa_MeV", M_E_MEV)
 
-w.add_data("mass_mae_pct", mae_mass)
-w.add_data("molecular_mae_pct", mae_mol)
+w.add_data("mass_mae_pct", float(mae_mass))
+w.add_data("molecular_mae_pct", float(mae_mol))
 
 for Z, N, sym, obs in isotopes:
     phi = atom_phi[sym]
     mc = Z*M_P_MEV + N*M_N_MEV + Z*M_E_MEV
     mp = mc + M_E_MEV * phi
     w.add_data("mass_"+sym, {
-        "Z": Z, "N": N, "Phi1": phi,
-        "M_pred": mp, "M_obs": obs,
-        "error_pct": (mp-obs)/obs*100,
+        "Z": Z, "N": N, "Phi1": float(phi),
+        "M_pred": float(mp), "M_obs": obs,
+        "error_pct": float((mp-obs)/obs*100),
     })
 
 for bname, data in bond_results.items():

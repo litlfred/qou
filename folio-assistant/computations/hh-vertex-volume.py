@@ -23,6 +23,7 @@ Usage:
 
 import math, sys
 from pathlib import Path
+from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 from witness_base import WitnessBuilder
@@ -77,7 +78,7 @@ def vertex_volume(crossings):
 
 def Phi1_from_volumes(vols):
     """Φ₁ = Σ ln|V̂_i|"""
-    return sum(math.log(abs(v)) for v in vols if abs(v) > 1e-300)
+    return sum(mp.log(abs(v)) for v in vols if abs(v) > 1e-300)
 
 
 # ══════════════════════════════════════════════════════════════
@@ -109,7 +110,7 @@ print("  V̂₀(H) = {:.6f}  (sym={:.6f}, std={:.6f}, alt={:.6f})".format(
 print("  V̂₁(H) = {:.6f}  (sym={:.6f}, std={:.6f}, alt={:.6f})".format(
     V1_H, sp1_H, std1_H, ap1_H))
 Phi_H = Phi1_from_volumes([V0_H, V1_H])
-print("  Φ₁(H) = ln|V̂₀| + ln|V̂₁| = {:.6f}".format(Phi_H))
+print("  Φ₁(H) = ln|V̂₀| + ln|V̂₁| = {:.6f}".format(float(Phi_H)))
 print()
 
 # ══════════════════════════════════════════════════════════════
@@ -127,7 +128,7 @@ Phi_ub = Phi1_from_volumes([V0_ub, V1_ub])
 
 print("H × H unbonded:")
 print("  V̂₀ = {:.6f}, V̂₁ = {:.6f}".format(V0_ub, V1_ub))
-print("  Φ₁(unbonded) = {:.6f}".format(Phi_ub))
+print("  Φ₁(unbonded) = {:.6f}".format(float(Phi_ub)))
 print()
 
 # ══════════════════════════════════════════════════════════════
@@ -157,7 +158,7 @@ def compute_H2_bond(bond_gen0, bond_gen1, label):
     print("      sym={:.6f}, std={:.6f}, alt={:.6f}".format(sp0, std0, ap0))
     print("    Gen 1: {} crossings, V̂₁ = {:.6f}".format(len(gen1), V1))
     print("      sym={:.6f}, std={:.6f}, alt={:.6f}".format(sp1, std1, ap1))
-    print("    Φ₁ = {:.6f}, binding = {:.6f}, E = {:.4f} eV".format(Phi, bind, E))
+    print("    Φ₁ = {:.6f}, binding = {:.6f}, E = {:.4f} eV".format(float(Phi), float(bind), float(E)))
     return V0, V1, Phi, bind, E
 
 
@@ -246,7 +247,7 @@ w.add_parameter("w_alt", w_alt)
 w.add_parameter("E_mol_eV", E_mol)
 w.add_data("H_gen0_n_crossings", len(H_gen0))
 w.add_data("H_gen1_n_crossings", len(H_gen1))
-w.add_data("Phi_H_isolated", Phi_H)
-w.add_data("Phi_HH_unbonded", Phi_ub)
+w.add_data("Phi_H_isolated", float(Phi_H))
+w.add_data("Phi_HH_unbonded", float(Phi_ub))
 w.save()
 print("\nDone.")
