@@ -241,7 +241,7 @@ def extract_h_polynomial_coefficients(func, max_order=10):
     return [coeffs[2 * k] for k in range(max_order // 2 + 1)]
 
 
-def compare_at_h_order(coeffs_family_a, coeffs_jones, coeffs_exact, max_order=10):
+def compare_at_h_order(coeffs_family_a, coeffs_jones, coeffs_exact):
     """Per even h-order, report Family-A vs Jones vs exact-anchor
     coefficients and the deltas.
     """
@@ -267,6 +267,14 @@ def compare_at_h_order(coeffs_family_a, coeffs_jones, coeffs_exact, max_order=10
 
 def main():
     set_compute_dps()
+
+    # Construct the witness builder early so `durationMs` covers the
+    # full compute, not just the JSON-build step (copilot PR #1272 review).
+    w = WitnessBuilder(
+        "gamma-gamma-pair-production-decomposition",
+        engine="mpmath",
+    )
+    w.set_audit_only("docs/audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md")
 
     # ─── Step 1: point evaluation at q₀ ───────────────────────────
     q = q0
@@ -303,7 +311,7 @@ def main():
     # h-Taylor expansion.  Report it only as a POINT value at q₀.
     coeffs_ex = [mpf("nan")] * len(coeffs_fa)
 
-    rows = compare_at_h_order(coeffs_fa, coeffs_jn, coeffs_ex, max_order)
+    rows = compare_at_h_order(coeffs_fa, coeffs_jn, coeffs_ex)
     print(
         f"    {'h^k':>5s} | {'family_a':>16s} | {'jones':>16s} | "
         f"{'exact_anchor':>16s} | {'Δ(jn−fa)':>16s} | {'Δ(ex−fa)':>16s}"
@@ -319,10 +327,6 @@ def main():
     print()
 
     # ─── Step 3: write witness ─────────────────────────────────────
-    w = WitnessBuilder(
-        "gamma-gamma-pair-production-decomposition",
-        engine="mpmath",
-    )
     w.set_description(
         "γγ̄ pair-production decomposition of β_Bor = (σ₀σ₁⁻¹)³ at "
         "each Gröbner-Shirshov filtration order (h-power).  Compares "
