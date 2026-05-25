@@ -136,10 +136,15 @@ B_5 braid words length ≤ 8 (more candidates than B_3 — `4^L` vs `2^L`
 sign choices, plus 4 generators vs 2). After Phase B-1 the seminormal
 matrices come from pyhecke_native automatically.
 
-**Performance:** B_5 search space at L=8 is ~131,072 sign × gen
-combinations — manageable in Python. Expected wall ~5–15 minutes for
-the full tritium R5-full sweep with pyhecke_native chi_lambda_braid
-on the back end.
+**Performance:** B_5 search space at L=8 has 4 generators × 2 sign
+choices per crossing, so the raw enumeration is `(4·2)^8 = 8^8 =
+16,777,216` words. After the same adjacent-cancellation + canonical-
+basis dedup pruning used at B_3 (which reduces 13,088 raw words to
+2,556 evaluated candidates — a ~5× reduction factor), expected
+evaluated candidates at B_5 are ~3.4M. Wall time with pyhecke_native
+chi_lambda_braid in the back end: ~30 min – 2 hr per nucleon at
+50 dps. Manageable but no longer "minutes-scale" — Rust kernel
+parallelisation likely needed for joint deuteron + ³He + ³H sweep.
 
 ### Phase B-3 — R5-full for ⁴He (H_12)
 
