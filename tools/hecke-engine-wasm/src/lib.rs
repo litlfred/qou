@@ -141,6 +141,82 @@ pub fn qou_lr_coefficient(lambda_json: &str, mu_json: &str, nu_json: &str) -> Re
     Ok(hecke_engine::littlewood_richardson::lr_coefficient(&lambda, &mu, &nu))
 }
 
+// ── Phase B — pure-Rust (no MPFR) surface ──
+//
+// These mirror the canonical Gram/character primitives that
+// hecke-engine-{c,node,jvm} all expose. WASM uses double-precision
+// throughout (no MPFR available in browser sandbox); the
+// `tr_m_atomic_mpfr` arbitrary-precision evaluator is deliberately
+// omitted for this build target. Browser consumers needing
+// > double precision can still serialise the braid word and POST
+// it to a server-side endpoint backed by the native crate.
+
+/// Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
+#[wasm_bindgen]
+pub fn qou_markov_z(q: f64) -> f64 {
+    hecke_engine::gram::markov_z(q)
+}
+
+/// Hecke relation coefficient `h = q − q⁻¹`.
+#[wasm_bindgen]
+pub fn qou_hecke_h(q: f64) -> f64 {
+    hecke_engine::gram::hecke_h(q)
+}
+
+/// Markov-trace weights on the NF basis as a JSON array of 6 floats.
+/// JSON-string return to avoid pulling in `serde-wasm-bindgen`
+/// for a single small array; browser consumers `JSON.parse()` once.
+#[wasm_bindgen]
+pub fn qou_trace_weights(q: f64) -> String {
+    let w = hecke_engine::gram::trace_weights(q);
+    serde_json::to_string(&w.to_vec())
+        .expect("infallible serialisation of Vec<f64>")
+}
+
+/// Gram matrix `G_ij = tr_M(b_i · b_j)` as a JSON 6×6 array of floats.
+#[wasm_bindgen]
+pub fn qou_gram_matrix(q: f64) -> String {
+    let m = hecke_engine::gram::gram_matrix(q);
+    let rows: Vec<Vec<f64>> = m.iter().map(|r| r.to_vec()).collect();
+    serde_json::to_string(&rows)
+        .expect("infallible serialisation of Vec<Vec<f64>>")
+}
+
+/// Gram determinant — delegates to `hecke_engine::gram::det_6x6`.
+#[wasm_bindgen]
+pub fn qou_gram_det(q: f64) -> f64 {
+    hecke_engine::gram::det_6x6(&hecke_engine::gram::gram_matrix(q))
+}
+
+/// Hecke character `χ_λ(β)` of partition `shape` on braid word `word` at `q`.
+///
+/// `word_json` is a JSON 2D array `[[gen, exp], ...]`; empty `shape`
+/// returns 1.0 (trivial-character convention).
+#[wasm_bindgen]
+pub fn qou_chi_lambda_braid(shape_json: &str, word_json: &str, q: f64)
+    -> Result<f64, JsValue>
+{
+    let shape: Vec<usize> = serde_json::from_str(shape_json)
+        .map_err(|e| JsValue::from_str(&format!("shape parse: {}", e)))?;
+    let word_raw: Vec<Vec<i64>> = serde_json::from_str(word_json)
+        .map_err(|e| JsValue::from_str(&format!("word parse: {}", e)))?;
+    let mut word_pairs: Vec<(i32, u32)> = Vec::with_capacity(word_raw.len());
+    for pair in word_raw.iter() {
+        if pair.len() != 2 {
+            return Err(JsValue::from_str(
+                "qou_chi_lambda_braid: each word entry must be a 2-element [gen, exp] array",
+            ));
+        }
+        if pair[1] < 0 {
+            return Err(JsValue::from_str(
+                "qou_chi_lambda_braid: exponent must be non-negative",
+            ));
+        }
+        word_pairs.push((pair[0] as i32, pair[1] as u32));
+    }
+    Ok(hecke_engine::seminormal::chi_lambda_braid(&shape, &word_pairs, q))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
