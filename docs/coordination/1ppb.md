@@ -278,3 +278,44 @@ PR #777 session concluded with **clear negative results** and a roadmap for foll
 - Content updates with `:val[...]` anti-staleness: 4 files + 8 registry entries
 
 Total: 33 commits, +5500 lines, -200 lines.
+
+---
+
+## 2026-05-25 PR #1228 — Geom-derivation audit + chi_lambda wiring (atlas delivered)
+
+**Session branch**: `claude/geom-derivation-bug-squash-2026-05-25`
+**Open companion PRs (mine)**: [#1212](https://github.com/litlfred/qou/pull/1212), [#1214](https://github.com/litlfred/qou/pull/1214), [#1220](https://github.com/litlfred/qou/pull/1220), [#1228](https://github.com/litlfred/qou/pull/1228)
+
+### Delivered
+
+- **`pyhecke_native.chi_lambda_braid` wired in Python** via `maturin build --release` + `pip install wheel` (verified locally, ~146 ms per chi at H_12)
+- **First multi-block measurement (B_3)**: per-partition Borromean characters at q_0; weights 25%/50%/25% across 3 blocks
+- **Full 77-partition χ_λ(β_⁴He) table**: computed in 11s; **37/37 conjugate pairs match exactly** (empirical bar-symmetry confirmation)
+- **Generic atlas infrastructure** `pyhecke_jones_markov_atlas.py`:
+  - `solve_jones_markov_h_n(n, q)` for arbitrary H_n via cycle-type Schur-orthogonality
+  - Atlases verified for 2H/3H/3He/4He: Σ y_λ · dim_λ = 1.000000 exact
+  - 4He atlas correction: +5.87% → +5.18% (small ~0.7%; confirms multi-block alone isn't the dominant gap)
+
+### Cross-coord with sibling PRs
+
+| sibling | relationship | resolution |
+|---|---|---|
+| [#1229](https://github.com/litlfred/qou/pull/1229) probe-1 | UPSTREAM (Δ_λ bar-invariance LP) | independently confirmed bar-invariance; complementary to my α-cluster work |
+| [#1238](https://github.com/litlfred/qou/pull/1238) char-variety | UPSTREAM-CITED | A-polynomial framework role; will cite in §10 follow-up |
+| [#1242](https://github.com/litlfred/qou/pull/1242) AJ-conjecture | UPSTREAM-CITED | AJ recurrence over ℤ[q^±1] replaces SDP at low-N — significant infra reuse |
+| [#1127](https://github.com/litlfred/qou/pull/1127) per_generator_V_hat | POTENTIAL DUPLICATION | their Plancherel-weighted V̂ vs my Jones-Markov y_λ — different bases, both useful; document complementary |
+| [#1244](https://github.com/litlfred/qou/pull/1244) ledger sweep | INFO | confirms my #1228 is DOWNSTREAM of #1211 bar-symmetry |
+| [#1246](https://github.com/litlfred/qou/pull/1246) CAL-2 | ADJACENT | upstream-constant question (q_0 cohomology); reinforces single-load-bearing-fix intuition |
+
+### Wrapper coord resolved
+
+Sibling 03:44 comment offered to take `pyhecke/chi_lambda_eval.py` wrapper on probe-2 branch. **My atlas already provides this functionality** via `pyhecke_native.chi_lambda_braid` direct usage + cycle-type linear system. Sibling can build inverse-Gram surface in parallel; the two are complementary (atlas uses Schur orthogonality, inverse-Gram uses NF basis projection).
+
+### Next concrete (non-overlapping) action
+
+- **Extend atlas to A=5 (5Li, n=15, 176 partitions)** — ~40 min wall via cycle-type LP; tests whether the gap-region atoms (5Li/6Li/7Li unwired in production) get sensible Jones-Markov y_λ
+- **Closed-form q-Schur principal specialization** for y_λ at arbitrary n — would eliminate the cycle-type LP bottleneck for A ≥ 5 atoms
+
+### Bottom line
+
+The chi_lambda infrastructure for **all atoms A ≤ 4 is delivered and verified**. A=5-8 deferable via current cycle-type approach (40 min - 40 hours). A ≥ 8 needs closed-form. The 4He multi-block correction (~0.7%) confirms sibling PR #1220's finding that **multi-block alone doesn't close the 5.87% gap** — the H_3-vs-H_{3A} legacy bug (sibling commit `c70707397`) is the dominant structural cause.
