@@ -146,7 +146,30 @@ Per [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/
 
 **Other rectangles ((9,9), 9-row (2,...,2)) are LESS deep** — so it's not "any rectangle", specifically the **3-row vs A-row** Schur-Weyl partner of the canonical 3-strand-per-nucleon decomposition.
 
-**Scan coverage:** 16/385 partitions, including the most natural "balanced" non-rectangulars. Uncovered tail: large-d_λ shapes like (5,5,5,3) (d=875k), (4,4,4,3,3) (d=875k), (6,5,4,3) (d=3.7M) — infeasible for Lanczos in <hours. The conjecture **could** still be falsified by an uncovered shape, but no scanned shape with d_λ ≤ 150k beats the rectangle.
+**Scan coverage:** 16/385 partitions with d_λ ≤ 150k. **Probe (4c) extended this to four shapes with d_λ ∈ [150k, 1M] and FALSIFIED the conjecture** — see next section.
+
+## Gap-narrowing probe (4c) — large-d_λ tail FALSIFIES the rectangular conjecture
+
+Per [`probe_4c_li6_large_d_scan.py`](../../folio-assistant/computations/probe_4c_li6_large_d_scan.py), four "almost-rectangular" non-rectangular shapes:
+
+| Shape | d_λ | min_eig | beats −96.52? |
+|---|---:|---:|---:|
+| **(3,3,3,3,2,2,2)** | **364,650** | **−116.71** | **✓ FALSIFIES** (deepest) |
+| **(5,5,5,3)** | **875,160** | **−110.31** | **✓ FALSIFIES** |
+| **(4,4,4,3,3)** | **875,160** | **−109.81** | **✓ FALSIFIES** |
+| (10,4,4) | 259,896 | −80.67 | no |
+| (3,3,3,3,3,3) rect | 87,516 | −96.52 | benchmark |
+
+**Verdict (REVERSAL):** The (A,A,A) / (3,...,3) rectangle is **NOT** the global PSD-dominant block at A=6. Three "almost-rectangular" shapes (one cell short, two cells short, or with a small staircase tail) go up to 20 units deeper. **(3,3,3,3,2,2,2)** at d=364,650 is the new candidate dominant — a 7-row near-rectangle (transpose (7,7,4) — 3-row near-rectangle).
+
+**Structural reinterpretation:**
+- The "rectangle" prediction was a small-A coincidence — at A=4, (4,4,4) happened to be the dominant because no almost-rectangle in p(12)=77 had enough d_λ to beat it
+- At A=6, the partition space is large enough (p(18)=385) for almost-rectangles to dominate
+- **The actual PSD-dominance criterion appears to be**: ranks of balance + dimension scaling — partitions with ~7 rows, columns of length 3-4, dim ~ 300k-1M, achieve the deepest min_eig
+
+**Implication for the audit:** The Schur-Weyl correspondence observed at ⁴He IS real (the rectangle is *the local minimum among manageable shapes*), but it does NOT extend to a universal "3-strand-per-nucleon Schur-Weyl rectangle is dominant" law. The categorical mechanism must be something more general than "rectangular partitions are bar-invariant fixed points".
+
+The conjecture as stated is FALSIFIED at A=6. The pattern (a) clause needs revision.
 
 **Implication for Gap-narrowing:** The rectangular conjecture is now strongly supported empirically at A=4 AND A=6, with the (A,A,A)-shape uniquely identified. This is a real **categorical fingerprint of the nucleon decomposition** at the Wedderburn level — but per Probe (1), it does NOT close the binding-energy gap directly (the gap lives in trace-dominant low-row partitions; the rectangle has tiny y_λ).
 
@@ -171,6 +194,9 @@ Per [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/
 - [`probe_4_validate_lanczos_on_he4.py`](../../folio-assistant/computations/probe_4_validate_lanczos_on_he4.py) — validation: Python Lanczos vs Rust dense at (4,4,4)
 - [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/probe_4b_li6_non_rectangular_scan.py) — Probe (4b): 16-shape falsification scan; rectangle holds
 - [`probe-4b-li6-non-rectangular-scan.witness.json`](../../folio-assistant/computations/probe-4b-li6-non-rectangular-scan.witness.json) — per-shape min/max eigvals
+- [`probe_4c_li6_large_d_scan.py`](../../folio-assistant/computations/probe_4c_li6_large_d_scan.py) — Probe (4c): large-d_λ tail; **falsifies** rectangular conjecture
+- [`probe-4c-li6-large-d-scan.witness.json`](../../folio-assistant/computations/probe-4c-li6-large-d-scan.witness.json) — 4 large-d shapes, 3 falsify
+- [`2026-05-25-categorical-derivation-rectangular-conjecture.md`](2026-05-25-categorical-derivation-rectangular-conjecture.md) — categorical-derivation framing (predates falsification; needs revision)
 
 ## What this audit does NOT do
 
