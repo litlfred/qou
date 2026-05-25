@@ -1,6 +1,6 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-> **Status (revised 2026-05-24 — λ_scale ABSORBED INTO `Geom_full`).**
+> **Status — $\lambda_{\mathrm{scale}}$ ABSORBED INTO `Geom_full`.**
 >
 > Per [`docs/lambda-scale-absorbed-into-geom-full.md`](../../../docs/lambda-scale-absorbed-into-geom-full.md)
 > (canonical framing, settled 2026-05-23 in PR #1080),
