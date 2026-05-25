@@ -1,0 +1,125 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-25T18:09:43.037394+00:00",
+  "commitSha": "5c8756d0146c788889f257d54bb96d412ee7e9d2",
+  "assertions": [
+    {
+      "name": "family_a_matches_jones_at_h2",
+      "computed": "3.4894428159537027715e-39",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Family A's +3/4 h² coefficient is derived from Wedderburn dim sum on H_4; Jones polynomial's h² coefficient comes from the Markov trace of β_Bor scaled by 4. Their equality is a non-trivial theorem (Yekutieli 2015 / Markov trace ↔ Wedderburn)."
+    },
+    {
+      "name": "family_a_terminates_at_h2",
+      "computed": "2.1704154847450968566e-18",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Family A linking_weight = (1/4)·Σ_{λ⊢4} dim_q V_λ = 5/2 + (3/4) h² terminates exactly at h² (Lean-proved in lambda-scale-substrate-form.lean)."
+    },
+    {
+      "name": "jones_has_h4_or_higher_correction_above_unit_threshold",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Jones polynomial V(𝓑₃, q²) is degree-3 in q²; its expansion in h necessarily has terms beyond h².  Max |c_{2k>2}| ≈ 3.03 (the h⁴ coefficient).  Pass iff |c_{h⁴}| > 1."
+    },
+    {
+      "name": "gap_localisation_clean_winner",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Audit-internal localisation flag.  h₂-percentage of the exact-anchor gap = 91.9565%.  A clean localisation (>80% in either bucket) cleanly identifies the right refinement direction (Reading-A vs q-dilog tower).  Empirical: Reading-A (h² coefficient) accounts for ≈92% of the gap; q-dilog tower (h⁴+) accounts for ≈8%."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "gamma-gamma-pair-production-decomposition",
+  "scriptFile": "gamma_gamma_pair_production_decomposition.py",
+  "scriptHash": "69a0e14f6041",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "γγ̄ pair-production decomposition of β_Bor = (σ₀σ₁⁻¹)³ at each Gröbner-Shirshov filtration order (h-power).  Compares PROVED Family A linking_weight (which terminates at h²) against the Markov-trace-via-Jones-polynomial route (all orders in h) and against the CODATA-anchor target.  Localises whether the 2.89% Geom_full(𝓑₃) gap enters at h² (Reading-A hypothesis: +3/4 h² should be −G h²) or at h⁴⁺ (q-dilog tower hypothesis: Family A truncates higher-order corrections). Audit-only — no CODATA value flows into a prediction; the anchor inversion is for target reconstruction only.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "h0": "0.20906032198987941007",
+    "borromean_braid_word": "(σ₀·σ₁⁻¹)³",
+    "gamma_gamma_bar_factors": 3,
+    "max_h_order": 8
+  },
+  "data": {
+    "point_eval_at_q0": {
+      "family_a": "2.5327796636728840423",
+      "via_jones": "2.5269218186097884216",
+      "exact_anchor": "2.4599527843613171539",
+      "delta_exact_minus_family_a": "-0.072826879311566888401",
+      "delta_jones_minus_family_a": "-0.0058578450630956206798",
+      "delta_exact_minus_jones": "-0.066969034248471267721"
+    },
+    "h_order_decomposition": [
+      {
+        "h_order": 0,
+        "family_a": "2.5",
+        "jones": "2.5",
+        "exact_anchor": "nan",
+        "delta_jones_vs_fa": "0.0",
+        "delta_exact_vs_fa": "nan",
+        "delta_exact_vs_jones": "nan"
+      },
+      {
+        "h_order": 2,
+        "family_a": "0.75",
+        "jones": "0.75",
+        "exact_anchor": "nan",
+        "delta_jones_vs_fa": "-3.48944281595e-39",
+        "delta_exact_vs_fa": "nan",
+        "delta_exact_vs_jones": "nan"
+      },
+      {
+        "h_order": 4,
+        "family_a": "-1.82314900719e-40",
+        "jones": "-3.03125",
+        "exact_anchor": "nan",
+        "delta_jones_vs_fa": "-3.03125",
+        "delta_exact_vs_fa": "nan",
+        "delta_exact_vs_jones": "nan"
+      },
+      {
+        "h_order": 6,
+        "family_a": "4.55787251796e-29",
+        "jones": "-0.8095703125",
+        "exact_anchor": "nan",
+        "delta_jones_vs_fa": "-0.8095703125",
+        "delta_exact_vs_fa": "nan",
+        "delta_exact_vs_jones": "nan"
+      },
+      {
+        "h_order": 8,
+        "family_a": "-2.17041548475e-18",
+        "jones": "0.0387068300446",
+        "exact_anchor": "nan",
+        "delta_jones_vs_fa": "0.0387068300446",
+        "delta_exact_vs_fa": "nan",
+        "delta_exact_vs_jones": "nan"
+      }
+    ],
+    "gap_localisation": {
+      "point_gap_exact_minus_fa_at_q0": "0.072826879311566888401",
+      "point_gap_jones_minus_fa_at_q0": "0.0058578450630956206798",
+      "h2_coefficient_piece_estimate": "0.066969034248471267721",
+      "h4_plus_truncation_piece_estimate": "0.0058578450630956206798",
+      "h2_percentage_of_gap": "91.956479",
+      "interpretation": "Family A and Jones share the same h² coefficient (+3/4) by construction; their numerical disagreement at q₀ is entirely from h⁴+ Jones corrections Family A truncates.  If h2_percentage_of_gap >> 50%: hypothesis H₁ (Reading-A) is favored — the gap is in the h² coefficient (Family A's +3/4 should be the Reading-A value −G ≈ −0.916).  If h2_percentage_of_gap << 50%: hypothesis H₂ (q-dilog tower) is favored — the gap is in higher-order corrections Family A truncates."
+    }
+  }
+}
