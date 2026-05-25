@@ -1,0 +1,83 @@
+{
+  "description": "Canonical lepton braid words + per-braid mass tower probe (T6 followup)",
+  "computation": "canonical_lepton_braid_words",
+  "audit_only": true,
+  "precision_dps": 50,
+  "context": {
+    "purpose": "Build compute infrastructure for lepton braids at confinement levels (analog of per_generator_V_hat_3A for general H_n)",
+    "source_audit": "docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md",
+    "owner_directive": "use canonical braid word forms. make sure compute infra is there for all. should be something working at confinement levels"
+  },
+  "constants": {
+    "q_0": "1.1099785955541805752806677289528087346650276795181",
+    "h": "0.20906032198987946109993019567019569113603901455859",
+    "z": "0.49932033403359825002067994493580750360052408362741",
+    "Vol_4_1": "2.0298832128193072500115978049904475264466050157561",
+    "cal2_codata": "206.768283",
+    "cal_tau_codata": "3477.23"
+  },
+  "leptons": {
+    "electron (\u03c3_1\u00b3 T(2,3))": {
+      "knot": "T(2, 3) trefoil",
+      "H_n": 2,
+      "n_generators": 1,
+      "tr_M": "0.73020405950968234322512519661093175411032304785643",
+      "abs_tr_M": 0.7302040595096824,
+      "mass_dim_li2q_dropped": "0.62831749490324504522401364823371910198968121694483",
+      "V_hats_estimate": [
+        "0.73020405950968234322512519661093175411032304785643"
+      ],
+      "single_sum": "0.62831749490324504522401364823371910198968121694483",
+      "pair_sum": "0.0"
+    },
+    "muon_T25 (\u03c3_1\u2075 T(2,5))": {
+      "knot": "T(2, 5) cinquefoil",
+      "H_n": 2,
+      "n_generators": 1,
+      "tr_M": "0.99300224296350244097791373935257368804657611605482",
+      "abs_tr_M": 0.9930022429635025,
+      "mass_dim_li2q_dropped": "0.81819048101950208788465677025144787331872874066234",
+      "V_hats_estimate": [
+        "0.99300224296350244097791373935257368804657611605482"
+      ],
+      "single_sum": "0.81819048101950208788465677025144787331872874066234",
+      "pair_sum": "0.0"
+    },
+    "muon_4_1 (figure-eight, canonical paper)": {
+      "knot": "4_1 figure-eight",
+      "H_n": 3,
+      "n_generators": 2,
+      "tr_M": "0.19947581305978403661646744775949591015628212827587",
+      "abs_tr_M": 0.19947581305978404,
+      "mass_dim_li2q_dropped": "0.85723903198831191282125977466329409192929403566891",
+      "V_hats_estimate": [
+        "0.44662715217481352386062242766974398290510774068246",
+        "0.44662715217481352386062242766974398290510774068246"
+      ],
+      "single_sum": "0.80977691189467130339511837370237111293629001479807",
+      "pair_sum": "0.047462120093640609426141400960922978993004020870832"
+    },
+    "tau (\u03c3_1\u2077 T(2,7))": {
+      "knot": "T(2, 7) septafoil",
+      "H_n": 2,
+      "n_generators": 1,
+      "tr_M": "1.2992007991516733527030675350229290388619910344093",
+      "abs_tr_M": 1.2992007991516734,
+      "mass_dim_li2q_dropped": "-121001938558587252.33706739895671640521300155417997",
+      "V_hats_estimate": [
+        "1.2992007991516733527030675350229290388619910344093"
+      ],
+      "single_sum": "-121001938558587252.33706739895671640521300155417997",
+      "pair_sum": "0.0"
+    }
+  },
+  "verdict": "Crude per-generator V\u0302 = |tr_M|^(1/n_gens) placeholder does NOT close lepton mass ratios. T6 requires extending mass_at_3A_proper.per_generator_V_hat_3A to general H_n with proper Plancherel-weighted character sum for lepton braid words. Compute infrastructure gap identified; closes via chi_lambda_braid integration.",
+  "follow_up_required": [
+    "Generalise per_generator_V_hat_3A to per_generator_V_hat_general(n_strands, word)",
+    "Apply to electron \u03c3_1\u00b3 at H_2; verify against mass-endomorphism-tower.md V\u0302_e \u2248 0.594",
+    "Apply to muon 4_1 at H_3; obtain V\u0302_0, V\u0302_1 (currently unpublished in framework)",
+    "Apply Li_2^q canonical mass tower; check m_\u03bc/m_e against CODATA 206.77",
+    "Same for tau; check m_\u03c4/m_e against CODATA 3477.23"
+  ],
+  "timestamp": "2026-05-25T03:11:42+00:00"
+}
