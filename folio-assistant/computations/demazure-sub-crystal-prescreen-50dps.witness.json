@@ -1,0 +1,194 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T23:27:50.066875+00:00",
+  "commitSha": "414b4fd90594cd9a1b945fc6d5aff0fa9b7ee325",
+  "assertions": [
+    {
+      "name": "prescreen_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Scanned 22 scheme/H_n combinations against target h² = -G. Sanity check: search completed without error."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "demazure-sub-crystal-prescreen-50dps",
+  "scriptFile": "demazure_sub_crystal_h5_h6_h7_prescreen.py",
+  "scriptHash": "ab8f0d8ce38a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Pre-screen of Demazure-inspired sub-sum schemes at H_5, H_6, H_7 against Reading-A's h² target -G. Tests 6 normalization schemes (full Wedderburn, per-irrep, bar-symmetric, self-conjugate, two-row, rectangle). If any scheme yields h² ≈ -G after h⁰ normalization to 5/2, flag for deeper Demazure-characters investigation.",
+  "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
+  "parameters": {
+    "sample_q_strs": [
+      "1.05",
+      "1.11"
+    ],
+    "target_h2_minus_G": "-0.9159655941772190150546035"
+  },
+  "data": {
+    "per_N_results": {
+      "H_4": {
+        "S1_full_wedderburn_1overN": {
+          "a_0": "2.0",
+          "a_2": "0.6",
+          "a_2_normalized": "0.75",
+          "delta_vs_minus_G": "1.6659656"
+        },
+        "S2_per_irrep_dim_normalized": {
+          "a_0": "1.0",
+          "a_2": "0.233333333333",
+          "a_2_normalized": "0.583333333333",
+          "delta_vs_minus_G": "1.4992989"
+        },
+        "S3_bar_symmetric_class_avg": {
+          "a_0": "2.0",
+          "a_2": "0.666666666667",
+          "a_2_normalized": "0.833333333333",
+          "delta_vs_minus_G": "1.7492989"
+        },
+        "S4_self_conjugate_only": {
+          "a_0": "2.0",
+          "a_2": "1.0",
+          "a_2_normalized": "1.25",
+          "delta_vs_minus_G": "2.1659656"
+        },
+        "S5_two_row_only": {
+          "a_0": "2.5",
+          "a_2": "1.0",
+          "a_2_normalized": "1.0",
+          "delta_vs_minus_G": "1.9159656"
+        },
+        "S6_rectangle_only": {
+          "a_0": "2.0",
+          "a_2": "1.0",
+          "a_2_normalized": "1.25",
+          "delta_vs_minus_G": "2.1659656"
+        }
+      },
+      "H_5": {
+        "S1_full_wedderburn_1overN": {
+          "a_0": "3.7140811823",
+          "a_2": "2.88328529043",
+          "a_2_normalized": "1.9407796632",
+          "delta_vs_minus_G": "2.8567453"
+        },
+        "S2_per_irrep_dim_normalized": {
+          "a_0": "0.999959779319",
+          "a_2": "0.58847424873",
+          "a_2_normalized": "1.47124479629",
+          "delta_vs_minus_G": "2.3872104"
+        },
+        "S3_bar_symmetric_class_avg": {
+          "a_0": "3.99976895302",
+          "a_2": "3.15453111809",
+          "a_2_normalized": "1.9716958374",
+          "delta_vs_minus_G": "2.8876614"
+        },
+        "S4_self_conjugate_only": {
+          "a_0": "5.99958334801",
+          "a_2": "5.0532519117",
+          "a_2_normalized": "2.10566785166",
+          "delta_vs_minus_G": "3.0216334"
+        },
+        "S5_two_row_only": {
+          "a_0": "4.49974623203",
+          "a_2": "3.78243628033",
+          "a_2_normalized": "2.10147199714",
+          "delta_vs_minus_G": "3.0174376"
+        }
+      },
+      "H_6": {
+        "S1_full_wedderburn_1overN": {
+          "a_0": "6.90682266367",
+          "a_2": "11.198631351",
+          "a_2_normalized": "4.05346709202",
+          "delta_vs_minus_G": "4.9694327"
+        },
+        "S2_per_irrep_dim_normalized": {
+          "a_0": "0.999738755121",
+          "a_2": "1.32501657607",
+          "a_2_normalized": "3.3134070508",
+          "delta_vs_minus_G": "4.2293726"
+        },
+        "S3_bar_symmetric_class_avg": {
+          "a_0": "7.66397759243",
+          "a_2": "12.8432328955",
+          "a_2_normalized": "4.18948018201",
+          "delta_vs_minus_G": "5.1054458"
+        },
+        "S4_self_conjugate_only": {
+          "a_0": "15.9926818088",
+          "a_2": "30.9338498852",
+          "a_2_normalized": "4.83562579669",
+          "delta_vs_minus_G": "5.7515914"
+        },
+        "S5_two_row_only": {
+          "a_0": "6.33137416572",
+          "a_2": "10.250121664",
+          "a_2_normalized": "4.04735267405",
+          "delta_vs_minus_G": "4.9633183"
+        },
+        "S6_rectangle_only": {
+          "a_0": "4.99747790057",
+          "a_2": "10.3219305843",
+          "a_2_normalized": "5.1635698995",
+          "delta_vs_minus_G": "6.0795355"
+        }
+      },
+      "H_7": {
+        "S1_full_wedderburn_1overN": {
+          "a_0": "15.4480488237",
+          "a_2": "45.5378451159",
+          "a_2_normalized": "7.36951404599",
+          "delta_vs_minus_G": "8.2854796"
+        },
+        "S2_per_irrep_dim_normalized": {
+          "a_0": "0.999080386795",
+          "a_2": "2.39214288032",
+          "a_2_normalized": "5.98586187843",
+          "delta_vs_minus_G": "6.9018275"
+        },
+        "S3_bar_symmetric_class_avg": {
+          "a_0": "15.73121176",
+          "a_2": "46.14292334",
+          "a_2_normalized": "7.33302113724",
+          "delta_vs_minus_G": "8.2489867"
+        },
+        "S4_self_conjugate_only": {
+          "a_0": "19.9786558032",
+          "a_2": "55.2190967028",
+          "a_2_normalized": "6.90976125306",
+          "delta_vs_minus_G": "7.8257268"
+        },
+        "S5_two_row_only": {
+          "a_0": "11.3222629507",
+          "a_2": "30.5773429641",
+          "a_2_normalized": "6.75159707414",
+          "delta_vs_minus_G": "7.6675627"
+        }
+      }
+    },
+    "closest_candidate": {
+      "N": "H_4",
+      "scheme": "S2_per_irrep_dim_normalized",
+      "data": {
+        "a_0": "1.0",
+        "a_2": "0.233333333333",
+        "a_2_normalized": "0.583333333333",
+        "delta_vs_minus_G": "1.4992989"
+      },
+      "absolute_delta": "1.4992989"
+    },
+    "candidates_within_1e_minus_3_of_target": [],
+    "verdict": "NO simple sub-sum scheme yields h² ≈ -G at any tested N. Closest is S2_per_irrep_dim_normalized at H_H_4 with Δ = 1.4992989 — far above 1e-3 threshold. Simple Wedderburn-derived sub-sums DO NOT match Reading-A. Genuine Demazure/crystal sub-sum machinery (Kashiwara operators, KLR canonical basis) required — multi-session."
+  }
+}
