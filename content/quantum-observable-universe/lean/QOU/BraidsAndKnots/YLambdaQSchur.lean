@@ -221,6 +221,86 @@ theorem qFactorial_three (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
   rw [show ((3 : ℕ) : ℤ) = 3 from rfl]
   rw [qInt_three q hq h_neq, qFactorial_two q hq h_neq]
 
+/-! ## Specialised bar-Mullineux corollaries at H_3 (proton)
+
+For the proton's H_3(q) algebra, the three partitions of 3 split
+into:
+  - (3) and (1,1,1) — transpose pair with content sums +3 and −3
+  - (2,1) — self-conjugate with content sum 0
+
+The bar-Mullineux identity `y_λ(q⁻¹) = y_{λᵀ}(q)` then specialises
+to three explicit identities. -/
+
+/-- **Bar-Mullineux at (3) ↔ (1,1,1)** for the proton:
+    `y_(3)(q⁻¹) = y_(1,1,1)(q)`.
+
+    Specialisation of `yLambdaQSchur_bar_mullineux` with n=3, c=3
+    (so λ=(3) has content sum 3, λᵀ=(1,1,1) has -3). -/
+theorem yLambdaQSchur_proton_bar_mullineux_3_to_111 (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    yLambdaQSchur q⁻¹ 3 3 = yLambdaQSchur q 3 (-3) := by
+  exact yLambdaQSchur_bar_mullineux q hq h_neq 3 3
+
+/-- **Bar-Mullineux at (2,1) self-conjugate** for the proton:
+    `y_(2,1)(q⁻¹) = y_(2,1)(q)`.
+
+    Specialisation of `yLambdaQSchur_selfconjugate_bar_sym` with n=3.
+    The (2,1) partition is its own transpose, so bar acts as
+    identity on its y_λ. -/
+theorem yLambdaQSchur_proton_21_bar_sym (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    yLambdaQSchur q⁻¹ 3 0 = yLambdaQSchur q 3 0 :=
+  yLambdaQSchur_selfconjugate_bar_sym q hq h_neq 3
+
+/-- **Explicit closed form of y_(3) at the proton**:
+    `y_(3)(q) = q^3 / [3]_q!`.
+
+    By definition.  Provides the explicit numerator for the
+    "trivial" partition's y_λ contribution to the proton's
+    Markov trace. -/
+theorem yLambdaQSchur_proton_3_explicit (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    yLambdaQSchur q 3 3 = q^(3 : ℤ) / qFactorial q 3 := by
+  unfold yLambdaQSchur
+
+/-- **Explicit closed form of y_(1,1,1) at the proton**:
+    `y_(1,1,1)(q) = q^{-3} / [3]_q!`.
+
+    The transpose pair of y_(3); content sum = -3. -/
+theorem yLambdaQSchur_proton_111_explicit (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    yLambdaQSchur q 3 (-3) = q^(-3 : ℤ) / qFactorial q 3 := by
+  unfold yLambdaQSchur
+
+/-- **Explicit closed form of y_(2,1) at the proton**:
+    `y_(2,1)(q) = 1 / [3]_q!`.
+
+    Content sum = 0 makes the numerator `q^0 = 1`. -/
+theorem yLambdaQSchur_proton_21_explicit (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    yLambdaQSchur q 3 0 = 1 / qFactorial q 3 := by
+  unfold yLambdaQSchur
+  rw [zpow_zero]
+
+/-- **y_(3) · y_(1,1,1) = 1/[3]_q!²** — the transpose-pair identity
+    at the specific H_3 partitions. -/
+theorem yLambdaQSchur_proton_3_111_transpose_pair (q : ℝ) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    yLambdaQSchur q 3 3 * yLambdaQSchur q 3 (-3) =
+      1 / (qFactorial q 3) ^ 2 :=
+  yLambdaQSchur_transpose_pair q hq 3 3
+
+/-- **y_(2,1)² = 1/[3]_q!²** — the self-conjugate squared identity
+    at H_3.  The (2,1) partition's y_λ squared equals the inverse
+    of [3]_q! squared.
+
+    All three partitions of 3 thus satisfy `|y_λ| = 1/[3]_q!` in
+    magnitude — a structural fact (per
+    `yLambdaQSchur_selfconjugate_squared`). -/
+theorem yLambdaQSchur_proton_21_squared (q : ℝ) (hq : q ≠ 0) :
+    (yLambdaQSchur q 3 0) ^ 2 = 1 / (qFactorial q 3) ^ 2 :=
+  yLambdaQSchur_selfconjugate_squared q hq 3
+
 /-! ## y_λ structural identity for partitions of 3
 
 For the proton (`H_3(q)`), the three partitions (3), (2,1),
