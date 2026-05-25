@@ -28,7 +28,36 @@ The exterior-algebra structure says: the canonical atom-braid lives in a **fermi
 
 This is fundamentally different from the standard Wedderburn decomposition $H_n(q) \cong \bigoplus_\lambda V_\lambda^{\oplus d_\lambda}$ (which for $H_{12}$ has dimension $12! \approx 5 \times 10^8$, **8 orders of magnitude larger** than the observed $2^{10} = 1024$ for ⁴He).
 
-## Crystal-basis connection (open)
+## Implications for LP/SDP under-determination
+
+The exterior-algebra structure has a direct consequence for the operator-selection LP/SDP that consumes the canonical atom-braid as input.
+
+**Previously (Wedderburn-channel framing):** the LP/SDP variables `y_λ` for $\lambda \vdash 3A$ have $p(3A)$ partition channels — $p(12) = 77$ for ⁴He alone. The LP feasibility region is correspondingly $\geq 77$-dimensional (before constraint cuts). Empirical observations have noted under-determination — multiple feasible solutions, ambiguous extraction.
+
+**Under the conjecture:** the physical content lives in the sub-algebra $\Lambda^*(R^{3A - Z})$ of dimension $2^{3A - Z}$. The non-trivial Wedderburn channels (those with $y_\lambda \neq 0$ on the atom-braid's image) are a **proper subset** of the $p(3A)$ partitions — exactly those $\lambda$ corresponding to non-zero homogeneous components of $\Lambda^k(R^{3A - Z})$ under the projection $H_{3A}(q) \to \Lambda^*(R^{3A - Z})$.
+
+For Pascal-row $\binom{3A - Z}{k}$ at each grade $k$:
+- The number of non-zero $y_\lambda$ channels per grade is **at most one per binomial entry**, suggesting a much smaller active partition set than $p(3A)$.
+- For ⁴He: at most $(3A - Z + 1) - \delta = 10$ active channels (one per non-zero binomial position), down from $77$ — **a ~7× constraint tightening**.
+
+**Concrete predicted reductions:**
+
+| Atom | $p(3A)$ | Predicted max active channels | Reduction |
+|---|---:|---:|---:|
+| D ²H | $p(6) = 11$ | $\leq 6$ | $\geq 1.8\times$ |
+| T ³H | $p(9) = 30$ | $\leq 9$ | $\geq 3.3\times$ |
+| ³He | $p(9) = 30$ | $\leq 8$ | $\geq 3.8\times$ |
+| ⁴He | $p(12) = 77$ | $\leq 11$ | **$\geq 7.0\times$** |
+
+If the conjecture holds, the LP/SDP under-determination noted in prior probes (Δ_λ closure synthesis, joint-tower SDP feasibility) is structurally resolved: the previously-ambiguous $y_\lambda$ extraction has a **categorically-restricted active set** corresponding to the exterior-algebra graded components.
+
+**Identifying the active partition set** (next step): for each grade $k \in [\delta, \delta + n^*]$, the contributing $\lambda \vdash 3A$ should be determinable from the Schur–Weyl decomposition of $\Lambda^k(R^{3A - Z})$ under the $H_{3A}(q)$-action. Likely candidates (per crystal-basis intuition):
+- Pascal row $\binom{3A - Z}{k}$ position correlates with hook-shape partitions $(k+1, 1^{3A - k - 1})$
+- More precisely: ribbon / border-strip tableaux of length $3A - Z$
+
+This identification is the natural follow-up — would close the LP/SDP constraint-set explicitly + give a recipe for computing the categorical active set per atom.
+
+## Crystal-basis projection (open)
 
 The exterior algebra $\Lambda^*(V)$ arises in Kashiwara–Lusztig theory as the **fermion Fock space** (the *q*-deformed sector of the Heisenberg-Weyl algebra at $|q| < 1$). The Z-dependent grade shift looks like a **charge sector** label in this framework. Open: identify the specific crystal-basis projection $H_{3A}(q) \to \Lambda^*(\mathbb{C}^{3A - Z})$ that the canonical atom-braid factors through.
 
