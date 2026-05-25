@@ -12,7 +12,7 @@ include:
 - $R = \mathbb{Q}_\pp$ (the $\pp$-adic field): the gauge datum becomes
   an $F$-isocrystal with Frobenius lift
   ([$p$-adic realisation](#ex:p-adic-realisation),
-  [Chapter](#chap:archimedean-universe));
+  [Chapter](#chap:brings-surface));
 - $R = \mathbb{F}_\pp$ (a finite field): representations of a quantum
   group over $\mathbb{F}_\pp$
   ([finite field realisation](#ex:finite-field-realisation));
