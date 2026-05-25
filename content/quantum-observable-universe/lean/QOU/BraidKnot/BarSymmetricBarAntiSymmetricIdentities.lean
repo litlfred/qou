@@ -174,25 +174,49 @@ This is encoded as a CONDITIONAL theorem here (depends on the
 Borromean closed form proved elsewhere in BorromeanMarkovTrace.lean).
 -/
 
-/-- The Borromean Markov trace has zero bar-anti-symmetric companion.
+/-- The Borromean Markov trace closed form over `ℝ`, parallel to the
+    `ℚ` version in `BorromeanMarkovTrace.lean`. -/
+noncomputable def trM_borromean_real (h : ℝ) : ℝ :=
+  (4 + h^2 - 3 * h^4 - h^6) / (h^2 + 4)
 
-    Re-exports `QOU.BraidsAndKnots.Q_borromean_eq_zero` from
-    `BorromeanMarkovTrace.lean`, where the full statement is proved
-    over `ℚ` via the even-polynomial structure of the closed form
-    `(4 + h² − 3h⁴ − h⁶) / (h² + 4)`.
+/-- The bar-anti-symmetric companion of the Borromean Markov trace,
+    over `ℝ`. -/
+noncomputable def Q_borromean_real (h : ℝ) : ℝ :=
+  (trM_borromean_real h - trM_borromean_real (-h)) / 2
 
-    History: this declaration was a `True := trivial` placeholder in
-    the initial commit (`d4d640ce7`); the full proof was added on
-    branch `claude/q-borromean-lean-proof-2026-05-24` (PR-to-be-named),
-    closing the gap flagged in PR #1196's audit doc. -/
-theorem Q_borromean_eq_zero : True := by
-  -- The substantive statement
-  --   `QOU.BraidsAndKnots.Q_borromean_eq_zero (h : ℚ) : Q_borromean h = 0`
-  -- is proved in `BorromeanMarkovTrace.lean` over `ℚ`, via the
-  -- `even-polynomial` structure of `trM_borromean`. We retain the
-  -- `True` shim here to avoid forcing an import of `BorromeanMarkov-
-  -- Trace` into the torus-knot identities file (different namespace
-  -- and module-tree path). Cross-reference is in the docstring above.
-  trivial
+/-- **The Borromean Markov trace has zero bar-anti-symmetric companion,
+    over `ℝ`.**
+
+    The closed form `(4 + h² − 3h⁴ − h⁶) / (h² + 4)` has all-even-power
+    numerator and denominator, so `trM_borromean_real (−h) = trM_borromean_real h`
+    by `ring`. The bar-anti-symmetric projection
+    `Q_borromean_real h := (trM(h) − trM(−h)) / 2` therefore vanishes
+    identically.
+
+    This is the **ℝ-side lift** of the `ℚ` proof in
+    [`QOU.BraidsAndKnots.Q_borromean_eq_zero`](../BraidsAndKnots/BorromeanMarkovTrace.lean)
+    (PR #1211, commit `5329eb054`).  No `Rat.cast` lift is needed —
+    the `ring` proof works uniformly over any `CommRing` of
+    characteristic 0; the `noncomputable` qualifier is purely because
+    of `(_ : ℝ) / (_ : ℝ)` division, not because of any irrational input.
+
+    History:
+      - `d4d640ce7` (sibling): placeholder `True := trivial`
+      - PR #1196: documented the gap in [`docs/audits/2026-05-24-sinh-
+        cosh-lean-integration-audit.md`](../../../../../docs/audits/2026-05-24-sinh-cosh-lean-integration-audit.md)
+      - PR #1211: full proof over `ℚ` in `BorromeanMarkovTrace.lean`
+        (commit `5329eb054`)
+      - this PR (item E): **ℝ-side lift here**, with `Q_borromean_real`
+        def + theorem proven via `ring` (uniform with the `ℚ` proof) -/
+theorem Q_borromean_real_eq_zero (h : ℝ) : Q_borromean_real h = 0 := by
+  unfold Q_borromean_real trM_borromean_real
+  ring
+
+/-- Compatibility shim: keeps the original `Q_borromean_eq_zero : True`
+    name visible for downstream consumers that imported the placeholder
+    by name.  Future code should import `Q_borromean_real_eq_zero` (this
+    file) or `QOU.BraidsAndKnots.Q_borromean_eq_zero` (over `ℚ`)
+    directly. -/
+theorem Q_borromean_eq_zero : True := trivial
 
 end QOU.BraidKnot
