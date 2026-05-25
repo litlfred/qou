@@ -6,7 +6,7 @@
 
 *(b) **Algebraic / Hom-functor side**: $q_0$ is the image under the archimedean functor of a specific $\underline{\mathrm{Hom}}_{\mathbf{C}}$-evaluation in the framework's brane-tower category $\mathbf{C}$ over $\mathbb{Z}[q, q^{\pm 1}]$.*
 
-*The two perspectives are related by QOU duality (D17 DIM master Pentagon ↔ D19 quantum-Langlands), which is exactly the AJ-conjecture machinery $\hat{A}_K \cdot J_N = 0$ in the q-Weyl algebra $\mathcal{A}_q$ over $\mathbb{Z}[q, q^{-1}]$.*
+*The two perspectives are related by QOU duality (D17 DIM master Pentagon $\leftrightarrow$ D19 quantum-Langlands), which is exactly the AJ-conjecture machinery $\hat{A}_K \cdot J_N = 0$ in the q-Weyl algebra $\mathcal{A}_q$ over $\mathbb{Z}[q, q^{-1}]$.*
 
 ## §1. What's PROVED (100%, no conjecture)
 
@@ -50,7 +50,7 @@ The Iwahori-Hecke algebra $H_n(q)$ is naturally an algebra over $\mathbb{Z}[q, q
 
 **Char-p universes** (mathematical, not physical): specialize $\mathbb{Z}[q, q^{\pm 1}] \to \mathbb{F}_p[q, q^{\pm 1}]$ for any prime $p$ not dividing relevant denominators. Structural identities continue to hold.
 
-## §4. The duality (Stokes ↔ Hom-functor)
+## §4. The duality (Stokes $\leftrightarrow$ Hom-functor)
 
 The two candidate identifications (Option 4 Hom + Option 6 Stokes from [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) §12) are **DUAL VIEWS of the SAME structure** via QOU duality:
 
@@ -104,7 +104,7 @@ The Lean `sorry` count is EXACTLY ONE per OPEN GAP — not per missing tactic.
 
 ## §7. Cross-references
 
-- [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) — Φ_q / Li_2^q ↔ AJ machinery (PR #1242)
+- [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) — Φ_q / Li_2^q $\leftrightarrow$ AJ machinery (PR #1242)
 - [`conj:q-zero-complex-extension`](q-zero-complex-extension.md) — q_0 may not be real (PR #1127)
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — distinguishing the involutions
 - [`borromean-markov-trace-closed-form.md`](borromean-markov-trace-closed-form.md) — the closed form whose categorical derivation is the rescoped Path B

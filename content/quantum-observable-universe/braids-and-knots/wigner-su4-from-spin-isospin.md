@@ -22,8 +22,8 @@ Given:
 - D10 closed: SU(2)_S = spin from full SO(3) fiber action on color
   sheets ([`conj:spin-from-so3-fiber`](#conj:spin-from-so3-fiber))
 
-Then the **combined symmetry** SU(2)_S × SU(2)_I = SU(4) acts on
-the **4-dimensional internal space** of each nucleon (spin × isospin
+Then the **combined symmetry** SU(2)_S $\times$ SU(2)_I = SU(4) acts on
+the **4-dimensional internal space** of each nucleon (spin $\times$ isospin
 doublet), and the totally-antisymmetric tensor product of 4 nucleons
 fills the trivial rep:
 
@@ -45,25 +45,25 @@ Per [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../d
 the framework's L3 nuclear-shell-binding gap is currently covered by
 the hard-coded `magic A·8G` rule for $^{4}\!\mathrm{He}$ + the
 α-cluster recursion for $A \geq 8$.  This conjecture **identifies
-the magic A·8G closure as the SU(4) supermultiplet structure**:
+the magic A$\cdot$8G closure as the SU(4) supermultiplet structure**:
 
 | A | SU(4) supermultiplet | Framework rule |
 |---|----------------------|----------------|
 | 1 | fundamental $\mathbf{4}$ (single nucleon) | Borromean tower |
 | 2 | $\mathbf{4} \otimes \mathbf{4} = \mathbf{6} \oplus \mathbf{10}$ | inter-nucleon Hecke (deuteron $^{2}\!\mathrm{H}$) |
 | 3 | $\mathbf{4}^{\otimes 3} = \mathbf{4} \oplus \mathbf{20} \oplus \cdots$ | tritium / helium-3 |
-| **4** | $\mathbf{4}^{\otimes 4} \supset \mathbf{1}$ (first totally-antisym) | **magic A·8G** closure |
+| **4** | $\mathbf{4}^{\otimes 4} \supset \mathbf{1}$ (first totally-antisym) | **magic A$\cdot$8G** closure |
 | 8 | first α-cluster pair | $c_{\alpha\alpha} = m_e \cdot \mathrm{Vol}(7^2_1)$ |
 | 12 | second α-cluster | $c_{\alpha\alpha} \cdot 3$ |
 | 16 | third α-cluster (closed p-shell) | second magic |
 
-The conjectural identification: the **magic A·8G constant** equals
+The conjectural identification: the **magic A$\cdot$8G constant** equals
 the SU(4)-singlet projection coefficient of the saturated
 4-nucleon braid evaluated under the SO(3)-fiber + bar-symmetric
 crystal functional.  Concretely:
 
 $$
-  \text{magic A·8G constant}
+  \text{magic A$\cdot$8G constant}
   \;=\;
   \mathrm{tr}_{\mathrm{SU}(4)\text{-singlet}}\bigl(\beta_4^{\mathrm{canonical}}\bigr)
   \cdot
@@ -72,7 +72,7 @@ $$
   2 \cdot 4 \cdot 8G
 $$
 
-— the factor of 2 from the doubly-saturated isospin × spin closure
+— the factor of 2 from the doubly-saturated isospin $\times$ spin closure
 (both SU(2)_S and SU(2)_I supermultiplets), the 4 from $A=4$
 nucleons, and the $8G$ from the Borromean hyperbolic volume scale.
 
@@ -101,7 +101,7 @@ n-α clusters are products of such quadruplets.
 
 Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
 
-- **GB filtration level**: per-atom; SU(4) acts on the 4·A-dimensional
+- **GB filtration level**: per-atom; SU(4) acts on the 4$\cdot$A-dimensional
   internal space of an A-nucleon braid, so the GB length scales as
   $\ell(\beta_A)$ which grows linearly in $A$.
 - **Jet order**: $h^0$ for the SU(4) classification itself (it's a
@@ -109,7 +109,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
   correction enters at the L3 layer as an additive ε_shell term in
   the mass formula.
 - **Bar-symmetry status**: bar-symmetric.  SU(4) acts on the internal
-  spin × isospin space; this commutes with $q \mapsto q^{-1}$ (both
+  spin $\times$ isospin space; this commutes with $q \mapsto q^{-1}$ (both
   SU(2)_S and SU(2)_I are themselves bar-symmetric at the
   classical limit per D9/D10).
 
@@ -161,7 +161,7 @@ BOTH D9 and D10 to be closed first.
 
 ## Open R&D
 
-1. **Verify magic A·8G constant formula numerically**: at $q = q_0$,
+1. **Verify magic A$\cdot$8G constant formula numerically**: at $q = q_0$,
    compute the SU(4)-singlet projection of the canonical 4-nucleon
    braid and cross-check against the empirical $A \cdot 8G$ rule for
    $^{4}\!\mathrm{He}$.
@@ -187,7 +187,7 @@ BOTH D9 and D10 to be closed first.
   [`prototype_gs_nf_shell_binding.py`](../../folio-assistant/computations/prototype_gs_nf_shell_binding.py)
 - L3 closure-path audit:
   [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md)
-- Magic A·8G production rule:
+- Magic A$\cdot$8G production rule:
   [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
   `ATOM_ASSIGN["4He"]`
 - Color-tube infrastructure:

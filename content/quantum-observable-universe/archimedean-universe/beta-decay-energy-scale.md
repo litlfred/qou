@@ -20,7 +20,7 @@ scale $\mathfrak{E}_0$. It has **not** been derived from the
 canonical per-braid mass formula
 [`prop:per-braid-mass-tower`](../braids-and-knots/per-braid-mass-tower.md),
 which uses Markov-trace **weighted** sums ($\mathrm{tr}_M(\gamma) = z$,
-$\mathrm{tr}_M(\sigma_i) = z^2$, $\mathrm{tr}_M(L_+) = z^3$, …) —
+$\mathrm{tr}_M(\sigma_i) = z^2$, $\mathrm{tr}_M(L_+) = z^3$, $\ldots$) —
 a different quantity. The +0.17% match to CODATA is empirical
 evidence for the ansatz but does not derive it; the gap could
 equally be a numerical coincidence. Full audit:

@@ -15,7 +15,7 @@ duality:*
   ([`conj:reverse-limit-q-to-infinity`](#conj:reverse-limit-q-to-infinity), D13)
   for non-classical specialisations.*
 - *For non-simply-laced types (Type B, C, D, G₂, F₄), gives a
-  genuinely-distinct dual algebra (Type B ↔ Type C, etc.) — this
+  genuinely-distinct dual algebra (Type B $\leftrightarrow$ Type C, etc.) — this
   is the quantum analogue of classical Langlands.*
 
 ## Why this matters
@@ -29,9 +29,9 @@ view at $q^{-1}$ that:
 - Connects to D13 reverse-limit at $q \to \infty$ (the reverse-
   limit IS the Langlands continuation beyond the unit disc).
 - Connects to D22 Type-B folding for non-simply-laced extensions
-  (where Langlands genuinely flips Type B ↔ Type C).
+  (where Langlands genuinely flips Type B $\leftrightarrow$ Type C).
 - May provide a categorical source for the framework's symmetric/
-  antisymmetric mass-tower decomposition: matter ↔ Langlands-dual
+  antisymmetric mass-tower decomposition: matter $\leftrightarrow$ Langlands-dual
   antimatter.
 
 ## Diagnostics
@@ -44,16 +44,16 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
   not generator action.
 - **Bar-symmetry**: distinct from bar at the algebra level, but
   coincides at the parameter level (both invert q). The combined
-  Langlands × bar action might be the relevant duality for the
+  Langlands $\times$ bar action might be the relevant duality for the
   framework's matter/antimatter structure.
 
 ## Open R&D
 
 1. Identify whether the framework's mass-tower decomposition has
-   a Langlands-dual reading (matter ↔ antimatter via Type-A
+   a Langlands-dual reading (matter $\leftrightarrow$ antimatter via Type-A
    self-duality with q-inversion).
 2. Connect to D22 Type-B folding: for non-simply-laced extensions,
-   the Langlands dual becomes a Type B ↔ Type C swap that may
+   the Langlands dual becomes a Type B $\leftrightarrow$ Type C swap that may
    realise CPT structurally.
 3. D19 to closed requires Lean class instance for the Langlands functor
    (research-grade; not currently in Mathlib).

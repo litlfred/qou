@@ -23,8 +23,8 @@ The K-theoretic Bloch-group element
 ([`conj:borromean-bloch-group-element`](#conj:borromean-bloch-group-element), D16)
 provides the **regulator** side of the Borromean structure
 ($r_2[\mathcal{B}_3] = 8G$).  D21 Poincaré–Lefschetz provides the
-**topological** side: the volume form ∈ $H^3$ pairs with the
-fundamental class ∈ $H_3$ to give the volume integral $8G$.
+**topological** side: the volume form $\in$ $H^3$ pairs with the
+fundamental class $\in$ $H_3$ to give the volume integral $8G$.
 
 The two ARE the same number ($8G = \mathrm{Vol}(\mathcal{B}_3)$),
 but expressed through distinct dualities. D21 IS the

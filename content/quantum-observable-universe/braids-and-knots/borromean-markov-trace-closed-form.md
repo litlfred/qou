@@ -89,11 +89,11 @@ $\mathcal{B}_3$ from the trivial 3-component unlink.
 
 The three irreps of $S_3$ / $H_3(q)$ contribute distinctly:
 
-- **$\lambda = (3)$ [trivial, dim 1]:** $\sigma_i = q$ (scalar) →
+- **$\lambda = (3)$ [trivial, dim 1]:** $\sigma_i = q$ (scalar) $\to$
   $(\sigma_1^{-1}\sigma_2)^3 = 1$ exactly for all $q$. Contributes
   only through the $q$-dependent Wenzl weight $y_{(3)}(q)$.
 
-- **$\lambda = (1^3)$ [sign, dim 1]:** $\sigma_i = -q^{-1}$ (scalar) →
+- **$\lambda = (1^3)$ [sign, dim 1]:** $\sigma_i = -q^{-1}$ (scalar) $\to$
   $(\sigma_1^{-1}\sigma_2)^3 = 1$ exactly for all $q$. Same.
 
 - **$\lambda = (2,1)$ [standard, dim 2]:** The **only non-abelian

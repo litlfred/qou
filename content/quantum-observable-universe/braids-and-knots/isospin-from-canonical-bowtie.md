@@ -1,7 +1,7 @@
 > **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**
 > The original draft classified the 305 ppm residue as "bar-anti-symmetric."
-> **That was wrong.** Bar involution (q ↔ q⁻¹ AND σᵢ ↔ σᵢ⁻¹) is
-> **distinct** from the isospin Z/2 swap (σᵢ ↔ σᵢ⁻¹ with q FIXED).
+> **That was wrong.** Bar involution (q $\leftrightarrow$ q⁻¹ AND σᵢ $\leftrightarrow$ σᵢ⁻¹) is
+> **distinct** from the isospin Z/2 swap (σᵢ $\leftrightarrow$ σᵢ⁻¹ with q FIXED).
 > The 305 ppm residue is **isospin-Z/2-anti-symmetric** (correct); it
 > is NOT bar-anti-symmetric because `ℏ_q = (q-1)/q` is "mixed" under bar.
 > The 305 ppm match to CODATA holds at 0.03% rel diff. Body text below
@@ -177,8 +177,8 @@ is **mixed** under bar (verified at q₀ by
 The product carries the bar-odd $h$ factor as a coefficient, but
 the $\hbar_q$ factors don't bar-classify cleanly.
 
-**Under the isospin Z/2 swap** (σᵢ ↔ σᵢ⁻¹ at q FIXED), the
-residue IS anti-symmetric (the swap exchanges proton ↔ neutron,
+**Under the isospin Z/2 swap** (σᵢ $\leftrightarrow$ σᵢ⁻¹ at q FIXED), the
+residue IS anti-symmetric (the swap exchanges proton $\leftrightarrow$ neutron,
 giving $m_n - m_p \neq 0$).  At the specific evaluation point
 $q = q_0$, the formula's value is bar-odd in a sign-of-$h$ sense
 (scales with the bar-odd $h$), but the formula AS A FUNCTION OF $q$
@@ -188,7 +188,7 @@ finding from
 
 The bar-symmetric subleading contribution
 $\hbar_q^2 \cdot h \cdot [2]_q \cdot \hbar_q^3$
-(bar-anti-sym × bar-anti-sym = bar-sym) is the next-order canonical
+(bar-anti-sym $\times$ bar-anti-sym = bar-sym) is the next-order canonical
 correction; it appears at relative order $\hbar_q^3 \approx 9.3 \times
 10^{-4}$ to the leading 305 ppm.
 
@@ -302,8 +302,8 @@ ultimately lives in the upstream-conjecture class instances.
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D9
-  (this conjecture is the closure path) + §2 Cluster B (D9 →
-  D10 → D11 nuclear physics)
+  (this conjecture is the closure path) + §2 Cluster B (D9 $\to$
+  D10 $\to$ D11 nuclear physics)
 - [`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)
   — the audit that proposed this closure
 - Upstream restricted result:

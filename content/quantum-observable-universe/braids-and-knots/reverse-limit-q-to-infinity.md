@@ -30,13 +30,13 @@ swaps $q = 0$ with $q = \infty$.  The Kashiwara crystal structure
 at $q \to 0$ (per [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy))
 therefore has a mirror at $q \to \infty$:
 
-- Crystal nodes ↔ reverse-crystal nodes (same set)
-- Crystal arrows of weight $i$ ↔ reverse-crystal arrows of weight $-i$
+- Crystal nodes $\leftrightarrow$ reverse-crystal nodes (same set)
+- Crystal arrows of weight $i$ $\leftrightarrow$ reverse-crystal arrows of weight $-i$
 - Plain Hecke quadratic $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ at
   $q \to 0$ becomes $\sigma_i^2 = -q^{-1}\sigma_i + 1 + O(q)$ (giving
   $\sigma_i^{-1} = \sigma_i$ on the 0-Hecke quotient) vs at
   $q \to \infty$: $\sigma_i^2 = q\sigma_i + 1 + O(q^{-1})$ (giving a
-  symmetric limit on the ∞-Hecke quotient — the bar image)
+  symmetric limit on the $\infty$-Hecke quotient — the bar image)
 
 The conjecture is that this is a **true categorical duality**, not
 just a formal involution on the parameter: every Kashiwara crystal
@@ -84,7 +84,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D13
-  + §2 Cluster D (limit dualities D12 ↔ D13 ↔ D24)
+  + §2 Cluster D (limit dualities D12 $\leftrightarrow$ D13 $\leftrightarrow$ D24)
 - Paired Kashiwara limit:
   [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
   (D12)

@@ -82,7 +82,7 @@ class TFromTraceCyclicity (M : Type*) [BrCategory M] [Hecke M] where
 ## Consumers / downstream
 
 - [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
-  becomes a corollary of CPT = C · P · T once D6 / D7 / D8 close.
+  becomes a corollary of CPT = C $\cdot$ P $\cdot$ T once D6 / D7 / D8 close.
 - The Markov-trace cyclicity axiom
   [`thm:jones-markov-trace`](#thm:jones-markov-trace) supplies the
   T-invariance directly — this conjecture is the smallest possible
@@ -97,12 +97,12 @@ class TFromTraceCyclicity (M : Type*) [BrCategory M] [Hecke M] where
    [`thm:jones-markov-trace`](#thm:jones-markov-trace) but worth
    a witness for the canonical atom catalogue).
 2. **D8 to closed** requires Lean instance proving the trace-cyclicity
-   compatibility + bar = P · C · T factorisation.
+   compatibility + bar = P $\cdot$ C $\cdot$ T factorisation.
 
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D8
-  + §2 Cluster A (CPT decomposition D5 → D6 + D7 + D8)
+  + §2 Cluster A (CPT decomposition D5 $\to$ D6 + D7 + D8)
 - Sibling Z/2 decompositions of CPT:
   [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
   [`conj:p-from-braid-mirror`](p-from-braid-mirror.md) (D7)

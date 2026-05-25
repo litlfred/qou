@@ -132,7 +132,7 @@ class SpinFromSO3Fiber
    `ell_two_yields_h4_coefficient` proof (with `sorry` for the
    regulator of the divergent series at higher $\ell$, per CLAUDE.md
    §3b "class is inhabited").
-3. **Connect to PR #1125's W/Z ≈ cos θ_W within 1%** binomial
+3. **Connect to PR #1125's W/Z $\approx$ cos θ_W within 1%** binomial
    pattern — the unified $T(2, 2m)$ torus-knot Markov-trace
    closed form may have a spherical-harmonic reading at the
    $\mathrm{SO}(3)$-fiber level.
@@ -140,7 +140,7 @@ class SpinFromSO3Fiber
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D10
-  + §2 Cluster B (D9 → D10 → D11 nuclear physics)
+  + §2 Cluster B (D9 $\to$ D10 $\to$ D11 nuclear physics)
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](../../docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md)
   — the structural-gap audit that proposed this closure
 - Upstream class supplier:

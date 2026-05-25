@@ -111,12 +111,12 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
    holds (multiply the original by $\sigma_i^{-2}$). Concrete probe
    in a follow-up.
 2. **D7 to closed** requires the Lean class instance + a `prop:` block
-   stating bar = P · C · T as a derivable identity.
+   stating bar = P $\cdot$ C $\cdot$ T as a derivable identity.
 
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D7
-  + §2 Cluster A (CPT decomposition D5 → D6 + D7 + D8)
+  + §2 Cluster A (CPT decomposition D5 $\to$ D6 + D7 + D8)
 - Sibling Z/2 decompositions of CPT:
   [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
   [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md) (D8)

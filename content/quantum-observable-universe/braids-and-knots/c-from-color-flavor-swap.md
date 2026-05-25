@@ -132,14 +132,14 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
    decomposition.
 3. **Promote to proposition** once
    [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
-   and the S₅↔SO(3) fiber-action class (PR
+   and the S₅$\leftrightarrow$SO(3) fiber-action class (PR
    [#1081](https://github.com/litlfred/qou/pull/1081) supplier)
    are both proved.
 
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md)
-  §1 D6 (this conjecture) + §2 Cluster A (CPT decomposition D5 →
+  §1 D6 (this conjecture) + §2 Cluster A (CPT decomposition D5 $\to$
   D6 + D7 + D8)
 - Upstream class: [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
   (PR [#1111](https://github.com/litlfred/qou/pull/1111) merged)

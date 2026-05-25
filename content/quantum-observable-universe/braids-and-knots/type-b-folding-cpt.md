@@ -51,14 +51,14 @@ $$\mathrm{bar} = P \cdot C \cdot T.$$
 Type-B folding provides an **alternative categorical realisation**
 where the role of "P (braid mirror)" is replaced by "the Cartan-fold
 Z/2", and the bar-invariance emerges from the Type-B symmetric-crystal
-structure rather than from explicit σᵢ ↔ σᵢ⁻¹ braid manipulation.
+structure rather than from explicit σᵢ $\leftrightarrow$ σᵢ⁻¹ braid manipulation.
 
 The two decompositions are not redundant — they are **two views**
 of the same CPT composite:
 
 | View | Realises bar via |
 |------|------------------|
-| D6/D7/D8 (combinatorial) | explicit σᵢ ↔ σᵢ⁻¹ + q ↔ q⁻¹ on Hecke generators |
+| D6/D7/D8 (combinatorial) | explicit σᵢ $\leftrightarrow$ σᵢ⁻¹ + q $\leftrightarrow$ q⁻¹ on Hecke generators |
 | **D22 Type-B folding** (categorical-symmetric-crystal) | structural fold automorphism $\iota: \alpha_i \leftrightarrow \alpha_{n-i}$ |
 
 The D22 view is **more compact** (no need to track three separate Z/2
