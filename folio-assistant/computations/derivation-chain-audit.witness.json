@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T05:53:35.509976+00:00",
-  "commitSha": "91be1a48c388d20e39907eb2a215a58795229523",
+  "computedAt": "2026-05-25T05:53:38.799980+00:00",
+  "commitSha": "859d5f860462bdecb19c9d3e410668b77129fc20",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2368,6 +2368,7 @@
         "factor-2-normalization-trace.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2701,6 +2702,7 @@
         "t35-weak-vertex.witness.json",
         "t3n-binomial-pattern-probe.witness.json",
         "t6-lepton-h3-3channel-convention.witness.json",
+        "t6-tau-h5-embedding-probe.witness.json",
         "t6-three-halves-factor-probes.witness.json",
         "tau-M-four-anchors.witness.json",
         "tau-M-proton-closed-form-phase5l1.witness.json",
