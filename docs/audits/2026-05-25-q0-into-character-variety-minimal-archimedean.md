@@ -10,6 +10,8 @@
 
 ## §1. Specific mapping q_0 → X(K)
 
+> ⚠️ **CORRECTION (see §11):** the specific formula stated below is WRONG as I originally wrote it. The discrete-faithful representation has PARABOLIC meridians ($\mathrm{tr} = \pm 2$ exactly), which would force $q_0 = 1$ (undeformed) — contradicting the framework's $q_0 \approx 1.1097$. The correct identification is more subtle (Dehn-deformed structure, longitude trace, or Markov-trace parameterization). See §11 for the full correction; §2-§10 are unaffected.
+
 q_0 ∈ ℝ is **not** an element of X(K); X(K) is a 2-complex-dim algebraic variety. The connection is via the **meridian-trace** at the discrete-faithful representation.
 
 For $K = \mathcal{B}_3$, the meridian holonomy $\rho_{\mathrm{DF}}(\mu_i) \in SL_2(\mathbb{C})$ has eigenvalues $(\mu, \mu^{-1})$, so $\mathrm{tr}(\rho_{\mathrm{DF}}(\mu_i)) = \mu + \mu^{-1}$. The Hecke parameter relation (framing-conventional):
@@ -341,7 +343,59 @@ PR [#1127](https://github.com/litlfred/qou/pull/1127) §"Open structural questio
 - PR [#1127](https://github.com/litlfred/qou/pull/1127) `prop:q-zero-complex-extension` + `prop:lusztig-vs-hermitian-bar`
 - PR #1127 audit [`docs/audits/2026-05-24-q-zero-reality-audit.md`](2026-05-24-q-zero-reality-audit.md) — q_0 ∈ ℝ is empirical, not theorem
 
-## §11. Honest verdict
+## §11. CORRECTION TO §1 — the formula as stated is WRONG
+
+**Author challenge during session:** asked me to explain $q_0 + q_0^{-1} = \mathrm{tr}(\rho_{\mathrm{DF}}(\mu))$ — and the explanation surfaced an inconsistency I had not caught.
+
+**The error:** For a **complete** hyperbolic structure on a knot complement (which Mostow-Prasad picks out), the meridian is **parabolic** by construction, so:
+
+$$\mathrm{tr}(\rho_{\mathrm{DF}}(\mu)) = \pm 2 \quad \text{(always)}$$
+
+This forces $q_0 = 1$ via my §1 formula — i.e., the **undeformed** Hecke algebra. But the framework's $q_0 \approx 1.1097 \ne 1$. So §1's identification cannot be right at the discrete-faithful point of the complete structure.
+
+**What the correct statement probably is** (three candidate refinements, all open):
+
+1. **Dehn-deformed representation.** $q_0$ corresponds to an INCOMPLETE structure (Dehn-filled at specific coefficients), where the meridian becomes hyperbolic and $\mathrm{tr}(\rho(\mu)) \ne \pm 2$. The cusp coordinates $(M, L)$ on the A-polynomial curve trace this deformation. Most likely correct candidate.
+
+2. **Different group element.** The trace might be of a *non-meridian* loop — e.g., a longitude $\lambda$, a commutator $[\mu_i, \mu_j]$, or a specific peripheral curve. For 𝓑_3 the longitudes have non-trivial traces even at the complete structure.
+
+3. **Markov-trace parameterization.** $q_0$ might be defined via the Markov-trace normalization $z = 1/(\sqrt{q} + 1/\sqrt{q})$ rather than via any geometric meridian trace. The "$q + q^{-1}$" structure is generic to Hecke algebras and doesn't *require* a meridian-trace identification.
+
+**What's certain:** $q_0 \in X(\mathcal{B}_3)(\overline{\mathbb{Q}})$ at SOME canonical point — but identifying that point with a specific algebraic invariant of the character variety needs SnapPy verification or A-polynomial computation. **§7 step 1 ("verify against SnapPy") would have caught this**; I should have done it before stating §1 as fact.
+
+**What this means for the audit's overall claims:**
+- §2-§10 still hold (they don't depend on §1's specific formula)
+- The minimal-archimedean framing (state QOU over $\mathbb{Z}$, archimedean at end) still works
+- AJ conjecture algebraic statement still crosses the wall
+- The Mostow-Prasad uniqueness still justifies $q_0 \in \overline{\mathbb{Q}}$ at SOME canonical point
+
+**Only §1's specific formula is wrong.** The CORRECT minimal statement is:
+
+> $q_0$ is an algebraic invariant of the (geometric component of) $X(\mathcal{B}_3)$. Its specific identification as a particular trace function or cusp coordinate is OPEN and requires verification via SnapPy + Champanerkar's A-polynomial $A_{\mathcal{B}_3}$.
+
+## §12. Doubling down on §5a: m_p / m_e IS over $\mathbb{R}$ (or $\mathbb{R}$-derived)
+
+**Author re-emphasis 2026-05-25:** *"really m_p/m_e is should be over R or some categorically derived object from R"*
+
+The §5a claim — physical observables specifically live in $\mathbb{R}$ or $\mathbb{R}$-categorically-derived objects — is the **operational physical claim**. Restated for emphasis:
+
+- **Framework algebra** is char-independent (over $\mathbb{Z}$ / $\mathbb{Z}[q^{\pm 1}]$). This is a **structural** statement.
+- **Our universe's observables** $m_p / m_e \in \mathbb{R}$ (or in an $\mathbb{R}$-derived category). This is a **physical** statement.
+- The framework's algebraic identities produce values in $\overline{\mathbb{Q}}$ (or even $\mathbb{Z}[q^{\pm 1}]$ before specialization); the archimedean image $\iota(f(q_0)) \in \mathbb{R}$ is what we compare to PDG values.
+
+**Categorically-derived-from-$\mathbb{R}$ examples:**
+- $\mathbb{R}^\times$ — multiplicative group (natural for energy ratios)
+- $\mathbb{R}^{>0}$ — positive reals (natural for mass values)
+- $\mathrm{Hom}(\text{categorical object}, \mathbb{R})$ — observer-functor evaluations
+- Open sets / sheaves over $\mathbb{R}$-manifolds — for spectral / asymptotic observables
+
+The framework's CAL-1 / CAL-2 / CAL-3 calibrations are **physical archimedean pins**: they select the specific algebraic point $q_0 \in \overline{\mathbb{Q}}$ whose archimedean image matches our universe's $\mathbb{R}$-valued observables.
+
+**What this is NOT saying**: that observables MUST be rational. They could be transcendental (like $\pi$ in some quantum-volume contexts) — but transcendental over $\mathbb{Z}$ doesn't preclude algebraic over a number field. The framework distinguishes ALGEBRAIC over $\mathbb{Q}$ from ALGEBRAIC over $\overline{\mathbb{Q}}$ via the trace field of the discrete-faithful representation (per §4: $\mathbb{Q}(\zeta_6)$ for 𝓑_3, after correction).
+
+**Wiring implication:** the framework's $\mathbb{R}$-valued production mass-predictions could in principle be replaced by EXACT $\overline{\mathbb{Q}}$ algebraic identities (verified symbolically), with archimedean evaluation only at the final PDG comparison step. This is the §5 "minimal-archimedean" architectural reframing — actionable but research-grade.
+
+## §13. Honest verdict
 
 This is a **potentially major architectural reframing** of QOU. The framework currently does mass-predictions as numerical evaluations in ℝ via mpmath; the algebraic-over-$\overline{\mathbb{Q}}$ formulation would replace these with exact symbolic identities.
 

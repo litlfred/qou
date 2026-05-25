@@ -1,0 +1,32 @@
+{
+  "R1_closed_form_at_substrate": 0.9985621631975701,
+  "R2_wedderburn_sum_at_substrate": 0.9983666218385047,
+  "abs_difference": 0.00019554135906540981,
+  "audit_reference": "docs/audits/2026-05-24-crystal-yekutieli-correspondence-chain.md \u00a711",
+  "chi_2_1_h_series": "-h**6 - 3*h**4 + 2",
+  "chi_at_substrate": {
+    "chi_(1,1,1)(beta_Bor)": 1.0,
+    "chi_(2,1)(beta_Bor)": 1.9941858103812131,
+    "chi_(3)(beta_Bor)": 1.0
+  },
+  "compute": "probe_d_redo_multi_tessellation_consistency",
+  "description": "Redo of Probe D from PR #1233 with MATCHING framing convention. Previous D used Jones polynomial / [2]_q\u00b2 which has writhe-dependent normalization differing from the Markov trace closed form. This redo uses (R1) closed form and (R2) Wedderburn sum via Hoefsmit + Jones-Markov weights \u2014 both canonically-normalized Markov-trace expressions in H_3(q).",
+  "interpretation": "POSITIVE = audit \u00a711 tessellation-coordinate-freedom CONFIRMED. MARGINAL = numerical-precision-only difference. NEGATIVE = structural inconsistency requiring investigation.",
+  "r1_h_series": "-h**10/256 + h**8/64 - h**6/16 - 3*h**4/4 + 1",
+  "relative_difference": 0.0001958229204672169,
+  "scriptCommitSha": "57f5134f6e9c4bfb0443e0d95007c3bab9085ead",
+  "status": "exploratory",
+  "supersedes": "Probe D from PR #1233 (which had inconclusive INCONCLUSIVE verdict due to framing mismatch)",
+  "tags": [
+    "probe-d-redo",
+    "multi-tessellation-consistency",
+    "wedderburn-vs-closed-form",
+    "matching-framing"
+  ],
+  "verdict": "MARGINAL",
+  "wedderburn_weights": {
+    "y_(1,1,1)": 0.02274494570570529,
+    "y_(2,1)": 0.2809296339798641,
+    "y_(3)": 0.41539578633456653
+  }
+}
