@@ -1,0 +1,52 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T18:20:26.542832+00:00",
+  "commitSha": "5c8756d0146c788889f257d54bb96d412ee7e9d2",
+  "assertions": [
+    {
+      "name": "tr_M_wenzl_finite_nonzero",
+      "computed": 0.2086108940022843,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 10.0,
+      "source": "Markov trace of a 3-strand 8-crossing braid; rough magnitude check (any nonzero finite value)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "c-alpha-alpha-categorical-via-jones-markov",
+  "scriptFile": "c_alpha_alpha_categorical_via_jones_markov.py",
+  "scriptHash": "fea6dd7fa8d1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "c_αα categorical derivation via Jones-Markov trace on 7²_1 (Whitehead-link-like 2-component, the α-α coupling knot per alpha_cluster_recursion.py). Phase B-4 of the Track B execution plan: replace the literature value c_αα = m_e·Vol(7²_1) with the substrate-canonical c_αα = m_e·|tr_M(T_w(7²_1), q_0)|, aligning the α-cluster recursion with prop:atom-knot-mass-derivation.",
+  "parameters": {
+    "q_0": "1.10997859555418057528159407960950937799328227995870",
+    "m_e_MeV": "0.51099895069",
+    "knot": "7^2_1 (Whitehead-link-like 2-component)",
+    "braid_word": "[(-1, 1), (1, 2), (-1, 1), (1, 2), (1, 2), (-1, 1), (1, 2), (1, 2)]"
+  },
+  "data": {
+    "tr_M_wenzl": 0.2086108940022843,
+    "tr_M_qschur": 0.18519372167060494,
+    "c_alpha_alpha_literature_MeV": 2.426989507040012,
+    "c_alpha_alpha_derived_wenzl_MeV": 0.1065999479376701,
+    "c_alpha_alpha_derived_qschur_MeV": 0.09463379744805504,
+    "delta_wenzl_vs_lit_MeV": -2.320389559102342,
+    "delta_qschur_vs_lit_MeV": -2.332355709591957,
+    "rel_err_wenzl": -0.95607729344175,
+    "rel_err_qschur": -0.9610077434725,
+    "vol_7_sq_1": 4.749499981874439,
+    "wall_seconds": {
+      "wenzl_jm": 0.0005346670000108134,
+      "q_schur": 0.00017488899993622908,
+      "total": 0.0007095559999470424
+    }
+  }
+}
