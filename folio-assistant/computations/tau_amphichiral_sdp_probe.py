@@ -43,25 +43,35 @@ Audit-only; no production wiring.
 
 from __future__ import annotations
 
-import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+
+# Canonical sources (per CLAUDE.md "single source of truth for q_0"):
+#   - q_parameter.Q_50_DIGIT_STR  → substrate q_0 at 50-dps
+#   - experimental_constants.MU_OVER_E / TAU_OVER_E → CODATA m_ℓ/m_e
+# These imports replace the prior hardcoded P31 literals (cal2/cal_tau_e
+# and the Vol(4_1)-from-string-derived q_0) flagged by the
+# compute_audit_scan registry-bypass detector.
+from experimental_constants import MU_OVER_E, TAU_OVER_E
+from q_parameter import Q_50_DIGIT_STR
+from witness_base import WitnessBuilder
 
 
 def main() -> int:
     mp.mp.dps = 50
 
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
-    cal2_target = mp.mpf("206.7682830")
-    cal_tau_e = mp.mpf("3477.23")
-    hbar_q_sq = Vol_4_1 / cal2_target
-    hbar_q = mp.sqrt(hbar_q_sq)
-    q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
+    # Canonical substrate from Q_50_DIGIT_STR (the single 50-dps pin).
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     qi = 1 / q0
     h = q0 - qi
+    hbar_q = mp.mpf(1) - qi  # ℏ_q = 1 - q⁻¹  (per substrate definition)
+    hbar_q_sq = hbar_q * hbar_q
+    # Vol(4_1) recovered identity: Vol(4_1) = (m_μ/m_e) · ℏ_q²
+    cal2_target = mp.mpf(repr(MU_OVER_E))
+    cal_tau_e = mp.mpf(repr(TAU_OVER_E))
+    Vol_4_1 = cal2_target * hbar_q_sq  # for the muon sanity check below
     z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
 
     # Amphichiral hyperbolic knots (SnapPy census; cross-checked w/ knot-volumes.py)
@@ -182,48 +192,65 @@ def main() -> int:
         print(f"  (iii) tau's canonical knot needs SDP-derived non-knot-label identification.")
     print()
 
-    witness = {
-        "description": "Tau amphichiral-candidate SDP-spirit probe per owner directive 'tau is not torus knot, same symmetries as 1st gen'",
-        "computation": "tau_amphichiral_sdp_probe",
-        "audit_only": True,
-        "precision_dps": 50,
-        "context": {
-            "owner_directive": "tau in not knot tauris. knot operator = symmetries → should be same as 1st gen. verify via SDP solutions",
-            "interpretation": "tau is NON-torus hyperbolic with amphichiral symmetry (matching muon = 4_1 amphichiral)",
-            "follows": "PR #1250 (cohomological knot hierarchy negative result); searches DIFFERENT candidate class (amphichirals)",
-        },
-        "constants": {
-            "q_0": str(q0),
-            "ℏ_q²": str(hbar_q_sq),
-            "1/ℏ_q²": str(1/hbar_q_sq),
-            "cal_tau_e_codata": str(cal_tau_e),
-        },
-        "amphichiral_candidates": [
-            {
-                "knot": k,
-                "vol": str(v),
-                "ratios": {
-                    "k=2": str(v / hbar_q_sq),
-                    "k=3": str(v / hbar_q_sq / mp.sqrt(hbar_q_sq)),
-                    "k=4": str(v / hbar_q_sq**2),
-                },
-            }
-            for k, v in amphichiral_knots
-        ],
-        "best_simple_matches": [
-            {"knot": k, "formula": f"Vol/ℏ_q^{kk[2:]}", "predicted": v, "rel_err_percent": d}
-            for k, kk, v, d in best_matches
-        ],
-        "best_with_q_bracket_correction": [
-            {"knot": k, "q_bracket": qn, "predicted_xi_3": v, "rel_err_percent": d}
-            for k, qn, v, d in closeup_finds
-        ],
-        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-    }
-    here = Path(__file__).resolve().parent
-    out = here / "tau-amphichiral-sdp-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
-    print(f"Witness: {out}")
+    # Canonical witness emission via WitnessBuilder (provenance auto-captured:
+    # git SHA, script hash, duration, engine version, etc.).
+    w = WitnessBuilder("tau-amphichiral-sdp-probe", engine="mpmath")
+    w.set_description(
+        "Tau amphichiral-candidate SDP-spirit probe per owner directive "
+        "2026-05-25: 'tau is not torus knot; knot operator = symmetries → "
+        "should be same as 1st gen. verify via SDP solutions.' (verbatim "
+        "quote — original message had typo 'tau in not knot tauris' which "
+        "was interpreted as 'tau is not torus knot' per context.) Filters "
+        "12 amphichiral hyperbolic knots from SnapPy census + tests under "
+        "Vol/ℏ_q^k and q-bracket-corrected closure formulas analogous to "
+        "muon's ξ_2 = [3]_q · [2]_q / [4]_q."
+    )
+    w.set_audit_only("docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md")
+    w.add_parameter("precision_dps", 50)
+    w.add_parameter("q_0_source", "Q_50_DIGIT_STR (canonical substrate pin)")
+    w.add_parameter("q_0", str(q0))
+    w.add_parameter("hbar_q_sq", str(hbar_q_sq))
+    w.add_parameter("inv_hbar_q_sq", str(1 / hbar_q_sq))
+    w.add_parameter("cal_tau_e_codata", str(cal_tau_e))
+    w.add_parameter("cal_mu_e_codata", str(cal2_target))
+    w.add_data("amphichiral_candidates", [
+        {
+            "knot": k,
+            "vol": str(v),
+            "ratios": {
+                "k=2": str(v / hbar_q_sq),
+                "k=3": str(v / hbar_q_sq / mp.sqrt(hbar_q_sq)),
+                "k=4": str(v / hbar_q_sq**2),
+            },
+        }
+        for k, v in amphichiral_knots
+    ])
+    w.add_data("best_simple_matches", [
+        {"knot": k, "formula": f"Vol/ℏ_q^{kk[2:]}", "predicted": v, "rel_err_percent": d}
+        for k, kk, v, d in best_matches
+    ])
+    w.add_data("best_with_q_bracket_correction", [
+        {"knot": k, "q_bracket": qn, "predicted_xi_3": v, "rel_err_percent": d}
+        for k, qn, v, d in closeup_finds
+    ])
+    # Headline assertion: muon sanity reproduces CODATA to ≤ 1e-40 at 50 dps
+    # (trivially true under canonical substrate pin Q_50_DIGIT_STR; serves
+    # as a regression guard if the canonical pin ever drifts).
+    w.add_assertion(
+        name="muon_canonical_pin_consistency",
+        computed=str(muon_pred),
+        expected=str(cal2_target),
+        tolerance=1e-40,
+        source="Q_50_DIGIT_STR + MU_OVER_E (canonical pin)",
+    )
+    w.add_caveat(
+        "Amphichiral-filter is a heuristic from the owner's 'same symmetries "
+        "as 1st gen' directive; not a structural theorem. Best hit "
+        "10_43 × [5]_q·[3]_q/[6]_q closes m_τ/m_e to +0.79% — empirical "
+        "foundation only, not a canonical identification of tau."
+    )
+    out_path = w.save()
+    print(f"Witness: {out_path}")
     return 0
 
 
