@@ -8,9 +8,7 @@ export default proposition({
   },
   title:
     "Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in u = √q with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.",
-  uses: [
-    "def:universal-ilp-algorithm",
-  ],
+  uses: [],
   cites: [
     "halverson_ram_1998",
   ],

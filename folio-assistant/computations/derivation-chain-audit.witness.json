@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T05:53:38.799980+00:00",
-  "commitSha": "859d5f860462bdecb19c9d3e410668b77129fc20",
+  "computedAt": "2026-05-25T14:26:12.833521+00:00",
+  "commitSha": "fe1c7622bc7b8cffd3ae6b4cc4a1d88a66ab783b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2389,6 +2389,7 @@
         "geom-full-borromean-q-locality-probe.witness.json",
         "geom-leading-alt-q-locality-probe.witness.json",
         "graded-hecke-energy-probe.witness.json",
+        "gram-h3-symbolic-regression.witness.json",
         "gram-matrix-dual.witness.json",
         "gt-matrix-pslq-probe.witness.json",
         "guarded-off-audit.witness.json",
@@ -2509,6 +2510,7 @@
         "m-n-difference-formula.witness.json",
         "m-p-borromean-verification-50dps.witness.json",
         "m-p-m-e-li2q.witness.json",
+        "m-tau-knot-prediction.witness.json",
         "m2-codata-vs-cos-q-beta.witness.json",
         "magic-shell-empirical-instantiation.witness.json",
         "markov-free-energy-qvalues.witness.json",
@@ -2706,6 +2708,7 @@
         "t6-three-halves-factor-probes.witness.json",
         "tau-M-four-anchors.witness.json",
         "tau-M-proton-closed-form-phase5l1.witness.json",
+        "tau-amphichiral-sdp-probe.witness.json",
         "tau-hat-n-proton-level-1-empty.witness.json",
         "tau-hat-n-proton-realisation.witness.json",
         "tau-lepton-nf.witness.json",
