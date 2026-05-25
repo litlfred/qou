@@ -243,6 +243,36 @@ def main() -> int:
         tolerance=1e-40,
         source="Q_50_DIGIT_STR + MU_OVER_E (canonical pin)",
     )
+
+    # Structural-identity assertions: verify the Lean theorems in
+    # `content/quantum-observable-universe/braids-and-knots/three-halves-structural-factor.lean`
+    # hold numerically at the canonical q_0 to 50-dps precision.
+    # These are NUMERICAL CROSS-CHECKS of the algebraic identities;
+    # the Lean proofs are categorical (over generic [Field R]).
+    one_plus_h_sq = mp.mpf(1) + h**2
+    two_plus_h_sq = mp.mpf(2) + h**2
+    three_plus_h_sq = mp.mpf(3) + h**2
+    w.add_assertion(
+        name="lean_three_plus_h_sq_eq_bracket3",
+        computed=str(three_plus_h_sq),
+        expected=str(three_q),
+        tolerance=1e-40,
+        source="theorem three_plus_h_sq_eq_bracket3 (muon identity)",
+    )
+    w.add_assertion(
+        name="lean_two_plus_h_sq_times_bracket2_eq_bracket4",
+        computed=str(two_plus_h_sq * two_q),
+        expected=str(four_q),
+        tolerance=1e-40,
+        source="theorem two_plus_h_sq_times_bracket2_eq_bracket4 (muon T6 (c))",
+    )
+    w.add_assertion(
+        name="lean_bracket6_eq_bracket2_bracket3_times_one_plus_h_sq",
+        computed=str(two_q * three_q * one_plus_h_sq),
+        expected=str(six_q),
+        tolerance=1e-40,
+        source="theorem bracket6_eq_bracket2_bracket3_times_one_plus_h_sq (tau structural identity)",
+    )
     w.add_caveat(
         "Amphichiral-filter is a heuristic from the owner's 'same symmetries "
         "as 1st gen' directive; not a structural theorem. Best hit "
