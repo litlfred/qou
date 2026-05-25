@@ -138,10 +138,15 @@ HISTORICAL_BENCHMARKS = {
 # These matrices are still inlined because the R5-full SDP search
 # needs the FULL d_λ × d_λ Hecke representation (for PSD eigenvalue
 # checks via `alpha_gap = max(0, -min_eig)`), not just the character
-# (trace). pyhecke_native currently exposes `chi_lambda_braid`
-# (character only) and `chi_lambda_matrix` (cached batched chi),
-# both returning scalars — no matrix-valued braid representation API
-# yet. Extending the SDP search to H_5 (tritium) or H_12 (⁴He) will
+# (trace). pyhecke_native currently exposes character-only APIs:
+#   - chi_lambda_braid(shape, word, q) → f64 (one scalar)
+#   - chi_lambdas_braid(shapes, word, q) → list[f64] (vector of scalars
+#     over shapes)
+#   - chi_lambda_matrix(shapes, words, q) → list[list[f64]] (matrix of
+#     scalar chi values across all shape × word pairs, cached
+#     seminormal blocks)
+# None of these return the d_λ × d_λ braid-image matrix itself.
+# Extending the SDP search to H_5 (tritium) or H_12 (⁴He) will
 # require adding such an API to the Rust kernel; until then, the
 # inline matrices below are H_3-only.
 #
@@ -246,7 +251,7 @@ def evaluate_b3_braid(braid_word, q=Q0):
 # Wenzl-Schur Markov trace at H_3(q_0).
 # ───────────────────────────────────────────────────────────────────
 
-def load_wenzl_weights(n: int, q: float = float(Q0)) -> dict:
+def load_wenzl_weights(n: int, q=Q0) -> dict:
     """Wenzl-Schur weights y_λ(q) for partitions of n.
 
     Track B Phase B-1 refactor (2026-05-25): replaces the prior
@@ -260,13 +265,26 @@ def load_wenzl_weights(n: int, q: float = float(Q0)) -> dict:
          restricted to whatever `n` keys the JSON cache contained.
       3. Picks up the substrate `q` value directly (no file read).
 
+    Args:
+        n: Hecke-algebra parameter (number of strands)
+        q: substrate parameter. Accepts any numeric type that
+           supports `float(q)` (Python float, mpmath.mpf, sympy.Float).
+           Explicitly cast inside the function so callers can pass
+           high-precision values without surprise.
+
     Verified at H_3: pyhecke_native matches the JSON cache to 3e-16
     (machine precision).
     """
     import pyhecke_native as pn  # local import; module-level use is rare
+    # Explicit f64 cast — pyhecke_native trace_weights_n is an f64
+    # extension; any caller-provided mpf / sympy.Float / etc. gets
+    # truncated cleanly here rather than failing inside Rust.
+    q_f64 = float(q)
     shapes = pn.partitions_of(n)
-    weights = pn.trace_weights_n(n, q)
-    return {tuple(lam): float(w) for lam, w in zip(shapes, weights)}
+    weights = pn.trace_weights_n(n, q_f64)
+    # zip(..., strict=True) catches any mismatched-length surprise
+    # from pyhecke_native (defensive against future upstream changes).
+    return {tuple(lam): float(w) for lam, w in zip(shapes, weights, strict=True)}
 
 
 _WENZL_LABELS_H3 = {
