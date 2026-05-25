@@ -232,205 +232,237 @@
 <a href=#232 id=232 data-nosnippet>232</a>
 <a href=#233 id=233 data-nosnippet>233</a>    <span class="kw">let </span>max_gen = <span class="kw-2">*</span>word.iter().max().unwrap() <span class="kw">as </span>usize;
 <a href=#234 id=234 data-nosnippet>234</a>
-<a href=#235 id=235 data-nosnippet>235</a>    <span class="comment">// (2) Generator support below n - 2 — recurse at H_{max_gen + 2}
-<a href=#236 id=236 data-nosnippet>236</a>    </span><span class="kw">if </span>max_gen + <span class="number">2 </span>&lt; n_strands {
-<a href=#237 id=237 data-nosnippet>237</a>        <span class="kw">return </span>tr_m_word_lq_impl(word, max_gen + <span class="number">2</span>, max_depth, depth + <span class="number">1</span>);
-<a href=#238 id=238 data-nosnippet>238</a>    }
-<a href=#239 id=239 data-nosnippet>239</a>
-<a href=#240 id=240 data-nosnippet>240</a>    <span class="kw">let </span>top = (n_strands <span class="kw">as </span>i32 - <span class="number">2</span>) <span class="kw">as </span>u32;
-<a href=#241 id=241 data-nosnippet>241</a>    <span class="kw">let </span>top_positions: Vec&lt;usize&gt; = word
-<a href=#242 id=242 data-nosnippet>242</a>        .iter()
-<a href=#243 id=243 data-nosnippet>243</a>        .enumerate()
-<a href=#244 id=244 data-nosnippet>244</a>        .filter_map(|(i, <span class="kw-2">&amp;</span>g)| <span class="kw">if </span>g == top { <span class="prelude-val">Some</span>(i) } <span class="kw">else </span>{ <span class="prelude-val">None </span>})
-<a href=#245 id=245 data-nosnippet>245</a>        .collect();
-<a href=#246 id=246 data-nosnippet>246</a>
-<a href=#247 id=247 data-nosnippet>247</a>    <span class="comment">// (3) Single top — cyclic rotate + Markov II: tr_M(w·σ_top) = z·tr_M(rest)
-<a href=#248 id=248 data-nosnippet>248</a>    </span><span class="kw">if </span>top_positions.len() == <span class="number">1 </span>{
-<a href=#249 id=249 data-nosnippet>249</a>        <span class="kw">let </span>pos = top_positions[<span class="number">0</span>];
-<a href=#250 id=250 data-nosnippet>250</a>        <span class="kw">let </span><span class="kw-2">mut </span>rest: Vec&lt;u32&gt; = Vec::with_capacity(word.len() - <span class="number">1</span>);
-<a href=#251 id=251 data-nosnippet>251</a>        rest.extend_from_slice(<span class="kw-2">&amp;</span>word[pos + <span class="number">1</span>..]);
-<a href=#252 id=252 data-nosnippet>252</a>        rest.extend_from_slice(<span class="kw-2">&amp;</span>word[..pos]);
-<a href=#253 id=253 data-nosnippet>253</a>        <span class="kw">let </span>inner = tr_m_word_lq_impl(<span class="kw-2">&amp;</span>rest, n_strands - <span class="number">1</span>, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
-<a href=#254 id=254 data-nosnippet>254</a>        <span class="kw">return </span><span class="prelude-val">Ok</span>(inner.mul_by_z());
-<a href=#255 id=255 data-nosnippet>255</a>    }
-<a href=#256 id=256 data-nosnippet>256</a>
-<a href=#257 id=257 data-nosnippet>257</a>    <span class="comment">// (4) Multiple tops — rotate so last top at rightmost position.
-<a href=#258 id=258 data-nosnippet>258</a>    </span><span class="kw">let </span>last_top = <span class="kw-2">*</span>top_positions.last().unwrap();
-<a href=#259 id=259 data-nosnippet>259</a>    <span class="kw">let </span><span class="kw-2">mut </span>rotated: Vec&lt;u32&gt; = Vec::with_capacity(word.len());
-<a href=#260 id=260 data-nosnippet>260</a>    rotated.extend_from_slice(<span class="kw-2">&amp;</span>word[last_top + <span class="number">1</span>..]);
-<a href=#261 id=261 data-nosnippet>261</a>    rotated.extend_from_slice(<span class="kw-2">&amp;</span>word[..=last_top]);
-<a href=#262 id=262 data-nosnippet>262</a>    <span class="kw">let </span>rest = <span class="kw-2">&amp;</span>rotated[..rotated.len() - <span class="number">1</span>];
-<a href=#263 id=263 data-nosnippet>263</a>
-<a href=#264 id=264 data-nosnippet>264</a>    <span class="comment">// Defensive guard (matches Python + markov_trace_canonical reference).
-<a href=#265 id=265 data-nosnippet>265</a>    </span><span class="kw">if </span>!rest.contains(<span class="kw-2">&amp;</span>top) {
-<a href=#266 id=266 data-nosnippet>266</a>        <span class="kw">let </span>inner = tr_m_word_lq_impl(rest, n_strands - <span class="number">1</span>, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
-<a href=#267 id=267 data-nosnippet>267</a>        <span class="kw">return </span><span class="prelude-val">Ok</span>(inner.mul_by_z());
-<a href=#268 id=268 data-nosnippet>268</a>    }
-<a href=#269 id=269 data-nosnippet>269</a>
-<a href=#270 id=270 data-nosnippet>270</a>    <span class="comment">// Find the position of the second-to-last top (the "inner" one).
-<a href=#271 id=271 data-nosnippet>271</a>    </span><span class="kw">let </span>inner_pos = rest.len() - <span class="number">1
-<a href=#272 id=272 data-nosnippet>272</a>        </span>- rest.iter().rev().position(|<span class="kw-2">&amp;</span>g| g == top).unwrap();
-<a href=#273 id=273 data-nosnippet>273</a>    <span class="kw">let </span>segment = <span class="kw-2">&amp;</span>rest[inner_pos + <span class="number">1</span>..];
+<a href=#235 id=235 data-nosnippet>235</a>    <span class="comment">// Generator validity guard. B_n has generators {0, 1, ..., n-2},
+<a href=#236 id=236 data-nosnippet>236</a>    // i.e. max_gen &lt;= n_strands - 2, equivalently max_gen + 2 &lt;= n_strands.
+<a href=#237 id=237 data-nosnippet>237</a>    // Without this, an out-of-range generator (e.g. gen=1 on B_2 where
+<a href=#238 id=238 data-nosnippet>238</a>    // only gen=0 is valid) skipped case (3) and fell through to case
+<a href=#239 id=239 data-nosnippet>239</a>    // (4)'s `top_positions.last().unwrap()`, which panicked on the
+<a href=#240 id=240 data-nosnippet>240</a>    // empty Vec. Surfaced by the hecke-engine-c smoke test for
+<a href=#241 id=241 data-nosnippet>241</a>    // tr_m_atomic_mpfr on n=2 with a single-letter word.
+<a href=#242 id=242 data-nosnippet>242</a>    </span><span class="kw">if </span>max_gen + <span class="number">2 </span>&gt; n_strands {
+<a href=#243 id=243 data-nosnippet>243</a>        <span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">format!</span>(
+<a href=#244 id=244 data-nosnippet>244</a>            <span class="string">"tr_m_word_lq: generator index {} out of range for B_{} \
+<a href=#245 id=245 data-nosnippet>245</a>             (valid range is [0, {}]; word = {:?})"</span>,
+<a href=#246 id=246 data-nosnippet>246</a>            max_gen,
+<a href=#247 id=247 data-nosnippet>247</a>            n_strands,
+<a href=#248 id=248 data-nosnippet>248</a>            n_strands.saturating_sub(<span class="number">2</span>),
+<a href=#249 id=249 data-nosnippet>249</a>            word
+<a href=#250 id=250 data-nosnippet>250</a>        ));
+<a href=#251 id=251 data-nosnippet>251</a>    }
+<a href=#252 id=252 data-nosnippet>252</a>
+<a href=#253 id=253 data-nosnippet>253</a>    <span class="comment">// (2) Generator support below n - 2 — recurse at H_{max_gen + 2}
+<a href=#254 id=254 data-nosnippet>254</a>    </span><span class="kw">if </span>max_gen + <span class="number">2 </span>&lt; n_strands {
+<a href=#255 id=255 data-nosnippet>255</a>        <span class="kw">return </span>tr_m_word_lq_impl(word, max_gen + <span class="number">2</span>, max_depth, depth + <span class="number">1</span>);
+<a href=#256 id=256 data-nosnippet>256</a>    }
+<a href=#257 id=257 data-nosnippet>257</a>
+<a href=#258 id=258 data-nosnippet>258</a>    <span class="kw">let </span>top = (n_strands <span class="kw">as </span>i32 - <span class="number">2</span>) <span class="kw">as </span>u32;
+<a href=#259 id=259 data-nosnippet>259</a>    <span class="kw">let </span>top_positions: Vec&lt;usize&gt; = word
+<a href=#260 id=260 data-nosnippet>260</a>        .iter()
+<a href=#261 id=261 data-nosnippet>261</a>        .enumerate()
+<a href=#262 id=262 data-nosnippet>262</a>        .filter_map(|(i, <span class="kw-2">&amp;</span>g)| <span class="kw">if </span>g == top { <span class="prelude-val">Some</span>(i) } <span class="kw">else </span>{ <span class="prelude-val">None </span>})
+<a href=#263 id=263 data-nosnippet>263</a>        .collect();
+<a href=#264 id=264 data-nosnippet>264</a>
+<a href=#265 id=265 data-nosnippet>265</a>    <span class="comment">// (3) Single top — cyclic rotate + Markov II: tr_M(w·σ_top) = z·tr_M(rest)
+<a href=#266 id=266 data-nosnippet>266</a>    </span><span class="kw">if </span>top_positions.len() == <span class="number">1 </span>{
+<a href=#267 id=267 data-nosnippet>267</a>        <span class="kw">let </span>pos = top_positions[<span class="number">0</span>];
+<a href=#268 id=268 data-nosnippet>268</a>        <span class="kw">let </span><span class="kw-2">mut </span>rest: Vec&lt;u32&gt; = Vec::with_capacity(word.len() - <span class="number">1</span>);
+<a href=#269 id=269 data-nosnippet>269</a>        rest.extend_from_slice(<span class="kw-2">&amp;</span>word[pos + <span class="number">1</span>..]);
+<a href=#270 id=270 data-nosnippet>270</a>        rest.extend_from_slice(<span class="kw-2">&amp;</span>word[..pos]);
+<a href=#271 id=271 data-nosnippet>271</a>        <span class="kw">let </span>inner = tr_m_word_lq_impl(<span class="kw-2">&amp;</span>rest, n_strands - <span class="number">1</span>, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
+<a href=#272 id=272 data-nosnippet>272</a>        <span class="kw">return </span><span class="prelude-val">Ok</span>(inner.mul_by_z());
+<a href=#273 id=273 data-nosnippet>273</a>    }
 <a href=#274 id=274 data-nosnippet>274</a>
-<a href=#275 id=275 data-nosnippet>275</a>    <span class="comment">// (5) Case A — no top-1 in segment: apply σ² = hσ + 1 after commute
-<a href=#276 id=276 data-nosnippet>276</a>    </span><span class="kw">if </span>!segment.iter().any(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>) {
-<a href=#277 id=277 data-nosnippet>277</a>        <span class="kw">let </span>prefix = <span class="kw-2">&amp;</span>rest[..inner_pos];
-<a href=#278 id=278 data-nosnippet>278</a>        <span class="kw">let </span><span class="kw-2">mut </span>new_base: Vec&lt;u32&gt; = Vec::with_capacity(prefix.len() + segment.len());
-<a href=#279 id=279 data-nosnippet>279</a>        new_base.extend_from_slice(prefix);
-<a href=#280 id=280 data-nosnippet>280</a>        new_base.extend_from_slice(segment);
-<a href=#281 id=281 data-nosnippet>281</a>        <span class="comment">// term1 = tr_M(new_base + σ_top)
-<a href=#282 id=282 data-nosnippet>282</a>        </span><span class="kw">let </span><span class="kw-2">mut </span>new_base_with_top = new_base.clone();
-<a href=#283 id=283 data-nosnippet>283</a>        new_base_with_top.push(top);
-<a href=#284 id=284 data-nosnippet>284</a>        <span class="kw">let </span>term1 = tr_m_word_lq_impl(<span class="kw-2">&amp;</span>new_base_with_top, n_strands, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
-<a href=#285 id=285 data-nosnippet>285</a>        <span class="comment">// term2 = tr_M(new_base)
-<a href=#286 id=286 data-nosnippet>286</a>        </span><span class="kw">let </span>term2 = tr_m_word_lq_impl(<span class="kw-2">&amp;</span>new_base, n_strands, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
-<a href=#287 id=287 data-nosnippet>287</a>        <span class="kw">return </span><span class="prelude-val">Ok</span>(term1.mul_by_h().add_ref(<span class="kw-2">&amp;</span>term2));
-<a href=#288 id=288 data-nosnippet>288</a>    }
-<a href=#289 id=289 data-nosnippet>289</a>
-<a href=#290 id=290 data-nosnippet>290</a>    <span class="comment">// (6) Case B — top-1 in segment: apply braid relation
-<a href=#291 id=291 data-nosnippet>291</a>    //     σ_top · σ_{top-1} · σ_top = σ_{top-1} · σ_top · σ_{top-1}
-<a href=#292 id=292 data-nosnippet>292</a>    </span><span class="kw">let </span>first_tm1_in_seg = segment.iter().position(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>).unwrap();
-<a href=#293 id=293 data-nosnippet>293</a>    <span class="kw">let </span>alpha = <span class="kw-2">&amp;</span>segment[..first_tm1_in_seg];
-<a href=#294 id=294 data-nosnippet>294</a>    <span class="kw">if </span>alpha.iter().any(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>) {
-<a href=#295 id=295 data-nosnippet>295</a>        <span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">format!</span>(
-<a href=#296 id=296 data-nosnippet>296</a>            <span class="string">"tr_m_word_lq: unexpected top-1 in alpha segment; word={:?}, n={}"</span>,
-<a href=#297 id=297 data-nosnippet>297</a>            word, n_strands
-<a href=#298 id=298 data-nosnippet>298</a>        ));
-<a href=#299 id=299 data-nosnippet>299</a>    }
-<a href=#300 id=300 data-nosnippet>300</a>    <span class="kw">let </span>beta = <span class="kw-2">&amp;</span>segment[first_tm1_in_seg + <span class="number">1</span>..];
-<a href=#301 id=301 data-nosnippet>301</a>    <span class="kw">if </span>beta.iter().any(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>) {
-<a href=#302 id=302 data-nosnippet>302</a>        <span class="comment">// Case C — multiple top-1 in segment. Python raises
-<a href=#303 id=303 data-nosnippet>303</a>        // NotImplementedError and caller routes through the sympy
-<a href=#304 id=304 data-nosnippet>304</a>        // ocneanu fallback. We do the same here so the Python
-<a href=#305 id=305 data-nosnippet>305</a>        // caller knows to fall back.
-<a href=#306 id=306 data-nosnippet>306</a>        </span><span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">format!</span>(
-<a href=#307 id=307 data-nosnippet>307</a>            <span class="string">"tr_m_word_lq: Case C (multiple top-1 in segment) \
-<a href=#308 id=308 data-nosnippet>308</a>             not implemented; word={:?}, n={}"</span>,
-<a href=#309 id=309 data-nosnippet>309</a>            word, n_strands
-<a href=#310 id=310 data-nosnippet>310</a>        ));
-<a href=#311 id=311 data-nosnippet>311</a>    }
-<a href=#312 id=312 data-nosnippet>312</a>
-<a href=#313 id=313 data-nosnippet>313</a>    <span class="comment">// Build rewritten word:
-<a href=#314 id=314 data-nosnippet>314</a>    //   rest[:inner_pos] · alpha · σ_{top-1} · σ_top · σ_{top-1} · beta
-<a href=#315 id=315 data-nosnippet>315</a>    </span><span class="kw">let </span><span class="kw-2">mut </span>new_word: Vec&lt;u32&gt; = Vec::with_capacity(rest.len() + <span class="number">2</span>);
-<a href=#316 id=316 data-nosnippet>316</a>    new_word.extend_from_slice(<span class="kw-2">&amp;</span>rest[..inner_pos]);
-<a href=#317 id=317 data-nosnippet>317</a>    new_word.extend_from_slice(alpha);
-<a href=#318 id=318 data-nosnippet>318</a>    new_word.push(top - <span class="number">1</span>);
-<a href=#319 id=319 data-nosnippet>319</a>    new_word.push(top);
-<a href=#320 id=320 data-nosnippet>320</a>    new_word.push(top - <span class="number">1</span>);
-<a href=#321 id=321 data-nosnippet>321</a>    new_word.extend_from_slice(beta);
-<a href=#322 id=322 data-nosnippet>322</a>    tr_m_word_lq_impl(<span class="kw-2">&amp;</span>new_word, n_strands, max_depth, depth + <span class="number">1</span>)
-<a href=#323 id=323 data-nosnippet>323</a>}
-<a href=#324 id=324 data-nosnippet>324</a>
-<a href=#325 id=325 data-nosnippet>325</a><span class="comment">// ──────────────────────────────────────────────────────────────────
-<a href=#326 id=326 data-nosnippet>326</a>// Tests — cross-check against the Python ZHLaurent reference at
-<a href=#327 id=327 data-nosnippet>327</a>// the prop:categorical-mass-markov table values.
-<a href=#328 id=328 data-nosnippet>328</a>// ──────────────────────────────────────────────────────────────────
-<a href=#329 id=329 data-nosnippet>329</a>
-<a href=#330 id=330 data-nosnippet>330</a></span><span class="attr">#[cfg(test)]
-<a href=#331 id=331 data-nosnippet>331</a></span><span class="kw">mod </span>tests {
-<a href=#332 id=332 data-nosnippet>332</a>    <span class="kw">use </span>super::<span class="kw-2">*</span>;
-<a href=#333 id=333 data-nosnippet>333</a>
-<a href=#334 id=334 data-nosnippet>334</a>    <span class="doccomment">/// `tr_M(σ_0) = z` — single top at H_2.
-<a href=#335 id=335 data-nosnippet>335</a>    </span><span class="attr">#[test]
-<a href=#336 id=336 data-nosnippet>336</a>    </span><span class="kw">fn </span>test_single_top() {
-<a href=#337 id=337 data-nosnippet>337</a>        clear_cache();
-<a href=#338 id=338 data-nosnippet>338</a>        <span class="kw">let </span>result = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>], <span class="number">2</span>, <span class="number">200</span>).unwrap();
-<a href=#339 id=339 data-nosnippet>339</a>        <span class="comment">// Should be ZHLaurent { (1, 0): 1 }
-<a href=#340 id=340 data-nosnippet>340</a>        </span><span class="macro">assert_eq!</span>(result.terms.len(), <span class="number">1</span>, <span class="string">"expected 1 term, got {:?}"</span>, result.terms);
-<a href=#341 id=341 data-nosnippet>341</a>        <span class="kw">let </span>key = (<span class="number">1i32</span>, <span class="number">0i32</span>);
-<a href=#342 id=342 data-nosnippet>342</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key),
-<a href=#343 id=343 data-nosnippet>343</a>                <span class="string">"expected (z^1 h^0), got keys {:?}"</span>,
-<a href=#344 id=344 data-nosnippet>344</a>                result.terms.keys().collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;());
-<a href=#345 id=345 data-nosnippet>345</a>        <span class="comment">// coefficient should be 1 (i.e. LaurentPolyQ::one())
-<a href=#346 id=346 data-nosnippet>346</a>        </span><span class="kw">let </span>c = <span class="kw-2">&amp;</span>result.terms[<span class="kw-2">&amp;</span>key];
-<a href=#347 id=347 data-nosnippet>347</a>        <span class="macro">assert!</span>(c.terms.contains_key(<span class="kw-2">&amp;</span><span class="number">0</span>), <span class="string">"coef should be q^0 = 1"</span>);
-<a href=#348 id=348 data-nosnippet>348</a>    }
-<a href=#349 id=349 data-nosnippet>349</a>
-<a href=#350 id=350 data-nosnippet>350</a>    <span class="doccomment">/// `tr_M(σ_0 σ_1) = z²` at H_3.
-<a href=#351 id=351 data-nosnippet>351</a>    </span><span class="attr">#[test]
-<a href=#352 id=352 data-nosnippet>352</a>    </span><span class="kw">fn </span>test_two_gen_z_squared() {
-<a href=#353 id=353 data-nosnippet>353</a>        clear_cache();
-<a href=#354 id=354 data-nosnippet>354</a>        <span class="kw">let </span>result = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
-<a href=#355 id=355 data-nosnippet>355</a>        <span class="kw">let </span>key = (<span class="number">2i32</span>, <span class="number">0i32</span>);
-<a href=#356 id=356 data-nosnippet>356</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key),
-<a href=#357 id=357 data-nosnippet>357</a>                <span class="string">"expected (z^2 h^0), got keys {:?}"</span>,
-<a href=#358 id=358 data-nosnippet>358</a>                result.terms.keys().collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;());
-<a href=#359 id=359 data-nosnippet>359</a>    }
-<a href=#360 id=360 data-nosnippet>360</a>
-<a href=#361 id=361 data-nosnippet>361</a>    <span class="doccomment">/// `tr_M(σ_0²) = h · z + 1` at H_2 (Hecke relation σ² = hσ + 1
-<a href=#362 id=362 data-nosnippet>362</a>    /// → tr_M(hσ + 1) = h · z + 1).
-<a href=#363 id=363 data-nosnippet>363</a>    </span><span class="attr">#[test]
-<a href=#364 id=364 data-nosnippet>364</a>    </span><span class="kw">fn </span>test_hecke_quadratic() {
-<a href=#365 id=365 data-nosnippet>365</a>        clear_cache();
-<a href=#366 id=366 data-nosnippet>366</a>        <span class="kw">let </span>result = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">0</span>], <span class="number">2</span>, <span class="number">200</span>).unwrap();
-<a href=#367 id=367 data-nosnippet>367</a>        <span class="comment">// Should be { (1, 1): 1, (0, 0): 1 }
-<a href=#368 id=368 data-nosnippet>368</a>        </span><span class="kw">let </span>key_hz = (<span class="number">1i32</span>, <span class="number">1i32</span>);
-<a href=#369 id=369 data-nosnippet>369</a>        <span class="kw">let </span>key_const = (<span class="number">0i32</span>, <span class="number">0i32</span>);
-<a href=#370 id=370 data-nosnippet>370</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key_hz),
-<a href=#371 id=371 data-nosnippet>371</a>                <span class="string">"expected h·z term"</span>);
-<a href=#372 id=372 data-nosnippet>372</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key_const),
-<a href=#373 id=373 data-nosnippet>373</a>                <span class="string">"expected constant 1 term"</span>);
-<a href=#374 id=374 data-nosnippet>374</a>    }
-<a href=#375 id=375 data-nosnippet>375</a>
-<a href=#376 id=376 data-nosnippet>376</a>    <span class="comment">// ── Tier 1.C: cyclic-canonical-form cache key ──────────────
-<a href=#377 id=377 data-nosnippet>377</a>
-<a href=#378 id=378 data-nosnippet>378</a>    </span><span class="attr">#[test]
-<a href=#379 id=379 data-nosnippet>379</a>    </span><span class="kw">fn </span>canonical_cyclic_smoke() {
-<a href=#380 id=380 data-nosnippet>380</a>        <span class="comment">// Length 0 / 1 — passthrough.
-<a href=#381 id=381 data-nosnippet>381</a>        </span><span class="kw">let </span>v0: Vec&lt;u32&gt; = <span class="macro">vec!</span>[];
-<a href=#382 id=382 data-nosnippet>382</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>v0), v0);
-<a href=#383 id=383 data-nosnippet>383</a>        <span class="kw">let </span>v1 = <span class="macro">vec!</span>[<span class="number">7u32</span>];
-<a href=#384 id=384 data-nosnippet>384</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>v1), v1);
-<a href=#385 id=385 data-nosnippet>385</a>
-<a href=#386 id=386 data-nosnippet>386</a>        <span class="comment">// (0, 1, 2) and (1, 2, 0) and (2, 0, 1) all canonicalise to (0, 1, 2).
-<a href=#387 id=387 data-nosnippet>387</a>        </span><span class="kw">let </span>canon = <span class="macro">vec!</span>[<span class="number">0u32</span>, <span class="number">1</span>, <span class="number">2</span>];
-<a href=#388 id=388 data-nosnippet>388</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]), canon);
-<a href=#389 id=389 data-nosnippet>389</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>]), canon);
-<a href=#390 id=390 data-nosnippet>390</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>]), canon);
-<a href=#391 id=391 data-nosnippet>391</a>
-<a href=#392 id=392 data-nosnippet>392</a>        <span class="comment">// (2, 1, 0), (1, 0, 2), (0, 2, 1) — pick (0, 2, 1).
-<a href=#393 id=393 data-nosnippet>393</a>        </span><span class="kw">let </span>canon2 = <span class="macro">vec!</span>[<span class="number">0u32</span>, <span class="number">2</span>, <span class="number">1</span>];
-<a href=#394 id=394 data-nosnippet>394</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>]), canon2);
-<a href=#395 id=395 data-nosnippet>395</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>]), canon2);
-<a href=#396 id=396 data-nosnippet>396</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>]), canon2);
-<a href=#397 id=397 data-nosnippet>397</a>    }
-<a href=#398 id=398 data-nosnippet>398</a>
-<a href=#399 id=399 data-nosnippet>399</a>    <span class="attr">#[test]
-<a href=#400 id=400 data-nosnippet>400</a>    </span><span class="kw">fn </span>cache_hits_on_cyclic_rotation() {
-<a href=#401 id=401 data-nosnippet>401</a>        <span class="comment">// Two words that are cyclic rotations of each other should
-<a href=#402 id=402 data-nosnippet>402</a>        // share a cache entry.  Verifies via cache-size increment.
-<a href=#403 id=403 data-nosnippet>403</a>        </span>clear_cache();
-<a href=#404 id=404 data-nosnippet>404</a>        <span class="kw">let _ </span>= tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
-<a href=#405 id=405 data-nosnippet>405</a>        <span class="kw">let </span>size1 = cache().lock().unwrap().len();
-<a href=#406 id=406 data-nosnippet>406</a>        <span class="comment">// Rotation [1, 0] = σ_1 σ_0.  tr_M is cyclic-invariant so
-<a href=#407 id=407 data-nosnippet>407</a>        // tr_M(σ_0 σ_1) = tr_M(σ_1 σ_0); the cache canonicalises
-<a href=#408 id=408 data-nosnippet>408</a>        // both to the same key.
-<a href=#409 id=409 data-nosnippet>409</a>        </span><span class="kw">let _ </span>= tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">0</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
-<a href=#410 id=410 data-nosnippet>410</a>        <span class="kw">let </span>size2 = cache().lock().unwrap().len();
-<a href=#411 id=411 data-nosnippet>411</a>        <span class="comment">// Without cyclic canonicalisation the second call would
-<a href=#412 id=412 data-nosnippet>412</a>        // add a new entry; with canonicalisation it must hit the
-<a href=#413 id=413 data-nosnippet>413</a>        // existing one.  (The body may add intermediate entries
-<a href=#414 id=414 data-nosnippet>414</a>        // for recursive sub-calls — we only check that the *top-
-<a href=#415 id=415 data-nosnippet>415</a>        // level* cyclic-rotation call did not increment.)
-<a href=#416 id=416 data-nosnippet>416</a>        // The two calls share the same recursion tree, so size
-<a href=#417 id=417 data-nosnippet>417</a>        // should stay equal at the top-level invocation count.
-<a href=#418 id=418 data-nosnippet>418</a>        </span><span class="macro">assert_eq!</span>(size1, size2,
-<a href=#419 id=419 data-nosnippet>419</a>                   <span class="string">"cyclic rotation should hit existing cache entry; \
-<a href=#420 id=420 data-nosnippet>420</a>                    size before {} != after {}"</span>,
-<a href=#421 id=421 data-nosnippet>421</a>                   size1, size2);
-<a href=#422 id=422 data-nosnippet>422</a>    }
-<a href=#423 id=423 data-nosnippet>423</a>
-<a href=#424 id=424 data-nosnippet>424</a>    <span class="attr">#[test]
-<a href=#425 id=425 data-nosnippet>425</a>    </span><span class="kw">fn </span>cyclic_rotations_yield_equal_traces() {
-<a href=#426 id=426 data-nosnippet>426</a>        <span class="comment">// σ_0 σ_1 and σ_1 σ_0 are cyclic rotations; their traces
-<a href=#427 id=427 data-nosnippet>427</a>        // must be bit-identical via the canonical-key cache.
-<a href=#428 id=428 data-nosnippet>428</a>        </span>clear_cache();
-<a href=#429 id=429 data-nosnippet>429</a>        <span class="kw">let </span>r1 = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
-<a href=#430 id=430 data-nosnippet>430</a>        <span class="kw">let </span>r2 = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">0</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
-<a href=#431 id=431 data-nosnippet>431</a>        <span class="macro">assert_eq!</span>(r1.terms, r2.terms,
-<a href=#432 id=432 data-nosnippet>432</a>                   <span class="string">"tr_M cyclic-invariance violated: {:?} vs {:?}"</span>,
-<a href=#433 id=433 data-nosnippet>433</a>                   r1.terms, r2.terms);
-<a href=#434 id=434 data-nosnippet>434</a>    }
-<a href=#435 id=435 data-nosnippet>435</a>}
+<a href=#275 id=275 data-nosnippet>275</a>    <span class="comment">// (4) Multiple tops — rotate so last top at rightmost position.
+<a href=#276 id=276 data-nosnippet>276</a>    </span><span class="kw">let </span>last_top = <span class="kw-2">*</span>top_positions.last().unwrap();
+<a href=#277 id=277 data-nosnippet>277</a>    <span class="kw">let </span><span class="kw-2">mut </span>rotated: Vec&lt;u32&gt; = Vec::with_capacity(word.len());
+<a href=#278 id=278 data-nosnippet>278</a>    rotated.extend_from_slice(<span class="kw-2">&amp;</span>word[last_top + <span class="number">1</span>..]);
+<a href=#279 id=279 data-nosnippet>279</a>    rotated.extend_from_slice(<span class="kw-2">&amp;</span>word[..=last_top]);
+<a href=#280 id=280 data-nosnippet>280</a>    <span class="kw">let </span>rest = <span class="kw-2">&amp;</span>rotated[..rotated.len() - <span class="number">1</span>];
+<a href=#281 id=281 data-nosnippet>281</a>
+<a href=#282 id=282 data-nosnippet>282</a>    <span class="comment">// Defensive guard (matches Python + markov_trace_canonical reference).
+<a href=#283 id=283 data-nosnippet>283</a>    </span><span class="kw">if </span>!rest.contains(<span class="kw-2">&amp;</span>top) {
+<a href=#284 id=284 data-nosnippet>284</a>        <span class="kw">let </span>inner = tr_m_word_lq_impl(rest, n_strands - <span class="number">1</span>, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
+<a href=#285 id=285 data-nosnippet>285</a>        <span class="kw">return </span><span class="prelude-val">Ok</span>(inner.mul_by_z());
+<a href=#286 id=286 data-nosnippet>286</a>    }
+<a href=#287 id=287 data-nosnippet>287</a>
+<a href=#288 id=288 data-nosnippet>288</a>    <span class="comment">// Find the position of the second-to-last top (the "inner" one).
+<a href=#289 id=289 data-nosnippet>289</a>    </span><span class="kw">let </span>inner_pos = rest.len() - <span class="number">1
+<a href=#290 id=290 data-nosnippet>290</a>        </span>- rest.iter().rev().position(|<span class="kw-2">&amp;</span>g| g == top).unwrap();
+<a href=#291 id=291 data-nosnippet>291</a>    <span class="kw">let </span>segment = <span class="kw-2">&amp;</span>rest[inner_pos + <span class="number">1</span>..];
+<a href=#292 id=292 data-nosnippet>292</a>
+<a href=#293 id=293 data-nosnippet>293</a>    <span class="comment">// (5) Case A — no top-1 in segment: apply σ² = hσ + 1 after commute
+<a href=#294 id=294 data-nosnippet>294</a>    </span><span class="kw">if </span>!segment.iter().any(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>) {
+<a href=#295 id=295 data-nosnippet>295</a>        <span class="kw">let </span>prefix = <span class="kw-2">&amp;</span>rest[..inner_pos];
+<a href=#296 id=296 data-nosnippet>296</a>        <span class="kw">let </span><span class="kw-2">mut </span>new_base: Vec&lt;u32&gt; = Vec::with_capacity(prefix.len() + segment.len());
+<a href=#297 id=297 data-nosnippet>297</a>        new_base.extend_from_slice(prefix);
+<a href=#298 id=298 data-nosnippet>298</a>        new_base.extend_from_slice(segment);
+<a href=#299 id=299 data-nosnippet>299</a>        <span class="comment">// term1 = tr_M(new_base + σ_top)
+<a href=#300 id=300 data-nosnippet>300</a>        </span><span class="kw">let </span><span class="kw-2">mut </span>new_base_with_top = new_base.clone();
+<a href=#301 id=301 data-nosnippet>301</a>        new_base_with_top.push(top);
+<a href=#302 id=302 data-nosnippet>302</a>        <span class="kw">let </span>term1 = tr_m_word_lq_impl(<span class="kw-2">&amp;</span>new_base_with_top, n_strands, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
+<a href=#303 id=303 data-nosnippet>303</a>        <span class="comment">// term2 = tr_M(new_base)
+<a href=#304 id=304 data-nosnippet>304</a>        </span><span class="kw">let </span>term2 = tr_m_word_lq_impl(<span class="kw-2">&amp;</span>new_base, n_strands, max_depth, depth + <span class="number">1</span>)<span class="question-mark">?</span>;
+<a href=#305 id=305 data-nosnippet>305</a>        <span class="kw">return </span><span class="prelude-val">Ok</span>(term1.mul_by_h().add_ref(<span class="kw-2">&amp;</span>term2));
+<a href=#306 id=306 data-nosnippet>306</a>    }
+<a href=#307 id=307 data-nosnippet>307</a>
+<a href=#308 id=308 data-nosnippet>308</a>    <span class="comment">// (6) Case B — top-1 in segment: apply braid relation
+<a href=#309 id=309 data-nosnippet>309</a>    //     σ_top · σ_{top-1} · σ_top = σ_{top-1} · σ_top · σ_{top-1}
+<a href=#310 id=310 data-nosnippet>310</a>    </span><span class="kw">let </span>first_tm1_in_seg = segment.iter().position(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>).unwrap();
+<a href=#311 id=311 data-nosnippet>311</a>    <span class="kw">let </span>alpha = <span class="kw-2">&amp;</span>segment[..first_tm1_in_seg];
+<a href=#312 id=312 data-nosnippet>312</a>    <span class="kw">if </span>alpha.iter().any(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>) {
+<a href=#313 id=313 data-nosnippet>313</a>        <span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">format!</span>(
+<a href=#314 id=314 data-nosnippet>314</a>            <span class="string">"tr_m_word_lq: unexpected top-1 in alpha segment; word={:?}, n={}"</span>,
+<a href=#315 id=315 data-nosnippet>315</a>            word, n_strands
+<a href=#316 id=316 data-nosnippet>316</a>        ));
+<a href=#317 id=317 data-nosnippet>317</a>    }
+<a href=#318 id=318 data-nosnippet>318</a>    <span class="kw">let </span>beta = <span class="kw-2">&amp;</span>segment[first_tm1_in_seg + <span class="number">1</span>..];
+<a href=#319 id=319 data-nosnippet>319</a>    <span class="kw">if </span>beta.iter().any(|<span class="kw-2">&amp;</span>g| g == top - <span class="number">1</span>) {
+<a href=#320 id=320 data-nosnippet>320</a>        <span class="comment">// Case C — multiple top-1 in segment. Python raises
+<a href=#321 id=321 data-nosnippet>321</a>        // NotImplementedError and caller routes through the sympy
+<a href=#322 id=322 data-nosnippet>322</a>        // ocneanu fallback. We do the same here so the Python
+<a href=#323 id=323 data-nosnippet>323</a>        // caller knows to fall back.
+<a href=#324 id=324 data-nosnippet>324</a>        </span><span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">format!</span>(
+<a href=#325 id=325 data-nosnippet>325</a>            <span class="string">"tr_m_word_lq: Case C (multiple top-1 in segment) \
+<a href=#326 id=326 data-nosnippet>326</a>             not implemented; word={:?}, n={}"</span>,
+<a href=#327 id=327 data-nosnippet>327</a>            word, n_strands
+<a href=#328 id=328 data-nosnippet>328</a>        ));
+<a href=#329 id=329 data-nosnippet>329</a>    }
+<a href=#330 id=330 data-nosnippet>330</a>
+<a href=#331 id=331 data-nosnippet>331</a>    <span class="comment">// Build rewritten word:
+<a href=#332 id=332 data-nosnippet>332</a>    //   rest[:inner_pos] · alpha · σ_{top-1} · σ_top · σ_{top-1} · beta
+<a href=#333 id=333 data-nosnippet>333</a>    </span><span class="kw">let </span><span class="kw-2">mut </span>new_word: Vec&lt;u32&gt; = Vec::with_capacity(rest.len() + <span class="number">2</span>);
+<a href=#334 id=334 data-nosnippet>334</a>    new_word.extend_from_slice(<span class="kw-2">&amp;</span>rest[..inner_pos]);
+<a href=#335 id=335 data-nosnippet>335</a>    new_word.extend_from_slice(alpha);
+<a href=#336 id=336 data-nosnippet>336</a>    new_word.push(top - <span class="number">1</span>);
+<a href=#337 id=337 data-nosnippet>337</a>    new_word.push(top);
+<a href=#338 id=338 data-nosnippet>338</a>    new_word.push(top - <span class="number">1</span>);
+<a href=#339 id=339 data-nosnippet>339</a>    new_word.extend_from_slice(beta);
+<a href=#340 id=340 data-nosnippet>340</a>    tr_m_word_lq_impl(<span class="kw-2">&amp;</span>new_word, n_strands, max_depth, depth + <span class="number">1</span>)
+<a href=#341 id=341 data-nosnippet>341</a>}
+<a href=#342 id=342 data-nosnippet>342</a>
+<a href=#343 id=343 data-nosnippet>343</a><span class="comment">// ──────────────────────────────────────────────────────────────────
+<a href=#344 id=344 data-nosnippet>344</a>// Tests — cross-check against the Python ZHLaurent reference at
+<a href=#345 id=345 data-nosnippet>345</a>// the prop:categorical-mass-markov table values.
+<a href=#346 id=346 data-nosnippet>346</a>// ──────────────────────────────────────────────────────────────────
+<a href=#347 id=347 data-nosnippet>347</a>
+<a href=#348 id=348 data-nosnippet>348</a></span><span class="attr">#[cfg(test)]
+<a href=#349 id=349 data-nosnippet>349</a></span><span class="kw">mod </span>tests {
+<a href=#350 id=350 data-nosnippet>350</a>    <span class="kw">use </span>super::<span class="kw-2">*</span>;
+<a href=#351 id=351 data-nosnippet>351</a>
+<a href=#352 id=352 data-nosnippet>352</a>    <span class="doccomment">/// `tr_M(σ_0) = z` — single top at H_2.
+<a href=#353 id=353 data-nosnippet>353</a>    </span><span class="attr">#[test]
+<a href=#354 id=354 data-nosnippet>354</a>    </span><span class="kw">fn </span>test_single_top() {
+<a href=#355 id=355 data-nosnippet>355</a>        clear_cache();
+<a href=#356 id=356 data-nosnippet>356</a>        <span class="kw">let </span>result = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>], <span class="number">2</span>, <span class="number">200</span>).unwrap();
+<a href=#357 id=357 data-nosnippet>357</a>        <span class="comment">// Should be ZHLaurent { (1, 0): 1 }
+<a href=#358 id=358 data-nosnippet>358</a>        </span><span class="macro">assert_eq!</span>(result.terms.len(), <span class="number">1</span>, <span class="string">"expected 1 term, got {:?}"</span>, result.terms);
+<a href=#359 id=359 data-nosnippet>359</a>        <span class="kw">let </span>key = (<span class="number">1i32</span>, <span class="number">0i32</span>);
+<a href=#360 id=360 data-nosnippet>360</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key),
+<a href=#361 id=361 data-nosnippet>361</a>                <span class="string">"expected (z^1 h^0), got keys {:?}"</span>,
+<a href=#362 id=362 data-nosnippet>362</a>                result.terms.keys().collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;());
+<a href=#363 id=363 data-nosnippet>363</a>        <span class="comment">// coefficient should be 1 (i.e. LaurentPolyQ::one())
+<a href=#364 id=364 data-nosnippet>364</a>        </span><span class="kw">let </span>c = <span class="kw-2">&amp;</span>result.terms[<span class="kw-2">&amp;</span>key];
+<a href=#365 id=365 data-nosnippet>365</a>        <span class="macro">assert!</span>(c.terms.contains_key(<span class="kw-2">&amp;</span><span class="number">0</span>), <span class="string">"coef should be q^0 = 1"</span>);
+<a href=#366 id=366 data-nosnippet>366</a>    }
+<a href=#367 id=367 data-nosnippet>367</a>
+<a href=#368 id=368 data-nosnippet>368</a>    <span class="doccomment">/// `tr_M(σ_0 σ_1) = z²` at H_3.
+<a href=#369 id=369 data-nosnippet>369</a>    </span><span class="attr">#[test]
+<a href=#370 id=370 data-nosnippet>370</a>    </span><span class="kw">fn </span>test_two_gen_z_squared() {
+<a href=#371 id=371 data-nosnippet>371</a>        clear_cache();
+<a href=#372 id=372 data-nosnippet>372</a>        <span class="kw">let </span>result = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
+<a href=#373 id=373 data-nosnippet>373</a>        <span class="kw">let </span>key = (<span class="number">2i32</span>, <span class="number">0i32</span>);
+<a href=#374 id=374 data-nosnippet>374</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key),
+<a href=#375 id=375 data-nosnippet>375</a>                <span class="string">"expected (z^2 h^0), got keys {:?}"</span>,
+<a href=#376 id=376 data-nosnippet>376</a>                result.terms.keys().collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;());
+<a href=#377 id=377 data-nosnippet>377</a>    }
+<a href=#378 id=378 data-nosnippet>378</a>
+<a href=#379 id=379 data-nosnippet>379</a>    <span class="doccomment">/// `tr_M(σ_0²) = h · z + 1` at H_2 (Hecke relation σ² = hσ + 1
+<a href=#380 id=380 data-nosnippet>380</a>    /// → tr_M(hσ + 1) = h · z + 1).
+<a href=#381 id=381 data-nosnippet>381</a>    </span><span class="attr">#[test]
+<a href=#382 id=382 data-nosnippet>382</a>    </span><span class="kw">fn </span>test_hecke_quadratic() {
+<a href=#383 id=383 data-nosnippet>383</a>        clear_cache();
+<a href=#384 id=384 data-nosnippet>384</a>        <span class="kw">let </span>result = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">0</span>], <span class="number">2</span>, <span class="number">200</span>).unwrap();
+<a href=#385 id=385 data-nosnippet>385</a>        <span class="comment">// Should be { (1, 1): 1, (0, 0): 1 }
+<a href=#386 id=386 data-nosnippet>386</a>        </span><span class="kw">let </span>key_hz = (<span class="number">1i32</span>, <span class="number">1i32</span>);
+<a href=#387 id=387 data-nosnippet>387</a>        <span class="kw">let </span>key_const = (<span class="number">0i32</span>, <span class="number">0i32</span>);
+<a href=#388 id=388 data-nosnippet>388</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key_hz),
+<a href=#389 id=389 data-nosnippet>389</a>                <span class="string">"expected h·z term"</span>);
+<a href=#390 id=390 data-nosnippet>390</a>        <span class="macro">assert!</span>(result.terms.contains_key(<span class="kw-2">&amp;</span>key_const),
+<a href=#391 id=391 data-nosnippet>391</a>                <span class="string">"expected constant 1 term"</span>);
+<a href=#392 id=392 data-nosnippet>392</a>    }
+<a href=#393 id=393 data-nosnippet>393</a>
+<a href=#394 id=394 data-nosnippet>394</a>    <span class="comment">// ── Tier 1.C: cyclic-canonical-form cache key ──────────────
+<a href=#395 id=395 data-nosnippet>395</a>
+<a href=#396 id=396 data-nosnippet>396</a>    </span><span class="attr">#[test]
+<a href=#397 id=397 data-nosnippet>397</a>    </span><span class="kw">fn </span>canonical_cyclic_smoke() {
+<a href=#398 id=398 data-nosnippet>398</a>        <span class="comment">// Length 0 / 1 — passthrough.
+<a href=#399 id=399 data-nosnippet>399</a>        </span><span class="kw">let </span>v0: Vec&lt;u32&gt; = <span class="macro">vec!</span>[];
+<a href=#400 id=400 data-nosnippet>400</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>v0), v0);
+<a href=#401 id=401 data-nosnippet>401</a>        <span class="kw">let </span>v1 = <span class="macro">vec!</span>[<span class="number">7u32</span>];
+<a href=#402 id=402 data-nosnippet>402</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>v1), v1);
+<a href=#403 id=403 data-nosnippet>403</a>
+<a href=#404 id=404 data-nosnippet>404</a>        <span class="comment">// (0, 1, 2) and (1, 2, 0) and (2, 0, 1) all canonicalise to (0, 1, 2).
+<a href=#405 id=405 data-nosnippet>405</a>        </span><span class="kw">let </span>canon = <span class="macro">vec!</span>[<span class="number">0u32</span>, <span class="number">1</span>, <span class="number">2</span>];
+<a href=#406 id=406 data-nosnippet>406</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]), canon);
+<a href=#407 id=407 data-nosnippet>407</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>]), canon);
+<a href=#408 id=408 data-nosnippet>408</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>]), canon);
+<a href=#409 id=409 data-nosnippet>409</a>
+<a href=#410 id=410 data-nosnippet>410</a>        <span class="comment">// (2, 1, 0), (1, 0, 2), (0, 2, 1) — pick (0, 2, 1).
+<a href=#411 id=411 data-nosnippet>411</a>        </span><span class="kw">let </span>canon2 = <span class="macro">vec!</span>[<span class="number">0u32</span>, <span class="number">2</span>, <span class="number">1</span>];
+<a href=#412 id=412 data-nosnippet>412</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>]), canon2);
+<a href=#413 id=413 data-nosnippet>413</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>]), canon2);
+<a href=#414 id=414 data-nosnippet>414</a>        <span class="macro">assert_eq!</span>(canonical_cyclic(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>]), canon2);
+<a href=#415 id=415 data-nosnippet>415</a>    }
+<a href=#416 id=416 data-nosnippet>416</a>
+<a href=#417 id=417 data-nosnippet>417</a>    <span class="attr">#[test]
+<a href=#418 id=418 data-nosnippet>418</a>    </span><span class="kw">fn </span>cache_hits_on_cyclic_rotation() {
+<a href=#419 id=419 data-nosnippet>419</a>        <span class="comment">// Two words that are cyclic rotations of each other should
+<a href=#420 id=420 data-nosnippet>420</a>        // share a cache entry.  Verifies via cache-size increment.
+<a href=#421 id=421 data-nosnippet>421</a>        </span>clear_cache();
+<a href=#422 id=422 data-nosnippet>422</a>        <span class="kw">let _ </span>= tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
+<a href=#423 id=423 data-nosnippet>423</a>        <span class="kw">let </span>size1 = cache().lock().unwrap().len();
+<a href=#424 id=424 data-nosnippet>424</a>        <span class="comment">// Rotation [1, 0] = σ_1 σ_0.  tr_M is cyclic-invariant so
+<a href=#425 id=425 data-nosnippet>425</a>        // tr_M(σ_0 σ_1) = tr_M(σ_1 σ_0); the cache canonicalises
+<a href=#426 id=426 data-nosnippet>426</a>        // both to the same key.
+<a href=#427 id=427 data-nosnippet>427</a>        </span><span class="kw">let _ </span>= tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">0</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
+<a href=#428 id=428 data-nosnippet>428</a>        <span class="kw">let </span>size2 = cache().lock().unwrap().len();
+<a href=#429 id=429 data-nosnippet>429</a>        <span class="comment">// Without cyclic canonicalisation the second call would
+<a href=#430 id=430 data-nosnippet>430</a>        // add a new entry; with canonicalisation it must hit the
+<a href=#431 id=431 data-nosnippet>431</a>        // existing one.  (The body may add intermediate entries
+<a href=#432 id=432 data-nosnippet>432</a>        // for recursive sub-calls — we only check that the *top-
+<a href=#433 id=433 data-nosnippet>433</a>        // level* cyclic-rotation call did not increment.)
+<a href=#434 id=434 data-nosnippet>434</a>        // The two calls share the same recursion tree, so size
+<a href=#435 id=435 data-nosnippet>435</a>        // should stay equal at the top-level invocation count.
+<a href=#436 id=436 data-nosnippet>436</a>        </span><span class="macro">assert_eq!</span>(size1, size2,
+<a href=#437 id=437 data-nosnippet>437</a>                   <span class="string">"cyclic rotation should hit existing cache entry; \
+<a href=#438 id=438 data-nosnippet>438</a>                    size before {} != after {}"</span>,
+<a href=#439 id=439 data-nosnippet>439</a>                   size1, size2);
+<a href=#440 id=440 data-nosnippet>440</a>    }
+<a href=#441 id=441 data-nosnippet>441</a>
+<a href=#442 id=442 data-nosnippet>442</a>    <span class="attr">#[test]
+<a href=#443 id=443 data-nosnippet>443</a>    </span><span class="kw">fn </span>cyclic_rotations_yield_equal_traces() {
+<a href=#444 id=444 data-nosnippet>444</a>        <span class="comment">// σ_0 σ_1 and σ_1 σ_0 are cyclic rotations; their traces
+<a href=#445 id=445 data-nosnippet>445</a>        // must be bit-identical via the canonical-key cache.
+<a href=#446 id=446 data-nosnippet>446</a>        </span>clear_cache();
+<a href=#447 id=447 data-nosnippet>447</a>        <span class="kw">let </span>r1 = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">0</span>, <span class="number">1</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
+<a href=#448 id=448 data-nosnippet>448</a>        <span class="kw">let </span>r2 = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">1</span>, <span class="number">0</span>], <span class="number">3</span>, <span class="number">200</span>).unwrap();
+<a href=#449 id=449 data-nosnippet>449</a>        <span class="macro">assert_eq!</span>(r1.terms, r2.terms,
+<a href=#450 id=450 data-nosnippet>450</a>                   <span class="string">"tr_M cyclic-invariance violated: {:?} vs {:?}"</span>,
+<a href=#451 id=451 data-nosnippet>451</a>                   r1.terms, r2.terms);
+<a href=#452 id=452 data-nosnippet>452</a>    }
+<a href=#453 id=453 data-nosnippet>453</a>
+<a href=#454 id=454 data-nosnippet>454</a>    <span class="doccomment">/// Out-of-range generator returns an Err rather than panicking.
+<a href=#455 id=455 data-nosnippet>455</a>    /// Regression test for the n=2 / single-gen-1 panic surfaced by the
+<a href=#456 id=456 data-nosnippet>456</a>    /// hecke-engine-c smoke test.
+<a href=#457 id=457 data-nosnippet>457</a>    </span><span class="attr">#[test]
+<a href=#458 id=458 data-nosnippet>458</a>    </span><span class="kw">fn </span>test_out_of_range_generator_errors() {
+<a href=#459 id=459 data-nosnippet>459</a>        clear_cache();
+<a href=#460 id=460 data-nosnippet>460</a>        <span class="comment">// B_2 has only generator 0; passing gen=1 must error, not panic.
+<a href=#461 id=461 data-nosnippet>461</a>        </span><span class="kw">let </span>result = tr_m_word_lq(<span class="kw-2">&amp;</span>[<span class="number">1</span>], <span class="number">2</span>, <span class="number">200</span>);
+<a href=#462 id=462 data-nosnippet>462</a>        <span class="macro">assert!</span>(result.is_err(), <span class="string">"expected Err for gen=1 in B_2, got {:?}"</span>, result);
+<a href=#463 id=463 data-nosnippet>463</a>        <span class="kw">let </span>msg = result.unwrap_err();
+<a href=#464 id=464 data-nosnippet>464</a>        <span class="macro">assert!</span>(msg.contains(<span class="string">"out of range"</span>),
+<a href=#465 id=465 data-nosnippet>465</a>                <span class="string">"expected 'out of range' in error message, got: {msg}"</span>);
+<a href=#466 id=466 data-nosnippet>466</a>    }
+<a href=#467 id=467 data-nosnippet>467</a>}
 </code></pre></div></section></main></body></html>
