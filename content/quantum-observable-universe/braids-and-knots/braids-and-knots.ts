@@ -1013,6 +1013,7 @@ export default chapter({
         "phi-q-resums-trace-series-table-data",
         "markov-axiom-recursive-ascent",
         "per-braid-mass-tower",
+        "lepton-mass-tower-canonical",
         "schur-weyl-mass-decomposition",
         "gb-residue-spectral-sum",
         "categorical-mass-positivity",

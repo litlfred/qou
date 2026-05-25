@@ -49,6 +49,30 @@ The user's "tracks/rods" check (per session-policy §4 idle-trigger queue):
 - **T11** Lean 123-file substrate-lift batch — needs `lake build` per CLAUDE.md §0 (`lake exe cache get && lake build`); no toolchain in container; deferred
 - **T6** wiring canonical forms in production compute consumers — depends on T3 outcome (what IS canonical for leptons?)
 
+## Queue status after this session (2026-05-24 end-of-burst)
+
+**Completed this session (PR #1127, 16+ commits)**:
+- ✓ T1 + T12 (Im(q) correction + bar-decomp finding → folded into Phase 3 audit)
+- ✓ T2 (muon ID conflict audit + fix in `knot-volumes.py`)
+- ✓ T3 (Phase 3 m_μ/m_e operator-level re-derivation audit + `conj:lepton-mass-tower-canonical` content block setup)
+- ✓ T4 (Lean stubs for trefoil reduction + lepton mass formula scaffolding — pending lake verification)
+- ✓ T5 (SUPERSEDED-ρ_q banner sweep: 15 content + 2 compute files total)
+- ✓ T7 (coordinate comment on PR #1196)
+
+**Explicitly queued (NOT done; user-confirmed scope)**:
+- **T6** wire canonical forms in production compute — depends on T3 outcome (lepton-mass-tower formula must be derived first); MULTI-DAY
+- **T9 (Path B)** direct Q_β from per-braid mass tower — Phase 3 finding shows per-braid mass tower itself uses SUPERSEDED ρ_q at some level; "direct compute" needs the canonical (non-ρ_q) lepton-mass-tower formula first (T6 prerequisite). NOT deprecated, but **gated on T6**
+- **T10 (Path A)** theoretical derivation `Q_β = |Δ(net)| · E_0` at leading order — similarly depends on canonical (non-ρ_q) per-braid mass tower. NOT deprecated, but **gated on T6**
+- **T11** Lean 123-file lift batch — lake-deferred (no toolchain in container); independent of T6
+
+**Is T9 / T10 deprecated?** **NO** — both are still meaningful and necessary for the Q_β fitting concern. The Phase 3 finding **refines** their prerequisites:
+- Before Phase 3: T9 / T10 could be done "directly" using the existing per-braid mass tower (which embeds SUPERSEDED ρ_q)
+- After Phase 3: T9 / T10 should be done using the **canonical (non-ρ_q) per-braid mass tower**, which itself requires the lepton-sector variant of `prop:rho-k-graded-expansion` (T6)
+- So T9 / T10 are downstream of T6, not deprecated
+
+**Dependency chain**: T6 (lepton canonical) → T9 (Q_β direct compute) → T10 (theoretical leading-order derivation) → Q_β fitting concern resolution
+**Independent**: T11 (Lean lift batch) — does not gate on Q_β work
+
 ## Audit / file inventory snapshot
 
 Audits landed this branch: 7 docs in `docs/audits/2026-05-24-*.md`.
