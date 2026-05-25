@@ -169,6 +169,67 @@ fn registry() -> Vec<RegistryEntry> {
             methodology: cert::Methodology::ManualHistoricalVolumeMatch,
             b_ame_mev: Some(7.7180),
         },
+        // ─── canonical atom-braid recipe — D, T, ³He via atom_braid_word_3A ─
+        //
+        // These supplement the historical-knot-ID entries above with the
+        // CANONICAL atomic-braid recipe (`mass_at_3A_proper.atom_braid_word_3A`)
+        // for cross-validation of the "C(3A-2, k) filtration-shape" conjecture
+        // — see commit msg of the ⁴He entry. Test predictions:
+        //   D (A=2):   23 crossings on B_6,  shape C(4, k),  total 2⁴ = 16
+        //   T (A=3):   35 crossings on B_9,  shape C(7, k),  total 2⁷ = 128
+        //   ³He (A=3): 35 crossings on B_9,  shape C(7, k),  total 2⁷ = 128
+        //   ⁴He (A=4): 47 crossings on B_12, shape C(10, k), total 2¹⁰ = 1024 ✓
+        RegistryEntry {
+            name: "deuteron-canonical-3A",
+            atomic_n_0: 6,
+            native_strand_count: 6,
+            braid: BraidRep::Extended(vec![
+                Pos(1), Pos(1), Pos(1), Pos(1), Avg(1), Pos(1), Pos(1),
+                Inv(2), Inv(2), Inv(2), Avg(2),
+                Avg(3),
+                Pos(4), Pos(4), Pos(4), Avg(4), Avg(4), Pos(4), Pos(4),
+                Inv(5), Inv(5), Inv(5), Inv(5),
+            ]),
+            rho_factor: 1,
+            methodology: cert::Methodology::PrincipledDerivation,
+            b_ame_mev: Some(2.2246),
+        },
+        RegistryEntry {
+            name: "tritium-canonical-3A",
+            atomic_n_0: 9,
+            native_strand_count: 9,
+            braid: BraidRep::Extended(vec![
+                Pos(1), Pos(1), Pos(1), Pos(1), Avg(1), Pos(1), Pos(1),
+                Inv(2), Inv(2), Inv(2), Avg(2),
+                Avg(3),
+                Pos(4), Pos(4), Pos(4), Avg(4), Avg(4), Pos(4), Pos(4),
+                Inv(5), Inv(5), Inv(5), Inv(5),
+                Inv(6),
+                Pos(7), Pos(7), Pos(7), Avg(7), Avg(7), Pos(7), Pos(7),
+                Inv(8), Inv(8), Inv(8), Inv(8),
+            ]),
+            rho_factor: 2,
+            methodology: cert::Methodology::PrincipledDerivation,
+            b_ame_mev: Some(8.4818),
+        },
+        RegistryEntry {
+            name: "helium3-canonical-3A",
+            atomic_n_0: 9,
+            native_strand_count: 9,
+            braid: BraidRep::Extended(vec![
+                Pos(1), Pos(1), Pos(1), Pos(1), Avg(1), Pos(1), Pos(1),
+                Inv(2), Inv(2), Inv(2), Avg(2),
+                Pos(3),
+                Pos(4), Pos(4), Pos(4), Pos(4), Avg(4), Pos(4), Pos(4),
+                Inv(5), Inv(5), Inv(5), Avg(5),
+                Avg(6),
+                Pos(7), Pos(7), Pos(7), Avg(7), Avg(7), Pos(7), Pos(7),
+                Inv(8), Inv(8), Inv(8), Inv(8),
+            ]),
+            rho_factor: 2,
+            methodology: cert::Methodology::PrincipledDerivation,
+            b_ame_mev: Some(7.7180),
+        },
         // ─── ℓ = 3  helium-4 (canonical atom_braid_word_3A(2,2)) ─
         //
         // 47-crossing braid on B_12 from
