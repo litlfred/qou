@@ -149,6 +149,47 @@ theorem stdRep3_M_cubed_eq_one :
           Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
     ring
 
+/-! ## §3b  Borromean (2,1) character — named definition + structural properties
+
+  This section names χ^{(2,1)}(β_Bor) for the standard 6-crossing
+  Borromean braid β_Bor = (σ₀ σ₁⁻¹)^3 ∈ B₃ and proves the basic
+  algebraic structure (it's the trace of a specific matrix product).
+
+  The EXPLICIT POLYNOMIAL FORM in q is
+      χ^{(2,1)}(β_Bor)  =  −q⁶ + 3q⁴ − 3q² + 4 − 3/q² + 3/q⁴ − 1/q⁶
+  which expands in h = q − q⁻¹ to
+      χ^{(2,1)}(β_Bor)(h)  =  2 − 3h⁴ − h⁶  (exact, finite-degree 6 polynomial)
+
+  Sympy-verified in `folio-assistant/computations/crystal_yekutieli_probes_abcd.py`
+  (PR #1233 probe B). The Lean theorem stating this polynomial equality
+  would require the q-form to be written in the t-parameter algebra
+  (HA_t / q_from_t machinery), which is non-trivial; this section just
+  names the character as a `noncomputable def` and proves basic
+  structural facts that don't require the polynomial RHS.
+
+  **Wedderburn context**: combined with χ^{(3)}(β_Bor) = 1 (trivial rep)
+  and χ^{(1,1,1)}(β_Bor) = 1 (sign rep), this gives the per-irrep
+  decomposition of the Borromean Markov trace at H_3(q). -/
+
+/-- The (2,1) Wedderburn character of the Borromean braid β_Bor =
+    (σ₀ σ₁⁻¹)^3 ∈ B₃.
+
+    Computed by: forming the matrix M = σ₀ · σ₁⁻¹ in (2,1), cubing it,
+    and taking the trace. -/
+noncomputable def stdRep3_chi_borromean : R_t :=
+  ((stdRep3_gen0 * stdRep3_genInv1) ^ 3).trace
+
+/-- The (2,1) Borromean character is the trace of an explicit triple
+    product of 2×2 matrices in the standard rep — a finite expression
+    in the t-parameter algebra (no `sorry` needed for the definition). -/
+theorem stdRep3_chi_borromean_eq_trace :
+    stdRep3_chi_borromean =
+      ((stdRep3_gen0 * stdRep3_genInv1) *
+       (stdRep3_gen0 * stdRep3_genInv1) *
+       (stdRep3_gen0 * stdRep3_genInv1)).trace := by
+  unfold stdRep3_chi_borromean
+  rw [show (3 : ℕ) = 2 + 1 from rfl, pow_succ, sq]
+
 /-! ## §4  HeckeRep instance -/
 
 /-- The standard (2,1) representation of H₃(q) as a `HeckeRep` instance. -/
