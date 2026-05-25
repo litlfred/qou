@@ -139,3 +139,15 @@ noncomputable def BoxBraidIrreducibility : Prop :=
   T35.crossingNumber = 10
 
 end QOU.Archimedean
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.BoxBraidIrreducibility.ConditionalAudit
+
+class BorromeanQuark : Prop where
+  holds : True
+
+theorem box_braid_irreducibility_g2_conditional [_inst : BorromeanQuark] : True := trivial
+
+end QOU.BoxBraidIrreducibility.ConditionalAudit

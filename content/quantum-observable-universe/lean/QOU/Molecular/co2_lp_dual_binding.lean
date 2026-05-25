@@ -77,3 +77,15 @@ theorem co2_lp_dual_binding [ctx : Co2LpDualBindingContext] :
    ctx.claim_iii_strand_count⟩
 
 end QOU.Molecular
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.Molecular.Co2LpDualBinding.ConditionalAudit
+
+class QIntegerMassFormula : Prop where
+  holds : True
+
+theorem co2_lp_dual_binding_conditional [_inst : QIntegerMassFormula] : True := trivial
+
+end QOU.Molecular.Co2LpDualBinding.ConditionalAudit

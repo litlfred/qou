@@ -1,4 +1,4 @@
-**Proposition.**
+**Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)).**
 *The LP dual of the $CO$ molecular braid selects the triple-bond
 configuration (3 shared pairs) as optimal over single ($k=1$) and
 double ($k=2$) bonds.*

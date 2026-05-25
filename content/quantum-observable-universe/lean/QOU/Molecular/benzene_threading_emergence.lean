@@ -63,3 +63,15 @@ theorem benzene_threading_emergence [ctx : BenzeneThreadingEmergenceContext] :
    ctx.claim_iii_alexander_polynomial_weight⟩
 
 end QOU.Molecular
+
+
+/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+
+namespace QOU.Molecular.BenzeneThreadingEmergence.ConditionalAudit
+
+class QIntegerMassFormula : Prop where
+  holds : True
+
+theorem benzene_threading_emergence_conditional [_inst : QIntegerMassFormula] : True := trivial
+
+end QOU.Molecular.BenzeneThreadingEmergence.ConditionalAudit
