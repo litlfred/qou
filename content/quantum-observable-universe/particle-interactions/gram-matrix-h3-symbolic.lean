@@ -1,8 +1,10 @@
 /-!
 # QOU.Interactions.GramMatrixH3Symbolic
 
-**Symbolic categorical instance of `HasH3GramMatrix ℝ q`** for the
-H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis.
+**Symbolic categorical Gram matrix `gramMatrix u`** for the H_3(q)
+Hoefsmit-seminormal basis (6-element NF) — direct-use form (no
+typeclass indirection per main commit `91cb2671b`'s revert of the
+Phase 1a typeclass).
 
 Phase 1b deliverable (PR follow-up to PR #1255 Option E Phase 1a).
 
@@ -206,34 +208,29 @@ theorem gramMatrix_det_ne_zero (u : ℝ) (hu_gt_one : 1 < u) :
 
 end QOU.Interactions.GramMatrixH3Symbolic
 
-/-! ## Integration with HasH3GramMatrix typeclass
+/-! ## Direct-use pattern
 
-To produce a concrete `instance : HasH3GramMatrix ℝ q` for `q > 1`
-(the framework substrate domain), use `u = Real.sqrt q` and
-instantiate the typeclass with `gramMatrix u`, discharging the
-three axioms via the theorems above. The instance form is:
+`HasH3GramMatrix` was reverted from `universal-ilp-algorithm.lean`
+(main commit `91cb2671b`, 2026-05-25, "Phase 1a typeclass infrastructure
+is superseded by the symbolic Gram entries — the typeclass-driven approach
+added an unnecessary layer of indirection when the categorical entries
+are directly definable"). Downstream consumers use `gramMatrix u`
+directly with the three structural theorems below.
+
+Substrate-domain usage (q > 1, the framework's actual domain):
 
 ```lean
-noncomputable instance gramInstanceAtSubstrateQ (q : ℝ) (hq_gt_one : 1 < q) :
-    HasH3GramMatrix ℝ q where
-  entries := QOU.Interactions.GramMatrixH3Symbolic.gramMatrix (Real.sqrt q)
-  is_symm := gramMatrix_isSymm _
-  diag_top_one := gramMatrix_top_left _
-  det_ne_zero := gramMatrix_det_ne_zero _
-                   (by
-                     have hq_pos : 0 < q := lt_trans zero_lt_one hq_gt_one
-                     have hu_eq : Real.sqrt q * Real.sqrt q = q :=
-                       Real.mul_self_sqrt hq_pos.le
-                     -- sqrt is strictly monotone on (0, ∞), sqrt 1 = 1
-                     calc Real.sqrt q > Real.sqrt 1 :=
-                            Real.sqrt_lt_sqrt zero_le_one hq_gt_one
-                       _ = 1 := Real.sqrt_one)
+example (q : ℝ) (hq_gt_one : 1 < q) :
+    ∃ G : Matrix (Fin 6) (Fin 6) ℝ,
+      G.IsSymm ∧ G 0 0 = 1 ∧ G.det ≠ 0 := by
+  refine ⟨gramMatrix (Real.sqrt q), gramMatrix_isSymm _, gramMatrix_top_left _, ?_⟩
+  apply gramMatrix_det_ne_zero
+  -- sqrt is strictly monotone on (0, ∞), sqrt 1 = 1
+  calc 1 = Real.sqrt 1 := Real.sqrt_one.symm
+    _ < Real.sqrt q := Real.sqrt_lt_sqrt zero_le_one hq_gt_one
 ```
 
-**Hypothesis change (2026-05-25):** the old form took
-`(hq_pos : 0 < q) (hq_ne_one : q ≠ 1)` — too weak per the
-correctness finding above. Switched to `1 < q` which both implies
-`q > 0` and discards both determinant roots cleanly.
-
-This is encoded in [`universal-ilp-algorithm.lean`](universal-ilp-algorithm.lean)
-Phase 1b-2 follow-up (after `gramMatrix_det_ne_zero` sorry is discharged). -/
+**Hypothesis (2026-05-25):** the original `det_ne_zero` form took
+`(hu_pos : 0 < u) (hu_ne_one : u ≠ 1)` — too weak per the
+correctness finding above. Strengthened to `1 < u`, which both
+implies `u > 0` and discards both determinant roots cleanly. -/

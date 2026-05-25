@@ -25,7 +25,9 @@ hypothesis. See
 
 `gram-h3-det-factorization.witness.json` contains:
 
-  - Full numerator polynomial in u (degree 94)
+  - Full numerator polynomial in u, factored form
+    (numerator degree 44 in u after rational-cancellation against
+    the denominator u^10·(u²+1)^12)
   - Factor list (6 irreducible factors)
   - Numerical sign vs u table (proves two positive real roots)
   - Positivity certificate for u > 1 (each factor manifestly > 0)
@@ -74,8 +76,10 @@ def build_gram_h3_symbolic():
 
 def factorize_det(G: sp.Matrix, u: sp.Symbol) -> dict:
     """Compute det(G) and factor numerator/denominator. Returns dict."""
-    # Multiply through by common denominator to get a polynomial matrix
-    common = u**6 * (u**2 + 1) ** 4
+    # Multiply through by the per-entry common denominator to clear
+    # fractions. Max (u²+1) power in any entry's denominator is 2
+    # (e.g. G[0,3], G[1,5]); max u power is 6 (G[5,5]).
+    common = u**6 * (u**2 + 1) ** 2
     G_poly = sp.zeros(6, 6)
     for i in range(6):
         for j in range(6):
@@ -86,7 +90,8 @@ def factorize_det(G: sp.Matrix, u: sp.Symbol) -> dict:
     det_poly = G_poly.det(method="berkowitz")
     t_det = time.time() - t0
 
-    # det(G) = det_poly / common^6
+    # det(G) = det_poly / common^6 (det scales by common^6 since every
+    # entry was multiplied by common)
     det_G = sp.cancel(det_poly / common**6)
     num, denom = sp.fraction(det_G)
     num_fact = sp.factor(num)
@@ -101,10 +106,13 @@ def factorize_det(G: sp.Matrix, u: sp.Symbol) -> dict:
     }
 
 
-def positive_real_roots_of_numerator(u: sp.Symbol) -> list[float]:
+def positive_real_roots_of_numerator(
+    u: sp.Symbol,
+) -> list[tuple[str, float]]:
     """Compute all positive real roots of the numerator factor by factor.
 
-    Returns roots in increasing order.
+    Returns a list of (factor_name, root_value) tuples, sorted by root
+    value in increasing order.
     """
     factors_to_check = [
         ("u - 1", u - 1),
@@ -166,6 +174,14 @@ def positivity_certificate_for_u_gt_one(u: sp.Symbol) -> dict:
 
 
 def main() -> int:
+    # Construct WitnessBuilder FIRST so its captured start_time spans
+    # the expensive symbolic-determinant work (per Copilot PR #1266
+    # review: `durationMs` should reflect real runtime, not just save).
+    w = WitnessBuilder(
+        "gram-h3-det-factorization",
+        engine="python+sympy",
+    )
+
     print("=" * 78)
     print("H_3(q) Gram determinant — symbolic factorization witness")
     print("=" * 78)
@@ -204,11 +220,7 @@ def main() -> int:
     for k, v in cert.items():
         print(f"  {k:<20}: {v}")
 
-    # Witness
-    w = WitnessBuilder(
-        "gram-h3-det-factorization",
-        engine="python+sympy",
-    )
+    # Witness (builder already constructed at start of main)
     w.set_audit_only(
         "docs/audits/2026-05-25-gram-h3-det-second-root-correctness-finding.md",
     )
