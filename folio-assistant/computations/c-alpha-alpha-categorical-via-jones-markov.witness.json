@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T19:05:53.193885+00:00",
-  "commitSha": "a13f647c2e384ee601b3e03fc193c67cbf61502a",
+  "computedAt": "2026-05-25T21:15:41.871909+00:00",
+  "commitSha": "134aa60f3f95d344c7a478440dd4dbea889c703d",
   "assertions": [
     {
       "name": "tr_M_wenzl_finite_nonzero",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 26,
   "computation": "c-alpha-alpha-categorical-via-jones-markov",
   "scriptFile": "c_alpha_alpha_categorical_via_jones_markov.py",
-  "scriptHash": "7c376e12c756",
-  "scriptCommitSha": "a13f647c2e384ee601b3e03fc193c67cbf61502a",
+  "scriptHash": "d657a5d01a43",
+  "scriptCommitSha": "da40b32bb356d22f0a07522434d502b079e6f913",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -29,7 +29,6 @@
   "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
-    "q_0_f64": 1.1099785955541805,
     "m_e_MeV": "0.51099895069",
     "knot": "7^2_1 (Whitehead-link-like 2-component)",
     "braid_word": [
@@ -66,23 +65,23 @@
         2
       ]
     ],
-    "evaluator_precision": "f64 (markov_trace_for_knot is an f64 evaluator; mpmath used downstream only for c_αα arithmetic against the mpf-precision Vol(7²_1))"
+    "evaluator_precision": "mp.mpf at 50 dps (L1 floor) via markov_trace_for_knot mpf default; mpf used throughout c_αα arithmetic"
   },
   "data": {
-    "tr_M_wenzl": 0.2086108940022843,
-    "tr_M_qschur": 0.18519372167060494,
-    "c_alpha_alpha_literature_MeV": 2.426989507040012,
-    "c_alpha_alpha_derived_wenzl_MeV": 0.1065999479376701,
-    "c_alpha_alpha_derived_qschur_MeV": 0.09463379744805504,
-    "delta_wenzl_vs_lit_MeV": -2.320389559102342,
-    "delta_qschur_vs_lit_MeV": -2.332355709591957,
-    "rel_err_wenzl": -0.95607729344175,
-    "rel_err_qschur": -0.9610077434725,
-    "vol_7_sq_1": 4.749499981874439,
+    "tr_M_wenzl": "0.2086108940022829237239006",
+    "tr_M_qschur": "0.1851937216706039356503961",
+    "c_alpha_alpha_literature_MeV": "2.426989507040012097175451",
+    "c_alpha_alpha_derived_wenzl_MeV": "0.1065999479376693884874185",
+    "c_alpha_alpha_derived_qschur_MeV": "0.09463379744805452493593668",
+    "delta_wenzl_vs_lit_MeV": "-2.320389559102342708688032",
+    "delta_qschur_vs_lit_MeV": "-2.332355709591957572239514",
+    "rel_err_wenzl": "-0.9560772934417503648134227",
+    "rel_err_qschur": "-0.9610077434725001623261372",
+    "vol_7_sq_1": "4.749499981874438508498087",
     "wall_seconds": {
-      "wenzl_jm": 0.0005988089999391377,
-      "q_schur": 8.783099997344834e-05,
-      "total": 0.0006866399999125861
+      "wenzl_jm": 0.0017123460000902924,
+      "q_schur": 0.0004313590000037948,
+      "total": 0.002143705000094087
     }
   }
 }
