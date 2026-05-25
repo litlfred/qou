@@ -29,10 +29,17 @@ namespace QOU.BraidKnot.He4TwoRowDominance
 
 open QOU.BraidKnot.TwoRowStratum
 
-/-- The empirical contribution ratio: the absolute sum of c_λ for
-    λ in the two-row stratum, divided by |tr_M(β_{⁴He})|.  This is
-    a concrete numerical fact at the substrate parameter q_0,
-    verified by the companion witness. -/
+/-- The two-row stratum's contribution to |tr_M(β_⁴He)|, expressed as
+    a STRUCTURAL lower bound `4/5 ≤ ratio ≤ 1`. The class encodes the
+    categorical content (two-row dominance is at least 80 %); the
+    specific numerical value `866/1000 ≈ 86.6 %` from the empirical
+    witness is preserved in `he4-canonical-tr-m-block-fingerprint.witness.json`
+    but NOT in the class signature (per the empirical-conditional audit
+    on PR #1255 — pinning the value as a class axiom mixed empirical
+    numerics with the categorical proposition).
+
+    Downstream consumers should rely on `ratio_lower_bound` (the
+    structural ≥ 4/5 bound), not on a specific value. -/
 class HasHe4TwoRowDominance where
   /-- The two-row stratum's share of the trace, as a rational
       lower bound matched at 50 dps numerical precision. -/
@@ -41,10 +48,6 @@ class HasHe4TwoRowDominance where
   ratio_lower_bound : (4 : ℚ) / 5 ≤ ratio
   /-- Upper bound: at most 100 %. -/
   ratio_upper_bound : ratio ≤ 1
-  /-- The numerical value verified by the witness
-      (`he4-canonical-tr-m-block-fingerprint.witness.json`).
-      866/1000 corresponds to the empirical 86.6 %. -/
-  ratio_witness : ratio = 866 / 1000
 
 /-- The dominant block λ* for ⁴He is (9, 3).  Stated as a class
     field so downstream consumers can reference the dominant
@@ -60,15 +63,16 @@ class HasHe4DominantBlock where
   /-- The empirical value. -/
   dominant_eq : dominant_partition = [9, 3]
 
-/-- Empirical instance for ⁴He, encoding the 86.6 % figure from the
-    canonical Markov-trace fingerprint witness.  The witness is the
-    sole `sorry` in the dependency chain; downstream propositions
-    inherit rigorous-conditional status from this class. -/
+/-- Categorical instance for ⁴He. The `ratio := 866/1000` value is
+    documentary only (the actual class axioms are the structural
+    bounds `≥ 4/5` and `≤ 1`); per the audit on PR #1255, the
+    specific empirical value lives in the witness JSON, not the
+    class signature. Downstream propositions inherit rigorous-
+    conditional status from the bounds. -/
 instance : HasHe4TwoRowDominance where
   ratio := 866 / 1000
   ratio_lower_bound := by norm_num
   ratio_upper_bound := by norm_num
-  ratio_witness := rfl
 
 /-- Empirical instance pinning the dominant block to (9, 3). -/
 instance : HasHe4DominantBlock where
@@ -91,14 +95,6 @@ theorem he4_complement_at_most_20_percent
     1 - h.ratio ≤ 1 / 5 := by
   have hL := h.ratio_lower_bound
   linarith
-
-/-- The complement contribution at the witnessed value (86.6 %)
-    is exactly 13.4 % of `|tr_M(β_⁴He)|`. -/
-theorem he4_complement_exact
-    [h : HasHe4TwoRowDominance] :
-    1 - h.ratio = 134 / 1000 := by
-  rw [h.ratio_witness]
-  norm_num
 
 /-- The dominant block (9, 3) belongs to the two-row stratum
     Λ²(12).  Composes `dominant_is_two_row` and `dominant_sums_to_12`
