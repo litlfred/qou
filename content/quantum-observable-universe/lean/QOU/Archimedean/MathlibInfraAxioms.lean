@@ -105,24 +105,43 @@ theorem catalanSeq_decreasing (k : ℕ) : catalanSeq (k + 1) ≤ catalanSeq k :=
     exact pow_le_pow_left h2 h1 2
   linarith
 
-/-- The Catalan-series sequence tends to 0. -/
+/-- The Catalan-series sequence tends to 0 (PROVED).
+
+    `catalanSeq k = 1/(2k+1)²` → 0 as k → ∞.
+
+    Proof: bound `0 ≤ 1/(2k+1)² ≤ 1/(k+1)` for all `k ∈ ℕ`, then
+    apply Mathlib's squeeze theorem
+    `tendsto_of_tendsto_of_tendsto_of_le_of_le` with the constant 0
+    sequence (below) and `1/(k+1) → 0` (above, via
+    `tendsto_one_div_add_atTop_nhds_zero_nat`). -/
 theorem catalanSeq_tendsto_zero :
     Filter.Tendsto catalanSeq Filter.atTop (nhds 0) := by
-  -- catalanSeq k = 1/(2k+1)^2 → 0 as k → ∞
-  -- This follows from Filter.Tendsto.inv (with the denominator → ∞)
-  -- Mathlib has `tendsto_one_div_atTop_nhds_zero_nat` for 1/n → 0;
-  -- we use a similar pattern.
-  unfold catalanSeq
-  -- We prove via squeeze: 0 ≤ 1/(2k+1)^2 ≤ 1/(k+1) for k ≥ 1,
-  -- and 1/(k+1) → 0.
-  --
-  -- For brevity, we use the fact that as k → ∞, (2k+1)^2 → ∞,
-  -- so 1/(2k+1)^2 → 0.
-  --
-  -- Mathlib: `Filter.Tendsto.comp` + `tendsto_inv_atTop_zero`
-  -- + `tendsto_natCast_atTop_atTop`.
-  sorry  -- Ref: standard convergence; Mathlib's `Filter.Tendsto.inv`
-         -- pattern + (2k+1)^2 → ∞.
+  -- Upper bound: 1/(k+1) → 0.
+  have h_upper : Filter.Tendsto (fun k : ℕ => 1 / ((k : ℝ) + 1))
+                  Filter.atTop (nhds 0) := by
+    have h_atTop :
+        Filter.Tendsto (fun k : ℕ => ((k : ℝ) + 1)) Filter.atTop Filter.atTop := by
+      have h1 := tendsto_natCast_atTop_atTop (α := ℝ)
+      simpa using h1.atTop_add tendsto_const_nhds
+    have h_inv :
+        Filter.Tendsto (fun k : ℕ => ((k : ℝ) + 1)⁻¹) Filter.atTop (nhds 0) :=
+      Filter.Tendsto.comp tendsto_inv_atTop_zero h_atTop
+    have h_eq :
+        (fun k : ℕ => 1 / ((k : ℝ) + 1)) = fun k : ℕ => ((k : ℝ) + 1)⁻¹ := by
+      ext k; exact one_div _
+    rw [h_eq]; exact h_inv
+  -- Apply squeeze with const 0 and 1/(k+1).
+  apply tendsto_of_tendsto_of_tendsto_of_le_of_le
+    tendsto_const_nhds h_upper
+  · -- 0 ≤ catalanSeq k
+    intro k; exact catalanSeq_nonneg k
+  · -- catalanSeq k ≤ 1/(k+1)
+    intro k
+    unfold catalanSeq
+    rw [div_le_div_iff (by positivity : (0 : ℝ) < (2 * (k : ℝ) + 1) ^ 2)
+                       (by positivity : (0 : ℝ) < (k : ℝ) + 1)]
+    have hk : (0 : ℝ) ≤ (k : ℝ) := Nat.cast_nonneg k
+    nlinarith [sq_nonneg ((k : ℝ))]
 
 /-! ## §2  Lobachevsky function (Lewin 1981)
 

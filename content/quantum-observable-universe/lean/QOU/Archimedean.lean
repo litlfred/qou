@@ -23,7 +23,8 @@ import QOU.Archimedean.PauliWitness
 import QOU.Archimedean.NuclearGroebnerReduction
 import QOU.Archimedean.WeierstrassProjection
 import QOU.Archimedean.metallic_character_knot
-import QOU.Archimedean.descartes
+-- descartes.lean removed — file never landed (dangling import from
+-- upstream commit 6ab311ba); unblocks Lake build of the package.
 import QOU.Archimedean.noble_gas_characterization
 
 /-!
