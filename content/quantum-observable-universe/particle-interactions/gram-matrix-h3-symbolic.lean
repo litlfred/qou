@@ -157,54 +157,156 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
   unfold gramMatrix gramEntry
   simp [Matrix.of_apply]
 
-/-- **THEOREM (DEFERRED — Phase 1b-2).** The Gram matrix is invertible
-    when `u > 1` (equivalently `q > 1`).
+/-! ## Positivity scaffolding for the determinant factorization
 
-    **Why `u > 1` rather than `u ≠ 1`** (correctness fix, 2026-05-25):
-    sympy factorization of det numerator yields
+Six lemmas decomposing each factor of the sympy-verified factorization
 
-      ```
-      det(G(u)) = -(u-1)(u+1)(u³+u-1)⁵(u³+u²+1)⁵·p(u)·r(u) / (u¹⁰(u²+1)¹²)
-        p(u) = u⁶-u⁵+u⁴-u³+2u²-u+1                 (no real roots)
-        r(u) = u⁶+u⁵+2u⁴+u³+u²+u+1                 (no positive roots)
-      ```
+  ```
+  det(G(u)) = -(u-1)(u+1)(u³+u-1)⁵(u³+u²+1)⁵·p(u)·r(u) / (u¹⁰(u²+1)¹²)
+    p(u) = u⁶-u⁵+u⁴-u³+2u²-u+1                 (no real roots)
+    r(u) = u⁶+u⁵+2u⁴+u³+u²+u+1                 (no positive roots)
+  ```
 
-    revealing a SECOND positive real root at `u ≈ 0.6823278` (the
-    real root of `u³+u-1 = 0`) — the older hypothesis `u ≠ 1` was
-    insufficient. The framework substrate has `q_0 ≈ 1.110 > 1`,
-    so `u_0 > 1` is the natural domain.
+into individually-provable factor-positivity statements for `u > 1`.
+These compose into the full `gramMatrix_det_ne_zero` discharge (modulo
+the single remaining sorry, which is the symbolic 6×6 matrix-det
+expansion — see below). -/
 
-    **Proof strategy** (factor-by-factor positivity for `u > 1`):
-    - `u - 1 > 0`                  by `u > 1`
-    - `u + 1 > 0`                  by `u > 0`
-    - `u³ + u - 1 > 1`             by `u > 1` (so `u³ > 1, u > 1`)
-    - `u³ + u² + 1 > 0`            by `u > 0` (positive monomials)
-    - `p(u) > 0`                   unconditionally on ℝ (no real roots;
-                                    numerical minimum on `[0, ∞)` ≈ 0.86)
-    - `r(u) > 0` for `u > 0`       (all-positive coefficient polynomial)
-    - denominator `u¹⁰(u²+1)¹² > 0` for `u > 0`
+/-- `u - 1 > 0` for `u > 1`. Immediate from hypothesis. -/
+theorem det_factor_u_minus_one_pos {u : ℝ} (hu : 1 < u) : 0 < u - 1 := by
+  linarith
 
-    Therefore `det(G(u)) = -(strictly positive) ≠ 0` for `u > 1`.
+/-- `u + 1 > 0` for `u > 1`. From `u > 1 > -1`. -/
+theorem det_factor_u_plus_one_pos {u : ℝ} (hu : 1 < u) : 0 < u + 1 := by
+  linarith
 
-    **Numerical evidence** (sympy + Mathlib's `Matrix.det`):
-    - `det(gramMatrix 1) = 0`                    (classical limit)
-    - `det(gramMatrix 0.6823278) = 0`            (newly-found root)
-    - `det(gramMatrix u_0) ≈ −0.189` at `u_0 ≈ 1.054`
-    - `rank(gramMatrix u_0) = 6`                 (full rank at substrate)
+/-- `u³ + u − 1 > 1` for `u > 1`. Factorisation
+    `u³ + u − 2 = (u − 1)·(u² + u + 2)` with both factors positive. -/
+theorem det_factor_cubic_one_pos {u : ℝ} (hu : 1 < u) : 1 < u^3 + u - 1 := by
+  have h1 : 0 < u - 1 := by linarith
+  have h2 : 0 < u^2 + u + 2 := by nlinarith [sq_nonneg u, hu]
+  nlinarith [mul_pos h1 h2]
 
-    The `sorry` is conjectural-conditional per CLAUDE.md §3b-cond;
-    discharging it requires lifting the symbolic factorisation into
-    Lean. Witness sidecar:
-    `folio-assistant/computations/gram-h3-det-factorization.witness.json`. -/
+/-- `u³ + u² + 1 > 0` for `u > 0`. Sum of positive monomials. -/
+theorem det_factor_cubic_two_pos {u : ℝ} (hu : 0 < u) : 0 < u^3 + u^2 + 1 := by
+  have h1 : 0 < u^3 := by positivity
+  have h2 : 0 < u^2 := by positivity
+  linarith
+
+/-- `p(u) = u⁶ − u⁵ + u⁴ − u³ + 2u² − u + 1 > 0` for all real `u`.
+    Sympy confirms p has no real roots (all 6 roots complex with
+    nonzero imaginary part); numerical minimum on ℝ ≈ 0.859.
+
+    Sum-of-squares decomposition (verified by expansion):
+      p(u) = (u³ − u²/2 − 1/2)²  +  (3/4)·u⁴
+           + (3/2)·(u − 1/3)²    +  7/12
+    Each piece is non-negative and the constant 7/12 > 0, so p > 0. -/
+theorem det_factor_p_pos (u : ℝ) :
+    0 < u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1 := by
+  have h1 : 0 ≤ (u^3 - u^2/2 - 1/2)^2 := sq_nonneg _
+  have h2 : 0 ≤ u^4 := by positivity
+  have h3 : 0 ≤ (u - 1/3)^2 := sq_nonneg _
+  nlinarith [h1, h2, h3]
+
+/-- `r(u) = u⁶ + u⁵ + 2u⁴ + u³ + u² + u + 1 > 0` for `u > 0`.
+    All-positive coefficients ⇒ sum of positives for `u > 0`. -/
+theorem det_factor_r_pos {u : ℝ} (hu : 0 < u) :
+    0 < u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1 := by
+  have h6 : 0 < u^6 := by positivity
+  have h5 : 0 < u^5 := by positivity
+  have h4 : 0 < u^4 := by positivity
+  have h3 : 0 < u^3 := by positivity
+  have h2 : 0 < u^2 := by positivity
+  linarith
+
+/-- Denominator `u¹⁰ · (u² + 1)¹² > 0` for `u > 0`. -/
+theorem det_denominator_pos {u : ℝ} (hu : 0 < u) :
+    0 < u^10 * (u^2 + 1)^12 := by
+  have h1 : 0 < u^10 := by positivity
+  have h2 : 0 < (u^2 + 1)^12 := by positivity
+  exact mul_pos h1 h2
+
+/-- The combined factored expression
+    `-(u-1)(u+1)(u³+u-1)⁵(u³+u²+1)⁵·p(u)·r(u) / (u¹⁰(u²+1)¹²)` is
+    **strictly negative** for `u > 1`, hence nonzero. This is the
+    sympy-verified factorization of `det(gramMatrix u)`. -/
+theorem det_factored_form_neg {u : ℝ} (hu : 1 < u) :
+    -((u - 1) * (u + 1) * (u^3 + u - 1)^5 * (u^3 + u^2 + 1)^5
+      * (u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1)
+      * (u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1))
+      / (u^10 * (u^2 + 1)^12) < 0 := by
+  have hu_pos : 0 < u := by linarith
+  have h_um1 : 0 < u - 1 := det_factor_u_minus_one_pos hu
+  have h_up1 : 0 < u + 1 := det_factor_u_plus_one_pos hu
+  have h_c1_lt : 1 < u^3 + u - 1 := det_factor_cubic_one_pos hu
+  have h_c1 : 0 < u^3 + u - 1 := by linarith
+  have h_c2 : 0 < u^3 + u^2 + 1 := det_factor_cubic_two_pos hu_pos
+  have h_p : 0 < u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1 := det_factor_p_pos u
+  have h_r : 0 < u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1 := det_factor_r_pos hu_pos
+  have h_denom : 0 < u^10 * (u^2 + 1)^12 := det_denominator_pos hu_pos
+  have h_c1_5 : 0 < (u^3 + u - 1)^5 := by positivity
+  have h_c2_5 : 0 < (u^3 + u^2 + 1)^5 := by positivity
+  have h_num : 0 < (u - 1) * (u + 1) * (u^3 + u - 1)^5 * (u^3 + u^2 + 1)^5
+                   * (u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1)
+                   * (u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1) := by positivity
+  have h_ratio : 0 < ((u - 1) * (u + 1) * (u^3 + u - 1)^5 * (u^3 + u^2 + 1)^5
+                       * (u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1)
+                       * (u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1))
+                      / (u^10 * (u^2 + 1)^12) := div_pos h_num h_denom
+  linarith
+
+/-- **THEOREM** (Phase 1b-2 partial discharge — 2026-05-25):
+    `det(gramMatrix u) ≠ 0` for `u > 1`.
+
+    **Proof structure:** The factor-positivity scaffolding above proves
+    that the factored form
+      `-(u-1)(u+1)(u³+u-1)⁵(u³+u²+1)⁵·p(u)·r(u) / (u¹⁰(u²+1)¹²)`
+    is strictly negative for `u > 1`. The remaining gap (single
+    `sorry`) is the symbolic identification
+      `(gramMatrix u).det = (factored form above)`
+    — a 6×6 symbolic Matrix.det expansion verified at machine precision
+    via the sympy witness
+    `folio-assistant/computations/gram-h3-det-factorization.witness.json`
+    but not yet bridged into Mathlib's symbolic determinant machinery.
+
+    The remaining sorry is **bounded**: it's a single algebraic identity
+    between two explicit closed-form rational functions, with both sides
+    individually computable (sympy independently confirms equality). A
+    follow-up Phase 1b-3 will close it via `Matrix.det_succ_column_zero`
+    recursion plus `ring` / `field_simp`.
+
+    Numerical witness:
+    - `det(gramMatrix 1.054) ≈ −0.189` (substrate-pin value, factored
+      form gives same value)
+    - `det(gramMatrix 1) = 0` (rank drop, excluded by hypothesis u > 1)
+    - `det(gramMatrix 0.6823278) = 0` (second root, also excluded) -/
 theorem gramMatrix_det_ne_zero (u : ℝ) (hu_gt_one : 1 < u) :
     (gramMatrix u).det ≠ 0 := by
-  -- See proof strategy in the docstring. The full Lean proof requires
-  -- expanding Matrix.det of the 6×6 rational-function matrix and showing
-  -- it equals the factorization above — substantial Mathlib symbolic
-  -- determinant work. Numerical witness:
-  -- `gram-h3-det-factorization.witness.json` asserts the factorization
-  -- and the two-positive-real-roots fact (`u=1` and `u≈0.6823`).
-  sorry
+  -- The factored form is strictly negative for u > 1:
+  have h_fact_neg :
+      -((u - 1) * (u + 1) * (u^3 + u - 1)^5 * (u^3 + u^2 + 1)^5
+        * (u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1)
+        * (u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1))
+        / (u^10 * (u^2 + 1)^12) < 0 := det_factored_form_neg hu_gt_one
+  -- The symbolic identity (gramMatrix u).det = factored form: deferred
+  -- to Phase 1b-3 follow-up (Matrix.det_succ_column_zero × 5 + ring).
+  -- Sympy witness confirms this identity at machine precision; see
+  -- `gram-h3-det-factorization.witness.json`.
+  have h_det_eq_factored :
+      (gramMatrix u).det = -((u - 1) * (u + 1) * (u^3 + u - 1)^5
+        * (u^3 + u^2 + 1)^5
+        * (u^6 - u^5 + u^4 - u^3 + 2*u^2 - u + 1)
+        * (u^6 + u^5 + 2*u^4 + u^3 + u^2 + u + 1))
+        / (u^10 * (u^2 + 1)^12) := by
+    -- Ref: sympy Berkowitz det + factor in
+    -- `folio-assistant/computations/gram_h3_det_factorization.py`.
+    -- Phase 1b-3 follow-up: bridge sympy factorization into Mathlib
+    -- via Matrix.det_succ_column_zero recursion. The identity is
+    -- between two explicit closed-form rationals; both sides are
+    -- algorithmically computable.
+    sorry
+  rw [h_det_eq_factored]
+  exact ne_of_lt h_fact_neg
 
 end QOU.Interactions.GramMatrixH3Symbolic
 
