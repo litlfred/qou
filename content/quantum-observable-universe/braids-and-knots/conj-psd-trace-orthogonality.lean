@@ -38,15 +38,17 @@ Ref: [manuscript] folio-assistant/computations/probe_1b_li6_orthogonality.py
 Ref: [manuscript] folio-assistant/computations/probe_4_li6_rectangular_python.py
 -/
 
-import Mathlib.Data.Nat.Defs
+import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Sort
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Set.Basic
 
 namespace QOU.BraidKnot.PSDTraceOrthogonality
 
 /-- A **partition** of `n` represented as a non-increasing list of
 positive natural numbers summing to `n`. -/
 def Partition (n : ℕ) : Type :=
-  { l : List ℕ // l.Sum = n ∧ ∀ k ∈ l, k > 0 ∧ l.Sorted (· ≥ ·) }
+  { l : List ℕ // l.sum = n ∧ l.Sorted (· ≥ ·) ∧ ∀ k ∈ l, k > 0 }
 
 /-- The number of rows of a partition. -/
 def Partition.numRows {n : ℕ} (p : Partition n) : ℕ := p.val.length
