@@ -104,7 +104,7 @@ The two structural integers in the identity:
 
 2. ~~**Categorical derivation of the 12.**~~ **IDENTIFIED:** $12 = \dim V_{(2,1)} \cdot 3! = 2 \cdot 6$.
    The mass formula factors cleanly as
-   $$m_p = \dim V_{(2,1)} \cdot \bigl(m_\mu \cdot F_{\mathrm{Bor}}(q_0) - |S_3| \cdot m_e\bigr)$$
+   $m_p = \dim V_{(2,1)} \cdot \bigl(m_\mu \cdot F_{\mathrm{Bor}}(q_0) - |S_3| \cdot m_e\bigr)$
    where $|S_3| = 3! = 6$ is the symmetric group order (equivalently
    the Poincaré polynomial $P_3(q^2)|_{q=1}$, the classical limit of
    $[3]_q!$). Both factors have clean categorical meaning: $\dim V_{(2,1)}$
