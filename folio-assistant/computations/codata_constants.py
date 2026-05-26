@@ -162,6 +162,16 @@ AME_B_LI5_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li5_MeV")
 AME_B_LI6_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li6_MeV")
 AME_B_LI7_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li7_MeV")
 
+# ── PDG 2024 meson masses (validation-only) ───────────────────
+# Added 2026-05-26 per meson knot-dictionary probe (PR #1292).
+# These are comparison targets for meson-sector predictions, NOT
+# calibration inputs. Source: PDG 2024 Review of Particle Physics.
+M_PI_PM_MEV_VALIDATION = mp.mpf("139.57039")     # ± 0.00018 MeV (1.3 ppb)
+M_PI_0_MEV_VALIDATION  = mp.mpf("134.9768")      # ± 0.0005 MeV (3.7 ppm)
+M_K_PM_MEV_VALIDATION  = mp.mpf("493.677")       # ± 0.013 MeV (26 ppm)
+M_K_0_MEV_VALIDATION   = mp.mpf("497.611")       # ± 0.013 MeV (26 ppm)
+M_MU_MEV_VALIDATION    = mp.mpf("105.6583755")   # ± 0.0000023 MeV (22 ppb)
+
 # ── Internal consistency check (CAL-3 vs CODATA m_n − m_p − m_e) ─
 # Q_β must agree with (m_n − m_p − m_e) within combined CODATA σ.
 # This is a *cross-check*, not the definition of Q_β: per CAL-3,

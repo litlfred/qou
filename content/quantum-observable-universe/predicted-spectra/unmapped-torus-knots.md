@@ -18,8 +18,8 @@ The current mapping uses:
 
 - $T_{1,0}$: neutrino $\nu$ (genus $0$)
 - $T_{2,3}$: electron $e^-$, up quark $\mathfrak{u}$ (genus $1$)
-- $T_{2,5}$: muon $\mu$, bottom quark $\mathfrak{b}$ (on divisor) (genus $2$)
-- $T_{2,7}$: tau lepton $\tau$, charm quark $\mathfrak{c}$ (on divisor) (genus $3$)
+- $T_{2,5}$: muon $\mu$, charm quark $\mathfrak{c}$ (on divisor) (genus $2$)
+- $T_{2,7}$: tau lepton $\tau$, bottom quark $\mathfrak{b}^{\sigma}$ (on divisor) (genus $3$)
 - $T_{3,4}$: Hopf${}^2$ color binding (genus $3$, force carrier)
 
 The Standard Model fermion content is exhausted at genus $3$. Yet
