@@ -20,25 +20,23 @@ import { proposition } from "../../schema/builders";
  * not an input.
  *
  * Structural identifications:
- *   - "2"  = bar-pair partition count: (3) ↔ (1,1,1) transpose pair
- *           under bar-Mullineux symmetry (PR #1289 rectangular conjecture
- *           confirms the (1,1,1) dominance at A=1).
- *   - "12" = inverse of the Ocneanu cancellation leading-pole coefficient
- *           in tr_M(β_Bor, q) ∼ −1/(12·q^10) as q → 0
- *           (per 2026-05-04-ocneanu-cancellation-numerical-verification.md,
- *           verified to 200 dps).
+ *   - "2"  = dim V_{(2,1)} — classical dimension of the standard irrep
+ *           of S_3 (trace-dominant per Wedderburn diagnostic at 49% of T1).
+ *           Lean-proved via hook-length formula in DimStandardRepS3.lean.
+ *   - "12" = empirical integer near-match (to ~10⁻⁴ relative accuracy).
+ *           CORRECTION (2026-05-26): earlier Ocneanu −1/12 attribution was
+ *           WRONG — that pole belongs to a different braid (canonical SDP
+ *           T_w_proton, not β_Bor). Structural origin of the 12 is OPEN.
  *
- * The factor 12 connects two distinct categorical layers — the q=0
- * Laurent-pole structure (Ocneanu cancellation) and the q=q_0
- * substrate mass formula — via a single Bernoulli-like integer.
+ * The factor 12's categorical origin is the main open problem for
+ * elevating this from empirical (0.24 ppm) to proved.
  *
  * Status: empirical near-identity at 0.24 ppm.  Categorical proof
  * requires:
- *   1. Bar-pair derivation of the factor 2 from y_(3) ↔ y_(1,1,1)
- *      transpose-pair (currently Lean-proved at the y_λ level via
- *      yLambdaQSchur_transpose_pair).
- *   2. Categorical derivation of the 12 via Ocneanu / Hoefsmit
- *      symbolic (PR #546's 2×2 bug fix is pending).
+ *   1. Factor 2 = dim V_{(2,1)} is NOW Lean-proved in
+ *      DimStandardRepS3.lean (hook-length formula: 3!/3 = 2).
+ *   2. Categorical derivation of the 12 — structural origin OPEN.
+ *      Earlier Ocneanu −1/12 attribution corrected as wrong braid.
  *   3. Identification of F_Bor(q) := |tr_M(β_Bor, q)| · [3]_q! / q^3
  *      as a natural categorical observable.
  *

@@ -79,22 +79,28 @@ $(m_e, q_0)$ via the muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q
 
 The two structural integers in the identity:
 
-| Integer | Categorical meaning |
-|---|---|
-| $2$ | Bar-pair partition count: $(3) \leftrightarrow (1,1,1)$ transpose pair under bar-Mullineux symmetry. Per-Wedderburn-block diagnostic confirms these dominate the proton's $T_1$ contribution (33% + 18% = 51%). The transpose-pair identity $y_{(3)}(q) \cdot y_{(1,1,1)}(q) = 1/[3]_q!^2$ is Lean-proved in [`YLambdaQSchur.lean`](../lean/QOU/BraidsAndKnots/YLambdaQSchur.lean) `yLambdaQSchur_transpose_pair`. |
-| $12$ | Inverse of the Ocneanu cancellation leading-pole coefficient $-1/12$ in $\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q) \sim -1/(12 \cdot q^{10})$ as $q \to 0$. Per [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md), verified to 200 dps. Bernoulli-like constant connecting the $q=0$ Laurent-pole structure to the $q=q_0$ substrate mass formula. |
+| Integer | Categorical meaning | Status |
+|---|---|---|
+| $2$ | $\dim V_{(2,1)}$ — classical dimension of the standard irrep of $S_3$ (trace-dominant per Wedderburn diagnostic at 49% of $T_1$). Computed via the hook-length formula: $3! / (3 \cdot 1 \cdot 1) = 2$. | **Lean-proved** ([`DimStandardRepS3.lean`](../lean/QOU/BraidsAndKnots/DimStandardRepS3.lean) `dim_V_21_eq_two`) |
+| $12$ | Empirical integer near-match ($\approx 12$ to ${\sim}10^{-4}$ relative accuracy, closer than $11$ or $13$). Structural origin is **open**. | **Open** — earlier attribution to Ocneanu $-1/12$ pole was [corrected as wrong braid](../../../docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md) |
 
 ## Open work for full categorical proof
 
-1. **Categorical derivation of the factor 2** via bar-pair structure on
-   $y_{(3)} \leftrightarrow y_{(1,1,1)}$. The transpose-pair identity is
-   already Lean-proved; what's needed is the bridge from "partition
-   transpose-pair" to "factor 2 in the mass formula".
+1. ~~**Categorical derivation of the factor 2.**~~ **DONE.** The factor
+   $2 = \dim V_{(2,1)}$ is the hook-length dimension of the standard
+   irrep of $S_3$. Lean-proved in
+   [`DimStandardRepS3.lean`](../lean/QOU/BraidsAndKnots/DimStandardRepS3.lean)
+   via $3!/(3 \cdot 1 \cdot 1) = 2$.
 
-2. **Categorical derivation of the 12** via Ocneanu cross-partition
-   cancellation. PR #546's Hoefsmit symbolic work needs the 2×2 block
-   bug fix to prove $-1/12$ rigorously as a symbolic identity (currently
-   verified only numerically to 200 dps).
+2. **Categorical derivation of the 12** — structural origin is **open**.
+   The earlier attribution to the Ocneanu cancellation pole $-1/12$ was
+   [corrected](../../../docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md):
+   that pole belongs to the canonical SDP-selected $T_{w,\text{proton}}$
+   braid, not to $\beta_{\mathrm{Bor}}$ (which has pole order 4, leading
+   coefficient $-1$, not $-1/12$). Possible structural sources under
+   investigation: representation-theory invariant of $\beta_{\mathrm{Bor}}$
+   at $H_3$; genuine coincidence with the Bernoulli-12; or a dimension
+   count over a specific Wedderburn sub-block.
 
 3. **Identification of $F_{\mathrm{Bor}}(q)$** as a natural categorical
    observable. Currently it's the empirically-observed combination
