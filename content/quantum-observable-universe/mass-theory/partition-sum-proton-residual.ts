@@ -9,6 +9,13 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:schur-weyl-mass-decomposition"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/proton_residual_rootcause.py",
+    witness:
+      "folio-assistant/computations/proton-residual-rootcause.witness.json",
+    status: "verified",
+  },
   tags: [
     "proton",
     "residual",

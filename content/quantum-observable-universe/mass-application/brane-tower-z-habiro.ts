@@ -23,18 +23,4 @@ export default conjecture({
     "scalar-nstar-refuted",
     "closure-2026-05-11",
   ],
-  computation: {
-    engine: "python",
-    script: "folio-assistant/computations/probe_phiq_uniform_k.py",
-    witness: [
-      "folio-assistant/computations/probe-phiq-uniform-k.witness.json",
-      "folio-assistant/computations/probe-phiq-n-star-rule.witness.json",
-      "folio-assistant/computations/probe-phiq-operator-valued.witness.json",
-      "folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json",
-      "folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json",
-      "folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json",
-      "folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json",
-    ],
-    status: "verified",
-  },
 });

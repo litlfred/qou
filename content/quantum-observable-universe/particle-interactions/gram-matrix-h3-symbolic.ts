@@ -45,6 +45,18 @@ export default proposition({
         "scoped as the next follow-up.",
     },
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/gram_matrix_dual.py",
+    witness: [
+      "folio-assistant/computations/gram-matrix-dual.witness.json",
+      "folio-assistant/computations/gram-h3-symbolic-regression.witness.json",
+    ],
+    consumers: [
+      "folio-assistant/computations/lp_dual_solver.py",
+    ],
+    status: "verified",
+  },
   tags: [
     "gram-matrix",
     "hoefsmit",

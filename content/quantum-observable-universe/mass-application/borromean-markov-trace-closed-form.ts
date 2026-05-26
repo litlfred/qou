@@ -14,6 +14,17 @@ export default proposition({
     "jones1987",
     "murasugi1996",
   ],
+  computation: {
+    engine: "mpmath",
+    script:
+      "folio-assistant/computations/borromean_markov_trace_h_expansion_50dps.py",
+    witness:
+      "folio-assistant/computations/borromean-markov-trace-h-expansion-50dps.witness.json",
+    consumers: [
+      "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
+    ],
+    status: "verified",
+  },
   tags: [
     "borromean",
     "markov-trace",
