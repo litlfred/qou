@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T21:20:33.233186+00:00",
-  "commitSha": "743dee2a86e2ae5d9e929e327acf98ac15fe5e30",
+  "computedAt": "2026-05-26T21:41:07.509842+00:00",
+  "commitSha": "11a5e14d7866ae1501d34e14da7ecde05c715560",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2368,6 +2368,7 @@
         "delta-q-decoration.witness.json",
         "demazure-markov-trace.witness.json",
         "demazure-sub-crystal-prescreen-50dps.witness.json",
+        "deuteron-binding-interface-closure.witness.json",
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "dirac-yekutieli-combinations-50dps.witness.json",
@@ -2650,7 +2651,6 @@
         "probe-4c-li6-large-d-scan.witness.json",
         "probe-4e-transpose-pair-asymmetry.witness.json",
         "probe-4f-h3-sigma-avg-asymmetry.witness.json",
-        "proton-error-anatomy-1ppb.witness.json",
         "proton-identity-extension-audit.witness.json",
         "proton-m_e-anomaly-audit.witness.json",
         "proton-m_e-derivation.witness.json",
@@ -2699,7 +2699,6 @@
         "qbeta-fsc-g-pattern-comparison.witness.json",
         "qbeta-golden-ratio-fibonacci-probe.witness.json",
         "qbeta-half-fill-probe.witness.json",
-        "qbeta-ladder-verification-1ppq.witness.json",
         "qbeta-operator-identification-probe.witness.json",
         "qbeta-per-block-paper-closed-forms.witness.json",
         "qbeta-per-block-symbolic-decomposition.witness.json",
