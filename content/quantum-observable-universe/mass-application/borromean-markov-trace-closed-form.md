@@ -85,30 +85,103 @@ $-3/4$: the **first topological invariant** of the Borromean linking
 structure — the part of the Jones polynomial that distinguishes
 $\mathcal{B}_3$ from the trivial 3-component unlink.
 
-## Per-representation structure
+## Per-representation decomposition and exact $h^2$ budget
 
-The three irreps of $S_3$ / $H_3(q)$ contribute distinctly:
+The three irreps of $S_3$ / $H_3(q)$ contribute distinctly to the
+Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$:
 
-- **$\lambda = (3)$ [trivial, dim 1]:** $\sigma_i = q$ (scalar) $\to$
-  $(\sigma_1^{-1}\sigma_2)^3 = 1$ exactly for all $q$. Contributes
-  only through the $q$-dependent Wenzl weight $y_{(3)}(q)$.
+- **$\lambda = (3)$ [trivial, dim 1]:** $\chi^{(3)}(\beta_{\mathrm{Bor}}) = 1$
+  exactly for all $q$ (writhe-zero braid, trivial eigenvalue $q^0 = 1$).
+  Per-partition $h^2$ coefficient of $y_{(3)} \cdot \chi^{(3)}$: $\;5/128$.
 
-- **$\lambda = (1^3)$ [sign, dim 1]:** $\sigma_i = -q^{-1}$ (scalar) $\to$
-  $(\sigma_1^{-1}\sigma_2)^3 = 1$ exactly for all $q$. Same.
+- **$\lambda = (1^3)$ [sign, dim 1]:** $\chi^{(1^3)}(\beta_{\mathrm{Bor}}) = 1$
+  exactly (writhe-zero, sign eigenvalue $(-q^{-1})^0 = 1$).
+  Per-partition $h^2$ coefficient of $y_{(1^3)} \cdot \chi^{(1^3)}$: $\;15/128$.
 
 - **$\lambda = (2,1)$ [standard, dim 2]:** The **only non-abelian
-  irrep**. ALL correction terms ($h^4, h^6, \ldots$) originate from
-  this partition alone — the two 1-dimensional representations have
-  commuting generators and contribute trivially.
+  irrep**, with exact rational character
 
-## Structural significance for the linking weight
+  $$
+    \chi^{(2,1)}(\beta_{\mathrm{Bor}})
+    = \frac{-q^{12} + 3q^{10} - 3q^8 + 4q^6 - 3q^4 + 3q^2 - 1}{q^6}.
+  $$
 
-The exact closed form shows that the Borromean Markov trace has NO
-$h^2$ curvature correction. The $h^2$ contribution to the linking
-weight $\mathfrak{w}(\mathcal{B}_3)$ — whatever its categorical
-derivation — must come from the **Geom functor's evaluation layer**
-(the $\mathrm{Vol}/\hbar_q^2$ denominator parametrization), not from
-the braid character itself. The Canonical Wedderburn $h^2$ coefficient
-$+3/4$ (per `prop:lambda-scale-substrate-form`) is thus confirmed as a
-**Geom-level contribution**, structurally independent of the Markov
-trace.
+  ALL correction terms ($h^4, h^6, \ldots$) originate from
+  this partition alone.
+  Per-partition $h^2$ coefficient of $y_{(2,1)} \cdot \chi^{(2,1)}$: $\;-5/32 = -20/128$.
+
+The $h^2$ budget is exact:
+
+$$
+  \underbrace{\frac{5}{128}}_{(3)}
+  \;+\; \underbrace{\left(-\frac{20}{128}\right)}_{(2,1)}
+  \;+\; \underbrace{\frac{15}{128}}_{(1^3)}
+  \;=\; 0.
+$$
+
+## Why $h^2 = 0$: universal identity + Borromean symmetry
+
+The cancellation follows from two independent facts:
+
+**Fact 1 (universal).** The Markov trace normalization
+$\sum_\lambda y_\lambda(q) \cdot d_\lambda = 1$ holds identically
+in $q$. Differentiating twice in $h$ at $h = 0$:
+
+$$
+  \sum_\lambda \bigl[h^2\text{-coeff of } y_\lambda\bigr] \cdot d_\lambda = 0.
+$$
+
+This is a **knot-independent** identity — it constrains the Wenzl
+weights regardless of which braid is traced.
+
+**Fact 2 (Borromean-specific).** The braid $\beta_{\mathrm{Bor}} =
+(\sigma_1^{-1}\sigma_2)^3$ maps under $\pi\colon B_3 \to S_3$ to
+$(s_1 s_2)^3 = (1\,2\,3)^3 = \mathrm{id}$. Since it also has
+writhe $= 3 \cdot 1 + 3 \cdot (-1) = 0$, the one-dimensional
+characters satisfy $\chi^{(3)}(\beta_{\mathrm{Bor}}) =
+\chi^{(1^3)}(\beta_{\mathrm{Bor}}) = 1$ *exactly*. At $q = 1$
+(i.e. $h = 0$), the standard character evaluates to
+$\chi^{(2,1)}(\mathrm{id}) = d_{(2,1)} = 2$.
+
+Combining: at $h^2$ order, $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ reduces
+to $\sum_\lambda [h^2\text{-coeff of }y_\lambda] \cdot d_\lambda = 0$
+by Fact 1, since each $\chi^\lambda / d_\lambda \to 1$ at $h = 0$.
+
+## Generalization: when does $h^2 = 0$ hold?
+
+The mechanism generalizes to any braid $\beta \in B_n$ satisfying:
+
+1. **Pure braid**: $\pi(\beta) = \mathrm{id} \in S_n$
+   (so $\chi^\lambda(\beta)|_{q=1} = d_\lambda$ for all $\lambda$).
+2. **Writhe zero**: equal positive and negative crossings
+   (so 1-dimensional characters are identically $1$).
+
+At $H_3$ there is a single multi-dimensional irrep $(2,1)$, so the
+universal identity alone forces $h^2 = 0$ with no further constraint
+on $\chi^{(2,1)}$. At $H_n$ for $n \ge 4$, multiple multi-dimensional
+irreps contribute, and the $h^2$ cancellation requires additional
+structure beyond Fact 1 — their individual corrections must conspire.
+
+Cross-isotope verification: the deuteron ($H_6$), tritium ($H_9$),
+and ${}^3\mathrm{He}$ ($H_9$) atom braids have $h^2 \ne 0$
+($12.7$, $18.7$, $36.6$ respectively), confirming that the
+single-standard-irrep mechanism is specific to $H_3$.
+
+## Structural significance for the mass formula
+
+The $h^2 = 0$ result separates the proton-mass $h$-dependence into
+clean layers:
+
+| Factor in $F_{\mathrm{Bor}} = |\mathrm{tr}_M| \cdot [3]_q! / q^3$ | $h^2$ coefficient | Source |
+|---|---|---|
+| $|\mathrm{tr}_M(\beta_{\mathrm{Bor}})|$ | $0$ | per-partition cancellation (this proposition) |
+| $[3]_q! = (h^2 + 3)\sqrt{h^2 + 4}$ | $11/4$ | algebraic (q-factorial) |
+| $q^3$ (denominator) | $9/8$ | algebraic ($q = (h + \sqrt{h^2+4})/2$) |
+| $F_{\mathrm{Bor}}$ (combined) | $19/2$ | $11/4$ and $9/8$ via division |
+
+The $h^2$ contribution to the linking weight
+$\mathfrak{w}(\mathcal{B}_3)$ must come from the **normalization
+layer** ($[3]_q! / q^3$), not from the braid character. The
+Canonical Wedderburn $h^2$ coefficient $+3/4$ (per
+`prop:lambda-scale-substrate-form`) is a **Geom-level contribution**,
+structurally independent of the Markov trace.

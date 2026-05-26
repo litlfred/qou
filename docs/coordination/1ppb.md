@@ -504,3 +504,20 @@ must address Δ_λ(K)'s K-dependence via:
 
 Both are K-dependent by construction. See the full reframing in
 [`docs/audits/2026-05-25-delta-lambda-K-dependence-reframing.md`](../audits/2026-05-25-delta-lambda-K-dependence-reframing.md) §⛔ DO NOT.
+
+### 2026-05-26 — Phase 1 per-partition h-expansion (#1294)
+
+| Date | PR | Phase | Status | Cherry-pick / artefact |
+|------|----|-------|--------|------------------------|
+| 2026-05-26 | [#1294](https://github.com/litlfred/qou/pull/1294) | Phase 1a–1d · per-partition h-expansion of F_Bor | open | 4 probes: `phase1a_symbolic_trace_dominant_h_expansion.py` (⁴He), `phase1b_two_row_closed_form_character.py` (falsification), `phase1c_proton_h3_symbolic_decomposition.py` (H₃ exact), `phase1d_f_bor_exact_h_expansion.py` (rational coefficients) |
+
+**Key finding:** tr_M(β_Bor) h² = 0 (exact per-partition cancellation:
+5/128 − 20/128 + 15/128 = 0). The proton mass's h² sensitivity comes
+entirely from [3]_q!/q³, not the trace. F_Bor = 6 − 9h + 19/2·h² − 57/8·h³ − ...
+with all rational coefficients derived from Lean-proved forms.
+
+**Sibling classification:**
+- #1276 (Bring+Faddeev): additive, independent — h²=0 finding posted
+- #1259 (q-Schur convention): no overlap, downstream consumer
+- #1224 (Δ_λ closure): no overlap, parallel axis
+- #1249 (substrate q₀): no overlap, independent

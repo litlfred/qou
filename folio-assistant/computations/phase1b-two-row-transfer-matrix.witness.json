@@ -1,0 +1,101 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T13:49:02.516115+00:00",
+  "commitSha": "e20525c71ba8618bfc133d45dfad4918843d988d",
+  "assertions": [
+    {
+      "name": "diagonal_only_refuted",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Falsification probe: diagonal-only should NOT match (off-diagonal mixing expected)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "phase1b-two-row-transfer-matrix",
+  "scriptFile": "phase1b_two_row_closed_form_character.py",
+  "scriptHash": "4b0310ac64aa",
+  "scriptCommitSha": "f352308a5f74de18d2ed812ed20de23d54b95b36",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Tests whether the diagonal-only transfer-matrix formula gives the exact Hecke character for 2-row partitions of ⁴He's braid word. If exact, replaces O(d_λ²) matrix product with O(d_λ) sum — massive speedup for d_λ=297.",
+  "contentBlock": "conj:psd-trace-orthogonality",
+  "auditOnly": "docs/audits/2026-05-26-phase1b-two-row-transfer-matrix.md",
+  "data": {
+    "results": [
+      {
+        "partition": [
+          11,
+          1
+        ],
+        "d_lambda": 11,
+        "chi_full": 7.390200966330934,
+        "chi_diag_only": 0.13997716650773734,
+        "rel_error": 0.9810590852474161,
+        "diagonal_exact": false
+      },
+      {
+        "partition": [
+          10,
+          2
+        ],
+        "d_lambda": 54,
+        "chi_full": 10.461121094404168,
+        "chi_diag_only": 0.004636694857599115,
+        "rel_error": 0.9995567688380858,
+        "diagonal_exact": false
+      },
+      {
+        "partition": [
+          9,
+          3
+        ],
+        "d_lambda": 154,
+        "chi_full": 27.331191373309558,
+        "chi_diag_only": -0.979157932130924,
+        "rel_error": 1.0358256586314465,
+        "diagonal_exact": false
+      },
+      {
+        "partition": [
+          8,
+          4
+        ],
+        "d_lambda": 275,
+        "chi_full": 30.262869451455778,
+        "chi_diag_only": -0.041209016146256314,
+        "rel_error": 1.001361702207795,
+        "diagonal_exact": false
+      },
+      {
+        "partition": [
+          7,
+          5
+        ],
+        "d_lambda": 297,
+        "chi_full": 21.773345101891422,
+        "chi_diag_only": -0.003289212740384916,
+        "rel_error": 1.0001510660270616,
+        "diagonal_exact": false
+      },
+      {
+        "partition": [
+          6,
+          6
+        ],
+        "d_lambda": 132,
+        "chi_full": 20.470386787186825,
+        "chi_diag_only": -0.3256566507554619,
+        "rel_error": 1.0159086711033376,
+        "diagonal_exact": false
+      }
+    ]
+  }
+}
