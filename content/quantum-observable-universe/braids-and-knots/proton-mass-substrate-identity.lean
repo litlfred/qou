@@ -138,4 +138,35 @@ def bar_pair_factor_two_categorical : ℕ := 2
     -/
 def ocneanu_factor_twelve_categorical : ℕ := 12
 
+/-! ## Cleaner form of the substrate identity via F_Bor = |tr_M|/y_(3)
+
+Per [`YLambdaQSchur.lean F_Bor_eq_trM_over_y_3`](YLambdaQSchur.lean),
+the categorical observable F_Bor simplifies to
+
+  F_Bor(q) = |tr_M(β_Bor, q)| / y_(3)(q)
+
+where y_(3)(q) := q^3 / [3]_q! is the q-Schur Markov weight for the
+trivial / symmetric partition (3) ⊢ 3.
+
+Substituting into the substrate identity gives the cleaner form:
+
+  m_p = 2 · m_μ · |tr_M(β_Bor, q_0)| / y_(3)(q_0)  -  12 · m_e
+
+Equivalently, clearing y_(3) from the denominator:
+
+  y_(3)(q_0) · (m_p + 12 · m_e)  =  2 · m_μ · |tr_M(β_Bor, q_0)|
+
+This is the categorically-clearest form: the y_(3) Markov weight of
+the trivial partition relates a SHIFTED proton mass (m_p + 12·m_e,
+where 12 = 1/Ocneanu_coef) to TWICE the muon times the Markov trace.
+-/
+
+/-- **Substrate identity in cleaner y_(3)-cleared form**:
+    `y_(3)(q_0) · (m_p + 12 · m_e) = 2 · m_μ · |tr_M(β_Bor, q_0)|`.
+
+    Equivalent to the F_Bor form by algebraic substitution. -/
+def ProtonMassSubstrateIdentityClearedForm
+    (q_0 m_e m_mu m_p y_3 trM_bor : ℝ) : Prop :=
+  y_3 * (m_p + 12 * m_e) = 2 * m_mu * trM_bor
+
 end QOU.BraidsAndKnots

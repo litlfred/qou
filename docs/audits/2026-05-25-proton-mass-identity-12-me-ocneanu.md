@@ -95,6 +95,46 @@ The bar-pair structure of (3) ↔ (1,1,1) carries through to F_Bor, but
 the "2" in the mass formula is more cleanly identified as
 dim V_(2,1) per the trace-dominance finding.
 
+## Cleaner form: F_Bor identification (closed this session)
+
+Algebraic identification (Lean-proved in
+[`YLambdaQSchur.lean F_Bor_eq_trM_over_y_3`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)):
+
+$$F_{\mathrm{Bor}}(q) \;=\; \frac{|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)|}{y_{(3)}(q)}$$
+
+since `y_(3)(q) := q^{c((3))} / [3]_q! = q³ / [3]_q!` (content sum of the
+trivial partition (3) ⊢ 3 is c((3)) = 0+1+2 = 3).
+
+So F_Bor is the Markov trace of β_Bor **divided by the q-Schur Markov
+weight of the trivial partition (3)** — categorically clean.
+
+The substrate identity rewrites cleanly as:
+
+$$\boxed{\;y_{(3)}(q_0) \cdot (m_p + 12 \cdot m_e) \;=\; 2 \cdot m_\mu \cdot |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q_0)|\;}$$
+
+Numerically verified at q_0:
+
+| Side | Value | Match |
+|---|---:|---|
+| LHS = y_(3) · (m_p + 12·m_e) | 211.01296 | |
+| RHS = 2 · m_μ · |tr_M(β_Bor)| | 211.01291 | 0.24 ppm |
+
+**Structural reading**:
+
+> *The trivial-partition Markov weight times the Ocneanu-shifted proton
+> mass equals the standard-rep-dimension times the muon mass times
+> the Borromean Markov trace.*
+
+Each ingredient now has a categorical identity:
+
+| Symbol | Identity |
+|---|---|
+| `y_(3)(q)` | q-Schur Markov weight of the trivial (symmetric) S_3 irrep |
+| `m_p + 12·m_e` | Ocneanu-shifted proton mass (12 = reciprocal of -1/12 Ocneanu leading-pole) |
+| `2` | `dim V_(2,1)` — standard 2-dim irrep of S_3 (trace-dominant per Wedderburn diagnostic) |
+| `m_μ` | muon mass (CAL-2 anchor) |
+| `|tr_M(β_Bor, q)|` | Borromean Markov trace (Lean-proved closed form) |
+
 ## Open: full categorical proof
 
 What's needed to ELEVATE this from "empirical 0.24 ppm match" to PROVED:
