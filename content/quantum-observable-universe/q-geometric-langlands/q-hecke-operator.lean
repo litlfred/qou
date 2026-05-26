@@ -15,7 +15,7 @@ import QOU.QGeometricLanglands
 namespace QOU
 
 /-- $q$-Hecke operator -/
-def QHeckeOperator : sorry :=
+def QHeckeOperator   :=
   -- Ref: [manuscript] def:q-hecke-operator
   sorry
 

@@ -31,7 +31,7 @@ end QOU.BraidKnot
 namespace QOU.BraidKnot
 
 /-- Quantum dilogarithm disambiguation: $\\Phi_q$ (product form) vs $-\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit) -/
-def QuantumDilogarithm : sorry :=
+def QuantumDilogarithm   :=
   -- Ref: [manuscript] def:quantum-dilogarithm-disambiguation
   sorry
 

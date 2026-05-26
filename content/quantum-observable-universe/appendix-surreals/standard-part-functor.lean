@@ -16,7 +16,7 @@
 namespace QOU.AppendixSurreals
 
 /-- Standard-part functor $\\mathrm{st} : \\mathbf{No}_{\\mathrm{fin}} \\to \\mathbb{R}$ -/
-def StandardPart : sorry :=
+def StandardPart   :=
   -- Ref: [manuscript] def:standard-part-functor
   sorry
 

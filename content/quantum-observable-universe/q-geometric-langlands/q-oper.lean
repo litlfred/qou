@@ -15,7 +15,7 @@ import QOU.QGeometricLanglands
 namespace QOU
 
 /-- $q$-Oper -/
-def QOper : sorry :=
+def QOper   :=
   -- Ref: [manuscript] def:q-oper
   sorry
 

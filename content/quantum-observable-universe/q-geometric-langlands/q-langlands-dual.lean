@@ -15,7 +15,7 @@ import QOU.QGeometricLanglands
 namespace QOU
 
 /-- $q$-Langlands dual group -/
-def QLanglandsDual : sorry :=
+def QLanglandsDual   :=
   -- Ref: [manuscript] def:q-langlands-dual
   sorry
 

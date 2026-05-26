@@ -15,7 +15,7 @@ import QOU.QGeometricLanglands
 namespace QOU
 
 /-- $q$-Hecke eigensheaf -/
-def QHeckeEigensheaf : sorry :=
+def QHeckeEigensheaf   :=
   -- Ref: [manuscript] def:q-hecke-eigensheaf
   sorry
 

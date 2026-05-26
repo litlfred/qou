@@ -24,7 +24,7 @@ import QOU.JetHorizon
 namespace QOU
 
 /-- Jet horizon (degree-$0$ vanishing locus) -/
-def JetHorizon : sorry :=
+def JetHorizon   :=
   -- Ref: [manuscript] def:jet-horizon
   sorry
 

@@ -37,7 +37,7 @@ canonical for theorems, sanity examples (`ρ_3 = (3,2,1)`), and the
 namespace QOU.Hecke
 
 /-- Staircase partition $\\rho_k = (k, k-1, \\ldots, 1)$ -/
-def staircasePartition : sorry :=
+def staircasePartition   :=
   -- Ref: [manuscript] def:staircase-partition
   sorry
 

@@ -147,8 +147,10 @@ function main() {
         const chapter = relative(rootPath, f).split("/")[0] ?? "";
         const hasClass = /\bclass\s/.test(src);
         const hasConj = /conj[:\-]/.test(src) || /conjecture/i.test(src);
-        const hasRefOnSorryLine = cleaned.split("\n").some(
-          (l: string) => /\bsorry\b/.test(l) && /Ref:/.test(src.split("\n")[cleaned.split("\n").indexOf(l)] ?? "")
+        const srcLines = src.split("\n");
+        const cleanedLines = cleaned.split("\n");
+        const hasRefOnSorryLine = cleanedLines.some(
+          (l: string, idx: number) => /\bsorry\b/.test(l) && /Ref:/.test(srcLines[idx] ?? "")
         );
         const hasInstanceSorry = /instance[\s\S]{0,200}sorry/.test(cleaned);
         sorries.push({

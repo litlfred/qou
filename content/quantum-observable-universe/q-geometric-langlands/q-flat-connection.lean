@@ -14,7 +14,7 @@ import QOU.QGeometricLanglands
 namespace QOU
 
 /-- $q$-Flat connection -/
-def QFlatConnection : sorry :=
+def QFlatConnection   :=
   -- Ref: [manuscript] def:q-flat-connection
   sorry
 

@@ -15,7 +15,7 @@ import QOU.QGeometricLanglands
 namespace QOU
 
 /-- $q$-Local system -/
-def QLocalSystem : sorry :=
+def QLocalSystem   :=
   -- Ref: [manuscript] def:q-local-system
   sorry
 

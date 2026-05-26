@@ -89,13 +89,21 @@ function extractLabel(tsText: string): string | undefined {
   return m?.[1];
 }
 
-/** Extract Lean declaration names from .lean source. */
-function extractLeanDecls(leanText: string): string[] {
-  const decls: string[] = [];
-  const re = /^(?:theorem|lemma|def|noncomputable def|instance|class|structure|inductive|abbrev)\s+(\S+)/gm;
+interface LeanDecl {
+  kind: string;
+  name: string;
+}
+
+/** Extract Lean declarations from .lean source (comment-safe). */
+function extractLeanDecls(leanText: string): LeanDecl[] {
+  const decls: LeanDecl[] = [];
+  const cleaned = leanText
+    .replace(/\/-[\s\S]*?-\//g, (m) => "\n".repeat(m.split("\n").length - 1))
+    .replace(/--[^\n]*/g, "");
+  const re = /^\s*(?:private\s+|protected\s+|partial\s+|noncomputable\s+)*(theorem|lemma|def|instance|class|structure|inductive|abbrev|axiom)\s+([a-zA-Z_][a-zA-Z0-9_'.]*)/gm;
   let m: RegExpExecArray | null;
-  while ((m = re.exec(leanText)) !== null) {
-    decls.push(m[1]);
+  while ((m = re.exec(cleaned)) !== null) {
+    decls.push({ kind: m[1], name: m[2] });
   }
   return decls;
 }
@@ -156,52 +164,50 @@ function checkEquivalence(
 
   // Check if any Lean declaration name aligns with the block label
   const nameMatch = leanDecls.some((d) => {
-    const declBase = d.split(".").pop()?.toLowerCase() ?? "";
-    return declBase === expectedSnake?.toLowerCase();
+    const declBase = d.name.split(".").pop()?.toLowerCase() ?? "";
+    return expectedSnake ? declBase === expectedSnake.toLowerCase() : false;
   });
 
   // Check if .md has a statement
   const mdStatement = extractMdStatement(mdText);
   const hasSorry = hasSorryInCode(leanText);
 
-  // Check for kind-declaration alignment
+  // Check for kind-declaration alignment using structured decl kinds
   const provableKinds = ["theorem", "lemma", "proposition", "corollary"];
   const isProvable = kind && provableKinds.includes(kind);
   const hasTheoremDecl = leanDecls.some((d) =>
-    leanText.includes(`theorem ${d}`) || leanText.includes(`lemma ${d}`)
+    d.kind === "theorem" || d.kind === "lemma"
   );
   const hasDefDecl = leanDecls.some((d) =>
-    leanText.includes(`def ${d}`) || leanText.includes(`noncomputable def ${d}`)
+    d.kind === "def"
   );
   const hasStructureDecl = leanDecls.some((d) =>
-    leanText.includes(`structure ${d}`) ||
-    leanText.includes(`class ${d}`) ||
-    leanText.includes(`inductive ${d}`) ||
-    leanText.includes(`abbrev ${d}`)
+    ["structure", "class", "inductive", "abbrev"].includes(d.kind)
   );
+  const declNamesStr = leanDecls.map((d) => d.name).join(", ");
 
   if (kind === "definition" && !hasDefDecl && !hasStructureDecl && hasTheoremDecl) {
     return {
       result: "warn",
-      evidence: `Block kind is 'definition' but Lean has theorem/lemma, no def. Decls: ${leanDecls.join(", ")}`,
+      evidence: `Block kind is 'definition' but Lean has theorem/lemma, no def. Decls: ${declNamesStr}`,
       notes: "Kind-declaration mismatch: .ts says definition but .lean has theorem.",
     };
   }
 
   if (isProvable && !hasTheoremDecl && (hasDefDecl || hasStructureDecl) && !leanDecls.some((d) =>
-    leanText.includes(`class ${d}`) || leanText.includes(`instance`)
+    d.kind === "class" || d.kind === "instance"
   )) {
     return {
       result: "warn",
-      evidence: `Block kind is '${kind}' but Lean has only def/noncomputable def, no theorem/lemma. Decls: ${leanDecls.join(", ")}`,
+      evidence: `Block kind is '${kind}' but Lean has only def/noncomputable def, no theorem/lemma. Decls: ${declNamesStr}`,
       notes: "Kind-declaration mismatch: .ts says provable but .lean has only definitions.",
     };
   }
 
   // For conjectures: expect class/sorry pattern
   if (kind === "conjecture") {
-    const hasClass = leanText.includes("class ") || leanText.includes("axiom ");
-    if (!hasClass && !hasSorry) {
+    const hasClassOrAxiom = leanDecls.some((d) => d.kind === "class" || d.kind === "axiom");
+    if (!hasClassOrAxiom && !hasSorry) {
       return {
         result: "warn",
         evidence: "Conjecture block has .lean but no class axiomatisation or sorry.",
@@ -210,7 +216,7 @@ function checkEquivalence(
     }
     return {
       result: "pass",
-      notes: `Conjecture with ${hasClass ? "class axiomatisation" : "sorry"} — structural match.`,
+      notes: `Conjecture with ${hasClassOrAxiom ? "class/axiom axiomatisation" : "sorry"} — structural match.`,
     };
   }
 
@@ -226,7 +232,7 @@ function checkEquivalence(
   if (leanDecls.length > 0) {
     return {
       result: "pass",
-      notes: `Label '${label}' → expected '${expectedSnake}'; Lean declares: ${leanDecls.slice(0, 5).join(", ")}${leanDecls.length > 5 ? "..." : ""}. Structural match via content.`,
+      notes: `Label '${label}' → expected '${expectedSnake}'; Lean declares: ${leanDecls.slice(0, 5).map((d) => d.name).join(", ")}${leanDecls.length > 5 ? "..." : ""}. Structural match via content.`,
     };
   }
 

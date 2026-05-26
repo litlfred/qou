@@ -94,7 +94,7 @@ function generateDeclaration(
   switch (kind) {
     case "definition":
       lines.push(`/-- ${title} -/`);
-      lines.push(`def ${declName} : sorry :=`);
+      lines.push(`def ${declName} :=`);
       lines.push(`  -- Ref: [manuscript] ${label}`);
       lines.push(`  sorry`);
       break;
@@ -143,7 +143,7 @@ function generateDeclaration(
 
     default:
       lines.push(`/-- ${title} -/`);
-      lines.push(`def ${declName} : sorry :=`);
+      lines.push(`def ${declName} :=`);
       lines.push(`  -- Ref: [manuscript] ${label}`);
       lines.push(`  sorry`);
   }

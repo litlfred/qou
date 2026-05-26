@@ -20,7 +20,7 @@ import QOU.Interactions.DerivedAtom
 namespace QOU.Interactions
 
 /-- Derived atom $\\mathcal{A}(Z, N)$ from pair production -/
-def DerivedAtom : sorry :=
+def DerivedAtom   :=
   -- Ref: [manuscript] def:derived-atom
   sorry
 
