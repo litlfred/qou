@@ -14,7 +14,7 @@ export default proposition({
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:wedderburn-as-noncomm-fourier",
     "prop:schur-weyl-mass-decomposition",
-    "prop:six-term-mass-formula-complete",
+    // broken-ref removed (Phase 7): prop:six-term-mass-formula-complete
   ],
   cites: ["wenzl1988", "hoefsmit1974", "kassel1995"],
   tags: [
@@ -31,6 +31,6 @@ export default proposition({
     engine: "mpmath",
     script: "folio-assistant/computations/rho_k_h3a_refinement.py",
     witness: "folio-assistant/computations/rho-k-h3a-refinement.witness.json",
-    status: "stub",
+    status: "experimental",
   },
 });

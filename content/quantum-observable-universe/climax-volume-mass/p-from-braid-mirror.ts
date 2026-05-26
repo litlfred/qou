@@ -11,9 +11,9 @@ export default conjecture({
   uses: [
     "def:bar-involution",
     "prop:cpt-orbit-closure-density",
-    "def:writhe",
+    // broken-ref removed (Phase 7): def:writhe
     "def:hecke-normal-form",
-    "rem:chirality-from-frobenius-self-pairing",
+    // broken-ref removed (Phase 7): rem:chirality-from-frobenius-self-pairing
     "prop:chirality-writhe-ribbon-derivation",
   ],
   cites: [

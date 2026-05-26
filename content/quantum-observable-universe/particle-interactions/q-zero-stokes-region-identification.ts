@@ -12,7 +12,7 @@ export default conjecture({
     "def:borromean-baryon",
     "def:quantum-planck-constant",
     "prop:phi-q-aj-machinery-identification",
-    "conj:q-zero-complex-extension",
+    // broken-ref removed (Phase 7): conj:q-zero-complex-extension
     "conj:quantum-langlands-dual",
   ],
   cites: [

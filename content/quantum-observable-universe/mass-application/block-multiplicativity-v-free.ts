@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "def:ew-interface-knot",
+    // broken-ref removed (Phase 7): def:ew-interface-knot
     "prop:atomic-mass-gb-nf",
     "thm:jones-markov-trace",
   ],

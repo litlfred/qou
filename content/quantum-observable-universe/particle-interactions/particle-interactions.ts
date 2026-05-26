@@ -432,5 +432,14 @@ export default chapter({
         "e-minus-one",
       ],
     }),
+    section({
+      title: "Reconnected orphan blocks (Phase 7)",
+      label: "sec:particle-interactions-orphan-reconnect",
+      blocks: [
+        "geom-universality",
+        "q-zero-stokes-region-identification",
+        "t-from-trace-cyclicity",
+      ],
+    }),
   ],
 });

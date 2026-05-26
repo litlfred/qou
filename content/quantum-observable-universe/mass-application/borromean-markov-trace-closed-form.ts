@@ -8,7 +8,7 @@ export default proposition({
   uses: [
     "thm:jones-markov-trace",
     "def:frobenius-hopf-substrate",
-    "prop:borromean-vol-8G",
+    // broken-ref removed (Phase 7): prop:borromean-vol-8G
   ],
   cites: [
     "jones1987",

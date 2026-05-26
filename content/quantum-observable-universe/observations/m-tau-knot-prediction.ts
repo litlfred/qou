@@ -20,9 +20,7 @@ export default remark({
     "cohomology",
     "audit",
   ],
-  computation: {
-    witness: "folio-assistant/computations/m-tau-knot-prediction.witness.json",
-  },
+  // computation removed: incomplete schema (had witness without engine/script/status).
   authorNotes: [
     {
       kind: "note",

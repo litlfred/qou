@@ -272,5 +272,20 @@ export default chapter({
         "conj-rho-prefactor-structural",
       ],
     }),
+    section({
+      title: "Reconnected orphan blocks (Phase 7)",
+      label: "sec:mass-theory-orphan-reconnect",
+      blocks: [
+        "borromean-bloch-group-element",
+        "categorical-higgs-mechanism",
+        "interface-knot-markov-z",
+        "isospin-from-canonical-bowtie",
+        "rho-k-h3a-refinement",
+        "s4-s3-half-symmetric-projection",
+        "weak-spectral-completeness",
+        "weak-symmetric-normalization",
+        "z-eq-n-rho-correction",
+      ],
+    }),
   ],
 });

@@ -24,5 +24,16 @@ export default chapter({
       label: "sec:statistics-symmetrisation-intro",
       blocks: ["intro"],
     }),
+    section({
+      title: "Reconnected orphan blocks (Phase 7)",
+      label: "sec:statistics-symmetrisation-orphan-reconnect",
+      blocks: [
+        "pontryagin-dual-coxeter-character",
+        "spin-from-so3-fiber",
+        "type-b-folding-cpt",
+        "weinberg-angle-categorical",
+        "wigner-su4-from-spin-isospin",
+      ],
+    }),
   ],
 });

@@ -203,5 +203,22 @@ export default chapter({
         "bring-figure-eight-depth-2-witness",
       ],
     }),
+    section({
+      title: "Reconnected orphan blocks (Phase 7)",
+      label: "sec:climax-volume-mass-orphan-reconnect",
+      blocks: [
+        "categorical-linking-operation",
+        "crossed-module-euler-characteristic",
+        "dim-master-pentagon",
+        "geometric-invariant-piecewise",
+        "hopf-link-non-magic",
+        "kashaev-density-equals-sdp-multiplicity",
+        "p-from-braid-mirror",
+        "pachner-pentagon-borromean",
+        "poincare-lefschetz-borromean",
+        "q-rogers-pentagon-archimedean",
+        "volume-perturbation-formula",
+      ],
+    }),
   ],
 });

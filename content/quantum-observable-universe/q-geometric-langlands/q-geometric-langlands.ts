@@ -140,5 +140,16 @@ export default chapter({
         "outro-q-geometric-langlands",
       ],
     }),
+    section({
+      title: "Reconnected orphan blocks (Phase 7)",
+      label: "sec:q-geometric-langlands-orphan-reconnect",
+      blocks: [
+        "cyclotomic-l-value-decomposition",
+        "mirror-3d-3d-correspondence",
+        "modular-s-transform-q-q-tilde",
+        "mutant-jones-bloch-group-intro",
+        "quantum-langlands-dual",
+      ],
+    }),
   ],
 });

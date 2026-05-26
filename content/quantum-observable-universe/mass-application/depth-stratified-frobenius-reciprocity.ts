@@ -22,7 +22,7 @@ export default conjecture({
       "folio-assistant/computations/binding_depth_stratified_knot_weighted.py",
     witness:
       "folio-assistant/computations/binding-depth-stratified-knot-weighted.witness.json",
-    status: "open-research-falsification-recorded",
+    status: "experimental",
   },
   tags: [
     "frobenius-reciprocity",

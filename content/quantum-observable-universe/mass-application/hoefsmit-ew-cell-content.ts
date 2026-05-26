@@ -9,8 +9,8 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:force-carrier-knot-vs-link-dichotomy",
-    "conj:electroweak-higgs-torus-link-triplet",
+    // broken-ref removed (Phase 7): conj:force-carrier-knot-vs-link-dichotomy
+    // broken-ref removed (Phase 7): conj:electroweak-higgs-torus-link-triplet
     "conj:weak-spectral-completeness",
     "prop:knot-operator-lp-selection",
   ],

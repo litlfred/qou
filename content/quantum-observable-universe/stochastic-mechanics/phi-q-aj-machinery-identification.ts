@@ -9,7 +9,7 @@ export default proposition({
   },
   uses: [
     "def:borromean-baryon",
-    "prop:jones-markov-trace",
+    // broken-ref removed (Phase 7): prop:jones-markov-trace
     "conj:quantum-langlands-dual",
     "conj:dim-master-pentagon",
   ],

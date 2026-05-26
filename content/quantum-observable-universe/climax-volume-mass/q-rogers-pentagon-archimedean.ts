@@ -12,7 +12,7 @@ export default proposition({
     "def:q-dilogarithm",
     "def:q-logarithm",
     "def:archimedean-realization-functor",
-    "prop:li2q-phiq-bar-symmetrization",
+    // broken-ref removed (Phase 7): prop:li2q-phiq-bar-symmetrization
     "rem:pre-tau-vs-post-tau",
   ],
   cites: ["rogers1907", "abel1826", "lewin1981"],

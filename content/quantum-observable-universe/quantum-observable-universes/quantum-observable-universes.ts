@@ -64,6 +64,11 @@ export default chapter({
         "spin-labels-proof",
         "spin-labels-su2",
         "spin-half-representation",
+        // Phase 7 orphan reconnection (2026-05-25):
+        "g-action-on-substrate",
+        "g-action-on-substrate-table1-data",
+        "g-action-on-substrate-table2-data",
+        "g-action-on-substrate-table3-data",
       ],
     }),
 
@@ -225,6 +230,8 @@ export default chapter({
         "notation-special-cases",
         "c-quantum-observable-universe",
         "archimedean-realisations",
+        // Phase 7 orphan reconnection (2026-05-25):
+        "affine-light-cone-figure",
       ],
     }),
 
