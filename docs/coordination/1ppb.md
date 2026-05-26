@@ -545,3 +545,27 @@ with all rational coefficients derived from Lean-proved forms.
 **Sibling classification:**
 - #1276 (Bring+Faddeev): additive — ℏ⁴ coefficient 5 may relate to
   their Faddeev h⁴ coefficient; different h-variables (ℏ_q vs h)
+
+### 2026-05-26 — Definitive q₀ shift + q-integer negative (#1303, merged)
+
+| Date | PR | Phase | Status | Cherry-pick / artefact |
+|------|----|-------|--------|------------------------|
+| 2026-05-26 | [#1303](https://github.com/litlfred/qou/pull/1303) | Definitive · m_p 242 ppb = q₀ shift of 11.5 ppb | merged `ba36b5a2` | `definitive_q0_shift_for_mp.py`, `phase2c_derive_correction_tower.py` |
+
+**Key finding:** the entire m_p residual reduces to q₀ being off by
+1.28e-8 (11.5 ppb). All correction towers (ℏ⁶/4, ℏ³+5ℏ⁴) are Taylor
+expansions of this single shift. q-integer replacement FAILS (overshoots
+100-5000 ppm). L1 verified at 10⁻⁴⁰.
+
+### 2026-05-26 — Lepton-meson parallel + meson SDP (#1308)
+
+| Date | PR | Phase | Status | Cherry-pick / artefact |
+|------|----|-------|--------|------------------------|
+| 2026-05-26 | [#1308](https://github.com/litlfred/qou/pull/1308) | Meson · lepton-meson torus-knot dictionary + SDP shadow prices | open | `meson_transition_knot_probe.py`, `meson_sdp_shadow_price_probe.py` |
+
+**Structural discoveries:**
+- χ^(2,1)(kaon) = −1 exactly (categorical invariant)
+- χ^(2,1)(pion) = −(h²+1) = −([3]_q − 2) exactly
+- Both mesons have active set = {(2,1)} (same as proton)
+- Meson transition is Hopf link (Vol=0), not hyperbolic
+- Pion NF factors: net = (1+h)(1+h+h²)
