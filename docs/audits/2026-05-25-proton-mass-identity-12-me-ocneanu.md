@@ -57,21 +57,43 @@ $$m_p \;=\; 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) \;+\; \frac{1}{(-1/12)} \c
 Both 12's are the same **Ocneanu / Bernoulli-like categorical constant**
 for the proton's atomic braid.
 
-## Structural significance of "2"
+## Structural significance of "2" — refined post sibling-probe context
 
-The factor 2 likely arises from the **bar-pair symmetry** at the y_λ level
-(per [`YLambdaQSchur.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)):
+Per [PR #1288](https://github.com/litlfred/qou/pull/1288) and
+[PR #1289](https://github.com/litlfred/qou/pull/1289)'s sibling probes:
 
-- y_(3) · y_(1,1,1) = 1/[3]_q!² (transpose-pair identity, Lean-proved)
-- The (3) and (1,1,1) partitions form a bar-pair under transpose
+- **PSD-dominance ≠ trace-dominance** (orthogonal structural axes).
+- Mass deficit lives in **trace-dominant** partitions, NOT PSD-dominant
+  rectangles. For the proton's H_3, the (2,1) standard rep contributes
+  **49% of T1** per per-Wedderburn-block diagnostic
+  ([`proton_wedderburn_block_diagnostic.py`](../../folio-assistant/computations/proton_wedderburn_block_diagnostic.py)).
 
-Per-Wedderburn-block diagnostic ([`proton_wedderburn_block_diagnostic.py`](../../folio-assistant/computations/proton_wedderburn_block_diagnostic.py)):
+The **clean structural interpretation of the factor 2**:
 
-- `ρ_K · y_(3) ≈ 2·(m_μ/m_e)` to 0.70% at q₀
-- This is the route by which the "2" enters
+$$2 \;=\; \dim V_{(2,1)} \;\text{(classical dimension of the standard $S_3$ irrep)}$$
 
-The 2 is structurally the count of partitions in the (3) ↔ (1,1,1)
-transpose-pair (the bar-pair partner count).
+The (2,1) standard rep is:
+- the **trace-dominant** partition for the proton at 49% of T1
+- the **self-conjugate** partition (λ^T = λ) under bar-Mullineux
+- the **2-dimensional irrep** of $S_3$ (one of three; (3) and (1,1,1) are 1-dim)
+
+The formula `m_p = dim V_(2,1) · m_μ · F_Bor(q₀) − 12 · m_e` then reads:
+
+> *The proton mass equals the dimension of the standard rep times the
+> muon mass times the natural categorical observable $F_{\mathrm{Bor}}(q_0)$,
+> minus an Ocneanu correction $12 \cdot m_e$.*
+
+This is **structurally meaningful** — it ties m_p to the dimension of
+the dominant Wedderburn block via the standard rep V_{(2,1)}.
+
+**Auxiliary supporting identity** (Lean-proved in
+[`YLambdaQSchur.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)):
+- y_(3) · y_(1,1,1) = 1/[3]_q!² (transpose-pair identity for the (3) ↔ (1,1,1) bar-pair)
+- y_(2,1)² = 1/[3]_q!² (self-conjugate squared)
+
+The bar-pair structure of (3) ↔ (1,1,1) carries through to F_Bor, but
+the "2" in the mass formula is more cleanly identified as
+dim V_(2,1) per the trace-dominance finding.
 
 ## Open: full categorical proof
 
