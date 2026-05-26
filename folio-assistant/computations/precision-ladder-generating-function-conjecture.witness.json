@@ -1,0 +1,197 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T16:38:13.942092+00:00",
+  "commitSha": "ffbf2866ef5a3529b96f54e37e2dd7feefb2a929",
+  "assertions": [
+    {
+      "name": "c_3 = J_Hopf",
+      "computed": -2.0,
+      "expected": -2.0,
+      "passed": true,
+      "tolerance": 1e-40
+    },
+    {
+      "name": "c_4 = J·K²",
+      "computed": -1.1331209443736374,
+      "expected": -1.1331209443736374,
+      "passed": true,
+      "tolerance": 1e-40
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "precision-ladder-generating-function-conjecture",
+  "scriptFile": "precision_ladder_generating_function_conjecture.py",
+  "scriptHash": "78c1cf316a6e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "data": {
+    "description": "Pair-structure conjecture for Q_β precision-ladder coefficients c_k. Two categorical primitives: J = J_Hopf(q=1) = -2 (derived), K = b²(q₀) = Hoefsmit coupling² on V_(2,1) (derived). Pair rules predict c_8..c_13 from the alternating (J^n, J^n·K^{1or2}) pattern.",
+    "primitives": {
+      "J": "-2.0",
+      "J_source": "J_Hopf(q=1) — Jones polynomial of Hopf link at classical limit",
+      "K": "0.752702113845058",
+      "K_source": "b²(q₀) — Hoefsmit off-diagonal coupling squared on V_(2,1)",
+      "b": "0.8675840673070582"
+    },
+    "known_ck": {
+      "2": {
+        "value": "-1.0",
+        "formula": "-1 (Kashiwara return)"
+      },
+      "3": {
+        "value": "-2.0",
+        "formula": "J (pure Jones)"
+      },
+      "4": {
+        "value": "-1.1331209443736374",
+        "formula": "J·K² (Jones × Kashiwara²)"
+      },
+      "5": {
+        "value": "12.867584067307059",
+        "formula": "3J² + b (Jones² × 3 + Kashiwara)"
+      },
+      "6": {
+        "value": "3.010808455380232",
+        "formula": "J²·K (Jones² × Kashiwara)"
+      },
+      "7": {
+        "value": "-8.0",
+        "formula": "J³ (pure Jones cubed)"
+      }
+    },
+    "predicted_ck": {
+      "8": {
+        "value": "-4.53248377749455",
+        "formula": "J³·K² (n=3 trailing, B=2)"
+      },
+      "9": {
+        "value": "48.86758406730706",
+        "formula": "3J⁴ + b (n=4 leading, even)"
+      },
+      "10": {
+        "value": "12.043233821520928",
+        "formula": "J⁴·K (n=4 trailing, B=1)"
+      },
+      "11": {
+        "value": "-32.0",
+        "formula": "J⁵ (n=5 leading, odd)"
+      },
+      "12": {
+        "value": "-18.1299351099782",
+        "formula": "J⁵·K² (n=5 trailing, B=2)"
+      },
+      "13": {
+        "value": "192.86758406730706",
+        "formula": "3J⁶ + b (n=6 leading, even)"
+      }
+    },
+    "pair_rules": {
+      "leading_rung": "c_{2n+1} = J^n if n odd, 3J^n + b if n even",
+      "trailing_rung": "c_{2n+2} = J^n · K^2 if n odd, J^n · K if n even",
+      "period": 2,
+      "primitives_count": 2
+    },
+    "convergence": {
+      "suppression_per_rung": "0.008517236340043957",
+      "rungs_for_1ppQ": "N=8 reaches ~10⁻¹⁶ (0.1 ppQ)",
+      "rungs_for_1ppt": "N=6 reaches ~10⁻¹² (0.001 ppb)"
+    },
+    "results": [
+      {
+        "k": 3,
+        "c_k": "-2.0",
+        "correction": "-1.235737115312917e-06",
+        "Q_pred_MeV": "0.782333418708004",
+        "err_ppb": "6.017900",
+        "status": "known"
+      },
+      {
+        "k": 4,
+        "c_k": "-1.1331209443736374",
+        "correction": "-5.963085833184445e-09",
+        "Q_pred_MeV": "0.7823334140428826",
+        "err_ppb": "0.054814",
+        "status": "known"
+      },
+      {
+        "k": 5,
+        "c_k": "12.867584067307059",
+        "correction": "5.76753855428415e-10",
+        "Q_pred_MeV": "0.7823334144940964",
+        "err_ppb": "0.631568",
+        "status": "known"
+      },
+      {
+        "k": 6,
+        "c_k": "3.010808455380232",
+        "correction": "1.1494109163495558e-12",
+        "Q_pred_MeV": "0.7823334144949956",
+        "err_ppb": "0.632717",
+        "status": "known"
+      },
+      {
+        "k": 7,
+        "c_k": "-8.0",
+        "correction": "-2.6012427084510274e-14",
+        "Q_pred_MeV": "0.7823334144949753",
+        "err_ppb": "0.632691",
+        "status": "known"
+      },
+      {
+        "k": 8,
+        "c_k": "-4.53248377749455",
+        "correction": "-1.2552373276828224e-16",
+        "Q_pred_MeV": "0.7823334144949752",
+        "err_ppb": "0.632691",
+        "status": "predicted"
+      },
+      {
+        "k": 9,
+        "c_k": "48.86758406730706",
+        "correction": "1.1526810526132738e-17",
+        "Q_pred_MeV": "0.7823334144949752",
+        "err_ppb": "0.632691",
+        "status": "predicted"
+      },
+      {
+        "k": 10,
+        "c_k": "12.043233821520928",
+        "correction": "2.4195249362654172e-20",
+        "Q_pred_MeV": "0.7823334144949752",
+        "err_ppb": "0.632691",
+        "status": "predicted"
+      },
+      {
+        "k": 11,
+        "c_k": "-32.0",
+        "correction": "-5.475649751408668e-22",
+        "Q_pred_MeV": "0.7823334144949752",
+        "err_ppb": "0.632691",
+        "status": "predicted"
+      },
+      {
+        "k": 12,
+        "c_k": "-18.1299351099782",
+        "correction": "-2.642290909247051e-24",
+        "Q_pred_MeV": "0.7823334144949752",
+        "err_ppb": "0.632691",
+        "status": "predicted"
+      },
+      {
+        "k": 13,
+        "c_k": "192.86758406730706",
+        "correction": "2.3941001821213523e-25",
+        "Q_pred_MeV": "0.7823334144949752",
+        "err_ppb": "0.632691",
+        "status": "predicted"
+      }
+    ]
+  }
+}
