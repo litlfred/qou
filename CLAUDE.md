@@ -349,17 +349,19 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 
 | Leg | Target | Status |
 |-----|--------|--------|
-| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppb at substrate q_0 | trivially met — `_precision.py` default is 50 dps compute / 40 dps output |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | partial — see `per-observable-100x-status.witness.json` |
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 50 dps / 40 dps output (10⁻⁴⁰ relative) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 4/6 met — see `per-observable-100x-status.witness.json` |
 
 **Key distinctions** (avoid agent confusion):
 
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
-- **L2 is variable per observable.** Q_β target is 6.4 ppm (loose);
+- **L2 is variable per observable.** Q_β target is 7.8 ppb (met at N=5);
   absolute m_p target is 3 ppt (research-grade, below CAL-2 floor).
-- **"1 ppb" by itself is ambiguous** — say "L1 compute met" or
-  "L2 met for observable X" not bare "1 ppb".
+- **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
+  "L2 met for observable X" not bare "1 ppQ".
+- **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
+  Upgraded from 1 ppb (2026-05-26) because the old target was noise.
 
 **Two subgoals under L2:**
 
