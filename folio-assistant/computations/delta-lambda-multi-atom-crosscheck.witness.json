@@ -35,6 +35,22 @@
       "B_naive_MeV": 0.0002452040844630394,
       "B_AME_MeV": 7.71804,
       "C_knot_needed": 31475.984655399865
+    },
+    "wenzl_convention_results": {
+      "D": {
+        "C_knot": 42.69,
+        "sum_signed_yc": -0.10199
+      },
+      "T": {
+        "C_knot": 328.55,
+        "sum_signed_yc": -0.05052
+      },
+      "3He": {
+        "C_knot": 248.47,
+        "sum_signed_yc": -0.06079
+      },
+      "spread_factor": 7.7,
+      "note": "Wenzl y_\u03bb tightens spread from 170\u00d7 (q-Schur) to 7.7\u00d7"
     }
   },
   "assertions": [
