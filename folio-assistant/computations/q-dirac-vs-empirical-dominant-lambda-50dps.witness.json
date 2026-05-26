@@ -1,0 +1,209 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T00:15:31.700936+00:00",
+  "commitSha": "0ac246fbfd7f62f92478f7588ed96536f72bb8fe",
+  "assertions": [
+    {
+      "name": "probe_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Cross-check of D_q² ranking vs empirical Δ_λ dominance."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "q-dirac-vs-empirical-dominant-lambda-50dps",
+  "scriptFile": "q_dirac_vs_empirical_dominant_lambda.py",
+  "scriptHash": "a14a34cc7318",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Tests whether q-Dirac eigenvalue D_q²(λ) = [c_λ]_q² predicts the empirically Δ_λ-dominant partition λ*(K) per atom K from PR #1229 / #1288 / Option E audit (Δ_λ closure). Single-session structural input to Option E's ρ_w(K) investigation.",
+  "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
+  "parameters": {
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870"
+  },
+  "data": {
+    "per_atom": {
+      "D": {
+        "n": 6,
+        "dominant": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dominant_c_lambda": -9,
+        "dominant_D_q2": "107.402503315",
+        "dominant_rank_by_D_q2": 4,
+        "n_partitions": 11,
+        "top3_D_q2": [
+          {
+            "partition": "(6,)",
+            "c": 15,
+            "D_q2": "478.713694666",
+            "d_classical": 1
+          },
+          {
+            "partition": "(1, 1, 1, 1, 1, 1)",
+            "c": -15,
+            "D_q2": "478.713694666",
+            "d_classical": 1
+          },
+          {
+            "partition": "(5, 1)",
+            "c": 9,
+            "D_q2": "107.402503315",
+            "d_classical": 5
+          }
+        ]
+      },
+      "T": {
+        "n": 9,
+        "dominant": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "dominant_c_lambda": -15,
+        "dominant_D_q2": "478.713694666",
+        "dominant_rank_by_D_q2": 10,
+        "n_partitions": 30,
+        "top3_D_q2": [
+          {
+            "partition": "(9,)",
+            "c": 36,
+            "D_q2": "41844.0502125",
+            "d_classical": 1
+          },
+          {
+            "partition": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
+            "c": -36,
+            "D_q2": "41844.0502125",
+            "d_classical": 1
+          },
+          {
+            "partition": "(8, 1)",
+            "c": 27,
+            "D_q2": "6358.23418532",
+            "d_classical": 8
+          }
+        ]
+      },
+      "3He": {
+        "n": 9,
+        "dominant": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "dominant_c_lambda": -15,
+        "dominant_D_q2": "478.713694666",
+        "dominant_rank_by_D_q2": 10,
+        "n_partitions": 30,
+        "top3_D_q2": [
+          {
+            "partition": "(9,)",
+            "c": 36,
+            "D_q2": "41844.0502125",
+            "d_classical": 1
+          },
+          {
+            "partition": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
+            "c": -36,
+            "D_q2": "41844.0502125",
+            "d_classical": 1
+          },
+          {
+            "partition": "(8, 1)",
+            "c": 27,
+            "D_q2": "6358.23418532",
+            "d_classical": 8
+          }
+        ]
+      },
+      "4He_91229": {
+        "n": 12,
+        "dominant": [
+          9,
+          3
+        ],
+        "dominant_c_lambda": 36,
+        "dominant_D_q2": "41844.0502125",
+        "dominant_rank_by_D_q2": 9,
+        "n_partitions": 77,
+        "top3_D_q2": [
+          {
+            "partition": "(12,)",
+            "c": 66,
+            "D_q2": "21927221.4433",
+            "d_classical": 1
+          },
+          {
+            "partition": "(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+            "c": -66,
+            "D_q2": "21927221.4433",
+            "d_classical": 1
+          },
+          {
+            "partition": "(11, 1)",
+            "c": 54,
+            "D_q2": "1792350.42548",
+            "d_classical": 11
+          }
+        ]
+      },
+      "4He_1288": {
+        "n": 12,
+        "dominant": [
+          4,
+          4,
+          4
+        ],
+        "dominant_c_lambda": 6,
+        "dominant_D_q2": "40.8076514254",
+        "dominant_rank_by_D_q2": 61,
+        "n_partitions": 77,
+        "top3_D_q2": [
+          {
+            "partition": "(12,)",
+            "c": 66,
+            "D_q2": "21927221.4433",
+            "d_classical": 1
+          },
+          {
+            "partition": "(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+            "c": -66,
+            "D_q2": "21927221.4433",
+            "d_classical": 1
+          },
+          {
+            "partition": "(11, 1)",
+            "c": 54,
+            "D_q2": "1792350.42548",
+            "d_classical": 11
+          }
+        ]
+      }
+    },
+    "top1_matches": 0,
+    "top5_matches": 1,
+    "n_atoms_tested": 5,
+    "verdict": "NEGATIVE: D_q² rank does NOT predict empirical Δ_λ dominance. Only 1/5 are in top-5 by D_q². The Δ_λ-dominance criterion is structurally distinct from Dirac eigenvalue magnitude. Option E's ρ_w(K) needs a different selection mechanism.",
+    "implication_for_option_E": "If D_q² rank does NOT match empirical dominant λ*(K), Option E's ρ_w(K) construction needs a selection mechanism beyond Dirac eigenvalues. The Type-B folding bar-symmetry (CLAUDE.md §7b, PR #1288's transpose-pair theorems on main) may be the right structural input, since dominant pairs include both λ* and λ*^T (e.g. ⁴He: (4,4,4) ↔ (3,3,3,3))."
+  }
+}
