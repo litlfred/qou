@@ -1,0 +1,47 @@
+{
+  "engine": "python3/mpmath",
+  "engineVersion": "50dps",
+  "computedAt": "2026-05-26T15:20:46Z",
+  "computation": "delta-lambda-multi-atom-crosscheck",
+  "scriptFile": "delta_lambda_multi_atom_crosscheck.py",
+  "description": "Multi-atom cross-validation of the signed-dim_q \u0394_\u03bb ansatz. Tests whether \u0394_\u03bb = C \u00d7 (-1)^{n(\u03bb)} \u00d7 dim_q(\u03bb) gives consistent C_knot across D, T, \u00b3He. Uses q-Schur y_\u03bb closed form.",
+  "data": {
+    "D": {
+      "n_strands": 6,
+      "n_partitions": 11,
+      "sum_signed_dimq": -0.018122421460296544,
+      "sum_dimq": 0.039664369426395896,
+      "sum_yc": 0.022649819191992798,
+      "B_naive_MeV": 0.00926053835017347,
+      "B_AME_MeV": 2.22452,
+      "C_knot_needed": 240.21497626629125
+    },
+    "T": {
+      "n_strands": 9,
+      "n_partitions": 30,
+      "sum_signed_dimq": -0.0004076436461848628,
+      "sum_dimq": 0.00027485359613872,
+      "sum_yc": 0.00032001289700892027,
+      "B_naive_MeV": 0.0002083054754559105,
+      "B_AME_MeV": 8.4818,
+      "C_knot_needed": 40718.08473318427
+    },
+    "3He": {
+      "n_strands": 9,
+      "n_partitions": 30,
+      "sum_signed_dimq": -0.00047985242265554794,
+      "sum_dimq": 0.0008020819275901402,
+      "sum_yc": 0.0006316861911204859,
+      "B_naive_MeV": 0.0002452040844630394,
+      "B_AME_MeV": 7.71804,
+      "C_knot_needed": 31475.984655399865
+    }
+  },
+  "assertions": [
+    {
+      "label": "all three atoms computed",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}
