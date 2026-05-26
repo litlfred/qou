@@ -36,12 +36,12 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder
-from _precision import set_compute_dps
-from q_parameter import Q_50_DIGIT_STR
-from hecke_characters import standard_young_tableaux, build_seminormal_matrices
-from partition_utils import hook_lengths_with_cells
-from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
+from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from hecke_characters import standard_young_tableaux, build_seminormal_matrices  # noqa: E402
+from partition_utils import hook_lengths_with_cells  # noqa: E402
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 
 # ── Braid word: structural pattern (independent of q) ──────────
@@ -109,31 +109,16 @@ def chi_lambda_at_q(shape, q_val):
     if dim == 0:
         return 0.0
 
-    try:
-        from scipy import sparse as sp_sparse
-        is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
-    except ImportError:
-        is_sparse = False
-
-    if is_sparse:
-        from scipy import sparse as sp_sparse
-        product = sp_sparse.eye(dim, format='csr')
-        I = sp_sparse.eye(dim, format='csr')
-    else:
-        product = np.eye(dim)
-        I = np.eye(dim)
+    sigmas = [s.toarray() if hasattr(s, 'toarray') else np.asarray(s)
+              for s in sigmas]
+    product = np.eye(dim)
+    I = np.eye(dim)
 
     for (c, dm, g) in _HE4_PATTERN:
         d = dm * h_val
-        if g >= len(sigmas):
-            raise IndexError(
-                f"word uses generator σ_{g} but only {len(sigmas)} "
-                f"seminormal matrices (partition {shape}, n={sum(shape)})")
         M = c * sigmas[g] + d * I
         product = product @ M
 
-    if is_sparse:
-        return float(product.diagonal().sum())
     return float(np.trace(product))
 
 

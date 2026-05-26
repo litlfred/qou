@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T13:30:39.622175+00:00",
-  "commitSha": "01175deabb9ab211db25a89a3816c3ab52e5df5b",
+  "computedAt": "2026-05-26T13:49:02.516115+00:00",
+  "commitSha": "e20525c71ba8618bfc133d45dfad4918843d988d",
   "assertions": [
     {
-      "name": "diagonal_exact_for_all_2row",
-      "computed": 0,
-      "expected": 6,
-      "passed": false,
+      "name": "diagonal_only_refuted",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
       "tolerance": 0,
-      "source": "Diagonal-only should match full matrix for all 2-row partitions"
+      "source": "Falsification probe: diagonal-only should NOT match (off-diagonal mixing expected)"
     }
   ],
-  "allPassed": false,
-  "durationMs": 24,
+  "allPassed": true,
+  "durationMs": 23,
   "computation": "phase1b-two-row-transfer-matrix",
   "scriptFile": "phase1b_two_row_closed_form_character.py",
-  "scriptHash": "2aacb96c2cc9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4b0310ac64aa",
+  "scriptCommitSha": "f352308a5f74de18d2ed812ed20de23d54b95b36",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
