@@ -1,22 +1,28 @@
 #!/usr/bin/env python3
 """
-m_K/m_π = 7(q₀+q₀⁻¹)²/8 — the 318 ppm closed-form candidate.
+EXPLORATORY numerical observation (NOT a derivation): m_K/m_π ≈ 7(q₀+q₀⁻¹)²/8.
 
-Starting from the [2]_q² = (q+q⁻¹)² ≈ 4.044 candidate (14.3% miss),
-a systematic search for rational correction factors found:
+STATUS: NUMEROLOGICAL FIT — found by scanning simple fractions near the
+[2]_q² = 4.044 candidate. The 7/8 factor has NO categorical derivation.
+Per CLAUDE.md "What is forbidden": coefficient fits to PDG data are
+not permitted as framework claims. This script documents the numerical
+coincidence for future investigation; it is NOT a framework prediction
+until a categorical proof of the 7/8 factor is provided.
 
-    m_K/m_π = (7/8) × (q₀ + q₀⁻¹)²
+The two "categorical interpretations" below are POST-HOC rationalizations
+of a fitted constant, not derivations. Recorded as candidate directions
+for a future proof, not as evidence.
 
-at 318 ppm — a 450× improvement over the uncorrected [2]_q².
+Numerical observation:
+    m_K/m_π = (7/8) × (q₀ + q₀⁻¹)²  ≈ 3.538  (vs PDG 3.537, 318 ppm)
 
-Categorical interpretation of 7/8:
+Post-hoc candidate directions (NOT proofs):
   (a) (n_crossings − 1) / n_crossings where n_K = 8 (kaon: 3+5 quark crossings)
-  (b) (Vol(𝓑₃) − G) / Vol(𝓑₃) = (8G − G) / 8G — one ideal octahedron removed
+  (b) (Vol(B_3) − G) / Vol(B_3) = (8G − G) / 8G — one ideal octahedron removed
 
-The formula predicts m_K = 493.83 MeV vs PDG 493.68 MeV (miss = 0.16 MeV).
-
-This is specific to pseudoscalar K± — vector mesons (ρ, ω, φ) require
-spin-dependent corrections beyond the scalar NF framework.
+What would constitute a proof: deriving 7/8 from the Hecke algebra
+structure of the kaon braid in H_3(q), without reference to the
+PDG m_K value.
 """
 
 import json, time
@@ -93,11 +99,12 @@ witness = {
     "computation": "kaon-pion-ratio-7-8",
     "scriptFile": "kaon_pion_ratio_7_8_probe.py",
     "description": (
-        "Closed-form candidate: m_K/m_π = 7(q₀+q₀⁻¹)²/8 at 318 ppm. "
-        "450× improvement over uncorrected [2]_q² (14.3%). "
-        "Categorical interpretation: 7/8 = (n_K−1)/n_K where n_K=8 "
-        "(kaon total quark crossings 3+5), or equivalently "
-        "(Vol(𝓑₃)−G)/Vol(𝓑₃) = 7/8 (one octahedron removed)."
+        "EXPLORATORY numerical observation (NOT a derivation): "
+        "m_K/m_π ≈ 7(q₀+q₀⁻¹)²/8 at 318 ppm. The 7/8 factor is a "
+        "NUMEROLOGICAL FIT found by scanning fractions — no categorical "
+        "derivation exists. Recorded for future investigation, not as a "
+        "framework prediction. Per CLAUDE.md: fits to PDG are forbidden "
+        "as framework claims."
     ),
     "parameters": {"q0": str(q0), "m_pi_MeV": str(m_pi), "m_K_pdg_MeV": str(m_K_pdg)},
     "data": {
