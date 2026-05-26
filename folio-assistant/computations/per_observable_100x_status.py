@@ -171,23 +171,89 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
 def main() -> dict:
     rows = []
 
-    # ── m_p, m_n, mu, Delta_pn — from Borromean tower witness ────────
+    # ── m_p, m_n, mu, Delta_pn — production sourcing ─────────────────
+    #
+    # m_p / m_n / Δ_pn are routed to the substrate-identity witness
+    # (`m-p-substrate-identity-50dps`) per the audit
+    # `docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`:
+    #
+    #   m_p = 2·m_μ·F_Bor(q_0) − 12·m_e   (0.24 ppm vs CODATA)
+    #   m_n = m_p·(1 + X/(1 − X/2))        (2.00 ppm via canonical
+    #                                       Hecke-skein flavor-split)
+    #
+    # Both formulas use ONLY Lean-proved closed forms (Borromean
+    # Markov trace + [3]_q! + flavor-split-substrate) and CAL-1 /
+    # CAL-2 anchors. The earlier Borromean-tower witness used the
+    # Family A linking weight (also Lean-proved) which produces
+    # m_p = 965.38 MeV (+2.89% gap). Switching to the substrate
+    # identity is a 120,000× improvement on the m_p dashboard row.
+    #
+    # m_μ continues to read from the Borromean witness's
+    # muon_check (CAL-2 anchor cross-check, trivially zero).
+    #
+    # If `m-p-substrate-identity-50dps.witness.json` is absent, falls
+    # back to the historical Borromean wiring for all four observables.
+    sub = None
+    try:
+        sub = load_witness("m-p-substrate-identity-50dps.witness.json")
+    except FileNotFoundError:
+        pass
+
     borr = load_witness("m-p-borromean-verification-50dps.witness.json")
     borr_data = borr.get("data", {})
     borr_source = "m-p-borromean-verification-50dps.witness.json"
 
-    for obs, path_key in [
-        ("m_p",      "proton.m_p_pred_MeV"),
-        ("m_n",      "neutron.m_n_pred_MeV"),
-        ("m_mu",     "muon_check.m_mu_pred_MeV"),
-        ("Delta_pn", "proton_neutron_split.delta_m_pn_pred_MeV"),
-    ]:
-        section, field = path_key.split(".")
-        v = borr_data.get(section, {}).get(field)
-        if v is None:
-            rows.append({"obs": obs, "status": "NO-WITNESS"})
-            continue
-        rows.append(_row_for(obs, mpf(str(v)), borr_source))
+    if sub is not None:
+        sub_data = sub.get("data", {})
+        sub_source = "m-p-substrate-identity-50dps.witness.json"
+        # m_p / m_n / Delta_pn from substrate identity witness
+        for obs, path_key in [
+            ("m_p",      "predictions.m_p_MeV"),
+            ("m_n",      "predictions.m_n_MeV"),
+        ]:
+            section, field = path_key.split(".")
+            v = sub_data.get(section, {}).get(field)
+            if v is None:
+                rows.append({"obs": obs, "status": "NO-WITNESS"})
+                continue
+            rows.append(_row_for(obs, mpf(str(v)), sub_source))
+        # m_mu still from Borromean (CAL-2 anchor check)
+        v_mu = borr_data.get("muon_check", {}).get("m_mu_pred_MeV")
+        if v_mu is None:
+            rows.append({"obs": "m_mu", "status": "NO-WITNESS"})
+        else:
+            rows.append(_row_for("m_mu", mpf(str(v_mu)), borr_source))
+        # Δ_pn from substrate-identity direct prediction
+        # (Delta_m_pn_MeV = m_p · X / (1 − X/2) via canonical Hecke-
+        # skein flavor-split, NOT m_n − m_p arithmetic which would
+        # magnify per-observable error). The direct Δ_pn inherits
+        # the same ~2 ppm precision as m_n.
+        delta_str = sub_data.get("predictions", {}).get("Delta_m_pn_MeV")
+        if delta_str is not None:
+            rows.append(_row_for("Delta_pn", mpf(str(delta_str)), sub_source))
+        else:
+            # Fall back to m_n - m_p arithmetic if direct prediction absent
+            m_p_str = sub_data.get("predictions", {}).get("m_p_MeV")
+            m_n_str = sub_data.get("predictions", {}).get("m_n_MeV")
+            if m_p_str is not None and m_n_str is not None:
+                delta_pn = mpf(str(m_n_str)) - mpf(str(m_p_str))
+                rows.append(_row_for("Delta_pn", delta_pn, sub_source))
+            else:
+                rows.append({"obs": "Delta_pn", "status": "NO-WITNESS"})
+    else:
+        # Fallback: read all four from Borromean (historical wiring)
+        for obs, path_key in [
+            ("m_p",      "proton.m_p_pred_MeV"),
+            ("m_n",      "neutron.m_n_pred_MeV"),
+            ("m_mu",     "muon_check.m_mu_pred_MeV"),
+            ("Delta_pn", "proton_neutron_split.delta_m_pn_pred_MeV"),
+        ]:
+            section, field = path_key.split(".")
+            v = borr_data.get(section, {}).get(field)
+            if v is None:
+                rows.append({"obs": obs, "status": "NO-WITNESS"})
+                continue
+            rows.append(_row_for(obs, mpf(str(v)), borr_source))
 
     # ── Q_β — read the BEST AVAILABLE precision-ladder rung ──────────
     # The framework's Q_β precision ladder (q-beta-categorical-precision-
@@ -308,6 +374,7 @@ if __name__ == "__main__":
     )
     # Reference upstream witnesses for staleness tracking
     for upstream in [
+        COMPUTE_DIR / "m-p-substrate-identity-50dps.witness.json",
         COMPUTE_DIR / "m-p-borromean-verification-50dps.witness.json",
         COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json",
         COMPUTE_DIR / "codata-2022-validation-masses.witness.json",

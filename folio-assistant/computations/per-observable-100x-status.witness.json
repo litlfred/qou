@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T11:20:47.882837+00:00",
-  "commitSha": "d2db82b79f4911674d13eb65d9b6722aaaa6b2da",
+  "computedAt": "2026-05-26T01:27:48.448910+00:00",
+  "commitSha": "9ea4f33b1e3f9d2e6eb79630d36e06b9fd8946c9",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "a874b9eb2aca",
-  "scriptCommitSha": "b78e99390cace493187890ef6c58e399a14cf3b6",
+  "scriptHash": "3b2d918b8ed2",
+  "scriptCommitSha": "cca9db44837c8e1df2a4ebd303d12d9777d42cfe",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -31,35 +31,35 @@
       {
         "obs": "m_p",
         "role": "validation",
-        "pred_MeV": "965.384475574",
+        "pred_MeV": "938.271860869",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
-        "err_ppb": "2.890e+7",
+        "err_ppb": "242.2",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
-        "miss_factor": "9.349e+9",
+        "miss_factor": "7.838e+4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "m-p-borromean-verification-50dps.witness.json",
+        "source_witness": "m-p-substrate-identity-50dps.witness.json",
         "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.036e-34",
+        "compute_truncation_ppb": "1.066e-34",
         "compute_output_dps": 40
       },
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "966.714773640",
+        "pred_MeV": "939.563540512",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "2.890e+7",
+        "err_ppb": "2001.",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "5.028e+9",
+        "miss_factor": "3.481e+5",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "m-p-borromean-verification-50dps.witness.json",
+        "source_witness": "m-p-substrate-identity-50dps.witness.json",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.034e-34",
+        "compute_truncation_ppb": "1.064e-34",
         "compute_output_dps": 40
       },
       {
@@ -82,18 +82,18 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.33029806529",
+        "pred_MeV": "1.29167964354",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "2.858e+7",
+        "err_ppb": "1.278e+6",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "6.031e+6",
+        "miss_factor": "2.696e+5",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "m-p-borromean-verification-50dps.witness.json",
+        "source_witness": "m-p-substrate-identity-50dps.witness.json",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
-        "compute_truncation_ppb": "7.517e-32",
+        "compute_truncation_ppb": "7.742e-32",
         "compute_output_dps": 40
       },
       {
@@ -136,6 +136,14 @@
       "beats_100x_count": 3
     },
     "upstream_witness_hashes": [
+      {
+        "path": "m-p-substrate-identity-50dps.witness.json",
+        "sha256": "236e05e3ce3224ef970c77df554130eec738687f3f065a26d3451908229b62e7",
+        "size_bytes": 2888,
+        "commitSha": "6c3f2157004328832dca6c3c040c381e890298c1",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-26T00:02:28.024325+00:00"
+      },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
         "sha256": "56447ba64167a4664d623f596f61ae9160c4fb286119dd35d0389c9ff9f5e7f5",
