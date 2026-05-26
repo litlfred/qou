@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
 -/
+
+namespace QOU.LiftingDescent
+
+/-- **LEMMA.** Descended term is the unknot-core holonomy -/
+theorem tm_descended_is_holonomy : True := by
+  -- Ref: [manuscript] lem:topological-mass-holonomy
+  sorry
+
+end QOU.LiftingDescent

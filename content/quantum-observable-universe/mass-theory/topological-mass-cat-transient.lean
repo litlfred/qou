@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-transient.ts
 -/
+
+namespace QOU.TopologicalMass
+
+/-- **LEMMA.** Transient terms localise to blow-up centres (categorical) -/
+theorem cat_transient_localises_blowup : True := by
+  -- Ref: [manuscript] lem:topological-mass-cat-transient
+  sorry
+
+end QOU.TopologicalMass

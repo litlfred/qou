@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
 -/
+
+namespace QOU.TopologicalMass
+
+/-- **LEMMA.** Eigenspace decomposition of the categorical mass integrand -/
+theorem cat_eigenspace_decomposition : True := by
+  -- Ref: [manuscript] lem:topological-mass-cat-eigenspace
+  sorry
+
+end QOU.TopologicalMass

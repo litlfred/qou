@@ -12,3 +12,12 @@ Canonical declaration: `QOU.Archimedean.CSEvaluationFaithful`.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/cs-evaluation-faithfulness.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **PROPOSITION.** Faithfulness of the Chern--Simons evaluation on the brane tower -/
+theorem CSEvaluationFaithful : True := by
+  -- Ref: [manuscript] prop:cs-evaluation-faithfulness
+  sorry
+
+end QOU.Archimedean

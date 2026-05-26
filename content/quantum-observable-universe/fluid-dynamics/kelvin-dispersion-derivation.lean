@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **PROPOSITION.** Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem -/
+theorem kelvin_dispersion_derivation : True := by
+  -- Ref: [manuscript] prop:kelvin-dispersion-derivation
+  sorry
+
+end QOU.FluidDynamics

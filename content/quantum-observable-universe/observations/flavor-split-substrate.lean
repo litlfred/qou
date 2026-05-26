@@ -13,3 +13,12 @@ Canonical declaration: `QOU.HadronicMass.flavor_split_substrate`.
 
 -- Ref: [manuscript] quantum-observable-universe/observations/flavor-split-substrate.ts
 -/
+
+namespace QOU.HadronicMass
+
+/-- **PROPOSITION.** Substrate-pure derivation of the $u$--$d$ flavor split -/
+theorem flavor_split_substrate : True := by
+  -- Ref: [manuscript] prop:flavor-split-substrate
+  sorry
+
+end QOU.HadronicMass

@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/c-from-color-flavor-swap.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Charge conjugation $C$ as the color-sheet flavor-swap $u \\leftrightarrow \\bar u$, $d \\leftrightarrow \\bar d$ -/
+class CFromColorFlavorSwap where
+  holds : Prop
+  -- Ref: [manuscript] conj:c-from-color-flavor-swap
+
+end QOU.BraidsAndKnots

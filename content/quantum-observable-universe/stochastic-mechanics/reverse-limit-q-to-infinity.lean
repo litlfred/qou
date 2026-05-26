@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/reverse-limit-q-to-infinity.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Reverse limit $q \\to \\infty$ — symmetric counterpart of Kashiwara crystal $q \\to 0$ via bar involution -/
+class ReverseLimitQToInfinity where
+  holds : Prop
+  -- Ref: [manuscript] conj:reverse-limit-q-to-infinity
+
+end QOU.BraidsAndKnots

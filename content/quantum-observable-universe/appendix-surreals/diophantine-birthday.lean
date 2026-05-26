@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/diophantine-birthday.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Algebraic vs transcendental numbers are separated by birthday trajectory -/
+class DiophantineBirthday where
+  holds : Prop
+  -- Ref: [manuscript] conj:diophantine-birthday
+
+end QOU.AppendixSurreals

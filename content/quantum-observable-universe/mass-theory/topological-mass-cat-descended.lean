@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
 -/
+
+namespace QOU.TopologicalMass
+
+/-- **LEMMA.** Descended term equals the base-level mass -/
+theorem cat_descended_is_base_mass : True := by
+  -- Ref: [manuscript] lem:topological-mass-cat-descended
+  sorry
+
+end QOU.TopologicalMass

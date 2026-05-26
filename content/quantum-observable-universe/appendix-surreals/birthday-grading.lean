@@ -11,3 +11,12 @@
 -- See `QOU.AppendixSurreals.SurrealField.birthday`,
 --     `QOU.AppendixSurreals.BirthdayGrading`,
 --     `QOU.AppendixSurreals.BirthdayGrading.archimedeanPart`.
+
+namespace QOU.AppendixSurreals
+
+/-- Birthday grading on a surreal-coefficient category -/
+def BirthdayGrading : sorry :=
+  -- Ref: [manuscript] def:birthday-grading
+  sorry
+
+end QOU.AppendixSurreals

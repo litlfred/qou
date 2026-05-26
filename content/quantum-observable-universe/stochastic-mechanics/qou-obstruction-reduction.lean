@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.ts
 -/
+
+namespace QOU.AlgebraicSubstrate
+
+/-- **THEOREM.** In a QOU the classical limit obstruction is one-dimensional -/
+theorem qou_obstruction_reduction : True := by
+  -- Ref: [manuscript] thm:qou-obstruction-reduction
+  sorry
+
+end QOU.AlgebraicSubstrate

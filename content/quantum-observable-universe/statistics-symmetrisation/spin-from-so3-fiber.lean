@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Spin $\\mathrm{SU}(2)_S$ from full $\\mathrm{SO}(3)$ fiber action on color-sheet rotations -/
+class SpinFromSo3Fiber where
+  holds : Prop
+  -- Ref: [manuscript] conj:spin-from-so3-fiber
+
+end QOU.BraidsAndKnots

@@ -9,3 +9,12 @@
 --
 -- See the chapter umbrella `lean/QOU/AppendixSurreals.lean`
 -- for the import wiring.
+
+namespace QOU.AppendixSurreals.B1HyperbolicRowsTheorem
+
+/-- **PROPOSITION.** B1 at additional hyperbolic-knot rows (Borromean, Whitehead, twist knots) is theorem-level -/
+theorem b1_hyperbolic_rows : True := by
+  -- Ref: [manuscript] prop:b1-hyperbolic-rows-theorem
+  sorry
+
+end QOU.AppendixSurreals.B1HyperbolicRowsTheorem

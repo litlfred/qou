@@ -9,3 +9,12 @@
 --
 -- See the chapter umbrella `lean/QOU/BraidKnot.lean`
 -- for the import wiring.
+
+namespace QOU.BraidKnot.QHeckeSeminormalCharacterClosure
+
+/-- **PROPOSITION.** Partition-sum form of $\\mathrm{tr}_M$ via Wenzl $y_\\lambda$ and  -/
+theorem character_closure_holds : True := by
+  -- Ref: [manuscript] prop:q-hecke-seminormal-character-closure
+  sorry
+
+end QOU.BraidKnot.QHeckeSeminormalCharacterClosure

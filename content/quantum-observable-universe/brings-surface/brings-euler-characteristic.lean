@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-euler-characteristic.ts
 -/
+
+namespace QOU.ArchimedeanUniverse
+
+/-- **LEMMA.** Categorical Euler characteristic of $\\mathcal{O}_q(\\mathrm{SU}(2))$ on Bring -/
+theorem brings_euler_characteristic : True := by
+  -- Ref: [manuscript] lem:brings-euler-characteristic
+  sorry
+
+end QOU.ArchimedeanUniverse

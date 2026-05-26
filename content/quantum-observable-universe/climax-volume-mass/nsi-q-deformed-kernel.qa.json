@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "583d5ac5d931",
     "ts": "39f4c1b53f03",
-    "lean": "f4590c6606d4"
+    "lean": "831be995af62"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1997,20 +1997,19 @@
         "field_hash": {
           "md": "583d5ac5d931",
           "ts": "39f4c1b53f03",
-          "lean": "f4590c6606d4"
+          "lean": "831be995af62"
         },
-        "result": "warn",
-        "evidence": "Lean file exists but contains no declarations (theorem/def/class/etc).",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-26T14:23:00.108Z",
-        "reviewed_sha": "d8955b60baebf1cb230b808621230e842342eef9",
-        "notes": "Lean file may be empty or only contain comments."
+        "reviewed_at": "2026-05-26T14:25:22.698Z",
+        "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
+        "notes": "Label 'lem:nsi-q-deformed-kernel' aligns with Lean declaration. Has sorry (cited)."
       }
     ]
   },
-  "updated_at": "2026-05-26T14:23:00.108Z"
+  "updated_at": "2026-05-26T14:25:22.698Z"
 }

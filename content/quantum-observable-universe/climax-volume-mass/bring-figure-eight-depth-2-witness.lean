@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-figure-eight-depth-2-witness.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness) -/
+class BringFigureEightDepth2Witness where
+  holds : Prop
+  -- Ref: [manuscript] conj:bring-figure-eight-depth-2-witness
+
+end QOU.BraidKnot

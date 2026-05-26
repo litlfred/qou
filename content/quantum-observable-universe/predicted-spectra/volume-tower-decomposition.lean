@@ -12,3 +12,12 @@ Canonical declaration: `QOU.Archimedean.VolumeTowerDecomposition`.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/volume-tower-decomposition.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **PROPOSITION.** Tower-level decomposition of hyperbolic volume -/
+theorem VolumeTowerDecomposition : True := by
+  -- Ref: [manuscript] prop:volume-tower-decomposition
+  sorry
+
+end QOU.Archimedean

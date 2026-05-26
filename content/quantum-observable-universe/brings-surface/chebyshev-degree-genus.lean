@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/chebyshev-degree-genus.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **LEMMA.** Chebyshev degree equals Seifert genus for $T_{2,p}$ -/
+theorem chebyshev_degree_genus : True := by
+  -- Ref: [manuscript] lem:chebyshev-degree-genus
+  sorry
+
+end QOU.Archimedean

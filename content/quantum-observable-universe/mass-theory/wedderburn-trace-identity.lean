@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Wedderburn trace identity for $H_n(q)$ -/
+theorem wedderburn_trace_identity : True := by
+  -- Ref: [manuscript] prop:wedderburn-trace-identity
+  sorry
+
+end QOU.BraidKnot

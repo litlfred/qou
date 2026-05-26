@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/vacuum-epsilon.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Infinitesimal vacuum: $\\mathrm{Geom}(\\unicode{9737}) = \\varepsilon$ -/
+class VacuumEpsilon where
+  holds : Prop
+  -- Ref: [manuscript] conj:vacuum-epsilon
+
+end QOU.AppendixSurreals

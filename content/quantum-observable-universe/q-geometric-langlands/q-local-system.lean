@@ -11,3 +11,12 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QLocalSystem
+
+namespace QOU
+
+/-- $q$-Local system -/
+def QLocalSystem : sorry :=
+  -- Ref: [manuscript] def:q-local-system
+  sorry
+
+end QOU

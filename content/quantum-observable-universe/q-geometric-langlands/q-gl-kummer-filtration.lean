@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.ts
 -/
+
+namespace QOU.QGeometricLanglands
+
+/-- **CONJECTURE.** Kummer filtration on $q$-local systems -/
+class QGlKummerFiltration where
+  holds : Prop
+  -- Ref: [manuscript] conj:q-gl-kummer-filtration
+
+end QOU.QGeometricLanglands

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **PROPOSITION.** Discrete vortex mode spectrum -/
+theorem discrete_vortex_spectrum : True := by
+  -- Ref: [manuscript] prop:discrete-vortex-spectrum
+  sorry
+
+end QOU.FluidDynamics

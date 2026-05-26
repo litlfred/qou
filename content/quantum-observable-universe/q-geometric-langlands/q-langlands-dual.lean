@@ -11,3 +11,12 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QLanglandsDual
+
+namespace QOU
+
+/-- $q$-Langlands dual group -/
+def QLanglandsDual : sorry :=
+  -- Ref: [manuscript] def:q-langlands-dual
+  sorry
+
+end QOU

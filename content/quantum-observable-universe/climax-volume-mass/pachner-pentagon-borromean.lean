@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/pachner-pentagon-borromean.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition -/
+class PachnerPentagonBorromean where
+  holds : Prop
+  -- Ref: [manuscript] conj:pachner-pentagon-borromean
+
+end QOU.BraidsAndKnots

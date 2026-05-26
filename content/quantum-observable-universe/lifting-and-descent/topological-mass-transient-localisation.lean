@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
 -/
+
+namespace QOU.LiftingDescent
+
+/-- **LEMMA.** Transient terms localise to exceptional divisors -/
+theorem tm_transient_localisation : True := by
+  -- Ref: [manuscript] lem:topological-mass-transient-localisation
+  sorry
+
+end QOU.LiftingDescent

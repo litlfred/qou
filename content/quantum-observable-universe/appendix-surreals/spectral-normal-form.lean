@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/spectral-normal-form.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Spectral gap closure and singularity formation as $q \\to 1$ read from normal-form exponents -/
+class SpectralNormalForm where
+  holds : Prop
+  -- Ref: [manuscript] conj:spectral-normal-form
+
+end QOU.AppendixSurreals

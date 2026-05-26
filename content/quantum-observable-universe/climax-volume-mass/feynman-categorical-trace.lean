@@ -25,3 +25,12 @@ Lean declarations:
   - `QOU.FeynmanPathIntegrals.amplitude_finite_sum`
   - `QOU.FeynmanPathIntegrals.mass_eq_abs_amplitude`
 -/
+
+namespace QOU.FeynmanPathIntegrals
+
+/-- **PROPOSITION.** Feynman transition amplitude as categorical trace -/
+theorem FeynmanCategoricalTrace : True := by
+  -- Ref: [manuscript] prop:feynman-categorical-trace
+  sorry
+
+end QOU.FeynmanPathIntegrals

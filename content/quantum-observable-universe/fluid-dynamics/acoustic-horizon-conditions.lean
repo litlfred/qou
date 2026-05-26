@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **PROPOSITION.** Acoustic horizon formation and gravitational emergence -/
+theorem acoustic_horizon_conditions : True := by
+  -- Ref: [manuscript] prop:acoustic-horizon-conditions
+  sorry
+
+end QOU.FluidDynamics

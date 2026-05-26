@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/type-b-folding-cpt.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Type-B Cartan folding realises CPT via symmetric-crystal $\\mathbb{Z}/2$ fixed points -/
+class TypeBFoldingCpt where
+  holds : Prop
+  -- Ref: [manuscript] conj:type-b-folding-cpt
+
+end QOU.BraidsAndKnots

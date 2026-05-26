@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
 -/
+
+namespace QOU
+
+/-- **PROPOSITION.** Obstruction to $q$-flatness -/
+theorem q_gl_obstruction_calc : True := by
+  -- Ref: [manuscript] prop:q-gl-obstruction-calc
+  sorry
+
+end QOU

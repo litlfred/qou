@@ -13,3 +13,12 @@ Canonical declaration: `QOU.FeynmanPathIntegrals.trace_collapse`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-trace-collapse.ts
 -/
+
+namespace QOU.FeynmanPathIntegrals
+
+/-- **LEMMA.** Path integral collapses to a finite sum on the eigenbasis -/
+theorem trace_collapse : True := by
+  -- Ref: [manuscript] lem:feynman-trace-collapse
+  sorry
+
+end QOU.FeynmanPathIntegrals

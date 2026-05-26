@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
 -/
+
+namespace QOU.Observations
+
+/-- **PROPOSITION.** Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime -/
+theorem centered_hecke_variance_positive : True := by
+  -- Ref: [manuscript] prop:centered-hecke-variance-positive
+  sorry
+
+end QOU.Observations

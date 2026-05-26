@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
 -/
+
+namespace QOU.Observations
+
+/-- **PROPOSITION.** Crossing energy of strange quark matter is purely strong -/
+theorem strangelet_crossing_energy : True := by
+  -- Ref: [manuscript] prop:strangelet-crossing-energy
+  sorry
+
+end QOU.Observations

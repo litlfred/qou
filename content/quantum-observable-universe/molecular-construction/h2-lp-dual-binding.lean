@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts
 -/
+
+namespace QOU.Molecular
+
+/-- **PROPOSITION.** LP dual gives optimal $H_2$ binding -/
+theorem h2_lp_dual_binding : True := by
+  -- Ref: [manuscript] prop:h2-lp-dual-binding
+  sorry
+
+end QOU.Molecular

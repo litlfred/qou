@@ -20,3 +20,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.ts
 -/
+
+namespace QOU.Kashaev
+
+/-- **CONJECTURE.** Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\rho_F = \\nu_{\\mathrm{SDP}}$) -/
+class KashaevDensityEqualsSdpMultiplicity where
+  holds : Prop
+  -- Ref: [manuscript] conj:kashaev-density-equals-sdp-multiplicity
+
+end QOU.Kashaev

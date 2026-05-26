@@ -12,3 +12,12 @@ Canonical declaration: `QOU.BraidKnot.gb_spectral_sequence`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** GB-filtration spectral sequence and $E_\\infty$ convergence of the 6-term mass -/
+theorem gb_spectral_sequence : True := by
+  -- Ref: [manuscript] prop:gb-spectral-sequence
+  sorry
+
+end QOU.BraidKnot

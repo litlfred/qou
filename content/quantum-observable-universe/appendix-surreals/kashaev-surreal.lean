@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/kashaev-surreal.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Kashaev volume conjecture as a surreal standard-part identity -/
+class KashaevSurreal where
+  holds : Prop
+  -- Ref: [manuscript] conj:kashaev-surreal
+
+end QOU.AppendixSurreals

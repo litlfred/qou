@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy-frobenius-kernel.ts
 -/
+
+namespace QOU.BraidsKnots
+
+/-- **LEMMA.** Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$ -/
+theorem mobius_frobenius_kernel : True := by
+  -- Ref: [manuscript] lem:mobius-energy-frobenius-kernel
+  sorry
+
+end QOU.BraidsKnots

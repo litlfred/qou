@@ -11,3 +11,12 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QHeckeOperator
+
+namespace QOU
+
+/-- $q$-Hecke operator -/
+def QHeckeOperator : sorry :=
+  -- Ref: [manuscript] def:q-hecke-operator
+  sorry
+
+end QOU

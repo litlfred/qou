@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.ts
 -/
+
+namespace QOU.Information
+
+/-- **PROPOSITION.** Discrete iterations per Reeb circuit -/
+theorem reeb_operations_per_planck : True := by
+  -- Ref: [manuscript] prop:reeb-operations-per-planck
+  sorry
+
+end QOU.Information

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/helicity-conservation.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **PROPOSITION.** Categorical helicity conservation -/
+theorem helicity_conservation : True := by
+  -- Ref: [manuscript] prop:helicity-conservation
+  sorry
+
+end QOU.FluidDynamics

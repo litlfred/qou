@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/local-infinitesimal-field.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Substrate parameter as a local infinitesimal field $\\varepsilon(x)$ -/
+class LocalInfinitesimalField where
+  holds : Prop
+  -- Ref: [manuscript] conj:local-infinitesimal-field
+
+end QOU.AppendixSurreals

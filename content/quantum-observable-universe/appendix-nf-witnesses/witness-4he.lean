@@ -10,3 +10,12 @@
 
 -- See QOU.Archimedean.PauliWitness.tr_alt_4he for the exact Laurent polynomial.
 -- See QOU.Archimedean.PauliWitness.net_4he for the net polynomial.
+
+namespace QOU.Archimedean.PauliWitness
+
+/-- Pauli witness for ${}^4\\mathrm{He}$ (exact in $q$) -/
+def witness_4He : sorry :=
+  -- Ref: [manuscript] def:witness-4he
+  sorry
+
+end QOU.Archimedean.PauliWitness

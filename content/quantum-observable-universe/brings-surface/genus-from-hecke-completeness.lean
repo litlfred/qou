@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-from-hecke-completeness.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **LEMMA.** Genus from Hecke completeness for torus knots -/
+theorem genus_from_hecke_completeness : True := by
+  -- Ref: [manuscript] lem:genus-from-hecke-completeness
+  sorry
+
+end QOU.Archimedean

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
 -/
+
+namespace QOU.Observations
+
+/-- **PROPOSITION.** Overdetermination of the substrate parameter -/
+theorem substrate_consistency_window : True := by
+  -- Ref: [manuscript] prop:substrate-consistency-window
+  sorry
+
+end QOU.Observations

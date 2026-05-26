@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "c0c7c327c7c1",
     "ts": "776da304857c",
-    "lean": "7ae8326e608a"
+    "lean": "0bd4c9310b29"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1997,7 +1997,7 @@
         "field_hash": {
           "md": "c0c7c327c7c1",
           "ts": "776da304857c",
-          "lean": "7ae8326e608a"
+          "lean": "0bd4c9310b29"
         },
         "result": "pass",
         "reviewer": {
@@ -2005,11 +2005,11 @@
           "id": "proof-narrative-lean-equiv-sweep/v1",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-26T14:23:00.108Z",
-        "reviewed_sha": "d8955b60baebf1cb230b808621230e842342eef9",
-        "notes": "Label 'prop:surreal-rate-calculus' → expected 'surreal_rate_calculus'; Lean declares: surreal_rate_calculus_conditional. Structural match via content."
+        "reviewed_at": "2026-05-26T14:25:22.698Z",
+        "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
+        "notes": "Label 'prop:surreal-rate-calculus' → expected 'surreal_rate_calculus'; Lean declares: surreal_rate_calculus_conditional, SurrealRateCalculus. Structural match via content."
       }
     ]
   },
-  "updated_at": "2026-05-26T14:23:00.108Z"
+  "updated_at": "2026-05-26T14:25:22.698Z"
 }

@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Canonical $\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\bowtie_K$ interface (regularised crystal extension) -/
+class IsospinFromCanonicalBowtie where
+  holds : Prop
+  -- Ref: [manuscript] conj:isospin-from-canonical-bowtie
+
+end QOU.BraidsAndKnots

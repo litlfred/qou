@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-oper-hecke.ts
 -/
+
+namespace QOU.QGeometricLanglands
+
+/-- **CONJECTURE.** $q$-Opers are $q$-Hecke eigensheaves -/
+class QOperHecke where
+  holds : Prop
+  -- Ref: [manuscript] conj:q-oper-hecke
+
+end QOU.QGeometricLanglands

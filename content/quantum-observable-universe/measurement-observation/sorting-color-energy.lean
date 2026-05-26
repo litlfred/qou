@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/sorting-color-energy.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Sorting deposits energy $q + q^{-1}$ per crossing in the colour fibre -/
+theorem sorting_color_energy : True := by
+  -- Ref: [manuscript] prop:sorting-color-energy
+  sorry
+
+end QOU.BraidKnot

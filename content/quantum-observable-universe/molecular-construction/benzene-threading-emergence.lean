@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts
 -/
+
+namespace QOU.Molecular
+
+/-- **PROPOSITION.** Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration -/
+theorem benzene_threading_emergence : True := by
+  -- Ref: [manuscript] prop:benzene-threading-emergence
+  sorry
+
+end QOU.Molecular

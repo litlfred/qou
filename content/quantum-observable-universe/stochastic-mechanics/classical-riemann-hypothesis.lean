@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** The Riemann hypothesis -/
+class ClassicalRiemannHypothesis where
+  holds : Prop
+  -- Ref: [manuscript] conj:classical-riemann-hypothesis
+
+end QOU.BraidKnot

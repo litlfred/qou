@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/modular-s-transform-q-q-tilde.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Modular $S$-transform $q \\leftrightarrow \\tilde q = \\exp(2\\pi i / \\tau)$ for Hecke parameter analytic continuation -/
+class ModularSTransformQQTilde where
+  holds : Prop
+  -- Ref: [manuscript] conj:modular-s-transform-q-q-tilde
+
+end QOU.BraidsAndKnots

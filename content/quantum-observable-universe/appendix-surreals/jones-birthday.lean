@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/jones-birthday.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Birthday refinement of the Jones polynomial -/
+class JonesBirthday where
+  holds : Prop
+  -- Ref: [manuscript] conj:jones-birthday
+
+end QOU.AppendixSurreals

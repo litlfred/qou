@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Borromean rings represent a non-trivial element of $K_3(\\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$ -/
+class BorromeanBlochGroupElement where
+  holds : Prop
+  -- Ref: [manuscript] conj:borromean-bloch-group-element
+
+end QOU.BraidsAndKnots

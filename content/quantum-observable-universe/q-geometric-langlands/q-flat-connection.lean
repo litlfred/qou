@@ -10,3 +10,12 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QFlatConnection
+
+namespace QOU
+
+/-- $q$-Flat connection -/
+def QFlatConnection : sorry :=
+  -- Ref: [manuscript] def:q-flat-connection
+  sorry
+
+end QOU

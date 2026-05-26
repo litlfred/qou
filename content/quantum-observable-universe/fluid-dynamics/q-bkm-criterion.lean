@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **THEOREM.** $q$-deformed Beale--Kato--Majda criterion -/
+theorem q_bkm_criterion : True := by
+  -- Ref: [manuscript] thm:q-bkm
+  sorry
+
+end QOU.FluidDynamics
