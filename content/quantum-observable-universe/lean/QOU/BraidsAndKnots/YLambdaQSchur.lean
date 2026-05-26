@@ -221,6 +221,48 @@ theorem qFactorial_three (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
   rw [show ((3 : ℕ) : ℤ) = 3 from rfl]
   rw [qInt_three q hq h_neq, qFactorial_two q hq h_neq]
 
+/-! ## F_Bor as |tr_M(β_Bor)| normalised by y_(3) Markov weight
+
+The substrate identity for the proton mass uses the categorical
+observable
+
+  F_Bor(q) := |tr_M(β_Bor, q)| · [3]_q! / q^3
+
+This file proves the CLEAN identification:
+
+  F_Bor(q) = |tr_M(β_Bor, q)| / y_(3)(q)
+
+since y_(3)(q) := q^(c((3))) / [3]_q! = q^3 / [3]_q!  (content sum
+of the trivial partition (3) is c((3)) = 0+1+2 = 3).
+
+This gives F_Bor a natural categorical interpretation: it is the
+Markov trace of β_Bor DIVIDED by the q-Schur Markov weight of the
+trivial / symmetric partition (3) — equivalently, the trace
+NORMALISED to remove the trivial-partition's content shift.
+
+The proton substrate identity then reads in cleaner form:
+
+  m_p = 2 · m_μ · |tr_M(β_Bor)| / y_(3)(q_0)  -  12 · m_e
+
+or equivalently (clearing y_(3)):
+
+  y_(3)(q_0) · (m_p + 12 · m_e)  =  2 · m_μ · |tr_M(β_Bor, q_0)|
+-/
+
+/-- **F_Bor identification**: F_Bor(q) = |tr_M(β_Bor, q)| / y_(3)(q)
+    where y_(3)(q) = q^3 / [3]_q! is the q-Schur Markov weight for
+    the (3) partition.
+
+    Proof: trivial algebra
+      F_Bor := |tr_M| · [3]_q! / q^3
+             = |tr_M| / (q^3 / [3]_q!)
+             = |tr_M| / y_(3) -/
+theorem F_Bor_eq_trM_over_y_3 (q : ℝ) (h_trM : ℝ) (h_q3 : q^3 ≠ 0)
+    (h_qfact : qFactorial q 3 ≠ 0) :
+    h_trM * qFactorial q 3 / q^3 =
+      h_trM / (q^3 / qFactorial q 3) := by
+  field_simp
+
 /-! ## Specialised bar-Mullineux corollaries at H_3 (proton)
 
 For the proton's H_3(q) algebra, the three partitions of 3 split
