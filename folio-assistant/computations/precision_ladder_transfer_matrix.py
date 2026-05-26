@@ -1,32 +1,26 @@
 #!/usr/bin/env python3
 """
-Transfer-matrix derivation of the Q_β precision-ladder c_k.
+Transfer-matrix analysis of the Q_β precision-ladder c_k.
 
-The Q_β precision ladder is a perturbative expansion:
-  Q = Q_A · Π_{k≥2} (1 + c_k · (b·ℏ_q²)^k)
+Constructs the 4×4 Wedderburn-basis transfer matrix T and the 2×2
+upper-triangular generating matrix G = [[J, b], [0, K]], then
+tests whether traces of their powers reproduce the known c_3..c_7.
 
-The c_k have a PAIR STRUCTURE built from two categorical primitives:
-  J = J_Hopf(q=1) = -2  (Jones invariant)
-  K = b²               (Hoefsmit coupling squared)
-
-This script constructs the 2×2 transfer matrix T whose characteristic
-polynomial has roots J and K, and shows that c_k = Tr(T^k) + correction
-reproduces the known c_3..c_7 and predicts c_8+.
-
-The transfer matrix encodes the spectral decomposition of the Hecke
-algebra's action on the V_(2,1) irrep via the Markov trace at each
-brane-tower depth.
+Finding: the V_(2,1) block transfer has COMPLEX eigenvalues and
+does not directly generate c_k. The pair structure arises from
+inter-block coupling via the Markov trace normalization.
 """
-from mpmath import mpf, mp, matrix, eig, fabs, sqrt
+from mpmath import mpf, mp, matrix
 
-def trace(M):
-    return sum(M[i,i] for i in range(M.rows))
+def trace(m):
+    return sum(m[i,i] for i in range(m.rows))
 mp.dps = 60
 
 import json, os
 
 COMP = os.path.dirname(__file__)
-w = json.load(open(os.path.join(COMP, "q-beta-operator-valued-N3.witness.json")))
+with open(os.path.join(COMP, "q-beta-operator-valued-N3.witness.json")) as f:
+    w = json.load(f)
 d = w["data"]
 
 q0 = mpf(str(d["q_0_50dps"]))

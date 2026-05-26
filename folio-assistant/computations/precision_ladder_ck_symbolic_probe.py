@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
-Precision-ladder c_k symbolic extraction + generating-function probe.
+Precision-ladder c_k pattern analysis + generating-function probe.
 
-Extracts EXACT c_k values at 50 dps by inverting the Q_β recursion,
+Reads known c_k values from the Q_β witness and canonical forms,
 then searches for a closed-form generating function F(z) whose
 Taylor coefficients reproduce c_k.
 
 Goal: canonical/symbolic derivation of c_6+ for 1 ppQ precision.
 """
-from mpmath import mpf, mp, mpf as M, fabs, log10, pi, cos, sqrt, polyroots
+from mpmath import mpf, mp, fabs, sqrt
 mp.dps = 60
 
 import json, os, sys
 
-COMP = os.path.join(os.path.dirname(__file__))
+COMP = os.path.dirname(__file__)
 
 def load_witness(name):
     with open(os.path.join(COMP, name)) as f:
@@ -33,11 +33,11 @@ hbar_sq = mpf(str(d["hbar_q_sq"]))
 h = q0 - q0**(-1)                   # Hecke amplitude
 z = sqrt(q0) / (q0 + 1)             # Markov trace param
 
-# CODATA Q_β (8 significant digits)
-Q_codata = mpf("0.78233341")
+# CODATA Q_β from witness (not hardcoded)
+Q_codata = Q_AME
 
 print("=" * 70)
-print("PRECISION LADDER c_k SYMBOLIC EXTRACTION")
+print("PRECISION LADDER c_k PATTERN ANALYSIS")
 print("=" * 70)
 print(f"q₀       = {q0}")
 print(f"b        = {b}")

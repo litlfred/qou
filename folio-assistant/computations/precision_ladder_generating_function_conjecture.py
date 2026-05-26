@@ -11,13 +11,16 @@ Output: witness JSON with the conjecture + predictions + verification.
 from mpmath import mpf, mp, fabs
 mp.dps = 60
 
-import json, os, sys, datetime
+import json, os, sys, time
 
 COMP = os.path.dirname(__file__)
 sys.path.insert(0, COMP)
 from witness_base import WitnessBuilder
 
-w = json.load(open(os.path.join(COMP, "q-beta-operator-valued-N3.witness.json")))
+_start = time.time()
+
+with open(os.path.join(COMP, "q-beta-operator-valued-N3.witness.json")) as f:
+    w = json.load(f)
 d = w["data"]
 
 q0 = mpf(str(d["q_0_50dps"]))
@@ -85,9 +88,9 @@ for k in range(3, 14):
     err_ppb = float(fabs(Q - Q_AME) / Q_AME * 1e9)
     results.append({
         "k": k,
-        "c_k": str(float(all_c[k])),
-        "correction": str(float(correction)),
-        "Q_pred_MeV": str(float(Q)),
+        "c_k": mp.nstr(all_c[k], 40),
+        "correction": mp.nstr(correction, 40),
+        "Q_pred_MeV": mp.nstr(Q, 40),
         "err_ppb": f"{err_ppb:.6f}",
         "status": "known" if k <= 7 else "predicted",
     })
@@ -102,11 +105,11 @@ print()
 print("Convergence: |c_k · b^k · ℏ_q^{2k}| at each rung")
 for k in range(3, 14):
     mag = float(fabs(all_c[k] * b**k * hbar_sq**k))
-    ppq = mag / float(Q_AME) * 1e15
+    ppq = mag * 1e15  # correction is already relative (dimensionless ratio)
     print(f"  k={k:2d}: {mag:.4e}  ({ppq:.2f} ppQ)")
 
 # ── Build witness ────────────────────────────────────────────────
-wb = WitnessBuilder("precision-ladder-generating-function-conjecture")
+wb = WitnessBuilder("precision-ladder-generating-function-conjecture", start_time=_start)
 
 wb.data["description"] = (
     "Pair-structure conjecture for Q_β precision-ladder coefficients c_k. "
@@ -115,16 +118,17 @@ wb.data["description"] = (
     "Pair rules predict c_8..c_13 from the alternating (J^n, J^n·K^{1or2}) pattern."
 )
 
+wb.data["auditOnly"] = True
 wb.data["primitives"] = {
-    "J": str(float(J)),
+    "J": mp.nstr(J, 40),
     "J_source": "J_Hopf(q=1) — Jones polynomial of Hopf link at classical limit",
-    "K": str(float(K)),
+    "K": mp.nstr(K, 40),
     "K_source": "b²(q₀) — Hoefsmit off-diagonal coupling squared on V_(2,1)",
-    "b": str(float(b)),
+    "b": mp.nstr(b, 40),
 }
 
 wb.data["known_ck"] = {
-    str(k): {"value": str(float(v)), "formula": f}
+    str(k): {"value": mp.nstr(v, 40), "formula": f}
     for k, v, f in [
         (2, c_known[2], "-1 (Kashiwara return)"),
         (3, c_known[3], "J (pure Jones)"),
@@ -136,7 +140,7 @@ wb.data["known_ck"] = {
 }
 
 wb.data["predicted_ck"] = {
-    str(k): {"value": str(float(v)), "formula": f}
+    str(k): {"value": mp.nstr(v, 40), "formula": f}
     for k, v, f in [
         (8,  c_predicted[8],  "J³·K² (n=3 trailing, B=2)"),
         (9,  c_predicted[9],  "3J⁴ + b (n=4 leading, even)"),
@@ -162,8 +166,11 @@ wb.data["convergence"] = {
 
 wb.data["results"] = results
 
-wb.add_assertion("c_3 = J_Hopf", computed=float(c_known[3]), expected=float(J), tolerance=1e-40)
-wb.add_assertion("c_4 = J·K²", computed=float(c_known[4]), expected=float(J * K**2), tolerance=1e-40)
+# Compare CANONICAL c_3 = J = -2 against EMPIRICAL c_3 from witness
+c3_empirical = mpf(str(d["c_3_empirical_additive"]))
+wb.add_assertion("c_3 canonical vs empirical",
+    computed=float(J), expected=float(c3_empirical), tolerance=0.01,
+    source="J_Hopf(q=1) = -2 vs witness c_3_empirical_additive")
 
 wb.save()
 print()
