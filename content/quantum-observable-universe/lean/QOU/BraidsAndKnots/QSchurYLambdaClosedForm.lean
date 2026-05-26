@@ -148,8 +148,14 @@ theorem qSchur_H2_top (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   have hc : contentSum [2] = 1 := by decide
   have hs : ([2] : List ℕ).sum = 2 := by decide
   rw [hc, hs]
+  have hsum_ne : q + q⁻¹ ≠ 0 := by
+    intro heq
+    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
+    rw [mul_add, mul_inv_cancel₀ hq] at this
+    have hsq : 0 ≤ q * q := mul_self_nonneg q
+    linarith
   simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp
+  field_simp [hsum_ne]
   ring
 
 /-- **H_2 case for `(1,1)`**: `y_{(1,1)}(q) = q⁻¹ / (q + q⁻¹)`. -/
@@ -159,8 +165,14 @@ theorem qSchur_H2_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   have hc : contentSum [1, 1] = -1 := by decide
   have hs : ([1, 1] : List ℕ).sum = 2 := by decide
   rw [hc, hs]
+  have hsum_ne : q + q⁻¹ ≠ 0 := by
+    intro heq
+    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
+    rw [mul_add, mul_inv_cancel₀ hq] at this
+    have hsq : 0 ≤ q * q := mul_self_nonneg q
+    linarith
   simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp
+  field_simp [hsum_ne]
   ring
 
 /-- **H_2 Plancherel normalization**: `y_(2)(q) + y_{(1,1)}(q) = 1`. -/
