@@ -15,8 +15,8 @@ $$
 
 Here $\mathfrak{d}$ denotes the three-twist knot $5_2$, a Skein
 descendant of the trefoil.  Similarly for the heavier quarks:
-$\mathfrak{s} = T_{2,5}^{\sigma}$, $\mathfrak{c} = T_{2,7}$,
-$\mathfrak{b} = T_{2,5}$, $\mathfrak{t} = T_{3,4}$.
+$\mathfrak{s} = T_{2,5}^{\sigma}$, $\mathfrak{c} = T_{2,5}$,
+$\mathfrak{b} = T_{2,7}^{\sigma}$, $\mathfrak{t} = T_{3,4}$.
 
 **Nucleon shorthand.** The proton and neutron are color-tube-linked
 triples bound by Hopf links:
