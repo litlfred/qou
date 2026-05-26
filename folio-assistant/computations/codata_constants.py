@@ -187,7 +187,7 @@ _q_beta_combined_err = mp.sqrt(
 )
 if _q_beta_residual > 5 * _q_beta_combined_err:
     warnings.warn(
-        f"CAL-3 consistency check failed: |Q_β - (m_n - m_p - m_e)| = "
+        f"Q_β consistency check failed: |Q_β - (m_n - m_p - m_e)| = "
         f"{float(_q_beta_residual):.3e} MeV exceeds 5× combined CODATA σ "
         f"({float(_q_beta_combined_err):.3e} MeV). Verify CODATA refresh "
         f"in codata-2022-validation-masses.witness.json + "
@@ -235,9 +235,9 @@ def __getattr__(name: str):
 
 
 __all__ = [
-    # Legitimate calibration inputs (CAL-1, CAL-3)
+    # Legitimate calibration inputs (CAL-1) + derived cross-check (Q_β)
     "M_E_MEV", "M_E_MEV_ERR",
-    "Q_BETA_MEV", "Q_BETA_MEV_ERR",
+    "Q_BETA_MEV", "Q_BETA_MEV_ERR",  # derived from CAL-1+CAL-2; kept for cross-check
     # Validation-only experimental values (loaded from witness)
     "M_P_MEV_VALIDATION", "M_P_MEV_VALIDATION_ERR",
     "M_N_MEV_VALIDATION", "M_N_MEV_VALIDATION_ERR",
