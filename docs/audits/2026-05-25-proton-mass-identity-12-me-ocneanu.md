@@ -35,27 +35,48 @@ residual           =                          0.0002 MeV
 Zero free parameters. Three Lean-proved ingredients. Two structural
 integers (2 and 12, both categorically derivable per discussion below).
 
-## The "12" matches a PRIOR finding — Ocneanu cancellation leading-pole
+## The "12" — empirical integer near-match (NOT structurally derived)
 
-Per [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](2026-05-04-ocneanu-cancellation-numerical-verification.md):
+**Correction (2026-05-26):** an earlier version of this audit claimed
+the "12" in `−12·m_e` equals the reciprocal of the Ocneanu cancellation
+leading-pole coefficient `−1/12`.  This was **incorrect**.
 
-> **`tr_M(proton)` has pole order EXACTLY 10 at q=0, with leading coefficient = −1/12.**
->
-> "leading coefficient ≈ −1/12 for atomic-braid Markov-trace poles at
-> q=0 (independent of which atom)."
+Direct numerical check of the Lean-proved closed form
+`tr_M(β_Bor, q) = (4 + h² − 3h⁴ − h⁶)/(h² + 4)` shows:
 
-Verified to 200 dps. Identified via Ocneanu cross-partition cancellation
-in PR #546's Hoefsmit symbolic work.
+| q | tr_M · q⁴ |
+|---|---:|
+| 0.05 | −0.9876 |
+| 0.04 | −0.9920 |
+| 0.03 | −0.9955 |
+| 0.02 | −0.9980 |
+| 0.01 | −0.99950 |
 
-The "12" in `−12·m_e` is the **same 12** as the −1/12 leading-pole
-coefficient — they are RECIPROCALS:
+So **|tr_M(β_Bor, q)| ~ q⁻⁴** with **leading coefficient = −1** as q → 0
+(pole order 4, NOT 10).  No "1/12" appears.
 
-$$\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q) \;\sim\; \frac{-1}{12 \cdot q^{10}} \quad (q \to 0)$$
+The Ocneanu audit
+([`2026-05-04-ocneanu-cancellation-numerical-verification.md`](2026-05-04-ocneanu-cancellation-numerical-verification.md))
+established `tr_M(proton, q) ~ −1/(12·q^{10})` for some braid labeled
+"proton (no inter)" — but this braid is NOT β_Bor.  It's likely the
+canonical SDP-selected T_w_proton in atomic-3A convention (the
+production-side element, distinct from the Borromean braid I use).
 
-$$m_p \;=\; 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) \;+\; \frac{1}{(-1/12)} \cdot m_e$$
+**Implication**: the empirical 0.24 ppm match of `12·m_e` in my
+identity is a striking integer-near-match but **does NOT have a
+current structural derivation**.  The "12" is empirically integer
+(N=12 to ~10⁻⁴ relative accuracy, much closer than nearby integers
+N=11 or N=13), but its categorical origin is OPEN.
 
-Both 12's are the same **Ocneanu / Bernoulli-like categorical constant**
-for the proton's atomic braid.
+Possible structural identifications (none yet proven):
+- A representation-theory invariant of β_Bor at H_3 (which has 3 partitions,
+  3 generators, 6-length word in the canonical (σ₁σ₂⁻¹)³ form)
+- A genuine coincidence with the Ocneanu Bernoulli-12 (different braids,
+  same numerical 12)
+- Number-of-quark-flavour-pairs (3 strands × 4 cells?) — speculative
+
+**Honest framing**: the m_p substrate identity holds empirically at
+0.24 ppm; the structural origin of the "12" needs further work.
 
 ## Structural significance of "2" — refined post sibling-probe context
 
