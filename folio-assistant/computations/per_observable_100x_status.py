@@ -196,6 +196,8 @@ def main() -> dict:
     sub = None
     try:
         sub = load_witness("m-p-substrate-identity-50dps.witness.json")
+        if not sub.get("data"):
+            sub = None
     except FileNotFoundError:
         pass
 
@@ -203,50 +205,23 @@ def main() -> dict:
     borr_data = borr.get("data", {})
     borr_source = "m-p-borromean-verification-50dps.witness.json"
 
+    m_p_sub = None
     if sub is not None:
         sub_data = sub.get("data", {})
         sub_source = "m-p-substrate-identity-50dps.witness.json"
-        # m_p from substrate identity; m_n prefers Path C (categorical
-        # Q_β) over Path A (flavor-split) when predictions_pathC exists.
-        # Path C: m_n = m_p + Q_β(N=3) + m_e gives 0.24 ppm (8× better
-        # than flavor-split's 2.0 ppm) and Δ_pn = 3.5 ppb (beats 100×).
-        pathC = sub_data.get("predictions_pathC")
-        m_n_key = "predictions_pathC.m_n_MeV" if pathC else "predictions.m_n_MeV"
-        m_n_source = (sub_source + " (Path C: categorical Q_β)") if pathC else sub_source
-        for obs, path_key in [
-            ("m_p",  "predictions.m_p_MeV"),
-            ("m_n",  m_n_key),
-        ]:
-            section, field = path_key.split(".")
-            v = sub_data.get(section, {}).get(field)
-            if v is None:
-                rows.append({"obs": obs, "status": "NO-WITNESS"})
-                continue
-            rows.append(_row_for(obs, mpf(str(v)), sub_source))
+        # m_p from substrate identity witness
+        m_p_str = sub_data.get("predictions", {}).get("m_p_MeV")
+        if m_p_str is not None:
+            m_p_sub = mpf(str(m_p_str))
+            rows.append(_row_for("m_p", m_p_sub, sub_source))
+        else:
+            rows.append({"obs": "m_p", "status": "NO-WITNESS"})
         # m_mu still from Borromean (CAL-2 anchor check)
         v_mu = borr_data.get("muon_check", {}).get("m_mu_pred_MeV")
         if v_mu is None:
             rows.append({"obs": "m_mu", "status": "NO-WITNESS"})
         else:
             rows.append(_row_for("m_mu", mpf(str(v_mu)), borr_source))
-        # Δ_pn: prefer Path C (categorical Q_β, 3.5 ppb) over Path A
-        # (flavor-split, 1.28M ppb). Path C Δ_pn = Q_β(N=3) + m_e.
-        delta_str = None
-        if pathC:
-            delta_str = pathC.get("Delta_m_pn_MeV")
-        if delta_str is None:
-            delta_str = sub_data.get("predictions", {}).get("Delta_m_pn_MeV")
-        if delta_str is not None:
-            rows.append(_row_for("Delta_pn", mpf(str(delta_str)), sub_source))
-        else:
-            # Fall back to m_n - m_p arithmetic if direct prediction absent
-            m_p_str = sub_data.get("predictions", {}).get("m_p_MeV")
-            m_n_str = sub_data.get("predictions", {}).get("m_n_MeV")
-            if m_p_str is not None and m_n_str is not None:
-                delta_pn = mpf(str(m_n_str)) - mpf(str(m_p_str))
-                rows.append(_row_for("Delta_pn", delta_pn, sub_source))
-            else:
-                rows.append({"obs": "Delta_pn", "status": "NO-WITNESS"})
     else:
         # Fallback: read all four from Borromean (historical wiring)
         for obs, path_key in [
@@ -285,18 +260,51 @@ def main() -> dict:
         # N=5: c_5 = c_3² · 3 + b (additive Jones² · integer + Kashiwara)
         c5_categorical = c3_categorical ** 2 * 3 + b_hoef
         Q_N5 = Q_N4 * (1 + c5_categorical * (b_hoef ** 5) * (hbar_sq ** 5))
+        Q_beta_best = Q_N5
         rows.append(_row_for(
             "Q_beta", Q_N5,
             "q-beta-operator-valued-N3.witness.json (N=5 categorical, "
             "c_5 = c_3²·3 + b per precision-ladder.md mixing pattern)",
         ))
     else:
-        # Fallback to the legacy N=0 bare prediction if N=3 cache absent
+        Q_beta_best = None
         qb = load_witness("q-beta-predicted.witness.json")
         v = qb.get("data", {}).get("q_beta_prediction", {}).get("Q_beta_pred_MeV")
         if v is not None:
-            rows.append(_row_for("Q_beta", mpf(str(v)),
+            Q_beta_best = mpf(str(v))
+            rows.append(_row_for("Q_beta", Q_beta_best,
                                  "q-beta-predicted.witness.json [N=0 BARE — FALLBACK]"))
+
+    # ── Path C: m_n = m_p + Q_β + m_e (categorical, no flavor-split) ─
+    # PR #1298 finding: bypassing the flavor-split X entirely gives
+    # m_n at 0.24 ppm (8× better than the substrate-identity's 2 ppm).
+    # Δ_pn = Q_β + m_e follows directly.
+    m_e_mev = OBSERVABLES["m_e"][0]  # CAL-1 anchor
+    q_beta_rung = "N=5" if qb_n3_data.get("Q_N2") is not None else "N=0"
+    if m_p_sub is not None and Q_beta_best is not None:
+        m_n_path_c = m_p_sub + Q_beta_best + m_e_mev
+        delta_pn_path_c = Q_beta_best + m_e_mev
+        path_c_source = (
+            f"Path C: m_n = m_p(substrate) + Q_β({q_beta_rung}) + m_e; "
+            "no flavor-split — per PR #1298 gap diagnostic"
+        )
+        rows.append(_row_for("m_n", m_n_path_c, path_c_source))
+        rows.append(_row_for("Delta_pn", delta_pn_path_c, path_c_source))
+    elif sub is not None:
+        sub_data_fb = sub.get("data", {})
+        m_n_str = sub_data_fb.get("predictions", {}).get("m_n_MeV")
+        if m_n_str is not None:
+            rows.append(_row_for("m_n", mpf(str(m_n_str)), sub_source))
+        else:
+            rows.append({"obs": "m_n", "status": "NO-WITNESS"})
+        delta_str = sub_data_fb.get("predictions", {}).get("Delta_m_pn_MeV")
+        if delta_str is not None:
+            rows.append(_row_for("Delta_pn", mpf(str(delta_str)), sub_source))
+        else:
+            rows.append({"obs": "Delta_pn", "status": "NO-WITNESS"})
+    else:
+        rows.append({"obs": "m_n", "status": "NO-WITNESS"})
+        rows.append({"obs": "Delta_pn", "status": "NO-WITNESS"})
 
     # ── m_e — CAL-1 anchor (by definition err = 0) ───────────────────
     codata, sigma_exp, role, sigma_source = OBSERVABLES["m_e"]

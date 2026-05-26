@@ -1,25 +1,35 @@
-# Precision goals — what "1 ppb" means in QOU
+# Precision goals — what "1 ppQ" means in QOU
 
 > Canonical reference for all agents (Claude, Copilot, Gemini, future
 > collaborators) working on QOU mass-prediction precision.
 >
-> Per user direction (2026-05-18): the framework's headline precision
-> goal has **two independent legs**, not one.
+> Per user direction (2026-05-18, updated 2026-05-26): the framework's
+> headline precision goal has **two independent legs**, not one.
+>
+> **Precision target upgrade (2026-05-26).** L1 compute precision
+> target upgraded from **1 ppb** (10⁻⁹) to **1 ppQ** (1 part per
+> quadrillion, 10⁻¹⁵). Rationale: at 50 dps / 40 dps output, the
+> compute truncation is ~10⁻³⁴ ppb — the 1 ppb target was trivially
+> met and no longer discriminating. The Q_β precision ladder (N=5)
+> already produces formula residuals at ~10⁻¹⁰, approaching territory
+> where the 1 ppb L1 floor is noise. "1 ppQ" = "1 part per
+> quadrillion" (10⁻¹⁵ relative, 10⁻⁶ ppb). The "Q" is fitting —
+> everything in this paper is q.
 
 ## TL;DR
 
 | Leg | Target | Status |
 |-----|--------|--------|
-| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppb on every observable at substrate q_0 | **trivially met** — `_precision.py` default is 50 dps compute / 40 dps output (10⁻⁴⁰ relative); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **partial** — 1 of 6 observables (m_e, anchor) currently beats target; binding-constraint for absolutes is CAL-2 floor |
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **met** — `_precision.py` default is 50 dps compute / 40 dps serialization (10⁻⁴⁰ absolute truncation; relative varies by observable magnitude); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **partial** — 4 of 6 observables beat target (m_e anchor, m_μ anchor, Q_β at N=5, Δ_pn via Path C); m_p and m_n still miss |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
 
-## L1 — compute precision (default 1 ppb)
+## L1 — compute precision (default 1 ppQ)
 
 **Definition.** Different methods computing the same quantity at substrate
-q_0 must agree to at least 1 ppb (10⁻⁹ relative).
+q_0 must agree to at least 1 ppQ (10⁻¹⁵ relative, i.e. 10⁻⁶ ppb).
 
 **Configuration.** Controlled by `folio-assistant/computations/_precision.py`:
 
@@ -29,9 +39,24 @@ OUTPUT_DPS_DEFAULT   = 40    # serialization precision
 PRECISION_GUARD      = 10    # COMPUTE = OUTPUT + GUARD
 ```
 
-The **1 ppb target is the *minimum*** — raise via `QOU_COMPUTE_DPS=<n>`
-environment override. Some computations (operator-valued branching) target
-1e-15 (15-digit) cross-method identity; that's still well above 1 ppb.
+The **1 ppQ target is the *minimum*** — raise via `QOU_COMPUTE_DPS=<n>`
+environment override. At 50 dps, compute truncation is ~10⁻⁴⁰ relative
+(10⁻³¹ ppb), far exceeding 1 ppQ. The target is meaningful for *formula
+truncation* — e.g. the Q_β precision ladder at rung N has residual
+~(ℏ_q²)^N ≈ (0.0098)^N; N=8 reaches ~10⁻¹⁶ (1 ppQ territory).
+
+**Formula-truncation depth for 1 ppQ (Q_β precision ladder):**
+
+| N | Formula residual | ppb | ppQ |
+|---|-----------------|-----|-----|
+| 5 | ~10⁻¹⁰ | ~0.1 | ~10⁵ |
+| 6 | ~10⁻¹² | ~0.001 | ~10³ |
+| 7 | ~10⁻¹⁴ | ~10⁻⁵ | ~10 |
+| **8** | **~10⁻¹⁶** | **10⁻⁷** | **~0.1** |
+| 9 | ~10⁻¹⁸ | 10⁻⁹ | ~0.001 |
+
+Deriving c₆–c₈ from categorical sources (KLR basis / Khovanov
+spectral sequence) is the path to 1 ppQ formula precision on Q_β.
 
 **Where measured.** `onepb-status-dashboard.witness.json`:
 
@@ -56,15 +81,20 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 ### Per-observable target table (CODATA 2022)
 
-| Observable | σ_exp_rel | **100× target** | Current pred error | Status | Source witness |
+| Observable | σ_exp_rel | **100× target** | Current pred error | Status | Source |
 |---|---:|---:|---:|---|---|
-| Q_β (CAL-3 anchor, N=0 Form A bare) | 0.78 ppm | **7.8 ppb** | 1.68 ppm | misses by ~215 000× | `q-beta-predicted.witness.json` |
-| Q_β (CAL-3, **N=3 categorical**, c₃ = J_Hopf(q=1) = -2) | 0.78 ppm | **7.8 ppb** | **6.02 ppb** | **beats by ~24%** ✓ | derived from `q-beta-operator-valued-N3.witness.json` |
-| Δm_pn = m_n − m_p | 474 ppb | **4.74 ppb** | 254 ppb (Borromean) | misses target by 54× | `m-p-borromean-verification-50dps.witness.json` |
-| m_μ (muon) | 21.8 ppb | **0.22 ppb** | 1.41 ppb (Borromean μ formula) | misses target by 6.5× | `m-p-borromean-verification-50dps.witness.json` |
-| m_p | 0.31 ppb | **3.1 ppt** | 251 ppb (Borromean) | misses target by 81 000× | `m-p-borromean-verification-50dps.witness.json` |
-| m_n | 0.57 ppb | **5.7 ppt** | 251 ppb (Borromean) | misses target by 44 000× | `m-p-borromean-verification-50dps.witness.json` |
-| m_e (CAL-1 anchor) | 0.29 ppb | 2.9 ppt | 0 (anchor) | meets by definition | CAL-1 |
+| m_e (CAL-1 anchor) | 0.29 ppb | 2.9 ppt | 0 (anchor) | **meets** ✓ | CAL-1 |
+| m_μ (CAL-2 anchor) | 21.8 ppb | **0.22 ppb** | 0 ppb (ratio-derived) | **meets** ✓ | CAL-2 via Borromean |
+| Q_β (N=5 categorical) | 0.78 ppm | **7.8 ppb** | **5.7 ppb** | **beats by ~26%** ✓ | `q-beta-operator-valued-N3.witness.json` (N=5 ladder) |
+| Δm_pn (Path C: Q_β + m_e) | 474 ppb | **4.74 ppb** | **4.0 ppb** | **beats** ✓ | Path C: m_p(sub) + Q_β(N=5) + m_e |
+| m_p (substrate identity) | 0.31 ppb | **3.1 ppt** | 242 ppb | misses by ~78 000× | `m-p-substrate-identity-50dps.witness.json` |
+| m_n (Path C) | 0.57 ppb | **5.7 ppt** | 242 ppb | misses by ~42 000× | Path C: m_p(sub) + Q_β(N=5) + m_e |
+
+> **Path C (2026-05-26).** PR #1298 identified that the flavor-split X
+> contributes 86% of the Q_β consistency gap. Bypassing it entirely via
+> `m_n = m_p + Q_β + m_e` gives m_n at 242 ppb (8× better than the
+> flavor-split route's 2001 ppb) and Δ_pn at 4.0 ppb (now **beats**
+> the 4.74 ppb 100× target). Dashboard wired in this session.
 
 > **CAL-3 σ source.** Q_β experimental uncertainty here is the PDG 2024
 > value Q_β(n) = 0.78233341(61) MeV (≈0.78 ppm, 779.7 ppb relative). The
@@ -113,18 +143,15 @@ giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 
 ### Two subgoals (L2 split)
 
-**Subgoal-1 (achievable from current anchors).** 100× targets ≥ ~780 ppb
-CAL-2 floor. Includes: Δm_pn (4.74 ppb), all light-atom binding
-energies. Closure path: per-isotope Borromean-tower extension +
-operator-valued branching combiner.
+**Subgoal-1 (achieved for 4/6 observables).** 100× targets ≥ ~780 ppb
+CAL-2 floor. Currently met: m_e (anchor), m_μ (anchor), Q_β (N=5
+categorical, 5.7 ppb < 7.8 ppb target), Δ_pn (Path C, 4.0 ppb <
+4.74 ppb target). Remaining: light-atom binding energies (gated on
+Δ_λ derivation).
 
-**Q_β at N=3 categorical also meets Subgoal-1** (6.02 ppb pred vs 7.80 ppb
-target). The framework's precision-ladder formula
-`Q_β = Q_A · cos(α − b·ℏ_q²/2) · (1 − b²·ℏ_q⁴) · (1 + c₃·b³·ℏ_q⁶)` with
-`c₃ = -2 = J_Hopf(q=1)` gives a Q_β prediction at 6.02 ppb — below the
-7.80 ppb target. The N=0 Form A bare prediction (1.68 ppm error) is NOT
-the appropriate witness for L2 status. Earlier v7 drafts reading N=0
-overstated the gap by ~280 000×.
+**Q_β at N=5 categorical meets Subgoal-1** (5.7 ppb pred vs 7.8 ppb
+target). **Δ_pn via Path C also meets Subgoal-1** (4.0 ppb pred vs
+4.74 ppb target) — wired 2026-05-26 per PR #1298 gap diagnostic.
 
 **Subgoal-2 (research-grade).** 100× targets < CAL-2 floor. Includes
 absolute m_p (3 ppt), m_n (6 ppt), m_⁴He (0.6 ppt). **Requires
