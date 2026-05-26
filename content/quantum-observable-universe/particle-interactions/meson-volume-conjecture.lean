@@ -7,10 +7,10 @@
   of H₃(q) rather than the highest-weight sector of H₂(q).
 
   -- Ref: [kashaev1997] https://doi.org/10.1007/s100529801020
-  -- Ref: [murakami2001] https://doi.org/10.1007/s101140100235
+  -- Ref: [murakami-murakami2001] https://doi.org/10.1007/s101140100235
 -/
 
-import Mathlib.Topology.Algebra.Group.Basic
+import Mathlib.Data.Real.Basic
 
 namespace QOU.ParticleInteractions
 
@@ -26,10 +26,9 @@ namespace QOU.ParticleInteractions
 class MesonDualVolume (q : ℝ) where
   vol_dual_pion : ℝ
   vol_dual_kaon : ℝ
+  -- Ref: [manuscript] conj:meson-volume-conjecture
   ratio_matches_pdg :
-    vol_dual_kaon / vol_dual_pion = 3.5370
-    -- Ref: [pdg2024] https://pdg.lbl.gov
-    sorry
+    vol_dual_kaon / vol_dual_pion = 3.5370 := by sorry
 
 /-- The torus-knot step 3→5 appears in both sectors.
 

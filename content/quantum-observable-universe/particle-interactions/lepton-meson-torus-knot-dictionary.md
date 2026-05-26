@@ -7,7 +7,7 @@ correspondence:*
 |---|---|---|---|---|
 | 1st | 3 | $\mathfrak{e}$ (electron) | $u, d$ | $\pi$ (pion) |
 | 2nd | 5 | $\mu$ (muon) | $s$ (strange) | $K$ (kaon) |
-| 3rd | 7 | $\tau$ (tau) | $c$ (charm) | $D$ meson |
+| 3rd | 7 | $\tau$ (tau) | $s$ (heavy-strange) | $\eta, \phi$ |
 
 *The lepton at generation $k$ is the closure of $\sigma_1^{2k+1}$ in
 $H_2(q)$; the meson at the same generation is the Hopf-bound pair of
@@ -28,6 +28,7 @@ total crossings $n_1 + n_2$:
 
 - $\pi$: $\bar{u}d = 3 + 3 = 6$ crossings
 - $K$: $\bar{u}s = 3 + 5 = 8$ crossings
+- $\eta, \phi$: $s\bar{s} = 5 + 5 = 10$ crossings
 
 The normal form in $H_3(q)$ is determined by the Hecke reduction of the
 meson braid word $\mathfrak{M}_+$

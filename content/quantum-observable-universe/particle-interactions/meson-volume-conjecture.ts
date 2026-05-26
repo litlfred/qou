@@ -10,7 +10,7 @@ export default conjecture({
   ],
   cites: [
     "kashaev1997",
-    "murakami2001",
+    "murakami-murakami2001",
   ],
   tags: [
     "meson",

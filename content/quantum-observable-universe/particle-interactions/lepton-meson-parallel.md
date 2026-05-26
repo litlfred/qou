@@ -14,7 +14,7 @@ highest-weight representations with lowest-weight representations.
 | | Lepton sector | Meson sector |
 |---|---|---|
 | **Hecke level** | $H_2(q)$ (2-strand) | $H_3(q)$ (3-strand) |
-| **Braid** | $\sigma_1^n$ (torus knot $T(2,n)$) | $(\sigma_0\sigma_1)^2 \cdot \sigma_1\sigma_0$ (Hopf-bound pair) |
+| **Braid** | $\sigma_1^n$ (torus knot $T(2,n)$) | $(\sigma_1\sigma_2)^2 \cdot \sigma_2\sigma_1$ (Hopf-bound pair) |
 | **Valence** | 1 (fundamental) | 2 (quark–antiquark composite) |
 | **First generation** | $\mathfrak{e}$: $n = 3$ (trefoil) | $\pi$: quark pair $\bar{u}d$, 6 crossings |
 | **Second generation** | $\mu$: $n = 5$ (cinquefoil) | $K$: quark pair $\bar{u}s$, 8 crossings |
@@ -39,7 +39,7 @@ Hecke normal form
 $\mathfrak{M}_+ = h \cdot \sigma_1 + (h^2 + 1) L_+ + h^2 L_- + (h^3 + h) e^-$
 has its dominant contribution from $L_+$ (coefficient $h^2 + 1
 \approx 1.044$), which is the **lowest-weight** Hecke basis element
-in the sense that $L_+ = \sigma_0\sigma_1$ mixes both eigenspaces
+in the sense that $L_+ = \sigma_1\sigma_2$ mixes both eigenspaces
 through the off-diagonal Hoefsmit blocks.
 
 The duality is:

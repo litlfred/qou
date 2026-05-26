@@ -9,6 +9,9 @@
   -- Ref: [kashaev1997] https://doi.org/10.1007/s100529801020
 -/
 
+import Mathlib.Tactic.FinCases
+import Mathlib.Tactic.Omega
+
 namespace QOU.ParticleInteractions
 
 /-- Lepton generation index: odd primes 3, 5, 7 indexing the torus
@@ -36,6 +39,6 @@ theorem meson_crossing_is_sum :
     mesonCrossingCount 0 = leptonTorusKnotIndex 0 + leptonTorusKnotIndex 0 ∧
     mesonCrossingCount 1 = leptonTorusKnotIndex 0 + leptonTorusKnotIndex 1 ∧
     mesonCrossingCount 2 = leptonTorusKnotIndex 1 + leptonTorusKnotIndex 1 := by
-  constructor <;> [rfl; constructor <;> rfl]
+  refine ⟨rfl, rfl, rfl⟩
 
 end QOU.ParticleInteractions
