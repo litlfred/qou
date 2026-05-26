@@ -24,8 +24,8 @@ import { proposition } from "../../schema/builders";
  *           of S_3 (trace-dominant per Wedderburn diagnostic at 49% of T1).
  *           Lean-proved via hook-length formula in DimStandardRepS3.lean.
  *   - "12" = dim V_{(2,1)} · 3! = 2 · 6. The formula factors as
- *           m_p = dim V_(2,1) · (m_μ · F_Bor − |S_3| · m_e).
- *           Both factors categorically meaningful: dim V_(2,1) is the
+ *           m_p = dim V_{(2,1)} · (m_μ · F_Bor − |S_3| · m_e).
+ *           Both factors categorically meaningful: dim V_{(2,1)} is the
  *           standard irrep dimension (Lean-proved), |S_3| = 3! = 6 is
  *           the symmetric group order (= Poincaré P_3(1), classical
  *           limit of [3]_q!).
