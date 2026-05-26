@@ -6,9 +6,7 @@ Validates the torus-knot → particle assignments from the paper,
 constructs meson braid words, and runs a mass sweep comparing
 predicted vs PDG masses for all leptons + light mesons.
 
-Probes two scenarios:
-  (A) Paper assignment: c=T_{2,7}, b=T_{2,5}  (paper's current text)
-  (B) SM-standard:     c=T_{2,5}, b=T_{2,7}  (standard generation order)
+After b/c fix: c=T_{2,5}, b=T_{2,7}^σ (SM generation order, clean chirality).
 
 References:
   - knot-formula-table.md (quark assignments)
@@ -18,8 +16,9 @@ References:
   - lepton-tower-witness.md (lepton NF table)
 """
 
-import json, time, hashlib, subprocess
-from mpmath import mp, mpf, power, sqrt, fabs
+import json, time
+from pathlib import Path
+from mpmath import mp, mpf, fabs
 
 mp.dps = 50
 
@@ -68,7 +67,12 @@ def sigma_power_nf_h2(n, q):
     return (a, b)
 
 def markov_trace_h2(n, q):
-    """Markov trace tr_M(sigma_1^n) in H_2(q)."""
+    """Markov trace tr_M(sigma_1^n) in H_2(q).
+
+    Convention: Wenzl Jones-Markov with z = 1/(q + q^{-1}).
+    Note: the q-Schur convention (used by torus_knot_markov_trace_closed_form.py)
+    gives different values; see PR #1259 convention audit for the full mapping.
+    """
     z = 1 / (q + 1/q)
     a, b = sigma_power_nf_h2(n, q)
     return a * z + b
@@ -92,15 +96,15 @@ def torus_knot_properties(n, q):
     }
 
 # ---------- H_3(q) meson braid ----------
-def meson_nf_h3(q, n_quark_crossings=3):
+def meson_nf_h3(q):
     """
-    Meson NF coefficients in H_3(q).
+    Universal meson NF coefficients in H_3(q).
 
-    The universal meson braid is M = T_01 * L_H * T_10 = (sigma_0*sigma_1)^2 * sigma_1*sigma_0
-    This gives NF(M) = h*sigma_1 + (h^2+1)*L+ + h^2*L- + (h^3+h)*e-
+    Braid: M = T_01 * L_H * T_10 = (sigma_0*sigma_1)^2 * sigma_1*sigma_0
+    NF(M) = h*sigma_1 + (h^2+1)*L+ + h^2*L- + (h^3+h)*e-
 
-    For strange/heavier mesons, the quark crossings contribute additional h-powers.
-    We model this as: the quark's crossing count modifies the effective coupling.
+    This is flavor-independent topology. Flavor enters via typed
+    crossing eigenvalues, not via NF structure (same as proton vs neutron).
     """
     h = q - 1/q
     h2 = h*h
@@ -115,52 +119,6 @@ def meson_nf_h3(q, n_quark_crossings=3):
     }
     net = sum(nf.values())
     return nf, net
-
-# ---------- Full dictionary ----------
-# Paper assignment (Scenario A): as stated in knot-formula-table.md
-DICT_PAPER = {
-    # Leptons (torus knots T_{2,n}, n odd)
-    'nu':   {'torus': (2, 1), 'crossings': 1, 'type': 'lepton', 'gen': 0, 'charge': 0},
-    'e':    {'torus': (2, 3), 'crossings': 3, 'type': 'lepton', 'gen': 1, 'charge': -1},
-    'mu':   {'torus': (2, 5), 'crossings': 5, 'type': 'lepton', 'gen': 2, 'charge': -1},
-    'tau':  {'torus': (2, 7), 'crossings': 7, 'type': 'lepton', 'gen': 3, 'charge': -1},
-    # Up-type quarks (+2/3)
-    'u':    {'torus': (2, 3), 'crossings': 3, 'type': 'quark', 'gen': 1, 'charge': 2/3, 'mirror': False},
-    'c':    {'torus': (2, 7), 'crossings': 7, 'type': 'quark', 'gen': 2, 'charge': 2/3, 'mirror': False},   # paper: c=T_{2,7}
-    't':    {'torus': (3, 4), 'crossings': 10, 'type': 'quark', 'gen': 3, 'charge': 2/3, 'mirror': False},
-    # Down-type quarks (-1/3), mirror versions
-    'd':    {'torus': (2, 3), 'crossings': 3, 'type': 'quark', 'gen': 1, 'charge': -1/3, 'mirror': True},
-    's':    {'torus': (2, 5), 'crossings': 5, 'type': 'quark', 'gen': 2, 'charge': -1/3, 'mirror': True},
-    'b':    {'torus': (2, 5), 'crossings': 5, 'type': 'quark', 'gen': 3, 'charge': -1/3, 'mirror': False},  # paper: b=T_{2,5}
-    # Force carriers
-    'gamma':  {'torus': None, 'crossings': 0, 'type': 'boson', 'gen': 0, 'charge': 0},
-    'gluon':  {'torus': (2, 2), 'crossings': 2, 'type': 'boson', 'gen': 0, 'charge': 0},
-    'W':      {'torus': (2, 4), 'crossings': 4, 'type': 'boson', 'gen': 0, 'charge': 1},
-    'Z':      {'torus': (2, 6), 'crossings': 6, 'type': 'boson', 'gen': 0, 'charge': 0},
-    'Higgs_field': {'torus': 'figure_eight', 'crossings': 4, 'type': 'boson', 'gen': 0, 'charge': 0},
-    # Hadrons
-    'proton':  {'braid': '(sigma_1*sigma_2^-1)^3', 'crossings': 6, 'type': 'baryon', 'quarks': 'uud', 'closure': 'Borromean B_3'},
-    'neutron': {'braid': '(sigma_1*sigma_2^-1)^3', 'crossings': 6, 'type': 'baryon', 'quarks': 'udd', 'closure': 'Borromean B_3'},
-}
-
-# SM-standard assignment (Scenario B): c and b generation-matched
-DICT_SM = dict(DICT_PAPER)
-DICT_SM['c'] = {'torus': (2, 5), 'crossings': 5, 'type': 'quark', 'gen': 2, 'charge': 2/3, 'mirror': False}
-DICT_SM['b'] = {'torus': (2, 7), 'crossings': 7, 'type': 'quark', 'gen': 3, 'charge': -1/3, 'mirror': True}
-
-# ---------- Meson dictionary ----------
-MESONS = {
-    # Pseudoscalar mesons (J^P = 0^-)
-    'pi_pm':  {'quarks': ('u', 'd'), 'type': 'pseudoscalar', 'iso': 1, 'S': 0},
-    'pi_0':   {'quarks': ('u', 'u'), 'type': 'pseudoscalar', 'iso': 1, 'S': 0, 'note': 'uu-bar - dd-bar mixing'},
-    'K_pm':   {'quarks': ('u', 's'), 'type': 'pseudoscalar', 'iso': 1/2, 'S': 1},
-    'K_0':    {'quarks': ('d', 's'), 'type': 'pseudoscalar', 'iso': 1/2, 'S': 1},
-    'eta':    {'quarks': ('u', 's'), 'type': 'pseudoscalar', 'iso': 0, 'S': 0, 'note': 'uu+dd-2ss mixing'},
-    # Vector mesons (J^P = 1^-)
-    'rho':    {'quarks': ('u', 'd'), 'type': 'vector', 'iso': 1, 'S': 0},
-    'omega':  {'quarks': ('u', 'u'), 'type': 'vector', 'iso': 0, 'S': 0, 'note': 'uu-bar + dd-bar mixing'},
-    'phi':    {'quarks': ('s', 's'), 'type': 'vector', 'iso': 0, 'S': 0, 'note': 'ss-bar'},
-}
 
 # ---------- Compute ----------
 print("=" * 72)
@@ -211,7 +169,7 @@ print("### Meson braid words in H_3(q_0) ###\n")
 print("Universal meson braid: M = (σ_0σ_1)² · σ_1σ_0  [6 crossings, 3 strands]")
 print()
 
-nf_pi, net_pi = meson_nf_h3(q0, 3)
+nf_pi, net_pi = meson_nf_h3(q0)
 print(f"PION π± (ūd):  NF = {nf_pi['sigma_1']:+.4f}σ₁ + {nf_pi['L+']:+.4f}L₊ + {nf_pi['L-']:+.4f}L₋ + {nf_pi['e-']:+.4f}e⁻")
 print(f"  net = {net_pi:.6f}")
 print(f"  Quark content: u̅ = T_{2,3}^σ (3 crossings) + d = T_{2,3}^σ (3 crossings)")
@@ -219,7 +177,7 @@ print()
 
 # For kaon: same universal braid, but with strange quark (5 crossings)
 # The flavor typing changes the eigenvalue structure
-nf_K, net_K = meson_nf_h3(q0, 5)
+nf_K, net_K = meson_nf_h3(q0)
 print(f"KAON K± (ūs):  [Same universal braid, strange-typed crossings]")
 print(f"  Quark content: u̅ = T_{2,3}^σ (3 crossings) + s = T_{2,5}^σ (5 crossings)")
 print(f"  Total quark crossings: 3 + 5 = 8 (vs 3+3=6 for pion)")
@@ -359,7 +317,7 @@ witness = {
         ],
     },
     'assertions': [
-        {'label': 'pion NF matches paper', 'passed': abs(net_pi - 1.515) < 0.01},
+        {'label': 'pion net matches paper (±0.01)', 'passed': abs(net_pi - 1.515) < 0.01},
         {'label': 'lepton net order e < mu < tau', 'passed': net_e < net_mu < net_tau},
         {'label': 'tr_M ratio misses m_K/m_pi by >50%', 'passed': abs(float(tr5/tr3) - mk_mpi) / mk_mpi > 0.5},
     ],
@@ -367,7 +325,8 @@ witness = {
 }
 witness['allPassed'] = all(a['passed'] for a in witness['assertions'])
 
-with open('/home/user/qou/folio-assistant/computations/meson-lepton-knot-dictionary-probe.witness.json', 'w') as f:
+witness_path = Path(__file__).resolve().parent / 'meson-lepton-knot-dictionary-probe.witness.json'
+with open(witness_path, 'w') as f:
     json.dump(witness, f, indent=2, default=str)
 
 print("\n" + "=" * 72)
