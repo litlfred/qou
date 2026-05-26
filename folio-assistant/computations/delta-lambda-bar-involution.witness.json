@@ -99,6 +99,19 @@
       "verdict": "RULED OUT \u2014 wrong sign by 140x, opposite direction (cos=-0.51)",
       "option_E_all_positive": true,
       "min_norm_mixed_sign": true
+    },
+    "gap_decomposition": {
+      "description": "The \u00d716 gap between signed-dim_q and target decomposes as color-tube \u00d7 trace \u00d7 factorial",
+      "formula": "gap \u2248 (1/|tr_M|) \u00d7 linking_weight_A \u00d7 sqrt([3]_q!) = 2.575 \u00d7 2.533 \u00d7 2.474 = 16.14",
+      "predicted_gap": 16.14,
+      "observed_gap": 16.44,
+      "miss_pct": 1.8,
+      "caveat": "This decomposition is specific to Borromean baryons. Mesons and Higgs use different Bring divisor coordinates and would have different geometric corrections.",
+      "components": {
+        "inv_tr_M": 2.575,
+        "linking_weight_A": 2.533,
+        "sqrt_3q_fac": 2.474
+      }
     }
   },
   "assertions": [
