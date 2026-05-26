@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:force-carrier-knot-vs-link-dichotomy",
+    // broken-ref removed (Phase 7): conj:force-carrier-knot-vs-link-dichotomy
     "conj:categorical-higgs-mechanism",
     "def:rigid-monoidal-category",
     "def:frobenius-hopf-substrate",

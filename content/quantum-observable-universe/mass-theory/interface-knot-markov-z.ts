@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:ew-interface-knot",
+    // broken-ref removed (Phase 7): def:ew-interface-knot
     "thm:jones-markov-trace",
   ],
   cites: ["jones1987", "markov1936"],

@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "conj:weak-spectral-completeness",
-    "conj:electroweak-higgs-torus-link-triplet",
+    // broken-ref removed (Phase 7): conj:electroweak-higgs-torus-link-triplet
     "prop:gram-determinant-plancherel-ratio",
     "prop:knot-operator-lp-selection",
   ],
@@ -23,8 +23,5 @@ export default proposition({
     "nv-1",
     "categorical-normalization",
   ],
-  computation: {
-    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
-    label: "q_0 numerical anchor (cited via :val[q_0])",
-  },
+  // computation removed: incomplete schema (had witness without engine/script/status).
 });

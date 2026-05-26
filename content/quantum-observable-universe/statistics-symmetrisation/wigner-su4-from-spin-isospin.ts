@@ -15,7 +15,7 @@ export default conjecture({
     "prop:atom-knot-mass-derivation",
     "def:categorical-proton",
     "def:categorical-neutron",
-    "rem:remark-nuclear-shell-magic-numbers",
+    // broken-ref removed (Phase 7): rem:remark-nuclear-shell-magic-numbers
   ],
   cites: [
     "wigner1937",

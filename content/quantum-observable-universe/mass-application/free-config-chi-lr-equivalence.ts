@@ -9,12 +9,12 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:ew-interface-knot",
+    // broken-ref removed (Phase 7): def:ew-interface-knot
     "prop:atomic-mass-gb-nf",
     "conj:block-multiplicativity-v-free",
   ],
   computation: {
-    engine: "python+rust",
+    engine: "python",
     script:
       "folio-assistant/computations/binding_depth_stratified_lr.py",
     witness:

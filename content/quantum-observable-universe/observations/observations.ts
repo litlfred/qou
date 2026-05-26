@@ -61,6 +61,8 @@ export default chapter({
       label: "sec:substrate-from-leptons",
       blocks: [
         "substrate-from-leptons-intro",
+        // Phase 7 orphan reconnection (2026-05-25):
+        "epistemic-status-of-calibrations",
         "skein-mass-relation",
         "skein-mass-relation-proof",
         "knot-volumes-verification",
@@ -142,6 +144,8 @@ export default chapter({
         "dressed-quark-numerology-at-q0",
         "deuteron-binding-energy",
         "deuteron-binding-energy-proof",
+        // Phase 7 orphan reconnection (2026-05-25):
+        "m-tau-knot-prediction",
       ],
     }),
     section({

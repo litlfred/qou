@@ -295,3 +295,56 @@ Restructure plan derived from session 2026-05-25 with author and three audits:
 
 Background work in progress:
 - Mechanical voice cleanup on branch `claude/voice-cleanup-mechanical-2026-05-25`
+
+## Phase 7 — Post-restructure detangler analysis (2026-05-25)
+
+Forward-edge count: **580 → 514** (11% drop, target was 57%).
+
+The narrower-than-targeted drop reflects an inherent consequence of
+splitting one big chapter into focused destinations: cross-references
+that used to be intra-chapter are now inter-chapter forward edges.
+The split is still a structural win (each new chapter is reviewable
+on its own), but raw forward-edge count is a lagging indicator.
+
+### Top remaining tangle pairs
+
+| Source | Target | Edges | Notes |
+|---|---|---:|---|
+| mass-theory | mass-application | 61 | Theory statements cite compute machinery |
+| climax-volume-mass | mass-application | 34 | Climax forward-refs Wenzl/Hoefsmit compute |
+| braids-and-knots | mass-application | 24 | Hecke chapter refs mass-compute |
+| braids-and-knots | particle-interactions | 23 | Hecke refs particle content |
+| mass-application | appendix-surreals | 22 | Compute refs surreal-number appendix |
+| braids-and-knots | climax-volume-mass | 21 | Standard fwd (Hecke → Climax = algebra → geometry) |
+| mass-theory | stochastic-mechanics | 20 | Theory refs stochastic interpretation |
+| particle-interactions | mass-application | 20 | Particles ref mass-compute |
+| braids-and-knots | mass-theory | 19 | Hecke ref mass theorems |
+| braids-and-knots | predicted-spectra | 16 | Hecke ref predictions |
+
+### Per-chapter forward-edge count (top 5)
+
+| Chapter | Fwd | Bwd | Notes |
+|---|---:|---:|---|
+| braids-and-knots | 135 | 26 | Hecke chapter — still high, but most refs are to later chapters where mass machinery lives |
+| mass-theory | 91 | 94 | Heavy fwd to mass-application (compute) and stochastic-mechanics |
+| climax-volume-mass | 86 | 63 | Forward refs to mass machinery downstream |
+| particle-interactions | 56 | 49 | |
+| mass-application | 52 | 162 | Mostly backward-referenced (162 backward edges) — healthy |
+
+### Interpretation
+
+The Mass-Theory ↔ Mass-Application split, while pedagogically sound
+("statements first, compute after"), means Theory statements that
+cite the algorithms that prove them become forward edges. Two possible
+follow-ups:
+
+1. **Re-extract Theory statements** to remove direct uses[] refs on
+   Application implementation blocks; cite at a higher abstraction
+   ("by the Wenzl bridge" rather than `uses: ["prop:wenzl-bridge-...]"`).
+2. **Reorder Mass-Application before Mass-Theory** in the paper
+   manifest — mathematically unconventional but would flip 61 forward
+   edges to backward. Probably not worth the narrative cost.
+
+For now: accept 514 forward edges as a structural cost of the split.
+Each new chapter has tight thematic identity, which the original
+braids-and-knots did not.

@@ -244,5 +244,15 @@ export default chapter({
         "outro-archimedean-universe",
       ],
     }),
+    section({
+      title: "Reconnected orphan blocks (Phase 7)",
+      label: "sec:brings-surface-orphan-reconnect",
+      blocks: [
+        "bring-fibre-q0-figure",
+        "bring-fibre-qhalf-figure",
+        "c-from-color-flavor-swap",
+        "inter-nucleon-channel-color-tube",
+      ],
+    }),
   ],
 });

@@ -29,6 +29,6 @@ export default proposition({
     engine: "mpmath",
     script: "folio-assistant/computations/sigma_shell_from_beta_chain.py",
     witness: "folio-assistant/computations/sigma-shell-from-beta-chain.witness.json",
-    status: "stub",
+    status: "experimental",
   },
 });
