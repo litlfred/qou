@@ -227,9 +227,9 @@ The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus
 $2$. It is chiral: $5_1 \neq 5_1^{\sigma}$. This produces:
 
 - **Muon** $\mu^- = T_{2,5}$ and **antimuon** $\mu^+ = T_{2,5}^{\sigma}$
-- **Bottom quark** $b = T_{2,5}$ and **strange quark** $s = T_{2,5}^{\sigma}$
+- **Charm quark** $c = T_{2,5}$ and **strange quark** $s = T_{2,5}^{\sigma}$
 
-(The strange and bottom quarks are the mirror pair at genus 2,
+(The charm and strange quarks are the mirror pair at genus 2,
 as the up and down quarks are the mirror pair at genus 1. The
 muon and antimuon share the same torus knot type, distinguished
 by chirality — unlike the old $4_1$ assignment, the muon and
