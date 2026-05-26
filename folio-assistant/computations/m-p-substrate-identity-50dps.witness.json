@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-26T13:08:30.494253+00:00",
-  "commitSha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0",
+  "computedAt": "2026-05-26T15:07:59.219954+00:00",
+  "commitSha": "d8d9ba88d56b52483f5e8681fc54ec193b0964c2",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "1aa739f00b21",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "f8077854e03b",
+  "scriptCommitSha": "e2aa29aea92e47311c6f27b07d2adbbf2fc3b2c3",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -58,6 +58,14 @@
       "M_N_MeV": "938.9177006903955754709179",
       "Q_beta_MeV": "0.7806806935395148834625786",
       "Delta_m_pn_MeV": "1.291679643539514835283518"
+    },
+    "predictions_pathC": {
+      "m_n_MeV": "939.5651932326258180532761",
+      "m_n_residual_ppm": "-0.241906916983",
+      "Delta_m_pn_MeV": "1.293332364",
+      "Delta_m_pn_ppb": "3.092785832715111",
+      "Q_beta_N3_MeV": "0.7823334140000000481790607",
+      "derivation": "m_n = m_p + Q_beta(N=3) + m_e (bypasses flavor-split)"
     },
     "codata_comparison": {
       "m_p_codata_MeV": "938.27208816",

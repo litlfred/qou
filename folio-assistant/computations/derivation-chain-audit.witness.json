@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T14:57:51.417825+00:00",
-  "commitSha": "5255bbfe02e90b13fd5abdb4fe1cde7e1af4525a",
+  "computedAt": "2026-05-26T15:16:35.231335+00:00",
+  "commitSha": "06e400dfe759e543ed5c786ba5cacae9137f645b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2650,6 +2650,7 @@
         "q-beta-c5-c6-multilink.witness.json",
         "q-beta-cat-per-factor-decomposition.witness.json",
         "q-beta-complex-q-test1-phasea-v2.witness.json",
+        "q-beta-consistency-gap-diagnostic.witness.json",
         "q-beta-cos-sweep-three-irrep.witness.json",
         "q-beta-form-a-n1-extension.witness.json",
         "q-beta-gamma-gamma-derivation.witness.json",
