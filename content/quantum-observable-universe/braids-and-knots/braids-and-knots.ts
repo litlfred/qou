@@ -1018,6 +1018,7 @@ export default chapter({
         "lepton-bring-surface-h3-3channel",
         "conj-lepton-tower-h-n-plus-1-branching",
         "conj-atom-braid-exterior-algebra",
+        "conj-psd-trace-orthogonality",
         "three-halves-structural-factor",
         "rem-im-q-vs-p-skew",
         "conj-im-q-physical-role",
