@@ -52,7 +52,7 @@ $$
 $$
 
 *At the substrate parameter* $q_0 = 1.109978595554181\ldots$ *(50 dps) and CAL-1
-$m_e = :val[m_e_MeV]{precision=6}\ldots\;\mathrm{MeV}$, evaluating to 50 dps via the
+$m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}\ldots\;\mathrm{MeV}$, evaluating to 50 dps via the
 witness*
 [`m-baryon-volume-form.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/m-baryon-volume-form.witness.json)
 *gives:*

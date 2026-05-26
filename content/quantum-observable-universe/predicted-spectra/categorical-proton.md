@@ -117,7 +117,7 @@ $$
   + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{p}}(q_0) \approx :val[m_p_MeV]{precision=6}$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
+At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{p}}(q_0) \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
 
 **Coulomb charge.**
 The proton carries net **positive crossing chirality**: two

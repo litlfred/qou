@@ -461,40 +461,6 @@
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
       }
     ],
-    "canonical-witness-pinned": [
-      {
-        "field_hash": {
-          "md": "50c76e3b6874",
-          "ts": "736f189d684e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "50c76e3b6874",
-          "ts": "736f189d684e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      }
-    ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
@@ -1132,7 +1098,25 @@
         "reviewed_at": "2026-05-26T00:16:27.063Z",
         "reviewed_sha": "031716cf883c283268785373280ec18d18f66e4b"
       }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "50c76e3b6874",
+          "ts": "736f189d684e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11"
+        },
+        "reviewed_at": "2026-05-26T00:25:01.306Z",
+        "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
+      }
     ]
   },
-  "updated_at": "2026-05-26T00:16:27.063Z"
+  "updated_at": "2026-05-26T00:25:01.306Z"
 }

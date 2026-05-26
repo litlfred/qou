@@ -4,7 +4,7 @@ pure-tower proton mass computed via the
 $q_0$, in Hecke units, converted to MeV via the electron-trefoil
 calibration and corrected by $(1 + [2]_q \hbar_q^2)$
 ([quantum Planck constant](#def:quantum-planck-constant)).
-Let $m_{\mathfrak{p}}^{\mathrm{CODATA}} \approx :val[m_p_MeV]{precision=6}\;\mathrm{MeV}$
+Let $m_{\mathfrak{p}}^{\mathrm{CODATA}} \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}\;\mathrm{MeV}$
 denote the experimental proton mass.
 
 **Derivation via the Frobenius co-Casimir.**
