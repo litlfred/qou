@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T16:40:41.196899+00:00",
-  "commitSha": "210903cbee2adfa19ad191c8b5285a62ef3b7834",
+  "computedAt": "2026-05-26T21:12:28.413916+00:00",
+  "commitSha": "79287a09494393d6483c5028b9dbbab516baf23d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 12,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 676,
+    "files_scanned": 681,
     "patterns": [
       "P15",
       "P16",
@@ -33,7 +33,7 @@
       "P15": 114,
       "P16": 177,
       "P21": 23,
-      "P30": 139,
+      "P30": 141,
       "P31": 55
     },
     "top_files": [
@@ -764,6 +764,13 @@
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
+        "pattern": "P30",
+        "file": "delta_lambda_dim_weight_proof.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
         "pattern": "P31",
         "file": "delta_lambda_empirical_tabulation.py",
         "line": 113,
@@ -811,6 +818,13 @@
         "line": 83,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P30",
+        "file": "delta_lambda_sign_rule_proof.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P15",
