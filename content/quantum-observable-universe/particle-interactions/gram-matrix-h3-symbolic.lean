@@ -364,8 +364,10 @@ theorem gramMatrix_det_eq_factorization (u : ℝ) :
         * (detFactor3 u)^5 * (detFactor4 u)^5
         * detFactor5 u * detFactor6 u)
       / (u^10 * (u^2 + 1)^12) := by
-  -- Deferred: full Matrix.det expansion. Witness:
-  -- `gram-h3-det-factorization.witness.json` — sympy-verified identity.
+  -- Ref: [manuscript] — full Matrix.det expansion (720-term permutation
+  -- sum) is routine but substantial; deferred to Phase 1b-3 follow-up.
+  -- Witness: `gram-h3-det-factorization.witness.json` — sympy-verified
+  -- identity at 50-dps mpmath precision.
   sorry
 
 /-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**

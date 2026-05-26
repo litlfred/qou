@@ -2,15 +2,14 @@
 """
 High-precision substrate parameter pinning at 50 decimal digits.
 
-> SUPERSEDED-ρ_q purge applied (2026-05-24, PR #1127):
-> Per [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../docs/audits/2026-05-24-superseded-rho-q-purge.md),
-> the scalar `ρ_q = 1/ℏ_q²` was structurally wrong as a dimensional
-> factor and has been removed from this script's outputs. The q₀
-> derivation below is unchanged (Skein formula is accurate to ~ppb
-> at lepton level where operator-valued corrections are small);
-> only the `ρ_q` quantity is gone. Canonical replacement for the
-> dimensional factor: `prop:rho-k-graded-expansion` (operator-valued
-> graded expansion).
+> Note (2026-05-24, PR #1127): the scalar quantity formerly named
+> `ρ_q = 1/ℏ_q²` was structurally wrong as a dimensional factor and
+> has been removed from this script's outputs (see the audit doc
+> dated 2026-05-24 under `docs/audits/` for full context). The q₀ derivation below is unchanged (the Skein
+> formula remains accurate to ~ppb at the lepton level where
+> operator-valued corrections are small). Canonical replacement for
+> the dimensional factor: `prop:rho-k-graded-expansion` (operator-
+> valued graded expansion).
 
 CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
 

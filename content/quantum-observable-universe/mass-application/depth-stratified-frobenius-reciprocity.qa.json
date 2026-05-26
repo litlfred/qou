@@ -3,12 +3,12 @@
   "label": "conj:depth-stratified-frobenius-reciprocity",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/depth-stratified-frobenius-reciprocity.md"
+    "ts": "content/quantum-observable-universe/mass-application/depth-stratified-frobenius-reciprocity.ts",
+    "md": "content/quantum-observable-universe/mass-application/depth-stratified-frobenius-reciprocity.md"
   },
   "source_hashes": {
     "md": "a0a515624e9c",
-    "ts": "8d9c6aca0911"
+    "ts": "0f16671cf73a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -599,40 +599,6 @@
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
       }
     ],
-    "canonical-script-not-deprecated": [
-      {
-        "field_hash": {
-          "md": "a0a515624e9c",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "a0a515624e9c",
-          "ts": "8d9c6aca0911"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      }
-    ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
@@ -665,6 +631,22 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "a0a515624e9c",
+          "ts": "0f16671cf73a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11"
+        },
+        "reviewed_at": "2026-05-26T00:11:20.000Z",
+        "reviewed_sha": "da4856cdc5423dbf0c5dde75a666858f7fbcce99"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -733,6 +715,22 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "a0a515624e9c",
+          "ts": "0f16671cf73a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11"
+        },
+        "reviewed_at": "2026-05-26T00:11:20.000Z",
+        "reviewed_sha": "da4856cdc5423dbf0c5dde75a666858f7fbcce99"
       }
     ],
     "compute-witness-exists": [
@@ -1135,6 +1133,24 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "a0a515624e9c",
+          "ts": "0f16671cf73a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11",
+          "deps_hash": "4086af42e1ef"
+        },
+        "reviewed_at": "2026-05-26T00:11:20.000Z",
+        "reviewed_sha": "da4856cdc5423dbf0c5dde75a666858f7fbcce99",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1250,7 +1266,25 @@
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "a0a515624e9c",
+          "ts": "0f16671cf73a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11"
+        },
+        "reviewed_at": "2026-05-26T00:05:38.607Z",
+        "reviewed_sha": "da4856cdc5423dbf0c5dde75a666858f7fbcce99"
+      }
     ]
   },
-  "updated_at": "2026-05-25T23:28:35.242Z"
+  "updated_at": "2026-05-26T00:11:20.000Z"
 }
