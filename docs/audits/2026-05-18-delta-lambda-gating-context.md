@@ -168,3 +168,37 @@ testable across all light atoms.
 - [`content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md) — Δ_λ formal definition
 - [`content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md`](../../content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md) — GAP-A-4
 - [`content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md`](../../content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md) — GAP-A-3 / GAP-A-4
+
+---
+
+## Update (2026-05-26): Δ_λ CLOSURE ACHIEVED for deuteron
+
+**PRs #1292, #1296, #1305 (all merged) + branch `claude/c-knot-geom-2026-05-26`.**
+
+The Δ_λ gating problem is resolved for the deuteron:
+
+    B(D) = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|
+
+Every factor is computed — **zero free parameters**:
+
+| Factor | Source | Status |
+|--------|--------|--------|
+| y_λ (Wenzl) | `y_lambda_wenzl_bridge.py` | COMPUTED (on disk) |
+| χ^λ(β_D) | `atom-chi-rust-d.witness.json` | COMPUTED (includes interface) |
+| sgn(w_0^{S_{λ'}}) | Macdonald I.1.5 | PROVED (PR #1305) |
+| f^λ = dim(V_λ) | Hook-length formula (Burnside) | PROVED (PR #1305) |
+
+The "C_knot" geometric factor that appeared in earlier probes was an
+artifact of using the disjoint product χ^λ(β_p ⊗ β_n) instead of
+the full character χ^λ(β_D). The interface operator's effect is
+already encoded in χ^λ(β_D) via the branching witness.
+
+**Remaining:** Extend to T, ³He (H_9 branching exists), ⁴He (needs
+H_12 branching — feasible in ~30 min).
+
+**The six prior failed ansätze** (Frobenius co-Casimir, Demazure,
+LP-Plancherel, LP-Frobenius, crystal, augmented Markov) all
+failed because they tried to derive Δ_λ from single-nucleon data
+or from q-dependent algebraic expressions. The correct Δ_λ is
+categorical (q-independent: sign × dimension) and the q-dependent
+geometric correction lives inside χ^λ via the interface operator.
