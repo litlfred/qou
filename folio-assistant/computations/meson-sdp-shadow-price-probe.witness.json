@@ -1,0 +1,36 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T23:47:36.664915+00:00",
+  "commitSha": "f637fb1a70cb7fe8bcc69199c3a6aedd27d1f72f",
+  "assertions": [
+    {
+      "name": "nf_factors",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Pion net = (1+h)(1+h+h²)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "meson-sdp-shadow-price-probe",
+  "scriptFile": "meson_sdp_shadow_price_probe.py",
+  "scriptHash": "53309532cfb4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Applies the confinement LP/SDP shadow-price analysis to meson braids. Walks through the GB NF calculation, decomposes into Wedderburn blocks, identifies PSD-violating (active) partitions, and tests the string-breaking interpretation σ²=hσ+1.",
+  "contentBlock": "prop:lepton-meson-torus-knot-dictionary",
+  "data": {
+    "pion_nf_factored": "(1+h)(1+h+h²)",
+    "tr_pion": 0.4958262116526499,
+    "tr_kaon": 0.6860891338809054,
+    "ratio_tr": 1.383729052149312
+  }
+}
