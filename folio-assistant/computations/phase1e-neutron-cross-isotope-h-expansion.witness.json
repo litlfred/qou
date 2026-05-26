@@ -1,0 +1,84 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T13:54:40.659270+00:00",
+  "commitSha": "5a05156dd7472b8baf9d017fb0ff27def8d11714",
+  "assertions": [
+    {
+      "name": "m_n_residual_within_5ppm",
+      "computed": 2.000933403653135,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 5.0,
+      "unit": "ppm",
+      "source": "m_n via substrate identity + canonical flavor-split"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "phase1e-neutron-cross-isotope-h-expansion",
+  "scriptFile": "phase1e_neutron_and_cross_isotope_h_expansion.py",
+  "scriptHash": "87c38e08ef75",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Extend Phase 1 h-expansion to neutron, Q_β, and cross-isotope map. Derives exact h-series for the flavor-split X = (q−1)²(1−q⁻⁴)/3 and the neutron ratio R = 1 + X/(1−X/2). Identifies that the m_n 2.0 ppm residual decomposes as 0.24 ppm (F_Bor) + 1.76 ppm (X), and Q_β's 2113 ppm is dominated by X.",
+  "contentBlock": "prop:proton-mass-substrate-identity",
+  "data": {
+    "X_h_expansion": {
+      "3": "1/6",
+      "4": "-1/12",
+      "5": "1/32",
+      "6": "-1/192",
+      "7": "-1/768",
+      "8": "1/1536"
+    },
+    "R_h_expansion": {
+      "0": "1",
+      "3": "1/6",
+      "4": "-1/12",
+      "5": "1/32",
+      "6": "5/576",
+      "7": "-35/2304",
+      "8": "43/4608"
+    },
+    "predictions_at_q0": {
+      "m_p_MeV": "938.271860868625648",
+      "m_n_MeV": "939.563540512165164",
+      "Q_beta_MeV": "0.78068069353952",
+      "Delta_pn_MeV": "1.2916796435395",
+      "m_p_residual_ppm": "-0.24224463",
+      "m_n_residual_ppm": "-2.0009334"
+    },
+    "residual_decomposition": {
+      "m_n_from_F_Bor_ppm": "0.24",
+      "m_n_from_X_ppm": "1.76",
+      "Q_beta_dominated_by": "X flavor-split formula"
+    },
+    "cross_isotope_status": {
+      "analytic_h_expansion": [
+        "m_p",
+        "m_n",
+        "Q_beta",
+        "Delta_pn"
+      ],
+      "numeric_h_expansion_done": [
+        "4He"
+      ],
+      "numeric_h_expansion_todo": [
+        "D",
+        "T",
+        "3He"
+      ],
+      "blocked_no_knot_rule": [
+        "A=5",
+        "A=6",
+        "A=7"
+      ]
+    }
+  }
+}
