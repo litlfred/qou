@@ -85,6 +85,25 @@ The QOU 3-calibration discipline reduces to **2 calibrations**
 $(m_e, m_\mu/m_e)$ for the baryon + $Q_\beta$ sector (or equivalently
 $(m_e, q_0)$ via the muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$).
 
+## Consistency gap: decay-rate cross-check
+
+The mass-derived $Q_\beta = m_n - m_p - m_e \approx 0.7807\,\mathrm{MeV}$
+differs from the N=3 categorical-ladder
+$Q_\beta \approx 0.78233\,\mathrm{MeV}$ by $2113\,\mathrm{ppm}$ — bottlenecked
+by the flavor-split's $0.10\%$ residual. Closing this gap
+would cohomologically prove the $q_0 \leftrightarrow Q_\beta$ relationship.
+
+A decay-rate cross-check (not yet in the paper) connects both derivations
+to experimental lifetimes via the Fermi theory:
+$\Gamma_\mu = G_F^2 m_\mu^5 / (192\pi^3)$ and
+$\Gamma_n \propto G_F^2 Q_\beta^5 f(Q_\beta/m_e)$. The ratio
+$\Gamma_\mu / \Gamma_n$ eliminates $G_F$ and provides a
+$Q_\beta$-independent consistency test: if both $m_\mu$ and $Q_\beta$
+are substrate-derived, $\tau_n / \tau_\mu$ should match CODATA
+($\approx 4 \times 10^8$) from categorical invariants alone.
+See [PR #1249](https://github.com/litlfred/qou/pull/1249) for the
+substrate-derivation workplan.
+
 ## Structural identifications
 
 The two structural integers in the identity:
