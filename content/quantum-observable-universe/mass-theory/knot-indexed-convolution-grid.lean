@@ -9,3 +9,12 @@
 --
 -- See the chapter umbrella `lean/QOU/BraidKnot.lean`
 -- for the import wiring.
+
+namespace QOU.BraidKnot.KnotIndexedConvolutionGrid
+
+/-- **PROPOSITION.** Placement of paper -/
+theorem grid_placement : True := by
+  -- Ref: [manuscript] prop:knot-indexed-convolution-grid
+  sorry
+
+end QOU.BraidKnot.KnotIndexedConvolutionGrid

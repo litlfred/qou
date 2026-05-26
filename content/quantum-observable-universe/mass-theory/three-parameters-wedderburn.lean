@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$ -/
+theorem three_parameters_wedderburn : True := by
+  -- Ref: [manuscript] prop:three-parameters-wedderburn
+  sorry
+
+end QOU.BraidKnot

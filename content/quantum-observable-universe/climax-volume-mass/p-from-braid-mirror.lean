@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/p-from-braid-mirror.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Parity $P$ as mirror reflection of the braid diagram (writhe sign flip) -/
+class PFromBraidMirror where
+  holds : Prop
+  -- Ref: [manuscript] conj:p-from-braid-mirror
+
+end QOU.BraidsAndKnots

@@ -12,3 +12,12 @@ Canonical declaration: `QOU.Observations.TraceLocalityMeetsGsNonLocality.HasReco
 
 -- Ref: [manuscript] quantum-observable-universe/observations/trace-locality-meets-gs-nonlocality.ts
 -/
+
+namespace QOU.Observations.TraceLocalityMeetsGsNonLocality
+
+/-- **PROPOSITION.** Reconciliation: Markov locality of single generators vs. Gröbner-Shirshov non-locality of composite braids -/
+theorem HasReconciliation : True := by
+  -- Ref: [manuscript] prop:trace-locality-meets-gs-non-locality
+  sorry
+
+end QOU.Observations.TraceLocalityMeetsGsNonLocality

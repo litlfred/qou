@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/hyperbolic-volume-transcendence.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **CONJECTURE.** Algebraic independence of QOU hyperbolic volumes -/
+class HyperbolicVolumeTranscendence where
+  holds : Prop
+  -- Ref: [manuscript] conj:hyperbolic-volume-transcendence
+
+end QOU.Archimedean

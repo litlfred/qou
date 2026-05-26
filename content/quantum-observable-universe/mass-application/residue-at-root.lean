@@ -12,3 +12,12 @@ Canonical declaration: `QOU.BraidKnot.ResidueAtRoot`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/residue-at-root.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Cyclotomic residues of $\\Phi_q \\cdot \\mathrm{tr}_{M, \\ell}$ — algebraic definition -/
+theorem ResidueAtRoot : True := by
+  -- Ref: [manuscript] prop:residue-at-root
+  sorry
+
+end QOU.BraidKnot

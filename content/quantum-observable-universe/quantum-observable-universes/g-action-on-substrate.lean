@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts
 -/
+
+namespace QOU.QuantumObservableUniverses
+
+/-- **CONJECTURE.** Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate -/
+class GActionOnSubstrate where
+  holds : Prop
+  -- Ref: [manuscript] conj:g-action-on-substrate
+
+end QOU.QuantumObservableUniverses

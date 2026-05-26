@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/knot-operator-selection.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **PROPOSITION.** Knot operator selection via Frobenius dual -/
+theorem knot_operator_selection : True := by
+  -- Ref: [manuscript] prop:knot-operator-selection
+  sorry
+
+end QOU.Archimedean

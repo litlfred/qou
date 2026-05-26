@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
 -/
+
+namespace QOU.Information
+
+/-- **PROPOSITION.** The massive Toffoli transfer matrix $M(q)$ and the q-AND polynomial $P_{7,6}(q)$ -/
+theorem toffoli_transfer_matrix : True := by
+  -- Ref: [manuscript] prop:toffoli-transfer-matrix
+  sorry
+
+end QOU.Information

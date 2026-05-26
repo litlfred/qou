@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-riemann-hurwitz.ts
 -/
+
+namespace QOU.ArchimedeanUniverse
+
+/-- **LEMMA.** Riemann--Hurwitz count for the canonical map $\\Sigma_4 \\to \\mathbb{P}(V)$ -/
+theorem brings_riemann_hurwitz : True := by
+  -- Ref: [manuscript] lem:brings-riemann-hurwitz
+  sorry
+
+end QOU.ArchimedeanUniverse

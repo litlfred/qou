@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/poincare-lefschetz-borromean.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps -/
+class PoincareLefschetzBorromean where
+  holds : Prop
+  -- Ref: [manuscript] conj:poincare-lefschetz-borromean
+
+end QOU.BraidsAndKnots

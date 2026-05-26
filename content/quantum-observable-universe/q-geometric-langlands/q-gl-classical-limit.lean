@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.ts
 -/
+
+namespace QOU.QGeometricLanglands
+
+/-- **CONJECTURE.** Classical limit of the $q$-Geometric Langlands correspondence -/
+class QGlClassicalLimit where
+  holds : Prop
+  -- Ref: [manuscript] conj:q-gl-classical-limit
+
+end QOU.QGeometricLanglands

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **THEOREM.** Quantum Peter--Weyl theorem: completeness of the $\\mathrm{SU}_q(2)$ eigenbasis -/
+theorem quantum_peter_weyl : True := by
+  -- Ref: [manuscript] thm:quantum-peter-weyl
+  sorry
+
+end QOU.FluidDynamics

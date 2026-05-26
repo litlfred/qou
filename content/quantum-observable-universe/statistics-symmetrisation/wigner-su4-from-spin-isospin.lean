@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Wigner $\\mathrm{SU}(4) = \\mathrm{SU}(2)_S \\times \\mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3) -/
+class WignerSu4FromSpinIsospin where
+  holds : Prop
+  -- Ref: [manuscript] conj:wigner-su4-from-spin-isospin
+
+end QOU.BraidsAndKnots

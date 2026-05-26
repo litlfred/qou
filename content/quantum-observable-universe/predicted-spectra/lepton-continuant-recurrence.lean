@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **PROPOSITION.** Continuant recurrence for the lepton tower $T_{2,n}$ -/
+theorem lepton_continuant_recurrence : True := by
+  -- Ref: [manuscript] prop:lepton-continuant-recurrence
+  sorry
+
+end QOU.Archimedean

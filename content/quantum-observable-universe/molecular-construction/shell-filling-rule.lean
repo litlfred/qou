@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.ts
 -/
+
+namespace QOU.Molecular
+
+/-- **PROPOSITION.** Shell filling minimises $\\Phi_1$ (aufbau from LP dual) -/
+theorem shell_filling_rule : True := by
+  -- Ref: [manuscript] prop:shell-filling-rule
+  sorry
+
+end QOU.Molecular

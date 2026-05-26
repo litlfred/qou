@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/single-volume-irrationality.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **CONJECTURE.** Irrationality of a single hyperbolic knot volume -/
+class SingleVolumeIrrationality where
+  holds : Prop
+  -- Ref: [manuscript] conj:single-volume-irrationality
+
+end QOU.Archimedean

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/yekutieli-leading-coefficient.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **LEMMA.** Yekutieli obstruction equals the leading Chebyshev coefficient -/
+theorem yekutieli_leading_coefficient : True := by
+  -- Ref: [manuscript] lem:yekutieli-leading-coefficient
+  sorry
+
+end QOU.Archimedean

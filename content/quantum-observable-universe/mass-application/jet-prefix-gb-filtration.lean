@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6) -/
+theorem jet_prefix_gb_filtration : True := by
+  -- Ref: [manuscript] prop:jet-prefix-gb-filtration
+  sorry
+
+end QOU.BraidKnot

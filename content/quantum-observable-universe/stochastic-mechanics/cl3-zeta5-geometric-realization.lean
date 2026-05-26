@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/cl3-zeta5-geometric-realization.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Geometric realisation of $\\mathrm{Cl}_3(2\\pi/5)$ as a Bring-natural depth-3 invariant -/
+class Cl3Zeta5GeometricRealization where
+  holds : Prop
+  -- Ref: [manuscript] conj:cl3-zeta5-geometric-realization
+
+end QOU.BraidKnot

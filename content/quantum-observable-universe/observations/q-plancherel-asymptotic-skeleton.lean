@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
 -/
+
+namespace QOU.Observations
+
+/-- **PROPOSITION.** Asymptotic skeleton of the q-Plancherel measure $\\tilde w_\\lambda$ — convergence on a continuous Young-diagram space -/
+theorem QPlancherelAsymptoticSkeleton : True := by
+  -- Ref: [manuscript] prop:q-plancherel-asymptotic-skeleton
+  sorry
+
+end QOU.Observations

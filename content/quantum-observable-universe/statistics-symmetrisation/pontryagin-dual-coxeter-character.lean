@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Pontryagin duality on abelianised Coxeter character — character ↔ measure on dual group -/
+class PontryaginDualCoxeterCharacter where
+  holds : Prop
+  -- Ref: [manuscript] conj:pontryagin-dual-coxeter-character
+
+end QOU.BraidsAndKnots

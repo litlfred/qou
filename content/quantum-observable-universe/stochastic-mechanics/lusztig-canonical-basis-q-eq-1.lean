@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials -/
+class LusztigCanonicalBasisQEq1 where
+  holds : Prop
+  -- Ref: [manuscript] conj:lusztig-canonical-basis-q-eq-1
+
+end QOU.BraidsAndKnots

@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** QOU -/
+class QouInfraDischargesGoncharovZeta5 where
+  holds : Prop
+  -- Ref: [manuscript] conj:qou-infra-discharges-goncharov-zeta5
+
+end QOU.AppendixSurreals

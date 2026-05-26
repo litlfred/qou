@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Big Bang and heat-death functors as evaluations at named surreal endpoints -/
+class BigbangHeatdeath where
+  holds : Prop
+  -- Ref: [manuscript] conj:bigbang-heatdeath
+
+end QOU.AppendixSurreals

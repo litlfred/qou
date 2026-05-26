@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **PROPOSITION.** Computation of the NS obstruction for the Descartes universe -/
+theorem ns_obstruction_computation : True := by
+  -- Ref: [manuscript] prop:ns-obstruction-computation
+  sorry
+
+end QOU.FluidDynamics

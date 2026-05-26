@@ -12,3 +12,12 @@ Canonical declaration: `QOU.BraidKnot.ChiralityWritheRibbon.chirality_writhe_rib
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-writhe-ribbon-derivation.ts
 -/
+
+namespace QOU.BraidKnot.ChiralityWritheRibbon
+
+/-- **PROPOSITION.** Chirality factor $1 + w \\cdot h$ from ribbon-twist framing (writhe $w$) -/
+theorem chirality_writhe_ribbon : True := by
+  -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+  sorry
+
+end QOU.BraidKnot.ChiralityWritheRibbon

@@ -23,3 +23,12 @@
 --     `QOU.AppendixSurreals.BlowupCalculus.renormalise_self`
 --     `QOU.AppendixSurreals.BlowupCalculus.renormalise_ofReal`
 --     `QOU.AppendixSurreals.BlowupCalculus.renormalise_eq_zero_of_isInfinitesimal`.
+
+namespace QOU.AppendixSurreals
+
+/-- Surreal blow-up calculus: named infinite surreals for renormalisation -/
+def BlowupCalculus   :=
+  -- Ref: [manuscript] def:surreal-blowup-calculus
+  sorry
+
+end QOU.AppendixSurreals

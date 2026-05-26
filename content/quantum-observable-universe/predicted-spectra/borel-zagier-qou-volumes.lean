@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/borel-zagier-qou-volumes.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **CONJECTURE.** Rational linear independence of QOU hyperbolic volumes (Borel--Zagier) -/
+class BorelZagierQouVolumes where
+  holds : Prop
+  -- Ref: [manuscript] conj:borel-zagier-qou-volumes
+
+end QOU.Archimedean

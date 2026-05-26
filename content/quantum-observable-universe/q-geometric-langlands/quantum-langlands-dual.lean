@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/quantum-langlands-dual.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Quantum Langlands duality — $H_n(q)$ ↔ $H_n(q^{-1})$ via Cartan folding (Type $A_{n-1}$ ↔ ${}^L\\!A_{n-1}$) -/
+class QuantumLanglandsDual where
+  holds : Prop
+  -- Ref: [manuscript] conj:quantum-langlands-dual
+
+end QOU.BraidsAndKnots

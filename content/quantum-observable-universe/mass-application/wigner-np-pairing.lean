@@ -12,3 +12,12 @@ Canonical declaration: `QOU.Archimedean.ConfinedKnotBinding.wigner_energy_from_2
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-np-pairing.ts
 -/
+
+namespace QOU.Archimedean.ConfinedKnotBinding
+
+/-- **PROPOSITION.** Wigner energy from $T{=}0$ np pairing: $(2,2)$ partition at $k{=}4$ -/
+theorem wigner_energy_from_22 : True := by
+  -- Ref: [manuscript] prop:wigner-np-pairing
+  sorry
+
+end QOU.Archimedean.ConfinedKnotBinding

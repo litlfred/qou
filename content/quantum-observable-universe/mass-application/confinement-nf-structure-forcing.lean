@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Confinement → NF-structure forcing: $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_1 \\star I \\star \\beta_2) = \\alpha_{\\mathrm{shift}}(I) + \\Delta$ with $|\\Delta|$ bounded by the LP duality gap -/
+class ConfinementNfStructureForcing where
+  holds : Prop
+  -- Ref: [manuscript] conj:confinement-nf-structure-forcing
+
+end QOU.BraidKnot

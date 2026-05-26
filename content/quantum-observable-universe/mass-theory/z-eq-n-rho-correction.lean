@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/z-eq-n-rho-correction.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Z=N substrate-q correction to the Kashaev law: $B = m_e \\cdot \\mathrm{Vol}_{\\rm hyp}(K_A) \\cdot (\\rho_{\\rm struct} + A - [A]_q)$ -/
+class ZEqNRhoCorrection where
+  holds : Prop
+  -- Ref: [manuscript] conj:z-eq-n-rho-correction
+
+end QOU.BraidKnot

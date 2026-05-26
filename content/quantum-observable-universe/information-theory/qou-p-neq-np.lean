@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/information-theory/qou-p-neq-np.ts
 -/
+
+namespace QOU.Information
+
+/-- **CONJECTURE.** $\\mathrm{P} \\neq \\mathrm{NP}$ at non-torsion $q \\in \\mathbb{G}_m$ -/
+class QouPNeqNp where
+  holds : Prop
+  -- Ref: [manuscript] conj:qou-p-neq-np
+
+end QOU.Information

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-ideal-characterisation.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **LEMMA.** Genus-filtration ideal in Hecke coordinates -/
+theorem genus_ideal_characterisation : True := by
+  -- Ref: [manuscript] lem:genus-ideal-characterisation
+  sorry
+
+end QOU.Archimedean

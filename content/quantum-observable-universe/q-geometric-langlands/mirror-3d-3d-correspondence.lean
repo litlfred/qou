@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mirror-3d-3d-correspondence.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** 3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\mathcal{N}{=}2$ gauge theories -/
+class Mirror3d3dCorrespondence where
+  holds : Prop
+  -- Ref: [manuscript] conj:mirror-3d-3d-correspondence
+
+end QOU.BraidsAndKnots

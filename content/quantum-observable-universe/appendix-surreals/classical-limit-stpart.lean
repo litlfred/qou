@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Classical-limit functor as standard-part of evaluation at $q = 1 + \\varepsilon$ -/
+class ClassicalLimitStpart where
+  holds : Prop
+  -- Ref: [manuscript] conj:classical-limit-stpart
+
+end QOU.AppendixSurreals

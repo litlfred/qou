@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-residue.ts
 -/
+
+namespace QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample
+
+/-- **CONJECTURE.** Archimedean agreement (proton instance): degree-48 Habiro trace at $u_0$ -/
+class GsArchimedeanAgreementResidue where
+  holds : Prop
+  -- Ref: [manuscript] conj:gs-archimedean-agreement-residue
+
+end QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample

@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/two-filtration-bridge.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Two-filtration bridge: iterated-integral depth $\\leftrightarrow$ partition-cellular GB-depth via $e_\\lambda$ -/
+class TwoFiltrationBridge where
+  holds : Prop
+  -- Ref: [manuscript] conj:two-filtration-bridge
+
+end QOU.BraidKnot

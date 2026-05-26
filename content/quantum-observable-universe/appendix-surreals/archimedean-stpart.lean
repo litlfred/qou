@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/archimedean-stpart.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Archimedean QOU is the standard-part of surreal QOU -/
+class ArchimedeanStpart where
+  holds : Prop
+  -- Ref: [manuscript] conj:archimedean-stpart
+
+end QOU.AppendixSurreals

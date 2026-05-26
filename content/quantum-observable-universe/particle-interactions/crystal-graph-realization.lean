@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/crystal-graph-realization.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Hecke normal forms realise crystal highest-weight vectors -/
+class CrystalGraphRealization where
+  holds : Prop
+  -- Ref: [manuscript] conj:crystal-graph-realization
+
+end QOU.BraidKnot

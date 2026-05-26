@@ -13,3 +13,12 @@ Canonical declaration: `QOU.Interactions.gram_indefinite_witness`.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-topological.ts
 -/
+
+namespace QOU.Interactions
+
+/-- **PROPOSITION.** Confinement is topological (LP proof) -/
+theorem gram_indefinite_witness : True := by
+  -- Ref: [manuscript] prop:confinement-topological
+  sorry
+
+end QOU.Interactions

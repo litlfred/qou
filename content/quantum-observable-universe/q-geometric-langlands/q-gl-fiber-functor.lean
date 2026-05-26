@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts
 -/
+
+namespace QOU.QGeometricLanglands
+
+/-- **CONJECTURE.** Fibre-functor mediation of the $q$-Langlands correspondence -/
+class QGlFiberFunctor where
+  holds : Prop
+  -- Ref: [manuscript] conj:q-gl-fiber-functor
+
+end QOU.QGeometricLanglands

@@ -9,3 +9,12 @@
 --
 -- See the chapter umbrella `lean/QOU/AlgebraicSubstrate.lean`
 -- for the import wiring.
+
+namespace QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases
+
+/-- **PROPOSITION.** Two-filtration bridge map verified at small partitions ($n \\leq 4$) -/
+theorem bridge_small_cases : True := by
+  -- Ref: [manuscript] prop:two-filtration-bridge-small-cases
+  sorry
+
+end QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases

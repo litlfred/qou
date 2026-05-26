@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
 -/
+
+namespace QOU.Interactions
+
+/-- **PROPOSITION.** Inductive Gröbner--Shirshov reduction (polynomial scaling) -/
+theorem inductiveGBReduction : True := by
+  -- Ref: [manuscript] prop:inductive-gb-reduction
+  sorry
+
+end QOU.Interactions

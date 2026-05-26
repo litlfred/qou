@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.ts
 -/
+
+namespace QOU.HadronicMass
+
+/-- **LEMMA.** Pair Skein mass and crossing-by-crossing recursion -/
+theorem pair_skein_mass_formula : True := by
+  -- Ref: [manuscript] lem:pair-skein-mass-formula
+  sorry
+
+end QOU.HadronicMass

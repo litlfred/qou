@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Infinitesimal Frobenius pairing: $\\int_A \\circ \\mu = \\mathrm{id} + O(\\varepsilon)$ -/
+class InfinitesimalFrobenius where
+  holds : Prop
+  -- Ref: [manuscript] conj:infinitesimal-frobenius
+
+end QOU.AppendixSurreals

@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/dim-master-pentagon.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons -/
+class DimMasterPentagon where
+  holds : Prop
+  -- Ref: [manuscript] conj:dim-master-pentagon
+
+end QOU.BraidsAndKnots

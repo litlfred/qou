@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Symbolic $Q$-value of free neutron decay -/
+theorem neutron_qvalue_symbolic : True := by
+  -- Ref: [manuscript] prop:neutron-qvalue-symbolic
+  sorry
+
+end QOU.ParticleInteractions

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.ts
 -/
+
+namespace QOU.QuantumObservableUniverse
+
+/-- **LEMMA.** Rank-1 projectors embed $\\mathbb{P}(V)$ as a coadjoint orbit in $\\mathrm{Ad}(A)$ -/
+theorem fai_projector_coadjoint_orbit : True := by
+  -- Ref: [manuscript] lem:fai-projector-coadjoint-orbit
+  sorry
+
+end QOU.QuantumObservableUniverse

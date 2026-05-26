@@ -11,3 +11,12 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QOper
+
+namespace QOU
+
+/-- $q$-Oper -/
+def QOper   :=
+  -- Ref: [manuscript] def:q-oper
+  sorry
+
+end QOU

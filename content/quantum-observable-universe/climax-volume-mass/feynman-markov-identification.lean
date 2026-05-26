@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts
 -/
+
+namespace QOU.FeynmanPathIntegrals
+
+/-- **LEMMA.** Markov-weighted eigenbasis sum equals the Markov trace -/
+theorem markov_identification : True := by
+  -- Ref: [manuscript] lem:feynman-markov-identification
+  sorry
+
+end QOU.FeynmanPathIntegrals

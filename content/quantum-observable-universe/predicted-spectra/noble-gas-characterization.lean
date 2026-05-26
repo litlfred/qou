@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/noble-gas-characterization.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **PROPOSITION.** Noble gas characterization: full shell as full curls -/
+theorem noble_gas_characterization : True := by
+  -- Ref: [manuscript] prop:noble-gas-characterization
+  sorry
+
+end QOU.Archimedean

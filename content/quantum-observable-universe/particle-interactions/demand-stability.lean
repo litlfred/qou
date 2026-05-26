@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/demand-stability.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Demand profile determines nuclear and atomic stability -/
+theorem demand_stability : True := by
+  -- Ref: [manuscript] prop:demand-stability
+  sorry
+
+end QOU.ParticleInteractions

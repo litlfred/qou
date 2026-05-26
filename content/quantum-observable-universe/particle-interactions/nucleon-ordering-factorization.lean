@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts
 -/
+
+namespace QOU.Interactions
+
+/-- **PROPOSITION.** Nucleon-level ordering factorization via jet-descended confinement -/
+theorem nucleon_ordering_factorization : True := by
+  -- Ref: [manuscript] prop:nucleon-ordering-factorization
+  sorry
+
+end QOU.Interactions

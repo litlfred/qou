@@ -25,3 +25,12 @@
 -- conditional class — they require Mathlib `Polylogarithm` /
 -- `DirichletL` infrastructure not yet shipped, so they remain
 -- conjecture-via-class per CLAUDE.md §3b-cond.
+
+namespace QOU.BraidKnot.CyclotomicLValueDecomposition
+
+/-- **PROPOSITION.** Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\\beta(3) = \\pi^3/32$ as a corollary -/
+theorem beta_3_from_jonquiere : True := by
+  -- Ref: [manuscript] prop:cyclotomic-l-value-decomposition
+  sorry
+
+end QOU.BraidKnot.CyclotomicLValueDecomposition

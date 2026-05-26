@@ -8,3 +8,12 @@
 
 -- See QOU.Archimedean.PauliWitness.tr_alt_8be for the exact Laurent polynomial.
 -- See QOU.Archimedean.PauliWitness.net_8be for the net polynomial.
+
+namespace QOU.Archimedean.PauliWitness
+
+/-- Pauli witness for ${}^8\\mathrm{Be}$ (exact in $q$) -/
+def witness_8Be   :=
+  -- Ref: [manuscript] def:witness-8be
+  sorry
+
+end QOU.Archimedean.PauliWitness

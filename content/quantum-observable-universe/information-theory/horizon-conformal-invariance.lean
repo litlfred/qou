@@ -21,3 +21,12 @@ LaTeX label: `prop:horizon-conformal-invariance`
 -/
 
 import QOU.JetHorizon
+
+namespace QOU
+
+/-- **PROPOSITION.** Conformal invariance at the jet horizon -/
+theorem horizon_conformal_invariance : True := by
+  -- Ref: [manuscript] prop:horizon-conformal-invariance
+  sorry
+
+end QOU

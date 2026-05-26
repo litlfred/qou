@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Per-new-nucleon additive linearity: $\\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering -/
+theorem per_nucleon_shift_additive_linearity : True := by
+  -- Ref: [manuscript] prop:per-nucleon-shift-additive-linearity
+  sorry
+
+end QOU.BraidKnot

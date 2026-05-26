@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Positron correction to the Q-value -/
+theorem positron_correction : True := by
+  -- Ref: [manuscript] prop:positron-correction
+  sorry
+
+end QOU.ParticleInteractions

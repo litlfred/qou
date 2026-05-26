@@ -25,3 +25,12 @@
 -- general-`n` Hoefsmit-to-dyadic bijection requires an entry-aware
 -- tableau type plus a YJM-tree formalisation in Mathlib, neither of
 -- which currently exists; we do not assert it as an axiom.
+
+namespace QOU.AppendixSurreals
+
+/-- **PROPOSITION.** Hoefsmit seminormal form is Conway -/
+theorem hoefsmit_is_surreal_construction : True := by
+  -- Ref: [manuscript] prop:hoefsmit-is-surreal-construction
+  sorry
+
+end QOU.AppendixSurreals

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.ts
 -/
+
+namespace QOU
+
+/-- **LEMMA.** Volume constraint forces $\\det(g_V) = 1$ -/
+theorem su2_emergence_volume_determinant : True := by
+  -- Ref: [manuscript] lem:su2-emergence-volume-determinant
+  sorry
+
+end QOU

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Symbolic Q-value for tritium beta decay -/
+theorem tritium_qvalue_symbolic : True := by
+  -- Ref: [manuscript] prop:tritium-qvalue-symbolic
+  sorry
+
+end QOU.ParticleInteractions

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts
 -/
+
+namespace QOU.Torsion
+
+/-- **PROPOSITION.** Neutron--proton mass splitting -/
+theorem neutron_proton_splitting : True := by
+  -- Ref: [manuscript] prop:neutron-proton-splitting
+  sorry
+
+end QOU.Torsion

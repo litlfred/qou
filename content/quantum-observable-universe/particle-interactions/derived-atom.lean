@@ -16,3 +16,12 @@ import QOU.Interactions.DerivedAtom
 --      published version.
 -- The formal definition is in QOU.Interactions.DerivedAtom
 -- (derivedAtomNF, NucleonType, crossingType, etc.)
+
+namespace QOU.Interactions
+
+/-- Derived atom $\\mathcal{A}(Z, N)$ from pair production -/
+def DerivedAtom   :=
+  -- Ref: [manuscript] def:derived-atom
+  sorry
+
+end QOU.Interactions

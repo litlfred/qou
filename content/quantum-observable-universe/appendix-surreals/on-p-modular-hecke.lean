@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/on-p-modular-hecke.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Modular Hecke at $q = \\zeta_p$ corresponds to nimber surreals $\\mathbf{On}_p$ -/
+class OnPModularHecke where
+  holds : Prop
+  -- Ref: [manuscript] conj:on-p-modular-hecke
+
+end QOU.AppendixSurreals

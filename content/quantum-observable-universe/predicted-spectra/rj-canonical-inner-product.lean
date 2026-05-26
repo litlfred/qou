@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **PROPOSITION.** Canonical inner product on $R(H_r(q))$ via Schur orthogonality -/
+theorem rj_canonical_inner_product : True := by
+  -- Ref: [manuscript] prop:rj-canonical-inner-product
+  sorry
+
+end QOU.Archimedean

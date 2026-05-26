@@ -17,3 +17,12 @@ For the actual implementation, see the file above.
 -/
 
 import QOU.BraidKnot.LpDualityHypothesisClass
+
+namespace QOU.BraidKnot
+
+/-- Finite LP strong-duality + complementary-slackness  -/
+def HasFiniteLPDuality   :=
+  -- Ref: [manuscript] def:lp-duality-hypothesis-class
+  sorry
+
+end QOU.BraidKnot

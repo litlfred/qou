@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/mass-categorical-descent.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** QOU mass formula as descent decomposition of the mass endomorphism -/
+theorem mass_categorical_descent : True := by
+  -- Ref: [manuscript] prop:mass-categorical-descent
+  sorry
+
+end QOU.ParticleInteractions

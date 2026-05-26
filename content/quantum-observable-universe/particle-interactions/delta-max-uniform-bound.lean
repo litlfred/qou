@@ -12,3 +12,12 @@ Canonical declaration: `QOU.MassEndomorphism.delta_max_uniform_bound`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/delta-max-uniform-bound.ts
 -/
+
+namespace QOU.MassEndomorphism
+
+/-- **PROPOSITION.** Uniform bound on the per-level jet residual $|\\Delta^{(n)}|$ -/
+theorem delta_max_uniform_bound : True := by
+  -- Ref: [manuscript] prop:delta-max-uniform-bound
+  sorry
+
+end QOU.MassEndomorphism

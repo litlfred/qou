@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** The $q$-Collatz conjecture: Skein-module crossing resolution -/
+class QCollatz where
+  holds : Prop
+  -- Ref: [manuscript] conj:q-collatz
+
+end QOU.AppendixSurreals

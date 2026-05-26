@@ -18,3 +18,12 @@
 --     `QOU.AppendixSurreals.birthday_gonshorIn_singleton_minus_le_length`
 --       (sharper `≤ length` bounds, proved unconditionally for
 --        `s.length ≤ 1`).
+
+namespace QOU.AppendixSurreals
+
+/-- Sign-sequence functor $B_n \\to \\mathbf{No}$ via Hecke eigenspaces -/
+def signSequenceOfBraid   :=
+  -- Ref: [manuscript] def:sign-sequence-of-braid
+  sorry
+
+end QOU.AppendixSurreals

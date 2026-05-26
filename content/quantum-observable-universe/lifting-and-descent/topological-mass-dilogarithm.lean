@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
 -/
+
+namespace QOU.LiftingDescent
+
+/-- **LEMMA.** Quantum dilogarithm evaluation of exceptional-divisor contributions -/
+theorem tm_dilogarithm_evaluation : True := by
+  -- Ref: [manuscript] lem:topological-mass-dilogarithm
+  sorry
+
+end QOU.LiftingDescent

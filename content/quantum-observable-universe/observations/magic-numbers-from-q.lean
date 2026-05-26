@@ -19,3 +19,12 @@ import QOU.AtomicMass.MagicNumbersFromQ
 -- Ref: [manuscript] observations/magic-numbers-from-q
 -- Ref: [chenier2026] manuscript
 example : True := trivial
+
+namespace QOU.AtomicMass
+
+/-- **PROPOSITION.** Magic numbers emerge from per-partition nuclear character at $q_0$ -/
+theorem magic_numbers_from_q : True := by
+  -- Ref: [manuscript] prop:magic-numbers-from-q
+  sorry
+
+end QOU.AtomicMass

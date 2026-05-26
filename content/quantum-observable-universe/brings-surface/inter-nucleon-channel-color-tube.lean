@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Inter-nucleon Hecke channel assignment from Bring color-tube weighting -/
+class InterNucleonChannelColorTube where
+  holds : Prop
+  -- Ref: [manuscript] conj:inter-nucleon-channel-color-tube
+
+end QOU.BraidsAndKnots

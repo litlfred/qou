@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.ts
 -/
+
+namespace QOU.AlgebraicSubstrate
+
+/-- **CONJECTURE.** P vs NP in the QOU: classical-limit separation of BQP-width classes -/
+class PVsNpQou where
+  holds : Prop
+  -- Ref: [manuscript] conj:p-vs-np-qou
+
+end QOU.AlgebraicSubstrate

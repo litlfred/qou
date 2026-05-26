@@ -13,3 +13,12 @@ Canonical declaration: `QOU.q_hecke_eigenvalue`.
 
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-hecke-eigenvalue.ts
 -/
+
+namespace QOU
+
+/-- **PROPOSITION.** $q$-Hecke eigenvalues from the fibre functor -/
+theorem q_hecke_eigenvalue : True := by
+  -- Ref: [manuscript] prop:q-hecke-eigenvalue
+  sorry
+
+end QOU

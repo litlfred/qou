@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **PROPOSITION.** $q$-deformed energy cascade and modified Kolmogorov spectrum -/
+theorem q_turbulence_spectrum : True := by
+  -- Ref: [manuscript] prop:q-turbulence-spectrum
+  sorry
+
+end QOU.FluidDynamics

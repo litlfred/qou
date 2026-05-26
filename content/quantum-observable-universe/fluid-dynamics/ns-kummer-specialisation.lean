@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
 -/
+
+namespace QOU.FluidDynamics
+
+/-- **PROPOSITION.** Kummer specialisation: the NS obstruction survives $q = 1$ for $\\gcd(\\chi(A), n) \\neq n$ -/
+theorem ns_kummer_specialisation : True := by
+  -- Ref: [manuscript] prop:ns-kummer-specialisation
+  sorry
+
+end QOU.FluidDynamics

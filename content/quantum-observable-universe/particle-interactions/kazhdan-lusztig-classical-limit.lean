@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/kazhdan-lusztig-classical-limit.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** As $q \\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics -/
+class KazhdanLusztigClassicalLimit where
+  holds : Prop
+  -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit
+
+end QOU.BraidKnot

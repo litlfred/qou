@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/infinitesimal-observability.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** Infinitesimal observability: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) \\leq \\varepsilon$ -/
+class InfinitesimalObservability where
+  holds : Prop
+  -- Ref: [manuscript] conj:infinitesimal-observability
+
+end QOU.AppendixSurreals

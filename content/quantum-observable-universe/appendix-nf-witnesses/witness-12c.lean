@@ -8,3 +8,12 @@
 
 -- See QOU.Archimedean.PauliWitness.tr_alt_12c for the exact Laurent polynomial.
 -- See QOU.Archimedean.PauliWitness.net_12c for the net polynomial.
+
+namespace QOU.Archimedean.PauliWitness
+
+/-- Pauli witness for ${}^{12}\\mathrm{C}$ (exact in $q$) -/
+def witness_12C   :=
+  -- Ref: [manuscript] def:witness-12c
+  sorry
+
+end QOU.Archimedean.PauliWitness

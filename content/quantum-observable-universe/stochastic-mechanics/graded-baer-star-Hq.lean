@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/graded-baer-star-Hq.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Graded Baer-* on $\\mathcal{H}_q$ across the depth filtration -/
+class GradedBaerStarHq where
+  holds : Prop
+  -- Ref: [manuscript] conj:graded-baer-star-Hq
+
+end QOU.BraidKnot

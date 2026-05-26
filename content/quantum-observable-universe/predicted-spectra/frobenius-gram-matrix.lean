@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.ts
 -/
+
+namespace QOU.Archimedean
+
+/-- **PROPOSITION.** Frobenius Gram matrix and dual construction in $H_3(q)$ -/
+theorem frobenius_gram_matrix : True := by
+  -- Ref: [manuscript] prop:frobenius-gram-matrix
+  sorry
+
+end QOU.Archimedean

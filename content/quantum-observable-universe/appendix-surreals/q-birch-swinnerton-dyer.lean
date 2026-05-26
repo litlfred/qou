@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
 -/
+
+namespace QOU.AppendixSurreals
+
+/-- **CONJECTURE.** The $q$-deformed Birch and Swinnerton-Dyer conjecture -/
+class QBirchSwinnertonDyer where
+  holds : Prop
+  -- Ref: [manuscript] conj:q-birch-swinnerton-dyer
+
+end QOU.AppendixSurreals

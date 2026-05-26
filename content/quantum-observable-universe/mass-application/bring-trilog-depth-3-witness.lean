@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Bring trilog at $\\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness) -/
+class BringTrilogDepth3Witness where
+  holds : Prop
+  -- Ref: [manuscript] conj:bring-trilog-depth-3-witness
+
+end QOU.BraidKnot

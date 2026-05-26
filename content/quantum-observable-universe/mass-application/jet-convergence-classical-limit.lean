@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Jet-filtered knot invariant converges to classical dimension-weighted average -/
+class JetConvergenceClassicalLimit where
+  holds : Prop
+  -- Ref: [manuscript] conj:jet-convergence-classical-limit
+
+end QOU.BraidKnot

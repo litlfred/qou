@@ -14,3 +14,12 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QGeometricLanglandsConjecture
+
+namespace QOU.QGeometricLanglands
+
+/-- **CONJECTURE.** $q$-Geometric Langlands correspondence -/
+class QGeometricLanglands where
+  holds : Prop
+  -- Ref: [manuscript] conj:q-geometric-langlands
+
+end QOU.QGeometricLanglands

@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/observations/double-magic-delta-i-bound.ts
 -/
+
+namespace QOU.Interactions.DoubleMagicDeltaI
+
+/-- **CONJECTURE.** Proposition 9. Empirical double-magic isotopes satisfy $|\\Delta i| \\leq 1$ across Bring shell indices -/
+class DoubleMagicDeltaIBound where
+  holds : Prop
+  -- Ref: [manuscript] conj:double-magic-delta-i-bound
+
+end QOU.Interactions.DoubleMagicDeltaI

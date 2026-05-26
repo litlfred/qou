@@ -12,3 +12,12 @@
 --     `QOU.AppendixSurreals.standardPart_of_infinitesimal`,
 --     `QOU.AppendixSurreals.standardPart_add`,
 --     `QOU.AppendixSurreals.standardPart_mul`.
+
+namespace QOU.AppendixSurreals
+
+/-- Standard-part functor $\\mathrm{st} : \\mathbf{No}_{\\mathrm{fin}} \\to \\mathbb{R}$ -/
+def StandardPart   :=
+  -- Ref: [manuscript] def:standard-part-functor
+  sorry
+
+end QOU.AppendixSurreals

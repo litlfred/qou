@@ -12,3 +12,12 @@ Canonical declaration: `QOU.BraidKnot.CrystalRMatrixSubLemma`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/crystal-r-matrix-sub-lemma.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Crystal R-matrix Sub-lemma 2.1 (operator-valued):  -/
+theorem CrystalRMatrixSubLemma : True := by
+  -- Ref: [manuscript] prop:crystal-r-matrix-sub-lemma
+  sorry
+
+end QOU.BraidKnot

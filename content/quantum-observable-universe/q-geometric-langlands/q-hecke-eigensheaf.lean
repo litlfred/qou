@@ -11,3 +11,12 @@ Full formalization: `QOU/QGeometricLanglands.lean`
 import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QHeckeEigensheaf
+
+namespace QOU
+
+/-- $q$-Hecke eigensheaf -/
+def QHeckeEigensheaf   :=
+  -- Ref: [manuscript] def:q-hecke-eigensheaf
+  sorry
+
+end QOU

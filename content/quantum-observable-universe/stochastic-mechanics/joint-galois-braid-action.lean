@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/joint-galois-braid-action.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Joint motivic-Galois $\\times$ braid-group action on the bi-filtration $\\mathcal{H}_q^{(n, K)}$ -/
+class JointGaloisBraidAction where
+  holds : Prop
+  -- Ref: [manuscript] conj:joint-galois-braid-action
+
+end QOU.BraidKnot

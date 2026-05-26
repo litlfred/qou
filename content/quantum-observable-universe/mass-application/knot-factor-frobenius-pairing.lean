@@ -33,3 +33,12 @@ $H_n(R, q)$ induced by the Markov trace.
 
 -- Re-export the class from the BraidKnot module.
 import QOU.BraidKnot.KnotFactorFrobeniusPairing
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Knot factor as Frobenius self-pairing ratio -/
+class KnotFactorFrobeniusPairing where
+  holds : Prop
+  -- Ref: [manuscript] conj:knot-factor-frobenius-pairing
+
+end QOU.BraidKnot

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Frobenius positivity filter for even-$A$ decays -/
+theorem frobenius_positivity_filter : True := by
+  -- Ref: [manuscript] prop:frobenius-positivity-filter
+  sorry
+
+end QOU.ParticleInteractions

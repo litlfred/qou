@@ -27,3 +27,12 @@ LaTeX label: `prop:qou-is-ccc`
 -/
 
 import QOU.JetHorizon
+
+namespace QOU
+
+/-- **PROPOSITION.** A QOU with aeons is a conformal cyclic cosmology -/
+theorem qou_is_ccc : True := by
+  -- Ref: [manuscript] prop:qou-is-ccc
+  sorry
+
+end QOU
