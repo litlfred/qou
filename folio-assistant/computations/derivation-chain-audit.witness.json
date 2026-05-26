@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T01:04:13.369093+00:00",
-  "commitSha": "b93e5b16af8c511ccea27e7adbbb922ad16790f2",
+  "computedAt": "2026-05-26T01:17:17.040042+00:00",
+  "commitSha": "85d3cbf92ddb67289aefe640d77cf0206a71eb4d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2061,6 +2061,7 @@
         "alpha-k-macdonald-closed-form.witness.json",
         "alpha-shift-torus.witness.json",
         "alpha-star-dominant-partitions.witness.json",
+        "alpha-star-vs-binding-gap.witness.json",
         "ame-2020-binding-energies.witness.json",
         "applied-uniqueness-mass-table.witness.json",
         "archimedean-knot-eigenbasis-probe.witness.json",
@@ -2618,6 +2619,13 @@
         "plancherel-weight-boundedness-probe.witness.json",
         "pn-alpha-lp-dual.witness.json",
         "poly-q-proof.witness.json",
+        "probe-1-project-4he-on-dominant.witness.json",
+        "probe-1b-li6-orthogonality.witness.json",
+        "probe-4-li6-rectangular-python-targeted.witness.json",
+        "probe-4b-li6-non-rectangular-scan.witness.json",
+        "probe-4c-li6-large-d-scan.witness.json",
+        "probe-4e-transpose-pair-asymmetry.witness.json",
+        "probe-4f-h3-sigma-avg-asymmetry.witness.json",
         "proton-identity-extension-audit.witness.json",
         "proton-m_e-anomaly-audit.witness.json",
         "proton-m_e-derivation.witness.json",
