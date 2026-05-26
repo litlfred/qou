@@ -14,7 +14,7 @@ $$
 
 Across the canonical atoms with `atom_braid_word_3A` recipes implemented in the Rust R5-SDP solver (post-`BraidLetter` extension):
 
-### At A = 4 (⁴He, $n_0 = 12$)
+### At A = 4 ($^4$He, $n_0 = 12$)
 
 | family | top member | rows | $y_\lambda(q_0)$ |
 |---|---|---:|---:|
@@ -26,7 +26,7 @@ Across the canonical atoms with `atom_braid_word_3A` recipes implemented in the 
 
 `η(4) = max trace |y| / min PSD |y| ≈ 7.67e-4 / 4.66e-9 ≈ 1.6×10⁵.`
 
-### At A = 6 (⁶Li, $n_0 = 18$)
+### At A = 6 ($^6$Li, $n_0 = 18$)
 
 | family | top member | rows | $\varepsilon_{\min}$ | $y_\lambda(q_0)$ |
 |---|---|---:|---:|---:|

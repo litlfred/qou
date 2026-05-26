@@ -166,7 +166,7 @@ Alternative count:
 
 This is conjectural; explicit mapping NF-diamond $\leftrightarrow$ elementary-particle
 content is open. If correct, the lowest/highest-weight 1-dim irreps
-are NATURALLY where the 2 "extreme" leptons (muon and tau) live, with
+correspond to the 2 extreme leptons (muon and tau), with the
 electron in the 4-dim middle std channel hosting both chiralities
 and possibly weak-isospin partner (neutrino).
 

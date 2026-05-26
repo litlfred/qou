@@ -182,7 +182,7 @@ residue IS anti-symmetric (the swap exchanges proton $\leftrightarrow$ neutron,
 giving $m_n - m_p \neq 0$).  At the specific evaluation point
 $q = q_0$, the formula's value is bar-odd in a sign-of-$h$ sense
 (scales with the bar-odd $h$), but the formula AS A FUNCTION OF $q$
-is not cleanly bar-classifiable.  This is the audit-correction
+lacks a uniform bar-classification.  This is the audit-correction
 finding from
 [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md).
 

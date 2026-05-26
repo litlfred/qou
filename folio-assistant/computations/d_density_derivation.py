@@ -49,7 +49,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from hecke_core import h as H_A_VAL
 from mass_at_3A_proper import atom_braid_word_3A
-from mass_endomorphism import w_sym, w_std, w_alt
+from hecke_core import w_sym, w_std, w_alt
 from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder

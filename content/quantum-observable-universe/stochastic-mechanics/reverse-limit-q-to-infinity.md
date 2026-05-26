@@ -53,7 +53,7 @@ counterpart at $q \to \infty$ that can be derived for free.
 
 For the matter/antimatter discussion (per CLAUDE.md §7b + D22 Type-B
 folding): if matter is identified with Kashiwara crystal fixed
-points (at $q \to 0$), antimatter is naturally identified with
+points (at $q \to 0$), antimatter corresponds to
 reverse-crystal fixed points (at $q \to \infty$), and the bar
 involution swaps them. This gives a **structural source for
 matter-antimatter conjugation** orthogonal to the color-tube C

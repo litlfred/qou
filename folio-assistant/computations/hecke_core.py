@@ -209,3 +209,29 @@ from pyhecke.constants import (  # noqa: E402
 # module.
 # ════════════════════════════════════════════════════════════════════
 
+# ── Back-compat aliases for mass_endomorphism consumers ──────────
+w_sym = W_SYM
+w_std = W_STD
+w_alt = W_ALT
+
+from functools import lru_cache  # noqa: E402
+
+
+@lru_cache(maxsize=4096)
+def Phi_q(z_val, max_k=2000):
+    """Quantum dilogarithm Phi_q(z) = prod_{k>=1} (1 - q^{-k} z)^{-1} (float64)."""
+    if abs(z_val) >= q0:
+        return float("inf")
+    product = 1.0
+    qi_pow = qi
+    for _ in range(max_k):
+        term = qi_pow * z_val
+        factor = 1.0 - term
+        if abs(factor) < 1e-300:
+            return float("inf")
+        product /= factor
+        if abs(term) < 1e-15:
+            break
+        qi_pow *= qi
+    return product
+
