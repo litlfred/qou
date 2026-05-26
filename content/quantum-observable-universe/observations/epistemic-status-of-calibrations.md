@@ -74,7 +74,7 @@ PR #1127 and audit
   $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1))$ and CODATA-calibrated
   $\mathfrak{E}_0^{(\text{cal})} = Q_\beta / |\Delta(\mathrm{net})|$
   could be either a genuine $N=0$ truncation residual or a
-  numerical coincidence — the framework currently has no
+  substrate-specific artefact — the framework currently has no
   discriminator.
 - Higher-order corrections are being recast cohomologically as
   traces over **Khovanov-Rozansky strata** of the link projection
