@@ -99,19 +99,13 @@ If proved rigorously, this formula:
 - Hypothesis: same structure generalises to all atomic-braid masses
   with a UNIVERSAL "12" per the Ocneanu audit's claim.
 
-## Neutron derivation — FULL CLOSURE of nucleon masses from (m_e, m_μ, q₀)
+## Neutron derivation via canonical flavor-split
 
 Combined with the canonically-derived flavor-split
 [`prop:flavor-split-substrate`](../../content/quantum-observable-universe/observations/flavor-split-substrate.md)
 (which derives Δm/M_N from the Hecke skein relation acting on the
-u↔d 2-strand sub-braid — NOT a fit), the framework derives BOTH
-m_p and m_n from only:
-
-  m_e          (CAL-1 calibration anchor)
-  m_μ          (CAL-2 calibration anchor, = CAL-2_ratio · m_e)
-  q_0          (substrate parameter)
-
-Derivation chain:
+u↔d 2-strand sub-braid — NOT a fit), m_n is also derived from
+(m_e, m_μ, q_0):
 
   m_p = 2·m_μ·F_Bor(q_0) − 12·m_e                              (this audit)
   Δm/M_N = (q-1)² (1 − q^{-4}) / 3 = ℏ_q² · h · [2]_q / 3      (canonical, skein)
@@ -131,15 +125,38 @@ CODATA comparison:
 | m_n | 939.56354 MeV | 939.56542 MeV | 2.00 ppm |
 | M_N = (m_p+m_n)/2 | 938.91770 MeV | 938.91875 MeV | 1.12 ppm |
 
-**CAL-3 (Q_β) is NOT used** for nucleon masses. The 3 calibration
-inputs reduce to (m_e, m_μ/m_e, q_0) for the baryon class; Q_β is
-reserved for the W/Z weak sector.
+## Q_β — what this session does NOT do
+
+**Q_β was ALREADY derived by the framework** to 6.02 ppb via the
+N=3 categorical ladder formula:
+
+  Q_β = Q_A · cos(α − b·ℏ_q²/2) · (1 − b²·ℏ_q⁴) · (1 + c_3·b³·ℏ_q⁶)
+
+with `c_3 = J_Hopf(q=1) = -2` (Hopf-link Jones evaluation).  See
+[`docs/precision-goals.md`](../precision-goals.md) and
+[`q-beta-operator-valued-N3.witness.json`](../../folio-assistant/computations/q-beta-operator-valued-N3.witness.json).
+
+The existing N=3 derivation matches Q_β CODATA to **6 ppb** —
+beating CAL-3's 100× target.
+
+My session derives Q_β only algebraically as `m_n − m_p − m_e` =
+0.78068 MeV, giving 2113 ppm match to CODATA.  This is
+**350,000× WORSE** than the existing N=3 ladder derivation.  The
+session does NOT improve Q_β precision.
+
+The genuine session contribution is the **direct m_p identity at
+0.24 ppm** (and consequently m_n at 2 ppm via canonical skein).
 
 The m_n residual (2 ppm) is bottlenecked by the flavor-split's own
 0.10% residual at q_0 (per
 [`prop:flavor-split-substrate`](../../content/quantum-observable-universe/observations/flavor-split-substrate.md)
 `Empirical match` table), which itself is the framework's open
 research direction.
+
+CAL-3 (Q_β) remains as a calibration input in the framework's
+standard 3-calibration discipline; the N=3 ladder uses it to
+predict Q_β to 6 ppb (one of the framework's tightest predictions).
+This session does NOT change CAL-3 status.
 
 ## Cross-references
 
