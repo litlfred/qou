@@ -21,7 +21,7 @@ duality:*
 ## Why this matters
 
 For Type $A_{n-1}$ (the framework's main case), the Langlands dual
-is "trivially" self-dual at the **algebra level**, but the
+is self-dual at the **algebra level** (no parameter inversion required), but the
 parameter inversion $q \to q^{-1}$ produces a non-trivial Z/2
 duality. The framework's $H_n(q)$ has a natural Langlands-dual
 view at $q^{-1}$ that:

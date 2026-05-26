@@ -39,8 +39,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
-from mass_endomorphism import w_sym, w_std, w_alt, Phi_q
-from hecke_core import atom_per_generator_volumes
+from hecke_core import atom_per_generator_volumes, w_sym, w_std, w_alt, Phi_q
 from codata_constants import (
     M_E_MEV as _M_E_MEV,
     M_P_MEV_VALIDATION as _M_P_MEV,

@@ -14,7 +14,7 @@ At $q_0 \approx 1.110$, the formula
 $\tfrac{5}{2} + (-G) h^2 \approx 2.4599666$ matches the
 $m_p$-anchored target $m_p^{\mathrm{CODATA}} / (m_e \cdot
 \mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2) \approx 2.4599528$
-to **1.4 × 10⁻⁵** in linking-weight units, equivalent to
+to **$1.4 \times 10^{-5}$** in linking-weight units, equivalent to
 **5.6 ppm in $m_p$**.
 
 The empirical match is striking — far closer than any known
@@ -25,7 +25,7 @@ without claiming the conjecture itself.
 ## Status (read this carefully)
 
 This is **NOT a proof** that Reading-A is the actual linking-weight.
-Reading-A's h² coefficient $-G$ directly contradicts the
+Reading-A's $h^2$ coefficient $-G$ directly contradicts the
 [**proved Family A theorem**](lambda-scale-substrate-form.md)
 
 $$
@@ -34,7 +34,7 @@ $$
 $$
 
 so Reading-A can only be valid if $\mathrm{linkingWeight} \neq
-\lambda_A$, i.e. *the Borromean linking-weight is not the H₄
+\lambda_A$, i.e. *the Borromean linking-weight is not the $H_4$
 Wedderburn sum*. The required new categorical principle has not
 yet been identified.
 
@@ -45,7 +45,7 @@ yet been identified.
    across 5 structural routes (Wedderburn / Frobenius / Demazure
    / LP-Plancherel / LP-Frobenius).
 2. [**Audit 2026-05-23**](../../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md) —
-   the natural half-symmetric projection at H₄ gives $+0.5$, not
+   the natural half-symmetric projection at $H_4$ gives $+0.5$, not
    $-G$. The Yekutieli per-cell bijection conjecture (Reading-B)
    is also NEGATIVE under the natural reading.
 3. [**Path C1 probe**](../../../folio-assistant/computations/higher_n_wedderburn_h2_drift_probe.py)
@@ -63,11 +63,11 @@ yet been identified.
 |-------------|------|--------|
 | `linkingWeightReadingA` | `def` | algebraic, no claim |
 | `ReadingAValidAtH2` | `class` | the SOLE sorry — the conjecture itself |
-| `readingA_h2_coefficient` | `theorem` | trivial algebraic ✓ |
-| `readingA_eq_familyA_plus_correction` | `theorem` | $\Delta = (-G - 3/4) h^2$ ✓ |
-| `readingA_h0_eq_family_a_h0` | `theorem` | $h^0$ unchanged ✓ |
+| `readingA_h2_coefficient` | `theorem` | trivial algebraic (verified) |
+| `readingA_eq_familyA_plus_correction` | `theorem` | $\Delta = (-G - 3/4) h^2$ (verified) |
+| `readingA_h0_eq_family_a_h0` | `theorem` | $h^0$ unchanged (verified) |
 | `m_p_pred_reading_a` | `def` | conditional prediction formula |
-| `m_p_pred_reading_a_factored` | `theorem` | factored closed form ✓ |
+| `m_p_pred_reading_a_factored` | `theorem` | factored closed form (verified) |
 
 Per CLAUDE.md §3b-cond, the conditional-class pattern lets the
 downstream `m_p` prediction be **fully Lean-verified** modulo the
@@ -109,7 +109,7 @@ theorem (proved), one would need to:
 The audit
 [2026-05-25 Path C](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
 enumerates 7 candidate categorical principles; **C3 (KLR /
-Kashiwara crystal h² correction)** is the highest-value remaining
+Kashiwara crystal $h^2$ correction)** is the highest-value remaining
 direction but is multi-session research.
 
 ## What this content block does NOT do
@@ -124,7 +124,7 @@ direction but is multi-session research.
 
 ## References
 
-- [Family A theorem](lambda-scale-substrate-form.md) — proved h² = +3/4
+- [Family A theorem](lambda-scale-substrate-form.md) — proved $h^2$ = +3/4
 - [PR #1287](https://github.com/litlfred/qou/pull/1287) — Reading-A residual probes
 - [Path C audit (2026-05-25)](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
 - [Yekutieli per-cell (2026-05-22)](../../../docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)

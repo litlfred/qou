@@ -217,7 +217,7 @@ times $m_e$, with **0.2–2.1% agreement** to empirical fitted values
 [`../particle-interactions/q-integer-mass-formula.md`](../particle-interactions/q-integer-mass-formula.md)).
 The block is itself a **Conjecture (BW-emergence)** conditional on
 `conj:palindromicity-orbital-type` + `conj:shell-closure-nf-term-count`,
-so the closure is *partial-with-conditional-uplift*, not fully derived.
+hence the closure is *partial-with-conditional-uplift*, not fully derived.
 
 **Description (historical).**  The extended Bethe--Weizsäcker
 coefficients are expressed as products of $q$-integers $[n]_q$

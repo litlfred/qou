@@ -68,8 +68,8 @@ from witness_base import WitnessBuilder, load_and_hash_upstream  # noqa: E402
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from hecke_core import (  # noqa: E402
     atom_per_generator_volumes, h as h_val, z as z_mark,
+    Phi_q,
 )
-from mass_endomorphism import Phi_q  # noqa: E402
 from experimental_constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
 
 HERE = Path(__file__).parent

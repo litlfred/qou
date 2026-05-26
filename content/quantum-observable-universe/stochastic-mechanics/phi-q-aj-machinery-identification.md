@@ -29,7 +29,7 @@ The framework's [`canonical-derivation-cheat-sheet.md`](../../../docs/canonical-
 
 1. **Unifies the cheat-sheet's context-sorting** into a single algebraic statement.
 2. **Provides the categorical-derivation target** for the rescoped Path B closure question from PR [#1231](https://github.com/litlfred/qou/pull/1231) §11: "why does the Markov-trace closed form have the coefficients it does?"
-3. **Crosses the archimedean wall**: the AJ identity holds over $\mathbb{Z}[q^{\pm 1}]$ (no $\mathbb{R}$ or $\mathbb{C}$ needed); the framework's Pre-Archimedean / Archimedean split passes through this algebraic gate cleanly.
+3. **Pre-Archimedean**: the AJ identity holds over $\mathbb{Z}[q^{\pm 1}]$ (no $\mathbb{R}$ or $\mathbb{C}$ needed); the framework's Pre-Archimedean / Archimedean split passes through this algebraic gate.
 
 ## Lean structure
 

@@ -6,16 +6,16 @@ $$
 
 *Equivalently, the sub-algebra is isomorphic (as a graded $R$-vector space, $R$ any field of characteristic 0 — typically $\mathbb{Q}$ for the GB-NF rational arithmetic, $\mathbb{R}$ for the substrate evaluation at $q_0 \in \mathbb{R}$) to the **exterior algebra** $\Lambda^*(R^{3A - Z})$, with grade shift $\delta = Z - 1$, total dimension $2^{3A - Z}$.*
 
-## Empirical verification (PR following R5-full ⁴He registry extension)
+## Empirical verification (PR following R5-full $^4$He registry extension)
 
 The conjecture is verified across all 4 atoms with canonical `atom_braid_word_3A` recipes implemented in the Rust R5-SDP solver (post-`BraidLetter` extension):
 
 | Atom | $(Z, N)$ | $n_0 = 3A$ | $3A - Z$ | $\delta = Z - 1$ | Filtration shape | Total |
 |---|---|---|---|---|---|---|
-| D ²H | (1, 1) | 6 | 5 | 0 | $\{1, 5, 10, 10, 5, 1\} = \binom{5}{k}$ | $2^5 = 32$ |
-| T ³H | (1, 2) | 9 | 8 | 0 | $\{1, 8, 28, 56, 70, 56, 28, 8, 1\} = \binom{8}{k}$ | $2^8 = 256$ |
-| ³He | (2, 1) | 9 | 7 | 1 | $\{1, 7, 21, 35, 35, 21, 7, 1\} = \binom{7}{k}$ | $2^7 = 128$ |
-| ⁴He | (2, 2) | 12 | 10 | 1 | $\{1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1\} = \binom{10}{k}$ | $2^{10} = 1024$ |
+| D $^2$H | (1, 1) | 6 | 5 | 0 | $\{1, 5, 10, 10, 5, 1\} = \binom{5}{k}$ | $2^5 = 32$ |
+| T $^3$H | (1, 2) | 9 | 8 | 0 | $\{1, 8, 28, 56, 70, 56, 28, 8, 1\} = \binom{8}{k}$ | $2^8 = 256$ |
+| $^3$He | (2, 1) | 9 | 7 | 1 | $\{1, 7, 21, 35, 35, 21, 7, 1\} = \binom{7}{k}$ | $2^7 = 128$ |
+| $^4$He | (2, 2) | 12 | 10 | 1 | $\{1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1\} = \binom{10}{k}$ | $2^{10} = 1024$ |
 
 Each row's shape is **exactly Pascal's triangle row $(3A - Z)$** with the appropriate grade shift, and totals are $2^{3A - Z}$.
 
@@ -26,11 +26,11 @@ The exterior-algebra structure says: the canonical atom-braid lives in a **fermi
 1. **Dimension reduction** ($\Lambda^*(R^{3A - Z})$ instead of $\mathbb{C}^{3A}$): each proton imposes one constraint, removing one degree of freedom.
 2. **Grade shift** ($\delta = Z - 1$): each proton beyond the first shifts the filtration's lower bound by one — analogous to a chemical-potential or fermion-number offset.
 
-This is fundamentally different from the standard Wedderburn decomposition $H_n(q) \cong \bigoplus_\lambda V_\lambda^{\oplus d_\lambda}$ (which for $H_{12}$ has dimension $12! \approx 5 \times 10^8$, **8 orders of magnitude larger** than the observed $2^{10} = 1024$ for ⁴He).
+This is fundamentally different from the standard Wedderburn decomposition $H_n(q) \cong \bigoplus_\lambda V_\lambda^{\oplus d_\lambda}$ (which for $H_{12}$ has dimension $12! \approx 5 \times 10^8$, **8 orders of magnitude larger** than the observed $2^{10} = 1024$ for $^4$He).
 
-## ⚠ Falsified inference: LP/SDP under-determination implication
+## Falsified inference: LP/SDP under-determination implication
 
-**Status (2026-05-25):** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set ≤ n* + 1" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/2026-05-25-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/2026-05-25-exterior-algebra-lp-claim-falsified.md) for the full retraction.
+**Status (2026-05-25):** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/2026-05-25-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/2026-05-25-exterior-algebra-lp-claim-falsified.md) for the full retraction.
 
 **What's still valid:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from PR #1271 stands.
 
@@ -44,22 +44,22 @@ The section below is retained as a historical record of the falsified inference;
 
 The exterior-algebra structure has a direct consequence for the operator-selection LP/SDP that consumes the canonical atom-braid as input.
 
-**Previously (Wedderburn-channel framing):** the LP/SDP variables `y_λ` for $\lambda \vdash 3A$ have $p(3A)$ partition channels — $p(12) = 77$ for ⁴He alone. The LP feasibility region is correspondingly $\geq 77$-dimensional (before constraint cuts). Empirical observations have noted under-determination — multiple feasible solutions, ambiguous extraction.
+**Previously (Wedderburn-channel framing):** the LP/SDP variables `y_λ` for $\lambda \vdash 3A$ have $p(3A)$ partition channels — $p(12) = 77$ for $^4$He alone. The LP feasibility region is correspondingly $\geq 77$-dimensional (before constraint cuts). Empirical observations have noted under-determination — multiple feasible solutions, ambiguous extraction.
 
 **Under the conjecture:** the physical content lives in the sub-algebra $\Lambda^*(R^{3A - Z})$ of dimension $2^{3A - Z}$. The non-trivial Wedderburn channels (those with $y_\lambda \neq 0$ on the atom-braid's image) are a **proper subset** of the $p(3A)$ partitions — exactly those $\lambda$ corresponding to non-zero homogeneous components of $\Lambda^k(R^{3A - Z})$ under the projection $H_{3A}(q) \to \Lambda^*(R^{3A - Z})$.
 
 For Pascal-row $\binom{3A - Z}{k}$ at each grade $k$:
 - The number of non-zero $y_\lambda$ channels per grade is **at most one per binomial entry**, suggesting a much smaller active partition set than $p(3A)$.
-- For ⁴He: at most $(3A - Z + 1) - \delta = 10$ active channels (one per non-zero binomial position), down from $77$ — **a ~7× constraint tightening**.
+- For $^4$He: at most $(3A - Z + 1) - \delta = 10$ active channels (one per non-zero binomial position), down from $77$ — **a ${\sim}7\times$ constraint tightening**.
 
 **Concrete predicted reductions:**
 
 | Atom | $p(3A)$ | Predicted max active channels | Reduction |
 |---|---:|---:|---:|
-| D ²H | $p(6) = 11$ | $\leq 6$ | $\geq 1.8\times$ |
-| T ³H | $p(9) = 30$ | $\leq 9$ | $\geq 3.3\times$ |
-| ³He | $p(9) = 30$ | $\leq 8$ | $\geq 3.8\times$ |
-| ⁴He | $p(12) = 77$ | $\leq 11$ | **$\geq 7.0\times$** |
+| D $^2$H | $p(6) = 11$ | $\leq 6$ | $\geq 1.8\times$ |
+| T $^3$H | $p(9) = 30$ | $\leq 9$ | $\geq 3.3\times$ |
+| $^3$He | $p(9) = 30$ | $\leq 8$ | $\geq 3.8\times$ |
+| $^4$He | $p(12) = 77$ | $\leq 11$ | **$\geq 7.0\times$** |
 
 If the conjecture holds, the LP/SDP under-determination noted in prior probes (Δ_λ closure synthesis, joint-tower SDP feasibility) is structurally resolved: the previously-ambiguous $y_\lambda$ extraction has a **categorically-restricted active set** corresponding to the exterior-algebra graded components.
 
@@ -82,7 +82,7 @@ A categorical proof would likely use:
 
 - [`folio-assistant/computations/mass_at_3A_proper.py`](../../../folio-assistant/computations/mass_at_3A_proper.py) — canonical `atom_braid_word_3A` recipe
 - [`tools/hecke-engine/src/gb_nf_reducer.rs`](../../../tools/hecke-engine/src/gb_nf_reducer.rs) — `BraidLetter` + `right_mul_t_avg` (R5-full extension supporting σ_avg)
-- [`tools/hecke-engine/src/bin/joint_tower_sdp.rs`](../../../tools/hecke-engine/src/bin/joint_tower_sdp.rs) — joint-tower SDP solver (registry with 4 canonical-3A test atoms + ⁴He)
+- [`tools/hecke-engine/src/bin/joint_tower_sdp.rs`](../../../tools/hecke-engine/src/bin/joint_tower_sdp.rs) — joint-tower SDP solver (registry with 4 canonical-3A test atoms + $^4$He)
 - [`folio-assistant/computations/joint-tower-sdp-rust.witness.json`](../../../folio-assistant/computations/joint-tower-sdp-rust.witness.json) — observed filtration shapes
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula that consumes this structure
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — bring-surface analog for lepton sector

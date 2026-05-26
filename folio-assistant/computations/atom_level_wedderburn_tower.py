@@ -38,7 +38,7 @@ from hecke_characters import (
     partitions_of, build_seminormal_matrices, qfac, dim_q,
 )
 from hecke_character_symbolic import atomic_braid_to_crossings
-from mass_endomorphism import Phi_q
+from hecke_core import Phi_q
 from syt_prefix_cache import (
     BlockCache,
     build_seminormal_matrices_cached,
