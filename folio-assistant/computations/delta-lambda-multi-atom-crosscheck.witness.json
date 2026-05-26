@@ -84,6 +84,37 @@
         }
       },
       "discipline_note": "Cat\u2192Alg\u2192Geom\u2192Arch: \u0394_\u03bb at categorical level (q-independent). [n]_q! rescaling (algebraic) made spread WORSE (14305\u00d7), confirming the gap is categorical."
+    },
+    "categorical_ansatz_deep_dive": {
+      "best_ansatz": "\u0394_\u03bb = (-1)^{n(\u03bb)} \u00d7 dim(V_\u03bb)",
+      "residual_C_over_A": {
+        "D": 2.93,
+        "T": 1.48,
+        "3He": 1.1,
+        "4He": 2.33
+      },
+      "C_over_A_spread": 2.67,
+      "kappa_scan": {
+        "1": {
+          "avg_err_pct": 41.1,
+          "max_err_pct": 65.8
+        },
+        "3/2": {
+          "avg_err_pct": 30.6,
+          "max_err_pct": 48.7
+        },
+        "2": {
+          "avg_err_pct": 40.8,
+          "max_err_pct": 82.3
+        }
+      },
+      "T_vs_3He_mirror": {
+        "C_ratio": 1.35,
+        "tr_M_ratio": 1.99,
+        "B_ratio": 1.1,
+        "conclusion": "Typed-crossing asymmetry \u2014 braid word matters, not just (Z,N)"
+      },
+      "closing_path": "Derive C_knot from Geom_full(K) per knot. Same open problem as the 2.89% m_p gap."
     }
   },
   "assertions": [
