@@ -156,6 +156,20 @@ $q_0$ with $\lvert q_0 \rvert > 1$ and $\mathrm{Im}(q_0) \neq 0$ is
 structurally admissible but currently uninstantiated
 (audit: [`2026-05-24-q-zero-reality-audit.md`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md)).
 
+**Decay width $\mathfrak{D}$ vs lifetime $\tau$ vs sheaf sections $\Gamma$.**
+Three standard physics/math symbols collide in this paper:
+
+| Symbol | Paper use | Physics use (avoided) | Resolution |
+|--------|----------|----------------------|------------|
+| $\tau$ | **Fibre functor** $\tau : \mathbf{C} \to \mathbf{Arch}$ | Lifetime $\tau_n, \tau_\mu$ | Use $\hbar / \mathfrak{D}$ for lifetime |
+| $\Gamma$ | **Sheaf sections** $\Gamma(N)$, local cohomology $\Gamma_{\mathfrak{m}_1}$ | Decay width $\Gamma_n, \Gamma_\mu$ | Use $\mathfrak{D}$ (fraktur D) |
+| $\mathfrak{D}$ | **Decay width** (NEW) | — | $\mathfrak{D}_K$ = decay width of hadron $K$ |
+
+Convention: $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$.
+Subscripts: $\mathfrak{D}_\mu$ (muon), $\mathfrak{D}_n$ (neutron),
+$\mathfrak{D}_K$ (generic hadron). Fermi theory:
+$\mathfrak{D}_\mu = G_F^2 \mathfrak{m}_\mu^5 / (192\pi^3)$.
+
 **Archimedean / fibre / forgetful functors (Phase 5o disambiguation).**
 Three nominally similar functors appear in the QOU framework and must
 not be conflated:
