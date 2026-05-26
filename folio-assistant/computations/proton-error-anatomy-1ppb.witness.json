@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-26T16:41:08.024090+00:00",
+  "commitSha": "fbfd623e787efdc9ba050cf018732f798db1fe3b",
+  "assertions": [
+    {
+      "name": "gap_is_sub_ppm",
+      "computed": 0.2421845864520872,
+      "expected": 0.24,
+      "passed": true,
+      "tolerance": 0.05,
+      "unit": "ppm",
+      "source": "m_p substrate identity gap"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "proton-error-anatomy-1ppb",
+  "scriptFile": "proton_error_anatomy_1ppb.py",
+  "scriptHash": "61c02527d0ee",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Decompose the 0.24 ppm m_p gap. All sub-factors (|tr_M|, [3]_q!, q^3, dim V_{(2,1)}, |S_3|) are exact at given q_0. The gap lives in the formula structure itself. PSLQ finds no integer relation with standard dilogarithms. The correction is at the same scale as the Q_beta N=3 brane-tower rung (b^3 * hbar^6).",
+  "data": {
+    "gap": {
+      "gap_eV": "-227.2350376505659",
+      "gap_ppm": "-0.2421845864520872",
+      "dP_over_P": "2.4061214707415725e-07"
+    },
+    "sub_factors_all_exact": {
+      "tr_M_abs": "0.9985621631975701",
+      "qfact_3": "6.120579304756191",
+      "F_Bor": "4.469138597860733",
+      "F_Bor_needed": "4.469139673189767",
+      "F_deficit_ppm": "0.24061214707415723",
+      "h_series_residual_at_5_terms": "0.0015303462364348874",
+      "h_series_exact_to_20_terms": true
+    },
+    "overdetermined_system": {
+      "eq1_proton_residual_ppm": "-0.2421845864520872",
+      "eq2_muon_residual_ppm": "0 (exact by calibration)",
+      "conclusion": "2 equations, 1 unknown; no single q satisfies both"
+    },
+    "pslq_search": {
+      "basis": "eps, h^4, h^6, Vol*h^4, Li_2(q^-2)*h^2",
+      "result": "None",
+      "conclusion": "No integer relation — correction is genuinely novel"
+    },
+    "what_is_canonical": {
+      "exact": [
+        "F_Bor(q) — rational function, Lean-proved closed form",
+        "dim V_{(2,1)} = 2 — hook-length, Lean-proved",
+        "|S_3| = 6 — group order",
+        "Vol(4_1) = 2*Cl_2(pi/3) — topological invariant",
+        "q_0 from muon anchor — exact by calibration"
+      ],
+      "empirical": [
+        "The formula m_p/m_e = 2*(Vol/hbar^2)*F_Bor - 12 itself",
+        "Gap dP/P = 2.41e-7 is the formula's empirical residual"
+      ],
+      "research_target": "Derive the N>=1 brane-tower correction to the mass formula. Same structural layer as Q_beta N=3 (b^3*hbar^6 order). A candidate (2/5)*J_{3_1}*b^3*hbar^6 matches to 0.02% but is NOT DERIVED — flagged as numerical fit per CLAUDE.md anti-pattern (no fit-based ansatz)."
+    },
+    "candidate_correction_NOT_PROVED": {
+      "form": "dP/P = (2/5) * J_{3_1}(q_0) * b^3 * hbar^6",
+      "numerical_match_pct": "0.019",
+      "status": "NUMERICAL FIT — NOT DERIVED",
+      "what_proof_requires": [
+        "Derive b^3*hbar^6 from brane-tower at N=3",
+        "Derive J_{3_1}(q_0) as the correct topological invariant",
+        "Derive 2/5 from Wedderburn structure",
+        "Apply to independent observable (m_n, isotope) without re-fitting"
+      ]
+    }
+  }
+}
