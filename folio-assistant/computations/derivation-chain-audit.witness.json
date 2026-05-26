@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T15:16:35.231335+00:00",
-  "commitSha": "06e400dfe759e543ed5c786ba5cacae9137f645b",
+  "computedAt": "2026-05-26T15:33:35.119436+00:00",
+  "commitSha": "ffe603782f7be97c5ad1e11639766793b88ee6a9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2618,8 +2618,11 @@
         "phase1d-f-bor-exact-h-expansion.witness.json",
         "phase1e-neutron-cross-isotope-h-expansion.witness.json",
         "phase2-m-e-hecke-diagnostic.witness.json",
+        "phase2a-flavor-split-higher-order.witness.json",
+        "phase2b-dim-v21-bridge.witness.json",
         "phase3-deuteron-tritium-h-expansion.witness.json",
         "phase3-triton-binding-convention-b.witness.json",
+        "phase3c-a5-a7-knot-volume-targets.witness.json",
         "phi-q-regularization-probe.witness.json",
         "photon-operator-table.witness.json",
         "piece1-dimensional-bridge.witness.json",

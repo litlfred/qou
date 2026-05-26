@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T15:18:12.232242+00:00",
-  "commitSha": "6bb321886968b2855906eac26a4ebe7f153804d4",
+  "computedAt": "2026-05-26T15:33:34.119222+00:00",
+  "commitSha": "ffe603782f7be97c5ad1e11639766793b88ee6a9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 663,
+    "files_scanned": 666,
     "patterns": [
       "P15",
       "P16",
@@ -34,7 +34,7 @@
       "P16": 177,
       "P21": 23,
       "P30": 134,
-      "P31": 46
+      "P31": 47
     },
     "top_files": [
       {
@@ -2602,6 +2602,13 @@
         "file": "phase1e_neutron_and_cross_isotope_h_expansion.py",
         "line": 80,
         "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "phase2b_dim_v21_bridge_derivation.py",
+        "line": 156,
+        "snippet": "CODATA literal \"0.51099895\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
