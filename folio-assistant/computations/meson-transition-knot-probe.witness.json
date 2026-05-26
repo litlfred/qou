@@ -1,0 +1,37 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T23:41:20.049111+00:00",
+  "commitSha": "5e94975544ff1637885867cfe0565c03f722b86f",
+  "assertions": [
+    {
+      "name": "transition_is_not_hyperbolic",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Hopf link complement is solid torus, Vol=0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "meson-transition-knot-probe",
+  "scriptFile": "meson_transition_knot_probe.py",
+  "scriptHash": "bba0d18f3801",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Probes the meson analogue of the lepton mass-ratio derivation. Key finding: the meson transition element (σ₁²) closes to the Hopf link (Vol=0, not hyperbolic), so hyperbolic volume CANNOT give the meson ratio. The meson sector requires an algebraic (Hecke trace at finite q₀) formula, not a geometric one.",
+  "contentBlock": "prop:lepton-meson-torus-knot-dictionary",
+  "data": {
+    "tr_pion": 0.4958262116526499,
+    "tr_kaon": 0.6860891338809054,
+    "ratio_tr": 1.383729052149312,
+    "ratio_pdg": 3.537118438946828,
+    "key_finding": "meson transition is Hopf link (Vol=0), not hyperbolic"
+  }
+}
