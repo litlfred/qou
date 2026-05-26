@@ -90,7 +90,16 @@
     },
     "mass_eq_residual": 8.881784197001252e-16,
     "B_D_predicted_MeV": -2952.1389868895894,
-    "B_D_AME_MeV": 2.22452
+    "B_D_AME_MeV": 2.22452,
+    "option_E_comparison": {
+      "description": "Option E (\u0394_\u03bb = principal specialization) vs bar-inv min-norm",
+      "cosine_similarity": -0.512,
+      "option_E_sum_yc_delta": 614.83,
+      "target": -4.3534,
+      "verdict": "RULED OUT \u2014 wrong sign by 140x, opposite direction (cos=-0.51)",
+      "option_E_all_positive": true,
+      "min_norm_mixed_sign": true
+    }
   },
   "assertions": [
     {
