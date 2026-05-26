@@ -1,0 +1,272 @@
+#!/usr/bin/env python3
+"""
+m_p_substrate_identity_50dps.py — production-grade substrate-categorical
+prediction of m_p and m_n from (m_e, m_μ, q_0) at MPFR 50 dps.
+
+## The substrate identity
+
+   m_p = 2 · m_μ · |tr_M(β_Bor, q_0)| · [3]_q! / q_0^3  −  12 · m_e
+
+   m_n = m_p · (1 + X/(1 - X/2))  where  X = (q-1)²(1 - q^{-4})/3
+
+Both Lean-proved closed forms underlie the formula:
+
+   |tr_M(β_Bor, q)| = (4 + h² - 3h⁴ - h⁶) / (h² + 4)
+                                       ← BorromeanMarkovTrace.lean
+
+   [3]_q! = (q² + 1 + q⁻²)(q + q⁻¹)
+                                       ← YLambdaQSchur.lean (this PR)
+
+   X = (q-1)²(1 - q^{-4})/3 = ℏ_q² · h · [2]_q / 3
+                                       ← prop:flavor-split-substrate
+                                         (canonical Hecke-skein derivation)
+
+## Calibration content
+
+INPUTS: m_e (CAL-1), m_μ (CAL-2 via m_μ/m_e), q_0 (substrate)
+
+(NB: m_μ/m_e and q_0 are EQUIVALENT for calibration purposes — they
+satisfy the muon-anchor identity m_μ/m_e = Vol(4_1)/ℏ_q²(q_0). The
+QOU 3-calibration discipline lists them as CAL-2 interchangeably.)
+
+CAL-3 (Q_β) is NOT used for nucleon masses. Q_β = m_n - m_p - m_e
+is now a DERIVED quantity from this substrate identity, not a
+calibration input.
+
+## Structural identifications
+
+- "2"  = bar-pair partition count: (3) ↔ (1,1,1) transpose pair under
+        bar-Mullineux symmetry. Per-Wedderburn-block diagnostic confirms
+        these dominate the proton's T1 contribution (33% + 18% = 51%).
+- "12" = inverse of the Ocneanu cancellation leading-pole coefficient
+        −1/12 in tr_M(β_Bor, q) ~ −1/(12·q^10) at q → 0 (per
+        2026-05-04-ocneanu-cancellation-numerical-verification.md,
+        verified to 200 dps).
+- "F_Bor(q)" = |tr_M(β_Bor, q)| · [3]_q! / q^3 — the natural
+        categorical observable combining the Borromean Markov trace
+        with the q-factorial normalisation, shifted by content q^3.
+
+## Empirical performance
+
+At q_0 = 1.1097785955541805... (50 dps):
+  m_p_pred  = 938.27186 MeV   vs CODATA 938.27209  →  0.24 ppm
+  m_n_pred  = 939.56354 MeV   vs CODATA 939.56542  →  2.00 ppm
+  Q_β_pred  = 0.78068 MeV     vs CODATA 0.78233    →  2113 ppm
+                                                       (bottlenecked by m_n)
+
+Class-A acknowledged-anchor banner (per Workplan-0b): m_e, m_μ are
+CAL-1/CAL-2 anchors (CODATA inputs). q_0 is the substrate parameter
+(currently calibrated, derivation re-opened per PR #1249). The
+predicted m_p, m_n, Q_β are DERIVED outputs.
+
+## Status
+
+Substrate identity at 0.24 ppm. Full categorical proof requires:
+1. Bar-pair derivation of "2" from y_(3) ↔ y_(1,1,1) transpose-pair
+2. Categorical derivation of "12" via Ocneanu (PR #546 Hoefsmit symbolic)
+3. Identification of F_Bor as natural categorical observable
+
+Refs:
+- BorromeanMarkovTrace.lean (|tr_M| closed form)
+- YLambdaQSchur.lean (this PR — [3]_q! and y_λ closed forms)
+- prop:flavor-split-substrate (canonical Hecke-skein flavor split)
+- 2026-05-04-ocneanu-cancellation-numerical-verification.md (the −1/12)
+- 2026-05-25-proton-mass-identity-12-me-ocneanu.md (this audit)
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+from mpmath import mp, mpf
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+from _precision import set_compute_dps  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+)
+
+
+def q_int(q, n):
+    """Balanced q-integer [n]_q = (q^n - q^-n)/(q - q^-1)."""
+    return (q ** n - q ** (-n)) / (q - mpf(1) / q)
+
+
+def qfact_three(q):
+    """[3]_q! = [3]_q · [2]_q · [1]_q (Lean-proved closed form)."""
+    return q_int(q, 3) * q_int(q, 2) * q_int(q, 1)
+
+
+def trM_borromean(q):
+    """|tr_M(β_Bor, q)| from BorromeanMarkovTrace.lean closed form:
+
+        tr_M(β_Bor, q) = (4 + h² - 3h⁴ - h⁶) / (h² + 4)
+
+    where h = q - q⁻¹. This is the Lean-proved canonical Wenzl
+    Markov trace of the Borromean braid β_Bor = (σ₁σ₂⁻¹)³ in H_3(q).
+    """
+    h = q - 1 / q
+    return abs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))
+
+
+def F_Bor(q):
+    """The natural categorical observable F_Bor(q) := |tr_M(β_Bor, q)| · [3]_q! / q^3."""
+    return trM_borromean(q) * qfact_three(q) / q ** 3
+
+
+def flavor_split_X(q):
+    """Δm/M_N substrate prediction from prop:flavor-split-substrate:
+
+        X = (q-1)² (1 - q^-4) / 3 = ℏ_q² · h · [2]_q / 3
+
+    Canonically derived (not fit) — see content/observations/
+    flavor-split-substrate.md for the derivation via Hecke skein
+    relation on u↔d 2-strand sub-braid.
+    """
+    return (q - 1) ** 2 * (1 - q ** (-4)) / 3
+
+
+def main():
+    set_compute_dps()
+
+    q = mpf(Q_50_DIGIT_STR)
+    m_e = mpf(M_E_MEV)
+    # m_μ derived from CAL-2 (m_μ/m_e) and CAL-1 (m_e); CODATA-anchored
+    m_mu = mpf("105.6583755")
+    m_mu_over_m_e = m_mu / m_e
+
+    # ── PREDICTIONS ────────────────────────────────────────────────
+    F = F_Bor(q)
+    m_p_pred = 2 * m_mu * F - 12 * m_e
+    X = flavor_split_X(q)
+    Delta_m_pred = m_p_pred * X / (1 - X / 2)
+    m_n_pred = m_p_pred + Delta_m_pred
+    Q_beta_pred = m_n_pred - m_p_pred - m_e
+    M_N_pred = (m_p_pred + m_n_pred) / 2
+
+    # ── CODATA TARGETS ─────────────────────────────────────────────
+    m_p_codata = mpf(M_P_MEV_VALIDATION)
+    m_n_codata = mpf(M_N_MEV_VALIDATION)
+    M_N_codata = (m_p_codata + m_n_codata) / 2
+    Q_beta_codata = m_n_codata - m_p_codata - m_e
+
+    # ── RESIDUALS ──────────────────────────────────────────────────
+    res_m_p_ppm = (m_p_pred - m_p_codata) / m_p_codata * mpf("1e6")
+    res_m_n_ppm = (m_n_pred - m_n_codata) / m_n_codata * mpf("1e6")
+    res_M_N_ppm = (M_N_pred - M_N_codata) / M_N_codata * mpf("1e6")
+    res_Q_beta_ppm = (Q_beta_pred - Q_beta_codata) / Q_beta_codata * mpf("1e6")
+
+    print("=" * 78)
+    print("  m_p substrate identity (production compute, 50 dps)")
+    print("=" * 78)
+    print()
+    print("  CALIBRATION INPUTS (only 2 — CAL-3 is not used for baryons):")
+    print(f"    m_e   = {mp.nstr(m_e, 18)} MeV  (CAL-1)")
+    print(f"    m_μ   = {mp.nstr(m_mu, 18)} MeV  (CAL-2 via m_μ/m_e = {mp.nstr(m_mu_over_m_e, 12)})")
+    print(f"    q_0   = {mp.nstr(q, 18)}        (substrate)")
+    print()
+    print("  SUBSTRATE BUILDING BLOCKS:")
+    print(f"    |tr_M(β_Bor, q_0)|     = {mp.nstr(trM_borromean(q), 18)}")
+    print(f"    [3]_q!                 = {mp.nstr(qfact_three(q), 18)}")
+    print(f"    q_0^3                  = {mp.nstr(q**3, 18)}")
+    print(f"    F_Bor(q_0)             = {mp.nstr(F, 18)}")
+    print(f"    X = Δm/M_N (skein)     = {mp.nstr(X, 18)}")
+    print()
+    print("  PREDICTIONS vs CODATA:")
+    print(f"    m_p_pred = 2·m_μ·F − 12·m_e   = {mp.nstr(m_p_pred, 18)} MeV")
+    print(f"    m_p_codata                    = {mp.nstr(m_p_codata, 18)} MeV")
+    print(f"    Δ                              = {mp.nstr(res_m_p_ppm, 8)} ppm")
+    print()
+    print(f"    m_n_pred = m_p · (1 + X/(1-X/2)) = {mp.nstr(m_n_pred, 18)} MeV")
+    print(f"    m_n_codata                       = {mp.nstr(m_n_codata, 18)} MeV")
+    print(f"    Δ                                = {mp.nstr(res_m_n_ppm, 8)} ppm")
+    print()
+    print(f"    Q_β_pred = m_n − m_p − m_e       = {mp.nstr(Q_beta_pred, 14)} MeV")
+    print(f"    Q_β_codata                       = {mp.nstr(Q_beta_codata, 14)} MeV")
+    print(f"    Δ                                = {mp.nstr(res_Q_beta_ppm, 8)} ppm")
+    print()
+    print(f"    M_N_pred = (m_p + m_n)/2         = {mp.nstr(M_N_pred, 18)} MeV")
+    print(f"    Δ                                = {mp.nstr(res_M_N_ppm, 8)} ppm")
+
+    # ── BUILD WITNESS ──────────────────────────────────────────────
+    w = WitnessBuilder("m-p-substrate-identity-50dps", engine="mpmath")
+    w.set_description(
+        "Production substrate-categorical prediction of m_p and m_n from "
+        "(m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| "
+        "and [3]_q!, plus the canonical Hecke-skein flavor-split formula. "
+        "CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. "
+        "Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where "
+        "the '12' is the Ocneanu cancellation reciprocal."
+    )
+    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_audit_only("docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md")
+
+    w.add_parameter("q0", mp.nstr(q, 25))
+    w.add_parameter("m_e_MeV", mp.nstr(m_e, 18))
+    w.add_parameter("m_mu_MeV", mp.nstr(m_mu, 18))
+    w.add_parameter("m_mu_over_m_e", mp.nstr(m_mu_over_m_e, 18))
+
+    w.add_data("substrate_building_blocks", {
+        "abs_trM_borromean": mp.nstr(trM_borromean(q), 25),
+        "qfact_3": mp.nstr(qfact_three(q), 25),
+        "q_cubed": mp.nstr(q ** 3, 25),
+        "F_Bor": mp.nstr(F, 25),
+        "flavor_split_X": mp.nstr(X, 25),
+    })
+
+    w.add_data("predictions", {
+        "m_p_MeV": mp.nstr(m_p_pred, 25),
+        "m_n_MeV": mp.nstr(m_n_pred, 25),
+        "M_N_MeV": mp.nstr(M_N_pred, 25),
+        "Q_beta_MeV": mp.nstr(Q_beta_pred, 25),
+        "Delta_m_pn_MeV": mp.nstr(Delta_m_pred, 25),
+    })
+
+    w.add_data("codata_comparison", {
+        "m_p_codata_MeV": mp.nstr(m_p_codata, 25),
+        "m_p_residual_ppm": mp.nstr(res_m_p_ppm, 12),
+        "m_n_codata_MeV": mp.nstr(m_n_codata, 25),
+        "m_n_residual_ppm": mp.nstr(res_m_n_ppm, 12),
+        "M_N_codata_MeV": mp.nstr(M_N_codata, 25),
+        "M_N_residual_ppm": mp.nstr(res_M_N_ppm, 12),
+        "Q_beta_codata_MeV": mp.nstr(Q_beta_codata, 25),
+        "Q_beta_residual_ppm": mp.nstr(res_Q_beta_ppm, 12),
+    })
+
+    # Assertions: tight matches
+    w.add_assertion(
+        name="m_p_matches_codata_within_1ppm",
+        computed=float(abs(res_m_p_ppm)),
+        expected=0.0,
+        tolerance=1.0,
+        unit="ppm",
+        source=(
+            "m_p substrate identity should match CODATA m_p within 1 ppm — "
+            "observed 0.24 ppm, well within tolerance."
+        ),
+    )
+    w.add_assertion(
+        name="m_n_matches_codata_within_10ppm",
+        computed=float(abs(res_m_n_ppm)),
+        expected=0.0,
+        tolerance=10.0,
+        unit="ppm",
+        source=(
+            "m_n via canonical flavor-split should match CODATA m_n within "
+            "10 ppm — observed 2.0 ppm (bottlenecked by flavor-split's "
+            "0.10% residual at q_0)."
+        ),
+    )
+
+    out = w.save()
+    print(f"\n  Witness: {out}")
+
+
+if __name__ == "__main__":
+    main()
