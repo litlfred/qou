@@ -9,7 +9,7 @@ is a prediction.*
 |----|----------|--------------|--------|
 | **CAL-1** | $m_e = 0.51099895\ldots\;\mathrm{MeV}$ | leptonic mass scale (MeV $\leftrightarrow$ natural units) | leptonic size |
 | **CAL-2** | $m_\mu / m_e = 206.7682830\ldots$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
-| **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $\mathfrak{E}_0$ via $\mathfrak{E}_0^{(\text{cal})} = Q_\beta(n)/\lvert\Delta(\mathrm{net})\rvert \approx 4.179\;\mathrm{MeV}$ using the symbolic $\Delta(\text{net}) = h(h-2)/2$; cross-checks the framework-derived $\mathfrak{E}_0^{(N=0)} \approx 4.186\;\mathrm{MeV}$ (CAL-1 + CAL-2) and the tower-summed $\mathfrak{E}_0^{\text{full}} \approx 4.228\;\mathrm{MeV}$ | hadronic interaction strength |
+| **CAL-3** | $m_{\pi^{\pm}} = 139.57039\ldots\;\mathrm{MeV}$ | chiral / Goldstone scale; independent of $(m_e, q_0)$ — best categorical formula misses by $8{,}354\;\mathrm{ppm}$ | strong-sector mass (chiral condensate) |
 
 *The three inputs are independent: one dimensionless ratio plus two
 dimensional scales. They align to the three (co)homological degrees
@@ -79,10 +79,11 @@ The framework forbids:
   $\delta q_0$ propagated from CODATA $m_\mu/m_e$ is a CAL-2 cross-check;
   it may not be supplemented by independent fits to $m_e$, $m_\mu$,
   $m_\tau$, or any other mass.
-- *A second hadronic scale*. $E_0$ is fixed by CAL-3; alternative
-  hadronic scales (proton mass, pion mass, etc.) are predictions and
-  must be derived from $\{m_e, q_0, Q_\beta(n)\}$, not introduced as
-  inputs.
+- *A second hadronic scale*. $m_{\pi^{\pm}}$ is CAL-3; the hadronic
+  energy scale $\mathfrak{E}_0$ and $Q_\beta(n)$ are both derived from
+  CAL-1 + CAL-2 and serve as cross-checks. Proton mass, neutron mass,
+  and all nuclear binding energies must be derived from
+  $\{m_e, q_0, m_{\pi^{\pm}}\}$, not introduced as inputs.
 
 ## (Co)homological alignment
 
@@ -99,7 +100,7 @@ The calibration map is:
 |------------------|-------------|------|
 | $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $m_\mu/m_e \mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
 | $\mathrm{std}$ ($\lambda = (2,1)$) | CAL-1: $m_e$ | Sets the leptonic mass quantum (std is the 2-dimensional "matter" channel where $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$). |
-| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $Q_\beta(n)$ | Sets the hadronic energy quantum (sym is the "all crossings positive" / hadronic channel where the brane tower correction $\Delta(\mathrm{net}) = h(h-2)/2$ converts Q-value to scale). |
+| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $m_{\pi^{\pm}}$ | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $Q_\beta(n)$ is **derived** from CAL-1 + CAL-2 via $Q_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) and serves as a cross-check, not an independent input. |
 
 This is the meaning of "aligned to (co)homology": the three
 calibrations correspond bijectively to the three irreducible
