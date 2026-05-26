@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:psd-trace-orthogonality",
   title:
     "PSD-vs-trace orthogonality of canonical atom-braid Wedderburn blocks. At q₀, the partitions λ ⊢ 3A that dominate the Markov trace `Σ_λ y_λ χ^λ(T_w)` and the partitions that dominate the PSD obstruction `α* = 1/(1 − ε_min)` live in *disjoint shape-class subcategories*: trace-dominant = 1/2-row long-string partitions, PSD-dominant = 3+row multi-step narrow partitions. Empirically supported with 10⁵ magnitude separation at A=4 and 10⁹ at A=6.",
+  lean: { ref: "qou:QOU.BraidKnot.PSDTraceOrthogonality.psd_trace_orthogonality_holds_for_all_atoms" },
   uses: ["conj:atom-braid-exterior-algebra"],
   cites: [],
   authorNotes: [
