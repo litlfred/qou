@@ -202,6 +202,20 @@ export function checkUnicodeCrash(mdPath: string): CheckerResult {
 const EDITORIALIZING_RE =
   /\b(surprisingly|remarkably|interestingly|notably|amazingly|fortunately|unfortunately|of course\b|clearly|obviously|trivially|naturally|simply|merely|just\s+(?:a|the)|easily|effortlessly|seamlessly|elegantly|beautifully|perhaps the most (?:surprising|important|significant|interesting|elegant)|it is (?:worth|important|interesting|notable|easy|clear|obvious) (?:to (?:note|see|observe|point\s+out)|noting|that)|the reader (?:will|may|can) (?:appreciate|note|see|enjoy|find)|it turns out that|one might (?:expect|hope|wonder|think|imagine|suspect)|a beautiful (?:result|theorem|proof|fact|observation)|an elegant (?:proof|argument|construction|formulation)|(?:a|the) (?:truly|particularly|especially)\s+(?:beautiful|elegant|striking|surprising|remarkable)|nicely|cleanly|crisply|tidily)\b/i;
 
+// Math-idiom exemption: a flagged adverb that modifies a math object
+// is canonical mathematical language, not editorializing. Several
+// patterns count:
+//   (a) "naturally an algebra", "trivially zero", "just a formal map"
+//       — adverb + article + math noun
+//   (b) "decomposes naturally as a tensor", "factor trivially"
+//       — math verb + adverb
+//   (c) "naturally $\mathfrak{g}$" — adverb + math-mode region
+//   (d) "non-simply-laced", "tri-cleanly", etc. — adverb as part of
+//       a hyphenated compound math term
+//   (e) "contribute trivially" — verb + adverb at end of clause
+const MATH_IDIOM_EXEMPT =
+  /(?:naturally|trivially|easily|cleanly|simply|nicely|just)\s+(?:an?|the)\s+\S+|(?:decomposes|attaches|factors|contributes?|contribute|extends|embeds|maps|acts|commutes|generates|bar-classify|generate)\s+(?:naturally|trivially|easily|cleanly|nicely|simply)\b|(?:naturally|trivially|easily|cleanly|nicely|simply)\s+\$|(?:non|un|tri|semi|quasi|bi|sub|super|hyper|inter|intra|pre|post)-(?:simply|naturally|trivially|easily|cleanly|nicely)|(?:simply|naturally|trivially|easily|cleanly|nicely)-(?:laced|connected|graded|ordered)/i;
+
 export function checkEditorializing(mdPath: string): CheckerResult {
   // Skip lines that are clearly in fenced code (Lean / TeX snippets).
   const lines = readLines(mdPath);
@@ -213,9 +227,12 @@ export function checkEditorializing(mdPath: string): CheckerResult {
       return;
     }
     if (inFence) return;
-    if (EDITORIALIZING_RE.test(l)) {
-      hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
-    }
+    if (!EDITORIALIZING_RE.test(l)) return;
+    // Math-idiom exemption: if the editorial adverb is in a math
+    // construction (e.g. "naturally an algebra", "non-simply-laced",
+    // "contribute trivially"), it's canonical math language.
+    if (MATH_IDIOM_EXEMPT.test(l)) return;
+    hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
   });
   return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
