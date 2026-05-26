@@ -144,23 +144,24 @@ Scoped `sorry`s mark where the chain is in progress.
 /-- **H_2 case for `(2)`**: `y_(2)(q) = q / (q + q⁻¹)`. -/
 theorem qSchur_H2_top (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
     ySchurClosedForm [2] q = q / (q + q⁻¹) := by
-  -- Proof outline:
-  -- 1. contentSum [2] = 1 (one row of length 2: contents 0, 1; sum = 1)
-  -- 2. List.sum [2] = 2
-  -- 3. qFactorial 2 q = qBracket 2 q * qBracket 1 q * 1 = (q + q⁻¹) * 1 * 1
-  -- 4. ySchurClosedForm [2] q = q^1 / (q + q⁻¹) = q / (q + q⁻¹)
-  -- Full simplification chain pending; cf. audit cross-check.
-  sorry  -- Ref: [manuscript] audit 2026-05-25-markov-trace-convention-audit.md H_2 check
+  unfold ySchurClosedForm
+  have hc : contentSum [2] = 1 := by decide
+  have hs : ([2] : List ℕ).sum = 2 := by decide
+  rw [hc, hs]
+  simp only [qFactorial, qBracket, dif_neg h2]
+  field_simp
+  ring
 
 /-- **H_2 case for `(1,1)`**: `y_{(1,1)}(q) = q⁻¹ / (q + q⁻¹)`. -/
 theorem qSchur_H2_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
     ySchurClosedForm [1, 1] q = q⁻¹ / (q + q⁻¹) := by
-  -- Proof outline:
-  -- 1. contentSum [1, 1] = (0) + (-1) = -1 (two rows of length 1: contents 0, -1)
-  -- 2. List.sum [1, 1] = 2
-  -- 3. qFactorial 2 q = (q + q⁻¹)
-  -- 4. ySchurClosedForm [1,1] q = q^(-1) / (q + q⁻¹) = q⁻¹ / (q + q⁻¹)
-  sorry  -- Ref: [manuscript] audit 2026-05-25-markov-trace-convention-audit.md H_2 check
+  unfold ySchurClosedForm
+  have hc : contentSum [1, 1] = -1 := by decide
+  have hs : ([1, 1] : List ℕ).sum = 2 := by decide
+  rw [hc, hs]
+  simp only [qFactorial, qBracket, dif_neg h2]
+  field_simp
+  ring
 
 /-- **H_2 Plancherel normalization**: `y_(2)(q) + y_{(1,1)}(q) = 1`. -/
 theorem qSchur_H2_normalization (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :

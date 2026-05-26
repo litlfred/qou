@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-26T14:32:51.920705+00:00",
+  "commitSha": "e4dde0bc4bf27aeb9614bf82bd1aad60be5a8291",
+  "assertions": [
+    {
+      "name": "gap_exists",
+      "computed": 2112.5532073149175,
+      "expected": 2113,
+      "passed": true,
+      "tolerance": 100,
+      "source": "Mass-derived Q_β vs N=3 categorical Q_β gap"
+    },
+    {
+      "name": "pathC_improves_m_n",
+      "computed": 0.241906391208186,
+      "expected": 0.24,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Path C m_n should inherit m_p's 0.24 ppm accuracy"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "q-beta-consistency-gap-diagnostic",
+  "scriptFile": "q_beta_consistency_gap_diagnostic.py",
+  "scriptHash": "90cfbf1f6cbc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Decompose the 2113 ppm gap between mass-derived Q_β (Path A: flavor-split) and N=3 categorical Q_β (Path B: precision ladder). Test Path C: m_n via categorical Q_β bypassing flavor-split.",
+  "data": {
+    "path_A_mass_derived": {
+      "m_p_pred_MeV": "938.27186086862581805327611386978339852328993486435",
+      "m_n_pred_MeV": "939.56354051216533288855963171876687648996144298105",
+      "Q_beta_MeV": "0.78068069353951488346257858993283116984896020411006",
+      "Q_beta_ppm_vs_codata": "-2112.5474629610470230353558342641852031460928828238",
+      "flavor_split_X": "0.001375711249867512216725087899537173398853688341329",
+      "flavor_split_X_codata": "0.0013774699397810305325677301562633093883972785231479",
+      "flavor_split_X_residual_pct": "-0.12767537517355085"
+    },
+    "path_B_categorical": {
+      "Q_beta_MeV": "0.782333414494",
+      "Q_beta_ppb_vs_codata": "5.744353870584332"
+    },
+    "path_C_m_n_via_categorical_Q_beta": {
+      "m_n_pred_MeV": "939.56519323311981800509705312883404532011248277694",
+      "m_n_ppm_vs_codata": "-0.241906391208186",
+      "improvement_over_pathA": "8.271519381856697"
+    },
+    "gap_decomposition": {
+      "total_gap_keV": "-1.6527209544851165",
+      "total_gap_ppm": "-2112.5532073149175",
+      "m_p_residual_contribution_keV": "-0.22729137418194673",
+      "flavor_split_contribution_keV": "-1.4254295803031698",
+      "dominant_source": "flavor-split X"
+    }
+  }
+}
