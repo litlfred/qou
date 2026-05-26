@@ -51,6 +51,39 @@
       },
       "spread_factor": 7.7,
       "note": "Wenzl y_\u03bb tightens spread from 170\u00d7 (q-Schur) to 7.7\u00d7"
+    },
+    "categorical_ansatz_comparison": {
+      "best": "A: sign \u00d7 dim(V_\u03bb) \u2014 classical S_n dimension at q=1",
+      "spread": 2.8,
+      "C_knot": {
+        "D": 5.85,
+        "T": 4.44,
+        "3He": 3.29,
+        "4He": 9.31
+      },
+      "avg_C": 5.72,
+      "all_ansatze": {
+        "A_sign_dim": {
+          "spread": 2.8,
+          "note": "BEST \u2014 purely categorical"
+        },
+        "B_sign_inv_dim": {
+          "spread": 549.8
+        },
+        "C_sign_dim_over_nfac": {
+          "spread": 1058803.5
+        },
+        "D_pure_sign": {
+          "spread": 122.4
+        },
+        "E_content": {
+          "spread": 23.4
+        },
+        "F_sign_content": {
+          "spread": 8.9
+        }
+      },
+      "discipline_note": "Cat\u2192Alg\u2192Geom\u2192Arch: \u0394_\u03bb at categorical level (q-independent). [n]_q! rescaling (algebraic) made spread WORSE (14305\u00d7), confirming the gap is categorical."
     }
   },
   "assertions": [
