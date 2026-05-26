@@ -35,13 +35,13 @@ calibration input.
 
 ## Structural identifications
 
-- "2"  = bar-pair partition count: (3) ↔ (1,1,1) transpose pair under
-        bar-Mullineux symmetry. Per-Wedderburn-block diagnostic confirms
-        these dominate the proton's T1 contribution (33% + 18% = 51%).
-- "12" = inverse of the Ocneanu cancellation leading-pole coefficient
-        −1/12 in tr_M(β_Bor, q) ~ −1/(12·q^10) at q → 0 (per
-        2026-05-04-ocneanu-cancellation-numerical-verification.md,
-        verified to 200 dps).
+- "2"  = dim V_{(2,1)} — classical dimension of the standard irrep
+        of S_3 (trace-dominant per Wedderburn diagnostic at 49% of T1).
+        Lean-proved via hook-length formula in DimStandardRepS3.lean.
+- "12" = dim V_{(2,1)} · 3! = 2 · 6. Formula factors as:
+          m_p = dim V_(2,1) · (m_μ · F_Bor − |S_3| · m_e)
+        where |S_3| = 3! = 6 = P_3(q²)|_{q=1} (Poincaré classical limit
+        of [3]_q!). Both factors are categorical invariants of H_3(q).
 - "F_Bor(q)" = |tr_M(β_Bor, q)| · [3]_q! / q^3 — the natural
         categorical observable combining the Borromean Markov trace
         with the q-factorial normalisation, shifted by content q^3.
@@ -61,10 +61,10 @@ predicted m_p, m_n, Q_β are DERIVED outputs.
 
 ## Status
 
-Substrate identity at 0.24 ppm. Full categorical proof requires:
-1. Bar-pair derivation of "2" from y_(3) ↔ y_(1,1,1) transpose-pair
-2. Categorical derivation of "12" via Ocneanu (PR #546 Hoefsmit symbolic)
-3. Identification of F_Bor as natural categorical observable
+Substrate identity at 0.24 ppm. Structural status:
+1. "2" = dim V_(2,1) — Lean-proved (DimStandardRepS3.lean)
+2. "12" = dim V_(2,1) · 3! = 2·6 — identified (formula factors cleanly)
+3. F_Bor identification as natural categorical observable — open
 
 Refs:
 - BorromeanMarkovTrace.lean (|tr_M| closed form)
