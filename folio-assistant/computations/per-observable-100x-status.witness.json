@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T15:08:34.538481+00:00",
-  "commitSha": "d8d9ba88d56b52483f5e8681fc54ec193b0964c2",
+  "computedAt": "2026-05-26T15:35:19.133550+00:00",
+  "commitSha": "f0cc2f285f227dae8b3a3646ce5167682020fa64",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "ae69d99e8cef",
-  "scriptCommitSha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0",
+  "scriptHash": "1dc5f498ae01",
+  "scriptCommitSha": "db220b15c21b1a5f282c6c6cecad2d68672a0d69",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -46,23 +46,6 @@
         "compute_output_dps": 40
       },
       {
-        "obs": "m_n",
-        "role": "validation",
-        "pred_MeV": "939.565193233",
-        "codata_MeV": "939.565420520",
-        "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "241.9",
-        "sigma_exp_ppb": "0.5747",
-        "target_100x_ppb": "0.005747",
-        "miss_factor": "4.209e+4",
-        "beats_1x_experimental": false,
-        "beats_100x_experimental": false,
-        "source_witness": "m-p-substrate-identity-50dps.witness.json",
-        "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.064e-34",
-        "compute_output_dps": 40
-      },
-      {
         "obs": "m_mu",
         "role": "validation",
         "pred_MeV": "105.658375649",
@@ -80,23 +63,6 @@
         "compute_output_dps": 40
       },
       {
-        "obs": "Delta_pn",
-        "role": "validation (derived)",
-        "pred_MeV": "1.29333236400",
-        "codata_MeV": "1.29333236000",
-        "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "3.093",
-        "sigma_exp_ppb": "473.9",
-        "target_100x_ppb": "4.739",
-        "miss_factor": "0.6526",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
-        "source_witness": "m-p-substrate-identity-50dps.witness.json",
-        "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
-        "compute_truncation_ppb": "7.732e-32",
-        "compute_output_dps": 40
-      },
-      {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
         "pred_MeV": "0.782333414494",
@@ -111,6 +77,40 @@
         "source_witness": "q-beta-operator-valued-N3.witness.json (N=5 categorical, c_5 = c_3²·3 + b per precision-ladder.md mixing pattern)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
         "compute_truncation_ppb": "1.278e-31",
+        "compute_output_dps": 40
+      },
+      {
+        "obs": "m_n",
+        "role": "validation",
+        "pred_MeV": "939.565193234",
+        "codata_MeV": "939.565420520",
+        "sigma_exp_MeV": "5.40000e-7",
+        "err_ppb": "241.9",
+        "sigma_exp_ppb": "0.5747",
+        "target_100x_ppb": "0.005747",
+        "miss_factor": "4.209e+4",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
+        "compute_truncation_ppb": "1.064e-34",
+        "compute_output_dps": 40
+      },
+      {
+        "obs": "Delta_pn",
+        "role": "validation (derived)",
+        "pred_MeV": "1.29333236518",
+        "codata_MeV": "1.29333236000",
+        "sigma_exp_MeV": "6.12944e-7",
+        "err_ppb": "4.008",
+        "sigma_exp_ppb": "473.9",
+        "target_100x_ppb": "4.739",
+        "miss_factor": "0.8458",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": true,
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
+        "compute_truncation_ppb": "7.732e-32",
         "compute_output_dps": 40
       },
       {
