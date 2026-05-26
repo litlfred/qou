@@ -58,6 +58,40 @@ At $q_0 = 1.10977859555\ldots$ (50 dps):
 | CODATA $m_p$ | $938.27209\,\mathrm{MeV}$ |
 | Residual | $0.24\,\mathrm{ppm}$ |
 
+## Exact rational $h$-expansion of $F_{\mathrm{Bor}}$
+
+Every coefficient of $F_{\mathrm{Bor}}$ in the variable
+$h = q - q^{-1}$ is an exact rational number, derivable from
+Lean-proved closed forms:
+
+$$
+  F_{\mathrm{Bor}}(h)
+  = 6 - 9h + \tfrac{19}{2}h^2 - \tfrac{57}{8}h^3
+    - \tfrac{1}{2}h^4 + \tfrac{649}{128}h^5 - 7h^6 + \cdots
+$$
+
+At $h_0 = q_0 - q_0^{-1} \approx 0.2091$, the per-order MeV
+contributions to $m_p = 2 m_\mu F_{\mathrm{Bor}} - 12 m_e$ are:
+
+| Order | Coefficient | $2 m_\mu \cdot c_k \cdot h_0^k$ |
+|---|---|---|
+| $h^0$ | $6$ | $+1267.9\,\mathrm{MeV}$ |
+| $h^1$ | $-9$ | $-397.6\,\mathrm{MeV}$ |
+| $h^2$ | $19/2$ | $+87.7\,\mathrm{MeV}$ |
+| $h^3$ | $-57/8$ | $-13.8\,\mathrm{MeV}$ |
+| $-12 m_e$ | — | $-6.1\,\mathrm{MeV}$ |
+| **Sum** | | $\approx 938.1\,\mathrm{MeV}$ |
+
+The $h^2$ coefficient $19/2$ decomposes cleanly across the three
+factors of $F_{\mathrm{Bor}} = |\mathrm{tr}_M| \cdot [3]_q! / q^3$:
+
+- $|\mathrm{tr}_M|$ contributes $h^2 = 0$ (exact per-partition
+  cancellation, [`prop:borromean-markov-trace-closed-form`](../mass-application/borromean-markov-trace-closed-form.md))
+- $[3]_q! = (h^2 + 3)\sqrt{h^2 + 4}$ contributes $11/4$
+- $q^3$ (denominator) contributes $9/8$
+
+The series converges to $0.017\,\mathrm{ppm}$ accuracy at order $h^9$.
+
 ## Combined with the canonical flavor-split
 
 [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
@@ -80,6 +114,24 @@ nucleon masses from only $(m_e, m_\mu, q_0)$:
     $\approx 939.56354\,\mathrm{MeV}$ ($2.00\,\mathrm{ppm}$ residual)
   - $Q_\beta := m_n - m_p - m_e$ is now DERIVED, not an input
     (matches CODATA to $-2113\,\mathrm{ppm}$, bottlenecked by $m_n$)
+
+The flavor-split $X$ is an $h^3$-leading quantity:
+
+$$
+  X = \tfrac{1}{6}h^3 - \tfrac{1}{12}h^4 + \tfrac{1}{32}h^5 - \cdots
+$$
+
+with $h^0 = h^1 = h^2 = 0$. The neutron-proton mass difference
+$\Delta_{pn} = m_p \cdot X/(1 - X/2)$ is therefore a **cubic**
+effect in the deformation parameter $h$, not a quadratic one.
+The dominant MeV contributions are $h^3$: $+1.43\,\mathrm{MeV}$,
+$h^4$: $-0.15\,\mathrm{MeV}$.
+
+The residual decomposition of $m_n$ (2.0 ppm) separates cleanly:
+$0.24\,\mathrm{ppm}$ from $F_{\mathrm{Bor}}$ (proton mass) and
+$1.76\,\mathrm{ppm}$ from $X$ (flavor-split formula). The
+$Q_\beta$ residual ($2113\,\mathrm{ppm}$) is dominated entirely
+by $X$.
 
 The QOU 3-calibration discipline reduces to **2 calibrations**
 $(m_e, m_\mu/m_e)$ for the baryon + $Q_\beta$ sector (or equivalently
