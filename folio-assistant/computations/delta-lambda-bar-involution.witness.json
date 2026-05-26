@@ -1,0 +1,106 @@
+{
+  "engine": "python3/mpmath+numpy",
+  "engineVersion": "50dps",
+  "computedAt": "2026-05-26T15:04:51Z",
+  "computation": "delta-lambda-bar-involution-multi-atom",
+  "scriptFile": "delta_lambda_bar_involution_probe.py",
+  "description": "\u0394_\u03bb with bar-involution (\u0394_\u03bb = \u0394_{\u03bb^T}) + minimum-norm selection on the deuteron. Reduces 11 free params to 8 via conjugate-pair identification. Single-atom minimum-norm gives the unique smallest-L2 bar-symmetric \u0394.",
+  "data": {
+    "n_self_conjugate": 1,
+    "n_conjugate_pairs": 5,
+    "n_free_after_bar": 6,
+    "self_conjugate_partitions": [
+      [
+        3,
+        2,
+        1
+      ]
+    ],
+    "conjugate_pairs": [
+      [
+        [
+          6
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          4,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ]
+    ],
+    "delta_star": {
+      "(3, 2, 1)": 1.1937520287748369,
+      "(6,)": -7.633710438447545,
+      "(5, 1)": -15.694865956287728,
+      "(4, 2)": -5.5980420561688335,
+      "(4, 1, 1)": 0.3661849408823113,
+      "(3, 3)": -4.737331282677337
+    },
+    "mass_eq_residual": 8.881784197001252e-16,
+    "B_D_predicted_MeV": -2952.1389868895894,
+    "B_D_AME_MeV": 2.22452
+  },
+  "assertions": [
+    {
+      "label": "mass equation satisfied",
+      "passed": true
+    },
+    {
+      "label": "bar-involution reduces params",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}
