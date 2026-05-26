@@ -1126,6 +1126,23 @@
         },
         "reviewed_at": "2026-05-26T14:13:35.262Z",
         "reviewed_sha": "4a658d3efc0c0d264260d3e94d4447f8ab875f22"
+      },
+      {
+        "field_hash": {
+          "md": "219202930313",
+          "ts": "866a0c87f7b5",
+          "lean": "e632040eab38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "3dc4cbe3c691d1f26b26723e044a8eb87cc05e7b"
+        },
+        "reviewed_at": "2026-05-26T14:26:49.037Z",
+        "reviewed_sha": "acb7a670fdfbd0a23aa68e2d3f91909b5311bf89"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1366,6 +1383,23 @@
         },
         "reviewed_at": "2026-05-26T14:13:35.262Z",
         "reviewed_sha": "4a658d3efc0c0d264260d3e94d4447f8ab875f22"
+      },
+      {
+        "field_hash": {
+          "md": "219202930313",
+          "ts": "866a0c87f7b5",
+          "lean": "e632040eab38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "3dc4cbe3c691d1f26b26723e044a8eb87cc05e7b"
+        },
+        "reviewed_at": "2026-05-26T14:26:49.037Z",
+        "reviewed_sha": "acb7a670fdfbd0a23aa68e2d3f91909b5311bf89"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1606,6 +1640,23 @@
         },
         "reviewed_at": "2026-05-26T14:13:35.262Z",
         "reviewed_sha": "4a658d3efc0c0d264260d3e94d4447f8ab875f22"
+      },
+      {
+        "field_hash": {
+          "md": "219202930313",
+          "ts": "866a0c87f7b5",
+          "lean": "e632040eab38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "3dc4cbe3c691d1f26b26723e044a8eb87cc05e7b"
+        },
+        "reviewed_at": "2026-05-26T14:26:49.037Z",
+        "reviewed_sha": "acb7a670fdfbd0a23aa68e2d3f91909b5311bf89"
       }
     ],
     "bib-cite-resolves": [
@@ -1890,5 +1941,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:13:35.262Z"
+  "updated_at": "2026-05-26T14:26:49.037Z"
 }
