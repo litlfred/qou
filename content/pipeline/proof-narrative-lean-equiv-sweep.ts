@@ -173,8 +173,14 @@ function checkEquivalence(
   const hasDefDecl = leanDecls.some((d) =>
     leanText.includes(`def ${d}`) || leanText.includes(`noncomputable def ${d}`)
   );
+  const hasStructureDecl = leanDecls.some((d) =>
+    leanText.includes(`structure ${d}`) ||
+    leanText.includes(`class ${d}`) ||
+    leanText.includes(`inductive ${d}`) ||
+    leanText.includes(`abbrev ${d}`)
+  );
 
-  if (kind === "definition" && !hasDefDecl && hasTheoremDecl) {
+  if (kind === "definition" && !hasDefDecl && !hasStructureDecl && hasTheoremDecl) {
     return {
       result: "warn",
       evidence: `Block kind is 'definition' but Lean has theorem/lemma, no def. Decls: ${leanDecls.join(", ")}`,
@@ -182,7 +188,7 @@ function checkEquivalence(
     };
   }
 
-  if (isProvable && !hasTheoremDecl && hasDefDecl && !leanDecls.some((d) =>
+  if (isProvable && !hasTheoremDecl && (hasDefDecl || hasStructureDecl) && !leanDecls.some((d) =>
     leanText.includes(`class ${d}`) || leanText.includes(`instance`)
   )) {
     return {

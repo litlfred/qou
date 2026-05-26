@@ -1500,18 +1500,17 @@
           "ts": "0a4eafba0d9b",
           "lean": "1ceda5817a47"
         },
-        "result": "warn",
-        "evidence": "Block kind is 'definition' but Lean has theorem/lemma, no def. Decls: LeviFormDefect, matter_locus_nonempty",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-26T13:49:56.504Z",
-        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
-        "notes": "Kind-declaration mismatch: .ts says definition but .lean has theorem."
+        "reviewed_at": "2026-05-26T14:03:27.982Z",
+        "reviewed_sha": "f7854ebd751c85ba2f0c2d6ce4db0f9a5b7a736e",
+        "notes": "Label 'def:levi-form-defect' → expected 'levi_form_defect'; Lean declares: LeviFormDefect, matter_locus_nonempty. Structural match via content."
       }
     ]
   },
-  "updated_at": "2026-05-26T13:49:56.504Z"
+  "updated_at": "2026-05-26T14:03:27.982Z"
 }
