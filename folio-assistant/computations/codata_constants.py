@@ -18,7 +18,7 @@ binding energy in the paper is a prediction.
 |-------|----------------------|----------------------|------------------------------------------|
 | CAL-1 | m_e                  | M_E_MEV              | (hardcoded — framework's only direct mass anchor) |
 | CAL-2 | m_μ / m_e            | (in q_parameter.py)  | q-pinning-50-digit.witness.json:calibration_inputs |
-| CAL-3 | Q_β(n)               | Q_BETA_MEV           | cal-3-q-beta.witness.json               |
+| CAL-3 | m_π±                 | M_PI_PM_MEV_VALIDATION | PDG 2024 (139.57039 MeV, 1.3 ppb)        |
 
 `m_p`, `m_n`, `m_D`, `m_T`, `m_3He`, `m_4He` are **predictions** of
 the framework. They are exposed below for **validation only** —
@@ -35,7 +35,7 @@ The neutron-gap probes (round 3, witness
 violation and recommend the correct chain:
 
     m_p_pred = |tr_M(p, q_0)| · E_0
-    m_n_pred = m_p_pred + Q_β + m_e        (3-input convention)
+    m_n_pred = m_p_pred + Q_β_derived + m_e (Q_β derived from CAL-1+CAL-2)
     m_K_pred = (Z·m_p + N·m_n)_pred + Binding(K)
 
 The script-side migration to the categorical chain is tracked as
@@ -96,10 +96,10 @@ def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
 # M_E_MEV at the full precision — this import unifies them.
 from codata_2022_source import M_E_MEV, M_E_MEV_ERR  # noqa: E402
 
-# ── CAL-3: free-neutron β-decay Q-value (legitimate calibration) ─
-# Loaded from cal-3-q-beta.witness.json. Fixes hadronic energy scale
-# E_0 via E_0 = Q_β(n) / |Δ(net)| with Δ(net) = h(h-2)/2 from the
-# symbolic NF difference between neutron and proton.
+# ── Q_β: DERIVED from CAL-1 + CAL-2 (cross-check, NOT independent) ─
+# Q_β = m_e·|q₀²−2q₀−1|·(q₀+1)/(2q₀³) ≈ 0.784 MeV (0.17% miss).
+# Historically listed as CAL-3 but is redundant with CAL-2.
+# Retained as a validation cross-check. CAL-3 is now m_π (see above).
 Q_BETA_MEV = _load_mpf(_CAL3_WITNESS, "data.Q_beta_n_MeV")
 Q_BETA_MEV_ERR = _load_mpf(_CAL3_WITNESS, "data.Q_beta_n_MeV_err")
 
@@ -172,10 +172,9 @@ M_K_PM_MEV_VALIDATION  = mp.mpf("493.677")       # ± 0.013 MeV (26 ppm)
 M_K_0_MEV_VALIDATION   = mp.mpf("497.611")       # ± 0.013 MeV (26 ppm)
 M_MU_MEV_VALIDATION    = mp.mpf("105.6583755")   # ± 0.0000023 MeV (22 ppb)
 
-# ── Internal consistency check (CAL-3 vs CODATA m_n − m_p − m_e) ─
-# Q_β must agree with (m_n − m_p − m_e) within combined CODATA σ.
-# This is a *cross-check*, not the definition of Q_β: per CAL-3,
-# Q_β is the primary input; m_p, m_n are predictions.
+# ── Internal consistency check (Q_β derived vs CODATA m_n − m_p − m_e) ─
+# Q_β is derived from CAL-1 + CAL-2; this check verifies it agrees
+# with (m_n − m_p − m_e) within combined CODATA σ.
 _q_beta_from_codata_check = (
     M_N_MEV_VALIDATION - M_P_MEV_VALIDATION - M_E_MEV
 )
@@ -188,7 +187,7 @@ _q_beta_combined_err = mp.sqrt(
 )
 if _q_beta_residual > 5 * _q_beta_combined_err:
     warnings.warn(
-        f"CAL-3 consistency check failed: |Q_β - (m_n - m_p - m_e)| = "
+        f"Q_β consistency check failed: |Q_β - (m_n - m_p - m_e)| = "
         f"{float(_q_beta_residual):.3e} MeV exceeds 5× combined CODATA σ "
         f"({float(_q_beta_combined_err):.3e} MeV). Verify CODATA refresh "
         f"in codata-2022-validation-masses.witness.json + "
@@ -236,9 +235,9 @@ def __getattr__(name: str):
 
 
 __all__ = [
-    # Legitimate calibration inputs (CAL-1, CAL-3)
+    # Legitimate calibration inputs (CAL-1) + derived cross-check (Q_β)
     "M_E_MEV", "M_E_MEV_ERR",
-    "Q_BETA_MEV", "Q_BETA_MEV_ERR",
+    "Q_BETA_MEV", "Q_BETA_MEV_ERR",  # derived from CAL-1+CAL-2; kept for cross-check
     # Validation-only experimental values (loaded from witness)
     "M_P_MEV_VALIDATION", "M_P_MEV_VALIDATION_ERR",
     "M_N_MEV_VALIDATION", "M_N_MEV_VALIDATION_ERR",

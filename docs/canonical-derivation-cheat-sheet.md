@@ -29,9 +29,10 @@
 ```
             ┌─────────────────────────────────────────┐
             │  3 calibration inputs (only)            │
-            │   m_e ─── leptonic scale                │
-            │   m_μ/m_e ─── fixes q_0 (substrate)     │
-            │   Q_β ─── fixes 𝔈₀ (hadronic scale)    │
+            │   m_e ─── leptonic scale (CAL-1)        │
+            │   m_μ/m_e ─── fixes q_0 (CAL-2)        │
+            │   m_π ─── chiral/Goldstone scale (CAL-3)│
+            │   [Q_β derived from CAL-1+CAL-2]       │
             └─────────────────────────────────────────┘
                             │
    step 1. Cat action  ↓  ρ_n : B_n → Aut_𝐂(V^⊗n) via R-matrix
@@ -265,7 +266,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 
 ## 8. The "everything is derivation, not fit" discipline (CLAUDE-facing)
 
-**The 3-calibration rule** is strict: only $m_e$, $m_\mu/m_e$, $Q_\beta$ may be calibrated against experiment. Everything else MUST derive from these three via the chain above.
+**The 3-calibration rule** is strict: only $m_e$, $m_\mu/m_e$, $m_\pi$ may be calibrated against experiment. $Q_\beta$ is **derived** from CAL-1 + CAL-2 via $Q_\beta = m_e |q_0^2 - 2q_0 - 1|(q_0+1)/(2q_0^3)$ (0.17% miss). Everything else MUST derive from these three via the chain above.
 
 **Common pitfalls** (look for these in code review):
 - Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `prop:lambda-scale-bring-bloch-identity`.

@@ -326,7 +326,7 @@ URLs.
 
 **Authoritative cross-link**: [`docs/canonical-derivation-cheat-sheet.md`](docs/canonical-derivation-cheat-sheet.md).
 
-The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** (m_e, m_μ/m_e, Q_β) via a strict chain:
+The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** (m_e, m_μ/m_e, m_π) via a strict chain. Q_β is **derived** from CAL-1 + CAL-2 via Q_β = m_e·|q₀²−2q₀−1|·(q₀+1)/(2q₀³) ≈ 0.784 MeV (0.17% miss); m_π (139.57 MeV) is the genuine CAL-3 (chiral/Goldstone scale, independent of (m_e, q₀)):
 
 ```
 substrate q_0 → 𝐂 categorical action → Yekutieli non-abelian Stokes → 𝐇_n(q) Hecke
