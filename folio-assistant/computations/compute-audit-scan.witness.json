@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T15:34:19.401675+00:00",
-  "commitSha": "33f8f52e601aba0a31118045d9bf646875521eaf",
+  "computedAt": "2026-05-26T00:38:08.719485+00:00",
+  "commitSha": "f2e51e9f36aafbfa049e2d420146bc991f77fd2b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "71d674da186600ad04a5754792acbf59838f4dad",
+  "scriptCommitSha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 610,
+    "files_scanned": 617,
     "patterns": [
       "P15",
       "P16",
@@ -30,7 +30,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 113,
+      "P15": 114,
       "P16": 177,
       "P21": 19,
       "P30": 131,
@@ -1210,6 +1210,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "gram_h3_det_factorization.py",
+        "line": 95,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P30",
