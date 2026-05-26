@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-26T15:33:38.767320+00:00",
+  "computedAt": "2026-05-26T16:40:43.383107+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -290,6 +290,14 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/meson_geom_full.py",
+        "line": 135,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_BETA_CODATA = mpf('0.78233341')",
+        "kind": "active"
+      },
+      {
         "file": "folio-assistant/computations/meson_mass_from_hecke.py",
         "line": 131,
         "pattern": "literal_0_78233341",
@@ -370,6 +378,14 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/precision_ladder_ck_symbolic_probe.py",
+        "line": 37,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_codata = mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
         "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA.py",
         "line": 8,
         "pattern": "literal_0_78233341",
@@ -433,6 +449,22 @@
         "pattern": "literal_0_78233",
         "match": "0.78233",
         "context": "\"Q_observed_MeV\": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/kaon_pion_ratio_7_8_probe.py",
+        "line": 68,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "print(f\"  Q_β (derived)  = {float(Q_beta):.6f} MeV  (vs 0.78233 CODATA, 1678 ppm)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/kaon_pion_ratio_7_8_probe.py",
+        "line": 91,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "print(f\"  {'Q_β':15s} {float(Q_beta):>12.6f} {'0.78233':>12s} {'1678 ppm':>10s}\")",
         "kind": "doc"
       },
       {
@@ -1025,14 +1057,6 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 21,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "| CAL-3 | Q_β(n)               | Q_BETA_MEV           | cal-3-q-beta.witness.json               |",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/codata_constants.py",
         "line": 103,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1049,7 +1073,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 182,
+        "line": 181,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "_q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)",
@@ -1057,7 +1081,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 187,
+        "line": 186,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "+ Q_BETA_MEV_ERR ** 2",
@@ -1065,18 +1089,18 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 241,
+        "line": 240,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
+        "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",  # derived from CAL-1+CAL-2; kept for cross-check",
         "kind": "doc"
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 241,
+        "line": 240,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
+        "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",  # derived from CAL-1+CAL-2; kept for cross-check",
         "kind": "doc"
       },
       {
