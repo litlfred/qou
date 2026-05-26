@@ -12,3 +12,12 @@ Canonical declaration: `QOU.BraidKnot.GradedMarkovTraceFromGSFiltration`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** Graded Markov trace as the induced trace on $J^\\ell / J^{\\ell+1}$ -/
+theorem GradedMarkovTraceFromGSFiltration : True := by
+  -- Ref: [manuscript] prop:graded-markov-trace-from-gs-filtration
+  sorry
+
+end QOU.BraidKnot

@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-trace.ts
 -/
+
+namespace QOU.BraidKnot.HabiroResidueSumEquivalence
+
+/-- **CONJECTURE.** Archimedean agreement: Habiro polynomial trace evaluates to GB mass -/
+class GsArchimedeanAgreementTrace where
+  holds : Prop
+  -- Ref: [manuscript] conj:gs-archimedean-agreement-trace
+
+end QOU.BraidKnot.HabiroResidueSumEquivalence

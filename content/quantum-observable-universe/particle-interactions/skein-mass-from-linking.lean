@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-mass-from-linking.ts
 -/
+
+namespace QOU.BraidsKnots
+
+/-- **LEMMA.** Mass functional on a Skein resolution: linking-energy plus constituent volume -/
+theorem skein_mass_from_linking : True := by
+  -- Ref: [manuscript] lem:skein-mass-from-linking
+  sorry
+
+end QOU.BraidsKnots

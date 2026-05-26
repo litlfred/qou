@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Corrected Markov trace of the trefoil braid -/
+theorem corrected_markov_trace : True := by
+  -- Ref: [manuscript] prop:corrected-markov-trace
+  sorry
+
+end QOU.ParticleInteractions

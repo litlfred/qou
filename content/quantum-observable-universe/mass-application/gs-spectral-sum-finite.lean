@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-spectral-sum-finite.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Finiteness of the GS residue spectral sum -/
+class GsSpectralSumFinite where
+  holds : Prop
+  -- Ref: [manuscript] conj:gs-spectral-sum-finite
+
+end QOU.BraidKnot

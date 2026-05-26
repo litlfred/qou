@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-spectral-decomposition-existence.ts
 -/
+
+namespace QOU.BraidKnot.GBResidueSpectralSum
+
+/-- **CONJECTURE.** Spectral decomposition of the mass into descended trace and residue sum -/
+class GsSpectralDecompositionExistence where
+  holds : Prop
+  -- Ref: [manuscript] conj:gs-spectral-decomposition-existence
+
+end QOU.BraidKnot.GBResidueSpectralSum

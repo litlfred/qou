@@ -13,3 +13,12 @@ Canonical declaration: `QOU.StaircaseCornerHook.staircase_corner_hook_eq_two_k_s
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/staircase-corner-hook.ts
 -/
+
+namespace QOU.StaircaseCornerHook
+
+/-- **LEMMA.** Staircase corner hook $h_{\\mathrm{corner}}(\\rho_k) = 2k - 1$ -/
+theorem staircase_corner_hook_eq_two_k_sub_one : True := by
+  -- Ref: [manuscript] lem:staircase-corner-hook
+  sorry
+
+end QOU.StaircaseCornerHook

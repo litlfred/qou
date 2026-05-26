@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-anyonic-substrate.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation -/
+class HeckeAnyonicSubstrate where
+  holds : Prop
+  -- Ref: [manuscript] conj:hecke-anyonic-substrate
+
+end QOU.BraidKnot

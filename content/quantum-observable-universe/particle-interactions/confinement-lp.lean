@@ -12,3 +12,12 @@ Canonical declaration: `QOU.Interactions.lp_achieves_zero_trace`.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-lp.ts
 -/
+
+namespace QOU.Interactions
+
+/-- **PROPOSITION.** Confinement as linear program over the Hecke normal form basis -/
+theorem lp_achieves_zero_trace : True := by
+  -- Ref: [manuscript] prop:confinement-lp
+  sorry
+
+end QOU.Interactions

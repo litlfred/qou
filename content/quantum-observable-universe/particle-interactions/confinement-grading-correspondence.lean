@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-grading-correspondence.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Confinement levels coincide with KLR $\\mathbb{Z}$-grading shifts -/
+class ConfinementGradingCorrespondence where
+  holds : Prop
+  -- Ref: [manuscript] conj:confinement-grading-correspondence
+
+end QOU.BraidKnot

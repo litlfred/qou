@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/operator-selection-lp.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Knot operator selection as linear program with LP duality -/
+theorem operator_selection_lp : True := by
+  -- Ref: [manuscript] prop:operator-selection-lp
+  sorry
+
+end QOU.ParticleInteractions

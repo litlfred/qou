@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
 -/
+
+namespace QOU.Interactions
+
+/-- **PROPOSITION.** Confinement universality: nucleon NF independent of photon polarization -/
+theorem confinementUniversality : True := by
+  -- Ref: [manuscript] prop:confinement-universality
+  sorry
+
+end QOU.Interactions

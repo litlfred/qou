@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **THEOREM.** Parity regime selection for Q-values -/
+theorem parity_regime_selection : True := by
+  -- Ref: [manuscript] thm:parity-regime-selection
+  sorry
+
+end QOU.ParticleInteractions

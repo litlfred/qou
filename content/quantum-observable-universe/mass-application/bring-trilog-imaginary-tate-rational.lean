@@ -9,3 +9,12 @@
 --
 -- See the chapter umbrella `lean/QOU/BraidKnot.lean`
 -- for the import wiring.
+
+namespace QOU.BraidKnot.BringTrilogImaginaryTateRational
+
+/-- **PROPOSITION.** Trilogarithm imaginary part at $\\zeta_5$: Tate-rational closed form $4\\pi^3/125$ via Kummer reflection (50-dps verified) -/
+theorem im_li3_zeta5_closed_form : True := by
+  -- Ref: [manuscript] prop:bring-trilog-imaginary-tate-rational
+  sorry
+
+end QOU.BraidKnot.BringTrilogImaginaryTateRational

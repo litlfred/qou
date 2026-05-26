@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e1c50b910eb3",
     "ts": "677ce1a32c89",
-    "lean": "61bd72f64c2d"
+    "lean": "9d6c898d56e4"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1999,20 +1999,19 @@
         "field_hash": {
           "md": "e1c50b910eb3",
           "ts": "677ce1a32c89",
-          "lean": "61bd72f64c2d"
+          "lean": "9d6c898d56e4"
         },
-        "result": "warn",
-        "evidence": "Lean file exists but contains no declarations (theorem/def/class/etc).",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-26T14:03:27.982Z",
-        "reviewed_sha": "f7854ebd751c85ba2f0c2d6ce4db0f9a5b7a736e",
-        "notes": "Lean file may be empty or only contain comments."
+        "reviewed_at": "2026-05-26T14:23:00.108Z",
+        "reviewed_sha": "d8955b60baebf1cb230b808621230e842342eef9",
+        "notes": "Label 'prop:e-infinity-page-identifications' → expected 'e_infinity_page_identifications'; Lean declares: e_infinity_identifications. Structural match via content."
       }
     ]
   },
-  "updated_at": "2026-05-26T14:03:27.982Z"
+  "updated_at": "2026-05-26T14:23:00.108Z"
 }

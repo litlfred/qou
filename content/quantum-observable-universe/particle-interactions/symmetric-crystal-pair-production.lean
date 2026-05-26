@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/symmetric-crystal-pair-production.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Type-B folding forces matter/antimatter to be created in conjugate-operator pairs -/
+class SymmetricCrystalPairProduction where
+  holds : Prop
+  -- Ref: [manuscript] conj:symmetric-crystal-pair-production
+
+end QOU.BraidKnot

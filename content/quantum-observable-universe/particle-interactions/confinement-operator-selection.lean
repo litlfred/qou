@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-operator-selection.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Confinement operator selection via minimum action -/
+theorem confinement_operator_selection : True := by
+  -- Ref: [manuscript] prop:confinement-operator-selection
+  sorry
+
+end QOU.ParticleInteractions

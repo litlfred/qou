@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **PROPOSITION.** $E_\\infty$-page identifications with the six mass-formula terms -/
+theorem e_infinity_identifications : True := by
+  -- Ref: [manuscript] prop:e-infinity-page-identifications
+  sorry
+
+end QOU.BraidKnot

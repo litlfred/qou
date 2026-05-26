@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/root-of-unity-mtc-truncation.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** At $q = e^{2\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons -/
+class RootOfUnityMtcTruncation where
+  holds : Prop
+  -- Ref: [manuscript] conj:root-of-unity-mtc-truncation
+
+end QOU.BraidKnot

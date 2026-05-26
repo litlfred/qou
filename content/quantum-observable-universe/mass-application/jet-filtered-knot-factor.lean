@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Jet-filtered knot factor: per-level character convergence and nuclear quotient braid -/
+class JetFilteredKnotFactor where
+  holds : Prop
+  -- Ref: [manuscript] conj:jet-filtered-knot-factor
+
+end QOU.BraidKnot

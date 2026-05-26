@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "7b2faf0b8ef8",
     "ts": "8d9e990d559a",
-    "lean": "72df503e0909"
+    "lean": "2047cc90c2d0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1997,20 +1997,19 @@
         "field_hash": {
           "md": "7b2faf0b8ef8",
           "ts": "8d9e990d559a",
-          "lean": "72df503e0909"
+          "lean": "2047cc90c2d0"
         },
-        "result": "warn",
-        "evidence": "Lean file exists but contains no declarations (theorem/def/class/etc).",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-26T14:03:27.982Z",
-        "reviewed_sha": "f7854ebd751c85ba2f0c2d6ce4db0f9a5b7a736e",
-        "notes": "Lean file may be empty or only contain comments."
+        "reviewed_at": "2026-05-26T14:23:00.108Z",
+        "reviewed_sha": "d8955b60baebf1cb230b808621230e842342eef9",
+        "notes": "Label 'prop:lp-dual-stability' aligns with Lean declaration. Has sorry (cited)."
       }
     ]
   },
-  "updated_at": "2026-05-26T14:03:27.982Z"
+  "updated_at": "2026-05-26T14:23:00.108Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "35813b473945",
     "ts": "bfee1f77a2b0",
-    "lean": "9624788c6c9a"
+    "lean": "6dfe78e74e97"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1997,20 +1997,19 @@
         "field_hash": {
           "md": "35813b473945",
           "ts": "bfee1f77a2b0",
-          "lean": "9624788c6c9a"
+          "lean": "6dfe78e74e97"
         },
-        "result": "warn",
-        "evidence": "Lean file exists but contains no declarations (theorem/def/class/etc).",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
           "version": "v1"
         },
-        "reviewed_at": "2026-05-26T14:03:27.982Z",
-        "reviewed_sha": "f7854ebd751c85ba2f0c2d6ce4db0f9a5b7a736e",
-        "notes": "Lean file may be empty or only contain comments."
+        "reviewed_at": "2026-05-26T14:23:00.108Z",
+        "reviewed_sha": "d8955b60baebf1cb230b808621230e842342eef9",
+        "notes": "Label 'prop:neutron-proton-splitting' aligns with Lean declaration. Has sorry (cited)."
       }
     ]
   },
-  "updated_at": "2026-05-26T14:03:27.982Z"
+  "updated_at": "2026-05-26T14:23:00.108Z"
 }

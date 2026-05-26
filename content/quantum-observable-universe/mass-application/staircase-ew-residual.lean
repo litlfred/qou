@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/staircase-ew-residual.ts
 -/
+
+namespace QOU.StaircaseCornerHook
+
+/-- **CONJECTURE.** Staircase EW-residual: $q^{1/(2k-1)}$ as pairwise eigenvalue ratio of $\\beta_{\\mathrm{EW}}$ on $V_{\\rho_k}$ -/
+class StaircaseEwResidual where
+  holds : Prop
+  -- Ref: [manuscript] conj:staircase-ew-residual
+
+end QOU.StaircaseCornerHook

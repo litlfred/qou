@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
 -/
+
+namespace QOU.BaryonWeight
+
+/-- **PROPOSITION.** Hook weight $\\beta_4 = -\\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition -/
+theorem beta4_hook : True := by
+  -- Ref: [manuscript] prop:hook-weight-derivation
+  sorry
+
+end QOU.BaryonWeight

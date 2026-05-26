@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-graded-markov-trace-existence.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Existence of the graded Markov trace on the GS filtration -/
+class GsGradedMarkovTraceExistence where
+  holds : Prop
+  -- Ref: [manuscript] conj:gs-graded-markov-trace-existence
+
+end QOU.BraidKnot

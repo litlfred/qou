@@ -16,3 +16,12 @@ import QOU.Interactions.MarkovPeel
 -- Re-export the canonical declaration under the local namespace so
 -- `lean.ref` lookups resolve from this sibling file as well.
 export QOU.Interactions (markov_peel)
+
+namespace QOU.Interactions
+
+/-- Markov-axiom recursive ascent for atomic $\\mathrm{tr}_M$ -/
+def markov_peel : sorry :=
+  -- Ref: [manuscript] def:markov-axiom-recursive-ascent
+  sorry
+
+end QOU.Interactions

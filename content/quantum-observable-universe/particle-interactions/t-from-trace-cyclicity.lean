@@ -19,3 +19,12 @@ This stub satisfies the lean-ref sibling-resolution rule
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.ts
 -/
+
+namespace QOU.BraidsAndKnots
+
+/-- **CONJECTURE.** Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual) -/
+class TFromTraceCyclicity where
+  holds : Prop
+  -- Ref: [manuscript] conj:t-from-trace-cyclicity
+
+end QOU.BraidsAndKnots

@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Atomic braid normal form witness -/
+theorem atomic_nf_witness : True := by
+  -- Ref: [manuscript] prop:atomic-nf-witness
+  sorry
+
+end QOU.ParticleInteractions

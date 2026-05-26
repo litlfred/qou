@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-residue-at-root-existence.ts
 -/
+
+namespace QOU.BraidKnot.GBResidueSpectralSum
+
+/-- **CONJECTURE.** Existence of the cyclotomic residue at each filtration level -/
+class GsResidueAtRootExistence where
+  holds : Prop
+  -- Ref: [manuscript] conj:gs-residue-at-root-existence
+
+end QOU.BraidKnot.GBResidueSpectralSum

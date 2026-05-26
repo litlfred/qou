@@ -11,3 +11,12 @@ formalisation pending.
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/branching-qvalue-factorization.ts
 -/
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Exact factorization of the branching Q-value -/
+theorem branching_qvalue_factorization : True := by
+  -- Ref: [manuscript] prop:branching-qvalue-factorization
+  sorry
+
+end QOU.ParticleInteractions

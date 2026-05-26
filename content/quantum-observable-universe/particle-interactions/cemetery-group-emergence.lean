@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/cemetery-group-emergence.ts
 -/
+
+namespace QOU.BraidKnot
+
+/-- **CONJECTURE.** Cemetery group as the kernel of the observation functor -/
+class CemeteryGroupEmergence where
+  holds : Prop
+  -- Ref: [manuscript] conj:cemetery-group-emergence
+
+end QOU.BraidKnot
