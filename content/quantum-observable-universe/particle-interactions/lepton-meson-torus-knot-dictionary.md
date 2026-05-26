@@ -1,0 +1,56 @@
+**Proposition (torus-knot dictionary).**
+*The lepton and meson mass towers are both indexed by torus knots
+$T(2, n)$ for $n = 3, 5, 7, \ldots$ (odd primes), with the following
+correspondence:*
+
+| Generation | $n$ | Lepton ($H_2$) | Quark flavor ($H_3$) | Meson ($q\bar{q}$) |
+|---|---|---|---|---|
+| 1st | 3 | $\mathfrak{e}$ (electron) | $u, d$ | $\pi$ (pion) |
+| 2nd | 5 | $\mu$ (muon) | $s$ (strange) | $K$ (kaon) |
+| 3rd | 7 | $\tau$ (tau) | $s$ (heavy-strange) | $\eta, \phi$ |
+
+*The lepton at generation $k$ is the closure of $\sigma_1^{2k+1}$ in
+$H_2(q)$; the meson at the same generation is the Hopf-bound pair of
+quarks whose flavor content involves $T(2, 2k+1)$ crossing structure
+in $H_3(q)$.*
+
+**Proof.** The lepton assignment follows from the torus-knot mass tower
+\cite{jones1987}: the electron is the trefoil $T(2,3)$ (3 crossings),
+the muon is the cinquefoil $T(2,5)$ (5 crossings), and the tau is the
+septafoil $T(2,7)$ (7 crossings).  Each is a braid $\sigma_1^n$ in
+$H_2(q)$.
+
+The meson assignment follows from the quark flavor–torus-knot
+identification: the $d$-quark carries the $T(2,3)$ crossing structure
+(3 crossings per constituent), and the $s$-quark carries $T(2,5)$
+(5 crossings per constituent).  A meson $q_1\bar{q}_2$ at $H_3$ has
+total crossings $n_1 + n_2$:
+
+- $\pi$: $\bar{u}d = 3 + 3 = 6$ crossings
+- $K$: $\bar{u}s = 3 + 5 = 8$ crossings
+- $\eta, \phi$: $s\bar{s} = 5 + 5 = 10$ crossings
+
+The normal form in $H_3(q)$ is determined by the Hecke reduction of the
+meson braid word $\mathfrak{M}_+$
+([`def:categorical-meson`](../../predicted-spectra/categorical-meson.md)).
+
+$\square$
+
+## The structural duality
+
+The dictionary reveals a **highest-weight / lowest-weight duality**
+between the two sectors:
+
+| Feature | Lepton ($H_2$) | Meson ($H_3$) |
+|---|---|---|
+| Braid type | $\sigma^n$ (all positive) | $(\sigma\sigma^{-1})^k \cdot \sigma$ (mixed) |
+| Hecke eigenvalue | $q$ only (highest weight) | both $q$ and $-q^{-1}$ (full spectrum) |
+| Mass formula input | $\mathrm{Vol}(4_1)/\hbar_q^2$ (hyperbolic volume limit) | $\mathrm{tr}_M(\mathfrak{M}, q_0)$ (Markov trace at substrate) |
+| Calibration | CAL-2: $m_\mu/m_\mathfrak{e}$ (exact, Lean-proved modulo CAL-2) | CAL-3: $m_\pi$ (genuinely independent of $m_\mathfrak{e}$, $q_0$) |
+| Role of $4_1$ | transition knot $T(2,3) \to T(2,5)$ giving mass ratio | same transition, different evaluation (dual volume?) |
+
+The lepton sector evaluates in the **Kashaev $N \to \infty$ limit**
+(hyperbolic volume); the meson sector evaluates at **finite $q_0$**
+(Markov trace).  This is the highest-weight / lowest-weight exchange:
+the asymptotic invariant (volume) governs fundamental particles, while
+the finite-$q$ invariant (trace) governs composite bound states.
