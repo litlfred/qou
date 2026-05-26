@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T16:40:42.637796+00:00",
-  "commitSha": "210903cbee2adfa19ad191c8b5285a62ef3b7834",
+  "computedAt": "2026-05-26T21:12:29.936991+00:00",
+  "commitSha": "79287a09494393d6483c5028b9dbbab516baf23d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2331,6 +2331,7 @@
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",
         "d-u-closed-form-proof.witness.json",
+        "definitive-q0-shift.witness.json",
         "delta-S-chain-audit.witness.json",
         "delta-coupling-closed-form-probe.witness.json",
         "delta-coupling-cross-anchor-falsification.witness.json",
@@ -2345,6 +2346,7 @@
         "delta-lambda-closure-v3-full-vs-filtered.witness.json",
         "delta-lambda-closure-v4-two-row.witness.json",
         "delta-lambda-closure-v5-frobenius-chirality.witness.json",
+        "delta-lambda-dim-weight-proof.witness.json",
         "delta-lambda-dominant-pin-probe.witness.json",
         "delta-lambda-empirical-tabulation.witness.json",
         "delta-lambda-fr-identity-phase5c.witness.json",
@@ -2357,6 +2359,7 @@
         "delta-lambda-per-atom-sweep-probe.witness.json",
         "delta-lambda-q-sweep-2row.witness.json",
         "delta-lambda-shift-nf-wenzl-probe.witness.json",
+        "delta-lambda-sign-rule-proof.witness.json",
         "delta-lambda-two-factor-phase2.witness.json",
         "delta-lambda-via-per-partition-shift-nf.witness.json",
         "delta-lambda-z4N-phase4.witness.json",
@@ -2627,6 +2630,7 @@
         "phase2a2-flavor-split-exact-correction.witness.json",
         "phase2b-dim-v21-bridge.witness.json",
         "phase2b2-dim-v21-categorical-bridge.witness.json",
+        "phase2c-derive-correction-tower.witness.json",
         "phase3-deuteron-tritium-h-expansion.witness.json",
         "phase3-triton-binding-convention-b.witness.json",
         "phase3c-a5-a7-knot-volume-targets.witness.json",
