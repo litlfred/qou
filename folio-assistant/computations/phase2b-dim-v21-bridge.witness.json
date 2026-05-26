@@ -1,0 +1,44 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T15:25:48.617057+00:00",
+  "commitSha": "b2db0a42628241e51a4ef4b3db30f68ab794e505",
+  "assertions": [
+    {
+      "name": "factored_form_exact",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2·(m_μ·F_Bor − 6·m_e) = 2·m_μ·F_Bor − 12·m_e exactly"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "phase2b-dim-v21-bridge",
+  "scriptFile": "phase2b_dim_v21_bridge_derivation.py",
+  "scriptHash": "6e2c45fd8b0e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Formal derivation of why dim V_(2,1) = 2 enters the proton mass formula linearly. The Borromean mass formula factors through the bar-pair Z/2 symmetry y_(3) ↔ y_(1,1,1), with dim V_(2,1) = |{bar-pair}| as the fold factor. F_Bor decomposes as 1 + q⁻³·χ^(2,1) + q⁻⁶ via Wedderburn, and the integer 2 divides both 2·m_μ and 12·m_e = 2·6·m_e.",
+  "contentBlock": "prop:proton-mass-substrate-identity",
+  "data": {
+    "wedderburn_decomposition": {
+      "F_Bor": "1 + q⁻³·χ^(2,1)(β_Bor) + q⁻⁶",
+      "F_Bor_at_q1": "4",
+      "y21_over_y3": "q**(-3)",
+      "y111_over_y3": "q**(-6)"
+    },
+    "factored_form": {
+      "m_p": "dim V_(2,1) · (m_μ · F_Bor − |S₃| · m_e)",
+      "dim_V21": 2,
+      "S3_order": 6,
+      "product": 12
+    }
+  }
+}
