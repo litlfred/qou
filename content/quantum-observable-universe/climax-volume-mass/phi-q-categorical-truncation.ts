@@ -24,10 +24,4 @@ export default proposition({
     "regularization",
     "centre-stratification",
   ],
-  computation: {
-    engine: "python",
-    script: "folio-assistant/computations/probe_tritium_k_star.py",
-    witness: "folio-assistant/computations/probe-tritium-k-star.witness.json",
-    status: "experimental",
-  },
 });

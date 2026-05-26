@@ -9,10 +9,4 @@ export default corollary({
   tags: ["archimedean", "jet-bundle"],
   uses: ["prop:jet-prolongation", "ex:c-quantum-observable-universe"],
   proofs: ["prf:jet-prolongation-C"],
-  computation: {
-    engine: "sympy",
-    script: "folio-assistant/computations/jet_gb_pl_correspondence.py",
-    witness: "folio-assistant/computations/jet-gb-pl-correspondence.witness.json",
-    status: "verified",
-  },
 });

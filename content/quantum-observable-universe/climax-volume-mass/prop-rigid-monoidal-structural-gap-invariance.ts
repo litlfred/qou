@@ -14,6 +14,12 @@ export default proposition({
     "def:rigid-monoidal-category",
     "prop:operator-selection-lp",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/lp-duality-check.py",
+    witness: "folio-assistant/computations/lp-duality-check.witness.json",
+    status: "verified",
+  },
   tags: [
     "rigid-monoidal",
     "type-b-folding",

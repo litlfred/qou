@@ -14,6 +14,14 @@ export default proposition({
     "wenzl1988",
     "james1984representation",
   ],
+  computation: {
+    engine: "python",
+    script:
+      "folio-assistant/computations/lambda_scale_rd_h4_half_symmetric.py",
+    witness:
+      "folio-assistant/computations/lambda-scale-rd-h4-half-symmetric.witness.json",
+    status: "verified",
+  },
   tags: [
     "branching-rule",
     "half-symmetric",
