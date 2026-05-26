@@ -349,7 +349,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 
 | Leg | Target | Status |
 |-----|--------|--------|
-| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 50 dps / 40 dps output (10⁻⁴⁰ relative) |
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 50 dps compute / 40 dps serialization (10⁻⁴⁰ absolute truncation) |
 | **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 4/6 met — see `per-observable-100x-status.witness.json` |
 
 **Key distinctions** (avoid agent confusion):

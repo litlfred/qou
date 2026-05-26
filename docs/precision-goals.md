@@ -20,7 +20,7 @@
 
 | Leg | Target | Status |
 |-----|--------|--------|
-| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **met** — `_precision.py` default is 50 dps compute / 40 dps output (10⁻⁴⁰ relative); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **met** — `_precision.py` default is 50 dps compute / 40 dps serialization (10⁻⁴⁰ absolute truncation; relative varies by observable magnitude); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
 | **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **partial** — 4 of 6 observables beat target (m_e anchor, m_μ anchor, Q_β at N=5, Δ_pn via Path C); m_p and m_n still miss |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not

@@ -196,6 +196,8 @@ def main() -> dict:
     sub = None
     try:
         sub = load_witness("m-p-substrate-identity-50dps.witness.json")
+        if not sub.get("data"):
+            sub = None
     except FileNotFoundError:
         pass
 
@@ -203,6 +205,7 @@ def main() -> dict:
     borr_data = borr.get("data", {})
     borr_source = "m-p-borromean-verification-50dps.witness.json"
 
+    m_p_sub = None
     if sub is not None:
         sub_data = sub.get("data", {})
         sub_source = "m-p-substrate-identity-50dps.witness.json"
@@ -212,7 +215,6 @@ def main() -> dict:
             m_p_sub = mpf(str(m_p_str))
             rows.append(_row_for("m_p", m_p_sub, sub_source))
         else:
-            m_p_sub = None
             rows.append({"obs": "m_p", "status": "NO-WITNESS"})
         # m_mu still from Borromean (CAL-2 anchor check)
         v_mu = borr_data.get("muon_check", {}).get("m_mu_pred_MeV")
@@ -278,24 +280,31 @@ def main() -> dict:
     # m_n at 0.24 ppm (8× better than the substrate-identity's 2 ppm).
     # Δ_pn = Q_β + m_e follows directly.
     m_e_mev = OBSERVABLES["m_e"][0]  # CAL-1 anchor
+    q_beta_rung = "N=5" if qb_n3_data.get("Q_N2") is not None else "N=0"
     if m_p_sub is not None and Q_beta_best is not None:
         m_n_path_c = m_p_sub + Q_beta_best + m_e_mev
         delta_pn_path_c = Q_beta_best + m_e_mev
         path_c_source = (
-            "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; "
+            f"Path C: m_n = m_p(substrate) + Q_β({q_beta_rung}) + m_e; "
             "no flavor-split — per PR #1298 gap diagnostic"
         )
         rows.append(_row_for("m_n", m_n_path_c, path_c_source))
         rows.append(_row_for("Delta_pn", delta_pn_path_c, path_c_source))
     elif sub is not None:
-        # Fallback to substrate-identity m_n if Q_β unavailable
         sub_data_fb = sub.get("data", {})
         m_n_str = sub_data_fb.get("predictions", {}).get("m_n_MeV")
         if m_n_str is not None:
             rows.append(_row_for("m_n", mpf(str(m_n_str)), sub_source))
+        else:
+            rows.append({"obs": "m_n", "status": "NO-WITNESS"})
         delta_str = sub_data_fb.get("predictions", {}).get("Delta_m_pn_MeV")
         if delta_str is not None:
             rows.append(_row_for("Delta_pn", mpf(str(delta_str)), sub_source))
+        else:
+            rows.append({"obs": "Delta_pn", "status": "NO-WITNESS"})
+    else:
+        rows.append({"obs": "m_n", "status": "NO-WITNESS"})
+        rows.append({"obs": "Delta_pn", "status": "NO-WITNESS"})
 
     # ── m_e — CAL-1 anchor (by definition err = 0) ───────────────────
     codata, sigma_exp, role, sigma_source = OBSERVABLES["m_e"]

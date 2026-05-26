@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T15:35:19.133550+00:00",
-  "commitSha": "f0cc2f285f227dae8b3a3646ce5167682020fa64",
+  "computedAt": "2026-05-26T15:44:51.481052+00:00",
+  "commitSha": "897bd64a88dbb6e250880726c241f54587e5ac76",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "1dc5f498ae01",
-  "scriptCommitSha": "db220b15c21b1a5f282c6c6cecad2d68672a0d69",
+  "scriptHash": "334e82e8e517",
+  "scriptCommitSha": "a8d6bd9f9a8fd11fa7b7ad178ab348ce3a22943c",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
