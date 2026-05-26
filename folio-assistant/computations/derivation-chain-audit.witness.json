@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T21:12:29.936991+00:00",
-  "commitSha": "79287a09494393d6483c5028b9dbbab516baf23d",
+  "computedAt": "2026-05-26T21:20:33.233186+00:00",
+  "commitSha": "743dee2a86e2ae5d9e929e327acf98ac15fe5e30",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2650,6 +2650,7 @@
         "probe-4c-li6-large-d-scan.witness.json",
         "probe-4e-transpose-pair-asymmetry.witness.json",
         "probe-4f-h3-sigma-avg-asymmetry.witness.json",
+        "proton-error-anatomy-1ppb.witness.json",
         "proton-identity-extension-audit.witness.json",
         "proton-m_e-anomaly-audit.witness.json",
         "proton-m_e-derivation.witness.json",
@@ -2698,6 +2699,7 @@
         "qbeta-fsc-g-pattern-comparison.witness.json",
         "qbeta-golden-ratio-fibonacci-probe.witness.json",
         "qbeta-half-fill-probe.witness.json",
+        "qbeta-ladder-verification-1ppq.witness.json",
         "qbeta-operator-identification-probe.witness.json",
         "qbeta-per-block-paper-closed-forms.witness.json",
         "qbeta-per-block-symbolic-decomposition.witness.json",
