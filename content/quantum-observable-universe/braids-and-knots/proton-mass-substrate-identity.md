@@ -185,11 +185,23 @@ The two structural integers in the identity:
    group order. Verified at 50 dps: factored form matches original to
    machine precision, residual $-0.24\,\mathrm{ppm}$ vs CODATA.
 
-3. **Identification of $F_{\mathrm{Bor}}(q)$** as a natural categorical
-   observable. Currently it's the empirically-observed combination
-   $|\mathrm{tr}_M| \cdot [3]_q! / q^3$ that closes the mass formula; a
-   categorical derivation would identify it as e.g. a Wedderburn trace
-   with a specific content-shift normalisation.
+3. ~~**Identification of $F_{\mathrm{Bor}}(q)$.**~~ **IDENTIFIED:**
+   $F_{\mathrm{Bor}}(q) = |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)| /
+   y_{(3)}(q)$ where $y_{(3)}(q) = q^3 / [3]_q!$ is the q-Schur
+   Markov weight for the trivial partition. Lean-proved in
+   [`YLambdaQSchur.lean`](../lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)
+   `F_Bor_eq_trM_over_y_3`. The content sum of $(3)$ is
+   $c((3)) = 0 + 1 + 2 = 3$, so $y_{(3)} = q^3/[3]_q!$ is the
+   content-shift normalisation. The cleaner substrate identity form is
+   $$y_{(3)}(q_0) \cdot (m_p + 12 \cdot m_e) = 2 \cdot m_\mu \cdot |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q_0)|.$$
+
+4. **Bridge from $\dim V_{(2,1)}$ to linear factor in mass formula.**
+   The factored form $m_p = \dim V_{(2,1)} \cdot (m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e)$
+   is numerically exact at 50 dps but the categorical WHY — why the
+   trace-dominant irrep's dimension enters linearly — remains a formal
+   gap. The Wedderburn block expansion of the Markov trace provides
+   the natural framework (the $(2,1)$ block carries 49% of the proton's
+   $T_1$ contribution), but the formal categorical statement is pending.
 
 ## See also
 
