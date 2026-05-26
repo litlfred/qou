@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T15:33:35.119436+00:00",
-  "commitSha": "ffe603782f7be97c5ad1e11639766793b88ee6a9",
+  "computedAt": "2026-05-26T15:53:45.775417+00:00",
+  "commitSha": "ee9ce0e2cd3a09d1a7dcde26a0490f338716761e",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2619,7 +2619,9 @@
         "phase1e-neutron-cross-isotope-h-expansion.witness.json",
         "phase2-m-e-hecke-diagnostic.witness.json",
         "phase2a-flavor-split-higher-order.witness.json",
+        "phase2a2-flavor-split-exact-correction.witness.json",
         "phase2b-dim-v21-bridge.witness.json",
+        "phase2b2-dim-v21-categorical-bridge.witness.json",
         "phase3-deuteron-tritium-h-expansion.witness.json",
         "phase3-triton-binding-convention-b.witness.json",
         "phase3c-a5-a7-knot-volume-targets.witness.json",

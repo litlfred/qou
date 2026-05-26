@@ -1,0 +1,37 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-26T15:39:27.992407+00:00",
+  "commitSha": "66cffc2ee461bbe448056eb4a3423ac339d5efed",
+  "assertions": [
+    {
+      "name": "factored_exact",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "|Orb|·(m_μF−|S₃|m_e) = 2m_μF−12m_e exactly"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "phase2b2-dim-v21-categorical-bridge",
+  "scriptFile": "phase2b2_dim_v21_categorical_bridge.py",
+  "scriptHash": "fa95e43a9b03",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Formal categorical bridge: the factor 2 in the proton mass formula equals |Orb_bar(triv)| = |{(3),(1,1,1)}| — the cardinality of the bar-involution orbit of the trivial rep in Irr(H₃(q)). This coincides with dim V_(2,1) at n=3 but is categorically the orbit size, not the standard-rep dimension.",
+  "contentBlock": "prop:proton-mass-substrate-identity",
+  "data": {
+    "categorical_statement": {
+      "factor_2": "|Orb_bar(triv)| = |{(3),(1,1,1)}| = 2",
+      "coincidence": "equals dim V_(2,1) = n-1 = 2 at n=3 only",
+      "mechanism": "bar involution q↔q⁻¹ exchanges y₃↔y₁₁₁; writhe-0 pure braid makes χ=1 for both"
+    }
+  }
+}

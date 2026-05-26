@@ -510,6 +510,18 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     // and for cross-validating against the q-pinning value, but
     // the Lean tag uses :leanval[Vol_4_1]{precision=15}.
 
+    vol_4_1_decimal_50: Object.freeze({
+      name: "vol_4_1_decimal_50",
+      description:
+        "Hyperbolic volume of the figure-eight knot complement " +
+        "Vol(4_1) = 2 Cl_2(π/3) at 50-digit precision.",
+      symbol: "\\mathrm{Vol}(4_1)",
+      witnessFile:
+        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+      witnessPath: "data.vol_4_1_decimal_50",
+      unit: "",
+    }),
+
     vol_5_2: Object.freeze({
       name: "vol_5_2",
       description:

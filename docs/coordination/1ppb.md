@@ -521,3 +521,27 @@ with all rational coefficients derived from Lean-proved forms.
 - #1259 (q-Schur convention): no overlap, downstream consumer
 - #1224 (Δ_λ closure): no overlap, parallel axis
 - #1249 (substrate q₀): no overlap, independent
+
+### 2026-05-26 — Phase 2-4 closure probes (#1299, merged)
+
+| Date | PR | Phase | Status | Cherry-pick / artefact |
+|------|----|-------|--------|------------------------|
+| 2026-05-26 | [#1299](https://github.com/litlfred/qou/pull/1299) | Phase 2a/2b/3c · flavor-split + structural integers + A=5-7 | merged `66cffc2e` | `phase2a_flavor_split_higher_order_probe.py`, `phase2b_dim_v21_bridge_derivation.py`, `phase3c_a5_a7_knot_volume_targets.py` |
+
+### 2026-05-26 — Bridges: bar-pair orbit + integer tower (#1301)
+
+| Date | PR | Phase | Status | Cherry-pick / artefact |
+|------|----|-------|--------|------------------------|
+| 2026-05-26 | [#1301](https://github.com/litlfred/qou/pull/1301) | Bridge · bar-pair orbit + flavor-split integer tower | open | `phase2b2_dim_v21_categorical_bridge.py`, `phase2a2_flavor_split_exact_correction.py` |
+
+**Key findings:**
+- **Bar-pair orbit bridge (CLOSED):** factor 2 = |Orb_bar(triv)| =
+  |{(3),(1,1,1)}|. All 4 open structural items on substrate identity
+  now resolved.
+- **Flavor-split integer tower:** X · (1 + ℏ³ + 5ℏ⁴) closes m_n from
+  2.0 ppm to **0.16 ppb** — below the 1 ppb target. Coefficient 5
+  matched to 0.024%.
+
+**Sibling classification:**
+- #1276 (Bring+Faddeev): additive — ℏ⁴ coefficient 5 may relate to
+  their Faddeev h⁴ coefficient; different h-variables (ℏ_q vs h)
