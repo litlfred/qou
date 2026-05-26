@@ -1676,7 +1676,25 @@
         "reviewed_at": "2026-05-26T00:25:01.306Z",
         "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "64674c42be31",
+          "ts": "b2153ad67e2e",
+          "lean": "43077a72f4af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:56.504Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Label 'conj:lepton-mass-tower-canonical' → expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:28:47.036Z"
+  "updated_at": "2026-05-26T13:49:56.504Z"
 }

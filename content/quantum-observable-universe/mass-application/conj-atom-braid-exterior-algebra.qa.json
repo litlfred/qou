@@ -51,7 +51,25 @@
         "reviewed_at": "2026-05-26T13:28:47.036Z",
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6c8f37de4fdc",
+          "ts": "07d3e99605cc",
+          "lean": "965c4bbd245e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:56.504Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Label 'conj:atom-braid-exterior-algebra' → expected 'atom_braid_exterior_algebra'; Lean declares: AtomBraidExteriorAlgebraStructure, deuteron_total_dim_eq_32, tritium_total_dim_eq_256, helium3_total_dim_eq_128, helium4_total_dim_eq_1024.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:28:47.036Z"
+  "updated_at": "2026-05-26T13:49:56.504Z"
 }

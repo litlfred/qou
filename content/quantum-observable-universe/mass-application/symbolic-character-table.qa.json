@@ -2114,7 +2114,26 @@
         "reviewed_at": "2026-05-26T00:25:01.306Z",
         "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "ca3928975d29",
+          "lean": "72aea2499f07"
+        },
+        "result": "warn",
+        "evidence": "Block kind is 'proposition' but Lean has only def/noncomputable def, no theorem/lemma. Decls: chi_311, chi_321",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:56.504Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:30:14.351Z"
+  "updated_at": "2026-05-26T13:49:56.504Z"
 }

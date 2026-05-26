@@ -2045,7 +2045,25 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md:99: :val[q_0] has no `witness=` attribute and the block has no `computation:` field"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "886deccdecfd",
+          "ts": "01aefb209c09",
+          "lean": "70e3a42aa47b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:56.504Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Label 'prop:weak-symmetric-normalization' aligns with Lean declaration. Sorry-free."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:30:14.351Z"
+  "updated_at": "2026-05-26T13:49:56.504Z"
 }

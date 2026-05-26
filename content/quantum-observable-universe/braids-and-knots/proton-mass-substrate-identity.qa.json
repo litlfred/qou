@@ -216,7 +216,25 @@
         "reviewed_at": "2026-05-26T13:28:47.036Z",
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "51ca244cdeeb",
+          "ts": "659f478f4ac4",
+          "lean": "1baec01f2673"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:40.234Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Label 'prop:proton-mass-substrate-identity' → expected 'proton_mass_substrate_identity'; Lean declares: trM_borromean_abs, qFact_three, F_Bor, ProtonMassSubstrateIdentity, proton_mass_substrate_identity_empirical.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:30:14.351Z"
+  "updated_at": "2026-05-26T13:49:40.234Z"
 }

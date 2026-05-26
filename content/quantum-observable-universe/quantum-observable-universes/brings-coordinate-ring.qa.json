@@ -1492,7 +1492,25 @@
         "reviewed_at": "2026-05-26T00:25:01.306Z",
         "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "73a4b79b5106",
+          "ts": "c04998d5bb87",
+          "lean": "7de0125b7db3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:56.504Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Label 'def:brings-coordinate-ring' → expected 'brings_coordinate_ring'; Lean declares: BringsCoordinateRing. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:30:14.351Z"
+  "updated_at": "2026-05-26T13:49:56.504Z"
 }

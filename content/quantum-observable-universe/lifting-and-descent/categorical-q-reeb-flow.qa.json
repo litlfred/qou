@@ -1492,7 +1492,25 @@
         "reviewed_at": "2026-05-26T00:25:01.306Z",
         "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "558234f35f46",
+          "ts": "a86f4c6e6cdd",
+          "lean": "33478b98d113"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:56.504Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Label 'def:categorical-q-reeb-flow' → expected 'categorical_q_reeb_flow'; Lean declares: CategoricalQReebFlow. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:30:14.351Z"
+  "updated_at": "2026-05-26T13:49:56.504Z"
 }

@@ -51,7 +51,25 @@
         "reviewed_at": "2026-05-26T13:28:47.036Z",
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5df6364cd7dc",
+          "ts": "445b5710f0d7",
+          "lean": "0b3ef17fe158"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-26T13:49:40.234Z",
+        "reviewed_sha": "7bf70a955e9e6b1c66c848c1dbf44fc2a1791f3f",
+        "notes": "Conjecture with class axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-05-26T13:28:47.036Z"
+  "updated_at": "2026-05-26T13:49:40.234Z"
 }
