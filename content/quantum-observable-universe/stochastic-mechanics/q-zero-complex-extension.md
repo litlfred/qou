@@ -42,7 +42,7 @@ current convention $q_0 \in \mathbb{R}$, $q_0 > 1$ is one valid
 specialization: the one whose Archimedean realisation $\tau$ maps
 into $\mathbf{Vec}_\mathbb{R}$.
 
-A complex $q_0$ with $\lvert q_0 \rvert > 1$ would require either:
+**CAL-4 caveat:** a complex $q_0$ with $\lvert q_0 \rvert > 1$ would require either:
 
 1. **A function** expressing $\mathrm{Im}(q_0)$ in terms of the
    three existing calibrations $(m_e,\,m_\mu/m_e,\,Q_\beta)$ — *not*

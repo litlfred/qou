@@ -15,6 +15,8 @@ $$
 *coincide on the parameter $q$ if and only if
 $\mathrm{Im}(q) = 0$, equivalently $q \in \mathbb{R}$.*
 
+The Lean formalization specialises to $\mathbb{R}$ for the archimedean evaluation at the substrate $q_0$.
+
 ## Proof
 
 The two involutions act identically on the braid generators
@@ -80,11 +82,11 @@ This proposition only records the structural existence of the
 decomposition; it does not claim either new channel is physically
 realised.
 
-## What this proposition does not claim
+## What this proposition does not claim (CAL-4 caveat)
 
 - It does **not** claim $\mathrm{Im}(q_0) \neq 0$.
 - It does **not** claim the two new channels carry physical content.
-- It does **not** propose a fourth calibration input.
+- It does **not** introduce a further calibration input.
 
 It claims only that on complex $q$ with $\mathrm{Im}(q) \neq 0$ the
 two anti-involutions split, and that the framework's current

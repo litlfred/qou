@@ -38,5 +38,6 @@ export default conjecture({
     "open-problem",
     "conditional-on-class",
     "non-scholarly-voice-exception",
+    "quantum-dilogarithm",
   ],
 });

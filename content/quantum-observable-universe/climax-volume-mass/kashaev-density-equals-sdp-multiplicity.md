@@ -25,7 +25,7 @@ $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
 ## Evidence (three confirmed atoms)
 
-The numerical coincidence is exact on the three SDP-confirmed
+The identity is exact on the three SDP-confirmed
 hyperbolic atoms (per
 [`atom-knot-mass-derivation`](#def:atom-knot-mass-derivation) line 265):
 
@@ -49,7 +49,7 @@ The Wedderburn multiplicity of $T_w$'s SDP solution is a
 partition-algebra count: it is the dimension of the saturating
 projection in the irreducible-block decomposition
 $H_n(q) \cong \bigoplus_{\lambda \vdash n} \mathrm{End}(V_\lambda)$.
-The numerical coincidence with the Kashaev density factor pulls
+The agreement with the Kashaev density factor pulls
 $\rho_F$ onto driver (x) and removes it from the Rule-14 escalation
 queue.
 

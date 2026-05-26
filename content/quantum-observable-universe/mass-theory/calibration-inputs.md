@@ -114,7 +114,7 @@ not derived from the canonical per-braid mass formula
 The unweighted $\mathrm{net}$ sum is structurally different
 from the Markov-trace weighted sums of the mass tower. The +0.17%
 match (single-tick form) could be (a) genuine truncation residual
-or (b) a numerical coincidence at $q_0 \approx 1.110$ from a
+or (b) an artefact of $q_0 \approx 1.110$ arising from a
 wrong leading-order operator. Until this is resolved by direct
 per-braid computation or a theoretical derivation, **CAL-3 must
 remain an input** and claims of "Q_β derivable from CAL-1 + CAL-2"
