@@ -93,16 +93,18 @@ $Q_\beta \approx 0.78233\,\mathrm{MeV}$ by $2113\,\mathrm{ppm}$ — bottlenecked
 by the flavor-split's $0.10\%$ residual. Closing this gap
 would cohomologically prove the $q_0 \leftrightarrow Q_\beta$ relationship.
 
-A decay-rate cross-check (not yet in the paper) connects both derivations
-to experimental lifetimes via the Fermi theory:
-$\Gamma_\mu = G_F^2 m_\mu^5 / (192\pi^3)$ and
-$\Gamma_n \propto G_F^2 Q_\beta^5 f(Q_\beta/m_e)$. The ratio
-$\Gamma_\mu / \Gamma_n$ eliminates $G_F$ and provides a
-$Q_\beta$-independent consistency test: if both $m_\mu$ and $Q_\beta$
-are substrate-derived, $\tau_n / \tau_\mu$ should match CODATA
-($\approx 4 \times 10^8$) from categorical invariants alone.
-See [PR #1249](https://github.com/litlfred/qou/pull/1249) for the
-substrate-derivation workplan.
+A decay-width cross-check connects both derivations to experimental
+lifetimes via the Fermi theory:
+$\mathfrak{D}_\mu = G_F^2 \mathfrak{m}_\mu^5 / (192\pi^3)$ and
+$\mathfrak{D}_n \propto G_F^2 Q_\beta^5 f(Q_\beta/\mathfrak{m}_e)$,
+where $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$ is the
+decay width in the paper's fraktur-observable convention (avoiding
+collision with $\tau$ = fibre functor and $\Gamma$ = sheaf sections).
+The ratio $\mathfrak{D}_\mu / \mathfrak{D}_n$ eliminates $G_F$ and
+provides a $Q_\beta$-independent consistency test: if both
+$\mathfrak{m}_\mu$ and $Q_\beta$ are substrate-derived, the lifetime
+ratio $\hbar/\mathfrak{D}_n \div \hbar/\mathfrak{D}_\mu$ should match
+CODATA ($\approx 4 \times 10^8$) from categorical invariants alone.
 
 ## Structural identifications
 
