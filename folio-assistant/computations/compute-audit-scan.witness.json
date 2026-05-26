@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T14:57:50.610203+00:00",
-  "commitSha": "5255bbfe02e90b13fd5abdb4fe1cde7e1af4525a",
+  "computedAt": "2026-05-26T15:16:34.801275+00:00",
+  "commitSha": "06e400dfe759e543ed5c786ba5cacae9137f645b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 3,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 662,
+    "files_scanned": 663,
     "patterns": [
       "P15",
       "P16",
@@ -34,7 +34,7 @@
       "P16": 177,
       "P21": 23,
       "P30": 134,
-      "P31": 46
+      "P31": 47
     },
     "top_files": [
       {
@@ -2700,6 +2700,13 @@
         "file": "q_beta_complex_q_test1_phaseA_v2.py",
         "line": 6,
         "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "q_beta_consistency_gap_diagnostic.py",
+        "line": 16,
+        "snippet": "CODATA literal \"0.78233\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
