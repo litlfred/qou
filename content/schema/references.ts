@@ -124,6 +124,20 @@ export function ref(data: CSLData): CSLData {
 
 export const references: CSLData[] = [
 
+  // ── Garoufalidis 2004 — AJ conjecture / q-holonomic colored Jones ──
+  ref({
+    id: "garoufalidis2004",
+    type: "article-journal",
+    title: "On the characteristic and deformation varieties of a knot",
+    author: [{ family: "Garoufalidis", given: "Stavros" }],
+    "container-title": "Geometry and Topology Monographs",
+    issued: { "date-parts": [[2004]] },
+    volume: "7",
+    page: "291-309",
+    DOI: "10.4310/JDG/1090425531",
+    URL: "https://doi.org/10.4310/JDG/1090425531",
+  }),
+
   // ── PRX: Chenier et al. 2026 ──────────────────────────────────
   ref({
     id: "chenier2026",

@@ -136,7 +136,9 @@ theorem figure_eight_reduction
     (hh2 : σ_2^2 = h * σ_2 + 1)
     (hbr : σ_1 * σ_2 * σ_1 = σ_2 * σ_1 * σ_2) :
     (σ_1 * (σ_2 - h))^2 = σ_2 * σ_1 - h^2 * (σ_1 * σ_2) - h * σ_2 + h^3 * σ_1 + h^2 := by
-  sorry  -- Ref: see docstring; deferred to non-commutative ring setting + lake verification
+  -- Ref: [manuscript] — deferred to a non-commutative ring setting +
+  -- lake verification; full proof strategy in the docstring above.
+  sorry
 
 /-- **CONJECTURE (Im(q) invariance at LO).** The lepton mass ratio
     via modulus projection is invariant under q ↦ q̄ at leading order.
