@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-26T01:04:20.168745+00:00",
+  "computedAt": "2026-05-26T14:58:14.100959+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -290,6 +290,22 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/meson_mass_from_hecke.py",
+        "line": 131,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_BETA_CODATA = mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/meson_mass_from_hecke.py",
+        "line": 343,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"observed_MeV\": \"0.78233341\",",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/multi_level_jet_sum.py",
         "line": 119,
         "pattern": "literal_0_78233341",
@@ -319,6 +335,22 @@
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "#   T1 (descended Markov):  E_0_β = 0.78233341 MeV per cat unit",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/phase1e_neutron_and_cross_isotope_h_expansion.py",
+        "line": 135,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "print(f\"    Q_β       = {mp.nstr(Q_beta_pred, 12)} MeV  (Δ = {mp.nstr((Q_beta_pred - mp.mpf('0.78233341'))/mp.mpf('0.78233341') * 1e6, 8)} ppm)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/phase1e_neutron_and_cross_isotope_h_expansion.py",
+        "line": 135,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "print(f\"    Q_β       = {mp.nstr(Q_beta_pred, 12)} MeV  (Δ = {mp.nstr((Q_beta_pred - mp.mpf('0.78233341'))/mp.mpf('0.78233341') * 1e6, 8)} ppm)\")",
         "kind": "doc"
       },
       {
@@ -1001,7 +1033,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 172,
+        "line": 182,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "_q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)",
@@ -1009,7 +1041,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 177,
+        "line": 187,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "+ Q_BETA_MEV_ERR ** 2",
@@ -1017,7 +1049,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 231,
+        "line": 241,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
@@ -1025,7 +1057,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 231,
+        "line": 241,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
