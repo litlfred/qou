@@ -50,3 +50,30 @@ the interface operator — already computed, not a separate parameter.
 - PR #1292 (merged): CAL-3 = m_π, meson/lepton dictionary
 - `sublemma-2-1-deuteron-branching.witness.json`: interface ratios
 - `deuteron-binding-interface-closure.witness.json`: zero-parameter result
+
+## Honest status (2026-05-26, post-evaluation)
+
+The full numerical evaluation shows:
+
+| Atom | B_pred (MeV) | B_AME (MeV) | Error |
+|------|-------------|-------------|-------|
+| D    | 0.38        | 2.22        | -83%  |
+| T    | 1.91        | 8.48        | -78%  |
+| ³He  | 2.34        | 7.72        | -70%  |
+| ⁴He  | 3.04        | 28.3        | -89%  |
+
+**What IS proved (categorical layer):**
+- Sign alternation sgn(w_0^{S_{λ'}}) — Macdonald I.1.5
+- Weight f^λ = dim(V_λ) — regular-rep multiplicity / Burnside
+- Correct sign for all 4 atoms (all sums negative = binding)
+- Right order of magnitude (0.4-3 MeV)
+
+**What is NOT proved (geometric layer):**
+- Absolute magnitude — needs per-knot Geom linking weight (5-10×)
+- No universal linking weight closes all 4 atoms simultaneously
+- This IS the Geom_full open problem (same as m_p 2.89% gap)
+
+The earlier "zero free parameters" claim was over-enthusiastic.
+The interface data in χ^λ(β_K) gives the correct RELATIVE
+contributions per partition, but the ABSOLUTE scale requires
+the Geom linking weight which varies per knot.
