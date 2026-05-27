@@ -239,7 +239,7 @@ The m_n residual (2 ppm) is bottlenecked by the flavor-split's own
 `Empirical match` table), which itself is the framework's open
 research direction.
 
-CAL-3 (Q_β) remains as a calibration input in the framework's
+CAL-3 (𝔇_π) remains as a calibration input in the framework's
 standard 3-calibration discipline; the N=3 ladder uses it to
 predict Q_β to 6 ppb (one of the framework's tightest predictions).
 This session does NOT change CAL-3 status.

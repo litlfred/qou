@@ -7,7 +7,7 @@ The PR #570 agent corrected their earlier answer and proposed the
 following derivation chain:
 
 > "CAL-2 m_μ/m_e fixes q_0 via Vol(4_1)/ℏ_q².  CAL-1 m_e fixes
->  the dimensional bridge.  CAL-3 Q_β(n) fixes E_0.  From those
+>  the dimensional bridge.  CAL-3 𝔇_π(n) fixes E_0.  From those
 >  three, β_p, β_n are topologically determined (no fit), and
 >
 >    m_{q,K} = |tr_M(ρ(β_K))|

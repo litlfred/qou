@@ -117,7 +117,7 @@ resolution and deriving $Q_\beta$ from substrate alone (PR #639's
 spectral bridge already provides Form A as a substrate-only Q_β
 predictor at +1.31 keV). The handoff's TASK 4 noted "Q_β as
 PREDICTION" under the three-calibration discipline (CAL-1 m_e,
-CAL-2 q_0, CAL-3 Q_β) — this is the calibration-vs-prediction
+CAL-2 q_0, CAL-3 𝔇_π) — this is the calibration-vs-prediction
 status of Q_β under the current convention.
 
 **Status**: per author resolution, 780 ppb floor stands; but the

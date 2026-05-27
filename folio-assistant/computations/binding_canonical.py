@@ -53,7 +53,7 @@ from q_parameter import Q as q0, HA as h_q  # canonical aliases per CLAUDE.md §
 from witness_base import WitnessBuilder  # noqa: E402
 # AME 2020 binding-energy comparison targets + proton mass (validation-only,
 # NOT calibration inputs — per CLAUDE.md §"Canonical derivation chain" the
-# 3 calibrations are CAL-1 m_e, CAL-2 m_µ/m_e, CAL-3 Q_β; these AME values
+# 3 calibrations are CAL-1 m_e, CAL-2 𝔇_β, CAL-3 𝔇_π; these AME values
 # are used ONLY for the err = pred - AME_B_* comparison in the __main__
 # print loop below). Added via PR #1105 (codata_constants AME extension).
 from codata_constants import (
