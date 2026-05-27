@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.GCD.Basic
+
+
 /-!
 # QOU.Organic.ThreadingLink — Threading link T(2,N)
 
@@ -11,9 +15,6 @@ Alexander weight of N pairwise Hopf links.
 - [manuscript] Ch. 10, §2 Molecular Hopf chains and rings
 - [kauffman1991] https://doi.org/10.1142/1116
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.GCD.Basic
 
 namespace QOU.Organic
 

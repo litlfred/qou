@@ -1,3 +1,7 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
+
+
 /-!
 # Remainder modules O(I) and Õ(I)
 
@@ -18,9 +22,6 @@ single monomials.
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 4
 - content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §3 (isNormalForm)
 -/
-
-import Mathlib.Data.List.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.GrobnerShirshov.ContentBlock
 

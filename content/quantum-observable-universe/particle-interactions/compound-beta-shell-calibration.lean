@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.CompoundBetaShellCalibration
   — Compound β-decay calibration across magic shells
@@ -10,8 +13,6 @@ directly give y_target; instead, a chain of Q-values along the
 
 LaTeX: `\label{prop:compound-beta-shell-calibration}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

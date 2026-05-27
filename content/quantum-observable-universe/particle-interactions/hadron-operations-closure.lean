@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.Hadron.hadron_operations_closure — Closure of hadron operations
 
@@ -10,8 +13,6 @@ structure or produces a new hadron in Sym^{n₁+n₂}(K).
 - [manuscript] Ch. 4, §10
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Hadron
 

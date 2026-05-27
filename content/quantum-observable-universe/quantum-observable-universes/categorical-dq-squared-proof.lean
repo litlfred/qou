@@ -1,3 +1,6 @@
+import QOU.CategoricalDqSquared
+
+
 /-!
 # categorical-dq-squared-proof — sibling stub
 
@@ -24,8 +27,6 @@ non-vanishing for q != 1").
 
 Ref: [manuscript] §quantum-observable-universes
 -/
-
-import QOU.CategoricalDqSquared
 
 namespace QOU
 

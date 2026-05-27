@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QHeatEquation.exists_solution — well-posedness of the q-heat equation
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:q-heat-equation-exists}`
 - [manuscript] §2-quantum-observable-universes/q-heat-equation-exists
 - [kassel1995] Quantum Groups, §VII.4
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.RingTheory.PowerSeries.Basic
+
+
 /-!
 # QOU.qExponentialTaylor — archimedean Taylor series of e_q
 
@@ -21,9 +25,6 @@ in characteristic p.  The categorical `QExponential` structure is
 defined abstractly in any base ring; this proposition is the
 archimedean realisation.
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.RingTheory.PowerSeries.Basic
 
 namespace QOU
 

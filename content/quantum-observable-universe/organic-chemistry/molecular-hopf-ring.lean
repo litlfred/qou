@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Organic.MolecularHopfRing — Threaded molecular ring
 
@@ -10,8 +13,6 @@ carries half the weight of the pairwise construction.
 
 - [manuscript] Ch. 10, §2 Molecular Hopf chains and rings
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Organic
 

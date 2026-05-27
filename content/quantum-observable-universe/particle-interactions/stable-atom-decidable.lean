@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.StableAtom.decidable — stability is decidable
 
@@ -5,8 +8,6 @@ ILP feasibility in fixed dimension is decidable in poly time (Lenstra).
 
 LaTeX: `\label{prop:stable-atom-decidable}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

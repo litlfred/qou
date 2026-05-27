@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.explicit_formula
 
@@ -17,11 +23,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 set_option autoImplicit false
 

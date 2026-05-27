@@ -1,3 +1,8 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Rigid monoidal structural-gap invariance
 
@@ -36,10 +41,6 @@ the class hypothesis.
   Invent. Math. 92 (1988)
 - [kassel1995] C. Kassel, "Quantum Groups", GTM 155, Springer
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

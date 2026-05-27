@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.higher_forms_su2 — Higher forms on O(SU(2))
 
@@ -16,8 +19,6 @@ LaTeX label: `ex:higher-forms-su2`
 
 - [manuscript] §1 Example: Higher forms on O(SU(2))
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

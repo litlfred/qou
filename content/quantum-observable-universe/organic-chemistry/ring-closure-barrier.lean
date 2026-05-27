@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Organic.RingClosureBarrier — Ring-closure energy barrier
 
@@ -10,8 +13,6 @@ of maximum crossing energy.
 
 - [manuscript] Ch. 10, §2 Molecular Hopf chains and rings
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Organic
 

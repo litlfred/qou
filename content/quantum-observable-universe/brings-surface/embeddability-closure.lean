@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.GCD.Basic
+
+
 /-!
 # QOU.Torsion.embeddability_closure — All generated knots descend to the base
 
@@ -12,9 +16,6 @@ LaTeX label: `thm:embeddability-closure`
 
 - [manuscript] §3-lifting-of-quantum-torsion/embeddability-closure
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.GCD.Basic
 
 namespace QOU.Torsion
 

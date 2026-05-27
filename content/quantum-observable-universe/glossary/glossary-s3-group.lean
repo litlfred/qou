@@ -1,3 +1,6 @@
+import Mathlib.GroupTheory.Perm.Basic
+
+
 /-!
 # QOU.S3Group — Glossary: symmetric group S₃
 
@@ -6,8 +9,6 @@ the involution relations.
 
 LaTeX label: `rem:glossary-s3-group`
 -/
-
-import Mathlib.GroupTheory.Perm.Basic
 
 namespace QOU
 

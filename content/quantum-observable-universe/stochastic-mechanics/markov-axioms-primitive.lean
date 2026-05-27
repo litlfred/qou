@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.markov_axioms_primitive
 
@@ -24,10 +29,6 @@ This file:
 
 LaTeX label: `rem:markov-axioms-primitive` (helper Lean infrastructure).
 -/
-
-import Mathlib.Algebra.Order.Ring.Lemmas
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

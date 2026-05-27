@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.Data.Fin.Basic
+
+
 /-!
 # QOU.BraidTwistFlip
 
@@ -10,9 +14,6 @@ LaTeX label: `def:braid-twist-flip`
 
 - [manuscript] Chapter 4, §Braid involutions
 -/
-
-import QOU.Basic
-import Mathlib.Data.Fin.Basic
 
 namespace QOU
 

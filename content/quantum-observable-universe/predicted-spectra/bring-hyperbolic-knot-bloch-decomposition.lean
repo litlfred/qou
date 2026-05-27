@@ -1,3 +1,9 @@
+import Mathlib.Data.Nat.Totient
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+import QOU.Archimedean.EmCouplingBringZeroMode
+
+
 /-!
 # Bloch-group decomposition of 2/(3π) on Bring's surface
 
@@ -26,11 +32,6 @@ This file establishes the unconditional algebraic skeleton:
 -- Ref: [thurston1978] The geometry and topology of three-manifolds.
 -- Ref: [zagier1986]  Lecture Notes in Mathematics 1111 (1986) 283-299.
 -/
-
-import Mathlib.Data.Nat.Totient
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
-import QOU.Archimedean.EmCouplingBringZeroMode
 
 namespace QOU.Archimedean
 

@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Eval
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # (q, z)-Bicompletion
 
@@ -14,10 +19,6 @@ conj:mass-endomorphism.
 -- Ref: [manuscript] def:qz-bicompletion
 -- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
 -/
-
-import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Eval
-import Mathlib.Data.Real.Basic
 
 open Polynomial
 

@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+
+
 /-!
 # QOU.Braiding.braid_action_tensor — Braid action on tensor products
 
@@ -14,9 +18,6 @@ LaTeX label: `prop:braid-action-tensor`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [manuscript] §4-path-integrals-and-braiding/braid-action-tensor
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 
 open CategoryTheory MonoidalCategory BraidedCategory
 

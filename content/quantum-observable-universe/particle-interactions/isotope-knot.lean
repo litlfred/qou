@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.IsotopeKnot — isotope as knot variant of fixed proton block
 
@@ -6,8 +9,6 @@ on the proton-quark block.
 
 LaTeX: `\label{def:isotope-knot}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

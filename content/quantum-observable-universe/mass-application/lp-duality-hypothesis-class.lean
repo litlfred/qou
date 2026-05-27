@@ -1,3 +1,6 @@
+import QOU.BraidKnot.LpDualityHypothesisClass
+
+
 /-!
 # `def:lp-duality-hypothesis-class` — sibling stub
 
@@ -15,8 +18,6 @@ For the actual implementation, see the file above.
 
 -- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 -/
-
-import QOU.BraidKnot.LpDualityHypothesisClass
 
 namespace QOU.BraidKnot
 

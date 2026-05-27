@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Data.Finset.Basic
+import QOU.Common.MagicNumbers
+
+
 /-!
 # Magic numbers as ranks of S₅-stable Bring period sub-lattices
 
@@ -17,10 +22,6 @@ as hypotheses.
 -- Ref: [kassel1995] Kassel, "Quantum Groups," Springer GTM 155, 1995
 --      (broad reference; DOI: 10.1007/978-1-4612-0783-2)
 -/
-
-import Mathlib.Algebra.Module.Basic
-import Mathlib.Data.Finset.Basic
-import QOU.Common.MagicNumbers
 
 namespace QOU.AlgebraicSubstrate
 

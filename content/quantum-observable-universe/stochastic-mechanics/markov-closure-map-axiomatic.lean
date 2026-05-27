@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.markov_closure_map_axiomatic
 
@@ -18,7 +20,6 @@ making the eventual Track-A formalisation (full Lean definition of
 LaTeX label: `rem:markov-closure-map-axiomatic` (Track C Step B).
 -/
 
-import Mathlib.Tactic
 -- Sibling-chapter dependency: `Link` inductive (with `hopfLink`
 -- constructor) defined in `braid-link-types.lean`.
 -- Ref: [manuscript] rem:braid-link-types

@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import QOU.KnotTheory
+
+
 /-!
 # QOU.Hadron — Composite localized knot (hadronic state)
 
@@ -15,10 +20,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import QOU.KnotTheory
 
 namespace QOU
 

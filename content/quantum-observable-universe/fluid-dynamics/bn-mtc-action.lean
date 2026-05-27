@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+
+
 /-!
 # QOU.ObservableMTC.bnAction
 
@@ -9,8 +12,6 @@ LaTeX label: `prop:bn-mtc-action`
 
 **Ground ring**: `ℂ` (categorical; non-computational).
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 
 namespace QOU
 

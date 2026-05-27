@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.hecke_1d_irrep_closed_form_character
 
@@ -20,10 +25,6 @@ crossings) or `λ_σ − h/2` (averaged crossings).
 
 LaTeX label: `prop:hecke-1d-irrep-closed-form-character`
 -/
-
-import Mathlib.Algebra.Order.Ring.Lemmas
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

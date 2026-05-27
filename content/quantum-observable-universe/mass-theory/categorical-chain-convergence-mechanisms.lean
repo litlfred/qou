@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.categorical_chain_convergence_mechanisms
 
@@ -17,10 +22,6 @@ projects to a finite real number via these two mechanisms.
 
 LaTeX label: `prop:categorical-chain-convergence-mechanisms`
 -/
-
-import Mathlib.Algebra.Order.Ring.Lemmas
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

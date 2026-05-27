@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
+import Mathlib.Topology.Basic
+
+
 /-!
 # QOU.Torsion.jet_prolongation_C — Archimedean jet prolongation
 
@@ -12,10 +17,6 @@ LaTeX label: `cor:jet-prolongation-C`
 
 - [manuscript] §3-lifting-of-quantum-torsion/jet-prolongation-C
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Topology.Basic
 
 namespace QOU.Torsion
 

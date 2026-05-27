@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.FlavorDressing.FlavorDressingFunctor
 
@@ -6,8 +9,6 @@ flavor, formalised as a typeclass on a concrete `Flavor` enum.
 
 LaTeX: `\label{def:flavor-dressing-functor}`
 -/
-
-import QOU.Basic
 
 namespace QOU.FlavorDressing
 

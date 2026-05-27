@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+import QOU.Common.MagicNumbers
+
+
 /-!
 # Diagrammatic double-magic LR-fusion rigidity (Lean class)
 
@@ -15,10 +20,6 @@ conditional on `[DoubleMagicConjecture Z N]` instances.
 -- Ref: [ram1991]     title: — see content/schema/references.ts
 -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras," LMS Monographs 21, OUP 2000
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
-import QOU.Common.MagicNumbers
 
 namespace QOU.LRFusion
 

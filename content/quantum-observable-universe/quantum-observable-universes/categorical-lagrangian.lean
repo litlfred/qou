@@ -1,3 +1,8 @@
+import QOU.Basic
+import QOU.Glossary
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.CategoricalLagrangian
 
@@ -6,10 +11,6 @@ an endomorphism of A encoding the full physics before tracing.
 
 LaTeX: `\label{def:categorical-lagrangian}`
 -/
-
-import QOU.Basic
-import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

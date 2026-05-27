@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.FrobeniusHopfData.frobeniusForm
 
@@ -7,9 +11,6 @@ and induces an isomorphism A ≅ A∨.
 
 LaTeX label: `def:frobenius-pairing`
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open CategoryTheory MonoidalCategory
 

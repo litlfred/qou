@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalAction.unique — uniqueness of the categorical action
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-action-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-action-unique
 - [kelly1982] Basic Concepts of Enriched Category Theory
 -/
-
-import QOU.Basic
 
 namespace QOU
 

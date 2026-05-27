@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalDirac.unique — uniqueness of the categorical Dirac operator
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-dirac-operator-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-dirac-operator-unique
 - [connes1994] Noncommutative Geometry
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,6 @@
+import QOU.BraidKnot.KnotFactorSpectralDerivation
+
+
 /-!
 # QOU.BraidKnot.knot_factor_amphicheiral
 
@@ -10,8 +13,6 @@ LaTeX label: `cor:knot-factor-amphicheiral`
 
 - [manuscript] Ch. Braids and Knots, §Knot factor / amphicheiral
 -/
-
-import QOU.BraidKnot.KnotFactorSpectralDerivation
 
 namespace QOU.BraidKnot
 

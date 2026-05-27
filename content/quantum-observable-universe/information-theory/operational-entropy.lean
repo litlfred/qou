@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Field.Basic
+
+
 /-!
 # QOU.Information.operationalEntropy — Operational entropy of the Reeb dynamics
 
@@ -9,8 +12,6 @@ LaTeX label: `def:operational-entropy`
 ## References
 - [manuscript] §9/operational-entropy
 -/
-
-import Mathlib.Algebra.Field.Basic
 
 namespace QOU.Information
 

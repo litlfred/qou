@@ -1,3 +1,6 @@
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.Archimedean.LeptonNumber — Lepton number as Skein smoothing count
 
@@ -10,8 +13,6 @@ LaTeX label: `def:lepton-number-categorical`
 ## References
 - [manuscript] §6/lepton-number-categorical
 -/
-
-import Mathlib.Data.Int.Basic
 
 namespace QOU.Archimedean
 

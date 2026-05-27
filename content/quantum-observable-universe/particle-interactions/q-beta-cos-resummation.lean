@@ -1,3 +1,8 @@
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.Interactions.QBetaCosResummation — `cos((z-1)h/2)` tightening of Form A
 
@@ -22,10 +27,6 @@ This file:
 
 LaTeX label: `prop:q-beta-cos-resummation`
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.Interactions
 

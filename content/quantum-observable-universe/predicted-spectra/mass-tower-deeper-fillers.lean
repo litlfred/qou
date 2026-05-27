@@ -1,3 +1,10 @@
+import Mathlib.Tactic
+import QOU.Archimedean.MassTowerOpenProblemsClasses
+import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.BlochWignerMathlibFiller
+
+
 /-!
 # Deeper mass-tower / Mathlib fillers — consolidated
 
@@ -29,12 +36,6 @@ provides a concrete Lean handle for downstream usage.
 -- Ref: CLAUDE.md §7b "Symmetric-crystal techniques"
 -- Ref: [borel1974], [bloch2000], [suslin1991]
 -/
-
-import Mathlib.Tactic
-import QOU.Archimedean.MassTowerOpenProblemsClasses
-import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
-import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.BlochWignerMathlibFiller
 
 namespace QOU.Archimedean.DeeperFillers
 

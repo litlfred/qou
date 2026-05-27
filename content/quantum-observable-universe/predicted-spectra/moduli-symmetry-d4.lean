@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Complex.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+
+
 /-!
 # QOU.Archimedean.moduli_symmetry_d4 — Dihedral D₄-action on ℂ×
 
@@ -16,11 +22,6 @@ LaTeX label: `prop:moduli-symmetry-d4`
 - [manuscript] §6/golden-quartet-galois
 - [manuscript] §5/baryon-integration-limit
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Complex.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
 
 namespace QOU.Archimedean.ModuliSymmetryD4
 

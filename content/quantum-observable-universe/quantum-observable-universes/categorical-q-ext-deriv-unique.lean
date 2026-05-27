@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalQExtDeriv.unique — uniqueness of the categorical q-exterior derivative
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-q-ext-deriv-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-q-ext-deriv-unique
 - [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 -/
-
-import QOU.Basic
 
 namespace QOU
 

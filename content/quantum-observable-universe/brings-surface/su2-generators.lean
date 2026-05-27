@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.Su2Generators
 
@@ -11,8 +14,6 @@ LaTeX label: `def:su2-generators`
 
 - [manuscript] Chapter 4, §SU(2)–SO(3)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Category.Ring.Basic
+import Mathlib.LinearAlgebra.Basic
+
+
 /-!
 # Confinement = spectral-sequence collapse
 
@@ -16,10 +21,6 @@ plays the role of the string tension categorically.
 
 -- Ref: [manuscript] prop:confinement-categorical
 -/
-
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Algebra.Category.Ring.Basic
-import Mathlib.LinearAlgebra.Basic
 
 namespace QOU.WedderburnMass
 

@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.h3_hecke_idempotents
 
@@ -26,9 +30,6 @@ with q-dimension sum matching the regular representation
 
 LaTeX label: `rem:h3-hecke-idempotents`
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

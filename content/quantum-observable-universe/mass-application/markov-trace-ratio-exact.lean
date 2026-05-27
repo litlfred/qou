@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidsKnots.MarkovTraceRatioExact — Ratios of Markov traces are normalization-independent
 
@@ -23,9 +27,6 @@ LaTeX label: `prop:markov-trace-ratio-exact`
 - [jones1987] Jones, "Hecke algebra representations of braid groups and link polynomials"
 - [manuscript] §5/archimedean-image-table
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidsKnots
 

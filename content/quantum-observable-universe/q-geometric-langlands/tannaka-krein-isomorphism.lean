@@ -1,3 +1,8 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Equivalence
+import Mathlib.CategoryTheory.Functor.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.tannaka_krein_isomorphism
 
@@ -6,10 +11,6 @@ is equivalent to the category of comodules over the reconstructed
 Hopf algebra.
 LaTeX: `\label{thm:tannaka-krein-isomorphism}`
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Equivalence
-import Mathlib.CategoryTheory.Functor.Basic
 
 set_option autoImplicit false
 

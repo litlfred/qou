@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QResolvent.unique — uniqueness of the q-resolvent
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:q-resolvent-unique}`
 - [manuscript] §2-quantum-observable-universes/q-resolvent-unique
 - [kassel1995] Quantum Groups, §IV.4
 -/
-
-import QOU.Basic
 
 namespace QOU
 

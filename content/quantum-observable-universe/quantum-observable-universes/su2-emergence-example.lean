@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.Examples.su2_emergence — Emergence of SU(2): the full chain
 
@@ -15,8 +18,6 @@ LaTeX label: `ex:su2-emergence`
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 - [manuscript] §1 Example: Emergence of SU(2)
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Examples
 

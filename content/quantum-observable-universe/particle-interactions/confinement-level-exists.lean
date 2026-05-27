@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.ConfinementLevel.exists — existence of confinement level
 
@@ -6,8 +9,6 @@ so its minimum exists.
 
 LaTeX: `\label{prop:confinement-level-exists}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

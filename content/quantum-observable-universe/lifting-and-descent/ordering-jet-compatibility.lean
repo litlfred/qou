@@ -1,3 +1,10 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Order.WellFounded
+import Mathlib.Order.WellFoundedSet
+import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Lex
+
+
 /-!
 # QOU.Torsion.ordering_jet_compatibility — Admissible ordering extends through jet tower
 
@@ -11,12 +18,6 @@ LaTeX label: `prop:ordering-jet-compatibility`
 ## References
 - [manuscript] §3/ordering-jet-compatibility
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Order.WellFounded
-import Mathlib.Order.WellFoundedSet
-import Mathlib.Data.List.Basic
-import Mathlib.Data.List.Lex
 
 namespace QOU.Torsion
 

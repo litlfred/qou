@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.ShellClosureStability
 
@@ -26,8 +29,6 @@ external research target documented in the `.md`.
 
 LaTeX: `\label{prop:shell-closure-stability}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

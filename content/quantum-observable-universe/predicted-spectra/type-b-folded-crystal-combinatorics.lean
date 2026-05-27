@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # Type-B folded crystal combinatorics
 
@@ -28,8 +31,6 @@ and $\chi^{\lambda^T}(\beta)$ along the Demazure components.
 -- Ref: [brundankleshchev2009] DOI 10.1007/s00222-009-0204-8
 -- Ref: CLAUDE.md §7b "Symmetric-crystal techniques"
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.Archimedean.TypeBCrystal
 

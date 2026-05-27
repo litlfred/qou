@@ -1,10 +1,3 @@
-/-!
-# QOU.CategoricalAction
-
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/CategoricalAction.lean (monolithic)
--/
-
 import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Basic
@@ -12,6 +5,14 @@ import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
+
+
+/-!
+# QOU.CategoricalAction
+
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/CategoricalAction.lean (monolithic)
+-/
 
 -- Pre-Archimedean stub: this declaration lives in a rigid monoidal category
 -- with abstract ground ring `R`.  Real / Analysis / Topology / Manifold /

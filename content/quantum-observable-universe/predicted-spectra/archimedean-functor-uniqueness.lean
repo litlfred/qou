@@ -1,3 +1,9 @@
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Topology.ContinuousOn
+import Mathlib.Tactic
+
+
 /-!
 # Uniqueness of the archimedean realization functor (conditional)
 
@@ -28,11 +34,6 @@ each class's docstring.
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -/
-
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Topology.ContinuousOn
-import Mathlib.Tactic
 
 namespace QOU.Archimedean
 

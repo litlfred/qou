@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Hopf.Basic
+import Mathlib.NumberTheory.NumberField.Basic
+
+
 /-!
 # Graded-Mikusiński / Goncharov period correspondence (axiom class)
 
@@ -12,9 +16,6 @@ This is a conjecture, axiomatised as a Lean class (per CLAUDE.md
 are understood as conjectural inputs, with downstream conditional
 theorems proved over the class).
 -/
-
-import Mathlib.Algebra.Hopf.Basic
-import Mathlib.NumberTheory.NumberField.Basic
 
 namespace QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence
 

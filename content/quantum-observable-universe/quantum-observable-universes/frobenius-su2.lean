@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.frobenius_su2 — Frobenius relation for SU(2)
 
@@ -17,8 +20,6 @@ LaTeX label: `ex:frobenius-su2`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1 Example: Frobenius relation for SU(2)
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

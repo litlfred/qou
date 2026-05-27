@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalHodgeStar.unique — uniqueness of the categorical Hodge star
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-hodge-star-unique}`
 - [manuscript] §1-quantum-universes/categorical-hodge-star-unique
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
-
-import QOU.Basic
 
 namespace QOU
 

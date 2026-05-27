@@ -1,3 +1,7 @@
+import QOU.Basic
+import QOU.FlavorDressing.FlavorDressingFunctor
+
+
 /-!
 # QOU.FlavorDressing.dressed_mass_from_substrate_split
 
@@ -14,9 +18,6 @@ the level of the flavor-dressing functor.
 
 LaTeX: `\label{prop:flavor-dressed-mass-from-substrate-split}`
 -/
-
-import QOU.Basic
-import QOU.FlavorDressing.FlavorDressingFunctor
 
 namespace QOU.FlavorDressing
 

@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.frobenius_relation — Frobenius relation
 
@@ -9,9 +13,6 @@ structures of a Frobenius object.
 
 LaTeX label: `prop:frobenius-relation`
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open CategoryTheory MonoidalCategory
 

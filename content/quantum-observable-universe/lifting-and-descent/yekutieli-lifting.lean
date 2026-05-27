@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.YekutieliLifting — The brane tower satisfies the Yekutieli lifting condition
 
@@ -9,8 +12,6 @@ the recursive brane tower satisfy the Yekutieli lifting condition.
 - [yekutieli2010] Central Extensions of Gerbes, Theorem 1.7
 - [manuscript] §3 Proposition: Yekutieli Lifting
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU
 

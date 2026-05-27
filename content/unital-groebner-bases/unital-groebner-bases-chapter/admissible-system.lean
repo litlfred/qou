@@ -1,3 +1,7 @@
+import Mathlib.Order.WellFounded
+import Mathlib.Data.List.Basic
+
+
 /-!
 # Monomial ordering and admissible system
 
@@ -28,9 +32,6 @@ Additionally, `NormalForms.lean` provides concrete instances:
 - content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §1
 - content/unital-groebner-bases/lean/QOU/GrobnerShirshov/NormalForms.lean (concrete order)
 -/
-
-import Mathlib.Order.WellFounded
-import Mathlib.Data.List.Basic
 
 namespace QOU.GrobnerShirshov.ContentBlock
 

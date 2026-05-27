@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
+
+
 /-!
 # QOU.BraidKnot.ReadingAConditionalLinkingWeight
 
@@ -67,10 +72,6 @@ research.
 - [audit 2026-05-22 Yekutieli per-cell](../../../docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
   — framework canonical Reading B (additive)
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 

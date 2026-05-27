@@ -1,3 +1,6 @@
+import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.Normed.Field.Basic
+
 /-!
 # QOU.BraidKnot.LusztigVsHermitianBar
 
@@ -12,8 +15,6 @@ involutions, so the algebra-level claim reduces to the
 parameter-level claim proved here.
 -/
 
-import Mathlib.Data.Complex.Basic
-import Mathlib.Analysis.Normed.Field.Basic
 -- Ref: [manuscript] prop:lusztig-vs-hermitian-bar
 -- Ref: [manuscript] def:bar-involution
 -- Ref: [manuscript] prop:q-zero-complex-extension

@@ -1,3 +1,8 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Abelian.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.LocalCohomologyGroup — Local cohomology at z = 1
 
@@ -11,10 +16,6 @@ LaTeX label: `def:local-cohomology-group`
 
 - [yekutieli2015] https://doi.org/10.1515/9783110291230
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.CategoryTheory.Abelian.Basic
 
 set_option autoImplicit false
 

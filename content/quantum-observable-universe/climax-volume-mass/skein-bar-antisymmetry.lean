@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+
+
 /-!
 # QOU.BraidsAndKnots.skein_bar_antisymmetry — Bar-antisymmetry of Skein
 
@@ -16,10 +21,6 @@ LaTeX label: `prop:skein-bar-antisymmetry`
 - [manuscript] §5/skein-bar-antisymmetry
 - [manuscript] §5/iwahori-hecke-algebra
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
 
 namespace QOU.BraidsAndKnots.SkeinBarAntisymmetry
 

@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.categorical_self_duality — Critical points are instantons
 
@@ -15,9 +19,6 @@ LaTeX label: `prop:categorical-self-duality`
 - [donaldson1990] https://doi.org/10.1093/oso/9780198535874.001.0001
 - [manuscript] §1-quantum-observable-universe/categorical-self-duality
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open CategoryTheory MonoidalCategory
 

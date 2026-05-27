@@ -1,3 +1,7 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+
+
 /-!
 # Pair-contribution equality at a fixed jet level
 
@@ -18,9 +22,6 @@ Per CLAUDE.md §3b, this is a `lemma` (provable, not conjectural).
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.BraidKnot
 

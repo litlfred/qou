@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Field.Defs
+
+
 /-!
 # QOU.BraidKnot.ImQVsPSkew
 
@@ -9,8 +12,6 @@ a paper-side audit-visibility stub.
 Ref: [manuscript] rem:im-q-vs-p-skew
 Ref: [manuscript] prop:lusztig-vs-hermitian-bar
 -/
-
-import Mathlib.Algebra.Field.Defs
 
 namespace QOU.BraidKnot.ImQVsPSkew
 

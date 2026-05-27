@@ -1,3 +1,7 @@
+import Mathlib.GroupTheory.SpecificGroups.Cyclic
+import Mathlib.GroupTheory.Perm.Cycle.Type
+
+
 /-!
 # QOU.TorusKnot.s5_equivariant_classification
 
@@ -10,9 +14,6 @@ LaTeX label: `prop:s5-equivariant-torus-knots`
 
 **Ground ring**: `ℤ` (finite group theory).
 -/
-
-import Mathlib.GroupTheory.SpecificGroups.Cyclic
-import Mathlib.GroupTheory.Perm.Cycle.Type
 
 namespace QOU
 

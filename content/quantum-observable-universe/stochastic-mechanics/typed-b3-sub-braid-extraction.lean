@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.typed_b3_sub_braid_extraction
 
@@ -43,7 +45,6 @@ dominant sub-braid extraction.
 LaTeX label: `rem:typed-b3-sub-braid-extraction` (Track C extension).
 -/
 
-import Mathlib.Tactic
 -- Sibling-chapter dependencies: `Link`, `Braid2`, `closure2`,
 -- `closure2_at_two_crossings_eq_hopf`, `jonesAtOne`,
 -- `closure2_jones_at_one_sigma_sq_eq_neg_two` from

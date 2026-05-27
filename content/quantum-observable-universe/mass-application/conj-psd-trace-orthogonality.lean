@@ -1,3 +1,9 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Sort
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Set.Basic
+
+
 /-!
 # QOU.BraidKnot.PSDTraceOrthogonality
 
@@ -37,11 +43,6 @@ Ref: [manuscript] folio-assistant/computations/probe_1_project_4he_on_dominant.p
 Ref: [manuscript] folio-assistant/computations/probe_1b_li6_orthogonality.py
 Ref: [manuscript] folio-assistant/computations/probe_4_li6_rectangular_python.py
 -/
-
-import Mathlib.Data.List.Basic
-import Mathlib.Data.List.Sort
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Set.Basic
 
 namespace QOU.BraidKnot.PSDTraceOrthogonality
 

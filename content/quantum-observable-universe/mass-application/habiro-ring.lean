@@ -1,3 +1,9 @@
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Order.Filter.Basic
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+
+
 /-!
 # Habiro Ring
 
@@ -6,11 +12,6 @@ the cyclotomic completion where all quantum invariants coexist.
 
 -- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
 -/
-
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Order.Filter.Basic
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 namespace QOU.HabiroRing
 

@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Ring.Defs
+
+
 /-!
 # Pair commutation at the traced-volume level
 
@@ -16,8 +19,6 @@ Per CLAUDE.md §3b, this is a `lemma` (provable, not conjectural).
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.Algebra.Ring.Defs
 
 namespace QOU.BraidKnot
 

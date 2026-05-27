@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QuantumObservableUniverse.exists_instance — existence of QOU
 
@@ -12,8 +15,6 @@ LaTeX: `\label{prop:quantum-observable-universe-exists}`
 - [manuscript] §2-quantum-observable-universes/quantum-observable-universe-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
 -/
-
-import QOU.Basic
 
 namespace QOU
 

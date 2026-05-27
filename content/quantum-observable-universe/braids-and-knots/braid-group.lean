@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidGroup
 
@@ -11,8 +14,6 @@ LaTeX label: `def:braid-group`
 
 - [birman1974] https://doi.org/10.1515/9781400881420
 -/
-
-import QOU.Basic
 
 namespace QOU
 

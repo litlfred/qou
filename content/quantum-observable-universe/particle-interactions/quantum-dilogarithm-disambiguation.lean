@@ -1,3 +1,6 @@
+import QOU.BraidKnot.QuantumDilogarithm
+
+
 /-!
 # def:quantum-dilogarithm-disambiguation — sibling stub
 
@@ -16,8 +19,6 @@ LaTeX label: `\label{def:quantum-dilogarithm-disambiguation}`
 Ref: [manuscript] def:quantum-dilogarithm-disambiguation
 Ref: [manuscript] prop:mass-endomorphism-tower (parent prop)
 -/
-
-import QOU.BraidKnot.QuantumDilogarithm
 
 namespace QOU.BraidKnot
 

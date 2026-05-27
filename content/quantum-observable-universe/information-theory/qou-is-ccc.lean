@@ -1,3 +1,6 @@
+import QOU.JetHorizon
+
+
 /-!
 # QOU.qou_is_ccc — sibling stub
 
@@ -25,8 +28,6 @@ LaTeX label: `prop:qou-is-ccc`
 - [penrose2010] R. Penrose, *Cycles of Time*, Bodley Head, 2010
 - [manuscript] §9 Information theory / qou-is-ccc
 -/
-
-import QOU.JetHorizon
 
 namespace QOU
 

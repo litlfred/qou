@@ -1,3 +1,6 @@
+import Mathlib.Data.Complex.Basic
+
+
 /-!
 # QOU.BringsSurface.brings_smoothness_resolution — Bring surface is smooth
 
@@ -5,8 +8,6 @@ The three power-sum constraints defining the Bring surface are transverse
 in ℙ⁴, so the intersection is smooth.  Projection singularities are
 resolved intrinsically by the coral coordinates.
 -/
-import Mathlib.Data.Complex.Basic
-
 namespace QOU.BringsSurface
 
 -- Ref: [manuscript] Ch. 6, §1

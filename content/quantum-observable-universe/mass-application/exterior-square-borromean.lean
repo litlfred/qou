@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Algebra.BigOperators.Basic
+
+
 /-!
 # 45 = dim Λ²(C^10) — Borromean strand-pair representation
 
@@ -11,9 +15,6 @@ the α_EM formula 1/α_EM = 45·[3]_q·(...).
 
 -- Ref: [manuscript] prop:exterior-square-borromean
 -/
-
-import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Algebra.BigOperators.Basic
 
 namespace QOU.WedderburnMass
 

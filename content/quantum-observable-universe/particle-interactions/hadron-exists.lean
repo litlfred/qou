@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.Hadron.exists — existence of hadrons
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:hadron-exists}`
 - [manuscript] §4-braids-and-knots/hadron-exists
 - [atiyah1990] Geometry and Physics of Knots
 -/
-
-import QOU.Basic
 
 namespace QOU
 

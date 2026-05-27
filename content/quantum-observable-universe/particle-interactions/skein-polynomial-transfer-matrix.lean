@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+import Mathlib.Data.Nat.Choose.Basic
+
+
 /-!
 # QOU.Archimedean.skein_polynomial_transfer_matrix
 
@@ -13,10 +18,6 @@ LaTeX label: `prop:skein-polynomial-transfer-matrix`
 - [jones1987] https://doi.org/10.2307/1971403
 - [manuscript] §6/skein-polynomial-transfer-matrix
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
-import Mathlib.Data.Nat.Choose.Basic
 
 namespace QOU.Archimedean
 

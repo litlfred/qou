@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Archimedean.generation_completeness — All embeddable knots are reachable
 
@@ -13,8 +16,6 @@ LaTeX label: `thm:generation-completeness`
 - [manuscript] §5/generation-completeness
 - [kauffman1991] https://doi.org/10.1142/1116
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Archimedean
 

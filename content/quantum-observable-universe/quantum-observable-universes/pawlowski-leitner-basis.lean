@@ -1,3 +1,8 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.PawLeiBasis — Canonical basis for intertwiner spaces
 
@@ -11,10 +16,6 @@ Authoritative source: `content/quantum-observable-universe/lean/QOU/Representati
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 - [manuscript] §1, Proposition: Pawlowski–Leitner basis
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.Factorial.Basic
-import Mathlib.Data.Real.Basic
 
 namespace QOU
 

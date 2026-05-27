@@ -1,3 +1,9 @@
+import Mathlib.RingTheory.Ideal.Basic
+import Mathlib.RingTheory.Ideal.Operations
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Order.SuccPred.Basic
+
+
 /-!
 # Curvature-rank stratification of the GB spectral sequence
 
@@ -25,11 +31,6 @@ decomposition of the Markov-trace pairing.
 
 -- Ref: [manuscript] prop:curvature-rank-gb-stratification
 -/
-
-import Mathlib.RingTheory.Ideal.Basic
-import Mathlib.RingTheory.Ideal.Operations
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Order.SuccPred.Basic
 
 namespace QOU.WedderburnMass
 

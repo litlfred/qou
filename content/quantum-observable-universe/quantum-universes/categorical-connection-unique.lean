@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalConnection.unique_up_to_gauge — uniqueness up to gauge
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-connection-unique}`
 - [manuscript] §1-quantum-universes/categorical-connection-unique
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
-
-import QOU.Basic
 
 namespace QOU
 

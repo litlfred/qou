@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Finset.Basic
+
+
 /-!
 # QOU.Photon.Pieri — Pieri rule shift for degree-one Hecke elements
 
@@ -21,9 +25,6 @@ LaTeX label: `prop:pieri-photon-shift`
 - [kassel1995] Quantum Groups (Springer GTM 155, 1995), Chapter XI.
 - [manuscript] braids-and-knots / pieri-photon-shift
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.Photon
 

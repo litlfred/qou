@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Field.Defs
+
 /-!
 # QOU.BraidKnot.BarInvolution (definition block)
 
@@ -22,8 +25,6 @@ during the transition: once both blocks land on main, downstream
 consumers can choose either canonical import.
 -/
 
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Field.Defs
 -- Ref: [manuscript] def:bar-involution
 -- Ref: [manuscript] prop:bar-symmetric-three-layer-synthesis
 -- Ref: [wenzl1988] doi:10.1007/BF01404457

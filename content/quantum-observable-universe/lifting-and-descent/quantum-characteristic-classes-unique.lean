@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QuantumCharClasses.unique — uniqueness of quantum characteristic classes
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:quantum-characteristic-classes-unique}`
 - [manuscript] §5-lifting-and-descent/quantum-characteristic-classes-unique
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2010.07.008
 -/
-
-import QOU.Basic
 
 namespace QOU
 

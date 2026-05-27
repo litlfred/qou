@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.ConfinedParticle
 
@@ -9,8 +12,6 @@ SDP-feasibility predicate.
 
 LaTeX: `\label{def:confined-particle}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

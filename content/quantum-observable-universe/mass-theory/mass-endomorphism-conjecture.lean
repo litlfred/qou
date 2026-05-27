@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Mass endomorphism conjecture (Lean class)
 
@@ -22,10 +27,6 @@ downstream results) follows §3b of `CLAUDE.md`.
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 -- Ref: [manuscript] prop:quantum-dilogarithm-stratified
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.WedderburnMass
 

@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.StableAtom — stability via ILP feasibility
 
@@ -5,8 +8,6 @@ K is stable at q iff ∃ x ∈ ℤ_{≥0}^N with G(q) x ≥ 0.
 
 LaTeX: `\label{def:stable-atom}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

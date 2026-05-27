@@ -1,3 +1,7 @@
+import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+
+
 /-!
 # QOU.HyperellipticQuintic.z5_automorphism
 
@@ -12,9 +16,6 @@ Self-contained: re-defines `zeta5` and `HyperellipticQuintic`
 locally, matching the block-level convention where each content
 block's `.lean` file is standalone.
 -/
-
-import Mathlib.Data.Complex.Basic
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 namespace QOU.X5Z5
 

@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.main_commutative_diagram — Central 4-square diagram
 
@@ -21,9 +25,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

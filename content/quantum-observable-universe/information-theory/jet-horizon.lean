@@ -1,3 +1,6 @@
+import QOU.JetHorizon
+
+
 /-!
 # jet-horizon — sibling stub
 
@@ -18,8 +21,6 @@ expected `QOU.*` qualified names without duplicating them.
 
 Ref: [manuscript] §9
 -/
-
-import QOU.JetHorizon
 
 namespace QOU
 

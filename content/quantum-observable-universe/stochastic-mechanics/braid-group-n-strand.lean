@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.braid_group_n_strand
 
@@ -37,7 +39,6 @@ specialisations.
 LaTeX label: `rem:braid-group-n-strand`
 -/
 
-import Mathlib.Tactic
 -- Sibling-chapter dependency: `Link`, `Braid2`, `closure2`,
 -- `BraidCrossing` (here) interoperate with `Link.unknot`,
 -- `Braid2.σ_sq`, etc. defined in `braid-link-types.lean`.

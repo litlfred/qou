@@ -1,3 +1,6 @@
+import QOU.LiftingDescent.CosimplicialCrossedGroupoid
+
+
 /-!
 # QOU.LiftingDescent.ccg_cosimplicial_identities
 
@@ -20,8 +23,6 @@ LaTeX label: `lem:ccg-cosimplicial-identities`
 - [yekutieli2010] Central Extensions of Gerbes, §4
 - [manuscript] §3 Lifting and Descent
 -/
-
-import QOU.LiftingDescent.CosimplicialCrossedGroupoid
 
 namespace QOU.LiftingDescent
 

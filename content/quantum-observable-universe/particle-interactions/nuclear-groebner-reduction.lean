@@ -1,3 +1,6 @@
+import QOU.Archimedean.NuclearGroebnerReduction
+
+
 /-!
 # nuclear-groebner-reduction — sibling stub
 
@@ -24,8 +27,6 @@ R_q form remains open work.
 
 Ref: [manuscript] §particle-interactions
 -/
-
-import QOU.Archimedean.NuclearGroebnerReduction
 
 namespace QOU.Archimedean
 

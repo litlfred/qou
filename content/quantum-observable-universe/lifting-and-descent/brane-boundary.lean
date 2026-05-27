@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.BraneBoundary — Defining boundary of the brane
 
@@ -8,8 +11,6 @@ the restriction morphism rₙ : Aₙ → A_{n-1} has non-trivial kernel.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU
 

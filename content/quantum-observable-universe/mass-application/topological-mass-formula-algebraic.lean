@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Tactic.FieldSimp
+
+
 /-!
 # Topological mass formula (algebraic, ℚ(q)-side)
 
@@ -17,10 +22,6 @@ Refs:
   def:algebraic-quantum-volume
   lem:tower-pair-equality-fixed-level
 -/
-
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Tactic.FieldSimp
 
 namespace QOU.Torsion
 

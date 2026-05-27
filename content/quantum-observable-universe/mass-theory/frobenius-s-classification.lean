@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # Frobenius S-eigenvalue classification
 
@@ -13,8 +16,6 @@ channel, which structurally carries the proton-neutron mass splitting.
 
 -- Ref: [manuscript] prop:frobenius-s-classification
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.WedderburnMass
 

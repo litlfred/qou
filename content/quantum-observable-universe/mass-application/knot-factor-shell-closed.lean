@@ -1,3 +1,6 @@
+import QOU.BraidKnot.KnotFactorSpectralDerivation
+
+
 /-!
 # QOU.BraidKnot.knot_factor_shell_closed
 
@@ -12,8 +15,6 @@ LaTeX label: `cor:knot-factor-shell-closed`
 
 - [manuscript] Ch. Braids and Knots, §Knot factor / shell-closed
 -/
-
-import QOU.BraidKnot.KnotFactorSpectralDerivation
 
 namespace QOU.BraidKnot
 

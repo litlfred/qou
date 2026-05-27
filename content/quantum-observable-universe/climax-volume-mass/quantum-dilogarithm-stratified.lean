@@ -1,3 +1,9 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Quantum dilogarithm stratifies by partition GB-depth
 
@@ -14,11 +20,6 @@ and orthogonality packaged as a typeclass-style record.
 -- Ref: [manuscript] prop:curvature-rank-gb-stratification
 -- Ref: [manuscript] prop:spectral-sequence-collapse
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.WedderburnMass
 

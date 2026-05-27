@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.FrobeniusHopfData.frobeniusForm_exists — existence of the Frobenius pairing
 
@@ -14,8 +17,6 @@ LaTeX: `\label{prop:frobenius-pairing-exists}`
 - [kock2004] Frobenius Algebras and 2D Topological Quantum Field
   Theories (Cambridge LMS 59), Ch 2
 -/
-
-import QOU.Basic
 
 namespace QOU
 

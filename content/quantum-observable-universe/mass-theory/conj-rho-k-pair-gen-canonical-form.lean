@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Field.Defs
+
+
 /-!
 # QOU.BraidKnot.RhoKPairGenCanonicalForm
 
@@ -18,8 +21,6 @@ Ref: [manuscript] docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md
 
 Generic over `[Field R]` per CLAUDE.md §7c base-ring discipline.
 -/
-
-import Mathlib.Algebra.Field.Defs
 
 namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
 

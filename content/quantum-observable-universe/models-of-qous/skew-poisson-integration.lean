@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Nat.Basic
+import Mathlib.RingTheory.Ideal.Basic
+
+
 /-!
 # QOU.Archimedean.skew_poisson_integration
 
@@ -10,11 +16,6 @@ strong multiplicativity.
 
 LaTeX label: `prop:skew-poisson-integration`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.RingTheory.Ideal.Basic
 
 namespace QOU.Archimedean
 

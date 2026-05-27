@@ -1,3 +1,6 @@
+import QOU.QuantumObservableUniverse.CategoricalFoundations
+
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_1_frobenius
 
@@ -24,8 +27,6 @@ LaTeX label: `lem:qou-exists-axiom-1`
 - [manuscript] §1 Quantum Observable Universe, Axiom 1
 - [kock2004] J. Kock, *Frobenius Algebras and 2D TQFTs*
 -/
-
-import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 namespace QOU.QuantumObservableUniverse
 

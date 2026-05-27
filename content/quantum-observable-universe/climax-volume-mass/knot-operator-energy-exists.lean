@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.KnotOperatorEnergy.exists — existence of knot operator energy
 
@@ -5,8 +8,6 @@ For any partition λ and q in the generic locus, E(λ, q) exists in |R|.
 
 LaTeX: `\label{prop:knot-operator-energy-exists}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

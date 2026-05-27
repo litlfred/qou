@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QResolvent — categorical q-resolvent
 
@@ -15,8 +18,6 @@ LaTeX label: `def:q-resolvent`
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.4 (spectral
   theory of quantum groups)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

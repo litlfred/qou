@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.multi_link_jones_q1_extension
 
@@ -29,7 +31,6 @@ to plug in any specific c_5 / c_6 candidate they want to test.
 LaTeX label: `rem:multi-link-jones-q1-extension`
 -/
 
-import Mathlib.Tactic
 -- Sibling-chapter dependency: extended `Link` inductive +
 -- `jonesAtOne` cases for `trefoil`, `borromean`, `doubleHopf` from
 -- `braid-link-types.lean`.

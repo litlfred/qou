@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # Plancherel Term 7: well-defined log-functional formulation
 
@@ -27,10 +32,6 @@ Properties:
 
 -- Ref: [manuscript] prop:plancherel-term-7-formulation
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Data.Real.Basic
 
 namespace QOU.WedderburnMass
 

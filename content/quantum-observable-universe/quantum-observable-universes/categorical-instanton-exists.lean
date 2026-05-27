@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalInstanton.exists — existence of categorical instantons
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-instanton-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-instanton-exists
 - [atiyah1978] https://doi.org/10.1098/rspa.1978.0143
 -/
-
-import QOU.Basic
 
 namespace QOU
 

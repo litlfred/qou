@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+
+
 /-!
 # QOU.CommutativeQOU
 
@@ -9,8 +12,6 @@ LaTeX label: `def:commutative-qou`
 
 **Ground ring**: `ℤ` (structural).  Purely algebraic; no analysis.
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 
 namespace QOU
 

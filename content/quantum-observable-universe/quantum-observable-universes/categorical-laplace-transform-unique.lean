@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalLaplace.unique — uniqueness of the categorical Laplace transform
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-laplace-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-laplace-transform-unique
 - [kassel1995] Quantum Groups, §IV
 -/
-
-import QOU.Basic
 
 namespace QOU
 

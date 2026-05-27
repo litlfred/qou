@@ -1,3 +1,10 @@
+import QOU.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Topology.Algebra.Order.Field
+import Mathlib.Order.Filter.Basic
+
+
 /-!
 # QOU.QCasimir — The q-Casimir element of 𝒰_q(𝔰𝔲(2))
 
@@ -61,12 +68,6 @@ documentation of the intended formalisation, not live imports.  To
 lift this file into the Lake build, define it under
 `QOU/QuantumSu2.lean` (e.g. `import QOU.QuantumSu2`).
 -/
-
-import QOU.Basic
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Topology.Algebra.Order.Field
-import Mathlib.Order.Filter.Basic
 
 namespace QOU
 

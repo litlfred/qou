@@ -1,3 +1,9 @@
+import Mathlib.Order.WellFounded
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.LinearAlgebra.Span
+
+
 /-!
 # QOU.UnitalGroebner.RemainderModule — Remainder modules O(I) and Õ(I)
 
@@ -10,11 +16,6 @@ LaTeX label: `def:remainder-modules`
 ## References
 - [manuscript] §1/remainder-modules
 -/
-
-import Mathlib.Order.WellFounded
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Span
 
 namespace QOU.UnitalGroebner
 

@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Defs
+import Mathlib.Logic.Function.Basic
+
+
 /-!
 # QOU.IncompletenessHorizon — Gödel incompleteness implies non-empty horizons
 
@@ -20,9 +24,6 @@ LaTeX label: `prop:incompleteness-implies-horizon`
 - [turing1936] https://doi.org/10.1112/plms/s2-42.1.230
 - [manuscript] §9/incompleteness-horizon
 -/
-
-import Mathlib.Data.Nat.Defs
-import Mathlib.Logic.Function.Basic
 
 namespace QOU.IncompletenessHorizon
 

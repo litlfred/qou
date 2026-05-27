@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+
+
 /-!
 # QOU.Archimedean.golden_quartet_galois — Golden quartet as G-orbit
 
@@ -13,11 +19,6 @@ LaTeX label: `prop:golden-quartet-galois`
 - [manuscript] §6/golden-skew-dual-node
 - [manuscript] §5/baryon-integration-limit
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
 
 namespace QOU.Archimedean.GoldenQuartetGalois
 

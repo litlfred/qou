@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalConnection.exists — existence of categorical connections
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-connection-exists}`
 - [manuscript] §1-quantum-universes/categorical-connection-exists
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
-
-import QOU.Basic
 
 namespace QOU
 

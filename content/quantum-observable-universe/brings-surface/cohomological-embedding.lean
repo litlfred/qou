@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.GCD.Basic
+import Mathlib.Data.Finset.Basic
+
+
 /-!
 # QOU.Archimedean.cohomological_embedding
 
@@ -17,10 +22,6 @@ LaTeX label: `prop:cohomological-embedding`
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.GCD.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.Archimedean
 

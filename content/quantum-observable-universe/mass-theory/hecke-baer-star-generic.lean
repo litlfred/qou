@@ -1,3 +1,9 @@
+import Mathlib.Algebra.Star.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.LinearAlgebra.Matrix.ToLin
+import Mathlib.RingTheory.SimpleModule
+
+
 /-!
 # Iwahori--Hecke algebra is a Baer-*-ring at generic q
 
@@ -20,11 +26,6 @@ projections.  Self-adjointness of idempotents follows from
 choosing an orthogonal basis with respect to the Frobenius
 pairing (cited from `prop:hoefsmit-seminormal-form`).
 -/
-
-import Mathlib.Algebra.Star.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Matrix.ToLin
-import Mathlib.RingTheory.SimpleModule
 
 namespace QOU.BraidKnot.HeckeBaerStarGeneric
 

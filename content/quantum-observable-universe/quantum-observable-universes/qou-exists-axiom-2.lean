@@ -1,3 +1,6 @@
+import QOU.QuantumObservableUniverse.CategoricalFoundations
+
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_2_observability
 
@@ -22,8 +25,6 @@ LaTeX label: `lem:qou-exists-axiom-2`
 - [manuscript] §1 Quantum Observable Universe, Axiom 2
 - Peter–Weyl theorem for compact quantum groups (Woronowicz)
 -/
-
-import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 namespace QOU.QuantumObservableUniverse
 

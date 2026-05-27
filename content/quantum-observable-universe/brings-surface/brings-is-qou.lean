@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.Brings.brings_is_qou — Brings surface is QOU
 
@@ -8,9 +12,6 @@ descent with 6 branch points.
 
 LaTeX label: `prop:brings-is-qou`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
 
 namespace QOU.Brings
 

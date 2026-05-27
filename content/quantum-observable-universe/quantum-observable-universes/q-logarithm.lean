@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.QLogarithm — categorical q-logarithm
 
@@ -15,9 +19,6 @@ LaTeX label: `def:q-logarithm`
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`.  Base-ring independent at the
 Hopf-algebra level; archimedean series representation needs char 0.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

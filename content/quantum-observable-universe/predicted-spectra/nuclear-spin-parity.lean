@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Parity
+
+
 /-!
 # QOU.Archimedean.nuclear_spin_parity — Nuclear spin parity from A mod 2
 
@@ -11,9 +15,6 @@ LaTeX label: `prop:nuclear-spin-parity`
 ## References
 - [manuscript] §6/nuclear-spin-parity
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.Parity
 
 namespace QOU.Archimedean
 

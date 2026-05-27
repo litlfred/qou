@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.UnstableAtom.decay_channel — uniquely-determined decay channel
 
@@ -6,8 +9,6 @@ variety (where two shadow prices agree).
 
 LaTeX: `\label{prop:unstable-atom-decay-channel}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

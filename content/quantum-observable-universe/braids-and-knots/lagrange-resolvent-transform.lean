@@ -1,10 +1,3 @@
-/-!
-# QOU.BringsSurface.lagrange_resolvent_transform — DFT diagonalises C₅ on Bring's surface
-
-The discrete Fourier transform w_k = (1/√5) Σ ζ^{kj} x_j converts the
-three power-sum constraints of the Bring surface into spectral form,
-and the cyclic permutation σ acts diagonally: σ(w_k) = ζ^{-k} w_k.
--/
 import Mathlib.Data.Complex.Basic
 import Mathlib.Data.Complex.Exponential
 import Mathlib.Data.Fin.Basic
@@ -15,6 +8,14 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.NormNum
 
+
+/-!
+# QOU.BringsSurface.lagrange_resolvent_transform — DFT diagonalises C₅ on Bring's surface
+
+The discrete Fourier transform w_k = (1/√5) Σ ζ^{kj} x_j converts the
+three power-sum constraints of the Bring surface into spectral form,
+and the cyclic permutation σ acts diagonally: σ(w_k) = ζ^{-k} w_k.
+-/
 namespace QOU.BringsSurface
 
 -- Ref: [manuscript] Ch. 6, §1

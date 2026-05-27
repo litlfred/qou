@@ -1,3 +1,6 @@
+import QOU.Interactions.AlgebraicPrimality
+
+
 /-!
 # QOU.ParticleInteractions.OneVacuousMagic (sibling)
 
@@ -6,8 +9,6 @@ the proved theorem from `QOU.Interactions.AlgebraicPrimality`.
 
 LaTeX label: `prop:n-equals-1-vacuous-magic`
 -/
-
-import QOU.Interactions.AlgebraicPrimality
 
 namespace QOU.ParticleInteractions
 

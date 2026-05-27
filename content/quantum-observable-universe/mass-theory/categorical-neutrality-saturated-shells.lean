@@ -1,3 +1,9 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Set.Finite
+import QOU.Common.MagicNumbers
+
+
 /-!
 # Categorical neutrality of saturated shells (Lean class)
 
@@ -18,11 +24,6 @@ become conditional theorems parameterised on
 -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras," LMS Monographs 21, OUP 2000
 -- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Set.Finite
-import QOU.Common.MagicNumbers
 
 namespace QOU.ShellNeutrality
 

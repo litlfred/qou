@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.dagger_su2 — Involutive structure on Rep(SU(2))
 
@@ -14,8 +17,6 @@ LaTeX label: `ex:dagger-su2`
 
 - [manuscript] §1 Example: Involutive structure on Rep(SU(2))
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

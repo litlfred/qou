@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.Archimedean.beta_decay_transfer_matrix
 
@@ -16,9 +20,6 @@ LaTeX label: `prop:beta-decay-transfer-matrix`
 ## References
 - [manuscript] §6/beta-decay-transfer-matrix
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.Archimedean
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.connection_su2 — Connection and curvature on O(SU(2))
 
@@ -16,8 +19,6 @@ LaTeX label: `ex:connection-su2`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1 Example: Connection on O(SU(2))
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

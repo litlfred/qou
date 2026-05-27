@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalNeutron.exists — existence of the categorical neutron
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-neutron-exists}`
 - [manuscript] §6-archimedean-universe/categorical-neutron-exists
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
-
-import QOU.Basic
 
 namespace QOU
 

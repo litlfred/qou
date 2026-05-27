@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.CommutativeCrossingEnergy
 
@@ -49,9 +53,6 @@ for content-block resolution. A Lake-built mirror at
 is a follow-up — adding it requires updating `QOU.lean`'s
 import list and re-running `lake build` from the root workspace.
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Tactic
 
 -- Ref: [manuscript] prop:commutative-crossing-energy
 -- Ref: [manuscript] §Caveat (updated 2026-05-09)

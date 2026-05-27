@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Subobject.Basic
+
+
 /-!
 # QOU.CategoricalQTorsionLeaf
 
@@ -12,9 +16,6 @@ LaTeX label: `rem:glossary-categorical-q-torsion-leaf`
 ## References
 - [manuscript] Ch. 8, §glossary-categorical-q-torsion-leaf
 -/
-
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.CategoryTheory.Subobject.Basic
 
 namespace QOU
 

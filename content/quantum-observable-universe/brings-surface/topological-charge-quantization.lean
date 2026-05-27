@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.topological_charge_quantization
 
@@ -10,9 +14,6 @@ LaTeX label: `thm:topological-charge-quantization`
 
 - [yekutieli2015] https://doi.org/10.1515/9783110291230
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 set_option autoImplicit false
 

@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import QOU.Archimedean.EmSpectralCompleteness
+import QOU.Archimedean.ForceCarrierBringUniqueness
+
+
 /-!
 # QOU.Archimedean.gram_determinant_plancherel_ratio
 
@@ -18,10 +23,6 @@ LaTeX label: `prop:gram-determinant-plancherel-ratio`
 - [manuscript] §5/gram-determinant-plancherel-ratio
 - [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import QOU.Archimedean.EmSpectralCompleteness
-import QOU.Archimedean.ForceCarrierBringUniqueness
 
 namespace QOU.Archimedean
 

@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Field.Basic
+
+
 /-!
 # QOU.Information.gravitationalConstant — Gravitational constant from information geometry
 
@@ -12,8 +15,6 @@ LaTeX label: `def:gravitational-constant`
 - [bekenstein1981] https://doi.org/10.1103/PhysRevD.23.287
 - [manuscript] §9/gravitational-constant
 -/
-
-import Mathlib.Algebra.Field.Basic
 
 namespace QOU.Information
 

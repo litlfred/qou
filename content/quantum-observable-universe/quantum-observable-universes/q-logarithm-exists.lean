@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QLogarithm.exists_in_shuffle_hopf — existence of the q-logarithm
 
@@ -13,8 +16,6 @@ LaTeX: `\label{prop:q-logarithm-exists}`
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.3 (primitives
   and Milnor–Moore)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

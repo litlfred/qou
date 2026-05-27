@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.Information.massEnergyEquivalence
 
@@ -18,8 +21,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Information
 

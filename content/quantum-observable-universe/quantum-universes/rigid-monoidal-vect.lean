@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.Examples.rigid_monoidal_vect — ℂ[z] and O(SU(2))
 
@@ -18,9 +22,6 @@ LaTeX label: `ex:rigid-monoidal-vect`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1 Example: ℂ[z] and O(SU(2))
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

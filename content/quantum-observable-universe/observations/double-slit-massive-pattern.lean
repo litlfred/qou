@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+
+
 /-!
 # QOU.Experimental.double_slit_massive_pattern
 
@@ -16,9 +20,6 @@ Evaluates formal results at q₀ ≈ 1.1098 for comparison with
 experimental data. NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 namespace QOU.Experimental
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.fiber_adjoint_su2 — Fiber–adjoint involution for SU(2)
 
@@ -19,8 +22,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

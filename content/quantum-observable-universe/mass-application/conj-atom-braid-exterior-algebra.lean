@@ -1,3 +1,8 @@
+import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Tactic.NormNum
+import Mathlib.Algebra.BigOperators.Basic
+
+
 /-!
 # QOU.BraidKnot.AtomBraidExteriorAlgebra
 
@@ -31,10 +36,6 @@ Ref: [manuscript] folio-assistant/computations/mass_at_3A_proper.py
 Ref: [manuscript] tools/hecke-engine/src/gb_nf_reducer.rs (BraidLetter)
 Ref: [manuscript] folio-assistant/computations/joint-tower-sdp-rust.witness.json
 -/
-
-import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Tactic.NormNum
-import Mathlib.Algebra.BigOperators.Basic
 
 namespace QOU.BraidKnot.AtomBraidExteriorAlgebra
 

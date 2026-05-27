@@ -1,3 +1,8 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.RingTheory.Ideal.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.MaximalIdealDefect — Maximal ideal at z = 1
 
@@ -11,10 +16,6 @@ LaTeX label: `def:maximal-ideal-defect`
 
 - [manuscript] Ch 8 §2, The unit particle as a cohomological defect
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.RingTheory.Ideal.Basic
 
 set_option autoImplicit false
 

@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.Torsion.vacuum_state — Existence and uniqueness of the vacuum state
 
@@ -9,9 +13,6 @@ Given a QOU (𝒞, A, ω), the Frobenius trace on the direct limit algebra
 - [manuscript] §3 Lifting and Descent
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 -/
-
-import Mathlib.Algebra.Module.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 namespace QOU.Torsion
 

@@ -1,3 +1,8 @@
+import QOU.Basic
+import QOU.Glossary
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.qou_canonical_action
 
@@ -15,10 +20,6 @@ LaTeX label: `prop:qou-canonical-action`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §2 Quantum Geometry
 -/
-
-import QOU.Basic
-import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

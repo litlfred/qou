@@ -1,3 +1,6 @@
+import QOU.Archimedean.GroundRing
+
+
 /-!
 # Palindromicity and Orbital Type
 
@@ -13,8 +16,6 @@ palindromic.
 - [iwahori1964] https://doi.org/10.1515/crll.1964.215.167
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Archimedean.GroundRing
 
 namespace QOU.Molecular
 

@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.LinearAlgebra.Basic
+
+
 /-!
 # QOU.DescentLemma — Descent preserves the quantum observable universe
 
@@ -10,9 +14,6 @@ intertwines the G_q-actions.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Basic
 
 namespace QOU
 

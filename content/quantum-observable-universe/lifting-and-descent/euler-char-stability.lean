@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.Torsion.euler_char_stability — Stability of the Euler characteristic
 
@@ -8,8 +11,6 @@ under jet prolongation: χ(A_{n+1}) = χ(Aₙ) for all n.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU.Torsion
 

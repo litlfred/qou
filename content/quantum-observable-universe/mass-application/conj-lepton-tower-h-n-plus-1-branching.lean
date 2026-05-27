@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
+
 /-!
 # QOU.BraidKnot.LeptonTowerHnPlus1
 
@@ -24,10 +29,6 @@ Algebraic cores proved in `three-halves-structural-factor.lean`:
 Ref: [manuscript] conj:lepton-tower-h-n-plus-1-branching
 Ref: [manuscript] prop:three-halves-structural-factor
 -/
-
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot.LeptonTowerHnPlus1
 

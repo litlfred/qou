@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Field.Basic
+
+
 /-!
 # QOU.BraidsAndKnots.explicit_alpha_k_h3
 
@@ -26,8 +29,6 @@ LaTeX label: `prop:explicit-alpha-k-h3`
 - [manuscript] Ch. Braids and Knots, §α_k at H_3
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import Mathlib.Algebra.Field.Basic
 
 namespace QOU.BraidsAndKnots
 

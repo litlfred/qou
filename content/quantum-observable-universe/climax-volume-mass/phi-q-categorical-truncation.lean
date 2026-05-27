@@ -1,3 +1,10 @@
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Φ_q categorical truncation depth
 
@@ -20,12 +27,6 @@ measure).
 -- Ref: [manuscript] prop:phi-q-categorical-truncation
 -- Ref: [manuscript] prop:spectral-sequence-collapse
 -/
-
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.WedderburnMass
 

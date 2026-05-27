@@ -1,3 +1,7 @@
+import Mathlib.Tactic
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+
+
 /-!
 # Bloch-Wigner dilogarithm `D` — repo-internal Mathlib filler
 
@@ -45,9 +49,6 @@ Mathlib gaps still open after this filler:
 -- Ref: [bloch2000]
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
 -/
-
-import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Archimedean
 

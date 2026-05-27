@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # Additive Bring zero-mode form for 1/α_EM (conditional)
 
@@ -36,9 +40,6 @@ documented in `em-coupling-bring-zero-mode.md`.
 -- Ref: [bloch2000]  AMS CRM Monograph 11 (2000).
 -- Ref: [thurston1978] The geometry and topology of three-manifolds.
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.Archimedean
 

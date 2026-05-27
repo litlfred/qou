@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.per_wedderburn_block_c5_c6
 
@@ -22,7 +24,6 @@ probe `probe_per_wedderburn_block_ck.py` is the open R&D companion.
 LaTeX label: `rem:per-wedderburn-block-c5-c6`
 -/
 
-import Mathlib.Tactic
 -- Sibling-chapter dependency: q-dimensions of H_3 Wedderburn blocks.
 -- Ref: [manuscript] rem:h3-hecke-idempotents
 import QOU.BraidKnot.h3_hecke_idempotents

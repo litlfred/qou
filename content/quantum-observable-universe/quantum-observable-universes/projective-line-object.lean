@@ -1,10 +1,3 @@
-/-!
-# QOU.ProjectiveLineObject
-
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/ProjectiveLineObject.lean (monolithic)
--/
-
 import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Basic
@@ -20,6 +13,14 @@ import Mathlib.Topology.ContinuousFunction.Basic
 import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+
+
+/-!
+# QOU.ProjectiveLineObject
+
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/ProjectiveLineObject.lean (monolithic)
+-/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
 

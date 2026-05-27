@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.GeomSum
+import Mathlib.Tactic.Linarith
+
+
 /-!
 # Uniform per-level binding bound for the brane tower
 
@@ -18,10 +23,6 @@ class instance plus standard real analysis.
 -- Ref: [manuscript] prop:jet-tower-convergence
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.GeomSum
-import Mathlib.Tactic.Linarith
 
 namespace QOU.BraidKnot
 

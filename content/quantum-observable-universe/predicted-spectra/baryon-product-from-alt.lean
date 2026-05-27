@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.GroupTheory.Perm.Sign
+
+
 /-!
 # QOU.Archimedean.baryonProductFromAlt — Alt-isotype identification of the baryon integrand
 
@@ -21,9 +25,6 @@ LaTeX label: `prop:baryon-product-from-alt`
   — pointwise + thimble-period numerical certificate of the Alt^3
   isotype identification.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.GroupTheory.Perm.Sign
 
 namespace QOU.Archimedean
 

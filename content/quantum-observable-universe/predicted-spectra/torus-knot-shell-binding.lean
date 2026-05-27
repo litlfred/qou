@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
+
 /-!
 # QOU.Archimedean.torus_knot_shell_binding
 
@@ -20,9 +24,6 @@ Evaluates formal results at q₀ ≈ 1.1098 for comparison with
 experimental data. NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 -- When built as part of the QOU Lean project, uncomment:
 -- import QOU.Archimedean.shell_closure_normal_form

@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
+
+
 /-!
 # QOU.Archimedean.generator_volume_decomposition — Nuclear energy as sum of generator volumes
 
@@ -10,11 +16,6 @@ LaTeX label: `prop:generator-volume-decomposition`
 ## References
 - [manuscript] §6/generator-volume-decomposition
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
-import Mathlib.Data.List.Basic
-import Mathlib.Algebra.BigOperators.Group.List.Basic
 
 namespace QOU.Archimedean
 

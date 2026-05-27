@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.chi_v3_closed_form_proof
 
@@ -32,8 +35,6 @@ The difference factors via `q − q³ = -q(q² − 1)`.
 
 LaTeX label: `rem:chi-v3-closed-form-proof`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

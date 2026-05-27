@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.ConfinementLevel — confinement level via shadow-price filtration
 
@@ -6,8 +9,6 @@ the ℓ cheapest knot operators at q.
 
 LaTeX: `\label{def:confinement-level}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

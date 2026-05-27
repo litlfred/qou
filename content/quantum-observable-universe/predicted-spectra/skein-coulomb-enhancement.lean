@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+import Mathlib.Analysis.SpecialFunctions.Exp
+
+
 /-!
 # QOU.Archimedean.skein_coulomb_enhancement — Coulomb enhancement from electron-proton Skein crossings
 
@@ -17,10 +22,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.Analysis.SpecialFunctions.Exp
 
 namespace QOU.Archimedean
 

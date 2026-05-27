@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+
+
 /-!
 # QOU.Archimedean.golden_skew_dual_node — Skew-dual golden node at q = φ²
 
@@ -13,11 +19,6 @@ LaTeX label: `prop:golden-skew-dual-node`
 - [manuscript] §6/golden-skew-dual-node
 - [manuscript] §7/golden-ratio-degeneration
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
 
 namespace QOU.Archimedean
 

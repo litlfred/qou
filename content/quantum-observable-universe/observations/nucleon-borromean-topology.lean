@@ -1,3 +1,6 @@
+import QOU.HadronicMass
+
+
 /-!
 # QOU.HadronicMass.nucleon_borromean_topology
 
@@ -23,8 +26,6 @@ LaTeX label: `lem:nucleon-borromean-topology`
 - The Borromean / Hopf-link volume constants follow SnapPy
   (Bloch–Wigner dilogarithm).
 -/
-
-import QOU.HadronicMass
 
 namespace QOU.HadronicMass
 

@@ -1,3 +1,8 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Brane tower lives in the $z$-Habiro ring (conjecture class)
 
@@ -23,10 +28,6 @@ $\pi_{n_\star}^{(z)}$ uniformly across atoms.
 - [manuscript] def:z-habiro-ring
 - [manuscript] prop:atom-knot-mass-derivation
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

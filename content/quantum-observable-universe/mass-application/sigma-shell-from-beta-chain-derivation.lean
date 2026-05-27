@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.sigma_shell_from_beta_chain
   — Closed-form σ_shell magnitude as Wedderburn coefficient at the
@@ -24,8 +27,6 @@ NO Q_β, NO AME chain Q-values, NO fitted parameters.
 
 LaTeX: `\label{prop:sigma-shell-from-beta-chain-derivation}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

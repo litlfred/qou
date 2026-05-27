@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Star.Basic
+import Mathlib.RingTheory.Idempotents
+
+
 /-!
 # Explicit central primitive idempotents in `H_n(q)` via Murphy elements
 
@@ -15,9 +19,6 @@ the corresponding box.
 The Lagrange-interpolation formula then constructs `e_λ` as a sum
 over standard Young tableaux of products of Lagrange projectors.
 -/
-
-import Mathlib.Algebra.Star.Basic
-import Mathlib.RingTheory.Idempotents
 
 namespace QOU.BraidKnot.ExplicitCentralIdempotent
 

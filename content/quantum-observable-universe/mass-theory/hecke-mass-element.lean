@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Analysis.Normed.Group.Basic
+
+
 /-!
 # QOU.Braiding.HeckeMassElement — Hecke mass element
 
@@ -33,9 +37,6 @@ LaTeX label: `def:hecke-mass-element`
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Analysis.Normed.Group.Basic
 
 namespace QOU.Braiding
 

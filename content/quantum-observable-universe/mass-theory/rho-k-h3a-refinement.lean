@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.rho_k_h3a_refinement
   — H_{3A} Wedderburn refinement of ρ_K beyond leading-order
@@ -9,8 +12,6 @@ corrections `Δ_λ(K)`.
 
 LaTeX: `\label{prop:rho-k-h3a-refinement}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

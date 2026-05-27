@@ -1,3 +1,8 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+
+
 /-!
 # QOU.categorical_archimedean_bridge — Categorical–geometric correspondence
 
@@ -13,10 +18,6 @@ LaTeX label: `prop:categorical-archimedean-bridge`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1-quantum-observable-universe/categorical-archimedean-bridge
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
 
 open CategoryTheory MonoidalCategory
 

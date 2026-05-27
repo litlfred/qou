@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.Hadron.unique_up_to_isotopy — uniqueness of hadrons up to isotopy
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:hadron-unique}`
 - [manuscript] §4-braids-and-knots/hadron-unique
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
-
-import QOU.Basic
 
 namespace QOU
 

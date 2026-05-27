@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Parity
+
+
 /-!
 # QOU.HyperellipticQuintic.minimal_z5_classification
 
@@ -16,8 +19,6 @@ LaTeX label: `thm:hyperelliptic-z5-classification`
 
 **Ground ring**: `ℕ` (arithmetic core).
 -/
-
-import Mathlib.Data.Nat.Parity
 
 namespace QOU.X5Classification
 

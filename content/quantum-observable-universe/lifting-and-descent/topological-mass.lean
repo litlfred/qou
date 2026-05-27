@@ -1,3 +1,9 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Analysis.Normed.Group.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.LinearAlgebra.Projection
+
+
 /-!
 # QOU.Torsion.topological_mass — Topological decomposition of mass
 
@@ -22,11 +28,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Algebra.Module.Basic
-import Mathlib.Analysis.Normed.Group.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.LinearAlgebra.Projection
 
 namespace QOU.Torsion
 

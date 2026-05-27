@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.categorical_irreducible — Irreducibility of categorical instantons
 
@@ -13,9 +17,6 @@ LaTeX label: `lem:categorical-irreducible`
 
 - [manuscript] §1-quantum-observable-universe/categorical-irreducible
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open CategoryTheory MonoidalCategory
 

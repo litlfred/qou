@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset
+
+
 /-!
 # QOU.Braiding.HeckeMarkovTransition — Hecke generator as stochastic transition
 
@@ -19,9 +23,6 @@ LaTeX label: `prop:hecke-markov-transition`
 - [jones1987] https://doi.org/10.2307/1971403
 - [bufetov2020] https://arxiv.org/abs/2003.02730
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset
 
 namespace QOU.Braiding
 

@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.chi_per_irrep_cyclotomic_closed_forms
 
@@ -32,8 +35,6 @@ against the per-Wedderburn-block probe.
 
 LaTeX label: `rem:chi-per-irrep-cyclotomic-closed-forms`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

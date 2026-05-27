@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.RingTheory.AdjoinRoot
+import Mathlib.RingTheory.Polynomial.Quotient
+
+
 /-!
 # QOU.QuantumObservableUniverse.CategoricalCoordinateRing
 
@@ -21,10 +26,6 @@ LaTeX label: `prop:categorical-coordinate-ring`
 - [manuscript] §sec:braiding-conventions, §rem:affine-chart-origin-of-i-and-q
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 §IV (quantum plane)
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.RingTheory.AdjoinRoot
-import Mathlib.RingTheory.Polynomial.Quotient
 
 open Polynomial LaurentPolynomial
 

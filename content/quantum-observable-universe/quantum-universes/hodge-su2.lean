@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.hodge_su2 — Hodge star on O(SU(2))
 
@@ -24,8 +27,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

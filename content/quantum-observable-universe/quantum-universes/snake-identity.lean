@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.SnakeIdentity
 
@@ -9,9 +13,6 @@ standalone propositions for cross-referencing.
 LaTeX: `\label{def:snake-identity}`
 Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

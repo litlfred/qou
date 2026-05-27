@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
+
+
 /-!
 # QOU.Archimedean.BoxBraidIrreducibility — The γγ → νν̄ box braid is irreducible
 
@@ -11,11 +17,6 @@ LaTeX label: `prop:box-braid-irreducibility`
 ## References
 - [manuscript] §6/box-braid-irreducibility
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Linarith
 
 namespace QOU.Archimedean
 

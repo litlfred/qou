@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Order.Field.Basic
+
+
 /-!
 # QOU.spectral_chart_correspondence — Hecke eigenspaces realise the chart-glue of $\mathbb{P}_q(V)$
 
@@ -30,9 +34,6 @@ LaTeX label: `prop:spectral-chart-correspondence`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  §IV.5 (quantum plane), §VIII.3 (braiding eigenvalues)
 - [woronowicz1988] https://doi.org/10.1007/BF01393687
 -/
-
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Algebra.Order.Field.Basic
 
 namespace QOU
 

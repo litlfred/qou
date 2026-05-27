@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Ring.Basic
+
+
 /-!
 # Three-Invariant Wedderburn Mass Formula
 
@@ -16,8 +19,6 @@ the Archimedean realisation and is performed downstream in
 
 -- Ref: [manuscript] thm:wedderburn-mass-formula
 -/
-
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.WedderburnMass
 

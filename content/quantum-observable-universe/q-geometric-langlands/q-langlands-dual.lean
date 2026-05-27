@@ -1,3 +1,6 @@
+import QOU.QGeometricLanglands
+
+
 /-!
 # QOU.QLanglandsDual
 
@@ -7,8 +10,6 @@ q ↦ q⁻¹ composed with root system duality.
 Co-located sibling for content block `def:q-langlands-dual`.
 Full formalization: `QOU/QGeometricLanglands.lean`
 -/
-
-import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QLanglandsDual
 

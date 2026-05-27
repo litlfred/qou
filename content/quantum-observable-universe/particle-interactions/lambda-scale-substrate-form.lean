@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
+
+
 /-!
 # QOU.BraidKnot.LambdaScaleSubstrateForm
 
@@ -28,10 +33,6 @@ LaTeX label: `conj:lambda-scale-substrate-form` (Family A theorem)
 - `docs/audits/2026-05-18-all-c-i-status.md` (full inventory)
 - `docs/audits/2026-05-18-conjecture-falsification.md` (Family B falsification)
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 

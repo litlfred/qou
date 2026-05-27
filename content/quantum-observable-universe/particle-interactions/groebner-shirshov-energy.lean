@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.Archimedean.groebner_shirshov_energy — Energy as a Gröbner-Shirshov invariant
 
@@ -10,9 +14,6 @@ LaTeX label: `thm:groebner-shirshov-energy`
 ## References
 - [manuscript] §6/groebner-shirshov-energy
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.Archimedean
 

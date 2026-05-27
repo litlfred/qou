@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Choose.Basic
+
+
 /-!
 # Derived-only mass formula for light isotopes
 
@@ -17,9 +21,6 @@ Empirical scorecard (light isotopes through ⁷Li):
 
 -- Ref: [manuscript] prop:derived-mass-formula-light-isotopes
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Choose.Basic
 
 namespace QOU.WedderburnMass
 

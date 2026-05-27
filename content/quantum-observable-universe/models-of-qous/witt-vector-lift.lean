@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.ZMod.Basic
+
+
 /-!
 # QOU.WittVectorLift
 
@@ -16,11 +22,6 @@ LaTeX label: `def:witt-vector-lift`
 - [zink2002] https://doi.org/10.1007/978-3-642-51438-2
 - [manuscript] Chapter 6, §Witt vector lift
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.ZMod.Basic
 
 namespace QOU
 

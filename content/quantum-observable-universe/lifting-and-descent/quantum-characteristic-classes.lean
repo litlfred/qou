@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
+
+
 /-!
 # QOU.QuantumCharacteristicClasses — Yekutieli obstruction classes
 
@@ -13,9 +17,6 @@ under the trace map, κ₀ ↦ χ(A) = tr(id_A).
 - [yekutieli2010] Central Extensions of Gerbes
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU
 

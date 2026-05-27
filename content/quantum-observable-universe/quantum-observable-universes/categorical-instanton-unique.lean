@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalInstanton.unique_up_to_gauge — uniqueness of instantons modulo gauge
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-instanton-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-instanton-unique
 - [atiyah1978] https://doi.org/10.1098/rspa.1978.0143
 -/
-
-import QOU.Basic
 
 namespace QOU
 

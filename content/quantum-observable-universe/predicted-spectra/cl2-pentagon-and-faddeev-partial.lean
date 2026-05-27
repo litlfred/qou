@@ -1,3 +1,8 @@
+import Mathlib.Tactic
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.ThreeSubstantiveMathlibFillers
+
+
 /-!
 # Partial closures: Cl_2 pentagon (boundary cases) + Faddeev-Kashaev
 limit (boundary cases)
@@ -23,10 +28,6 @@ requiring upstream Mathlib contributions.
 -- Ref: [zagier1986]
 -- Ref: [faddeev1994]
 -/
-
-import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.ThreeSubstantiveMathlibFillers
 
 namespace QOU.Archimedean.PartialClosures
 

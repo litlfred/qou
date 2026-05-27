@@ -1,3 +1,9 @@
+import QOU.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Fin.Basic
+
+
 /-!
 # QOU.Su2Basis
 
@@ -15,11 +21,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import QOU.Basic
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Fin.Basic
 
 namespace QOU
 

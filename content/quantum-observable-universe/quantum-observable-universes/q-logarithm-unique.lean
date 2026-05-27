@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QLogarithm.unique — uniqueness of the q-logarithm primitive
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:q-logarithm-unique}`
 - [manuscript] §2-quantum-observable-universes/q-logarithm-unique
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.3
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+
+
 /-!
 # QOU.ColorTubeCoordinates
 
@@ -7,9 +11,6 @@ surface, with color vector c⃗ = (r, g, b).
 
 LaTeX label: `def:color-tube-coordinates`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Ring
 
 namespace QOU.Brings
 

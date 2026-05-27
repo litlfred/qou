@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.BundleIsotopyEquiv — Isotopy equivalence of bundle initial conditions
 
@@ -8,8 +11,6 @@ by a permutation of indices and ambient isotopy within each fibre.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU
 

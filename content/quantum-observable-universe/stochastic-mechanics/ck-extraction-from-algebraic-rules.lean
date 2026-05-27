@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.ck_extraction_from_algebraic_rules
 
@@ -29,8 +32,6 @@ agree with the empirical ladder through `k = 4`.
 LaTeX label: `rem:ck-extraction-from-algebraic-rules`
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 -- Sibling-chapter dependency: `hoefsmit_sigma{0,1}`,
 -- `hoefsmit_sigma{0,1}_hecke_quadratic` from the Hoefsmit module
 -- discharge Rules 1+3 below at n=3 on V_(2,1).

@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # Neutron-Proton Mass Splitting
 
@@ -5,8 +8,6 @@
 
 -- Ref: [manuscript] prop:neutron-proton-mass-splitting
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.NeutronProtonSplitting
 

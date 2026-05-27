@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalReeb.unique — uniqueness of the categorical Reeb derivation
 
@@ -14,8 +17,6 @@ LaTeX: `\label{prop:categorical-reeb-unique}`
 - [witten1988] Topological Quantum Field Theory,
   https://doi.org/10.1007/BF01223371
 -/
-
-import QOU.Basic
 
 namespace QOU
 

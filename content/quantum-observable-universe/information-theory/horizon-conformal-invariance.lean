@@ -1,3 +1,6 @@
+import QOU.JetHorizon
+
+
 /-!
 # QOU.horizon_conformal_invariance — sibling stub
 
@@ -19,8 +22,6 @@ LaTeX label: `prop:horizon-conformal-invariance`
 - [penrose2010] R. Penrose, *Cycles of Time*, Bodley Head, 2010
 - [manuscript] §9 Information theory / horizon-conformal-invariance
 -/
-
-import QOU.JetHorizon
 
 namespace QOU
 

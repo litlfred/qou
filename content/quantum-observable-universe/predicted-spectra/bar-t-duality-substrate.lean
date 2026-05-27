@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+
+
 /-!
 # QOU.Archimedean.bar_t_duality_substrate — Substrate-level bar T-duality
 
@@ -19,10 +24,6 @@ LaTeX label: `prop:bar-t-duality-substrate`
 - [manuscript] §6/golden-skew-dual-node
 - [manuscript] §6/bar-self-dual-confinement-band
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
 
 namespace QOU.Archimedean.BarTDualitySubstrate
 

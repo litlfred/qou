@@ -1,3 +1,8 @@
+import Mathlib.Order.WellFounded
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.UnitalGroebner.LeadingTerm — Leading monomial, coefficient, and term
 
@@ -9,10 +14,6 @@ LaTeX label: `def:leading-terms`
 ## References
 - [manuscript] §1/leading-terms
 -/
-
-import Mathlib.Order.WellFounded
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU.UnitalGroebner
 

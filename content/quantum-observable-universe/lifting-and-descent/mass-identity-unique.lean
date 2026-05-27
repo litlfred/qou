@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.MassIdentity.unique — uniqueness of the inertial mass identity
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:mass-identity-unique}`
 - [manuscript] §5-lifting-and-descent/mass-identity-unique
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalDirac.exists — existence of the categorical Dirac operator
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-dirac-operator-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-dirac-operator-exists
 - [connes1994] Noncommutative Geometry (Academic Press)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.hecke_algebra_type_scaffold
 
@@ -22,8 +25,6 @@ remaining substantive R&D content.
 
 LaTeX label: `rem:hecke-algebra-type-scaffold`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

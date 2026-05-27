@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.chi_v21_hoefsmit_matrix_derivation
 
@@ -34,8 +37,6 @@ via `q_character_on_braid_word` + `sympy.cancel + sympy.factor`.
 
 LaTeX label: `rem:chi-v21-hoefsmit-matrix-derivation`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

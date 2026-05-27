@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QuantumUniverse.exists_instance — existence of a quantum universe
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:quantum-universe-exists}`
 - [manuscript] §1-quantum-universes/quantum-universe-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §XI
 -/
-
-import QOU.Basic
 
 namespace QOU
 

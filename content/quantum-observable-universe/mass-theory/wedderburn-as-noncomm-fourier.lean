@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.WedderburnFourier — Peter–Weyl/Plancherel reading of the Markov trace
 
@@ -18,8 +21,6 @@ LaTeX label: `prop:wedderburn-as-noncomm-fourier`
 - [fulton1997] Young Tableaux (Cambridge University Press, 1997).
 - [manuscript] braids-and-knots / wedderburn-as-noncomm-fourier
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.WedderburnFourier
 

@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Hopf.Basic
+
+
 /-!
 # Knot-indexed bi-filtration `H_q^(n, K)` — definition
 
@@ -16,8 +19,6 @@ the bi-filtration (joint Galois × braid action, etc.) lives in
 companion blocks under their own conjecture classes
 (`conj:joint-galois-braid-action`).
 -/
-
-import Mathlib.Algebra.Hopf.Basic
 
 namespace QOU.AlgebraicSubstrate.HqBiFiltration
 

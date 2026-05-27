@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.AtomKnot.unique — uniqueness up to Markov equivalence
 
@@ -6,8 +9,6 @@ Markov closures.
 
 LaTeX: `\label{prop:atom-knot-unique}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

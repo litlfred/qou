@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.CategoricalLaplace — categorical Laplace transform
 
@@ -19,9 +23,6 @@ LaTeX label: `def:categorical-laplace`
 pairing is abstract Hopf-algebraic; integral realisation is
 archimedean only.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

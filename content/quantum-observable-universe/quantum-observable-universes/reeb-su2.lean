@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.reeb_su2 — Reeb derivation for SU(2)
 
@@ -18,8 +21,6 @@ LaTeX label: `ex:reeb-su2`
 - [witten1988] https://doi.org/10.1007/BF01223371
 - [manuscript] §1 Example: Reeb derivation for SU(2)
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

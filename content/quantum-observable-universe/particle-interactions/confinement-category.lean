@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.ConfinementCategory
 
@@ -18,8 +21,6 @@ documented in the `.md`.
 
 LaTeX: `\label{def:confinement-category}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

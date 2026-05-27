@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Topology.Basic
+
+
 /-!
 # Commutative limit kills chirality
 
@@ -13,9 +17,6 @@ vanish.
 
 -- Ref: [manuscript] cor:commutative-chirality-vanishes
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
 
 namespace QOU.WedderburnMass
 

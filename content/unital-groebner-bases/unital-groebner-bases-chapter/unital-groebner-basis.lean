@@ -1,3 +1,9 @@
+import Mathlib.Order.WellFounded
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.RingTheory.Ideal.Basic
+
+
 /-!
 # QOU.UnitalGroebner.UnitalGroebnerBasis — Gröbner basis and unital Gröbner basis
 
@@ -10,11 +16,6 @@ LaTeX label: `def:unital-groebner-basis`
 ## References
 - [manuscript] §1/unital-groebner-basis
 -/
-
-import Mathlib.Order.WellFounded
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.RingTheory.Ideal.Basic
 
 namespace QOU.UnitalGroebner
 

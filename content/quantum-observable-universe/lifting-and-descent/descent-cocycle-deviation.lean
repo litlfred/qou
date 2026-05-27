@@ -1,3 +1,6 @@
+import QOU.Torsion.YekutieliTriple
+
+
 /-!
 # QOU.LiftingDescent.descent_cocycle_deviation
 
@@ -22,8 +25,6 @@ LaTeX label: `lem:descent-cocycle-deviation`
 - [manuscript] §3 Lifting and Descent, definition of the
   Yekutieli triple
 -/
-
-import QOU.Torsion.YekutieliTriple
 
 namespace QOU.LiftingDescent
 

@@ -1,3 +1,6 @@
+import QOU.BraidKnot.PlancherelWeightBoundedness
+
+
 /-!
 # QOU.BraidKnot.mass_tower_coefficient_stratification
 
@@ -13,8 +16,6 @@ LaTeX label: `prop:mass-tower-coefficient-stratification`
 
 - [manuscript] Ch. Braids and Knots, §Mass tower coefficients
 -/
-
-import QOU.BraidKnot.PlancherelWeightBoundedness
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,13 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
+import Mathlib.LinearAlgebra.Prod
+
+
 /-!
 # QOU.SkeinResolutionObstruction — Obstruction decomposition and perpetual obstruction
 
@@ -28,15 +38,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Order.Ring.Lemmas
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
-import Mathlib.LinearAlgebra.Prod
 
 namespace QOU.SkeinResolutionObstruction
 

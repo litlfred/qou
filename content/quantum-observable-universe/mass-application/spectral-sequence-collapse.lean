@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.RingTheory.Ideal.Basic
+import Mathlib.Algebra.BigOperators.Basic
+
+
 /-!
 # Cohomology vanishing collapses the GB spectral sequence
 
@@ -16,10 +21,6 @@ universal residue.
 
 -- Ref: [manuscript] prop:spectral-sequence-collapse
 -/
-
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.RingTheory.Ideal.Basic
-import Mathlib.Algebra.BigOperators.Basic
 
 namespace QOU.WedderburnMass
 

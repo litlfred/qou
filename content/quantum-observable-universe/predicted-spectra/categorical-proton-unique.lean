@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalProton.unique_up_to_isotopy — uniqueness of the categorical proton
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-proton-unique}`
 - [manuscript] §6-archimedean-universe/categorical-proton-unique
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
-
-import QOU.Basic
 
 namespace QOU
 

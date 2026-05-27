@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalFourier.exists — existence of the categorical Fourier transform
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-fourier-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-fourier-transform-exists
 - [kassel1995] Quantum Groups, §IV
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalLagrangian.unique — uniqueness of the categorical Lagrangian
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-lagrangian-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-lagrangian-unique
 - [connes1994] Noncommutative Geometry
 -/
-
-import QOU.Basic
 
 namespace QOU
 

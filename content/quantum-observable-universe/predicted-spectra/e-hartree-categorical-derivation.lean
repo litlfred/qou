@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Polynomial.Laurent
+
+
 /-!
 # QOU.Archimedean.EHartreeCategoricalDerivation
 
@@ -31,8 +34,6 @@ not missing proof.
 - [manuscript] §Hartree-energy categorical derivation,
   `conj:e-hartree-categorical-derivation`
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
 
 namespace QOU.Archimedean
 

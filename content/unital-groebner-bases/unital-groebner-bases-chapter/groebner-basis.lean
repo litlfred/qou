@@ -1,3 +1,8 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.Ring.Basic
+
+
 /-!
 # Gröbner basis, unital condition, and S-polynomials
 
@@ -18,10 +23,6 @@ The authoritative formalization lives in
 - content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §§4–5
 - content/unital-groebner-bases/lean/QOU/GrobnerShirshov/CompositionLemma.lean
 -/
-
-import Mathlib.Data.List.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.GrobnerShirshov.ContentBlock
 

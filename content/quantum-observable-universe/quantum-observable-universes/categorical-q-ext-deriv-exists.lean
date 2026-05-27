@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalQExtDeriv.exists — existence of the categorical q-exterior derivative
 
@@ -12,8 +15,6 @@ LaTeX: `\label{prop:categorical-q-ext-deriv-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-q-ext-deriv-exists
 - [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 -/
-
-import QOU.Basic
 
 namespace QOU
 

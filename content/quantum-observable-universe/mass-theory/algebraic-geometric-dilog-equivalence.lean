@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Algebraic-geometric dilogarithm equivalence (conjecture class)
 
@@ -15,10 +20,6 @@ exposes the bijective + volumetric content.
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -- Ref: [murakami-murakami2001] Murakami & Murakami, "The colored Jones polynomials and the simplicial volume of a knot," Acta Math. 186 (2001), arXiv:math/9905075
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Tactic
 
 namespace QOU.QPochhammer
 

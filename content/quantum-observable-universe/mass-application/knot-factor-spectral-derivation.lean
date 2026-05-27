@@ -1,3 +1,6 @@
+import Mathlib.Algebra.BigOperators.Basic
+
+
 /-!
 # QOU.BraidKnot.knot_factor_spectral_derivation
 
@@ -11,8 +14,6 @@ LaTeX label: `prop:knot-factor-spectral-form`
 - [manuscript] §3/knot-factor-spectral-derivation
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
 
 namespace QOU.BraidKnot
 

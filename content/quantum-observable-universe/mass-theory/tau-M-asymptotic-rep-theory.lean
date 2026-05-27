@@ -1,3 +1,8 @@
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.tau_M_asymptotic_rep_theory
 
@@ -21,10 +26,6 @@ and proves the SHARED predicted form using them as input classes.
 
 LaTeX label: `prop:tau-M-asymptotic-rep-theory`
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

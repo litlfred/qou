@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.ParticleInteractions.ConfinementSDP
 
@@ -9,8 +12,6 @@ positivity, 2×2 pair PSD. Dual matrix inequality
 
 LaTeX: `\label{prop:confinement-sdp}`
 -/
-
-import QOU.Basic
 
 namespace QOU.ParticleInteractions
 

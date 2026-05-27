@@ -1,15 +1,3 @@
-/-!
-# QOU.InstantonConnection
-
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/InstantonConnection.lean (monolithic)
-
-**Ground ring**: `ℝ` (geometric/analytic realisation).
-Uses ℝ-specific analysis (trig, norms, real powers).
-NOT part of the formal proof chain.
-See `GroundRingAnnotations.lean`.
--/
-
 import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Basic
@@ -25,6 +13,19 @@ import Mathlib.Topology.ContinuousFunction.Basic
 import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+
+
+/-!
+# QOU.InstantonConnection
+
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/InstantonConnection.lean (monolithic)
+
+**Ground ring**: `ℝ` (geometric/analytic realisation).
+Uses ℝ-specific analysis (trig, norms, real powers).
+NOT part of the formal proof chain.
+See `GroundRingAnnotations.lean`.
+-/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
 

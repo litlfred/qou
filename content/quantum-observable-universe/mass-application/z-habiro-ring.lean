@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Eval
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # z-Habiro Ring (proposed)
 
@@ -15,10 +20,6 @@ brane tower lives in this ring as a Cauchy limit is stated separately.
 -- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
 -- Ref: [manuscript] Chapter 3, def:z-habiro-ring
 -/
-
-import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Eval
-import Mathlib.Data.Real.Basic
 
 open Polynomial
 

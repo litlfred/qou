@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.q_beta_c3_hopf_three_fold_markov
 
@@ -25,9 +29,6 @@ levels:
 
 LaTeX label: `prop:q-beta-c3-hopf-three-fold-markov`
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

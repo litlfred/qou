@@ -1,3 +1,6 @@
+import QOU.QuantumObservableUniverse.CategoricalFoundations
+
+
 /-!
 # QOU.LiftingDescent.jp_categorical_jet
 
@@ -24,8 +27,6 @@ LaTeX label: `lem:jet-prolongation-categorical-jet`
   the Frobenius-Hopf data structure inherited at the jet level)
 - [manuscript] §3 Lifting and Descent, §"Categorical jet object"
 -/
-
-import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 namespace QOU.LiftingDescent
 

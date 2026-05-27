@@ -1,3 +1,11 @@
+import Mathlib.GroupTheory.FreeAbelianGroup
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Tactic
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.BlochWignerMathlibFiller
+
+
 /-!
 # Three substantive Mathlib gaps — partial fillings
 
@@ -30,13 +38,6 @@ use.
 -- Ref: [faddeev1994] DOI 10.1142/S0217732394002793
 -- Ref: [kashiwara1991] DOI 10.1215/S0012-7094-91-06321-0
 -/
-
-import Mathlib.GroupTheory.FreeAbelianGroup
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.BlochWignerMathlibFiller
 
 namespace QOU.Archimedean.SubstantiveFillers
 

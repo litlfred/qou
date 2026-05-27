@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Combinatorics.Young.YoungDiagram
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.qHeatKernelPeterWeyl — Peter-Weyl decomposition of q-heat kernel
 
@@ -18,10 +23,6 @@ LaTeX label: `prop:q-heat-kernel-peter-weyl`
 
 **Char 0 only**: archimedean realisation needs convergent heat-kernel sum.
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Combinatorics.Young.YoungDiagram
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

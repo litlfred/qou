@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Order.Ring.Lemmas
+
+
 /-!
 # QOU.ArchimedeanCondition
 
@@ -7,11 +13,6 @@ all n and produces 6 branch points in the geometric descent.
 
 LaTeX label: `def:archimedean-condition`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Order.Ring.Lemmas
 
 namespace QOU
 

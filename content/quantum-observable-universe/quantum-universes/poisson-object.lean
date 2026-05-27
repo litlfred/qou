@@ -1,3 +1,12 @@
+import QOU.Basic
+import QOU.Glossary
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Preadditive.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.NatTrans
+
+
 /-!
 # QOU.PoissonObject
 
@@ -12,14 +21,6 @@ the exterior square `Λ²`.
 LaTeX: `\label{def:poisson-object}`
 Ref: [kock2004]
 -/
-
-import QOU.Basic
-import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
-import Mathlib.CategoryTheory.Preadditive.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

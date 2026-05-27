@@ -1,3 +1,8 @@
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.Interactions.QBetaSpectralBridge — Form A ≡ Form B at single wrap
 
@@ -22,10 +27,6 @@ to Mathlib's `Real.log_one_add_lt` family.
 
 LaTeX label: `prop:q-beta-spectral-bridge`
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.Interactions
 

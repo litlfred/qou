@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.u_coordinate_discharges
 
@@ -26,7 +28,6 @@ formalisation.
 LaTeX label: `rem:u-coordinate-discharges`
 -/
 
-import Mathlib.Tactic
 -- Sibling-chapter dependency for `hoefsmitB` and `hoefsmit_b_sq`.
 import QOU.BraidKnot.q_beta_categorical_precision_ladder
 import QOU.BraidKnot.hoefsmit_V21_cos_symmetrization

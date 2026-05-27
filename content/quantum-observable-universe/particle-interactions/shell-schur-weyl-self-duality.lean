@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.ShellSchurWeylSelfDuality — Schur-Weyl justification of shell self-duality
 
@@ -15,8 +18,6 @@ LaTeX: `\label{prop:shell-schur-weyl-self-duality}`
 - [drinfeld1987] Drinfeld, Quantum groups, Proc. ICM 1986.
 - [kassel1995] Kassel, Quantum Groups (GTM 155), Ch X.
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

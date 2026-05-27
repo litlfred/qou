@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.LocalShadowOrdering — local ≤_q ordering of shadow prices
 
@@ -5,8 +8,6 @@ A ≤_q B iff |y_A(q')| ≤ |y_B(q')| on a neighborhood of q.
 
 LaTeX: `\label{def:local-shadow-ordering}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.substrate_radial_coordinate — q governs radial/phase coordinates
 
@@ -19,8 +22,6 @@ Evaluates formal results at q₀ ≈ 1.1098 for comparison with
 experimental data. NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU
 

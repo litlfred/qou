@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.QDilogarithm — categorical q-dilogarithm
 
@@ -16,9 +20,6 @@ characterisation and pentagon identity are Hopf-algebraic and
 base-ring independent.  The Kirillov series `Σ x^n / (n · [n]_q)`
 is the archimedean realisation.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

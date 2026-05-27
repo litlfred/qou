@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Tactic.Ring
+
+
 /-!
 # QOU.BraidKnot.LeptonMassTowerCanonical
 
@@ -27,10 +32,6 @@ Ref: [manuscript] docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md
 Generic over `[CommRing R]` per CLAUDE.md §7c base-ring discipline.
 NOT YET LAKE-VERIFIED — defer to follow-up branch with lake toolchain.
 -/
-
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot.LeptonMassTowerCanonical
 

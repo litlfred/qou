@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QCasimir.unique_up_to_scalar — uniqueness of the q-Casimir
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:q-casimir-unique}`
 - [manuscript] §4-braids-and-knots/q-casimir-unique
 - [kassel1995] Quantum Groups, §VI.4.9 (Joseph–Letzter centre)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

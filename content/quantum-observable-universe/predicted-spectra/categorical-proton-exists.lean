@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalProton.exists — existence of the categorical proton
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-proton-exists}`
 - [manuscript] §6-archimedean-universe/categorical-proton-exists
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
-
-import QOU.Basic
 
 namespace QOU
 

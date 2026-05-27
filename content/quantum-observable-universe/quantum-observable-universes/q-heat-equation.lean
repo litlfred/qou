@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.QHeatEquation — q-deformed heat equation
 
@@ -18,9 +22,6 @@ purely algebraic and holds in `End(S)` over `R_q`.  Convergent
 solutions (heat kernel, q-Gaussian) are archimedean and live in
 `archimedean-realisations`.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

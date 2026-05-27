@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Finset.Basic
+
+
 /-!
 # QOU.Torsion.torus_knot_generators_finite
 
@@ -6,9 +10,6 @@ generator set 𝒢 to be finite: only T_{m,n} with (m-1)(n-1) ≤ 8 embed.
 
 LaTeX label: `prop:torus-knot-generators`
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.Torsion
 

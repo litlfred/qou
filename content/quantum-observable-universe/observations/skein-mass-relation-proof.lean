@@ -1,3 +1,8 @@
+import QOU.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
+
+
 /-!
 # QOU.HadronicMass.SkeinMassRelation
 
@@ -9,10 +14,6 @@ Evaluates formal results at q₀ ≈ 1.1098 for comparison with
 experimental data. NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import QOU.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU.HadronicMass
 

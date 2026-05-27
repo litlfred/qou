@@ -1,3 +1,6 @@
+import UGB.GrobnerShirshov.JetOrder
+
+
 /-!
 # Jet-Stratified Gröbner–Shirshov Reduction
 
@@ -12,8 +15,6 @@ LaTeX label: `def:jet-stratified-reduction`
 - [fred2005] §3, Proposition 3.8
 - [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -/
-
-import UGB.GrobnerShirshov.JetOrder
 
 -- Ref: [fred2005] §3, Proposition 3.8
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)

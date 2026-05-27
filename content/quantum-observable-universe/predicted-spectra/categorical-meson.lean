@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.Torsion.CategoricalMeson
 
@@ -10,8 +13,6 @@ LaTeX label: `def:categorical-meson`
 
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 -/
-
-import QOU.Basic
 
 namespace QOU.Torsion
 

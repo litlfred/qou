@@ -1,3 +1,11 @@
+import QOU.Basic
+import QOU.Glossary
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.NatTrans
+import Mathlib.Algebra.Group.Basic
+
+
 /-!
 # QOU.SU2Emergence — Emergence of the gauge group
 
@@ -19,13 +27,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import QOU.Basic
-import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
-import Mathlib.Algebra.Group.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

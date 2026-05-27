@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QDilogarithm.unique — uniqueness of the q-dilogarithm
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:q-dilogarithm-unique}`
 - [manuscript] §2-quantum-observable-universes/q-dilogarithm-unique
 - [kassel1995] Quantum Groups, §IV
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.List.Basic
+
+
 /-!
 # Division algorithm
 
@@ -17,8 +20,6 @@ The authoritative formalization lives in
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, §2 Algorithm
 - content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §§3,6
 -/
-
-import Mathlib.Data.List.Basic
 
 namespace QOU.GrobnerShirshov.ContentBlock
 

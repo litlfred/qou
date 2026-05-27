@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # §3b-cond classes for the four remaining mass-tower open problems
 
@@ -29,9 +33,6 @@ unpack the existential, conclude.
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [borel1974] Borel, "Stable real cohomology of arithmetic groups," Ann. Sci. ENS 7 (1974)
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.Archimedean.OpenProblems
 

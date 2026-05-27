@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.UnstableAtom — instability as ILP infeasibility
 
@@ -5,8 +8,6 @@ K is unstable at q iff no x ∈ ℤ_{≥0}^N satisfies G(q) x ≥ 0.
 
 LaTeX: `\label{def:unstable-atom}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

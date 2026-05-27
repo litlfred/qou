@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Archimedean.spectral_decomposition_qvalue — Spectral decomposition of the Q_q-value
 
@@ -20,9 +24,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Archimedean
 

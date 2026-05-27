@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalLagrangian.exists — existence of the categorical Lagrangian
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-lagrangian-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-lagrangian-exists
 - [connes1994] Noncommutative Geometry
 -/
-
-import QOU.Basic
 
 namespace QOU
 

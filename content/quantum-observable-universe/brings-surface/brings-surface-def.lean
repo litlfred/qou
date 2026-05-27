@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.BringsSurface
 
@@ -7,9 +11,6 @@ Aut(Σ₄) ≅ S₅, χ(Σ₄) = −6.
 
 LaTeX label: `def:brings-surface`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
 
 namespace QOU.Brings
 

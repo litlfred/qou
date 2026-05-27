@@ -1,3 +1,7 @@
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Polynomial.Basic
+
+
 /-!
 # QOU.BraidKnot.HabiroPrecisionLadderEquivalence
 
@@ -24,9 +28,6 @@ Ref: [jones1987] Jones, "Hecke algebra representations of braid
      groups and link polynomials" (1987)
 Ref: [manuscript] prop:habiro-precision-ladder-equivalence
 -/
-
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Polynomial.Basic
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QExponential.unique — uniqueness of the q-exponential grouplike
 
@@ -12,8 +15,6 @@ LaTeX: `\label{prop:q-exponential-unique}`
 - [manuscript] §2-quantum-observable-universes/q-exponential-unique
 - [kassel1995] Quantum Groups (Springer GTM 155), §III.3 (grouplikes)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,6 @@
+import Mathlib.Analysis.Normed.Field.Basic
+import Mathlib.Data.Complex.Basic
+
 /-!
 # QOU.BraidKnot.QZeroComplexExtension
 
@@ -17,8 +20,6 @@ It is research-grade infrastructure for the bar-symmetric /
 bar-anti-symmetric decomposition refinement.
 -/
 
-import Mathlib.Analysis.Normed.Field.Basic
-import Mathlib.Data.Complex.Basic
 -- Ref: [manuscript] prop:q-zero-complex-extension
 -- Ref: [manuscript] def:bar-involution
 -- Ref: [wenzl1988] doi:10.1007/BF01404457

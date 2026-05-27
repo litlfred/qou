@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.Topology.Basic
+
+
 /-!
 # QOU.BraidKnot.ConfinementPhaseStratification
 
@@ -19,9 +23,6 @@ unconditionally.
 
 LaTeX: `\label{prop:confinement-phase-stratification}`
 -/
-
-import QOU.Basic
-import Mathlib.Topology.Basic
 
 namespace QOU.BraidKnot
 

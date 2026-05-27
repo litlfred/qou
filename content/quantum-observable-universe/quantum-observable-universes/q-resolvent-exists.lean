@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QResolvent.exists — existence of the q-resolvent
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:q-resolvent-exists}`
 - [manuscript] §2-quantum-observable-universes/q-resolvent-exists
 - [kassel1995] Quantum Groups, §IV.4
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.UnitParticleState — The unit particle Liₑ(z)
 
@@ -11,9 +15,6 @@ LaTeX label: `def:unit-particle-state`
 
 - [manuscript] Ch 8 §2, The unit particle as a cohomological defect
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 set_option autoImplicit false
 

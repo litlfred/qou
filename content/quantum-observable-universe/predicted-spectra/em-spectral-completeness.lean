@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import QOU.Archimedean.EmCouplingProjection
+
+
 /-!
 # QOU.Archimedean.em_spectral_completeness
 
@@ -19,9 +23,6 @@ LaTeX label: `thm:em-spectral-completeness`
 - [manuscript] §5/em-spectral-completeness
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import QOU.Archimedean.EmCouplingProjection
 
 namespace QOU.Archimedean
 

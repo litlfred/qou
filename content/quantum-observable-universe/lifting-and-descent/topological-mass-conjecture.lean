@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Tactic
+
+
 /-!
 # Topological decomposition of vortex mass (conjectural)
 
@@ -39,10 +44,6 @@ evaluation, no numerical approximation.
 - [manuscript] cor:quantum-dilogarithm
 - [manuscript] def:brane-boundary
 -/
-
-import Mathlib.Algebra.BigOperators.Group.Finset
-import Mathlib.Algebra.Order.Ring.Lemmas
-import Mathlib.Tactic
 
 open Finset BigOperators
 

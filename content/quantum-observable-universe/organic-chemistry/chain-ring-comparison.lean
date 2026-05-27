@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Organic.ChainRingComparison — Predicted vs. observed barrier
 
@@ -10,8 +13,6 @@ matching the experimental range of 200–400 kJ/mol.
 
 - [manuscript] Ch. 10, §3 Carbon chains and benzene
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Organic
 

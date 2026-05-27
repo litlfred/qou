@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QCasimir.exists — existence of the q-Casimir element
 
@@ -12,8 +15,6 @@ LaTeX: `\label{prop:q-casimir-exists}`
 - [kassel1995] Quantum Groups (Springer GTM 155), §VI.4
 - [lusztig1993] Introduction to Quantum Groups (Birkhäuser)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

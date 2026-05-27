@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.Examples.quantum_universe_su2 — SU(2) as a quantum universe
 
@@ -15,9 +19,6 @@ LaTeX label: `ex:quantum-universe-su2`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1 Example: SU(2) as quantum universe
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

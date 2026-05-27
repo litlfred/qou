@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.Photon — degree-one Hecke elements have trivial archimedean volume
 
@@ -26,10 +31,6 @@ LaTeX label: `lem:degree-one-braid-trivial-volume`
   non-hyperbolic link is zero by convention).
 - [manuscript] braids-and-knots / degree-one-braid-trivial-volume
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU.Photon
 

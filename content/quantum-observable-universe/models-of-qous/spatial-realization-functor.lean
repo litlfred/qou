@@ -1,3 +1,8 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+
+
 /-!
 # QOU.SpatialRealizationFunctor
 
@@ -15,10 +20,6 @@ LaTeX label: `def:spatial-realization-functor`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1-quantum-observable-universe/spatial-realization-functor
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
 
 open CategoryTheory MonoidalCategory
 

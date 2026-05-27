@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QHeatEquation.unique_solution — uniqueness of q-heat solutions
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:q-heat-equation-unique}`
 - [manuscript] §2-quantum-observable-universes/q-heat-equation-unique
 - [kassel1995] Quantum Groups, §VII.4
 -/
-
-import QOU.Basic
 
 namespace QOU
 

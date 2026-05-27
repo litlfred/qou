@@ -1,10 +1,3 @@
-/-!
-# QOU.PathIntegrals.KnotEigenbasisComplete
-
-Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/PathIntegrals.lean (monolithic)
--/
-
 import QOU.Basic
 import QOU.Glossary
 import QOU.KnotTheory
@@ -13,6 +6,14 @@ import Mathlib.GroupTheory.SpecificGroups.Dihedral
 import Mathlib.GroupTheory.PresentedGroup
 import Mathlib.GroupTheory.FreeGroup.Basic
 import Mathlib.Algebra.Algebra.Basic
+
+
+/-!
+# QOU.PathIntegrals.KnotEigenbasisComplete
+
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/PathIntegrals.lean (monolithic)
+-/
 
 namespace QOU.PathIntegrals
 

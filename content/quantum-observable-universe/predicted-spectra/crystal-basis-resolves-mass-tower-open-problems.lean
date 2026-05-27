@@ -1,3 +1,7 @@
+import Mathlib.Tactic
+import QOU.Archimedean.MassTowerOpenProblemsClasses
+
+
 /-!
 # Crystal-basis reduction of three mass-tower open problems
 
@@ -30,9 +34,6 @@ coefficient pre-archimedean combinatorial objects.
 -- Ref: [khovanovlauda2009] DOI 10.1090/S1088-4165-09-00346-X
 -- Ref: [lecouvey2007] DOI 10.1016/j.jalgebra.2007.07.002
 -/
-
-import Mathlib.Tactic
-import QOU.Archimedean.MassTowerOpenProblemsClasses
 
 namespace QOU.Archimedean
 

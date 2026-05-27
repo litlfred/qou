@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.CategoricalTransport — Glossary: categorical transport equation
 
@@ -6,8 +9,6 @@ wrapping Mathlib's connection/covariant derivative concepts.
 
 LaTeX label: `rem:glossary-categorical-transport`
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU
 

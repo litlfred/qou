@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.RigidMonoidalCategory
 
@@ -7,9 +11,6 @@ a dual satisfying the snake identities (evaluation/coevaluation).
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

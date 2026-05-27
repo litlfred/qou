@@ -1,3 +1,6 @@
+import Mathlib.Analysis.Normed.Group.Basic
+
+
 /-!
 # QOU.MassIdentityC — Archimedean realisation of the mass identity
 
@@ -20,8 +23,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Analysis.Normed.Group.Basic
 
 namespace QOU
 

@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.KnotOperatorEnergy — knot operator energy
 
@@ -6,8 +9,6 @@ LP-dual shadow price (prop:mass-coefficient-shadow-price).
 
 LaTeX: `\label{def:knot-operator-energy}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

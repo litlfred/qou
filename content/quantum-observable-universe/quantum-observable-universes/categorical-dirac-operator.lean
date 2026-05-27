@@ -1,3 +1,8 @@
+import QOU.Basic
+import QOU.Glossary
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.CategoricalDiracOperator
 
@@ -6,10 +11,6 @@ serving as the categorical Dirac operator.
 
 LaTeX: `\label{def:categorical-dirac-operator}`
 -/
-
-import QOU.Basic
-import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

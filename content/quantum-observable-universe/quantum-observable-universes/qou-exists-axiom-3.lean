@@ -1,3 +1,6 @@
+import QOU.QuantumObservableUniverse.CategoricalFoundations
+
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_3_chern
 
@@ -17,8 +20,6 @@ LaTeX label: `lem:qou-exists-axiom-3`
 
 - [manuscript] §1 Quantum Observable Universe, Axiom 3
 -/
-
-import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 namespace QOU.QuantumObservableUniverse
 

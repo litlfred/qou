@@ -1,3 +1,9 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Preadditive.Basic
+
+
 /-!
 # QOU.WeightDecomposition.ofMaximalTorus
 
@@ -7,11 +13,6 @@ operator yields complementary idempotent projections `π_H` and `π_V`.
 
 LaTeX: `\label{thm:weight-decomposition-exists}`
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.CategoryTheory.Preadditive.Basic
 
 open CategoryTheory MonoidalCategory
 

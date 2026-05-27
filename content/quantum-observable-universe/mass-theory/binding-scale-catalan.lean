@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # Binding Scale from Catalan Constant
 
@@ -5,8 +8,6 @@
 
 -- Ref: [manuscript] prop:binding-scale-catalan
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.BindingScale
 

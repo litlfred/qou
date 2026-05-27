@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.CemeteryGroup — cemetery group as ker τ on KLR modules
 
@@ -17,8 +20,6 @@ References:
 - Brundan, J. & Kleshchev, A. (2009). Blocks of cyclotomic Hecke algebras
   and Khovanov–Lauda algebras. Inventiones mathematicae 178(3).
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

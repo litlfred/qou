@@ -1,3 +1,8 @@
+import QOU.Basic
+import QOU.FlavorDressing.FlavorDressingFunctor
+import QOU.FlavorDressing.DressedMassFromSubstrateSplit
+
+
 /-!
 # QOU.FlavorDressing.flavor_mass_splitting_bound
 
@@ -21,10 +26,6 @@ in the lemma `substrate_to_bound_ratio` below).
 
 LaTeX: `\label{thm:flavor-mass-splitting-bound}`
 -/
-
-import QOU.Basic
-import QOU.FlavorDressing.FlavorDressingFunctor
-import QOU.FlavorDressing.DressedMassFromSubstrateSplit
 
 namespace QOU.FlavorDressing
 

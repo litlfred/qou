@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.ParticleInteractions.SilverRatioBetaDecayNull
 
@@ -11,7 +13,6 @@ Derivation: from `prop:neutron-qvalue-symbolic`,
 Setting h = 2 gives q² - 2q - 1 = 0, roots q = 1 ± √2.
 -/
 
-import Mathlib.Tactic
 -- Ref: [manuscript] prop:neutron-qvalue-symbolic
 -- Ref: [wenzl1988] doi:10.1007/BF01404457 (Hecke Markov trace)
 -- Ref: [hoefsmit1974] (Hoefsmit seminormal forms)

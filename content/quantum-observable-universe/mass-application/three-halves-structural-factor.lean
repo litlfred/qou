@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
+
 /-!
 # QOU.BraidKnot.ThreeHalvesStructuralFactor
 
@@ -46,10 +51,6 @@ Pure field algebra; proofs use `field_simp; ring` which is the
 canonical tactic for rational-function identities in Mathlib's
 Field instances.
 -/
-
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot.ThreeHalvesStructuralFactor
 

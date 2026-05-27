@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.AlphaKCategoricalClosure
 
@@ -15,8 +18,6 @@ chapter (`rem:ck-extraction-from-algebraic-rules`,
 
 LaTeX label: `conj:alpha-k-categorical-closure`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

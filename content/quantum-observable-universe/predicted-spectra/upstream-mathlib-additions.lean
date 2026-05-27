@@ -1,3 +1,10 @@
+import Mathlib.Analysis.SpecialFunctions.Complex.Log
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.Tactic
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+
+
 /-!
 # Upstream Mathlib additions — repo-internal first attempts
 
@@ -21,12 +28,6 @@ upstream-Mathlib gap).
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
 -- Ref: [bloch2000] AMS CRM Monograph 11
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Complex.Log
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
-import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Archimedean.UpstreamAdditions
 

@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed
 
@@ -17,9 +21,6 @@ The result is CLOSED in Lean by elementary arithmetic.
 
 LaTeX label: `rem:F3-eps6-leading-eq-neg-2b-cubed` (helper Lean lemma).
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

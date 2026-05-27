@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
+import Mathlib.Order.Basic
+
+
 /-!
 # QOU.QuToQou — Main theorem: quantum universe → QOU
 
@@ -14,10 +19,6 @@ is a quantum observable universe with five structural properties:
 - [yekutieli2010] Central Extensions of Gerbes
 - [manuscript] §3 Theorem: QU to QOU
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.Order.Basic
 
 namespace QOU
 

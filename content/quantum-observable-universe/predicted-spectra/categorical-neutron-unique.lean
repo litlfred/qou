@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalNeutron.unique_up_to_isotopy — uniqueness of the categorical neutron
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-neutron-unique}`
 - [manuscript] §6-archimedean-universe/categorical-neutron-unique
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
-
-import QOU.Basic
 
 namespace QOU
 

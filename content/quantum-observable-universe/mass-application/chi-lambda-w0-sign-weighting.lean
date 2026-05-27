@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.ChiLambdaW0SignWeighting
 
@@ -22,8 +25,6 @@ Verified numerically at $k = 5$ ($\varepsilon^{10}$) and $k = 6$
 ($\varepsilon^{12}$) from the per-Wedderburn-block probe witness
 (PR #672).
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

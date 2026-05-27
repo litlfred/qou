@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.phi_d_syt_count_conjecture
 
@@ -37,8 +40,6 @@ proved in `rem:chi-per-irrep-cyclotomic-closed-forms`.
 
 LaTeX label: `rem:phi-d-syt-count-conjecture`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

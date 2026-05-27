@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.GCD.Basic
+
+
 /-!
 # QOU.Archimedean.torus_embeddable_complete — Completeness of embeddable torus knots
 
@@ -11,8 +14,6 @@ LaTeX label: `prop:torus-embeddable-complete`
 
 - [manuscript] §5/torus-embeddable-complete
 -/
-
-import Mathlib.Data.Nat.GCD.Basic
 
 namespace QOU.Archimedean
 

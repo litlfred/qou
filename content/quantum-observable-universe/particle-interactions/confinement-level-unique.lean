@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.ConfinementLevel.unique — uniqueness of confinement level
 
@@ -5,8 +8,6 @@ The minimum of an upward-closed nonempty subset of ℕ is unique.
 
 LaTeX: `\label{prop:confinement-level-unique}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

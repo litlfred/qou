@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
+
+
 /-!
 # QOU.ObservableMTC
 
@@ -10,9 +14,6 @@ LaTeX label: `def:observable-mtc`
 
 **Ground ring**: `ℂ` (structural; anyonic modular data).
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
-import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 
 namespace QOU
 

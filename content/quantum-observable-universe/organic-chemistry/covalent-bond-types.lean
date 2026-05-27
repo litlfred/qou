@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Algebra.Order.Ring.Defs
+
+
 /-!
 # QOU.Organic.CovalentBond — Covalent bond as shared Hopf links
 
@@ -9,9 +13,6 @@ is k · E_cross(T(2,2)) plus inter-link interaction terms.
 
 - [manuscript] Ch. 10, §1 Covalent bonding as shared sub-Hopf links
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Algebra.Order.Ring.Defs
 
 namespace QOU.Organic
 

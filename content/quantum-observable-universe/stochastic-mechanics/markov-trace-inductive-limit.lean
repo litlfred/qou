@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.markov_trace_inductive_limit
 
@@ -30,7 +32,6 @@ content; the scaffold suffices to plug per-n discharges into
 LaTeX label: `rem:markov-trace-inductive-limit`
 -/
 
-import Mathlib.Tactic
 -- Sibling dependencies: BraidWord type from `braid-group-n-strand`,
 -- markovZax from `markov-axioms-primitive`.
 import QOU.BraidKnot.braid_group_n_strand

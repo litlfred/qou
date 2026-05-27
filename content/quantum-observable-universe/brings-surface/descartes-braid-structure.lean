@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Archimedean.descartes_braid_structure
 
@@ -8,10 +13,6 @@ B₃ → Dic₃ ↠ S₃ recovers the three colour sectors inside S₅ = Aut(Σ�
 
 LaTeX label: `cor:descartes-braid-structure`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Archimedean
 

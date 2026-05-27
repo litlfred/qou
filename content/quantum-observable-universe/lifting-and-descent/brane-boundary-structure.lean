@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
+import Mathlib.LinearAlgebra.Basic
+import Mathlib.Order.Basic
+
+
 /-!
 # QOU.Torsion.brane_boundary_structure — Brane boundary structure
 
@@ -13,11 +19,6 @@ LaTeX label: `prop:brane-boundary`
 
 - [manuscript] §3-lifting-of-quantum-torsion/brane-boundary-structure
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Group.Basic
-import Mathlib.LinearAlgebra.Basic
-import Mathlib.Order.Basic
 
 namespace QOU.Torsion
 

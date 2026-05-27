@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.Braiding.knot_particle_correspondence — Knot--particle correspondence via q-Schur--Weyl duality
 
@@ -10,8 +13,6 @@ representations and knot/link types arising as braid closures.
 - [manuscript] Ch. 4, §10
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Braiding
 

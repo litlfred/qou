@@ -1,3 +1,11 @@
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Monoidal.Functor
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.NatTrans
+import Mathlib.RingTheory.HopfAlgebra.Basic
+
+
 /-!
 # QOU.tannaka_krein_reconstruction — Tannaka–Krein reconstruction
 
@@ -38,13 +46,6 @@ LaTeX label: `prop:tannaka-krein-reconstruction`
 - [deligne1990] https://doi.org/10.1007/978-0-8176-4575-5_3
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
-import Mathlib.CategoryTheory.Monoidal.Functor
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
-import Mathlib.RingTheory.HopfAlgebra.Basic
 
 open CategoryTheory MonoidalCategory
 

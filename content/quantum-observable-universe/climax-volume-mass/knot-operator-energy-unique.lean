@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.KnotOperatorEnergy.unique — uniqueness of knot operator energy
 
@@ -6,8 +9,6 @@ slackness). The absolute value is unique up to base-ring equivalence.
 
 LaTeX: `\label{prop:knot-operator-energy-unique}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

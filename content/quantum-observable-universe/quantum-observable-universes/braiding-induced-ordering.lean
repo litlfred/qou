@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Order.WellFounded
+import Mathlib.Data.List.Lex
+import Mathlib.Data.Fin.Basic
+
+
 /-!
 # QOU.braiding_induced_ordering — The braiding induces a well-ordering
 
@@ -11,11 +17,6 @@ LaTeX label: `prop:braiding-induced-ordering`
 ## References
 - [manuscript] §2/braiding-induced-ordering
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Order.WellFounded
-import Mathlib.Data.List.Lex
-import Mathlib.Data.Fin.Basic
 
 namespace QOU
 

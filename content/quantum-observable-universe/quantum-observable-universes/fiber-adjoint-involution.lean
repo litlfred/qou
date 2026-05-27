@@ -1,3 +1,10 @@
+import QOU.Basic
+import QOU.Glossary
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.NatTrans
+
+
 /-!
 # QOU.FiberAdjointInvolution — Fibre–adjoint-fibre involution
 
@@ -10,12 +17,6 @@ involution σ : P(V) ↪ Ad(A).
 - [lusztig1993] Introduction to Quantum Groups
 - [manuscript] §1
 -/
-
-import QOU.Basic
-import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

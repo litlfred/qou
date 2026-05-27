@@ -1,3 +1,10 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+
+
 /-!
 # QOU.Archimedean.bar_self_dual_confinement_band — Maximal bar-invariant band
 
@@ -17,12 +24,6 @@ LaTeX label: `prop:bar-self-dual-confinement-band`
 - [manuscript] §6/golden-skew-dual-node
 - [manuscript] §7/deconfinement-golden-threshold
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
 
 namespace QOU.Archimedean.BarSelfDualConfBand
 

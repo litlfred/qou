@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalQConnection.exists — existence of the categorical q-connection
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-q-connection-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-q-connection-exists
 - [connes1994] Noncommutative Geometry
 -/
-
-import QOU.Basic
 
 namespace QOU
 

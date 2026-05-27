@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Basic
+
+
 /-!
 # Deuteron binding from atomic Frobenius co-Casimir trace
 
@@ -15,9 +19,6 @@ universal theorem applied at H_6(q) and at H_3(q).
 
 -- Ref: [manuscript] prop:deuteron-binding-frobenius-codim
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.BigOperators.Basic
 
 namespace QOU.WedderburnMass
 

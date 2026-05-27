@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Field.Basic
+
+
 /-!
 # QOU.Information.speedOfLight — Speed of light as Lieb–Robinson velocity
 
@@ -9,8 +12,6 @@ LaTeX label: `def:information-speed-of-light`
 ## References
 - [manuscript] §9/information-speed-of-light
 -/
-
-import Mathlib.Algebra.Field.Basic
 
 namespace QOU.Information
 

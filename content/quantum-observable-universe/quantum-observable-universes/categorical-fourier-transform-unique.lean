@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalFourier.unique — uniqueness of the categorical Fourier transform
 
@@ -10,8 +13,6 @@ LaTeX: `\label{prop:categorical-fourier-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-fourier-transform-unique
 - [kassel1995] Quantum Groups, §IV
 -/
-
-import QOU.Basic
 
 namespace QOU
 

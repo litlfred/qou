@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalLaplace.exists — existence of the categorical Laplace transform
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-laplace-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-laplace-transform-exists
 - [kassel1995] Quantum Groups, §IV
 -/
-
-import QOU.Basic
 
 namespace QOU
 

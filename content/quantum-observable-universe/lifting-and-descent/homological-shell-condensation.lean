@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+import QOU.Common.MagicNumbers
+
+
 /-!
 # Homological shell condensation (Lean class)
 
@@ -16,10 +21,6 @@ become conditional on `[ShellCondensation n]` instances.
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
-import QOU.Common.MagicNumbers
 
 namespace QOU.ShellCondensation
 

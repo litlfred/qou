@@ -1,3 +1,7 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+
 /-!
 # Unified curvature-rank mass formula
 
@@ -21,9 +25,6 @@ spectral-sequence ladder, not competing conjectures.
 
 -- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 namespace QOU.WedderburnMass
 

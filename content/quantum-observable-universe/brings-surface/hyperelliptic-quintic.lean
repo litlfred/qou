@@ -1,3 +1,7 @@
+import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+
+
 /-!
 # QOU.HyperellipticQuintic
 
@@ -12,9 +16,6 @@ Self-contained block file (not part of `lake build` tree);
 sibling block files redefine `zeta5` locally rather than importing
 from here.
 -/
-
-import Mathlib.Data.Complex.Basic
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 namespace QOU
 

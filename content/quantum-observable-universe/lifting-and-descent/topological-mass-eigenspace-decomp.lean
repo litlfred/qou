@@ -1,3 +1,6 @@
+import QOU.LiftingDescent.JetProlongation
+
+
 /-!
 # QOU.LiftingDescent.tm_eigenspace_decomp
 
@@ -25,8 +28,6 @@ LaTeX label: `lem:topological-mass-eigenspace-decomp`
 - See `QOU.LiftingDescent.JetChain.decomposition` for the underlying
   module-theoretic decomposition.
 -/
-
-import QOU.LiftingDescent.JetProlongation
 
 namespace QOU.LiftingDescent
 

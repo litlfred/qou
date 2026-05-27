@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.chi_v111_via_sign_substitution
 
@@ -22,8 +25,6 @@ then proves that the result equals the conjectured closed form
 
 LaTeX label: `rem:chi-v111-via-sign-substitution`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.Ring.Basic
+
+
 /-!
 # QOU.BraidKnot.LeptonBringSurfaceH3
 
@@ -16,9 +20,6 @@ Where (a_n, b_n) come from the Hecke recursion σ^n = a_n σ + b_n
 
 Generic over `[Field R]` per CLAUDE.md §7c.
 -/
-
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.BraidKnot.LeptonBringSurfaceH3
 

@@ -1,3 +1,7 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+
+
 /-!
 # QOU.BraidKnot.plancherel_weight_boundedness
 
@@ -20,9 +24,6 @@ LaTeX label: `prop:plancherel-weight-boundedness`
 - [manuscript] Ch. Braids and Knots, §Plancherel boundedness
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.BraidKnot
 

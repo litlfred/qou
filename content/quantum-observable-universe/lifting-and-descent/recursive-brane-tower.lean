@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.LinearAlgebra.Basic
+
+
 /-!
 # QOU.RecursiveBraneTower — The recursive brane tower {Aₙ}
 
@@ -8,9 +12,6 @@ The tower A₀ ↪ A₁ ↪ A₂ ↪ ⋯ carries the ascent/descent structure.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Basic
 
 namespace QOU
 

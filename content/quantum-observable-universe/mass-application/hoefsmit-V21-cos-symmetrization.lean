@@ -1,3 +1,9 @@
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.hoefsmit_V21_cos_symmetrization
 
@@ -18,11 +24,6 @@ cos factor comes from `prop:q-beta-cos-resummation`.
 
 LaTeX label: `prop:hoefsmit-V21-cos-symmetrization`
 -/
-
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

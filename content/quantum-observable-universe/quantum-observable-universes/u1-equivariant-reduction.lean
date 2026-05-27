@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Topology.Instances.Real.Lemmas
+
+
 /-!
 # QOU.CommutativeQOU.u1EquivariantReduction
 
@@ -9,9 +13,6 @@ LaTeX label: `prop:u1-equivariant-reduction`
 
 **Ground ring**: `ℝ` (analytic/geometric).
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Topology.Instances.Real.Lemmas
 
 namespace QOU
 

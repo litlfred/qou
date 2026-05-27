@@ -1,3 +1,8 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.CosimplicialCrossedGroupoid — Cosimplicial crossed groupoid structure
 
@@ -17,10 +22,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

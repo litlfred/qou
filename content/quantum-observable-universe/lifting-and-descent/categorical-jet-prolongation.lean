@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.categorical_jet_prolongation — Jet prolongation preserves QU structure
 
@@ -12,9 +16,6 @@ LaTeX label: `prop:categorical-jet-prolongation`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1-quantum-observable-universe/categorical-jet-prolongation
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open CategoryTheory MonoidalCategory
 

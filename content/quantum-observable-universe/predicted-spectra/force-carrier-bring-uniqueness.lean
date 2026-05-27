@@ -1,3 +1,6 @@
+import QOU.Archimedean.TorusKnotGenusFourUnique
+
+
 /-!
 # QOU.Archimedean.force_carrier_bring_uniqueness
 
@@ -14,8 +17,6 @@ LaTeX label: `prop:force-carrier-bring-uniqueness`
 
 - [manuscript] §5/force-carrier-bring-uniqueness
 -/
-
-import QOU.Archimedean.TorusKnotGenusFourUnique
 
 namespace QOU.Archimedean
 

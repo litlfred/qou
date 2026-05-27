@@ -1,3 +1,8 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.q_beta_categorical_precision_ladder
 
@@ -16,10 +21,6 @@ Each rung's coefficient is derived from substrate-only data:
 
 LaTeX label: `prop:q-beta-categorical-precision-ladder`
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

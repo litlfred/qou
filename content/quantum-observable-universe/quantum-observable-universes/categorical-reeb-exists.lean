@@ -1,3 +1,8 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.CategoricalReeb.mk — Smart constructor for Reeb data
 
@@ -16,10 +21,6 @@ admits such data) is recorded as an axiom below.
 
 LaTeX: `\label{thm:categorical-reeb-exists}`
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

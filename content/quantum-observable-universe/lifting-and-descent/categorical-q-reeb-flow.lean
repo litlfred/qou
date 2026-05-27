@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.CategoricalQReebFlow — q-deformed Reeb flow
 
@@ -9,8 +12,6 @@ by the q-deformed Reeb derivation ξ_q, where
 
 - [manuscript] §1 Quantum Observable Universe
 -/
-
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU
 

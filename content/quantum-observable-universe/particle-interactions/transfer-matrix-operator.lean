@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # QOU.Archimedean.TransferMatrixOperator
 
@@ -14,9 +18,6 @@ LaTeX label: `def:transfer-matrix-operator`
 - [manuscript] §6/transfer-matrix-operator
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.Archimedean
 

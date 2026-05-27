@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.Archimedean.shell_closure_normal_form
 
@@ -23,8 +26,6 @@ Evaluates formal results at q₀ ≈ 1.1098 for comparison with
 experimental data. NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Archimedean
 

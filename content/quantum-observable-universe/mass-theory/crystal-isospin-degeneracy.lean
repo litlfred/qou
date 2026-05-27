@@ -1,3 +1,7 @@
+import QOU.Basic
+import QOU.BraidKnot.CrystalGraphRealization
+
+
 /-!
 # QOU.BraidKnot.crystal_isospin_degeneracy
 
@@ -40,9 +44,6 @@ References:
 - Kashiwara, M. (1991). Duke Math. J. 63(2).
 - Lecouvey, C. (2007). MSJ Memoirs 17.
 -/
-
-import QOU.Basic
-import QOU.BraidKnot.CrystalGraphRealization
 
 namespace QOU.BraidKnot
 

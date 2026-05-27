@@ -1,3 +1,9 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+import Mathlib.LinearAlgebra.Matrix.Symmetric
+import Mathlib.Tactic
+
+
 /-!
 # QOU.Interactions.GramMatrixH3Symbolic
 
@@ -84,11 +90,6 @@ Ref: sympy regression guard `folio-assistant/computations/gram_h3_symbolic_regre
      match-to-pyhecke and symmetry at 50 dps)
 Ref: numerical pyhecke source: `gram-matrix-dual.witness.json`
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import Mathlib.LinearAlgebra.Matrix.Symmetric
-import Mathlib.Tactic
 
 namespace QOU.Interactions.GramMatrixH3Symbolic
 

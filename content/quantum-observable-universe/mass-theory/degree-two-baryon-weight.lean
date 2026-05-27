@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # Degree-2 Baryon Weight β₂ = -2[3]_q
 
@@ -6,8 +9,6 @@ quantum 3-integer, encoding the 3-quark baryon structure.
 
 -- Ref: [manuscript] prop:degree-two-baryon-weight
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.BaryonWeight
 

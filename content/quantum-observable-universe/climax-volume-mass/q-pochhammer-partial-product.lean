@@ -1,3 +1,9 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # q-Pochhammer partial product Φ_n(x; q)
 
@@ -13,11 +19,6 @@ stratified GB reduction.
 -- Ref: [manuscript] def:q-pochhammer-partial-product
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.QPochhammer
 

@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.markov_trace_operator_construction
 
@@ -19,8 +22,6 @@ theorems have a clear API to take as `[Instance]`.
 
 LaTeX label: `rem:markov-trace-operator-construction`
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

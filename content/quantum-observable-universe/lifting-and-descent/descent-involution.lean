@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.DescentInvolution — The descent involution τₙ = ℓₙ ∘ 𝔡_{n+1}
 
@@ -9,8 +12,6 @@ decomposition gives the descended/transient splitting.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU
 

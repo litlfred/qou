@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.Archimedean.genus_maximal_descent — Genus-maximal descent
 
@@ -11,9 +15,6 @@ LaTeX label: `prop:genus-maximal-descent`
 
 - [manuscript] §6-archimedean-universe/genus-maximal-descent
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
 
 namespace QOU.Archimedean
 

@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.DirectLimitAlgebra — Direct limit of the endomorphism algebras
 
@@ -8,8 +11,6 @@ observables at infinite brane level.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU
 

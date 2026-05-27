@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Data.Complex.Basic
+
+
 /-!
 # QOU.BraidKnot.ImQPhysicalRole
 
@@ -12,9 +16,6 @@ Generic statement: there exists no current QOU observable that
 distinguishes Im(q) ≠ 0 from Im(q) = 0 at leading order under the
 modulus projection.
 -/
-
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Data.Complex.Basic
 
 namespace QOU.BraidKnot.ImQPhysicalRole
 

@@ -1,3 +1,6 @@
+import QOU.QGeometricLanglands
+
+
 /-!
 # QOU.QHeckeEigensheaf
 
@@ -7,8 +10,6 @@ tensor compatibility and factorisation.
 Co-located sibling for content block `def:q-hecke-eigensheaf`.
 Full formalization: `QOU/QGeometricLanglands.lean`
 -/
-
-import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QHeckeEigensheaf
 

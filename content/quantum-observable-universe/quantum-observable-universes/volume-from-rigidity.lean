@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.volume_from_rigidity — Volume form factorisation lemma
 
@@ -12,9 +16,6 @@ LaTeX label: `lem:volume-from-rigidity`
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1-quantum-observable-universe/volume-from-rigidity
 -/
-
-import QOU.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open CategoryTheory MonoidalCategory
 

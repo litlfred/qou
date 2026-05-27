@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Chirality factor — exact Wedderburn-ribbon form (conjecture class)
 
@@ -23,9 +27,6 @@ hypothesis remain fully Lean-verified conditional on the class instance.
 - [manuscript] prop:chirality-writhe-ribbon-derivation
 - [manuscript] prop:wedderburn-trace-identity
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

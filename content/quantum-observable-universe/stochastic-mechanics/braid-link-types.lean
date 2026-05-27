@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+
+
 /-!
 # QOU.BraidKnot.braid_link_types
 
@@ -28,8 +31,6 @@ This DISCHARGES Atom 1 of `rem:markov-closure-map-axiomatic`.
 
 LaTeX label: `rem:braid-link-types` (Track C Step A).
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

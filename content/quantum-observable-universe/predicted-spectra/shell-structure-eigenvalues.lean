@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
+
 /-!
 # QOU.Archimedean.shell_structure_eigenvalues
 
@@ -21,9 +25,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 namespace QOU.Archimedean
 

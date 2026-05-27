@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.MassIdentity.exists — well-definedness of the inertial mass
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:mass-identity-exists}`
 - [manuscript] §5-lifting-and-descent/mass-identity-exists
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
-
-import QOU.Basic
 
 namespace QOU
 

@@ -1,3 +1,8 @@
+import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Nat.GCD.Basic
+import Mathlib.Tactic.IntervalCases
+
+
 /-!
 # QOU.Archimedean.torus_knot_genus_four_unique
 
@@ -11,10 +16,6 @@ LaTeX label: `prop:torus-knot-genus-four-unique`
 - [manuscript] §5/torus-knot-genus-four-unique
 - [rolfsen] Rolfsen, *Knots and Links*
 -/
-
-import Mathlib.Data.Nat.Defs
-import Mathlib.Data.Nat.GCD.Basic
-import Mathlib.Tactic.IntervalCases
 
 namespace QOU.Archimedean
 

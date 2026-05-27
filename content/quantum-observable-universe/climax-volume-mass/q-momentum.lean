@@ -1,3 +1,14 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.List.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+import Mathlib.Algebra.GeomSum
+import Mathlib.Analysis.SpecificLimits.Basic
+
+
 /-!
 # QOU.Archimedean.QMomentum — q-Momentum from braid writhe
 
@@ -15,16 +26,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.List.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
-import Mathlib.Algebra.GeomSum
-import Mathlib.Analysis.SpecificLimits.Basic
 
 namespace QOU.Archimedean
 

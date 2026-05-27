@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.LinearAlgebra.Projection
+
+
 /-!
 # QOU.Torsion.descent_eigenspaces — Eigenspaces of the descent involution
 
@@ -9,9 +13,6 @@ decomposition into descended (im τₙ) and transient (ker τₙ) subalgebras.
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Projection
 
 namespace QOU.Torsion
 

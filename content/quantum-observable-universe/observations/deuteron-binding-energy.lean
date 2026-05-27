@@ -1,3 +1,6 @@
+import QOU.HadronicMass
+
+
 /-!
 # QOU.HadronicMass.deuteron_binding_energy
 
@@ -20,8 +23,6 @@ LaTeX label: `lem:deuteron-binding-energy`
 - [manuscript] §10 Observations / deuteron-binding-energy
 - NIST CODATA 2022 deuteron mass (`mdc2mev`)
 -/
-
-import QOU.HadronicMass
 
 namespace QOU.HadronicMass
 

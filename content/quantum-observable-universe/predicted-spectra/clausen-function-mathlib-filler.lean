@@ -1,3 +1,9 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Clausen function `Cl_2` — repo-internal Mathlib filler
 
@@ -46,11 +52,6 @@ Mathlib gaps remaining after this file:
 -- Ref: [thurston1978] The geometry and topology of three-manifolds
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
-import Mathlib.Tactic
 
 namespace QOU.Archimedean
 

@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.LeviFormDefect — Matter as Frobenius failure
 
@@ -11,9 +15,6 @@ LaTeX label: `def:levi-form-defect`
 
 - [manuscript] Ch 8 §2, The unit particle as a cohomological defect
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Algebra.Module.Basic
 
 set_option autoImplicit false
 

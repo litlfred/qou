@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.QExponential — categorical q-exponential
 
@@ -19,9 +23,6 @@ abstract grouplike is base-ring independent.  The series
 representation requires invertibility of [n]_q! in R, which fails
 in characteristic p.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
+
+
 /-!
 # QOU.YekutieliLiftingCondition — Lifting condition for gerbe extensions
 
@@ -13,9 +17,6 @@ and vanishing of the obstruction is necessary and sufficient for the lift.
 - [yekutieli2010] Central Extensions of Gerbes, §3
 - [manuscript] §3
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU
 

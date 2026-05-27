@@ -1,3 +1,10 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset
+
+
 /-!
 # QOU.markov_trace_product — Product factorization of the Markov trace
 
@@ -21,12 +28,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.List.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset
 
 namespace QOU.Braiding
 

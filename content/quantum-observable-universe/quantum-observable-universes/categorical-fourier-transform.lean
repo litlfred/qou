@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+
 /-!
 # QOU.CategoricalFourier — categorical Fourier transform
 
@@ -20,9 +24,6 @@ same abstract monoidal functor evaluated at imaginary vs real s.
 (as Peter-Weyl projection) works over any base ring; the integral
 realisation requires a Haar measure (archimedean).
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 namespace QOU
 

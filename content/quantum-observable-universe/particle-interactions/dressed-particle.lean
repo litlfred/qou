@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.DressedParticle
 
@@ -7,8 +10,6 @@ via shell concatenation; stripping is not in general invertible.
 
 LaTeX: `\label{def:dressed-particle}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

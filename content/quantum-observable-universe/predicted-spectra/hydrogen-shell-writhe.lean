@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.BringsSurface.hydrogen_shell_writhe — Shell number from writhe level
 
@@ -10,8 +13,6 @@ and the orbital count per shell is n².
 
 - [manuscript] Ch. 6, §3
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.BringsSurface
 

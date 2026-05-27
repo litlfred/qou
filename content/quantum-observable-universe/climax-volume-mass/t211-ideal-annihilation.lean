@@ -1,3 +1,11 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.GroupTheory.Perm.Basic
+import Mathlib.GroupTheory.OrderOfElement
+
+
 /-!
 # QOU.Archimedean.t211_ideal_annihilation
 
@@ -18,13 +26,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.Factorial.Basic
-import Mathlib.GroupTheory.Perm.Basic
-import Mathlib.GroupTheory.OrderOfElement
 
 namespace QOU.Archimedean
 

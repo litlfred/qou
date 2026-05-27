@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Matrix.Basic
+
+
 /-!
 # QOU.Organic.MolecularHopfChain — Open molecular Hopf chain
 
@@ -9,9 +13,6 @@ Crossing energy is (N-1) · E_bond(k).
 
 - [manuscript] Ch. 10, §2 Molecular Hopf chains and rings
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Matrix.Basic
 
 namespace QOU.Organic
 

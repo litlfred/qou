@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
+
 /-!
 # QOU.MassIdentity — Mass as categorical trace
 
@@ -27,10 +32,6 @@ declarations:
 
 - [manuscript] §3 Lifting and Descent
 -/
-
-import Mathlib.Algebra.Module.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open CategoryTheory MonoidalCategory
 

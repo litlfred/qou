@@ -1,10 +1,11 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.IsotopeKnot.equivalence — isotope is an equivalence relation
 
 LaTeX: `\label{prop:isotope-knot-equivalence}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

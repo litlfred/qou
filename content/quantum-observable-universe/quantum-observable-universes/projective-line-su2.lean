@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Examples.projective_line_su2 — Projective line for SU(2)
 
@@ -14,8 +17,6 @@ LaTeX label: `ex:projective-line-su2`
 
 - [manuscript] §1 Example: Projective line for SU(2)
 -/
-
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 

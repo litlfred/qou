@@ -1,3 +1,6 @@
+import QOU.QGeometricLanglands
+
+
 /-!
 # QOU.QGeometricLanglandsConjecture
 
@@ -10,8 +13,6 @@ this class explicitly, making the dependency chain visible.
 Co-located sibling for content block `conj:q-geometric-langlands`.
 Full formalization: `QOU/QGeometricLanglands.lean`
 -/
-
-import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QGeometricLanglandsConjecture
 

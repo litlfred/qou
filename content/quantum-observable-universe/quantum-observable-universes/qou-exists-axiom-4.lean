@@ -1,3 +1,6 @@
+import QOU.QuantumObservableUniverse.CategoricalFoundations
+
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_4_volume
 
@@ -20,8 +23,6 @@ LaTeX label: `lem:qou-exists-axiom-4`
 
 - [manuscript] §1 Quantum Observable Universe, Axiom 4
 -/
-
-import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 namespace QOU.QuantumObservableUniverse
 

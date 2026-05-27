@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.C5InvolutionLeibnizDecomposition
 
@@ -12,7 +14,6 @@ h/2 contributions that propagate to the c_5 closed form via the
 Leibniz product expansion of Markov-trace.
 -/
 
-import Mathlib.Tactic
 -- Ref: [manuscript] prop:silver-ratio-beta-decay-null
 -- Ref: [manuscript] prop:neutron-qvalue-symbolic
 -- Ref: [wenzl1988] doi:10.1007/BF01404457 (Hecke Markov trace)

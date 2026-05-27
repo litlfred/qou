@@ -1,3 +1,7 @@
+import QOU.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+
+
 /-!
 # QOU.QExponential.exists_in_shuffle_hopf — existence of the q-exponential
 
@@ -12,9 +16,6 @@ LaTeX: `\label{prop:q-exponential-exists}`
 - [manuscript] §2-quantum-observable-universes/q-exponential-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.2
 -/
-
-import QOU.Basic
-import Mathlib.Algebra.Polynomial.Laurent
 
 namespace QOU
 

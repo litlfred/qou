@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+
+
 /-!
 # QOU.Archimedean.bar_apply_transfer — Bar-transfer principle
 
@@ -13,10 +18,6 @@ LaTeX label: `prop:bar-apply-transfer`
 - [manuscript] §6/bar-apply-transfer
 - [manuscript] §6/bar-self-dual-confinement-band
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
 
 namespace QOU.Archimedean.BarApplyTransfer
 

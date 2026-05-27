@@ -1,3 +1,8 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Complex.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Shared-denominator cusp holonomy (conjecture class)
 
@@ -11,10 +16,6 @@ Conditional on the upstream `AlgebraicGeometricEquivalence` and
 -- Ref: [thurston1978] manuscript: The geometry and topology of 3-manifolds
 -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds — see content/schema/references.ts
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Complex.Basic
-import Mathlib.Tactic
 
 namespace QOU.QPochhammer
 

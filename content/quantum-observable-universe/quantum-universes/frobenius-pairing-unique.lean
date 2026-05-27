@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.FrobeniusHopfData.frobeniusForm_unique — uniqueness of the Frobenius pairing
 
@@ -13,8 +16,6 @@ LaTeX: `\label{prop:frobenius-pairing-unique}`
 - [kock2004] Frobenius Algebras and 2D Topological Quantum Field
   Theories (Cambridge LMS 59), Ch 2
 -/
-
-import QOU.Basic
 
 namespace QOU
 

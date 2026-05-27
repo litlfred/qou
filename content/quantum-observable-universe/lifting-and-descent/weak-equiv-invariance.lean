@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
+
+
 /-!
 # QOU.Torsion.weak_equiv_invariance — Weak equivalence invariance
 
@@ -16,9 +20,6 @@ LaTeX label: `prop:weak-equiv-invariance`
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 - [manuscript] §3-lifting-of-quantum-torsion/weak-equiv-invariance
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU.Torsion
 

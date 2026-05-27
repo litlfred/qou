@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.Torsion.algebraic_filter_classification — Fermion/boson classification
 
@@ -9,8 +12,6 @@ exhausts all harmonic forms in the q-harmonic basis.
 
 - [manuscript] Ch. 3, §7
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Torsion
 

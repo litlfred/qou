@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Nat.Basic
+
+
 /-!
 # QOU.Archimedean.descartes
 
@@ -6,10 +11,6 @@ category C_{-6} of Descartes universes (QOUs with χ(A) = -6).
 
 LaTeX label: `thm:descartes`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.Archimedean
 

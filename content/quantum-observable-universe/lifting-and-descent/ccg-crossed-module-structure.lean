@@ -1,3 +1,6 @@
+import QOU.LiftingDescent.CosimplicialCrossedGroupoid
+
+
 /-!
 # QOU.LiftingDescent.ccg_crossed_module_structure
 
@@ -18,8 +21,6 @@ LaTeX label: `lem:ccg-crossed-module-structure`
   of a crossed module) and §4
 - [manuscript] §3 Lifting and Descent
 -/
-
-import QOU.LiftingDescent.CosimplicialCrossedGroupoid
 
 namespace QOU.LiftingDescent
 

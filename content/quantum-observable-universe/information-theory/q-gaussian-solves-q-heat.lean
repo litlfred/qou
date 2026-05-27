@@ -1,3 +1,7 @@
+import Mathlib.Analysis.Calculus.Deriv.Basic
+import Mathlib.MeasureTheory.Measure.Haar.OfBasis
+
+
 /-!
 # QOU.qGaussianSolvesQHeat — Reeb-invariant Gaussian solves q-heat
 
@@ -16,9 +20,6 @@ LaTeX label: `prop:q-gaussian-solves-q-heat`
 
 **Char 0 only**: uses ℝⁿ, Gaussian integrals, classical Laplacian.
 -/
-
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.MeasureTheory.Measure.Haar.OfBasis
 
 namespace QOU
 

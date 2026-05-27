@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+
 /-!
 # QOU.Archimedean.quantum_dilogarithm_volume — Nuclear energy from the quantum dilogarithm
 
@@ -21,9 +25,6 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 namespace QOU.Archimedean
 

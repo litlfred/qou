@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
+
 /-!
 # QOU.BraidsAndKnots.ProtonMassSubstrateIdentity
 
@@ -43,10 +48,6 @@ hypotheses for the conditional proof.
 Ref: `docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`
 Ref: PR #1272 (origin), PR #546 (Hoefsmit symbolic for −1/12)
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 

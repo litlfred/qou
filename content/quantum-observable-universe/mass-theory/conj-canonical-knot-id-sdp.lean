@@ -1,3 +1,10 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
+import QOU.MathlibExt.SDP
+import QOU.HeckeAlgebra.Common
+import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+
+
 /-!
 # Canonical knot identification for ²H, ³H, ³He from the confinement SDP
 
@@ -41,12 +48,6 @@ verified by Lean modulo this single conjectural input.
 - [manuscript] prop:joint-tower-sdp-confinement
 - [manuscript] prop:atom-knot-mass-derivation
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.HeckeAlgebra.Common
-import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 
 namespace QOU.BraidKnot
 

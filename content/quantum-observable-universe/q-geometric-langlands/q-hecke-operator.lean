@@ -1,3 +1,6 @@
+import QOU.QGeometricLanglands
+
+
 /-!
 # QOU.QHeckeOperator
 
@@ -7,8 +10,6 @@ satisfying (T − q)(T + q⁻¹) = 0.
 Co-located sibling for content block `def:q-hecke-operator`.
 Full formalization: `QOU/QGeometricLanglands.lean`
 -/
-
-import QOU.QGeometricLanglands
 
 -- Re-export: QOU.QGeometricLanglands.QHeckeOperator
 

@@ -1,3 +1,8 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # SDP multiplicity ρ from the dominant Wedderburn summand (conjecture class)
 
@@ -39,10 +44,6 @@ class instance.
 - [manuscript] prop:wedderburn-trace-identity
 - [manuscript] prop:alpha-k-derivation-procedure
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

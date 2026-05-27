@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalAction.exists — existence of the categorical action
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-action-exists}`
 - [manuscript] §2-quantum-observable-universes/categorical-action-exists
 - [kelly1982] Basic Concepts of Enriched Category Theory
 -/
-
-import QOU.Basic
 
 namespace QOU
 

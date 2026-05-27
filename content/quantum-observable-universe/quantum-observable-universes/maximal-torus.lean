@@ -1,3 +1,8 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.NatTrans
+
+
 /-!
 # QOU.MaximalTorus
 
@@ -8,10 +13,6 @@ object `V`.
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.CategoryTheory.NatTrans
 
 open CategoryTheory MonoidalCategory
 

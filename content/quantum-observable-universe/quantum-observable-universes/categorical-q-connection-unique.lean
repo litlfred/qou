@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.CategoricalQConnection.unique — uniqueness of the categorical q-connection
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:categorical-q-connection-unique}`
 - [manuscript] §2-quantum-observable-universes/categorical-q-connection-unique
 - [connes1994] Noncommutative Geometry
 -/
-
-import QOU.Basic
 
 namespace QOU
 

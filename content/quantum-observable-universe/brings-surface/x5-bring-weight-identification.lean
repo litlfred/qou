@@ -1,3 +1,7 @@
+import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+
+
 /-!
 # QOU.HyperellipticQuintic.bring_weight_match
 
@@ -14,9 +18,6 @@ LaTeX label: `prop:x5-bring-weight-identification`
 Self-contained: re-defines `zeta5` locally, matching the block-level
 convention.
 -/
-
-import Mathlib.Data.Complex.Basic
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 namespace QOU.X5BringWeight
 

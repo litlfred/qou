@@ -1,3 +1,10 @@
+import Mathlib.GroupTheory.QuotientGroup.Basic
+import Mathlib.GroupTheory.FreeAbelianGroup
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic
+import QOU.Archimedean.ThreeSubstantiveMathlibFillers
+
+
 /-!
 # `BlochGroup F` quotient — concrete construction
 
@@ -30,12 +37,6 @@ gaps.
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183
 -- Ref: [manuscript] rem:three-substantive-mathlib-fillers
 -/
-
-import Mathlib.GroupTheory.QuotientGroup.Basic
-import Mathlib.GroupTheory.FreeAbelianGroup
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Tactic
-import QOU.Archimedean.ThreeSubstantiveMathlibFillers
 
 namespace QOU.Archimedean.BlochQuotient
 

@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.LevelSufficiency
 
@@ -18,8 +21,6 @@ level-sufficiency equality is `rfl`.
 
 LaTeX: `\label{prop:level-sufficiency}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

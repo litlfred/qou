@@ -1,13 +1,14 @@
+import QOU.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
+
+
 /-!
 # QOU.HadronicMass.terminal_resolution_hadronic_mass
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/HadronicMass.lean (monolithic)
 -/
-
-import QOU.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU.HadronicMass
 

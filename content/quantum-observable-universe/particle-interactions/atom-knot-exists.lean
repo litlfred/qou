@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.BraidKnot.AtomKnot.exists — existence of atom-knot for any (Z, N)
 
@@ -5,8 +8,6 @@ Constructive: assemble Z protons + N neutrons + inter-nucleon connector.
 
 LaTeX: `\label{prop:atom-knot-exists}`
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

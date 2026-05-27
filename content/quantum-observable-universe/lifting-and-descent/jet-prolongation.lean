@@ -1,3 +1,10 @@
+import QOU.Basic
+import QOU.Glossary
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.Algebra.Module.Basic
+
+
 /-!
 # QOU.JetProlongation — First jet bundle in a QOU
 
@@ -10,12 +17,6 @@ inherited from A, and (C, J¹(A), ω') is again a QOU.
 - [manuscript] §3 Proposition: Jet Prolongation
 - [fred2005] Strong multiplicativity / Gröbner–Shirshov deformation
 -/
-
-import QOU.Basic
-import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.Algebra.Module.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

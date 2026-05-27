@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Category.Basic
+
+
 /-!
 # QOU.AlgebraicSubstrate.defect_legendrian_knot
 
@@ -11,9 +15,6 @@ LaTeX label: `prop:defect-legendrian-knot`
 
 - [manuscript] Ch 8 §2, The unit particle as a cohomological defect
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 set_option autoImplicit false
 

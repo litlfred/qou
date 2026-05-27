@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
+
+
 /-!
 # Chirality / non-chirality split of the mass tower
 
@@ -13,10 +18,6 @@ background per `prop:confinement-categorical`.
 
 -- Ref: [manuscript] prop:chirality-residue-mass-term
 -/
-
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.WedderburnMass
 

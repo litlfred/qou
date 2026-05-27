@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+
 /-!
 # QOU.BraidKnot.MagicShellCouplingKappa
   — Magic-shell coupling slope κ closed-form
@@ -18,8 +21,6 @@ LaTeX: `\label{prop:magic-shell-coupling-kappa}`
 Ref: [manuscript] prop:magic-shell-coupling-kappa
 Ref: [manuscript] prop:compound-beta-shell-calibration (parent)
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 namespace QOU.BraidKnot
 

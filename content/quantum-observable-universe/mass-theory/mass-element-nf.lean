@@ -1,3 +1,8 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Normal form of the Hecke mass element (conjecture class)
 
@@ -22,10 +27,6 @@ with $a_0 = 0$ (the $\gamma$ coefficient vanishes — photon masslessness).
 - [manuscript] conj:mass-endomorphism
 - [manuscript] def:hecke-mass-element
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

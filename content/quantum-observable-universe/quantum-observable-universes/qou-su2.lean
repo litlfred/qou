@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+
+
 /-!
 # QOU.Examples.qou_su2 — SU(2) is observable
 
@@ -13,8 +16,6 @@ LaTeX label: `ex:qou-su2`
 
 - [manuscript] §1 Example: SU(2) is observable
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Examples
 

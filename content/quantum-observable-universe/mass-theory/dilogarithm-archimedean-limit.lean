@@ -1,3 +1,10 @@
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecificLimits.Normed
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.Tactic
+
+
 /-!
 # Archimedean limit of Φ_n(x; q): conjecture statement
 
@@ -28,12 +35,6 @@ isolates that gap.
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
-import Mathlib.Tactic
 
 namespace QOU.QPochhammer
 

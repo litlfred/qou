@@ -1,3 +1,6 @@
+import QOU.AtomicMass.MagicNumbersFromQ
+
+
 /-!
 # QOU.AtomicMass.MagicNumbersFromQ — sibling trace
 
@@ -13,8 +16,6 @@ satisfied without duplicating definitions.
 
 LaTeX: `\label{prop:magic-numbers-from-q}`
 -/
-
-import QOU.AtomicMass.MagicNumbersFromQ
 
 -- Ref: [manuscript] observations/magic-numbers-from-q
 -- Ref: [chenier2026] manuscript

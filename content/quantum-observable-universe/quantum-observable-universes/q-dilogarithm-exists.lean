@@ -1,3 +1,6 @@
+import QOU.Basic
+
+
 /-!
 # QOU.QDilogarithm.exists — existence of the q-dilogarithm
 
@@ -11,8 +14,6 @@ LaTeX: `\label{prop:q-dilogarithm-exists}`
 - [manuscript] §2-quantum-observable-universes/q-dilogarithm-exists
 - [kassel1995] Quantum Groups, §IV (iterated primitives)
 -/
-
-import QOU.Basic
 
 namespace QOU
 

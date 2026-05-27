@@ -1,3 +1,6 @@
+import QOU.Archimedean.EmSpectralCompleteness
+
+
 /-!
 # QOU.Archimedean.gauge_coupling_uniqueness
 
@@ -11,8 +14,6 @@ LaTeX label: `cor:gauge-coupling-uniqueness`
 
 - [manuscript] §5/gauge-coupling-uniqueness
 -/
-
-import QOU.Archimedean.EmSpectralCompleteness
 
 namespace QOU.Archimedean
 

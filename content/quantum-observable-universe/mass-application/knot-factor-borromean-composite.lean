@@ -1,3 +1,6 @@
+import QOU.BraidKnot.KnotFactorAmphicheiral
+
+
 /-!
 # QOU.BraidKnot.knot_factor_borromean
 
@@ -10,8 +13,6 @@ LaTeX label: `cor:knot-factor-borromean-composite`
 
 - [manuscript] Ch. Braids and Knots, §Knot factor / Borromean
 -/
-
-import QOU.BraidKnot.KnotFactorAmphicheiral
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+import Mathlib.Data.List.Basic
+
+
 /-!
 # QOU.Archimedean.markov_trace_factorization — Exact factorization of the nuclear Markov trace
 
@@ -15,10 +20,6 @@ LaTeX label: `thm:markov-trace-factorization`
 ## References
 - [manuscript] §6/markov-trace-factorization
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
-import Mathlib.Data.List.Basic
 
 namespace QOU.Archimedean
 

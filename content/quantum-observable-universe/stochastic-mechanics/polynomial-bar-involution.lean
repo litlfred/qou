@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Polynomial.Eval.Defs
+
 /-!
 # QOU.BraidKnot.PolynomialBarInvolution
 
@@ -28,7 +30,6 @@ What's proved (all theorems below, no `sorry`):
   squared indeterminate — the analogue of "h² is bar-symmetric")
 -/
 
-import Mathlib.Algebra.Polynomial.Eval.Defs
 -- Ref: [manuscript] prop:bar-symmetric-three-layer-synthesis
 -- Ref: [manuscript] def:bar-involution
 -- Ref: [wenzl1988] doi:10.1007/BF01404457

@@ -1,3 +1,10 @@
+import QOU.Basic
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Irrational
+
+
 /-!
 # QOU.SubstrateParameter.ofReebDecomposition
 
@@ -12,12 +19,6 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
-
-import QOU.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Real.Irrational
 
 open scoped Topology
 
