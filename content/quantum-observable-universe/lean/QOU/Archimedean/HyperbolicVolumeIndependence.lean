@@ -23,6 +23,7 @@ namespace QOU.Archimedean
 
     Conjectural class — see [`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/archimedean-universe/hyperbolic-volume-transcendence.md). -/
 class HyperbolicVolumeIndependence where
+  -- Witness: folio-assistant/computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

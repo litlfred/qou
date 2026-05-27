@@ -23,6 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:bigbang-heatdeath`](../../../quantum-observable-universe/appendix-surreals/bigbang-heatdeath.md). -/
 class BigbangHeatdeath where
+  -- Witness: folio-assistant/computations/none
   /-- **Content statement** (from manuscript):
 
       **Caveat: this conjecture is more speculative than the others.**

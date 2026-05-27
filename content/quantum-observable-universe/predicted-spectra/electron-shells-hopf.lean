@@ -38,6 +38,7 @@ class ElectronShellsHopf : Prop where
 
 -- Ref: [manuscript] conj:electron-shells-hopf
 instance electron_shells_hopf_conjecture : ElectronShellsHopf where
+  -- Witness: folio-assistant/computations/none
   shell_capacity := sorry
   noble_gas_closure := sorry
 

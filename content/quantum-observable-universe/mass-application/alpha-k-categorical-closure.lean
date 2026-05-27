@@ -32,6 +32,7 @@ namespace QOU.BraidKnot
          with CODATA-calibrated, instead of overshooting).
 -/
 class AlphaKCategoricalClosure (q : ℝ) : Type where
+  -- Witness: folio-assistant/computations/none
   /-- Scalar residual of the existence claim: vanishes when the
       categorical $\alpha_k$ family admits a closed-form resummation
       $\mathcal{F}(\hbar_q^2)$ in $q$. -/

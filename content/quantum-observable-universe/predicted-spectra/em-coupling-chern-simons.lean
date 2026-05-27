@@ -85,6 +85,7 @@ class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
 -- Ref: [manuscript] conj:em-coupling-chern-simons
 instance chern_simons_correction_conjecture (q : ℝ) (hq : q > 1) :
     ChernSimonsCorrectionConjecture q hq where
+  -- Witness: folio-assistant/computations/none
   identity_holds := sorry
 
 end QOU.ArchimedeanUniverse
