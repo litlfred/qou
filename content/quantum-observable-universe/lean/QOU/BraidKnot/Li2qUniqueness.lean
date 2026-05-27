@@ -26,7 +26,8 @@ noncomputable def symQInt (q : ℝ) (n : ℕ) : ℝ :=
   (q ^ (n : ℤ) - q ^ (-(n : ℤ))) / (q - q⁻¹)
 
 /-- The symmetric q-dilogarithm truncated at order N:
-    Li₂^q_N(z) = Σ_{n=1}^{N} z^n / (n · [n]_q). -/
+    Li₂^q_N(z) = Σ_{n=1}^{N} z^n / (n · [n]_q).
+    -- Ref: [kirillov1995] §2.1 -/
 noncomputable def li2qTrunc (q : ℝ) (z : ℝ) (N : ℕ) : ℝ :=
   Finset.sum (Finset.range N) fun n =>
     if n = 0 then 0

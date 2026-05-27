@@ -132,6 +132,7 @@ instance skeletonBridge (q : ℝ) [VolumeConjecture q] :
     -- (Kashaev volume conjecture).  Skeleton realisation is 0; the
     -- right-hand side equals 0 iff pieceVolume q β S = 0 (which is
     -- the Kashaev sorry — deferred to VolumeConjecture).
+    -- Ref: [kashaev1997] Kashaev, Lett. Math. Phys. 39 (1997)
     sorry
 
 end QOU.PhiQJSJ

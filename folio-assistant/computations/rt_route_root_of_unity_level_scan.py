@@ -32,9 +32,9 @@ mp.mp.dps = 50
 
 # Constants — m_e from canonical source (CAL-1)
 from codata_constants import M_E_MEV  # noqa: E402
-M_W_MEV = mpf("80379.0")
-M_Z_MEV = mpf("91187.6")
-M_H_MEV = mpf("125100.0")
+M_W_MEV = mpf("80379.0")      # PDG validation target (not a calibration input)
+M_Z_MEV = mpf("91187.6")      # PDG validation target (not a calibration input)
+M_H_MEV = mpf("125100.0")     # PDG validation target (not a calibration input)
 RATIO_W_Z_EXP = M_W_MEV / M_Z_MEV
 RATIO_Z_H_EXP = M_Z_MEV / M_H_MEV
 RATIO_W_H_EXP = M_W_MEV / M_H_MEV
