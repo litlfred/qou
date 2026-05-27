@@ -42,10 +42,10 @@ $$
 ## Why this closes the W-3 residual
 
 The
-[scalar form of Sub-lemma 2.1](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md)
+[scalar form of Sub-lemma 2.1](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md)
 suffices for the W-3 D(u) closure at the column maximizer
 $\lambda^* = (1^p)$ (1-dim irrep). The
-[refined / operator-valued form](../../../docs/audits/2026-05-04-sublemma-2-1-refined.md)
+[refined / operator-valued form](../../../docs/audits/-sublemma-2-1-refined.md)
 was open for general multidim $\lambda$ (verified numerically 11/11
 on the deuteron, but lacked a categorical proof).
 

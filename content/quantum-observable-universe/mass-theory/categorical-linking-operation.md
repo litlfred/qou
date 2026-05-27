@@ -524,4 +524,4 @@ If discharged, this conjecture supplies the categorical
   — $\theta_W$ is realised via the relative ratio of
   $\mathrm{Lk}_R^{(1)}$ outputs on the W- and B-channels;
 - the $N_v$ derivation pipeline (Tier C of
-  [`docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md)).
+  [`docs/audits/-refocused-1ppb-workplan-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-refocused-1ppb-workplan-v2.md)).

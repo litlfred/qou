@@ -13,7 +13,7 @@ contribute the $h^4$, $h^6$, $\ldots$ corrections to the Borromean
 linking weight that the current $S_3$-truncated framework cannot
 see.*
 
-## The structural gap (per `2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`)
+## The structural gap (per `-h4-coefficient-source-trace-and-so3-gap.md`)
 
 The Family A linking weight `(3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h²`
 terminates at $h^2$.  The Borromean Markov trace's exact closed
@@ -82,7 +82,7 @@ Per [`docs/duality-tracker.md`](../../docs/duality-tracker.md)
 Closing D10 (this conjecture) together with D9 (already in flight)
 unlocks D11, which IS the L3 (nuclear-shell binding) categorical
 source per
-[`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md).
+[`docs/audits/-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/-magic-shell-gs-filtration-exploitation.md).
 
 ## Diagnostics
 
@@ -132,7 +132,7 @@ class SpinFromSO3Fiber
    `ell_two_yields_h4_coefficient` proof (with `sorry` for the
    regulator of the divergent series at higher $\ell$, per CLAUDE.md
    §3b "class is inhabited").
-3. **Connect to PR #1125's W/Z $\approx$ cos θ_W within 1%** binomial
+3. **Connect to 's W/Z $\approx$ cos θ_W within 1%** binomial
    pattern — the unified $T(2, 2m)$ torus-knot Markov-trace
    closed form may have a spherical-harmonic reading at the
    $\mathrm{SO}(3)$-fiber level.
@@ -141,7 +141,7 @@ class SpinFromSO3Fiber
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D10
   + §2 Cluster B (D9 $\to$ D10 $\to$ D11 nuclear physics)
-- [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](../../docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md)
+- [`docs/audits/-h4-coefficient-source-trace-and-so3-gap.md`](../../docs/audits/-h4-coefficient-source-trace-and-so3-gap.md)
   — the structural-gap audit that proposed this closure
 - Upstream class supplier:
   [`conj:s5-so3-fiber-action`](#conj:s5-so3-fiber-action)

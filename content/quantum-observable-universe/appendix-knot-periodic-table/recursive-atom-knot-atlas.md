@@ -29,7 +29,7 @@ volume-match results are **never** mixed with derivation-based ones.
 
 The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the
 $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's
-`Link(braid_closure=...).exterior().high_precision()` inside
+`Link(braid_closure=...).exterior.high_precision` inside
 `mpmath.workdps(50)`; symbolic-in-$q$ Markov-trace coefficients $y_\lambda$
 are supplied by the Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)).
 Volume-match search (`li_atom_knot_search.py`) is **deprecated** and
@@ -378,7 +378,7 @@ For `principled-derivation` entries (electron, proton, neutron) the
 hyperbolic volume of the Markov closure is computed from the
 $\sigma$-braid word at $\geq 50$ decimal digits via
 `hp_volume_of_link_closure(braid_word, digits=50)` which calls
-SnapPy's `Link(braid_closure=...).exterior().high_precision()`
+SnapPy's `Link(braid_closure=...).exterior.high_precision`
 inside `mpmath.workdps(50)`. Updates to any input propagate via
 [`witness_staleness_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/witness_staleness_tracker.py)
 to the rendered appendix on the next `bun run build`.

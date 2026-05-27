@@ -1,7 +1,7 @@
 **Proposition (weak-sector cell-content trace; supersedes
 Plancherel-normalization framing).**
 
-> **DEMOTED 2026-05-05.** Earlier drafts of this proposition
+> **DEMOTED.** Earlier drafts of this proposition
 > framed $\mathcal{N}_{\rm sym}(q)$ as a Plancherel-weighted
 > ratio with uniform $1/[2]_q$ weights — derived under the
 > dimensionally-inconsistent $H_2(q)$-only formulation. Per
@@ -104,7 +104,7 @@ At $q_0 \approx :val[q_0]{precision=6, witness=folio-assistant/computations/q-pi
 
 This is the **structural input** that the constrained-basis PSLQ
 search for $N_v$ requires (Phase D of
-`docs/audits/2026-05-05-path-alpha-bring-refinement.md`).
+`docs/audits/-path-alpha-bring-refinement.md`).
 
 ### Superseding structural input — direct cell-content trace
 
@@ -172,4 +172,4 @@ $G_F = 1/(\sqrt{2} v^2)$ becomes a closed-form $R$-rational
 expression in $\{q, [k]_q\}$ alone, with $v = N_v \cdot E_\times
 \cdot \mu_0$ derived from the categorical EW spectral data.
 
-**Audit doc.** [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md).
+**Audit doc.** [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md).

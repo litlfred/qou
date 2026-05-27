@@ -152,7 +152,7 @@ upper end of the empirical $O((q-1)^2)$ behaviour. A direct
 high-precision computation at this point disagreeing by more than
 $O((q-1)^3 \cdot u v)$ refutes the proposed q-correction; tracked
 as the open paper-track derivation in
-[`docs/audits/2026-05-19-pentagon-reduction-li2q.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-pentagon-reduction-li2q.md).
+[`docs/audits/-pentagon-reduction-li2q.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-pentagon-reduction-li2q.md).
 
 ### Status
 

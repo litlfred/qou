@@ -15,7 +15,11 @@ $$
 \frac{3 + h^2}{2 + h^2} = \frac{[3]_q \cdot [2]_q}{[4]_q}
 $$
 
+<<<<<<< HEAD
 **Tau set** *(canonical for amphichiral $10_{43}$ candidate per PR #1253, used by `prop:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
+=======
+**Tau set** *(canonical for amphichiral $10_{43}$ candidate per , used by `conj:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
+>>>>>>> ce4b916a (drain(voice): sweep remaining 135 files for inline PR refs + dates)
 
 $$
 [6]_q = [2]_q \cdot [3]_q \cdot (1 + h^2)
@@ -46,11 +50,11 @@ $q$-bracket products. Concretely:
 - **Muon** ($m = 2$, $K_\mu = 4_1$): closure factor
   $\xi_2 = [3]_q \cdot [2]_q / [4]_q = (3+h^2)/(2+h^2)$ — closes
   $m_\mu/m_e$ via $\mathrm{Vol}(4_1)/\hbar_q^2$ to 0.034 % of CODATA
-  (`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`).
+  (`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`).
 - **Tau** ($m = 3$, $K_\tau = 10_{43}$ candidate): closure factor
   $\xi_3 = [5]_q \cdot [3]_q / [6]_q$ — closes $m_\tau/m_e$ via
   $\mathrm{Vol}(10_{43})/\hbar_q^2$ to +0.79 % of CODATA
-  (`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md`
+  (`docs/audits/-t6-f-ell-derivation-attempt.md`
   followup section). The reduction
   $[6]_q = [2]_q \cdot [3]_q \cdot (1 + h^2)$ is the fundamental
   identity behind this closure.

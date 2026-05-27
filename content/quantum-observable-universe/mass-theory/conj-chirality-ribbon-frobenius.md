@@ -92,7 +92,7 @@ and is invariant under renormalisation of $\tilde w_\lambda$).
 
 The conjecture splits along **chirality class**:
 
-- **Amphichiral case (verified, 2026-05-09).** Writhe is a property
+- **Amphichiral case (verified).** Writhe is a property
   of a chosen braid representative, not a knot invariant; for the
   *canonical* amphichiral representatives used in the QOU model
   (e.g. the figure-eight word
@@ -110,7 +110,7 @@ The conjecture splits along **chirality class**:
   $\langle c(\lambda) \rangle_{4_1} = -2.3 \times 10^{-15}$
   (numerically zero at 50-dps precision).
 
-- **Chiral case (closed-form formula identified, 2026-05-09).** For
+- **Chiral case (closed-form formula identified).** For
   chiral 3-braids, $\langle c(\lambda) \rangle_\beta$ has a closed
   form in terms of the Hecke characters at $q_0$ alone:
   $$
@@ -229,14 +229,14 @@ The conjecture splits along **chirality class**:
    structure used in the QOU model (not the quantum-group normalization,
    which may differ by a global phase).
 
-2. **Mean-content identity (amphichiral).**  *Discharged 2026-05-09
+2. **Mean-content identity (amphichiral).**  *Discharged
    for the figure-eight $4_1$ via direct $H_3(R, q_0)$ computation*
    (`chirality-avg-content.witness.json`).  Generalisation to all
    amphichiral knots follows from the bar-involution symmetry
    $\chi^\lambda = \chi^{\lambda^T}$, which is structural in
    $H_n(q)$.
 
-3. **Mean-content identity (chiral, partially discharged 2026-05-09).**
+3. **Mean-content identity (chiral, partially discharged).**
    For chiral 3-braids the closed form
    $\langle c(\lambda) \rangle_\beta
    = 3(\chi^{(3)} - \chi^{(1,1,1)})

@@ -38,7 +38,7 @@ partition-sum Wedderburn — must agree. The agreement was previously
 classical Murnaghan–Nakayama character $\chi^\lambda_{\mathrm{MN}}(\pi(\beta))$
 instead of the q-Hecke character $\chi^\lambda_q(\beta)$. That bug
 appeared in two layers (audit log
-[`docs/audits/2026-05-08-p3-h-3a-divergence.md`](../../../docs/audits/2026-05-08-p3-h-3a-divergence.md)):
+[`docs/audits/-p3-h-3a-divergence.md`](../../../docs/audits/-p3-h-3a-divergence.md)):
 
 1. **Weight layer:** `schur_weyl_symbolic.schur_weyl_weight` used
    the 2-variable Schur $s_\lambda(q, q^{-1}) / H_q(\lambda)$,
@@ -53,7 +53,7 @@ Both are now fixed:
   [`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition).
 - The character is `\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)`
   via Hoefsmit seminormal matrices at $q_0$. Audit:
-  [`docs/audits/2026-05-08-q-hecke-character-gap-closure.md`](../../../docs/audits/2026-05-08-q-hecke-character-gap-closure.md).
+  [`docs/audits/-q-hecke-character-gap-closure.md`](../../../docs/audits/-q-hecke-character-gap-closure.md).
 
 ## Numerical verification
 
@@ -73,7 +73,7 @@ $10^{-3}$ and $10^{-6}$):
 
 The numerical agreement is at **machine epsilon** for all five
 atoms (hybrid precision: 30-dps sympy `Float` for $y_\lambda$ +
-float64 for $\chi^\lambda_q$). PR #564's
+float64 for $\chi^\lambda_q$). 's
 [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py)
 implements the same closure with **mpmath at 50 dps**, achieving
 $1.4 \times 10^{-16}$ on the deuteron (commit

@@ -122,7 +122,7 @@ The silver-ratio observation:
 3. **Flags $c_5$ as the loose rung**: 4/5 c_k pass the silver-ratio
    Pell-Lucas test; $c_5$ fails. This is consistent with the
    2.4% residual gap for $c_5$ at $q_0$ noted in
-   [`docs/audits/2026-05-19-c-k-comprehensive-reference.md`](../../../docs/audits/2026-05-19-c-k-comprehensive-reference.md).
+   [`docs/audits/-c-k-comprehensive-reference.md`](../../../docs/audits/-c-k-comprehensive-reference.md).
 4. **Hints at categorical source**: the Hecke quadratic's
    self-referential fixed point structure at silver ratio
    ($\sigma$-eigenvalues = $q^{\pm 1}$) suggests $c_k$ derivations

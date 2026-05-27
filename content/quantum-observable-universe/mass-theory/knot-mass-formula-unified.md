@@ -44,7 +44,7 @@ is the closed-form result of integrating the Briggs–Klein
 expansion flow $\int_0^V (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$
 over each resolved defect $E_i \cong \mathbb{P}^1(\mathbb{C})$.*
 
-**Brane-tower-evaluation note (added 2026-05-03).**
+**Brane-tower-evaluation note (added).**
 *The boxed brane-tower form $\sum_i \Phi_q(|\hat V_i|) + z^2 \sum_{i<j}
 \Phi_q(|\hat V_i \hat V_j|)$ is the **archimedean Kashaev specialisation**
 of the algebraic R-side form

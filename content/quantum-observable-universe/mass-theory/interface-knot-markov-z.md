@@ -85,7 +85,7 @@ $\bowtie_K$ via $p_+(K)$ and $p_-(K)$ counts — these are determined
 structurally by the canonical-braid construction, not phenomenologically
 fit.
 
-This locks PR #801's interface-knot factorisation as
+This locks 's interface-knot factorisation as
 *derivation-grade*: each interface in the canonical atomic braid
 contributes a Markov-trace factor that is either $z$ or $z - h$,
 determined by the crossing sign. No empirical-fit parameter remains

@@ -29,7 +29,7 @@ to six significant figures with $q = q_0$.
 The proton and neutron rows currently come from the **LO ρ_K
 assembly** which consumes $m_p$ and $m_n$ as CODATA inputs (per
 [`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json)).
-Per owner directive 2026-05-10 ("do not use LO — use full"), this
+Per owner directive ("do not use LO — use full"), this
 is tautological by construction (the $|\mathrm{tr}_M|$ factor
 cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
 reducing $\mathcal{M}_\text{pred}$ to $Z m_p + N m_n$). The FULL
@@ -38,7 +38,7 @@ mass formula
 $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$
 which is **not yet wired** at the nucleon scale (Workplan 0b
 Phase 0b.4 + Workplan 2 + open Δ_λ derivation; see
-[handoff](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)).
+[handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).
 The $n$–$p$ splitting is a *consequence* of the FULL Q_β chain
 ($Q_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
 panel after this table.

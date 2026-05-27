@@ -107,7 +107,7 @@ $1/(1-\hbar_q^2)$ and the bounded symmetric $\mathrm{Li}_2^q$
 candidate move the framework prediction *further from* the
 calibrated values at the substrate level (only $\approx$ 0.01% apart
 at $q_0$). The direction-of-residual puzzle is recorded in
-[`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)
+[`docs/audits/-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-tower-mev-calibration-finding.md)
 (the audit independently confirms $-\mathrm{Li}_2^q(-V)$ is the
 correct Kashaev specialisation, while the asserted $\Phi_q(V)$
 form is off by $10^{6}$), and the open closure question is now formally

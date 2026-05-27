@@ -114,7 +114,7 @@ components, but the operator on the self-conjugate components is
 generically non-trivial. It is **not** the Plancherel-weighted
 character sum $\sum_{\lambda = \lambda'} w_\lambda \chi^\lambda$,
 which vanishes identically at certain atomic-braid cycle types
-(see [reframing memo](../../../docs/audits/2026-05-02-self-conj-support-reframing.md)).
+(see [reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
 The $E_\infty^{p, >0}(n) = 0$ collapse condition stated above is
 precisely operator-level (page collapse on the associated graded
 algebra), and is consistent with this reading.

@@ -26,7 +26,7 @@ where:
  $q \leftrightarrow q^{-1}$ (see
  [`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation)).
 
-The empirical instances proved at single-wrap by PR #655 and follow-ups:
+The empirical instances proved at single-wrap by  and follow-ups:
 
 | order | irrep | coefficient | numerical check |
 |------:|:---:|:---:|---:|
@@ -144,6 +144,6 @@ are open R&D — pinning them down requires either:
 - Macdonald $(q, q^2)$ specialisation evaluations;
 - Habiro-residue Borel resummation at chosen $\zeta_N$.
 
-PR #655's N=1 result + N=2 partial result together establish that
+'s N=1 result + N=2 partial result together establish that
 the structural form is correct; refining the $c_k$ coefficients to
 1 ppb requires per-anchor follow-up probes.

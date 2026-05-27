@@ -123,7 +123,7 @@ hadronic calibration (neutron mass, proton mass, or $Q_\beta$
 itself) is used in the closed form *given the ansatz*; the
 +0.17% match is empirical evidence for the ansatz but does
 not derive it. See
-[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)
+[`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
 for the audit and resolution paths.
 
 **Witness**: symbolic derivation verified at

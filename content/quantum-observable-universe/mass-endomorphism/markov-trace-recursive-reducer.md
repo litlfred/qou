@@ -157,7 +157,7 @@ The recursive reducer is the algorithmic content of the
 the trace is uniquely determined by the axioms, and the algorithm
 *constructs* the unique value for any input word. This contrasts
 with the seminormal/Hoefsmit ascent
-(), which
+, which
 realises the trace via the explicit Wedderburn decomposition
 $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}$. Both routes
 agree on values; the axiomatic route avoids any reliance on the

@@ -99,13 +99,23 @@ end QOU.BraidKnot.RhoKPairGenCanonicalForm
 When the canonical $f_2$ is derived:
 1. This conjecture promotes to a theorem.
 2. [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen status changes from "open" to "proved".
+<<<<<<< HEAD
 3. Downstream conjectures (especially [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) which doesn't currently use pair-gen but will if extended to multi-strand leptons) get unblocked.
 4. The Q_β residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
+=======
+3. Downstream conjectures (especially [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) which doesn't currently use pair-gen but will if extended to multi-strand leptons) get unblocked.
+4. The Q_β residual closure direction (Path A / Path B in [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
+>>>>>>> ce4b916a (drain(voice): sweep remaining 135 files for inline PR refs + dates)
 
 ## Cross-references
 
 - [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) — parent proposition (this conjecture promotes its OPEN pair-gen subsection)
 - [`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md) — six-term theorem providing the expected $T_3 = -z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ form
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula
+<<<<<<< HEAD
 - [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — sibling conjecture for leptons
 - Audit: [`docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md`](../../../docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md) — full dependency graph
+=======
+- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — sibling conjecture for leptons
+- Audit: [`docs/audits/-rho-k-dependent-conjectures-status.md`](../../../docs/audits/-rho-k-dependent-conjectures-status.md) — full dependency graph
+>>>>>>> ce4b916a (drain(voice): sweep remaining 135 files for inline PR refs + dates)

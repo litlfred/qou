@@ -95,7 +95,7 @@ $r_2$ regulator.  Equivalently: $r_2^{(2)}[\mathcal{B}_3] = -6G$.
 ## Why this is high-value
 
 Per
-[`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)
+[`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
 §3 (Cluster C of the duality tracker), four candidate routes for
 deriving $h^4 = -3/4$ categorically:
 
@@ -170,7 +170,7 @@ class BorromeanBlochGroupElement
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D16
   + §2 Cluster C (Pentagon validation D15-D18)
-- [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)
+- [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
   — Pentagon literatures + 4 candidate routes for $h^4 = -3/4$
 - Sibling Cluster C item:
   [`prop:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15)

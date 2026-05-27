@@ -49,7 +49,7 @@ hook–content closed form:*
 Wenzl-bridge form reduces to $y_\lambda = \tilde w_\lambda$ — verified
 symbolically for $\lambda = (2,2)$ and $\lambda = (3,2,1)$ by the
 P1.3a equivalence audit
-([witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json)).
+([witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/-p1-3a-bw-equivalence.witness.json)).
 The BW and LP forms are scalings of the same canonical $\tilde w_\lambda$
 for every $\lambda$; the Wenzl-bridge identification with
 $\tilde w_\lambda$ holds **only** on the self-conjugate stratum. For
@@ -184,7 +184,7 @@ simplifies the differences to $0$ exactly. Both partitions are
 self-conjugate, so the witness establishes the BW/LP identities in
 general (definitional) and the Wenzl-bridge identity on the
 self-conjugate stratum. Witness:
-[`docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json).
+[`docs/audits/-p1-3a-bw-equivalence.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/-p1-3a-bw-equivalence.witness.json).
 
 ## Why each context picks a different form
 

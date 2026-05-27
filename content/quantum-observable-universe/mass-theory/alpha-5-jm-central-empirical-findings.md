@@ -74,7 +74,7 @@ form correctly extracts the AME-fitted shell correction.
    [`def:categorical-q-connection`](#def:categorical-q-connection))
    away from the crystal limit.
 
-**$q$-sweep across the physical regime $(1, \varphi)$ (2026-05-09 update).**
+**$q$-sweep across the physical regime $(1, \varphi)$ ( update).**
 
 To address the question of whether atom-independence might
 hold at some specific $q$ in the physical neighbourhood

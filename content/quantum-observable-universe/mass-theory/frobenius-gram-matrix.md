@@ -20,7 +20,7 @@ See [Table 1](#tbl:frobenius-gram-matrix-table1-data).
 > directly to $\sigma_1 \cdot \sigma_0\sigma_0$ after the cyclicity
 > step. The canonical Ocneanu--Wenzl recursion gives
 > $\mathrm{tr}_M(e^-) = hz^2 + z$, verified independently in
-> [`docs/audits/2026-05-19-trm5-markov-bug.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)
+> [`docs/audits/-trm5-markov-bug.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-trm5-markov-bug.md)
 > against the y-lambda Wenzl-bridge consistency
 > $\mathrm{tr}_M(b_i) = \sum_\lambda y_\lambda(q) \chi_\lambda(b_i)$
 > (residual $\sim 10^{-32}$ after fix; ${\sim}0.12$ before).

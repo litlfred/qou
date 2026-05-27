@@ -79,7 +79,7 @@ $$
    structurally predicts $m_n / m_p$ either. Best pure-substrate
    match at 0.45% --- 4,500 times worse than 1 ppb.
 
-**Therefore (post-2026-05-23 acknowledged-CAL-4 status):** after
+**Therefore (post- acknowledged-CAL-4 status):** after
 **eight independent structural searches** across every tested axis
 (Tier 5 PSLQ; q-dilog substrate-natural; V̂$_S$ + $\mathbb{Q}(\zeta_{60})$;
 commutative + operator-theoretic Φ$_q$; q-locality; reframing;
@@ -196,7 +196,7 @@ $$
 ## Status: justification, not derivation
 
 Per the audit
-([2026-05-18 λ-scale derivation search §13](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-lambda-scale-derivation-search.md)):
+([ λ-scale derivation search §13](https://github.com/litlfred/qou/blob/main/docs/audits/-lambda-scale-derivation-search.md)):
 
 - $\mathrm{Vol}(\mathcal{B}_3) = 8G$ is **derived** (standard topology).
 - The numerical match $\lambda_p = 5/2 - h^2 G$ at 5.6 ppm is **justified**
@@ -259,4 +259,4 @@ To upgrade from justification to derivation, the proof must establish:
 - [`folio-assistant/computations/lambda_scale_substrate_probe.py`](../../folio-assistant/computations/lambda_scale_substrate_probe.py)
 - [`folio-assistant/computations/lambda_scale_derivation_probes_123.py`](../../folio-assistant/computations/lambda_scale_derivation_probes_123.py)
 - [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
-- [`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)
+- [`docs/audits/-lambda-scale-derivation-search.md`](../../../docs/audits/-lambda-scale-derivation-search.md)

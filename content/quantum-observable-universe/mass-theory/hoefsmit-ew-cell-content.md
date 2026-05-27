@@ -151,7 +151,7 @@ interface generator $\sigma_3$ in $H_6(q)$ for the deuteron.
 ### Resolution of the dimension-collapse issue
 
 The audit
-[`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md)
+[`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md)
 flagged that $H_2(q)$-only completeness sums six rank-1 projectors
 in a 2-dimensional algebra — dimensionally inconsistent. The Hoefsmit
 identification at $n = 6$ resolves this:
@@ -276,7 +276,7 @@ $\mathrm{tr}_{\rm pure}$ is the operative quantity going forward.
 
 If this conjecture is discharged, it **fixes** the
 $\mathrm{End}_R(A)$-decomposition issue noted in
-[`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md)
+[`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md)
 (Fix A reading), and supplies a corrected closed form for
 $\mathcal{N}_{\rm sym}(q)$ derived from the actual Hoefsmit cell-
 content arithmetic — not the dimensionally-inconsistent uniform-

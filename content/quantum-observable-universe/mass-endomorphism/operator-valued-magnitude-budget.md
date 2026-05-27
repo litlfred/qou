@@ -34,7 +34,7 @@ less than half of the structural Frobenius content of the
 $A^\lambda_{\mu,\nu}(I)$ family.
 
 This is the quantitative magnitude budget that drives the
-[`structural-diagnosis-operator-valued`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-structural-diagnosis-operator-valued.md)
+[`structural-diagnosis-operator-valued`](https://github.com/litlfred/qou/blob/main/docs/audits/-structural-diagnosis-operator-valued.md)
 audit's conclusion: the symmetric scalar substrate cannot, in
 principle, account for the empirical Z$\leftrightarrow$N-asymmetric mass-formula
 residuals (Δ_coupling +0.796 MeV; T5 −0.325 MeV) — those are

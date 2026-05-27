@@ -27,7 +27,7 @@ $$
   \approx -1.0704239\;\text{MeV}
 $$
 
-Against the empirical fit from PR #656 v6 single-magic anchor data:
+Against the empirical fit from  v6 single-magic anchor data:
 
 $$
   \kappa_{\mathrm{empirical}} \approx -1.0707908\;\text{MeV}
@@ -44,7 +44,7 @@ The closed form decomposes into two pieces:
 
 1. **H7a energy quantum** $E_0 \cdot \log(1/h)$ — the universal
    per-shell magic-coupling magnitude, identified empirically in
-   PR #645 at the doubly-magic anchor $(2, 2)$ and structurally as
+    at the doubly-magic anchor $(2, 2)$ and structurally as
    the logarithm of the Hecke deformation. This is the natural
    "magic-shell energy unit" of the categorical substrate.
 
@@ -69,6 +69,6 @@ $(n_{pp} - n_{nn})$ excess in
 
 This proposition closes the open derivation requested in user
 work-list item #4 (κ derivation). The empirical $\kappa \approx -1.07\;\text{MeV}/\text{excess}$
-from PR #656 v6 is now a **prediction** of the categorical
+from  v6 is now a **prediction** of the categorical
 substrate, not an independently calibrated parameter — purely a
 function of $q_0$ via the q-bracket and Hecke deformation structure.

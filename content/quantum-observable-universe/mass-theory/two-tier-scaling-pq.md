@@ -1,10 +1,10 @@
-> **SUPERSEDED-$\rho_q$ note (2026-05-24, PR #1127).** Any use of the
+> **SUPERSEDED-$\rho_q$ note .** Any use of the
 > scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
 > structurally-wrong leading-order ansatz per
 > [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
 > graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 **Remark (two-tier scaling of the confined Laurent polynomial $P_K(q)$).**
 *The map from a braid word to a physical mass passes through two

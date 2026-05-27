@@ -172,7 +172,7 @@ follows from the Wedderburn trace identity.
 
 The Lean side is now stated as
 [`rho_eq_qdim_via_canonical_knot`](conj-rho-prefactor-structural.lean)
-in `conj-rho-prefactor-structural.lean`. PR #608's R5-full witness
+in `conj-rho-prefactor-structural.lean`. 's R5-full witness
 records $\rho_\star$ per atom directly:
 
 | Atom | Witness $\rho_\star$ | Notes |
@@ -181,7 +181,7 @@ records $\rho_\star$ per atom directly:
 | $^2\mathrm{H}$ | $3$ | At prototype's L=8 winner $\sigma_2 \sigma_1^6 \sigma_2^{-1}$ — **not** the historical $\rho = 1$ |
 
 The deuterium discrepancy is because the prototype's single-term
-cost function does not select $6_2$ at first principle (PR #608
+cost function does not select $6_2$ at first principle (
 "${}^2$H needs multi-term wiring"). Once T2--T6 of
 [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
 land in `cost_for_candidate`, the historical $\rho = 1$ at $6_2$

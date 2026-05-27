@@ -123,7 +123,7 @@ step proposed
 $a(N) = \lvert\mathrm{tr}_M(W_{\mathrm{atom}})\rvert / \lvert\mathrm{tr}_M(W_{\mathrm{free}})\rvert$
 as the ratio form. Empirical verification at 50dps
 ([`a-K-via-lp-dual` witness](../../folio-assistant/computations/a-K-via-lp-dual.witness.json),
-see `2026-05-18-m-p-item-b-t5-categorical-attribution.md §7c`)
+see `-m-p-item-b-t5-categorical-attribution.md §7c`)
 finds this ratio is 6–17$\times$ off the Skein values above for
 A=2,3,4. The ratio form measures the **mass-defect envelope**
 $\mathcal{B}_{\mathrm{bulk}}$, not the chirality factor $a_K$;

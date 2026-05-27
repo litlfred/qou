@@ -80,7 +80,7 @@ Combined with
 
 See [Table 2](#tbl:cyclotomic-orbit-sum-all-depths-table2-data).
 
-The depth-3 case (round 3 + round 4 of PR #635) gave $(K - 3)/2$.
+The depth-3 case (round 3 + round 4 of ) gave $(K - 3)/2$.
 The general formula here is parity-dependent: $(K - 3)/2$ for $n$
 odd, $(K - 1)/2$ for $n$ even.
 

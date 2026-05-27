@@ -72,7 +72,7 @@ LP becomes integer programming over a Kashiwara crystal graph
 follow-up (H)). The current probe sweeps $q \to 1^+$ only;
 a separate $q \to 0^+$ probe is needed.
 
-(e) **Demazure sub-crystal selector.** PR #619 empirically
+(e) **Demazure sub-crystal selector.**  empirically
 found that the categorical rule for $\lambda^*(Z, N)$ is
 $\max(y_\lambda \cdot |\chi^\lambda|)$ — not a pure structural
 property of $\lambda$. This selector picks out a Demazure

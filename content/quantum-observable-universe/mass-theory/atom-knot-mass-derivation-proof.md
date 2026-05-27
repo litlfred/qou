@@ -52,7 +52,7 @@ exact; the spectral-sequence collapse at $E_2$ guarantees no higher
 analytic content (asymptotic at roots of unity, volume conjecture,
 Reeb-density integral on the cover, etc.) is needed. $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$
 is read off as the multiplicity of $T_w$'s SDP solution in the
-Wedderburn decomposition (renamed from $\rho$ in 2026-05-17 to
+Wedderburn decomposition (renamed from $\rho$ in to
 disambiguate from the categorical density $\rho_K$ of
 [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) and the Hoefsmit
 irrep $\rho_\lambda$).

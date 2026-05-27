@@ -121,7 +121,7 @@ the self-conjugate isotypical operator blocks — not the
 character sum. Empirically, the magic-shell signal is captured
 by the GS-filtration Term 6 plus an `is_magic_pair`
 operator-correction with correlation $+0.74$ to the AME residual
-([reframing memo](../../../docs/audits/2026-05-02-self-conj-support-reframing.md)).
+([reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
 
 ## Status
 
@@ -131,7 +131,7 @@ asserts the saturation condition for all $n \in \mathfrak{M}$
 including $\{50, 82, 126\}$ where matrix-evaluation is unavailable.
 
 The downstream cone (per the
-[2026-05-01 conjecture-cones audit](../../../docs/audits/conjecture-cones.md))
+[ conjecture-cones audit](../../../docs/audits/conjecture-cones.md))
 is anticipated to include
 [`prop:magic-numbers-from-q`](#prop\:magic-numbers-from-q) and the
 shell-closure portion of the BW formula

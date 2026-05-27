@@ -41,7 +41,7 @@ isospin, maximally-symmetric internal state).
 
 ## Connection to the L3 (nuclear-shell binding) layer
 
-Per [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md),
+Per [`docs/audits/-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/-magic-shell-gs-filtration-exploitation.md),
 the framework's L3 nuclear-shell-binding gap is currently covered by
 the hard-coded `magic A·8G` rule for $^{4}\!\mathrm{He}$ + the
 α-cluster recursion for $A \geq 8$.  This conjecture **identifies
@@ -186,7 +186,7 @@ BOTH D9 and D10 to be closed first.
 - L3 prototype:
   [`prototype_gs_nf_shell_binding.py`](../../folio-assistant/computations/prototype_gs_nf_shell_binding.py)
 - L3 closure-path audit:
-  [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md)
+  [`docs/audits/-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/-magic-shell-gs-filtration-exploitation.md)
 - Magic A$\cdot$8G production rule:
   [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
   `ATOM_ASSIGN["4He"]`

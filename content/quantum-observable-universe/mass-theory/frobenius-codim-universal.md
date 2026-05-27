@@ -280,7 +280,7 @@ The status table:
 | $n$ | $p(n)$ | conj. pairs | self-conj. | Lean theorem | nucleus unblocked |
 |----:|-------:|------------:|-----------:|-------------|-------------------|
 | $3$ | $3$ | $1$ | $1$ ((2,1)) | inline at $\sigma_w$-trace | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
-| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; PR #621) |
+| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; ) |
 | $7$ | $15$ | $7$ | $1$ ((4,2,1)) | `hecke_n7_frobenius_codim` | A $\ge$ 5 nuclei |
 | $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne |
 

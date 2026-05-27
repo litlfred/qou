@@ -13,7 +13,7 @@ $$
 $$
 
 The audit
-[`derivation-audit-2026-04-20.md` line 112](../../../docs/audits/derivation-audit-2026-04-20.md)
+[`derivation-audit-.md` line 112](../../../docs/audits/derivation-audit-.md)
 flagged this hypothesis as open (GAP 14a). This block names the
 hypothesis as a conjecture, summarises the empirical evidence at
 $n = 1, 2, 3$ for D, T, ${}^{3}$He, and points to the measurement

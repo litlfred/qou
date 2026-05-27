@@ -158,7 +158,7 @@ This is the structural reason why the depth-2 case (Bloch–Wigner $D$
 ### Cross-references
 
 - Special case $n = 3$: [`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)
-- Special case $n = 5$, $K = 5$: round-10 result of PR #634,
+- Special case $n = 5$, $K = 5$: round-10 result of ,
   [`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational)
 - Companion orbit-sum theorem: [`prop:cyclotomic-orbit-sum-all-depths`](#prop:cyclotomic-orbit-sum-all-depths)
 - Dimension synthesis: [`prop:cyclotomic-dimension-synthesis-all-depths`](#prop:cyclotomic-dimension-synthesis-all-depths)

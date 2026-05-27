@@ -13,13 +13,13 @@
 - **(constituent)** consumes CODATA $m_{\mathfrak{p}}, m_{\mathfrak{n}}$
   as upstream inputs — a **Class-A opt-out** (acknowledged 4th/5th
   calibration injection) tracked under
-  [Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md).
+  [Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md).
   The substrate-pure replacement is $m_{\mathfrak{n}} = m_{\mathfrak{p}}
   + Q_\beta + m_e$ with $m_{\mathfrak{p}}$ from
   [`prop:lambda-scale-substrate-form`](lambda-scale-substrate-form.md)
   ($\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$, matching CODATA to
   ~5.4 ppm — currently *justification* at this precision per
-  [`docs/audits/2026-05-18-lambda-scale-derivation-search.md §13`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md))
+  [`docs/audits/-lambda-scale-derivation-search.md §13`](../../../docs/audits/-lambda-scale-derivation-search.md))
   and [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
   for the $m_n - m_p$ split. ${}^1\mathrm{H}$ already lifts to
   `derived` once the Borromean tower wiring is on-trunk.
@@ -165,7 +165,7 @@ nucleon-anchor question remains the structural bottleneck.
 
 **Connection to the $\alpha_{\mathrm{shift}}$ framework.**
 The same bottleneck appears in the Habiro denominator factorisation
-([w3 audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)):
+([w3 audit](../../docs/audits/-w3-habiro-unblocked.md)):
 
 $$
   D(u) \;=\; 2^{2A+1} \cdot u^{\mathrm{shift}} \cdot (1 + u^2)^{3A-1},

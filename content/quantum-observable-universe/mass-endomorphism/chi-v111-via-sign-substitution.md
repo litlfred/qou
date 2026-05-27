@@ -2,7 +2,7 @@
 
 **V_(1,1,1) per-irrep character via sign-rep substitution.**
 
-Per the closure gap analysis (item 2 of PR #672), V_(1,1,1) is the
+Per the closure gap analysis (item 2 of ), V_(1,1,1) is the
 antisymmetric 1-d irrep of $H_3(q)$. The character can be derived
 **directly via scalar arithmetic** (analogous to V_(3)) using the
 sign-rep action:
@@ -55,7 +55,7 @@ All sorry-free, closed by `field_simp + ring` or `norm_num`.
 
 ## Status
 
-**V_(1,1,1) FULLY DERIVED IN LEAN** (item 2 of PR #672 closure).
+**V_(1,1,1) FULLY DERIVED IN LEAN** (item 2 of  closure).
 
 The derivation proceeds purely from the scalar sign-rep arithmetic,
 mirroring V_(3)'s template. Combined with V_(3) (`rem:chi-v3-closed-form-proof`),

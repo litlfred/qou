@@ -63,7 +63,7 @@ that the formula respects. For $Z \neq N$ atoms (${}^{3}$H, ${}^{3}$He), the
 formula fails: ${}^{3}$H and ${}^{3}$He have q-corrections differing by $2.9\,\%$,
 ruling out any Z$\leftrightarrow$N exchange-symmetric closed form and pointing to
 a **Coulomb-asymmetry** correction
-(cf. [Coulomb-q-Hecke audit](../../../docs/audits/2026-05-02-coulomb-q-hecke-principled.md))
+(cf. [Coulomb-q-Hecke audit](../../../docs/audits/-coulomb-q-hecke-principled.md))
 that the substrate alone cannot absorb.
 
 ### Status

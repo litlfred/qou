@@ -113,7 +113,7 @@ $\mathfrak{H}$, (ii) reproduce the empirical $B(\mathfrak{H})$ across
 atoms when fed into $\pi_{n_\star}^{(z)}$, and (iii) be derivable from
 the QOU substrate without external calibration.
 
-**Empirical observation (uniform-$k$ sweep, 2026-04-29).** A
+**Empirical observation (uniform-$k$ sweep).** A
 uniform-depth probe
 ([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_phiq_uniform_k.py))
 sweeping $k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$ uniformly across
@@ -593,7 +593,7 @@ now covers **six** probed families:
 6. Pair-knot Markov-trace + full Gram + SDP
 
 Full consolidation in
-[`docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md).
+[`docs/audits/-brane-tower-n_star-closure-audit.md`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/docs/audits/-brane-tower-n_star-closure-audit.md).
 
 ## Multiplicity / Type-B-fold probe: also refuted
 
@@ -625,9 +625,9 @@ witness data (`witness_refutes_scalar_uniform_k_form`,
 `BraneTowerZHabiro` is kept for downstream conditional results that
 ride on the surviving algebraic claim.
 
-## Per-partition $k_\lambda$ refinement (sibling PR #639)
+## Per-partition $k_\lambda$ refinement (sibling )
 
-[PR #639's `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)
+['s `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)
 sharpens the closure direction beyond the multiplicity-refined
 scalar form: the failure of uniform-$k$ in the per-eigenvalue
 operator form is dominated by **one specific partition per atom**:

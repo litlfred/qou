@@ -138,7 +138,7 @@ to a `proposition`, the authoring sequence is:
 If discharged, this conjecture supplies $\sin\theta_W,
 \cos\theta_W \in R$ as categorical scalars, closing the
 **Weinberg-angle gap** noted in
-[`docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md)
+[`docs/audits/-refocused-1ppb-workplan-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-refocused-1ppb-workplan-v2.md)
 §3 Tier A. Combined with $\mathrm{Lk}_R^{(1)}$, it
 parametrises the post-EWSB $W^\pm, Z, \gamma$ basis as the
 $\theta_W$-rotated image of the pre-EWSB Hoefsmit basis.

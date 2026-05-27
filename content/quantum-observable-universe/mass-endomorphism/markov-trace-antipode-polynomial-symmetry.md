@@ -92,7 +92,7 @@ $$
 where $\ell(\mathcal{B}_K)$ is the word length (or, more precisely, the
 parity of crossings under the Hecke-algebra antipode action). The
 $\mathrm{shift}(K)$ is the GS-filtration shift exponent
-([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)),
+([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)),
 which equals $18Z + 21N + 1$ for atomic braids per the integer-LP
 closure.
 

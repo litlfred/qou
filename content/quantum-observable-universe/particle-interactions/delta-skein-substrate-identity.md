@@ -128,4 +128,4 @@ invariant. The proton–neutron mass splitting is not a fit.
 $m_p$ and $m_n$ individually (see
 [prop:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula)).
 Open programme:
-[docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md).
+[docs/agent-briefs/-lambda-scale-borromean-baryon-derivation.md](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/agent-briefs/-lambda-scale-borromean-baryon-derivation.md).

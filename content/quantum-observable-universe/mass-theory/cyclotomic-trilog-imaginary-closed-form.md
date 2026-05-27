@@ -113,7 +113,7 @@ $4\pi^3/125$ as a special case.
 
 ### Significance
 
-**Generalises round 10 of PR #634** from "$\zeta_5$ only" to "every
+**Generalises round 10 of ** from "$\zeta_5$ only" to "every
 root of unity". Concretely:
 
 1. **Every cyclotomic depth-3 imaginary part is Tate-rational** —
@@ -138,7 +138,7 @@ as $n \to \infty$.  Decays like $1/n$, with leading coefficient $\pi^3/3$.
 
 ### Cross-references
 
-- Special case $n = 5$ (round 10 of PR #634):
+- Special case $n = 5$ (round 10 of ):
   [`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational)
 - Related orbit-sum:
   [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)

@@ -81,7 +81,7 @@ mixes three Wedderburn channels — but **at the $H_3$ weights
 $w_{\text{sym}/\text{std}/\text{alt}} = \dim_q(\lambda)^2/[3]_q!$
 for $\lambda \vdash 3$**. Applying these weights per-generator at
 $H_{3A}$ is a structural mismatch
-([H_3-at-H_{3A} weight derivation](../../../docs/audits/2026-05-01-h3-at-h3a-weight-derivation.md)):
+([H_3-at-H_{3A} weight derivation](../../../docs/audits/-h3-at-h3a-weight-derivation.md)):
 the actual $H_{3A}$ Wedderburn decomposition is indexed by
 partitions $\lambda \vdash 3A$, not by $H_3$-channels, and the
 per-generator product compounds $\hat V_i$ values past the
@@ -139,7 +139,7 @@ keeping the natural sub-braid scale.
 The per-braid tower has been computed for D, ${}^{3}$He, ${}^{3}$H, ${}^{4}$He via
 [`folio-assistant/computations/per_braid_tower.py`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/folio-assistant/computations/per_braid_tower.py),
 with witness
-[`docs/audits/2026-05-01-per-braid-tower.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/docs/audits/2026-05-01-per-braid-tower.witness.json).
+[`docs/audits/-per-braid-tower.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/docs/audits/-per-braid-tower.witness.json).
 
 Per-braid tower values (at $q_0 \approx 1.11$):
 

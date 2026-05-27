@@ -393,7 +393,7 @@ so $Q_\beta = |\Delta(\mathrm{net})| \times \mathfrak{E}_0$ **by construction
 [`prop:per-braid-mass-tower`](#prop\:per-braid-mass-tower); the
 unweighted $\mathrm{net}$ sum is not the same quantity as the
 Markov-trace weighted sums of the mass tower. See
-[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md))**.
+[`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md))**.
 All other $Q$-values in the beta-decay chain are **predictions** once
 $\mathfrak{E}_0$ is fixed.
 

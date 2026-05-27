@@ -77,14 +77,14 @@ derived output of the substrate parameter $q_0$ plus the nucleon-mass
 scale $M_N = (m_p + m_n)/2$ (CODATA-anchored), removing the $u$–$d$
 splitting from the calibration count.  $M_N$ itself is currently a
 CODATA input (its substrate derivation is open — see
-[`docs/audits/2026-05-17-1ppb-workplan-v4.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-1ppb-workplan-v4.md)),
+[`docs/audits/-1ppb-workplan-v4.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-1ppb-workplan-v4.md)),
 The calibration boundary for this proposition is $\{m_e, q_0,
 M_N\}$.
 
 The remaining calibration inputs at the production-formula boundary
 are $m_e$ and $q_0$ (with $Q_\beta$ as the third input until the
 $Q_\beta$ substrate derivation lands; see
-[`docs/audits/2026-05-17-1ppb-workplan-v4.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-1ppb-workplan-v4.md) for the open status).
+[`docs/audits/-1ppb-workplan-v4.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-1ppb-workplan-v4.md) for the open status).
 
 ## Individual values
 

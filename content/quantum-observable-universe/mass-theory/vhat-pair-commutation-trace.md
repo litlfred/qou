@@ -5,7 +5,7 @@ quantum-dilogarithm pentagon identity
 $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$ —
 which **as an operator identity requires
 $uv = q\,vu$**. The audit
-[`derivation-audit-2026-04-20.md` line 113](../../../docs/audits/derivation-audit-2026-04-20.md)
+[`derivation-audit-.md` line 113](../../../docs/audits/derivation-audit-.md)
 flagged this as "expected but unwritten" for traced volumes
 $\hat V$ at generic jet level. This block closes the gap by
 giving the precise algebraic statement and a one-paragraph proof.
@@ -160,7 +160,7 @@ states the lemma in $\mathbb{Z}[q^{\pm 1/2}, z]$ and proves it
 by `mul_comm` on the underlying commutative ring.
 
 This block closes audit GAP 17a
-([line 113 of `derivation-audit-2026-04-20.md`](../../../docs/audits/derivation-audit-2026-04-20.md))
+([line 113 of `derivation-audit-.md`](../../../docs/audits/derivation-audit-.md))
 and the corresponding "Pentagon $\to$ uv-commutation" subconjecture
 in
 [`rem:mass-endomorphism-jet-tower`](#rem\:mass-endomorphism-jet-tower)

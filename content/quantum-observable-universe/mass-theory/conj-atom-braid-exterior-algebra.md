@@ -30,9 +30,9 @@ This is fundamentally different from the standard Wedderburn decomposition $H_n(
 
 ## Falsified inference: LP/SDP under-determination implication
 
-**Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/2026-05-25-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/2026-05-25-exterior-algebra-lp-claim-falsified.md) for the full retraction.
+**Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction.
 
-**What's still valid:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from PR #1271 stands.
+**What's still valid:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from  stands.
 
 **Why the inference failed:** I conflated two different bases of `H_{3A}(q)` — the NF basis (where the Pascal-row shape lives) and the Wedderburn basis (where LP `y_λ` variables live). These are different decompositions of the same algebra; the filtration-shape claim does NOT directly imply Wedderburn-channel reduction.
 

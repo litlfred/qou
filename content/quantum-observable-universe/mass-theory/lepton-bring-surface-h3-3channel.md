@@ -37,7 +37,7 @@ $$
 > ratios off CODATA by 99% — the missing factor `206.77 / 1.36 ≈ 152`
 > equals **(3/2) $\times$ (1/ℏ_$q^{2}$)**, structurally identical to the
 > SUPERSEDED scalar substrate density. Full diagnosis:
-> [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md).
+> [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md).
 
 ## Bring-surface analog with nucleons
 
@@ -179,5 +179,5 @@ and possibly weak-isospin partner (neutrino).
 - Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)
 - Compute infrastructure: `folio-assistant/computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)
 - T6 closure attempt: `folio-assistant/computations/t6_lepton_h3_3channel_convention.py`
-- Audit: [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md)
-- SUPERSEDED ρ_q purge (now understood as incomplete): [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)
+- Audit: [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md)
+- SUPERSEDED ρ_q purge (now understood as incomplete): [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md)

@@ -47,12 +47,12 @@ generator lies in the proper sub-algebra; this fails for
 $\sigma_0\sigma_1\sigma_0$ since $\sigma_1\sigma_0 \notin H_2$).
 The canonical Ocneanu--Wenzl recursion gives
 $\tau(\sigma_0\sigma_1\sigma_0) = hz^2 + z$
-(formerly stated as $z^3$ in this block; corrected 2026-05-19 per
-[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)).*
+(formerly stated as $z^3$ in this block; corrected per
+[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/-trm5-markov-bug.md)).*
 
 *Gram matrix $G_{ij} = \tau(b_i b_j^{-1})$ (cyclic self-pairing).
 The first-row/column entries below shown as $z^3$ are stale per
-the 2026-05-19 Markov-bug fix and should read $hz^2 + z$:*
+the Markov-bug fix and should read $hz^2 + z$:*
 
 $$
   G \;=\;
