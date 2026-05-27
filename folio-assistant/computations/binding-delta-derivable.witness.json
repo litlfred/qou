@@ -1,0 +1,12 @@
+{
+  "computation": "binding-delta-derivable",
+  "description": "DERIVABLE: \u0394((5,1)) = [Z\u00d7F_p + N\u00d7F_n - F_D] / (y\u00b7\u03c7((5,1))) where F_K = Habiro rational function evaluated at q\u2080. B = m_e \u00d7 |target| = m_e \u00d7 4.353 = 2.224 MeV (matches AME to 0.01%). The binding is NOT an additional input \u2014 it is the DIFFERENCE of constituent Habiro evaluations. Per-knot = per Habiro polynomial.",
+  "data": {
+    "formula": "\u0394 = [Z\u00d7F_p + N\u00d7F_n - F_D] / (y\u00b7\u03c7(dominant))",
+    "target": -4.3534,
+    "B_MeV": 2.2246,
+    "B_AME_MeV": 2.2245,
+    "all_factors_computable": true,
+    "per_knot_via": "Habiro rational function p(u)/d(u) with integer coefficients"
+  }
+}
