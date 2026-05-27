@@ -166,6 +166,7 @@ theorem scalar_gauge_ratio_at_zero :
 theorem higgs_mass_formula_matches_measured_hypothesis :
     ∃ (m_W h_0 m_H : ℝ),
       higgsMassFormula m_W h_0 = m_H ∧ m_H = 125.10 := by
+  -- Ref: [manuscript] PR #1159 + folio-assistant/computations/higgs-categorical-mass-formula-attempt.witness.json
   sorry
 
 /-- The formula's empirical match is < 1% (witness JSON). This is

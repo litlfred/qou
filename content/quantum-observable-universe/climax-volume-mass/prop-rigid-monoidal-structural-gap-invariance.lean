@@ -331,6 +331,8 @@ instance canonical (α : Type*) :
     -- non-trivial convention's `markov_trace` need not vanish, so
     -- this identification is the conjecture proper.  Discharges
     -- §3b-cond for downstream consumers.
+    -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985) — Markov trace uniqueness
+    -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
     sorry
 
 end QOU.BraidKnot
