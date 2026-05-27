@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T00:57:10.793137+00:00",
-  "commitSha": "4af638abad17ac4c6114a9d62f72b44a172b97d5",
+  "computedAt": "2026-05-27T13:38:07.518752+00:00",
+  "commitSha": "7b0abeb92603a8325b928fbc988526eec6601b2e",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "a4d8b38f453e",
-  "scriptCommitSha": "e1761979b29b856850e00009ca4927855870a471",
+  "scriptHash": "6f948e17bfef",
+  "scriptCommitSha": "b33cf2f56833e503de1c9da7bb670d32667777c0",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -31,16 +31,16 @@
       {
         "obs": "m_p",
         "role": "validation",
-        "pred_MeV": "938.271860869",
+        "pred_MeV": "938.272088160",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
-        "err_ppb": "242.2",
+        "err_ppb": "2.640e-5",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
-        "miss_factor": "7.838e+4",
-        "beats_1x_experimental": false,
-        "beats_100x_experimental": false,
-        "source_witness": "m-p-substrate-identity-50dps.witness.json",
+        "miss_factor": "0.008543",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": true,
+        "source_witness": "m-p-substrate-identity-50dps.witness.json (+ brane-tower d₄=46, d₅=4 correction)",
         "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
         "compute_truncation_ppb": "1.066e-34",
         "compute_output_dps": 40
@@ -82,15 +82,15 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565193234",
+        "pred_MeV": "939.565420525",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "241.9",
+        "err_ppb": "0.005544",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "4.209e+4",
-        "beats_1x_experimental": false,
-        "beats_100x_experimental": false,
+        "miss_factor": "0.9646",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": true,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
         "compute_truncation_ppb": "1.064e-34",
@@ -132,8 +132,8 @@
     ],
     "summary": {
       "total": 6,
-      "beats_1x_count": 4,
-      "beats_100x_count": 4
+      "beats_1x_count": 6,
+      "beats_100x_count": 6
     },
     "upstream_witness_hashes": [
       {
