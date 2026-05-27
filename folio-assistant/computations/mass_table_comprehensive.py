@@ -228,10 +228,13 @@ def borromean_mass_prediction(
 def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
     """Try to compute binding energy via binding_canonical with
     closed-form path. Returns None if the atom is too heavy (A > 4)
-    or if the computation fails."""
+    or if the computation fails.
+
+    Computes BOTH Q_β-scaled (legacy) and E₀×q⁻¹-scaled (PR #1361)
+    results for comparison."""
     A = Z + N
     if A < 2:
-        return {"B_pred_MeV": 0.0, "method": "no binding (single nucleon)"}
+        return {"B_pred_MeV": 0.0, "B_E0_MeV": 0.0, "method": "no binding (single nucleon)"}
     if A > 12:
         return None  # gated on H_{3A} kernel availability
 
@@ -240,16 +243,28 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
         r = binding_canonical(
             Z, N,
             Q_beta_n_mev=float(Q_BETA_MEV),
-            use_closed_form=True,  # Wenzl LR bridge works for ALL A via iterated LR decomposition
+            use_closed_form=True,
             verbose=False,
         )
         if r.get("status") != "solved":
             return {"B_pred_MeV": None, "method": f"binding_canonical failed: {r.get('status')}", "error": r.get("error")}
+
+        B_qbeta = r.get("B_MeV")
+
+        # E₀×q⁻¹ scale (PR #1361): B = E₀ × Δtr × (1-ℏ_q)
+        # where E₀ = m_e/(q₀(q₀-1)), (1-ℏ_q) = q₀⁻¹
+        import mpmath as _mp
+        q_val = _mp.mpf(q_str)
+        E_0 = float(M_E_MEV) / float(q_val * (q_val - 1))
+        scale_ratio = E_0 / float(Q_BETA_MEV) * float(1 / q_val)
+        B_E0 = B_qbeta * scale_ratio if B_qbeta else None
+
         return {
-            "B_pred_MeV": r.get("B_MeV"),
+            "B_pred_MeV": B_E0,  # use E₀×q⁻¹ as primary
+            "B_qbeta_MeV": B_qbeta,
             "tr_M_atom": r.get("tr_M_atom"),
             "tr_M_free": r.get("tr_M_free"),
-            "method": "binding_canonical" + (" (closed-form)" if A <= 3 else " (symbolic)"),
+            "method": "E₀×q⁻¹ (PR #1361)" + (" (closed-form)" if A <= 3 else " (symbolic)"),
         }
     except Exception as e:
         return {"B_pred_MeV": None, "method": f"error: {e}"}
