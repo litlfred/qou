@@ -6,8 +6,6 @@ export default remark({
     "Knot-operator actions on the Bring surface and $\\mathrm{SO}(3)$ structure",
   interprets: "def:brings-surface",
   uses: [
-    "def:brings-surface",
-    "rem:archimedean-image-table",
     "rem:hecke-quandle",
     "prop:markov-trace-ratio-exact",
   ],

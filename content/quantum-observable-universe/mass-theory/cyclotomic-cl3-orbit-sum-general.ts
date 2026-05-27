@@ -16,10 +16,7 @@ export default proposition({
     status: "verified",
   },
   uses: [
-    "prop:cl3-zeta5-orbit-sum-identity",
     "prop:cyclotomic-trilog-imaginary-closed-form",
-    "prop:borel-partial-resolution",
-    "rem:transcendental-accounting",
     "prop:cl3-zeta5-pslq-independence",
   ],
   cites: ["bloch2000", "zagier1986"],

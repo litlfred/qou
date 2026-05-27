@@ -8,7 +8,6 @@ export default definition({
   },
   uses: [
     "def:substrate-parameter-planck",
-    "def:motivic-substrate",
     "def:adelic-substrate",
     "def:classical-limit-obstruction",
   ],

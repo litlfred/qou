@@ -12,8 +12,5 @@ export default remark({
     "transfer-matrix",
     "worked-example",
   ],
-  uses: [
-    "prop:beta-decay-transfer-matrix",
-    "def:Q-value-transition",
-  ],
+  uses: ["def:Q-value-transition"],
 });

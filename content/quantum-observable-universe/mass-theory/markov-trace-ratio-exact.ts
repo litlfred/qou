@@ -4,10 +4,7 @@ export default proposition({
   label: "prop:markov-trace-ratio-exact",
   title:
     "Ratios of Markov traces are normalization-independent",
-  uses: [
-    "def:archimedean-realization-functor",
-    "prop:markov-trace-axiomatic-closed-form",
-  ],
+  uses: ["prop:markov-trace-axiomatic-closed-form"],
   cites: ["jones1987"],
   tags: [
     "normalization",

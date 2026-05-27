@@ -8,10 +8,7 @@ export default proposition({
   },
   title:
     "Lusztig bar ($q \\mapsto q^{-1}$) vs Hermitian-$\\ast$ ($q \\mapsto \\overline{q}^{-1}$) on the complex Hecke algebra: the two anti-involutions coincide on the parameter iff $q \\in \\mathbb{R}$. On the unit circle $|q| = 1$, Lusztig coincides with complex conjugation ($\\overline{q} = q^{-1}$) while Hermitian becomes the identity on $q$; on general $|q| > 1$ with $\\mathrm{Im}(q) \\neq 0$ the three involutions (Lusztig, Hermitian, complex conjugation) are pairwise distinct. The split is the categorical home for any future $\\mathrm{Im}(q_0)$ contribution.",
-  uses: [
-    "def:bar-involution",
-    "prop:q-zero-complex-extension",
-  ],
+  uses: ["prop:q-zero-complex-extension"],
   authorNotes: [
     {
       kind: "status",

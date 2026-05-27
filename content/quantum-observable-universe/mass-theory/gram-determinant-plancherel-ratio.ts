@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.Archimedean.gram_determinant_plancherel_ratio",
     validation: "not_checked",
   },
-  uses: [
-    "prop:force-carrier-bring-uniqueness",
-    "thm:em-spectral-completeness",
-    "rem:gram-matrix-spectral-connection",
-  ],
+  uses: ["rem:gram-matrix-spectral-connection"],
   tags: [
     "gram-matrix",
     "plancherel",

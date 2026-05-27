@@ -7,7 +7,6 @@ export default example({
   uses: [
     "def:archimedean-condition",
     "prop:euler-char-stability",
-    "def:motivic-substrate",
     "rem:kummer-tower",
   ],
   tags: ["descartes", "chi", "derivation", "example", "motivic-galois"],

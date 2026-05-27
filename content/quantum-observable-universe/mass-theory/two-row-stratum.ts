@@ -48,10 +48,7 @@ export default definition({
   title:
     "Two-row Wedderburn stratum $\\Lambda^2(n) := \\{\\lambda \\vdash n : \\ell(\\lambda) \\le 2\\}$",
   defines: ["two-row-stratum", "two-row-projection"],
-  uses: [
-    "prop:wedderburn-weight-canonical",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:wedderburn-weight-canonical"],
   lean: { ref: "qou:QOU.BraidKnot.TwoRowStratum.TwoRowStratum" },
   tags: [
     "wedderburn-decomposition",

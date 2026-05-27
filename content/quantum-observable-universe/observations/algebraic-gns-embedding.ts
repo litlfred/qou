@@ -8,10 +8,7 @@ export default proposition({
     ref: "qou:QOU.Observations.AlgebraicGnsEmbedding.HasMarkovGnsEmbedding",
     validation: "not_checked",
   },
-  uses: [
-    "thm:jones-markov-trace",
-    "prop:wedderburn-weight-canonical",
-  ],
+  uses: ["prop:wedderburn-weight-canonical"],
   cites: ["jones1985", "wenzl1988"],
   tags: [
     "causal-fermion-systems",

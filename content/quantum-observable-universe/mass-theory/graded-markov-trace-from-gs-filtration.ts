@@ -8,11 +8,6 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.GradedMarkovTraceFromGSFiltration",
     validation: "not_checked",
   },
-  uses: [
-    "prop:graded-trace-residue-split",
-    "prop:gb-spectral-sequence",
-    "prop:confinement-level-exists",
-  ],
   cites: [
     "kassel1995",
     "geckpfeiffer2000",

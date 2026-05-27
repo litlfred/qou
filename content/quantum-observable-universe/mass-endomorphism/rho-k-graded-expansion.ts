@@ -20,13 +20,6 @@ export default proposition({
   label: "prop:rho-k-graded-expansion",
   title:
     "Graded expansion of the categorical density $\\rho_K = \\rho_K^{\\mathrm{LO}} + \\rho_K^{\\text{single-gen}} + \\rho_K^{\\text{pair-gen}} + \\dots$",
-  uses: [
-    "prop:atomic-mass-gb-nf",
-    "thm:wedderburn-mass-formula",
-    "thm:knot-mass-formula-unified",
-    "prop:categorical-mass-markov",
-    "prop:binding-scale-catalan",
-  ],
   cites: ["wenzl1988"],
   computation: {
     engine: "numpy",

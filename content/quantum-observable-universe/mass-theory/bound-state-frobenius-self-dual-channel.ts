@@ -25,11 +25,6 @@ export default remark({
   title:
     "Bound-state Wedderburn channels $(3,1) \\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair",
   interprets: "prop:force-carrier-intertwining-correspondence",
-  uses: [
-    "prop:force-carrier-intertwining-correspondence",
-    "prop:antiparticle-crossing-reversal",
-    "def:delta-q-decoration",
-  ],
   tags: [
     "frobenius-self-dual",
     "transpose-partition",

@@ -16,11 +16,5 @@ export default theorem({
   lean: { ref: "qou:QOU.Archimedean.groebner_shirshov_energy",
     validation: "not_checked",
   },
-  uses: [
-    "prop:nuclear-groebner-reduction",
-    "def:habiro-ring",
-    "def:motivic-substrate",
-    "def:archimedean-realization-functor",
-    "unital-groebner-bases:thm:main-theorem",
-  ],
+  uses: ["unital-groebner-bases:thm:main-theorem"],
 });

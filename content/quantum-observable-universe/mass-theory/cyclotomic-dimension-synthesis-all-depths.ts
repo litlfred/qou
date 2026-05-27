@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths.dimension_synthesis_all_depths",
     validation: "not_checked",
   },
-  uses: [
-    "prop:jonquiere-cyclotomic-tate-rationality",
-    "prop:cyclotomic-orbit-sum-all-depths",
-    "prop:cyclotomic-depth3-dimension-synthesis",
-    "prop:cl3-zeta5-pslq-independence",
-    "prop:borel-partial-resolution",
-    "prop:depth-2-identification-bloch-suslin",
-    "rem:b1-current-status",
-  ],
+  uses: ["prop:cyclotomic-depth3-dimension-synthesis"],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "cyclotomic",

@@ -8,11 +8,7 @@ export default proposition({
   },
   title:
     "$Q_\\beta$ cos-resummation: $Q_\\beta^{A,\\cos} = Q_\\beta^A \\cdot \\cos((z-1)h/2)$ tightens the CODATA residual by $5.49\\times$ via classical-cos eigenphase symmetrization (conditional on the transfer-matrix eigenphase identification)",
-  uses: [
-    "prop:neutron-qvalue-symbolic",
-    "prop:q-beta-spectral-bridge",
-    "prop:beta-decay-transfer-matrix",
-  ],
+  uses: ["prop:q-beta-spectral-bridge"],
   cites: [
     "jones1985",
     "wenzl1988",

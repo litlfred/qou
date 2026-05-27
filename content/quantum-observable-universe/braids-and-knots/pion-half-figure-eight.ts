@@ -5,11 +5,7 @@ export default proposition({
   title:
     "The pion braid and $\\sigma_1\\sigma_2^{-1}$ have identical eigenvalue phases on $V_{(2,1)}$",
   lean: { ref: "qou:QOU.BraidsAndKnots.pion_eq_half_figure_eight_phase" },
-  uses: [
-    "prop:figure-eight-reeb-rotation",
-    "prop:frobenius-lepton-meson-bridge",
-    "def:categorical-meson",
-  ],
+  uses: ["prop:figure-eight-reeb-rotation"],
   cites: [
     "wenzl1988hecke",
     "jones1987",

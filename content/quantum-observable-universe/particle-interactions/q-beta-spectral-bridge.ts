@@ -8,10 +8,7 @@ export default proposition({
   },
   title:
     "$Q_\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases",
-  uses: [
-    "prop:neutron-qvalue-symbolic",
-    "prop:beta-decay-transfer-matrix",
-  ],
+  uses: ["prop:neutron-qvalue-symbolic"],
   cites: [
     "wenzl1988",
     "jones1985",

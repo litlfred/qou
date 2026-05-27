@@ -11,8 +11,5 @@ export default remark({
     "q0",
   ],
   interprets: "prop:flavor-dressed-mass-from-substrate-split",
-  uses: [
-    "prop:flavor-dressed-mass-from-substrate-split",
-    "thm:flavor-mass-splitting-bound",
-  ],
+  uses: ["thm:flavor-mass-splitting-bound"],
 });

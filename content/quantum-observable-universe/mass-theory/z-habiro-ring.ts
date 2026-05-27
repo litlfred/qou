@@ -6,12 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.HabiroRing.ZHabiroElement",
     validation: "not_checked",
   },
-  uses: [
-    "def:habiro-ring",
-    "def:algebraic-quantum-volume",
-    "prop:full-pole-structure-mass-trace",
-    "cor:habiro-expansion-atomic",
-  ],
+  uses: ["cor:habiro-expansion-atomic"],
   tags: [
     "habiro-ring",
     "cyclotomic-completion",

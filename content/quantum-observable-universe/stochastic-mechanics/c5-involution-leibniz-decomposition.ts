@@ -8,12 +8,7 @@ export default proposition({
   },
   title:
     "$c_5$ decomposes as $-b^2 - 1/2$: pure-$\\sigma$ Kashiwara contribution plus bar-invariant involution fingerprint from averaged-crossing structure. Interpretation of the unique averaging-resonant rung k = 5 identified in [prop:averaging-resonance-rule](#prop:averaging-resonance-rule); involution supplies the $1/2$ magnitude, while the half-fill cyclic structure supplies the rung selection.",
-  uses: [
-    "prop:silver-ratio-beta-decay-null",
-    "prop:q-beta-categorical-precision-ladder",
-    "prop:neutron-qvalue-symbolic",
-    "rem:chi-per-irrep-cyclotomic-closed-forms",
-  ],
+  uses: ["prop:silver-ratio-beta-decay-null"],
   cites: [
     "wenzl1988",
     "hoefsmit1974",

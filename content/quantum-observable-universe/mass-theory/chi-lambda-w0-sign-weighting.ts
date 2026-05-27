@@ -9,11 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "rem:chi-per-irrep-cyclotomic-closed-forms",
-    "rem:chi-v3-closed-form-proof",
     "rem:chi-v21-hoefsmit-matrix-derivation",
     "rem:chi-v111-via-sign-substitution",
-    "prop:alpha-k-derivation-procedure",
   ],
   cites: [
     "kassel1995",

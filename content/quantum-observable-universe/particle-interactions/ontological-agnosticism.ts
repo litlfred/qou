@@ -10,7 +10,6 @@ export default remark({
     "prop:confinement-grading-correspondence",
     "prop:gb-spectral-sequence",
     "def:cemetery-group",
-    "def:exceptional-divisor",
   ],
   cites: [
     "kashiwara1991",

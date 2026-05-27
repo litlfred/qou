@@ -22,8 +22,4 @@ export default corollary({
   lean: { ref: "qou:QOU.Archimedean.spectral_decomposition_qvalue",
     validation: "not_checked",
   },
-  uses: [
-    "prop:rj-canonical-inner-product",
-    "prop:beta-decay-transfer-matrix",
-  ],
 });

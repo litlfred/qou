@@ -16,13 +16,6 @@ export default proposition({
     "reciprocity",
     "categorical-binding",
   ],
-  uses: [
-    "prop:frobenius-gram-matrix",
-    "prop:operator-selection-lp",
-    "prop:mass-coefficient-shadow-price",
-    "prop:confinement-operator-selection",
-    "prop:knot-factor-frobenius-pairing",
-  ],
   cites: ["yekutieli2015", "kassel1995"],
   computation: {
     engine: "numpy",

@@ -16,7 +16,6 @@ export default remark({
     "skein-polynomial",
   ],
   uses: [
-    "prop:shell-transition-knot",
     "prop:shell-structure-eigenvalues",
     "thm:generation-completeness",
     "rem:knot-exhaustiveness",

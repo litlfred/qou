@@ -19,7 +19,6 @@ export default proposition({
   },
   uses: [
     "prop:golden-skew-dual-node",
-    "rem:golden-ratio-degeneration",
     "rem:deconfinement-golden-threshold",
   ],
 });

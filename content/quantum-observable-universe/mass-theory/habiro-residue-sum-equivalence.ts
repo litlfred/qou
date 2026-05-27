@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.HabiroResidueSumEquivalence",
     validation: "not_checked",
   },
-  uses: [
-    "prop:full-pole-structure-mass-trace",
-    "prop:gb-residue-spectral-sum",
-    "def:habiro-ring",
-  ],
+  uses: ["prop:full-pole-structure-mass-trace"],
   cites: ["habiro2004", "jones1987"],
   tags: [
     "habiro-ring",

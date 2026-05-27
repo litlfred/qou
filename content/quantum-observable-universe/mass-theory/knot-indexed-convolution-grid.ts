@@ -11,11 +11,7 @@ export default proposition({
   uses: [
     "def:hq-bi-filtration",
     "prop:joint-galois-braid-action",
-    "thm:jones-markov-trace",
-    "prop:hoefsmit-seminormal-form",
-    "def:frobenius-hopf-substrate",
     "prop:vol-through-tau",
-    "prop:bring-trilog-depth-3-witness",
   ],
   cites: [],
   tags: [

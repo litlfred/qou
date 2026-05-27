@@ -15,14 +15,7 @@ export default proposition({
       "folio-assistant/computations/cl3-zeta5-pslq-search.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:cl3-zeta5-orbit-sum-identity",
-    "prop:bring-trilog-imaginary-tate-rational",
-    "rem:b1-current-status",
-    "prop:bring-trilog-depth-3-witness",
-    "prop:qou-infra-discharges-goncharov-zeta5",
-    "prop:cl3-zeta5-geometric-realization",
-  ],
+  uses: ["rem:b1-current-status"],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "pslq",

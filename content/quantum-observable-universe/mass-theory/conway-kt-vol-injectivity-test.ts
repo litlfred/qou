@@ -7,9 +7,6 @@ export default remark({
   interprets: "rem:transcendental-accounting",
   uses: [
     "rem:transcendental-accounting",
-    "prop:gb-depth-period-correspondence",
-    "rem:knot-exhaustiveness",
-    "rem:bring-embeddable-knots",
     "prop:knot-indexed-convolution-grid",
   ],
   cites: ["thurston1978"],

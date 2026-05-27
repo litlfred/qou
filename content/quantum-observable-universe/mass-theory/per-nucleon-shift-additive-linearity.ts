@@ -28,10 +28,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.per_nucleon_shift_additive_linearity", validation: "not_started" },
   title:
     "Per-new-nucleon additive linearity: $\\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering",
-  uses: [
-    "prop:alpha-shift-torus-knot",
-    "prop:alpha-em-shift-multiplicative-chain",
-  ],
+  uses: ["prop:alpha-em-shift-multiplicative-chain"],
   computation: {
     engine: "python",
     script: "folio-assistant/computations/per_nucleon_shift_derivation.py",

@@ -8,10 +8,6 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.gb_spectral_sequence",
     validation: "not_checked",
   },
-  uses: [
-    "prop:graded-trace-residue-split",
-    "thm:knot-mass-formula-unified",
-  ],
   tags: [
     "spectral-sequence",
     "cohomology",

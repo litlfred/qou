@@ -16,9 +16,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.gram_weighted_qvalue",
     validation: "not_checked",
   },
-  uses: [
-    "def:typed-garside-element",
-    "prop:frobenius-gram-matrix",
-    "def:transfer-matrix-operator",
-  ],
+  uses: ["def:typed-garside-element"],
 });

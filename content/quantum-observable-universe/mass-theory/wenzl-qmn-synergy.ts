@@ -8,12 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.wenzl_qmn_synergy",
     validation: "not_checked",
   },
-  uses: [
-    "prop:y-lambda-closed-form-wenzl-bridge",
-    "prop:y-lambda-recipe-from-partition",
-    "prop:y-lambda-cyclotomic-factorization",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:y-lambda-recipe-from-partition"],
   cites: ["wenzl1988", "halverson-ram-1995", "ram1991"],
   tags: [
     "wenzl-bridge",

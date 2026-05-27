@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidsAndKnots.explicit_alpha_k_h3",
     validation: "not_checked",
   },
-  uses: [
-    "prop:unified-curvature-rank-mass-formula",
-    "prop:spectral-sequence-h3-explicit",
-  ],
+  uses: ["prop:spectral-sequence-h3-explicit"],
   tags: [
     "spectral-sequence",
     "alpha-k",

@@ -14,13 +14,7 @@ export default proposition({
     "cohomology",
     "audit",
   ],
-  uses: [
-    "def:categorical-action",
-    "def:frobenius-pairing",
-    "def:mass-identity",
-    "thm:jones-markov-trace",
-    "prop:substrate-consistency-window",
-  ],
+  uses: ["prop:substrate-consistency-window"],
   cites: [
     "jones1985",
     "kock2004",

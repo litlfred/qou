@@ -5,11 +5,7 @@ export default remark({
   title:
     "Bloch-Wigner dilogarithm $D$ on the unit circle — repo-internal Mathlib filler",
   interprets: "rem:clausen-function-mathlib-filler",
-  uses: [
-    "rem:clausen-function-mathlib-filler",
-    "rem:figure-8-archimedean-illustration",
-    "prop:em-coupling-bring-zero-mode",
-  ],
+  uses: ["rem:clausen-function-mathlib-filler"],
   cites: ["thurston1978", "zagier1986"],
   tags: [
     "mathlib-filler",

@@ -7,10 +7,7 @@ export default remark({
   interprets: "rem:knot-exhaustiveness",
   uses: [
     "rem:knot-exhaustiveness",
-    "prop:knot-eigenbasis-complete",
-    "prop:gb-depth-period-correspondence",
     "prop:explicit-central-idempotent",
-    "prop:bring-figure-eight-depth-2-witness",
   ],
   cites: ["thurston1978"],
   tags: [

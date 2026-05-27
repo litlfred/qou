@@ -10,12 +10,8 @@ export default proposition({
   },
   uses: [
     "def:confined-particle",
-    "rem:knot-particle-dictionary",
-    "def:atomic-braid",
-    "def:borromean-baryon",
     "prop:fermion-boson-knot-link",
     "prop:confinement-sdp",
-    "thm:jones-markov-trace",
   ],
   cites: ["wenzl1988"],
   computation: {

@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QLogarithm",
     validation: "not_checked",
   },
-  uses: ["def:q-exponential", "def:habiro-ring"],
+  uses: ["def:q-exponential"],
 });

@@ -8,7 +8,6 @@ export default example({
   uses: [
     "rem:mass-geometric-drag",
     "rem:chirality-trefoil",
-    "def:motivic-substrate",
     "rem:kummer-tower",
   ],
 });

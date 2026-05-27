@@ -6,7 +6,6 @@ export default remark({
   interprets: "prop:lusztig-vs-hermitian-bar",
   uses: [
     "prop:lusztig-vs-hermitian-bar",
-    "prop:q-zero-complex-extension",
     "prop:categorical-mass-markov",
   ],
   authorNotes: [

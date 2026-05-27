@@ -4,10 +4,7 @@ export default proposition({
   label: "prop:bloch-group-quotient-construction",
   title:
     "Concrete construction of $B(F)$ as `FreeAbelianGroup ⧸ pentagonSubgroup` (closes substantive Mathlib gap 1)",
-  uses: [
-    "rem:three-substantive-mathlib-fillers",
-    "prop:archimedean-functor-uniqueness",
-  ],
+  uses: ["rem:three-substantive-mathlib-fillers"],
   cites: ["bloch2000", "suslin1991"],
   tags: [
     "mathlib-filler",

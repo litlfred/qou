@@ -12,9 +12,6 @@ export default remark({
     "frobenius",
     "borromean",
   ],
-  uses: [
-    "prop:confinement-topological",
-    "def:transfer-matrix-operator",
-  ],
+  uses: ["prop:confinement-topological"],
   interprets: "prop:confinement-lp",
 });

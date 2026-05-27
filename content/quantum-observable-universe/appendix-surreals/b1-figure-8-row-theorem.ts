@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.AppendixSurreals.B1Figure8RowTheorem.b1_figure_8_row",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-depth-period-correspondence",
-    "prop:depth-2-identification-bloch-suslin",
-    "prop:borel-partial-resolution",
-    "rem:figure-8-archimedean-illustration",
-    "prop:bring-figure-eight-depth-2-witness",
-    "rem:vc-as-depth-2-instance",
-    "prop:b1-soft-sharpness-theorem",
-  ],
+  uses: ["prop:b1-soft-sharpness-theorem"],
   cites: ["murakami-murakami2001", "bloch2000", "suslin1991", "thurston1978"],
   tags: [
     "B1-discharge",

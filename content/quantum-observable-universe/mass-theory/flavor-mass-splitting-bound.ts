@@ -13,11 +13,7 @@ export default theorem({
     "substrate-bound",
     "splitting-only",
   ],
-  uses: [
-    "def:flavor-dressing-functor",
-    "prop:flavor-dressed-mass-from-substrate-split",
-    "prop:flavor-split-substrate",
-  ],
+  uses: ["prop:flavor-dressed-mass-from-substrate-split"],
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/probe_flavor_dressed_mass_split.py",

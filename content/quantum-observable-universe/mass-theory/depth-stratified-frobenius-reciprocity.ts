@@ -9,11 +9,8 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:plancherel-term-7-formulation",
-    "prop:unified-curvature-rank-mass-formula",
     "prop:free-config-chi-lr-equivalence",
     "prop:chirality-from-frobenius-self-pairing",
-    "thm:jones-markov-trace",
   ],
   cites: ["frobenius1898", "macdonald1995", "lewin1981"],
   computation: {

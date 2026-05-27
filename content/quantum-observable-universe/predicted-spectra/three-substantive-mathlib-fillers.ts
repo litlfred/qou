@@ -5,13 +5,7 @@ export default remark({
   title:
     "Three substantive Mathlib gaps: BlochGroup quotient, $\\mathrm{Cl}_2$ pentagon, Faddeev-Kashaev limit",
   interprets: "rem:mass-tower-deeper-fillers",
-  uses: [
-    "rem:mass-tower-deeper-fillers",
-    "rem:bloch-wigner-mathlib-filler",
-    "rem:clausen-function-mathlib-filler",
-    "prop:archimedean-functor-uniqueness",
-    "prop:dilogarithm-archimedean-limit",
-  ],
+  uses: ["rem:mass-tower-deeper-fillers"],
   cites: [
     "bloch2000",
     "suslin1991",

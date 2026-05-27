@@ -14,10 +14,8 @@ export default remark({
   // `prop:categorical-mass-markov`), both already provable. The
   // conjectural reference moves to prose only.
   uses: [
-    "def:mass-identity",
     "prop:categorical-mass-markov",
     "def:categorical-action",
-    "def:quantum-observable-universe",
   ],
   tags: [
     "calibration",

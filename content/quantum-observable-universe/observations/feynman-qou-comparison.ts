@@ -14,11 +14,7 @@ export default remark({
     "binding-energy",
     "comparison",
   ],
-  uses: [
-    "rem:atom-mass-full-hecke",
-    "thm:wedderburn-mass-formula",
-    "def:algebraic-quantum-volume",
-  ],
+  uses: ["rem:atom-mass-full-hecke"],
   cites: [
     "jones1985",
   ],

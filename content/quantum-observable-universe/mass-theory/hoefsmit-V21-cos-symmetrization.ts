@@ -8,11 +8,7 @@ export default proposition({
   },
   title:
     "Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character: $\\chi^{(2,1),\\mathrm{symm}}_q(\\beta) = \\mathrm{tr}\\,\\rho_{(2,1)}(\\beta) \\cdot \\cos((z-1)h/2)$",
-  uses: [
-    "prop:hecke-1d-irrep-closed-form-character",
-    "prop:q-beta-cos-resummation",
-    "prop:beta-decay-transfer-matrix",
-  ],
+  uses: ["prop:hecke-1d-irrep-closed-form-character"],
   cites: [
     "hoefsmit1974",
     "wenzl1988",

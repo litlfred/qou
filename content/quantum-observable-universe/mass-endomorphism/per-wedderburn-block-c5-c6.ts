@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "rem:multi-link-jones-q1-extension",
     "rem:h3-hecke-idempotents",
-    "prop:q-beta-categorical-precision-ladder",
   ],
   cites: [
     "wenzl1988",

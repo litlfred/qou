@@ -14,9 +14,7 @@ export default remark({
     "figure-eight",
   ],
   uses: [
-    "prop:six-canonical-knot-operators",
     "prop:reeb-bundle-complement-equals-volume",
-    "prop:thurston-volume-additivity",
     "rem:garside-as-compound-flow",
   ],
 });

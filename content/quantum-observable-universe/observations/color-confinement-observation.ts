@@ -14,9 +14,6 @@ export default remark({
     "skein",
     "negativity",
   ],
-  uses: [
-    "rem:q-chromaticity",
-    "prop:em-coupling-projection",
-  ],
+  uses: ["rem:q-chromaticity"],
   cites: ["feynman1963"],
 });

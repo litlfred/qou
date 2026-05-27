@@ -13,7 +13,6 @@ export default remark({
     "q-integer",
   ],
   uses: [
-    "prop:em-coupling-projection",
     "sec:mass-predictions-data",
     "rem:half-life-as-q-probe",
     "rem:mass-comparison-table",

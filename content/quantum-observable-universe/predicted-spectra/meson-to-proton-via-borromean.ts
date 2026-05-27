@@ -17,8 +17,5 @@ export default remark({
     "computational-witness",
     "pair-production",
   ],
-  uses: [
-    "def:quark-antiquark-production",
-    "rem:energy-scale-planck",
-  ],
+  uses: ["rem:energy-scale-planck"],
 });

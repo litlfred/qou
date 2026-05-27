@@ -5,10 +5,7 @@ export default proposition({
   title:
     "Hoefsmit binding amplitude $b^2 = [3]_q / [2]_q^2$",
   lean: { ref: "qou:QOU.BraidsAndKnots.hoefsmit_b_sq_eq_q3_over_q2sq" },
-  uses: [
-    "prop:frobenius-lepton-meson-bridge",
-    "def:categorical-meson",
-  ],
+  uses: ["prop:frobenius-lepton-meson-bridge"],
   cites: [
     "wenzl1988hecke",
   ],

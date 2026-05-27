@@ -8,14 +8,7 @@ export default proposition({
     ref: "qou:QOU.AppendixSurreals.BorelPartialResolution.borel_partial",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-depth-period-correspondence",
-    "rem:k-theory-period-rosetta",
-    "rem:bring-embeddable-knots",
-    "prop:bring-figure-eight-depth-2-witness",
-    "prop:bring-trilog-depth-3-witness",
-    "rem:transcendental-accounting",
-  ],
+  uses: ["rem:k-theory-period-rosetta"],
   cites: ["bloch2000", "suslin1991"],
   tags: [
     "borel-theorem",

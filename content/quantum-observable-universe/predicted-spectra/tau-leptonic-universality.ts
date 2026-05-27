@@ -17,8 +17,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.tau_leptonic_universality",
     validation: "not_checked",
   },
-  uses: [
-    "prop:lepton-continuant-recurrence",
-    "rem:force-knot-identification",
-  ],
+  uses: ["prop:lepton-continuant-recurrence"],
 });

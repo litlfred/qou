@@ -10,11 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:two-filtration-bridge",
-    "rem:chirality-period-pairing",
-    "prop:b1-figure-8-row-theorem",
     "prop:b1-torus-knot-rows-theorem",
-    "prop:explicit-central-idempotent",
-    "rem:figure-8-archimedean-illustration",
   ],
   cites: ["thurston1978"],
   tags: [

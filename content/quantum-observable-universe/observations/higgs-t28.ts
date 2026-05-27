@@ -9,13 +9,8 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "def:color-tube-coordinates",
-    "def:brings-surface",
-    "def:exceptional-divisor",
-    "def:crossing-energy",
     "def:confined-particle",
     "prop:fermion-boson-knot-link",
-    "prop:borromean-quark",
   ],
   tags: [
     "higgs",

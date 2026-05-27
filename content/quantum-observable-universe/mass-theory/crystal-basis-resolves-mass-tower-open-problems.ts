@@ -9,7 +9,6 @@ export default proposition({
     "prop:kazhdan-lusztig-classical-limit",
     "prop:hecke-anyonic-substrate",
     "prop:em-coupling-bring-zero-mode",
-    "prop:archimedean-functor-uniqueness",
   ],
   cites: [
     "brundankleshchev2009",

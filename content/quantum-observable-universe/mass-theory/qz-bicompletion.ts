@@ -7,7 +7,7 @@ export default definition({
     ref: "qou:QOU.HabiroRing.QZBicompletionElement",
     validation: "not_checked",
   },
-  uses: ["def:habiro-ring", "def:z-habiro-ring", "def:algebraic-quantum-volume"],
+  uses: ["def:z-habiro-ring"],
   tags: [
     "habiro-ring",
     "bicompletion",

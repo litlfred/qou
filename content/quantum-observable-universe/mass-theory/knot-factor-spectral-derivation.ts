@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.knot_factor_spectral_derivation",
     validation: "not_checked",
   },
-  uses: [
-    "rem:gram-matrix-spectral-connection",
-    "prop:unified-curvature-rank-mass-formula",
-    "prop:knot-factor-frobenius-pairing",
-  ],
+  uses: ["rem:gram-matrix-spectral-connection"],
   tags: [
     "knot-factor",
     "chirality",

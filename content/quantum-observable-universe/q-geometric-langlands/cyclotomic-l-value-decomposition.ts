@@ -15,14 +15,6 @@ export default proposition({
       "folio-assistant/computations/cl-n-l-value-decomposition.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:jonquiere-cyclotomic-tate-rationality",
-    "prop:cyclotomic-dimension-synthesis-all-depths",
-    "prop:depth-2-identification-bloch-suslin",
-    "prop:borel-partial-resolution",
-    "rem:k-theory-period-rosetta",
-    "rem:transcendental-accounting",
-  ],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "dirichlet-l-value",

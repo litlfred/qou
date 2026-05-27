@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.AppendixSurreals.B1SoftSharpnessTheorem.b1_soft_sharpness",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-depth-period-correspondence",
-    "prop:borel-partial-resolution",
-    "prop:depth-2-identification-bloch-suslin",
-    "rem:k-theory-period-rosetta",
-    "rem:transcendental-accounting",
-  ],
+  uses: ["prop:depth-2-identification-bloch-suslin"],
   cites: ["bloch2000", "suslin1991"],
   tags: [
     "soft-sharpness",

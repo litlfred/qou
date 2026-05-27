@@ -5,10 +5,7 @@ export default remark({
   interprets: "rem:chi-per-irrep-cyclotomic-closed-forms",
   title:
     "V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$",
-  uses: [
-    "rem:chi-per-irrep-cyclotomic-closed-forms",
-    "prop:hoefsmit-V21-cos-symmetrization",
-  ],
+  uses: ["rem:chi-per-irrep-cyclotomic-closed-forms"],
   cites: ["hoefsmit1974", "jones1985", "wenzl1988"],
   tags: [
     "lean-infrastructure",

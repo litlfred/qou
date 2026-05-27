@@ -13,10 +13,5 @@ export default remark({
     "graded-trace",
     "interpretation",
   ],
-  uses: [
-    "prop:graded-trace-residue-split",
-    "prop:gb-residue-spectral-sum",
-    "prop:shell-schur-weyl-self-duality",
-    "rem:bw-mass-decomposition-dictionary",
-  ],
+  uses: ["rem:bw-mass-decomposition-dictionary"],
 });

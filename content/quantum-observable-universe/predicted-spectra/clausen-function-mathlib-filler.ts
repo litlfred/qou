@@ -5,10 +5,7 @@ export default remark({
   title:
     "Clausen function $\\mathrm{Cl}_2$ as repo-internal Mathlib filler",
   interprets: "rem:figure-8-archimedean-illustration",
-  uses: [
-    "rem:figure-8-archimedean-illustration",
-    "prop:em-coupling-bring-zero-mode",
-  ],
+  uses: ["prop:em-coupling-bring-zero-mode"],
   cites: ["thurston1978", "zagier1986"],
   computation: {
     engine: "mpmath",
