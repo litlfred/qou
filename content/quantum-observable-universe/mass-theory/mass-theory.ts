@@ -323,5 +323,70 @@ export default chapter({
         "z-eq-n-rho-correction",
       ],
     }),
+
+    // ── Blocks consolidated from particle-interactions (2026-05-27) ──
+    // Mass-formula statements, proofs, and structural conjectures that
+    // were scattered across particle-interactions. Grouped here by
+    // thematic face of the mass endomorphism.
+
+    // §geometric: mass-volume factorization, crossing-graded expansion
+    section({
+      title: "Geometric face: mass-volume factorisation and crossing expansion",
+      label: "sec:mass-geometric-face",
+      blocks: [
+        "thurston-volume-additivity",
+        "mass-volume-factorization",
+        "frobenius-packing-density",
+        "crossing-graded-mass-expansion",
+        "crossing-graded-mass-expansion-table-data",
+        "lifted-crossing-locality",
+        "mass-categorical-descent",
+        "descended-level-zero",
+        "jet-tower-convergence",
+        "delta-max-uniform-bound",
+        "mass-tower-syt-cells",
+        "markov-pair-z2",
+      ],
+    }),
+
+    // §algebraic: transfer matrix, Skein mass, Markov trace corrections
+    section({
+      title: "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
+      label: "sec:mass-algebraic-consolidated",
+      blocks: [
+        "transfer-matrix-operator",
+        "transfer-matrix-identities",
+        "skein-polynomial-transfer-matrix",
+        "beta-decay-transfer-matrix",
+        "ground-state-ordering",
+        "skein-generation",
+        "skein-generation-proof",
+        "skein-mass-from-linking",
+        "skein-mass-from-linking-proof",
+        "corrected-markov-trace",
+        "mass-ordering-corrected",
+        "reidemeister-mass-invariance",
+      ],
+    }),
+
+    // §physical: mass formulas, baryon/meson, binding energy, predictions
+    section({
+      title: "Physical face: mass formulas and predictions",
+      label: "sec:mass-physical-face",
+      blocks: [
+        "neutron-proton-splitting",
+        "borromean-baryon-mass-formula",
+        "borromean-baryon-interpretation",
+        "q-integer-mass-formula",
+        "lambda-scale-substrate-form",
+        "meson-volume-conjecture",
+        "topological-mass-trefoil",
+        "tower-binding-energy",
+        "tower-binding-energy-table-data",
+        "deuterium-derived-binding",
+        "mass-table-z1-20",
+        "mass-table-z1-20-table-data",
+      ],
+    }),
   ],
 });
