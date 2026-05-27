@@ -1589,6 +1589,27 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "ts": "7e0d742f9fed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "detangler-block-tanglement-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/detangler-integration-watcher"
+        },
+        "reviewed_at": "2026-05-27",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 3,
+          "tanglement_score": 3
+        }
+      }
     ]
   },
   "updated_at": "2026-05-26T14:26:49.037Z"
