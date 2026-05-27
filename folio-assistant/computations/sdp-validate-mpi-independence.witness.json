@@ -1,0 +1,43 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T00:11:26.269280+00:00",
+  "commitSha": "432b2ed6269b4c4720112a12f0ef3562496f84b1",
+  "assertions": [
+    {
+      "name": "no_structural_N_below_1000ppm",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "No combination of (m_e, q₀, Vol, ℏ, [n]_q) gives m_π within 1000 ppm"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 32,
+  "computation": "sdp-validate-mpi-independence",
+  "scriptFile": "sdp_validate_mpi_independence.py",
+  "scriptHash": "76f385307ee1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "SDP + exhaustive-scan validation that m_π cannot be derived from (m_e, q₀). Tests 22 structural normalizations N against m_π = m_e · N · tr_M(π). NONE achieves < 1000 ppm. Combined with Vol(Hopf) = 0 (topological), confirms m_π as genuinely independent calibration input (CAL-3).",
+  "contentBlock": "prop:meson-scale-independence",
+  "data": {
+    "tr_M_pion": 0.4958262116526499,
+    "N_target": 550.8632530537923,
+    "best_structural_candidate": "2·Vol(4₁)/ℏ_q²",
+    "best_miss_ppm": 249293.60652836165,
+    "active_set": [
+      [
+        2,
+        1
+      ]
+    ],
+    "vol_hopf": 0
+  }
+}
