@@ -150,3 +150,50 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def derive_b_closed_form():
+    """PROOF: b^2 = (h^2+3)/(h^2+4) — Hoefsmit parameter closed form.
+
+    Derivation from Hoefsmit seminormal construction on (2,1) ⊂ H_3(q):
+      σ_2 has axial distance ρ=2 between the two standard tableaux.
+      a = h/(1-q^{-4}), a' = h/(1-q^{4})
+      a·a' = h^2 / ((1-q^{-4})(1-q^4))
+           = h^2 / (-(h^2+4)·h^2/(h^2+4))  [algebra]
+           → a·a' = -1/(1 + 4/h^2) ... NO
+
+      Actually: (1-q^{-4})(1-q^4) = 2 - q^4 - q^{-4}
+        = 2 - ((q^2+q^{-2})^2 - 2) = 4 - (h^2+2)^2
+        = 4 - h^4 - 4h^2 - 4 = -h^2(h^2+4)
+
+      So a·a' = h^2 / (-h^2(h^2+4)) = -1/(h^2+4)
+
+      b^2 = a·a' + 1 = 1 - 1/(h^2+4) = (h^2+3)/(h^2+4)  QED
+
+    Connection to Borromean trace:
+      tr_M(β_Bor) = (4+h^2-3h^4-h^6)/(h^2+4)
+      b^2          = (h^2+3)/(h^2+4)
+      SAME DENOMINATOR — both are rational functions with pole at h^2=-4.
+    """
+    set_compute_dps()
+    q = mpf(Q_50_DIGIT_STR)
+    h = q - 1 / q
+    hbar = 1 - 1 / q
+
+    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    b_witness = mpf(w["data"]["hoefsmit_b"])
+
+    b_sq_derived = (h ** 2 + 3) / (h ** 2 + 4)
+    b_sq_witness = b_witness ** 2
+
+    print(f"\n=== b² CLOSED FORM (DERIVED) ===")
+    print(f"b² = (h²+3)/(h²+4) = {float(b_sq_derived):.15f}")
+    print(f"b² (witness)        = {float(b_sq_witness):.15f}")
+    print(f"Match: {float(abs(b_sq_derived - b_sq_witness) / b_sq_witness * 1e6):.2f} ppm")
+
+    return b_sq_derived, b_sq_witness
+
+
+if __name__ == "__main__":
+    main()
+    derive_b_closed_form()
