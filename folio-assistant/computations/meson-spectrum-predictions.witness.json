@@ -1,0 +1,79 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T13:10:33.548583+00:00",
+  "commitSha": "8daa9c55417924b0f5f744f63be0170e68ebc41d",
+  "assertions": [
+    {
+      "name": "kaon_predicted",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Kaon mass ratio computed from character structure"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 86,
+  "computation": "meson-spectrum-predictions",
+  "scriptFile": "meson_spectrum_predictions.py",
+  "scriptHash": "8b64f64444e7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Meson spectrum predictions from CAL-3 (m_π) + derived Hecke character ratios. Uses the trace ratio tr_M(n)/tr_M(π) with increasing crossing count.",
+  "contentBlock": "prop:lepton-meson-torus-knot-dictionary",
+  "data": {
+    "results": [
+      {
+        "name": "π (base)",
+        "crossings": 6,
+        "n_extra": 0,
+        "tr_M": 0.4958262116526499,
+        "ratio_to_pion": 1.0,
+        "m_pred_MeV": 139.57039,
+        "m_PDG_MeV": 139.57039
+      },
+      {
+        "name": "K (ūs)",
+        "crossings": 8,
+        "n_extra": 2,
+        "tr_M": 0.6860891338809054,
+        "ratio_to_pion": 1.383729052149312,
+        "m_pred_MeV": 193.12760346280982,
+        "m_PDG_MeV": 493.677
+      },
+      {
+        "name": "η-like (s̄s-ūu)",
+        "crossings": 10,
+        "n_extra": 4,
+        "tr_M": 0.9063384175201429,
+        "ratio_to_pion": 1.8279356682237617,
+        "m_pred_MeV": 255.12569410890103,
+        "m_PDG_MeV": 547.862
+      },
+      {
+        "name": "10+2 crossings",
+        "crossings": 12,
+        "n_extra": 6,
+        "tr_M": 1.1662003258262135,
+        "ratio_to_pion": 2.3520344395249375,
+        "m_pred_MeV": 328.2743640179269,
+        "m_PDG_MeV": null
+      },
+      {
+        "name": "14 crossings",
+        "crossings": 14,
+        "n_extra": 8,
+        "tr_M": 1.4770324400733392,
+        "ratio_to_pion": 2.9789317413256713,
+        "m_pred_MeV": 415.77066492020305,
+        "m_PDG_MeV": 1869.66
+      }
+    ]
+  }
+}

@@ -152,6 +152,7 @@ export default chapter({
         "frobenius-lepton-meson-bridge",
         "hoefsmit-binding-amplitude",
         "figure-eight-reeb-rotation",
+        "pion-half-figure-eight",
       ],
     }),
 
