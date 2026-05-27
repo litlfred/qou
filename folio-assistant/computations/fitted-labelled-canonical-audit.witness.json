@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T03:42:43.847555+00:00",
-  "commitSha": "e4ea512ca480fba7be4c23bf1913810b3ed55fce",
+  "computedAt": "2026-05-27T13:41:36.090881+00:00",
+  "commitSha": "6dab0dfc88f6f2e11ac2fa84ada589907cd93b29",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -29,7 +29,7 @@
   "data": {
     "total_issues": 1,
     "flagged_script_count": 1,
-    "scripts_scanned": 687,
+    "scripts_scanned": 689,
     "rows": [
       {
         "path": "folio-assistant/computations/rt_route_root_of_unity_level_scan.py",
