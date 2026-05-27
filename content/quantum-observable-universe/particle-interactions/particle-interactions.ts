@@ -410,6 +410,7 @@ export default chapter({
       title: "Reconnected orphan blocks (Phase 7)",
       label: "sec:particle-interactions-orphan-reconnect",
       blocks: [
+        "particle-interactions-orphan-reconnect-intro",
         "geom-universality",
         "q-zero-stokes-region-identification",
         "t-from-trace-cyclicity",

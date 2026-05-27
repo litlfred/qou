@@ -110,6 +110,7 @@ export default chapter({
       title: "Reconnected orphan blocks (Phase 7)",
       label: "sec:stochastic-mechanics-orphan-reconnect",
       blocks: [
+        "stochastic-mechanics-orphan-reconnect-intro",
         "lusztig-canonical-basis-q-eq-1",
         "phi-q-aj-machinery-identification",
         "reverse-limit-q-to-infinity",
