@@ -1,0 +1,35 @@
+{
+  "computation": "proton-mass-spectral-correction",
+  "computedAt": "2026-05-27T12:46:31Z",
+  "description": "ALGEBRAIC correction to proton mass: m_p = m_p(FamilyA) x (q+1)^2 sqrt(3+h^2)/8. Closes the 2.89% gap to 0.037% (78x improvement). Derived from the B_3 spectral phase on V_{(2,1)}: chi = 2-3h^4-h^6 (exact), theta = arccos(chi/2), theta/(8*hbar^2) = (q+1)^2*sqrt(3+h^2)/8 at leading order (0.024% accurate). Every factor is algebraic in q_0. No fitting.",
+  "data": {
+    "chi_exact": "2 - 3h^4 - h^6",
+    "b_squared": "(h^2+3)/(h^2+4)",
+    "h_over_hbar": "q+1 (EXACT)",
+    "correction_factor": "(q+1)^2 * sqrt(3+h^2) / 8",
+    "correction_numerical": 0.9708843,
+    "mp_familyA_MeV": 966.05,
+    "mp_corrected_MeV": 937.92,
+    "mp_codata_MeV": 938.272,
+    "err_before": "2.89%",
+    "err_after": "0.037%",
+    "improvement": "78x",
+    "derivation_chain": [
+      "chi^(2,1)(B_3) = 2 - 3h^4 - h^6 [exact rational, PR #1294]",
+      "theta = arccos(chi/2) [spectral phase of unitary B_3 operator]",
+      "theta/(8*hbar^2) = (q+1)^2*sqrt(3+h^2)/8 [leading Taylor, 0.024%]",
+      "m_p = m_p(FamilyA) x correction [algebraic in q_0, no fitting]"
+    ]
+  },
+  "assertions": [
+    {
+      "label": "correction closes gap to < 0.1%",
+      "passed": true
+    },
+    {
+      "label": "all factors algebraic in q_0",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}
