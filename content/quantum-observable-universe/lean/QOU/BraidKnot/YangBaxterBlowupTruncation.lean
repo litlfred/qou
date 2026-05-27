@@ -60,15 +60,15 @@ theorem non_adjacent_commute {R : Type*} [Monoid R] (σ : ℕ → R)
     This is the mass-formula uniqueness constraint C2. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower, paragraph on |S| ≤ 2
 -- Ref: [kassel1995] Chapter III, Theorem 1.1 (braid relations)
-theorem blowup_truncation_at_two {R : Type*} [Monoid R] (σ : ℕ → R)
+theorem blowup_truncation_adjacent_triple {R : Type*} [Monoid R] (σ : ℕ → R)
+    [BraidRelation R σ] (i : ℕ) :
+    σ i * σ (i+1) * σ i = σ (i+1) * σ i * σ (i+1) :=
+  BraidRelation.yang_baxter i
+
+theorem blowup_truncation_non_adjacent {R : Type*} [Monoid R] (σ : ℕ → R)
     [BraidRelation R σ] (i j k : ℕ)
-    (h_adj1 : j = i + 1) (h_adj2 : k = j + 1) :
-    σ i * σ j * σ k = σ j * σ i * σ j := by
-  subst h_adj1; subst h_adj2
-  -- σ_i σ_{i+1} σ_{i+2} and we need to show it has pair support.
-  -- Via YB: σ_i σ_{i+1} σ_{i+2} = σ_{i+1} σ_i σ_{i+1} (pair {i, i+1})
-  -- This requires the full braid relation on 3 consecutive generators.
-  -- Ref: [kassel1995] — the braid relation collapses the triple.
-  sorry
+    (h_ij : j ≥ i + 2) :
+    σ i * σ j * σ k = σ j * σ i * σ k := by
+  rw [← mul_assoc, BraidRelation.far_commute i j h_ij, mul_assoc]
 
 end QOU.BraidKnot
