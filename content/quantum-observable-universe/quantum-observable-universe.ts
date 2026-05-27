@@ -74,18 +74,18 @@ export default paper({
       dir: "braids-and-knots",
       partTitle: "Structural Mechanics",
     }),                                                       // Braids, knots, Hecke, mass machinery (further split per remaining Phase 4 chunks)
-    chapterRef({ dir: "climax-volume-mass" }),                 // [NEW Ch 6 — Phase 4] q-Hyperbolic, Vol, tangle energies, vertex factorisation, Kashaev — climax of Part II's first half
-    chapterRef({ dir: "brings-surface" }),                     // [NEW Ch 7 — Phase 5] Bring's surface (deep): χ = −6, S_5/A_5 action, cohomological defect — split from archimedean-universe
+    chapterRef({ dir: "brings-surface" }),                     // Bring's surface (deep): χ = −6, S_5/A_5 action, cohomological defect
     // statistics-symmetrisation dissolved (2026-05-27): 7-block scaffold
     // never populated; 5 orphan blocks redistributed to braids-and-knots
     // (pontryagin-dual-coxeter-character) and particle-interactions
     // (spin-from-so3-fiber, type-b-folding-cpt, weinberg-angle-categorical,
     // wigner-su4-from-spin-isospin). Pauli/spin-stats content remains a
     // future authoring goal — will create a new chapter when content exists.
-    chapterRef({ dir: "particle-interactions" }),              // Ch 9 Particles: GB, LP, nuclear structure, SDP-as-thimble + skein/hadron/atom-shell content migrated from braids-and-knots
-    chapterRef({ dir: "mass-theory" }),                        // Ch 10 Mass: unified mass endomorphism chapter (merged theory+application 2026-05-27). Opens with conj:mass-endomorphism, then Cat→Alg→Geom→Arch→Phys decomposition.
+    chapterRef({ dir: "particle-interactions" }),              // Particles: GB, LP, nuclear structure, SDP-as-thimble + skein/hadron/atom-shell
+    chapterRef({ dir: "climax-volume-mass" }),                 // q-Hyperbolic → Vol → Mass: geometric bridge (moved after Particles, before Mass — 2026-05-27; -8 fwd refs)
+    chapterRef({ dir: "mass-theory" }),                        // Mass: unified chapter. Opens with conj:mass-endomorphism, then Cat→Alg→Geom→Arch→Phys decomposition.
     // mass-application merged into mass-theory (2026-05-27)
-    chapterRef({ dir: "gravity-spacetime" }),                  // [NEW Ch 12 — Phase 6 scaffold] Gravity emergence: contact geometry + geodesic Madelung
+    chapterRef({ dir: "gravity-spacetime" }),                  // Gravity emergence: contact geometry + geodesic Madelung
 
     // ── Part III: Physical Realization ────────────────────────────────
     // Predictions, comparisons to CODATA, and extension to atomic /
