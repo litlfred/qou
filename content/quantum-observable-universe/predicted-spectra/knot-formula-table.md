@@ -73,7 +73,7 @@ $4_1$ ($\mathrm{Vol} = 2.0299$, amphichiral: $H = H^{\sigma}$).
 The Higgs *boson* excitation ($\approx 125$ GeV) is the torus
 link $T(2,8)$, the unique genus-$3$ link spanning all three
 exceptional divisors on Bring's surface
-([Higgs as $T(2,8)$](#conj:higgs-t28)).
+([Higgs as $T(2,8)$](#prop:higgs-t28)).
 
 *Hadrons.*
 

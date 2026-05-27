@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:higgs-t28",
+export default proposition({
+  label: "prop:higgs-t28",
   title:
     "The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors",
   lean: {

@@ -113,7 +113,7 @@ $g_A \approx 1.277$; the closed knot gives the mass mechanism.
 The **Higgs boson** — the excitable scalar particle at
 $\sim 125 \mathrm{GeV}$ — is separately identified with
 the torus link $T(2,8)$
-([Higgs as $T(2,8)$](#conj:higgs-t28)), a spin-$0$ boson
+([Higgs as $T(2,8)$](#prop:higgs-t28)), a spin-$0$ boson
 consistent with the fermion--boson decomposition
 ([fermion--boson knot--link](#prop:fermion-boson-knot-link)).
 The two objects play complementary roles: $4_1$ is the

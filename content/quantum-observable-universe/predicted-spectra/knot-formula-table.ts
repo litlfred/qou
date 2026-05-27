@@ -16,7 +16,7 @@ export default remark({
     "boson",
     "torus-link",
   ],
-  // Earlier `uses[]` listed `conj:higgs-t28`, which transitively
+  // Earlier `uses[]` listed `prop:higgs-t28`, which transitively
   // typed every block citing this remark as downstream of an open
   // conjecture (per `docs/audits/conjecture-cones.md` "Methodology"
   // — case (2) cleanup). The table is a forward narrative reference
