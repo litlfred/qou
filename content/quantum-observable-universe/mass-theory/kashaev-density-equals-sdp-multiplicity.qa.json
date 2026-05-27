@@ -1735,9 +1735,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "9c3e3c9807d5"
+          "md": "82902b0518c9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1745,69 +1745,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 1,
-            "category": "P4",
-            "text": "**Conjecture (Rule 14 conditional adoption \u2014 owner authorised 2026-05-24).**"
-          },
-          {
-            "line": 47,
-            "category": "P4",
-            "text": "([`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md))."
-          },
-          {
-            "line": 84,
-            "category": "P4",
-            "text": "Pre-2026-05-24 the"
-          },
-          {
-            "line": 100,
-            "category": "P4",
-            "text": "2026-05-24, in response to"
-          },
-          {
-            "line": 101,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)"
-          },
-          {
-            "line": 136,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md`](../../docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md)"
-          },
-          {
-            "line": 139,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)"
-          },
-          {
-            "line": 140,
-            "category": "P4",
-            "text": "recommends waiting for R5-full SDP (owner-decided 2026-05-24)."
-          },
-          {
-            "line": 149,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)"
-          },
-          {
-            "line": 151,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)"
-          },
-          {
-            "line": 153,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)"
-          },
-          {
-            "line": 155,
-            "category": "P4",
-            "text": "[`docs/coordination/2026-05-24-post-1089-followups-ledger.md`](../../docs/coordination/2026-05-24-post-1089-followups-ledger.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

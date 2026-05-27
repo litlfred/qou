@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "50e359c3d92f"
+          "md": "bf6a56f1a842"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,14 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 70,
-            "category": "P4",
-            "text": "| Atomic Markov-trace denominator | $D(u) = 2^{2A+1} \\cdot u^{\\mathrm{shift}} \\cdot (1 + u^2)^{3A-1}$ ([`docs/audits/2026-05-03-w3-habiro-unblocked.md"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

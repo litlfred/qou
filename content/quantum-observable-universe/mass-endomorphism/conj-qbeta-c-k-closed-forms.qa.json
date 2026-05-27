@@ -1419,9 +1419,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "8857df729c9c"
+          "md": "2db7a67edf8c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1429,29 +1429,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 7,
-            "category": "P2",
-            "text": "closed forms** extracted from the SDP-$T_\\beta$ framework (PR #777,"
-          },
-          {
-            "line": 38,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-19-qbeta-ladder-closure-path.md`](../../../docs/audits/2026-05-19-qbeta-ladder-closure-path.md)):"
-          },
-          {
-            "line": 49,
-            "category": "P4",
-            "text": "3. **Spectral-sequence stratification** (declined by ledger 2026-05-19;"
-          },
-          {
-            "line": 70,
-            "category": "P2",
-            "text": "PR #777) reproduces all four c_k EXACTLY:"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

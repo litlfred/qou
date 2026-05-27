@@ -1914,9 +1914,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "30f7732e8805"
+          "md": "755482803a46"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1924,14 +1924,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 18,
-            "category": "P2",
-            "text": "**Tau set** *(canonical for amphichiral $10_{43}$ candidate per PR #1253, used by `conj:lepton-tower-h-n-plus-1-branching` at $m = 3$):*"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1577,9 +1577,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "abce1515e5a8"
+          "md": "1f82af31995c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1587,19 +1587,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 5,
-            "category": "P4",
-            "text": "(2026-05-09) tests the simplest closed form proposed in"
-          },
-          {
-            "line": 77,
-            "category": "P4",
-            "text": "**$q$-sweep across the physical regime $(1, \\varphi)$ (2026-05-09 update).**"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

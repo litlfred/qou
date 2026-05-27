@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "1ef2aa7bcc2c"
+          "md": "f6b1894dbfdf"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,24 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 16,
-            "category": "P4",
-            "text": "[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)."
-          },
-          {
-            "line": 22,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-18-lambda-scale-derivation-search.md \u00a713`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md))"
-          },
-          {
-            "line": 168,
-            "category": "P4",
-            "text": "([w3 audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)):"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

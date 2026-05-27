@@ -95,9 +95,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "af3f69d226c8"
+          "md": "cac7936bd7e9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -105,19 +105,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 33,
-            "category": "P4",
-            "text": "**Status (2026-05-25):** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/c"
-          },
-          {
-            "line": 35,
-            "category": "P2",
-            "text": "**What's still valid:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) \u2014 the Rust sol"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

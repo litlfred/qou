@@ -2051,9 +2051,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "28ac3fa8e2f3"
+          "md": "40ac06109715"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2061,34 +2061,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 25,
-            "category": "P4",
-            "text": "[scalar audit](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md);"
-          },
-          {
-            "line": 30,
-            "category": "P4",
-            "text": "[crystal audit](../../../docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md))."
-          },
-          {
-            "line": 90,
-            "category": "P4",
-            "text": "[full categorical proof](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md)."
-          },
-          {
-            "line": 120,
-            "category": "P4",
-            "text": "- **Sub-lemma 2.1** is established categorically in [`docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/2026-05-04-sub-"
-          },
-          {
-            "line": 139,
-            "category": "P4",
-            "text": "The W-3 D(u) closed-form proof is now categorically complete (3/3 factors derived).  Sub-lemma 2.1 \u2014 the previously-open Hecke-rep-theory step \u2014 is es"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1325,9 +1325,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "5d966fb2750e"
+          "md": "f901d25db474"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1335,14 +1335,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 49,
-            "category": "P3",
-            "text": "by `field_simp + ring` proofs. This addresses Gemini's repeated"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

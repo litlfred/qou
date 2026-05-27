@@ -1325,9 +1325,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "a076bd9ffbbb"
+          "md": "8827e9708a44"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1335,19 +1335,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 13,
-            "category": "P4",
-            "text": "direction. The 2026-05-19 audit ([`per-block-ck-extraction-rule.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-per-block-ck-ext"
-          },
-          {
-            "line": 31,
-            "category": "P4",
-            "text": "[`2026-05-19-qbeta-ladder-closure-path.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-qbeta-ladder-closure-path.md)),"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

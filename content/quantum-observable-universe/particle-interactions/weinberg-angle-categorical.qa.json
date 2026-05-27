@@ -1419,9 +1419,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "fff06a42ea88"
+          "md": "61e67c0922c2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1429,14 +1429,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 141,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-06-refocused-1ppb-workplan-v2.m"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

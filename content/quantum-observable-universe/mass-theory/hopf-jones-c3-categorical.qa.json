@@ -2158,9 +2158,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "30c5d4a806f1"
+          "md": "57a3285d9f7d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2168,49 +2168,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 20,
-            "category": "P2",
-            "text": "from PR #661 \u2014 both coefficients now derive from QOU axioms"
-          },
-          {
-            "line": 109,
-            "category": "P2",
-            "text": "(PR #655 finding: $c_3 = -2$ closes $\\varepsilon$ to"
-          },
-          {
-            "line": 115,
-            "category": "P2",
-            "text": "the empirical extraction (Step 3, from PR #655's residual chain)"
-          },
-          {
-            "line": 123,
-            "category": "P2",
-            "text": "Per PR #657's high-precision finding (`probe_q_beta_high_precision_ck.py`"
-          },
-          {
-            "line": 131,
-            "category": "P2",
-            "text": "$c_2 = b^2, c_3 = -2, c_4 = b^2 + 1/2, \\ldots$. PR #655's"
-          },
-          {
-            "line": 134,
-            "category": "P2",
-            "text": "This proposition (combined with PR #661's $c_2 = b^2$ proof)"
-          },
-          {
-            "line": 137,
-            "category": "P2",
-            "text": "empirical match (PR #655) is then a *prediction* the framework"
-          },
-          {
-            "line": 156,
-            "category": "P2",
-            "text": "formalisation is the follow-on task analogous to PR #661's $c_2$"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

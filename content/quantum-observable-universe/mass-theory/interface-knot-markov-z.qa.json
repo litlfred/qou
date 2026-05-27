@@ -2085,9 +2085,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "5a3d0f970010"
+          "md": "9fb618864a10"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2095,24 +2095,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 88,
-            "category": "P2",
-            "text": "This locks PR #801's interface-knot factorisation as"
-          },
-          {
-            "line": 145,
-            "category": "P2",
-            "text": "- Cross-reference (PR #801): [`def:ew-interface-knot`](#def:ew-interface-knot) (the canonical interface-knot definition)."
-          },
-          {
-            "line": 146,
-            "category": "P2",
-            "text": "- Cross-reference (PR #819): Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

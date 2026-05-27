@@ -2189,9 +2189,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "7e2c5d737329"
+          "md": "79caac75e52d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2199,24 +2199,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 75,
-            "category": "P4",
-            "text": "[derivation-audit-2026-04-20](../../../docs/derivation-audit-2026-04-20.md)"
-          },
-          {
-            "line": 77,
-            "category": "P4",
-            "text": "[2026-05-01-math-framework-deep-audit](../../../docs/audits/2026-05-01-math-framework-deep-audit.md))."
-          },
-          {
-            "line": 129,
-            "category": "P4",
-            "text": "[2026-05-01 math-framework workplan](../../../docs/audits/2026-05-01-math-framework-workplan.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

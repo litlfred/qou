@@ -1780,9 +1780,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "7732fe7d1920"
+          "md": "853fc0d6fdf2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1790,14 +1790,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 159,
-            "category": "P2",
-            "text": "~5 minutes; deferred to PR #761 Rust geck_pfeiffer kernel cherry-pick"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

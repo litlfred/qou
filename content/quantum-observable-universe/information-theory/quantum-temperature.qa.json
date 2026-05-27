@@ -2092,9 +2092,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "fc6c7fd61d68"
+          "md": "e0eb873b6432"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2102,24 +2102,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 1,
-            "category": "P2",
-            "text": "> **SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
-          },
-          {
-            "line": 1,
-            "category": "P4",
-            "text": "> **SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
-          },
-          {
-            "line": 7,
-            "category": "P4",
-            "text": "> Full purge tracking: [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

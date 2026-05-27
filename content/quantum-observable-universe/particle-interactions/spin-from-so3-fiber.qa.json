@@ -1735,9 +1735,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "260d459dfc55"
+          "md": "439611899a0e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1745,24 +1745,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 85,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md)."
-          },
-          {
-            "line": 135,
-            "category": "P2",
-            "text": "3. **Connect to PR #1125's W/Z $\\approx$ cos \u03b8_W within 1%** binomial"
-          },
-          {
-            "line": 144,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](../../docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

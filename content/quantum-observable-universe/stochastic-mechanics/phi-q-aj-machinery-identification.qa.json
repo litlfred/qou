@@ -2093,9 +2093,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "08194f014c87"
+          "md": "e35b069b6538"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2103,14 +2103,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 55,
-            "category": "P4",
-            "text": "**Cross-reference:** [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-var"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

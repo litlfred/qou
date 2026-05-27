@@ -1592,7 +1592,7 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "c1e1c8f2f6d8"
+          "md": "3f4fdb4ffe92"
         },
         "result": "fail",
         "reviewer": {
@@ -1605,74 +1605,9 @@
         "reviewed_at": "2026-05-27",
         "evidence": [
           {
-            "line": 2,
-            "category": "P2",
-            "text": "character gap closure).** *After PR #572's q-Hecke character"
-          },
-          {
             "line": 4,
             "category": "P2",
             "text": "and the cherry-picked* $\\rho_K$ *refinement infrastructure from"
-          },
-          {
-            "line": 5,
-            "category": "P2",
-            "text": "PR #564, **three independent production paths** to* $\\mathrm{tr}_M(\\mathcal{B}_K)$"
-          },
-          {
-            "line": 18,
-            "category": "P2",
-            "text": "3. **Symbolic partition-sum** (PR #564) \u2014 full 50-dps mpmath via"
-          },
-          {
-            "line": 69,
-            "category": "P4",
-            "text": "[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md))."
-          },
-          {
-            "line": 145,
-            "category": "P4",
-            "text": "(2026-05-10, derived via"
-          },
-          {
-            "line": 161,
-            "category": "P4",
-            "text": "Per owner directive 2026-05-10, neither is the FULL framework"
-          },
-          {
-            "line": 190,
-            "category": "P4",
-            "text": "(see [`docs/audits/2026-05-10-1ppb-workplan-update.md`](../../../docs/audits/2026-05-10-1ppb-workplan-update.md));"
-          },
-          {
-            "line": 207,
-            "category": "P2",
-            "text": "on PR #564 deuteron-only proof-of-concept; closure error"
-          },
-          {
-            "line": 224,
-            "category": "P4",
-            "text": "## Path A categorical verification of `18` (proton, 2026-05-09)"
-          },
-          {
-            "line": 246,
-            "category": "P4",
-            "text": "**Multi-nucleon verification (deuteron, 2026-05-09):**"
-          },
-          {
-            "line": 279,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-08-q-hecke-character-gap-closure.md`](../../../docs/audits/2026-05-08-q-hecke-character-gap-closure.md)"
-          },
-          {
-            "line": 281,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](../../../docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md)"
-          },
-          {
-            "line": 283,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-08-rho-k-mass-table-audit.md`](../../../docs/audits/2026-05-08-rho-k-mass-table-audit.md)"
           }
         ]
       }

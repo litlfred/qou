@@ -2033,9 +2033,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "bcde8a5cb186"
+          "md": "8c6616c47580"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2043,34 +2043,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 41,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-08-p3-h-3a-divergence.md`](../../../docs/audits/2026-05-08-p3-h-3a-divergence.md)):"
-          },
-          {
-            "line": 49,
-            "category": "P2",
-            "text": "Both are now fixed (PR #572):"
-          },
-          {
-            "line": 56,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-08-q-hecke-character-gap-closure.md`](../../../docs/audits/2026-05-08-q-hecke-character-gap-closure.md)."
-          },
-          {
-            "line": 76,
-            "category": "P2",
-            "text": "float64 for $\\chi^\\lambda_q$). PR #564's"
-          },
-          {
-            "line": 87,
-            "category": "P2",
-            "text": "| Symbolic partition-sum (50-dps mpmath) | [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqh"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1577,9 +1577,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "f6b63a6ce712"
+          "md": "1532c83725f0"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1587,19 +1587,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 105,
-            "category": "P4",
-            "text": "**Open finding (2026-05-17).** Both the geometric tower form"
-          },
-          {
-            "line": 110,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-fin"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1907,9 +1907,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "fbb7f6d0e7c4"
+          "md": "c71e71bbd1fb"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1917,29 +1917,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 82,
-            "category": "P4",
-            "text": "[`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)"
-          },
-          {
-            "line": 112,
-            "category": "P4",
-            "text": "[`2026-05-18-qbeta-n5-cohomological-breakdown`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)),"
-          },
-          {
-            "line": 145,
-            "category": "P4",
-            "text": "[`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)"
-          },
-          {
-            "line": 147,
-            "category": "P2",
-            "text": "- Companion PR #1249 \u2014 substrate-q_0 derivation workplan"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

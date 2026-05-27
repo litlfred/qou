@@ -2039,9 +2039,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "d258492d429c"
+          "md": "d401f73fd42b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2049,39 +2049,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 1,
-            "category": "P4",
-            "text": "**Notation (2026-05-17).** The prefactor previously written"
-          },
-          {
-            "line": 12,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-17-rho-notation-fix-recommendation.md`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/docs/audits/"
-          },
-          {
-            "line": 42,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)"
-          },
-          {
-            "line": 49,
-            "category": "P4",
-            "text": "[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)"
-          },
-          {
-            "line": 50,
-            "category": "P4",
-            "text": "and the [m_p chain closure gap](../../../docs/audits/2026-05-17-m-p-chain-closure-gap-analysis.md)."
-          },
-          {
-            "line": 379,
-            "category": "P4",
-            "text": "**Status (2026-05-09, issue #604 deliverable 1).** A first-pass"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

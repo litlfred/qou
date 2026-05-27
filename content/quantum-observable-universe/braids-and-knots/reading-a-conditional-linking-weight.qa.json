@@ -95,9 +95,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "f1ececcd86a0"
+          "md": "84860e033958"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -105,49 +105,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 43,
-            "category": "P2",
-            "text": "1. [**PR #701**](https://github.com/litlfred/qou/pull/701) (2026-05-18) \u2014"
-          },
-          {
-            "line": 43,
-            "category": "P4",
-            "text": "1. [**PR #701**](https://github.com/litlfred/qou/pull/701) (2026-05-18) \u2014"
-          },
-          {
-            "line": 47,
-            "category": "P4",
-            "text": "2. [**Audit 2026-05-23**](../../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md) \u2014"
-          },
-          {
-            "line": 110,
-            "category": "P4",
-            "text": "[2026-05-25 Path C](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)"
-          },
-          {
-            "line": 128,
-            "category": "P2",
-            "text": "- [PR #1287](https://github.com/litlfred/qou/pull/1287) \u2014 Reading-A residual probes"
-          },
-          {
-            "line": 129,
-            "category": "P4",
-            "text": "- [Path C audit (2026-05-25)](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)"
-          },
-          {
-            "line": 130,
-            "category": "P4",
-            "text": "- [Yekutieli per-cell (2026-05-22)](../../../docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)"
-          },
-          {
-            "line": 131,
-            "category": "P4",
-            "text": "- [Yekutieli bijection negative (2026-05-23)](../../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

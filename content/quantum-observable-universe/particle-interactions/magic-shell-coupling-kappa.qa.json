@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b5b3b441ce0f"
+          "md": "f082365d19b4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,24 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 30,
-            "category": "P2",
-            "text": "Against the empirical fit from PR #656 v6 single-magic anchor data:"
-          },
-          {
-            "line": 47,
-            "category": "P2",
-            "text": "PR #645 at the doubly-magic anchor $(2, 2)$ and structurally as"
-          },
-          {
-            "line": 72,
-            "category": "P2",
-            "text": "from PR #656 v6 is now a **prediction** of the categorical"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

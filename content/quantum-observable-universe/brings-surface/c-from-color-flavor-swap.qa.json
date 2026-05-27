@@ -1729,9 +1729,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "bb2f0a5d3f3d"
+          "md": "320b5f564eda"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1739,14 +1739,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 129,
-            "category": "P4",
-            "text": "see [`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md))."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1525,9 +1525,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "a4b541644061"
+          "md": "1ec4c89a7c40"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1535,24 +1535,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 165,
-            "category": "P4",
-            "text": "## Closure path via the canonical-knot-id (2026-05-09)"
-          },
-          {
-            "line": 175,
-            "category": "P2",
-            "text": "in `conj-rho-prefactor-structural.lean`. PR #608's R5-full witness"
-          },
-          {
-            "line": 184,
-            "category": "P2",
-            "text": "cost function does not select $6_2$ at first principle (PR #608"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

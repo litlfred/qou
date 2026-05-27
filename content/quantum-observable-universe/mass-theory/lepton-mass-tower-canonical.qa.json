@@ -1720,9 +1720,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "64674c42be31"
+          "md": "0921d534a9a4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1730,59 +1730,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 19,
-            "category": "P1",
-            "text": "> **Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).**"
-          },
-          {
-            "line": 19,
-            "category": "P2",
-            "text": "> **Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).**"
-          },
-          {
-            "line": 19,
-            "category": "P4",
-            "text": "> **Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).**"
-          },
-          {
-            "line": 23,
-            "category": "P4",
-            "text": "> [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md)."
-          },
-          {
-            "line": 69,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md),"
-          },
-          {
-            "line": 172,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) \u2014 Phase 3 "
-          },
-          {
-            "line": 173,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md) \u2014 the SUPERSEDED \u03c1_q purge that moti"
-          },
-          {
-            "line": 174,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-24-muon-knot-id-conflict.md`](../../../docs/audits/2026-05-24-muon-knot-id-conflict.md) \u2014 muon = $4_1$ canonical"
-          },
-          {
-            "line": 180,
-            "category": "P2",
-            "text": "- Sibling PR #1196 \u2014 `BarSymmetricBarAntiSymmetricIdentities.lean` (bar-decomp infrastructure)"
-          },
-          {
-            "line": 181,
-            "category": "P2",
-            "text": "- Sibling PR #1153 \u2014 `Q_m` torus-knot sinh identity (related P_skew framework)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

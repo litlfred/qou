@@ -1737,9 +1737,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "51110a9356b0"
+          "md": "35c38d768b98"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1747,19 +1747,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 88,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)"
-          },
-          {
-            "line": 155,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

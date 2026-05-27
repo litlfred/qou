@@ -1417,9 +1417,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "48ddd4aeaa1f"
+          "md": "10095f26e021"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1427,19 +1427,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 40,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-06-close-321-weinberg-gap.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-06-close-321-weinberg-gap.md)."
-          },
-          {
-            "line": 50,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-06-staircase-ew-residual-conjecture.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-06-staircase-ew-residual-"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

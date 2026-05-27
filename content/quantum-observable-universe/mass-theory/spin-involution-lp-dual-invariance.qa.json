@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "1d196b3b0d1b"
+          "md": "bbfe86fed6ff"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,19 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 175,
-            "category": "P4",
-            "text": "**Corollary (pair-knot operator $Z \\leftrightarrow N$ symmetry, 2026-05-11).**"
-          },
-          {
-            "line": 261,
-            "category": "P2",
-            "text": "[PR #619](https://github.com/litlfred/qou/pull/619) empirics)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

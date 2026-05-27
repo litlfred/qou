@@ -1417,9 +1417,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "a85e0630702b"
+          "md": "c7156b847324"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1427,14 +1427,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 31,
-            "category": "P4",
-            "text": "*In `gb-residue-spectral-sum.lean`, the P2.6 refactor (2026-05-02)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

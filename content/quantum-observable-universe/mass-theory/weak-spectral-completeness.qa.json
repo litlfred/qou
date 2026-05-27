@@ -1453,9 +1453,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "5f662226f84b"
+          "md": "e8a77c6f454e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1463,19 +1463,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 96,
-            "category": "P4",
-            "text": "> **Demoted 2026-05-05.** Earlier drafts of this proof used"
-          },
-          {
-            "line": 102,
-            "category": "P4",
-            "text": "> [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refineme"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

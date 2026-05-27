@@ -2033,9 +2033,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "939aae4c7ce2"
+          "md": "26fba26c6a06"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2043,19 +2043,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 116,
-            "category": "P2",
-            "text": "**Generalises round 10 of PR #634** from \"$\\zeta_5$ only\" to \"every"
-          },
-          {
-            "line": 141,
-            "category": "P2",
-            "text": "- Special case $n = 5$ (round 10 of PR #634):"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

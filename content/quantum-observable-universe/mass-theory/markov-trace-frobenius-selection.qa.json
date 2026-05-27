@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "4a4e0fd7f4bb"
+          "md": "5c6eb992bfcf"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,14 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 155,
-            "category": "P2",
-            "text": "The PR #472 `prop:habiro-residue-sum-equivalence` claims agreement"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

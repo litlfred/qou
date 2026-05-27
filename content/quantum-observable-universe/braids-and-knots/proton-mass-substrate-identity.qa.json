@@ -260,9 +260,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "fee15efe1b30"
+          "md": "7cc7b59b4e08"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -270,19 +270,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 208,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md)"
-          },
-          {
-            "line": 216,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verificatio"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

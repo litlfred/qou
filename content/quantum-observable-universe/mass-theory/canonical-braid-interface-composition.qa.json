@@ -1536,9 +1536,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b72c0d40cb26"
+          "md": "7d08896bcbbb"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1546,19 +1546,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 48,
-            "category": "P2",
-            "text": "The \u0394_coupling residual fit (PR #656 v6) localised the ${}^{3}$He"
-          },
-          {
-            "line": 68,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md`](../../docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

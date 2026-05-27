@@ -1666,9 +1666,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "ac73b5594853"
+          "md": "4090c9904a2f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1676,109 +1676,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 1,
-            "category": "P2",
-            "text": "**Conjecture (lepton-tower closure factor \u2014 unifying form, PR #1253).** *Let"
-          },
-          {
-            "line": 16,
-            "category": "P1",
-            "text": "> **Status \u2014 unifying formula (2026-05-25, PR #1253 amphichiral discharge).**"
-          },
-          {
-            "line": 16,
-            "category": "P2",
-            "text": "> **Status \u2014 unifying formula (2026-05-25, PR #1253 amphichiral discharge).**"
-          },
-          {
-            "line": 16,
-            "category": "P4",
-            "text": "> **Status \u2014 unifying formula (2026-05-25, PR #1253 amphichiral discharge).**"
-          },
-          {
-            "line": 19,
-            "category": "P2",
-            "text": "> see the **Resolution (PR #1253) \u2014 unifying formula** section below for the table."
-          },
-          {
-            "line": 27,
-            "category": "P2",
-            "text": "### Earlier framing (superseded by PR #1253 unifying formula)"
-          },
-          {
-            "line": 29,
-            "category": "P2",
-            "text": "> **SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture"
-          },
-          {
-            "line": 29,
-            "category": "P4",
-            "text": "> **SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture"
-          },
-          {
-            "line": 33,
-            "category": "P2",
-            "text": "> $\\approx$ 2.47, off by 35 %). The PR #1253 amphichiral filter identified"
-          },
-          {
-            "line": 36,
-            "category": "P2",
-            "text": "> pedagogical trajectory; the \"Resolution (PR #1253)\" section is"
-          },
-          {
-            "line": 42,
-            "category": "P4",
-            "text": "in [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-conventi"
-          },
-          {
-            "line": 131,
-            "category": "P2",
-            "text": "## Resolution (PR #1253) \u2014 unifying formula"
-          },
-          {
-            "line": 135,
-            "category": "P2",
-            "text": "The **correct unifying formula** (PR #1253 amphichiral probe + Lean discharge):"
-          },
-          {
-            "line": 155,
-            "category": "P2",
-            "text": "This pattern is precisely what the lepton's amphichirality should produce \u2014 the upper and lower indices are reflections of each other across the middl"
-          },
-          {
-            "line": 175,
-            "category": "P2",
-            "text": "The categorical derivation (why $\\xi_m = [2m-1]_q \\cdot [m]_q / [2m]_q$ specifically \u2014 i.e., how the q-bracket triple $(2m-1, m, 2m)$ falls out of the"
-          },
-          {
-            "line": 179,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-conventio"
-          },
-          {
-            "line": 180,
-            "category": "P2",
-            "text": "- [`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md`](../../../docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md) \u2014 T6/F_\u2113 workplan + PR #12"
-          },
-          {
-            "line": 180,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md`](../../../docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md) \u2014 T6/F_\u2113 workplan + PR #12"
-          },
-          {
-            "line": 181,
-            "category": "P2",
-            "text": "- [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py) \u2014 muon emp"
-          },
-          {
-            "line": 182,
-            "category": "P2",
-            "text": "- [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) \u2014 tau amphichiral "
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

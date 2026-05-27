@@ -2039,9 +2039,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "e5dd5488e4bb"
+          "md": "5f473f9c55d0"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2049,14 +2049,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 47,
-            "category": "P4",
-            "text": "**Brane-tower-evaluation note (added 2026-05-03).**"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

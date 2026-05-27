@@ -2017,9 +2017,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b2c495cdda3c"
+          "md": "e9465633ceb7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2027,29 +2027,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 114,
-            "category": "P2",
-            "text": "(integrated 2026-05-06 from PR #534 commit `06305f30c`):"
-          },
-          {
-            "line": 114,
-            "category": "P4",
-            "text": "(integrated 2026-05-06 from PR #534 commit `06305f30c`):"
-          },
-          {
-            "line": 173,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-02-nv-frob-filter-conjectures.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-02-nv-frob-filter-conjectures.m"
-          },
-          {
-            "line": 183,
-            "category": "P4",
-            "text": "**Audit doc.** [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-b"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

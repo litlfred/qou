@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "393c794373a3"
+          "md": "f818897d0ab2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,19 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 84,
-            "category": "P4",
-            "text": "([H_3-at-H_{3A} weight derivation](../../../docs/audits/2026-05-01-h3-at-h3a-weight-derivation.md)):"
-          },
-          {
-            "line": 142,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-01-per-braid-tower.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/docs/audits/2026-05-01-"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1325,9 +1325,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "882d2b8a513f"
+          "md": "b36a872ca5d1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1335,19 +1335,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 5,
-            "category": "P2",
-            "text": "Per the closure gap analysis (item 2 of PR #672), V_(1,1,1) is the"
-          },
-          {
-            "line": 58,
-            "category": "P2",
-            "text": "**V_(1,1,1) FULLY DERIVED IN LEAN** (item 2 of PR #672 closure)."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

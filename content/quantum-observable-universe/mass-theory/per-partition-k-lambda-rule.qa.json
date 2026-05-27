@@ -1577,9 +1577,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "be1c1bfea525"
+          "md": "516f03fb3cdf"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1587,64 +1587,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 8,
-            "category": "P2",
-            "text": "(PR #638) and partial closures (PR #639) localises the open piece."
-          },
-          {
-            "line": 14,
-            "category": "P2",
-            "text": "| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\\ell n_0 + k$) | **refuted** | PR #638 \u00a7\"Closure (2026-05-11): scalar-eigenvalue form$\\ld"
-          },
-          {
-            "line": 14,
-            "category": "P4",
-            "text": "| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\\ell n_0 + k$) | **refuted** | PR #638 \u00a7\"Closure (2026-05-11): scalar-eigenvalue form$\\ld"
-          },
-          {
-            "line": 15,
-            "category": "P2",
-            "text": "| Per-eigenvalue operator-valued ($\\Phi_q$ per $\\mu_a^{(\\lambda)}$, signed) | **refuted** at uniform $k$ | PR #638 \u00a7\"Operator-valued probe\" |"
-          },
-          {
-            "line": 16,
-            "category": "P2",
-            "text": "| Type-B-folded-crystal depth ($\\#\\{\\lambda \\vdash 3A : \\lambda = \\lambda^T\\}$) | **partial** \u2014 fits $D$ and $T$, fails ${}^3\\mathrm{He}$ | [probe-phi"
-          },
-          {
-            "line": 17,
-            "category": "P2",
-            "text": "| Type-B + scalar near-pole multiplicity $m$ (4 two-input rules) | **refuted** | [probe-phiq-multiplicity-refinement.witness.json](https://github.com/"
-          },
-          {
-            "line": 21,
-            "category": "P2",
-            "text": "PR #639's analysis of #638's per-eigenvalue spectra showed that the"
-          },
-          {
-            "line": 239,
-            "category": "P2",
-            "text": "against PR #639's empirical dominants $\\{[2,2,1,1], [6,3], [5,4]\\}$"
-          },
-          {
-            "line": 263,
-            "category": "P4",
-            "text": "refinement of [audit-2026-05-11-type-b-fold-depth-n-star.md](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-11-type-b-fold-depth-n-star"
-          },
-          {
-            "line": 275,
-            "category": "P2",
-            "text": "PR #639 cycle 6 established that the SDP shadow-price hypothesis"
-          },
-          {
-            "line": 393,
-            "category": "P2",
-            "text": "| Per-partition $\\Phi_q$ contribution | $\\lvert y_\\lambda \\sum_a \\Phi_q^{[\\leq k]}(\\mu_a^{(\\lambda)})\\rvert$ | PR #639 cycle 5b |"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

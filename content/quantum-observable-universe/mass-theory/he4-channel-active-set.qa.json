@@ -2158,9 +2158,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "7b901cffb85f"
+          "md": "c1a801666f15"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2168,14 +2168,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 35,
-            "category": "P2",
-            "text": "(the doubly-magic anchor from PR #645)."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

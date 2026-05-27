@@ -1666,9 +1666,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "f0acc61747b2"
+          "md": "b74a1df580e0"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1676,39 +1676,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 18,
-            "category": "P1",
-            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
-          },
-          {
-            "line": 18,
-            "category": "P2",
-            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
-          },
-          {
-            "line": 18,
-            "category": "P4",
-            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
-          },
-          {
-            "line": 123,
-            "category": "P4",
-            "text": "- Audit: [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) \u2014 P"
-          },
-          {
-            "line": 124,
-            "category": "P4",
-            "text": "- Audit: [`docs/audits/2026-05-24-complex-q-historical-trajectory.md`](../../../docs/audits/2026-05-24-complex-q-historical-trajectory.md) \u2014 historica"
-          },
-          {
-            "line": 125,
-            "category": "P4",
-            "text": "- Audit: [`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md) \u00a7Q3 \u2014 A"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

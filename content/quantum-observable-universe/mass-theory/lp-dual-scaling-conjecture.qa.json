@@ -1577,9 +1577,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b790a672152a"
+          "md": "ff9e6614d8c4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1587,19 +1587,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 71,
-            "category": "P2",
-            "text": "([PR #619](https://github.com/litlfred/qou/pull/619) open"
-          },
-          {
-            "line": 75,
-            "category": "P2",
-            "text": "(e) **Demazure sub-crystal selector.** PR #619 empirically"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1419,9 +1419,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "f4df1f5052bd"
+          "md": "e3eb1c50420b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1429,14 +1429,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 121,
-            "category": "P4",
-            "text": "*Historical note (2026-05-18):* an earlier formulation of this"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

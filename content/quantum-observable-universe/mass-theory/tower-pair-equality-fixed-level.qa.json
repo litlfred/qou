@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "4a2f06be15e4"
+          "md": "52b5bb0b2737"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,19 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 11,
-            "category": "P4",
-            "text": "[`derivation-audit-2026-04-20.md` line 114](../../../docs/audits/derivation-audit-2026-04-20.md)"
-          },
-          {
-            "line": 142,
-            "category": "P4",
-            "text": "([line 114 of `derivation-audit-2026-04-20.md`](../../../docs/audits/derivation-audit-2026-04-20.md))"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

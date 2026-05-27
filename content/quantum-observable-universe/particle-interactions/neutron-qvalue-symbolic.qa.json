@@ -2760,9 +2760,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "6cef107a7735"
+          "md": "5a84a176b80d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2770,14 +2770,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 126,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

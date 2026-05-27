@@ -1769,9 +1769,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b48bc23b8c08"
+          "md": "ab11fff4a86e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1779,19 +1779,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 44,
-            "category": "P4",
-            "text": "Per [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md),"
-          },
-          {
-            "line": 189,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

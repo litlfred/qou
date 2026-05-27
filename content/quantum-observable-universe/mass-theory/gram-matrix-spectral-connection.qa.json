@@ -1577,9 +1577,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "37569c33c364"
+          "md": "d43762dcac9d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1587,24 +1587,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 50,
-            "category": "P4",
-            "text": "(formerly stated as $z^3$ in this block; corrected 2026-05-19 per"
-          },
-          {
-            "line": 51,
-            "category": "P4",
-            "text": "[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)).*"
-          },
-          {
-            "line": 55,
-            "category": "P4",
-            "text": "the 2026-05-19 Markov-bug fix and should read $hz^2 + z$:*"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

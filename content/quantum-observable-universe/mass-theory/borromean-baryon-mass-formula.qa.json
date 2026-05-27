@@ -1417,9 +1417,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "f849c8ecf99e"
+          "md": "ba5fc4f5b3cd"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1427,14 +1427,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 90,
-            "category": "P4",
-            "text": "[docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/do"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1556,9 +1556,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "e4eefa18a47e"
+          "md": "5f42e5016f7a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1566,39 +1566,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 59,
-            "category": "P4",
-            "text": "> **2026-05-24 reframing.** This section originally proposed a"
-          },
-          {
-            "line": 62,
-            "category": "P4",
-            "text": "> That form was **purged from production** on 2026-05-24 (commit"
-          },
-          {
-            "line": 63,
-            "category": "P2",
-            "text": "> `71d674da1`) as non-canonical: PR #985 found the natural-reading"
-          },
-          {
-            "line": 66,
-            "category": "P2",
-            "text": "> Per [PR #1080](https://github.com/litlfred/qou/pull/1080), the"
-          },
-          {
-            "line": 87,
-            "category": "P4",
-            "text": "audit [`docs/audits/2026-05-24-family-a-gap-audit.md`](https://github.com/litlfred/qou/blob/claude/family-a-gap-audit-2026-05-24/docs/audits/2026-05-2"
-          },
-          {
-            "line": 88,
-            "category": "P2",
-            "text": "currently in [PR #1063](https://github.com/litlfred/qou/pull/1063);"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

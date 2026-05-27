@@ -2527,9 +2527,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "c14085ca1cc6"
+          "md": "984ea7638edb"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2537,49 +2537,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 30,
-            "category": "P2",
-            "text": "> **SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
-          },
-          {
-            "line": 30,
-            "category": "P4",
-            "text": "> **SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
-          },
-          {
-            "line": 40,
-            "category": "P4",
-            "text": "> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)"
-          },
-          {
-            "line": 44,
-            "category": "P4",
-            "text": "> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)."
-          },
-          {
-            "line": 101,
-            "category": "P4",
-            "text": "finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)"
-          },
-          {
-            "line": 108,
-            "category": "P2",
-            "text": "**Deeper fitting concern (2026-05-24, PR #1127).** Above the"
-          },
-          {
-            "line": 108,
-            "category": "P4",
-            "text": "**Deeper fitting concern (2026-05-24, PR #1127).** Above the"
-          },
-          {
-            "line": 122,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-24-q-beta-net-ansatz-fit"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

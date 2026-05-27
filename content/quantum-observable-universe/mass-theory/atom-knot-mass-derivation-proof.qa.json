@@ -1289,9 +1289,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "0a84322fd379"
+          "md": "f210848891ae"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1299,14 +1299,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 55,
-            "category": "P4",
-            "text": "Wedderburn decomposition (renamed from $\\rho$ in 2026-05-17 to"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

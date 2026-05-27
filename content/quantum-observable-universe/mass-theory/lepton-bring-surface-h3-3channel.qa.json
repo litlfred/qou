@@ -2230,9 +2230,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "3bb52993492e"
+          "md": "449d26c78e49"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2240,24 +2240,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 40,
-            "category": "P4",
-            "text": "> [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-conventio"
-          },
-          {
-            "line": 182,
-            "category": "P4",
-            "text": "- Audit: [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-co"
-          },
-          {
-            "line": 183,
-            "category": "P4",
-            "text": "- SUPERSEDED \u03c1_q purge (now understood as incomplete): [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

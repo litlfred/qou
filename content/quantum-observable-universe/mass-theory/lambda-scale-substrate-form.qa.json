@@ -1754,9 +1754,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "53914c229986"
+          "md": "ac4f7eca887c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1764,94 +1764,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 3,
-            "category": "P1",
-            "text": "> **Status \u2014 $\\lambda_{\\mathrm{scale}}$ ABSORBED INTO `Geom_full`.**"
-          },
-          {
-            "line": 6,
-            "category": "P2",
-            "text": "> (canonical framing, see PR #1080),"
-          },
-          {
-            "line": 25,
-            "category": "P2",
-            "text": ">   PR #895/#942)."
-          },
-          {
-            "line": 30,
-            "category": "P4",
-            "text": ">   was **structurally falsified** 2026-05-18 (PSLQ coincidence;"
-          },
-          {
-            "line": 32,
-            "category": "P4",
-            "text": ">   [`docs/audits/2026-05-18-conjecture-falsification.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.m"
-          },
-          {
-            "line": 34,
-            "category": "P4",
-            "text": ">   calibration anchor\") is **purged 2026-05-24** (commit"
-          },
-          {
-            "line": 43,
-            "category": "P4",
-            "text": ">   $5/2 + (3/4 - G) h^2$ was also purged 2026-05-24 as"
-          },
-          {
-            "line": 44,
-            "category": "P2",
-            "text": ">   non-canonical (PR #985 bijection NEGATIVE)."
-          },
-          {
-            "line": 108,
-            "category": "P2",
-            "text": "6. **Q-locality (PR #951, 2026-05-23):** at the substrate window"
-          },
-          {
-            "line": 108,
-            "category": "P4",
-            "text": "6. **Q-locality (PR #951, 2026-05-23):** at the substrate window"
-          },
-          {
-            "line": 119,
-            "category": "P2",
-            "text": "7. **Reframing (PR #957, 2026-05-23):** $\\lambda_p(q) = (m_p/m_e)"
-          },
-          {
-            "line": 119,
-            "category": "P4",
-            "text": "7. **Reframing (PR #957, 2026-05-23):** $\\lambda_p(q) = (m_p/m_e)"
-          },
-          {
-            "line": 138,
-            "category": "P2",
-            "text": "8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of"
-          },
-          {
-            "line": 138,
-            "category": "P4",
-            "text": "8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of"
-          },
-          {
-            "line": 143,
-            "category": "P4",
-            "text": "**Therefore (post-2026-05-23 acknowledged-CAL-4 status):** after"
-          },
-          {
-            "line": 260,
-            "category": "P4",
-            "text": "([2026-05-18 \u03bb-scale derivation search \u00a713](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-lambda-scale-derivation-search.md)):"
-          },
-          {
-            "line": 323,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

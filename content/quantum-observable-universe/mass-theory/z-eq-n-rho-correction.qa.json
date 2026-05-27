@@ -1417,9 +1417,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "af2dcfa2475b"
+          "md": "01d007830c5b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1427,14 +1427,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 66,
-            "category": "P4",
-            "text": "(cf. [Coulomb-q-Hecke audit](../../../docs/audits/2026-05-02-coulomb-q-hecke-principled.md))"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

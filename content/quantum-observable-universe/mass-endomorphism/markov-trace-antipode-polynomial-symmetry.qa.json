@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "252a8fa23c47"
+          "md": "a016307df4bd"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,29 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 17,
-            "category": "P2",
-            "text": "*derived in [PR #546](https://github.com/litlfred/qou/pull/546) via*"
-          },
-          {
-            "line": 95,
-            "category": "P4",
-            "text": "([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)),"
-          },
-          {
-            "line": 99,
-            "category": "P2",
-            "text": "This conjecture is testable via [PR #546](https://github.com/litlfred/qou/pull/546)'s"
-          },
-          {
-            "line": 114,
-            "category": "P2",
-            "text": "- [PR #546](https://github.com/litlfred/qou/pull/546) \u2014 symbolic closed form for $\\operatorname{tr}_M(\\mathrm{proton})$."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

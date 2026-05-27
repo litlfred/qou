@@ -1451,9 +1451,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "da402d019975"
+          "md": "da8246648b2b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1461,24 +1461,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 76,
-            "category": "P4",
-            "text": "### Refinement (2026-05-06): coupling via interface knot $\\bowtie_K$, not disjoint product"
-          },
-          {
-            "line": 154,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement"
-          },
-          {
-            "line": 279,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

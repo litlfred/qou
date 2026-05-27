@@ -1765,9 +1765,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "1a516d577300"
+          "md": "024e632f69f9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1775,44 +1775,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 25,
-            "category": "P4",
-            "text": "The **specific algebraic identification** of $q_0$ as a particular invariant of $[\\rho_{\\mathrm{DF}}]$. Three candidate refinements (per [`docs/audits"
-          },
-          {
-            "line": 45,
-            "category": "P4",
-            "text": "Per author directive 2026-05-25: *\"I want all to work over $\\mathbb{Z}[q, q^{-1}]$\"*."
-          },
-          {
-            "line": 55,
-            "category": "P4",
-            "text": "The two candidate identifications (Option 4 Hom + Option 6 Stokes from [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../"
-          },
-          {
-            "line": 107,
-            "category": "P2",
-            "text": "- [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) \u2014 \u03a6_q / Li_2^q $\\leftrightarrow$ AJ machinery (PR #1242)"
-          },
-          {
-            "line": 108,
-            "category": "P2",
-            "text": "- [`conj:q-zero-complex-extension`](q-zero-complex-extension.md) \u2014 q_0 may not be real (PR #1127)"
-          },
-          {
-            "line": 111,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archim"
-          },
-          {
-            "line": 112,
-            "category": "P4",
-            "text": "- [`docs/coordination/2026-05-25-post-1231-wire-up-ledger.md`](../../../docs/coordination/2026-05-25-post-1231-wire-up-ledger.md) \u2014 session ledger"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

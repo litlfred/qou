@@ -1621,9 +1621,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "5a0334d94e62"
+          "md": "cae7709daf75"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1631,44 +1631,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 19,
-            "category": "P2",
-            "text": "Sibling [PR #1153](https://github.com/litlfred/qou/pull/1153) makes"
-          },
-          {
-            "line": 64,
-            "category": "P4",
-            "text": "- Per [Phase A v2 audit](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)"
-          },
-          {
-            "line": 66,
-            "category": "P4",
-            "text": "[`m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md):"
-          },
-          {
-            "line": 70,
-            "category": "P2",
-            "text": "content from PR #1153."
-          },
-          {
-            "line": 81,
-            "category": "P2",
-            "text": "channel (sibling PR #1153 documents this for torus knots)."
-          },
-          {
-            "line": 93,
-            "category": "P4",
-            "text": "- Audit: [`docs/audits/2026-05-24-complex-q-historical-trajectory.md`](../../../docs/audits/2026-05-24-complex-q-historical-trajectory.md) \u2014 historica"
-          },
-          {
-            "line": 94,
-            "category": "P4",
-            "text": "- Audit: [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) \u00a7Im"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

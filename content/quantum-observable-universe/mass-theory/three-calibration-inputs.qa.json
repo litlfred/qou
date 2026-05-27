@@ -2187,9 +2187,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b70e3c418271"
+          "md": "6e1d2110ef34"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2197,14 +2197,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 49,
-            "category": "P4",
-            "text": "([symbolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-01-math-framework-workplan.md#p25))."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -2033,9 +2033,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "349e855eebd5"
+          "md": "612b87848ffc"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2043,24 +2043,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 63,
-            "category": "P4",
-            "text": "[reframing memo](../../../docs/audits/2026-05-02-self-conj-support-reframing.md))."
-          },
-          {
-            "line": 101,
-            "category": "P4",
-            "text": "Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Term6-scaling-heavy.witness.json)."
-          },
-          {
-            "line": 123,
-            "category": "P4",
-            "text": "([attempt witness](../../../docs/audits/2026-05-02-alpha-categorical-derivation.witness.json))."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

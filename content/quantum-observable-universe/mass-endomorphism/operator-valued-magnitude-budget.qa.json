@@ -1577,9 +1577,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "54afb5c0df10"
+          "md": "42a66445639e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1587,14 +1587,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 37,
-            "category": "P4",
-            "text": "[`structural-diagnosis-operator-valued`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-structural-diagnosis-operator-valued.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

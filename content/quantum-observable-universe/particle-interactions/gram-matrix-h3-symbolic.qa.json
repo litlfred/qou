@@ -1553,9 +1553,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "ce13cb9f0c4e"
+          "md": "35f1c615078a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1563,14 +1563,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 46,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md`](../../../docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md) \u2014 full P"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

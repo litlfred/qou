@@ -1419,9 +1419,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "148fb4583293"
+          "md": "2b41b75692b5"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1429,19 +1429,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 124,
-            "category": "P4",
-            "text": "([reframing memo](../../../docs/audits/2026-05-02-self-conj-support-reframing.md))."
-          },
-          {
-            "line": 134,
-            "category": "P4",
-            "text": "[2026-05-01 conjecture-cones audit](../../../docs/audits/conjecture-cones.md))"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1675,9 +1675,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "996a3e145fd9"
+          "md": "57f9f9f0c175"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1685,19 +1685,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 32,
-            "category": "P4",
-            "text": "Per owner directive 2026-05-10 (\"do not use LO \u2014 use full\"), this"
-          },
-          {
-            "line": 41,
-            "category": "P4",
-            "text": "[handoff](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md))."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

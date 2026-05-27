@@ -2017,9 +2017,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "f7156bb86454"
+          "md": "c5e7deae4896"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2027,19 +2027,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 52,
-            "category": "P4",
-            "text": "([witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json))."
-          },
-          {
-            "line": 187,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/2026"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

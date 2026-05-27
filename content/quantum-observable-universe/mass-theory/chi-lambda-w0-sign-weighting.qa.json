@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "6831db37c76b"
+          "md": "e0d07bab65a9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,24 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 57,
-            "category": "P2",
-            "text": "(PR #672 merge, per-Wedderburn-block probe at $q = 1 + \\varepsilon$"
-          },
-          {
-            "line": 201,
-            "category": "P2",
-            "text": "`conj:alpha-k-categorical-closure` proposal (PR #675, pending merge)."
-          },
-          {
-            "line": 207,
-            "category": "P2",
-            "text": "backed by the per-irrep closed forms from PR #672 and the"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

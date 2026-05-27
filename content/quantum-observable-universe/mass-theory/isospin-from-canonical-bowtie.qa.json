@@ -1733,9 +1733,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b6bba52c26ea"
+          "md": "1444e4109195"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1743,44 +1743,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 1,
-            "category": "P4",
-            "text": "> **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**"
-          },
-          {
-            "line": 12,
-            "category": "P4",
-            "text": "> [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md)."
-          },
-          {
-            "line": 162,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)"
-          },
-          {
-            "line": 187,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md)."
-          },
-          {
-            "line": 298,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md))"
-          },
-          {
-            "line": 307,
-            "category": "P4",
-            "text": "- [`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)"
-          },
-          {
-            "line": 316,
-            "category": "P2",
-            "text": "(PR #690)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

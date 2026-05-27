@@ -1664,9 +1664,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "0cb654e5e87b"
+          "md": "a3b1ca6d9511"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1674,34 +1674,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 26,
-            "category": "P1",
-            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).**"
-          },
-          {
-            "line": 26,
-            "category": "P2",
-            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).**"
-          },
-          {
-            "line": 26,
-            "category": "P4",
-            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).**"
-          },
-          {
-            "line": 111,
-            "category": "P4",
-            "text": "4. The Q_\u03b2 residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-n"
-          },
-          {
-            "line": 119,
-            "category": "P4",
-            "text": "- Audit: [`docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md`](../../../docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md) \u2014 ful"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

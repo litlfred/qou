@@ -1419,9 +1419,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "1db0780f0d19"
+          "md": "dfaa317d070d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1429,29 +1429,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 28,
-            "category": "P4",
-            "text": "2026-05-02 after the P3.1 conjectural-propagation audit:"
-          },
-          {
-            "line": 71,
-            "category": "P4",
-            "text": "question (2026-05-02)."
-          },
-          {
-            "line": 281,
-            "category": "P4",
-            "text": "**Status (2026-05-11, PR [#638](https://github.com/litlfred/qou/pull/638)):**"
-          },
-          {
-            "line": 287,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md`](../../../docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

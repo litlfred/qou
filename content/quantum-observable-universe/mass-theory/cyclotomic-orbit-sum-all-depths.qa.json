@@ -2033,9 +2033,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "2ced0b727ac8"
+          "md": "6b49927ba54c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2043,19 +2043,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 70,
-            "category": "P2",
-            "text": "### Generalises Theorem B (PR #635 round 3)"
-          },
-          {
-            "line": 83,
-            "category": "P2",
-            "text": "The depth-3 case (round 3 + round 4 of PR #635) gave $(K - 3)/2$."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

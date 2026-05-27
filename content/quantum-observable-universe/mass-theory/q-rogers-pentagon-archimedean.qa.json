@@ -1597,9 +1597,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "b44601c0f7ee"
+          "md": "ed20efb2a78f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1607,14 +1607,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 155,
-            "category": "P4",
-            "text": "[`docs/audits/2026-05-19-pentagon-reduction-li2q.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-pentagon-reduction-li2q.md)."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1577,9 +1577,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "64fe150174a4"
+          "md": "f42eae9e1fab"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1587,24 +1587,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 9,
-            "category": "P2",
-            "text": "Following the user's direction (PR #657): the canonical $c_k$ values"
-          },
-          {
-            "line": 139,
-            "category": "P2",
-            "text": "The remaining open question (Track C per PR #657 plan): **can the"
-          },
-          {
-            "line": 145,
-            "category": "P2",
-            "text": "follow-up work tracking through PR #487's selection theorem +"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

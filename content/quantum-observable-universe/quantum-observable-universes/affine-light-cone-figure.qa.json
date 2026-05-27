@@ -1543,9 +1543,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "2d9c0a46069f"
+          "md": "919e93950450"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1553,14 +1553,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 51,
-            "category": "P4",
-            "text": "gradient or decorative color) per author directive 2026-05-24."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1325,9 +1325,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "5606b4dac5ab"
+          "md": "596f9eaec479"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1335,19 +1335,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 50,
-            "category": "P2",
-            "text": "PR #665's Gemini batch); per-$n$ instances remain follow-up."
-          },
-          {
-            "line": 50,
-            "category": "P3",
-            "text": "PR #665's Gemini batch); per-$n$ instances remain follow-up."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

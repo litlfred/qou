@@ -2131,9 +2131,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "78713a26c40c"
+          "md": "f941f0fc7257"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2141,64 +2141,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 37,
-            "category": "P4",
-            "text": "[`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md):"
-          },
-          {
-            "line": 57,
-            "category": "P4",
-            "text": "2026-05-08 (coordination ledger) and **re-opened on 2026-05-25** in"
-          },
-          {
-            "line": 67,
-            "category": "P2",
-            "text": "PR #1127 and audit"
-          },
-          {
-            "line": 68,
-            "category": "P4",
-            "text": "[`2026-05-24-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md):"
-          },
-          {
-            "line": 82,
-            "category": "P4",
-            "text": "[`2026-05-18-qbeta-n5-cohomological-breakdown`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)),"
-          },
-          {
-            "line": 91,
-            "category": "P4",
-            "text": "| CAL-2 | $q_0$ via $m_\\mu/m_e$ | $\\mathrm{Vol}(4_1) = 2\\Lambda(\\pi/3)$ on the cohomology side; $q_0$ un-derived | **open** (re-opened 2026-05-25, wee"
-          },
-          {
-            "line": 92,
-            "category": "P2",
-            "text": "| CAL-3 | $\\mathfrak{E}_0$ via $Q_\\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open** (PR #1127; [n5 audit](../../../docs/a"
-          },
-          {
-            "line": 92,
-            "category": "P4",
-            "text": "| CAL-3 | $\\mathfrak{E}_0$ via $Q_\\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open** (PR #1127; [n5 audit](../../../docs/a"
-          },
-          {
-            "line": 124,
-            "category": "P4",
-            "text": "[`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)"
-          },
-          {
-            "line": 126,
-            "category": "P4",
-            "text": "[`2026-05-24-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md) (sibling)"
-          },
-          {
-            "line": 128,
-            "category": "P4",
-            "text": "[`2026-05-18-qbeta-n5-cohomological-breakdown`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

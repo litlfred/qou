@@ -95,9 +95,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "5b0fdf74df26"
+          "md": "b5b508f774d8"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -105,19 +105,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 62,
-            "category": "P4",
-            "text": "Per Probe (1) and Probe (1b) in [`docs/audits/2026-05-25-dominant-partition-nucleon-structure.md`](../../../docs/audits/2026-05-25-dominant-partition-"
-          },
-          {
-            "line": 72,
-            "category": "P4",
-            "text": "- It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

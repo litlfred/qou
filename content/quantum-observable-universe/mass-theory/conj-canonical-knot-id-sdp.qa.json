@@ -1419,9 +1419,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "899ab05b7586"
+          "md": "bc70e5984445"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1429,19 +1429,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 73,
-            "category": "P2",
-            "text": "## Partial closure (PR #608, 2026-05-09)"
-          },
-          {
-            "line": 73,
-            "category": "P4",
-            "text": "## Partial closure (PR #608, 2026-05-09)"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

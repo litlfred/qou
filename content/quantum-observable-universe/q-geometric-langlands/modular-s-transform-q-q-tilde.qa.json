@@ -1731,9 +1731,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "c3f8c1852ee7"
+          "md": "178345be9ee6"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1741,19 +1741,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 50,
-            "category": "P2",
-            "text": "## Relationship to PR #1127's complex-q lift"
-          },
-          {
-            "line": 114,
-            "category": "P4",
-            "text": "- 13-driver menu driver (viii): [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-u"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

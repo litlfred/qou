@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "392068ce33e4"
+          "md": "e4b6dc647c53"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,14 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 44,
-            "category": "P4",
-            "text": "> **Scope correction note (2026-05-19).** Earlier versions of this"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

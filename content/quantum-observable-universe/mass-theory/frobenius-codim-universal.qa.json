@@ -2035,9 +2035,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "fa4932b4f83e"
+          "md": "a2c25e6baaba"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2045,24 +2045,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 283,
-            "category": "P2",
-            "text": "| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; PR #621) |"
-          },
-          {
-            "line": 284,
-            "category": "P2",
-            "text": "| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | `hecke_n7_frobenius_codim` | A $\\ge$ 5 nuclei (PR #621) |"
-          },
-          {
-            "line": 285,
-            "category": "P2",
-            "text": "| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne (PR #631) |"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

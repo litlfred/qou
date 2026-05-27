@@ -1325,9 +1325,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "4474241c58fc"
+          "md": "e07ae28842b1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1335,14 +1335,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 198,
-            "category": "P4",
-            "text": "**Caveat (updated 2026-05-09).** The structural form of the"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

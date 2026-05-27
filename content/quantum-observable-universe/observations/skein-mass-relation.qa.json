@@ -1915,9 +1915,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "42c3f4821a05"
+          "md": "67c7aee7b4c7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1925,29 +1925,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 3,
-            "category": "P2",
-            "text": "> **Substrate-density (\u03c1_q) ansatz purge in progress (2026-05-24, PR #1127).**"
-          },
-          {
-            "line": 3,
-            "category": "P4",
-            "text": "> **Substrate-density (\u03c1_q) ansatz purge in progress (2026-05-24, PR #1127).**"
-          },
-          {
-            "line": 16,
-            "category": "P4",
-            "text": "> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)"
-          },
-          {
-            "line": 21,
-            "category": "P4",
-            "text": "> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

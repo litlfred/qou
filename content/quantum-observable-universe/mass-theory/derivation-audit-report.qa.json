@@ -1846,9 +1846,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "575268208d22"
+          "md": "337e4360aa29"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -1856,24 +1856,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 38,
-            "category": "P4",
-            "text": "## GAP-A-2 \u2014 Chirality formula $a_K = 1 + w \\cdot h$ (chiral case) *(refined 2026-05-09)*"
-          },
-          {
-            "line": 130,
-            "category": "P4",
-            "text": "## GAP-B-1 \u2014 Per-nucleon scaling between $A = 2$ and $A = 3$ *(closed 2026-05-09)*"
-          },
-          {
-            "line": 143,
-            "category": "P4",
-            "text": "\"Caveat (updated 2026-05-09)\" paragraph in"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

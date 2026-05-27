@@ -2033,9 +2033,9 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "96d77e1422e5"
+          "md": "89bd094c2155"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
@@ -2043,24 +2043,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 14,
-            "category": "P4",
-            "text": "> **Errata (2026-05-19).** Earlier versions of this block asserted"
-          },
-          {
-            "line": 23,
-            "category": "P4",
-            "text": "> [`docs/audits/2026-05-19-trm5-markov-bug.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)"
-          },
-          {
-            "line": 48,
-            "category": "P4",
-            "text": "> **Errata banner (2026-05-19) \u2014 symbolic Gram entries below"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },
