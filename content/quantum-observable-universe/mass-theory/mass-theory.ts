@@ -59,6 +59,10 @@ export default chapter({
         "topological-mass-dilogarithm-proof",
         "topological-mass-proof",
         "topological-mass-su2",
+        "gb-spectral-sequence",
+        "gb-spectral-sequence-table-data",
+        "homological-shell-condensation",
+        "qou-motivic-galois-instance",
       ],
     }),
 

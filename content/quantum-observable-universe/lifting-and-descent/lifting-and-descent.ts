@@ -101,7 +101,6 @@ export default chapter({
         // P34 (2026-05-22).
         "motivic-substrate",
         "motivic-galois-character",
-        "qou-motivic-galois-instance",
         "motivic-perpetual-obstruction",
       ],
     }),
@@ -134,14 +133,11 @@ export default chapter({
         // prop:gb-spectral-sequence moved here from
         // braids-and-knots/sec:spectral-sequence-chirality-confinement
         // per detangler P29 (2026-05-22). 12 H1 fwd-refs cleared.
-        "gb-spectral-sequence",
-        "gb-spectral-sequence-table-data",
         // mass-identity, mass-noncommutative-drag, topological-mass
         // and their proof trees moved to mass-theory (2026-05-27)
         // per mass-endomorphism restructuring.
         "euler-char-stability",
         "euler-char-stability-proof",
-        "homological-shell-condensation",
       ],
     }),
 
