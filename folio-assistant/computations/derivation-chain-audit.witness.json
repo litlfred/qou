@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T18:09:04.498342+00:00",
-  "commitSha": "235dc470638038ddb49210d6395112305e1de1d5",
+  "computedAt": "2026-05-27T18:34:48.348997+00:00",
+  "commitSha": "def028faa890a3c75cdf4f6f0c28b34ec8d366d6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2093,9 +2093,11 @@
         "binding-depth-stratified-selfconj.witness.json",
         "binding-depth-stratified.witness.json",
         "binding-energy-categorical-deuteron.witness.json",
+        "binding-energy-scale-probe.witness.json",
         "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
+        "binding-lp-delta-audit.witness.json",
         "binding-q-target-sweep.witness.json",
         "binding-via-interface-knot.witness.json",
         "binomial-pattern-chebyshev-derivation.witness.json",
@@ -2675,6 +2677,7 @@
         "sigma-all-evaluator.witness.json",
         "sigma-all-symbolic-decay.witness.json",
         "sigma-shell-from-beta-chain.witness.json",
+        "sigma3-eigenvalue-h6.witness.json",
         "sinh-bar-antisymmetric-partner.witness.json",
         "six-fifths-categorical-proof-attempt.witness.json",
         "six-fifths-deviation-h4-correction-probe.witness.json",
