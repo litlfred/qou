@@ -61,27 +61,59 @@ encoding the chiral symmetry breaking scale. $\square$
 
 ## Cohomological context of the three calibrations
 
-The three calibration inputs live in distinct cohomological
-layers of the Hecke tower:
+The three calibration inputs live at distinct jet orders of the
+$h$-expansion, which correspond to distinct degrees of the motivic
+cohomology of the knot complement lattice:
 
-| CAL | Input | Hecke level | Representation | Cohomological role |
-|-----|-------|-------------|----------------|-------------------|
-| **CAL-1** | $m_\mathfrak{e}$ | $H_2(q)$ | trivial $(2)$ | **absolute scale** — sets the MeV unit via the electron mass; lives in $H^0$ (degree-zero cohomology, the scalar coefficient ring) |
-| **CAL-2** | $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$ | $H_2(q) \to H_3(q)$ | standard $(2,1)$ | **substrate deformation** — the figure-eight knot volume is a motivic period in $K_3(\mathbb{Q}(\zeta))$; fixes $q_0$ via the Bloch–Wigner dilogarithm; lives in $H^2$ (the Borel regulator class) |
-| **CAL-3** | $m_\pi$ | $H_3(q)$ | Hopf link ($L_+$) | **chiral scale** — the Goldstone boson mass from $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ breaking; lives in $H^3$ (the Chern–Simons class, parity-odd); absent from the substrate ($\mathrm{Vol}(\text{Hopf}) = 0$) |
+| CAL | Input | Jet order | Decay process | Cohomological degree |
+|-----|-------|-----------|---------------|---------------------|
+| **CAL-1** | $m_\mathfrak{e}$ | $h^0$ | — (the scale) | $H^0$ — scalar coefficient ring |
+| **CAL-2** | $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$ | $h^2$ | $\mu \to \mathfrak{e} + \nu + \bar\nu$ (lepton decay) | $H^2$ — Borel regulator class (dilogarithm period) |
+| **CAL-3** | $m_\pi$ | $h^3$ | $\pi \to \mu + \nu$ (meson decay) | $H^3$ — Chern–Simons class (parity-odd, chiral) |
 
-The independence is structural: each calibration lives in a
-different degree of the motivic cohomology of the knot complement
-lattice.  CAL-1 is degree 0 (a scale), CAL-2 is degree 2 (a
-Borel class = dilogarithm period), and CAL-3 is degree 3 (a
-Chern–Simons invariant = trilogarithm period).
+**CAL-2 as lepton decay.** The muon-anchor identity
+$m_\mu / m_\mathfrak{e} = \mathrm{Vol}(4_1) / \hbar_q^2$
+encodes the muon decay $\mu \to \mathfrak{e} + \nu + \bar\nu$:
+the cinquefoil $T(2,5)$ unwinds through the figure-eight
+transition knot $4_1$ back to the trefoil $T(2,3)$.  The
+decay width $\mathfrak{D}_\mu \propto m_\mu^5$ is determined
+by the $h^2$ jet order of the deformation parameter.
 
-The substrate parameter $q_0$ is determined by CAL-2 (the
-muon-anchor identity).  The Borromean volume $8G$ and the
-Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ are both
-functions of $q_0$ — so baryons need only CAL-1 + CAL-2.
-Mesons additionally need CAL-3 because the Hopf link's
-vanishing volume removes the degree-2 handle that baryons use.
+**CAL-3 as meson decay.** The pion mass enters through the
+PCAC relation $m_\pi^2 f_\pi^2 = -m_q \langle\bar{q}q\rangle$
+(Gell-Mann–Oakes–Renner), which ties $m_\pi$ to chiral symmetry
+breaking.  The decay $\pi \to \mu + \nu$ is the Hopf link
+breaking: the meson's $q\bar{q}$ binding unravels into a
+lepton pair.  The pion decay constant $f_\pi \approx 92\,\mathrm{MeV}$
+is the CAL-3 scale.  This enters the $h$-expansion at $h^3$ order
+(the flavor-split $X = h^3/6 + \cdots$ is the first parity-odd
+contribution).
+
+**Why no $H^1$ calibration.** The bar involution $q \mapsto q^{-1}$
+forces all Markov traces of writhe-zero braids to be **even
+functions of $h$**.  The $h^1$ jet order is identically zero —
+there is no observable at odd-parity first order.  Physically:
+CPT symmetry (implemented by the bar involution) cancels any
+linear-in-$h$ contribution.  The calibration degrees $0, 2, 3$
+are exactly the non-vanishing jet orders of the $h$-expansion.
+
+**Jet order ↔ filtration level.** The GS filtration on
+$H_n(q)$ grades the Hecke algebra by braid-word length.  The
+$h^k$ coefficient of the Markov trace probes the filtration at
+depth $k$.  The calibrations live at the first three non-trivial
+filtration depths:
+
+- $h^0$: the classical ($q = 1$) limit — just $S_n$ representation
+  theory, no $q$-deformation needed
+- $h^2$: the first $q$-deformation — the substrate parameter $q_0$
+  enters here, measured by the dilogarithm period $\mathrm{Vol}(4_1)$
+- $h^3$: the first parity-odd $q$-deformation — the skein gap
+  $\sigma - \sigma^{-1} = h$ introduces an odd-in-$q$ channel
+  visible only through the flavor split
+
+The independence is structural: degree 0, 2, 3 are algebraically
+independent in the motivic cohomology of the knot complement lattice.
+Degree 1 is absent by bar symmetry (CPT).
 
 ## What CAL-3 buys
 
