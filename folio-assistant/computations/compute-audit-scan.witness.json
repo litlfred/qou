@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T03:00:02.973225+00:00",
-  "commitSha": "518f2852c914d248d0eec067c1d8a248f22b862e",
+  "computedAt": "2026-05-27T03:42:40.267339+00:00",
+  "commitSha": "e4ea512ca480fba7be4c23bf1913810b3ed55fce",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 142,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 690,
+    "files_scanned": 692,
     "patterns": [
       "P15",
       "P16",
@@ -32,9 +32,9 @@
     "by_pattern_count": {
       "P15": 114,
       "P16": 177,
-      "P21": 24,
+      "P21": 25,
       "P30": 142,
-      "P31": 55
+      "P31": 56
     },
     "top_files": [
       {
@@ -1847,6 +1847,20 @@
         "line": 94,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P21",
+        "file": "knot_operator_sdp_4_1.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P31",
+        "file": "knot_operator_sdp_4_1.py",
+        "line": 114,
+        "snippet": "CODATA literal \"206.768283\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",
