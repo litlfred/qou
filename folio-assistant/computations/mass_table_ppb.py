@@ -145,6 +145,31 @@ ATOM_ASSIGN = {
              "origin": "framework: α-cluster n_α=6"},
     "40Ca": {"rule": "alpha",    "n_alpha": 10, "n_pairs": 45,
              "origin": "framework: α-cluster n_α=10"},
+    # ── Odd-A / non-α-cluster isotopes (wiring begun 2026-05-27) ──
+    # These don't fit the α-cluster rule (not multiples of ⁴He) or
+    # the Kashaev single-knot rule (target volumes too large for
+    # low-crossing census). Likely need composite rules combining
+    # α-cores + valence nucleon knots.
+    "9Be":  {"rule": "gap",      "B_AME_MeV_target": 58.165,
+             "vol_kashaev_target_m_e_units": 58.165 / 0.51099895,
+             "vol_kashaev_target_2m_e_units": 58.165 / (2 * 0.51099895),
+             "structural_hint": "2α + n (Borromean halo nucleus)",
+             "origin": "GAP: odd-A, Borromean halo — needs composite rule"},
+    "11B":  {"rule": "gap",      "B_AME_MeV_target": 76.206,
+             "vol_kashaev_target_m_e_units": 76.206 / 0.51099895,
+             "vol_kashaev_target_2m_e_units": 76.206 / (2 * 0.51099895),
+             "structural_hint": "2α + 3p (p-shell nucleus)",
+             "origin": "GAP: odd-A, p-shell — needs composite rule"},
+    "14N":  {"rule": "gap",      "B_AME_MeV_target": 104.659,
+             "vol_kashaev_target_m_e_units": 104.659 / 0.51099895,
+             "vol_kashaev_target_2m_e_units": 104.659 / (2 * 0.51099895),
+             "structural_hint": "3α + 2p (p-shell, N=Z mirror)",
+             "origin": "GAP: odd-A, N=Z mirror — needs composite rule"},
+    "19F":  {"rule": "gap",      "B_AME_MeV_target": 147.801,
+             "vol_kashaev_target_m_e_units": 147.801 / 0.51099895,
+             "vol_kashaev_target_2m_e_units": 147.801 / (2 * 0.51099895),
+             "structural_hint": "4α + 3p (sd-shell onset)",
+             "origin": "GAP: odd-A, sd-shell onset — needs composite rule"},
 }
 
 

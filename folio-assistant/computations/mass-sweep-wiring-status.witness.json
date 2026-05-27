@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T23:39:16.867269+00:00",
-  "commitSha": "82cba62a973bdfdd48b6812205c2655476885256",
+  "computedAt": "2026-05-27T15:25:29.856782+00:00",
+  "commitSha": "e656e6060b79ef8b678658bb728248ce796c08e5",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
-  "scriptHash": "35911be2b3ba",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c412c68b94f4",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -165,11 +165,11 @@
         "B_pred_exploratory_MeV": null,
         "err_MeV": null,
         "err_rel": null,
-        "wiring_status": "unwired",
+        "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "no rule in ATOM_ASSIGN",
-        "needs_for_canonical": "atom→knot rule authoring"
+        "suspect_component": "2α+n Borromean halo — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "11B",
@@ -180,11 +180,11 @@
         "B_pred_exploratory_MeV": null,
         "err_MeV": null,
         "err_rel": null,
-        "wiring_status": "unwired",
+        "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "no rule in ATOM_ASSIGN",
-        "needs_for_canonical": "atom→knot rule authoring"
+        "suspect_component": "2α+3p p-shell — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "12C",
@@ -210,11 +210,11 @@
         "B_pred_exploratory_MeV": null,
         "err_MeV": null,
         "err_rel": null,
-        "wiring_status": "unwired",
+        "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "no rule in ATOM_ASSIGN",
-        "needs_for_canonical": "atom→knot rule authoring"
+        "suspect_component": "3α+2p N=Z mirror — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "16O",
@@ -240,11 +240,11 @@
         "B_pred_exploratory_MeV": null,
         "err_MeV": null,
         "err_rel": null,
-        "wiring_status": "unwired",
+        "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "no rule in ATOM_ASSIGN",
-        "needs_for_canonical": "atom→knot rule authoring"
+        "suspect_component": "4α+3p sd-shell onset — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "20Ne",
@@ -295,9 +295,8 @@
     "status_summary": {
       "exploratory": 3,
       "extrapolated": 1,
-      "gap": 3,
-      "alpha-cluster": 6,
-      "unwired": 4
+      "gap": 7,
+      "alpha-cluster": 6
     },
     "klr_violations_count": 8,
     "fully_canonically_wired_atoms": []
