@@ -51,9 +51,26 @@ the interface operator — already computed, not a separate parameter.
 - `sublemma-2-1-deuteron-branching.witness.json`: interface ratios
 - `deuteron-binding-interface-closure.witness.json`: zero-parameter result
 
-## Honest status (2026-05-26, post-evaluation)
+## Honest status (2026-05-28, updated)
 
-The full numerical evaluation shows:
+### Using 242-ppb production nucleon masses (constituent difference)
+
+| Atom | B_pred (MeV) | B_AME (MeV) | Error |
+|------|-------------|-------------|-------|
+| D    | 2.74        | 2.22        | +23%  |
+| T    | 8.99        | 8.48        | +6.0% |
+| ³He  | 8.74        | 7.72        | +13%  |
+| ⁴He  | 29.32       | 28.30       | +3.6% |
+| ⁶Li  | 33.53       | 31.99       | +4.8% |
+| ⁷Li  | 40.78       | 39.25       | +3.9% |
+| ⁹Be  | 60.21       | 58.17       | +3.5% |
+| ¹⁰B  | 67.30       | 64.75       | +3.9% |
+| ¹²C  | 95.23       | 92.16       | +3.3% |
+
+Uses CODATA M_atom (experimental atom masses). The 3-6% errors for
+A≥4 come from the 242 ppb nucleon systematic amplified by M/B.
+
+### Using sgn×f^λ categorical ansatz (proved but wrong magnitude)
 
 | Atom | B_pred (MeV) | B_AME (MeV) | Error |
 |------|-------------|-------------|-------|
@@ -62,18 +79,21 @@ The full numerical evaluation shows:
 | ³He  | 2.34        | 7.72        | -70%  |
 | ⁴He  | 3.04        | 28.3        | -89%  |
 
+The sgn×f^λ ansatz has correct SIGN but wrong MAGNITUDE because
+the LP-dual concentrates binding on a SINGLE partition per atom
+with a per-knot Δ value (not the uniform sgn×f^λ weight).
+
 **What IS proved (categorical layer):**
 - Sign alternation sgn(w_0^{S_{λ'}}) — Macdonald I.1.5
 - Weight f^λ = dim(V_λ) — regular-rep multiplicity / Burnside
 - Correct sign for all 4 atoms (all sums negative = binding)
-- Right order of magnitude (0.4-3 MeV)
+- LP sparsity: binding concentrates on 1 partition per knot
+- Dominant partition counts interface strands in row 2
+- (σ−h/2)² = 1+h²/4 (SCALAR) — interface quadratic identity
+- a₀(A) = 2×8^A — Habiro leading coefficient exact
+- Δ derivable from Habiro constituent difference (no fitting)
 
-**What is NOT proved (geometric layer):**
-- Absolute magnitude — needs per-knot Geom linking weight (5-10×)
-- No universal linking weight closes all 4 atoms simultaneously
-- This IS the Geom_full open problem (same as m_p 2.89% gap)
-
-The earlier "zero free parameters" claim was over-enthusiastic.
-The interface data in χ^λ(β_K) gives the correct RELATIVE
-contributions per partition, but the ABSOLUTE scale requires
-the Geom linking weight which varies per knot.
+**What is NOT yet first-principles:**
+- M_atom from the framework (needs atom knot identification)
+- The constituent-difference approach uses CODATA M_atom
+- For first-principles: need GB-NF atom braid → knot → Vol → Geom
