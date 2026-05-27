@@ -7,7 +7,7 @@ export default remark({
   interprets: "prop:em-coupling-projection",
   uses: [
     "prop:em-coupling-projection",
-    "conj:em-coupling-chern-simons",
+    "rem:em-coupling-chern-simons",
     "prop:em-coupling-bring-zero-mode",
     "prop:archimedean-functor-uniqueness",
     "rem:figure-8-archimedean-illustration",

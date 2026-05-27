@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:complex-chirality-rotation",
+export default remark({
+  label: "rem:complex-chirality-rotation",
   title: "Chirality as continuous phase rotation in the pre-observable sector",
   lean: {
     ref: "qou:QOU.ComplexChiralityRotation.ComplexChiralityRotation",

@@ -30,7 +30,7 @@ showed this claim is **not yet supported**: only the integer $45$ has a
 full structural derivation; the factors $[3]_q$, $\hbar_q^4 [5]_q$, and
 $8q$ are unproved or post-hoc identifications, and the formula
 disagrees with the alternative Chern-Simons form
-([conj:em-coupling-chern-simons](#conj\:em-coupling-chern-simons))
+([rem:em-coupling-chern-simons](#conj\:em-coupling-chern-simons))
 at every $q \ne q_0$. The form is presently a single-point empirical
 match, not a derivation. Each factor was originally claimed to be
 forced by:

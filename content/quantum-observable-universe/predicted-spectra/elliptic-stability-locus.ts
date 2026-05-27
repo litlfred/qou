@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:elliptic-stability-locus",
+export default remark({
+  label: "rem:elliptic-stability-locus",
   title:
     "The nuclear degeneracy locus is an elliptic curve over the Bring's surface",
   lean: {

@@ -34,7 +34,7 @@ in the color variable $X$ at spacetime ratio $z$.  The
 stability cubic (S) and the color cubic (C) are both cubics
 in one variable parametrised by another, arising from the
 same $\chi = -6$ surface.  The
-[elliptic stability conjecture](#conj:elliptic-stability-locus)
+[elliptic stability conjecture](#rem:elliptic-stability-locus)
 proposes that when the pairing energy lifts (S) to genus $1$,
 the resulting elliptic curve is isogenous to the color fiber.
 
@@ -66,7 +66,7 @@ by the single parameter $q$.
 
 When the pairing correction lifts $\mathcal{S}$ from genus $0$
 to genus $1$
-([elliptic stability conjecture](#conj:elliptic-stability-locus)),
+([elliptic stability conjecture](#rem:elliptic-stability-locus)),
 the stability pairs become **rational points** of an elliptic curve
 $\mathcal{E}_p$ over $\mathbb{Q}(q)$, and Mordell's theorem constrains
 them to a finite set — potentially explaining why only finitely

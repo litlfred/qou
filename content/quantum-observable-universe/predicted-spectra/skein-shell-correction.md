@@ -126,4 +126,4 @@ sense to be made precise.
 4. **Genus lift**: show that including
    $\delta E_{\mathrm{shell}}$ lifts the stability cubic from
    genus $0$ to genus $1$, connecting to the
-   [elliptic stability conjecture](#conj:elliptic-stability-locus).
+   [elliptic stability conjecture](#rem:elliptic-stability-locus).

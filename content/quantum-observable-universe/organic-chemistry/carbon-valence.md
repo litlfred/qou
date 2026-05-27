@@ -9,7 +9,7 @@ $$
 $$
 
 The second shell has capacity $2 \cdot 2^2 = 8$
-([electron shells](#conj:electron-shells-hopf)), so the residual
+([electron shells](#rem:electron-shells-hopf)), so the residual
 sub-link $R$ occupies exactly half the available linking sites:
 $|R| / 2n^2 = 4/8 = 1/2$.
 

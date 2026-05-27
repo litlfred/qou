@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:periodic-table-demand",
+export default remark({
+  label: "rem:periodic-table-demand",
   title:
     "The valley of stability is the demand-minimizing locus in $(Z, N)$-space",
   lean: {

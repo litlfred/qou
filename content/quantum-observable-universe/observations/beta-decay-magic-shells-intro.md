@@ -11,7 +11,7 @@ relate single decays to the broader categorical structure; the
 diagrammatic double-magic LR-fusion identifies why doubly-magic
 nuclei (Ca-40, Pb-208) show distinctive decay-channel exclusions;
 the magic-numbers-from-$q$ derivation reconnects the categorical
-magic-number conjecture (`conj:periodic-table-demand`) to direct
+magic-number conjecture (`rem:periodic-table-demand`) to direct
 β-decay evidence. The sub-section closes with the Strutinsky-from-
 graded-trace bridge, which prepares the large-scale-observations
 sub-section that follows.

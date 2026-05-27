@@ -2,7 +2,7 @@ The six nuclei in the verification table
 ([verification](#ex:hadron-half-life-verification)) span three
 transition classes with matrix elements differing by six orders of
 magnitude. The shell correction conjecture
-([Skein shell correction](#conj:skein-shell-correction)) explains
+([Skein shell correction](#rem:skein-shell-correction)) explains
 *why*: the Skein polynomial factorization of the parent and daughter
 links determines whether the transition is fast (mirror/superallowed),
 slow (shell-blocked), or generic (allowed Gamow--Teller). We work
@@ -90,7 +90,7 @@ $$
 
 The 8 neutrons include a **closed sub-link**: the $n = 8$ shell
 closure. By the $\alpha$-cluster hypothesis
-([shell correction](#conj:skein-shell-correction)), the neutron
+([shell correction](#rem:skein-shell-correction)), the neutron
 configuration admits the factorization
 
 $$
@@ -179,5 +179,5 @@ The shell correction is not an external fix — it is the **discrete
 structure of the Skein polynomial** already present in the
 framework. Computing $\delta E_{\mathrm{shell}}$ quantitatively
 requires the Skein factorization (item 1 in the
-[open problems](#conj:skein-shell-correction)) and the shell energy
+[open problems](#rem:skein-shell-correction)) and the shell energy
 scale $\lambda_{\mathrm{shell}}$ (item 2).
