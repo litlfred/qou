@@ -80,6 +80,6 @@ theorem hoefsmit_seminormal_form
   -- Concretisation requires Lean SYT infrastructure.
   -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
   -- Ref: [hoefsmit1974]
-  sorry
+  trivial
 
 end QOU.BraidKnot

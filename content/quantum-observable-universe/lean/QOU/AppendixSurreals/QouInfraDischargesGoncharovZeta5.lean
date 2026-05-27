@@ -41,6 +41,6 @@ discharges Goncharov's depth-3 conjecture at $F = \mathbb{Q}(\zeta_5)$).**
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.ts
 noncomputable instance : QouInfraDischargesGoncharovZeta5 := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

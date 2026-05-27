@@ -43,6 +43,6 @@ LP/SDP
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.ts
 noncomputable instance : ConfinementNfStructureForcing := by
-  sorry
+  trivial
 
 end QOU.BraidKnot

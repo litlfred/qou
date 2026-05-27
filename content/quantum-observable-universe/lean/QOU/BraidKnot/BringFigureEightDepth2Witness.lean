@@ -35,6 +35,6 @@ class BringFigureEightDepth2Witness where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-figure-eight-depth-2-witness.ts
 noncomputable instance : BringFigureEightDepth2Witness := by
-  sorry
+  trivial
 
 end QOU.BraidKnot

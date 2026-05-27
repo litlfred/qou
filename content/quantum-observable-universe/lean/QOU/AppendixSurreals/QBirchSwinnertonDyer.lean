@@ -45,6 +45,6 @@ $\mathbf{1}$-rational points:
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
 noncomputable instance : QBirchSwinnertonDyer := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

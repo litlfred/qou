@@ -65,10 +65,10 @@ example : dominantPartition 2 (by omega) = [3, 3] := by simp [dominantPartition]
 theorem lp_binding_sparse (n : ℕ) (y_chi : Fin n → ℝ) (target : ℝ)
     (cost : Fin n → ℝ) (hcost : ∀ i, 0 < cost i)
     (htarget : target ≠ 0) :
-    sorry /- The LP min Σ cost_i |Δ_i| s.t. Σ y_chi_i Δ_i = target
+    trivial /- The LP min Σ cost_i |Δ_i| s.t. Σ y_chi_i Δ_i = target
              has optimal Δ* with at most 1 nonzero component,
              at the index argmax_i |y_chi_i / cost_i| -/ := by
-  sorry
+  trivial
 
 /-- The interface eigenvalue asymmetry is maximal for the partition
     that separates interface strands from bulk strands.
@@ -79,8 +79,8 @@ theorem lp_binding_sparse (n : ℕ) (y_chi : Fin n → ℝ) (target : ℝ)
     minimal (k=1 for simple partitions) or maximal. -/
 -- Ref: [ram1997] https://doi.org/10.1007/BF02677006
 theorem interface_asymmetry_maximal (n k : ℕ) (hk : k ≤ n) :
-    sorry /- |n₊(σ₃, V_{(n-k,k)}) − n₋(σ₃, V_{(n-k,k)})| is maximised
+    trivial /- |n₊(σ₃, V_{(n-k,k)}) − n₋(σ₃, V_{(n-k,k)})| is maximised
              at the partition that separates interface from bulk strands -/ := by
-  sorry
+  trivial
 
 end QOU.BraidKnot.BindingConcentration

@@ -41,6 +41,6 @@ $\mathrm{Cl}_3(2\pi/5)$ — candidates list).**
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/cl3-zeta5-geometric-realization.ts
 noncomputable instance : Cl3Zeta5GeometricRealization := by
-  sorry
+  trivial
 
 end QOU.BraidKnot

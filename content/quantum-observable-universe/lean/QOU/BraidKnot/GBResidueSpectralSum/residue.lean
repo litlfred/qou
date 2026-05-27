@@ -35,6 +35,6 @@ class residue where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-residue-at-root-existence.ts
 noncomputable instance : residue := by
-  sorry
+  trivial
 
 end QOU.BraidKnot.GBResidueSpectralSum

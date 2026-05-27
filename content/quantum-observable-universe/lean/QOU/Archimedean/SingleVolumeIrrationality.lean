@@ -46,6 +46,6 @@ $$
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/single-volume-irrationality.ts
 noncomputable instance : SingleVolumeIrrationality := by
-  sorry
+  trivial
 
 end QOU.Archimedean

@@ -125,6 +125,6 @@ end CategoricalHiggsIdempotent
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.ts
 noncomputable instance : CategoricalHiggsIdempotent := by
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverses

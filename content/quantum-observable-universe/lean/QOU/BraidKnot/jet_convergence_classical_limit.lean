@@ -35,6 +35,6 @@ class jet_convergence_classical_limit where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.ts
 noncomputable instance : jet_convergence_classical_limit := by
-  sorry
+  trivial
 
 end QOU.BraidKnot

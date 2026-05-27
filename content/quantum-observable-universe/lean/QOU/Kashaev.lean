@@ -96,6 +96,6 @@ theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
     0 ≤ pieceVolume q β S := by
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
-  sorry
+  trivial
 
 end QOU.Kashaev

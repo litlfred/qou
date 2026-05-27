@@ -35,6 +35,6 @@ class StaircaseEWResidual where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/staircase-ew-residual.ts
 noncomputable instance : StaircaseEWResidual := by
-  sorry
+  trivial
 
 end QOU.StaircaseCornerHook

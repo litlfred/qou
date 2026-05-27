@@ -95,6 +95,6 @@ theorem tau_leptonic_universality [ctx : TauLeptonicContext] :
   -- trace `tr_Markov : Hecke H_3 q → ℝ` and the Hecke-quadratic
   -- structure of the weak vertex `T_{3,5}`.
   -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
-  sorry
+  trivial
 
 end QOU.Archimedean

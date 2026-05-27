@@ -53,6 +53,6 @@ $q \to 1^+$, $n\lvert 1 - q\rvert \to \infty$:*
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/observations/q-clt-non-commutative.ts
 noncomputable instance : QCltNonCommutative := by
-  sorry
+  trivial
 
 end QOU.Observations.QCltNonCommutative

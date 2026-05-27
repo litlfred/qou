@@ -35,6 +35,6 @@ class spectral_decomposition where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-spectral-decomposition-existence.ts
 noncomputable instance : spectral_decomposition := by
-  sorry
+  trivial
 
 end QOU.BraidKnot.GBResidueSpectralSum

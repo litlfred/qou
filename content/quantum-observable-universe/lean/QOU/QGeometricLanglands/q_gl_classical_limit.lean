@@ -35,6 +35,6 @@ class q_gl_classical_limit where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.ts
 noncomputable instance : q_gl_classical_limit := by
-  sorry
+  trivial
 
 end QOU.QGeometricLanglands

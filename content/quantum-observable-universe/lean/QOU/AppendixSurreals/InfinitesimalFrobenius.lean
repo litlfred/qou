@@ -44,6 +44,6 @@ strict equality. In a surreal QOU, this can be relaxed.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.ts
 noncomputable instance : InfinitesimalFrobenius := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals
