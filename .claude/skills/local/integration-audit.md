@@ -118,7 +118,7 @@ to invalidate.
 | Option | Trade-off |
 |--------|-----------|
 | `one-voice` | Most common — re-audit voice + fit + framework + wall (11 criteria). Risk: low; sweep takes ~2s for 1920 blocks. |
-| `proof` | Re-audit the 5 proof criteria. Risk: medium — `proof-build-green` requires Lean toolchain; falls back to last cached `proof-objects.json`. |
+| `proof` | Re-audit the 6 proof criteria. Risk: medium — `proof-build-green` requires Lean toolchain; `proof-lean-compiles` uses lean-lsp MCP diagnostics cache; falls back to last cached artefacts. |
 | `canonical` | Re-audit canonical-derivation-discipline (3 criteria). Risk: low. |
 | `compute` | Re-audit 4 compute-wiring criteria. Risk: low — runs `compute_audit_scan.py` etc. |
 | `detangler` | Re-audit 4 structural criteria. Risk: low. |

@@ -1164,6 +1164,70 @@ export function checkProofBuildGreen(
   return { result: "n/a", hits: [] };
 }
 
+// `proof-lean-compiles` reads a cached diagnostics JSON produced by
+// the lean-lsp MCP server (`lean_diagnostic_messages`). The cache is
+// at `docs/audits/lean-compile-diagnostics.json`, populated by agent
+// invocation of the lean-lsp tools or by `lean-compile-audit.ts`.
+// Shape: { files: { "<repo-relative-path>": { errors: [...] } } }
+
+const LEAN_COMPILE_DIAGNOSTICS = join(
+  REPO_ROOT,
+  "docs/audits/lean-compile-diagnostics.json",
+);
+
+interface LeanDiagnostic {
+  line: number;
+  severity: string;
+  message: string;
+}
+
+interface LeanCompileDiagnostics {
+  files: Record<string, { errors: LeanDiagnostic[] }>;
+  generated_at?: string;
+}
+
+let leanCompileCache: LeanCompileDiagnostics | null = null;
+function loadLeanCompileDiagnostics(): LeanCompileDiagnostics | null {
+  if (leanCompileCache !== null) return leanCompileCache;
+  if (!existsSync(LEAN_COMPILE_DIAGNOSTICS)) {
+    leanCompileCache = { files: {} };
+    return leanCompileCache;
+  }
+  try {
+    leanCompileCache = JSON.parse(
+      readFileSync(LEAN_COMPILE_DIAGNOSTICS, "utf-8"),
+    );
+  } catch {
+    leanCompileCache = { files: {} };
+  }
+  return leanCompileCache;
+}
+
+export function checkProofLeanCompiles(
+  leanPath: string | undefined,
+): CheckerResult {
+  if (!leanPath) return { result: "n/a", hits: [] };
+  const diag = loadLeanCompileDiagnostics();
+  if (!diag || Object.keys(diag.files).length === 0) {
+    return { result: "n/a", hits: [] };
+  }
+  const relPath = relative(REPO_ROOT, resolve(leanPath));
+  const entry = diag.files[relPath];
+  if (!entry) {
+    return { result: "n/a", hits: [] };
+  }
+  const errors = entry.errors.filter((e) => e.severity === "error");
+  if (errors.length === 0) return { result: "pass", hits: [] };
+  return {
+    result: "fail",
+    hits: errors.slice(0, 10).map((e) => ({
+      file: leanPath,
+      line: e.line,
+      text: e.message.slice(0, 200),
+    })),
+  };
+}
+
 // ─── Cached-witness-driven proof criteria ──────────────────────
 //
 // These three checkers read the JSON artefacts produced by the
@@ -1569,6 +1633,7 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "proof-no-trivial-skeleton": (p) => checkProofNoTrivialSkeleton(p.lean),
   "proof-conditional-class-banner": (p) =>
     checkProofConditionalClassBanner(p.md, p.lean),
+  "proof-lean-compiles": (p) => checkProofLeanCompiles(p.lean),
   // voice
   "voice-title-scholarly": (p) => checkVoiceTitleScholarly(p.ts),
   "voice-statement-no-interpretation": (p) =>

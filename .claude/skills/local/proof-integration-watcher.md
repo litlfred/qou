@@ -94,6 +94,7 @@ batch.
 | `proof-no-bare-sorries` | script | `proof-status-tracking` + `proof-gap-audit` | Add `-- Ref: [key] <url>` per CLAUDE.md §1 |
 | `proof-no-axiom-growth` | script | `lean-witness-audit` | Investigate new axiom dep; usually demands a proof refactor or an `axiom` declaration with `-- Ref:` |
 | `proof-build-green` | script | `lean-build-fix` | Walk failure log → patch `.lean` → re-build |
+| `proof-lean-compiles` | script | `lean-build-fix` | Invoke `mcp__lean-lsp__lean_diagnostic_messages` on the `.lean` file; read compiler errors; patch → re-check |
 | `proof-narrative-lean-equiv` | agent | `proof-narrative-lean-equivalence` | Adjudicate the four drift classes A/B/C/D |
 | `proof-substantive` | script | `lean-substantive-pass` | Bulk-split typed sub-claims; replace `holds:Prop` with hypothesis |
 
@@ -108,6 +109,29 @@ Watcher invocation pattern:
    author-ask if band 4+)
 5. Re-run qa-sweep --only <criterion> after the fix to confirm pass
 ```
+
+#### `proof-lean-compiles` — lean-lsp-driven compilation audit
+
+This criterion uses the lean-lsp MCP server to get real compiler
+diagnostics per `.lean` file, rather than relying solely on CI
+artefacts (`proof-build-green`). The workflow:
+
+1. **Populate the diagnostics cache.** Either:
+   - Agent calls `mcp__lean-lsp__lean_diagnostic_messages(file_path)`
+     per `.lean` file and writes results to
+     `docs/audits/lean-compile-diagnostics.json`, OR
+   - Run `bun run pipeline/lean-compile-audit.ts --list` to enumerate
+     `.lean` files, then feed diagnostics via `--ingest`.
+2. **qa-sweep reads the cache.** The `checkProofLeanCompiles` checker
+   reads the cached diagnostics JSON; returns `n/a` when no cache
+   exists, `pass` when no errors, `fail` with up to 10 error hits.
+3. **On fail → `lean-build-fix`.** The watcher dispatches
+   `lean-build-fix` with the specific error messages from the
+   diagnostics. The lean-lsp tools (`lean_goal`, `lean_multi_attempt`,
+   `lean_code_actions`) are used to interactively fix the errors.
+4. **Re-check.** After fixing, re-invoke
+   `lean_diagnostic_messages(file_path)` to confirm zero errors,
+   then update the diagnostics cache.
 
 ### When the registry is updated
 
@@ -132,6 +156,7 @@ stale + the sweep will populate fresh entries.
 | `drift-class-C` | major | Hypothesis count/strength mismatch between Lean and narrative |
 | `missing-narrative` | major | `.lean` exists but `.md` sibling absent |
 | `narrative-stub` | major | `.lean` exists but `.md` is < 5 body lines + no math |
+| `lean-compile-error` | critical | `.lean` file has compiler errors (via `lean_diagnostic_messages` from lean-lsp MCP) |
 | `drift-class-D` | minor | Notation drift (paper uses `$\varrho$`, Lean uses `gamma`, etc.) |
 | `cite-position-hygiene` | minor | `-- Ref:` is in the enclosing decl body but not in the 6-line window above the sorry |
 | `holds-prop-placeholder` | minor | Lean class has a `holds : Prop` (or `claim : Prop`) field with no type-level structure capturing the manuscript claim; .md sibling has numbered sub-claims OR an explicit boxed identity that could be typed |
@@ -142,7 +167,7 @@ stale + the sweep will populate fresh entries.
 
 | Band | Examples |
 |------|----------|
-| **Auto-discharge** | `uncited-sorry` with goal matching positivity / ring / linarith / aesop / norm_num — try `lean_multi_attempt` with the canonical tactic set; `cite-position-hygiene` — move/add the `-- Ref:` line |
+| **Auto-discharge** | `uncited-sorry` with goal matching positivity / ring / linarith / aesop / norm_num — try `lean_multi_attempt` with the canonical tactic set; `cite-position-hygiene` — move/add the `-- Ref:` line; `lean-compile-error` with simple import/namespace issues — fix import, re-check via `lean_diagnostic_messages` |
 | **Auto-discharge (script)** | `holds-prop-placeholder` + .md has numbered sub-claims — run `.work/bulk-split-holds.py` on the file. `claim-i-generic-docstring` — run `.work/enrich-subclaim-docstrings.py`. `mechanical-rename-without-md-check` — run the bulk-split script (it handles the split case correctly) |
 | **Auto-discharge (special)** | **Naked conjecture with fully-defined `uses[]` cone** — attempt discharge via `local/formalizer` + `local/lean-generation` before defaulting to author-assist. This is the *"if a conjecture is a placeholder for something to be proved, try"* clause of this watcher's mission. **`holds-prop-placeholder` with explicit boxed identity in .md** — invoke `local/lean-substantive-pass` to hand-craft typed sub-claims per the recognised manuscript patterns (boxed identity / piecewise / equivalence relation / table of moves / existence + uniqueness). |
 | **Author-assist** | Class A stub-weakening, hidden axiom, naked conjecture without conditional-class scaffolding, broken inter-proof chain, conjectural-propagation violation |
