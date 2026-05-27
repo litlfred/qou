@@ -1,70 +1,29 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 10 — Mass.
+ * Mass Analysis.
  *
- * The mass endomorphism is the paper's structural spine: it is the
- * single categorical object whose algebraic, geometric, archimedean,
- * and physical faces are developed across Part II.  This chapter
- * opens with the mass endomorphism conjecture and its foundational
- * definitions, then decomposes it along the Cat→Alg→Geom→Arch→Phys
- * arc.
+ * The detailed geometric, archimedean, and physical faces of the
+ * mass endomorphism. Consumes the algebraic core (stated in "The
+ * Mass Endomorphism" chapter, before Particles) and applies it to
+ * specific knots, isotopes, and observables.
  *
- * §1 "The mass endomorphism" — opener: conj:mass-endomorphism,
- *     def:mass-identity, thm:topological-mass + full proof tree.
- *     Three-calibration discipline (categorical constraint).
- * §2+ Algebraic face: Wedderburn, Frobenius pairing, tr_M,
- *     partition weights, transfer matrices, Markov-trace properties.
- * Later sections: geometric face (brane tower, volumes),
- *     archimedean face (substrate→MeV), physical face (predictions,
- *     compute), open problems (Δ_λ, crystal-basis).
- *
- * Mass blocks consolidated from lifting-and-descent (19 blocks,
- * 2026-05-27) and particle-interactions (31 blocks, pending).
- * Will merge with Mass — Application (Ch 11) in Phase 3.
+ * Sections:
+ *   - Algebraic: transfer matrices, mass-formula derivation,
+ *     Hoefsmit construction, GS axiomatic backing
+ *   - Geometric: vertex factorisation, Kashiwara-Jones, quantum
+ *     dilogarithm, archimedean realization, Kashaev volume,
+ *     mass-volume factorisation, crossing expansion
+ *   - Archimedean: substrate binding, LP-dual, spectral sequence,
+ *     Plancherel, α_k derivation, Wenzl bridge
+ *   - Physical: parity classification, six-term formula,
+ *     mass predictions, binding energy
+ *   - Open problems: crystal basis, mass-tower directions
  */
 export default chapter({
-  title: "Mass",
+  title: "Mass Analysis",
   label: "chap:mass-theory",
   sections: [
-
-    // ═══ CATEGORICAL OPENER ══════════════════════════════════════
-    // ── §1 The Mass Endomorphism (OPENER) ──────────────────────────
-    // Foundational definitions + topological decomposition.
-    // Moved from lifting-and-descent 2026-05-27.
-    section({
-      title: "The Mass Endomorphism",
-      label: "sec:mass-endomorphism-opener",
-      blocks: [
-        "mass-endomorphism-conjecture",
-        "mass-identity",
-        "mass-identity-exists",
-        "mass-identity-exists-proof",
-        "mass-identity-unique",
-        "mass-identity-unique-proof",
-        "mass-identity-su2",
-        "mass-noncommutative-drag",
-        "mass-identity-C",
-        "mass-identity-C-proof",
-        "mass-geometric-drag",
-        "topological-mass",
-        "topological-mass-conjecture",
-        "topological-mass-eigenspace-decomp",
-        "topological-mass-eigenspace-decomp-proof",
-        "topological-mass-holonomy",
-        "topological-mass-holonomy-proof",
-        "topological-mass-transient-localisation",
-        "topological-mass-transient-localisation-proof",
-        "topological-mass-dilogarithm",
-        "topological-mass-dilogarithm-proof",
-        "topological-mass-proof",
-        "topological-mass-su2",
-        "gb-spectral-sequence",
-        "gb-spectral-sequence-table-data",
-        "homological-shell-condensation",
-        "qou-motivic-galois-instance",
-      ],
-    }),
 
 
     // ═══ ALGEBRAIC FACE ═════════════════════════════════════════
@@ -89,51 +48,6 @@ export default chapter({
         "skein-decomposition",
         "topological-field-ansatz",
         "topological-field-ansatz-table-data",
-      ],
-    }),
-
-    section({
-      title: "Categorical mass foundations: eigenspace decompositions",
-      label: "sec:categorical-mass-eigenspaces",
-      blocks: [
-        "categorical-mass-foundations-intro",
-        "topological-mass-cat-eigenspace",
-        "topological-mass-cat-eigenspace-proof",
-        "topological-mass-cat-descended",
-        "topological-mass-cat-descended-proof",
-        "topological-mass-cat-transient",
-        "topological-mass-cat-transient-proof",
-        "topological-mass-categorical-proof",
-        "categorical-mass-markov",
-        "atomic-mass-gb-nf",
-        "rho-k-graded-expansion",
-        "rho-k-graded-expansion-table2-data",
-        "rho-k-graded-expansion-table1-data",
-        "conj-rho-k-pair-gen-canonical-form",
-        "operator-valued-magnitude-budget",
-        "q-hecke-seminormal-character-closure",
-      ],
-    }),
-
-    section({
-      title: "Categorical mass foundations: Markov trace and endomorphism",
-      label: "sec:categorical-mass-markov-trace-endomorphism",
-      blocks: [
-        "categorical-mass-markov-trace-endomorphism-intro",
-        "recomputed-low-isotope-mass-table",
-        "recomputed-low-isotope-mass-table-table4-data",
-        "recomputed-low-isotope-mass-table-table3-data",
-        "recomputed-low-isotope-mass-table-table2-data",
-        "recomputed-low-isotope-mass-table-table1-data",
-        "markov-trace-antipode-polynomial-symmetry",
-        "markov-trace-axiomatic-closed-form",
-        "markov-trace-axiomatic-closed-form-table1-data",
-        "markov-trace-axiomatic-closed-form-table2-data",
-        "markov-trace-recursive-reducer",
-        "markov-z-reconciliation",
-        // mass-endomorphism-conjecture promoted to §1 opener (2026-05-27)
-        "categorical-neutrality-saturated-shells",
-        "phi-n-global-section",
       ],
     }),
 
@@ -172,54 +86,6 @@ export default chapter({
         "figure-eight-branching-rule",
         "figure-eight-branching-rule-table2-data",
         "figure-eight-branching-rule-table1-data",
-      ],
-    }),
-
-    section({
-      title: "Hecke $u$-coordinate and $\\chi$-character closed-forms",
-      label: "sec:hecke-chi-closed-forms",
-      blocks: [
-        "intro-hecke-chi-closed-forms",
-        "u-coordinate-discharges",
-        "u-coordinate-discharges-table-data",
-        "multi-link-jones-q1-extension",
-        "per-wedderburn-block-c5-c6",
-        "hecke-algebra-type-scaffold",
-        "markov-trace-operator-construction",
-        "chi-v3-closed-form-proof",
-      ],
-    }),
-
-    section({
-      title: "Hecke $\\chi$-character closed-forms (generation)",
-      label: "sec:hecke-chi-closed-forms-chi-per-irrep",
-      blocks: [
-        "hecke-chi-closed-forms-chi-per-irrep-intro",
-        "chi-v3-closed-form-proof-table-data",
-        "chi-per-irrep-cyclotomic-closed-forms",
-        "chi-per-irrep-cyclotomic-closed-forms-table2-data",
-        "chi-per-irrep-cyclotomic-closed-forms-table1-data",
-        "per-block-hopf-jones-absorption-pattern",
-        "conj-qbeta-c-k-closed-forms",
-        "chi-v111-via-sign-substitution",
-        "chi-v21-hoefsmit-matrix-derivation",
-        "phi-d-syt-count-conjecture",
-        "categorical-chain-convergence-mechanisms",
-        "categorical-chain-convergence-mechanisms-table-data",
-        "tau-M-asymptotic-rep-theory",
-      ],
-    }),
-
-    section({
-      title: "Hecke-Baer-star foundation and chirality pairing",
-      label: "sec:hecke-baer-star-chirality",
-      blocks: [
-        "intro-hecke-baer-star-chirality",
-        "hecke-baer-star-generic",
-        "explicit-central-idempotent",
-        "chirality-period-pairing",
-        "bring-embeddable-knots",
-        "bring-embeddable-knots-table-data",
       ],
     }),
 
