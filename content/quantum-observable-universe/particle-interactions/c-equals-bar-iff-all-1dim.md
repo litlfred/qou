@@ -46,7 +46,29 @@ $\chi^{(2,1)}(\pi^+, q_0^{-1}) = -(h^2+1) \approx -1.044$ (bar).
 Since $+1.892 \ne -1.044$, $C \ne \mathrm{bar}$ on $(2,1)$.
 $\square$
 
-## Structural significance
+## Why $H_2$ is unique
+
+The Artin–Wedderburn decomposition forces
+$n! = \sum_\lambda (\dim V_\lambda)^2$.  For $n = 2$:
+$2 = 1^2 + 1^2$ is the ONLY decomposition of $2$ as a sum of
+positive-integer squares.  There is no room for a multi-dimensional
+irrep.
+
+For $n \ge 3$: $n! \ge 6 > 1^2 + 1^2 = 2$, so multi-dimensional
+irreps are **forced**.  The standard representation $(n-1, 1)$ has
+dimension $n - 1 \ge 2$, and Artin–Wedderburn requires its square
+$(n-1)^2$ in the sum.  No rearrangement avoids it.
+
+The 1-dimensional irreps are **always exactly 2** for $n \ge 2$
+(trivial and sign), because $S_n$ has exactly 2 homomorphisms
+to $\mathbb{Z}/2\mathbb{Z}$.  The hook-length formula gives
+$\dim V_\lambda = 1$ only for $\lambda = (n)$ or $\lambda = (1^n)$.
+
+**Corollary.** $H_2$ is the **unique** Hecke level where $C = \mathrm{bar}$.
+The lepton sector is algebraically distinguished: it occupies the one
+level where matter–antimatter conjugation coincides with CPT.
+Everything above ($H_3, H_4, \ldots$) has $C \ne \mathrm{bar}$,
+forced by the Artin–Wedderburn theorem.
 
 | $H_n$ | Irrep dimensions | $C$ vs bar | Physical sector |
 |--------|-----------------|------------|-----------------|
