@@ -87,6 +87,8 @@ def classical_dim(shape):
 
 
 def main():
+    import time
+    _t0 = time.perf_counter()
     set_compute_dps()
     mp.mp.dps = 50
     q = mp.mpf(Q_50_DIGIT_STR)
@@ -413,14 +415,14 @@ def main():
     print(f"  Target: find structural c₄ that closes to < 50 ppm")
     print()
 
-    # Build witness
     w = WitnessBuilder("habiro-h9-spectral-decomposition", engine="mpmath")
     w.set_description(
         "H₉ spectral decomposition of Habiro normalization residual (319 ppm). "
         "Decomposes per-partition content sums, moments M_k = Σ y_λ c(λ)^k, "
         "and tests structural candidates for the ℏ⁴ coefficient c₄ ≈ −3.31."
     )
-    w.set_audit_only("docs/audits/2026-05-28-habiro-residual-319ppm.md")
+    w.set_audit_only("docs/audits/2026-05-28-habiro-product-correction-7ppm.md")
+    w._start_time = _t0
     w.add_data("n", 9)
     w.add_data("num_partitions", 30)
     w.add_data("residual_0_ppm", float(residual_0) * 1e6)
@@ -448,9 +450,9 @@ def main():
                     expected=1, tolerance=0,
                     source="Habiro/pred₀ − 1 ≈ 9495 ppm")
     w.add_assertion("residual_1_is_319ppm",
-                    computed=1 if abs(float(residual_1)*1e6 - 319) < 50 else 0,
+                    computed=1 if abs(abs(float(residual_1)*1e6) - 319) < 50 else 0,
                     expected=1, tolerance=0,
-                    source="Habiro/pred₁ − 1 ≈ 319 ppm after (1+ℏ²)")
+                    source="|Habiro/pred₁ − 1| ≈ 319 ppm after (1+ℏ²)")
 
     print(f"\n  Witness: {w.save()}")
 

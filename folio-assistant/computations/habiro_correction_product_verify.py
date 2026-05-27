@@ -42,6 +42,8 @@ def q_factorial(n, q):
 
 
 def main():
+    import time
+    _t0 = time.perf_counter()
     set_compute_dps()
     mp.mp.dps = 50
     q = mp.mpf(Q_50_DIGIT_STR)
@@ -208,7 +210,8 @@ def main():
         f"c₂ = 29/30, c₄ = −1/30. The 1/p(n) factor suggests block-averaging "
         f"between Habiro (cyclotomic) and Wenzl (seminormal) bases."
     )
-    w.set_audit_only("docs/audits/2026-05-28-habiro-residual-319ppm.md")
+    w.set_audit_only("docs/audits/2026-05-28-habiro-product-correction-7ppm.md")
+    w._start_time = _t0
     w.add_data("n", n)
     w.add_data("p_n", p_n)
     w.add_data("correction_formula", "(1 + ℏ²)(1 − ℏ²/p(n))")

@@ -43,6 +43,8 @@ def q_integer(k, q):
 
 
 def main():
+    import time
+    _t0 = time.perf_counter()
     set_compute_dps()
     mp.mp.dps = 50
     q = mp.mpf(Q_50_DIGIT_STR)
@@ -69,118 +71,9 @@ def main():
     print(f"  S = {mp.nstr(S, 25)}")
     print()
 
-    # Extract coefficients in ℏ² (= ((q-1)/q)²) expansion
-    # S = Σ c_k · ℏ^{2k}
-    remainder = S - 1
-    coeffs_hbar = []
-    for k in range(1, 8):
-        ck = remainder / hbar_sq**k
-        coeffs_hbar.append(ck)
-        remainder -= ck * hbar_sq**k
-        # For clean extraction, use: c_k = (S - partial_sum) / ℏ^{2k}
-        # But this compounds errors. Better: polynomial fit.
-
-    # More careful: extract via iterated subtraction at high precision
-    R = S - 1
-    c_coeffs = []
-    for k in range(1, 10):
-        ck = R / hbar_sq
-        c_coeffs.append(float(ck))
-        R = R - ck * hbar_sq
-        R = R  # carry forward
-
-    # Wait — this just gives c₂ at step 1, then mixes higher orders.
-    # Better: true Taylor coefficients.
-    # S(ℏ²) is a function of ε = ℏ². Extract by:
-    #   c₁ = (S-1)/ε
-    #   c₂ = ((S-1) - c₁·ε)/ε²  ... but c₁ already absorbed ε.
-    # Need to be more careful.
-
-    eps = hbar_sq  # small parameter
-    R = S
-    taylor_coeffs = []
-    for k in range(10):
-        ck = R
-        # evaluate R at ε, extract the coefficient
-        # This is just: c_k = R / ε^0 for k=0, then subtract and divide
-        taylor_coeffs.append(float(ck) if k == 0 else None)
-        if k == 0:
-            R = (R - 1)  # subtract c₀ = 1
-        else:
-            break
-
-    # Simpler approach: the series S(ε) where ε = ℏ².
-    # We know S at one point (ε = ℏ²(q₀)).
-    # To get the Taylor coefficients, we need S at multiple q values
-    # (or we accept the single-point extraction is approximate).
-
-    # For now: use the standard iterated-division extraction
-    print("  Correction coefficients c_k in S = Σ c_k · (ℏ²)^k:")
-    print()
-    eps = hbar_sq
-    R = S - 1  # S = 1 + Σ_{k≥1} c_k ε^k
-    for k in range(1, 7):
-        ck = R / eps
-        print(f"    c_{k} = {mp.nstr(ck, 15)}")
-        R = R - ck * eps
-        eps = eps * hbar_sq  # next power: but R is already reduced...
-
-    # That's wrong — the iterated division doesn't work that way.
-    # Let me just do: at each step, the leading term of R is c_k · ℏ^{2k}.
-    print()
-    print("  [Corrected extraction]")
-    print()
-    R = S - 1
-    extracted = {}
-    for k in range(1, 8):
-        ck = R / hbar_sq**k
-        extracted[k] = ck
-        R = R - ck * hbar_sq**k
-        # But this gives c_k + O(ℏ^{2(k+1)-2k}) = c_k + O(1), not clean.
-        # The issue: after subtracting c_k·ℏ^{2k}, the remainder starts
-        # at ℏ^{2(k+1)}, so dividing by ℏ^{2(k+1)} gives c_{k+1} + O(ℏ²).
-        # Actually this is fine if we re-set R:
-        break
-
-    # Proper extraction: peel off one order at a time
-    print("  Peeling off ℏ² orders from S - 1:")
-    print()
-    R = S - 1
-    c_list = []
-    for k in range(1, 8):
-        ck = R / hbar_sq
-        c_list.append(float(ck))
-        R = R - ck * hbar_sq
-        # Now R should be ~ c_{k+1}·ℏ^{2(k+1)} + ...
-        # But wait: R = (c_k·ℏ² + c_{k+1}·ℏ⁴ + ...) - c_k·ℏ²
-        #         = c_{k+1}·ℏ⁴ + ... (but c_k here absorbed ALL of R/ℏ²)
-        # The extraction gives c_k = (Σ_{j≥k} c_j ℏ^{2(j-k+1)}) / ℏ²
-        # which is c_k + c_{k+1}·ℏ² + c_{k+2}·ℏ⁴ + ...
-        # So c_list[0] = c₂ + c₄·ℏ² + ... ≈ c₂ (good to ~1% since ℏ²≈0.01)
-        # And after subtraction: R = c₄·ℏ⁴ + c₆·ℏ⁶ + ...
-        # Then c_list[1] = R/ℏ² = c₄·ℏ² + c₆·ℏ⁴ + ... NO!
-        # R after step 1 = (S-1) - c_list[0]·ℏ²
-        # where c_list[0] = (S-1)/ℏ² (ALL of (S-1)/ℏ²)
-        # So R = 0 after step 1. That's wrong.
-        pass
-
-    # OK, the correct approach is:
-    # c₂ᵃᵖᵖʳᵒˣ = (S-1)/ε  (contains higher orders)
-    # True c₂ = lim_{ε→0} (S(ε)-1)/ε
-    # At finite ε, c₂ᵃᵖᵖʳᵒˣ = c₂ + c₄·ε + c₆·ε² + ...
-    # We can't cleanly separate them at a single point.
-
-    # Instead: compute S at MULTIPLE q values near q₀
-    # and fit the polynomial.
-
-    # Alternative: compute S from the exact Habiro coefficients.
-    # The Habiro expansion is EXACT (integer coefficients), so
-    # S is an algebraic function of q.
-
-    # Let me just report the observed values clearly.
-    print("  Direct approach: S(ε) at ε = ℏ²(q₀)")
-    print()
-
+    # Single-point approximate extraction: (S-1)/ε gives c₂ + O(ε),
+    # which is approximate (contaminated by higher orders at finite ε).
+    # Product decomposition (below) is the clean approach.
     eps = hbar_sq
     print(f"  ε = ℏ² = {mp.nstr(eps, 15)}")
     print(f"  S = {mp.nstr(S, 20)}")
@@ -542,7 +435,8 @@ def main():
         f"Product form: S ≈ (1+ℏ²)(1 + c_next·ℏ²) with c_next ≈ {float(c_next):.6f}. "
         f"Best algebraic match: c_next ≈ −1/30 (miss {miss_30:.6f})."
     )
-    w.set_audit_only("docs/audits/2026-05-28-habiro-residual-319ppm.md")
+    w.set_audit_only("docs/audits/2026-05-28-habiro-product-correction-7ppm.md")
+    w._start_time = _t0
     w.add_data("S_exact", str(mp.nstr(S, 25)))
     w.add_data("c2_approx", float((S-1)/eps))
     w.add_data("c_next_after_1_plus_hsq", float(c_next))

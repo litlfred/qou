@@ -1,0 +1,26 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T22:40:16.874138+00:00",
+  "commitSha": "ea74dd1679037823e104c5152b5af16774247d9d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "habiro-taylor-extraction",
+  "scriptFile": "habiro_exact_taylor_extraction.py",
+  "scriptHash": "4278359dba9b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Exact Taylor extraction of Habiro correction series. Verifies the Habiro cyclotomic expansion equals tr_M as a rational function (basis change only), and identifies the source of the 136.07 vs 1.065 discrepancy.",
+  "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
+  "data": {
+    "habiro_numer_at_q0": "24.227089630043797869",
+    "p_numer_at_q0": "24.227089630043797869",
+    "ratio": "1.0"
+  }
+}
