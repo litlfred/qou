@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T00:13:11.682941+00:00",
-  "commitSha": "0102c728ca1f81c8ddd5c0afab33b97b27454905",
+  "computedAt": "2026-05-27T02:08:57.006549+00:00",
+  "commitSha": "50b055263fe9d5788cbd2c8c5da09363d3d81eb6",
   "assertions": [
     {
       "name": "c2_is_minus_one",
@@ -32,11 +32,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 53,
   "computation": "qbeta-transfer-eigenvalue-proof",
   "scriptFile": "qbeta_transfer_eigenvalue_proof.py",
-  "scriptHash": "254767cd3a40",
-  "scriptCommitSha": "0102c728ca1f81c8ddd5c0afab33b97b27454905",
+  "scriptHash": "85eaa0df73fe",
+  "scriptCommitSha": "0c3fff1eadf3373660891b1d0836f6d4669e9159",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -53,7 +53,7 @@
     "coefficients": {
       "c2_empirical": "-1.0",
       "c2_exact": "-1",
-      "c2_error_ppm": "-8.41960975149693e-41",
+      "c2_error_ppm": "8.41960975149693e-41",
       "c3_empirical": "-2.0097397609790155",
       "c3_model_J_minus_hbar_sq": "-2.0098171885134786",
       "c3_error_pct": "0.0038526149487923783"
