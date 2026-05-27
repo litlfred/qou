@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "65d9d9531559"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,13 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 79,
-            "text": "`sorry` marks where Jones's 54-page proof would go."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

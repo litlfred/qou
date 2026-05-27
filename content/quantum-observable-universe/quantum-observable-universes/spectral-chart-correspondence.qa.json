@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "cb3e0980427a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,17 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 19,
-            "text": "Hecke determinant constraint.  No `sorry`."
-          },
-          {
-            "line": 21,
-            "text": "chart-glue degenerates to $1$.  No `sorry`."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

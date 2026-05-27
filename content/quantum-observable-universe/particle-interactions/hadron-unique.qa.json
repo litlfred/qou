@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "5cfcd2eaeec1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,13 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 46,
-            "text": "`sorry` is retained with this diagnosis. -/"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

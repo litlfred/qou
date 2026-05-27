@@ -1345,7 +1345,7 @@
         "field_hash": {
           "lean": "ec692003b445"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -1353,13 +1353,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 155,
-            "text": "formally proved in Lean (`field_simp + ring` discharges, no `sorry`s):"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

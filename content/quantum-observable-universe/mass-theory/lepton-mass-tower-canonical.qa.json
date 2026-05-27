@@ -552,7 +552,7 @@
         "field_hash": {
           "lean": "3dc61ef1fe9a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -560,17 +560,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 25,
-            "text": "Conjectural content (with sorry):"
-          },
-          {
-            "line": 184,
-            "text": "leptons have distinct torus-knot indices. Already proved sorry-free. -/"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

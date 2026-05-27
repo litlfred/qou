@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "05f23632489f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,13 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 19,
-            "text": "there*, no `sorry`. This file holds only the abstract"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-build-green": [

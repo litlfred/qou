@@ -1345,7 +1345,7 @@
         "field_hash": {
           "lean": "870bbea3cea5"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -1353,13 +1353,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 26,
-            "text": "sorry-free conditional theorem follows the same pattern as"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

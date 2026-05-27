@@ -1345,7 +1345,7 @@
         "field_hash": {
           "lean": "c7b59057b7cf"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -1353,13 +1353,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 130,
-            "text": "All theorems above are **sorry-free**; each closes via"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

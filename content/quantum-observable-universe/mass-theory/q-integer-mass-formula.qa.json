@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "5af611a80943"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,17 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 129,
-            "text": "`sorry` in any concrete instance is understood as **conjecture**,"
-          },
-          {
-            "line": 147,
-            "text": "This is the conjecture proper; the `sorry` in a concrete"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

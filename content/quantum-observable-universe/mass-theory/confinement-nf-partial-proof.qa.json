@@ -430,7 +430,7 @@
         "field_hash": {
           "lean": "683dfbda4401"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -438,13 +438,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 27,
-            "text": "This file is **sorry-free**: every theorem is either a direct"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

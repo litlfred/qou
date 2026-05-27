@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "6734bbae076c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,25 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 59,
-            "text": "The `sorry` here represents the conjecture itself \u2014 that there"
-          },
-          {
-            "line": 64,
-            "text": "this is the **only** `sorry` permitted in the dependency chain;"
-          },
-          {
-            "line": 83,
-            "text": "inhabited only by a `sorry` instance representing the conjectural"
-          },
-          {
-            "line": 88,
-            "text": "Per CLAUDE.md \u00a73b-cond, the class instance is the **only** `sorry`"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

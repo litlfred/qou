@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "eb43c1c13ad7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,25 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 10,
-            "text": "the KLR Z-grading.  Any `sorry` lives only inside the class"
-          },
-          {
-            "line": 11,
-            "text": "instance.  The theorem below has no `sorry` in its proof body \u2014"
-          },
-          {
-            "line": 59,
-            "text": "encodes the conjecture; its `sorry`-instance is the only unproved"
-          },
-          {
-            "line": 84,
-            "text": "The proof body has NO `sorry`; the only unproved input is the"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

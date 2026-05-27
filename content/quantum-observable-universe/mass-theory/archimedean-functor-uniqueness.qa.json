@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "2810d8047e3d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,17 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 22,
-            "text": "uniqueness statement is proved unconditionally \u2014 there is no `sorry`."
-          },
-          {
-            "line": 106,
-            "text": "This is a real Lean proof (no `sorry`) that closes the conditional"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

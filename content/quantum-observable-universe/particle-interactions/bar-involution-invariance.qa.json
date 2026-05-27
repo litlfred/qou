@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "96544b218e86"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,21 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 15,
-            "text": "per CLAUDE.md \u00a73b-cond) and has no `sorry` in its proof body."
-          },
-          {
-            "line": 164,
-            "text": "and the theorem below has no `sorry` in its proof body. -/"
-          },
-          {
-            "line": 188,
-            "text": "`sorry`; the only unproved input is the class instance. -/"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

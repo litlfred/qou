@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "385f527c846b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,21 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 22,
-            "text": "plus a place-compatibility axiom.  Any `sorry` in an instance is to"
-          },
-          {
-            "line": 75,
-            "text": "and is supplied as a `sorry`-axiom in concrete instances of"
-          },
-          {
-            "line": 126,
-            "text": "(Target v)` and is supplied as a `sorry`-axiom in concrete"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-build-green": [

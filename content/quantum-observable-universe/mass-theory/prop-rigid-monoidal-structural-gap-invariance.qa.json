@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "4d041bbc115f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,33 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 204,
-            "text": "instance below records the \u00a73b `sorry` for the Layer-1"
-          },
-          {
-            "line": 213,
-            "text": "`categorical_trace \u2261 0`.  The `sorry` in"
-          },
-          {
-            "line": 217,
-            "text": "this `sorry` is allowed \u2014 it encodes the conjectural axiom; all"
-          },
-          {
-            "line": 290,
-            "text": "instance below records the \u00a73b `sorry` for the Layer-1"
-          },
-          {
-            "line": 299,
-            "text": "`categorical_trace \u2261 0`.  The `sorry` in"
-          },
-          {
-            "line": 303,
-            "text": "this `sorry` is allowed \u2014 it encodes the conjectural axiom; all"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

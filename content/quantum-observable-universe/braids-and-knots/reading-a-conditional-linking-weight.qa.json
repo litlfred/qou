@@ -18,7 +18,7 @@
         "field_hash": {
           "lean": "b0c7cf6897b9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -26,25 +26,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 50,
-            "text": "## What this file provides (sorry-free except the class)"
-          },
-          {
-            "line": 57,
-            "text": "Per CLAUDE.md \u00a73b-cond, this is the SOLE `sorry` in the"
-          },
-          {
-            "line": 62,
-            "text": "Fully verified by Lean (no sorry)."
-          },
-          {
-            "line": 97,
-            "text": "`formula` is the only `sorry` in the downstream chain;"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

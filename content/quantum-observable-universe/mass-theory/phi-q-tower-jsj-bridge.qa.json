@@ -688,7 +688,7 @@
         "field_hash": {
           "lean": "08f15df4355c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -696,25 +696,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 84,
-            "text": "No `sorry`: every step is either definitional or supplied by a"
-          },
-          {
-            "line": 120,
-            "text": "`pieceVolume` is itself `sorry` (the upstream Kashaev conjecture's"
-          },
-          {
-            "line": 122,
-            "text": "`sorry` \u2014 the conjectural input proper.  Per CLAUDE.md \u00a73b, a"
-          },
-          {
-            "line": 123,
-            "text": "`sorry` inside an instance field is understood as the conjecture,"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

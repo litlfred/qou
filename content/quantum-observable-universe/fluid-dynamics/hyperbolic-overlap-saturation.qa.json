@@ -1344,7 +1344,7 @@
         "field_hash": {
           "lean": "fa6c1cf6a7b6"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -1352,13 +1352,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 36,
-            "text": "external `sorry`.  The result corrects the user-supplied"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

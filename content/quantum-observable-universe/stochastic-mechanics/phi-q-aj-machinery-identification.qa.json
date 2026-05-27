@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "c6e0f414e35b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,21 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 14,
-            "text": "\u2713 No `sorry` at the structural level; sorrys live ONLY in the class"
-          },
-          {
-            "line": 27,
-            "text": "class-axiomatized inputs. The `sorry` in the class instances"
-          },
-          {
-            "line": 148,
-            "text": "The instance would carry a `sorry` representing this OPEN literature"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

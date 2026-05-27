@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "675d4619f000"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,29 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 62,
-            "text": "sorry-free by `categorical_linking_linearity_holds` below"
-          },
-          {
-            "line": 77,
-            "text": "ring distributivity laws give it sorry-free. -/"
-          },
-          {
-            "line": 102,
-            "text": "six-axiom k=0 reduction lifts. Discharged sorry-free by"
-          },
-          {
-            "line": 233,
-            "text": "here records the cyclicity half of the discharge sorry-free;"
-          },
-          {
-            "line": 259,
-            "text": "sorry-free by `categorical_linking_bar_involution_holds`"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

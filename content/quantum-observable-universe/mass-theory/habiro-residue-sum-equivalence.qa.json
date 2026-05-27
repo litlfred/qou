@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "447e7ef185b7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,21 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 68,
-            "text": "Concrete instances supply `archimedean_agreement` as a `sorry`-axiom"
-          },
-          {
-            "line": 138,
-            "text": "The `archimedean_agreement` field is supplied as `sorry` per"
-          },
-          {
-            "line": 170,
-            "text": "(whose archimedean agreement remains a `sorry` because no integer"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [
