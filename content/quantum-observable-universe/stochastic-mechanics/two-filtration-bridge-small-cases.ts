@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:two-filtration-bridge",
+    "prop:two-filtration-bridge",
     "rem:chirality-period-pairing",
     "prop:b1-figure-8-row-theorem",
     "prop:b1-torus-knot-rows-theorem",

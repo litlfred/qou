@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:infinitesimal-observability",
+export default proposition({
+  label: "prop:infinitesimal-observability",
   title:
     "Infinitesimal observability: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) \\leq \\varepsilon$",
   lean: { ref: "qou:QOU.AppendixSurreals.InfinitesimalObservability", validation: "stub" },
@@ -13,6 +13,6 @@ export default conjecture({
     "axiom-relaxation",
     "open-problem",
   ],
-  uses: ["conj:archimedean-stpart"],
+  uses: ["prop:archimedean-stpart"],
   cites: ["robinson1966"],
 });

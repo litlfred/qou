@@ -3,7 +3,7 @@ $^{18}\mathrm{O}$ ($Z = 8$, $N = 10$, $A = 18$) is the canonical
 is saturated, but the neutron count $N = 10 \notin \mathfrak{M}$ is
 not. This example illustrates the partition-level diagrammatic
 content of the double-magic LR-fusion conjecture
-([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion))
 in the regime where exactly one block is saturated, and the
 **$\kappa$-leakage** through the non-saturated $N$-block accounts
 for the binding-energy tail beyond the saturated $Z = 8$
@@ -12,7 +12,7 @@ contribution.
 ## $Z$-block (saturated)
 
 The proton count $Z = 8$ is magic, so by
-[`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+[`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
 the categorical mass at level $8$ is supported on a single
 self-conjugate partition. The relevant partition is
 
@@ -59,7 +59,7 @@ independently to $\Phi_{10}$.
 The LR fusion $V_{\lambda_{Z=8}} \otimes V_\mu(N=10)$ does **not**
 collapse to a single $\nu$: the non-self-conjugacy of $\mu$ on the
 $N$ side propagates through the LR rule
-([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion))
 to produce a sum
 
 $$

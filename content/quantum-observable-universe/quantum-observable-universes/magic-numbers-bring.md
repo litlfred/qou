@@ -58,14 +58,14 @@ $$
 $\mathbb{Q}[S_5 \times \langle \hat\tau \rangle]$-submodules of
 the brane-tower's level-1 cohomology
 $H^1(A_1, \mathbb{Z})$ that close shells under
-[`conj:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md).*
+[`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md).*
 
 *Equivalently, $n \in \mathfrak{M}$ iff*
 
 1. *there exists an $S_5$-stable, $\hat\tau$-stable lattice of
    rank $n$ in some power of $H_1(\mathcal{B}, \mathbb{Z})$, and*
 2. *the categorical mass at nucleon-count $n$
-   ([`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md))
+   ([`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md))
    is supported on a single self-conjugate partition associated
    to that lattice.*
 
@@ -86,16 +86,16 @@ match — under this conjecture — the seven distinct irreducible
 $\mathbb{Q}[S_5 \times \langle \hat\tau \rangle]$-modules whose
 $\hat\tau$-action on the brane-tower cohomology is **strictly
 positive** (closing the shell under condensation per
-[`conj:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md)).
+[`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md)).
 
 ## Connection to the conjectural-propagation chain
 
 Per the algebraic-refactor Phase 1 (commit `0e86a151`), the magic
 numbers are downstream of two conjectures:
 
-* [`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+* [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
   (Hecke-side: full-twist trivial action on $\Phi_n$ at magic $n$),
-* [`conj:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md)
+* [`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md)
   (brane-tower side: BB spectral sequence collapse at magic $n$).
 
 This block adds a third, complementary, **algebraic-substrate-
@@ -140,8 +140,8 @@ The downstream cone of this conjecture is exactly the magic-
 number predictions in
 [`prop:magic-numbers-from-q`](../observations/magic-numbers-from-q.md);
 those predictions are now triply-conditional (on
-`conj:categorical-neutrality-saturated-shells`,
-`conj:homological-shell-condensation`, and this block) — but the
+`prop:categorical-neutrality-saturated-shells`,
+`prop:homological-shell-condensation`, and this block) — but the
 three conjectures are equivalent under Yekutieli rigidity, so the
 true conjectural surface is one statement modelled three different
 ways.

@@ -12,7 +12,7 @@ export default proposition({
     "rem:mass-spectrum-generating-function",
     "prop:graded-markov-trace-from-gs-filtration",
     "def:confinement-level",
-    "conj:gs-graded-markov-trace-existence",
+    "prop:gs-graded-markov-trace-existence",
   ],
   cites: ["khovanovlauda2009", "brundankleshchev2009"],
   tags: [

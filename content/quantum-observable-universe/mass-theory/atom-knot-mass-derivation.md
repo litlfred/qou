@@ -35,7 +35,7 @@ piece $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ closes
 empirically to $0.18\%$; the pair-gen piece is open. On the
 nucleon-anchor side, $m_{\mathfrak{p}}$ has a **conjectural
 substrate form**
-([`conj:lambda-scale-substrate-form`](lambda-scale-substrate-form.md))
+([`prop:lambda-scale-substrate-form`](lambda-scale-substrate-form.md))
 at $\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$ matching CODATA
 to ~5.4 ppm; ${}^1\mathrm{H}$ lifts to `derived` once the Borromean
 tower wiring lands. Per

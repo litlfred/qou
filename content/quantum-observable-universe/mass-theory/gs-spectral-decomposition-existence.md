@@ -43,8 +43,8 @@ input, currently as `sorry` per CLAUDE.md §3b.*
 **Why a conjecture and not a theorem.**
 *A Lean proof requires:*
 
-1. *[graded Markov trace existence](#conj:gs-graded-markov-trace-existence)
- and [residue at root existence](#conj:gs-residue-at-root-existence)
+1. *[graded Markov trace existence](#prop:gs-graded-markov-trace-existence)
+ and [residue at root existence](#prop:gs-residue-at-root-existence)
  as formal Lean defs (not class fields).*
 2. *The classical Habiro–Mittag-Leffler bridge identifying the
  cyclotomic tail of $\mathrm{tr}_M(T_w, q_0)$ with the residue

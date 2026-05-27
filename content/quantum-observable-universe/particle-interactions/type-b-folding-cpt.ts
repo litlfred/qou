@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:type-b-folding-cpt",
+export default proposition({
+  label: "prop:type-b-folding-cpt",
   title:
     "Type-B Cartan folding realises CPT via symmetric-crystal $\\mathbb{Z}/2$ fixed points",
   lean: {
@@ -11,9 +11,9 @@ export default conjecture({
   uses: [
     "def:bar-involution",
     "prop:cpt-orbit-closure-density",
-    "conj:c-from-color-flavor-swap",
-    "conj:p-from-braid-mirror",
-    "conj:t-from-trace-cyclicity",
+    "prop:c-from-color-flavor-swap",
+    "prop:p-from-braid-mirror",
+    "prop:t-from-trace-cyclicity",
     "def:hecke-normal-form",
   ],
   cites: [

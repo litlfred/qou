@@ -36,7 +36,7 @@ export default proposition({
     "prop:em-coupling-projection",
     "prop:force-carrier-bring-uniqueness",
     "prop:force-carrier-intertwining-correspondence",
-    "conj:e-hartree-categorical-derivation",
+    "prop:e-hartree-categorical-derivation",
   ],
   lean: { ref: "qou:QOU.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },
   tags: [

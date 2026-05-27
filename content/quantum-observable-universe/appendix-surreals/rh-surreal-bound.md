@@ -1,6 +1,6 @@
 The classical Riemann hypothesis states that every non-trivial zero
 $\rho$ of the Riemann zeta function satisfies $\mathrm{Re}(\rho) = 1/2$
-([Riemann hypothesis](#conj:classical-riemann-hypothesis)).
+([Riemann hypothesis](#prop:classical-riemann-hypothesis)).
 This remark expresses the QOU stability argument for that claim as a
 literal surreal inequality.
 

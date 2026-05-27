@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — 1-dimensional Hecke irrep character, universal closed form).**
+**Proposition (conditional on [`prop:borromean-quark`](#prop:borromean-quark) — 1-dimensional Hecke irrep character, universal closed form).**
 
 For any $n \geq 2$ and any typed braid $\beta \in B_n$ encoded as a
 sequence of crossings of three types

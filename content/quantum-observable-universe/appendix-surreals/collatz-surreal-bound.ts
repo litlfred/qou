@@ -4,7 +4,7 @@ export default remark({
   label: "rem:collatz-surreal-bound",
   title:
     "Surreal bound for Collatz: contact-boundary deviation costs transfinite Reeb period",
-  interprets: "conj:q-collatz",
+  interprets: "prop:q-collatz",
   uses: [
     "prop:collatz-no-cycles",
     "lem:surreal-squeeze",

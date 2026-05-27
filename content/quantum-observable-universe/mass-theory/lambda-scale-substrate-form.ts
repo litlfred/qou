@@ -45,12 +45,12 @@ import { conjecture } from "../../schema/builders";
  * (m_e, m_μ/m_e, Q_β) is the authoritative path; this block is a
  * historical record of the empirical 5.6 ppm near-form.
  */
-export default conjecture({
-  label: "conj:lambda-scale-substrate-form",
+export default proposition({
+  label: "prop:lambda-scale-substrate-form",
   title:
     "Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$ (acknowledged-CAL-4)",
   uses: [
-    "conj:borromean-baryon-mass-formula",
+    "prop:borromean-baryon-mass-formula",
     "thm:wedderburn-mass-formula",
     "prop:plancherel-weight-boundedness",
   ],

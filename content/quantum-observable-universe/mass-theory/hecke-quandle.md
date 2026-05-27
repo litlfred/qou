@@ -155,4 +155,4 @@ interpretation beyond the Hecke-algebra computation.
    the crossing coefficients** — potentially deriving them from
    first principles rather than fitting to CODATA. This is the
    quandle route to closing
-   [`conj:canonical-knot-id-sdp`](#conj:canonical-knot-id-sdp).
+   [`prop:canonical-knot-id-sdp`](#prop:canonical-knot-id-sdp).

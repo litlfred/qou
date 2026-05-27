@@ -22,7 +22,7 @@ No empirical isotope with $\Delta i \geq 2$ is doubly-magic.
 
 ## Categorical interpretation
 
-Per [`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion),
+Per [`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion),
 double-magic stability requires the LR-fusion
 
 $$

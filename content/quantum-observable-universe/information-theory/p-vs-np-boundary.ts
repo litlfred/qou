@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:p-vs-np-boundary",
+export default proposition({
+  label: "prop:p-vs-np-boundary",
   title:
     "$\\mathrm{P} \\neq \\mathrm{NP}$ as jet horizon opacity",
   tags: [

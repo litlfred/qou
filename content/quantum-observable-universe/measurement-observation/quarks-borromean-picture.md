@@ -1,6 +1,6 @@
 The original dictionary assigned individual knot types to quarks
 (three-twist $5_2$ for strange, torus $7_1$ for charm, etc.).  The
-revised picture ([Conjecture](#conj:borromean-quark)) identifies quarks
+revised picture ([Conjecture](#prop:borromean-quark)) identifies quarks
 not as fundamental knots but as **unknots (neutrinos) Borromean-linked
 in the exceptional divisor** of Bring's surface.  A baryon is the
 Borromean link $\mathcal{B}_3(\nu_r, \nu_g, \nu_b)$ bound by the Hopf

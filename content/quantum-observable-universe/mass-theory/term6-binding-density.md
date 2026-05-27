@@ -57,7 +57,7 @@ structure of the level-$3$ stratum.
 
 The operator-level magic correction adds binding at doubly-magic
 shells per
-[`conj:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md)
+[`prop:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md)
 in the **operator-level** sense (not the Plancherel-character
 sum, which vanishes — see
 [reframing memo](../../../docs/audits/2026-05-02-self-conj-support-reframing.md)).
@@ -124,7 +124,7 @@ Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Te
 * The **form** of $\delta_M$ is operator-level — proper
   derivation requires the operator structure of $\Phi_n$ on
   self-conjugate isotypical Wedderburn blocks, which is the
-  content of `conj:categorical-neutrality-saturated-shells`.
+  content of `prop:categorical-neutrality-saturated-shells`.
 
 ## Status
 

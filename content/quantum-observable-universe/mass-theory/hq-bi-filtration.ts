@@ -10,7 +10,7 @@ export default definition({
   },
   uses: [
     "def:frobenius-hopf-substrate",
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "prop:explicit-central-idempotent",
     "rem:bring-embeddable-knots",
     "rem:chirality-period-pairing",

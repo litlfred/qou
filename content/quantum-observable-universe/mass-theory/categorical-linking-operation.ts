@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:categorical-linking-operation",
+export default proposition({
+  label: "prop:categorical-linking-operation",
   title:
     "Categorical linking operation $\\mathrm{Lk}_R$: ribbon-category dual of topological linking number",
   lean: {
@@ -10,7 +10,7 @@ export default conjecture({
   },
   uses: [
     // broken-ref removed (Phase 7): conj:force-carrier-knot-vs-link-dichotomy
-    "conj:categorical-higgs-mechanism",
+    "prop:categorical-higgs-mechanism",
     "def:rigid-monoidal-category",
     "def:frobenius-hopf-substrate",
     "rem:hecke-algebra-from-braiding",

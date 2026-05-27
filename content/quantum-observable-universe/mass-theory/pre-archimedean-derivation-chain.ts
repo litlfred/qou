@@ -23,8 +23,8 @@ export default prose({
     "thm:jones-markov-trace",
     "thm:frobenius-codim-universal",
     "thm:knot-mass-formula-unified",
-    "conj:brane-tower-z-habiro",
-    "conj:canonical-knot-id-sdp",
+    "prop:brane-tower-z-habiro",
+    "prop:canonical-knot-id-sdp",
   ],
   tags: [
     "derivation-chain",

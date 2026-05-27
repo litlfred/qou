@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:kashaev-surreal",
+export default proposition({
+  label: "prop:kashaev-surreal",
   title:
     "Kashaev volume conjecture as a surreal standard-part identity",
   lean: { ref: "qou:QOU.AppendixSurreals.KashaevSurreal", validation: "stub" },

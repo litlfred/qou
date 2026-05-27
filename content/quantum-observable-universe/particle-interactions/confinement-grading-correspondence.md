@@ -19,7 +19,7 @@ $$
 *The KLR grading bound is enforced before any crystal step.  Given
 a target confinement level $\ell$, the engine restricts the
 crystal traversal of [crystal-graph
-realisation](#conj:crystal-graph-realization) to the subgraph
+realisation](#prop:crystal-graph-realization) to the subgraph
 spanned by modules of degree $\leq \ell$.  Any application of
 $\tilde f_i$ that would push a state into degree $\ell + 1$ is
 geometrically forbidden, providing a rigorous justification for

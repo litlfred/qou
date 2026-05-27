@@ -64,7 +64,7 @@ observable consequences.
    The luminosity excess scales as the strangelet core mass.
 
 2. **Neutrino burst from CFL gap breaking.**  The CFL
-   superconductor ([color superconductivity](#conj:color-superconductivity-borromean))
+   superconductor ([color superconductivity](#prop:color-superconductivity-borromean))
    stores gap energy
    $\Delta_{\mathrm{CFL}} \approx 2.5$ MeV per baryon.
    When the merger disrupts the superconducting condensate

@@ -7,10 +7,10 @@ export default remark({
   interprets: "rem:algebraic-core-survives",
   uses: [
     "rem:algebraic-core-survives",
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "rem:figure-8-archimedean-illustration",
-    "conj:bring-figure-eight-depth-2-witness",
-    "conj:bring-trilog-depth-3-witness",
+    "prop:bring-figure-eight-depth-2-witness",
+    "prop:bring-trilog-depth-3-witness",
     "rem:chirality-period-pairing",
     "prop:explicit-central-idempotent",
     "rem:bring-embeddable-knots",

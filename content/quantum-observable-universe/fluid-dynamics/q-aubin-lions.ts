@@ -1,12 +1,12 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:q-aubin-lions",
+export default proposition({
+  label: "prop:q-aubin-lions",
   title:
     "q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\to 1$",
   uses: [
     "thm:quantum-peter-weyl",
-    "conj:ns-counterexample",
+    "prop:ns-counterexample",
   ],
   tags: [
     "aubin-lions",

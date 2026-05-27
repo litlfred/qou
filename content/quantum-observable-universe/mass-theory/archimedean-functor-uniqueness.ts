@@ -30,9 +30,9 @@ export default proposition({
     "def:motivic-mass-measure",
     "def:motivic-substrate",
     "prop:quantum-dilogarithm-volume",
-    "conj:dilogarithm-archimedean-limit",
+    "prop:dilogarithm-archimedean-limit",
     "conj:kashaev-volume-conjecture",
-    "conj:mass-endomorphism",
+    "prop:mass-endomorphism",
     "prop:cosimplicial-crossed-groupoid",
   ],
   cites: [

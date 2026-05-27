@@ -2,7 +2,7 @@
 
 The **neutron** is the baryon with $1 + 2$ crossing partition:
 one up quark and two down quarks in the Borromean braid
-$\mathcal{B}_3$ ([Borromean quark](#conj:borromean-quark)).
+$\mathcal{B}_3$ ([Borromean quark](#prop:borromean-quark)).
 
 $$
   \mathfrak{n} = \mathcal{B}_3(\mathfrak{u},\mathfrak{d},\mathfrak{d})

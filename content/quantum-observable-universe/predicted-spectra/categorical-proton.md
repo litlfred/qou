@@ -3,7 +3,7 @@
 The **proton** is the baryon with $2 + 1$ crossing partition:
 two up quarks (positive orientation) and one down quark (negative
 orientation) in the Borromean braid $\mathcal{B}_3$
-([Borromean quark](#conj:borromean-quark)).
+([Borromean quark](#prop:borromean-quark)).
 
 $$
   \mathfrak{p} = \mathcal{B}_3(\mathfrak{u},\mathfrak{u},\mathfrak{d})
@@ -137,5 +137,5 @@ braid coefficients in the NF basis at $q_0$), and
 `borromean-qvalue.py` (derivation of $q_0 = 1.109978595554181\ldots$ (50 dps) from
 Borromean topology). These are numerical witnesses, not formal
 proofs — see also
-[Borromean-quark conjecture](#conj:borromean-quark) and the
+[Borromean-quark conjecture](#prop:borromean-quark) and the
 ground-ring annotation in `borromean-quark.lean`.

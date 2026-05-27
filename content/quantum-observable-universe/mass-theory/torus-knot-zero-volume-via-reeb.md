@@ -51,7 +51,7 @@ the topological Markov-trace observable
 $\mathrm{tr}_M(\rho(\sigma_1\sigma_2)) = 0$ for the *hyperbolic-volume*
 contribution.  This is the substrate-level origin of the
 "torus-knot nucleons contribute zero $V_{\mathrm{hyp}}$" line in
-[mass-volume factorization](#conj:mass-volume-factorization),
+[mass-volume factorization](#prop:mass-volume-factorization),
 made geometric: torus knots leave no hyperbolic complement,
 and the categorical observable they generate is
 purely the *non-volumetric* (counting) part of the Markov trace.

@@ -23,7 +23,7 @@ persists at $q = 1$, where $q$-opers become classical opers.
 
 Since each ingredient converges and the equivalence $\mathbb{L}_q$
 is uniquely determined by the fibre functor
-([fibre-functor mediation](#conj:q-gl-fiber-functor)), the limit
+([fibre-functor mediation](#prop:q-gl-fiber-functor)), the limit
 $\mathbb{L}_1 = \mathbb{L}_{\mathrm{BD}}$ is the unique equivalence
 compatible with classical Hecke operators and the identity fibre
 functor.  $\square$

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:jones-birthday",
+export default proposition({
+  label: "prop:jones-birthday",
   title:
     "Birthday refinement of the Jones polynomial",
   lean: { ref: "qou:QOU.AppendixSurreals.JonesBirthday", validation: "stub" },

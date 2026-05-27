@@ -92,7 +92,7 @@ This appendix does **not**:
 - solve the Kashaev volume conjecture (though it offers a
   reformulation that separates the algebraic from the
   transcendental parts — see [Kashaev surreal
-  reformulation](#conj:kashaev-surreal));
+  reformulation](#prop:kashaev-surreal));
 - construct a canonical Lebesgue-like measure on $\mathbf{No}$
   (it has none; the appendix sidesteps this rather than
   solving it).

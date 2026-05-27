@@ -1,11 +1,11 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:blowup-yekutieli",
+export default proposition({
+  label: "prop:blowup-yekutieli",
   title:
     "Blowup mechanism as Yekutieli lifting obstruction in the brane tower",
   uses: [
-    "conj:regularity-breakdown",
+    "prop:regularity-breakdown",
     "prop:descent-condition",
     "def:local-cohomology-group",
     "rem:vortex-reconnection",

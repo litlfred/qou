@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:single-volume-irrationality",
+export default proposition({
+  label: "prop:single-volume-irrationality",
   title: "Irrationality of a single hyperbolic knot volume",
   lean: { ref: "qou:QOU.Archimedean.SingleVolumeIrrationality", validation: "stub" },
   tags: [
@@ -12,6 +12,6 @@ export default conjecture({
     "open-problem",
   ],
   uses: [
-    "conj:hyperbolic-volume-transcendence",
+    "prop:hyperbolic-volume-transcendence",
   ],
 });

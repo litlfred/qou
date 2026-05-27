@@ -13,7 +13,7 @@ export default proposition({
     "rem:gram-matrix-spectral-connection",
     "thm:frobenius-codim-universal",
     "prop:operator-selection-lp",
-    "conj:weak-spectral-completeness",
+    "prop:weak-spectral-completeness",
   ],
   computation: {
     engine: "python",

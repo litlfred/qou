@@ -15,7 +15,7 @@ $\mathrm{Cryst}^{\mathrm{sym}}(\mathfrak{so}_{2n+1})$.*
 (a fixed external boundary condition that supplies energy to the
 crystal traversal).  The intense local energy density forces the
 system to step down the crystal graph to absorb energy, but
-[symmetric-crystal pair production](#conj:symmetric-crystal-pair-production)
+[symmetric-crystal pair production](#prop:symmetric-crystal-pair-production)
 forbids a unimodal lowering step
 $\gamma\gamma \xrightarrow{\tilde f_i} v$ that would land on a single
 chiral descendant.  The only admissible step is the paired operator*
@@ -37,7 +37,7 @@ imposed selection rule.*
 **Falsification handle.**
 *Any single-photon pair-production channel
 $\gamma \to e^- e^+$ is forbidden by
-[symmetric-crystal pair production](#conj:symmetric-crystal-pair-production)
+[symmetric-crystal pair production](#prop:symmetric-crystal-pair-production)
 without invoking energy–momentum conservation as a separate axiom: the
 bar-invariant single-strand source state $\gamma$ carries no crossings
 to fold into a paired operator, so the symmetric crystal has no

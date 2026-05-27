@@ -16,11 +16,11 @@ export default proposition({
     status: "verified",
   },
   uses: [
-    "conj:bring-trilog-depth-3-witness",
+    "prop:bring-trilog-depth-3-witness",
     "rem:transcendental-accounting",
-    "conj:cl3-zeta5-geometric-realization",
+    "prop:cl3-zeta5-geometric-realization",
     "prop:borel-partial-resolution",
-    "conj:qou-infra-discharges-goncharov-zeta5",
+    "prop:qou-infra-discharges-goncharov-zeta5",
   ],
   cites: ["bloch2000", "zagier1986"],
   tags: [

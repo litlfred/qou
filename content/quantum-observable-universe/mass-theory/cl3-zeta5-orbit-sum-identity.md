@@ -2,7 +2,7 @@
 content to a 1-dim antisymmetric generator).**
 
 The Bring trilog witness
-([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness))
+([`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness))
 records 4 grouplike values $\mathrm{Li}_3(\zeta_5^k)$ for $k = 1, ..., 4$.
 Round 10 ([`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational))
 showed the imaginary parts are Tate-rational. *This proposition
@@ -132,9 +132,9 @@ real number" ($\approx$ 0.955).**
 
 ### Cross-references
 
-- Bring trilog witness: [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
+- Bring trilog witness: [`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)
 - Imaginary-part Tate-rational: [`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- Goncharov $\zeta_5$ program: [`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5)
+- Goncharov $\zeta_5$ program: [`prop:qou-infra-discharges-goncharov-zeta5`](#prop:qou-infra-discharges-goncharov-zeta5)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
-- Geometric realisation question: [`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization)
+- Geometric realisation question: [`prop:cl3-zeta5-geometric-realization`](#prop:cl3-zeta5-geometric-realization)

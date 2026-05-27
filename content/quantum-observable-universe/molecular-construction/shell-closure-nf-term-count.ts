@@ -3,8 +3,8 @@ import { conjecture } from "../../schema/builders";
 /**
  * Shell closure is detectable from NF term count in the quotient atom model.
  */
-export default conjecture({
-  label: "conj:shell-closure-nf-term-count",
+export default proposition({
+  label: "prop:shell-closure-nf-term-count",
   title: "Shell closure from NF term count",
   lean: { ref: "qou:QOU.Molecular.ShellClosureNFTermCount",
     validation: "not_checked",

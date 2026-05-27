@@ -131,7 +131,7 @@ The mathematical kernel is well-defined; the question is one of
    and $\mathrm{St}_{\mathrm{QOU}} \circ \mathrm{ev}_{q = 1 +
    \varepsilon^\omega}$ both produce well-defined archimedean QOUs
    (modulo
-   [archimedean-stpart](#conj:archimedean-stpart)).
+   [archimedean-stpart](#prop:archimedean-stpart)).
 
 **Provable in Lean today**:
 - `c_q_eq_omega_at_one_plus_epsilon` already proved in

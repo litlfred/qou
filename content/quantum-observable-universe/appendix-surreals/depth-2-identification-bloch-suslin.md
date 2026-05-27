@@ -165,7 +165,7 @@ depth-3 identification follows by the same argument.
 The combination with [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
 yields:
 
-- **Depth 2** of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
+- **Depth 2** of [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
  is provably correct over every Bring-natural number field
  $F = \mathbb{Q}(z_K)$ — the keystone is a theorem here.
 - **Depth 3** is conditional on Goncharov's motivic conjecture
@@ -178,8 +178,8 @@ to standard external conjectures (Goncharov, Beilinson).
 
 ### Cross-references
 
-- Keystone: [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
+- Keystone: [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
 - K-theory bridge: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- Depth-2 numerical witness: [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)
+- Depth-2 numerical witness: [`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)

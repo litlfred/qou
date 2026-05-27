@@ -5,7 +5,7 @@ Plancherel-normalization framing).**
 > framed $\mathcal{N}_{\rm sym}(q)$ as a Plancherel-weighted
 > ratio with uniform $1/[2]_q$ weights — derived under the
 > dimensionally-inconsistent $H_2(q)$-only formulation. Per
-> [`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content),
+> [`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content),
 > the operative structural quantity is the **direct cell-content
 > trace** of $\sigma_1^4 \sigma_3^6 \sigma_5^8$ on the
 > pure-eigenspace — bar-self-dual, derived without Plancherel
@@ -26,7 +26,7 @@ Plancherel-normalization framing).**
 
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$, $q \neq 1$). The
-[weak-sector spectral completeness](#conj:weak-spectral-completeness)
+[weak-sector spectral completeness](#prop:weak-spectral-completeness)
 identity*
 
 $$
@@ -121,7 +121,7 @@ $$
 $$
 
 derived in
-[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)
+[`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)
 **without** invoking Plancherel weights. The corresponding
 constrained-PSLQ basis for $N_v$ should use this trace as the
 structural input — not the Plancherel-weighted form below.
@@ -152,7 +152,7 @@ $\{[4]_q, [6]_q, [8]_q, [2]_q, \mathrm{tr}_{\rm pure}\}$ basis,
 **Open** as a formal proposition. The closed-form expression
 $\mathcal{N}_{\rm sym}(q) = q^6 \cdot [3]_{q^2} / 3 \in R$ is
 straightforwardly derivable once
-[`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)
+[`prop:weak-spectral-completeness`](#prop:weak-spectral-completeness)
 is in place; the open inputs are:
 
 1. **Discharge** the host-distinctness drop (this audit, §1) — done.

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:classical-limit-stpart",
+export default proposition({
+  label: "prop:classical-limit-stpart",
   title:
     "Classical-limit functor as standard-part of evaluation at $q = 1 + \\varepsilon$",
   tags: [

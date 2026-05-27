@@ -9,7 +9,7 @@ e_{\lambda'}$ where $\lambda' = $ transpose Young diagram
 ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)
 Cross-check 3-4).
 
-Under [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
+Under [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
 + [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic),
 this *categorifies* the chirality structure of hyperbolic 3-manifold
 volumes:
@@ -35,7 +35,7 @@ hyperbolic) but the *Chern–Simons* invariant
 $\mathrm{CS}(3_1) = \pm \pi^2 / 6$ is sign-flipped under bar — the
 chirality-twisted depth-3 period in $\mathcal{P}_3 / \mathcal{P}_2$.
 This is the depth-3 manifestation of the same chirality structure;
-see [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
+see [`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)
 for a Bring-natural depth-3 witness.
 
 ### Compatibility with B1's depth filtration

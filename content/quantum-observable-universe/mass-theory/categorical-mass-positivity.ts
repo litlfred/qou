@@ -7,7 +7,7 @@ export default remark({
   uses: [
     "def:mass-identity",
     "def:cemetery-group",
-    "conj:crystal-graph-realization",
+    "prop:crystal-graph-realization",
   ],
   cites: [
     "khovanovlauda2009",

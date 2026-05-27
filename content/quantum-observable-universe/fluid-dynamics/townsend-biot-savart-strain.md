@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 The
-[Levi degeneracy conjecture](#conj:levi-degeneracy) reduces the
+[Levi degeneracy conjecture](#prop:levi-degeneracy) reduces the
 $q \to 1$ Navier–Stokes regularity question to the asymptotic
 behaviour of the core aspect ratio
 $\kappa^2 = a_\perp^2 / a_\parallel^2 = V_2 / V_1$
@@ -109,7 +109,7 @@ $\lambda_\parallel \to 0$ while $\lambda_\perp$ stays bounded.
 The local cohomology group $H^1_{\mathfrak{m}_p}(A)$ vanishes,
 the cohomological obstruction dissolves, and the system
 maintains global regularity. This is the
-[branch (B) outcome](#conj:levi-degeneracy) of the conjecture
+[branch (B) outcome](#prop:levi-degeneracy) of the conjecture
 — **NS globally regular** — under the point-vortex assumption.
 
 **Where the approximation fails.**

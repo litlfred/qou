@@ -62,7 +62,7 @@ hyperbolic complement of minimal volume.
 the Markov-trace observable for a non-torus braid receives a
 non-zero topological-mass contribution proportional to
 $V_{\mathrm{hyp}}$.  In the JSJ-graded form of
-[mass-volume factorization](#conj:mass-volume-factorization),
+[mass-volume factorization](#prop:mass-volume-factorization),
 only hyperbolic pieces contribute; torus pieces are
 geometrically invisible.  The Reeb-flow picture explains *why*
 this geometric vanishing happens: the strands lie on a Heegaard

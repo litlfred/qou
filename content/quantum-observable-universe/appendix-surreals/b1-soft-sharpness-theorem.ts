@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "prop:borel-partial-resolution",
     "prop:depth-2-identification-bloch-suslin",
     "rem:k-theory-period-rosetta",

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:brane-tower-z-habiro",
+export default proposition({
+  label: "prop:brane-tower-z-habiro",
   title: "Brane tower lives in the $z$-Habiro ring",
   uses: [
     "def:z-habiro-ring",

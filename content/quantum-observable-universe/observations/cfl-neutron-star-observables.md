@@ -1,4 +1,4 @@
-The [color superconductivity conjecture](#conj:color-superconductivity-borromean)
+The [color superconductivity conjecture](#prop:color-superconductivity-borromean)
 makes three quantitative predictions that are testable with
 current and near-future astrophysical data.
 

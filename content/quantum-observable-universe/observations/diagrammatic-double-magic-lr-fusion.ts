@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:diagrammatic-double-magic-lr-fusion",
+export default proposition({
+  label: "prop:diagrammatic-double-magic-lr-fusion",
   title:
     "Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \\in \\mathfrak{M}$",
   lean: {
@@ -9,8 +9,8 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:categorical-neutrality-saturated-shells",
-    "conj:homological-shell-condensation",
+    "prop:categorical-neutrality-saturated-shells",
+    "prop:homological-shell-condensation",
     "prop:magic-numbers-from-q",
     "prop:hoefsmit-seminormal-form",
     "thm:wedderburn-mass-formula",

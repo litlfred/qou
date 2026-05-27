@@ -3,7 +3,7 @@ on every bi-filtration cell — discharged in general by the
 disjoint-action argument).**
 
 The joint-action conjecture
-([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action))
+([`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action))
 predicted commutativity of the motivic-Galois action $G_{\mathrm{mot}}$
 and the braid-group action $B_{n_K}$ on every $\mathcal{H}_q^{(n, K)}$
 stratum. *This proposition discharges the conjecture in general,
@@ -110,8 +110,8 @@ The proof took two ingredients already in the paper:
 | Claim | Status before | Status after |
 |---|---|---|
 | Joint-action conjecture, figure-8 cell | theorem ([`prop:joint-galois-braid-figure-8-verified`](#prop:joint-galois-braid-figure-8-verified)) | theorem (subsumed) |
-| Joint-action conjecture, *all* cells | conjectural ([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)) | **theorem** (this prop.) |
-| Joint-action sharpness predictions | conditional | **conditional theorem** (depends only on the depth predictions of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) |
+| Joint-action conjecture, *all* cells | conjectural ([`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)) | **theorem** (this prop.) |
+| Joint-action sharpness predictions | conditional | **conditional theorem** (depends only on the depth predictions of [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)) |
 
 ### Significance: another conjecture moves to theorem
 
@@ -135,8 +135,8 @@ hyperbolic knots, geometric realisation of $\mathrm{Cl}_3(2\pi/5)$.
 
 ### Cross-references
 
-- Joint-action conjecture (now discharged): [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
+- Joint-action conjecture (now discharged): [`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)
 - Figure-8 special case: [`prop:joint-galois-braid-figure-8-verified`](#prop:joint-galois-braid-figure-8-verified)
 - Bi-filtration: [`def:hq-bi-filtration`](#def:hq-bi-filtration)
-- Bridge map: [`conj:two-filtration-bridge`](#conj:two-filtration-bridge), [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
+- Bridge map: [`prop:two-filtration-bridge`](#prop:two-filtration-bridge), [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
 - Centrality of $e_{\lambda_K}$: [`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)

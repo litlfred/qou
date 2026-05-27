@@ -1,10 +1,10 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+[`prop:q-aubin-lions`](#prop:q-aubin-lions),
+[`prop:ns-counterexample`](#prop:ns-counterexample),
+[`prop:critical-exponent`](#prop:critical-exponent),
+[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[`prop:regularity-breakdown`](#prop:regularity-breakdown);
 "Core Levi form").**
 
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
@@ -88,5 +88,5 @@ so conditions (1)--(5) hold.  The
 **(e)** At $q = 1$: $\hbar_q = 0$ and there is no isotropic
 resistance.  The [vorticity lower
 bound](#prop:vorticity-lower-bound) and the
-[counter-example](#conj:ns-counterexample) hold if and only
+[counter-example](#prop:ns-counterexample) hold if and only
 if condition (3) holds at $q = 1$.

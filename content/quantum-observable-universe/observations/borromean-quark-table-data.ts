@@ -7,6 +7,6 @@ export default table({
     "The $T(2, n)$ family from the Hopf link ($n = 2$, gluon) through " +
     "the genus-saturating $T(2, 9)$: name, type (knot/link), component " +
     "count, Seifert genus, and physical role.",
-  uses: ["conj:borromean-quark"],
+  uses: ["prop:borromean-quark"],
   tags: ["torus-knot", "particle-spectrum", "borromean"],
 });

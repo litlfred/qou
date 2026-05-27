@@ -76,7 +76,7 @@ Theorems that previously took
 [`def:motivic-galois-character`](#def:motivic-galois-character)
 as an `[instance]` hypothesis can now use the explicit QOU instance
 directly. In particular,
-[`conj:motivic-perpetual-obstruction`](#conj:motivic-perpetual-obstruction)
+[`prop:motivic-perpetual-obstruction`](#prop:motivic-perpetual-obstruction)
 becomes an unconditional theorem for the QOU substrate (the
 non-triviality witness reduces to the substrate axiom in field
 `almost_everywhere_nontrivial`).

@@ -43,7 +43,7 @@ $$
 **Proof.**
 The crystal-limit character $\chi^\lambda_{\mathrm{crystal}}(\sigma)$
 on a single Hecke generator $\sigma$ is, by
-[crystal-graph realisation](#conj:crystal-graph-realization),
+[crystal-graph realisation](#prop:crystal-graph-realization),
 the trace of the signed-permutation action
 
 $$
@@ -319,7 +319,7 @@ convention until the canonical $\bowtie_K$ migration completes
 ## Status
 
 This proposition is **conditional on**
-[`conj:crystal-graph-realization`](#conj:crystal-graph-realization)
+[`prop:crystal-graph-realization`](#prop:crystal-graph-realization)
 (the conjectural identification of the $q \to 0$ limit of
 $\chi^\lambda$ with the signed-permutation action on
 $\mathrm{SYT}(\lambda)$ used by
@@ -333,7 +333,7 @@ and $\sigma_i^{-1}$ agree.  The class
 $[\mathrm{CrystalGraphRealization}\;R\;q]$ (Lake-tracked in
 `QOU.BraidKnot.CrystalGraphRealization`) implies
 $[\mathrm{CrystalEigenlineSignBlind}\;R]$, so this proposition is
-a *downstream consequence* of `conj:crystal-graph-realization`
+a *downstream consequence* of `prop:crystal-graph-realization`
 under CLAUDE.md §3b-cond conditional-class semantics.  Modulo the
 upstream conjecture, the equality
 $S_{\mathrm{crystal}}(T) = S_{\mathrm{crystal}}({}^3\mathrm{He})$

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:pontryagin-dual-coxeter-character",
+export default proposition({
+  label: "prop:pontryagin-dual-coxeter-character",
   title:
     "Pontryagin duality on abelianised Coxeter character — character ↔ measure on dual group",
   lean: {

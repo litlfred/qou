@@ -101,7 +101,7 @@ gap $|\,\text{chain} - \text{CODATA}\,| \approx 0.213$ is the same
 $\mathcal{O}(10^{-3})$ precision gap inherited from
 [`prop:em-coupling-projection`](#prop:em-coupling-projection),
 unchanged by this refactoring; closing it remains the work of
-[`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation)
+[`prop:e-hartree-categorical-derivation`](#prop:e-hartree-categorical-derivation)
 and the higher-order $C_5$-invariant corrections discussed there.)
 
 All $3$ assertions in the witness pass.

@@ -1,6 +1,6 @@
 **Conjecture (root-of-unity MTC truncation).**
 *Let $H_n(R, q)$ be the Iwahori–Hecke algebra of the
-[anyonic substrate](#conj:hecke-anyonic-substrate), and fix
+[anyonic substrate](#prop:hecke-anyonic-substrate), and fix
 $k \geq 2$.  Specialise the deformation parameter at a primitive
 $k$-th root of unity on the unit circle,*
 

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:isospin-from-canonical-bowtie",
+export default proposition({
+  label: "prop:isospin-from-canonical-bowtie",
   title:
     "Canonical $\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\bowtie_K$ interface (regularised crystal extension)",
   lean: {
@@ -14,7 +14,7 @@ export default conjecture({
     "prop:crystal-isospin-degeneracy",
     // The color-tube channel-assignment that supplies the
     // canonical bowtie interface:
-    "conj:inter-nucleon-channel-color-tube",
+    "prop:inter-nucleon-channel-color-tube",
     // Substrate flavor split = the 305 ppm anomaly this block
     // identifies as the bar-anti-symmetric isospin residue:
     "prop:flavor-split-substrate",

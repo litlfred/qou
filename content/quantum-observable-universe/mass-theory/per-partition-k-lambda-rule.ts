@@ -4,13 +4,13 @@ export default remark({
   label: "rem:per-partition-k-lambda-rule",
   title:
     "Per-partition $k_\\lambda$ rule — the open structural form of $n_\\star$",
-  interprets: "conj:brane-tower-z-habiro",
+  interprets: "prop:brane-tower-z-habiro",
   lean: {
     ref: "qou:QOU.BraidKnot.PerPartitionKLambda.candidateRule",
     validation: "not_checked",
   },
   uses: [
-    "conj:brane-tower-z-habiro",
+    "prop:brane-tower-z-habiro",
   ],
   tags: [
     "brane-tower",

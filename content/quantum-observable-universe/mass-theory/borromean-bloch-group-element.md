@@ -68,7 +68,7 @@ with regulator $r_2[\mathcal{B}_3] = 8 \cdot \Lambda(\pi/3) =
 
 The Beilinson regulator extends to higher orders via the formal
 $q$-expansion of $\Phi_q$ around $q = 1$ (the archimedean limit per
-[`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)):
+[`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)):
 
 $$
   \log \Phi_q(z)
@@ -101,7 +101,7 @@ deriving $h^4 = -3/4$ categorically:
 
 1. **Direct Borromean Markov trace** — already done
 2. **Pachner-Pentagon state-sum** —
-   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15, sibling)
+   [`prop:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15, sibling)
 3. **K-theoretic / Bloch group regulator** (this conjecture, D16)
 4. **DIM-master Pentagon** — research-grade
 
@@ -173,7 +173,7 @@ class BorromeanBlochGroupElement
 - [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)
   — Pentagon literatures + 4 candidate routes for $h^4 = -3/4$
 - Sibling Cluster C item:
-  [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15)
+  [`prop:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15)
 - The quantum Bloch group:
   [`rem:quantum-bloch-group`](#rem:quantum-bloch-group)
 - The motivic-period framing:
@@ -182,6 +182,6 @@ class BorromeanBlochGroupElement
   [`prop:vol-through-tau`](#prop:vol-through-tau),
   [`prop:binding-scale-catalan`](#prop:binding-scale-catalan)
 - The archimedean dilog limit:
-  [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
+  [`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)
 - The Kashaev volume conjecture (upstream):
   [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)

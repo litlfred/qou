@@ -8,9 +8,9 @@ export default remark({
   uses: [
     "prop:hecke-baer-star-generic",
     "prop:explicit-central-idempotent",
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "rem:figure-8-archimedean-illustration",
-    "conj:bring-trilog-depth-3-witness",
+    "prop:bring-trilog-depth-3-witness",
   ],
   cites: ["bloch2000"],
   tags: [

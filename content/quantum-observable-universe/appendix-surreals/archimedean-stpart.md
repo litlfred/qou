@@ -62,7 +62,7 @@ distinguish observable predictions) or only *mathematical*
 ## Relation to the classical-limit conjecture
 
 This conjecture is the **categorical** counterpart of
-[classical limit as standard-part](#conj:classical-limit-stpart):
+[classical limit as standard-part](#prop:classical-limit-stpart):
 
 - Classical-limit-stpart says: the $q \to 1$ classical-limit
  functor on $\mathbf{C}_q$ is $\mathrm{St} \circ \mathrm{ev}_{1
@@ -96,9 +96,9 @@ generalisation of the main paper:
 
 - defining the category $\mathbf{QOU}_{\mathbf{No}}^{\varepsilon}$
  with the relaxed axioms (the appendix's conjectures
- [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
- [infinitesimal-observability](#conj:infinitesimal-observability),
- [vacuum-epsilon](#conj:vacuum-epsilon) make a start);
+ [infinitesimal-frobenius](#prop:infinitesimal-frobenius),
+ [infinitesimal-observability](#prop:infinitesimal-observability),
+ [vacuum-epsilon](#prop:vacuum-epsilon) make a start);
 - showing that $\mathrm{St}$ extends from
  $\mathbf{No}_{\mathrm{fin}}$ to morphisms in this category in a
  functorial way.
@@ -109,7 +109,7 @@ not yet exist in mathlib.
 ## Proof strategy
 
 The conjecture is the *category-level* counterpart of
-[classical-limit-stpart](#conj:classical-limit-stpart). Reduce
+[classical-limit-stpart](#prop:classical-limit-stpart). Reduce
 to that conjecture via:
 
 1. **Functorial reduction**. Show
@@ -121,7 +121,7 @@ to that conjecture via:
  - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
  $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
  $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
- [classical-limit-stpart](#conj:classical-limit-stpart).
+ [classical-limit-stpart](#prop:classical-limit-stpart).
  - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
  $\mathrm{St}$ acts entry-wise.
  - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
@@ -131,9 +131,9 @@ to that conjecture via:
 3. **Verify axioms**: each $\varepsilon$-relaxed axiom (Frobenius,
  observability, volume, vacuum) becomes the strict axiom under
  $\mathrm{St}$ — content of conjectures
- [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
- [infinitesimal-observability](#conj:infinitesimal-observability),
- [vacuum-epsilon](#conj:vacuum-epsilon).
+ [infinitesimal-frobenius](#prop:infinitesimal-frobenius),
+ [infinitesimal-observability](#prop:infinitesimal-observability),
+ [vacuum-epsilon](#prop:vacuum-epsilon).
 
 4. **Essential surjectivity**: every archimedean QOU lifts (set
  $\varepsilon = 0$ by definition). This direction is automatic.

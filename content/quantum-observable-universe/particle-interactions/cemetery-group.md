@@ -27,6 +27,6 @@ the decoupled or non-observable interaction channels.*
 *The cemetery group is **emergent**: it is defined as the kernel of
 $\tau$ rather than postulated.  Concrete computational use appears
 in [the cemetery-group emergence
-conjecture](#conj:cemetery-group-emergence), which justifies using
+conjecture](#prop:cemetery-group-emergence), which justifies using
 $\mathcal{Z}_n$ as a homological filter (a "kill switch") on
 crystal-graph traversals.*

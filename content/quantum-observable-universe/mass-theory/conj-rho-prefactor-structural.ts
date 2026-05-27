@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:rho-prefactor-structural",
+export default proposition({
+  label: "prop:rho-prefactor-structural",
   title:
     "Structural prefactor rule: $\\rho(\\mathfrak{H}) = \\dim_q(\\lambda^*(T_w))$",
   uses: [

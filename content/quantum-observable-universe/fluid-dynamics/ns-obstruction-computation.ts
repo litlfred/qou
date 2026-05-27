@@ -7,7 +7,7 @@ export default proposition({
     "Computation of the NS obstruction for the Descartes universe",
   uses: [
     "prop:ns-obstruction-tower",
-    "conj:levi-degeneracy",
+    "prop:levi-degeneracy",
     "rem:body-asymptotics-catalog",
   ],
   tags: [

@@ -17,7 +17,7 @@ export default remark({
     "prop:three-calibration-inputs",
     "def:quantum-planck-constant",
     "rem:figure-8-archimedean-illustration",
-    "conj:borromean-baryon-mass-formula",
+    "prop:borromean-baryon-mass-formula",
   ],
   cites: ["codata2022", "thurston1978"],
   tags: [

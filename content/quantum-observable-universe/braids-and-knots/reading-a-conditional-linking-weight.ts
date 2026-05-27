@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:reading-a-conditional-linking-weight",
+export default proposition({
+  label: "prop:reading-a-conditional-linking-weight",
   title:
     "Reading-A linking-weight: $\\mathrm{linkingWeight}(q) = \\tfrac{5}{2} + (-G) h^2$ (conditional)",
   lean: {

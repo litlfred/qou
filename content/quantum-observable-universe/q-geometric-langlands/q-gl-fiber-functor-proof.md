@@ -24,7 +24,7 @@ $\mathbb{L}_q^{-1}(\mathcal{L}_q)$ on $\mathrm{Bun}_{G_q}$.
 **Step 3: Uniqueness from rigidity.**
 Suppose $\mathbb{L}_q$ and $\mathbb{L}_q'$ are two equivalences
 satisfying properties (1)--(3) of the
-[$q$-Geometric Langlands conjecture](#conj:q-geometric-langlands).
+[$q$-Geometric Langlands conjecture](#prop:q-geometric-langlands).
 Then $\mathbb{L}_q' \circ \mathbb{L}_q^{-1}$ is a tensor
 auto-equivalence of
 $\mathrm{QCoh}(\mathrm{LocSys}_{\check{G}_q}(X))$

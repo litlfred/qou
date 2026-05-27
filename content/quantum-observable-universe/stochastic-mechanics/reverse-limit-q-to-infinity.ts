@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:reverse-limit-q-to-infinity",
+export default proposition({
+  label: "prop:reverse-limit-q-to-infinity",
   title:
     "Reverse limit $q \\to \\infty$ — symmetric counterpart of Kashiwara crystal $q \\to 0$ via bar involution",
   lean: {

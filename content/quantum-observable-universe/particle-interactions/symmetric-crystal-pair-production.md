@@ -2,7 +2,7 @@
 *Let $H_n(R, q)$ be the Iwahori–Hecke algebra of type $A_{n-1}$
 with [Hecke normal forms](#def:hecke-normal-form) $\{T_w\}$, and let
 $\mathrm{Cryst}(\mathfrak{sl}_n)$ be its associated Kashiwara crystal
-under [crystal-graph realisation](#conj:crystal-graph-realization).
+under [crystal-graph realisation](#prop:crystal-graph-realization).
 Fold the $\mathfrak{sl}_n$ Cartan datum into a Type B Cartan datum
 along the Dynkin involution $i \mapsto \bar i = n - i$, equivalently
 the $\mathbb{Z}/2\mathbb{Z}$ bar-involution

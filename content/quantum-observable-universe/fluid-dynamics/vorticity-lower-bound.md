@@ -1,16 +1,16 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+[`prop:q-aubin-lions`](#prop:q-aubin-lions),
+[`prop:ns-counterexample`](#prop:ns-counterexample),
+[`prop:critical-exponent`](#prop:critical-exponent),
+[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[`prop:regularity-breakdown`](#prop:regularity-breakdown);
 "Vorticity lower bound").**
 
 Let $v_q$ be the q-NS solution for anti-parallel vortex pair
-initial data ([counter-example](#conj:ns-counterexample)) and let
+initial data ([counter-example](#prop:ns-counterexample)) and let
 $v^*$ be the weak limit as $q \to 1$
-([q-Aubin--Lions](#conj:q-aubin-lions)).  Let $\omega^* = \nabla
+([q-Aubin--Lions](#prop:q-aubin-lions)).  Let $\omega^* = \nabla
 \times v^*$ and let $d(t)$ be the separation between the two
 filament cores.
 

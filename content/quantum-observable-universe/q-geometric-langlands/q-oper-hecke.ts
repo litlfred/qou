@@ -1,12 +1,12 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:q-oper-hecke",
+export default proposition({
+  label: "prop:q-oper-hecke",
   lean: { ref: "qou:QOU.QGeometricLanglands.q_oper_hecke", validation: "not_checked" },
   title: "$q$-Opers are $q$-Hecke eigensheaves",
   uses: [
     "def:q-oper",
-    "conj:q-geometric-langlands",
+    "prop:q-geometric-langlands",
   ],
   cites: ["frenkel2007"],
   tags: ["geometric-langlands", "oper", "hecke-algebra"],

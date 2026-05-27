@@ -10,8 +10,8 @@ export default proposition({
   uses: [
     "def:borromean-baryon",
     // broken-ref removed (Phase 7): prop:jones-markov-trace
-    "conj:quantum-langlands-dual",
-    "conj:dim-master-pentagon",
+    "prop:quantum-langlands-dual",
+    "prop:dim-master-pentagon",
   ],
   cites: [
     "garoufalidis2004",

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:bring-hyperbolic-knot-bloch-decomposition",
+export default proposition({
+  label: "prop:bring-hyperbolic-knot-bloch-decomposition",
   title:
     "Bloch-group decomposition of $2/(3\\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface",
   uses: [
@@ -9,7 +9,7 @@ export default conjecture({
     "prop:em-coupling-bring-zero-mode",
     "rem:figure-8-archimedean-illustration",
     "def:archimedean-realization-functor",
-    "conj:kashaev-volume-conjecture",
+    "prop:kashaev-volume-conjecture",
   ],
   cites: [
     "suslin1991",

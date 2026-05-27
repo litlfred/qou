@@ -74,5 +74,5 @@ This proposition serves three purposes:
 *verified by inspection* of its defining block. The closure
 properties are *conjectural* (modulo well-definedness of the
 bi-filtration). The joint-action conjecture
-([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action))
+([`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action))
 sharpens the closure into an equivariance.

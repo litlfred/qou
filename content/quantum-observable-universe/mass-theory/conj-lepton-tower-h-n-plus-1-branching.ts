@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:lepton-tower-h-n-plus-1-branching",
+export default proposition({
+  label: "prop:lepton-tower-h-n-plus-1-branching",
   lean: {
     ref: "qou:QOU.BraidKnot.LeptonTowerHnPlus1.lepton_xi",
     validation: "not_checked",

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:crystal-graph-realization",
+export default proposition({
+  label: "prop:crystal-graph-realization",
   title:
     "Hecke normal forms realise crystal highest-weight vectors",
   lean: { ref: "qou:QOU.BraidKnot.CrystalGraphRealization", validation: "stub" },

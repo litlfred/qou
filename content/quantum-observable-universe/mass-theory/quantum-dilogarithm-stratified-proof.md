@@ -140,7 +140,7 @@ answer, one needs the projections $\mathrm{proj}_{Z^{(k)}}(\Phi_q(z_i))$
 to be uniformly bounded as $|z_i| \to q$ — equivalently, no spurious
 analytic mass leaks into $Z^{(k)}(A)$ from the divergent infinite
 product. Establishing this uniform bound is the conjectural target of
-[$z$-Habiro completion](#conj:brane-tower-z-habiro) and the open part
+[$z$-Habiro completion](#prop:brane-tower-z-habiro) and the open part
 of [$\Phi_q$ categorical truncation](#prop:phi-q-categorical-truncation).
 
 The argument above is solid as a **categorical (Frobenius-paired)

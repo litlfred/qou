@@ -1,4 +1,4 @@
-The [regularity breakdown conjecture](#conj:regularity-breakdown)
+The [regularity breakdown conjecture](#prop:regularity-breakdown)
 predicts that the maximum enstrophy diverges as
 $\Omega_{\max}(q) \sim (q-1)^{-\alpha}$ for some $\alpha > 0$.
 

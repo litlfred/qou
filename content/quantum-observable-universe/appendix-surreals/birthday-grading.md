@@ -87,7 +87,7 @@ $> \omega$ statements use named infinities like $\omega$ itself
 or transseries terms like $\log \omega$.
 
 The appendix's relaxed axioms
-([infinitesimal Frobenius](#conj:infinitesimal-frobenius)) all
+([infinitesimal Frobenius](#prop:infinitesimal-frobenius)) all
 allow corrections of the form $\mathrm{id} + O(\varepsilon)$,
 which live at birthday $\leq \omega$ but are distinguished from
 classical $\mathrm{id}$ by having non-zero standard-part of the

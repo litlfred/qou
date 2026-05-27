@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:categorical-neutrality-saturated-shells",
+export default proposition({
+  label: "prop:categorical-neutrality-saturated-shells",
   title:
     "Categorical neutrality of saturated shells: full-twist identity action on $\\Phi_n$ at magic $n$",
   lean: {
@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:mass-endomorphism",
+    "prop:mass-endomorphism",
     "def:hecke-mass-element",
     "prop:categorical-mass-markov",
     "prop:hoefsmit-seminormal-form",

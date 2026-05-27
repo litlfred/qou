@@ -55,7 +55,7 @@ The orthogonality says: **the partitions that the canonical atom-braid is "most 
 
 ## Connection to the bar-involution structure
 
-The negative-$y_\lambda$ sign on the deepest PSD-dominant partitions at A=6 is the empirical fingerprint of the bar involution. The transpose-pair structure observed at A=4 ((4,4,4) paired with (3,3,3,3) — see [`conj:atom-braid-exterior-algebra`](conj-atom-braid-exterior-algebra.md) §"Lean structure") extends to a broader pattern: **tall-narrow partitions** (deeper PSD obstruction) and **wide-short partitions** (smaller PSD obstruction, more positive eigval pattern) are bar-paired via the transpose involution but with **asymmetric obstruction depth** — the tall-narrow side is uniformly deeper.
+The negative-$y_\lambda$ sign on the deepest PSD-dominant partitions at A=6 is the empirical fingerprint of the bar involution. The transpose-pair structure observed at A=4 ((4,4,4) paired with (3,3,3,3) — see [`prop:atom-braid-exterior-algebra`](conj-atom-braid-exterior-algebra.md) §"Lean structure") extends to a broader pattern: **tall-narrow partitions** (deeper PSD obstruction) and **wide-short partitions** (smaller PSD obstruction, more positive eigval pattern) are bar-paired via the transpose involution but with **asymmetric obstruction depth** — the tall-narrow side is uniformly deeper.
 
 ## Implications for the binding-energy Gap
 

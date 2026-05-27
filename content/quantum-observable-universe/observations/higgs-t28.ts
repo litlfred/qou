@@ -15,7 +15,7 @@ export default conjecture({
     "def:crossing-energy",
     "def:confined-particle",
     "prop:fermion-boson-knot-link",
-    "conj:borromean-quark",
+    "prop:borromean-quark",
   ],
   tags: [
     "higgs",

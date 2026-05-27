@@ -17,7 +17,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:shell-closure-nf-term-count",
+    "prop:shell-closure-nf-term-count",
     "prop:nuclear-knot-classification",
     "prop:mass-coefficient-shadow-price",
   ],

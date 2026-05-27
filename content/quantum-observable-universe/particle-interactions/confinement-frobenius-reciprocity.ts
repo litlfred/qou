@@ -21,7 +21,7 @@ export default proposition({
     "prop:operator-selection-lp",
     "prop:mass-coefficient-shadow-price",
     "prop:confinement-operator-selection",
-    "conj:knot-factor-frobenius-pairing",
+    "prop:knot-factor-frobenius-pairing",
   ],
   cites: ["yekutieli2015", "kassel1995"],
   computation: {

@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:two-filtration-bridge",
+    "prop:two-filtration-bridge",
     "prop:two-filtration-bridge-small-cases",
     "rem:chirality-period-pairing",
     "prop:joint-galois-braid-discharged",

@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
+**Proposition (conditional on [`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
 *Let $\tau_{\text{arch}} = \pi_\infty \circ \tau$ be the archimedean
 realization functor of the QOU substrate
 ([archimedean realization functor](#def:archimedean-realization-functor)),
@@ -11,7 +11,7 @@ acting on motivic inputs assembled from braid / knot data. Assume*
    ([`prop:cosimplicial-crossed-groupoid`](#prop:cosimplicial-crossed-groupoid))
    together with the archimedean-limit class
    `QOU.QPochhammer.ArchimedeanLimit`
-   ([`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).*
+   ([`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)).*
 - *(C2) Bloch-Suslin pentagon-uniqueness [`suslin1991`,
    `bloch2000`]: any continuous antisymmetric pentagon-coherent
    real-valued function on $\mathbb{C} \setminus \{0,1\}$ is a
@@ -41,7 +41,7 @@ $$
   + D\!\left(\tfrac{1-y}{1-x}\right) \;=\; 0.
 $$
 
-> **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
+> **Theorem (conditional on [`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)).**
 > Per CLAUDE.md §3b-cond: the upstream conjecture is axiomatised in
 > Lean as the typeclass
 > [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean);
@@ -92,7 +92,7 @@ non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies
 $A \cong A^\vee$, making the substrate algebra self-dual; this
 self-duality drives the descent involution
 $\hat{\tau}_n$ on the endomorphism algebra
-([mass endomorphism](#conj:mass-endomorphism)),
+([mass endomorphism](#prop:mass-endomorphism)),
 which splits the categorical mass endomorphism into a
 **descended** baseline component and a **transient** component
 localized at the exceptional divisors of the brane tower.
@@ -130,7 +130,7 @@ limit, the quantum dilogarithm $\Phi_q(z_i)$
 ([quantum dilogarithm volume](#prop:quantum-dilogarithm-volume))
 evaluated at each exceptional divisor degenerates into the
 Bloch-Wigner dilogarithm $D(z_i)$
-([dilogarithm archimedean limit](#conj:dilogarithm-archimedean-limit)).
+([dilogarithm archimedean limit](#prop:dilogarithm-archimedean-limit)).
 The Bloch-Wigner dilogarithm is uniquely characterized as the
 function satisfying the 5-term pentagon identity
 [`suslin1991`, `bloch2000`], providing the exact geometric measure
@@ -164,7 +164,7 @@ Three ingredients close the conditional statement.
    proportionality constant is fixed by demanding the
    Faddeev-Kashaev quasi-classical limit
    $(1-q)\log\Phi_n(z;q) \to \mathrm{Li}_2(z)$
-   ([dilogarithm archimedean limit](#conj:dilogarithm-archimedean-limit))
+   ([dilogarithm archimedean limit](#prop:dilogarithm-archimedean-limit))
    match the standard Bloch-Wigner normalisation
    $D(z) = \mathrm{Im}\,\mathrm{Li}_2(z) + \log|z|\arg(1-z)$.
 

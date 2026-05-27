@@ -12,10 +12,10 @@ composite CPT operator
 decomposes naturally as a tensor of:*
 
 - *C from color-sheet flavor conjugation
-  ([`conj:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap), D6)*
+  ([`prop:c-from-color-flavor-swap`](#prop:c-from-color-flavor-swap), D6)*
 - *P from Type-B Cartan folding* (this conjecture)
 - *T from Markov-trace cyclicity
-  ([`conj:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity), D8)*
+  ([`prop:t-from-trace-cyclicity`](#prop:t-from-trace-cyclicity), D8)*
 
 ## The CLAUDE.md §7b authoring shortcut
 
@@ -118,10 +118,10 @@ class TypeBFoldingCPT (M : Type*) [BrCategory M] [Crystal M] where
   + §2 Cluster A alternative
 - [`CLAUDE.md`](../../../CLAUDE.md) §7b authoring shortcut
 - D6/D7/D8 explicit CPT decomposition:
-  [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md),
-  [`conj:p-from-braid-mirror`](p-from-braid-mirror.md),
-  [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md)
+  [`prop:c-from-color-flavor-swap`](c-from-color-flavor-swap.md),
+  [`prop:p-from-braid-mirror`](p-from-braid-mirror.md),
+  [`prop:t-from-trace-cyclicity`](t-from-trace-cyclicity.md)
 - Composite CPT:
   [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
-- Wigner SU(4) fixed-point story: [`conj:wigner-su4-from-spin-isospin`](wigner-su4-from-spin-isospin.md) (D11)
+- Wigner SU(4) fixed-point story: [`prop:wigner-su4-from-spin-isospin`](wigner-su4-from-spin-isospin.md) (D11)
 - [Brundan-Kleshchev 2009; Kashiwara 1991; Lecouvey 2007 for Type-B crystals]

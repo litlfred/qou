@@ -1,10 +1,10 @@
 <!-- Theorem (conditional on:
-       conj:crystal-graph-realization,
+       prop:crystal-graph-realization,
        prop:hecke-branching-trace-decomposition). -->
 
 **Proposition (Crystal R-matrix Sub-lemma 2.1, operator-valued
 form, conditional on
-[`conj:crystal-graph-realization`](crystal-graph-realization.md)).**
+[`prop:crystal-graph-realization`](crystal-graph-realization.md)).**
 *Let $\mathbf{H}_n(q)$ be the Iwahori–Hecke algebra over $R$ with
 $q$ generic, $\lambda \vdash n$, and $\beta_1 \in \mathbf{H}_{n_1}(q)$,
 $\beta_2 \in \mathbf{H}_{n_2}(q)$ with $n = n_1 + n_2$. Let
@@ -15,7 +15,7 @@ be its $(\mu, \nu)$-block in the
 of $V_\lambda \downarrow_{\mathbf{H}_{n_1} \otimes \mathbf{H}_{n_2}}$.*
 
 *Under
-[`conj:crystal-graph-realization`](crystal-graph-realization.md)
+[`prop:crystal-graph-realization`](crystal-graph-realization.md)
 (Brundan–Kleshchev iso $\mathbf{H}_n(R, q) \xrightarrow{\sim} R_\Lambda^{\mathrm{cyc}}(\mathfrak{sl}_n)$
 plus the Kashiwara crystal limit at $q \to 0$), the matrix-entry
 pole order of $A^\lambda_{\mu, \nu}(\sigma_i)$ at $q = 0$ on any
@@ -50,7 +50,7 @@ was open for general multidim $\lambda$ (verified numerically 11/11
 on the deuteron, but lacked a categorical proof).
 
 This block closes the operator-valued form **categorically modulo**
-[`conj:crystal-graph-realization`](crystal-graph-realization.md):
+[`prop:crystal-graph-realization`](crystal-graph-realization.md):
 
 - **Step 1** of the audit: $q \to 0$ limit of $\sigma_i$ on the
   seminormal basis is the combinatorial $R$-matrix on

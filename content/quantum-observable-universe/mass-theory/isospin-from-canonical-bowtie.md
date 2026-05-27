@@ -13,7 +13,7 @@
 
 **Conjecture (D9 isospin closure, conditional on
 [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
-+ [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)).**
++ [`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)).**
 *For each atomic braid $\beta_A \in B_{3A}$ written in the canonical
 operator-valued interface convention*
 
@@ -309,14 +309,14 @@ ultimately lives in the upstream-conjecture class instances.
 - Upstream restricted result:
   [`prop:crystal-isospin-degeneracy`](crystal-isospin-degeneracy.md)
 - Upstream channel-assignment class:
-  [`conj:inter-nucleon-channel-color-tube`](inter-nucleon-channel-color-tube.md)
+  [`prop:inter-nucleon-channel-color-tube`](inter-nucleon-channel-color-tube.md)
   (PR [#1111](https://github.com/litlfred/qou/pull/1111))
 - The 305 ppm closed form:
   [`prop:flavor-split-substrate`](flavor-split-substrate.md)
   (PR #690)
 - The compute consumer:
   [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
-- D6 (charge conjugation): [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)
+- D6 (charge conjugation): [`prop:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)
   — sibling Z/2 categorical symmetry on color sheets (same color-tube infrastructure)
 - The Markov-trace machinery: [`bar-involution.md`](bar-involution.md)
   Tables 1-4 — bar-symmetry classification of all framework quantities

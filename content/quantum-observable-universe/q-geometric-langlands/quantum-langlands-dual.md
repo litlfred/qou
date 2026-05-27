@@ -12,7 +12,7 @@ duality:*
   generators; bar acts on the **generator action** at fixed root
   data.*
 - *Coincides with the reverse-limit $q \to \infty$
-  ([`conj:reverse-limit-q-to-infinity`](#conj:reverse-limit-q-to-infinity), D13)
+  ([`prop:reverse-limit-q-to-infinity`](#prop:reverse-limit-q-to-infinity), D13)
   for non-classical specialisations.*
 - *For non-simply-laced types (Type B, C, D, $G_{2}$, $F_{4}$), gives a
   genuinely-distinct dual algebra (Type B $\leftrightarrow$ Type C, etc.) — this
@@ -61,9 +61,9 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D19
-- D13 [`conj:reverse-limit-q-to-infinity`](reverse-limit-q-to-infinity.md)
+- D13 [`prop:reverse-limit-q-to-infinity`](reverse-limit-q-to-infinity.md)
   — Langlands-paired limit
-- D22 [`conj:type-b-folding-cpt`](type-b-folding-cpt.md) — non-
+- D22 [`prop:type-b-folding-cpt`](type-b-folding-cpt.md) — non-
   simply-laced Langlands dual
 - [Macdonald 1971; Lusztig 1989; Frenkel–Reshetikhin 2002 for
   quantum-Langlands]

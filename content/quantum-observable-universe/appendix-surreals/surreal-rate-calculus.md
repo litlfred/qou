@@ -34,12 +34,12 @@ prefactor", so the **order** of each quantity in $\varepsilon$ is an
 invariant of the substrate, independent of normalization conventions.
 
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+[`prop:q-aubin-lions`](#prop:q-aubin-lions),
+[`prop:ns-counterexample`](#prop:ns-counterexample),
+[`prop:critical-exponent`](#prop:critical-exponent),
+[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[`prop:regularity-breakdown`](#prop:regularity-breakdown);
 "Surreal rate calculus").** *In $\mathbb{R}(\varepsilon)$,
 the following strict inequalities hold:*
 

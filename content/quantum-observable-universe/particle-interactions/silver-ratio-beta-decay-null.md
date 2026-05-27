@@ -136,7 +136,7 @@ from first principles. The silver-ratio limit gives a clean test
 point and identifies the relevant algebraic landscape (Pell-Lucas
 extension of $\mathbb{Q}$), but the actual closed forms for
 $c_4..c_7$ remain empirical conjectures (see
-[`conj:qbeta-c-k-closed-forms`](#conj:qbeta-c-k-closed-forms)).
+[`prop:qbeta-c-k-closed-forms`](#prop:qbeta-c-k-closed-forms)).
 
 ## Open
 

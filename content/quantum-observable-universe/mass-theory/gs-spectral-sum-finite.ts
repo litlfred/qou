@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:gs-spectral-sum-finite",
+export default proposition({
+  label: "prop:gs-spectral-sum-finite",
   title:
     "Finiteness of the GS residue spectral sum",
   lean: {
@@ -13,7 +13,7 @@ export default conjecture({
     "prop:gb-residue-spectral-sum",
     "prop:confinement-level-exists",
     "prop:confinement-level-unique",
-    "conj:gs-residue-at-root-existence",
+    "prop:gs-residue-at-root-existence",
   ],
   tags: [
     "gs-filtration",

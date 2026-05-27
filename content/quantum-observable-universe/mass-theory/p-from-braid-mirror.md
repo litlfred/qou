@@ -9,10 +9,10 @@ an involution ($P^2 = \mathrm{id}$) and is **distinct from**:*
 - *the bar-involution [`def:bar-involution`](#def:bar-involution),
   which acts as $q \mapsto q^{-1}$ AND $\sigma_i \mapsto \sigma_i^{-1}$
   simultaneously (= composite CPT);*
-- *charge conjugation [`conj:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap)
+- *charge conjugation [`prop:c-from-color-flavor-swap`](#prop:c-from-color-flavor-swap)
   (D6), which acts on color-sheet flavor labels with no Hecke-
   generator action;*
-- *time-reversal [`conj:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity)
+- *time-reversal [`prop:t-from-trace-cyclicity`](#prop:t-from-trace-cyclicity)
   (D8), which reverses the braid word at the Markov-trace level.*
 
 ## The action
@@ -118,7 +118,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D7
   + §2 Cluster A (CPT decomposition D5 $\to$ D6 + D7 + D8)
 - Sibling Z/2 decompositions of CPT:
-  [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
-  [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md) (D8)
+  [`prop:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
+  [`prop:t-from-trace-cyclicity`](t-from-trace-cyclicity.md) (D8)
 - Composite CPT: [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
 - Bar-involution: [`bar-involution.md`](bar-involution.md) Tables 1-4

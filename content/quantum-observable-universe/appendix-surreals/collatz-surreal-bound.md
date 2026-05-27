@@ -1,6 +1,6 @@
 This remark expresses the contact-boundary argument of the
 $q$-Collatz conjecture
-([$q$-Collatz](#conj:q-collatz),
+([$q$-Collatz](#prop:q-collatz),
 [Collatz no cycles](#prop:collatz-no-cycles))
 as a literal surreal inequality in $\mathbb{R}(\varepsilon)$.
 
@@ -43,7 +43,7 @@ can persist: the Reeb period sweeps a contact-volume transfinite
 larger than the mass-gap infinitesimal, and there is no budget to
 dissipate the accumulated excess.  This is the surreal-arithmetic
 form of the no-rogue-cycle + no-unbounded-hailstone content of
-[$q$-Collatz](#conj:q-collatz), consistent with the contact-geometric
+[$q$-Collatz](#prop:q-collatz), consistent with the contact-geometric
 argument of [Collatz no cycles](#prop:collatz-no-cycles).
 
 **Relation to the standard-part map.** The classical Collatz orbit

@@ -4,15 +4,15 @@ Thurston's volume additivity
 ([Thurston additivity](#prop:thurston-volume-additivity)) ensures
 that the mass of a composite knot decomposes as a sum over its
 JSJ pieces, and the mass-volume factorisation conjecture
-([mass-volume factorisation](#conj:mass-volume-factorization))
+([mass-volume factorisation](#prop:mass-volume-factorization))
 identifies the categorical mass endomorphism as a product of
 volume and Frobenius-packing density.
 
 The crossing-graded expansion
-([crossing expansion](#conj:crossing-graded-mass-expansion))
+([crossing expansion](#prop:crossing-graded-mass-expansion))
 stratifies the mass by crossing number, with each stratum
 controlled by the locality conjecture
-([lifted crossing locality](#conj:lifted-crossing-locality)).
+([lifted crossing locality](#prop:lifted-crossing-locality)).
 The jet-tower convergence bound
 ([tower convergence](#prop:jet-tower-convergence)) guarantees that
 the brane-tower sum converges geometrically, and the SYT/Jucys-Murphy

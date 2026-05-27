@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:hoefsmit-ew-cell-content",
+export default proposition({
+  label: "prop:hoefsmit-ew-cell-content",
   title:
     "Hoefsmit cell-content identification of the EW triplet inside $\\mathrm{End}_R(V^{\\otimes 6})$",
   lean: {
@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     // broken-ref removed (Phase 7): conj:force-carrier-knot-vs-link-dichotomy
     // broken-ref removed (Phase 7): conj:electroweak-higgs-torus-link-triplet
-    "conj:weak-spectral-completeness",
+    "prop:weak-spectral-completeness",
     "prop:knot-operator-lp-selection",
   ],
   tags: [
