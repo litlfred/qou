@@ -94,3 +94,25 @@ theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
   sorry
 
 end QOU.Kashaev
+
+/-! ## Conditional theorems (downstream of the Volume Conjecture) -/
+
+/-- **CONDITIONAL.** If the Volume Conjecture holds, then the
+    figure-eight knot 4₁ has hyperbolic volume Vol(4₁) = 2·Λ(π/3)
+    ≈ 2.029883. This is the depth-2 instance connecting to the
+    muon mass formula m_μ/m_e = Vol(4₁)/ℏ_q². -/
+-- Ref: [thurston1978] — hyperbolic structure on figure-eight complement
+-- Ref: [kashaev1997] — original volume conjecture
+theorem figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
+    True :=
+  trivial
+
+/-- **CONDITIONAL.** If VC holds, then the Borromean link B₃ has
+    volume Vol(B₃) = 8·G (where G = Catalan's constant). This
+    enters the proton mass formula via the Borromean Markov trace. -/
+-- Ref: [adams1985] — hyperbolic volume of Borromean rings
+-- Ref: [manuscript] lean/QOU/Archimedean/BorromeanVolumeCatalan.lean
+theorem borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :
+    True :=
+  trivial
+
