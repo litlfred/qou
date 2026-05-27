@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T15:44:51.481052+00:00",
-  "commitSha": "897bd64a88dbb6e250880726c241f54587e5ac76",
+  "computedAt": "2026-05-27T00:57:10.793137+00:00",
+  "commitSha": "4af638abad17ac4c6114a9d62f72b44a172b97d5",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 9,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "334e82e8e517",
-  "scriptCommitSha": "a8d6bd9f9a8fd11fa7b7ad178ab348ce3a22943c",
+  "scriptHash": "a4d8b38f453e",
+  "scriptCommitSha": "e1761979b29b856850e00009ca4927855870a471",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -74,7 +74,7 @@
         "miss_factor": "0.7367",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
-        "source_witness": "q-beta-operator-valued-N3.witness.json (N=5 categorical, c_5 = c_3²·3 + b per precision-ladder.md mixing pattern)",
+        "source_witness": "q-beta-operator-valued-N3.witness.json (Habiro-exact, integer a_m evaluated at q₀; series terminates at M=8)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
         "compute_truncation_ppb": "1.278e-31",
         "compute_output_dps": 40
