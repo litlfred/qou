@@ -1,13 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T13:52:34.411114+00:00",
-  "commitSha": "71154857b5b5667826ef390e06af8337c0e2bbc2",
+  "computedAt": "2026-05-27T15:19:14.962613+00:00",
+  "commitSha": "650c12a5cec59c9a50a6293ded78ce2ea26aa65d",
   "assertions": [
     {
       "name": "summary_total_observables",
-      "computed": 6,
-      "expected": 6,
+      "computed": 7,
+      "expected": 7,
       "passed": true,
       "tolerance": 0,
       "source": "Snapshot count of observables in the table."
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "177cece9ccf7",
-  "scriptCommitSha": "b33cf2f56833e503de1c9da7bb670d32667777c0",
+  "scriptHash": "294374725531",
+  "scriptCommitSha": "577a2a8111ccbc25767d9c62ba7dbd25269217a6",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -128,10 +128,27 @@
         "source_witness": "(CAL-1 anchor)",
         "sigma_source": "codata_constants.M_E_MEV",
         "note": "calibration anchor — err defined as 0"
+      },
+      {
+        "obs": "m_K/m_pi",
+        "role": "validation (meson ratio)",
+        "pred_MeV": "3.53609434741",
+        "codata_MeV": "3.53711843895",
+        "sigma_exp_MeV": "9.32546e-5",
+        "err_ppb": "2.895e+5",
+        "sigma_exp_ppb": "2.636e+4",
+        "target_100x_ppb": "263.6",
+        "miss_factor": "1098.",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "meson-kaon-pion-derivation.witness.json (Hecke character χ_{(2,1)}(σ₁⁵) × (9/5)²)",
+        "sigma_source": "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
+        "compute_truncation_ppb": "2.828e-32",
+        "compute_output_dps": 40
       }
     ],
     "summary": {
-      "total": 6,
+      "total": 7,
       "beats_1x_count": 6,
       "beats_100x_count": 6
     },
@@ -175,6 +192,14 @@
         "commitSha": "c976cc9b7aed22c430f6adda01d11ef1e0a45202",
         "scriptCommitSha": "unknown",
         "computedAt": "2026-05-23T20:20:49.388665+00:00"
+      },
+      {
+        "path": "meson-kaon-pion-derivation.witness.json",
+        "sha256": "aeed505790d064b28dfd7d4147267d6142714c4726ebb4096126d53e10d269cd",
+        "size_bytes": 3922,
+        "commitSha": "d434c6ad78ac5f0ba276998daad25e1cb45942da",
+        "scriptCommitSha": "4d559b94bcf5fd15ac6078876bcfc80cb7a6d7cb",
+        "computedAt": "2026-05-27T14:55:45.942706+00:00"
       }
     ]
   }

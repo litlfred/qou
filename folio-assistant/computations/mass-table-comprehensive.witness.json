@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-24T02:01:48.845614+00:00",
-  "commitSha": "1621849b0550cdfa9771292f85f3fb752bedf9c0",
+  "computedAt": "2026-05-27T15:30:34.487176+00:00",
+  "commitSha": "2191707003c4be56d6bea00be950dfb8f0686c11",
   "assertions": [
     {
       "name": "all_A_leq_4_masses_computed",
@@ -14,11 +14,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 301,
+  "durationMs": 5270,
   "computation": "mass-table-comprehensive",
   "scriptFile": "mass_table_comprehensive.py",
-  "scriptHash": "40ca7f1fb0fc",
-  "scriptCommitSha": "ec5f314f4b6ed919ff0910607d56df7306329ddb",
+  "scriptHash": "f011382f5566",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
   "description": "Comprehensive mass/binding table for all nuclei from proton (A=1) through ¹²C (A=12) at the current production tier: Family A λ_A = 5/2 + (3/4)h² (PROVED) + substrate-pure flavor-split Δm/M_N (PROVED, PR #942). Binding energies via binding_canonical with use_closed_form=True for A ≤ 3 (PR #921). A = 4 uses symbolic path. A ≥ 5 flagged as 'not yet computed'. Each entry cross-references the recursive atom knot atlas methodology tag.",
   "contentBlock": "prop:recursive-atom-knot-atlas",
   "parameters": {
@@ -1313,12 +1319,13 @@
       "masses_computed": 65,
       "binding_computed": 10,
       "gated_on_phase2": 59,
-      "lambda_A_value": 2.532779663672884,
+      "linking_weight_family_a": 2.532779663672884,
+      "geom_full_borromean_q": 1890.5119536990953,
       "delta_m_over_M_N": 0.0013770494096847516,
       "m_p_pred_MeV": 965.3844755744939,
       "m_n_pred_MeV": 966.7147736397853,
-      "production_tier": "Family A (PROVED) + flavor-split (PROVED)",
-      "research_tier_not_used": "Strategy I λ_Y = λ_A - G·h² (conjectural bijection)"
+      "production_tier": "Geom_full(𝓑₃, q) via PROVED Family A linking_weight + flavor-split (PROVED) — PR #1080 canonical framing",
+      "research_tier_not_used": "Strategy I linking_weight = Family A − G·h² (conjectural bijection, PURGED 2026-05-24 per PR #985)"
     }
   },
   "caveats": [

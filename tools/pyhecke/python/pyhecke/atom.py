@@ -584,6 +584,9 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
 
     # Build per-generator V̂_full from accumulators
     z_mark = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+    h_val = q0 - qi
+    def q_int(n):
+        return (q0 ** n - qi ** n) / h_val if abs(h_val) > 1e-15 else float(n)
     # Wedderburn weights (H_3 weights — same as mass_endomorphism.py)
     nf3 = q_int(2) * q_int(3) * q_int(1)  # [3]_q!  (with [1]_q = 1)
     # Use H_3 weights as in mass_endomorphism (1-dim sym, 2-dim std, 1-dim alt)
