@@ -1,0 +1,21 @@
+{
+  "computation": "meson-spectral-analysis",
+  "description": "Meson spectral analysis using exact Hoefsmit V_{(2,1)} matrices. Key exact results: chi_std(L+) = chi_std(L-) = -1 EXACTLY, chi_std(e-) = 0 EXACTLY. Meson phase theta_pi = 2.12 rad (NOT near-identity like B_3). Spectral ratio theta_K/theta_pi = 1.015 misses m_K/m_pi = 3.54 by 71%. Meson masses need a different mechanism.",
+  "data": {
+    "exact_characters": {
+      "chi_std(1)": "[2]_q = q+q^{-1}",
+      "chi_std(sigma)": "h = q-q^{-1}",
+      "chi_std(L+)": "-1 EXACTLY",
+      "chi_std(L-)": "-1 EXACTLY",
+      "chi_std(e-)": "0 EXACTLY"
+    },
+    "meson_chi_std": -1.0437,
+    "meson_phase": 2.1198,
+    "kaon_chi_std": -1.0971,
+    "kaon_phase": 2.1514,
+    "spectral_ratio": 1.015,
+    "pdg_ratio": 3.537,
+    "miss": "71%",
+    "conclusion": "Meson mass ratio NOT from spectral phase ratio. Different mechanism needed."
+  }
+}
