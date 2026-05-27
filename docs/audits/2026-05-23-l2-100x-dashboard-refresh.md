@@ -50,7 +50,7 @@ Summary: 2/6 beat 100×, 3/6 beat 1×.
 | Observable | Blocker | Status |
 |---|---|---|
 | **m_p, m_n, Δ_pn** | 2.89% gap on the per-nucleon `Geom_full(𝓑₃)` evaluation vs. its categorically-exact value | Open (refinement of `Geom_full` itself; alternative derivation routes tested so far refuted — Bring-Bloch tier 0-5, V_7, q^10 pentagon, unit-circle Bloch class, Yekutieli per-cell purged 2026-05-24) |
-| **Q_beta** (1.43× over 100×) | CAL-3 anchor self-consistency. Categorical Q_beta_pred vs codata_constants.Q_BETA. | Marginal — would benefit from a refined substrate Q_beta categorical formula |
+| **Q_beta** (1.43× over 100×) | CAL-3 𝔇_π categorical formula |
 | m_mu, m_e | CAL-2, CAL-1 anchors | ✅ trivially met |
 
 ## Implications

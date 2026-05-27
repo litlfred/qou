@@ -75,7 +75,7 @@ hypothesis (single-knot ansatz with K_p in standard tables).
 **Verdict: tenable but unsatisfying.**
 
 If `λ_scale = 2.4599527869` is treated as a CAL-4 empirical
-input (alongside CAL-1 m_e, CAL-2 q_0, CAL-3 Q_β), the formula
+input (alongside CAL-1 m_e, CAL-2 q_0, CAL-3 𝔇_π), the formula
 becomes a 4-parameter phenomenology that reproduces m_p (and m_n
 via ΔS Skein) to ~1 ppm. The cost: another fitted parameter, raising
 the QOU framework from 3 calibrations to 4.

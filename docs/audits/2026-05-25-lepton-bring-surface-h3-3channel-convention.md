@@ -106,7 +106,7 @@ If leptons are on the Bring surface with 3-channel H_3 representation, what's th
 Per `prop:three-parameters-wedderburn`:
 - sym (3) ↔ CAL-2 q_0 (substrate)
 - std (2,1) ↔ CAL-1 m_e (mass scale)
-- alt (1,1,1) ↔ CAL-3 Q_β (interaction)
+- alt (1,1,1) ↔ CAL-3 𝔇_π (interaction)
 
 The 3 leptons would map to the 3 channels in some pattern. Candidate:
 - electron → std channel (mass scale primary, calibrated as F_e = 1)

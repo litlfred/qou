@@ -128,7 +128,7 @@ not a framework gap:
 | CAL-3 anchor (`cal-3-q-beta.witness.json`) | `0.78233341` (8 sig figs, σ=0.61 eV) | 8.7×10⁻⁹ | **11.13 ppb** (1.43× over 100× target) |
 | Probe's Q_AME (`q-beta-operator-valued-N3.witness.json`) | `0.782333414` (9 sig figs) | 4.7×10⁻⁹ | **6.02 ppb** (BEATS 100× target by 30%) |
 
-CAL-3's `Q_beta_n_MeV: 0.78233341` is the σ_exp-rounded
+CAL-3 𝔇_π_n_MeV: 0.78233341` is the σ_exp-rounded
 experimental value; the probe's `Q_AME` has more sub-ppb digits
 (presumably derived from primary masses via `Q_β = m_n − m_p − m_e`).
 
