@@ -55,7 +55,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from mpmath import mp, mpf, fabs, sqrt, pi as mppi
+from mpmath import mpf, fabs, pi as mppi
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -107,10 +107,9 @@ def main():
     seifert_sq = seifert_ratio ** 2
     m_K_over_m_pi = chi_5 * seifert_sq
 
-    # === Comparison ===
-    PDG_PI = mpf("139.57039")   # MeV
-    PDG_K = mpf("493.677")      # MeV
-    target = PDG_K / PDG_PI
+    # === Comparison (from canonical registry) ===
+    from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # noqa: E402
+    target = M_K_PM_MEV_VALIDATION / M_PI_PM_MEV_VALIDATION
 
     err_ppm = float(fabs(m_K_over_m_pi - target) / target * 1e6)
     err_pct = float(fabs(m_K_over_m_pi - target) / target * 100)
@@ -227,10 +226,10 @@ def main():
     )
     wb.add_assertion(
         "power_2_beats_power_1_and_3",
-        computed=err_ppm,
-        expected=0,
-        tolerance=max(err_power1, err_power3),
-        source="n_q = 2 gives smallest error",
+        computed=float(err_ppm < err_power1 and err_ppm < err_power3),
+        expected=1,
+        tolerance=0,
+        source="n_q = 2 gives smallest error among powers 1, 2, 3",
     )
 
     wb.save()

@@ -152,7 +152,7 @@ def main():
     n_cross = 0
     prev_sign = None
     for i in range(30):
-        q_val = mpf("1.01") + mpf(str(i)) * mpf("0.01")
+        q_val = mpf("1.01") + mpf(i) * mpf("0.01")
         try:
             theta_val = spectral_phase(q_val)
             diff = theta_val - vol_41
