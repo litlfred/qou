@@ -40,10 +40,12 @@ standalone-*.tex
 build-warnings.log
 _site/
 
-# Lean build artifacts
-content/quantum-observable-universe/lean/.lake/
-content/quantum-observable-universe/lean/lake-packages/
-content/quantum-observable-universe/lean/build/
+# Lean build artifacts (all paper packages + root workspace)
+.lake/
+lake-packages/
+content/*/lean/.lake/
+content/*/lean/lake-packages/
+content/*/lean/build/
 
 # Generated graph intermediate files
 dependency-graph.dot
