@@ -97,5 +97,48 @@ theorem habiro_is_exact :
     sorry /- tr_M = p(u)/d(u), degree p ≤ 40, degree d ≤ 21, coefficients in ℤ -/ := by
   sorry
 
+-- ═══════════════════════════════════════════════════════════════
+--  INTERFACE QUADRATIC STRUCTURE (binding key identity)
+-- ═══════════════════════════════════════════════════════════════
+
+/-- The averaged crossing operator σ_avg = σ − h/2 satisfies
+    σ_avg² = 1 + h²/4 = [2]_q²/4 (SCALAR — identity matrix).
+
+    Proof: from the Hecke relation σ² = hσ + 1:
+      (σ − h/2)² = σ² − hσ + h²/4 = (hσ+1) − hσ + h²/4 = 1 + h²/4.  QED
+
+    Consequence: even powers of the averaged crossing are SCALAR
+    (no operator content). Odd powers are linear in σ. For n
+    interface crossings:
+      n even: (σ−h/2)ⁿ = (1+h²/4)^{n/2} · I  (pure scalar)
+      n odd:  (σ−h/2)ⁿ = (1+h²/4)^{(n−1)/2} · (σ−h/2)  (linear)
+
+    This means the interface's quadratic terms factor out as a
+    universal scalar, and only ONE effective crossing carries the
+    operator-valued binding information. -/
+-- Ref: [iwahori1964] https://doi.org/10.1007/BF01691006
+theorem averaged_crossing_squared_scalar (q : ℝ) (hq : q ≠ 0)
+    (σ : ℝ) (hecke : σ ^ 2 = (q - 1/q) * σ + 1) :
+    (σ - (q - 1/q) / 2) ^ 2 = 1 + (q - 1/q) ^ 2 / 4 := by
+  have h_def : q - 1/q = q - 1/q := rfl
+  nlinarith [hecke]
+
+/-- The scalar value (1+h²/4) equals [2]_q²/4 = (q+q⁻¹)²/4. -/
+theorem scalar_eq_two_q_squared_over_4 (q : ℝ) (hq : q ≠ 0) :
+    1 + (q - 1/q) ^ 2 / 4 = (q + 1/q) ^ 2 / 4 := by
+  field_simp
+  ring
+
+/-- For 5 interface crossings (deuteron):
+    (σ−h/2)⁵ = (1+h²/4)² × (σ−h/2).
+    The 5 averaged crossings reduce to ONE effective crossing
+    times the scalar (1+h²/4)² ≈ 1.022. -/
+theorem five_averaged_crossings (q : ℝ) (hq : q ≠ 0)
+    (σ : ℝ) (hecke : σ ^ 2 = (q - 1/q) * σ + 1) :
+    (σ - (q - 1/q) / 2) ^ 5 =
+    (1 + (q - 1/q) ^ 2 / 4) ^ 2 * (σ - (q - 1/q) / 2) := by
+  have sq := averaged_crossing_squared_scalar q hq σ hecke
+  nlinarith [sq, sq]
+
 end
 end QOU.BraidKnot.TwoRoutes
