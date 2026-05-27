@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T14:11:46.508493+00:00",
-  "commitSha": "d9b388dcdf4f90fbb1905bd077a8305c79570e0f",
+  "computedAt": "2026-05-27T14:57:54.406622+00:00",
+  "commitSha": "9834ff15abaac7e987a8969685b14cde055d41c6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -2573,6 +2573,7 @@
         "mass-sweep-bar-sym-h2-coefficient.witness.json",
         "mass-sweep-wiring-status.witness.json",
         "mass-table-comprehensive.witness.json",
+        "mass-table-l1-full-crosscheck.witness.json",
         "mass-table-ppb.witness.json",
         "mass-tower-operator-valued-chain.witness.json",
         "mass-tower-operator-valued.witness.json",
@@ -2836,6 +2837,7 @@
         "tritium-8-11-jones-markov-probe.witness.json",
         "unified-low-isotope-predictor.witness.json",
         "unified-mass-molecular.witness.json",
+        "unified-meson-mass-formula.witness.json",
         "universal-ilp.witness.json",
         "v-hat-to-chi-lambda-integrated.witness.json",
         "v-hat-to-delta-lambda-bridge.witness.json",
