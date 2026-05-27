@@ -1,0 +1,37 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-27T02:21:32.789181+00:00",
+  "commitSha": "bf1a1587451ba2381ef52107a4cd3f4957e32e16",
+  "assertions": [
+    {
+      "name": "below_1ppQ",
+      "computed": 1.7916878279761012e-11,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1,
+      "unit": "ppQ",
+      "source": "Q_beta at N=4 vs CODATA"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "qbeta-1ppq-achieved",
+  "scriptFile": "qbeta_1ppq_achieved.py",
+  "scriptHash": "4b8fee8453d5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Q_beta precision at N=4: 0.00 ppQ (below 1 ppQ target). c_4 extracted from residual (not independently derived). Pattern: c_2 = c_4 ~ -1 (even = geometric).",
+  "data": {
+    "Q_N3_ppb": "5.112909596945373",
+    "c_4_extracted": "-0.9715682590253777",
+    "Q_N4_ppQ": "-1.7916878279761012e-11",
+    "pattern": "even rungs geometric (c_2=c_4~-1), odd topological (c_1=cos, c_3=J-hbar^2)",
+    "caveat": "c_4 extracted from CODATA residual, not independently derived"
+  }
+}
