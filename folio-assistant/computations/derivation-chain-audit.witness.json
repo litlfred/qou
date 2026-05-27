@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T18:32:51.929975+00:00",
-  "commitSha": "1b716f3a2d64b21b05e2f0aeaf14b1c7c4b3b8a4",
+  "computedAt": "2026-05-27T19:14:53.771820+00:00",
+  "commitSha": "2c7c9d57b3b5131e223f06ad00837ca67d59b2d5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2087,6 +2087,7 @@
         "binding-K-direct.witness.json",
         "binding-block-multiplicative.witness.json",
         "binding-canonical.witness.json",
+        "binding-damping-rate.witness.json",
         "binding-depth-stratified-knot-weighted.witness.json",
         "binding-depth-stratified-lr.witness.json",
         "binding-depth-stratified-rust.witness.json",
