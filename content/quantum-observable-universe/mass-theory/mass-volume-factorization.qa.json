@@ -688,7 +688,7 @@
         "field_hash": {
           "lean": "5e6d36811328"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -696,7 +696,17 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 21,
+            "text": "it as a class whose `sorry`-valued instances encode the"
+          },
+          {
+            "line": 110,
+            "text": "field is `sorry` \u2014 this is the conjecture itself, not a"
+          }
+        ]
       }
     ],
     "proof-no-trivial-skeleton": [

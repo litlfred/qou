@@ -376,9 +376,9 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "lean": "caed457cf618"
+          "lean": "e8a547d1f73f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,17 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 12,
-            "text": "Per `CLAUDE.md \u00a73b-cond`, opaque Props + class fields + sorry"
-          },
-          {
-            "line": 43,
-            "text": "noble_gas_closure := sorry"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

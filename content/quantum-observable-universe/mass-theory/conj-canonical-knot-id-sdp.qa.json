@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "2808922ed62c"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,7 +386,29 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 379,
+            "text": "The lemma is fully Lean-verified (no `sorry`); only the *meaning* of"
+          },
+          {
+            "line": 387,
+            "text": "This is a Lean-VERIFIED (no `sorry`) statement: under the registered"
+          },
+          {
+            "line": 685,
+            "text": "The three categorical-uniqueness theorems below carry `sorry`"
+          },
+          {
+            "line": 699,
+            "text": "remains open in the `sorry`d theorems below.  No new axiom; no"
+          },
+          {
+            "line": 742,
+            "text": "existence assertion.  Closing the underlying `sorry` in"
+          }
+        ]
       }
     ],
     "proof-no-trivial-skeleton": [

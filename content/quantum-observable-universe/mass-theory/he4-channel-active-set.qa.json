@@ -395,7 +395,7 @@
         "field_hash": {
           "lean": "dce3504356ed"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -403,7 +403,17 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 72,
+            "text": "Per CLAUDE.md \u00a73b-cond, this class is the sole `sorry`-equivalent"
+          },
+          {
+            "line": 149,
+            "text": "(no further `sorry` / empirical input).  They demonstrate that the"
+          }
+        ]
       }
     ],
     "proof-no-axiom-growth": [

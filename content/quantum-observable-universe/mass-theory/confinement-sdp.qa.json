@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "4541dbff916a"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,7 +386,17 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 43,
+            "text": "and produces a `sorry`-free downstream proof body. -/"
+          },
+          {
+            "line": 58,
+            "text": "Proof body has no `sorry`; the only unproved input is the"
+          }
+        ]
       }
     ],
     "proof-no-axiom-growth": [

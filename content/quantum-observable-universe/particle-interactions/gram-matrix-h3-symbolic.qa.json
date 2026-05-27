@@ -395,9 +395,9 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "lean": "465af5683e8d"
+          "lean": "ff73012a8ad8"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -405,13 +405,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 373,
-            "text": "sorry"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-axiom-growth": [

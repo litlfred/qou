@@ -376,9 +376,9 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "lean": "5eb353913d20"
+          "lean": "205321fc90b0"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,13 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 8,
-            "text": "sorry = conjecture (not missing proof)."
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

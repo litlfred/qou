@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "8e31d9be4005"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,7 +386,13 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 267,
+            "text": "(`RogersPair.shape\u2083/\u2084/\u2085`, sorry-free), the constrained"
+          }
+        ]
       }
     ],
     "proof-no-axiom-growth": [

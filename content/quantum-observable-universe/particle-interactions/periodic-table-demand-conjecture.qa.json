@@ -376,9 +376,9 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "lean": "ee088104c6cd"
+          "lean": "ec4655238705"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,21 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 67,
-            "text": "magic_numbers_from_demand_closure := sorry"
-          },
-          {
-            "line": 68,
-            "text": "noble_gas_shell_closure := sorry"
-          },
-          {
-            "line": 69,
-            "text": "drip_lines_from_demand_divergence := sorry"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

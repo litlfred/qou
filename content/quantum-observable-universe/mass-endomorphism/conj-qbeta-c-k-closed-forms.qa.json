@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "95c5d60be687"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,7 +386,17 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 51,
+            "text": "need `sorry` if treated as provable lemmas. The class itself does"
+          },
+          {
+            "line": 52,
+            "text": "NOT carry a `sorry`; it just encodes the closed-form CONVENTION."
+          }
+        ]
       }
     ],
     "proof-no-trivial-skeleton": [

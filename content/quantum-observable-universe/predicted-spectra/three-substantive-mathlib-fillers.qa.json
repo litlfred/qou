@@ -1344,7 +1344,7 @@
         "field_hash": {
           "lean": "886bc2376677"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -1352,7 +1352,13 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 26,
+            "text": "encode the statement and produce a sorry-free conditional theorem,"
+          }
+        ]
       }
     ]
   },

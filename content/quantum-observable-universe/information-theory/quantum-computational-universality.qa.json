@@ -376,9 +376,9 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "lean": "e549eb95c61e"
+          "lean": "3f3d539a37b6"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,25 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 96,
-            "text": "quadratic_level := fun _ => sorry"
-          },
-          {
-            "line": 97,
-            "text": "universality := fun _ _ _ => sorry"
-          },
-          {
-            "line": 98,
-            "text": "descent_decomposition := fun _ => sorry"
-          },
-          {
-            "line": 99,
-            "text": "information_content := fun _ => sorry"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

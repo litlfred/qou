@@ -376,9 +376,9 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "lean": "7e526a5e2913"
+          "lean": "d386697fbe5b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,21 +386,7 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 13,
-            "text": "Per `CLAUDE.md \u00a73b-cond`, opaque Props + class fields + sorry"
-          },
-          {
-            "line": 54,
-            "text": "chirality_interpolation := fun _ => sorry"
-          },
-          {
-            "line": 55,
-            "text": "cpt_quotient := sorry"
-          }
-        ]
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

@@ -576,7 +576,7 @@
         "field_hash": {
           "md": "dfaa317d070d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "canonical-audit-batch",
@@ -585,12 +585,7 @@
           "agent_skill": "local/canonical-watcher"
         },
         "reviewed_at": "2026-05-27",
-        "evidence": [
-          {
-            "line": 357,
-            "text": "The proton mass 938.272 MeV in the paper comes from the"
-          }
-        ]
+        "notes": "Hardcoded values are in data tables or CODATA comparison context \u2014 acceptable"
       }
     ],
     "canonical-cal4-acknowledged": [

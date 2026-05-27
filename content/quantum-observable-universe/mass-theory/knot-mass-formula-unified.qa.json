@@ -378,7 +378,7 @@
         "field_hash": {
           "lean": "616081475856"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -386,7 +386,21 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 35,
+            "text": "Markov-trace existence on `H_n(q)`, currently `sorry`-blocked"
+          },
+          {
+            "line": 197,
+            "text": "constructive Markov-trace existence (currently `sorry` in"
+          },
+          {
+            "line": 204,
+            "text": "theorem (currently a `sorry`-blocked existence claim)."
+          }
+        ]
       }
     ],
     "proof-no-axiom-growth": [

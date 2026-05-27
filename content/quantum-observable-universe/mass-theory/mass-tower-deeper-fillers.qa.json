@@ -1345,7 +1345,7 @@
         "field_hash": {
           "lean": "279d0b0eb238"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -1353,7 +1353,13 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 12,
+            "text": "one sorry-free Lean file:"
+          }
+        ]
       }
     ]
   },

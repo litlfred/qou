@@ -533,7 +533,7 @@
         "field_hash": {
           "lean": "c6e9fe05f976"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -541,7 +541,29 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 13,
+            "text": "## What this file PROVES (verified, no sorry)"
+          },
+          {
+            "line": 21,
+            "text": "## What this file does NOT prove (each marked sorry is a SPECIFIC"
+          },
+          {
+            "line": 30,
+            "text": "Each sorry is a SINGLE conjectural input. The framework downstream"
+          },
+          {
+            "line": 154,
+            "text": "would carry a `sorry` representing the OPEN literature input or the"
+          },
+          {
+            "line": 156,
+            "text": "file sorry-free at the structural level."
+          }
+        ]
       }
     ],
     "proof-no-trivial-skeleton": [

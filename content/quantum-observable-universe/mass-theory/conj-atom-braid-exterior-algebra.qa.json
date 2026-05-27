@@ -18,7 +18,7 @@
         "field_hash": {
           "lean": "dc48d2cd9d27"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
@@ -26,7 +26,13 @@
           "agent_date": "2026-05-27",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 52,
+            "text": "Per CLAUDE.md \u00a73b-cond, this is the sole `sorry`-equivalent"
+          }
+        ]
       }
     ],
     "proof-no-trivial-skeleton": [
