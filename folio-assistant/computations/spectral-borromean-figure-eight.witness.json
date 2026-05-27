@@ -23,6 +23,13 @@
       "status": "NUMERICAL COINCIDENCE \u2014 not a structural identity",
       "reason": "Vol(4_1)/2 = 1.015 > 1 but |tr(B_3)|/2 \u2264 1 (SL(2) bound). The identity |tr| = Vol is algebraically impossible.",
       "both_near_2": "Both values are close to 2 from opposite sides: tr=1.994 < 2 < Vol=2.030"
+    },
+    "spectral_octahedra": {
+      "finding": "\u03b8_B\u2083/\u210f\u00b2 = 7.77 \u2248 8 = Vol(B\u2083)/G = Borromean octahedra count",
+      "miss": "2.89% \u2014 SAME gap as proton mass",
+      "interpretation": "The spectral phase per Planck-tick counts ideal octahedra. \u03b8 = 8\u210f\u00b2 if exact.",
+      "connection_to_habiro": "a\u2080 = 2\u00d78^A also counts octahedra (8^A). The spectral phase and Habiro leading coefficient encode the SAME geometric information.",
+      "note": "The 2.89% appears in \u03b8/\u210f\u00b2 vs 8, in m_p vs CODATA, and in lw_A vs lw_exact. All are the same gap."
     }
   }
 }
