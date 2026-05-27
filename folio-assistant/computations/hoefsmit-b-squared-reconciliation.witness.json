@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T13:29:47.069470+00:00",
-  "commitSha": "d9025d3c2a62065d5a1d3044bc0ae099c3f0bbe7",
+  "computedAt": "2026-05-27T13:45:43.434046+00:00",
+  "commitSha": "e9d827a31c96bcb283912a41802e57145ea62569",
   "assertions": [
     {
       "name": "b2_formulas_agree",
@@ -41,8 +41,8 @@
   "durationMs": 4,
   "computation": "hoefsmit-b-squared-reconciliation",
   "scriptFile": "hoefsmit_b_squared_reconciliation.py",
-  "scriptHash": "ead2fe558ee7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0f1ba32b17cd",
+  "scriptCommitSha": "b77e970d1a16a22b2bceedb32e601b9867c29dea",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -65,16 +65,16 @@
     "matrix_verification": {
       "hecke_residual": 2.6727647100921956e-51,
       "braid_residual": 1.202744119541488e-50,
-      "inverse_residual": 4.0
+      "inverse_residual": 0.0
     },
     "proton_trace_crossval": {
-      "tr_B3_on_V21": "-1.9941858103812133",
+      "tr_B3_on_V21": "1.9941858103812133",
       "abs_tr_B3": "1.9941858103812133",
       "det_B3": "1.0",
       "pr1331_untyped_trace": 1.994,
       "match": true,
-      "theta_spectral_phase": "3.0653233355684915",
-      "theta_over_hbar_sq": "312.2404475945333",
+      "theta_spectral_phase": "0.07626931802130164",
+      "theta_over_hbar_sq": "7.768957264759297",
       "note": "Both conventions reproduce the untyped proton trace 1.994"
     }
   }

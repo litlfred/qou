@@ -3,7 +3,7 @@
 hoefsmit_b_squared_reconciliation.py — reconcile b² values between
 PR #1331 (reports b²≈1.167) and our eigenvalue table (b²=0.753).
 
-FINDING: The discrepancy is a CONVENTION DIFFERENCE, not an error.
+FINDING: The "1.167" in PR #1331 is a sign error in the description.
 
   σ₁ on V_{(2,1)}: DIAGONAL (b₁ = 0). Axial distance ρ = 1.
     Eigenvalues: q and −q⁻¹ directly on the diagonal.
@@ -22,7 +22,6 @@ CROSS-VALIDATION against the proton trace:
 """
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 
@@ -46,16 +45,7 @@ def main():
     two_q = q + qi
     three_q = q ** 2 + 1 + qi ** 2  # [3]_q = q² + 1 + q⁻²
 
-    # === σ₁ on V_{(2,1)} — DIAGONAL ===
-    # Axial distance ρ₁ = 1 (content difference between cells at positions 1,2)
-    a1 = h / (1 - q ** (-1))  # = h·q/(q-1) — WRONG for seminormal
-    # Actually: Hoefsmit diagonal = h/(1 - q^{-ρ}) but we need to use
-    # the correct ρ for each standard tableau.
-    # T₁ = [1,2|3]: σ₁ has ρ = c(pos2)−c(pos1) = 1−0 = 1
-    # T₂ = [1,3|2]: σ₁ has ρ = c(pos2)−c(pos1) = −1−0 = −1
-    # Since |ρ| = 1, b₁² = 1 − 1/ρ² = 0 → σ₁ is DIAGONAL
-    # Eigenvalues: a(T₁) = q, a(T₂) = -q⁻¹
-
+    # === σ₁ on V_{(2,1)} — DIAGONAL (eigenvalues q, −q⁻¹) ===
     sigma1 = matrix([[q, 0], [0, -qi]])
 
     # === σ₂ on V_{(2,1)} — OFF-DIAGONAL (from braid relation) ===
@@ -109,7 +99,7 @@ def main():
 
     # === Proton trace cross-validation ===
     # Borromean braid B₃ = (σ₁σ₂⁻¹)³
-    s2_inv = matrix([[a2p, -b2], [-b2, a2]])  # inverse from Hecke: σ⁻¹ = σ − h·I
+    s2_inv = matrix([[-a2p, b2], [b2, -a2]])  # σ⁻¹ = σ − h·I
     s2_inv_check = sigma2 * s2_inv
     inv_residual = float(fabs(s2_inv_check[0, 0] - 1) + fabs(s2_inv_check[1, 1] - 1) +
                         fabs(s2_inv_check[0, 1]) + fabs(s2_inv_check[1, 0]))

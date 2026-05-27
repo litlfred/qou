@@ -52,7 +52,6 @@ COMPARISON TO PRIOR FORMULAS:
 """
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 
@@ -78,6 +77,8 @@ def seifert_volume(p: int, n: int) -> mpf:
 
 def main():
     set_compute_dps()
+
+    wb = WitnessBuilder("meson-kaon-pion-derivation", engine="mpmath")
 
     q = mpf(Q_50_DIGIT_STR)
     h = q - 1 / q
@@ -145,7 +146,6 @@ def main():
     err_power3 = float(fabs(pred_power3 - target) / target * 1e6)
 
     # === Witness ===
-    wb = WitnessBuilder("meson-kaon-pion-derivation", engine="mpmath")
     wb.set_description(
         "Derive m_K/m_π = χ_{(2,1)}(σ₁⁵) × (V_Seifert(T(2,5))/V_Seifert(T(2,3)))² "
         "= (q₀⁵ − q₀⁻⁵) × (9/5)² ≈ 3.536 (vs PDG 3.537, 290 ppm). "

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T13:21:15.877519+00:00",
-  "commitSha": "a064dadc9f1499b51a264ad5cff0e78aa81662bf",
+  "computedAt": "2026-05-27T13:45:57.350863+00:00",
+  "commitSha": "e9d827a31c96bcb283912a41802e57145ea62569",
   "assertions": [
     {
       "name": "m_K_over_m_pi_within_500ppm",
@@ -41,8 +41,8 @@
   "durationMs": 4,
   "computation": "meson-kaon-pion-derivation",
   "scriptFile": "meson_kaon_pion_derivation.py",
-  "scriptHash": "bde7351e3af0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "925feb347c95",
+  "scriptCommitSha": "87b5e7e103633b7c1d0426809f75eb8ef6e62d16",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
