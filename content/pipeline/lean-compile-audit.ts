@@ -2,15 +2,12 @@
 /**
  * Lean compile diagnostics auditor.
  *
- * Populates `docs/audits/lean-compile-diagnostics.json` by invoking
- * the lean-lsp MCP server's `lean_diagnostic_messages` tool on every
- * `.lean` file that has a content-block sibling (`.ts`).
+ * Populates `docs/audits/lean-compile-diagnostics.json` by collecting
+ * per-file diagnostics from the lean-lsp MCP server.
  *
  * Usage (agent-driven):
  *   Agents call `mcp__lean-lsp__lean_diagnostic_messages` per file
- *   and feed results to this script's `--ingest` mode, or run the
- *   script standalone to walk all lean files and shell out to
- *   `lean --run` for diagnostics.
+ *   and feed results to this script's `--ingest` mode.
  *
  * Usage (CLI, ingestion mode):
  *   bun run pipeline/lean-compile-audit.ts --ingest <diagnostics.jsonl>
@@ -18,8 +15,8 @@
  *   Each line of the JSONL input:
  *     { "file": "<repo-relative-path>", "diagnostics": [...] }
  *
- * Usage (CLI, standalone scan — requires lean toolchain):
- *   bun run pipeline/lean-compile-audit.ts [content-root]
+ * Usage (CLI, list mode):
+ *   bun run pipeline/lean-compile-audit.ts --list [content-root]
  *
  * Output:
  *   docs/audits/lean-compile-diagnostics.json
@@ -28,7 +25,7 @@
  */
 
 import { existsSync, readFileSync, writeFileSync, readdirSync, statSync } from "fs";
-import { resolve, dirname, join, relative, basename, extname } from "path";
+import { resolve, dirname, join, relative, extname } from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -52,6 +49,21 @@ interface DiagnosticsReport {
   files: Record<string, FileEntry>;
 }
 
+const EMPTY_REPORT: DiagnosticsReport = {
+  $schema: "lean-compile-diagnostics/v1",
+  generated_at: "",
+  files: {},
+};
+
+function loadExistingReport(): DiagnosticsReport {
+  if (!existsSync(OUTPUT_PATH)) return { ...EMPTY_REPORT };
+  try {
+    return JSON.parse(readFileSync(OUTPUT_PATH, "utf-8"));
+  } catch {
+    return { ...EMPTY_REPORT };
+  }
+}
+
 function findLeanFilesWithSiblingTs(dir: string): string[] {
   const results: string[] = [];
   function walk(d: string) {
@@ -70,7 +82,7 @@ function findLeanFilesWithSiblingTs(dir: string): string[] {
         continue;
       }
       if (st.isDirectory()) {
-        if (e === "node_modules" || e === ".lake" || e === "build" || e === "lake-packages") continue;
+        if (e === "node_modules" || e === ".lake" || e === "build" || e === "lake-packages" || e === "lean") continue;
         walk(full);
       } else if (extname(e) === ".lean") {
         const tsPath = full.replace(/\.lean$/, ".ts");
@@ -85,9 +97,7 @@ function findLeanFilesWithSiblingTs(dir: string): string[] {
 }
 
 function ingestJsonl(jsonlPath: string): void {
-  const existing: DiagnosticsReport = existsSync(OUTPUT_PATH)
-    ? JSON.parse(readFileSync(OUTPUT_PATH, "utf-8"))
-    : { $schema: "lean-compile-diagnostics/v1", generated_at: "", files: {} };
+  const existing = loadExistingReport();
 
   const lines = readFileSync(jsonlPath, "utf-8").trim().split("\n");
   for (const line of lines) {
@@ -114,9 +124,7 @@ function ingestJsonl(jsonlPath: string): void {
 }
 
 function ingestSingleFile(filePath: string, diagnostics: DiagnosticEntry[]): void {
-  const existing: DiagnosticsReport = existsSync(OUTPUT_PATH)
-    ? JSON.parse(readFileSync(OUTPUT_PATH, "utf-8"))
-    : { $schema: "lean-compile-diagnostics/v1", generated_at: "", files: {} };
+  const existing = loadExistingReport();
 
   existing.files[filePath] = {
     errors: diagnostics.filter((d) => d.severity === "error"),
@@ -152,4 +160,5 @@ Agent workflow:
      docs/audits/lean-compile-diagnostics.json`);
 }
 
-export { findLeanFilesWithSiblingTs, ingestSingleFile, DiagnosticEntry, DiagnosticsReport };
+export { findLeanFilesWithSiblingTs, ingestSingleFile };
+export type { DiagnosticEntry, DiagnosticsReport };

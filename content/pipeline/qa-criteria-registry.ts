@@ -408,7 +408,6 @@ const PROOF: QaCriterionDefinition[] = [
       "definition",
       "conjecture",
     ],
-    extra_inputs: ["docs/audits/lean-compile-diagnostics.json"],
   },
 ];
 
