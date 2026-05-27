@@ -1329,6 +1329,21 @@ export const references: CSLData[] = [
     DOI: "10.1007/978-1-4612-0783-2",
   }),
 
+  // ── Kirillov 1995 ──────────────────────────────────────────────
+  ref({
+    id: "kirillov1995",
+    type: "article-journal",
+    title: "Dilogarithm identities",
+    author: [
+      { family: "Kirillov", given: "Anatol N." },
+    ],
+    "container-title": "Progress of Theoretical Physics Supplement",
+    volume: 118,
+    page: "61-142",
+    issued: { "date-parts": [[1995]] },
+    DOI: "10.1143/PTPS.118.61",
+  }),
+
   // ── Frenkel & Ben-Zvi 2004 ──────────────────────────────────
   ref({
     id: "frenkel2004",
