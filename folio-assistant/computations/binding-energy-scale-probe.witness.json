@@ -1,0 +1,62 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-27T18:17:07.910255+00:00",
+  "commitSha": "bd340a1adfb27248f5f79613bb8314b3c9113c42",
+  "assertions": [
+    {
+      "name": "E0_improves_deuteron",
+      "computed": 11.821409847121478,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 79.06622552280942,
+      "source": "E₀ scale beats Q_β scale for deuteron"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "binding-energy-scale-probe",
+  "scriptFile": "binding_energy_scale_probe.py",
+  "scriptHash": "4a2fff85a93c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Probe E₀ vs Q_β as binding energy scale. E₀ = m_e/(q₀(q₀-1)) closes deuteron from -79% to +12%. Residual +12% candidates tested.",
+  "data": {
+    "energy_scales": {
+      "E_0_MeV": "4.185980827714838",
+      "Q_beta_MeV": "0.7836458039031041",
+      "ratio": "5.34167452548808"
+    },
+    "isotope_results": {
+      "D": {
+        "B_E0": 2.487489626331187,
+        "err_E0_pct": 11.821409847121478,
+        "err_Qbeta_pct": -79.06622552280942
+      },
+      "T": {
+        "B_E0": 3.35977439299434,
+        "err_E0_pct": -60.38852047090908,
+        "err_Qbeta_pct": -92.58444531951868
+      },
+      "3He": {
+        "B_E0": 3.5154147636434856,
+        "err_E0_pct": -54.45197532477823,
+        "err_Qbeta_pct": -91.47308124860716
+      },
+      "4He": {
+        "B_E0": 3.811119182025455,
+        "err_E0_pct": -86.53110125557785,
+        "err_Qbeta_pct": -97.47852500556621
+      }
+    },
+    "deuteron_corrections": {
+      "best_correction": "1-hbar_q",
+      "best_err_pct": 0.7419515069948313
+    }
+  }
+}
