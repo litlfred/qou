@@ -27,6 +27,8 @@ export default chapter({
   title: "Mass",
   label: "chap:mass-theory",
   sections: [
+
+    // ═══ CATEGORICAL OPENER ══════════════════════════════════════
     // ── §1 The Mass Endomorphism (OPENER) ──────────────────────────
     // Foundational definitions + topological decomposition.
     // Moved from lifting-and-descent 2026-05-27.
@@ -60,6 +62,10 @@ export default chapter({
       ],
     }),
 
+
+    // ═══ ALGEBRAIC FACE ═════════════════════════════════════════
+    // Wedderburn, Frobenius pairing, transfer matrices, Hecke
+    // characters, Hoefsmit construction, GS axiomatic backing.
     // ── §2 Algebraic face: Transfer Matrix and Topological Mass ────
     section({
       title: "Transfer Matrix and Topological Mass",
@@ -81,6 +87,7 @@ export default chapter({
         "topological-field-ansatz-table-data",
       ],
     }),
+
     section({
       title: "Categorical mass foundations: eigenspace decompositions",
       label: "sec:categorical-mass-eigenspaces",
@@ -103,6 +110,7 @@ export default chapter({
         "q-hecke-seminormal-character-closure",
       ],
     }),
+
     section({
       title: "Categorical mass foundations: Markov trace and endomorphism",
       label: "sec:categorical-mass-markov-trace-endomorphism",
@@ -124,6 +132,7 @@ export default chapter({
         "phi-n-global-section",
       ],
     }),
+
     section({
       title: "Mass-formula derivation",
       label: "sec:mass-formula-derivation",
@@ -141,6 +150,7 @@ export default chapter({
         "frobenius-s-classification-table3-data",
       ],
     }),
+
     section({
       title: "Mass-formula derivation (generation)",
       label: "sec:mass-formula-derivation-commutative-chirality-vanishes",
@@ -160,6 +170,7 @@ export default chapter({
         "figure-eight-branching-rule-table1-data",
       ],
     }),
+
     section({
       title: "Hecke $u$-coordinate and $\\chi$-character closed-forms",
       label: "sec:hecke-chi-closed-forms",
@@ -174,6 +185,7 @@ export default chapter({
         "chi-v3-closed-form-proof",
       ],
     }),
+
     section({
       title: "Hecke $\\chi$-character closed-forms (generation)",
       label: "sec:hecke-chi-closed-forms-chi-per-irrep",
@@ -193,6 +205,7 @@ export default chapter({
         "tau-M-asymptotic-rep-theory",
       ],
     }),
+
     section({
       title: "Hecke-Baer-star foundation and chirality pairing",
       label: "sec:hecke-baer-star-chirality",
@@ -203,149 +216,6 @@ export default chapter({
         "chirality-period-pairing",
         "bring-embeddable-knots",
         "bring-embeddable-knots-table-data",
-      ],
-    }),
-    section({
-      title: "Mutant Jones falsifiability and Bloch group closure",
-      label: "sec:mutant-jones-bloch-group",
-      blocks: [
-        "intro-mutant-jones-bloch-group",
-        "knot-indexed-convolution-grid",
-        "knot-indexed-convolution-grid-table2-data",
-        "knot-indexed-convolution-grid-table1-data",
-        "conway-kt-vol-injectivity-test",
-        "jones-faithfulness-crossing-8",
-        "wedderburn-as-noncomm-fourier",
-        "degree-one-braid-trivial-volume",
-        "pieri-photon-shift",
-        "phi-q-tower-jsj-bridge",
-        "dilogarithm-archimedean-limit",
-        "algebraic-geometric-dilog-equivalence",
-        "shared-denominator-cusp-holonomy",
-        "quantum-bloch-group",
-        "degree-two-baryon-weight",
-      ],
-    }),
-    section({
-      title: "Parity classification, atomic atlas, and discrepancy resolution",
-      label: "sec:parity-classification-discrepancy",
-      blocks: [
-        "intro-parity-classification-discrepancy",
-        "mn-classical-parity-blind",
-        "mn-classical-parity-blind-table-data",
-        "q-character-closes-parity-gap",
-        "frobenius-codim-universal",
-        "frobenius-limits-substrate-cost",
-        "knot-mass-formula-unified",
-        "nuclear-knot-classification",
-        "geom-yekutieli-alignment",
-        "content-scaling-correspondence",
-      ],
-    }),
-    section({
-      title: "Parity classification, atomic atlas, and discrepancy resolution : generation",
-      label: "sec:parity-classification-discrepancy-partition-sum-proton",
-      blocks: [
-        "parity-classification-discrepancy-partition-sum-proton-intro",
-        "partition-sum-proton-residual",
-        "partition-sum-proton-residual-table5-data",
-        "partition-sum-proton-residual-table4-data",
-        "partition-sum-proton-residual-table3-data",
-        "partition-sum-proton-residual-table2-data",
-        "partition-sum-proton-residual-table1-data",
-        "np-discrepancy-resolution",
-        "mass-formula-regime-switching",
-        "mass-formula-regime-switching-table2-data",
-        "mass-formula-regime-switching-table1-data",
-      ],
-    }),
-    section({
-      title: "Six-term mass formula, crystal, isospin, and chirality",
-      label: "sec:six-term-crystal-isospin-chirality",
-      blocks: [
-        "intro-six-term-crystal-isospin-chirality",
-        "six-term-mass-formula-complete",
-        "six-term-mass-formula-complete-table-data",
-        "six-term-per-derivation-weights",
-        "six-term-per-derivation-weights-table1-data",
-        "six-term-per-derivation-weights-table2-data",
-        "six-term-per-derivation-weights-table3-data",
-        "crystal-isospin-degeneracy",
-        "crystal-isospin-degeneracy-table-data",
-        "isospin-mass-split-em-localisation",
-      ],
-    }),
-    section({
-      title: "Six-term mass formula, crystal, isospin, and chirality : generation",
-      label: "sec:six-term-crystal-isospin-chirality-option-e-isospin",
-      blocks: [
-        "six-term-crystal-isospin-chirality-option-e-isospin-intro",
-        "option-e-isospin-test",
-        "crystal-bases-path-a",
-        "crystal-bases-path-a-table3-data",
-        "crystal-bases-path-a-table2-data",
-        "crystal-bases-path-a-table1-data",
-        "chirality-dual-space-derivation",
-        "chirality-dual-space-derivation-table3-data",
-        "chirality-dual-space-derivation-table2-data",
-        "chirality-dual-space-derivation-table1-data",
-        "frobenius-antipode-unifies-chirality-and-tower",
-      ],
-    }),
-    section({
-      title: "Pre-Archimedean Derivation Chain and Audit",
-      label: "sec:derivation-audit",
-      blocks: [
-        "derivation-audit-intro",
-        "pre-archimedean-derivation-chain",
-        "pre-archimedean-derivation-chain-table2-data",
-        "pre-archimedean-derivation-chain-table1-data",
-        "derivation-audit-report",
-        "derivation-audit-report-table2-data",
-        "derivation-audit-report-table1-data",
-        "conj-canonical-knot-id-sdp",
-        "conj-chirality-ribbon-frobenius",
-        "conj-rho-prefactor-structural",
-      ],
-    }),
-    section({
-      title: "Reconnected orphan blocks (Phase 7)",
-      label: "sec:mass-theory-orphan-reconnect",
-      blocks: [
-        "borromean-bloch-group-element",
-        "categorical-higgs-mechanism",
-        "interface-knot-markov-z",
-        "isospin-from-canonical-bowtie",
-        "rho-k-h3a-refinement",
-        "s4-s3-half-symmetric-projection",
-        "weak-spectral-completeness",
-        "weak-symmetric-normalization",
-        "z-eq-n-rho-correction",
-      ],
-    }),
-
-    // ── Blocks consolidated from particle-interactions (2026-05-27) ──
-    // Mass-formula statements, proofs, and structural conjectures that
-    // were scattered across particle-interactions. Grouped here by
-    // thematic face of the mass endomorphism.
-
-    // §geometric: mass-volume factorization, crossing-graded expansion
-    section({
-      title: "Geometric face: mass-volume factorisation and crossing expansion",
-      label: "sec:mass-geometric-face",
-      blocks: [
-        "thurston-volume-additivity",
-        "mass-volume-factorization",
-        "frobenius-packing-density",
-        "crossing-graded-mass-expansion",
-        "crossing-graded-mass-expansion-table-data",
-        "lifted-crossing-locality",
-        "mass-categorical-descent",
-        "descended-level-zero",
-        "jet-tower-convergence",
-        "delta-max-uniform-bound",
-        "mass-tower-syt-cells",
-        "markov-pair-z2",
       ],
     }),
 
@@ -369,48 +239,6 @@ export default chapter({
       ],
     }),
 
-    // §physical: mass formulas, baryon/meson, binding energy, predictions
-    section({
-      title: "Physical face: mass formulas and predictions",
-      label: "sec:mass-physical-face",
-      blocks: [
-        "neutron-proton-splitting",
-        "borromean-baryon-mass-formula",
-        "borromean-baryon-interpretation",
-        "q-integer-mass-formula",
-        "lambda-scale-substrate-form",
-        "meson-volume-conjecture",
-        "topological-mass-trefoil",
-        "tower-binding-energy",
-        "tower-binding-energy-table-data",
-        "deuterium-derived-binding",
-        "mass-table-z1-20",
-        "mass-table-z1-20-table-data",
-      ],
-    }),
-
-    // ── §open: mass-tower open problems and crystal-basis directions ──
-    // Consolidated from predicted-spectra (2026-05-27).
-    section({
-      title: "Open problems: mass-tower structure and crystal basis",
-      label: "sec:mass-open-problems",
-      blocks: [
-        "terminal-resolution",
-        "mass-from-generators",
-        "volume-tower-decomposition",
-        "mass-tower-open-problems-classes",
-        "crystal-basis-resolves-mass-tower-open-problems",
-        "mass-tower-deeper-fillers",
-      ],
-    }),
-
-    // ══════════════════════════════════════════════════════════════════
-    // Sections merged from Mass --- Application (2026-05-27).
-    // Compute, algorithms, and sweep applications of the mass machinery:
-    // Hoefsmit construction, Wenzl projectors, Markov-peel, GS reductions,
-    // LP/SDP, φ_q convergence, residue computations.
-    // ══════════════════════════════════════════════════════════════════
-
     section({
       title: "Hoefsmit convergence: construction",
       label: "sec:hoefsmit-convergence-construction",
@@ -428,6 +256,7 @@ export default chapter({
         "brane-tower-z-habiro-table1-data",
       ],
     }),
+
     section({
       title: "Hoefsmit convergence: construction : generation",
       label: "sec:hoefsmit-convergence-construction-per-partition-k",
@@ -446,6 +275,7 @@ export default chapter({
         "per-partition-k-lambda-rule",
       ],
     }),
+
     section({
       title: "Hoefsmit convergence: magic-shell consequences",
       label: "sec:hoefsmit-convergence-magic-shells",
@@ -461,6 +291,67 @@ export default chapter({
         "hoefsmit-V21-cos-symmetrization",
       ],
     }),
+
+    section({
+      title: "Gröbner-Shirshov axiomatic backing",
+      label: "sec:gs-axiomatic-backing",
+      blocks: [
+        "intro-gs-axiomatic-backing",
+        "gs-graded-markov-trace-existence",
+        "gs-residue-at-root-existence",
+        "gs-spectral-decomposition-existence",
+        "gs-spectral-sum-finite",
+        "gs-archimedean-agreement-trace",
+        "gs-archimedean-agreement-residue",
+      ],
+    }),
+
+
+    // ═══ GEOMETRIC FACE ═════════════════════════════════════════
+    // Mass-volume factorisation, Bloch group, φ_q resummation,
+    // cyclotomic depth-3, Habiro identifications.
+    // §geometric: mass-volume factorization, crossing-graded expansion
+    section({
+      title: "Geometric face: mass-volume factorisation and crossing expansion",
+      label: "sec:mass-geometric-face",
+      blocks: [
+        "thurston-volume-additivity",
+        "mass-volume-factorization",
+        "frobenius-packing-density",
+        "crossing-graded-mass-expansion",
+        "crossing-graded-mass-expansion-table-data",
+        "lifted-crossing-locality",
+        "mass-categorical-descent",
+        "descended-level-zero",
+        "jet-tower-convergence",
+        "delta-max-uniform-bound",
+        "mass-tower-syt-cells",
+        "markov-pair-z2",
+      ],
+    }),
+
+    section({
+      title: "Mutant Jones falsifiability and Bloch group closure",
+      label: "sec:mutant-jones-bloch-group",
+      blocks: [
+        "intro-mutant-jones-bloch-group",
+        "knot-indexed-convolution-grid",
+        "knot-indexed-convolution-grid-table2-data",
+        "knot-indexed-convolution-grid-table1-data",
+        "conway-kt-vol-injectivity-test",
+        "jones-faithfulness-crossing-8",
+        "wedderburn-as-noncomm-fourier",
+        "degree-one-braid-trivial-volume",
+        "pieri-photon-shift",
+        "phi-q-tower-jsj-bridge",
+        "dilogarithm-archimedean-limit",
+        "algebraic-geometric-dilog-equivalence",
+        "shared-denominator-cusp-holonomy",
+        "quantum-bloch-group",
+        "degree-two-baryon-weight",
+      ],
+    }),
+
     section({
       title: "$\\\\varphi_q$ resummation, Markov trace, Schur-Weyl: foundations",
       label: "sec:phi-q-markov-schur-weyl-foundations",
@@ -491,6 +382,7 @@ export default chapter({
         "residue-at-root",
       ],
     }),
+
     section({
       title: "$\\\\varphi_q$ resummation: residue and Habiro identifications",
       label: "sec:phi-q-markov-residue-habiro",
@@ -509,19 +401,7 @@ export default chapter({
         "habiro-residue-sum-equivalence",
       ],
     }),
-    section({
-      title: "Gröbner-Shirshov axiomatic backing",
-      label: "sec:gs-axiomatic-backing",
-      blocks: [
-        "intro-gs-axiomatic-backing",
-        "gs-graded-markov-trace-existence",
-        "gs-residue-at-root-existence",
-        "gs-spectral-decomposition-existence",
-        "gs-spectral-sum-finite",
-        "gs-archimedean-agreement-trace",
-        "gs-archimedean-agreement-residue",
-      ],
-    }),
+
     section({
       title: "Cyclotomic depth-3 trilog identities",
       label: "sec:cyclotomic-depth-3-trilog",
@@ -545,6 +425,11 @@ export default chapter({
         "cyclotomic-dimension-synthesis-all-depths",
       ],
     }),
+
+
+    // ═══ ARCHIMEDEAN FACE ═══════════════════════════════════════
+    // Substrate binding, LP-dual, spectral sequence, Plancherel,
+    // α_k derivation, Wenzl bridge, derivation audit.
     section({
       title: "Substrate binding setup",
       label: "sec:substrate-binding-setup",
@@ -564,6 +449,7 @@ export default chapter({
         "frobenius-self-duality-forces-lp-dual-extraction",
       ],
     }),
+
     section({
       title: "LP-dual and Jucys-Murphy central elements",
       label: "sec:lp-dual-jucys-murphy",
@@ -579,6 +465,7 @@ export default chapter({
         "mass-endomorphism-jet-tower-table1-data",
       ],
     }),
+
     section({
       title: "Spectral sequence, chirality, and confinement-NF structure",
       label: "sec:spectral-sequence-chirality-confinement",
@@ -595,6 +482,7 @@ export default chapter({
         "alpha-shift-torus-knot-table-data",
       ],
     }),
+
     section({
       title: "Spectral sequence, chirality, and confinement-NF structure : generation",
       label: "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
@@ -612,6 +500,7 @@ export default chapter({
         "exterior-square-borromean",
       ],
     }),
+
     section({
       title: "Plancherel-$\\\\alpha$ spectral foundations",
       label: "sec:plancherel-alpha-spectral",
@@ -631,6 +520,7 @@ export default chapter({
         "gram-matrix-spectral-connection",
       ],
     }),
+
     section({
       title: "Plancherel: knot-factor and mass-tower closure",
       label: "sec:plancherel-knot-factor-mass-tower",
@@ -648,6 +538,7 @@ export default chapter({
         "flavor-dressing-functor",
       ],
     }),
+
     section({
       title: "$\\\\alpha_k$ derivation procedure",
       label: "sec:alpha-k-procedure",
@@ -663,6 +554,7 @@ export default chapter({
         "atom-knot-mass-derivation-table1-data",
       ],
     }),
+
     section({
       title: "$\\\\alpha_k$ derivation procedure : generation",
       label: "sec:alpha-k-procedure-atom-knot-mass",
@@ -680,6 +572,7 @@ export default chapter({
         "y-lambda-closed-form-wenzl-bridge-table3-data",
       ],
     }),
+
     section({
       title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$",
       label: "sec:wenzl-bridge-cyclotomic",
@@ -696,6 +589,7 @@ export default chapter({
         "wenzl-bridge-applicability-qou",
       ],
     }),
+
     section({
       title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
       label: "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
@@ -712,6 +606,152 @@ export default chapter({
         "terms-2-6-higher-operations-table1-data",
       ],
     }),
+
+    section({
+      title: "Pre-Archimedean Derivation Chain and Audit",
+      label: "sec:derivation-audit",
+      blocks: [
+        "derivation-audit-intro",
+        "pre-archimedean-derivation-chain",
+        "pre-archimedean-derivation-chain-table2-data",
+        "pre-archimedean-derivation-chain-table1-data",
+        "derivation-audit-report",
+        "derivation-audit-report-table2-data",
+        "derivation-audit-report-table1-data",
+        "conj-canonical-knot-id-sdp",
+        "conj-chirality-ribbon-frobenius",
+        "conj-rho-prefactor-structural",
+      ],
+    }),
+
+
+    // ═══ PHYSICAL FACE ═════════════════════════════════════════
+    // Parity classification, six-term formula, mass predictions.
+    section({
+      title: "Parity classification, atomic atlas, and discrepancy resolution",
+      label: "sec:parity-classification-discrepancy",
+      blocks: [
+        "intro-parity-classification-discrepancy",
+        "mn-classical-parity-blind",
+        "mn-classical-parity-blind-table-data",
+        "q-character-closes-parity-gap",
+        "frobenius-codim-universal",
+        "frobenius-limits-substrate-cost",
+        "knot-mass-formula-unified",
+        "nuclear-knot-classification",
+        "geom-yekutieli-alignment",
+        "content-scaling-correspondence",
+      ],
+    }),
+
+    section({
+      title: "Parity classification, atomic atlas, and discrepancy resolution : generation",
+      label: "sec:parity-classification-discrepancy-partition-sum-proton",
+      blocks: [
+        "parity-classification-discrepancy-partition-sum-proton-intro",
+        "partition-sum-proton-residual",
+        "partition-sum-proton-residual-table5-data",
+        "partition-sum-proton-residual-table4-data",
+        "partition-sum-proton-residual-table3-data",
+        "partition-sum-proton-residual-table2-data",
+        "partition-sum-proton-residual-table1-data",
+        "np-discrepancy-resolution",
+        "mass-formula-regime-switching",
+        "mass-formula-regime-switching-table2-data",
+        "mass-formula-regime-switching-table1-data",
+      ],
+    }),
+
+    section({
+      title: "Six-term mass formula, crystal, isospin, and chirality",
+      label: "sec:six-term-crystal-isospin-chirality",
+      blocks: [
+        "intro-six-term-crystal-isospin-chirality",
+        "six-term-mass-formula-complete",
+        "six-term-mass-formula-complete-table-data",
+        "six-term-per-derivation-weights",
+        "six-term-per-derivation-weights-table1-data",
+        "six-term-per-derivation-weights-table2-data",
+        "six-term-per-derivation-weights-table3-data",
+        "crystal-isospin-degeneracy",
+        "crystal-isospin-degeneracy-table-data",
+        "isospin-mass-split-em-localisation",
+      ],
+    }),
+
+    section({
+      title: "Six-term mass formula, crystal, isospin, and chirality : generation",
+      label: "sec:six-term-crystal-isospin-chirality-option-e-isospin",
+      blocks: [
+        "six-term-crystal-isospin-chirality-option-e-isospin-intro",
+        "option-e-isospin-test",
+        "crystal-bases-path-a",
+        "crystal-bases-path-a-table3-data",
+        "crystal-bases-path-a-table2-data",
+        "crystal-bases-path-a-table1-data",
+        "chirality-dual-space-derivation",
+        "chirality-dual-space-derivation-table3-data",
+        "chirality-dual-space-derivation-table2-data",
+        "chirality-dual-space-derivation-table1-data",
+        "frobenius-antipode-unifies-chirality-and-tower",
+      ],
+    }),
+
+    // §physical: mass formulas, baryon/meson, binding energy, predictions
+    section({
+      title: "Physical face: mass formulas and predictions",
+      label: "sec:mass-physical-face",
+      blocks: [
+        "neutron-proton-splitting",
+        "borromean-baryon-mass-formula",
+        "borromean-baryon-interpretation",
+        "q-integer-mass-formula",
+        "lambda-scale-substrate-form",
+        "meson-volume-conjecture",
+        "topological-mass-trefoil",
+        "tower-binding-energy",
+        "tower-binding-energy-table-data",
+        "deuterium-derived-binding",
+        "mass-table-z1-20",
+        "mass-table-z1-20-table-data",
+      ],
+    }),
+
+
+    // ═══ OPEN PROBLEMS ═════════════════════════════════════════
+    // ── §open: mass-tower open problems and crystal-basis directions ──
+    // Consolidated from predicted-spectra (2026-05-27).
+    section({
+      title: "Open problems: mass-tower structure and crystal basis",
+      label: "sec:mass-open-problems",
+      blocks: [
+        "terminal-resolution",
+        "mass-from-generators",
+        "volume-tower-decomposition",
+        "mass-tower-open-problems-classes",
+        "crystal-basis-resolves-mass-tower-open-problems",
+        "mass-tower-deeper-fillers",
+      ],
+    }),
+
+
+    // ═══ ORPHAN RECONNECTS ═════════════════════════════════════
+    section({
+      title: "Reconnected orphan blocks (Phase 7)",
+      label: "sec:mass-theory-orphan-reconnect",
+      blocks: [
+        "borromean-bloch-group-element",
+        "categorical-higgs-mechanism",
+        "interface-knot-markov-z",
+        "isospin-from-canonical-bowtie",
+        "rho-k-h3a-refinement",
+        "s4-s3-half-symmetric-projection",
+        "weak-spectral-completeness",
+        "weak-symmetric-normalization",
+        "z-eq-n-rho-correction",
+      ],
+    }),
+
     section({
       title: "Reconnected orphan blocks (Phase 7)",
       label: "sec:mass-application-orphan-reconnect",
@@ -738,6 +778,6 @@ export default chapter({
         "symbolic-character-table",
       ],
     }),
-  ],
+
   ],
 });
