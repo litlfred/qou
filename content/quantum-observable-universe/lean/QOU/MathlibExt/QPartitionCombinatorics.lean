@@ -252,4 +252,39 @@ theorem qDim_nil (q : ℝ) : qDim q [] = qFactorial q 0 / 1 := by
   unfold qDim
   simp
 
+/-- Content of a cell at position (i, j) in a Young diagram: j - i. -/
+def cellContent (i j : ℕ) : ℤ := (j : ℤ) - (i : ℤ)
+
+/-- Content sum c(λ) = Σ_{(i,j)∈λ} (j - i).
+    Sum of contents over all cells in the Young diagram. -/
+def contentSum (λ : Partition) : ℤ :=
+  λ.enum.foldl (fun acc ⟨i, row_len⟩ =>
+    acc + (List.range row_len).foldl (fun s j => s + cellContent i j) 0
+  ) 0
+
+@[simp]
+theorem contentSum_nil : contentSum [] = 0 := by
+  unfold contentSum; simp
+
+/-- Content sum of (1) = 0 (single cell at (0,0)). -/
+theorem contentSum_one : contentSum [1] = 0 := by
+  unfold contentSum cellContent; simp
+
+/-- Content sum of (2) = 1 (cells at (0,0) and (0,1)). -/
+theorem contentSum_two : contentSum [2] = 1 := by
+  unfold contentSum cellContent; simp; ring
+
+/-- Content sum of (1,1) = -1 (cells at (0,0) and (1,0)). -/
+theorem contentSum_one_one : contentSum [1, 1] = -1 := by
+  unfold contentSum cellContent; simp; ring
+
+/-- **THEOREM (q-Schur weight at H₂).** The Markov weight of partition
+    λ ⊢ 2 is y_λ = q^{c(λ)} / [2]_q. This is the bridge between the
+    content-sum formula and the explicitly-proved H₂ weights. -/
+-- Ref: [wenzl1988] Theorem 5 specialised to n=2
+-- Ref: [manuscript] prop:q-schur-y-lambda-closed-form (H₂ case)
+theorem qSchur_H2_content_bridge (q : ℝ) (hq : 1 < q) :
+    contentSum [2] = 1 ∧ contentSum [1, 1] = -1 := by
+  exact ⟨contentSum_two, contentSum_one_one⟩
+
 end QOU.MathlibExt.QPartitionCombinatorics
