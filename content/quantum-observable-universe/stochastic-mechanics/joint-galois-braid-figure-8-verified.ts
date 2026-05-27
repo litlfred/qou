@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:joint-galois-braid-action",
+    "prop:joint-galois-braid-action",
     "def:hq-bi-filtration",
     "rem:chirality-period-pairing",
     "prop:b1-figure-8-row-theorem",

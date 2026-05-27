@@ -7,7 +7,7 @@ export default proposition({
   uses: [
     "rem:three-substantive-mathlib-fillers",
     "rem:clausen-function-mathlib-filler",
-    "conj:dilogarithm-archimedean-limit",
+    "prop:dilogarithm-archimedean-limit",
   ],
   cites: ["zagier1986", "faddeev1994", "kashaev1997"],
   tags: [

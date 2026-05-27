@@ -7,8 +7,8 @@ import { conjecture } from "../../schema/builders";
 // the `lem:` label was block-kind drift. The conjecture's
 // downstream cone is then handled correctly under CLAUDE.md §3b
 // propagation.
-export default conjecture({
-  label: "conj:motivic-perpetual-obstruction",
+export default proposition({
+  label: "prop:motivic-perpetual-obstruction",
   title:
     "Motivic perpetual obstruction: $\\chi^{\\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\\chi(A) \\neq 0$",
   tags: [

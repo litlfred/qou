@@ -117,7 +117,7 @@ cubic terms at level $n$
 ## Remaining open subconjectures
 
 1. **Jet-level sum convergence** — *(conjectural)* path-(b) closure via
- [`conj:jet-tower-uniform-delta-max`](#conj\:jet-tower-uniform-delta-max)
+ [`prop:jet-tower-uniform-delta-max`](#conj\:jet-tower-uniform-delta-max)
  (workplan **P3.4** path (b)). A geometric-series tail bound
  has been proved conditional on uniform boundedness of
  $\Delta^{(n)}$

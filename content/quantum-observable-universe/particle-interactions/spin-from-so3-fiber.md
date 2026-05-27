@@ -71,7 +71,7 @@ Per [`docs/duality-tracker.md`](../../docs/duality-tracker.md)
 
 - D9 (isospin $\mathrm{SU}(2)_I$) = flavor-swap $u \leftrightarrow d$
   on color-sheet flavor triples (closed in
-  [`conj:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md))
+  [`prop:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md))
 - D10 (spin $\mathrm{SU}(2)_S$) = $\mathrm{SO}(3)$ rotation on color
   sheets (this conjecture)
 - D11 (Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times
@@ -148,7 +148,7 @@ class SpinFromSO3Fiber
   (PR [#1081](https://github.com/litlfred/qou/pull/1081),
   [`S5SO3FiberAction.lean`](../../folio-assistant/computations/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean))
 - Sibling Cluster B item:
-  [`conj:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md) (D9)
+  [`prop:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md) (D9)
 - Color-tube structure on Bring's quintic:
   [`color-tube-coordinates.md`](../archimedean-universe/color-tube-coordinates.md),
   [`color-tube-fibers.md`](../archimedean-universe/color-tube-fibers.md)

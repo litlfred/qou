@@ -1,9 +1,9 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:mass-element-nf",
+export default proposition({
+  label: "prop:mass-element-nf",
   title: "Normal form of the Hecke mass element",
-  uses: ["conj:mass-endomorphism"],
+  uses: ["prop:mass-endomorphism"],
   tags: [
     "mass",
     "hecke-algebra",

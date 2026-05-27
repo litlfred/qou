@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.Archimedean.UpQuark",
     validation: "not_checked",
   },
-  uses: ["conj:borromean-quark"],
+  uses: ["prop:borromean-quark"],
 });

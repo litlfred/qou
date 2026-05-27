@@ -2,7 +2,7 @@
 $\mathrm{Cl}_3(2\pi/5)$ — candidates list).**
 
 The depth-3 numerical witness
-[`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
+[`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)
 established that
 
 $$
@@ -104,7 +104,7 @@ Candidate 3 is most general.
 
 Identifying *any one* of the three candidates explicitly would:
 
-1. **Close the depth-3 row of B1.** The keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
+1. **Close the depth-3 row of B1.** The keystone ([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence))
    currently has the figure-8 row at depth 2 verified and the trilog
    numerical witness at depth 3, but no geometric image for the
    trilog value. Identification would make the depth-3 prediction
@@ -113,7 +113,7 @@ Identifying *any one* of the three candidates explicitly would:
    on $\mathrm{Cl}_3(2\pi/5)$ via $\zeta_5 \mapsto \zeta_5^a$ should
    match the action on the geometric side (4-mfd cusps, knot CS,
    or marked-point permutations) — a sharp test of
-   [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action).
+   [`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action).
 3. **Provide the Bring-natural depth-3 witness target.** The witness
    script
    ([`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_trilog_zeta5_depth_3.py))

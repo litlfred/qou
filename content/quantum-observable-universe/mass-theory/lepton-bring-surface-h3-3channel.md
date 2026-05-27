@@ -108,7 +108,7 @@ the SUPERSEDED scalar $\rho_q = 1/\hbar_q^2$ (see Caveat above).
 **Tau divergence**: T(2,7) and T(2,9) both yield $\hat V > q_0$, outside
 the Li_2^q convergence radius. Either the canonical tau braid is **not**
 in the T(2, 2m+1) family, or higher-tower terms regulate the divergence
-(consistent with the open status of `conj:rho-k-pair-gen-canonical-form`).
+(consistent with the open status of `prop:rho-k-pair-gen-canonical-form`).
 
 ## Lowest/highest weight structure (6-dim NF diamond)
 
@@ -174,7 +174,7 @@ and possibly weak-isospin partner (neutrino).
 
 - [`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md) — 3-CAL $\leftrightarrow$ 3-channel cohomological discipline
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — Li_2^q canonical mass formula
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
+- [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
 - [`rem:bar-involution`](bar-involution.md) — P_avg / P_skew projection (real-q mechanism)
 - Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)
 - Compute infrastructure: `folio-assistant/computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)

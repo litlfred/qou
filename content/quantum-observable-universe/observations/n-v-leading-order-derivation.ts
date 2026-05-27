@@ -8,13 +8,13 @@ import { conjecture } from "../../schema/builders";
 // already acknowledges "Conditional theorem"; the block kind now
 // matches.  See `docs/audits/conjecture-cones.md` (`conj:mass-
 // endomorphism` cone) for the audit that flagged this.
-export default conjecture({
-  label: "conj:n-v-leading-order-derivation",
+export default proposition({
+  label: "prop:n-v-leading-order-derivation",
   title: "Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)",
   cites: [],
   uses: [
-    "conj:n-v-bring-action",
-    "conj:n-v-tower-depth-ninety",
+    "prop:n-v-bring-action",
+    "prop:n-v-tower-depth-ninety",
     "ex:hadron-half-life-verification",
   ],
   defines: [],

@@ -1,11 +1,11 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:n-v-tower-depth-ninety",
+export default proposition({
+  label: "prop:n-v-tower-depth-ninety",
   title: "Brane-tower depth from m_e to v equals 90",
   cites: [],
   uses: [
-    "conj:mass-endomorphism",
+    "prop:mass-endomorphism",
     "def:hecke-mass-element",
     "prop:partition-sum-proton-residual",
   ],

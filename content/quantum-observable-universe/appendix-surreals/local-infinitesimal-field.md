@@ -91,7 +91,7 @@ substrate](#conj:hahn-substrate): instead of $q$ being a single
 Hahn series, it is a *sheaf* of Hahn series. The base $\mathbb{R}$-
 shadow agrees with the paper in both cases.
 
-It also specialises [archimedean-stpart](#conj:archimedean-stpart)
+It also specialises [archimedean-stpart](#prop:archimedean-stpart)
 to the sheaf-theoretic setting: the archimedean QOU is the
 standard-part *sheaf-morphism* of the surreal QOU, not a
 single-point morphism.
@@ -117,7 +117,7 @@ single-point morphism.
  structure — i.e., which $\varepsilon$-valued $q$ deformations
  preserve the rigid monoidal axioms up to the
  $\varepsilon$-relaxations of
- [infinitesimal-frobenius](#conj:infinitesimal-frobenius) etc.
+ [infinitesimal-frobenius](#prop:infinitesimal-frobenius) etc.
 
 **Physical layer (uniqueness of the fluctuation distribution)**:
 

@@ -74,7 +74,7 @@ pairing of $\int_A$ with the level-$\ell$ stratum: structurally,
 the stratum residue is a Hochschild-cohomology class on
 $J^\ell/J^{\ell+1}$ evaluated at the substrate parameter, and the
 total mass is the sum of these classes — in agreement with the
-[mass endomorphism conjecture](#conj:mass-endomorphism).*
+[mass endomorphism conjecture](#prop:mass-endomorphism).*
 
 **Caveat: this is a symbolic, not analytic, identity.**
 *The Cauchy-kernel factor $1/(q_0 - \zeta_\ell)$ is a formal symbol

@@ -7,8 +7,8 @@ export default remark({
   uses: [
     "def:observation",
     "def:hecke-normal-form",
-    "conj:crystal-graph-realization",
-    "conj:confinement-grading-correspondence",
+    "prop:crystal-graph-realization",
+    "prop:confinement-grading-correspondence",
   ],
   cites: [
     "kashiwara1991",

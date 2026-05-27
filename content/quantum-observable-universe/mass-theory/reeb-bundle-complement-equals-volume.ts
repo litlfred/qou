@@ -21,6 +21,6 @@ export default proposition({
     "prop:vertex-is-exceptional-divisor",
     "prop:six-canonical-knot-operators",
     "prop:thurston-volume-additivity",
-    "conj:mass-volume-factorization",
+    "prop:mass-volume-factorization",
   ],
 });

@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:cpt-orbit-closure-density",
-    "conj:symmetric-crystal-pair-production",
+    "prop:symmetric-crystal-pair-production",
   ],
   cites: [
     "kashiwara1991",

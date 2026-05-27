@@ -92,11 +92,11 @@ directly. The candidate roles are all in **non-mass observables**.
 
 ## Connection to other conjectures
 
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) F_ℓ
+- [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) F_ℓ
   — the canonical lepton-mass formula is Im(q)-robust (modulus projection
   invariance); F_ℓ does NOT distinguish the three candidate Im(q) roles.
   Hence the F_ℓ conjecture is consistent with ALL three candidates.
-- [`conj:rho-k-pair-gen-canonical-form`](conj-rho-k-pair-gen-canonical-form.md) —
+- [`prop:rho-k-pair-gen-canonical-form`](conj-rho-k-pair-gen-canonical-form.md) —
   similarly Im(q)-robust at LO.
 - The complex-q machinery is **decoupled** from the mass-formula closure;
   closing the Q_β residual or deriving F_ℓ does **not** require resolving

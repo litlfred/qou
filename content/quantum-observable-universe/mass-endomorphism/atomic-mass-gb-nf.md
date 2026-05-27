@@ -16,7 +16,7 @@
   [Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md).
   The substrate-pure replacement is $m_{\mathfrak{n}} = m_{\mathfrak{p}}
   + Q_\beta + m_e$ with $m_{\mathfrak{p}}$ from
-  [`conj:lambda-scale-substrate-form`](lambda-scale-substrate-form.md)
+  [`prop:lambda-scale-substrate-form`](lambda-scale-substrate-form.md)
   ($\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$, matching CODATA to
   ~5.4 ppm — currently *justification* at this precision per
   [`docs/audits/2026-05-18-lambda-scale-derivation-search.md §13`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md))

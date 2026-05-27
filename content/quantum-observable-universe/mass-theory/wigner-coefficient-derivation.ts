@@ -6,7 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.wigner_coefficient", validation: "not_checked" },
   uses: [
     "prop:wedderburn-trace-identity",
-    "conj:q-integer-mass-formula",
+    "prop:q-integer-mass-formula",
   ],
   tags: ["wigner", "isospin", "casimir", "quantum-factorial", "frobenius-reciprocity"],
 });

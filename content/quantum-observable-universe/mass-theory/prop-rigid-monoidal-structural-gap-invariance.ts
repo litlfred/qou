@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:spin-involution-lp-dual-invariance",
-    "conj:brane-tower-z-habiro",
+    "prop:brane-tower-z-habiro",
     "def:rigid-monoidal-category",
     "prop:operator-selection-lp",
   ],

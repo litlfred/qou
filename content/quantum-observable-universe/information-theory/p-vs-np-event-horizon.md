@@ -1,6 +1,6 @@
 The reformulation of $\mathrm{P}$ vs $\mathrm{NP}$ as
 $\mathcal{H}_c \stackrel{?}{=} \varnothing$
-([P vs NP as boundary](#conj:p-vs-np-boundary))
+([P vs NP as boundary](#prop:p-vs-np-boundary))
 reveals a structural identity between **computational
 complexity** and **jet horizon information loss**.  The same
 jet horizon $\mathcal{H} = V(\mathfrak{h})$ that blocks

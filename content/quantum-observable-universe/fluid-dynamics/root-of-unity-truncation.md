@@ -1,10 +1,10 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+[`prop:q-aubin-lions`](#prop:q-aubin-lions),
+[`prop:ns-counterexample`](#prop:ns-counterexample),
+[`prop:critical-exponent`](#prop:critical-exponent),
+[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[`prop:regularity-breakdown`](#prop:regularity-breakdown);
 "Root-of-unity truncation").**
 
 The [QOU axiom](#def:substrate-parameter) requires that $q$ is
@@ -41,7 +41,7 @@ accumulation of infinitely many such truncations.
 3. **$q = 1$ (classical limit).**
  Infinite simple objects with $[k]_1 = k$ (polynomial).
  No truncation, no exponential damping. The
- [regularity breakdown](#conj:regularity-breakdown) regime.
+ [regularity breakdown](#prop:regularity-breakdown) regime.
 
 **Root-of-unity regularity is stronger than generic.**
 

@@ -13,8 +13,8 @@ export default proposition({
     "prop:wedderburn-weight-canonical",
     "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
-    "conj:gb-depth-period-correspondence",
-    "conj:bring-figure-eight-depth-2-witness",
+    "prop:gb-depth-period-correspondence",
+    "prop:bring-figure-eight-depth-2-witness",
   ],
   cites: [],
   tags: [

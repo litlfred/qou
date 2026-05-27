@@ -1,10 +1,10 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+[`prop:q-aubin-lions`](#prop:q-aubin-lions),
+[`prop:ns-counterexample`](#prop:ns-counterexample),
+[`prop:critical-exponent`](#prop:critical-exponent),
+[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[`prop:regularity-breakdown`](#prop:regularity-breakdown);
 "NS obstruction tower").**
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with Euler characteristic
@@ -56,7 +56,7 @@ $$
 
 where $\delta_n$ is the jet correction at level $n$.  By the
 perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3,
-strengthened by [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
+strengthened by [motivic perpetual obstruction](#prop:motivic-perpetual-obstruction)
 to a place-by-place non-vanishing of the substrate's motivic
 Galois character), $\kappa_0$ and $\delta_n$ live in complementary
 subgroups when $\kappa_0$ is non-torsion, so $\kappa_n \neq 0$
@@ -166,4 +166,4 @@ local cohomology $H^1_{\mathfrak{m}_p}(A)$ is nonzero at
 collision points, which holds iff the Levi form is
 non-degenerate (core aspect ratio bounded).  Computing
 whether $\kappa_n|_\Sigma$ vanishes or persists as $q \to 1$
-is the [Levi degeneracy conjecture](#conj:levi-degeneracy).
+is the [Levi degeneracy conjecture](#prop:levi-degeneracy).

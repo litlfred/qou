@@ -4,10 +4,10 @@ export default example({
   label: "ex:non-magic-Li6-diagram",
   title:
     "Non-magic illustration: $^{6}\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)",
-  interprets: "conj:diagrammatic-double-magic-lr-fusion",
+  interprets: "prop:diagrammatic-double-magic-lr-fusion",
   uses: [
-    "conj:diagrammatic-double-magic-lr-fusion",
-    "conj:categorical-neutrality-saturated-shells",
+    "prop:diagrammatic-double-magic-lr-fusion",
+    "prop:categorical-neutrality-saturated-shells",
     "prop:magic-numbers-from-q",
   ],
   tags: [

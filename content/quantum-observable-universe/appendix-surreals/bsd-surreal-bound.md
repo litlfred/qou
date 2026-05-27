@@ -2,7 +2,7 @@ The classical Birch--Swinnerton-Dyer conjecture asserts that the
 order of vanishing of the $L$-function $L(\mathcal{E}_q, s)$ at
 $s = 1$ equals the Mordell--Weil rank of the elliptic curve
 $\mathcal{E}_q$
-([$q$-Birch--Swinnerton-Dyer](#conj:q-birch-swinnerton-dyer)).
+([$q$-Birch--Swinnerton-Dyer](#prop:q-birch-swinnerton-dyer)).
 This remark expresses the order-of-vanishing matching as a literal
 surreal-order identity.
 

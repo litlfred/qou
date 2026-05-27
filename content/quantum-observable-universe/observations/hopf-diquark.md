@@ -18,7 +18,7 @@ bracket $[ab]$ denotes antisymmetry: $D_{ij}^{[ab]} = -D_{ij}^{[ba]}$.
 **Contrast with the Borromean baryon.**
 
 In the confined phase, quarks are Borromean-linked
-([Borromean quark](#conj:borromean-quark)): no two components are
+([Borromean quark](#prop:borromean-quark)): no two components are
 pairwise linked, so no stable two-quark subsystem exists.  The Hopf
 diquark violates this: its two components **are** pairwise linked,
 with linking number $\pm 1$.  A Hopf diquark cannot exist inside an

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:ns-counterexample",
+export default proposition({
+  label: "prop:ns-counterexample",
   title:
     "Counter-example to Navier--Stokes regularity via $q \\to 1$ degeneration",
   uses: [

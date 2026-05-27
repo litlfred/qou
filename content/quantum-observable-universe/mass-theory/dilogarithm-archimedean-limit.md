@@ -106,4 +106,4 @@ $$
 
 with the shape parameter $z$ matching the algebraic state variable
 $x$ at the same denominator zero — the content of
-[shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy).
+[shared-denominator cusp holonomy](#prop:shared-denominator-cusp-holonomy).

@@ -33,7 +33,7 @@ neutrality at saturation**: at $n \in \mathfrak{M}$, the ribbon
 action on $\Phi_n$ is globally zero (in the centre-of-the-braid-
 group sense), not locally trivialised by some spectator structure.
 This is precisely the
-[`conj:categorical-neutrality-saturated-shells`](#conj\:categorical-neutrality-saturated-shells)
+[`prop:categorical-neutrality-saturated-shells`](#conj\:categorical-neutrality-saturated-shells)
 statement, and it is the structural reason a non-trivial action
 *cannot* coexist with finite mass at saturated $n$.
 
@@ -62,7 +62,7 @@ saturated $n$.
 
 ## What this changes for the conjecture
 
-[`conj:mass-endomorphism`](#conj\:mass-endomorphism) (the open
+[`prop:mass-endomorphism`](#conj\:mass-endomorphism) (the open
 problem of finding a closed-form NF for $\Phi_{\mathrm{mass}}$) is
 correspondingly reframed. The conjecture is no longer "find the
 local NF generators and combine"; it is "find the categorical
@@ -70,7 +70,7 @@ global section that satisfies the saturated-shell global-neutrality
 constraint". The reframing makes the magic-number ladder a
 **structural prediction** rather than a numerical phenomenon.
 
-This remark interprets `conj:mass-endomorphism` only — it makes no
+This remark interprets `prop:mass-endomorphism` only — it makes no
 new logical claim. The mathematical content is in the
 [saturated-shell](#conj\:categorical-neutrality-saturated-shells)
 and [shell-condensation](./homological-shell-condensation.md)

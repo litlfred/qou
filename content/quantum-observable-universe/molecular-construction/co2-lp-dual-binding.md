@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)).**
+**Proposition (conditional on [`prop:q-integer-mass-formula`](#prop:q-integer-mass-formula)).**
 *The LP dual of the $CO_2$ molecular braid selects the symmetric
 linear arrangement O=C=O with two double bonds as the ground
 state, minimising $\Phi_1$ over all possible:*

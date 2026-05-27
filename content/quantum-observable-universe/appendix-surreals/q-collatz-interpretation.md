@@ -1,4 +1,4 @@
-The $q$-Collatz conjecture ([conj:q-collatz](#conj:q-collatz))
+The $q$-Collatz conjecture ([prop:q-collatz](#prop:q-collatz))
 lives in the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$,
 where parity is $[2]_q$-divisibility and crossing resolution
 replaces arithmetic.  Three algebraic identities control

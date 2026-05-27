@@ -70,7 +70,7 @@ Quantitative consequences differ between the two mechanisms:
      content from PR #1153.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
-   ([`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):
+   ([`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):
    the ratio $|\mathrm{tr}_M(K_\mu)| / |\mathrm{tr}_M(K_e)|$ is
    robust against $\mathrm{Im}(q)$ at leading order (modulus
    projection invariance), but **NOT** robust against the

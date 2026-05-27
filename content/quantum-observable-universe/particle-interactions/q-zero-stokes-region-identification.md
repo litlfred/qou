@@ -1,4 +1,4 @@
-**Conjecture (conditional on [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) + [`conj:q-zero-complex-extension`](q-zero-complex-extension.md)).**
+**Conjecture (conditional on [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) + [`prop:q-zero-complex-extension`](q-zero-complex-extension.md)).**
 
 *The substrate parameter $q_0$ admits a CANONICAL identification with a specific point on the geometric component of the character variety $X(\mathcal{B}_3)$, REALIZED VIA TWO DUAL PERSPECTIVES that coincide by the AJ-conjecture machinery:*
 
@@ -105,7 +105,7 @@ The Lean `sorry` count is EXACTLY ONE per OPEN GAP — not per missing tactic.
 ## §7. Cross-references
 
 - [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) — Φ_q / Li_2^q $\leftrightarrow$ AJ machinery (PR #1242)
-- [`conj:q-zero-complex-extension`](q-zero-complex-extension.md) — q_0 may not be real (PR #1127)
+- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — q_0 may not be real (PR #1127)
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — distinguishing the involutions
 - [`borromean-markov-trace-closed-form.md`](borromean-markov-trace-closed-form.md) — the closed form whose categorical derivation is the rescoped Path B
 - [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) §§11-13 — origin of this conjecture

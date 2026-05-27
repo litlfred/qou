@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:archimedean-stpart-strategy",
-  interprets: "conj:archimedean-stpart",
+  interprets: "prop:archimedean-stpart",
   title:
     "Proof strategy for archimedean = $\\mathrm{St}$ of surreal QOU",
   tags: [

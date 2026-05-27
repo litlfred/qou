@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:crossing-graded-mass-expansion",
+export default proposition({
+  label: "prop:crossing-graded-mass-expansion",
   title:
     "Crossing-graded expansion of the categorical mass endomorphism",
   tags: [
@@ -15,6 +15,6 @@ export default conjecture({
   lean: { ref: "qou:QOU.ParticleInteractions.CrossingGradedMassExpansion",
     validation: "not_checked",
   },
-  uses: ["conj:lifted-crossing-locality"],
+  uses: ["prop:lifted-crossing-locality"],
   cites: ["thurston1978"],
 });

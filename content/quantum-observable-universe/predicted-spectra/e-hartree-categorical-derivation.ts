@@ -27,8 +27,8 @@ import { conjecture } from "../../schema/builders";
  * coefficient $c_2$ conjecturally inside
  * $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
  */
-export default conjecture({
-  label: "conj:e-hartree-categorical-derivation",
+export default proposition({
+  label: "prop:e-hartree-categorical-derivation",
   title:
     "Conjectured categorical derivation of $E_h = m_e c_q^2 \\alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual",
   lean: {
@@ -49,7 +49,7 @@ export default conjecture({
     "prop:bohr-radius-categorical",
     "prop:force-carrier-bring-uniqueness",
     "prop:phi-q-tower-algebraic-stratification",
-    "conj:phi-q-tower-jsj-bridge",
+    "prop:phi-q-tower-jsj-bridge",
   ],
   computation: {
     engine: "sympy",

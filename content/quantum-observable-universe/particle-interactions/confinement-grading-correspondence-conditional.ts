@@ -11,8 +11,8 @@ export default theorem({
   },
   uses: [
     "def:confinement-level",
-    "conj:crystal-graph-realization",
-    "conj:confinement-grading-correspondence",
+    "prop:crystal-graph-realization",
+    "prop:confinement-grading-correspondence",
   ],
   cites: [
     "khovanovlauda2009",

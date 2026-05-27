@@ -43,7 +43,7 @@ $\nu = \nu'$.
 **Proposition (Conjecture — diagrammatic double-magic LR-fusion
 rigidity).**
 *Let $Z, N \in \mathfrak{M}$. By
-[`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+[`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
 the categorical mass at level $Z$ is supported on a single
 self-conjugate partition $\lambda_Z \vdash Z$, and similarly $\Phi_N$
 is supported on $\mu_N \vdash N$ with $\mu_N = \mu_N'$. Then the
@@ -130,9 +130,9 @@ not self-conjugacy of the dominant component.*
 
 **Conjectural** under CLAUDE.md §3b. The conjecture is
 *conditional* on
-[`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+[`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
 and
-[`conj:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md).
+[`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md).
 A proof would proceed in two steps: (1) the upstream conjectures
 force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a
 self-conjugacy + content-sum LR rigidity lemma (provable Hecke

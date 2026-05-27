@@ -19,9 +19,9 @@ export default proposition({
     "prop:cl3-zeta5-orbit-sum-identity",
     "prop:bring-trilog-imaginary-tate-rational",
     "rem:b1-current-status",
-    "conj:bring-trilog-depth-3-witness",
-    "conj:qou-infra-discharges-goncharov-zeta5",
-    "conj:cl3-zeta5-geometric-realization",
+    "prop:bring-trilog-depth-3-witness",
+    "prop:qou-infra-discharges-goncharov-zeta5",
+    "prop:cl3-zeta5-geometric-realization",
   ],
   cites: ["bloch2000", "zagier1986"],
   tags: [

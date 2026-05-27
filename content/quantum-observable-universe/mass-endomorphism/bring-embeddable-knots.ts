@@ -8,9 +8,9 @@ export default remark({
   uses: [
     "rem:knot-exhaustiveness",
     "prop:knot-eigenbasis-complete",
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "prop:explicit-central-idempotent",
-    "conj:bring-figure-eight-depth-2-witness",
+    "prop:bring-figure-eight-depth-2-witness",
   ],
   cites: ["thurston1978"],
   tags: [

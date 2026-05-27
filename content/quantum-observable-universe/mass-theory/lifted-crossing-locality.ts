@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:lifted-crossing-locality",
+export default proposition({
+  label: "prop:lifted-crossing-locality",
   title:
     "Locality of lifted-crossing contributions in the mass expansion",
   tags: [
@@ -15,6 +15,6 @@ export default conjecture({
   lean: { ref: "qou:QOU.ParticleInteractions.LiftedCrossingLocality",
     validation: "not_checked",
   },
-  uses: ["conj:crossing-graded-mass-expansion"],
+  uses: ["prop:crossing-graded-mass-expansion"],
   cites: ["kohno1987"],
 });

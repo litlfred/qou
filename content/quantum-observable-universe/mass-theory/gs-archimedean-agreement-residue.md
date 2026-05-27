@@ -1,6 +1,6 @@
 **Conjecture (archimedean agreement, proton instance).**
 *Instantiating the generic
-[archimedean agreement conjecture](#conj:gs-archimedean-agreement-trace)
+[archimedean agreement conjecture](#prop:gs-archimedean-agreement-trace)
 on the proton braid $T_w(Z = 1, N = 0)$, the degree-$48$ Markov-normalised
 Habiro polynomial trace
 $T_{\mathfrak{p}}(u) \in \mathbb{Z}[u]$
@@ -62,7 +62,7 @@ $\mathrm{rel\_diff} = 0$ at machine precision); a rigorous Lean proof
 requires either (i) brute-force `native_decide` on the explicit
 polynomial — feasible but currently unimplemented, or (ii) the
 generic
-[archimedean agreement conjecture](#conj:gs-archimedean-agreement-trace)
+[archimedean agreement conjecture](#prop:gs-archimedean-agreement-trace)
 applied to this instance.*
 
 **Empirical witness.**

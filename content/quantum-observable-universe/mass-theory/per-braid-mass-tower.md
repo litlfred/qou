@@ -172,7 +172,7 @@ preserved in proofs as well as in the statement.
 
 ## Open: explicit closed form
 
-Conjectural per `conj:mass-endomorphism`: there exists a single
+Conjectural per `prop:mass-endomorphism`: there exists a single
 closed-form $\Phi_{\text{mass}}(W) \in H_{3A}(q)$ such that
 $\mathfrak{m}(W) = |\mathrm{tr}_M(\Phi_{\text{mass}}(W))|$. The
 per-braid tower is the **expansion** of this conjectural element

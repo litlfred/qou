@@ -100,7 +100,7 @@ knot from the standard census:
 (Values from the atom-volume witness and AME2020. The ${}^4\mathrm{He}$
 row gives the **first-principles geometric prediction**
 $2m_e \cdot 4 \cdot 8G = 29.96$ MeV; the closed-shell refinement used
-for larger atoms in [crossing-graded-mass-expansion](#conj:crossing-graded-mass-expansion)
+for larger atoms in [crossing-graded-mass-expansion](#prop:crossing-graded-mass-expansion)
 uses the α-cluster baseline $B({}^4\mathrm{He}) = 28.30$ MeV directly
 from AME. The $4 \cdot 8G$ notation denotes four Borromean-rings
 complements summed — not the braid group $B_3$.)

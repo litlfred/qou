@@ -4,7 +4,7 @@ export default remark({
   label: "rem:frobenius-packing-density",
   title:
     "Frobenius packing interpretation of the $q$-density",
-  interprets: "conj:mass-volume-factorization",
+  interprets: "prop:mass-volume-factorization",
   tags: [
     "frobenius",
     "packing-density",

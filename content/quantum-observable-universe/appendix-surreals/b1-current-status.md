@@ -1,7 +1,7 @@
 **Remark (canonical B1 current-status synthesis — what is theorem,
 what is open, after eleven rounds of sharpening).**
 
-The keystone B1 ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
+The keystone B1 ([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence))
 has been progressively sharpened across eleven rounds. *This block
 collects the current status in one canonical place: which claims
 are theorem, which are conjectural, which are reduced to a known
@@ -38,7 +38,7 @@ After eleven rounds, B1's open content reduces to:
    Generates the antisymmetric component of the 2-dim regulator image.
 
 3. **Goncharov motivic conjecture at $\mathbb{Q}(\zeta_5)$** —
-   discharge plan in [`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5)
+   discharge plan in [`prop:qou-infra-discharges-goncharov-zeta5`](#prop:qou-infra-discharges-goncharov-zeta5)
    (Avenue A: Hecke-NF redundancy enumeration; Avenue B: explicit
    22-term Hecke element).
 

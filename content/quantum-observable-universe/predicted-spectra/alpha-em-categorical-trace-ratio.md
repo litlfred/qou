@@ -112,4 +112,4 @@ identified above.
 
 Closing this final algebraic identity is the
 **post-round-18 next step** for
-[`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation).
+[`prop:e-hartree-categorical-derivation`](#prop:e-hartree-categorical-derivation).

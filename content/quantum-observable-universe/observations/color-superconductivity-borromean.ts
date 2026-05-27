@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:color-superconductivity-borromean",
+export default proposition({
+  label: "prop:color-superconductivity-borromean",
   title:
     "Color superconductivity as Borromean-to-Hopf topological reconfiguration",
   lean: {

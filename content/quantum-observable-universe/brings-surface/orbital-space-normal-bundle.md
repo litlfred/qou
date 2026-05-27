@@ -1,6 +1,6 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
+**Proposition (conditional on [`prop:borromean-quark`](#prop:borromean-quark)).**
 Let $T_{2,3} \hookrightarrow \Sigma_4$ be the trefoil embedded
 in the Bring's surface, and let $N = N_{T_{2,3}/\Sigma_4}$ be its
 normal bundle.  At shell $n$ (framing twist $k = 2(n-1)$

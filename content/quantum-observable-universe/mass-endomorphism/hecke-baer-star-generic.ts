@@ -13,7 +13,7 @@ export default proposition({
     "prop:hoefsmit-seminormal-form",
     "prop:frobenius-gram-matrix",
     "prop:explicit-central-idempotent",
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "conj:kashaev-volume-conjecture",
     "rem:vc-as-depth-2-instance",
   ],

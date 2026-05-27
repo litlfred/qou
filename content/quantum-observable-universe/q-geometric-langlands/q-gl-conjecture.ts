@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:q-geometric-langlands",
+export default proposition({
+  label: "prop:q-geometric-langlands",
   lean: { ref: "qou:QOU.QGeometricLanglands.QGeometricLanglandsConjecture", validation: "not_checked" },
   title: "$q$-Geometric Langlands correspondence",
   uses: [

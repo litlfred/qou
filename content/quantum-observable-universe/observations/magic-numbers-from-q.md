@@ -92,7 +92,7 @@ computation is in `shell_closure_compute.py`.  $\square$
 ## Cross-link: homological route past the $K = 12$ barrier
 
 The Hoefsmit-seminormal pipeline above terminates at $K = 10$. The
-[homological shell-condensation conjecture](#conj:homological-shell-condensation)
+[homological shell-condensation conjecture](#prop:homological-shell-condensation)
 provides a $K$-independent algebraic-geometry route: the magic
 ladder $\{2, 8, 20, 28, 50, 82, 126\}$ is read off the collapse of
 a Białynicki–Birula spectral sequence at $E_2$, with no matrix

@@ -4,10 +4,10 @@ export default remark({
   label: "rem:phi-n-global-section",
   title:
     "$\\Phi_n$ as the global section of the categorical mass functor",
-  interprets: "conj:mass-endomorphism",
+  interprets: "prop:mass-endomorphism",
   uses: [
-    "conj:mass-endomorphism",
-    "conj:categorical-neutrality-saturated-shells",
+    "prop:mass-endomorphism",
+    "prop:categorical-neutrality-saturated-shells",
     "def:hecke-mass-element",
   ],
   tags: [

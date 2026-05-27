@@ -80,8 +80,8 @@ The Kashaev-limit derivation that gave $\alpha \ln|V_i|$ for the single-gen piec
 
 ## Connection to dependent conjectures
 
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — the lepton-sector variant; gates on the graded-expansion formalism but has $Z = N = 0$ so the atomic LO piece vanishes; needs its own dimensional factor $\xi_\ell(q)$.
-- [`conj:mass-endomorphism`](mass-endomorphism-conjecture.md) (per `prop:per-braid-mass-tower` §"Open: explicit closed form") — the unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$; the present conjecture is a sub-claim about its expansion at pair level.
+- [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — the lepton-sector variant; gates on the graded-expansion formalism but has $Z = N = 0$ so the atomic LO piece vanishes; needs its own dimensional factor $\xi_\ell(q)$.
+- [`prop:mass-endomorphism`](mass-endomorphism-conjecture.md) (per `prop:per-braid-mass-tower` §"Open: explicit closed form") — the unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$; the present conjecture is a sub-claim about its expansion at pair level.
 
 ## Lean formalization
 
@@ -91,13 +91,13 @@ namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
 /-- The conjectural canonical pair-gen functional. -/
 noncomputable def pair_gen_functional
     {R : Type*} [Field R] (q : R) (V_i V_j : R) : R := sorry
-  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
+  -- Ref: [manuscript] prop:rho-k-pair-gen-canonical-form
 
 /-- Conjectural Kashaev limit recovery. -/
 theorem pair_gen_kashaev_limit
     {R : Type*} [Field R] (V_i V_j : R) :
     sorry := by sorry
-  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
+  -- Ref: [manuscript] prop:rho-k-pair-gen-canonical-form
 
 end QOU.BraidKnot.RhoKPairGenCanonicalForm
 ```
@@ -107,7 +107,7 @@ end QOU.BraidKnot.RhoKPairGenCanonicalForm
 When the canonical $f_2$ is derived:
 1. This conjecture promotes to a theorem.
 2. [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen status changes from "open" to "proved".
-3. Downstream conjectures (especially [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) which doesn't currently use pair-gen but will if extended to multi-strand leptons) get unblocked.
+3. Downstream conjectures (especially [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) which doesn't currently use pair-gen but will if extended to multi-strand leptons) get unblocked.
 4. The Q_β residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
 
 ## Cross-references
@@ -115,5 +115,5 @@ When the canonical $f_2$ is derived:
 - [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) — parent proposition (this conjecture promotes its OPEN pair-gen subsection)
 - [`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md) — six-term theorem providing the expected $T_3 = -z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ form
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — sibling conjecture for leptons
+- [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — sibling conjecture for leptons
 - Audit: [`docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md`](../../../docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md) — full dependency graph

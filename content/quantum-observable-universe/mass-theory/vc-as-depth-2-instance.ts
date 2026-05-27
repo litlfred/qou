@@ -6,7 +6,7 @@ export default remark({
     "Volume Conjecture as the depth-2 instance of GS $\\leftrightarrow$ period correspondence",
   interprets: "conj:kashaev-volume-conjecture",
   uses: [
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "conj:kashaev-volume-conjecture",
     "prop:q-dilogarithm-exists",
     "prop:categorical-laplace-unique",

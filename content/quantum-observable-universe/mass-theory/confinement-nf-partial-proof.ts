@@ -31,7 +31,7 @@ export default proposition({
   uses: [
     "prop:operator-selection-lp",
     "prop:alpha-shift-torus-knot",
-    "conj:crystal-graph-realization",
+    "prop:crystal-graph-realization",
     "def:lp-duality-hypothesis-class",
   ],
   cites: ["schrijver1986theory", "macdonald1995"],

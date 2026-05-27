@@ -27,7 +27,7 @@ export default proposition({
     "prop:em-coupling-projection",
     "prop:operator-selection-lp",
     "def:electron-shell-braid-capacity",
-    "conj:e-hartree-categorical-derivation",
+    "prop:e-hartree-categorical-derivation",
   ],
   tags: [
     "bohr-radius",

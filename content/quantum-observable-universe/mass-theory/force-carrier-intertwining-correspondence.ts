@@ -34,7 +34,7 @@ export default proposition({
     "prop:force-carrier-bring-uniqueness",
     "prop:em-coupling-projection",
     "prop:h2-lp-dual-binding",
-    "conj:e-hartree-categorical-derivation",
+    "prop:e-hartree-categorical-derivation",
   ],
   tags: [
     "force-carrier",

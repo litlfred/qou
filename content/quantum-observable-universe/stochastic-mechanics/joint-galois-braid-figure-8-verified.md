@@ -2,7 +2,7 @@
 bi-filtration cell — verified directly).**
 
 The joint motivic-Galois $\times$ braid-group action conjecture
-([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action))
+([`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action))
 predicts commutativity on each $\mathcal{H}_q^{(n, K)}$ stratum.
 *This proposition verifies the prediction on the figure-8 row
 $\mathcal{H}_q^{(2, 4_1)}$ by direct computation.*
@@ -139,7 +139,7 @@ non-by definition but commute with central idempotent assignment.
 ### Significance
 
 **The joint-action conjecture
-[`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
+[`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)
 is verified at the figure-8 row** — the canonical depth-2 row of
 B1. The verification is structural (disjoint actions by definition
 commute), not numerical. Combined with the figure-8 row's
@@ -157,7 +157,7 @@ self-conjugate / chiral-pair* cases.
 
 ### Cross-references
 
-- Joint-action conjecture: [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
+- Joint-action conjecture: [`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)
 - Bi-filtration: [`def:hq-bi-filtration`](#def:hq-bi-filtration)
 - Chirality structure: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)
 - Figure-8 row theorem: [`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)

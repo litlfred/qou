@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production) and [`conj:crystal-graph-realization`](#conj:crystal-graph-realization)).**
+**Proposition (conditional on [`prop:symmetric-crystal-pair-production`](#prop:symmetric-crystal-pair-production) and [`prop:crystal-graph-realization`](#prop:crystal-graph-realization)).**
 *Let $\bar\cdot \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{Z}[q, q^{-1}]$
 be the bar-involution sending $q \mapsto q^{-1}$ (the Dynkin-fold
 involution on the $A_{n-1}$ Hecke algebra after Type-B folding;
@@ -15,7 +15,7 @@ Then:*
  from [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)).*
 3. *(**Type-B-folded normal forms**) Any Hecke normal form $T_w$
  produced by the symmetric-crystal pair-production engine of
- [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)
+ [`prop:symmetric-crystal-pair-production`](#prop:symmetric-crystal-pair-production)
  is bar-invariant: $\overline{T_w} = T_w$. Equivalently, the
  image of the folded crystal-step operator
  $(\tilde f_i, \tilde f_{\bar i})$ is fixed by the bar-involution.*
@@ -63,7 +63,7 @@ $w_\lambda(q) = w_{\lambda^T}(q)$. $\square$
 
 **(3) Type-B-folded normal forms.** This is the structural
 content of the symmetric-crystal pair-production conjecture
-([`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)):
+([`prop:symmetric-crystal-pair-production`](#prop:symmetric-crystal-pair-production)):
 the folded operator pair $(\tilde f_i, \tilde f_{\bar i})$ produces
 two descendants whose Hecke normal forms are bar-conjugates. Their
 sum (the only object the engine emits, never a single descendant)
@@ -71,7 +71,7 @@ is therefore bar-invariant. Single-chirality outputs are
 unreachable.
 
 Steps (1) and (2) are unconditional; step (3) is conditional on
-[`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)
+[`prop:symmetric-crystal-pair-production`](#prop:symmetric-crystal-pair-production)
 and is registered as such in the Lean file (class-conditional, per
 CLAUDE.md §3b-cond).
 

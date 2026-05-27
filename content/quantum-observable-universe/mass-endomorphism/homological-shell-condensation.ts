@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:homological-shell-condensation",
+export default proposition({
+  label: "prop:homological-shell-condensation",
   title:
     "Proposition (homological shell condensation): BB-stratified $E_\\infty^{p,>0}(n) = 0$ at magic $n$",
   lean: {
@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:categorical-neutrality-saturated-shells",
+    "prop:categorical-neutrality-saturated-shells",
     "def:recursive-brane-tower",
     "ex:brane-tower-levels",
     "def:descent-involution",

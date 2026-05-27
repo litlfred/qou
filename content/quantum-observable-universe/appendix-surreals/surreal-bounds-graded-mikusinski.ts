@@ -7,7 +7,7 @@ export default remark({
   interprets: "lem:surreal-squeeze",
   uses: [
     "lem:surreal-squeeze",
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "rem:bsd-surreal-bound",
     "rem:rh-surreal-bound",
     "rem:p-vs-np-surreal-bound",

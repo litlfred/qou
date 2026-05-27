@@ -1,4 +1,4 @@
-The [mass-endomorphism conjecture](#conj:mass-endomorphism) states that
+The [mass-endomorphism conjecture](#prop:mass-endomorphism) states that
 the Hecke mass element $\Phi_{\mathrm{mass}}$ admits a closed-form NF
 decomposition. Its **transient (brane-tower) component** is the sum
 
@@ -21,7 +21,7 @@ so each summand is enormous and the analytic brane tower dominates the
 mass formula by orders of magnitude beyond the empirical AME binding.
 
 Two regularizations have been documented but neither uniformly closes
-the gap (see [mass-endomorphism conjecture §"Two distinct convergence problems"](#conj:mass-endomorphism)):
+the gap (see [mass-endomorphism conjecture §"Two distinct convergence problems"](#prop:mass-endomorphism)):
 
 1. **Yekutieli truncation** at GB filtration depth $k_{\max}$ — works
    for $D$ ($k_{\max}=2$, error $\sim 22\%$), grossly fails for $T$
@@ -574,7 +574,7 @@ The ${}^{3}$He gap is **not** an operator-volume choice issue — it is a
 structural deficit of the brane-tower formula itself at the
 $A{=}3$ / $n_0{=}9$ regime.
 
-This closes the level-selection question for `conj:brane-tower-z-habiro`:
+This closes the level-selection question for `prop:brane-tower-z-habiro`:
 no `n_⋆` choice and no operator-volume refinement we have probed
 recovers the AME light-isotope binding uniformly.  The surviving
 open paths are recorded in §"What survives the closure" above (the

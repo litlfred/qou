@@ -1,14 +1,14 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:categorical-higgs-mechanism",
+export default proposition({
+  label: "prop:categorical-higgs-mechanism",
   title:
     "Categorical Higgs mechanism: Goldstone-eating as topological linking",
   uses: [
     // broken-ref removed (Phase 7): conj:force-carrier-knot-vs-link-dichotomy
-    "conj:hoefsmit-ew-cell-content",
-    "conj:categorical-linking-operation",
-    "conj:weinberg-angle-categorical",
+    "prop:hoefsmit-ew-cell-content",
+    "prop:categorical-linking-operation",
+    "prop:weinberg-angle-categorical",
     // broken-ref removed (Phase 7): conj:electroweak-mass-eigenstate-count
     "def:rigid-monoidal-category",
     "def:frobenius-hopf-substrate",

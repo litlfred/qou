@@ -3,7 +3,7 @@ decomposition of the mass endomorphism
 $\mathfrak{m} \colon A \to A$ under the brane tower blow-up.
 The empirical Bethe–Weizsäcker liquid-drop ansatz is recovered
 as one phenomenology of this descent decomposition; see
-[`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)
+[`prop:q-integer-mass-formula`](#prop:q-integer-mass-formula)
 for the recovered coefficients.
 
 **Proposition.**

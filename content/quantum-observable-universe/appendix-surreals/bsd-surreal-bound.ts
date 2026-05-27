@@ -4,7 +4,7 @@ export default remark({
   label: "rem:bsd-surreal-bound",
   title:
     "Surreal bound for Birch--Swinnerton-Dyer: rank--order matches $\\omega$-order of $L$-series",
-  interprets: "conj:q-birch-swinnerton-dyer",
+  interprets: "prop:q-birch-swinnerton-dyer",
   tags: [
     "birch-swinnerton-dyer",
     "millennium-problem",

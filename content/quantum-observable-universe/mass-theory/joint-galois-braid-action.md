@@ -69,7 +69,7 @@ Three motivations:
 ### Concrete prediction at $(n, K) = (3, \zeta_5\text{-Bring})$
 
 For the Bring depth-3 bi-filtration cell
-([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)):
+([`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)):
 
 - $G_{\mathrm{mot}}$-action: cyclotomic Galois $\sigma_a \colon
   \zeta_5 \mapsto \zeta_5^a$ for $\gcd(a, 5) = 1$. Permutes

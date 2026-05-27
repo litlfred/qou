@@ -128,7 +128,7 @@ the Frobenius-paired identity says that whatever divergent content
 $\Phi_q(z_i)$ accumulates above depth $k_\star(T_w)$ pairs to zero
 with $T_w$, but the **uniform numerical bound** on the truncated
 remainder is the open part — the conjectural target of
-[$z$-Habiro completion](#conj:brane-tower-z-habiro).
+[$z$-Habiro completion](#prop:brane-tower-z-habiro).
 
 The structural content of the proposition — that the brane tower is
 centre-stratified, truncates categorically at a finite depth
@@ -141,7 +141,7 @@ The remaining gap is between the categorical equality and its
 real-valued numerical evaluation at $|\hat{V}|\approx 1$.
 
 The empirical $k=2$ subtractive sweet spot
-([brane-tower in $z$-Habiro §"Empirical observation"](#conj:brane-tower-z-habiro))
+([brane-tower in $z$-Habiro §"Empirical observation"](#prop:brane-tower-z-habiro))
 is consistent with $k_\star(T_w) \leq 2$ for D, T, ${}^3\mathrm{He}$
 under this proposition, supporting the structural picture; the
 ${}^3\mathrm{He}$ residual overshoot is then attributable to multiplicity

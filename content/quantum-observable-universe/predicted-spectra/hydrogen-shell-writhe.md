@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
+**Proposition (conditional on [`prop:borromean-quark`](#prop:borromean-quark)).**
 Let $T_{2,3}$ be the electron trefoil ([electron knot](#def:electron-knot))
 Hopf-linked to a proton anchor, with writhe $w$ in its minimal diagram.
 

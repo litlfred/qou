@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:spectral-normal-form",
+export default proposition({
+  label: "prop:spectral-normal-form",
   title:
     "Spectral gap closure and singularity formation as $q \\to 1$ read from normal-form exponents",
   lean: { ref: "qou:QOU.AppendixSurreals.SpectralNormalForm", validation: "stub" },
@@ -16,7 +16,7 @@ export default conjecture({
   ],
   uses: [
     "rem:conway-normal-form",
-    "conj:classical-limit-stpart",
+    "prop:classical-limit-stpart",
   ],
   cites: [
     "conway1976",

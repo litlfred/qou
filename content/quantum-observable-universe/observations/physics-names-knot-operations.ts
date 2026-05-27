@@ -9,6 +9,6 @@ export default remark({
     "prop:chirality-residue-mass-term",
     "cor:gauge-coupling-uniqueness",
     "prop:force-carrier-bring-uniqueness",
-    "conj:cp-violation-spectral-form",
+    "prop:cp-violation-spectral-form",
   ],
 });

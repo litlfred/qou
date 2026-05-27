@@ -12,7 +12,7 @@ already-established objects:
   \mathbb{Z}[q^{1/2}, q^{-1/2}]$ — the algebraic quantum volume of a
   braid, a Laurent polynomial in $q^{1/2}$.
 
-The [mass-volume factorization](#conj:mass-volume-factorization) can
+The [mass-volume factorization](#prop:mass-volume-factorization) can
 be organized as a perturbative expansion graded by the number of
 "lifted" (volume-carrying) crossings.  The $n = 0$ term reproduces
 the existing Gröbner-Shirshov NF mass; each higher order picks up
@@ -66,7 +66,7 @@ See [Table: Crossing-graded mass expansion](#tbl:crossing-graded-mass-expansion-
 ## Locality corollary
 
 If lifted-crossing contributions factorize pairwise — the
-[lifted-crossing locality hypothesis](#conj:lifted-crossing-locality) —
+[lifted-crossing locality hypothesis](#prop:lifted-crossing-locality) —
 the sum collapses to an exponential in crossing count:
 
 $$
@@ -119,7 +119,7 @@ This statement is a **conjecture** rather than a theorem because:
    Thurston gluing is only an approximation (the
    $\lambda$-witness shows $D(z_q)/v_3 \approx 0.9015$ at $q_0$).
 2. The separation of lifted vs flat crossings requires the
-   [locality hypothesis](#conj:lifted-crossing-locality) as an
+   [locality hypothesis](#prop:lifted-crossing-locality) as an
    independent assumption.
 3. The exponential collapse to $(1 + \xi)^c$ further needs locality.
 

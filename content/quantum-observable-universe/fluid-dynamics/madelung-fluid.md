@@ -75,7 +75,7 @@ $E_i \cong \mathbb{CP}^1$:
   $E_{i_1}, \ldots, E_{i_k}$; the vortex filament bifurcates and
   the mass decomposes as
   $\sum_j \lambda_j|\Phi_q(z_{i_j})|$,
-  recovering the [topological decomposition](#conj:topological-decomposition-mass).
+  recovering the [topological decomposition](#prop:topological-decomposition-mass).
 
 - **Linking:** $E_i \cdot E_j \neq 0$ in homology if and only if the
   corresponding vortex filaments are Hopf-linked; the intersection

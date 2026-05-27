@@ -51,7 +51,7 @@ prediction about a confined bound state of $H_n(q)$: binding energies,
 form factors, axial couplings, magnetic moments, and any other
 observable that is linear in the algebra.  It promotes the binding-
 energy-only statement of
-[knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing)
+[knot-factor-frobenius-pairing](#prop:knot-factor-frobenius-pairing)
 to the entire class of bound-state observables.
 
 **Three distinct ingredients are required.**
@@ -104,7 +104,7 @@ LP) gives the boxed formula.
 
 For binding energy the observable is the Hamiltonian $O = H$ acting
 diagonally on the NF basis, and the formula reduces to the known
-expression in [knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing).
+expression in [knot-factor-frobenius-pairing](#prop:knot-factor-frobenius-pairing).
 That conjecture is therefore the special case $O = H$ of the present
 proposition; conversely, any **other** bound-state observable is
 governed by the same reciprocity.

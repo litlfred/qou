@@ -19,7 +19,7 @@ export default proposition({
     "rem:mass-endomorphism-jet-tower",
     "thm:markov-trace-factorization",
     "prop:wigner-np-pairing",
-    "conj:categorical-neutrality-saturated-shells",
+    "prop:categorical-neutrality-saturated-shells",
   ],
   cites: ["bethe1936", "weizsacker1935", "geckpfeiffer2000"],
   lean: {

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:topological-decomposition-mass",
+export default proposition({
+  label: "prop:topological-decomposition-mass",
   title: "Conjectural Topological Decomposition of Mass",
   lean: {
     ref: "qou:QOU.TopologicalMass.TopologicalDecompositionMass",

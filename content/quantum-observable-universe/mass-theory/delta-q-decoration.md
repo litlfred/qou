@@ -47,7 +47,7 @@ The $\delta_q$-decoration **preserves the per-irrep structure**
 that the Markov trace collapses by summing.  This refinement is
 necessary to identify how $\alpha_{EM}$ — which lives in the
 q-dimension layer
-([`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation),
+([`prop:e-hartree-categorical-derivation`](#prop:e-hartree-categorical-derivation),
 round 11) — projects onto specific Wedderburn components of
 the molecular bound-state operator
 ([`prop:force-carrier-intertwining-correspondence`](#prop:force-carrier-intertwining-correspondence)).
@@ -131,7 +131,7 @@ $$
 
 The $\delta_q$-decoration is the **single new infrastructure layer**
 identified in
-[`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation)
+[`prop:e-hartree-categorical-derivation`](#prop:e-hartree-categorical-derivation)
 round 11 as the missing piece for fully categorical derivation of
 the Hartree energy.  It is reusable across:
 

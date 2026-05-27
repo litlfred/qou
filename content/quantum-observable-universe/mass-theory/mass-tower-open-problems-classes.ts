@@ -22,7 +22,7 @@ export default remark({
   uses: [
     "prop:em-coupling-bring-zero-mode",
     "prop:archimedean-functor-uniqueness",
-    "conj:bring-hyperbolic-knot-bloch-decomposition",
+    "prop:bring-hyperbolic-knot-bloch-decomposition",
   ],
   cites: ["borel1974", "bloch2000", "suslin1991", "kashaev1997"],
 });

@@ -2,7 +2,7 @@ $^{6}\mathrm{Li}$ ($Z = N = 3$, $A = 6$) is the canonical
 **non-magic** test case: neither proton nor neutron count lies in
 $\mathfrak{M}$. This example illustrates the partition-level
 diagrammatic content of the double-magic LR-fusion conjecture
-([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion))
 in the regime where *both* blocks are frayed, the categorical
 mass at each level spreads over multiple non-self-conjugate
 partitions, and the LR fusion produces non-zero **full-twist flux

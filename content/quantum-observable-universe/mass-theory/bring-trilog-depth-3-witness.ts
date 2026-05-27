@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:bring-trilog-depth-3-witness",
+export default proposition({
+  label: "prop:bring-trilog-depth-3-witness",
   title:
     "Bring trilog at $\\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)",
   lean: { ref: "qou:QOU.BraidKnot.BringTrilogDepth3Witness", validation: "stub" },
@@ -14,11 +14,11 @@ export default conjecture({
     status: "verified",
   },
   uses: [
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "def:brings-coordinate-ring",
     "prop:q-dilogarithm-exists",
-    "conj:bring-figure-eight-depth-2-witness",
-    "conj:two-filtration-bridge",
+    "prop:bring-figure-eight-depth-2-witness",
+    "prop:two-filtration-bridge",
     "rem:chirality-period-pairing",
   ],
   cites: [

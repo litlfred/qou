@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:algebraic-geometric-dilog-equivalence",
+export default proposition({
+  label: "prop:algebraic-geometric-dilog-equivalence",
   title:
     "Algebraic-geometric dilogarithm equivalence: $\\Phi_n(x; q)$ poles map to ideal-tetrahedron cusps",
   lean: {
@@ -10,8 +10,8 @@ export default conjecture({
   },
   uses: [
     "def:q-pochhammer-partial-product",
-    "conj:dilogarithm-archimedean-limit",
-    "conj:kashaev-volume-conjecture",
+    "prop:dilogarithm-archimedean-limit",
+    "prop:kashaev-volume-conjecture",
     "rem:kashaev-as-archimedean-realization",
     "rem:quantum-bloch-group",
     "def:archimedean-realization-functor",

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:magic-numbers-bring",
+export default proposition({
+  label: "prop:magic-numbers-bring",
   title:
     "Magic numbers $\\mathfrak{M} = \\{2, 8, 20, 28, 50, 82, 126\\}$ as ranks of $S_5$-stable Bring period sub-lattices",
   lean: {
@@ -10,8 +10,8 @@ export default conjecture({
   },
   uses: [
     "def:brings-coordinate-ring",
-    "conj:categorical-neutrality-saturated-shells",
-    "conj:homological-shell-condensation",
+    "prop:categorical-neutrality-saturated-shells",
+    "prop:homological-shell-condensation",
     "def:descent-involution",
   ],
   cites: [

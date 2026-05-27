@@ -28,7 +28,7 @@ electroweak sector: the canonical
 $\beta_{\mathrm{EW}} \, \bowtie_K^{\mathrm{minimal}}$
 braid word acts on $V_{\rho_k}$ with a spectrum encoding the
 $q$-deformed Weinberg-angle ratio (see
-[`conj:staircase-ew-residual`](#conj:staircase-ew-residual)).
+[`prop:staircase-ew-residual`](#prop:staircase-ew-residual)).
 
 The Lean side is `QOU.Hecke.staircasePartition`, recursively
 constructed via `staircaseList` and a dedicated

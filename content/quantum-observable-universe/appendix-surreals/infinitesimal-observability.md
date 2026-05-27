@@ -77,14 +77,14 @@ the physical scale by small parameters.
 ## Status
 
 **Open** — the same construction-vs-tautology question as for
-[infinitesimal Frobenius](#conj:infinitesimal-frobenius). A
+[infinitesimal Frobenius](#prop:infinitesimal-frobenius). A
 worked example would resolve it; a Hochschild-cohomology
 obstruction theorem would refute it.
 
 ## Proof strategy
 
 Same architecture as
-[infinitesimal-frobenius](#conj:infinitesimal-frobenius):
+[infinitesimal-frobenius](#prop:infinitesimal-frobenius):
 
 **Standard-part recovery (provable now)**:
 
@@ -125,5 +125,5 @@ $\eta$ must vanish for $\xi$ to satisfy the original observability
 constraint, the relaxation is empty.
 
 **Provability assessment**: identical to
-[infinitesimal-frobenius](#conj:infinitesimal-frobenius). One
+[infinitesimal-frobenius](#prop:infinitesimal-frobenius). One
 side trivial, the other requires deformation theory.

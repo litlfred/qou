@@ -72,7 +72,7 @@ $$
 $$
 
 *which is the content predicted by the
-[mass endomorphism conjecture](#conj:mass-endomorphism). The
+[mass endomorphism conjecture](#prop:mass-endomorphism). The
 graded piece reproduces the regular-value brane-tower formula
 ([mass endomorphism tower](#prop:mass-endomorphism-tower)) when
 $T_w$ lies in filtration level $0$ and all cross-pair terms

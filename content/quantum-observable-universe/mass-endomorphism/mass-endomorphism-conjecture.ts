@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:mass-endomorphism",
+export default proposition({
+  label: "prop:mass-endomorphism",
   title: "Mass endomorphism conjecture",
   lean: {
     ref: "qou:QOU.MassEndomorphism.MassEndomorphism",
@@ -13,7 +13,7 @@ export default conjecture({
     "def:habiro-ring",
     "def:z-habiro-ring",
     "def:qz-bicompletion",
-    "conj:brane-tower-z-habiro",
+    "prop:brane-tower-z-habiro",
     "def:motivic-substrate",
     "def:archimedean-realization-functor",
     "thm:topological-mass",

@@ -5,7 +5,7 @@ with published Volume Conjecture results).**
 Beyond the figure-8 row ([`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem))
 and the seven torus-knot rows ([`prop:b1-torus-knot-rows-theorem`](#prop:b1-torus-knot-rows-theorem)),
 *several additional Bring-embeddable hyperbolic-knot rows of B1
-([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
+([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence))
 are theorem-level via published Volume Conjecture discharges.*
 
 ### Discharged rows
@@ -96,7 +96,7 @@ the theorem column.*
 
 ### Cross-references
 
-- Keystone B1: [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
+- Keystone B1: [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
 - Depth-2 ID: [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
 - Figure-8 row: [`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)

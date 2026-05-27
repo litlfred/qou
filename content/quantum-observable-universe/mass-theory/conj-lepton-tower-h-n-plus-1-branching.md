@@ -183,4 +183,4 @@ The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specific
 - [`prop:three-halves-structural-factor`](three-halves-structural-factor.md) — Lean-proved structural identities (muon + tau)
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — V̂_e convention (calibration check)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence (partially closed: muon + tau q-bracket forms now identified; categorical derivation open for Option E)
+- [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence (partially closed: muon + tau q-bracket forms now identified; categorical derivation open for Option E)

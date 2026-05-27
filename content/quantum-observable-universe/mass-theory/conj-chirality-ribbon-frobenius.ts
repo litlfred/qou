@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:chirality-ribbon-frobenius",
+export default proposition({
+  label: "prop:chirality-ribbon-frobenius",
   title:
     "Exact chirality factor from Frobenius ribbon twist: $a_K = \\sum_\\lambda w_\\lambda q^{2w(K)c(\\lambda)}\\chi_\\lambda / \\sum_\\lambda w_\\lambda \\chi_\\lambda$",
   uses: [

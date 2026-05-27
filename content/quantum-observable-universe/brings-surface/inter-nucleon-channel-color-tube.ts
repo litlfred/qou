@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:inter-nucleon-channel-color-tube",
+export default proposition({
+  label: "prop:inter-nucleon-channel-color-tube",
   title: "Inter-nucleon Hecke channel assignment from Bring color-tube weighting",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.InterNucleonChannelColorTube",

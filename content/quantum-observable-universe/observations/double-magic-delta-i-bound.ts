@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:double-magic-delta-i-bound",
+export default proposition({
+  label: "prop:double-magic-delta-i-bound",
   title:
     "Proposition 9. Empirical double-magic isotopes satisfy $|\\Delta i| \\leq 1$ across Bring shell indices",
   lean: {
@@ -9,10 +9,10 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:diagrammatic-double-magic-lr-fusion",
+    "prop:diagrammatic-double-magic-lr-fusion",
     "prop:torus-knot-shell-binding",
     "def:brings-surface",
-    "conj:categorical-neutrality-saturated-shells",
+    "prop:categorical-neutrality-saturated-shells",
   ],
   computation: {
     engine: "python",

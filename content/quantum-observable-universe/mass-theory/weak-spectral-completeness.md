@@ -14,7 +14,7 @@ $$
   H \leftrightarrow \sigma_5^8
 $$
 
-*([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
+*([`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)).
 Eight pairwise-orthogonal pure-eigenspace projectors of
 $(\sigma_1, \sigma_3, \sigma_5)$ — labelled by sym/alt patterns —
 exhaust the EW Wedderburn content with cell-content

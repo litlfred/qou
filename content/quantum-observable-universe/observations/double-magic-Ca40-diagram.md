@@ -3,14 +3,14 @@ $^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical
 $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. This example
 illustrates the partition-level rigidity content of the
 double-magic LR-fusion conjecture
-([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion))
 in the regime where both blocks are saturated and the LR fusion
 collapses to a single self-conjugate $\nu_{ZN} \vdash 40$.
 
 ## $Z$-block and $N$-block (twin saturated)
 
 Both $Z = 20$ and $N = 20$ are magic. By
-[`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+[`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
 the categorical mass at each level is supported on a single
 self-conjugate partition. The relevant partition is
 
@@ -42,7 +42,7 @@ $(5,4,4,4,3)$ as a representative diagrammatic illustration.)
 ## LR fusion at $A = 40$ — rigid
 
 By the double-magic conjecture
-([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion))
 the LR product
 
 $$

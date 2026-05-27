@@ -6,7 +6,7 @@ export default remark({
   title:
     "$q$-deformation as a contact metric change (Miranda picture)",
   uses: [
-    "conj:levi-degeneracy",
+    "prop:levi-degeneracy",
     "def:categorical-reeb-derivation",
     "def:frobenius-hopf-substrate",
     "def:ns-obstruction",

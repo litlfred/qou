@@ -1,7 +1,7 @@
 The **up quark** is an unknot (neutrino) localized in a color
 tube of the Bring's surface with **positive crossing orientation**
 within the Borromean link $\mathcal{B}_3$
-([Borromean quark conjecture](#conj:borromean-quark)).
+([Borromean quark conjecture](#prop:borromean-quark)).
 
 $$
   \mathfrak{u} =  \nu \big|_{\mathcal{B}_3, +}

@@ -110,5 +110,5 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
   blocks `prop:q-zero-complex-extension` +
   `prop:lusztig-vs-hermitian-bar`
 - Volume Conjecture: [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)
-- D16 Bloch group: [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- D16 Bloch group: [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md)
 - 13-driver menu driver (viii): [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)

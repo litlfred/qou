@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:infinitesimal-frobenius",
+export default proposition({
+  label: "prop:infinitesimal-frobenius",
   title:
     "Infinitesimal Frobenius pairing: $\\int_A \\circ \\mu = \\mathrm{id} + O(\\varepsilon)$",
   lean: { ref: "qou:QOU.AppendixSurreals.InfinitesimalFrobenius", validation: "stub" },
@@ -12,6 +12,6 @@ export default conjecture({
     "axiom-relaxation",
     "open-problem",
   ],
-  uses: ["conj:archimedean-stpart"],
+  uses: ["prop:archimedean-stpart"],
   cites: ["robinson1966"],
 });

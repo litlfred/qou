@@ -11,7 +11,7 @@ export default proposition({
     "prop:topological-mass-formula",
     "def:yekutieli-lifting-condition",
     "prop:yekutieli-lifting",
-    "conj:hyperbolic-volume-transcendence",
+    "prop:hyperbolic-volume-transcendence",
   ],
   cites: ["yekutieli2010", "yekutieli2015"],
   tags: [

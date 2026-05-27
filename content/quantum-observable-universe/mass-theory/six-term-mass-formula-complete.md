@@ -76,7 +76,7 @@ archimedean specialisation at $q_0$**.*
   $(q;q)_m$ matching the Cauchy kernel denominators.  Kashaev
   volume conjecture context:
   [Kashaev volume density](#rem:kashaev-volume-density),
-  [mass endomorphism conjecture](#conj:mass-endomorphism).*
+  [mass endomorphism conjecture](#prop:mass-endomorphism).*
 - *Exceptional-divisor resolution: paper's derivation via blow-up
   of the brane tower gives $\Phi_q$ as the resolution generating
   function ([mass endomorphism tower](#prop:mass-endomorphism-tower)

@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "thm:knot-mass-formula-unified",
-    "conj:confinement-grading-correspondence",
+    "prop:confinement-grading-correspondence",
   ],
   tags: [
     "jet-level",

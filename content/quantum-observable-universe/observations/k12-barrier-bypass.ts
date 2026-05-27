@@ -7,8 +7,8 @@ export default remark({
   interprets: "prop:magic-numbers-from-q",
   uses: [
     "prop:magic-numbers-from-q",
-    "conj:homological-shell-condensation",
-    "conj:diagrammatic-double-magic-lr-fusion",
+    "prop:homological-shell-condensation",
+    "prop:diagrammatic-double-magic-lr-fusion",
   ],
   tags: [
     "magic-numbers",

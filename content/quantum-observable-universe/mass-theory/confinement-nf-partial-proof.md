@@ -3,7 +3,7 @@
 **Proposition (partial proof, conditional on
 [`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)
 per CLAUDE.md §3b-cond).**
-*The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
+*The three claims of [`prop:confinement-nf-structure-forcing`](#prop:confinement-nf-structure-forcing)
 decompose as follows.*
 
 1. *(Wedderburn maximizer in active set, $T_1$.)*
@@ -24,7 +24,7 @@ decompose as follows.*
    of $\rho_\lambda(I)$ — scalar form proved in
    [scalar audit](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md);
    operator-valued form closed conditional on
-   [`conj:crystal-graph-realization`](crystal-graph-realization.md)
+   [`prop:crystal-graph-realization`](crystal-graph-realization.md)
    via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$ at
    $q \to 0$ — see
    [crystal audit](../../../docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md)).

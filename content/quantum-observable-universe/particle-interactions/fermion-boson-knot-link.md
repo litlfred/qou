@@ -54,7 +54,7 @@ bosons have integer spin) becomes a topological statement:
 **Quarks in this framework.**
 Quarks are **not** knots or links in the $T(2,n)$ family.
 They are unknots Borromean-linked in the exceptional divisor
-([Borromean quark](#conj:borromean-quark)).  The Borromean
+([Borromean quark](#prop:borromean-quark)).  The Borromean
 link $\mathcal{B}_3$ has **three** components — neither a
 knot (1) nor a standard link (2).  Its statistics are
 determined by the overall baryon: the proton

@@ -37,8 +37,8 @@ is equivalent to the Borel regulator being injective (modulo torsion)
 on the $K_3$-elements corresponding to these three complements.
 
 This is strictly weaker than [algebraic
-independence](#conj:hyperbolic-volume-transcendence), which rules out
+independence](#prop:hyperbolic-volume-transcendence), which rules out
 all polynomial relations, not just linear ones.  But it is strictly
-stronger than [irrationality](#conj:single-volume-irrationality), since
+stronger than [irrationality](#prop:single-volume-irrationality), since
 $\mathbb{Q}$-linear independence of three numbers implies each is
 irrational.

@@ -52,7 +52,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D18
   + §2 Cluster C (Pentagon validation)
-- D16 [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- D16 [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md)
   — K-theoretic regulator parallel
 - [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
   — Volume Conjecture is the leading-order 3d–3d statement

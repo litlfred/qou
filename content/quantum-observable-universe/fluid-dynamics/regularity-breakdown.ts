@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:regularity-breakdown",
+export default proposition({
+  label: "prop:regularity-breakdown",
   title: "Regularity breakdown at $q = 1$: the classical limit as a phase transition",
   uses: [
     "thm:q-ns-wellposedness",

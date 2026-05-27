@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:pachner-pentagon-borromean",
+export default proposition({
+  label: "prop:pachner-pentagon-borromean",
   title:
     "Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition",
   lean: {

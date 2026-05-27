@@ -122,7 +122,7 @@ $$
 $\prod_i (x_i; q)_{n_i} \in \mathbb{Z}[q, x_1, \dots, x_{n-2}]$ is a
 polynomial whose zero locus is the algebraic address of the JSJ-piece
 cusps under the Archimedean realization
-([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
+([shared-denominator cusp holonomy](#prop:shared-denominator-cusp-holonomy)).
 This factorisation does not change $\mathrm{Vol}_q(\beta)$ as a
 Laurent polynomial; it only names the denominator structure that
 the subsequent thimble / volume-tower derivations rely on.*

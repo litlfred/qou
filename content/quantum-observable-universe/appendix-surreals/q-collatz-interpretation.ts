@@ -4,7 +4,7 @@ export default remark({
   label: "rem:q-collatz-interpretation",
   title:
     "Skein-Collatz interpretation: the $(p_1^{k_1}, p_2^{k_2})$ family and uniqueness of $(2,3)$",
-  interprets: "conj:q-collatz",
+  interprets: "prop:q-collatz",
   uses: ["prop:collatz-contact-boundary"],
   tags: [
     "collatz",

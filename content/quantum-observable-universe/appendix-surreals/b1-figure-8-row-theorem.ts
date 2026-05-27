@@ -9,11 +9,11 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:gb-depth-period-correspondence",
+    "prop:gb-depth-period-correspondence",
     "prop:depth-2-identification-bloch-suslin",
     "prop:borel-partial-resolution",
     "rem:figure-8-archimedean-illustration",
-    "conj:bring-figure-eight-depth-2-witness",
+    "prop:bring-figure-eight-depth-2-witness",
     "rem:vc-as-depth-2-instance",
     "prop:b1-soft-sharpness-theorem",
   ],

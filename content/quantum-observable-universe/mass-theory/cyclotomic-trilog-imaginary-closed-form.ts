@@ -19,7 +19,7 @@ export default proposition({
     "prop:bring-trilog-imaginary-tate-rational",
     "prop:borel-partial-resolution",
     "rem:transcendental-accounting",
-    "conj:cl3-zeta5-geometric-realization",
+    "prop:cl3-zeta5-geometric-realization",
   ],
   cites: ["bloch2000", "zagier1986"],
   tags: [

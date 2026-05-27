@@ -10,7 +10,7 @@ export default remark({
     "rem:bloch-wigner-mathlib-filler",
     "rem:clausen-function-mathlib-filler",
     "prop:archimedean-functor-uniqueness",
-    "conj:dilogarithm-archimedean-limit",
+    "prop:dilogarithm-archimedean-limit",
   ],
   cites: [
     "bloch2000",

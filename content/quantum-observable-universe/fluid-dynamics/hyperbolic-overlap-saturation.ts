@@ -1,13 +1,13 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "conj:levi-degeneracy",
+  interprets: "prop:levi-degeneracy",
   label: "rem:hyperbolic-overlap-saturation",
   title:
     "Hyperbolic-overlap strain saturation: $\\kappa^2 = \\pi\\nu/(2\\Gamma+\\pi\\nu)$ preserves Levi non-degeneracy",
   uses: [
-    "conj:levi-degeneracy",
-    "conj:ns-counterexample",
+    "prop:levi-degeneracy",
+    "prop:ns-counterexample",
     "def:ns-obstruction",
     "prop:core-levi-form",
     "rem:townsend-biot-savart-strain",
