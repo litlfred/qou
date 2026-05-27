@@ -1,30 +1,66 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 10 — Mass — Theory (light).
+ * Chapter 10 — Mass.
  *
- * Conceptual framework for the mass endomorphism: Wedderburn
- * decomposition, Frobenius pairing $\mathrm{tr}_M = \sum_\lambda
- * y_\lambda \chi^\lambda$, transfer matrices, Markov-trace properties,
- * crystal-basis statements, mass-formula derivation. The chapter holds
- * the **statements** of the mass machinery; the **algorithms and
- * compute** live in Mass — Application (Ch 11).
+ * The mass endomorphism is the paper's structural spine: it is the
+ * single categorical object whose algebraic, geometric, archimedean,
+ * and physical faces are developed across Part II.  This chapter
+ * opens with the mass endomorphism conjecture and its foundational
+ * definitions, then decomposes it along the Cat→Alg→Geom→Arch→Phys
+ * arc.
  *
- * Phase 4 chunk 2 (2026-05-25): 90 blocks moved from braids-and-knots
- * across 7 sections (transfer-matrix, categorical-mass eigenspaces +
- * Markov-trace endomorphism, mass-formula derivation, Hecke χ
- * closed-forms).
+ * §1 "The mass endomorphism" — opener: conj:mass-endomorphism,
+ *     def:mass-identity, thm:topological-mass + full proof tree.
+ *     Three-calibration discipline (categorical constraint).
+ * §2+ Algebraic face: Wedderburn, Frobenius pairing, tr_M,
+ *     partition weights, transfer matrices, Markov-trace properties.
+ * Later sections: geometric face (brane tower, volumes),
+ *     archimedean face (substrate→MeV), physical face (predictions,
+ *     compute), open problems (Δ_λ, crystal-basis).
  *
- * Story-arc placement: Part II "Structural Mechanics" Ch 10 — the
- * theoretical face of the mass step. Consumes the Hecke algebra (Ch 5),
- * the climax volume/mass identity (Ch 6), and Bring's geometric
- * structure (Ch 7); hands off to Mass — Application (Ch 11) for the
- * compute infrastructure.
+ * Mass blocks consolidated from lifting-and-descent (19 blocks,
+ * 2026-05-27) and particle-interactions (31 blocks, pending).
+ * Will merge with Mass — Application (Ch 11) in Phase 3.
  */
 export default chapter({
-  title: "Mass --- Theory",
+  title: "Mass",
   label: "chap:mass-theory",
   sections: [
+    // ── §1 The Mass Endomorphism (OPENER) ──────────────────────────
+    // Foundational definitions + topological decomposition.
+    // Moved from lifting-and-descent 2026-05-27.
+    section({
+      title: "The Mass Endomorphism",
+      label: "sec:mass-endomorphism-opener",
+      blocks: [
+        "mass-endomorphism-conjecture",
+        "mass-identity",
+        "mass-identity-exists",
+        "mass-identity-exists-proof",
+        "mass-identity-unique",
+        "mass-identity-unique-proof",
+        "mass-identity-su2",
+        "mass-noncommutative-drag",
+        "mass-identity-C",
+        "mass-identity-C-proof",
+        "mass-geometric-drag",
+        "topological-mass",
+        "topological-mass-conjecture",
+        "topological-mass-eigenspace-decomp",
+        "topological-mass-eigenspace-decomp-proof",
+        "topological-mass-holonomy",
+        "topological-mass-holonomy-proof",
+        "topological-mass-transient-localisation",
+        "topological-mass-transient-localisation-proof",
+        "topological-mass-dilogarithm",
+        "topological-mass-dilogarithm-proof",
+        "topological-mass-proof",
+        "topological-mass-su2",
+      ],
+    }),
+
+    // ── §2 Algebraic face: Transfer Matrix and Topological Mass ────
     section({
       title: "Transfer Matrix and Topological Mass",
       label: "sec:transfer-matrix-mass",
@@ -83,7 +119,7 @@ export default chapter({
         "markov-trace-axiomatic-closed-form-table2-data",
         "markov-trace-recursive-reducer",
         "markov-z-reconciliation",
-        "mass-endomorphism-conjecture",
+        // mass-endomorphism-conjecture promoted to §1 opener (2026-05-27)
         "categorical-neutrality-saturated-shells",
         "phi-n-global-section",
       ],
