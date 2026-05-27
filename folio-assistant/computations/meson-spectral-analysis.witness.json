@@ -16,6 +16,19 @@
     "spectral_ratio": 1.015,
     "pdg_ratio": 3.537,
     "miss": "71%",
-    "conclusion": "Meson mass ratio NOT from spectral phase ratio. Different mechanism needed."
+    "conclusion": "Meson mass ratio NOT from spectral phase ratio. Different mechanism needed.",
+    "duality_analysis": {
+      "baryon": "near-identity (\u03b8\u22480.076), small-angle arccos series works",
+      "meson": "near-antiparallel (\u03b8\u22482.12\u2248\u03c0-1.02), duality from qq\u0304 structure",
+      "why_different": "Antiquark in dual representation flips \u03c7(L+)=-1. Meson operator rotates by \u2248\u03c0, not \u22480.",
+      "deviation_from_pi": {
+        "pi": 1.022,
+        "K": 0.99,
+        "ratio": 0.969,
+        "vs_mk_mpi": 3.537,
+        "miss": "72.6%"
+      },
+      "conclusion": "Meson masses need typed-crossing evaluation. The spectral small-angle trick is specific to near-identity operators (baryons)."
+    }
   }
 }
