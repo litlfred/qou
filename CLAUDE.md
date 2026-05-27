@@ -169,15 +169,20 @@ ephemeral.
    `claude/laurent-q-trace-optimization-2026-05-20`, not
    `claude/respond-to-user-2026-05-20`.
 
-2. **Open the PR early.** Once the branch has its first substantive
-   commit (even a stub / planning doc), `gh pr create` (or
-   `mcp__github__create_pull_request`). The PR body documents
-   intent + scope; refine the body as the work progresses. **Do not
-   wait until the work is "ready"** — early PR visibility lets
-   reviewers + sibling agents coordinate.
+2. **Open the PR FIRST.** The PR is the very first action after the
+   first commit — before any further work. Create the branch, make
+   the first commit (even a stub), open the PR immediately. Then
+   continue working. The PR body is a living document; update it as
+   work progresses. **Never accumulate multiple commits before
+   opening the PR** — the PR is the visibility artifact, not the
+   code.
 
-3. **Commit early, commit often.** Each logically distinct change
-   gets its own commit. Examples of good commit granularity:
+3. **Commit early, commit often — microcommit.** Each logically
+   distinct change gets its own commit. Prefer many small commits
+   over few large ones. A single file rename, a single block move,
+   a single bug fix — each is its own commit. Push after each
+   commit (or every 2-3 if moving fast). Examples of good
+   commit granularity:
 
    - "scaffold module X" (skeleton + types)
    - "implement X.foo() — basic case"
