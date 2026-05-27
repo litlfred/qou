@@ -1049,29 +1049,29 @@ export function checkDetanglerBlockTanglement(
 ): CheckerResult {
   const ts = readMaybe(tsPath);
   if (!ts) return { result: "n/a", hits: [] };
-  const usesMatch = ts.match(/uses:\s*\[([^\]]*)\]/s);
+  const cleanTs = ts.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, "");
+  const usesMatch = cleanTs.match(/uses:\s*\[([^\]]*)\]/s);
   if (!usesMatch) return { result: "pass", hits: [] };
-  const refs = usesMatch[1]
-    .split(",")
-    .map((s) => s.replace(/['"]/g, "").trim())
-    .filter(Boolean);
+  const refs = [...usesMatch[1].matchAll(/["']([^"']+)["']/g)].map(
+    (m) => m[1],
+  );
   const fanOut = refs.length;
-  const crossChapter = refs.filter((r) => r.includes(":") && !r.startsWith("conj:") && !r.startsWith("def:") && !r.startsWith("thm:") && !r.startsWith("prop:") && !r.startsWith("lem:") && !r.startsWith("cor:") && !r.startsWith("rem:") && !r.startsWith("ex:") && !r.startsWith("sim:") && !r.startsWith("sec:")).length;
-  const score = fanOut + crossChapter * 2;
-  if (score <= 4) return { result: "pass", hits: [] };
-  const severity = score > 8 ? "fail" : "warn";
+  const LABEL_PREFIX_RE =
+    /^(?:conj|def|thm|prop|lem|cor|rem|ex|sim|sec|prf|fig|eq|prose):/;
+  const crossPaper = refs.filter(
+    (r) => !LABEL_PREFIX_RE.test(r) && r.includes(":"),
+  ).length;
+  const score = fanOut + crossPaper * 3;
+  if (score <= 8) return { result: "pass", hits: [] };
   return {
-    result: severity === "fail" ? "fail" : "pass",
-    hits:
-      severity === "fail"
-        ? [
-            {
-              file: tsPath ?? "(unknown)",
-              line: 1,
-              text: `tanglement score ${score} (fan-out=${fanOut}, cross-chapter=${crossChapter}) — consider splitting or pruning uses[]`,
-            },
-          ]
-        : [],
+    result: "fail",
+    hits: [
+      {
+        file: tsPath ?? "(unknown)",
+        line: 1,
+        text: `tanglement score ${score} (fan-out=${fanOut}, cross-paper=${crossPaper}) — consider splitting or pruning uses[]`,
+      },
+    ],
   };
 }
 
