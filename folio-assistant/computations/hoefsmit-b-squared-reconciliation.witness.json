@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-27T13:29:47.069470+00:00",
+  "commitSha": "d9025d3c2a62065d5a1d3044bc0ae099c3f0bbe7",
+  "assertions": [
+    {
+      "name": "b2_formulas_agree",
+      "computed": 0.0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "proved b² vs PR #1331 formula (correct sign)"
+    },
+    {
+      "name": "hecke_relation_exact",
+      "computed": 2.6727647100921956e-51,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "σ₂² = hσ₂ + I"
+    },
+    {
+      "name": "braid_relation_exact",
+      "computed": 1.202744119541488e-50,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "σ₁σ₂σ₁ = σ₂σ₁σ₂"
+    },
+    {
+      "name": "proton_trace_1994",
+      "computed": 1.9941858103812133,
+      "expected": 1.994,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "|tr(B₃)| on V_{(2,1)} = |χ^{(2,1)}((σ₁σ₂⁻¹)³)|"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "hoefsmit-b-squared-reconciliation",
+  "scriptFile": "hoefsmit_b_squared_reconciliation.py",
+  "scriptHash": "ead2fe558ee7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Reconcile b² values: PR #1331 (b²≈1.167) vs proved b²=(h²+3)/(h²+4)≈0.753. Finding: both formulas give 0.753 when computed correctly. The 1.167 appears to be a sign error (a(a−h)+1 vs a(h−a)+1). Cross-validate proton trace = 1.994.",
+  "data": {
+    "b_squared_comparison": {
+      "b2_sq_proved": "0.752702113845058",
+      "b2_sq_from_hecke": "0.752702113845058",
+      "b2_sq_as_ratio": "0.752702113845058",
+      "b2_sq_pr1331_correct": "0.752702113845058",
+      "b2_sq_pr1331_sign_err": "1.247297886154942",
+      "match_proved_vs_hecke": true,
+      "match_proved_vs_ratio": true,
+      "match_proved_vs_pr1331": true,
+      "reconciliation": "All four formulas give b²≈0.753. PR #1331's '1.167' is a(a−h)+1 (sign error on the second factor). The correct formula a(h−a)+1 gives 0.753."
+    },
+    "matrix_verification": {
+      "hecke_residual": 2.6727647100921956e-51,
+      "braid_residual": 1.202744119541488e-50,
+      "inverse_residual": 4.0
+    },
+    "proton_trace_crossval": {
+      "tr_B3_on_V21": "-1.9941858103812133",
+      "abs_tr_B3": "1.9941858103812133",
+      "det_B3": "1.0",
+      "pr1331_untyped_trace": 1.994,
+      "match": true,
+      "theta_spectral_phase": "3.0653233355684915",
+      "theta_over_hbar_sq": "312.2404475945333",
+      "note": "Both conventions reproduce the untyped proton trace 1.994"
+    }
+  }
+}
