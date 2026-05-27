@@ -386,6 +386,30 @@ const PROOF: QaCriterionDefinition[] = [
     automated: true,
     applies_to: ["theorem", "lemma", "proposition", "corollary"],
   },
+  {
+    id: "proof-lean-compiles",
+    domain: "proof",
+    description:
+      "Block's `.lean` file compiles without errors. Uses the lean-lsp " +
+      "MCP server (`lean_diagnostic_messages`) to get real compiler " +
+      "diagnostics rather than relying on CI artefacts. Reads cached " +
+      "diagnostics from `docs/audits/lean-compile-diagnostics.json` " +
+      "(populated by `content/pipeline/lean-compile-audit.ts` or by " +
+      "agent invocation of lean-lsp tools). Returns `n/a` when no " +
+      "cache exists. Routes to `lean-build-fix` on failure.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: true,
+    applies_to: [
+      "theorem",
+      "lemma",
+      "proposition",
+      "corollary",
+      "definition",
+      "conjecture",
+    ],
+    extra_inputs: ["docs/audits/lean-compile-diagnostics.json"],
+  },
 ];
 
 // ── Domain: canonical ───────────────────────────────────────────
@@ -968,6 +992,9 @@ export const CRITERION_EXTRA_INPUTS: Record<string, string[]> = {
   ],
   "proof-conditional-class-banner": [
     "docs/audits/2026-05-09-conditional-class-banner.witness.json",
+  ],
+  "proof-lean-compiles": [
+    "docs/audits/lean-compile-diagnostics.json",
   ],
   "bib-cite-resolves": ["content/schema/references.ts"],
   "bib-cited-ref-has-url": ["content/schema/references.ts"],

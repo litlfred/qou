@@ -54,7 +54,8 @@ Per `integration-watcher §0` + `§4e` (full-context preamble):
    > five in parallel (more events but full coverage).
    >
    > - **proof** — proof-integration-watcher: no bare sorries,
-   >   no axiom growth, naked-conjecture handling per §3b-cond.
+   >   no axiom growth, lean-lsp compile check, naked-conjecture
+   >   handling per §3b-cond.
    > - **canonical** — canonical-watcher: no 4th calibration,
    >   no numerology, no fits (per `prop:three-calibration-discipline`).
    > - **compute** — compute-integration-watcher: every `prop:`

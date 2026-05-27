@@ -25,7 +25,7 @@ Five concrete children today:
 
 | Child | Domain | Goal |
 |-------|--------|------|
-| [`proof-integration-watcher`](proof-integration-watcher.md) | Proof QA (narrative + Lean) | No bare sorries, no axiom growth, no naked conjectures with provable scaffolding |
+| [`proof-integration-watcher`](proof-integration-watcher.md) | Proof QA (narrative + Lean) | No bare sorries, no axiom growth, lean-lsp compile check, no naked conjectures with provable scaffolding |
 | [`canonical-watcher`](canonical-watcher.md) | Canonical-derivation discipline | No 4th calibration, no numerology, no coefficient fits (per `prop:three-calibration-discipline`) |
 | [`compute-integration-watcher`](compute-integration-watcher.md) | Cross-layer compute wiring | Every `prop:`/`thm:`/`lem:` block has a probe + production consumer (13-pattern I1-I13 audit) |
 | [`detangler-integration-watcher`](detangler-integration-watcher.md) | Structural QA (graph + density) | No new forward refs (H1-H7), sections in 3-18 block band (R1-R3), no new cross-chapter forward edges, archimedean wall preserved |
