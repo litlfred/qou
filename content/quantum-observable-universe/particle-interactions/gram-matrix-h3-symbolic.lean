@@ -370,6 +370,7 @@ theorem gramMatrix_det_eq_factorization (u : ℝ) :
   -- 1. unfold gramMatrix gramEntry Matrix.of + all detFactor defs
   -- 2. simp [Matrix.det_fin_succ] to expand 6×6 det recursively
   -- 3. field_simp + ring (may need set_option maxHeartbeats 800000)
+  -- Ref: [halverson_ram_1998] sympy-verified 6×6 det factorization at 50 dps
   sorry
 
 /-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**

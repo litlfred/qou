@@ -1044,6 +1044,37 @@ export function checkDetanglerArchimedeanWall(
   return { result: "n/a", hits: [] };
 }
 
+export function checkDetanglerBlockTanglement(
+  tsPath: string | undefined,
+): CheckerResult {
+  const ts = readMaybe(tsPath);
+  if (!ts) return { result: "n/a", hits: [] };
+  const usesMatch = ts.match(/uses:\s*\[([^\]]*)\]/s);
+  if (!usesMatch) return { result: "pass", hits: [] };
+  const refs = usesMatch[1]
+    .split(",")
+    .map((s) => s.replace(/['"]/g, "").trim())
+    .filter(Boolean);
+  const fanOut = refs.length;
+  const crossChapter = refs.filter((r) => r.includes(":") && !r.startsWith("conj:") && !r.startsWith("def:") && !r.startsWith("thm:") && !r.startsWith("prop:") && !r.startsWith("lem:") && !r.startsWith("cor:") && !r.startsWith("rem:") && !r.startsWith("ex:") && !r.startsWith("sim:") && !r.startsWith("sec:")).length;
+  const score = fanOut + crossChapter * 2;
+  if (score <= 4) return { result: "pass", hits: [] };
+  const severity = score > 8 ? "fail" : "warn";
+  return {
+    result: severity === "fail" ? "fail" : "pass",
+    hits:
+      severity === "fail"
+        ? [
+            {
+              file: tsPath ?? "(unknown)",
+              line: 1,
+              text: `tanglement score ${score} (fan-out=${fanOut}, cross-chapter=${crossChapter}) — consider splitting or pruning uses[]`,
+            },
+          ]
+        : [],
+  };
+}
+
 // ─── Proof axis ─────────────────────────────────────────────────
 
 // Lookback rule: a `-- Ref:` covers a `sorry` if it appears
@@ -1621,6 +1652,8 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "detangler-no-xchapter-fwd": (p) => checkDetanglerNoXChapterFwd(p.ts),
   "detangler-archimedean-wall": (p) =>
     checkDetanglerArchimedeanWall(p.ts, p.lean),
+  "detangler-block-tanglement": (p) =>
+    checkDetanglerBlockTanglement(p.ts),
   // proof
   "proof-no-bare-sorries": (p) => checkProofNoBareSorries(p.lean),
   "proof-substantive": (p) => checkProofSubstantive(p.lean),
