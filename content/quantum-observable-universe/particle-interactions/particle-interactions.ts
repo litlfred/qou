@@ -346,6 +346,15 @@ export default chapter({
       ],
     }),
     section({
+      title: "Lepton–meson structural parallel",
+      label: "sec:lepton-meson-structural-parallel",
+      blocks: [
+        "lepton-meson-parallel",
+        "lepton-meson-torus-knot-dictionary",
+        "c-equals-bar-iff-all-1dim",
+      ],
+    }),
+    section({
       title: "Confined particles and shells",
       label: "sec:confined-particles-shells",
       blocks: [

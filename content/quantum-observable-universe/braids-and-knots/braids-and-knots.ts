@@ -144,6 +144,17 @@ export default chapter({
       ],
     }),
 
+    // ── Lepton–meson parallel ──────────────────────────────────────────
+    Object.freeze({
+      title: "Leptons, mesons, and the Frobenius bridge",
+      label: "sec:lepton-meson-parallel",
+      blocks: [
+        "frobenius-lepton-meson-bridge",
+        "hoefsmit-binding-amplitude",
+        "figure-eight-reeb-rotation",
+      ],
+    }),
+
     // ── Calibration and algebraic mass formula ──────────────────────────
     // ── Calibration and algebraic mass formula (P2 split 2026-05-19,
     //    phase 1): the 134-block sec:calibration-algebraic-mass
