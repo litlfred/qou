@@ -9,6 +9,12 @@
     "braid_check": "exact (10\u207b\u2075\u00b9)",
     "proton_trace_untyped": 1.994,
     "proton_trace_typed_witness": 1.808,
-    "typing_effect": "1.994 \u2192 1.808 via down-quark eigenvalue shift"
+    "typing_effect": "1.994 \u2192 1.808 via down-quark eigenvalue shift",
+    "typed_crossing_analysis": {
+      "finding": "Typing is applied at NF level (algebraic), not at representation matrices (geometric). Production code modifies NF coefficients before Wedderburn decomposition.",
+      "chi_cache_status": "The Rust chi-cache values ARE typed characters \u2014 already correct in witnesses.",
+      "markov_std_characters": "Markov-derived \u03c7_std values are WRONG (bad z-parameter normalization). Need direct Hoefsmit seminormal computation for correct per-block characters.",
+      "binding_gap_confirmation": "Triple-confirmed: the 70-89% gap is the Geom linking weight, not missing typing."
+    }
   }
 }
