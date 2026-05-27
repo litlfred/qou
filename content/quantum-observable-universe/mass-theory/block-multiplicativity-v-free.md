@@ -156,5 +156,5 @@ Falsifiability: a single H_12 (${}^{4}$He) computation showing $V^{(12)}_g$ on
 a proton block differs from $V^{(6)}_g$ on the same proton block by
 more than $10^{-3}$ at $q_0$ refutes the conjecture. The ${}^{4}$He H_12
 character sum requires $> 12$ GB RAM on commodity hardware and
-~5 minutes; deferred to  Rust geck_pfeiffer kernel cherry-pick
+~5 minutes; deferred to a Rust geck_pfeiffer kernel port
 or a larger-RAM host.
