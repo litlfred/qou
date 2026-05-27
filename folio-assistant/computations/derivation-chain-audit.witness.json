@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T17:54:25.875482+00:00",
-  "commitSha": "093211a9a32955d029c7e4d999c4d1c055954368",
+  "computedAt": "2026-05-27T18:09:04.498342+00:00",
+  "commitSha": "235dc470638038ddb49210d6395112305e1de1d5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -2400,6 +2400,7 @@
         "habiro-expansion-atomic-probe.witness.json",
         "habiro-frobenius-probe.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
+        "habiro-normalization-bridge.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
         "habiro-to-1ppq-chain.witness.json",
         "habiro-to-precision-ladder-verification.witness.json",
@@ -2430,6 +2431,8 @@
         "implied-c2-closed-form-search-50dps.witness.json",
         "implied-h2-coefficient-audit-50dps.witness.json",
         "incomplete-coverage-audit.witness.json",
+        "interface-quadratic-identity.witness.json",
+        "interface-quadratic-structure.witness.json",
         "intermediate-knot-detection.witness.json",
         "inverse-markov-qvalues.witness.json",
         "isospin-mass-tower-collapse.witness.json",
@@ -2723,6 +2726,7 @@
         "tr-m-jones-markov-cross-check.witness.json",
         "tr-m-q-hecke-seminormal.witness.json",
         "tritium-8-11-jones-markov-probe.witness.json",
+        "tritium-interface-decomposition.witness.json",
         "unified-low-isotope-predictor.witness.json",
         "unified-mass-molecular.witness.json",
         "unified-meson-mass-formula.witness.json",
