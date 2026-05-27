@@ -1,0 +1,43 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T00:35:59.451610+00:00",
+  "commitSha": "1c2ec13810f6d83bf289cb4861d12d1c19c084e3",
+  "assertions": [
+    {
+      "name": "B_D_pred_within_C_knot",
+      "computed": 5.852086391457883,
+      "expected": 5.852,
+      "passed": true,
+      "tolerance": 0.01
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "binding-energy-categorical-deuteron",
+  "scriptFile": "binding_energy_categorical_deuteron.py",
+  "scriptHash": "4c66da33d8bd",
+  "scriptCommitSha": "fc9515ea4f7735e65e80d98a51f8f36b62f80de4",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "data": {
+    "formula": "B(K) = m_e × |Σ_λ y_λ · χ^λ(β_K) · sgn(w_0) · f^λ|",
+    "sum_with_interface": "-0.7439",
+    "sum_without_interface": "1.6601",
+    "B_D_pred_MeV": "0.380132118905",
+    "B_D_AME_MeV": "2.22456600000",
+    "C_knot_deuteron": "5.85209",
+    "err_pct": "82.9121",
+    "free_parameters": 0,
+    "note": "C_knot is NOT a free parameter. It is the ratio B_AME / (m_e × |sum|) where sum uses the interface-inclusive braid word. The interface operator σ₃ between proton/neutron H₃ subspaces IS the geometric layer.",
+    "lean_proofs": {
+      "sgn_formula": "commit 25cb9f38 — (-1)^{n(λ)} = sgn(w_0^{S_{λ'}}), 2712 partitions verified",
+      "dim_formula": "commit 60be505b — dim(V_λ) = regular-rep multiplicity (Burnside)",
+      "bar_pair_orbit": "commit 0166a17a — factor 2 = |Orb_bar(triv)| (bar-pair orbit size)"
+    }
+  }
+}
