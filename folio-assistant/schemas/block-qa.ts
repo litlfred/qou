@@ -65,6 +65,17 @@ export interface QaReviewer {
    * (see `QaCriterionDefinition.extra_inputs`). Mismatch ⇒ stale.
    */
   deps_hash?: string;
+
+  // ── Agent-specific provenance (populated when kind === "agent") ──
+
+  /** LLM model identifier, e.g. "claude-opus-4-7", "gemini-2.5-pro". */
+  agent_model?: string;
+  /** Claude Code session ID or equivalent for the reviewing agent. */
+  agent_session?: string;
+  /** ISO date of the agent review. */
+  agent_date?: string;
+  /** Skill that dispatched the review, e.g. "local/one-voice-audit". */
+  agent_skill?: string;
 }
 
 /**
