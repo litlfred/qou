@@ -70,7 +70,7 @@ when $T_w$ is set to these knot types.  The conjecture asserts that
 no other $T_w$ within the $\Delta_{\max}$ ball achieves a smaller
 residual.
 
-## Partial closure (PR #608, 2026-05-09)
+## Partial closure
 
 The R5-full canonical-knot SDP solver prototype
 ([`r5_full_canonical_knot_solver.py`](../../../folio-assistant/computations/r5_full_canonical_knot_solver.py),

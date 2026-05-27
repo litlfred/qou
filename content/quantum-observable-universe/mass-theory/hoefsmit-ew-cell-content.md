@@ -73,7 +73,7 @@ between consecutive strands), and the simultaneous-eigenspace
 decomposition degenerates. So $n = 6$ is the structural minimum
 for the simultaneous Hoefsmit identification.
 
-### Refinement (2026-05-06): coupling via interface knot $\bowtie_K$, not disjoint product
+### Refinement: coupling via interface knot $\bowtie_K$, not disjoint product
 
 The disjoint-product framing $\sigma_1^4 \cdot \sigma_3^6 \cdot
 \sigma_5^8$ — equivalent to a tensor product via far-commutativity

@@ -22,7 +22,7 @@ bar-symmetric closing trace.*
 > $\approx$ 2.47, off by 35 %). The PR #1253 amphichiral filter identified
 > the actual closure $\xi_3 = [5]_q \cdot [3]_q / [6]_q$ and the
 > unifying form above. The earlier framing is preserved below for
-> pedagogical trajectory; the "Resolution (PR #1253)" section is
+> pedagogical trajectory; the "Resolution" section is
 > the current authoritative statement.
 
 ## Derivation sketch (open)
@@ -117,11 +117,11 @@ All three readings are consistent with the muon (m=2) numerical
 match; distinguishing them requires the derivation work that's
 currently open.
 
-## Resolution (PR #1253) — unifying formula
+## Resolution — unifying formula
 
 The "simple extension" pattern `[m+1]_q · [2]_q / [m+2]_q` is FALSIFIED for tau (predicted ξ_3 = `[4]_q · [2]_q / [5]_q` $\approx$ 1.59 vs required $\approx$ 2.47, off by 35 %).
 
-The **correct unifying formula** (PR #1253 amphichiral probe + Lean discharge):
+The **correct unifying formula**:
 
 $$
 \boxed{\;\xi_m \;=\; \frac{[2m-1]_q \cdot [m]_q}{[2m]_q} \cdot \frac{1}{\hbar_q^2}\;}
@@ -167,8 +167,8 @@ The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specific
 
 - [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md) — T6 gap (c) full diagnosis (muon side)
 - [`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md`](../../../docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md) — T6/F_ℓ workplan + PR #1253 tau followup section
-- [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py) — muon empirical probe (PR #1127)
-- [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe (PR #1253)
+- [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py) — muon empirical probe
+- [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe
 - [`prop:three-halves-structural-factor`](three-halves-structural-factor.md) — Lean-proved structural identities (muon + tau)
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — V̂_e convention (calibration check)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula

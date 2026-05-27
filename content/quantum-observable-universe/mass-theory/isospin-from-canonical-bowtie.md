@@ -313,7 +313,7 @@ ultimately lives in the upstream-conjecture class instances.
   (PR [#1111](https://github.com/litlfred/qou/pull/1111))
 - The 305 ppm closed form:
   [`prop:flavor-split-substrate`](flavor-split-substrate.md)
-  (PR #690)
+
 - The compute consumer:
   [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
 - D6 (charge conjugation): [`prop:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)

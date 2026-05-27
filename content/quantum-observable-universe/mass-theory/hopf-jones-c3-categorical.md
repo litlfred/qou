@@ -134,7 +134,7 @@ fit the data within experimental noise:
 This proposition (combined with PR #661's $c_2 = b^2$ proof)
 **falsifies Story A** by deriving $c_3 = -2$ from QOU axioms
 without consulting the empirical residual at all. The 0.0066 ppm
-empirical match (PR #655) is then a *prediction* the framework
+empirical match is then a *prediction* the framework
 makes, not a fit.
 
 The remaining $c_4, c_5, \ldots$ derivations (likewise from

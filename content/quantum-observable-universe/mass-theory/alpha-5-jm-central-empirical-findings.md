@@ -2,7 +2,7 @@
 
 The companion witness
 [`alpha-5-jucys-murphy-central.witness.json`](folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json)
-(2026-05-09) tests the simplest closed form proposed in
+ tests the simplest closed form proposed in
 [`prop:mass-formula-iterative-lp-dual`](#prop:mass-formula-iterative-lp-dual)
 at the height-6 level ($\ell = 5$):
 

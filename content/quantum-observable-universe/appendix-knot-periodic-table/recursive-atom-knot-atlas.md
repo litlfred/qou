@@ -272,7 +272,7 @@ Atlas covers $\ell \leq 2$ at $q_0$; further atoms ($\ell = 3$
 molecules, heavier nuclei) defer to
 [appendix-atomic-mass-calculations](#app:atomic-mass-calculations).
 
-## All-atoms / all-isotopes extension (2026-05-18)
+## All-atoms / all-isotopes extension
 
 A layered framework extends the atlas to every isotope (real or
 theoretical) under a single registry:

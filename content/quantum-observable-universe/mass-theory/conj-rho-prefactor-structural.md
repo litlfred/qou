@@ -162,7 +162,7 @@ records `A` (not the braid strand count) as its primary parameter and
 derives $n_0 = 3 \cdot A$ structurally; per-atom instances must be
 constructed at $H_{3 \cdot A}$ to discharge the rule.
 
-## Closure path via the canonical-knot-id (2026-05-09)
+## Closure path via the canonical-knot-id
 
 GAP-A-4 closes *as a corollary* of GAP-A-1 (canonical knot
 identification): once the canonical $T_w$ for a nucleus is uniquely

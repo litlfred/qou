@@ -57,7 +57,7 @@ it gives the **entire** $N$-indexed family in a single computation,
 where the current pipeline accesses only the $N = 2$ slice. The
 polynomial coefficients are integers ($q$-independent), so they
 sit on the *correct axis* for structural derivations that the
-reframing in [PR #957](https://github.com/litlfred/qou/pull/957)
+reframing in 
 identified: constants from substrate, not $q$-dependent
 coincidences.
 

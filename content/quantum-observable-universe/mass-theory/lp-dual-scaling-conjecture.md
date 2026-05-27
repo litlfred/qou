@@ -68,7 +68,7 @@ explanation.
 Kashiwara crystal limit (NOT $q \to 1$). In that limit the
 JM eigenvalues become integer content multiplicities and the
 LP becomes integer programming over a Kashiwara crystal graph
-([PR #619](https://github.com/litlfred/qou/pull/619) open
+(open
 follow-up (H)). The current probe sweeps $q \to 1^+$ only;
 a separate $q \to 0^+$ probe is needed.
 

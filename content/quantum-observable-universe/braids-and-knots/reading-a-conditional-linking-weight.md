@@ -40,7 +40,7 @@ yet been identified.
 
 **Three independent audit results foreclose obvious paths:**
 
-1. [**PR #701**](https://github.com/litlfred/qou/pull/701) (2026-05-18) —
+1. [**PR #701**](https://github.com/litlfred/qou/pull/701) —
    falsified the Wedderburn-sum incarnation of $\tfrac{5}{2} - G h^2$
    across 5 structural routes (Wedderburn / Frobenius / Demazure
    / LP-Plancherel / LP-Frobenius).
@@ -125,7 +125,7 @@ direction but is multi-session research.
 ## References
 
 - [Family A theorem](lambda-scale-substrate-form.md) — proved $h^2$ = +3/4
-- [PR #1287](https://github.com/litlfred/qou/pull/1287) — Reading-A residual probes
-- [Path C audit (2026-05-25)](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
-- [Yekutieli per-cell (2026-05-22)](../../../docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
-- [Yekutieli bijection negative (2026-05-23)](../../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md)
+- — Reading-A residual probes
+- [Path C audit](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
+- [Yekutieli per-cell](../../../docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
+- [Yekutieli bijection negative](../../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md)

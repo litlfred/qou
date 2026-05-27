@@ -34,7 +34,7 @@ gradedTrace : Fin levelBound → ℝ
 ```
 
 *on `GBResidueSpectralSum`, with the convenience accessor
-`gradedMarkovTrace S ℓ`.  Per the P2.6 refactor (2026-05-02), the
+`gradedMarkovTrace S ℓ`.  Per the P2.6 refactor, the
 previous `noncomputable opaque gradedMarkovTrace ℓ q` global has been
 removed; the value is now supplied by each instance.  A fully
 constructive `def` would require formalising the GS-filtration of

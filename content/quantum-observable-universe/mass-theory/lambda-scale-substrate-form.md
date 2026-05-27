@@ -44,7 +44,7 @@ $$
    hyperbolic 3-manifold has $\mathrm{Vol} = 18.03$ within 0.28%
    (closest: $9 \cdot \mathrm{Vol}(4_1)$ at $+1.35\%$).
 
-6. **Q-locality (PR #951, 2026-05-23):** at the substrate window
+6. **Q-locality:** at the substrate window
    $q \in [q_0 - 0.05, q_0 + 0.05]$, the residual
    $(\frac{5}{2} - h^2 \cdot G) - \lambda_p(q)$ has slope
    $\sim -1.7 \times 10^7$ ppm/q and curvature $\sim 4.4 \times 10^4$
@@ -55,7 +55,7 @@ $$
    known $h_q$-axis near-matches ($\frac{5}{2}-h^2 G$,
    $1/(1 - h_q \cdot q_0^{10})$, V$_7$, Strategy G).
 
-7. **Reframing (PR #957, 2026-05-23):** $\lambda_p(q) = (m_p/m_e)
+7. **Reframing:** $\lambda_p(q) = (m_p/m_e)
    \cdot \hbar_q^2 / (8 G) = C \cdot \hbar_q^2$ exactly, with
    $\hbar_q := (q - 1) / q$ and $C = (m_p/m_e) / (8 G) \approx
    250.576$. This is a degree-0 polynomial in $q$ over
@@ -74,7 +74,7 @@ $$
    so a $\mathbb{Z}$-relation expressing one as a knot-volume sum
    immediately gives the other), and was negative.
 
-8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of
+8. **Strategy J:** no natural ratio of
    $\{\operatorname{tr}_M(\beta_p), \operatorname{tr}_M(\beta_n), \hbar_q, h_q, q_0, G\}$
    structurally predicts $m_n / m_p$ either. Best pure-substrate
    match at 0.45% --- 4,500 times worse than 1 ppb.

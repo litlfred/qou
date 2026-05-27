@@ -31,8 +31,8 @@ The empirical instances proved at single-wrap by PR #655 and follow-ups:
 | order | irrep | coefficient | numerical check |
 |------:|:---:|:---:|---:|
 | $k = 0$ | any $V_\lambda$ | $c_0 = 0$ | trivial (Form A baseline) |
-| $k = 1$ | $V_{(2,1)}$ | $c_1(b) = b$ | $74$ ppm at $q_0$ (PR #655 N=1) |
-| $k = 2$ | $V_{(2,1)}$ | $c_2(b) \approx 1$ geometric | $-22$ ppm (PR #655 N=2) |
+| $k = 1$ | $V_{(2,1)}$ | $c_1(b) = b$ | $74$ ppm at $q_0$ |
+| $k = 2$ | $V_{(2,1)}$ | $c_2(b) \approx 1$ geometric | $-22$ ppm |
 | $k = 1$ | $V_{(n)}, V_{(1^n)}$ | $c_1 = 0$ | exact, by definition (1-d) |
 
 ## Four parallel rep-theory anchors
@@ -128,7 +128,7 @@ expansion:
 Empirical verification per probe sequence:
 1. [`probe_q_beta_per_irrep_cos.py`](../../folio-assistant/computations/probe_q_beta_per_irrep_cos.py) — V_(2,1) character + KL decategorification.
 2. [`probe_q_beta_three_irrep_closed_form.py`](../../folio-assistant/computations/probe_q_beta_three_irrep_closed_form.py) — 1-d closed forms (rep-theory triviality).
-3. [`probe_q_beta_operator_valued_N1.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N1.py) — Kashiwara $\tilde f_1$ at N=1 (PR #655 winner).
+3. [`probe_q_beta_operator_valued_N1.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N1.py) — Kashiwara $\tilde f_1$ at N=1.
 4. [`probe_q_beta_operator_valued_N2.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N2.py) — geometric-tail N=2 (Macdonald-like).
 
 ## Status

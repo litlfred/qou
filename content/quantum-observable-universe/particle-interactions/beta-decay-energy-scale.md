@@ -102,7 +102,7 @@ The values, computed from the witness
 | $\mathfrak{E}_0^{(\text{cal,symb})}$ (CODATA / $h(h-2)/2$) | $:val[E_0_calibrated_MeV]{precision=4}$ | reference (symbolic) |
 | $\mathfrak{E}_0^{(\text{cal,typed})}$ (CODATA / $\lvert\Delta(\text{net,typed})\rvert$) | $4.155$ | typed-crossings value (finite-size noise, 0.6% below symbolic) |
 
-**Open finding (2026-05-17).** Both the geometric tower form
+**Open finding.** Both the geometric tower form
 $1/(1-\hbar_q^2)$ and the bounded symmetric $\mathrm{Li}_2^q$
 candidate move the framework prediction *further from* the
 calibrated values at the substrate level (only $\approx$ 0.01% apart

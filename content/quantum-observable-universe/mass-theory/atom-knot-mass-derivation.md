@@ -1,4 +1,4 @@
-**Notation (2026-05-17).** The prefactor previously written
+**Notation.** The prefactor previously written
 $\rho$ in this block is the **SDP-solution multiplicity** in the
 Wedderburn decomposition, an integer $\in \mathbb{Z}_{>0}$. To
 disambiguate from the distinct **categorical density** $\rho_K \in

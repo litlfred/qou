@@ -36,7 +36,7 @@ the universal Frobenius co-Casimir tail.*
 restricted Frobenius integral $\int_{A_\lambda} \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$
 factors through specific hyperbolic-knot ideals (specifically $4_1$
 at $k = 3$ — the chirality channel via Fricke-trace derivation, empirically
-resolved by [PR #826](https://github.com/litlfred/qou/pull/826); see
+resolved by ; see
 [chirality residue](#prop:chirality-from-frobenius-self-pairing) for
 the derivation).
 At $k \geq 4$ no specific knot ideal remains in the centre — what

@@ -16,7 +16,7 @@ content) is **discarded by construction**.
 
 For **real** $q > 0$, $\eta = \log q$ is real, $\sinh(\eta)$ is a
 real number, and $P_{\mathrm{skew}}$ content is **real-valued**.
-Sibling [PR #1153](https://github.com/litlfred/qou/pull/1153) makes
+Sibling makes
 this explicit for torus knots:
 $Q_m(\eta) = \sinh((2m+1)\eta) / (2 \cosh \eta)$ is real at real $q_0$.
 Per

@@ -74,8 +74,8 @@ $$
   Q_\beta \;=\; Q_A \cdot \cos\bigl(\alpha - b\hbar_q^2/2\bigr)
               \cdot \prod_{n \geq 2} (1 + c_n \hbar_q^{2n})
 $$
-with claimed coefficients $c_2 = b^2$ (PR #661, derived), $c_3 = -2 b^3$
-(PR #657 Track-C, conjectured), $c_4 = b^2 + 1/2$ (PR #665, conjectured).
+with claimed coefficients $c_2 = b^2$, $c_3 = -2 b^3$
+, $c_4 = b^2 + 1/2$.
 The bare-Markov $\varepsilon^{2n}$ coefficients of
 $\mathrm{tr}_M(\sigma_1^2) - 1$ above are NOT equal to these:
 

@@ -114,7 +114,7 @@ Beilinson-conditional:
 | 11 | 4 | 5 | 4 |
 | 13 | 5 | 6 | 5 |
 
-### Generalises Theorem D (PR #635 round 4)
+### Generalises Theorem D
 
 Theorem D ([`prop:cyclotomic-depth3-dimension-synthesis`](#prop:cyclotomic-depth3-dimension-synthesis))
 gave $(K - 3)/2$ at $n = 3$.  This proposition extends to:
@@ -134,7 +134,7 @@ $n \geq 2$ and every prime $K \geq 3$.**
 Combined with prior framework:
 
 - [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general):
-  bridge map at every partition (PR #635 round 3).
+  bridge map at every partition.
 - This proposition: dimension at every $(n, K)$ pair.
 - B1 keystone status: theorem-level at $n = 2$ (Bloch–Suslin),
   Beilinson-conditional at $n \geq 3$.

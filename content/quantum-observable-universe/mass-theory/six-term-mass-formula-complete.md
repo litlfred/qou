@@ -141,7 +141,7 @@ non-invariance as Term 2.*
   $\tau_{\mathrm{sym}}(\sigma) - \tau_{\mathrm{sym}}(\sigma^{-1}) = h$.
   Reproduces paper's $\{1+h, 1-h^2, (1-h^2)^2\}$ exactly on standard
   test braids.*
-- *Audit (PR #526, `term5_aK_audit.py`): the closed-form vs the
+- *Audit: the closed-form vs the
   Gram-matrix definition $\mathrm{tr}_M(\beta \cdot \beta^{*\,-1})$
   agree to within $2.2\%$ on the proton.  The discrepancy is being
   reconciled across four candidate $\beta^*$ conventions (V1
@@ -187,7 +187,7 @@ conjecture (earlier framing) is now **superseded**.*
 
 See [Table](#tbl:six-term-mass-formula-complete-table-data).
 
-**Trace-invariance directive (2026-05-03).**
+**Trace-invariance directive.**
 Every term in the formula must be a Markov-invariant trace.  Terms 1,
 4, 6 satisfy this directly.  Term 5 also satisfies this in production
 form: $a_K \cdot \mathcal{C}_K = \mathrm{tr}_M(\beta \cdot \beta^{*\,-1})$

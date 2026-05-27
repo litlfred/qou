@@ -179,7 +179,7 @@ The conjecture splits along **chirality class**:
   to 50-dps precision is suggestive of an exact integer structural
   value.
 
-  **Both interpretations (i) and (ii) refuted (2026-05-09).**  The
+  **Both interpretations (i) and (ii) refuted.**  The
   same witness records the **exact ribbon-twist formula**
 
   $$

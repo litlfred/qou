@@ -15,7 +15,7 @@ PR #564, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K
    per-`n` cache.  Module:
    [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py);
    driver: [`tr_m_q_hecke_seminormal.py`](../../../folio-assistant/computations/tr_m_q_hecke_seminormal.py).
-3. **Symbolic partition-sum** (PR #564) — full 50-dps mpmath via
+3. **Symbolic partition-sum** — full 50-dps mpmath via
    [`rho_k_h3a_refinement.py`](../../../folio-assistant/computations/rho_k_h3a_refinement.py),
    the production path for binding-fraction $\Delta_\lambda$ analysis.
 

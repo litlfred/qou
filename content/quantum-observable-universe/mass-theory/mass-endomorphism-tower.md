@@ -230,7 +230,7 @@ $\mathrm{Li}_2^q$ is the symmetric q-dilogarithm
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$ with
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
 
-**Note (2026-05-03).**
+**Note.**
 *The previous version of this proposition wrote
 $\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
 revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric

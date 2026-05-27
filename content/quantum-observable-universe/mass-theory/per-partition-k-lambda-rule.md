@@ -5,16 +5,16 @@ The level-selection rule $n_\star$ of
 empirically against the AME light-isotope sample $\{D, T, {}^3\mathrm{He}\}$
 under three increasingly-refined ansatze, and is now sharpened to the
 following structural form. The progression of refutations
-(PR #638) and partial closures (PR #639) localises the open piece.
+ and partial closures localises the open piece.
 
 ## Refutation chain (substrate-only scalar candidates)
 
 | Form of $n_\star$ | Verdict | Witness |
 |:---|:---:|:---|
-| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\ell n_0 + k$) | **refuted** | PR #638 §"Closure (2026-05-11): scalar-eigenvalue form$\ldots$" |
+| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\ell n_0 + k$) | **refuted** | PR #638 §"Closure: scalar-eigenvalue form$\ldots$" |
 | Per-eigenvalue operator-valued ($\Phi_q$ per $\mu_a^{(\lambda)}$, signed) | **refuted** at uniform $k$ | PR #638 §"Operator-valued probe" |
-| Type-B-folded-crystal depth ($\#\{\lambda \vdash 3A : \lambda = \lambda^T\}$) | **partial** — fits $D$ and $T$, fails ${}^3\mathrm{He}$ | [probe-phiq-type-b-fold-depth.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-type-b-fold-depth.witness.json) (PR #639) |
-| Type-B + scalar near-pole multiplicity $m$ (4 two-input rules) | **refuted** | [probe-phiq-multiplicity-refinement.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-multiplicity-refinement.witness.json) (PR #639) |
+| Type-B-folded-crystal depth ($\#\{\lambda \vdash 3A : \lambda = \lambda^T\}$) | **partial** — fits $D$ and $T$, fails ${}^3\mathrm{He}$ | [probe-phiq-type-b-fold-depth.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-type-b-fold-depth.witness.json) |
+| Type-B + scalar near-pole multiplicity $m$ (4 two-input rules) | **refuted** | [probe-phiq-multiplicity-refinement.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-multiplicity-refinement.witness.json) |
 
 ## Sharpened open form: per-partition $k_\lambda$
 

@@ -1,8 +1,8 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-> **Errata banner (2026-05-19) — this proposition's claimed
+> **Errata banner — this proposition's claimed
 > closed form $c_4 = b^2 + 1/2$ is superseded.** The 2026-05-19
-> SDP-$T_\beta$ derivation (PR #777) showed the empirical $c_4$ is
+> SDP-$T_\beta$ derivation showed the empirical $c_4$ is
 > $\approx -1.144$, while $b^2 + 1/2 \approx 1.253$ — sign-flipped
 > and 9.5% off in magnitude. The current canonical form
 > ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
@@ -34,7 +34,7 @@ plus the GB-jet-order half-shift from Markov-symmetrization.
 
 This is the **Story B closure at $c_4$**, continuing the
 alternation pattern proven categorically at:
-- $c_2 = b^2$ (PR #661, V_(2,1) Hoefsmit alone)
+- $c_2 = b^2$ Hoefsmit alone)
 - $c_3 = J_{\mathrm{Hopf}}(q{=}1) = -2$ ([`prop:hopf-jones-c3-categorical`](#prop:hopf-jones-c3-categorical),
   V_(2,1) self-fusion + Markov-Frobenius selection)
 
@@ -115,8 +115,8 @@ $c_4 = b^2 + 1/2$ is the genuine structural coefficient.
 With this proposition (and #664's $c_3$ proof), **three consecutive
 coefficients** in the precision ladder are now derived from QOU axioms
 with no empirical fit:
-- $c_2 = b^2$ (PR #661)
-- $c_3 = -2$ (PR #664)
+- $c_2 = b^2$
+- $c_3 = -2$
 - $c_4 = b^2 + 1/2$ (this prop)
 
 Story A predicts $c_3 = c_4 = 0$ — falsified by both this prop and

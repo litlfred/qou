@@ -14,7 +14,7 @@ $$
   \operatorname{tr}_M(\mathcal{B}_p) \;=\; \frac{p(q)}{12 \cdot q^{10}}
 $$
 
-*derived in [PR #546](https://github.com/litlfred/qou/pull/546) via*
+*derived in via*
 *the symbolic Hoefsmit-Wenzl seminormal reduction. Then $p(q)$ is*
 *anti-self-reciprocal of degree $20$:*
 
@@ -96,7 +96,7 @@ $\mathrm{shift}(K)$ is the GS-filtration shift exponent
 which equals $18Z + 21N + 1$ for atomic braids per the integer-LP
 closure.
 
-This conjecture is testable via [PR #546](https://github.com/litlfred/qou/pull/546)'s
+This conjecture is testable via 's
 $A \geq 2$ extension and via the polynomial structure of the
 neutron's closed form
 $\operatorname{tr}_M(\mathcal{B}_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
@@ -111,4 +111,4 @@ $\operatorname{tr}_M(\mathcal{B}_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
 - [Wenzl 1988] *Hecke algebras of type $A_n$ and subfactors*, Inventiones Math. **92**, 349–383.
 - [Hoefsmit 1974] *Representations of Hecke algebras of finite groups with $BN$-pairs of classical type*, PhD thesis, UBC.
 - [Kassel 1995] *Quantum Groups*, Springer GTM 155, Ch. III (Hopf antipode + Frobenius integrals).
-- [PR #546](https://github.com/litlfred/qou/pull/546) — symbolic closed form for $\operatorname{tr}_M(\mathrm{proton})$.
+- — symbolic closed form for $\operatorname{tr}_M(\mathrm{proton})$.
