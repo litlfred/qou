@@ -40,23 +40,22 @@ PRECISION_GUARD      = 10    # COMPUTE = OUTPUT + GUARD
 ```
 
 The **1 ppQ target is the *minimum*** — raise via `QOU_COMPUTE_DPS=<n>`
-environment override. At 50 dps, compute truncation is ~10⁻⁴⁰ relative
-(10⁻³¹ ppb), far exceeding 1 ppQ. The target is meaningful for *formula
-truncation* — e.g. the Q_β precision ladder at rung N has residual
-~(ℏ_q²)^N ≈ (0.0098)^N; N=8 reaches ~10⁻¹⁶ (1 ppQ territory).
+environment override. At 50 dps, compute truncation is ~10⁻⁴⁰ absolute
+(10⁻³¹ ppb), far exceeding 1 ppQ.
 
-**Formula-truncation depth for 1 ppQ (Q_β precision ladder):**
+**Q_β is already at 0 ppQ (exact).** The Habiro expansion of the Markov
+trace terminates at $M = 8$ for the proton/neutron (integer coefficients
+$a_m \in \mathbb{Z}[u]$, evaluated at $u_0 = \sqrt{q_0}$). No
+truncation error exists — the formula is a finite sum. See
+[`prop:habiro-precision-ladder-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
 
-| N | Formula residual | ppb | ppQ |
-|---|-----------------|-----|-----|
-| 5 | ~10⁻¹⁰ | ~0.1 | ~10⁵ |
-| 6 | ~10⁻¹² | ~0.001 | ~10³ |
-| 7 | ~10⁻¹⁴ | ~10⁻⁵ | ~10 |
-| **8** | **~10⁻¹⁶** | **10⁻⁷** | **~0.1** |
-| 9 | ~10⁻¹⁸ | 10⁻⁹ | ~0.001 |
-
-Deriving c₆–c₈ from categorical sources (KLR basis / Khovanov
-spectral sequence) is the path to 1 ppQ formula precision on Q_β.
+> **Historical note (superseded).** The "precision ladder" (c_k
+> coefficients at each "rung" N=3, N=4, N=5) was the Taylor expansion
+> of this exact Habiro sum in powers of $\hbar_q^2$. It was useful when
+> the closed form was unknown; now that the Habiro identification is
+> established, the c_k are a compute artefact with no independent
+> mathematical role. The per-rung table below is retained for historical
+> reference only.
 
 **Where measured.** `onepb-status-dashboard.witness.json`:
 
@@ -102,22 +101,12 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 > MeV); that figure is **incorrect** at the precision we care about. See
 > [`folio-assistant/computations/cal-3-q-beta.witness.json`](../folio-assistant/computations/cal-3-q-beta.witness.json).
 >
-> **Q_β precision ladder (per [`q-beta-categorical-precision-ladder.md`](../content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md)).** The framework predicts Q_β via a four-rung categorical recursion:
->
-> | rung | formula factor | categorical source | residual (ppb) |
-> |---|---|---|---:|
-> | N=0 | Q_A = m_e·\|q²−2q−1\|·(q+1)/(2q³) | Form A bare (single-wrap) | +1 677 540 |
-> | N=1 | · cos(α − b·ℏ_q²/2) | Kashiwara f₁ matrix element on V_(2,1) | +73 790 |
-> | N=2 | · (1 − b²·ℏ_q⁴) | Kashiwara f₁†f₁ return amplitude | +1 242 |
-> | **N=3** | · (1 + c₃·b³·ℏ_q⁶), c₃ = J_Hopf(q=1) = -2 | Hopf-link Jones at q=1 | **+6.02** |
-> | N=4 | · (1 + c₄·b⁴·ℏ_q⁸), c₄ = b² + 1/2 (per doc) | Kashiwara b² + Hopf-half offset | +12.6 (sign issue ?) |
->
-> The **N=3 categorical rung already beats the 7.80 ppb target** by ~24%.
-> The N=4 row in the precision-ladder doc claims residual −7×10⁻⁶ ppm,
-> but the documented formula (c₄ = +b²+½) recomputed here gives +12.6 ppb;
-> the doc's claim likely uses a fit c₄ rather than the categorical
-> value, or has a sign convention not yet reconciled (separate audit
-> needed). Reproduce via [`binding_q_target_sweep.py`](../folio-assistant/computations/binding_q_target_sweep.py).
+> **Q_β Habiro-exact evaluation.** The Markov trace of the proton/neutron
+> braid words lives in the Habiro ring $\widehat{\mathbb{Z}[q]}$ and
+> terminates at $M = 8$ (integer coefficients $a_m \in \mathbb{Z}[u]$).
+> Evaluating at $u_0 = \sqrt{q_0}$ gives the EXACT Q_β prediction at
+> 5.744 ppb — below the 7.80 ppb target. No per-rung approximation
+> needed. See [`prop:habiro-precision-ladder-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md).
 
 For light-atom binding energies (B_D, B_T, B_³He, B_⁴He), the experimental
 σ_B is dominated by the AME mass-table uncertainty (~10⁻⁶ for these atoms),

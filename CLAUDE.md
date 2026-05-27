@@ -356,8 +356,9 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
-- **L2 is variable per observable.** Q_β target is 7.8 ppb (met at N=5);
-  absolute m_p target is 3 ppt (research-grade, below CAL-2 floor).
+- **L2 is variable per observable.** Q_β target is 7.8 ppb (met;
+  Habiro-exact at 5.7 ppb); absolute m_p target is 3 ppt
+  (research-grade, below CAL-2 floor).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
