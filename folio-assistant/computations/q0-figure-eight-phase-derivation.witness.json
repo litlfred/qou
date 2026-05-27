@@ -1,0 +1,48 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-27T13:34:28.147004+00:00",
+  "commitSha": "27ee2c22bab137b92ea1006059b5211fb3bb152a",
+  "assertions": [
+    {
+      "name": "phase_within_5pct_of_vol",
+      "computed": 0.673224817732586,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 5,
+      "source": "θ(q₀) vs Vol(4₁)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "q0-figure-eight-phase-derivation",
+  "scriptFile": "q0_figure_eight_phase_derivation.py",
+  "scriptHash": "47aca21548f7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Test whether θ(q₀) = Vol(4₁) where θ = arccos(tr(ρ_{(2,1)}(4₁;q))/2) is the spectral phase of the figure-eight on V_{(2,1)}. Result: 0.6732% miss at q₀. Derivation status: approximate.",
+  "data": {
+    "phase_at_q0": {
+      "tr_21": "-0.9106773300269627",
+      "theta": "2.0435488903789945",
+      "vol_41": "2.0298832128193074",
+      "miss_pct": 0.673224817732586
+    },
+    "root_finding": {
+      "q_derived": "1.1245149108842002087622405780828756557471443872875",
+      "q0_known": "1.1099785955541805752815940796095093779932822799587",
+      "diff_ppb": 13096032.111107573,
+      "status": "approximate"
+    },
+    "uniqueness": {
+      "scan_range": "[1.01, 1.30]",
+      "crossings": 1,
+      "unique": true
+    }
+  }
+}
