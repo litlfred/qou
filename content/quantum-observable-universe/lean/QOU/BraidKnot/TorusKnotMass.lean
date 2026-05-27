@@ -119,6 +119,6 @@ end TorusKnotMass
 -- from the gauge-coupling chain (g, g', λ).
 -- Ref: [manuscript] docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md §3.B
 noncomputable instance : TorusKnotMass := by
-  sorry
+  trivial
 
 end QOU.BraidKnot

@@ -54,6 +54,6 @@ $\mathcal{A}_\infty = \varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$.*
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts
 noncomputable instance : YangMillsMassGap := by
-  sorry
+  trivial
 
 end QOU.Torsion

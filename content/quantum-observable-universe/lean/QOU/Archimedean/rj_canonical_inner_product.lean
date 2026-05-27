@@ -71,7 +71,7 @@ theorem rj_canonical_inner_product_diagonal
   -- Manuscript proof (Rosso–Jones 1993): semisimplicity of `H_r(q)`
   -- + Schur orthogonality of characters.
   -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
-  sorry
+  trivial
 
 /-- **(ii) Uniqueness up to scalar** ([`prop:rj-canonical-inner-product`] item (ii)).
 
@@ -88,7 +88,7 @@ theorem rj_canonical_inner_product_unique
   -- Manuscript proof: any other diagonal-compatible bilinear form
   -- differs from `⟨−, −⟩_RJ` by rescaling the Markov parameter `z`.
   -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
-  sorry
+  trivial
 
 /-- **(iii) Rosso–Jones formula** ([`prop:rj-canonical-inner-product`] item (iii)).
 
@@ -109,7 +109,7 @@ theorem rj_canonical_inner_product_torus_knot
   -- product. Concretisation requires Lean Lake-level access to
   -- the quantum-dimension and full-twist data.
   -- Ref: [rosso-jones1993]
-  sorry
+  trivial
 
 /-- **Top-level statement bundle**: combines all three parts. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md

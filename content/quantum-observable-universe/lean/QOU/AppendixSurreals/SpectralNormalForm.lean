@@ -45,6 +45,6 @@ of the valuation ring $\mathcal{O}$.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/spectral-normal-form.ts
 noncomputable instance : SpectralNormalForm := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

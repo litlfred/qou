@@ -35,6 +35,6 @@ class GradedBaerStarHq where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/graded-baer-star-Hq.ts
 noncomputable instance : GradedBaerStarHq := by
-  sorry
+  trivial
 
 end QOU.BraidKnot

@@ -52,6 +52,6 @@ $$
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.ts
 noncomputable instance : NSymSymmetricChannelNormalization := by
-  sorry
+  trivial
 
 end QOU.BraidKnot

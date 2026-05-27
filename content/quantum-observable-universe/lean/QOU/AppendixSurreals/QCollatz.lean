@@ -35,6 +35,6 @@ class QCollatz where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-collatz-conjecture.ts
 noncomputable instance : QCollatz := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

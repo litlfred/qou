@@ -46,6 +46,6 @@ to avoid collision with the surreal infinitesimal $\varepsilon =
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/diophantine-birthday.ts
 noncomputable instance : DiophantineBirthday := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

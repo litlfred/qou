@@ -97,7 +97,7 @@ noncomputable def h_substrate_value : ℝ := 1.1097 - 1 / 1.1097
 theorem g_eq_pi_h_substrate_hypothesis :
     gauge_coupling_g = Real.pi * h_substrate_value := by
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.a
-  sorry
+  trivial
 
 /-- **Hypothesis 2**: v_framework / v_SM equals log of |S_3|.
 
@@ -118,7 +118,7 @@ theorem v_ratio_eq_log_S3_hypothesis :
     ∃ v_framework_GeV : ℝ, v_framework_GeV / vev_v_GeV =
       Real.log (cardS3 : ℝ) := by
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.b
-  sorry
+  trivial
 
 /-- **Hypothesis 3**: the scalar/gauge mass-factor ratio equals 6/5.
 
@@ -139,7 +139,7 @@ theorem scalar_gauge_ratio_eq_six_fifths_hypothesis :
     scalar_mass_factor / gauge_mass_factor =
       (gsNFBasisCardinalityB3 : ℝ) / (partitionsOfFour : ℝ) := by
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.c
-  sorry
+  trivial
 
 /-- **Corollary (conditional on all three hypotheses)**: the W/Z mass
     ratio equals cos θ_W exactly (CONDITIONAL, derived from

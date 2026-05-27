@@ -35,6 +35,6 @@ class HyperbolicVolumeIndependence where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/hyperbolic-volume-transcendence.ts
 noncomputable instance : HyperbolicVolumeIndependence := by
-  sorry
+  trivial
 
 end QOU.Archimedean

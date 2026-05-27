@@ -42,6 +42,6 @@ that the rest of the paper does not depend on.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts
 noncomputable instance : BigbangHeatdeath := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

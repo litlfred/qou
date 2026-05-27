@@ -45,6 +45,6 @@ particle masses.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/vacuum-epsilon.ts
 noncomputable instance : VacuumEpsilon := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

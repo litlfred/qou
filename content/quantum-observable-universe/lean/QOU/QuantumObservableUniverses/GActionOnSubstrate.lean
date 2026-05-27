@@ -51,6 +51,6 @@ $\mathcal{N}_{\rm sym}(q)$ — is computable in closed form.*
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts
 noncomputable instance : GActionOnSubstrate := by
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverses

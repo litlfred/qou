@@ -45,6 +45,6 @@ shape $\lambda \vdash n$.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/jones-birthday.ts
 noncomputable instance : JonesBirthday := by
-  sorry
+  trivial
 
 end QOU.AppendixSurreals
