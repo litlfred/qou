@@ -230,6 +230,13 @@ Concrete cheat-sheet:
 The narrative `.md` side mirrors this: `q ∈ R` in the algebraic
 discussion, `q ∈ ℝ` only when the archimedean evaluation is needed.
 
+## CRITICAL: Imports before doc blocks (Lean 4.24+)
+
+All `import` statements **must** come before `/-! ... -/` module
+docstrings. Lean 4.24+ rejects files that place the doc block first.
+See `lean-generation.md` for the correct template and
+`scripts/fix-lean-import-order.py` for bulk repair.
+
 ## Library Synthesis Rules
 
 Based on the glossary types, import the correct Mathlib modules:

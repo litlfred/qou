@@ -45,6 +45,42 @@ After generating a stub file:
 3. **`lean_hover_info`** on each imported symbol → confirm types resolve
 4. **`lean_verify`** on completed proofs → check axiom soundness
 
+## CRITICAL: Lean 4.24+ file structure — imports FIRST
+
+Every generated `.lean` file **must** place `import` statements
+before any other content, including module docstrings `/-! ... -/`.
+Lean 4.24+ enforces this at parse time; violating it produces
+`invalid 'import' command, it must be used in the beginning of the file`.
+
+Correct order:
+```lean
+import Mathlib.CategoryTheory.Monoidal.Basic
+import QOU.Basic
+
+/-!
+# QOU.MyModule
+Description here.
+-/
+
+namespace QOU.MyModule
+```
+
+Wrong order (causes 565+ compile failures historically):
+```lean
+/-!
+# QOU.MyModule         ← ERROR: doc block before imports
+Description here.
+-/
+
+import Mathlib.CategoryTheory.Monoidal.Basic
+import QOU.Basic
+```
+
+If you find existing files with wrong order, run:
+```bash
+python3 scripts/fix-lean-import-order.py
+```
+
 ## Important: Generation is agent-only
 
 The generation scripts below are **proof-writing tools**, not build steps.
