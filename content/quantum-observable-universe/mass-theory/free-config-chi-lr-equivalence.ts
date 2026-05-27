@@ -11,7 +11,7 @@ export default proposition({
   uses: [
     // broken-ref removed (Phase 7): def:ew-interface-knot
     "prop:atomic-mass-gb-nf",
-    "conj:block-multiplicativity-v-free",
+    "rem:block-multiplicativity-v-free",
   ],
   computation: {
     engine: "python",
