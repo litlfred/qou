@@ -1,0 +1,34 @@
+{
+  "computation": "meson-spectral-analysis",
+  "description": "Meson spectral analysis using exact Hoefsmit V_{(2,1)} matrices. Key exact results: chi_std(L+) = chi_std(L-) = -1 EXACTLY, chi_std(e-) = 0 EXACTLY. Meson phase theta_pi = 2.12 rad (NOT near-identity like B_3). Spectral ratio theta_K/theta_pi = 1.015 misses m_K/m_pi = 3.54 by 71%. Meson masses need a different mechanism.",
+  "data": {
+    "exact_characters": {
+      "chi_std(1)": "[2]_q = q+q^{-1}",
+      "chi_std(sigma)": "h = q-q^{-1}",
+      "chi_std(L+)": "-1 EXACTLY",
+      "chi_std(L-)": "-1 EXACTLY",
+      "chi_std(e-)": "0 EXACTLY"
+    },
+    "meson_chi_std": -1.0437,
+    "meson_phase": 2.1198,
+    "kaon_chi_std": -1.0971,
+    "kaon_phase": 2.1514,
+    "spectral_ratio": 1.015,
+    "pdg_ratio": 3.537,
+    "miss": "71%",
+    "conclusion": "Meson mass ratio NOT from spectral phase ratio. Different mechanism needed.",
+    "duality_analysis": {
+      "baryon": "near-identity (\u03b8\u22480.076), small-angle arccos series works",
+      "meson": "near-antiparallel (\u03b8\u22482.12\u2248\u03c0-1.02), duality from qq\u0304 structure",
+      "why_different": "Antiquark in dual representation flips \u03c7(L+)=-1. Meson operator rotates by \u2248\u03c0, not \u22480.",
+      "deviation_from_pi": {
+        "pi": 1.022,
+        "K": 0.99,
+        "ratio": 0.969,
+        "vs_mk_mpi": 3.537,
+        "miss": "72.6%"
+      },
+      "conclusion": "Meson masses need typed-crossing evaluation. The spectral small-angle trick is specific to near-identity operators (baryons)."
+    }
+  }
+}
