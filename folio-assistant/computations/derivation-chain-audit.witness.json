@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T13:53:26.960370+00:00",
-  "commitSha": "552f7cd9ad0ee09eebad28b195a194872e8df9d8",
+  "computedAt": "2026-05-27T14:11:46.508493+00:00",
+  "commitSha": "d9b388dcdf4f90fbb1905bd077a8305c79570e0f",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2582,6 +2582,7 @@
         "meson-kaon-pion-derivation.witness.json",
         "meson-lepton-knot-dictionary-probe.witness.json",
         "meson-mass-from-hecke.witness.json",
+        "meson-sector-1ppq-crosscheck.witness.json",
         "meson-spectral-analysis.witness.json",
         "meson-spectrum-predictions.witness.json",
         "meson-symmetry-bar-involution.witness.json",
