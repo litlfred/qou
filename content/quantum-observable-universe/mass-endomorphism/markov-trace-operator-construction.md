@@ -17,7 +17,7 @@ type-level scaffolding for that construction.
 
 Each class follows the **explicit-residual pattern** (scalar
 deviation + equation asserting it vanishes) — non-vacuous content
-per the Gemini reviews on PR #665/#672.
+per prior review feedback.
 
 ## Construction outline (substantive R&D)
 

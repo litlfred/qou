@@ -39,7 +39,7 @@ appearing in the QOU model, this exact form equals $1 + w(K) \cdot h$
 to the precision required by the $0.75\%$ accuracy of the mass formula
 — this claim is now refuted: at $D, T, {}^3\mathrm{He}$ the exact
 ratio diverges by ${\sim}10^4$ from the empirical $(1+h)(1-h)$
-pattern (per Copilot review #r3213373225, made consistent with the
+pattern (made consistent with the
 "conclusively wrong" finding below).*
 
 ## Derivation sketch
