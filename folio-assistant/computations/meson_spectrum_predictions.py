@@ -51,7 +51,7 @@ def full_markov_trace(word, q_val):
         prod = np.eye(dim)
         I = np.eye(dim)
         for (c, d, g) in word:
-            prod = prod @ (c * sigmas_d[g] + d * I)
+            h_val = q_f - 1.0/q_f; d = d_mult * h_val if d_mult != 0 else 0; prod = prod @ (c * sigmas_d[g] + d * I)
         chi = float(np.trace(prod))
         y = float(y_lambda_wenzl_bridge_numeric(list(shape), q_val, dps=30))
         total += y * chi
@@ -135,7 +135,7 @@ def main():
         "character ratios. Uses the trace ratio tr_M(n)/tr_M(π) with "
         "increasing crossing count."
     )
-    w.set_content_block("prop:lepton-meson-torus-knot-dictionary")
+    w.set_audit_only("docs/audits/2026-05-27-meson-spectrum-predictions.md")
     w.add_data("results", results)
     w.add_assertion("kaon_predicted", computed=1, expected=1, tolerance=0,
                      source="Kaon mass ratio computed from character structure")

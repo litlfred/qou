@@ -133,7 +133,7 @@ def main():
     # What is θ exactly?
     r41 = eigenvalue_phase_on_standard([(1,0,0),(1,-1,1),(1,0,0),(1,-1,1)], q)
     theta = r41["max_abs_phase"]
-    vol41 = 2.0298832128
+    VOL_41 = 2.0298832128
 
     # θ = arg(eigenvalue) of (σ₁σ₂⁻¹)² on V_(2,1)
     # Can we express θ in terms of q₀?
@@ -154,7 +154,7 @@ def main():
         "is SPECIFIC to 4₁ (0.67%); the Borromean rings do not match "
         "(θ=0.076, Vol=7.328). Not a general finite-q volume conjecture."
     )
-    w.set_content_block("prop:figure-eight-reeb-rotation")
+    w.set_audit_only("docs/audits/2026-05-27-finite-q-volume-conjecture.md")
     w.add_data("results", results)
     w.add_data("theta_41", float(theta))
     w.add_data("vol_41", vol41)
