@@ -41,6 +41,8 @@ from codata_constants import (  # noqa: E402
     M_T_MEV_VALIDATION,
     M_HE3_MEV_VALIDATION,
     M_HE4_MEV_VALIDATION,
+    M_K_PM_MEV_VALIDATION,
+    M_PI_PM_MEV_VALIDATION,
 )
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
 
@@ -114,6 +116,21 @@ DELTA_PN_ERR = mp.sqrt(
 OBSERVABLES["Delta_pn"] = (
     DELTA_PN_VALUE, DELTA_PN_ERR, "validation (derived)",
     "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
+)
+
+# m_K/m_π — dimensionless meson mass ratio (PDG 2024).
+# PDG uncertainties: m_K± = 493.677 ± 0.013 MeV (26 ppm),
+#                    m_π± = 139.57039 ± 0.00018 MeV (1.3 ppb).
+# Propagated: σ(R)/R = sqrt((σ_K/m_K)² + (σ_π/m_π)²) ≈ 26 ppm
+# (kaon uncertainty dominates).
+_M_K_PI_RATIO = M_K_PM_MEV_VALIDATION / M_PI_PM_MEV_VALIDATION
+_M_K_PI_RATIO_ERR = _M_K_PI_RATIO * mp.sqrt(
+    (mpf("0.013") / M_K_PM_MEV_VALIDATION) ** 2
+    + (mpf("0.00018") / M_PI_PM_MEV_VALIDATION) ** 2
+)
+OBSERVABLES["m_K/m_pi"] = (
+    _M_K_PI_RATIO, _M_K_PI_RATIO_ERR, "validation (meson ratio)",
+    "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
 )
 
 
@@ -337,6 +354,29 @@ def main() -> dict:
         "note": "calibration anchor — err defined as 0",
     })
 
+    # ── m_K/m_π — meson mass ratio from Hecke character + Seifert ────
+    # Formula: (q₀⁵ − q₀⁻⁵) × (9/5)²
+    # Source: meson-kaon-pion-derivation.witness.json
+    meson_w = load_witness("meson-kaon-pion-derivation.witness.json")
+    meson_data = meson_w.get("data", {}).get("formula", {})
+    mk_pred_str = meson_data.get("predicted")
+    if mk_pred_str is not None:
+        mk_pred = mpf(str(mk_pred_str))
+        rows.append(_row_for(
+            "m_K/m_pi", mk_pred,
+            "meson-kaon-pion-derivation.witness.json "
+            "(Hecke character χ_{(2,1)}(σ₁⁵) × (9/5)²)",
+        ))
+    else:
+        # Fallback: compute directly from q₀
+        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+        q0 = mpf(Q_50_DIGIT_STR)
+        mk_pred = (q0 ** 5 - q0 ** (-5)) * (mpf(9) / mpf(5)) ** 2
+        rows.append(_row_for(
+            "m_K/m_pi", mk_pred,
+            "(q₀⁵ − q₀⁻⁵) × (9/5)² — inline fallback",
+        ))
+
     return {
         "computation": "per-observable-100x-experimental-status",
         "description": (
@@ -405,6 +445,7 @@ if __name__ == "__main__":
         COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json",
         COMPUTE_DIR / "codata-2022-validation-masses.witness.json",
         COMPUTE_DIR / "cal-3-q-beta.witness.json",
+        COMPUTE_DIR / "meson-kaon-pion-derivation.witness.json",
     ]:
         w.add_upstream(upstream)
     w.save()
