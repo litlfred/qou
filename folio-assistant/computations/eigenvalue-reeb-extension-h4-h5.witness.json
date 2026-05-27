@@ -1,0 +1,30 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T04:58:10.765671+00:00",
+  "commitSha": "fa293a849ed6b765fd15ebf0c3dd5b66d5b50ff1",
+  "assertions": [
+    {
+      "name": "extends_beyond_h3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "H₄ and H₅ eigenvalues computed"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "eigenvalue-reeb-extension-h4-h5",
+  "scriptFile": "eigenvalue_reeb_extension_h4_h5.py",
+  "scriptHash": "cddcefd3c4d0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Extends eigenvalue/Reeb analysis from H₃ to H₄ and H₅. Tests whether det=+1 braids act unitarily on multi-dim irreps at higher Hecke levels.",
+  "contentBlock": "prop:figure-eight-reeb-rotation"
+}
