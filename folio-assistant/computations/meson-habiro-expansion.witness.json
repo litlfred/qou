@@ -1,0 +1,39 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-27T22:28:36.103246+00:00",
+  "commitSha": "9561b26110e20f01c3d3b298e807f09aae2c3bd1",
+  "assertions": [
+    {
+      "name": "R_near_1",
+      "computed": 0.0002896109187119528,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "R = target/base ≈ 1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "meson-habiro-expansion",
+  "scriptFile": "meson_habiro_expansion.py",
+  "scriptHash": "2164c1431836",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Meson Habiro expansion + duality analysis. Seifert exponent x = 2.000493 (deviation δx = 4.926430e-04 from 2). Correction C = R-1 analyzed via Wedderburn block decomposition.",
+  "data": {
+    "seifert_exponent": {
+      "x": 2.0004926430061376,
+      "delta_x": 0.0004926430061376053
+    },
+    "correction": {
+      "C": 0.0002896109187119528,
+      "four_u_sq": 0.0002901732594886616
+    }
+  }
+}
