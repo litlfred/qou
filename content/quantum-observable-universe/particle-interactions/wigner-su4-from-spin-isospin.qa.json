@@ -1730,7 +1730,7 @@
         "field_hash": {
           "ts": "cece97a0bc70"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "detangler-block-tanglement-audit",
@@ -1740,10 +1740,9 @@
         },
         "reviewed_at": "2026-05-27",
         "metrics": {
-          "fwd_emitted": 4,
+          "fwd_emitted": 2,
           "fwd_received": 0,
-          "tanglement_score": 4,
-          "worst_target": "predicted-spectra"
+          "tanglement_score": 2
         }
       }
     ]
