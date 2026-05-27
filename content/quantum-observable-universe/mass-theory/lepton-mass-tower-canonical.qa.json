@@ -550,58 +550,17 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "md": "9ca624a9c568",
-          "ts": "b2153ad67e2e",
-          "lean": "bbf74fc4da88"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T17:09:23.625Z",
-        "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.lean:139: bare `sorry` at line 139 \u2014 no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
-      },
-      {
-        "field_hash": {
-          "md": "64674c42be31",
-          "ts": "b2153ad67e2e",
-          "lean": "bbf74fc4da88"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-application/lepton-mass-tower-canonical.lean:139: bare `sorry` at line 139 \u2014 no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
-      },
-      {
-        "field_hash": {
-          "md": "64674c42be31",
-          "ts": "b2153ad67e2e",
-          "lean": "43077a72f4af"
+          "lean": "3dc61ef1fe9a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11"
+          "kind": "agent",
+          "id": "proof-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-26T00:11:20.000Z",
-        "reviewed_sha": "da4856cdc5423dbf0c5dde75a666858f7fbcce99"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "proof-no-trivial-skeleton": [

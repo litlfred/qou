@@ -376,37 +376,23 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "md": "2828df68ba75",
-          "ts": "7b173e903fdd",
-          "lean": "326699a5811c"
+          "lean": "aac12fa930e3"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
+          "kind": "agent",
+          "id": "proof-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "2828df68ba75",
-          "ts": "7b173e903fdd",
-          "lean": "326699a5811c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 9,
+            "text": "Per `CLAUDE.md \u00a73b-cond`, opaque Prop + class field + sorry"
+          }
+        ]
       }
     ],
     "proof-no-trivial-skeleton": [

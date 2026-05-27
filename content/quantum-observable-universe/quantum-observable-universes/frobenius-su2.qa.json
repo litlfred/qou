@@ -1322,6 +1322,22 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-26T14:25:22.698Z"

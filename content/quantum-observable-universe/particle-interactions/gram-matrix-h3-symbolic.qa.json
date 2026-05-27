@@ -395,75 +395,23 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "md": "21b5e5e3bc88",
-          "ts": "420246cdb9a2",
-          "lean": "fcd38700b432"
+          "lean": "465af5683e8d"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
+          "kind": "agent",
+          "id": "proof-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-25T23:14:29.450Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean:170: bare `sorry` at line 170 \u2014 no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
-      },
-      {
-        "field_hash": {
-          "md": "26d303e6bdf0",
-          "ts": "420246cdb9a2",
-          "lean": "fcd38700b432"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean:170: bare `sorry` at line 170 \u2014 no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
-      },
-      {
-        "field_hash": {
-          "md": "26d303e6bdf0",
-          "ts": "420246cdb9a2",
-          "lean": "6e3aefe5a24b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11"
-        },
-        "reviewed_at": "2026-05-26T00:11:20.000Z",
-        "reviewed_sha": "da4856cdc5423dbf0c5dde75a666858f7fbcce99"
-      },
-      {
-        "field_hash": {
-          "md": "26d303e6bdf0",
-          "ts": "420246cdb9a2",
-          "lean": "00da9eec512e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "3dc4cbe3c691d1f26b26723e044a8eb87cc05e7b"
-        },
-        "reviewed_at": "2026-05-26T13:28:47.036Z",
-        "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 373,
+            "text": "sorry"
+          }
+        ]
       }
     ],
     "proof-no-axiom-growth": [
