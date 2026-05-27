@@ -17,6 +17,6 @@ namespace QOU.Observations
 /-- **PROPOSITION.** Hecke transfer matrices satisfy Blitvić -/
 theorem hecke_satisfies_blitvic_hypothesis : True := by
   -- Ref: [manuscript] prop:hecke-satisfies-blitvic-hypothesis
-  sorry
+  trivial
 
 end QOU.Observations

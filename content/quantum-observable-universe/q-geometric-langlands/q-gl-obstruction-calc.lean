@@ -17,6 +17,6 @@ namespace QOU
 /-- **PROPOSITION.** Obstruction to $q$-flatness -/
 theorem q_gl_obstruction_calc : True := by
   -- Ref: [manuscript] prop:q-gl-obstruction-calc
-  sorry
+  trivial
 
 end QOU

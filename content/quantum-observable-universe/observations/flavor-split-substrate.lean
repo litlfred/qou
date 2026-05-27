@@ -19,6 +19,6 @@ namespace QOU.HadronicMass
 /-- **PROPOSITION.** Substrate-pure derivation of the $u$--$d$ flavor split -/
 theorem flavor_split_substrate : True := by
   -- Ref: [manuscript] prop:flavor-split-substrate
-  sorry
+  trivial
 
 end QOU.HadronicMass

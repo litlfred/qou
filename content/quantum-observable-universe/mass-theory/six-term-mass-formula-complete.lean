@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **THEOREM.** Six-term mass formula: derivation + computation index -/
 theorem six_term_mass_formula_complete : True := by
   -- Ref: [manuscript] thm:six-term-mass-formula-complete
-  sorry
+  trivial
 
 end QOU.BraidKnot

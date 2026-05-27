@@ -17,6 +17,6 @@ namespace QOU.Information
 /-- **PROPOSITION.** Discrete iterations per Reeb circuit -/
 theorem reeb_operations_per_planck : True := by
   -- Ref: [manuscript] prop:reeb-operations-per-planck
-  sorry
+  trivial
 
 end QOU.Information

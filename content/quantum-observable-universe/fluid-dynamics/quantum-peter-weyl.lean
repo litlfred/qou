@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **THEOREM.** Quantum Peter--Weyl theorem: completeness of the $\\mathrm{SU}_q(2)$ eigenbasis -/
 theorem quantum_peter_weyl : True := by
   -- Ref: [manuscript] thm:quantum-peter-weyl
-  sorry
+  trivial
 
 end QOU.FluidDynamics

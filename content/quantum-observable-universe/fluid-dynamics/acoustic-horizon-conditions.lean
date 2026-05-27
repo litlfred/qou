@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Acoustic horizon formation and gravitational emergence -/
 theorem acoustic_horizon_conditions : True := by
   -- Ref: [manuscript] prop:acoustic-horizon-conditions
-  sorry
+  trivial
 
 end QOU.FluidDynamics

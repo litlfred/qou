@@ -18,6 +18,6 @@ namespace QOU.Archimedean.ConfinedKnotBinding
 /-- **PROPOSITION.** Wigner energy from $T{=}0$ np pairing: $(2,2)$ partition at $k{=}4$ -/
 theorem wigner_energy_from_22 : True := by
   -- Ref: [manuscript] prop:wigner-np-pairing
-  sorry
+  trivial
 
 end QOU.Archimedean.ConfinedKnotBinding

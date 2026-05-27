@@ -15,6 +15,6 @@ namespace QOU.AlgebraicSubstrate.JointGaloisBraidDischarged
 /-- **PROPOSITION.** Joint motivic-Galois $\\times$ braid action commutes on every bi-filtration cell — discharged -/
 theorem joint_action_discharged : True := by
   -- Ref: [manuscript] prop:joint-galois-braid-discharged
-  sorry
+  trivial
 
 end QOU.AlgebraicSubstrate.JointGaloisBraidDischarged

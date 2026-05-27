@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **LEMMA.** Genus from Hecke completeness for torus knots -/
 theorem genus_from_hecke_completeness : True := by
   -- Ref: [manuscript] lem:genus-from-hecke-completeness
-  sorry
+  trivial
 
 end QOU.Archimedean

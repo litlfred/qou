@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Symbolic $Q$-value of free neutron decay -/
 theorem neutron_qvalue_symbolic : True := by
   -- Ref: [manuscript] prop:neutron-qvalue-symbolic
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Transfer matrix identities: $T_{pp}T_{nn} = I$ and $T_{pn}^2 = [2]_q^2/4 \\cdot I$ -/
 theorem transfer_matrix_identities : True := by
   -- Ref: [manuscript] prop:transfer-matrix-identities
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

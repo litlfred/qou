@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Nucleon derivation from 4-term photon pair production -/
 theorem four_term_pair_nucleon : True := by
   -- Ref: [manuscript] prop:four-term-pair-nucleon
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

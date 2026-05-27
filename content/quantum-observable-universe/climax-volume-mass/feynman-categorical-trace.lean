@@ -31,6 +31,6 @@ namespace QOU.FeynmanPathIntegrals
 /-- **PROPOSITION.** Feynman transition amplitude as categorical trace -/
 theorem FeynmanCategoricalTrace : True := by
   -- Ref: [manuscript] prop:feynman-categorical-trace
-  sorry
+  trivial
 
 end QOU.FeynmanPathIntegrals

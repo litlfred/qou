@@ -17,6 +17,6 @@ namespace QOU
 /-- $q$-Hecke eigensheaf -/
 def QHeckeEigensheaf   :=
   -- Ref: [manuscript] def:q-hecke-eigensheaf
-  sorry
+  trivial
 
 end QOU

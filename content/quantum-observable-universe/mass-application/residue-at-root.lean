@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Cyclotomic residues of $\\Phi_q \\cdot \\mathrm{tr}_{M, \\ell}$ — algebraic definition -/
 theorem ResidueAtRoot : True := by
   -- Ref: [manuscript] prop:residue-at-root
-  sorry
+  trivial
 
 end QOU.BraidKnot

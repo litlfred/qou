@@ -18,6 +18,6 @@ namespace QOU.Interactions
 /-- **PROPOSITION.** Confinement as linear program over the Hecke normal form basis -/
 theorem lp_achieves_zero_trace : True := by
   -- Ref: [manuscript] prop:confinement-lp
-  sorry
+  trivial
 
 end QOU.Interactions

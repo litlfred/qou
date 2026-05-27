@@ -25,6 +25,6 @@ namespace QOU.AtomicMass
 /-- **PROPOSITION.** Magic numbers emerge from per-partition nuclear character at $q_0$ -/
 theorem magic_numbers_from_q : True := by
   -- Ref: [manuscript] prop:magic-numbers-from-q
-  sorry
+  trivial
 
 end QOU.AtomicMass

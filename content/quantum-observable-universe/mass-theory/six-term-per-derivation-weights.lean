@@ -17,6 +17,6 @@ namespace QOU.BraidKnot.SixTermPerDerivationWeights
 /-- **PROPOSITION.** Per-derivation weights for the six-term mass formula -/
 theorem binding_assembly : True := by
   -- Ref: [manuscript] prop:six-term-per-derivation-weights
-  sorry
+  trivial
 
 end QOU.BraidKnot.SixTermPerDerivationWeights

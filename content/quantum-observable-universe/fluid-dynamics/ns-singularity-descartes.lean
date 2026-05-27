@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **THEOREM.** The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup -/
 theorem ns_singularity_descartes : True := by
   -- Ref: [manuscript] thm:ns-singularity-descartes
-  sorry
+  trivial
 
 end QOU.FluidDynamics

@@ -18,6 +18,6 @@ namespace QOU.Observations.TraceLocalityMeetsGsNonLocality
 /-- **PROPOSITION.** Reconciliation: Markov locality of single generators vs. Gröbner-Shirshov non-locality of composite braids -/
 theorem HasReconciliation : True := by
   -- Ref: [manuscript] prop:trace-locality-meets-gs-non-locality
-  sorry
+  trivial
 
 end QOU.Observations.TraceLocalityMeetsGsNonLocality

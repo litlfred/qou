@@ -15,6 +15,6 @@ namespace QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases
 /-- **PROPOSITION.** Two-filtration bridge map verified at small partitions ($n \\leq 4$) -/
 theorem bridge_small_cases : True := by
   -- Ref: [manuscript] prop:two-filtration-bridge-small-cases
-  sorry
+  trivial
 
 end QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases

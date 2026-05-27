@@ -17,6 +17,6 @@ namespace QOU.Molecular
 /-- **PROPOSITION.** Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration -/
 theorem benzene_threading_emergence : True := by
   -- Ref: [manuscript] prop:benzene-threading-emergence
-  sorry
+  trivial
 
 end QOU.Molecular

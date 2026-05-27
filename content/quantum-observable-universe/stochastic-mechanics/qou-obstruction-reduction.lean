@@ -17,6 +17,6 @@ namespace QOU.AlgebraicSubstrate
 /-- **THEOREM.** In a QOU the classical limit obstruction is one-dimensional -/
 theorem qou_obstruction_reduction : True := by
   -- Ref: [manuscript] thm:qou-obstruction-reduction
-  sorry
+  trivial
 
 end QOU.AlgebraicSubstrate

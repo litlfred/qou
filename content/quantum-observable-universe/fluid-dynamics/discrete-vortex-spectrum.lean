@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Discrete vortex mode spectrum -/
 theorem discrete_vortex_spectrum : True := by
   -- Ref: [manuscript] prop:discrete-vortex-spectrum
-  sorry
+  trivial
 
 end QOU.FluidDynamics

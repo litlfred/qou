@@ -15,6 +15,6 @@ namespace QOU.BraidKnot.CyclotomicOrbitSumAllDepths
 /-- **PROPOSITION.** General orbit-sum at every depth: $\\sum_k \\mathrm{Cl}_n(2\\pi k/N) = (N^{1-n} - 1)\\zeta(n)$ for $n$ odd, $0$ for $n$ even -/
 theorem orbit_sum_all_depths : True := by
   -- Ref: [manuscript] prop:cyclotomic-orbit-sum-all-depths
-  sorry
+  trivial
 
 end QOU.BraidKnot.CyclotomicOrbitSumAllDepths

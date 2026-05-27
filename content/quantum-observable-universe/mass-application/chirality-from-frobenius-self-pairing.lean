@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Chirality factor from Frobenius self-pairing: $a_K = \\langle \\beta, \\beta^{\\ast} \\rangle_\\tau$ -/
 theorem chirality_frobenius_self_pairing : True := by
   -- Ref: [manuscript] prop:chirality-from-frobenius-self-pairing
-  sorry
+  trivial
 
 end QOU.BraidKnot

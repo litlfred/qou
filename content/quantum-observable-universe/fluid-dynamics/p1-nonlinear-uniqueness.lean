@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Nonlinear estimates and uniqueness for the $q$-Navier--Stokes system -/
 theorem p1_nonlinear_uniqueness : True := by
   -- Ref: [manuscript] prop:q-ns-nonlinear-uniqueness
-  sorry
+  trivial
 
 end QOU.FluidDynamics

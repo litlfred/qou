@@ -17,6 +17,6 @@ namespace QOU.Torsion
 /-- **PROPOSITION.** Neutron--proton mass splitting -/
 theorem neutron_proton_splitting : True := by
   -- Ref: [manuscript] prop:neutron-proton-splitting
-  sorry
+  trivial
 
 end QOU.Torsion

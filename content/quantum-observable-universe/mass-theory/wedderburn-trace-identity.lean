@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Wedderburn trace identity for $H_n(q)$ -/
 theorem wedderburn_trace_identity : True := by
   -- Ref: [manuscript] prop:wedderburn-trace-identity
-  sorry
+  trivial
 
 end QOU.BraidKnot

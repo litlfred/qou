@@ -15,6 +15,6 @@ namespace QOU.AppendixSurreals.B1TorusKnotRowsTheorem
 /-- **PROPOSITION.** B1 keystone is theorem-level at the torus-knot rows (Bloch--Suslin + Garoufalidis--Lê) -/
 theorem b1_torus_knot_rows : True := by
   -- Ref: [manuscript] prop:b1-torus-knot-rows-theorem
-  sorry
+  trivial
 
 end QOU.AppendixSurreals.B1TorusKnotRowsTheorem

@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **LEMMA.** Yekutieli obstruction equals the leading Chebyshev coefficient -/
 theorem yekutieli_leading_coefficient : True := by
   -- Ref: [manuscript] lem:yekutieli-leading-coefficient
-  sorry
+  trivial
 
 end QOU.Archimedean

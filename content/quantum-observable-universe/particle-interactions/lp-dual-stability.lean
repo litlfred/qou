@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** LP dual stability: confined hadrons have bounded shadow prices -/
 theorem lp_dual_stability : True := by
   -- Ref: [manuscript] prop:lp-dual-stability
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

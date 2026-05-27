@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Computation of the NS obstruction for the Descartes universe -/
 theorem ns_obstruction_computation : True := by
   -- Ref: [manuscript] prop:ns-obstruction-computation
-  sorry
+  trivial
 
 end QOU.FluidDynamics

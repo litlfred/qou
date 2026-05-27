@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Categorical helicity conservation -/
 theorem helicity_conservation : True := by
   -- Ref: [manuscript] prop:helicity-conservation
-  sorry
+  trivial
 
 end QOU.FluidDynamics

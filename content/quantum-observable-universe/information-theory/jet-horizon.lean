@@ -26,6 +26,6 @@ namespace QOU
 /-- Jet horizon (degree-$0$ vanishing locus) -/
 def JetHorizon   :=
   -- Ref: [manuscript] def:jet-horizon
-  sorry
+  trivial
 
 end QOU

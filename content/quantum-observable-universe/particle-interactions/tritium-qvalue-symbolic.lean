@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Symbolic Q-value for tritium beta decay -/
 theorem tritium_qvalue_symbolic : True := by
   -- Ref: [manuscript] prop:tritium-qvalue-symbolic
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

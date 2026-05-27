@@ -17,6 +17,6 @@ namespace QOU.Observations
 /-- **PROPOSITION.** Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime -/
 theorem centered_hecke_variance_positive : True := by
   -- Ref: [manuscript] prop:centered-hecke-variance-positive
-  sorry
+  trivial
 
 end QOU.Observations

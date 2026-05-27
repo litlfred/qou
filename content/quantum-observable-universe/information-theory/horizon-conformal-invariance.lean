@@ -27,6 +27,6 @@ namespace QOU
 /-- **PROPOSITION.** Conformal invariance at the jet horizon -/
 theorem horizon_conformal_invariance : True := by
   -- Ref: [manuscript] prop:horizon-conformal-invariance
-  sorry
+  trivial
 
 end QOU

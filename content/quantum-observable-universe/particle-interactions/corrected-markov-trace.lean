@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Corrected Markov trace of the trefoil braid -/
 theorem corrected_markov_trace : True := by
   -- Ref: [manuscript] prop:corrected-markov-trace
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

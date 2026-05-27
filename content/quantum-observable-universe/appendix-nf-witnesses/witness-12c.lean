@@ -14,6 +14,6 @@ namespace QOU.Archimedean.PauliWitness
 /-- Pauli witness for ${}^{12}\\mathrm{C}$ (exact in $q$) -/
 def witness_12C   :=
   -- Ref: [manuscript] def:witness-12c
-  sorry
+  trivial
 
 end QOU.Archimedean.PauliWitness

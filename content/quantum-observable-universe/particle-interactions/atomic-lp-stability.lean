@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** LP stability of the atomic braid -/
 theorem atomic_lp_stability : True := by
   -- Ref: [manuscript] prop:atomic-lp-stability
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

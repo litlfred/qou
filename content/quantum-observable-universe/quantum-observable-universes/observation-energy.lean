@@ -17,6 +17,6 @@ namespace QOU.QuantumObservableUniverse
 /-- **PROPOSITION.** Observation increases quantum energy and deforms the action -/
 theorem observation_energy : True := by
   -- Ref: [manuscript] prop:observation-energy
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverse

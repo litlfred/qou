@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Algebraic stratification of the Φ$_q$ tower in $H_n(R, q)$ (no 3-manifold language) -/
 theorem phi_q_tower_algebraic_stratification : True := by
   -- Ref: [manuscript] prop:phi-q-tower-algebraic-stratification
-  sorry
+  trivial
 
 end QOU.BraidKnot

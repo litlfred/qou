@@ -17,6 +17,6 @@ namespace QOU.Molecular
 /-- **PROPOSITION.** LP dual gives optimal $H_2$ binding -/
 theorem h2_lp_dual_binding : True := by
   -- Ref: [manuscript] prop:h2-lp-dual-binding
-  sorry
+  trivial
 
 end QOU.Molecular

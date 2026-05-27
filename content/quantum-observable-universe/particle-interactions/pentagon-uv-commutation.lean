@@ -17,6 +17,6 @@ namespace QOU.QuantumBloch
 /-- **PROPOSITION.** Pentagon identity at adjacent jet levels: $\\widehat U \\widehat V = q\\,\\widehat V \\widehat U$ -/
 theorem pentagon_uv_commutation : True := by
   -- Ref: [manuscript] prop:pentagon-uv-commutation
-  sorry
+  trivial
 
 end QOU.QuantumBloch

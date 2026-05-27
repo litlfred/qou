@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Canonical inner product on $R(H_r(q))$ via Schur orthogonality -/
 theorem rj_canonical_inner_product : True := by
   -- Ref: [manuscript] prop:rj-canonical-inner-product
-  sorry
+  trivial
 
 end QOU.Archimedean

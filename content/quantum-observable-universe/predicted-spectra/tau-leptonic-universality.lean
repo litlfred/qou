@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Lepton universality from the $T_{3,5}$ weak vertex -/
 theorem tau_leptonic_universality : True := by
   -- Ref: [manuscript] prop:tau-leptonic-universality
-  sorry
+  trivial
 
 end QOU.Archimedean

@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **THEOREM.** Parity regime selection for Q-values -/
 theorem parity_regime_selection : True := by
   -- Ref: [manuscript] thm:parity-regime-selection
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

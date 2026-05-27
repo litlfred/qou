@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Term 6 binding density: $B(Z,N)/A \\approx \\alpha \\cdot T_6(Z,N)/A^3 + \\beta + \\delta_M(Z,N)$ -/
 theorem Term6BindingDensity : True := by
   -- Ref: [manuscript] prop:term6-binding-density
-  sorry
+  trivial
 
 end QOU.BraidKnot

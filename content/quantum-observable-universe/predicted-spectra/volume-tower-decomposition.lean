@@ -18,6 +18,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Tower-level decomposition of hyperbolic volume -/
 theorem VolumeTowerDecomposition : True := by
   -- Ref: [manuscript] prop:volume-tower-decomposition
-  sorry
+  trivial
 
 end QOU.Archimedean

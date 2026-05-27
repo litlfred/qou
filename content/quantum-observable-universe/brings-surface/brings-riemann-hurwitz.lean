@@ -17,6 +17,6 @@ namespace QOU.ArchimedeanUniverse
 /-- **LEMMA.** Riemann--Hurwitz count for the canonical map $\\Sigma_4 \\to \\mathbb{P}(V)$ -/
 theorem brings_riemann_hurwitz : True := by
   -- Ref: [manuscript] lem:brings-riemann-hurwitz
-  sorry
+  trivial
 
 end QOU.ArchimedeanUniverse

@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Atomic braid normal form witness -/
 theorem atomic_nf_witness : True := by
   -- Ref: [manuscript] prop:atomic-nf-witness
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

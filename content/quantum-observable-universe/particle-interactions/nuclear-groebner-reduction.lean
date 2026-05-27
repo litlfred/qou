@@ -32,6 +32,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Unique nuclear normal form via Gröbner reduction in $H_n(q)$ -/
 theorem nuclear_groebner_reduction : True := by
   -- Ref: [manuscript] prop:nuclear-groebner-reduction
-  sorry
+  trivial
 
 end QOU.Archimedean

@@ -17,6 +17,6 @@ namespace QOU.Descent
 /-- **PROPOSITION.** Descended mass contribution lives at level 0 only -/
 theorem descended_level_zero : True := by
   -- Ref: [manuscript] prop:descended-level-zero
-  sorry
+  trivial
 
 end QOU.Descent

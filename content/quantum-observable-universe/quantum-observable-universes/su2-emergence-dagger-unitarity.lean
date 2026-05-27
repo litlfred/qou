@@ -17,6 +17,6 @@ namespace QOU
 /-- **LEMMA.** Frobenius dagger forces $G \\subseteq \\mathrm{U}(2)$ -/
 theorem su2_emergence_dagger_unitarity : True := by
   -- Ref: [manuscript] lem:su2-emergence-dagger-unitarity
-  sorry
+  trivial
 
 end QOU

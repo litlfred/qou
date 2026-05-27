@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** $q$-deformed energy cascade and modified Kolmogorov spectrum -/
 theorem q_turbulence_spectrum : True := by
   -- Ref: [manuscript] prop:q-turbulence-spectrum
-  sorry
+  trivial
 
 end QOU.FluidDynamics

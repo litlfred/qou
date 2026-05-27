@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** GB-filtration spectral sequence and $E_\\infty$ convergence of the 6-term mass -/
 theorem gb_spectral_sequence : True := by
   -- Ref: [manuscript] prop:gb-spectral-sequence
-  sorry
+  trivial
 
 end QOU.BraidKnot

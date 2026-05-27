@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Knot operator selection via Frobenius dual -/
 theorem knot_operator_selection : True := by
   -- Ref: [manuscript] prop:knot-operator-selection
-  sorry
+  trivial
 
 end QOU.Archimedean

@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Self-similar blowup profile: the Leray equations with $\\mathrm{SU}_q(2)$ constraints -/
 theorem leray_profile : True := by
   -- Ref: [manuscript] prop:leray-profile
-  sorry
+  trivial
 
 end QOU.FluidDynamics

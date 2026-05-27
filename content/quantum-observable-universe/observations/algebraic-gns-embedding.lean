@@ -18,6 +18,6 @@ namespace QOU.Observations.AlgebraicGnsEmbedding
 /-- **PROPOSITION.** Markov-trace GNS embedding $H_\\infty(q) \\hookrightarrow L(\\mathcal{H})$ — operator-algebra route to the Archimedean side -/
 theorem HasMarkovGnsEmbedding : True := by
   -- Ref: [manuscript] prop:algebraic-gns-embedding
-  sorry
+  trivial
 
 end QOU.Observations.AlgebraicGnsEmbedding

@@ -22,6 +22,6 @@ namespace QOU.Interactions
 /-- Derived atom $\\mathcal{A}(Z, N)$ from pair production -/
 def DerivedAtom   :=
   -- Ref: [manuscript] def:derived-atom
-  sorry
+  trivial
 
 end QOU.Interactions

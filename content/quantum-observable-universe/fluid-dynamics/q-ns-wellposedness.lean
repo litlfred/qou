@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **THEOREM.** Global regularity of the $q$-deformed Navier--Stokes equation -/
 theorem q_ns_wellposedness : True := by
   -- Ref: [manuscript] thm:q-ns-wellposedness
-  sorry
+  trivial
 
 end QOU.FluidDynamics

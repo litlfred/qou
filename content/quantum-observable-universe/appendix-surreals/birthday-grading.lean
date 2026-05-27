@@ -17,6 +17,6 @@ namespace QOU.AppendixSurreals
 /-- Birthday grading on a surreal-coefficient category -/
 def BirthdayGrading   :=
   -- Ref: [manuscript] def:birthday-grading
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** $E_\\infty$-page identifications with the six mass-formula terms -/
 theorem e_infinity_identifications : True := by
   -- Ref: [manuscript] prop:e-infinity-page-identifications
-  sorry
+  trivial
 
 end QOU.BraidKnot

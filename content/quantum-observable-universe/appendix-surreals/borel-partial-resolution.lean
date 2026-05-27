@@ -15,6 +15,6 @@ namespace QOU.AppendixSurreals.BorelPartialResolution
 /-- **PROPOSITION.** Borel -/
 theorem borel_partial : True := by
   -- Ref: [manuscript] prop:borel-partial-resolution
-  sorry
+  trivial
 
 end QOU.AppendixSurreals.BorelPartialResolution

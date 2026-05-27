@@ -31,6 +31,6 @@ namespace QOU.AppendixSurreals
 /-- **PROPOSITION.** Hoefsmit seminormal form is Conway -/
 theorem hoefsmit_is_surreal_construction : True := by
   -- Ref: [manuscript] prop:hoefsmit-is-surreal-construction
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

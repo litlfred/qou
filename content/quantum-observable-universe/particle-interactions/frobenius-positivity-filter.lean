@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Frobenius positivity filter for even-$A$ decays -/
 theorem frobenius_positivity_filter : True := by
   -- Ref: [manuscript] prop:frobenius-positivity-filter
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

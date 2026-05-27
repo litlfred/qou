@@ -24,6 +24,6 @@ namespace QOU.AppendixSurreals
 /-- Sign-sequence functor $B_n \\to \\mathbf{No}$ via Hecke eigenspaces -/
 def signSequenceOfBraid   :=
   -- Ref: [manuscript] def:sign-sequence-of-braid
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

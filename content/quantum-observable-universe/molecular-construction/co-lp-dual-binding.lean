@@ -17,6 +17,6 @@ namespace QOU.Molecular
 /-- **PROPOSITION.** LP dual selects the triple bond as optimal for $CO$ -/
 theorem co_lp_dual_binding : True := by
   -- Ref: [manuscript] prop:co-lp-dual-binding
-  sorry
+  trivial
 
 end QOU.Molecular

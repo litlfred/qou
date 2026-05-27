@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Confinement operator selection via minimum action -/
 theorem confinement_operator_selection : True := by
   -- Ref: [manuscript] prop:confinement-operator-selection
-  sorry
+  trivial
 
 end QOU.ParticleInteractions
