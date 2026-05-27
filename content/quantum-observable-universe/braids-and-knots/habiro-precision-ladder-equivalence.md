@@ -1,8 +1,12 @@
-**Proposition (Habiro–precision-ladder equivalence).**
-*The Q_β precision-ladder coefficients $c_k$ are the archimedean
-evaluations of the integer Habiro coefficients $a_m(u)$. Specifically,
-the Markov trace $\operatorname{tr}_M(T_w, q)$ of the neutron–proton
-braid-word difference admits a finite Habiro expansion*
+**Proposition (Habiro integrality of the Markov trace).**
+*The Markov trace $\operatorname{tr}_M(T_w, q)$ of any braid word
+admits a finite Habiro expansion with integer coefficients. The
+historical "precision-ladder coefficients" $c_k$ were the Taylor
+expansion of this exact sum — a compute artefact with no independent
+mathematical role. The Habiro form is the canonical representation.*
+
+*Specifically, the Markov trace of the neutron–proton braid-word
+difference admits the finite expansion*
 
 $$
   \operatorname{tr}_M(\beta_n) - \operatorname{tr}_M(\beta_p)
