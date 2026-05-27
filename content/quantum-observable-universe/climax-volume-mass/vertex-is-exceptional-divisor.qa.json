@@ -2009,7 +2009,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:vertex-is-exceptional-divisor' aligns with Lean declaration. Sorry-free."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "0bb6d1422082",
+          "ts": "b5e8f28052e5",
+          "lean": "baf3032b02e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:26: unexpected token 'section'; expected 'lemma' | content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:28: failed to compile definition, compiler IR check failed at `QOU.q_param._closed_1`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking definition as 'no | content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:29: failed to compile definition, compiler IR check failed at `QOU.q_inv_param._closed_2`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking definition as | content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:70: Unexpected name `QOU` after `end`: The current section is unnamed"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

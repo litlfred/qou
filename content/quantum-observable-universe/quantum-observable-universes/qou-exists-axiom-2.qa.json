@@ -2010,7 +2010,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "7abc1211d9ec",
+          "ts": "20fadbba99c2",
+          "lean": "b0b940bf0fd9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean:26: invalid 'import' command, it must be used in the beginning of the file"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

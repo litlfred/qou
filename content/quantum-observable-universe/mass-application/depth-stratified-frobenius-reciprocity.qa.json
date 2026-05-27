@@ -1756,7 +1756,27 @@
         "reviewed_at": "2026-05-26T00:25:01.306Z",
         "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "a0a515624e9c",
+          "ts": "0f16671cf73a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:26:49.037Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

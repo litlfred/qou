@@ -2009,7 +2009,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:neutron-prediction-comparison' → expected 'neutron_prediction_comparison'; Lean declares: asymmetry_coeff, predicted_mass_number, predicted_neutron_number, stable_neutron_max_error, stable_neutron_mean_discrepancy. Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "c9b56cf31eaf",
+          "ts": "b10175ad859c",
+          "lean": "f6df3f7fbdfb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:21: invalid 'import' command, it must be used in the beginning of the file"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

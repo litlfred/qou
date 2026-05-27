@@ -2009,7 +2009,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:phase-transition-boundary' → expected 'phase_transition_boundary'; Lean declares: R_q, q_param, q_inv_param, s3BoundaryAction, gasLiquidCriticalTemp.... Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/information-theory/phase-transition-boundary.lean:26: unexpected token 'section'; expected 'lemma' | content/quantum-observable-universe/information-theory/phase-transition-boundary.lean:28: failed to compile definition, compiler IR check failed at `QOU.Information.q_param._closed_1`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking defin | content/quantum-observable-universe/information-theory/phase-transition-boundary.lean:29: failed to compile definition, compiler IR check failed at `QOU.Information.q_inv_param._closed_2`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking d | content/quantum-observable-universe/information-theory/phase-transition-boundary.lean:41: Type mismatch | content/quantum-observable-universe/information-theory/phase-transition-boundary.lean:47: failed to synthesize"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

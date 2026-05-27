@@ -1510,7 +1510,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'def:borromean-baryon' → expected 'borromean_baryon'; Lean declares: BorromeanBaryon, BorromeanBaryon.charge, borromean_volume_pos. Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "8f4aafab935d",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:13: failed to synthesize | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: unknown tactic | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: failed to synthesize | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: failed to synthesize | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: failed to synthesize"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

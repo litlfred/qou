@@ -2009,7 +2009,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:cl2-pentagon-and-faddeev-partial' → expected 'cl2_pentagon_and_faddeev_partial'; Lean declares: Cl_2_pentagon_at_zero_unconditional, Cl_2_pentagon_zero_substitution, Cl_2_pentagon_consistent_with_zero, faddeev_kashaev_at_zero_unconditional, faddeev_kashaev_consistency_at_zero.... Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "6a71aa12e45d",
+          "ts": "e5229d5e2119",
+          "lean": "32e17b7b17f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:27: invalid 'import' command, it must be used in the beginning of the file"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

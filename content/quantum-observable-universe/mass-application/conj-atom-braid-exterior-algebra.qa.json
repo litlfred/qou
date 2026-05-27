@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-application/conj-atom-braid-exterior-algebra.lean"
   },
   "source_hashes": {
-    "md": "6c8f37de4fdc",
+    "md": "af3f69d226c8",
     "ts": "07d3e99605cc",
     "lean": "965c4bbd245e"
   },
@@ -69,7 +69,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'conj:atom-braid-exterior-algebra' → expected 'atom_braid_exterior_algebra'; Lean declares: AtomBraidExteriorAlgebraStructure, deuteron_total_dim_eq_32, tritium_total_dim_eq_256, helium3_total_dim_eq_128, helium4_total_dim_eq_1024.... Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "af3f69d226c8",
+          "ts": "07d3e99605cc",
+          "lean": "965c4bbd245e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-application/conj-atom-braid-exterior-algebra.lean:35: invalid 'import' command, it must be used in the beginning of the file"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

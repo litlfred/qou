@@ -2009,7 +2009,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Block kind 'undefined' has no provable Lean content expected."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "69bbfc17fd52",
+          "ts": "2e94b49d7eb3",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:61: Type mismatch | content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:70: Type mismatch | content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:94: Function expected at | content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:165: failed to synthesize"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

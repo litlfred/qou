@@ -1,0 +1,40 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:c-equals-bar-iff-all-1dim",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts",
+    "md": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.md",
+    "lean": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean"
+  },
+  "source_hashes": {
+    "md": "304a48a0ab77",
+    "ts": "81060cf23b83",
+    "lean": "068632dfda0e"
+  },
+  "criteria": {
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "81060cf23b83",
+          "lean": "068632dfda0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+      }
+    ]
+  },
+  "updated_at": "2026-05-27T08:55:11.920Z"
+}

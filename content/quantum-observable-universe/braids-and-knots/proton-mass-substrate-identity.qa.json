@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.lean"
   },
   "source_hashes": {
-    "md": "51ca244cdeeb",
-    "ts": "659f478f4ac4",
+    "md": "fee15efe1b30",
+    "ts": "5d5dd8dd7f86",
     "lean": "1baec01f2673"
   },
   "criteria": {
@@ -234,7 +234,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:proton-mass-substrate-identity' → expected 'proton_mass_substrate_identity'; Lean declares: trM_borromean_abs, qFact_three, F_Bor, ProtonMassSubstrateIdentity, proton_mass_substrate_identity_empirical.... Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "fee15efe1b30",
+          "ts": "5d5dd8dd7f86",
+          "lean": "1baec01f2673"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.lean:47: invalid 'import' command, it must be used in the beginning of the file"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "35813b473945",
     "ts": "bfee1f77a2b0",
-    "lean": "6dfe78e74e97"
+    "lean": "5c7496d80fd0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2009,7 +2009,27 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:neutron-proton-splitting' aligns with Lean declaration. Has sorry (cited)."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "bfee1f77a2b0",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

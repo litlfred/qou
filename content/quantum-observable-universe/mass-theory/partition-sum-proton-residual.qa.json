@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "30268cfcb1ee",
-    "ts": "df3ab24e3f11",
-    "lean": "fa65099fa418"
+    "ts": "e56ac6a9a22d",
+    "lean": "728ce54385a0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2015,7 +2015,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:partition-sum-proton-residual' → expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonCodata, electronMass, qSubstrate.... Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "e56ac6a9a22d",
+          "lean": "728ce54385a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:41: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:44: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:51: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:54: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:58: typeclass instance problem is stuck, it is often due to metavariables"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }

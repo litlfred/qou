@@ -2009,7 +2009,29 @@
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'thm:substrate-parameter-unique' → expected 'substrate_parameter_unique'; Lean declares: SameQouOrigin, unique. Structural match via content."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "4ed14cabe90c",
+          "ts": "c77825c04b3a",
+          "lean": "cabf0b70e700"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-05-27T08:55:11.920Z",
+        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.lean:1: object file '/home/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/SubstrateParameter.olean' of module QOU.SubstrateParameter does not exist"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-27T08:55:11.920Z"
 }
