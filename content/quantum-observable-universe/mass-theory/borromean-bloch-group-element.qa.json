@@ -140,56 +140,17 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "f525c95178bb",
-          "ts": "d9aac6f0ea08",
-          "lean": "2b78ca094d03"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "71d674da186600ad04a5754792acbf59838f4dad"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:164: as of 2026-05)."
-      },
-      {
-        "field_hash": {
-          "md": "1301a2b7a0d1",
-          "ts": "d9aac6f0ea08",
-          "lean": "2b78ca094d03"
+          "md": "647ea3679b41"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
+          "kind": "agent",
+          "id": "voice-time-stamped-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-25T23:12:32.859Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "1301a2b7a0d1",
-          "ts": "d9aac6f0ea08",
-          "lean": "2b78ca094d03"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "42dd0ca1189d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:25:42.087Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "voice-unicode-crash": [
