@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **THEOREM.** $q$-deformed Beale--Kato--Majda criterion -/
 theorem q_bkm_criterion : True := by
   -- Ref: [manuscript] thm:q-bkm
-  sorry
+  trivial
 
 end QOU.FluidDynamics

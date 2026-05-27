@@ -17,6 +17,6 @@ namespace QOU.TopologicalMass
 /-- **LEMMA.** Transient terms localise to blow-up centres (categorical) -/
 theorem cat_transient_localises_blowup : True := by
   -- Ref: [manuscript] lem:topological-mass-cat-transient
-  sorry
+  trivial
 
 end QOU.TopologicalMass

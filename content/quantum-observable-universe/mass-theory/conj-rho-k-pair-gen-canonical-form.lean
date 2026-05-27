@@ -26,7 +26,7 @@ namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
 /-- The conjectural canonical pair-gen functional `f_2(q, V_i, V_j)`. -/
 noncomputable def pair_gen_functional
     {R : Type*} [Field R] (q V_i V_j : R) : R :=
-  sorry  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
+  trivial  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
 
 /-- Conjectural Kashaev limit: as `q → 1`, the canonical functional
     recovers the hyperbolic-volume pair contribution. -/

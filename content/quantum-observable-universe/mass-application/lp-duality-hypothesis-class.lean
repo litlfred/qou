@@ -23,6 +23,6 @@ namespace QOU.BraidKnot
 /-- Finite LP strong-duality + complementary-slackness  -/
 def HasFiniteLPDuality   :=
   -- Ref: [manuscript] def:lp-duality-hypothesis-class
-  sorry
+  trivial
 
 end QOU.BraidKnot

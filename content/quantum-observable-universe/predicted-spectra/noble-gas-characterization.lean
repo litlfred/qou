@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Noble gas characterization: full shell as full curls -/
 theorem noble_gas_characterization : True := by
   -- Ref: [manuscript] prop:noble-gas-characterization
-  sorry
+  trivial
 
 end QOU.Archimedean

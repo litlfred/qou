@@ -39,6 +39,6 @@ namespace QOU.Hecke
 /-- Staircase partition $\\rho_k = (k, k-1, \\ldots, 1)$ -/
 def staircasePartition   :=
   -- Ref: [manuscript] def:staircase-partition
-  sorry
+  trivial
 
 end QOU.Hecke

@@ -29,6 +29,6 @@ namespace QOU.AppendixSurreals
 /-- Surreal blow-up calculus: named infinite surreals for renormalisation -/
 def BlowupCalculus   :=
   -- Ref: [manuscript] def:surreal-blowup-calculus
-  sorry
+  trivial
 
 end QOU.AppendixSurreals

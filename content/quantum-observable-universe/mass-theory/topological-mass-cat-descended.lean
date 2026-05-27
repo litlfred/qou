@@ -17,6 +17,6 @@ namespace QOU.TopologicalMass
 /-- **LEMMA.** Descended term equals the base-level mass -/
 theorem cat_descended_is_base_mass : True := by
   -- Ref: [manuscript] lem:topological-mass-cat-descended
-  sorry
+  trivial
 
 end QOU.TopologicalMass

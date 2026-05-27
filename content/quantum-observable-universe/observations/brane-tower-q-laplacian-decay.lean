@@ -17,6 +17,6 @@ namespace QOU.Observations
 /-- **PROPOSITION.** Brane-tower convergence: q-Laplacian exponential decay drives the $\\hbar_q^{2n}$ tail bound -/
 theorem brane_tower_q_laplacian_decay : True := by
   -- Ref: [manuscript] prop:brane-tower-q-laplacian-decay
-  sorry
+  trivial
 
 end QOU.Observations

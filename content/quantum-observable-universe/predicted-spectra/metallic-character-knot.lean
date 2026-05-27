@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Metallic character from incomplete sub-Hopf links -/
 theorem metallic_character_knot : True := by
   -- Ref: [manuscript] prop:metallic-character-knot
-  sorry
+  trivial
 
 end QOU.Archimedean

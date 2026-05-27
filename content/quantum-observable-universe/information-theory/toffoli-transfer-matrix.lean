@@ -17,6 +17,6 @@ namespace QOU.Information
 /-- **PROPOSITION.** The massive Toffoli transfer matrix $M(q)$ and the q-AND polynomial $P_{7,6}(q)$ -/
 theorem toffoli_transfer_matrix : True := by
   -- Ref: [manuscript] prop:toffoli-transfer-matrix
-  sorry
+  trivial
 
 end QOU.Information

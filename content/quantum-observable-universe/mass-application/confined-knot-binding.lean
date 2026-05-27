@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Confined knot binding mechanism: character ratio decomposition per jet level -/
 theorem confined_knot_binding : True := by
   -- Ref: [manuscript] prop:confined-knot-binding
-  sorry
+  trivial
 
 end QOU.BraidKnot

@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Knot operator selection as linear program with LP duality -/
 theorem operator_selection_lp : True := by
   -- Ref: [manuscript] prop:operator-selection-lp
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

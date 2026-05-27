@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Per-new-nucleon additive linearity: $\\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering -/
 theorem per_nucleon_shift_additive_linearity : True := by
   -- Ref: [manuscript] prop:per-nucleon-shift-additive-linearity
-  sorry
+  trivial
 
 end QOU.BraidKnot

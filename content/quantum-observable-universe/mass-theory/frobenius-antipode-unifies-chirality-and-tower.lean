@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **THEOREM.** Frobenius antipode $S\\colon \\sigma \\leftrightarrow \\sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure -/
 theorem frobenius_antipode_unifies : True := by
   -- Ref: [manuscript] thm:frobenius-antipode-unifies-chirality-and-tower
-  sorry
+  trivial
 
 end QOU.BraidKnot

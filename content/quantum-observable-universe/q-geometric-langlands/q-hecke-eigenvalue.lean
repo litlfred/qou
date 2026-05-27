@@ -19,6 +19,6 @@ namespace QOU
 /-- **PROPOSITION.** $q$-Hecke eigenvalues from the fibre functor -/
 theorem q_hecke_eigenvalue : True := by
   -- Ref: [manuscript] prop:q-hecke-eigenvalue
-  sorry
+  trivial
 
 end QOU

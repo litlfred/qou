@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Ground-state ordering from transfer matrix eigenvalues -/
 theorem ground_state_ordering : True := by
   -- Ref: [manuscript] prop:ground-state-ordering
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

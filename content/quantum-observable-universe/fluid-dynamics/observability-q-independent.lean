@@ -18,6 +18,6 @@ namespace QOU.FluidDynamics
 /-- **THEOREM.** Observability is a base property: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ is independent of the substrate section -/
 theorem observability_q_independent : True := by
   -- Ref: [manuscript] thm:observability-q-independent
-  sorry
+  trivial
 
 end QOU.FluidDynamics

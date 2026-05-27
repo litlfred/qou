@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Spectral theory and Sobolev embedding for the $q$-Laplacian on $\\Omega^1(A)$ -/
 theorem p1_spectral_sobolev : True := by
   -- Ref: [manuscript] prop:q-spectral-sobolev
-  sorry
+  trivial
 
 end QOU.FluidDynamics

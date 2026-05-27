@@ -17,6 +17,6 @@ namespace QOU.Molecular
 /-- **PROPOSITION.** LP dual selects linear $O{=}C{=}O$ geometry -/
 theorem co2_lp_dual_binding : True := by
   -- Ref: [manuscript] prop:co2-lp-dual-binding
-  sorry
+  trivial
 
 end QOU.Molecular

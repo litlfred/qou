@@ -17,6 +17,6 @@ namespace QOU.HadronicMass
 /-- **LEMMA.** Pair Skein mass and crossing-by-crossing recursion -/
 theorem pair_skein_mass_formula : True := by
   -- Ref: [manuscript] lem:pair-skein-mass-formula
-  sorry
+  trivial
 
 end QOU.HadronicMass

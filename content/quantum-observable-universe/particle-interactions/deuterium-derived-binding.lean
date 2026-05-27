@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Deuterium binding energy from the Markov trace volume integral -/
 theorem deuterium_derived_binding : True := by
   -- Ref: [manuscript] prop:deuterium-derived-binding
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

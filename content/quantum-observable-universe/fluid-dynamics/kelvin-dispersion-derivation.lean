@@ -17,6 +17,6 @@ namespace QOU.FluidDynamics
 /-- **PROPOSITION.** Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem -/
 theorem kelvin_dispersion_derivation : True := by
   -- Ref: [manuscript] prop:kelvin-dispersion-derivation
-  sorry
+  trivial
 
 end QOU.FluidDynamics

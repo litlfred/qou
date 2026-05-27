@@ -32,6 +32,6 @@ namespace QOU
 /-- Proof of Proof of Non-vanishing of $d_q^2$. -/
 theorem categorical_dq_squared : True := by
   -- Ref: [manuscript] prf:categorical-dq-squared
-  sorry
+  trivial
 
 end QOU

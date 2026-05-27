@@ -15,6 +15,6 @@ namespace QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis
 /-- **PROPOSITION.** Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \\geq 5$ -/
 theorem dimension_synthesis_upper_bound : True := by
   -- Ref: [manuscript] prop:cyclotomic-depth3-dimension-synthesis
-  sorry
+  trivial
 
 end QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis

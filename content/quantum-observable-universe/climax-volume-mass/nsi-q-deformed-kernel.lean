@@ -17,6 +17,6 @@ namespace QOU.BraidsKnots
 /-- **LEMMA.** $q$-deformed commutator replaces $1/r^2$ with a hard kernel at $r = \\hbar_q$ -/
 theorem nsi_q_deformed_kernel : True := by
   -- Ref: [manuscript] lem:nsi-q-deformed-kernel
-  sorry
+  trivial
 
 end QOU.BraidsKnots

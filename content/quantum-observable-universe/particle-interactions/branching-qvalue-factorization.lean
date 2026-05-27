@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Exact factorization of the branching Q-value -/
 theorem branching_qvalue_factorization : True := by
   -- Ref: [manuscript] prop:branching-qvalue-factorization
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

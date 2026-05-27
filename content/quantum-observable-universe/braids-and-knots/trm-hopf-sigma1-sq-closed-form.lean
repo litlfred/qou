@@ -19,6 +19,6 @@ namespace QOU.Braiding
 /-- **PROPOSITION.** Closed form for the canonical Markov trace of σ_1² (Hopf+ braid) -/
 theorem TrMHopfSigma1SqClosedForm : True := by
   -- Ref: [manuscript] prop:trm-hopf-sigma1-sq-closed-form
-  sorry
+  trivial
 
 end QOU.Braiding

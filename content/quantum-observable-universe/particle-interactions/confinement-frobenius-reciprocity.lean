@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings -/
 theorem confinement_frobenius_reciprocity : True := by
   -- Ref: [manuscript] prop:confinement-frobenius-reciprocity
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

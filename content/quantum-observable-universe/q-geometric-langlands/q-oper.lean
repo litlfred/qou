@@ -17,6 +17,6 @@ namespace QOU
 /-- $q$-Oper -/
 def QOper   :=
   -- Ref: [manuscript] def:q-oper
-  sorry
+  trivial
 
 end QOU

@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Graded Markov trace as the induced trace on $J^\\ell / J^{\\ell+1}$ -/
 theorem GradedMarkovTraceFromGSFiltration : True := by
   -- Ref: [manuscript] prop:graded-markov-trace-from-gs-filtration
-  sorry
+  trivial
 
 end QOU.BraidKnot

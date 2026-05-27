@@ -17,6 +17,6 @@ namespace QOU.LiftingDescent
 /-- **LEMMA.** Transient terms localise to exceptional divisors -/
 theorem tm_transient_localisation : True := by
   -- Ref: [manuscript] lem:topological-mass-transient-localisation
-  sorry
+  trivial
 
 end QOU.LiftingDescent

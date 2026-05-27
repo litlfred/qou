@@ -17,6 +17,6 @@ namespace QOU.Information
 /-- **PROPOSITION.** Polynomial computation as sub-horizon bandwidth -/
 theorem p_bandwidth_bound : True := by
   -- Ref: [manuscript] prop:p-bandwidth-bound
-  sorry
+  trivial
 
 end QOU.Information

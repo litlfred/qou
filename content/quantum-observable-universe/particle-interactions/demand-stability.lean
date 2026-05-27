@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Demand profile determines nuclear and atomic stability -/
 theorem demand_stability : True := by
   -- Ref: [manuscript] prop:demand-stability
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

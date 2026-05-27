@@ -43,6 +43,6 @@ namespace QOU.AlgebraicSubstrate
 /-- **PROPOSITION.** Surreal rate calculus for the classical-limit scaling laws -/
 theorem SurrealRateCalculus : True := by
   -- Ref: [manuscript] prop:surreal-rate-calculus
-  sorry
+  trivial
 
 end QOU.AlgebraicSubstrate

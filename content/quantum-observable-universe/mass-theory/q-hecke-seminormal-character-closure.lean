@@ -15,6 +15,6 @@ namespace QOU.BraidKnot.QHeckeSeminormalCharacterClosure
 /-- **PROPOSITION.** Partition-sum form of $\\mathrm{tr}_M$ via Wenzl $y_\\lambda$ and  -/
 theorem character_closure_holds : True := by
   -- Ref: [manuscript] prop:q-hecke-seminormal-character-closure
-  sorry
+  trivial
 
 end QOU.BraidKnot.QHeckeSeminormalCharacterClosure

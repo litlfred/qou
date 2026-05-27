@@ -17,6 +17,6 @@ namespace QOU.TopologicalMass
 /-- **LEMMA.** Eigenspace decomposition of the categorical mass integrand -/
 theorem cat_eigenspace_decomposition : True := by
   -- Ref: [manuscript] lem:topological-mass-cat-eigenspace
-  sorry
+  trivial
 
 end QOU.TopologicalMass

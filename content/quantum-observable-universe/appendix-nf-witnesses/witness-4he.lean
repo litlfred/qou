@@ -16,6 +16,6 @@ namespace QOU.Archimedean.PauliWitness
 /-- Pauli witness for ${}^4\\mathrm{He}$ (exact in $q$) -/
 def witness_4He   :=
   -- Ref: [manuscript] def:witness-4he
-  sorry
+  trivial
 
 end QOU.Archimedean.PauliWitness

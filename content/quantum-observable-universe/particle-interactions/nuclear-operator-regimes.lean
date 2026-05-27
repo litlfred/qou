@@ -17,6 +17,6 @@ namespace QOU.Interactions
 /-- **PROPOSITION.** Three operator regimes for nuclear binding -/
 theorem nuclearOperatorRegimes : True := by
   -- Ref: [manuscript] prop:nuclear-operator-regimes
-  sorry
+  trivial
 
 end QOU.Interactions

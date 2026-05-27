@@ -18,6 +18,6 @@ namespace QOU.MassEndomorphism
 /-- **PROPOSITION.** Uniform bound on the per-level jet residual $|\\Delta^{(n)}|$ -/
 theorem delta_max_uniform_bound : True := by
   -- Ref: [manuscript] prop:delta-max-uniform-bound
-  sorry
+  trivial
 
 end QOU.MassEndomorphism

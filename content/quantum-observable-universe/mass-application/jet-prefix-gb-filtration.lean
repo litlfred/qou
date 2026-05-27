@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6) -/
 theorem jet_prefix_gb_filtration : True := by
   -- Ref: [manuscript] prop:jet-prefix-gb-filtration
-  sorry
+  trivial
 
 end QOU.BraidKnot

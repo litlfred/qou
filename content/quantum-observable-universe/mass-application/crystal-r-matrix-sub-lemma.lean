@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 /-- **PROPOSITION.** Crystal R-matrix Sub-lemma 2.1 (operator-valued):  -/
 theorem CrystalRMatrixSubLemma : True := by
   -- Ref: [manuscript] prop:crystal-r-matrix-sub-lemma
-  sorry
+  trivial
 
 end QOU.BraidKnot

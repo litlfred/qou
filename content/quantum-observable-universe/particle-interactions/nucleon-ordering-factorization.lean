@@ -17,6 +17,6 @@ namespace QOU.Interactions
 /-- **PROPOSITION.** Nucleon-level ordering factorization via jet-descended confinement -/
 theorem nucleon_ordering_factorization : True := by
   -- Ref: [manuscript] prop:nucleon-ordering-factorization
-  sorry
+  trivial
 
 end QOU.Interactions

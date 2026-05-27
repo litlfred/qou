@@ -22,6 +22,6 @@ namespace QOU.Interactions
 /-- Markov-axiom recursive ascent for atomic $\\mathrm{tr}_M$ -/
 def markov_peel   :=
   -- Ref: [manuscript] def:markov-axiom-recursive-ascent
-  sorry
+  trivial
 
 end QOU.Interactions

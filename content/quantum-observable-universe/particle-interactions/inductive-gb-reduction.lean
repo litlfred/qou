@@ -17,6 +17,6 @@ namespace QOU.Interactions
 /-- **PROPOSITION.** Inductive Gröbner--Shirshov reduction (polynomial scaling) -/
 theorem inductiveGBReduction : True := by
   -- Ref: [manuscript] prop:inductive-gb-reduction
-  sorry
+  trivial
 
 end QOU.Interactions

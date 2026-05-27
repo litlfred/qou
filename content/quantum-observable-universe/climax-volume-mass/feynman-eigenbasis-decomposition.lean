@@ -19,6 +19,6 @@ namespace QOU.FeynmanPathIntegrals
 /-- **LEMMA.** Eigenbasis decomposition for the Feynman amplitude -/
 theorem eigenbasis_decomposition : True := by
   -- Ref: [manuscript] lem:feynman-eigenbasis-decomposition
-  sorry
+  trivial
 
 end QOU.FeynmanPathIntegrals

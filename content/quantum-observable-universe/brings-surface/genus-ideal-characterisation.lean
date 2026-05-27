@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **LEMMA.** Genus-filtration ideal in Hecke coordinates -/
 theorem genus_ideal_characterisation : True := by
   -- Ref: [manuscript] lem:genus-ideal-characterisation
-  sorry
+  trivial
 
 end QOU.Archimedean

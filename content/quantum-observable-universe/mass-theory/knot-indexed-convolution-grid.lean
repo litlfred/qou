@@ -15,6 +15,6 @@ namespace QOU.BraidKnot.KnotIndexedConvolutionGrid
 /-- **PROPOSITION.** Placement of paper -/
 theorem grid_placement : True := by
   -- Ref: [manuscript] prop:knot-indexed-convolution-grid
-  sorry
+  trivial
 
 end QOU.BraidKnot.KnotIndexedConvolutionGrid

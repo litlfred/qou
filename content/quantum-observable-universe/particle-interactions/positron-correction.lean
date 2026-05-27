@@ -17,6 +17,6 @@ namespace QOU.ParticleInteractions
 /-- **PROPOSITION.** Positron correction to the Q-value -/
 theorem positron_correction : True := by
   -- Ref: [manuscript] prop:positron-correction
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

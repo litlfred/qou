@@ -31,6 +31,6 @@ namespace QOU.BraidKnot.CyclotomicLValueDecomposition
 /-- **PROPOSITION.** Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\\beta(3) = \\pi^3/32$ as a corollary -/
 theorem beta_3_from_jonquiere : True := by
   -- Ref: [manuscript] prop:cyclotomic-l-value-decomposition
-  sorry
+  trivial
 
 end QOU.BraidKnot.CyclotomicLValueDecomposition

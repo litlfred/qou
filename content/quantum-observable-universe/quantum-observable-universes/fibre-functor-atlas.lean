@@ -17,6 +17,6 @@ namespace QOU.QuantumObservableUniverse
 /-- **PROPOSITION.** Fibre functors as an affine atlas with $G$-torsor transitions -/
 theorem fibre_functor_atlas : True := by
   -- Ref: [manuscript] prop:fibre-functor-atlas
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverse

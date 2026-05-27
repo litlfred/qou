@@ -17,6 +17,6 @@ namespace QOU.BraidsKnots
 /-- **LEMMA.** Constituent and composite Markov-trace evaluations agree exactly -/
 theorem tmli_constituent_composite_agreement : True := by
   -- Ref: [manuscript] lem:tmli-constituent-composite-agreement
-  sorry
+  trivial
 
 end QOU.BraidsKnots

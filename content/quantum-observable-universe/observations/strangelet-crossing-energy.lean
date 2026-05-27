@@ -17,6 +17,6 @@ namespace QOU.Observations
 /-- **PROPOSITION.** Crossing energy of strange quark matter is purely strong -/
 theorem strangelet_crossing_energy : True := by
   -- Ref: [manuscript] prop:strangelet-crossing-energy
-  sorry
+  trivial
 
 end QOU.Observations

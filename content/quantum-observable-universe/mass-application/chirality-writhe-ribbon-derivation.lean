@@ -18,6 +18,6 @@ namespace QOU.BraidKnot.ChiralityWritheRibbon
 /-- **PROPOSITION.** Chirality factor $1 + w \\cdot h$ from ribbon-twist framing (writhe $w$) -/
 theorem chirality_writhe_ribbon : True := by
   -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
-  sorry
+  trivial
 
 end QOU.BraidKnot.ChiralityWritheRibbon

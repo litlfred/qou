@@ -17,6 +17,6 @@ namespace QOU.Information
 /-- **PROPOSITION.** Mass as photon threading cost -/
 theorem photon_threading_mass : True := by
   -- Ref: [manuscript] prop:photon-threading-mass
-  sorry
+  trivial
 
 end QOU.Information

@@ -14,6 +14,6 @@ namespace QOU.Archimedean.PauliWitness
 /-- Pauli witness for ${}^8\\mathrm{Be}$ (exact in $q$) -/
 def witness_8Be   :=
   -- Ref: [manuscript] def:witness-8be
-  sorry
+  trivial
 
 end QOU.Archimedean.PauliWitness

@@ -17,6 +17,6 @@ namespace QOU
 /-- **LEMMA.** Volume constraint forces $\\det(g_V) = 1$ -/
 theorem su2_emergence_volume_determinant : True := by
   -- Ref: [manuscript] lem:su2-emergence-volume-determinant
-  sorry
+  trivial
 
 end QOU

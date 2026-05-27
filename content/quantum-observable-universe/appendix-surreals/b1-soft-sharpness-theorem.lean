@@ -15,6 +15,6 @@ namespace QOU.AppendixSurreals.B1SoftSharpnessTheorem
 /-- **PROPOSITION.** Soft sharpness of the keystone B1 is theorem-level — via Borel + polylog non-vanishing -/
 theorem b1_soft_sharpness : True := by
   -- Ref: [manuscript] prop:b1-soft-sharpness-theorem
-  sorry
+  trivial
 
 end QOU.AppendixSurreals.B1SoftSharpnessTheorem

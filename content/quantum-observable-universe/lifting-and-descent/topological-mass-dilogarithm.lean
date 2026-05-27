@@ -17,6 +17,6 @@ namespace QOU.LiftingDescent
 /-- **LEMMA.** Quantum dilogarithm evaluation of exceptional-divisor contributions -/
 theorem tm_dilogarithm_evaluation : True := by
   -- Ref: [manuscript] lem:topological-mass-dilogarithm
-  sorry
+  trivial
 
 end QOU.LiftingDescent

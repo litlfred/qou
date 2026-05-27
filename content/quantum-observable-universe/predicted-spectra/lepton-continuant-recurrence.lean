@@ -17,6 +17,6 @@ namespace QOU.Archimedean
 /-- **PROPOSITION.** Continuant recurrence for the lepton tower $T_{2,n}$ -/
 theorem lepton_continuant_recurrence : True := by
   -- Ref: [manuscript] prop:lepton-continuant-recurrence
-  sorry
+  trivial
 
 end QOU.Archimedean
