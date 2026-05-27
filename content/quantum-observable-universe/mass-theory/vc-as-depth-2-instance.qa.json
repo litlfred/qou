@@ -3,12 +3,12 @@
   "label": "rem:vc-as-depth-2-instance",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/vc-as-depth-2-instance.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/vc-as-depth-2-instance.md"
+    "ts": "content/quantum-observable-universe/mass-theory/vc-as-depth-2-instance.ts",
+    "md": "content/quantum-observable-universe/mass-theory/vc-as-depth-2-instance.md"
   },
   "source_hashes": {
-    "md": "2eaf2672dd71",
-    "ts": "73056a42ad5b"
+    "md": "d24dc134f29b",
+    "ts": "8375c27f5eff"
   },
   "criteria": {
     "voice-status-leak": [
@@ -949,6 +949,22 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "d24dc134f29b",
+          "ts": "8375c27f5eff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1890,5 +1906,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:26:49.037Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

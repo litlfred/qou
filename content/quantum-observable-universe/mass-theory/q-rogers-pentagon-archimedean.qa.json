@@ -3,8 +3,8 @@
   "label": "prop:q-rogers-pentagon-archimedean",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/q-rogers-pentagon-archimedean.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/q-rogers-pentagon-archimedean.md"
+    "ts": "content/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean.ts",
+    "md": "content/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean.md"
   },
   "source_hashes": {
     "md": "b44601c0f7ee",
@@ -386,6 +386,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "b44601c0f7ee",
+          "ts": "066bc861fd40"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1018,6 +1035,22 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "b44601c0f7ee",
+          "ts": "066bc861fd40"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1595,5 +1628,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

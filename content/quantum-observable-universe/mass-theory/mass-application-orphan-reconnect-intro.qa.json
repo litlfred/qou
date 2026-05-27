@@ -1,0 +1,34 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "sec:mass-application-orphan-reconnect-intro",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/mass-application-orphan-reconnect-intro.ts",
+    "md": "content/quantum-observable-universe/mass-theory/mass-application-orphan-reconnect-intro.md"
+  },
+  "source_hashes": {
+    "md": "cbbdf6c22ff2",
+    "ts": "30a8ed17426f"
+  },
+  "criteria": {
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "cbbdf6c22ff2",
+          "ts": "30a8ed17426f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
+      }
+    ]
+  },
+  "updated_at": "2026-05-27T22:29:15.536Z"
+}

@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:q-gl-fiber-functor",
-  "kind": "conjecture",
+  "label": "prop:q-gl-fiber-functor",
+  "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts",
     "md": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.md",
     "lean": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.lean"
   },
   "source_hashes": {
-    "md": "a969a053d40d",
-    "ts": "64cc48f765c5",
+    "md": "c4a1ed18e292",
+    "ts": "bbcb89d03be7",
     "lean": "6e7f0658ddef"
   },
   "criteria": {
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "c4a1ed18e292",
+          "ts": "bbcb89d03be7",
+          "lean": "6e7f0658ddef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -697,6 +714,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "c4a1ed18e292",
+          "ts": "bbcb89d03be7",
+          "lean": "6e7f0658ddef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1415,5 +1449,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

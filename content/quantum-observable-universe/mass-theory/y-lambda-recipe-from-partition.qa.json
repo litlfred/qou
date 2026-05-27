@@ -3,9 +3,9 @@
   "label": "prop:y-lambda-recipe-from-partition",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/y-lambda-recipe-from-partition.ts",
-    "md": "content/quantum-observable-universe/mass-application/y-lambda-recipe-from-partition.md",
-    "lean": "content/quantum-observable-universe/mass-application/y-lambda-recipe-from-partition.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.ts",
+    "md": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.md",
+    "lean": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean"
   },
   "source_hashes": {
     "md": "d642c35af66b",
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "d642c35af66b",
+          "ts": "d3d1bef08078",
+          "lean": "124abc17a107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1317,6 +1334,23 @@
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/y-lambda-recipe-from-partition.ts:1: declared witness 'folio-assistant/computations/probe-proton-with-wenzl-weights.witness.json' does not exist on disk | content/quantum-observable-universe/mass-application/y-lambda-recipe-from-partition.ts:1: declared witness 'folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json' does not exist on disk"
+      },
+      {
+        "field_hash": {
+          "md": "d642c35af66b",
+          "ts": "d3d1bef08078",
+          "lean": "124abc17a107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -2035,5 +2069,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

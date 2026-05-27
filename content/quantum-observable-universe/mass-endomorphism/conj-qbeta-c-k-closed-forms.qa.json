@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:qbeta-c-k-closed-forms",
-  "kind": "conjecture",
+  "label": "prop:qbeta-c-k-closed-forms",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.ts",
-    "md": "content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.md",
-    "lean": "content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.lean"
+    "ts": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md",
+    "lean": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean"
   },
   "source_hashes": {
-    "md": "8857df729c9c",
-    "ts": "a3ed44c1257b",
+    "md": "e606dfc96cee",
+    "ts": "f3de2b6db444",
     "lean": "95c5d60be687"
   },
   "criteria": {
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "e606dfc96cee",
+          "ts": "f3de2b6db444",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -697,6 +714,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "e606dfc96cee",
+          "ts": "f3de2b6db444",
+          "lean": "95c5d60be687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1417,5 +1451,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

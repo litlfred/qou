@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:bring-trilog-depth-3-witness",
-  "kind": "conjecture",
+  "label": "prop:bring-trilog-depth-3-witness",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/bring-trilog-depth-3-witness.ts",
-    "md": "content/quantum-observable-universe/mass-application/bring-trilog-depth-3-witness.md",
-    "lean": "content/quantum-observable-universe/mass-application/bring-trilog-depth-3-witness.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.ts",
+    "md": "content/quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.md",
+    "lean": "content/quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.lean"
   },
   "source_hashes": {
-    "md": "82a014de2bb3",
-    "ts": "c288d4aadcb7",
+    "md": "a89e1e2979e9",
+    "ts": "06242919eef5",
     "lean": "fc86ec3f7dd0"
   },
   "criteria": {
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "a89e1e2979e9",
+          "ts": "06242919eef5",
+          "lean": "fc86ec3f7dd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -697,6 +714,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "a89e1e2979e9",
+          "ts": "06242919eef5",
+          "lean": "fc86ec3f7dd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1415,5 +1449,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

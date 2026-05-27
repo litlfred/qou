@@ -3,13 +3,13 @@
   "label": "prop:confinement-nf-partial-proof",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/confinement-nf-partial-proof.ts",
-    "md": "content/quantum-observable-universe/mass-application/confinement-nf-partial-proof.md",
-    "lean": "content/quantum-observable-universe/mass-application/confinement-nf-partial-proof.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.ts",
+    "md": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md",
+    "lean": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean"
   },
   "source_hashes": {
-    "md": "28ac3fa8e2f3",
-    "ts": "947aacc80335",
+    "md": "2c4dccef9c95",
+    "ts": "a8b5b892e4a9",
     "lean": "683dfbda4401"
   },
   "criteria": {
@@ -459,6 +459,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "2c4dccef9c95",
+          "ts": "a8b5b892e4a9",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1365,6 +1382,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "2c4dccef9c95",
+          "ts": "a8b5b892e4a9",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "detangler-section-band": [
@@ -2049,5 +2083,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

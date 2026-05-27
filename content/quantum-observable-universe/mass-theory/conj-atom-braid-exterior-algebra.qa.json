@@ -1,16 +1,16 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:atom-braid-exterior-algebra",
-  "kind": "conjecture",
+  "label": "prop:atom-braid-exterior-algebra",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/conj-atom-braid-exterior-algebra.ts",
-    "md": "content/quantum-observable-universe/mass-application/conj-atom-braid-exterior-algebra.md",
-    "lean": "content/quantum-observable-universe/mass-application/conj-atom-braid-exterior-algebra.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.ts",
+    "md": "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.md",
+    "lean": "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean"
   },
   "source_hashes": {
     "md": "af3f69d226c8",
-    "ts": "07d3e99605cc",
-    "lean": "965c4bbd245e"
+    "ts": "b7a7a2e7c7d7",
+    "lean": "dc48d2cd9d27"
   },
   "criteria": {
     "proof-no-bare-sorries": [
@@ -30,6 +30,23 @@
         },
         "reviewed_at": "2026-05-26T13:28:47.036Z",
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
+      },
+      {
+        "field_hash": {
+          "md": "af3f69d226c8",
+          "ts": "b7a7a2e7c7d7",
+          "lean": "dc48d2cd9d27"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -91,7 +108,26 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/conj-atom-braid-exterior-algebra.lean:35: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "af3f69d226c8",
+          "ts": "b7a7a2e7c7d7",
+          "lean": "dc48d2cd9d27"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
+      }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

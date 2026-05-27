@@ -3,14 +3,14 @@
   "label": "prop:three-halves-structural-factor",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/three-halves-structural-factor.ts",
-    "md": "content/quantum-observable-universe/mass-application/three-halves-structural-factor.md",
-    "lean": "content/quantum-observable-universe/mass-application/three-halves-structural-factor.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.ts",
+    "md": "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.md",
+    "lean": "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.lean"
   },
   "source_hashes": {
-    "md": "30f7732e8805",
+    "md": "24b823334b0f",
     "ts": "b418b683ea7c",
-    "lean": "9b3c70dad9f9"
+    "lean": "048733515887"
   },
   "criteria": {
     "voice-status-leak": [
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "24b823334b0f",
+          "ts": "b418b683ea7c",
+          "lean": "048733515887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1243,6 +1260,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "24b823334b0f",
+          "ts": "b418b683ea7c",
+          "lean": "048733515887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1912,5 +1946,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

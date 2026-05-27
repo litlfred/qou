@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "543607a3ce16",
     "ts": "91b22c7f81f1",
-    "lean": "7f82ea9a4f3a"
+    "lean": "a7b829d634a0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "543607a3ce16",
+          "ts": "91b22c7f81f1",
+          "lean": "a7b829d634a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1317,6 +1334,23 @@
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.ts:1: declared witness 'folio-assistant/computations/baryon-product-from-alt.witness.json' does not exist on disk"
+      },
+      {
+        "field_hash": {
+          "md": "543607a3ce16",
+          "ts": "91b22c7f81f1",
+          "lean": "a7b829d634a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -2037,5 +2071,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

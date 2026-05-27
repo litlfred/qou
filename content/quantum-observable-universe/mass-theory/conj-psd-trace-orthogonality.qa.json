@@ -1,16 +1,16 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:psd-trace-orthogonality",
-  "kind": "conjecture",
+  "label": "prop:psd-trace-orthogonality",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/conj-psd-trace-orthogonality.ts",
-    "md": "content/quantum-observable-universe/mass-application/conj-psd-trace-orthogonality.md",
-    "lean": "content/quantum-observable-universe/mass-application/conj-psd-trace-orthogonality.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality.ts",
+    "md": "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality.md",
+    "lean": "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality.lean"
   },
   "source_hashes": {
-    "md": "5b0fdf74df26",
-    "ts": "005cccc8d620",
-    "lean": "6fb5262f95a5"
+    "md": "03e02e54db92",
+    "ts": "96f047e1da52",
+    "lean": "def528befd82"
   },
   "criteria": {
     "proof-no-bare-sorries": [
@@ -30,6 +30,23 @@
         },
         "reviewed_at": "2026-05-26T13:28:47.036Z",
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
+      },
+      {
+        "field_hash": {
+          "md": "03e02e54db92",
+          "ts": "96f047e1da52",
+          "lean": "def528befd82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -91,7 +108,26 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/conj-psd-trace-orthogonality.lean:41: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "03e02e54db92",
+          "ts": "96f047e1da52",
+          "lean": "def528befd82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
+      }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

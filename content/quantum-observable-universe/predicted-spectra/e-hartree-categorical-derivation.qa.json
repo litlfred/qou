@@ -1,7 +1,7 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:e-hartree-categorical-derivation",
-  "kind": "conjecture",
+  "label": "prop:e-hartree-categorical-derivation",
+  "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.ts",
     "md": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md",
@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "68792ab7c0c4",
-    "ts": "2a5d58739ac8",
-    "lean": "9c5e81ae9ac0"
+    "ts": "645458479801",
+    "lean": "16317b916710"
   },
   "criteria": {
     "compute-lp-dual-present": [
@@ -769,6 +769,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "68792ab7c0c4",
+          "ts": "645458479801",
+          "lean": "16317b916710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1229,6 +1246,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "68792ab7c0c4",
+          "ts": "645458479801",
+          "lean": "16317b916710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "detangler-section-band": [
@@ -2057,5 +2091,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

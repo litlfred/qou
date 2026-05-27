@@ -3,13 +3,13 @@
   "label": "prop:crystal-r-matrix-sub-lemma",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/crystal-r-matrix-sub-lemma.ts",
-    "md": "content/quantum-observable-universe/mass-application/crystal-r-matrix-sub-lemma.md",
-    "lean": "content/quantum-observable-universe/mass-application/crystal-r-matrix-sub-lemma.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.ts",
+    "md": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.md",
+    "lean": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean"
   },
   "source_hashes": {
-    "md": "8e0a4d5185dd",
-    "ts": "bc3c6eaff9d2",
+    "md": "20fd4a7f2ddc",
+    "ts": "cc36b6fcc9da",
     "lean": "da6cfc560933"
   },
   "criteria": {
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "20fd4a7f2ddc",
+          "ts": "cc36b6fcc9da",
+          "lean": "da6cfc560933"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1313,6 +1330,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "20fd4a7f2ddc",
+          "ts": "cc36b6fcc9da",
+          "lean": "da6cfc560933"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -2031,5 +2065,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

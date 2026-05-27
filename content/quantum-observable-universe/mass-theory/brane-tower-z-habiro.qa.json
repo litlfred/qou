@@ -1,16 +1,16 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:brane-tower-z-habiro",
-  "kind": "conjecture",
+  "label": "prop:brane-tower-z-habiro",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/brane-tower-z-habiro.ts",
-    "md": "content/quantum-observable-universe/mass-application/brane-tower-z-habiro.md",
-    "lean": "content/quantum-observable-universe/mass-application/brane-tower-z-habiro.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.ts",
+    "md": "content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md",
+    "lean": "content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean"
   },
   "source_hashes": {
-    "md": "54f0a0c067f7",
-    "ts": "c81e299d08fa",
-    "lean": "9141ad8a07f0"
+    "md": "1615e990d074",
+    "ts": "c58d3f54f38d",
+    "lean": "fecc1ddb202c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "1615e990d074",
+          "ts": "c58d3f54f38d",
+          "lean": "fecc1ddb202c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -701,6 +718,23 @@
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/brane-tower-z-habiro.ts:1: declared witness 'folio-assistant/computations/probe-phiq-uniform-k.witness.json' does not exist on disk | content/quantum-observable-universe/mass-application/brane-tower-z-habiro.ts:1: declared witness 'folio-assistant/computations/probe-phiq-n-star-rule.witness.json' does not exist on disk | content/quantum-observable-universe/mass-application/brane-tower-z-habiro.ts:1: declared witness 'folio-assistant/computations/probe-phiq-operator-valued.witness.json' does not exist on disk | content/quantum-observable-universe/mass-application/brane-tower-z-habiro.ts:1: declared witness 'folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json' does not exist on disk | content/quantum-observable-universe/mass-application/brane-tower-z-habiro.ts:1: declared witness 'folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json' does not exist on disk"
+      },
+      {
+        "field_hash": {
+          "md": "1615e990d074",
+          "ts": "c58d3f54f38d",
+          "lean": "fecc1ddb202c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1421,5 +1455,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

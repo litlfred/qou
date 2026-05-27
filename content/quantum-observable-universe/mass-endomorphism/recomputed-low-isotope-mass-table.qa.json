@@ -3,11 +3,11 @@
   "label": "rem:recomputed-low-isotope-mass-table",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/recomputed-low-isotope-mass-table.ts",
-    "md": "content/quantum-observable-universe/mass-theory/recomputed-low-isotope-mass-table.md"
+    "ts": "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.md"
   },
   "source_hashes": {
-    "md": "1839c1e846f7",
+    "md": "c1e1c8f2f6d8",
     "ts": "cf595534d8cc"
   },
   "criteria": {
@@ -789,6 +789,22 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "c1e1c8f2f6d8",
+          "ts": "cf595534d8cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "detangler-section-band": [
@@ -1590,5 +1606,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:26:49.037Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

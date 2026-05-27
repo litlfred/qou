@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:spin-from-so3-fiber",
-  "kind": "conjecture",
+  "label": "prop:spin-from-so3-fiber",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/statistics-symmetrisation/spin-from-so3-fiber.ts",
-    "md": "content/quantum-observable-universe/statistics-symmetrisation/spin-from-so3-fiber.md",
-    "lean": "content/quantum-observable-universe/statistics-symmetrisation/spin-from-so3-fiber.lean"
+    "ts": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.ts",
+    "md": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md",
+    "lean": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean"
   },
   "source_hashes": {
-    "md": "260d459dfc55",
-    "ts": "2b0ace8642dc",
+    "md": "bb767084a6b2",
+    "ts": "d605d26eae41",
     "lean": "235f1d742205"
   },
   "criteria": {
@@ -568,6 +568,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "bb767084a6b2",
+          "ts": "d605d26eae41",
+          "lean": "235f1d742205"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -943,6 +960,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "bb767084a6b2",
+          "ts": "d605d26eae41",
+          "lean": "235f1d742205"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1733,5 +1767,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

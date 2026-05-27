@@ -3,14 +3,14 @@
   "label": "def:hq-bi-filtration",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/hq-bi-filtration.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/hq-bi-filtration.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/hq-bi-filtration.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/hq-bi-filtration.ts",
+    "md": "content/quantum-observable-universe/mass-theory/hq-bi-filtration.md",
+    "lean": "content/quantum-observable-universe/mass-theory/hq-bi-filtration.lean"
   },
   "source_hashes": {
-    "md": "859588b1517d",
-    "ts": "ebe4693baf97",
-    "lean": "671abb4d8fdf"
+    "md": "102a6e9c84e3",
+    "ts": "5577c1d46630",
+    "lean": "5acae9574d86"
   },
   "criteria": {
     "voice-status-leak": [
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "102a6e9c84e3",
+          "ts": "5577c1d46630",
+          "lean": "5acae9574d86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-build-green": [
@@ -814,6 +831,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "102a6e9c84e3",
+          "ts": "5577c1d46630",
+          "lean": "5acae9574d86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1534,5 +1568,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

@@ -1,14 +1,14 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:block-multiplicativity-v-free",
-  "kind": "conjecture",
+  "label": "rem:block-multiplicativity-v-free",
+  "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/block-multiplicativity-v-free.ts",
-    "md": "content/quantum-observable-universe/mass-application/block-multiplicativity-v-free.md"
+    "ts": "content/quantum-observable-universe/mass-theory/block-multiplicativity-v-free.ts",
+    "md": "content/quantum-observable-universe/mass-theory/block-multiplicativity-v-free.md"
   },
   "source_hashes": {
     "md": "7732fe7d1920",
-    "ts": "c48f54dfc7cc"
+    "ts": "dd6d1a6a3d19"
   },
   "criteria": {
     "voice-status-leak": [
@@ -890,6 +890,22 @@
         },
         "reviewed_at": "2026-05-26T13:11:16.247Z",
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
+      },
+      {
+        "field_hash": {
+          "md": "7732fe7d1920",
+          "ts": "dd6d1a6a3d19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1778,5 +1794,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

@@ -808,6 +808,22 @@
         },
         "reviewed_at": "2026-05-26T14:13:35.262Z",
         "reviewed_sha": "4a658d3efc0c0d264260d3e94d4447f8ab875f22"
+      },
+      {
+        "field_hash": {
+          "md": "6afad786d8fa",
+          "ts": "264506fdac90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1708,5 +1724,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:26:49.037Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

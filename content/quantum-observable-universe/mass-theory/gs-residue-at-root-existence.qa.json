@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:gs-residue-at-root-existence",
-  "kind": "conjecture",
+  "label": "prop:gs-residue-at-root-existence",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/gs-residue-at-root-existence.ts",
-    "md": "content/quantum-observable-universe/mass-application/gs-residue-at-root-existence.md",
-    "lean": "content/quantum-observable-universe/mass-application/gs-residue-at-root-existence.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.ts",
+    "md": "content/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.md",
+    "lean": "content/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.lean"
   },
   "source_hashes": {
-    "md": "c7585b8cee04",
-    "ts": "8fbfc73110ff",
+    "md": "97e239d97c90",
+    "ts": "9fe7b159feee",
     "lean": "d7e2c6c45052"
   },
   "criteria": {
@@ -407,6 +407,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "97e239d97c90",
+          "ts": "9fe7b159feee",
+          "lean": "d7e2c6c45052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -697,6 +714,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "97e239d97c90",
+          "ts": "9fe7b159feee",
+          "lean": "d7e2c6c45052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1415,5 +1449,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

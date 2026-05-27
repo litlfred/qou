@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:kashaev-density-equals-sdp-multiplicity",
-  "kind": "conjecture",
+  "label": "prop:kashaev-density-equals-sdp-multiplicity",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/kashaev-density-equals-sdp-multiplicity.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/kashaev-density-equals-sdp-multiplicity.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/kashaev-density-equals-sdp-multiplicity.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts",
+    "md": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
+    "lean": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean"
   },
   "source_hashes": {
     "md": "9c3e3c9807d5",
-    "ts": "86dcb6844461",
+    "ts": "9100c42e304a",
     "lean": "2f93c5f03be4"
   },
   "criteria": {
@@ -562,6 +562,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "9c3e3c9807d5",
+          "ts": "9100c42e304a",
+          "lean": "2f93c5f03be4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -943,6 +960,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "9c3e3c9807d5",
+          "ts": "9100c42e304a",
+          "lean": "2f93c5f03be4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -1733,5 +1767,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }

@@ -1,16 +1,16 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:algebraic-geometric-dilog-equivalence",
-  "kind": "conjecture",
+  "label": "prop:algebraic-geometric-dilog-equivalence",
+  "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts",
     "md": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md",
     "lean": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean"
   },
   "source_hashes": {
-    "md": "ff49701d43fe",
-    "ts": "fae8233f515f",
-    "lean": "ecec86629f96"
+    "md": "710e9d96e652",
+    "ts": "78a67c74a16d",
+    "lean": "a684ebd4c76f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -717,6 +717,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "710e9d96e652",
+          "ts": "78a67c74a16d",
+          "lean": "a684ebd4c76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:28:41.034Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1177,6 +1194,23 @@
         },
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "710e9d96e652",
+          "ts": "78a67c74a16d",
+          "lean": "a684ebd4c76f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "70853d274436",
+          "script_commit_sha": "8a00323ca156fd987bf98fefc66fb8083e11e269"
+        },
+        "reviewed_at": "2026-05-27T22:29:15.536Z",
+        "reviewed_sha": "79302a783995cc62b53cba40fccf0b2b0dd58398"
       }
     ],
     "compute-lp-dual-present": [
@@ -2041,5 +2075,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-27T22:29:15.536Z"
 }
