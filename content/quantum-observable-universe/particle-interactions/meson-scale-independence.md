@@ -69,7 +69,7 @@ cohomology of the knot complement lattice:
 |-----|-------|-----------|---------------|---------------------|
 | **CAL-1** | $m_\mathfrak{e}$ | $h^0$ | — (the scale) | $H^0$ — scalar coefficient ring |
 | **CAL-2** | $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$ | $h^2$ | $\mu \to \mathfrak{e} + \nu + \bar\nu$ (lepton decay) | $H^2$ — Borel regulator class (dilogarithm period) |
-| **CAL-3** | $m_\pi$ | $h^3$ | $\pi \to \mu + \nu$ (meson decay) | $H^3$ — Chern–Simons class (parity-odd, chiral) |
+| **CAL-3** | $m_\pi$ | $h^3$ | $\pi \to \mu + \nu$ (meson decay) | $H^3$ — degree-3 motivic class (parity-odd, chiral) |
 
 **CAL-2 as lepton decay.** The muon-anchor identity
 $m_\mu / m_\mathfrak{e} = \mathrm{Vol}(4_1) / \hbar_q^2$
@@ -79,15 +79,16 @@ transition knot $4_1$ back to the trefoil $T(2,3)$.  The
 decay width $\mathfrak{D}_\mu \propto \mathfrak{m}_\mu^5$ is determined
 by the $h^2$ jet order of the deformation parameter.
 
-**CAL-3 as meson decay.** The pion mass enters through the
-PCAC relation $m_\pi^2 f_\pi^2 = -m_q \langle\bar{q}q\rangle$
-(Gell-Mann–Oakes–Renner), which ties $m_\pi$ to chiral symmetry
-breaking.  The decay $\pi \to \mu + \nu$ is the Hopf link
-breaking: the meson's $q\bar{q}$ binding unravels into a
-lepton pair.  The pion decay constant $f_\pi \approx 92\,\mathrm{MeV}$
-is the CAL-3 scale.  This enters the $h$-expansion at $h^3$ order
-(the flavor-split $X = h^3/6 + \cdots$ is the first parity-odd
-contribution).
+**CAL-3 as meson decay.** The pion decay $\pi \to \mu + \nu$
+is categorically the Hopf link breaking: the meson's $q\bar{q}$
+binding unravels into a lepton pair.  The pion mass $m_\pi$
+encodes the energy scale at which this binding becomes unstable.
+In standard QCD, this scale is tied to chiral symmetry breaking
+via the PCAC relation; in the categorical framework, it is the
+energy at which the Hopf link's confinement SDP becomes infeasible.
+This enters the $h$-expansion at $h^3$ order (the flavor-split
+$X = h^3/6 + \cdots$ is the first odd-$h$ contribution, carried
+by the skein difference between baryon braids).
 
 **Why no $H^1$ calibration.** The bar involution $q \mapsto q^{-1}$
 forces all Markov traces of writhe-zero braids to be **even
@@ -98,15 +99,25 @@ of $h$) in any single-braid Markov trace.
 **Why $h^3$ survives despite bar evenness.** The flavor split
 $X = (q-1)^2(1-q^{-4})/3 = h^3/6 + \cdots$ is NOT a single-braid
 Markov trace — it is the **skein difference** between the proton
-and neutron braids, involving $\sigma - \sigma^{-1} = h$.  The
-skein relation is inherently odd in $h$ (it measures the difference
-between positive and negative crossings).  Each individual Markov
-trace $\mathrm{tr}_M(\text{proton})$ and $\mathrm{tr}_M(\text{neutron})$
-is even in $h$, but their RATIO $(m_n - m_p)/M_N$ extracts the
-odd-$h$ skein content.  The $h^3$ jet order is the first
-non-vanishing odd order because $h^1$ in the skein difference is
-further suppressed by the 3-quark baryon structure (the factor
-$1/3$ from the 3-strand average).
+and neutron braids.  Each individual Markov trace is even in $h$,
+but their ratio $(m_n - m_p)/M_N$ extracts the odd-$h$ content.
+
+Why $h^3$ and not $h^1$: the two factors in $X$ have different
+$h$-orders.  The **substrate Planck factor** $(q-1)^2 \approx h^2/4$
+contributes $h^2$ (the squared deformation from $q = 1$).  The
+**flavor-swap factor** $(1 - q^{-4}) \approx 2h$ contributes $h^1$
+(the skein gap $\sigma - \sigma^{-1} = h$, probing the Hecke
+eigenvalue difference).  The product is $h^2 \cdot h^1 = h^3$:
+
+$$
+  X = \frac{(q-1)^2(1-q^{-4})}{3}
+  \approx \frac{(h^2/4)(2h)}{3} = \frac{h^3}{6}.
+$$
+
+The $h^1$ jet order is absent because seeing the flavor difference
+costs two powers of the substrate Planck action $\hbar_q = (q-1)/q$
+— one cannot resolve the $u$/$d$ skein gap without paying the
+$\hbar_q^2$ substrate cost.
 
 **Jet order ↔ filtration level.** The GS filtration on
 $H_n(q)$ grades the Hecke algebra by braid-word length.  The

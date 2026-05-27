@@ -10,6 +10,9 @@
   -- Ref: [kashaev1997] https://doi.org/10.1007/s100529801020
 -/
 
+import Mathlib.Tactic.FinCases
+import Mathlib.Tactic.Omega
+
 namespace QOU.ParticleInteractions
 
 -- ═══════════════════════════════════════════════════════════════
@@ -95,31 +98,25 @@ theorem meson_nf_classical_limit :
   unfold canonicalMesonNF
   simp
 
-/-- The dominant NF coefficient is L₊ for all h with |h| < 1.
-  At the substrate h₀ ≈ 0.209: L₊ coeff = h²+1 ≈ 1.044,
-  while σ₁ coeff = h ≈ 0.209 and L₋ coeff = h² ≈ 0.044. -/
-theorem Lplus_dominates_at_small_h (h : ℤ) (hh : 0 < h) (hh1 : h < 1) :
-    canonicalMesonNF.coeff_sigma1 h < canonicalMesonNF.coeff_Lplus h := by
-  unfold canonicalMesonNF
-  simp
-  omega
+/-- At h=0 (classical limit), L₊ has coefficient 1 while all
+  other basis elements have coefficient 0. The Hopf binding
+  topology dominates the meson NF in the classical limit. -/
+theorem Lplus_is_sole_classical_contribution :
+    canonicalMesonNF.coeff_Lplus 0 = 1 ∧
+    canonicalMesonNF.coeff_sigma1 0 = 0 ∧
+    canonicalMesonNF.coeff_Lminus 0 = 0 ∧
+    canonicalMesonNF.coeff_eminus 0 = 0 := by
+  unfold canonicalMesonNF; simp
 
 -- ═══════════════════════════════════════════════════════════════
 -- §4  HIGHEST-WEIGHT / LOWEST-WEIGHT DUALITY
 -- ═══════════════════════════════════════════════════════════════
 
-/-- The lepton braid σⁿ evaluates to qⁿ on the highest-weight
-  (trivial) partition and (-q⁻¹)ⁿ on the lowest-weight (sign)
-  partition. For leptons, the highest-weight eigenvalue dominates
-  the mass formula.
-
-  The meson braid M₊ mixes both eigenspaces through the Hopf
-  binding, so both q and -q⁻¹ eigenvalues contribute. This is
-  the structural content of the highest/lowest weight duality. -/
-theorem lepton_braid_eigenvalues (n : ℕ) :
-    -- The trivial-rep character of σⁿ is q^n (integer exponent)
-    -- The sign-rep character is (-1/q)^n = (-1)^n / q^n
-    -- Both are pure powers — no mixing
-    n = n := rfl
+/-- The kaon-pion crossing difference equals the muon-electron
+  torus-knot step: both transitions add 2 crossings.
+  Kaon = pion + 2 crossings; muon = electron + 2 crossings. -/
+theorem flavor_transition_matches_lepton_step :
+    mesonCrossingCount 0 2 - mesonCrossingCount 0 1 =
+    leptonTorusKnotIndex 1 - leptonTorusKnotIndex 0 := rfl
 
 end QOU.ParticleInteractions
