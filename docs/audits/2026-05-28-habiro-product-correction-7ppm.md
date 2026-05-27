@@ -33,14 +33,23 @@ This gives:
 - c₂ = 29/30 ≈ 0.9667 (observed: 0.9671 — match to 0.04%)
 - c₄ = −1/30 ≈ −0.0333
 
-## Why p(n) = 30?
+## Algebraic mechanism
 
-p(9) = 30 is the number of irreducible representations of S₉,
-equivalently the number of Wedderburn blocks of H₉(q). The 1/p(n)
-factor suggests a **block-averaging** effect: the Habiro cyclotomic
-basis distributes over all p(n) blocks, while the Wenzl/seminormal
-basis used by tr_M has non-uniform weights y_λ. The mismatch at ℏ²
-order is exactly 1/p(n).
+The Habiro sum uses **(q;q)_m = Π(1−q^k)** while the Markov trace
+uses **(u;u)_m = Π(1−u^k)** with u=√q, divided by denom=4u²¹+4u¹⁹.
+
+The key identity: **(1−q^k) = (1−u^k)(1+u^k)** since q=u².
+
+Therefore:
+```
+hab_A / hab_B = <Π_{k=1}^m (1+u^k)>_{Habiro}
+bridge = denom × <Π(1+u^k)>_{Habiro} ≈ 127.73
+```
+
+The Plancherel × Vol/ℏ² × (1+ℏ²)(1−ℏ²/30) approximation to this
+bridge holds to 7.8 ppm. The 30 = p(9) coincidence (number of
+partitions of 9 = number of Wedderburn blocks) remains suggestive
+but the direct mechanism is the Pochhammer convention ratio.
 
 ## Remaining 7.8 ppm
 
