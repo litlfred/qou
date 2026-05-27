@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T01:01:17.909451+00:00",
-  "commitSha": "3e11b0795f9eab59bb14f92436005d8b42e3c784",
+  "computedAt": "2026-05-27T03:00:04.670554+00:00",
+  "commitSha": "518f2852c914d248d0eec067c1d8a248f22b862e",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2138,6 +2138,7 @@
         "c3-taylor-extraction.witness.json",
         "c5-decomposition-probe.witness.json",
         "cal-3-q-beta.witness.json",
+        "cal3-meson-decay-binding-amplitude.witness.json",
         "cal4-disguise-hunt.witness.json",
         "canonical-4he-via-jones-markov-test.witness.json",
         "canonical-a-k-magnitude-audit.witness.json",
@@ -2427,6 +2428,7 @@
         "habiro-coefficients-extended.witness.json",
         "habiro-coefficients-interpolate.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
+        "habiro-exact-qbeta.witness.json",
         "habiro-expansion-atomic-probe.witness.json",
         "habiro-frobenius-probe.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
@@ -2568,6 +2570,7 @@
         "meson-geom-full.witness.json",
         "meson-lepton-knot-dictionary-probe.witness.json",
         "meson-mass-from-hecke.witness.json",
+        "meson-symmetry-bar-involution.witness.json",
         "methodology-deprecation.witness.json",
         "molecular-frobenius-lp.witness.json",
         "molecular-trefoil-scan.witness.json",
@@ -2699,6 +2702,7 @@
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
         "q-values-derived.witness.json",
+        "qbeta-1ppq-achieved.witness.json",
         "qbeta-decay-sdp-extended-ck.witness.json",
         "qbeta-decay-sdp-full-ck-derivation.witness.json",
         "qbeta-decay-sdp-knot-operator.witness.json",

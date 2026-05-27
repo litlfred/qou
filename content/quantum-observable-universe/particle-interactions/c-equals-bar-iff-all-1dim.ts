@@ -1,0 +1,24 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:c-equals-bar-iff-all-1dim",
+  title:
+    "Charge conjugation equals bar involution iff all irreps are one-dimensional",
+  uses: [
+    "def:categorical-meson",
+    "prop:lepton-meson-torus-knot-dictionary",
+  ],
+  cites: [
+    "jones1987",
+    "wenzl1988hecke",
+  ],
+  tags: [
+    "charge-conjugation",
+    "bar-involution",
+    "CPT",
+    "lepton",
+    "meson",
+    "standard-representation",
+    "matter-antimatter",
+  ],
+});
