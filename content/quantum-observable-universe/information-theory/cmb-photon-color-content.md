@@ -77,7 +77,7 @@ power spectrum.
 ## Condensation: the first Planck step
 
 When the Reeb flow $f_q$ acts on the boundary datum
-([aeon recycling](#conj:aeon-boundary-generates-chart)),
+([aeon recycling](#rem:aeon-boundary-generates-chart)),
 the degree-$1$ color content $(\varphi_0, \varphi_1)$
 reconstitutes degree-$0$ identities via the Hecke relation:
 

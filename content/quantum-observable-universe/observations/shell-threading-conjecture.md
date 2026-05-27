@@ -1,5 +1,5 @@
 The shell energy scale $\lambda_{\mathrm{shell}}$
-([Skein shell correction](#conj:skein-shell-correction)) is not a
+([Skein shell correction](#rem:skein-shell-correction)) is not a
 free parameter.  It is the crossing energy of the **Skein smoothing**
 $L_0$ at the beta-decay vertex — the threading link that
 interpolates between the parent and daughter nuclear configurations.

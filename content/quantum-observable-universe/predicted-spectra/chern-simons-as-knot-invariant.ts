@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "conj:em-coupling-chern-simons",
+  interprets: "rem:em-coupling-chern-simons",
   label: "rem:chern-simons-as-knot-invariant",
   title: "Classical Chern--Simons as a non-hyperbolic knot invariant",
   tags: [
@@ -12,7 +12,7 @@ export default remark({
     "fine-structure",
   ],
   uses: [
-    "conj:em-coupling-chern-simons",
+    "rem:em-coupling-chern-simons",
     "rem:categorical-action-vs-chern-simons",
   ],
   cites: [

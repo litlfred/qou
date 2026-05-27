@@ -2,7 +2,7 @@
 *Let $A = H_n(R_\mathbb{C}, q)$ with $R_\mathbb{C} = R \otimes
 \mathbb{Z}[i]$ the complexified ground ring, allowing
 $q = |q| \exp(i\theta)$ as in
-([complex chirality rotation](#conj:complex-chirality-rotation)).
+([complex chirality rotation](#rem:complex-chirality-rotation)).
 For a hadronic braid $\beta_\mathcal{K} \in B_n$ the CP-violating
 discriminant is the imaginary part of the alternating/symmetric
 Wedderburn-block trace ratio*
@@ -65,7 +65,7 @@ non-amphicheiral $\bar{u}s$ configuration) is the empirical test
 case.
 
 *Remark.* This conjecture is downstream of
-([complex chirality rotation](#conj:complex-chirality-rotation)),
+([complex chirality rotation](#rem:complex-chirality-rotation)),
 which is itself conjectural.  Promotion to a proposition requires:
 (a) a categorical proof that $R_\mathbb{C}$-enrichment is the
 unique CP-violating extension, (b) a quantitative match between

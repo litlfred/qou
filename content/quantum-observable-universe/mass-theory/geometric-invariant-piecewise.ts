@@ -7,7 +7,7 @@ export default remark({
   uses: [
     "thm:topological-mass",
     "prop:nuclear-knot-classification",
-    "conj:em-coupling-chern-simons",
+    "rem:em-coupling-chern-simons",
   ],
   tags: [
     "thurston-geometrization",

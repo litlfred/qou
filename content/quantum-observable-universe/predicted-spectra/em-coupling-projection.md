@@ -236,7 +236,7 @@ $0.155\%$ (bare formula) to $399\;\mathrm{ppb}$. **However, audit
 shows** the $\kappa \approx 1.722$ value used here was admitted as
 `sorry` in the Lean formalisation and never closed; matching CODATA
 exactly requires $\kappa \approx 1.8878$. See
-[`conj:em-coupling-chern-simons`](#conj\:em-coupling-chern-simons) for
+[`rem:em-coupling-chern-simons`](#conj\:em-coupling-chern-simons) for
 the demoted statement and [open problems](#rem\:alpha-em-derivation-open-problems)
 for the path forward.
 

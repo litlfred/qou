@@ -42,7 +42,7 @@ The smooth formula captures the **trend** (neutron excess
 growing from $0\%$ to $60\%$) from the single parameter $q$.
 The residuals encode the **shell structure** —
 the stability pairs — which is the open question of the
-[elliptic stability conjecture](#conj:elliptic-stability-locus).
+[elliptic stability conjecture](#rem:elliptic-stability-locus).
 
 **Formal witness.**
 The predicted and observed neutron numbers for all $103$

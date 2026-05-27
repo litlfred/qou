@@ -3,7 +3,7 @@ import { prose } from "../../schema/builders";
 export default prose({
   label: "sec:cp-violation-evidence",
   uses: [
-    "conj:complex-chirality-rotation",
+    "rem:complex-chirality-rotation",
     "prop:crossing-energy-decomposition",
   ],
   tags: [

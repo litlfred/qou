@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:electron-shells-hopf",
+export default remark({
+  label: "rem:electron-shells-hopf",
   title:
     "Electron shells as closed sub-Hopf links of the trefoil chain",
   lean: {

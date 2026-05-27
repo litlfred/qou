@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:shell-threading-energy",
+export default remark({
+  label: "rem:shell-threading-energy",
   title:
     "Shell energy from the Skein smoothing at the beta-decay vertex",
   lean: {
