@@ -141,6 +141,7 @@ export default chapter({
         "q-casimir-unique-proof",
         "r-matrix-braiding-structure",
         "r-matrix-braiding",
+        "pontryagin-dual-coxeter-character",
       ],
     }),
 

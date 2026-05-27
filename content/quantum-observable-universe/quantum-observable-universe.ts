@@ -76,7 +76,12 @@ export default paper({
     }),                                                       // Braids, knots, Hecke, mass machinery (further split per remaining Phase 4 chunks)
     chapterRef({ dir: "climax-volume-mass" }),                 // [NEW Ch 6 — Phase 4] q-Hyperbolic, Vol, tangle energies, vertex factorisation, Kashaev — climax of Part II's first half
     chapterRef({ dir: "brings-surface" }),                     // [NEW Ch 7 — Phase 5] Bring's surface (deep): χ = −6, S_5/A_5 action, cohomological defect — split from archimedean-universe
-    chapterRef({ dir: "statistics-symmetrisation" }),          // [NEW Ch 8 — Phase 6 scaffold] Pauli, spin-statistics, fermion/boson derivation
+    // statistics-symmetrisation dissolved (2026-05-27): 7-block scaffold
+    // never populated; 5 orphan blocks redistributed to braids-and-knots
+    // (pontryagin-dual-coxeter-character) and particle-interactions
+    // (spin-from-so3-fiber, type-b-folding-cpt, weinberg-angle-categorical,
+    // wigner-su4-from-spin-isospin). Pauli/spin-stats content remains a
+    // future authoring goal — will create a new chapter when content exists.
     chapterRef({ dir: "particle-interactions" }),              // Ch 9 Particles: GB, LP, nuclear structure, SDP-as-thimble + skein/hadron/atom-shell content migrated from braids-and-knots
     chapterRef({ dir: "mass-theory" }),                        // [NEW Ch 10 — Phase 4] Mass — Theory (light): Wedderburn, Frobenius pairing, transfer matrix, categorical mass foundations
     chapterRef({ dir: "mass-application" }),                   // [NEW Ch 11 — Phase 4] Mass — Application (heavy): Hoefsmit construction, Wenzl, Markov-peel, GS reductions, LP/SDP, φ_q convergence
