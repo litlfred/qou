@@ -20,7 +20,7 @@ paper to keep them disambiguated:
       \approx 4.228$ MeV. Sets the MeV-per-dimensionless-trace-unit
       conversion for hadronic predictions.
     - $Q_\beta(n) = 0.78233341\,\text{MeV}$ — the **free-neutron
-      $\beta$-decay Q-value**, CAL-3 calibration input. Used as
+      $\beta$-decay Q-value**, derived from CAL-2 ($\mathfrak{D}_\beta$). Used as
       the binding-energy-scale multiplier in
       [`prop:categorical-mass-markov`](../braids-and-knots/categorical-mass-markov.md)'s
       explicit binding formula $B = Q_\beta(n) \cdot (|\mathrm{tr}_M(W_{\text{free}})| - |\mathrm{tr}_M(W_{\text{atom}})|)$.

@@ -5,11 +5,11 @@ input is permitted — every other mass, Q-value, binding energy,
 coupling constant, mixing angle, and dimensionless ratio in the paper
 is a prediction.*
 
-| ID | Quantity | What it fixes | Sector |
-|----|----------|--------------|--------|
-| **CAL-1** | $m_e = 0.51099895\ldots\;\mathrm{MeV}$ | leptonic mass scale (MeV $\leftrightarrow$ natural units) | leptonic size |
-| **CAL-2** | $m_\mu / m_e = 206.7682830\ldots$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
-| **CAL-3** | $m_{\pi^{\pm}} = 139.57039\ldots\;\mathrm{MeV}$ | chiral / Goldstone scale; independent of $(m_e, q_0)$ — best categorical formula misses by $8{,}354\;\mathrm{ppm}$ | strong-sector mass (chiral condensate) |
+| ID | Observable | Measurement | What it fixes | Jet order |
+|----|-----------|-------------|--------------|-----------|
+| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | leptonic mass scale | $h^0$ |
+| **CAL-2** | $\mathfrak{D}_\beta$ | neutron $\beta$-decay width ($\tau_n$) | substrate $q_0$ via $Q_\beta \to$ substrate identity | $h^2$ |
+| **CAL-3** | $\mathfrak{D}_\pi$ | pion decay width ($\tau_\pi$) | meson mass scale $m_\pi$; independent of $(m_\mathfrak{e}, q_0)$ | $h^3$ |
 
 *The three inputs are independent: one dimensionless ratio plus two
 dimensional scales. They align to the three (co)homological degrees

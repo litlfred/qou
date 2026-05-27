@@ -1,6 +1,6 @@
 **Proposition (proton-mass substrate identity).**
 *Let $q_0 \approx 1.10978$ be the substrate parameter, $m_e$ the
-electron mass (CAL-1), $m_\mu$ the muon mass (CAL-2 via $m_\mu/m_e$),
+electron mass (CAL-1), $m_\mu$ the muon mass (derived from CAL-2 $\mathfrak{D}_\beta$),
 and let*
 
 $$
