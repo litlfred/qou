@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T00:15:45.985020+00:00",
-  "commitSha": "3827f34906c2ec721426697caa1d395e930e9c8c",
+  "computedAt": "2026-05-27T00:50:59.170648+00:00",
+  "commitSha": "061b1b59e7b17a33d8d7a87203d4cfceddb1d2e2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2432,6 +2432,7 @@
         "habiro-motivic-orbit-relations.witness.json",
         "habiro-residue-a1.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
+        "habiro-to-precision-ladder-verification.witness.json",
         "hadron-knot-table.witness.json",
         "hardcoded-literal-audit.witness.json",
         "he4-burau-alexander.witness.json",
@@ -2563,7 +2564,11 @@
         "mass-tower-operator-valued.witness.json",
         "meson-geom-full.witness.json",
         "meson-lepton-knot-dictionary-probe.witness.json",
+        "meson-mass-from-cal3-derivation.witness.json",
         "meson-mass-from-hecke.witness.json",
+        "meson-mass-string-breaking-derivation.witness.json",
+        "meson-sdp-shadow-price-probe.witness.json",
+        "meson-transition-knot-probe.witness.json",
         "methodology-deprecation.witness.json",
         "molecular-frobenius-lp.witness.json",
         "molecular-trefoil-scan.witness.json",
@@ -2742,6 +2747,7 @@
         "rt-w-sqrt-quantum-two-probe.witness.json",
         "rt-w-sqrt2-jet-order-validation.witness.json",
         "sdp-gamma-gamma-to-qqbar.witness.json",
+        "sdp-validate-mpi-independence.witness.json",
         "shadow-price-c-321-q0.witness.json",
         "shell7-bb-stratum.witness.json",
         "shift-derivation-provenance.witness.json",

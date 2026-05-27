@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-26T21:12:36.827058+00:00",
+  "computedAt": "2026-05-27T00:51:04.661489+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -23,7 +23,16 @@
   },
   "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.83e-7 (~783.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
   "findings_by_pattern": {
-    "literal_0_782": [],
+    "literal_0_782": [
+      {
+        "file": "folio-assistant/computations/meson_mass_string_breaking_derivation.py",
+        "line": 114,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# If E₀ = Q_β ≈ 0.782 MeV (the decay energy): E₀·tr_M = 0.39 MeV (too small)",
+        "kind": "doc"
+      }
+    ],
     "literal_0_78233341": [
       {
         "file": "folio-assistant/computations/binding_canonical.py",
