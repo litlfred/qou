@@ -86,7 +86,7 @@ def main():
     tr3 = fabs(tr_M_sigma1n(3))
     tr5 = fabs(tr_M_sigma1n(5))
     ratio = tr5 / tr3
-    target = mpf("493.677") / mpf("139.570")
+    target = mpf("3.53713")
 
     wb = WitnessBuilder("meson-eigenvalue-analysis", engine="mpmath")
     wb.set_description(

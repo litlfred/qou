@@ -93,16 +93,16 @@ def main():
     wb.add_data("coefficients", {
         "c2_empirical": str(float(c2_empirical)),
         "c2_exact": "-1",
-        "c2_error_ppm": str(float((c2_empirical - (-1)) / (-1) * 1e6)),
+        "c2_error_ppm": str(float(abs(c2_empirical + 1) * 1e6)),
         "c3_empirical": str(float(c3_empirical)),
         "c3_model_J_minus_hbar_sq": str(float(c3_model)),
-        "c3_error_pct": str(float((c3_model - c3) / c3 * 100)),
+        "c3_error_pct": str(float((c3_model - c3_empirical) / c3_empirical * 100)),
     })
 
     wb.add_data("level_1_cos", {
         "r1_actual": str(float(r1)),
         "r1_from_cos": str(float(r1_from_cos)),
-        "match_ppm": str(float((r1 - r1_from_cos) / r1 * 1e6)),
+        "match_ppm": str(float(abs((r1 - r1_from_cos) / r1) * 1e6)),
     })
 
     wb.add_assertion(
@@ -114,7 +114,7 @@ def main():
     )
     wb.add_assertion(
         "c3_subleading",
-        computed=float((c3_model - c3) / c3 * 100),
+        computed=float((c3_model - c3_empirical) / c3_empirical * 100),
         expected=0,
         tolerance=0.01,
         unit="%",
@@ -146,10 +146,6 @@ def main():
     print("  k=1: cos(α_eff) — Jones/skein")
     print("  k=2: c₂ = -1 — PROVED (trivial/geometric)")
     print("  k=3: c₃ = J - ℏ² — Hopf + quantum (0.004%)")
-
-
-if __name__ == "__main__":
-    main()
 
 
 def derive_b_closed_form():

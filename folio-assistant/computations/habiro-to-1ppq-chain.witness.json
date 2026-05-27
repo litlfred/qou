@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T00:44:44.498307+00:00",
-  "commitSha": "74815bf0d944a3ed8abcd650c9a60b4c9604d263",
+  "computedAt": "2026-05-27T02:08:57.206604+00:00",
+  "commitSha": "50b055263fe9d5788cbd2c8c5da09363d3d81eb6",
   "assertions": [
     {
       "name": "habiro_sum_finite",
@@ -18,15 +18,15 @@
   "durationMs": 3,
   "computation": "habiro-to-1ppq-chain",
   "scriptFile": "habiro_to_1ppq_chain.py",
-  "scriptHash": "7aa0f3b1d43b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9901fb2c6281",
+  "scriptCommitSha": "756e27b1846b24bc0a4b71bf15270af1585ea398",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Wire Habiro integer coefficients through precision ladder to Q_beta. Chain: a_m(u) -> (u;u)_m -> eigenvalue b*hbar^2 -> c_k -> Q_N. Habiro sum at M=8 matches Lean-proved tr_M.",
+  "description": "Wire Habiro integer coefficients through precision ladder to Q_beta. Chain: a_m(u) -> (u;u)_m -> eigenvalue b*hbar^2 -> c_k -> Q_N. Habiro sum at M=8 converges (unnormalised; normalisation to Wenzl tr_M is open).",
   "data": {
     "habiro_sum": "136.07120636348176",
     "tr_M_lean_proved": "0.9985621631975701",

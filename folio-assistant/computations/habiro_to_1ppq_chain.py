@@ -130,7 +130,7 @@ def main():
     wb.set_description(
         "Wire Habiro integer coefficients through precision ladder "
         "to Q_beta. Chain: a_m(u) -> (u;u)_m -> eigenvalue b*hbar^2 "
-        "-> c_k -> Q_N. Habiro sum at M=8 matches Lean-proved tr_M."
+        "-> c_k -> Q_N. Habiro sum at M=8 converges (unnormalised; normalisation to Wenzl tr_M is open)."
     )
 
     wb.add_data("habiro_sum", str(float(habiro_sum)))
