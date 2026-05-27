@@ -1,0 +1,14 @@
+{
+  "computation": "spectral-phase-precision-ladder-connection",
+  "description": "Connection between B_3 spectral phase and the Q_beta precision ladder. theta = 8*hbar^2 * (1 + d_1*b*hbar^2 + ...) with d_1 = -3.391. The Q_beta ladder uses the SAME eigenvalue b*hbar^2 = 0.00852 but DIFFERENT first coefficient (c_1 = -0.188 for Q_beta vs d_1 = -3.391 for theta). d_1 is close to -[3]_q - 1/3 = -3.377 (0.41% match). Both ladders share eigenvalue b*hbar^2 and c_2 = -1 (geometric/trivial).",
+  "data": {
+    "eigenvalue_b_hbar_sq": 0.00852,
+    "theta_over_8hbar_sq": 0.9711,
+    "d1_theta": -3.391,
+    "c1_Qbeta": -0.188,
+    "ratio_d1_c1": 18.04,
+    "c2_shared": -1,
+    "d1_approx": "-[3]_q - 1/3 = -3.377 (0.41%)",
+    "gap_pct": 2.89
+  }
+}
