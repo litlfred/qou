@@ -18,6 +18,11 @@
     "implication": "m_p/m_e = (m_\u03bc/m_e) \u00d7 (Vol(B_3)/Vol(4_1)) \u00d7 lw_A",
     "vol_ratio": 3.6098522167487688,
     "lw_A": 2.533,
-    "predicted_mp_me": 1890.6543588571428
+    "predicted_mp_me": 1890.6543588571428,
+    "correction": {
+      "status": "NUMERICAL COINCIDENCE \u2014 not a structural identity",
+      "reason": "Vol(4_1)/2 = 1.015 > 1 but |tr(B_3)|/2 \u2264 1 (SL(2) bound). The identity |tr| = Vol is algebraically impossible.",
+      "both_near_2": "Both values are close to 2 from opposite sides: tr=1.994 < 2 < Vol=2.030"
+    }
   }
 }
