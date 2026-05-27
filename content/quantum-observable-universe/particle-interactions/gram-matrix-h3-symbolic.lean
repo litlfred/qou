@@ -269,6 +269,7 @@ theorem detFactor4_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor4 u := by
 
 /-- **POSITIVITY LEMMA 5.** `p(u) = u⁶ − u⁵ + u⁴ − u³ + 2u² − u + 1 > 0`
     for `u > 1`. Strategy: group as `(u−1)(u⁵ + u³) + (2u² − u + 1)` where
+  -- Witness: folio-assistant/computations/none
     the first part is positive (product of positives for `u > 1`) and the
     second has discriminant `1 − 8 = −7 < 0`, so is always positive. -/
 theorem detFactor5_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor5 u := by

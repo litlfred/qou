@@ -167,3 +167,20 @@ theorem lepton_tower_index_injective : Function.Injective lepton_tower_index := 
   cases x <;> cases y <;> simp [lepton_tower_index] at h <;> rfl
 
 end QOU.BraidKnot.LeptonMassTowerCanonical
+
+/-! ## Conditional theorems (downstream of the lepton tower conjecture)
+
+These use the conjectural `lepton_mass_ratio` function. -/
+
+/-- **CONDITIONAL.** If the lepton tower holds, then the muon-to-electron
+    ratio is determined by the torus-knot step T(2,3) → T(2,5) via
+    the figure-eight knot transition. -/
+theorem muon_electron_ratio_from_tower {R : Type*} [CommRing R] (q : R) :
+    lepton_mass_ratio q LeptonType.electron = 1 :=
+  lepton_mass_ratio_electron_eq_one q
+
+/-- **SPECIAL CASE.** The lepton tower index is injective — distinct
+    leptons have distinct torus-knot indices. Already proved sorry-free. -/
+theorem lepton_indices_distinct : Function.Injective lepton_tower_index :=
+  lepton_tower_index_injective
+

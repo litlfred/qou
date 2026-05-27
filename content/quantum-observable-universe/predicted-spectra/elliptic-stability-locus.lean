@@ -40,6 +40,7 @@ class EllipticStabilityLocus : Prop where
 
 -- Ref: [manuscript] conj:elliptic-stability-locus
 instance elliptic_stability_locus_conjecture : EllipticStabilityLocus where
+  -- Witness: folio-assistant/computations/none
   weierstrass_form := sorry
   integer_point_identification := sorry
 

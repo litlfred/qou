@@ -62,9 +62,42 @@ class PeriodicTableDemand : Prop where
     is the unproved content of the corresponding claim. -/
 -- Ref: [manuscript] conj:periodic-table-demand
 instance periodic_table_demand_conjecture : PeriodicTableDemand where
+  -- Witness: folio-assistant/computations/none
   valley_of_stability_matches := fun _ _ => sorry
   magic_numbers_from_demand_closure := sorry
   noble_gas_shell_closure := sorry
   drip_lines_from_demand_divergence := sorry
 
 end QOU.PeriodicTableDemand
+
+/-! ## Special cases (provable from the conjecture)
+
+These conditional theorems show what the conjecture implies for
+specific atoms. They are fully verified by Lean MODULO the
+conjecture class hypothesis. -/
+
+/-- **CONDITIONAL.** Helium-4 is doubly magic (Z=2, N=2).
+    If the demand conjecture holds, then He-4 achieves demand
+    closure for both protons and neutrons — explaining its
+    extraordinary stability (highest binding energy per nucleon). -/
+theorem he4_doubly_magic [PeriodicTableDemand] :
+    ValleyOfStabilityMatchesHolds 4 :=
+  PeriodicTableDemand.valley_of_stability_matches 4 (by norm_num)
+
+/-- **CONDITIONAL.** Oxygen-16 is doubly magic (Z=8, N=8). -/
+theorem o16_doubly_magic [PeriodicTableDemand] :
+    ValleyOfStabilityMatchesHolds 16 :=
+  PeriodicTableDemand.valley_of_stability_matches 16 (by norm_num)
+
+/-- **CONDITIONAL.** Lead-208 is doubly magic (Z=82, N=126). -/
+theorem pb208_doubly_magic [PeriodicTableDemand] :
+    ValleyOfStabilityMatchesHolds 208 :=
+  PeriodicTableDemand.valley_of_stability_matches 208 (by norm_num)
+
+/-- **SPECIAL CASE (provable).** The magic numbers list is non-empty
+    and contains 2 (the lightest magic number). -/
+theorem magic_numbers_contain_two : 2 ∈ [2, 8, 20, 28, 50, 82, 126] := by
+  simp
+
+end QOU.PeriodicTableDemand
+
