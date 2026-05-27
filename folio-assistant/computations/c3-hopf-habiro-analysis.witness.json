@@ -1,0 +1,55 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-27T00:20:34.124313+00:00",
+  "commitSha": "dcc2b598745760b5db89e79d0d27dc8e8a6e48d2",
+  "assertions": [
+    {
+      "name": "b_sq_exact",
+      "computed": 0.752702113845058,
+      "expected": 0.752702113845058,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "b^2 = (h^2+3)/(h^2+4) from Hoefsmit"
+    },
+    {
+      "name": "c3_best_model",
+      "computed": 0.0038526149487923783,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0.01,
+      "unit": "%",
+      "source": "c_3 = J - hbar^2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "c3-hopf-habiro-analysis",
+  "scriptFile": "c3_hopf_habiro_analysis.py",
+  "scriptHash": "684453057b9b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "c_3 vs Hopf Jones evaluation and Habiro series. c_3 = J-hbar^2 at 0.004% (best model). J_Hopf(q_0) = -[2]_q at 0.058%. b^2 = (h^2+3)/(h^2+4) exact (shared denominator with tr_M).",
+  "data": {
+    "c3_candidates": {
+      "c3_actual": "-2.0097397609790155",
+      "J_Hopf_q1": "-2.0",
+      "J_Hopf_q0": "-2.010896869118482",
+      "J_minus_hbar2": "-2.0098171885134786",
+      "err_J_q0_pct": "0.057575023489740355",
+      "err_J_minus_hbar2_pct": "0.0038526149487923783"
+    },
+    "b_squared_closed_form": {
+      "formula": "(h^2+3)/(h^2+4)",
+      "value": "0.752702113845058",
+      "b_witness": "0.752702113845058",
+      "match_ppm": "1.0652679171201495e-44",
+      "shared_denominator_with_trM": "h^2+4"
+    }
+  }
+}
