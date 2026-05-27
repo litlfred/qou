@@ -62,4 +62,12 @@ echo "Running QA sweep..."
 bun run content/pipeline/qa-sweep.ts content/ --only proof-lean-compiles
 
 rm -f "$JSONL"
-echo "Done. Results in docs/audits/lean-compile-diagnostics.json"
+
+# ── Commit + push results ──────────────────────────────────────
+echo "Committing results..."
+git add docs/audits/lean-compile-diagnostics.json
+git add 'content/**/*.qa.json'
+git diff --cached --quiet || git commit -m "audit: lean compile diagnostics + sidecar entries"
+git push
+
+echo "Done."
