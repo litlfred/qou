@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T00:03:27.433117+00:00",
-  "commitSha": "2e93849b199f8e3f0bf60517c7095915a79d2a30",
+  "computedAt": "2026-05-27T00:13:11.682941+00:00",
+  "commitSha": "0102c728ca1f81c8ddd5c0afab33b97b27454905",
   "assertions": [
     {
       "name": "c2_is_minus_one",
@@ -32,11 +32,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "qbeta-transfer-eigenvalue-proof",
   "scriptFile": "qbeta_transfer_eigenvalue_proof.py",
-  "scriptHash": "2ed62764599c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "254767cd3a40",
+  "scriptCommitSha": "0102c728ca1f81c8ddd5c0afab33b97b27454905",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
