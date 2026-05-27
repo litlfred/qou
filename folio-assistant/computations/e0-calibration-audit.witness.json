@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-27T17:54:26.529729+00:00",
+  "computedAt": "2026-05-27T18:09:11.113920+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -1049,7 +1049,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 103,
+        "line": 104,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "Q_BETA_MEV = _load_mpf(_CAL3_WITNESS, \"data.Q_beta_n_MeV\")",
@@ -1057,7 +1057,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 104,
+        "line": 105,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "Q_BETA_MEV_ERR = _load_mpf(_CAL3_WITNESS, \"data.Q_beta_n_MeV_err\")",
@@ -1065,7 +1065,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 181,
+        "line": 182,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "_q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)",
@@ -1073,7 +1073,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 186,
+        "line": 187,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "+ Q_BETA_MEV_ERR ** 2",
@@ -1081,7 +1081,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 240,
+        "line": 241,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",  # derived from CAL-1+CAL-2; kept for cross-check",
@@ -1089,7 +1089,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 240,
+        "line": 241,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",  # derived from CAL-1+CAL-2; kept for cross-check",

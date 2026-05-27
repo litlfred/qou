@@ -6,19 +6,20 @@ rather than hardcoded.
 
 ═══════════════════════════════════════════════════════════════════
  CALIBRATION DISCIPLINE  (per content/quantum-observable-universe/
- braids-and-knots/three-calibration-inputs.md  — CAL-1, CAL-2, CAL-3)
+ particle-interactions/meson-scale-independence.md)
 ═══════════════════════════════════════════════════════════════════
 
 The QOU framework admits **exactly three** external calibration
-inputs. Beyond these three, no further empirical, fitting, or
-numerological input is permitted; every other mass, Q-value, and
-binding energy in the paper is a prediction.
+inputs — each associated with a physical measurement (mass or
+decay width). Beyond these three, no further empirical, fitting,
+or numerological input is permitted; every other mass, Q-value,
+and binding energy in the paper is a prediction.
 
-| ID    | Quantity              | Module export        | Source witness                          |
+| ID    | Observable            | Module export        | Measurement / Source                      |
 |-------|----------------------|----------------------|------------------------------------------|
-| CAL-1 | m_e                  | M_E_MEV              | (hardcoded — framework's only direct mass anchor) |
-| CAL-2 | m_μ / m_e            | (in q_parameter.py)  | q-pinning-50-digit.witness.json:calibration_inputs |
-| CAL-3 | m_π±                 | M_PI_PM_MEV_VALIDATION | PDG 2024 (139.57039 MeV, 1.3 ppb)        |
+| CAL-1 | m_e                  | M_E_MEV              | electron mass (Penning trap, h⁰ jet order) |
+| CAL-2 | 𝔇_β (→ Q_β → q₀)    | (in q_parameter.py)  | neutron β-decay width (τ_n, h² jet order) |
+| CAL-3 | 𝔇_π (→ m_π)          | M_PI_PM_MEV_VALIDATION | pion decay width (τ_π, h³ jet order)     |
 
 `m_p`, `m_n`, `m_D`, `m_T`, `m_3He`, `m_4He` are **predictions** of
 the framework. They are exposed below for **validation only** —

@@ -44,7 +44,8 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - 1/q
 
-    m_pi = mp.mpf("139.57039")  # CAL-3
+    from codata_constants import M_PI_PM_MEV_VALIDATION  # noqa: E402
+    m_pi = M_PI_PM_MEV_VALIDATION  # CAL-3: 𝔇_π → m_π
 
     print("=" * 70)
     print("  Unified meson mass formula")
