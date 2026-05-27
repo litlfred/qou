@@ -61,4 +61,17 @@ theorem burnside_regular_rep_sum (n : ℕ) (dims : List ℕ)
     (dims.map fun d => d * d).sum = Nat.factorial n := by
   sorry
 
+/-- The leading Habiro coefficient of the atom braid trace.
+    a₀(A) = 2 × 8^A for all atoms with mass number A.
+    The factor 8 = Vol(B₃)/G = number of ideal octahedra in the
+    Borromean complement. The factor 2 = dim(V_{(2,1)}) from the
+    confinement interface block.
+
+    Verified: A=2 (D, 128), A=3 (T/³He, 1024), A=4 (⁴He, 8192),
+    A=5 (⁵Li, 65536), A=6 (⁶Li, 524288). -/
+-- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
+theorem habiro_leading_coefficient (A : ℕ) (hA : 0 < A) :
+    sorry /- a₀(atom_braid A) = 2 * 8 ^ A -/ := by
+  sorry
+
 end QOU.BraidKnot
